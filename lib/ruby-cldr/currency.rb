@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module TwitterCldr
+class Cldr
   module Format
     class Currency < Decimal
       def apply(number, options = {})

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module TwitterCldr
+class Cldr
   module Format
     class Percent < Decimal
       def apply(number, options = {})

@@ -19,7 +19,7 @@ module TwitterCldr
     protected
 
     def data_for(locale, resource)
-      File.read(TwitterCldr.get_resource_file(locale, resource))
+      YAML.load(File.read(TwitterCldr.get_resource_file(locale, resource))).deep_symbolize_keys!
     end
   end
 end

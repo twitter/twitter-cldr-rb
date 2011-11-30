@@ -1,4 +1,4 @@
-module TwitterCldr
+class Cldr
   module Format
     class Time < Datetime::Base
       PATTERN = /a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}/

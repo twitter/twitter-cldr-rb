@@ -1,4 +1,4 @@
-module TwitterCldr
+class Cldr
   module Format
     class Decimal
       class Integer < Base

@@ -15,26 +15,29 @@ module TwitterCldr
         @calendar_type = options[:calendar_type] || DEFAULT_CALENDAR_TYPE
       end
 
-      # default
-      def tokens
-        self.tokens_for(PATHS[@type])
+      def tokens(options = {})
+        type = options[:type] || :default
+        @placeholders.each_pair { |name, placeholder| placeholder.type = type }
+        self.tokens_for(PATHS[type])
       end
 
-      def apply(obj)
-        #what. the. fuck.
-        #cldr_formatter = Cldr::Format::Datetime.new(self.format_string, @resource["calendars"][@calendar_type])
-        Cldr::Format::Datetime.new(self.format_string, obj, obj)
+      def calendar
+        @resource[:calendars][@calendar_type]
       end
 
       protected
 
+      def tokenize_format(text)
+        [Token.new(:value => text, :type => :plaintext)]
+      end
+
       def init_resources
-        @resource = TwitterCldr.resource_manager.resource_for(@locale, "calendars")[@locale.to_sym]
+        @resource = TwitterCldr.resource_manager.resource_for(@locale, "calendars")[@locale]
       end
 
       def init_placeholders
-        @placeholders = { :date => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :type => @type),
-                          :time => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :type => @type) }
+        @placeholders = { :date => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale),
+                          :time => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale) }
       end
 
       def pattern_for(resource)

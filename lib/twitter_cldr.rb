@@ -8,8 +8,7 @@ require 'ext/date'
 require 'ext/datetime'
 require 'ext/fixnum'
 require 'ext/float'
-
-require 'core_ext/hash'
+require 'ext/hash'
 
 # manages access to CLDR resources (yaml files in resources dir)
 require 'base/resource_manager'
@@ -22,9 +21,8 @@ require 'tokenizers/date_tokenizer'
 require 'tokenizers/time_tokenizer'
 
 # all compilers
-require 'compilers/base'
-require 'compilers/datetime_compiler'
-require 'compilers/date_compiler'
+require 'formatters/base'
+require 'formatters/datetime_formatter'
 
 
 module TwitterCldr
@@ -33,10 +31,14 @@ module TwitterCldr
   @@resource_manager = ResourceManager.new
 
   def self.get_resource_file(locale, resource)
-    File.join(RESOURCE_DIR, locale, "#{resource}.yml")
+    File.join(RESOURCE_DIR, locale.to_s, "#{resource}.yml")
   end
 
   def self.resource_manager
     @@resource_manager
+  end
+
+  def self.get_locale
+    defined?(FastGettext) ? FastGettext.locale || DEFAULT_LOCALE : DEFAULT_LOCALE
   end
 end

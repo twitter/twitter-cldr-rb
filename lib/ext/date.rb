@@ -20,5 +20,9 @@ module TwitterCldr
         raise "Method not supported"
       end
     end
+
+    def to_s
+      self.to_default_s
+    end
   end
 end

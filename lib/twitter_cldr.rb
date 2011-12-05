@@ -4,8 +4,9 @@ require 'yaml'
 require 'active_support'
 
 # require patches for extending Ruby functionality
-require 'ext/date'
 require 'ext/datetime'
+require 'ext/date'
+require 'ext/time'
 require 'ext/fixnum'
 require 'ext/float'
 require 'ext/hash'

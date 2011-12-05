@@ -17,8 +17,7 @@ module TwitterCldr
 
       def tokens(options = {})
         type = options[:type] || :default
-        @placeholders.each_pair { |name, placeholder| placeholder.type = type }
-        self.tokens_for(PATHS[type])
+        self.tokens_for(PATHS[type], type)
       end
 
       def calendar
@@ -36,8 +35,8 @@ module TwitterCldr
       end
 
       def init_placeholders
-        @placeholders = { :date => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale),
-                          :time => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale) }
+        @placeholders = [{ :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale) },
+                         { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale) }]
       end
 
       def pattern_for(resource)

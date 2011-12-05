@@ -12,7 +12,7 @@ module TwitterCldr
 
       def tokens(options = {})
         type = options[:type] || :default
-        self.tokens_for(PATHS[type])
+        self.tokens_for(PATHS[type], type)
       end
 
       protected

@@ -2,7 +2,7 @@ module TwitterCldr
   module Tokenizers
     class DateTokenizer < TwitterCldr::Tokenizers::DateTimeTokenizer
       TOKEN_SPLITTER_REGEX = /(\'[\w\s-]+\'|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/
-      TOKEN_TYPE_REGEXES = [{ :type => :pattern, :regex => /^[G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}]/ },
+      TOKEN_TYPE_REGEXES = [{ :type => :pattern, :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/ },
                             { :type => :plaintext, :regex => // }]
       PATHS = { :default => "calendars.gregorian.formats.date.default",
                 :full => "calendars.gregorian.formats.date.full",
@@ -12,7 +12,7 @@ module TwitterCldr
 
       def tokens(options = {})
         type = options[:type] || :default
-        self.tokens_for(PATHS[type])
+        self.tokens_for(PATHS[type], type)
       end
 
       protected

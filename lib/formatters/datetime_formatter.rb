@@ -196,7 +196,7 @@ module TwitterCldr
         when 1..3
           time.zone
         else
-          raise 'not yet implemented (requires timezone translation data")'
+          "UTC #{time.strftime("%z")}"
         end
       end
 

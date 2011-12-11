@@ -2,6 +2,7 @@ module TwitterCldr
   module Tokenizers
     class Base
       attr_reader :resource, :locale
+      attr_reader :token_splitter_regex, :token_type_regexes, :paths
       attr_accessor :type
 
       def initialize(options = {})
@@ -11,6 +12,19 @@ module TwitterCldr
       end
 
       protected
+
+      def tokenize_format(text)
+        final = []
+        text.split(self.token_splitter_regex).each do |token|
+          self.token_type_regexes.each do |token_type|
+            if token =~ token_type[:regex]
+              final << Token.new(:value => token, :type => token_type[:type])
+              break
+            end
+          end
+        end
+        final
+      end
 
       def tokens_for(key, type)
         final = []
@@ -36,6 +50,8 @@ module TwitterCldr
         final = haystack
         segments.each { |segment| final = final[segment.to_sym] }
         final
+      rescue NameError
+        nil
       end
 
       def expand_pattern(format_str, type)

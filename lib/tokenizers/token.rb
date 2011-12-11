@@ -8,6 +8,10 @@ module TwitterCldr
           self.send("#{key.to_s}=", val)
         end
       end
+
+      def to_s
+        @value
+      end
     end
   end
 end

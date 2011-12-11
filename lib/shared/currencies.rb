@@ -20,7 +20,7 @@ module TwitterCldr
           final = nil
           @@resource.each_pair do |country_name, data|
             if data[:code] == currency_code
-              final = data.merge({ :country => country_name })
+              final = data.merge({ :country => country_name.to_s })
               final.delete(:code)
               break
             end

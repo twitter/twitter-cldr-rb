@@ -1,7 +1,7 @@
 module TwitterCldr
   module Formatters
     module Numbers
-      class Fraction
+      class Fraction < Base
         attr_reader :format, :decimal, :precision
 
         def initialize(token, symbols = {})
@@ -22,17 +22,6 @@ module TwitterCldr
         def format(options)
           precision = options[:precision] || self.precision
           precision ? '0' * precision : @format
-        end
-
-        def interpolate(string, value, orientation = :right)
-          value  = value.to_s
-          length = value.length
-          start, pad = orientation == :left ? [0, :rjust] : [-length, :ljust]
-
-          string = string.dup
-          string = string.ljust(length, '#') if string.length < length
-          string[start, length] = value
-          string.gsub('#', '')
         end
       end
     end

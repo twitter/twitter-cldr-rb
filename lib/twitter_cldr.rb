@@ -73,5 +73,6 @@ require 'formatters/numbers/currency_formatter'
 require 'formatters/numbers/percent_formatter'
 
 # formatter helpers
+require 'formatters/numbers/helpers/base'
 require 'formatters/numbers/helpers/fraction'
 require 'formatters/numbers/helpers/integer'

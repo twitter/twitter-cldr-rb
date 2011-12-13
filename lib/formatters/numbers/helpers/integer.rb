@@ -1,7 +1,7 @@
 module TwitterCldr
   module Formatters
     module Numbers
-      class Integer
+      class Integer < Base
         attr_reader :format, :separator, :groups
 
         def initialize(token, symbols = {})
@@ -39,17 +39,6 @@ module TwitterCldr
         def prepare_format(format, symbols)
           signs = symbols.values_at(:plus_sign, :minus_sign)
           format.tr(',', '').tr('+-', signs.join)
-        end
-
-        def interpolate(string, value, orientation = :right)
-          value  = value.to_s
-          length = value.length
-          start, pad = orientation == :left ? [0, :rjust] : [-length, :ljust]
-
-          string = string.dup
-          string = string.ljust(length, '#') if string.length < length
-          string[start, length] = value
-          string.gsub('#', '')
         end
       end
     end

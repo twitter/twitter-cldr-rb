@@ -20,7 +20,8 @@ module TwitterCldr
         end
 
         def format(options)
-          options[:precision] ? '0' * options[:precision] : @format
+          precision = options[:precision] || self.precision
+          precision ? '0' * precision : @format
         end
 
         def interpolate(string, value, orientation = :right)

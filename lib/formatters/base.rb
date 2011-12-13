@@ -1,6 +1,8 @@
 module TwitterCldr
   module Formatters
     class Base
+      attr_reader :tokenizer
+
       def format(obj, options = {})
         final = StringIO.new
 

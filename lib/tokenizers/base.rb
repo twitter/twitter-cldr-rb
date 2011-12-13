@@ -3,7 +3,7 @@ module TwitterCldr
     class Base
       attr_reader :resource, :locale
       attr_reader :token_splitter_regex, :token_type_regexes, :paths
-      attr_accessor :type
+      attr_accessor :type, :placeholders
 
       def initialize(options = {})
         @locale = options[:locale] || TwitterCldr::DEFAULT_LOCALE
@@ -13,13 +13,17 @@ module TwitterCldr
 
       protected
 
+      # Not to be confused with tokenize_pattern, which pulls out placeholders.  Tokenize_format actually splits a completely
+      # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
         final = []
-        text.split(self.token_splitter_regex).each do |token|
-          self.token_type_regexes.each do |token_type|
-            if token =~ token_type[:regex]
-              final << Token.new(:value => token, :type => token_type[:type])
-              break
+        text.split(self.token_splitter_regex).each_with_index do |token, index|
+          unless index == 0 && token == ""
+            self.token_type_regexes.each do |token_type|
+              if token =~ token_type[:regex]
+                final << Token.new(:value => token, :type => token_type[:type])
+                break
+              end
             end
           end
         end
@@ -76,6 +80,8 @@ module TwitterCldr
         end
       end
 
+      # Tokenize_pattern is supposed to take a pattern found in the YAML resource files and break it into placeholders and plaintext.
+      # Placeholders are delimited by single and double curly braces, plaintext is everything else.
       def tokenize_pattern(pattern_str)
         results = []
         pattern_str.split(/(\{\{?\w*\}?\}|\'\w+\')/).each do |piece|

@@ -20,7 +20,24 @@ module TwitterCldr
       protected
 
       def data_for(locale, resource)
-        YAML.load(File.read(TwitterCldr.get_resource_file(locale, resource))).deep_symbolize_keys!
+        deep_symbolize_keys(YAML.load(File.read(TwitterCldr.get_resource_file(locale, resource))))
+      end
+
+      # adapted from: http://snippets.dzone.com/posts/show/11121 (first comment)
+      def deep_symbolize_keys(arg)
+        case arg
+          when Array then
+            arg.map { |elem| deep_symbolize_keys(elem) }
+          when Hash then
+            Hash[
+              arg.map do |key, value|
+                k = key.is_a?(String) ? key.to_sym : key
+                v = deep_symbolize_keys(value)
+                [k, v]
+              end]
+          else
+            arg
+        end
       end
     end
   end

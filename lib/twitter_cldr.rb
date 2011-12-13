@@ -3,10 +3,8 @@ $:.push(File.dirname(__FILE__))
 require 'yaml'
 require 'date'
 require 'time'
-require 'active_support'
 
 # patches for extending Ruby functionality
-require 'ext/hash'
 require 'ext/localized_object'
 require 'ext/calendars/datetime'
 require 'ext/calendars/date'

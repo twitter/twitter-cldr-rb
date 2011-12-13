@@ -8,7 +8,7 @@ module TwitterCldr
                                { :type => :plaintext, :regex => // }]
         @paths = { :default => "calendars.gregorian.formats.date.default",
                    :full => "calendars.gregorian.formats.date.full",
-                   :long => "calendars.gregorian.formats.date.long", 
+                   :long => "calendars.gregorian.formats.date.long",
                    :medium => "calendars.gregorian.formats.date.medium",
                    :short => "calendars.gregorian.formats.date.short" }
       end

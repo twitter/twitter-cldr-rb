@@ -12,7 +12,7 @@ module TwitterCldr
         @token_type_regexes = [{ :type => :plaintext, :regex => // }]
         @paths = { :default => "calendars.gregorian.formats.datetime.default",
                    :full => "calendars.gregorian.formats.datetime.full",
-                   :long => "calendars.gregorian.formats.datetime.long", 
+                   :long => "calendars.gregorian.formats.datetime.long",
                    :medium => "calendars.gregorian.formats.datetime.medium",
                    :short => "calendars.gregorian.formats.datetime.short" }
       end

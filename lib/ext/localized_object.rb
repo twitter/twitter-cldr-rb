@@ -7,5 +7,9 @@ module TwitterCldr
       @locale = locale
       @formatter = self.formatter_const.new(:locale => @locale) if self.formatter_const
     end
+
+    def formatter_const
+      raise NotImplementedError
+    end
   end
 end

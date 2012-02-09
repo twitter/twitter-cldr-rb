@@ -18,11 +18,10 @@ describe Date do
 end
 
 describe LocalizedDate do
-  describe "#to_custom_s" do
-    it "should call the corresponding formatter function" do
+  context "with an unsupported type" do
+    it "raise an error because 'albatross' is not a supported type" do
       date = Date.today.localize(:it)
-      mock(date.formatter).format(date.base_obj, :type => :albatross) { "" }
-      date.to_albatross_s
+      lambda { date.to_albatross_s }.should raise_error("Method not supported")
     end
   end
 end

@@ -1,4 +1,10 @@
 module TwitterCldr
+  module LocalizedNumberMixin
+    def localize(locale = TwitterCldr.get_locale)
+      TwitterCldr::LocalizedNumber.new(self, locale)
+    end
+  end
+
   class LocalizedNumber < LocalizedObject
     DEFAULT_TYPE = :decimal
     attr_reader :type

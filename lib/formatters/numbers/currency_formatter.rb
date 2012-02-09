@@ -11,8 +11,8 @@ module TwitterCldr
 
       def format(number, options = {})
         if options[:currency]
-          currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
           currency ||= TwitterCldr::Shared::Currencies.for_code(options[:currency])
+          currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
           currency ||= { :symbol => options[:currency] }
         else
           currency = { :symbol => DEFAULT_CURRENCY_SYMBOL }

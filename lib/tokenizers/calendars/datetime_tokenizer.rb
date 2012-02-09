@@ -4,6 +4,7 @@ module TwitterCldr
       attr_reader :placeholders, :calendar_type
 
       DEFAULT_CALENDAR_TYPE = :gregorian
+      VALID_TYPES = [:default, :full, :long, :medium, :short]
 
       def initialize(options = {})
         super(options)

@@ -31,6 +31,6 @@ end
 
 desc "install the gem locally"
 task :install => [:package] do
-  sh %{sudo gem install pkg/#{spec.name}-#{spec.version}}
+  sh %{gem install pkg/#{spec.name}-#{spec.version}}
 end
 

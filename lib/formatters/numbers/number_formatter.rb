@@ -31,7 +31,7 @@ module TwitterCldr
       def parse_number(number, options = {})
         precision = options[:precision] || self.precision_from(number)
         number = round_to(number, precision)
-        number.abs.to_s.split('.')
+        number.abs.to_s.split(".")
       end
 
       def round_to(number, precision)

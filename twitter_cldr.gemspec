@@ -10,8 +10,6 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.summary = "Text formatting using data from Unicode's Common Locale Data Repository (CLDR)."
 
-  #s.add_dependency 'json', '>= 1.1.9'
-
   s.require_path = 'lib'
   s.autorequire = ''
   s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,spec}/**/*")

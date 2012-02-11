@@ -20,7 +20,7 @@ require 'shared/resources'
 
 module TwitterCldr
   DEFAULT_LOCALE = :en
-  RESOURCE_DIR = File.join(File.dirname(File.dirname(__FILE__)), "resources")
+  RESOURCE_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), "resources")
 
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = { :msa     => :ms,

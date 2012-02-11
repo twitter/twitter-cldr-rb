@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
 
   s.require_path = 'lib'
   s.autorequire = ''
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
 end

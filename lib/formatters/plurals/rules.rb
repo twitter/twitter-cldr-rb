@@ -8,6 +8,7 @@ module TwitterCldr
           end
 
           def all_for(locale)
+            locale = locale.to_sym
             get_resource(locale)[locale][:i18n][:plural][:keys]
           rescue => e
             []

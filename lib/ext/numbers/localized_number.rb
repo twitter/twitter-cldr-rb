@@ -30,6 +30,10 @@ module TwitterCldr
       @formatter.format(@base_obj, opts)
     end
 
+    def plural_rule
+      TwitterCldr::Formatters::Plurals::Rules.rule_for(@base_obj, @locale)
+    end
+
     protected
 
     def formatter_const

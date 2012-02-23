@@ -6,6 +6,7 @@ module TwitterCldr
       end
 
       def resource_for(locale, resource)
+        locale = locale.to_sym
         unless @resources_by_locale.include?(locale)
           @resources_by_locale[locale] = {}
         end

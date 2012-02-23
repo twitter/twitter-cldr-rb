@@ -19,6 +19,14 @@ module TwitterCldr
       self.to_default_s
     end
 
+    def to_date
+      LocalizedDate.new(Date.parse(@base_obj.strftime("%Y-%m-%dT%H:%M:%S%z")), @locale)
+    end
+
+    def to_time
+      LocalizedTime.new(Time.parse(@base_obj.strftime("%Y-%m-%dT%H:%M:%S%z")), @locale)
+    end
+
     protected
 
     def formatter_const

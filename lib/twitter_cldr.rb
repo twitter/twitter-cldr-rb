@@ -38,10 +38,11 @@ module TwitterCldr
   end
 
   def self.get_locale
-    defined?(FastGettext) ? FastGettext.locale || DEFAULT_LOCALE : DEFAULT_LOCALE
+    defined?(FastGettext) ? FastGettext.locale.to_sym || DEFAULT_LOCALE : DEFAULT_LOCALE
   end
 
   def self.convert_locale(locale)
+    locale = locale.to_sym
     TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
   end
 end
@@ -69,6 +70,7 @@ require 'formatters/numbers/number_formatter'
 require 'formatters/numbers/decimal_formatter'
 require 'formatters/numbers/currency_formatter'
 require 'formatters/numbers/percent_formatter'
+require 'formatters/plurals/rules'
 
 # formatter helpers
 require 'formatters/numbers/helpers/base'

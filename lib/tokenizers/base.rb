@@ -6,7 +6,7 @@ module TwitterCldr
       attr_accessor :type, :placeholders
 
       def initialize(options = {})
-        @locale = options[:locale] || TwitterCldr::DEFAULT_LOCALE
+        @locale = (options[:locale] || TwitterCldr::DEFAULT_LOCALE).to_sym
         self.init_resources
         self.init_placeholders
       end

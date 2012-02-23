@@ -24,4 +24,22 @@ describe LocalizedTime do
       lambda { time.to_albatross_s }.should raise_error("Method not supported")
     end
   end
+
+  describe "#to_datetime" do
+    it "should combine a date and a time object into a datetime" do
+      date = Date.new(1987, 9, 20)
+      time = Time.local(2000, 5, 12, 22, 5)
+      datetime = time.localize.to_datetime(date)
+      datetime.should be_a(LocalizedDateTime)
+      datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S").should == "1987-09-20 22:05:00"
+    end
+
+    it "should work with an instance of LocalizedDate too" do
+      date = Date.new(1987, 9, 20).localize
+      time = Time.local(2000, 5, 12, 22, 5)
+      datetime = time.localize.to_datetime(date)
+      datetime.should be_a(LocalizedDateTime)
+      datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S").should == "1987-09-20 22:05:00"
+    end
+  end
 end

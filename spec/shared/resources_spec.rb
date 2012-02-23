@@ -8,7 +8,8 @@ describe Resources do
 
   describe "#resource_for" do
     it "loads the requested resource from disk only once" do
-      mock(@resource).data_for("de", "racehorse").once { "german racehorse resource" }
+      # note that it should convert the string "de" into a symbol
+      mock(@resource).data_for(:de, "racehorse").once { "german racehorse resource" }
 
       # do it twice - the second one shouldn't call data_for
       @resource.resource_for("de", "racehorse").should == "german racehorse resource"

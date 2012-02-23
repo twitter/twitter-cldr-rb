@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.summary = "Text formatting using data from Unicode's Common Locale Data Repository (CLDR)."
 
-  s.add_development_dependency 'rspec', '= 1.3.2'
-  s.add_development_dependency 'rr', '= 1.0.4'
+  s.add_development_dependency 'rspec', '~> 1.3.2'
+  s.add_development_dependency 'rr', '~> 1.0.4'
   s.add_development_dependency 'rake', '~> 0.8.7'
 
   s.require_path = 'lib'

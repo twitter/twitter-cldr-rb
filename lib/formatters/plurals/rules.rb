@@ -24,7 +24,8 @@ module TwitterCldr
           protected
 
           def get_resource(locale)
-            eval(TwitterCldr.resources.resource_for(locale, "plurals")[TwitterCldr.convert_locale(locale)])
+            locale = TwitterCldr.convert_locale(locale)
+            eval(TwitterCldr.resources.resource_for(locale, "plurals")[locale])
           end
         end
       end

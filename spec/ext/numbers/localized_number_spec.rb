@@ -38,4 +38,16 @@ describe LocalizedNumber do
       @number.to_s(:precision => 2)
     end
   end
+
+  describe "#plural_rule" do
+    it "should return the appropriate plural rule for the number" do
+      1.localize(:ru).plural_rule.should == :one
+      2.localize(:ru).plural_rule.should == :few
+      5.localize(:ru).plural_rule.should == :many
+      FastGettext.locale = :es
+      1.localize.plural_rule.should == :one
+      2.localize.plural_rule.should == :other
+      5.localize.plural_rule.should == :other
+    end
+  end
 end

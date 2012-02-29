@@ -42,6 +42,14 @@ twitter_cldr
      Time.now.localize(:es).to_medium_s                         # 21:46:09
      Time.now.localize(:es).to_short_s                          # 21:47
 
+  3. Plural Rules
+     1.localize(:ru).plural_rule                                # :one
+     2.localize(:ru).plural_rule                                # :few
+     5.localize(:ru).plural_rule                                # :many
+
+  4. World Languages
+     :es.localize(:es).as_language_code                         # español
+
 == REQUIREMENTS:
 
     No external requirements.

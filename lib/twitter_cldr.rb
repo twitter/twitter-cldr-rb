@@ -39,12 +39,35 @@ module TwitterCldr
   end
 
   def self.get_locale
-    defined?(FastGettext) ? FastGettext.locale.to_sym || DEFAULT_LOCALE : DEFAULT_LOCALE
+    if defined?(FastGettext)
+      locale = FastGettext.locale
+      locale = DEFAULT_LOCALE if locale.to_s.empty?
+    else
+      locale = DEFAULT_LOCALE
+    end
+
+    (self.supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
   end
 
   def self.convert_locale(locale)
     locale = locale.to_sym
     TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+  end
+
+  def self.supported_locales
+    unless defined?(@@supported_locales)
+      rejectable = [:shared]
+      @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
+        File.basename(file).to_sym
+      end.reject { |file| rejectable.include?(file) }
+    end
+
+    @@supported_locales
+  end
+
+  def self.supported_locale?(locale)
+    locale = locale.to_sym
+    self.supported_locales.include?(locale) || self.supported_locales.include?(self.convert_locale(locale))
   end
 end
 

@@ -1,8 +1,14 @@
 $:.push(File.dirname(__FILE__))
+$:.push(File.dirname(File.dirname(__FILE__)))
 
 require 'yaml'
 require 'date'
 require 'time'
+require 'fileutils'
+
+# gems
+require 'mustache'
+require 'json'
 
 # patches for extending Ruby functionality
 require 'ext/localized_object'
@@ -17,6 +23,11 @@ require 'ext/strings/symbol'
 
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'
+
+# renderers and compiler
+require 'js/compiler'
+require 'js/renderers/bundle'
+require 'js/renderers/calendars/datetime_renderer'
 
 
 module TwitterCldr
@@ -45,6 +56,18 @@ module TwitterCldr
   def self.convert_locale(locale)
     locale = locale.to_sym
     TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+  end
+
+  def self.all_locales
+    unless defined?(@@all_locales)
+      @@all_locales = Dir.glob(File.expand_path(File.join(File.dirname(__FILE__), "..", "resources", "*"))).map { |dir| File.basename(dir).to_sym }
+      @@all_locales.delete(:shared)
+    end
+    @@all_locales
+  end
+
+  def self.supports?(locale)
+    self.all_locales.include?(locale) || self.all_locales.include?(self.convert_locale(locale))
   end
 end
 

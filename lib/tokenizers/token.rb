@@ -12,6 +12,10 @@ module TwitterCldr
       def to_s
         @value
       end
+
+      def to_hash
+        { :value => @value, :type => @type }
+      end
     end
   end
 end

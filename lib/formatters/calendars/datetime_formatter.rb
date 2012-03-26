@@ -207,11 +207,6 @@ module TwitterCldr
       def timezone_generic_non_location(time, pattern, length)
         raise 'not yet implemented (requires timezone translation data")'
       end
-
-      def round_to(number, precision)
-        factor = 10 ** precision
-        (number * factor).round.to_f / factor
-      end
     end
   end
 end

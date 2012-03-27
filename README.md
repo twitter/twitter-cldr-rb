@@ -1,18 +1,14 @@
-twitter_cldr
-    by Cameron C. Dutro, portions by Sven Fuchs
-    http://github.com/camertron, http://github.com/svenfuchs
-
-== DESCRIPTION:
+## twitter-cldr-rb
 
     TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
     localized equivalents.  Currently supported types of text include dates, times, currencies, decimals, and percentages.
 
-== FEATURES/PROBLEMS:
+## Features
 
     * CLDR is missing complete number data for: hu (Hungarian), id (Indonesian), msa (Malay), no (Norwegian),
       and zh-tw (Traditional Chinese)
 
-== SYNOPSIS:
+## Synopsis
 
   TwitterCldr patches core Ruby objects like Fixnum and Date for an easy localization experience:
 
@@ -50,14 +46,21 @@ twitter_cldr
   4. World Languages
      :es.localize(:es).as_language_code                         # español
 
-== REQUIREMENTS:
+## Requirements
 
-    No external requirements.
+No external requirements.
 
-== INSTALL:
+## Installation
 
-    * gem install twitter_cldr
+`gem install twitter_cldr`
 
-== LICENSE:
+## Authors
 
-    See LICENSE file.
+* Cameron C. Dutro: http://github.com/camertron
+* Sven Fuchs: http://github.com/svenfuchs
+
+## License
+
+Copyright 2012 Twitter, Inc.
+
+Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

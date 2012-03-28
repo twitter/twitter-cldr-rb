@@ -4,6 +4,8 @@ require 'yaml'
 require 'date'
 require 'time'
 
+require 'version'
+
 # patches for extending Ruby functionality
 require 'ext/localized_object'
 require 'ext/calendars/datetime'

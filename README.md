@@ -210,6 +210,10 @@ TwitterCldr.get_locale    # will return :ru
 
 No external requirements.
 
+## Running Tests
+
+`bundle exec rake` should do the trick.  Tests are written in RSpec using RR as the mocking framework.
+
 ## Authors
 
 * Cameron C. Dutro: http://github.com/camertron

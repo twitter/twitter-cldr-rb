@@ -206,6 +206,10 @@ FastGettext.locale = "ru"
 TwitterCldr.get_locale    # will return :ru
 ```
 
+## Adding/editing locales
+
+Locales are contained in the `resources` directory. An example locale is located at `resources/ex` - use this when editing existing locales or adding new ones.
+
 ## Requirements
 
 No external requirements.

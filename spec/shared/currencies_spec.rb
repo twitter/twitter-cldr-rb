@@ -9,15 +9,22 @@ describe Currencies do
   describe "#countries" do
     it "should list all supported countries" do
       countries = Currencies.countries
-      countries.size.should == 112
+      countries.size.should == 113
       TEST_COUNTRIES.each { |country| countries.should include(country) }
+    end
+
+    it "should check for all fields for all countries" do
+      countries = Currencies.countries
+      countries.each { |country| Currencies.for_country(country).should include(:code) }
+      countries.each { |country| Currencies.for_country(country).should include(:currency) }
+      countries.each { |country| Currencies.for_country(country).should include(:symbol) }
     end
   end
 
   describe "#currency_codes" do
     it "should list all supported country codes" do
       codes = Currencies.currency_codes
-      codes.size.should == 112
+      codes.size.should == 113
       TEST_CODES.each { |code| codes.should include(code) }
     end
   end

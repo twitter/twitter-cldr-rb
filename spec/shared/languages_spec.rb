@@ -42,10 +42,6 @@ describe Languages do
       Languages.from_code_for_locale(:es, :en).should == "Spanish"
       Languages.from_code_for_locale(:en, :es).should == "inglés"
     end
-
-    it "should add :ex or 'Example' as a valid language" do
-      Languages.from_code_for_locale(:ex, :ex).should == "example"
-    end
   end
 
   describe "#from_code" do
@@ -58,6 +54,13 @@ describe Languages do
   end
 
   describe "#all_for" do
+
+    # it "should check all hashes for complete language database" do
+    #   langs = Languages.all
+    #   langs.each { |langs| Languages.all_for(langs) }
+    #   countries.each { |country| Currencies.for_country(country).should include(:code) }
+    # end
+
     it "should return a hash of all languages for the given language code" do
       langs = Languages.all_for(:es)
       langs.should be_a(Hash)

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module TwitterCldr
   module LocalizedNumberMixin
     def localize(locale = TwitterCldr.get_locale)

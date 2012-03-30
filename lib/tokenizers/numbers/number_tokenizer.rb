@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base

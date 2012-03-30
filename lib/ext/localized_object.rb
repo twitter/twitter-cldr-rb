@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module TwitterCldr
   class LocalizedObject
     attr_reader :locale, :base_obj, :formatter

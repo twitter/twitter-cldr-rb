@@ -35,7 +35,7 @@ TwitterCldr patches core Ruby objects like Fixnum and Date to make localization 
 
 **Note**: The CLDR is missing complete number data for:
 
-* hu (Hungarian)
+* <del>hu (Hungarian)</del> ?
 * id (Indonesian)
 * msa (Malay)
 * no (Norwegian),

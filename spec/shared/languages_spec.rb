@@ -42,6 +42,10 @@ describe Languages do
       Languages.from_code_for_locale(:es, :en).should == "Spanish"
       Languages.from_code_for_locale(:en, :es).should == "inglés"
     end
+
+    it "should add :ex or 'Example' as a valid language" do
+      Languages.from_code_for_locale(:ex, :ex).should == "example"
+    end
   end
 
   describe "#from_code" do
@@ -59,6 +63,7 @@ describe Languages do
       langs.should be_a(Hash)
       langs[:ru].should == "ruso"
     end
+
 
     it "should return an empty hash for an invalid language" do
       langs = Languages.all_for(:blarg)

@@ -55,12 +55,6 @@ describe Languages do
 
   describe "#all_for" do
 
-    # it "should check all hashes for complete language database" do
-    #   langs = Languages.all
-    #   langs.each { |langs| Languages.all_for(langs) }
-    #   countries.each { |country| Currencies.for_country(country).should include(:code) }
-    # end
-
     it "should return a hash of all languages for the given language code" do
       langs = Languages.all_for(:es)
       langs.should be_a(Hash)

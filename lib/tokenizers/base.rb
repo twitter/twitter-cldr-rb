@@ -55,7 +55,7 @@ module TwitterCldr
         final = haystack
         segments.each { |segment| final = final[segment.to_sym] }
         final
-      rescue NameError
+      rescue StandardError
         nil
       end
 

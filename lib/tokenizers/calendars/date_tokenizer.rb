@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module TwitterCldr
   module Tokenizers
     class DateTokenizer < TwitterCldr::Tokenizers::DateTimeTokenizer

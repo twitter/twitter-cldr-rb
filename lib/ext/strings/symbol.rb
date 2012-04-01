@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 class Symbol
   def localize(locale = TwitterCldr.get_locale)
     TwitterCldr::LocalizedSymbol.new(self, locale)

@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 require File.join(File.dirname(File.dirname(File.dirname(__FILE__))), "spec_helper")
 include TwitterCldr::Formatters::Plurals
 

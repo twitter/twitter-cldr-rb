@@ -50,12 +50,14 @@ module TwitterCldr
       end
 
       def traverse(needle, haystack = @resource)
-        segments = needle.to_s.split(".")
-        final = haystack
-        segments.each { |segment| final = final[segment.to_sym] }
-        final
-      rescue NameError
-        nil
+        needle.to_s.split('.').inject(haystack) do |current, segment|
+          key = segment.to_sym
+          if current.is_a?(Hash) && current.has_key?(key)
+            current[key]
+          else
+            return
+          end
+        end
       end
 
       def expand_pattern(format_str, type)

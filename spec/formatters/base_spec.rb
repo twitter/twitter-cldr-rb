@@ -8,5 +8,10 @@ describe Base do
       base.send(:extract_locale, { :locale => :hi }).should == :hi
       base.send(:extract_locale, {}).should == :en
     end
+
+    it "should confirm Example locale exists" do
+      base = TwitterCldr::Formatters::Base.new
+      base.send(:extract_locale, { :locale => :ex }).should == :ex
+    end
   end
 end

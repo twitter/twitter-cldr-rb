@@ -17,6 +17,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 0.8.7'
 
   s.require_path = 'lib'
-  s.autorequire = ''
   s.files = %w(LICENSE README.md NOTICE Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
 end

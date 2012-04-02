@@ -28,6 +28,9 @@ TwitterCldr.supported_locale?(:es)        # true
 TwitterCldr.supported_locale?(:xx)        # false
 ```
 
+### Adding/editing locales
+
+Locales are contained in the `resources` directory. An example locale is located at `resources/ex` - use this when editing existing locales or adding new ones.
 
 TwitterCldr patches core Ruby objects like Fixnum and Date to make localization as straightforward as possible.
 

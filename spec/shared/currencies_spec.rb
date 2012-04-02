@@ -11,6 +11,13 @@ describe Currencies do
       countries.size.should == 112
       TEST_COUNTRIES.each { |country| countries.should include(country) }
     end
+
+    it "should check for all fields for all countries" do
+      countries = Currencies.countries
+      countries.each { |country| Currencies.for_country(country).should include(:code) }
+      countries.each { |country| Currencies.for_country(country).should include(:currency) }
+      countries.each { |country| Currencies.for_country(country).should include(:symbol) }
+    end
   end
 
   describe "#currency_codes" do

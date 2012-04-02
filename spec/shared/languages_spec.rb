@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require File.join(File.dirname(__FILE__), %w[.. spec_helper])
 include TwitterCldr::Shared
 
@@ -53,11 +55,13 @@ describe Languages do
   end
 
   describe "#all_for" do
+
     it "should return a hash of all languages for the given language code" do
       langs = Languages.all_for(:es)
       langs.should be_a(Hash)
       langs[:ru].should == "ruso"
     end
+
 
     it "should return an empty hash for an invalid language" do
       langs = Languages.all_for(:blarg)

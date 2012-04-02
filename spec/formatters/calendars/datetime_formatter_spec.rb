@@ -276,7 +276,7 @@ describe DateTimeFormatter do
       @formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'z', 1).should == 'UTC'
       @formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zz', 2).should == 'UTC'
       @formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zzz', 3).should == 'UTC'
-      @formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zzzz', 4).should match(/UTC\s\-?\d{4}/)
+      @formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zzzz', 4).should =~ /^UTC (-|\+)\d{4}$/
     end
   end
 

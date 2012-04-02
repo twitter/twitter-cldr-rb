@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class Date
   def localize(locale = TwitterCldr.get_locale)
     TwitterCldr::LocalizedDate.new(self, locale)

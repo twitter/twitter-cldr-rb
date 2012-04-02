@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module TwitterCldr
   module Formatters
     module Numbers

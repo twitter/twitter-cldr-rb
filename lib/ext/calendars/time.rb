@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class Time
   def localize(locale = TwitterCldr.get_locale)
     TwitterCldr::LocalizedTime.new(self, locale)

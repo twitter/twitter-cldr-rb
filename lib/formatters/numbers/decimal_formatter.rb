@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module TwitterCldr
   module Formatters
     class DecimalFormatter < NumberFormatter

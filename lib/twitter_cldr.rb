@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 $:.push(File.dirname(__FILE__))
 
 require 'yaml'

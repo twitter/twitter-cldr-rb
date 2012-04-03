@@ -2,6 +2,8 @@
 
 $:.push(File.dirname(__FILE__))
 
+$KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
+
 require 'yaml'
 require 'date'
 require 'time'

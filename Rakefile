@@ -1,6 +1,7 @@
 require 'rubygems' unless ENV['NO_RUBYGEMS']
 require 'rubygems/package_task'
-require 'rdoc/task'
+require 'rake/rdoctask' unless RUBY_VERSION >= '1.9.0'
+require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
 require 'rubygems/specification'
 require 'spec/rake/spectask'
 require 'spec/rake/verify_rcov'

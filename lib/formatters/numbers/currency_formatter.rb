@@ -1,4 +1,5 @@
-# encoding: utf-8
+# encoding: UTF-8
+
 module TwitterCldr
   module Formatters
     class CurrencyFormatter < NumberFormatter

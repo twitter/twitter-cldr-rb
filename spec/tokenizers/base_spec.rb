@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require File.join(File.dirname(File.dirname(__FILE__)), "spec_helper")
 include TwitterCldr::Tokenizers
 
@@ -12,12 +14,15 @@ end
 
 describe Base do
   before(:each) do
-    @base = Base.new  # do NOT do this in production - must use subclass
+    @base = TwitterCldr::Tokenizers::Base.new  # do NOT do this in production - must use subclass
   end
 
-  it "creating a new base without a locale should default to English, with a locale should not" do
+  it "should use English locale by default" do
     @base.locale.should == :en
-    Base.new(:locale => :de).locale.should == :de
+  end
+
+  it "should use provided locale if there is one" do
+    TwitterCldr::Tokenizers::Base.new(:locale => :de).locale.should == :de
   end
 
   # tokenize_pattern is supposed to take a pattern found in the YAML resource files and break it into placeholders and plaintext.

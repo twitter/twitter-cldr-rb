@@ -106,3 +106,6 @@ require 'formatters/plurals/rules'
 require 'formatters/numbers/helpers/base'
 require 'formatters/numbers/helpers/fraction'
 require 'formatters/numbers/helpers/integer'
+
+# all normalizers
+require 'normalizers/base'

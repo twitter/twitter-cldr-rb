@@ -1,6 +1,7 @@
 require 'rubygems' unless ENV['NO_RUBYGEMS']
-require 'rake/gempackagetask'
-require 'rake/rdoctask'
+require 'rubygems/package_task'
+require 'rake/rdoctask' unless RUBY_VERSION >= '1.9.0'
+require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
 require 'rubygems/specification'
 require 'spec/rake/spectask'
 require 'spec/rake/verify_rcov'
@@ -25,7 +26,7 @@ Spec::Rake::SpecTask.new('spec:rcov') do |t|
 end
 
 # Gem tasks
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
 

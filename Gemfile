@@ -1,3 +1,3 @@
-source 'http://gems.local.twitter.com'
+source 'http://rubygems.org'
 
 gemspec

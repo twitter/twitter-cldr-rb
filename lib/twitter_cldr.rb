@@ -1,5 +1,9 @@
+# encoding: UTF-8
+
 $:.push(File.dirname(__FILE__))
 $:.push(File.dirname(File.dirname(__FILE__)))
+
+$KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 
 require 'yaml'
 require 'date'
@@ -9,6 +13,8 @@ require 'fileutils'
 # gems
 require 'mustache'
 require 'json'
+
+require 'version'
 
 # patches for extending Ruby functionality
 require 'ext/localized_object'
@@ -50,7 +56,14 @@ module TwitterCldr
   end
 
   def self.get_locale
-    defined?(FastGettext) ? FastGettext.locale.to_sym || DEFAULT_LOCALE : DEFAULT_LOCALE
+    if defined?(FastGettext)
+      locale = FastGettext.locale
+      locale = DEFAULT_LOCALE if locale.to_s.empty?
+    else
+      locale = DEFAULT_LOCALE
+    end
+
+    (self.supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
   end
 
   def self.convert_locale(locale)
@@ -58,16 +71,20 @@ module TwitterCldr
     TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
   end
 
-  def self.all_locales
-    unless defined?(@@all_locales)
-      @@all_locales = Dir.glob(File.expand_path(File.join(File.dirname(__FILE__), "..", "resources", "*"))).map { |dir| File.basename(dir).to_sym }
-      @@all_locales.delete(:shared)
+  def self.supported_locales
+    unless defined?(@@supported_locales)
+      rejectable = [:shared]
+      @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
+        File.basename(file).to_sym
+      end.reject { |file| rejectable.include?(file) }
     end
-    @@all_locales
+
+    @@supported_locales
   end
 
-  def self.supports?(locale)
-    self.all_locales.include?(locale) || self.all_locales.include?(self.convert_locale(locale))
+  def self.supported_locale?(locale)
+    locale = locale.to_sym
+    self.supported_locales.include?(locale) || self.supported_locales.include?(self.convert_locale(locale))
   end
 end
 

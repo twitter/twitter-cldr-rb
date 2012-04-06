@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 # This class has been adapted from Sven Fuch's ruby-cldr gem
 # See LICENSE for the accompanying license for his contributions
 

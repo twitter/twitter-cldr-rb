@@ -1,6 +1,8 @@
+require File.join(File.dirname(__FILE__), "lib", "version")
+
 Gem::Specification.new do |s|
   s.name = "twitter_cldr"
-  s.version = File.read("version.txt").chomp
+  s.version = ::TwitterCldr::VERSION
   s.authors = ["Cameron Dutro"]
   s.email = ["cdutro@twitter.com"]
   s.homepage = "http://twitter.com"
@@ -19,5 +21,5 @@ Gem::Specification.new do |s|
 
   s.require_path = 'lib'
   s.autorequire = ''
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
+  s.files = %w(LICENSE README.md NOTICE Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
 end

@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
-require File.join(File.dirname(File.dirname(File.dirname(__FILE__))), "spec_helper")
+require 'spec_helper'
+
 include TwitterCldr::Formatters
 
 describe DateTimeFormatter do

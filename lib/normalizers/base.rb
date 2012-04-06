@@ -4,7 +4,7 @@ module TwitterCldr
   module Normalizers
     class Base
       def unicode_data
-        data_path = File.join("#{File.dirname(__FILE__)}/data/")
+        data_path = File.join(File.dirname(__FILE__), "data")
         index = {}
         IO.readlines(File.join(data_path, 'UnicodeData.txt')).map do |line|
           property = line.split(';')

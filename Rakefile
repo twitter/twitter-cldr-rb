@@ -8,7 +8,7 @@ require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
 
 require 'digest'
 
-spec = Gem::Specification.load("#{File.dirname(__FILE__)}/twitter_cldr.gemspec")
+GEM_SPEC = Gem::Specification.load(File.join(File.dirname(__FILE__), 'twitter_cldr.gemspec'))
 
 task :default => :spec
 
@@ -27,12 +27,9 @@ if RUBY_VERSION < '1.9.0'
 end
 
 # Gem tasks
-Gem::PackageTask.new(spec) do |pkg|
-  pkg.gem_spec = spec
-end
+Gem::PackageTask.new(GEM_SPEC).define
 
-desc "install the gem locally"
-task :install => [:package] do
-  sh %{gem install pkg/#{spec.name}-#{spec.version}}
+desc 'Install the gem locally'
+task :install => :package do
+  `gem install pkg/#{GEM_SPEC.name}-#{GEM_SPEC.version}`
 end
-

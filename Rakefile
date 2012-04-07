@@ -4,10 +4,6 @@ require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
 require 'bundler'
-
-require 'rake/rdoctask' unless RUBY_VERSION >= '1.9.0'
-require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
-
 require 'digest'
 
 Bundler::GemHelper.install_tasks

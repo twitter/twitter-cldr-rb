@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
-require File.expand_path(File.join(File.dirname(__FILE__), %w[.. lib twitter_cldr]))
-FIXTURE_DIR = File.expand_path(File.join(File.dirname(__FILE__), %w[fixtures]))
+require 'rspec'
+require 'twitter_cldr'
 
 class FastGettext
   class << self
@@ -15,7 +15,7 @@ class FastGettext
   end
 end
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   config.mock_with :rr
 
   config.before(:each) do

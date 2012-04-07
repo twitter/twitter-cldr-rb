@@ -3,12 +3,14 @@ require 'rubygems' unless ENV['NO_RUBYGEMS']
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
+require 'bundler'
+
 require 'rake/rdoctask' unless RUBY_VERSION >= '1.9.0'
 require 'rdoc/task' unless RUBY_VERSION <= '1.9.0'
 
 require 'digest'
 
-GEM_SPEC = Gem::Specification.load(File.join(File.dirname(__FILE__), 'twitter_cldr.gemspec'))
+Bundler::GemHelper.install_tasks
 
 task :default => :spec
 
@@ -24,12 +26,4 @@ if RUBY_VERSION < '1.9.0'
     t.pattern   = './spec/**/*_spec.rb'
     t.rcov_opts = %w(-T --sort coverage --exclude gems/,spec/)
   end
-end
-
-# Gem tasks
-Gem::PackageTask.new(GEM_SPEC).define
-
-desc 'Install the gem locally'
-task :install => :package do
-  `gem install pkg/#{GEM_SPEC.name}-#{GEM_SPEC.version}`
 end

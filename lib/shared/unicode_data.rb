@@ -13,12 +13,7 @@ module TwitterCldr
             range.cover? code_point.to_i(16)
           end 
 
-          #Grab the target yml
-          if target
-            return TwitterCldr.resources.resource_for("unicode_data", target.first)[code_point.to_sym]          
-          else
-            return nil        
-          end   
+          TwitterCldr.resources.resource_for("unicode_data", target.first)[code_point.to_sym] if target
         end     
       end
     end

@@ -12,11 +12,11 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.summary = "Text formatting using data from Unicode's Common Locale Data Repository (CLDR)."
 
-  s.add_development_dependency 'rspec', '~> 1.3.2'
-  s.add_development_dependency 'rr', '~> 1.0.4'
-  s.add_development_dependency 'rake', '~> 0.8.7'
+  s.add_development_dependency 'rspec', '~> 2.9.0'
+  s.add_development_dependency 'rr',    '~> 1.0.4'
+  s.add_development_dependency 'rake',  '~> 0.9.2'
+  s.add_development_dependency 'rcov' if RUBY_VERSION < '1.9.0'
 
   s.require_path = 'lib'
-  s.autorequire = ''
   s.files = %w(LICENSE README.md NOTICE Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
 end

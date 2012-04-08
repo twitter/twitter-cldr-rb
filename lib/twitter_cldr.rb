@@ -81,6 +81,7 @@ end
 # other shared libraries (most access shared resource data in resources/shared)
 require 'shared/currencies'
 require 'shared/languages'
+require 'shared/unicode_data'
 
 # all tokenizers
 require 'tokenizers/base'

@@ -4,7 +4,7 @@ module TwitterCldr
   module Shared
     class UnicodeData
       @@blocks = TwitterCldr.resources.resource_for("unicode_data", "blocks")
-      @@cache = { :data => {} }
+      @@cache = {}
 
       class << self
         def for_code_point(code_point)
@@ -15,8 +15,8 @@ module TwitterCldr
 
           if target
             target_name = target.first
-            @@cache[:data][target_name.to_sym] ||= TwitterCldr.resources.resource_for("unicode_data", target_name)
-            @@cache[:data][target_name.to_sym][code_point.to_sym]
+            @@cache[target_name.to_sym] ||= TwitterCldr.resources.resource_for("unicode_data", target_name)
+            @@cache[target_name.to_sym][code_point.to_sym]
           end
         end   
       end

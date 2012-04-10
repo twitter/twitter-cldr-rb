@@ -30,11 +30,6 @@ require 'ext/strings/symbol'
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'
 
-# renderers and compiler
-require 'js/compiler'
-require 'js/renderers/bundle'
-require 'js/renderers/calendars/datetime_renderer'
-
 
 module TwitterCldr
   DEFAULT_LOCALE = :en
@@ -85,6 +80,10 @@ module TwitterCldr
   def self.supported_locale?(locale)
     locale = locale.to_sym
     self.supported_locales.include?(locale) || self.supported_locales.include?(self.convert_locale(locale))
+  end
+
+  def self.require_js
+    require "js/lib/twitter_cldr_js"
   end
 end
 

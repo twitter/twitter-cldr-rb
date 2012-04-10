@@ -90,7 +90,8 @@ TwitterCldr.Formatters.DateTimeFormatter.prototype = {
   },
 
   quarter: function(date, pattern, length) {
-    quarter = (date.getMonth() - 1) / 3 + 1;
+		// the bitwise OR is used here to truncate the decimal produced by the / 3
+    quarter = ((date.getMonth() / 3) | 0) + 1;
     switch (length) {
 	    case 1:
 	      return quarter.toString();
@@ -213,15 +214,15 @@ TwitterCldr.Formatters.DateTimeFormatter.prototype = {
 	    case 'k': // [1-24]
 	      hour = (hour == 0 ? 24 : hour);
     }
-    return (length == 1 ? hour.toString() : ("0000" + hour.toString()).slice(-length));
+    return (length == 1 ? hour.toString() : ("000000" + hour.toString()).slice(-length));
   },
 
   minute: function(time, pattern, length) {
-    return length == 1 ? time.getMinutes().toString() : ("0000" + time.getMinutes().toString()).slice(-length);
+    return length == 1 ? time.getMinutes().toString() : ("000000" + time.getMinutes().toString()).slice(-length);
   },
 
   second: function(time, pattern, length) {
-    return length == 1 ? time.getSeconds().toString() : ("0000" + time.getSeconds().toString()).slice(-length);
+    return length == 1 ? time.getSeconds().toString() : ("000000" + time.getSeconds().toString()).slice(-length);
   },
 
   second_fraction: function(time, pattern, length) {

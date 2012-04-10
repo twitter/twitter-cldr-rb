@@ -34,3 +34,8 @@ task :install => [:package] do
   sh %{gem install pkg/#{spec.name}-#{spec.version}}
 end
 
+task :test_js do
+  require File.expand_path(File.join(File.dirname(__FILE__), %w[lib twitter_cldr]))
+  TwitterCldr.require_js
+  TwitterCldr::Js.run_tests
+end

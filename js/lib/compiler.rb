@@ -4,7 +4,7 @@ module TwitterCldr
       ALL_JS_FEATURES = [:calendars]
 
       def initialize(options = {})
-        @locales = options[:locales] || TwitterCldr.all_locales
+        @locales = options[:locales] || TwitterCldr.supported_locales
         @features = options[:features] || ALL_JS_FEATURES
       end
 

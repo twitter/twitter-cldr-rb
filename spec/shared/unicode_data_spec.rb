@@ -17,5 +17,19 @@ describe UnicodeData do
       UnicodeData.for_code_point('FFFFFFF').should be_nil
       UnicodeData.for_code_point('uytukhil123').should be_nil
     end
+
+    it "caches used blocks in memory" do
+      #Resource file must be fetched only once
+      mock(TwitterCldr.resources).resource_for.with_any_args.once {{ :"1F4A9" => [], :"1F4AA" => [] }}
+
+      #Fetch for the first time
+      UnicodeData.for_code_point('1F4AA')
+
+      #Load same code point again; should use cached value
+      UnicodeData.for_code_point('1F4AA')
+
+      #Load another code point from the same block; should use cached value
+      UnicodeData.for_code_point('1F4A9')
+    end
   end
 end

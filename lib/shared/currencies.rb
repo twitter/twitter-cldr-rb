@@ -3,7 +3,7 @@
 module TwitterCldr
   module Shared
     class Currencies
-      @@resource = TwitterCldr.resources.resource_for("shared", "currencies")[:shared][:currencies]
+      @@resource = TwitterCldr.get_resource("shared", "currencies")[:shared][:currencies]
 
       class << self
         def countries

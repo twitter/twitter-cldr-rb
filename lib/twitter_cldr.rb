@@ -44,6 +44,10 @@ module TwitterCldr
     @@resources
   end
 
+  def self.get_resource(locale, resource)
+    @@resources.resource_for(locale, resource)
+  end
+
   def self.get_locale
     if defined?(FastGettext)
       locale = FastGettext.locale

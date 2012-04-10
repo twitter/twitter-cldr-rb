@@ -52,4 +52,23 @@ describe TwitterCldr do
       end
     end
   end
+
+  describe '#resources' do
+    it 'returns @@resources' do
+      resources = TwitterCldr::Shared::Resources.new
+      TwitterCldr.send :class_variable_set, :@@resources, resources
+
+      TwitterCldr.resources.should == resources
+    end
+  end
+
+  describe '#get_resource' do
+    it 'delegates to @@resources' do
+      resources = TwitterCldr::Shared::Resources.new
+      mock(resources).resource_for('locale', 'resource') { 'result' }
+      TwitterCldr.send :class_variable_set, :@@resources, resources
+
+      TwitterCldr.get_resource('locale', 'resource').should == 'result'
+    end
+  end
 end

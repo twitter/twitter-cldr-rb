@@ -9,7 +9,7 @@ describe UnicodeData do
     it "should retrieve information for any valid code point" do
       data = UnicodeData.for_code_point('0301')
       data.should be_a(Array)
-      data.length.should be == 15
+      data.length.should == 15
     end
 
     it "should return nil for invalid code points" do
@@ -28,7 +28,7 @@ describe UnicodeData do
       }
 
       test_data.each_pair do |code_point, data|
-        UnicodeData.for_code_point(code_point).should be == data
+        UnicodeData.for_code_point(code_point).should == data
       end
     end
 

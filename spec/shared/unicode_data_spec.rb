@@ -33,11 +33,11 @@ describe UnicodeData do
     end
 
     it "caches used blocks in memory" do
-      #Resource file must be fetched only once
-      mock(TwitterCldr.resources).resource_for.with_any_args.once {{ :"1F4A9" => [], :"1F4AA" => [] }}
-
       #Fetch for the first time
       UnicodeData.for_code_point('1F4AA')
+
+      #Resource file mustn't be touched after the first fetch
+      mock.proxy(TwitterCldr.resources).resource_for.with_any_args.times(0)
 
       #Load same code point again; should use cached value
       UnicodeData.for_code_point('1F4AA')

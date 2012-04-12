@@ -4,20 +4,11 @@ module TwitterCldr
   module Shared
     class Resources
       def initialize
-        @resources_by_locale = {}
+        @resources_by_locale = Hash.new { |hash, key| hash[key] = Hash.new { |h, k| h[k] = data_for(key, k) } }
       end
 
       def resource_for(locale, resource)
-        locale = locale.to_sym
-        unless @resources_by_locale.include?(locale)
-          @resources_by_locale[locale] = {}
-        end
-
-        unless @resources_by_locale[locale].include?(resource)
-          @resources_by_locale[locale][resource] = data_for(locale, resource)
-        end
-
-        @resources_by_locale[locale][resource]
+        @resources_by_locale[locale.to_sym][resource]
       end
 
       protected
@@ -29,15 +20,10 @@ module TwitterCldr
       # adapted from: http://snippets.dzone.com/posts/show/11121 (first comment)
       def deep_symbolize_keys(arg)
         case arg
-          when Array then
+          when Array
             arg.map { |elem| deep_symbolize_keys(elem) }
-          when Hash then
-            Hash[
-              arg.map do |key, value|
-                k = key.is_a?(String) ? key.to_sym : key
-                v = deep_symbolize_keys(value)
-                [k, v]
-              end]
+          when Hash
+            Hash[arg.map { |k, v| [k.is_a?(String) ? k.to_sym : k, deep_symbolize_keys(v)] }]
           else
             arg
         end

@@ -27,7 +27,7 @@ module TwitterCldr
 
           def get_resource(locale)
             locale = TwitterCldr.convert_locale(locale)
-            eval(TwitterCldr.resources.resource_for(locale, "plurals")[locale])
+            eval(TwitterCldr.get_resource(locale, "plurals")[locale])
           end
         end
       end

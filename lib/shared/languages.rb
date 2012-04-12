@@ -42,7 +42,7 @@ module TwitterCldr
 
         def get_resource(locale)
           locale = TwitterCldr.convert_locale(locale)
-          TwitterCldr.resources.resource_for(locale, "languages")[locale]
+          TwitterCldr.get_resource(locale, "languages")[locale]
         end
       end
     end

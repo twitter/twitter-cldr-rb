@@ -1,4 +1,4 @@
-//= require '../build/bundle_en.js'
+//= require '../build/twitter_cldr_en.js'
 
 describe("DateTimeFormatter", function() {
 	beforeEach(function() {
@@ -288,11 +288,11 @@ describe("DateTimeFormatter", function() {
 	// eg. new Date(5, 0).getFullYear() == 1905
   describe("#year", function() {
     it("test: pattern y", function() {
-      expect(formatter.year(new Date(    5, 0, 1), 'y', 1)).toEqual('5');
-      expect(formatter.year(new Date(   45, 0, 1), 'y', 1)).toEqual('5');
-      expect(formatter.year(new Date(  345, 0, 1), 'y', 1)).toEqual('5');
-      expect(formatter.year(new Date( 2345, 0, 1), 'y', 1)).toEqual('5');
-      expect(formatter.year(new Date(12345, 0, 1), 'y', 1)).toEqual('5');
+      expect(formatter.year(new Date(    5, 0, 1), 'y', 1)).toEqual('1905');
+      expect(formatter.year(new Date(   45, 0, 1), 'y', 1)).toEqual('1945');
+      expect(formatter.year(new Date(  345, 0, 1), 'y', 1)).toEqual('345');
+      expect(formatter.year(new Date( 2345, 0, 1), 'y', 1)).toEqual('2345');
+      expect(formatter.year(new Date(12345, 0, 1), 'y', 1)).toEqual('12345');
     });
 
     it("test: pattern yy", function() {

@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
-require File.join(File.dirname(__FILE__), %w[.. spec_helper])
+require 'spec_helper'
+
 include TwitterCldr::Shared
 
 TEST_COUNTRIES = ["Australia", "Thailand", "Russia", "China", "Japan", "Peru", "South Africa", "India", "South Korea", "United Kingdom"]

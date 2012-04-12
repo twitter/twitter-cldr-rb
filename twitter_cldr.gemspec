@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'jasmine-headless-webkit', '~> 0.9.0.rc1'
   s.add_development_dependency 'therubyracer', '~> 0.9.10'
   s.add_development_dependency 'uglifier', '~> 1.2.4'
+  s.add_development_dependency 'rcov' if RUBY_VERSION < '1.9.0'
 
   s.require_path = 'lib'
-  s.autorequire = ''
   s.files = %w(LICENSE README.md NOTICE Rakefile) + Dir.glob("{lib,spec,resources}/**/*")
 end

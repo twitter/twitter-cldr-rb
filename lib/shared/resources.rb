@@ -4,7 +4,9 @@ module TwitterCldr
   module Shared
     class Resources
       def initialize
-        @resources_by_locale = Hash.new { |hash, key| hash[key] = Hash.new { |h, k| h[k] = data_for(key, k) } }
+        @resources_by_locale = Hash.new do |hash, locale|
+          hash[locale] = Hash.new { |h, resource| h[resource] = data_for(locale, resource) }
+        end
       end
 
       def resource_for(locale, resource)

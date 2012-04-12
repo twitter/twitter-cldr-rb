@@ -15,9 +15,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'mustache', '~> 0.99.4'
   s.add_dependency 'json', '~> 1.6.6'
 
-  s.add_development_dependency 'rspec', '~> 1.3.2'
+  s.add_development_dependency 'rspec', '~> 2.9.0'
   s.add_development_dependency 'rr', '~> 1.0.4'
-  s.add_development_dependency 'rake', '~> 0.8.7'
+  s.add_development_dependency 'rake', '~> 0.9.2'
   s.add_development_dependency 'jasmine-headless-webkit', '~> 0.9.0.rc1'
   s.add_development_dependency 'therubyracer', '~> 0.9.10'
   s.add_development_dependency 'uglifier', '~> 1.2.4'

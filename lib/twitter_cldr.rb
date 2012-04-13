@@ -117,3 +117,4 @@ require 'formatters/numbers/helpers/integer'
 
 # all normalizers
 require 'normalizers/base'
+require 'normalizers/canonical/nfd'

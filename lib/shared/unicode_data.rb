@@ -14,13 +14,13 @@ module TwitterCldr
 
           if target
             target_name = target.first
-            @@cache[target_name.to_sym] ||= TwitterCldr.resources.resource_for("unicode_data", target_name)
+            @@cache[target_name.to_sym] ||= TwitterCldr.get_resource("unicode_data", target_name)
             @@cache[target_name.to_sym][code_point.to_sym]
           end
         end
 
         def blocks
-          @blocks ||= TwitterCldr.resources.resource_for("unicode_data", "blocks")
+          @blocks ||= TwitterCldr.get_resource("unicode_data", "blocks")
         end   
       end
     end

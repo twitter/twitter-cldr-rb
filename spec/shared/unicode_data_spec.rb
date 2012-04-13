@@ -37,7 +37,7 @@ describe UnicodeData do
       UnicodeData.for_code_point('1F4AA')
 
       #Resource file mustn't be touched after the first fetch
-      mock.proxy(TwitterCldr.resources).resource_for.with_any_args.times(0)
+      mock.proxy(TwitterCldr).get_resource.with_any_args.times(0)
 
       #Load same code point again; should use cached value
       UnicodeData.for_code_point('1F4AA')

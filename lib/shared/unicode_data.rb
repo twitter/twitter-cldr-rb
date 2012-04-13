@@ -9,7 +9,7 @@ module TwitterCldr
           
           #Find the target block
           target = blocks.find do |block_name, range|
-            range.cover? code_point.to_i(16)
+            range.include? code_point.to_i(16)
           end 
 
           TwitterCldr.get_resource("unicode_data", target.first)[code_point.to_sym] if target

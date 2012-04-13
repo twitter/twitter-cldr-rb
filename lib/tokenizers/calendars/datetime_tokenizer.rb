@@ -32,7 +32,7 @@ module TwitterCldr
       protected
 
       def init_resources
-        @resource = TwitterCldr.resources.resource_for(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
       end
 
       def init_placeholders

@@ -7,6 +7,7 @@ $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 require 'yaml'
 require 'date'
 require 'time'
+require 'forwardable'
 
 require 'version'
 
@@ -26,6 +27,9 @@ require 'shared/resources'
 
 
 module TwitterCldr
+
+  extend SingleForwardable
+
   DEFAULT_LOCALE = :en
   RESOURCE_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), "resources")
 
@@ -35,6 +39,8 @@ module TwitterCldr
                          :'zh-tw' => :'zh-Hant' }
 
   @@resources = TwitterCldr::Shared::Resources.new
+
+  def_delegator :resources, :resource_for, :get_resource
 
   def self.get_resource_file(locale, resource)
     File.join(RESOURCE_DIR, self.convert_locale(locale).to_s, "#{resource}.yml")
@@ -75,6 +81,7 @@ module TwitterCldr
     locale = locale.to_sym
     self.supported_locales.include?(locale) || self.supported_locales.include?(self.convert_locale(locale))
   end
+
 end
 
 

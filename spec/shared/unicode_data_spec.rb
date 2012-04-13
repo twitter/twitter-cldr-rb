@@ -31,19 +31,5 @@ describe UnicodeData do
         UnicodeData.for_code_point(code_point).should == data
       end
     end
-
-    it "caches used blocks in memory" do
-      #Fetch for the first time
-      UnicodeData.for_code_point('1F4AA')
-
-      #Resource file mustn't be touched after the first fetch
-      dont_allow(TwitterCldr).get_resource.with_any_args
-
-      #Load same code point again; should use cached value
-      UnicodeData.for_code_point('1F4AA')
-
-      #Load another code point from the same block; should use cached value
-      UnicodeData.for_code_point('1F4A9')
-    end
   end
 end

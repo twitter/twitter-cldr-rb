@@ -5,18 +5,18 @@ require 'spec_helper'
 include TwitterCldr::Normalizers
 
 describe NFD do
-	describe "#decompose_code_point" do
+	describe "#decompose" do
 		it "does not decompose a character with no decomposition mapping" do
 			code_points = ["0EB8", "041F", "0066", "1F52C", "A2D6"]
 			code_points.each do |code_point|
-				NFD.decompose_code_point(code_point).should == code_point
+				NFD.decompose(code_point).should == code_point
 			end
 		end
 
 		it "does not decompose a character with compatibility decomposition mapping" do
 			code_points = ["A770", "FB02", "FC35", "FD20", "00BC"]
 			code_points.each do |code_point|				
-				NFD.decompose_code_point(code_point).should == code_point
+				NFD.decompose(code_point).should == code_point
 			end
 		end
 	end

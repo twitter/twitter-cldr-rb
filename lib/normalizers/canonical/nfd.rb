@@ -5,13 +5,13 @@ module TwitterCldr
     class NFD < Base
       class << self
         def normalize_code_points(code_points)          
-          code_points = code_points.map { |code_point| decompose_code_point(code_point) }.flatten
           reorder(code_points)        
+          code_points = code_points.map { |code_point| decompose code_point }.flatten
           code_points
         end
 
         #Recursively replace the given code point with the values in its Decomposition_Mapping property
-        def decompose_code_point(code_point)
+        def decompose(code_point)
           unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point) || Array.new(size=15, obj="")
           decomposition_mapping = unicode_data[5].split
 
@@ -20,7 +20,7 @@ module TwitterCldr
             code_point
           else
             decomposition_mapping.map do |decomposition_code_point|
-              decompose_code_point(decomposition_code_point)
+              decompose(decomposition_code_point)
             end.flatten
           end
         end

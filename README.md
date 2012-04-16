@@ -150,7 +150,7 @@ You can use the localize convenience method on language code symbols to get thei
 
 ```ruby
 :es.localize(:es).as_language_code                         # "español"
-:ru.localize(:es).as_langauge_code                         # "ruso"
+:ru.localize(:es).as_language_code                         # "ruso"
 ```
 
 Behind the scenes, these convenience methods are creating instances of LocalizedSymbol.  You can do the same thing if you're feeling adventurous:

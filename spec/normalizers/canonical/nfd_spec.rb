@@ -26,9 +26,8 @@ describe NFD do
       Encoding.default_external = Encoding::UTF_8
       normalization_test_file = File.join(File.dirname(File.dirname(__FILE__)), "NormalizationTest.txt")
       lines = IO.readlines(normalization_test_file).each do |line|
-        unless line =~ /(HANGUL|KOREAN)/ || line[0] =~ /(@|#)/ || line.empty?
-          c1, c2, c3, c4, c5 = line.split(';')[0...5].map { |cps| cps.split }         
-          #puts c1.inspect
+        unless line[0] =~ /(@|#)/ || line.empty?
+          c1, c2, c3, c4, c5 = line.split(';')[0...5].map { |cps| cps.split }
           NFD.normalize_code_points(c1).should == c3
           NFD.normalize_code_points(c2).should == c3
           NFD.normalize_code_points(c3).should == c3

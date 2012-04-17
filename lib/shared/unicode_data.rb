@@ -12,8 +12,25 @@ module TwitterCldr
             range.include? code_point.to_i(16)
           end 
 
-          TwitterCldr.get_resource("unicode_data", target.first)[code_point.to_sym] if target
-        end   
+          if target
+            block_data = TwitterCldr.get_resource("unicode_data", target.first)          
+            block_data[code_point.to_sym] or get_range_start(code_point, block_data)
+          end
+        end
+
+        private
+        # Check if block constitutes a range. The code point beginning a range will have a name enclosed in <>, ending with 'First'
+        # eg: <CJK Ideograph Extension A, First>
+        # http://unicode.org/reports/tr44/#Code_Point_Ranges
+        def get_range_start(code_point, block_data)
+          start_code_point = block_data.keys.sort_by { |key| key.to_s.to_i(16) }.first
+          start_data = block_data[start_code_point].clone
+          if start_data[1] =~ /<.*, First>/
+            start_data[0] = code_point
+            start_data[1] = start_data[1].sub(', First', '')
+            start_data
+          end
+        end
       end
     end
   end

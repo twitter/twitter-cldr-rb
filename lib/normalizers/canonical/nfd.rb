@@ -16,7 +16,7 @@ module TwitterCldr
           decomposition_mapping = unicode_data[5].split
 
           #Return the code point if compatibility mapping or if no mapping exists
-          if decomposition_mapping.first =~ /<.*>/ or decomposition_mapping.empty?
+          if decomposition_mapping.first =~ /<.*>/ || decomposition_mapping.empty?
             code_point
           else
             decomposition_mapping.map do |decomposition_code_point|
@@ -31,7 +31,7 @@ module TwitterCldr
             code_points.each_with_index do |cp, i|
               unless cp == code_points.last
                 ccc_a, ccc_b = combining_class_for(cp), combining_class_for(code_points[i+1])
-                if (ccc_a > ccc_b) and (ccc_b > 0)
+                if (ccc_a > ccc_b) && (ccc_b > 0)
                   code_points[i], code_points[i+1] = code_points[i+1], code_points[i]
                 end
               end

@@ -49,8 +49,8 @@ Fixnum, Bignum, and Float objects are supported.  Here are some examples:
 
 # currencies, default USD
 1337.localize(:es).to_currency.to_s                        # $1.337,00
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # €1.337,00
-1337.localize(:es).to_currency.to_s(:currency => "Peru")   # S/.1.337,00
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # € 1.337,00
+1337.localize(:es).to_currency.to_s(:currency => "Peru")   # S/. 1.337,00
 
 # percentages
 1337.localize(:es).to_percent.to_s                         # 1.337%
@@ -84,7 +84,7 @@ TwitterCldr::Shared::Currencies.currency_codes             # ["LTL", "PHP" ... ]
 TwitterCldr::Shared::Currencies.for_country("Canada")      # { :currency => "Dollar", :symbol => "$", :code => "CAD" }
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dollar", :symbol => "$", :code => "CAD" }
+TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dollar", :symbol => "$", :country => "Canada"}
 ```
 
 ### Dates and Times

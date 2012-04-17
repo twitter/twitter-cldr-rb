@@ -12,7 +12,7 @@ module TwitterCldr
 
         #Recursively replace the given code point with the values in its Decomposition_Mapping property
         def decompose(code_point)
-          unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point) || Array.new(size=15, obj="")
+          unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
           decomposition_mapping = unicode_data[5].split
 
           #Return the code point if compatibility mapping or if no mapping exists
@@ -40,7 +40,7 @@ module TwitterCldr
         end
 
         def combining_class_for(code_point)
-          (TwitterCldr::Shared::UnicodeData.for_code_point(code_point) || Array.new(size=15, obj=""))[3].to_i
+          TwitterCldr::Shared::UnicodeData.for_code_point(code_point)[3].to_i
         end
       end
     end

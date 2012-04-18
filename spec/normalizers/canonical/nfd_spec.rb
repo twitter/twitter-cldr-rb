@@ -21,7 +21,7 @@ describe NFD do
     end
   end
 
-  describe "#normalize" do
+  describe "#normalize_code_points" do
     it "passes all the tests in NormalizersTest.txt" do
       Encoding.default_external = Encoding::UTF_8
       normalization_test_file = File.join(File.dirname(File.dirname(__FILE__)), "NormalizationTest.txt")

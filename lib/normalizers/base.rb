@@ -10,10 +10,7 @@ module TwitterCldr
         def char_to_code_point(char)
           code_point = char.unpack('U*').first.to_s(16).upcase
           #Pad to atleast 4 digits
-          until code_point.length >= 4
-            code_point = "0" + code_point
-          end
-          code_point
+          code_point.rjust(4, '0')
         end
       end
     end

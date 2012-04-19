@@ -14,7 +14,7 @@ module TwitterCldr
 
           if target
             block_data = TwitterCldr.get_resource("unicode_data", target.first)          
-            block_data[code_point.to_sym] or get_range_start(code_point, block_data)
+            block_data.fetch(code_point.to_sym) { |code_point_sym| get_range_start(code_point_sym, block_data) }
           end
         end
 
@@ -26,7 +26,7 @@ module TwitterCldr
           start_code_point = block_data.keys.sort_by { |key| key.to_s.to_i(16) }.first
           start_data = block_data[start_code_point].clone
           if start_data[1] =~ /<.*, First>/
-            start_data[0] = code_point
+            start_data[0] = code_point.to_s
             start_data[1] = start_data[1].sub(', First', '')
             start_data
           end

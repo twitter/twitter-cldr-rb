@@ -5,6 +5,15 @@ require 'spec_helper'
 include TwitterCldr::Normalizers
 
 describe NFD do
+  describe "#normalize" do
+    NFD.normalize("庠摪饢鼢豦樄澸脧鱵礩翜艰").should == "庠摪饢鼢豦樄澸脧鱵礩翜艰"
+    NFD.normalize("䷙䷿").should == "䷙䷿"
+    NFD.normalize("ᎿᎲᎪᏨᎨᏪᎧᎵᏥ").should == "ᎿᎲᎪᏨᎨᏪᎧᎵᏥ"
+    NFD.normalize("ᆙᅓᆼᄋᇶ").should == "ᆙᅓᆼᄋᇶ"
+    NFD.normalize("…‾⁋ ⁒⁯‒′‾⁖").should == "…‾⁋ ⁒⁯‒′‾⁖"
+    NFD.normalize("ⶾⷕⶱⷀ").should == "ⶾⷕⶱⷀ"
+  end
+
   describe "#decompose" do
     it "does not decompose a character with no decomposition mapping" do
       code_points = ["0EB8", "041F", "0066", "1F52C", "A2D6"]

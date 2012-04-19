@@ -6,6 +6,17 @@ module TwitterCldr
       @@hangul_constants = {:SBase => "AC00".hex, :LBase => "1100".hex, :VBase => "1161".hex, :TBase => "11A7".hex,
                             :Scount => 11172, :LCount => 19, :VCount => 21, :TCount => 28, :NCount => 588, :Scount => 1172}
       class << self
+        def normalize(string)       
+          #Convert string to code points
+          code_points = string.split('').map { |char| char_to_code_point(char) }
+
+          #Normalize code points
+          normalized_code_points = normalize_code_points(code_points)
+
+          #Convert normalized code points back to string
+          normalized_code_points.map { |code_point| code_point_to_char(code_point) }.join
+        end
+
         def normalize_code_points(code_points)          
           code_points = code_points.map { |code_point| decompose code_point }.flatten
           reorder code_points

@@ -8,7 +8,7 @@ describe UnicodeData do
   describe "#for_code_point" do
     it "should retrieve information for any valid code point" do
       data = UnicodeData.for_code_point('0301')
-      data.should be_a(Array)
+      data.should be_a(Struct)
       data.length.should == 15
     end
 
@@ -26,9 +26,8 @@ describe UnicodeData do
         '2128' => ['2128','BLACK-LETTER CAPITAL Z','Lu','0','L','<font> 005A',"","","",'N','BLACK-LETTER Z',"","","",""],
         '1F241'=> ['1F241','TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09','So','0','L','<compat> 3014 4E09 3015',"","","",'N',"","","","",""]
       }
-
       test_data.each_pair do |code_point, data|
-        UnicodeData.for_code_point(code_point).should == data
+        UnicodeData.for_code_point(code_point).values.should == data
       end
     end
   end

@@ -26,6 +26,7 @@ module TwitterCldr
         #Recursively replace the given code point with the values in its Decomposition_Mapping property
         def decompose(code_point)
           unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
+          return code_point unless unicode_data
           decomposition_mapping = unicode_data[5].split
 
           # Special decomposition for Hangul syllables.

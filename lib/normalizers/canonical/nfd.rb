@@ -69,7 +69,11 @@ module TwitterCldr
         end
 
         def combining_class_for(code_point)
-          TwitterCldr::Shared::UnicodeData.for_code_point(code_point)[3].to_i
+          begin
+            unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)[3].to_i
+          rescue NoMethodError
+            0
+          end          
         end
       end
     end

@@ -21,6 +21,7 @@ require 'ext/numbers/bignum'
 require 'ext/numbers/fixnum'
 require 'ext/numbers/float'
 require 'ext/strings/symbol'
+require 'ext/strings/string'
 
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'

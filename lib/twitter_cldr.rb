@@ -108,6 +108,7 @@ require 'formatters/numbers/number_formatter'
 require 'formatters/numbers/decimal_formatter'
 require 'formatters/numbers/currency_formatter'
 require 'formatters/numbers/percent_formatter'
+require 'formatters/plurals/plural_formatter'
 require 'formatters/plurals/rules'
 
 # formatter helpers

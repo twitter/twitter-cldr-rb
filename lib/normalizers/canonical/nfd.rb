@@ -58,7 +58,7 @@ module TwitterCldr
         def reorder(code_points)
           (code_points.size).times do
             code_points.each_with_index do |cp, i|
-              unless cp == code_points.last
+              unless i == (code_points.size - 1)
                 ccc_a, ccc_b = combining_class_for(cp), combining_class_for(code_points[i+1])
                 if (ccc_a > ccc_b) && (ccc_b > 0)
                   code_points[i], code_points[i+1] = code_points[i+1], code_points[i]

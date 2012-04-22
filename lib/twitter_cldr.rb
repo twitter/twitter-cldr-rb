@@ -23,6 +23,9 @@ require 'ext/numbers/float'
 require 'ext/strings/symbol'
 require 'ext/strings/string'
 
+# strings interpolation
+require 'interpolation'
+
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'
 

@@ -10,6 +10,7 @@
 
 # KeyError is raised during interpolation when there is a placeholder that doesn't have corresponding key in the
 # interpolation hash. KeyError is defined in 1.9. We define it for prior versions of Ruby to have the same behavior.
+#
 class KeyError < IndexError
   def initialize(message = nil)
     super(message || 'key not found')
@@ -31,6 +32,45 @@ module TwitterCldr
 
   class << self
 
+    # Uses +string+ as a format specification and returns the result of applying it to +args+.
+    #
+    # There are three ways to use it:
+    #
+    # * Using a single argument or Array of arguments.
+    #
+    #   This is the default behaviour of the String#% method. See Kernel#sprintf for more details about the format
+    #   specification.
+    #
+    #   Example:
+    #
+    #     TwitterCldr.interpolate('%d %s', [1, 'message'])
+    #     # => "1 message"
+    #
+    # * Using a Hash as an argument and unformatted, named placeholders (Ruby 1.9 syntax).
+    #
+    #   When you pass a Hash as an argument and specify placeholders with %{foo} it will interpret the hash values as
+    #   named arguments.
+    #
+    #   Example:
+    #
+    #     TwitterCldr.interpolate('%{firstname}, %{lastname}', :firstname => 'Masao', :lastname => 'Mutoh')
+    #     # => "Masao Mutoh"
+    #
+    # * Using a Hash as an argument and formatted, named placeholders (Ruby 1.9 syntax).
+    #
+    #   When you pass a Hash as an argument and specify placeholders with %<foo>d  it will interpret the hash values
+    #   as named arguments and format the value according to the formatting instruction appended to the closing >.
+    #
+    #   Example:
+    #
+    #     TwitterCldr.interpolate('%<integer>d, %<float>.1f', :integer => 10, :float => 43.4)
+    #     # => "10, 43.3"
+    #
+    # An exception can be thrown in two cases when Ruby 1.9 interpolation syntax is used:
+    #
+    # * ArgumentError is thrown if Ruby 1.9. interpolation syntax is used in +string+, but +args+ is not a Hash;
+    # * KeyError is thrown if the value for one of the placeholders in +string+ is missing in +args+ hash.
+    #
     def interpolate(string, args)
       string =~ HASH_INTERPOLATION_REGEXP ? interpolate_hash(string, args) : interpolate_value_or_array(string, args)
     end

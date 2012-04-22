@@ -8,6 +8,13 @@ end
 
 module TwitterCldr
   class LocalizedString < LocalizedObject
+
+    # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
+    # +TwitterCldr.interpolate+ method for interpolation syntax).
+    #
+    # If +args+ is a Hash than pluralization is performed before interpolation (see +PluralFormatter+ class for
+    # pluralization specification).
+    #
     def %(args)
       pluralized = args.is_a?(Hash) ? @formatter.format(@base_obj, args) : @base_obj
       TwitterCldr.interpolate(pluralized, args)
@@ -16,5 +23,6 @@ module TwitterCldr
     def formatter_const
       TwitterCldr::Formatters::PluralFormatter
     end
+
   end
 end

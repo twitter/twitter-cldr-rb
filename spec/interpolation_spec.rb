@@ -1,5 +1,11 @@
 # encoding: UTF-8
 
+# Some test cases were taken from i18n (https://github.com/svenfuchs/i18n/blob/89ea337f48562370988421e50caa7c2fe89452c7/test/core_ext/string/interpolate_test.rb)
+# and gettext (https://github.com/mutoh/gettext/blob/11b8c1525ba9f00afb1942f7ebf34bec12f7558b/test/test_string.rb) gems.
+#
+# See NOTICE file for corresponding license agreements.
+
+
 require 'spec_helper'
 
 describe TwitterCldr do

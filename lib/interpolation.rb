@@ -1,5 +1,13 @@
 # encoding: UTF-8
 
+# The implementation of the TwitterCldr.interpolate method that backports String interpolation capabilities
+# (originally implemented in String#% method) from Ruby 1.9 to Ruby 1.8 is heavily influenced by the
+# implementation of the same feature in i18n (https://github.com/svenfuchs/i18n/blob/89ea337f48562370988421e50caa7c2fe89452c7/lib/i18n/core_ext/string/interpolate.rb)
+# and gettext (https://github.com/mutoh/gettext/blob/11b8c1525ba9f00afb1942f7ebf34bec12f7558b/lib/gettext/core_ext/string.rb) gems.
+#
+# See NOTICE file for corresponding license agreements.
+
+
 # KeyError is raised during interpolation when there is a placeholder that doesn't have corresponding key in the
 # interpolation hash. KeyError is defined in 1.9. We define it for prior versions of Ruby to have the same behavior.
 class KeyError < IndexError

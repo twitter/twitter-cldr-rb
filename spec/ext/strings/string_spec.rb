@@ -25,94 +25,51 @@ end
 
 describe LocalizedString do
   describe '#%' do
-    context 'argument is not a Hash' do
-      it 'formats numbers' do
-        (localized('"% 04d" is a number') % 12).should == '" 012" is a number'
+    context 'when argument is not a Hash' do
+      it 'performs regular formatting of values' do
+        ('%d is an integer'.localize % 3.14).should == '3 is an integer'
       end
 
-      it 'formats a list of arguments' do
-        (localized('numbers: "%4d", "%5.2f"') % [42, 3.1415]).should == 'numbers: "  42", " 3.14"'
+      it 'performs regular formatting of arrays' do
+        ('"% 04d" is a %s'.localize % [12, 'number']).should == '" 012" is a number'
       end
 
-      it 'formats strings' do
-        (localized('hello, %s') % ['world']).should == 'hello, world'
+      it 'ignores pluralization placeholders' do
+        ('%s: %{horses_count:horses}'.localize % 'total').should == 'total: %{horses_count:horses}'
       end
 
-      it 'formats positional arguments' do
-        (localized('%1$*2$s %2$d %1$s') % ['hello', 8]).should == '   hello 8 hello'
+      it 'raises ArgumentError when the string contains named placeholder' do
+        lambda { '%{msg}: %{horses_count:horses}'.localize % 'total' }.should raise_error(ArgumentError)
       end
     end
 
-    context 'argument is a Hash' do
-      let(:horses)        { { :one => 'is 1 horse', :other => 'are %{horses_count} horses' } }
-      let(:pigs)          { { :one => 'is 1 pig',   :other => 'are %{pigs_count} pigs'     } }
-      let(:simple_horses) { { :one => '1 horse',    :other => '%{horses_count} horses'     } }
-      let(:to_be)         { { :one => 'is',         :other => 'are'                        } }
+    context 'when argument is a Hash' do
+      let(:horses) { { :one => '1 horse', :other => '%{horses_count} horses' } }
 
       before(:each) do
         stub(Formatters::Plurals::Rules).rule_for { |n, _| n == 1 ? :one : :other  }
       end
 
-      context 'when there is nothing to pluralize' do
-        it "doesn't change the string if no interpolation found" do
-          string = 'no interpolation here'
-          (localized(string) % {}).should == string
-        end
-
-        it "doesn't change the string if a number is not provided" do
-          string = 'there %{horses_count:horses}'
-          (localized(string) % { :horses => horses }).should == string
-        end
-
-        it "doesn't change the string if a patterns hash is not provided" do
-          string = 'there %{horses_count:horses}'
-          (localized(string) % { :horses_count => 1 }).should == string
-        end
+      it 'interpolates named placeholders' do
+        ('%<num>.2f is a %{noun}'.localize % { :num => 3.1415, :noun => 'number' }).should == '3.14 is a number'
       end
 
-      context 'when something should be pluralized' do
-        it 'pluralizes with a simple replacement' do
-          string = 'there %{horses_count:horses}'
-          replacements = { :horses_count => 1, :horses => horses }
+      it 'performs pluralization' do
+        ('%{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses }).should == '2 horses'
+      end
 
-          (localized(string) % replacements).should == 'there is 1 horse'
-        end
+      it 'performs both formatting and pluralization simultaneously' do
+        ('%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses, :msg => 'result' }).should == 'result: 2 horses'
+      end
 
-        it 'supports multiple patterns sets for the same number' do
-          string = 'there %{horses_count:to_be} %{horses_count:horses}'
-          replacements = { :horses_count => 1, :horses => simple_horses, :to_be => to_be }
+      it 'leaves pluralization placeholders unchanged if not enough information given' do
+        ('%{msg}: %{horses_count:horses}'.localize % { :msg => 'no pluralization' } ).should == 'no pluralization: %{horses_count:horses}'
+      end
 
-          (localized(string) % replacements).should == 'there is 1 horse'
-        end
-
-        it 'pluralizes multiple entries' do
-          string = 'there %{pigs_count:pigs} and %{horses_count:horses}'
-          replacements = { :pigs_count => 1, :pigs => pigs, :horses_count => 2, :horses => simple_horses }
-
-          (localized(string) % replacements).should == 'there is 1 pig and 2 horses'
-        end
-
-        it 'substitutes the number for a placeholder in the pattern' do
-          string = 'there %{horses_count:horses}'
-          replacements = { :horses_count => 3, :horses => horses }
-
-          (localized(string) % replacements).should == 'there are 3 horses'
-        end
-
-        it 'substitutes the number for multiple placeholders in the pattern' do
-          string = 'there are %{horses_count:horses}'
-          replacements = {
-              :horses_count => 3,
-              :horses       => { :other => '%{horses_count}, seriously %{horses_count}, horses' }
-          }
-
-          (localized(string) % replacements).should == 'there are 3, seriously 3, horses'
-        end
+      it 'raises KeyError when value for a named placeholder is missing' do
+        lambda { '%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses } }.should raise_error(KeyError)
       end
     end
   end
 
-  def localized(str)
-    LocalizedString.new(str, :en)
-  end
 end

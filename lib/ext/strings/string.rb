@@ -9,11 +9,8 @@ end
 module TwitterCldr
   class LocalizedString < LocalizedObject
     def %(args)
-      if args.is_a?(Hash)
-        @formatter.format(@base_obj, args)
-      else
-        @base_obj % args
-      end
+      pluralized = args.is_a?(Hash) ? @formatter.format(@base_obj, args) : @base_obj
+      TwitterCldr.interpolate(pluralized, args)
     end
 
     def formatter_const

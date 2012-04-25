@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 $:.push(File.dirname(__FILE__))
 
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'

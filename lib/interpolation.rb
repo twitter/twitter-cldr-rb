@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 # The implementation of the TwitterCldr.interpolate method that backports String interpolation capabilities
 # (originally implemented in String#% method) from Ruby 1.9 to Ruby 1.8 is heavily influenced by the
 # implementation of the same feature in i18n (https://github.com/svenfuchs/i18n/blob/89ea337f48562370988421e50caa7c2fe89452c7/lib/i18n/core_ext/string/interpolate.rb)

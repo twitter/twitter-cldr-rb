@@ -2,6 +2,7 @@ require 'rubygems' unless ENV['NO_RUBYGEMS']
 
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
+require File.join(File.dirname(__FILE__), "lib/version")
 
 require 'bundler'
 require 'digest'
@@ -21,5 +22,13 @@ if RUBY_VERSION < '1.9.0'
     t.rcov      = true
     t.pattern   = './spec/**/*_spec.rb'
     t.rcov_opts = %w(-T --sort coverage --exclude gems/,spec/)
+  end
+end
+
+desc 'Build the gem'
+task 'gem' do
+  Dir.chdir(File.dirname(__FILE__)) do
+    `gem build ./twitter_cldr.gemspec`
+    `mv ./twitter_cldr-#{TwitterCldr::VERSION}.gem ./pkg`
   end
 end

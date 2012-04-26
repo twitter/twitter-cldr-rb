@@ -3,11 +3,16 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'json'
+
 module TwitterCldr
   module Formatters
     class PluralFormatter < Base
 
-      PLURAL_INTERPOLATION_RE  = /%\{(\w+?):(\w+?)\}/
+      PLURALIZATION_REGEXP = Regexp.union(
+          /%\{(\w+?):(\w+?)\}/,   # regular pluralization pattern
+          /%<(\{.*?\})>/          # inline pluralization pattern
+      )
 
       attr_accessor :locale
 
@@ -60,19 +65,44 @@ module TwitterCldr
       #   # => "%{count:horses}"
       #
       def format(string, replacements)
-        string.gsub(PLURAL_INTERPOLATION_RE) do |match|
-          number   = replacements[$1.to_sym]
-          patterns = replacements[$2.to_sym]
-          pattern  = number && patterns && patterns[pluralization_rule(number)]
+        string.gsub(PLURALIZATION_REGEXP) do |match|
+          number_placeholder, patterns = if $3
+            parse_inline_pluralization($3)
+          else
+            [$1, replacements[$2.to_sym]]
+          end
 
-          pattern && interpolate_pattern(pattern, $1, number) || match
+          number  = replacements[number_placeholder.to_sym]
+          pattern = pluralization_pattern(patterns, number)
+
+          pattern && interpolate_pattern(pattern, number_placeholder, number) || match
         end
       end
 
       private
 
+      def parse_inline_pluralization(captured_group)
+        pluralization_hash = JSON.parse(captured_group)
+
+        if pluralization_hash.is_a?(Hash) && pluralization_hash.size == 1
+          pluralization_hash.first
+        else
+          raise ArguementError.new('expected a Hash with a single key')
+        end
+      end
+
       def pluralization_rule(number)
         TwitterCldr::Formatters::Plurals::Rules.rule_for(number, locale)
+      end
+
+      def pluralization_pattern(patterns, number)
+        return unless number && patterns
+
+        if patterns.is_a?(Hash)
+          TwitterCldr::Utils.deep_symbolize_keys(patterns)[pluralization_rule(number)]
+        else
+          raise ArgumentError.new('expected patterns to be a Hash')
+        end
       end
 
       def interpolate_pattern(pattern, placeholder, number)

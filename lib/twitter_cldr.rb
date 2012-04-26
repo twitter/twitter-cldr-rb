@@ -28,9 +28,6 @@ require 'ext/strings/string'
 
 require 'utils'
 
-# strings interpolation
-require 'interpolation'
-
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'
 

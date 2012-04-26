@@ -82,7 +82,7 @@ module TwitterCldr
       private
 
       def interpolate_hash(string, args)
-        raise ArgumentError unless args.is_a?(Hash)
+        raise ArgumentError.new('expected a Hash') unless args.is_a?(Hash)
 
         string.gsub(HASH_INTERPOLATION_WITH_ESCAPE_REGEXP) do |match|
           if match == '%%'

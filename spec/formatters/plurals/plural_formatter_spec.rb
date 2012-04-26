@@ -33,7 +33,7 @@ describe PluralFormatter do
     let(:simple_horses_string) { '%<{ "horses_count": {"one": "1 horse", "other": "%{horses_count} horses"} }>' }
 
     let(:to_be) { { :one => 'is',       :other => 'are' } }
-    let(:pigs)  { { :one => 'is 1 pig', :other => 'are %{pigs_count} pigs' } }
+    let(:yaks)  { { :one => 'is 1 yak', :other => 'are %{yaks_count} yaks' } }
 
     context 'when there is nothing to pluralize' do
       it "doesn't change the string if no interpolation found" do
@@ -77,9 +77,9 @@ describe PluralFormatter do
 
         it 'pluralizes multiple entries' do
           subject.format(
-              'there %{pigs_count:pigs} and %{horses_count:horses}',
-              { :pigs_count => 1, :pigs => pigs, :horses_count => 2, :horses => simple_horses }
-          ).should == 'there is 1 pig and 2 horses'
+              'there %{yaks_count:yaks} and %{horses_count:horses}',
+              { :yaks_count => 1, :yaks => yaks, :horses_count => 2, :horses => simple_horses }
+          ).should == 'there is 1 yak and 2 horses'
         end
 
         it 'substitutes the number for a placeholder in the pattern' do
@@ -115,9 +115,9 @@ describe PluralFormatter do
 
         it 'pluralizes multiple entries' do
           subject.format(
-              %Q(there %<{ "pigs_count": {"one": "is 1 pig", "other": "are %{pigs_count} pigs"} }> and #{simple_horses_string}),
-              { :pigs_count => 1, :horses_count => 2 }
-          ).should == 'there is 1 pig and 2 horses'
+              %Q(there %<{ "yaks_count": {"one": "is 1 yak", "other": "are %{yaks_count} yaks"} }> and #{simple_horses_string}),
+              { :yaks_count => 1, :horses_count => 2 }
+          ).should == 'there is 1 yak and 2 horses'
         end
 
         it 'substitutes the number for a placeholder in the pattern' do

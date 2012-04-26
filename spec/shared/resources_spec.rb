@@ -30,21 +30,4 @@ describe Resources do
       @resource.resource_for("de", "racehorse").should == { :key => "value" }
     end
   end
-
-  describe "#deep_symbolize_keys" do
-    it "should work with a regular hash" do
-      result = @resource.send(:deep_symbolize_keys, { "twitter" => "rocks", "my" => "socks" })
-      result.should == { :twitter => "rocks", :my => "socks"}
-    end
-
-    it "should work with nested hashes" do
-      result = @resource.send(:deep_symbolize_keys, { "twitter" => { "rocks" => "my socks" } })
-      result.should == { :twitter => { :rocks => "my socks" } }
-    end
-
-    it "should work with nested hashes and arrays" do
-      result = @resource.send(:deep_symbolize_keys, { "twitter" => { "rocks_my" => [{ "socks" => "and mind" }, { "hard" => "core" }] } })
-      result.should == { :twitter => { :rocks_my => [{ :socks => "and mind" }, { :hard => "core" }] } }
-    end
-  end
 end

@@ -26,6 +26,8 @@ require 'ext/numbers/float'
 require 'ext/strings/symbol'
 require 'ext/strings/string'
 
+require 'utils'
+
 # strings interpolation
 require 'interpolation'
 

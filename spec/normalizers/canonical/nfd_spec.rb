@@ -32,16 +32,17 @@ describe NFD do
 
   describe "#normalize_code_points" do
     it "passes all the tests in NormalizersTest.txt" do
-      Encoding.default_external = Encoding::UTF_8
       normalization_test_file = File.join(File.dirname(File.dirname(__FILE__)), "NormalizationTest.txt")
-      lines = IO.readlines(normalization_test_file).each do |line|
-        unless line[0] =~ /(@|#)/ || line.empty?
-          c1, c2, c3, c4, c5 = line.split(';')[0...5].map { |cps| cps.split }
-          NFD.normalize_code_points(c1).should == c3
-          NFD.normalize_code_points(c2).should == c3
-          NFD.normalize_code_points(c3).should == c3
-          NFD.normalize_code_points(c4).should == c5
-          NFD.normalize_code_points(c5).should == c5
+      File.open(normalization_test_file, "r:UTF-8") do |file|
+        while line = file.gets
+          unless line =~ /(@|#)/ || line.empty?
+            c1, c2, c3, c4, c5 = line.split(';')[0...5].map { |cps| cps.split }
+            NFD.normalize_code_points(c1).should == c3
+            NFD.normalize_code_points(c2).should == c3
+            NFD.normalize_code_points(c3).should == c3
+            NFD.normalize_code_points(c4).should == c5
+            NFD.normalize_code_points(c5).should == c5
+          end
         end
       end
     end

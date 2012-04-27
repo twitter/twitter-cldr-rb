@@ -38,5 +38,16 @@ describe DateTokenizer do
                    { :value => "EEEE", :type => :pattern }]
       check_token_list(got, expected)
     end
+
+    it "should tokenize composites correctly" do
+      tokenizer = DateTokenizer.new(:locale => :th, :calendar_type => :buddhist)
+      got = tokenizer.tokens(:type => :long)
+      expected  = [{ :value => "d", :type => :pattern },
+                   { :value => " ", :type => :plaintext },
+                   { :value => "MMMM", :type => :pattern },
+                   { :value => " พ.ศ. ", :type => :plaintext },
+                   { :to_s => "y + 543", :type => :composite }]
+      check_token_list(got, expected)
+    end
   end
 end

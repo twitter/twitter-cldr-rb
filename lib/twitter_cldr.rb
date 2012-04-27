@@ -38,6 +38,7 @@ module TwitterCldr
   extend SingleForwardable
 
   DEFAULT_LOCALE = :en
+  DEFAULT_CALENDAR_TYPE = :gregorian
   RESOURCE_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), "resources")
 
   # maps twitter locales to cldr locales
@@ -105,6 +106,7 @@ require 'shared/unicode_data'
 require 'tokenizers/base'
 require 'tokenizers/key_path'
 require 'tokenizers/token'
+require 'tokenizers/composite_token'
 require 'tokenizers/calendars/datetime_tokenizer'
 require 'tokenizers/calendars/date_tokenizer'
 require 'tokenizers/calendars/time_tokenizer'

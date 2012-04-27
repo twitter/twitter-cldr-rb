@@ -14,11 +14,43 @@ describe Time do
       loc_time = time.localize
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :en
+      loc_time.calendar_type.should == :gregorian
       loc_time.base_obj.should == time
 
       loc_time = Time.now.localize(:it)
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :it
+    end
+
+    it "should localize with the given calendar" do
+      time = Time.now
+      loc_time = time.localize(:th, :calendar_type => :buddhist)
+      loc_time.should be_a(LocalizedTime)
+      loc_time.locale.should == :th
+      loc_time.calendar_type.should == :buddhist
+      loc_time.base_obj.should == time
+    end
+
+    it "should forward calendar_type" do
+      time = Time.now
+      loc_time = time.localize(:th, :calendar_type => :buddhist)
+      loc_time.to_datetime(Date.today).calendar_type.should == :buddhist
+    end
+  end
+
+  describe "stringify" do
+    it "should stringify with a default calendar" do
+      #Time.now.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
+      Time.now.localize(:th).to_long_s
+      Time.now.localize(:th).to_medium_s
+      Time.now.localize(:th).to_short_s
+    end
+
+   it "should stringify with buddhist calendar" do
+      #Time.now.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
+      Time.now.localize(:th, :calendar_type => :buddhist).to_long_s
+      Time.now.localize(:th, :calendar_type => :buddhist).to_medium_s
+      Time.now.localize(:th, :calendar_type => :buddhist).to_short_s
     end
   end
 end

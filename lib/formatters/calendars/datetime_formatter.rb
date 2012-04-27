@@ -41,7 +41,7 @@ module TwitterCldr
       }
 
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::DateTimeTokenizer.new(:locale => extract_locale(options))
+        @tokenizer = TwitterCldr::Tokenizers::DateTimeTokenizer.new(:locale => extract_locale(options), :calendar_type => options[:calendar_type])
       end
 
       def result_for_token(token, index, date)

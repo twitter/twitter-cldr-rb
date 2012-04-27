@@ -24,11 +24,3 @@ if RUBY_VERSION < '1.9.0'
     t.rcov_opts = %w(-T --sort coverage --exclude gems/,spec/)
   end
 end
-
-desc 'Build the gem'
-task 'gem' do
-  Dir.chdir(File.dirname(__FILE__)) do
-    `gem build ./twitter_cldr.gemspec`
-    `mv ./twitter_cldr-#{TwitterCldr::VERSION}.gem ./pkg`
-  end
-end

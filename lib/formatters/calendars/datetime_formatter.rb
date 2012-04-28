@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 # This class has been adapted from Sven Fuch's ruby-cldr gem
 # See LICENSE for the accompanying license for his contributions
 

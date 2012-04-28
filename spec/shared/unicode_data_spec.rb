@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 require 'spec_helper'
 
 include TwitterCldr::Shared
@@ -28,6 +31,20 @@ describe UnicodeData do
       }
       test_data.each_pair do |code_point, data|
         UnicodeData.for_code_point(code_point).values.should == data
+      end
+    end
+
+    it "fetches valid information for a code point within a range" do
+      test_data = {
+        '4E11' => ["4E11","<CJK Ideograph>","Lo","0","L","","","","","N","","","","",""],
+        'AC55' => ["AC55","<Hangul Syllable>","Lo","0","L","","","","","N","","","","",""],
+        'D7A1' => ["D7A1","<Hangul Syllable>","Lo","0","L","","","","","N","","","","",""],
+        'DAAA' => ["DAAA","<Non Private Use High Surrogate>","Cs","0","L","","","","","N","","","","",""],
+        'F8FE' => ["F8FE","<Private Use>","Co","0","L","","","","","N","","","","",""]
+      }
+
+      test_data.each_pair do |code_point, data|
+        UnicodeData.for_code_point(code_point).should == data
       end
     end
   end

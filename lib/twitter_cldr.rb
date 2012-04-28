@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 $:.push(File.dirname(__FILE__))
 
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
@@ -21,6 +24,10 @@ require 'ext/numbers/bignum'
 require 'ext/numbers/fixnum'
 require 'ext/numbers/float'
 require 'ext/strings/symbol'
+require 'ext/strings/string'
+
+# strings interpolation
+require 'interpolation'
 
 # manages access to CLDR resources (yaml files in resources dir)
 require 'shared/resources'
@@ -42,44 +49,48 @@ module TwitterCldr
 
   def_delegator :resources, :resource_for, :get_resource
 
-  def self.get_resource_file(locale, resource)
-    File.join(RESOURCE_DIR, self.convert_locale(locale).to_s, "#{resource}.yml")
-  end
+  class << self
 
-  def self.resources
-    @@resources
-  end
-
-  def self.get_locale
-    if defined?(FastGettext)
-      locale = FastGettext.locale
-      locale = DEFAULT_LOCALE if locale.to_s.empty?
-    else
-      locale = DEFAULT_LOCALE
+    def get_resource_file(locale, resource)
+      File.join(RESOURCE_DIR, convert_locale(locale).to_s, "#{resource}.yml")
     end
 
-    (self.supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
-  end
-
-  def self.convert_locale(locale)
-    locale = locale.to_sym
-    TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
-  end
-
-  def self.supported_locales
-    unless defined?(@@supported_locales)
-      rejectable = [:shared]
-      @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
-        File.basename(file).to_sym
-      end.reject { |file| rejectable.include?(file) }
+    def resources
+      @@resources
     end
 
-    @@supported_locales
-  end
+    def get_locale
+      if defined?(FastGettext)
+        locale = FastGettext.locale
+        locale = DEFAULT_LOCALE if locale.to_s.empty?
+      else
+        locale = DEFAULT_LOCALE
+      end
 
-  def self.supported_locale?(locale)
-    locale = locale.to_sym
-    self.supported_locales.include?(locale) || self.supported_locales.include?(self.convert_locale(locale))
+      (supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
+    end
+
+    def convert_locale(locale)
+      locale = locale.to_sym
+      TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+    end
+
+    def supported_locales
+      unless defined?(@@supported_locales)
+        rejectable = [:shared]
+        @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
+          File.basename(file).to_sym
+        end.reject { |file| rejectable.include?(file) }
+      end
+
+      @@supported_locales
+    end
+
+    def supported_locale?(locale)
+      locale = locale.to_sym
+      supported_locales.include?(locale) || supported_locales.include?(convert_locale(locale))
+    end
+
   end
 
 end
@@ -108,9 +119,14 @@ require 'formatters/numbers/number_formatter'
 require 'formatters/numbers/decimal_formatter'
 require 'formatters/numbers/currency_formatter'
 require 'formatters/numbers/percent_formatter'
+require 'formatters/plurals/plural_formatter'
 require 'formatters/plurals/rules'
 
 # formatter helpers
 require 'formatters/numbers/helpers/base'
 require 'formatters/numbers/helpers/fraction'
 require 'formatters/numbers/helpers/integer'
+
+# all normalizers
+require 'normalizers/base'
+require 'normalizers/canonical/nfd'

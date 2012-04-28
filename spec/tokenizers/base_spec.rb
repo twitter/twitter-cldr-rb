@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 require File.join(File.dirname(File.dirname(__FILE__)), "spec_helper")
 include TwitterCldr::Tokenizers
 

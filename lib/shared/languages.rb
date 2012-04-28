@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 module TwitterCldr
   module Shared
     class Languages
@@ -42,7 +45,7 @@ module TwitterCldr
 
         def get_resource(locale)
           locale = TwitterCldr.convert_locale(locale)
-          TwitterCldr.resources.resource_for(locale, "languages")[locale]
+          TwitterCldr.get_resource(locale, "languages")[locale]
         end
       end
     end

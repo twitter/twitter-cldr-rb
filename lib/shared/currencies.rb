@@ -1,9 +1,12 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 module TwitterCldr
   module Shared
     class Currencies
-      @@resource = TwitterCldr.resources.resource_for("shared", "currencies")[:shared][:currencies]
+      @@resource = TwitterCldr.get_resource("shared", "currencies")[:shared][:currencies]
 
       class << self
         def countries

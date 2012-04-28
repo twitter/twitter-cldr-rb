@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
@@ -40,7 +43,7 @@ module TwitterCldr
       end
 
       def init_resources
-        @resource = TwitterCldr.resources.resource_for(@locale, "numbers")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_resource(@locale, "numbers")[TwitterCldr.convert_locale(@locale)]
       end
 
       def pattern_for(resource)

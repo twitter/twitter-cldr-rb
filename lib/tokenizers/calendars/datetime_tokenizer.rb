@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 module TwitterCldr
   module Tokenizers
     class DateTimeTokenizer < Base
@@ -32,7 +35,7 @@ module TwitterCldr
       protected
 
       def init_resources
-        @resource = TwitterCldr.resources.resource_for(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
       end
 
       def init_placeholders

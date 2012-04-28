@@ -1,5 +1,8 @@
 # encoding: UTF-8
 
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 require 'spec_helper'
 
 describe TwitterCldr do
@@ -50,6 +53,25 @@ describe TwitterCldr do
         mock(FastGettext).locale { "bogus" }
         TwitterCldr.get_locale.should == TwitterCldr::DEFAULT_LOCALE
       end
+    end
+  end
+
+  describe '#resources' do
+    it 'returns @@resources' do
+      resources = TwitterCldr::Shared::Resources.new
+      TwitterCldr.send :class_variable_set, :@@resources, resources
+
+      TwitterCldr.resources.should == resources
+    end
+  end
+
+  describe '#get_resource' do
+    it 'delegates to @@resources' do
+      resources = TwitterCldr::Shared::Resources.new
+      mock(resources).resource_for('locale', 'resource') { 'result' }
+      TwitterCldr.send :class_variable_set, :@@resources, resources
+
+      TwitterCldr.get_resource('locale', 'resource').should == 'result'
     end
   end
 end

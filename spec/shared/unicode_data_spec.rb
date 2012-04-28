@@ -44,7 +44,7 @@ describe UnicodeData do
       }
 
       test_data.each_pair do |code_point, data|
-        UnicodeData.for_code_point(code_point).should == data
+        UnicodeData.for_code_point(code_point).values.should == data
       end
     end
   end

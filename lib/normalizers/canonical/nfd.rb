@@ -27,11 +27,11 @@ module TwitterCldr
         def decompose(code_point)
           unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
           return code_point unless unicode_data
-          decomposition_mapping = unicode_data[5].split
+          decomposition_mapping = unicode_data.decomposition.split
 
           # Special decomposition for Hangul syllables.
           # Documented in Section 3.12 at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
-          if unicode_data[1].include? 'Hangul'
+          if unicode_data.name.include? 'Hangul'
             sIndex = code_point.hex - @@hangul_constants[:SBase]
 
             lIndex = sIndex / @@hangul_constants[:NCount]
@@ -70,7 +70,7 @@ module TwitterCldr
 
         def combining_class_for(code_point)
           begin
-            unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)[3].to_i
+            unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point).combining_class.to_i
           rescue NoMethodError
             0
           end          

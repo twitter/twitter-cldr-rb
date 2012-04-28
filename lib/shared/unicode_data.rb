@@ -6,7 +6,9 @@
 module TwitterCldr
   module Shared
     class UnicodeData
-      @@unicode_data_attrs = Struct.new(:code_point, :name, :category, :combining_class, :bidi_class, :decomposition, :digit_value, :non_decimal_digit_value, :numeric_value, :bidi_mirrored, :unicode1_name, :iso_comment, :simple_uppercase_map, :simple_lowercase_map, :simple_titlecase_map)
+      AttrNames = Struct.new(:code_point, :name, :category, :combining_class, :bidi_class, :decomposition,
+                             :digit_value, :non_decimal_digit_value, :numeric_value, :bidi_mirrored, :unicode1_name,
+                             :iso_comment, :simple_uppercase_map, :simple_lowercase_map, :simple_titlecase_map)
       class << self
         def for_code_point(code_point)
           blocks = TwitterCldr.get_resource("unicode_data", "blocks")
@@ -19,7 +21,7 @@ module TwitterCldr
           if target
             block_data = TwitterCldr.get_resource("unicode_data", target.first)          
             code_point_data = block_data.fetch(code_point.to_sym) { |code_point_sym| get_range_start(code_point_sym, block_data) }
-            @@unicode_data_attrs.new(*code_point_data) if code_point_data
+            AttrNames.new(*code_point_data) if code_point_data
           end
         end
 

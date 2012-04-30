@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'utils/interpolation'
+require 'twitter_cldr/utils/interpolation'
 
 module TwitterCldr
   module Utils

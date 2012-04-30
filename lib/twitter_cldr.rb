@@ -15,21 +15,21 @@ require 'forwardable'
 require 'version'
 
 # patches for extending Ruby functionality
-require 'ext/localized_object'
-require 'ext/calendars/datetime'
-require 'ext/calendars/date'
-require 'ext/calendars/time'
-require 'ext/numbers/localized_number'
-require 'ext/numbers/bignum'
-require 'ext/numbers/fixnum'
-require 'ext/numbers/float'
-require 'ext/strings/symbol'
-require 'ext/strings/string'
+require 'twitter_cldr/core_ext/localized_object'
+require 'twitter_cldr/core_ext/calendars/datetime'
+require 'twitter_cldr/core_ext/calendars/date'
+require 'twitter_cldr/core_ext/calendars/time'
+require 'twitter_cldr/core_ext/numbers/localized_number'
+require 'twitter_cldr/core_ext/numbers/bignum'
+require 'twitter_cldr/core_ext/numbers/fixnum'
+require 'twitter_cldr/core_ext/numbers/float'
+require 'twitter_cldr/core_ext/strings/symbol'
+require 'twitter_cldr/core_ext/strings/string'
 
-require 'utils'
+require 'twitter_cldr/utils'
 
 # manages access to CLDR resources (yaml files in resources dir)
-require 'shared/resources'
+require 'twitter_cldr/shared/resources'
 
 
 module TwitterCldr
@@ -97,37 +97,37 @@ end
 
 
 # other shared libraries (most access shared resource data in resources/shared)
-require 'shared/currencies'
-require 'shared/languages'
-require 'shared/unicode_data'
+require 'twitter_cldr/shared/currencies'
+require 'twitter_cldr/shared/languages'
+require 'twitter_cldr/shared/unicode_data'
 
 # all tokenizers
-require 'tokenizers/base'
-require 'tokenizers/key_path'
-require 'tokenizers/token'
-require 'tokenizers/composite_token'
-require 'tokenizers/calendars/datetime_tokenizer'
-require 'tokenizers/calendars/date_tokenizer'
-require 'tokenizers/calendars/time_tokenizer'
-require 'tokenizers/numbers/number_tokenizer'
+require 'twitter_cldr/tokenizers/base'
+require 'twitter_cldr/tokenizers/composite_token'
+require 'twitter_cldr/tokenizers/key_path'
+require 'twitter_cldr/tokenizers/token'
+require 'twitter_cldr/tokenizers/calendars/datetime_tokenizer'
+require 'twitter_cldr/tokenizers/calendars/date_tokenizer'
+require 'twitter_cldr/tokenizers/calendars/time_tokenizer'
+require 'twitter_cldr/tokenizers/numbers/number_tokenizer'
 
 # all formatters
-require 'formatters/base'
-require 'formatters/calendars/datetime_formatter'
-require 'formatters/calendars/date_formatter'
-require 'formatters/calendars/time_formatter'
-require 'formatters/numbers/number_formatter'
-require 'formatters/numbers/decimal_formatter'
-require 'formatters/numbers/currency_formatter'
-require 'formatters/numbers/percent_formatter'
-require 'formatters/plurals/plural_formatter'
-require 'formatters/plurals/rules'
+require 'twitter_cldr/formatters/base'
+require 'twitter_cldr/formatters/calendars/datetime_formatter'
+require 'twitter_cldr/formatters/calendars/date_formatter'
+require 'twitter_cldr/formatters/calendars/time_formatter'
+require 'twitter_cldr/formatters/numbers/number_formatter'
+require 'twitter_cldr/formatters/numbers/decimal_formatter'
+require 'twitter_cldr/formatters/numbers/currency_formatter'
+require 'twitter_cldr/formatters/numbers/percent_formatter'
+require 'twitter_cldr/formatters/plurals/plural_formatter'
+require 'twitter_cldr/formatters/plurals/rules'
 
 # formatter helpers
-require 'formatters/numbers/helpers/base'
-require 'formatters/numbers/helpers/fraction'
-require 'formatters/numbers/helpers/integer'
+require 'twitter_cldr/formatters/numbers/helpers/base'
+require 'twitter_cldr/formatters/numbers/helpers/fraction'
+require 'twitter_cldr/formatters/numbers/helpers/integer'
 
 # all normalizers
-require 'normalizers/base'
-require 'normalizers/canonical/nfd'
+require 'twitter_cldr/normalizers/base'
+require 'twitter_cldr/normalizers/canonical/nfd'

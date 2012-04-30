@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.summary = "Text formatting using data from Unicode's Common Locale Data Repository (CLDR)."
 
-  s.add_dependency 'mustache', '~> 0.99.4'
   s.add_dependency 'json', '~> 1.6.6'
+  s.add_dependency 'mustache', '~> 0.99.4'
 
   s.add_development_dependency 'rspec', '~> 2.9.0'
   s.add_development_dependency 'rr', '~> 1.0.4'

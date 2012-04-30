@@ -35,7 +35,7 @@ describe NFD do
       normalization_test_file = File.join(File.dirname(File.dirname(__FILE__)), "NormalizationTest.txt")
       File.open(normalization_test_file, "r:UTF-8") do |file|
         while line = file.gets
-          unless line =~ /(@|#)/ || line.empty?
+          unless line[0,1] =~ /(@|#)/ || line.empty?
             c1, c2, c3, c4, c5 = line.split(';')[0...5].map { |cps| cps.split }
             NFD.normalize_code_points(c1).should == c3
             NFD.normalize_code_points(c2).should == c3

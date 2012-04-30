@@ -57,20 +57,44 @@ describe LocalizedString do
         ('%<num>.2f is a %{noun}'.localize % { :num => 3.1415, :noun => 'number' }).should == '3.14 is a number'
       end
 
-      it 'performs pluralization' do
+      it 'performs regular pluralization' do
         ('%{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses }).should == '2 horses'
       end
 
-      it 'performs both formatting and pluralization simultaneously' do
-        ('%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses, :msg => 'result' }).should == 'result: 2 horses'
+      it 'performs inline pluralization' do
+        string = '%<{ "horses_count": { "other": "%{horses_count} horses" } }>'.localize
+        (string % { :horses_count => 2 }).should == '2 horses'
       end
 
-      it 'leaves pluralization placeholders unchanged if not enough information given' do
-        ('%{msg}: %{horses_count:horses}'.localize % { :msg => 'no pluralization' } ).should == 'no pluralization: %{horses_count:horses}'
+      it 'performs both formatting and regular pluralization simultaneously' do
+        string = '%{msg}: %{horses_count:horses}'.localize
+        (string % { :horses_count => 2, :horses => horses, :msg => 'result' }).should == 'result: 2 horses'
+      end
+
+      it 'performs both formatting and inline pluralization simultaneously' do
+        string = '%{msg}: %<{"horses_count": {"other": "%{horses_count} horses"}}>'.localize
+        (string % { :horses_count => 2, :msg => 'result' }).should == 'result: 2 horses'
+      end
+
+      it 'performs both formatted interpolation and inline pluralization simultaneously' do
+        string = '%<number>d, %<{"horses_count": {"other": "%{horses_count} horses" }}>'.localize
+        (string % { :number => 3.14, :horses_count => 2 }).should == '3, 2 horses'
+      end
+
+      it 'leaves regular pluralization placeholders unchanged if not enough information given' do
+        string = '%{msg}: %{horses_count:horses}'.localize
+        (string % { :msg => 'no pluralization' } ).should == 'no pluralization: %{horses_count:horses}'
+      end
+
+      it 'leaves inline pluralization placeholders unchanged if not enough information given' do
+        string = '%<number>d, %<{"horses_count": {"one": "one horse"}}>'.localize
+        (string % { :number => 3.14, :horses_count => 2 }).should == '3, %<{"horses_count": {"one": "one horse"}}>'
       end
 
       it 'raises KeyError when value for a named placeholder is missing' do
-        lambda { '%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses } }.should raise_error(KeyError)
+        lambda do
+          '%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses }
+        end.should raise_error(KeyError)
       end
     end
   end

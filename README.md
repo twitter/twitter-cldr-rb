@@ -178,7 +178,7 @@ The `LocalizedString` class supports all forms of interpolation and combines sup
 
 # with TwitterCLDR
 "five euros plus %.3f in tax".localize % (13.25 * 0.087)
-"there are %{count} horses in the barn" % { :count => "5" }
+"there are %{count} horses in the barn".localize % { :count => "5" }
 ```
 
 When you pass a Hash as an argument and specify placeholders with %<foo>d, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
@@ -250,7 +250,7 @@ Convert code points to characters:
 TwitterCldr::Normalizers::Base.code_point_to_char("00BF")  # "¿"
 ```
 
-Normalize/decompose a Unicode string (NFD only for now):
+Normalize/decompose a Unicode string (NFD only for now).  Note that the normalized/decomposed string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
 TwitterCldr::Normalizers::NFD.normalize("français")  # "français"

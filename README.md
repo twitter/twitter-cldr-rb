@@ -169,6 +169,22 @@ str.localize % { :horse_count => 3 }
 The `LocalizedString` class supports all forms of interpolation and combines support from both Ruby 1.8 and 1.9:
 
 ```ruby
+# Ruby 1.8
+"five euros plus %.3f in tax" % (13.25 * 0.087)
+
+# Ruby 1.9
+"five euros plus %3.f in tax" % (13.25 * 0.087)
+"there are %{count} horses in the barn" % { :count => "5" }
+
+# with TwitterCLDR
+"five euros plus %.3f in tax".localize % (13.25 * 0.087)
+"there are %{count} horses in the barn" % { :count => "5" }
+```
+
+When you pass a Hash as an argument and specify placeholders with %<foo>d, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
+
+```ruby
+"five euros plus %<percent>.3f in %{noun}".localize % { :percent => 13.25 * 0.087, :noun => "tax" }
 ```
 
 ### World Languages

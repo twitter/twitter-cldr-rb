@@ -29,10 +29,6 @@ module TwitterCldr
       self
     end
 
-    def plural_rule
-      TwitterCldr::Formatters::Plurals::Rules.rule_for(@base_obj, @locale)
-    end
-
     def to_s(options = {})
       opts = options
       opts = { :precision => 0 }.merge(opts) if @base_obj.is_a?(Fixnum)

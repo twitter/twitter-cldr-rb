@@ -23,13 +23,26 @@ module TwitterCldr
       # Replaces every pluralization token in the +string+ with a phrase formed using a number and a pluralization
       # pattern from the +replacements+ hash.
       #
-      # Format of a pluralization token is '%{number:objects}'. When pluralization token like that is encountered in
-      # the +string+, +replacements+ hash is expected to contain a number and pluralization patterns at keys +:number+
-      # and +:objects+ respectively (note, keys of the +replacements+ hash should be symbols).
+      # Two types of formatting are supported for pluralization.
       #
-      # Pluralization patterns are specified as a hash containing a pattern for every plural category of the language.
-      # Keys of this hash should be symbols. If necessary, pluralization pattern can contain placeholder for the number.
-      # Syntax for the placeholder is similar to the hash-based string interpolation: '%{number}.
+      # * Regular pluralization:
+      #
+      #   Format of a pluralization group is '%{number:objects}'. When pluralization group like that is encountered in
+      #   the +string+, +replacements+ hash is expected to contain a number and pluralization patterns at keys +:number+
+      #   and +:objects+ respectively (note, keys of the +replacements+ hash should be symbols).
+      #
+      #   Pluralization patterns are specified as a hash containing a pattern for every plural category of the language.
+      #   Keys of this hash should be symbols. If necessary, pluralization pattern can contain placeholder for the number.
+      #   Syntax for the placeholder is similar to the hash-based string interpolation: '%{number}.
+      #
+      # * Inline pluralization:
+      #
+      #   Pluralization group if formatted as '%<{ "number": { "one": "one horse" } }>'. Content inside '%<...>' is
+      #   expected to be a valid string representation of a JSON object with a single key-value pair (JSON property),
+      #   where key matches key in the +replacements+ hash (e.g., in this example +replacements+ hash can be something
+      #   like { :number => 3 }), and value is a hash (JSON object) of pluralization rules to be used with this number.
+      #   No space is allowed inside opening '%<{' and closing '}>' sequences. As pluralization group is parsed as JSON
+      #   all keys and string values inside it should be enclosed in double quotes.
       #
       # Examples:
       #
@@ -37,6 +50,9 @@ module TwitterCldr
       #   # => "one horse"
       #
       #   f.format('%{count:horses}', :count => 2, :horses => { :one => 'one horse', :other => '%{count} horses' })
+      #   # => "2 horses"
+      #
+      #   f.format('%<{ "count": {"one": "one horse", "other": "%{count} horses"} }>', :count => 2)
       #   # => "2 horses"
       #
       # Multiple pluralization groups can be present in the same string.
@@ -50,6 +66,11 @@ module TwitterCldr
       #   )
       #   # => "2 ponies and one unicorn"
       #
+      # The same applies to inline pluralization.
+      #
+      # Mixed styles of pluralization (both regular and inline) can be used in the same string, but it's better to avoid
+      # that as it might bring more confusion than real benefit.
+      #
       # If a number or required pluralization pattern is missing in the +replacements+ hash, corresponding
       # pluralization token is ignored.
       #
@@ -58,8 +79,14 @@ module TwitterCldr
       #   f.format('%{count:horses}', :horses => { :one => 'one horse', :other => '%{count} horses' })
       #   # => "%{count:horses}"
       #
+      #   f.format('%<{"count": {"one": "one horse", "other": "%{count} horses"}}>', {})
+      #   # => '%<{"count": {"one": "one horse", "other": "%{count} horses"}}>'
+      #
       #   f.format('%{count:horses}', :count => 10, :horses => { :one => 'one horse' })
       #   # => "%{count:horses}"
+      #
+      #   f.format('%<{"count": {"one": "one horse"}}>', :count => 2)
+      #   # => '%<{"count": {"one": "one horse"}}>'
       #
       #   f.format('%{count:horses}', {})
       #   # => "%{count:horses}"

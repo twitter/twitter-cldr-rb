@@ -1,12 +1,11 @@
 $:.push(File.dirname(__FILE__))
 
-require 'ruby-debug'
-
 require 'yaml'
 require 'mustache'
 require 'uglifier'
 require 'fileutils'
 require 'jasmine-headless-webkit'
+require 'coffee-script'
 
 require 'compiler'
 require 'renderers/bundle'
@@ -51,11 +50,11 @@ module TwitterCldr
       @@output_dir = new_dir
     end
 
-    def self.make
+    def self.make(options = {})
       # clean dir, then build js
       FileUtils.rm_rf(Dir.glob(File.join(build_dir, "**")))
-      build
-      build(:minify => true)
+      build(options)
+      build(options.merge({ :minify => true }))
     end
 
     def self.test

@@ -2,8 +2,7 @@
 
 describe("DateTimeFormatter", function() {
 	beforeEach(function() {
-		//date = new Date(Date.parse("Mon Apr 09 2012 13:13:53 GMT-0700 (PDT)"));
-		formatter = new TwitterCldr.Formatters.DateTimeFormatter();
+		formatter = new DateTimeFormatter();
 	});
 
 	describe("#day", function() {

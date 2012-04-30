@@ -83,7 +83,7 @@ module TwitterCldr
 
     def supported_locales
       unless defined?(@@supported_locales)
-        rejectable = [:shared]
+        rejectable = [:shared, :unicode_data]
         @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
           File.basename(file).to_sym
         end.reject { |file| rejectable.include?(file) }
@@ -99,12 +99,9 @@ module TwitterCldr
 
   end
 
-<<<<<<< HEAD
   def self.require_js
     require "js/lib/twitter_cldr_js"
   end
-=======
->>>>>>> master
 end
 
 

@@ -1,2 +1,0 @@
-var TwitterCldr = { Formatters: {} }
-{{{contents}}}

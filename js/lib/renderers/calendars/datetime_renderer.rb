@@ -3,7 +3,7 @@ module TwitterCldr
     module Renderers
       module Calendars
         class DateTimeRenderer < Mustache
-          self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "../..", "mustache/calendars/datetime.js"))
+          self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "../..", "mustache/calendars/datetime.coffee"))
 
           def initialize(options = {})
             @locale = options[:locale]

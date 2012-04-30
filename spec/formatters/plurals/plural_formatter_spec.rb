@@ -41,97 +41,154 @@ describe PluralFormatter do
         subject.format(string, {}).should == string
       end
 
-      it "doesn't change the string if a number is not provided" do
-        string = 'there %{horses_count:horses}'
-        subject.format(string, :horses => horses).should == string
+      context 'with regular pluralization' do
+        it "doesn't change the string if a number is not provided" do
+          string = 'there %{horses_count:horses}'
+          subject.format(string, :horses => horses).should == string
+        end
+
+        it "doesn't change the string if a patterns hash is not provided" do
+          string = 'there %{horses_count:horses}'
+          subject.format(string, :horses_count => 1).should == string
+        end
+
+        it "doesn't change the string if required pattern is not provided" do
+          string = 'there %{horses_count:horses}'
+          subject.format(string, :horses_count => 2, :horses => { :one => 'is 1 horse' }).should == string
+        end
       end
 
-      it "doesn't change the string if a patterns hash is not provided" do
-        string = 'there %{horses_count:horses}'
-        subject.format(string, :horses_count => 1).should == string
+      context 'with inline pluralization' do
+        it "doesn't change the string if a number is not provided" do
+          string = "there #{horses_string}"
+          subject.format(string, {}).should == string
+        end
+
+        it "doesn't change the string if required pattern is not provided" do
+          string = 'there %<{ "horses_count": {"one": "is 1 horse"} }>'
+          subject.format(string, :horses_count => 2).should == string
+        end
+      end
+
+      context 'with mixed pluralization' do
+        it "doesn't change the string if a number is not provided" do
+          string = "there #{horses_string} %{horses_count:horses}"
+          subject.format(string, :horses => horses).should == string
+        end
+
+        it "doesn't change the string if required pattern is not provided" do
+          string = 'there %<{ "horses_count": {"one": "is 1 horse"} }> %{horses_count:horses}'
+          subject.format(string, :horses_count => 2, :horses => { :one => 'is 1 horse' }).should == string
+        end
       end
     end
 
     context 'when something should be pluralized' do
-      context 'when regular pluralization is used' do
+      context 'with regular pluralization' do
         it 'pluralizes with a simple replacement' do
           subject.format(
               'there %{horses_count:horses}',
-              { :horses_count => 1, :horses => horses }
+              :horses_count => 1, :horses => horses
           ).should == 'there is 1 horse'
         end
 
         it 'pluralizes when there are named interpolation patterns in the string' do
           subject.format(
               '%{there} %{horses_count:horses}',
-              { :horses_count => 1, :horses => horses }
+              :horses_count => 1, :horses => horses
           ).should == '%{there} is 1 horse'
         end
 
         it 'supports multiple patterns sets for the same number' do
           subject.format(
               'there %{horses_count:to_be} %{horses_count:horses}',
-              { :horses_count => 1, :horses => simple_horses, :to_be => to_be }
+              :horses_count => 1, :horses => simple_horses, :to_be => to_be
           ).should == 'there is 1 horse'
         end
 
         it 'pluralizes multiple entries' do
           subject.format(
               'there %{yaks_count:yaks} and %{horses_count:horses}',
-              { :yaks_count => 1, :yaks => yaks, :horses_count => 2, :horses => simple_horses }
+              :yaks_count => 1, :yaks => yaks, :horses_count => 2, :horses => simple_horses
           ).should == 'there is 1 yak and 2 horses'
         end
 
         it 'substitutes the number for a placeholder in the pattern' do
           subject.format(
               'there %{horses_count:horses}',
-              { :horses_count => 3, :horses => horses }
+              :horses_count => 3, :horses => horses
           ).should == 'there are 3 horses'
         end
 
         it 'substitutes the number for multiple placeholders in the pattern' do
           subject.format(
               'there are %{horses_count:horses}',
-              { :horses_count => 3, :horses => { :other => '%{horses_count}, seriously %{horses_count}, horses' } }
+              :horses_count => 3, :horses => { :other => '%{horses_count}, seriously %{horses_count}, horses' }
           ).should == 'there are 3, seriously 3, horses'
+        end
+
+        it 'throws an exception if pluralization patterns is not a hash' do
+          lambda do
+            subject.format('there %{horses_count:horses}', :horses_count => 1, :horses => [])
+          end.should raise_error(ArgumentError, 'expected patterns to be a Hash')
         end
       end
 
-      context 'when inline pluralization is used' do
+      context 'with inline pluralization' do
         it 'pluralizes with a simple replacement' do
-          subject.format("there #{horses_string}", { :horses_count => 1 }).should == 'there is 1 horse'
+          subject.format("there #{horses_string}", :horses_count => 1).should == 'there is 1 horse'
         end
 
         it 'pluralizes when there are named interpolation patterns in the string' do
-          subject.format("%{there} #{horses_string}", { :horses_count => 1 }).should == '%{there} is 1 horse'
+          subject.format("%{there} #{horses_string}", :horses_count => 1).should == '%{there} is 1 horse'
         end
 
         it 'supports multiple patterns sets for the same number' do
           subject.format(
-              %Q(there %<{ "horses_count": {"one": "is", "other": "are"} }> #{simple_horses_string}),
-              { :horses_count => 1 }
+              %Q(there %<{ "horses_count": {"one": "is", "other": "are"} }> #{simple_horses_string}), :horses_count => 1
           ).should == 'there is 1 horse'
         end
 
         it 'pluralizes multiple entries' do
           subject.format(
               %Q(there %<{ "yaks_count": {"one": "is 1 yak", "other": "are %{yaks_count} yaks"} }> and #{simple_horses_string}),
-              { :yaks_count => 1, :horses_count => 2 }
+              :yaks_count => 1, :horses_count => 2
           ).should == 'there is 1 yak and 2 horses'
         end
 
         it 'substitutes the number for a placeholder in the pattern' do
           subject.format(
-              "there #{horses_string}",
-              { :horses_count => 3, :horses => horses }
+              "there #{horses_string}", :horses_count => 3, :horses => horses
           ).should == 'there are 3 horses'
         end
 
         it 'substitutes the number for multiple placeholders in the pattern' do
           subject.format(
               'there are %<{ "horses_count": {"other": "%{horses_count}, seriously %{horses_count}, horses"} }>',
-              { :horses_count => 3 }
+              :horses_count => 3
           ).should == 'there are 3, seriously 3, horses'
+        end
+
+        it 'throws an exception if pluralization hash has more than one key' do
+          lambda do
+            subject.format('there are %<{ "horses_count": {}, "foo": {} }>', {})
+          end.should raise_error(ArgumentError, 'expected a Hash with a single key')
+        end
+      end
+
+      context 'with mixed pluralization' do
+        it 'pluralizes separate groups' do
+          subject.format(
+              "there %{yaks_count:yaks} and #{simple_horses_string}",
+              :yaks => yaks, :yaks_count => 3, :horses_count => 2
+          ).should == 'there are 3 yaks and 2 horses'
+        end
+
+        it 'pluralizes similar groups' do
+          subject.format(
+              "there %{horses_count:horses} + #{simple_horses_string}",
+              :horses => horses, :horses_count => 2
+          ).should == 'there are 2 horses + 2 horses'
         end
       end
     end

@@ -87,7 +87,7 @@ module TwitterCldr
         if pluralization_hash.is_a?(Hash) && pluralization_hash.size == 1
           pluralization_hash.first
         else
-          raise ArguementError.new('expected a Hash with a single key')
+          raise ArgumentError.new('expected a Hash with a single key')
         end
       end
 

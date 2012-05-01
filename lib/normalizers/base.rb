@@ -29,7 +29,7 @@ module TwitterCldr
         end
 
         def code_points_to_string(code_points)
-          code_points.inject(StringIO.new) { |str, code_point| str << self.code_point_to_char(code_point); str }.string
+          code_points.inject("") { |str, code_point| str << self.code_point_to_char(code_point); str }
         end
       end
     end

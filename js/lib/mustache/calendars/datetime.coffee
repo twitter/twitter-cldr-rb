@@ -37,16 +37,16 @@ window.DateTimeFormatter = class DateTimeFormatter
 		toks = this.get_tokens(obj, options)
 
 		for i in [0..toks.length - 1]
-      switch toks[i].type
-        when "pattern"
-          result += this.result_for_token(toks[i], i, obj)
-        else
-          if toks[i].value.length > 0 && toks[i].value[0] == "'" && toks[i].value[toks[i].value.length - 1] == "'"
-            result += toks[i].value.substring(1, toks[i].value.length - 1)
-          else
-            result += toks[i].value
+			switch toks[i].type
+				when "pattern"
+					result += this.result_for_token(toks[i], i, obj)
+				else
+					if toks[i].value.length > 0 && toks[i].value[0] == "'" && toks[i].value[toks[i].value.length - 1] == "'"
+						result += toks[i].value.substring(1, toks[i].value.length - 1)
+					else
+						result += toks[i].value
 
-	  return result
+		return result
 
 	get_tokens: (obj, options) ->
 		return @tokens[options.type || "default"]

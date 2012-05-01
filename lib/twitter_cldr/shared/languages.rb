@@ -13,7 +13,7 @@ module TwitterCldr
 
         def all_for(code)
           get_resource(TwitterCldr.convert_locale(code.to_sym))[:languages]
-        rescue => e
+        rescue
           {}
         end
 
@@ -23,7 +23,7 @@ module TwitterCldr
 
         def from_code_for_locale(code, locale = TwitterCldr::get_locale)
           get_resource(TwitterCldr.convert_locale(locale.to_sym))[:languages][TwitterCldr.convert_locale(code.to_sym)]
-        rescue => e
+        rescue
           nil
         end
 
@@ -37,7 +37,7 @@ module TwitterCldr
           else
             nil
           end
-        rescue => e
+        rescue
           nil
         end
 

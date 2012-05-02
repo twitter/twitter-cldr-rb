@@ -1,9 +1,7 @@
 $:.push(File.dirname(__FILE__))
 
-require 'yaml'
 require 'mustache'
 require 'uglifier'
-require 'fileutils'
 require 'jasmine-headless-webkit'
 require 'coffee-script'
 

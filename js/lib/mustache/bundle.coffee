@@ -1,1 +1,2 @@
+`var TwitterCldr = {}`
 {{{contents}}}

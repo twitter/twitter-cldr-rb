@@ -14,8 +14,6 @@ require 'time'
 require 'fileutils'
 
 # gems
-require 'mustache'
-require 'json'
 require 'forwardable'
 
 require 'version'

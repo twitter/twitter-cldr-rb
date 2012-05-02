@@ -2,7 +2,7 @@
 
 describe("DateTimeFormatter", function() {
 	beforeEach(function() {
-		formatter = new DateTimeFormatter();
+		formatter = new TwitterCldr.DateTimeFormatter();
 	});
 
 	describe("#day", function() {

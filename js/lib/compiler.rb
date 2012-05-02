@@ -19,7 +19,7 @@ module TwitterCldr
 
           bundle = TwitterCldr::Js::Renderers::Bundle.new
           bundle[:contents] = contents
-          yield CoffeeScript.compile(bundle.render), locale if block_given?
+          yield CoffeeScript.compile(bundle.render, :bare => true), locale if block_given?
         end
       end
 

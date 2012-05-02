@@ -1,4 +1,4 @@
-window.DateTimeFormatter = class DateTimeFormatter
+TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 	constructor: ->
 		@tokens = `{{{tokens}}}`
 		@calendar = `{{{calendar}}}`

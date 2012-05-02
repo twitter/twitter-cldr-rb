@@ -26,7 +26,13 @@ module TwitterCldr
           unless index == 0 && token == ""
             self.token_type_regexes.each do |token_type|
               if token =~ token_type[:regex]
-                final << Token.new(:value => token, :type => token_type[:type])
+                if token_type[:type] == :composite
+                  content = token.match(token_type[:content])[1]
+                  final << CompositeToken.new(tokenize_format(content))
+                else
+                  final << Token.new(:value => token, :type => token_type[:type])
+                end
+
                 break
               end
             end
@@ -40,7 +46,7 @@ module TwitterCldr
         tokens = self.expand_pattern(self.pattern_for(self.traverse(key)), type)
 
         tokens.each do |token|
-          if token.is_a?(Token)
+          if token.is_a?(Token) || token.is_a?(CompositeToken)
             final << token
           else
             final += tokenize_format(token[:value])

@@ -8,24 +8,26 @@ module TwitterCldr
     class DateTimeTokenizer < Base
       attr_reader :placeholders, :calendar_type
 
-      DEFAULT_CALENDAR_TYPE = :gregorian
       VALID_TYPES = [:default, :full, :long, :medium, :short]
 
       def initialize(options = {})
-        super(options)
-        @calendar_type = options[:calendar_type] || DEFAULT_CALENDAR_TYPE
+        @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
         @token_splitter_regex = //
         @token_type_regexes = [{ :type => :plaintext, :regex => // }]
-        @paths = { :default => "calendars.gregorian.formats.datetime.default",
-                   :full => "calendars.gregorian.formats.datetime.full",
-                   :long => "calendars.gregorian.formats.datetime.long",
-                   :medium => "calendars.gregorian.formats.datetime.medium",
-                   :short => "calendars.gregorian.formats.datetime.short" }
+
+        @base_path = "calendars"
+        @paths = { :default => "formats.datetime.default",
+                   :full => "formats.datetime.full",
+                   :long => "formats.datetime.long",
+                   :medium => "formats.datetime.medium",
+                   :short => "formats.datetime.short" }
+
+        super(options)
       end
 
       def tokens(options = {})
         type = options[:type] || :default
-        self.tokens_for(self.paths[type], type)
+        self.tokens_for(self.full_path_for(self.paths[type]), type)
       end
 
       def calendar
@@ -34,13 +36,37 @@ module TwitterCldr
 
       protected
 
+      def full_path_for(path, calendar_type = @calendar_type)
+        KeyPath.join(@base_path, calendar_type.to_s, path)
+      end
+
       def init_resources
         @resource = TwitterCldr.get_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
+
+        @resource[:calendars].each_pair do |calendar_type, options|
+          next if calendar_type == DEFAULT_CALENDAR_TYPE
+          mirror_resource(:from => @resource[:calendars][DEFAULT_CALENDAR_TYPE], :to => @resource[:calendars][calendar_type])
+        end
+      end
+
+      def mirror_resource(options)
+        from = options[:from]
+        to = options[:to]
+
+        from.each_pair do |key, value|
+          if !to[key]
+            to[key] = from[key]
+          else
+            if to[key].is_a?(Hash) and from[key].is_a?(Hash)
+              mirror_resource(:from => from[key], :to => to[key])
+            end
+          end
+        end
       end
 
       def init_placeholders
-        @placeholders = [{ :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale) },
-                         { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale) }]
+        @placeholders = [{ :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
+                         { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }]
       end
 
       def pattern_for(resource)

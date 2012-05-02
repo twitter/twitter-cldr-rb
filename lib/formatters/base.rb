@@ -9,10 +9,17 @@ module TwitterCldr
       attr_reader :tokenizer
 
       def format(obj, options = {})
+        process_tokens(self.get_tokens(obj, options), obj)
+      end
+
+      protected
+      def process_tokens(tokens, obj)
         final = StringIO.new
 
-        result = self.get_tokens(obj, options).each_with_index do |token, index|
+        tokens.each_with_index do |token, index|
           case token.type
+            when :composite
+              final << eval(process_tokens(token.tokens, obj))
             when :pattern
               final << self.result_for_token(token, index, obj)
             else

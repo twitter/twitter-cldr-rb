@@ -144,6 +144,49 @@ TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
 TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :few
 ```
 
+### Plurals
+
+In addition to providing access to plural rules, TwitterCLDR allows you to embed plurals directly in your source code:
+
+```ruby
+replacements = { :horse_count => 3,
+                 :horses => { :one => "is 1 horse",
+                              :other => "are %{horse_count} horses" } }
+
+# "there are 3 horses in the barn"
+"there %{horse_count:horses} in the barn".localize % replacements
+```
+
+Because providing a pluralization hash with the correct plural rules can be difficult, you can also embed plurals as a JSON hash into your string:
+
+```ruby
+str = 'there %<{ "horse_count": { "one": "is one horse", "other": "are %{horse_count} horses" } }> in the barn'
+
+# "there are 3 horses in the barn"
+str.localize % { :horse_count => 3 }
+```
+
+The `LocalizedString` class supports all forms of interpolation and combines support from both Ruby 1.8 and 1.9:
+
+```ruby
+# Ruby 1.8
+"five euros plus %.3f in tax" % (13.25 * 0.087)
+
+# Ruby 1.9
+"five euros plus %3.f in tax" % (13.25 * 0.087)
+"there are %{count} horses in the barn" % { :count => "5" }
+
+# with TwitterCLDR
+"five euros plus %.3f in tax".localize % (13.25 * 0.087)
+"there are %{count} horses in the barn".localize % { :count => "5" }
+```
+
+When you pass a Hash as an argument and specify placeholders with %<foo>d, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
+
+```ruby
+"five euros plus %<percent>.3f in %{noun}".localize % { :percent => 13.25 * 0.087, :noun => "tax" }
+```
+
 ### World Languages
 
 You can use the localize convenience method on language code symbols to get their equivalents in another language:
@@ -180,6 +223,51 @@ TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)            
 TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Chinese"
 TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
 ```
+
+### Unicode Data
+
+TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.
+
+Retrieve data for code points:
+
+```ruby
+code_point = TwitterCldr::Shared::UnicodeData.for_code_point("1F3E9")
+code_point.name             # "LOVE HOTEL"
+code_point.bidi_mirrored    # "N"
+code_point.category         # "So"
+code_point.combining_class  # "0"
+```
+
+Convert characters to code points:
+
+```ruby
+TwitterCldr::Normalizers::Base.char_to_code_point("¿")  # "00BF"
+```
+
+Convert code points to characters:
+
+```ruby
+TwitterCldr::Normalizers::Base.code_point_to_char("00BF")  # "¿"
+```
+
+Normalize/decompose a Unicode string (NFD only for now).  Note that the normalized/decomposed string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
+
+```ruby
+TwitterCldr::Normalizers::NFD.normalize("français")  # "français"
+TwitterCldr::Normalizers::NFD.decompose("español")   # "español"
+```
+
+Normalization and decomposition are easier to see in hex:
+
+```ruby
+# ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+code_points = "español".split('').map { |char| TwitterCldr::Normalizers::NFD.char_to_code_point(char) }
+
+# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+TwitterCldr::Normalizers::NFD.normalize_code_points(code_points)
+```
+
+Notice in the example above that the letter "ñ" was transformed from `00F1` to `006E 0303`, which represent the "n" and the "˜" respectively.
 
 ## About Twitter-specific Locales
 

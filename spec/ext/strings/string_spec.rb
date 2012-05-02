@@ -99,4 +99,25 @@ describe LocalizedString do
     end
   end
 
+  describe "#to_s" do
+    it "should return the base string" do
+      "galoshes".localize.to_s.should == "galoshes"
+    end
+  end
+
+  describe "#normalize" do
+    it "returns a normalized instance of LocalizedString" do
+      "español".bytes.to_a.should == [101, 115, 112, 97, 195, 177, 111, 108]
+      result = "español".localize.normalize
+      result.should be_a(LocalizedString)
+      result.to_s.bytes.to_a.should == [101, 115, 112, 97, 110, 204, 131, 111, 108]
+    end
+  end
+
+  describe "#code_points" do
+    it "returns an array of Unicode code points for the string" do
+      "español".localize.code_points.should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+    end
+  end
+
 end

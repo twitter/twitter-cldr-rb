@@ -4,8 +4,8 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 class Time
-  def localize(locale = TwitterCldr.get_locale)
-    TwitterCldr::LocalizedTime.new(self, locale)
+  def localize(locale = TwitterCldr.get_locale, options = {})
+    TwitterCldr::LocalizedTime.new(self, locale, options)
   end
 end
 
@@ -13,7 +13,7 @@ module TwitterCldr
   class LocalizedTime < LocalizedDateTime
     def to_datetime(date)
       date_obj = date.is_a?(LocalizedDate) ? date.base_obj : date
-      LocalizedDateTime.new(DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}"), @locale)
+      LocalizedDateTime.new(DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}"), @locale, :calendar_type => @calendar_type)
     end
 
     protected

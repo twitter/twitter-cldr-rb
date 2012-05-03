@@ -55,4 +55,30 @@ describe DateTimeTokenizer do
       check_token_list(got, expected)
     end
   end
+
+  describe "#mirror_resource" do
+    it "should add only the missing keys" do
+      from = {:a => 1,
+              :b => { :c => 2, :d => 3},
+              :e => { :f => 4}}
+      to = {:b => { :c => 100 },
+            :e => 101}
+
+      tokenizer = DateTimeTokenizer.new
+      tokenizer.send(:mirror_resource, :from => from, :to => to)
+
+      to[:a].should == 1
+      to[:b].size.should == 2
+      to[:b][:c].should == 100
+      to[:b][:d].should == 3
+      to[:e].should == 101
+
+      from[:a].should == 1
+      from[:b].size.should == 2
+      from[:b][:c].should == 2
+      from[:b][:d].should == 3
+      from[:e].size.should == 1
+      from[:e][:f].should == 4
+    end
+  end
 end

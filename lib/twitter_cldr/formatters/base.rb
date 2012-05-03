@@ -20,7 +20,7 @@ module TwitterCldr
         tokens.each_with_index do |token, index|
           case token.type
             when :composite
-              result << eval(process_tokens(token.tokens, obj))
+              result << eval(process_tokens(token.tokens, obj)).to_s
             when :pattern
               result << self.result_for_token(token, index, obj)
             else

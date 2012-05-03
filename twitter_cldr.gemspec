@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "lib", "version")
+require File.join(File.dirname(__FILE__), 'lib', 'twitter_cldr', 'version')
 
 Gem::Specification.new do |s|
   s.name = "twitter_cldr"

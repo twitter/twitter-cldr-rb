@@ -12,14 +12,14 @@ module TwitterCldr
       class << self
         def for_code_point(code_point)
           blocks = TwitterCldr.get_resource("unicode_data", "blocks")
-          
+
           #Find the target block
           target = blocks.find do |block_name, range|
             range.include? code_point.to_i(16)
-          end 
+          end
 
           if target
-            block_data = TwitterCldr.get_resource("unicode_data", target.first)          
+            block_data = TwitterCldr.get_resource("unicode_data", target.first)
             code_point_data = block_data.fetch(code_point.to_sym) { |code_point_sym| get_range_start(code_point_sym, block_data) }
             Attributes.new(*code_point_data) if code_point_data
           end

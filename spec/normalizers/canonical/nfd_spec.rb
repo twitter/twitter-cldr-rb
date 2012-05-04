@@ -27,7 +27,7 @@ describe NFD do
 
     it "does not decompose a character with compatibility decomposition mapping" do
       code_points = ["A770", "FB02", "FC35", "FD20", "00BC"]
-      code_points.each do |code_point|        
+      code_points.each do |code_point|
         NFD.decompose(code_point).should == code_point
       end
     end

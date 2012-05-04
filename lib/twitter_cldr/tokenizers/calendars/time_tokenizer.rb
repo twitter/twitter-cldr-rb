@@ -11,11 +11,11 @@ module TwitterCldr
         @token_splitter_regex = /(\'[\w\s-]+\'|a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4})/
         @token_type_regexes = [{ :type => :pattern, :regex => /^a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}/ },
                                { :type => :plaintext, :regex => // }]
-        @paths = { :default => "calendars.gregorian.formats.time.default",
-                   :full => "calendars.gregorian.formats.time.full",
-                   :long => "calendars.gregorian.formats.time.long",
-                   :medium => "calendars.gregorian.formats.time.medium",
-                   :short => "calendars.gregorian.formats.time.short" }
+        @paths = { :default => "formats.time.default",
+                   :full => "formats.time.full",
+                   :long => "formats.time.long",
+                   :medium => "formats.time.medium",
+                   :short => "formats.time.short" }
       end
 
       protected

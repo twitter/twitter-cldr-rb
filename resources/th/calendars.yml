@@ -1,5 +1,17 @@
 th: 
-  calendars: 
+  calendars:
+    buddhist:
+      formats: 
+        date: 
+          default: :"calendars.buddhist.formats.date.medium"
+          full: 
+            pattern: "EEEEที่ d MMMM G y"
+          long: 
+            pattern: "d MMMM พ.ศ. #{y + 543}"
+          medium: 
+            pattern: "d MMM #{y + 543}"
+          short: 
+            pattern: "d/M/#{y + 543}"
     gregorian: 
       days: 
         format: 
@@ -49,11 +61,11 @@ th:
           full: 
             pattern: "EEEEที่ d MMMM G y"
           long: 
-            pattern: "d MMMM y"
+            pattern: "d MMMM พ.ศ. y"
           medium: 
             pattern: "d MMM y"
           short: 
-            pattern: d/M/yyyy
+            pattern: "d/M/y"
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
@@ -71,9 +83,9 @@ th:
           long: 
             pattern: "H นาฬิกา m นาที ss วินาที z"
           medium: 
-            pattern: "H:mm:ss"
+            pattern: "H:mm:ss น."
           short: 
-            pattern: "H:mm"
+            pattern: "H:mm น."
       months: 
         format: 
           abbreviated: 

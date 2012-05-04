@@ -42,18 +42,33 @@ module TwitterCldr
       end
 
       def tokens_for(key, type)
-        final = []
-        tokens = self.expand_pattern(self.pattern_for(self.traverse(key)), type)
+        @@token_cache ||= {}
+        cache_key = self.compute_cache_key(@locale, key, type)
 
-        tokens.each do |token|
-          if token.is_a?(Token) || token.is_a?(CompositeToken)
-            final << token
-          else
-            final += tokenize_format(token[:value])
+        unless @@token_cache.include?(cache_key)
+          result = []
+          tokens = self.expand_pattern(self.pattern_for(self.traverse(key)), type)
+
+          tokens.each do |token|
+            if token.is_a?(Token) || token.is_a?(CompositeToken)
+              result << token
+            else
+              result += tokenize_format(token[:value])
+            end
           end
+
+          @@token_cache[cache_key] = result
         end
 
-        final
+        @@token_cache[cache_key]
+      end
+
+      def compute_cache_key(*pieces)
+        if pieces && pieces.size > 0
+          pieces.join("|").hash
+        else
+          0
+        end
       end
 
       def init_placeholders

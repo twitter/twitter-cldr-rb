@@ -4,6 +4,7 @@ require 'mustache'
 require 'uglifier'
 require 'jasmine-headless-webkit'
 require 'coffee-script'
+require 'json'
 
 require 'compiler'
 require 'renderers/bundle'

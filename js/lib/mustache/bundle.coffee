@@ -1,2 +1,2 @@
-`var TwitterCldr = {}`
+TwitterCldr = {}
 {{{contents}}}

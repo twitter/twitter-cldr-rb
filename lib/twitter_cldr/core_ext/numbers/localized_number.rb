@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
+
   module LocalizedNumberMixin
     def localize(locale = TwitterCldr.get_locale)
       TwitterCldr::LocalizedNumber.new(self, locale)
@@ -11,28 +12,29 @@ module TwitterCldr
   end
 
   class LocalizedNumber < LocalizedObject
+    TYPES = [:decimal, :currency, :percent]
     DEFAULT_TYPE = :decimal
+
     attr_reader :type
 
-    def to_decimal
-      self.setup_for(:decimal)
-      self
+    def initialize(obj, locale, options = {})
+      @options = options.dup
+
+      @type = @options.delete(:type) || DEFAULT_TYPE
+      raise ArgumentError.new("type #{@type} is not supported") unless @type && TYPES.include?(@type.to_sym)
+
+      super(obj, locale, @options)
     end
 
-    def to_currency
-      self.setup_for(:currency)
-      self
-    end
-
-    def to_percent
-      self.setup_for(:percent)
-      self
+    TYPES.each do |type|
+      define_method "to_#{type}" do
+        to_type(type)
+      end
     end
 
     def to_s(options = {})
-      opts = options
-      opts = { :precision => 0 }.merge(opts) if @base_obj.is_a?(Fixnum)
-      @formatter.format(@base_obj, opts)
+      options = { :precision => 0 }.merge(options) if @base_obj.is_a?(Fixnum)
+      @formatter.format(@base_obj, options)
     end
 
     def plural_rule
@@ -42,13 +44,12 @@ module TwitterCldr
     protected
 
     def formatter_const
-      TwitterCldr::Formatters::DecimalFormatter
+      TwitterCldr::Formatters.const_get("#{@type.to_s.capitalize}Formatter")
     end
 
-    def setup_for(type)
-      @type = type
-      fmt_class = TwitterCldr::Formatters.const_get("#{(@type || DEFAULT_TYPE).to_s.capitalize}Formatter".to_sym)
-      @formatter = fmt_class.new(:locale => locale.to_sym)
+    def to_type(target_type)
+      self.class.new(@base_obj, @locale, @options.merge(:type => target_type))
     end
   end
+
 end

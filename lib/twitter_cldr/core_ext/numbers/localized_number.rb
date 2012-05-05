@@ -14,17 +14,17 @@ module TwitterCldr
     DEFAULT_TYPE = :decimal
     attr_reader :type
 
-    def to_decimal(options = {})
+    def to_decimal
       self.setup_for(:decimal)
       self
     end
 
-    def to_currency(options = {})
+    def to_currency
       self.setup_for(:currency)
       self
     end
 
-    def to_percent(options = {})
+    def to_percent
       self.setup_for(:percent)
       self
     end

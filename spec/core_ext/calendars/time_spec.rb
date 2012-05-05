@@ -56,13 +56,6 @@ describe Time do
 end
 
 describe LocalizedTime do
-  context "with an unsupported type" do
-    it "raise an error because 'albatross' is not a supported type" do
-      time = Time.now.localize(:it)
-      lambda { time.to_albatross_s }.should raise_error("Method not supported")
-    end
-  end
-
   describe "#to_datetime" do
     it "should combine a date and a time object into a datetime" do
       date = Date.new(1987, 9, 20)

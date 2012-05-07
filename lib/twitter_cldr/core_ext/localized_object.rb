@@ -7,12 +7,14 @@ module TwitterCldr
   class LocalizedObject
     attr_reader :locale, :base_obj, :formatter
 
-    def initialize(obj, locale, options={})
+    def initialize(obj, locale, options = {})
       @base_obj = obj
       @locale = locale
 
+      options = options.dup
       options[:locale] ||= @locale
-      @formatter = self.formatter_const.new(options) if self.formatter_const
+
+      @formatter = formatter_const.new(options) if formatter_const
     end
 
     def formatter_const

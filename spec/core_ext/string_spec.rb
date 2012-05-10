@@ -100,8 +100,12 @@ describe LocalizedString do
   end
 
   describe "#to_s" do
-    it "should return the base string" do
-      "galoshes".localize.to_s.should == "galoshes"
+    it "should return a copy the base string" do
+      string = "galoshes"
+      result = string.localize.to_s
+
+      result.should == string
+      result.equal?(string).should_not be_true
     end
   end
 

@@ -35,7 +35,6 @@ module TwitterCldr
         def normalize_code_points(code_points)
           code_points = code_points.map { |code_point| decompose code_point }.flatten
           reorder(code_points)
-          code_points
         end
 
         # Recursively replace the given code point with the values in its Decomposition_Mapping property.
@@ -79,16 +78,46 @@ module TwitterCldr
 
         # Swap any two adjacent code points A & B if ccc(A) > ccc(B) > 0.
         def reorder(code_points)
-          code_points.size.times do
-            code_points.each_with_index do |cp, i|
-              unless i == (code_points.size - 1)
-                ccc_a, ccc_b = combining_class_for(cp), combining_class_for(code_points[i + 1])
-                if (ccc_a > ccc_b) && (ccc_b > 0)
-                  code_points[i], code_points[i + 1] = code_points[i + 1], code_points[i]
-                end
+          code_points_with_cc = code_points.map { |cp| [cp, combining_class_for(cp)] }
+
+          result = []
+          accum  = []
+
+          code_points_with_cc.each do |cp_with_cc|
+            if cp_with_cc[1] == 0
+              unless accum.empty?
+                result.concat(stable_sort(accum))
+                accum = []
               end
+              result << cp_with_cc
+            else
+              accum << cp_with_cc
             end
           end
+
+          result.concat(stable_sort(accum)) unless accum.empty?
+
+          result.map { |cp_with_cc| cp_with_cc[0] }
+        end
+
+        def stable_sort(code_points_with_cc)
+          n = code_points_with_cc.size - 2
+
+          code_points_with_cc.size.times do
+            swapped = false
+
+            (0..n).each do |j|
+              if code_points_with_cc[j][1] > code_points_with_cc[j + 1][1]
+                code_points_with_cc[j], code_points_with_cc[j + 1] = code_points_with_cc[j + 1], code_points_with_cc[j]
+                swapped = true
+              end
+            end
+
+            break unless swapped
+            n -= 1
+          end
+
+          code_points_with_cc
         end
 
         def combining_class_for(code_point)

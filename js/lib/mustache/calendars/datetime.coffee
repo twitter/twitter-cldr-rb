@@ -2,8 +2,8 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 	constructor: ->
 		@tokens = `{{{tokens}}}`
 		@calendar = `{{{calendar}}}`
-		@WEEKDAY_KEYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
-		@METHODS = # ignoring u, l, g, j, A
+		@weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+		@methods = # ignoring u, l, g, j, A
 			'G': 'era'
 			'y': 'year'
 			'Y': 'year_of_week_of_year'
@@ -49,10 +49,10 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 		return result
 
 	get_tokens: (obj, options) ->
-		return @tokens[options.type || "default"]
+		return @tokens[options.format || "date_time"][options.type || "default"]
 
 	result_for_token: (token, index, date) ->
-		return this[@METHODS[token.value[0]]](date, token.value, token.value.length)
+		return this[@methods[token.value[0]]](date, token.value, token.value.length)
 
 	era: (date, pattern, length) ->
 		throw 'not implemented'
@@ -149,7 +149,7 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return ("0000" + date.getDate().toString()).slice(-length)
 
 	weekday: (date, pattern, length) ->
-		key = @WEEKDAY_KEYS[date.getDay()]
+		key = @weekday_keys[date.getDay()]
 
 		switch length
 			when 1, 2, 3
@@ -176,15 +176,15 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 		hour = time.getHours()
 
 		switch pattern[0]
-			when 'h' # [1-12]
+			when 'h'
 				if hour > 12
 					hour = hour - 12
 				else if hour == 0
 					hour = 12
-			when 'K' # [0-23], [0-11]
+			when 'K'
 				if hour > 11
 					hour = hour - 12
-			when 'k' # [1-24]
+			when 'k'
 				if hour == 0
 					hour = 24
 

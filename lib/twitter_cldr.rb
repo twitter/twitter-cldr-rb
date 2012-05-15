@@ -17,8 +17,6 @@ require 'fileutils'
 require 'forwardable'
 
 require 'twitter_cldr/version'
-require 'twitter_cldr/core_ext'
-
 
 module TwitterCldr
 
@@ -101,4 +99,7 @@ module TwitterCldr
       require "js/lib/twitter_cldr_js"
     end
   end
+
 end
+
+require 'twitter_cldr/core_ext'

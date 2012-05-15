@@ -51,7 +51,7 @@ module TwitterCldr
       protected
 
       def era(date, pattern, length)
-        raise 'not implemented'
+        raise NotImplementedError
       end
 
       def year(date, pattern, length)
@@ -62,11 +62,11 @@ module TwitterCldr
       end
 
       def year_of_week_of_year(date, pattern, length)
-        raise 'not implemented'
+        raise NotImplementedError
       end
 
       def day_of_week_in_month(date, pattern, length) # e.g. 2nd Wed in July
-        raise 'not implemented'
+        raise NotImplementedError
       end
 
       def quarter(date, pattern, length)
@@ -91,10 +91,10 @@ module TwitterCldr
         when 2
           quarter.to_s.rjust(length, '0')
         when 3
-          raise 'not yet implemented (requires cldr\'s "multiple inheritance")'
+          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
           # @tokenizer.calendar[:quarters][:'stand-alone'][:abbreviated][key]
         when 4
-          raise 'not yet implemented (requires cldr\'s "multiple inheritance")'
+          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
           # @tokenizer.calendar[:quarters][:'stand-alone'][:wide][key]
         when 5
           @tokenizer.calendar[:quarters][:'stand-alone'][:narrow][quarter]
@@ -112,7 +112,7 @@ module TwitterCldr
         when 4
           @tokenizer.calendar[:months][:format][:wide][date.month]
         when 5
-          raise 'not yet implemented (requires cldr\'s "multiple inheritance")'
+          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
           @tokenizer.calendar[:months][:format][:narrow][date.month]
         else
           # raise unknown date format
@@ -126,10 +126,10 @@ module TwitterCldr
         when 2
           date.month.to_s.rjust(length, '0')
         when 3
-          raise 'not yet implemented (requires cldr\'s "multiple inheritance")'
+          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
           @tokenizer.calendar[:months][:'stand-alone'][:abbreviated][date.month]
         when 4
-          raise 'not yet implemented (requires cldr\'s "multiple inheritance")'
+          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
           @tokenizer.calendar[:months][:'stand-alone'][:wide][date.month]
         when 5
           @tokenizer.calendar[:months][:'stand-alone'][:narrow][date.month]
@@ -161,11 +161,11 @@ module TwitterCldr
 
       def weekday_local(date, pattern, length)
         # "Like E except adds a numeric value depending on the local starting day of the week"
-        raise 'not implemented (need to defer a country to lookup the local first day of week from weekdata)'
+        raise NotImplementedError, 'need to defer a country to lookup the local first day of week from weekdata'
       end
 
       def weekday_local_stand_alone(date, pattern, length)
-        raise 'not implemented (need to defer a country to lookup the local first day of week from weekdata)'
+        raise NotImplementedError, 'need to defer a country to lookup the local first day of week from weekdata'
       end
 
       def period(time, pattern, length)
@@ -196,7 +196,7 @@ module TwitterCldr
       end
 
       def second_fraction(time, pattern, length)
-        raise 'can not use the S format with more than 6 digits' if length > 6
+        raise ArgumentError.new('can not use the S format with more than 6 digits') if length > 6
         (time.usec.to_f / 10 ** (6 - length)).round.to_s.rjust(length, '0')
       end
 
@@ -210,7 +210,7 @@ module TwitterCldr
       end
 
       def timezone_generic_non_location(time, pattern, length)
-        raise 'not yet implemented (requires timezone translation data")'
+        raise NotImplementedError, 'requires timezone translation data'
       end
     end
   end

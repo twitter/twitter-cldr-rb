@@ -166,6 +166,16 @@ str = 'there %<{ "horse_count": { "one": "is one horse", "other": "are %{horse_c
 str.localize % { :horse_count => 3 }
 ```
 
+NOTE: If you're using TwitterCLDR with Rails 3, you may see an error if you try to use the `%` function on a localized string in your views.  Strings in views in Rails 3 are instances of `SafeBuffer`, which patches the `gsub` method that the TwitterCLDR plural formatter relies on.  To fix this issue, simply call `to_str` on any `SafeBuffer` before calling `localize`.  More info [here](https://github.com/rails/rails/issues/1555).  An example:
+
+```ruby
+# throws an error in Rails 3 views:
+'%<{"count": {"one": "only one", "other": "tons more!"}}'.localize % { :count => 2 }
+
+# works just fine:
+'%<{"count": {"one": "only one", "other": "tons more!"}}'.to_str.localize % { :count => 2 }
+```
+
 The `LocalizedString` class supports all forms of interpolation and combines support from both Ruby 1.8 and 1.9:
 
 ```ruby

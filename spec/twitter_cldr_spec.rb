@@ -40,6 +40,22 @@ describe TwitterCldr do
       TwitterCldr.convert_locale(:'zh-cn').should == :zh
       TwitterCldr.convert_locale(:'zh-tw').should == :'zh-Hant'
     end
+
+    it "should leave unknown locales alone" do
+      TwitterCldr.convert_locale(:blarg).should == :blarg
+    end
+  end
+
+  describe "#twitter_locale" do
+    it "should convert a CLDR locale to a twitter locale" do
+      TwitterCldr.twitter_locale(:ms).should == :msa
+      TwitterCldr.twitter_locale(:zh).should == :'zh-cn'
+      TwitterCldr.twitter_locale(:'zh-Hant').should == :'zh-tw'
+    end
+
+    it "should leave unknown locales alone" do
+      TwitterCldr.twitter_locale(:blarg).should == :blarg
+    end
   end
 
   describe "#get_locale" do

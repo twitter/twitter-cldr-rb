@@ -69,6 +69,18 @@ module TwitterCldr
       TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
     end
 
+    def twitter_locale(locale)
+      locale = locale.to_sym
+      result = locale
+      TWITTER_LOCALE_MAP.each_pair do |twitter_locale, cldr_locale|
+        if cldr_locale == locale
+          result = twitter_locale
+          break
+        end
+      end
+      result
+    end
+
     def supported_locales
       unless defined?(@@supported_locales)
         rejectable = [:shared, :unicode_data]

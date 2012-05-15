@@ -13,22 +13,19 @@ module TwitterCldr
   class LocalizedDateTime < LocalizedObject
     attr_reader :calendar_type
 
-    def initialize(obj, locale, options={})
-      super(obj, locale, options)
+    def initialize(obj, locale, options = {})
+      super
       @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
     end
 
-    def method_missing(method, *args, &block)
-      type = method.to_s.match(/to_(\w+)_s/)[1]
-      if type && !type.empty? && TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.include?(type.to_sym)
-        @formatter.format(@base_obj, :type => type.to_sym)
-      else
-        raise "Method not supported"
+    TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
+      define_method "to_#{format_type}_s" do
+        @formatter.format(@base_obj, :type => format_type.to_sym)
       end
     end
 
     def to_s
-      self.to_default_s
+      to_default_s
     end
 
     def to_date

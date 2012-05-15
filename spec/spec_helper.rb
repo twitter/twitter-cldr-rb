@@ -21,6 +21,8 @@ end
 RSpec.configure do |config|
   config.mock_with :rr
 
+  config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
+
   config.before(:each) do
     FastGettext.locale = :en
   end

@@ -62,6 +62,10 @@ module TwitterCldr
           !mapping.empty?
         end
 
+        def compatibility_decomposition?(mapping)
+          mapping.first =~ COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP
+        end
+
         # Special decomposition for Hangul syllables. Documented in Section 3.12 at
         # http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
         #
@@ -136,6 +140,8 @@ module TwitterCldr
         end
 
       end
+
+      COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP = /^<.*>$/
 
       HANGUL_DECOMPOSITION_CONSTANTS = {
           :SBase  => 0xAC00,

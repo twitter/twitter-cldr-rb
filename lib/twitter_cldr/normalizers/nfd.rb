@@ -22,14 +22,9 @@ module TwitterCldr
       class << self
 
         def normalize(string)
-          # Convert string to code points
-          code_points = string.split('').map { |char| char_to_code_point(char) }
-
-          # Normalize code points
+          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
           normalized_code_points = normalize_code_points(code_points)
-
-          # Convert normalized code points back to string
-          normalized_code_points.map { |code_point| code_point_to_char(code_point) }.join
+          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
         end
 
         def normalize_code_points(code_points)

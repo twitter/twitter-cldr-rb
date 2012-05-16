@@ -9,16 +9,18 @@ module TwitterCldr
     # Implements normalization of a Unicode string to Normalization Form D (NFD).
     # This normalization includes only Canonical Decomposition.
     #
-    class NFD < Base
+    class NFD < NFKD
 
       class << self
 
         protected
 
-        # Returns false if Decomposition Mapping is compatibility decomposition.
+        # Returns code point's Decomposition Mapping based on its Unicode data. Returns nil if the mapping has
+        # compatibility type (it contains compatibility formatting tag).
         #
-        def decomposable?(mapping)
-          super && !compatibility_decomposition?(mapping)
+        def decomposition_mapping(unicode_data)
+          mapping = parse_decomposition_mapping(unicode_data)
+          mapping unless compatibility_decomposition?(mapping)
         end
 
       end

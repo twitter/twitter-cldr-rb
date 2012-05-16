@@ -5,7 +5,6 @@
 
 module TwitterCldr
   module Normalizers
-    autoload :Base, 'twitter_cldr/normalizers/base'
     autoload :NFD,  'twitter_cldr/normalizers/nfd'
     autoload :NFKD, 'twitter_cldr/normalizers/nfkd'
   end

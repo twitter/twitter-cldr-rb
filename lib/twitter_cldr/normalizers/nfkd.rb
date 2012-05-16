@@ -5,26 +5,156 @@
 
 module TwitterCldr
   module Normalizers
-
-    # Implements normalization of a Unicode string to Normalization Form D (NFD).
-    # This normalization includes only Canonical Decomposition.
-    #
-    class NFKD < Base
+    class NFKD
 
       class << self
 
+        def normalize(string)
+          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
+          normalized_code_points = normalize_code_points(code_points)
+          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
+        end
+
+        def normalize_code_points(code_points)
+          canonical_ordering(decomposition(code_points))
+        end
+
         protected
 
-        # Removes compatibility formatting tag from Decomposition Mapping if there is one.
+        def decomposition(code_points)
+          code_points.map{ |code_point| decompose_recursively(code_point) }.flatten
+        end
+
+        # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
+        #
+        def decompose_recursively(code_point)
+          unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
+          return code_point unless unicode_data
+
+          if unicode_data.name.include?('Hangul')
+            decompose_hangul(code_point)
+          else
+            decompose_regular(unicode_data)
+          end
+        end
+
+        # Decomposes regular (non-Hangul) code point.
+        #
+        def decompose_regular(unicode_data)
+          mapping = decomposition_mapping(unicode_data)
+
+          if mapping && !mapping.empty?
+            mapping.map{ |cp| decompose_recursively(cp) }.flatten
+          else
+            unicode_data.code_point
+          end
+        end
+
+        # Returns code point's Decomposition Mapping based on its Unicode data.
         #
         def decomposition_mapping(unicode_data)
-          mapping = super(unicode_data)
-          compatibility_decomposition?(mapping) ? mapping[1..-1] : mapping
+          mapping = parse_decomposition_mapping(unicode_data)
+          mapping.shift if compatibility_decomposition?(mapping) # remove compatibility formatting tag
+          mapping
+        end
+
+        def compatibility_decomposition?(mapping)
+          COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP =~ mapping.first
+        end
+
+        def parse_decomposition_mapping(unicode_data)
+          unicode_data.decomposition.split
+        end
+
+        # Special decomposition for Hangul syllables. Documented in Section 3.12 at
+        # http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
+        #
+        def decompose_hangul(code_point)
+          s_index = code_point.hex - HANGUL_DECOMPOSITION_CONSTANTS[:SBase]
+
+          l_index = s_index / HANGUL_DECOMPOSITION_CONSTANTS[:NCount]
+          v_index = (s_index % HANGUL_DECOMPOSITION_CONSTANTS[:NCount]) / HANGUL_DECOMPOSITION_CONSTANTS[:TCount]
+          t_index = s_index % HANGUL_DECOMPOSITION_CONSTANTS[:TCount]
+
+          result = []
+
+          result << (HANGUL_DECOMPOSITION_CONSTANTS[:LBase] + l_index).to_s(16).upcase
+          result << (HANGUL_DECOMPOSITION_CONSTANTS[:VBase] + v_index).to_s(16).upcase
+          result << (HANGUL_DECOMPOSITION_CONSTANTS[:TBase] + t_index).to_s(16).upcase if t_index > 0
+
+          result
+        end
+
+        # Performs the Canonical Ordering Algorithm by stable sorting of every subsequence of combining code points
+        # (code points that have combining class greater than zero).
+        #
+        def canonical_ordering(code_points)
+          code_points_with_cc = code_points.map { |cp| [cp, combining_class_for(cp)] }
+
+          result = []
+          accum  = []
+
+          code_points_with_cc.each do |cp_with_cc|
+            if cp_with_cc[1] == 0
+              unless accum.empty?
+                result.concat(stable_sort(accum))
+                accum = []
+              end
+              result << cp_with_cc
+            else
+              accum << cp_with_cc
+            end
+          end
+
+          result.concat(stable_sort(accum)) unless accum.empty?
+
+          result.map { |cp_with_cc| cp_with_cc[0] }
+        end
+
+        # Performs stable sorting of a sequence of [code_point, combining_class] pairs.
+        #
+        def stable_sort(code_points_with_cc)
+          n = code_points_with_cc.size - 2
+
+          code_points_with_cc.size.times do
+            swapped = false
+
+            (0..n).each do |j|
+              if code_points_with_cc[j][1] > code_points_with_cc[j + 1][1]
+                code_points_with_cc[j], code_points_with_cc[j + 1] = code_points_with_cc[j + 1], code_points_with_cc[j]
+                swapped = true
+              end
+            end
+
+            break unless swapped
+            n -= 1
+          end
+
+          code_points_with_cc
+        end
+
+        def combining_class_for(code_point)
+          TwitterCldr::Shared::UnicodeData.for_code_point(code_point).combining_class.to_i
+        rescue NoMethodError
+          0
         end
 
       end
 
-    end
+      COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP = /^<.*>$/
 
+      HANGUL_DECOMPOSITION_CONSTANTS = {
+          :SBase  => 0xAC00,
+          :LBase  => 0x1100,
+          :VBase  => 0x1161,
+          :TBase  => 0x11A7,
+          :LCount => 19,
+          :VCount => 21,
+          :TCount => 28,
+          :NCount => 588,  # VCount * TCount
+          :Scount => 11172 # LCount * NCount
+      }
+
+    end
   end
 end

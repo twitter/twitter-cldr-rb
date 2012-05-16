@@ -24,22 +24,6 @@ describe NFD do
     NFD.normalize("ⶾⷕⶱⷀ").should == "ⶾⷕⶱⷀ"
   end
 
-  describe "#decompose" do
-    it "does not decompose a character with no decomposition mapping" do
-      code_points = %w[0EB8 041F 0066 1F52C A2D6]
-      code_points.each do |code_point|
-        NFD.decompose(code_point).should == code_point
-      end
-    end
-
-    it "does not decompose a character with compatibility decomposition mapping" do
-      code_points = %w[A770 FB02 FC35 FD20 00BC]
-      code_points.each do |code_point|
-        NFD.decompose(code_point).should == code_point
-      end
-    end
-  end
-
   describe "#normalize_code_points" do
     it "passes all the tests in NormalizersTestShort.txt" do
       open(File.join(NORMALIZERS_SPEC_PATH, 'NormalizationTestShort.txt'), 'r:UTF-8') do |file|

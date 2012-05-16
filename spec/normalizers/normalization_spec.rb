@@ -23,6 +23,7 @@ describe 'Unicode Normalization Algorithms' do
     end
 
     it 'passes all the tests in NormalizersTest.txt', :slow => true do
+      prepare_full_test
       run_normalization_test(described_class, invariants, FULL_TEST_PATH)
     end
   end

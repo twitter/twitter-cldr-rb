@@ -11,7 +11,7 @@ include TwitterCldr::Normalizers
 
 describe NFD do
 
-  NORMALIZERS_SPEC_PATH = File.dirname(File.dirname(__FILE__))
+  NORMALIZERS_SPEC_PATH = File.dirname(__FILE__)
 
   NORMALIZATION_TEST_URL = 'http://unicode.org/Public/UNIDATA/NormalizationTest.txt'
 

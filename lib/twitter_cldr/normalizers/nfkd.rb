@@ -34,19 +34,17 @@ module TwitterCldr
           if unicode_data.name.include?('Hangul')
             decompose_hangul(code_point)
           else
-            decompose_regular(unicode_data)
+            decompose_regular(code_point, decomposition_mapping(unicode_data))
           end
         end
 
         # Decomposes regular (non-Hangul) code point.
         #
-        def decompose_regular(unicode_data)
-          mapping = decomposition_mapping(unicode_data)
-
+        def decompose_regular(code_point, mapping)
           if mapping && !mapping.empty?
             mapping.map{ |cp| decompose_recursively(cp) }.flatten
           else
-            unicode_data.code_point
+            code_point
           end
         end
 
@@ -59,7 +57,7 @@ module TwitterCldr
         end
 
         def compatibility_decomposition?(mapping)
-          COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP =~ mapping.first
+          COMPATIBILITY_FORMATTING_TAG_REGEXP =~ mapping.first
         end
 
         def parse_decomposition_mapping(unicode_data)
@@ -141,7 +139,7 @@ module TwitterCldr
 
       end
 
-      COMPATIBILITY_DECOMPOSITION_MAPPING_REGEXP = /^<.*>$/
+      COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
 
       HANGUL_DECOMPOSITION_CONSTANTS = {
           :SBase  => 0xAC00,

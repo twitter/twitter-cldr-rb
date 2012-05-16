@@ -5,12 +5,18 @@
 
 module TwitterCldr
   module Normalizers
+
+    # Implements normalization of a Unicode string to Normalization Form D (NFD).
+    # This normalization includes only Canonical Decomposition.
+    #
     class NFD < Base
 
       class << self
 
         protected
 
+        # Returns false if Decomposition Mapping is compatibility decomposition.
+        #
         def decomposable?(mapping)
           super && !compatibility_decomposition?(mapping)
         end

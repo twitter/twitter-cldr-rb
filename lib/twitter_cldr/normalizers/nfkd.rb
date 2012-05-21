@@ -4,6 +4,11 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
+  # Normalizers module includes algorithm for Unicode normalization. Basic information on this topic can be found in the
+  # Unicode Standard Annex #15 "Unicode Normalization Forms" at http://www.unicode.org/reports/tr15/. More detailed
+  # description is given in the section "3.11 Normalization Forms" of the Unicode Standard core specification. The
+  # latest version at the moment (for Unicode 6.1) is available at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf.
+  #
   module Normalizers
     class NFKD
 

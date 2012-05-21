@@ -3,10 +3,10 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'twitter_cldr/utils/interpolation'
-
 module TwitterCldr
   module Utils
+
+    autoload :CodePoints, 'twitter_cldr/utils/code_points'
 
     class << self
 
@@ -26,3 +26,5 @@ module TwitterCldr
 
   end
 end
+
+require 'twitter_cldr/utils/interpolation'

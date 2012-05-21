@@ -32,7 +32,7 @@ module TwitterCldr
     end
 
     def code_points
-      TwitterCldr::Normalizers::Base.string_to_code_points(@base_obj)
+      TwitterCldr::Utils::CodePoints.from_string(@base_obj)
     end
 
     def to_s

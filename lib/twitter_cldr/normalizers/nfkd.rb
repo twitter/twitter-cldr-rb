@@ -57,7 +57,7 @@ module TwitterCldr
         end
 
         def compatibility_decomposition?(mapping)
-          COMPATIBILITY_FORMATTING_TAG_REGEXP =~ mapping.first
+          !!(COMPATIBILITY_FORMATTING_TAG_REGEXP =~ mapping.first)
         end
 
         def parse_decomposition_mapping(unicode_data)

@@ -5,6 +5,7 @@
 
 module TwitterCldr
   module Shared
+    autoload :Calendar,    'twitter_cldr/shared/calendar'
     autoload :Currencies,  'twitter_cldr/shared/currencies'
     autoload :Languages,   'twitter_cldr/shared/languages'
     autoload :Resources,   'twitter_cldr/shared/resources'

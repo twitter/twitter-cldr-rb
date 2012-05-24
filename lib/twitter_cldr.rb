@@ -26,25 +26,27 @@ module TwitterCldr
 
   DEFAULT_LOCALE = :en
   DEFAULT_CALENDAR_TYPE = :gregorian
-  RESOURCE_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), "resources")
+
+  RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
+  NON_LOCALE_RESOURCES = [:shared, :unicode_data]
 
   # maps twitter locales to cldr locales
-  TWITTER_LOCALE_MAP = { :msa     => :ms,
-                         :'zh-cn' => :zh,
-                         :'zh-tw' => :'zh-Hant' }
-
-  @@resources = TwitterCldr::Shared::Resources.new
+  TWITTER_LOCALE_MAP = {
+      :msa     => :ms,
+      :'zh-cn' => :zh,
+      :'zh-tw' => :'zh-Hant'
+  }
 
   def_delegator :resources, :resource_for, :get_resource
 
   class << self
 
     def get_resource_file(locale, resource)
-      File.join(RESOURCE_DIR, convert_locale(locale).to_s, "#{resource}.yml")
+      File.join(RESOURCES_DIR, convert_locale(locale).to_s, "#{resource}.yml")
     end
 
     def resources
-      @@resources
+      @resources ||= TwitterCldr::Shared::Resources.new
     end
 
     def get_locale
@@ -64,14 +66,7 @@ module TwitterCldr
     end
 
     def supported_locales
-      unless defined?(@@supported_locales)
-        rejectable = [:shared]
-        @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
-          File.basename(file).to_sym
-        end.reject { |file| rejectable.include?(file) }
-      end
-
-      @@supported_locales
+      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, '*')).map { |f| File.basename(f).to_sym } - NON_LOCALE_RESOURCES
     end
 
     def supported_locale?(locale)

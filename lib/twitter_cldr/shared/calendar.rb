@@ -11,8 +11,6 @@ module TwitterCldr
 
       NAMES_FORMS = [:wide, :narrow, :abbreviated]
 
-      REDIRECT_REGEXP = /^c$/
-
       attr_reader :locale, :calendar_type
 
       def initialize(locale = TwitterCldr.get_locale, calendar_type = TwitterCldr::DEFAULT_CALENDAR_TYPE)

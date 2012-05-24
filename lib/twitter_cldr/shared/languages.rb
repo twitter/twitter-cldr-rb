@@ -5,8 +5,10 @@
 
 module TwitterCldr
   module Shared
-    class Languages
+    module Languages
+
       class << self
+
         def all
           all_for(TwitterCldr::get_locale)
         end
@@ -47,7 +49,9 @@ module TwitterCldr
           locale = TwitterCldr.convert_locale(locale)
           TwitterCldr.get_resource(locale, "languages")[locale]
         end
+
       end
+
     end
   end
 end

@@ -13,9 +13,10 @@ describe Calendar do
 
   describe '#initialize' do
     it 'returns calendar for default locale and type' do
+      stub(TwitterCldr).get_locale { :fr }
       cal = Calendar.new
 
-      cal.locale.should == TwitterCldr::DEFAULT_LOCALE
+      cal.locale.should == :fr
       cal.calendar_type.should == TwitterCldr::DEFAULT_CALENDAR_TYPE
     end
 
@@ -23,11 +24,14 @@ describe Calendar do
       Calendar.new(:jp).locale.should == :jp
     end
 
+    it 'uses TwitterCldr.convert_locale' do
+      Calendar.new(:'zh-cn').locale.should == :zh
+    end
+
     it 'returns calendar of a specific type' do
       Calendar.new(:th, :buddhist).calendar_type.should == :buddhist
     end
 
-    xit 'uses TwitterCldr.convert_locale'
   end
 
   describe '#months' do

@@ -29,12 +29,42 @@ describe Calendar do
   end
 
   describe '#months' do
-    it 'returns months list in the default format' do
-      calendar.months.should == %w[Januar Februar März April Mai Juni Juli August September Oktober November Dezember]
+    context 'when data is available' do
+      it 'returns months list in a wide names form by default' do
+        calendar.months.should == %w[Januar Februar März April Mai Juni Juli August September Oktober November Dezember]
+      end
+
+      it 'supports wide names form' do
+        calendar.months(:wide).should == %w[Januar Februar März April Mai Juni Juli August September Oktober November Dezember]
+      end
+
+      it 'supports narrow names form' do
+        calendar.months(:narrow).should == %w[J F M A M J J A S O N D]
+      end
+
+      # is failing because de/calendars.yml misses some of abbreviated months names in the 'stand-alone' section
+      xit 'supports abbreviated names form' do
+        calendar.months(:abbreviated).should == %w[Jan Feb Mär Apr Mai Jun Jul Aug Sep Okt Nov Dez]
+      end
+
+      it 'returns nil if invalid names form is passed' do
+        calendar.months(:wat).should == nil
+      end
+    end
+
+    context 'when some data is missing' do
+      it 'returns nil if some names format is missing' do
+        stub(TwitterCldr).get_resource { { :de => { :calendars => { :gregorian => { :months => { :'stand-alone' => {} } } } } } }
+        calendar.months(:wide).should == nil
+      end
+
+      it 'returns nil if calendars data is missing' do
+        stub(TwitterCldr).get_resource { { :de => {} } }
+        calendar.months(:wide).should == nil
+      end
     end
   end
 
   xit 'uses TwitterCldr.convert_locale'
-  xit 'do not raise (or raise?) an exception if calendar data is missing'
 
 end

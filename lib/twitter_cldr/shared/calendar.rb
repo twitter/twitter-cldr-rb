@@ -7,9 +7,9 @@ module TwitterCldr
   module Shared
     class Calendar
 
-      DEFAULT_FORMAT = :'stand-alone'
+      DEFAULT_FORM = :'stand-alone'
 
-      FORMS = [:wide, :narrow, :abbreviated]
+      NAMES_FORMS = [:wide, :narrow, :abbreviated]
 
       REDIRECT_REGEXP = /^c$/
 
@@ -20,14 +20,17 @@ module TwitterCldr
         @calendar_type = calendar_type
       end
 
-      def months(form = :wide)
-        get_data(:months, DEFAULT_FORMAT, form).sort_by{ |m| m.first }.map { |m| m.last }
+      def months(names_form = :wide)
+        return unless NAMES_FORMS.include?(names_form.to_sym)
+
+        data = get_data(:months, DEFAULT_FORM, names_form)
+        data && data.sort_by{ |m| m.first }.map { |m| m.last }
       end
 
       private
 
       def get_data(*path)
-        data = traverse_path(resource, path)
+        data = traverse_path(calendar_data, path)
         redirect = parse_redirect(data)
         redirect ? get_data(*redirect) : data
       end
@@ -41,11 +44,15 @@ module TwitterCldr
       end
 
       def redirect_regexp
-        Regexp.new("^calendars\.#{@calendar_type}\.(.*)$")
+        Regexp.new("^calendars\.#{calendar_type}\.(.*)$")
+      end
+
+      def calendar_data
+        @calendar_data ||= traverse_path(resource, [locale, :calendars, calendar_type])
       end
 
       def resource
-        @resource ||= TwitterCldr.get_resource(@locale, :calendars)[@locale][:calendars][@calendar_type]
+        TwitterCldr.get_resource(@locale, :calendars)
       end
 
     end

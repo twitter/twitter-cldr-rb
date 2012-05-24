@@ -7,7 +7,7 @@ module TwitterCldr
   module Shared
     class Calendar
 
-      DEFAULT_FORM = :'stand-alone'
+      DEFAULT_FORMAT = :'stand-alone'
 
       NAMES_FORMS = [:wide, :narrow, :abbreviated]
 
@@ -21,13 +21,19 @@ module TwitterCldr
       end
 
       def months(names_form = :wide)
-        return unless NAMES_FORMS.include?(names_form.to_sym)
-
-        data = get_data(:months, DEFAULT_FORM, names_form)
+        data = get_with_names_form(:months, names_form)
         data && data.sort_by{ |m| m.first }.map { |m| m.last }
       end
 
+      def weekdays(names_form = :wide)
+        get_with_names_form(:days, names_form)
+      end
+
       private
+
+      def get_with_names_form(data_type, names_form)
+        get_data(data_type, DEFAULT_FORMAT, names_form) if NAMES_FORMS.include?(names_form.to_sym)
+      end
 
       def get_data(*path)
         data = traverse_path(calendar_data, path)

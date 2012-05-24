@@ -26,6 +26,8 @@ describe Calendar do
     it 'returns calendar of a specific type' do
       Calendar.new(:th, :buddhist).calendar_type.should == :buddhist
     end
+
+    xit 'uses TwitterCldr.convert_locale'
   end
 
   describe '#months' do
@@ -65,6 +67,64 @@ describe Calendar do
     end
   end
 
-  xit 'uses TwitterCldr.convert_locale'
+  describe '#weekdays' do
+    context 'when data is available' do
+      it 'returns weekdays list in a wide names form by default' do
+        calendar.weekdays.should == {
+            :sun => 'Sonntag',
+            :mon => 'Montag',
+            :tue => 'Dienstag',
+            :wed => 'Mittwoch',
+            :thu => 'Donnerstag',
+            :fri => 'Freitag',
+            :sat => 'Samstag'
+        }
+      end
+
+      it 'supports wide names form' do
+        calendar.weekdays(:wide).should == {
+            :sun => 'Sonntag',
+            :mon => 'Montag',
+            :tue => 'Dienstag',
+            :wed => 'Mittwoch',
+            :thu => 'Donnerstag',
+            :fri => 'Freitag',
+            :sat => 'Samstag'
+        }
+      end
+
+      it 'supports narrow names form' do
+        calendar.weekdays(:narrow).should == { :sun => 'S', :mon => 'M', :tue => 'D', :wed => 'M', :thu => 'D', :fri => 'F', :sat => 'S' }
+      end
+
+      it 'supports abbreviated names form' do
+        calendar.weekdays(:abbreviated).should == {
+            :sun => 'So.',
+            :mon => 'Mo.',
+            :tue => 'Di.',
+            :wed => 'Mi.',
+            :thu => 'Do.',
+            :fri => 'Fr.',
+            :sat => 'Sa.'
+        }
+      end
+
+      it 'returns nil if invalid names form is passed' do
+        calendar.weekdays(:wat).should == nil
+      end
+    end
+
+    context 'when some data is missing' do
+      it 'returns nil if some names format is missing' do
+        stub(TwitterCldr).get_resource { { :de => { :calendars => { :gregorian => { :days => { :'stand-alone' => {} } } } } } }
+        calendar.weekdays(:wide).should == nil
+      end
+
+      it 'returns nil if calendars data is missing' do
+        stub(TwitterCldr).get_resource { { :de => {} } }
+        calendar.weekdays(:wide).should == nil
+      end
+    end
+  end
 
 end

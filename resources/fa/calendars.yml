@@ -50,13 +50,13 @@ fa:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1}، ساعت {0}"
+            pattern: "{{date}}، ساعت {{time}}"
           long: 
-            pattern: "{1}، ساعت {0}"
+            pattern: "{{date}}، ساعت {{time}}"
           medium: 
-            pattern: "{1}،‏ {0}"
+            pattern: "{{date}}،‏ {{time}}"
           short: 
-            pattern: "{1}،‏ {0}"
+            pattern: "{{date}}،‏ {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 

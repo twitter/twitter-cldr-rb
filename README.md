@@ -251,30 +251,29 @@ code_point.combining_class  # "0"
 Convert characters to code points:
 
 ```ruby
-TwitterCldr::Normalizers::Base.char_to_code_point("¿")  # "00BF"
+TwitterCldr::Utils::CodePoints.from_string("¿")  # ["00BF"]
 ```
 
 Convert code points to characters:
 
 ```ruby
-TwitterCldr::Normalizers::Base.code_point_to_char("00BF")  # "¿"
+TwitterCldr::Utils::CodePoints.to_string(["00BF"])  # "¿"
 ```
 
-Normalize/decompose a Unicode string (NFD only for now).  Note that the normalized/decomposed string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
+Normalize/decompose a Unicode string (NFD, NFKD implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
 TwitterCldr::Normalizers::NFD.normalize("français")  # "français"
-TwitterCldr::Normalizers::NFD.decompose("español")   # "español"
 ```
 
-Normalization and decomposition are easier to see in hex:
+Normalization is easier to see in hex:
 
 ```ruby
 # ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
-code_points = "español".split('').map { |char| TwitterCldr::Normalizers::NFD.char_to_code_point(char) }
+TwitterCldr::Utils::CodePoints.from_string("español")
 
 # ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
-TwitterCldr::Normalizers::NFD.normalize_code_points(code_points)
+TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalizers::NFD.normalize("español"))
 ```
 
 Notice in the example above that the letter "ñ" was transformed from `00F1` to `006E 0303`, which represent the "n" and the "˜" respectively.

@@ -53,13 +53,13 @@ ja:
           medium: 
             pattern: yyyy/MM/dd
           short: 
-            pattern: yy/MM/dd
+            pattern: yyyy/MM/dd
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{{date}}{{time}}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{{date}}{{time}}"
+            pattern: "{{date}} {{time}}"
           medium: 
             pattern: "{{date}} {{time}}"
           short: 
@@ -69,26 +69,14 @@ ja:
           full: 
             pattern: "H時mm分ss秒 zzzz"
           long: 
-            pattern: "HH:mm:ss z"
+            pattern: "H:mm:ss z"
           medium: 
             pattern: "H:mm:ss"
           short: 
             pattern: "H:mm"
       months: 
         format: 
-          abbreviated: 
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
+          abbreviated: :"calendars.gregorian.months.format.wide"
           narrow: :"calendars.gregorian.months.stand-alone.narrow"
           wide: 
             1: 1月
@@ -104,19 +92,7 @@ ja:
             8: 8月
             9: 9月
         stand-alone: 
-          abbreviated: 
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
+          abbreviated: :"calendars.gregorian.months.format.abbreviated"
           narrow: 
             1: 1
             10: 10
@@ -132,8 +108,14 @@ ja:
             9: 9
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: 午前
-        pm: 午後
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: 午前
+            noon: 正午
+            pm: 午後
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 
@@ -141,14 +123,22 @@ ja:
             2: Q2
             3: Q3
             4: Q4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: 第1四半期
             2: 第2四半期
             3: 第3四半期
             4: 第4四半期
         stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          abbreviated: 
+            1: Q1
+            2: Q2
+            3: Q3
+            4: Q4
           narrow: 
             1: 1
             2: 2

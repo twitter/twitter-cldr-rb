@@ -32,10 +32,10 @@ describe DateTimeTokenizer do
 
     it "should expand date and time placeholders and return the correct list of tokens" do
       tokenizer = DateTimeTokenizer.new(:locale => :es)
-      got = tokenizer.tokens(:type => :full)
-      expected = [
+      got       = tokenizer.tokens(:type => :full)
+      expected  = [
           { :value => "EEEE", :type => :pattern },
-          { :value => " ", :type => :plaintext },
+          { :value => ", ", :type => :plaintext },
           { :value => "d", :type => :pattern },
           { :value => " ", :type => :plaintext },
           { :value => "'de'", :type => :plaintext },
@@ -60,11 +60,16 @@ describe DateTimeTokenizer do
 
   describe "#mirror_resource" do
     it "should add only the missing keys" do
-      from = {:a => 1,
-              :b => { :c => 2, :d => 3},
-              :e => { :f => 4}}
-      to = {:b => { :c => 100 },
-            :e => 101}
+      from = {
+          :a => 1,
+          :b => { :c => 2, :d => 3 },
+          :e => { :f => 4 }
+      }
+
+      to = {
+          :b => { :c => 100 },
+          :e => 101
+      }
 
       tokenizer = DateTimeTokenizer.new
       tokenizer.send(:mirror_resource, :from => from, :to => to)

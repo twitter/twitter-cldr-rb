@@ -4,14 +4,7 @@ ur:
       days: 
         format: 
           abbreviated: :"calendars.gregorian.days.format.wide"
-          narrow: 
-            fri: ج
-            mon: پ
-            sat: ہ
-            sun: ا
-            thu: ج
-            tue: م
-            wed: ب
+          narrow: :"calendars.gregorian.days.stand-alone.narrow"
           wide: 
             fri: جمعہ
             mon: پير
@@ -34,7 +27,7 @@ ur:
       fields: 
         day: دن
         dayperiod: رات/صبح
-        era: دور
+        era: عہد
         hour: گھنٹہ
         minute: منٹ
         month: مہینہ
@@ -42,16 +35,16 @@ ur:
         week: ہفتہ
         weekday: "ہفتے کا دن"
         year: سال
-        zone: زون
+        zone: "منطقۂ وقت"
       formats: 
         date: 
           default: :"calendars.gregorian.formats.date.medium"
           full: 
-            pattern: "EEEE, d, MMMM y"
+            pattern: "EEEE؍ d؍ MMMM y"
           long: 
-            pattern: "d, MMMM y"
+            pattern: "d؍ MMMM y"
           medium: 
-            pattern: "d, MMM y"
+            pattern: "d؍ MMM y"
           short: 
             pattern: d/M/yy
         datetime: 
@@ -84,7 +77,7 @@ ur:
             11: نومبر
             12: دسمبر
             2: فروری
-            3: "مار چ"
+            3: مارچ
             4: اپريل
             5: مئ
             6: جون
@@ -94,29 +87,32 @@ ur:
         stand-alone: 
           abbreviated: :"calendars.gregorian.months.format.abbreviated"
           narrow: 
-            1: ج
-            10: ا
-            11: ن
-            12: د
-            2: ف
-            3: م
-            4: ا
-            5: م
-            6: ج
-            7: ج
-            8: ا
-            9: س
+            1: 1
+            10: 10
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: "قبل دوپہر"
-        pm: "بعد دوپہر"
-      quarters: 
         format: 
           abbreviated: 
-            1: "1سہ ماہی"
-            2: "2سہ ماہی"
-            3: "3سہ ماہی"
-            4: "4سہ ماہی"
+            am: دن
+            pm: رات
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: دن
+            pm: رات
+        stand-alone: {}
+      quarters: 
+        format: 
+          abbreviated: :"calendars.gregorian.quarters.format.wide"
           narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
           wide: 
             1: "پہلی سہ ماہی"

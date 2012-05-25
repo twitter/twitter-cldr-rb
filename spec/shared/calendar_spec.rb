@@ -48,8 +48,7 @@ describe Calendar do
         calendar.months(:narrow).should == %w[J F M A M J J A S O N D]
       end
 
-      # is failing because de/calendars.yml misses some of abbreviated months names in the 'stand-alone' section
-      xit 'supports abbreviated names form' do
+      it 'supports abbreviated names form' do
         calendar.months(:abbreviated).should == %w[Jan Feb Mär Apr Mai Jun Jul Aug Sep Okt Nov Dez]
       end
 
@@ -103,13 +102,13 @@ describe Calendar do
 
       it 'supports abbreviated names form' do
         calendar.weekdays(:abbreviated).should == {
-            :sun => 'So.',
-            :mon => 'Mo.',
-            :tue => 'Di.',
-            :wed => 'Mi.',
-            :thu => 'Do.',
-            :fri => 'Fr.',
-            :sat => 'Sa.'
+            :sun => 'So',
+            :mon => 'Mo',
+            :tue => 'Di',
+            :wed => 'Mi',
+            :thu => 'Do',
+            :fri => 'Fr',
+            :sat => 'Sa'
         }
       end
 

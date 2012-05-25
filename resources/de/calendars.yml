@@ -21,7 +21,14 @@ de:
             tue: Dienstag
             wed: Mittwoch
         stand-alone: 
-          abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          abbreviated: 
+            fri: Fr
+            mon: Mo
+            sat: Sa
+            sun: So
+            thu: Do
+            tue: Di
+            wed: Mi
           narrow: 
             fri: F
             mon: M
@@ -105,10 +112,15 @@ de:
             9: September
         stand-alone: 
           abbreviated: 
+            1: Jan
             10: Okt
             11: Nov
             12: Dez
+            2: Feb
             3: Mär
+            4: Apr
+            5: Mai
+            6: Jun
             7: Jul
             8: Aug
             9: Sep
@@ -127,8 +139,26 @@ de:
             9: S
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: vorm.
-        pm: nachm.
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            afternoon: nachmittags
+            am: vorm.
+            earlyMorning: morgens
+            evening: abends
+            morning: vormittags
+            night: nachts
+            noon: Mittag
+            pm: nachm.
+        stand-alone: 
+          wide: 
+            afternoon: Nachmittag
+            earlyMorning: Morgen
+            evening: Abend
+            morning: Vormittag
+            night: Nacht
+            noon: Mittag
       quarters: 
         format: 
           abbreviated: 
@@ -136,7 +166,11 @@ de:
             2: Q2
             3: Q3
             4: Q4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "1. Quartal"
             2: "2. Quartal"

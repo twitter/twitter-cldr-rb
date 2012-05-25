@@ -16,10 +16,10 @@ describe DateTimeTokenizer do
 
     it "initializes individual date and time placeholder tokenizers" do
       placeholders = DateTimeTokenizer.new.placeholders
-      placeholders[0][:name].should == :date
-      placeholders[0][:object].should be_a(DateTokenizer)
-      placeholders[1][:name].should == :time
-      placeholders[1][:object].should be_a(TimeTokenizer)
+      placeholders[0][:name].should == :time
+      placeholders[0][:object].should be_a(TimeTokenizer)
+      placeholders[1][:name].should == :date
+      placeholders[1][:object].should be_a(DateTokenizer)
     end
   end
 
@@ -33,25 +33,27 @@ describe DateTimeTokenizer do
     it "should expand date and time placeholders and return the correct list of tokens" do
       tokenizer = DateTimeTokenizer.new(:locale => :es)
       got = tokenizer.tokens(:type => :full)
-      expected = [{ :value => "HH", :type => :pattern },
-                  { :value => ":", :type => :plaintext },
-                  { :value => "mm", :type => :pattern },
-                  { :value => ":", :type => :plaintext },
-                  { :value => "ss", :type => :pattern },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "zzzz", :type => :pattern },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "EEEE", :type => :pattern },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "d", :type => :pattern },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "'de'", :type => :plaintext },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "MMMM", :type => :pattern },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "'de'", :type => :plaintext },
-                  { :value => " ", :type => :plaintext },
-                  { :value => "y", :type => :pattern }]
+      expected = [
+          { :value => "EEEE", :type => :pattern },
+          { :value => " ", :type => :plaintext },
+          { :value => "d", :type => :pattern },
+          { :value => " ", :type => :plaintext },
+          { :value => "'de'", :type => :plaintext },
+          { :value => " ", :type => :plaintext },
+          { :value => "MMMM", :type => :pattern },
+          { :value => " ", :type => :plaintext },
+          { :value => "'de'", :type => :plaintext },
+          { :value => " ", :type => :plaintext },
+          { :value => "y", :type => :pattern },
+          { :value => " ", :type => :plaintext },
+          { :value => "HH", :type => :pattern },
+          { :value => ":", :type => :plaintext },
+          { :value => "mm", :type => :pattern },
+          { :value => ":", :type => :plaintext },
+          { :value => "ss", :type => :pattern },
+          { :value => " ", :type => :plaintext },
+          { :value => "zzzz", :type => :pattern },
+      ]
       check_token_list(got, expected)
     end
   end

@@ -278,6 +278,16 @@ TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalizers::NFD.normali
 
 Notice in the example above that the letter "ñ" was transformed from `00F1` to `006E 0303`, which represent the "n" and the "˜" respectively.
 
+A few convenience methods also exist for `String` that make it easy to normalize and get code points for strings:
+
+```ruby
+# ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+"español".localize.code_points
+
+# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+"español".localize.normalize.code_points
+```
+
 ## About Twitter-specific Locales
 
 Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:

@@ -5,6 +5,8 @@ pl:
         patterns: 
           default: "#,##0.00 ¤"
         unit: 
+          few: "{0} {1}"
+          many: "{0} {1}"
           one: "{0} {1}"
           other: "{0} {1}"
       decimal: 
@@ -17,6 +19,7 @@ pl:
         patterns: 
           default: "#E0"
     symbols: 
+      alias: ""
       decimal: ","
       exponential: E
       group:  
@@ -24,8 +27,6 @@ pl:
       list: ;
       minus_sign: "-"
       nan: NaN
-      native_zero_digit: 0
-      pattern_digit: "#"
       per_mille: ‰
       percent_sign: "%"
       plus_sign: +

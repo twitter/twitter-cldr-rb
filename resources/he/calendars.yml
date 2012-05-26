@@ -4,36 +4,43 @@ he:
       days: 
         format: 
           abbreviated: 
-            fri: "יום ו'"
-            mon: "יום ב'"
+            fri: "יום ו׳"
+            mon: "יום ב׳"
             sat: שבת
-            sun: "יום א'"
-            thu: "יום ה'"
-            tue: "יום ג'"
-            wed: "יום ד'"
-          narrow: :"calendars.gregorian.days.stand-alone.narrow"
+            sun: "יום א׳"
+            thu: "יום ה׳"
+            tue: "יום ג׳"
+            wed: "יום ד׳"
+          narrow: 
+            fri: ו
+            mon: ב
+            sat: ש
+            sun: א
+            thu: ה
+            tue: ג
+            wed: ד
           wide: 
-            fri: "יום ו'"
-            mon: "יום ב'"
+            fri: "יום שישי"
+            mon: "יום שני"
             sat: "יום שבת"
-            sun: "יום א'"
-            thu: "יום ה'"
-            tue: "יום ג'"
-            wed: "יום ד'"
+            sun: "יום ראשון"
+            thu: "יום חמישי"
+            tue: "יום שלישי"
+            wed: "יום רביעי"
         stand-alone: 
           abbreviated: :"calendars.gregorian.days.format.abbreviated"
           narrow: 
-            fri: ו'
-            mon: ב'
-            sat: ש'
-            sun: א'
-            thu: ה'
-            tue: ג'
-            wed: ד'
+            fri: ו
+            mon: ב
+            sat: ש
+            sun: א
+            thu: ה
+            tue: ג
+            wed: ד
           wide: :"calendars.gregorian.days.format.wide"
       fields: 
         day: יום
-        dayperiod: Dayperiod
+        dayperiod: לפה״צ/אחה״צ
         era: תקופה
         hour: שעה
         minute: דקה
@@ -51,19 +58,19 @@ he:
           long: 
             pattern: "d בMMMM y"
           medium: 
-            pattern: d.M.yyyy
+            pattern: "d בMMM yyyy"
           short: 
             pattern: dd/MM/yy
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -82,21 +89,33 @@ he:
             11: נוב
             12: דצמ
             2: פבר
-            3: מרס
+            3: מרץ
             4: אפר
             5: מאי
             6: יונ
             7: יול
             8: אוג
             9: ספט
-          narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          narrow: 
+            1: 1
+            10: 10
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
           wide: 
             1: ינואר
             10: אוקטובר
             11: נובמבר
             12: דצמבר
             2: פברואר
-            3: מרס
+            3: מרץ
             4: אפריל
             5: מאי
             6: יוני
@@ -104,7 +123,19 @@ he:
             8: אוגוסט
             9: ספטמבר
         stand-alone: 
-          abbreviated: :"calendars.gregorian.months.format.abbreviated"
+          abbreviated: 
+            1: ינו׳
+            10: אוק׳
+            11: נוב׳
+            12: דצמ׳
+            2: פבר׳
+            3: מרץ
+            4: אפר׳
+            5: מאי
+            6: יונ׳
+            7: יול׳
+            8: אוג׳
+            9: ספט׳
           narrow: 
             1: 1
             10: 10
@@ -120,16 +151,21 @@ he:
             9: 9
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: לפנה"צ
-        pm: אחה"צ
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: לפנה״צ
+            pm: אחה״צ
+        stand-alone: {}
       quarters: 
         format: 
-          abbreviated: 
-            1: "רבעון 1"
-            2: "רבעון 2"
-            3: "רבעון 3"
-            4: "רבעון 4"
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          abbreviated: :"calendars.gregorian.quarters.format.wide"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "רבעון 1"
             2: "רבעון 2"

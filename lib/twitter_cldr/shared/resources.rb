@@ -6,6 +6,7 @@
 module TwitterCldr
   module Shared
     class Resources
+
       def initialize
         @resources_by_locale = Hash.new do |hash, locale|
           hash[locale] = Hash.new { |h, resource| h[resource] = data_for(locale, resource) }

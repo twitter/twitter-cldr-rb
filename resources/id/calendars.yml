@@ -23,26 +23,26 @@ id:
         stand-alone: 
           abbreviated: :"calendars.gregorian.days.format.abbreviated"
           narrow: 
-            fri: 6
-            mon: 2
-            sat: 7
-            sun: 1
-            thu: 5
-            tue: 3
-            wed: 4
+            fri: J
+            mon: S
+            sat: S
+            sun: M
+            thu: K
+            tue: S
+            wed: R
           wide: :"calendars.gregorian.days.format.wide"
       fields: 
-        day: Day
-        dayperiod: Dayperiod
+        day: Hari
+        dayperiod: Siang/Malam
         era: Era
-        hour: Hour
-        minute: Minute
-        month: Month
-        second: Second
-        week: Week
-        weekday: "Day of the Week"
-        year: Year
-        zone: Zone
+        hour: Jam
+        minute: Menit
+        month: Bulan
+        second: Detik
+        week: Minggu
+        weekday: "Hari dalam Seminggu"
+        year: Tahun
+        zone: "Zona Waktu"
       formats: 
         date: 
           default: :"calendars.gregorian.formats.date.medium"
@@ -57,13 +57,13 @@ id:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -87,7 +87,7 @@ id:
             5: Mei
             6: Jun
             7: Jul
-            8: Agu
+            8: Agt
             9: Sep
           narrow: :"calendars.gregorian.months.stand-alone.narrow"
           wide: 
@@ -106,22 +106,27 @@ id:
         stand-alone: 
           abbreviated: :"calendars.gregorian.months.format.abbreviated"
           narrow: 
-            1: 1
-            10: 10
-            11: 11
-            12: 12
-            2: 2
-            3: 3
-            4: 4
-            5: 5
-            6: 6
-            7: 7
-            8: 8
-            9: 9
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: AM
-        pm: PM
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: AM
+            pm: PM
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 
@@ -129,17 +134,29 @@ id:
             2: K2
             3: K3
             4: K4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "kuartal pertama"
             2: "kuartal kedua"
             3: "kuartal ketiga"
             4: "kuartal keempat"
         stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          abbreviated: 
+            1: K1
+            2: K2
+            3: K3
+            4: K4
           narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          wide: :"calendars.gregorian.quarters.format.wide"
+          wide: 
+            1: "kuartal pertama"
+            2: "kuartal kedua"
+            3: "kuartal ketiga"
+            4: "kuartal keempat"

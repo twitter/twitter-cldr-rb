@@ -59,10 +59,10 @@ describe Rules do
       Rules.all_for(:ru).should =~ [:one, :few, :many, :other]
     end
 
-    it "returns an empty array on error" do
+    it "returns nil on error" do
       stub(Rules).get_resource { lambda { raise "Jelly beans" } }
-      Rules.all_for(:en).should == []
-      Rules.all_for(:ru).should == []
+      Rules.all_for(:en).should be_nil
+      Rules.all_for(:ru).should be_nil
     end
   end
 

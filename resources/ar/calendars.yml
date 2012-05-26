@@ -4,13 +4,13 @@ ar:
       days: 
         format: 
           abbreviated: 
-            fri: جمعة
-            mon: اثنين
-            sat: سبت
-            sun: أحد
-            thu: خميس
-            tue: ثلاثاء
-            wed: أربعاء
+            fri: الجمعة
+            mon: الاثنين
+            sat: السبت
+            sun: الأحد
+            thu: الخميس
+            tue: الثلاثاء
+            wed: الأربعاء
           narrow: :"calendars.gregorian.days.stand-alone.narrow"
           wide: 
             fri: الجمعة
@@ -21,7 +21,14 @@ ar:
             tue: الثلاثاء
             wed: الأربعاء
         stand-alone: 
-          abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          abbreviated: 
+            fri: الجمعة
+            mon: الاثنين
+            sat: السبت
+            sun: الأحد
+            thu: الخميس
+            tue: الثلاثاء
+            wed: الأربعاء
           narrow: 
             fri: ج
             mon: ن
@@ -30,7 +37,8 @@ ar:
             thu: خ
             tue: ث
             wed: ر
-          wide: :"calendars.gregorian.days.format.wide"
+          wide: 
+            mon: الاثنين
       fields: 
         day: يوم
         dayperiod: ص/م
@@ -57,13 +65,13 @@ ar:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -76,19 +84,7 @@ ar:
             pattern: "h:mm a"
       months: 
         format: 
-          abbreviated: 
-            1: يناير
-            10: أكتوبر
-            11: نوفمبر
-            12: ديسمبر
-            2: فبراير
-            3: مارس
-            4: أبريل
-            5: مايو
-            6: يونيو
-            7: يوليو
-            8: أغسطس
-            9: سبتمبر
+          abbreviated: :"calendars.gregorian.months.format.wide"
           narrow: :"calendars.gregorian.months.stand-alone.narrow"
           wide: 
             1: يناير
@@ -120,15 +116,16 @@ ar:
             9: س
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: ص
-        pm: م
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: ص
+            pm: م
+        stand-alone: {}
       quarters: 
         format: 
-          abbreviated: 
-            1: "الربع الأول"
-            2: "الربع الثاني"
-            3: "الربع الثالث"
-            4: "الربع الرابع"
+          abbreviated: :"calendars.gregorian.quarters.format.wide"
           narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
           wide: 
             1: "الربع الأول"

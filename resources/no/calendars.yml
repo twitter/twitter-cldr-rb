@@ -50,13 +50,13 @@
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -101,8 +101,13 @@
             9: 9
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: AM
-        pm: PM
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: AM
+            pm: PM
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: :"calendars.gregorian.quarters.format.wide"

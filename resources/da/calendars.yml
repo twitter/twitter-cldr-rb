@@ -42,7 +42,7 @@ da:
         week: uge
         weekday: ugedag
         year: år
-        zone: zone
+        zone: tidszone
       formats: 
         date: 
           default: :"calendars.gregorian.formats.date.medium"
@@ -57,19 +57,19 @@ da:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
             pattern: "HH.mm.ss zzzz"
           long: 
-            pattern: "HH:mm:ss z"
+            pattern: "HH.mm.ss z"
           medium: 
             pattern: HH.mm.ss
           short: 
@@ -132,8 +132,19 @@ da:
             9: S
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: f.m.
-        pm: e.m.
+        format: 
+          abbreviated: 
+            noon: middag
+          narrow: 
+            noon: middag
+          wide: 
+            am: f.m.
+            noon: middag
+            pm: e.m.
+        stand-alone: 
+          wide: 
+            am: formiddag
+            pm: eftermiddag
       quarters: 
         format: 
           abbreviated: 
@@ -141,7 +152,11 @@ da:
             2: K2
             3: K3
             4: K4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "1. kvartal"
             2: "2. kvartal"

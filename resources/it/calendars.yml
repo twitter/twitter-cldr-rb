@@ -64,23 +64,23 @@ it:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
-            pattern: "HH.mm.ss zzzz"
+            pattern: "HH:mm:ss zzzz"
           long: 
-            pattern: "HH.mm.ss z"
+            pattern: "HH:mm:ss z"
           medium: 
-            pattern: HH.mm.ss
+            pattern: "HH:mm:ss"
           short: 
-            pattern: HH.mm
+            pattern: "HH:mm"
       months: 
         format: 
           abbreviated: 
@@ -96,7 +96,18 @@ it:
             7: lug
             8: ago
             9: set
-          narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          narrow: 
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: G
+            7: L
+            8: A
+            9: S
           wide: 
             1: gennaio
             10: ottobre
@@ -111,7 +122,18 @@ it:
             8: agosto
             9: settembre
         stand-alone: 
-          abbreviated: :"calendars.gregorian.months.format.abbreviated"
+          abbreviated: 
+            10: ott
+            11: nov
+            12: dic
+            2: feb
+            3: mar
+            4: apr
+            5: mag
+            6: giu
+            7: lug
+            8: ago
+            9: set
           narrow: 
             1: G
             10: O
@@ -139,8 +161,13 @@ it:
             8: Agosto
             9: Settembre
       periods: 
-        am: m.
-        pm: p.
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: m.
+            pm: p.
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 
@@ -148,17 +175,26 @@ it:
             2: T2
             3: T3
             4: T4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "1o trimestre"
             2: "2o trimestre"
             3: "3o trimestre"
             4: "4o trimestre"
         stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          abbreviated: 
+            1: T1
           narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          wide: :"calendars.gregorian.quarters.format.wide"
+          wide: 
+            1: "1º trimestre"
+            2: "2º trimestre"
+            3: "3º trimestre"
+            4: "4º trimestre"

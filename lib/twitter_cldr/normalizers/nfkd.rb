@@ -114,7 +114,9 @@ module TwitterCldr
           result.map { |cp_with_cc| cp_with_cc[0] }
         end
 
-        # Performs stable sorting of a sequence of [code_point, combining_class] pairs.
+        # Performs stable sorting of a sequence of [code_point, combining_class] pairs. For sorting a regular bubble
+        # sort is used (with a small optimization that stops the algorithm if none of the elements were swapped during
+        # the iteration).
         #
         def stable_sort(code_points_with_cc)
           n = code_points_with_cc.size - 2

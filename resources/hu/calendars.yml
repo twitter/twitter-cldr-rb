@@ -11,7 +11,14 @@ hu:
             thu: Cs
             tue: K
             wed: Sze
-          narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          narrow: 
+            fri: P
+            mon: H
+            sat: Sz
+            sun: V
+            thu: Cs
+            tue: K
+            wed: Sz
           wide: 
             fri: péntek
             mon: hétfő
@@ -21,16 +28,30 @@ hu:
             tue: kedd
             wed: szerda
         stand-alone: 
-          abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          abbreviated: 
+            fri: P
+            mon: H
+            sat: Szo
+            sun: V
+            thu: Cs
+            tue: K
+            wed: Sze
           narrow: 
             fri: P
             mon: H
-            sat: S
+            sat: Sz
             sun: V
-            thu: C
+            thu: Cs
             tue: K
-            wed: S
-          wide: :"calendars.gregorian.days.format.wide"
+            wed: Sz
+          wide: 
+            fri: péntek
+            mon: hétfő
+            sat: szombat
+            sun: vasárnap
+            thu: csütörtök
+            tue: kedd
+            wed: szerda
       fields: 
         day: nap
         dayperiod: napszak
@@ -57,13 +78,13 @@ hu:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -89,7 +110,19 @@ hu:
             7: júl.
             8: aug.
             9: szept.
-          narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          narrow: 
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: Á
+            5: M
+            6: J
+            7: J
+            8: Á
+            9: Sz
           wide: 
             1: január
             10: október
@@ -104,7 +137,19 @@ hu:
             8: augusztus
             9: szeptember
         stand-alone: 
-          abbreviated: :"calendars.gregorian.months.format.abbreviated"
+          abbreviated: 
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: febr.
+            3: márc.
+            4: ápr.
+            5: máj.
+            6: jún.
+            7: júl.
+            8: aug.
+            9: szept.
           narrow: 
             1: J
             10: O
@@ -117,11 +162,30 @@ hu:
             6: J
             7: J
             8: A
-            9: S
-          wide: :"calendars.gregorian.months.format.wide"
+            9: Sz
+          wide: 
+            1: január
+            10: október
+            11: november
+            12: december
+            2: február
+            3: március
+            4: április
+            5: május
+            6: június
+            7: július
+            8: augusztus
+            9: szeptember
       periods: 
-        am: de.
-        pm: du.
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: 
+            am: de.
+            pm: du.
+          wide: 
+            am: de.
+            pm: du.
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 
@@ -129,17 +193,29 @@ hu:
             2: N2
             3: N3
             4: N4
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           wide: 
             1: "I. negyedév"
             2: "II. negyedév"
             3: "III. negyedév"
             4: "IV. negyedév"
         stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          abbreviated: 
+            1: N1
+            2: N2
+            3: N3
+            4: N4
           narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          wide: :"calendars.gregorian.quarters.format.wide"
+          wide: 
+            1: "1. negyedév"
+            2: "2. negyedév"
+            3: "3. negyedév"
+            4: "4. negyedév"

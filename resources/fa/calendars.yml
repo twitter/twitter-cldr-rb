@@ -3,8 +3,22 @@ fa:
     gregorian: 
       days: 
         format: 
-          abbreviated: :"calendars.gregorian.days.format.wide"
-          narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          abbreviated: 
+            fri: جمعه
+            mon: دوشنبه
+            sat: شنبه
+            sun: یکشنبه
+            thu: پنجشنبه
+            tue: سه‌شنبه
+            wed: چهارشنبه
+          narrow: 
+            fri: ج
+            mon: د
+            sat: ش
+            sun: ی
+            thu: پ
+            tue: س
+            wed: چ
           wide: 
             fri: جمعه
             mon: دوشنبه
@@ -14,7 +28,14 @@ fa:
             tue: سه‌شنبه
             wed: چهارشنبه
         stand-alone: 
-          abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          abbreviated: 
+            fri: جمعه
+            mon: دوشنبه
+            sat: شنبه
+            sun: یکشنبه
+            thu: پنجشنبه
+            tue: سه‌شنبه
+            wed: چهارشنبه
           narrow: 
             fri: ج
             mon: د
@@ -23,10 +44,17 @@ fa:
             thu: پ
             tue: س
             wed: چ
-          wide: :"calendars.gregorian.days.format.wide"
+          wide: 
+            fri: جمعه
+            mon: دوشنبه
+            sat: شنبه
+            sun: یکشنبه
+            thu: پنجشنبه
+            tue: سه‌شنبه
+            wed: چهارشنبه
       fields: 
         day: روز
-        dayperiod: "قبل/بعد از ظهر"
+        dayperiod: قبل/بعدازظهر
         era: دوره
         hour: ساعت
         minute: دقیقه
@@ -44,19 +72,19 @@ fa:
           long: 
             pattern: "d MMMM y"
           medium: 
-            pattern: yyyy/M/d
+            pattern: "d MMM y"
           short: 
-            pattern: yy/M/d
+            pattern: yyyy/M/d
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1}، ساعت {0}"
+            pattern: "{{date}}، ساعت {{time}}"
           long: 
-            pattern: "{1}، ساعت {0}"
+            pattern: "{{date}}، ساعت {{time}}"
           medium: 
-            pattern: "{1}،‏ {0}"
+            pattern: "{{date}}،‏ {{time}}"
           short: 
-            pattern: "{1}،‏ {0}"
+            pattern: "{{date}}،‏ {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -82,7 +110,19 @@ fa:
             7: ژوئیهٔ
             8: اوت
             9: سپتامبر
-          narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          narrow: 
+            1: ژ
+            10: ا
+            11: ن
+            12: د
+            2: ف
+            3: م
+            4: آ
+            5: م
+            6: ژ
+            7: ژ
+            8: ا
+            9: س
           wide: 
             1: ژانویهٔ
             10: اکتبر
@@ -97,7 +137,19 @@ fa:
             8: اوت
             9: سپتامبر
         stand-alone: 
-          abbreviated: :"calendars.gregorian.months.format.abbreviated"
+          abbreviated: 
+            1: ژانویه
+            10: اکتبر
+            11: نوامبر
+            12: دسامبر
+            2: فوریه
+            3: مارس
+            4: آوریل
+            5: مه
+            6: ژوئن
+            7: ژوئیه
+            8: اوت
+            9: سپتامبر
           narrow: 
             1: ژ
             10: ا
@@ -125,8 +177,13 @@ fa:
             8: اوت
             9: سپتامبر
       periods: 
-        am: "قبل از ظهر"
-        pm: "بعد از ظهر"
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: قبل‌ازظهر
+            pm: بعدازظهر
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 
@@ -134,17 +191,29 @@ fa:
             2: س‌م۲
             3: س‌م۳
             4: س‌م۴
-          narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          narrow: 
+            1: ۱
+            2: ۲
+            3: ۳
+            4: ۴
           wide: 
             1: "سه‌ماههٔ اول"
             2: "سه‌ماههٔ دوم"
             3: "سه‌ماههٔ سوم"
             4: "سه‌ماههٔ چهارم"
         stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          abbreviated: 
+            1: س‌م۱
+            2: س‌م۲
+            3: س‌م۳
+            4: س‌م۴
           narrow: 
             1: ۱
             2: ۲
             3: ۳
             4: ۴
-          wide: :"calendars.gregorian.quarters.format.wide"
+          wide: 
+            1: "سه‌ماههٔ اول"
+            2: "سه‌ماههٔ دوم"
+            3: "سه‌ماههٔ سوم"
+            4: "سه‌ماههٔ چهارم"

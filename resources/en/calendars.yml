@@ -42,7 +42,7 @@ en:
         week: Week
         weekday: "Day of the Week"
         year: Year
-        zone: Zone
+        zone: "Time Zone"
       formats: 
         date: 
           default: :"calendars.gregorian.formats.date.medium"
@@ -57,13 +57,13 @@ en:
         datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
           full: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           long: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           medium: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
           short: 
-            pattern: "{1} {0}"
+            pattern: "{{date}} {{time}}"
         time: 
           default: :"calendars.gregorian.formats.time.medium"
           full: 
@@ -120,8 +120,17 @@ en:
             9: S
           wide: :"calendars.gregorian.months.format.wide"
       periods: 
-        am: AM
-        pm: PM
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: 
+            am: a
+            noon: n
+            pm: p
+          wide: 
+            am: a.m.
+            noon: noon
+            pm: p.m.
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 

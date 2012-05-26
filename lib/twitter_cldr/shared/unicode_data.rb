@@ -5,11 +5,10 @@
 
 module TwitterCldr
   module Shared
-    class UnicodeData
-      Attributes = Struct.new(:code_point, :name, :category, :combining_class, :bidi_class, :decomposition,
-                             :digit_value, :non_decimal_digit_value, :numeric_value, :bidi_mirrored, :unicode1_name,
-                             :iso_comment, :simple_uppercase_map, :simple_lowercase_map, :simple_titlecase_map)
+    module UnicodeData
+
       class << self
+
         def for_code_point(code_point)
           blocks = TwitterCldr.get_resource("unicode_data", "blocks")
 
@@ -26,6 +25,7 @@ module TwitterCldr
         end
 
         private
+
         # Check if block constitutes a range. The code point beginning a range will have a name enclosed in <>, ending with 'First'
         # eg: <CJK Ideograph Extension A, First>
         # http://unicode.org/reports/tr44/#Code_Point_Ranges
@@ -38,7 +38,27 @@ module TwitterCldr
             start_data
           end
         end
+
       end
+
+      Attributes = Struct.new(
+          :code_point,
+          :name,
+          :category,
+          :combining_class,
+          :bidi_class,
+          :decomposition,
+          :digit_value,
+          :non_decimal_digit_value,
+          :numeric_value,
+          :bidi_mirrored,
+          :unicode1_name,
+          :iso_comment,
+          :simple_uppercase_map,
+          :simple_lowercase_map,
+          :simple_titlecase_map
+      )
+
     end
   end
 end

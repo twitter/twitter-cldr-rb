@@ -103,7 +103,7 @@ Date.today.localize(:es).to_medium_s                    # "12/12/2011"
 Date.today.localize(:es).to_short_s                     # "12/12/11"
 
 Time.now.localize(:es).to_full_s                        # "21:44:57 UTC -0800"
-Time.now.localize(:es).to_long_s                        # "21:44:57 PST"
+Time.now.localize(:es).to_long_s                        # "21:44:57 UTC"
 Time.now.localize(:es).to_medium_s                      # "21:44:57"
 Time.now.localize(:es).to_short_s                       # "21:44"
 ```

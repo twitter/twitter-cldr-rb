@@ -52,20 +52,23 @@ describe "README" do
 
   it "verifies dates" do
     date_time = DateTime.new(2011, 12, 12, 21, 44, 57, -8.0 / 24.0)
+    date = date_time.localize.to_date.base_obj
+    time = Time.at(date_time.localize.to_time.base_obj.utc - (8 * 60 * 60))
+
     date_time.localize(:es).to_full_s.should == "21:44:57 UTC -0800 lunes 12 de diciembre de 2011"
     date_time.localize(:es).to_long_s.should == "21:44:57 -08:00 12 de diciembre de 2011"
     date_time.localize(:es).to_medium_s.should == "21:44:57 12/12/2011"
     date_time.localize(:es).to_short_s.should == "21:44 12/12/11"
 
-    date_time.localize(:es).to_date.to_full_s.should == "lunes 12 de diciembre de 2011"
-    date_time.localize(:es).to_date.to_long_s.should == "12 de diciembre de 2011"
-    date_time.localize(:es).to_date.to_medium_s.should == "12/12/2011"
-    date_time.localize(:es).to_date.to_short_s.should == "12/12/11"
+    date.localize(:es).to_full_s.should == "lunes 12 de diciembre de 2011"
+    date.localize(:es).to_long_s.should == "12 de diciembre de 2011"
+    date.localize(:es).to_medium_s.should == "12/12/2011"
+    date.localize(:es).to_short_s.should == "12/12/11"
 
-    date_time.localize(:es).to_time.to_full_s.should == "21:44:57 UTC -0800"
-    date_time.localize(:es).to_time.to_long_s.should == "21:44:57 PST"
-    date_time.localize(:es).to_time.to_medium_s.should == "21:44:57"
-    date_time.localize(:es).to_time.to_short_s.should == "21:44"
+    time.localize(:es).to_full_s.should match(/21:44:57 UTC [-+]\d{4}/)
+    time.localize(:es).to_long_s.should == "21:44:57 UTC"
+    time.localize(:es).to_medium_s.should == "21:44:57"
+    time.localize(:es).to_short_s.should == "21:44"
 
     dt = TwitterCldr::LocalizedDateTime.new(date_time, :es)
     dt.to_short_s.should == "21:44 12/12/11"

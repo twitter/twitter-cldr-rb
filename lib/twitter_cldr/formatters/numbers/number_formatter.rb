@@ -15,7 +15,7 @@ module TwitterCldr
       end
 
       def format(number, options = {})
-        opts = { :precision => precision_from(number) }.merge(options)
+        opts = self.default_format_options_for(number).merge(options)
         prefix, suffix, integer_format, fraction_format = *partition_tokens(self.get_tokens(number, opts))
         int, fraction = parse_number(number, opts)
 

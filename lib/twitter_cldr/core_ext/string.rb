@@ -27,8 +27,15 @@ module TwitterCldr
       TwitterCldr::Formatters::PluralFormatter
     end
 
-    def normalize
-      LocalizedString.new(TwitterCldr::Normalizers::NFD.normalize(@base_obj), @locale)
+    def normalize(options = {})
+      options[:using] ||= :NFD
+
+      if TwitterCldr::Normalizers.const_defined?(options[:using])
+        normalizer_const = TwitterCldr::Normalizers.const_get(options[:using])
+        LocalizedString.new(normalizer_const.normalize(@base_obj), @locale)
+      else
+        nil
+      end
     end
 
     def code_points

@@ -106,6 +106,57 @@ describe Base do
     end
   end
 
+  describe "#tokens_for" do
+    let(:token1) { Token.new(:value => "token1", :type => :plaintext) }
+    let(:token2) { Token.new(:value => "token2", :type => :plaintext) }
+
+    before(:each) do
+      stub(@base).traverse("fake_key") { "fake_pattern" }
+      stub(@base).pattern_for("fake_pattern") { "fake_expandable_pattern" }
+      stub(@base).expand_pattern("fake_expandable_pattern", "fake_type") { [token1, token2] }
+    end
+
+    it "caches tokens" do
+      result = @base.send(:tokens_for, "fake_key", "fake_type")
+      result[0].value.should == "token1"
+      result[1].value.should == "token2"
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result
+
+      result_again = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_again.object_id.should == result.object_id
+    end
+
+    it "caches tokens per language" do
+      result_en = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_en[0].value.should == "token1"
+      result_en[1].value.should == "token2"
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result_en
+      result_en2 = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_en2.object_id.should == result_en.object_id
+
+      @base.instance_variable_set(:'@locale', :pt)
+      result_pt = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_pt[0].value.should == "token1"
+      result_pt[1].value.should == "token2"
+      @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type".hash].should == result_pt
+      result_pt.object_id.should_not == result_en.object_id
+      result_pt2 = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_pt2.object_id.should == result_pt.object_id
+      result_pt2.object_id.should_not == result_en.object_id
+      result_pt2.object_id.should_not == result_en2.object_id
+    end
+  end
+
+  describe "#compute_cache_key" do
+    it "returns a ruby hash of all the pieces concatenated with pipe characters" do
+      @base.send(:compute_cache_key, "space", "the", "final", "frontier").should == "space|the|final|frontier".hash
+    end
+
+    it "returns zero if no arguments are passed" do
+      @base.send(:compute_cache_key).should == 0
+    end
+  end
+
   describe "#traverse" do
     before(:each) do
       @tree = { :admiral => { :captain => { :commander => { :lieutenant => "Found Me!" } } } }

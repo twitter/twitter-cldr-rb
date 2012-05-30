@@ -113,7 +113,7 @@ module TwitterCldr
           @tokenizer.calendar[:months][:format][:wide][date.month]
         when 5
           raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          @tokenizer.calendar[:months][:format][:narrow][date.month]
+          # @tokenizer.calendar[:months][:format][:narrow][date.month]
         else
           # raise unknown date format
         end

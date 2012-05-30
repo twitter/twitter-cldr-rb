@@ -36,20 +36,22 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 			'V': 'timezone_metazone'
 
 	format: (obj, options) ->
-		result = ""
-		toks = this.get_tokens(obj, options)
+		format_token = (token) ->
+			result = ""
 
-		for i in [0..toks.length - 1]
-			switch toks[i].type
+			switch token.type
 				when "pattern"
-					result += this.result_for_token(toks[i], i, obj)
+					result += this.result_for_token(token, i, obj)
 				else
-					if toks[i].value.length > 0 && toks[i].value[0] == "'" && toks[i].value[toks[i].value.length - 1] == "'"
-						result += toks[i].value.substring(1, toks[i].value.length - 1)
+					if token.value.length > 0 && token.value[0] == "'" && token.value[token.value.length - 1] == "'"
+						result += token.value.substring(1, token.value.length - 1)
 					else
-						result += toks[i].value
+						result += token.value
 
-		return result
+			return result
+
+		tokens = this.get_tokens(obj, options)
+		return (format_token(token) for token in tokens)
 
 	get_tokens: (obj, options) ->
 		return @tokens[options.format || "date_time"][options.type || "default"]
@@ -102,10 +104,8 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return ("0000" + quarter.toString()).slice(-length)
 			when 3
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
-				# tokenizer.calendar[:quarters][:'stand-alone'][:abbreviated][key]
 			when 4
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
-				# tokenizer.calendar[:quarters][:'stand-alone'][:wide][key]
 			when 5
 				return this.calendar.quarters['stand-alone'].narrow[quarter]
 
@@ -123,9 +123,8 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return this.calendar.months.format.wide[month_str]
 			when 5
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
-				return this.calendar.months.format.narrow[month_str]
 			else
-				# raise unknown date format
+				throw "Unknown date format"
 
 	month_stand_alone: (date, pattern, length) ->
 		switch length
@@ -138,11 +137,10 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return this.calendar.months['stand-alone'].abbreviated[date.getMonth()]
 			when 4
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
-				return this.calendar.months['stand-alone'].wide[date.getMonth()]
 			when 5
 				return this.calendar.months['stand-alone'].narrow[date.month]
 			else
-				# raise unknown date format
+				throw "Unknown date format"
 
 	day: (date, pattern, length) ->
 		switch length

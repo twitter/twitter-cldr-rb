@@ -19,7 +19,7 @@ module TwitterCldr
 
           @features.each do |feature|
             renderer_const = self.get_renderer_const(feature)
-            contents << renderer_const.new(:locale => locale).render
+            contents << renderer_const.new(:locale => locale).render if renderer_const
           end
 
           bundle = TwitterCldr::Js::Renderers::Bundle.new

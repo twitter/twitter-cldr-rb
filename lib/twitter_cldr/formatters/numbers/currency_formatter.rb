@@ -7,6 +7,7 @@ module TwitterCldr
   module Formatters
     class CurrencyFormatter < NumberFormatter
       DEFAULT_CURRENCY_SYMBOL = "$"
+      DEFAULT_PRECISION = 2
 
       def initialize(options = {})
         @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => self.extract_locale(options), :type => :currency)
@@ -27,7 +28,7 @@ module TwitterCldr
 
       def default_format_options_for(number)
         precision = precision_from(number)
-        { :precision => precision == 0 ? 2 : precision }
+        { :precision => precision == 0 ? DEFAULT_PRECISION : precision }
       end
     end
   end

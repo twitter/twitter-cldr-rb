@@ -11,6 +11,7 @@ end
 
 module TwitterCldr
   class LocalizedString < LocalizedObject
+    VALID_NORMALIZERS = [:NFD, :NFKD]
 
     # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
     # +TwitterCldr::Utils.interpolate+ method for interpolation syntax).
@@ -30,11 +31,11 @@ module TwitterCldr
     def normalize(options = {})
       options[:using] ||= :NFD
 
-      if TwitterCldr::Normalizers.const_defined?(options[:using])
+      if VALID_NORMALIZERS.include?(options[:using])
         normalizer_const = TwitterCldr::Normalizers.const_get(options[:using])
         LocalizedString.new(normalizer_const.normalize(@base_obj), @locale)
       else
-        nil
+        raise ArgumentError.new("Invalid normalization form specified with :using option.  Choices are [#{VALID_NORMALIZERS.map(&:to_s).join(", ")}]")
       end
     end
 

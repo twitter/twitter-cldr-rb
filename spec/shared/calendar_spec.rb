@@ -59,12 +59,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_resource { { :de => { :calendars => { :gregorian => { :months => { :'stand-alone' => {} } } } } } }
+        stub(TwitterCldr).get_locale_resource { { :de => { :calendars => { :gregorian => { :months => { :'stand-alone' => {} } } } } } }
         calendar.months(:wide).should == nil
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_resource { { :de => {} } }
+        stub(TwitterCldr).get_locale_resource { { :de => {} } }
         calendar.months(:wide).should == nil
       end
     end
@@ -119,12 +119,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_resource { { :de => { :calendars => { :gregorian => { :days => { :'stand-alone' => {} } } } } } }
+        stub(TwitterCldr).get_locale_resource { { :de => { :calendars => { :gregorian => { :days => { :'stand-alone' => {} } } } } } }
         calendar.weekdays(:wide).should == nil
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_resource { { :de => {} } }
+        stub(TwitterCldr).get_locale_resource { { :de => {} } }
         calendar.weekdays(:wide).should == nil
       end
     end

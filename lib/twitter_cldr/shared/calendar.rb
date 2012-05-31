@@ -56,7 +56,7 @@ module TwitterCldr
       end
 
       def resource
-        TwitterCldr.get_resource(@locale, :calendars)
+        TwitterCldr.get_locale_resource(@locale, :calendars)
       end
 
     end

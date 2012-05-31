@@ -7,20 +7,30 @@ module TwitterCldr
   module Shared
     class Resources
 
-      def initialize
-        @resources_by_locale = Hash.new do |hash, locale|
-          hash[locale] = Hash.new { |h, resource| h[resource] = data_for(locale, resource) }
-        end
+      def get_resource(*path)
+        resources_cache[resource_file_path(path)]
       end
 
-      def resource_for(locale, resource)
-        @resources_by_locale[locale.to_sym][resource]
+      def get_locale_resource(locale, resource_name)
+        get_resource(:locales, TwitterCldr.convert_locale(locale), resource_name)
       end
 
-      protected
+      private
 
-      def data_for(locale, resource)
-        TwitterCldr::Utils.deep_symbolize_keys(YAML.load(File.read(TwitterCldr.get_resource_file(locale, resource))))
+      def resources_cache
+        @resources_cache ||= Hash.new { |hash, path| hash[path] = load_resource(path) }
+      end
+
+      def resource_file_path(path)
+        "#{File.join(*path.map(&:to_s))}.yml"
+      end
+
+      def load_resource(path)
+        TwitterCldr::Utils.deep_symbolize_keys(YAML.load(read_resource_file(path)))
+      end
+
+      def read_resource_file(path)
+        File.read(File.join(TwitterCldr::RESOURCES_DIR, path))
       end
 
     end

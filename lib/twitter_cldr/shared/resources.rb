@@ -30,7 +30,13 @@ module TwitterCldr
       end
 
       def read_resource_file(path)
-        File.read(File.join(TwitterCldr::RESOURCES_DIR, path))
+        file_path = File.join(TwitterCldr::RESOURCES_DIR, path)
+
+        if File.file?(file_path)
+          File.read(file_path)
+        else
+          raise ArgumentError.new("Resource '#{path}' not found.")
+        end
       end
 
     end

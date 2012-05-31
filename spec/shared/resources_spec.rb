@@ -25,6 +25,10 @@ describe Resources do
       mock(resources).load_resource('foo/bar/baz.yml') { 'foo-bar-baz' }
       resources.get_resource('foo', :bar, 'baz').should == 'foo-bar-baz'
     end
+
+    it 'raises an exception if resource file is missing' do
+      lambda { resources.get_resource(:foo, :bar) }.should raise_error(ArgumentError, "Resource 'foo/bar.yml' not found.")
+    end
   end
 
   describe '#get_locale_resource' do

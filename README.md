@@ -48,9 +48,9 @@ Fixnum, Bignum, and Float objects are supported.  Here are some examples:
 1337.localize(:es).to_s                                    # 1.337
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # $1.337,00
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # € 1.337,00
-1337.localize(:es).to_currency.to_s(:currency => "Peru")   # S/. 1.337,00
+1337.localize(:es).to_currency.to_s                        # 1.337,00 $
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1.337,00 €
+1337.localize(:es).to_currency.to_s(:currency => "Peru")   # 1.337,00 S/.
 
 # percentages
 1337.localize(:es).to_percent.to_s                         # 1.337%
@@ -92,10 +92,10 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dol
 Date, Time, and DateTime objects are supported:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s                    # "21:44:57 UTC -0800 lunes 12 de diciembre de 2011"
-DateTime.now.localize(:es).to_long_s                    # "21:44:57 -08:00 12 de diciembre de 2011"
-DateTime.now.localize(:es).to_medium_s                  # "21:44:57 12/12/2011"
-DateTime.now.localize(:es).to_short_s                   # "21:44 12/12/11"
+DateTime.now.localize(:es).to_full_s                    # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
+DateTime.now.localize(:es).to_long_s                    # "12 de diciembre de 2011 21:44:57 -08:00"
+DateTime.now.localize(:es).to_medium_s                  # "12/12/2011 21:44:57"
+DateTime.now.localize(:es).to_short_s                   # "12/12/11 21:44"
 
 Date.today.localize(:es).to_full_s                      # "lunes 12 de diciembre de 2011"
 Date.today.localize(:es).to_long_s                      # "12 de diciembre de 2011"

@@ -24,15 +24,15 @@ describe "README" do
   it "verifies number formatting" do
     nbsp = "\xC2\xA0"
     1337.localize(:es).to_s.should == "1.337"
-    spaces(1337.localize(:es).to_currency.to_s).should == "$ 1.337,00"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "€ 1.337,00"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "Peru").to_s).should == "S/. 1.337,00"
+    spaces(1337.localize(:es).to_currency.to_s).should == "1.337,00 $"
+    spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1.337,00 €"
+    spaces(1337.localize(:es).to_currency.to_s(:currency => "Peru").to_s).should == "1.337,00 S/."
     1337.localize(:es).to_percent.to_s.should == "1.337%"
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
 
     num = TwitterCldr::LocalizedNumber.new(1337, :es)
-    spaces(num.to_currency.to_s).should == "$ 1.337,00"
+    spaces(num.to_currency.to_s).should == "1.337,00 $"
   end
 
   it "verifies extra currency data" do
@@ -55,12 +55,12 @@ describe "README" do
     date = date_time.localize.to_date.base_obj
     time = Time.at(date_time.localize.to_time.base_obj.utc - (8 * 60 * 60))
 
-    date_time.localize(:es).to_full_s.should == "21:44:57 UTC -0800 lunes 12 de diciembre de 2011"
-    date_time.localize(:es).to_long_s.should == "21:44:57 -08:00 12 de diciembre de 2011"
-    date_time.localize(:es).to_medium_s.should == "21:44:57 12/12/2011"
-    date_time.localize(:es).to_short_s.should == "21:44 12/12/11"
+    date_time.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
+    date_time.localize(:es).to_long_s.should == "12 de diciembre de 2011 21:44:57 -08:00"
+    date_time.localize(:es).to_medium_s.should == "12/12/2011 21:44:57"
+    date_time.localize(:es).to_short_s.should == "12/12/11 21:44"
 
-    date.localize(:es).to_full_s.should == "lunes 12 de diciembre de 2011"
+    date.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011"
     date.localize(:es).to_long_s.should == "12 de diciembre de 2011"
     date.localize(:es).to_medium_s.should == "12/12/2011"
     date.localize(:es).to_short_s.should == "12/12/11"
@@ -71,7 +71,7 @@ describe "README" do
     time.localize(:es).to_short_s.should == "21:44"
 
     dt = TwitterCldr::LocalizedDateTime.new(date_time, :es)
-    dt.to_short_s.should == "21:44 12/12/11"
+    dt.to_short_s.should == "12/12/11 21:44"
   end
 
   it "verifies plural rules" do

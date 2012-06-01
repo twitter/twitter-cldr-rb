@@ -41,7 +41,7 @@ module TwitterCldr
       end
 
       def init_resources
-        @resource = TwitterCldr.get_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_locale_resource(@locale, :calendars)[TwitterCldr.convert_locale(@locale)]
 
         @resource[:calendars].each_pair do |calendar_type, options|
           next if calendar_type == DEFAULT_CALENDAR_TYPE

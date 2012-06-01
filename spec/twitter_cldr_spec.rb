@@ -69,13 +69,23 @@ describe TwitterCldr do
     end
   end
 
-  describe '#get_resource' do
-    it 'delegates to @resources' do
-      resources = TwitterCldr::Shared::Resources.new
-      mock(resources).resource_for('locale', 'resource') { 'result' }
-      TwitterCldr.send :instance_variable_set, :@resources, resources
+  let(:resources) { TwitterCldr::Shared::Resources.new }
 
-      TwitterCldr.get_resource('locale', 'resource').should == 'result'
+  describe '#get_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_resource(:shared, :currencies) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_resource(:shared, :currencies).should == 'result'
+    end
+  end
+
+  describe '#get_locale_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_locale_resource(:de, :numbers) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_locale_resource(:de, :numbers).should == 'result'
     end
   end
 end

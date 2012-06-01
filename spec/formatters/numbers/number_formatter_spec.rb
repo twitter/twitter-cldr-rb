@@ -11,11 +11,11 @@ describe NumberFormatter do
   before(:each) do
     @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => :sv, :type => :decimal)
 
-    any_instance_of(NumberFormatter) do |formatter|
+    any_instance_of(DecimalFormatter) do |formatter|
       mock(formatter).tokenizer { @tokenizer }
     end
 
-    @formatter = NumberFormatter.new(:locale => :sv)
+    @formatter = DecimalFormatter.new(:locale => :sv)
     @formatter.instance_variable_set("@tokenizer", @tokenizer)
   end
 
@@ -78,7 +78,7 @@ describe NumberFormatter do
       @formatter.format(1337).should == "1 337"
     end
 
-    it "formats an decimal larger than 999.9" do
+    it "formats a decimal larger than 999.9" do
       @formatter.format(1337.37).should == "1 337,37"
     end
   end

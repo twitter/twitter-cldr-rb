@@ -12,9 +12,13 @@ module TwitterCldr
       end
 
       def format(number, options = {})
-        super(Float(number), options)
+        super(number, options)
       rescue TypeError, ArgumentError
         number
+      end
+
+      def default_format_options_for(number)
+        { :precision => precision_from(number) }
       end
 
       protected

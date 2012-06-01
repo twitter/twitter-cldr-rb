@@ -9,14 +9,14 @@ module TwitterCldr
 
       class << self
 
-        def symbols(locale = TwitterCldr::get_locale)
+        def symbols(locale = TwitterCldr.get_locale)
           get_resource(TwitterCldr.convert_locale(locale))[:symbols] rescue nil
         end
 
         private
 
         def get_resource(locale)
-          TwitterCldr::get_resource(locale, :numbers)[locale][:numbers]
+          TwitterCldr.get_locale_resource(locale, :numbers)[locale][:numbers]
         end
 
       end

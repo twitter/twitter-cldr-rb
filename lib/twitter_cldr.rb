@@ -31,7 +31,6 @@ module TwitterCldr
   DEFAULT_CALENDAR_TYPE = :gregorian
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
-  NON_LOCALE_RESOURCES = [:shared, :unicode_data]
 
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
@@ -40,13 +39,10 @@ module TwitterCldr
       :'zh-tw' => :'zh-Hant'
   }
 
-  def_delegator :resources, :resource_for, :get_resource
+  def_delegator :resources, :get_resource
+  def_delegator :resources, :get_locale_resource
 
   class << self
-
-    def get_resource_file(locale, resource)
-      File.join(RESOURCES_DIR, convert_locale(locale).to_s, "#{resource}.yml")
-    end
 
     def resources
       @resources ||= TwitterCldr::Shared::Resources.new
@@ -65,11 +61,11 @@ module TwitterCldr
 
     def convert_locale(locale)
       locale = locale.to_sym
-      TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+      TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
     def supported_locales
-      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, '*')).map { |f| File.basename(f).to_sym } - NON_LOCALE_RESOURCES
+      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
     end
 
     def supported_locale?(locale)

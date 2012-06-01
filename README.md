@@ -93,9 +93,9 @@ Date, Time, and DateTime objects are supported:
 
 ```ruby
 DateTime.now.localize(:es).to_full_s                    # "21:44:57 UTC -0800 lunes 12 de diciembre de 2011"
-DateTime.now.localize(:es).to_long_s                    # "21:45:42 -08:00 12 de diciembre de 2011"
-DateTime.now.localize(:es).to_medium_s                  # "21:46:09 12/12/2011"
-DateTime.now.localize(:es).to_short_s                   # "21:47 12/12/11"
+DateTime.now.localize(:es).to_long_s                    # "21:44:57 -08:00 12 de diciembre de 2011"
+DateTime.now.localize(:es).to_medium_s                  # "21:44:57 12/12/2011"
+DateTime.now.localize(:es).to_short_s                   # "21:44 12/12/11"
 
 Date.today.localize(:es).to_full_s                      # "lunes 12 de diciembre de 2011"
 Date.today.localize(:es).to_long_s                      # "12 de diciembre de 2011"
@@ -103,9 +103,9 @@ Date.today.localize(:es).to_medium_s                    # "12/12/2011"
 Date.today.localize(:es).to_short_s                     # "12/12/11"
 
 Time.now.localize(:es).to_full_s                        # "21:44:57 UTC -0800"
-Time.now.localize(:es).to_long_s                        # "21:45:42 -08:00"
-Time.now.localize(:es).to_medium_s                      # "21:46:09"
-Time.now.localize(:es).to_short_s                       # "21:47"
+Time.now.localize(:es).to_long_s                        # "21:44:57 UTC"
+Time.now.localize(:es).to_medium_s                      # "21:44:57"
+Time.now.localize(:es).to_short_s                       # "21:44"
 ```
 
 The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
@@ -183,7 +183,7 @@ The `LocalizedString` class supports all forms of interpolation and combines sup
 "five euros plus %.3f in tax" % (13.25 * 0.087)
 
 # Ruby 1.9
-"five euros plus %3.f in tax" % (13.25 * 0.087)
+"five euros plus %.3f in tax" % (13.25 * 0.087)
 "there are %{count} horses in the barn" % { :count => "5" }
 
 # with TwitterCLDR
@@ -286,6 +286,13 @@ A few convenience methods also exist for `String` that make it easy to normalize
 
 # ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
 "español".localize.normalize.code_points
+```
+
+Specify a specific normalization algorithm via the :using option.  Currently, only NFD and NFKD are supported (default is NFD):
+
+```ruby
+# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+"español".localize.normalize(:using => :NFKD).code_points
 ```
 
 ## About Twitter-specific Locales

@@ -50,7 +50,7 @@ describe LocalizedNumber do
           number.send(method).object_id.should_not == number.object_id
         end
 
-        it 'creates an object of appropriate type, but do not change type of the original object' do
+        it 'creates an object of appropriate type, but does not change the type of the original object' do
           new_number = currency.send(method)
           new_number.type.should == type
           currency.type.should == :currency
@@ -66,16 +66,46 @@ describe LocalizedNumber do
   end
 
   describe '#to_s' do
-    let(:number)   { LocalizedNumber.new(10, :en) }
+    context 'decimals' do
+      let(:number) { LocalizedNumber.new(10, :en) }
 
-    it 'should default precision to zero for fixnums' do
-      mock(number.formatter).format(number.base_obj, :precision => 0)
-      number.to_s
+      it 'should default precision to zero' do
+        mock.proxy(number.formatter).format(number.base_obj, {})
+        number.to_s.should == "10"
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 2)
+        number.to_s(:precision => 2).should == "10.00"
+      end
     end
 
-    it 'should not overwrite precision when explicitly passed' do
-      mock(number.formatter).format(number.base_obj, :precision => 2)
-      number.to_s(:precision => 2)
+    context 'currencies' do
+      let(:number) { LocalizedNumber.new(10, :en, :type => :currency) }
+
+      it "should default to a precision of 2" do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 2)
+        number.to_s(:precision => 2).should == "$10.00"
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1)
+        number.to_s(:precision => 1).should == "$10.0"
+      end
+    end
+
+    context 'percentages' do
+      let(:number) { LocalizedNumber.new(10, :en, :type => :percent) }
+
+      it "should default to a precision of 0" do
+        mock.proxy(number.formatter).format(number.base_obj, {})
+        number.to_s.should == "10%"
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1)
+        number.to_s(:precision => 1).should == "10.0%"
+      end
     end
   end
 

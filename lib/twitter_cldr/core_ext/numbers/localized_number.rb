@@ -33,7 +33,6 @@ module TwitterCldr
     end
 
     def to_s(options = {})
-      options = { :precision => 0 }.merge(options) if @base_obj.is_a?(Fixnum)
       @formatter.format(@base_obj, options)
     end
 

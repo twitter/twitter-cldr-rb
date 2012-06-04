@@ -22,6 +22,7 @@ module TwitterCldr
 
   autoload :Formatters,  'twitter_cldr/formatters'
   autoload :Normalizers, 'twitter_cldr/normalizers'
+  autoload :Collation,   'twitter_cldr/collation'
   autoload :Shared,      'twitter_cldr/shared'
   autoload :Tokenizers,  'twitter_cldr/tokenizers'
   autoload :Utils,       'twitter_cldr/utils'

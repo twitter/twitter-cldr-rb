@@ -18,35 +18,51 @@ module TwitterCldr
       LEVEL_FILLER     = 2 # fill missing level in a UCA collation element with '02' bytes
       LEVEL_SUBSTITUTE = 0 # fill missing bytes in a UCA collation element level with '00' bytes
 
-      def sort_key(string)
-        form_sort_key(build_collation_elements(get_fractional_elements(code_points(string))))
+      def sort_key(string_or_code_points)
+        sort_key_for_code_points(integer_code_points(string_or_code_points))
       end
 
       private
+
+      def sort_key_for_code_points(integer_code_points)
+        form_sort_key(build_collation_elements(get_fractional_elements(integer_code_points)))
+      end
 
       def collation_elements_trie
         @collation_elements_trie ||= self.class.collation_elements_trie
       end
 
-      def code_points(string)
-        TwitterCldr::Utils::CodePoints.from_string(string).map { |cp| cp.to_i(16) }
+      def integer_code_points(str_or_code_points)
+        code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
+        code_points.map { |cp| cp.to_i(16) }
       end
 
-      def get_fractional_elements(code_points)
+      def get_fractional_elements(integer_code_points)
         result = []
 
-        until code_points.empty?
-          fractional_elements, offset = collation_elements_trie.find_prefix(code_points)
+        until integer_code_points.empty?
+          fractional_elements, offset = get_fractional_element(integer_code_points)
 
           if fractional_elements
             result.concat(fractional_elements)
-            code_points.shift(offset)
+            integer_code_points.shift(offset)
           else
-            raise ArgumentError.new("Fractional collation elements for the prefix of #{code_points.inspect} not found.")
+            raise CollationElementNotFound.new("Fractional collation elements for the prefix of #{integer_code_points.inspect} not found.")
           end
         end
 
         result
+      end
+
+      def get_fractional_element(integer_code_points)
+        code_point = integer_code_points.first
+
+        # ignore all values xxFFFE and xxFFFF and all unpaired surrogates (high: D800–DBFF, and low: DC00–DFFF)
+        if (code_point & 0xFFFE) == 0xFFFE || code_point.between?(0xD800, 0xDFFF)
+          [[[0]] * LEVELS_NUMBER, 1]
+        else
+          collation_elements_trie.find_prefix(integer_code_points)
+        end
       end
 
       def build_collation_elements(fractional_elements)
@@ -146,6 +162,8 @@ module TwitterCldr
       end
 
     end
+
+    class CollationElementNotFound < ArgumentError; end
 
   end
 end

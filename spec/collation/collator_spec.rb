@@ -40,47 +40,76 @@ describe Collator do
   end
 
   describe '#sort_key' do
-    # This test is in pending state because it doesn't act as a regular rspec test at the moment. It requires
-    # CollationTest_NON_IGNORABLE.txt to be in spec/collation directory (you can get this file at
-    # http://www.unicode.org/Public/UCA/latest/CollationTest.zip).
-    xit 'passes collation non-ignorable test' do
-      collator = Collator.new
+    let(:collator)        { Collator.new }
+    let(:string)          { 'abc' }
+    let(:code_points_hex) { %w[0061 0062 0063] }
+    let(:code_points)     { code_points_hex.map { |cp| cp.to_i(16) } }
+    let(:sort_key)        { [9986, 10498, 11010, 0, 1282, 1282, 1282, 0, 1282, 1282, 1282] }
 
-      last_hex_code_points = last_sort_key = nil
-      result = Hash.new { |hash, key| hash[key] = 0 }
-      failures = []
+    context 'when given a valid string' do
+      before(:each) { mock(collator).sort_key_for_code_points(code_points) { sort_key } }
 
-      open(File.join(File.dirname(__FILE__), 'CollationTest_NON_IGNORABLE.txt'), 'r:utf-8').each_with_index do |line, line_number|
-        puts "line #{line_number + 1}" if ((line_number + 1) % 10_000).zero?
+      it 'calculates sort key for a string' do
+        mock(TwitterCldr::Utils::CodePoints).from_string(string) { code_points_hex }
+        collator.sort_key(string).should == sort_key
+      end
 
-        next unless /^([0-9A-F ]+);/ =~ line
+      it 'calculates sort key for an array of code points (represented as hex strings)' do
+        dont_allow(TwitterCldr::Utils::CodePoints).from_string(string)
+        collator.sort_key(code_points_hex).should == sort_key
+      end
+    end
 
-        begin
-          code_points = $1.split
-          hex_code_points = code_points.map { |cp| cp.to_i(16) }
-          string = TwitterCldr::Utils::CodePoints.to_string(code_points)
+    context 'when given an invalid string' do
+      it 'raises CollationElementNotFound not found exception when a collation element is not found' do
+        trie = Trie.new
+        stub(trie).find_prefix { nil }
+        stub(collator).collation_elements_trie { trie }
 
-          sort_key = collator.sort_key(string)
+        lambda { collator.sort_key('foo')  }.should raise_error(CollationElementNotFound)
+      end
+    end
+  end
 
-          if last_sort_key
-            comparison_result = (last_sort_key <=> sort_key).nonzero? || (last_hex_code_points <=> hex_code_points)
-            result[comparison_result] += 1
-            failures << [comparison_result, line, sort_key] if comparison_result != -1
-          end
+  # This test is in pending state because it doesn't act as a regular rspec test at the moment. It requires
+  # CollationTest_NON_IGNORABLE.txt to be in spec/collation directory (you can get this file at
+  # http://www.unicode.org/Public/UCA/latest/CollationTest.zip).
+  xit 'passes collation non-ignorable test' do
+    collator = Collator.new
 
-          last_hex_code_points = hex_code_points
-          last_sort_key = sort_key
-        rescue Exception => e
-          result[e.class] += 1
-          failures << ['err', line, []]
+    last_hex_code_points = last_sort_key = nil
+    result = Hash.new { |hash, key| hash[key] = 0 }
+    failures = []
+
+    open(File.join(File.dirname(__FILE__), 'CollationTest_NON_IGNORABLE.txt'), 'r:utf-8').each_with_index do |line, line_number|
+      puts "line #{line_number + 1}" if ((line_number + 1) % 10_000).zero?
+
+      next unless /^([0-9A-F ]+);/ =~ line
+
+      begin
+        code_points = $1.split
+        hex_code_points = code_points.map { |cp| cp.to_i(16) }
+
+        sort_key = collator.sort_key(code_points)
+
+        if last_sort_key
+          comparison_result = (last_sort_key <=> sort_key).nonzero? || (last_hex_code_points <=> hex_code_points)
+          result[comparison_result] += 1
+          failures << [comparison_result, line, sort_key] if comparison_result != -1
         end
-      end
 
-      puts "Result: #{result.inspect}"
-
-      open(File.join(File.dirname(__FILE__), 'failures.txt'), 'w:utf-8') do |file|
-        file.write failures.map{ |res, line, sort_key| "#{res} -- #{line.strip} -- #{sort_key}\n" }.join
+        last_hex_code_points = hex_code_points
+        last_sort_key = sort_key
+      rescue TwitterCldr::Collation::CollationElementNotFound => e
+        result[e.class] += 1
+        failures << [e.class, line, []]
       end
+    end
+
+    puts "Result: #{result.inspect}"
+
+    open(File.join(File.dirname(__FILE__), 'failures.txt'), 'w:utf-8') do |file|
+      file.write failures.map{ |res, line, sort_key| "#{res} -- #{line.strip} -- #{sort_key}\n" }.join
     end
   end
 

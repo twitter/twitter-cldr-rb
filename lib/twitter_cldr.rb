@@ -4,12 +4,16 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 $:.push(File.dirname(__FILE__))
+$:.push(File.dirname(File.dirname(__FILE__)))
 
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 
 require 'yaml'
 require 'date'
 require 'time'
+require 'fileutils'
+
+# gems
 require 'forwardable'
 
 require 'twitter_cldr/version'
@@ -64,6 +68,18 @@ module TwitterCldr
       TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
+    def twitter_locale(locale)
+      locale = locale.to_sym
+      result = locale
+      TWITTER_LOCALE_MAP.each_pair do |twitter_locale, cldr_locale|
+        if cldr_locale == locale
+          result = twitter_locale
+          break
+        end
+      end
+      result
+    end
+
     def supported_locales
       @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
     end
@@ -73,6 +89,9 @@ module TwitterCldr
       supported_locales.include?(locale) || supported_locales.include?(convert_locale(locale))
     end
 
+    def require_js
+      require "js/lib/twitter_cldr_js"
+    end
   end
 
 end

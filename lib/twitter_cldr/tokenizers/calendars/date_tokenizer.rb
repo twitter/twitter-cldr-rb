@@ -11,7 +11,7 @@ module TwitterCldr
         @token_splitter_regex = /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/
         @token_type_regexes = [ { :type => :composite, :regex => /^\#\{[^\}]+\}/, :content => /^\#\{([^\}]+)\}/ },
                                 { :type => :pattern, :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/ },
-                               { :type => :plaintext, :regex => // }]
+                                { :type => :plaintext, :regex => // }]
         @paths = { :default => "formats.date.default",
                    :full => "formats.date.full",
                    :long => "formats.date.long",

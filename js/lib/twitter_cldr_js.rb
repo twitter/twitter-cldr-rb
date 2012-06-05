@@ -44,14 +44,14 @@ module TwitterCldr
     end
 
     def self.output_dir
-      unless defined?(@@output_dir)
-        @@output_dir = build_dir
+      unless defined?(@output_dir)
+        @output_dir = build_dir
       end
-      @@output_dir
+      @output_dir
     end
 
     def self.output_dir=(new_dir)
-      @@output_dir = new_dir
+      @output_dir = new_dir
     end
 
     def self.make(options = {})

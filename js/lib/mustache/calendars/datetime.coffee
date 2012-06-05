@@ -36,27 +36,25 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 			'V': 'timezone_metazone'
 
 	format: (obj, options) ->
-		format_token = (token) ->
+		format_token = (token) =>
 			result = ""
 
 			switch token.type
 				when "pattern"
-					result += this.result_for_token(token, i, obj)
+					return this.result_for_token(token, obj)
 				else
 					if token.value.length > 0 && token.value[0] == "'" && token.value[token.value.length - 1] == "'"
-						result += token.value.substring(1, token.value.length - 1)
+						return token.value.substring(1, token.value.length - 1)
 					else
-						result += token.value
-
-			return result
+					 	return token.value
 
 		tokens = this.get_tokens(obj, options)
-		return (format_token(token) for token in tokens)
+		return (format_token(token) for token in tokens).join("")
 
 	get_tokens: (obj, options) ->
 		return @tokens[options.format || "date_time"][options.type || "default"]
 
-	result_for_token: (token, index, date) ->
+	result_for_token: (token, date) ->
 		return this[@methods[token.value[0]]](date, token.value, token.value.length)
 
 	era: (date, pattern, length) ->
@@ -107,7 +105,7 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 			when 4
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
 			when 5
-				return this.calendar.quarters['stand-alone'].narrow[quarter]
+				return @calendar.quarters['stand-alone'].narrow[quarter]
 
 	month: (date, pattern, length) ->
 		month_str = (date.getMonth() + 1).toString()
@@ -118,9 +116,9 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 			when 2
 				return ("0000" + month_str).slice(-length)
 			when 3
-				return this.calendar.months.format.abbreviated[month_str]
+				return @calendar.months.format.abbreviated[month_str]
 			when 4
-				return this.calendar.months.format.wide[month_str]
+				return @calendar.months.format.wide[month_str]
 			when 5
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
 			else
@@ -134,11 +132,10 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return ("0000" + date.getMonth().toString()).slice(-length)
 			when 3
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
-				return this.calendar.months['stand-alone'].abbreviated[date.getMonth()]
 			when 4
 				throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
 			when 5
-				return this.calendar.months['stand-alone'].narrow[date.month]
+				return @calendar.months['stand-alone'].narrow[date.month]
 			else
 				throw "Unknown date format"
 
@@ -169,9 +166,9 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 
 	period: (time, pattern, length) ->
 		if time.getHours() > 11
-			return @calendar.periods["pm"]
+			return @calendar.periods.format.wide["pm"]
 		else
-			return @calendar.periods["am"]
+			return @calendar.periods.format.wide["am"]
 
 	hour: (time, pattern, length) ->
 		hour = time.getHours()

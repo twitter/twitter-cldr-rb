@@ -43,6 +43,9 @@ module TwitterCldr
       :'zh-tw' => :'zh-Hant'
   }
 
+  # maps cldr locales to twitter locales
+  CLDR_LOCALE_MAP = TWITTER_LOCALE_MAP.invert
+
   def_delegator :resources, :get_resource
   def_delegator :resources, :get_locale_resource
 
@@ -70,14 +73,7 @@ module TwitterCldr
 
     def twitter_locale(locale)
       locale = locale.to_sym
-      result = locale
-      TWITTER_LOCALE_MAP.each_pair do |twitter_locale, cldr_locale|
-        if cldr_locale == locale
-          result = twitter_locale
-          break
-        end
-      end
-      result
+      CLDR_LOCALE_MAP.fetch(locale, locale)
     end
 
     def supported_locales

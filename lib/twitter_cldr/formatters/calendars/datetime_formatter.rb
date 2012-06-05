@@ -169,7 +169,10 @@ module TwitterCldr
       end
 
       def period(time, pattern, length)
-        @tokenizer.calendar[:periods][time.strftime('%p').downcase.to_sym]
+        # Always use :wide form. Day-period design was changed in CLDR -
+        # http://cldr.unicode.org/development/development-process/design-proposals/day-period-design that means some
+        # major changes are required for a full support of day periods.
+        @tokenizer.calendar[:periods][:format][:wide][time.strftime('%p').downcase.to_sym]
       end
 
       def hour(time, pattern, length)

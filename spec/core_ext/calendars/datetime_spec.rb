@@ -47,7 +47,12 @@ describe DateTime do
       DateTime.now.localize(:th).to_short_s
     end
 
-   it "should stringify with buddhist calendar" do
+    it "should stringify with buddhist calendar" do
+      # Ensure that buddhist calendar data is present in th locale.
+      TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist].should_not(
+          be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
+      )
+
       #DateTime.now.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
       DateTime.now.localize(:th, :calendar_type => :buddhist).to_long_s
       DateTime.now.localize(:th, :calendar_type => :buddhist).to_medium_s

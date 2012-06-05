@@ -41,7 +41,7 @@ module TwitterCldr
       end
 
       def init_resources
-        @resource = TwitterCldr.get_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_locale_resource(@locale, :calendars)[TwitterCldr.convert_locale(@locale)]
 
         @resource[:calendars].each_pair do |calendar_type, options|
           next if calendar_type == DEFAULT_CALENDAR_TYPE
@@ -65,8 +65,10 @@ module TwitterCldr
       end
 
       def init_placeholders
-        @placeholders = [{ :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
-                         { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }]
+        @placeholders = [
+            { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
+            { :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }
+        ]
       end
 
       def pattern_for(resource)

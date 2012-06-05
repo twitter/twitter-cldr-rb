@@ -28,27 +28,28 @@ module TwitterCldr
 
   extend SingleForwardable
 
+  # version of CLDR that was used for generating YAML files in the resources/ directory
+  CLDR_VERSION = '21.0' # release date: 2012-02-10
+
   DEFAULT_LOCALE = :en
   DEFAULT_CALENDAR_TYPE = :gregorian
-  RESOURCE_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), "resources")
+
+  RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
 
   # maps twitter locales to cldr locales
-  TWITTER_LOCALE_MAP = { :msa     => :ms,
-                         :'zh-cn' => :zh,
-                         :'zh-tw' => :'zh-Hant' }
+  TWITTER_LOCALE_MAP = {
+      :msa     => :ms,
+      :'zh-cn' => :zh,
+      :'zh-tw' => :'zh-Hant'
+  }
 
-  @@resources = TwitterCldr::Shared::Resources.new
-
-  def_delegator :resources, :resource_for, :get_resource
+  def_delegator :resources, :get_resource
+  def_delegator :resources, :get_locale_resource
 
   class << self
 
-    def get_resource_file(locale, resource)
-      File.join(RESOURCE_DIR, convert_locale(locale).to_s, "#{resource}.yml")
-    end
-
     def resources
-      @@resources
+      @resources ||= TwitterCldr::Shared::Resources.new
     end
 
     def get_locale
@@ -64,7 +65,7 @@ module TwitterCldr
 
     def convert_locale(locale)
       locale = locale.to_sym
-      TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+      TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
     def twitter_locale(locale)
@@ -80,14 +81,7 @@ module TwitterCldr
     end
 
     def supported_locales
-      unless defined?(@@supported_locales)
-        rejectable = [:shared, :unicode_data]
-        @@supported_locales = Dir.glob(File.join(File.dirname(File.dirname(__FILE__)), "resources/*")).map do |file|
-          File.basename(file).to_sym
-        end.reject { |file| rejectable.include?(file) }
-      end
-
-      @@supported_locales
+      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
     end
 
     def supported_locale?(locale)

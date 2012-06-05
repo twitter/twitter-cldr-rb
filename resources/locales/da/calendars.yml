@@ -1,0 +1,172 @@
+da: 
+  calendars: 
+    gregorian: 
+      days: 
+        format: 
+          abbreviated: 
+            fri: fre
+            mon: man
+            sat: lør
+            sun: søn
+            thu: tor
+            tue: tir
+            wed: ons
+          narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          wide: 
+            fri: fredag
+            mon: mandag
+            sat: lørdag
+            sun: søndag
+            thu: torsdag
+            tue: tirsdag
+            wed: onsdag
+        stand-alone: 
+          abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          narrow: 
+            fri: F
+            mon: M
+            sat: L
+            sun: S
+            thu: T
+            tue: T
+            wed: O
+          wide: :"calendars.gregorian.days.format.wide"
+      fields: 
+        day: dag
+        dayperiod: dagtid
+        era: æra
+        hour: time
+        minute: minut
+        month: måned
+        second: sekund
+        week: uge
+        weekday: ugedag
+        year: år
+        zone: tidszone
+      formats: 
+        date: 
+          default: :"calendars.gregorian.formats.date.medium"
+          full: 
+            pattern: "EEEE 'den' d. MMMM y"
+          long: 
+            pattern: "d. MMM y"
+          medium: 
+            pattern: dd/MM/yyyy
+          short: 
+            pattern: dd/MM/yy
+        datetime: 
+          default: :"calendars.gregorian.formats.datetime.medium"
+          full: 
+            pattern: "{{date}} {{time}}"
+          long: 
+            pattern: "{{date}} {{time}}"
+          medium: 
+            pattern: "{{date}} {{time}}"
+          short: 
+            pattern: "{{date}} {{time}}"
+        time: 
+          default: :"calendars.gregorian.formats.time.medium"
+          full: 
+            pattern: "HH.mm.ss zzzz"
+          long: 
+            pattern: "HH.mm.ss z"
+          medium: 
+            pattern: HH.mm.ss
+          short: 
+            pattern: HH.mm
+      months: 
+        format: 
+          abbreviated: 
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mar.
+            4: apr.
+            5: maj
+            6: jun.
+            7: jul.
+            8: aug.
+            9: sep.
+          narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          wide: 
+            1: januar
+            10: oktober
+            11: november
+            12: december
+            2: februar
+            3: marts
+            4: april
+            5: maj
+            6: juni
+            7: juli
+            8: august
+            9: september
+        stand-alone: 
+          abbreviated: 
+            1: jan
+            10: okt
+            11: nov
+            12: dec
+            2: feb
+            3: mar
+            4: apr
+            5: maj
+            6: jun
+            7: jul
+            8: aug
+            9: sep
+          narrow: 
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
+          wide: :"calendars.gregorian.months.format.wide"
+      periods: 
+        format: 
+          abbreviated: 
+            noon: middag
+          narrow: 
+            noon: middag
+          wide: 
+            am: f.m.
+            noon: middag
+            pm: e.m.
+        stand-alone: 
+          wide: 
+            am: formiddag
+            pm: eftermiddag
+      quarters: 
+        format: 
+          abbreviated: 
+            1: K1
+            2: K2
+            3: K3
+            4: K4
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1. kvartal"
+            2: "2. kvartal"
+            3: "3. kvartal"
+            4: "4. kvartal"
+        stand-alone: 
+          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: :"calendars.gregorian.quarters.format.wide"

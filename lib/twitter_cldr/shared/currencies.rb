@@ -5,10 +5,12 @@
 
 module TwitterCldr
   module Shared
-    class Currencies
-      @@resource = TwitterCldr.get_resource("shared", "currencies")[:shared][:currencies]
+    module Currencies
+
+      @@resource = TwitterCldr.get_resource(:shared, :currencies)[:shared][:currencies]
 
       class << self
+
         def countries
           @@resource.map { |country_name, data| country_name.to_s }
         end
@@ -32,7 +34,9 @@ module TwitterCldr
           end
           final
         end
+
       end
+
     end
   end
 end

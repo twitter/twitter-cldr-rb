@@ -1,0 +1,226 @@
+fi: 
+  calendars: 
+    gregorian: 
+      days: 
+        format: 
+          abbreviated: 
+            fri: pe
+            mon: ma
+            sat: la
+            sun: su
+            thu: to
+            tue: ti
+            wed: ke
+          narrow: 
+            fri: P
+            mon: M
+            sat: L
+            sun: S
+            thu: T
+            tue: T
+            wed: K
+          wide: 
+            fri: perjantaina
+            mon: maanantaina
+            sat: lauantaina
+            sun: sunnuntaina
+            thu: torstaina
+            tue: tiistaina
+            wed: keskiviikkona
+        stand-alone: 
+          abbreviated: 
+            fri: pe
+            mon: ma
+            sat: la
+            sun: su
+            thu: to
+            tue: ti
+            wed: ke
+          narrow: 
+            fri: P
+            mon: M
+            sat: L
+            sun: S
+            thu: T
+            tue: T
+            wed: K
+          wide: 
+            fri: perjantai
+            mon: maanantai
+            sat: lauantai
+            sun: sunnuntai
+            thu: torstai
+            tue: tiistai
+            wed: keskiviikko
+      fields: 
+        day: päivä
+        dayperiod: vuorokaudenaika
+        era: aikakausi
+        hour: tunti
+        minute: minuutti
+        month: kuukausi
+        second: sekunti
+        week: viikko
+        weekday: viikonpäivä
+        year: vuosi
+        zone: aikavyöhyke
+      formats: 
+        date: 
+          default: :"calendars.gregorian.formats.date.medium"
+          full: 
+            pattern: "cccc, d. MMMM y"
+          long: 
+            pattern: "d. MMMM y"
+          medium: 
+            pattern: d.M.yyyy
+          short: 
+            pattern: d.M.yyyy
+        datetime: 
+          default: :"calendars.gregorian.formats.datetime.medium"
+          full: 
+            pattern: "{{date}} {{time}}"
+          long: 
+            pattern: "{{date}} {{time}}"
+          medium: 
+            pattern: "{{date}} {{time}}"
+          short: 
+            pattern: "{{date}} {{time}}"
+        time: 
+          default: :"calendars.gregorian.formats.time.medium"
+          full: 
+            pattern: "H.mm.ss zzzz"
+          long: 
+            pattern: "H.mm.ss z"
+          medium: 
+            pattern: H.mm.ss
+          short: 
+            pattern: H.mm
+      months: 
+        format: 
+          abbreviated: 
+            1: tammikuuta
+            10: lokakuuta
+            11: marraskuuta
+            12: joulukuuta
+            2: helmikuuta
+            3: maaliskuuta
+            4: huhtikuuta
+            5: toukokuuta
+            6: kesäkuuta
+            7: heinäkuuta
+            8: elokuuta
+            9: syyskuuta
+          narrow: 
+            1: T
+            10: L
+            11: M
+            12: J
+            2: H
+            3: M
+            4: H
+            5: T
+            6: K
+            7: H
+            8: E
+            9: S
+          wide: 
+            1: tammikuuta
+            10: lokakuuta
+            11: marraskuuta
+            12: joulukuuta
+            2: helmikuuta
+            3: maaliskuuta
+            4: huhtikuuta
+            5: toukokuuta
+            6: kesäkuuta
+            7: heinäkuuta
+            8: elokuuta
+            9: syyskuuta
+        stand-alone: 
+          abbreviated: 
+            1: tammi
+            10: loka
+            11: marras
+            12: joulu
+            2: helmi
+            3: maalis
+            4: huhti
+            5: touko
+            6: kesä
+            7: heinä
+            8: elo
+            9: syys
+          narrow: 
+            1: T
+            10: L
+            11: M
+            12: J
+            2: H
+            3: M
+            4: H
+            5: T
+            6: K
+            7: H
+            8: E
+            9: S
+          wide: 
+            1: tammikuu
+            10: lokakuu
+            11: marraskuu
+            12: joulukuu
+            2: helmikuu
+            3: maaliskuu
+            4: huhtikuu
+            5: toukokuu
+            6: kesäkuu
+            7: heinäkuu
+            8: elokuu
+            9: syyskuu
+      periods: 
+        format: 
+          abbreviated: 
+            am: ap.
+            pm: ip.
+          narrow: 
+            am: ap.
+            pm: ip.
+          wide: 
+            am: ap.
+            pm: ip.
+        stand-alone: 
+          wide: 
+            am: ap.
+            pm: ip.
+      quarters: 
+        format: 
+          abbreviated: 
+            1: "1. nelj."
+            2: "2. nelj."
+            3: "3. nelj."
+            4: "4. nelj."
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1. neljännes"
+            2: "2. neljännes"
+            3: "3. neljännes"
+            4: "4. neljännes"
+        stand-alone: 
+          abbreviated: 
+            1: "1. nelj."
+            2: "2. nelj."
+            3: "3. nelj."
+            4: "4. nelj."
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1. neljännes"
+            2: "2. neljännes"
+            3: "3. neljännes"
+            4: "4. neljännes"

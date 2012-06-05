@@ -32,6 +32,10 @@ describe TwitterCldr do
       locales.should include(:no)
       locales.should include(:ja)
     end
+
+    it 'should not include :shared or :unicode_data' do
+      (TwitterCldr.supported_locales & [:shared, :unicode_data]).should be_empty
+    end
   end
 
   describe "#convert_locale" do
@@ -73,21 +77,31 @@ describe TwitterCldr do
   end
 
   describe '#resources' do
-    it 'returns @@resources' do
+    it 'returns @resources' do
       resources = TwitterCldr::Shared::Resources.new
-      TwitterCldr.send :class_variable_set, :@@resources, resources
+      TwitterCldr.send :instance_variable_set, :@resources, resources
 
       TwitterCldr.resources.should == resources
     end
   end
 
-  describe '#get_resource' do
-    it 'delegates to @@resources' do
-      resources = TwitterCldr::Shared::Resources.new
-      mock(resources).resource_for('locale', 'resource') { 'result' }
-      TwitterCldr.send :class_variable_set, :@@resources, resources
+  let(:resources) { TwitterCldr::Shared::Resources.new }
 
-      TwitterCldr.get_resource('locale', 'resource').should == 'result'
+  describe '#get_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_resource(:shared, :currencies) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_resource(:shared, :currencies).should == 'result'
+    end
+  end
+
+  describe '#get_locale_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_locale_resource(:de, :numbers) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_locale_resource(:de, :numbers).should == 'result'
     end
   end
 end

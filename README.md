@@ -33,14 +33,6 @@ TwitterCldr patches core Ruby objects like Fixnum and Date to make localization 
 
 ### Numbers
 
-**Note**: The CLDR is missing complete number data for:
-
-* hu (Hungarian)
-* id (Indonesian)
-* msa (Malay)
-* no (Norwegian),
-* zh-tw (Traditional Chinese)
-
 Fixnum, Bignum, and Float objects are supported.  Here are some examples:
 
 ```ruby

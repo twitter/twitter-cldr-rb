@@ -76,6 +76,7 @@ module TwitterCldr
         end
       end
       File.open(File.join(output_dir, "VERSION"), "w+") { |f| f.write(TwitterCldr::VERSION) }
+      File.open(File.join(output_dir, "CLDR_VERSION"), "w+") { |f| f.write(TwitterCldr::CLDR_VERSION) }
       FileUtils.cp(File.expand_path(File.join(File.dirname(__FILE__), "../../LICENSE")), output_dir)
     end
   end

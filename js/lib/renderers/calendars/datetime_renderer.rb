@@ -29,7 +29,7 @@ module TwitterCldr
           end
 
           def calendar
-            TwitterCldr.resources.resource_for(@locale, "calendars")[TwitterCldr.convert_locale(@locale)][:calendars][:gregorian].to_json
+            TwitterCldr.get_locale_resource(@locale, "calendars")[TwitterCldr.convert_locale(@locale)][:calendars][:gregorian].to_json
           end
         end
       end

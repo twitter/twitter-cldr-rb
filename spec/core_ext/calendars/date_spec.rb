@@ -43,12 +43,12 @@ describe Date do
     it "should work with a number of different units" do
       date = Date.new(2010,6,6)
       loc_date = date.localize(:de, :calendar_type => :buddhist)
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :second).should == "Vor 5339550 Sekunden"
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :minute).should == "Vor 88992 Minuten"
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :hour).should == "Vor 1483 Stunden"
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :day).should == "Vor 61 Tagen"
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :month).should == "Vor 2 Monaten"
-      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :year).should == "Vor 0 Jahren"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :second}).should == "Vor 5339550 Sekunden"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :minute}).should == "Vor 88992 Minuten"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :hour}).should == "Vor 1483 Stunden"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :day}).should == "Vor 61 Tagen"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :month}).should == "Vor 2 Monaten"
+      loc_date.ago({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :year}).should == "Vor 0 Jahren"
     end
 
     it "should return an error if called on a date in the future" do
@@ -58,16 +58,22 @@ describe Date do
     end
   end
 
-  describe "future" do
+  describe "until" do
     it "should work with a number of different units" do
       date = Date.new(2010,10,10)
       loc_date = date.localize(:de, :calendar_type => :buddhist)
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :second).should == "In 5546850 Sekunden"
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :minute).should == "In 92447 Minuten"
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :hour).should == "In 1540 Stunden"
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :day).should == "In 64 Tagen"
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :month).should == "In 2 Monaten"
-      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :year).should == "In 0 Jahren"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :second}).should == "In 5546850 Sekunden"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :minute}).should == "In 92447 Minuten"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :hour}).should == "In 1540 Stunden"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :day}).should == "In 64 Tagen"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :month}).should == "In 2 Monaten"
+      loc_date.until({:base_time => Time.local(2010,8,6,12,12,30).to_i, :unit => :year}).should == "In 0 Jahren"
+    end
+
+    it "should return an error if called on a date in the past" do
+      date = Date.new(2010,4,4)
+      loc_date = date.localize(:de, :calendar_type => :buddhist)
+      lambda { loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :second)}.should raise_error(ArgumentError)
     end
   end
 

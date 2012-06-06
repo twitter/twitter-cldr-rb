@@ -23,4 +23,15 @@ describe AgoFormatter do
     end
   end
 
+  describe "#until" do
+    it "works for a variety of units" do
+      @formatter.format(3273932, {:unit => :year, :direction => :until}).should == 'In 0 Jahren'
+      @formatter.format(3273932, {:unit => :month, :direction => :until}).should == 'In 1 Monat'
+      @formatter.format(3273932, {:unit => :week, :direction => :until}).should == 'In 5 Wochen'
+      @formatter.format(3273932, {:unit => :day, :direction => :until}).should == 'In 37 Tagen'
+      @formatter.format(3273932, {:unit => :hour, :direction => :until}).should == 'In 909 Stunden'
+      @formatter.format(3273932, {:unit => :minute, :direction => :until}).should == 'In 54565 Minuten'
+      @formatter.format(3273932, {:unit => :second, :direction => :until}).should == 'In 3273932 Sekunden'
+    end
+  end
 end

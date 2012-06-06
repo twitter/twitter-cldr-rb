@@ -25,22 +25,24 @@ module TwitterCldr
       end
     end
 
-    def ago(base_time = nil, unit = :default)
+    def ago(options)
+      base_time = options[:base_time]
       if !base_time
         base_time = Time.now
       end
 
       timespan = LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :ago, @locale)
-      timespan.to_s(unit)
+      timespan.to_s(options[:unit])
     end
 
-    def until(base_time = nil, unit = :default)
+    def until(options)
+      base_time = options[:base_time]
       if !base_time
         base_time = Time.now
       end
 
       timespan = LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :until, @locale)
-      timespan.to_s(unit)
+      timespan.to_s(options[:unit])
     end
 
     def to_s

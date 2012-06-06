@@ -5,7 +5,6 @@ module TwitterCldr
         @tokenizer = TwitterCldr::Tokenizers::AgoTokenizer.new(:locale => extract_locale(options))
       end
 
-      #how do you know if it's before or after? what about arabic where there's no number?
       def format(seconds, direction, unit)
         if direction == :ago and seconds > 0
           raise ArgumentError.new('Start date is after end date. Consider using "until" function.')

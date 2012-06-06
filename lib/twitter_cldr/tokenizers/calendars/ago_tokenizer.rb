@@ -37,19 +37,20 @@ module TwitterCldr
         unit = options[:unit] || :default
         main_path = @paths[direction][unit]
 
-        case
-          when number == 0
-            pluralization = "other" #this should be 0 but it doesn't work
-          when number == 1
-            pluralization = "one"
-          when number == 2
-            pluralization = "two"
-        end
-
-        if pluralization and self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
-          tokens = self.tokens_for(KeyPath.join(@base_path, main_path, pluralization), pluralization)
-
-          #tokens = self.tokens_for(self.full_path_for(main_path, pluralization), unit)
+        # Pluralizations have different priorities, e.g. "two" takes precedence over "few"
+        # Paths containing integers don't work for some reason -- not sure why yet.
+        if number <= 2
+          case
+            when number == 0
+              pluralization = "other" #this should be 0 but that doesn't work
+            when number == 1
+              pluralization = "one"
+            when number == 2
+              pluralization = "two"
+          end
+          if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
+            tokens = self.tokens_for(full_path_for(main_path, pluralization), pluralization)
+          end
         end
 
         if number > 1 and tokens == nil
@@ -59,19 +60,17 @@ module TwitterCldr
             pluralization = "many"
           end
           if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
-            tokens = self.tokens_for(KeyPath.join(@base_path, main_path, pluralization), pluralization)
+            tokens = self.tokens_for(full_path_for(main_path, pluralization), pluralization)
           end
         end
 
         if number > 1 and tokens==nil
           pluralization = "other"
           if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
-          tokens = self.tokens_for(KeyPath.join(@base_path, main_path, pluralization), pluralization)
+            tokens = self.tokens_for(full_path_for(main_path, pluralization), pluralization)
           end
-          #tokens = self.tokens_for(self.full_path_for(self.full_path_for(main_path, pluralization), unit), unit)
         end
 
-        puts pluralization
         return tokens
       end
 

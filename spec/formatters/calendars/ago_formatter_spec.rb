@@ -12,26 +12,26 @@ describe AgoFormatter do
   describe "#format" do
     describe "#ago" do
       it "works for a variety of units" do
-        @formatter.format(-3273932, {:unit => :year, :direction => :ago}).should == 'Vor 0 Jahren'
-        @formatter.format(-3273932, {:unit => :month, :direction => :ago}).should == 'Vor 1 Monat'
-        @formatter.format(-3273932, {:unit => :week, :direction => :ago}).should == 'Vor 5 Wochen'
-        @formatter.format(-3273932, {:unit => :day, :direction => :ago}).should == 'Vor 37 Tagen'
-        @formatter.format(-3273932, {:unit => :hour, :direction => :ago}).should == 'Vor 909 Stunden'
-        @formatter.format(-3273932, {:unit => :minute, :direction => :ago}).should == 'Vor 54565 Minuten'
-        @formatter.format(-3273932, {:unit => :second, :direction => :ago}).should == 'Vor 3273932 Sekunden'
+        @formatter.format(-3273932, :ago, :year).should == 'Vor 0 Jahren'
+        @formatter.format(-3273932, :ago, :month).should == 'Vor 1 Monat'
+        @formatter.format(-3273932, :ago, :week).should == 'Vor 5 Wochen'
+        @formatter.format(-3273932, :ago, :day).should == 'Vor 37 Tagen'
+        @formatter.format(-3273932, :ago, :hour).should == 'Vor 909 Stunden'
+        @formatter.format(-3273932, :ago, :minute).should == 'Vor 54565 Minuten'
+        @formatter.format(-3273932, :ago, :second).should == 'Vor 3273932 Sekunden'
       end
     end
   end
 
   describe "#until" do
     it "works for a variety of units" do
-      @formatter.format(3273932, {:unit => :year, :direction => :until}).should == 'In 0 Jahren'
-      @formatter.format(3273932, {:unit => :month, :direction => :until}).should == 'In 1 Monat'
-      @formatter.format(3273932, {:unit => :week, :direction => :until}).should == 'In 5 Wochen'
-      @formatter.format(3273932, {:unit => :day, :direction => :until}).should == 'In 37 Tagen'
-      @formatter.format(3273932, {:unit => :hour, :direction => :until}).should == 'In 909 Stunden'
-      @formatter.format(3273932, {:unit => :minute, :direction => :until}).should == 'In 54565 Minuten'
-      @formatter.format(3273932, {:unit => :second, :direction => :until}).should == 'In 3273932 Sekunden'
+      @formatter.format(3273932, :until, :year).should == 'In 0 Jahren'
+      @formatter.format(3273932, :until, :month).should == 'In 1 Monat'
+      @formatter.format(3273932, :until, :week).should == 'In 5 Wochen'
+      @formatter.format(3273932, :until, :day).should == 'In 37 Tagen'
+      @formatter.format(3273932, :until, :hour).should == 'In 909 Stunden'
+      @formatter.format(3273932, :until, :minute).should == 'In 54565 Minuten'
+      @formatter.format(3273932, :until, :second).should == 'In 3273932 Sekunden'
     end
   end
 end

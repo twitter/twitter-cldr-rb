@@ -1,15 +1,14 @@
 module TwitterCldr
   class LocalizedTimespan < LocalizedObject
-    attr_reader :calendar_type
 
-    def initialize(object_time, base_time, direction, locale, options = {})
+    def initialize(object_time, base_time, direction, locale)
       @formatter = AgoFormatter.new({:locale => locale})
-      @seconds = object_time - base_time   #don't make this abs
+      @seconds = object_time - base_time
       @direction = direction
     end
 
     def to_s(unit = :default)
-      @formatter.format(@seconds, {:unit => unit.to_sym, :direction => @direction})
+      @formatter.format(@seconds, @direction, unit)
     end
 
     protected

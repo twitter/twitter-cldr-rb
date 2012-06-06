@@ -2,14 +2,11 @@ module TwitterCldr
   module Formatters
     class AgoFormatter < Base
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::AgoTokenizer.new(:locale => extract_locale(options))  #hmmm...
+        @tokenizer = TwitterCldr::Tokenizers::AgoTokenizer.new(:locale => extract_locale(options))
       end
 
       #how do you know if it's before or after? what about arabic where there's no number?
-
-      #maybe add optional starting date options, unit options, etc.
-      def format(seconds, options)  #options should contain TimeSpanDirection
-        direction = options[:direction]
+      def format(seconds, direction, unit)
         if direction == :ago and seconds > 0
           raise ArgumentError.new('Start date is after end date. Consider using "until" function.')
         elsif direction == :until and seconds < 0
@@ -17,10 +14,12 @@ module TwitterCldr
         end
 
         seconds = seconds.abs() #we no longer need the sign here to know whether the timespan is in the future or past
-        number = calculate_time(seconds, options)
+        number = calculate_time(seconds, unit)
 
-        tokens = @tokenizer.tokens({:direction => direction, :unit => options[:unit], :number => number})
-        prefix, suffix = *partition_tokens(tokens) #Q: is there a better way to tell prefix from suffix?
+        tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
+        prefix, suffix = *partition_tokens(tokens)
+
+        #This is pretty hacky and doesn't apply to all languages.
         if prefix != "" and suffix != ""
           "#{prefix.to_s}#{number}#{suffix.to_s}"
         else
@@ -33,8 +32,7 @@ module TwitterCldr
          tokens[1] || ""]
       end
 
-      def calculate_time(seconds, options)
-        unit = options[:unit]
+      def calculate_time(seconds, unit) #could be done more intelligently.
         if unit == :default
           if seconds < 60
             unit = :second
@@ -53,9 +51,9 @@ module TwitterCldr
           end
         end
 
-        case unit
+        case unit  #also could be improved. Right now it always rounds down.
           when :year
-            return round_to(seconds/31556926, 0)  #returns days
+            return round_to(seconds/31556926, 0)
           when :month
             return round_to(seconds/2629743.83, 0)
           when :week

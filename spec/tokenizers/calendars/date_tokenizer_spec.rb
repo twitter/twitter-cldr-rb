@@ -45,7 +45,9 @@ describe DateTokenizer do
 
     it "should tokenize composites correctly" do
       # Ensure that buddhist calendar data is present in th locale.
-      TwitterCldr.get_resource(:th, :calendars)[:th][:calendars][:buddhist].should_not(be_nil, 'buddhist calendar is missing for :th locale (check resources/th/calendars.yml)')
+      TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist].should_not(
+          be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
+      )
 
       tokenizer = DateTokenizer.new(:locale => :th, :calendar_type => :buddhist)
       got       = tokenizer.tokens(:type => :long)

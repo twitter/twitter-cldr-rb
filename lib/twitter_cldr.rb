@@ -4,12 +4,16 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 $:.push(File.dirname(__FILE__))
+$:.push(File.dirname(File.dirname(__FILE__)))
 
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 
 require 'yaml'
 require 'date'
 require 'time'
+require 'fileutils'
+
+# gems
 require 'forwardable'
 
 require 'twitter_cldr/version'
@@ -31,7 +35,6 @@ module TwitterCldr
   DEFAULT_CALENDAR_TYPE = :gregorian
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
-  NON_LOCALE_RESOURCES = [:shared, :unicode_data]
 
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
@@ -40,13 +43,13 @@ module TwitterCldr
       :'zh-tw' => :'zh-Hant'
   }
 
-  def_delegator :resources, :resource_for, :get_resource
+  # maps cldr locales to twitter locales
+  CLDR_LOCALE_MAP = TWITTER_LOCALE_MAP.invert
+
+  def_delegator :resources, :get_resource
+  def_delegator :resources, :get_locale_resource
 
   class << self
-
-    def get_resource_file(locale, resource)
-      File.join(RESOURCES_DIR, convert_locale(locale).to_s, "#{resource}.yml")
-    end
 
     def resources
       @resources ||= TwitterCldr::Shared::Resources.new
@@ -65,11 +68,16 @@ module TwitterCldr
 
     def convert_locale(locale)
       locale = locale.to_sym
-      TWITTER_LOCALE_MAP.include?(locale) ? TWITTER_LOCALE_MAP[locale] : locale
+      TWITTER_LOCALE_MAP.fetch(locale, locale)
+    end
+
+    def twitter_locale(locale)
+      locale = locale.to_sym
+      CLDR_LOCALE_MAP.fetch(locale, locale)
     end
 
     def supported_locales
-      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, '*')).map { |f| File.basename(f).to_sym } - NON_LOCALE_RESOURCES
+      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
     end
 
     def supported_locale?(locale)
@@ -77,6 +85,9 @@ module TwitterCldr
       supported_locales.include?(locale) || supported_locales.include?(convert_locale(locale))
     end
 
+    def require_js
+      require "js/lib/twitter_cldr_js"
+    end
   end
 
 end

@@ -8,26 +8,44 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe Resources do
-  before(:each) do
-    @resource = Resources.new
-  end
+  let(:resources) { Resources.new }
 
-  describe "#resource_for" do
-    it "loads the requested resource from disk only once" do
-      # note that it should convert the string "de" into a symbol
-      mock(@resource).data_for(:de, "racehorse").once { "german racehorse resource" }
+  describe '#get_resource' do
+    it 'loads the correct YAML file' do
+      stub(File).read(File.join(TwitterCldr::RESOURCES_DIR, 'shared/currencies.yml')) { "---\n- 1\n- 2\n" }
+      resources.get_resource(:shared, :currencies).should == [1, 2]
+    end
 
-      # do it twice - the second one shouldn't call data_for
-      @resource.resource_for("de", "racehorse").should == "german racehorse resource"
-      @resource.resource_for("de", "racehorse").should == "german racehorse resource"
+    it 'loads the resource only once' do
+      mock(resources).load_resource('shared/currencies.yml').once { 'foo-bar-baz' }
+
+      result = resources.get_resource(:shared, :currencies)
+      # second time load_resource is not called but we get the same object as before
+      resources.get_resource(:shared, :currencies).object_id.should == result.object_id
+    end
+
+    it 'accepts a variable length resource path both in symbols and strings' do
+      stub(resources).load_resource('foo/bar/baz.yml') { 'foo-bar-baz' }
+      resources.get_resource('foo', :bar, 'baz').should == 'foo-bar-baz'
+    end
+
+    it 'raises an exception if resource file is missing' do
+      lambda { resources.get_resource(:foo, :bar) }.should raise_error(ArgumentError, "Resource 'foo/bar.yml' not found.")
     end
   end
 
-  describe "#data_for" do
-    it "loads the correct file for the given locale and resource" do
-      mock(YAML).load("data") { { "key" => "value" } }
-      mock(File).read(File.join(File.dirname(File.dirname(File.dirname(File.expand_path(__FILE__)))), "resources", "de", "racehorse.yml")) { "data" }
-      @resource.resource_for("de", "racehorse").should == { :key => "value" }
+  describe '#get_locale_resource' do
+    it 'load the correct locale resource file' do
+      stub(resources).get_resource(:locales, :de, :numbers) { 'foo' }
+      resources.get_locale_resource(:de, :numbers).should == 'foo'
+    end
+
+    it 'converts locales' do
+      mock(TwitterCldr).convert_locale('zh-tw') { :'zh-Hant' }
+      mock(resources).get_resource(:locales, :'zh-Hant', :numbers) { 'foo' }
+
+      resources.get_locale_resource('zh-tw', :numbers).should == 'foo'
     end
   end
+
 end

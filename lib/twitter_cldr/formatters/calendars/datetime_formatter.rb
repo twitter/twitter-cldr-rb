@@ -113,7 +113,7 @@ module TwitterCldr
           @tokenizer.calendar[:months][:format][:wide][date.month]
         when 5
           raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          @tokenizer.calendar[:months][:format][:narrow][date.month]
+          # @tokenizer.calendar[:months][:format][:narrow][date.month]
         else
           # raise unknown date format
         end
@@ -214,11 +214,6 @@ module TwitterCldr
 
       def timezone_generic_non_location(time, pattern, length)
         raise NotImplementedError, 'requires timezone translation data'
-      end
-
-      def round_to(number, precision)
-        factor = 10 ** precision
-        (number * factor).round.to_f / factor
       end
     end
   end

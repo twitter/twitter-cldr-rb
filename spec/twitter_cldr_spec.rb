@@ -44,6 +44,22 @@ describe TwitterCldr do
       TwitterCldr.convert_locale(:'zh-cn').should == :zh
       TwitterCldr.convert_locale(:'zh-tw').should == :'zh-Hant'
     end
+
+    it "should leave unknown locales alone" do
+      TwitterCldr.convert_locale(:blarg).should == :blarg
+    end
+  end
+
+  describe "#twitter_locale" do
+    it "should convert a CLDR locale to a twitter locale" do
+      TwitterCldr.twitter_locale(:ms).should == :msa
+      TwitterCldr.twitter_locale(:zh).should == :'zh-cn'
+      TwitterCldr.twitter_locale(:'zh-Hant').should == :'zh-tw'
+    end
+
+    it "should leave unknown locales alone" do
+      TwitterCldr.twitter_locale(:blarg).should == :blarg
+    end
   end
 
   describe "#get_locale" do
@@ -69,13 +85,23 @@ describe TwitterCldr do
     end
   end
 
-  describe '#get_resource' do
-    it 'delegates to @resources' do
-      resources = TwitterCldr::Shared::Resources.new
-      mock(resources).resource_for('locale', 'resource') { 'result' }
-      TwitterCldr.send :instance_variable_set, :@resources, resources
+  let(:resources) { TwitterCldr::Shared::Resources.new }
 
-      TwitterCldr.get_resource('locale', 'resource').should == 'result'
+  describe '#get_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_resource(:shared, :currencies) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_resource(:shared, :currencies).should == 'result'
+    end
+  end
+
+  describe '#get_locale_resource' do
+    it 'delegates to resources' do
+      stub(resources).get_locale_resource(:de, :numbers) { 'result' }
+      stub(TwitterCldr).resources { resources }
+
+      TwitterCldr.get_locale_resource(:de, :numbers).should == 'result'
     end
   end
 end

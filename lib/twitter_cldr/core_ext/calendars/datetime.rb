@@ -3,6 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+
 class DateTime
   def localize(locale = TwitterCldr.get_locale, options = {})
     TwitterCldr::LocalizedDateTime.new(self, locale, options)
@@ -22,6 +23,24 @@ module TwitterCldr
       define_method "to_#{format_type}_s" do
         @formatter.format(@base_obj, :type => format_type.to_sym)
       end
+    end
+
+    def ago(base_time = nil, unit = :default)
+      if !base_time
+        base_time = Time.now
+      end
+
+      timespan = LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :ago, @locale)
+      timespan.to_s(unit)
+    end
+
+    def until(base_time = nil, unit = :default)
+      if !base_time
+        base_time = Time.now
+      end
+
+      timespan = LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :until, @locale)
+      timespan.to_s(unit)
     end
 
     def to_s

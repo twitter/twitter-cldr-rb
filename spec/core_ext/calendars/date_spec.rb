@@ -36,6 +36,39 @@ describe Date do
       loc_date = date.localize(:th, :calendar_type => :buddhist)
       loc_date.to_datetime(Time.now).calendar_type.should == :buddhist
     end
+
+  end
+
+  describe "ago" do
+    it "should work with a number of different units" do
+      date = Date.new(2010,6,6)
+      loc_date = date.localize(:de, :calendar_type => :buddhist)
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :second).should == "Vor 5339550 Sekunden"
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :minute).should == "Vor 88992 Minuten"
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :hour).should == "Vor 1483 Stunden"
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :day).should == "Vor 61 Tagen"
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :month).should == "Vor 2 Monaten"
+      loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :year).should == "Vor 0 Jahren"
+    end
+
+    it "should return an error if called on a date in the future" do
+      date = Date.new(2010,10,10)
+      loc_date = date.localize(:de, :calendar_type => :buddhist)
+      lambda { loc_date.ago(Time.local(2010,8,6,12,12,30).to_i, :second)}.should raise_error(ArgumentError)
+    end
+  end
+
+  describe "future" do
+    it "should work with a number of different units" do
+      date = Date.new(2010,10,10)
+      loc_date = date.localize(:de, :calendar_type => :buddhist)
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :second).should == "In 5546850 Sekunden"
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :minute).should == "In 92447 Minuten"
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :hour).should == "In 1540 Stunden"
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :day).should == "In 64 Tagen"
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :month).should == "In 2 Monaten"
+      loc_date.until(Time.local(2010,8,6,12,12,30).to_i, :year).should == "In 0 Jahren"
+    end
   end
 
   describe "stringify" do

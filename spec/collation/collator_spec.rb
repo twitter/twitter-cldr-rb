@@ -46,29 +46,18 @@ describe Collator do
     let(:code_points)     { code_points_hex.map { |cp| cp.to_i(16) } }
     let(:sort_key)        { [9986, 10498, 11010, 0, 1282, 1282, 1282, 0, 1282, 1282, 1282] }
 
-    context 'when given a valid string' do
-      before(:each) { mock(collator).sort_key_for_code_points(code_points) { sort_key } }
+    before(:each) { mock(collator).sort_key_for_code_points(code_points) { sort_key } }
 
-      it 'calculates sort key for a string' do
-        mock(TwitterCldr::Utils::CodePoints).from_string(string) { code_points_hex }
-        collator.sort_key(string).should == sort_key
-      end
-
-      it 'calculates sort key for an array of code points (represented as hex strings)' do
-        dont_allow(TwitterCldr::Utils::CodePoints).from_string(string)
-        collator.sort_key(code_points_hex).should == sort_key
-      end
+    it 'calculates sort key for a string' do
+      mock(TwitterCldr::Utils::CodePoints).from_string(string) { code_points_hex }
+      collator.sort_key(string).should == sort_key
     end
 
-    context 'when given an invalid string' do
-      it 'raises CollationElementNotFound not found exception when a collation element is not found' do
-        trie = Trie.new
-        stub(trie).find_prefix { nil }
-        stub(collator).collation_elements_trie { trie }
-
-        lambda { collator.sort_key('foo')  }.should raise_error(CollationElementNotFound)
-      end
+    it 'calculates sort key for an array of code points (represented as hex strings)' do
+      dont_allow(TwitterCldr::Utils::CodePoints).from_string(string)
+      collator.sort_key(code_points_hex).should == sort_key
     end
+
   end
 
   # This test is in pending state because it doesn't act as a regular rspec test at the moment. It requires
@@ -103,6 +92,7 @@ describe Collator do
       rescue TwitterCldr::Collation::CollationElementNotFound => e
         result[e.class] += 1
         failures << [e.class, line, []]
+        last_hex_code_points = last_sort_key = nil
       end
     end
 

@@ -89,7 +89,7 @@ module TwitterCldr
       end
 
       def init_resources
-        @resource = TwitterCldr.get_resource(@locale, "units")[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_locale_resource(@locale, :units)[TwitterCldr.convert_locale(@locale)]
       end
 
       def pattern_for(resource)

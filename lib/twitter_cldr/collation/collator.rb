@@ -21,7 +21,7 @@ module TwitterCldr
       UNMARKED = 3
 
       def sort_key(string_or_code_points)
-        sort_key_for_code_points(integer_code_points(string_or_code_points))
+        sort_key_for_code_points(get_integer_code_points(string_or_code_points))
       end
 
       private
@@ -34,7 +34,7 @@ module TwitterCldr
         @collation_elements_trie ||= self.class.collation_elements_trie
       end
 
-      def integer_code_points(str_or_code_points)
+      def get_integer_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
         # TODO: should normalize code points here.
@@ -60,11 +60,16 @@ module TwitterCldr
 
         if fractional_elements
           integer_code_points.shift(offset)
+          fractional_elements
         else
-          fractional_elements = [implicit_fractional_element(integer_code_points.shift)]
+          hangul_fractional_elements(integer_code_points) || [implicit_fractional_element(integer_code_points.shift)]
         end
+      end
 
-        fractional_elements
+      def hangul_fractional_elements(code_points)
+        return unless TwitterCldr::Normalizers::Hangul.hangul_syllable?(code_points.first)
+
+        get_fractional_elements(TwitterCldr::Normalizers::Hangul.decompose(code_points.shift))
       end
 
       # Generates implicit weights for all code_points. Uses the approach described in

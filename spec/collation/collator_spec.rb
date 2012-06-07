@@ -90,10 +90,9 @@ describe Collator do
 
         last_hex_code_points = hex_code_points
         last_sort_key = sort_key
-      rescue TwitterCldr::Collation::CollationElementNotFound => e
-        result[e.class] += 1
-        failures << [e.class, line, []]
-        last_hex_code_points = last_sort_key = nil
+      rescue Exception
+        puts line
+        raise
       end
     end
 

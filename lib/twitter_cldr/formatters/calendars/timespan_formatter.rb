@@ -6,23 +6,19 @@ module TwitterCldr
       end
 
       def format(seconds, unit)
-        if seconds < 0
-          direction = :ago
-        else
-          direction = :until
-        end
+        seconds < 0 ? direction = :ago : direction = :until
 
         if unit.nil? or unit == :default
           unit = self.calculate_unit(seconds.abs)
         end
-        number = calculate_time(seconds.abs, unit)
 
+        number = calculate_time(seconds.abs, unit)
         tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
         string = tokens.to_s
         string.gsub(/\{[0-9]\}/, number.to_s).to_s
       end
 
-      
+
       def calculate_unit(seconds)
         if seconds < 30
           :second
@@ -32,28 +28,24 @@ module TwitterCldr
           :hour
         elsif seconds < 604800
           :day
-        elsif seconds < 2591969 #assuming 30 days in a month
+        elsif seconds < 2591969
           :week
         elsif seconds < 31556926
           :month
         else
           :year
         end
-      end 
-      
-      
+      end
+
+
       # 0 <-> 29 secs                                                   # => seconds
       # 30 secs <-> 44 mins, 29 secs                                    # => minutes
       # 44 mins, 30 secs <-> 23 hrs, 59 mins, 29 secs                   # => hours
       # 23 hrs, 59 mins, 29 secs <-> 29 days, 23 hrs, 59 mins, 29 secs  # => days
       # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
       # 1 yr <-> max time or date                                       # => years
-      def calculate_time(seconds, unit) #could be done more intelligently.
-        #if unit == :default or unit.nil?
-        #  unit = self.calculate_unit(seconds)
-        #end
-
-        case unit  #also could be improved. Right now it always rounds down.
+      def calculate_time(seconds, unit)
+        case unit
           when :year
             return round_to(seconds/31556926, 0)
           when :month

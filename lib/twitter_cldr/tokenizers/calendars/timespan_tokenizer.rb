@@ -38,7 +38,7 @@ module TwitterCldr
 
         pluralization = TwitterCldr::Formatters::Plurals::Rules.rule_for(number, @locale)
 
-        case pluralization   # Paths containing integers don't work for some reason -- not sure why yet.
+        case pluralization #sometimes the plural rule will return ":one" when the resource only contains a path with "1"
           when :zero
             pluralization = 0 if self.token_exists(KeyPath.join(@base_path, main_path), "0")
           when :one
@@ -48,7 +48,6 @@ module TwitterCldr
         end
 
         pluralization = pluralization.to_s
-
         if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
           tokens = self.tokens_for_incl_placeholders(full_path_for(main_path, pluralization))
         end

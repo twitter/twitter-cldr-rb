@@ -65,13 +65,9 @@ module TwitterCldr
 
       def tokens_for_incl_placeholders(key)
         result = []
-        tokens = self. tokenize_pattern(self.pattern_for(self.traverse(key)))
+        tokens = self.tokenize_pattern(self.pattern_for(self.traverse(key)))
         tokens.each do |token|
-          if token.is_a?(Token) || token.is_a?(CompositeToken)
-            result << token
-          else
-            result << token[:value]
-          end
+          result << token
         end
         result
       end

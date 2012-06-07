@@ -133,6 +133,8 @@ module TwitterCldr
       # represented as integers in the returned array.
       #
       def fixnum_to_wydes_array(number)
+        return [0] if number.zero?
+
         bytes = fixnum_to_bytes_array(number)
         bytes << LEVEL_FILLER if bytes.size.odd?
         bytes.each_slice(2).map { |two_bytes| (two_bytes[0] << 8) | two_bytes[1] }

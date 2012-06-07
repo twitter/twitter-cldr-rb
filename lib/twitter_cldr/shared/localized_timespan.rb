@@ -1,14 +1,13 @@
 module TwitterCldr
   class LocalizedTimespan < LocalizedObject
 
-    def initialize(object_time, base_time, direction, locale)
-      @formatter = AgoFormatter.new({:locale => locale})
-      @seconds = object_time - base_time
-      @direction = direction
+    def initialize(seconds, locale)
+      @formatter = TimespanFormatter.new({:locale => locale})
+      @seconds = seconds
     end
 
     def to_s(unit = :default)
-      @formatter.format(@seconds, @direction, unit)
+      @formatter.format(@seconds, unit)
     end
 
     protected

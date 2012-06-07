@@ -63,6 +63,29 @@ module TwitterCldr
         @@token_cache[cache_key]
       end
 
+      #TODO: fix this?
+      def all_tokens_for(key, type)
+        @@token_cache ||= {}
+        cache_key = self.compute_cache_key(@locale, key, type)
+
+        unless @@token_cache.include?(cache_key)
+          result = []
+          tokens = self.expand_pattern_storing_placeholder(self.pattern_for(self.traverse(key)), type)
+
+          tokens.each do |token|
+            if token.is_a?(Token) || token.is_a?(CompositeToken)
+              result << token
+            else
+              result << token[:value]
+            end
+          end
+
+          @@token_cache[cache_key] = result
+        end
+
+        @@token_cache[cache_key]
+      end
+
       def compute_cache_key(*pieces)
         if pieces && pieces.size > 0
           pieces.join("|").hash
@@ -77,7 +100,13 @@ module TwitterCldr
 
       def traverse(needle, haystack = @resource)
         needle.to_s.split('.').inject(haystack) do |current, segment|
-          key = segment.to_sym
+          if segment== "1" or segment == "2"   #can't convert int into symbol
+            key = "#{1}".to_s.to_sym
+            key = :"1"
+          else
+            key = segment.to_sym
+          end
+
           if current.is_a?(Hash) && current.has_key?(key)
             current[key]
           else
@@ -104,6 +133,30 @@ module TwitterCldr
             end
           end
 
+          final
+        end
+      end
+
+      #trying to store where placeholders are
+      def expand_pattern_storing_placeholder(format_str, type)
+        if format_str.is_a?(Symbol)
+          # symbols mean another path was given
+          self.expand_pattern(self.pattern_for(self.traverse(format_str)), type)
+        else
+          parts = tokenize_pattern(format_str)
+          final = []
+
+          parts.each do |part|
+            case part[:type]
+              when :placeholder then
+                placeholder = self.choose_placeholder(part[:value], @placeholders)
+                final << part if !placeholder
+                final += placeholder ? placeholder.tokens(:type => type) : []
+
+              else
+                final << part
+            end
+          end
           final
         end
       end

@@ -1,47 +1,40 @@
 module TwitterCldr
   module Formatters
-    class AgoFormatter < Base
+    class TimespanFormatter < Base
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::AgoTokenizer.new(:locale => extract_locale(options))
+        @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
       end
 
-      def format(seconds, direction, unit)
-        if direction == :ago and seconds > 0
-          raise ArgumentError.new('Start date is after end date. Consider using "until" function.')
-        elsif direction == :until and seconds < 0
-          raise ArgumentError.new('End date is before start date. Consider using "ago" function.')
+      def format(seconds, unit)
+        if seconds < 0
+          direction = :ago
+        else
+          direction = :until
         end
-
-        seconds = seconds.abs() #we no longer need the sign here to know whether the timespan is in the future or past
-        number = calculate_time(seconds, unit)
+        number = calculate_time(seconds.abs, unit)
 
         tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
-        prefix, suffix = *partition_tokens(tokens)
-
-        #This is pretty hacky and doesn't apply to all languages.
-        if prefix != "" and suffix != ""
-          "#{prefix.to_s}#{number}#{suffix.to_s}"
-        else
-          "#{number}#{prefix.to_s}"
-        end
+        string = tokens.to_s
+        string.gsub(/\{[0-9]\}/, number.to_s)
       end
 
-      def partition_tokens(tokens)
-        [tokens[0] || "",
-         tokens[1] || ""]
-      end
-
+      # 0 <-> 29 secs                                                   # => seconds
+      # 30 secs <-> 44 mins, 29 secs                                    # => minutes
+      # 44 mins, 30 secs <-> 23 hrs, 59 mins, 29 secs                   # => hours
+      # 23 hrs, 59 mins, 29 secs <-> 29 days, 23 hrs, 59 mins, 29 secs  # => days
+      # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
+      # 1 yr <-> max time or date                                       # => years
       def calculate_time(seconds, unit) #could be done more intelligently.
         if unit == :default
-          if seconds < 60
+          if seconds < 30
             unit = :second
-          elsif seconds < 3600
+          elsif seconds < 2670
             unit = :minute
-          elsif seconds < 86400
+          elsif seconds < 86369
             unit = :hour
           elsif seconds < 604800
             unit = :day
-          elsif seconds < 2629743.83
+          elsif seconds < 2591969 #assuming 30 days in a month
             unit = :week
           elsif seconds < 31556926
             unit = :month

@@ -20,6 +20,6 @@ module TwitterCldr
     autoload :Plurals,         'twitter_cldr/formatters/plurals'
     autoload :PluralFormatter, 'twitter_cldr/formatters/plurals/plural_formatter'
 
-    autoload :AgoFormatter, 'twitter_cldr/formatters/calendars/ago_formatter'
+    autoload :TimespanFormatter, 'twitter_cldr/formatters/calendars/timespan_formatter'
   end
 end

@@ -26,15 +26,17 @@ module TwitterCldr
     end
 
     def ago(options)
-      base_time = options[:base_time]
-      base_time ||= Time.now
-      LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :ago, @locale).to_s(options[:unit])
+      base_time = options[:base_time] || Time.now
+      seconds = self.to_time.base_obj.to_i - base_time.to_i
+      raise ArgumentError.new('Start date is after end date. Consider using "until" function.') if seconds > 0
+      LocalizedTimespan.new(seconds, @locale).to_s(options[:unit])
     end
 
     def until(options)
-      base_time = options[:base_time]
-      base_time ||= Time.now
-      LocalizedTimespan.new(self.to_time.base_obj.to_i, base_time.to_i, :until, @locale).to_s(options[:unit])
+      base_time = options[:base_time] || Time.now
+      seconds = self.to_time.base_obj.to_i - base_time.to_i
+      raise ArgumentError.new('End date is before start date. Consider using "ago" function.') if seconds < 0
+      LocalizedTimespan.new(seconds, @locale).to_s(options[:unit])
     end
 
     def to_s

@@ -11,13 +11,37 @@ module TwitterCldr
         else
           direction = :until
         end
+
+        if unit.nil? or unit == :default
+          unit = self.calculate_unit(seconds.abs)
+        end
         number = calculate_time(seconds.abs, unit)
 
         tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
         string = tokens.to_s
-        string.gsub(/\{[0-9]\}/, number.to_s)
+        string.gsub(/\{[0-9]\}/, number.to_s).to_s
       end
 
+      
+      def calculate_unit(seconds)
+        if seconds < 30
+          :second
+        elsif seconds < 2670
+          :minute
+        elsif seconds < 86369
+          :hour
+        elsif seconds < 604800
+          :day
+        elsif seconds < 2591969 #assuming 30 days in a month
+          :week
+        elsif seconds < 31556926
+          :month
+        else
+          :year
+        end
+      end 
+      
+      
       # 0 <-> 29 secs                                                   # => seconds
       # 30 secs <-> 44 mins, 29 secs                                    # => minutes
       # 44 mins, 30 secs <-> 23 hrs, 59 mins, 29 secs                   # => hours
@@ -25,23 +49,9 @@ module TwitterCldr
       # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
       # 1 yr <-> max time or date                                       # => years
       def calculate_time(seconds, unit) #could be done more intelligently.
-        if unit == :default
-          if seconds < 30
-            unit = :second
-          elsif seconds < 2670
-            unit = :minute
-          elsif seconds < 86369
-            unit = :hour
-          elsif seconds < 604800
-            unit = :day
-          elsif seconds < 2591969 #assuming 30 days in a month
-            unit = :week
-          elsif seconds < 31556926
-            unit = :month
-          else
-            unit = :year
-          end
-        end
+        #if unit == :default or unit.nil?
+        #  unit = self.calculate_unit(seconds)
+        #end
 
         case unit  #also could be improved. Right now it always rounds down.
           when :year

@@ -64,15 +64,15 @@ module TwitterCldr
       end
 
       def tokens_for_incl_placeholders(key)
-          result = []
-          tokens = self. tokenize_pattern(self.pattern_for(self.traverse(key)))
-          tokens.each do |token|
-            if token.is_a?(Token) || token.is_a?(CompositeToken)
-              result << token
-            else
-              result << token[:value]
-            end
+        result = []
+        tokens = self. tokenize_pattern(self.pattern_for(self.traverse(key)))
+        tokens.each do |token|
+          if token.is_a?(Token) || token.is_a?(CompositeToken)
+            result << token
+          else
+            result << token[:value]
           end
+        end
         result
       end
 
@@ -90,11 +90,15 @@ module TwitterCldr
 
       def traverse(needle, haystack = @resource)
         needle.to_s.split('.').inject(haystack) do |current, segment|
-          if segment== "1" or segment == "2"   #can't convert int into symbol
-            key = "#{1}".to_s.to_sym
-            key = :"1"
-          else
-            key = segment.to_sym
+          case segment
+            when "1"
+              key = 1
+            when "0"
+              key = 0
+            when "2"
+              key = 2
+            else
+              key = segment.to_sym
           end
 
           if current.is_a?(Hash) && current.has_key?(key)

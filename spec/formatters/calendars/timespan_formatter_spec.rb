@@ -12,8 +12,8 @@ describe TimespanFormatter do
   describe "#format" do
     describe "#ago" do
       it "works for a variety of units" do
-        #@formatter.format(-3273932, :year).should == 'Vor 0 Jahren'
-        #@formatter.format(-3273932, :month).should == 'Vor 1 Monat'
+        @formatter.format(-3273932, :year).should == 'Vor 0 Jahren'
+        @formatter.format(-3273932, :month).should == 'Vor 1 Monat'
         @formatter.format(-3273932, :week).should == 'Vor 5 Wochen'
         @formatter.format(-3273932, :day).should == 'Vor 37 Tagen'
         @formatter.format(-3273932, :hour).should == 'Vor 909 Stunden'
@@ -25,8 +25,8 @@ describe TimespanFormatter do
 
   describe "#until" do
     it "works for a variety of units" do
-      #@formatter.format(3273932, :year).should == 'In 0 Jahren'
-      #@formatter.format(3273932, :month).should == 'In 1 Monat'
+      @formatter.format(3273932, :year).should == 'In 0 Jahren'
+      @formatter.format(3273932, :month).should == 'In 1 Monat'
       @formatter.format(3273932, :week).should == 'In 5 Wochen'
       @formatter.format(3273932, :day).should == 'In 37 Tagen'
       @formatter.format(3273932, :hour).should == 'In 909 Stunden'

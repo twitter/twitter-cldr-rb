@@ -40,11 +40,11 @@ module TwitterCldr
 
         case pluralization   # Paths containing integers don't work for some reason -- not sure why yet.
           when :zero
-            pluralization = "0"#"#{0}"
+            pluralization = 0 if self.token_exists(KeyPath.join(@base_path, main_path), "0")
           when :one
-            pluralization = "1"#"#{1}"
+            pluralization = 1 if self.token_exists(KeyPath.join(@base_path, main_path), "1")
           when :two
-            pluralization = "2"#"#{2}"
+            pluralization = 2 if self.token_exists(KeyPath.join(@base_path, main_path), "2")
         end
 
         pluralization = pluralization.to_s

@@ -5,10 +5,11 @@
 
 module TwitterCldr
   module Normalizers
-    autoload :Base, 'twitter_cldr/normalizers/base'
-    autoload :NFD,  'twitter_cldr/normalizers/nfd'
-    autoload :NFKD, 'twitter_cldr/normalizers/nfkd'
-    autoload :NFC,  'twitter_cldr/normalizers/nfc'
-    autoload :NFKC, 'twitter_cldr/normalizers/nfkc'
+    autoload :Base,   'twitter_cldr/normalizers/base'
+    autoload :Hangul, 'twitter_cldr/normalizers/hangul'
+    autoload :NFC,    'twitter_cldr/normalizers/nfc'
+    autoload :NFD,    'twitter_cldr/normalizers/nfd'
+    autoload :NFKC,   'twitter_cldr/normalizers/nfkc'
+    autoload :NFKD,   'twitter_cldr/normalizers/nfkd'
   end
 end

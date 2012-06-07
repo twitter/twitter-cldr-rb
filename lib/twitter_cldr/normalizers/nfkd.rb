@@ -73,23 +73,8 @@ module TwitterCldr
           unicode_data.decomposition.split
         end
 
-        # Special decomposition for Hangul syllables. Documented in Section 3.12 at
-        # http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
-        #
         def decompose_hangul(code_point)
-          s_index = code_point.hex - HANGUL_DECOMPOSITION_CONSTANTS[:SBase]
-
-          l_index = s_index / HANGUL_DECOMPOSITION_CONSTANTS[:NCount]
-          v_index = (s_index % HANGUL_DECOMPOSITION_CONSTANTS[:NCount]) / HANGUL_DECOMPOSITION_CONSTANTS[:TCount]
-          t_index = s_index % HANGUL_DECOMPOSITION_CONSTANTS[:TCount]
-
-          result = []
-
-          result << (HANGUL_DECOMPOSITION_CONSTANTS[:LBase] + l_index).to_s(16).upcase
-          result << (HANGUL_DECOMPOSITION_CONSTANTS[:VBase] + v_index).to_s(16).upcase
-          result << (HANGUL_DECOMPOSITION_CONSTANTS[:TBase] + t_index).to_s(16).upcase if t_index > 0
-
-          result
+          TwitterCldr::Normalizers::Hangul.decompose(code_point.hex).map { |e| e.to_s(16).upcase }
         end
 
         # Performs the Canonical Ordering Algorithm by stable sorting of every subsequence of combining code points

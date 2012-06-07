@@ -50,7 +50,7 @@ module TwitterCldr
         pluralization = pluralization.to_s
 
         if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
-          tokens = self.all_tokens_for(full_path_for(main_path, pluralization), pluralization)     #all tokens for?
+          tokens = self.tokens_for_incl_placeholders(full_path_for(main_path, pluralization))
         end
 
         return tokens

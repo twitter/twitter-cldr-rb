@@ -63,15 +63,9 @@ module TwitterCldr
         @@token_cache[cache_key]
       end
 
-      #TODO: fix this?
-      def all_tokens_for(key, type)
-        @@token_cache ||= {}
-        cache_key = self.compute_cache_key(@locale, key, type)
-
-        unless @@token_cache.include?(cache_key)
+      def tokens_for_incl_placeholders(key)
           result = []
-          tokens = self.expand_pattern_storing_placeholder(self.pattern_for(self.traverse(key)), type)
-
+          tokens = self. tokenize_pattern(self.pattern_for(self.traverse(key)))
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
               result << token
@@ -79,11 +73,7 @@ module TwitterCldr
               result << token[:value]
             end
           end
-
-          @@token_cache[cache_key] = result
-        end
-
-        @@token_cache[cache_key]
+        result
       end
 
       def compute_cache_key(*pieces)
@@ -133,30 +123,6 @@ module TwitterCldr
             end
           end
 
-          final
-        end
-      end
-
-      #trying to store where placeholders are
-      def expand_pattern_storing_placeholder(format_str, type)
-        if format_str.is_a?(Symbol)
-          # symbols mean another path was given
-          self.expand_pattern(self.pattern_for(self.traverse(format_str)), type)
-        else
-          parts = tokenize_pattern(format_str)
-          final = []
-
-          parts.each do |part|
-            case part[:type]
-              when :placeholder then
-                placeholder = self.choose_placeholder(part[:value], @placeholders)
-                final << part if !placeholder
-                final += placeholder ? placeholder.tokens(:type => type) : []
-
-              else
-                final << part
-            end
-          end
           final
         end
       end

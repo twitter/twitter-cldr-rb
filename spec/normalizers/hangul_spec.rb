@@ -19,4 +19,14 @@ describe Hangul do
     end
   end
 
+  describe '.hangul_syllable?' do
+    it 'returns true for code points from Hangul syllables range' do
+      [0xAC00, 0xAC01, 0xBC9F, 0xD7A1, 0xD7A3].map { |code_point| Hangul.hangul_syllable?(code_point).should be_true }
+    end
+
+    it 'returns false for other code points' do
+      [0xAB, 0xABFF, 0xD7A4, 0xFFCF].map { |code_point| Hangul.hangul_syllable?(code_point).should be_false }
+    end
+  end
+
 end

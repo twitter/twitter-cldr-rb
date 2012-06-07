@@ -11,6 +11,7 @@ describe Collator do
 
   describe '.collation_elements_trie' do
     it "loads the trie only once and returns the same trie when it's called again" do
+      Collator.instance_variable_set(:@collation_elements_trie, nil)
       mock(Collator).open(Collator::FRACTIONAL_UCA_SHORT_PATH, 'r').once { FRACTIONAL_UCA_SHORT_STUB }
 
       result = Collator.collation_elements_trie

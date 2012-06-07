@@ -29,6 +29,10 @@ module TwitterCldr
           result
         end
 
+        def hangul_syllable?(code_point)
+          (SBASE...SLIMIT).include?(code_point)
+        end
+
         SBASE  = 0xAC00
         LBASE  = 0x1100
         VBASE  = 0x1161

@@ -41,13 +41,13 @@ module TwitterCldr
         final
       end
 
-      def tokens_for(key, type)
+      def tokens_for(path, type)
         @@token_cache ||= {}
-        cache_key = self.compute_cache_key(@locale, key, type)
+        cache_key = self.compute_cache_key(@locale, path.join('.'), type)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = self.expand_pattern(self.pattern_for(self.traverse(key)), type)
+          tokens = self.expand_pattern(self.pattern_for(self.traverse(path)), type)
 
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
@@ -84,21 +84,10 @@ module TwitterCldr
         @placeholders = {}
       end
 
-      def traverse(needle, haystack = @resource)
-        needle.to_s.split('.').inject(haystack) do |current, segment|
-          case segment
-            when "1"
-              key = 1
-            when "0"
-              key = 0
-            when "2"
-              key = 2
-            else
-              key = segment.to_sym
-          end
-
-          if current.is_a?(Hash) && current.has_key?(key)
-            current[key]
+      def traverse(path, haystack = @resource)
+        path.inject(haystack) do |current, segment|
+          if current.is_a?(Hash) && current.has_key?(segment)
+            current[segment]
           else
             return
           end
@@ -108,7 +97,7 @@ module TwitterCldr
       def expand_pattern(format_str, type)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          self.expand_pattern(self.pattern_for(self.traverse(format_str)), type)
+          self.expand_pattern(self.pattern_for(self.traverse(format_str.to_s.split('.'))), type)
         else
           parts = tokenize_pattern(format_str)
           final = []

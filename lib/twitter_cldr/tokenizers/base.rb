@@ -43,11 +43,11 @@ module TwitterCldr
 
       def tokens_for(path, type)
         @@token_cache ||= {}
-        cache_key = self.compute_cache_key(@locale, path.join('.'), type)
+        cache_key = compute_cache_key(@locale, path.join('.'), type)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = self.expand_pattern(self.pattern_for(self.traverse(path)), type)
+          tokens = expand_pattern(pattern_for(traverse(path)), type)
 
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
@@ -97,7 +97,7 @@ module TwitterCldr
       def expand_pattern(format_str, type)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          self.expand_pattern(self.pattern_for(self.traverse(format_str.to_s.split('.'))), type)
+          self.expand_pattern(self.pattern_for(self.traverse(format_str.to_s.split('.').map(&:to_sym))), type)
         else
           parts = tokenize_pattern(format_str)
           final = []

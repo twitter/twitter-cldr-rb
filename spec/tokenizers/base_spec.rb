@@ -86,7 +86,7 @@ describe Base do
 
   describe "#expand_pattern" do
     it "recursively calls expand_pattern if a symbol (keypath) is given" do
-      mock(@base).traverse(['another', 'path']) { "found_me" }
+      mock(@base).traverse([:another, :path]) { "found_me" }
       mock(@base).pattern_for("found_me") { "pattern_text" }
       mock.proxy(@base).expand_pattern("pattern_text", :fake_type)
       mock.proxy(@base).expand_pattern(:'another.path', :fake_type)

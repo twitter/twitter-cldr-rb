@@ -14,12 +14,13 @@ module TwitterCldr
 
         number = calculate_time(seconds.abs, unit)
         tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
+
         strings = []
         tokens.each do |token|
           strings << token[:value]
         end
-        final_string = strings.to_s
-        final_string.gsub(/\{[0-9]\}/, number.to_s).to_s
+
+        strings.join.gsub(/\{[0-9]\}/, number.to_s)
       end
 
 

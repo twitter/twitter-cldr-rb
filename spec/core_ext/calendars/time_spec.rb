@@ -61,10 +61,12 @@ describe Time do
 end
 
 describe "#ago" do
-  it "should ago-ify a time with a number of different units" do
+  xit "should ago-ify a time with a number of different units" do
     time = Time.gm(2000, 5, 23, 10, 5)
     loc_time = time.localize(:de)
+
     loc_time.ago({:base_time => Time.gm(2010,8,6,12,12), :unit => :second}).should == "Vor 321991620 Sekunden"
+
     loc_time.ago({:base_time => Time.gm(2010,8,6,12,12), :unit => :minute}).should == "Vor 5366527 Minuten"
   end
 end

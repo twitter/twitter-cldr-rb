@@ -37,14 +37,10 @@ module TwitterCldr
       def get_integer_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
-        # TODO: should normalize code points here.
-        #
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
         # non-ignorable test from CollationTest_NON_IGNORABLE.txt). ICU uses some optimizations to apply normalization
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
-        #
-        # straightforward normalization
-        # code_points = TwitterCldr::Normalizers::NFD.normalize_code_points(code_points).map { |cp| cp.to_i(16) }
+        code_points = TwitterCldr::Normalizers::NFD.normalize_code_points(code_points)
 
         code_points.map { |cp| cp.to_i(16) }
       end

@@ -58,14 +58,8 @@ module TwitterCldr
           integer_code_points.shift(offset)
           fractional_elements
         else
-          hangul_fractional_elements(integer_code_points) || [implicit_fractional_element(integer_code_points.shift)]
+          [implicit_fractional_element(integer_code_points.shift)]
         end
-      end
-
-      def hangul_fractional_elements(code_points)
-        return unless TwitterCldr::Normalizers::Hangul.hangul_syllable?(code_points.first)
-
-        get_fractional_elements(TwitterCldr::Normalizers::Hangul.decompose(code_points.shift))
       end
 
       # Generates implicit weights for all code_points. Uses the approach described in

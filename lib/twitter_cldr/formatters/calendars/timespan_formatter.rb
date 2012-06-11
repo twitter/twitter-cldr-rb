@@ -1,27 +1,37 @@
+# encoding: UTF-8
+
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 module TwitterCldr
   module Formatters
     class TimespanFormatter < Base
+      TIME_IN_SECONDS = { :second => 1,
+                          :minute => 60,
+                          :hour => 3600,
+                          :day => 86400,
+                          :week => 604800,
+                          :month => 2629743.83,
+                          :year => 31556926}
+
       def initialize(options = {})
         @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
+
       end
 
       def format(seconds, unit)
-        seconds < 0 ? direction = :ago : direction = :until
+        direction = seconds < 0 ? :ago : :until
 
-        if unit.nil? or unit == :default
+        if unit.nil? || unit == :default
           unit = self.calculate_unit(seconds.abs)
         end
 
         number = calculate_time(seconds.abs, unit)
-        tokens = @tokenizer.tokens({:direction => direction, :unit => unit, :number => number})
-        strings = []
-        tokens.each do |token|
-          strings << token[:value]
-        end
-        final_string = strings.to_s
+        tokens = @tokenizer.tokens(:direction => direction, :unit => unit, :number => number)
+        strings = tokens.map { |token| token[:value]}
+        final_string = strings.join
         final_string.gsub(/\{[0-9]\}/, number.to_s).to_s
       end
-
 
       def calculate_unit(seconds)
         if seconds < 30
@@ -41,7 +51,6 @@ module TwitterCldr
         end
       end
 
-
       # 0 <-> 29 secs                                                   # => seconds
       # 30 secs <-> 44 mins, 29 secs                                    # => minutes
       # 44 mins, 30 secs <-> 23 hrs, 59 mins, 29 secs                   # => hours
@@ -49,29 +58,9 @@ module TwitterCldr
       # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
       # 1 yr <-> max time or date                                       # => years
       def calculate_time(seconds, unit)
-        case unit
-          when :year
-            return round_to(seconds/31556926, 0)
-          when :month
-            return round_to(seconds/2629743.83, 0)
-          when :week
-            return round_to(seconds/604800, 0)
-          when :day
-            return round_to(seconds/86400, 0)
-          when :hour
-            return round_to(seconds/3600, 0)
-          when :minute
-            return round_to(seconds/60, 0)
-          when :second
-            return seconds
-        end
+        (seconds / TIME_IN_SECONDS[unit]).round.to_i
       end
 
-
-      def round_to(number, precision)
-        factor = 10 ** precision
-        (number * factor).round.to_i / factor
-      end
 
     end
   end

@@ -63,13 +63,20 @@ module TwitterCldr
         @@token_cache[cache_key]
       end
 
-      def tokens_for_incl_placeholders(key)
-        result = []
-        tokens = self.tokenize_pattern(self.pattern_for(self.traverse(key)))
-        tokens.each do |token|
-          result << token
+      def tokens_with_placeholders_for(key)
+        puts "tokens with placeholders for"
+        @@token_cache ||= {}
+        cache_key = self.compute_cache_key(@locale, key, type)
+
+        unless @@token_cache.include?(cache_key)
+          result = []
+          tokens = self.tokenize_pattern(self.pattern_for(self.traverse(key)))
+          tokens.each do |token|
+            result << token
+          end
+          @@token_cache[cache_key] = result
         end
-        result
+        @@token_cache[cache_key]
       end
 
       def compute_cache_key(*pieces)

@@ -13,22 +13,22 @@ module TwitterCldr
         @token_type_regexes = [{ :type => :pattern, :regex => /[0?#,\.]*/ }, #splits token at right places
                                { :type => :plaintext, :regex => // }]
         @base_path = "units"
-        @paths = { :ago => {    :default => "hour-past",
-                                :second => "second-past",
-                                :minute => "minute-past",
-                                :hour => "hour-past",
-                                :day => "day-past",
-                                :week => "week-past",
-                                :month => "month-past",
-                                :year => "year-past"},
-                   :until => { :default => "hour-future",
-                               :second => "second-future",
-                               :minute => "minute-future",
-                               :hour => "hour-future",
-                               :day => "day-future",
-                               :week => "week-future",
-                               :month => "month-future",
-                               :year => "year-future"}}
+        @paths = { :ago => {  :default => "hour-past",
+                              :second => "second-past",
+                              :minute => "minute-past",
+                              :hour => "hour-past",
+                              :day => "day-past",
+                              :week => "week-past",
+                              :month => "month-past",
+                              :year => "year-past"},
+                   :until => {:default => "hour-future",
+                              :second => "second-future",
+                              :minute => "minute-future",
+                              :hour => "hour-future",
+                              :day => "day-future",
+                              :week => "week-future",
+                              :month => "month-future",
+                              :year => "year-future"}}
       end
 
       def tokens(options = {})
@@ -49,7 +49,7 @@ module TwitterCldr
 
         pluralization = pluralization.to_s
         if self.token_exists(KeyPath.join(@base_path, main_path), pluralization)
-          tokens = self.tokens_for_incl_placeholders(full_path_for(main_path, pluralization))
+          tokens = self.tokens_with_placeholders_for(full_path_for(main_path, pluralization))
         end
 
         return tokens
@@ -58,7 +58,7 @@ module TwitterCldr
       def token_exists(key, pluralization)
         @@token_cache ||= {}
         cache_key = self.compute_cache_key(@locale, key, pluralization)
-        if @@token_cache.include?(cache_key) or (self.traverse(KeyPath.join(key, pluralization)))
+        if @@token_cache.include?(cache_key) || (self.traverse(KeyPath.join(key, pluralization)))
           return true
         end
       end

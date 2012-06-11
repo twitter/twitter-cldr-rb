@@ -40,6 +40,10 @@ describe Date do
   end
 
   describe "ago" do
+
+    let(:date) { Date.new(2010,7,6) }
+    let(:base_time) { Time.gm(2010,8,6,12,12,30) }
+
     it "should ago-ify from now when no base_time given" do
       stub(Time).now { Time.gm(2010,8,6,12,12,30) }
       date = Date.new(2010,7,6)
@@ -48,9 +52,8 @@ describe Date do
     end
 
     it "should ago-ify with appropriate unit when no unit given" do
-      date = Date.new(2010,7,6)
       loc_date = date.localize(:en)
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30)}).should == "1 month ago"
+      loc_date.ago({:base_time => base_time}).should == "1 month ago"
       loc_date.ago({:base_time => Time.gm(2010,12,6,12,12,30)}).should == "5 months ago"
       loc_date.ago({:base_time => Time.gm(2010,7,7,12,12,30)}).should == "1 day ago"
       loc_date.ago({:base_time => Time.gm(2010,7,6,12,12,30)}).should == "12 hours ago"
@@ -58,54 +61,55 @@ describe Date do
     end
 
     it "should ago-ify with strings regardless of variable's placement or existence" do
-      date = Date.new(2010,7,6)
       loc_date = date.localize(:ar)
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :hour}).should == "قبل 756 ساعة"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :day}).should == "قبل 31 يومًا"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :month}).should == "قبل شهر واحد"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :year}).should == "قبل 0 سنة"
+      loc_date.ago({:base_time => base_time, :unit => :hour}).should == "قبل 756 ساعة"
+      loc_date.ago({:base_time => base_time, :unit => :day}).should == "قبل 31 يومًا"
+      loc_date.ago({:base_time => base_time, :unit => :month}).should == "قبل شهر واحد"
+      loc_date.ago({:base_time => base_time, :unit => :year}).should == "قبل 0 سنة"
 
       loc_date = date.localize(:fa)
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :day}).should == "31 روز پیش"
+      loc_date.ago({:base_time => base_time, :unit => :day}).should == "31 روز پیش"
 
       loc_date = date.localize(:en)
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :day}).should == "31 days ago"
+      loc_date.ago({:base_time => base_time, :unit => :day}).should == "31 days ago"
     end
 
     it "should ago-ify a date with a number of different units" do
       date = Date.new(2010,6,6)
       loc_date = date.localize(:de)
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :second}).should == "Vor 5314350 Sekunden"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :minute}).should == "Vor 88572 Minuten"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :hour}).should == "Vor 1476 Stunden"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :day}).should == "Vor 61 Tagen"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :month}).should == "Vor 2 Monaten"
-      loc_date.ago({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :year}).should == "Vor 0 Jahren"
+      loc_date.ago({:base_time => base_time, :unit => :second}).should == "Vor 5314350 Sekunden"
+      loc_date.ago({:base_time => base_time, :unit => :minute}).should == "Vor 88572 Minuten"
+      loc_date.ago({:base_time => base_time, :unit => :hour}).should == "Vor 1476 Stunden"
+      loc_date.ago({:base_time => base_time, :unit => :day}).should == "Vor 61 Tagen"
+      loc_date.ago({:base_time => base_time, :unit => :month}).should == "Vor 2 Monaten"
+      loc_date.ago({:base_time => base_time, :unit => :year}).should == "Vor 0 Jahren"
     end
 
     it "should return an error if called on a date in the future" do
       date = Date.new(2010,10,10)
       loc_date = date.localize(:de)
-      lambda { loc_date.ago(Time.gm(2010,8,6,12,12,30), :second)}.should raise_error(ArgumentError)
+      lambda { loc_date.ago(base_time, :second)}.should raise_error(ArgumentError)
     end
   end
 
   describe "until" do
+    let(:base_time) { Time.gm(2010,8,6,12,12,30) }
+
     it "should until-ify with a number of different units" do
       date = Date.new(2010,10,10)
       loc_date = date.localize(:de)
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :second}).should == "In 5572050 Sekunden"
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :minute}).should == "In 92867 Minuten"
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :hour}).should == "In 1547 Stunden"
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :day}).should == "In 64 Tagen"
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :month}).should == "In 2 Monaten"
-      loc_date.until({:base_time => Time.gm(2010,8,6,12,12,30), :unit => :year}).should == "In 0 Jahren"
+      loc_date.until({:base_time => base_time, :unit => :second}).should == "In 5572050 Sekunden"
+      loc_date.until({:base_time => base_time, :unit => :minute}).should == "In 92867 Minuten"
+      loc_date.until({:base_time => base_time, :unit => :hour}).should == "In 1547 Stunden"
+      loc_date.until({:base_time => base_time, :unit => :day}).should == "In 64 Tagen"
+      loc_date.until({:base_time => base_time, :unit => :month}).should == "In 2 Monaten"
+      loc_date.until({:base_time => base_time, :unit => :year}).should == "In 0 Jahren"
     end
 
     it "should return an error if called on a date in the past" do
       date = Date.new(2010,4,4)
       loc_date = date.localize(:de)
-      lambda { loc_date.until(Time.gm(2010,8,6,12,12,30), :second)}.should raise_error(ArgumentError)
+      lambda { loc_date.until(base_time, :second)}.should raise_error(ArgumentError)
     end
   end
 

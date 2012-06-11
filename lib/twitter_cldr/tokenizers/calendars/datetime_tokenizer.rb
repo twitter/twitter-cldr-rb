@@ -12,22 +12,26 @@ module TwitterCldr
 
       def initialize(options = {})
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
-        @token_splitter_regex = //
-        @token_type_regexes = [{ :type => :plaintext, :regex => // }]
 
-        @base_path = "calendars"
-        @paths = { :default => "formats.datetime.default",
-                   :full => "formats.datetime.full",
-                   :long => "formats.datetime.long",
-                   :medium => "formats.datetime.medium",
-                   :short => "formats.datetime.short" }
+        @token_splitter_regex = //
+        @token_type_regexes   = [{ :type => :plaintext, :regex => // }]
+
+        @base_path = [:calendars]
+
+        @paths = {
+            :default => [:formats, :datetime, :default],
+            :full    => [:formats, :datetime, :full],
+            :long    => [:formats, :datetime, :long],
+            :medium  => [:formats, :datetime, :medium],
+            :short   => [:formats, :datetime, :short]
+        }
 
         super(options)
       end
 
       def tokens(options = {})
         type = options[:type] || :default
-        self.tokens_for(self.full_path_for(self.paths[type]), type)
+        tokens_for(full_path_for(paths[type]), type)
       end
 
       def calendar
@@ -37,7 +41,7 @@ module TwitterCldr
       protected
 
       def full_path_for(path, calendar_type = @calendar_type)
-        KeyPath.join(@base_path, calendar_type.to_s, path)
+        @base_path + [calendar_type] + path
       end
 
       def init_resources

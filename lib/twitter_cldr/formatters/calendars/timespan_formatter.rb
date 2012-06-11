@@ -27,10 +27,10 @@ module TwitterCldr
         end
 
         number = calculate_time(seconds.abs, unit)
+
         tokens = @tokenizer.tokens(:direction => direction, :unit => unit, :number => number)
         strings = tokens.map { |token| token[:value]}
-        final_string = strings.join
-        final_string.gsub(/\{[0-9]\}/, number.to_s).to_s
+        strings.join.gsub(/\{[0-9]\}/, number.to_s)
       end
 
       def calculate_unit(seconds)

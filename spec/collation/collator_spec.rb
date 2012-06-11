@@ -106,7 +106,7 @@ describe Collator do
 end
 
 FRACTIONAL_UCA_SHORT_STUB = <<END
-# Fractional UCA trie, generated from standard UCA
+# Fractional UCA Table, generated from standard UCA
 # 2012-01-03, 21:52:55 GMT [MD]
 # VERSION: UCA=6.1.0, UCD=6.1.0
 # For a description of the format and usage, see CollationAuxiliary.html

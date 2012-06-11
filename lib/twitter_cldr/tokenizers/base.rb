@@ -64,7 +64,6 @@ module TwitterCldr
       end
 
       def tokens_with_placeholders_for(key)
-        puts "tokens with placeholders for"
         @@token_cache ||= {}
         cache_key = self.compute_cache_key(@locale, key, type)
 

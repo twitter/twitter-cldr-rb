@@ -17,6 +17,7 @@ module TwitterCldr
       def format(number, options = {})
         opts = self.default_format_options_for(number).merge(options)
         prefix, suffix, integer_format, fraction_format = *partition_tokens(self.get_tokens(number, opts))
+        
         int, fraction = parse_number(number, opts)
         result =  integer_format.apply(int, opts)
         result << fraction_format.apply(fraction, opts) if fraction

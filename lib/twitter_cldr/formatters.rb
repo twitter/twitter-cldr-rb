@@ -10,6 +10,7 @@ module TwitterCldr
     autoload :DateTimeFormatter, 'twitter_cldr/formatters/calendars/datetime_formatter'
     autoload :DateFormatter,     'twitter_cldr/formatters/calendars/date_formatter'
     autoload :TimeFormatter,     'twitter_cldr/formatters/calendars/time_formatter'
+    autoload :TimespanFormatter, 'twitter_cldr/formatters/calendars/timespan_formatter'
 
     autoload :Numbers,           'twitter_cldr/formatters/numbers'
     autoload :NumberFormatter,   'twitter_cldr/formatters/numbers/number_formatter'
@@ -19,7 +20,5 @@ module TwitterCldr
 
     autoload :Plurals,         'twitter_cldr/formatters/plurals'
     autoload :PluralFormatter, 'twitter_cldr/formatters/plurals/plural_formatter'
-
-    autoload :TimespanFormatter, 'twitter_cldr/formatters/calendars/timespan_formatter'
   end
 end

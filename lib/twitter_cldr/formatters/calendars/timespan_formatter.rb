@@ -6,13 +6,15 @@
 module TwitterCldr
   module Formatters
     class TimespanFormatter < Base
-      TIME_IN_SECONDS = { :second => 1,
-                          :minute => 60,
-                          :hour => 3600,
-                          :day => 86400,
-                          :week => 604800,
-                          :month => 2629743.83,
-                          :year => 31556926}
+      TIME_IN_SECONDS = { 
+        :second => 1,
+        :minute => 60,
+        :hour => 3600,
+        :day => 86400,
+        :week => 604800,
+        :month => 2629743.83,
+        :year => 31556926 
+        }
 
       def initialize(options = {})
         @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
@@ -60,7 +62,6 @@ module TwitterCldr
       def calculate_time(seconds, unit)
         (seconds / TIME_IN_SECONDS[unit]).round.to_i
       end
-
 
     end
   end

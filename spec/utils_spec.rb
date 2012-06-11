@@ -29,4 +29,14 @@ describe TwitterCldr::Utils do
     end
 
   end
+
+  describe "#compute_cache_key" do
+    it "returns a ruby hash of all the pieces concatenated with pipe characters" do
+      TwitterCldr::Utils.compute_cache_key("space", "the", "final", "frontier").should == "space|the|final|frontier".hash
+    end
+
+    it "returns zero if no arguments are passed" do
+      TwitterCldr::Utils.compute_cache_key.should == 0
+    end
+  end
 end

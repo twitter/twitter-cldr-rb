@@ -11,8 +11,8 @@ describe UnicodeData do
   describe "#for_code_point" do
     it "should retrieve information for any valid code point" do
       data = UnicodeData.for_code_point('0301')
-      data.should be_a(Struct)
-      data.length.should == 15
+      data.should be_a(UnicodeData::Attributes)
+      data.values.length.should == 15
     end
 
     it "should return nil for invalid code points" do
@@ -30,7 +30,11 @@ describe UnicodeData do
         '1F241'=> ['1F241','TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09','So','0','L','<compat> 3014 4E09 3015',"","","",'N',"","","","",""]
       }
       test_data.each_pair do |code_point, data|
-        UnicodeData.for_code_point(code_point).values.should == data
+        cp_data = UnicodeData.for_code_point(code_point)
+        cp_data.code_point.should == data[0]
+        cp_data.name.should == data[1]
+        cp_data.category.should == data[2]
+        cp_data.combining_class.should == data[3]
       end
     end
 
@@ -44,7 +48,11 @@ describe UnicodeData do
       }
 
       test_data.each_pair do |code_point, data|
-        UnicodeData.for_code_point(code_point).values.should == data
+        cp_data = UnicodeData.for_code_point(code_point)
+        cp_data.code_point.should == data[0]
+        cp_data.name.should == data[1]
+        cp_data.category.should == data[2]
+        cp_data.combining_class.should == data[3]
       end
     end
   end

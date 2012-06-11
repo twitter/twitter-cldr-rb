@@ -43,7 +43,7 @@ module TwitterCldr
 
       def tokens_for(key, type)
         @@token_cache ||= {}
-        cache_key = self.compute_cache_key(@locale, key, type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, key, type)
 
         unless @@token_cache.include?(cache_key)
           result = []
@@ -61,14 +61,6 @@ module TwitterCldr
         end
 
         @@token_cache[cache_key]
-      end
-
-      def compute_cache_key(*pieces)
-        if pieces && pieces.size > 0
-          pieces.join("|").hash
-        else
-          0
-        end
       end
 
       def init_placeholders

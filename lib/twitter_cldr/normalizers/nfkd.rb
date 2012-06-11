@@ -10,7 +10,7 @@ module TwitterCldr
   # latest version at the moment (for Unicode 6.1) is available at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf.
   #
   module Normalizers
-    class NFKD
+    class NFKD < Base
 
       class << self
 
@@ -27,7 +27,7 @@ module TwitterCldr
         protected
 
         def decomposition(code_points)
-          code_points.map{ |code_point| decompose_recursively(code_point) }.flatten
+          code_points.map { |code_point| decompose_recursively(code_point) }.flatten
         end
 
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
@@ -36,7 +36,7 @@ module TwitterCldr
           unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
           return code_point unless unicode_data
 
-          if unicode_data.name.include?('Hangul')
+          if unicode_data.hangul_type == :compositions
             decompose_hangul(code_point)
           else
             decompose_regular(code_point, decomposition_mapping(unicode_data))
@@ -147,18 +147,6 @@ module TwitterCldr
       end
 
       COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
-
-      HANGUL_DECOMPOSITION_CONSTANTS = {
-          :SBase  => 0xAC00,
-          :LBase  => 0x1100,
-          :VBase  => 0x1161,
-          :TBase  => 0x11A7,
-          :LCount => 19,
-          :VCount => 21,
-          :TCount => 28,
-          :NCount => 588,  # VCount * TCount
-          :Scount => 11172 # LCount * NCount
-      }
 
     end
   end

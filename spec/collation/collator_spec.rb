@@ -85,7 +85,7 @@ describe Collator do
         if last_sort_key
           comparison_result = (last_sort_key <=> sort_key).nonzero? || (last_hex_code_points <=> hex_code_points)
           result[comparison_result] += 1
-          failures << [comparison_result, line, sort_key] if comparison_result != -1
+          failures << [code_points, comparison_result, line, sort_key] if comparison_result != -1
         end
 
         last_hex_code_points = hex_code_points
@@ -99,7 +99,11 @@ describe Collator do
     puts "Result: #{result.inspect}"
 
     open(File.join(File.dirname(__FILE__), 'failures.txt'), 'w:utf-8') do |file|
-      file.write failures.map{ |res, line, sort_key| "#{res} -- #{line.strip} -- #{sort_key}\n" }.join
+      file.write failures.map{ |_, res, line, sort_key| "#{res} -- #{line.strip} -- #{sort_key}\n" }.join
+    end
+
+    open(File.join(File.dirname(__FILE__), 'failures_short.txt'), 'w:utf-8') do |file|
+      file.write failures.map{ |f| "#{f[0]}\n" }.join
     end
   end
 

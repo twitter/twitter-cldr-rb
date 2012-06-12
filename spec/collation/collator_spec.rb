@@ -71,7 +71,7 @@ describe Collator do
     result = Hash.new { |hash, key| hash[key] = 0 }
     failures = []
 
-    open(File.join(File.dirname(__FILE__), 'CollationTest_NON_IGNORABLE.txt'), 'r:utf-8').each_with_index do |line, line_number|
+    open(File.join(File.dirname(__FILE__), 'CollationTest_CLDR_NON_IGNORABLE.txt'), 'r:utf-8').each_with_index do |line, line_number|
       puts "line #{line_number + 1}" if ((line_number + 1) % 10_000).zero?
 
       next unless /^([0-9A-F ]+);/ =~ line

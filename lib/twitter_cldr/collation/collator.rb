@@ -14,11 +14,13 @@ module TwitterCldr
 
       LEVELS_NUMBER = 3
 
+      UNMARKED = 3
+
       LEVEL_SEPARATOR  = 0 # separate levels in a sort key '00' bytes
       LEVEL_FILLER     = 2 # fill missing level in a UCA collation element with '02' bytes
       LEVEL_SUBSTITUTE = 0 # fill missing bytes in a UCA collation element level with '00' bytes
 
-      UNMARKED = 3
+      THIRD_LEVEL_MASK = 0x3F # mask for removing case bits on the 3rd level ('CC' bits in 'CC00 0000' 3rd level weight)
 
       def sort_key(string_or_code_points)
         sort_key_for_code_points(get_integer_code_points(string_or_code_points))
@@ -94,6 +96,8 @@ module TwitterCldr
         collation_elements = []
 
         fractional_elements.each do |fractional_element|
+          fractional_element[2] &= THIRD_LEVEL_MASK # remove case bits from the 3rd level weight
+
           # convert weight on every level to an array of wydes (two bytes): [1180356, 120, 3] => [[4610, 50178], [30722], [770]]
           wydes = fractional_element_to_wydes(fractional_element)
 
@@ -104,7 +108,9 @@ module TwitterCldr
           transposed.each do |collation_element|
             # use only LEVELS_NUMBER levels from the collation element
             # fill missing levels with LEVEL_SUBSTITUTE (e.g., 0): [50178, nil, nil] => [50178, 0, 0]
-            collation_elements << LEVELS_NUMBER.times.map { |level| collation_element[level] || LEVEL_SUBSTITUTE }
+            collation_elements << LEVELS_NUMBER.times.map do |level|
+              collation_element[level] || LEVEL_SUBSTITUTE
+            end
           end
         end
 

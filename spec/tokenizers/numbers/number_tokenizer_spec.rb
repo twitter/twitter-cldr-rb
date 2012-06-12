@@ -17,7 +17,7 @@ describe NumberTokenizer do
 
   describe "#full_path_for" do
     it "should fill in the type and return the full path to the requested format" do
-      NumberTokenizer.new.send(:full_path_for, :default).should == "numbers.formats.decimal.patterns.default"
+      NumberTokenizer.new.send(:full_path_for, :default).should == [:numbers, :formats, :decimal, :patterns, :default]
     end
   end
 

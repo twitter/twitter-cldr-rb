@@ -41,13 +41,13 @@ module TwitterCldr
         final
       end
 
-      def tokens_for(key, type)
+      def tokens_for(path, type)
         @@token_cache ||= {}
         cache_key = TwitterCldr::Utils.compute_cache_key(@locale, key, type)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = self.expand_pattern(self.pattern_for(self.traverse(key)), type)
+          tokens = expand_pattern(pattern_for(traverse(path)), type)
 
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
@@ -63,15 +63,37 @@ module TwitterCldr
         @@token_cache[cache_key]
       end
 
+      def tokens_with_placeholders_for(key)
+        @@token_cache ||= {}
+        cache_key = self.compute_cache_key(@locale, key, type)
+
+        unless @@token_cache.include?(cache_key)
+          result = []
+          tokens = self.tokenize_pattern(self.pattern_for(self.traverse(key)))
+          tokens.each do |token|
+            result << token
+          end
+          @@token_cache[cache_key] = result
+        end
+        @@token_cache[cache_key]
+      end
+
+      def compute_cache_key(*pieces)
+        if pieces && pieces.size > 0
+          pieces.join("|").hash
+        else
+          0
+        end
+      end
+
       def init_placeholders
         @placeholders = {}
       end
 
-      def traverse(needle, haystack = @resource)
-        needle.to_s.split('.').inject(haystack) do |current, segment|
-          key = segment.to_sym
-          if current.is_a?(Hash) && current.has_key?(key)
-            current[key]
+      def traverse(path, haystack = @resource)
+        path.inject(haystack) do |current, segment|
+          if current.is_a?(Hash) && current.has_key?(segment)
+            current[segment]
           else
             return
           end
@@ -81,7 +103,7 @@ module TwitterCldr
       def expand_pattern(format_str, type)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          self.expand_pattern(self.pattern_for(self.traverse(format_str)), type)
+          self.expand_pattern(self.pattern_for(self.traverse(format_str.to_s.split('.').map(&:to_sym))), type)
         else
           parts = tokenize_pattern(format_str)
           final = []

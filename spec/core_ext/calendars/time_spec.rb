@@ -9,8 +9,9 @@ include TwitterCldr
 
 describe Time do
   describe "#localize" do
+    let (:time) { Time.now }
+    
     it "should localize with the given locale, English by default" do
-      time = Time.now
       loc_time = time.localize
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :en
@@ -23,7 +24,6 @@ describe Time do
     end
 
     it "should localize with the given calendar" do
-      time = Time.now
       loc_time = time.localize(:th, :calendar_type => :buddhist)
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :th
@@ -32,7 +32,6 @@ describe Time do
     end
 
     it "should forward calendar_type" do
-      time = Time.now
       loc_time = time.localize(:th, :calendar_type => :buddhist)
       loc_time.to_datetime(Date.today).calendar_type.should == :buddhist
     end
@@ -57,6 +56,16 @@ describe Time do
       Time.now.localize(:th, :calendar_type => :buddhist).to_medium_s
       Time.now.localize(:th, :calendar_type => :buddhist).to_short_s
     end
+  end
+end
+
+describe "#ago" do
+  it "should ago-ify a time with a number of different units" do
+    time = Time.now
+    base_time = time + 172800
+    loc_time = time.localize(:de)
+    loc_time.ago({:base_time => base_time, :unit => :hour}).should == "Vor 48 Stunden"
+    loc_time.ago({:base_time => base_time, :unit => :day}).should == "Vor 2 Tagen"
   end
 end
 

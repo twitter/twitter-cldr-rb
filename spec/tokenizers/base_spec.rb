@@ -86,7 +86,7 @@ describe Base do
 
   describe "#expand_pattern" do
     it "recursively calls expand_pattern if a symbol (keypath) is given" do
-      mock(@base).traverse(:'another.path') { "found_me" }
+      mock(@base).traverse([:another, :path]) { "found_me" }
       mock(@base).pattern_for("found_me") { "pattern_text" }
       mock.proxy(@base).expand_pattern("pattern_text", :fake_type)
       mock.proxy(@base).expand_pattern(:'another.path', :fake_type)
@@ -111,36 +111,36 @@ describe Base do
     let(:token2) { Token.new(:value => "token2", :type => :plaintext) }
 
     before(:each) do
-      stub(@base).traverse("fake_key") { "fake_pattern" }
+      stub(@base).traverse([:fake_key]) { "fake_pattern" }
       stub(@base).pattern_for("fake_pattern") { "fake_expandable_pattern" }
       stub(@base).expand_pattern("fake_expandable_pattern", "fake_type") { [token1, token2] }
     end
 
     it "caches tokens" do
-      result = @base.send(:tokens_for, "fake_key", "fake_type")
+      result = @base.send(:tokens_for, [:fake_key], "fake_type")
       result[0].value.should == "token1"
       result[1].value.should == "token2"
       @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result
 
-      result_again = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_again = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_again.object_id.should == result.object_id
     end
 
     it "caches tokens per language" do
-      result_en = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_en = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_en[0].value.should == "token1"
       result_en[1].value.should == "token2"
       @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result_en
-      result_en2 = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_en2 = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_en2.object_id.should == result_en.object_id
 
       @base.instance_variable_set(:'@locale', :pt)
-      result_pt = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_pt = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_pt[0].value.should == "token1"
       result_pt[1].value.should == "token2"
       @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type".hash].should == result_pt
       result_pt.object_id.should_not == result_en.object_id
-      result_pt2 = @base.send(:tokens_for, "fake_key", "fake_type")
+      result_pt2 = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_pt2.object_id.should == result_pt.object_id
       result_pt2.object_id.should_not == result_en.object_id
       result_pt2.object_id.should_not == result_en2.object_id
@@ -163,11 +163,11 @@ describe Base do
     end
 
     it "should find the correct value in the hash" do
-      @base.send(:traverse, :'admiral.captain.commander.lieutenant', @tree).should == "Found Me!"
+      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant], @tree).should == "Found Me!"
     end
 
     it "shouldn't choke if the path doesn't exist" do
-      @base.send(:traverse, :'admiral.captain.commander.lieutenant.ensign', @tree).should == nil
+      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant, :ensign], @tree).should == nil
     end
   end
 

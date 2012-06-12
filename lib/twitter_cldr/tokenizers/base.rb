@@ -43,7 +43,7 @@ module TwitterCldr
 
       def tokens_for(path, type)
         @@token_cache ||= {}
-        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, key, type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type)
 
         unless @@token_cache.include?(cache_key)
           result = []

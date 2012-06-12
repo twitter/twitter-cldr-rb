@@ -8,7 +8,7 @@ module TwitterCldr
     class LocalizedTimespan < LocalizedObject
 
       def initialize(seconds, locale)
-        @formatter = TwitterCldr::Formatters::TimespanFormatter.new({:locale => locale})
+        @formatter = TwitterCldr::Formatters::TimespanFormatter.new(:locale => locale)
         @seconds = seconds
       end
 

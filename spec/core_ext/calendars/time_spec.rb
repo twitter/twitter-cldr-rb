@@ -9,8 +9,9 @@ include TwitterCldr
 
 describe Time do
   describe "#localize" do
+    let (:time) { Time.now }
+    
     it "should localize with the given locale, English by default" do
-      time = Time.now
       loc_time = time.localize
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :en
@@ -23,7 +24,6 @@ describe Time do
     end
 
     it "should localize with the given calendar" do
-      time = Time.now
       loc_time = time.localize(:th, :calendar_type => :buddhist)
       loc_time.should be_a(LocalizedTime)
       loc_time.locale.should == :th
@@ -32,7 +32,6 @@ describe Time do
     end
 
     it "should forward calendar_type" do
-      time = Time.now
       loc_time = time.localize(:th, :calendar_type => :buddhist)
       loc_time.to_datetime(Date.today).calendar_type.should == :buddhist
     end

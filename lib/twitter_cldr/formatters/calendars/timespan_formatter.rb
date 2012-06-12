@@ -14,11 +14,10 @@ module TwitterCldr
         :week => 604800,
         :month => 2629743.83,
         :year => 31556926 
-        }
+      }
 
       def initialize(options = {})
         @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
-
       end
 
       def format(seconds, unit)

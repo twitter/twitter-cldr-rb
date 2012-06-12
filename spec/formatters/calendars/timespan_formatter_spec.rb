@@ -9,18 +9,6 @@ include TwitterCldr::Formatters
 
 describe TimespanFormatter do
 
-  #before(:each) do
-  #  @formatter = TimespanFormatter.new(:locale => :de)
-  #end
-
-  #describe "formatter" do
-  #  let(:formatter) { TimespanFormatter.new(:locale => :de) }
-  #end
-
-  #before (:all) do
-  #  formatter
-  #end
-
   describe "#format" do
     let(:formatter) { TimespanFormatter.new(:locale => :de) }
 

@@ -11,6 +11,5 @@ module TwitterCldr
     autoload :Numbers,     'twitter_cldr/shared/numbers'
     autoload :Resources,   'twitter_cldr/shared/resources'
     autoload :UnicodeData, 'twitter_cldr/shared/unicode_data'
-    autoload :LocalizedTimespan, 'twitter_cldr/shared/localized_timespan'
   end
 end

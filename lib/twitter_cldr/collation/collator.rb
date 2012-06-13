@@ -26,7 +26,7 @@ module TwitterCldr
       private
 
       def sort_key_for_code_points(integer_code_points)
-        form_sort_key(build_collation_elements(get_fractional_elements(integer_code_points)))
+        form_sort_key(get_fractional_elements(integer_code_points))
       end
 
       def collation_elements_trie
@@ -46,7 +46,16 @@ module TwitterCldr
 
       def get_fractional_elements(integer_code_points)
         result = []
-        result.concat(fractional_element(integer_code_points)) until integer_code_points.empty?
+
+        until integer_code_points.empty?
+          code_point_fractional_elements(integer_code_points).map do |fractional_element|
+            # remove case bits from the 3rd level weight
+            fractional_element[2] &= THIRD_LEVEL_MASK
+
+            result << fractional_element_to_bytes(fractional_element)
+          end
+        end
+
         result
       end
 
@@ -55,7 +64,7 @@ module TwitterCldr
       #
       # All used code points are removed from the beginning of the input array.
       #
-      def fractional_element(integer_code_points)
+      def code_point_fractional_elements(integer_code_points)
         fractional_elements, offset = collation_elements_trie.find_prefix(integer_code_points)
 
         if fractional_elements
@@ -97,14 +106,6 @@ module TwitterCldr
         [0xE0018020 | (x << 17) | (y << 6), UNMARKED, UNMARKED]
       end
 
-      def build_collation_elements(fractional_elements)
-        fractional_elements.map do |fractional_element|
-          # remove case bits from the 3rd level weight
-          fractional_element[2] &= THIRD_LEVEL_MASK
-
-          fractional_element_to_bytes(fractional_element)
-        end
-      end
 
       def fractional_element_to_bytes(fractional_element)
         fractional_element.map { |level_weight| fixnum_to_bytes_array(level_weight) }

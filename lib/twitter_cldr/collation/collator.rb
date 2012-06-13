@@ -71,6 +71,9 @@ module TwitterCldr
       # but produces a single fractional collation element without any continuation.
       #
       def implicit_fractional_element(code_point)
+        # illegal values xxFFFE and xxFFFF are ignored
+        return [0] * LEVELS_NUMBER if (code_point & 0xFFFE) == 0xFFFE
+
         code_point < 0xFFFF ? basic_fractional_element(code_point) : supplementary_fractional_element(code_point)
       end
 

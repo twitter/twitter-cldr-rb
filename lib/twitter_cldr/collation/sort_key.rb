@@ -14,28 +14,38 @@ module TwitterCldr
 
       TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
 
+      attr_reader :collation_elements
+
+      # Returns a sort key as an array of bytes.
+      #
+      #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #
       def self.build(collation_elements)
-        new(collation_elements).build
+        new(collation_elements).bytes_array
       end
 
+      # Params:
+      #
+      #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #
       def initialize(collation_elements)
         @collation_elements = collation_elements
       end
 
-      def build
-        @sort_key ||= build_sort_key
+      def bytes_array
+        @bytes_array ||= build
       end
 
       private
 
-      def build_sort_key
-        @sort_key = []
+      def build
+        @bytes_array = []
 
         append_primary_bytes
         append_secondary_bytes
         append_tertiary_bytes
 
-        @sort_key
+        @bytes_array
       end
 
       def append_primary_bytes
@@ -45,7 +55,7 @@ module TwitterCldr
       end
 
       def append_secondary_bytes
-        @sort_key << LEVEL_SEPARATOR
+        @bytes_array << LEVEL_SEPARATOR
 
         @collation_elements.each do |collation_element|
           append_weight(level_weight(collation_element, SECONDARY_LEVEL))
@@ -53,7 +63,7 @@ module TwitterCldr
       end
 
       def append_tertiary_bytes
-        @sort_key << LEVEL_SEPARATOR
+        @bytes_array << LEVEL_SEPARATOR
 
         @collation_elements.each do |collation_element|
           append_weight(level_weight(collation_element, TERTIARY_LEVEL) & TERTIARY_LEVEL_MASK)
@@ -61,7 +71,7 @@ module TwitterCldr
       end
 
       def append_weight(weight)
-        @sort_key.concat(fixnum_to_bytes_array(weight))
+        @bytes_array.concat(fixnum_to_bytes_array(weight))
       end
 
       def level_weight(collation_element, level)

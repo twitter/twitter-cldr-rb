@@ -12,12 +12,14 @@ module TwitterCldr
 
       FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
+      PRIMARY_LEVEL, SECONDARY_LEVEL, TERTIARY_LEVEL = 0, 1, 2
+
       LEVELS_NUMBER   = 3 # number of levels that form a sort key
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
       UNMARKED = 3
 
-      THIRD_LEVEL_MASK = 0x3F # mask for removing case bits on the 3rd level ('CC' bits in 'CC00 0000' 3rd level weight)
+      TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
 
       def sort_key(string_or_code_points)
         sort_key_for_code_points(get_integer_code_points(string_or_code_points))
@@ -48,12 +50,7 @@ module TwitterCldr
         result = []
 
         until integer_code_points.empty?
-          code_point_fractional_elements(integer_code_points).map do |fractional_element|
-            # remove case bits from the 3rd level weight
-            fractional_element[2] &= THIRD_LEVEL_MASK
-
-            result << fractional_element_to_bytes(fractional_element)
-          end
+          result.concat(code_point_fractional_elements(integer_code_points))
         end
 
         result
@@ -106,11 +103,6 @@ module TwitterCldr
         [0xE0018020 | (x << 17) | (y << 6), UNMARKED, UNMARKED]
       end
 
-
-      def fractional_element_to_bytes(fractional_element)
-        fractional_element.map { |level_weight| fixnum_to_bytes_array(level_weight) }
-      end
-
       def fixnum_to_bytes_array(number)
         bytes = []
 
@@ -123,14 +115,35 @@ module TwitterCldr
       end
 
       def form_sort_key(collation_elements)
-        result = []
+        sort_key = []
 
-        LEVELS_NUMBER.times do |level|
-          result << LEVEL_SEPARATOR if level > 0
-          collation_elements.each { |collation_element| result.concat(collation_element[level]) }
+        append_primary_bytes(sort_key, collation_elements)
+        append_secondary_bytes(sort_key, collation_elements)
+        append_tertiary_bytes(sort_key, collation_elements)
+
+        sort_key
+      end
+
+      def append_primary_bytes(sort_key, collation_elements)
+        collation_elements.each do |collation_element|
+          sort_key.concat(fixnum_to_bytes_array(collation_element[PRIMARY_LEVEL]))
         end
+      end
 
-        result
+      def append_secondary_bytes(sort_key, collation_elements)
+        sort_key << LEVEL_SEPARATOR
+
+        collation_elements.each do |collation_element|
+          sort_key.concat(fixnum_to_bytes_array(collation_element[SECONDARY_LEVEL]))
+        end
+      end
+
+      def append_tertiary_bytes(sort_key, collation_elements)
+        sort_key << LEVEL_SEPARATOR
+
+        collation_elements.each do |collation_element|
+          sort_key.concat(fixnum_to_bytes_array(collation_element[TERTIARY_LEVEL] & TERTIARY_LEVEL_MASK))
+        end
       end
 
       class << self

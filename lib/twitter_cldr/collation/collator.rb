@@ -12,14 +12,7 @@ module TwitterCldr
 
       FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
-      PRIMARY_LEVEL, SECONDARY_LEVEL, TERTIARY_LEVEL = 0, 1, 2
-
-      LEVELS_NUMBER   = 3 # number of levels that form a sort key
-      LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
-
       UNMARKED = 3
-
-      TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
 
       def sort_key(string_or_code_points)
         sort_key_for_code_points(get_integer_code_points(string_or_code_points))
@@ -28,7 +21,7 @@ module TwitterCldr
       private
 
       def sort_key_for_code_points(integer_code_points)
-        form_sort_key(get_fractional_elements(integer_code_points))
+        TwitterCldr::Collation::SortKey.build(get_collation_elements(integer_code_points))
       end
 
       def collation_elements_trie
@@ -46,13 +39,9 @@ module TwitterCldr
         code_points.map { |cp| cp.to_i(16) }
       end
 
-      def get_fractional_elements(integer_code_points)
+      def get_collation_elements(integer_code_points)
         result = []
-
-        until integer_code_points.empty?
-          result.concat(code_point_fractional_elements(integer_code_points))
-        end
-
+        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
         result
       end
 
@@ -61,14 +50,14 @@ module TwitterCldr
       #
       # All used code points are removed from the beginning of the input array.
       #
-      def code_point_fractional_elements(integer_code_points)
-        fractional_elements, offset = collation_elements_trie.find_prefix(integer_code_points)
+      def code_point_collation_elements(integer_code_points)
+        collation_elements, offset = collation_elements_trie.find_prefix(integer_code_points)
 
-        if fractional_elements
+        if collation_elements
           integer_code_points.shift(offset)
-          fractional_elements
+          collation_elements
         else
-          [implicit_fractional_element(integer_code_points.shift)]
+          [implicit_collation_element(integer_code_points.shift)]
         end
       end
 
@@ -76,14 +65,14 @@ module TwitterCldr
       # http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm#Implicit_CEs
       # but produces a single fractional collation element without any continuation.
       #
-      def implicit_fractional_element(code_point)
-        # illegal values xxFFFE and xxFFFF are ignored
-        return [0] * LEVELS_NUMBER if (code_point & 0xFFFE) == 0xFFFE
+      def implicit_collation_element(code_point)
+        # illegal values xxFFFE and xxFFFF are ignored ([] is equivalent to [0, 0, 0] if three levels are accounted)
+        return [] if (code_point & 0xFFFE) == 0xFFFE
 
-        code_point < 0xFFFF ? basic_fractional_element(code_point) : supplementary_fractional_element(code_point)
+        code_point < 0xFFFF ? basic_collation_element(code_point) : supplementary_collation_element(code_point)
       end
 
-      def basic_fractional_element(code_point)
+      def basic_collation_element(code_point)
         # code point: xxxx yyyy yyyy yyyy
         x = code_point >> 12
         y = code_point & 0xFFF
@@ -92,7 +81,7 @@ module TwitterCldr
         [0xD08004 | (x << 16) | (y << 3), UNMARKED, UNMARKED]
       end
 
-      def supplementary_fractional_element(code_point)
+      def supplementary_collation_element(code_point)
         code_point -= 0x10000
 
         # code point: xxxx xxxx xxxy yyyy yyyy
@@ -101,49 +90,6 @@ module TwitterCldr
 
         # fractional collation element: [1110 xxxx xxxx xxx1 1yyy yyyy yy10 0000]
         [0xE0018020 | (x << 17) | (y << 6), UNMARKED, UNMARKED]
-      end
-
-      def fixnum_to_bytes_array(number)
-        bytes = []
-
-        while number > 0
-          bytes.unshift(number & 0xFF)
-          number >>= 8
-        end
-
-        bytes
-      end
-
-      def form_sort_key(collation_elements)
-        sort_key = []
-
-        append_primary_bytes(sort_key, collation_elements)
-        append_secondary_bytes(sort_key, collation_elements)
-        append_tertiary_bytes(sort_key, collation_elements)
-
-        sort_key
-      end
-
-      def append_primary_bytes(sort_key, collation_elements)
-        collation_elements.each do |collation_element|
-          sort_key.concat(fixnum_to_bytes_array(collation_element[PRIMARY_LEVEL]))
-        end
-      end
-
-      def append_secondary_bytes(sort_key, collation_elements)
-        sort_key << LEVEL_SEPARATOR
-
-        collation_elements.each do |collation_element|
-          sort_key.concat(fixnum_to_bytes_array(collation_element[SECONDARY_LEVEL]))
-        end
-      end
-
-      def append_tertiary_bytes(sort_key, collation_elements)
-        sort_key << LEVEL_SEPARATOR
-
-        collation_elements.each do |collation_element|
-          sort_key.concat(fixnum_to_bytes_array(collation_element[TERTIARY_LEVEL] & TERTIARY_LEVEL_MASK))
-        end
       end
 
       class << self

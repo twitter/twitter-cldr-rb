@@ -45,7 +45,7 @@ module TwitterCldr
       end
 
       def append_secondary_bytes
-        @bytes << LEVEL_SEPARATOR
+        @sort_key << LEVEL_SEPARATOR
 
         @collation_elements.each do |collation_element|
           append_weight(level_weight(collation_element, SECONDARY_LEVEL))
@@ -53,7 +53,7 @@ module TwitterCldr
       end
 
       def append_tertiary_bytes
-        @bytes << LEVEL_SEPARATOR
+        @sort_key << LEVEL_SEPARATOR
 
         @collation_elements.each do |collation_element|
           append_weight(level_weight(collation_element, TERTIARY_LEVEL) & TERTIARY_LEVEL_MASK)
@@ -61,7 +61,7 @@ module TwitterCldr
       end
 
       def append_weight(weight)
-        @bytes.concat(fixnum_to_bytes_array(weight))
+        @sort_key.concat(fixnum_to_bytes_array(weight))
       end
 
       def level_weight(collation_element, level)

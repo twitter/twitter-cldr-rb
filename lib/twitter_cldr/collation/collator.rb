@@ -10,7 +10,7 @@ module TwitterCldr
 
       FRACTIONAL_UCA_SHORT_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation/FractionalUCA_SHORT.txt')
 
-      FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)$/
+      FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
       LEVELS_NUMBER   = 3 # number of levels that form a sort key
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
@@ -50,6 +50,11 @@ module TwitterCldr
         result
       end
 
+      # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value
+      # is an array of well formed (including weights for all significant levels) integer arrays.
+      #
+      # All used code points are removed from the beginning of the input array.
+      #
       def fractional_element(integer_code_points)
         fractional_elements, offset = collation_elements_trie.find_prefix(integer_code_points)
 

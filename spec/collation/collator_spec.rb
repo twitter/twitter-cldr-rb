@@ -128,6 +128,11 @@ FC63; [, D3 A9, 33][, D5 11, 33]
 FDD0 0063;	[, 97, 3D]
 FDD0 0064;	[, A7, 09]
 
+# SPECIAL MAX/MIN COLLATION ELEMENTS
+
+FFFE;	[02, 02, 02]	# Special LOWEST primary, for merge/interleaving
+FFFF;	[EF FE, 05, 05]	# Special HIGHEST primary, for ranges
+
 # Top Byte => Reordering Tokens
 [top_byte	00	TERMINATOR ]	#	[0]	TERMINATOR=1
 [top_byte	01	LEVEL-SEPARATOR ]	#	[0]	LEVEL-SEPARATOR=1
@@ -165,5 +170,11 @@ COLLATION_ELEMENTS_MAP = [
     [[64976, 99], [[0, 151, 61]]],
 
     # FDD0 0064; [, A7, 09]
-    [[64976, 100], [[0, 167, 9]]]
+    [[64976, 100], [[0, 167, 9]]],
+
+    # FFFE; [02, 02, 02]
+    [[65534], [[2, 2, 2]]],
+
+    # FFFF; [EF FE, 05, 05]
+    [[65535], [[61438, 5, 5]]]
 ]

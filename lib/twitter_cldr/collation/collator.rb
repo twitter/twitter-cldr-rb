@@ -12,13 +12,10 @@ module TwitterCldr
 
       FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)$/
 
-      LEVELS_NUMBER = 3
+      LEVELS_NUMBER   = 3 # number of levels that form a sort key
+      LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
       UNMARKED = 3
-
-      LEVEL_SEPARATOR  = 0 # separate levels in a sort key '00' bytes
-      LEVEL_FILLER     = 2 # fill missing level in a UCA collation element with '02' bytes
-      LEVEL_SUBSTITUTE = 0 # fill missing bytes in a UCA collation element level with '00' bytes
 
       THIRD_LEVEL_MASK = 0x3F # mask for removing case bits on the 3rd level ('CC' bits in 'CC00 0000' 3rd level weight)
 
@@ -93,47 +90,16 @@ module TwitterCldr
       end
 
       def build_collation_elements(fractional_elements)
-        collation_elements = []
+        fractional_elements.map do |fractional_element|
+          # remove case bits from the 3rd level weight
+          fractional_element[2] &= THIRD_LEVEL_MASK
 
-        fractional_elements.each do |fractional_element|
-          fractional_element[2] &= THIRD_LEVEL_MASK # remove case bits from the 3rd level weight
-
-          # convert weight on every level to an array of wydes (two bytes): [1180356, 120, 3] => [[4610, 50178], [30722], [770]]
-          wydes = fractional_element_to_wydes(fractional_element)
-
-          # transpose wydes arrays: [[4610, 50178], [30722], [770]] => [[4610, 30722, 770], [50178, nil, nil]]
-          # i-th element of the resulting array is composed of i-th wydes from every level
-          transposed = wydes.shift.zip(*wydes)
-
-          transposed.each do |collation_element|
-            # use only LEVELS_NUMBER levels from the collation element
-            # fill missing levels with LEVEL_SUBSTITUTE (e.g., 0): [50178, nil, nil] => [50178, 0, 0]
-            collation_elements << LEVELS_NUMBER.times.map do |level|
-              collation_element[level] || LEVEL_SUBSTITUTE
-            end
-          end
-        end
-
-        collation_elements
-      end
-
-      # Converts weight on every level of a fractional collation element into an array of wydes (pairs of bytes).
-      #
-      def fractional_element_to_wydes(fractional_element)
-        fractional_element.map do |level_weight|
-          fixnum_to_wydes_array(level_weight)
+          fractional_element_to_bytes(fractional_element)
         end
       end
 
-      # Converts an integer into an array of wydes (pairs of bytes). Bytes are paired from left to right and are
-      # represented as integers in the returned array.
-      #
-      def fixnum_to_wydes_array(number)
-        return [0] if number.zero?
-
-        bytes = fixnum_to_bytes_array(number)
-        bytes << LEVEL_FILLER if bytes.size.odd?
-        bytes.each_slice(2).map { |two_bytes| (two_bytes[0] << 8) | two_bytes[1] }
+      def fractional_element_to_bytes(fractional_element)
+        fractional_element.map { |level_weight| fixnum_to_bytes_array(level_weight) }
       end
 
       def fixnum_to_bytes_array(number)
@@ -151,11 +117,8 @@ module TwitterCldr
         result = []
 
         LEVELS_NUMBER.times do |level|
-          result << 0 if level > 0
-          collation_elements.each do |collation_element|
-            level_weight = collation_element[level]
-            result << level_weight if level_weight > 0
-          end
+          result << LEVEL_SEPARATOR if level > 0
+          collation_elements.each { |collation_element| result.concat(collation_element[level]) }
         end
 
         result

@@ -10,7 +10,7 @@ include TwitterCldr::Normalizers
 describe NFD do
 
   describe "#normalize" do
-    it "blarg" do
+    it "should normalize certain types of characters successfully" do
       NFD.normalize("庠摪饢鼢豦樄澸脧鱵礩翜艰").should == "庠摪饢鼢豦樄澸脧鱵礩翜艰"
       NFD.normalize("䷙䷿").should == "䷙䷿"
       NFD.normalize("ᎿᎲᎪᏨᎨᏪᎧᎵᏥ").should == "ᎿᎲᎪᏨᎨᏪᎧᎵᏥ"

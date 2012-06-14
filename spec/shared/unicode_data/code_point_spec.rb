@@ -5,20 +5,20 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
+include TwitterCldr::Shared::UnicodeData
 
-describe UnicodeData do
-  describe "#for_code_point" do
+describe CodePoint do
+  describe "#for_hex" do
     it "should retrieve information for any valid code point" do
-      data = UnicodeData.for_code_point('0301')
-      data.should be_a(UnicodeData::Attributes)
+      data = CodePoint.for_hex('0301')
+      data.should be_a(CodePoint)
       data.values.length.should == 15
     end
 
     it "should return nil for invalid code points" do
-      UnicodeData.for_code_point('abcd').should be_nil
-      UnicodeData.for_code_point('FFFFFFF').should be_nil
-      UnicodeData.for_code_point('uytukhil123').should be_nil
+      CodePoint.for_hex('abcd').should be_nil
+      CodePoint.for_hex('FFFFFFF').should be_nil
+      CodePoint.for_hex('uytukhil123').should be_nil
     end
 
     it "fetches valid information for the specified code point" do
@@ -30,7 +30,7 @@ describe UnicodeData do
         '1F241'=> ['1F241','TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09','So','0','L','<compat> 3014 4E09 3015',"","","",'N',"","","","",""]
       }
       test_data.each_pair do |code_point, data|
-        cp_data = UnicodeData.for_code_point(code_point)
+        cp_data = CodePoint.for_hex(code_point)
         cp_data.code_point.should == data[0]
         cp_data.name.should == data[1]
         cp_data.category.should == data[2]
@@ -48,7 +48,7 @@ describe UnicodeData do
       }
 
       test_data.each_pair do |code_point, data|
-        cp_data = UnicodeData.for_code_point(code_point)
+        cp_data = CodePoint.for_hex(code_point)
         cp_data.code_point.should == data[0]
         cp_data.name.should == data[1]
         cp_data.category.should == data[2]

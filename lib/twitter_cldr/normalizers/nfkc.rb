@@ -33,8 +33,8 @@ module TwitterCldr
 
           code_points.each_with_index do |code_point, index|
             final << code_point
-            hangul_type = TwitterCldr::Shared::UnicodeData::Attributes.hangul_type(code_point)
-            next_hangul_type = TwitterCldr::Shared::UnicodeData::Attributes.hangul_type(code_points[index + 1])
+            hangul_type = TwitterCldr::Shared::UnicodeData::CodePoint.hangul_type(code_point)
+            next_hangul_type = TwitterCldr::Shared::UnicodeData::CodePoint.hangul_type(code_points[index + 1])
 
             if valid_hangul_sequence?(hangul_code_points.size, hangul_type)
               hangul_code_points << code_point
@@ -100,7 +100,7 @@ module TwitterCldr
 
             unless blocked
               # do a reverse-lookup for the decomposed code points
-              decomp_data = TwitterCldr::Shared::UnicodeData.for_decomposition([code_points[starter_index], code_point])
+              decomp_data = TwitterCldr::Shared::UnicodeData::CodePoint.for_decomposition([code_points[starter_index], code_point])
 
               # check if two code points are canonically equivalent
               if decomp_data && !decomp_data.excluded_from_composition?

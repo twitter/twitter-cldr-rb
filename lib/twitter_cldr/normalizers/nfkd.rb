@@ -33,7 +33,7 @@ module TwitterCldr
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
         #
         def decompose_recursively(code_point)
-          unicode_data = TwitterCldr::Shared::UnicodeData.for_code_point(code_point)
+          unicode_data = TwitterCldr::Shared::UnicodeData::CodePoint.for_hex(code_point)
           return code_point unless unicode_data
 
           if unicode_data.hangul_type == :compositions
@@ -139,7 +139,7 @@ module TwitterCldr
         end
 
         def combining_class_for(code_point)
-          TwitterCldr::Shared::UnicodeData.for_code_point(code_point).combining_class.to_i
+          TwitterCldr::Shared::UnicodeData::CodePoint.for_hex(code_point).combining_class.to_i
         rescue NoMethodError
           0
         end

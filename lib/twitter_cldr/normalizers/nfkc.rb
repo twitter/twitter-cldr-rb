@@ -73,7 +73,7 @@ module TwitterCldr
           v_index = code_points[1].hex - HANGUL_DECOMPOSITION_CONSTANTS[:VBase]
           t_index = code_points[2] ? code_points[2].hex - HANGUL_DECOMPOSITION_CONSTANTS[:TBase] : 0  # tpart may be missing, that's ok
           lv_index = (l_index * HANGUL_DECOMPOSITION_CONSTANTS[:NCount]) + (v_index * HANGUL_DECOMPOSITION_CONSTANTS[:TCount])
-          (HANGUL_DECOMPOSITION_CONSTANTS[:SBase] + lv_index + t_index).to_s(16).upcase.ljust(4, "0")
+          (HANGUL_DECOMPOSITION_CONSTANTS[:SBase] + lv_index + t_index).to_s(16).upcase.rjust(4, "0")
         end
 
         # Implements composition of Unicode code points following the guidelines here:
@@ -102,7 +102,7 @@ module TwitterCldr
               # do a reverse-lookup for the decomposed code points
               decomp_data = TwitterCldr::Shared::UnicodeData.for_decomposition([code_points[starter_index], code_point])
 
-              # check if two code points can be canonically combined
+              # check if two code points are canonically equivalent
               if decomp_data && !decomp_data.excluded_from_composition?
                 # combine the characters
                 code_points[starter_index] = decomp_data.code_point

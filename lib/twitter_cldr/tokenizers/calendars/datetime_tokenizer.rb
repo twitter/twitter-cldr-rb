@@ -35,7 +35,7 @@ module TwitterCldr
       end
 
       def calendar
-        @resource[:calendars][@calendar_type]
+        @calendar ||= @resource[:calendars][@calendar_type]
       end
 
       protected

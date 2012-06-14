@@ -12,13 +12,11 @@ module TwitterCldr
       class << self
 
         DECOMPOSITION_DATA_INDEX = 5
-        DECOMPOSITION_RANGE = 160..195101  # the range of characters that have decomposition mappings
 
         def for_code_point(code_point)
           target = get_block(code_point)
 
           if target && target.first
-            cache_decompositions(target)
             block_data = TwitterCldr.get_resource(:unicode_data, target.first)
             code_point_data = block_data.fetch(code_point.to_sym) { |code_point_sym| get_range_start(code_point_sym, block_data) }
             Attributes.new(*code_point_data) if code_point_data
@@ -28,45 +26,17 @@ module TwitterCldr
         end
 
         def for_decomposition(code_points)
-          code_point_key = TwitterCldr::Utils.compute_cache_key(*code_points)
-          start_pos = DECOMPOSITION_RANGE.first
+          @decomposition_map ||= TwitterCldr.get_resource(:unicode_data, :decomposition_map)
+          key = code_points.join(" ").to_sym
 
-          # we really have no idea which block has the right decomposition, so we'll have to load everything
-          # sequentially until we find it
-          while DECOMPOSITION_RANGE.include?(start_pos)
-            break if decomposition_cache.include?(code_point_key)
-            target = get_block(start_pos.to_s(16).rjust(4, "0"))
-            cache_decompositions(target) if target && target.first
-            start_pos = target[1].last + 1
-          end
-
-          if decomposition_cache[code_point_key]
-            Attributes.new(*decomposition_cache[code_point_key])
+          if @decomposition_map.include?(key)
+            for_code_point(@decomposition_map[key])
           else
-            decomposition_cache[code_point_key] = nil
+            nil
           end
         end
 
         private
-
-        def cache_decompositions(target)
-          unless decomposition_cache[:processed].include?(target.first)
-            block_data = TwitterCldr.get_resource(:unicode_data, target.first)
-            decomposition_cache[:processed] << target.first
-
-            # Hash by decomposition characters
-            block_data.each do |code_point, unicode_data|
-              unless unicode_data[DECOMPOSITION_DATA_INDEX] == ""
-                cache_key = TwitterCldr::Utils.compute_cache_key(unicode_data[DECOMPOSITION_DATA_INDEX].split)
-                decomposition_cache[cache_key] = unicode_data
-              end
-            end
-          end
-        end
-
-        def decomposition_cache
-          @decomposition_cache ||= { :processed => [] }
-        end
 
         def get_block(code_point)
           blocks = TwitterCldr.get_resource(:unicode_data, :blocks)

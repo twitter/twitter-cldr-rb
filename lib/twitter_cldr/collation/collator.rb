@@ -8,9 +8,7 @@ module TwitterCldr
 
     class Collator
 
-      FRACTIONAL_UCA_SHORT_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation/FractionalUCA_SHORT.txt')
-
-      FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
+      FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
 
       UNMARKED = 3
 
@@ -20,6 +18,10 @@ module TwitterCldr
 
       def trie
         @trie ||= self.class.trie
+      end
+
+      def self.trie
+        @trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE)
       end
 
       private
@@ -90,44 +92,6 @@ module TwitterCldr
 
         # fractional collation element: [1110 xxxx xxxx xxx1 1yyy yyyy yy10 0000]
         [0xE0018020 | (x << 17) | (y << 6), UNMARKED, UNMARKED]
-      end
-
-      class << self
-
-        def trie
-          @trie ||= init_trie
-        end
-
-        private
-
-        def init_trie
-          parse_trie(load_trie)
-        end
-
-        def load_trie
-          open(FRACTIONAL_UCA_SHORT_PATH, 'r')
-        end
-
-        def parse_trie(table)
-          trie = TwitterCldr::Collation::Trie.new
-
-          table.lines.each do |line|
-            trie.add(parse_code_points($1), parse_collation_element($2)) if FRACTIONAL_UCA_REGEXP =~ line
-          end
-
-          trie
-        end
-
-        def parse_code_points(string)
-          string.split.map { |cp| cp.to_i(16) }
-        end
-
-        def parse_collation_element(string)
-          string.scan(/\[.*?\]/).map do |match|
-            match[1..-2].gsub(/\s/, '').split(',', -1).map { |bytes| bytes.to_i(16) }
-          end
-        end
-
       end
 
     end

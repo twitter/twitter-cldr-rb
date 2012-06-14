@@ -5,8 +5,9 @@
 
 module TwitterCldr
   module Collation
-    autoload :Collator, 'twitter_cldr/collation/collator'
-    autoload :SortKey,  'twitter_cldr/collation/sort_key'
-    autoload :Trie,     'twitter_cldr/collation/trie'
+    autoload :Collator,    'twitter_cldr/collation/collator'
+    autoload :SortKey,     'twitter_cldr/collation/sort_key'
+    autoload :Trie,        'twitter_cldr/collation/trie'
+    autoload :TrieBuilder, 'twitter_cldr/collation/trie_builder'
   end
 end

@@ -10,28 +10,17 @@ include TwitterCldr::Collation
 describe Collator do
 
   describe '.trie' do
-    it "loads the trie only once and returns the same trie when it's called again" do
+    it 'returns collation elements trie' do
       Collator.instance_variable_set(:@trie, nil)
-      mock(Collator).open(Collator::FRACTIONAL_UCA_SHORT_PATH, 'r').once { FRACTIONAL_UCA_SHORT_STUB }
-
-      result = Collator.trie
-      # second time get_resource is not called but we get the same object as before
-      Collator.trie.object_id.should == result.object_id
+      mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { 'trie' }
+      Collator.trie.should == 'trie'
     end
 
-    describe 'fractional CE trie hash' do
-      let(:trie) do
-        stub(Collator).load_trie { FRACTIONAL_UCA_SHORT_STUB }
-        Collator.trie
-      end
+    it 'loads the trie only once' do
+      Collator.instance_variable_set(:@trie, nil)
+      mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { 'trie' }
 
-      it 'is a Trie' do
-        trie.is_a?(Trie)
-      end
-
-      it 'contains CE for every code points sequence from the FractionalUCA_SHORT file' do
-        COLLATION_ELEMENTS_MAP.each { |code_points, collation_element| trie.get(code_points).should == collation_element }
-      end
+      Collator.trie.object_id.should == Collator.trie.object_id
     end
   end
 
@@ -117,73 +106,3 @@ describe Collator do
   end
 
 end
-
-FRACTIONAL_UCA_SHORT_STUB = <<END
-# Fractional UCA Table, generated from standard UCA
-# 2012-01-03, 21:52:55 GMT [MD]
-# VERSION: UCA=6.1.0, UCD=6.1.0
-# For a description of the format and usage, see CollationAuxiliary.html
-
-[UCA version = 6.1.0]
-
-0000; [,,]
-030C; [, 97, 05]
-215E; [20, 05, 3B][0D 75 2C, 05, 3B][22, 05, 3D]
-FC63; [, D3 A9, 33][, D5 11, 33]
-0E40 0E01; [72 0A, 05, 05][72 7E, 05, 3D]
-0E40 0E02; [72 0C, 05, 05][72 7E, 05, 3D]
-
-# HOMELESS COLLATION ELEMENTS
-FDD0 0063;	[, 97, 3D]
-FDD0 0064;	[, A7, 09]
-
-# SPECIAL MAX/MIN COLLATION ELEMENTS
-
-FFFE;	[02, 02, 02]	# Special LOWEST primary, for merge/interleaving
-FFFF;	[EF FE, 05, 05]	# Special HIGHEST primary, for ranges
-
-# Top Byte => Reordering Tokens
-[top_byte	00	TERMINATOR ]	#	[0]	TERMINATOR=1
-[top_byte	01	LEVEL-SEPARATOR ]	#	[0]	LEVEL-SEPARATOR=1
-[top_byte	02	FIELD-SEPARATOR ]	#	[0]	FIELD-SEPARATOR=1
-[top_byte	03	SPACE ]	#	[9]	SPACE=1 Cc=6 Zl=1 Zp=1 Zs=1
-
-# VALUES BASED ON UCA
-[first tertiary ignorable [,,]] # CONSTRUCTED
-[last tertiary ignorable [,,]] # CONSTRUCTED
-# Warning: Case bits are masked in the following
-[first tertiary in secondary non-ignorable [X, X, 05]] # U+0332 COMBINING LOW LINE
-[last tertiary in secondary non-ignorable [X, X, 3D]] # U+2A74 DOUBLE COLON EQUAL
-END
-
-COLLATION_ELEMENTS_MAP = [
-    # 0000; [,,]
-    [[0], [[0, 0, 0]]],
-
-    # 030C; [, 97, 05]
-    [[780], [[0, 151, 5]]],
-
-    # 215E; [20, 05, 3B][0D 75 2C, 05, 3B][22, 05, 3D]
-    [[8542], [[32, 5, 59], [881964, 5, 59], [34, 5, 61]]],
-
-    # FC63; [, D3 A9, 33][, D5 11, 33]
-    [[64611], [[0, 54185, 51], [0, 54545, 51]]],
-
-    # 0E40 0E01; [72 0A, 05, 05][72 7E, 05, 3D]
-    [[3648, 3585], [[29194, 5, 5], [29310, 5, 61]]],
-
-    # 0E40 0E02; [72 0C, 05, 05][72 7E, 05, 3D]
-    [[3648, 3586], [[29196, 5, 5], [29310, 5, 61]]],
-
-    # FDD0 0063; [, 97, 3D]
-    [[64976, 99], [[0, 151, 61]]],
-
-    # FDD0 0064; [, A7, 09]
-    [[64976, 100], [[0, 167, 9]]],
-
-    # FFFE; [02, 02, 02]
-    [[65534], [[2, 2, 2]]],
-
-    # FFFF; [EF FE, 05, 05]
-    [[65535], [[61438, 5, 5]]]
-]

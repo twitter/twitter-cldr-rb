@@ -9,20 +9,20 @@ include TwitterCldr::Collation
 
 describe Collator do
 
-  describe '.collation_elements_trie' do
+  describe '.trie' do
     it "loads the trie only once and returns the same trie when it's called again" do
-      Collator.instance_variable_set(:@collation_elements_trie, nil)
+      Collator.instance_variable_set(:@trie, nil)
       mock(Collator).open(Collator::FRACTIONAL_UCA_SHORT_PATH, 'r').once { FRACTIONAL_UCA_SHORT_STUB }
 
-      result = Collator.collation_elements_trie
+      result = Collator.trie
       # second time get_resource is not called but we get the same object as before
-      Collator.collation_elements_trie.object_id.should == result.object_id
+      Collator.trie.object_id.should == result.object_id
     end
 
     describe 'fractional CE trie hash' do
       let(:trie) do
-        stub(Collator).load_collation_elements_trie { FRACTIONAL_UCA_SHORT_STUB }
-        Collator.collation_elements_trie
+        stub(Collator).load_trie { FRACTIONAL_UCA_SHORT_STUB }
+        Collator.trie
       end
 
       it 'is a Trie' do
@@ -35,9 +35,18 @@ describe Collator do
     end
   end
 
-  def get_collation_element(trie, code_points)
-    key = code_points.split.map { |cp| cp.to_i(16) }
-    trie.get(key)
+  describe '#trie' do
+    it 'delegates to the class method' do
+      mock(Collator).trie { 'trie' }
+      Collator.new.trie.should == 'trie'
+    end
+
+    it 'calls class method only once' do
+      mock(Collator).trie { 'trie' }
+
+      collator = Collator.new
+      collator.trie.object_id.should == collator.trie.object_id
+    end
   end
 
   describe '#sort_key' do

@@ -18,14 +18,14 @@ module TwitterCldr
         sort_key_for_code_points(get_integer_code_points(string_or_code_points))
       end
 
+      def trie
+        @trie ||= self.class.trie
+      end
+
       private
 
       def sort_key_for_code_points(integer_code_points)
         TwitterCldr::Collation::SortKey.build(get_collation_elements(integer_code_points))
-      end
-
-      def collation_elements_trie
-        @collation_elements_trie ||= self.class.collation_elements_trie
       end
 
       def get_integer_code_points(str_or_code_points)
@@ -51,7 +51,7 @@ module TwitterCldr
       # All used code points are removed from the beginning of the input array.
       #
       def code_point_collation_elements(integer_code_points)
-        collation_elements, offset = collation_elements_trie.find_prefix(integer_code_points)
+        collation_elements, offset = trie.find_prefix(integer_code_points)
 
         if collation_elements
           integer_code_points.shift(offset)
@@ -94,21 +94,21 @@ module TwitterCldr
 
       class << self
 
-        def collation_elements_trie
-          @collation_elements_trie ||= init_collation_elements_trie
+        def trie
+          @trie ||= init_trie
         end
 
         private
 
-        def init_collation_elements_trie
-          parse_collation_elements_trie(load_collation_elements_trie)
+        def init_trie
+          parse_trie(load_trie)
         end
 
-        def load_collation_elements_trie
+        def load_trie
           open(FRACTIONAL_UCA_SHORT_PATH, 'r')
         end
 
-        def parse_collation_elements_trie(table)
+        def parse_trie(table)
           trie = TwitterCldr::Collation::Trie.new
 
           table.lines.each do |line|

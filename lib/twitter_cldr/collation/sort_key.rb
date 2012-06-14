@@ -14,16 +14,6 @@ module TwitterCldr
 
       TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
 
-      # Tertiary level compression constants
-      TERTIARY_TOP_ADDITION = 0x80
-      TERTIARY_BOTTOM       = 0x05
-      TERTIARY_TOP          = 0x85
-      TERTIARY_PROPORTION   = 0.667
-      TERTIARY_COMMON       = TERTIARY_BOTTOM
-      TERTIARY_TOTAL_COUNT  = TERTIARY_TOP - TERTIARY_BOTTOM - 1
-      TERTIARY_TOP_COUNT    = TERTIARY_PROPORTION * TERTIARY_TOTAL_COUNT
-      TERTIARY_BOTTOM_COUNT = TERTIARY_TOTAL_COUNT - TERTIARY_TOP_COUNT
-
       attr_reader :collation_elements
 
       # Returns a sort key as an array of bytes.
@@ -67,21 +57,39 @@ module TwitterCldr
       def append_secondary_bytes
         @bytes_array << LEVEL_SEPARATOR
 
+        @common_count = 0
+
         @collation_elements.each do |collation_element|
-          append_weight(level_weight(collation_element, SECONDARY_LEVEL))
+          fixnum_to_bytes_array(level_weight(collation_element, SECONDARY_LEVEL)).each do |byte|
+            append_secondary_byte(byte)
+          end
         end
+
+        # append compressed trailing common bytes
+        append_common_bytes(SECONDARY_BOTTOM, SECONDARY_BOTTOM_COUNT, false) if @common_count > 0
       end
 
       def append_tertiary_bytes
         @bytes_array << LEVEL_SEPARATOR
+
         @common_count = 0
 
         @collation_elements.each do |collation_element|
-          fixnum_to_bytes_array(tertiary_weight(collation_element)).each { |byte| append_tertiary_byte(byte) }
+          fixnum_to_bytes_array(tertiary_weight(collation_element)).each do |byte|
+            append_tertiary_byte(byte)
+          end
         end
 
         # append compressed trailing common bytes
-        append_compressed_common_bytes(TERTIARY_BOTTOM, TERTIARY_BOTTOM_COUNT, false) if @common_count > 0
+        append_common_bytes(TERTIARY_BOTTOM, TERTIARY_BOTTOM_COUNT, false) if @common_count > 0
+      end
+
+      def append_secondary_byte(secondary)
+        if secondary == SECONDARY_COMMON
+          @common_count += 1
+        else
+          append_with_common_bytes(secondary, SECONDARY_COMMON_SPACE)
+        end
       end
 
       def append_tertiary_byte(tertiary)
@@ -89,20 +97,23 @@ module TwitterCldr
           @common_count += 1
         else
           tertiary += TERTIARY_TOP_ADDITION if tertiary > TERTIARY_COMMON # create a gap above TERTIARY_COMMON
-
-          if @common_count > 0
-            if tertiary > TERTIARY_COMMON
-              append_compressed_common_bytes(TERTIARY_TOP, TERTIARY_TOP_COUNT, true)
-            else
-              append_compressed_common_bytes(TERTIARY_BOTTOM, TERTIARY_BOTTOM_COUNT, false)
-            end
-          end
-
-          @bytes_array << tertiary
+          append_with_common_bytes(tertiary, TERTIARY_COMMON_SPACE)
         end
       end
 
-      def append_compressed_common_bytes(boundary, count_limit, top)
+      def append_with_common_bytes(byte, options)
+        if @common_count > 0
+          if byte < options[:common]
+            append_common_bytes(options[:bottom], options[:bottom_count], false)
+          else
+            append_common_bytes(options[:top], options[:top_count], true)
+          end
+        end
+
+        @bytes_array << byte
+      end
+
+      def append_common_bytes(boundary, count_limit, top)
         sign = top ? -1 : +1
 
         while @common_count > count_limit
@@ -136,6 +147,44 @@ module TwitterCldr
 
         bytes
       end
+
+      # Secondary level compression constants
+
+      SECONDARY_BOTTOM       = 0x05
+      SECONDARY_TOP          = 0x86
+      SECONDARY_PROPORTION   = 0.5
+      SECONDARY_COMMON       = SECONDARY_BOTTOM
+      SECONDARY_TOTAL_COUNT  = SECONDARY_TOP - SECONDARY_BOTTOM - 1
+      SECONDARY_TOP_COUNT    = SECONDARY_PROPORTION * SECONDARY_TOTAL_COUNT
+      SECONDARY_BOTTOM_COUNT = SECONDARY_TOTAL_COUNT - SECONDARY_TOP_COUNT
+
+      SECONDARY_COMMON_SPACE = {
+          :common       => SECONDARY_COMMON,
+          :bottom       => SECONDARY_BOTTOM,
+          :bottom_count => SECONDARY_BOTTOM_COUNT,
+          :top          => SECONDARY_TOP,
+          :top_count    => SECONDARY_TOP_COUNT
+      }
+
+      # Tertiary level compression constants
+
+      TERTIARY_TOP_ADDITION = 0x80
+
+      TERTIARY_BOTTOM       = 0x05
+      TERTIARY_TOP          = 0x85
+      TERTIARY_PROPORTION   = 0.667
+      TERTIARY_COMMON       = TERTIARY_BOTTOM
+      TERTIARY_TOTAL_COUNT  = TERTIARY_TOP - TERTIARY_BOTTOM - 1
+      TERTIARY_TOP_COUNT    = TERTIARY_PROPORTION * TERTIARY_TOTAL_COUNT
+      TERTIARY_BOTTOM_COUNT = TERTIARY_TOTAL_COUNT - TERTIARY_TOP_COUNT
+
+      TERTIARY_COMMON_SPACE = {
+          :common       => TERTIARY_COMMON,
+          :bottom       => TERTIARY_BOTTOM,
+          :bottom_count => TERTIARY_BOTTOM_COUNT,
+          :top          => TERTIARY_TOP,
+          :top_count    => TERTIARY_TOP_COUNT
+      }
 
     end
 

@@ -10,8 +10,8 @@ include TwitterCldr::Collation
 describe SortKey do
 
   let(:sort_key) { SortKey.new(collation_elements) }
-  let(:collation_elements) { [[63, 5, 149], [63, 5, 143]] }
-  let(:sort_key_bytes) { [63, 63, 1, 5, 5, 1, 149, 143] }
+  let(:collation_elements) { [[63, 13, 149], [66, 81, 143]] }
+  let(:sort_key_bytes) { [63, 66, 1, 13, 81, 1, 149, 143] }
 
   describe '.build' do
     it 'returns a sort key for a given array of collation elements' do
@@ -38,6 +38,10 @@ describe SortKey do
     it 'builds bytes array only once' do
       mock(sort_key).build { sort_key_bytes }
       sort_key.bytes_array.object_id == sort_key.bytes_array.object_id
+    end
+
+    it 'compresses secondary weights' do
+      SortKey.new([[0, 5, 0], [0, 5, 0], [0, 141, 0], [0, 5, 0], [0, 5, 0]]).bytes_array.should == [1, 133, 141, 6, 1]
     end
 
     it 'compresses tertiary weights' do

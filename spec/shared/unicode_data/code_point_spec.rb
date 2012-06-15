@@ -61,7 +61,14 @@ describe CodePoint do
     let(:decomp_map) { { :"YYYY ZZZZ" => "0ABC" } }
 
     before(:each) do
+      # clear the decomposition map after each test so mocks/stubs work
+      CodePoint.instance_variable_set(:'@decomposition_map', nil)
       stub(CodePoint).for_hex { |code_point| "I'm code point #{code_point}" }
+    end
+
+    after(:each) do
+      # clear the decomposition map after each test so mocks/stubs work
+      CodePoint.instance_variable_set(:'@decomposition_map', nil)
     end
 
     context "with a stubbed decomposition map" do

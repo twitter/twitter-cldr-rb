@@ -56,4 +56,90 @@ describe CodePoint do
       end
     end
   end
+
+  describe "#for_decomposition" do
+    let(:decomp_map) { { :"YYYY ZZZZ" => "0ABC" } }
+
+    before(:each) do
+      stub(CodePoint).for_hex { |code_point| "I'm code point #{code_point}" }
+    end
+
+    context "with a stubbed decomposition map" do
+      before(:each) do
+        stub(TwitterCldr).get_resource(:unicode_data, :decomposition_map) { decomp_map }
+      end
+
+      it "should return a code point with the correct value" do
+        CodePoint.for_decomposition(["YYYY", "ZZZZ"]).should == "I'm code point 0ABC"
+      end
+
+      it "should return nil if no decomposition mapping exists" do
+        CodePoint.for_decomposition(["NO"]).should be_nil
+      end
+    end
+
+    it "should cache the decomposition map" do
+      mock(TwitterCldr).get_resource(:unicode_data, :decomposition_map) { decomp_map }.once
+      CodePoint.for_decomposition(["NO"]).should be_nil
+      CodePoint.for_decomposition(["NO"]).should be_nil
+    end
+  end
+
+  describe "#hangul_type" do
+    before(:each) do
+      stub(CodePoint).hangul_blocks { { :lparts => [1..10],
+                                        :vparts => [21..30],
+                                        :tparts => [41..50],
+                                        :compositions => [1..30],
+                                        :decompositions => [31..50] } }
+    end
+
+    it "returns nil if not part of a hangul block" do
+      CodePoint.hangul_type(100.to_s(16)).should == nil
+    end
+
+    it "returns the correct part (i.e. lpart, vpart, or tpart) before composition or decomposition" do
+      CodePoint.hangul_type(5.to_s(16)).should == :lparts
+      CodePoint.hangul_type(30.to_s(16)).should == :vparts
+      CodePoint.hangul_type(41.to_s(16)).should == :tparts
+    end
+
+    it "returns composition or decomposition if no part can be found" do
+      CodePoint.hangul_type(11.to_s(16)).should == :compositions
+      CodePoint.hangul_type(40.to_s(16)).should == :decompositions
+    end
+  end
+
+  describe "#excluded_from_composition?" do
+    it "excludes anything in the list of ranges" do
+      stub(CodePoint).composition_exclusions { [10..10, 13..14, 20..30] }
+      CodePoint.excluded_from_composition?(10.to_s(16)).should be_true
+      CodePoint.excluded_from_composition?(13.to_s(16)).should be_true
+      CodePoint.excluded_from_composition?(14.to_s(16)).should be_true
+      CodePoint.excluded_from_composition?(15.to_s(16)).should be_false
+      CodePoint.excluded_from_composition?(19.to_s(16)).should be_false
+      CodePoint.excluded_from_composition?(100.to_s(16)).should be_false
+    end
+  end
+
+  describe "#get_block" do
+    it "finds the block that corresponds to the code point" do
+      stub(TwitterCldr).get_resource(:unicode_data, :blocks) { [[:klingon, 122..307], [:hirogen, 1337..2200]] }
+      CodePoint.send(:get_block, 200.to_s(16)).should == [:klingon, 122..307]
+      CodePoint.send(:get_block, 2199.to_s(16)).should == [:hirogen, 1337..2200]
+      CodePoint.send(:get_block, 100.to_s(16)).should be_nil
+    end
+  end
+
+  describe "#get_range_start" do
+    it "returns the data for a non-explicit range" do
+      block_data = { "0" => ["1337", "<CJK Ideograph Extension A, First>"] }
+      CodePoint.send(:get_range_start, "ABC", block_data).should == ["ABC", "<CJK Ideograph Extension A>"]
+    end
+
+    it "returns nil if the block data doesn't contain a non-explicit range" do
+      block_data = { "0" => ["1337", "<CJK Ideograph Extension A>"] }
+      CodePoint.send(:get_range_start, "ABC", block_data).should == nil
+    end
+  end
 end

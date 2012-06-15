@@ -63,13 +63,14 @@ module TwitterCldr
 
           def hangul_type(code_point)
             if code_point
-              code_point_int = code_point.to_i(16)
+              code_point_int = code_point.hex
               [:lparts, :vparts, :tparts, :compositions, :decompositions].each do |type|
                 hangul_blocks[type].each do |range|
                   return type if range.include?(code_point_int)
                 end
               end
             end
+            nil
           end
 
           def excluded_from_composition?(code_point)
@@ -89,48 +90,25 @@ module TwitterCldr
 
           def get_block(code_point)
             blocks = TwitterCldr.get_resource(:unicode_data, :blocks)
-            code_point_int = code_point.to_i(16)
+            code_point_int = code_point.hex
 
             # Find the target block
-            result = blocks.find do |block_name, range|
+            blocks.find do |block_name, range|
               range.include?(code_point_int)
             end
-
-            # If the block can't be found, search for it in the array of missing blocks
-            unless result
-              result = missing_blocks.find do |block_name, range|
-                range.include?(code_point_int)
-              end
-            end
-
-            result
           end
 
           # Check if block constitutes a range. The code point beginning a range will have a name enclosed in <>, ending with 'First'
           # eg: <CJK Ideograph Extension A, First>
           # http://unicode.org/reports/tr44/#Code_Point_Ranges
           def get_range_start(code_point, block_data)
-            start_code_point = block_data.keys.sort_by { |key| key.to_s.to_i(16) }.first
+            start_code_point = block_data.keys.sort_by { |key| key.to_s.hex }.first
             start_data = block_data[start_code_point].clone
             if start_data[1] =~ /<.*, First>/
               start_data[0] = code_point.to_s
               start_data[1] = start_data[1].sub(', First', '')
               start_data
             end
-          end
-
-          def missing_blocks
-            @missing_blocks ||= []
-            if @missing_blocks.empty?
-              blocks = TwitterCldr.get_resource(:unicode_data, :blocks)
-              (range_array = blocks.inject([]) { |ret, entry| ret += [entry.last.first, entry.last.last]; ret }.sort).shift
-              range_array.each_slice(2) do |slice|
-                unless slice.last == slice.first + 1
-                  @missing_blocks << [nil, (slice.first + 1)..slice.last]
-                end
-              end
-            end
-            @missing_blocks
           end
 
         end

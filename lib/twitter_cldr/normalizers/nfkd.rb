@@ -10,6 +10,10 @@ module TwitterCldr
   # latest version at the moment (for Unicode 6.1) is available at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf.
   #
   module Normalizers
+
+    # Implements normalization of a Unicode string to Normalization Form KD (NFKD).
+    # This normalization form includes only compatibility decomposition.
+    #
     class NFKD < Base
 
       class << self

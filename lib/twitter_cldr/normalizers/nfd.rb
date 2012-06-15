@@ -7,7 +7,7 @@ module TwitterCldr
   module Normalizers
 
     # Implements normalization of a Unicode string to Normalization Form D (NFD).
-    # This normalization includes only Canonical Decomposition.
+    # This normalization includes only canonical decomposition.
     #
     class NFD < NFKD
 

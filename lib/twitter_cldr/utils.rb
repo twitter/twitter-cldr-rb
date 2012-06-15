@@ -22,6 +22,14 @@ module TwitterCldr
         end
       end
 
+      def compute_cache_key(*pieces)
+        if pieces && pieces.size > 0
+          pieces.join("|").hash
+        else
+          0
+        end
+      end
+
     end
 
   end

@@ -38,6 +38,16 @@ describe 'Unicode Normalization Algorithms' do
     it_behaves_like 'a normalization algorithm'
   end
 
+  describe NFC do
+    let(:invariants) { { 2 => [1, 2, 3], 4 => [4, 5] } }
+    it_behaves_like 'a normalization algorithm'
+  end
+
+  describe NFKC do
+    let(:invariants) { { 4 => [1, 2, 3, 4, 5] } }
+    it_behaves_like 'a normalization algorithm'
+  end
+
   # Runs standard Unicode normalization tests from `file_path` for a given `normalizer`. Expected invariants are
   # specified via `invariants` hash.
   #

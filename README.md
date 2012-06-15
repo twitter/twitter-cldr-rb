@@ -233,7 +233,7 @@ TwitterCLDR provides ways to retrieve individual code points as well as normaliz
 Retrieve data for code points:
 
 ```ruby
-code_point = TwitterCldr::Shared::UnicodeData.for_code_point("1F3E9")
+code_point = TwitterCldr::Shared::CodePoint.for_hex("1F3E9")
 code_point.name             # "LOVE HOTEL"
 code_point.bidi_mirrored    # "N"
 code_point.category         # "So"

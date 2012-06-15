@@ -9,6 +9,16 @@ include TwitterCldr::Normalizers
 
 describe Hangul do
 
+  describe ".compose" do
+    it 'composes decomposed Hangul syllable without a trailing consonant' do
+      Hangul.compose([0x1101, 0x1167]).should == 0xAEF4
+    end
+
+    it 'composes decomposed Hangul syllable with a trailing consonant' do
+      Hangul.compose([0x1111, 0x1171, 0x11B6]).should == 0xD4DB
+    end
+  end
+
   describe ".decompose" do
     it 'decomposes precomposed Hangul syllable without a trailing consonant' do
       Hangul.decompose(0xAEF4).should == [0x1101, 0x1167]

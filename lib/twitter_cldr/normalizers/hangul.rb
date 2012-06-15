@@ -9,6 +9,17 @@ module TwitterCldr
 
       class << self
 
+        # Special composition for Hangul syllables. Documented in Section 3.12 at
+        # http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
+        #
+        def compose(code_points)
+          l = code_points.first - LBASE
+          v = code_points[1] - VBASE
+          t = code_points[2] ? code_points[2] - TBASE : 0  # T part may be missing, that's ok
+
+          SBASE + l * NCOUNT + v * TCOUNT + t
+        end
+
         # Special decomposition for Hangul syllables. Documented in Section 3.12 at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
         # Also see http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm#Hangul_Implicit_CEs
         #

@@ -63,35 +63,15 @@ module TwitterCldr
         end
       end
 
-      # Generates implicit weights for all code_points. Uses the approach described in
-      # http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm#Implicit_CEs
-      # but produces a single fractional collation element without any continuation.
-      #
       def implicit_collation_element(code_point)
-        # illegal values xxFFFE and xxFFFF are ignored ([] is equivalent to [0, 0, 0] if three levels are accounted)
+        # illegal values xxFFFE and xxFFFF are ignored ([] is equivalent to [0, 0, 0])
         return [] if (code_point & 0xFFFE) == 0xFFFE
 
-        code_point < 0xFFFF ? basic_collation_element(code_point) : supplementary_collation_element(code_point)
+        implicit_ce_generator.get_collation_element(code_point)
       end
 
-      def basic_collation_element(code_point)
-        # code point: xxxx yyyy yyyy yyyy
-        x = code_point >> 12
-        y = code_point & 0xFFF
-
-        # fractional collation element: [1101 xxxx 1yyy yyyy yyyy y100, 11, 11]
-        [0xD08004 | (x << 16) | (y << 3), UNMARKED, UNMARKED]
-      end
-
-      def supplementary_collation_element(code_point)
-        code_point -= 0x10000
-
-        # code point: xxxx xxxx xxxy yyyy yyyy
-        x = code_point >> 9
-        y = code_point & 0x1FF
-
-        # fractional collation element: [1110 xxxx xxxx xxx1 1yyy yyyy yy10 0000]
-        [0xE0018020 | (x << 17) | (y << 6), UNMARKED, UNMARKED]
+      def implicit_ce_generator
+        @implicit_ce_generator ||= TwitterCldr::Collation::ImplicitCEGenerator.new
       end
 
     end

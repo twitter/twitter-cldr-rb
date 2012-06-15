@@ -5,9 +5,10 @@
 
 module TwitterCldr
   module Collation
-    autoload :Collator,    'twitter_cldr/collation/collator'
-    autoload :SortKey,     'twitter_cldr/collation/sort_key'
-    autoload :Trie,        'twitter_cldr/collation/trie'
-    autoload :TrieBuilder, 'twitter_cldr/collation/trie_builder'
+    autoload :Collator,            'twitter_cldr/collation/collator'
+    autoload :ImplicitCEGenerator, 'twitter_cldr/collation/implicit_ce_generator'
+    autoload :SortKey,             'twitter_cldr/collation/sort_key'
+    autoload :Trie,                'twitter_cldr/collation/trie'
+    autoload :TrieBuilder,         'twitter_cldr/collation/trie_builder'
   end
 end

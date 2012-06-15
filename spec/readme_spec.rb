@@ -149,7 +149,7 @@ describe "README" do
   end
 
   it "verifies code point conversions" do
-    code_point = TwitterCldr::Shared::UnicodeData::CodePoint.for_hex("1F3E9")
+    code_point = TwitterCldr::Shared::CodePoint.for_hex("1F3E9")
     code_point.name.should             == "LOVE HOTEL"
     code_point.bidi_mirrored.should    == "N"
     code_point.category.should         == "So"

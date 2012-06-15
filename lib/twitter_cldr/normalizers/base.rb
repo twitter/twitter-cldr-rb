@@ -22,7 +22,7 @@ module TwitterCldr
         }
 
         def combining_class_for(code_point)
-          TwitterCldr::Shared::UnicodeData::CodePoint.for_hex(code_point).combining_class.to_i
+          TwitterCldr::Shared::CodePoint.for_hex(code_point).combining_class.to_i
         rescue NoMethodError
           0
         end

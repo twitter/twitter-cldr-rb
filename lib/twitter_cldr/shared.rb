@@ -10,6 +10,6 @@ module TwitterCldr
     autoload :Languages,   'twitter_cldr/shared/languages'
     autoload :Numbers,     'twitter_cldr/shared/numbers'
     autoload :Resources,   'twitter_cldr/shared/resources'
-    autoload :UnicodeData, 'twitter_cldr/shared/unicode_data'
+    autoload :CodePoint,   'twitter_cldr/shared/code_point'
   end
 end

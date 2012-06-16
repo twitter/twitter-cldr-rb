@@ -16,39 +16,49 @@ describe CodePoint do
     end
 
     it "should return nil for invalid code points" do
-      CodePoint.for_hex('abcd').should be_nil
+      CodePoint.for_hex('xyz').should be_nil
       CodePoint.for_hex('FFFFFFF').should be_nil
       CodePoint.for_hex('uytukhil123').should be_nil
     end
 
+    it "works with strings in a lower case" do
+      test_code_points_data(
+          "abcd" => ["ABCD", "MEETEI MAYEK LETTER HUK", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
+      )
+    end
+
+    it "works with strings shorter than 4 characters (by left-padding them with zeros)" do
+      test_code_points_data(
+          '306' => ['0306', 'COMBINING BREVE', 'Mn', '230', 'NSM', '', '', '', '', 'N', 'NON-SPACING BREVE', '', '', '', '']
+      )
+    end
+
     it "fetches valid information for the specified code point" do
-      test_data = {
-        '17D1' => ['17D1','KHMER SIGN VIRIAM','Mn','0','NSM',"","","","",'N',"","","","",""],
-        'FE91' => ['FE91','ARABIC LETTER BEH INITIAL FORM','Lo','0','AL','<initial> 0628',"","","",'N','GLYPH FOR INITIAL ARABIC BAA',"","","",""],
-        '24B5' => ['24B5','PARENTHESIZED LATIN SMALL LETTER Z','So','0','L','<compat> 0028 007A 0029',"","","",'N',"","","","",""],
-        '2128' => ['2128','BLACK-LETTER CAPITAL Z','Lu','0','L','<font> 005A',"","","",'N','BLACK-LETTER Z',"","","",""],
-        '1F241'=> ['1F241','TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09','So','0','L','<compat> 3014 4E09 3015',"","","",'N',"","","","",""]
-      }
-      test_data.each_pair do |code_point, data|
-        cp_data = CodePoint.for_hex(code_point)
-        cp_data.code_point.should == data[0]
-        cp_data.name.should == data[1]
-        cp_data.category.should == data[2]
-        cp_data.combining_class.should == data[3]
-      end
+      test_code_points_data(
+          '17D1'  => ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', "", "", "", "", 'N', "", "", "", "", ""],
+          'FE91'  => ['FE91', 'ARABIC LETTER BEH INITIAL FORM', 'Lo', '0', 'AL', '<initial> 0628', "", "", "", 'N', 'GLYPH FOR INITIAL ARABIC BAA', "", "", "", ""],
+          '24B5'  => ['24B5', 'PARENTHESIZED LATIN SMALL LETTER Z', 'So', '0', 'L', '<compat> 0028 007A 0029', "", "", "", 'N', "", "", "", "", ""],
+          '2128'  => ['2128', 'BLACK-LETTER CAPITAL Z', 'Lu', '0', 'L', '<font> 005A', "", "", "", 'N', 'BLACK-LETTER Z', "", "", "", ""],
+          '1F241' => ['1F241', 'TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09', 'So', '0', 'L', '<compat> 3014 4E09 3015', "", "", "", 'N', "", "", "", "", ""],
+      )
     end
 
     it "fetches valid information for a code point within a range" do
-      test_data = {
-        '4E11' => ["4E11","<CJK Ideograph>","Lo","0","L","","","","","N","","","","",""],
-        'AC55' => ["AC55","<Hangul Syllable>","Lo","0","L","","","","","N","","","","",""],
-        'D7A1' => ["D7A1","<Hangul Syllable>","Lo","0","L","","","","","N","","","","",""],
-        'DAAA' => ["DAAA","<Non Private Use High Surrogate>","Cs","0","L","","","","","N","","","","",""],
-        'F8FE' => ["F8FE","<Private Use>","Co","0","L","","","","","N","","","","",""]
-      }
+      test_code_points_data(
+          '4E11' => ["4E11", "<CJK Ideograph>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          'AC55' => ["AC55", "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          'D7A1' => ["D7A1", "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          'DAAA' => ["DAAA", "<Non Private Use High Surrogate>", "Cs", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          'F8FE' => ["F8FE", "<Private Use>", "Co", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
+      )
+    end
 
-      test_data.each_pair do |code_point, data|
+    def test_code_points_data(test_data)
+      test_data.each do |code_point, data|
         cp_data = CodePoint.for_hex(code_point)
+
+        cp_data.should_not be_nil
+
         cp_data.code_point.should == data[0]
         cp_data.name.should == data[1]
         cp_data.category.should == data[2]
@@ -94,11 +104,15 @@ describe CodePoint do
 
   describe "#hangul_type" do
     before(:each) do
-      stub(CodePoint).hangul_blocks { { :lparts => [1..10],
-                                        :vparts => [21..30],
-                                        :tparts => [41..50],
-                                        :compositions => [1..30],
-                                        :decompositions => [31..50] } }
+      stub(CodePoint).hangul_blocks {
+        {
+            :lparts         => [1..10],
+            :vparts         => [21..30],
+            :tparts         => [41..50],
+            :compositions   => [1..30],
+            :decompositions => [31..50]
+        }
+      }
     end
 
     it "returns nil if not part of a hangul block" do

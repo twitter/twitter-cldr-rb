@@ -38,7 +38,9 @@ module TwitterCldr
       class << self
 
         def for_hex(code_point)
-          target = get_block(code_point.rjust(4, "0").upcase)
+          code_point = code_point.rjust(4, '0').upcase
+
+          target = get_block(code_point)
 
           if target && target.first
             block_data = TwitterCldr.get_resource(:unicode_data, target.first)

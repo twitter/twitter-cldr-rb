@@ -2,6 +2,19 @@
 # 2012-01-03, 21:52:55 GMT [MD]
 # VERSION: UCA=6.1.0, UCD=6.1.0
 # For a description of the format and usage, see CollationAuxiliary.html
+#
+# Three custom changes are made in this file:
+#
+#   * Lines like '006C | 00B7; [, DB A9, 05]' are unfolded into the full form - '006C 00B7; [3D, 05, 05][, DB A9, 05]'
+#     (in this example [3D, 05, 05] is a collation element for 0x006C).
+#     Note:This might break if tailoring is applied to 0x006C because with this rule unfolded collation element for
+#     '006C 00B7' won't be automatically updated when a collation element for 0x006C is changed.
+#
+#   * SPECIAL FINAL VALUES are commented, because there unnecessary for the current implementation and are breaking some
+#     UCA tests.
+#
+#   * HOMELESS COLLATION ELEMENTS are commented because they don't seem necessary - tests are passing without them.
+#
 
 [UCA version = 6.1.0]
 

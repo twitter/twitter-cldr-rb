@@ -36,7 +36,7 @@ module TwitterCldr
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
         # non-ignorable test from CollationTest_NON_IGNORABLE.txt). ICU uses some optimizations to apply normalization
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
-        code_points = TwitterCldr::Normalizers::NFD.normalize_code_points(code_points)
+        code_points = TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
 
         code_points.map { |cp| cp.to_i(16) }
       end
@@ -83,7 +83,7 @@ module TwitterCldr
 
           # get next code point (possibly non-starter)
           non_starter_code_point = integer_code_points[non_starter_pos]
-          combining_class        = TwitterCldr::Normalizers::Base.combining_class_for(non_starter_code_point.to_s(16))
+          combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point.to_s(16))
 
           # combining class has been already used, so this non-starter is 'blocked' from our prefix
           break if used_combining_classes[combining_class]

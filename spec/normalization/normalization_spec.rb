@@ -7,7 +7,7 @@ require 'spec_helper'
 
 require 'open-uri'
 
-include TwitterCldr::Normalizers
+include TwitterCldr::Normalization
 
 describe 'Unicode Normalization Algorithms' do
 
@@ -18,11 +18,11 @@ describe 'Unicode Normalization Algorithms' do
   NORMALIZATION_TEST_URL = 'http://unicode.org/Public/UNIDATA/NormalizationTest.txt'
 
   shared_examples_for 'a normalization algorithm' do
-    it 'passes all the tests in NormalizersTestShort.txt' do
+    it 'passes all the tests in NormalizationTestShort.txt' do
       run_normalization_test(described_class, invariants, SHORT_TEST_PATH)
     end
 
-    it 'passes all the tests in NormalizersTest.txt', :slow => true do
+    it 'passes all the tests in NormalizationTest.txt', :slow => true do
       prepare_full_test
       run_normalization_test(described_class, invariants, FULL_TEST_PATH)
     end

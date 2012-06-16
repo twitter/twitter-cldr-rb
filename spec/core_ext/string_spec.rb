@@ -111,7 +111,7 @@ describe LocalizedString do
 
   describe "#normalize" do
     it "returns a normalized instance of LocalizedString, defaults to NFD" do
-      mock.proxy(TwitterCldr::Normalizers::NFD).normalize("español")
+      mock.proxy(TwitterCldr::Normalization::NFD).normalize("español")
       "español".bytes.to_a.should == [101, 115, 112, 97, 195, 177, 111, 108]
       result = "español".localize.normalize
       result.should be_a(LocalizedString)
@@ -119,7 +119,7 @@ describe LocalizedString do
     end
 
     it "returns a normalized instance of LocalizedString using the specified algorithm" do
-      mock.proxy(TwitterCldr::Normalizers::NFKD).normalize("español")
+      mock.proxy(TwitterCldr::Normalization::NFKD).normalize("español")
       "español".bytes.to_a.should == [101, 115, 112, 97, 195, 177, 111, 108]
       result = "español".localize.normalize(:using => :NFKD)
       result.should be_a(LocalizedString)

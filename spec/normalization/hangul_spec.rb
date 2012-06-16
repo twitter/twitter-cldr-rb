@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Normalizers
+include TwitterCldr::Normalization
 
 describe Hangul do
 

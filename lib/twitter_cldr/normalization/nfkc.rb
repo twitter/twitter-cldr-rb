@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Normalizers
+  module Normalization
 
     # Implements normalization of a Unicode string to Normalization Form KC (NFKC).
     # This normalization form includes compatibility decomposition followed by compatibility composition.
@@ -20,7 +20,7 @@ module TwitterCldr
         end
 
         def normalize_code_points(code_points)
-          compose(TwitterCldr::Normalizers::NFKD.normalize_code_points(code_points))
+          compose(TwitterCldr::Normalization::NFKD.normalize_code_points(code_points))
         end
 
         protected
@@ -59,7 +59,7 @@ module TwitterCldr
         end
 
         def compose_hangul(code_points)
-          TwitterCldr::Normalizers::Hangul.compose(code_points.map { |cp| cp.hex }).to_s(16).upcase.rjust(4, "0")
+          TwitterCldr::Normalization::Hangul.compose(code_points.map { |cp| cp.hex }).to_s(16).upcase.rjust(4, "0")
         end
 
         # Implements composition of Unicode code points following the guidelines here:

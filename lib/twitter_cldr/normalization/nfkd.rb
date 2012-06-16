@@ -4,12 +4,12 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  # Normalizers module includes algorithm for Unicode normalization. Basic information on this topic can be found in the
+  # Normalization module includes algorithm for Unicode normalization. Basic information on this topic can be found in the
   # Unicode Standard Annex #15 "Unicode Normalization Forms" at http://www.unicode.org/reports/tr15/. More detailed
   # description is given in the section "3.11 Normalization Forms" of the Unicode Standard core specification. The
   # latest version at the moment (for Unicode 6.1) is available at http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf.
   #
-  module Normalizers
+  module Normalization
 
     # Implements normalization of a Unicode string to Normalization Form KD (NFKD).
     # This normalization form includes only compatibility decomposition.
@@ -74,7 +74,7 @@ module TwitterCldr
         end
 
         def decompose_hangul(code_point)
-          TwitterCldr::Normalizers::Hangul.decompose(code_point.hex).map { |e| e.to_s(16).upcase }
+          TwitterCldr::Normalization::Hangul.decompose(code_point.hex).map { |e| e.to_s(16).upcase }
         end
 
         # Performs the Canonical Ordering Algorithm by stable sorting of every subsequence of combining code points

@@ -32,7 +32,7 @@ module TwitterCldr
       options[:using] ||= :NFD
 
       if VALID_NORMALIZERS.include?(options[:using])
-        normalizer_const = TwitterCldr::Normalizers.const_get(options[:using])
+        normalizer_const = TwitterCldr::Normalization.const_get(options[:using])
         LocalizedString.new(normalizer_const.normalize(@base_obj), @locale)
       else
         raise ArgumentError.new("Invalid normalization form specified with :using option.  Choices are [#{VALID_NORMALIZERS.map(&:to_s).join(", ")}]")

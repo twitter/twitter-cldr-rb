@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Normalizers
+  module Normalization
     module Hangul
 
       class << self

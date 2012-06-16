@@ -10,8 +10,6 @@ module TwitterCldr
 
       FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
 
-      UNMARKED = 3
-
       def sort_key(string_or_code_points)
         sort_key_for_code_points(get_integer_code_points(string_or_code_points))
       end

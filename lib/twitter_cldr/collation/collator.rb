@@ -112,9 +112,6 @@ module TwitterCldr
       end
 
       def implicit_collation_element(integer_code_point)
-        # illegal values xxFFFE and xxFFFF are ignored ([] is equivalent to [0, 0, 0])
-        return [] if (integer_code_point & 0xFFFE) == 0xFFFE
-
         implicit_ce_generator.get_collation_element(integer_code_point)
       end
 

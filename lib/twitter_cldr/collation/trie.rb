@@ -8,8 +8,8 @@ module TwitterCldr
 
     class Trie
 
-      def initialize
-        @root = [nil, {}]
+      def initialize(suffixes = {})
+        @root = [nil, suffixes]
       end
 
       def add(key, value)
@@ -45,7 +45,7 @@ module TwitterCldr
           end
         end
 
-        [node[0], prefix_size]
+        node + [prefix_size]
       end
 
     end

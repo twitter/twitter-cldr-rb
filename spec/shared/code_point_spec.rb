@@ -39,7 +39,7 @@ describe CodePoint do
           'FE91'  => ['FE91', 'ARABIC LETTER BEH INITIAL FORM', 'Lo', '0', 'AL', '<initial> 0628', "", "", "", 'N', 'GLYPH FOR INITIAL ARABIC BAA', "", "", "", ""],
           '24B5'  => ['24B5', 'PARENTHESIZED LATIN SMALL LETTER Z', 'So', '0', 'L', '<compat> 0028 007A 0029', "", "", "", 'N', "", "", "", "", ""],
           '2128'  => ['2128', 'BLACK-LETTER CAPITAL Z', 'Lu', '0', 'L', '<font> 005A', "", "", "", 'N', 'BLACK-LETTER Z', "", "", "", ""],
-          '1F241' => ['1F241', 'TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09', 'So', '0', 'L', '<compat> 3014 4E09 3015', "", "", "", 'N', "", "", "", "", ""],
+          '1F241' => ['1F241', 'TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09', 'So', '0', 'L', '<compat> 3014 4E09 3015', "", "", "", 'N', "", "", "", "", ""]
       )
     end
 

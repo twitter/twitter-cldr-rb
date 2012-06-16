@@ -13,13 +13,13 @@ describe Trie do
 
   let(:values) do
     [
-        [[1],       '1'],
-        [[1, 4],    '14'],
-        [[1, 5],    '15'],
+        [[1], '1'],
+        [[1, 4], '14'],
+        [[1, 5], '15'],
         [[1, 4, 8], '148'],
-        [[2],       '2'],
+        [[2], '2'],
         [[2, 7, 5], '275'],
-        [[3, 9],    '39']
+        [[3, 9], '39']
     ]
   end
 
@@ -47,20 +47,51 @@ describe Trie do
   end
 
   describe '#find_prefix' do
-    it 'returns nil as a value and 0 as prefix size if the value is not found' do
-      trie.find_prefix([4]).should == [nil, 0]
+    describe 'first (value) and third (prefix size) elements of the returned array' do
+      it 'value is 0 nil and prefix size is 0 if the prefix was not found' do
+        test_find_prefix(trie, [4], nil, 0)
+      end
+
+      it 'stored value and key size as a prefix size if the whole key was found' do
+        values.each do |key, value|
+          test_find_prefix(trie, key, value)
+        end
+      end
+
+      it 'stored value and size of the corresponding prefix if only part of the key was found' do
+        tests = {
+            [1, 9]          => ['1', 1],
+            [1, 4, 2]       => ['14', 2],
+            [1, 4, 8, 9, 2] => ['148', 3],
+            [2, 7, 5, 5]    => ['275', 3]
+        }
+
+        tests.each { |key, result| test_find_prefix(trie, key, *result) }
+      end
+
+      def test_find_prefix(trie, key, value, size = key.size)
+        result = trie.find_prefix(key)
+
+        result[0].should == value
+        result[2].should == size
+      end
     end
 
-    it 'returns value and key size for each existing key' do
-      values.each { |key, value| trie.find_prefix(key).should == [value, key.size] }
+    describe 'second (subtrie) element of the returned array' do
+      it 'is a hash of possible suffixes for the prefix that was found' do
+        trie.find_prefix([1, 4, 8])[1].should == {}
+        trie.find_prefix([2, 7])[1].should == { 5 => ["275", { }] }
+      end
+
+      it 'is a hash representing the whole trie if the prefix was not found' do
+        trie.find_prefix([404])[1].should == {
+            1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
+            2 => ['2', { 7 => [nil,  { 5 => ['275', {}] }] }],
+            3 => [nil, { 9 => ['39', {}] }]
+        }
+      end
     end
 
-    it 'returns prefix size when the value is found' do
-      trie.find_prefix([1, 9]).should          == ['1',   1]
-      trie.find_prefix([1, 4, 2]).should       == ['14',  2]
-      trie.find_prefix([1, 4, 8, 9, 2]).should == ['148', 3]
-      trie.find_prefix([2, 7, 5, 5]).should    == ['275', 3]
-    end
   end
 
 end

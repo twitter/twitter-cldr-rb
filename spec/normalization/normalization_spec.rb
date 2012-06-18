@@ -11,20 +11,19 @@ include TwitterCldr::Normalization
 
 describe 'Unicode Normalization Algorithms' do
 
-  NORMALIZERS_SPEC_PATH = File.dirname(__FILE__)
-  SHORT_TEST_PATH       = File.join(NORMALIZERS_SPEC_PATH, 'NormalizationTestShort.txt')
-  FULL_TEST_PATH        = File.join(NORMALIZERS_SPEC_PATH, 'NormalizationTest.txt')
+  SHORT_NORMALIZATION_TEST_PATH = File.join(File.dirname(__FILE__), 'NormalizationTestShort.txt')
+  FULL_NORMALIZATION_TEST_PATH  = File.join(File.dirname(__FILE__), 'NormalizationTest.txt')
 
-  NORMALIZATION_TEST_URL = 'http://unicode.org/Public/UNIDATA/NormalizationTest.txt'
+  FULL_NORMALIZATION_TEST_URL = 'http://unicode.org/Public/UNIDATA/NormalizationTest.txt'
 
   shared_examples_for 'a normalization algorithm' do
     it 'passes all the tests in NormalizationTestShort.txt' do
-      run_normalization_test(described_class, invariants, SHORT_TEST_PATH)
+      run_test(described_class, invariants, SHORT_NORMALIZATION_TEST_PATH)
     end
 
     it 'passes all the tests in NormalizationTest.txt', :slow => true do
       prepare_full_test
-      run_normalization_test(described_class, invariants, FULL_TEST_PATH)
+      run_test(described_class, invariants, FULL_NORMALIZATION_TEST_PATH)
     end
   end
 
@@ -59,7 +58,7 @@ describe 'Unicode Normalization Algorithms' do
   # where (c1, c2,...) are columns of the normalization test separated by semicolons and normalized() is the
   # normalization function. Note, how expectation and tests columns indexes match the numbers in the `invariants` hash.
   #
-  def run_normalization_test(normalizer, invariants, file_path)
+  def run_test(normalizer, invariants, file_path)
     open(file_path, 'r:UTF-8') do |file|
       file.each do |line|
         next if line.empty? || line =~ /^(@|#)/
@@ -74,7 +73,7 @@ describe 'Unicode Normalization Algorithms' do
 
             normalized = normalizer.normalize_code_points(test)
 
-            message = normalization_error_message(line, test, expected, normalized, test_index, expected_index)
+            message = error_message(line, test, expected, normalized, test_index, expected_index)
             normalized.should(eq(expected), message)
           end
         end
@@ -82,9 +81,9 @@ describe 'Unicode Normalization Algorithms' do
     end
   end
 
-  # Generates helpful error message for normalization test failure.
+  # Generates a descriptive error message test failure.
   #
-  def normalization_error_message(line, test, expected, normalized, test_index, expected_index)
+  def error_message(line, test, expected, normalized, test_index, expected_index)
     <<-END
 Test:       "#{line.strip}"
 Invariant:  normalized(c#{test_index}) == c#{expected_index}
@@ -93,13 +92,13 @@ Got:        #{normalized.inspect}
     END
   end
 
-  # Downloads full Unicode normalization tests suit if necessary.
+  # Downloads full version of the test if necessary.
   #
   def prepare_full_test
-    return if File.file?(FULL_TEST_PATH)
+    return if File.file?(FULL_NORMALIZATION_TEST_PATH)
 
     print '    Downloading NormalizationTest.txt ... '
-    open(FULL_TEST_PATH, 'w') { |file| file.write(open(NORMALIZATION_TEST_URL).read) }
+    open(FULL_NORMALIZATION_TEST_PATH, 'w') { |file| file.write(open(FULL_NORMALIZATION_TEST_URL).read) }
     puts 'done.'
   end
 

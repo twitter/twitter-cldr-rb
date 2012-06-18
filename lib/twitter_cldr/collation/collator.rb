@@ -48,16 +48,18 @@ module TwitterCldr
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value
       # is an array of well formed (including weights for all significant levels) integer arrays.
       #
-      # All used code points are removed from the beginning of the input array.
+      # NOTE (side-effect): all used code points are removed from the input array.
       #
       def code_point_collation_elements(integer_code_points)
-        explicit_collation_elements(integer_code_points) || [implicit_collation_element(integer_code_points.shift)]
+        explicit_collation_elements(integer_code_points) || implicit_collation_elements(integer_code_points)
       end
 
       # Tries to build explicit collation elements array for the longest code points prefix in the given sequence. When
-      # possible, combines last code point of this sequence with non-subsequent non-starters. That's necessary because
-      # canonical ordering (that is performed during normalization) can break contractions that existed in the original,
-      # de-normalized string.
+      # possible, combines this prefix with (not necessarily subsequent) non-starters that follow it in the sequence.
+      # That's necessary because canonical ordering (that is performed during normalization) can break contractions
+      # that existed in the original, de-normalized string.
+      #
+      # NOTE (side-effect): all used code points are removed from the input array.
       #
       # For more information see section '4.2 Produce Array' of the main algorithm at http://www.unicode.org/reports/tr10/#Main_Algorithm
       #
@@ -72,8 +74,7 @@ module TwitterCldr
 
         non_starter_pos = 0
 
-        # mark 0 combining class (assigned to starters) as used to exit the loop when it's encountered
-        used_combining_classes = { 0 => true }
+        used_combining_classes = {}
 
         while non_starter_pos < integer_code_points.size && !suffixes.empty?
           # create a trie from a hash of suffixes available for the chosen prefix
@@ -83,13 +84,13 @@ module TwitterCldr
           non_starter_code_point = integer_code_points[non_starter_pos]
           combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point.to_s(16))
 
-          # combining class has been already used, so this non-starter is 'blocked' from our prefix
-          break if used_combining_classes[combining_class]
+          # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
+          break if combining_class == 0 || used_combining_classes[combining_class]
 
           used_combining_classes[combining_class] = true
 
-          # try to find collation elements for [prefix + non-starter] code points sequence
-          # as the subtrie contains suffixes (without prefix) we pass only non-starter itself
+          # Try to find collation elements for [prefix + non-starter] code points sequence. As the subtrie contains
+          # suffixes (without prefix) we pass only non-starter itself.
           new_collation_elements, new_suffixes = subtrie.find_prefix([non_starter_code_point]).first(2)
 
           if new_collation_elements
@@ -97,8 +98,7 @@ module TwitterCldr
             collation_elements = new_collation_elements
             suffixes           = new_suffixes
 
-            # remove non-starter from its position in the code points sequence
-            # after that we can move further from the same position
+            # Remove non-starter from its position in the sequence. Then we can move further from the same position.
             integer_code_points.delete_at(non_starter_pos)
           else
             # move to the next code point
@@ -109,12 +109,8 @@ module TwitterCldr
         collation_elements
       end
 
-      def implicit_collation_element(integer_code_point)
-        implicit_ce_generator.get_collation_element(integer_code_point)
-      end
-
-      def implicit_ce_generator
-        @implicit_ce_generator ||= TwitterCldr::Collation::ImplicitCEGenerator.new
+      def implicit_collation_elements(integer_code_points)
+        TwitterCldr::Collation::ImplicitCollationElements.for_code_point(integer_code_points.shift)
       end
 
     end

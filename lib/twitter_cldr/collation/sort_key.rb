@@ -33,12 +33,12 @@ module TwitterCldr
       end
 
       def bytes_array
-        @bytes_array ||= build
+        @bytes_array ||= build_bytes_array
       end
 
       private
 
-      def build
+      def build_bytes_array
         @bytes_array = []
 
         append_primary_bytes

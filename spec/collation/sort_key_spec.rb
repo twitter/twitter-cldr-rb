@@ -36,7 +36,7 @@ describe SortKey do
     end
 
     it 'builds bytes array only once' do
-      mock(sort_key).build { sort_key_bytes }
+      mock(sort_key).build_bytes_array { sort_key_bytes }
       sort_key.bytes_array.object_id == sort_key.bytes_array.object_id
     end
 

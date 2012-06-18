@@ -47,6 +47,10 @@ describe SortKey do
     it 'compresses tertiary weights' do
       SortKey.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]]).bytes_array.should == [1, 1, 132, 167, 6]
     end
+
+    it 'compresses secondary and tertiary weights into multiple bytes if necessary' do
+      SortKey.new([[39, 5, 5]] * 100).bytes_array.should == [39] * 100 + [1, 69, 40, 1, 48, 48, 18]
+    end
   end
 
 end

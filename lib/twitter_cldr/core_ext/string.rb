@@ -11,7 +11,7 @@ end
 
 module TwitterCldr
   class LocalizedString < LocalizedObject
-    VALID_NORMALIZERS = [:NFD, :NFKD]
+    VALID_NORMALIZERS = [:NFD, :NFKD, :NFC, :NFKC]
 
     # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
     # +TwitterCldr::Utils.interpolate+ method for interpolation syntax).

@@ -4,23 +4,21 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Shared
-    class LocalizedTimespan < LocalizedObject
+  class LocalizedTimespan < LocalizedObject
 
-      def initialize(seconds, locale)
-        @formatter = TwitterCldr::Formatters::TimespanFormatter.new(:locale => locale)
-        @seconds = seconds
-      end
+    def initialize(seconds, locale)
+      @formatter = TwitterCldr::Formatters::TimespanFormatter.new(:locale => locale)
+      @seconds = seconds
+    end
 
-      def to_s(unit = :default)
-        @formatter.format(@seconds, unit)
-      end
+    def to_s(unit = :default)
+      @formatter.format(@seconds, unit)
+    end
 
-      protected
+    protected
 
-      def formatter_const
-        TwitterCldr::Formatters::TimespanFormatter
-      end
+    def formatter_const
+      TwitterCldr::Formatters::TimespanFormatter
     end
   end
 end

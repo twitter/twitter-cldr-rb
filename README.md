@@ -109,6 +109,51 @@ dt = TwitterCldr::LocalizedDateTime.new(DateTime.now, :es)
 dt.to_short_s  # ...etc
 ```
 
+#### Relative Dates and Times
+
+In addition to formatting full dates and times, TwitterCLDR supports relative time spans via several convenience methods and the `LocalizedTimespan` class.  TwitterCLDR tries to guess the best time unit (eg. days, hours, minutes, etc) based on the length of the time span.  Unless otherwise specified, TwitterCLDR will use the current date and time as the reference point for the calculation.
+
+```ruby
+(DateTime.now - 1).localize.ago        # 1 day ago
+(DateTime.now - 0.5).localize.ago      # 12 hours ago  (i.e. half a day)
+
+(DateTime.now + 1).localize.until      # In 1 day
+(DateTime.now + 0.5).localize.until    # In 12 hours
+```
+
+Specify other locales:
+
+```ruby
+(DateTime.now - 1).localize(:de).ago        # Vor 1 Tag
+(DateTime.now + 1).localize(:de).until      # In 1 Tag
+```
+
+Force TwitterCLDR to use a specific time unit by including the `:unit` option:
+
+```ruby
+(DateTime.now - 1).localize(:de).ago(:unit => :hour)        # Vor 24 Stunden
+(DateTime.now + 1).localize(:de).until(:unit => :hour)      # In 24 Stunden
+```
+
+Specify a different reference point for the time span calculation:
+
+```ruby
+# 86400 = 1 day in seconds, 259200 = 3 days in seconds
+(Time.now + 86400).localize(:de).ago(:unit => :hour, :base_time => (Time.now + 259200))  # Vor 48 Stunden
+```
+
+Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
+
+```ruby
+ts = TwitterCldr::LocalizedTimespan.new(86400, :de)
+ts.to_s                    # In 1 Tag
+ts.to_s(:hour)             # In 24 Stunden
+
+ts = TwitterCldr::LocalizedTimespan.new(-86400, :de)
+ts.to_s                    # Vor 1 Tag
+ts.to_s(:hour)             # Vor 24 Stunden
+```
+
 ### Plural Rules
 
 Some languages, like English, have "countable" nouns.  You probably know this concept better as "plural" and "singular", i.e. the difference between "strawberry" and "strawberries".  Other languages, like Russian, have three plural forms: one (numbers ending in 1), few (numbers ending in 2, 3, or 4), and many (everything else).  Still other languages like Japanese don't use countable nouns at all.
@@ -252,7 +297,7 @@ Convert code points to characters:
 TwitterCldr::Utils::CodePoints.to_string(["00BF"])  # "¿"
 ```
 
-Normalize/decompose a Unicode string (NFD, NFKD implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
+Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
 TwitterCldr::Normalization::NFD.normalize("français")  # "français"

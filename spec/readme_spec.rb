@@ -74,6 +74,31 @@ describe "README" do
     dt.to_short_s.should == "12/12/11 21:44"
   end
 
+  it "verifies relative time spans" do
+    (DateTime.now - 1).localize.ago.should == "1 day ago"
+    (DateTime.now - 0.5).localize.ago.should == "12 hours ago"  # (i.e. half a day)
+
+    (DateTime.now + 1).localize.until.should == "In 1 day"
+    (DateTime.now + 0.5).localize.until.should == "In 12 hours"
+
+    (DateTime.now - 1).localize(:de).ago.should == "Vor 1 Tag"
+    (DateTime.now + 1).localize(:de).until.should == "In 1 Tag"
+
+    (DateTime.now - 1).localize(:de).ago(:unit => :hour).should == "Vor 24 Stunden"
+    (DateTime.now + 1).localize(:de).until(:unit => :hour).should == "In 24 Stunden"
+
+    # 86400 = 1 day in seconds, 259200 = 3 days in seconds
+    (Time.now + 86400).localize(:de).ago(:unit => :hour, :base_time => (Time.now + 259200)).should == "Vor 48 Stunden"
+
+    ts = TwitterCldr::LocalizedTimespan.new(86400, :de)
+    ts.to_s.should == "In 1 Tag"
+    ts.to_s(:hour).should == "In 24 Stunden"
+
+    ts = TwitterCldr::LocalizedTimespan.new(-86400, :de)
+    ts.to_s.should == "Vor 1 Tag"
+    ts.to_s(:hour).should == "Vor 24 Stunden"
+  end
+
   it "verifies plural rules" do
     1.localize(:ru).plural_rule.should == :one
     2.localize(:ru).plural_rule.should == :few

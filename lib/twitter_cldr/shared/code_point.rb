@@ -63,7 +63,7 @@ module TwitterCldr
         def hangul_type(code_point)
           if code_point
             code_point_int = code_point.hex
-            [:lparts, :vparts, :tparts, :compositions, :decompositions].each do |type|
+            [:lparts, :vparts, :tparts, :compositions].each do |type|
               hangul_blocks[type].each do |range|
                 return type if range.include?(code_point_int)
               end
@@ -80,7 +80,7 @@ module TwitterCldr
         protected
 
         def hangul_blocks
-          @hangul_blocks ||= TwitterCldr.get_resource(:unicode_data, :blocks_hangul)
+          @hangul_blocks ||= TwitterCldr.get_resource(:unicode_data, :hangul_blocks)
         end
 
         def composition_exclusions

@@ -97,8 +97,7 @@ describe CodePoint do
       stub(CodePoint).hangul_blocks { { :lparts => [1..10],
                                         :vparts => [21..30],
                                         :tparts => [41..50],
-                                        :compositions => [1..30],
-                                        :decompositions => [31..50] } }
+                                        :compositions => [1..50] } }
     end
 
     it "returns nil if not part of a hangul block" do
@@ -111,9 +110,8 @@ describe CodePoint do
       CodePoint.hangul_type(41.to_s(16)).should == :tparts
     end
 
-    it "returns composition or decomposition if no part can be found" do
+    it "returns composition if no part can be found" do
       CodePoint.hangul_type(11.to_s(16)).should == :compositions
-      CodePoint.hangul_type(40.to_s(16)).should == :decompositions
     end
   end
 

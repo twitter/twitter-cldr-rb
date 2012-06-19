@@ -11,7 +11,11 @@ module TwitterCldr
       FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
 
       def sort_key(string_or_code_points)
-        sort_key_for_code_points(get_integer_code_points(string_or_code_points))
+        sort_key_for_code_points(get_code_points(string_or_code_points))
+      end
+
+      def compare(string_a, string_b)
+        string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
       end
 
       def trie
@@ -24,11 +28,32 @@ module TwitterCldr
 
       private
 
+      def comparison_key(string)
+        {
+            :code_points => get_integer_code_points(TwitterCldr::Utils::CodePoints.from_string(string)),
+            :sort_key    => sort_key(string)
+        }
+      end
+
+      def compare_keys(a, b)
+        (a[:sort_key] <=> b[:sort_key]).nonzero? || a[:code_points] <=> b[:code_points]
+      end
+
       def sort_key_for_code_points(integer_code_points)
         TwitterCldr::Collation::SortKey.build(get_collation_elements(integer_code_points))
       end
 
-      def get_integer_code_points(str_or_code_points)
+      def get_integer_code_points(code_points)
+        code_points.map { |code_point| code_point.to_i(16) }
+      end
+
+      def get_collation_elements(integer_code_points)
+        result = []
+        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
+        result
+      end
+
+      def get_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
@@ -36,13 +61,7 @@ module TwitterCldr
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
         code_points = TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
 
-        code_points.map { |cp| cp.to_i(16) }
-      end
-
-      def get_collation_elements(integer_code_points)
-        result = []
-        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
-        result
+        get_integer_code_points(code_points)
       end
 
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value

@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Normalizers
+  module Normalization
 
     # Implements normalization of a Unicode string to Normalization Form KC (NFKC).
     # This normalization form includes compatibility decomposition followed by compatibility composition.
@@ -20,7 +20,7 @@ module TwitterCldr
         end
 
         def normalize_code_points(code_points)
-          compose(TwitterCldr::Normalizers::NFKD.normalize_code_points(code_points))
+          compose(TwitterCldr::Normalization::NFKD.normalize_code_points(code_points))
         end
 
         protected
@@ -44,7 +44,7 @@ module TwitterCldr
             end
 
             if hangul_code_points.size > 1 && !next_hangul_type
-              hangul_code_points.size.times { final.pop }
+              final.pop(hangul_code_points.size)
               final << compose_hangul(hangul_code_points)
               hangul_code_points.clear
             end
@@ -55,23 +55,11 @@ module TwitterCldr
         end
 
         def valid_hangul_sequence?(buffer_size, hangul_type)
-          case [buffer_size, hangul_type]
-            when [0, :lparts], [1, :vparts], [2, :tparts]
-              true
-            else
-              false
-          end
+          [[0, :lparts], [1, :vparts], [2, :tparts]].include?([buffer_size, hangul_type])
         end
 
-        # Special composition for Hangul syllables. Documented in Section 3.12 at
-        # http://www.unicode.org/versions/Unicode6.1.0/ch03.pdf
-        #
         def compose_hangul(code_points)
-          l_index = code_points.first.hex - HANGUL_DECOMPOSITION_CONSTANTS[:LBase]
-          v_index = code_points[1].hex - HANGUL_DECOMPOSITION_CONSTANTS[:VBase]
-          t_index = code_points[2] ? code_points[2].hex - HANGUL_DECOMPOSITION_CONSTANTS[:TBase] : 0  # tpart may be missing, that's ok
-          lv_index = (l_index * HANGUL_DECOMPOSITION_CONSTANTS[:NCount]) + (v_index * HANGUL_DECOMPOSITION_CONSTANTS[:TCount])
-          (HANGUL_DECOMPOSITION_CONSTANTS[:SBase] + lv_index + t_index).to_s(16).upcase.rjust(4, "0")
+          TwitterCldr::Normalization::Hangul.compose(code_points.map { |cp| cp.hex }).to_s(16).upcase.rjust(4, "0")
         end
 
         # Implements composition of Unicode code points following the guidelines here:

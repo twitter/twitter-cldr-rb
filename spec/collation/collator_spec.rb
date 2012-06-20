@@ -90,4 +90,20 @@ describe Collator do
     end
   end
 
+  describe '#sort' do
+    let(:collator) { Collator.new }
+
+    it 'sorts strings by sort keys' do
+      [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock(collator).sort_key(s) { key } }
+
+      collator.sort(%w[bca aaa abc]).should == %w[aaa abc bca]
+    end
+
+    it 'sorts strings with equal sort keys by code points' do
+      [['aaa', [1, 2, 3]], ['abc', [1, 2, 3]], ['bca', [1, 2, 3]]].each { |s, key| mock(collator).sort_key(s) { key } }
+
+      collator.sort(%w[bca abc aaa]).should == %w[aaa abc bca]
+    end
+  end
+
 end

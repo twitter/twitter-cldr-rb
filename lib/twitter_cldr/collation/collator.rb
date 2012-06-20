@@ -14,6 +14,10 @@ module TwitterCldr
         sort_key_for_code_points(get_code_points(string_or_code_points))
       end
 
+      def sort(strings)
+        strings.map{ |s| [s, comparison_key(s)] }.sort{ |a, b| compare_keys(a[1], b[1]) }.map(&:first)
+      end
+
       def compare(string_a, string_b)
         string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
       end

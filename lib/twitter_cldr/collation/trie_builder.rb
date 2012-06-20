@@ -6,6 +6,8 @@
 module TwitterCldr
   module Collation
 
+    # Builds a collation elements Trie from the file containing a fractional collation elements table.
+    #
     class TrieBuilder
 
       FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/

@@ -6,6 +6,9 @@
 module TwitterCldr
   module Collation
 
+    # Module for generation of implicit collation elements for code points (including some CJK characters), that are
+    # not explicitly mentioned in the collation elements table.
+    #
     module ImplicitCollationElements
 
       DEFAULT_SECONDARY_AND_TERTIARY = 5

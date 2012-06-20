@@ -6,6 +6,8 @@
 module TwitterCldr
   module Collation
 
+    # A class for building collation sort key from an array of collation elements.
+    #
     class SortKey
 
       PRIMARY_LEVEL, SECONDARY_LEVEL, TERTIARY_LEVEL = 0, 1, 2
@@ -18,13 +20,18 @@ module TwitterCldr
 
       # Returns a sort key as an array of bytes.
       #
+      # Arguments:
+      #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #
+      # An instance of the class is created only to prevent passing of @collation_elements and @bytes_array from one
+      # method into another while forming the sort key.
       #
       def self.build(collation_elements)
         new(collation_elements).bytes_array
       end
 
-      # Params:
+      # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
       #

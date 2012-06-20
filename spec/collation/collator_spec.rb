@@ -70,8 +70,8 @@ describe Collator do
     let(:another_sort_key) { [6, 8, 9, 2] }
 
     it 'compares strings by sort keys' do
-      stub(collator).sort_key('foo') { sort_key }
-      stub(collator).sort_key('bar') { another_sort_key }
+      stub_sort_key(collator, 'foo', sort_key)
+      stub_sort_key(collator, 'bar', another_sort_key)
 
       collator.compare('foo', 'bar').should == -1
       collator.compare('bar', 'foo').should == 1
@@ -94,16 +94,24 @@ describe Collator do
     let(:collator) { Collator.new }
 
     it 'sorts strings by sort keys' do
-      [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock(collator).sort_key(s) { key } }
+      [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock_sort_key(collator, s, key) }
 
       collator.sort(%w[bca aaa abc]).should == %w[aaa abc bca]
     end
 
     it 'sorts strings with equal sort keys by code points' do
-      [['aaa', [1, 2, 3]], ['abc', [1, 2, 3]], ['bca', [1, 2, 3]]].each { |s, key| mock(collator).sort_key(s) { key } }
+      [['aaa', [1, 2, 3]], ['abc', [1, 2, 3]], ['bca', [1, 2, 3]]].each { |s, key| mock_sort_key(collator, s, key) }
 
       collator.sort(%w[bca abc aaa]).should == %w[aaa abc bca]
     end
+  end
+
+  def mock_sort_key(collator, string, sort_key)
+    mock(collator).sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
+  end
+
+  def stub_sort_key(collator, string, sort_key)
+    stub(collator).sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
   end
 
 end

@@ -33,14 +33,12 @@ module TwitterCldr
       private
 
       def comparison_key(string)
-        {
-            :code_points => get_integer_code_points(TwitterCldr::Utils::CodePoints.from_string(string)),
-            :sort_key    => sort_key(string)
-        }
+        code_points = TwitterCldr::Utils::CodePoints.from_string(string)
+        { :code_points => code_points, :sort_key => sort_key(code_points) }
       end
 
       def compare_keys(a, b)
-        (a[:sort_key] <=> b[:sort_key]).nonzero? || a[:code_points] <=> b[:code_points]
+        (a[:sort_key] <=> b[:sort_key]).nonzero? || get_integer_code_points(a[:code_points]) <=> get_integer_code_points(b[:code_points])
       end
 
       def sort_key_for_code_points(integer_code_points)

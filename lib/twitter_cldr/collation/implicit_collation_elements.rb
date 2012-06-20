@@ -6,8 +6,8 @@
 module TwitterCldr
   module Collation
 
-    # Module for generation of implicit collation elements for code points (including some CJK characters), that are
-    # not explicitly mentioned in the collation elements table.
+    # ImplicitCollationElements generates implicit collation elements for code points (including some CJK characters),
+    # that are not explicitly mentioned in the collation elements table.
     #
     # This module was ported from the ICU4J library (ImplicitCEGenerator class). See NOTICE file for license information.
     #

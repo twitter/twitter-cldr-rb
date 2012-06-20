@@ -6,8 +6,8 @@
 module TwitterCldr
   module Collation
 
-    # Collator class uses fractional collation elements table form CLDR to generate sort keys for Unicode strings
-    # as well as compare and sort such strings by generated sort keys.
+    # Collator uses fractional collation elements table form CLDR to generate sort keys for Unicode strings as well as
+    # compare and sort such strings by generated sort keys.
     #
     class Collator
 

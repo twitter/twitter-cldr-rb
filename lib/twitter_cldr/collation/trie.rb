@@ -6,7 +6,7 @@
 module TwitterCldr
   module Collation
 
-    # This class represents a trie, also known as a prefix tree.
+    # This class represents a trie - a tree data structure, also known as a prefix tree.
     #
     # Every node corresponds to a single character of the key. To find the value by key one goes down the trie
     # starting from the root and descending one character at a time. If at some level current node doesn't have a

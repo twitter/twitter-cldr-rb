@@ -6,7 +6,7 @@
 module TwitterCldr
   module Collation
 
-    # A class for building collation sort key from an array of collation elements.
+    # SortKey builds a collation sort key from an array of collation elements.
     #
     class SortKey
 

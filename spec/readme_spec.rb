@@ -188,9 +188,9 @@ describe "README" do
   end
 
   it "verifies normalization" do
-    TwitterCldr::Normalizers::NFD.normalize("français").should == TwitterCldr::Utils::CodePoints.to_string(["0066", "0072", "0061", "006E", "0063", "0327", "0061", "0069", "0073"])
+    TwitterCldr::Normalization::NFD.normalize("français").should == TwitterCldr::Utils::CodePoints.to_string(["0066", "0072", "0061", "006E", "0063", "0327", "0061", "0069", "0073"])
     TwitterCldr::Utils::CodePoints.from_string("español").should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
-    TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalizers::NFD.normalize("español")).should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+    TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español")).should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
 
     "español".localize.code_points.should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
     "español".localize.normalize.code_points.should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]

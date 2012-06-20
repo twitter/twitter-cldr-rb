@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Normalizers
+  module Normalization
 
     # Implements normalization of a Unicode string to Normalization Form D (NFD).
     # This normalization includes only canonical decomposition.

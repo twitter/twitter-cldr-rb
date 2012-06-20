@@ -6,13 +6,12 @@
 module TwitterCldr
   module Collation
 
+    # Collator class uses fractional collation elements table form CLDR to generate sort keys for Unicode strings
+    # as well as compare and sort such strings by generated sort keys.
+    #
     class Collator
 
       FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
-
-      def sort_key(string_or_code_points)
-        sort_key_for_code_points(get_code_points(string_or_code_points))
-      end
 
       def sort(strings)
         strings.map{ |s| [s, comparison_key(s)] }.sort{ |a, b| compare_keys(a[1], b[1]) }.map(&:first)
@@ -20,6 +19,10 @@ module TwitterCldr
 
       def compare(string_a, string_b)
         string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
+      end
+
+      def sort_key(string_or_code_points)
+        sort_key_for_code_points(get_code_points(string_or_code_points))
       end
 
       def trie

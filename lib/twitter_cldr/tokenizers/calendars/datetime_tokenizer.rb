@@ -35,7 +35,7 @@ module TwitterCldr
       end
 
       def calendar
-        @calendar ||= expand(@resource, @resource)[:calendars][@calendar_type]
+        @resource[:calendars][@calendar_type]
       end
 
       protected
@@ -46,6 +46,7 @@ module TwitterCldr
 
       def init_resources
         @resource = TwitterCldr.get_locale_resource(@locale, :calendars)[@locale]
+        @resource = expand(@resource, @resource)
 
         @resource[:calendars].each_pair do |calendar_type, options|
           next if calendar_type == DEFAULT_CALENDAR_TYPE

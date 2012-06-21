@@ -9,7 +9,20 @@ nb:
           other: "{0} {1}"
       decimal: 
         patterns: 
-          default: 000 bill
+          default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: 00000
+            100000: 000000
+            1000000: "0.0 mill"
+            10000000: "00 mill"
+            100000000: "000 mill"
+            1000000000: "0.0 mrd"
+            10000000000: "00 mrd"
+            100000000000: "000 mrd"
+            1000000000000: "0.0 bill"
+            10000000000000: "00 bill"
+            100000000000000: "000 bill"
       percent: 
         patterns: 
           default: "#,##0 %"
@@ -20,7 +33,7 @@ nb:
       alias: ""
       decimal: ","
       exponential: E
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: "-"

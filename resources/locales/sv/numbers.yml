@@ -10,6 +10,19 @@ sv:
       decimal: 
         patterns: 
           default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: 00000
+            100000: 000000
+            1000000: "0.0 mjn"
+            10000000: "00 mjn"
+            100000000: "000 mjn"
+            1000000000: "0.0 mjd"
+            10000000000: "00 mjd"
+            100000000000: "000 mjd"
+            1000000000000: "0.0 trl"
+            10000000000000: "00 trl"
+            100000000000000: "000 trl"
       percent: 
         patterns: 
           default: "#,##0 %"
@@ -20,7 +33,7 @@ sv:
       alias: ""
       decimal: ","
       exponential: ×10^
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: −

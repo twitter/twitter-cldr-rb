@@ -64,7 +64,8 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
       else
         choices = @calendar["eras"]["name"]
 
-    return choices[date.getFullYear() < 0 ? 0 : 1]
+    index = if (date.getFullYear() < 0) then 0 else 1
+    return choices[index]
 
 	year: (date, pattern, length) ->
 		year = date.getFullYear().toString()
@@ -168,7 +169,8 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
     # CLDR does not contain data as to which day is the first day of the week, so we will assume Monday (Ruby default)
 		switch length
       when 1, 2
-        return date.getDay().toString()
+        day = date.getDay()
+        return (if day == 0 then "7" else day.toString())
       else
         return this.weekday(date, pattern, length)
 

@@ -10,6 +10,19 @@ fi:
       decimal: 
         patterns: 
           default: "#,##0.###"
+          short: 
+            1000: "0.0 t"
+            10000: "00 t"
+            100000: "000 t"
+            1000000: "0.0 ml"
+            10000000: "00 ml"
+            100000000: "000 ml"
+            1000000000: "0.0 mr"
+            10000000000: "00 mr"
+            100000000000: "000 mr"
+            1000000000000: "0.0 b"
+            10000000000000: "00 b"
+            100000000000000: "000 b"
       percent: 
         patterns: 
           default: "#,##0 %"
@@ -20,7 +33,7 @@ fi:
       alias: ""
       decimal: ","
       exponential: E
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: "-"

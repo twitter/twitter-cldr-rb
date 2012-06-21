@@ -9,9 +9,22 @@ hu:
       decimal: 
         patterns: 
           default: "#,##0.###"
+          short: 
+            1000: "0.0 e"
+            10000: "00 e"
+            100000: "000 e"
+            1000000: "0.0 m"
+            10000000: "00 m"
+            100000000: "000 m"
+            1000000000: "0.0 mrd"
+            10000000000: "00 mrd"
+            100000000000: "000 mrd"
+            1000000000000: "0.0 b"
+            10000000000000: "00 b"
+            100000000000000: "000 b"
       percent: 
         patterns: 
-          default: {}
+          default: "#,##0%"
       scientific: 
         patterns: 
           default: "#E0"
@@ -19,7 +32,7 @@ hu:
       alias: ""
       decimal: ","
       exponential: E
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: "-"

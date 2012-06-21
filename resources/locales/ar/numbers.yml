@@ -14,12 +14,25 @@ ar:
       decimal: 
         patterns: 
           default: "#,##0.###;#,##0.###-"
+          short: 
+            1000: 0.0K
+            10000: 00K
+            100000: 000K
+            1000000: 0.0M
+            10000000: 00M
+            100000000: 000M
+            1000000000: 0.0B
+            10000000000: 00B
+            100000000000: 000B
+            1000000000000: 0.0T
+            10000000000000: 00T
+            100000000000000: 000T
       percent: 
         patterns: 
-          default: {}
+          default: "#,##0%"
       scientific: 
         patterns: 
-          default: {}
+          default: "#E0"
     symbols: 
       alias: ""
       decimal: ","

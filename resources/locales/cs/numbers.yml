@@ -10,7 +10,20 @@ cs:
           other: "{0} {1}"
       decimal: 
         patterns: 
-          default: 000 bil'.'
+          default: "#,##0.###"
+          short: 
+            1000: "0.0 tis'.'"
+            10000: "00 tis'.'"
+            100000: "000 tis'.'"
+            1000000: "0.0 mil'.'"
+            10000000: "00 mil'.'"
+            100000000: "000 mil'.'"
+            1000000000: "0.0 mld'.'"
+            10000000000: "00 mld'.'"
+            100000000000: "000 mld'.'"
+            1000000000000: "0.0 bil'.'"
+            10000000000000: "00 bil'.'"
+            100000000000000: "000 bil'.'"
       percent: 
         patterns: 
           default: "#,##0 %"
@@ -21,7 +34,7 @@ cs:
       alias: ""
       decimal: ","
       exponential: E
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: "-"

@@ -11,7 +11,12 @@ module TwitterCldr
       attr_accessor :type, :placeholders
 
       def initialize(options = {})
-        @locale = (options[:locale] || TwitterCldr::DEFAULT_LOCALE).to_sym
+        if TwitterCldr.supported_locale?(options[:locale])
+          @locale = TwitterCldr.convert_locale(options[:locale] || TwitterCldr::DEFAULT_LOCALE)
+        else
+          @locale = TwitterCldr::DEFAULT_LOCALE
+        end
+
         self.init_resources
         self.init_placeholders
       end

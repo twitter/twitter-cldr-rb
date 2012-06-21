@@ -52,6 +52,15 @@ ca:
             thu: Dijous
             tue: Dimarts
             wed: Dimecres
+      eras: 
+        abbr: 
+          0: aC
+          1: dC
+        name: 
+          0: "abans de Crist"
+          1: "després de Crist"
+        narrow: 
+          0: ""
       fields: 
         day: dia
         dayperiod: a.m./p.m.
@@ -176,6 +185,14 @@ ca:
             7: juliol
             8: agost
             9: setembre
+      periods: 
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: a.m.
+            pm: p.m.
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 

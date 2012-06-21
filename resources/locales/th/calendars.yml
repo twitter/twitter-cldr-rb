@@ -1,9 +1,21 @@
-th:
-  calendars:
-    gregorian:
-      days:
-        format:
-          abbreviated:
+th: 
+  calendars: 
+    buddhist:
+      formats:
+        date:
+          default: :"calendars.buddhist.formats.date.medium"
+          full:
+            pattern: "EEEEที่ d MMMM G y"
+          long:
+            pattern: "d MMMM พ.ศ. #{y + 543}"
+          medium:
+            pattern: "d MMM #{y + 543}"
+          short:
+            pattern: "d/M/#{y + 543}"
+    gregorian: 
+      days: 
+        format: 
+          abbreviated: 
             fri: ศ.
             mon: จ.
             sat: ส.
@@ -12,7 +24,7 @@ th:
             tue: อ.
             wed: พ.
           narrow: :"calendars.gregorian.days.stand-alone.narrow"
-          wide:
+          wide: 
             fri: วันศุกร์
             mon: วันจันทร์
             sat: วันเสาร์
@@ -20,9 +32,9 @@ th:
             thu: วันพฤหัสบดี
             tue: วันอังคาร
             wed: วันพุธ
-        stand-alone:
+        stand-alone: 
           abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          narrow:
+          narrow: 
             fri: ศ
             mon: จ
             sat: ส
@@ -31,7 +43,17 @@ th:
             tue: อ
             wed: พ
           wide: :"calendars.gregorian.days.format.wide"
-      fields:
+      eras: 
+        abbr: 
+          0: "ปีก่อน ค.ศ."
+          1: ค.ศ.
+        name: 
+          0: ปีก่อนคริสต์ศักราช
+          1: คริสต์ศักราช
+        narrow: 
+          0: "ก่อน ค.ศ."
+          1: ค.ศ.
+      fields: 
         day: วัน
         dayperiod: ช่วงวัน
         era: สมัย
@@ -43,40 +65,40 @@ th:
         weekday: วันในสัปดาห์
         year: ปี
         zone: เขต
-      formats:
-        date:
+      formats: 
+        date: 
           default: :"calendars.gregorian.formats.date.medium"
-          full:
+          full: 
             pattern: "EEEEที่ d MMMM G y"
-          long:
+          long: 
             pattern: "d MMMM y"
-          medium:
+          medium: 
             pattern: "d MMM y"
-          short:
+          short: 
             pattern: d/M/yyyy
-        datetime:
+        datetime: 
           default: :"calendars.gregorian.formats.datetime.medium"
-          full:
+          full: 
             pattern: "{{date}}, {{time}}"
-          long:
+          long: 
             pattern: "{{date}}, {{time}}"
-          medium:
+          medium: 
             pattern: "{{date}}, {{time}}"
-          short:
+          short: 
             pattern: "{{date}}, {{time}}"
-        time:
+        time: 
           default: :"calendars.gregorian.formats.time.medium"
-          full:
+          full: 
             pattern: "H นาฬิกา m นาที ss วินาที zzzz"
-          long:
+          long: 
             pattern: "H นาฬิกา m นาที ss วินาที z"
-          medium:
+          medium: 
             pattern: "H:mm:ss"
-          short:
+          short: 
             pattern: "H:mm"
-      months:
-        format:
-          abbreviated:
+      months: 
+        format: 
+          abbreviated: 
             1: ม.ค.
             10: ต.ค.
             11: พ.ย.
@@ -89,7 +111,7 @@ th:
             7: ก.ค.
             8: ส.ค.
             9: ก.ย.
-          narrow:
+          narrow: 
             1: ม.ค.
             10: ต.ค.
             11: พ.ย.
@@ -102,7 +124,7 @@ th:
             7: ก.ค.
             8: ส.ค.
             9: ก.ย.
-          wide:
+          wide: 
             1: มกราคม
             10: ตุลาคม
             11: พฤศจิกายน
@@ -115,9 +137,9 @@ th:
             7: กรกฎาคม
             8: สิงหาคม
             9: กันยายน
-        stand-alone:
+        stand-alone: 
           abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          narrow:
+          narrow: 
             1: ม.ค.
             10: ต.ค.
             11: พ.ย.
@@ -131,52 +153,40 @@ th:
             8: ส.ค.
             9: ก.ย.
           wide: :"calendars.gregorian.months.format.wide"
-      periods:
-        format:
+      periods: 
+        format: 
           abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
           narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-          wide:
+          wide: 
             am: ก่อนเที่ยง
             pm: หลังเที่ยง
         stand-alone: {}
-      quarters:
-        format:
-          abbreviated:
+      quarters: 
+        format: 
+          abbreviated: 
             1: Q1
             2: Q2
             3: Q3
             4: Q4
-          narrow:
+          narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          wide:
+          wide: 
             1: "ไตรมาส 1"
             2: "ไตรมาส 2"
             3: "ไตรมาส 3"
             4: "ไตรมาส 4"
-        stand-alone:
-          abbreviated:
+        stand-alone: 
+          abbreviated: 
             1: Q1
             2: Q2
             3: Q3
             4: Q4
-          narrow:
+          narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
           wide: :"calendars.gregorian.quarters.format.wide"
-    buddhist:
-      formats:
-        date:
-          default: :"calendars.buddhist.formats.date.medium"
-          full:
-            pattern: "EEEEที่ d MMMM G y"
-          long:
-            pattern: "d MMMM พ.ศ. #{y + 543}"
-          medium:
-            pattern: "d MMM #{y + 543}"
-          short:
-            pattern: "d/M/#{y + 543}"

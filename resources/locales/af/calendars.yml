@@ -31,6 +31,15 @@ af:
             tue: D
             wed: W
           wide: :"calendars.gregorian.days.format.wide"
+      eras: 
+        abbr: 
+          0: v.C.
+          1: n.C.
+        name: 
+          0: "voor Christus"
+          1: "na Christus"
+        narrow: 
+          0: ""
       fields: 
         day: Dag
         dayperiod: AM/PM
@@ -120,6 +129,14 @@ af:
             9: S
           wide: 
             4: April
+      periods: 
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: vm.
+            pm: nm.
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 

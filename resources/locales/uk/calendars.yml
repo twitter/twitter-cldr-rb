@@ -31,6 +31,15 @@ uk:
             tue: В
             wed: С
           wide: :"calendars.gregorian.days.format.wide"
+      eras: 
+        abbr: 
+          0: "до н.е."
+          1: н.е.
+        name: 
+          0: "до нашої ери"
+          1: "нашої ери"
+        narrow: 
+          0: ""
       fields: 
         day: День
         dayperiod: "Частина доби"
@@ -143,6 +152,18 @@ uk:
             7: Липень
             8: Серпень
             9: Вересень
+      periods: 
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            afternoon: дня
+            am: дп
+            evening: вечора
+            morning: ранку
+            night: ночі
+            pm: пп
+        stand-alone: {}
       quarters: 
         format: 
           abbreviated: 

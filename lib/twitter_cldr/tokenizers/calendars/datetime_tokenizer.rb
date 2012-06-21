@@ -35,7 +35,7 @@ module TwitterCldr
       end
 
       def calendar
-        @resource[:calendars][@calendar_type]
+        @calendar ||= expand(@resource, @resource)[:calendars][@calendar_type]
       end
 
       protected
@@ -77,6 +77,10 @@ module TwitterCldr
 
       def pattern_for(resource)
         resource.is_a?(Hash) ? resource[:pattern] : resource
+      end
+
+      def path_map
+        PATH_MAP
       end
     end
   end

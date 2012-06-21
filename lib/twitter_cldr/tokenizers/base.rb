@@ -100,6 +100,21 @@ module TwitterCldr
         end
       end
 
+      # expands all path symbols
+      def expand(current, haystack)
+        if current.is_a?(Symbol)
+          expand(traverse(current.to_s.split('.').map(&:to_sym), haystack), haystack)
+        elsif current.is_a?(Hash)
+          current.inject({}) do |ret, key_val|
+            key, val = key_val
+            ret[key] = expand(val, haystack)
+            ret
+          end
+        else
+          current
+        end
+      end
+
       def expand_pattern(format_str, type)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given

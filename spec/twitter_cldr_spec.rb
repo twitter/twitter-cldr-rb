@@ -29,7 +29,7 @@ describe TwitterCldr do
       locales = TwitterCldr.supported_locales
       locales.should include(:es)
       locales.should include(:zh)
-      locales.should include(:no)
+      locales.should include(:nb)
       locales.should include(:ja)
     end
 

@@ -1,25 +1,26 @@
-"no": 
+nb: 
   numbers: 
     formats: 
       currency: 
         patterns: 
-          default: {}
+          default: "¤ #,##0.00"
         unit: 
+          one: "{0} {1}"
           other: "{0} {1}"
       decimal: 
         patterns: 
-          default: {}
+          default: 000 bill
       percent: 
         patterns: 
-          default: {}
+          default: "#,##0 %"
       scientific: 
         patterns: 
-          default: {}
+          default: "#E0"
     symbols: 
       alias: ""
-      decimal: "."
+      decimal: ","
       exponential: E
-      group: ","
+      group:  
       infinity: ∞
       list: ;
       minus_sign: "-"

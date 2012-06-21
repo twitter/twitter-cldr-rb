@@ -40,7 +40,8 @@ module TwitterCldr
   TWITTER_LOCALE_MAP = {
       :msa     => :ms,
       :'zh-cn' => :zh,
-      :'zh-tw' => :'zh-Hant'
+      :'zh-tw' => :'zh-Hant',
+      :no      => :nb
   }
 
   # maps cldr locales to twitter locales

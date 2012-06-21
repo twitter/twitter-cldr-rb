@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Normalizers
+include TwitterCldr::Normalization
 
 describe Base do
   describe "#combining_class_for" do

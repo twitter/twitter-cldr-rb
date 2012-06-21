@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'uglifier', '~> 1.2.4'
   s.add_development_dependency 'coffee-script', '~> 2.2.0'
   s.add_development_dependency 'rcov' if RUBY_VERSION < '1.9.0'
+  s.add_development_dependency 'zip'
 
   s.require_path = 'lib'
   s.files = %w(LICENSE README.md NOTICE Rakefile) + Dir.glob("{lib,spec,resources}/**/*")

@@ -147,6 +147,23 @@ describe Base do
     end
   end
 
+  describe "#expand" do
+    it "leaves a normal hash alone" do
+      hash = { :twitter => { :is => "cool" } }
+      @base.send(:expand, hash, hash).should == hash
+    end
+
+    it "expands a single symbol path" do
+      hash = { :twitter => { :is => :'adjective.positive' }, :adjective => { :positive => "cool" } }
+      @base.send(:expand, hash, hash).should == { :twitter => { :is => "cool" }, :adjective => { :positive => "cool" } }
+    end
+
+    it "expands nested symbol paths" do
+      hash = { :twitter => { :is => :'adjective.positive' }, :adjective => { :positive => :'adjective.default', :default => "awesome" } }
+      @base.send(:expand, hash, hash).should == { :twitter => { :is => "awesome" }, :adjective => { :positive => "awesome", :default => "awesome" } }
+    end
+  end
+
   describe "#traverse" do
     before(:each) do
       @tree = { :admiral => { :captain => { :commander => { :lieutenant => "Found Me!" } } } }

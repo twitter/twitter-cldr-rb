@@ -1,0 +1,228 @@
+ca: 
+  calendars: 
+    gregorian: 
+      days: 
+        format: 
+          abbreviated: 
+            fri: dv.
+            mon: dl.
+            sat: ds.
+            sun: dg.
+            thu: dj.
+            tue: dt.
+            wed: dc.
+          narrow: 
+            fri: V
+            mon: l
+            sat: S
+            sun: G
+            thu: J
+            tue: T
+            wed: C
+          wide: 
+            fri: divendres
+            mon: dilluns
+            sat: dissabte
+            sun: diumenge
+            thu: dijous
+            tue: dimarts
+            wed: dimecres
+        stand-alone: 
+          abbreviated: 
+            fri: dv
+            mon: dl
+            sat: ds
+            sun: dg
+            thu: dj
+            tue: dt
+            wed: dc
+          narrow: 
+            fri: v
+            mon: l
+            sat: s
+            sun: g
+            thu: j
+            tue: t
+            wed: c
+          wide: 
+            fri: Divendres
+            mon: Dilluns
+            sat: Dissabte
+            sun: Diumenge
+            thu: Dijous
+            tue: Dimarts
+            wed: Dimecres
+      eras: 
+        abbr: 
+          0: aC
+          1: dC
+        name: 
+          0: "abans de Crist"
+          1: "després de Crist"
+        narrow: 
+          0: ""
+      fields: 
+        day: dia
+        dayperiod: a.m./p.m.
+        era: era
+        hour: hora
+        minute: minut
+        month: mes
+        second: segon
+        week: setmana
+        weekday: "dia de la setmana"
+        year: any
+        zone: zona
+      formats: 
+        date: 
+          default: :"calendars.gregorian.formats.date.medium"
+          full: 
+            pattern: "EEEE d MMMM 'de' y"
+          long: 
+            pattern: "d MMMM 'de' y"
+          medium: 
+            pattern: dd/MM/yyyy
+          short: 
+            pattern: dd/MM/yy
+        datetime: 
+          default: :"calendars.gregorian.formats.datetime.medium"
+          full: 
+            pattern: "{{date}} {{time}}"
+          long: 
+            pattern: "{{date}} {{time}}"
+          medium: 
+            pattern: "{{date}} {{time}}"
+          short: 
+            pattern: "{{date}} {{time}}"
+        time: 
+          default: :"calendars.gregorian.formats.time.medium"
+          full: 
+            pattern: "H:mm:ss zzzz"
+          long: 
+            pattern: "H:mm:ss z"
+          medium: 
+            pattern: "H:mm:ss"
+          short: 
+            pattern: "H:mm"
+      months: 
+        format: 
+          abbreviated: 
+            1: "de gen."
+            10: d’oct.
+            11: "de nov."
+            12: "de des."
+            2: "de febr."
+            3: "de març"
+            4: d’abr.
+            5: "de maig"
+            6: "de juny"
+            7: "de jul."
+            8: d’ag.
+            9: "de set."
+          narrow: 
+            1: G
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: G
+            8: A
+            9: S
+          wide: 
+            1: "de gener"
+            10: d’octubre
+            11: "de novembre"
+            12: "de desembre"
+            2: "de febrer"
+            3: "de març"
+            4: d’abril
+            5: "de maig"
+            6: "de juny"
+            7: "de juliol"
+            8: d’agost
+            9: "de setembre"
+        stand-alone: 
+          abbreviated: 
+            1: gen.
+            10: oct.
+            11: nov.
+            12: des.
+            2: febr.
+            3: març
+            4: abr.
+            5: maig
+            6: juny
+            7: jul.
+            8: ag.
+            9: set.
+          narrow: 
+            1: g
+            10: o
+            11: n
+            12: d
+            2: f
+            3: m
+            4: a
+            5: m
+            6: j
+            7: j
+            8: a
+            9: s
+          wide: 
+            1: gener
+            10: octubre
+            11: novembre
+            12: desembre
+            2: febrer
+            3: març
+            4: abril
+            5: maig
+            6: juny
+            7: juliol
+            8: agost
+            9: setembre
+      periods: 
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: a.m.
+            pm: p.m.
+        stand-alone: {}
+      quarters: 
+        format: 
+          abbreviated: 
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1r trimestre"
+            2: "2n trimestre"
+            3: "3r trimestre"
+            4: "4t trimestre"
+        stand-alone: 
+          abbreviated: 
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1r trimestre"
+            2: "2n trimestre"
+            3: "3r trimestre"
+            4: "4t trimestre"

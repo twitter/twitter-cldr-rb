@@ -35,6 +35,11 @@ describe DateTime do
       loc_date.to_date.calendar_type.should == :buddhist
       loc_date.to_time.calendar_type.should == :buddhist
     end
+
+    it "should default to English if the given locale isn't supported" do
+      loc_date = date.localize(:xx)
+      loc_date.locale.should == :en
+    end
   end
 
   describe "stringify" do

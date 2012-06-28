@@ -45,7 +45,8 @@ module TwitterCldr
       end
 
       def init_resources
-        @resource = TwitterCldr.get_locale_resource(@locale, :calendars)[TwitterCldr.convert_locale(@locale)]
+        @resource = TwitterCldr.get_locale_resource(@locale, :calendars)[@locale]
+        @resource = expand(@resource, @resource)
 
         @resource[:calendars].each_pair do |calendar_type, options|
           next if calendar_type == DEFAULT_CALENDAR_TYPE
@@ -77,6 +78,10 @@ module TwitterCldr
 
       def pattern_for(resource)
         resource.is_a?(Hash) ? resource[:pattern] : resource
+      end
+
+      def path_map
+        PATH_MAP
       end
     end
   end

@@ -20,6 +20,70 @@ describe("DateTimeFormatter", function() {
 		});
 	});
 
+	describe("#weekday_local_stand_alone", function() {
+    it("test: pattern c", function() {
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   4), 'c', 1)).toEqual('1');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   5), 'c', 1)).toEqual('2');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,  10), 'c', 1)).toEqual('7');
+    });
+
+    it("test: pattern cc", function() {
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 4),  'cc',  2)).toEqual('Mon');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 5),  'cc',  2)).toEqual('Tue');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 10), 'cc',  2)).toEqual('Sun');
+    });
+
+    it("test: pattern ccc", function() {
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 4),  'ccc',  3)).toEqual('Mon');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 5),  'ccc',  3)).toEqual('Tue');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0, 10), 'ccc',  3)).toEqual('Sun');
+    });
+
+    it("test: pattern cccc", function() {
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   4), 'cccc', 4)).toEqual('Monday');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   5), 'cccc', 4)).toEqual('Tuesday');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,  10), 'cccc', 4)).toEqual('Sunday');
+    });
+
+    it("test: pattern ccccc", function() {
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   4), 'ccccc', 5)).toEqual('M');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,   5), 'ccccc', 5)).toEqual('T');
+      expect(formatter.weekday_local_stand_alone(new Date(2010, 0,  10), 'ccccc', 5)).toEqual('S');
+    });
+  });
+
+  describe("#weekday_local", function() {
+    it("test: pattern e", function() {
+      expect(formatter.weekday_local(new Date(2010, 0,   4), 'e', 1)).toEqual('1');
+      expect(formatter.weekday_local(new Date(2010, 0,   5), 'e', 1)).toEqual('2');
+      expect(formatter.weekday_local(new Date(2010, 0,  10), 'e', 1)).toEqual('7');
+    });
+
+    it("test: pattern ee", function() {
+      expect(formatter.weekday_local(new Date(2010, 0,   4), 'ee', 2)).toEqual('1');
+      expect(formatter.weekday_local(new Date(2010, 0,   5), 'ee', 2)).toEqual('2');
+      expect(formatter.weekday_local(new Date(2010, 0,  10), 'ee', 2)).toEqual('7');
+    });
+
+    it("test: pattern eee", function() {
+      expect(formatter.weekday_local(new Date(2010, 0,   4), 'eee', 3)).toEqual('Mon');
+      expect(formatter.weekday_local(new Date(2010, 0,   5), 'eee', 3)).toEqual('Tue');
+      expect(formatter.weekday_local(new Date(2010, 0,  10), 'eee', 3)).toEqual('Sun');
+    });
+
+    it("test: pattern eeee", function() {
+      expect(formatter.weekday_local(new Date(2010, 0,   4), 'eeee', 4)).toEqual('Monday');
+      expect(formatter.weekday_local(new Date(2010, 0,   5), 'eeee', 4)).toEqual('Tuesday');
+      expect(formatter.weekday_local(new Date(2010, 0,  10), 'eeee', 4)).toEqual('Sunday');
+    });
+
+    it("test: pattern eeeee", function() {
+      expect(formatter.weekday_local(new Date(2010, 0,   4), 'eeeee', 5)).toEqual('M');
+      expect(formatter.weekday_local(new Date(2010, 0,   5), 'eeeee', 5)).toEqual('T');
+      expect(formatter.weekday_local(new Date(2010, 0,  10), 'eeeee', 5)).toEqual('S');
+    });
+  });
+
 	describe("#weekday", function() {
 	  it("test: pattern E, EE, EEE", function() {
 	    expect(formatter.weekday(new Date(2010, 0, 1), 'E', 1)).toEqual('Fri');
@@ -327,6 +391,28 @@ describe("DateTimeFormatter", function() {
       expect(formatter.year(new Date(  345, 0, 1), 'yyyyy', 5)).toEqual('00345');
       expect(formatter.year(new Date( 2345, 0, 1), 'yyyyy', 5)).toEqual('02345');
       expect(formatter.year(new Date(12345, 0, 1), 'yyyyy', 5)).toEqual('12345');
+    });
+  });
+
+	describe("#era", function() {
+    it("test: pattern G", function() {
+      expect(formatter.era(new Date(2012, 1, 1), 'G', 1)).toEqual("AD");
+      expect(formatter.era(new Date(  -1, 1, 1), 'G', 1)).toEqual("BC");
+    });
+
+    it("test: pattern GG", function() {
+      expect(formatter.era(new Date(2012, 1, 1), 'GG', 2)).toEqual("AD");
+      expect(formatter.era(new Date(  -1, 1, 1), 'GG', 2)).toEqual("BC");
+    });
+
+    it("test: pattern GGG", function() {
+      expect(formatter.era(new Date(2012, 1, 1), 'GGG', 3)).toEqual("AD");
+      expect(formatter.era(new Date(  -1, 1, 1), 'GGG', 3)).toEqual("BC");
+    });
+
+    it("test: pattern GGGG", function() {
+      expect(formatter.era(new Date(2012, 1, 1), 'GGGG', 4)).toEqual("Anno Domini");
+      expect(formatter.era(new Date(  -1, 1, 1), 'GGGG', 4)).toEqual("Before Christ");
     });
   });
 });

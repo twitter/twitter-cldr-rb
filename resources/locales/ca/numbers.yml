@@ -1,0 +1,43 @@
+ca: 
+  numbers: 
+    formats: 
+      currency: 
+        patterns: 
+          default: "#,##0.00 ¤"
+        unit: 
+          one: "{0} {1}"
+          other: "{0} {1}"
+      decimal: 
+        patterns: 
+          default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: 00000
+            100000: 000000
+            1000000: "0.0 M"
+            10000000: "00 M"
+            100000000: "000 M"
+            1000000000: "0000 M"
+            10000000000: "00k M"
+            100000000000: "000k M"
+            1000000000000: "0.0 B"
+            10000000000000: "00 B"
+            100000000000000: "000 B"
+      percent: 
+        patterns: 
+          default: "#,##0%"
+      scientific: 
+        patterns: 
+          default: "#E0"
+    symbols: 
+      alias: ""
+      decimal: ","
+      exponential: E
+      group: "."
+      infinity: ∞
+      list: ;
+      minus_sign: "-"
+      nan: NaN
+      per_mille: ‰
+      percent_sign: "%"
+      plus_sign: +

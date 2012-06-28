@@ -1,3 +1,9 @@
+=== 1.5.0
+
+* Added collation (sorting) support via the Unicode Collation Algorithm.
+* Added Catalan, Basque, Greek, Afrikaans, Ukrainian, and Czech support along with calendar fixes for existing locales.
+* DateTimeTokenizer now falls back on English if the given locale isn't supported.
+
 === 1.4.1
 
 * Added ability to use NFC and NFKC in core_ext/string

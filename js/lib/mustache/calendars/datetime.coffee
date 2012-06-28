@@ -58,7 +58,14 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 		return this[@methods[token.value[0]]](date, token.value, token.value.length)
 
 	era: (date, pattern, length) ->
-		throw 'not implemented'
+		switch length
+      when 1, 2, 3
+        choices = @calendar["eras"]["abbr"]
+      else
+        choices = @calendar["eras"]["name"]
+
+    index = if (date.getFullYear() < 0) then 0 else 1
+    return choices[index]
 
 	year: (date, pattern, length) ->
 		year = date.getFullYear().toString()
@@ -158,11 +165,21 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 				return @calendar.days['stand-alone'].narrow[key]
 
 	weekday_local: (date, pattern, length) ->
-		# Like E except adds a numeric value depending on the local starting day of the week
-		throw 'not implemented (need to defer a country to lookup the local first day of week from weekdata)'
+		# "Like E except adds a numeric value depending on the local starting day of the week"
+    # CLDR does not contain data as to which day is the first day of the week, so we will assume Monday (Ruby default)
+		switch length
+      when 1, 2
+        day = date.getDay()
+        return (if day == 0 then "7" else day.toString())
+      else
+        return this.weekday(date, pattern, length)
 
 	weekday_local_stand_alone: (date, pattern, length) ->
-		throw 'not implemented (need to defer a country to lookup the local first day of week from weekdata)'
+		switch length
+      when 1
+        return this.weekday_local(date, pattern, length)
+      else
+        return this.weekday(date, pattern, length)
 
 	period: (time, pattern, length) ->
 		if time.getHours() > 11

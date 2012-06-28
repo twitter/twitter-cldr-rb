@@ -1,0 +1,227 @@
+el: 
+  calendars: 
+    gregorian: 
+      days: 
+        format: 
+          abbreviated: 
+            fri: Παρ
+            mon: Δευ
+            sat: Σαβ
+            sun: Κυρ
+            thu: Πεμ
+            tue: Τρι
+            wed: Τετ
+          narrow: 
+            fri: Π
+            mon: Δ
+            sat: Σ
+            sun: Κ
+            thu: Π
+            tue: Τ
+            wed: Τ
+          wide: 
+            fri: Παρασκευή
+            mon: Δευτέρα
+            sat: Σάββατο
+            sun: Κυριακή
+            thu: Πέμπτη
+            tue: Τρίτη
+            wed: Τετάρτη
+        stand-alone: 
+          abbreviated: 
+            fri: Παρ
+            mon: Δευ
+            sat: Σάβ
+            sun: Κυρ
+            thu: Πέμ
+            tue: Τρί
+            wed: Τετ
+          narrow: 
+            fri: Π
+            mon: Δ
+            sat: Σ
+            sun: Κ
+            thu: Π
+            tue: Τ
+            wed: Τ
+          wide: 
+            fri: Παρασκευή
+            mon: Δευτέρα
+            sat: Σάββατο
+            sun: Κυριακή
+            thu: Πέμπτη
+            tue: Τρίτη
+            wed: Τετάρτη
+      eras: 
+        abbr: 
+          0: π.Χ.
+          1: μ.Χ.
+        name: 
+          0: ""
+        narrow: 
+          0: ""
+      fields: 
+        day: Ημέρα
+        dayperiod: π.μ./μ.μ.
+        era: Περίοδος
+        hour: Ώρα
+        minute: Λεπτό
+        month: Μήνας
+        second: Δευτερόλεπτο
+        week: Εβδομάδα
+        weekday: "Ημέρα εβδομάδας"
+        year: Έτος
+        zone: Ζώνη
+      formats: 
+        date: 
+          default: :"calendars.gregorian.formats.date.medium"
+          full: 
+            pattern: "EEEE, d MMMM y"
+          long: 
+            pattern: "d MMMM y"
+          medium: 
+            pattern: "d MMM y"
+          short: 
+            pattern: d/M/yy
+        datetime: 
+          default: :"calendars.gregorian.formats.datetime.medium"
+          full: 
+            pattern: "{{date}} {{time}}"
+          long: 
+            pattern: "{{date}} {{time}}"
+          medium: 
+            pattern: "{{date}} {{time}}"
+          short: 
+            pattern: "{{date}} {{time}}"
+        time: 
+          default: :"calendars.gregorian.formats.time.medium"
+          full: 
+            pattern: "h:mm:ss a zzzz"
+          long: 
+            pattern: "h:mm:ss a z"
+          medium: 
+            pattern: "h:mm:ss a"
+          short: 
+            pattern: "h:mm a"
+      months: 
+        format: 
+          abbreviated: 
+            1: Ιαν
+            10: Οκτ
+            11: Νοε
+            12: Δεκ
+            2: Φεβ
+            3: Μαρ
+            4: Απρ
+            5: Μαϊ
+            6: Ιουν
+            7: Ιουλ
+            8: Αυγ
+            9: Σεπ
+          narrow: 
+            1: Ι
+            10: Ο
+            11: Ν
+            12: Δ
+            2: Φ
+            3: Μ
+            4: Α
+            5: Μ
+            6: Ι
+            7: Ι
+            8: Α
+            9: Σ
+          wide: 
+            1: Ιανουαρίου
+            10: Οκτωβρίου
+            11: Νοεμβρίου
+            12: Δεκεμβρίου
+            2: Φεβρουαρίου
+            3: Μαρτίου
+            4: Απριλίου
+            5: Μαΐου
+            6: Ιουνίου
+            7: Ιουλίου
+            8: Αυγούστου
+            9: Σεπτεμβρίου
+        stand-alone: 
+          abbreviated: 
+            1: Ιαν
+            10: Οκτ
+            11: Νοέ
+            12: Δεκ
+            2: Φεβ
+            3: Μάρ
+            4: Απρ
+            5: Μάι
+            6: Ιούν
+            7: Ιούλ
+            8: Αυγ
+            9: Σεπ
+          narrow: 
+            1: Ι
+            10: Ο
+            11: Ν
+            12: Δ
+            2: Φ
+            3: Μ
+            4: Α
+            5: Μ
+            6: Ι
+            7: Ι
+            8: Α
+            9: Σ
+          wide: 
+            1: Ιανουάριος
+            10: Οκτώβριος
+            11: Νοέμβριος
+            12: Δεκέμβριος
+            2: Φεβρουάριος
+            3: Μάρτιος
+            4: Απρίλιος
+            5: Μάιος
+            6: Ιούνιος
+            7: Ιούλιος
+            8: Αύγουστος
+            9: Σεπτέμβριος
+      periods: 
+        format: 
+          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          wide: 
+            am: π.μ.
+            pm: μ.μ.
+        stand-alone: {}
+      quarters: 
+        format: 
+          abbreviated: 
+            1: Τ1
+            2: Τ2
+            3: Τ3
+            4: Τ4
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1ο τρίμηνο"
+            2: "2ο τρίμηνο"
+            3: "3ο τρίμηνο"
+            4: "4ο τρίμηνο"
+        stand-alone: 
+          abbreviated: 
+            1: Τ1
+            2: Τ2
+            3: Τ3
+            4: Τ4
+          narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          wide: 
+            1: "1ο τρίμηνο"
+            2: "2ο τρίμηνο"
+            3: "3ο τρίμηνο"
+            4: "4ο τρίμηνο"

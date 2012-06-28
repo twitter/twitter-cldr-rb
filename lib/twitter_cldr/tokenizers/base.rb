@@ -11,7 +11,7 @@ module TwitterCldr
       attr_accessor :type, :placeholders
 
       def initialize(options = {})
-        @locale = (options[:locale] || TwitterCldr::DEFAULT_LOCALE).to_sym
+        @locale = TwitterCldr.convert_locale(options[:locale] || TwitterCldr::DEFAULT_LOCALE)
         self.init_resources
         self.init_placeholders
       end
@@ -97,6 +97,20 @@ module TwitterCldr
           else
             return
           end
+        end
+      end
+
+      # expands all path symbols
+      def expand(current, haystack)
+        if current.is_a?(Symbol)
+          expand(traverse(current.to_s.split('.').map(&:to_sym), haystack), haystack)
+        elsif current.is_a?(Hash)
+          current.inject({}) do |ret, (key, val)|
+            ret[key] = expand(val, haystack)
+            ret
+          end
+        else
+          current
         end
       end
 

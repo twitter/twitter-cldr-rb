@@ -6,11 +6,11 @@
 module TwitterCldr
   module Collation
 
-    # SortKey builds a collation sort key from an array of collation elements.
+    # SortKeyBuilder builds a collation sort key from an array of collation elements.
     #
     # Weights compression algorithms for every level are described in http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
     #
-    class SortKey
+    class SortKeyBuilder
 
       PRIMARY_LEVEL, SECONDARY_LEVEL, TERTIARY_LEVEL = 0, 1, 2
 

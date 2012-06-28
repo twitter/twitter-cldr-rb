@@ -45,7 +45,7 @@ module TwitterCldr
       end
 
       def sort_key_for_code_points(integer_code_points)
-        TwitterCldr::Collation::SortKey.build(get_collation_elements(integer_code_points))
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(integer_code_points))
       end
 
       def get_integer_code_points(code_points)

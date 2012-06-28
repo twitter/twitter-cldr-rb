@@ -40,6 +40,30 @@ describe SortKey do
       sort_key.bytes_array.object_id == sort_key.bytes_array.object_id
     end
 
+    it 'compresses primary weights' do
+      SortKey.new([[0x7A72,     0, 0], [0x7A73, 0, 0], [0x7A75, 0, 0], [0x908, 0, 0], [0x7A73, 0, 0]]).bytes_array.should ==
+                   [0x7A, 0x72,           0x73,           0x75, 0x3,    0x9, 0x08,     0x7A, 0x73, 1, 1]
+
+      SortKey.new([[0x7A72,     0, 0], [0x7A73, 0, 0], [0x7A75, 0, 0], [0x9508, 0, 0], [0x7A73, 0, 0]]).bytes_array.should ==
+                   [0x7A, 0x72,           0x73,           0x75, 0xFF,   0x95, 0x08,     0x7A, 0x73, 1, 1]
+    end
+
+    it 'works when there is an ignorable primary weight in the middle' do
+      SortKey.new([[0x1312, 0, 0], [0, 0, 0], [0x1415, 0, 0]]).bytes_array.should == [0x13, 0x12, 0x14, 0x15, 1, 1]
+    end
+
+    it 'do not compress single byte primary weights' do
+      SortKey.new([[0x13, 0, 0], [0x13, 0, 0]]).bytes_array.should == [0x13, 0x13, 1, 1]
+    end
+
+    it 'resets primary lead bytes counter after a single byte weight' do
+      SortKey.new([[0x1415, 0, 0], [0x13, 0, 0], [0x13, 0, 0], [0x1412, 0, 0]]).bytes_array.should == [0x14, 0x15, 0x13, 0x13, 0x14, 0x12, 1, 1]
+    end
+
+    it 'compresses only allowed primary weights' do
+      SortKey.new([[0x812, 0, 0], [0x811, 0, 0]]).bytes_array.should == [0x8, 0x12, 0x8, 0x11, 1, 1]
+    end
+
     it 'compresses secondary weights' do
       SortKey.new([[0, 5, 0], [0, 5, 0], [0, 141, 0], [0, 5, 0], [0, 5, 0]]).bytes_array.should == [1, 133, 141, 6, 1]
     end
@@ -49,7 +73,7 @@ describe SortKey do
     end
 
     it 'compresses secondary and tertiary weights into multiple bytes if necessary' do
-      SortKey.new([[39, 5, 5]] * 100).bytes_array.should == [39] * 100 + [1, 69, 40, 1, 48, 48, 18]
+      SortKey.new([[0, 5, 5]] * 100).bytes_array.should == [1, 69, 40, 1, 48, 48, 18]
     end
   end
 

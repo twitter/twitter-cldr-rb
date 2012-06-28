@@ -8,6 +8,8 @@ module TwitterCldr
 
     # SortKey builds a collation sort key from an array of collation elements.
     #
+    # Weights compression algorithms for every level are described in http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
+    #
     class SortKey
 
       PRIMARY_LEVEL, SECONDARY_LEVEL, TERTIARY_LEVEL = 0, 1, 2
@@ -15,6 +17,12 @@ module TwitterCldr
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
       TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
+
+      PRIMARY_BYTE_MIN = 0x3
+      PRIMARY_BYTE_MAX = 0xFF
+
+      MIN_NON_LATIN_PRIMARY = 0x5B
+      MAX_REGULAR_PRIMARY   = 0x7A
 
       attr_reader :collation_elements
 
@@ -56,9 +64,28 @@ module TwitterCldr
       end
 
       def append_primary_bytes
+        @last_leading_byte = nil
+
         @collation_elements.each do |collation_element|
-          append_weight(level_weight(collation_element, PRIMARY_LEVEL))
+          bytes = fixnum_to_bytes_array(level_weight(collation_element, PRIMARY_LEVEL))
+
+          unless bytes.empty?
+            leading_byte = bytes.shift
+
+            if leading_byte != @last_leading_byte
+              @bytes_array << (leading_byte < @last_leading_byte ? PRIMARY_BYTE_MIN : PRIMARY_BYTE_MAX) if @last_leading_byte
+              @bytes_array << leading_byte
+
+              @last_leading_byte = !bytes.empty? && compressible_primary?(leading_byte) ? leading_byte : nil
+            end
+
+            @bytes_array.concat(bytes)
+          end
         end
+      end
+
+      def compressible_primary?(leading_byte)
+        (MIN_NON_LATIN_PRIMARY..MAX_REGULAR_PRIMARY).cover?(leading_byte)
       end
 
       def append_secondary_bytes

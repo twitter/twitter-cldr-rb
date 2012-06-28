@@ -83,9 +83,7 @@ module TwitterCldr
     end
 
     def supported_locale?(locale)
-      return false unless locale
-      locale = locale.to_sym
-      supported_locales.include?(locale) || supported_locales.include?(convert_locale(locale))
+      !!locale && supported_locales.include?(convert_locale(locale))
     end
 
     def require_js

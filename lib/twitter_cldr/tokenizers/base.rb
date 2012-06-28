@@ -105,8 +105,7 @@ module TwitterCldr
         if current.is_a?(Symbol)
           expand(traverse(current.to_s.split('.').map(&:to_sym), haystack), haystack)
         elsif current.is_a?(Hash)
-          current.inject({}) do |ret, key_val|
-            key, val = key_val
+          current.inject({}) do |ret, (key, val)|
             ret[key] = expand(val, haystack)
             ret
           end

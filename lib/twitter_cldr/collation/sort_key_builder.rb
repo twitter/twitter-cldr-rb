@@ -85,7 +85,7 @@ module TwitterCldr
       end
 
       def compressible_primary?(leading_byte)
-        (MIN_NON_LATIN_PRIMARY..MAX_REGULAR_PRIMARY).cover?(leading_byte)
+        (MIN_NON_LATIN_PRIMARY..MAX_REGULAR_PRIMARY).include?(leading_byte)
       end
 
       def append_secondary_bytes

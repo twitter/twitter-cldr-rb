@@ -1,0 +1,42 @@
+af: 
+  numbers: 
+    formats: 
+      currency: 
+        patterns: 
+          default: "¤#,##0.00"
+        unit: 
+          other: "{0} {1}"
+      decimal: 
+        patterns: 
+          default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: 00000
+            100000: 000000
+            1000000: "0.0 mil"
+            10000000: "00 mil"
+            100000000: "000 mil"
+            1000000000: "0.0 mjd"
+            10000000000: "00 mjd"
+            100000000000: "000 mjd"
+            1000000000000: "0.0 bil"
+            10000000000000: "00 bil"
+            100000000000000: "000 bil"
+      percent: 
+        patterns: 
+          default: "#,##0%"
+      scientific: 
+        patterns: 
+          default: "#E0"
+    symbols: 
+      alias: ""
+      decimal: ","
+      exponential: E
+      group: " "
+      infinity: ∞
+      list: ;
+      minus_sign: "-"
+      nan: NaN
+      per_mille: ‰
+      percent_sign: "%"
+      plus_sign: +

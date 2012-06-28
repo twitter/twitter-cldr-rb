@@ -9,10 +9,11 @@ module TwitterCldr
 
     def initialize(obj, locale, options = {})
       @base_obj = obj
-      @locale = locale
+      @locale = TwitterCldr.convert_locale(locale)
+      @locale = TwitterCldr::DEFAULT_LOCALE unless TwitterCldr.supported_locale?(@locale)
 
       options = options.dup
-      options[:locale] ||= @locale
+      options[:locale] = @locale
 
       @formatter = formatter_const.new(options) if formatter_const
     end

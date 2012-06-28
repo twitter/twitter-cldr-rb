@@ -1,0 +1,42 @@
+el: 
+  numbers: 
+    formats: 
+      currency: 
+        patterns: 
+          default: "#,##0.00 ¤"
+        unit: 
+          other: "{0} {1}"
+      decimal: 
+        patterns: 
+          default: "#,##0.###"
+          short: 
+            1000: "0.0 χιλ'.'"
+            10000: "00 χιλ'.'"
+            100000: "000 χιλ'.'"
+            1000000: "0.0 εκ'.'"
+            10000000: "00 εκ'.'"
+            100000000: "000 εκ'.'"
+            1000000000: "0.0 δις"
+            10000000000: "00 δις"
+            100000000000: "000 δις"
+            1000000000000: "0.0 τρις"
+            10000000000000: "00 τρις"
+            100000000000000: "000 τρις"
+      percent: 
+        patterns: 
+          default: "#,##0%"
+      scientific: 
+        patterns: 
+          default: "#E0"
+    symbols: 
+      alias: ""
+      decimal: ","
+      exponential: e
+      group: "."
+      infinity: ∞
+      list: ","
+      minus_sign: "-"
+      nan: NaN
+      per_mille: ‰
+      percent_sign: "%"
+      plus_sign: +

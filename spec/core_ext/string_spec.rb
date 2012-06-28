@@ -15,8 +15,8 @@ describe String do
     end
 
     it "uses default locale if it's not explicitly specified" do
-      mock(TwitterCldr).get_locale { :jp }
-      'foo'.localize.locale.should == :jp
+      mock(TwitterCldr).get_locale { :ja }
+      'foo'.localize.locale.should == :ja
     end
 
     it 'uses provided locale if there is one' do

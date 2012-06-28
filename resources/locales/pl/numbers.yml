@@ -12,6 +12,19 @@ pl:
       decimal: 
         patterns: 
           default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: "00 tys'.'"
+            100000: "000 tys'.'"
+            1000000: "0.0 mln"
+            10000000: "00 mln"
+            100000000: "000 mln"
+            1000000000: "0.0 mld"
+            10000000000: "00 mld"
+            100000000000: "000 mld"
+            1000000000000: "0.0 bln"
+            10000000000000: "00 bln"
+            100000000000000: "000 bln"
       percent: 
         patterns: 
           default: "#,##0%"
@@ -22,7 +35,7 @@ pl:
       alias: ""
       decimal: ","
       exponential: E
-      group:  
+      group: " "
       infinity: ∞
       list: ;
       minus_sign: "-"

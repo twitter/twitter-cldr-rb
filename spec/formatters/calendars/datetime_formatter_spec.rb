@@ -24,10 +24,74 @@ describe DateTimeFormatter do
     end
   end
 
+  describe "#weekday_local_stand_alone" do
+    it "test: pattern c" do
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   4), 'c', 1).should == '1'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   5), 'c', 1).should == '2'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,  10), 'c', 1).should == '7'
+    end
+
+    it "test: pattern cc" do
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 4),  'cc',  2).should == 'Mo.'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 5),  'cc',  2).should == 'Di.'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 10), 'cc',  2).should == 'So.'
+    end
+
+    it "test: pattern ccc" do
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 4),  'ccc',  3).should == 'Mo.'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 5),  'ccc',  3).should == 'Di.'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1, 10), 'ccc',  3).should == 'So.'
+    end
+
+    it "test: pattern cccc" do
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   4), 'cccc', 4).should == 'Montag'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   5), 'cccc', 4).should == 'Dienstag'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,  10), 'cccc', 4).should == 'Sonntag'
+    end
+
+    it "test: pattern ccccc" do
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   4), 'ccccc', 5).should == 'M'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,   5), 'ccccc', 5).should == 'D'
+      @formatter.send(:weekday_local_stand_alone, Date.new(2010, 1,  10), 'ccccc', 5).should == 'S'
+    end
+  end
+
+  describe "#weekday_local" do
+    it "test: pattern e" do
+      @formatter.send(:weekday_local, Date.new(2010, 1,   4), 'e', 1).should == '1'
+      @formatter.send(:weekday_local, Date.new(2010, 1,   5), 'e', 1).should == '2'
+      @formatter.send(:weekday_local, Date.new(2010, 1,  10), 'e', 1).should == '7'
+    end
+
+    it "test: pattern ee" do
+      @formatter.send(:weekday_local, Date.new(2010, 1,   4), 'ee', 2).should == '1'
+      @formatter.send(:weekday_local, Date.new(2010, 1,   5), 'ee', 2).should == '2'
+      @formatter.send(:weekday_local, Date.new(2010, 1,  10), 'ee', 2).should == '7'
+    end
+
+    it "test: pattern eee" do
+      @formatter.send(:weekday_local, Date.new(2010, 1,   4), 'eee', 3).should == 'Mo.'
+      @formatter.send(:weekday_local, Date.new(2010, 1,   5), 'eee', 3).should == 'Di.'
+      @formatter.send(:weekday_local, Date.new(2010, 1,  10), 'eee', 3).should == 'So.'
+    end
+
+    it "test: pattern eeee" do
+      @formatter.send(:weekday_local, Date.new(2010, 1,   4), 'eeee', 4).should == 'Montag'
+      @formatter.send(:weekday_local, Date.new(2010, 1,   5), 'eeee', 4).should == 'Dienstag'
+      @formatter.send(:weekday_local, Date.new(2010, 1,  10), 'eeee', 4).should == 'Sonntag'
+    end
+
+    it "test: pattern eeeee" do
+      @formatter.send(:weekday_local, Date.new(2010, 1,   4), 'eeeee', 5).should == 'M'
+      @formatter.send(:weekday_local, Date.new(2010, 1,   5), 'eeeee', 5).should == 'D'
+      @formatter.send(:weekday_local, Date.new(2010, 1,  10), 'eeeee', 5).should == 'S'
+    end
+  end
+
   describe "#weekday" do
     it "test: pattern E, EE, EEE" do
-      @formatter.send(:weekday, Date.new(2010, 1, 1), 'E', 1).should == 'Fr.'
-      @formatter.send(:weekday, Date.new(2010, 1, 1), 'EE', 2).should == 'Fr.'
+      @formatter.send(:weekday, Date.new(2010, 1, 1), 'E',   1).should == 'Fr.'
+      @formatter.send(:weekday, Date.new(2010, 1, 1), 'EE',  2).should == 'Fr.'
       @formatter.send(:weekday, Date.new(2010, 1, 1), 'EEE', 3).should == 'Fr.'
     end
 
@@ -325,6 +389,32 @@ describe DateTimeFormatter do
       @formatter.send(:year, Date.new(  345, 1, 1), 'yyyyy', 5).should == '00345'
       @formatter.send(:year, Date.new( 2345, 1, 1), 'yyyyy', 5).should == '02345'
       @formatter.send(:year, Date.new(12345, 1, 1), 'yyyyy', 5).should == '12345'
+    end
+  end
+
+  describe "#era" do
+    before(:each) do
+      @formatter = DateTimeFormatter.new(:locale => :en)
+    end
+
+    it "test: pattern G" do
+      @formatter.send(:era, Date.new(2012, 1, 1), 'G', 1).should == "AD"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'G', 1).should == "BC"
+    end
+
+    it "test: pattern GG" do
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GG', 2).should == "AD"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GG', 2).should == "BC"
+    end
+
+    it "test: pattern GGG" do
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GGG', 3).should == "AD"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GGG', 3).should == "BC"
+    end
+
+    it "test: pattern GGGG" do
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GGGG', 4).should == "Anno Domini"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GGGG', 4).should == "Before Christ"
     end
   end
 end

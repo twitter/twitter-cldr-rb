@@ -1,0 +1,45 @@
+uk: 
+  numbers: 
+    formats: 
+      currency: 
+        patterns: 
+          default: "#,##0.00 ¤"
+        unit: 
+          few: "{0} {1}"
+          many: "{0} {1}"
+          one: "{0} {1}"
+          other: "{0} {1}"
+      decimal: 
+        patterns: 
+          default: "#,##0.###"
+          short: 
+            1000: "0.0 тис"
+            10000: "00 тис"
+            100000: "000 тис"
+            1000000: "0.0 млн"
+            10000000: "00 млн"
+            100000000: "000 млн"
+            1000000000: "0.0 млрд"
+            10000000000: "00 млрд"
+            100000000000: "000 млрд"
+            1000000000000: "0.0 трлн"
+            10000000000000: "00 трлн"
+            100000000000000: "000 трлн"
+      percent: 
+        patterns: 
+          default: "#,##0%"
+      scientific: 
+        patterns: 
+          default: "#E0"
+    symbols: 
+      alias: ""
+      decimal: ","
+      exponential: Е
+      group: " "
+      infinity: ∞
+      list: ;
+      minus_sign: "-"
+      nan: "Не число"
+      per_mille: ‰
+      percent_sign: "%"
+      plus_sign: +

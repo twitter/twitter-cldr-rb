@@ -51,7 +51,13 @@ module TwitterCldr
       protected
 
       def era(date, pattern, length)
-        raise NotImplementedError
+        choices = case length
+          when 1..3
+            @tokenizer.calendar[:eras][:abbr]
+          else
+            @tokenizer.calendar[:eras][:name]
+        end
+        choices[date.year < 0 ? 0 : 1]
       end
 
       def year(date, pattern, length)
@@ -72,100 +78,111 @@ module TwitterCldr
       def quarter(date, pattern, length)
         quarter = (date.month.to_i - 1) / 3 + 1
         case length
-        when 1
-          quarter.to_s
-        when 2
-          quarter.to_s.rjust(length, '0')
-        when 3
-          @tokenizer.calendar[:quarters][:format][:abbreviated][quarter]
-        when 4
-          @tokenizer.calendar[:quarters][:format][:wide][quarter]
+          when 1
+            quarter.to_s
+          when 2
+            quarter.to_s.rjust(length, '0')
+          when 3
+            @tokenizer.calendar[:quarters][:format][:abbreviated][quarter]
+          when 4
+            @tokenizer.calendar[:quarters][:format][:wide][quarter]
         end
       end
 
       def quarter_stand_alone(date, pattern, length)
         quarter = (date.month.to_i - 1) / 3 + 1
         case length
-        when 1
-          quarter.to_s
-        when 2
-          quarter.to_s.rjust(length, '0')
-        when 3
-          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          # @tokenizer.calendar[:quarters][:'stand-alone'][:abbreviated][key]
-        when 4
-          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          # @tokenizer.calendar[:quarters][:'stand-alone'][:wide][key]
-        when 5
-          @tokenizer.calendar[:quarters][:'stand-alone'][:narrow][quarter]
+          when 1
+            quarter.to_s
+          when 2
+            quarter.to_s.rjust(length, '0')
+          when 3
+            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
+            # @tokenizer.calendar[:quarters][:'stand-alone'][:abbreviated][key]
+          when 4
+            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
+            # @tokenizer.calendar[:quarters][:'stand-alone'][:wide][key]
+          when 5
+            @tokenizer.calendar[:quarters][:'stand-alone'][:narrow][quarter]
         end
       end
 
       def month(date, pattern, length)
         case length
-        when 1
-          date.month.to_s
-        when 2
-          date.month.to_s.rjust(length, '0')
-        when 3
-          @tokenizer.calendar[:months][:format][:abbreviated][date.month]
-        when 4
-          @tokenizer.calendar[:months][:format][:wide][date.month]
-        when 5
-          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          # @tokenizer.calendar[:months][:format][:narrow][date.month]
-        else
-          # raise unknown date format
+          when 1
+            date.month.to_s
+          when 2
+            date.month.to_s.rjust(length, '0')
+          when 3
+            @tokenizer.calendar[:months][:format][:abbreviated][date.month]
+          when 4
+            @tokenizer.calendar[:months][:format][:wide][date.month]
+          when 5
+            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
+            # @tokenizer.calendar[:months][:format][:narrow][date.month]
+          else
+            # raise unknown date format
         end
       end
 
       def month_stand_alone(date, pattern, length)
         case length
-        when 1
-          date.month.to_s
-        when 2
-          date.month.to_s.rjust(length, '0')
-        when 3
-          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          @tokenizer.calendar[:months][:'stand-alone'][:abbreviated][date.month]
-        when 4
-          raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
-          @tokenizer.calendar[:months][:'stand-alone'][:wide][date.month]
-        when 5
-          @tokenizer.calendar[:months][:'stand-alone'][:narrow][date.month]
-        else
-          # raise unknown date format
+          when 1
+            date.month.to_s
+          when 2
+            date.month.to_s.rjust(length, '0')
+          when 3
+            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
+            @tokenizer.calendar[:months][:'stand-alone'][:abbreviated][date.month]
+          when 4
+            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
+            @tokenizer.calendar[:months][:'stand-alone'][:wide][date.month]
+          when 5
+            @tokenizer.calendar[:months][:'stand-alone'][:narrow][date.month]
+          else
+            # raise unknown date format
         end
       end
 
       def day(date, pattern, length)
         case length
-        when 1
-          date.day.to_s
-        when 2
-          date.day.to_s.rjust(length, '0')
+          when 1
+            date.day.to_s
+          when 2
+            date.day.to_s.rjust(length, '0')
         end
       end
 
       def weekday(date, pattern, length)
         key = WEEKDAY_KEYS[date.wday]
         case length
-        when 1..3
-          @tokenizer.calendar[:days][:format][:abbreviated][key]
-        when 4
-          @tokenizer.calendar[:days][:format][:wide][key]
-        when 5
-          @tokenizer.calendar[:days][:'stand-alone'][:narrow][key]
+          when 1..3
+            @tokenizer.calendar[:days][:format][:abbreviated][key]
+          when 4
+            @tokenizer.calendar[:days][:format][:wide][key]
+          when 5
+            @tokenizer.calendar[:days][:'stand-alone'][:narrow][key]
         end
       end
 
       def weekday_local(date, pattern, length)
         # "Like E except adds a numeric value depending on the local starting day of the week"
-        raise NotImplementedError, 'need to defer a country to lookup the local first day of week from weekdata'
+        # CLDR does not contain data as to which day is the first day of the week, so we will assume Monday (Ruby default)
+        case length
+          when 1..2
+            date.cwday.to_s
+          else
+            weekday(date, pattern, length)
+        end
       end
 
       def weekday_local_stand_alone(date, pattern, length)
-        raise NotImplementedError, 'need to defer a country to lookup the local first day of week from weekdata'
+        case length
+          when 1
+            weekday_local(date, pattern, length)
+          else
+            weekday(date, pattern, length)
+        end
       end
 
       def period(time, pattern, length)
@@ -178,14 +195,14 @@ module TwitterCldr
       def hour(time, pattern, length)
         hour = time.hour
         hour = case pattern[0, 1]
-        when 'h' # [1-12]
-          hour > 12 ? (hour - 12) : (hour == 0 ? 12 : hour)
-        when 'H' # [0-23]
-          hour
-        when 'K' # [0-11]
-          hour > 11 ? hour - 12 : hour
-        when 'k' # [1-24]
-          hour == 0 ? 24 : hour
+          when 'h' # [1-12]
+            hour > 12 ? (hour - 12) : (hour == 0 ? 12 : hour)
+          when 'H' # [0-23]
+            hour
+          when 'K' # [0-11]
+            hour > 11 ? hour - 12 : hour
+          when 'k' # [1-24]
+            hour == 0 ? 24 : hour
         end
         length == 1 ? hour.to_s : hour.to_s.rjust(length, '0')
       end
@@ -205,10 +222,10 @@ module TwitterCldr
 
       def timezone(time, pattern, length)
         case length
-        when 1..3
-          time.zone
-        else
-          "UTC #{time.strftime("%z")}"
+          when 1..3
+            time.zone
+          else
+            "UTC #{time.strftime("%z")}"
         end
       end
 

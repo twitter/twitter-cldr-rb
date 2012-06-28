@@ -8,13 +8,26 @@ zh-Hant:
           other: "{0} {1}"
       decimal: 
         patterns: 
-          default: {}
+          default: "#,##0.###"
+          short: 
+            1000: 0000
+            10000: 0.0萬
+            100000: 00萬
+            1000000: 000萬
+            10000000: 0000萬
+            100000000: 0.0億
+            1000000000: 00億
+            10000000000: 000億
+            100000000000: 0000億
+            1000000000000: "0.0兆"
+            10000000000000: "00兆"
+            100000000000000: "000兆"
       percent: 
         patterns: 
-          default: {}
+          default: "#,##0%"
       scientific: 
         patterns: 
-          default: {}
+          default: "#E0"
     symbols: 
       alias: ""
       decimal: "."

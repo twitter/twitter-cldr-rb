@@ -123,7 +123,10 @@ module TwitterCldr
         end
 
         def children_hash
-          children.inject({}) { |memo, (key, child)| memo[key] = [child.value, child.children_hash]; memo }
+          children.inject({}) do |memo, (key, child)|
+            memo[key] = [child.value, child.children_hash]
+            memo
+          end
         end
 
       end

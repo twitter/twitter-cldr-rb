@@ -22,7 +22,15 @@ module TwitterCldr
       end
 
       def get_sort_key(string_or_code_points)
-        sort_key_for_code_points(get_code_points(string_or_code_points))
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points))
+      end
+
+      def get_collation_elements(string_or_code_points)
+        integer_code_points = get_normalized_code_points(string_or_code_points)
+
+        result = []
+        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
+        result
       end
 
       def trie
@@ -44,21 +52,11 @@ module TwitterCldr
         (a[:sort_key] <=> b[:sort_key]).nonzero? || get_integer_code_points(a[:code_points]) <=> get_integer_code_points(b[:code_points])
       end
 
-      def sort_key_for_code_points(integer_code_points)
-        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(integer_code_points))
-      end
-
       def get_integer_code_points(code_points)
         code_points.map { |code_point| code_point.to_i(16) }
       end
 
-      def get_collation_elements(integer_code_points)
-        result = []
-        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
-        result
-      end
-
-      def get_code_points(str_or_code_points)
+      def get_normalized_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA

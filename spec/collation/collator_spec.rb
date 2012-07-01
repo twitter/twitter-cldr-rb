@@ -9,13 +9,8 @@ include TwitterCldr::Collation
 
 describe Collator do
 
-  before :each do
-    Collator.instance_variable_set(:@trie, nil)
-  end
-
-  after :all do
-    Collator.instance_variable_set(:@trie, nil)
-  end
+  before(:each) { Collator.instance_variable_set(:@trie, nil) }
+  after(:all)   { Collator.instance_variable_set(:@trie, nil) }
 
   describe '.trie' do
     it 'returns collation elements trie' do
@@ -44,22 +39,43 @@ describe Collator do
     end
   end
 
-  describe '#sort_key' do
-    let(:collator)        { Collator.new }
-    let(:string)          { 'abc' }
-    let(:code_points_hex) { %w[0061 0062 0063] }
-    let(:code_points)     { code_points_hex.map { |cp| cp.to_i(16) } }
-    let(:sort_key)        { [9986, 10498, 11010, 0, 1282, 1282, 1282, 0, 1282, 1282, 1282] }
+  describe '#get_collation_elements' do
+    let(:collator)           { Collator.new }
+    let(:string)             { 'abc' }
+    let(:code_points_hex)    { %w[0061 0062 0063] }
+    let(:code_points)        { code_points_hex.map { |cp| cp.to_i(16) } }
+    let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
 
-    before(:each) { mock(collator).sort_key_for_code_points(code_points) { sort_key } }
+    before :each do
+      mock(TwitterCldr::Normalization::NFD).normalize_code_points(code_points_hex) { code_points_hex }
+      stub(TwitterCldr::Normalization::Base).combining_class_for { 0 }
+    end
+
+    it 'returns collation elements for a string' do
+      collator.get_collation_elements(string).should == collation_elements
+    end
+
+    it 'returns collation elements for an array of code points (represented as hex strings)' do
+      collator.get_collation_elements(code_points_hex).should == collation_elements
+    end
+  end
+
+  describe '#get_sort_key' do
+    let(:collator)           { Collator.new }
+    let(:string)             { 'abc' }
+    let(:code_points_hex)    { %w[0061 0062 0063] }
+    let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
+    let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
+
+    before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements) { sort_key } }
 
     it 'calculates sort key for a string' do
-      mock(TwitterCldr::Utils::CodePoints).from_string(string) { code_points_hex }
+      mock(collator).get_collation_elements(string) { collation_elements }
       collator.get_sort_key(string).should == sort_key
     end
 
     it 'calculates sort key for an array of code points (represented as hex strings)' do
-      dont_allow(TwitterCldr::Utils::CodePoints).from_string(string)
+      mock(collator).get_collation_elements(code_points_hex) { collation_elements }
       collator.get_sort_key(code_points_hex).should == sort_key
     end
   end

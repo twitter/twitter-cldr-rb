@@ -21,7 +21,7 @@ module TwitterCldr
         string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
       end
 
-      def sort_key(string_or_code_points)
+      def get_sort_key(string_or_code_points)
         sort_key_for_code_points(get_code_points(string_or_code_points))
       end
 
@@ -37,7 +37,7 @@ module TwitterCldr
 
       def comparison_key(string)
         code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-        { :code_points => code_points, :sort_key => sort_key(code_points) }
+        { :code_points => code_points, :sort_key => get_sort_key(code_points) }
       end
 
       def compare_keys(a, b)

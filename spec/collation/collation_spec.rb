@@ -38,7 +38,7 @@ describe 'Unicode Collation Algorithm' do
         current_code_points = $1.split
         current_hex_code_points = current_code_points.map { |cp| cp.to_i(16) }
 
-        current_sort_key = collator.sort_key(current_code_points)
+        current_sort_key = collator.get_sort_key(current_code_points)
 
         if previous_sort_key
           result = (previous_sort_key <=> current_sort_key).nonzero? || (previous_hex_code_points <=> current_hex_code_points)

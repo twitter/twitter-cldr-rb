@@ -55,12 +55,12 @@ describe Collator do
 
     it 'calculates sort key for a string' do
       mock(TwitterCldr::Utils::CodePoints).from_string(string) { code_points_hex }
-      collator.sort_key(string).should == sort_key
+      collator.get_sort_key(string).should == sort_key
     end
 
     it 'calculates sort key for an array of code points (represented as hex strings)' do
       dont_allow(TwitterCldr::Utils::CodePoints).from_string(string)
-      collator.sort_key(code_points_hex).should == sort_key
+      collator.get_sort_key(code_points_hex).should == sort_key
     end
   end
 
@@ -78,13 +78,13 @@ describe Collator do
     end
 
     it 'returns 0 without computing sort keys if strings are equal' do
-      dont_allow(collator).sort_key
+      dont_allow(collator).get_sort_key
 
       collator.compare('foo', 'foo').should == 0
     end
 
     it 'compares strings by code points if the sort keys are equal' do
-      stub(collator).sort_key { sort_key }
+      stub(collator).get_sort_key { sort_key }
 
       collator.compare('bar', 'foo').should == -1
     end
@@ -107,11 +107,11 @@ describe Collator do
   end
 
   def mock_sort_key(collator, string, sort_key)
-    mock(collator).sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
+    mock(collator).get_sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
   end
 
   def stub_sort_key(collator, string, sort_key)
-    stub(collator).sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
+    stub(collator).get_sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
   end
 
 end

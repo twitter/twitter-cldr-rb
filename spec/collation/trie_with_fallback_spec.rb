@@ -29,7 +29,7 @@ describe TrieWithFallback do
   describe '#find_prefix' do
     it 'returns result if the key is present' do
       dont_allow(fallback).find_prefix
-      trie.find_prefix([1, 2, 3, 4]).should == ['value', {}, 3]
+      trie.find_prefix([1, 2, 3, 4]).should == ['value', nil, 3]
     end
 
     it 'resorts to the fallback if the key is not present' do

@@ -141,16 +141,16 @@ describe Trie do
 
     describe 'second (subtrie) element of the returned array' do
       it 'is a hash of possible suffixes for the prefix that was found' do
-        trie.find_prefix([1, 4, 8])[1].should == {}
-        trie.find_prefix([2, 7])[1].should == { 5 => ["275", { }] }
+        trie.find_prefix([1, 4, 8])[1].should == nil
+        trie.find_prefix([2, 7])[1].should == { 5 => ["275", nil] }
       end
 
       it 'is a hash representing the whole trie if the prefix was not found' do
         trie.find_prefix([404])[1].should == {
-            1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
-            2 => ['2', { 7 => [nil,  { 5 => ['275', {}] }] }],
-            3 => [nil, { 9 => ['39', {}] }],
-            4 => ['4', {}]
+            1 => ['1', { 4 => ['14', { 8 => ['148', nil] }], 5 => ['15', nil] }],
+            2 => ['2', { 7 => [nil,  { 5 => ['275', nil] }] }],
+            3 => [nil, { 9 => ['39', nil] }],
+            4 => ['4', nil]
         }
       end
     end

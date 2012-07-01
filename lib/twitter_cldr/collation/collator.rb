@@ -130,7 +130,7 @@ module TwitterCldr
 
         used_combining_classes = {}
 
-        while non_starter_pos < integer_code_points.size && !suffixes.empty?
+        while non_starter_pos < integer_code_points.size && suffixes
           # create a trie from a hash of suffixes available for the chosen prefix
           subtrie = TwitterCldr::Collation::Trie.new(suffixes)
 

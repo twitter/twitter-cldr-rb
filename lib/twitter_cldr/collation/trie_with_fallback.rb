@@ -18,10 +18,10 @@ module TwitterCldr
       end
 
       def find_prefix(key)
-        value, suffixes, prefix_size = super
+        value, prefix_size, suffixes = super
 
         if prefix_size > 0
-          [value, suffixes, prefix_size]
+          [value, prefix_size, suffixes]
         else
           @fallback.find_prefix(key)
         end

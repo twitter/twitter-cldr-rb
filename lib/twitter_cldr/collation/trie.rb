@@ -19,36 +19,38 @@ module TwitterCldr
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
       # `trie_hash` is extracted from other trie and represents its sub-trie.
       #
-      def initialize(trie_hash = {})
-        @root = [nil, trie_hash]
+      def initialize(root = Node.new)
+        @root = root
       end
 
       def starters
-        @root[1].keys
+        @root.children.keys
       end
 
       def each_starting_with(starter, &block)
-        starting_node = @root[1][starter]
+        starting_node = @root.child(starter)
         each_pair(starting_node, [starter], &block) if starting_node
       end
 
-      def add(key, value, override = true)
-        final = key.inject(@root) do |node, key_element|
-          node[1] ||= {}
-          node[1][key_element] ||= [nil, nil]
-        end
+      def empty?
+        @root.children.empty?
+      end
 
-        final[0] = value unless final[0] && !override
+      def add(key, value)
+        store(key, value, false)
+      end
+
+      def set(key, value)
+        store(key, value)
       end
 
       def get(key)
         final = key.inject(@root) do |node, key_element|
-          subtrie = node[1] && node[1][key_element]
-          return unless subtrie
-          subtrie
+          return unless node
+          node.child(key_element)
         end
 
-        final[0]
+        final && final.value
       end
 
       # Finds the longest substring of the `key` that matches, as a key, a node in the trie.
@@ -56,37 +58,73 @@ module TwitterCldr
       # Returns a three elements array:
       #
       #   1. value in the last node that was visited
-      #   2. sub-trie of this node (as a hash)
-      #   3. size of the `key` prefix that matches this node
+      #   2. size of the `key` prefix that matches this node
+      #   3. sub-trie for which that node is a root
       #
       def find_prefix(key)
         prefix_size = 0
         node = @root
 
         key.each do |key_element|
-          subtrie = node[1] && node[1][key_element]
+          child = node.child(key_element)
 
-          if subtrie
+          if child
             prefix_size += 1
-            node = subtrie
+            node = child
           else
             break
           end
         end
 
-        node + [prefix_size]
+        [node.value, prefix_size, self.class.new(node)]
+      end
+
+      def to_hash
+        @root.children_hash
       end
 
       private
 
+      def store(key, value, override = true)
+        final = key.inject(@root) do |node, key_element|
+          node.child(key_element) || node.set_child(key_element, Node.new)
+        end
+
+        final.value = value unless final.value && !override
+      end
+
       def each_pair(node, key, &block)
-        yield [key, node[0]] if node[0]
+        yield [key, node.value] if node.value
 
-        return unless node[1]
-
-        node[1].each do |key_element, child|
+        node.children.each do |key_element, child|
           each_pair(child, key + [key_element], &block)
         end
+      end
+
+      class Node
+
+        attr_accessor :value
+
+        def initialize(value = nil)
+          @value = value
+        end
+
+        def child(key)
+          children[key]
+        end
+
+        def set_child(key, child)
+          children[key] = child
+        end
+
+        def children
+          @children ||= {}
+        end
+
+        def children_hash
+          children.inject({}) { |memo, (key, child)| memo[key] = [child.value, child.children_hash]; memo }
+        end
+
       end
 
     end

@@ -112,7 +112,7 @@ class TrieStub
     self.storage = []
   end
 
-  def add(code_points, collation_element)
+  def set(code_points, collation_element)
     storage << [code_points, collation_element]
   end
 end

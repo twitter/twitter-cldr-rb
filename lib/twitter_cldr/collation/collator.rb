@@ -62,13 +62,12 @@ module TwitterCldr
         end
 
         suppressed_starters.each do |starter|
-          value = fallback.get([starter])
-          trie.add([starter], value) if value
+          trie.add([starter], fallback.get([starter]))
         end
 
         (trie.starters - suppressed_starters).each do |starter|
           fallback.each_starting_with(starter) do |key, value|
-            trie.add(key, value, false)
+            trie.add(key, value)
           end
         end
 
@@ -119,7 +118,7 @@ module TwitterCldr
       #
       def explicit_collation_elements(integer_code_points)
         # find the longest prefix in the trie
-        collation_elements, suffixes, prefix_size = @trie.find_prefix(integer_code_points)
+        collation_elements, prefix_size, suffixes = @trie.find_prefix(integer_code_points)
 
         return unless collation_elements
 
@@ -130,10 +129,7 @@ module TwitterCldr
 
         used_combining_classes = {}
 
-        while non_starter_pos < integer_code_points.size && suffixes
-          # create a trie from a hash of suffixes available for the chosen prefix
-          subtrie = TwitterCldr::Collation::Trie.new(suffixes)
-
+        while non_starter_pos < integer_code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
           non_starter_code_point = integer_code_points[non_starter_pos]
           combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point.to_s(16))
@@ -145,7 +141,7 @@ module TwitterCldr
 
           # Try to find collation elements for [prefix + non-starter] code points sequence. As the subtrie contains
           # suffixes (without prefix) we pass only non-starter itself.
-          new_collation_elements, new_suffixes = subtrie.find_prefix([non_starter_code_point]).first(2)
+          new_collation_elements, _, new_suffixes = suffixes.find_prefix([non_starter_code_point])
 
           if new_collation_elements
             # non-starter with a collation elements sequence corresponding to [prefix + non-starter] accepted

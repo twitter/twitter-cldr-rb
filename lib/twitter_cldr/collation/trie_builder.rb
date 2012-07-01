@@ -21,7 +21,7 @@ module TwitterCldr
 
         def parse_trie(table, trie = TwitterCldr::Collation::Trie.new)
           table.lines.each do |line|
-            trie.add(parse_code_points($1), parse_collation_element($2)) if FCE_REGEXP =~ line
+            trie.set(parse_code_points($1), parse_collation_element($2)) if FCE_REGEXP =~ line
           end
 
           trie

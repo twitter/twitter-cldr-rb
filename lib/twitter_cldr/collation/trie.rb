@@ -19,8 +19,8 @@ module TwitterCldr
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
       # `trie_hash` is extracted from other trie and represents its sub-trie.
       #
-      def initialize(root = Node.new)
-        @root = root
+      def initialize(children = {})
+        @root = Node.new(nil, children)
       end
 
       def starters
@@ -76,7 +76,7 @@ module TwitterCldr
           end
         end
 
-        [node.value, prefix_size, self.class.new(node)]
+        [node.value, prefix_size, self.class.new(node.children)]
       end
 
       def to_hash
@@ -105,8 +105,9 @@ module TwitterCldr
 
         attr_accessor :value
 
-        def initialize(value = nil)
-          @value = value
+        def initialize(value = nil, children = nil)
+          @value    = value
+          @children = children
         end
 
         def child(key)

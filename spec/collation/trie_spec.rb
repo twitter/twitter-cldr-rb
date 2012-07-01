@@ -26,6 +26,21 @@ describe Trie do
 
   before(:each) { values.each { |key, value| trie.add(key, value) } }
 
+  describe '#initialize' do
+    it 'initializes an empty trie by default' do
+      Trie.new.should be_empty
+    end
+
+    it 'initializes with a hash of root children' do
+      trie = Trie.new(1 => Trie::Node.new(nil, { 2 => Trie::Node.new('12')}), 2 => Trie::Node.new('2'))
+
+      trie.to_hash.should == {
+          1 => [nil, { 2 => ['12', {}] }],
+          2 => ['2', {}]
+      }
+    end
+  end
+
   describe '#starters' do
     it 'returns all unique first elements of the keys in the trie' do
       trie.starters.sort.should == [1, 2, 3, 4]
@@ -158,12 +173,17 @@ describe Trie::Node do
   let(:another_child) { Trie::Node.new('another-child') }
 
   describe '#initialize' do
-    it 'uses nil as default node value' do
+    it 'initializes node with nil value and empty children hash by defeault' do
       node.value.should be_nil
+      node.children.should == {}
     end
 
-    it 'saves provided value as a node value' do
-      child.value.should == 'child'
+    it 'saves provided value and children ' do
+      children_hash = { 42 => child }
+      node_with_children = Trie::Node.new('value', children_hash)
+
+      node_with_children.value.should == 'value'
+      node_with_children.children.should == children_hash
     end
   end
 

@@ -10,5 +10,6 @@ module TwitterCldr
     autoload :SortKeyBuilder,            'twitter_cldr/collation/sort_key_builder'
     autoload :Trie,                      'twitter_cldr/collation/trie'
     autoload :TrieBuilder,               'twitter_cldr/collation/trie_builder'
+    autoload :TrieWithFallback,          'twitter_cldr/collation/trie_with_fallback'
   end
 end

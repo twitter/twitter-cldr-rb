@@ -13,6 +13,13 @@ module TwitterCldr
 
       FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
 
+      attr_accessor :locale
+
+      def initialize(locale = nil)
+        @locale = TwitterCldr.convert_locale(locale) if locale
+        @trie   = load_trie
+      end
+
       def sort(strings)
         strings.map{ |s| [s, comparison_key(s)] }.sort{ |a, b| compare_keys(a[1], b[1]) }.map(&:first)
       end
@@ -33,15 +40,40 @@ module TwitterCldr
         result
       end
 
-      def trie
-        @trie ||= self.class.trie
-      end
-
-      def self.trie
-        @trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE)
-      end
-
       private
+
+      def load_trie
+        @locale ? load_tailored_trie : self.class.default_fce_trie
+      end
+
+      def load_tailored_trie
+        tailoring_data = TwitterCldr.get_resource(:collation, :tailorings, @locale)
+
+        fallback = self.class.default_fce_trie
+
+        trie = TwitterCldr::Collation::TrieWithFallback.new(fallback)
+        TwitterCldr::Collation::TrieBuilder.parse_trie(tailoring_data[:tailored_table], trie)
+
+        suppressed_starters = tailoring_data[:suppressed_contractions].chars.map do |starter|
+          starter_code_points = TwitterCldr::Utils::CodePoints.from_string(starter)
+          raise ArgumentError, 'Suppressed contraction starter should be a single code point' if starter_code_points.size > 1
+
+          starter_code_points.first.to_i(16)
+        end
+
+        suppressed_starters.each do |starter|
+          value = fallback.get([starter])
+          trie.add([starter], value) if value
+        end
+
+        (trie.starters - suppressed_starters).each do |starter|
+          fallback.each_starting_with(starter) do |key, value|
+            trie.add(key, value, false)
+          end
+        end
+
+        trie
+      end
 
       def comparison_key(string)
         code_points = TwitterCldr::Utils::CodePoints.from_string(string)
@@ -87,7 +119,7 @@ module TwitterCldr
       #
       def explicit_collation_elements(integer_code_points)
         # find the longest prefix in the trie
-        collation_elements, suffixes, prefix_size = trie.find_prefix(integer_code_points)
+        collation_elements, suffixes, prefix_size = @trie.find_prefix(integer_code_points)
 
         return unless collation_elements
 
@@ -133,6 +165,20 @@ module TwitterCldr
 
       def implicit_collation_elements(integer_code_points)
         TwitterCldr::Collation::ImplicitCollationElements.for_code_point(integer_code_points.shift)
+      end
+
+      class << self
+
+        # Loads and memoizes the default Fractional Collation Elements trie.
+        #
+        def default_fce_trie
+          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE)
+        end
+
+        def clear_default_fce_trie
+          @default_fce_trie = nil
+        end
+
       end
 
     end

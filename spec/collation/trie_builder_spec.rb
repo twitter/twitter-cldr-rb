@@ -9,18 +9,23 @@ include TwitterCldr::Collation
 
 describe TrieBuilder do
 
+  describe '#parse_trie' do
+    it 'returns a trie' do
+      TrieBuilder.parse_trie(fractional_uca_short_stub).should be_instance_of(Trie)
+    end
+
+    it 'adds every collation element from the FCE table to the trie' do
+      mock(Trie).new { TrieStub.new }
+      TrieBuilder.parse_trie(fractional_uca_short_stub).storage.should == collation_elements_table
+    end
+  end
+
   describe '#load_trie' do
-    describe 'fractional CE trie hash' do
-      before(:each) { mock(TrieBuilder).load_resource('resource') { fractional_uca_short_stub } }
+    it 'load FCE table from the resource into a trie' do
+      mock(TrieBuilder).parse_trie('fce-table') { 'trie' }
+      mock(TrieBuilder).load_resource('resource') { 'fce-table' }
 
-      it 'returns a trie' do
-        TrieBuilder.load_trie('resource').should be_instance_of(Trie)
-      end
-
-      it 'adds every collation element from the FractionalUCA_SHORT.txt file to the trie' do
-        mock(Trie).new { TrieStub.new }
-        TrieBuilder.load_trie('resource').storage.should == collation_elements_table
-      end
+      TrieBuilder.load_trie('resource').should == 'trie'
     end
   end
 

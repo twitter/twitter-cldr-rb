@@ -6,11 +6,12 @@
 module TwitterCldr
   module Collation
 
-    # Builds a collation elements Trie from the file containing a fractional collation elements table.
+    # Builds a fractional collation elements Trie from the file containing a fractional collation elements table.
     #
     module TrieBuilder
 
-      FRACTIONAL_UCA_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
+      # Fractional collation element regexp
+      FCE_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
       class << self
 
@@ -18,17 +19,15 @@ module TwitterCldr
           parse_trie(load_resource(resource))
         end
 
-        private
-
-        def parse_trie(table)
-          trie = TwitterCldr::Collation::Trie.new
-
+        def parse_trie(table, trie = TwitterCldr::Collation::Trie.new)
           table.lines.each do |line|
-            trie.add(parse_code_points($1), parse_collation_element($2)) if FRACTIONAL_UCA_REGEXP =~ line
+            trie.add(parse_code_points($1), parse_collation_element($2)) if FCE_REGEXP =~ line
           end
 
           trie
         end
+
+        private
 
         def load_resource(resource)
           open(File.join(TwitterCldr::RESOURCES_DIR, resource), 'r')

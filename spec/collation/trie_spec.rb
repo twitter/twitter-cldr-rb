@@ -19,12 +19,33 @@ describe Trie do
         [[1, 4, 8], '148'],
         [[2],       '2'  ],
         [[2, 7, 5], '275'],
-        [[3, 9],    '39' ]
+        [[3, 9],    '39' ],
+        [[4],       '4'  ]
     ]
   end
 
-  before(:each) do
-    values.each { |key, value| trie.add(key, value) }
+  before(:each) { values.each { |key, value| trie.add(key, value) } }
+
+  describe '#starters' do
+    it 'returns all unique first elements of the keys in the trie' do
+      trie.starters.sort.should == [1, 2, 3, 4]
+    end
+  end
+
+  describe '#each_starting_with' do
+    it 'iterates over all key-value pairs for which key starts with a given value' do
+      res = {}
+      trie.each_starting_with(1) { |k, v| res[k] = v }
+
+      res.should == { [1] => '1', [1, 4] => '14', [1, 5] => '15', [1, 4, 8] => '148' }
+    end
+
+    it 'works when argument is not a starter' do
+      res = {}
+      trie.each_starting_with(42) { |k, v| res[k] = v }
+
+      res.should == {}
+    end
   end
 
   describe '#get' do
@@ -32,24 +53,65 @@ describe Trie do
       [[6], [3], [1, 4, 3], [2, 7, 5, 6, 9]].each { |key| trie.get(key).should be_nil }
     end
 
-    it 'returns value and key size for each existing key' do
+    it 'returns value for each existing key' do
       values.each { |key, value| trie.get(key).should == value }
     end
   end
 
   describe '#add' do
-    it 'overrides values' do
-      trie.get([1, 4]).should == '14'
+    context 'when override argument is not specified (uses true as default)' do
+      it 'overrides values' do
+        trie.get([1, 4]).should == '14'
 
-      trie.add([1, 4], '14-new')
-      trie.get([1, 4]).should == '14-new'
+        trie.add([1, 4], '14-new')
+        trie.get([1, 4]).should == '14-new'
+      end
+
+      it 'adds new values' do
+        trie.get([1, 9]).should be_nil
+
+        trie.add([1, 9], '19')
+        trie.get([1, 9]).should == '19'
+      end
+    end
+
+    context 'when override is true' do
+      it 'overrides values' do
+        trie.get([1, 4]).should == '14'
+
+        trie.add([1, 4], '14-new', true)
+        trie.get([1, 4]).should == '14-new'
+      end
+
+      it 'adds new values' do
+        trie.get([1, 9]).should be_nil
+
+        trie.add([1, 9], '19', true)
+        trie.get([1, 9]).should == '19'
+      end
+    end
+
+    context 'when override is false' do
+      it 'does not override values' do
+        trie.get([1, 4]).should == '14'
+
+        trie.add([1, 4], '14-new', false)
+        trie.get([1, 4]).should == '14'
+      end
+
+      it 'adds new values' do
+        trie.get([1, 9]).should be_nil
+
+        trie.add([1, 9], '19', false)
+        trie.get([1, 9]).should == '19'
+      end
     end
   end
 
   describe '#find_prefix' do
     describe 'first (value) and third (prefix size) elements of the returned array' do
       it 'value is 0 nil and prefix size is 0 if the prefix was not found' do
-        test_find_prefix(trie, [4], nil, 0)
+        test_find_prefix(trie, [42], nil, 0)
       end
 
       it 'stored value and key size as a prefix size if the whole key was found' do
@@ -87,7 +149,8 @@ describe Trie do
         trie.find_prefix([404])[1].should == {
             1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
             2 => ['2', { 7 => [nil,  { 5 => ['275', {}] }] }],
-            3 => [nil, { 9 => ['39', {}] }]
+            3 => [nil, { 9 => ['39', {}] }],
+            4 => ['4', {}]
         }
       end
     end

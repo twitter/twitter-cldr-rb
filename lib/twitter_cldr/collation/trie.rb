@@ -23,19 +23,29 @@ module TwitterCldr
         @root = [nil, trie_hash]
       end
 
-      def add(key, value)
+      def starters
+        @root[1].keys
+      end
+
+      def each_starting_with(starter, &block)
+        starting_node = @root[1][starter]
+
+        each_pair(starting_node, [starter], &block) if starting_node
+      end
+
+      def add(key, value, override = true)
         final = key.inject(@root) do |node, key_element|
           node[1][key_element] ||= [nil, {}]
         end
 
-        final[0] = value
+        final[0] = value unless final[0] && !override
       end
 
       def get(key)
         final = key.inject(@root) do |node, key_element|
-          subtree = node[1][key_element]
-          return unless subtree
-          subtree
+          subtrie = node[1][key_element]
+          return unless subtrie
+          subtrie
         end
 
         final[0]
@@ -54,17 +64,27 @@ module TwitterCldr
         node = @root
 
         key.each do |key_element|
-          subtree = node[1][key_element]
+          subtrie = node[1][key_element]
 
-          if subtree
+          if subtrie
             prefix_size += 1
-            node = subtree
+            node = subtrie
           else
             break
           end
         end
 
         node + [prefix_size]
+      end
+
+      private
+
+      def each_pair(node, key, &block)
+        yield [key, node[0]] if node[0]
+
+        node[1].each do |key_element, child|
+          each_pair(child, key + [key_element], &block)
+        end
       end
 
     end

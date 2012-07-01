@@ -9,33 +9,47 @@ include TwitterCldr::Collation
 
 describe Collator do
 
-  before(:each) { Collator.instance_variable_set(:@trie, nil) }
-  after(:all)   { Collator.instance_variable_set(:@trie, nil) }
+  before(:each) { Collator.clear_default_fce_trie }
+  after(:all)   { Collator.clear_default_fce_trie }
 
-  describe '.trie' do
-    it 'returns collation elements trie' do
+  describe '.clear_default_fce_trie' do
+    it 'forces Collator to reload default FCE next time' do
+      mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE).twice { 'trie' }
+
+      Collator.default_fce_trie
+      Collator.clear_default_fce_trie
+      Collator.default_fce_trie
+    end
+  end
+
+  describe '.default_fce_trie' do
+    before(:each) { Collator.clear_default_fce_trie }
+
+    it 'returns default fractional collation elements trie' do
       mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { 'trie' }
-      Collator.trie.should == 'trie'
+      Collator.default_fce_trie.should == 'trie'
     end
 
     it 'loads the trie only once' do
       mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { 'trie' }
-
-      Collator.trie.object_id.should == Collator.trie.object_id
+      Collator.default_fce_trie.object_id.should == Collator.default_fce_trie.object_id
     end
   end
 
-  describe '#trie' do
-    it 'delegates to the class method' do
-      mock(Collator).trie { 'trie' }
-      Collator.new.trie.should == 'trie'
+  describe '#initialize' do
+    before(:each) { stub(TrieBuilder).load_trie { 'trie' } }
+    before(:each) { any_instance_of(Collator) { |c| stub(c).load_trie { 'trie' } } }
+
+    it 'initializes default collator if locale is not specified' do
+      Collator.new.locale.should be_nil
     end
 
-    it 'calls class method only once' do
-      mock(Collator).trie { 'trie' }
+    it 'initialized tailored collator if locale is provided' do
+      Collator.new(:ru).locale.should == :ru
+    end
 
-      collator = Collator.new
-      collator.trie.object_id.should == collator.trie.object_id
+    it 'converts locale' do
+      Collator.new(:no).locale.should == :nb
     end
   end
 
@@ -67,6 +81,7 @@ describe Collator do
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
+    before(:each) { stub(TrieBuilder).load_trie { 'trie' } }
     before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements) { sort_key } }
 
     it 'calculates sort key for a string' do
@@ -85,6 +100,8 @@ describe Collator do
     let(:sort_key)         { [1, 3, 8, 9] }
     let(:another_sort_key) { [6, 8, 9, 2] }
 
+    before(:each) { stub(TrieBuilder).load_trie { 'trie' } }
+
     it 'compares strings by sort keys' do
       stub_sort_key(collator, 'foo', sort_key)
       stub_sort_key(collator, 'bar', another_sort_key)
@@ -93,14 +110,15 @@ describe Collator do
       collator.compare('bar', 'foo').should == 1
     end
 
-    it 'returns 0 without computing sort keys if strings are equal' do
+    it 'returns 0 without computing sort keys if the strings are equal' do
       dont_allow(collator).get_sort_key
 
       collator.compare('foo', 'foo').should == 0
     end
 
     it 'compares strings by code points if the sort keys are equal' do
-      stub(collator).get_sort_key { sort_key }
+      stub_sort_key(collator, 'foo', sort_key)
+      stub_sort_key(collator, 'bar', sort_key)
 
       collator.compare('bar', 'foo').should == -1
     end
@@ -108,6 +126,8 @@ describe Collator do
 
   describe '#sort' do
     let(:collator) { Collator.new }
+
+    before(:each) { stub(TrieBuilder).load_trie { 'trie' } }
 
     it 'sorts strings by sort keys' do
       [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock_sort_key(collator, s, key) }

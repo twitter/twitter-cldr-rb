@@ -143,7 +143,7 @@ module TwitterCldr
         end
 
         def to_trie
-          Trie.new(self.class.new(nil, @children))
+          Trie.new(self.class.new(nil, @children)).lock
         end
 
         def subtrie_hash

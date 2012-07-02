@@ -159,24 +159,30 @@ describe Trie do
     end
 
     describe 'last element of the returned array' do
-      it 'is an empty sub-trie if the prefix that was found does not have any suffixes' do
-        subtrie = trie.find_prefix([1, 4, 8]).last
+      let(:non_existing_key)     { [5, 2, 7] }
+      let(:key_with_suffixes)    { [2, 7] }
+      let(:key_without_suffixes) { [1, 4, 8] }
 
-        subtrie.is_a?(Trie)
-        subtrie.to_hash.should be_empty
+      it 'is always a locked trie' do
+        [trie, trie.lock].each do |some_trie|
+          [non_existing_key, key_with_suffixes, key_without_suffixes].each do |key|
+            some_trie.find_prefix(key).last.should be_locked
+          end
+        end
+      end
+
+      it 'is a locked empty sub-trie if the prefix that was found does not have any suffixes' do
+        trie.find_prefix(key_without_suffixes).last.to_hash.should be_empty
       end
 
       it 'is a sub-trie of possible suffixes for the prefix that was found' do
-        subtrie = trie.find_prefix([2, 7]).last
-
-        subtrie.is_a?(Trie)
-        subtrie.to_hash.should == { 5 => ["275", {}] }
+        trie.find_prefix(key_with_suffixes).last.to_hash.should == { 5 => ["275", {}] }
       end
 
       it 'is a hash representing the whole trie if the prefix was not found' do
-        subtrie = trie.find_prefix([404]).last
+        trie.get(non_existing_key).should be_nil
 
-        subtrie.to_hash.should == {
+        trie.find_prefix(non_existing_key).last.to_hash.should == {
             1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
             2 => ['2', { 7 => [nil, { 5 => ['275', {}] }] }],
             3 => [nil, { 9 => ['39', {}] }],
@@ -303,6 +309,10 @@ describe Trie do
     describe '#to_trie' do
       it 'returns a trie' do
         node.to_trie.should be_instance_of(Trie)
+      end
+
+      it 'returns a locked trie' do
+        node.to_trie.should be_locked
       end
 
       it 'current node is a root of a new trie' do

@@ -19,12 +19,12 @@ module TwitterCldr
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
       # `trie_hash` is extracted from other trie and represents its sub-trie.
       #
-      def initialize(children = {})
-        @root = Node.new(nil, children)
+      def initialize(root = Node.new)
+        @root = root
       end
 
       def starters
-        @root.children.keys
+        @root.keys
       end
 
       def each_starting_with(starter, &block)
@@ -33,7 +33,7 @@ module TwitterCldr
       end
 
       def empty?
-        @root.children.empty?
+        !@root.has_children?
       end
 
       def add(key, value)
@@ -76,11 +76,11 @@ module TwitterCldr
           end
         end
 
-        [node.value, prefix_size, self.class.new(node.children)]
+        [node.value, prefix_size, node.to_trie]
       end
 
       def to_hash
-        @root.children_hash
+        @root.subtrie_hash
       end
 
       private
@@ -96,7 +96,7 @@ module TwitterCldr
       def each_pair(node, key, &block)
         yield [key, node.value] if node.value
 
-        node.children.each do |key_element, child|
+        node.each_key_and_child do |key_element, child|
           each_pair(child, key + [key_element], &block)
         end
       end
@@ -105,26 +105,38 @@ module TwitterCldr
 
         attr_accessor :value
 
-        def initialize(value = nil, children = nil)
+        def initialize(value = nil, children = {})
           @value    = value
           @children = children
         end
 
         def child(key)
-          children[key]
+          @children[key]
         end
 
         def set_child(key, child)
-          children[key] = child
+          @children[key] = child
         end
 
-        def children
-          @children ||= {}
+        def has_children?
+          !@children.empty?
         end
 
-        def children_hash
-          children.inject({}) do |memo, (key, child)|
-            memo[key] = [child.value, child.children_hash]
+        def each_key_and_child(&block)
+          @children.each(&block)
+        end
+
+        def keys
+          @children.keys
+        end
+
+        def to_trie
+          Trie.new(self.class.new(nil, @children))
+        end
+
+        def subtrie_hash
+          @children.inject({}) do |memo, (key, child)|
+            memo[key] = [child.value, child.subtrie_hash]
             memo
           end
         end

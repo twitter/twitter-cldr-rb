@@ -31,8 +31,8 @@ describe Trie do
       Trie.new.should be_empty
     end
 
-    it 'initializes with a hash of root children' do
-      trie = Trie.new(1 => Trie::Node.new(nil, { 2 => Trie::Node.new('12')}), 2 => Trie::Node.new('2'))
+    it 'initializes with a root node' do
+      trie = Trie.new(Trie::Node.new(nil, 1 => Trie::Node.new(nil, { 2 => Trie::Node.new('12')}), 2 => Trie::Node.new('2')))
 
       trie.to_hash.should == {
           1 => [nil, { 2 => ['12', {}] }],
@@ -43,7 +43,7 @@ describe Trie do
 
   describe '#starters' do
     it 'returns all unique first elements of the keys in the trie' do
-      trie.starters.sort.should == [1, 2, 3, 4]
+      trie.starters.should =~ [1, 2, 3, 4]
     end
   end
 
@@ -164,88 +164,144 @@ describe Trie do
 
   end
 
-end
+  describe Trie::Node do
 
-describe Trie::Node do
+    let(:node)          { Trie::Node.new }
+    let(:child)         { Trie::Node.new('child') }
+    let(:another_child) { Trie::Node.new('another-child') }
 
-  let(:node)          { Trie::Node.new }
-  let(:child)         { Trie::Node.new('child') }
-  let(:another_child) { Trie::Node.new('another-child') }
-
-  describe '#initialize' do
-    it 'initializes node with nil value and empty children hash by defeault' do
-      node.value.should be_nil
-      node.children.should == {}
+    let(:root_node) do
+      Trie::Node.new(
+          'node-0',
+          1 => Trie::Node.new(
+              'node-1',
+              1 => Trie::Node.new('node-11'),
+              2 => Trie::Node.new('node-12')
+          ),
+          2 => Trie::Node.new(
+              'node-2',
+              1 => Trie::Node.new(
+                  'node-21',
+                  1 => Trie::Node.new('node-211')
+              )
+          )
+      )
     end
 
-    it 'saves provided value and children ' do
-      children_hash = { 42 => child }
-      node_with_children = Trie::Node.new('value', children_hash)
-
-      node_with_children.value.should == 'value'
-      node_with_children.children.should == children_hash
-    end
-  end
-
-  describe '#value' do
-    it 'is nil by default' do
-      node.value.should be_nil
-    end
-
-    it 'stores the value' do
-      node.value = 42
-      node.value.should == 42
-    end
-  end
-
-  describe '#child and #set_child' do
-    it '#child returns nil if a child with a given key does not exist' do
-      node.child(42).should be_nil
+    let(:subtrie_hash) do
+      {
+          1 => [
+              'node-1',
+              {
+                  1 => ['node-11', {}],
+                  2 => ['node-12', {}]
+              }
+          ],
+          2 => [
+              'node-2',
+              {
+                  1 => [
+                      'node-21',
+                      {
+                          1 => ['node-211', {}]
+                      }
+                  ]
+              }
+          ]
+      }
     end
 
-    it '#set_child saves a child by key and #child returns the child by key' do
-      node.set_child(42, child)
-      node.child(42).should == child
+    describe '#initialize' do
+      it 'initializes node with nil value and empty children hash by default' do
+        node.value.should be_nil
+        node.should_not have_children
+      end
+
+      it 'initializes node with provided value and children hash' do
+        root_node.value.should == 'node-0'
+        root_node.should have_children
+      end
     end
 
-    it '#set_child overrides a child by key' do
-      node.set_child(42, child)
-      node.set_child(42, another_child)
+    describe '#child and #set_child' do
+      it '#child returns nil if a child with a given key does not exist' do
+        node.child(42).should be_nil
+      end
 
-      node.child(42).should_not == child
-      node.child(42).should == another_child
+      it '#set_child saves a child by key and #child returns the child by key' do
+        node.set_child(42, child)
+        node.child(42).should == child
+      end
+
+      it '#set_child overrides a child by key' do
+        node.set_child(42, child)
+        node.set_child(42, another_child)
+
+        node.child(42).should_not == child
+        node.child(42).should == another_child
+      end
+
+      it '#set_child returns the child that was saved' do
+        node.set_child(42, child).should == child
+      end
     end
 
-    it '#set_child returns the child that was saved' do
-      node.set_child(42, child).should == child
-    end
-  end
+    describe '#each_key_and_child' do
+      it 'iterates over all (key, child) pairs' do
+        node.set_child(42, child)
+        node.set_child(13, another_child)
+        res = {}
+        node.each_key_and_child { |key, child| res[key] = child }
 
-  describe '#children' do
-    it 'returns an empty hash if the node has no children' do
-      node.children.should == {}
-    end
-
-    it 'returns a hash of children' do
-      node.set_child(42, child)
-      node.set_child(88, another_child)
-
-      node.children.should == { 42 => child, 88 => another_child }
-    end
-  end
-
-  describe '#children_hash' do
-    it 'returns an empty hash if the node has no children' do
-      node.children_hash.should == {}
+        res.should == { 42 => child, 13 => another_child }
+      end
     end
 
-    it 'returns a nested hash of children values' do
-      child.set_child(12, another_child)
-      node.set_child(1, child)
-      node.set_child(2, another_child)
+    describe '#keys' do
+      it 'returns all children keys' do
+        node.set_child(42, child)
+        node.set_child(13, another_child)
 
-      node.children_hash.should == { 1 => ['child', { 12 => ['another-child', {}] }], 2 => ['another-child', {}] }
+        node.keys.should =~ [13, 42]
+      end
     end
+
+    describe '#has_children?' do
+      it 'returns false if the node has no children' do
+        node.should_not have_children
+      end
+
+      it 'returns true if the node has children' do
+        node.set_child(42, child)
+        node.should have_children
+      end
+    end
+
+    describe '#to_trie' do
+      it 'returns a trie' do
+        node.to_trie.should be_instance_of(Trie)
+      end
+
+      it 'current node is a root of a new trie' do
+        root_node.to_trie.to_hash.should == subtrie_hash
+      end
+
+      it 'sets new trie root value to nil' do
+        root_node.value.should_not be_nil
+        root_node.to_trie.instance_variable_get(:@root).value.should be_nil
+      end
+    end
+
+    describe '#subtrie_hash' do
+      it 'returns an empty hash if the node has no children' do
+        node.subtrie_hash.should == {}
+      end
+
+      it 'returns a nested hash of children values' do
+        root_node.subtrie_hash.should == subtrie_hash
+      end
+    end
+
   end
 
 end

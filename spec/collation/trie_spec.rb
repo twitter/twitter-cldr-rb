@@ -41,6 +41,21 @@ describe Trie do
     end
   end
 
+  describe '#lock and #locked?' do
+    it 'trie is unlocked by default' do
+      trie.should_not be_locked
+    end
+
+    it '#lock locks the trie' do
+      trie.lock
+      trie.should be_locked
+    end
+
+    it '#lock returns the trie' do
+      trie.lock.should == trie
+    end
+  end
+
   describe '#starters' do
     it 'returns all unique first elements of the keys in the trie' do
       trie.starters.should =~ [1, 2, 3, 4]
@@ -87,6 +102,10 @@ describe Trie do
       trie.add([1, 9], '19')
       trie.get([1, 9]).should == '19'
     end
+
+    it 'raises RuntimeError if called on a locked trie' do
+      lambda { trie.lock.add([1, 3], 'value') }.should raise_error(RuntimeError)
+    end
   end
 
   describe '#set' do
@@ -102,6 +121,10 @@ describe Trie do
 
       trie.set([1, 9], '19')
       trie.get([1, 9]).should == '19'
+    end
+
+    it 'raises RuntimeError if called on a locked trie' do
+      lambda { trie.lock.set([1, 3], 'value') }.should raise_error(RuntimeError)
     end
   end
 

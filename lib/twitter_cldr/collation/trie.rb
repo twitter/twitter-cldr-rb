@@ -21,6 +21,16 @@ module TwitterCldr
       #
       def initialize(root = Node.new)
         @root = root
+        @locked = false
+      end
+
+      def lock
+        @locked = true
+        self
+      end
+
+      def locked?
+        @locked
       end
 
       def starters
@@ -86,6 +96,8 @@ module TwitterCldr
       private
 
       def store(key, value, override = true)
+        raise RuntimeError, "can't store value in a locked trie" if locked?
+
         final = key.inject(@root) do |node, key_element|
           node.child(key_element) || node.set_child(key_element, Node.new)
         end

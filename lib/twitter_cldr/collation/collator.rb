@@ -168,7 +168,7 @@ module TwitterCldr
         # Loads and memoizes the default Fractional Collation Elements trie.
         #
         def default_fce_trie
-          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE)
+          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
         end
 
         def clear_default_fce_trie

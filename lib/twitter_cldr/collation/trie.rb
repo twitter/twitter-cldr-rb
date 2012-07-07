@@ -93,6 +93,8 @@ module TwitterCldr
         @root.subtrie_hash
       end
 
+      alias inspect to_s # to prevent printing of a possibly huge children list in the IRB
+
       private
 
       def store(key, value, override = true)

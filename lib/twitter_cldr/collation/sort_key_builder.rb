@@ -16,7 +16,7 @@ module TwitterCldr
 
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
-      TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits from tertiary weight ('CC' bits in 'CC00 0000')
+      TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits or continuation flag from a tertiary weight
 
       PRIMARY_BYTE_MIN = 0x3
       PRIMARY_BYTE_MAX = 0xFF
@@ -161,10 +161,6 @@ module TwitterCldr
 
       def tertiary_weight(collation_element)
         level_weight(collation_element, TERTIARY_LEVEL) & TERTIARY_LEVEL_MASK
-      end
-
-      def append_weight(weight)
-        @bytes_array.concat(fixnum_to_bytes_array(weight))
       end
 
       def level_weight(collation_element, level)

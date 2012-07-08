@@ -47,7 +47,7 @@ module TwitterCldr
       end
 
       def load_tailored_trie
-        tailoring_data = TwitterCldr.get_resource(:collation, :tailorings, @locale)
+        tailoring_data = TwitterCldr.get_resource(:collation, :tailoring, @locale)
 
         fallback = self.class.default_fce_trie
 

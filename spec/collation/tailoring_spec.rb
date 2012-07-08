@@ -12,7 +12,7 @@ describe 'Unicode collation tailoring' do
   before(:each) do
     stub(Collator).default_fce_trie { TrieBuilder.parse_trie(fractional_uca_short_stub) }
     stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
-    stub(TwitterCldr).get_resource(:collation, :tailorings, locale) { YAML.load(tailoring_resource_stub) }
+    stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
   end
 
   let(:locale)            { :some_locale }

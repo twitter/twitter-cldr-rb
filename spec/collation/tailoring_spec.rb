@@ -9,40 +9,63 @@ include TwitterCldr::Collation
 
 describe 'Unicode collation tailoring' do
 
-  before(:each) do
-    stub(Collator).default_fce_trie { TrieBuilder.parse_trie(fractional_uca_short_stub) }
-    stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
-    stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
+  describe 'tailoring support' do
+    before(:each) do
+      stub(Collator).default_fce_trie { TrieBuilder.parse_trie(fractional_uca_short_stub) }
+      stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
+      stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
+    end
+
+    let(:locale)            { :some_locale }
+    let(:default_collator)  { Collator.new }
+    let(:tailored_collator) { Collator.new(locale) }
+
+    describe 'tailoring rules support' do
+      it 'tailored collation elements are used' do
+        default_collator.get_collation_elements(%w[0490]).should  == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
+        tailored_collator.get_collation_elements(%w[0490]).should == [[0x5C1B, 5, 0x86]]
+
+        default_collator.get_collation_elements(%w[0491]).should  == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
+        tailored_collator.get_collation_elements(%w[0491]).should == [[0x5C1B, 5, 5]]
+      end
+
+      it 'original contractions for tailored elements are applied' do
+        default_collator.get_collation_elements(%w[0491 0306]).should  == [[0x5C, 0xDB, 9]]
+        tailored_collator.get_collation_elements(%w[0491 0306]).should == [[0x5C, 0xDB, 9]]
+      end
+    end
+
+    describe 'contractions suppressing support' do
+      it 'suppressed contractions are ignored' do
+        default_collator.get_collation_elements(%w[041A 0301]).should  == [[0x5CCC, 5, 0x8F]]
+        tailored_collator.get_collation_elements(%w[041A 0301]).should == [[0x5C6C, 5, 0x8F], [0, 0x8D, 5]]
+      end
+
+      it 'non-suppressed contractions are used' do
+        default_collator.get_collation_elements(%w[0415 0306]).should  == [[0x5C36, 5, 0x8F]]
+        tailored_collator.get_collation_elements(%w[0415 0306]).should == [[0x5C36, 5, 0x8F]]
+      end
+    end
   end
 
-  let(:locale)            { :some_locale }
-  let(:default_collator)  { Collator.new }
-  let(:tailored_collator) { Collator.new(locale) }
+  # test data is taken from http://unicode.org/cldr/trac/browser/tags/release-2-0-1/test/
+  describe 'passes tailoring test for each supported locale' do
+    TwitterCldr.supported_locales.each do |locale|
+      # spec is pending, because test if failing for some locales
+      xit "#{locale}" do
+        collator = Collator.new(locale)
+        failures = []
 
-  describe 'tailoring rules support' do
-    it 'tailored collation elements are used' do
-      default_collator.get_collation_elements(%w[0490]).should  == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
-      tailored_collator.get_collation_elements(%w[0490]).should == [[0x5C1B, 5, 0x86]]
+        open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |input|
+          test_lines = input.lines.to_a.map(&:strip).select { |line| line[0] != '#' }
 
-      default_collator.get_collation_elements(%w[0491]).should  == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
-      tailored_collator.get_collation_elements(%w[0491]).should == [[0x5C1B, 5, 5]]
-    end
+          test_lines[0..-2].zip(test_lines[1..-1]).map do |previous, current|
+            failures << [previous, current] if collator.compare(previous, current) == 1
+          end
+        end
 
-    it 'original contractions for tailored elements are applied' do
-      default_collator.get_collation_elements(%w[0491 0306]).should  == [[0x5C, 0xDB, 9]]
-      tailored_collator.get_collation_elements(%w[0491 0306]).should == [[0x5C, 0xDB, 9]]
-    end
-  end
-
-  describe 'contractions suppressing support' do
-    it 'suppressed contractions are ignored' do
-      default_collator.get_collation_elements(%w[041A 0301]).should  == [[0x5CCC, 5, 0x8F]]
-      tailored_collator.get_collation_elements(%w[041A 0301]).should == [[0x5C6C, 5, 0x8F], [0, 0x8D, 5]]
-    end
-
-    it 'non-suppressed contractions are used' do
-      default_collator.get_collation_elements(%w[0415 0306]).should  == [[0x5C36, 5, 0x8F]]
-      tailored_collator.get_collation_elements(%w[0415 0306]).should == [[0x5C36, 5, 0x8F]]
+        failures.should == []
+      end
     end
   end
 

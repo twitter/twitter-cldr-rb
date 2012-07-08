@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'therubyracer', '~> 0.9.10'
   s.add_development_dependency 'uglifier', '~> 1.2.4'
   s.add_development_dependency 'coffee-script', '~> 2.2.0'
-  s.add_development_dependency 'rcov' if RUBY_VERSION < '1.9.0'
+  s.add_development_dependency 'rcov' if RUBY_ENGINE == 'ruby' && RUBY_VERSION < '1.9.0'
   s.add_development_dependency 'zip'
 
   s.require_path = 'lib'

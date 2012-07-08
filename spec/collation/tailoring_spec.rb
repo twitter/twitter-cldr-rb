@@ -62,7 +62,7 @@ describe 'Unicode collation tailoring' do
       print "#{locale}\t-\t"
 
       test_lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |input|
-        input.lines.to_a.map(&:strip).select { |line| line[0] != '#' }
+        input.lines.map(&:strip).select { |line| line !~ /^#/ }
       end
 
       if test_lines.empty?

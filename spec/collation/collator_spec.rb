@@ -122,13 +122,6 @@ describe Collator do
 
       collator.compare('foo', 'foo').should == 0
     end
-
-    it 'compares strings by code points if the sort keys are equal' do
-      stub_sort_key(collator, 'foo', sort_key)
-      stub_sort_key(collator, 'bar', sort_key)
-
-      collator.compare('bar', 'foo').should == -1
-    end
   end
 
   describe '#sort' do
@@ -141,20 +134,14 @@ describe Collator do
 
       collator.sort(%w[bca aaa abc]).should == %w[aaa abc bca]
     end
-
-    it 'sorts strings with equal sort keys by code points' do
-      [['aaa', [1, 2, 3]], ['abc', [1, 2, 3]], ['bca', [1, 2, 3]]].each { |s, key| mock_sort_key(collator, s, key) }
-
-      collator.sort(%w[bca abc aaa]).should == %w[aaa abc bca]
-    end
   end
 
   def mock_sort_key(collator, string, sort_key)
-    mock(collator).get_sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
+    mock(collator).get_sort_key(string) { sort_key }
   end
 
   def stub_sort_key(collator, string, sort_key)
-    stub(collator).get_sort_key(TwitterCldr::Utils::CodePoints.from_string(string)) { sort_key }
+    stub(collator).get_sort_key(string) { sort_key }
   end
 
 end

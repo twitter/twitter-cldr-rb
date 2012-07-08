@@ -21,11 +21,11 @@ module TwitterCldr
       end
 
       def sort(strings)
-        strings.map{ |s| [s, comparison_key(s)] }.sort{ |a, b| compare_keys(a[1], b[1]) }.map(&:first)
+        strings.map{ |s| [s, get_sort_key(s)] }.sort{ |a, b| a[1] <=> b[1] }.map(&:first)
       end
 
       def compare(string_a, string_b)
-        string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
+        string_a == string_b ? 0 : get_sort_key(string_a) <=> get_sort_key(string_b)
       end
 
       def get_sort_key(string_or_code_points)
@@ -72,15 +72,6 @@ module TwitterCldr
         end
 
         trie
-      end
-
-      def comparison_key(string)
-        code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-        { :code_points => code_points, :sort_key => get_sort_key(code_points) }
-      end
-
-      def compare_keys(a, b)
-        (a[:sort_key] <=> b[:sort_key]).nonzero? || get_integer_code_points(a[:code_points]) <=> get_integer_code_points(b[:code_points])
       end
 
       def get_integer_code_points(code_points)

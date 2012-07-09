@@ -162,10 +162,6 @@ module TwitterCldr
           @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
         end
 
-        def clear_default_fce_trie
-          @default_fce_trie = nil
-        end
-
       end
 
     end

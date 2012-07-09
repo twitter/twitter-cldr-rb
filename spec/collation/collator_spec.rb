@@ -11,22 +11,12 @@ describe Collator do
 
   let(:trie) { Trie.new }
 
-  before(:each) { Collator.clear_default_fce_trie }
-  after(:all)   { Collator.clear_default_fce_trie }
-
-  describe '.clear_default_fce_trie' do
-    it 'forces Collator to reload default FCE next time' do
-      mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE).twice { trie }
-
-      Collator.default_fce_trie
-      Collator.clear_default_fce_trie
-      Collator.default_fce_trie
-    end
-  end
+  before(:each) { clear_default_fce_trie }
+  after(:all)   { clear_default_fce_trie }
 
   describe '.default_fce_trie' do
     before(:each) do
-      Collator.clear_default_fce_trie
+      clear_default_fce_trie
       mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { trie }
     end
 
@@ -142,6 +132,10 @@ describe Collator do
 
   def stub_sort_key(collator, string, sort_key)
     stub(collator).get_sort_key(string) { sort_key }
+  end
+
+  def clear_default_fce_trie
+    Collator.instance_variable_set(:@default_fce_trie, nil)
   end
 
 end

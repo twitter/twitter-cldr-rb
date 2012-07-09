@@ -24,6 +24,11 @@ module TwitterCldr
         strings.map{ |s| [s, get_sort_key(s)] }.sort{ |a, b| a[1] <=> b[1] }.map(&:first)
       end
 
+      def sort!(strings)
+        sort_keys = Hash.new { |hash, string| hash[string] = get_sort_key(string) }
+        strings.replace(strings.sort_by { |s| sort_keys[s] })
+      end
+
       def compare(string_a, string_b)
         string_a == string_b ? 0 : get_sort_key(string_a) <=> get_sort_key(string_b)
       end

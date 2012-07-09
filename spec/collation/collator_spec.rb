@@ -136,15 +136,32 @@ describe Collator do
     end
   end
 
-  describe '#sort' do
-    let(:collator) { Collator.new }
+  describe 'sorting' do
+    let(:collator)  { Collator.new }
+    let(:sort_keys) { [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]] }
+    let(:array)     { %w[bca aaa abc] }
+    let(:sorted)    { %w[aaa abc bca] }
 
-    before(:each) { stub(Collator).default_fce_trie { trie } }
+    before :each do
+      stub(Collator).default_fce_trie { trie }
+      sort_keys.each { |s, key| mock_sort_key(collator, s, key) }
+    end
 
-    it 'sorts strings by sort keys' do
-      [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock_sort_key(collator, s, key) }
+    describe '#sort' do
+      it 'sorts strings by sort keys' do
+        collator.sort(array).should == sorted
+      end
 
-      collator.sort(%w[bca aaa abc]).should == %w[aaa abc bca]
+      it 'does not change the original array' do
+        lambda { collator.sort(array) }.should_not change { array }
+      end
+    end
+
+    describe '#sort!' do
+      it 'sorts strings array by sort keys in-place ' do
+        collator.sort!(array)
+        array.should == sorted
+      end
     end
   end
 

@@ -97,7 +97,7 @@ describe Collator do
     let(:sort_key)         { [1, 3, 8, 9] }
     let(:another_sort_key) { [6, 8, 9, 2] }
 
-    before(:each) { stub(TrieBuilder).load_trie { trie } }
+    before(:each) { stub(Collator).default_fce_trie { trie } }
 
     it 'compares strings by sort keys' do
       stub_sort_key(collator, 'foo', sort_key)
@@ -117,7 +117,7 @@ describe Collator do
   describe '#sort' do
     let(:collator) { Collator.new }
 
-    before(:each) { stub(TrieBuilder).load_trie { trie } }
+    before(:each) { stub(Collator).default_fce_trie { trie } }
 
     it 'sorts strings by sort keys' do
       [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]].each { |s, key| mock_sort_key(collator, s, key) }

@@ -43,35 +43,7 @@ module TwitterCldr
       private
 
       def load_trie
-        @locale ? load_tailored_trie : self.class.default_fce_trie
-      end
-
-      def load_tailored_trie
-        tailoring_data = TwitterCldr.get_resource(:collation, :tailoring, @locale)
-
-        fallback = self.class.default_fce_trie
-
-        trie = TwitterCldr::Collation::TrieWithFallback.new(fallback)
-        TwitterCldr::Collation::TrieBuilder.parse_trie(tailoring_data[:tailored_table], trie)
-
-        suppressed_starters = tailoring_data[:suppressed_contractions].chars.map do |starter|
-          starter_code_points = TwitterCldr::Utils::CodePoints.from_string(starter)
-          raise ArgumentError, 'Suppressed contraction starter should be a single code point' if starter_code_points.size > 1
-
-          starter_code_points.first.to_i(16)
-        end
-
-        suppressed_starters.each do |starter|
-          trie.add([starter], fallback.get([starter]))
-        end
-
-        (trie.starters - suppressed_starters).each do |starter|
-          fallback.each_starting_with(starter) do |key, value|
-            trie.add(key, value)
-          end
-        end
-
-        trie
+        @locale ? self.class.tailored_fce_trie(@locale) : self.class.default_fce_trie
       end
 
       def get_integer_code_points(code_points)
@@ -160,6 +132,20 @@ module TwitterCldr
         #
         def default_fce_trie
           @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
+        end
+
+        def tailored_fce_trie(locale)
+          tailored_fce_tries_cache[locale]
+        end
+
+        private
+
+        def tailored_fce_tries_cache
+          @tailored_fce_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_trie(locale) }
+        end
+
+        def load_tailored_trie(locale)
+          TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, default_fce_trie).lock
         end
 
       end

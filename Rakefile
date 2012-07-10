@@ -38,6 +38,23 @@ if RUBY_VERSION < '1.9.0'
   end
 end
 
+namespace :resources do
+  namespace :update do
+    desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
+    task :tailoring do
+      require './lib/twitter_cldr'
+
+      importer = TwitterCldr::Resources::Import::Tailoring.new(
+          ENV.fetch('CLDR_DATA_PATH', '../cldr-tailoring/'),
+          './resources/collation/tailoring',
+          ENV.fetch('ICU4J_JAR_PATH', '../icu4j-49_1.jar')
+      )
+
+      TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
+    end
+  end
+end
+
 namespace :js do
   task :build do
     require File.expand_path(File.join(File.dirname(__FILE__), %w[lib twitter_cldr]))

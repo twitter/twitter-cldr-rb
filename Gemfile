@@ -17,6 +17,8 @@ group :development do
       gem 'rcov'
     end
   end
+
+  gem 'nokogiri'
 end
 
 group :test do

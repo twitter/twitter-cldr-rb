@@ -5,7 +5,8 @@
 
 module TwitterCldr
   module Resources
-    autoload :Loader, 'twitter_cldr/resources/loader'
-    autoload :Import, 'twitter_cldr/resources/import'
+    module Import
+      autoload :Tailoring, 'twitter_cldr/resources/import/tailoring'
+    end
   end
 end

@@ -4,8 +4,9 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Shared
-    class Resources
+  module Resources
+
+    class Loader
 
       def get_resource(*path)
         resources_cache[resource_file_path(path)]
@@ -40,5 +41,6 @@ module TwitterCldr
       end
 
     end
+
   end
 end

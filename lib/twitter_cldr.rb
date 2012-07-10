@@ -23,6 +23,7 @@ module TwitterCldr
   autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Collation,     'twitter_cldr/collation'
   autoload :Normalization, 'twitter_cldr/normalization'
+  autoload :Resources,     'twitter_cldr/resources'
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
   autoload :Utils,         'twitter_cldr/utils'
@@ -54,7 +55,7 @@ module TwitterCldr
   class << self
 
     def resources
-      @resources ||= TwitterCldr::Shared::Resources.new
+      @resources ||= TwitterCldr::Resources::Loader.new
     end
 
     def get_locale

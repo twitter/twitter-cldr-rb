@@ -9,7 +9,6 @@ module TwitterCldr
     autoload :Currencies,  'twitter_cldr/shared/currencies'
     autoload :Languages,   'twitter_cldr/shared/languages'
     autoload :Numbers,     'twitter_cldr/shared/numbers'
-    autoload :Resources,   'twitter_cldr/shared/resources'
     autoload :CodePoint,   'twitter_cldr/shared/code_point'
   end
 end

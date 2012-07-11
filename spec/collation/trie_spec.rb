@@ -15,11 +15,11 @@ describe Trie do
     [
         [[1],       '1'  ],
         [[1, 4],    '14' ],
-        [[1, 5],    '15' ],
         [[1, 4, 8], '148'],
+        [[1, 5],    '15' ],
         [[2],       '2'  ],
         [[2, 7, 5], '275'],
-        [[3, 9],    '39' ],
+        [[3, 9, 2], '392'],
         [[4],       '4'  ]
     ]
   end
@@ -129,12 +129,21 @@ describe Trie do
   end
 
   describe '#find_prefix' do
-    describe 'first two elements of the returned array' do
-      it 'value is 0 nil and prefix size is 0 if the prefix was not found' do
+    let(:root_subtrie) {
+      {
+          1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
+          2 => ['2', { 7 => [nil, { 5 => ['275', {}] }] }],
+          3 => [nil, { 9 => [nil, { 2 => ['392', {}] }] }],
+          4 => ['4', {}]
+      }
+    }
+
+    describe 'first two elements of the returned array (value and prefix size)' do
+      it 'are nil and 0 if the prefix was not found' do
         trie.find_prefix([42]).first(2).should == [nil, 0]
       end
 
-      it 'stored value and key size as a prefix size if the whole key was found' do
+      it 'are the stored value and the key size if the whole key was found' do
         values.each do |key, value|
           trie.find_prefix(key).first(2).should == [value, key.size]
         end
@@ -158,9 +167,9 @@ describe Trie do
       end
     end
 
-    describe 'last element of the returned array' do
+    describe 'last element of the returned array (suffixes subtrie)' do
       let(:non_existing_key)     { [5, 2, 7] }
-      let(:key_with_suffixes)    { [2, 7] }
+      let(:key_with_suffixes)    { [2] }
       let(:key_without_suffixes) { [1, 4, 8] }
 
       it 'is always a locked trie' do
@@ -171,23 +180,46 @@ describe Trie do
         end
       end
 
-      it 'is a locked empty sub-trie if the prefix that was found does not have any suffixes' do
+      it 'is a locked empty subtrie if the prefix that was found does not have any suffixes' do
         trie.find_prefix(key_without_suffixes).last.to_hash.should be_empty
       end
 
-      it 'is a sub-trie of possible suffixes for the prefix that was found' do
-        trie.find_prefix(key_with_suffixes).last.to_hash.should == { 5 => ["275", {}] }
+      it 'is a subtrie of possible suffixes for the prefix that was found' do
+        trie.find_prefix(key_with_suffixes).last.to_hash.should == { 7 => [nil, { 5 => ["275", {}] }] }
       end
 
       it 'is a hash representing the whole trie if the prefix was not found' do
         trie.get(non_existing_key).should be_nil
 
-        trie.find_prefix(non_existing_key).last.to_hash.should == {
-            1 => ['1', { 4 => ['14', { 8 => ['148', {}] }], 5 => ['15', {}] }],
-            2 => ['2', { 7 => [nil, { 5 => ['275', {}] }] }],
-            3 => [nil, { 9 => ['39', {}] }],
-            4 => ['4', {}]
-        }
+        trie.find_prefix(non_existing_key).last.to_hash.should == root_subtrie
+      end
+
+    end
+
+    context 'argument does not match any value, but is a prefix of a longer key' do
+      context 'argument has a shorter key as a prefix' do
+        it 'returns value for the key, its size and suffixes subtrie' do
+          trie.get([2]).should_not be_nil
+          trie.get([2, 7, 5]).should_not be_nil
+
+          result = trie.find_prefix([2, 7])
+
+          result.first(2).should == ['2', 1]
+          result.last.to_hash.should == { 7 => [nil, { 5 => ["275", {}] }] }
+        end
+      end
+
+      context 'argument does not have a shorter key as a prefix' do
+        it 'returns nil, 0 and suffixes subtrie for the root node' do
+          trie.get([3]).should be_nil
+          trie.get([3, 9]).should be_nil
+          trie.get([3, 9, 2]).should_not be_nil
+
+          result = trie.find_prefix([3, 9])
+
+          result.first(2).should == [nil, 0]
+          result.last.to_hash.should == root_subtrie
+        end
       end
     end
 

@@ -17,7 +17,7 @@ module TwitterCldr
     class Trie
 
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
-      # `trie_hash` is extracted from other trie and represents its sub-trie.
+      # `trie_hash` is extracted from other trie and represents its subtrie.
       #
       def initialize(root = Node.new)
         @root = root
@@ -67,26 +67,28 @@ module TwitterCldr
       #
       # Returns a three elements array:
       #
-      #   1. value in the last node that was visited
+      #   1. value in the last node that was visited and has non-nil value
       #   2. size of the `key` prefix that matches this node
-      #   3. sub-trie for which that node is a root
+      #   3. subtrie for which that node is a root
       #
       def find_prefix(key)
-        prefix_size = 0
-        node = @root
+        last_prefix_size = 0
+        last_with_value  = @root
 
-        key.each do |key_element|
+        key.each_with_index.inject(@root) do |node, (key_element, index)|
           child = node.child(key_element)
 
-          if child
-            prefix_size += 1
-            node = child
-          else
-            break
+          break unless child
+
+          if child.value
+            last_prefix_size = index + 1
+            last_with_value  = child
           end
+
+          child
         end
 
-        [node.value, prefix_size, node.to_trie]
+        [last_with_value.value, last_prefix_size, last_with_value.to_trie]
       end
 
       def to_hash

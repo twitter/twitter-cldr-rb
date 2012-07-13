@@ -49,36 +49,48 @@ describe 'Unicode collation tailoring' do
   end
 
   # Test data is taken from http://unicode.org/cldr/trac/browser/tags/release-2-0-1/test/
-  # For a number of locales tailoring test is still failing.
-  #
-  # TODO: add assertions for locales that pass the test.
+  # Test files format: # - comments, // - pending tests.
   #
   it 'passes tailoring test for each supported locale', :slow => true do
     TwitterCldr.supported_locales.each do |locale|
       collator = Collator.new(locale)
 
-      failures = []
-
       print "#{locale}\t-\t"
 
-      test_lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |input|
-        input.lines.map(&:strip).select { |line| line !~ /^#/ }
+      lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) { |f| f.lines.map(&:strip) }
+
+      print "#{lines.count(&method(:tailoring_test?))} tests,\t"
+      print "#{lines.count(&method(:pending_tailoring_test?))} pending,\t"
+
+      last_number = last = nil
+
+      failures = lines.each_with_index.inject([]) do |memo, (current, number)|
+        if tailoring_test?(current)
+          memo << [last_number + 1, last, current] if tailoring_test?(last) && collator.compare(last, current) == 1
+
+          last = current
+          last_number = number
+        elsif pending_tailoring_test?(current)
+          last_number = last = nil
+        end
+
+        memo
       end
 
-      if test_lines.empty?
-        puts "empty (pending?)"
+      if failures.empty?
+        puts "ok"
       else
-        test_lines[0..-2].zip(test_lines[1..-1]).map do |previous, current|
-          failures << [previous, current] if collator.compare(previous, current) == 1
-        end
-
-        if failures.empty?
-          puts "ok"
-        else
-          puts "failures: #{failures.inspect}"
-        end
+        puts "#{failures.size} failures: #{failures.inspect}"
       end
     end
+  end
+
+  def pending_tailoring_test?(line)
+    !!(line =~ %r{^//})
+  end
+
+  def tailoring_test?(line)
+    !!(line && line !~ %r{^(//|#|\s*$)})
   end
 
   let(:fractional_uca_short_stub) do

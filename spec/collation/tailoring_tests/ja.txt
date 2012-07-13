@@ -1,3 +1,15 @@
+# Pending:
+#
+#   [[2, "x　", "x"], [5, "X　", "X"]] - failures identical to ICU
+#
+#   [156, "xゞx", "xヽ"]] - character 'ゞ', code point 0x309E, is not in NFD (its normalized version is 0x309D 0x3099),
+#   but there is an entry for denormalized version of this string in FCE table - 309E; [0E 25, 05, 05][, DA 95, 05].
+#   As all strings are normalized first, we don't use this entry, but instead build collation elements for this
+#   character from CE's for 0x309D and 0x3099 that are [0E 25, 05, 05] and [, DA 95, 05]. That doesn't cause any issue
+#   in the default locale, because the results are identical. But when 'ゝ' (code point 0x309D) is tailored from
+#   [0E 25, 05, 05] to [0E 29, 5, 5] in JA locale we get wrong [0E 29, 05, 05][, DA 95, 05] collation elements for 'ゞ'.
+#
+
 x￣
 // x　
 x

@@ -59,8 +59,7 @@ describe 'Unicode collation tailoring' do
 
       lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) { |f| f.lines.map(&:strip) }
 
-      print "#{lines.count(&method(:tailoring_test?))} tests,\t"
-      print "#{lines.count(&method(:pending_tailoring_test?))} pending,\t"
+      print "#{lines.count(&method(:tailoring_test?))} tests,\t#{lines.count(&method(:pending_tailoring_test?))} pending\t-\t"
 
       last_number = last = nil
 
@@ -78,9 +77,12 @@ describe 'Unicode collation tailoring' do
       end
 
       if failures.empty?
-        puts "ok"
+        puts "OK"
       else
-        puts "#{failures.size} failures: #{failures.inspect}"
+        failures_info = "#{failures.size} failures: #{failures.inspect}"
+
+        puts failures_info
+        failures.should(be_empty, "#{locale} - #{failures_info}")
       end
     end
   end

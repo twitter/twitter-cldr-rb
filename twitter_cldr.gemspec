@@ -15,10 +15,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'json', '>= 1.1.9'
 
-  s.add_development_dependency 'rake', '~> 0.9.2'
-  s.add_development_dependency 'rspec', '~> 2.9.0'
-  s.add_development_dependency 'rr', '~> 1.0.4'
-
   s.require_path = 'lib'
 
   gem_files       = Dir["LICENSE", "README.md", "NOTICE", "Rakefile", "{lib,spec,resources}/**/*"]

@@ -15,15 +15,13 @@ module TwitterCldr
           end
 
           def all_for(locale)
-            locale = TwitterCldr.convert_locale(locale.to_sym)
-            get_resource(locale)[locale][:i18n][:plural][:keys]
+            get_resource(locale)[:keys]
           rescue
             nil
           end
 
           def rule_for(number, locale = TwitterCldr.get_locale)
-            locale = TwitterCldr.convert_locale(locale.to_sym)
-            get_resource(locale)[locale][:i18n][:plural][:rule].call(number)
+            get_resource(locale)[:rule].call(number)
           rescue
             :other
           end
@@ -32,7 +30,7 @@ module TwitterCldr
 
           def get_resource(locale)
             locale = TwitterCldr.convert_locale(locale)
-            eval(TwitterCldr.get_locale_resource(locale, :plurals)[locale])
+            eval(TwitterCldr.get_locale_resource(locale, :plurals)[locale])[locale][:i18n][:plural]
           end
 
         end

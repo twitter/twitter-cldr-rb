@@ -12,8 +12,8 @@ module TwitterCldr
 
       def initialize(options = {})
         @locale = TwitterCldr.convert_locale(options[:locale] || TwitterCldr::DEFAULT_LOCALE)
-        self.init_resources
-        self.init_placeholders
+        init_resources
+        init_placeholders
       end
 
       protected
@@ -22,9 +22,9 @@ module TwitterCldr
       # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
         final = []
-        text.split(self.token_splitter_regex).each_with_index do |token, index|
+        text.split(token_splitter_regex).each_with_index do |token, index|
           unless index == 0 && token == ""
-            self.token_type_regexes.each do |token_type|
+            token_type_regexes.each do |token_type|
               if token =~ token_type[:regex]
                 if token_type[:type] == :composite
                   content = token.match(token_type[:content])[1]
@@ -65,11 +65,11 @@ module TwitterCldr
 
       def tokens_with_placeholders_for(key)
         @@token_cache ||= {}
-        cache_key = self.compute_cache_key(@locale, key, type)
+        cache_key = compute_cache_key(@locale, key, type)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = self.tokenize_pattern(self.pattern_for(self.traverse(key)))
+          tokens = tokenize_pattern(pattern_for(traverse(key)))
           tokens.each do |token|
             result << token
           end
@@ -117,15 +117,15 @@ module TwitterCldr
       def expand_pattern(format_str, type)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          self.expand_pattern(self.pattern_for(self.traverse(format_str.to_s.split('.').map(&:to_sym))), type)
+          expand_pattern(pattern_for(traverse(format_str.to_s.split('.').map(&:to_sym))), type)
         else
           parts = tokenize_pattern(format_str)
           final = []
 
           parts.each do |part|
             case part[:type]
-              when :placeholder then
-                placeholder = self.choose_placeholder(part[:value], @placeholders)
+              when :placeholder
+                placeholder = choose_placeholder(part[:value], @placeholders)
                 final += placeholder ? placeholder.tokens(:type => type) : []
               else
                 final << part

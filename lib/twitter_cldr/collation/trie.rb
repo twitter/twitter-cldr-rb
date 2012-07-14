@@ -17,54 +17,146 @@ module TwitterCldr
     class Trie
 
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
-      # `trie_hash` is extracted from other trie and represents its sub-trie.
+      # `trie_hash` is extracted from other trie and represents its subtrie.
       #
-      def initialize(trie_hash = {})
-        @root = [nil, trie_hash]
+      def initialize(root = Node.new)
+        @root = root
+        @locked = false
+      end
+
+      def lock
+        @locked = true
+        self
+      end
+
+      def locked?
+        @locked
+      end
+
+      def starters
+        @root.keys
+      end
+
+      def each_starting_with(starter, &block)
+        starting_node = @root.child(starter)
+        each_pair(starting_node, [starter], &block) if starting_node
+      end
+
+      def empty?
+        !@root.has_children?
       end
 
       def add(key, value)
-        final = key.inject(@root) do |node, key_element|
-          node[1][key_element] ||= [nil, {}]
-        end
+        store(key, value, false)
+      end
 
-        final[0] = value
+      def set(key, value)
+        store(key, value)
       end
 
       def get(key)
         final = key.inject(@root) do |node, key_element|
-          subtree = node[1][key_element]
-          return unless subtree
-          subtree
+          return unless node
+          node.child(key_element)
         end
 
-        final[0]
+        final && final.value
       end
 
       # Finds the longest substring of the `key` that matches, as a key, a node in the trie.
       #
       # Returns a three elements array:
       #
-      #   1. value in the last node that was visited
-      #   2. sub-trie of this node (as a hash)
-      #   3. size of the `key` prefix that matches this node
+      #   1. value in the last node that was visited and has non-nil value
+      #   2. size of the `key` prefix that matches this node
+      #   3. subtrie for which that node is a root
       #
       def find_prefix(key)
-        prefix_size = 0
-        node = @root
+        last_prefix_size = 0
+        last_with_value  = @root
 
-        key.each do |key_element|
-          subtree = node[1][key_element]
+        key.each_with_index.inject(@root) do |node, (key_element, index)|
+          child = node.child(key_element)
 
-          if subtree
-            prefix_size += 1
-            node = subtree
-          else
-            break
+          break unless child
+
+          if child.value
+            last_prefix_size = index + 1
+            last_with_value  = child
+          end
+
+          child
+        end
+
+        [last_with_value.value, last_prefix_size, last_with_value.to_trie]
+      end
+
+      def to_hash
+        @root.subtrie_hash
+      end
+
+      alias inspect to_s # to prevent printing of a possibly huge children list in the IRB
+
+      private
+
+      def store(key, value, override = true)
+        raise RuntimeError, "can't store value in a locked trie" if locked?
+
+        final = key.inject(@root) do |node, key_element|
+          node.child(key_element) || node.set_child(key_element, Node.new)
+        end
+
+        final.value = value unless final.value && !override
+      end
+
+      def each_pair(node, key, &block)
+        yield [key, node.value] if node.value
+
+        node.each_key_and_child do |key_element, child|
+          each_pair(child, key + [key_element], &block)
+        end
+      end
+
+      class Node
+
+        attr_accessor :value
+
+        def initialize(value = nil, children = {})
+          @value    = value
+          @children = children
+        end
+
+        def child(key)
+          @children[key]
+        end
+
+        def set_child(key, child)
+          @children[key] = child
+        end
+
+        def has_children?
+          !@children.empty?
+        end
+
+        def each_key_and_child(&block)
+          @children.each(&block)
+        end
+
+        def keys
+          @children.keys
+        end
+
+        def to_trie
+          Trie.new(self.class.new(nil, @children)).lock
+        end
+
+        def subtrie_hash
+          @children.inject({}) do |memo, (key, child)|
+            memo[key] = [child.value, child.subtrie_hash]
+            memo
           end
         end
 
-        node + [prefix_size]
       end
 
     end

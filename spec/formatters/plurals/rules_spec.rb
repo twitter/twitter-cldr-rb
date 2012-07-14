@@ -12,17 +12,9 @@ describe Rules do
     it "calls eval on the hash that gets returned, lambdas and all" do
       result = Rules.send(:get_resource, :ru)
 
-      [:ru, :i18n, :plural].inject(result) do |current, key|
-        current.should have_key(key)
-        current[key]
-      end
-
-      plural = result[:ru][:i18n][:plural]
-
-      plural.should include(:keys, :rule)
-
-      plural[:keys].size.should == 4
-      plural[:rule].should be_a(Proc)
+      result.should include(:keys, :rule)
+      result[:keys].size.should == 4
+      result[:rule].should be_a(Proc)
     end
   end
 

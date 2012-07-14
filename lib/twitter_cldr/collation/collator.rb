@@ -13,52 +13,49 @@ module TwitterCldr
 
       FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
 
+      attr_accessor :locale
+
+      def initialize(locale = nil)
+        @locale = TwitterCldr.convert_locale(locale) if locale
+        @trie   = load_trie
+      end
+
       def sort(strings)
-        strings.map{ |s| [s, comparison_key(s)] }.sort{ |a, b| compare_keys(a[1], b[1]) }.map(&:first)
+        strings.map{ |s| [s, get_sort_key(s)] }.sort{ |a, b| a[1] <=> b[1] }.map(&:first)
+      end
+
+      def sort!(strings)
+        sort_keys = Hash.new { |hash, string| hash[string] = get_sort_key(string) }
+        strings.replace(strings.sort_by { |s| sort_keys[s] })
       end
 
       def compare(string_a, string_b)
-        string_a == string_b ? 0 : compare_keys(comparison_key(string_a), comparison_key(string_b))
+        string_a == string_b ? 0 : get_sort_key(string_a) <=> get_sort_key(string_b)
       end
 
-      def sort_key(string_or_code_points)
-        sort_key_for_code_points(get_code_points(string_or_code_points))
+      def get_sort_key(string_or_code_points)
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points))
       end
 
-      def trie
-        @trie ||= self.class.trie
-      end
+      def get_collation_elements(string_or_code_points)
+        integer_code_points = get_normalized_code_points(string_or_code_points)
 
-      def self.trie
-        @trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE)
+        result = []
+        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
+        result
       end
 
       private
 
-      def comparison_key(string)
-        code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-        { :code_points => code_points, :sort_key => sort_key(code_points) }
-      end
-
-      def compare_keys(a, b)
-        (a[:sort_key] <=> b[:sort_key]).nonzero? || get_integer_code_points(a[:code_points]) <=> get_integer_code_points(b[:code_points])
-      end
-
-      def sort_key_for_code_points(integer_code_points)
-        TwitterCldr::Collation::SortKey.build(get_collation_elements(integer_code_points))
+      def load_trie
+        @locale ? self.class.tailored_fce_trie(@locale) : self.class.default_fce_trie
       end
 
       def get_integer_code_points(code_points)
         code_points.map { |code_point| code_point.to_i(16) }
       end
 
-      def get_collation_elements(integer_code_points)
-        result = []
-        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
-        result
-      end
-
-      def get_code_points(str_or_code_points)
+      def get_normalized_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
@@ -89,7 +86,7 @@ module TwitterCldr
       #
       def explicit_collation_elements(integer_code_points)
         # find the longest prefix in the trie
-        collation_elements, suffixes, prefix_size = trie.find_prefix(integer_code_points)
+        collation_elements, prefix_size, suffixes = @trie.find_prefix(integer_code_points)
 
         return unless collation_elements
 
@@ -101,9 +98,6 @@ module TwitterCldr
         used_combining_classes = {}
 
         while non_starter_pos < integer_code_points.size && !suffixes.empty?
-          # create a trie from a hash of suffixes available for the chosen prefix
-          subtrie = TwitterCldr::Collation::Trie.new(suffixes)
-
           # get next code point (possibly non-starter)
           non_starter_code_point = integer_code_points[non_starter_pos]
           combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point.to_s(16))
@@ -115,7 +109,7 @@ module TwitterCldr
 
           # Try to find collation elements for [prefix + non-starter] code points sequence. As the subtrie contains
           # suffixes (without prefix) we pass only non-starter itself.
-          new_collation_elements, new_suffixes = subtrie.find_prefix([non_starter_code_point]).first(2)
+          new_collation_elements, _, new_suffixes = suffixes.find_prefix([non_starter_code_point])
 
           if new_collation_elements
             # non-starter with a collation elements sequence corresponding to [prefix + non-starter] accepted
@@ -135,6 +129,30 @@ module TwitterCldr
 
       def implicit_collation_elements(integer_code_points)
         TwitterCldr::Collation::ImplicitCollationElements.for_code_point(integer_code_points.shift)
+      end
+
+      class << self
+
+        # Loads and memoizes the default Fractional Collation Elements trie.
+        #
+        def default_fce_trie
+          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
+        end
+
+        def tailored_fce_trie(locale)
+          tailored_fce_tries_cache[locale]
+        end
+
+        private
+
+        def tailored_fce_tries_cache
+          @tailored_fce_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_trie(locale) }
+        end
+
+        def load_tailored_trie(locale)
+          TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, default_fce_trie).lock
+        end
+
       end
 
     end

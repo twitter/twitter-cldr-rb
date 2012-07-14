@@ -22,7 +22,8 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   gem_files       = Dir["LICENSE", "README.md", "NOTICE", "Rakefile", "{lib,spec,resources}/**/*"]
+  excluded_files  = %w[spec/collation/CollationTest_CLDR_NON_IGNORABLE.txt spec/normalization/NormalizationTest.txt]
   versioned_files = `git ls-files -z`.split("\0")
 
-  s.files = gem_files & versioned_files
+  s.files = (gem_files - excluded_files) & versioned_files
 end

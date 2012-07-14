@@ -78,14 +78,14 @@ describe TwitterCldr do
 
   describe '#resources' do
     it 'returns @resources' do
-      resources = TwitterCldr::Shared::Resources.new
-      TwitterCldr.send :instance_variable_set, :@resources, resources
+      resources = TwitterCldr::Resources::Loader.new
+      TwitterCldr.instance_variable_set(:@resources, resources)
 
       TwitterCldr.resources.should == resources
     end
   end
 
-  let(:resources) { TwitterCldr::Shared::Resources.new }
+  let(:resources) { TwitterCldr::Resources::Loader.new }
 
   describe '#get_resource' do
     it 'delegates to resources' do

@@ -59,7 +59,9 @@ describe 'Unicode collation tailoring' do
 
       lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) { |f| f.lines.map(&:strip) }
 
-      print "#{lines.count(&method(:tailoring_test?))} tests,\t#{lines.count(&method(:pending_tailoring_test?))} pending\t-\t"
+      active_tests  = lines.count(&method(:tailoring_test?))
+      pending_tests = lines.count(&method(:pending_tailoring_test?))
+      print "tests:  %-4d active, %5.1f%% %5s pending\t-\t" % [active_tests, (100.0 * pending_tests / (pending_tests + active_tests)), "(#{pending_tests})"]
 
       last_number = last = nil
 

@@ -70,9 +70,7 @@ module TwitterCldr
 
         def parse_suppressed_starters(suppressed_contractions)
           suppressed_contractions.chars.map do |starter|
-            starter_code_points = TwitterCldr::Utils::CodePoints.from_string(starter)
-            raise Runtime, 'Suppressed contraction starter should be a single code point' if starter_code_points.size > 1
-            starter_code_points.first.to_i(16)
+            TwitterCldr::Utils::CodePoints.from_string(starter).first.to_i(16)
           end
         end
 

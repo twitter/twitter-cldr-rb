@@ -27,5 +27,9 @@ module TwitterCldr
     def formatter_const
       nil
     end
+
+    def to_a
+      @base_obj
+    end
   end
 end

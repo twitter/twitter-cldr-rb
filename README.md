@@ -29,11 +29,11 @@ TwitterCldr.supported_locale?(:xx)        # false
 ```
 
 
-TwitterCldr patches core Ruby objects like Fixnum and Date to make localization as straightforward as possible.
+TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localization as straightforward as possible.
 
 ### Numbers
 
-Fixnum, Bignum, and Float objects are supported.  Here are some examples:
+`Fixnum`, `Bignum`, and `Float` objects are supported.  Here are some examples:
 
 ```ruby
 # default formatting with to_s
@@ -52,9 +52,9 @@ Fixnum, Bignum, and Float objects are supported.  Here are some examples:
 1337.localize(:es).to_decimal.to_s(:precision => 3)        # 1.337,000
 ```
 
-**Note**: The :precision option can be used with all these number formatters.
+**Note**: The `:precision` option can be used with all these number formatters.
 
-Behind the scenes, these convenience methods are creating instances of LocalizedNumber.  You can do the same thing if you're feeling adventurous:
+Behind the scenes, these convenience methods are creating instances of `LocalizedNumber`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
 num = TwitterCldr::LocalizedNumber.new(1337, :es)
@@ -63,7 +63,7 @@ num.to_currency.to_s  # ...etc
 
 #### More on Currencies
 
-If you're looking for a list of supported countries and currencies, use the TwitterCldr::Shared::Currencies class:
+If you're looking for a list of supported countries and currencies, use the `TwitterCldr::Shared::Currencies` class:
 
 ```ruby
 # all supported countries
@@ -81,7 +81,7 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dol
 
 ### Dates and Times
 
-Date, Time, and DateTime objects are supported:
+`Date`, `Time`, and `DateTime` objects are supported:
 
 ```ruby
 DateTime.now.localize(:es).to_full_s                    # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
@@ -102,7 +102,7 @@ Time.now.localize(:es).to_short_s                       # "21:44"
 
 The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
 
-Behind the scenes, these convenience methods are creating instances of LocalizedDate, LocalizedTime, and LocalizedDateTime.  You can do the same thing if you're feeling adventurous:
+Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
 dt = TwitterCldr::LocalizedDateTime.new(DateTime.now, :es)
@@ -166,7 +166,7 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 5.localize(:ru).plural_rule                                # :many
 ```
 
-Behind the scenes, these convenience methods use the TwitterCldr::Formatters::Plurals::Rules class.  You can do the same thing (and a bit more) if you're feeling adventurous:
+Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::Plurals::Rules` class.  You can do the same thing (and a bit more) if you're feeling adventurous:
 
 ```ruby
 # get all rules for the default locale
@@ -228,7 +228,7 @@ The `LocalizedString` class supports all forms of interpolation and combines sup
 "there are %{count} horses in the barn".localize % { :count => "5" }
 ```
 
-When you pass a Hash as an argument and specify placeholders with %<foo>d, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
+When you pass a Hash as an argument and specify placeholders with `%<foo>d`, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
 
 ```ruby
 "five euros plus %<percent>.3f in %{noun}".localize % { :percent => 13.25 * 0.087, :noun => "tax" }
@@ -243,14 +243,14 @@ You can use the localize convenience method on language code symbols to get thei
 :ru.localize(:es).as_language_code                         # "ruso"
 ```
 
-Behind the scenes, these convenience methods are creating instances of LocalizedSymbol.  You can do the same thing if you're feeling adventurous:
+Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
 ls = LocalizedSymbol.new(:ru, :es)
 ls.as_language_code  # "ruso"
 ```
 
-In addition to translating language codes, TwitterCLDR provides access to the full set of supported languages via the TwitterCldr::Shared::Languages class:
+In addition to translating language codes, TwitterCLDR provides access to the full set of supported languages via the `TwitterCldr::Shared::Languages` class:
 
 ```ruby
 # get all languages for the default locale
@@ -325,16 +325,46 @@ A few convenience methods also exist for `String` that make it easy to normalize
 "español".localize.normalize.code_points
 ```
 
-Specify a specific normalization algorithm via the :using option.  Currently, only NFD and NFKD are supported (default is NFD):
+Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, NFC, and NFKC algorithms are all supported (default is NFD):
 
 ```ruby
 # ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
 "español".localize.normalize(:using => :NFKD).code_points
 ```
 
+### Sorting (Collation)
+
+TwitterCLDR contains an implementation of the [Unicode Collation Algorithm (UCA)](http://unicode.org/reports/tr10/) that provides language-sensitive text sorting capabilities.  Conveniently, all you have to do is use the `sort` method in combination with the familiar `localize` method.  Notice the difference between the default Ruby sort, which simply compares bytes, and the proper language-aware sort from TwitterCLDR in this German example:
+
+```ruby
+["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "Älg"]
+["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["Älg", "Art", "Ved", "Wasa"]
+```
+
+Behind the scenes, these convenience methods are creating instances of `LocalizedArray`, then using the `TwitterCldr::Collation::Collator` class to sort the elements:
+
+```ruby
+collator = TwitterCldr::Collation::Collator.new(:de)
+collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["Älg", "Art", "Ved", "Wasa"]
+collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["Älg", "Art", "Ved", "Wasa"]
+```
+
+The `TwitterCldr::Collation::Collator` class also provides methods to compare two strings, get sort keys, and calculate collation elements for individual strings:
+
+```ruby
+collator = TwitterCldr::Collation::Collator.new(:de)
+collator.compare("Art", "Älg")           # 1
+collator.compare("Älg", "Art")           # -1
+collator.compare("Art", "Art")           # 0
+
+collator.get_collation_elements("Älg")   # [[39, 5, 143], [0, 157, 5], [61, 5, 5], [51, 5, 5]]
+
+collator.get_sort_key("Älg")             # [39, 61, 51, 1, 134, 157, 6, 1, 143, 7]
+```
+
 ## About Twitter-specific Locales
 
-Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:
+Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes however, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:
 
 ```ruby
 TwitterCldr.convert_locale(:'zh-cn')          # :zh
@@ -363,16 +393,17 @@ No external requirements.
 
 ## Running Tests
 
-`bundle exec rake` should do the trick.  Tests are written in RSpec using RR as the mocking framework.
+`bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
+
+Tests are written in RSpec using RR as the mocking framework.
 
 ## JavaScript Support
-(Note: These changes have not yet been released as a gem.)
 
-TwitterCLDR currently supports localization of dates and times in JavaScript.  More awesome features are coming soon.
+TwitterCLDR currently supports localization of dates and times in JavaScript.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
 
 ### Generating the JavaScript
 
-You can automatically generate the JavaScript versions of TwitterCLDR using this Rubygem.  Here's the one-liner:
+You can automatically generate the JavaScript version of TwitterCLDR using this Rubygem.  Here's the one-liner:
 
 `bundle exec rake js:build OUTPUT_DIR=/path/to/desired/output/location`
 
@@ -388,30 +419,6 @@ TwitterCldr::Js.make(:locales => [:de, :sv, :ja, :ar],   # generate files for Ge
 TwitterCldr::Js.install                                  # copy files to output directory
 ```
 
-### Dates and Times (JS)
-
-```javascript
-// include twitter_cldr_es.js for the Spanish DateTimeFormatter
-var fmt = new TwitterCldr.DateTimeFormatter();
-
-fmt.format(new Date(), {"type": "full"});                     // "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
-fmt.format(new Date(), {"type": "long"});                     // "12 de diciembre de 201121:45:42 -08:00"
-fmt.format(new Date(), {"type": "medium"});                   // "12/12/2011 21:46:09"
-fmt.format(new Date(), {"type": "short"});                    // "12/12/11 21:47"
-
-fmt.format(new Date(), {"format": "date", "type": "full"});   // "lunes, 12 de diciembre de 2011"
-fmt.format(new Date(), {"format": "date", "type": "long"});   // "12 de diciembre de 2011"
-fmt.format(new Date(), {"format": "date", "type": "medium"}); // "12/12/2011"
-fmt.format(new Date(), {"format": "date", "type": "short"});  // "12/12/11"
-
-fmt.format(new Date(), {"format": "time", "type": "full"});   // "21:44:57 UTC -0800"
-fmt.format(new Date(), {"format": "time", "type": "long"});   // "21:45:42 -08:00"
-fmt.format(new Date(), {"format": "time", "type": "medium"}); // "21:46:09"
-fmt.format(new Date(), {"format": "time", "type": "short"});  // "21:47"
-```
-
-The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
-
 ### Running Tests (JS)
 
 A JavaScript test suite comes with twitter-cldr-rb.  You'll need to install the Qt libs to be able to run the suite, as it uses [jasmine](https://github.com/pivotal/jasmine-gem) and [jasmine-headless-webkit](http://johnbintz.github.com/jasmine-headless-webkit/).
@@ -425,7 +432,8 @@ The tests are located in `js/spec` and look similar to RSpec tests.
 ## Authors
 
 * Cameron C. Dutro: http://github.com/camertron
-* Portions taken from the ruby-cldr gem by Sven Fuchs: http://github.com/svenfuchs/ruby-cldr
+* Kirill Lashuk: http://github.com/kl-7
+* Portions adapted from the ruby-cldr gem by Sven Fuchs: http://github.com/svenfuchs/ruby-cldr
 
 ## Links
 * ruby-cldr gem: [http://github.com/svenfuchs/ruby-cldr](http://github.com/svenfuchs/ruby-cldr)
@@ -437,8 +445,3 @@ The tests are located in `js/spec` and look similar to RSpec tests.
 Copyright 2012 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0
-
-## Future Plans
-
-* Implement Unicode Collation Algorithm (UCA) for sorting/searching.
-* Patch Ruby 1.8 strings to provide better Unicode support (probably using pack and unpack).

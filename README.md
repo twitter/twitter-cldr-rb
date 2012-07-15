@@ -362,6 +362,13 @@ collator.get_collation_elements("Älg")   # [[39, 5, 143], [0, 157, 5], [61, 5, 
 collator.get_sort_key("Älg")             # [39, 61, 51, 1, 134, 157, 6, 1, 143, 7]
 ```
 
+**Note**: The collation algorithm in TwitterCLDR isn't quite complete.  Here's what we still have to do:
+
+1.  Backwards accent sorting for French.
+2.  Uppercase-first sorting for languages like Danish.
+
+**Note**: The TwitterCLDR collator does not currently pass all the collation tests provided by Unicode, but for some strange reasons.  See the [summary](https://gist.github.com/f4ee3bd280a2257c5641) of these discrepancies if you're curious.
+
 ## About Twitter-specific Locales
 
 Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes however, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:

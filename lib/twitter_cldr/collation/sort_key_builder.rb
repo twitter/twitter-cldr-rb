@@ -8,7 +8,8 @@ module TwitterCldr
 
     # SortKeyBuilder builds a collation sort key from an array of collation elements.
     #
-    # Weights compression algorithms for every level are described in http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
+    # Weights compression algorithms for every level are described in
+    # http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
     #
     class SortKeyBuilder
 
@@ -24,27 +25,29 @@ module TwitterCldr
       MIN_NON_LATIN_PRIMARY = 0x5B
       MAX_REGULAR_PRIMARY   = 0x7A
 
-      attr_reader :collation_elements
+      attr_reader :collation_elements, :case_first
 
       # Returns a sort key as an array of bytes.
       #
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #   case_first         - optional case-first sorting order setting: :upper, :lower.
       #
       # An instance of the class is created only to prevent passing of @collation_elements and @bytes_array from one
       # method into another while forming the sort key.
       #
-      def self.build(collation_elements)
-        new(collation_elements).bytes_array
+      def self.build(collation_elements, case_first = nil)
+        new(collation_elements, case_first).bytes_array
       end
 
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
       #
-      def initialize(collation_elements)
+      def initialize(collation_elements, case_first = nil)
         @collation_elements = collation_elements
+        @case_first         = case_first
       end
 
       def bytes_array

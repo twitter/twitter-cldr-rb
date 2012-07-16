@@ -56,19 +56,25 @@ describe Collator do
   end
 
   describe '#initialize' do
-    before(:each) { stub(TrieBuilder).load_trie { trie } }
-    before(:each) { any_instance_of(Collator) { |c| stub(c).load_trie { trie } } }
-
-    it 'initializes default collator if locale is not specified' do
-      Collator.new.locale.should be_nil
+    before :each do
+      stub(TrieBuilder).load_trie { trie }
+      any_instance_of(Collator) { |c| stub(c).load_trie { trie } }
     end
 
-    it 'initialized tailored collator if locale is provided' do
-      Collator.new(:ru).locale.should == :ru
+    context 'without locale' do
+      it 'initializes default collator' do
+        Collator.new.locale.should be_nil
+      end
     end
 
-    it 'converts locale' do
-      Collator.new(:no).locale.should == :nb
+    context 'with locale' do
+      it 'initialized tailored collator with provided locale' do
+        Collator.new(:ru).locale.should == :ru
+      end
+
+      it 'converts locale' do
+        Collator.new(:no).locale.should == :nb
+      end
     end
   end
 

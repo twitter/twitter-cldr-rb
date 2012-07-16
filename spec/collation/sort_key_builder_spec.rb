@@ -17,7 +17,7 @@ describe SortKeyBuilder do
     it 'returns a sort key for a given array of collation elements' do
       sort_key = SortKeyBuilder.new(collation_elements)
 
-      mock(SortKeyBuilder).new(collation_elements) { sort_key }
+      mock(SortKeyBuilder).new(collation_elements, nil) { sort_key }
       mock(sort_key).bytes_array { sort_key_bytes }
 
       SortKeyBuilder.build(collation_elements).should == sort_key_bytes

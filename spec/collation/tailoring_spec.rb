@@ -46,6 +46,43 @@ describe 'Unicode collation tailoring' do
         tailored_collator.get_collation_elements(%w[0415 0306]).should == [[0x5C36, 5, 0x8F]]
       end
     end
+
+    let(:fractional_uca_short_stub) do
+      <<END
+# collation elements from default FCE table
+0301; [, 8D, 05]
+0306; [, 91, 05]
+041A; [5C 6C, 05, 8F] # К
+0413; [5C 1A, 05, 8F] # Г
+0415; [5C 34, 05, 8F] # Е
+
+# tailored (in UK locale) with "Г < ґ <<< Ґ"
+0491; [5C 1A, 05, 09][, DB B9, 09] # ґ
+0490; [5C 1A, 05, 93][, DB B9, 09] # Ґ
+
+# contraction for a tailored collation element
+0491 0306; [5C, DB, 09] # ґ̆
+
+# contractions suppressed in tailoring (for RU locale)
+041A 0301; [5C CC, 05, 8F] # Ќ
+0413 0301; [5C 30, 05, 8F] # Ѓ
+
+# contractions non-suppressed in tailoring
+0415 0306; [5C 36, 05, 8F] # Ӗ
+END
+    end
+
+    let(:tailoring_resource_stub) do
+      <<END
+---
+:tailored_table: ! '0491; [5C1B, 5, 5]
+
+  0490; [5C1B, 5, 86]'
+:suppressed_contractions: ГК
+...
+END
+    end
+
   end
 
   # Test data is taken from http://unicode.org/cldr/trac/browser/tags/release-2-0-1/test/
@@ -95,42 +132,6 @@ describe 'Unicode collation tailoring' do
 
   def tailoring_test?(line)
     !!(line && line !~ %r{^(//|#|\s*$)})
-  end
-
-  let(:fractional_uca_short_stub) do
-<<END
-# collation elements from default FCE table
-0301; [, 8D, 05]
-0306; [, 91, 05]
-041A; [5C 6C, 05, 8F] # К
-0413; [5C 1A, 05, 8F] # Г
-0415; [5C 34, 05, 8F] # Е
-
-# tailored (in UK locale) with "Г < ґ <<< Ґ"
-0491; [5C 1A, 05, 09][, DB B9, 09] # ґ
-0490; [5C 1A, 05, 93][, DB B9, 09] # Ґ
-
-# contraction for a tailored collation element
-0491 0306; [5C, DB, 09] # ґ̆
-
-# contractions suppressed in tailoring (for RU locale)
-041A 0301; [5C CC, 05, 8F] # Ќ
-0413 0301; [5C 30, 05, 8F] # Ѓ
-
-# contractions non-suppressed in tailoring
-0415 0306; [5C 36, 05, 8F] # Ӗ
-END
-  end
-
-  let(:tailoring_resource_stub) do
-<<END
----
-:tailored_table: ! '0491; [5C1B, 5, 5]
-
-  0490; [5C1B, 5, 86]'
-:suppressed_contractions: ГК
-...
-END
   end
 
 end

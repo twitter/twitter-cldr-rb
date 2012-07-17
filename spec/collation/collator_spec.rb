@@ -107,7 +107,7 @@ describe Collator do
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
     before(:each) { stub(TrieBuilder).load_trie { trie } }
-    before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements) { sort_key } }
+    before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, nil) { sort_key } }
 
     it 'calculates sort key for a string' do
       mock(collator).get_collation_elements(string) { collation_elements }
@@ -118,6 +118,8 @@ describe Collator do
       mock(collator).get_collation_elements(code_points_hex) { collation_elements }
       collator.get_sort_key(code_points_hex).should == sort_key
     end
+
+    it 'passes case-first option to sort key builder'
   end
 
   describe '#compare' do

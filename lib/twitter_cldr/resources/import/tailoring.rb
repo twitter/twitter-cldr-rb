@@ -33,7 +33,7 @@ module TwitterCldr
             :pt => :root
         }
 
-        EMPTY_TAILORING_DATA = { 'tailored_table' => '', 'suppressed_contractions' => '' }
+        EMPTY_TAILORING_DATA = { 'collator_options' => {}, 'tailored_table' => '', 'suppressed_contractions' => '' }
 
         class ImportError < RuntimeError; end
 

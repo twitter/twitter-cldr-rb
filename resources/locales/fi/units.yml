@@ -1,93 +1,135 @@
 fi: 
   units: 
     day: 
-      one: "{0} pv"
-      other: "{0} pv"
+      default: 
+        one: "{0} päivä"
+        other: "{0} päivää"
+      short: 
+        one: "{0} pv"
+        other: "{0} pv"
     day-future: 
-      0: "alle päivän päästä"
-      1: "päivän päästä"
-      one: "{0} päivän päästä"
-      other: "{0} päivän päästä"
+      default: 
+        0: "alle päivän päästä"
+        1: "päivän päästä"
+        one: "{0} päivän päästä"
+        other: "{0} päivän päästä"
     day-past: 
-      0: "alle päivä sitten"
-      1: "päivä sitten"
-      one: "{0} päivä sitten"
-      other: "{0} päivää sitten"
+      default: 
+        0: "alle päivä sitten"
+        1: "päivä sitten"
+        one: "{0} päivä sitten"
+        other: "{0} päivää sitten"
     hour: 
-      one: "{0} t"
-      other: "{0} t"
+      default: 
+        one: "{0} tunti"
+        other: "{0} tuntia"
+      short: 
+        one: "{0} t"
+        other: "{0} t"
     hour-future: 
-      0: "alle tunnin päästä"
-      1: "tunnin päästä"
-      one: "{0} tunnin päästä"
-      other: "{0} tunnin päästä"
+      default: 
+        0: "alle tunnin päästä"
+        1: "tunnin päästä"
+        one: "{0} tunnin päästä"
+        other: "{0} tunnin päästä"
     hour-past: 
-      0: "alle tunti sitten"
-      1: "tunti sitten"
-      one: "{0} tunti sitten"
-      other: "{0} tuntia sitten"
+      default: 
+        0: "alle tunti sitten"
+        1: "tunti sitten"
+        one: "{0} tunti sitten"
+        other: "{0} tuntia sitten"
     minute: 
-      one: "{0} min"
-      other: "{0} min"
+      default: 
+        one: "{0} minuutti"
+        other: "{0} minuuttia"
+      short: 
+        one: "{0} min"
+        other: "{0} min"
     minute-future: 
-      0: "alle minuutin päästä"
-      1: "minuutin päästä"
-      one: "{0} minuutin päästä"
-      other: "{0} minuutin päästä"
+      default: 
+        0: "alle minuutin päästä"
+        1: "minuutin päästä"
+        one: "{0} minuutin päästä"
+        other: "{0} minuutin päästä"
     minute-past: 
-      0: "alle minuutti sitten"
-      1: "minuutti sitten"
-      one: "{0} minuutti sitten"
-      other: "{0} minuuttia sitten"
+      default: 
+        0: "alle minuutti sitten"
+        1: "minuutti sitten"
+        one: "{0} minuutti sitten"
+        other: "{0} minuuttia sitten"
     month: 
-      one: "{0} kk"
-      other: "{0} kk"
+      default: 
+        one: "{0} kuukausi"
+        other: "{0} kuukautta"
+      short: 
+        one: "{0} kk"
+        other: "{0} kk"
     month-future: 
-      0: "alle kuukauden päästä"
-      1: "kuukauden päästä"
-      one: "{0} kuukauden päästä"
-      other: "{0} kuukauden päästä"
+      default: 
+        0: "alle kuukauden päästä"
+        1: "kuukauden päästä"
+        one: "{0} kuukauden päästä"
+        other: "{0} kuukauden päästä"
     month-past: 
-      0: "alle kuukausi sitten"
-      1: "kuukausi sitten"
-      one: "{0} kuukausi sitten"
-      other: "{0} kuukautta sitten"
+      default: 
+        0: "alle kuukausi sitten"
+        1: "kuukausi sitten"
+        one: "{0} kuukausi sitten"
+        other: "{0} kuukautta sitten"
     second: 
-      one: "{0} s"
-      other: "{0} s"
+      default: 
+        one: "{0} sekunti"
+        other: "{0} sekuntia"
+      short: 
+        one: "{0} s"
+        other: "{0} s"
     second-future: 
-      0: "alle sekunnin päästä"
-      1: "sekunnin päästä"
-      one: "{0} sekunnin päästä"
-      other: "{0} sekunnin päästä"
+      default: 
+        0: "alle sekunnin päästä"
+        1: "sekunnin päästä"
+        one: "{0} sekunnin päästä"
+        other: "{0} sekunnin päästä"
     second-past: 
-      0: "alle sekunti sitten"
-      1: "sekunti sitten"
-      one: "{0} sekunti sitten"
-      other: "{0} sekuntia sitten"
+      default: 
+        0: "alle sekunti sitten"
+        1: "sekunti sitten"
+        one: "{0} sekunti sitten"
+        other: "{0} sekuntia sitten"
     week: 
-      one: "{0} vk"
-      other: "{0} vk"
+      default: 
+        one: "{0} viikko"
+        other: "{0} viikkoa"
+      short: 
+        one: "{0} vk"
+        other: "{0} vk"
     week-future: 
-      0: "alle viikon päästä"
-      1: "viikon päästä"
-      one: "{0} viikon päästä"
-      other: "{0} viikon päästä"
+      default: 
+        0: "alle viikon päästä"
+        1: "viikon päästä"
+        one: "{0} viikon päästä"
+        other: "{0} viikon päästä"
     week-past: 
-      0: "alle viikko sitten"
-      1: "viikko sitten"
-      one: "{0} viikko sitten"
-      other: "{0} viikkoa sitten"
+      default: 
+        0: "alle viikko sitten"
+        1: "viikko sitten"
+        one: "{0} viikko sitten"
+        other: "{0} viikkoa sitten"
     year: 
-      one: "{0} v"
-      other: "{0} v"
+      default: 
+        one: "{0} vuosi"
+        other: "{0} vuotta"
+      short: 
+        one: "{0} v"
+        other: "{0} v"
     year-future: 
-      0: "alle vuoden päästä"
-      1: "vuoden päästä"
-      one: "{0} vuoden päästä"
-      other: "{0} vuoden päästä"
+      default: 
+        0: "alle vuoden päästä"
+        1: "vuoden päästä"
+        one: "{0} vuoden päästä"
+        other: "{0} vuoden päästä"
     year-past: 
-      0: "alle vuosi sitten"
-      1: "vuosi sitten"
-      one: "{0} vuosi sitten"
-      other: "{0} vuotta sitten"
+      default: 
+        0: "alle vuosi sitten"
+        1: "vuosi sitten"
+        one: "{0} vuosi sitten"
+        other: "{0} vuotta sitten"

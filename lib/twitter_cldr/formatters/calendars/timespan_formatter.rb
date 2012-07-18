@@ -6,6 +6,8 @@
 module TwitterCldr
   module Formatters
     class TimespanFormatter < Base
+      DEFAULT_TYPE = :default
+
       TIME_IN_SECONDS = { 
         :second => 1,
         :minute => 60,
@@ -17,21 +19,19 @@ module TwitterCldr
       }
 
       def initialize(options = {})
+        @direction = options[:direction]
         @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
       end
 
-      def format(seconds, unit)
-        direction = seconds < 0 ? :ago : :until
+      def format(seconds, options = {})
+        options[:direction] ||= @direction || (seconds < 0 ? :ago : :until)
+        options[:unit] ||= self.calculate_unit(seconds.abs)
+        options[:number] = calculate_time(seconds.abs, options[:unit])
+        options[:type] ||= DEFAULT_TYPE
 
-        if unit.nil? || unit == :default
-          unit = self.calculate_unit(seconds.abs)
-        end
-
-        number = calculate_time(seconds.abs, unit)
-
-        tokens = @tokenizer.tokens(:direction => direction, :unit => unit, :number => number)
+        tokens = @tokenizer.tokens(options)
         strings = tokens.map { |token| token[:value]}
-        strings.join.gsub(/\{[0-9]\}/, number.to_s)
+        strings.join.gsub(/\{[0-9]\}/, options[:number].to_s)
       end
 
       def calculate_unit(seconds)

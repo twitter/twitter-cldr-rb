@@ -64,8 +64,8 @@ describe "#ago" do
     time = Time.now
     base_time = time + 172800
     loc_time = time.localize(:de)
-    loc_time.ago({:base_time => base_time, :unit => :hour}).should == "Vor 48 Stunden"
-    loc_time.ago({:base_time => base_time, :unit => :day}).should == "Vor 2 Tagen"
+    loc_time.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("Vor 48 Stunden")
+    loc_time.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("Vor 2 Tagen")
   end
 end
 

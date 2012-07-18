@@ -114,44 +114,44 @@ dt.to_short_s  # ...etc
 In addition to formatting full dates and times, TwitterCLDR supports relative time spans via several convenience methods and the `LocalizedTimespan` class.  TwitterCLDR tries to guess the best time unit (eg. days, hours, minutes, etc) based on the length of the time span.  Unless otherwise specified, TwitterCLDR will use the current date and time as the reference point for the calculation.
 
 ```ruby
-(DateTime.now - 1).localize.ago        # 1 day ago
-(DateTime.now - 0.5).localize.ago      # 12 hours ago  (i.e. half a day)
+(DateTime.now - 1).localize.ago.to_s        # 1 day ago
+(DateTime.now - 0.5).localize.ago.to_s      # 12 hours ago  (i.e. half a day)
 
-(DateTime.now + 1).localize.until      # In 1 day
-(DateTime.now + 0.5).localize.until    # In 12 hours
+(DateTime.now + 1).localize.until.to_s      # In 1 day
+(DateTime.now + 0.5).localize.until.to_s    # In 12 hours
 ```
 
 Specify other locales:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago        # Vor 1 Tag
-(DateTime.now + 1).localize(:de).until      # In 1 Tag
+(DateTime.now - 1).localize(:de).ago.to_s        # Vor 1 Tag
+(DateTime.now + 1).localize(:de).until.to_s      # In 1 Tag
 ```
 
 Force TwitterCLDR to use a specific time unit by including the `:unit` option:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago(:unit => :hour)        # Vor 24 Stunden
-(DateTime.now + 1).localize(:de).until(:unit => :hour)      # In 24 Stunden
+(DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour)        # Vor 24 Stunden
+(DateTime.now + 1).localize(:de).until.to_s(:unit => :hour)      # In 24 Stunden
 ```
 
 Specify a different reference point for the time span calculation:
 
 ```ruby
 # 86400 = 1 day in seconds, 259200 = 3 days in seconds
-(Time.now + 86400).localize(:de).ago(:unit => :hour, :base_time => (Time.now + 259200))  # Vor 48 Stunden
+(Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour)  # Vor 48 Stunden
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-ts = TwitterCldr::LocalizedTimespan.new(86400, :de)
-ts.to_s                    # In 1 Tag
-ts.to_s(:hour)             # In 24 Stunden
+ts = TwitterCldr::LocalizedTimespan.new(86400, :locale => :de)
+ts.to_s                         # In 1 Tag
+ts.to_s(:unit => :hour)         # In 24 Stunden
 
-ts = TwitterCldr::LocalizedTimespan.new(-86400, :de)
-ts.to_s                    # Vor 1 Tag
-ts.to_s(:hour)             # Vor 24 Stunden
+ts = TwitterCldr::LocalizedTimespan.new(-86400, :locale => :de)
+ts.to_s                         # Vor 1 Tag
+ts.to_s(:unit => :hour)         # Vor 24 Stunden
 ```
 
 ### Plural Rules

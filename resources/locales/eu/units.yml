@@ -1,91 +1,128 @@
 eu: 
   units: 
     day: 
-      0: "0 egun"
-      1: "1 egun"
-      one: "{0} eguna"
-      other: "{0} egun"
+      default: 
+        one: "{0} eguna"
+        other: "{0} egun"
+      short: 
+        0: "0 egun"
+        1: "1 egun"
+        other: "{0} egun"
     day-future: 
-      0: "0 egun barru"
-      1: "1 egun barru"
-      other: "{0} egun barru"
+      default: 
+        0: "0 egun barru"
+        1: "1 egun barru"
+        other: "{0} egun barru"
     day-past: 
-      0: "Duela 0 egun"
-      1: "Duela 1 egun"
-      other: "Duela {0} egun"
+      default: 
+        0: "Duela 0 egun"
+        1: "Duela 1 egun"
+        other: "Duela {0} egun"
     hour: 
-      1: "1 ordu"
-      one: "{0} ordua"
-      other: "{0} ordu"
+      default: 
+        one: "{0} ordua"
+        other: "{0} h"
+      short: 
+        1: "1 ordu"
+        other: "{0} ordu"
     hour-future: 
-      0: "0 ordu barru"
-      1: "1 ordu barru"
-      other: "{0} ordu barru"
+      default: 
+        0: "0 ordu barru"
+        1: "1 ordu barru"
+        other: "{0} ordu barru"
     hour-past: 
-      0: "Duela 0 ordu"
-      1: "Duela ordubete"
-      other: "Duela {0} ordu"
+      default: 
+        0: "Duela 0 ordu"
+        1: "Duela ordubete"
+        other: "Duela {0} ordu"
     minute: 
-      1: "1 minutu"
-      one: "{0} minutu"
-      other: "{0} minutu"
+      default: 
+        one: "{0} minutu"
+        other: "{0} minutu"
+      short: 
+        1: "1 minutu"
+        other: "{0} minutu"
     minute-future: 
-      0: "0 minutu barru"
-      1: "1 minutu barru"
-      other: "{0} minutu barru"
+      default: 
+        0: "0 minutu barru"
+        1: "1 minutu barru"
+        other: "{0} minutu barru"
     minute-past: 
-      0: "Duela 0 minutu"
-      1: "Duela 1 minutu"
-      other: "Duela {0} minutu"
+      default: 
+        0: "Duela 0 minutu"
+        1: "Duela 1 minutu"
+        other: "Duela {0} minutu"
     month: 
-      0: "0 hilabete"
-      1: "1 hilabete"
-      one: "{0} hilea"
-      other: "{0} hilabete"
+      default: 
+        0: "0 hilabete"
+        1: "1 hilabete"
+        one: "{0} hilea"
+        other: "{0} hilabete"
+      short: 
+        0: "0 hilabete"
+        1: "1 hilabete"
+        other: "{0} hilabete"
     month-future: 
-      0: "0 hilabete barru"
-      1: "1 hilabete barru"
-      other: "{0} hilabete barru"
+      default: 
+        0: "0 hilabete barru"
+        1: "1 hilabete barru"
+        other: "{0} hilabete barru"
     month-past: 
-      0: "Duela 0 hilabete"
-      1: "Duela 1 hilabete"
-      other: "Duela {0} hilabete"
+      default: 
+        0: "Duela 0 hilabete"
+        1: "Duela 1 hilabete"
+        other: "Duela {0} hilabete"
     second: 
-      0: "0 seg."
-      1: "1 seg."
-      one: "{0} segundo"
-      other: "{0} seg."
+      default: 
+        one: "{0} segundo"
+        other: "{0} s"
+      short: 
+        0: "0 seg."
+        1: "1 seg."
+        other: "{0} seg."
     second-future: 
-      0: "0 segundo barru"
-      1: "1 segundo barru"
-      other: "{0} segundo barru"
+      default: 
+        0: "0 segundo barru"
+        1: "1 segundo barru"
+        other: "{0} segundo barru"
     second-past: 
-      0: "Duela 0 segundo"
-      1: "Duela 1 segundo"
-      other: "Duela {0} segundo"
+      default: 
+        0: "Duela 0 segundo"
+        1: "Duela 1 segundo"
+        other: "Duela {0} segundo"
     week: 
-      0: "0 aste"
-      1: "1 aste"
-      one: "{0} aste"
-      other: "{0} aste"
+      default: 
+        one: "{0} aste"
+        other: "{0} aste"
+      short: 
+        0: "0 aste"
+        1: "1 aste"
+        other: "{0} aste"
     week-future: 
-      0: "0 aste barru"
-      1: "1 aste barru"
-      other: "{0} aste barru"
+      default: 
+        0: "0 aste barru"
+        1: "1 aste barru"
+        other: "{0} aste barru"
     week-past: 
-      0: "Duela 0 aste"
-      1: "Duela 1 aste"
-      other: "Duela {0} aste"
+      default: 
+        0: "Duela 0 aste"
+        1: "Duela 1 aste"
+        other: "Duela {0} aste"
     year: 
-      0: "0 urte"
-      1: "1 urte"
-      one: "{0} urtea"
-      other: "{0} urte"
+      default: 
+        one: "{0} urtea"
+        other: "{0} urte"
+      short: 
+        0: "0 urte"
+        1: "1 urte"
+        other: "{0} urte"
     year-future: 
-      0: "0 urte barru"
-      1: "1 urte barru"
-      other: "{0} urte barru"
+      default: 
+        0: "0 urte barru"
+        1: "1 urte barru"
+        other: "{0} urte barru"
     year-past: 
-      0: "Duela 0 urte"
-      1: "Duela 1 urte"
-      other: "Duela {0} urte"
+      default: 
+        0: "Duela 0 urte"
+        1: "Duela 1 urte"
+        other: "Duela {0} urte"

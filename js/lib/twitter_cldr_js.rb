@@ -13,7 +13,12 @@ require 'json'
 
 require 'compiler'
 require 'renderers/bundle'
+require 'renderers/base'
+
 require 'renderers/calendars/datetime_renderer'
+require 'renderers/calendars/timespan_renderer'
+require 'renderers/plurals/rules/plural_rules_compiler'
+require 'renderers/plurals/rules/plural_rules_renderer'
 
 module TwitterCldr
   module Js
@@ -60,7 +65,7 @@ module TwitterCldr
 
     def self.test
       Dir.chdir(File.dirname(__FILE__)) do
-        Jasmine::Headless::Runner.run(:colors => true, :jasmine_config => File.expand_path("../spec/support/jasmine.yml"))
+        Jasmine::Headless::Runner.run(:colors => true, :jasmine_config => File.expand_path("../spec/js/support/jasmine.yml"))
       end
     end
 

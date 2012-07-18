@@ -80,4 +80,11 @@ describe LocalizedDateTime do
       time.base_obj.getgm.strftime("%H:%M:%S").should == "22:05:00"
     end
   end
+
+  describe "#to_timespan" do
+    it "should return a localized timespan with a direction of :none" do
+      ts = DateTime.new(1987, 9, 20, 22, 5).localize.to_timespan
+      ts.formatter.instance_variable_get(:'@direction').should == :none
+    end
+  end
 end

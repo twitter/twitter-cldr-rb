@@ -28,6 +28,12 @@ RSpec.configure do |config|
   end
 end
 
+RSpec::Matchers.define :match_normalized do |expected|
+  match do |actual|
+    expected.localize.normalize(:using => :NFKC).to_s == actual.localize.normalize(:using => :NFKC).to_s
+  end
+end
+
 def check_token_list(got, expected)
   got.size.should == expected.size
   expected.each_with_index do |exp_hash, index|

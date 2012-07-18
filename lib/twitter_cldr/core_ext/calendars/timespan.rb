@@ -6,13 +6,13 @@
 module TwitterCldr
   class LocalizedTimespan < LocalizedObject
 
-    def initialize(seconds, locale)
-      @formatter = TwitterCldr::Formatters::TimespanFormatter.new(:locale => locale)
-      @seconds = seconds
+    def initialize(seconds, options = {})
+      super(seconds, options[:locale], options)
+      @formatter = TwitterCldr::Formatters::TimespanFormatter.new(options)
     end
 
-    def to_s(unit = :default)
-      @formatter.format(@seconds, unit)
+    def to_s(options = {})
+      @formatter.format(@base_obj, options)
     end
 
     protected

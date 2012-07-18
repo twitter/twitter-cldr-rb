@@ -79,10 +79,6 @@ module TwitterCldr
       def pattern_for(resource)
         resource.is_a?(Hash) ? resource[:pattern] : resource
       end
-
-      def path_map
-        PATH_MAP
-      end
     end
   end
 end

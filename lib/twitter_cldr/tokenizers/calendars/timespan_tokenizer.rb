@@ -6,10 +6,10 @@
 module TwitterCldr
   module Tokenizers
     class TimespanTokenizer < Base
+      VALID_UNITS = [:second, :minute, :hour, :day, :week, :month, :year]
+
       def initialize(options = {})
         super(options)
-
-        @type = options[:type] || :decimal
 
         @token_splitter_regex = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/ # creates spaces
         @token_type_regexes   = [
@@ -37,13 +37,23 @@ module TwitterCldr
                 :week    => :'week-future',
                 :month   => :'month-future',
                 :year    => :'year-future'
+            },
+            :none => {
+                :default => :second,
+                :second  => :second,
+                :minute  => :minute,
+                :hour    => :hour,
+                :day     => :day,
+                :week    => :week,
+                :month   => :month,
+                :year    => :year
             }
         }
       end
 
       def tokens(options = {})
-        path = full_path(options[:direction], options[:unit] || :default)
-        pluralization = TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
+        path = full_path(options[:direction], options[:unit], options[:type])
+        pluralization = options[:rule] || TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
 
         case pluralization # sometimes the plural rule will return ":one" when the resource only contains a path with "1"
           when :zero
@@ -53,7 +63,7 @@ module TwitterCldr
           when :two
             pluralization = 2 if token_exists(path + [2])
         end
-        path += [pluralization]
+        path << pluralization
         tokens_with_placeholders_for(path) if token_exists(path)
       end
 
@@ -63,10 +73,14 @@ module TwitterCldr
         true if @@token_cache.include?(cache_key) || traverse(path)
       end
 
+      def all_types_for(unit, direction)
+        traverse(@base_path + [@paths[direction][unit]]).keys
+      end
+
       protected
 
-      def full_path(direction, unit)
-        @base_path + [@paths[direction][unit]]
+      def full_path(direction, unit, type)
+        @base_path + [@paths[direction][unit], type]
       end
 
       def init_resources

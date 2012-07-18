@@ -7,12 +7,8 @@ module TwitterCldr
   module Js
     module Renderers
       module Calendars
-        class DateTimeRenderer < Mustache
+        class DateTimeRenderer < TwitterCldr::Js::Renderers::Base
           self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "../..", "mustache/calendars/datetime.coffee"))
-
-          def initialize(options = {})
-            @locale = options[:locale]
-          end
 
           def tokens
             tokens = {}

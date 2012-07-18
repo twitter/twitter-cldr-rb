@@ -42,6 +42,25 @@ describe Loader do
       mock(File).file?(File.join(TwitterCldr::RESOURCES_DIR, 'foo/bar.yml')) { false }
       lambda { loader.get_resource(:foo, :bar) }.should raise_error(ArgumentError, "Resource 'foo/bar.yml' not found.")
     end
+
+    context "custom resources" do
+      it "doesn't merge the custom resource if it doesn't exist" do
+        mock(loader).read_resource_file('foo/bar.yml') { "foo: bar" }
+        loader.get_resource(:foo, :bar).should == { :foo => "bar" }
+      end
+
+      it 'merges the given file with its corresponding custom resource if it exists' do
+        mock(loader).read_resource_file('foo/bar.yml') { "foo: bar" }
+        mock(loader).resource_exists?('custom/foo/bar.yml') { true }
+        mock(loader).read_resource_file('custom/foo/bar.yml') { "bar: baz" }
+
+        # make sure load_resource is called with custom = false the second time
+        mock.proxy(loader).load_resource("foo/bar.yml")
+        mock.proxy(loader).load_resource("custom/foo/bar.yml", false)
+
+        loader.get_resource(:foo, :bar).should == { :foo => "bar", :bar => "baz" }
+      end
+    end
   end
 
   describe '#get_locale_resource' do

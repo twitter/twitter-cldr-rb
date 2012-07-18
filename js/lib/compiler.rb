@@ -6,11 +6,9 @@
 module TwitterCldr
   module Js
     class Compiler
-      ALL_JS_FEATURES = [:calendars]
-
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales
-        @features = options[:features] || ALL_JS_FEATURES
+        @features = options[:features] || renderers.keys
       end
 
       def compile
@@ -18,7 +16,7 @@ module TwitterCldr
           contents = ""
 
           @features.each do |feature|
-            renderer_const = self.get_renderer_const(feature)
+            renderer_const = renderers[feature]
             contents << renderer_const.new(:locale => locale).render if renderer_const
           end
 
@@ -28,15 +26,14 @@ module TwitterCldr
         end
       end
 
-      protected
+      private
 
-      def get_renderer_const(feature)
-        case feature
-          when :calendars
-            TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer
-          else
-            nil
-        end
+      def renderers
+        @renderers ||= {
+          :plural_rules => TwitterCldr::Js::Renderers::PluralRules::PluralRulesRenderer,
+          :timespan => TwitterCldr::Js::Renderers::Calendars::TimespanRenderer,
+          :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer
+        }
       end
     end
   end

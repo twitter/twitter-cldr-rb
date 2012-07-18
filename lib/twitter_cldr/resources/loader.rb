@@ -26,8 +26,19 @@ module TwitterCldr
         "#{File.join(*path.map(&:to_s))}.yml"
       end
 
-      def load_resource(path)
-        TwitterCldr::Utils.deep_symbolize_keys(YAML.load(read_resource_file(path)))
+      def load_resource(path, merge_custom = true)
+        base = TwitterCldr::Utils.deep_symbolize_keys(YAML.load(read_resource_file(path)))
+        custom_path = File.join("custom", path)
+
+        if merge_custom && resource_exists?(custom_path)
+          TwitterCldr::Utils.deep_merge!(base, load_resource(custom_path, false))
+        end
+
+        base
+      end
+
+      def resource_exists?(path)
+        File.exist?(File.join(TwitterCldr::RESOURCES_DIR, path))
       end
 
       def read_resource_file(path)

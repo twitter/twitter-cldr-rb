@@ -70,7 +70,12 @@ namespace :js do
     TwitterCldr.require_js
     FileUtils.mkdir_p(TwitterCldr::Js.build_dir)
     TwitterCldr::Js.make(:locales => [:en])
+    puts "Running JavaScript tests (Jasmine)..."
     TwitterCldr::Js.test
     FileUtils.rm_rf(TwitterCldr::Js.build_dir)
+    puts "\nRunning Ruby tests (RSpec)..."
+    Dir.chdir(File.join(File.dirname(__FILE__), "js")) do
+      Rake::Task["spec"].execute
+    end
   end
 end

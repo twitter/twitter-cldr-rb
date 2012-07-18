@@ -1,93 +1,135 @@
 ca: 
   units: 
     day: 
-      one: "{0} dia"
-      other: "{0} dies"
+      default: 
+        one: "{0} dia"
+        other: "{0} dies"
+      short: 
+        one: "{0} dia"
+        other: "{0} dies"
     day-future: 
-      0: "D'aquí a 0 dies"
-      1: "D'aquí a 1 dia"
-      one: "D'aquí a {0} dia"
-      other: "D'aquí a {0} dies"
+      default: 
+        0: "D'aquí a 0 dies"
+        1: "D'aquí a 1 dia"
+        one: "D'aquí a {0} dia"
+        other: "D'aquí a {0} dies"
     day-past: 
-      0: "Fa 0 dies"
-      1: "Fa 1 dia"
-      one: "Fa {0} dia"
-      other: "Fa {0} dies"
+      default: 
+        0: "Fa 0 dies"
+        1: "Fa 1 dia"
+        one: "Fa {0} dia"
+        other: "Fa {0} dies"
     hour: 
-      one: "{0} h"
-      other: "{0} h"
+      default: 
+        one: "{0} hora"
+        other: "{0} hores"
+      short: 
+        one: "{0} h"
+        other: "{0} h"
     hour-future: 
-      0: "D'aquí a 0 hores"
-      1: "D'aquí a 1 hora"
-      one: "D'aquí a {0} hora"
-      other: "D'aquí a {0} hores"
+      default: 
+        0: "D'aquí a 0 hores"
+        1: "D'aquí a 1 hora"
+        one: "D'aquí a {0} hora"
+        other: "D'aquí a {0} hores"
     hour-past: 
-      0: "Fa 0 hores"
-      1: "Fa 1 hora"
-      one: "Fa {0} hora"
-      other: "Fa {0} hores"
+      default: 
+        0: "Fa 0 hores"
+        1: "Fa 1 hora"
+        one: "Fa {0} hora"
+        other: "Fa {0} hores"
     minute: 
-      one: "{0} m"
-      other: "{0} m"
+      default: 
+        one: "{0} minut"
+        other: "{0} minuts"
+      short: 
+        one: "{0} m"
+        other: "{0} m"
     minute-future: 
-      0: "D'aquí a 0 minuts"
-      1: "D'aquí a 1 minut"
-      one: "D'aquí a {0} minut"
-      other: "D'aquí a {0} minuts"
+      default: 
+        0: "D'aquí a 0 minuts"
+        1: "D'aquí a 1 minut"
+        one: "D'aquí a {0} minut"
+        other: "D'aquí a {0} minuts"
     minute-past: 
-      0: "Fa 0 minuts"
-      1: "Fa 1 minut"
-      one: "Fa {0} minut"
-      other: "Fa {0} minuts"
+      default: 
+        0: "Fa 0 minuts"
+        1: "Fa 1 minut"
+        one: "Fa {0} minut"
+        other: "Fa {0} minuts"
     month: 
-      one: "{0} mes"
-      other: "{0} mesos"
+      default: 
+        one: "{0} mes"
+        other: "{0} mesos"
+      short: 
+        one: "{0} mes"
+        other: "{0} mesos"
     month-future: 
-      0: "D'aquí a 0 mesos"
-      1: "D'aquí a 1 mes"
-      one: "D'aquí a {0} mes"
-      other: "D'aquí a {0} mesos"
+      default: 
+        0: "D'aquí a 0 mesos"
+        1: "D'aquí a 1 mes"
+        one: "D'aquí a {0} mes"
+        other: "D'aquí a {0} mesos"
     month-past: 
-      0: "Fa 0 mesos"
-      1: "Fa 1 mes"
-      one: "Fa {0} mes"
-      other: "Fa {0} mesos"
+      default: 
+        0: "Fa 0 mesos"
+        1: "Fa 1 mes"
+        one: "Fa {0} mes"
+        other: "Fa {0} mesos"
     second: 
-      one: "{0} s"
-      other: "{0} s"
+      default: 
+        one: "{0} segon"
+        other: "{0} segons"
+      short: 
+        one: "{0} s"
+        other: "{0} s"
     second-future: 
-      0: "D'aquí a 0 segons"
-      1: "D'aquí a 1 segon"
-      one: "D'aquí a {0} segon"
-      other: "D'aquí a {0} segons"
+      default: 
+        0: "D'aquí a 0 segons"
+        1: "D'aquí a 1 segon"
+        one: "D'aquí a {0} segon"
+        other: "D'aquí a {0} segons"
     second-past: 
-      0: "Fa 0 segons"
-      1: "Fa 1 segon"
-      one: "Fa {0} segon"
-      other: "Fa {0} segons"
+      default: 
+        0: "Fa 0 segons"
+        1: "Fa 1 segon"
+        one: "Fa {0} segon"
+        other: "Fa {0} segons"
     week: 
-      one: "{0} setmana"
-      other: "{0} setmanes"
+      default: 
+        one: "{0} setmana"
+        other: "{0} setmanes"
+      short: 
+        one: "{0} setmana"
+        other: "{0} setmanes"
     week-future: 
-      0: "D'aquí a 0 setmanes"
-      1: "D'aquí a 1 setmana"
-      one: "D'aquí a {0} setmana"
-      other: "D'aquí a {0} setmanes"
+      default: 
+        0: "D'aquí a 0 setmanes"
+        1: "D'aquí a 1 setmana"
+        one: "D'aquí a {0} setmana"
+        other: "D'aquí a {0} setmanes"
     week-past: 
-      0: "Fa 0 setmanes"
-      1: "Fa 1 setmana"
-      one: "Fa {0} setmana"
-      other: "Fa {0} setmanes"
+      default: 
+        0: "Fa 0 setmanes"
+        1: "Fa 1 setmana"
+        one: "Fa {0} setmana"
+        other: "Fa {0} setmanes"
     year: 
-      one: "{0} any"
-      other: "{0} anys"
+      default: 
+        one: "{0} any"
+        other: "{0} anys"
+      short: 
+        one: "{0} any"
+        other: "{0} anys"
     year-future: 
-      0: "D'aquí a 0 anys"
-      1: "D'aquí a 1 any"
-      one: "D'aquí a {0} any"
-      other: "D'aquí a {0} anys"
+      default: 
+        0: "D'aquí a 0 anys"
+        1: "D'aquí a 1 any"
+        one: "D'aquí a {0} any"
+        other: "D'aquí a {0} anys"
     year-past: 
-      0: "Fa 0 anys"
-      1: "Fa 1 any"
-      one: "Fa {0} any"
-      other: "Fa {0} anys"
+      default: 
+        0: "Fa 0 anys"
+        1: "Fa 1 any"
+        one: "Fa {0} any"
+        other: "Fa {0} anys"

@@ -22,6 +22,17 @@ module TwitterCldr
         end
       end
 
+      def deep_merge!(first, second)
+        if first.is_a?(Hash) && second.is_a?(Hash)
+          second.each { |key, val| first[key] = deep_merge!(first[key], val) }
+        elsif first.is_a?(Array) && second.is_a?(Array)
+          second.each_with_index { |elem, index| first[index] = deep_merge!(first[index], elem) }
+        else
+         return second
+        end
+        first
+      end
+
       def compute_cache_key(*pieces)
         if pieces && pieces.size > 0
           pieces.join("|").hash

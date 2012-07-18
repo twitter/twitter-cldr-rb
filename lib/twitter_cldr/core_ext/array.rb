@@ -29,7 +29,7 @@ module TwitterCldr
     end
 
     def to_a
-      @base_obj
+      @base_obj.dup
     end
   end
 end

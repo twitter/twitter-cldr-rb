@@ -93,29 +93,41 @@ describe SortKeyBuilder do
         end
 
         it 'compresses tertiary weights' do
-          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]]).bytes_array.should == [1, 1, 132, 167, 6]
+          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]]).bytes_array.should == [1, 1, 0x84, 0xA7, 6]
         end
 
         it 'compresses tertiary weights into multiple bytes if necessary' do
-          SortKeyBuilder.new([[0, 0, 5]] * 100).bytes_array.should == [1, 1, 48, 48, 18]
+          SortKeyBuilder.new([[0, 0, 5]] * 100).bytes_array.should == [1, 1, 0x30, 0x30, 0x12]
         end
       end
 
       context 'when case_first is :upper' do
         it 'inverts case bits and subtract bottom addition from bytes that are smaller than common' do
-          SortKeyBuilder.new([[0, 0, 9], [0, 0, 136], [0, 0, 143]], :upper).bytes_array.should == [1, 1, 201, 8, 15]
+          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :upper).bytes_array.should == [1, 1, 201, 80, 15]
         end
 
-        xit 'compresses tertiary weights' do
-          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]]).bytes_array.should == [1, 1, 132, 167, 6]
+        it 'compresses tertiary weights' do
+          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :upper).bytes_array.should == [1, 1, 0xC4, 0xE7, 0xC3]
         end
 
-        xit 'compresses tertiary weights into multiple bytes if necessary' do
-          SortKeyBuilder.new([[0, 0, 5]] * 100).bytes_array.should == [1, 1, 48, 48, 18]
+        it 'compresses tertiary weights into multiple bytes if necessary' do
+          SortKeyBuilder.new([[0, 0, 5]] * 100, :upper).bytes_array.should == [1, 1, 0x9C, 0x9C, 0xB3]
         end
       end
 
-      it 'works when case_first is :lower'
+      context 'when case_first is :lower' do
+        it 'leaves case bits and adds top addition to bytes that are greater than common' do
+          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :lower).bytes_array.should == [1, 1, 73, 144, 207]
+        end
+
+        it 'compresses tertiary weights' do
+          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :lower).bytes_array.should == [1, 1, 0x44, 0x67, 6]
+        end
+
+        it 'compresses tertiary weights into multiple bytes if necessary' do
+          SortKeyBuilder.new([[0, 0, 5]] * 100, :lower).bytes_array.should == [1, 1, 0x1A, 0x1A, 0x1A, 0x1A, 0x14]
+        end
+      end
     end
   end
 

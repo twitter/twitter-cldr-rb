@@ -122,6 +122,7 @@ module TwitterCldr
             append_common_bytes(@tertiary_bottom, @tertiary_bottom_count, false)
           else
             append_common_bytes(@tertiary_top, @tertiary_top_count, true)
+            @bytes_array[-1] -= 1 # make @bytes_array[-1] = boundary - @common_count (for compatibility with ICU)
           end
         end
       end

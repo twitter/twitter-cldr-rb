@@ -20,7 +20,7 @@ module TwitterCldr
         end
 
         def load_tailored_trie(locale, fallback)
-          build_tailored_trie(TwitterCldr.get_resource(:collation, :tailoring, locale), fallback)
+          build_tailored_trie(tailoring_data(locale), fallback)
         end
 
         def parse_trie(table, trie = TwitterCldr::Collation::Trie.new)
@@ -29,6 +29,10 @@ module TwitterCldr
           end
 
           trie
+        end
+
+        def tailoring_data(locale)
+          TwitterCldr.get_resource(:collation, :tailoring, locale)
         end
 
         private

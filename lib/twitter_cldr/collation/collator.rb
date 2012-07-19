@@ -16,8 +16,9 @@ module TwitterCldr
       attr_accessor :locale
 
       def initialize(locale = nil)
-        @locale = TwitterCldr.convert_locale(locale) if locale
-        @trie   = load_trie
+        @locale  = TwitterCldr.convert_locale(locale) if locale
+        @options = tailoring_options
+        @trie    = load_trie
       end
 
       def sort(strings)
@@ -34,7 +35,7 @@ module TwitterCldr
       end
 
       def get_sort_key(string_or_code_points)
-        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points))
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points), @options[:case_first])
       end
 
       def get_collation_elements(string_or_code_points)
@@ -46,6 +47,10 @@ module TwitterCldr
       end
 
       private
+
+      def tailoring_options
+        @locale ? TwitterCldr::Collation::TrieBuilder.tailoring_data(@locale)[:collator_options] : {}
+      end
 
       def load_trie
         @locale ? self.class.tailored_fce_trie(@locale) : self.class.default_fce_trie

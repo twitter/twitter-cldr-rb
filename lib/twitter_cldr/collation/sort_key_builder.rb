@@ -8,7 +8,8 @@ module TwitterCldr
 
     # SortKeyBuilder builds a collation sort key from an array of collation elements.
     #
-    # Weights compression algorithms for every level are described in http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
+    # Weights compression algorithms for every level are described in
+    # http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm
     #
     class SortKeyBuilder
 
@@ -16,35 +17,36 @@ module TwitterCldr
 
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
-      TERTIARY_LEVEL_MASK = 0x3F # mask for removing case bits or continuation flag from a tertiary weight
+      VALID_CASE_FIRST_OPTIONS = [nil, :lower, :upper]
 
-      PRIMARY_BYTE_MIN = 0x3
-      PRIMARY_BYTE_MAX = 0xFF
-
-      MIN_NON_LATIN_PRIMARY = 0x5B
-      MAX_REGULAR_PRIMARY   = 0x7A
-
-      attr_reader :collation_elements
+      attr_reader :collation_elements, :case_first
 
       # Returns a sort key as an array of bytes.
       #
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #   case_first         - case-first sorting order setting.
       #
       # An instance of the class is created only to prevent passing of @collation_elements and @bytes_array from one
       # method into another while forming the sort key.
       #
-      def self.build(collation_elements)
-        new(collation_elements).bytes_array
+      def self.build(collation_elements, case_first = nil)
+        new(collation_elements, case_first).bytes_array
       end
 
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
+      #   case_first         - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
       #
-      def initialize(collation_elements)
+      def initialize(collation_elements, case_first = nil)
+        raise ArgumentError, "invalid case-first options '#{case_first.inspect}'" unless VALID_CASE_FIRST_OPTIONS.include?(case_first)
+
         @collation_elements = collation_elements
+        @case_first         = case_first
+
+        init_tertiary_constants
       end
 
       def bytes_array
@@ -115,7 +117,14 @@ module TwitterCldr
         end
 
         # append compressed trailing common bytes
-        append_common_bytes(TERTIARY_BOTTOM, TERTIARY_BOTTOM_COUNT, false) if @common_count > 0
+        if @common_count > 0
+          if @tertiary_common == TERTIARY_BOTTOM_NORMAL
+            append_common_bytes(@tertiary_bottom, @tertiary_bottom_count, false)
+          else
+            append_common_bytes(@tertiary_top, @tertiary_top_count, true)
+            @bytes_array[-1] -= 1 # make @bytes_array[-1] = boundary - @common_count (for compatibility with ICU)
+          end
+        end
       end
 
       def append_secondary_byte(secondary)
@@ -127,11 +136,16 @@ module TwitterCldr
       end
 
       def append_tertiary_byte(tertiary)
-        if tertiary == TERTIARY_COMMON
+        if tertiary == @tertiary_common
           @common_count += 1
         else
-          tertiary += TERTIARY_TOP_ADDITION if tertiary > TERTIARY_COMMON # create a gap above TERTIARY_COMMON
-          append_with_common_bytes(tertiary, TERTIARY_COMMON_SPACE)
+          if @tertiary_common == TERTIARY_COMMON_NORMAL && @tertiary_common < tertiary
+            tertiary += @tertiary_addition
+          elsif @tertiary_common == TERTIARY_COMMON_UPPER_FIRST && tertiary <= @tertiary_common
+            tertiary -= @tertiary_addition
+          end
+
+          append_with_common_bytes(tertiary, @tertiary_common_space)
         end
       end
 
@@ -160,7 +174,13 @@ module TwitterCldr
       end
 
       def tertiary_weight(collation_element)
-        level_weight(collation_element, TERTIARY_LEVEL) & TERTIARY_LEVEL_MASK
+        weight = level_weight(collation_element, TERTIARY_LEVEL)
+
+        if continuation?(weight)
+          remove_continuation_bits(weight)
+        else
+          (weight & @tertiary_mask) ^ @case_switch
+        end
       end
 
       def level_weight(collation_element, level)
@@ -177,6 +197,60 @@ module TwitterCldr
 
         bytes
       end
+
+      def continuation?(weight)
+        weight & CASE_BITS_MASK == CASE_BITS_MASK
+      end
+
+      def remove_continuation_bits(weight)
+        weight & REMOVE_CASE_MASK
+      end
+
+      def init_tertiary_constants
+        @case_switch = @case_first == :upper ? CASE_SWITCH : NO_CASE_SWITCH
+
+        if @case_first
+          @tertiary_mask     = KEEP_CASE_MASK
+          @tertiary_addition = TERTIARY_ADDITION_CASE_FIRST
+
+          if @case_first == :upper
+            @tertiary_common = TERTIARY_COMMON_UPPER_FIRST
+            @tertiary_top    = TERTIARY_TOP_UPPER_FIRST
+            @tertiary_bottom = TERTIARY_BOTTOM_UPPER_FIRST
+          else # @case_first == :lower
+            @tertiary_common = TERTIARY_COMMON_NORMAL
+            @tertiary_top    = TERTIARY_TOP_LOWER_FIRST
+            @tertiary_bottom = TERTIARY_BOTTOM_LOWER_FIRST
+          end
+        else
+          @tertiary_mask     = REMOVE_CASE_MASK
+          @tertiary_addition = TERTIARY_ADDITION_NORMAL
+
+          @tertiary_common = TERTIARY_COMMON_NORMAL
+          @tertiary_top    = TERTIARY_TOP_NORMAL
+          @tertiary_bottom = TERTIARY_BOTTOM_NORMAL
+        end
+
+        total_tertiary_count   = @tertiary_top - @tertiary_bottom - 1
+        @tertiary_top_count    = (TERTIARY_PROPORTION * total_tertiary_count).to_i
+        @tertiary_bottom_count = total_tertiary_count - @tertiary_top_count
+
+        @tertiary_common_space = {
+            :common       => @tertiary_common,
+            :bottom       => @tertiary_bottom,
+            :bottom_count => @tertiary_bottom_count,
+            :top          => @tertiary_top,
+            :top_count    => @tertiary_top_count
+        }
+      end
+
+      # Primary level compression constants
+
+      PRIMARY_BYTE_MIN = 0x3
+      PRIMARY_BYTE_MAX = 0xFF
+
+      MIN_NON_LATIN_PRIMARY = 0x5B
+      MAX_REGULAR_PRIMARY   = 0x7A
 
       # Secondary level compression constants
 
@@ -198,23 +272,33 @@ module TwitterCldr
 
       # Tertiary level compression constants
 
-      TERTIARY_TOP_ADDITION = 0x80
+      REMOVE_CASE_MASK = 0x3F
+      KEEP_CASE_MASK   = 0xFF
 
-      TERTIARY_BOTTOM       = 0x05
-      TERTIARY_TOP          = 0x85
-      TERTIARY_PROPORTION   = 0.667
-      TERTIARY_COMMON       = TERTIARY_BOTTOM
-      TERTIARY_TOTAL_COUNT  = TERTIARY_TOP - TERTIARY_BOTTOM - 1
-      TERTIARY_TOP_COUNT    = (TERTIARY_PROPORTION * TERTIARY_TOTAL_COUNT).to_i
-      TERTIARY_BOTTOM_COUNT = TERTIARY_TOTAL_COUNT - TERTIARY_TOP_COUNT
+      CASE_BITS_MASK = 0xC0
 
-      TERTIARY_COMMON_SPACE = {
-          :common       => TERTIARY_COMMON,
-          :bottom       => TERTIARY_BOTTOM,
-          :bottom_count => TERTIARY_BOTTOM_COUNT,
-          :top          => TERTIARY_TOP,
-          :top_count    => TERTIARY_TOP_COUNT
-      }
+      CASE_SWITCH    = 0xC0
+      NO_CASE_SWITCH = 0
+
+      TERTIARY_ADDITION_NORMAL     = 0x80
+      TERTIARY_ADDITION_CASE_FIRST = 0x40
+
+      TERTIARY_PROPORTION = 0.667
+
+      # Normal (case-first disabled)
+      TERTIARY_BOTTOM_NORMAL = 0x05
+      TERTIARY_TOP_NORMAL    = 0x85
+      TERTIARY_COMMON_NORMAL = TERTIARY_BOTTOM_NORMAL
+
+      # Lower first
+      TERTIARY_BOTTOM_LOWER_FIRST = TERTIARY_BOTTOM_NORMAL
+      TERTIARY_TOP_LOWER_FIRST    = 0x45
+      TERTIARY_COMMON_LOWER_FIRST = TERTIARY_BOTTOM_LOWER_FIRST
+
+      # Upper first
+      TERTIARY_BOTTOM_UPPER_FIRST = 0x86
+      TERTIARY_TOP_UPPER_FIRST    = 0xC5
+      TERTIARY_COMMON_UPPER_FIRST = TERTIARY_TOP_UPPER_FIRST
 
     end
 

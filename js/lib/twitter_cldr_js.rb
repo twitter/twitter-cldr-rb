@@ -59,6 +59,7 @@ module TwitterCldr
 
     def self.make(options = {})
       # clean dir, then build js
+      FileUtils.mkdir_p(build_dir)
       FileUtils.rm_rf(Dir.glob(File.join(build_dir, "**")))
       build(options)
       build(options.merge({ :minify => true }))

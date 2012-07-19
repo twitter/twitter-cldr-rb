@@ -9,7 +9,7 @@ include TwitterCldr::Collation
 
 describe TrieBuilder do
 
-  describe '#parse_trie' do
+  describe '.parse_trie' do
     it 'returns a trie' do
       TrieBuilder.parse_trie(fractional_uca_short_stub).should be_instance_of(Trie)
     end
@@ -104,7 +104,7 @@ END
     end
   end
 
-  describe '#load_trie' do
+  describe '.load_trie' do
     it 'load FCE table from the resource into a trie' do
       mock(TrieBuilder).parse_trie('fce-table') { 'trie' }
       mock(TrieBuilder).load_resource('resource') { 'fce-table' }
@@ -113,12 +113,27 @@ END
     end
   end
 
-  describe '#load_tailored_trie' do
+  let(:tailoring_resource_stub) do
+<<END
+---
+collator_options:
+  case_first: upper
+tailored_table: ! '0491; [5C1B, 5, 5]
+
+  0490; [5C1B, 5, 86]'
+suppressed_contractions: ГК
+...
+END
+  end
+
+  let(:tailoring_data) { TwitterCldr::Utils.deep_symbolize_keys(YAML.load(tailoring_resource_stub)) }
+
+  describe '.load_tailored_trie' do
     let(:locale)        { :xxx }
     let(:fallback)      { TrieBuilder.parse_trie(fractional_uca_short_stub) }
     let(:tailored_trie) { TrieBuilder.load_tailored_trie(locale, fallback) }
 
-    before(:each) { mock(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) } }
+    before(:each) { mock(TrieBuilder).tailoring_data(locale) { tailoring_data } }
 
     it 'returns a TrieWithFallback' do
       tailored_trie.should be_instance_of(TrieWithFallback)
@@ -179,15 +194,14 @@ END
 END
     end
 
-    let(:tailoring_resource_stub) do
-<<END
----
-:tailored_table: ! '0491; [5C1B, 5, 5]
+  end
 
-  0490; [5C1B, 5, 86]'
-:suppressed_contractions: ГК
-...
-END
+  describe '.tailoring_data' do
+    let(:locale) { :fu }
+
+    it 'loads tailoring data' do
+      mock(TwitterCldr).get_resource(:collation, :tailoring, locale) { tailoring_data }
+      TrieBuilder.tailoring_data(locale).should == tailoring_data
     end
   end
 

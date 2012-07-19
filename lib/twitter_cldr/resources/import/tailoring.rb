@@ -33,7 +33,7 @@ module TwitterCldr
             :pt => :root
         }
 
-        EMPTY_TAILORING_DATA = { 'tailored_table' => '', 'suppressed_contractions' => '' }
+        EMPTY_TAILORING_DATA = { 'collator_options' => {}, 'tailored_table' => '', 'suppressed_contractions' => '' }
 
         class ImportError < RuntimeError; end
 
@@ -98,6 +98,7 @@ module TwitterCldr
           standard_tailoring = collations.at_xpath('collation[@type="standard"]')
 
           {
+              'collator_options'        => parse_collator_options(standard_tailoring),
               'tailored_table'          => parse_tailorings(standard_tailoring, locale),
               'suppressed_contractions' => parse_suppressed_contractions(standard_tailoring)
           }
@@ -147,11 +148,19 @@ module TwitterCldr
         end
 
         def parse_suppressed_contractions(data)
-          return '' unless data
+          node = data && data.at_xpath('suppress_contractions')
+          node ? Java::ComIbmIcuText::UnicodeSet.to_array(Java::ComIbmIcuText::UnicodeSet.new(node.text)).to_a.join : ''
+        end
 
-          Array(data.xpath('suppress_contractions')).map do |contractions|
-            Java::ComIbmIcuText::UnicodeSet.to_array(Java::ComIbmIcuText::UnicodeSet.new(contractions.text)).to_a
-          end.flatten.join
+        def parse_collator_options(data)
+          options = {}
+
+          if data
+            case_first_setting = data.at_xpath('settings[@caseFirst]')
+            options['case_first'] = case_first_setting.attr('caseFirst').to_sym if case_first_setting
+          end
+
+          options
         end
 
         def validate_tailoring_rule(rule)

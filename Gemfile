@@ -9,6 +9,7 @@ end
 group :development do
   gem 'mustache', '~> 0.99.4'
   gem 'nokogiri'
+  gem 'ruby_parser', '~> 2.3.1'
 
   platform :ruby do
     gem 'therubyracer',  '~> 0.9.10'

@@ -10,6 +10,7 @@ require 'uglifier'
 require 'jasmine-headless-webkit'
 require 'coffee-script'
 require 'json'
+require 'ruby_parser'
 
 require 'compiler'
 require 'renderers/bundle'

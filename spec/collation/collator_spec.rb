@@ -192,7 +192,10 @@ describe Collator do
 
   describe 'tailoring support' do
     before(:each) do
-      stub(Collator).default_fce_trie { TrieBuilder.parse_fce_table(fractional_uca_short_stub) }
+      mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*, block|
+        block.call(fractional_uca_short_stub)
+      end
+
       stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
       stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
     end

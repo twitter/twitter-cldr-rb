@@ -25,6 +25,12 @@ module TwitterCldr
           build_tailored_trie(tailoring_data(locale), fallback)
         end
 
+        def tailoring_data(locale)
+          TwitterCldr.get_resource(:collation, :tailoring, locale)
+        end
+
+        private
+
         def parse_fce_table(table, trie = TwitterCldr::Collation::Trie.new)
           table.lines.each do |line|
             trie.set(parse_code_points($1), parse_collation_element($2)) if FCE_REGEXP =~ line
@@ -32,12 +38,6 @@ module TwitterCldr
 
           trie
         end
-
-        def tailoring_data(locale)
-          TwitterCldr.get_resource(:collation, :tailoring, locale)
-        end
-
-        private
 
         def parse_code_points(string)
           string.split.map { |cp| cp.to_i(16) }

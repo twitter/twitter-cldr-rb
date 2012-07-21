@@ -139,7 +139,7 @@ module TwitterCldr
         # Loads and memoizes the default Fractional Collation Elements trie.
         #
         def default_fce_trie
-          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_default_trie.lock
+          @default_fce_trie ||= TwitterCldr::Collation::TrieLoader.load_default_trie.lock
         end
 
         def tailored_fce_trie(locale)
@@ -153,7 +153,7 @@ module TwitterCldr
         end
 
         def load_tailored_fce_trie(locale)
-          TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, default_fce_trie).lock
+          TwitterCldr::Collation::TrieLoader.load_tailored_trie(locale, default_fce_trie).lock
         end
 
       end

@@ -58,10 +58,10 @@ module TwitterCldr
           print "Importing %8s\t--\t" % locale
 
           if tailoring_present?(locale)
-            YAML.dump(tailoring_data(locale), open(resource_file_path(locale), 'w'))
+            dump(locale, tailoring_data(locale))
             puts "Done."
           else
-            YAML.dump(EMPTY_TAILORING_DATA, open(resource_file_path(locale), 'w'))
+            dump(locale, EMPTY_TAILORING_DATA)
             puts "Missing (generated empty tailoring resource)."
           end
         rescue ImportError => e
@@ -69,6 +69,10 @@ module TwitterCldr
         end
 
         private
+
+        def dump(locale, data)
+          open(resource_file_path(locale), 'w') { |file| YAML.dump(data, file) }
+        end
 
         def tailoring_present?(locale)
           File.file?(locale_file_path(locale))

@@ -11,6 +11,8 @@ require 'digest'
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
+require './lib/twitter_cldr'
+
 Bundler::GemHelper.install_tasks
 
 task :default => :spec
@@ -42,15 +44,18 @@ namespace :resources do
   namespace :update do
     desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
     task :tailoring do
-      require './lib/twitter_cldr'
-
-      importer = TwitterCldr::Resources::Tailoring.new(
+      importer = TwitterCldr::Resources::TailoringImporter.new(
           ENV.fetch('CLDR_DATA_PATH', '../cldr-tailoring/'),
           './resources/collation/tailoring',
           ENV.fetch('ICU4J_JAR_PATH', '../icu4j-49_1.jar')
       )
 
       TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
+    end
+
+    desc 'Updates default and tailoring tries dumps'
+    task :tries do
+      TwitterCldr::Resources::TriesDumper.update_dumps
     end
   end
 end

@@ -12,7 +12,7 @@ module TwitterCldr
     # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version 49.1 (available at
     # http://download.icu-project.org/files/icu4j/49.1/icu4j-49_1.jar).
     #
-    class Tailoring
+    class TailoringImporter
 
       SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
       SIMPLE_RULES      = %w[p s t i]

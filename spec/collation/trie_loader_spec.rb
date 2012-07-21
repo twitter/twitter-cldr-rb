@@ -14,7 +14,7 @@ describe TrieLoader do
     let(:trie)        { Trie.new(root).tap { |t| t.lock } }
     let(:trie_dump)   { Marshal.dump(trie) }
     let(:loaded_trie) { TrieLoader.load_default_trie }
-    let(:locale)      { :default }
+    let(:locale)      { TrieLoader::DEFAULT_FCE_TRIE }
 
     before(:each) { mock_trie_dump }
 

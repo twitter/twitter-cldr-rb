@@ -149,10 +149,10 @@ module TwitterCldr
         private
 
         def tailored_fce_tries_cache
-          @tailored_fce_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_trie(locale) }
+          @tailored_fce_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_fce_trie(locale) }
         end
 
-        def load_tailored_trie(locale)
+        def load_tailored_fce_trie(locale)
           TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, default_fce_trie).lock
         end
 

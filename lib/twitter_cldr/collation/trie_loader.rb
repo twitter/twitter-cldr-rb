@@ -10,7 +10,9 @@ module TwitterCldr
     #
     module TrieLoader
 
-      DUMPS_DIR = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries')
+      DUMPS_DIR  = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries')
+
+      DEFAULT_FCE_TRIE = :default_fce_trie
 
       class << self
 
@@ -30,7 +32,7 @@ module TwitterCldr
 
         private
 
-        def load_trie(locale = :default)
+        def load_trie(locale = DEFAULT_FCE_TRIE)
           load_dump(locale) do |dump|
             Marshal.load(dump)
           end

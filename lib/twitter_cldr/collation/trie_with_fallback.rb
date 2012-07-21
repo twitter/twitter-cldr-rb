@@ -30,13 +30,15 @@ module TwitterCldr
     #
     class TrieWithFallback < TwitterCldr::Collation::Trie
 
+      attr_accessor :fallback
+
       def initialize(fallback)
         super()
-        @fallback = fallback
+        self.fallback = fallback
       end
 
       def get(key)
-        super || @fallback.get(key)
+        super || fallback.get(key)
       end
 
       def find_prefix(key)
@@ -45,7 +47,7 @@ module TwitterCldr
         if prefix_size > 0
           [value, prefix_size, suffixes]
         else
-          @fallback.find_prefix(key)
+          fallback.find_prefix(key)
         end
       end
 

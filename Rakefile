@@ -44,7 +44,7 @@ namespace :resources do
     task :tailoring do
       require './lib/twitter_cldr'
 
-      importer = TwitterCldr::Resources::Import::Tailoring.new(
+      importer = TwitterCldr::Resources::Tailoring.new(
           ENV.fetch('CLDR_DATA_PATH', '../cldr-tailoring/'),
           './resources/collation/tailoring',
           ENV.fetch('ICU4J_JAR_PATH', '../icu4j-49_1.jar')

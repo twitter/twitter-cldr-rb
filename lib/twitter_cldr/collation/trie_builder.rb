@@ -10,15 +10,14 @@ module TwitterCldr
     #
     module TrieBuilder
 
-      # Fractional collation element regexp
-      FCE_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
+      COLLATION_ELEMENT_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
       FRACTIONAL_UCA_SHORT_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'FractionalUCA_SHORT.txt')
 
       class << self
 
         def load_default_trie
-          open(FRACTIONAL_UCA_SHORT_PATH, 'r') { |table| parse_fce_table(table) }
+          open(FRACTIONAL_UCA_SHORT_PATH, 'r') { |table| parse_collation_elements_table(table) }
         end
 
         def load_tailored_trie(locale, fallback)
@@ -31,9 +30,9 @@ module TwitterCldr
 
         private
 
-        def parse_fce_table(table, trie = TwitterCldr::Collation::Trie.new)
+        def parse_collation_elements_table(table, trie = TwitterCldr::Collation::Trie.new)
           table.lines.each do |line|
-            trie.set(parse_code_points($1), parse_collation_element($2)) if FCE_REGEXP =~ line
+            trie.set(parse_code_points($1), parse_collation_element($2)) if COLLATION_ELEMENT_REGEXP =~ line
           end
 
           trie
@@ -52,7 +51,7 @@ module TwitterCldr
         def build_tailored_trie(tailoring_data, fallback)
           trie = TwitterCldr::Collation::TrieWithFallback.new(fallback)
 
-          parse_fce_table(tailoring_data[:tailored_table], trie)
+          parse_collation_elements_table(tailoring_data[:tailored_table], trie)
           copy_expansions(trie, fallback, parse_suppressed_starters(tailoring_data[:suppressed_contractions]))
 
           trie

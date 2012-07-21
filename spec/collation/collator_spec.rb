@@ -11,47 +11,47 @@ describe Collator do
 
   let(:trie) { Trie.new }
 
-  before(:each) { clear_fce_tries_cache }
-  after(:all)   { clear_fce_tries_cache }
+  before(:each) { clear_tries_cache }
+  after(:all)   { clear_tries_cache }
 
-  describe '.default_fce_trie' do
+  describe '.default_trie' do
     before(:each) do
-      clear_default_fce_trie_cache
+      clear_default_trie_cache
       mock(TrieLoader).load_default_trie { trie }
     end
 
     it 'returns default fractional collation elements trie' do
-      Collator.default_fce_trie.should == trie
+      Collator.default_trie.should == trie
     end
 
     it 'loads the trie only once' do
-      Collator.default_fce_trie.object_id.should == Collator.default_fce_trie.object_id
+      Collator.default_trie.object_id.should == Collator.default_trie.object_id
     end
 
     it 'locks the trie' do
-      Collator.default_fce_trie.should be_locked
+      Collator.default_trie.should be_locked
     end
   end
 
-  describe '.tailored_fce_trie' do
+  describe '.tailored_trie' do
     let(:locale) { :ru }
 
     before(:each) do
-      clear_tailored_fce_tries_cache
-      stub(Collator).default_fce_trie { trie }
-      mock(TrieLoader).load_tailored_trie(locale, Collator.default_fce_trie) { trie }
+      clear_tailored_tries_cache
+      stub(Collator).default_trie { trie }
+      mock(TrieLoader).load_tailored_trie(locale, Collator.default_trie) { trie }
     end
 
     it 'returns default fractional collation elements trie' do
-      Collator.tailored_fce_trie(locale).should == trie
+      Collator.tailored_trie(locale).should == trie
     end
 
     it 'loads the trie only once' do
-      Collator.tailored_fce_trie(locale).object_id.should == Collator.tailored_fce_trie(locale).object_id
+      Collator.tailored_trie(locale).object_id.should == Collator.tailored_trie(locale).object_id
     end
 
     it 'locks the trie' do
-      Collator.tailored_fce_trie(locale).should be_locked
+      Collator.tailored_trie(locale).should be_locked
     end
   end
 
@@ -144,7 +144,7 @@ describe Collator do
     let(:sort_key)         { [1, 3, 8, 9] }
     let(:another_sort_key) { [6, 8, 9, 2] }
 
-    before(:each) { stub(Collator).default_fce_trie { trie } }
+    before(:each) { stub(Collator).default_trie { trie } }
 
     it 'compares strings by sort keys' do
       stub_sort_key(collator, 'foo', sort_key)
@@ -168,7 +168,7 @@ describe Collator do
     let(:sorted)    { %w[aaa abc bca] }
 
     before :each do
-      stub(Collator).default_fce_trie { trie }
+      stub(Collator).default_trie { trie }
       sort_keys.each { |s, key| mock_sort_key(collator, s, key) }
     end
 
@@ -236,7 +236,7 @@ describe Collator do
 
     let(:fractional_uca_short_stub) do
 <<END
-# collation elements from default FCE table
+# collation elements from default fractional collation elements table
 0301; [, 8D, 05]
 0306; [, 91, 05]
 041A; [5C 6C, 05, 8F] # К
@@ -280,17 +280,17 @@ END
     stub(collator).get_sort_key(string) { sort_key }
   end
 
-  def clear_fce_tries_cache
-    clear_default_fce_trie_cache
-    clear_tailored_fce_tries_cache
+  def clear_tries_cache
+    clear_default_trie_cache
+    clear_tailored_tries_cache
   end
 
-  def clear_default_fce_trie_cache
-    Collator.instance_variable_set(:@default_fce_trie, nil)
+  def clear_default_trie_cache
+    Collator.instance_variable_set(:@default_trie, nil)
   end
 
-  def clear_tailored_fce_tries_cache
-    Collator.instance_variable_set(:@tailored_fce_tries_cache, nil)
+  def clear_tailored_tries_cache
+    Collator.instance_variable_set(:@tailored_tries_cache, nil)
   end
 
 end

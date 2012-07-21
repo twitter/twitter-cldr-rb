@@ -8,17 +8,17 @@ require 'spec_helper'
 include TwitterCldr::Collation
 
 describe 'trie dumps', :slow => true do
-  let(:default_fce_trie) { TrieBuilder.load_default_trie }
+  let(:default_trie) { TrieBuilder.load_default_trie }
   let(:error_message)    { 'expected trie dump to be up-to-date.' }
 
-  it 'has a valid default FCE trie dump' do
-    TrieLoader.load_default_trie.to_hash.should(eq(default_fce_trie.to_hash), error_message)
+  it 'has a valid default Fractional Collation Elements trie dump' do
+    TrieLoader.load_default_trie.to_hash.should(eq(default_trie.to_hash), error_message)
   end
 
   TwitterCldr.supported_locales.each do |locale|
     it "has a valid tailored trie dump for #{locale} locale" do
       loaded_trie = TrieLoader.load_tailored_trie(locale, Trie.new)
-      fresh_trie  = TrieBuilder.load_tailored_trie(locale, default_fce_trie)
+      fresh_trie  = TrieBuilder.load_tailored_trie(locale, default_trie)
 
       loaded_trie.to_hash.should(eq(fresh_trie.to_hash), error_message)
     end

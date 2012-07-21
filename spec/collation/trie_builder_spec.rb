@@ -12,13 +12,13 @@ describe TrieBuilder do
   describe '.load_default_trie' do
     let(:trie)  { TrieBuilder.load_default_trie }
 
-    before(:each) { mock_default_fce_table }
+    before(:each) { mock_default_table }
 
     it 'returns a Trie' do
       trie.should be_instance_of(Trie)
     end
 
-    it 'adds every collation element from the FCE table to the trie' do
+    it 'adds every collation element from the fractional collation elements table to the trie' do
       collation_elements_table.each do |code_points, collation_elements|
         trie.get(code_points).should == collation_elements
       end
@@ -120,7 +120,7 @@ END
     let(:tailored_trie) { TrieBuilder.load_tailored_trie(locale, fallback) }
 
     before :each do
-      mock_default_fce_table
+      mock_default_table
       mock(TrieBuilder).tailoring_data(locale) { tailoring_data }
     end
 
@@ -160,7 +160,7 @@ END
 
     let(:fractional_uca_short_stub) do
 <<END
-# collation elements from default FCE table
+# collation elements from default fractional collation elements table
 0301; [, 8D, 05]
 0306; [, 91, 05]
 041A; [5C 6C, 05, 8F] # К
@@ -194,7 +194,7 @@ END
     end
   end
 
-  def mock_default_fce_table
+  def mock_default_table
     mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
       args.last.call(fractional_uca_short_stub)
     end

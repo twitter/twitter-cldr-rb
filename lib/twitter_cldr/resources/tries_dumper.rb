@@ -18,7 +18,7 @@ module TwitterCldr
         private
 
         def update_default_trie_dump
-          save_trie_dump(TwitterCldr::Collation::TrieLoader::DEFAULT_FCE_TRIE, default_trie)
+          save_trie_dump(TwitterCldr::Collation::TrieLoader::DEFAULT_TRIE_LOCALE, default_trie)
         end
 
         def update_tailoring_trie_dump(locale)

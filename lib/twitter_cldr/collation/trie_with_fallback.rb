@@ -26,7 +26,7 @@ module TwitterCldr
     #
     # This special behavior of the #find_prefix method allows 'hiding' fallback keys that contain more than one element
     # by adding their one element prefixes to the trie itself. This feature is useful for some applications, e.g., for
-    # suppressing contractions in a tailored FCE trie.
+    # suppressing contractions in a tailored fractional collation elements trie.
     #
     class TrieWithFallback < TwitterCldr::Collation::Trie
 

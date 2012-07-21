@@ -10,6 +10,8 @@ module TwitterCldr
     #
     module TrieLoader
 
+      DUMPS_DIR = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries')
+
       class << self
 
         def load_default_trie
@@ -22,6 +24,10 @@ module TwitterCldr
           trie
         end
 
+        def dump_path(locale)
+          File.join(DUMPS_DIR, "#{locale}.dump")
+        end
+
         private
 
         def load_trie(locale = :default)
@@ -30,10 +36,8 @@ module TwitterCldr
           end
         end
 
-        def load_dump(locale)
-          open(File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries', "#{locale}.dump"), 'r') do |dump|
-            yield dump
-          end
+        def load_dump(locale, &block)
+          open(dump_path(locale), 'r', &block)
         end
 
       end

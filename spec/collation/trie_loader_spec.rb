@@ -9,16 +9,14 @@ include TwitterCldr::Collation
 
 describe TrieLoader do
 
-  let(:dump_path) { File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries', "#{locale}.dump") }
-
-  before(:each) { mock(TrieLoader).open(dump_path, 'r') { |*, block| block.call(trie_dump) } }
-
   describe '.load_default_trie' do
     let(:root)        { 42 }
     let(:trie)        { Trie.new(root).tap { |t| t.lock } }
     let(:trie_dump)   { Marshal.dump(trie) }
     let(:loaded_trie) { TrieLoader.load_default_trie }
     let(:locale)      { :default }
+
+    before(:each) { mock_trie_dump }
 
     it 'loads a Trie' do
       loaded_trie.should be_instance_of(Trie)
@@ -42,6 +40,8 @@ describe TrieLoader do
     let(:trie_dump)         { Marshal.dump(trie) }
     let(:loaded_trie)       { TrieLoader.load_tailored_trie(locale, new_fallback) }
 
+    before(:each) { mock_trie_dump }
+
     it 'loads a TrieWithFallback' do
       loaded_trie.should be_instance_of(TrieWithFallback)
     end
@@ -57,6 +57,16 @@ describe TrieLoader do
     it 'sets trie fallback' do
       loaded_trie.fallback.should == new_fallback
     end
+  end
+
+  describe '.dump_path' do
+    it 'returns path to a trie dump for a specific locale' do
+      TrieLoader.dump_path(:foo).should == File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries', 'foo.dump')
+    end
+  end
+
+  def mock_trie_dump
+    mock(TrieLoader).open(TrieLoader.dump_path(locale), 'r') { |*, block| block.call(trie_dump) }
   end
 
 end

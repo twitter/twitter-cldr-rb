@@ -9,9 +9,9 @@ include TwitterCldr::Collation
 
 describe TrieBuilder do
 
-  describe '.parse_trie' do
+  describe '.parse_fce_table' do
     it 'returns a trie' do
-      TrieBuilder.parse_trie(fractional_uca_short_stub).should be_instance_of(Trie)
+      TrieBuilder.parse_fce_table(fractional_uca_short_stub).should be_instance_of(Trie)
     end
 
     it 'adds every collation element from the FCE table to the trie' do
@@ -19,14 +19,14 @@ describe TrieBuilder do
       mock(Trie).new { trie }
       collation_elements_table.each { |code_points, collation_elements| mock(trie).set(code_points, collation_elements) }
 
-      TrieBuilder.parse_trie(fractional_uca_short_stub).should == trie
+      TrieBuilder.parse_fce_table(fractional_uca_short_stub).should == trie
     end
 
     it 'populates the trie that is passed as an argument' do
       trie = Object.new
       collation_elements_table.each { |code_points, collation_elements| mock(trie).set(code_points, collation_elements) }
 
-      TrieBuilder.parse_trie(fractional_uca_short_stub, trie).should == trie
+      TrieBuilder.parse_fce_table(fractional_uca_short_stub, trie).should == trie
     end
 
     let(:fractional_uca_short_stub) do
@@ -104,12 +104,15 @@ END
     end
   end
 
-  describe '.load_trie' do
-    it 'load FCE table from the resource into a trie' do
-      mock(TrieBuilder).parse_trie('fce-table') { 'trie' }
-      mock(TrieBuilder).load_resource('resource') { 'fce-table' }
+  describe '.load_default_trie' do
+    let(:fce_table) { 'fce-table' }
+    let(:trie)  { 'trie' }
 
-      TrieBuilder.load_trie('resource').should == 'trie'
+    it 'load FCE table from the resource into a trie' do
+      mock(TrieBuilder).parse_fce_table(fce_table) { trie }
+      mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') { |*, block| block.call(fce_table) }
+
+      TrieBuilder.load_default_trie.should == trie
     end
   end
 
@@ -130,7 +133,7 @@ END
 
   describe '.load_tailored_trie' do
     let(:locale)        { :xxx }
-    let(:fallback)      { TrieBuilder.parse_trie(fractional_uca_short_stub) }
+    let(:fallback)      { TrieBuilder.parse_fce_table(fractional_uca_short_stub) }
     let(:tailored_trie) { TrieBuilder.load_tailored_trie(locale, fallback) }
 
     before(:each) { mock(TrieBuilder).tailoring_data(locale) { tailoring_data } }

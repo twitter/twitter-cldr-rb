@@ -17,7 +17,7 @@ describe Collator do
   describe '.default_fce_trie' do
     before(:each) do
       clear_default_fce_trie_cache
-      mock(TrieBuilder).load_trie(Collator::FRACTIONAL_UCA_SHORT_RESOURCE) { trie }
+      mock(TrieBuilder).load_default_trie { trie }
     end
 
     it 'returns default fractional collation elements trie' do
@@ -57,7 +57,6 @@ describe Collator do
 
   describe '#initialize' do
     before :each do
-      stub(TrieBuilder).load_trie { trie }
       any_instance_of(Collator) { |c| stub(c).load_trie { trie } }
     end
 
@@ -106,7 +105,7 @@ describe Collator do
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
-    before(:each) { stub(TrieBuilder).load_trie { trie } }
+    before(:each) { mock(TrieBuilder).load_default_trie { trie } }
 
     describe 'calculating sort key' do
       before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, nil) { sort_key } }
@@ -193,7 +192,7 @@ describe Collator do
 
   describe 'tailoring support' do
     before(:each) do
-      stub(Collator).default_fce_trie { TrieBuilder.parse_trie(fractional_uca_short_stub) }
+      stub(Collator).default_fce_trie { TrieBuilder.parse_fce_table(fractional_uca_short_stub) }
       stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
       stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
     end

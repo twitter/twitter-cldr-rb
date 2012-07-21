@@ -11,8 +11,6 @@ module TwitterCldr
     #
     class Collator
 
-      FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
-
       attr_accessor :locale
 
       def initialize(locale = nil)
@@ -141,7 +139,7 @@ module TwitterCldr
         # Loads and memoizes the default Fractional Collation Elements trie.
         #
         def default_fce_trie
-          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
+          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_default_trie.lock
         end
 
         def tailored_fce_trie(locale)

@@ -192,8 +192,8 @@ describe Collator do
 
   describe 'tailoring support' do
     before(:each) do
-      mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*, block|
-        block.call(fractional_uca_short_stub)
+      mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
+        args.last.call(fractional_uca_short_stub)
       end
 
       stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }

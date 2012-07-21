@@ -66,7 +66,7 @@ describe TrieLoader do
   end
 
   def mock_trie_dump
-    mock(TrieLoader).open(TrieLoader.dump_path(locale), 'r') { |*, block| block.call(trie_dump) }
+    mock(TrieLoader).open(TrieLoader.dump_path(locale), 'r') { |*args| args.last.call(trie_dump) }
   end
 
 end

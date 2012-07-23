@@ -31,7 +31,7 @@ describe 'Unicode Collation Algorithm' do
 
     previous_sort_key = previous_code_points = previous_hex_code_points = nil
 
-    open(file_path, 'r:utf-8') do |file|
+    File.open(file_path, 'r:utf-8') do |file|
       file.each do |line|
         next unless /^([0-9A-F ]+);/ =~ line
 
@@ -79,7 +79,9 @@ END
 
     print 'extracting CollationTest_CLDR_NON_IGNORABLE.txt ... '
     Zip::ZipFile.open(zip_file.path) do |zip|
-      open(FULL_COLLATION_TEST_PATH, 'w') { |file| file.write(zip.read('CollationAuxiliary/CollationTest_CLDR_NON_IGNORABLE.txt')) }
+      File.open(FULL_COLLATION_TEST_PATH, 'w') do |file|
+        file.write(zip.read('CollationAuxiliary/CollationTest_CLDR_NON_IGNORABLE.txt'))
+      end
     end
     zip_file.unlink
 

@@ -91,6 +91,14 @@ module TwitterCldr
         [last_with_value.value, last_prefix_size, last_with_value.to_trie]
       end
 
+      def marshal_dump
+        @root
+      end
+
+      def marshal_load(root)
+        @root = root
+      end
+
       def to_hash
         @root.subtrie_hash
       end

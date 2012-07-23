@@ -26,17 +26,19 @@ module TwitterCldr
     #
     # This special behavior of the #find_prefix method allows 'hiding' fallback keys that contain more than one element
     # by adding their one element prefixes to the trie itself. This feature is useful for some applications, e.g., for
-    # suppressing contractions in a tailored FCE trie.
+    # suppressing contractions in a tailored fractional collation elements trie.
     #
     class TrieWithFallback < TwitterCldr::Collation::Trie
 
+      attr_accessor :fallback
+
       def initialize(fallback)
         super()
-        @fallback = fallback
+        self.fallback = fallback
       end
 
       def get(key)
-        super || @fallback.get(key)
+        super || fallback.get(key)
       end
 
       def find_prefix(key)
@@ -45,7 +47,7 @@ module TwitterCldr
         if prefix_size > 0
           [value, prefix_size, suffixes]
         else
-          @fallback.find_prefix(key)
+          fallback.find_prefix(key)
         end
       end
 

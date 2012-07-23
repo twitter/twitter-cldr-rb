@@ -38,4 +38,10 @@ describe TrieWithFallback do
     end
   end
 
+  describe 'marshaling' do
+    it 'does not dump fallback' do
+      Marshal.load(Marshal.dump(TrieWithFallback.new(Trie.new))).fallback.should be_nil
+    end
+  end
+
 end

@@ -225,6 +225,20 @@ describe Trie do
 
   end
 
+  describe 'marshaling' do
+    it 'dumps trie structure' do
+      trie = Trie.new
+      trie.add([13, 37], 1337)
+      trie.add([42], 42)
+
+      Marshal.load(Marshal.dump(trie)).to_hash.should == { 42 => [42, {}], 13 => [nil, { 37 => [1337, {}] }] }
+    end
+
+    it 'does not dump locked state' do
+      Marshal.load(Marshal.dump(Trie.new.lock)).should_not be_locked
+    end
+  end
+
   describe Trie::Node do
 
     let(:node)          { Trie::Node.new }

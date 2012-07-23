@@ -59,7 +59,7 @@ describe 'Unicode Normalization Algorithms' do
   # normalization function. Note, how expectation and tests columns indexes match the numbers in the `invariants` hash.
   #
   def run_test(normalizer, invariants, file_path)
-    open(file_path, 'r:UTF-8') do |file|
+    File.open(file_path, 'r:UTF-8') do |file|
       file.each do |line|
         next if line.empty? || line =~ /^(@|#)/
 
@@ -98,7 +98,7 @@ Got:        #{normalized.inspect}
     return if File.file?(FULL_NORMALIZATION_TEST_PATH)
 
     print '    Downloading NormalizationTest.txt ... '
-    open(FULL_NORMALIZATION_TEST_PATH, 'w') { |file| file.write(open(FULL_NORMALIZATION_TEST_URL).read) }
+    File.open(FULL_NORMALIZATION_TEST_PATH, 'w') { |file| file.write(open(FULL_NORMALIZATION_TEST_URL).read) }
     puts 'done.'
   end
 

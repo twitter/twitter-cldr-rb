@@ -195,7 +195,7 @@ END
   end
 
   def mock_default_table
-    mock(TrieBuilder).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
+    mock(File).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
       args.last.call(fractional_uca_short_stub)
     end
   end

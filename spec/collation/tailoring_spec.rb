@@ -18,7 +18,9 @@ describe 'Unicode collation tailoring' do
 
       print "#{locale}\t-\t"
 
-      lines = open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) { |f| f.lines.map(&:strip) }
+      lines = File.open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |file|
+        file.lines.map(&:strip)
+      end
 
       active_tests  = lines.count(&method(:tailoring_test?))
       pending_tests = lines.count(&method(:pending_tailoring_test?))

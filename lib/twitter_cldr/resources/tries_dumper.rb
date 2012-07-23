@@ -29,7 +29,7 @@ module TwitterCldr
           path = TwitterCldr::Collation::TrieLoader.dump_path(locale)
           FileUtils.mkdir_p(File.dirname(path))
 
-          open(path, 'w') { |f| f.write(Marshal.dump(trie)) }
+          File.open(path, 'w') { |f| f.write(Marshal.dump(trie)) }
         end
 
         def default_trie

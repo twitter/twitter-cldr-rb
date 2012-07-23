@@ -69,7 +69,7 @@ module TwitterCldr
       private
 
       def dump(locale, data)
-        open(resource_file_path(locale), 'w') { |file| YAML.dump(data, file) }
+        File.open(resource_file_path(locale), 'w') { |file| YAML.dump(data, file) }
       end
 
       def tailoring_present?(locale)
@@ -89,7 +89,7 @@ module TwitterCldr
       end
 
       def tailoring_data(locale)
-        doc = Nokogiri::XML(open(locale_file_path(locale)))
+        doc = File.open(locale_file_path(locale)) { |file| Nokogiri::XML(file) }
         collations = doc.at_xpath('//collations')
 
         collation_alias = collations.at_xpath('alias[@path="//ldml/collations"]')

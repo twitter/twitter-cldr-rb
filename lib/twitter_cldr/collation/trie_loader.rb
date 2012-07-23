@@ -39,7 +39,7 @@ module TwitterCldr
         end
 
         def load_dump(locale, &block)
-          open(dump_path(locale), 'r', &block)
+          File.open(dump_path(locale), 'r', &block)
         end
 
       end

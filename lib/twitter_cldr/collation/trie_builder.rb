@@ -17,7 +17,7 @@ module TwitterCldr
       class << self
 
         def load_default_trie
-          open(FRACTIONAL_UCA_SHORT_PATH, 'r') { |table| parse_collation_elements_table(table) }
+          File.open(FRACTIONAL_UCA_SHORT_PATH, 'r') { |table| parse_collation_elements_table(table) }
         end
 
         def load_tailored_trie(locale, fallback)

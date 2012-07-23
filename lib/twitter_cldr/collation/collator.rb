@@ -11,8 +11,6 @@ module TwitterCldr
     #
     class Collator
 
-      FRACTIONAL_UCA_SHORT_RESOURCE = 'collation/FractionalUCA_SHORT.txt'
-
       attr_accessor :locale
 
       def initialize(locale = nil)
@@ -53,7 +51,7 @@ module TwitterCldr
       end
 
       def load_trie
-        @locale ? self.class.tailored_fce_trie(@locale) : self.class.default_fce_trie
+        @locale ? self.class.tailored_trie(@locale) : self.class.default_trie
       end
 
       def get_integer_code_points(code_points)
@@ -138,24 +136,24 @@ module TwitterCldr
 
       class << self
 
-        # Loads and memoizes the default Fractional Collation Elements trie.
+        # Loads and memoizes the default fractional collation elements trie.
         #
-        def default_fce_trie
-          @default_fce_trie ||= TwitterCldr::Collation::TrieBuilder.load_trie(FRACTIONAL_UCA_SHORT_RESOURCE).lock
+        def default_trie
+          @default_trie ||= TwitterCldr::Collation::TrieLoader.load_default_trie.lock
         end
 
-        def tailored_fce_trie(locale)
-          tailored_fce_tries_cache[locale]
+        def tailored_trie(locale)
+          tailored_tries_cache[locale]
         end
 
         private
 
-        def tailored_fce_tries_cache
-          @tailored_fce_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_trie(locale) }
+        def tailored_tries_cache
+          @tailored_tries_cache ||= Hash.new { |hash, locale| hash[locale] = load_tailored_trie(locale) }
         end
 
         def load_tailored_trie(locale)
-          TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, default_fce_trie).lock
+          TwitterCldr::Collation::TrieLoader.load_tailored_trie(locale, default_trie).lock
         end
 
       end

@@ -37,49 +37,41 @@ module TwitterCldr
 
       class << self
 
-        def for_hex(code_point)
-          code_point = code_point.rjust(4, '0').upcase
-
+        def find(code_point)
           target = get_block(code_point)
 
-          if target && target.first
-            block_data = TwitterCldr.get_resource(:unicode_data, target.first)
-            code_point_data = block_data.fetch(code_point.to_sym) { |code_point_sym| get_range_start(code_point_sym, block_data) }
-            CodePoint.new(*code_point_data) if code_point_data
-          else
-            nil
-          end
+          return unless target && target.first
+
+          block_data      = TwitterCldr.get_resource(:unicode_data, target.first)
+          code_point_data = block_data.fetch(code_point_to_string(code_point).to_sym) { |cp| get_range_start(cp, block_data) }
+
+          CodePoint.new(code_point_data[0].hex, *code_point_data[1..-1]) if code_point_data
         end
 
         def for_decomposition(code_points)
           @decomposition_map ||= TwitterCldr.get_resource(:unicode_data, :decomposition_map)
-          key = code_points.join(" ").to_sym
+          key = code_points.map(&method(:code_point_to_string)).join(' ').to_sym
 
-          if @decomposition_map.include?(key)
-            for_hex(@decomposition_map[key])
-          else
-            nil
-          end
+          find(@decomposition_map[key].hex) if @decomposition_map.include?(key)
         end
 
         def hangul_type(code_point)
-          if code_point
-            code_point_int = code_point.hex
-            [:lparts, :vparts, :tparts, :compositions].each do |type|
-              hangul_blocks[type].each do |range|
-                return type if range.include?(code_point_int)
-              end
+          return unless code_point
+
+          [:lparts, :vparts, :tparts, :compositions].each do |type|
+            hangul_blocks[type].each do |range|
+              return type if range.include?(code_point)
             end
           end
+
           nil
         end
 
         def excluded_from_composition?(code_point)
-          code_point_int = code_point.hex
-          composition_exclusions.any? { |excl| excl.include?(code_point_int) }
+          composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
         end
 
-        protected
+        private
 
         def hangul_blocks
           @hangul_blocks ||= TwitterCldr.get_resource(:unicode_data, :hangul_blocks)
@@ -90,13 +82,11 @@ module TwitterCldr
         end
 
         def get_block(code_point)
-          blocks = TwitterCldr.get_resource(:unicode_data, :blocks)
-          code_point_int = code_point.hex
+          blocks.detect { |_, range|  range.include?(code_point) }
+        end
 
-          # Find the target block
-          blocks.find do |block_name, range|
-            range.include?(code_point_int)
-          end
+        def blocks
+          TwitterCldr.get_resource(:unicode_data, :blocks)
         end
 
         # Check if block constitutes a range. The code point beginning a range will have a name enclosed in <>, ending with 'First'
@@ -105,11 +95,16 @@ module TwitterCldr
         def get_range_start(code_point, block_data)
           start_code_point = block_data.keys.sort_by { |key| key.to_s.hex }.first
           start_data = block_data[start_code_point].clone
+
           if start_data[1] =~ /<.*, First>/
             start_data[0] = code_point.to_s
             start_data[1] = start_data[1].sub(', First', '')
             start_data
           end
+        end
+
+        def code_point_to_string(code_point)
+          code_point.to_s(16).rjust(4, '0').upcase
         end
 
       end

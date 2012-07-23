@@ -13,12 +13,6 @@ module TwitterCldr
 
       class << self
 
-        def normalize(string)
-          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-          normalized_code_points = normalize_code_points(code_points)
-          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
-        end
-
         def normalize_code_points(code_points)
           compose(TwitterCldr::Normalization::NFKD.normalize_code_points(code_points))
         end
@@ -59,7 +53,7 @@ module TwitterCldr
         end
 
         def compose_hangul(code_points)
-          TwitterCldr::Normalization::Hangul.compose(code_points.map { |cp| cp.hex }).to_s(16).upcase.rjust(4, "0")
+          TwitterCldr::Normalization::Hangul.compose(code_points)
         end
 
         # Implements composition of Unicode code points following the guidelines here:

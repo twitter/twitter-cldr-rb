@@ -174,27 +174,27 @@ describe "README" do
   end
 
   it "verifies code point conversions" do
-    code_point = TwitterCldr::Shared::CodePoint.for_hex("1F3E9")
+    code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9)
     code_point.name.should             == "LOVE HOTEL"
     code_point.bidi_mirrored.should    == "N"
     code_point.category.should         == "So"
     code_point.combining_class.should  == "0"
 
     # Convert characters to code points:
-    TwitterCldr::Utils::CodePoints.from_string("¿").should == ["00BF"]
+    TwitterCldr::Utils::CodePoints.from_string("¿").should == [0x0BF]
 
     # Convert code points to characters:
-    TwitterCldr::Utils::CodePoints.to_string(["00BF"]).should == "¿"
+    TwitterCldr::Utils::CodePoints.to_string([0xBF]).should == "¿"
   end
 
   it "verifies normalization" do
-    TwitterCldr::Normalization::NFD.normalize("français").should == TwitterCldr::Utils::CodePoints.to_string(["0066", "0072", "0061", "006E", "0063", "0327", "0061", "0069", "0073"])
-    TwitterCldr::Utils::CodePoints.from_string("español").should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
-    TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español")).should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+    TwitterCldr::Normalization::NFD.normalize('français').should == TwitterCldr::Utils::CodePoints.to_string([0x66, 0x72, 0x61, 0x6E, 0x63, 0x327, 0x61, 0x69, 0x73])
+    TwitterCldr::Utils::CodePoints.from_string('español').should == [0x65, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C]
+    TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize('español')).should == [0x65, 0x73, 0x70, 0x61, 0x6E, 0x303, 0x6F, 0x6C]
 
-    "español".localize.code_points.should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
-    "español".localize.normalize.code_points.should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
-    "español".localize.normalize(:using => :NFKD).code_points.should == ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+    "español".localize.code_points.should == [101, 115, 112, 97, 241, 111, 108]
+    "español".localize.normalize.code_points.should == [101, 115, 112, 97, 110, 771, 111, 108]
+    "español".localize.normalize(:using => :NFKD).code_points.should == [101, 115, 112, 97, 110, 771, 111, 108]
   end
 
   it "verifies Twitter-specific locale conversion" do

@@ -10,7 +10,7 @@ include TwitterCldr
 describe LocalizedArray do
   describe '#code_points_to_string' do
     it 'transforms an array of code points into a string' do
-      %w[0074 0077 0069 0074 0074 0065 0072].localize.code_points_to_string.should == 'twitter'
+      [0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72].localize.code_points_to_string.should == 'twitter'
     end
   end
 

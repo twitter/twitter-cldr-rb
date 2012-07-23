@@ -16,13 +16,9 @@ module TwitterCldr
     #
     class NFKD < Base
 
-      class << self
+      COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
 
-        def normalize(string)
-          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-          normalized_code_points = normalize_code_points(code_points)
-          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
-        end
+      class << self
 
         def normalize_code_points(code_points)
           canonical_ordering(decomposition(code_points))
@@ -37,7 +33,7 @@ module TwitterCldr
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
         #
         def decompose_recursively(code_point)
-          unicode_data = TwitterCldr::Shared::CodePoint.for_hex(code_point)
+          unicode_data = TwitterCldr::Shared::CodePoint.find(code_point)
           return code_point unless unicode_data
 
           if unicode_data.hangul_type == :compositions
@@ -51,7 +47,7 @@ module TwitterCldr
         #
         def decompose_regular(code_point, mapping)
           if mapping && !mapping.empty?
-            mapping.map{ |cp| decompose_recursively(cp) }.flatten
+            mapping.map(&:hex).map{ |cp| decompose_recursively(cp) }.flatten
           else
             code_point
           end
@@ -74,7 +70,7 @@ module TwitterCldr
         end
 
         def decompose_hangul(code_point)
-          TwitterCldr::Normalization::Hangul.decompose(code_point.hex).map { |e| e.to_s(16).upcase }
+          TwitterCldr::Normalization::Hangul.decompose(code_point)
         end
 
         # Performs the Canonical Ordering Algorithm by stable sorting of every subsequence of combining code points
@@ -127,15 +123,7 @@ module TwitterCldr
           code_points_with_cc
         end
 
-        def combining_class_for(code_point)
-          TwitterCldr::Shared::CodePoint.for_hex(code_point).combining_class.to_i
-        rescue NoMethodError
-          0
-        end
-
       end
-
-      COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
 
     end
   end

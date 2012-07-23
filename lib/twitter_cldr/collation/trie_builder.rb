@@ -71,7 +71,7 @@ module TwitterCldr
 
         def parse_suppressed_starters(suppressed_contractions)
           suppressed_contractions.chars.map do |starter|
-            TwitterCldr::Utils::CodePoints.from_string(starter).first.to_i(16)
+            TwitterCldr::Utils::CodePoints.from_string(starter).first
           end
         end
 

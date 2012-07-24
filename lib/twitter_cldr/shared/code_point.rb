@@ -27,6 +27,25 @@ module TwitterCldr
     CodePoint = Struct.new(*CODE_POINT_FIELDS) do
       DECOMPOSITION_DATA_INDEX = 5
 
+      DECOMPOSITION_REGEX = /^(?:<(.+)>\s+)?(.+)?$/
+
+      attr_accessor :compatibility_decomposition_tag
+
+      def initialize(*)
+        super
+
+        if decomposition =~ DECOMPOSITION_REGEX
+          self.compatibility_decomposition_tag = $1
+          self.decomposition = $2 && $2.split.map(&:hex)
+        else
+          raise ArgumentError, "decomposition #{decomposition.inspect} has invalid format"
+        end
+      end
+
+      def compatibility_decomposition?
+        !!compatibility_decomposition_tag
+      end
+
       def hangul_type
         CodePoint.hangul_type(code_point)
       end

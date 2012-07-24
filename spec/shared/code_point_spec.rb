@@ -8,6 +8,63 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe CodePoint do
+  describe "#initialize" do
+    let(:unicode_data) { ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', decomposition, "", "", "", 'N', "", "", "", "", ""] }
+    let(:code_point)   { CodePoint.new(*unicode_data) }
+
+    context 'when decomposition is canonical' do
+      let(:decomposition) { '0028 007A 0029' }
+
+      it 'parses decomposition mapping' do
+        code_point.decomposition.should == [0x28, 0x7A, 0x29]
+      end
+
+      it 'initializes compatibility tag as nil' do
+        code_point.compatibility_decomposition_tag.should be_nil
+      end
+
+      it 'returns false from compatibility_decomposition?' do
+        code_point.should_not be_compatibility_decomposition
+      end
+    end
+
+    context 'when decomposition is compatibility' do
+      let(:decomposition) { '<font> 0028 007A 0029' }
+
+      it 'parses decomposition mapping' do
+        code_point.decomposition.should == [0x28, 0x7A, 0x29]
+      end
+
+      it 'initializes compatibility decomposition tag' do
+        code_point.compatibility_decomposition_tag.should == 'font'
+      end
+
+      it 'returns true from compatibility_decomposition?' do
+        code_point.should be_compatibility_decomposition
+      end
+    end
+
+    context 'when decomposition is empty' do
+      let(:decomposition) { '' }
+
+      it 'parses decomposition mapping' do
+        code_point.decomposition.should be_nil
+      end
+
+      it 'initializes compatibility tag as nil' do
+        code_point.compatibility_decomposition_tag.should be_nil
+      end
+
+      it 'returns false from compatibility_decomposition?' do
+        code_point.should_not be_compatibility_decomposition
+      end
+    end
+
+    it 'raises ArgumentError if decomposition has invalid format' do
+
+    end
+  end
+
   describe "#find" do
     it "retrieves information for any valid code point" do
       data = CodePoint.find(0x301)

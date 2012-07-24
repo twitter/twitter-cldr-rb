@@ -16,17 +16,16 @@ module TwitterCldr
     #
     class NFKD < Base
 
-      COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
 
       class << self
 
         def normalize_code_points(code_points)
-          canonical_ordering(decomposition(code_points))
+          canonical_ordering(decompose(code_points))
         end
 
         protected
 
-        def decomposition(code_points)
+        def decompose(code_points)
           code_points.map { |code_point| decompose_recursively(code_point) }.flatten
         end
 
@@ -39,34 +38,22 @@ module TwitterCldr
           if unicode_data.hangul_type == :compositions
             decompose_hangul(code_point)
           else
-            decompose_regular(code_point, decomposition_mapping(unicode_data))
+            decompose_regular(unicode_data)
           end
         end
 
         # Decomposes regular (non-Hangul) code point.
         #
-        def decompose_regular(code_point, mapping)
-          if mapping && !mapping.empty?
-            mapping.map(&:hex).map{ |cp| decompose_recursively(cp) }.flatten
+        def decompose_regular(unicode_data)
+          if decompose?(unicode_data)
+            unicode_data.decomposition.map { |code_point| decompose_recursively(code_point) }.flatten
           else
-            code_point
+            unicode_data.code_point
           end
         end
 
-        # Returns code point's Decomposition Mapping based on its Unicode data.
-        #
-        def decomposition_mapping(unicode_data)
-          mapping = parse_decomposition_mapping(unicode_data)
-          mapping.shift if compatibility_decomposition?(mapping) # remove compatibility formatting tag
-          mapping
-        end
-
-        def compatibility_decomposition?(mapping)
-          !!(COMPATIBILITY_FORMATTING_TAG_REGEXP =~ mapping.first)
-        end
-
-        def parse_decomposition_mapping(unicode_data)
-          unicode_data.decomposition.split
+        def decompose?(unicode_data)
+          !!unicode_data.decomposition
         end
 
         def decompose_hangul(code_point)

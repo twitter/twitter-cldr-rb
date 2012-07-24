@@ -39,12 +39,12 @@ module TwitterCldr
         end
 
         def parse_code_points(string)
-          string.split.map { |cp| cp.to_i(16) }
+          string.split.map(&:hex)
         end
 
         def parse_collation_element(string)
           string.scan(/\[.*?\]/).map do |match|
-            match[1..-2].gsub(/\s/, '').split(',', -1).map { |bytes| bytes.to_i(16) }
+            match[1..-2].gsub(/\s/, '').split(',', -1).map { |bytes| bytes.hex }
           end
         end
 

@@ -1,0 +1,415 @@
+/*
+// Copyright 2012 Twitter, Inc
+// http://www.apache.org/licenses/LICENSE-2.0
+
+// TwitterCLDR (JavaScript) v1.6.2
+// Authors: 		Cameron Dutro [@camertron]
+								Kirill Lashuk [@KL_7]
+								portions by Sven Fuchs [@svenfuchs]
+// Homepage: 		https://twitter.com
+// Description:	Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
+*/
+
+var DateTimeFormatter, PluralRules, TimespanFormatter, TwitterCldr;
+
+TwitterCldr = {};
+
+TwitterCldr.PluralRules = PluralRules = (function() {
+
+  function PluralRules() {}
+
+  PluralRules.rules = {"keys": ["other"], "rule": function(n) { return "other" }};
+
+  PluralRules.all = function() {
+    return this.rules.keys;
+  };
+
+  PluralRules.rule_for = function(number) {
+    try {
+      return this.rules.rule(number);
+    } catch (error) {
+      return "other";
+    }
+  };
+
+  return PluralRules;
+
+})();
+
+TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
+
+  function TimespanFormatter() {
+    this.default_type = "default";
+    this.tokens = {"ago":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"초 전","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"분 전","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"시간 전","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"일 전","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"주 전","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"개월 전","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"년 전","type":"plaintext"}]}}},"until":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"초 후","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"분 후","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"시간 후","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"일 후","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"주 후","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"개월 후","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"년 후","type":"plaintext"}]}}},"none":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"초","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"초","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":"초","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"분","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"분","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":"분","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"시간","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"시간","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":"시","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"일","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"일","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":"일","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"주","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"주","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"개월","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"개월","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":"년","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":"년","type":"plaintext"}]}}}};
+    this.time_in_seconds = {
+      "second": 1,
+      "minute": 60,
+      "hour": 3600,
+      "day": 86400,
+      "week": 604800,
+      "month": 2629743.83,
+      "year": 31556926
+    };
+  }
+
+  TimespanFormatter.prototype.format = function(seconds, options) {
+    var number, strings, token;
+    if (options == null) {
+      options = {};
+    }
+    options["direction"] || (options["direction"] = (seconds < 0 ? "ago" : "until"));
+    if (options["unit"] === null || options["unit"] === void 0) {
+      options["unit"] = this.calculate_unit(Math.abs(seconds));
+    }
+    options["type"] || (options["type"] = this.default_type);
+    options["number"] = this.calculate_time(Math.abs(seconds), options["unit"]);
+    number = this.calculate_time(Math.abs(seconds), options["unit"]);
+    options["rule"] = TwitterCldr.PluralRules.rule_for(number);
+    strings = (function() {
+      var _i, _len, _ref, _results;
+      _ref = this.tokens[options["direction"]][options["unit"]][options["type"]][options["rule"]];
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        token = _ref[_i];
+        _results.push(token.value);
+      }
+      return _results;
+    }).call(this);
+    return strings.join("").replace(/\{[0-9]\}/, number.toString());
+  };
+
+  TimespanFormatter.prototype.calculate_unit = function(seconds) {
+    if (seconds < 30) {
+      return "second";
+    } else if (seconds < 2670) {
+      return "minute";
+    } else if (seconds < 86369) {
+      return "hour";
+    } else if (seconds < 604800) {
+      return "day";
+    } else if (seconds < 2591969) {
+      return "week";
+    } else if (seconds < 31556926) {
+      return "month";
+    } else {
+      return "year";
+    }
+  };
+
+  TimespanFormatter.prototype.calculate_time = function(seconds, unit) {
+    return Math.round(seconds / this.time_in_seconds[unit]);
+  };
+
+  return TimespanFormatter;
+
+})();
+
+TwitterCldr.DateTimeFormatter = DateTimeFormatter = (function() {
+
+  function DateTimeFormatter() {
+    this.tokens = {"date_time":{"default":[{"value":"yyyy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"y","type":"pattern"},{"value":"년 ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"월 ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":"일 ","type":"plaintext"},{"value":"EEEE","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":"시 ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":"분 ","type":"plaintext"},{"value":"s","type":"pattern"},{"value":"초 ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"y","type":"pattern"},{"value":"년 ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"월 ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":"일","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":"시 ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":"분 ","type":"plaintext"},{"value":"s","type":"pattern"},{"value":"초 ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"yyyy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"yy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"time":{"default":[{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":"시 ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":"분 ","type":"plaintext"},{"value":"s","type":"pattern"},{"value":"초 ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":"시 ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":"분 ","type":"plaintext"},{"value":"s","type":"pattern"},{"value":"초 ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"date":{"default":[{"value":"yyyy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"}],"full":[{"value":"y","type":"pattern"},{"value":"년 ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"월 ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":"일 ","type":"plaintext"},{"value":"EEEE","type":"pattern"}],"long":[{"value":"y","type":"pattern"},{"value":"년 ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"월 ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":"일","type":"plaintext"}],"medium":[{"value":"yyyy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"}],"short":[{"value":"yy","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"M","type":"pattern"},{"value":". ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":".","type":"plaintext"}]}};
+    this.calendar = {"days":{"format":{"abbreviated":{"fri":"금","mon":"월","sat":"토","sun":"일","thu":"목","tue":"화","wed":"수"},"narrow":{"fri":"금","mon":"월","sat":"토","sun":"일","thu":"목","tue":"화","wed":"수"},"wide":{"fri":"금요일","mon":"월요일","sat":"토요일","sun":"일요일","thu":"목요일","tue":"화요일","wed":"수요일"}},"stand-alone":{"abbreviated":{"fri":"금","mon":"월","sat":"토","sun":"일","thu":"목","tue":"화","wed":"수"},"narrow":{"fri":"금","mon":"월","sat":"토","sun":"일","thu":"목","tue":"화","wed":"수"},"wide":{"fri":"금요일","mon":"월요일","sat":"토요일","sun":"일요일","thu":"목요일","tue":"화요일","wed":"수요일"}}},"eras":{"abbr":{"0":"기원전","1":"서기"},"name":{"0":"서력기원전","1":"서력기원"},"narrow":{"0":""}},"fields":{"day":"일","dayperiod":"오전/오후","era":"연호","hour":"시","minute":"분","month":"월","second":"초","week":"주","weekday":"요일","year":"년","zone":"시간대"},"formats":{"date":{"default":{"pattern":"yyyy. M. d."},"full":{"pattern":"y년 M월 d일 EEEE"},"long":{"pattern":"y년 M월 d일"},"medium":{"pattern":"yyyy. M. d."},"short":{"pattern":"yy. M. d."}},"datetime":{"default":{"pattern":"{{date}} {{time}}"},"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"}},"time":{"default":{"pattern":"a h:mm:ss"},"full":{"pattern":"a h시 m분 s초 zzzz"},"long":{"pattern":"a h시 m분 s초 z"},"medium":{"pattern":"a h:mm:ss"},"short":{"pattern":"a h:mm"}}},"months":{"format":{"abbreviated":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"},"narrow":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"},"wide":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"}},"stand-alone":{"abbreviated":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"},"narrow":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"},"wide":{"1":"1월","10":"10월","11":"11월","12":"12월","2":"2월","3":"3월","4":"4월","5":"5월","6":"6월","7":"7월","8":"8월","9":"9월"}}},"periods":{"format":{"abbreviated":null,"narrow":null,"wide":{"am":"오전","pm":"오후"}},"stand-alone":{}},"quarters":{"format":{"abbreviated":{"1":"1분기","2":"2분기","3":"3분기","4":"4분기"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"제 1/4분기","2":"제 2/4분기","3":"제 3/4분기","4":"제 4/4분기"}},"stand-alone":{"abbreviated":{"1":"1분기","2":"2분기","3":"3분기","4":"4분기"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"제 1/4분기","2":"제 2/4분기","3":"제 3/4분기","4":"제 4/4분기"}}}};
+    this.weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+    this.methods = {
+      'G': 'era',
+      'y': 'year',
+      'Y': 'year_of_week_of_year',
+      'Q': 'quarter',
+      'q': 'quarter_stand_alone',
+      'M': 'month',
+      'L': 'month_stand_alone',
+      'w': 'week_of_year',
+      'W': 'week_of_month',
+      'd': 'day',
+      'D': 'day_of_month',
+      'F': 'day_of_week_in_month',
+      'E': 'weekday',
+      'e': 'weekday_local',
+      'c': 'weekday_local_stand_alone',
+      'a': 'period',
+      'h': 'hour',
+      'H': 'hour',
+      'K': 'hour',
+      'k': 'hour',
+      'm': 'minute',
+      's': 'second',
+      'S': 'second_fraction',
+      'z': 'timezone',
+      'Z': 'timezone',
+      'v': 'timezone_generic_non_location',
+      'V': 'timezone_metazone'
+    };
+  }
+
+  DateTimeFormatter.prototype.format = function(obj, options) {
+    var format_token, token, tokens,
+      _this = this;
+    format_token = function(token) {
+      var result;
+      result = "";
+      switch (token.type) {
+        case "pattern":
+          return _this.result_for_token(token, obj);
+        default:
+          if (token.value.length > 0 && token.value[0] === "'" && token.value[token.value.length - 1] === "'") {
+            return token.value.substring(1, token.value.length - 1);
+          } else {
+            return token.value;
+          }
+      }
+    };
+    tokens = this.get_tokens(obj, options);
+    return ((function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
+        token = tokens[_i];
+        _results.push(format_token(token));
+      }
+      return _results;
+    })()).join("");
+  };
+
+  DateTimeFormatter.prototype.get_tokens = function(obj, options) {
+    return this.tokens[options.format || "date_time"][options.type || "default"];
+  };
+
+  DateTimeFormatter.prototype.result_for_token = function(token, date) {
+    return this[this.methods[token.value[0]]](date, token.value, token.value.length);
+  };
+
+  DateTimeFormatter.prototype.era = function(date, pattern, length) {
+    var choices, index;
+    switch (length) {
+      case 1:
+      case 2:
+      case 3:
+        choices = this.calendar["eras"]["abbr"];
+        break;
+      default:
+        choices = this.calendar["eras"]["name"];
+    }
+    index = date.getFullYear() < 0 ? 0 : 1;
+    return choices[index];
+  };
+
+  DateTimeFormatter.prototype.year = function(date, pattern, length) {
+    var year;
+    year = date.getFullYear().toString();
+    if (length === 2) {
+      if (year.length !== 1) {
+        year = year.slice(-2);
+      }
+    }
+    if (length > 1) {
+      year = ("0000" + year).slice(-length);
+    }
+    return year;
+  };
+
+  DateTimeFormatter.prototype.year_of_week_of_year = function(date, pattern, length) {
+    throw 'not implemented';
+  };
+
+  DateTimeFormatter.prototype.day_of_week_in_month = function(date, pattern, length) {
+    throw 'not implemented';
+  };
+
+  DateTimeFormatter.prototype.quarter = function(date, pattern, length) {
+    var quarter;
+    quarter = ((date.getMonth() / 3) | 0) + 1;
+    switch (length) {
+      case 1:
+        return quarter.toString();
+      case 2:
+        return ("0000" + quarter.toString()).slice(-length);
+      case 3:
+        return this.calendar.quarters.format.abbreviated[quarter];
+      case 4:
+        return this.calendar.quarters.format.wide[quarter];
+    }
+  };
+
+  DateTimeFormatter.prototype.quarter_stand_alone = function(date, pattern, length) {
+    var quarter;
+    quarter = (date.getMonth() - 1) / 3 + 1;
+    switch (length) {
+      case 1:
+        return quarter.toString();
+      case 2:
+        return ("0000" + quarter.toString()).slice(-length);
+      case 3:
+        throw 'not yet implemented (requires cldr\'s "multiple inheritance")';
+        break;
+      case 4:
+        throw 'not yet implemented (requires cldr\'s "multiple inheritance")';
+        break;
+      case 5:
+        return this.calendar.quarters['stand-alone'].narrow[quarter];
+    }
+  };
+
+  DateTimeFormatter.prototype.month = function(date, pattern, length) {
+    var month_str;
+    month_str = (date.getMonth() + 1).toString();
+    switch (length) {
+      case 1:
+        return month_str;
+      case 2:
+        return ("0000" + month_str).slice(-length);
+      case 3:
+        return this.calendar.months.format.abbreviated[month_str];
+      case 4:
+        return this.calendar.months.format.wide[month_str];
+      case 5:
+        throw 'not yet implemented (requires cldr\'s "multiple inheritance")';
+        break;
+      default:
+        throw "Unknown date format";
+    }
+  };
+
+  DateTimeFormatter.prototype.month_stand_alone = function(date, pattern, length) {
+    switch (length) {
+      case 1:
+        return date.getMonth().toString();
+      case 2:
+        return ("0000" + date.getMonth().toString()).slice(-length);
+      case 3:
+        throw 'not yet implemented (requires cldr\'s "multiple inheritance")';
+        break;
+      case 4:
+        throw 'not yet implemented (requires cldr\'s "multiple inheritance")';
+        break;
+      case 5:
+        return this.calendar.months['stand-alone'].narrow[date.month];
+      default:
+        throw "Unknown date format";
+    }
+  };
+
+  DateTimeFormatter.prototype.day = function(date, pattern, length) {
+    switch (length) {
+      case 1:
+        return date.getDate().toString();
+      case 2:
+        return ("0000" + date.getDate().toString()).slice(-length);
+    }
+  };
+
+  DateTimeFormatter.prototype.weekday = function(date, pattern, length) {
+    var key;
+    key = this.weekday_keys[date.getDay()];
+    switch (length) {
+      case 1:
+      case 2:
+      case 3:
+        return this.calendar.days.format.abbreviated[key];
+      case 4:
+        return this.calendar.days.format.wide[key];
+      case 5:
+        return this.calendar.days['stand-alone'].narrow[key];
+    }
+  };
+
+  DateTimeFormatter.prototype.weekday_local = function(date, pattern, length) {
+    var day;
+    switch (length) {
+      case 1:
+      case 2:
+        day = date.getDay();
+        return (day === 0 ? "7" : day.toString());
+      default:
+        return this.weekday(date, pattern, length);
+    }
+  };
+
+  DateTimeFormatter.prototype.weekday_local_stand_alone = function(date, pattern, length) {
+    switch (length) {
+      case 1:
+        return this.weekday_local(date, pattern, length);
+      default:
+        return this.weekday(date, pattern, length);
+    }
+  };
+
+  DateTimeFormatter.prototype.period = function(time, pattern, length) {
+    if (time.getHours() > 11) {
+      return this.calendar.periods.format.wide["pm"];
+    } else {
+      return this.calendar.periods.format.wide["am"];
+    }
+  };
+
+  DateTimeFormatter.prototype.hour = function(time, pattern, length) {
+    var hour;
+    hour = time.getHours();
+    switch (pattern[0]) {
+      case 'h':
+        if (hour > 12) {
+          hour = hour - 12;
+        } else if (hour === 0) {
+          hour = 12;
+        }
+        break;
+      case 'K':
+        if (hour > 11) {
+          hour = hour - 12;
+        }
+        break;
+      case 'k':
+        if (hour === 0) {
+          hour = 24;
+        }
+    }
+    if (length === 1) {
+      return hour.toString();
+    } else {
+      return ("000000" + hour.toString()).slice(-length);
+    }
+  };
+
+  DateTimeFormatter.prototype.minute = function(time, pattern, length) {
+    if (length === 1) {
+      return time.getMinutes().toString();
+    } else {
+      return ("000000" + time.getMinutes().toString()).slice(-length);
+    }
+  };
+
+  DateTimeFormatter.prototype.second = function(time, pattern, length) {
+    if (length === 1) {
+      return time.getSeconds().toString();
+    } else {
+      return ("000000" + time.getSeconds().toString()).slice(-length);
+    }
+  };
+
+  DateTimeFormatter.prototype.second_fraction = function(time, pattern, length) {
+    if (length > 6) {
+      throw 'can not use the S format with more than 6 digits';
+    }
+    return ("000000" + Math.round(Math.pow(time.getMilliseconds() * 100.0, 6 - length)).toString()).slice(-length);
+  };
+
+  DateTimeFormatter.prototype.timezone = function(time, pattern, length) {
+    var hours, minutes;
+    hours = ("00" + (time.getTimezoneOffset() / 60).toString()).slice(-2);
+    minutes = ("00" + (time.getTimezoneOffset() % 60).toString()).slice(-2);
+    switch (length) {
+      case 1:
+      case 2:
+      case 3:
+        return "-" + hours + ":" + minutes;
+      default:
+        return "UTC -" + hours + ":" + minutes;
+    }
+  };
+
+  DateTimeFormatter.prototype.timezone_generic_non_location = function(time, pattern, length) {
+    throw 'not yet implemented (requires timezone translation data")';
+  };
+
+  return DateTimeFormatter;
+
+})();

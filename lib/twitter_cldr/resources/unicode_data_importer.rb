@@ -55,9 +55,9 @@ module TwitterCldr
         File.open(File.join(@input_path, 'UnicodeData.txt')) do |input|
           input.each_line do |line|
             data = line.chomp.split(';', -1)
-            code_point = data.first
+            data[0] = data[0].hex
 
-            unicode_data[find_block(blocks, code_point.hex).first][code_point] = data
+            unicode_data[find_block(blocks, data[0]).first][data[0]] = data
           end
         end
 

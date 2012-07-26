@@ -78,21 +78,21 @@ describe CodePoint do
 
     it "fetches valid information for the specified code point" do
       test_code_points_data(
-          0x17D1  => ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', "", "", "", "", 'N', "", "", "", "", ""],
-          0xFE91  => ['FE91', 'ARABIC LETTER BEH INITIAL FORM', 'Lo', '0', 'AL', '<initial> 0628', "", "", "", 'N', 'GLYPH FOR INITIAL ARABIC BAA', "", "", "", ""],
-          0x24B5  => ['24B5', 'PARENTHESIZED LATIN SMALL LETTER Z', 'So', '0', 'L', '<compat> 0028 007A 0029', "", "", "", 'N', "", "", "", "", ""],
-          0x2128  => ['2128', 'BLACK-LETTER CAPITAL Z', 'Lu', '0', 'L', '<font> 005A', "", "", "", 'N', 'BLACK-LETTER Z', "", "", "", ""],
-          0x1F241 => ['1F241', 'TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09', 'So', '0', 'L', '<compat> 3014 4E09 3015', "", "", "", 'N', "", "", "", "", ""]
+          0x17D1  => [0x17D1, "KHMER SIGN VIRIAM", "Mn", "0", "NSM", "", "", "", "", "N", "", "", "", "", ""],
+          0xFE91  => [0xFE91, "ARABIC LETTER BEH INITIAL FORM", "Lo", "0", "AL", "<initial> 0628", "", "", "", "N", "GLYPH FOR INITIAL ARABIC BAA", "", "", "", ""],
+          0x24B5  => [0x24B5, "PARENTHESIZED LATIN SMALL LETTER Z", "So", "0", "L", "<compat> 0028 007A 0029", "", "", "", "N", "", "", "", "", ""],
+          0x2128  => [0x2128, "BLACK-LETTER CAPITAL Z", "Lu", "0", "L", "<font> 005A", "", "", "", "N", "BLACK-LETTER Z", "", "", "", ""],
+          0x1F241 => [0x1F241, "TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09", "So", "0", "L", "<compat> 3014 4E09 3015", "", "", "", "N", "", "", "", "", ""]
       )
     end
 
     it "fetches valid information for a code point within a range" do
       test_code_points_data(
-          0x4E11 => ["4E11", "<CJK Ideograph>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xAC55 => ["AC55", "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xD7A1 => ["D7A1", "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xDAAA => ["DAAA", "<Non Private Use High Surrogate>", "Cs", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xF8FE => ["F8FE", "<Private Use>", "Co", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
+          0x4E11 => [0x4E11, "<CJK Ideograph>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          0xAC55 => [0xAC55, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          0xD7A1 => [0xD7A1, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          0xDAAA => [0xDAAA, "<Non Private Use High Surrogate>", "Cs", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+          0xF8FE => [0xF8FE, "<Private Use>", "Co", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
       )
     end
 
@@ -102,10 +102,7 @@ describe CodePoint do
 
         cp_data.should_not be_nil
 
-        cp_data.code_point.should      == data[0].hex
-        cp_data.name.should            == data[1]
-        cp_data.category.should        == data[2]
-        cp_data.combining_class.should == data[3]
+        [:code_point, :name, :category, :combining_class].map { |msg| cp_data.send(msg) }.should == data[0..3]
       end
     end
   end
@@ -195,13 +192,13 @@ describe CodePoint do
 
   describe "#get_range_start" do
     it "returns the data for a non-explicit range" do
-      block_data = { "0" => ["1337", "<CJK Ideograph Extension A, First>"] }
-      CodePoint.send(:get_range_start, "ABC", block_data).should == ["ABC", "<CJK Ideograph Extension A>"]
+      block_data = { 0x1337 => [0x1337, "<CJK Ideograph Extension A, First>"] }
+      CodePoint.send(:get_range_start, 0xABC, block_data).should == [0xABC, "<CJK Ideograph Extension A>"]
     end
 
     it "returns nil if the block data doesn't contain a non-explicit range" do
-      block_data = { "0" => ["1337", "<CJK Ideograph Extension A>"] }
-      CodePoint.send(:get_range_start, "ABC", block_data).should == nil
+      block_data = { 0x1337 => [0x1337, "<CJK Ideograph Extension A>"] }
+      CodePoint.send(:get_range_start, 0xABC, block_data).should == nil
     end
   end
 end

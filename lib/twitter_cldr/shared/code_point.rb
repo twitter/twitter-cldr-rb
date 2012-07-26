@@ -62,9 +62,9 @@ module TwitterCldr
           return unless target && target.first
 
           block_data      = TwitterCldr.get_resource(:unicode_data, target.first)
-          code_point_data = block_data.fetch(code_point_to_string(code_point).to_sym) { |cp| get_range_start(cp, block_data) }
+          code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
 
-          CodePoint.new(code_point_data[0].hex, *code_point_data[1..-1]) if code_point_data
+          CodePoint.new(*code_point_data) if code_point_data
         end
 
         def for_decomposition(code_points)
@@ -112,11 +112,11 @@ module TwitterCldr
         # eg: <CJK Ideograph Extension A, First>
         # http://unicode.org/reports/tr44/#Code_Point_Ranges
         def get_range_start(code_point, block_data)
-          start_code_point = block_data.keys.sort_by { |key| key.to_s.hex }.first
-          start_data = block_data[start_code_point].clone
+          start_data = block_data[block_data.keys.min]
 
           if start_data[1] =~ /<.*, First>/
-            start_data[0] = code_point.to_s
+            start_data = start_data.clone
+            start_data[0] = code_point
             start_data[1] = start_data[1].sub(', First', '')
             start_data
           end

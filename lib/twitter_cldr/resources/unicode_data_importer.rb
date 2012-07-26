@@ -1,0 +1,78 @@
+# encoding: UTF-8
+
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
+#require 'yaml'
+
+module TwitterCldr
+  module Resources
+
+    class UnicodeDataImporter
+
+      def initialize(input_path, output_path)
+        @input_path  = input_path
+        @output_path = output_path
+      end
+
+      def import
+        blocks       = import_blocks
+        unicode_data = import_unicode_data(blocks)
+
+        File.open(File.join(@output_path, 'blocks.yml'), 'w') { |output| YAML.dump(blocks, output) }
+
+        unicode_data.each do |block_name, code_points|
+          File.open(File.join(@output_path, "#{block_name}.yml"), 'w') { |output| YAML.dump(code_points, output) }
+        end
+      end
+
+      private
+
+      # Input file is available at ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt
+      #
+      def import_blocks
+        blocks = {}
+
+        File.open(File.join(@input_path, 'Blocks.txt')) do |input|
+          input.each_line do |line|
+            next unless line =~ /^([0-9A-F]+)\.\.([0-9A-F]+);(.+)$/
+
+            range = ($1.hex..$2.hex)
+            name  = block_name($3)
+
+            blocks[name] = range
+          end
+        end
+
+        blocks
+      end
+
+      # Input file is available at ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
+      #
+      def import_unicode_data(blocks)
+        unicode_data = Hash.new { |hash, key| hash[key] = Hash.new { |h, k| h[k] = {} } }
+
+        File.open(File.join(@input_path, 'UnicodeData.txt')) do |input|
+          input.each_line do |line|
+            data = line.chomp.split(';', -1)
+            code_point = data.first
+
+            unicode_data[find_block(blocks, code_point.hex).first][code_point] = data
+          end
+        end
+
+        unicode_data
+      end
+
+      def find_block(blocks, code_point)
+        blocks.detect { |_, range| range.include?(code_point) }
+      end
+
+      def block_name(string)
+        string.strip.downcase.gsub(/[\s-]/, '_')
+      end
+
+    end
+
+  end
+end

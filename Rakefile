@@ -43,11 +43,11 @@ end
 namespace :resources do
   namespace :update do
     desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
-    task :tailoring do
+    task :tailoring, :cldr_data_path, :icu4j_jar_path do |_, args|
       importer = TwitterCldr::Resources::TailoringImporter.new(
-          ENV.fetch('CLDR_DATA_PATH', '../cldr-tailoring/'),
+          args[:cldr_data_path] || '../cldr-tailoring/',
           './resources/collation/tailoring',
-          ENV.fetch('ICU4J_JAR_PATH', '../icu4j-49_1.jar')
+          args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
       )
 
       TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
@@ -56,6 +56,14 @@ namespace :resources do
     desc 'Updates default and tailoring tries dumps'
     task :tries do
       TwitterCldr::Resources::TriesDumper.update_dumps
+    end
+
+    desc 'Updates Unicode data resources'
+    task :unicode_data, :unicode_data_path do |_, args|
+      TwitterCldr::Resources::UnicodeDataImporter.new(
+          args[:unicode_data_path] || '../unicode-data',
+          './resources/unicode_data'
+      ).import
     end
   end
 end

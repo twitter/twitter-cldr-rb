@@ -140,7 +140,7 @@ module TwitterCldr
       end
 
       def table_entry_for_rule(collator, tailored_value)
-        code_points = get_code_points(tailored_value)
+        code_points = get_code_points(tailored_value).map { |cp| cp.to_s(16).upcase.rjust(4, '0') }
 
         collation_elements = get_collation_elements(collator, tailored_value).map do |ce|
           ce.map { |l| l.to_s(16).upcase }.join(', ')

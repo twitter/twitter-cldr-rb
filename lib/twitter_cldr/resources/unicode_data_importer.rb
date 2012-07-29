@@ -10,6 +10,13 @@ module TwitterCldr
 
     class UnicodeDataImporter
 
+      # Arguments:
+      #
+      #   input_path  - path to a directory containing Blocks.txt (available at ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt)
+      #                 and UnicodeData.txt (available at ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt)
+      #
+      #   output_path - output directory for imported YAML files
+      #
       def initialize(input_path, output_path)
         @input_path  = input_path
         @output_path = output_path
@@ -28,8 +35,6 @@ module TwitterCldr
 
       private
 
-      # Input file is available at ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt
-      #
       def import_blocks
         blocks = {}
 
@@ -47,8 +52,6 @@ module TwitterCldr
         blocks
       end
 
-      # Input file is available at ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt
-      #
       def import_unicode_data(blocks)
         unicode_data = Hash.new { |hash, key| hash[key] = Hash.new { |h, k| h[k] = {} } }
 

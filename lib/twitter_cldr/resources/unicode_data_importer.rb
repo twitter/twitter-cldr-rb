@@ -29,7 +29,7 @@ module TwitterCldr
         File.open(File.join(@output_path, 'blocks.yml'), 'w') { |output| YAML.dump(blocks, output) }
 
         unicode_data.each do |block_name, code_points|
-          File.open(File.join(@output_path, "#{block_name}.yml"), 'w') { |output| YAML.dump(code_points, output) }
+          File.open(File.join(@output_path, 'blocks', "#{block_name}.yml"), 'w') { |output| YAML.dump(code_points, output) }
         end
       end
 

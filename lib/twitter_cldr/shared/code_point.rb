@@ -61,7 +61,7 @@ module TwitterCldr
 
           return unless target && target.first
 
-          block_data      = TwitterCldr.get_resource(:unicode_data, target.first)
+          block_data      = TwitterCldr.get_resource(:unicode_data, :blocks, target.first)
           code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
 
           CodePoint.new(*code_point_data) if code_point_data

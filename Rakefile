@@ -53,12 +53,12 @@ namespace :resources do
       TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
     end
 
-    desc 'Updates default and tailoring tries dumps'
+    desc 'Update default and tailoring tries dumps'
     task :tries do
       TwitterCldr::Resources::TriesDumper.update_dumps
     end
 
-    desc 'Updates Unicode data resources'
+    desc 'Import Unicode data resources'
     task :unicode_data, :unicode_data_path do |_, args|
       TwitterCldr::Resources::UnicodeDataImporter.new(
           args[:unicode_data_path] || '../cldr/unicode-data',
@@ -66,12 +66,12 @@ namespace :resources do
       ).import
     end
 
-    desc 'Updates canonical compositions resource'
+    desc 'Update canonical compositions resource'
     task :canonical_compositions do
       TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
     end
 
-    desc 'Updates composition exclusions resource'
+    desc 'Import composition exclusions resource'
     task :composition_exclusions do |_, args|
       TwitterCldr::Resources::CompositionExclusionsImporter.new(
           args[:derived_normalization_props_path] || '../cldr/DerivedNormalizationProps.txt',

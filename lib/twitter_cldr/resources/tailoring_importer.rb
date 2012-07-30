@@ -4,7 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'nokogiri'
-require 'yaml'
 require 'java'
 
 module TwitterCldr

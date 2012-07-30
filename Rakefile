@@ -78,6 +78,11 @@ namespace :resources do
           './resources/unicode_data'
       ).import
     end
+
+    desc 'Import custom locales resources'
+    task :custom_locales_resources do
+      TwitterCldr::Resources::CustomLocalesResourcesImporter.new('./resources/custom/locales').import
+    end
   end
 end
 

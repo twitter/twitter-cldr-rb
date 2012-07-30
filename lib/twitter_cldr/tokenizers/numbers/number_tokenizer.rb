@@ -6,6 +6,8 @@
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
+      VALID_TYPES = [:decimal, :percent, :currency]
+
       def initialize(options = {})
         super(options)
 

@@ -12,11 +12,11 @@ module TwitterCldr
       class << self
 
         def countries
-          @@resource.map { |country_name, data| country_name.to_s }
+          @countries ||= @@resource.map { |country_name, data| country_name.to_s }
         end
 
         def currency_codes
-          @@resource.map { |country_name, data| data[:code] }
+          @currency_codes ||= @@resource.map { |country_name, data| data[:code] }
         end
 
         def for_country(country_name)

@@ -21,7 +21,8 @@ module TwitterCldr
         int, fraction = parse_number(number, opts)
         result =  integer_format.apply(int, opts)
         result << fraction_format.apply(fraction, opts) if fraction
-        "#{prefix.to_s}#{result}#{suffix.to_s}"
+        sign = number < 0 && prefix != "-" ? @symbols[:minus_sign] || DEFAULT_SYMBOLS[:minus_sign] : ""
+        "#{sign}#{prefix.to_s}#{result}#{suffix.to_s}"
       end
 
       protected

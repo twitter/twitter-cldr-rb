@@ -80,12 +80,12 @@ module TwitterCldr
 
             unless blocked
               # do a reverse-lookup for the decomposed code points
-              decomp_data = TwitterCldr::Shared::CodePoint.for_decomposition([code_points[starter_index], code_point])
+              composite = TwitterCldr::Shared::CodePoint.for_canonical_decomposition([code_points[starter_index], code_point])
 
               # check if two code points are canonically equivalent
-              if decomp_data && !decomp_data.excluded_from_composition?
+              if composite && !composite.excluded_from_composition?
                 # combine the characters
-                code_points[starter_index] = decomp_data.code_point
+                code_points[starter_index] = composite.code_point
                 code_points.delete_at(index)
                 index -= 1
               end

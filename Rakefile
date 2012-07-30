@@ -65,6 +65,11 @@ namespace :resources do
           './resources/unicode_data'
       ).import
     end
+
+    desc 'Updates canonical compositions resource'
+    task :canonical_compositions do
+      TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
+    end
   end
 end
 

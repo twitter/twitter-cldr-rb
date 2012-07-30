@@ -67,11 +67,12 @@ module TwitterCldr
           CodePoint.new(*code_point_data) if code_point_data
         end
 
-        def for_decomposition(code_points)
-          @decomposition_map ||= TwitterCldr.get_resource(:unicode_data, :decomposition_map)
-          key = code_points.map(&method(:code_point_to_string)).join(' ').to_sym
+        def for_canonical_decomposition(code_points)
+          find(canonical_compositions[code_points]) if canonical_compositions.has_key?(code_points)
+        end
 
-          find(@decomposition_map[key].hex) if @decomposition_map.include?(key)
+        def canonical_compositions
+          @canonical_compositions ||= TwitterCldr.get_resource(:unicode_data, :canonical_compositions)
         end
 
         def hangul_type(code_point)
@@ -120,10 +121,6 @@ module TwitterCldr
             start_data[1] = start_data[1].sub(', First', '')
             start_data
           end
-        end
-
-        def code_point_to_string(code_point)
-          code_point.to_s(16).rjust(4, '0').upcase
         end
 
       end

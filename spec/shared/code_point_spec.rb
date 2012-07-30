@@ -107,38 +107,38 @@ describe CodePoint do
     end
   end
 
-  describe "#for_decomposition" do
-    let(:decomposition_map) { { :"AAAA 0BBB" => "ABC" } }
+  describe "#for_canonical_decomposition" do
+    let(:canonical_compositions) { { [123, 456] => 789 } }
 
     before(:each) do
       # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@decomposition_map, nil)
-      stub(CodePoint).find { |code_point| "I'm code point #{code_point.to_s(16).upcase}" }
+      CodePoint.instance_variable_set(:@canonical_compositions, nil)
+      stub(CodePoint).find { |code_point| "I'm code point #{code_point}" }
     end
 
-    after(:each) do
+    after(:all) do
       # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@decomposition_map, nil)
+      CodePoint.instance_variable_set(:@canonical_compositions, nil)
     end
 
     context "with a stubbed decomposition map" do
       before(:each) do
-        mock(TwitterCldr).get_resource(:unicode_data, :decomposition_map) { decomposition_map }
+        mock(TwitterCldr).get_resource(:unicode_data, :canonical_compositions) { canonical_compositions }
       end
 
       it "should return a code point with the correct value" do
-        CodePoint.for_decomposition([0xAAAA, 0xBBB]).should == "I'm code point ABC"
+        CodePoint.for_canonical_decomposition([123, 456]).should == "I'm code point 789"
       end
 
       it "should return nil if no decomposition mapping exists" do
-        CodePoint.for_decomposition([0xA0]).should be_nil
+        CodePoint.for_canonical_decomposition([987]).should be_nil
       end
     end
 
     it "should cache the decomposition map" do
-      mock(TwitterCldr).get_resource(:unicode_data, :decomposition_map) { decomposition_map }.once
-      CodePoint.for_decomposition([0xA0]).should be_nil
-      CodePoint.for_decomposition([0xA0]).should be_nil
+      mock(TwitterCldr).get_resource(:unicode_data, :canonical_compositions) { canonical_compositions }.once
+      CodePoint.for_canonical_decomposition([0xA0]).should be_nil
+      CodePoint.for_canonical_decomposition([0xA0]).should be_nil
     end
   end
 

@@ -45,7 +45,7 @@ namespace :resources do
     desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
     task :tailoring, :cldr_data_path, :icu4j_jar_path do |_, args|
       importer = TwitterCldr::Resources::TailoringImporter.new(
-          args[:cldr_data_path] || '../cldr/tailoring/',
+          args[:tailoring_data_path] || '../cldr/tailoring/',
           './resources/collation/tailoring',
           args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
       )
@@ -69,6 +69,14 @@ namespace :resources do
     desc 'Updates canonical compositions resource'
     task :canonical_compositions do
       TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
+    end
+
+    desc 'Updates composition exclusions resource'
+    task :composition_exclusions do |_, args|
+      TwitterCldr::Resources::CompositionExclusionsImporter.new(
+          args[:derived_normalization_props_path] || '../cldr/DerivedNormalizationProps.txt',
+          './resources/unicode_data'
+      ).import
     end
   end
 end

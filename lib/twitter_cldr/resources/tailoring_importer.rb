@@ -30,7 +30,7 @@ module TwitterCldr
           :pt => :root
       }
 
-      EMPTY_TAILORING_DATA = { 'collator_options' => {}, 'tailored_table' => '', 'suppressed_contractions' => '' }
+      EMPTY_TAILORING_DATA = { :collator_options => {}, :tailored_table => '', :suppressed_contractions => '' }
 
       class ImportError < RuntimeError; end
 
@@ -99,9 +99,9 @@ module TwitterCldr
         standard_tailoring = collations.at_xpath('collation[@type="standard"]')
 
         {
-            'collator_options'        => parse_collator_options(standard_tailoring),
-            'tailored_table'          => parse_tailorings(standard_tailoring, locale),
-            'suppressed_contractions' => parse_suppressed_contractions(standard_tailoring)
+            :collator_options        => parse_collator_options(standard_tailoring),
+            :tailored_table          => parse_tailorings(standard_tailoring, locale),
+            :suppressed_contractions => parse_suppressed_contractions(standard_tailoring)
         }
       end
 
@@ -161,7 +161,7 @@ module TwitterCldr
           options['case_first'] = case_first_setting.attr('caseFirst').to_sym if case_first_setting
         end
 
-        options
+        TwitterCldr::Utils.deep_symbolize_keys(options)
       end
 
       def validate_tailoring_rule(rule)

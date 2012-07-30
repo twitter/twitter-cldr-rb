@@ -1,16 +1,17 @@
-zh: 
-  numbers: 
-    formats: 
-      currency: 
-        patterns: 
-          default: "¤#,##0.00"
-        unit: 
-          other: "{0} {1}"
-      decimal: 
-        patterns: 
-          default: "#,##0.###"
-          short: 
-            1000: 0000
+---
+:zh:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0
             10000: 0.0万
             100000: 00万
             1000000: 000万
@@ -22,21 +23,21 @@ zh:
             1000000000000: 0.0兆
             10000000000000: 00兆
             100000000000000: 000兆
-      percent: 
-        patterns: 
-          default: "#,##0%"
-      scientific: 
-        patterns: 
-          default: "#E0"
-    symbols: 
-      alias: ""
-      decimal: "."
-      exponential: E
-      group: ","
-      infinity: ∞
-      list: ;
-      minus_sign: "-"
-      nan: NaN
-      per_mille: ‰
-      percent_sign: "%"
-      plus_sign: +
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: .
+      :exponential: E
+      :group: ! ','
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

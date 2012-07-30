@@ -1,15 +1,16 @@
-el: 
-  numbers: 
-    formats: 
-      currency: 
-        patterns: 
-          default: "#,##0.00 ¤"
-        unit: 
-          other: "{0} {1}"
-      decimal: 
-        patterns: 
-          default: "#,##0.###"
-          short: 
+---
+:el:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
             1000: 0.0 χιλ'.'
             10000: 00 χιλ'.'
             100000: 000 χιλ'.'
@@ -22,21 +23,21 @@ el:
             1000000000000: 0.0 τρις
             10000000000000: 00 τρις
             100000000000000: 000 τρις
-      percent: 
-        patterns: 
-          default: "#,##0%"
-      scientific: 
-        patterns: 
-          default: "#E0"
-    symbols: 
-      alias: ""
-      decimal: ","
-      exponential: e
-      group: "."
-      infinity: ∞
-      list: ","
-      minus_sign: "-"
-      nan: NaN
-      per_mille: ‰
-      percent_sign: "%"
-      plus_sign: +
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
+      :exponential: e
+      :group: .
+      :infinity: ∞
+      :list: ! ','
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

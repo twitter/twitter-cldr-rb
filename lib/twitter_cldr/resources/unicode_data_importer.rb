@@ -43,7 +43,7 @@ module TwitterCldr
             range = ($1.hex..$2.hex)
             name  = block_name($3)
 
-            blocks[name] = range
+            blocks[name.to_sym] = range
           end
         end
 

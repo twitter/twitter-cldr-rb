@@ -34,7 +34,8 @@ module TwitterCldr
       #
       def copy_zh_hant_plurals
         File.open(File.join(@output_path, 'zh-Hant', 'plurals.yml'), 'w:utf-8') do |output|
-          output.write(File.read(File.join(@output_path, 'zh', 'plurals.yml')).gsub('zh:', 'zh-Hant:').gsub(':zh', ":'zh-Hant'"))
+          data = YAML.load(File.read(File.join(@output_path, 'zh', 'plurals.yml')))
+          output.write(YAML.dump(:'zh-Hant' => data[:zh].gsub(':zh', ":'zh-Hant'")))
         end
       end
 
@@ -42,9 +43,19 @@ module TwitterCldr
         Cldr::Export.export(:locales => TwitterCldr.supported_locales, :components => COMPONENTS, :target => @output_path) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
+          deep_symbolize(component, locale, path)
         end
 
         copy_zh_hant_plurals
+      end
+
+      def deep_symbolize(component, locale, path)
+        return unless File.extname(path) == '.yml'
+        data = YAML.load(File.read(path))
+
+        File.open(path, 'w:utf-8') do |output|
+          output.write(YAML.dump(TwitterCldr::Utils.deep_symbolize_keys(data)))
+        end
       end
 
       def process_plurals(component, locale, path)
@@ -53,7 +64,7 @@ module TwitterCldr
         plural_rules = File.read(path)
 
         File.open(path.gsub(/rb$/, 'yml'), 'w:utf-8') do |output|
-          output.write(YAML.dump({ locale.to_s => plural_rules }))
+          output.write(YAML.dump({ locale => plural_rules }))
         end
 
         FileUtils.rm(path)

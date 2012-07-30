@@ -14,10 +14,10 @@ module TwitterCldr
       API_ENDPOINT = "http://translate.twttr.com/api/2/twitter/phrase/%s/translations.json"
 
       TIME_PERIODS = {
-          'day'    => 19636,
-          'hour'   => 19638,
-          'minute' => 19634,
-          'second' => 19639
+          :day    => 19636,
+          :hour   => 19638,
+          :minute => 19634,
+          :second => 19639
       }
 
       # Arguments:
@@ -41,7 +41,7 @@ module TwitterCldr
           FileUtils.mkpath(dir_path)
 
           File.open(File.join(dir_path, 'units.yml'), 'w:utf-8') do |output|
-            output.write(YAML.dump({ locale.to_s => data }))
+            output.write(YAML.dump({ locale => data }))
           end
         end
       end
@@ -55,11 +55,11 @@ module TwitterCldr
 
             next unless api_response[twitter_locale]
 
-            patterns = TwitterCldr::Formatters::Plurals::Rules.all_for(twitter_locale).inject({}) do |memo, rule|
-              memo[rule.to_s] = api_response[twitter_locale].gsub("%{number}", "{0}"); memo
+            patterns = TwitterCldr::Formatters::Plurals::Rules.all_for(locale).inject({}) do |memo, rule|
+              memo[rule] = api_response[twitter_locale].gsub("%{number}", "{0}"); memo
             end
 
-            set_value(result, patterns, locale, 'units', label, 'abbreviated')
+            set_value(result, patterns, locale, :units, label, :abbreviated)
           end
 
           result

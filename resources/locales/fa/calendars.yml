@@ -1,113 +1,114 @@
-fa: 
-  calendars: 
-    gregorian: 
-      days: 
-        format: 
-          abbreviated: 
-            fri: جمعه
-            mon: دوشنبه
-            sat: شنبه
-            sun: یکشنبه
-            thu: پنجشنبه
-            tue: سه‌شنبه
-            wed: چهارشنبه
-          narrow: 
-            fri: ج
-            mon: د
-            sat: ش
-            sun: ی
-            thu: پ
-            tue: س
-            wed: چ
-          wide: 
-            fri: جمعه
-            mon: دوشنبه
-            sat: شنبه
-            sun: یکشنبه
-            thu: پنجشنبه
-            tue: سه‌شنبه
-            wed: چهارشنبه
-        stand-alone: 
-          abbreviated: 
-            fri: جمعه
-            mon: دوشنبه
-            sat: شنبه
-            sun: یکشنبه
-            thu: پنجشنبه
-            tue: سه‌شنبه
-            wed: چهارشنبه
-          narrow: 
-            fri: ج
-            mon: د
-            sat: ش
-            sun: ی
-            thu: پ
-            tue: س
-            wed: چ
-          wide: 
-            fri: جمعه
-            mon: دوشنبه
-            sat: شنبه
-            sun: یکشنبه
-            thu: پنجشنبه
-            tue: سه‌شنبه
-            wed: چهارشنبه
-      eras: 
-        abbr: 
+---
+:fa:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: جمعه
+            :mon: دوشنبه
+            :sat: شنبه
+            :sun: یکشنبه
+            :thu: پنجشنبه
+            :tue: سه‌شنبه
+            :wed: چهارشنبه
+          :narrow:
+            :fri: ج
+            :mon: د
+            :sat: ش
+            :sun: ی
+            :thu: پ
+            :tue: س
+            :wed: چ
+          :wide:
+            :fri: جمعه
+            :mon: دوشنبه
+            :sat: شنبه
+            :sun: یکشنبه
+            :thu: پنجشنبه
+            :tue: سه‌شنبه
+            :wed: چهارشنبه
+        :stand-alone:
+          :abbreviated:
+            :fri: جمعه
+            :mon: دوشنبه
+            :sat: شنبه
+            :sun: یکشنبه
+            :thu: پنجشنبه
+            :tue: سه‌شنبه
+            :wed: چهارشنبه
+          :narrow:
+            :fri: ج
+            :mon: د
+            :sat: ش
+            :sun: ی
+            :thu: پ
+            :tue: س
+            :wed: چ
+          :wide:
+            :fri: جمعه
+            :mon: دوشنبه
+            :sat: شنبه
+            :sun: یکشنبه
+            :thu: پنجشنبه
+            :tue: سه‌شنبه
+            :wed: چهارشنبه
+      :eras:
+        :abbr:
           0: ق.م.
           1: م.
-        name: 
-          0: "قبل از میلاد"
+        :name:
+          0: قبل از میلاد
           1: میلادی
-        narrow: 
+        :narrow:
           0: ق
           1: م
-      fields: 
-        day: روز
-        dayperiod: قبل/بعدازظهر
-        era: دوره
-        hour: ساعت
-        minute: دقیقه
-        month: ماه
-        second: ثانیه
-        week: هفته
-        weekday: "روز هفته"
-        year: سال
-        zone: "منطقهٔ زمانی"
-      formats: 
-        date: 
-          default: :"calendars.gregorian.formats.date.long"
-          full: 
-            pattern: "EEEE d MMMM y"
-          long: 
-            pattern: "d MMMM y"
-          medium: 
-            pattern: "d MMM y"
-          short: 
-            pattern: yyyy/M/d
-        datetime: 
-          default: :"calendars.gregorian.formats.datetime.medium"
-          full: 
-            pattern: "{{date}}، ساعت {{time}}"
-          long: 
-            pattern: "{{date}}، ساعت {{time}}"
-          medium: 
-            pattern: "{{date}}،‏ {{time}}"
-          short: 
-            pattern: "{{date}}،‏ {{time}}"
-        time: 
-          default: :"calendars.gregorian.formats.time.medium"
-          full: 
-            pattern: "H:mm:ss (zzzz)"
-          long: 
-            pattern: "H:mm:ss (z)"
-          medium: 
-            pattern: "H:mm:ss"
-          short: 
-            pattern: "H:mm"
-      months: 
-        format: 
-          abbreviated: 
+      :fields:
+        :day: روز
+        :dayperiod: قبل/بعدازظهر
+        :era: دوره
+        :hour: ساعت
+        :minute: دقیقه
+        :month: ماه
+        :second: ثانیه
+        :week: هفته
+        :weekday: روز هفته
+        :year: سال
+        :zone: منطقهٔ زمانی
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.long
+          :full:
+            :pattern: EEEE d MMMM y
+          :long:
+            :pattern: d MMMM y
+          :medium:
+            :pattern: d MMM y
+          :short:
+            :pattern: yyyy/M/d
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}}، ساعت {{time}}'
+          :long:
+            :pattern: ! '{{date}}، ساعت {{time}}'
+          :medium:
+            :pattern: ! '{{date}}،‏ {{time}}'
+          :short:
+            :pattern: ! '{{date}}،‏ {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: H:mm:ss (zzzz)
+          :long:
+            :pattern: H:mm:ss (z)
+          :medium:
+            :pattern: H:mm:ss
+          :short:
+            :pattern: H:mm
+      :months:
+        :format:
+          :abbreviated:
             1: ژانویهٔ
             10: اکتبر
             11: نوامبر
@@ -120,7 +121,7 @@ fa:
             7: ژوئیهٔ
             8: اوت
             9: سپتامبر
-          narrow: 
+          :narrow:
             1: ژ
             10: ا
             11: ن
@@ -133,7 +134,7 @@ fa:
             7: ژ
             8: ا
             9: س
-          wide: 
+          :wide:
             1: ژانویهٔ
             10: اکتبر
             11: نوامبر
@@ -146,8 +147,8 @@ fa:
             7: ژوئیهٔ
             8: اوت
             9: سپتامبر
-        stand-alone: 
-          abbreviated: 
+        :stand-alone:
+          :abbreviated:
             1: ژانویه
             10: اکتبر
             11: نوامبر
@@ -160,7 +161,7 @@ fa:
             7: ژوئیه
             8: اوت
             9: سپتامبر
-          narrow: 
+          :narrow:
             1: ژ
             10: ا
             11: ن
@@ -173,7 +174,7 @@ fa:
             7: ژ
             8: ا
             9: س
-          wide: 
+          :wide:
             1: ژانویه
             10: اکتبر
             11: نوامبر
@@ -186,44 +187,44 @@ fa:
             7: ژوئیه
             8: اوت
             9: سپتامبر
-      periods: 
-        format: 
-          abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-          wide: 
-            am: قبل‌ازظهر
-            pm: بعدازظهر
-        stand-alone: {}
-      quarters: 
-        format: 
-          abbreviated: 
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: قبل‌ازظهر
+            :pm: بعدازظهر
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
             1: س‌م۱
             2: س‌م۲
             3: س‌م۳
             4: س‌م۴
-          narrow: 
+          :narrow:
             1: ۱
             2: ۲
             3: ۳
             4: ۴
-          wide: 
-            1: "سه‌ماههٔ اول"
-            2: "سه‌ماههٔ دوم"
-            3: "سه‌ماههٔ سوم"
-            4: "سه‌ماههٔ چهارم"
-        stand-alone: 
-          abbreviated: 
+          :wide:
+            1: سه‌ماههٔ اول
+            2: سه‌ماههٔ دوم
+            3: سه‌ماههٔ سوم
+            4: سه‌ماههٔ چهارم
+        :stand-alone:
+          :abbreviated:
             1: س‌م۱
             2: س‌م۲
             3: س‌م۳
             4: س‌م۴
-          narrow: 
+          :narrow:
             1: ۱
             2: ۲
             3: ۳
             4: ۴
-          wide: 
-            1: "سه‌ماههٔ اول"
-            2: "سه‌ماههٔ دوم"
-            3: "سه‌ماههٔ سوم"
-            4: "سه‌ماههٔ چهارم"
+          :wide:
+            1: سه‌ماههٔ اول
+            2: سه‌ماههٔ دوم
+            3: سه‌ماههٔ سوم
+            4: سه‌ماههٔ چهارم

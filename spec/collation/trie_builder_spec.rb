@@ -102,17 +102,16 @@ END
   let(:tailoring_resource_stub) do
 <<END
 ---
-collator_options:
-  case_first: upper
-tailored_table: ! '0491; [5C1B, 5, 5]
+:collator_options:
+  :case_first: upper
+:tailored_table: ! '0491; [5C1B, 5, 5]
 
   0490; [5C1B, 5, 86]'
-suppressed_contractions: ГК
-...
+:suppressed_contractions: ГК
 END
   end
 
-  let(:tailoring_data) { TwitterCldr::Utils.deep_symbolize_keys(YAML.load(tailoring_resource_stub)) }
+  let(:tailoring_data) { YAML.load(tailoring_resource_stub) }
 
   describe '.load_tailored_trie' do
     let(:locale)        { :xxx }

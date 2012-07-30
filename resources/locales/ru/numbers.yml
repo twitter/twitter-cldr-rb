@@ -1,15 +1,16 @@
-ru: 
-  numbers: 
-    formats: 
-      currency: 
-        patterns: 
-          default: "#,##0.00 ¤"
-        unit: 
-          other: "{0} {1}"
-      decimal: 
-        patterns: 
-          default: "#,##0.###"
-          short: 
+---
+:ru:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
             1000: 0.0 тыс'.'
             10000: 00 тыс'.'
             100000: 000 тыс'.'
@@ -22,21 +23,21 @@ ru:
             1000000000000: 0.0 трлн
             10000000000000: 00 трлн
             100000000000000: 000 трлн
-      percent: 
-        patterns: 
-          default: "#,##0 %"
-      scientific: 
-        patterns: 
-          default: "#E0"
-    symbols: 
-      alias: ""
-      decimal: ","
-      exponential: E
-      group:  
-      infinity: ∞
-      list: ;
-      minus_sign: "-"
-      nan: "не число"
-      per_mille: ‰
-      percent_sign: "%"
-      plus_sign: +
+      :percent:
+        :patterns:
+          :default: ! '#,##0 %'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
+      :exponential: E
+      :group:  
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: не число
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

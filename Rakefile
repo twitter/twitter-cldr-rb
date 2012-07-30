@@ -79,6 +79,14 @@ namespace :resources do
       ).import
     end
 
+    desc 'Import locales resources'
+    task :locales_resources do |_, args|
+      TwitterCldr::Resources::LocalesResourcesImporter.new(
+          args[:cldr_data_path] || '../cldr/cldr-data',
+          './resources/locales'
+      ).import
+    end
+
     desc 'Import custom locales resources'
     task :custom_locales_resources do
       TwitterCldr::Resources::CustomLocalesResourcesImporter.new('./resources/custom/locales').import

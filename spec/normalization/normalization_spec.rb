@@ -63,7 +63,7 @@ describe 'Unicode Normalization Algorithms' do
       file.each do |line|
         next if line.empty? || line =~ /^(@|#)/
 
-        data = line.split(';')[0...5].map { |cps| cps.split }
+        data = line.split(';')[0...5].map { |cps| cps.split.map(&:hex) }
 
         invariants.each do |expected_index, tests|
           expected = data[expected_index - 1]
@@ -87,8 +87,8 @@ describe 'Unicode Normalization Algorithms' do
     <<-END
 Test:       "#{line.strip}"
 Invariant:  normalized(c#{test_index}) == c#{expected_index}
-Expected:   normalized(#{test.inspect}) == #{expected.inspect}
-Got:        #{normalized.inspect}
+Expected:   normalized(#{pretty_code_points(test).inspect}) == #{pretty_code_points(expected).inspect}
+Got:        #{pretty_code_points(normalized).inspect}
     END
   end
 
@@ -100,6 +100,10 @@ Got:        #{normalized.inspect}
     print '    Downloading NormalizationTest.txt ... '
     File.open(FULL_NORMALIZATION_TEST_PATH, 'w') { |file| file.write(open(FULL_NORMALIZATION_TEST_URL).read) }
     puts 'done.'
+  end
+
+  def pretty_code_points(code_points)
+    code_points.map { |cp| cp.to_s(16).rjust(4, '0').upcase }
   end
 
 end

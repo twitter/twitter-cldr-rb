@@ -20,7 +20,7 @@ describe Loader do
     end
 
     it 'symbolizes hash keys' do
-      stub_resource_file(resource_path, "---\na:\n  b: 3\n")
+      stub_resource_file(resource_path, "---\n:a:\n  :b: 3\n")
       loader.get_resource(:random, :resource).should == { :a => { :b => 3 } }
     end
 
@@ -45,14 +45,14 @@ describe Loader do
 
     context "custom resources" do
       it "doesn't merge the custom resource if it doesn't exist" do
-        mock(loader).read_resource_file('foo/bar.yml') { "foo: bar" }
+        mock(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
         loader.get_resource(:foo, :bar).should == { :foo => "bar" }
       end
 
       it 'merges the given file with its corresponding custom resource if it exists' do
-        mock(loader).read_resource_file('foo/bar.yml') { "foo: bar" }
+        mock(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
         mock(loader).resource_exists?('custom/foo/bar.yml') { true }
-        mock(loader).read_resource_file('custom/foo/bar.yml') { "bar: baz" }
+        mock(loader).read_resource_file('custom/foo/bar.yml') { ":bar: baz" }
 
         # make sure load_resource is called with custom = false the second time
         mock.proxy(loader).load_resource("foo/bar.yml")

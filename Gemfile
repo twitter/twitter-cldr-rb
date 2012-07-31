@@ -11,6 +11,8 @@ group :development do
   gem 'nokogiri'
   gem 'ruby_parser', '~> 2.3.1'
 
+  gem 'ruby-cldr', :github => 'KL-7/ruby-cldr', :branch => 'for-twitter-cldr'
+
   platform :ruby do
     gem 'therubyracer',  '~> 0.9.10'
     gem 'uglifier',      '~> 1.2.4'

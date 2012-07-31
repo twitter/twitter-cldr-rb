@@ -29,25 +29,25 @@ describe 'Unicode Collation Algorithm' do
   def run_test(file_path)
     collator = Collator.new
 
-    previous_sort_key = previous_code_points = previous_hex_code_points = nil
+    previous_sort_key = previous_code_points = previous_str_code_points = nil
 
     File.open(file_path, 'r:utf-8') do |file|
       file.each do |line|
         next unless /^([0-9A-F ]+);/ =~ line
 
-        current_code_points = $1.split
-        current_hex_code_points = current_code_points.map { |cp| cp.to_i(16) }
+        current_str_code_points = $1.split
+        current_code_points     = current_str_code_points.map(&:hex)
 
         current_sort_key = collator.get_sort_key(current_code_points)
 
         if previous_sort_key
-          result = (previous_sort_key <=> current_sort_key).nonzero? || (previous_hex_code_points <=> current_hex_code_points)
-          result.should(eq(-1), error_message(previous_code_points, previous_sort_key, current_code_points, current_sort_key))
+          result = (previous_sort_key <=> current_sort_key).nonzero? || (previous_code_points <=> current_code_points)
+          result.should(eq(-1), error_message(previous_str_code_points, previous_sort_key, current_str_code_points, current_sort_key))
         end
 
         previous_sort_key        = current_sort_key
         previous_code_points     = current_code_points
-        previous_hex_code_points = current_hex_code_points
+        previous_str_code_points = current_str_code_points
       end
     end
   end

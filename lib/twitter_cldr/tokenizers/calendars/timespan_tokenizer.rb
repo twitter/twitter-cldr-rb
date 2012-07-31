@@ -6,17 +6,21 @@
 module TwitterCldr
   module Tokenizers
     class TimespanTokenizer < Base
+
       VALID_UNITS = [:second, :minute, :hour, :day, :week, :month, :year]
 
       def initialize(options = {})
         super(options)
 
         @token_splitter_regex = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/ # creates spaces
-        @token_type_regexes   = [
+
+        @token_type_regexes = [
             { :type => :pattern, :regex => /[0?#,\.]*/ }, # splits token at right places
             { :type => :plaintext, :regex => // }
         ]
+
         @base_path = [:units]
+
         @paths = {
             :ago => {
                 :default => :'hour-past',
@@ -64,13 +68,13 @@ module TwitterCldr
             pluralization = 2 if token_exists(path + [2])
         end
         path << pluralization
+
         tokens_with_placeholders_for(path) if token_exists(path)
       end
 
       def token_exists(path)
-        @@token_cache ||= {}
         cache_key = compute_cache_key(@locale, path.join('.'))
-        true if @@token_cache.include?(cache_key) || traverse(path)
+        token_cache.include?(cache_key) || !!traverse(path)
       end
 
       def all_types_for(unit, direction)
@@ -78,6 +82,10 @@ module TwitterCldr
       end
 
       protected
+
+      def token_cache
+        @token_cache ||= {}
+      end
 
       def full_path(direction, unit, type)
         @base_path + [@paths[direction][unit], type]

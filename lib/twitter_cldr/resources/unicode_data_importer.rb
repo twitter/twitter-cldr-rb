@@ -3,16 +3,19 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'lib/twitter_cldr/resources/download'
+
 module TwitterCldr
   module Resources
 
     class UnicodeDataImporter
 
+      BLOCKS_URL       = 'ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt'
+      UNICODE_DATA_URL = 'ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt'
+
       # Arguments:
       #
-      #   input_path  - path to a directory containing Blocks.txt (available at ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt)
-      #                 and UnicodeData.txt (available at ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt)
-      #
+      #   input_path  - path to a directory containing Blocks.txt and UnicodeData.txt
       #   output_path - output directory for imported YAML files
       #
       def initialize(input_path, output_path)
@@ -36,7 +39,7 @@ module TwitterCldr
       def import_blocks
         blocks = {}
 
-        File.open(File.join(@input_path, 'Blocks.txt')) do |input|
+        File.open(blocks_file) do |input|
           input.each_line do |line|
             next unless line =~ /^([0-9A-F]+)\.\.([0-9A-F]+);(.+)$/
 
@@ -53,7 +56,7 @@ module TwitterCldr
       def import_unicode_data(blocks)
         unicode_data = Hash.new { |hash, key| hash[key] = Hash.new { |h, k| h[k] = {} } }
 
-        File.open(File.join(@input_path, 'UnicodeData.txt')) do |input|
+        File.open(unicode_data_file) do |input|
           input.each_line do |line|
             data = line.chomp.split(';', -1)
             data[0] = data[0].hex
@@ -63,6 +66,14 @@ module TwitterCldr
         end
 
         unicode_data
+      end
+
+      def unicode_data_file
+        TwitterCldr::Resources.download_if_necessary(File.join(@input_path, 'UnicodeData.txt'), UNICODE_DATA_URL)
+      end
+
+      def blocks_file
+        TwitterCldr::Resources.download_if_necessary(File.join(@input_path, 'Blocks.txt'), BLOCKS_URL)
       end
 
       def find_block(blocks, code_point)

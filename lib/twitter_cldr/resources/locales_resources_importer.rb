@@ -3,8 +3,9 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'cldr/download'
 require 'cldr/export'
+
+require 'lib/twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
@@ -13,6 +14,11 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
+      # Arguments:
+      #
+      #   input_path  - path to a directory containing CLDR data
+      #   output_path - output directory for imported YAML files
+      #
       def initialize(input_path, output_path)
         @input_path  = input_path
         @output_path = output_path
@@ -26,7 +32,7 @@ module TwitterCldr
       private
 
       def prepare_ruby_cldr
-        Cldr.download(nil, @input_path) unless File.directory?(@input_path)
+        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
         Cldr::Export::Data.dir = File.join(@input_path, 'common')
       end
 

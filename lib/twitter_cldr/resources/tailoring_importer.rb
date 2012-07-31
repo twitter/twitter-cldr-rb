@@ -6,6 +6,8 @@
 require 'nokogiri'
 require 'java'
 
+require 'lib/twitter_cldr/resources/download'
+
 module TwitterCldr
   module Resources
     # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version 49.1 (available at
@@ -36,12 +38,8 @@ module TwitterCldr
 
       # Arguments:
       #
-      #   input_path  - path to a directory containing CLDR tailoring data (available at
-      #                 http://unicode.org/cldr/trac/browser/tags/release-21/common/collation/
-      #                 or as a part of CLDR release at http://cldr.unicode.org/index/downloads)
-      #
+      #   input_path  - path to a directory containing CLDR data
       #   output_path - output directory for imported YAML files
-      #
       #   icu4j_path  - path to ICU4J jar file
       #
       def initialize(input_path, output_path, icu4j_path)
@@ -51,7 +49,14 @@ module TwitterCldr
         @output_path = output_path
       end
 
-      def import(locale)
+      def import(locales)
+        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
+        locales.each { |locale| import_locale(locale) }
+      end
+
+      private
+
+      def import_locale(locale)
         print "Importing %8s\t--\t" % locale
 
         if tailoring_present?(locale)
@@ -64,8 +69,6 @@ module TwitterCldr
       rescue ImportError => e
         puts "Error: #{e.message}"
       end
-
-      private
 
       def dump(locale, data)
         File.open(resource_file_path(locale), 'w') { |file| YAML.dump(data, file) }
@@ -80,7 +83,7 @@ module TwitterCldr
       end
 
       def locale_file_path(locale)
-        File.join(@input_path, "#{translated_locale(locale)}.xml")
+        File.join(@input_path, 'common', 'collation', "#{translated_locale(locale)}.xml")
       end
 
       def resource_file_path(locale)

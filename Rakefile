@@ -42,47 +42,11 @@ end
 
 namespace :resources do
   namespace :update do
-    desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
-    task :tailoring, :cldr_data_path, :icu4j_jar_path do |_, args|
-      importer = TwitterCldr::Resources::TailoringImporter.new(
-          args[:tailoring_data_path] || '../cldr/tailoring/',
-          './resources/collation/tailoring',
-          args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
-      )
-
-      TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
-    end
-
-    desc 'Update default and tailoring tries dumps'
-    task :tries do
-      TwitterCldr::Resources::TriesDumper.update_dumps
-    end
-
-    desc 'Import Unicode data resources'
-    task :unicode_data, :unicode_data_path do |_, args|
-      TwitterCldr::Resources::UnicodeDataImporter.new(
-          args[:unicode_data_path] || '../cldr/unicode-data',
-          './resources/unicode_data'
-      ).import
-    end
-
-    desc 'Update canonical compositions resource'
-    task :canonical_compositions do
-      TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
-    end
-
-    desc 'Import composition exclusions resource'
-    task :composition_exclusions do |_, args|
-      TwitterCldr::Resources::CompositionExclusionsImporter.new(
-          args[:derived_normalization_props_path] || '../cldr/DerivedNormalizationProps.txt',
-          './resources/unicode_data'
-      ).import
-    end
 
     desc 'Import locales resources'
-    task :locales_resources do |_, args|
+    task :locales_resources, :cldr_path do |_, args|
       TwitterCldr::Resources::LocalesResourcesImporter.new(
-          args[:cldr_data_path] || '../cldr/cldr-data',
+          args[:cldr_path] || '../cldr',
           './resources/locales'
       ).import
     end
@@ -91,6 +55,42 @@ namespace :resources do
     task :custom_locales_resources do
       TwitterCldr::Resources::CustomLocalesResourcesImporter.new('./resources/custom/locales').import
     end
+
+    desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
+    task :tailoring, :cldr_path, :icu4j_jar_path do |_, args|
+      TwitterCldr::Resources::TailoringImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/collation/tailoring',
+          args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
+      ).import(TwitterCldr.supported_locales)
+    end
+
+    desc 'Import Unicode data resources'
+    task :unicode_data, :unicode_data_path do |_, args|
+      TwitterCldr::Resources::UnicodeDataImporter.new(
+          args[:unicode_data_path] || '../unicode-data',
+          './resources/unicode_data'
+      ).import
+    end
+
+    desc 'Import composition exclusions resource'
+    task :composition_exclusions, :derived_normalization_props_path do |_, args|
+      TwitterCldr::Resources::CompositionExclusionsImporter.new(
+          args[:derived_normalization_props_path] || '../unicode-data/DerivedNormalizationProps.txt',
+          './resources/unicode_data'
+      ).import
+    end
+
+    desc 'Update default and tailoring tries dumps'
+    task :tries do
+      TwitterCldr::Resources::TriesDumper.update_dumps
+    end
+
+    desc 'Update canonical compositions resource'
+    task :canonical_compositions do
+      TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
+    end
+
   end
 end
 

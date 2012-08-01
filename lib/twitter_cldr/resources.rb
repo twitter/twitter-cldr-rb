@@ -10,6 +10,7 @@ module TwitterCldr
     autoload :CustomLocalesResourcesImporter, 'twitter_cldr/resources/custom_locales_resources_importer'
     autoload :Loader,                         'twitter_cldr/resources/loader'
     autoload :LocalesResourcesImporter,       'twitter_cldr/resources/locales_resources_importer'
+    autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
     autoload :TriesDumper,                    'twitter_cldr/resources/tries_dumper'
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'

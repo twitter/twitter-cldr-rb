@@ -10,8 +10,8 @@ include TwitterCldr::Normalization
 describe Base do
   describe "#combining_class_for" do
     it "returns the correct combining class for select code points" do
-      Base.combining_class_for("0303").should == 230  # combining tilde
-      Base.combining_class_for("006E").should == 0    # latin letter n
+      Base.combining_class_for(0x303).should == 230  # combining tilde
+      Base.combining_class_for(0x6E).should  == 0    # latin letter n
     end
   end
 end

@@ -4,8 +4,9 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'nokogiri'
-require 'yaml'
 require 'java'
+
+require 'lib/twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
@@ -31,18 +32,14 @@ module TwitterCldr
           :pt => :root
       }
 
-      EMPTY_TAILORING_DATA = { 'collator_options' => {}, 'tailored_table' => '', 'suppressed_contractions' => '' }
+      EMPTY_TAILORING_DATA = { :collator_options => {}, :tailored_table => '', :suppressed_contractions => '' }
 
       class ImportError < RuntimeError; end
 
       # Arguments:
       #
-      #   input_path  - path to a directory containing CLDR tailoring data (available at
-      #                 http://unicode.org/cldr/trac/browser/tags/release-21/common/collation/
-      #                 or as a part of CLDR release at http://cldr.unicode.org/index/downloads)
-      #
+      #   input_path  - path to a directory containing CLDR data
       #   output_path - output directory for imported YAML files
-      #
       #   icu4j_path  - path to ICU4J jar file
       #
       def initialize(input_path, output_path, icu4j_path)
@@ -52,7 +49,14 @@ module TwitterCldr
         @output_path = output_path
       end
 
-      def import(locale)
+      def import(locales)
+        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
+        locales.each { |locale| import_locale(locale) }
+      end
+
+      private
+
+      def import_locale(locale)
         print "Importing %8s\t--\t" % locale
 
         if tailoring_present?(locale)
@@ -65,8 +69,6 @@ module TwitterCldr
       rescue ImportError => e
         puts "Error: #{e.message}"
       end
-
-      private
 
       def dump(locale, data)
         File.open(resource_file_path(locale), 'w') { |file| YAML.dump(data, file) }
@@ -81,7 +83,7 @@ module TwitterCldr
       end
 
       def locale_file_path(locale)
-        File.join(@input_path, "#{translated_locale(locale)}.xml")
+        File.join(@input_path, 'common', 'collation', "#{translated_locale(locale)}.xml")
       end
 
       def resource_file_path(locale)
@@ -100,9 +102,9 @@ module TwitterCldr
         standard_tailoring = collations.at_xpath('collation[@type="standard"]')
 
         {
-            'collator_options'        => parse_collator_options(standard_tailoring),
-            'tailored_table'          => parse_tailorings(standard_tailoring, locale),
-            'suppressed_contractions' => parse_suppressed_contractions(standard_tailoring)
+            :collator_options        => parse_collator_options(standard_tailoring),
+            :tailored_table          => parse_tailorings(standard_tailoring, locale),
+            :suppressed_contractions => parse_suppressed_contractions(standard_tailoring)
         }
       end
 
@@ -140,7 +142,7 @@ module TwitterCldr
       end
 
       def table_entry_for_rule(collator, tailored_value)
-        code_points = get_code_points(tailored_value)
+        code_points = get_code_points(tailored_value).map { |cp| cp.to_s(16).upcase.rjust(4, '0') }
 
         collation_elements = get_collation_elements(collator, tailored_value).map do |ce|
           ce.map { |l| l.to_s(16).upcase }.join(', ')
@@ -162,7 +164,7 @@ module TwitterCldr
           options['case_first'] = case_first_setting.attr('caseFirst').to_sym if case_first_setting
         end
 
-        options
+        TwitterCldr::Utils.deep_symbolize_keys(options)
       end
 
       def validate_tailoring_rule(rule)

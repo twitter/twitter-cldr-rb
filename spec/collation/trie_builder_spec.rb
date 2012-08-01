@@ -102,17 +102,16 @@ END
   let(:tailoring_resource_stub) do
 <<END
 ---
-collator_options:
-  case_first: upper
-tailored_table: ! '0491; [5C1B, 5, 5]
+:collator_options:
+  :case_first: upper
+:tailored_table: ! '0491; [5C1B, 5, 5]
 
   0490; [5C1B, 5, 86]'
-suppressed_contractions: ГК
-...
+:suppressed_contractions: ГК
 END
   end
 
-  let(:tailoring_data) { TwitterCldr::Utils.deep_symbolize_keys(YAML.load(tailoring_resource_stub)) }
+  let(:tailoring_data) { YAML.load(tailoring_resource_stub) }
 
   describe '.load_tailored_trie' do
     let(:locale)        { :xxx }
@@ -150,9 +149,7 @@ END
     end
 
     it 'do not copy other collation elements from the fallback' do
-      %w[0301 0306 041A 0413 0415].each do |code_point|
-        code_points = [code_point.to_i(16)]
-
+      [0x301, 0x306, 0x41A, 0x413, 0x415].each_slice(1) do |code_points|
         tailored_trie.get(code_points).should_not be_nil
         tailored_trie.get(code_points).object_id.should == fallback.get(code_points).object_id
       end

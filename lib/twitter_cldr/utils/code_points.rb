@@ -10,11 +10,11 @@ module TwitterCldr
       class << self
 
         def to_char(code_point)
-          [code_point.hex].pack('U*')
+          [code_point].pack('U*')
         end
 
         def from_char(char)
-          char.unpack('U*').first.to_s(16).upcase.rjust(4, '0')
+          char.unpack('U*').first
         end
 
         def from_chars(chars)

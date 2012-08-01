@@ -278,7 +278,7 @@ TwitterCLDR provides ways to retrieve individual code points as well as normaliz
 Retrieve data for code points:
 
 ```ruby
-code_point = TwitterCldr::Shared::CodePoint.for_hex("1F3E9")
+code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9)
 code_point.name             # "LOVE HOTEL"
 code_point.bidi_mirrored    # "N"
 code_point.category         # "So"
@@ -288,13 +288,13 @@ code_point.combining_class  # "0"
 Convert characters to code points:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.from_string("¿")  # ["00BF"]
+TwitterCldr::Utils::CodePoints.from_string("¿")  # [0xBF]
 ```
 
 Convert code points to characters:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.to_string(["00BF"])  # "¿"
+TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
 ```
 
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
@@ -306,29 +306,29 @@ TwitterCldr::Normalization::NFD.normalize("français")  # "français"
 Normalization is easier to see in hex:
 
 ```ruby
-# ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+# [101, 115, 112, 97, 241, 111, 108]
 TwitterCldr::Utils::CodePoints.from_string("español")
 
-# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+# [101, 115, 112, 97, 110, 771, 111, 108]
 TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
 ```
 
-Notice in the example above that the letter "ñ" was transformed from `00F1` to `006E 0303`, which represent the "n" and the "˜" respectively.
+Notice in the example above that the letter "ñ" was transformed from `241` to `110 771`, which represent the "n" and the "˜" respectively.
 
 A few convenience methods also exist for `String` that make it easy to normalize and get code points for strings:
 
 ```ruby
-# ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+# [101, 115, 112, 97, 241, 111, 108]
 "español".localize.code_points
 
-# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+# [101, 115, 112, 97, 110, 771, 111, 108]
 "español".localize.normalize.code_points
 ```
 
 Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, NFC, and NFKC algorithms are all supported (default is NFD):
 
 ```ruby
-# ["0065", "0073", "0070", "0061", "006E", "0303", "006F", "006C"]
+# [101, 115, 112, 97, 110, 771, 111, 108]
 "español".localize.normalize(:using => :NFKD).code_points
 ```
 

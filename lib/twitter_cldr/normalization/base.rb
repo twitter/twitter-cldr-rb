@@ -9,8 +9,14 @@ module TwitterCldr
 
       class << self
 
+        def normalize(string)
+          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
+          normalized_code_points = normalize_code_points(code_points)
+          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
+        end
+
         def combining_class_for(code_point)
-          TwitterCldr::Shared::CodePoint.for_hex(code_point).combining_class.to_i
+          TwitterCldr::Shared::CodePoint.find(code_point).combining_class.to_i
         rescue NoMethodError
           0
         end

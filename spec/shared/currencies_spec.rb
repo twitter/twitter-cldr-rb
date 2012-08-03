@@ -16,7 +16,7 @@ describe Currencies do
       countries = Currencies.countries
 
       countries.size.should == 112
-      TEST_COUNTRIES.each { |country| countries.should include(country) }
+      countries.should include(*TEST_COUNTRIES)
     end
   end
 
@@ -25,7 +25,7 @@ describe Currencies do
       codes = Currencies.currency_codes
 
       codes.size.should == 112
-      TEST_CODES.each { |code| codes.should include(code) }
+      codes.should include(*TEST_CODES)
     end
   end
 

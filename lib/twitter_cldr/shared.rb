@@ -10,6 +10,7 @@ module TwitterCldr
     autoload :Currencies,  'twitter_cldr/shared/currencies'
     autoload :Languages,   'twitter_cldr/shared/languages'
     autoload :Numbers,     'twitter_cldr/shared/numbers'
+    autoload :PhoneCodes,  'twitter_cldr/shared/phone_codes'
     autoload :PostalCodes, 'twitter_cldr/shared/postal_codes'
   end
 end

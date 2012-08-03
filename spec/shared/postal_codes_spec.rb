@@ -20,7 +20,7 @@ describe PostalCodes do
     end
 
     it 'returns supported territories' do
-      [:br, :fr, :jp].each { |territory| territories.should include(territory) }
+      territories.should include(:br, :fr, :jp)
     end
   end
 

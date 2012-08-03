@@ -1,0 +1,160 @@
+---
+:ad: !ruby/regexp /AD\d{3}/
+:am: !ruby/regexp /(37)?\d{4}/
+:ar: !ruby/regexp /([A-HJ-NP-Z])?\d{4}([A-Z]{3})?/
+:as: !ruby/regexp /96799/
+:at: !ruby/regexp /\d{4}/
+:au: !ruby/regexp /\d{4}/
+:ax: !ruby/regexp /22\d{3}/
+:az: !ruby/regexp /\d{4}/
+:ba: !ruby/regexp /\d{5}/
+:bb: !ruby/regexp /(BB\d{5})?/
+:bd: !ruby/regexp /\d{4}/
+:be: !ruby/regexp /\d{4}/
+:bg: !ruby/regexp /\d{4}/
+:bh: !ruby/regexp /((1[0-2]|[2-9])\d{2})?/
+:bm: !ruby/regexp /[A-Z]{2}[ ]?[A-Z0-9]{2}/
+:bn: !ruby/regexp /[A-Z]{2}[ ]?\d{4}/
+:br: !ruby/regexp /\d{5}[\-]?\d{3}/
+:by: !ruby/regexp /\d{6}/
+:ca: !ruby/regexp /[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ ]?\d[ABCEGHJ-NPRSTV-Z]\d/
+:cc: !ruby/regexp /6799/
+:ch: !ruby/regexp /\d{4}/
+:ck: !ruby/regexp /\d{4}/
+:cl: !ruby/regexp /\d{7}/
+:cn: !ruby/regexp /\d{6}/
+:cr: !ruby/regexp /\d{4,5}|\d{3}-\d{4}/
+:cs: !ruby/regexp /\d{5}/
+:cv: !ruby/regexp /\d{4}/
+:cx: !ruby/regexp /6798/
+:cy: !ruby/regexp /\d{4}/
+:cz: !ruby/regexp /\d{3}[ ]?\d{2}/
+:de: !ruby/regexp /\d{5}/
+:dk: !ruby/regexp /\d{4}/
+:do: !ruby/regexp /\d{5}/
+:dz: !ruby/regexp /\d{5}/
+:ec: !ruby/regexp /([A-Z]\d{4}[A-Z]|(?:[A-Z]{2})?\d{6})?/
+:ee: !ruby/regexp /\d{5}/
+:eg: !ruby/regexp /\d{5}/
+:es: !ruby/regexp /\d{5}/
+:et: !ruby/regexp /\d{4}/
+:fi: !ruby/regexp /\d{5}/
+:fk: !ruby/regexp /FIQQ 1ZZ/
+:fm: !ruby/regexp /(9694[1-4])([ \-]\d{4})?/
+:fo: !ruby/regexp /\d{3}/
+:fr: !ruby/regexp /\d{2}[ ]?\d{3}/
+:gb: !ruby/regexp /GIR[ ]?0AA|((AB|AL|B|BA|BB|BD|BH|BL|BN|BR|BS|BT|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(\d[\dA-Z]?[
+  ]?\d[ABD-HJLN-UW-Z]{2}))|BFPO[ ]?\d{1,4}/
+:ge: !ruby/regexp /\d{4}/
+:gf: !ruby/regexp /9[78]3\d{2}/
+:gg: !ruby/regexp /GY\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}/
+:gl: !ruby/regexp /39\d{2}/
+:gn: !ruby/regexp /\d{3}/
+:gp: !ruby/regexp /9[78][01]\d{2}/
+:gr: !ruby/regexp /\d{3}[ ]?\d{2}/
+:gs: !ruby/regexp /SIQQ 1ZZ/
+:gt: !ruby/regexp /\d{5}/
+:gu: !ruby/regexp /969[123]\d([ \-]\d{4})?/
+:gw: !ruby/regexp /\d{4}/
+:hm: !ruby/regexp /\d{4}/
+:hn: !ruby/regexp /(?:\d{5})?/
+:hr: !ruby/regexp /\d{5}/
+:ht: !ruby/regexp /\d{4}/
+:hu: !ruby/regexp /\d{4}/
+:id: !ruby/regexp /\d{5}/
+:ie: !ruby/regexp /((D|DUBLIN)?([1-9]|6[wW]|1[0-8]|2[024]))?/
+:il: !ruby/regexp /\d{5}/
+:im: !ruby/regexp /IM\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}/
+:in: !ruby/regexp /\d{6}/
+:io: !ruby/regexp /BBND 1ZZ/
+:iq: !ruby/regexp /\d{5}/
+:is: !ruby/regexp /\d{3}/
+:it: !ruby/regexp /\d{5}/
+:je: !ruby/regexp /JE\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}/
+:jo: !ruby/regexp /\d{5}/
+:jp: !ruby/regexp /\d{3}-\d{4}/
+:ke: !ruby/regexp /\d{5}/
+:kg: !ruby/regexp /\d{6}/
+:kh: !ruby/regexp /\d{5}/
+:kr: !ruby/regexp /\d{3}[\-]\d{3}/
+:kw: !ruby/regexp /\d{5}/
+:kz: !ruby/regexp /\d{6}/
+:la: !ruby/regexp /\d{5}/
+:lb: !ruby/regexp /(\d{4}([ ]?\d{4})?)?/
+:li: !ruby/regexp /(948[5-9])|(949[0-7])/
+:lk: !ruby/regexp /\d{5}/
+:lr: !ruby/regexp /\d{4}/
+:ls: !ruby/regexp /\d{3}/
+:lt: !ruby/regexp /\d{5}/
+:lu: !ruby/regexp /\d{4}/
+:lv: !ruby/regexp /\d{4}/
+:ma: !ruby/regexp /\d{5}/
+:mc: !ruby/regexp /980\d{2}/
+:md: !ruby/regexp /\d{4}/
+:me: !ruby/regexp /8\d{4}/
+:mg: !ruby/regexp /\d{3}/
+:mh: !ruby/regexp /969[67]\d([ \-]\d{4})?/
+:mk: !ruby/regexp /\d{4}/
+:mn: !ruby/regexp /\d{6}/
+:mp: !ruby/regexp /9695[012]([ \-]\d{4})?/
+:mq: !ruby/regexp /9[78]2\d{2}/
+:mt: !ruby/regexp /[A-Z]{3}[ ]?\d{2,4}/
+:mu: !ruby/regexp /(\d{3}[A-Z]{2}\d{3})?/
+:mv: !ruby/regexp /\d{5}/
+:mx: !ruby/regexp /\d{5}/
+:my: !ruby/regexp /\d{5}/
+:nc: !ruby/regexp /988\d{2}/
+:ne: !ruby/regexp /\d{4}/
+:nf: !ruby/regexp /2899/
+:ng: !ruby/regexp /(\d{6})?/
+:ni: !ruby/regexp /((\d{4}-)?\d{3}-\d{3}(-\d{1})?)?/
+:nl: !ruby/regexp /\d{4}[ ]?[A-Z]{2}/
+:no: !ruby/regexp /\d{4}/
+:np: !ruby/regexp /\d{5}/
+:nz: !ruby/regexp /\d{4}/
+:om: !ruby/regexp /(PC )?\d{3}/
+:pf: !ruby/regexp /987\d{2}/
+:pg: !ruby/regexp /\d{3}/
+:ph: !ruby/regexp /\d{4}/
+:pk: !ruby/regexp /\d{5}/
+:pl: !ruby/regexp /\d{2}-\d{3}/
+:pm: !ruby/regexp /9[78]5\d{2}/
+:pn: !ruby/regexp /PCRN 1ZZ/
+:pr: !ruby/regexp /00[679]\d{2}([ \-]\d{4})?/
+:pt: !ruby/regexp /\d{4}([\-]\d{3})?/
+:pw: !ruby/regexp /96940/
+:py: !ruby/regexp /\d{4}/
+:re: !ruby/regexp /9[78]4\d{2}/
+:ro: !ruby/regexp /\d{6}/
+:rs: !ruby/regexp /\d{6}/
+:ru: !ruby/regexp /\d{6}/
+:sa: !ruby/regexp /\d{5}/
+:se: !ruby/regexp /\d{3}[ ]?\d{2}/
+:sg: !ruby/regexp /\d{6}/
+:sh: !ruby/regexp /(ASCN|STHL) 1ZZ/
+:si: !ruby/regexp /\d{4}/
+:sj: !ruby/regexp /\d{4}/
+:sk: !ruby/regexp /\d{3}[ ]?\d{2}/
+:sm: !ruby/regexp /4789\d/
+:sn: !ruby/regexp /\d{5}/
+:so: !ruby/regexp /\d{5}/
+:sz: !ruby/regexp /[HLMS]\d{3}/
+:tc: !ruby/regexp /TKCA 1ZZ/
+:th: !ruby/regexp /\d{5}/
+:tj: !ruby/regexp /\d{6}/
+:tm: !ruby/regexp /\d{6}/
+:tn: !ruby/regexp /\d{4}/
+:tr: !ruby/regexp /\d{5}/
+:tw: !ruby/regexp /\d{3}(\d{2})?/
+:ua: !ruby/regexp /\d{5}/
+:us: !ruby/regexp /\d{5}([ \-]\d{4})?/
+:uy: !ruby/regexp /\d{5}/
+:uz: !ruby/regexp /\d{6}/
+:va: !ruby/regexp /00120/
+:ve: !ruby/regexp /\d{4}/
+:vi: !ruby/regexp /008(([0-4]\d)|(5[01]))([ \-]\d{4})?/
+:wf: !ruby/regexp /986\d{2}/
+:yt: !ruby/regexp /976\d{2}/
+:yu: !ruby/regexp /\d{5}/
+:za: !ruby/regexp /\d{4}/
+:zm: !ruby/regexp /\d{5}/

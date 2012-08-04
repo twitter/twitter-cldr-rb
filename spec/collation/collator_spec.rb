@@ -80,12 +80,11 @@ describe Collator do
   describe '#get_collation_elements' do
     let(:collator)           { Collator.new }
     let(:string)             { 'abc' }
-    let(:code_points_hex)    { %w[0061 0062 0063] }
-    let(:code_points)        { code_points_hex.map { |cp| cp.to_i(16) } }
+    let(:code_points)        { [0x61, 0x62, 0x63] }
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
 
     before :each do
-      mock(TwitterCldr::Normalization::NFD).normalize_code_points(code_points_hex) { code_points_hex }
+      mock(TwitterCldr::Normalization::NFD).normalize_code_points(code_points) { code_points }
       stub(TwitterCldr::Normalization::Base).combining_class_for { 0 }
     end
 
@@ -94,14 +93,14 @@ describe Collator do
     end
 
     it 'returns collation elements for an array of code points (represented as hex strings)' do
-      collator.get_collation_elements(code_points_hex).should == collation_elements
+      collator.get_collation_elements(code_points).should == collation_elements
     end
   end
 
   describe '#get_sort_key' do
     let(:collator)           { Collator.new }
     let(:string)             { 'abc' }
-    let(:code_points_hex)    { %w[0061 0062 0063] }
+    let(:code_points)        { [0x61, 0x62, 0x63] }
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
@@ -116,8 +115,8 @@ describe Collator do
       end
 
       it 'calculates sort key for an array of code points (represented as hex strings)' do
-        mock(collator).get_collation_elements(code_points_hex) { collation_elements }
-        collator.get_sort_key(code_points_hex).should == sort_key
+        mock(collator).get_collation_elements(code_points) { collation_elements }
+        collator.get_sort_key(code_points).should == sort_key
       end
     end
 
@@ -131,10 +130,10 @@ describe Collator do
 
         collator = Collator.new(locale)
 
-        mock(collator).get_collation_elements(code_points_hex) { collation_elements }
+        mock(collator).get_collation_elements(code_points) { collation_elements }
         mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first) { sort_key }
 
-        collator.get_sort_key(code_points_hex).should == sort_key
+        collator.get_sort_key(code_points).should == sort_key
       end
     end
   end
@@ -210,28 +209,28 @@ describe Collator do
 
     describe 'tailoring rules support' do
       it 'tailored collation elements are used' do
-        default_collator.get_collation_elements(%w[0490]).should  == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
-        tailored_collator.get_collation_elements(%w[0490]).should == [[0x5C1B, 5, 0x86]]
+        default_collator.get_collation_elements([0x490]).should  == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
+        tailored_collator.get_collation_elements([0x490]).should == [[0x5C1B, 5, 0x86]]
 
-        default_collator.get_collation_elements(%w[0491]).should  == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
-        tailored_collator.get_collation_elements(%w[0491]).should == [[0x5C1B, 5, 5]]
+        default_collator.get_collation_elements([0x491]).should  == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
+        tailored_collator.get_collation_elements([0x491]).should == [[0x5C1B, 5, 5]]
       end
 
       it 'original contractions for tailored elements are applied' do
-        default_collator.get_collation_elements(%w[0491 0306]).should  == [[0x5C, 0xDB, 9]]
-        tailored_collator.get_collation_elements(%w[0491 0306]).should == [[0x5C, 0xDB, 9]]
+        default_collator.get_collation_elements([0x491, 0x306]).should  == [[0x5C, 0xDB, 9]]
+        tailored_collator.get_collation_elements([0x491, 0x306]).should == [[0x5C, 0xDB, 9]]
       end
     end
 
     describe 'contractions suppressing support' do
       it 'suppressed contractions are ignored' do
-        default_collator.get_collation_elements(%w[041A 0301]).should  == [[0x5CCC, 5, 0x8F]]
-        tailored_collator.get_collation_elements(%w[041A 0301]).should == [[0x5C6C, 5, 0x8F], [0, 0x8D, 5]]
+        default_collator.get_collation_elements([0x41A, 0x301]).should  == [[0x5CCC, 5, 0x8F]]
+        tailored_collator.get_collation_elements([0x41A, 0x301]).should == [[0x5C6C, 5, 0x8F], [0, 0x8D, 5]]
       end
 
       it 'non-suppressed contractions are used' do
-        default_collator.get_collation_elements(%w[0415 0306]).should  == [[0x5C36, 5, 0x8F]]
-        tailored_collator.get_collation_elements(%w[0415 0306]).should == [[0x5C36, 5, 0x8F]]
+        default_collator.get_collation_elements([0x415, 0x306]).should  == [[0x5C36, 5, 0x8F]]
+        tailored_collator.get_collation_elements([0x415, 0x306]).should == [[0x5C36, 5, 0x8F]]
       end
     end
 

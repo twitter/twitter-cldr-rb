@@ -1,113 +1,114 @@
-ru: 
-  calendars: 
-    gregorian: 
-      days: 
-        format: 
-          abbreviated: 
-            fri: пт
-            mon: пн
-            sat: сб
-            sun: вс
-            thu: чт
-            tue: вт
-            wed: ср
-          narrow: 
-            fri: П
-            mon: Пн
-            sat: С
-            sun: В
-            thu: Ч
-            tue: Вт
-            wed: С
-          wide: 
-            fri: пятница
-            mon: понедельник
-            sat: суббота
-            sun: воскресенье
-            thu: четверг
-            tue: вторник
-            wed: среда
-        stand-alone: 
-          abbreviated: 
-            fri: Пт
-            mon: Пн
-            sat: Сб
-            sun: Вс
-            thu: Чт
-            tue: Вт
-            wed: Ср
-          narrow: 
-            fri: П
-            mon: П
-            sat: С
-            sun: В
-            thu: Ч
-            tue: В
-            wed: С
-          wide: 
-            fri: Пятница
-            mon: Понедельник
-            sat: Суббота
-            sun: Воскресенье
-            thu: Четверг
-            tue: Вторник
-            wed: Среда
-      eras: 
-        abbr: 
-          0: "до н.э."
+---
+:ru:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
+          :narrow:
+            :fri: П
+            :mon: Пн
+            :sat: С
+            :sun: В
+            :thu: Ч
+            :tue: Вт
+            :wed: С
+          :wide:
+            :fri: пятница
+            :mon: понедельник
+            :sat: суббота
+            :sun: воскресенье
+            :thu: четверг
+            :tue: вторник
+            :wed: среда
+        :stand-alone:
+          :abbreviated:
+            :fri: Пт
+            :mon: Пн
+            :sat: Сб
+            :sun: Вс
+            :thu: Чт
+            :tue: Вт
+            :wed: Ср
+          :narrow:
+            :fri: П
+            :mon: П
+            :sat: С
+            :sun: В
+            :thu: Ч
+            :tue: В
+            :wed: С
+          :wide:
+            :fri: Пятница
+            :mon: Понедельник
+            :sat: Суббота
+            :sun: Воскресенье
+            :thu: Четверг
+            :tue: Вторник
+            :wed: Среда
+      :eras:
+        :abbr:
+          0: до н.э.
           1: н.э.
-        name: 
-          0: "до н.э."
+        :name:
+          0: до н.э.
           1: н.э.
-        narrow: 
-          0: "до н.э."
+        :narrow:
+          0: до н.э.
           1: н.э.
-      fields: 
-        day: День
-        dayperiod: ДП/ПП
-        era: Эра
-        hour: Час
-        minute: Минута
-        month: Месяц
-        second: Секунда
-        week: Неделя
-        weekday: "День недели"
-        year: Год
-        zone: "Часовой пояс"
-      formats: 
-        date: 
-          default: :"calendars.gregorian.formats.date.medium"
-          full: 
-            pattern: "EEEE, d MMMM y 'г'."
-          long: 
-            pattern: "d MMMM y 'г'."
-          medium: 
-            pattern: dd.MM.yyyy
-          short: 
-            pattern: dd.MM.yy
-        datetime: 
-          default: :"calendars.gregorian.formats.datetime.medium"
-          full: 
-            pattern: "{{date}}, {{time}}"
-          long: 
-            pattern: "{{date}}, {{time}}"
-          medium: 
-            pattern: "{{date}}, {{time}}"
-          short: 
-            pattern: "{{date}}, {{time}}"
-        time: 
-          default: :"calendars.gregorian.formats.time.medium"
-          full: 
-            pattern: "H:mm:ss zzzz"
-          long: 
-            pattern: "H:mm:ss z"
-          medium: 
-            pattern: "H:mm:ss"
-          short: 
-            pattern: "H:mm"
-      months: 
-        format: 
-          abbreviated: 
+      :fields:
+        :day: День
+        :dayperiod: ДП/ПП
+        :era: Эра
+        :hour: Час
+        :minute: Минута
+        :month: Месяц
+        :second: Секунда
+        :week: Неделя
+        :weekday: День недели
+        :year: Год
+        :zone: Часовой пояс
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE, d MMMM y 'г'.
+          :long:
+            :pattern: d MMMM y 'г'.
+          :medium:
+            :pattern: dd.MM.yyyy
+          :short:
+            :pattern: dd.MM.yy
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}}, {{time}}'
+          :long:
+            :pattern: ! '{{date}}, {{time}}'
+          :medium:
+            :pattern: ! '{{date}}, {{time}}'
+          :short:
+            :pattern: ! '{{date}}, {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: H:mm:ss zzzz
+          :long:
+            :pattern: H:mm:ss z
+          :medium:
+            :pattern: H:mm:ss
+          :short:
+            :pattern: H:mm
+      :months:
+        :format:
+          :abbreviated:
             1: янв.
             10: окт.
             11: нояб.
@@ -120,7 +121,7 @@ ru:
             7: июля
             8: авг.
             9: сент.
-          narrow: 
+          :narrow:
             1: Я
             10: О
             11: Н
@@ -133,7 +134,7 @@ ru:
             7: И
             8: А
             9: С
-          wide: 
+          :wide:
             1: января
             10: октября
             11: ноября
@@ -146,8 +147,8 @@ ru:
             7: июля
             8: августа
             9: сентября
-        stand-alone: 
-          abbreviated: 
+        :stand-alone:
+          :abbreviated:
             1: Янв.
             10: Окт.
             11: Нояб.
@@ -160,7 +161,7 @@ ru:
             7: Июль
             8: Авг.
             9: Сент.
-          narrow: 
+          :narrow:
             1: Я
             10: О
             11: Н
@@ -173,7 +174,7 @@ ru:
             7: И
             8: А
             9: С
-          wide: 
+          :wide:
             1: Январь
             10: Октябрь
             11: Ноябрь
@@ -186,40 +187,40 @@ ru:
             7: Июль
             8: Август
             9: Сентябрь
-      periods: 
-        format: 
-          abbreviated: 
-            am: "до полудня"
-            pm: "после полудня"
-          narrow: 
-            am: дп
-            pm: пп
-          wide: 
-            am: "до полудня"
-            pm: "после полудня"
-        stand-alone: {}
-      quarters: 
-        format: 
-          abbreviated: 
-            1: "1-й кв."
-            2: "2-й кв."
-            3: "3-й кв."
-            4: "4-й кв."
-          narrow: 
+      :periods:
+        :format:
+          :abbreviated:
+            :am: до полудня
+            :pm: после полудня
+          :narrow:
+            :am: дп
+            :pm: пп
+          :wide:
+            :am: до полудня
+            :pm: после полудня
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: 1-й кв.
+            2: 2-й кв.
+            3: 3-й кв.
+            4: 4-й кв.
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          wide: 
-            1: "1-й квартал"
-            2: "2-й квартал"
-            3: "3-й квартал"
-            4: "4-й квартал"
-        stand-alone: 
-          abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          narrow: 
+          :wide:
+            1: 1-й квартал
+            2: 2-й квартал
+            3: 3-й квартал
+            4: 4-й квартал
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          wide: :"calendars.gregorian.quarters.format.wide"
+          :wide: :calendars.gregorian.quarters.format.wide

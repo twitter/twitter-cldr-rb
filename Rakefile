@@ -42,21 +42,71 @@ end
 
 namespace :resources do
   namespace :update do
-    desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
-    task :tailoring do
-      importer = TwitterCldr::Resources::TailoringImporter.new(
-          ENV.fetch('CLDR_DATA_PATH', '../cldr-tailoring/'),
-          './resources/collation/tailoring',
-          ENV.fetch('ICU4J_JAR_PATH', '../icu4j-49_1.jar')
-      )
 
-      TwitterCldr.supported_locales.each { |locale| importer.import(locale) }
+    desc 'Import locales resources'
+    task :locales_resources, :cldr_path do |_, args|
+      TwitterCldr::Resources::LocalesResourcesImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/locales'
+      ).import
     end
 
-    desc 'Updates default and tailoring tries dumps'
+    desc 'Import custom locales resources'
+    task :custom_locales_resources do
+      TwitterCldr::Resources::CustomLocalesResourcesImporter.new('./resources/custom/locales').import
+    end
+
+    desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
+    task :tailoring, :cldr_path, :icu4j_jar_path do |_, args|
+      TwitterCldr::Resources::TailoringImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/collation/tailoring',
+          args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
+      ).import(TwitterCldr.supported_locales)
+    end
+
+    desc 'Import Unicode data resources'
+    task :unicode_data, :unicode_data_path do |_, args|
+      TwitterCldr::Resources::UnicodeDataImporter.new(
+          args[:unicode_data_path] || '../unicode-data',
+          './resources/unicode_data'
+      ).import
+    end
+
+    desc 'Import composition exclusions resource'
+    task :composition_exclusions, :derived_normalization_props_path do |_, args|
+      TwitterCldr::Resources::CompositionExclusionsImporter.new(
+          args[:derived_normalization_props_path] || '../unicode-data/DerivedNormalizationProps.txt',
+          './resources/unicode_data'
+      ).import
+    end
+
+    desc 'Import postal codes resource'
+    task :postal_codes, :cldr_path do |_, args|
+      TwitterCldr::Resources::PostalCodesImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/shared'
+      ).import
+    end
+
+    desc 'Import phone codes resource'
+    task :phone_codes, :cldr_path do |_, args|
+      TwitterCldr::Resources::PhoneCodesImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/shared'
+      ).import
+    end
+
+    desc 'Update default and tailoring tries dumps'
     task :tries do
       TwitterCldr::Resources::TriesDumper.update_dumps
     end
+
+    desc 'Update canonical compositions resource'
+    task :canonical_compositions do
+      TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
+    end
+
   end
 end
 

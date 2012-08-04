@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source :rubygems
 
 gemspec
 
@@ -10,6 +10,8 @@ group :development do
   gem 'mustache', '~> 0.99.4'
   gem 'nokogiri'
   gem 'ruby_parser', '~> 2.3.1'
+
+  gem 'ruby-cldr', :github => 'KL-7/ruby-cldr', :branch => 'for-twitter-cldr'
 
   platform :ruby do
     gem 'therubyracer',  '~> 0.9.10'

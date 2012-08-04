@@ -37,10 +37,10 @@ module TwitterCldr
       end
 
       def get_collation_elements(string_or_code_points)
-        integer_code_points = get_normalized_code_points(string_or_code_points)
+        code_points = get_normalized_code_points(string_or_code_points)
 
         result = []
-        result.concat(code_point_collation_elements(integer_code_points)) until integer_code_points.empty?
+        result.concat(code_point_collation_elements(code_points)) until code_points.empty?
         result
       end
 
@@ -54,19 +54,13 @@ module TwitterCldr
         @locale ? self.class.tailored_trie(@locale) : self.class.default_trie
       end
 
-      def get_integer_code_points(code_points)
-        code_points.map { |code_point| code_point.to_i(16) }
-      end
-
       def get_normalized_code_points(str_or_code_points)
         code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
         # non-ignorable test from CollationTest_NON_IGNORABLE.txt). ICU uses some optimizations to apply normalization
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
-        code_points = TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
-
-        get_integer_code_points(code_points)
+        TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
       end
 
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value
@@ -74,8 +68,8 @@ module TwitterCldr
       #
       # NOTE (side-effect): all used code points are removed from the input array.
       #
-      def code_point_collation_elements(integer_code_points)
-        explicit_collation_elements(integer_code_points) || implicit_collation_elements(integer_code_points)
+      def code_point_collation_elements(code_points)
+        explicit_collation_elements(code_points) || implicit_collation_elements(code_points)
       end
 
       # Tries to build explicit collation elements array for the longest code points prefix in the given sequence. When
@@ -87,23 +81,23 @@ module TwitterCldr
       #
       # For more information see section '4.2 Produce Array' of the main algorithm at http://www.unicode.org/reports/tr10/#Main_Algorithm
       #
-      def explicit_collation_elements(integer_code_points)
+      def explicit_collation_elements(code_points)
         # find the longest prefix in the trie
-        collation_elements, prefix_size, suffixes = @trie.find_prefix(integer_code_points)
+        collation_elements, prefix_size, suffixes = @trie.find_prefix(code_points)
 
         return unless collation_elements
 
         # remove prefix from the code points sequence
-        integer_code_points.shift(prefix_size)
+        code_points.shift(prefix_size)
 
         non_starter_pos = 0
 
         used_combining_classes = {}
 
-        while non_starter_pos < integer_code_points.size && !suffixes.empty?
+        while non_starter_pos < code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
-          non_starter_code_point = integer_code_points[non_starter_pos]
-          combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point.to_s(16))
+          non_starter_code_point = code_points[non_starter_pos]
+          combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point)
 
           # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
           break if combining_class == 0 || used_combining_classes[combining_class]
@@ -120,7 +114,7 @@ module TwitterCldr
             suffixes           = new_suffixes
 
             # Remove non-starter from its position in the sequence. Then we can move further from the same position.
-            integer_code_points.delete_at(non_starter_pos)
+            code_points.delete_at(non_starter_pos)
           else
             # move to the next code point
             non_starter_pos += 1
@@ -130,8 +124,8 @@ module TwitterCldr
         collation_elements
       end
 
-      def implicit_collation_elements(integer_code_points)
-        TwitterCldr::Collation::ImplicitCollationElements.for_code_point(integer_code_points.shift)
+      def implicit_collation_elements(code_points)
+        TwitterCldr::Collation::ImplicitCollationElements.for_code_point(code_points.shift)
       end
 
       class << self

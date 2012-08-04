@@ -16,65 +16,48 @@ module TwitterCldr
     #
     class NFKD < Base
 
+
       class << self
 
-        def normalize(string)
-          code_points = TwitterCldr::Utils::CodePoints.from_string(string)
-          normalized_code_points = normalize_code_points(code_points)
-          TwitterCldr::Utils::CodePoints.to_string(normalized_code_points)
-        end
-
         def normalize_code_points(code_points)
-          canonical_ordering(decomposition(code_points))
+          canonical_ordering(decompose(code_points))
         end
 
         protected
 
-        def decomposition(code_points)
+        def decompose(code_points)
           code_points.map { |code_point| decompose_recursively(code_point) }.flatten
         end
 
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
         #
         def decompose_recursively(code_point)
-          unicode_data = TwitterCldr::Shared::CodePoint.for_hex(code_point)
+          unicode_data = TwitterCldr::Shared::CodePoint.find(code_point)
           return code_point unless unicode_data
 
           if unicode_data.hangul_type == :compositions
             decompose_hangul(code_point)
           else
-            decompose_regular(code_point, decomposition_mapping(unicode_data))
+            decompose_regular(unicode_data)
           end
         end
 
         # Decomposes regular (non-Hangul) code point.
         #
-        def decompose_regular(code_point, mapping)
-          if mapping && !mapping.empty?
-            mapping.map{ |cp| decompose_recursively(cp) }.flatten
+        def decompose_regular(unicode_data)
+          if decompose?(unicode_data)
+            unicode_data.decomposition.map { |code_point| decompose_recursively(code_point) }.flatten
           else
-            code_point
+            unicode_data.code_point
           end
         end
 
-        # Returns code point's Decomposition Mapping based on its Unicode data.
-        #
-        def decomposition_mapping(unicode_data)
-          mapping = parse_decomposition_mapping(unicode_data)
-          mapping.shift if compatibility_decomposition?(mapping) # remove compatibility formatting tag
-          mapping
-        end
-
-        def compatibility_decomposition?(mapping)
-          !!(COMPATIBILITY_FORMATTING_TAG_REGEXP =~ mapping.first)
-        end
-
-        def parse_decomposition_mapping(unicode_data)
-          unicode_data.decomposition.split
+        def decompose?(unicode_data)
+          !!unicode_data.decomposition
         end
 
         def decompose_hangul(code_point)
-          TwitterCldr::Normalization::Hangul.decompose(code_point.hex).map { |e| e.to_s(16).upcase }
+          TwitterCldr::Normalization::Hangul.decompose(code_point)
         end
 
         # Performs the Canonical Ordering Algorithm by stable sorting of every subsequence of combining code points
@@ -127,15 +110,7 @@ module TwitterCldr
           code_points_with_cc
         end
 
-        def combining_class_for(code_point)
-          TwitterCldr::Shared::CodePoint.for_hex(code_point).combining_class.to_i
-        rescue NoMethodError
-          0
-        end
-
       end
-
-      COMPATIBILITY_FORMATTING_TAG_REGEXP = /^<.*>$/
 
     end
   end

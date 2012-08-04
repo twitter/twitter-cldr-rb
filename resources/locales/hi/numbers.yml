@@ -1,16 +1,17 @@
-hi: 
-  numbers: 
-    formats: 
-      currency: 
-        patterns: 
-          default: "¤ #,##,##0.00"
-        unit: 
-          one: "{0} {1}"
-          other: "{0} {1}"
-      decimal: 
-        patterns: 
-          default: "#,##,##0.###"
-          short: 
+---
+:hi:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤ #,##,##0.00
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##,##0.###'
+          :short:
             1000: 0.0K
             10000: 00K
             100000: 000K
@@ -23,21 +24,21 @@ hi:
             1000000000000: 0.0T
             10000000000000: 00T
             100000000000000: 000T
-      percent: 
-        patterns: 
-          default: "#,##,##0%"
-      scientific: 
-        patterns: 
-          default: "#E0"
-    symbols: 
-      alias: ""
-      decimal: "."
-      exponential: E
-      group: ","
-      infinity: ∞
-      list: ;
-      minus_sign: "-"
-      nan: NaN
-      per_mille: ‰
-      percent_sign: "%"
-      plus_sign: +
+      :percent:
+        :patterns:
+          :default: ! '#,##,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: .
+      :exponential: E
+      :group: ! ','
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

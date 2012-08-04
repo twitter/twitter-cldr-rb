@@ -133,7 +133,7 @@ describe LocalizedString do
 
   describe "#code_points" do
     it "returns an array of Unicode code points for the string" do
-      "español".localize.code_points.should == ["0065", "0073", "0070", "0061", "00F1", "006F", "006C"]
+      "español".localize.code_points.should == [0x65, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C]
     end
   end
 

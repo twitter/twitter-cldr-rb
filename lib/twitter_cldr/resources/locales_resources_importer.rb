@@ -10,9 +10,9 @@ require 'lib/twitter_cldr/resources/download'
 module TwitterCldr
   module Resources
 
-    COMPONENTS = %w[calendars languages numbers units plurals]
-
     class LocalesResourcesImporter
+
+      COMPONENTS = %w[calendars languages numbers units plurals]
 
       # Arguments:
       #

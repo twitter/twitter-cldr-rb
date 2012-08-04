@@ -16,11 +16,11 @@ module TwitterCldr
 
       # Arguments:
       #
-      #   input_file  - path to DerivedNormalizationProps.txt file
+      #   input_path  - path to DerivedNormalizationProps.txt file
       #   output_path - output directory for generated YAML file
       #
-      def initialize(input_file, output_path)
-        @input_file  = input_file
+      def initialize(input_path, output_path)
+        @input_path  = input_path
         @output_path = output_path
       end
 
@@ -54,7 +54,7 @@ module TwitterCldr
       end
 
       def composition_exclusions_file
-        TwitterCldr::Resources.download_if_necessary(@input_file, COMPOSITION_EXCLUSIONS_URL)
+        TwitterCldr::Resources.download_if_necessary(@input_path, COMPOSITION_EXCLUSIONS_URL)
       end
 
     end

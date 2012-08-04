@@ -81,6 +81,22 @@ namespace :resources do
       ).import
     end
 
+    desc 'Import postal codes resource'
+    task :postal_codes, :cldr_path do |_, args|
+      TwitterCldr::Resources::PostalCodesImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/shared'
+      ).import
+    end
+
+    desc 'Import phone codes resource'
+    task :phone_codes, :cldr_path do |_, args|
+      TwitterCldr::Resources::PhoneCodesImporter.new(
+          args[:cldr_path] || '../cldr',
+          './resources/shared'
+      ).import
+    end
+
     desc 'Update default and tailoring tries dumps'
     task :tries do
       TwitterCldr::Resources::TriesDumper.update_dumps

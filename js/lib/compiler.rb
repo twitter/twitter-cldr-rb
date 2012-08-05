@@ -32,7 +32,9 @@ module TwitterCldr
         @renderers ||= {
           :plural_rules => TwitterCldr::Js::Renderers::PluralRules::PluralRulesRenderer,
           :timespan => TwitterCldr::Js::Renderers::Calendars::TimespanRenderer,
-          :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer
+          :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer,
+          :numbers => TwitterCldr::Js::Renderers::Numbers::NumbersRenderer,
+          :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer
         }
       end
     end

@@ -20,6 +20,10 @@ describe DecimalFormatter do
     it "should format negative decimals correctly" do
       @formatter.format(-12.0).should == "-12,0"
     end
+
+    it "should respect the :precision option" do
+      @formatter.format(-12, :precision => 3).should == "-12,000"
+    end
   end
 
   describe "#get_tokens" do

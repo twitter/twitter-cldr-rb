@@ -20,12 +20,6 @@ module TwitterCldr
       def default_format_options_for(number)
         { :precision => precision_from(number) }
       end
-
-      protected
-
-      def get_tokens(obj, options = {})
-        obj.abs == obj ? @tokenizer.tokens(:sign => :positive) : @tokenizer.tokens(:sign => :negative)
-      end
     end
   end
 end

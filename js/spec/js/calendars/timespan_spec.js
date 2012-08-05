@@ -15,7 +15,7 @@ describe("TimespanFormatter", function() {
         direction: "none"
       })).toEqual('0 years');
       expect(formatter.format(3273932, {
-        unit: "month"
+        unit: "month",
         direction: "none",
       })).toEqual('1 month');
       expect(formatter.format(3273932, {
@@ -38,7 +38,7 @@ describe("TimespanFormatter", function() {
         unit: "second",
         direction: "none"
       })).toEqual('3273932 seconds');
-    }),
+    });
 
     it("works for a variety of units in the past", function() {
       expect(formatter.format(-3273932, {

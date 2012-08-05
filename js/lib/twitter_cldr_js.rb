@@ -26,6 +26,7 @@ require 'renderers/plurals/rules/plural_rules_renderer'
 module TwitterCldr
   module Js
     def self.build(options = {})
+      options[:minify] = false
       TwitterCldr::Js::Compiler.new(options).compile do |bundle, locale|
         cur_file = (options[:file_name] || "twitter_cldr_%{locale}.js").gsub("%{locale}", locale.to_s)
 

@@ -44,6 +44,10 @@ module TwitterCldr
                   "#{statement_list(tree[1])} #{tree[2]} #{statement_list(tree[3])}"
                 when :include?
                   "#{statement_list(tree[1])}.indexOf(#{statement_list(tree[3])}) >= 0"
+                when :between?
+                  smt = "((#{statement_list(tree[1])} >= #{statement_list(tree[3][1])})"
+                  smt << " && (#{statement_list(tree[1])} <= #{statement_list(tree[3][2])}))"
+                  smt
                 else
                   # this should be the only case where tree[1] might be nil (i.e. the method was not called on any object)
                   call = tree[1] ? "#{statement_list(tree[1])}.#{tree[2]}" : tree[2].to_s
@@ -58,7 +62,7 @@ module TwitterCldr
 
             def _lit(tree)
               if tree[1].is_a?(Symbol) || tree[1].is_a?(String)
-                "\"#{tree[1]}\""
+                %Q("#{tree[1]}")
               else
                 tree[1]
               end

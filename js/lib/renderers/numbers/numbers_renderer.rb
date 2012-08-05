@@ -22,7 +22,7 @@ module TwitterCldr
           end
 
           def symbols
-            TwitterCldr::Tokenizers::NumberTokenizer.new.symbols.to_json
+            TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => @locale).symbols.to_json
           end
         end
       end

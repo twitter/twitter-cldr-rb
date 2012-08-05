@@ -15,4 +15,12 @@ describe PercentFormatter do
   it "should format the number correctly" do
     @formatter.format(12).should == "12 %"
   end
+
+  it "should format negative numbers correctly" do
+    @formatter.format(-12).should == "-12 %"
+  end
+
+  it "should respect the :precision option" do
+    @formatter.format(-12, :precision => 3).should match_normalized("-12,000 %")
+  end
 end

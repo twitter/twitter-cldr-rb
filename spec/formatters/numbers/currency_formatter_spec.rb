@@ -17,6 +17,11 @@ describe CurrencyFormatter do
       @formatter.format(12).should == "$12.00"
     end
 
+    it "handles negative numbers" do
+      # yes, the parentheses really are part of the format, don't worry about it
+      @formatter.format(-12).should == "-($12.00)"
+    end
+
     it "should use the specified currency symbol when specified" do
       # S/. is the symbol for the Peruvian Nuevo Sol, just in case you were curious
       @formatter.format(12, :currency => "S/.").should == "S/.12.00"

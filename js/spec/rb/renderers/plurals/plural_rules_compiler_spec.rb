@@ -21,6 +21,10 @@ describe PluralRulesCompiler do
       PluralRulesCompiler.rule_to_js("[2, 3, 4].include?(n)").should == "function(n) { return [2, 3, 4].indexOf(n) >= 0 }"
     end
 
+    it "handles a between? call" do
+      PluralRulesCompiler.rule_to_js("n.between?(0, 2)").should == "function(n) { return ((n >= 0) && (n <= 2)) }"
+    end
+
     it "handles the modulus operator" do
       PluralRulesCompiler.rule_to_js("n % 10").should == "function(n) { return n % 10 }"
     end

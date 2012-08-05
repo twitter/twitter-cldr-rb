@@ -35,8 +35,8 @@ module TwitterCldr
 
       def parse_number(number, options = {})
         precision = options[:precision] || self.precision_from(number)
-        number = round_to(number, precision)
-        number.abs.to_s.split(".")
+        number = "%.#{precision}f" % round_to(number, precision).abs
+        number.split(".")
       end
 
       def round_to(number, precision)
@@ -47,6 +47,10 @@ module TwitterCldr
       def precision_from(num)
         parts = num.to_s.split(".")
         parts.size == 2 ? parts[1].size : 0
+      end
+
+      def get_tokens(obj, options = {})
+        obj.abs == obj ? @tokenizer.tokens(:sign => :positive) : @tokenizer.tokens(:sign => :negative)
       end
     end
   end

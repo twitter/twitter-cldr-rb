@@ -6,6 +6,8 @@
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
+      VALID_TYPES = [:decimal, :percent, :currency]
+
       def initialize(options = {})
         super(options)
 
@@ -32,7 +34,12 @@ module TwitterCldr
 
           insert_point = traverse(key_path[0..-2])
           insert_point[:positive] = positive
-          insert_point[:negative] = negative ? negative : "#{symbols[:minus] || '-'}#{positive}"
+
+          if negative
+            insert_point[:negative] = "#{symbols[:minus] || '-'}#{negative}"
+          else
+            insert_point[:negative] = "#{symbols[:minus] || '-'}#{positive}"
+          end
         end
 
         sign = options[:sign] || :positive

@@ -42,12 +42,12 @@ describe NumberFormatter do
 
   describe "#parse_number" do
     it "should round and split the given number by decimal" do
-      @formatter.send(:parse_number, 12, :precision => 0).should == ["12", "0"]
-      @formatter.send(:parse_number, 12.2, :precision => 0).should == ["12", "0"]
-      @formatter.send(:parse_number, 12.5, :precision => 0).should == ["13", "0"]
+      @formatter.send(:parse_number, 12, :precision => 0).should == ["12"]
+      @formatter.send(:parse_number, 12.2, :precision => 0).should == ["12"]
+      @formatter.send(:parse_number, 12.5, :precision => 0).should == ["13"]
       @formatter.send(:parse_number, 12.25, :precision => 1).should == ["12", "3"]
       @formatter.send(:parse_number, 12.25, :precision => 2).should == ["12", "25"]
-      @formatter.send(:parse_number, 12.25, :precision => 3).should == ["12", "25"]
+      @formatter.send(:parse_number, 12.25, :precision => 3).should == ["12", "250"]
     end
   end
 

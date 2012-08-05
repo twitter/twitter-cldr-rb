@@ -21,8 +21,7 @@ module TwitterCldr
         int, fraction = parse_number(number, opts)
         result =  integer_format.apply(int, opts)
         result << fraction_format.apply(fraction, opts) if fraction
-        sign = number < 0 && prefix != "-" ? @symbols[:minus_sign] || DEFAULT_SYMBOLS[:minus_sign] : ""
-        "#{sign}#{prefix.to_s}#{result}#{suffix.to_s}"
+        "#{prefix.to_s}#{result}#{suffix.to_s}"
       end
 
       protected
@@ -48,6 +47,10 @@ module TwitterCldr
       def precision_from(num)
         parts = num.to_s.split(".")
         parts.size == 2 ? parts[1].size : 0
+      end
+
+      def get_tokens(obj, options = {})
+        obj.abs == obj ? @tokenizer.tokens(:sign => :positive) : @tokenizer.tokens(:sign => :negative)
       end
     end
   end

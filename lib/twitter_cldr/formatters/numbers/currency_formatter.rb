@@ -30,12 +30,6 @@ module TwitterCldr
         precision = precision_from(number)
         { :precision => precision == 0 ? DEFAULT_PRECISION : precision }
       end
-
-      protected
-
-      def get_tokens(obj, options = {})
-        obj.abs == obj ? @tokenizer.tokens(:sign => :positive) : @tokenizer.tokens(:sign => :negative)
-      end
     end
   end
 end

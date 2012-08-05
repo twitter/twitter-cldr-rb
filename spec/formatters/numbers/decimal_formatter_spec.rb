@@ -28,12 +28,12 @@ describe DecimalFormatter do
 
   describe "#get_tokens" do
     it "should ask the tokenizer for the tokens for a positive number" do
-      mock(@formatter.tokenizer).tokens({}) { true }
+      mock(@formatter.tokenizer).tokens(:sign => :positive) { true }
       @formatter.send(:get_tokens, 12)
     end
 
     it "should ask the tokenizer for the tokens for a negative number" do
-      mock(@formatter.tokenizer).tokens({}) { true }
+      mock(@formatter.tokenizer).tokens(:sign => :negative) { true }
       @formatter.send(:get_tokens, -12)
     end
   end

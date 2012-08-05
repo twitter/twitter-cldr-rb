@@ -1,3 +1,11 @@
+=== 1.7.0
+
+* Wrote rake tasks to update CLDR and ICU resources.
+* All resource files now written with symbolized keys so the gem doesn't have to recursively symbolize them on load.
+* Unicode code points now represented internally with integers instead of strings for better performance.
+* Added number formatting in JavaScript.
+* Added telephone code lookup functionality (per country) and postal code validation.
+
 === 1.6.2
 
 * Collation tries now loaded from marshal dumps, collation running time improved by ~80%.

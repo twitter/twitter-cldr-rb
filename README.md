@@ -271,6 +271,61 @@ TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)
 TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
 ```
 
+### Postal Codes
+
+The CLDR contains postal code validation regexes for a number of countries.
+
+```ruby
+# United States
+TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # true
+TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # false
+
+# England (Great Britain)
+TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # true
+
+# Sweden
+TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # true
+
+# Canada
+TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # true
+```
+
+Get a list of supported territories by using the `#territories` method:
+
+```ruby
+TwitterCldr::Shared::PostalCodes.territories  # [:ve, :iq, :cx, :cv, ...]
+```
+
+Just want the regex?  No problem:
+
+```ruby
+TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # /\d{5}([ \-]\d{4})?/
+```
+
+### Phone Codes
+
+Look up phone codes by territory:
+
+```ruby
+# United States
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # "1"
+
+# Perú
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # "51"
+
+# Egypt
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # "20"
+
+# Denmark
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # "45"
+```
+
+Get a list of supported territories by using the `#territories` method:
+
+```ruby
+TwitterCldr::Shared::PhoneCodes.territories  # [:zw, :an, :tr, :by, :mh, ...]
+```
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.

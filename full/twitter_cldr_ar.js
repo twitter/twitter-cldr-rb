@@ -2,45 +2,427 @@
 // Copyright 2012 Twitter, Inc
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// TwitterCLDR (JavaScript) v1.6.2
-// Authors: 		Cameron Dutro [@camertron]
-								Kirill Lashuk [@KL_7]
-								portions by Sven Fuchs [@svenfuchs]
-// Homepage: 		https://twitter.com
-// Description:	Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
+// TwitterCLDR (JavaScript) v1.7.0
+// Authors:     Cameron Dutro [@camertron]
+                Kirill Lashuk [@KL_7]
+                portions by Sven Fuchs [@svenfuchs]
+// Homepage:    https://twitter.com
+// Description: Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
 */
 
-var DateTimeFormatter, PluralRules, TimespanFormatter, TwitterCldr;
+var BaseHelper, Currencies, CurrencyFormatter, DateTimeFormatter, DecimalFormatter, FractionHelper, IntegerHelper, NumberFormatter, PercentFormatter, PluralRules, TimespanFormatter, TwitterCldr,
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 TwitterCldr = {};
 
-TwitterCldr.PluralRules = PluralRules = (function() {
+TwitterCldr.NumberFormatter = NumberFormatter = (function() {
 
-  function PluralRules() {}
+  function NumberFormatter() {
+    this.all_tokens = {"percent":{"positive":["","#,##0","%"],"negative":["-","#,##0","%"]},"decimal":{"positive":["","#,##0.###"],"negative":["-","#,##0.###","-"]},"currency":{"positive":["¤ ","#,##0.00"],"negative":["-¤ ","#,##0.00","-"]}};
+    this.tokens = [];
+    this.symbols = {"plus_sign":"+","infinity":"∞","minus_sign":"-","nan":"NaN","group":".","alias":"","per_mille":"‰","decimal":",","list":";","percent_sign":"%","exponential":"E"};
+    this.default_symbols = {
+      'group': ',',
+      'decimal': '.',
+      'plus_sign': '+',
+      'minus_sign': '-'
+    };
+  }
 
-  PluralRules.rules = {"keys": ["zero","one","two","few","many","other"], "rule": function(n) { return (function() { if (n == 0) { return "zero" } else { return (function() { if (n == 1) { return "one" } else { return (function() { if (n == 2) { return "two" } else { return (function() { if ([3, 4, 5, 6, 7, 8, 9, 10].indexOf(n % 100) >= 0) { return "few" } else { return (function() { if ([11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99].indexOf(n % 100) >= 0) { return "many" } else { return "other" } })(); } })(); } })(); } })(); } })(); }};
-
-  PluralRules.all = function() {
-    return this.rules.keys;
+  NumberFormatter.prototype.format = function(number, options) {
+    var fraction, fraction_format, int, integer_format, key, opts, prefix, result, sign, suffix, val, _ref, _ref1;
+    if (options == null) {
+      options = {};
+    }
+    opts = this.default_format_options_for(number);
+    for (key in options) {
+      val = options[key];
+      opts[key] = options[key] != null ? options[key] : opts[key];
+    }
+    _ref = this.partition_tokens(this.get_tokens(number, opts)), prefix = _ref[0], suffix = _ref[1], integer_format = _ref[2], fraction_format = _ref[3];
+    _ref1 = this.parse_number(number, opts), int = _ref1[0], fraction = _ref1[1];
+    result = integer_format.apply(parseFloat(int), opts);
+    if (fraction) {
+      result += fraction_format.apply(fraction, opts);
+    }
+    sign = number < 0 && prefix !== "-" ? this.symbols.minus_sign || this.default_symbols.minus_sign : "";
+    return "" + sign + prefix + result + suffix;
   };
 
-  PluralRules.rule_for = function(number) {
-    try {
-      return this.rules.rule(number);
-    } catch (error) {
-      return "other";
+  NumberFormatter.prototype.partition_tokens = function(tokens) {
+    return [tokens[0] || "", tokens[2] || "", new IntegerHelper(tokens[1], this.symbols), new FractionHelper(tokens[1], this.symbols)];
+  };
+
+  NumberFormatter.prototype.parse_number = function(number, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    if (options.precision != null) {
+      precision = options.precision;
+    } else {
+      precision = this.precision_from(number);
+    }
+    number = this.round_to(number, precision);
+    return Math.abs(number).toFixed(precision).split(".");
+  };
+
+  NumberFormatter.prototype.precision_from = function(num) {
+    var parts;
+    parts = num.toString().split(".");
+    if (parts.length === 2) {
+      return parts[1].length;
+    } else {
+      return 0;
     }
   };
 
-  return PluralRules;
+  NumberFormatter.prototype.round_to = function(number, precision) {
+    var factor;
+    factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+  };
+
+  NumberFormatter.prototype.get_tokens = function() {
+    throw "get_tokens() not implemented - use a derived class like PercentFormatter.";
+  };
+
+  return NumberFormatter;
 
 })();
+
+TwitterCldr.PercentFormatter = PercentFormatter = (function(_super) {
+
+  __extends(PercentFormatter, _super);
+
+  function PercentFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_percent_sign = "%";
+    PercentFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  PercentFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return PercentFormatter.__super__.format.call(this, number, options).replace('¤', this.symbols.percent_sign || this.default_percent_sign);
+  };
+
+  PercentFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: 0
+    };
+  };
+
+  PercentFormatter.prototype.get_tokens = function(number, options) {
+    if (number < 0) {
+      return this.all_tokens.percent.negative;
+    } else {
+      return this.all_tokens.percent.positive;
+    }
+  };
+
+  return PercentFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.DecimalFormatter = DecimalFormatter = (function(_super) {
+
+  __extends(DecimalFormatter, _super);
+
+  function DecimalFormatter() {
+    return DecimalFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  DecimalFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    try {
+      return DecimalFormatter.__super__.format.call(this, number, options);
+    } catch (error) {
+      return number;
+    }
+  };
+
+  DecimalFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: this.precision_from(number)
+    };
+  };
+
+  DecimalFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.decimal.negative;
+    } else {
+      return this.all_tokens.decimal.positive;
+    }
+  };
+
+  return DecimalFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.CurrencyFormatter = CurrencyFormatter = (function(_super) {
+
+  __extends(CurrencyFormatter, _super);
+
+  function CurrencyFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_currency_symbol = "$";
+    this.default_precision = 2;
+    CurrencyFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  CurrencyFormatter.prototype.format = function(number, options) {
+    var currency;
+    if (options == null) {
+      options = {};
+    }
+    if (options.currency) {
+      if (TwitterCldr.Currencies != null) {
+        currency = TwitterCldr.Currencies.for_code(options.currency);
+        currency || (currency = TwitterCldr.Currencies.for_country(options.currency));
+        currency || (currency = {
+          symbol: options.currency
+        });
+      } else {
+        currency = {
+          symbol: options.currency
+        };
+      }
+    } else {
+      currency = {
+        symbol: this.default_currency_symbol
+      };
+    }
+    return CurrencyFormatter.__super__.format.call(this, number, options).replace('¤', currency.symbol);
+  };
+
+  CurrencyFormatter.prototype.default_format_options_for = function(number) {
+    var precision;
+    precision = this.precision_from(number);
+    if (precision === 0) {
+      precision = this.default_precision;
+    }
+    return {
+      precision: precision
+    };
+  };
+
+  CurrencyFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.currency.negative;
+    } else {
+      return this.all_tokens.currency.positive;
+    }
+  };
+
+  return CurrencyFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.NumberFormatter.BaseHelper = BaseHelper = (function() {
+
+  function BaseHelper() {}
+
+  BaseHelper.prototype.interpolate = function(string, value, orientation) {
+    var i, length, start;
+    if (orientation == null) {
+      orientation = "right";
+    }
+    value = value.toString();
+    length = value.length;
+    start = orientation === "left" ? 0 : -length;
+    if (string.length < length) {
+      string = (((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+          _results.push("#");
+        }
+        return _results;
+      })()).join("") + string).slice(-length);
+    }
+    if (start < 0) {
+      string = string.slice(0, start + string.length) + value;
+    } else {
+      string = string.slice(0, start) + value + string.slice(length);
+    }
+    return string.replace(/#/g, "");
+  };
+
+  return BaseHelper;
+
+})();
+
+TwitterCldr.NumberFormatter.IntegerHelper = IntegerHelper = (function(_super) {
+
+  __extends(IntegerHelper, _super);
+
+  function IntegerHelper(token, symbols) {
+    var format;
+    if (symbols == null) {
+      symbols = {};
+    }
+    format = token.split('.')[0];
+    this.format = this.prepare_format(format, symbols);
+    this.groups = this.parse_groups(format);
+    this.separator = symbols.group || ',';
+  }
+
+  IntegerHelper.prototype.apply = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return this.format_groups(this.interpolate(this.format, parseInt(number)));
+  };
+
+  IntegerHelper.prototype.format_groups = function(string) {
+    var cur_token, token, tokens;
+    if (this.groups.length === 0) {
+      return string;
+    }
+    tokens = [];
+    cur_token = this.chop_group(string, this.groups[0]);
+    tokens.push(cur_token);
+    if (cur_token) {
+      string = string.slice(0, string.length - cur_token.length);
+    }
+    while (string.length > this.groups[this.groups.length - 1]) {
+      cur_token = this.chop_group(string, this.groups[this.groups.length - 1]);
+      tokens.push(cur_token);
+      if (cur_token) {
+        string = string.slice(0, string.length - cur_token.length);
+      }
+    }
+    tokens.push(string);
+    return ((function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
+        token = tokens[_i];
+        if (token !== null) {
+          _results.push(token);
+        }
+      }
+      return _results;
+    })()).reverse().join(this.separator);
+  };
+
+  IntegerHelper.prototype.parse_groups = function(format) {
+    var index, rest, width, widths;
+    if (!(index = format.lastIndexOf(','))) {
+      return [];
+    }
+    rest = format.slice(0, index);
+    widths = [format.length - index - 1];
+    if (rest.lastIndexOf(',') > -1) {
+      widths.push(rest.length - rest.lastIndexOf(',') - 1);
+    }
+    widths = (function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = widths.length; _i < _len; _i++) {
+        width = widths[_i];
+        if (width !== null) {
+          _results.push(width);
+        }
+      }
+      return _results;
+    })();
+    widths.reverse();
+    return ((function() {
+      var _i, _ref, _results;
+      _results = [];
+      for (index = _i = 0, _ref = widths.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
+        if (widths.indexOf(widths[index], index + 1) === -1) {
+          _results.push(widths[index]);
+        }
+      }
+      return _results;
+    })()).reverse();
+  };
+
+  IntegerHelper.prototype.chop_group = function(string, size) {
+    if (string.length > size) {
+      return string.slice(-size);
+    } else {
+      return null;
+    }
+  };
+
+  IntegerHelper.prototype.prepare_format = function(format, symbols) {
+    return format.replace(",", "").replace("+", symbols.plus_sign).replace("-", symbols.minus_sign);
+  };
+
+  return IntegerHelper;
+
+})(BaseHelper);
+
+TwitterCldr.NumberFormatter.FractionHelper = FractionHelper = (function(_super) {
+
+  __extends(FractionHelper, _super);
+
+  function FractionHelper(token, symbols) {
+    if (symbols == null) {
+      symbols = {};
+    }
+    this.format = token ? token.split('.').pop() : "";
+    this.decimal = symbols.decimal || ".";
+    this.precision = this.format.length;
+  }
+
+  FractionHelper.prototype.apply = function(fraction, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision > 0) {
+      return this.decimal + this.interpolate(this.format_for(options), fraction, "left");
+    } else {
+      return "";
+    }
+  };
+
+  FractionHelper.prototype.format_for = function(options) {
+    var i, precision;
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision) {
+      return ((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= precision ? _i < precision : _i > precision; i = 0 <= precision ? ++_i : --_i) {
+          _results.push("0");
+        }
+        return _results;
+      })()).join("");
+    } else {
+      return this.format;
+    }
+  };
+
+  return FractionHelper;
+
+})(BaseHelper);
 
 TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
   function TimespanFormatter() {
     this.default_type = "default";
-    this.tokens = {"ago":{"second":{"default":{"zero":[{"value":"قبل 0 ثانية","type":"plaintext"}],"one":[{"value":"قبل ثانية واحدة","type":"plaintext"}],"two":[{"value":"قبل ثانيتين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ثوانِ","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الثواني","type":"plaintext"}]}},"minute":{"default":{"zero":[{"value":"قبل 0 دقيقة","type":"plaintext"}],"one":[{"value":"قبل دقيقة واحدة","type":"plaintext"}],"two":[{"value":"قبل دقيقتين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" دقائق","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الدقائق","type":"plaintext"}]}},"hour":{"default":{"zero":[{"value":"قبل 0 ساعة","type":"plaintext"}],"one":[{"value":"قبل ساعة واحدة","type":"plaintext"}],"two":[{"value":"قبل ساعتين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ساعات","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الساعات","type":"plaintext"}]}},"day":{"default":{"zero":[{"value":"قبل 0 يوم","type":"plaintext"}],"one":[{"value":"قبل يوم واحد","type":"plaintext"}],"two":[{"value":"قبل يومين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أيام","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" يومًا","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الأيام","type":"plaintext"}]}},"week":{"default":{"zero":[{"value":"قبل 0 أسبوع","type":"plaintext"}],"one":[{"value":"قبل أسبوع واحد","type":"plaintext"}],"two":[{"value":"قبل أسبوعين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أسابيع","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أسبوعًا","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الأسابيع","type":"plaintext"}]}},"month":{"default":{"zero":[{"value":"قبل 0 شهر","type":"plaintext"}],"one":[{"value":"قبل شهر واحد","type":"plaintext"}],"two":[{"value":"قبل شهرين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أشهر","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" شهرًا","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الشهور","type":"plaintext"}]}},"year":{"default":{"zero":[{"value":"قبل 0 سنة","type":"plaintext"}],"one":[{"value":"قبل سنة واحدة","type":"plaintext"}],"two":[{"value":"قبل سنتين","type":"plaintext"}],"few":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" سنوات","type":"plaintext"}],"many":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" سنة","type":"plaintext"}],"other":[{"value":"قبل ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من السنوات","type":"plaintext"}]}}},"until":{"second":{"default":{"zero":[{"value":"خلال 0 ثانية","type":"plaintext"}],"one":[{"value":"خلال ثانية واحدة","type":"plaintext"}],"two":[{"value":"خلال ثانيتين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ثوانِ","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الثواني","type":"plaintext"}]}},"minute":{"default":{"zero":[{"value":"خلال 0 دقيقة","type":"plaintext"}],"one":[{"value":"خلال دقيقة واحدة","type":"plaintext"}],"two":[{"value":"خلال دقيقتين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" دقائق","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الدقائق","type":"plaintext"}]}},"hour":{"default":{"zero":[{"value":"خلال 0 ساعة","type":"plaintext"}],"one":[{"value":"خلال ساعة واحدة","type":"plaintext"}],"two":[{"value":"خلال ساعتين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ساعات","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الساعات","type":"plaintext"}]}},"day":{"default":{"zero":[{"value":"خلال 0 يوم","type":"plaintext"}],"one":[{"value":"خلال يوم واحد","type":"plaintext"}],"two":[{"value":"خلال يومين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أيام","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" يومًا","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الأيام","type":"plaintext"}]}},"week":{"default":{"zero":[{"value":"خلال 0 أسبوع","type":"plaintext"}],"one":[{"value":"خلال أسبوع واحد","type":"plaintext"}],"two":[{"value":"خلال أسبوعين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أسابيع","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" أسبوعًا","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الأسابيع","type":"plaintext"}]}},"month":{"default":{"zero":[{"value":"خلال 0 شهر","type":"plaintext"}],"one":[{"value":"خلال شهر واحد","type":"plaintext"}],"two":[{"value":"خلال شهرين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" شهور","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" شهرًا","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من الشهور","type":"plaintext"}]}},"year":{"default":{"zero":[{"value":"خلال 0 سنة","type":"plaintext"}],"one":[{"value":"خلال سنة واحدة","type":"plaintext"}],"two":[{"value":"خلال سنتين","type":"plaintext"}],"few":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" سنوات","type":"plaintext"}],"many":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" سنة","type":"plaintext"}],"other":[{"value":"خلال ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" من السنوات","type":"plaintext"}]}}},"none":{"second":{"default":{"zero":[{"value":"لا ثوان","type":"plaintext"}],"one":[{"value":"ثانية","type":"plaintext"}],"two":[{"value":"ثانيتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" ثوان","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" ثانيةً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}]},"short":{"zero":[{"value":"لا ثوان","type":"plaintext"}],"one":[{"value":"ثانية","type":"plaintext"}],"two":[{"value":"ثانيتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" ث","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" ث","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" ث","type":"plaintext"}]},"abbreviated":{"zero":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"one":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"two":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" ثانية","type":"plaintext"}]}},"minute":{"default":{"zero":[{"value":"لا دقائق","type":"plaintext"}],"one":[{"value":"دقيقة","type":"plaintext"}],"two":[{"value":"دقيقتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" دقائق","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" دقيقةً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}]},"short":{"zero":[{"value":"لا دقائق","type":"plaintext"}],"one":[{"value":"دقيقة","type":"plaintext"}],"two":[{"value":"دقيقتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" د","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" د","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" د","type":"plaintext"}]},"abbreviated":{"zero":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"one":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"two":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" دقيقة","type":"plaintext"}]}},"hour":{"default":{"zero":[{"value":"لا ساعات","type":"plaintext"}],"one":[{"value":"ساعة","type":"plaintext"}],"two":[{"value":"ساعتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" ساعات","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" ساعةً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}]},"short":{"zero":[{"value":"لا ساعات","type":"plaintext"}],"one":[{"value":"ساعة","type":"plaintext"}],"two":[{"value":"ساعتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" س","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" س","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" س","type":"plaintext"}]},"abbreviated":{"zero":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"one":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"two":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" ساعة","type":"plaintext"}]}},"day":{"default":{"zero":[{"value":"لا أيام","type":"plaintext"}],"one":[{"value":"يوم","type":"plaintext"}],"two":[{"value":"يومان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أيام","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" يوماً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}]},"short":{"zero":[{"value":"لا أيام","type":"plaintext"}],"one":[{"value":"يوم","type":"plaintext"}],"two":[{"value":"يومان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أيام","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" يوماً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}]},"abbreviated":{"zero":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}],"one":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}],"two":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" يوم","type":"plaintext"}]}},"week":{"default":{"zero":[{"value":"لا أسابيع","type":"plaintext"}],"one":[{"value":"أسبوع","type":"plaintext"}],"two":[{"value":"أسبوعان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أسابيع","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" أسبوعاً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" أسبوع","type":"plaintext"}]},"short":{"zero":[{"value":"لا أسابيع","type":"plaintext"}],"one":[{"value":"أسبوع","type":"plaintext"}],"two":[{"value":"أسبوعان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أسابيع","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" أسبوعاً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" أسبوع","type":"plaintext"}]}},"month":{"default":{"zero":[{"value":"لا أشهر","type":"plaintext"}],"one":[{"value":"شهر","type":"plaintext"}],"two":[{"value":"شهران","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أشهر","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" شهراً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" شهر","type":"plaintext"}]},"short":{"zero":[{"value":"لا أشهر","type":"plaintext"}],"one":[{"value":"شهر","type":"plaintext"}],"two":[{"value":"شهران","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" أشهر","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" شهراً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" شهر","type":"plaintext"}]}},"year":{"default":{"zero":[{"value":"لا سنوات","type":"plaintext"}],"one":[{"value":"سنة","type":"plaintext"}],"two":[{"value":"سنتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" سنوات","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" سنةً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" سنة","type":"plaintext"}]},"short":{"zero":[{"value":"لا سنوات","type":"plaintext"}],"one":[{"value":"سنة","type":"plaintext"}],"two":[{"value":"سنتان","type":"plaintext"}],"few":[{"value":"{0}","type":"placeholder"},{"value":" سنوات","type":"plaintext"}],"many":[{"value":"{0}","type":"placeholder"},{"value":" سنةً","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" سنة","type":"plaintext"}]}}}};
+    this.tokens = {"ago":{"hour":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الساعات"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعات"}],"one":[{"type":"plaintext","value":"قبل ساعة واحدة"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"two":[{"type":"plaintext","value":"قبل ساعتين"}],"zero":[{"type":"plaintext","value":"قبل 0 ساعة"}]}},"second":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الثواني"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثوانِ"}],"one":[{"type":"plaintext","value":"قبل ثانية واحدة"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"two":[{"type":"plaintext","value":"قبل ثانيتين"}],"zero":[{"type":"plaintext","value":"قبل 0 ثانية"}]}},"day":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الأيام"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أيام"}],"one":[{"type":"plaintext","value":"قبل يوم واحد"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يومًا"}],"two":[{"type":"plaintext","value":"قبل يومين"}],"zero":[{"type":"plaintext","value":"قبل 0 يوم"}]}},"minute":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الدقائق"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقائق"}],"one":[{"type":"plaintext","value":"قبل دقيقة واحدة"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"two":[{"type":"plaintext","value":"قبل دقيقتين"}],"zero":[{"type":"plaintext","value":"قبل 0 دقيقة"}]}},"week":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الأسابيع"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسابيع"}],"one":[{"type":"plaintext","value":"قبل أسبوع واحد"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوعًا"}],"two":[{"type":"plaintext","value":"قبل أسبوعين"}],"zero":[{"type":"plaintext","value":"قبل 0 أسبوع"}]}},"month":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الشهور"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أشهر"}],"one":[{"type":"plaintext","value":"قبل شهر واحد"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهرًا"}],"two":[{"type":"plaintext","value":"قبل شهرين"}],"zero":[{"type":"plaintext","value":"قبل 0 شهر"}]}},"year":{"default":{"other":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من السنوات"}],"few":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنوات"}],"one":[{"type":"plaintext","value":"قبل سنة واحدة"}],"many":[{"type":"plaintext","value":"قبل "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنة"}],"two":[{"type":"plaintext","value":"قبل سنتين"}],"zero":[{"type":"plaintext","value":"قبل 0 سنة"}]}}},"until":{"hour":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الساعات"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعات"}],"one":[{"type":"plaintext","value":"خلال ساعة واحدة"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"two":[{"type":"plaintext","value":"خلال ساعتين"}],"zero":[{"type":"plaintext","value":"خلال 0 ساعة"}]}},"second":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الثواني"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثوانِ"}],"one":[{"type":"plaintext","value":"خلال ثانية واحدة"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"two":[{"type":"plaintext","value":"خلال ثانيتين"}],"zero":[{"type":"plaintext","value":"خلال 0 ثانية"}]}},"day":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الأيام"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أيام"}],"one":[{"type":"plaintext","value":"خلال يوم واحد"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يومًا"}],"two":[{"type":"plaintext","value":"خلال يومين"}],"zero":[{"type":"plaintext","value":"خلال 0 يوم"}]}},"minute":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الدقائق"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقائق"}],"one":[{"type":"plaintext","value":"خلال دقيقة واحدة"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"two":[{"type":"plaintext","value":"خلال دقيقتين"}],"zero":[{"type":"plaintext","value":"خلال 0 دقيقة"}]}},"week":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الأسابيع"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسابيع"}],"one":[{"type":"plaintext","value":"خلال أسبوع واحد"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوعًا"}],"two":[{"type":"plaintext","value":"خلال أسبوعين"}],"zero":[{"type":"plaintext","value":"خلال 0 أسبوع"}]}},"month":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من الشهور"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهور"}],"one":[{"type":"plaintext","value":"خلال شهر واحد"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهرًا"}],"two":[{"type":"plaintext","value":"خلال شهرين"}],"zero":[{"type":"plaintext","value":"خلال 0 شهر"}]}},"year":{"default":{"other":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" من السنوات"}],"few":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنوات"}],"one":[{"type":"plaintext","value":"خلال سنة واحدة"}],"many":[{"type":"plaintext","value":"خلال "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنة"}],"two":[{"type":"plaintext","value":"خلال سنتين"}],"zero":[{"type":"plaintext","value":"خلال 0 سنة"}]}}},"none":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعات"}],"one":[{"type":"plaintext","value":"ساعة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعةً"}],"two":[{"type":"plaintext","value":"ساعتان"}],"zero":[{"type":"plaintext","value":"لا ساعات"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" س"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" س"}],"one":[{"type":"plaintext","value":"ساعة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" س"}],"two":[{"type":"plaintext","value":"ساعتان"}],"zero":[{"type":"plaintext","value":"لا ساعات"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"two":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}],"zero":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ساعة"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثوان"}],"one":[{"type":"plaintext","value":"ثانية"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانيةً"}],"two":[{"type":"plaintext","value":"ثانيتان"}],"zero":[{"type":"plaintext","value":"لا ثوان"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ث"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ث"}],"one":[{"type":"plaintext","value":"ثانية"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ث"}],"two":[{"type":"plaintext","value":"ثانيتان"}],"zero":[{"type":"plaintext","value":"لا ثوان"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"two":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}],"zero":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ثانية"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أيام"}],"one":[{"type":"plaintext","value":"يوم"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوماً"}],"two":[{"type":"plaintext","value":"يومان"}],"zero":[{"type":"plaintext","value":"لا أيام"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أيام"}],"one":[{"type":"plaintext","value":"يوم"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوماً"}],"two":[{"type":"plaintext","value":"يومان"}],"zero":[{"type":"plaintext","value":"لا أيام"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"two":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}],"zero":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" يوم"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقائق"}],"one":[{"type":"plaintext","value":"دقيقة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقةً"}],"two":[{"type":"plaintext","value":"دقيقتان"}],"zero":[{"type":"plaintext","value":"لا دقائق"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" د"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" د"}],"one":[{"type":"plaintext","value":"دقيقة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" د"}],"two":[{"type":"plaintext","value":"دقيقتان"}],"zero":[{"type":"plaintext","value":"لا دقائق"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"two":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}],"zero":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" دقيقة"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوع"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسابيع"}],"one":[{"type":"plaintext","value":"أسبوع"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوعاً"}],"two":[{"type":"plaintext","value":"أسبوعان"}],"zero":[{"type":"plaintext","value":"لا أسابيع"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوع"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسابيع"}],"one":[{"type":"plaintext","value":"أسبوع"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أسبوعاً"}],"two":[{"type":"plaintext","value":"أسبوعان"}],"zero":[{"type":"plaintext","value":"لا أسابيع"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهر"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أشهر"}],"one":[{"type":"plaintext","value":"شهر"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهراً"}],"two":[{"type":"plaintext","value":"شهران"}],"zero":[{"type":"plaintext","value":"لا أشهر"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهر"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" أشهر"}],"one":[{"type":"plaintext","value":"شهر"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" شهراً"}],"two":[{"type":"plaintext","value":"شهران"}],"zero":[{"type":"plaintext","value":"لا أشهر"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنوات"}],"one":[{"type":"plaintext","value":"سنة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنةً"}],"two":[{"type":"plaintext","value":"سنتان"}],"zero":[{"type":"plaintext","value":"لا سنوات"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنة"}],"few":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنوات"}],"one":[{"type":"plaintext","value":"سنة"}],"many":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" سنةً"}],"two":[{"type":"plaintext","value":"سنتان"}],"zero":[{"type":"plaintext","value":"لا سنوات"}]}}}};
     this.time_in_seconds = {
       "second": 1,
       "minute": 60,
@@ -104,11 +486,94 @@ TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
 })();
 
+TwitterCldr.Currencies = Currencies = (function() {
+
+  function Currencies() {}
+
+  Currencies.currencies = {"Kyrgyzstan":{"symbol":"лв","code":"KGS","currency":"Som"},"Poland":{"symbol":"zł","code":"PLN","currency":"Zloty"},"El Salvador":{"symbol":"$","code":"SVC","currency":"Colon"},"Belize":{"symbol":"BZ$","code":"BZD","currency":"Dollar"},"Mexico":{"symbol":"$","code":"MXN","currency":"Peso"},"Romania":{"symbol":"lei","code":"RON","currency":"New Leu"},"Hong Kong":{"symbol":"$","code":"HKD","currency":"Dollar"},"Colombia":{"symbol":"$","code":"COP","currency":"Peso"},"Latvia":{"symbol":"Ls","code":"LVL","currency":"Lat"},"Syria":{"symbol":"£","code":"SYP","currency":"Pound"},"Laos":{"symbol":"₭","code":"LAK","currency":"Kip"},"Guyana":{"symbol":"$","code":"GYD","currency":"Dollar"},"Panama":{"symbol":"B/.","code":"PAB","currency":"Balboa"},"Hungary":{"symbol":"Ft","code":"HUF","currency":"Forint"},"Yemen":{"symbol":"﷼","code":"YER","currency":"Rial"},"Egypt":{"symbol":"£","code":"EGP","currency":"Pound"},"Venezuela":{"symbol":"Bs","code":"VEF","currency":"Bolivar Fuerte"},"Guernsey":{"symbol":"£","code":"GGP","currency":"Pound"},"Russia":{"symbol":"руб","code":"RUB","currency":"Ruble"},"Lithuania":{"symbol":"Lt","code":"LTL","currency":"Litas"},"Mauritius":{"symbol":"₨","code":"MUR","currency":"Rupee"},"Azerbaijan":{"symbol":"ман","code":"AZN","currency":"New Manat"},"Albania":{"symbol":"Lek","code":"ALL","currency":"Lek"},"North Korea":{"symbol":"₩","code":"KPW","currency":"Won"},"Pakistan":{"symbol":"₨","code":"PKR","currency":"Rupee"},"Brazil":{"symbol":"R$","code":"BRL","currency":"Real"},"Somalia":{"symbol":"S","code":"SOS","currency":"Shilling"},"Costa Rica":{"symbol":"₡","code":"CRC","currency":"Colon"},"Gibraltar":{"symbol":"£","code":"GIP","currency":"Pound"},"Euro Member Countries":{"symbol":"€","code":"EUR","currency":"European Union"},"Afghanistan":{"symbol":"؋","code":"AFN","currency":"Afghani"},"Brunei Darussalam":{"symbol":"$","code":"BND","currency":"Dollar"},"Iran":{"symbol":"﷼","code":"IRR","currency":"Rial"},"Ukraine":{"symbol":"₴","code":"UAH","currency":"Hryvna"},"Jamaica":{"symbol":"J$","code":"JMD","currency":"Dollar"},"Sri Lanka":{"symbol":"₨","code":"LKR","currency":"Rupee"},"Viet Nam":{"symbol":"₫","code":"VND","currency":"Dong"},"Trinidad and Tobago":{"symbol":"TT$","code":"TTD","currency":"Dollar"},"Liberia":{"symbol":"$","code":"LRD","currency":"Dollar"},"Fiji":{"symbol":"$","code":"FJD","currency":"Dollar"},"China":{"symbol":"¥","code":"CNY","currency":"Yuan Renminbi"},"Netherlands Antilles":{"symbol":"ƒ","code":"ANG","currency":"Guilder"},"Cambodia":{"symbol":"៛","code":"KHR","currency":"Riel"},"Botswana":{"symbol":"P","code":"BWP","currency":"Pula"},"Uzbekistan":{"symbol":"лв","code":"UZS","currency":"Som"},"Bahamas":{"symbol":"$","code":"BSD","currency":"Dollar"},"Uruguay":{"symbol":"$U","code":"UYU","currency":"Peso"},"Thailand":{"symbol":"฿","code":"THB","currency":"Baht"},"Indonesia":{"symbol":"Rp","code":"IDR","currency":"Rupiah"},"Mongolia":{"symbol":"₮","code":"MNT","currency":"Tughrik"},"Namibia":{"symbol":"$","code":"NAD","currency":"Dollar"},"East Caribbean":{"symbol":"$","code":"XCD","currency":"Dollar"},"Switzerland":{"symbol":"CHF","code":"CHF","currency":"Franc"},"Seychelles":{"symbol":"₨","code":"SCR","currency":"Rupee"},"Zimbabwe":{"symbol":"Z$","code":"ZWD","currency":"Dollar"},"Bosnia and Herzegovina":{"symbol":"KM","code":"BAM","currency":"Convertible Marka"},"Japan":{"symbol":"¥","code":"JPY","currency":"Yen"},"Tuvalu":{"symbol":"$","code":"TVD","currency":"Dollar"},"Estonia":{"symbol":"kr","code":"EEK","currency":"Kroon"},"Macedonia":{"symbol":"ден","code":"MKD","currency":"Denar"},"Jersey":{"symbol":"£","code":"JEP","currency":"Pound"},"Aruba":{"symbol":"ƒ","code":"AWG","currency":"Guilder"},"Philippines":{"symbol":"₱","code":"PHP","currency":"Peso"},"Ghana":{"symbol":"¢","code":"GHC","currency":"Cedis"},"Isle of Man":{"symbol":"£","code":"IMP","currency":"Pound"},"Bolivia":{"symbol":"$b","code":"BOB","currency":"Boliviano"},"Suriname":{"symbol":"$","code":"SRD","currency":"Dollar"},"Barbados":{"symbol":"$","code":"BBD","currency":"Dollar"},"Croatia":{"symbol":"kn","code":"HRK","currency":"Kuna"},"Chile":{"symbol":"$","code":"CLP","currency":"Peso"},"Argentina":{"symbol":"$","code":"ARS","currency":"Peso"},"Belarus":{"symbol":"p.","code":"BYR","currency":"Ruble"},"Guatemala":{"symbol":"Q","code":"GTQ","currency":"Quetzal"},"United States":{"symbol":"$","code":"USD","currency":"Dollar"},"Falkland Islands (Malvinas)":{"symbol":"£","code":"FKP","currency":"Pound"},"South Africa":{"symbol":"R","code":"ZAR","currency":"Rand"},"Nigeria":{"symbol":"₦","code":"NGN","currency":"Naira"},"United Kingdom":{"symbol":"£","code":"GBP","currency":"Pound"},"Lebanon":{"symbol":"£","code":"LBP","currency":"Pound"},"Sweden":{"symbol":"kr","code":"SEK","currency":"Krona"},"Serbia":{"symbol":"Дин.","code":"RSD","currency":"Dinar"},"Taiwan":{"symbol":"NT$","code":"TWD","currency":"New Dollar"},"Canada":{"symbol":"$","code":"CAD","currency":"Dollar"},"South Korea":{"symbol":"₩","code":"KRW","currency":"Won"},"Australia":{"symbol":"$","code":"AUD","currency":"Dollar"},"Oman":{"symbol":"﷼","code":"OMR","currency":"Rial"},"Malaysia":{"symbol":"RM","code":"MYR","currency":"Ringgit"},"Bermuda":{"symbol":"$","code":"BMD","currency":"Dollar"},"Iceland":{"symbol":"kr","code":"ISK","currency":"Krona"},"Turkey":{"symbol":"₤","code":"TRY","currency":"Lira"},"Saint Helena":{"symbol":"£","code":"SHP","currency":"Pound"},"Saudi Arabia":{"symbol":"﷼","code":"SAR","currency":"Riyal"},"Qatar":{"symbol":"﷼","code":"QAR","currency":"Riyal"},"Bulgaria":{"symbol":"лв","code":"BGN","currency":"Lev"},"Czech Republic":{"symbol":"Kč","code":"CZK","currency":"Koruna"},"New Zealand":{"symbol":"$","code":"NZD","currency":"Dollar"},"Paraguay":{"symbol":"Gs","code":"PYG","currency":"Guarani"},"Singapore":{"symbol":"$","code":"SGD","currency":"Dollar"},"Mozambique":{"symbol":"MT","code":"MZN","currency":"Metical"},"Nepal":{"symbol":"₨","code":"NPR","currency":"Rupee"},"Cuba":{"symbol":"₱","code":"CUP","currency":"Peso"},"Denmark":{"symbol":"kr","code":"DKK","currency":"Krone"},"Norway":{"symbol":"kr","code":"NOK","currency":"Krone"},"Nicaragua":{"symbol":"C$","code":"NIO","currency":"Cordoba"},"Honduras":{"symbol":"L","code":"HNL","currency":"Lempira"},"India":{"symbol":"₨","code":"INR","currency":"Rupee"},"Cayman Islands":{"symbol":"$","code":"KYD","currency":"Dollar"},"Kazakhstan":{"symbol":"лв","code":"KZT","currency":"Tenge"},"Israel":{"symbol":"₪","code":"ILS","currency":"Shekel"},"Dominican Republic":{"symbol":"RD$","code":"DOP","currency":"Peso"},"Peru":{"symbol":"S/.","code":"PEN","currency":"Nuevo Sol"},"Solomon Islands":{"symbol":"$","code":"SBD","currency":"Dollar"}};
+
+  Currencies.countries = function() {
+    var country_name, data;
+    return this.names || (this.names = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(country_name);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.currency_codes = function() {
+    var country_name, data;
+    return this.codes || (this.codes = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(data.code);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.for_country = function(country_name) {
+    return this.currencies[country_name];
+  };
+
+  Currencies.for_code = function(currency_code) {
+    var country_name, data, final, _ref;
+    final = null;
+    _ref = this.currencies;
+    for (country_name in _ref) {
+      data = _ref[country_name];
+      if (data.code === currency_code) {
+        final = {
+          country: country_name,
+          code: data.code,
+          symbol: data.symbol,
+          currency: data.currency
+        };
+        break;
+      }
+    }
+    return final;
+  };
+
+  return Currencies;
+
+})();
+
+TwitterCldr.PluralRules = PluralRules = (function() {
+
+  function PluralRules() {}
+
+  PluralRules.rules = {"keys": ["zero","one","two","few","many","other"], "rule": function(n) { return (function() { if (n == 0) { return "zero" } else { return (function() { if (n == 1) { return "one" } else { return (function() { if (n == 2) { return "two" } else { return (function() { if ([3, 4, 5, 6, 7, 8, 9, 10].indexOf(n % 100) >= 0) { return "few" } else { return (function() { if ([11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99].indexOf(n % 100) >= 0) { return "many" } else { return "other" } })(); } })(); } })(); } })(); } })(); }};
+
+  PluralRules.all = function() {
+    return this.rules.keys;
+  };
+
+  PluralRules.rule_for = function(number) {
+    try {
+      return this.rules.rule(number);
+    } catch (error) {
+      return "other";
+    }
+  };
+
+  return PluralRules;
+
+})();
+
 TwitterCldr.DateTimeFormatter = DateTimeFormatter = (function() {
 
   function DateTimeFormatter() {
-    this.tokens = {"date_time":{"default":[{"value":"dd","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"zzzz","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"z","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"medium":[{"value":"dd","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"short":[{"value":"d","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}]},"time":{"default":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"full":[{"value":"zzzz","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"long":[{"value":"z","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"medium":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"short":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}]},"date":{"default":[{"value":"dd","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"y","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":"، ","type":"plaintext"},{"value":"y","type":"pattern"}],"medium":[{"value":"dd","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"}],"short":[{"value":"d","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"‏/","type":"plaintext"},{"value":"yyyy","type":"pattern"}]}};
-    this.calendar = {"days":{"format":{"abbreviated":{"fri":"الجمعة","mon":"الاثنين","sat":"السبت","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء","wed":"الأربعاء"},"narrow":{"fri":"ج","mon":"ن","sat":"س","sun":"ح","thu":"خ","tue":"ث","wed":"ر"},"wide":{"fri":"الجمعة","mon":"الاثنين","sat":"السبت","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء","wed":"الأربعاء"}},"stand-alone":{"abbreviated":{"fri":"الجمعة","mon":"الاثنين","sat":"السبت","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء","wed":"الأربعاء"},"narrow":{"fri":"ج","mon":"ن","sat":"س","sun":"ح","thu":"خ","tue":"ث","wed":"ر"},"wide":{"mon":"الاثنين"}}},"eras":{"abbr":{"0":"ق.م","1":"م"},"name":{"0":"قبل الميلاد","1":"ميلادي"},"narrow":{"0":""}},"fields":{"day":"يوم","dayperiod":"ص/م","era":"العصر","hour":"الساعات","minute":"الدقائق","month":"الشهر","second":"الثواني","week":"الأسبوع","weekday":"اليوم","year":"السنة","zone":"التوقيت"},"formats":{"date":{"default":{"pattern":"dd‏/MM‏/yyyy"},"full":{"pattern":"EEEE، d MMMM، y"},"long":{"pattern":"d MMMM، y"},"medium":{"pattern":"dd‏/MM‏/yyyy"},"short":{"pattern":"d‏/M‏/yyyy"}},"datetime":{"default":{"pattern":"{{date}} {{time}}"},"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"}},"time":{"default":{"pattern":"h:mm:ss a"},"full":{"pattern":"zzzz h:mm:ss a"},"long":{"pattern":"z h:mm:ss a"},"medium":{"pattern":"h:mm:ss a"},"short":{"pattern":"h:mm a"}}},"months":{"format":{"abbreviated":{"1":"يناير","10":"أكتوبر","11":"نوفمبر","12":"ديسمبر","2":"فبراير","3":"مارس","4":"أبريل","5":"مايو","6":"يونيو","7":"يوليو","8":"أغسطس","9":"سبتمبر"},"narrow":{"1":"ي","10":"ك","11":"ب","12":"د","2":"ف","3":"م","4":"أ","5":"و","6":"ن","7":"ل","8":"غ","9":"س"},"wide":{"1":"يناير","10":"أكتوبر","11":"نوفمبر","12":"ديسمبر","2":"فبراير","3":"مارس","4":"أبريل","5":"مايو","6":"يونيو","7":"يوليو","8":"أغسطس","9":"سبتمبر"}},"stand-alone":{"abbreviated":{"1":"يناير","10":"أكتوبر","11":"نوفمبر","12":"ديسمبر","2":"فبراير","3":"مارس","4":"أبريل","5":"مايو","6":"يونيو","7":"يوليو","8":"أغسطس","9":"سبتمبر"},"narrow":{"1":"ي","10":"ك","11":"ب","12":"د","2":"ف","3":"م","4":"أ","5":"و","6":"ن","7":"ل","8":"غ","9":"س"},"wide":{"1":"يناير","10":"أكتوبر","11":"نوفمبر","12":"ديسمبر","2":"فبراير","3":"مارس","4":"أبريل","5":"مايو","6":"يونيو","7":"يوليو","8":"أغسطس","9":"سبتمبر"}}},"periods":{"format":{"abbreviated":null,"narrow":null,"wide":{"am":"ص","pm":"م"}},"stand-alone":{}},"quarters":{"format":{"abbreviated":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"},"narrow":{"1":"١","2":"٢","3":"٣","4":"٤"},"wide":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"}},"stand-alone":{"abbreviated":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"},"narrow":{"1":"١","2":"٢","3":"٣","4":"٤"},"wide":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"}}}};
+    this.tokens = {"date":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"y"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"y"}],"default":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"}],"short":[{"type":"pattern","value":"d"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"M"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"}],"medium":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"}]},"time":{"full":[{"type":"pattern","value":"zzzz"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"long":[{"type":"pattern","value":"z"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"default":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"short":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"medium":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}]},"date_time":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"zzzz"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":"، "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"z"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"default":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"short":[{"type":"pattern","value":"d"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"M"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"medium":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"‏/"},{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}]}};
+    this.calendar = {"fields":{"hour":"الساعات","weekday":"اليوم","era":"العصر","second":"الثواني","day":"يوم","minute":"الدقائق","week":"الأسبوع","month":"الشهر","zone":"التوقيت","dayperiod":"ص/م","year":"السنة"},"months":{"format":{"narrow":{"5":"و","11":"ب","6":"ن","1":"ي","12":"د","7":"ل","2":"ف","8":"غ","3":"م","9":"س","4":"أ","10":"ك"},"wide":{"5":"مايو","11":"نوفمبر","6":"يونيو","1":"يناير","12":"ديسمبر","7":"يوليو","2":"فبراير","8":"أغسطس","3":"مارس","9":"سبتمبر","4":"أبريل","10":"أكتوبر"},"abbreviated":{"5":"مايو","11":"نوفمبر","6":"يونيو","1":"يناير","12":"ديسمبر","7":"يوليو","2":"فبراير","8":"أغسطس","3":"مارس","9":"سبتمبر","4":"أبريل","10":"أكتوبر"}},"stand-alone":{"narrow":{"5":"و","11":"ب","6":"ن","1":"ي","12":"د","7":"ل","2":"ف","8":"غ","3":"م","9":"س","4":"أ","10":"ك"},"wide":{"5":"مايو","11":"نوفمبر","6":"يونيو","1":"يناير","12":"ديسمبر","7":"يوليو","2":"فبراير","8":"أغسطس","3":"مارس","9":"سبتمبر","4":"أبريل","10":"أكتوبر"},"abbreviated":{"5":"مايو","11":"نوفمبر","6":"يونيو","1":"يناير","12":"ديسمبر","7":"يوليو","2":"فبراير","8":"أغسطس","3":"مارس","9":"سبتمبر","4":"أبريل","10":"أكتوبر"}}},"days":{"format":{"narrow":{"wed":"ر","sat":"س","fri":"ج","mon":"ن","sun":"ح","thu":"خ","tue":"ث"},"wide":{"wed":"الأربعاء","sat":"السبت","fri":"الجمعة","mon":"الاثنين","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء"},"abbreviated":{"wed":"الأربعاء","sat":"السبت","fri":"الجمعة","mon":"الاثنين","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء"}},"stand-alone":{"narrow":{"wed":"ر","sat":"س","fri":"ج","mon":"ن","sun":"ح","thu":"خ","tue":"ث"},"wide":{"mon":"الاثنين"},"abbreviated":{"wed":"الأربعاء","sat":"السبت","fri":"الجمعة","mon":"الاثنين","sun":"الأحد","thu":"الخميس","tue":"الثلاثاء"}}},"quarters":{"format":{"narrow":{"1":"١","2":"٢","3":"٣","4":"٤"},"wide":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"},"abbreviated":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"}},"stand-alone":{"narrow":{"1":"١","2":"٢","3":"٣","4":"٤"},"wide":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"},"abbreviated":{"1":"الربع الأول","2":"الربع الثاني","3":"الربع الثالث","4":"الربع الرابع"}}},"eras":{"narrow":{"0":""},"abbr":{"0":"ق.م","1":"م"},"name":{"0":"قبل الميلاد","1":"ميلادي"}},"formats":{"date":{"full":{"pattern":"EEEE، d MMMM، y"},"long":{"pattern":"d MMMM، y"},"default":{"pattern":"dd‏/MM‏/yyyy"},"short":{"pattern":"d‏/M‏/yyyy"},"medium":{"pattern":"dd‏/MM‏/yyyy"}},"time":{"full":{"pattern":"zzzz h:mm:ss a"},"long":{"pattern":"z h:mm:ss a"},"default":{"pattern":"h:mm:ss a"},"short":{"pattern":"h:mm a"},"medium":{"pattern":"h:mm:ss a"}},"datetime":{"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"default":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"}}},"periods":{"format":{"narrow":null,"wide":{"pm":"م","am":"ص"},"abbreviated":null},"stand-alone":{}}};
     this.weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
     this.methods = {
       'G': 'era',

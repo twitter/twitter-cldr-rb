@@ -2,45 +2,427 @@
 // Copyright 2012 Twitter, Inc
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// TwitterCLDR (JavaScript) v1.6.2
-// Authors: 		Cameron Dutro [@camertron]
-								Kirill Lashuk [@KL_7]
-								portions by Sven Fuchs [@svenfuchs]
-// Homepage: 		https://twitter.com
-// Description:	Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
+// TwitterCLDR (JavaScript) v1.7.0
+// Authors:     Cameron Dutro [@camertron]
+                Kirill Lashuk [@KL_7]
+                portions by Sven Fuchs [@svenfuchs]
+// Homepage:    https://twitter.com
+// Description: Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
 */
 
-var DateTimeFormatter, PluralRules, TimespanFormatter, TwitterCldr;
+var BaseHelper, Currencies, CurrencyFormatter, DateTimeFormatter, DecimalFormatter, FractionHelper, IntegerHelper, NumberFormatter, PercentFormatter, PluralRules, TimespanFormatter, TwitterCldr,
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 TwitterCldr = {};
 
-TwitterCldr.PluralRules = PluralRules = (function() {
+TwitterCldr.NumberFormatter = NumberFormatter = (function() {
 
-  function PluralRules() {}
+  function NumberFormatter() {
+    this.all_tokens = {"percent":{"positive":["%","#,##0"],"negative":["-%","#,##0"]},"decimal":{"positive":["","#,##0.###"],"negative":["-","#,##0.###"]},"currency":{"positive":["","#,##0.00"," ¤"],"negative":["-","#,##0.00"," ¤"]}};
+    this.tokens = [];
+    this.symbols = {"plus_sign":"+","infinity":"∞","minus_sign":"-","nan":"NaN","group":".","alias":"","per_mille":"‰","decimal":",","list":";","percent_sign":"%","exponential":"E"};
+    this.default_symbols = {
+      'group': ',',
+      'decimal': '.',
+      'plus_sign': '+',
+      'minus_sign': '-'
+    };
+  }
 
-  PluralRules.rules = {"keys": ["other"], "rule": function(n) { return "other" }};
-
-  PluralRules.all = function() {
-    return this.rules.keys;
+  NumberFormatter.prototype.format = function(number, options) {
+    var fraction, fraction_format, int, integer_format, key, opts, prefix, result, sign, suffix, val, _ref, _ref1;
+    if (options == null) {
+      options = {};
+    }
+    opts = this.default_format_options_for(number);
+    for (key in options) {
+      val = options[key];
+      opts[key] = options[key] != null ? options[key] : opts[key];
+    }
+    _ref = this.partition_tokens(this.get_tokens(number, opts)), prefix = _ref[0], suffix = _ref[1], integer_format = _ref[2], fraction_format = _ref[3];
+    _ref1 = this.parse_number(number, opts), int = _ref1[0], fraction = _ref1[1];
+    result = integer_format.apply(parseFloat(int), opts);
+    if (fraction) {
+      result += fraction_format.apply(fraction, opts);
+    }
+    sign = number < 0 && prefix !== "-" ? this.symbols.minus_sign || this.default_symbols.minus_sign : "";
+    return "" + sign + prefix + result + suffix;
   };
 
-  PluralRules.rule_for = function(number) {
-    try {
-      return this.rules.rule(number);
-    } catch (error) {
-      return "other";
+  NumberFormatter.prototype.partition_tokens = function(tokens) {
+    return [tokens[0] || "", tokens[2] || "", new IntegerHelper(tokens[1], this.symbols), new FractionHelper(tokens[1], this.symbols)];
+  };
+
+  NumberFormatter.prototype.parse_number = function(number, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    if (options.precision != null) {
+      precision = options.precision;
+    } else {
+      precision = this.precision_from(number);
+    }
+    number = this.round_to(number, precision);
+    return Math.abs(number).toFixed(precision).split(".");
+  };
+
+  NumberFormatter.prototype.precision_from = function(num) {
+    var parts;
+    parts = num.toString().split(".");
+    if (parts.length === 2) {
+      return parts[1].length;
+    } else {
+      return 0;
     }
   };
 
-  return PluralRules;
+  NumberFormatter.prototype.round_to = function(number, precision) {
+    var factor;
+    factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+  };
+
+  NumberFormatter.prototype.get_tokens = function() {
+    throw "get_tokens() not implemented - use a derived class like PercentFormatter.";
+  };
+
+  return NumberFormatter;
 
 })();
+
+TwitterCldr.PercentFormatter = PercentFormatter = (function(_super) {
+
+  __extends(PercentFormatter, _super);
+
+  function PercentFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_percent_sign = "%";
+    PercentFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  PercentFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return PercentFormatter.__super__.format.call(this, number, options).replace('¤', this.symbols.percent_sign || this.default_percent_sign);
+  };
+
+  PercentFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: 0
+    };
+  };
+
+  PercentFormatter.prototype.get_tokens = function(number, options) {
+    if (number < 0) {
+      return this.all_tokens.percent.negative;
+    } else {
+      return this.all_tokens.percent.positive;
+    }
+  };
+
+  return PercentFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.DecimalFormatter = DecimalFormatter = (function(_super) {
+
+  __extends(DecimalFormatter, _super);
+
+  function DecimalFormatter() {
+    return DecimalFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  DecimalFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    try {
+      return DecimalFormatter.__super__.format.call(this, number, options);
+    } catch (error) {
+      return number;
+    }
+  };
+
+  DecimalFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: this.precision_from(number)
+    };
+  };
+
+  DecimalFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.decimal.negative;
+    } else {
+      return this.all_tokens.decimal.positive;
+    }
+  };
+
+  return DecimalFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.CurrencyFormatter = CurrencyFormatter = (function(_super) {
+
+  __extends(CurrencyFormatter, _super);
+
+  function CurrencyFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_currency_symbol = "$";
+    this.default_precision = 2;
+    CurrencyFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  CurrencyFormatter.prototype.format = function(number, options) {
+    var currency;
+    if (options == null) {
+      options = {};
+    }
+    if (options.currency) {
+      if (TwitterCldr.Currencies != null) {
+        currency = TwitterCldr.Currencies.for_code(options.currency);
+        currency || (currency = TwitterCldr.Currencies.for_country(options.currency));
+        currency || (currency = {
+          symbol: options.currency
+        });
+      } else {
+        currency = {
+          symbol: options.currency
+        };
+      }
+    } else {
+      currency = {
+        symbol: this.default_currency_symbol
+      };
+    }
+    return CurrencyFormatter.__super__.format.call(this, number, options).replace('¤', currency.symbol);
+  };
+
+  CurrencyFormatter.prototype.default_format_options_for = function(number) {
+    var precision;
+    precision = this.precision_from(number);
+    if (precision === 0) {
+      precision = this.default_precision;
+    }
+    return {
+      precision: precision
+    };
+  };
+
+  CurrencyFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.currency.negative;
+    } else {
+      return this.all_tokens.currency.positive;
+    }
+  };
+
+  return CurrencyFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.NumberFormatter.BaseHelper = BaseHelper = (function() {
+
+  function BaseHelper() {}
+
+  BaseHelper.prototype.interpolate = function(string, value, orientation) {
+    var i, length, start;
+    if (orientation == null) {
+      orientation = "right";
+    }
+    value = value.toString();
+    length = value.length;
+    start = orientation === "left" ? 0 : -length;
+    if (string.length < length) {
+      string = (((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+          _results.push("#");
+        }
+        return _results;
+      })()).join("") + string).slice(-length);
+    }
+    if (start < 0) {
+      string = string.slice(0, start + string.length) + value;
+    } else {
+      string = string.slice(0, start) + value + string.slice(length);
+    }
+    return string.replace(/#/g, "");
+  };
+
+  return BaseHelper;
+
+})();
+
+TwitterCldr.NumberFormatter.IntegerHelper = IntegerHelper = (function(_super) {
+
+  __extends(IntegerHelper, _super);
+
+  function IntegerHelper(token, symbols) {
+    var format;
+    if (symbols == null) {
+      symbols = {};
+    }
+    format = token.split('.')[0];
+    this.format = this.prepare_format(format, symbols);
+    this.groups = this.parse_groups(format);
+    this.separator = symbols.group || ',';
+  }
+
+  IntegerHelper.prototype.apply = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return this.format_groups(this.interpolate(this.format, parseInt(number)));
+  };
+
+  IntegerHelper.prototype.format_groups = function(string) {
+    var cur_token, token, tokens;
+    if (this.groups.length === 0) {
+      return string;
+    }
+    tokens = [];
+    cur_token = this.chop_group(string, this.groups[0]);
+    tokens.push(cur_token);
+    if (cur_token) {
+      string = string.slice(0, string.length - cur_token.length);
+    }
+    while (string.length > this.groups[this.groups.length - 1]) {
+      cur_token = this.chop_group(string, this.groups[this.groups.length - 1]);
+      tokens.push(cur_token);
+      if (cur_token) {
+        string = string.slice(0, string.length - cur_token.length);
+      }
+    }
+    tokens.push(string);
+    return ((function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
+        token = tokens[_i];
+        if (token !== null) {
+          _results.push(token);
+        }
+      }
+      return _results;
+    })()).reverse().join(this.separator);
+  };
+
+  IntegerHelper.prototype.parse_groups = function(format) {
+    var index, rest, width, widths;
+    if (!(index = format.lastIndexOf(','))) {
+      return [];
+    }
+    rest = format.slice(0, index);
+    widths = [format.length - index - 1];
+    if (rest.lastIndexOf(',') > -1) {
+      widths.push(rest.length - rest.lastIndexOf(',') - 1);
+    }
+    widths = (function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = widths.length; _i < _len; _i++) {
+        width = widths[_i];
+        if (width !== null) {
+          _results.push(width);
+        }
+      }
+      return _results;
+    })();
+    widths.reverse();
+    return ((function() {
+      var _i, _ref, _results;
+      _results = [];
+      for (index = _i = 0, _ref = widths.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
+        if (widths.indexOf(widths[index], index + 1) === -1) {
+          _results.push(widths[index]);
+        }
+      }
+      return _results;
+    })()).reverse();
+  };
+
+  IntegerHelper.prototype.chop_group = function(string, size) {
+    if (string.length > size) {
+      return string.slice(-size);
+    } else {
+      return null;
+    }
+  };
+
+  IntegerHelper.prototype.prepare_format = function(format, symbols) {
+    return format.replace(",", "").replace("+", symbols.plus_sign).replace("-", symbols.minus_sign);
+  };
+
+  return IntegerHelper;
+
+})(BaseHelper);
+
+TwitterCldr.NumberFormatter.FractionHelper = FractionHelper = (function(_super) {
+
+  __extends(FractionHelper, _super);
+
+  function FractionHelper(token, symbols) {
+    if (symbols == null) {
+      symbols = {};
+    }
+    this.format = token ? token.split('.').pop() : "";
+    this.decimal = symbols.decimal || ".";
+    this.precision = this.format.length;
+  }
+
+  FractionHelper.prototype.apply = function(fraction, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision > 0) {
+      return this.decimal + this.interpolate(this.format_for(options), fraction, "left");
+    } else {
+      return "";
+    }
+  };
+
+  FractionHelper.prototype.format_for = function(options) {
+    var i, precision;
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision) {
+      return ((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= precision ? _i < precision : _i > precision; i = 0 <= precision ? ++_i : --_i) {
+          _results.push("0");
+        }
+        return _results;
+      })()).join("");
+    } else {
+      return this.format;
+    }
+  };
+
+  return FractionHelper;
+
+})(BaseHelper);
 
 TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
   function TimespanFormatter() {
     this.default_type = "default";
-    this.tokens = {"ago":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saniye önce","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" dakika önce","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saat önce","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" gün önce","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" hafta önce","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ay önce","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" yıl önce","type":"plaintext"}]}}},"until":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saniye sonra","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" dakika sonra","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saat sonra","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" gün sonra","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" hafta sonra","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ay sonra","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" yıl sonra","type":"plaintext"}]}}},"none":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saniye","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" sn.","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" sn","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" dakika","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" dk.","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" dk","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" saat","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" sa.","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" sa","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" gün","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" gün","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" gün","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" hafta","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" hafta","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ay","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ay","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" yıl","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" yıl","type":"plaintext"}]}}}};
+    this.tokens = {"ago":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saat önce"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saniye önce"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" gün önce"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dakika önce"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" hafta önce"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ay önce"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" yıl önce"}]}}},"until":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saat sonra"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saniye sonra"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" gün sonra"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dakika sonra"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" hafta sonra"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ay sonra"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" yıl sonra"}]}}},"none":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saat"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sa."}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sa"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" saniye"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sn."}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sn"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" gün"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" gün"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" gün"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dakika"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dk."}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dk"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" hafta"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" hafta"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ay"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ay"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" yıl"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" yıl"}]}}}};
     this.time_in_seconds = {
       "second": 1,
       "minute": 60,
@@ -104,11 +486,94 @@ TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
 })();
 
+TwitterCldr.Currencies = Currencies = (function() {
+
+  function Currencies() {}
+
+  Currencies.currencies = {"Kyrgyzstan":{"symbol":"лв","code":"KGS","currency":"Som"},"Poland":{"symbol":"zł","code":"PLN","currency":"Zloty"},"El Salvador":{"symbol":"$","code":"SVC","currency":"Colon"},"Belize":{"symbol":"BZ$","code":"BZD","currency":"Dollar"},"Mexico":{"symbol":"$","code":"MXN","currency":"Peso"},"Romania":{"symbol":"lei","code":"RON","currency":"New Leu"},"Hong Kong":{"symbol":"$","code":"HKD","currency":"Dollar"},"Colombia":{"symbol":"$","code":"COP","currency":"Peso"},"Latvia":{"symbol":"Ls","code":"LVL","currency":"Lat"},"Syria":{"symbol":"£","code":"SYP","currency":"Pound"},"Laos":{"symbol":"₭","code":"LAK","currency":"Kip"},"Guyana":{"symbol":"$","code":"GYD","currency":"Dollar"},"Panama":{"symbol":"B/.","code":"PAB","currency":"Balboa"},"Hungary":{"symbol":"Ft","code":"HUF","currency":"Forint"},"Yemen":{"symbol":"﷼","code":"YER","currency":"Rial"},"Egypt":{"symbol":"£","code":"EGP","currency":"Pound"},"Venezuela":{"symbol":"Bs","code":"VEF","currency":"Bolivar Fuerte"},"Guernsey":{"symbol":"£","code":"GGP","currency":"Pound"},"Russia":{"symbol":"руб","code":"RUB","currency":"Ruble"},"Lithuania":{"symbol":"Lt","code":"LTL","currency":"Litas"},"Mauritius":{"symbol":"₨","code":"MUR","currency":"Rupee"},"Azerbaijan":{"symbol":"ман","code":"AZN","currency":"New Manat"},"Albania":{"symbol":"Lek","code":"ALL","currency":"Lek"},"North Korea":{"symbol":"₩","code":"KPW","currency":"Won"},"Pakistan":{"symbol":"₨","code":"PKR","currency":"Rupee"},"Brazil":{"symbol":"R$","code":"BRL","currency":"Real"},"Somalia":{"symbol":"S","code":"SOS","currency":"Shilling"},"Costa Rica":{"symbol":"₡","code":"CRC","currency":"Colon"},"Gibraltar":{"symbol":"£","code":"GIP","currency":"Pound"},"Euro Member Countries":{"symbol":"€","code":"EUR","currency":"European Union"},"Afghanistan":{"symbol":"؋","code":"AFN","currency":"Afghani"},"Brunei Darussalam":{"symbol":"$","code":"BND","currency":"Dollar"},"Iran":{"symbol":"﷼","code":"IRR","currency":"Rial"},"Ukraine":{"symbol":"₴","code":"UAH","currency":"Hryvna"},"Jamaica":{"symbol":"J$","code":"JMD","currency":"Dollar"},"Sri Lanka":{"symbol":"₨","code":"LKR","currency":"Rupee"},"Viet Nam":{"symbol":"₫","code":"VND","currency":"Dong"},"Trinidad and Tobago":{"symbol":"TT$","code":"TTD","currency":"Dollar"},"Liberia":{"symbol":"$","code":"LRD","currency":"Dollar"},"Fiji":{"symbol":"$","code":"FJD","currency":"Dollar"},"China":{"symbol":"¥","code":"CNY","currency":"Yuan Renminbi"},"Netherlands Antilles":{"symbol":"ƒ","code":"ANG","currency":"Guilder"},"Cambodia":{"symbol":"៛","code":"KHR","currency":"Riel"},"Botswana":{"symbol":"P","code":"BWP","currency":"Pula"},"Uzbekistan":{"symbol":"лв","code":"UZS","currency":"Som"},"Bahamas":{"symbol":"$","code":"BSD","currency":"Dollar"},"Uruguay":{"symbol":"$U","code":"UYU","currency":"Peso"},"Thailand":{"symbol":"฿","code":"THB","currency":"Baht"},"Indonesia":{"symbol":"Rp","code":"IDR","currency":"Rupiah"},"Mongolia":{"symbol":"₮","code":"MNT","currency":"Tughrik"},"Namibia":{"symbol":"$","code":"NAD","currency":"Dollar"},"East Caribbean":{"symbol":"$","code":"XCD","currency":"Dollar"},"Switzerland":{"symbol":"CHF","code":"CHF","currency":"Franc"},"Seychelles":{"symbol":"₨","code":"SCR","currency":"Rupee"},"Zimbabwe":{"symbol":"Z$","code":"ZWD","currency":"Dollar"},"Bosnia and Herzegovina":{"symbol":"KM","code":"BAM","currency":"Convertible Marka"},"Japan":{"symbol":"¥","code":"JPY","currency":"Yen"},"Tuvalu":{"symbol":"$","code":"TVD","currency":"Dollar"},"Estonia":{"symbol":"kr","code":"EEK","currency":"Kroon"},"Macedonia":{"symbol":"ден","code":"MKD","currency":"Denar"},"Jersey":{"symbol":"£","code":"JEP","currency":"Pound"},"Aruba":{"symbol":"ƒ","code":"AWG","currency":"Guilder"},"Philippines":{"symbol":"₱","code":"PHP","currency":"Peso"},"Ghana":{"symbol":"¢","code":"GHC","currency":"Cedis"},"Isle of Man":{"symbol":"£","code":"IMP","currency":"Pound"},"Bolivia":{"symbol":"$b","code":"BOB","currency":"Boliviano"},"Suriname":{"symbol":"$","code":"SRD","currency":"Dollar"},"Barbados":{"symbol":"$","code":"BBD","currency":"Dollar"},"Croatia":{"symbol":"kn","code":"HRK","currency":"Kuna"},"Chile":{"symbol":"$","code":"CLP","currency":"Peso"},"Argentina":{"symbol":"$","code":"ARS","currency":"Peso"},"Belarus":{"symbol":"p.","code":"BYR","currency":"Ruble"},"Guatemala":{"symbol":"Q","code":"GTQ","currency":"Quetzal"},"United States":{"symbol":"$","code":"USD","currency":"Dollar"},"Falkland Islands (Malvinas)":{"symbol":"£","code":"FKP","currency":"Pound"},"South Africa":{"symbol":"R","code":"ZAR","currency":"Rand"},"Nigeria":{"symbol":"₦","code":"NGN","currency":"Naira"},"United Kingdom":{"symbol":"£","code":"GBP","currency":"Pound"},"Lebanon":{"symbol":"£","code":"LBP","currency":"Pound"},"Sweden":{"symbol":"kr","code":"SEK","currency":"Krona"},"Serbia":{"symbol":"Дин.","code":"RSD","currency":"Dinar"},"Taiwan":{"symbol":"NT$","code":"TWD","currency":"New Dollar"},"Canada":{"symbol":"$","code":"CAD","currency":"Dollar"},"South Korea":{"symbol":"₩","code":"KRW","currency":"Won"},"Australia":{"symbol":"$","code":"AUD","currency":"Dollar"},"Oman":{"symbol":"﷼","code":"OMR","currency":"Rial"},"Malaysia":{"symbol":"RM","code":"MYR","currency":"Ringgit"},"Bermuda":{"symbol":"$","code":"BMD","currency":"Dollar"},"Iceland":{"symbol":"kr","code":"ISK","currency":"Krona"},"Turkey":{"symbol":"₤","code":"TRY","currency":"Lira"},"Saint Helena":{"symbol":"£","code":"SHP","currency":"Pound"},"Saudi Arabia":{"symbol":"﷼","code":"SAR","currency":"Riyal"},"Qatar":{"symbol":"﷼","code":"QAR","currency":"Riyal"},"Bulgaria":{"symbol":"лв","code":"BGN","currency":"Lev"},"Czech Republic":{"symbol":"Kč","code":"CZK","currency":"Koruna"},"New Zealand":{"symbol":"$","code":"NZD","currency":"Dollar"},"Paraguay":{"symbol":"Gs","code":"PYG","currency":"Guarani"},"Singapore":{"symbol":"$","code":"SGD","currency":"Dollar"},"Mozambique":{"symbol":"MT","code":"MZN","currency":"Metical"},"Nepal":{"symbol":"₨","code":"NPR","currency":"Rupee"},"Cuba":{"symbol":"₱","code":"CUP","currency":"Peso"},"Denmark":{"symbol":"kr","code":"DKK","currency":"Krone"},"Norway":{"symbol":"kr","code":"NOK","currency":"Krone"},"Nicaragua":{"symbol":"C$","code":"NIO","currency":"Cordoba"},"Honduras":{"symbol":"L","code":"HNL","currency":"Lempira"},"India":{"symbol":"₨","code":"INR","currency":"Rupee"},"Cayman Islands":{"symbol":"$","code":"KYD","currency":"Dollar"},"Kazakhstan":{"symbol":"лв","code":"KZT","currency":"Tenge"},"Israel":{"symbol":"₪","code":"ILS","currency":"Shekel"},"Dominican Republic":{"symbol":"RD$","code":"DOP","currency":"Peso"},"Peru":{"symbol":"S/.","code":"PEN","currency":"Nuevo Sol"},"Solomon Islands":{"symbol":"$","code":"SBD","currency":"Dollar"}};
+
+  Currencies.countries = function() {
+    var country_name, data;
+    return this.names || (this.names = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(country_name);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.currency_codes = function() {
+    var country_name, data;
+    return this.codes || (this.codes = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(data.code);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.for_country = function(country_name) {
+    return this.currencies[country_name];
+  };
+
+  Currencies.for_code = function(currency_code) {
+    var country_name, data, final, _ref;
+    final = null;
+    _ref = this.currencies;
+    for (country_name in _ref) {
+      data = _ref[country_name];
+      if (data.code === currency_code) {
+        final = {
+          country: country_name,
+          code: data.code,
+          symbol: data.symbol,
+          currency: data.currency
+        };
+        break;
+      }
+    }
+    return final;
+  };
+
+  return Currencies;
+
+})();
+
+TwitterCldr.PluralRules = PluralRules = (function() {
+
+  function PluralRules() {}
+
+  PluralRules.rules = {"keys": ["other"], "rule": function(n) { return "other" }};
+
+  PluralRules.all = function() {
+    return this.rules.keys;
+  };
+
+  PluralRules.rule_for = function(number) {
+    try {
+      return this.rules.rule(number);
+    } catch (error) {
+      return "other";
+    }
+  };
+
+  return PluralRules;
+
+})();
+
 TwitterCldr.DateTimeFormatter = DateTimeFormatter = (function() {
 
   function DateTimeFormatter() {
-    this.tokens = {"date_time":{"default":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"EEEE","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"dd","type":"pattern"},{"value":".","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":".","type":"plaintext"},{"value":"yyyy","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"time":{"default":[{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"HH","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"date":{"default":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"full":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"EEEE","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"medium":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"short":[{"value":"dd","type":"pattern"},{"value":".","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":".","type":"plaintext"},{"value":"yyyy","type":"pattern"}]}};
-    this.calendar = {"days":{"format":{"abbreviated":{"fri":"Cum","mon":"Pzt","sat":"Cmt","sun":"Paz","thu":"Per","tue":"Sal","wed":"Çar"},"narrow":{"fri":"C","mon":"P","sat":"C","sun":"P","thu":"P","tue":"S","wed":"Ç"},"wide":{"fri":"Cuma","mon":"Pazartesi","sat":"Cumartesi","sun":"Pazar","thu":"Perşembe","tue":"Salı","wed":"Çarşamba"}},"stand-alone":{"abbreviated":{"fri":"Cum","mon":"Pzt","sat":"Cmt","sun":"Paz","thu":"Per","tue":"Sal","wed":"Çar"},"narrow":{"fri":"C","mon":"P","sat":"C","sun":"P","thu":"P","tue":"S","wed":"Ç"},"wide":{"fri":"Cuma","mon":"Pazartesi","sat":"Cumartesi","sun":"Pazar","thu":"Perşembe","tue":"Salı","wed":"Çarşamba"}}},"eras":{"abbr":{"0":"MÖ","1":"MS"},"name":{"0":"Milattan Önce","1":"Milattan Sonra"},"narrow":{"0":""}},"fields":{"day":"Gün","dayperiod":"AM/PM","era":"Miladi Dönem","hour":"Saat","minute":"Dakika","month":"Ay","second":"Saniye","week":"Hafta","weekday":"Haftanın Günü","year":"Yıl","zone":"Saat Dilimi"},"formats":{"date":{"default":{"pattern":"d MMM y"},"full":{"pattern":"d MMMM y EEEE"},"long":{"pattern":"d MMMM y"},"medium":{"pattern":"d MMM y"},"short":{"pattern":"dd.MM.yyyy"}},"datetime":{"default":{"pattern":"{{date}} {{time}}"},"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"}},"time":{"default":{"pattern":"HH:mm:ss"},"full":{"pattern":"HH:mm:ss zzzz"},"long":{"pattern":"HH:mm:ss z"},"medium":{"pattern":"HH:mm:ss"},"short":{"pattern":"HH:mm"}}},"months":{"format":{"abbreviated":{"1":"Oca","10":"Eki","11":"Kas","12":"Ara","2":"Şub","3":"Mar","4":"Nis","5":"May","6":"Haz","7":"Tem","8":"Ağu","9":"Eyl"},"narrow":{"1":"O","10":"E","11":"K","12":"A","2":"Ş","3":"M","4":"N","5":"M","6":"H","7":"T","8":"A","9":"E"},"wide":{"1":"Ocak","10":"Ekim","11":"Kasım","12":"Aralık","2":"Şubat","3":"Mart","4":"Nisan","5":"Mayıs","6":"Haziran","7":"Temmuz","8":"Ağustos","9":"Eylül"}},"stand-alone":{"abbreviated":{"1":"Oca","10":"Eki","11":"Kas","12":"Ara","2":"Şub","3":"Mar","4":"Nis","5":"May","6":"Haz","7":"Tem","8":"Ağu","9":"Eyl"},"narrow":{"1":"O","10":"E","11":"K","12":"A","2":"Ş","3":"M","4":"N","5":"M","6":"H","7":"T","8":"A","9":"E"},"wide":{"1":"Ocak","10":"Ekim","11":"Kasım","12":"Aralık","2":"Şubat","3":"Mart","4":"Nisan","5":"Mayıs","6":"Haziran","7":"Temmuz","8":"Ağustos","9":"Eylül"}}},"periods":{"format":{"abbreviated":null,"narrow":null,"wide":{"am":"AM","pm":"PM"}},"stand-alone":{}},"quarters":{"format":{"abbreviated":{"1":"Ç1","2":"Ç2","3":"Ç3","4":"Ç4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1. çeyrek","2":"2. çeyrek","3":"3. çeyrek","4":"4. çeyrek"}},"stand-alone":{"abbreviated":{"1":"Ç1","2":"Ç2","3":"Ç3","4":"Ç4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1. çeyrek","2":"2. çeyrek","3":"3. çeyrek","4":"4. çeyrek"}}}};
+    this.tokens = {"date":{"full":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"EEEE"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"default":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"short":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"."},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"."},{"type":"pattern","value":"yyyy"}],"medium":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}]},"time":{"full":[{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}],"short":[{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"}],"medium":[{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}]},"date_time":{"full":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":" "},{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}],"short":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":"."},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"."},{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":" "},{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"}],"medium":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"HH"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}]}};
+    this.calendar = {"fields":{"hour":"Saat","weekday":"Haftanın Günü","era":"Miladi Dönem","second":"Saniye","day":"Gün","minute":"Dakika","week":"Hafta","month":"Ay","zone":"Saat Dilimi","dayperiod":"AM/PM","year":"Yıl"},"months":{"format":{"narrow":{"5":"M","11":"K","6":"H","1":"O","12":"A","7":"T","2":"Ş","8":"A","3":"M","9":"E","4":"N","10":"E"},"wide":{"5":"Mayıs","11":"Kasım","6":"Haziran","1":"Ocak","12":"Aralık","7":"Temmuz","2":"Şubat","8":"Ağustos","3":"Mart","9":"Eylül","4":"Nisan","10":"Ekim"},"abbreviated":{"5":"May","11":"Kas","6":"Haz","1":"Oca","12":"Ara","7":"Tem","2":"Şub","8":"Ağu","3":"Mar","9":"Eyl","4":"Nis","10":"Eki"}},"stand-alone":{"narrow":{"5":"M","11":"K","6":"H","1":"O","12":"A","7":"T","2":"Ş","8":"A","3":"M","9":"E","4":"N","10":"E"},"wide":{"5":"Mayıs","11":"Kasım","6":"Haziran","1":"Ocak","12":"Aralık","7":"Temmuz","2":"Şubat","8":"Ağustos","3":"Mart","9":"Eylül","4":"Nisan","10":"Ekim"},"abbreviated":{"5":"May","11":"Kas","6":"Haz","1":"Oca","12":"Ara","7":"Tem","2":"Şub","8":"Ağu","3":"Mar","9":"Eyl","4":"Nis","10":"Eki"}}},"days":{"format":{"narrow":{"wed":"Ç","sat":"C","fri":"C","mon":"P","sun":"P","thu":"P","tue":"S"},"wide":{"wed":"Çarşamba","sat":"Cumartesi","fri":"Cuma","mon":"Pazartesi","sun":"Pazar","thu":"Perşembe","tue":"Salı"},"abbreviated":{"wed":"Çar","sat":"Cmt","fri":"Cum","mon":"Pzt","sun":"Paz","thu":"Per","tue":"Sal"}},"stand-alone":{"narrow":{"wed":"Ç","sat":"C","fri":"C","mon":"P","sun":"P","thu":"P","tue":"S"},"wide":{"wed":"Çarşamba","sat":"Cumartesi","fri":"Cuma","mon":"Pazartesi","sun":"Pazar","thu":"Perşembe","tue":"Salı"},"abbreviated":{"wed":"Çar","sat":"Cmt","fri":"Cum","mon":"Pzt","sun":"Paz","thu":"Per","tue":"Sal"}}},"quarters":{"format":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1. çeyrek","2":"2. çeyrek","3":"3. çeyrek","4":"4. çeyrek"},"abbreviated":{"1":"Ç1","2":"Ç2","3":"Ç3","4":"Ç4"}},"stand-alone":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1. çeyrek","2":"2. çeyrek","3":"3. çeyrek","4":"4. çeyrek"},"abbreviated":{"1":"Ç1","2":"Ç2","3":"Ç3","4":"Ç4"}}},"eras":{"narrow":{"0":""},"abbr":{"0":"MÖ","1":"MS"},"name":{"0":"Milattan Önce","1":"Milattan Sonra"}},"formats":{"date":{"full":{"pattern":"d MMMM y EEEE"},"long":{"pattern":"d MMMM y"},"default":{"pattern":"d MMM y"},"short":{"pattern":"dd.MM.yyyy"},"medium":{"pattern":"d MMM y"}},"time":{"full":{"pattern":"HH:mm:ss zzzz"},"long":{"pattern":"HH:mm:ss z"},"default":{"pattern":"HH:mm:ss"},"short":{"pattern":"HH:mm"},"medium":{"pattern":"HH:mm:ss"}},"datetime":{"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"default":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"}}},"periods":{"format":{"narrow":null,"wide":{"pm":"PM","am":"AM"},"abbreviated":null},"stand-alone":{}}};
     this.weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
     this.methods = {
       'G': 'era',

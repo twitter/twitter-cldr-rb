@@ -2,45 +2,427 @@
 // Copyright 2012 Twitter, Inc
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// TwitterCLDR (JavaScript) v1.6.2
-// Authors: 		Cameron Dutro [@camertron]
-								Kirill Lashuk [@KL_7]
-								portions by Sven Fuchs [@svenfuchs]
-// Homepage: 		https://twitter.com
-// Description:	Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
+// TwitterCLDR (JavaScript) v1.7.0
+// Authors:     Cameron Dutro [@camertron]
+                Kirill Lashuk [@KL_7]
+                portions by Sven Fuchs [@svenfuchs]
+// Homepage:    https://twitter.com
+// Description: Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
 */
 
-var DateTimeFormatter, PluralRules, TimespanFormatter, TwitterCldr;
+var BaseHelper, Currencies, CurrencyFormatter, DateTimeFormatter, DecimalFormatter, FractionHelper, IntegerHelper, NumberFormatter, PercentFormatter, PluralRules, TimespanFormatter, TwitterCldr,
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 TwitterCldr = {};
 
-TwitterCldr.PluralRules = PluralRules = (function() {
+TwitterCldr.NumberFormatter = NumberFormatter = (function() {
 
-  function PluralRules() {}
+  function NumberFormatter() {
+    this.all_tokens = {"percent":{"positive":["","#,##0","%"],"negative":["-","#,##0","%"]},"decimal":{"positive":["","#,##0.###"],"negative":["-","#,##0.###"]},"currency":{"positive":["¤","#,##0.00"],"negative":["-¤","#,##0.00"]}};
+    this.tokens = [];
+    this.symbols = {"plus_sign":"+","infinity":"∞","minus_sign":"-","nan":"NaN","group":" ","alias":"","per_mille":"‰","decimal":",","list":";","percent_sign":"%","exponential":"E"};
+    this.default_symbols = {
+      'group': ',',
+      'decimal': '.',
+      'plus_sign': '+',
+      'minus_sign': '-'
+    };
+  }
 
-  PluralRules.rules = {"keys": ["one","other"], "rule": function(n) { return (function() { if (n == 1) { return "one" } else { return "other" } })(); }};
-
-  PluralRules.all = function() {
-    return this.rules.keys;
+  NumberFormatter.prototype.format = function(number, options) {
+    var fraction, fraction_format, int, integer_format, key, opts, prefix, result, sign, suffix, val, _ref, _ref1;
+    if (options == null) {
+      options = {};
+    }
+    opts = this.default_format_options_for(number);
+    for (key in options) {
+      val = options[key];
+      opts[key] = options[key] != null ? options[key] : opts[key];
+    }
+    _ref = this.partition_tokens(this.get_tokens(number, opts)), prefix = _ref[0], suffix = _ref[1], integer_format = _ref[2], fraction_format = _ref[3];
+    _ref1 = this.parse_number(number, opts), int = _ref1[0], fraction = _ref1[1];
+    result = integer_format.apply(parseFloat(int), opts);
+    if (fraction) {
+      result += fraction_format.apply(fraction, opts);
+    }
+    sign = number < 0 && prefix !== "-" ? this.symbols.minus_sign || this.default_symbols.minus_sign : "";
+    return "" + sign + prefix + result + suffix;
   };
 
-  PluralRules.rule_for = function(number) {
-    try {
-      return this.rules.rule(number);
-    } catch (error) {
-      return "other";
+  NumberFormatter.prototype.partition_tokens = function(tokens) {
+    return [tokens[0] || "", tokens[2] || "", new IntegerHelper(tokens[1], this.symbols), new FractionHelper(tokens[1], this.symbols)];
+  };
+
+  NumberFormatter.prototype.parse_number = function(number, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    if (options.precision != null) {
+      precision = options.precision;
+    } else {
+      precision = this.precision_from(number);
+    }
+    number = this.round_to(number, precision);
+    return Math.abs(number).toFixed(precision).split(".");
+  };
+
+  NumberFormatter.prototype.precision_from = function(num) {
+    var parts;
+    parts = num.toString().split(".");
+    if (parts.length === 2) {
+      return parts[1].length;
+    } else {
+      return 0;
     }
   };
 
-  return PluralRules;
+  NumberFormatter.prototype.round_to = function(number, precision) {
+    var factor;
+    factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+  };
+
+  NumberFormatter.prototype.get_tokens = function() {
+    throw "get_tokens() not implemented - use a derived class like PercentFormatter.";
+  };
+
+  return NumberFormatter;
 
 })();
+
+TwitterCldr.PercentFormatter = PercentFormatter = (function(_super) {
+
+  __extends(PercentFormatter, _super);
+
+  function PercentFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_percent_sign = "%";
+    PercentFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  PercentFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return PercentFormatter.__super__.format.call(this, number, options).replace('¤', this.symbols.percent_sign || this.default_percent_sign);
+  };
+
+  PercentFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: 0
+    };
+  };
+
+  PercentFormatter.prototype.get_tokens = function(number, options) {
+    if (number < 0) {
+      return this.all_tokens.percent.negative;
+    } else {
+      return this.all_tokens.percent.positive;
+    }
+  };
+
+  return PercentFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.DecimalFormatter = DecimalFormatter = (function(_super) {
+
+  __extends(DecimalFormatter, _super);
+
+  function DecimalFormatter() {
+    return DecimalFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  DecimalFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    try {
+      return DecimalFormatter.__super__.format.call(this, number, options);
+    } catch (error) {
+      return number;
+    }
+  };
+
+  DecimalFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: this.precision_from(number)
+    };
+  };
+
+  DecimalFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.decimal.negative;
+    } else {
+      return this.all_tokens.decimal.positive;
+    }
+  };
+
+  return DecimalFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.CurrencyFormatter = CurrencyFormatter = (function(_super) {
+
+  __extends(CurrencyFormatter, _super);
+
+  function CurrencyFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_currency_symbol = "$";
+    this.default_precision = 2;
+    CurrencyFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  CurrencyFormatter.prototype.format = function(number, options) {
+    var currency;
+    if (options == null) {
+      options = {};
+    }
+    if (options.currency) {
+      if (TwitterCldr.Currencies != null) {
+        currency = TwitterCldr.Currencies.for_code(options.currency);
+        currency || (currency = TwitterCldr.Currencies.for_country(options.currency));
+        currency || (currency = {
+          symbol: options.currency
+        });
+      } else {
+        currency = {
+          symbol: options.currency
+        };
+      }
+    } else {
+      currency = {
+        symbol: this.default_currency_symbol
+      };
+    }
+    return CurrencyFormatter.__super__.format.call(this, number, options).replace('¤', currency.symbol);
+  };
+
+  CurrencyFormatter.prototype.default_format_options_for = function(number) {
+    var precision;
+    precision = this.precision_from(number);
+    if (precision === 0) {
+      precision = this.default_precision;
+    }
+    return {
+      precision: precision
+    };
+  };
+
+  CurrencyFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.currency.negative;
+    } else {
+      return this.all_tokens.currency.positive;
+    }
+  };
+
+  return CurrencyFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.NumberFormatter.BaseHelper = BaseHelper = (function() {
+
+  function BaseHelper() {}
+
+  BaseHelper.prototype.interpolate = function(string, value, orientation) {
+    var i, length, start;
+    if (orientation == null) {
+      orientation = "right";
+    }
+    value = value.toString();
+    length = value.length;
+    start = orientation === "left" ? 0 : -length;
+    if (string.length < length) {
+      string = (((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+          _results.push("#");
+        }
+        return _results;
+      })()).join("") + string).slice(-length);
+    }
+    if (start < 0) {
+      string = string.slice(0, start + string.length) + value;
+    } else {
+      string = string.slice(0, start) + value + string.slice(length);
+    }
+    return string.replace(/#/g, "");
+  };
+
+  return BaseHelper;
+
+})();
+
+TwitterCldr.NumberFormatter.IntegerHelper = IntegerHelper = (function(_super) {
+
+  __extends(IntegerHelper, _super);
+
+  function IntegerHelper(token, symbols) {
+    var format;
+    if (symbols == null) {
+      symbols = {};
+    }
+    format = token.split('.')[0];
+    this.format = this.prepare_format(format, symbols);
+    this.groups = this.parse_groups(format);
+    this.separator = symbols.group || ',';
+  }
+
+  IntegerHelper.prototype.apply = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return this.format_groups(this.interpolate(this.format, parseInt(number)));
+  };
+
+  IntegerHelper.prototype.format_groups = function(string) {
+    var cur_token, token, tokens;
+    if (this.groups.length === 0) {
+      return string;
+    }
+    tokens = [];
+    cur_token = this.chop_group(string, this.groups[0]);
+    tokens.push(cur_token);
+    if (cur_token) {
+      string = string.slice(0, string.length - cur_token.length);
+    }
+    while (string.length > this.groups[this.groups.length - 1]) {
+      cur_token = this.chop_group(string, this.groups[this.groups.length - 1]);
+      tokens.push(cur_token);
+      if (cur_token) {
+        string = string.slice(0, string.length - cur_token.length);
+      }
+    }
+    tokens.push(string);
+    return ((function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
+        token = tokens[_i];
+        if (token !== null) {
+          _results.push(token);
+        }
+      }
+      return _results;
+    })()).reverse().join(this.separator);
+  };
+
+  IntegerHelper.prototype.parse_groups = function(format) {
+    var index, rest, width, widths;
+    if (!(index = format.lastIndexOf(','))) {
+      return [];
+    }
+    rest = format.slice(0, index);
+    widths = [format.length - index - 1];
+    if (rest.lastIndexOf(',') > -1) {
+      widths.push(rest.length - rest.lastIndexOf(',') - 1);
+    }
+    widths = (function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = widths.length; _i < _len; _i++) {
+        width = widths[_i];
+        if (width !== null) {
+          _results.push(width);
+        }
+      }
+      return _results;
+    })();
+    widths.reverse();
+    return ((function() {
+      var _i, _ref, _results;
+      _results = [];
+      for (index = _i = 0, _ref = widths.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
+        if (widths.indexOf(widths[index], index + 1) === -1) {
+          _results.push(widths[index]);
+        }
+      }
+      return _results;
+    })()).reverse();
+  };
+
+  IntegerHelper.prototype.chop_group = function(string, size) {
+    if (string.length > size) {
+      return string.slice(-size);
+    } else {
+      return null;
+    }
+  };
+
+  IntegerHelper.prototype.prepare_format = function(format, symbols) {
+    return format.replace(",", "").replace("+", symbols.plus_sign).replace("-", symbols.minus_sign);
+  };
+
+  return IntegerHelper;
+
+})(BaseHelper);
+
+TwitterCldr.NumberFormatter.FractionHelper = FractionHelper = (function(_super) {
+
+  __extends(FractionHelper, _super);
+
+  function FractionHelper(token, symbols) {
+    if (symbols == null) {
+      symbols = {};
+    }
+    this.format = token ? token.split('.').pop() : "";
+    this.decimal = symbols.decimal || ".";
+    this.precision = this.format.length;
+  }
+
+  FractionHelper.prototype.apply = function(fraction, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision > 0) {
+      return this.decimal + this.interpolate(this.format_for(options), fraction, "left");
+    } else {
+      return "";
+    }
+  };
+
+  FractionHelper.prototype.format_for = function(options) {
+    var i, precision;
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision) {
+      return ((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= precision ? _i < precision : _i > precision; i = 0 <= precision ? ++_i : --_i) {
+          _results.push("0");
+        }
+        return _results;
+      })()).join("");
+    } else {
+      return this.format;
+    }
+  };
+
+  return FractionHelper;
+
+})(BaseHelper);
 
 TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
   function TimespanFormatter() {
     this.default_type = "default";
-    this.tokens = {"ago":{"second":{"default":{"one":[{"value":"1 sekonde gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" sekondes gelede","type":"plaintext"}]}},"minute":{"default":{"one":[{"value":"1 minuut gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" minute gelede","type":"plaintext"}]}},"hour":{"default":{"one":[{"value":"1 uur gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" uur gelede","type":"plaintext"}]}},"day":{"default":{"one":[{"value":"1 dag gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" dae gelede","type":"plaintext"}]}},"week":{"default":{"one":[{"value":"1 week gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" weke gelede","type":"plaintext"}]}},"month":{"default":{"one":[{"value":"1 maand gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" maande gelede","type":"plaintext"}]}},"year":{"default":{"one":[{"value":"1 jaar gelede","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" jaar gelede","type":"plaintext"}]}}},"until":{"second":{"default":{"one":[{"value":"In 1 sekond","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" sekondes","type":"plaintext"}]}},"minute":{"default":{"one":[{"value":"In 1 minuut","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" minute","type":"plaintext"}]}},"hour":{"default":{"one":[{"value":"In 1 uur","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" uur","type":"plaintext"}]}},"day":{"default":{"one":[{"value":"In 1 dag","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" dae","type":"plaintext"}]}},"week":{"default":{"one":[{"value":"In 1 week","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" weke","type":"plaintext"}]}},"month":{"default":{"one":[{"value":"In 1 maand","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" maande","type":"plaintext"}]}},"year":{"default":{"one":[{"value":"In 1 jaar","type":"plaintext"}],"other":[{"value":"In ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" jaar","type":"plaintext"}]}}},"none":{"second":{"default":{"one":[{"value":"1 sekonde","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" sekondes","type":"plaintext"}]},"short":{"one":[{"value":"1 sek","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" sek","type":"plaintext"}]},"abbreviated":{"one":[{"value":"{0}","type":"placeholder"},{"value":"s","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":"s","type":"plaintext"}]}},"minute":{"default":{"one":[{"value":"1 minuut","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" minute","type":"plaintext"}]},"short":{"one":[{"value":"1 min","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" min","type":"plaintext"}]},"abbreviated":{"one":[{"value":"{0}","type":"placeholder"},{"value":"m","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":"m","type":"plaintext"}]}},"hour":{"default":{"one":[{"value":"1 uur","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" uur","type":"plaintext"}]},"short":{"one":[{"value":"1 uur","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" uur","type":"plaintext"}]},"abbreviated":{"one":[{"value":"{0}","type":"placeholder"},{"value":"h","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":"h","type":"plaintext"}]}},"day":{"default":{"one":[{"value":"{0}","type":"placeholder"},{"value":" dag","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" dae","type":"plaintext"}]},"short":{"one":[{"value":"1 dag","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" dae","type":"plaintext"}]},"abbreviated":{"one":[{"value":"{0}","type":"placeholder"},{"value":"d","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":"d","type":"plaintext"}]}},"week":{"default":{"one":[{"value":"1 week","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" weke","type":"plaintext"}]},"short":{"one":[{"value":"1 week","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" weke","type":"plaintext"}]}},"month":{"default":{"one":[{"value":"1 maand","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" maande","type":"plaintext"}]},"short":{"one":[{"value":"1 mnd","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" mnde","type":"plaintext"}]}},"year":{"default":{"one":[{"value":"1 jaar","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" jaar","type":"plaintext"}]},"short":{"one":[{"value":"1 jr","type":"plaintext"}],"other":[{"value":"{0}","type":"placeholder"},{"value":" jr","type":"plaintext"}]}}}};
+    this.tokens = {"ago":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" uur gelede"}],"one":[{"type":"plaintext","value":"1 uur gelede"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sekondes gelede"}],"one":[{"type":"plaintext","value":"1 sekonde gelede"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dae gelede"}],"one":[{"type":"plaintext","value":"1 dag gelede"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" minute gelede"}],"one":[{"type":"plaintext","value":"1 minuut gelede"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" weke gelede"}],"one":[{"type":"plaintext","value":"1 week gelede"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" maande gelede"}],"one":[{"type":"plaintext","value":"1 maand gelede"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" jaar gelede"}],"one":[{"type":"plaintext","value":"1 jaar gelede"}]}}},"until":{"hour":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" uur"}],"one":[{"type":"plaintext","value":"In 1 uur"}]}},"second":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sekondes"}],"one":[{"type":"plaintext","value":"In 1 sekond"}]}},"day":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dae"}],"one":[{"type":"plaintext","value":"In 1 dag"}]}},"minute":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" minute"}],"one":[{"type":"plaintext","value":"In 1 minuut"}]}},"week":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" weke"}],"one":[{"type":"plaintext","value":"In 1 week"}]}},"month":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" maande"}],"one":[{"type":"plaintext","value":"In 1 maand"}]}},"year":{"default":{"other":[{"type":"plaintext","value":"In "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" jaar"}],"one":[{"type":"plaintext","value":"In 1 jaar"}]}}},"none":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" uur"}],"one":[{"type":"plaintext","value":"1 uur"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" uur"}],"one":[{"type":"plaintext","value":"1 uur"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"h"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"h"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sekondes"}],"one":[{"type":"plaintext","value":"1 sekonde"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" sek"}],"one":[{"type":"plaintext","value":"1 sek"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"s"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"s"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dae"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dag"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" dae"}],"one":[{"type":"plaintext","value":"1 dag"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"d"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"d"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" minute"}],"one":[{"type":"plaintext","value":"1 minuut"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" min"}],"one":[{"type":"plaintext","value":"1 min"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"m"}],"one":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":"m"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" weke"}],"one":[{"type":"plaintext","value":"1 week"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" weke"}],"one":[{"type":"plaintext","value":"1 week"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" maande"}],"one":[{"type":"plaintext","value":"1 maand"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" mnde"}],"one":[{"type":"plaintext","value":"1 mnd"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" jaar"}],"one":[{"type":"plaintext","value":"1 jaar"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" jr"}],"one":[{"type":"plaintext","value":"1 jr"}]}}}};
     this.time_in_seconds = {
       "second": 1,
       "minute": 60,
@@ -104,11 +486,94 @@ TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
 })();
 
+TwitterCldr.Currencies = Currencies = (function() {
+
+  function Currencies() {}
+
+  Currencies.currencies = {"Kyrgyzstan":{"symbol":"лв","code":"KGS","currency":"Som"},"Poland":{"symbol":"zł","code":"PLN","currency":"Zloty"},"El Salvador":{"symbol":"$","code":"SVC","currency":"Colon"},"Belize":{"symbol":"BZ$","code":"BZD","currency":"Dollar"},"Mexico":{"symbol":"$","code":"MXN","currency":"Peso"},"Romania":{"symbol":"lei","code":"RON","currency":"New Leu"},"Hong Kong":{"symbol":"$","code":"HKD","currency":"Dollar"},"Colombia":{"symbol":"$","code":"COP","currency":"Peso"},"Latvia":{"symbol":"Ls","code":"LVL","currency":"Lat"},"Syria":{"symbol":"£","code":"SYP","currency":"Pound"},"Laos":{"symbol":"₭","code":"LAK","currency":"Kip"},"Guyana":{"symbol":"$","code":"GYD","currency":"Dollar"},"Panama":{"symbol":"B/.","code":"PAB","currency":"Balboa"},"Hungary":{"symbol":"Ft","code":"HUF","currency":"Forint"},"Yemen":{"symbol":"﷼","code":"YER","currency":"Rial"},"Egypt":{"symbol":"£","code":"EGP","currency":"Pound"},"Venezuela":{"symbol":"Bs","code":"VEF","currency":"Bolivar Fuerte"},"Guernsey":{"symbol":"£","code":"GGP","currency":"Pound"},"Russia":{"symbol":"руб","code":"RUB","currency":"Ruble"},"Lithuania":{"symbol":"Lt","code":"LTL","currency":"Litas"},"Mauritius":{"symbol":"₨","code":"MUR","currency":"Rupee"},"Azerbaijan":{"symbol":"ман","code":"AZN","currency":"New Manat"},"Albania":{"symbol":"Lek","code":"ALL","currency":"Lek"},"North Korea":{"symbol":"₩","code":"KPW","currency":"Won"},"Pakistan":{"symbol":"₨","code":"PKR","currency":"Rupee"},"Brazil":{"symbol":"R$","code":"BRL","currency":"Real"},"Somalia":{"symbol":"S","code":"SOS","currency":"Shilling"},"Costa Rica":{"symbol":"₡","code":"CRC","currency":"Colon"},"Gibraltar":{"symbol":"£","code":"GIP","currency":"Pound"},"Euro Member Countries":{"symbol":"€","code":"EUR","currency":"European Union"},"Afghanistan":{"symbol":"؋","code":"AFN","currency":"Afghani"},"Brunei Darussalam":{"symbol":"$","code":"BND","currency":"Dollar"},"Iran":{"symbol":"﷼","code":"IRR","currency":"Rial"},"Ukraine":{"symbol":"₴","code":"UAH","currency":"Hryvna"},"Jamaica":{"symbol":"J$","code":"JMD","currency":"Dollar"},"Sri Lanka":{"symbol":"₨","code":"LKR","currency":"Rupee"},"Viet Nam":{"symbol":"₫","code":"VND","currency":"Dong"},"Trinidad and Tobago":{"symbol":"TT$","code":"TTD","currency":"Dollar"},"Liberia":{"symbol":"$","code":"LRD","currency":"Dollar"},"Fiji":{"symbol":"$","code":"FJD","currency":"Dollar"},"China":{"symbol":"¥","code":"CNY","currency":"Yuan Renminbi"},"Netherlands Antilles":{"symbol":"ƒ","code":"ANG","currency":"Guilder"},"Cambodia":{"symbol":"៛","code":"KHR","currency":"Riel"},"Botswana":{"symbol":"P","code":"BWP","currency":"Pula"},"Uzbekistan":{"symbol":"лв","code":"UZS","currency":"Som"},"Bahamas":{"symbol":"$","code":"BSD","currency":"Dollar"},"Uruguay":{"symbol":"$U","code":"UYU","currency":"Peso"},"Thailand":{"symbol":"฿","code":"THB","currency":"Baht"},"Indonesia":{"symbol":"Rp","code":"IDR","currency":"Rupiah"},"Mongolia":{"symbol":"₮","code":"MNT","currency":"Tughrik"},"Namibia":{"symbol":"$","code":"NAD","currency":"Dollar"},"East Caribbean":{"symbol":"$","code":"XCD","currency":"Dollar"},"Switzerland":{"symbol":"CHF","code":"CHF","currency":"Franc"},"Seychelles":{"symbol":"₨","code":"SCR","currency":"Rupee"},"Zimbabwe":{"symbol":"Z$","code":"ZWD","currency":"Dollar"},"Bosnia and Herzegovina":{"symbol":"KM","code":"BAM","currency":"Convertible Marka"},"Japan":{"symbol":"¥","code":"JPY","currency":"Yen"},"Tuvalu":{"symbol":"$","code":"TVD","currency":"Dollar"},"Estonia":{"symbol":"kr","code":"EEK","currency":"Kroon"},"Macedonia":{"symbol":"ден","code":"MKD","currency":"Denar"},"Jersey":{"symbol":"£","code":"JEP","currency":"Pound"},"Aruba":{"symbol":"ƒ","code":"AWG","currency":"Guilder"},"Philippines":{"symbol":"₱","code":"PHP","currency":"Peso"},"Ghana":{"symbol":"¢","code":"GHC","currency":"Cedis"},"Isle of Man":{"symbol":"£","code":"IMP","currency":"Pound"},"Bolivia":{"symbol":"$b","code":"BOB","currency":"Boliviano"},"Suriname":{"symbol":"$","code":"SRD","currency":"Dollar"},"Barbados":{"symbol":"$","code":"BBD","currency":"Dollar"},"Croatia":{"symbol":"kn","code":"HRK","currency":"Kuna"},"Chile":{"symbol":"$","code":"CLP","currency":"Peso"},"Argentina":{"symbol":"$","code":"ARS","currency":"Peso"},"Belarus":{"symbol":"p.","code":"BYR","currency":"Ruble"},"Guatemala":{"symbol":"Q","code":"GTQ","currency":"Quetzal"},"United States":{"symbol":"$","code":"USD","currency":"Dollar"},"Falkland Islands (Malvinas)":{"symbol":"£","code":"FKP","currency":"Pound"},"South Africa":{"symbol":"R","code":"ZAR","currency":"Rand"},"Nigeria":{"symbol":"₦","code":"NGN","currency":"Naira"},"United Kingdom":{"symbol":"£","code":"GBP","currency":"Pound"},"Lebanon":{"symbol":"£","code":"LBP","currency":"Pound"},"Sweden":{"symbol":"kr","code":"SEK","currency":"Krona"},"Serbia":{"symbol":"Дин.","code":"RSD","currency":"Dinar"},"Taiwan":{"symbol":"NT$","code":"TWD","currency":"New Dollar"},"Canada":{"symbol":"$","code":"CAD","currency":"Dollar"},"South Korea":{"symbol":"₩","code":"KRW","currency":"Won"},"Australia":{"symbol":"$","code":"AUD","currency":"Dollar"},"Oman":{"symbol":"﷼","code":"OMR","currency":"Rial"},"Malaysia":{"symbol":"RM","code":"MYR","currency":"Ringgit"},"Bermuda":{"symbol":"$","code":"BMD","currency":"Dollar"},"Iceland":{"symbol":"kr","code":"ISK","currency":"Krona"},"Turkey":{"symbol":"₤","code":"TRY","currency":"Lira"},"Saint Helena":{"symbol":"£","code":"SHP","currency":"Pound"},"Saudi Arabia":{"symbol":"﷼","code":"SAR","currency":"Riyal"},"Qatar":{"symbol":"﷼","code":"QAR","currency":"Riyal"},"Bulgaria":{"symbol":"лв","code":"BGN","currency":"Lev"},"Czech Republic":{"symbol":"Kč","code":"CZK","currency":"Koruna"},"New Zealand":{"symbol":"$","code":"NZD","currency":"Dollar"},"Paraguay":{"symbol":"Gs","code":"PYG","currency":"Guarani"},"Singapore":{"symbol":"$","code":"SGD","currency":"Dollar"},"Mozambique":{"symbol":"MT","code":"MZN","currency":"Metical"},"Nepal":{"symbol":"₨","code":"NPR","currency":"Rupee"},"Cuba":{"symbol":"₱","code":"CUP","currency":"Peso"},"Denmark":{"symbol":"kr","code":"DKK","currency":"Krone"},"Norway":{"symbol":"kr","code":"NOK","currency":"Krone"},"Nicaragua":{"symbol":"C$","code":"NIO","currency":"Cordoba"},"Honduras":{"symbol":"L","code":"HNL","currency":"Lempira"},"India":{"symbol":"₨","code":"INR","currency":"Rupee"},"Cayman Islands":{"symbol":"$","code":"KYD","currency":"Dollar"},"Kazakhstan":{"symbol":"лв","code":"KZT","currency":"Tenge"},"Israel":{"symbol":"₪","code":"ILS","currency":"Shekel"},"Dominican Republic":{"symbol":"RD$","code":"DOP","currency":"Peso"},"Peru":{"symbol":"S/.","code":"PEN","currency":"Nuevo Sol"},"Solomon Islands":{"symbol":"$","code":"SBD","currency":"Dollar"}};
+
+  Currencies.countries = function() {
+    var country_name, data;
+    return this.names || (this.names = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(country_name);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.currency_codes = function() {
+    var country_name, data;
+    return this.codes || (this.codes = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(data.code);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.for_country = function(country_name) {
+    return this.currencies[country_name];
+  };
+
+  Currencies.for_code = function(currency_code) {
+    var country_name, data, final, _ref;
+    final = null;
+    _ref = this.currencies;
+    for (country_name in _ref) {
+      data = _ref[country_name];
+      if (data.code === currency_code) {
+        final = {
+          country: country_name,
+          code: data.code,
+          symbol: data.symbol,
+          currency: data.currency
+        };
+        break;
+      }
+    }
+    return final;
+  };
+
+  return Currencies;
+
+})();
+
+TwitterCldr.PluralRules = PluralRules = (function() {
+
+  function PluralRules() {}
+
+  PluralRules.rules = {"keys": ["one","other"], "rule": function(n) { return (function() { if (n == 1) { return "one" } else { return "other" } })(); }};
+
+  PluralRules.all = function() {
+    return this.rules.keys;
+  };
+
+  PluralRules.rule_for = function(number) {
+    try {
+      return this.rules.rule(number);
+    } catch (error) {
+      return "other";
+    }
+  };
+
+  return PluralRules;
+
+})();
+
 TwitterCldr.DateTimeFormatter = DateTimeFormatter = (function() {
 
   function DateTimeFormatter() {
-    this.tokens = {"date_time":{"default":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"short":[{"value":"yyyy","type":"pattern"},{"value":"-","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"-","type":"plaintext"},{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}]},"time":{"default":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"full":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}],"short":[{"value":"h","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"a","type":"pattern"}]},"date":{"default":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"long":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"medium":[{"value":"dd","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"short":[{"value":"yyyy","type":"pattern"},{"value":"-","type":"plaintext"},{"value":"MM","type":"pattern"},{"value":"-","type":"plaintext"},{"value":"dd","type":"pattern"}]}};
-    this.calendar = {"days":{"format":{"abbreviated":{"fri":"Vr","mon":"Ma","sat":"Sa","sun":"So","thu":"Do","tue":"Di","wed":"Wo"},"narrow":{"fri":"V","mon":"M","sat":"S","sun":"S","thu":"D","tue":"D","wed":"W"},"wide":{"fri":"Vrydag","mon":"Maandag","sat":"Saterdag","sun":"Sondag","thu":"Donderdag","tue":"Dinsdag","wed":"Woensdag"}},"stand-alone":{"abbreviated":{"fri":"Vr","mon":"Ma","sat":"Sa","sun":"So","thu":"Do","tue":"Di","wed":"Wo"},"narrow":{"fri":"V","mon":"M","sat":"S","sun":"S","thu":"D","tue":"D","wed":"W"},"wide":{"fri":"Vrydag","mon":"Maandag","sat":"Saterdag","sun":"Sondag","thu":"Donderdag","tue":"Dinsdag","wed":"Woensdag"}}},"eras":{"abbr":{"0":"v.C.","1":"n.C."},"name":{"0":"voor Christus","1":"na Christus"},"narrow":{"0":""}},"fields":{"day":"Dag","dayperiod":"AM/PM","era":"Era","hour":"Uur","minute":"Minuut","month":"Maand","second":"Sekonde","week":"Week","weekday":"Weeksdag","year":"Jaar","zone":"Tydsone"},"formats":{"date":{"default":{"pattern":"dd MMM y"},"full":{"pattern":"EEEE dd MMMM y"},"long":{"pattern":"dd MMMM y"},"medium":{"pattern":"dd MMM y"},"short":{"pattern":"yyyy-MM-dd"}},"datetime":{"default":{"pattern":"{{date}} {{time}}"},"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"}},"time":{"default":{"pattern":"h:mm:ss a"},"full":{"pattern":"h:mm:ss a zzzz"},"long":{"pattern":"h:mm:ss a z"},"medium":{"pattern":"h:mm:ss a"},"short":{"pattern":"h:mm a"}}},"months":{"format":{"abbreviated":{"1":"Jan","10":"Okt","11":"Nov","12":"Des","2":"Feb","3":"Mar","4":"Apr","5":"Mei","6":"Jun","7":"Jul","8":"Aug","9":"Sep"},"narrow":{"1":"J","10":"O","11":"N","12":"D","2":"F","3":"M","4":"A","5":"M","6":"J","7":"J","8":"A","9":"S"},"wide":{"1":"Januarie","10":"Oktober","11":"November","12":"Desember","2":"Februarie","3":"Maart","4":"April","5":"Mei","6":"Junie","7":"Julie","8":"Augustus","9":"September"}},"stand-alone":{"abbreviated":{"1":"Jan","10":"Okt","11":"Nov","12":"Des","2":"Feb","3":"Mar","4":"Apr","5":"Mei","6":"Jun","7":"Jul","8":"Aug","9":"Sep"},"narrow":{"1":"J","10":"O","11":"N","12":"D","2":"F","3":"M","4":"A","5":"M","6":"J","7":"J","8":"A","9":"S"},"wide":{"4":"April"}}},"periods":{"format":{"abbreviated":null,"narrow":null,"wide":{"am":"vm.","pm":"nm."}},"stand-alone":{}},"quarters":{"format":{"abbreviated":{"1":"K1","2":"K2","3":"K3","4":"K4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1ste kwartaal","2":"2de kwartaal","3":"3de kwartaal","4":"4de kwartaal"}},"stand-alone":{"abbreviated":{"1":"K1","2":"K2","3":"K3","4":"K4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1ste kwartaal","2":"2de kwartaal","3":"3de kwartaal","4":"4de kwartaal"}}}};
+    this.tokens = {"date":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":" "},{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"long":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"default":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"short":[{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":"-"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"-"},{"type":"pattern","value":"dd"}],"medium":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}]},"time":{"full":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"},{"type":"plaintext","value":" "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"},{"type":"plaintext","value":" "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"short":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"medium":[{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}]},"date_time":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":" "},{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"},{"type":"plaintext","value":" "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"},{"type":"plaintext","value":" "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"short":[{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":"-"},{"type":"pattern","value":"MM"},{"type":"plaintext","value":"-"},{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}],"medium":[{"type":"pattern","value":"dd"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":" "},{"type":"pattern","value":"h"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" "},{"type":"pattern","value":"a"}]}};
+    this.calendar = {"fields":{"hour":"Uur","weekday":"Weeksdag","era":"Era","second":"Sekonde","day":"Dag","minute":"Minuut","week":"Week","month":"Maand","zone":"Tydsone","dayperiod":"AM/PM","year":"Jaar"},"months":{"format":{"narrow":{"5":"M","11":"N","6":"J","1":"J","12":"D","7":"J","2":"F","8":"A","3":"M","9":"S","4":"A","10":"O"},"wide":{"5":"Mei","11":"November","6":"Junie","1":"Januarie","12":"Desember","7":"Julie","2":"Februarie","8":"Augustus","3":"Maart","9":"September","4":"April","10":"Oktober"},"abbreviated":{"5":"Mei","11":"Nov","6":"Jun","1":"Jan","12":"Des","7":"Jul","2":"Feb","8":"Aug","3":"Mar","9":"Sep","4":"Apr","10":"Okt"}},"stand-alone":{"narrow":{"5":"M","11":"N","6":"J","1":"J","12":"D","7":"J","2":"F","8":"A","3":"M","9":"S","4":"A","10":"O"},"wide":{"4":"April"},"abbreviated":{"5":"Mei","11":"Nov","6":"Jun","1":"Jan","12":"Des","7":"Jul","2":"Feb","8":"Aug","3":"Mar","9":"Sep","4":"Apr","10":"Okt"}}},"days":{"format":{"narrow":{"wed":"W","sat":"S","fri":"V","mon":"M","sun":"S","thu":"D","tue":"D"},"wide":{"wed":"Woensdag","sat":"Saterdag","fri":"Vrydag","mon":"Maandag","sun":"Sondag","thu":"Donderdag","tue":"Dinsdag"},"abbreviated":{"wed":"Wo","sat":"Sa","fri":"Vr","mon":"Ma","sun":"So","thu":"Do","tue":"Di"}},"stand-alone":{"narrow":{"wed":"W","sat":"S","fri":"V","mon":"M","sun":"S","thu":"D","tue":"D"},"wide":{"wed":"Woensdag","sat":"Saterdag","fri":"Vrydag","mon":"Maandag","sun":"Sondag","thu":"Donderdag","tue":"Dinsdag"},"abbreviated":{"wed":"Wo","sat":"Sa","fri":"Vr","mon":"Ma","sun":"So","thu":"Do","tue":"Di"}}},"quarters":{"format":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1ste kwartaal","2":"2de kwartaal","3":"3de kwartaal","4":"4de kwartaal"},"abbreviated":{"1":"K1","2":"K2","3":"K3","4":"K4"}},"stand-alone":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"1ste kwartaal","2":"2de kwartaal","3":"3de kwartaal","4":"4de kwartaal"},"abbreviated":{"1":"K1","2":"K2","3":"K3","4":"K4"}}},"eras":{"narrow":{"0":""},"abbr":{"0":"v.C.","1":"n.C."},"name":{"0":"voor Christus","1":"na Christus"}},"formats":{"date":{"full":{"pattern":"EEEE dd MMMM y"},"long":{"pattern":"dd MMMM y"},"default":{"pattern":"dd MMM y"},"short":{"pattern":"yyyy-MM-dd"},"medium":{"pattern":"dd MMM y"}},"time":{"full":{"pattern":"h:mm:ss a zzzz"},"long":{"pattern":"h:mm:ss a z"},"default":{"pattern":"h:mm:ss a"},"short":{"pattern":"h:mm a"},"medium":{"pattern":"h:mm:ss a"}},"datetime":{"full":{"pattern":"{{date}} {{time}}"},"long":{"pattern":"{{date}} {{time}}"},"default":{"pattern":"{{date}} {{time}}"},"short":{"pattern":"{{date}} {{time}}"},"medium":{"pattern":"{{date}} {{time}}"}}},"periods":{"format":{"narrow":null,"wide":{"pm":"nm.","am":"vm."},"abbreviated":null},"stand-alone":{}}};
     this.weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
     this.methods = {
       'G': 'era',

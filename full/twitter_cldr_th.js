@@ -2,45 +2,427 @@
 // Copyright 2012 Twitter, Inc
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// TwitterCLDR (JavaScript) v1.6.2
-// Authors: 		Cameron Dutro [@camertron]
-								Kirill Lashuk [@KL_7]
-								portions by Sven Fuchs [@svenfuchs]
-// Homepage: 		https://twitter.com
-// Description:	Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
+// TwitterCLDR (JavaScript) v1.7.0
+// Authors:     Cameron Dutro [@camertron]
+                Kirill Lashuk [@KL_7]
+                portions by Sven Fuchs [@svenfuchs]
+// Homepage:    https://twitter.com
+// Description: Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
 */
 
-var DateTimeFormatter, PluralRules, TimespanFormatter, TwitterCldr;
+var BaseHelper, Currencies, CurrencyFormatter, DateTimeFormatter, DecimalFormatter, FractionHelper, IntegerHelper, NumberFormatter, PercentFormatter, PluralRules, TimespanFormatter, TwitterCldr,
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
 TwitterCldr = {};
 
-TwitterCldr.PluralRules = PluralRules = (function() {
+TwitterCldr.NumberFormatter = NumberFormatter = (function() {
 
-  function PluralRules() {}
+  function NumberFormatter() {
+    this.all_tokens = {"percent":{"positive":["","#,##0","%"],"negative":["-","#,##0","%"]},"decimal":{"positive":["","#,##0.###"],"negative":["-","#,##0.###"]},"currency":{"positive":["¤","#,##0.00"],"negative":["-¤-","#,##0.00"]}};
+    this.tokens = [];
+    this.symbols = {"plus_sign":"+","infinity":"∞","minus_sign":"-","nan":"NaN","group":",","alias":"","per_mille":"‰","decimal":".","list":";","percent_sign":"%","exponential":"E"};
+    this.default_symbols = {
+      'group': ',',
+      'decimal': '.',
+      'plus_sign': '+',
+      'minus_sign': '-'
+    };
+  }
 
-  PluralRules.rules = {"keys": ["other"], "rule": function(n) { return "other" }};
-
-  PluralRules.all = function() {
-    return this.rules.keys;
+  NumberFormatter.prototype.format = function(number, options) {
+    var fraction, fraction_format, int, integer_format, key, opts, prefix, result, sign, suffix, val, _ref, _ref1;
+    if (options == null) {
+      options = {};
+    }
+    opts = this.default_format_options_for(number);
+    for (key in options) {
+      val = options[key];
+      opts[key] = options[key] != null ? options[key] : opts[key];
+    }
+    _ref = this.partition_tokens(this.get_tokens(number, opts)), prefix = _ref[0], suffix = _ref[1], integer_format = _ref[2], fraction_format = _ref[3];
+    _ref1 = this.parse_number(number, opts), int = _ref1[0], fraction = _ref1[1];
+    result = integer_format.apply(parseFloat(int), opts);
+    if (fraction) {
+      result += fraction_format.apply(fraction, opts);
+    }
+    sign = number < 0 && prefix !== "-" ? this.symbols.minus_sign || this.default_symbols.minus_sign : "";
+    return "" + sign + prefix + result + suffix;
   };
 
-  PluralRules.rule_for = function(number) {
-    try {
-      return this.rules.rule(number);
-    } catch (error) {
-      return "other";
+  NumberFormatter.prototype.partition_tokens = function(tokens) {
+    return [tokens[0] || "", tokens[2] || "", new IntegerHelper(tokens[1], this.symbols), new FractionHelper(tokens[1], this.symbols)];
+  };
+
+  NumberFormatter.prototype.parse_number = function(number, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    if (options.precision != null) {
+      precision = options.precision;
+    } else {
+      precision = this.precision_from(number);
+    }
+    number = this.round_to(number, precision);
+    return Math.abs(number).toFixed(precision).split(".");
+  };
+
+  NumberFormatter.prototype.precision_from = function(num) {
+    var parts;
+    parts = num.toString().split(".");
+    if (parts.length === 2) {
+      return parts[1].length;
+    } else {
+      return 0;
     }
   };
 
-  return PluralRules;
+  NumberFormatter.prototype.round_to = function(number, precision) {
+    var factor;
+    factor = Math.pow(10, precision);
+    return Math.round(number * factor) / factor;
+  };
+
+  NumberFormatter.prototype.get_tokens = function() {
+    throw "get_tokens() not implemented - use a derived class like PercentFormatter.";
+  };
+
+  return NumberFormatter;
 
 })();
+
+TwitterCldr.PercentFormatter = PercentFormatter = (function(_super) {
+
+  __extends(PercentFormatter, _super);
+
+  function PercentFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_percent_sign = "%";
+    PercentFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  PercentFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return PercentFormatter.__super__.format.call(this, number, options).replace('¤', this.symbols.percent_sign || this.default_percent_sign);
+  };
+
+  PercentFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: 0
+    };
+  };
+
+  PercentFormatter.prototype.get_tokens = function(number, options) {
+    if (number < 0) {
+      return this.all_tokens.percent.negative;
+    } else {
+      return this.all_tokens.percent.positive;
+    }
+  };
+
+  return PercentFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.DecimalFormatter = DecimalFormatter = (function(_super) {
+
+  __extends(DecimalFormatter, _super);
+
+  function DecimalFormatter() {
+    return DecimalFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  DecimalFormatter.prototype.format = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    try {
+      return DecimalFormatter.__super__.format.call(this, number, options);
+    } catch (error) {
+      return number;
+    }
+  };
+
+  DecimalFormatter.prototype.default_format_options_for = function(number) {
+    return {
+      precision: this.precision_from(number)
+    };
+  };
+
+  DecimalFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.decimal.negative;
+    } else {
+      return this.all_tokens.decimal.positive;
+    }
+  };
+
+  return DecimalFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.CurrencyFormatter = CurrencyFormatter = (function(_super) {
+
+  __extends(CurrencyFormatter, _super);
+
+  function CurrencyFormatter(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.default_currency_symbol = "$";
+    this.default_precision = 2;
+    CurrencyFormatter.__super__.constructor.apply(this, arguments);
+  }
+
+  CurrencyFormatter.prototype.format = function(number, options) {
+    var currency;
+    if (options == null) {
+      options = {};
+    }
+    if (options.currency) {
+      if (TwitterCldr.Currencies != null) {
+        currency = TwitterCldr.Currencies.for_code(options.currency);
+        currency || (currency = TwitterCldr.Currencies.for_country(options.currency));
+        currency || (currency = {
+          symbol: options.currency
+        });
+      } else {
+        currency = {
+          symbol: options.currency
+        };
+      }
+    } else {
+      currency = {
+        symbol: this.default_currency_symbol
+      };
+    }
+    return CurrencyFormatter.__super__.format.call(this, number, options).replace('¤', currency.symbol);
+  };
+
+  CurrencyFormatter.prototype.default_format_options_for = function(number) {
+    var precision;
+    precision = this.precision_from(number);
+    if (precision === 0) {
+      precision = this.default_precision;
+    }
+    return {
+      precision: precision
+    };
+  };
+
+  CurrencyFormatter.prototype.get_tokens = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    if (number < 0) {
+      return this.all_tokens.currency.negative;
+    } else {
+      return this.all_tokens.currency.positive;
+    }
+  };
+
+  return CurrencyFormatter;
+
+})(NumberFormatter);
+
+TwitterCldr.NumberFormatter.BaseHelper = BaseHelper = (function() {
+
+  function BaseHelper() {}
+
+  BaseHelper.prototype.interpolate = function(string, value, orientation) {
+    var i, length, start;
+    if (orientation == null) {
+      orientation = "right";
+    }
+    value = value.toString();
+    length = value.length;
+    start = orientation === "left" ? 0 : -length;
+    if (string.length < length) {
+      string = (((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+          _results.push("#");
+        }
+        return _results;
+      })()).join("") + string).slice(-length);
+    }
+    if (start < 0) {
+      string = string.slice(0, start + string.length) + value;
+    } else {
+      string = string.slice(0, start) + value + string.slice(length);
+    }
+    return string.replace(/#/g, "");
+  };
+
+  return BaseHelper;
+
+})();
+
+TwitterCldr.NumberFormatter.IntegerHelper = IntegerHelper = (function(_super) {
+
+  __extends(IntegerHelper, _super);
+
+  function IntegerHelper(token, symbols) {
+    var format;
+    if (symbols == null) {
+      symbols = {};
+    }
+    format = token.split('.')[0];
+    this.format = this.prepare_format(format, symbols);
+    this.groups = this.parse_groups(format);
+    this.separator = symbols.group || ',';
+  }
+
+  IntegerHelper.prototype.apply = function(number, options) {
+    if (options == null) {
+      options = {};
+    }
+    return this.format_groups(this.interpolate(this.format, parseInt(number)));
+  };
+
+  IntegerHelper.prototype.format_groups = function(string) {
+    var cur_token, token, tokens;
+    if (this.groups.length === 0) {
+      return string;
+    }
+    tokens = [];
+    cur_token = this.chop_group(string, this.groups[0]);
+    tokens.push(cur_token);
+    if (cur_token) {
+      string = string.slice(0, string.length - cur_token.length);
+    }
+    while (string.length > this.groups[this.groups.length - 1]) {
+      cur_token = this.chop_group(string, this.groups[this.groups.length - 1]);
+      tokens.push(cur_token);
+      if (cur_token) {
+        string = string.slice(0, string.length - cur_token.length);
+      }
+    }
+    tokens.push(string);
+    return ((function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = tokens.length; _i < _len; _i++) {
+        token = tokens[_i];
+        if (token !== null) {
+          _results.push(token);
+        }
+      }
+      return _results;
+    })()).reverse().join(this.separator);
+  };
+
+  IntegerHelper.prototype.parse_groups = function(format) {
+    var index, rest, width, widths;
+    if (!(index = format.lastIndexOf(','))) {
+      return [];
+    }
+    rest = format.slice(0, index);
+    widths = [format.length - index - 1];
+    if (rest.lastIndexOf(',') > -1) {
+      widths.push(rest.length - rest.lastIndexOf(',') - 1);
+    }
+    widths = (function() {
+      var _i, _len, _results;
+      _results = [];
+      for (_i = 0, _len = widths.length; _i < _len; _i++) {
+        width = widths[_i];
+        if (width !== null) {
+          _results.push(width);
+        }
+      }
+      return _results;
+    })();
+    widths.reverse();
+    return ((function() {
+      var _i, _ref, _results;
+      _results = [];
+      for (index = _i = 0, _ref = widths.length; 0 <= _ref ? _i < _ref : _i > _ref; index = 0 <= _ref ? ++_i : --_i) {
+        if (widths.indexOf(widths[index], index + 1) === -1) {
+          _results.push(widths[index]);
+        }
+      }
+      return _results;
+    })()).reverse();
+  };
+
+  IntegerHelper.prototype.chop_group = function(string, size) {
+    if (string.length > size) {
+      return string.slice(-size);
+    } else {
+      return null;
+    }
+  };
+
+  IntegerHelper.prototype.prepare_format = function(format, symbols) {
+    return format.replace(",", "").replace("+", symbols.plus_sign).replace("-", symbols.minus_sign);
+  };
+
+  return IntegerHelper;
+
+})(BaseHelper);
+
+TwitterCldr.NumberFormatter.FractionHelper = FractionHelper = (function(_super) {
+
+  __extends(FractionHelper, _super);
+
+  function FractionHelper(token, symbols) {
+    if (symbols == null) {
+      symbols = {};
+    }
+    this.format = token ? token.split('.').pop() : "";
+    this.decimal = symbols.decimal || ".";
+    this.precision = this.format.length;
+  }
+
+  FractionHelper.prototype.apply = function(fraction, options) {
+    var precision;
+    if (options == null) {
+      options = {};
+    }
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision > 0) {
+      return this.decimal + this.interpolate(this.format_for(options), fraction, "left");
+    } else {
+      return "";
+    }
+  };
+
+  FractionHelper.prototype.format_for = function(options) {
+    var i, precision;
+    precision = options.precision != null ? options.precision : this.precision;
+    if (precision) {
+      return ((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 0; 0 <= precision ? _i < precision : _i > precision; i = 0 <= precision ? ++_i : --_i) {
+          _results.push("0");
+        }
+        return _results;
+      })()).join("");
+    } else {
+      return this.format;
+    }
+  };
+
+  return FractionHelper;
+
+})(BaseHelper);
 
 TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
   function TimespanFormatter() {
     this.default_type = "default";
-    this.tokens = {"ago":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วินาทีที่ผ่านมา","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" นาทีที่ผ่านมา","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ชั่วโมงที่ผ่านมา","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วันที่ผ่านมา","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" สัปดาห์ที่ผ่านมา","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" เดือนที่ผ่านมา","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ปีที่แล้ว","type":"plaintext"}]}}},"until":{"second":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" วินาที","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" นาที","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ชั่วโมง","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" วัน","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" สัปดาห์","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" เดือน","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"ในอีก ","type":"plaintext"},{"value":"{0}","type":"placeholder"},{"value":" ปี","type":"plaintext"}]}}},"none":{"second":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วินาที","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วิ","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วินาที","type":"plaintext"}]}},"minute":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" นาที","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" นา","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" นาที","type":"plaintext"}]}},"hour":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ชั่วโมง","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ชั่วโมง","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ชม.","type":"plaintext"}]}},"day":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วัน","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ว","type":"plaintext"}]},"abbreviated":{"other":[{"value":"{0}","type":"placeholder"},{"value":" วัน","type":"plaintext"}]}},"week":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" สัปดาห์","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" สัปดาห์","type":"plaintext"}]}},"month":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" เดือน","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ด","type":"plaintext"}]}},"year":{"default":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ปี","type":"plaintext"}]},"short":{"other":[{"value":"{0}","type":"placeholder"},{"value":" ป","type":"plaintext"}]}}}};
+    this.tokens = {"ago":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ชั่วโมงที่ผ่านมา"}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วินาทีที่ผ่านมา"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วันที่ผ่านมา"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" นาทีที่ผ่านมา"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" สัปดาห์ที่ผ่านมา"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" เดือนที่ผ่านมา"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ปีที่แล้ว"}]}}},"until":{"hour":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ชั่วโมง"}]}},"second":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วินาที"}]}},"day":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วัน"}]}},"minute":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" นาที"}]}},"week":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" สัปดาห์"}]}},"month":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" เดือน"}]}},"year":{"default":{"other":[{"type":"plaintext","value":"ในอีก "},{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ปี"}]}}},"none":{"hour":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ชั่วโมง"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ชั่วโมง"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ชม."}]}},"second":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วินาที"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วิ"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วินาที"}]}},"day":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วัน"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ว"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" วัน"}]}},"minute":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" นาที"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" นา"}]},"abbreviated":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" นาที"}]}},"week":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" สัปดาห์"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" สัปดาห์"}]}},"month":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" เดือน"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ด"}]}},"year":{"default":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ปี"}]},"short":{"other":[{"type":"placeholder","value":"{0}"},{"type":"plaintext","value":" ป"}]}}}};
     this.time_in_seconds = {
       "second": 1,
       "minute": 60,
@@ -104,11 +486,94 @@ TwitterCldr.TimespanFormatter = TimespanFormatter = (function() {
 
 })();
 
+TwitterCldr.Currencies = Currencies = (function() {
+
+  function Currencies() {}
+
+  Currencies.currencies = {"Kyrgyzstan":{"symbol":"лв","code":"KGS","currency":"Som"},"Poland":{"symbol":"zł","code":"PLN","currency":"Zloty"},"El Salvador":{"symbol":"$","code":"SVC","currency":"Colon"},"Belize":{"symbol":"BZ$","code":"BZD","currency":"Dollar"},"Mexico":{"symbol":"$","code":"MXN","currency":"Peso"},"Romania":{"symbol":"lei","code":"RON","currency":"New Leu"},"Hong Kong":{"symbol":"$","code":"HKD","currency":"Dollar"},"Colombia":{"symbol":"$","code":"COP","currency":"Peso"},"Latvia":{"symbol":"Ls","code":"LVL","currency":"Lat"},"Syria":{"symbol":"£","code":"SYP","currency":"Pound"},"Laos":{"symbol":"₭","code":"LAK","currency":"Kip"},"Guyana":{"symbol":"$","code":"GYD","currency":"Dollar"},"Panama":{"symbol":"B/.","code":"PAB","currency":"Balboa"},"Hungary":{"symbol":"Ft","code":"HUF","currency":"Forint"},"Yemen":{"symbol":"﷼","code":"YER","currency":"Rial"},"Egypt":{"symbol":"£","code":"EGP","currency":"Pound"},"Venezuela":{"symbol":"Bs","code":"VEF","currency":"Bolivar Fuerte"},"Guernsey":{"symbol":"£","code":"GGP","currency":"Pound"},"Russia":{"symbol":"руб","code":"RUB","currency":"Ruble"},"Lithuania":{"symbol":"Lt","code":"LTL","currency":"Litas"},"Mauritius":{"symbol":"₨","code":"MUR","currency":"Rupee"},"Azerbaijan":{"symbol":"ман","code":"AZN","currency":"New Manat"},"Albania":{"symbol":"Lek","code":"ALL","currency":"Lek"},"North Korea":{"symbol":"₩","code":"KPW","currency":"Won"},"Pakistan":{"symbol":"₨","code":"PKR","currency":"Rupee"},"Brazil":{"symbol":"R$","code":"BRL","currency":"Real"},"Somalia":{"symbol":"S","code":"SOS","currency":"Shilling"},"Costa Rica":{"symbol":"₡","code":"CRC","currency":"Colon"},"Gibraltar":{"symbol":"£","code":"GIP","currency":"Pound"},"Euro Member Countries":{"symbol":"€","code":"EUR","currency":"European Union"},"Afghanistan":{"symbol":"؋","code":"AFN","currency":"Afghani"},"Brunei Darussalam":{"symbol":"$","code":"BND","currency":"Dollar"},"Iran":{"symbol":"﷼","code":"IRR","currency":"Rial"},"Ukraine":{"symbol":"₴","code":"UAH","currency":"Hryvna"},"Jamaica":{"symbol":"J$","code":"JMD","currency":"Dollar"},"Sri Lanka":{"symbol":"₨","code":"LKR","currency":"Rupee"},"Viet Nam":{"symbol":"₫","code":"VND","currency":"Dong"},"Trinidad and Tobago":{"symbol":"TT$","code":"TTD","currency":"Dollar"},"Liberia":{"symbol":"$","code":"LRD","currency":"Dollar"},"Fiji":{"symbol":"$","code":"FJD","currency":"Dollar"},"China":{"symbol":"¥","code":"CNY","currency":"Yuan Renminbi"},"Netherlands Antilles":{"symbol":"ƒ","code":"ANG","currency":"Guilder"},"Cambodia":{"symbol":"៛","code":"KHR","currency":"Riel"},"Botswana":{"symbol":"P","code":"BWP","currency":"Pula"},"Uzbekistan":{"symbol":"лв","code":"UZS","currency":"Som"},"Bahamas":{"symbol":"$","code":"BSD","currency":"Dollar"},"Uruguay":{"symbol":"$U","code":"UYU","currency":"Peso"},"Thailand":{"symbol":"฿","code":"THB","currency":"Baht"},"Indonesia":{"symbol":"Rp","code":"IDR","currency":"Rupiah"},"Mongolia":{"symbol":"₮","code":"MNT","currency":"Tughrik"},"Namibia":{"symbol":"$","code":"NAD","currency":"Dollar"},"East Caribbean":{"symbol":"$","code":"XCD","currency":"Dollar"},"Switzerland":{"symbol":"CHF","code":"CHF","currency":"Franc"},"Seychelles":{"symbol":"₨","code":"SCR","currency":"Rupee"},"Zimbabwe":{"symbol":"Z$","code":"ZWD","currency":"Dollar"},"Bosnia and Herzegovina":{"symbol":"KM","code":"BAM","currency":"Convertible Marka"},"Japan":{"symbol":"¥","code":"JPY","currency":"Yen"},"Tuvalu":{"symbol":"$","code":"TVD","currency":"Dollar"},"Estonia":{"symbol":"kr","code":"EEK","currency":"Kroon"},"Macedonia":{"symbol":"ден","code":"MKD","currency":"Denar"},"Jersey":{"symbol":"£","code":"JEP","currency":"Pound"},"Aruba":{"symbol":"ƒ","code":"AWG","currency":"Guilder"},"Philippines":{"symbol":"₱","code":"PHP","currency":"Peso"},"Ghana":{"symbol":"¢","code":"GHC","currency":"Cedis"},"Isle of Man":{"symbol":"£","code":"IMP","currency":"Pound"},"Bolivia":{"symbol":"$b","code":"BOB","currency":"Boliviano"},"Suriname":{"symbol":"$","code":"SRD","currency":"Dollar"},"Barbados":{"symbol":"$","code":"BBD","currency":"Dollar"},"Croatia":{"symbol":"kn","code":"HRK","currency":"Kuna"},"Chile":{"symbol":"$","code":"CLP","currency":"Peso"},"Argentina":{"symbol":"$","code":"ARS","currency":"Peso"},"Belarus":{"symbol":"p.","code":"BYR","currency":"Ruble"},"Guatemala":{"symbol":"Q","code":"GTQ","currency":"Quetzal"},"United States":{"symbol":"$","code":"USD","currency":"Dollar"},"Falkland Islands (Malvinas)":{"symbol":"£","code":"FKP","currency":"Pound"},"South Africa":{"symbol":"R","code":"ZAR","currency":"Rand"},"Nigeria":{"symbol":"₦","code":"NGN","currency":"Naira"},"United Kingdom":{"symbol":"£","code":"GBP","currency":"Pound"},"Lebanon":{"symbol":"£","code":"LBP","currency":"Pound"},"Sweden":{"symbol":"kr","code":"SEK","currency":"Krona"},"Serbia":{"symbol":"Дин.","code":"RSD","currency":"Dinar"},"Taiwan":{"symbol":"NT$","code":"TWD","currency":"New Dollar"},"Canada":{"symbol":"$","code":"CAD","currency":"Dollar"},"South Korea":{"symbol":"₩","code":"KRW","currency":"Won"},"Australia":{"symbol":"$","code":"AUD","currency":"Dollar"},"Oman":{"symbol":"﷼","code":"OMR","currency":"Rial"},"Malaysia":{"symbol":"RM","code":"MYR","currency":"Ringgit"},"Bermuda":{"symbol":"$","code":"BMD","currency":"Dollar"},"Iceland":{"symbol":"kr","code":"ISK","currency":"Krona"},"Turkey":{"symbol":"₤","code":"TRY","currency":"Lira"},"Saint Helena":{"symbol":"£","code":"SHP","currency":"Pound"},"Saudi Arabia":{"symbol":"﷼","code":"SAR","currency":"Riyal"},"Qatar":{"symbol":"﷼","code":"QAR","currency":"Riyal"},"Bulgaria":{"symbol":"лв","code":"BGN","currency":"Lev"},"Czech Republic":{"symbol":"Kč","code":"CZK","currency":"Koruna"},"New Zealand":{"symbol":"$","code":"NZD","currency":"Dollar"},"Paraguay":{"symbol":"Gs","code":"PYG","currency":"Guarani"},"Singapore":{"symbol":"$","code":"SGD","currency":"Dollar"},"Mozambique":{"symbol":"MT","code":"MZN","currency":"Metical"},"Nepal":{"symbol":"₨","code":"NPR","currency":"Rupee"},"Cuba":{"symbol":"₱","code":"CUP","currency":"Peso"},"Denmark":{"symbol":"kr","code":"DKK","currency":"Krone"},"Norway":{"symbol":"kr","code":"NOK","currency":"Krone"},"Nicaragua":{"symbol":"C$","code":"NIO","currency":"Cordoba"},"Honduras":{"symbol":"L","code":"HNL","currency":"Lempira"},"India":{"symbol":"₨","code":"INR","currency":"Rupee"},"Cayman Islands":{"symbol":"$","code":"KYD","currency":"Dollar"},"Kazakhstan":{"symbol":"лв","code":"KZT","currency":"Tenge"},"Israel":{"symbol":"₪","code":"ILS","currency":"Shekel"},"Dominican Republic":{"symbol":"RD$","code":"DOP","currency":"Peso"},"Peru":{"symbol":"S/.","code":"PEN","currency":"Nuevo Sol"},"Solomon Islands":{"symbol":"$","code":"SBD","currency":"Dollar"}};
+
+  Currencies.countries = function() {
+    var country_name, data;
+    return this.names || (this.names = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(country_name);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.currency_codes = function() {
+    var country_name, data;
+    return this.codes || (this.codes = (function() {
+      var _ref, _results;
+      _ref = this.currencies;
+      _results = [];
+      for (country_name in _ref) {
+        data = _ref[country_name];
+        _results.push(data.code);
+      }
+      return _results;
+    }).call(this));
+  };
+
+  Currencies.for_country = function(country_name) {
+    return this.currencies[country_name];
+  };
+
+  Currencies.for_code = function(currency_code) {
+    var country_name, data, final, _ref;
+    final = null;
+    _ref = this.currencies;
+    for (country_name in _ref) {
+      data = _ref[country_name];
+      if (data.code === currency_code) {
+        final = {
+          country: country_name,
+          code: data.code,
+          symbol: data.symbol,
+          currency: data.currency
+        };
+        break;
+      }
+    }
+    return final;
+  };
+
+  return Currencies;
+
+})();
+
+TwitterCldr.PluralRules = PluralRules = (function() {
+
+  function PluralRules() {}
+
+  PluralRules.rules = {"keys": ["other"], "rule": function(n) { return "other" }};
+
+  PluralRules.all = function() {
+    return this.rules.keys;
+  };
+
+  PluralRules.rule_for = function(number) {
+    try {
+      return this.rules.rule(number);
+    } catch (error) {
+      return "other";
+    }
+  };
+
+  return PluralRules;
+
+})();
+
 TwitterCldr.DateTimeFormatter = DateTimeFormatter = (function() {
 
   function DateTimeFormatter() {
-    this.tokens = {"date_time":{"default":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":",","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":"ที่ ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"G","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":",","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"H","type":"pattern"},{"value":" นาฬิกา ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":" นาที ","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" วินาที ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":",","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"H","type":"pattern"},{"value":" นาฬิกา ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":" นาที ","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" วินาที ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"},{"value":",","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"d","type":"pattern"},{"value":"/","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"/","type":"plaintext"},{"value":"yyyy","type":"pattern"},{"value":",","type":"plaintext"},{"value":" ","type":"plaintext"},{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"time":{"default":[{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"full":[{"value":"H","type":"pattern"},{"value":" นาฬิกา ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":" นาที ","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" วินาที ","type":"plaintext"},{"value":"zzzz","type":"pattern"}],"long":[{"value":"H","type":"pattern"},{"value":" นาฬิกา ","type":"plaintext"},{"value":"m","type":"pattern"},{"value":" นาที ","type":"plaintext"},{"value":"ss","type":"pattern"},{"value":" วินาที ","type":"plaintext"},{"value":"z","type":"pattern"}],"medium":[{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"},{"value":":","type":"plaintext"},{"value":"ss","type":"pattern"}],"short":[{"value":"H","type":"pattern"},{"value":":","type":"plaintext"},{"value":"mm","type":"pattern"}]},"date":{"default":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"full":[{"value":"EEEE","type":"pattern"},{"value":"ที่ ","type":"plaintext"},{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"G","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"long":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"medium":[{"value":"d","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"MMM","type":"pattern"},{"value":" ","type":"plaintext"},{"value":"y","type":"pattern"}],"short":[{"value":"d","type":"pattern"},{"value":"/","type":"plaintext"},{"value":"M","type":"pattern"},{"value":"/","type":"plaintext"},{"value":"yyyy","type":"pattern"}]}};
-    this.calendar = {"days":{"format":{"abbreviated":{"fri":"ศ.","mon":"จ.","sat":"ส.","sun":"อา.","thu":"พฤ.","tue":"อ.","wed":"พ."},"narrow":{"fri":"ศ","mon":"จ","sat":"ส","sun":"อ","thu":"พ","tue":"อ","wed":"พ"},"wide":{"fri":"วันศุกร์","mon":"วันจันทร์","sat":"วันเสาร์","sun":"วันอาทิตย์","thu":"วันพฤหัสบดี","tue":"วันอังคาร","wed":"วันพุธ"}},"stand-alone":{"abbreviated":{"fri":"ศ.","mon":"จ.","sat":"ส.","sun":"อา.","thu":"พฤ.","tue":"อ.","wed":"พ."},"narrow":{"fri":"ศ","mon":"จ","sat":"ส","sun":"อ","thu":"พ","tue":"อ","wed":"พ"},"wide":{"fri":"วันศุกร์","mon":"วันจันทร์","sat":"วันเสาร์","sun":"วันอาทิตย์","thu":"วันพฤหัสบดี","tue":"วันอังคาร","wed":"วันพุธ"}}},"eras":{"abbr":{"0":"ปีก่อน ค.ศ.","1":"ค.ศ."},"name":{"0":"ปีก่อนคริสต์ศักราช","1":"คริสต์ศักราช"},"narrow":{"0":"ก่อน ค.ศ.","1":"ค.ศ."}},"fields":{"day":"วัน","dayperiod":"ช่วงวัน","era":"สมัย","hour":"ชั่วโมง","minute":"นาที","month":"เดือน","second":"วินาที","week":"สัปดาห์","weekday":"วันในสัปดาห์","year":"ปี","zone":"เขต"},"formats":{"date":{"default":{"pattern":"d MMM y"},"full":{"pattern":"EEEEที่ d MMMM G y"},"long":{"pattern":"d MMMM y"},"medium":{"pattern":"d MMM y"},"short":{"pattern":"d/M/yyyy"}},"datetime":{"default":{"pattern":"{{date}}, {{time}}"},"full":{"pattern":"{{date}}, {{time}}"},"long":{"pattern":"{{date}}, {{time}}"},"medium":{"pattern":"{{date}}, {{time}}"},"short":{"pattern":"{{date}}, {{time}}"}},"time":{"default":{"pattern":"H:mm:ss"},"full":{"pattern":"H นาฬิกา m นาที ss วินาที zzzz"},"long":{"pattern":"H นาฬิกา m นาที ss วินาที z"},"medium":{"pattern":"H:mm:ss"},"short":{"pattern":"H:mm"}}},"months":{"format":{"abbreviated":{"1":"ม.ค.","10":"ต.ค.","11":"พ.ย.","12":"ธ.ค.","2":"ก.พ.","3":"มี.ค.","4":"เม.ย.","5":"พ.ค.","6":"มิ.ย.","7":"ก.ค.","8":"ส.ค.","9":"ก.ย."},"narrow":{"1":"ม.ค.","10":"ต.ค.","11":"พ.ย.","12":"ธ.ค.","2":"ก.พ.","3":"มี.ค.","4":"เม.ย.","5":"พ.ค.","6":"มิ.ย","7":"ก.ค.","8":"ส.ค.","9":"ก.ย."},"wide":{"1":"มกราคม","10":"ตุลาคม","11":"พฤศจิกายน","12":"ธันวาคม","2":"กุมภาพันธ์","3":"มีนาคม","4":"เมษายน","5":"พฤษภาคม","6":"มิถุนายน","7":"กรกฎาคม","8":"สิงหาคม","9":"กันยายน"}},"stand-alone":{"abbreviated":{"1":"ม.ค.","10":"ต.ค.","11":"พ.ย.","12":"ธ.ค.","2":"ก.พ.","3":"มี.ค.","4":"เม.ย.","5":"พ.ค.","6":"มิ.ย.","7":"ก.ค.","8":"ส.ค.","9":"ก.ย."},"narrow":{"1":"ม.ค.","10":"ต.ค.","11":"พ.ย.","12":"ธ.ค.","2":"ก.พ.","3":"มี.ค.","4":"เม.ย.","5":"พ.ค.","6":"มิ.ย.","7":"ก.ค.","8":"ส.ค.","9":"ก.ย."},"wide":{"1":"มกราคม","10":"ตุลาคม","11":"พฤศจิกายน","12":"ธันวาคม","2":"กุมภาพันธ์","3":"มีนาคม","4":"เมษายน","5":"พฤษภาคม","6":"มิถุนายน","7":"กรกฎาคม","8":"สิงหาคม","9":"กันยายน"}}},"periods":{"format":{"abbreviated":null,"narrow":null,"wide":{"am":"ก่อนเที่ยง","pm":"หลังเที่ยง"}},"stand-alone":{}},"quarters":{"format":{"abbreviated":{"1":"Q1","2":"Q2","3":"Q3","4":"Q4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"ไตรมาส 1","2":"ไตรมาส 2","3":"ไตรมาส 3","4":"ไตรมาส 4"}},"stand-alone":{"abbreviated":{"1":"Q1","2":"Q2","3":"Q3","4":"Q4"},"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"ไตรมาส 1","2":"ไตรมาส 2","3":"ไตรมาส 3","4":"ไตรมาส 4"}}}};
+    this.tokens = {"date":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":"ที่ "},{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"G"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"default":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}],"short":[{"type":"pattern","value":"d"},{"type":"plaintext","value":"/"},{"type":"pattern","value":"M"},{"type":"plaintext","value":"/"},{"type":"pattern","value":"yyyy"}],"medium":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"}]},"time":{"full":[{"type":"pattern","value":"H"},{"type":"plaintext","value":" นาฬิกา "},{"type":"pattern","value":"m"},{"type":"plaintext","value":" นาที "},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" วินาที "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"H"},{"type":"plaintext","value":" นาฬิกา "},{"type":"pattern","value":"m"},{"type":"plaintext","value":" นาที "},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" วินาที "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}],"short":[{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"}],"medium":[{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}]},"date_time":{"full":[{"type":"pattern","value":"EEEE"},{"type":"plaintext","value":"ที่ "},{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"G"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":","},{"type":"plaintext","value":" "},{"type":"pattern","value":"H"},{"type":"plaintext","value":" นาฬิกา "},{"type":"pattern","value":"m"},{"type":"plaintext","value":" นาที "},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" วินาที "},{"type":"pattern","value":"zzzz"}],"long":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":","},{"type":"plaintext","value":" "},{"type":"pattern","value":"H"},{"type":"plaintext","value":" นาฬิกา "},{"type":"pattern","value":"m"},{"type":"plaintext","value":" นาที "},{"type":"pattern","value":"ss"},{"type":"plaintext","value":" วินาที "},{"type":"pattern","value":"z"}],"default":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":","},{"type":"plaintext","value":" "},{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}],"short":[{"type":"pattern","value":"d"},{"type":"plaintext","value":"/"},{"type":"pattern","value":"M"},{"type":"plaintext","value":"/"},{"type":"pattern","value":"yyyy"},{"type":"plaintext","value":","},{"type":"plaintext","value":" "},{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"}],"medium":[{"type":"pattern","value":"d"},{"type":"plaintext","value":" "},{"type":"pattern","value":"MMM"},{"type":"plaintext","value":" "},{"type":"pattern","value":"y"},{"type":"plaintext","value":","},{"type":"plaintext","value":" "},{"type":"pattern","value":"H"},{"type":"plaintext","value":":"},{"type":"pattern","value":"mm"},{"type":"plaintext","value":":"},{"type":"pattern","value":"ss"}]}};
+    this.calendar = {"fields":{"hour":"ชั่วโมง","weekday":"วันในสัปดาห์","era":"สมัย","second":"วินาที","day":"วัน","minute":"นาที","week":"สัปดาห์","month":"เดือน","zone":"เขต","dayperiod":"ช่วงวัน","year":"ปี"},"months":{"format":{"narrow":{"5":"พ.ค.","11":"พ.ย.","6":"มิ.ย","1":"ม.ค.","12":"ธ.ค.","7":"ก.ค.","2":"ก.พ.","8":"ส.ค.","3":"มี.ค.","9":"ก.ย.","4":"เม.ย.","10":"ต.ค."},"wide":{"5":"พฤษภาคม","11":"พฤศจิกายน","6":"มิถุนายน","1":"มกราคม","12":"ธันวาคม","7":"กรกฎาคม","2":"กุมภาพันธ์","8":"สิงหาคม","3":"มีนาคม","9":"กันยายน","4":"เมษายน","10":"ตุลาคม"},"abbreviated":{"5":"พ.ค.","11":"พ.ย.","6":"มิ.ย.","1":"ม.ค.","12":"ธ.ค.","7":"ก.ค.","2":"ก.พ.","8":"ส.ค.","3":"มี.ค.","9":"ก.ย.","4":"เม.ย.","10":"ต.ค."}},"stand-alone":{"narrow":{"5":"พ.ค.","11":"พ.ย.","6":"มิ.ย.","1":"ม.ค.","12":"ธ.ค.","7":"ก.ค.","2":"ก.พ.","8":"ส.ค.","3":"มี.ค.","9":"ก.ย.","4":"เม.ย.","10":"ต.ค."},"wide":{"5":"พฤษภาคม","11":"พฤศจิกายน","6":"มิถุนายน","1":"มกราคม","12":"ธันวาคม","7":"กรกฎาคม","2":"กุมภาพันธ์","8":"สิงหาคม","3":"มีนาคม","9":"กันยายน","4":"เมษายน","10":"ตุลาคม"},"abbreviated":{"5":"พ.ค.","11":"พ.ย.","6":"มิ.ย.","1":"ม.ค.","12":"ธ.ค.","7":"ก.ค.","2":"ก.พ.","8":"ส.ค.","3":"มี.ค.","9":"ก.ย.","4":"เม.ย.","10":"ต.ค."}}},"days":{"format":{"narrow":{"wed":"พ","sat":"ส","fri":"ศ","mon":"จ","sun":"อ","thu":"พ","tue":"อ"},"wide":{"wed":"วันพุธ","sat":"วันเสาร์","fri":"วันศุกร์","mon":"วันจันทร์","sun":"วันอาทิตย์","thu":"วันพฤหัสบดี","tue":"วันอังคาร"},"abbreviated":{"wed":"พ.","sat":"ส.","fri":"ศ.","mon":"จ.","sun":"อา.","thu":"พฤ.","tue":"อ."}},"stand-alone":{"narrow":{"wed":"พ","sat":"ส","fri":"ศ","mon":"จ","sun":"อ","thu":"พ","tue":"อ"},"wide":{"wed":"วันพุธ","sat":"วันเสาร์","fri":"วันศุกร์","mon":"วันจันทร์","sun":"วันอาทิตย์","thu":"วันพฤหัสบดี","tue":"วันอังคาร"},"abbreviated":{"wed":"พ.","sat":"ส.","fri":"ศ.","mon":"จ.","sun":"อา.","thu":"พฤ.","tue":"อ."}}},"quarters":{"format":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"ไตรมาส 1","2":"ไตรมาส 2","3":"ไตรมาส 3","4":"ไตรมาส 4"},"abbreviated":{"1":"Q1","2":"Q2","3":"Q3","4":"Q4"}},"stand-alone":{"narrow":{"1":1,"2":2,"3":3,"4":4},"wide":{"1":"ไตรมาส 1","2":"ไตรมาส 2","3":"ไตรมาส 3","4":"ไตรมาส 4"},"abbreviated":{"1":"Q1","2":"Q2","3":"Q3","4":"Q4"}}},"eras":{"narrow":{"0":"ก่อน ค.ศ.","1":"ค.ศ."},"abbr":{"0":"ปีก่อน ค.ศ.","1":"ค.ศ."},"name":{"0":"ปีก่อนคริสต์ศักราช","1":"คริสต์ศักราช"}},"formats":{"date":{"full":{"pattern":"EEEEที่ d MMMM G y"},"long":{"pattern":"d MMMM y"},"default":{"pattern":"d MMM y"},"short":{"pattern":"d/M/yyyy"},"medium":{"pattern":"d MMM y"}},"time":{"full":{"pattern":"H นาฬิกา m นาที ss วินาที zzzz"},"long":{"pattern":"H นาฬิกา m นาที ss วินาที z"},"default":{"pattern":"H:mm:ss"},"short":{"pattern":"H:mm"},"medium":{"pattern":"H:mm:ss"}},"datetime":{"full":{"pattern":"{{date}}, {{time}}"},"long":{"pattern":"{{date}}, {{time}}"},"default":{"pattern":"{{date}}, {{time}}"},"short":{"pattern":"{{date}}, {{time}}"},"medium":{"pattern":"{{date}}, {{time}}"}}},"periods":{"format":{"narrow":null,"wide":{"pm":"หลังเที่ยง","am":"ก่อนเที่ยง"},"abbreviated":null},"stand-alone":{}}};
     this.weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
     this.methods = {
       'G': 'era',

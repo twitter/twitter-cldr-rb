@@ -41,6 +41,14 @@ module TwitterCldr
         end
       end
 
+      def traverse_hash(hash, path)
+        return if path.empty?
+
+        path.inject(hash) do |current, key|
+          current.is_a?(Hash) ? current[key] : return
+        end
+      end
+
     end
 
   end

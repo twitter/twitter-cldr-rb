@@ -165,16 +165,25 @@ describe Base do
   end
 
   describe "#traverse" do
-    before(:each) do
-      @tree = { :admiral => { :captain => { :commander => { :lieutenant => "Found Me!" } } } }
+    let(:hash) { { :admiral => { :captain => { :commander => { :lieutenant => "Found Me!" } } } } }
+
+    it "finds the correct value in the hash" do
+      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant], hash).should == "Found Me!"
     end
 
-    it "should find the correct value in the hash" do
-      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant], @tree).should == "Found Me!"
+    it "returns nil if the path doesn't exist" do
+      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant, :ensign], hash).should be_nil
     end
 
-    it "shouldn't choke if the path doesn't exist" do
-      @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant, :ensign], @tree).should == nil
+    it 'uses @resource if no hash is provided' do
+      old_resource = @base.instance_variable_get(:@resource)
+
+      begin
+        @base.instance_variable_set(:@resource, hash)
+        @base.send(:traverse, [:admiral, :captain, :commander, :lieutenant]).should == "Found Me!"
+      ensure
+        @base.instance_variable_set(:@resource, old_resource)
+      end
     end
   end
 

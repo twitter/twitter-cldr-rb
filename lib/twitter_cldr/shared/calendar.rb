@@ -34,13 +34,9 @@ module TwitterCldr
       end
 
       def get_data(*path)
-        data = traverse_path(calendar_data, path)
+        data = TwitterCldr::Utils.traverse_hash(calendar_data, path)
         redirect = parse_redirect(data)
         redirect ? get_data(*redirect) : data
-      end
-
-      def traverse_path(tree, path)
-        !path.empty? && tree.is_a?(Hash) ? traverse_path(tree[path.first], path[1..-1]) : tree
       end
 
       def parse_redirect(data)
@@ -52,7 +48,7 @@ module TwitterCldr
       end
 
       def calendar_data
-        @calendar_data ||= traverse_path(resource, [locale, :calendars, calendar_type])
+        @calendar_data ||= TwitterCldr::Utils.traverse_hash(resource, [locale, :calendars, calendar_type])
       end
 
       def resource

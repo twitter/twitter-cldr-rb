@@ -90,14 +90,8 @@ module TwitterCldr
         @placeholders = {}
       end
 
-      def traverse(path, haystack = @resource)
-        path.inject(haystack) do |current, segment|
-          if current.is_a?(Hash) && current.has_key?(segment)
-            current[segment]
-          else
-            return
-          end
-        end
+      def traverse(path, hash = @resource)
+        TwitterCldr::Utils.traverse_hash(hash, path)
       end
 
       # expands all path symbols

@@ -7,7 +7,6 @@ require 'spec_helper'
 
 describe TwitterCldr::Utils do
   describe '#deep_symbolize_keys' do
-
     let(:hash) { { 'foo' => { 'bar' => { 'baz' => 'woot' }, :ar => [1, 2] }, 42 => { 'baz' => 'wat' } } }
 
     let(:symbolized_hash) { { :foo => { :bar => { :baz => 'woot' }, :ar => [1, 2] }, 42 => { :baz => 'wat' } } }
@@ -27,7 +26,6 @@ describe TwitterCldr::Utils do
     it 'leaves arguments of other types alone' do
       ['foo', :bar, 42].each { |arg| TwitterCldr::Utils.deep_symbolize_keys(arg).should == arg }
     end
-
   end
 
   describe "#deep_merge!" do
@@ -75,6 +73,24 @@ describe TwitterCldr::Utils do
 
     it "returns zero if no arguments are passed" do
       TwitterCldr::Utils.compute_cache_key.should == 0
+    end
+  end
+
+  describe '#traverse_hash' do
+    it 'returns value from the hash at the given path' do
+      TwitterCldr::Utils.traverse_hash({ :foo => { :bar => 2, 'baz' => { 4 => 42 } } }, [:foo, 'baz', 4]).should == 42
+    end
+
+    it 'returns nil if the value is missing' do
+      TwitterCldr::Utils.traverse_hash({ :foo => { :bar => 2 } }, [:foo, :baz]).should be_nil
+    end
+
+    it 'returns nil path is empty' do
+      TwitterCldr::Utils.traverse_hash({ :foo => 42 }, []).should be_nil
+    end
+
+    it 'returns nil if not a Hash is passed' do
+      TwitterCldr::Utils.traverse_hash(42, [:foo, :bar]).should be_nil
     end
   end
 end

@@ -48,7 +48,7 @@ module TwitterCldr
         result = import_iso_639
         result = import_bcp_47(result)
 
-        result = Hash[result.each_with_object({}) { |(key, value), memo| memo[key] = Hash[value.sort] }.sort]
+        result = Hash[result.inject({}) { |memo, (key, value)| memo[key] = Hash[value.sort]; memo }.sort]
 
         File.open(File.join(@output_path, 'language_codes.yml'), 'w:utf-8') { |output| output.write(YAML.dump(result)) }
 

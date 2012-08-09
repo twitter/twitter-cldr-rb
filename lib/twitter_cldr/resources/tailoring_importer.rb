@@ -133,7 +133,7 @@ module TwitterCldr
             end
           elsif child.name == 'x'
             context = ''
-            child.children.each_with_object([]) do |c, memo|
+            child.children.inject([]) do |memo, c|
               if SIMPLE_RULES.include?(c.name)
                 memo << table_entry_for_rule(collator, context + c.text)
               elsif c.name == 'context'
@@ -141,6 +141,8 @@ module TwitterCldr
               elsif c.name != 'extend'
                 raise ImportError, "Rule '#{c.name}' inside <x></x> is not supported."
               end
+
+              memo
             end
           else
             raise ImportError, "Tag '#{child.name}' is not supported." unless IGNORED_TAGS.include?(child.name)

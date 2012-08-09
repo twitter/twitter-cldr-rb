@@ -46,7 +46,7 @@ namespace :resources do
     desc 'Import locales resources'
     task :locales_resources, :cldr_path do |_, args|
       TwitterCldr::Resources::LocalesResourcesImporter.new(
-          args[:cldr_path] || '../cldr',
+          args[:cldr_path] || './vendor/cldr',
           './resources/locales'
       ).import
     end
@@ -59,16 +59,16 @@ namespace :resources do
     desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
     task :tailoring, :cldr_path, :icu4j_jar_path do |_, args|
       TwitterCldr::Resources::TailoringImporter.new(
-          args[:cldr_path] || '../cldr',
+          args[:cldr_path] || './vendor/cldr',
           './resources/collation/tailoring',
-          args[:icu4j_jar_path] ||'../icu4j-49_1.jar'
+          args[:icu4j_jar_path] ||'./vendor/icu4j-49_1.jar'
       ).import(TwitterCldr.supported_locales)
     end
 
     desc 'Import Unicode data resources'
     task :unicode_data, :unicode_data_path do |_, args|
       TwitterCldr::Resources::UnicodeDataImporter.new(
-          args[:unicode_data_path] || '../unicode-data',
+          args[:unicode_data_path] || './vendor/unicode-data',
           './resources/unicode_data'
       ).import
     end
@@ -76,7 +76,7 @@ namespace :resources do
     desc 'Import composition exclusions resource'
     task :composition_exclusions, :derived_normalization_props_path do |_, args|
       TwitterCldr::Resources::CompositionExclusionsImporter.new(
-          args[:derived_normalization_props_path] || '../unicode-data/DerivedNormalizationProps.txt',
+          args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
           './resources/unicode_data'
       ).import
     end
@@ -84,7 +84,7 @@ namespace :resources do
     desc 'Import postal codes resource'
     task :postal_codes, :cldr_path do |_, args|
       TwitterCldr::Resources::PostalCodesImporter.new(
-          args[:cldr_path] || '../cldr',
+          args[:cldr_path] || './vendor/cldr',
           './resources/shared'
       ).import
     end
@@ -92,7 +92,7 @@ namespace :resources do
     desc 'Import phone codes resource'
     task :phone_codes, :cldr_path do |_, args|
       TwitterCldr::Resources::PhoneCodesImporter.new(
-          args[:cldr_path] || '../cldr',
+          args[:cldr_path] || './vendor/cldr',
           './resources/shared'
       ).import
     end
@@ -100,7 +100,7 @@ namespace :resources do
     desc 'Import language codes'
     task :language_codes, :language_codes_data do |_, args|
       TwitterCldr::Resources::LanguageCodesImporter.new(
-          args[:language_codes_data] || '../language-codes',
+          args[:language_codes_data] || './vendor/language-codes',
           './resources/shared'
       ).import
     end

@@ -6,7 +6,7 @@
 module TwitterCldr
   module Resources
 
-    module TriesDumper
+    module CollationTriesDumper
 
       class << self
 

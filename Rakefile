@@ -106,8 +106,8 @@ namespace :resources do
     end
 
     desc 'Update default and tailoring tries dumps'
-    task :tries do
-      TwitterCldr::Resources::TriesDumper.update_dumps
+    task :collation_tries do
+      TwitterCldr::Resources::CollationTriesDumper.update_dumps
     end
 
     desc 'Update canonical compositions resource'

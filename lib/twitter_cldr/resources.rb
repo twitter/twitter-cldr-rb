@@ -8,6 +8,7 @@ module TwitterCldr
     autoload :CanonicalCompositionsUpdater,   'twitter_cldr/resources/canonical_compositions_updater'
     autoload :CompositionExclusionsImporter,  'twitter_cldr/resources/composition_exclusions_importer'
     autoload :CustomLocalesResourcesImporter, 'twitter_cldr/resources/custom_locales_resources_importer'
+    autoload :LanguageCodesImporter,          'twitter_cldr/resources/language_codes_importer'
     autoload :Loader,                         'twitter_cldr/resources/loader'
     autoload :LocalesResourcesImporter,       'twitter_cldr/resources/locales_resources_importer'
     autoload :PhoneCodesImporter,             'twitter_cldr/resources/phone_codes_importer'

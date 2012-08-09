@@ -97,6 +97,14 @@ namespace :resources do
       ).import
     end
 
+    desc 'Import language codes'
+    task :language_codes, :language_codes_data do |_, args|
+      TwitterCldr::Resources::LanguageCodesImporter.new(
+          args[:language_codes_data] || '../language-codes',
+          './resources/shared'
+      ).import
+    end
+
     desc 'Update default and tailoring tries dumps'
     task :tries do
       TwitterCldr::Resources::TriesDumper.update_dumps

@@ -17,6 +17,15 @@ module TwitterCldr
           ISO_639_FILE => 'http://www.sil.org/iso639-3/iso-639-3_20120614.tab'
       }
 
+      KEYS_TO_STANDARDS = {
+          :iso_639_1      => :iso_639_1,
+          :iso_639_2      => :iso_639_2,
+          :iso_639_2_term => :iso_639_2,
+          :iso_639_3      => :iso_639_3,
+          :bcp_47         => :bcp_47,
+          :bcp_47_alt     => :bcp_47
+      }
+
       def initialize(input_path, output_path)
         @input_path  = input_path
         @output_path = output_path
@@ -42,8 +51,22 @@ module TwitterCldr
         result = Hash[result.each_with_object({}) { |(key, value), memo| memo[key] = Hash[value.sort] }.sort]
 
         File.open(File.join(@output_path, 'language_codes.yml'), 'w:utf-8') { |output| output.write(YAML.dump(result)) }
+
+        language_codes_table = build_table(result)
+        File.open(File.join(@output_path, 'language_codes_table.yml'), 'w:utf-8') { |output| output.write(YAML.dump(language_codes_table)) }
       end
 
+      # Generates codes in the following format:
+      #
+      # {
+      #   :Albanian => {
+      #     :iso_639_1      => "sq",
+      #     :iso_639_2      => "alb", # default (bibliographic) code
+      #     :iso_639_2_term => "sqi", # terminology code (optional)
+      #     :iso_639_3      => "sqi"
+      #   }
+      # }
+      #
       def import_iso_639(result = {})
         File.open(File.join(@input_path, ISO_639_FILE)) do |file|
           lines = file.lines
@@ -53,8 +76,8 @@ module TwitterCldr
             entry = line.chomp.gsub(/"(.*)"/) { $1.gsub("\t", '') }
             data = Hash[ISO_639_COLUMNS.zip(entry.split("\t"))]
 
-            # either bibliographic and terminologic codes are the same (:bt_equiv is empty)
-            # or :iso_639_2 contains terminologic code and :bt_equiv contains bibliographic code
+            # either bibliographic and terminology codes are the same (:bt_equiv is empty)
+            # or :iso_639_2 contains terminology code and :bt_equiv contains bibliographic code
             # skip 'collection' scope
             if (data[:bt_equiv].empty? || !data[:b_code].empty?) && data[:name] != 'Reserved for local use' && data[:scope] != 'C'
               h = result[data[:name].to_sym] ||= {}
@@ -80,6 +103,14 @@ module TwitterCldr
         data[key] = value unless value.nil? || value.empty?
       end
 
+      # Generates codes in the following format:
+      #
+      # {
+      #   :Bangka => {
+      #       :bcp_47     => "mfb",   # preferred code
+      #       :bcp_47_alt => "ms-mfb" # alternative code (optional)
+      #   }
+      # }
       def import_bcp_47(result = {})
         File.open(File.join(@input_path, BCP_47_FILE)) do |file|
           lines = file.lines
@@ -152,14 +183,30 @@ module TwitterCldr
         data.clear
       end
 
+      def build_table(language_codes_map)
+        table = Hash.new { |hash, key| hash[key] = {} }
+
+        language_codes_map.each do |name, codes|
+          table[:name][name] = { :name => name.to_s }.merge(codes)
+        end
+
+        table[:name].values.each do |data|
+          KEYS_TO_STANDARDS.each do |key, standard|
+            table[standard][data[key].to_sym] = data if data[key]
+          end
+        end
+
+        table
+      end
+
       ISO_639_COLUMNS = [
           :code,            # Code
           :status,          # Status
           :partner_agency,  # Partner Agency
           :iso_639_3,       # 639_3
-          :iso_639_2,       # 639_2 (alpha-3 bibliographic/terminologic code)
-          :b_code,          # alpha-3 bibliographic code if iso_639_2 contains terminologic code
-          :bt_equiv,        # bt_equiv (alpha-3 bibliographic/terminologic equivalent)
+          :iso_639_2,       # 639_2 (alpha-3 bibliographic/terminology code)
+          :b_code,          # alpha-3 bibliographic code if iso_639_2 contains terminology code
+          :bt_equiv,        # bt_equiv (alpha-3 bibliographic/terminology equivalent)
           :iso_639_1,       # 639_1
           :name,            # Reference_Name
           :scope,           # Element_Scope

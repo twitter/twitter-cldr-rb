@@ -48,12 +48,22 @@ module TwitterCldr
         result = import_iso_639
         result = import_bcp_47(result)
 
-        result = Hash[result.inject({}) { |memo, (key, value)| memo[key] = Hash[value.sort]; memo }.sort]
+        language_codes = Hash[result.inject({}) { |memo, (key, value)| memo[key] = Hash[value.sort]; memo }.sort]
 
-        File.open(File.join(@output_path, 'language_codes.yml'), 'w:utf-8') { |output| output.write(YAML.dump(result)) }
+        File.open(File.join(@output_path, 'language_codes.yml'), 'w:utf-8') do |output|
+          output.write(YAML.dump(language_codes))
+        end
 
-        language_codes_table = build_table(result)
-        File.open(File.join(@output_path, 'language_codes_table.yml'), 'w:utf-8') { |output| output.write(YAML.dump(language_codes_table)) }
+        language_codes_table = build_table(language_codes)
+
+        # TODO: do not save language codes table in YAML (marshaled dump is enough)
+        File.open(File.join(@output_path, 'language_codes_table.yml'), 'w:utf-8') do |output|
+          output.write(YAML.dump(language_codes_table))
+        end
+
+        File.open(File.join(@output_path, 'language_codes_table.dump'), 'wb') do |output|
+          output.write(Marshal.dump(language_codes_table))
+        end
       end
 
       # Generates codes in the following format:
@@ -184,7 +194,10 @@ module TwitterCldr
       end
 
       def build_table(language_codes_map)
-        table = Hash.new { |hash, key| hash[key] = {} }
+        # can't use Hash with default proc here, because we won't be able to marshal this hash later in this case
+        table = ([:name] + KEYS_TO_STANDARDS.values.uniq.sort_by(&:to_s)).inject({}) do |memo, key|
+          memo.merge!(key => {})
+        end
 
         language_codes_map.each do |name, codes|
           table[:name][name] = { :name => name.to_s }.merge(codes)
@@ -196,7 +209,9 @@ module TwitterCldr
           end
         end
 
-        table
+        table.each do |key, codes|
+          table[key] = Hash[codes.sort]
+        end
       end
 
       ISO_639_COLUMNS = [

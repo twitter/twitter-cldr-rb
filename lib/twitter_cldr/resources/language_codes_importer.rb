@@ -110,7 +110,7 @@ module TwitterCldr
       end
 
       def set_iso_639_data(data, key, value)
-        data[key] = value unless value.nil? || value.empty?
+        data[key] = value.to_sym unless value.nil? || value.empty?
       end
 
       # Generates codes in the following format:
@@ -134,7 +134,6 @@ module TwitterCldr
 
             if line == '%%'
               process_bcp_47_entry(entry, data)
-
               process_bcp_47_data(data, result)
             else
               if line.include?(':')
@@ -176,8 +175,8 @@ module TwitterCldr
 
           bcp_47 = {}
 
-          bcp_47[:bcp_47]     = prefered || alternative
-          bcp_47[:bcp_47_alt] = alternative if prefered
+          bcp_47[:bcp_47]     = (prefered || alternative).to_sym
+          bcp_47[:bcp_47_alt] = alternative.to_sym if prefered
 
           existing_names.each do |name|
             result[name.to_sym].merge!(bcp_47)
@@ -200,7 +199,7 @@ module TwitterCldr
         end
 
         language_codes_map.each do |name, codes|
-          table[:name][name] = { :name => name.to_s }.merge(codes)
+          table[:name][name] = { :name => name }.merge(codes)
         end
 
         table[:name].values.each do |data|

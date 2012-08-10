@@ -11,12 +11,12 @@ describe PhoneCodes do
   describe "#territories" do
     let(:territories) { PhoneCodes.territories }
 
-    it 'returns a list' do
+    it 'returns an array' do
       territories.should be_instance_of(Array)
     end
 
     it 'returns symbols' do
-      territories.all? { |territory| territory.should be_instance_of(Symbol) }
+      territories.each { |territory| territory.should be_instance_of(Symbol) }
     end
 
     it 'returns supported territories' do

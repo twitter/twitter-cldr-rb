@@ -6,16 +6,17 @@
 module TwitterCldr
   module Formatters
     class TimespanFormatter < Base
+
       DEFAULT_TYPE = :default
 
-      TIME_IN_SECONDS = { 
-        :second => 1,
-        :minute => 60,
-        :hour => 3600,
-        :day => 86400,
-        :week => 604800,
-        :month => 2629743.83,
-        :year => 31556926 
+      TIME_IN_SECONDS = {
+          :second => 1,
+          :minute => 60,
+          :hour   => 3600,
+          :day    => 86400,
+          :week   => 604800,
+          :month  => 2629743.83,
+          :year   => 31556926
       }
 
       def initialize(options = {})
@@ -24,13 +25,14 @@ module TwitterCldr
       end
 
       def format(seconds, options = {})
+        options[:type]      ||= DEFAULT_TYPE
         options[:direction] ||= @direction || (seconds < 0 ? :ago : :until)
-        options[:unit] ||= self.calculate_unit(seconds.abs)
+        options[:unit]      ||= calculate_unit(seconds.abs)
+
         options[:number] = calculate_time(seconds.abs, options[:unit])
-        options[:type] ||= DEFAULT_TYPE
 
         tokens = @tokenizer.tokens(options)
-        strings = tokens.map { |token| token[:value]}
+        strings = tokens.map { |token| token[:value] }
         strings.join.gsub(/\{[0-9]\}/, options[:number].to_s)
       end
 

@@ -24,6 +24,34 @@ describe LanguageCodes do
     end
   end
 
+  describe '#valid_standard?' do
+    it 'returns true if the standard is valid' do
+      LanguageCodes.valid_standard?(:iso_639_2).should be_true
+    end
+
+    it 'returns false if the standard is invalid' do
+      LanguageCodes.valid_standard?(:iso_639).should be_false
+    end
+
+    it 'accepts a string' do
+      LanguageCodes.valid_standard?('iso_639_2').should be_true
+    end
+  end
+
+  describe '#valid_code?' do
+    it 'returns true if the code is present in the given standard' do
+      LanguageCodes.valid_code?(:iso_639_2, :spa).should be_true
+    end
+
+    it 'returns false if the code is not present in the given standard' do
+      LanguageCodes.valid_code?(:iso_639_2, :foo).should be_false
+    end
+
+    it 'raises exception if the standard is invalid' do
+      lambda { LanguageCodes.valid_code?(:foobar, :es) }.should raise_exception(ArgumentError, ':foobar is not a valid standard name')
+    end
+  end
+
   describe '#convert' do
     it 'converts codes between different standards' do
       LanguageCodes.convert(:Spanish, :from => :name,      :to => :bcp_47   ).should == :es

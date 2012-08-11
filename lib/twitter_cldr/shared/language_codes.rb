@@ -17,17 +17,25 @@ module TwitterCldr
           resource[:name].keys
         end
 
+        def valid_standard?(standard)
+          VALID_STANDARDS.include?(standard.to_sym)
+        end
+
+        def valid_code?(standard, code)
+          resource[validate_standard(standard)].has_key?(code.to_sym)
+        end
+
         def convert(code, from_and_to = {})
           from, to = extract_from_and_to_options(from_and_to)
           resource[from.to_sym].fetch(code.to_sym, {})[to.to_sym]
         end
 
         def from_name(name, standard)
-          convert(name, :from => :name, :to => validate_standard(standard))
+          convert(name, :from => :name, :to => standard)
         end
 
         def to_name(code, standard)
-          convert(code, :from => validate_standard(standard), :to => :name).to_s
+          convert(code, :from => standard, :to => :name).to_s
         end
 
         private
@@ -45,7 +53,7 @@ module TwitterCldr
 
         def validate_standard(standard)
           raise ArgumentError, "standard can't be nil" if standard.nil?
-          raise ArgumentError, "#{standard.inspect} is not a valid standard name" unless VALID_STANDARDS.include?(standard.to_sym)
+          raise ArgumentError, "#{standard.inspect} is not a valid standard name" unless valid_standard?(standard)
 
           standard
         end

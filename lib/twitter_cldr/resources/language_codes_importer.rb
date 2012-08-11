@@ -31,9 +31,9 @@ module TwitterCldr
         @output_path = output_path
       end
 
-      def import
+      def import(import_yaml = false)
         prepare_data
-        import_data
+        import_data(import_yaml)
       end
 
       private
@@ -44,26 +44,24 @@ module TwitterCldr
         end
       end
 
-      def import_data
+      def import_data(import_yaml)
         result = import_iso_639
         result = import_bcp_47(result)
 
         language_codes = Hash[result.inject({}) { |memo, (key, value)| memo[key] = Hash[value.sort]; memo }.sort]
 
-        File.open(File.join(@output_path, 'language_codes.yml'), 'w:utf-8') do |output|
-          output.write(YAML.dump(language_codes))
-        end
-
         language_codes_table = build_table(language_codes)
 
-        # TODO: do not save language codes table in YAML (marshaled dump is enough)
-        File.open(File.join(@output_path, 'language_codes_table.yml'), 'w:utf-8') do |output|
-          output.write(YAML.dump(language_codes_table))
-        end
+        write('language_codes_table.dump', 'wb', Marshal.dump(language_codes_table))
 
-        File.open(File.join(@output_path, 'language_codes_table.dump'), 'wb') do |output|
-          output.write(Marshal.dump(language_codes_table))
+        if import_yaml
+          write('language_codes.yml', 'w:utf-8', YAML.dump(language_codes))
+          write('language_codes_table.yml', 'w:utf-8', YAML.dump(language_codes_table))
         end
+      end
+
+      def write(file, mode, data)
+        File.open(File.join(@output_path, file), mode) { |output| output.write(data) }
       end
 
       # Generates codes in the following format:

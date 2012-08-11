@@ -30,11 +30,11 @@ module TwitterCldr
           resource[from.to_sym].fetch(code.to_sym, {})[to.to_sym]
         end
 
-        def from_name(name, standard)
+        def from_language_name(name, standard)
           convert(name, :from => :name, :to => standard)
         end
 
-        def to_name(code, standard)
+        def to_language_name(code, standard)
           convert(code, :from => standard, :to => :name).to_s
         end
 

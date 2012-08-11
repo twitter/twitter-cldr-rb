@@ -95,23 +95,23 @@ describe LanguageCodes do
     end
   end
 
-  describe '#from_name' do
+  describe '#from_language_name' do
     it 'returns language code by language name' do
-      LanguageCodes.from_name('Spanish', :iso_639_2).should == :spa
+      LanguageCodes.from_language_name('Spanish', :iso_639_2).should == :spa
     end
 
     it 'raises exception when standard is invalid' do
-      lambda { LanguageCodes.from_name('Spanish', :foobar) }.should raise_exception(':foobar is not a valid standard name')
+      lambda { LanguageCodes.from_language_name('Spanish', :foobar) }.should raise_exception(':foobar is not a valid standard name')
     end
   end
 
-  describe '#to_name' do
+  describe '#to_language_name' do
     it 'returns language name as a string by language code' do
-      LanguageCodes.to_name(:es, :iso_639_1).should == 'Spanish'
+      LanguageCodes.to_language_name(:es, :iso_639_1).should == 'Spanish'
     end
 
     it 'raises exception when standard is invalid' do
-      lambda { LanguageCodes.to_name(:es, :foobar) }.should raise_exception(':foobar is not a valid standard name')
+      lambda { LanguageCodes.to_language_name(:es, :foobar) }.should raise_exception(':foobar is not a valid standard name')
     end
   end
 end

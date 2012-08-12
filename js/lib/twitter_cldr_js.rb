@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-$:.push(File.dirname(__FILE__))
-
 require 'mustache'
 require 'uglifier'
 require 'jasmine-headless-webkit'

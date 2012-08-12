@@ -115,8 +115,8 @@ namespace :update do
 end
 
 namespace :js do
+  desc 'Build JS files'
   task :build do
-    require File.expand_path(File.join(File.dirname(__FILE__), %w[lib twitter_cldr]))
     TwitterCldr.require_js
     FileUtils.mkdir_p(TwitterCldr::Js.build_dir)
     TwitterCldr::Js.output_dir = File.expand_path(ENV["OUTPUT_DIR"])
@@ -124,8 +124,8 @@ namespace :js do
     TwitterCldr::Js.install
   end
 
+  desc 'Run JS specs'
   task :test do
-    require File.expand_path(File.join(File.dirname(__FILE__), %w[lib twitter_cldr]))
     TwitterCldr.require_js
     FileUtils.mkdir_p(TwitterCldr::Js.build_dir)
     TwitterCldr::Js.make(:locales => [:en])

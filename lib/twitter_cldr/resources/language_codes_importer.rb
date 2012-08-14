@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'lib/twitter_cldr/resources/download'
+require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources

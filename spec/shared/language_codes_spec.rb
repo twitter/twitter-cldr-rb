@@ -40,15 +40,19 @@ describe LanguageCodes do
 
   describe '#valid_code?' do
     it 'returns true if the code is present in the given standard' do
-      LanguageCodes.valid_code?(:iso_639_2, :spa).should be_true
+      LanguageCodes.valid_code?(:spa, :iso_639_2).should be_true
     end
 
     it 'returns false if the code is not present in the given standard' do
-      LanguageCodes.valid_code?(:iso_639_2, :foo).should be_false
+      LanguageCodes.valid_code?(:foo, :iso_639_2).should be_false
     end
 
     it 'raises exception if the standard is invalid' do
-      lambda { LanguageCodes.valid_code?(:foobar, :es) }.should raise_exception(ArgumentError, ':foobar is not a valid standard name')
+      lambda { LanguageCodes.valid_code?(:es, :foobar) }.should raise_exception(ArgumentError, ':foobar is not a valid standard name')
+    end
+
+    it 'accepts strings' do
+      LanguageCodes.valid_code?('spa', 'iso_639_2').should be_true
     end
   end
 
@@ -95,23 +99,63 @@ describe LanguageCodes do
     end
   end
 
-  describe '#from_language_name' do
+  describe '#from_language' do
     it 'returns language code by language name' do
-      LanguageCodes.from_language_name('Spanish', :iso_639_2).should == :spa
+      LanguageCodes.from_language(:Spanish, :iso_639_2).should == :spa
+    end
+
+    it 'accepts strings' do
+      LanguageCodes.from_language('Spanish', 'iso_639_2').should == :spa
     end
 
     it 'raises exception when standard is invalid' do
-      lambda { LanguageCodes.from_language_name('Spanish', :foobar) }.should raise_exception(':foobar is not a valid standard name')
+      lambda { LanguageCodes.from_language(:Spanish, :foobar) }.should raise_exception(':foobar is not a valid standard name')
     end
   end
 
-  describe '#to_language_name' do
+  describe '#to_language' do
     it 'returns language name as a string by language code' do
-      LanguageCodes.to_language_name(:es, :iso_639_1).should == 'Spanish'
+      LanguageCodes.to_language(:es, :iso_639_1).should == 'Spanish'
+    end
+
+    it 'accepts strings' do
+      LanguageCodes.to_language('es', 'iso_639_1').should == 'Spanish'
     end
 
     it 'raises exception when standard is invalid' do
-      lambda { LanguageCodes.to_language_name(:es, :foobar) }.should raise_exception(':foobar is not a valid standard name')
+      lambda { LanguageCodes.to_language(:es, :foobar) }.should raise_exception(':foobar is not a valid standard name')
+    end
+  end
+
+  describe '#standards_for' do
+    let(:spanish_standards) { [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3] }
+
+    it 'returns an array of standards that are available for conversion from a given code' do
+      LanguageCodes.standards_for(:es, :bcp_47).should =~ spanish_standards
+    end
+
+    it 'accepts string' do
+      LanguageCodes.standards_for('es', 'bcp_47').should =~ spanish_standards
+    end
+
+    it 'raises exception when standard is invalid' do
+      lambda { LanguageCodes.standards_for(:es, :foobar) }.should raise_exception(':foobar is not a valid standard name')
+    end
+  end
+
+  describe '#standards_for_language' do
+    let(:spanish_standards) { [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3] }
+
+    it 'returns an array of standards that have a code for a given language' do
+      LanguageCodes.standards_for_language(:Spanish).should =~ spanish_standards
+    end
+
+    it 'accepts string' do
+      LanguageCodes.standards_for_language('Spanish').should =~ spanish_standards
+    end
+
+    it 'returns empty array for unknown languages' do
+      LanguageCodes.standards_for_language('FooBar').should == []
     end
   end
 end

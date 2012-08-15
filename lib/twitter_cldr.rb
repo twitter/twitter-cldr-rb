@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-$:.push(File.dirname(__FILE__))
-$:.push(File.dirname(File.dirname(__FILE__)))
-
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 
 require 'yaml'
@@ -37,6 +34,8 @@ module TwitterCldr
   DEFAULT_CALENDAR_TYPE = :gregorian
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
+
+  JS_LIB_DIR = File.join(File.dirname(File.dirname(__FILE__)), 'js', 'lib')
 
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
@@ -88,7 +87,8 @@ module TwitterCldr
     end
 
     def require_js
-      require "js/lib/twitter_cldr_js"
+      $:.push(JS_LIB_DIR) unless $:.include?(JS_LIB_DIR)
+      require 'twitter_cldr_js'
     end
   end
 

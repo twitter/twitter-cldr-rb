@@ -14,7 +14,7 @@ module TwitterCldr
         end
 
         def all_for(code)
-          get_resource(TwitterCldr.convert_locale(code.to_sym))[:languages]
+          get_resource(code)[:languages]
         rescue
           {}
         end
@@ -24,21 +24,14 @@ module TwitterCldr
         end
 
         def from_code_for_locale(code, locale = TwitterCldr.get_locale)
-          get_resource(TwitterCldr.convert_locale(locale.to_sym))[:languages][TwitterCldr.convert_locale(code.to_sym)]
+          get_resource(locale)[:languages][TwitterCldr.convert_locale(code)]
         rescue
           nil
         end
 
         def translate_language(language, source_locale = :en, dest_locale = TwitterCldr.get_locale)
-          source_locale = TwitterCldr.convert_locale(source_locale.to_sym)
-          lang_code = get_resource(source_locale)[:languages].select { |key, val| val.downcase == language.downcase }.flatten.first
-
-          if lang_code
-            dest_locale = TwitterCldr.convert_locale(dest_locale.to_sym)
-            get_resource(dest_locale)[:languages][lang_code.to_sym]
-          else
-            nil
-          end
+          lang_code = get_resource(source_locale)[:languages].detect { |_, val| val.downcase == language.downcase }.first
+          get_resource(dest_locale)[:languages][lang_code] if lang_code
         rescue
           nil
         end

@@ -21,6 +21,8 @@ end
 RSpec.configure do |config|
   config.mock_with :rr
 
+  config.filter_run(:focus => true)
+  config.run_all_when_everything_filtered = true
   config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
 
   config.before(:each) do

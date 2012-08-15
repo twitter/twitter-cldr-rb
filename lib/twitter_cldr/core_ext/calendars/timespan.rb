@@ -8,7 +8,6 @@ module TwitterCldr
 
     def initialize(seconds, options = {})
       super(seconds, options[:locale], options)
-      @formatter = TwitterCldr::Formatters::TimespanFormatter.new(options)
     end
 
     def to_s(options = {})
@@ -20,5 +19,6 @@ module TwitterCldr
     def formatter_const
       TwitterCldr::Formatters::TimespanFormatter
     end
+
   end
 end

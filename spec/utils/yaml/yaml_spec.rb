@@ -40,7 +40,7 @@ class << Struct
     val.keys.each { |k, v| val[k.to_sym] = val.delete(k) }
     yaml_new_without_indifferent_keys(klass, tag, val)
   end
-end if RUBY_VERSION >= "1.9"
+end if RUBY_VERSION >= "1.9" && RUBY_VERSION <= "1.9.1"  # yaml_new is deprecated in 1.9.2 and later
 
 @@struct_klass = Struct::new('Foo', :bar, :buz)
 class Moo

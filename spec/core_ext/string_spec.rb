@@ -110,24 +110,26 @@ describe LocalizedString do
   end
 
   describe "#normalize" do
-    it "returns a normalized instance of LocalizedString, defaults to NFD" do
-      mock.proxy(TwitterCldr::Normalization::NFD).normalize("español")
-      "español".bytes.to_a.should == [101, 115, 112, 97, 195, 177, 111, 108]
-      result = "español".localize.normalize
-      result.should be_a(LocalizedString)
-      result.to_s.bytes.to_a.should == [101, 115, 112, 97, 110, 204, 131, 111, 108]
+    let(:string) { 'string' }
+    let(:normalized_string) { 'normalized' }
+    let(:localized_string) { string.localize }
+
+    it 'returns a LocalizedString' do
+      localized_string.normalize.should be_an_instance_of(LocalizedString)
     end
 
-    it "returns a normalized instance of LocalizedString using the specified algorithm" do
-      mock.proxy(TwitterCldr::Normalization::NFKD).normalize("español")
-      "español".bytes.to_a.should == [101, 115, 112, 97, 195, 177, 111, 108]
-      result = "español".localize.normalize(:using => :NFKD)
-      result.should be_a(LocalizedString)
-      result.to_s.bytes.to_a.should == [101, 115, 112, 97, 110, 204, 131, 111, 108]
+    it 'it uses NFD by default' do
+      mock(TwitterCldr::Normalization::NFD).normalize(string) { normalized_string }
+      localized_string.normalize.base_obj.should == normalized_string
+    end
+
+    it "uses specified algorithm if there is any" do
+      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
+      localized_string.normalize(:using => :NFKD).base_obj.should == normalized_string
     end
 
     it "raises an ArgumentError if passed an unsupported normalization form" do
-      lambda { "español".localize.normalize(:using => :blarg) }.should raise_error(ArgumentError)
+      lambda { localized_string.normalize(:using => :blarg) }.should raise_error(ArgumentError)
     end
   end
 

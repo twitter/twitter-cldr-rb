@@ -57,7 +57,7 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 Behind the scenes, these convenience methods are creating instances of `LocalizedNumber`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-num = TwitterCldr::LocalizedNumber.new(1337, :es)
+num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
@@ -105,7 +105,7 @@ The CLDR data set only includes 4 specific date formats, full, long, medium, and
 Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-dt = TwitterCldr::LocalizedDateTime.new(DateTime.now, :es)
+dt = TwitterCldr::Localized::LocalizedDateTime.new(DateTime.now, :es)
 dt.to_short_s  # ...etc
 ```
 
@@ -145,11 +145,11 @@ Specify a different reference point for the time span calculation:
 Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-ts = TwitterCldr::LocalizedTimespan.new(86400, :locale => :de)
+ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
 ts.to_s                         # In 1 Tag
 ts.to_s(:unit => :hour)         # In 24 Stunden
 
-ts = TwitterCldr::LocalizedTimespan.new(-86400, :locale => :de)
+ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
 ts.to_s                         # Vor 1 Tag
 ts.to_s(:unit => :hour)         # Vor 24 Stunden
 ```

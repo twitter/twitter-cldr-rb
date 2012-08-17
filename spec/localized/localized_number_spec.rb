@@ -8,6 +8,7 @@ require 'spec_helper'
 include TwitterCldr
 
 describe LocalizedNumber do
+
   describe '#initialize' do
     let(:decimal)  { LocalizedNumber.new(10, :en) }
     let(:currency) { LocalizedNumber.new(10, :en, :type => :currency) }
@@ -58,7 +59,7 @@ describe LocalizedNumber do
 
         it 'creates a new object with the same base object and locale' do
           percent = LocalizedNumber.new(42, :fr, :type => :percent)
-          mock.proxy(TwitterCldr::LocalizedNumber).new(42, :fr, :type => type)
+          mock.proxy(TwitterCldr::Localized::LocalizedNumber).new(42, :fr, :type => type)
           percent.send(method)
         end
       end
@@ -123,4 +124,36 @@ describe LocalizedNumber do
       5.localize.plural_rule.should == :other
     end
   end
+
+  describe 'formatters for every locale' do
+    it "makes sure currency formatters for every locale don't raise errors" do
+      TwitterCldr.supported_locales.each do |locale|
+        lambda { 1337.localize(locale).to_currency.to_s }.should_not raise_error
+        lambda { 1337.localize(locale).to_currency.to_s(:precision => 3) }.should_not raise_error
+        lambda { 1337.localize(locale).to_currency.to_s(:precision => 3, :currency => "EUR") }.should_not raise_error
+      end
+    end
+
+    it "makes sure decimal formatters for every locale don't raise errors" do
+      TwitterCldr.supported_locales.each do |locale|
+        lambda { 1337.localize(locale).to_decimal.to_s }.should_not raise_error
+        lambda { 1337.localize(locale).to_decimal.to_s(:precision => 3) }.should_not raise_error
+      end
+    end
+
+    it "makes sure percentage formatters for every locale don't raise errors" do
+      TwitterCldr.supported_locales.each do |locale|
+        lambda { 1337.localize(locale).to_percent.to_s }.should_not raise_error
+        lambda { 1337.localize(locale).to_percent.to_s(:precision => 3) }.should_not raise_error
+      end
+    end
+
+    it "makes sure basic number formatters for every locale don't raise errors" do
+      TwitterCldr.supported_locales.each do |locale|
+        lambda { 1337.localize(locale).to_s }.should_not raise_error
+        lambda { 1337.localize(locale).to_s(:precision => 3) }.should_not raise_error
+      end
+    end
+  end
+
 end

@@ -5,9 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr
+include TwitterCldr::Localized
 
 describe LocalizedSymbol do
+
   describe "#as_language_code" do
     it "returns the correct localized language from the symbol" do
       :es.localize.as_language_code.should == "Spanish"
@@ -26,4 +27,5 @@ describe LocalizedSymbol do
       :'zh'.localize.as_language_code.should == "Chinese"
     end
   end
+
 end

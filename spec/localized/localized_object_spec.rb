@@ -5,12 +5,50 @@
 
 require 'spec_helper'
 
-include TwitterCldr
+include TwitterCldr::Localized
 
 describe LocalizedObject do
 
+  class LocalizedFormatter
+    def initialize(options); end
+  end
+
   class LocalizedClass < LocalizedObject
-    def formatter_const; end
+    def formatter_const
+      LocalizedFormatter
+    end
+  end
+
+  describe '#initialize' do
+    let(:base_object) { 'base-object' }
+    let(:locale) { :fr }
+    let(:localized_object) { LocalizedClass.new(base_object, locale) }
+    let(:options) { { :foobar => 'value' } }
+
+    it 'sets base object' do
+      localized_object.base_obj.should == base_object
+    end
+
+    it 'sets locale' do
+      localized_object.locale.should == locale
+    end
+
+    it 'converts locale' do
+      LocalizedClass.new(base_object, :msa).locale.should == :ms
+    end
+
+    it 'falls back to default locale if unsupported locale is passed' do
+      LocalizedClass.new(base_object, :foobar).locale.should == TwitterCldr::DEFAULT_LOCALE
+    end
+
+    it 'passes options (including locale) to formatter' do
+      mock(LocalizedFormatter).new(options.merge(:locale => locale))
+      LocalizedClass.new(base_object, locale, options)
+    end
+
+    it "doesn't change original options hash" do
+      lambda { LocalizedClass.new(base_object, locale, options) }.should_not change { options }
+    end
   end
 
   describe '.localize' do

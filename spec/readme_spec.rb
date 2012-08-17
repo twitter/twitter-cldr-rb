@@ -31,7 +31,7 @@ describe "README" do
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
 
-    num = TwitterCldr::LocalizedNumber.new(1337, :es)
+    num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
     spaces(num.to_currency.to_s).should == "1.337,00 $"
   end
 
@@ -70,7 +70,7 @@ describe "README" do
     time.localize(:es).to_medium_s.should == "21:44:57"
     time.localize(:es).to_short_s.should == "21:44"
 
-    dt = TwitterCldr::LocalizedDateTime.new(date_time, :es)
+    dt = TwitterCldr::Localized::LocalizedDateTime.new(date_time, :es)
     dt.to_short_s.should == "12/12/11 21:44"
   end
 
@@ -90,11 +90,11 @@ describe "README" do
     # 86400 = 1 day in seconds, 259200 = 3 days in seconds
     (Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour).should match_normalized("Vor 48 Stunden")
 
-    ts = TwitterCldr::LocalizedTimespan.new(86400, :locale => :de)
+    ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
     ts.to_s.should match_normalized("In 1 Tag")
     ts.to_s(:unit => :hour).should match_normalized("In 24 Stunden")
 
-    ts = TwitterCldr::LocalizedTimespan.new(-86400, :locale => :de)
+    ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
     ts.to_s.should match_normalized("Vor 1 Tag")
     ts.to_s(:unit => :hour).should match_normalized("Vor 24 Stunden")
   end
@@ -143,7 +143,7 @@ describe "README" do
   it "verifies world languages" do
     :es.localize(:es).as_language_code.should == "español"
     :ru.localize(:es).as_language_code.should == "ruso"
-    ls = TwitterCldr::LocalizedSymbol.new(:ru, :es)
+    ls = TwitterCldr::Localized::LocalizedSymbol.new(:ru, :es)
     ls.as_language_code.should == "ruso"
   end
 

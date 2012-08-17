@@ -5,42 +5,13 @@
 
 require 'spec_helper'
 
-include TwitterCldr
+include TwitterCldr::Localized
 
-describe Date do
-  describe "#localize" do
-    before(:all) do
-      @date = Date.today
-    end
-    
-    it "should localize with the given locale, English by default" do
-      loc_date = @date.localize
-      loc_date.should be_a(LocalizedDate)
-      loc_date.locale.should == :en
-      loc_date.calendar_type.should == :gregorian
-      loc_date.base_obj.should == @date
+describe LocalizedDate do
 
-      loc_date = @date.localize(:it)
-      loc_date.should be_a(LocalizedDate)
-      loc_date.locale.should == :it
-    end
+  let(:date) { Date.today }
 
-    it "should localize with the given calendar" do
-      loc_date = @date.localize(:th, :calendar_type => :buddhist)
-      loc_date.should be_a(LocalizedDate)
-      loc_date.locale.should == :th
-      loc_date.calendar_type.should == :buddhist
-      loc_date.base_obj.should == @date
-    end
-
-    it "should forward calendar_type" do
-      loc_date = @date.localize(:th, :calendar_type => :buddhist)
-      loc_date.to_datetime(Time.now).calendar_type.should == :buddhist
-    end
-
-  end
-
-  describe "ago" do
+  describe "#ago" do
     let(:date) { Date.new(2010,7,6) }
     let(:base_time) { Time.gm(2010,8,6,12,12,30) }
 
@@ -91,7 +62,7 @@ describe Date do
     end
   end
 
-  describe "until" do
+  describe "#until" do
     let(:base_time) { Time.gm(2010,8,6,12,12,30) }
 
     it "should until-ify with a number of different units" do
@@ -114,10 +85,10 @@ describe Date do
 
   describe "stringify" do
     it "should stringify with a default calendar" do
-      #Date.today.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      Date.today.localize(:th).to_long_s
-      Date.today.localize(:th).to_medium_s
-      Date.today.localize(:th).to_short_s
+      #date.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
+      date.localize(:th).to_long_s
+      date.localize(:th).to_medium_s
+      date.localize(:th).to_short_s
     end
 
     it "should stringify with buddhist calendar" do
@@ -126,15 +97,13 @@ describe Date do
           be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
       )
 
-      #Date.today.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      Date.today.localize(:th, :calendar_type => :buddhist).to_long_s
-      Date.today.localize(:th, :calendar_type => :buddhist).to_medium_s
-      Date.today.localize(:th, :calendar_type => :buddhist).to_short_s
+      #date.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
+      date.localize(:th, :calendar_type => :buddhist).to_long_s
+      date.localize(:th, :calendar_type => :buddhist).to_medium_s
+      date.localize(:th, :calendar_type => :buddhist).to_short_s
     end
   end
-end
 
-describe LocalizedDate do
   describe "#to_datetime" do
     it "should combine a date and a time object into a datetime" do
       date = Date.new(1987, 9, 20)
@@ -152,4 +121,15 @@ describe LocalizedDate do
       datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S").should == "1987-09-20 22:05:00"
     end
   end
+
+  describe 'formatters' do
+    it "don't raise errors for any locale" do
+      TwitterCldr.supported_locales.each do |locale|
+        TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |type|
+          lambda { Date.today.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
+        end
+      end
+    end
+  end
+
 end

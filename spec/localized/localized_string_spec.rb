@@ -5,26 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr
-
-describe String do
-
-  describe '#localize' do
-    it 'returns localized string object' do
-      'foo'.localize.should be_a(LocalizedString)
-    end
-
-    it "uses default locale if it's not explicitly specified" do
-      mock(TwitterCldr).get_locale { :ja }
-      'foo'.localize.locale.should == :ja
-    end
-
-    it 'uses provided locale if there is one' do
-      'foo'.localize(:ru).locale.should == :ru
-    end
-  end
-
-end
+include TwitterCldr::Localized
 
 describe LocalizedString do
   describe '#%' do

@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr
+include TwitterCldr::Localized
 
 describe LocalizedArray do
   describe '#code_points_to_string' do

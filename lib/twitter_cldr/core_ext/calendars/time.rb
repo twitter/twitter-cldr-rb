@@ -3,13 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-class Time
-  def localize(locale = TwitterCldr.get_locale, options = {})
-    TwitterCldr::LocalizedTime.new(self, locale, options)
-  end
-end
-
 module TwitterCldr
+
   class LocalizedTime < LocalizedDateTime
     def to_datetime(date)
       date_obj = date.is_a?(LocalizedDate) ? date.base_obj : date
@@ -22,4 +17,7 @@ module TwitterCldr
       TwitterCldr::Formatters::TimeFormatter
     end
   end
+
+  LocalizedTime.localize(Time)
+
 end

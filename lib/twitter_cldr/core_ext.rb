@@ -1,3 +1,8 @@
+# encoding: UTF-8
+
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 require 'twitter_cldr/core_ext/localized_object'
 require 'twitter_cldr/core_ext/calendars/datetime'
 require 'twitter_cldr/core_ext/calendars/date'

@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
+
   class LocalizedTimespan < LocalizedObject
 
     def initialize(seconds, options = {})
@@ -21,4 +22,5 @@ module TwitterCldr
     end
 
   end
+
 end

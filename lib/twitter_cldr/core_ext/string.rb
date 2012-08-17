@@ -3,13 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-class String
-  def localize(locale = TwitterCldr.get_locale)
-    TwitterCldr::LocalizedString.new(self, locale)
-  end
-end
-
 module TwitterCldr
+
   class LocalizedString < LocalizedObject
 
     # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
@@ -40,4 +35,7 @@ module TwitterCldr
     end
 
   end
+
+  LocalizedString.localize(String)
+
 end

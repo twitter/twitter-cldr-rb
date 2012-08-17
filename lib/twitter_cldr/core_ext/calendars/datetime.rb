@@ -3,13 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-class DateTime
-  def localize(locale = TwitterCldr.get_locale, options = {})
-    TwitterCldr::LocalizedDateTime.new(self, locale, options)
-  end
-end
-
 module TwitterCldr
+
   class LocalizedDateTime < LocalizedObject
     attr_reader :calendar_type
 
@@ -62,4 +57,7 @@ module TwitterCldr
       TwitterCldr::Formatters::DateTimeFormatter
     end
   end
+
+  LocalizedDateTime.localize(DateTime)
+
 end

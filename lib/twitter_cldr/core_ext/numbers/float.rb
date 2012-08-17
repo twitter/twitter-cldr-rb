@@ -3,6 +3,4 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-class Float
-  include TwitterCldr::LocalizedNumberMixin
-end
+TwitterCldr::LocalizedNumber.localize(Float)

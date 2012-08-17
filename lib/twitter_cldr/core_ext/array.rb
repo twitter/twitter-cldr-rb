@@ -3,13 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-class Array
-  def localize(locale = TwitterCldr.get_locale)
-    TwitterCldr::LocalizedArray.new(self, locale)
-  end
-end
-
 module TwitterCldr
+
   class LocalizedArray < LocalizedObject
     def code_points_to_string
       TwitterCldr::Utils::CodePoints.to_string(base_obj)
@@ -32,4 +27,7 @@ module TwitterCldr
       @base_obj.dup
     end
   end
+
+  LocalizedArray.localize(Array)
+
 end

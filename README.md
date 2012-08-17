@@ -326,6 +326,62 @@ Get a list of supported territories by using the `#territories` method:
 TwitterCldr::Shared::PhoneCodes.territories  # [:zw, :an, :tr, :by, :mh, ...]
 ```
 
+### Language Codes
+
+Over the years, different standards for language codes have accumulated.  Probably the two most popular are ISO-639 and BCP-47 and their children.  TwitterCLDR provides a way to convert between these codes systematically.
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2)  # :spa
+```
+
+Use the `standards_for` method to get the standards that are available for conversion from a given code.  In the example below, note that the first argument, `:es`, is the correct BCP-47 language code for Spanish, which is the second argument.  The return value comprises all the available conversions:
+
+```ruby
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
+```
+
+Get a list of supported standards for a full English language name:
+
+```ruby
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
+```
+
+Get a list of supported languages:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.languages  # [:Spanish, :German, :Norwegian, :Arabic ... ]
+```
+
+Determine valid standards:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1)  # true
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg)      # false
+```
+
+Determine valid codes:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47)     # true
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)  # false
+```
+
+Convert the full English name of a language into a language code:
+
+```ruby
+LanguageCodes.from_language(:Spanish, :iso_639_2)  # :spa
+```
+
+Convert a language code into it's full English name:
+
+```ruby
+LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
+```
+
+**NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.

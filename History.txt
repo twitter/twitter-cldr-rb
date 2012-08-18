@@ -1,3 +1,9 @@
+=== 1.8.0
+
+* Added support for language code conversion.
+* `#localize` methods (eg. for Hash, String, etc) now dynamically generated, part of the `TwitterCldr::Localized` namespace.
+* New convenience method `TwitterCldr::Normalization#normalize`.
+
 === 1.7.0
 
 * Wrote rake tasks to update CLDR and ICU resources.

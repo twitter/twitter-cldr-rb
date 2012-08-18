@@ -140,6 +140,52 @@ describe "README" do
     end
   end
 
+  it "verifies language code conversion" do
+    TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2).should == :spa
+
+    expected = [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+    actual = TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
+    expected.size.should == actual.size
+    actual.each { |standard| expected.should include(standard) }
+
+    expected = [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+    actual = TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
+    expected.size.should == actual.size
+    actual.each { |standard| expected.should include(standard) }
+
+    TwitterCldr::Shared::LanguageCodes.languages.should include(:Spanish)
+
+    TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1).should be_true
+    TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg).should be_false
+
+    TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47).should be_true
+    TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2).should be_false
+
+    TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2).should == :spa
+
+    TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2).should == "Spanish"
+  end
+
+  it "verifies postal code validations" do
+    TwitterCldr::Shared::PostalCodes.valid?(:us, "94103").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:us, "9410").should be_false
+    TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7").should be_true
+
+    TwitterCldr::Shared::PostalCodes.territories.should include(:gb)
+
+    TwitterCldr::Shared::PostalCodes.regex_for_territory(:us).should == /\d{5}([ \-]\d{4})?/
+  end
+
+  it "verifies phone codes" do
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:us).should == "1"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe).should == "51"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg).should == "20"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk).should == "45"
+    TwitterCldr::Shared::PhoneCodes.territories.should include(:pe)
+  end
+
   it "verifies world languages" do
     :es.localize(:es).as_language_code.should == "español"
     :ru.localize(:es).as_language_code.should == "ruso"

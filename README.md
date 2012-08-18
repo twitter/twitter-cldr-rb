@@ -371,13 +371,13 @@ TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)  # false
 Convert the full English name of a language into a language code:
 
 ```ruby
-LanguageCodes.from_language(:Spanish, :iso_639_2)  # :spa
+TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2)  # :spa
 ```
 
 Convert a language code into it's full English name:
 
 ```ruby
-LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
+TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
 ```
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.

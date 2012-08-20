@@ -106,13 +106,18 @@ module TwitterCldr
 
         return tailoring_data(aliased_locale) if aliased_locale
 
-        standard_tailoring = collations.at_xpath('collation[@type="standard"]')
+        tailoring_rules = collations.at_xpath(%Q(collation[@type="#{collation_type(collations)}"]))
 
         {
-            :collator_options        => parse_collator_options(standard_tailoring),
-            :tailored_table          => parse_tailorings(standard_tailoring, locale),
-            :suppressed_contractions => parse_suppressed_contractions(standard_tailoring)
+            :collator_options        => parse_collator_options(tailoring_rules),
+            :tailored_table          => parse_tailorings(tailoring_rules, locale),
+            :suppressed_contractions => parse_suppressed_contractions(tailoring_rules)
         }
+      end
+
+      def collation_type(collations)
+        default_type_node = collations.at_xpath('default[@type]')
+        (default_type_node && default_type_node.attr('type')) || 'standard'
       end
 
       def parse_tailorings(data, locale)

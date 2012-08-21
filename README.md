@@ -512,35 +512,7 @@ Tests are written in RSpec using RR as the mocking framework.
 
 ## JavaScript Support
 
-TwitterCLDR currently supports localization of dates and times in JavaScript.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
-
-### Generating the JavaScript
-
-You can automatically generate the JavaScript version of TwitterCLDR using this Rubygem.  Here's the one-liner:
-
-`bundle exec rake js:build OUTPUT_DIR=/path/to/desired/output/location`
-
-If you'd like to customize the generated output further, you'll need to require the `TwitterCldr::Js` namespace.  You can choose the locales to export and whether to export a minified version alongside the full version for each locale.
-
-```ruby
-require 'twitter_cldr'
-
-TwitterCldr.require_js                                   # require JavaScript environment
-TwitterCldr::Js.output_dir = "/path/to/output/location"
-TwitterCldr::Js.make(:locales => [:de, :sv, :ja, :ar],   # generate files for German, Swedish,
-                     :minify => true)                    # Japanese, and Arabic
-TwitterCldr::Js.install                                  # copy files to output directory
-```
-
-### Running Tests (JS)
-
-A JavaScript test suite comes with twitter-cldr-rb.  You'll need to install the Qt libs to be able to run the suite, as it uses [jasmine](https://github.com/pivotal/jasmine-gem) and [jasmine-headless-webkit](http://johnbintz.github.com/jasmine-headless-webkit/).
-
-1. Install qt (eg. `brew install qt`, `sudo apt-get install qt4`, etc)
-2. Run `bundle`
-3. Run `bundle exec rake js:test`
-
-The tests are located in `js/spec` and look similar to RSpec tests.
+TwitterCLDR currently supports localization of dates and times in JavaScript via the twitter-cldr-js gem.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
 
 ## Authors
 

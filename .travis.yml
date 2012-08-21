@@ -1,5 +1,6 @@
 language: ruby
-install: npm install jasmine-node
+before_install:
+  - npm install jasmine-node
 rvm:
   - 1.8.7
   - 1.9.3

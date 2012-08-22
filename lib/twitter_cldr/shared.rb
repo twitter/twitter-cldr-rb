@@ -5,13 +5,14 @@
 
 module TwitterCldr
   module Shared
-    autoload :Calendar,      'twitter_cldr/shared/calendar'
-    autoload :CodePoint,     'twitter_cldr/shared/code_point'
-    autoload :Currencies,    'twitter_cldr/shared/currencies'
-    autoload :LanguageCodes, 'twitter_cldr/shared/language_codes'
-    autoload :Languages,     'twitter_cldr/shared/languages'
-    autoload :Numbers,       'twitter_cldr/shared/numbers'
-    autoload :PhoneCodes,    'twitter_cldr/shared/phone_codes'
-    autoload :PostalCodes,   'twitter_cldr/shared/postal_codes'
+    autoload :Calendar,                     'twitter_cldr/shared/calendar'
+    autoload :CodePoint,                    'twitter_cldr/shared/code_point'
+    autoload :Currencies,                   'twitter_cldr/shared/currencies'
+    autoload :CurrencyPrecisionAndRounding, 'twitter_cldr/shared/currency_precision_and_rounding'
+    autoload :LanguageCodes,                'twitter_cldr/shared/language_codes'
+    autoload :Languages,                    'twitter_cldr/shared/languages'
+    autoload :Numbers,                      'twitter_cldr/shared/numbers'
+    autoload :PhoneCodes,                   'twitter_cldr/shared/phone_codes'
+    autoload :PostalCodes,                  'twitter_cldr/shared/postal_codes'
   end
 end

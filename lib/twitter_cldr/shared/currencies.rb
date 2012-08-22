@@ -18,12 +18,27 @@ module TwitterCldr
         end
 
         def for_country(country_name)
-          resource[country_name.to_sym]
+          currency = resource[country_name.to_sym]
+          
+          if currency
+            currency.merge!(TwitterCldr::Shared::CurrencyPrecisionAndRounding.for_code(currency[:code])) { |key, v1, v2| (v1 || v2) }
+            currency
+          end
         end
 
         def for_code(currency_code)
           country_name, data = resource.detect { |_, data| data[:code] == currency_code }
-          { :country => country_name.to_s, :currency => data[:currency], :symbol => data[:symbol] } if data
+          
+          if data
+            currency = { 
+              :country => country_name.to_s, 
+              :currency => data[:currency], 
+              :symbol => data[:symbol]
+            }
+            
+            currency.merge!(TwitterCldr::Shared::CurrencyPrecisionAndRounding.for_code(currency_code)) { |key, v1, v2| (v1 || v2) }
+            currency
+          end
         end
 
         private

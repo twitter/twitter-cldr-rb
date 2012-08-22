@@ -7,7 +7,6 @@ require 'rubygems' unless ENV['NO_RUBYGEMS']
 
 require 'bundler'
 require 'digest'
-require 'fileutils'
 
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
@@ -48,19 +47,6 @@ task :update do
   { "min" => true, "full" => false }.each_pair do |dir, minify|
     compiler.compile_each(:minify => minify) do |bundle, locale|
       File.open(File.join(output_dir, dir, "twitter_cldr_#{locale}.js"), "w+") do |f|
-        f.write(bundle)
-      end
-    end
-  end
-end
-
-task :compile do
-  compiler = TwitterCldr::Js::Compiler.new
-  FileUtils.mkdir_p(ENV["OUTPUT_DIR"])
-
-  { "twitter_cldr_%s.min.js" => true, "twitter_cldr_%s.js" => false }.each_pair do |file_pattern, minify|
-    compiler.compile_each(:minify => minify) do |bundle, locale|
-      File.open(File.join(ENV["OUTPUT_DIR"], file_pattern % locale), "w+") do |f|
         f.write(bundle)
       end
     end

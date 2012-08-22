@@ -512,7 +512,7 @@ Tests are written in RSpec using RR as the mocking framework.
 
 ## JavaScript Support
 
-TwitterCLDR currently supports localization of dates and times in JavaScript via the twitter-cldr-js gem.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
+TwitterCLDR currently supports localization of certain textual objects in JavaScript via the twitter-cldr-js gem.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
 
 ## Authors
 

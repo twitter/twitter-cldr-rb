@@ -77,31 +77,31 @@ fmt.format(180, {direction: "none", type: "short", unit: "second"}); // "180 sec
 
 twitter-cldr-js number formatting supports decimals, currencies, and percentages.
 
-## Decimals
+#### Decimals
 
 ```javascript
 // include twitter_cldr_es.js for the Spanish NumberFormatter
 var fmt = new TwitterCldr.DecimalFormatter();
-fmt.format(1337)                      // "1.337"
-fmt.format(-1337)                     // "-1.337"
-fmt.format(1337, {precision: 2})      // "1.337,00"
+fmt.format(1337);                      // "1.337"
+fmt.format(-1337);                     // "-1.337"
+fmt.format(1337, {precision: 2});      // "1.337,00"
 ```
 
-## Currencies
+#### Currencies
 
 ```javascript
 var fmt = new TwitterCldr.CurrencyFormatter();
-fmt.format(1337, {currency: "EUR"})                 // 1.337,00 €
-fmt.format(1337, {currency: "Peru"})                // 1.337,00 S/.
-fmt.format(1337, {currency: "Peru", precision: 3})  // 1.337,000 S/.
+fmt.format(1337, {currency: "EUR"});                 // 1.337,00 €
+fmt.format(1337, {currency: "Peru"});                // 1.337,00 S/.
+fmt.format(1337, {currency: "Peru", precision: 3});  // 1.337,000 S/.
 ```
 
-## Percentages
+#### Percentages
 
 ```javascript
 var fmt = new TwitterCldr.PercentFormatter();
-fmt.format(1337)                      // 1.337%
-fmt.format(1337, {precision: 2})      // 1.337,00%
+fmt.format(1337);                      // 1.337%
+fmt.format(1337, {precision: 2});      // 1.337,00%
 ```
 
 ### Plural Rules
@@ -127,11 +127,11 @@ TwitterCldr.PluralRules.all();            // ["one", "few", "many", "other"]
 
 The JavaScript files that make up twitter-cldr-js can be automatically generated for each language via a set of Rake tasks.
 
-Build js files in the current directory: `bundle exec rake twitter_cldr:compile`
-Build js files into a given directory: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir`
-Build only the specified locales: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir LOCALES=ar,he,ko,ja`
+* Build js files in the current directory: `bundle exec rake twitter_cldr:compile`
+* Build js files into a given directory: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir`
+* Build only the specified locales: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir LOCALES=ar,he,ko,ja`
 
-Rebuild the js files internally in the gem: `bundle exec rake twitter_cldr:update`
+* Rebuild the js files internally in the gem: `bundle exec rake twitter_cldr:update`
 
 ## Requirements
 
@@ -150,6 +150,7 @@ twitter-cldr-js requires Rails 3.1 or later.  To run the JavaScript test suite, 
 * Portions taken from the ruby-cldr gem by Sven Fuchs: https://github.com/svenfuchs/ruby-cldr
 
 ## Links
+* twitter-cldr-rb [https://github.com/twitter/twitter-cldr-rb](https://github.com/twitter/twitter-cldr-rb)
 * ruby-cldr gem: [https://github.com/svenfuchs/ruby-cldr](https://github.com/svenfuchs/ruby-cldr)
 * CLDR homepage: [http://cldr.unicode.org/](http://cldr.unicode.org/)
 

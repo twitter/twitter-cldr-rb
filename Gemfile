@@ -2,10 +2,6 @@ source :rubygems
 
 gemspec
 
-group :development, :test do
-  gem 'rake'
-end
-
 group :development do
   gem 'mustache', '~> 0.99.4'
   gem 'ruby_parser', '~> 2.3.1'

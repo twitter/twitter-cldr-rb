@@ -11,6 +11,7 @@ require 'mustache'
 require 'json'
 require 'uglifier'
 require 'coffee-script'
+require 'rake'
 require 'twitter_cldr/tasks'
 
 require 'compiler'

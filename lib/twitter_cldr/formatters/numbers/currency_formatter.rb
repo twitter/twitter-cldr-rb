@@ -23,6 +23,7 @@ module TwitterCldr
           currency = { :symbol => DEFAULT_CURRENCY_SYMBOL }
         end
 
+        options[:precision] ||= 2
         super(number, options).gsub('¤', currency[:symbol])
       end
 

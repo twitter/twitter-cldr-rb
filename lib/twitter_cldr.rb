@@ -62,6 +62,9 @@ module TwitterCldr
       if defined?(FastGettext)
         locale = FastGettext.locale
         locale = DEFAULT_LOCALE if locale.to_s.empty?
+      elsif defined?(I18n)
+        locale = I18n.locale
+        locale = DEFAULT_LOCALE if locale.to_s.empty?
       else
         locale = DEFAULT_LOCALE
       end

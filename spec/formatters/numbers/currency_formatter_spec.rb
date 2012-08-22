@@ -34,5 +34,9 @@ describe CurrencyFormatter do
     it "overrides the default precision" do
       @formatter.format(12, :precision => 3).should == "$12.000"
     end
+
+    it "should return 2 decimal points when the fraction is 0" do
+      @formatter.format(50.0).should == "$50.00"
+    end
   end
 end

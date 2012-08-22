@@ -24,7 +24,7 @@ TwitterCldr.NumberFormatter = class NumberFormatter
     result = integer_format.apply(parseFloat(int), opts)
     result += fraction_format.apply(fraction, opts) if fraction
     sign = if number < 0 && prefix != "-" then @symbols.minus_sign || @default_symbols.minus_sign else ""
-    "#{sign}#{prefix}#{result}#{suffix}"
+    "#{prefix}#{result}#{suffix}"
 
   partition_tokens: (tokens) ->
     [tokens[0] || "",

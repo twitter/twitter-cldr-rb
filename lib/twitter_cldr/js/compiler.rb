@@ -6,6 +6,8 @@
 module TwitterCldr
   module Js
     class Compiler
+      attr_reader :locales
+
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales
         @features = options[:features] || renderers.keys

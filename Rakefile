@@ -13,7 +13,7 @@ require 'rexml/document'
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
-require './lib/twitter_cldr/tasks'
+require './lib/twitter_cldr/js/tasks'
 require './lib/twitter_cldr/js'
 require 'twitter_cldr'
 

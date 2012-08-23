@@ -18,6 +18,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'twitter_cldr', '~> 1.8.0'
   s.add_dependency 'railties', '~> 3.1'
   s.add_dependency 'rake', '~> 0.9.2.2'
+  s.add_dependency 'mustache', '~> 0.99.4'
+  s.add_dependency 'ruby_parser', '~> 2.3.1'
+  s.add_dependency 'therubyracer',  '~> 0.9.10'
+  s.add_dependency 'uglifier',      '~> 1.2.4'
+  s.add_dependency 'coffee-script', '~> 2.2.0'
 
   s.require_path = 'lib'
 

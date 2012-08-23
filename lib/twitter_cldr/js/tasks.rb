@@ -2,7 +2,7 @@ namespace :twitter_cldr do
   task :update do
     build(
       :begin_msg  => "Updating build... ",
-      :output_dir => File.expand_path(File.join(File.dirname(__FILE__), "../assets/javascripts/twitter_cldr")),
+      :output_dir => File.expand_path(File.join(File.dirname(__FILE__), "../../assets/javascripts/twitter_cldr")),
       :files      => { "twitter_cldr_%s.js" => false }
     )
   end

@@ -13,9 +13,7 @@ require 'rexml/document'
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
 
-require './lib/twitter_cldr/js/tasks'
 require './lib/twitter_cldr/js'
-require 'twitter_cldr'
 
 Bundler::GemHelper.install_tasks
 
@@ -64,3 +62,5 @@ if RUBY_VERSION < '1.9.0'
     t.rcov_opts = %w(-T --sort coverage --exclude gems/,spec/)
   end
 end
+
+load "./lib/twitter_cldr/js/tasks/tasks.rake"

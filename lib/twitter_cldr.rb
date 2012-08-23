@@ -36,8 +36,6 @@ module TwitterCldr
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
 
-  JS_LIB_DIR = File.join(File.dirname(File.dirname(__FILE__)), 'js', 'lib')
-
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
       :msa     => :ms,
@@ -85,11 +83,6 @@ module TwitterCldr
 
     def supported_locale?(locale)
       !!locale && supported_locales.include?(convert_locale(locale))
-    end
-
-    def require_js
-      $:.push(JS_LIB_DIR) unless $:.include?(JS_LIB_DIR)
-      require 'twitter_cldr_js'
     end
   end
 

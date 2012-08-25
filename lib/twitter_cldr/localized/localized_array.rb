@@ -7,6 +7,8 @@ module TwitterCldr
   module Localized
 
     class LocalizedArray < LocalizedObject
+      include Enumerable
+
       def code_points_to_string
         TwitterCldr::Utils::CodePoints.to_string(base_obj)
       end
@@ -26,6 +28,13 @@ module TwitterCldr
 
       def to_a
         @base_obj.dup
+      end
+
+      def each
+        @base_obj.each do |val|
+          yield val
+        end
+        self
       end
     end
 

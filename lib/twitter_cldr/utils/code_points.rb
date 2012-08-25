@@ -30,7 +30,7 @@ module TwitterCldr
         end
 
         def to_string(code_points)
-          code_points.map{ |code_point| to_char(code_point) }.join
+          code_points.map { |code_point| to_char(code_point) }.join
         end
 
       end

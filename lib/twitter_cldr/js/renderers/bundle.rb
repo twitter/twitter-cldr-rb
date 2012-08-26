@@ -10,7 +10,7 @@ module TwitterCldr
         self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "..", "mustache/bundle.coffee"))
 
         def version
-          TwitterCldr::VERSION
+          TwitterCldr::Js::VERSION
         end
       end
     end

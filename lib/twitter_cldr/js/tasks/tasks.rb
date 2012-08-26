@@ -12,7 +12,7 @@ module TwitterCldr
           build(
             :begin_msg  => "Updating build... ",
             :output_dir => File.expand_path(File.join(File.dirname(__FILE__), "../../../assets/javascripts/twitter_cldr")),
-            :files      => { "twitter_cldr_%s.js" => false }
+            :files      => { "%s.js" => false }
           )
         end
 
@@ -20,7 +20,7 @@ module TwitterCldr
           build(
             :begin_msg  => "Compiling build... ",
             :output_dir => get_output_dir,
-            :files      => { "twitter_cldr_%s.min.js" => true, "twitter_cldr_%s.js" => false }
+            :files      => { "min/%s.min.js" => true, "full/%s.js" => false }
           )
         end
 
@@ -30,14 +30,14 @@ module TwitterCldr
           locales = get_locales
           $stdout.write(options[:begin_msg])
 
-          compiler = TwitterCldr::Js::Compiler.new(:locales => locales)
-          output_dir = options[:output_dir] || get_output_dir
+          compiler   = TwitterCldr::Js::Compiler.new(:locales => locales)
+          output_dir = File.expand_path(options[:output_dir] || get_output_dir)
 
           build_duration = time_operation do
             options[:files].each_pair do |file_pattern, minify|
               compiler.compile_each(:minify => minify) do |bundle, locale|
                 out_file = File.join(output_dir, file_pattern % locale)
-                FileUtils.mkdir_p(File.basename(output_dir))
+                FileUtils.mkdir_p(File.dirname(out_file))
                 File.open(out_file, "w+") do |f|
                   f.write(bundle)
                 end

@@ -28,7 +28,7 @@ RSpec::Core::RakeTask.new("spec:ruby") do |t|
 end
 
 desc 'Run JavaScript specs'
-task "spec:js" => ["twitter_cldr:update"] do
+task "spec:js" => ["twitter_cldr:js:update"] do
   puts "\nJasmine Specs"
   failures = 0
 

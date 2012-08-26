@@ -4,11 +4,15 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 namespace :twitter_cldr do
-  task :update do
-    TwitterCldr::Js::Tasks.update
-  end
+  namespace :js do
+    desc "Update gem's JavaScript assets"
+    task :update do
+      TwitterCldr::Js::Tasks.update
+    end
 
-  task :compile do
-    TwitterCldr::Js::Tasks.compile
+    desc 'Compile JavaScript files (into OUTPUT_DIR or in ./twitter_cldr)'
+    task :compile do
+      TwitterCldr::Js::Tasks.compile
+    end
   end
 end

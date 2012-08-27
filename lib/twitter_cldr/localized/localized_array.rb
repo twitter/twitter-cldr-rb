@@ -31,10 +31,12 @@ module TwitterCldr
       end
 
       def each
-        @base_obj.each do |val|
-          yield val
+        if block_given?
+          @base_obj.each { |val| yield val }
+          self
+        else
+          @base_obj.to_enum
         end
-        self
       end
     end
 

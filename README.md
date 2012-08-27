@@ -1,4 +1,4 @@
-## twitter-cldr-js  [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-js.png)](http://travis-ci.org/twitter/twitter-cldr-js)
+## twitter-cldr-js  [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-js.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-js)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
 localized equivalents via the Rails asset pipeline.  It is a port of [twitter-cldr-rb](http://github.com/twitter/twitter-cldr-rb), a Ruby gem that uses the same CLDR data.  Originally, this project was not a gem, but a collection of JavaScript files.  It has been turned into a gem to move the JavaScript compiling routines from twitter-cldr-rb and provide support for the asset pipeline.

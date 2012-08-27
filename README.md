@@ -27,7 +27,7 @@ This will make the Spanish version of twitter-cldr-js available to the JavaScrip
 ### Dates and Times
 
 ```javascript
-// include twitter_cldr_es.js for the Spanish DateTimeFormatter
+// include twitter_cldr/es.js for the Spanish DateTimeFormatter
 var fmt = new TwitterCldr.DateTimeFormatter();
 
 fmt.format(new Date(), {"type": "full"});                     // "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
@@ -53,7 +53,7 @@ The CLDR data set only includes 4 specific date formats, full, long, medium, and
 In addition to formatting full dates and times, TwitterCLDR supports relative time spans.  It tries to guess the best time unit (eg. days, hours, minutes, etc) based on the length of time given.  Indicate past or future by using negative or positive numbers respectively:
 
 ```javascript
-// include twitter_cldr_en.js for the English TimespanFormatter
+// include twitter_cldr/en.js for the English TimespanFormatter
 var fmt = new TwitterCldr.TimespanFormatter();
 var then = Math.round(new Date(2012, 1, 1, 12, 0, 0).getTime() / 1000);
 var now = Math.round(Date.now() / 1000);
@@ -80,7 +80,7 @@ twitter-cldr-js number formatting supports decimals, currencies, and percentages
 #### Decimals
 
 ```javascript
-// include twitter_cldr_es.js for the Spanish NumberFormatter
+// include twitter_cldr/es.js for the Spanish NumberFormatter
 var fmt = new TwitterCldr.DecimalFormatter();
 fmt.format(1337);                      // "1.337"
 fmt.format(-1337);                     // "-1.337"
@@ -111,7 +111,7 @@ Some languages, like English, have "countable" nouns.  You probably know this co
 TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```javascript
-// include twitter_cldr_ru.js for access to Russian Plural rules
+// include twitter_cldr/ru.js for access to Russian Plural rules
 TwitterCldr.PluralRules.rule_for(1);      // "one"
 TwitterCldr.PluralRules.rule_for(2);      // "few"
 TwitterCldr.PluralRules.rule_for(8);      // "many"

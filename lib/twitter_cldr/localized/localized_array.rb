@@ -33,7 +33,6 @@ module TwitterCldr
       def each
         if block_given?
           @base_obj.each { |val| yield val }
-          self
         else
           @base_obj.to_enum
         end

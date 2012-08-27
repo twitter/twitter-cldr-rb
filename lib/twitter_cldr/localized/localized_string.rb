@@ -59,7 +59,7 @@ module TwitterCldr
           code_points.each do |code_point|
             yield TwitterCldr::Utils::CodePoints.to_char(code_point)
           end
-          self
+          @base_obj
         else
           code_points.map { |code_point| TwitterCldr::Utils::CodePoints.to_char(code_point) }.to_enum
         end

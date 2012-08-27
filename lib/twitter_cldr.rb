@@ -15,6 +15,8 @@ require 'forwardable'
 
 require 'twitter_cldr/version'
 
+Enumerator = Enumerable::Enumerator unless Kernel.const_defined?(:Enumerator)
+
 module TwitterCldr
 
   autoload :Formatters,    'twitter_cldr/formatters'

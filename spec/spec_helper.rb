@@ -8,8 +8,10 @@ require 'twitter_cldr'
 
 class FastGettext
   class << self
+    @@locale = :en
+
     def locale
-      @@locale || :en
+      @@locale
     end
 
     def locale=(value)

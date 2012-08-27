@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr
+include TwitterCldr::Localized
 
 describe LocalizedNumber do
 
@@ -18,7 +18,7 @@ describe LocalizedNumber do
     end
 
     it 'setups DecimalFormatter by default' do
-      decimal.formatter.should be_an_instance_of(Formatters::DecimalFormatter)
+      decimal.formatter.should be_an_instance_of(TwitterCldr::Formatters::DecimalFormatter)
     end
 
     it 'uses provided type if there is one' do
@@ -26,7 +26,7 @@ describe LocalizedNumber do
     end
 
     it 'setups formatter corresponding to the specified type' do
-      currency.formatter.should be_an_instance_of(Formatters::CurrencyFormatter)
+      currency.formatter.should be_an_instance_of(TwitterCldr::Formatters::CurrencyFormatter)
     end
 
     it 'setups formatter with correct locale' do

@@ -227,14 +227,19 @@ class TwitterCldr.DateTimeFormatter
 		return ("000000" + Math.round(Math.pow(time.getMilliseconds() * 100.0, 6 - length)).toString()).slice(-length)
 
 	timezone: (time, pattern, length) ->
-		hours = ("00" + (time.getTimezoneOffset() / 60).toString()).slice(-2)
-		minutes = ("00" + (time.getTimezoneOffset() % 60).toString()).slice(-2)
+		offset = time.getTimezoneOffset()
+
+		hours = ("00" + (Math.abs(offset) / 60).toString()).slice(-2)
+		minutes = ("00" + (Math.abs(offset) % 60).toString()).slice(-2)
+		sign = if offset > 0 then "-" else "+" # timezone sign is opposite to offset sign
+
+		offsetString = sign + hours + ":" + minutes
 
 		switch length
 			when 1, 2, 3
-				return "-" + hours + ":" + minutes
+				offsetString
 			else
-				return "UTC -" + hours + ":" + minutes
+				"UTC" + offsetString
 
 	timezone_generic_non_location: (time, pattern, length) ->
 		throw 'not yet implemented (requires timezone translation data")'

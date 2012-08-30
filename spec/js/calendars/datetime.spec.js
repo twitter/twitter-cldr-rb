@@ -346,7 +346,7 @@ describe("DateTimeFormatter", function() {
       expect(formatter.timezone(date, 'z', 1)).toMatch(/^(-|\+)\d{2}:\d{2}$/);
       expect(formatter.timezone(date, 'zz', 2)).toMatch(/^(-|\+)\d{2}:\d{2}$/);
       expect(formatter.timezone(date, 'zzz', 3)).toMatch(/^(-|\+)\d{2}:\d{2}$/);
-      expect(formatter.timezone(date, 'zzzz', 4)).toMatch(/^UTC (-|\+)\d{2}:\d{2}$/);
+      expect(formatter.timezone(date, 'zzzz', 4)).toMatch(/^UTC(-|\+)\d{2}:\d{2}$/);
     });
   });
 

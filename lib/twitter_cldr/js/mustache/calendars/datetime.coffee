@@ -239,7 +239,7 @@ TwitterCldr.DateTimeFormatter = class DateTimeFormatter
 			when 1, 2, 3
 				offsetString
 			else
-				"UTC " + offsetString
+				"UTC" + offsetString
 
 	timezone_generic_non_location: (time, pattern, length) ->
 		throw 'not yet implemented (requires timezone translation data")'

@@ -1,13 +1,13 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-TwitterCldr.NumberFormatter = class NumberFormatter
+class TwitterCldr.NumberFormatter
 	constructor: ->
     @all_tokens = `{{{tokens}}}`
     @tokens = []
     @symbols = `{{{symbols}}}`
 
-    @default_symbols = 
+    @default_symbols =
       'group': ','
       'decimal': '.'
       'plus_sign': '+'
@@ -29,8 +29,8 @@ TwitterCldr.NumberFormatter = class NumberFormatter
   partition_tokens: (tokens) ->
     [tokens[0] || "",
      tokens[2] || "",
-     new IntegerHelper(tokens[1], @symbols),
-     new FractionHelper(tokens[1], @symbols)]
+     new TwitterCldr.NumberFormatter.IntegerHelper(tokens[1], @symbols),
+     new TwitterCldr.NumberFormatter.FractionHelper(tokens[1], @symbols)]
 
   parse_number: (number, options = {}) ->
     if options.precision?
@@ -52,7 +52,7 @@ TwitterCldr.NumberFormatter = class NumberFormatter
   get_tokens: ->
     throw "get_tokens() not implemented - use a derived class like PercentFormatter."
 
-TwitterCldr.PercentFormatter = class PercentFormatter extends NumberFormatter
+class TwitterCldr.PercentFormatter extends TwitterCldr.NumberFormatter
   constructor: (options = {}) ->
     @default_percent_sign = "%"
     super
@@ -66,7 +66,7 @@ TwitterCldr.PercentFormatter = class PercentFormatter extends NumberFormatter
   get_tokens: (number, options) ->
     if number < 0 then @all_tokens.percent.negative else @all_tokens.percent.positive
 
-TwitterCldr.DecimalFormatter = class DecimalFormatter extends NumberFormatter
+class TwitterCldr.DecimalFormatter extends TwitterCldr.NumberFormatter
   format: (number, options = {}) ->
     try
       super(number, options)
@@ -79,7 +79,7 @@ TwitterCldr.DecimalFormatter = class DecimalFormatter extends NumberFormatter
   get_tokens: (number, options = {}) ->
     if number < 0 then @all_tokens.decimal.negative else @all_tokens.decimal.positive
 
-TwitterCldr.CurrencyFormatter = class CurrencyFormatter extends NumberFormatter
+class TwitterCldr.CurrencyFormatter extends TwitterCldr.NumberFormatter
   constructor: (options = {}) ->
     @default_currency_symbol = "$"
     @default_precision = 2
@@ -106,7 +106,7 @@ TwitterCldr.CurrencyFormatter = class CurrencyFormatter extends NumberFormatter
   get_tokens: (number, options = {}) ->
     if number < 0 then @all_tokens.currency.negative else @all_tokens.currency.positive
 
-TwitterCldr.NumberFormatter.BaseHelper = class BaseHelper
+class TwitterCldr.NumberFormatter.BaseHelper
   interpolate: (string, value, orientation = "right") ->
     value = value.toString()
     length = value.length
@@ -120,7 +120,7 @@ TwitterCldr.NumberFormatter.BaseHelper = class BaseHelper
 
     string.replace(/#/g, "")
 
-TwitterCldr.NumberFormatter.IntegerHelper = class IntegerHelper extends BaseHelper
+class TwitterCldr.NumberFormatter.IntegerHelper extends TwitterCldr.NumberFormatter.BaseHelper
   constructor: (token, symbols = {}) ->
     format     = token.split('.')[0]
     @format    = this.prepare_format(format, symbols)
@@ -161,7 +161,7 @@ TwitterCldr.NumberFormatter.IntegerHelper = class IntegerHelper extends BaseHelp
   prepare_format: (format, symbols) ->
     format.replace(",", "").replace("+", symbols.plus_sign).replace("-", symbols.minus_sign)
 
-TwitterCldr.NumberFormatter.FractionHelper = class FractionHelper extends BaseHelper
+class TwitterCldr.NumberFormatter.FractionHelper extends TwitterCldr.NumberFormatter.BaseHelper
   constructor: (token, symbols = {}) ->
     @format = if token then token.split('.').pop() else ""
     @decimal = symbols.decimal || "."

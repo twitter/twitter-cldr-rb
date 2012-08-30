@@ -1,7 +1,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-TwitterCldr.TimespanFormatter = class TimespanFormatter
+class TwitterCldr.TimespanFormatter
   constructor: ->
     @default_type = "default"
     @tokens = `{{{tokens}}}`

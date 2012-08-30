@@ -31,7 +31,7 @@ describe "README" do
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
 
-    num = TwitterCldr::LocalizedNumber.new(1337, :es)
+    num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
     spaces(num.to_currency.to_s).should == "1.337,00 $"
   end
 
@@ -70,7 +70,7 @@ describe "README" do
     time.localize(:es).to_medium_s.should == "21:44:57"
     time.localize(:es).to_short_s.should == "21:44"
 
-    dt = TwitterCldr::LocalizedDateTime.new(date_time, :es)
+    dt = TwitterCldr::Localized::LocalizedDateTime.new(date_time, :es)
     dt.to_short_s.should == "12/12/11 21:44"
   end
 
@@ -90,11 +90,11 @@ describe "README" do
     # 86400 = 1 day in seconds, 259200 = 3 days in seconds
     (Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour).should match_normalized("Vor 48 Stunden")
 
-    ts = TwitterCldr::LocalizedTimespan.new(86400, :locale => :de)
+    ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
     ts.to_s.should match_normalized("In 1 Tag")
     ts.to_s(:unit => :hour).should match_normalized("In 24 Stunden")
 
-    ts = TwitterCldr::LocalizedTimespan.new(-86400, :locale => :de)
+    ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
     ts.to_s.should match_normalized("Vor 1 Tag")
     ts.to_s(:unit => :hour).should match_normalized("Vor 24 Stunden")
   end
@@ -140,10 +140,56 @@ describe "README" do
     end
   end
 
+  it "verifies language code conversion" do
+    TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2).should == :spa
+
+    expected = [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+    actual = TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
+    expected.size.should == actual.size
+    actual.each { |standard| expected.should include(standard) }
+
+    expected = [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+    actual = TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
+    expected.size.should == actual.size
+    actual.each { |standard| expected.should include(standard) }
+
+    TwitterCldr::Shared::LanguageCodes.languages.should include(:Spanish)
+
+    TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1).should be_true
+    TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg).should be_false
+
+    TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47).should be_true
+    TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2).should be_false
+
+    TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2).should == :spa
+
+    TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2).should == "Spanish"
+  end
+
+  it "verifies postal code validations" do
+    TwitterCldr::Shared::PostalCodes.valid?(:us, "94103").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:us, "9410").should be_false
+    TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12").should be_true
+    TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7").should be_true
+
+    TwitterCldr::Shared::PostalCodes.territories.should include(:gb)
+
+    TwitterCldr::Shared::PostalCodes.regex_for_territory(:us).should == /\d{5}([ \-]\d{4})?/
+  end
+
+  it "verifies phone codes" do
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:us).should == "1"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe).should == "51"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg).should == "20"
+    TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk).should == "45"
+    TwitterCldr::Shared::PhoneCodes.territories.should include(:pe)
+  end
+
   it "verifies world languages" do
     :es.localize(:es).as_language_code.should == "español"
     :ru.localize(:es).as_language_code.should == "ruso"
-    ls = TwitterCldr::LocalizedSymbol.new(:ru, :es)
+    ls = TwitterCldr::Localized::LocalizedSymbol.new(:ru, :es)
     ls.as_language_code.should == "ruso"
   end
 

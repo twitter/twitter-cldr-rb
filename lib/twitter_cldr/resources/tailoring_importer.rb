@@ -6,7 +6,7 @@
 require 'nokogiri'
 require 'java'
 
-require 'lib/twitter_cldr/resources/download'
+require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
@@ -34,6 +34,8 @@ module TwitterCldr
 
       EMPTY_TAILORING_DATA = { :collator_options => {}, :tailored_table => '', :suppressed_contractions => '' }
 
+      ICU4J_URL = 'http://download.icu-project.org/files/icu4j/49.1/icu4j-49_1.jar'
+
       class ImportError < RuntimeError; end
 
       # Arguments:
@@ -43,7 +45,7 @@ module TwitterCldr
       #   icu4j_path  - path to ICU4J jar file
       #
       def initialize(input_path, output_path, icu4j_path)
-        require icu4j_path
+        require_icu4j(icu4j_path)
 
         @input_path  = input_path
         @output_path = output_path
@@ -55,6 +57,11 @@ module TwitterCldr
       end
 
       private
+
+      def require_icu4j(icu4j_path)
+        TwitterCldr::Resources.download_if_necessary(icu4j_path, ICU4J_URL)
+        require icu4j_path
+      end
 
       def import_locale(locale)
         print "Importing %8s\t--\t" % locale
@@ -91,21 +98,45 @@ module TwitterCldr
       end
 
       def tailoring_data(locale)
-        doc = File.open(locale_file_path(locale)) { |file| Nokogiri::XML(file) }
+        doc = get_collation_xml(locale).at_xpath('//collations')
+
         collations = doc.at_xpath('//collations')
 
         collation_alias = collations.at_xpath('alias[@path="//ldml/collations"]')
-        aliased_locale = collation_alias && collation_alias.attr('source')
+        aliased_locale  = collation_alias && collation_alias.attr('source')
 
         return tailoring_data(aliased_locale) if aliased_locale
 
-        standard_tailoring = collations.at_xpath('collation[@type="standard"]')
+        collation_type  = get_default_collation_type(collations)
+        collation_rules = get_collation_rules(collations, collation_type)
+
+        unless collation_rules
+          language_type = doc.at_xpath('//identity/language').attr('type')
+          # try to fall back to language collation (e.g., from zh-Hant to zh) with the same collation type
+          if language_type != locale.to_s
+            collations      = get_collation_xml(language_type).at_xpath('//collations')
+            collation_rules = get_collation_rules(collations, collation_type)
+          end
+        end
 
         {
-            :collator_options        => parse_collator_options(standard_tailoring),
-            :tailored_table          => parse_tailorings(standard_tailoring, locale),
-            :suppressed_contractions => parse_suppressed_contractions(standard_tailoring)
+            :collator_options        => parse_collator_options(collation_rules),
+            :tailored_table          => parse_tailorings(collation_rules, locale),
+            :suppressed_contractions => parse_suppressed_contractions(collation_rules)
         }
+      end
+
+      def get_collation_xml(locale)
+        File.open(locale_file_path(locale)) { |file| Nokogiri::XML(file) }
+      end
+
+      def get_collation_rules(collations, collation_type)
+        collations.at_xpath(%Q(collation[@type="#{collation_type || 'standard'}"]))
+      end
+
+      def get_default_collation_type(collations)
+        default_type_node = collations.at_xpath('default[@type]')
+        default_type_node && default_type_node.attr('type')
       end
 
       def parse_tailorings(data, locale)
@@ -126,7 +157,7 @@ module TwitterCldr
             end
           elsif child.name == 'x'
             context = ''
-            child.children.each_with_object([]) do |c, memo|
+            child.children.inject([]) do |memo, c|
               if SIMPLE_RULES.include?(c.name)
                 memo << table_entry_for_rule(collator, context + c.text)
               elsif c.name == 'context'
@@ -134,6 +165,8 @@ module TwitterCldr
               elsif c.name != 'extend'
                 raise ImportError, "Rule '#{c.name}' inside <x></x> is not supported."
               end
+
+              memo
             end
           else
             raise ImportError, "Tag '#{child.name}' is not supported." unless IGNORED_TAGS.include?(child.name)

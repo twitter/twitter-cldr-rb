@@ -57,7 +57,7 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 Behind the scenes, these convenience methods are creating instances of `LocalizedNumber`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-num = TwitterCldr::LocalizedNumber.new(1337, :es)
+num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
@@ -105,7 +105,7 @@ The CLDR data set only includes 4 specific date formats, full, long, medium, and
 Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-dt = TwitterCldr::LocalizedDateTime.new(DateTime.now, :es)
+dt = TwitterCldr::Localized::LocalizedDateTime.new(DateTime.now, :es)
 dt.to_short_s  # ...etc
 ```
 
@@ -145,11 +145,11 @@ Specify a different reference point for the time span calculation:
 Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-ts = TwitterCldr::LocalizedTimespan.new(86400, :locale => :de)
+ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
 ts.to_s                         # In 1 Tag
 ts.to_s(:unit => :hour)         # In 24 Stunden
 
-ts = TwitterCldr::LocalizedTimespan.new(-86400, :locale => :de)
+ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
 ts.to_s                         # Vor 1 Tag
 ts.to_s(:unit => :hour)         # Vor 24 Stunden
 ```
@@ -326,6 +326,62 @@ Get a list of supported territories by using the `#territories` method:
 TwitterCldr::Shared::PhoneCodes.territories  # [:zw, :an, :tr, :by, :mh, ...]
 ```
 
+### Language Codes
+
+Over the years, different standards for language codes have accumulated.  Probably the two most popular are ISO-639 and BCP-47 and their children.  TwitterCLDR provides a way to convert between these codes systematically.
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2)  # :spa
+```
+
+Use the `standards_for` method to get the standards that are available for conversion from a given code.  In the example below, note that the first argument, `:es`, is the correct BCP-47 language code for Spanish, which is the second argument.  The return value comprises all the available conversions:
+
+```ruby
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
+```
+
+Get a list of supported standards for a full English language name:
+
+```ruby
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
+```
+
+Get a list of supported languages:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.languages  # [:Spanish, :German, :Norwegian, :Arabic ... ]
+```
+
+Determine valid standards:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1)  # true
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg)      # false
+```
+
+Determine valid codes:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47)     # true
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)  # false
+```
+
+Convert the full English name of a language into a language code:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2)  # :spa
+```
+
+Convert a language code into it's full English name:
+
+```ruby
+TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
+```
+
+**NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.
@@ -456,35 +512,7 @@ Tests are written in RSpec using RR as the mocking framework.
 
 ## JavaScript Support
 
-TwitterCLDR currently supports localization of dates and times in JavaScript.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
-
-### Generating the JavaScript
-
-You can automatically generate the JavaScript version of TwitterCLDR using this Rubygem.  Here's the one-liner:
-
-`bundle exec rake js:build OUTPUT_DIR=/path/to/desired/output/location`
-
-If you'd like to customize the generated output further, you'll need to require the `TwitterCldr::Js` namespace.  You can choose the locales to export and whether to export a minified version alongside the full version for each locale.
-
-```ruby
-require 'twitter_cldr'
-
-TwitterCldr.require_js                                   # require JavaScript environment
-TwitterCldr::Js.output_dir = "/path/to/output/location"
-TwitterCldr::Js.make(:locales => [:de, :sv, :ja, :ar],   # generate files for German, Swedish,
-                     :minify => true)                    # Japanese, and Arabic
-TwitterCldr::Js.install                                  # copy files to output directory
-```
-
-### Running Tests (JS)
-
-A JavaScript test suite comes with twitter-cldr-rb.  You'll need to install the Qt libs to be able to run the suite, as it uses [jasmine](https://github.com/pivotal/jasmine-gem) and [jasmine-headless-webkit](http://johnbintz.github.com/jasmine-headless-webkit/).
-
-1. Install qt (eg. `brew install qt`, `sudo apt-get install qt4`, etc)
-2. Run `bundle`
-3. Run `bundle exec rake js:test`
-
-The tests are located in `js/spec` and look similar to RSpec tests.
+TwitterCLDR currently supports localization of certain textual objects in JavaScript via the twitter-cldr-js gem.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
 
 ## Authors
 

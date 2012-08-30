@@ -60,4 +60,21 @@ describe 'Unicode collation tailoring' do
     !!(line && line !~ %r{^(//|#|\s*$)})
   end
 
+  # helper method for commenting test cases that are failing
+  #
+  #   test_path - path to the test .txt file
+  #   failures  - list of failures from the spec output
+  #
+  def mark_failures_as_pending(test_path, failures)
+    line_numbers = failures.map { |failure| failure.first - 1 }
+
+    lines = File.open(test_path, 'r:utf-8') do |file|
+      file.map.each_with_index do |line, number|
+        line_numbers.include?(number) ? "// #{line.chomp}" : line.chomp
+      end
+    end
+
+    File.open(test_path, 'w:utf-8') { |file| file.write(lines.join("\n")) }
+  end
+
 end

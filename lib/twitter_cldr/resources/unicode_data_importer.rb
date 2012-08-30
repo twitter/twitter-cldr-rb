@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'lib/twitter_cldr/resources/download'
+require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
@@ -28,6 +28,8 @@ module TwitterCldr
         unicode_data = import_unicode_data(blocks)
 
         File.open(File.join(@output_path, 'blocks.yml'), 'w') { |output| YAML.dump(blocks, output) }
+
+        FileUtils.mkdir_p(File.join(@output_path, 'blocks'))
 
         unicode_data.each do |block_name, code_points|
           File.open(File.join(@output_path, 'blocks', "#{block_name}.yml"), 'w') { |output| YAML.dump(code_points, output) }

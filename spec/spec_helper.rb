@@ -8,8 +8,10 @@ require 'twitter_cldr'
 
 class FastGettext
   class << self
+    @@locale = :en
+
     def locale
-      @@locale || :en
+      @@locale
     end
 
     def locale=(value)
@@ -21,6 +23,8 @@ end
 RSpec.configure do |config|
   config.mock_with :rr
 
+  config.filter_run(:focus => true)
+  config.run_all_when_everything_filtered = true
   config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
 
   config.before(:each) do

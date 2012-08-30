@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-$:.push(File.dirname(__FILE__))
-$:.push(File.dirname(File.dirname(__FILE__)))
-
 $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
 
 require 'yaml'
@@ -18,10 +15,13 @@ require 'forwardable'
 
 require 'twitter_cldr/version'
 
+Enumerator = Enumerable::Enumerator unless Kernel.const_defined?(:Enumerator)
+
 module TwitterCldr
 
   autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Collation,     'twitter_cldr/collation'
+  autoload :Localized,     'twitter_cldr/localized'
   autoload :Normalization, 'twitter_cldr/normalization'
   autoload :Resources,     'twitter_cldr/resources'
   autoload :Shared,        'twitter_cldr/shared'
@@ -85,10 +85,6 @@ module TwitterCldr
 
     def supported_locale?(locale)
       !!locale && supported_locales.include?(convert_locale(locale))
-    end
-
-    def require_js
-      require "js/lib/twitter_cldr_js"
     end
   end
 

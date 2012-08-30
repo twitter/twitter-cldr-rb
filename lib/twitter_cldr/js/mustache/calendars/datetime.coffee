@@ -1,7 +1,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-TwitterCldr.DateTimeFormatter = class DateTimeFormatter
+class TwitterCldr.DateTimeFormatter
 	constructor: ->
 		@tokens = `{{{tokens}}}`
 		@calendar = `{{{calendar}}}`

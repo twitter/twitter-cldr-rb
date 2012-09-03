@@ -2,7 +2,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 class TwitterCldr.NumberFormatter
-	constructor: ->
+  constructor: ->
     @all_tokens = `{{{tokens}}}`
     @tokens = []
     @symbols = `{{{symbols}}}`
@@ -27,10 +27,12 @@ class TwitterCldr.NumberFormatter
     "#{prefix}#{result}#{suffix}"
 
   partition_tokens: (tokens) ->
-    [tokens[0] || "",
-     tokens[2] || "",
-     new TwitterCldr.NumberFormatter.IntegerHelper(tokens[1], @symbols),
-     new TwitterCldr.NumberFormatter.FractionHelper(tokens[1], @symbols)]
+    [
+      tokens[0] || "",
+      tokens[2] || "",
+      new TwitterCldr.NumberFormatter.IntegerHelper(tokens[1], @symbols),
+      new TwitterCldr.NumberFormatter.FractionHelper(tokens[1], @symbols)
+    ]
 
   parse_number: (number, options = {}) ->
     if options.precision?
@@ -151,8 +153,8 @@ class TwitterCldr.NumberFormatter.IntegerHelper extends TwitterCldr.NumberFormat
     rest = format[0...index]
     widths = [format.length - index - 1]
     widths.push(rest.length - rest.lastIndexOf(',') - 1) if rest.lastIndexOf(',') > -1
-    widths = (width for width in widths when width != null)  # compact
-    widths.reverse()  # uniq
+    widths = (width for width in widths when width != null) # compact
+    widths.reverse() # uniq
     (widths[index] for index in [0...widths.length] when widths.indexOf(widths[index], index + 1) == -1).reverse()
 
   chop_group: (string, size) ->

@@ -15,7 +15,7 @@ require 'forwardable'
 
 require 'twitter_cldr/version'
 
-Enumerator = Enumerable::Enumerator unless Kernel.const_defined?(:Enumerator)
+Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
 
 module TwitterCldr
 

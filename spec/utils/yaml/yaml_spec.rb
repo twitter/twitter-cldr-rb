@@ -29,6 +29,8 @@
 require 'spec_helper'
 require 'yaml'
 
+# Psych doesn't handle Unicode characters properly, have to use Syck instead.
+YAML::ENGINE.yamler = 'syck' if YAML.const_defined?(:ENGINE)
 
 # There's an incompatibility in how ruby handles struct dumps
 # between versions that's beyond our scope.
@@ -126,14 +128,14 @@ describe TwitterCldr::Utils do
           "--- \nb: 2\na: 1\nc: 3\n",
         ],
       ].each do |hash_order, yaml|
-        { 'a' => 1, 'c' => 3, 'b' => 2 }.localize.to_yaml(:hash_order => hash_order).should == yaml
+        TwitterCldr::Utils::YAML.dump({ 'a' => 1, 'c' => 3, 'b' => 2 }, :hash_order => hash_order).should == yaml
       end
     end
 
     if RUBY_VERSION >= "1.9"
       it "should preserve hash order" do
         h = { 'a' => 1, 'c' => 3, 'b' => 2 }
-        h.localize.to_yaml(:preserve_order => true).should == "--- \na: 1\nc: 3\nb: 2\n"
+        TwitterCldr::Utils::YAML.dump(h, :preserve_order => true).should == "--- \na: 1\nc: 3\nb: 2\n"
       end
     end
 
@@ -282,18 +284,18 @@ describe TwitterCldr::Utils do
       chars = "aあ\t\-\?,\[\{\#&\*!\|>'\"\%\@\`.\\ \n\xc2\xa0\xe2\x80\xa8".split('')
 
       chars.each do |i|
-        chars.each do |j|
-          chars.each do |k|
-            src = i + j + k
-            y = TwitterCldr::Utils::YAML.dump(src,
-              :printable_with_syck => true,
-              :escape_b_specific   => true,
-              :escape_as_utf8      => true
-            )
-            r = YAML.load(y)
-            src.should == r
-          end
-        end
+	chars.each do |j|
+	  chars.each do |k|
+	    src = [i, j, k].join
+	    y = TwitterCldr::Utils::YAML.dump(src,
+	      :printable_with_syck => true,
+	      :escape_b_specific   => true,
+	      :escape_as_utf8      => true
+	    )
+	    r = YAML.load(y)
+	    src.should == r
+	  end
+	end
       end
     end
 

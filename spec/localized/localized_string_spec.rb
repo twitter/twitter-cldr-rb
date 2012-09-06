@@ -144,4 +144,11 @@ describe LocalizedString do
     end
   end
 
+  describe "#to_yaml" do
+    it "should be able to successfully roundtrip the string" do
+      YAML.load("coolio".localize.to_yaml).should == "coolio"
+      YAML.load("coolió".localize.to_yaml).should == "coolió"
+    end
+  end
+
 end

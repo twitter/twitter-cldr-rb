@@ -7,6 +7,7 @@ module TwitterCldr
   module Utils
 
     autoload :CodePoints, 'twitter_cldr/utils/code_points'
+    autoload :YAML,       'twitter_cldr/utils/yaml'
 
     class << self
 

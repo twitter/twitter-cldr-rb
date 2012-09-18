@@ -20,3 +20,4 @@ group :test do
     gem 'rcov'
   end
 end
+

@@ -18,7 +18,9 @@ module TwitterCldr
     autoload :CurrencyFormatter, 'twitter_cldr/formatters/numbers/currency_formatter'
     autoload :PercentFormatter,  'twitter_cldr/formatters/numbers/percent_formatter'
 
-    autoload :Plurals,         'twitter_cldr/formatters/plurals'
-    autoload :PluralFormatter, 'twitter_cldr/formatters/plurals/plural_formatter'
+    autoload :Plurals,           'twitter_cldr/formatters/plurals'
+    autoload :PluralFormatter,   'twitter_cldr/formatters/plurals/plural_formatter'
+
+    autoload :ListFormatter,     'twitter_cldr/formatters/list_formatter'
   end
 end

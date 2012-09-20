@@ -7,6 +7,8 @@ module TwitterCldr
   module Formatters
     class ListFormatter < Base
 
+      attr_accessor :locale
+
       def initialize(options = {})
         @locale = TwitterCldr.convert_locale(extract_locale(options))
       end
@@ -22,14 +24,14 @@ module TwitterCldr
       protected
 
       def compose_list(list)
-        result = compose(resource[:end], [list[-2], list[-1]])
+        result = compose(resource[:end] || resource[:middle] || "", [list[-2], list[-1]])
 
         # Ruby ranges don't support subtraction for some reason (eg. -3..-5).
         # Instead, we use a positive counter and negate it on array access.
         (3..list.size).each do |i|
           format_sym = i == list.size ? :start : :middle
           format_sym = :middle unless resource.include?(format_sym)
-          result = compose(resource[format_sym], [list[-i], result])
+          result = compose(resource[format_sym] || "", [list[-i], result])
         end
 
         result
@@ -43,7 +45,7 @@ module TwitterCldr
           elements.size.times { |i| result.gsub!("{#{i}}", elements[i]) }
           result
         else
-          elements[0]
+          elements[0] || ""
         end
       end
 

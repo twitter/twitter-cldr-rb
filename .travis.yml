@@ -7,3 +7,4 @@ matrix:
   allow_failures:
     - rvm: jruby-head
 script: 'bundle exec rake spec:full'
+before_script: 'gem install bundler'

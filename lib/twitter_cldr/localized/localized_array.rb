@@ -30,6 +30,10 @@ module TwitterCldr
         @base_obj.dup
       end
 
+      def to_sentence
+        TwitterCldr::Formatters::ListFormatter.new(:locale => locale).format(base_obj)
+      end
+
       def each
         if block_given?
           @base_obj.each { |val| yield val }

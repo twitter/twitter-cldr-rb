@@ -67,6 +67,10 @@ module TwitterCldr
 
       alias :each :each_char
 
+      def to_yaml(options = {})
+        TwitterCldr::Utils::YAML.dump(@base_obj, options)
+      end
+
     end
 
   end

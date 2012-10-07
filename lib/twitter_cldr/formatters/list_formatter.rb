@@ -42,8 +42,13 @@ module TwitterCldr
 
         if elements.size > 1
           result = format.dup
-          elements.size.times { |i| result.gsub!("{#{i}}", elements[i]) }
-          result
+          result.gsub!(/\{(\d+)\}/) { elements[$1.to_i] }
+
+          if TwitterCldr::Shared::Languages.is_rtl?(@locale)
+            result.localize.to_reordered_s(:direction => :RTL)
+          else
+            result
+          end
         else
           elements[0] || ""
         end

@@ -18,7 +18,6 @@ describe Bidi do
   it "should pass the derived tests in classpath_bidi_test.txt" do
     expected_level_data = []
     expected_reorder_data = []
-    num_succeeded = 0
     num_failed = 0
 
     File.open(BIDI_TEST_PATH, 'r').each_line do |s|
@@ -57,15 +56,12 @@ describe Bidi do
                 position == expected_reorder_data[idx]
               end
 
-              passed ? num_succeeded += 1 : num_failed += 1
+              num_failed += 1 unless passed
             end
           end
-
-          $stdout.write("\rSucceeded: #{num_succeeded}, Failed: #{num_failed}")
       end
     end
 
-    $stdout.write("\n")
     num_failed.should == 0
   end
 end

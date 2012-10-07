@@ -1,46 +1,46 @@
----
-:uk:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ! '#,##0.00 ¤'
-        :unit:
-          :few: ! '{0} {1}'
-          :many: ! '{0} {1}'
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :short:
-            1000: 0.0 тис
-            10000: 00 тис
-            100000: 000 тис
-            1000000: 0.0 млн
-            10000000: 00 млн
-            100000000: 000 млн
-            1000000000: 0.0 млрд
-            10000000000: 00 млрд
-            100000000000: 000 млрд
-            1000000000000: 0.0 трлн
-            10000000000000: 00 трлн
-            100000000000000: 000 трлн
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ! ','
-      :exponential: Е
-      :group:  
-      :infinity: ∞
+--- 
+:uk: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :patterns: 
+          :default: "#,##0.00\xC2\xA0\xC2\xA4"
+        :unit: 
+          :few: "{0} {1}"
+          :many: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :patterns: 
+          :default: "#,##0.###"
+          :short: 
+            1000: "0.0\xC2\xA0\xD1\x82\xD0\xB8\xD1\x81"
+            10000: "00\xC2\xA0\xD1\x82\xD0\xB8\xD1\x81"
+            100000: "000\xC2\xA0\xD1\x82\xD0\xB8\xD1\x81"
+            1000000: "0.0\xC2\xA0\xD0\xBC\xD0\xBB\xD0\xBD"
+            10000000: "00\xC2\xA0\xD0\xBC\xD0\xBB\xD0\xBD"
+            100000000: "000\xC2\xA0\xD0\xBC\xD0\xBB\xD0\xBD"
+            1000000000: "0.0\xC2\xA0\xD0\xBC\xD0\xBB\xD1\x80\xD0\xB4"
+            10000000000: "00\xC2\xA0\xD0\xBC\xD0\xBB\xD1\x80\xD0\xB4"
+            100000000000: "000\xC2\xA0\xD0\xBC\xD0\xBB\xD1\x80\xD0\xB4"
+            1000000000000: "0.0\xC2\xA0\xD1\x82\xD1\x80\xD0\xBB\xD0\xBD"
+            10000000000000: "00\xC2\xA0\xD1\x82\xD1\x80\xD0\xBB\xD0\xBD"
+            100000000000000: "000\xC2\xA0\xD1\x82\xD1\x80\xD0\xBB\xD0\xBD"
+      :percent: 
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "\xD0\x95"
+      :group: "\xC2\xA0"
+      :infinity: "\xE2\x88\x9E"
       :list: ;
-      :minus_sign: ! '-'
-      :nan: Не число
-      :per_mille: ‰
-      :percent_sign: ! '%'
+      :minus_sign: "-"
+      :nan: "\xD0\x9D\xD0\xB5 \xD1\x87\xD0\xB8\xD1\x81\xD0\xBB\xD0\xBE"
+      :per_mille: "\xE2\x80\xB0"
+      :percent_sign: "%"
       :plus_sign: +

@@ -1,43 +1,43 @@
----
-:ko:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ¤#,##0.00
-        :unit:
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :short:
+--- 
+:ko: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :patterns: 
+          :default: "\xC2\xA4#,##0.00"
+        :unit: 
+          :other: "{0} {1}"
+      :decimal: 
+        :patterns: 
+          :default: "#,##0.###"
+          :short: 
             1000: 0
-            10000: 0.0만
-            100000: 00만
-            1000000: 000만
-            10000000: 0000만
-            100000000: 0.0억
-            1000000000: 00억
-            10000000000: 000억
-            100000000000: 0000억
-            1000000000000: 0.0조
-            10000000000000: 00조
-            100000000000000: 000조
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
+            10000: "0.0\xEB\xA7\x8C"
+            100000: "00\xEB\xA7\x8C"
+            1000000: "000\xEB\xA7\x8C"
+            10000000: "0000\xEB\xA7\x8C"
+            100000000: "0.0\xEC\x96\xB5"
+            1000000000: "00\xEC\x96\xB5"
+            10000000000: "000\xEC\x96\xB5"
+            100000000000: "0000\xEC\x96\xB5"
+            1000000000000: "0.0\xEC\xA1\xB0"
+            10000000000000: "00\xEC\xA1\xB0"
+            100000000000000: "000\xEC\xA1\xB0"
+      :percent: 
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
       :decimal: .
       :exponential: E
-      :group: ! ','
-      :infinity: ∞
+      :group: ","
+      :infinity: "\xE2\x88\x9E"
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: "-"
       :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
+      :per_mille: "\xE2\x80\xB0"
+      :percent_sign: "%"
       :plus_sign: +

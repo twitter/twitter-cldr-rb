@@ -1,29 +1,29 @@
----
-:es:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
+--- 
+:es: 
+  :calendars: 
+    :gregorian: 
+      :days: 
+        :format: 
+          :abbreviated: 
             :fri: vie
             :mon: lun
-            :sat: sáb
+            :sat: "s\xC3\xA1b"
             :sun: dom
             :thu: jue
             :tue: mar
-            :wed: mié
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :wide:
+            :wed: "mi\xC3\xA9"
+          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          :wide: 
             :fri: viernes
             :mon: lunes
-            :sat: sábado
+            :sat: "s\xC3\xA1bado"
             :sun: domingo
             :thu: jueves
             :tue: martes
-            :wed: miércoles
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
+            :wed: "mi\xC3\xA9rcoles"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          :narrow: 
             :fri: V
             :mon: L
             :sat: S
@@ -31,62 +31,62 @@
             :thu: J
             :tue: M
             :wed: X
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
+          :wide: :"calendars.gregorian.days.format.wide"
+      :eras: 
+        :abbr: 
           0: a.C.
           1: d.C.
-        :name:
+        :name: 
           0: antes de Cristo
-          1: anno Dómini
-        :narrow:
-          0: ''
-      :fields:
-        :day: día
-        :dayperiod: periodo del día
+          1: "anno D\xC3\xB3mini"
+        :narrow: 
+          0: ""
+      :fields: 
+        :day: "d\xC3\xADa"
+        :dayperiod: "periodo del d\xC3\xADa"
         :era: era
         :hour: hora
         :minute: minuto
         :month: mes
         :second: segundo
         :week: semana
-        :weekday: día de la semana
-        :year: año
+        :weekday: "d\xC3\xADa de la semana"
+        :year: "a\xC3\xB1o"
         :zone: zona
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
+      :formats: 
+        :date: 
+          :default: :"calendars.gregorian.formats.date.medium"
+          :full: 
             :pattern: EEEE, d 'de' MMMM 'de' y
-          :long:
+          :long: 
             :pattern: d 'de' MMMM 'de' y
-          :medium:
+          :medium: 
             :pattern: dd/MM/yyyy
-          :short:
+          :short: 
             :pattern: dd/MM/yy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
+        :datetime: 
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :default: :"calendars.gregorian.formats.time.medium"
+          :full: 
             :pattern: HH:mm:ss zzzz
-          :long:
+          :long: 
             :pattern: HH:mm:ss z
-          :medium:
+          :medium: 
             :pattern: HH:mm:ss
-          :short:
+          :short: 
             :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
+      :months: 
+        :format: 
+          :abbreviated: 
             1: ene
             10: oct
             11: nov
@@ -99,8 +99,8 @@
             7: jul
             8: ago
             9: sep
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
+          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          :wide: 
             1: enero
             10: octubre
             11: noviembre
@@ -113,10 +113,10 @@
             7: julio
             8: agosto
             9: septiembre
-        :stand-alone:
-          :abbreviated:
+        :"stand-alone": 
+          :abbreviated: 
             5: mayo
-          :narrow:
+          :narrow: 
             1: E
             10: O
             11: N
@@ -129,41 +129,42 @@
             7: J
             8: A
             9: S
-          :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
+          :wide: :"calendars.gregorian.months.format.wide"
+      :periods: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          :wide: 
             :am: a.m.
             :pm: p.m.
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
+        :"stand-alone": {}
+
+      :quarters: 
+        :format: 
+          :abbreviated: 
             1: T1
             2: T2
             3: T3
             4: T4
-          :narrow:
+          :narrow: 
             1: 1T
             2: 2T
             3: 3T
             4: 4T
-          :wide:
+          :wide: 
             1: 1er trimestre
-            2: 2º trimestre
+            2: "2\xC2\xBA trimestre"
             3: 3er trimestre
-            4: 4º trimestre
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
-          :narrow:
+            4: "4\xC2\xBA trimestre"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          :narrow: 
             1: 1T
             2: 2T
             3: 3T
             4: 4T
-          :wide:
+          :wide: 
             1: 1.er trimestre
-            2: 2.º trimestre
+            2: "2.\xC2\xBA trimestre"
             3: 3.er trimestre
-            4: 4.º trimestre
+            4: "4.\xC2\xBA trimestre"

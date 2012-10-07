@@ -9,8 +9,6 @@ end
 group :development do
   gem 'nokogiri'
   gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'combined'
-  gem 'pry'
-  gem 'pry-nav'
 end
 
 group :test do

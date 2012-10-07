@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'pry'
-require 'pry-nav'
-
 module TwitterCldr
   module Shared
     class Bidi
@@ -53,11 +50,11 @@ module TwitterCldr
         # Do this explicitly so we can also find the maximum depth at the
         # same time.
         max = 0
-        lowest_odd = 63
+        lowest_odd = MAX_DEPTH + 1
 
         @levels.each do |level|
           max = [level, max].max
-          lowest_odd = [lowest_odd, level].min unless level % 2 == 0
+          lowest_odd = [lowest_odd, level].min unless level.even?
         end
 
         # Reverse the runs starting with the deepest.
@@ -263,7 +260,7 @@ module TwitterCldr
           level = get_run_level(run_idx) || 0
 
           # These are the names used in the Bidi algorithm.
-          sor = (([previous_level, level].max % 2) == 0) ? :L : :R
+          sor = [previous_level, level].max.even? ? :L : :R
 
           next_level = if run_idx == (run_count - 1)
             @base_embedding
@@ -271,7 +268,7 @@ module TwitterCldr
             get_run_level(run_idx + 1) || 0
           end
 
-          eor = (([level, next_level].max % 2) == 0) ? :L : :R
+          eor = [level, next_level].max.even? ? :L : :R
           prev_type = sor
           prev_strong_type = sor
 
@@ -396,9 +393,9 @@ module TwitterCldr
           level = get_run_level(run)
           next unless level
 
-          embedding_direction = ((level % 2) == 0) ? :L : :R
+          embedding_direction = level.even? ? :L : :R
           # These are the names used in the Bidi algorithm.
-          sor = ([previous_level, level].max % 2) == 0 ? :L : :R
+          sor = [previous_level, level].max.even? ? :L : :R
 
           next_level = if run == (run_count - 1)
             @base_embedding
@@ -406,7 +403,7 @@ module TwitterCldr
             get_run_level(run + 1)
           end
 
-          eor = ([level, next_level].max % 2) == 0 ? :L : :R
+          eor = [level, next_level].max.even? ? :L : :R
           prev_strong = sor
           neutral_start = -1
 

@@ -4,8 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'java'
-require 'pry'
-require 'pry-nav'
 java_import "java.lang.Character"
 java_import "classpath.Bidi"
 

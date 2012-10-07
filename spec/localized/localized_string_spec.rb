@@ -151,4 +151,24 @@ describe LocalizedString do
     end
   end
 
+  describe "#to_bidi" do
+    it "should return an instance of TwitterCldr::Shared::Bidi" do
+      "abc".localize.to_bidi.should be_a(TwitterCldr::Shared::Bidi)
+    end
+  end
+
+  describe "#to_reordered_s" do
+    it "should reverse the order a basic RTL string" do
+      str = "{0} \331\210 {1}".gsub("{0}", "a").gsub("{1}", "b")
+      chars = str.chars.to_a
+      chars.first.should == "a"
+      chars.last.should == "b"
+
+      result = str.localize.to_reordered_s(:direction => :RTL)
+      result_chars = result.chars.to_a
+      result_chars.first.should == "b"
+      result_chars.last.should == "a"
+    end
+  end
+
 end

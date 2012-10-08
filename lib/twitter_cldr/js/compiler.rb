@@ -41,7 +41,8 @@ module TwitterCldr
           :timespan => TwitterCldr::Js::Renderers::Calendars::TimespanRenderer,
           :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer,
           :numbers => TwitterCldr::Js::Renderers::Numbers::NumbersRenderer,
-          :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer
+          :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer,
+          :lists => TwitterCldr::Js::Renderers::ListRenderer
         }
       end
     end

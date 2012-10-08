@@ -42,13 +42,14 @@ module TwitterCldr
 
         if elements.size > 1
           result = format.dup
-          result.gsub!(/\{(\d+)\}/) { elements[$1.to_i] }
+          result.gsub!(/\{(\d+)\}/) { $1 }  # unfortunately "{" and "}" are weak types - must replace
 
           if TwitterCldr::Shared::Languages.is_rtl?(@locale)
-            result.localize.to_reordered_s(:direction => :RTL)
-          else
-            result
+            result = result.localize.to_reordered_s(:direction => :RTL)
           end
+
+          result.gsub!(/(\d+)/) { elements[$1.to_i] }
+          result
         else
           elements[0] || ""
         end

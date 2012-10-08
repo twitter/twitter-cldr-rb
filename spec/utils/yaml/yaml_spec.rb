@@ -44,7 +44,7 @@ class << Struct
   end
 end if RUBY_VERSION >= "1.9" && RUBY_VERSION <= "1.9.1"  # yaml_new is deprecated in 1.9.2 and later
 
-@@struct_klass = Struct::new('Foo', :bar, :buz)
+STRUCT_KLASS = Struct::new('Foo', :bar, :buz)
 class Moo
   attr_accessor :val1, :val2
   def initialize(val1, val2)
@@ -64,7 +64,7 @@ describe TwitterCldr::Utils do
     before(:all) do
       @text   = File.open(File.join(File.dirname(__FILE__), 't.yaml'), 'r') { |f| f.read }
       @gif    = File.open(File.join(File.dirname(__FILE__), 't.gif'), 'rb') { |f| f.read }
-      @struct = @@struct_klass.new('barbarbar', @@struct_klass.new('baaaar', 12345))
+      @struct = STRUCT_KLASS.new('barbarbar', STRUCT_KLASS.new('baaaar', 12345))
       @klass  = Moo.new('boobooboo', Time.local(2009, 2, 9, 16, 44, 10))
     end
 

@@ -24,6 +24,12 @@ describe ListFormatter do
     end
 
     describe "#compose" do
+      it "should reorder rtl lists" do
+        list = ["larry", "curly"]
+        @formatter.locale = :ar
+        @formatter.send(:compose, "{0} \331\210 {1}", list).should == "curly \331\210 larry"
+      end
+
       it "should format a variable number of elements correctly" do
         list = ["larry", "curly", "moe"]
         @formatter.send(:compose, "{0} - {1} - {2}", list).should == "larry - curly - moe"

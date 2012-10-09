@@ -85,4 +85,25 @@ describe Languages do
       langs[:de].should == "alemán"
     end
   end
+
+  describe "#is_rtl?" do
+    it "should return true for certain locales" do
+      [:ar, :he, :ur, :fa].each do |locale|
+        Languages.is_rtl?(locale).should be_true
+      end
+    end
+
+    it "should return false for certain locales" do
+      [:en, :es, :hu, :ja].each do |locale|
+        Languages.is_rtl?(locale).should be_false
+      end
+    end
+
+    it "should not raise errors for any locale" do
+      TwitterCldr.supported_locales.each do |locale|
+        lambda { Languages.is_rtl?(locale) }.should_not raise_error
+      end
+    end
+  end
+
 end

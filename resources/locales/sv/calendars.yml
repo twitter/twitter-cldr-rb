@@ -1,18 +1,18 @@
----
-:sv:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
+--- 
+:sv: 
+  :calendars: 
+    :gregorian: 
+      :days: 
+        :format: 
+          :abbreviated: 
             :fri: fre
-            :mon: mån
-            :sat: lör
-            :sun: sön
+            :mon: "m\xC3\xA5n"
+            :sat: "l\xC3\xB6r"
+            :sun: "s\xC3\xB6n"
             :thu: tors
             :tue: tis
             :wed: ons
-          :narrow:
+          :narrow: 
             :fri: F
             :mon: M
             :sat: L
@@ -20,24 +20,24 @@
             :thu: T
             :tue: T
             :wed: O
-          :wide:
+          :wide: 
             :fri: fredag
-            :mon: måndag
-            :sat: lördag
-            :sun: söndag
+            :mon: "m\xC3\xA5ndag"
+            :sat: "l\xC3\xB6rdag"
+            :sun: "s\xC3\xB6ndag"
             :thu: torsdag
             :tue: tisdag
             :wed: onsdag
-        :stand-alone:
-          :abbreviated:
+        :"stand-alone": 
+          :abbreviated: 
             :fri: fre
-            :mon: mån
-            :sat: lör
-            :sun: sön
+            :mon: "m\xC3\xA5n"
+            :sat: "l\xC3\xB6r"
+            :sun: "s\xC3\xB6n"
             :thu: tor
             :tue: tis
             :wed: ons
-          :narrow:
+          :narrow: 
             :fri: F
             :mon: M
             :sat: L
@@ -45,70 +45,70 @@
             :thu: T
             :tue: T
             :wed: O
-          :wide:
+          :wide: 
             :fri: fredag
-            :mon: måndag
-            :sat: lördag
-            :sun: söndag
+            :mon: "m\xC3\xA5ndag"
+            :sat: "l\xC3\xB6rdag"
+            :sun: "s\xC3\xB6ndag"
             :thu: torsdag
             :tue: tisdag
             :wed: onsdag
-      :eras:
-        :abbr:
+      :eras: 
+        :abbr: 
           0: f.Kr.
           1: e.Kr.
-        :name:
-          0: före Kristus
+        :name: 
+          0: "f\xC3\xB6re Kristus"
           1: efter Kristus
-        :narrow:
+        :narrow: 
           0: f.Kr.
           1: e.Kr.
-      :fields:
+      :fields: 
         :day: dag
         :dayperiod: fm/em
         :era: era
         :hour: timme
         :minute: minut
-        :month: månad
+        :month: "m\xC3\xA5nad"
         :second: sekund
         :week: vecka
         :weekday: veckodag
-        :year: år
+        :year: "\xC3\xA5r"
         :zone: tidszon
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
+      :formats: 
+        :date: 
+          :default: :"calendars.gregorian.formats.date.medium"
+          :full: 
             :pattern: EEEE'en' 'den' d:'e' MMMM y
-          :long:
+          :long: 
             :pattern: d MMMM y
-          :medium:
+          :medium: 
             :pattern: d MMM y
-          :short:
+          :short: 
             :pattern: yyyy-MM-dd
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: ! '''kl''. HH:mm:ss zzzz'
-          :long:
+        :datetime: 
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :default: :"calendars.gregorian.formats.time.medium"
+          :full: 
+            :pattern: "'kl'. HH:mm:ss zzzz"
+          :long: 
             :pattern: HH:mm:ss z
-          :medium:
+          :medium: 
             :pattern: HH:mm:ss
-          :short:
+          :short: 
             :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
+      :months: 
+        :format: 
+          :abbreviated: 
             1: jan
             10: okt
             11: nov
@@ -121,7 +121,7 @@
             7: jul
             8: aug
             9: sep
-          :narrow:
+          :narrow: 
             1: J
             10: O
             11: N
@@ -134,7 +134,7 @@
             7: J
             8: A
             9: S
-          :wide:
+          :wide: 
             1: januari
             10: oktober
             11: november
@@ -147,8 +147,8 @@
             7: juli
             8: augusti
             9: september
-        :stand-alone:
-          :abbreviated:
+        :"stand-alone": 
+          :abbreviated: 
             1: jan
             10: okt
             11: nov
@@ -160,7 +160,7 @@
             7: jul
             8: aug
             9: sep
-          :narrow:
+          :narrow: 
             1: J
             10: O
             11: N
@@ -173,7 +173,7 @@
             7: J
             8: A
             9: S
-          :wide:
+          :wide: 
             1: januari
             10: oktober
             2: februari
@@ -184,52 +184,52 @@
             7: juli
             8: augusti
             9: september
-      :periods:
-        :format:
-          :abbreviated:
+      :periods: 
+        :format: 
+          :abbreviated: 
             :am: FM
             :pm: EM
-          :narrow:
+          :narrow: 
             :am: f
             :pm: e
-          :wide:
+          :wide: 
             :am: fm
             :pm: em
-        :stand-alone:
-          :abbreviated:
+        :"stand-alone": 
+          :abbreviated: 
             :am: fm
             :pm: em
-          :narrow:
+          :narrow: 
             :am: f.m.
             :pm: e.m.
-          :wide:
-            :am: förmiddag
+          :wide: 
+            :am: "f\xC3\xB6rmiddag"
             :pm: eftermiddag
-      :quarters:
-        :format:
-          :abbreviated:
+      :quarters: 
+        :format: 
+          :abbreviated: 
             1: K1
             2: K2
             3: K3
             4: K4
-          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
-          :wide:
+          :narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+          :wide: 
             1: 1:a kvartalet
             2: 2:a kvartalet
             3: 3:e kvartalet
             4: 4:e kvartalet
-        :stand-alone:
-          :abbreviated:
+        :"stand-alone": 
+          :abbreviated: 
             1: K1
             2: K2
             3: K3
             4: K4
-          :narrow:
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
+          :wide: 
             1: 1:a kvartalet
             2: 2:a kvartalet
             3: 3:e kvartalet

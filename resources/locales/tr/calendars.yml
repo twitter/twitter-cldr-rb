@@ -1,131 +1,131 @@
----
-:tr:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
+--- 
+:tr: 
+  :calendars: 
+    :gregorian: 
+      :days: 
+        :format: 
+          :abbreviated: 
             :fri: Cum
             :mon: Pzt
             :sat: Cmt
             :sun: Paz
             :thu: Per
             :tue: Sal
-            :wed: Çar
-          :narrow:
+            :wed: "\xC3\x87ar"
+          :narrow: 
             :fri: C
             :mon: P
             :sat: C
             :sun: P
             :thu: P
             :tue: S
-            :wed: Ç
-          :wide:
+            :wed: "\xC3\x87"
+          :wide: 
             :fri: Cuma
             :mon: Pazartesi
             :sat: Cumartesi
             :sun: Pazar
-            :thu: Perşembe
-            :tue: Salı
-            :wed: Çarşamba
-        :stand-alone:
-          :abbreviated:
+            :thu: "Per\xC5\x9Fembe"
+            :tue: "Sal\xC4\xB1"
+            :wed: "\xC3\x87ar\xC5\x9Famba"
+        :"stand-alone": 
+          :abbreviated: 
             :fri: Cum
             :mon: Pzt
             :sat: Cmt
             :sun: Paz
             :thu: Per
             :tue: Sal
-            :wed: Çar
-          :narrow:
+            :wed: "\xC3\x87ar"
+          :narrow: 
             :fri: C
             :mon: P
             :sat: C
             :sun: P
             :thu: P
             :tue: S
-            :wed: Ç
-          :wide:
+            :wed: "\xC3\x87"
+          :wide: 
             :fri: Cuma
             :mon: Pazartesi
             :sat: Cumartesi
             :sun: Pazar
-            :thu: Perşembe
-            :tue: Salı
-            :wed: Çarşamba
-      :eras:
-        :abbr:
-          0: MÖ
+            :thu: "Per\xC5\x9Fembe"
+            :tue: "Sal\xC4\xB1"
+            :wed: "\xC3\x87ar\xC5\x9Famba"
+      :eras: 
+        :abbr: 
+          0: "M\xC3\x96"
           1: MS
-        :name:
-          0: Milattan Önce
+        :name: 
+          0: "Milattan \xC3\x96nce"
           1: Milattan Sonra
-        :narrow:
-          0: ''
-      :fields:
-        :day: Gün
+        :narrow: 
+          0: ""
+      :fields: 
+        :day: "G\xC3\xBCn"
         :dayperiod: AM/PM
-        :era: Miladi Dönem
+        :era: "Miladi D\xC3\xB6nem"
         :hour: Saat
         :minute: Dakika
         :month: Ay
         :second: Saniye
         :week: Hafta
-        :weekday: Haftanın Günü
-        :year: Yıl
+        :weekday: "Haftan\xC4\xB1n G\xC3\xBCn\xC3\xBC"
+        :year: "Y\xC4\xB1l"
         :zone: Saat Dilimi
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
+      :formats: 
+        :date: 
+          :default: :"calendars.gregorian.formats.date.medium"
+          :full: 
             :pattern: d MMMM y EEEE
-          :long:
+          :long: 
             :pattern: d MMMM y
-          :medium:
+          :medium: 
             :pattern: d MMM y
-          :short:
+          :short: 
             :pattern: dd.MM.yyyy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
+        :datetime: 
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :default: :"calendars.gregorian.formats.time.medium"
+          :full: 
             :pattern: HH:mm:ss zzzz
-          :long:
+          :long: 
             :pattern: HH:mm:ss z
-          :medium:
+          :medium: 
             :pattern: HH:mm:ss
-          :short:
+          :short: 
             :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
+      :months: 
+        :format: 
+          :abbreviated: 
             1: Oca
             10: Eki
             11: Kas
             12: Ara
-            2: Şub
+            2: "\xC5\x9Eub"
             3: Mar
             4: Nis
             5: May
             6: Haz
             7: Tem
-            8: Ağu
+            8: "A\xC4\x9Fu"
             9: Eyl
-          :narrow:
+          :narrow: 
             1: O
             10: E
             11: K
             12: A
-            2: Ş
+            2: "\xC5\x9E"
             3: M
             4: N
             5: M
@@ -133,39 +133,39 @@
             7: T
             8: A
             9: E
-          :wide:
+          :wide: 
             1: Ocak
             10: Ekim
-            11: Kasım
-            12: Aralık
-            2: Şubat
+            11: "Kas\xC4\xB1m"
+            12: "Aral\xC4\xB1k"
+            2: "\xC5\x9Eubat"
             3: Mart
             4: Nisan
-            5: Mayıs
+            5: "May\xC4\xB1s"
             6: Haziran
             7: Temmuz
-            8: Ağustos
-            9: Eylül
-        :stand-alone:
-          :abbreviated:
+            8: "A\xC4\x9Fustos"
+            9: "Eyl\xC3\xBCl"
+        :"stand-alone": 
+          :abbreviated: 
             1: Oca
             10: Eki
             11: Kas
             12: Ara
-            2: Şub
+            2: "\xC5\x9Eub"
             3: Mar
             4: Nis
             5: May
             6: Haz
             7: Tem
-            8: Ağu
+            8: "A\xC4\x9Fu"
             9: Eyl
-          :narrow:
+          :narrow: 
             1: O
             10: E
             11: K
             12: A
-            2: Ş
+            2: "\xC5\x9E"
             3: M
             4: N
             5: M
@@ -173,57 +173,58 @@
             7: T
             8: A
             9: E
-          :wide:
+          :wide: 
             1: Ocak
             10: Ekim
-            11: Kasım
-            12: Aralık
-            2: Şubat
+            11: "Kas\xC4\xB1m"
+            12: "Aral\xC4\xB1k"
+            2: "\xC5\x9Eubat"
             3: Mart
             4: Nisan
-            5: Mayıs
+            5: "May\xC4\xB1s"
             6: Haziran
             7: Temmuz
-            8: Ağustos
-            9: Eylül
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
+            8: "A\xC4\x9Fustos"
+            9: "Eyl\xC3\xBCl"
+      :periods: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          :wide: 
             :am: AM
             :pm: PM
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: Ç1
-            2: Ç2
-            3: Ç3
-            4: Ç4
-          :narrow:
+        :"stand-alone": {}
+
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "\xC3\x871"
+            2: "\xC3\x872"
+            3: "\xC3\x873"
+            4: "\xC3\x874"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 1. çeyrek
-            2: 2. çeyrek
-            3: 3. çeyrek
-            4: 4. çeyrek
-        :stand-alone:
-          :abbreviated:
-            1: Ç1
-            2: Ç2
-            3: Ç3
-            4: Ç4
-          :narrow:
+          :wide: 
+            1: "1. \xC3\xA7eyrek"
+            2: "2. \xC3\xA7eyrek"
+            3: "3. \xC3\xA7eyrek"
+            4: "4. \xC3\xA7eyrek"
+        :"stand-alone": 
+          :abbreviated: 
+            1: "\xC3\x871"
+            2: "\xC3\x872"
+            3: "\xC3\x873"
+            4: "\xC3\x874"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 1. çeyrek
-            2: 2. çeyrek
-            3: 3. çeyrek
-            4: 4. çeyrek
+          :wide: 
+            1: "1. \xC3\xA7eyrek"
+            2: "2. \xC3\xA7eyrek"
+            3: "3. \xC3\xA7eyrek"
+            4: "4. \xC3\xA7eyrek"

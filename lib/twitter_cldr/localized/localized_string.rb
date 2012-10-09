@@ -43,6 +43,7 @@ module TwitterCldr
       alias :length :size
 
       def bytesize
+        # bytesize method available in ruby 1.9 only
         @base_obj.respond_to?(:bytesize) ? @base_obj.bytesize : @base_obj.size
       end
 
@@ -69,6 +70,14 @@ module TwitterCldr
 
       def to_yaml(options = {})
         TwitterCldr::Utils::YAML.dump(@base_obj, options)
+      end
+
+      def to_bidi(options = {})
+        TwitterCldr::Shared::Bidi.from_string(@base_obj, options)
+      end
+
+      def to_reordered_s(options = {})
+        to_bidi(options).reorder_visually!.to_s
       end
 
     end

@@ -8,7 +8,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'combined'
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'layout'
 end
 
 group :test do

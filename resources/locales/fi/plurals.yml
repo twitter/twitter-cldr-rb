@@ -1,3 +1,2 @@
----
-:fi: ! '{ :fi => { :i18n => {:plural => { :keys => [:one, :other], :rule => lambda
-  { |n| n == 1 ? :one : :other } } } } }'
+--- 
+:fi: "{ :fi => { :i18n => {:plural => { :keys => [:one, :other], :rule => lambda { |n| n == 1 ? :one : :other } } } } }"

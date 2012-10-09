@@ -1,132 +1,132 @@
----
-:zh-Hant:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: 週五
-            :mon: 週一
-            :sat: 週六
-            :sun: 週日
-            :thu: 週四
-            :tue: 週二
-            :wed: 週三
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :wide:
-            :fri: 星期五
-            :mon: 星期一
-            :sat: 星期六
-            :sun: 星期日
-            :thu: 星期四
-            :tue: 星期二
-            :wed: 星期三
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
-            :fri: 五
-            :mon: 一
-            :sat: 六
-            :sun: 日
-            :thu: 四
-            :tue: 二
-            :wed: 三
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
-          0: 西元前
-          1: 西元
-        :name:
-          0: ''
-        :narrow:
-          0: ''
-      :fields:
-        :day: 日
-        :dayperiod: 上午/下午
-        :era: 年代
-        :hour: 小時
-        :minute: 分鐘
-        :month: 月
-        :second: 秒
-        :week: 週
-        :weekday: 週天
-        :year: 年
-        :zone: 時區
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: y年M月d日EEEE
-          :long:
-            :pattern: y年M月d日
-          :medium:
+--- 
+:"zh-Hant": 
+  :calendars: 
+    :gregorian: 
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "\xE9\x80\xB1\xE4\xBA\x94"
+            :mon: "\xE9\x80\xB1\xE4\xB8\x80"
+            :sat: "\xE9\x80\xB1\xE5\x85\xAD"
+            :sun: "\xE9\x80\xB1\xE6\x97\xA5"
+            :thu: "\xE9\x80\xB1\xE5\x9B\x9B"
+            :tue: "\xE9\x80\xB1\xE4\xBA\x8C"
+            :wed: "\xE9\x80\xB1\xE4\xB8\x89"
+          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          :wide: 
+            :fri: "\xE6\x98\x9F\xE6\x9C\x9F\xE4\xBA\x94"
+            :mon: "\xE6\x98\x9F\xE6\x9C\x9F\xE4\xB8\x80"
+            :sat: "\xE6\x98\x9F\xE6\x9C\x9F\xE5\x85\xAD"
+            :sun: "\xE6\x98\x9F\xE6\x9C\x9F\xE6\x97\xA5"
+            :thu: "\xE6\x98\x9F\xE6\x9C\x9F\xE5\x9B\x9B"
+            :tue: "\xE6\x98\x9F\xE6\x9C\x9F\xE4\xBA\x8C"
+            :wed: "\xE6\x98\x9F\xE6\x9C\x9F\xE4\xB8\x89"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          :narrow: 
+            :fri: "\xE4\xBA\x94"
+            :mon: "\xE4\xB8\x80"
+            :sat: "\xE5\x85\xAD"
+            :sun: "\xE6\x97\xA5"
+            :thu: "\xE5\x9B\x9B"
+            :tue: "\xE4\xBA\x8C"
+            :wed: "\xE4\xB8\x89"
+          :wide: :"calendars.gregorian.days.format.wide"
+      :eras: 
+        :abbr: 
+          0: "\xE8\xA5\xBF\xE5\x85\x83\xE5\x89\x8D"
+          1: "\xE8\xA5\xBF\xE5\x85\x83"
+        :name: 
+          0: ""
+        :narrow: 
+          0: ""
+      :fields: 
+        :day: "\xE6\x97\xA5"
+        :dayperiod: "\xE4\xB8\x8A\xE5\x8D\x88/\xE4\xB8\x8B\xE5\x8D\x88"
+        :era: "\xE5\xB9\xB4\xE4\xBB\xA3"
+        :hour: "\xE5\xB0\x8F\xE6\x99\x82"
+        :minute: "\xE5\x88\x86\xE9\x90\x98"
+        :month: "\xE6\x9C\x88"
+        :second: "\xE7\xA7\x92"
+        :week: "\xE9\x80\xB1"
+        :weekday: "\xE9\x80\xB1\xE5\xA4\xA9"
+        :year: "\xE5\xB9\xB4"
+        :zone: "\xE6\x99\x82\xE5\x8D\x80"
+      :formats: 
+        :date: 
+          :default: :"calendars.gregorian.formats.date.medium"
+          :full: 
+            :pattern: "y\xE5\xB9\xB4M\xE6\x9C\x88d\xE6\x97\xA5EEEE"
+          :long: 
+            :pattern: "y\xE5\xB9\xB4M\xE6\x9C\x88d\xE6\x97\xA5"
+          :medium: 
             :pattern: yyyy/M/d
-          :short:
+          :short: 
             :pattern: y/M/d
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}}{{time}}'
-          :long:
-            :pattern: ! '{{date}}{{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: zzzzah時mm分ss秒
-          :long:
-            :pattern: zah時mm分ss秒
-          :medium:
+        :datetime: 
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :full: 
+            :pattern: "{{date}}{{time}}"
+          :long: 
+            :pattern: "{{date}}{{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :default: :"calendars.gregorian.formats.time.medium"
+          :full: 
+            :pattern: "zzzzah\xE6\x99\x82mm\xE5\x88\x86ss\xE7\xA7\x92"
+          :long: 
+            :pattern: "zah\xE6\x99\x82mm\xE5\x88\x86ss\xE7\xA7\x92"
+          :medium: 
             :pattern: ah:mm:ss
-          :short:
+          :short: 
             :pattern: ah:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
-        :stand-alone:
-          :abbreviated:
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
-          :narrow:
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "1\xE6\x9C\x88"
+            10: "10\xE6\x9C\x88"
+            11: "11\xE6\x9C\x88"
+            12: "12\xE6\x9C\x88"
+            2: "2\xE6\x9C\x88"
+            3: "3\xE6\x9C\x88"
+            4: "4\xE6\x9C\x88"
+            5: "5\xE6\x9C\x88"
+            6: "6\xE6\x9C\x88"
+            7: "7\xE6\x9C\x88"
+            8: "8\xE6\x9C\x88"
+            9: "9\xE6\x9C\x88"
+          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          :wide: 
+            1: "1\xE6\x9C\x88"
+            10: "10\xE6\x9C\x88"
+            11: "11\xE6\x9C\x88"
+            12: "12\xE6\x9C\x88"
+            2: "2\xE6\x9C\x88"
+            3: "3\xE6\x9C\x88"
+            4: "4\xE6\x9C\x88"
+            5: "5\xE6\x9C\x88"
+            6: "6\xE6\x9C\x88"
+            7: "7\xE6\x9C\x88"
+            8: "8\xE6\x9C\x88"
+            9: "9\xE6\x9C\x88"
+        :"stand-alone": 
+          :abbreviated: 
+            1: "1\xE6\x9C\x88"
+            10: "10\xE6\x9C\x88"
+            11: "11\xE6\x9C\x88"
+            12: "12\xE6\x9C\x88"
+            2: "2\xE6\x9C\x88"
+            3: "3\xE6\x9C\x88"
+            4: "4\xE6\x9C\x88"
+            5: "5\xE6\x9C\x88"
+            6: "6\xE6\x9C\x88"
+            7: "7\xE6\x9C\x88"
+            8: "8\xE6\x9C\x88"
+            9: "9\xE6\x9C\x88"
+          :narrow: 
             1: 1
             10: 10
             11: 11
@@ -139,44 +139,45 @@
             7: 7
             8: 8
             9: 9
-          :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :afternoon: 下午
-            :am: 上午
-            :earlyMorning: 清晨
-            :midDay: 中午
-            :morning: 上午
-            :night: 晚上
-            :noon: 中午
-            :pm: 下午
-            :weeHours: 凌晨
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: 1季
-            2: 2季
-            3: 3季
-            4: 4季
-          :narrow:
+          :wide: :"calendars.gregorian.months.format.wide"
+      :periods: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          :wide: 
+            :afternoon: "\xE4\xB8\x8B\xE5\x8D\x88"
+            :am: "\xE4\xB8\x8A\xE5\x8D\x88"
+            :earlyMorning: "\xE6\xB8\x85\xE6\x99\xA8"
+            :midDay: "\xE4\xB8\xAD\xE5\x8D\x88"
+            :morning: "\xE4\xB8\x8A\xE5\x8D\x88"
+            :night: "\xE6\x99\x9A\xE4\xB8\x8A"
+            :noon: "\xE4\xB8\xAD\xE5\x8D\x88"
+            :pm: "\xE4\xB8\x8B\xE5\x8D\x88"
+            :weeHours: "\xE5\x87\x8C\xE6\x99\xA8"
+        :"stand-alone": {}
+
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "1\xE5\xAD\xA3"
+            2: "2\xE5\xAD\xA3"
+            3: "3\xE5\xAD\xA3"
+            4: "4\xE5\xAD\xA3"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 第1季
-            2: 第2季
-            3: 第3季
-            4: 第4季
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
-          :narrow:
+          :wide: 
+            1: "\xE7\xAC\xAC1\xE5\xAD\xA3"
+            2: "\xE7\xAC\xAC2\xE5\xAD\xA3"
+            3: "\xE7\xAC\xAC3\xE5\xAD\xA3"
+            4: "\xE7\xAC\xAC4\xE5\xAD\xA3"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide: :"calendars.gregorian.quarters.format.wide"

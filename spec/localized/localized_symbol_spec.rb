@@ -28,4 +28,11 @@ describe LocalizedSymbol do
     end
   end
 
+  describe "#is_rtl?" do
+    it "should return true or false depending on the locale" do
+      :es.localize.is_rtl?.should be_false
+      :ar.localize.is_rtl?.should be_true
+    end
+  end
+
 end

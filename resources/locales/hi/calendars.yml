@@ -1,147 +1,148 @@
----
-:hi:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: शुक्र.
-            :mon: सोम.
-            :sat: शनि.
-            :sun: रवि.
-            :thu: बृह.
-            :tue: मंगल.
-            :wed: बुध.
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :wide:
-            :fri: शुक्रवार
-            :mon: सोमवार
-            :sat: शनिवार
-            :sun: रविवार
-            :thu: बृहस्पतिवार
-            :tue: मंगलवार
-            :wed: बुधवार
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
-            :fri: शु
-            :mon: सो
-            :sat: श
-            :sun: र
-            :thu: गु
-            :tue: मं
-            :wed: बु
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
-          0: ईसापूर्व
-          1: सन
-        :name:
-          0: ''
-        :narrow:
-          0: ''
-      :fields:
-        :day: दिन
-        :dayperiod: समय अवधि
-        :era: युग
-        :hour: घंटा
-        :minute: मिनट
-        :month: मास
-        :second: सेकेंड
-        :week: सप्ताह
-        :weekday: सप्ताह का दिन
-        :year: वर्ष
-        :zone: क्षेत्र
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
+--- 
+:hi: 
+  :calendars: 
+    :gregorian: 
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "\xE0\xA4\xB6\xE0\xA5\x81\xE0\xA4\x95\xE0\xA5\x8D\xE0\xA4\xB0."
+            :mon: "\xE0\xA4\xB8\xE0\xA5\x8B\xE0\xA4\xAE."
+            :sat: "\xE0\xA4\xB6\xE0\xA4\xA8\xE0\xA4\xBF."
+            :sun: "\xE0\xA4\xB0\xE0\xA4\xB5\xE0\xA4\xBF."
+            :thu: "\xE0\xA4\xAC\xE0\xA5\x83\xE0\xA4\xB9."
+            :tue: "\xE0\xA4\xAE\xE0\xA4\x82\xE0\xA4\x97\xE0\xA4\xB2."
+            :wed: "\xE0\xA4\xAC\xE0\xA5\x81\xE0\xA4\xA7."
+          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          :wide: 
+            :fri: "\xE0\xA4\xB6\xE0\xA5\x81\xE0\xA4\x95\xE0\xA5\x8D\xE0\xA4\xB0\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :mon: "\xE0\xA4\xB8\xE0\xA5\x8B\xE0\xA4\xAE\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :sat: "\xE0\xA4\xB6\xE0\xA4\xA8\xE0\xA4\xBF\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :sun: "\xE0\xA4\xB0\xE0\xA4\xB5\xE0\xA4\xBF\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :thu: "\xE0\xA4\xAC\xE0\xA5\x83\xE0\xA4\xB9\xE0\xA4\xB8\xE0\xA5\x8D\xE0\xA4\xAA\xE0\xA4\xA4\xE0\xA4\xBF\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :tue: "\xE0\xA4\xAE\xE0\xA4\x82\xE0\xA4\x97\xE0\xA4\xB2\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+            :wed: "\xE0\xA4\xAC\xE0\xA5\x81\xE0\xA4\xA7\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB0"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          :narrow: 
+            :fri: "\xE0\xA4\xB6\xE0\xA5\x81"
+            :mon: "\xE0\xA4\xB8\xE0\xA5\x8B"
+            :sat: "\xE0\xA4\xB6"
+            :sun: "\xE0\xA4\xB0"
+            :thu: "\xE0\xA4\x97\xE0\xA5\x81"
+            :tue: "\xE0\xA4\xAE\xE0\xA4\x82"
+            :wed: "\xE0\xA4\xAC\xE0\xA5\x81"
+          :wide: :"calendars.gregorian.days.format.wide"
+      :eras: 
+        :abbr: 
+          0: "\xE0\xA4\x88\xE0\xA4\xB8\xE0\xA4\xBE\xE0\xA4\xAA\xE0\xA5\x82\xE0\xA4\xB0\xE0\xA5\x8D\xE0\xA4\xB5"
+          1: "\xE0\xA4\xB8\xE0\xA4\xA8"
+        :name: 
+          0: ""
+        :narrow: 
+          0: ""
+      :fields: 
+        :day: "\xE0\xA4\xA6\xE0\xA4\xBF\xE0\xA4\xA8"
+        :dayperiod: "\xE0\xA4\xB8\xE0\xA4\xAE\xE0\xA4\xAF \xE0\xA4\x85\xE0\xA4\xB5\xE0\xA4\xA7\xE0\xA4\xBF"
+        :era: "\xE0\xA4\xAF\xE0\xA5\x81\xE0\xA4\x97"
+        :hour: "\xE0\xA4\x98\xE0\xA4\x82\xE0\xA4\x9F\xE0\xA4\xBE"
+        :minute: "\xE0\xA4\xAE\xE0\xA4\xBF\xE0\xA4\xA8\xE0\xA4\x9F"
+        :month: "\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB8"
+        :second: "\xE0\xA4\xB8\xE0\xA5\x87\xE0\xA4\x95\xE0\xA5\x87\xE0\xA4\x82\xE0\xA4\xA1"
+        :week: "\xE0\xA4\xB8\xE0\xA4\xAA\xE0\xA5\x8D\xE0\xA4\xA4\xE0\xA4\xBE\xE0\xA4\xB9"
+        :weekday: "\xE0\xA4\xB8\xE0\xA4\xAA\xE0\xA5\x8D\xE0\xA4\xA4\xE0\xA4\xBE\xE0\xA4\xB9 \xE0\xA4\x95\xE0\xA4\xBE \xE0\xA4\xA6\xE0\xA4\xBF\xE0\xA4\xA8"
+        :year: "\xE0\xA4\xB5\xE0\xA4\xB0\xE0\xA5\x8D\xE0\xA4\xB7"
+        :zone: "\xE0\xA4\x95\xE0\xA5\x8D\xE0\xA4\xB7\xE0\xA5\x87\xE0\xA4\xA4\xE0\xA5\x8D\xE0\xA4\xB0"
+      :formats: 
+        :date: 
+          :default: :"calendars.gregorian.formats.date.medium"
+          :full: 
             :pattern: EEEE, d MMMM y
-          :long:
+          :long: 
             :pattern: d MMMM y
-          :medium:
+          :medium: 
             :pattern: dd-MM-yyyy
-          :short:
+          :short: 
             :pattern: d-M-yy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
+        :datetime: 
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :default: :"calendars.gregorian.formats.time.medium"
+          :full: 
             :pattern: h:mm:ss a zzzz
-          :long:
+          :long: 
             :pattern: h:mm:ss a z
-          :medium:
+          :medium: 
             :pattern: h:mm:ss a
-          :short:
+          :short: 
             :pattern: h:mm a
-      :months:
-        :format:
-          :abbreviated: :calendars.gregorian.months.format.wide
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: जनवरी
-            10: अक्तूबर
-            11: नवम्बर
-            12: दिसम्बर
-            2: फरवरी
-            3: मार्च
-            4: अप्रैल
-            5: मई
-            6: जून
-            7: जुलाई
-            8: अगस्त
-            9: सितम्बर
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
-          :narrow:
-            1: ज
-            10: अ
-            11: न
-            12: दि
-            2: फ़
-            3: मा
-            4: अ
-            5: म
-            6: जू
-            7: जु
-            8: अ
-            9: सि
-          :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :am: पूर्वाह्न
-            :pm: अपराह्न
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated: :calendars.gregorian.quarters.format.wide
-          :narrow:
+      :months: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.months.format.wide"
+          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
+          :wide: 
+            1: "\xE0\xA4\x9C\xE0\xA4\xA8\xE0\xA4\xB5\xE0\xA4\xB0\xE0\xA5\x80"
+            10: "\xE0\xA4\x85\xE0\xA4\x95\xE0\xA5\x8D\xE0\xA4\xA4\xE0\xA5\x82\xE0\xA4\xAC\xE0\xA4\xB0"
+            11: "\xE0\xA4\xA8\xE0\xA4\xB5\xE0\xA4\xAE\xE0\xA5\x8D\xE0\xA4\xAC\xE0\xA4\xB0"
+            12: "\xE0\xA4\xA6\xE0\xA4\xBF\xE0\xA4\xB8\xE0\xA4\xAE\xE0\xA5\x8D\xE0\xA4\xAC\xE0\xA4\xB0"
+            2: "\xE0\xA4\xAB\xE0\xA4\xB0\xE0\xA4\xB5\xE0\xA4\xB0\xE0\xA5\x80"
+            3: "\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB0\xE0\xA5\x8D\xE0\xA4\x9A"
+            4: "\xE0\xA4\x85\xE0\xA4\xAA\xE0\xA5\x8D\xE0\xA4\xB0\xE0\xA5\x88\xE0\xA4\xB2"
+            5: "\xE0\xA4\xAE\xE0\xA4\x88"
+            6: "\xE0\xA4\x9C\xE0\xA5\x82\xE0\xA4\xA8"
+            7: "\xE0\xA4\x9C\xE0\xA5\x81\xE0\xA4\xB2\xE0\xA4\xBE\xE0\xA4\x88"
+            8: "\xE0\xA4\x85\xE0\xA4\x97\xE0\xA4\xB8\xE0\xA5\x8D\xE0\xA4\xA4"
+            9: "\xE0\xA4\xB8\xE0\xA4\xBF\xE0\xA4\xA4\xE0\xA4\xAE\xE0\xA5\x8D\xE0\xA4\xAC\xE0\xA4\xB0"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
+          :narrow: 
+            1: "\xE0\xA4\x9C"
+            10: "\xE0\xA4\x85"
+            11: "\xE0\xA4\xA8"
+            12: "\xE0\xA4\xA6\xE0\xA4\xBF"
+            2: "\xE0\xA4\xAB\xE0\xA4\xBC"
+            3: "\xE0\xA4\xAE\xE0\xA4\xBE"
+            4: "\xE0\xA4\x85"
+            5: "\xE0\xA4\xAE"
+            6: "\xE0\xA4\x9C\xE0\xA5\x82"
+            7: "\xE0\xA4\x9C\xE0\xA5\x81"
+            8: "\xE0\xA4\x85"
+            9: "\xE0\xA4\xB8\xE0\xA4\xBF"
+          :wide: :"calendars.gregorian.months.format.wide"
+      :periods: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+          :wide: 
+            :am: "\xE0\xA4\xAA\xE0\xA5\x82\xE0\xA4\xB0\xE0\xA5\x8D\xE0\xA4\xB5\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x8D\xE0\xA4\xA8"
+            :pm: "\xE0\xA4\x85\xE0\xA4\xAA\xE0\xA4\xB0\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x8D\xE0\xA4\xA8"
+        :"stand-alone": {}
+
+      :quarters: 
+        :format: 
+          :abbreviated: :"calendars.gregorian.quarters.format.wide"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: तिमाही
-            2: दूसरी तिमाही
-            3: तीसरी तिमाही
-            4: चौथी तिमाही
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
-          :narrow:
+          :wide: 
+            1: "\xE0\xA4\xA4\xE0\xA4\xBF\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x80"
+            2: "\xE0\xA4\xA6\xE0\xA5\x82\xE0\xA4\xB8\xE0\xA4\xB0\xE0\xA5\x80 \xE0\xA4\xA4\xE0\xA4\xBF\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x80"
+            3: "\xE0\xA4\xA4\xE0\xA5\x80\xE0\xA4\xB8\xE0\xA4\xB0\xE0\xA5\x80 \xE0\xA4\xA4\xE0\xA4\xBF\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x80"
+            4: "\xE0\xA4\x9A\xE0\xA5\x8C\xE0\xA4\xA5\xE0\xA5\x80 \xE0\xA4\xA4\xE0\xA4\xBF\xE0\xA4\xAE\xE0\xA4\xBE\xE0\xA4\xB9\xE0\xA5\x80"
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide: :"calendars.gregorian.quarters.format.wide"

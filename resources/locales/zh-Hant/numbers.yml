@@ -1,43 +1,43 @@
----
-:zh-Hant:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ¤#,##0.00
-        :unit:
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :short:
+--- 
+:"zh-Hant": 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :patterns: 
+          :default: "\xC2\xA4#,##0.00"
+        :unit: 
+          :other: "{0} {1}"
+      :decimal: 
+        :patterns: 
+          :default: "#,##0.###"
+          :short: 
             1000: 0
-            10000: 0.0萬
-            100000: 00萬
-            1000000: 000萬
-            10000000: 0000萬
-            100000000: 0.0億
-            1000000000: 00億
-            10000000000: 000億
-            100000000000: 0000億
-            1000000000000: 0.0兆
-            10000000000000: 00兆
-            100000000000000: 000兆
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
+            10000: "0.0\xE8\x90\xAC"
+            100000: "00\xE8\x90\xAC"
+            1000000: "000\xE8\x90\xAC"
+            10000000: "0000\xE8\x90\xAC"
+            100000000: "0.0\xE5\x84\x84"
+            1000000000: "00\xE5\x84\x84"
+            10000000000: "000\xE5\x84\x84"
+            100000000000: "0000\xE5\x84\x84"
+            1000000000000: "0.0\xE5\x85\x86"
+            10000000000000: "00\xE5\x85\x86"
+            100000000000000: "000\xE5\x85\x86"
+      :percent: 
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
       :decimal: .
       :exponential: E
-      :group: ! ','
-      :infinity: ∞
+      :group: ","
+      :infinity: "\xE2\x88\x9E"
       :list: ;
-      :minus_sign: ! '-'
-      :nan: 非數值
-      :per_mille: ‰
-      :percent_sign: ! '%'
+      :minus_sign: "-"
+      :nan: "\xE9\x9D\x9E\xE6\x95\xB8\xE5\x80\xBC"
+      :per_mille: "\xE2\x80\xB0"
+      :percent_sign: "%"
       :plus_sign: +

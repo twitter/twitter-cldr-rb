@@ -11,6 +11,10 @@ module TwitterCldr
         TwitterCldr::Shared::Languages.from_code_for_locale(@base_obj, @locale)
       end
 
+      def is_rtl?
+        TwitterCldr::Shared::Languages.is_rtl?(@base_obj)
+      end
+
       def formatter_const
         nil
       end

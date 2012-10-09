@@ -6,18 +6,19 @@ class TwitterCldr.ListFormatter
     @formats = `{{{formats}}}`
 
   format: (list) ->
-    if @formats[list.length]?
-      this.compose(@formats[list.length], list)
+    if @formats[list.length.toString()]?
+      this.compose(@formats[list.length.toString()], list)
     else
       this.compose_list(list)
 
   compose_list: (list) ->
     result = this.compose(@formats.end || @formats.middle || "", [list[list.length - 2], list[list.length - 1]])
 
-    for i in [3..list.length]
-      format_key = if i == list.length then "start" else "middle"
-      format_key = "middle" unless @formats[format_key]?
-      result = this.compose(@formats[format_key] || "", [list[list.length - i], result])
+    if list.length > 2
+      for i in [3..list.length]
+        format_key = if i == list.length then "start" else "middle"
+        format_key = "middle" unless @formats[format_key]?
+        result = this.compose(@formats[format_key] || "", [list[list.length - i], result])
 
     result
 

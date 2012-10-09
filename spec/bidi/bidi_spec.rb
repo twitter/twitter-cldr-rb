@@ -3,6 +3,11 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+# What's going on here?
+# It's a bit too complicated to pass all the original Unicode Bidi tests, so we build our own suite against
+# the GNU classpath verison of the Bidi algorithm.  See lib/resources/bidi_test_importer.rb for the
+# implementation of the test file generator.
+
 require 'spec_helper'
 
 include TwitterCldr::Shared

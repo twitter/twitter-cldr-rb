@@ -3,6 +3,28 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+# This code was adapted from GNU Classpath, but modified significantly.  Ordinarily, derivatives are
+# treated as falling under the same license as the original source, but classpath comes with the
+# following exception: 
+#
+# "As a special exception, the copyright holders of this library give you
+# permission to link this library with independent modules to produce an
+# executable, regardless of the license terms of these independent
+# modules, and to copy and distribute the resulting executable under
+# terms of your choice, provided that you also meet, for each linked
+# independent module, the terms and conditions of the license of that
+# module.  An independent module is a module which is not derived from
+# or based on this library.  If you modify this library, you may extend
+# this exception to your version of the library, but you are not
+# obligated to do so.  If you do not wish to do so, delete this
+# exception statement from your version."
+#
+# We are assuming here that building a gem with the compiled version of bidi.java falls under these terms,
+# specifically that we are "link(ing) this library with independent modules to produce an executable."
+# We are NOT including the original source code to avoid licensing restrictions, but it can be viewed here:
+# http://developer.classpath.org/doc/java/text/Bidi-source.html
+
+
 module TwitterCldr
   module Shared
     class Bidi
@@ -70,7 +92,7 @@ module TwitterCldr
             # Find the end of the run.
             finish = start + 1
             finish += 1 while finish < @levels.size && @levels[finish] >= depth
-  
+
             # Reverse this run.
             ((finish - start) / 2).times do |i|
               tmpb = @levels[finish - i - 1]
@@ -81,7 +103,7 @@ module TwitterCldr
               @string_arr[finish - i - 1] = @string_arr[start + i]
               @string_arr[start + i] = tmpo
             end
-  
+
             # Handle the next run.
             start = finish + 1
           end
@@ -208,7 +230,7 @@ module TwitterCldr
           end
 
           len = next_fmt - input
-      
+
           # Non-formatter codes are from 'input' to 'next_fmt'.
           arraycopy(@levels, input, @levels, output, len)
           arraycopy(@types, input, @types, output, len)

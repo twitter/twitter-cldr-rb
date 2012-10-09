@@ -1,0 +1,164 @@
+--- 
+:sk: 
+  :units: 
+    :day: 
+      :default: 
+        :few: "{0} dni"
+        :one: "{0} de\xC5\x88"
+        :other: "{0} dn\xC3\xAD"
+      :short: 
+        :few: "{0} d."
+        :one: "{0} d."
+        :other: "{0} d."
+    :"day-future": 
+      :default: 
+        0: "O 0 dn\xC3\xAD"
+        1: "O 1 de\xC5\x88"
+        :few: O {0} dni
+        :one: "{0} de\xC5\x88"
+        :other: "O {0} dn\xC3\xAD"
+    :"day-past": 
+      :default: 
+        0: "Pred 0 d\xC5\x88ami"
+        1: "Pred 1 d\xC5\x88om"
+        :few: "Pred {0} d\xC5\x88ami"
+        :one: "{0} d\xC5\x88om"
+        :other: "Pred {0} d\xC5\x88ami"
+    :hour: 
+      :default: 
+        :few: "{0} hodiny"
+        :one: "{0} hodina"
+        :other: "{0} hod\xC3\xADn"
+      :short: 
+        :few: "{0} h"
+        :one: "{0} h"
+        :other: "{0} h"
+    :"hour-future": 
+      :default: 
+        0: "O 0 hod\xC3\xADn"
+        1: O 1 hodinu
+        :few: O {0} hodiny
+        :one: "{0} hodinu"
+        :other: "O {0} hod\xC3\xADn"
+    :"hour-past": 
+      :default: 
+        0: Pred 0 hodinami
+        1: Pred 1 hodinou
+        :few: Pred {0} hodinami
+        :one: "{0} hodinou"
+        :other: Pred {0} hodinami
+    :minute: 
+      :default: 
+        :few: "{0} min\xC3\xBAty"
+        :one: "{0} min\xC3\xBAta"
+        :other: "{0} min\xC3\xBAt"
+      :short: 
+        :few: "{0} min"
+        :one: "{0} min"
+        :other: "{0} min"
+    :"minute-future": 
+      :default: 
+        0: "O 0 min\xC3\xBAt"
+        1: "O 1 min\xC3\xBAtu"
+        :few: "O {0} min\xC3\xBAty"
+        :one: "{0} min\xC3\xBAtu"
+        :other: "O {0} min\xC3\xBAt"
+    :"minute-past": 
+      :default: 
+        0: "Pred 0 min\xC3\xBAtami"
+        1: "Pred 1 min\xC3\xBAtou"
+        :few: "Pred {0} min\xC3\xBAtami"
+        :one: "{0} min\xC3\xBAtou"
+        :other: "Pred {0} min\xC3\xBAtami"
+    :month: 
+      :default: 
+        :few: "{0} mesiace"
+        :one: "{0} mesiac"
+        :other: "{0} mesiacov"
+      :short: 
+        :few: "{0} mes."
+        :one: "{0} mes."
+        :other: "{0} mes."
+    :"month-future": 
+      :default: 
+        0: O 0 mesiacov
+        1: O 1 mesiac
+        :few: O {0} mesiace
+        :one: "{0} mesiac"
+        :other: O {0} mesiacov
+    :"month-past": 
+      :default: 
+        0: Pred 0 mesiacmi
+        1: Pred 1 mesiacom
+        :few: Pred {0} mesiacmi
+        :one: "{0} mesiacom"
+        :other: Pred {0} mesiacmi
+    :second: 
+      :default: 
+        :few: "{0} sekundy"
+        :one: "{0} sekunda"
+        :other: "{0} sek\xC3\xBAnd"
+      :short: 
+        :few: "{0} s"
+        :one: "{0} s"
+        :other: "{0} s"
+    :"second-future": 
+      :default: 
+        0: "O 0 sek\xC3\xBAnd"
+        1: O 1 sekundu
+        :few: O {0} sekundy
+        :one: "{0} sekundu"
+        :other: "O {0} sek\xC3\xBAnd"
+    :"second-past": 
+      :default: 
+        0: Pred 0 sekundami
+        1: Pred 1 sekundou
+        :few: Pred {0} sekundami
+        :one: "{0} sekundou"
+        :other: Pred {0} sekundami
+    :week: 
+      :default: 
+        :few: "{0} t\xC3\xBD\xC5\xBEdne"
+        :one: "{0} t\xC3\xBD\xC5\xBEde\xC5\x88"
+        :other: "{0} t\xC3\xBD\xC5\xBEd\xC5\x88ov"
+      :short: 
+        :few: "{0} t\xC3\xBD\xC5\xBEd."
+        :one: "{0} t\xC3\xBD\xC5\xBEd."
+        :other: "{0} t\xC3\xBD\xC5\xBEd."
+    :"week-future": 
+      :default: 
+        0: "O 0 t\xC3\xBD\xC5\xBEd\xC5\x88ov"
+        1: "O 1 t\xC3\xBD\xC5\xBEde\xC5\x88"
+        :few: "O {0} t\xC3\xBD\xC5\xBEdne"
+        :one: "{0} t\xC3\xBD\xC5\xBEde\xC5\x88"
+        :other: "O {0} t\xC3\xBD\xC5\xBEd\xC5\x88ov"
+    :"week-past": 
+      :default: 
+        0: "Pred 0 t\xC3\xBD\xC5\xBEd\xC5\x88ami"
+        1: "Pred 1 t\xC3\xBD\xC5\xBEd\xC5\x88om"
+        :few: "Pred {0} t\xC3\xBD\xC5\xBEd\xC5\x88ami"
+        :one: "{0} t\xC3\xBD\xC5\xBEd\xC5\x88om"
+        :other: "Pred {0} t\xC3\xBD\xC5\xBEd\xC5\x88ami"
+    :year: 
+      :default: 
+        :few: "{0} roky"
+        :one: "{0} rok"
+        :other: "{0} rokov"
+      :short: 
+        :few: "{0} r."
+        :one: "{0} r."
+        :other: "{0} r."
+    :"year-future": 
+      :default: 
+        0: O 0 rokov
+        1: O 1 rok
+        :few: O {0} roky
+        :one: "{0} rok"
+        :other: O {0} rokov
+    :"year-past": 
+      :default: 
+        0: Pred 0 rokmi
+        1: Pred 1 rokom
+        :few: Pred {0} rokmi
+        :one: "{0} rokom"
+        :other: Pred {0} rokmi

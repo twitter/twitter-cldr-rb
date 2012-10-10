@@ -1,87 +1,87 @@
---- 
-:be: 
-  :units: 
-    :day: 
-      :default: 
-        :few: "{0} \xD0\xB4\xD0\xBD\xD1\x96"
-        :many: "{0} \xD0\xB4\xD0\xB7\xD1\x91\xD0\xBD"
-        :one: "{0} \xD0\xB4\xD0\xB7\xD0\xB5\xD0\xBD\xD1\x8C"
-        :other: "{0} \xD0\xB4\xD0\xBD\xD1\x8F"
-    :"day-future": 
-      :default: 
+---
+:be:
+  :units:
+    :day:
+      :default:
+        :few: ! '{0} дні'
+        :many: ! '{0} дзён'
+        :one: ! '{0} дзень'
+        :other: ! '{0} дня'
+    :day-future:
+      :default:
         :other: +{0} d
-    :"day-past": 
-      :default: 
+    :day-past:
+      :default:
         :other: -{0} d
-    :hour: 
-      :default: 
-        :few: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD0\xB7\xD1\x96\xD0\xBD\xD1\x8B"
-        :many: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD0\xB7\xD1\x96\xD0\xBD"
-        :one: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD0\xB7\xD1\x96\xD0\xBD\xD0\xB0"
-        :other: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD0\xB7\xD1\x96\xD0\xBD\xD1\x8B"
-    :"hour-future": 
-      :default: 
+    :hour:
+      :default:
+        :few: ! '{0} гадзіны'
+        :many: ! '{0} гадзін'
+        :one: ! '{0} гадзіна'
+        :other: ! '{0} гадзіны'
+    :hour-future:
+      :default:
         :other: +{0} h
-    :"hour-past": 
-      :default: 
+    :hour-past:
+      :default:
         :other: -{0} h
-    :minute: 
-      :default: 
-        :few: "{0} \xD1\x85\xD0\xB2\xD1\x96\xD0\xBB\xD1\x96\xD0\xBD\xD1\x8B"
-        :many: "{0} \xD1\x85\xD0\xB2\xD1\x96\xD0\xBB\xD1\x96\xD0\xBD"
-        :one: "{0} \xD1\x85\xD0\xB2\xD1\x96\xD0\xBB\xD1\x96\xD0\xBD\xD0\xB0"
-        :other: "{0} \xD1\x85\xD0\xB2\xD1\x96\xD0\xBB\xD1\x96\xD0\xBD\xD1\x8B"
-    :"minute-future": 
-      :default: 
+    :minute:
+      :default:
+        :few: ! '{0} хвіліны'
+        :many: ! '{0} хвілін'
+        :one: ! '{0} хвіліна'
+        :other: ! '{0} хвіліны'
+    :minute-future:
+      :default:
         :other: +{0} min
-    :"minute-past": 
-      :default: 
+    :minute-past:
+      :default:
         :other: -{0} min
-    :month: 
-      :default: 
-        :few: "{0} \xD0\xBC\xD0\xB5\xD1\x81\xD1\x8F\xD1\x86\xD0\xB0"
-        :many: "{0} \xD0\xBC\xD0\xB5\xD1\x81\xD1\x8F\xD1\x86\xD0\xB0\xD1\x9E"
-        :one: "{0} \xD0\xBC\xD0\xB5\xD1\x81\xD1\x8F\xD1\x86"
-        :other: "{0} \xD0\xBC\xD0\xB5\xD1\x81\xD1\x8F\xD1\x86\xD0\xB0"
-    :"month-future": 
-      :default: 
+    :month:
+      :default:
+        :few: ! '{0} месяца'
+        :many: ! '{0} месяцаў'
+        :one: ! '{0} месяц'
+        :other: ! '{0} месяца'
+    :month-future:
+      :default:
         :other: +{0} m
-    :"month-past": 
-      :default: 
+    :month-past:
+      :default:
         :other: -{0} m
-    :second: 
-      :default: 
-        :few: "{0} \xD1\x81\xD1\x8D\xD0\xBA\xD1\x83\xD0\xBD\xD0\xB4\xD1\x8B"
-        :many: "{0} \xD1\x81\xD1\x8D\xD0\xBA\xD1\x83\xD0\xBD\xD0\xB4"
-        :one: "{0} \xD1\x81\xD1\x8D\xD0\xBA\xD1\x83\xD0\xBD\xD0\xB4\xD0\xB0"
-        :other: "{0} \xD1\x81\xD1\x8D\xD0\xBA\xD1\x83\xD0\xBD\xD0\xB4\xD1\x8B"
-    :"second-future": 
-      :default: 
+    :second:
+      :default:
+        :few: ! '{0} сэкунды'
+        :many: ! '{0} сэкунд'
+        :one: ! '{0} сэкунда'
+        :other: ! '{0} сэкунды'
+    :second-future:
+      :default:
         :other: +{0} s
-    :"second-past": 
-      :default: 
+    :second-past:
+      :default:
         :other: -{0} s
-    :week: 
-      :default: 
-        :few: "{0} \xD1\x82\xD1\x8B\xD0\xB4\xD0\xBD\xD1\x96"
-        :many: "{0} \xD1\x82\xD1\x8B\xD0\xB4\xD0\xBD\xD1\x8F\xD1\x9E"
-        :one: "{0} \xD1\x82\xD1\x8B\xD0\xB4\xD0\xB7\xD0\xB5\xD0\xBD\xD1\x8C"
-        :other: "{0} \xD1\x82\xD1\x8B\xD0\xB4\xD0\xBD\xD1\x8F"
-    :"week-future": 
-      :default: 
+    :week:
+      :default:
+        :few: ! '{0} тыдні'
+        :many: ! '{0} тыдняў'
+        :one: ! '{0} тыдзень'
+        :other: ! '{0} тыдня'
+    :week-future:
+      :default:
         :other: +{0} w
-    :"week-past": 
-      :default: 
+    :week-past:
+      :default:
         :other: -{0} w
-    :year: 
-      :default: 
-        :few: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD1\x8B"
-        :many: "{0} \xD0\xB3\xD0\xB0\xD0\xB4\xD0\xBE\xD1\x9E"
-        :one: "{0} \xD0\xB3\xD0\xBE\xD0\xB4"
-        :other: "{0} \xD0\xB3\xD0\xBE\xD0\xB4\xD1\x83"
-    :"year-future": 
-      :default: 
+    :year:
+      :default:
+        :few: ! '{0} гады'
+        :many: ! '{0} гадоў'
+        :one: ! '{0} год'
+        :other: ! '{0} году'
+    :year-future:
+      :default:
         :other: +{0} y
-    :"year-past": 
-      :default: 
+    :year-past:
+      :default:
         :other: -{0} y

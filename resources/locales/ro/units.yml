@@ -1,157 +1,157 @@
---- 
-:ro: 
-  :units: 
-    :day: 
-      :default: 
-        :few: "{0} zile"
-        :one: "{0} zi"
-        :other: "{0} de zile"
-      :short: 
-        :few: "{0} zile"
-        :one: "{0} zi"
-        :other: "{0} zile"
-    :"day-future": 
-      :default: 
-        0: "\xC3\x8En 0 zile"
-        1: "\xC3\x8Entr-o zi"
-        :few: "\xC3\x8En {0} zile"
-        :other: "\xC3\x8En {0} de zile"
-    :"day-past": 
-      :default: 
+---
+:ro:
+  :units:
+    :day:
+      :default:
+        :few: ! '{0} zile'
+        :one: ! '{0} zi'
+        :other: ! '{0} de zile'
+      :short:
+        :few: ! '{0} zile'
+        :one: ! '{0} zi'
+        :other: ! '{0} zile'
+    :day-future:
+      :default:
+        0: În 0 zile
+        1: Într-o zi
+        :few: În {0} zile
+        :other: În {0} de zile
+    :day-past:
+      :default:
         0: Acum 0 zile
         1: Acum o zi
         :few: Acum {0} zile
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} zi"
+        :one: În urmă cu {0} zi
         :other: Acum {0} de zile
-    :hour: 
-      :default: 
-        :few: "{0} ore"
-        :one: "{0} or\xC4\x83"
-        :other: "{0} de ore"
-      :short: 
-        :few: "{0} ore"
-        :one: "{0} or\xC4\x83"
-        :other: "{0} ore"
-    :"hour-future": 
-      :default: 
-        0: "\xC3\x8En 0 ore"
-        1: "\xC3\x8Entr-o or\xC4\x83"
-        :few: "\xC3\x8En {0} ore"
-        :other: "\xC3\x8En {0} de ore"
-    :"hour-past": 
-      :default: 
+    :hour:
+      :default:
+        :few: ! '{0} ore'
+        :one: ! '{0} oră'
+        :other: ! '{0} de ore'
+      :short:
+        :few: ! '{0} ore'
+        :one: ! '{0} oră'
+        :other: ! '{0} ore'
+    :hour-future:
+      :default:
+        0: În 0 ore
+        1: Într-o oră
+        :few: În {0} ore
+        :other: În {0} de ore
+    :hour-past:
+      :default:
         0: Acum 0 ore
-        1: "Acum o or\xC4\x83"
+        1: Acum o oră
         :few: Acum {0} ore
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} or\xC4\x83"
+        :one: În urmă cu {0} oră
         :other: Acum {0} de ore
-    :minute: 
-      :default: 
-        :few: "{0} minute"
-        :one: "{0} minut"
-        :other: "{0} de minute"
-      :short: 
-        :few: "{0} min."
-        :one: "{0} min."
-        :other: "{0} min."
-    :"minute-future": 
-      :default: 
-        0: "\xC3\x8En 0 minute"
-        1: "\xC3\x8Entr-un minut"
-        :few: "\xC3\x8En {0} minute"
-        :other: "\xC3\x8En {0} de minute"
-    :"minute-past": 
-      :default: 
+    :minute:
+      :default:
+        :few: ! '{0} minute'
+        :one: ! '{0} minut'
+        :other: ! '{0} de minute'
+      :short:
+        :few: ! '{0} min.'
+        :one: ! '{0} min.'
+        :other: ! '{0} min.'
+    :minute-future:
+      :default:
+        0: În 0 minute
+        1: Într-un minut
+        :few: În {0} minute
+        :other: În {0} de minute
+    :minute-past:
+      :default:
         0: Acum 0 minute
         1: Acum un minut
         :few: Acum {0} minute
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} minut"
+        :one: În urmă cu {0} minut
         :other: Acum {0} de minute
-    :month: 
-      :default: 
-        :few: "{0} luni"
-        :one: "{0} lun\xC4\x83"
-        :other: "{0} de luni"
-      :short: 
-        :few: "{0} luni"
-        :one: "{0} lun\xC4\x83"
-        :other: "{0} luni"
-    :"month-future": 
-      :default: 
-        0: "\xC3\x8En 0 luni"
-        1: "\xC3\x8Entr-o lun\xC4\x83"
-        :few: "\xC3\x8En {0} luni"
-        :other: "\xC3\x8En {0} de luni"
-    :"month-past": 
-      :default: 
+    :month:
+      :default:
+        :few: ! '{0} luni'
+        :one: ! '{0} lună'
+        :other: ! '{0} de luni'
+      :short:
+        :few: ! '{0} luni'
+        :one: ! '{0} lună'
+        :other: ! '{0} luni'
+    :month-future:
+      :default:
+        0: În 0 luni
+        1: Într-o lună
+        :few: În {0} luni
+        :other: În {0} de luni
+    :month-past:
+      :default:
         0: Acum 0 luni
-        1: "Acum o lun\xC4\x83"
+        1: Acum o lună
         :few: Acum {0} luni
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} lun\xC4\x83"
+        :one: În urmă cu {0} lună
         :other: Acum {0} de luni
-    :second: 
-      :default: 
-        :few: "{0} secunde"
-        :one: "{0} secund\xC4\x83"
-        :other: "{0} de secunde"
-      :short: 
-        :few: "{0} sec."
-        :one: "{0} sec."
-        :other: "{0} sec."
-    :"second-future": 
-      :default: 
-        0: "\xC3\x8En 0 secunde"
-        1: "\xC3\x8Entr-o secund\xC4\x83"
-        :few: "\xC3\x8En {0} secunde"
-        :other: "\xC3\x8En {0} de secunde"
-    :"second-past": 
-      :default: 
+    :second:
+      :default:
+        :few: ! '{0} secunde'
+        :one: ! '{0} secundă'
+        :other: ! '{0} de secunde'
+      :short:
+        :few: ! '{0} sec.'
+        :one: ! '{0} sec.'
+        :other: ! '{0} sec.'
+    :second-future:
+      :default:
+        0: În 0 secunde
+        1: Într-o secundă
+        :few: În {0} secunde
+        :other: În {0} de secunde
+    :second-past:
+      :default:
         0: Acum 0 secunde
-        1: "Acum o secund\xC4\x83"
+        1: Acum o secundă
         :few: Acum {0} secunde
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} secund\xC4\x83"
+        :one: În urmă cu {0} secundă
         :other: Acum {0} de secunde
-    :week: 
-      :default: 
-        :few: "{0} s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-        :one: "{0} s\xC4\x83pt\xC4\x83m\xC3\xA2n\xC4\x83"
-        :other: "{0} de s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-      :short: 
-        :few: "{0} s\xC4\x83pt."
-        :one: "{0} s\xC4\x83pt."
-        :other: "{0} s\xC4\x83pt."
-    :"week-future": 
-      :default: 
-        0: "\xC3\x8En 0 s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-        1: "\xC3\x8Entr-o s\xC4\x83pt\xC4\x83m\xC3\xA2n\xC4\x83"
-        :few: "\xC3\x8En {0} s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-        :other: "\xC3\x8En {0} de s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-    :"week-past": 
-      :default: 
-        0: "Acum 0 s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-        1: "Acum o s\xC4\x83pt\xC4\x83m\xC3\xA2n\xC4\x83"
-        :few: "Acum {0} s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} s\xC4\x83pt\xC4\x83m\xC3\xA2n\xC4\x83"
-        :other: "Acum {0} de s\xC4\x83pt\xC4\x83m\xC3\xA2ni"
-    :year: 
-      :default: 
-        :few: "{0} ani"
-        :one: "{0} an"
-        :other: "{0} de ani"
-      :short: 
-        :few: "{0} ani"
-        :one: "{0} an"
-        :other: "{0} ani"
-    :"year-future": 
-      :default: 
-        0: "\xC3\x8En 0 ani"
-        1: "\xC3\x8Entr-un an"
-        :few: "\xC3\x8En {0} ani"
-        :other: "\xC3\x8En {0} de ani"
-    :"year-past": 
-      :default: 
+    :week:
+      :default:
+        :few: ! '{0} săptămâni'
+        :one: ! '{0} săptămână'
+        :other: ! '{0} de săptămâni'
+      :short:
+        :few: ! '{0} săpt.'
+        :one: ! '{0} săpt.'
+        :other: ! '{0} săpt.'
+    :week-future:
+      :default:
+        0: În 0 săptămâni
+        1: Într-o săptămână
+        :few: În {0} săptămâni
+        :other: În {0} de săptămâni
+    :week-past:
+      :default:
+        0: Acum 0 săptămâni
+        1: Acum o săptămână
+        :few: Acum {0} săptămâni
+        :one: În urmă cu {0} săptămână
+        :other: Acum {0} de săptămâni
+    :year:
+      :default:
+        :few: ! '{0} ani'
+        :one: ! '{0} an'
+        :other: ! '{0} de ani'
+      :short:
+        :few: ! '{0} ani'
+        :one: ! '{0} an'
+        :other: ! '{0} ani'
+    :year-future:
+      :default:
+        0: În 0 ani
+        1: Într-un an
+        :few: În {0} ani
+        :other: În {0} de ani
+    :year-past:
+      :default:
         0: Acum 0 ani
         1: Acum un an
         :few: Acum {0} ani
-        :one: "\xC3\x8En urm\xC4\x83 cu {0} an"
+        :one: În urmă cu {0} an
         :other: Acum {0} de ani

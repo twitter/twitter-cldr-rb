@@ -1,43 +1,43 @@
---- 
-:bg: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "#,##0.00\xC2\xA0\xC2\xA4"
-        :unit: 
-          :other: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            1000: "0.0\xC2\xA0\xD0\xA5"
-            10000: "00\xC2\xA0\xD0\xA5"
-            100000: "000\xC2\xA0\xD0\xA5"
-            1000000: "0.0\xC2\xA0\xD0\x9C"
-            10000000: "00\xC2\xA0\xD0\x9C"
-            100000000: "000\xC2\xA0\xD0\x9C"
-            1000000000: "0.0\xC2\xA0\xD0\x91"
-            10000000000: "00\xC2\xA0\xD0\x91"
-            100000000000: "000\xC2\xA0\xD0\x91"
-            1000000000000: "0.0\xC2\xA0\xD0\xA2"
-            10000000000000: "00\xC2\xA0\xD0\xA2"
-            100000000000000: "000\xC2\xA0\xD0\xA2"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
-      :decimal: ","
+---
+:bg:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 Х
+            10000: 00 Х
+            100000: 000 Х
+            1000000: 0.0 М
+            10000000: 00 М
+            100000000: 000 М
+            1000000000: 0.0 Б
+            10000000000: 00 Б
+            100000000000: 000 Б
+            1000000000000: 0.0 Т
+            10000000000000: 00 Т
+            100000000000000: 000 Т
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: E
-      :group: "\xC2\xA0"
-      :infinity: "\xE2\x88\x9E"
+      :group:  
+      :infinity: ∞
       :list: ;
-      :minus_sign: "-"
+      :minus_sign: ! '-'
       :nan: NaN
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

@@ -1,45 +1,45 @@
---- 
-:lv: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "#,##0.00\xC2\xA0\xC2\xA4"
-        :unit: 
-          :one: "{0} {1}"
-          :other: "{0} {1}"
-          :zero: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            1000: "0.0\xC2\xA0K"
-            10000: "00\xC2\xA0K"
-            100000: "000\xC2\xA0K"
-            1000000: "0.0\xC2\xA0M"
-            10000000: "00\xC2\xA0M"
-            100000000: "000\xC2\xA0M"
-            1000000000: "0.0\xC2\xA0G"
-            10000000000: "00\xC2\xA0G"
-            100000000000: "000\xC2\xA0G"
-            1000000000000: "0.0\xC2\xA0T"
-            10000000000000: "00\xC2\xA0T"
-            100000000000000: "000\xC2\xA0T"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
-      :decimal: ","
+---
+:lv:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+          :zero: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 K
+            10000: 00 K
+            100000: 000 K
+            1000000: 0.0 M
+            10000000: 00 M
+            100000000: 000 M
+            1000000000: 0.0 G
+            10000000000: 00 G
+            100000000000: 000 G
+            1000000000000: 0.0 T
+            10000000000000: 00 T
+            100000000000000: 000 T
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: E
-      :group: "\xC2\xA0"
-      :infinity: "\xE2\x88\x9E"
+      :group:  
+      :infinity: ∞
       :list: ;
-      :minus_sign: "\xE2\x88\x92"
-      :nan: "nav\xC2\xA0skaitlis"
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :minus_sign: −
+      :nan: nav skaitlis
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

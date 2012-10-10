@@ -1,16 +1,16 @@
---- 
-:ga: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "\xC2\xA4#,##0.00"
-        :unit: 
-          :other: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
+---
+:ga:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
             1000: 0.0K
             10000: 00K
             100000: 000K
@@ -23,21 +23,21 @@
             1000000000000: 0.0T
             10000000000000: 00T
             100000000000000: 000T
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
       :decimal: .
       :exponential: E
-      :group: ","
-      :infinity: "\xE2\x88\x9E"
+      :group: ! ','
+      :infinity: ∞
       :list: ;
-      :minus_sign: "-"
+      :minus_sign: ! '-'
       :nan: NaN
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

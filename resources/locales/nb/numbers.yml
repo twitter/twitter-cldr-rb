@@ -1,44 +1,44 @@
---- 
-:nb: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "\xC2\xA4\xC2\xA0#,##0.00"
-        :unit: 
-          :one: "{0} {1}"
-          :other: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
+---
+:nb:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤ #,##0.00
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
             1000: 0
             10000: 0
             100000: 0
-            1000000: "0.0\xC2\xA0mill"
-            10000000: "00\xC2\xA0mill"
-            100000000: "000\xC2\xA0mill"
-            1000000000: "0.0\xC2\xA0mrd"
-            10000000000: "00\xC2\xA0mrd"
-            100000000000: "000\xC2\xA0mrd"
-            1000000000000: "0.0\xC2\xA0bill"
-            10000000000000: "00\xC2\xA0bill"
-            100000000000000: "000\xC2\xA0bill"
-      :percent: 
-        :patterns: 
-          :default: "#,##0\xC2\xA0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
-      :decimal: ","
+            1000000: 0.0 mill
+            10000000: 00 mill
+            100000000: 000 mill
+            1000000000: 0.0 mrd
+            10000000000: 00 mrd
+            100000000000: 000 mrd
+            1000000000000: 0.0 bill
+            10000000000000: 00 bill
+            100000000000000: 000 bill
+      :percent:
+        :patterns:
+          :default: ! '#,##0 %'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: E
-      :group: "\xC2\xA0"
-      :infinity: "\xE2\x88\x9E"
+      :group:  
+      :infinity: ∞
       :list: ;
-      :minus_sign: "-"
+      :minus_sign: ! '-'
       :nan: NaN
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

@@ -1,43 +1,43 @@
---- 
-:el: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "#,##0.00\xC2\xA0\xC2\xA4"
-        :unit: 
-          :other: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            1000: "0.0\xC2\xA0\xCF\x87\xCE\xB9\xCE\xBB'.'"
-            10000: "00\xC2\xA0\xCF\x87\xCE\xB9\xCE\xBB'.'"
-            100000: "000\xC2\xA0\xCF\x87\xCE\xB9\xCE\xBB'.'"
-            1000000: "0.0\xC2\xA0\xCE\xB5\xCE\xBA'.'"
-            10000000: "00\xC2\xA0\xCE\xB5\xCE\xBA'.'"
-            100000000: "000\xC2\xA0\xCE\xB5\xCE\xBA'.'"
-            1000000000: "0.0\xC2\xA0\xCE\xB4\xCE\xB9\xCF\x82"
-            10000000000: "00\xC2\xA0\xCE\xB4\xCE\xB9\xCF\x82"
-            100000000000: "000\xC2\xA0\xCE\xB4\xCE\xB9\xCF\x82"
-            1000000000000: "0.0\xC2\xA0\xCF\x84\xCF\x81\xCE\xB9\xCF\x82"
-            10000000000000: "00\xC2\xA0\xCF\x84\xCF\x81\xCE\xB9\xCF\x82"
-            100000000000000: "000\xC2\xA0\xCF\x84\xCF\x81\xCE\xB9\xCF\x82"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
-      :decimal: ","
+---
+:el:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 χιλ'.'
+            10000: 00 χιλ'.'
+            100000: 000 χιλ'.'
+            1000000: 0.0 εκ'.'
+            10000000: 00 εκ'.'
+            100000000: 000 εκ'.'
+            1000000000: 0.0 δις
+            10000000000: 00 δις
+            100000000000: 000 δις
+            1000000000000: 0.0 τρις
+            10000000000000: 00 τρις
+            100000000000000: 000 τρις
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: e
       :group: .
-      :infinity: "\xE2\x88\x9E"
-      :list: ","
-      :minus_sign: "-"
+      :infinity: ∞
+      :list: ! ','
+      :minus_sign: ! '-'
       :nan: NaN
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

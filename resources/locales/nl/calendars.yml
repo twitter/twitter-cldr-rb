@@ -1,10 +1,10 @@
---- 
-:nl: 
-  :calendars: 
-    :gregorian: 
-      :days: 
-        :format: 
-          :abbreviated: 
+---
+:nl:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
             :fri: vr
             :mon: ma
             :sat: za
@@ -12,8 +12,8 @@
             :thu: do
             :tue: di
             :wed: wo
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
-          :wide: 
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
             :fri: vrijdag
             :mon: maandag
             :sat: zaterdag
@@ -21,9 +21,9 @@
             :thu: donderdag
             :tue: dinsdag
             :wed: woensdag
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
             :fri: V
             :mon: M
             :sat: Z
@@ -31,18 +31,18 @@
             :thu: D
             :tue: D
             :wed: W
-          :wide: :"calendars.gregorian.days.format.wide"
-      :eras: 
-        :abbr: 
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: v. Chr.
           1: n. Chr.
-        :name: 
+        :name:
           0: Voor Christus
           1: na Christus
-        :narrow: 
+        :narrow:
           0: v.C.
           1: n.C.
-      :fields: 
+      :fields:
         :day: Dag
         :dayperiod: AM/PM
         :era: Tijdperk
@@ -54,40 +54,40 @@
         :weekday: Dag van de week
         :year: Jaar
         :zone: Zone
-      :formats: 
-        :date: 
-          :default: :"calendars.gregorian.formats.date.medium"
-          :full: 
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
             :pattern: EEEE d MMMM y
-          :long: 
+          :long:
             :pattern: d MMMM y
-          :medium: 
+          :medium:
             :pattern: d MMM y
-          :short: 
+          :short:
             :pattern: dd-MM-yy
-        :datetime: 
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :time: 
-          :default: :"calendars.gregorian.formats.time.medium"
-          :full: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: HH:mm:ss zzzz
-          :long: 
+          :long:
             :pattern: HH:mm:ss z
-          :medium: 
+          :medium:
             :pattern: HH:mm:ss
-          :short: 
+          :short:
             :pattern: HH:mm
-      :months: 
-        :format: 
-          :abbreviated: 
+      :months:
+        :format:
+          :abbreviated:
             1: jan.
             10: okt.
             11: nov.
@@ -100,8 +100,8 @@
             7: jul.
             8: aug.
             9: sep.
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-          :wide: 
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
             1: januari
             10: oktober
             11: november
@@ -114,8 +114,8 @@
             7: juli
             8: augustus
             9: september
-        :"stand-alone": 
-          :abbreviated: 
+        :stand-alone:
+          :abbreviated:
             1: jan
             10: okt
             11: nov
@@ -127,7 +127,7 @@
             7: jul
             8: aug
             9: sep
-          :narrow: 
+          :narrow:
             1: J
             10: O
             11: N
@@ -140,46 +140,46 @@
             7: J
             8: A
             9: S
-          :wide: :"calendars.gregorian.months.format.wide"
-      :periods: 
-        :format: 
-          :abbreviated: 
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated:
             :noon: 12 uur 's middags
-          :narrow: 
+          :narrow:
             :noon: n
-          :wide: 
+          :wide:
             :am: AM
             :noon: 12 uur 's middags
             :pm: PM
-        :"stand-alone": 
-          :abbreviated: 
+        :stand-alone:
+          :abbreviated:
             :am: a.m.
             :pm: p.m.
-          :wide: 
+          :wide:
             :am: voormiddag
             :pm: p.m.
-      :quarters: 
-        :format: 
-          :abbreviated: 
+      :quarters:
+        :format:
+          :abbreviated:
             1: K1
             2: K2
             3: K3
             4: K4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
+          :wide:
             1: 1e kwartaal
             2: 2e kwartaal
             3: 3e kwartaal
             4: 4e kwartaal
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :"calendars.gregorian.quarters.format.wide"
+          :wide: :calendars.gregorian.quarters.format.wide

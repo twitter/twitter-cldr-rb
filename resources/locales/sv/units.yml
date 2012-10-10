@@ -1,136 +1,136 @@
---- 
-:sv: 
-  :units: 
-    :day: 
-      :default: 
-        :one: "{0} dygn"
-        :other: "{0} dygn"
-      :short: 
-        :one: "{0} d"
-        :other: "{0} d"
-    :"day-future": 
-      :default: 
+---
+:sv:
+  :units:
+    :day:
+      :default:
+        :one: ! '{0} dygn'
+        :other: ! '{0} dygn'
+      :short:
+        :one: ! '{0} d'
+        :other: ! '{0} d'
+    :day-future:
+      :default:
         0: om 0 dagar
         1: om 1 dag
         :one: om {0} dygn
         :other: om {0} dygn
-    :"day-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 dagar sedan"
-        1: "f\xC3\xB6r 1 dag sedan"
-        :one: "f\xC3\xB6r {0} dygn sedan"
-        :other: "f\xC3\xB6r {0} dygn sedan"
-    :hour: 
-      :default: 
-        :one: "{0} timme"
-        :other: "{0} timmar"
-      :short: 
-        :one: "{0} tim"
-        :other: "{0} tim"
-    :"hour-future": 
-      :default: 
+    :day-past:
+      :default:
+        0: för 0 dagar sedan
+        1: för 1 dag sedan
+        :one: för {0} dygn sedan
+        :other: för {0} dygn sedan
+    :hour:
+      :default:
+        :one: ! '{0} timme'
+        :other: ! '{0} timmar'
+      :short:
+        :one: ! '{0} tim'
+        :other: ! '{0} tim'
+    :hour-future:
+      :default:
         0: om 0 timmar
         1: om 1 timme
         :one: om {0} timme
         :other: om {0} timmar
-    :"hour-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 timmar sedan"
-        1: "f\xC3\xB6r 1 timme sedan"
-        :one: "f\xC3\xB6r {0} timme sedan"
-        :other: "f\xC3\xB6r {0} timmar sedan"
-    :minute: 
-      :default: 
-        :one: "{0} minut"
-        :other: "{0} minuter"
-      :short: 
-        :one: "{0} min"
-        :other: "{0} min"
-    :"minute-future": 
-      :default: 
+    :hour-past:
+      :default:
+        0: för 0 timmar sedan
+        1: för 1 timme sedan
+        :one: för {0} timme sedan
+        :other: för {0} timmar sedan
+    :minute:
+      :default:
+        :one: ! '{0} minut'
+        :other: ! '{0} minuter'
+      :short:
+        :one: ! '{0} min'
+        :other: ! '{0} min'
+    :minute-future:
+      :default:
         0: om 0 minuter
         1: om 1 minut
         :one: om {0} minut
         :other: om {0} minuter
-    :"minute-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 minuter sedan"
-        1: "f\xC3\xB6r 1 minut sedan"
-        :one: "f\xC3\xB6r {0} minut sedan"
-        :other: "f\xC3\xB6r {0} minuter sedan"
-    :month: 
-      :default: 
-        :one: "{0} m\xC3\xA5nad"
-        :other: "{0} m\xC3\xA5nader"
-      :short: 
-        :one: "{0} m\xC3\xA5n"
-        :other: "{0} m\xC3\xA5n"
-    :"month-future": 
-      :default: 
-        0: "om 0 m\xC3\xA5nader"
-        1: "om 1 m\xC3\xA5nad"
-        :one: "om {0} m\xC3\xA5nad"
-        :other: "om {0} m\xC3\xA5nader"
-    :"month-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 m\xC3\xA5nader sedan"
-        1: "f\xC3\xB6r 1 m\xC3\xA5nad sedan"
-        :one: "f\xC3\xB6r {0} m\xC3\xA5nad sedan"
-        :other: "f\xC3\xB6r {0} m\xC3\xA5nader sedan"
-    :second: 
-      :default: 
-        :one: "{0} sekund"
-        :other: "{0} sekunder"
-      :short: 
-        :one: "{0} s"
-        :other: "{0} s"
-    :"second-future": 
-      :default: 
+    :minute-past:
+      :default:
+        0: för 0 minuter sedan
+        1: för 1 minut sedan
+        :one: för {0} minut sedan
+        :other: för {0} minuter sedan
+    :month:
+      :default:
+        :one: ! '{0} månad'
+        :other: ! '{0} månader'
+      :short:
+        :one: ! '{0} mån'
+        :other: ! '{0} mån'
+    :month-future:
+      :default:
+        0: om 0 månader
+        1: om 1 månad
+        :one: om {0} månad
+        :other: om {0} månader
+    :month-past:
+      :default:
+        0: för 0 månader sedan
+        1: för 1 månad sedan
+        :one: för {0} månad sedan
+        :other: för {0} månader sedan
+    :second:
+      :default:
+        :one: ! '{0} sekund'
+        :other: ! '{0} sekunder'
+      :short:
+        :one: ! '{0} s'
+        :other: ! '{0} s'
+    :second-future:
+      :default:
         0: om 0 sekunder
         1: om 1 sekund
         :one: om {0} sekund
         :other: om {0} sekunder
-    :"second-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 sekunder sedan"
-        1: "f\xC3\xB6r 1 sekund sedan"
-        :one: "f\xC3\xB6r {0} sekund sedan"
-        :other: "f\xC3\xB6r {0} sekunder sedan"
-    :week: 
-      :default: 
-        :one: "{0} vecka"
-        :other: "{0} veckor"
-      :short: 
-        :one: "{0} v"
-        :other: "{0} v"
-    :"week-future": 
-      :default: 
+    :second-past:
+      :default:
+        0: för 0 sekunder sedan
+        1: för 1 sekund sedan
+        :one: för {0} sekund sedan
+        :other: för {0} sekunder sedan
+    :week:
+      :default:
+        :one: ! '{0} vecka'
+        :other: ! '{0} veckor'
+      :short:
+        :one: ! '{0} v'
+        :other: ! '{0} v'
+    :week-future:
+      :default:
         0: om 0 veckor
         1: om 1 vecka
         :one: om {0} vecka
         :other: om {0} veckor
-    :"week-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 veckor sedan"
-        1: "f\xC3\xB6r 1 vecka sedan"
-        :one: "f\xC3\xB6r {0} vecka sedan"
-        :other: "f\xC3\xB6r {0} veckor sedan"
-    :year: 
-      :default: 
-        :one: "{0} \xC3\xA5r"
-        :other: "{0} \xC3\xA5r"
-      :short: 
-        :one: "{0} \xC3\xA5r"
-        :other: "{0} \xC3\xA5r"
-    :"year-future": 
-      :default: 
-        0: "om 0 \xC3\xA5r"
-        1: "om 1 \xC3\xA5r"
-        :one: "om {0} \xC3\xA5r"
-        :other: "om {0} \xC3\xA5r"
-    :"year-past": 
-      :default: 
-        0: "f\xC3\xB6r 0 \xC3\xA5r sedan"
-        1: "f\xC3\xB6r 1 \xC3\xA5r sedan"
-        :one: "f\xC3\xB6r {0} \xC3\xA5r sedan"
-        :other: "f\xC3\xB6r {0} \xC3\xA5r sedan"
+    :week-past:
+      :default:
+        0: för 0 veckor sedan
+        1: för 1 vecka sedan
+        :one: för {0} vecka sedan
+        :other: för {0} veckor sedan
+    :year:
+      :default:
+        :one: ! '{0} år'
+        :other: ! '{0} år'
+      :short:
+        :one: ! '{0} år'
+        :other: ! '{0} år'
+    :year-future:
+      :default:
+        0: om 0 år
+        1: om 1 år
+        :one: om {0} år
+        :other: om {0} år
+    :year-past:
+      :default:
+        0: för 0 år sedan
+        1: för 1 år sedan
+        :one: för {0} år sedan
+        :other: för {0} år sedan

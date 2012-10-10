@@ -1,109 +1,109 @@
---- 
-:ja: 
-  :calendars: 
-    :gregorian: 
-      :days: 
-        :format: 
-          :abbreviated: 
-            :fri: "\xE9\x87\x91"
-            :mon: "\xE6\x9C\x88"
-            :sat: "\xE5\x9C\x9F"
-            :sun: "\xE6\x97\xA5"
-            :thu: "\xE6\x9C\xA8"
-            :tue: "\xE7\x81\xAB"
-            :wed: "\xE6\xB0\xB4"
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
-          :wide: 
-            :fri: "\xE9\x87\x91\xE6\x9B\x9C\xE6\x97\xA5"
-            :mon: "\xE6\x9C\x88\xE6\x9B\x9C\xE6\x97\xA5"
-            :sat: "\xE5\x9C\x9F\xE6\x9B\x9C\xE6\x97\xA5"
-            :sun: "\xE6\x97\xA5\xE6\x9B\x9C\xE6\x97\xA5"
-            :thu: "\xE6\x9C\xA8\xE6\x9B\x9C\xE6\x97\xA5"
-            :tue: "\xE7\x81\xAB\xE6\x9B\x9C\xE6\x97\xA5"
-            :wed: "\xE6\xB0\xB4\xE6\x9B\x9C\xE6\x97\xA5"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :narrow: 
-            :fri: "\xE9\x87\x91"
-            :mon: "\xE6\x9C\x88"
-            :sat: "\xE5\x9C\x9F"
-            :sun: "\xE6\x97\xA5"
-            :thu: "\xE6\x9C\xA8"
-            :tue: "\xE7\x81\xAB"
-            :wed: "\xE6\xB0\xB4"
-          :wide: :"calendars.gregorian.days.format.wide"
-      :eras: 
-        :abbr: 
+---
+:ja:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: 金
+            :mon: 月
+            :sat: 土
+            :sun: 日
+            :thu: 木
+            :tue: 火
+            :wed: 水
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
+            :fri: 金曜日
+            :mon: 月曜日
+            :sat: 土曜日
+            :sun: 日曜日
+            :thu: 木曜日
+            :tue: 火曜日
+            :wed: 水曜日
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: 金
+            :mon: 月
+            :sat: 土
+            :sun: 日
+            :thu: 木
+            :tue: 火
+            :wed: 水
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: BC
           1: AD
-        :name: 
-          0: "\xE7\xB4\x80\xE5\x85\x83\xE5\x89\x8D"
-          1: "\xE8\xA5\xBF\xE6\x9A\xA6"
-        :narrow: 
-          0: ""
-      :fields: 
-        :day: "\xE6\x97\xA5"
-        :dayperiod: "\xE5\x8D\x88\xE5\x89\x8D/\xE5\x8D\x88\xE5\xBE\x8C"
-        :era: "\xE6\x99\x82\xE4\xBB\xA3"
-        :hour: "\xE6\x99\x82"
-        :minute: "\xE5\x88\x86"
-        :month: "\xE6\x9C\x88"
-        :second: "\xE7\xA7\x92"
-        :week: "\xE9\x80\xB1"
-        :weekday: "\xE6\x9B\x9C\xE6\x97\xA5"
-        :year: "\xE5\xB9\xB4"
-        :zone: "\xE3\x82\xBF\xE3\x82\xA4\xE3\x83\xA0\xE3\x82\xBE\xE3\x83\xBC\xE3\x83\xB3"
-      :formats: 
-        :date: 
-          :default: :"calendars.gregorian.formats.date.medium"
-          :full: 
-            :pattern: "y\xE5\xB9\xB4M\xE6\x9C\x88d\xE6\x97\xA5EEEE"
-          :long: 
-            :pattern: "y\xE5\xB9\xB4M\xE6\x9C\x88d\xE6\x97\xA5"
-          :medium: 
+        :name:
+          0: 紀元前
+          1: 西暦
+        :narrow:
+          0: ''
+      :fields:
+        :day: 日
+        :dayperiod: 午前/午後
+        :era: 時代
+        :hour: 時
+        :minute: 分
+        :month: 月
+        :second: 秒
+        :week: 週
+        :weekday: 曜日
+        :year: 年
+        :zone: タイムゾーン
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: y年M月d日EEEE
+          :long:
+            :pattern: y年M月d日
+          :medium:
             :pattern: yyyy/MM/dd
-          :short: 
+          :short:
             :pattern: yyyy/MM/dd
-        :datetime: 
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :time: 
-          :default: :"calendars.gregorian.formats.time.medium"
-          :full: 
-            :pattern: "H\xE6\x99\x82mm\xE5\x88\x86ss\xE7\xA7\x92 zzzz"
-          :long: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: H時mm分ss秒 zzzz
+          :long:
             :pattern: H:mm:ss z
-          :medium: 
+          :medium:
             :pattern: H:mm:ss
-          :short: 
+          :short:
             :pattern: H:mm
-      :months: 
-        :format: 
-          :abbreviated: :"calendars.gregorian.months.format.wide"
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-          :wide: 
-            1: "1\xE6\x9C\x88"
-            10: "10\xE6\x9C\x88"
-            11: "11\xE6\x9C\x88"
-            12: "12\xE6\x9C\x88"
-            2: "2\xE6\x9C\x88"
-            3: "3\xE6\x9C\x88"
-            4: "4\xE6\x9C\x88"
-            5: "5\xE6\x9C\x88"
-            6: "6\xE6\x9C\x88"
-            7: "7\xE6\x9C\x88"
-            8: "8\xE6\x9C\x88"
-            9: "9\xE6\x9C\x88"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :narrow: 
+      :months:
+        :format:
+          :abbreviated: :calendars.gregorian.months.format.wide
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: 1月
+            10: 10月
+            11: 11月
+            12: 12月
+            2: 2月
+            3: 3月
+            4: 4月
+            5: 5月
+            6: 6月
+            7: 7月
+            8: 8月
+            9: 9月
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
             1: 1
             10: 10
             11: 11
@@ -116,43 +116,42 @@
             7: 7
             8: 8
             9: 9
-          :wide: :"calendars.gregorian.months.format.wide"
-      :periods: 
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-          :wide: 
-            :am: "\xE5\x8D\x88\xE5\x89\x8D"
-            :noon: "\xE6\xAD\xA3\xE5\x8D\x88"
-            :pm: "\xE5\x8D\x88\xE5\xBE\x8C"
-        :"stand-alone": {}
-
-      :quarters: 
-        :format: 
-          :abbreviated: 
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: 午前
+            :noon: 正午
+            :pm: 午後
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
             1: Q1
             2: Q2
             3: Q3
             4: Q4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
-            1: "\xE7\xAC\xAC1\xE5\x9B\x9B\xE5\x8D\x8A\xE6\x9C\x9F"
-            2: "\xE7\xAC\xAC2\xE5\x9B\x9B\xE5\x8D\x8A\xE6\x9C\x9F"
-            3: "\xE7\xAC\xAC3\xE5\x9B\x9B\xE5\x8D\x8A\xE6\x9C\x9F"
-            4: "\xE7\xAC\xAC4\xE5\x9B\x9B\xE5\x8D\x8A\xE6\x9C\x9F"
-        :"stand-alone": 
-          :abbreviated: 
+          :wide:
+            1: 第1四半期
+            2: 第2四半期
+            3: 第3四半期
+            4: 第4四半期
+        :stand-alone:
+          :abbreviated:
             1: Q1
             2: Q2
             3: Q3
             4: Q4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :"calendars.gregorian.quarters.format.wide"
+          :wide: :calendars.gregorian.quarters.format.wide

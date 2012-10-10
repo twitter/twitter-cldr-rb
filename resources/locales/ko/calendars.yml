@@ -1,153 +1,152 @@
---- 
-:ko: 
-  :calendars: 
-    :gregorian: 
-      :days: 
-        :format: 
-          :abbreviated: 
-            :fri: "\xEA\xB8\x88"
-            :mon: "\xEC\x9B\x94"
-            :sat: "\xED\x86\xA0"
-            :sun: "\xEC\x9D\xBC"
-            :thu: "\xEB\xAA\xA9"
-            :tue: "\xED\x99\x94"
-            :wed: "\xEC\x88\x98"
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
-          :wide: 
-            :fri: "\xEA\xB8\x88\xEC\x9A\x94\xEC\x9D\xBC"
-            :mon: "\xEC\x9B\x94\xEC\x9A\x94\xEC\x9D\xBC"
-            :sat: "\xED\x86\xA0\xEC\x9A\x94\xEC\x9D\xBC"
-            :sun: "\xEC\x9D\xBC\xEC\x9A\x94\xEC\x9D\xBC"
-            :thu: "\xEB\xAA\xA9\xEC\x9A\x94\xEC\x9D\xBC"
-            :tue: "\xED\x99\x94\xEC\x9A\x94\xEC\x9D\xBC"
-            :wed: "\xEC\x88\x98\xEC\x9A\x94\xEC\x9D\xBC"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :narrow: 
-            :fri: "\xEA\xB8\x88"
-            :mon: "\xEC\x9B\x94"
-            :sat: "\xED\x86\xA0"
-            :sun: "\xEC\x9D\xBC"
-            :thu: "\xEB\xAA\xA9"
-            :tue: "\xED\x99\x94"
-            :wed: "\xEC\x88\x98"
-          :wide: :"calendars.gregorian.days.format.wide"
-      :eras: 
-        :abbr: 
-          0: "\xEA\xB8\xB0\xEC\x9B\x90\xEC\xA0\x84"
-          1: "\xEC\x84\x9C\xEA\xB8\xB0"
-        :name: 
-          0: "\xEC\x84\x9C\xEB\xA0\xA5\xEA\xB8\xB0\xEC\x9B\x90\xEC\xA0\x84"
-          1: "\xEC\x84\x9C\xEB\xA0\xA5\xEA\xB8\xB0\xEC\x9B\x90"
-        :narrow: 
-          0: ""
-      :fields: 
-        :day: "\xEC\x9D\xBC"
-        :dayperiod: "\xEC\x98\xA4\xEC\xA0\x84/\xEC\x98\xA4\xED\x9B\x84"
-        :era: "\xEC\x97\xB0\xED\x98\xB8"
-        :hour: "\xEC\x8B\x9C"
-        :minute: "\xEB\xB6\x84"
-        :month: "\xEC\x9B\x94"
-        :second: "\xEC\xB4\x88"
-        :week: "\xEC\xA3\xBC"
-        :weekday: "\xEC\x9A\x94\xEC\x9D\xBC"
-        :year: "\xEB\x85\x84"
-        :zone: "\xEC\x8B\x9C\xEA\xB0\x84\xEB\x8C\x80"
-      :formats: 
-        :date: 
-          :default: :"calendars.gregorian.formats.date.medium"
-          :full: 
-            :pattern: "y\xEB\x85\x84 M\xEC\x9B\x94 d\xEC\x9D\xBC EEEE"
-          :long: 
-            :pattern: "y\xEB\x85\x84 M\xEC\x9B\x94 d\xEC\x9D\xBC"
-          :medium: 
+---
+:ko:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: 금
+            :mon: 월
+            :sat: 토
+            :sun: 일
+            :thu: 목
+            :tue: 화
+            :wed: 수
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
+            :fri: 금요일
+            :mon: 월요일
+            :sat: 토요일
+            :sun: 일요일
+            :thu: 목요일
+            :tue: 화요일
+            :wed: 수요일
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: 금
+            :mon: 월
+            :sat: 토
+            :sun: 일
+            :thu: 목
+            :tue: 화
+            :wed: 수
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
+          0: 기원전
+          1: 서기
+        :name:
+          0: 서력기원전
+          1: 서력기원
+        :narrow:
+          0: ''
+      :fields:
+        :day: 일
+        :dayperiod: 오전/오후
+        :era: 연호
+        :hour: 시
+        :minute: 분
+        :month: 월
+        :second: 초
+        :week: 주
+        :weekday: 요일
+        :year: 년
+        :zone: 시간대
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: y년 M월 d일 EEEE
+          :long:
+            :pattern: y년 M월 d일
+          :medium:
             :pattern: yyyy. M. d.
-          :short: 
+          :short:
             :pattern: yy. M. d.
-        :datetime: 
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :time: 
-          :default: :"calendars.gregorian.formats.time.medium"
-          :full: 
-            :pattern: "a h\xEC\x8B\x9C m\xEB\xB6\x84 s\xEC\xB4\x88 zzzz"
-          :long: 
-            :pattern: "a h\xEC\x8B\x9C m\xEB\xB6\x84 s\xEC\xB4\x88 z"
-          :medium: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: a h시 m분 s초 zzzz
+          :long:
+            :pattern: a h시 m분 s초 z
+          :medium:
             :pattern: a h:mm:ss
-          :short: 
+          :short:
             :pattern: a h:mm
-      :months: 
-        :format: 
-          :abbreviated: :"calendars.gregorian.months.format.wide"
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-          :wide: 
-            1: "1\xEC\x9B\x94"
-            10: "10\xEC\x9B\x94"
-            11: "11\xEC\x9B\x94"
-            12: "12\xEC\x9B\x94"
-            2: "2\xEC\x9B\x94"
-            3: "3\xEC\x9B\x94"
-            4: "4\xEC\x9B\x94"
-            5: "5\xEC\x9B\x94"
-            6: "6\xEC\x9B\x94"
-            7: "7\xEC\x9B\x94"
-            8: "8\xEC\x9B\x94"
-            9: "9\xEC\x9B\x94"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :narrow: 
-            1: "1\xEC\x9B\x94"
-            10: "10\xEC\x9B\x94"
-            11: "11\xEC\x9B\x94"
-            12: "12\xEC\x9B\x94"
-            2: "2\xEC\x9B\x94"
-            3: "3\xEC\x9B\x94"
-            4: "4\xEC\x9B\x94"
-            5: "5\xEC\x9B\x94"
-            6: "6\xEC\x9B\x94"
-            7: "7\xEC\x9B\x94"
-            8: "8\xEC\x9B\x94"
-            9: "9\xEC\x9B\x94"
-          :wide: :"calendars.gregorian.months.format.wide"
-      :periods: 
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-          :wide: 
-            :am: "\xEC\x98\xA4\xEC\xA0\x84"
-            :pm: "\xEC\x98\xA4\xED\x9B\x84"
-        :"stand-alone": {}
-
-      :quarters: 
-        :format: 
-          :abbreviated: 
-            1: "1\xEB\xB6\x84\xEA\xB8\xB0"
-            2: "2\xEB\xB6\x84\xEA\xB8\xB0"
-            3: "3\xEB\xB6\x84\xEA\xB8\xB0"
-            4: "4\xEB\xB6\x84\xEA\xB8\xB0"
-          :narrow: 
+      :months:
+        :format:
+          :abbreviated: :calendars.gregorian.months.format.wide
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: 1월
+            10: 10월
+            11: 11월
+            12: 12월
+            2: 2월
+            3: 3월
+            4: 4월
+            5: 5월
+            6: 6월
+            7: 7월
+            8: 8월
+            9: 9월
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
+            1: 1월
+            10: 10월
+            11: 11월
+            12: 12월
+            2: 2월
+            3: 3월
+            4: 4월
+            5: 5월
+            6: 6월
+            7: 7월
+            8: 8월
+            9: 9월
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: 오전
+            :pm: 오후
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: 1분기
+            2: 2분기
+            3: 3분기
+            4: 4분기
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
-            1: "\xEC\xA0\x9C 1/4\xEB\xB6\x84\xEA\xB8\xB0"
-            2: "\xEC\xA0\x9C 2/4\xEB\xB6\x84\xEA\xB8\xB0"
-            3: "\xEC\xA0\x9C 3/4\xEB\xB6\x84\xEA\xB8\xB0"
-            4: "\xEC\xA0\x9C 4/4\xEB\xB6\x84\xEA\xB8\xB0"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :narrow: 
+          :wide:
+            1: 제 1/4분기
+            2: 제 2/4분기
+            3: 제 3/4분기
+            4: 제 4/4분기
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :"calendars.gregorian.quarters.format.wide"
+          :wide: :calendars.gregorian.quarters.format.wide

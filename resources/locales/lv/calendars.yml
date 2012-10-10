@@ -1,0 +1,176 @@
+---
+:lv:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: Pk
+            :mon: Pr
+            :sat: Se
+            :sun: Sv
+            :thu: Ce
+            :tue: Ot
+            :wed: Tr
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
+            :fri: piektdiena
+            :mon: pirmdiena
+            :sat: sestdiena
+            :sun: svētdiena
+            :thu: ceturtdiena
+            :tue: otrdiena
+            :wed: trešdiena
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: P
+            :mon: P
+            :sat: S
+            :sun: S
+            :thu: C
+            :tue: O
+            :wed: T
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
+          0: p.m.ē.
+          1: m.ē.
+        :name:
+          0: pirms mūsu ēras
+          1: mūsu ērā
+        :narrow:
+          0: ''
+      :fields:
+        :day: diena
+        :dayperiod: Dayperiod
+        :era: ēra
+        :hour: Stundas
+        :minute: Minūtes
+        :month: Mēnesis
+        :second: Sekundes
+        :week: Nedēļa
+        :weekday: Nedēļas diena
+        :year: Gads
+        :zone: Josla
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE, y. 'gada' d. MMMM
+          :long:
+            :pattern: y. 'gada' d. MMMM
+          :medium:
+            :pattern: y. 'gada' d. MMM
+          :short:
+            :pattern: dd.MM.yy
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: HH:mm:ss zzzz
+          :long:
+            :pattern: HH:mm:ss z
+          :medium:
+            :pattern: HH:mm:ss
+          :short:
+            :pattern: HH:mm
+      :months:
+        :format:
+          :abbreviated:
+            1: janv.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: febr.
+            3: marts
+            4: apr.
+            5: maijs
+            6: jūn.
+            7: jūl.
+            8: aug.
+            9: sept.
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: janvāris
+            10: oktobris
+            11: novembris
+            12: decembris
+            2: februāris
+            3: marts
+            4: aprīlis
+            5: maijs
+            6: jūnijs
+            7: jūlijs
+            8: augusts
+            9: septembris
+        :stand-alone:
+          :abbreviated:
+            1: janv.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: febr.
+            3: marts
+            4: apr.
+            5: maijs
+            6: jūn.
+            7: jūl.
+            8: aug.
+            9: sept.
+          :narrow:
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: priekšpusdienā
+            :pm: pēcpusdienā
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: C1
+            2: C2
+            3: C3
+            4: C4
+          :narrow:
+            1: 1.
+            2: 2.
+            3: 3.
+            4: 4.
+          :wide:
+            1: 1. ceturksnis
+            2: 2. ceturksnis
+            3: 3. ceturksnis
+            4: 4. ceturksnis
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
+            1: 1.
+            2: 2.
+            3: 3.
+            4: 4.
+          :wide: :calendars.gregorian.quarters.format.wide

@@ -1,10 +1,10 @@
---- 
-:ms: 
-  :calendars: 
-    :gregorian: 
-      :days: 
-        :format: 
-          :abbreviated: 
+---
+:ms:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
             :fri: Jum
             :mon: Isn
             :sat: Sab
@@ -12,7 +12,7 @@
             :thu: Kha
             :tue: Sel
             :wed: Rab
-          :narrow: 
+          :narrow:
             :fri: J
             :mon: I
             :sat: S
@@ -20,7 +20,7 @@
             :thu: K
             :tue: S
             :wed: R
-          :wide: 
+          :wide:
             :fri: Jumaat
             :mon: Isnin
             :sat: Sabtu
@@ -28,9 +28,9 @@
             :thu: Khamis
             :tue: Selasa
             :wed: Rabu
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
             :fri: J
             :mon: I
             :sat: S
@@ -38,16 +38,16 @@
             :thu: K
             :tue: S
             :wed: R
-          :wide: :"calendars.gregorian.days.format.wide"
-      :eras: 
-        :abbr: 
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: S.M.
           1: TM
-        :name: 
-          0: ""
-        :narrow: 
-          0: ""
-      :fields: 
+        :name:
+          0: ''
+        :narrow:
+          0: ''
+      :fields:
         :day: Hari
         :dayperiod: PG/PTG
         :era: Era
@@ -59,40 +59,40 @@
         :weekday: Hari dalam Minggu
         :year: Tahun
         :zone: Zon Waktu
-      :formats: 
-        :date: 
-          :default: :"calendars.gregorian.formats.date.medium"
-          :full: 
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
             :pattern: EEEE, d MMMM y
-          :long: 
+          :long:
             :pattern: d MMMM y
-          :medium: 
+          :medium:
             :pattern: dd/MM/yyyy
-          :short: 
+          :short:
             :pattern: d/MM/yy
-        :datetime: 
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :time: 
-          :default: :"calendars.gregorian.formats.time.medium"
-          :full: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: h:mm:ss a zzzz
-          :long: 
+          :long:
             :pattern: h:mm:ss a z
-          :medium: 
+          :medium:
             :pattern: h:mm:ss a
-          :short: 
+          :short:
             :pattern: h:mm a
-      :months: 
-        :format: 
-          :abbreviated: 
+      :months:
+        :format:
+          :abbreviated:
             1: Jan
             10: Okt
             11: Nov
@@ -105,7 +105,7 @@
             7: Jul
             8: Ogos
             9: Sep
-          :narrow: 
+          :narrow:
             1: J
             10: O
             11: N
@@ -118,7 +118,7 @@
             7: J
             8: O
             9: S
-          :wide: 
+          :wide:
             1: Januari
             10: Oktober
             11: November
@@ -131,9 +131,9 @@
             7: Julai
             8: Ogos
             9: September
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
             1: J
             10: O
             11: N
@@ -146,47 +146,46 @@
             7: J
             8: O
             9: S
-          :wide: :"calendars.gregorian.months.format.wide"
-      :periods: 
-        :format: 
-          :abbreviated: 
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated:
             :am: pg
             :pm: ptg
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-          :wide: 
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
             :am: PG
             :pm: PTG
-        :"stand-alone": {}
-
-      :quarters: 
-        :format: 
-          :abbreviated: 
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
             1: Suku 1
             2: Suku Ke-2
             3: Suku Ke-3
             4: Suku Ke-4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
+          :wide:
             1: Suku pertama
             2: Suku Ke-2
             3: Suku Ke-3
             4: Suku Ke-4
-        :"stand-alone": 
-          :abbreviated: 
+        :stand-alone:
+          :abbreviated:
             1: Suku 1
             2: Suku Ke-2
             3: Suku Ke-3
             4: Suku Ke-4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
+          :wide:
             1: Suku pertama
             2: Suku Ke-2
             3: Suku Ke-3

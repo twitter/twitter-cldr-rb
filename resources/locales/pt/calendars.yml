@@ -1,29 +1,29 @@
---- 
-:pt: 
-  :calendars: 
-    :gregorian: 
-      :days: 
-        :format: 
-          :abbreviated: 
+---
+:pt:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
             :fri: sex
             :mon: seg
-            :sat: "s\xC3\xA1b"
+            :sat: sáb
             :sun: dom
             :thu: qui
             :tue: ter
             :wed: qua
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
-          :wide: 
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
             :fri: sexta-feira
             :mon: segunda-feira
-            :sat: "s\xC3\xA1bado"
+            :sat: sábado
             :sun: domingo
             :thu: quinta-feira
-            :tue: "ter\xC3\xA7a-feira"
+            :tue: terça-feira
             :wed: quarta-feira
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
             :fri: S
             :mon: S
             :sat: S
@@ -31,62 +31,62 @@
             :thu: Q
             :tue: T
             :wed: Q
-          :wide: :"calendars.gregorian.days.format.wide"
-      :eras: 
-        :abbr: 
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: a.C.
           1: d.C.
-        :name: 
+        :name:
           0: Antes de Cristo
           1: Ano do Senhor
-        :narrow: 
-          0: ""
-      :fields: 
+        :narrow:
+          0: ''
+      :fields:
         :day: Dia
-        :dayperiod: "Per\xC3\xADodo do dia"
+        :dayperiod: Período do dia
         :era: Era
         :hour: Hora
         :minute: Minuto
-        :month: "M\xC3\xAAs"
+        :month: Mês
         :second: Segundo
         :week: Semana
         :weekday: Dia da semana
         :year: Ano
         :zone: Fuso
-      :formats: 
-        :date: 
-          :default: :"calendars.gregorian.formats.date.medium"
-          :full: 
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
             :pattern: EEEE, d 'de' MMMM 'de' y
-          :long: 
+          :long:
             :pattern: d 'de' MMMM 'de' y
-          :medium: 
+          :medium:
             :pattern: dd/MM/yyyy
-          :short: 
+          :short:
             :pattern: dd/MM/yy
-        :datetime: 
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :time: 
-          :default: :"calendars.gregorian.formats.time.medium"
-          :full: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: HH'h'mm'min'ss's' zzzz
-          :long: 
+          :long:
             :pattern: HH'h'mm'min'ss's' z
-          :medium: 
+          :medium:
             :pattern: HH:mm:ss
-          :short: 
+          :short:
             :pattern: HH:mm
-      :months: 
-        :format: 
-          :abbreviated: 
+      :months:
+        :format:
+          :abbreviated:
             1: jan
             10: out
             11: nov
@@ -99,23 +99,23 @@
             7: jul
             8: ago
             9: set
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-          :wide: 
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
             1: janeiro
             10: outubro
             11: novembro
             12: dezembro
             2: fevereiro
-            3: "mar\xC3\xA7o"
+            3: março
             4: abril
             5: maio
             6: junho
             7: julho
             8: agosto
             9: setembro
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :narrow: 
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
             1: J
             10: O
             11: N
@@ -128,54 +128,54 @@
             7: J
             8: A
             9: S
-          :wide: :"calendars.gregorian.months.format.wide"
-      :periods: 
-        :format: 
-          :abbreviated: 
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated:
             :am: AM
             :pm: PM
-          :narrow: 
+          :narrow:
             :am: a
             :pm: p
-          :wide: 
+          :wide:
             :afternoon: tarde
             :am: AM
-            :morning: "manh\xC3\xA3"
+            :morning: manhã
             :night: noite
             :noon: meio-dia
             :pm: PM
-        :"stand-alone": 
-          :abbreviated: 
+        :stand-alone:
+          :abbreviated:
             :afternoon: tarde
-            :morning: "manh\xC3\xA3"
+            :morning: manhã
             :night: noite
             :noon: meia-noite
-      :quarters: 
-        :format: 
-          :abbreviated: 
+      :quarters:
+        :format:
+          :abbreviated:
             1: T1
             2: T2
             3: T3
             4: T4
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
-            1: "1\xC2\xBA trimestre"
-            2: "2\xC2\xBA trimestre"
-            3: "3\xC2\xBA trimestre"
-            4: "4\xC2\xBA trimestre"
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :narrow: 
+          :wide:
+            1: 1º trimestre
+            2: 2º trimestre
+            3: 3º trimestre
+            4: 4º trimestre
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
-            1: "1\xC2\xBA trimestre"
-            2: "2\xC2\xBA trimestre"
-            3: "3\xC2\xBA trimestre"
-            4: "4\xC2\xBA trimestre"
+          :wide:
+            1: 1º trimestre
+            2: 2º trimestre
+            3: 3º trimestre
+            4: 4º trimestre

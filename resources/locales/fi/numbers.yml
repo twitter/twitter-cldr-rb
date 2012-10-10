@@ -1,44 +1,44 @@
---- 
-:fi: 
-  :numbers: 
-    :formats: 
-      :currency: 
-        :patterns: 
-          :default: "#,##0.00\xC2\xA0\xC2\xA4"
-        :unit: 
-          :one: "{0} {1}"
-          :other: "{0} {1}"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            1000: "0.0\xC2\xA0t"
-            10000: "00\xC2\xA0t"
-            100000: "000\xC2\xA0t"
-            1000000: "0.0\xC2\xA0ml"
-            10000000: "00\xC2\xA0ml"
-            100000000: "000\xC2\xA0ml"
-            1000000000: "0.0\xC2\xA0mr"
-            10000000000: "00\xC2\xA0mr"
-            100000000000: "000\xC2\xA0mr"
-            1000000000000: "0.0\xC2\xA0b"
-            10000000000000: "00\xC2\xA0b"
-            100000000000000: "000\xC2\xA0b"
-      :percent: 
-        :patterns: 
-          :default: "#,##0\xC2\xA0%"
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-    :symbols: 
-      :alias: ""
-      :decimal: ","
+---
+:fi:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 t
+            10000: 00 t
+            100000: 000 t
+            1000000: 0.0 ml
+            10000000: 00 ml
+            100000000: 000 ml
+            1000000000: 0.0 mr
+            10000000000: 00 mr
+            100000000000: 000 mr
+            1000000000000: 0.0 b
+            10000000000000: 00 b
+            100000000000000: 000 b
+      :percent:
+        :patterns:
+          :default: ! '#,##0 %'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: E
-      :group: "\xC2\xA0"
-      :infinity: "\xE2\x88\x9E"
+      :group:  
+      :infinity: ∞
       :list: ;
-      :minus_sign: "-"
-      :nan: "ep\xC3\xA4luku"
-      :per_mille: "\xE2\x80\xB0"
-      :percent_sign: "%"
+      :minus_sign: ! '-'
+      :nan: epäluku
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +

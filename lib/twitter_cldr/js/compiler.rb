@@ -9,7 +9,7 @@ module TwitterCldr
       attr_reader :locales
 
       def initialize(options = {})
-        @locales = [:en]#options[:locales] || TwitterCldr.supported_locales
+        @locales = options[:locales] || TwitterCldr.supported_locales
         @features = options[:features] || renderers.keys
         @prerender = options[:prerender].nil? ? true : options[:prerender]
       end

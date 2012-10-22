@@ -28,7 +28,7 @@ class TwitterCldr.Bidi
 
   @from_string: (str, options = {}) ->
     string_arr = TwitterCldr.Utilities.unpack_string(str)
-    options.types ||= compute_types(string_arr)
+    options.types ||= this.compute_types(string_arr)
     options.string_arr ||= string_arr
     new TwitterCldr.Bidi(options)
 

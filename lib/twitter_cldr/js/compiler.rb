@@ -26,6 +26,7 @@ module TwitterCldr
           end
 
           bundle = TwitterCldr::Js::Renderers::Bundle.new
+          bundle[:locale] = locale
           bundle[:contents] = contents
           result = CoffeeScript.compile(bundle.render, :bare => true)
           result = Uglifier.compile(result) if options[:minify]

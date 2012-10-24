@@ -14,25 +14,25 @@ class TwitterCldr.Utilities
   # This function was adapted from the Mozilla JS reference:
   # https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/charCodeAt
   @char_code_at: (str, idx) ->
-    idx = idx || 0
+    str += ''
+    end = str.length
+    surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g
+
+    while surrogatePairs.exec(str) != null
+      li = surrogatePairs.lastIndex
+      if (li - 2 < idx) then idx += 1 else break
+
+    if (idx >= end) || (idx < 0)
+      return NaN
+
     code = str.charCodeAt(idx)
 
-    # High surrogate (could change last hex to 0xDB7F to treat high private surrogates as single characters)
     if (0xD800 <= code) && (code <= 0xDBFF)
       hi = code
-      low = str.charCodeAt(idx + 1)
-
-      if isNaN(low)
-        throw 'High surrogate not followed by low surrogate in char_code_at()'
-
+      low = str.charCodeAt(idx + 1)  # Go one further, since one of the "characters" is part of a surrogate pair
       return ((hi - 0xD800) * 0x400) + (low - 0xDC00) + 0x10000
 
-    # Low surrogate
-    if (0xDC00 <= code) && (code <= 0xDFFF)
-      # We return false to allow loops to skip this iteration since should have already handled high surrogate above in the previous iteration
-      return false
-
-    return code
+    code
 
   @unpack_string: (str) ->
     result = []
@@ -46,3 +46,42 @@ class TwitterCldr.Utilities
 
   @pack_array: (char_arr) ->
     (@from_char_code(char) for char in char_arr).join("")
+
+  @arraycopy: (orig, orig_index, dest, dest_index, length) ->
+    for elem, count in orig[orig_index...(orig_index + length)]
+      dest[dest_index + count] = elem
+
+    return
+
+  @max: (arr) ->
+    max = null
+
+    # make sure the first item chosen is not undefined, which can't be compared using >
+    for elem, start_index in arr
+      if elem?
+        max = elem
+        break
+
+    for i in [start_index..arr.length]
+      max = arr[i] if arr[i] > max
+
+    max
+
+  @min: (arr) ->
+    min = null
+
+    for elem, start_index in arr
+      if elem?
+        min = elem
+        break
+
+    for i in [start_index..arr.length]
+      min = arr[i] if arr[i] < min
+
+    min
+
+  @is_even: (num) ->
+    num % 2 == 0
+
+  @is_odd: (num) ->
+    num % 2 == 1

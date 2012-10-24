@@ -51,8 +51,8 @@ class TwitterCldr.Bidi
     lowest_odd = MAX_DEPTH + 1
 
     for level in @levels
-      max = this.max([level, max])
-      lowest_odd = this.min([lowest_odd, level]) unless this.is_even(level)
+      max = TwitterCldr.Utilities.max([level, max])
+      lowest_odd = TwitterCldr.Utilities.min([lowest_odd, level]) unless TwitterCldr.Utilities.is_even(level)
 
     # Reverse the runs starting with the deepest.
     for depth in [max...0]
@@ -189,8 +189,8 @@ class TwitterCldr.Bidi
       len = next_fmt - input
 
       # Non-formatter codes are from 'input' to 'next_fmt'.
-      this.arraycopy(@levels, input, @levels, output, len)
-      this.arraycopy(@types, input, @types, output, len)
+      TwitterCldr.Utilities.arraycopy(@levels, input, @levels, output, len)
+      TwitterCldr.Utilities.arraycopy(@types, input, @types, output, len)
 
       output += len
       input = next_fmt + 1
@@ -232,14 +232,14 @@ class TwitterCldr.Bidi
       level = this.get_run_level(run_idx) || 0
 
       # These are the names used in the Bidi algorithm.
-      sor = if this.is_even(this.max([previous_level, level])) then "L" else "R"
+      sor = if TwitterCldr.Utilities.is_even(TwitterCldr.Utilities.max([previous_level, level])) then "L" else "R"
 
       next_level = if run_idx == (run_count - 1)
         @base_embedding
       else
         this.get_run_level(run_idx + 1) || 0
 
-      eor = if this.is_even(this.max([level, next_level])) then "L" else "R"
+      eor = if TwitterCldr.Utilities.is_even(TwitterCldr.Utilities.max([level, next_level])) then "L" else "R"
       prev_type = sor
       prev_strong_type = sor
 
@@ -341,16 +341,16 @@ class TwitterCldr.Bidi
       level = this.get_run_level(run)
       continue unless level?
 
-      embedding_direction = if this.is_even(level) then "L" else "R"
+      embedding_direction = if TwitterCldr.Utilities.is_even(level) then "L" else "R"
       # These are the names used in the Bidi algorithm.
-      sor = if this.is_even(this.max([previous_level, level])) then "L" else "R"
+      sor = if TwitterCldr.Utilities.is_even(TwitterCldr.Utilities.max([previous_level, level])) then "L" else "R"
 
       next_level = if run == (run_count - 1)
         @base_embedding
       else
         this.get_run_level(run + 1)
 
-      eor = if this.is_even(this.max([level, next_level])) then "L" else "R"
+      eor = if TwitterCldr.Utilities.is_even(TwitterCldr.Utilities.max([level, next_level])) then "L" else "R"
       prev_strong = sor
       neutral_start = -1
 
@@ -400,7 +400,7 @@ class TwitterCldr.Bidi
         # Note that we no longer need 'types' at this point, so we
         # only edit 'levels'.
         if next_fmt + 1 < @levels.length
-          this.arraycopy(@levels, input, @levels, next_fmt + 1, len)
+          TwitterCldr.Utilities.arraycopy(@levels, input, @levels, next_fmt + 1, len)
 
         # Now set the level at the reinsertion point.
         right_level = if output == @levels.length - 1
@@ -413,15 +413,9 @@ class TwitterCldr.Bidi
         else
           if @levels[input]? then @levels[input] else 0
 
-        @levels[output] = this.max([left_level, right_level])
+        @levels[output] = TwitterCldr.Utilities.max([left_level, right_level])
 
     @length = @levels.length
-
-  arraycopy: (orig, orig_index, dest, dest_index, length) ->
-    for elem, count in orig[orig_index...(orig_index + length)]
-      dest[dest_index + count] = elem
-
-    return
 
   run_bidi: ->
     @base_embedding = this.compute_paragraph_embedding_level()
@@ -437,36 +431,3 @@ class TwitterCldr.Bidi
     # of runs may have changed.
     this.compute_runs()
     return
-
-  max: (arr) ->
-    max = null
-
-    # make sure the first item chosen is not undefined, which can't be compared using >
-    for elem, start_index in arr
-      if elem?
-        max = elem
-        break
-
-    for i in [start_index..arr.length]
-      max = arr[i] if arr[i] > max
-
-    max
-
-  min: (arr) ->
-    min = null
-
-    for elem, start_index in arr
-      if elem?
-        min = elem
-        break
-
-    for i in [start_index..arr.length]
-      min = arr[i] if arr[i] < min
-
-    min
-
-  is_even: (num) ->
-    num % 2 == 0
-
-  is_odd: (num) ->
-    num % 2 == 1

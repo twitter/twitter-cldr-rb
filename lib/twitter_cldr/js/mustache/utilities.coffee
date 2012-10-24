@@ -2,7 +2,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 class TwitterCldr.Utilities
-  # This function was adapted from the Mozilla JS reference: 
+  # This function was adapted from the Mozilla JS reference:
   # https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/fromCharCode
   @from_char_code: (code_point) ->
     if code_point > 0xFFFF

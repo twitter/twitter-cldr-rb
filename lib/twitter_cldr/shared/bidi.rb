@@ -465,36 +465,36 @@ module TwitterCldr
 
           # Process from the end as we are copying the array over itself here.
           (@formatter_indices.size - 1).downto(0) do |index|
-              next_fmt = @formatter_indices[index]
+            next_fmt = @formatter_indices[index]
 
-              # nextFmt points to a location in the original array.  So,
-              # nextFmt+1 is the target of our copying.  output is the location
-              # to which we last copied, thus we can derive the length of the
-              # copy from it.
-              len = output - next_fmt - 1
-              output = next_fmt
-              input -= len
+            # nextFmt points to a location in the original array.  So,
+            # nextFmt+1 is the target of our copying.  output is the location
+            # to which we last copied, thus we can derive the length of the
+            # copy from it.
+            len = output - next_fmt - 1
+            output = next_fmt
+            input -= len
 
-              # Note that we no longer need 'types' at this point, so we
-              # only edit 'levels'.
-              if next_fmt + 1 < @levels.size
-                arraycopy(@levels, input, @levels, next_fmt + 1, len)
-              end
+            # Note that we no longer need 'types' at this point, so we
+            # only edit 'levels'.
+            if next_fmt + 1 < @levels.size
+              arraycopy(@levels, input, @levels, next_fmt + 1, len)
+            end
 
-              # Now set the level at the reinsertion point.
-              right_level = if output == @levels.length - 1
-                @base_embedding
-              else
-                @levels[output + 1] || 0
-              end
+            # Now set the level at the reinsertion point.
+            right_level = if output == @levels.length - 1
+              @base_embedding
+            else
+              @levels[output + 1] || 0
+            end
 
-              left_level = if input == 0
-                @base_embedding
-              else
-                @levels[input] || 0;
-              end
+            left_level = if input == 0
+              @base_embedding
+            else
+              @levels[input] || 0;
+            end
 
-              @levels[output] = [left_level, right_level].max
+            @levels[output] = [left_level, right_level].max
           end
         end
 

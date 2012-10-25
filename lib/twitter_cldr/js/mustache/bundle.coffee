@@ -11,5 +11,12 @@
 ###
 
 TwitterCldr = {}
+{{#is_rtl?}}
+TwitterCldr.is_rtl = true;
+{{/is_rtl?}}
+{{^is_rtl?}}
+TwitterCldr.is_rtl = false;
+{{/is_rtl?}}
+{{> utilities}}
 {{{contents}}}
 exports[key] = obj for key, obj of TwitterCldr if exports?  # for node

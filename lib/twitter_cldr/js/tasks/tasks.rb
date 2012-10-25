@@ -30,7 +30,8 @@ module TwitterCldr
           locales = get_locales
           $stdout.write(options[:begin_msg])
 
-          compiler   = TwitterCldr::Js::Compiler.new(:locales => locales)
+          prerender  = ENV["PRERENDER"] ? ENV["PRERENDER"] == "true" : nil
+          compiler   = TwitterCldr::Js::Compiler.new(:locales => locales, :prerender => prerender)
           output_dir = File.expand_path(options[:output_dir] || get_output_dir)
 
           build_duration = time_operation do

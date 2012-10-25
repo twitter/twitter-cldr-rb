@@ -11,6 +11,7 @@ module TwitterCldr
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales
         @features = options[:features] || renderers.keys
+        @prerender = options[:prerender].nil? ? true : options[:prerender]
       end
 
       def compile_each(options = {})
@@ -21,10 +22,11 @@ module TwitterCldr
 
           @features.each do |feature|
             renderer_const = renderers[feature]
-            contents << renderer_const.new(:locale => locale).render if renderer_const
+            contents << renderer_const.new(:locale => locale, :prerender => @prerender).render if renderer_const
           end
 
           bundle = TwitterCldr::Js::Renderers::Bundle.new
+          bundle[:locale] = locale
           bundle[:contents] = contents
           result = CoffeeScript.compile(bundle.render, :bare => true)
           result = Uglifier.compile(result) if options[:minify]
@@ -42,7 +44,8 @@ module TwitterCldr
           :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer,
           :numbers => TwitterCldr::Js::Renderers::Numbers::NumbersRenderer,
           :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer,
-          :lists => TwitterCldr::Js::Renderers::ListRenderer
+          :lists => TwitterCldr::Js::Renderers::Shared::ListRenderer,
+          :bidi => TwitterCldr::Js::Renderers::Shared::BidiRenderer
         }
       end
     end

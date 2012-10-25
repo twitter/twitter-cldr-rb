@@ -26,11 +26,15 @@ class TwitterCldr.ListFormatter
     elements = (element for element in elements when element isnt null)
 
     if elements.length > 1
-      result = format
+      result = format.replace(/\{(\d+)\}/g, ->
+        RegExp.$1
+      )
 
-      for i in [0...elements.length]
-        result = result.replace("{#{i}}", elements[i])
+      if TwitterCldr.is_rtl
+        result = TwitterCldr.Bidi.from_string(result, {"direction": "RTL"}).reorder_visually().toString()
 
-      result
+      result.replace(/(\d+)/g, ->
+        elements[parseInt(RegExp.$1)]
+      )
     else
       elements[0] || ""

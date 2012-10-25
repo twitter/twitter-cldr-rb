@@ -1,0 +1,11 @@
+#! /usr/bin/env ruby
+
+excl = [
+  "lib/assets/javascripts/twitter_cldr",
+  "spec/js/shared/classpath_bidi_test.txt"
+].map { |pattern| "grep -v #{pattern}" }
+
+files = `git diff --diff-filter=ACMRTUXB --name-only lists . | #{excl.join(" | ")}`.split("\n")
+`git diff lists #{files.join(" ")} > /tmp/twitter-cldr-js.diff`
+`git diff --diff-filter=D master . >> /tmp/twitter-cldr-js.diff`
+exec "less /tmp/twitter-cldr-js.diff"

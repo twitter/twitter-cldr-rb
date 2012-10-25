@@ -8,7 +8,6 @@ module TwitterCldr
     module Renderers
       autoload :Base,                   'twitter_cldr/js/renderers/base'
       autoload :Bundle,                 'twitter_cldr/js/renderers/bundle'
-      autoload :ListRenderer,           'twitter_cldr/js/renderers/list_renderer'
 
       module Calendars
         autoload :DateTimeRenderer,     'twitter_cldr/js/renderers/calendars/datetime_renderer'
@@ -26,6 +25,8 @@ module TwitterCldr
 
       module Shared
         autoload :CurrenciesRenderer,   'twitter_cldr/js/renderers/shared/currencies_renderer'
+        autoload :ListRenderer,         'twitter_cldr/js/renderers/shared/list_renderer'
+        autoload :BidiRenderer,         'twitter_cldr/js/renderers/shared/bidi_renderer'
       end
     end
   end

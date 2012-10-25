@@ -1,15 +1,22 @@
 // Copyright 2012 Twitter, Inc
 // http://www.apache.org/licenses/LICENSE-2.0
 
-var TwitterCldr = require('../../lib/assets/javascripts/twitter_cldr/en.js');
+var TwitterCldr    = require('../../../lib/assets/javascripts/twitter_cldr/en.js');
+var TwitterCldrRTL = require('../../../lib/assets/javascripts/twitter_cldr/ar.js');
 
 describe("ListFormatter", function() {
   beforeEach(function() {
     formatter = new TwitterCldr.ListFormatter();
+    formatter_rtl = new TwitterCldrRTL.ListFormatter();
   });
 
   describe("with an initialized list formatter", function() {
     describe("#compose", function() {
+      it("should reorder rtl lists", function() {
+        var list = ["larry", "curly"];
+        expect(formatter_rtl.compose("{0} \u0648 {1}", list)).toEqual("curly \u0648 larry");
+      });
+
       it("should format a variable number of elements correctly", function() {
         var list = ["larry", "curly", "moe"];
         expect(formatter.compose("{0} - {1} - {2}", list)).toEqual("larry - curly - moe");

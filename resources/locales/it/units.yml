@@ -1,122 +1,122 @@
---- 
-:it: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: "{0} ore fa"
-        0: 0 ore fa
-        :one: "{0} ora fa"
-    :hour: 
-      :default: 
-        :other: "{0} ore"
-        :one: "{0} ora"
-      :short: 
-        :other: "{0} h"
-        :one: "{0} h"
-    :"second-past": 
-      :default: 
-        :other: "{0} secondi fa"
-        0: 0 secondi fa
-        :one: "{0} secondo fa"
-    :week: 
-      :default: 
-        :other: "{0} settimane"
-        :one: "{0} settimana"
-      :short: 
-        :other: "{0} sett."
-        :one: "{0} sett."
-    :"minute-future": 
-      :default: 
-        :other: tra {0} minuti
-        0: tra 0 minuti
-        :one: tra {0} minuto
-    :"week-future": 
-      :default: 
-        :other: tra {0} settimane
-        0: tra 0 settimane
-        :one: tra {0} settimana
-    :day: 
-      :default: 
-        :other: "{0} giorni"
-        :one: "{0} giorno"
-      :short: 
-        :other: "{0} gg"
-        :one: "{0} g"
-    :"minute-past": 
-      :default: 
-        :other: "{0} minuti fa"
-        0: 0 minuti fa
-        :one: "{0} minuto fa"
-    :"day-future": 
-      :default: 
-        :other: tra {0} giorni
+---
+:it:
+  :units:
+    :day:
+      :default:
+        :one: ! '{0} giorno'
+        :other: ! '{0} giorni'
+      :short:
+        :one: ! '{0} g'
+        :other: ! '{0} gg'
+    :day-future:
+      :default:
         0: tra 0 giorni
         :one: tra {0} giorno
-    :"week-past": 
-      :default: 
-        :other: "{0} settimane fa"
-        0: 0 settimane fa
-        :one: "{0} settimana fa"
-    :"month-future": 
-      :default: 
-        :other: tra {0} mesi
-        0: tra 0 mesi
-        :one: tra {0} mese
-    :minute: 
-      :default: 
-        :other: "{0} minuti"
-        :one: "{0} minuto"
-      :short: 
-        :other: "{0} min"
-        :one: "{0} min"
-    :"day-past": 
-      :default: 
-        :other: "{0} giorni fa"
+        :other: tra {0} giorni
+    :day-past:
+      :default:
         0: 0 giorni fa
-        :one: "{0} giorno fa"
-    :"year-future": 
-      :default: 
-        :other: tra {0} anni
-        0: tra 0 anni
-        :one: tra {0} anno
-    :"month-past": 
-      :default: 
-        :other: "{0} mesi fa"
-        0: 0 mesi fa
-        :one: "{0} mese fa"
-    :month: 
-      :default: 
-        :other: "{0} mesi"
-        :one: "{0} mese"
-      :short: 
-        :other: "{0} mesi"
-        :one: "{0} mese"
-    :"hour-future": 
-      :default: 
-        :other: tra {0} ore
+        :one: ! '{0} giorno fa'
+        :other: ! '{0} giorni fa'
+    :hour:
+      :default:
+        :one: ! '{0} ora'
+        :other: ! '{0} ore'
+      :short:
+        :one: ! '{0} h'
+        :other: ! '{0} h'
+    :hour-future:
+      :default:
         0: tra 0 ore
         :one: tra {0} ora
-    :second: 
-      :default: 
-        :other: "{0} secondi"
-        :one: "{0} secondo"
-      :short: 
-        :other: "{0} sec"
-        :one: "{0} sec"
-    :"year-past": 
-      :default: 
-        :other: "{0} anni fa"
-        0: 0 anni fa
-        :one: "{0} anno fa"
-    :year: 
-      :default: 
-        :other: "{0} anni"
-        :one: "{0} anno"
-      :short: 
-        :other: "{0} anni"
-        :one: "{0} anno"
-    :"second-future": 
-      :default: 
-        :other: tra {0} secondi
+        :other: tra {0} ore
+    :hour-past:
+      :default:
+        0: 0 ore fa
+        :one: ! '{0} ora fa'
+        :other: ! '{0} ore fa'
+    :minute:
+      :default:
+        :one: ! '{0} minuto'
+        :other: ! '{0} minuti'
+      :short:
+        :one: ! '{0} min'
+        :other: ! '{0} min'
+    :minute-future:
+      :default:
+        0: tra 0 minuti
+        :one: tra {0} minuto
+        :other: tra {0} minuti
+    :minute-past:
+      :default:
+        0: 0 minuti fa
+        :one: ! '{0} minuto fa'
+        :other: ! '{0} minuti fa'
+    :month:
+      :default:
+        :one: ! '{0} mese'
+        :other: ! '{0} mesi'
+      :short:
+        :one: ! '{0} mese'
+        :other: ! '{0} mesi'
+    :month-future:
+      :default:
+        0: tra 0 mesi
+        :one: tra {0} mese
+        :other: tra {0} mesi
+    :month-past:
+      :default:
+        0: 0 mesi fa
+        :one: ! '{0} mese fa'
+        :other: ! '{0} mesi fa'
+    :second:
+      :default:
+        :one: ! '{0} secondo'
+        :other: ! '{0} secondi'
+      :short:
+        :one: ! '{0} sec'
+        :other: ! '{0} sec'
+    :second-future:
+      :default:
         0: tra 0 secondi
         :one: tra {0} secondo
+        :other: tra {0} secondi
+    :second-past:
+      :default:
+        0: 0 secondi fa
+        :one: ! '{0} secondo fa'
+        :other: ! '{0} secondi fa'
+    :week:
+      :default:
+        :one: ! '{0} settimana'
+        :other: ! '{0} settimane'
+      :short:
+        :one: ! '{0} sett.'
+        :other: ! '{0} sett.'
+    :week-future:
+      :default:
+        0: tra 0 settimane
+        :one: tra {0} settimana
+        :other: tra {0} settimane
+    :week-past:
+      :default:
+        0: 0 settimane fa
+        :one: ! '{0} settimana fa'
+        :other: ! '{0} settimane fa'
+    :year:
+      :default:
+        :one: ! '{0} anno'
+        :other: ! '{0} anni'
+      :short:
+        :one: ! '{0} anno'
+        :other: ! '{0} anni'
+    :year-future:
+      :default:
+        0: tra 0 anni
+        :one: tra {0} anno
+        :other: tra {0} anni
+    :year-past:
+      :default:
+        0: 0 anni fa
+        :one: ! '{0} anno fa'
+        :other: ! '{0} anni fa'

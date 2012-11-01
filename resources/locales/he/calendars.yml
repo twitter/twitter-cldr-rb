@@ -1,362 +1,191 @@
---- 
-:he: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: !binary |
-            15zXpNeg15kg15TXodek15nXqNeU
-
-          1: !binary |
-            15zXodek15nXqNeU
-
-        :narrow: 
-          0: ""
-        :abbr: 
-          0: !binary |
-            15zXpNeg15TXtNeh
-
-          1: !binary |
-            15zXodeU17TXoA==
-
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :wide: :"calendars.gregorian.quarters.format.wide"
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: :"calendars.gregorian.quarters.format.wide"
-          :wide: 
-            1: !binary |
-              16jXkdei15XXnyAx
-
-            2: !binary |
-              16jXkdei15XXnyAy
-
-            3: !binary |
-              16jXkdei15XXnyAz
-
-            4: !binary |
-              16jXkdei15XXnyA0
-
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: "EEEE, d \xD7\x91MMMM y"
-          :medium: 
-            :pattern: "d \xD7\x91MMM yyyy"
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: "d \xD7\x91MMMM y"
-          :short: 
+---
+:he:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: יום ו׳
+            :mon: יום ב׳
+            :sat: שבת
+            :sun: יום א׳
+            :thu: יום ה׳
+            :tue: יום ג׳
+            :wed: יום ד׳
+          :narrow:
+            :fri: ו
+            :mon: ב
+            :sat: ש
+            :sun: א
+            :thu: ה
+            :tue: ג
+            :wed: ד
+          :wide:
+            :fri: יום שישי
+            :mon: יום שני
+            :sat: יום שבת
+            :sun: יום ראשון
+            :thu: יום חמישי
+            :tue: יום שלישי
+            :wed: יום רביעי
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: ו
+            :mon: ב
+            :sat: ש
+            :sun: א
+            :thu: ה
+            :tue: ג
+            :wed: ד
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
+          0: לפנה״ס
+          1: לסה״נ
+        :name:
+          0: לפני הספירה
+          1: לספירה
+        :narrow:
+          0: ''
+      :fields:
+        :day: יום
+        :dayperiod: לפה״צ/אחה״צ
+        :era: תקופה
+        :hour: שעה
+        :minute: דקה
+        :month: חודש
+        :second: שנייה
+        :week: שבוע
+        :weekday: יום בשבוע
+        :year: שנה
+        :zone: אזור
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE, d בMMMM y
+          :long:
+            :pattern: d בMMMM y
+          :medium:
+            :pattern: d בMMM yyyy
+          :short:
             :pattern: dd/MM/yy
-        :time: 
-          :full: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: HH:mm:ss zzzz
-          :medium: 
-            :pattern: HH:mm:ss
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
+          :long:
             :pattern: HH:mm:ss z
-          :short: 
+          :medium:
+            :pattern: HH:mm:ss
+          :short:
             :pattern: HH:mm
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :pm: !binary |
-              15DXl9eU17TXpg==
-
-            :am: !binary |
-              15zXpNeg15TXtNem
-
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: 
-            5: !binary |
-              157XkNeZ
-
-            11: !binary |
-              16DXldeR17M=
-
-            6: !binary |
-              15nXldeg17M=
-
-            1: !binary |
-              15nXoNeV17M=
-
-            12: !binary |
-              15PXptee17M=
-
-            7: !binary |
-              15nXldec17M=
-
-            2: !binary |
-              16TXkdeo17M=
-
-            8: !binary |
-              15DXldeS17M=
-
-            3: !binary |
-              157XqNel
-
-            9: !binary |
-              16HXpNeY17M=
-
-            4: !binary |
-              15DXpNeo17M=
-
-            10: !binary |
-              15DXlden17M=
-
-          :wide: :"calendars.gregorian.months.format.wide"
-          :narrow: 
-            5: 5
-            11: 11
-            6: 6
+      :months:
+        :format:
+          :abbreviated:
+            1: ינו
+            10: אוק
+            11: נוב
+            12: דצמ
+            2: פבר
+            3: מרץ
+            4: אפר
+            5: מאי
+            6: יונ
+            7: יול
+            8: אוג
+            9: ספט
+          :narrow:
             1: 1
-            12: 12
-            7: 7
-            2: 2
-            8: 8
-            3: 3
-            9: 9
-            4: 4
             10: 10
-        :format: 
-          :abbreviated: 
-            5: !binary |
-              157XkNeZ
-
-            11: !binary |
-              16DXldeR
-
-            6: !binary |
-              15nXldeg
-
-            1: !binary |
-              15nXoNeV
-
-            12: !binary |
-              15PXptee
-
-            7: !binary |
-              15nXldec
-
-            2: !binary |
-              16TXkdeo
-
-            8: !binary |
-              15DXldeS
-
-            3: !binary |
-              157XqNel
-
-            9: !binary |
-              16HXpNeY
-
-            4: !binary |
-              15DXpNeo
-
-            10: !binary |
-              15DXlden
-
-          :wide: 
-            5: !binary |
-              157XkNeZ
-
-            11: !binary |
-              16DXldeR157Xkdeo
-
-            6: !binary |
-              15nXldeg15k=
-
-            1: !binary |
-              15nXoNeV15DXqA==
-
-            12: !binary |
-              15PXptee15HXqA==
-
-            7: !binary |
-              15nXldec15k=
-
-            2: !binary |
-              16TXkdeo15XXkNeo
-
-            8: !binary |
-              15DXldeS15XXodeY
-
-            3: !binary |
-              157XqNel
-
-            9: !binary |
-              16HXpNeY157Xkdeo
-
-            4: !binary |
-              15DXpNeo15nXnA==
-
-            10: !binary |
-              15DXlden15jXldeR16g=
-
-          :narrow: 
-            5: 5
             11: 11
-            6: 6
-            1: 1
             12: 12
-            7: 7
             2: 2
-            8: 8
             3: 3
-            9: 9
             4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
+          :wide:
+            1: ינואר
+            10: אוקטובר
+            11: נובמבר
+            12: דצמבר
+            2: פברואר
+            3: מרץ
+            4: אפריל
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוגוסט
+            9: ספטמבר
+        :stand-alone:
+          :abbreviated:
+            1: ינו׳
+            10: אוק׳
+            11: נוב׳
+            12: דצמ׳
+            2: פבר׳
+            3: מרץ
+            4: אפר׳
+            5: מאי
+            6: יונ׳
+            7: יול׳
+            8: אוג׳
+            9: ספט׳
+          :narrow:
+            1: 1
             10: 10
-      :fields: 
-        :hour: !binary |
-          16nXoteU
-
-        :week: !binary |
-          16nXkdeV16I=
-
-        :era: !binary |
-          16rXp9eV16TXlA==
-
-        :weekday: !binary |
-          15nXldedINeR16nXkdeV16I=
-
-        :day: !binary |
-          15nXlded
-
-        :dayperiod: !binary |
-          15zXpNeU17TXpi/XkNeX15TXtNem
-
-        :minute: !binary |
-          15PXp9eU
-
-        :month: !binary |
-          15fXldeT16k=
-
-        :second: !binary |
-          16nXoNeZ15nXlA==
-
-        :zone: !binary |
-          15DXlteV16g=
-
-        :year: !binary |
-          16nXoNeU
-
-      :days: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :wide: :"calendars.gregorian.days.format.wide"
-          :narrow: 
-            :sun: !binary |
-              15A=
-
-            :sat: !binary |
-              16k=
-
-            :tue: !binary |
-              15I=
-
-            :wed: !binary |
-              15M=
-
-            :thu: !binary |
-              15Q=
-
-            :mon: !binary |
-              15E=
-
-            :fri: !binary |
-              15U=
-
-        :format: 
-          :abbreviated: 
-            :sun: !binary |
-              15nXldedINeQ17M=
-
-            :sat: !binary |
-              16nXkdeq
-
-            :tue: !binary |
-              15nXldedINeS17M=
-
-            :wed: !binary |
-              15nXldedINeT17M=
-
-            :thu: !binary |
-              15nXldedINeU17M=
-
-            :mon: !binary |
-              15nXldedINeR17M=
-
-            :fri: !binary |
-              15nXldedINeV17M=
-
-          :wide: 
-            :sun: !binary |
-              15nXldedINeo15DXqdeV158=
-
-            :sat: !binary |
-              15nXldedINep15HXqg==
-
-            :tue: !binary |
-              15nXldedINep15zXmdep15k=
-
-            :wed: !binary |
-              15nXldedINeo15HXmdei15k=
-
-            :thu: !binary |
-              15nXldedINeX157Xmdep15k=
-
-            :mon: !binary |
-              15nXldedINep16DXmQ==
-
-            :fri: !binary |
-              15nXldedINep15nXqdeZ
-
-          :narrow: 
-            :sun: !binary |
-              15A=
-
-            :sat: !binary |
-              16k=
-
-            :tue: !binary |
-              15I=
-
-            :wed: !binary |
-              15M=
-
-            :thu: !binary |
-              15Q=
-
-            :mon: !binary |
-              15E=
-
-            :fri: !binary |
-              15U=
-
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: לפנה״צ
+            :pm: אחה״צ
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated: :calendars.gregorian.quarters.format.wide
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: רבעון 1
+            2: רבעון 2
+            3: רבעון 3
+            4: רבעון 4
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide: :calendars.gregorian.quarters.format.wide

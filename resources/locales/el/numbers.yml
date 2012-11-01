@@ -1,73 +1,43 @@
---- 
-:el: 
-  :numbers: 
-    :symbols: 
-      :minus_sign: "-"
-      :alias: ""
+---
+:el:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 χιλ'.'
+            10000: 00 χιλ'.'
+            100000: 000 χιλ'.'
+            1000000: 0.0 εκ'.'
+            10000000: 00 εκ'.'
+            100000000: 000 εκ'.'
+            1000000000: 0.0 δις
+            10000000000: 00 δις
+            100000000000: 000 δις
+            1000000000000: 0.0 τρις
+            10000000000000: 00 τρις
+            100000000000000: 000 τρις
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: e
-      :per_mille: !binary |
-        4oCw
-
       :group: .
-      :infinity: !binary |
-        4oie
-
-      :percent_sign: "%"
+      :infinity: ∞
+      :list: ! ','
+      :minus_sign: ! '-'
       :nan: NaN
-      :list: ","
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +
-      :decimal: ","
-    :formats: 
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :currency: 
-        :unit: 
-          :other: "{0} {1}"
-        :patterns: 
-          :default: !binary |
-            IywjIzAuMDDCoMKk
-
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            100000000000: !binary |
-              MDAwwqDOtM65z4I=
-
-            1000000000000: !binary |
-              MC4wwqDPhM+BzrnPgg==
-
-            1000000000: !binary |
-              MC4wwqDOtM65z4I=
-
-            100000000000000: !binary |
-              MDAwwqDPhM+BzrnPgg==
-
-            10000: !binary |
-              MDDCoM+HzrnOuycuJw==
-
-            1000000: !binary |
-              MC4wwqDOtc66Jy4n
-
-            100000000: !binary |
-              MDAwwqDOtc66Jy4n
-
-            10000000000: !binary |
-              MDDCoM60zrnPgg==
-
-            10000000000000: !binary |
-              MDDCoM+Ez4HOuc+C
-
-            1000: !binary |
-              MC4wwqDPh865zrsnLic=
-
-            100000: !binary |
-              MDAwwqDPh865zrsnLic=
-
-            10000000: !binary |
-              MDDCoM61zronLic=
-

@@ -1,519 +1,228 @@
---- 
-:el: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: ""
-        :narrow: 
-          0: ""
-        :abbr: 
-          0: !binary |
-            z4Auzqcu
-
-          1: !binary |
-            zrwuzqcu
-
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: 
-            1: !binary |
-              zqQx
-
-            2: !binary |
-              zqQy
-
-            3: !binary |
-              zqQz
-
-            4: !binary |
-              zqQ0
-
-          :wide: 
-            1: !binary |
-              Mc6/IM+Ez4HOr868zrfOvc6/
-
-            2: !binary |
-              Ms6/IM+Ez4HOr868zrfOvc6/
-
-            3: !binary |
-              M86/IM+Ez4HOr868zrfOvc6/
-
-            4: !binary |
-              NM6/IM+Ez4HOr868zrfOvc6/
-
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: 
-            1: !binary |
-              zqQx
-
-            2: !binary |
-              zqQy
-
-            3: !binary |
-              zqQz
-
-            4: !binary |
-              zqQ0
-
-          :wide: 
-            1: !binary |
-              Mc6/IM+Ez4HOr868zrfOvc6/
-
-            2: !binary |
-              Ms6/IM+Ez4HOr868zrfOvc6/
-
-            3: !binary |
-              M86/IM+Ez4HOr868zrfOvc6/
-
-            4: !binary |
-              NM6/IM+Ez4HOr868zrfOvc6/
-
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
+---
+:el:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: Παρ
+            :mon: Δευ
+            :sat: Σαβ
+            :sun: Κυρ
+            :thu: Πεμ
+            :tue: Τρι
+            :wed: Τετ
+          :narrow:
+            :fri: Π
+            :mon: Δ
+            :sat: Σ
+            :sun: Κ
+            :thu: Π
+            :tue: Τ
+            :wed: Τ
+          :wide:
+            :fri: Παρασκευή
+            :mon: Δευτέρα
+            :sat: Σάββατο
+            :sun: Κυριακή
+            :thu: Πέμπτη
+            :tue: Τρίτη
+            :wed: Τετάρτη
+        :stand-alone:
+          :abbreviated:
+            :fri: Παρ
+            :mon: Δευ
+            :sat: Σάβ
+            :sun: Κυρ
+            :thu: Πέμ
+            :tue: Τρί
+            :wed: Τετ
+          :narrow:
+            :fri: Π
+            :mon: Δ
+            :sat: Σ
+            :sun: Κ
+            :thu: Π
+            :tue: Τ
+            :wed: Τ
+          :wide:
+            :fri: Παρασκευή
+            :mon: Δευτέρα
+            :sat: Σάββατο
+            :sun: Κυριακή
+            :thu: Πέμπτη
+            :tue: Τρίτη
+            :wed: Τετάρτη
+      :eras:
+        :abbr:
+          0: π.Χ.
+          1: μ.Χ.
+        :name:
+          0: ''
+        :narrow:
+          0: ''
+      :fields:
+        :day: Ημέρα
+        :dayperiod: π.μ./μ.μ.
+        :era: Περίοδος
+        :hour: Ώρα
+        :minute: Λεπτό
+        :month: Μήνας
+        :second: Δευτερόλεπτο
+        :week: Εβδομάδα
+        :weekday: Ημέρα εβδομάδας
+        :year: Έτος
+        :zone: Ζώνη
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
             :pattern: EEEE, d MMMM y
-          :medium: 
-            :pattern: d MMM y
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
+          :long:
             :pattern: d MMMM y
-          :short: 
+          :medium:
+            :pattern: d MMM y
+          :short:
             :pattern: d/M/yy
-        :time: 
-          :full: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: h:mm:ss a zzzz
-          :medium: 
-            :pattern: h:mm:ss a
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
+          :long:
             :pattern: h:mm:ss a z
-          :short: 
+          :medium:
+            :pattern: h:mm:ss a
+          :short:
             :pattern: h:mm a
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :pm: !binary |
-              zrwuzrwu
-
-            :am: !binary |
-              z4Auzrwu
-
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: 
-            5: !binary |
-              zpzOrM65
-
-            11: !binary |
-              zp3Ov86t
-
-            6: !binary |
-              zpnOv8+Nzr0=
-
-            1: !binary |
-              zpnOsc69
-
-            12: !binary |
-              zpTOtc66
-
-            7: !binary |
-              zpnOv8+Nzrs=
-
-            2: !binary |
-              zqbOtc6y
-
-            8: !binary |
-              zpHPhc6z
-
-            3: !binary |
-              zpzOrM+B
-
-            9: !binary |
-              zqPOtc+A
-
-            4: !binary |
-              zpHPgM+B
-
-            10: !binary |
-              zp/Ous+E
-
-          :wide: 
-            5: !binary |
-              zpzOrM65zr/Pgg==
-
-            11: !binary |
-              zp3Ov86tzrzOss+BzrnOv8+C
-
-            6: !binary |
-              zpnOv8+Nzr3Ouc6/z4I=
-
-            1: !binary |
-              zpnOsc69zr/Phc6sz4HOuc6/z4I=
-
-            12: !binary |
-              zpTOtc66zq3OvM6yz4HOuc6/z4I=
-
-            7: !binary |
-              zpnOv8+NzrvOuc6/z4I=
-
-            2: !binary |
-              zqbOtc6yz4HOv8+FzqzPgc65zr/Pgg==
-
-            8: !binary |
-              zpHPjc6zzr/Phc+Dz4TOv8+C
-
-            3: !binary |
-              zpzOrM+Bz4TOuc6/z4I=
-
-            9: !binary |
-              zqPOtc+Az4TOrc68zrLPgc65zr/Pgg==
-
-            4: !binary |
-              zpHPgM+Bzq/Ou865zr/Pgg==
-
-            10: !binary |
-              zp/Ous+Ez47Oss+BzrnOv8+C
-
-          :narrow: 
-            5: !binary |
-              zpw=
-
-            11: !binary |
-              zp0=
-
-            6: !binary |
-              zpk=
-
-            1: !binary |
-              zpk=
-
-            12: !binary |
-              zpQ=
-
-            7: !binary |
-              zpk=
-
-            2: !binary |
-              zqY=
-
-            8: !binary |
-              zpE=
-
-            3: !binary |
-              zpw=
-
-            9: !binary |
-              zqM=
-
-            4: !binary |
-              zpE=
-
-            10: !binary |
-              zp8=
-
-        :format: 
-          :abbreviated: 
-            5: !binary |
-              zpzOsc+K
-
-            11: !binary |
-              zp3Ov861
-
-            6: !binary |
-              zpnOv8+Fzr0=
-
-            1: !binary |
-              zpnOsc69
-
-            12: !binary |
-              zpTOtc66
-
-            7: !binary |
-              zpnOv8+Fzrs=
-
-            2: !binary |
-              zqbOtc6y
-
-            8: !binary |
-              zpHPhc6z
-
-            3: !binary |
-              zpzOsc+B
-
-            9: !binary |
-              zqPOtc+A
-
-            4: !binary |
-              zpHPgM+B
-
-            10: !binary |
-              zp/Ous+E
-
-          :wide: 
-            5: !binary |
-              zpzOsc6Qzr/PhQ==
-
-            11: !binary |
-              zp3Ov861zrzOss+Bzq/Ov8+F
-
-            6: !binary |
-              zpnOv8+Fzr3Or86/z4U=
-
-            1: !binary |
-              zpnOsc69zr/Phc6xz4HOr86/z4U=
-
-            12: !binary |
-              zpTOtc66zrXOvM6yz4HOr86/z4U=
-
-            7: !binary |
-              zpnOv8+FzrvOr86/z4U=
-
-            2: !binary |
-              zqbOtc6yz4HOv8+FzrHPgc6vzr/PhQ==
-
-            8: !binary |
-              zpHPhc6zzr/Pjc+Dz4TOv8+F
-
-            3: !binary |
-              zpzOsc+Bz4TOr86/z4U=
-
-            9: !binary |
-              zqPOtc+Az4TOtc68zrLPgc6vzr/PhQ==
-
-            4: !binary |
-              zpHPgM+BzrnOu86vzr/PhQ==
-
-            10: !binary |
-              zp/Ous+Ez4nOss+Bzq/Ov8+F
-
-          :narrow: 
-            5: !binary |
-              zpw=
-
-            11: !binary |
-              zp0=
-
-            6: !binary |
-              zpk=
-
-            1: !binary |
-              zpk=
-
-            12: !binary |
-              zpQ=
-
-            7: !binary |
-              zpk=
-
-            2: !binary |
-              zqY=
-
-            8: !binary |
-              zpE=
-
-            3: !binary |
-              zpw=
-
-            9: !binary |
-              zqM=
-
-            4: !binary |
-              zpE=
-
-            10: !binary |
-              zp8=
-
-      :fields: 
-        :hour: !binary |
-          zo/Pgc6x
-
-        :week: !binary |
-          zpXOss60zr/OvM6szrTOsQ==
-
-        :era: !binary |
-          zqDOtc+Bzq/Ov860zr/Pgg==
-
-        :weekday: !binary |
-          zpfOvM6tz4HOsSDOtc6yzrTOv868zqzOtM6xz4I=
-
-        :day: !binary |
-          zpfOvM6tz4HOsQ==
-
-        :dayperiod: !binary |
-          z4AuzrwuL868Ls68Lg==
-
-        :minute: !binary |
-          zpvOtc+Az4TPjA==
-
-        :month: !binary |
-          zpzOrs69zrHPgg==
-
-        :second: !binary |
-          zpTOtc+Fz4TOtc+Bz4zOu861z4DPhM6/
-
-        :zone: !binary |
-          zpbPjs69zrc=
-
-        :year: !binary |
-          zojPhM6/z4I=
-
-      :days: 
-        :"stand-alone": 
-          :abbreviated: 
-            :sun: !binary |
-              zprPhc+B
-
-            :sat: !binary |
-              zqPOrM6y
-
-            :tue: !binary |
-              zqTPgc6v
-
-            :wed: !binary |
-              zqTOtc+E
-
-            :thu: !binary |
-              zqDOrc68
-
-            :mon: !binary |
-              zpTOtc+F
-
-            :fri: !binary |
-              zqDOsc+B
-
-          :wide: 
-            :sun: !binary |
-              zprPhc+BzrnOsc66zq4=
-
-            :sat: !binary |
-              zqPOrM6yzrLOsc+Ezr8=
-
-            :tue: !binary |
-              zqTPgc6vz4TOtw==
-
-            :wed: !binary |
-              zqTOtc+EzqzPgc+Ezrc=
-
-            :thu: !binary |
-              zqDOrc68z4DPhM63
-
-            :mon: !binary |
-              zpTOtc+Fz4TOrc+BzrE=
-
-            :fri: !binary |
-              zqDOsc+BzrHPg866zrXPhc6u
-
-          :narrow: 
-            :sun: !binary |
-              zpo=
-
-            :sat: !binary |
-              zqM=
-
-            :tue: !binary |
-              zqQ=
-
-            :wed: !binary |
-              zqQ=
-
-            :thu: !binary |
-              zqA=
-
-            :mon: !binary |
-              zpQ=
-
-            :fri: !binary |
-              zqA=
-
-        :format: 
-          :abbreviated: 
-            :sun: !binary |
-              zprPhc+B
-
-            :sat: !binary |
-              zqPOsc6y
-
-            :tue: !binary |
-              zqTPgc65
-
-            :wed: !binary |
-              zqTOtc+E
-
-            :thu: !binary |
-              zqDOtc68
-
-            :mon: !binary |
-              zpTOtc+F
-
-            :fri: !binary |
-              zqDOsc+B
-
-          :wide: 
-            :sun: !binary |
-              zprPhc+BzrnOsc66zq4=
-
-            :sat: !binary |
-              zqPOrM6yzrLOsc+Ezr8=
-
-            :tue: !binary |
-              zqTPgc6vz4TOtw==
-
-            :wed: !binary |
-              zqTOtc+EzqzPgc+Ezrc=
-
-            :thu: !binary |
-              zqDOrc68z4DPhM63
-
-            :mon: !binary |
-              zpTOtc+Fz4TOrc+BzrE=
-
-            :fri: !binary |
-              zqDOsc+BzrHPg866zrXPhc6u
-
-          :narrow: 
-            :sun: !binary |
-              zpo=
-
-            :sat: !binary |
-              zqM=
-
-            :tue: !binary |
-              zqQ=
-
-            :wed: !binary |
-              zqQ=
-
-            :thu: !binary |
-              zqA=
-
-            :mon: !binary |
-              zpQ=
-
-            :fri: !binary |
-              zqA=
-
+      :months:
+        :format:
+          :abbreviated:
+            1: Ιαν
+            10: Οκτ
+            11: Νοε
+            12: Δεκ
+            2: Φεβ
+            3: Μαρ
+            4: Απρ
+            5: Μαϊ
+            6: Ιουν
+            7: Ιουλ
+            8: Αυγ
+            9: Σεπ
+          :narrow:
+            1: Ι
+            10: Ο
+            11: Ν
+            12: Δ
+            2: Φ
+            3: Μ
+            4: Α
+            5: Μ
+            6: Ι
+            7: Ι
+            8: Α
+            9: Σ
+          :wide:
+            1: Ιανουαρίου
+            10: Οκτωβρίου
+            11: Νοεμβρίου
+            12: Δεκεμβρίου
+            2: Φεβρουαρίου
+            3: Μαρτίου
+            4: Απριλίου
+            5: Μαΐου
+            6: Ιουνίου
+            7: Ιουλίου
+            8: Αυγούστου
+            9: Σεπτεμβρίου
+        :stand-alone:
+          :abbreviated:
+            1: Ιαν
+            10: Οκτ
+            11: Νοέ
+            12: Δεκ
+            2: Φεβ
+            3: Μάρ
+            4: Απρ
+            5: Μάι
+            6: Ιούν
+            7: Ιούλ
+            8: Αυγ
+            9: Σεπ
+          :narrow:
+            1: Ι
+            10: Ο
+            11: Ν
+            12: Δ
+            2: Φ
+            3: Μ
+            4: Α
+            5: Μ
+            6: Ι
+            7: Ι
+            8: Α
+            9: Σ
+          :wide:
+            1: Ιανουάριος
+            10: Οκτώβριος
+            11: Νοέμβριος
+            12: Δεκέμβριος
+            2: Φεβρουάριος
+            3: Μάρτιος
+            4: Απρίλιος
+            5: Μάιος
+            6: Ιούνιος
+            7: Ιούλιος
+            8: Αύγουστος
+            9: Σεπτέμβριος
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: π.μ.
+            :pm: μ.μ.
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: Τ1
+            2: Τ2
+            3: Τ3
+            4: Τ4
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 1ο τρίμηνο
+            2: 2ο τρίμηνο
+            3: 3ο τρίμηνο
+            4: 4ο τρίμηνο
+        :stand-alone:
+          :abbreviated:
+            1: Τ1
+            2: Τ2
+            3: Τ3
+            4: Τ4
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 1ο τρίμηνο
+            2: 2ο τρίμηνο
+            3: 3ο τρίμηνο
+            4: 4ο τρίμηνο

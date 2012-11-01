@@ -9,7 +9,6 @@ end
 group :development do
   gem 'nokogiri'
   gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
-  gem 'ya2yaml', :git => "git://github.com/camertron/ya2yaml.git"
 end
 
 group :test do

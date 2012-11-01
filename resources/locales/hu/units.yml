@@ -1,130 +1,108 @@
---- 
-:hu: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: "{0} \xC3\xB3r\xC3\xA1val ezel\xC5\x91tt"
-        0: !binary |
-          MCDDs3LDoWph
-
-        1: !binary |
-          MSDDs3LDoWph
-
-    :hour: 
-      :default: 
-        :other: "{0} \xC3\xB3ra"
-      :short: 
-        :other: !binary |
-          ezB9IMOz
-
-    :"second-past": 
-      :default: 
-        :other: "{0} m\xC3\xA1sodperccel ezel\xC5\x91tt"
-        0: "0 m\xC3\xA1sodperce"
-        1: "1 m\xC3\xA1sodperce"
-    :week: 
-      :default: 
-        :other: "{0} h\xC3\xA9t"
-      :short: 
-        :other: "{0} h\xC3\xA9t"
-    :"minute-future": 
-      :default: 
-        :other: "{0} perc m\xC3\xBAlva"
-        0: "0 perc m\xC3\xBAlva"
-        1: "1 perc m\xC3\xBAlva"
-    :"week-future": 
-      :default: 
-        :other: "{0} h\xC3\xA9t m\xC3\xBAlva"
-        0: !binary |
-          MCBow6l0IG3Dumx2YQ==
-
-        1: !binary |
-          MSBow6l0IG3Dumx2YQ==
-
-    :day: 
-      :default: 
-        :other: "{0} nap"
-      :short: 
-        :other: "{0} nap"
-    :"minute-past": 
-      :default: 
-        :other: "{0} perccel ezel\xC5\x91tt"
-        0: 0 perce
-        1: 1 perce
-    :"day-future": 
-      :default: 
-        :other: "{0} nap m\xC3\xBAlva"
-        0: "0 nap m\xC3\xBAlva"
-        1: "1 nap m\xC3\xBAlva"
-    :"week-past": 
-      :default: 
-        :other: "{0} h\xC3\xA9ttel ezel\xC5\x91tt"
-        0: 0 hete
-        1: 1 hete
-    :"month-future": 
-      :default: 
-        :other: "{0} h\xC3\xB3nap m\xC3\xBAlva"
-        0: "0 h\xC3\xB3nap m\xC3\xBAlva"
-        1: "1 h\xC3\xB3nap m\xC3\xBAlva"
-    :minute: 
-      :default: 
-        :other: "{0} perc"
-      :short: 
-        :other: "{0} p"
-    :"day-past": 
-      :default: 
-        :other: "{0} nappal ezel\xC5\x91tt"
+---
+:hu:
+  :units:
+    :day:
+      :default:
+        :other: ! '{0} nap'
+      :short:
+        :other: ! '{0} nap'
+    :day-future:
+      :default:
+        0: 0 nap múlva
+        1: 1 nap múlva
+        :other: ! '{0} nap múlva'
+    :day-past:
+      :default:
         0: 0 napja
         1: 1 napja
-    :"year-future": 
-      :default: 
-        :other: "{0} \xC3\xA9v m\xC3\xBAlva"
-        0: !binary |
-          MCDDqXYgbcO6bHZh
-
-        1: !binary |
-          MSDDqXYgbcO6bHZh
-
-    :"month-past": 
-      :default: 
-        :other: "{0} h\xC3\xB3nappal ezel\xC5\x91tt"
-        0: "0 h\xC3\xB3napja"
-        1: "1 h\xC3\xB3napja"
-    :month: 
-      :default: 
-        :other: "{0} h\xC3\xB3nap"
-      :short: 
-        :other: "{0} h\xC3\xB3nap"
-    :"hour-future": 
-      :default: 
-        :other: "{0} \xC3\xB3ra m\xC3\xBAlva"
-        0: !binary |
-          MCDDs3JhIG3Dumx2YQ==
-
-        1: !binary |
-          MSDDs3JhIG3Dumx2YQ==
-
-    :second: 
-      :default: 
-        :other: "{0} m\xC3\xA1sodperc"
-      :short: 
-        :other: "{0} mp"
-    :"year-past": 
-      :default: 
-        :other: "{0} \xC3\xA9vvel ezel\xC5\x91tt"
-        0: !binary |
-          MCDDqXZl
-
-        1: !binary |
-          MSDDqXZl
-
-    :year: 
-      :default: 
-        :other: "{0} \xC3\xA9v"
-      :short: 
-        :other: "{0} \xC3\xA9v"
-    :"second-future": 
-      :default: 
-        :other: "{0} m\xC3\xA1sodperc m\xC3\xBAlva"
-        0: "0 m\xC3\xA1sodperc m\xC3\xBAlva"
-        1: "1 m\xC3\xA1sodperc m\xC3\xBAlva"
+        :other: ! '{0} nappal ezelőtt'
+    :hour:
+      :default:
+        :other: ! '{0} óra'
+      :short:
+        :other: ! '{0} ó'
+    :hour-future:
+      :default:
+        0: 0 óra múlva
+        1: 1 óra múlva
+        :other: ! '{0} óra múlva'
+    :hour-past:
+      :default:
+        0: 0 órája
+        1: 1 órája
+        :other: ! '{0} órával ezelőtt'
+    :minute:
+      :default:
+        :other: ! '{0} perc'
+      :short:
+        :other: ! '{0} p'
+    :minute-future:
+      :default:
+        0: 0 perc múlva
+        1: 1 perc múlva
+        :other: ! '{0} perc múlva'
+    :minute-past:
+      :default:
+        0: 0 perce
+        1: 1 perce
+        :other: ! '{0} perccel ezelőtt'
+    :month:
+      :default:
+        :other: ! '{0} hónap'
+      :short:
+        :other: ! '{0} hónap'
+    :month-future:
+      :default:
+        0: 0 hónap múlva
+        1: 1 hónap múlva
+        :other: ! '{0} hónap múlva'
+    :month-past:
+      :default:
+        0: 0 hónapja
+        1: 1 hónapja
+        :other: ! '{0} hónappal ezelőtt'
+    :second:
+      :default:
+        :other: ! '{0} másodperc'
+      :short:
+        :other: ! '{0} mp'
+    :second-future:
+      :default:
+        0: 0 másodperc múlva
+        1: 1 másodperc múlva
+        :other: ! '{0} másodperc múlva'
+    :second-past:
+      :default:
+        0: 0 másodperce
+        1: 1 másodperce
+        :other: ! '{0} másodperccel ezelőtt'
+    :week:
+      :default:
+        :other: ! '{0} hét'
+      :short:
+        :other: ! '{0} hét'
+    :week-future:
+      :default:
+        0: 0 hét múlva
+        1: 1 hét múlva
+        :other: ! '{0} hét múlva'
+    :week-past:
+      :default:
+        0: 0 hete
+        1: 1 hete
+        :other: ! '{0} héttel ezelőtt'
+    :year:
+      :default:
+        :other: ! '{0} év'
+      :short:
+        :other: ! '{0} év'
+    :year-future:
+      :default:
+        0: 0 év múlva
+        1: 1 év múlva
+        :other: ! '{0} év múlva'
+    :year-past:
+      :default:
+        0: 0 éve
+        1: 1 éve
+        :other: ! '{0} évvel ezelőtt'

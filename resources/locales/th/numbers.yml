@@ -1,71 +1,43 @@
---- 
-:th: 
-  :numbers: 
-    :symbols: 
-      :minus_sign: "-"
-      :alias: ""
-      :exponential: E
-      :per_mille: !binary |
-        4oCw
-
-      :group: ","
-      :infinity: !binary |
-        4oie
-
-      :percent_sign: "%"
-      :nan: NaN
-      :list: ;
-      :plus_sign: +
+---
+:th:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00;¤-#,##0.00
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 พัน
+            10000: 0.0หมื่น
+            100000: 0.0แสน
+            1000000: 0.0 ล้าน
+            10000000: 00 ล้าน
+            100000000: 000 ล'.'
+            1000000000: 0.0 พ'.'ล'.'
+            10000000000: 0.0 ม'.'ล'.'
+            100000000000: 0.0 ส'.'ล'.'
+            1000000000000: 0.0 ล'.'ล'.'
+            10000000000000: 00 ล'.'ล
+            100000000000000: 000 ล'.'ล'.'
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
       :decimal: .
-    :formats: 
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :currency: 
-        :unit: 
-          :other: "{0} {1}"
-        :patterns: 
-          :default: "\xC2\xA4#,##0.00;\xC2\xA4-#,##0.00"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            100000000000: !binary |
-              MC4wwqDguKonLifguKUnLic=
-
-            1000000000000: !binary |
-              MC4wwqDguKUnLifguKUnLic=
-
-            1000000000: !binary |
-              MC4wwqDguJ4nLifguKUnLic=
-
-            100000000000000: !binary |
-              MDAwwqDguKUnLifguKUnLic=
-
-            10000: !binary |
-              MC4w4Lir4Lih4Li34LmI4LiZ
-
-            1000000: !binary |
-              MC4wwqDguKXguYnguLLguJk=
-
-            100000000: !binary |
-              MDAwwqDguKUnLic=
-
-            10000000000: !binary |
-              MC4wwqDguKEnLifguKUnLic=
-
-            10000000000000: !binary |
-              MDDCoOC4pScuJ+C4pQ==
-
-            1000: !binary |
-              MC4wwqDguJ7guLHguJk=
-
-            100000: !binary |
-              MC4w4LmB4Liq4LiZ
-
-            10000000: !binary |
-              MDDCoOC4peC5ieC4suC4mQ==
-
+      :exponential: E
+      :group: ! ','
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

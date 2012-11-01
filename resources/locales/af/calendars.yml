@@ -1,166 +1,165 @@
---- 
-:af: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: voor Christus
-          1: na Christus
-        :narrow: 
-          0: ""
-        :abbr: 
+---
+:af:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: Vr
+            :mon: Ma
+            :sat: Sa
+            :sun: So
+            :thu: Do
+            :tue: Di
+            :wed: Wo
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
+            :fri: Vrydag
+            :mon: Maandag
+            :sat: Saterdag
+            :sun: Sondag
+            :thu: Donderdag
+            :tue: Dinsdag
+            :wed: Woensdag
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: V
+            :mon: M
+            :sat: S
+            :sun: S
+            :thu: D
+            :tue: D
+            :wed: W
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: v.C.
           1: n.C.
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :wide: :"calendars.gregorian.quarters.format.wide"
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: 
+        :name:
+          0: voor Christus
+          1: na Christus
+        :narrow:
+          0: ''
+      :fields:
+        :day: Dag
+        :dayperiod: AM/PM
+        :era: Era
+        :hour: Uur
+        :minute: Minuut
+        :month: Maand
+        :second: Sekonde
+        :week: Week
+        :weekday: Weeksdag
+        :year: Jaar
+        :zone: Tydsone
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE dd MMMM y
+          :long:
+            :pattern: dd MMMM y
+          :medium:
+            :pattern: dd MMM y
+          :short:
+            :pattern: yyyy-MM-dd
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: h:mm:ss a zzzz
+          :long:
+            :pattern: h:mm:ss a z
+          :medium:
+            :pattern: h:mm:ss a
+          :short:
+            :pattern: h:mm a
+      :months:
+        :format:
+          :abbreviated:
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Des
+            2: Feb
+            3: Mar
+            4: Apr
+            5: Mei
+            6: Jun
+            7: Jul
+            8: Aug
+            9: Sep
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: Januarie
+            10: Oktober
+            11: November
+            12: Desember
+            2: Februarie
+            3: Maart
+            4: April
+            5: Mei
+            6: Junie
+            7: Julie
+            8: Augustus
+            9: September
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
+          :wide:
+            4: April
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: vm.
+            :pm: nm.
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
             1: K1
             2: K2
             3: K3
             4: K4
-          :wide: 
-            1: 1ste kwartaal
-            2: 2de kwartaal
-            3: 3de kwartaal
-            4: 4de kwartaal
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: EEEE dd MMMM y
-          :medium: 
-            :pattern: dd MMM y
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: dd MMMM y
-          :short: 
-            :pattern: yyyy-MM-dd
-        :time: 
-          :full: 
-            :pattern: h:mm:ss a zzzz
-          :medium: 
-            :pattern: h:mm:ss a
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
-            :pattern: h:mm:ss a z
-          :short: 
-            :pattern: h:mm a
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :pm: nm.
-            :am: vm.
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :wide: 
-            4: April
-          :narrow: 
-            5: M
-            11: N
-            6: J
-            1: J
-            12: D
-            7: J
-            2: F
-            8: A
-            3: M
-            9: S
-            4: A
-            10: O
-        :format: 
-          :abbreviated: 
-            5: Mei
-            11: Nov
-            6: Jun
-            1: Jan
-            12: Des
-            7: Jul
-            2: Feb
-            8: Aug
-            3: Mar
-            9: Sep
-            4: Apr
-            10: Okt
-          :wide: 
-            5: Mei
-            11: November
-            6: Junie
-            1: Januarie
-            12: Desember
-            7: Julie
-            2: Februarie
-            8: Augustus
-            3: Maart
-            9: September
-            4: April
-            10: Oktober
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-      :fields: 
-        :hour: Uur
-        :week: Week
-        :era: Era
-        :weekday: Weeksdag
-        :day: Dag
-        :dayperiod: AM/PM
-        :minute: Minuut
-        :month: Maand
-        :second: Sekonde
-        :zone: Tydsone
-        :year: Jaar
-      :days: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :wide: :"calendars.gregorian.days.format.wide"
-          :narrow: 
-            :sun: S
-            :sat: S
-            :tue: D
-            :wed: W
-            :thu: D
-            :mon: M
-            :fri: V
-        :format: 
-          :abbreviated: 
-            :sun: So
-            :sat: Sa
-            :tue: Di
-            :wed: Wo
-            :thu: Do
-            :mon: Ma
-            :fri: Vr
-          :wide: 
-            :sun: Sondag
-            :sat: Saterdag
-            :tue: Dinsdag
-            :wed: Woensdag
-            :thu: Donderdag
-            :mon: Maandag
-            :fri: Vrydag
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
+          :wide:
+            1: 1ste kwartaal
+            2: 2de kwartaal
+            3: 3de kwartaal
+            4: 4de kwartaal
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide: :calendars.gregorian.quarters.format.wide

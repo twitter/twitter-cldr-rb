@@ -1,458 +1,192 @@
---- 
-:ru: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: !binary |
-          ezB9INGH0LDRgdCwINC90LDQt9Cw0LQ=
-
-        0: !binary |
-          MCDRh9Cw0YHQvtCyINC90LDQt9Cw0LQ=
-
-        :one: !binary |
-          ezB9INGH0LDRgSDQvdCw0LfQsNC0
-
-        1: !binary |
-          MSDRh9Cw0YEg0L3QsNC30LDQtA==
-
-        :few: !binary |
-          ezB9INGH0LDRgdCwINC90LDQt9Cw0LQ=
-
-        :many: !binary |
-          ezB9INGH0LDRgdC+0LIg0L3QsNC30LDQtA==
-
-    :hour: 
-      :default: 
-        :other: !binary |
-          ezB9INGH0LDRgdCw
-
-        :one: !binary |
-          ezB9INGH0LDRgQ==
-
-        :few: !binary |
-          ezB9INGH0LDRgdCw
-
-        :many: !binary |
-          ezB9INGH0LDRgdC+0LI=
-
-      :short: 
-        :other: "{0} \xD1\x87."
-        :one: "{0} \xD1\x87."
-        :few: "{0} \xD1\x87."
-        :many: "{0} \xD1\x87."
-    :"second-past": 
-      :default: 
-        :other: !binary |
-          ezB9INGB0LXQutGD0L3QtNGLINC90LDQt9Cw0LQ=
-
-        0: !binary |
-          MCDRgdC10LrRg9C90LQg0L3QsNC30LDQtA==
-
-        :one: !binary |
-          ezB9INGB0LXQutGD0L3QtNGDINC90LDQt9Cw0LQ=
-
-        1: !binary |
-          MSDRgdC10LrRg9C90LTRgyDQvdCw0LfQsNC0
-
-        :few: !binary |
-          ezB9INGB0LXQutGD0L3QtNGLINC90LDQt9Cw0LQ=
-
-        :many: !binary |
-          ezB9INGB0LXQutGD0L3QtCDQvdCw0LfQsNC0
-
-    :week: 
-      :default: 
-        :other: !binary |
-          ezB9INC90LXQtNC10LvQuA==
-
-        :one: !binary |
-          ezB9INC90LXQtNC10LvRjw==
-
-        :few: !binary |
-          ezB9INC90LXQtNC10LvQuA==
-
-        :many: !binary |
-          ezB9INC90LXQtNC10LvRjA==
-
-      :short: 
-        :other: !binary |
-          ezB9INC90LXQtC4=
-
-        :one: !binary |
-          ezB9INC90LXQtC4=
-
-        :few: !binary |
-          ezB9INC90LXQtC4=
-
-        :many: !binary |
-          ezB9INC90LXQtC4=
-
-    :"minute-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQuNC90YPRgtGL
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINC80LjQvdGD0YI=
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQuNC90YPRgtGD
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINC80LjQvdGD0YLRgw==
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQuNC90YPRgtGL
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQuNC90YPRgg==
-
-    :"week-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0L3QtdC00LXQu9C4
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINC90LXQtNC10LvRjA==
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0L3QtdC00LXQu9GO
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINC90LXQtNC10LvRjg==
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0L3QtdC00LXQu9C4
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0L3QtdC00LXQu9GM
-
-    :day: 
-      :default: 
-        :other: !binary |
-          ezB9INC00L3Rjw==
-
-        :one: !binary |
-          ezB9INC00LXQvdGM
-
-        :few: !binary |
-          ezB9INC00L3Rjw==
-
-        :many: !binary |
-          ezB9INC00L3QtdC5
-
-      :short: 
-        :other: !binary |
-          ezB9INC00L0u
-
-        :one: !binary |
-          ezB9INC00L0u
-
-        :few: !binary |
-          ezB9INC00L0u
-
-        :many: !binary |
-          ezB9INC00L0u
-
-    :"minute-past": 
-      :default: 
-        :other: !binary |
-          ezB9INC80LjQvdGD0YLRiyDQvdCw0LfQsNC0
-
-        0: !binary |
-          MCDQvNC40L3Rg9GCINC90LDQt9Cw0LQ=
-
-        :one: !binary |
-          ezB9INC80LjQvdGD0YLRgyDQvdCw0LfQsNC0
-
-        1: !binary |
-          MSDQvNC40L3Rg9GC0YMg0L3QsNC30LDQtA==
-
-        :few: !binary |
-          ezB9INC80LjQvdGD0YLRiyDQvdCw0LfQsNC0
-
-        :many: !binary |
-          ezB9INC80LjQvdGD0YIg0L3QsNC30LDQtA==
-
-    :"day-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LTQvdGP
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINC00L3QtdC5
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LTQtdC90Yw=
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINC00LXQvdGM
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LTQvdGP
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LTQvdC10Lk=
-
-    :"week-past": 
-      :default: 
-        :other: !binary |
-          ezB9INC90LXQtNC10LvQuCDQvdCw0LfQsNC0
-
-        0: !binary |
-          MCDQvdC10LTQtdC70Ywg0L3QsNC30LDQtA==
-
-        :one: !binary |
-          ezB9INC90LXQtNC10LvRjiDQvdCw0LfQsNC0
-
-        1: !binary |
-          MSDQvdC10LTQtdC70Y4g0L3QsNC30LDQtA==
-
-        :few: !binary |
-          ezB9INC90LXQtNC10LvQuCDQvdCw0LfQsNC0
-
-        :many: !binary |
-          ezB9INC90LXQtNC10LvRjCDQvdCw0LfQsNC0
-
-    :"month-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQtdGB0Y/RhtCw
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINC80LXRgdGP0YbQtdCy
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQtdGB0Y/Rhg==
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINC80LXRgdGP0YY=
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQtdGB0Y/RhtCw
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LzQtdGB0Y/RhtC10LI=
-
-    :minute: 
-      :default: 
-        :other: !binary |
-          ezB9INC80LjQvdGD0YLRiw==
-
-        :one: !binary |
-          ezB9INC80LjQvdGD0YLQsA==
-
-        :few: !binary |
-          ezB9INC80LjQvdGD0YLRiw==
-
-        :many: !binary |
-          ezB9INC80LjQvdGD0YI=
-
-      :short: 
-        :other: !binary |
-          ezB9INC80LjQvS4=
-
-        :one: !binary |
-          ezB9INC80LjQvS4=
-
-        :few: !binary |
-          ezB9INC80LjQvS4=
-
-        :many: !binary |
-          ezB9INC80LjQvS4=
-
-    :"day-past": 
-      :default: 
-        :other: !binary |
-          ezB9INC00L3RjyDQvdCw0LfQsNC0
-
-        0: !binary |
-          MCDQtNC90LXQuSDQvdCw0LfQsNC0
-
-        :one: !binary |
-          ezB9INC00LXQvdGMINC90LDQt9Cw0LQ=
-
-        1: !binary |
-          MSDQtNC10L3RjCDQvdCw0LfQsNC0
-
-        :few: !binary |
-          ezB9INC00L3RjyDQvdCw0LfQsNC0
-
-        :many: !binary |
-          ezB9INC00L3QtdC5INC90LDQt9Cw0LQ=
-
-    :"year-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LA=
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINC70LXRgg==
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LPQvtC0
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINCz0L7QtA==
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LA=
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0LvQtdGC
-
-    :"month-past": 
-      :default: 
-        :other: !binary |
-          ezB9INC80LXRgdGP0YbQsCDQvdCw0LfQsNC0
-
-        0: !binary |
-          MCDQvNC10YHRj9GG0LXQsiDQvdCw0LfQsNC0
-
-        :one: !binary |
-          ezB9INC80LXRgdGP0YYg0L3QsNC30LDQtA==
-
-        1: !binary |
-          MSDQvNC10YHRj9GGINC90LDQt9Cw0LQ=
-
-        :few: !binary |
-          ezB9INC80LXRgdGP0YbQsCDQvdCw0LfQsNC0
-
-        :many: !binary |
-          ezB9INC80LXRgdGP0YbQtdCyINC90LDQt9Cw0LQ=
-
-    :month: 
-      :default: 
-        :other: !binary |
-          ezB9INC80LXRgdGP0YbQsA==
-
-        :one: !binary |
-          ezB9INC80LXRgdGP0YY=
-
-        :few: !binary |
-          ezB9INC80LXRgdGP0YbQsA==
-
-        :many: !binary |
-          ezB9INC80LXRgdGP0YbQtdCy
-
-      :short: 
-        :other: !binary |
-          ezB9INC80LXRgS4=
-
-        :one: !binary |
-          ezB9INC80LXRgS4=
-
-        :few: !binary |
-          ezB9INC80LXRgS4=
-
-        :many: !binary |
-          ezB9INC80LXRgS4=
-
-    :"hour-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YfQsNGB0LA=
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINGH0LDRgdC+0LI=
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YfQsNGB
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINGH0LDRgQ==
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YfQsNGB0LA=
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YfQsNGB0L7Qsg==
-
-    :second: 
-      :default: 
-        :other: !binary |
-          ezB9INGB0LXQutGD0L3QtNGL
-
-        :one: !binary |
-          ezB9INGB0LXQutGD0L3QtNCw
-
-        :few: !binary |
-          ezB9INGB0LXQutGD0L3QtNGL
-
-        :many: !binary |
-          ezB9INGB0LXQutGD0L3QtA==
-
-      :short: 
-        :other: !binary |
-          ezB9INGB0LXQui4=
-
-        :one: !binary |
-          ezB9INGB0LXQui4=
-
-        :few: !binary |
-          ezB9INGB0LXQui4=
-
-        :many: !binary |
-          ezB9INGB0LXQui4=
-
-    :"year-past": 
-      :default: 
-        :other: !binary |
-          ezB9INCz0L7QtNCwINC90LDQt9Cw0LQ=
-
-        0: !binary |
-          MCDQu9C10YIg0L3QsNC30LDQtA==
-
-        :one: !binary |
-          ezB9INCz0L7QtCDQvdCw0LfQsNC0
-
-        1: !binary |
-          MSDQs9C+0LQg0L3QsNC30LDQtA==
-
-        :few: !binary |
-          ezB9INCz0L7QtNCwINC90LDQt9Cw0LQ=
-
-        :many: !binary |
-          ezB9INC70LXRgiDQvdCw0LfQsNC0
-
-    :year: 
-      :default: 
-        :other: !binary |
-          ezB9INCz0L7QtNCw
-
-        :one: !binary |
-          ezB9INCz0L7QtA==
-
-        :few: !binary |
-          ezB9INCz0L7QtNCw
-
-        :many: !binary |
-          ezB9INC70LXRgg==
-
-      :short: 
-        :other: "{0} \xD0\xB3."
-        :one: "{0} \xD0\xB3."
-        :few: "{0} \xD0\xB3."
-        :many: !binary |
-          ezB9INC70LXRgg==
-
-    :"second-future": 
-      :default: 
-        :other: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00Ys=
-
-        0: !binary |
-          0KfQtdGA0LXQtyAwINGB0LXQutGD0L3QtA==
-
-        :one: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00YM=
-
-        1: !binary |
-          0KfQtdGA0LXQtyAxINGB0LXQutGD0L3QtNGD
-
-        :few: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00Ys=
-
-        :many: !binary |
-          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC0
-
+---
+:ru:
+  :units:
+    :day:
+      :default:
+        :few: ! '{0} дня'
+        :many: ! '{0} дней'
+        :one: ! '{0} день'
+        :other: ! '{0} дня'
+      :short:
+        :few: ! '{0} дн.'
+        :many: ! '{0} дн.'
+        :one: ! '{0} дн.'
+        :other: ! '{0} дн.'
+    :day-future:
+      :default:
+        0: Через 0 дней
+        1: Через 1 день
+        :few: Через {0} дня
+        :many: Через {0} дней
+        :one: Через {0} день
+        :other: Через {0} дня
+    :day-past:
+      :default:
+        0: 0 дней назад
+        1: 1 день назад
+        :few: ! '{0} дня назад'
+        :many: ! '{0} дней назад'
+        :one: ! '{0} день назад'
+        :other: ! '{0} дня назад'
+    :hour:
+      :default:
+        :few: ! '{0} часа'
+        :many: ! '{0} часов'
+        :one: ! '{0} час'
+        :other: ! '{0} часа'
+      :short:
+        :few: ! '{0} ч.'
+        :many: ! '{0} ч.'
+        :one: ! '{0} ч.'
+        :other: ! '{0} ч.'
+    :hour-future:
+      :default:
+        0: Через 0 часов
+        1: Через 1 час
+        :few: Через {0} часа
+        :many: Через {0} часов
+        :one: Через {0} час
+        :other: Через {0} часа
+    :hour-past:
+      :default:
+        0: 0 часов назад
+        1: 1 час назад
+        :few: ! '{0} часа назад'
+        :many: ! '{0} часов назад'
+        :one: ! '{0} час назад'
+        :other: ! '{0} часа назад'
+    :minute:
+      :default:
+        :few: ! '{0} минуты'
+        :many: ! '{0} минут'
+        :one: ! '{0} минута'
+        :other: ! '{0} минуты'
+      :short:
+        :few: ! '{0} мин.'
+        :many: ! '{0} мин.'
+        :one: ! '{0} мин.'
+        :other: ! '{0} мин.'
+    :minute-future:
+      :default:
+        0: Через 0 минут
+        1: Через 1 минуту
+        :few: Через {0} минуты
+        :many: Через {0} минут
+        :one: Через {0} минуту
+        :other: Через {0} минуты
+    :minute-past:
+      :default:
+        0: 0 минут назад
+        1: 1 минуту назад
+        :few: ! '{0} минуты назад'
+        :many: ! '{0} минут назад'
+        :one: ! '{0} минуту назад'
+        :other: ! '{0} минуты назад'
+    :month:
+      :default:
+        :few: ! '{0} месяца'
+        :many: ! '{0} месяцев'
+        :one: ! '{0} месяц'
+        :other: ! '{0} месяца'
+      :short:
+        :few: ! '{0} мес.'
+        :many: ! '{0} мес.'
+        :one: ! '{0} мес.'
+        :other: ! '{0} мес.'
+    :month-future:
+      :default:
+        0: Через 0 месяцев
+        1: Через 1 месяц
+        :few: Через {0} месяца
+        :many: Через {0} месяцев
+        :one: Через {0} месяц
+        :other: Через {0} месяца
+    :month-past:
+      :default:
+        0: 0 месяцев назад
+        1: 1 месяц назад
+        :few: ! '{0} месяца назад'
+        :many: ! '{0} месяцев назад'
+        :one: ! '{0} месяц назад'
+        :other: ! '{0} месяца назад'
+    :second:
+      :default:
+        :few: ! '{0} секунды'
+        :many: ! '{0} секунд'
+        :one: ! '{0} секунда'
+        :other: ! '{0} секунды'
+      :short:
+        :few: ! '{0} сек.'
+        :many: ! '{0} сек.'
+        :one: ! '{0} сек.'
+        :other: ! '{0} сек.'
+    :second-future:
+      :default:
+        0: Через 0 секунд
+        1: Через 1 секунду
+        :few: Через {0} секунды
+        :many: Через {0} секунд
+        :one: Через {0} секунду
+        :other: Через {0} секунды
+    :second-past:
+      :default:
+        0: 0 секунд назад
+        1: 1 секунду назад
+        :few: ! '{0} секунды назад'
+        :many: ! '{0} секунд назад'
+        :one: ! '{0} секунду назад'
+        :other: ! '{0} секунды назад'
+    :week:
+      :default:
+        :few: ! '{0} недели'
+        :many: ! '{0} недель'
+        :one: ! '{0} неделя'
+        :other: ! '{0} недели'
+      :short:
+        :few: ! '{0} нед.'
+        :many: ! '{0} нед.'
+        :one: ! '{0} нед.'
+        :other: ! '{0} нед.'
+    :week-future:
+      :default:
+        0: Через 0 недель
+        1: Через 1 неделю
+        :few: Через {0} недели
+        :many: Через {0} недель
+        :one: Через {0} неделю
+        :other: Через {0} недели
+    :week-past:
+      :default:
+        0: 0 недель назад
+        1: 1 неделю назад
+        :few: ! '{0} недели назад'
+        :many: ! '{0} недель назад'
+        :one: ! '{0} неделю назад'
+        :other: ! '{0} недели назад'
+    :year:
+      :default:
+        :few: ! '{0} года'
+        :many: ! '{0} лет'
+        :one: ! '{0} год'
+        :other: ! '{0} года'
+      :short:
+        :few: ! '{0} г.'
+        :many: ! '{0} лет'
+        :one: ! '{0} г.'
+        :other: ! '{0} г.'
+    :year-future:
+      :default:
+        0: Через 0 лет
+        1: Через 1 год
+        :few: Через {0} года
+        :many: Через {0} лет
+        :one: Через {0} год
+        :other: Через {0} года
+    :year-past:
+      :default:
+        0: 0 лет назад
+        1: 1 год назад
+        :few: ! '{0} года назад'
+        :many: ! '{0} лет назад'
+        :one: ! '{0} год назад'
+        :other: ! '{0} года назад'

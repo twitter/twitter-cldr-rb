@@ -1,69 +1,43 @@
---- 
-:hu: 
-  :numbers: 
-    :symbols: 
-      :minus_sign: "-"
-      :alias: ""
+---
+:hu:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ! '#,##0.00 ¤'
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0 e
+            10000: 00 e
+            100000: 000 e
+            1000000: 0.0 m
+            10000000: 00 m
+            100000000: 000 m
+            1000000000: 0.0 mrd
+            10000000000: 00 mrd
+            100000000000: 000 mrd
+            1000000000000: 0.0 b
+            10000000000000: 00 b
+            100000000000000: 000 b
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
       :exponential: E
-      :per_mille: !binary |
-        4oCw
-
-      :group: !binary |
-        wqA=
-
-      :infinity: !binary |
-        4oie
-
-      :percent_sign: "%"
-      :nan: NaN
+      :group:  
+      :infinity: ∞
       :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
       :plus_sign: +
-      :decimal: ","
-    :formats: 
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :currency: 
-        :unit: 
-          :other: "{0} {1}"
-        :patterns: 
-          :default: !binary |
-            IywjIzAuMDDCoMKk
-
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            100000000000: "000\xC2\xA0mrd"
-            1000000000000: !binary |
-              MC4wwqBi
-
-            1000000000: "0.0\xC2\xA0mrd"
-            100000000000000: !binary |
-              MDAwwqBi
-
-            10000: !binary |
-              MDDCoGU=
-
-            1000000: !binary |
-              MC4wwqBt
-
-            100000000: !binary |
-              MDAwwqBt
-
-            10000000000: "00\xC2\xA0mrd"
-            10000000000000: !binary |
-              MDDCoGI=
-
-            1000: !binary |
-              MC4wwqBl
-
-            100000: !binary |
-              MDAwwqBl
-
-            10000000: !binary |
-              MDDCoG0=
-

@@ -1,136 +1,136 @@
---- 
-:fr: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: il y a {0} heures
-        0: il y a 0 heure
-        :one: il y a {0} heure
-        1: il y a 1 heure
-    :hour: 
-      :default: 
-        :other: "{0} heures"
-        :one: "{0} heure"
-      :short: 
-        :other: "{0} h"
-        :one: "{0} h"
-    :"second-past": 
-      :default: 
-        :other: il y a {0} secondes
-        0: il y a 0 seconde
-        :one: il y a {0} seconde
-        1: il y a 1 seconde
-    :week: 
-      :default: 
-        :other: "{0} semaines"
-        :one: "{0} semaine"
-      :short: 
-        :other: "{0} sem."
-        :one: "{0} sem."
-    :"minute-future": 
-      :default: 
-        :other: dans {0} minutes
-        0: dans 0 minute
-        :one: dans {0} minute
-        1: dans 1 minute
-    :"week-future": 
-      :default: 
-        :other: dans {0} semaines
-        0: dans 0 semaine
-        :one: dans {0} semaine
-        1: dans 1 semaine
-    :day: 
-      :default: 
-        :other: "{0} jours"
-        :one: "{0} jour"
-      :short: 
-        :other: "{0} j"
-        :one: "{0} j"
-    :"minute-past": 
-      :default: 
-        :other: il y a {0} minutes
-        0: il y a 0 minute
-        :one: il y a {0} minute
-        1: il y a 1 minute
-    :"day-future": 
-      :default: 
-        :other: dans {0} jours
+---
+:fr:
+  :units:
+    :day:
+      :default:
+        :one: ! '{0} jour'
+        :other: ! '{0} jours'
+      :short:
+        :one: ! '{0} j'
+        :other: ! '{0} j'
+    :day-future:
+      :default:
         0: dans 0 jour
-        :one: dans {0} jour
         1: dans 1 jour
-    :"week-past": 
-      :default: 
-        :other: il y a {0} semaines
-        0: il y a 0 semaine
-        :one: il y a {0} semaine
-        1: il y a 1 semaine
-    :"month-future": 
-      :default: 
-        :other: dans {0} mois
-        0: dans 0 mois
-        :one: dans {0} mois
-        1: dans 1 mois
-    :minute: 
-      :default: 
-        :other: "{0} minutes"
-        :one: "{0} minute"
-      :short: 
-        :other: "{0} mn"
-        :one: "{0} mn"
-    :"day-past": 
-      :default: 
-        :other: il y a {0} jours
+        :one: dans {0} jour
+        :other: dans {0} jours
+    :day-past:
+      :default:
         0: il y a 0 jour
-        :one: il y a {0} jour
         1: il y a 1 jour
-    :"year-future": 
-      :default: 
-        :other: dans {0} ans
-        0: dans 0 an
-        :one: dans {0} an
-        1: dans 1 an
-    :"month-past": 
-      :default: 
-        :other: il y a {0} mois
-        0: il y a 0 mois
-        :one: il y a {0} mois
-        1: il y a 1 mois
-    :month: 
-      :default: 
-        :other: "{0} mois"
-        :one: "{0} mois"
-      :short: 
-        :other: "{0} mois"
-        :one: "{0} mois"
-    :"hour-future": 
-      :default: 
-        :other: dans {0} heures
+        :one: il y a {0} jour
+        :other: il y a {0} jours
+    :hour:
+      :default:
+        :one: ! '{0} heure'
+        :other: ! '{0} heures'
+      :short:
+        :one: ! '{0} h'
+        :other: ! '{0} h'
+    :hour-future:
+      :default:
         0: dans 0 heure
-        :one: dans {0} heure
         1: dans 1 heure
-    :second: 
-      :default: 
-        :other: "{0} secondes"
-        :one: "{0} seconde"
-      :short: 
-        :other: "{0} s"
-        :one: "{0} s"
-    :"year-past": 
-      :default: 
-        :other: il y a {0} ans
-        0: il y a 0 an
-        :one: il y a {0} an
-        1: il y a 1 an
-    :year: 
-      :default: 
-        :other: "{0} ann\xC3\xA9es"
-        :one: "{0} ann\xC3\xA9e"
-      :short: 
-        :other: "{0} ans"
-        :one: "{0} an"
-    :"second-future": 
-      :default: 
-        :other: dans {0} secondes
+        :one: dans {0} heure
+        :other: dans {0} heures
+    :hour-past:
+      :default:
+        0: il y a 0 heure
+        1: il y a 1 heure
+        :one: il y a {0} heure
+        :other: il y a {0} heures
+    :minute:
+      :default:
+        :one: ! '{0} minute'
+        :other: ! '{0} minutes'
+      :short:
+        :one: ! '{0} mn'
+        :other: ! '{0} mn'
+    :minute-future:
+      :default:
+        0: dans 0 minute
+        1: dans 1 minute
+        :one: dans {0} minute
+        :other: dans {0} minutes
+    :minute-past:
+      :default:
+        0: il y a 0 minute
+        1: il y a 1 minute
+        :one: il y a {0} minute
+        :other: il y a {0} minutes
+    :month:
+      :default:
+        :one: ! '{0} mois'
+        :other: ! '{0} mois'
+      :short:
+        :one: ! '{0} mois'
+        :other: ! '{0} mois'
+    :month-future:
+      :default:
+        0: dans 0 mois
+        1: dans 1 mois
+        :one: dans {0} mois
+        :other: dans {0} mois
+    :month-past:
+      :default:
+        0: il y a 0 mois
+        1: il y a 1 mois
+        :one: il y a {0} mois
+        :other: il y a {0} mois
+    :second:
+      :default:
+        :one: ! '{0} seconde'
+        :other: ! '{0} secondes'
+      :short:
+        :one: ! '{0} s'
+        :other: ! '{0} s'
+    :second-future:
+      :default:
         0: dans 0 seconde
-        :one: dans {0} seconde
         1: dans 1 seconde
+        :one: dans {0} seconde
+        :other: dans {0} secondes
+    :second-past:
+      :default:
+        0: il y a 0 seconde
+        1: il y a 1 seconde
+        :one: il y a {0} seconde
+        :other: il y a {0} secondes
+    :week:
+      :default:
+        :one: ! '{0} semaine'
+        :other: ! '{0} semaines'
+      :short:
+        :one: ! '{0} sem.'
+        :other: ! '{0} sem.'
+    :week-future:
+      :default:
+        0: dans 0 semaine
+        1: dans 1 semaine
+        :one: dans {0} semaine
+        :other: dans {0} semaines
+    :week-past:
+      :default:
+        0: il y a 0 semaine
+        1: il y a 1 semaine
+        :one: il y a {0} semaine
+        :other: il y a {0} semaines
+    :year:
+      :default:
+        :one: ! '{0} année'
+        :other: ! '{0} années'
+      :short:
+        :one: ! '{0} an'
+        :other: ! '{0} ans'
+    :year-future:
+      :default:
+        0: dans 0 an
+        1: dans 1 an
+        :one: dans {0} an
+        :other: dans {0} ans
+    :year-past:
+      :default:
+        0: il y a 0 an
+        1: il y a 1 an
+        :one: il y a {0} an
+        :other: il y a {0} ans

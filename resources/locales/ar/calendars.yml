@@ -1,313 +1,152 @@
---- 
-:ar: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: !binary |
-            2YLYqNmEINin2YTZhdmK2YTYp9iv
-
-          1: !binary |
-            2YXZitmE2KfYr9mK
-
-        :narrow: 
-          0: ""
-        :abbr: 
-          0: !binary |
-            2YIu2YU=
-
-          1: !binary |
-            2YU=
-
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :wide: :"calendars.gregorian.quarters.format.wide"
-          :narrow: 
-            1: !binary |
-              2aE=
-
-            2: !binary |
-              2aI=
-
-            3: !binary |
-              2aM=
-
-            4: !binary |
-              2aQ=
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.quarters.format.wide"
-          :wide: 
-            1: !binary |
-              2KfZhNix2KjYuSDYp9mE2KPZiNmE
-
-            2: !binary |
-              2KfZhNix2KjYuSDYp9mE2KvYp9mG2Yo=
-
-            3: !binary |
-              2KfZhNix2KjYuSDYp9mE2KvYp9mE2Ks=
-
-            4: !binary |
-              2KfZhNix2KjYuSDYp9mE2LHYp9io2Lk=
-
-          :narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: "EEEE\xD8\x8C d MMMM\xD8\x8C y"
-          :medium: 
-            :pattern: !binary |
-              ZGTigI8vTU3igI8veXl5eQ==
-
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: "d MMMM\xD8\x8C y"
-          :short: 
-            :pattern: !binary |
-              ZOKAjy9N4oCPL3l5eXk=
-
-        :time: 
-          :full: 
+---
+:ar:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: الجمعة
+            :mon: الاثنين
+            :sat: السبت
+            :sun: الأحد
+            :thu: الخميس
+            :tue: الثلاثاء
+            :wed: الأربعاء
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :wide:
+            :fri: الجمعة
+            :mon: الاثنين
+            :sat: السبت
+            :sun: الأحد
+            :thu: الخميس
+            :tue: الثلاثاء
+            :wed: الأربعاء
+        :stand-alone:
+          :abbreviated:
+            :fri: الجمعة
+            :mon: الاثنين
+            :sat: السبت
+            :sun: الأحد
+            :thu: الخميس
+            :tue: الثلاثاء
+            :wed: الأربعاء
+          :narrow:
+            :fri: ج
+            :mon: ن
+            :sat: س
+            :sun: ح
+            :thu: خ
+            :tue: ث
+            :wed: ر
+          :wide:
+            :mon: الاثنين
+      :eras:
+        :abbr:
+          0: ق.م
+          1: م
+        :name:
+          0: قبل الميلاد
+          1: ميلادي
+        :narrow:
+          0: ''
+      :fields:
+        :day: يوم
+        :dayperiod: ص/م
+        :era: العصر
+        :hour: الساعات
+        :minute: الدقائق
+        :month: الشهر
+        :second: الثواني
+        :week: الأسبوع
+        :weekday: اليوم
+        :year: السنة
+        :zone: التوقيت
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE، d MMMM، y
+          :long:
+            :pattern: d MMMM، y
+          :medium:
+            :pattern: dd‏/MM‏/yyyy
+          :short:
+            :pattern: d‏/M‏/yyyy
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
             :pattern: zzzz h:mm:ss a
-          :medium: 
-            :pattern: h:mm:ss a
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
+          :long:
             :pattern: z h:mm:ss a
-          :short: 
+          :medium:
+            :pattern: h:mm:ss a
+          :short:
             :pattern: h:mm a
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :pm: !binary |
-              2YU=
-
-            :am: !binary |
-              2LU=
-
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :wide: :"calendars.gregorian.months.format.wide"
-          :narrow: 
-            5: !binary |
-              2Yg=
-
-            11: !binary |
-              2Kg=
-
-            6: !binary |
-              2YY=
-
-            1: !binary |
-              2Yo=
-
-            12: !binary |
-              2K8=
-
-            7: !binary |
-              2YQ=
-
-            2: !binary |
-              2YE=
-
-            8: !binary |
-              2Lo=
-
-            3: !binary |
-              2YU=
-
-            9: !binary |
-              2LM=
-
-            4: !binary |
-              2KM=
-
-            10: !binary |
-              2YM=
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.months.format.wide"
-          :wide: 
-            5: !binary |
-              2YXYp9mK2Yg=
-
-            11: !binary |
-              2YbZiNmB2YXYqNix
-
-            6: !binary |
-              2YrZiNmG2YrZiA==
-
-            1: !binary |
-              2YrZhtin2YrYsQ==
-
-            12: !binary |
-              2K/Zitiz2YXYqNix
-
-            7: !binary |
-              2YrZiNmE2YrZiA==
-
-            2: !binary |
-              2YHYqNix2KfZitix
-
-            8: !binary |
-              2KPYutiz2LfYsw==
-
-            3: !binary |
-              2YXYp9ix2LM=
-
-            9: !binary |
-              2LPYqNiq2YXYqNix
-
-            4: !binary |
-              2KPYqNix2YrZhA==
-
-            10: !binary |
-              2KPZg9iq2YjYqNix
-
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-      :fields: 
-        :hour: !binary |
-          2KfZhNiz2KfYudin2Ko=
-
-        :week: !binary |
-          2KfZhNij2LPYqNmI2Lk=
-
-        :era: !binary |
-          2KfZhNi52LXYsQ==
-
-        :weekday: !binary |
-          2KfZhNmK2YjZhQ==
-
-        :day: !binary |
-          2YrZiNmF
-
-        :dayperiod: !binary |
-          2LUv2YU=
-
-        :minute: !binary |
-          2KfZhNiv2YLYp9im2YI=
-
-        :month: !binary |
-          2KfZhNi02YfYsQ==
-
-        :second: !binary |
-          2KfZhNir2YjYp9mG2Yo=
-
-        :zone: !binary |
-          2KfZhNiq2YjZgtmK2Ko=
-
-        :year: !binary |
-          2KfZhNiz2YbYqQ==
-
-      :days: 
-        :"stand-alone": 
-          :abbreviated: 
-            :sun: !binary |
-              2KfZhNij2K3Yrw==
-
-            :sat: !binary |
-              2KfZhNiz2KjYqg==
-
-            :tue: !binary |
-              2KfZhNir2YTYp9ir2KfYoQ==
-
-            :wed: !binary |
-              2KfZhNij2LHYqNi52KfYoQ==
-
-            :thu: !binary |
-              2KfZhNiu2YXZitiz
-
-            :mon: !binary |
-              2KfZhNin2KvZhtmK2YY=
-
-            :fri: !binary |
-              2KfZhNis2YXYudip
-
-          :wide: 
-            :mon: !binary |
-              2KfZhNin2KvZhtmK2YY=
-
-          :narrow: 
-            :sun: !binary |
-              2K0=
-
-            :sat: !binary |
-              2LM=
-
-            :tue: !binary |
-              2Ks=
-
-            :wed: !binary |
-              2LE=
-
-            :thu: !binary |
-              2K4=
-
-            :mon: !binary |
-              2YY=
-
-            :fri: !binary |
-              2Kw=
-
-        :format: 
-          :abbreviated: 
-            :sun: !binary |
-              2KfZhNij2K3Yrw==
-
-            :sat: !binary |
-              2KfZhNiz2KjYqg==
-
-            :tue: !binary |
-              2KfZhNir2YTYp9ir2KfYoQ==
-
-            :wed: !binary |
-              2KfZhNij2LHYqNi52KfYoQ==
-
-            :thu: !binary |
-              2KfZhNiu2YXZitiz
-
-            :mon: !binary |
-              2KfZhNin2KvZhtmK2YY=
-
-            :fri: !binary |
-              2KfZhNis2YXYudip
-
-          :wide: 
-            :sun: !binary |
-              2KfZhNij2K3Yrw==
-
-            :sat: !binary |
-              2KfZhNiz2KjYqg==
-
-            :tue: !binary |
-              2KfZhNir2YTYp9ir2KfYoQ==
-
-            :wed: !binary |
-              2KfZhNij2LHYqNi52KfYoQ==
-
-            :thu: !binary |
-              2KfZhNiu2YXZitiz
-
-            :mon: !binary |
-              2KfZhNin2KvZhtmK2YY=
-
-            :fri: !binary |
-              2KfZhNis2YXYudip
-
-          :narrow: :"calendars.gregorian.days.stand-alone.narrow"
+      :months:
+        :format:
+          :abbreviated: :calendars.gregorian.months.format.wide
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: يناير
+            10: أكتوبر
+            11: نوفمبر
+            12: ديسمبر
+            2: فبراير
+            3: مارس
+            4: أبريل
+            5: مايو
+            6: يونيو
+            7: يوليو
+            8: أغسطس
+            9: سبتمبر
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
+            1: ي
+            10: ك
+            11: ب
+            12: د
+            2: ف
+            3: م
+            4: أ
+            5: و
+            6: ن
+            7: ل
+            8: غ
+            9: س
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: ص
+            :pm: م
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated: :calendars.gregorian.quarters.format.wide
+          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
+          :wide:
+            1: الربع الأول
+            2: الربع الثاني
+            3: الربع الثالث
+            4: الربع الرابع
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
+            1: ١
+            2: ٢
+            3: ٣
+            4: ٤
+          :wide: :calendars.gregorian.quarters.format.wide

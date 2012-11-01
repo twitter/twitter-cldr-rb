@@ -2,11 +2,9 @@
 
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
-$KCODE = 'UTF8' unless RUBY_VERSION >= '1.9'
 
 require 'nokogiri'
 require 'fileutils'
-require 'ya2yaml'
 
 require 'twitter_cldr/resources/download'
 
@@ -74,7 +72,7 @@ module TwitterCldr
 
         this_currencies = Hash[this_currencies.sort_by{|a,b| a.to_s <=> b.to_s}]
         File.open(File.join(@output_path, current_locale, 'currencies.yml'), 'w') do |output|
-          output.write(this_currencies.ya2yaml(:syck_compatible => true, :use_natural_symbols => true))
+          output.write(YAML.dump(this_currencies))
         end
       end
 

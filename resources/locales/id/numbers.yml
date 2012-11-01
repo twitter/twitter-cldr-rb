@@ -1,63 +1,43 @@
---- 
-:id: 
-  :numbers: 
-    :symbols: 
-      :minus_sign: "-"
-      :alias: ""
-      :exponential: E
-      :per_mille: !binary |
-        4oCw
-
-      :group: .
-      :infinity: !binary |
-        4oie
-
-      :percent_sign: "%"
-      :nan: NaN
-      :list: ;
-      :plus_sign: +
-      :decimal: ","
-    :formats: 
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :currency: 
-        :unit: 
-          :other: "{0} {1}"
-        :patterns: 
-          :default: "\xC2\xA4#,##0.00"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
-            100000000000: !binary |
-              MDAwwqBN
-
-            1000000000000: !binary |
-              MC4wwqBU
-
-            1000000000: !binary |
-              MC4wwqBN
-
-            100000000000000: !binary |
-              MDAwwqBU
-
-            10000: !binary |
-              MDDCoHJi
-
-            1000000: "0.0\xC2\xA0jt"
-            100000000: "000\xC2\xA0jt"
-            10000000000: !binary |
-              MDDCoE0=
-
-            10000000000000: !binary |
-              MDDCoFQ=
-
+---
+:id:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00
+        :unit:
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
             1000: 0
-            100000: "000\xC2\xA0rb"
-            10000000: !binary |
-              MDDCoGp0
-
+            10000: 00 rb
+            100000: 000 rb
+            1000000: 0.0 jt
+            10000000: 00 jt
+            100000000: 000 jt
+            1000000000: 0.0 M
+            10000000000: 00 M
+            100000000000: 000 M
+            1000000000000: 0.0 T
+            10000000000000: 00 T
+            100000000000000: 000 T
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
+      :exponential: E
+      :group: .
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

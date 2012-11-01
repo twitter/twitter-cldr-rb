@@ -1,130 +1,130 @@
---- 
-:nb: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: "{0} timer siden"
+---
+:nb:
+  :units:
+    :day:
+      :default:
+        :one: ! '{0} dag'
+        :other: ! '{0} dager'
+      :short:
+        :one: ! '{0} dag'
+        :other: ! '{0} dager'
+    :day-future:
+      :default:
+        0: om 0 dager
+        1: om 1 dag
+        :one: om {0} dag
+        :other: om {0} dager
+    :day-past:
+      :default:
+        0: 0 dager siden
+        1: 1 dag siden
+        :one: for {0} dag siden
+        :other: ! '{0} dager siden'
+    :hour:
+      :default:
+        :one: ! '{0} time'
+        :other: ! '{0} timer'
+      :short:
+        :one: ! '{0} t'
+        :other: ! '{0} t'
+    :hour-future:
+      :default:
+        0: om 0 timer
+        1: om 1 time
+        :one: om {0} time
+        :other: om {0} timer
+    :hour-past:
+      :default:
         0: 0 timer siden
         1: 1 time siden
-    :hour: 
-      :default: 
-        :other: "{0} timer"
-        :one: "{0} time"
-      :short: 
-        :other: "{0} t"
-        :one: "{0} t"
-    :"second-past": 
-      :default: 
-        :other: "{0} sekunder siden"
-        0: 0 sekunder siden
-        1: 1 sekund siden
-    :week: 
-      :default: 
-        :other: "{0} uker"
-        :one: "{0} uke"
-      :short: 
-        :other: "{0} uker"
-        :one: "{0} uke"
-    :"minute-future": 
-      :default: 
-        :other: om {0} minutter
+        :other: ! '{0} timer siden'
+    :minute:
+      :default:
+        :one: ! '{0} minutt'
+        :other: ! '{0} minutter'
+      :short:
+        :one: ! '{0} min'
+        :other: ! '{0} min'
+    :minute-future:
+      :default:
         0: om 0 minutter
-        :one: om {0} minutt
         1: om 1 minutt
-    :"week-future": 
-      :default: 
-        :other: om {0} uker
-        0: om 0 uker
-        :one: om {0} uke
-        1: om 1 uke
-    :day: 
-      :default: 
-        :other: "{0} dager"
-        :one: "{0} dag"
-      :short: 
-        :other: "{0} dager"
-        :one: "{0} dag"
-    :"minute-past": 
-      :default: 
-        :other: "{0} minutter siden"
+        :one: om {0} minutt
+        :other: om {0} minutter
+    :minute-past:
+      :default:
         0: 0 minutter siden
         1: 1 minutt siden
-    :"day-future": 
-      :default: 
-        :other: om {0} dager
-        0: om 0 dager
-        :one: om {0} dag
-        1: om 1 dag
-    :"week-past": 
-      :default: 
-        :other: "{0} uker siden"
+        :other: ! '{0} minutter siden'
+    :month:
+      :default:
+        :one: ! '{0} måned'
+        :other: ! '{0} måneder'
+      :short:
+        :one: ! '{0} md.'
+        :other: ! '{0} md.'
+    :month-future:
+      :default:
+        0: om 0 måneder
+        1: om 1 måned
+        :one: om {0} måned
+        :other: om {0} måneder
+    :month-past:
+      :default:
+        0: 0 måneder siden
+        1: 1 måned siden
+        :other: ! '{0} måneder siden'
+    :second:
+      :default:
+        :one: ! '{0} sekund'
+        :other: ! '{0} sekunder'
+      :short:
+        :one: ! '{0} sek'
+        :other: ! '{0} sek'
+    :second-future:
+      :default:
+        0: om 0 sekunder
+        1: om 1 sekund
+        :one: om {0} sekund
+        :other: om {0} sekunder
+    :second-past:
+      :default:
+        0: 0 sekunder siden
+        1: 1 sekund siden
+        :other: ! '{0} sekunder siden'
+    :week:
+      :default:
+        :one: ! '{0} uke'
+        :other: ! '{0} uker'
+      :short:
+        :one: ! '{0} uke'
+        :other: ! '{0} uker'
+    :week-future:
+      :default:
+        0: om 0 uker
+        1: om 1 uke
+        :one: om {0} uke
+        :other: om {0} uker
+    :week-past:
+      :default:
         0: 0 uker siden
         1: 1 uke siden
-    :"month-future": 
-      :default: 
-        :other: "om {0} m\xC3\xA5neder"
-        0: "om 0 m\xC3\xA5neder"
-        :one: "om {0} m\xC3\xA5ned"
-        1: "om 1 m\xC3\xA5ned"
-    :minute: 
-      :default: 
-        :other: "{0} minutter"
-        :one: "{0} minutt"
-      :short: 
-        :other: "{0} min"
-        :one: "{0} min"
-    :"day-past": 
-      :default: 
-        :other: "{0} dager siden"
-        0: 0 dager siden
-        :one: for {0} dag siden
-        1: 1 dag siden
-    :"year-future": 
-      :default: 
-        :other: "om {0} \xC3\xA5r"
-        0: "om 0 \xC3\xA5r"
-        :one: "om {0} \xC3\xA5r"
-        1: "om 1 \xC3\xA5r"
-    :"month-past": 
-      :default: 
-        :other: "{0} m\xC3\xA5neder siden"
-        0: "0 m\xC3\xA5neder siden"
-        1: "1 m\xC3\xA5ned siden"
-    :month: 
-      :default: 
-        :other: "{0} m\xC3\xA5neder"
-        :one: "{0} m\xC3\xA5ned"
-      :short: 
-        :other: "{0} md."
-        :one: "{0} md."
-    :"hour-future": 
-      :default: 
-        :other: om {0} timer
-        0: om 0 timer
-        :one: om {0} time
-        1: om 1 time
-    :second: 
-      :default: 
-        :other: "{0} sekunder"
-        :one: "{0} sekund"
-      :short: 
-        :other: "{0} sek"
-        :one: "{0} sek"
-    :"year-past": 
-      :default: 
-        :other: "{0} \xC3\xA5r siden"
-        0: "0 \xC3\xA5r siden"
-        1: "1 \xC3\xA5r siden"
-    :year: 
-      :default: 
-        :other: "{0} \xC3\xA5r"
-        :one: "{0} \xC3\xA5r"
-      :short: 
-        :other: "{0} \xC3\xA5r"
-        :one: "{0} \xC3\xA5r"
-    :"second-future": 
-      :default: 
-        :other: om {0} sekunder
-        0: om 0 sekunder
-        :one: om {0} sekund
-        1: om 1 sekund
+        :other: ! '{0} uker siden'
+    :year:
+      :default:
+        :one: ! '{0} år'
+        :other: ! '{0} år'
+      :short:
+        :one: ! '{0} år'
+        :other: ! '{0} år'
+    :year-future:
+      :default:
+        0: om 0 år
+        1: om 1 år
+        :one: om {0} år
+        :other: om {0} år
+    :year-past:
+      :default:
+        0: 0 år siden
+        1: 1 år siden
+        :other: ! '{0} år siden'

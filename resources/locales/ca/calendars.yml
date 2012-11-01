@@ -1,244 +1,229 @@
---- 
-:ca: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: abans de Crist
-          1: "despr\xC3\xA9s de Crist"
-        :narrow: 
-          0: ""
-        :abbr: 
+---
+:ca:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
+          :narrow:
+            :fri: V
+            :mon: l
+            :sat: S
+            :sun: G
+            :thu: J
+            :tue: T
+            :wed: C
+          :wide:
+            :fri: divendres
+            :mon: dilluns
+            :sat: dissabte
+            :sun: diumenge
+            :thu: dijous
+            :tue: dimarts
+            :wed: dimecres
+        :stand-alone:
+          :abbreviated:
+            :fri: dv
+            :mon: dl
+            :sat: ds
+            :sun: dg
+            :thu: dj
+            :tue: dt
+            :wed: dc
+          :narrow:
+            :fri: v
+            :mon: l
+            :sat: s
+            :sun: g
+            :thu: j
+            :tue: t
+            :wed: c
+          :wide:
+            :fri: Divendres
+            :mon: Dilluns
+            :sat: Dissabte
+            :sun: Diumenge
+            :thu: Dijous
+            :tue: Dimarts
+            :wed: Dimecres
+      :eras:
+        :abbr:
           0: aC
           1: dC
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: 
-            1: 1T
-            2: 2T
-            3: 3T
-            4: 4T
-          :wide: 
-            1: 1r trimestre
-            2: 2n trimestre
-            3: 3r trimestre
-            4: 4t trimestre
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: 
-            1: 1T
-            2: 2T
-            3: 3T
-            4: 4T
-          :wide: 
-            1: 1r trimestre
-            2: 2n trimestre
-            3: 3r trimestre
-            4: 4t trimestre
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: EEEE d MMMM 'de' y
-          :medium: 
-            :pattern: dd/MM/yyyy
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: d MMMM 'de' y
-          :short: 
-            :pattern: dd/MM/yy
-        :time: 
-          :full: 
-            :pattern: H:mm:ss zzzz
-          :medium: 
-            :pattern: H:mm:ss
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
-            :pattern: H:mm:ss z
-          :short: 
-            :pattern: H:mm
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :pm: p.m.
-            :am: a.m.
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: 
-            5: maig
-            11: nov.
-            6: juny
-            1: gen.
-            12: des.
-            7: jul.
-            2: febr.
-            8: ag.
-            3: !binary |
-              bWFyw6c=
-
-            9: set.
-            4: abr.
-            10: oct.
-          :wide: 
-            5: maig
-            11: novembre
-            6: juny
-            1: gener
-            12: desembre
-            7: juliol
-            2: febrer
-            8: agost
-            3: !binary |
-              bWFyw6c=
-
-            9: setembre
-            4: abril
-            10: octubre
-          :narrow: 
-            5: m
-            11: n
-            6: j
-            1: g
-            12: d
-            7: j
-            2: f
-            8: a
-            3: m
-            9: s
-            4: a
-            10: o
-        :format: 
-          :abbreviated: 
-            5: de maig
-            11: de nov.
-            6: de juny
-            1: de gen.
-            12: de des.
-            7: de jul.
-            2: de febr.
-            8: !binary |
-              ZOKAmWFnLg==
-
-            3: "de mar\xC3\xA7"
-            9: de set.
-            4: !binary |
-              ZOKAmWFici4=
-
-            10: !binary |
-              ZOKAmW9jdC4=
-
-          :wide: 
-            5: de maig
-            11: de novembre
-            6: de juny
-            1: de gener
-            12: de desembre
-            7: de juliol
-            2: de febrer
-            8: !binary |
-              ZOKAmWFnb3N0
-
-            3: "de mar\xC3\xA7"
-            9: de setembre
-            4: !binary |
-              ZOKAmWFicmls
-
-            10: "d\xE2\x80\x99octubre"
-          :narrow: 
-            5: M
-            11: N
-            6: J
-            1: G
-            12: D
-            7: G
-            2: F
-            8: A
-            3: M
-            9: S
-            4: A
-            10: O
-      :fields: 
-        :hour: hora
-        :week: setmana
-        :era: era
-        :weekday: dia de la setmana
+        :name:
+          0: abans de Crist
+          1: després de Crist
+        :narrow:
+          0: ''
+      :fields:
         :day: dia
         :dayperiod: a.m./p.m.
+        :era: era
+        :hour: hora
         :minute: minut
         :month: mes
         :second: segon
-        :zone: zona
+        :week: setmana
+        :weekday: dia de la setmana
         :year: any
-      :days: 
-        :"stand-alone": 
-          :abbreviated: 
-            :sun: dg
-            :sat: ds
-            :tue: dt
-            :wed: dc
-            :thu: dj
-            :mon: dl
-            :fri: dv
-          :wide: 
-            :sun: Diumenge
-            :sat: Dissabte
-            :tue: Dimarts
-            :wed: Dimecres
-            :thu: Dijous
-            :mon: Dilluns
-            :fri: Divendres
-          :narrow: 
-            :sun: g
-            :sat: s
-            :tue: t
-            :wed: c
-            :thu: j
-            :mon: l
-            :fri: v
-        :format: 
-          :abbreviated: 
-            :sun: dg.
-            :sat: ds.
-            :tue: dt.
-            :wed: dc.
-            :thu: dj.
-            :mon: dl.
-            :fri: dv.
-          :wide: 
-            :sun: diumenge
-            :sat: dissabte
-            :tue: dimarts
-            :wed: dimecres
-            :thu: dijous
-            :mon: dilluns
-            :fri: divendres
-          :narrow: 
-            :sun: G
-            :sat: S
-            :tue: T
-            :wed: C
-            :thu: J
-            :mon: l
-            :fri: V
+        :zone: zona
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE d MMMM 'de' y
+          :long:
+            :pattern: d MMMM 'de' y
+          :medium:
+            :pattern: dd/MM/yyyy
+          :short:
+            :pattern: dd/MM/yy
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: H:mm:ss zzzz
+          :long:
+            :pattern: H:mm:ss z
+          :medium:
+            :pattern: H:mm:ss
+          :short:
+            :pattern: H:mm
+      :months:
+        :format:
+          :abbreviated:
+            1: de gen.
+            10: d’oct.
+            11: de nov.
+            12: de des.
+            2: de febr.
+            3: de març
+            4: d’abr.
+            5: de maig
+            6: de juny
+            7: de jul.
+            8: d’ag.
+            9: de set.
+          :narrow:
+            1: G
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: G
+            8: A
+            9: S
+          :wide:
+            1: de gener
+            10: d’octubre
+            11: de novembre
+            12: de desembre
+            2: de febrer
+            3: de març
+            4: d’abril
+            5: de maig
+            6: de juny
+            7: de juliol
+            8: d’agost
+            9: de setembre
+        :stand-alone:
+          :abbreviated:
+            1: gen.
+            10: oct.
+            11: nov.
+            12: des.
+            2: febr.
+            3: març
+            4: abr.
+            5: maig
+            6: juny
+            7: jul.
+            8: ag.
+            9: set.
+          :narrow:
+            1: g
+            10: o
+            11: n
+            12: d
+            2: f
+            3: m
+            4: a
+            5: m
+            6: j
+            7: j
+            8: a
+            9: s
+          :wide:
+            1: gener
+            10: octubre
+            11: novembre
+            12: desembre
+            2: febrer
+            3: març
+            4: abril
+            5: maig
+            6: juny
+            7: juliol
+            8: agost
+            9: setembre
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :am: a.m.
+            :pm: p.m.
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 1r trimestre
+            2: 2n trimestre
+            3: 3r trimestre
+            4: 4t trimestre
+        :stand-alone:
+          :abbreviated:
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 1r trimestre
+            2: 2n trimestre
+            3: 3r trimestre
+            4: 4t trimestre

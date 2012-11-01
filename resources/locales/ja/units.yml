@@ -1,220 +1,108 @@
---- 
-:ja: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: !binary |
-          ezB95pmC6ZaT5YmN
-
-        0: !binary |
-          MCDmmYLplpPliY0=
-
-        1: !binary |
-          MSDmmYLplpPliY0=
-
-    :hour: 
-      :default: 
-        :other: !binary |
-          ezB95pmC6ZaT
-
-      :short: 
-        :other: !binary |
-          ezB95pmC6ZaT
-
-    :"second-past": 
-      :default: 
-        :other: !binary |
-          ezB956eS5YmN
-
-        0: !binary |
-          MCDnp5LliY0=
-
-        1: !binary |
-          MSDnp5LliY0=
-
-    :week: 
-      :default: 
-        :other: !binary |
-          ezB96YCx
-
-      :short: 
-        :other: !binary |
-          ezB96YCx
-
-    :"minute-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOWIhuW+jA==
-
-        0: !binary |
-          MCDliIblvow=
-
-        1: !binary |
-          MSDliIblvow=
-
-    :"week-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOmAsemWk+W+jA==
-
-        0: !binary |
-          MCDpgLHplpPlvow=
-
-        1: !binary |
-          MSDpgLHplpPlvow=
-
-    :day: 
-      :default: 
-        :other: !binary |
-          ezB95pel
-
-      :short: 
-        :other: !binary |
-          ezB95pel
-
-    :"minute-past": 
-      :default: 
-        :other: !binary |
-          ezB95YiG5YmN
-
-        0: !binary |
-          MCDliIbliY0=
-
-        1: !binary |
-          MSDliIbliY0=
-
-    :"day-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOaXpeW+jA==
-
-        0: !binary |
-          MCDml6Xlvow=
-
-        1: !binary |
-          MSDml6Xlvow=
-
-    :"week-past": 
-      :default: 
-        :other: !binary |
-          ezB96YCx5YmN
-
-        0: !binary |
-          MCDpgLHplpPliY0=
-
-        1: !binary |
-          MSDpgLHplpPliY0=
-
-    :"month-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOOBi+aciOW+jA==
-
-        0: !binary |
-          MCDjgYvmnIjlvow=
-
-        1: !binary |
-          MSDjgYvmnIjlvow=
-
-    :minute: 
-      :default: 
-        :other: !binary |
-          ezB95YiG
-
-      :short: 
-        :other: !binary |
-          ezB95YiG
-
-    :"day-past": 
-      :default: 
-        :other: !binary |
-          ezB95pel5YmN
-
-        0: !binary |
-          MCDml6XliY0=
-
-        1: !binary |
-          MSDml6XliY0=
-
-    :"year-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOW5tOW+jA==
-
-        0: !binary |
-          MCDlubTlvow=
-
-        1: !binary |
-          MSDlubTlvow=
-
-    :"month-past": 
-      :default: 
-        :other: !binary |
-          ezB944GL5pyI5YmN
-
-        0: !binary |
-          MCDjgYvmnIjliY0=
-
-        1: !binary |
-          MSDjgYvmnIjliY0=
-
-    :month: 
-      :default: 
-        :other: !binary |
-          ezB944GL5pyI
-
-      :short: 
-        :other: !binary |
-          ezB944GL5pyI
-
-    :"hour-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOaZgumWk+W+jA==
-
-        0: !binary |
-          MCDmmYLplpPlvow=
-
-        1: !binary |
-          MSDmmYLplpPlvow=
-
-    :second: 
-      :default: 
-        :other: !binary |
-          ezB956eS
-
-      :short: 
-        :other: !binary |
-          ezB956eS
-
-    :"year-past": 
-      :default: 
-        :other: !binary |
-          ezB95bm05YmN
-
-        0: !binary |
-          MCDlubTliY0=
-
-        1: !binary |
-          MSDlubTliY0=
-
-    :year: 
-      :default: 
-        :other: !binary |
-          ezB95bm0
-
-      :short: 
-        :other: !binary |
-          ezB95bm0
-
-    :"second-future": 
-      :default: 
-        :other: !binary |
-          ezB9IOenkuW+jA==
-
-        0: !binary |
-          MCDnp5Llvow=
-
-        1: !binary |
-          MSDnp5Llvow=
-
+---
+:ja:
+  :units:
+    :day:
+      :default:
+        :other: ! '{0}日'
+      :short:
+        :other: ! '{0}日'
+    :day-future:
+      :default:
+        0: 0 日後
+        1: 1 日後
+        :other: ! '{0} 日後'
+    :day-past:
+      :default:
+        0: 0 日前
+        1: 1 日前
+        :other: ! '{0}日前'
+    :hour:
+      :default:
+        :other: ! '{0}時間'
+      :short:
+        :other: ! '{0}時間'
+    :hour-future:
+      :default:
+        0: 0 時間後
+        1: 1 時間後
+        :other: ! '{0} 時間後'
+    :hour-past:
+      :default:
+        0: 0 時間前
+        1: 1 時間前
+        :other: ! '{0}時間前'
+    :minute:
+      :default:
+        :other: ! '{0}分'
+      :short:
+        :other: ! '{0}分'
+    :minute-future:
+      :default:
+        0: 0 分後
+        1: 1 分後
+        :other: ! '{0} 分後'
+    :minute-past:
+      :default:
+        0: 0 分前
+        1: 1 分前
+        :other: ! '{0}分前'
+    :month:
+      :default:
+        :other: ! '{0}か月'
+      :short:
+        :other: ! '{0}か月'
+    :month-future:
+      :default:
+        0: 0 か月後
+        1: 1 か月後
+        :other: ! '{0} か月後'
+    :month-past:
+      :default:
+        0: 0 か月前
+        1: 1 か月前
+        :other: ! '{0}か月前'
+    :second:
+      :default:
+        :other: ! '{0}秒'
+      :short:
+        :other: ! '{0}秒'
+    :second-future:
+      :default:
+        0: 0 秒後
+        1: 1 秒後
+        :other: ! '{0} 秒後'
+    :second-past:
+      :default:
+        0: 0 秒前
+        1: 1 秒前
+        :other: ! '{0}秒前'
+    :week:
+      :default:
+        :other: ! '{0}週'
+      :short:
+        :other: ! '{0}週'
+    :week-future:
+      :default:
+        0: 0 週間後
+        1: 1 週間後
+        :other: ! '{0} 週間後'
+    :week-past:
+      :default:
+        0: 0 週間前
+        1: 1 週間前
+        :other: ! '{0}週前'
+    :year:
+      :default:
+        :other: ! '{0}年'
+      :short:
+        :other: ! '{0}年'
+    :year-future:
+      :default:
+        0: 0 年後
+        1: 1 年後
+        :other: ! '{0} 年後'
+    :year-past:
+      :default:
+        0: 0 年前
+        1: 1 年前
+        :other: ! '{0}年前'

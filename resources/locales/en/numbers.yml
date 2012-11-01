@@ -1,48 +1,44 @@
---- 
-:en: 
-  :numbers: 
-    :symbols: 
-      :minus_sign: "-"
-      :alias: ""
-      :exponential: E
-      :per_mille: !binary |
-        4oCw
-
-      :group: ","
-      :infinity: !binary |
-        4oie
-
-      :percent_sign: "%"
-      :nan: NaN
-      :list: ;
-      :plus_sign: +
-      :decimal: .
-    :formats: 
-      :scientific: 
-        :patterns: 
-          :default: "#E0"
-      :percent: 
-        :patterns: 
-          :default: "#,##0%"
-      :currency: 
-        :unit: 
-          :other: "{0} {1}"
-          :one: "{0} {1}"
-        :patterns: 
-          :default: "\xC2\xA4#,##0.00;(\xC2\xA4#,##0.00)"
-      :decimal: 
-        :patterns: 
-          :default: "#,##0.###"
-          :short: 
+---
+:en:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00;(¤#,##0.00)
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :short:
+            1000: 0.0K
+            10000: 00K
+            100000: 000K
+            1000000: 0.0M
+            10000000: 00M
+            100000000: 000M
+            1000000000: 0.0B
+            10000000000: 00B
             100000000000: 000B
             1000000000000: 0.0T
-            1000000000: 0.0B
-            100000000000000: 000T
-            10000: 00K
-            1000000: 0.0M
-            100000000: 000M
-            10000000000: 00B
             10000000000000: 00T
-            1000: 0.0K
-            100000: 000K
-            10000000: 00M
+            100000000000000: 000T
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: .
+      :exponential: E
+      :group: ! ','
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

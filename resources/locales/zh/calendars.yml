@@ -1,524 +1,235 @@
---- 
-:zh: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: ""
-        :narrow: 
-          0: ""
-        :abbr: 
-          0: !binary |
-            5YWs5YWD5YmN
-
-          1: !binary |
-            5YWs5YWD
-
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: 
-            1: !binary |
-              5LiA5a2j5bqm
-
-            2: !binary |
-              5LqM5a2j5bqm
-
-            3: !binary |
-              5LiJ5a2j5bqm
-
-            4: !binary |
-              5Zub5a2j5bqm
-
-          :wide: 
-            1: !binary |
-              56ys5LiA5a2j5bqm
-
-            2: !binary |
-              56ys5LqM5a2j5bqm
-
-            3: !binary |
-              56ys5LiJ5a2j5bqm
-
-            4: !binary |
-              56ys5Zub5a2j5bqm
-
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: 
-            1: !binary |
-              MeWtow==
-
-            2: !binary |
-              MuWtow==
-
-            3: !binary |
-              M+Wtow==
-
-            4: !binary |
-              NOWtow==
-
-          :wide: 
-            1: !binary |
-              56ysMeWto+W6pg==
-
-            2: !binary |
-              56ysMuWto+W6pg==
-
-            3: !binary |
-              56ysM+Wto+W6pg==
-
-            4: !binary |
-              56ysNOWto+W6pg==
-
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}}{{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}}{{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: !binary |
-              eeW5tE3mnIhk5pelRUVFRQ==
-
-          :medium: 
+---
+:zh:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: 周五
+            :mon: 周一
+            :sat: 周六
+            :sun: 周日
+            :thu: 周四
+            :tue: 周二
+            :wed: 周三
+          :narrow:
+            :fri: 五
+            :mon: 一
+            :sat: 六
+            :sun: 日
+            :thu: 四
+            :tue: 二
+            :wed: 三
+          :wide:
+            :fri: 星期五
+            :mon: 星期一
+            :sat: 星期六
+            :sun: 星期日
+            :thu: 星期四
+            :tue: 星期二
+            :wed: 星期三
+        :stand-alone:
+          :abbreviated:
+            :fri: 周五
+            :mon: 周一
+            :sat: 周六
+            :sun: 周日
+            :thu: 周四
+            :tue: 周二
+            :wed: 周三
+          :narrow:
+            :fri: 五
+            :mon: 一
+            :sat: 六
+            :sun: 日
+            :thu: 四
+            :tue: 二
+            :wed: 三
+          :wide:
+            :fri: 星期五
+            :mon: 星期一
+            :sat: 星期六
+            :sun: 星期日
+            :thu: 星期四
+            :tue: 星期二
+            :wed: 星期三
+      :eras:
+        :abbr:
+          0: 公元前
+          1: 公元
+        :name:
+          0: ''
+        :narrow:
+          0: ''
+      :fields:
+        :day: 日
+        :dayperiod: 上午/下午
+        :era: 时期
+        :hour: 小时
+        :minute: 分钟
+        :month: 月
+        :second: 秒钟
+        :week: 周
+        :weekday: 周天
+        :year: 年
+        :zone: 区域
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: y年M月d日EEEE
+          :long:
+            :pattern: y年M月d日
+          :medium:
             :pattern: yyyy-M-d
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: !binary |
-              eeW5tE3mnIhk5pel
-
-          :short: 
+          :short:
             :pattern: yy-M-d
-        :time: 
-          :full: 
-            :pattern: !binary |
-              enp6emFo5pe2bW3liIZzc+enkg==
-
-          :medium: 
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}}{{time}}'
+          :long:
+            :pattern: ! '{{date}}{{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: zzzzah时mm分ss秒
+          :long:
+            :pattern: zah时mm分ss秒
+          :medium:
             :pattern: ah:mm:ss
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
-            :pattern: !binary |
-              emFo5pe2bW3liIZzc+enkg==
-
-          :short: 
+          :short:
             :pattern: ah:mm
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
-          :wide: 
-            :weeHours: !binary |
-              5YeM5pmo
-
-            :noon: !binary |
-              5Lit5Y2I
-
-            :afternoon: !binary |
-              5LiL5Y2I
-
-            :pm: !binary |
-              5LiL5Y2I
-
-            :earlyMorning: !binary |
-              5riF5pmo
-
-            :am: !binary |
-              5LiK5Y2I
-
-            :morning: !binary |
-              5LiK5Y2I
-
-            :midDay: !binary |
-              5Lit5Y2I
-
-            :night: !binary |
-              5pma5LiK
-
-          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
-      :months: 
-        :"stand-alone": 
-          :abbreviated: 
-            5: !binary |
-              5LqU5pyI
-
-            11: !binary |
-              5Y2B5LiA5pyI
-
-            6: !binary |
-              5YWt5pyI
-
-            1: !binary |
-              5LiA5pyI
-
-            12: !binary |
-              5Y2B5LqM5pyI
-
-            7: !binary |
-              5LiD5pyI
-
-            2: !binary |
-              5LqM5pyI
-
-            8: !binary |
-              5YWr5pyI
-
-            3: !binary |
-              5LiJ5pyI
-
-            9: !binary |
-              5Lmd5pyI
-
-            4: !binary |
-              5Zub5pyI
-
-            10: !binary |
-              5Y2B5pyI
-
-          :wide: 
-            5: !binary |
-              5LqU5pyI
-
-            11: !binary |
-              5Y2B5LiA5pyI
-
-            6: !binary |
-              5YWt5pyI
-
-            1: !binary |
-              5LiA5pyI
-
-            12: !binary |
-              5Y2B5LqM5pyI
-
-            7: !binary |
-              5LiD5pyI
-
-            2: !binary |
-              5LqM5pyI
-
-            8: !binary |
-              5YWr5pyI
-
-            3: !binary |
-              5LiJ5pyI
-
-            9: !binary |
-              5Lmd5pyI
-
-            4: !binary |
-              5Zub5pyI
-
-            10: !binary |
-              5Y2B5pyI
-
-          :narrow: 
-            5: !binary |
-              NeaciA==
-
-            11: !binary |
-              MTHmnIg=
-
-            6: !binary |
-              NuaciA==
-
-            1: !binary |
-              MeaciA==
-
-            12: !binary |
-              MTLmnIg=
-
-            7: !binary |
-              N+aciA==
-
-            2: !binary |
-              MuaciA==
-
-            8: !binary |
-              OOaciA==
-
-            3: !binary |
-              M+aciA==
-
-            9: !binary |
-              OeaciA==
-
-            4: !binary |
-              NOaciA==
-
-            10: !binary |
-              MTDmnIg=
-
-        :format: 
-          :abbreviated: 
-            5: !binary |
-              NeaciA==
-
-            11: !binary |
-              MTHmnIg=
-
-            6: !binary |
-              NuaciA==
-
-            1: !binary |
-              MeaciA==
-
-            12: !binary |
-              MTLmnIg=
-
-            7: !binary |
-              N+aciA==
-
-            2: !binary |
-              MuaciA==
-
-            8: !binary |
-              OOaciA==
-
-            3: !binary |
-              M+aciA==
-
-            9: !binary |
-              OeaciA==
-
-            4: !binary |
-              NOaciA==
-
-            10: !binary |
-              MTDmnIg=
-
-          :wide: 
-            5: !binary |
-              NeaciA==
-
-            11: !binary |
-              MTHmnIg=
-
-            6: !binary |
-              NuaciA==
-
-            1: !binary |
-              MeaciA==
-
-            12: !binary |
-              MTLmnIg=
-
-            7: !binary |
-              N+aciA==
-
-            2: !binary |
-              MuaciA==
-
-            8: !binary |
-              OOaciA==
-
-            3: !binary |
-              M+aciA==
-
-            9: !binary |
-              OeaciA==
-
-            4: !binary |
-              NOaciA==
-
-            10: !binary |
-              MTDmnIg=
-
-          :narrow: 
-            5: 5
-            11: 11
-            6: 6
+      :months:
+        :format:
+          :abbreviated:
+            1: 1月
+            10: 10月
+            11: 11月
+            12: 12月
+            2: 2月
+            3: 3月
+            4: 4月
+            5: 5月
+            6: 6月
+            7: 7月
+            8: 8月
+            9: 9月
+          :narrow:
             1: 1
-            12: 12
-            7: 7
-            2: 2
-            8: 8
-            3: 3
-            9: 9
-            4: 4
             10: 10
-      :fields: 
-        :hour: !binary |
-          5bCP5pe2
-
-        :week: !binary |
-          5ZGo
-
-        :era: !binary |
-          5pe25pyf
-
-        :weekday: !binary |
-          5ZGo5aSp
-
-        :day: !binary |
-          5pel
-
-        :dayperiod: !binary |
-          5LiK5Y2IL+S4i+WNiA==
-
-        :minute: !binary |
-          5YiG6ZKf
-
-        :month: !binary |
-          5pyI
-
-        :second: !binary |
-          56eS6ZKf
-
-        :zone: !binary |
-          5Yy65Z+f
-
-        :year: !binary |
-          5bm0
-
-      :days: 
-        :"stand-alone": 
-          :abbreviated: 
-            :sun: !binary |
-              5ZGo5pel
-
-            :sat: !binary |
-              5ZGo5YWt
-
-            :tue: !binary |
-              5ZGo5LqM
-
-            :wed: !binary |
-              5ZGo5LiJ
-
-            :thu: !binary |
-              5ZGo5Zub
-
-            :mon: !binary |
-              5ZGo5LiA
-
-            :fri: !binary |
-              5ZGo5LqU
-
-          :wide: 
-            :sun: !binary |
-              5pif5pyf5pel
-
-            :sat: !binary |
-              5pif5pyf5YWt
-
-            :tue: !binary |
-              5pif5pyf5LqM
-
-            :wed: !binary |
-              5pif5pyf5LiJ
-
-            :thu: !binary |
-              5pif5pyf5Zub
-
-            :mon: !binary |
-              5pif5pyf5LiA
-
-            :fri: !binary |
-              5pif5pyf5LqU
-
-          :narrow: 
-            :sun: !binary |
-              5pel
-
-            :sat: !binary |
-              5YWt
-
-            :tue: !binary |
-              5LqM
-
-            :wed: !binary |
-              5LiJ
-
-            :thu: !binary |
-              5Zub
-
-            :mon: !binary |
-              5LiA
-
-            :fri: !binary |
-              5LqU
-
-        :format: 
-          :abbreviated: 
-            :sun: !binary |
-              5ZGo5pel
-
-            :sat: !binary |
-              5ZGo5YWt
-
-            :tue: !binary |
-              5ZGo5LqM
-
-            :wed: !binary |
-              5ZGo5LiJ
-
-            :thu: !binary |
-              5ZGo5Zub
-
-            :mon: !binary |
-              5ZGo5LiA
-
-            :fri: !binary |
-              5ZGo5LqU
-
-          :wide: 
-            :sun: !binary |
-              5pif5pyf5pel
-
-            :sat: !binary |
-              5pif5pyf5YWt
-
-            :tue: !binary |
-              5pif5pyf5LqM
-
-            :wed: !binary |
-              5pif5pyf5LiJ
-
-            :thu: !binary |
-              5pif5pyf5Zub
-
-            :mon: !binary |
-              5pif5pyf5LiA
-
-            :fri: !binary |
-              5pif5pyf5LqU
-
-          :narrow: 
-            :sun: !binary |
-              5pel
-
-            :sat: !binary |
-              5YWt
-
-            :tue: !binary |
-              5LqM
-
-            :wed: !binary |
-              5LiJ
-
-            :thu: !binary |
-              5Zub
-
-            :mon: !binary |
-              5LiA
-
-            :fri: !binary |
-              5LqU
-
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
+          :wide:
+            1: 1月
+            10: 10月
+            11: 11月
+            12: 12月
+            2: 2月
+            3: 3月
+            4: 4月
+            5: 5月
+            6: 6月
+            7: 7月
+            8: 8月
+            9: 9月
+        :stand-alone:
+          :abbreviated:
+            1: 一月
+            10: 十月
+            11: 十一月
+            12: 十二月
+            2: 二月
+            3: 三月
+            4: 四月
+            5: 五月
+            6: 六月
+            7: 七月
+            8: 八月
+            9: 九月
+          :narrow:
+            1: 1月
+            10: 10月
+            11: 11月
+            12: 12月
+            2: 2月
+            3: 3月
+            4: 4月
+            5: 5月
+            6: 6月
+            7: 7月
+            8: 8月
+            9: 9月
+          :wide:
+            1: 一月
+            10: 十月
+            11: 十一月
+            12: 十二月
+            2: 二月
+            3: 三月
+            4: 四月
+            5: 五月
+            6: 六月
+            7: 七月
+            8: 八月
+            9: 九月
+      :periods:
+        :format:
+          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :wide:
+            :afternoon: 下午
+            :am: 上午
+            :earlyMorning: 清晨
+            :midDay: 中午
+            :morning: 上午
+            :night: 晚上
+            :noon: 中午
+            :pm: 下午
+            :weeHours: 凌晨
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
+            1: 1季
+            2: 2季
+            3: 3季
+            4: 4季
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 第1季度
+            2: 第2季度
+            3: 第3季度
+            4: 第4季度
+        :stand-alone:
+          :abbreviated:
+            1: 一季度
+            2: 二季度
+            3: 三季度
+            4: 四季度
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide:
+            1: 第一季度
+            2: 第二季度
+            3: 第三季度
+            4: 第四季度

@@ -1,175 +1,174 @@
---- 
-:eu: 
-  :calendars: 
-    :gregorian: 
-      :eras: 
-        :name: 
-          0: ""
-        :narrow: 
-          0: ""
-        :abbr: 
+---
+:eu:
+  :calendars:
+    :gregorian:
+      :days:
+        :format:
+          :abbreviated:
+            :fri: or
+            :mon: al
+            :sat: lr
+            :sun: ig
+            :thu: og
+            :tue: as
+            :wed: az
+          :narrow:
+            :fri: O
+            :mon: M
+            :sat: I
+            :sun: I
+            :thu: A
+            :tue: A
+            :wed: A
+          :wide:
+            :fri: ostirala
+            :mon: astelehena
+            :sat: larunbata
+            :sun: igandea
+            :thu: osteguna
+            :tue: asteartea
+            :wed: asteazkena
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :narrow:
+            :fri: O
+            :mon: M
+            :sat: I
+            :sun: I
+            :thu: A
+            :tue: A
+            :wed: L
+          :wide: :calendars.gregorian.days.format.wide
+      :eras:
+        :abbr:
           0: K.a.
           1: K.o.
-      :quarters: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
-          :wide: :"calendars.gregorian.quarters.format.wide"
-          :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-        :format: 
-          :abbreviated: 
+        :name:
+          0: ''
+        :narrow:
+          0: ''
+      :fields:
+        :day: Eguna
+        :dayperiod: AM//PM
+        :era: Aroa
+        :hour: Ordua
+        :minute: Minutuak
+        :month: Hilabetea
+        :second: Segundoak
+        :week: Astea
+        :weekday: Asteguna
+        :year: Urtea
+        :zone: Ordu-eremua
+      :formats:
+        :date:
+          :default: :calendars.gregorian.formats.date.medium
+          :full:
+            :pattern: EEEE, y'eko' MMMM'ren' dd'a'
+          :long:
+            :pattern: y'eko' MMM'ren' dd'a'
+          :medium:
+            :pattern: y MMM d
+          :short:
+            :pattern: yyyy-MM-dd
+        :datetime:
+          :default: :calendars.gregorian.formats.datetime.medium
+          :full:
+            :pattern: ! '{{date}} {{time}}'
+          :long:
+            :pattern: ! '{{date}} {{time}}'
+          :medium:
+            :pattern: ! '{{date}} {{time}}'
+          :short:
+            :pattern: ! '{{date}} {{time}}'
+        :time:
+          :default: :calendars.gregorian.formats.time.medium
+          :full:
+            :pattern: HH:mm:ss zzzz
+          :long:
+            :pattern: HH:mm:ss z
+          :medium:
+            :pattern: HH:mm:ss
+          :short:
+            :pattern: HH:mm
+      :months:
+        :format:
+          :abbreviated:
+            1: urt
+            10: urr
+            11: aza
+            12: abe
+            2: ots
+            3: mar
+            4: api
+            5: mai
+            6: eka
+            7: uzt
+            8: abu
+            9: ira
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :wide:
+            1: urtarrila
+            10: urria
+            11: azaroa
+            12: abendua
+            2: otsaila
+            3: martxoa
+            4: apirila
+            5: maiatza
+            6: ekaina
+            7: uztaila
+            8: abuztua
+            9: iraila
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :narrow:
+            1: U
+            10: U
+            11: A
+            12: A
+            2: O
+            3: M
+            4: A
+            5: M
+            6: E
+            7: U
+            8: A
+            9: I
+          :wide: :calendars.gregorian.months.format.wide
+      :periods:
+        :format:
+          :abbreviated:
+            :am: AM
+            :pm: PM
+          :narrow:
+            :am: a
+            :pm: p
+          :wide:
+            :am: AM
+            :pm: PM
+        :stand-alone: {}
+      :quarters:
+        :format:
+          :abbreviated:
             1: 1Hh
             2: 2Hh
             3: 3Hh
             4: 4Hh
-          :wide: 
-            1: 1. hiruhilekoa
-            2: 2. hiruhilekoa
-            3: 3. hiruhilekoa
-            4: 4. hiruhilekoa
-          :narrow: 
+          :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-      :formats: 
-        :datetime: 
-          :full: 
-            :pattern: "{{date}} {{time}}"
-          :medium: 
-            :pattern: "{{date}} {{time}}"
-          :default: :"calendars.gregorian.formats.datetime.medium"
-          :long: 
-            :pattern: "{{date}} {{time}}"
-          :short: 
-            :pattern: "{{date}} {{time}}"
-        :date: 
-          :full: 
-            :pattern: EEEE, y'eko' MMMM'ren' dd'a'
-          :medium: 
-            :pattern: y MMM d
-          :default: :"calendars.gregorian.formats.date.medium"
-          :long: 
-            :pattern: y'eko' MMM'ren' dd'a'
-          :short: 
-            :pattern: yyyy-MM-dd
-        :time: 
-          :full: 
-            :pattern: HH:mm:ss zzzz
-          :medium: 
-            :pattern: HH:mm:ss
-          :default: :"calendars.gregorian.formats.time.medium"
-          :long: 
-            :pattern: HH:mm:ss z
-          :short: 
-            :pattern: HH:mm
-      :periods: 
-        :"stand-alone": {}
-
-        :format: 
-          :abbreviated: 
-            :pm: PM
-            :am: AM
-          :wide: 
-            :pm: PM
-            :am: AM
-          :narrow: 
-            :pm: p
-            :am: a
-      :months: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.months.format.abbreviated"
-          :wide: :"calendars.gregorian.months.format.wide"
-          :narrow: 
-            5: M
-            11: A
-            6: E
-            1: U
-            12: A
-            7: U
-            2: O
-            8: A
-            3: M
-            9: I
-            4: A
-            10: U
-        :format: 
-          :abbreviated: 
-            5: mai
-            11: aza
-            6: eka
-            1: urt
-            12: abe
-            7: uzt
-            2: ots
-            8: abu
-            3: mar
-            9: ira
-            4: api
-            10: urr
-          :wide: 
-            5: maiatza
-            11: azaroa
-            6: ekaina
-            1: urtarrila
-            12: abendua
-            7: uztaila
-            2: otsaila
-            8: abuztua
-            3: martxoa
-            9: iraila
-            4: apirila
-            10: urria
-          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
-      :fields: 
-        :hour: Ordua
-        :week: Astea
-        :era: Aroa
-        :weekday: Asteguna
-        :day: Eguna
-        :dayperiod: AM//PM
-        :minute: Minutuak
-        :month: Hilabetea
-        :second: Segundoak
-        :zone: Ordu-eremua
-        :year: Urtea
-      :days: 
-        :"stand-alone": 
-          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
-          :wide: :"calendars.gregorian.days.format.wide"
-          :narrow: 
-            :sun: I
-            :sat: I
-            :tue: A
-            :wed: L
-            :thu: A
-            :mon: M
-            :fri: O
-        :format: 
-          :abbreviated: 
-            :sun: ig
-            :sat: lr
-            :tue: as
-            :wed: az
-            :thu: og
-            :mon: al
-            :fri: or
-          :wide: 
-            :sun: igandea
-            :sat: larunbata
-            :tue: asteartea
-            :wed: asteazkena
-            :thu: osteguna
-            :mon: astelehena
-            :fri: ostirala
-          :narrow: 
-            :sun: I
-            :sat: I
-            :tue: A
-            :wed: A
-            :thu: A
-            :mon: M
-            :fri: O
+          :wide:
+            1: 1. hiruhilekoa
+            2: 2. hiruhilekoa
+            3: 3. hiruhilekoa
+            4: 4. hiruhilekoa
+        :stand-alone:
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :narrow:
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+          :wide: :calendars.gregorian.quarters.format.wide

@@ -1,129 +1,129 @@
---- 
-:eu: 
-  :units: 
-    :"hour-past": 
-      :default: 
-        :other: Duela {0} ordu
-        0: Duela 0 ordu
-        1: Duela ordubete
-    :hour: 
-      :default: 
-        :other: "{0} h"
-        :one: "{0} ordua"
-      :short: 
-        :other: "{0} ordu"
-        1: 1 ordu
-    :"second-past": 
-      :default: 
-        :other: Duela {0} segundo
-        0: Duela 0 segundo
-        1: Duela 1 segundo
-    :week: 
-      :default: 
-        :other: "{0} aste"
-        :one: "{0} aste"
-      :short: 
-        :other: "{0} aste"
-        0: 0 aste
-        1: 1 aste
-    :"minute-future": 
-      :default: 
-        :other: "{0} minutu barru"
-        0: 0 minutu barru
-        1: 1 minutu barru
-    :"week-future": 
-      :default: 
-        :other: "{0} aste barru"
-        0: 0 aste barru
-        1: 1 aste barru
-    :day: 
-      :default: 
-        :other: "{0} egun"
-        :one: "{0} eguna"
-      :short: 
-        :other: "{0} egun"
+---
+:eu:
+  :units:
+    :day:
+      :default:
+        :one: ! '{0} eguna'
+        :other: ! '{0} egun'
+      :short:
         0: 0 egun
         1: 1 egun
-    :"minute-past": 
-      :default: 
-        :other: Duela {0} minutu
-        0: Duela 0 minutu
-        1: Duela 1 minutu
-    :"day-future": 
-      :default: 
-        :other: "{0} egun barru"
+        :other: ! '{0} egun'
+    :day-future:
+      :default:
         0: 0 egun barru
         1: 1 egun barru
-    :"week-past": 
-      :default: 
-        :other: Duela {0} aste
-        0: Duela 0 aste
-        1: Duela 1 aste
-    :"month-future": 
-      :default: 
-        :other: "{0} hilabete barru"
-        0: 0 hilabete barru
-        1: 1 hilabete barru
-    :minute: 
-      :default: 
-        :other: "{0} minutu"
-        :one: "{0} minutu"
-      :short: 
-        :other: "{0} minutu"
-        1: 1 minutu
-    :"day-past": 
-      :default: 
-        :other: Duela {0} egun
+        :other: ! '{0} egun barru'
+    :day-past:
+      :default:
         0: Duela 0 egun
         1: Duela 1 egun
-    :"year-future": 
-      :default: 
-        :other: "{0} urte barru"
-        0: 0 urte barru
-        1: 1 urte barru
-    :"month-past": 
-      :default: 
-        :other: Duela {0} hilabete
-        0: Duela 0 hilabete
-        1: Duela 1 hilabete
-    :month: 
-      :default: 
-        :other: "{0} hilabete"
-        0: 0 hilabete
-        :one: "{0} hilea"
-        1: 1 hilabete
-      :short: 
-        :other: "{0} hilabete"
-        0: 0 hilabete
-        1: 1 hilabete
-    :"hour-future": 
-      :default: 
-        :other: "{0} ordu barru"
+        :other: Duela {0} egun
+    :hour:
+      :default:
+        :one: ! '{0} ordua'
+        :other: ! '{0} h'
+      :short:
+        1: 1 ordu
+        :other: ! '{0} ordu'
+    :hour-future:
+      :default:
         0: 0 ordu barru
         1: 1 ordu barru
-    :second: 
-      :default: 
-        :other: "{0} s"
-        :one: "{0} segundo"
-      :short: 
-        :other: "{0} seg."
+        :other: ! '{0} ordu barru'
+    :hour-past:
+      :default:
+        0: Duela 0 ordu
+        1: Duela ordubete
+        :other: Duela {0} ordu
+    :minute:
+      :default:
+        :one: ! '{0} minutu'
+        :other: ! '{0} minutu'
+      :short:
+        1: 1 minutu
+        :other: ! '{0} minutu'
+    :minute-future:
+      :default:
+        0: 0 minutu barru
+        1: 1 minutu barru
+        :other: ! '{0} minutu barru'
+    :minute-past:
+      :default:
+        0: Duela 0 minutu
+        1: Duela 1 minutu
+        :other: Duela {0} minutu
+    :month:
+      :default:
+        0: 0 hilabete
+        1: 1 hilabete
+        :one: ! '{0} hilea'
+        :other: ! '{0} hilabete'
+      :short:
+        0: 0 hilabete
+        1: 1 hilabete
+        :other: ! '{0} hilabete'
+    :month-future:
+      :default:
+        0: 0 hilabete barru
+        1: 1 hilabete barru
+        :other: ! '{0} hilabete barru'
+    :month-past:
+      :default:
+        0: Duela 0 hilabete
+        1: Duela 1 hilabete
+        :other: Duela {0} hilabete
+    :second:
+      :default:
+        :one: ! '{0} segundo'
+        :other: ! '{0} s'
+      :short:
         0: 0 seg.
         1: 1 seg.
-    :"year-past": 
-      :default: 
-        :other: Duela {0} urte
-        0: Duela 0 urte
-        1: Duela 1 urte
-    :year: 
-      :default: 
-        :other: "{0} urte"
-        :one: "{0} urtea"
-      :short: 
-        :other: "{0} urte"
-        0: 0 urte
-        1: 1 urte
-    :"second-future": 
-      :default: 
-        :other: "{0} segundo barru"
+        :other: ! '{0} seg.'
+    :second-future:
+      :default:
         0: 0 segundo barru
         1: 1 segundo barru
+        :other: ! '{0} segundo barru'
+    :second-past:
+      :default:
+        0: Duela 0 segundo
+        1: Duela 1 segundo
+        :other: Duela {0} segundo
+    :week:
+      :default:
+        :one: ! '{0} aste'
+        :other: ! '{0} aste'
+      :short:
+        0: 0 aste
+        1: 1 aste
+        :other: ! '{0} aste'
+    :week-future:
+      :default:
+        0: 0 aste barru
+        1: 1 aste barru
+        :other: ! '{0} aste barru'
+    :week-past:
+      :default:
+        0: Duela 0 aste
+        1: Duela 1 aste
+        :other: Duela {0} aste
+    :year:
+      :default:
+        :one: ! '{0} urtea'
+        :other: ! '{0} urte'
+      :short:
+        0: 0 urte
+        1: 1 urte
+        :other: ! '{0} urte'
+    :year-future:
+      :default:
+        0: 0 urte barru
+        1: 1 urte barru
+        :other: ! '{0} urte barru'
+    :year-past:
+      :default:
+        0: Duela 0 urte
+        1: Duela 1 urte
+        :other: Duela {0} urte

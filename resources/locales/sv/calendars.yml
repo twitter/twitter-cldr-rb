@@ -1,236 +1,252 @@
----
-:sv:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: fre
-            :mon: mån
-            :sat: lör
-            :sun: sön
-            :thu: tors
-            :tue: tis
-            :wed: ons
-          :narrow:
-            :fri: F
-            :mon: M
-            :sat: L
-            :sun: S
-            :thu: T
-            :tue: T
-            :wed: O
-          :wide:
-            :fri: fredag
-            :mon: måndag
-            :sat: lördag
-            :sun: söndag
-            :thu: torsdag
-            :tue: tisdag
-            :wed: onsdag
-        :stand-alone:
-          :abbreviated:
-            :fri: fre
-            :mon: mån
-            :sat: lör
-            :sun: sön
-            :thu: tor
-            :tue: tis
-            :wed: ons
-          :narrow:
-            :fri: F
-            :mon: M
-            :sat: L
-            :sun: S
-            :thu: T
-            :tue: T
-            :wed: O
-          :wide:
-            :fri: fredag
-            :mon: måndag
-            :sat: lördag
-            :sun: söndag
-            :thu: torsdag
-            :tue: tisdag
-            :wed: onsdag
-      :eras:
-        :abbr:
-          0: f.Kr.
-          1: e.Kr.
-        :name:
-          0: före Kristus
+--- 
+:sv: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
+          0: "f\xC3\xB6re Kristus"
           1: efter Kristus
-        :narrow:
+        :narrow: 
           0: f.Kr.
           1: e.Kr.
-      :fields:
-        :day: dag
-        :dayperiod: fm/em
-        :era: era
-        :hour: timme
-        :minute: minut
-        :month: månad
-        :second: sekund
-        :week: vecka
-        :weekday: veckodag
-        :year: år
-        :zone: tidszon
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: EEEE'en' 'den' d:'e' MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: yyyy-MM-dd
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: ! '''kl''. HH:mm:ss zzzz'
-          :long:
-            :pattern: HH:mm:ss z
-          :medium:
-            :pattern: HH:mm:ss
-          :short:
-            :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
-            5: maj
-            6: jun
-            7: jul
-            8: aug
-            9: sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
-          :wide:
-            1: januari
-            10: oktober
-            11: november
-            12: december
-            2: februari
-            3: mars
-            4: april
-            5: maj
-            6: juni
-            7: juli
-            8: augusti
-            9: september
-        :stand-alone:
-          :abbreviated:
-            1: jan
-            10: okt
-            11: nov
-            2: feb
-            3: mar
-            4: apr
-            5: maj
-            6: jun
-            7: jul
-            8: aug
-            9: sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
-          :wide:
-            1: januari
-            10: oktober
-            2: februari
-            3: mars
-            4: april
-            5: maj
-            6: juni
-            7: juli
-            8: augusti
-            9: september
-      :periods:
-        :format:
-          :abbreviated:
-            :am: FM
-            :pm: EM
-          :narrow:
-            :am: f
-            :pm: e
-          :wide:
-            :am: fm
-            :pm: em
-        :stand-alone:
-          :abbreviated:
-            :am: fm
-            :pm: em
-          :narrow:
-            :am: f.m.
-            :pm: e.m.
-          :wide:
-            :am: förmiddag
-            :pm: eftermiddag
-      :quarters:
-        :format:
-          :abbreviated:
+        :abbr: 
+          0: f.Kr.
+          1: e.Kr.
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: 
             1: K1
             2: K2
             3: K3
             4: K4
-          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
-          :wide:
+          :wide: 
             1: 1:a kvartalet
             2: 2:a kvartalet
             3: 3:e kvartalet
             4: 4:e kvartalet
-        :stand-alone:
-          :abbreviated:
-            1: K1
-            2: K2
-            3: K3
-            4: K4
-          :narrow:
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
+        :format: 
+          :abbreviated: 
+            1: K1
+            2: K2
+            3: K3
+            4: K4
+          :wide: 
             1: 1:a kvartalet
             2: 2:a kvartalet
             3: 3:e kvartalet
             4: 4:e kvartalet
+          :narrow: :"calendars.gregorian.quarters.stand-alone.narrow"
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :date: 
+          :full: 
+            :pattern: EEEE'en' 'den' d:'e' MMMM y
+          :medium: 
+            :pattern: d MMM y
+          :default: :"calendars.gregorian.formats.date.medium"
+          :long: 
+            :pattern: d MMMM y
+          :short: 
+            :pattern: yyyy-MM-dd
+        :time: 
+          :full: 
+            :pattern: "'kl'. HH:mm:ss zzzz"
+          :medium: 
+            :pattern: HH:mm:ss
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: HH:mm:ss z
+          :short: 
+            :pattern: HH:mm
+      :periods: 
+        :"stand-alone": 
+          :abbreviated: 
+            :pm: em
+            :am: fm
+          :wide: 
+            :pm: eftermiddag
+            :am: "f\xC3\xB6rmiddag"
+          :narrow: 
+            :pm: e.m.
+            :am: f.m.
+        :format: 
+          :abbreviated: 
+            :pm: EM
+            :am: FM
+          :wide: 
+            :pm: em
+            :am: fm
+          :narrow: 
+            :pm: e
+            :am: f
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            5: maj
+            11: nov
+            6: jun
+            1: jan
+            7: jul
+            2: feb
+            8: aug
+            3: mar
+            9: sep
+            4: apr
+            10: okt
+          :wide: 
+            5: maj
+            6: juni
+            1: januari
+            7: juli
+            2: februari
+            8: augusti
+            3: mars
+            9: september
+            4: april
+            10: oktober
+          :narrow: 
+            5: M
+            11: N
+            6: J
+            1: J
+            12: D
+            7: J
+            2: F
+            8: A
+            3: M
+            9: S
+            4: A
+            10: O
+        :format: 
+          :abbreviated: 
+            5: maj
+            11: nov
+            6: jun
+            1: jan
+            12: dec
+            7: jul
+            2: feb
+            8: aug
+            3: mar
+            9: sep
+            4: apr
+            10: okt
+          :wide: 
+            5: maj
+            11: november
+            6: juni
+            1: januari
+            12: december
+            7: juli
+            2: februari
+            8: augusti
+            3: mars
+            9: september
+            4: april
+            10: oktober
+          :narrow: 
+            5: M
+            11: N
+            6: J
+            1: J
+            12: D
+            7: J
+            2: F
+            8: A
+            3: M
+            9: S
+            4: A
+            10: O
+      :fields: 
+        :hour: timme
+        :week: vecka
+        :era: era
+        :weekday: veckodag
+        :day: dag
+        :dayperiod: fm/em
+        :minute: minut
+        :month: !binary |
+          bcOlbmFk
+
+        :second: sekund
+        :zone: tidszon
+        :year: !binary |
+          w6Vy
+
+      :days: 
+        :"stand-alone": 
+          :abbreviated: 
+            :sun: !binary |
+              c8O2bg==
+
+            :sat: !binary |
+              bMO2cg==
+
+            :tue: tis
+            :wed: ons
+            :thu: tor
+            :mon: !binary |
+              bcOlbg==
+
+            :fri: fre
+          :wide: 
+            :sun: "s\xC3\xB6ndag"
+            :sat: "l\xC3\xB6rdag"
+            :tue: tisdag
+            :wed: onsdag
+            :thu: torsdag
+            :mon: "m\xC3\xA5ndag"
+            :fri: fredag
+          :narrow: 
+            :sun: S
+            :sat: L
+            :tue: T
+            :wed: O
+            :thu: T
+            :mon: M
+            :fri: F
+        :format: 
+          :abbreviated: 
+            :sun: !binary |
+              c8O2bg==
+
+            :sat: !binary |
+              bMO2cg==
+
+            :tue: tis
+            :wed: ons
+            :thu: tors
+            :mon: !binary |
+              bcOlbg==
+
+            :fri: fre
+          :wide: 
+            :sun: "s\xC3\xB6ndag"
+            :sat: "l\xC3\xB6rdag"
+            :tue: tisdag
+            :wed: onsdag
+            :thu: torsdag
+            :mon: "m\xC3\xA5ndag"
+            :fri: fredag
+          :narrow: 
+            :sun: S
+            :sat: L
+            :tue: T
+            :wed: O
+            :thu: T
+            :mon: M
+            :fri: F

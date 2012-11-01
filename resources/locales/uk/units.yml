@@ -1,192 +1,464 @@
----
-:uk:
-  :units:
-    :day:
-      :default:
-        :few: ! '{0} дні'
-        :many: ! '{0} днів'
-        :one: ! '{0} день'
-        :other: ! '{0} дня'
-      :short:
-        :few: ! '{0} дні'
-        :many: ! '{0} днів'
-        :one: ! '{0} день'
-        :other: ! '{0} дня'
-    :day-future:
-      :default:
-        0: Через 0 днів
-        1: Через 1 день
-        :few: Через {0} дні
-        :many: Через {0} днів
-        :one: Через {0} день
-        :other: Через {0} дня
-    :day-past:
-      :default:
-        0: 0 днів тому
-        1: 1 день тому
-        :few: ! '{0} дні тому'
-        :many: ! '{0} днів тому'
-        :one: ! '{0} день тому'
-        :other: ! '{0} дня тому'
-    :hour:
-      :default:
-        :few: ! '{0} години'
-        :many: ! '{0} годин'
-        :one: ! '{0} година'
-        :other: ! '{0} години'
-      :short:
-        :few: ! '{0} год.'
-        :many: ! '{0} год.'
-        :one: ! '{0} год.'
-        :other: ! '{0} год.'
-    :hour-future:
-      :default:
-        0: Через 0 годин
-        1: Через 1 годину
-        :few: Через {0} години
-        :many: Через {0} годин
-        :one: Через {0} годину
-        :other: Через {0} години
-    :hour-past:
-      :default:
-        0: 0 годин тому
-        1: 1 годину тому
-        :few: ! '{0} години тому'
-        :many: ! '{0} годин тому'
-        :one: ! '{0} годину тому'
-        :other: ! '{0} години тому'
-    :minute:
-      :default:
-        :few: ! '{0} хвилини'
-        :many: ! '{0} хвилин'
-        :one: ! '{0} хвилина'
-        :other: ! '{0} хвилини'
-      :short:
-        :few: ! '{0} хв.'
-        :many: ! '{0} хв.'
-        :one: ! '{0} хв.'
-        :other: ! '{0} хв.'
-    :minute-future:
-      :default:
-        0: Через 0 хвилин
-        1: Через 1 хвилину
-        :few: Через {0} хвилини
-        :many: Через {0} хвилин
-        :one: Через {0} хвилину
-        :other: Через {0} хвилини
-    :minute-past:
-      :default:
-        0: 0 хвилин тому
-        1: 1 хвилину тому
-        :few: ! '{0} хвилини тому'
-        :many: ! '{0} хвилин тому'
-        :one: ! '{0} хвилину тому'
-        :other: ! '{0} хвилини тому'
-    :month:
-      :default:
-        :few: ! '{0} місяці'
-        :many: ! '{0} місяців'
-        :one: ! '{0} місяць'
-        :other: ! '{0} місяця'
-      :short:
-        :few: ! '{0} міс.'
-        :many: ! '{0} міс.'
-        :one: ! '{0} міс.'
-        :other: ! '{0} міс.'
-    :month-future:
-      :default:
-        0: Через 0 місяців
-        1: Через 1 місяць
-        :few: Через {0} місяці
-        :many: Через {0} місяців
-        :one: Через {0} місяць
-        :other: Через {0} місяця
-    :month-past:
-      :default:
-        0: 0 місяців тому
-        1: 1 місяць тому
-        :few: ! '{0} місяці тому'
-        :many: ! '{0} місяців тому'
-        :one: ! '{0} місяць тому'
-        :other: ! '{0} місяця тому'
-    :second:
-      :default:
-        :few: ! '{0} секунди'
-        :many: ! '{0} секунд'
-        :one: ! '{0} секунда'
-        :other: ! '{0} секунди'
-      :short:
-        :few: ! '{0} сек.'
-        :many: ! '{0} сек.'
-        :one: ! '{0} сек.'
-        :other: ! '{0} сек.'
-    :second-future:
-      :default:
-        0: Через 0 секунд
-        1: Через 1 секунду
-        :few: Через {0} секунди
-        :many: Через {0} секунд
-        :one: Через {0} секунду
-        :other: Через {0} секунди
-    :second-past:
-      :default:
-        0: 0 секунд тому
-        1: 1 секунду тому
-        :few: ! '{0} секунди тому'
-        :many: ! '{0} секунд тому'
-        :one: ! '{0} секунду тому'
-        :other: ! '{0} секунди тому'
-    :week:
-      :default:
-        :few: ! '{0} тижні'
-        :many: ! '{0} тижнів'
-        :one: ! '{0} тиждень'
-        :other: ! '{0} тижня'
-      :short:
-        :few: ! '{0} тиж.'
-        :many: ! '{0} тиж.'
-        :one: ! '{0} тиж.'
-        :other: ! '{0} тиж.'
-    :week-future:
-      :default:
-        0: Через 0 тижнів
-        1: Через 1 тиждень
-        :few: Через {0} тижні
-        :many: Через {0} тижнів
-        :one: Через {0} тиждень
-        :other: Через {0} тижня
-    :week-past:
-      :default:
-        0: 0 тижнів тому
-        1: 1 тиждень тому
-        :few: ! '{0} тижні тому'
-        :many: ! '{0} тижнів тому'
-        :one: ! '{0} тиждень тому'
-        :other: ! '{0} тижня тому'
-    :year:
-      :default:
-        :few: ! '{0} роки'
-        :many: ! '{0} років'
-        :one: ! '{0} рік'
-        :other: ! '{0} року'
-      :short:
-        :few: ! '{0} р.'
-        :many: ! '{0} р.'
-        :one: ! '{0} р.'
-        :other: ! '{0} р.'
-    :year-future:
-      :default:
-        0: Через 0 років
-        1: Через 1 рік
-        :few: Через {0} роки
-        :many: Через {0} років
-        :one: Через {0} рік
-        :other: Через {0} року
-    :year-past:
-      :default:
-        0: 0 років тому
-        1: 1 рік тому
-        :few: ! '{0} роки тому'
-        :many: ! '{0} років тому'
-        :one: ! '{0} рік тому'
-        :other: ! '{0} року тому'
+--- 
+:uk: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: !binary |
+          ezB9INCz0L7QtNC40L3QuCDRgtC+0LzRgw==
+
+        0: !binary |
+          MCDQs9C+0LTQuNC9INGC0L7QvNGD
+
+        :one: !binary |
+          ezB9INCz0L7QtNC40L3RgyDRgtC+0LzRgw==
+
+        1: !binary |
+          MSDQs9C+0LTQuNC90YMg0YLQvtC80YM=
+
+        :few: !binary |
+          ezB9INCz0L7QtNC40L3QuCDRgtC+0LzRgw==
+
+        :many: !binary |
+          ezB9INCz0L7QtNC40L0g0YLQvtC80YM=
+
+    :hour: 
+      :default: 
+        :other: !binary |
+          ezB9INCz0L7QtNC40L3QuA==
+
+        :one: !binary |
+          ezB9INCz0L7QtNC40L3QsA==
+
+        :few: !binary |
+          ezB9INCz0L7QtNC40L3QuA==
+
+        :many: !binary |
+          ezB9INCz0L7QtNC40L0=
+
+      :short: 
+        :other: !binary |
+          ezB9INCz0L7QtC4=
+
+        :one: !binary |
+          ezB9INCz0L7QtC4=
+
+        :few: !binary |
+          ezB9INCz0L7QtC4=
+
+        :many: !binary |
+          ezB9INCz0L7QtC4=
+
+    :"second-past": 
+      :default: 
+        :other: !binary |
+          ezB9INGB0LXQutGD0L3QtNC4INGC0L7QvNGD
+
+        0: !binary |
+          MCDRgdC10LrRg9C90LQg0YLQvtC80YM=
+
+        :one: !binary |
+          ezB9INGB0LXQutGD0L3QtNGDINGC0L7QvNGD
+
+        1: !binary |
+          MSDRgdC10LrRg9C90LTRgyDRgtC+0LzRgw==
+
+        :few: !binary |
+          ezB9INGB0LXQutGD0L3QtNC4INGC0L7QvNGD
+
+        :many: !binary |
+          ezB9INGB0LXQutGD0L3QtCDRgtC+0LzRgw==
+
+    :week: 
+      :default: 
+        :other: !binary |
+          ezB9INGC0LjQttC90Y8=
+
+        :one: !binary |
+          ezB9INGC0LjQttC00LXQvdGM
+
+        :few: !binary |
+          ezB9INGC0LjQttC90ZY=
+
+        :many: !binary |
+          ezB9INGC0LjQttC90ZbQsg==
+
+      :short: 
+        :other: !binary |
+          ezB9INGC0LjQti4=
+
+        :one: !binary |
+          ezB9INGC0LjQti4=
+
+        :few: !binary |
+          ezB9INGC0LjQti4=
+
+        :many: !binary |
+          ezB9INGC0LjQti4=
+
+    :"minute-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YXQstC40LvQuNC90Lg=
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINGF0LLQuNC70LjQvQ==
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YXQstC40LvQuNC90YM=
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINGF0LLQuNC70LjQvdGD
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YXQstC40LvQuNC90Lg=
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YXQstC40LvQuNC9
+
+    :"week-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YLQuNC20L3Rjw==
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINGC0LjQttC90ZbQsg==
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YLQuNC20LTQtdC90Yw=
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINGC0LjQttC00LXQvdGM
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YLQuNC20L3Rlg==
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YLQuNC20L3RltCy
+
+    :day: 
+      :default: 
+        :other: !binary |
+          ezB9INC00L3Rjw==
+
+        :one: !binary |
+          ezB9INC00LXQvdGM
+
+        :few: !binary |
+          ezB9INC00L3Rlg==
+
+        :many: !binary |
+          ezB9INC00L3RltCy
+
+      :short: 
+        :other: !binary |
+          ezB9INC00L3Rjw==
+
+        :one: !binary |
+          ezB9INC00LXQvdGM
+
+        :few: !binary |
+          ezB9INC00L3Rlg==
+
+        :many: !binary |
+          ezB9INC00L3RltCy
+
+    :"minute-past": 
+      :default: 
+        :other: !binary |
+          ezB9INGF0LLQuNC70LjQvdC4INGC0L7QvNGD
+
+        0: !binary |
+          MCDRhdCy0LjQu9C40L0g0YLQvtC80YM=
+
+        :one: !binary |
+          ezB9INGF0LLQuNC70LjQvdGDINGC0L7QvNGD
+
+        1: !binary |
+          MSDRhdCy0LjQu9C40L3RgyDRgtC+0LzRgw==
+
+        :few: !binary |
+          ezB9INGF0LLQuNC70LjQvdC4INGC0L7QvNGD
+
+        :many: !binary |
+          ezB9INGF0LLQuNC70LjQvSDRgtC+0LzRgw==
+
+    :"day-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LTQvdGP
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINC00L3RltCy
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LTQtdC90Yw=
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINC00LXQvdGM
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LTQvdGW
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LTQvdGW0LI=
+
+    :"week-past": 
+      :default: 
+        :other: !binary |
+          ezB9INGC0LjQttC90Y8g0YLQvtC80YM=
+
+        0: !binary |
+          MCDRgtC40LbQvdGW0LIg0YLQvtC80YM=
+
+        :one: !binary |
+          ezB9INGC0LjQttC00LXQvdGMINGC0L7QvNGD
+
+        1: !binary |
+          MSDRgtC40LbQtNC10L3RjCDRgtC+0LzRgw==
+
+        :few: !binary |
+          ezB9INGC0LjQttC90ZYg0YLQvtC80YM=
+
+        :many: !binary |
+          ezB9INGC0LjQttC90ZbQsiDRgtC+0LzRgw==
+
+    :"month-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LzRltGB0Y/RhtGP
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINC80ZbRgdGP0YbRltCy
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LzRltGB0Y/RhtGM
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINC80ZbRgdGP0YbRjA==
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LzRltGB0Y/RhtGW
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LzRltGB0Y/RhtGW0LI=
+
+    :minute: 
+      :default: 
+        :other: !binary |
+          ezB9INGF0LLQuNC70LjQvdC4
+
+        :one: !binary |
+          ezB9INGF0LLQuNC70LjQvdCw
+
+        :few: !binary |
+          ezB9INGF0LLQuNC70LjQvdC4
+
+        :many: !binary |
+          ezB9INGF0LLQuNC70LjQvQ==
+
+      :short: 
+        :other: !binary |
+          ezB9INGF0LIu
+
+        :one: !binary |
+          ezB9INGF0LIu
+
+        :few: !binary |
+          ezB9INGF0LIu
+
+        :many: !binary |
+          ezB9INGF0LIu
+
+    :"day-past": 
+      :default: 
+        :other: !binary |
+          ezB9INC00L3RjyDRgtC+0LzRgw==
+
+        0: !binary |
+          MCDQtNC90ZbQsiDRgtC+0LzRgw==
+
+        :one: !binary |
+          ezB9INC00LXQvdGMINGC0L7QvNGD
+
+        1: !binary |
+          MSDQtNC10L3RjCDRgtC+0LzRgw==
+
+        :few: !binary |
+          ezB9INC00L3RliDRgtC+0LzRgw==
+
+        :many: !binary |
+          ezB9INC00L3RltCyINGC0L7QvNGD
+
+    :"year-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YDQvtC60YM=
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINGA0L7QutGW0LI=
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YDRltC6
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINGA0ZbQug==
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YDQvtC60Lg=
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YDQvtC60ZbQsg==
+
+    :"month-past": 
+      :default: 
+        :other: !binary |
+          ezB9INC80ZbRgdGP0YbRjyDRgtC+0LzRgw==
+
+        0: !binary |
+          MCDQvNGW0YHRj9GG0ZbQsiDRgtC+0LzRgw==
+
+        :one: !binary |
+          ezB9INC80ZbRgdGP0YbRjCDRgtC+0LzRgw==
+
+        1: !binary |
+          MSDQvNGW0YHRj9GG0Ywg0YLQvtC80YM=
+
+        :few: !binary |
+          ezB9INC80ZbRgdGP0YbRliDRgtC+0LzRgw==
+
+        :many: !binary |
+          ezB9INC80ZbRgdGP0YbRltCyINGC0L7QvNGD
+
+    :month: 
+      :default: 
+        :other: !binary |
+          ezB9INC80ZbRgdGP0YbRjw==
+
+        :one: !binary |
+          ezB9INC80ZbRgdGP0YbRjA==
+
+        :few: !binary |
+          ezB9INC80ZbRgdGP0YbRlg==
+
+        :many: !binary |
+          ezB9INC80ZbRgdGP0YbRltCy
+
+      :short: 
+        :other: !binary |
+          ezB9INC80ZbRgS4=
+
+        :one: !binary |
+          ezB9INC80ZbRgS4=
+
+        :few: !binary |
+          ezB9INC80ZbRgS4=
+
+        :many: !binary |
+          ezB9INC80ZbRgS4=
+
+    :"hour-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LjQvdC4
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINCz0L7QtNC40L0=
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LjQvdGD
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINCz0L7QtNC40L3Rgw==
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LjQvdC4
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0LPQvtC00LjQvQ==
+
+    :second: 
+      :default: 
+        :other: !binary |
+          ezB9INGB0LXQutGD0L3QtNC4
+
+        :one: !binary |
+          ezB9INGB0LXQutGD0L3QtNCw
+
+        :few: !binary |
+          ezB9INGB0LXQutGD0L3QtNC4
+
+        :many: !binary |
+          ezB9INGB0LXQutGD0L3QtA==
+
+      :short: 
+        :other: !binary |
+          ezB9INGB0LXQui4=
+
+        :one: !binary |
+          ezB9INGB0LXQui4=
+
+        :few: !binary |
+          ezB9INGB0LXQui4=
+
+        :many: !binary |
+          ezB9INGB0LXQui4=
+
+    :"year-past": 
+      :default: 
+        :other: !binary |
+          ezB9INGA0L7QutGDINGC0L7QvNGD
+
+        0: !binary |
+          MCDRgNC+0LrRltCyINGC0L7QvNGD
+
+        :one: !binary |
+          ezB9INGA0ZbQuiDRgtC+0LzRgw==
+
+        1: !binary |
+          MSDRgNGW0Log0YLQvtC80YM=
+
+        :few: !binary |
+          ezB9INGA0L7QutC4INGC0L7QvNGD
+
+        :many: !binary |
+          ezB9INGA0L7QutGW0LIg0YLQvtC80YM=
+
+    :year: 
+      :default: 
+        :other: !binary |
+          ezB9INGA0L7QutGD
+
+        :one: !binary |
+          ezB9INGA0ZbQug==
+
+        :few: !binary |
+          ezB9INGA0L7QutC4
+
+        :many: !binary |
+          ezB9INGA0L7QutGW0LI=
+
+      :short: 
+        :other: "{0} \xD1\x80."
+        :one: "{0} \xD1\x80."
+        :few: "{0} \xD1\x80."
+        :many: "{0} \xD1\x80."
+    :"second-future": 
+      :default: 
+        :other: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00Lg=
+
+        0: !binary |
+          0KfQtdGA0LXQtyAwINGB0LXQutGD0L3QtA==
+
+        :one: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00YM=
+
+        1: !binary |
+          0KfQtdGA0LXQtyAxINGB0LXQutGD0L3QtNGD
+
+        :few: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC00Lg=
+
+        :many: !binary |
+          0KfQtdGA0LXQtyB7MH0g0YHQtdC60YPQvdC0
+

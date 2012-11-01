@@ -1,136 +1,140 @@
----
-:pt:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} dia'
-        :other: ! '{0} dias'
-      :short:
-        :one: ! '{0} dia'
-        :other: ! '{0} dias'
-    :day-future:
-      :default:
-        0: Dentro de 0 dias
-        1: Dentro de 1 dia
-        :one: Dentro de {0} dia
-        :other: Dentro de {0} dias
-    :day-past:
-      :default:
-        0: Há 0 dias
-        1: Há 1 dia
-        :one: Há {0} dia
-        :other: Há {0} dias
-    :hour:
-      :default:
-        :one: ! '{0} hora'
-        :other: ! '{0} horas'
-      :short:
-        :one: ! '{0} h'
-        :other: ! '{0} h'
-    :hour-future:
-      :default:
-        0: Dentro de 0 horas
-        1: Dentro de 1 hora
-        :one: Dentro de {0} hora
-        :other: Dentro de {0} horas
-    :hour-past:
-      :default:
-        0: Há 0 horas
-        1: Há 1 hora
-        :one: Há {0} hora
-        :other: Há {0} horas
-    :minute:
-      :default:
-        :one: ! '{0} minuto'
-        :other: ! '{0} minutos'
-      :short:
-        :one: ! '{0} min'
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
-        0: Dentro de 0 minutos
-        1: Dentro de 1 minuto
-        :one: Dentro de {0} minuto
+--- 
+:pt: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} horas"
+        0: "H\xC3\xA1 0 horas"
+        :one: "H\xC3\xA1 {0} hora"
+        1: "H\xC3\xA1 1 hora"
+    :hour: 
+      :default: 
+        :other: "{0} horas"
+        :one: "{0} hora"
+      :short: 
+        :other: "{0} h"
+        :one: "{0} h"
+    :"second-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} segundos"
+        0: "H\xC3\xA1 0 segundos"
+        :one: "H\xC3\xA1 {0} segundo"
+        1: "H\xC3\xA1 1 segundo"
+    :week: 
+      :default: 
+        :other: "{0} semanas"
+        :one: "{0} semana"
+      :short: 
+        :other: "{0} sem."
+        :one: "{0} sem."
+    :"minute-future": 
+      :default: 
         :other: Dentro de {0} minutos
-    :minute-past:
-      :default:
-        0: Há 0 minutos
-        1: Há 1 minuto
-        :one: Há {0} minuto
-        :other: Há {0} minutos
-    :month:
-      :default:
-        :one: ! '{0} mês'
-        :other: ! '{0} meses'
-      :short:
-        :one: ! '{0} mês'
-        :other: ! '{0} meses'
-    :month-future:
-      :default:
-        0: Dentro de 0 meses
-        1: Dentro de 1 mês
-        :one: Dentro de {0} mês
-        :other: Dentro de {0} meses
-    :month-past:
-      :default:
-        0: Há 0 meses
-        1: Há 1 mês
-        :one: Há {0} mês
-        :other: Há {0} meses
-    :second:
-      :default:
-        :one: ! '{0} segundo'
-        :other: ! '{0} segundos'
-      :short:
-        :one: ! '{0} seg'
-        :other: ! '{0} seg'
-    :second-future:
-      :default:
-        0: Dentro de 0 segundos
-        1: Dentro de 1 segundo
-        :one: Dentro de {0} segundo
-        :other: Dentro de {0} segundos
-    :second-past:
-      :default:
-        0: Há 0 segundos
-        1: Há 1 segundo
-        :one: Há {0} segundo
-        :other: Há {0} segundos
-    :week:
-      :default:
-        :one: ! '{0} semana'
-        :other: ! '{0} semanas'
-      :short:
-        :one: ! '{0} sem.'
-        :other: ! '{0} sem.'
-    :week-future:
-      :default:
-        0: Dentro de 0 semanas
-        1: Dentro de 1 semana
-        :one: Dentro de {0} semana
+        0: Dentro de 0 minutos
+        :one: Dentro de {0} minuto
+        1: Dentro de 1 minuto
+    :"week-future": 
+      :default: 
         :other: Dentro de {0} semanas
-    :week-past:
-      :default:
-        0: Há 0 semanas
-        1: Há 1 semana
-        :one: Há {0} semana
-        :other: Há {0} semanas
-    :year:
-      :default:
-        :one: ! '{0} ano'
-        :other: ! '{0} anos'
-      :short:
-        :one: ! '{0} ano'
-        :other: ! '{0} anos'
-    :year-future:
-      :default:
-        0: Dentro de 0 anos
-        1: Dentro de 1 ano
-        :one: Dentro de {0} ano
+        0: Dentro de 0 semanas
+        :one: Dentro de {0} semana
+        1: Dentro de 1 semana
+    :day: 
+      :default: 
+        :other: "{0} dias"
+        :one: "{0} dia"
+      :short: 
+        :other: "{0} dias"
+        :one: "{0} dia"
+    :"minute-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} minutos"
+        0: "H\xC3\xA1 0 minutos"
+        :one: "H\xC3\xA1 {0} minuto"
+        1: "H\xC3\xA1 1 minuto"
+    :"day-future": 
+      :default: 
+        :other: Dentro de {0} dias
+        0: Dentro de 0 dias
+        :one: Dentro de {0} dia
+        1: Dentro de 1 dia
+    :"week-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} semanas"
+        0: "H\xC3\xA1 0 semanas"
+        :one: "H\xC3\xA1 {0} semana"
+        1: "H\xC3\xA1 1 semana"
+    :"month-future": 
+      :default: 
+        :other: Dentro de {0} meses
+        0: Dentro de 0 meses
+        :one: "Dentro de {0} m\xC3\xAAs"
+        1: "Dentro de 1 m\xC3\xAAs"
+    :minute: 
+      :default: 
+        :other: "{0} minutos"
+        :one: "{0} minuto"
+      :short: 
+        :other: "{0} min"
+        :one: "{0} min"
+    :"day-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} dias"
+        0: "H\xC3\xA1 0 dias"
+        :one: "H\xC3\xA1 {0} dia"
+        1: "H\xC3\xA1 1 dia"
+    :"year-future": 
+      :default: 
         :other: Dentro de {0} anos
-    :year-past:
-      :default:
-        0: Há 0 anos
-        1: Há 1 ano
-        :one: Há {0} ano
-        :other: Há {0} anos
+        0: Dentro de 0 anos
+        :one: Dentro de {0} ano
+        1: Dentro de 1 ano
+    :"month-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} meses"
+        0: "H\xC3\xA1 0 meses"
+        :one: !binary |
+          SMOhIHswfSBtw6pz
+
+        1: !binary |
+          SMOhIDEgbcOqcw==
+
+    :month: 
+      :default: 
+        :other: "{0} meses"
+        :one: "{0} m\xC3\xAAs"
+      :short: 
+        :other: "{0} meses"
+        :one: "{0} m\xC3\xAAs"
+    :"hour-future": 
+      :default: 
+        :other: Dentro de {0} horas
+        0: Dentro de 0 horas
+        :one: Dentro de {0} hora
+        1: Dentro de 1 hora
+    :second: 
+      :default: 
+        :other: "{0} segundos"
+        :one: "{0} segundo"
+      :short: 
+        :other: "{0} seg"
+        :one: "{0} seg"
+    :"year-past": 
+      :default: 
+        :other: "H\xC3\xA1 {0} anos"
+        0: "H\xC3\xA1 0 anos"
+        :one: "H\xC3\xA1 {0} ano"
+        1: "H\xC3\xA1 1 ano"
+    :year: 
+      :default: 
+        :other: "{0} anos"
+        :one: "{0} ano"
+      :short: 
+        :other: "{0} anos"
+        :one: "{0} ano"
+    :"second-future": 
+      :default: 
+        :other: Dentro de {0} segundos
+        0: Dentro de 0 segundos
+        :one: Dentro de {0} segundo
+        1: Dentro de 1 segundo

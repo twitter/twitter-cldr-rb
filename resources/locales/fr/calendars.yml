@@ -1,201 +1,217 @@
----
-:fr:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: ven.
-            :mon: lun.
-            :sat: sam.
-            :sun: dim.
-            :thu: jeu.
-            :tue: mar.
-            :wed: mer.
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :wide:
-            :fri: vendredi
-            :mon: lundi
-            :sat: samedi
-            :sun: dimanche
-            :thu: jeudi
-            :tue: mardi
-            :wed: mercredi
-        :stand-alone:
-          :abbreviated:
-            :fri: ven.
-            :mon: lun.
-            :sat: sam.
-            :sun: dim.
-            :thu: jeu.
-            :tue: mar.
-            :wed: mer.
-          :narrow:
-            :fri: V
-            :mon: L
-            :sat: S
-            :sun: D
-            :thu: J
-            :tue: M
-            :wed: M
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
+--- 
+:fr: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
+          0: "avant J\xC3\xA9sus-Christ"
+          1: "apr\xC3\xA8s J\xC3\xA9sus-Christ"
+        :narrow: 
+          0: ""
+        :abbr: 
           0: av. J.-C.
           1: ap. J.-C.
-        :name:
-          0: avant Jésus-Christ
-          1: après Jésus-Christ
-        :narrow:
-          0: ''
-      :fields:
-        :day: jour
-        :dayperiod: cadran
-        :era: ère
-        :hour: heure
-        :minute: minute
-        :month: mois
-        :second: seconde
-        :week: semaine
-        :weekday: jour de la semaine
-        :year: année
-        :zone: fuseau horaire
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: EEEE d MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: dd/MM/yy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: HH:mm:ss zzzz
-          :long:
-            :pattern: HH:mm:ss z
-          :medium:
-            :pattern: HH:mm:ss
-          :short:
-            :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: janv.
-            10: oct.
-            11: nov.
-            12: déc.
-            2: févr.
-            3: mars
-            4: avr.
-            5: mai
-            6: juin
-            7: juil.
-            8: août
-            9: sept.
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: janvier
-            10: octobre
-            11: novembre
-            12: décembre
-            2: février
-            3: mars
-            4: avril
-            5: mai
-            6: juin
-            7: juillet
-            8: août
-            9: septembre
-        :stand-alone:
-          :abbreviated:
-            1: janv.
-            10: oct.
-            11: nov.
-            12: déc.
-            2: févr.
-            3: mars
-            4: avr.
-            7: juil.
-            9: sept.
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
-          :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
-          :abbreviated:
-            :afternoon: ap.m.
-            :am: AM
-            :pm: PM
-          :narrow:
-            :afternoon: ap.m.
-            :am: av.m.
-            :pm: p
-          :wide:
-            :afternoon: après-midi
-            :am: AM
-            :morning: matin
-            :night: soir
-            :noon: midi
-            :pm: PM
-        :stand-alone:
-          :abbreviated:
-            :afternoon: ap.m.
-            :am: av.m.
-            :pm: ap.m.
-          :wide:
-            :afternoon: après-midi
-            :am: avant-midi
-            :morning: matin
-            :night: soir
-            :noon: midi
-            :pm: après-midi
-      :quarters:
-        :format:
-          :abbreviated:
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.quarters.format.abbreviated"
+          :wide: :"calendars.gregorian.quarters.format.wide"
+          :narrow: 
             1: T1
             2: T2
             3: T3
             4: T4
-          :narrow:
+        :format: 
+          :abbreviated: 
             1: T1
             2: T2
             3: T3
             4: T4
-          :wide:
+          :wide: 
             1: 1er trimestre
             2: 2e trimestre
             3: 3e trimestre
             4: 4e trimestre
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
-          :narrow:
+          :narrow: 
             1: T1
             2: T2
             3: T3
             4: T4
-          :wide: :calendars.gregorian.quarters.format.wide
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :date: 
+          :full: 
+            :pattern: EEEE d MMMM y
+          :medium: 
+            :pattern: d MMM y
+          :default: :"calendars.gregorian.formats.date.medium"
+          :long: 
+            :pattern: d MMMM y
+          :short: 
+            :pattern: dd/MM/yy
+        :time: 
+          :full: 
+            :pattern: HH:mm:ss zzzz
+          :medium: 
+            :pattern: HH:mm:ss
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: HH:mm:ss z
+          :short: 
+            :pattern: HH:mm
+      :periods: 
+        :"stand-alone": 
+          :abbreviated: 
+            :afternoon: ap.m.
+            :pm: ap.m.
+            :am: av.m.
+          :wide: 
+            :noon: midi
+            :afternoon: "apr\xC3\xA8s-midi"
+            :pm: "apr\xC3\xA8s-midi"
+            :am: avant-midi
+            :morning: matin
+            :night: soir
+        :format: 
+          :abbreviated: 
+            :afternoon: ap.m.
+            :pm: PM
+            :am: AM
+          :wide: 
+            :noon: midi
+            :afternoon: "apr\xC3\xA8s-midi"
+            :pm: PM
+            :am: AM
+            :morning: matin
+            :night: soir
+          :narrow: 
+            :afternoon: ap.m.
+            :pm: p
+            :am: av.m.
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            11: nov.
+            1: janv.
+            12: !binary |
+              ZMOpYy4=
+
+            7: juil.
+            2: !binary |
+              ZsOpdnIu
+
+            3: mars
+            9: sept.
+            4: avr.
+            10: oct.
+          :wide: :"calendars.gregorian.months.format.wide"
+          :narrow: 
+            5: M
+            11: N
+            6: J
+            1: J
+            12: D
+            7: J
+            2: F
+            8: A
+            3: M
+            9: S
+            4: A
+            10: O
+        :format: 
+          :abbreviated: 
+            5: mai
+            11: nov.
+            6: juin
+            1: janv.
+            12: !binary |
+              ZMOpYy4=
+
+            7: juil.
+            2: !binary |
+              ZsOpdnIu
+
+            8: !binary |
+              YW/Du3Q=
+
+            3: mars
+            9: sept.
+            4: avr.
+            10: oct.
+          :wide: 
+            5: mai
+            11: novembre
+            6: juin
+            1: janvier
+            12: "d\xC3\xA9cembre"
+            7: juillet
+            2: "f\xC3\xA9vrier"
+            8: !binary |
+              YW/Du3Q=
+
+            3: mars
+            9: septembre
+            4: avril
+            10: octobre
+          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
+      :fields: 
+        :hour: heure
+        :week: semaine
+        :era: !binary |
+          w6hyZQ==
+
+        :weekday: jour de la semaine
+        :day: jour
+        :dayperiod: cadran
+        :minute: minute
+        :month: mois
+        :second: seconde
+        :zone: fuseau horaire
+        :year: !binary |
+          YW5uw6ll
+
+      :days: 
+        :"stand-alone": 
+          :abbreviated: 
+            :sun: dim.
+            :sat: sam.
+            :tue: mar.
+            :wed: mer.
+            :thu: jeu.
+            :mon: lun.
+            :fri: ven.
+          :wide: :"calendars.gregorian.days.format.wide"
+          :narrow: 
+            :sun: D
+            :sat: S
+            :tue: M
+            :wed: M
+            :thu: J
+            :mon: L
+            :fri: V
+        :format: 
+          :abbreviated: 
+            :sun: dim.
+            :sat: sam.
+            :tue: mar.
+            :wed: mer.
+            :thu: jeu.
+            :mon: lun.
+            :fri: ven.
+          :wide: 
+            :sun: dimanche
+            :sat: samedi
+            :tue: mardi
+            :wed: mercredi
+            :thu: jeudi
+            :mon: lundi
+            :fri: vendredi
+          :narrow: :"calendars.gregorian.days.stand-alone.narrow"

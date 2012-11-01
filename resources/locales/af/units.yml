@@ -1,136 +1,136 @@
----
-:af:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} dag'
-        :other: ! '{0} dae'
-      :short:
-        0: 0 dae
-        1: 1 dag
-        :other: ! '{0} dae'
-    :day-future:
-      :default:
-        0: In 0 dae
-        1: In 1 dag
-        :other: In {0} dae
-    :day-past:
-      :default:
-        0: 0 dae gelede
-        1: 1 dag gelede
-        :other: ! '{0} dae gelede'
-    :hour:
-      :default:
-        0: 0 uur
-        1: 1 uur
-        :other: ! '{0} uur'
-      :short:
-        0: 0 uur
-        1: 1 uur
-        :other: ! '{0} uur'
-    :hour-future:
-      :default:
-        0: In 0 uur
-        1: In 1 uur
-        :other: In {0} uur
-    :hour-past:
-      :default:
+--- 
+:af: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: "{0} uur gelede"
         0: 0 uur gelede
         1: 1 uur gelede
-        :other: ! '{0} uur gelede'
-    :minute:
-      :default:
-        0: 0 minute
-        1: 1 minuut
-        :other: ! '{0} minute'
-      :short:
-        0: 0 min
-        1: 1 min
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
-        0: In 0 minute
-        1: In 1 minuut
-        :other: In {0} minute
-    :minute-past:
-      :default:
-        0: 0 minute gelede
-        1: 1 minuut gelede
-        :other: ! '{0} minute gelede'
-    :month:
-      :default:
-        0: 0 maande
-        1: 1 maand
-        :other: ! '{0} maande'
-      :short:
-        0: 0 mnde
-        1: 1 mnd
-        :other: ! '{0} mnde'
-    :month-future:
-      :default:
-        0: In 0 maande
-        1: In 1 maand
-        :other: In {0} maande
-    :month-past:
-      :default:
-        0: 0 maande gelede
-        1: 1 maand gelede
-        :other: ! '{0} maande gelede'
-    :second:
-      :default:
-        0: 0 sekondes
-        1: 1 sekonde
-        :other: ! '{0} sekondes'
-      :short:
-        0: 0 sek
-        1: 1 sek
-        :other: ! '{0} sek'
-    :second-future:
-      :default:
-        0: In 0 sekondes
-        1: In 1 sekond
-        :other: In {0} sekondes
-    :second-past:
-      :default:
+    :hour: 
+      :default: 
+        :other: "{0} uur"
+        0: 0 uur
+        1: 1 uur
+      :short: 
+        :other: "{0} uur"
+        0: 0 uur
+        1: 1 uur
+    :"second-past": 
+      :default: 
+        :other: "{0} sekondes gelede"
         0: 0 sekondes gelede
         1: 1 sekonde gelede
-        :other: ! '{0} sekondes gelede'
-    :week:
-      :default:
+    :week: 
+      :default: 
+        :other: "{0} weke"
+        0: 0 weke
+        :one: "{0} week"
+        1: 1 week
+      :short: 
+        :other: "{0} weke"
         0: 0 weke
         1: 1 week
-        :one: ! '{0} week'
-        :other: ! '{0} weke'
-      :short:
-        0: 0 weke
-        1: 1 week
-        :other: ! '{0} weke'
-    :week-future:
-      :default:
+    :"minute-future": 
+      :default: 
+        :other: In {0} minute
+        0: In 0 minute
+        1: In 1 minuut
+    :"week-future": 
+      :default: 
+        :other: In {0} weke
         0: In 0 weke
         1: In 1 week
-        :other: In {0} weke
-    :week-past:
-      :default:
+    :day: 
+      :default: 
+        :other: "{0} dae"
+        :one: "{0} dag"
+      :short: 
+        :other: "{0} dae"
+        0: 0 dae
+        1: 1 dag
+    :"minute-past": 
+      :default: 
+        :other: "{0} minute gelede"
+        0: 0 minute gelede
+        1: 1 minuut gelede
+    :"day-future": 
+      :default: 
+        :other: In {0} dae
+        0: In 0 dae
+        1: In 1 dag
+    :"week-past": 
+      :default: 
+        :other: "{0} weke gelede"
         0: 0 weke gelede
         1: 1 week gelede
-        :other: ! '{0} weke gelede'
-    :year:
-      :default:
-        0: 0 jaar
-        1: 1 jaar
-        :other: ! '{0} jaar'
-      :short:
-        0: 0 jr
-        1: 1 jr
-        :other: ! '{0} jr'
-    :year-future:
-      :default:
+    :"month-future": 
+      :default: 
+        :other: In {0} maande
+        0: In 0 maande
+        1: In 1 maand
+    :minute: 
+      :default: 
+        :other: "{0} minute"
+        0: 0 minute
+        1: 1 minuut
+      :short: 
+        :other: "{0} min"
+        0: 0 min
+        1: 1 min
+    :"day-past": 
+      :default: 
+        :other: "{0} dae gelede"
+        0: 0 dae gelede
+        1: 1 dag gelede
+    :"year-future": 
+      :default: 
+        :other: In {0} jaar
         0: In 0 jaar
         1: In 1 jaar
-        :other: In {0} jaar
-    :year-past:
-      :default:
+    :"month-past": 
+      :default: 
+        :other: "{0} maande gelede"
+        0: 0 maande gelede
+        1: 1 maand gelede
+    :month: 
+      :default: 
+        :other: "{0} maande"
+        0: 0 maande
+        1: 1 maand
+      :short: 
+        :other: "{0} mnde"
+        0: 0 mnde
+        1: 1 mnd
+    :"hour-future": 
+      :default: 
+        :other: In {0} uur
+        0: In 0 uur
+        1: In 1 uur
+    :second: 
+      :default: 
+        :other: "{0} sekondes"
+        0: 0 sekondes
+        1: 1 sekonde
+      :short: 
+        :other: "{0} sek"
+        0: 0 sek
+        1: 1 sek
+    :"year-past": 
+      :default: 
+        :other: "{0} jaar gelede"
         0: 0 jaar gelede
         1: 1 jaar gelede
-        :other: ! '{0} jaar gelede'
+    :year: 
+      :default: 
+        :other: "{0} jaar"
+        0: 0 jaar
+        1: 1 jaar
+      :short: 
+        :other: "{0} jr"
+        0: 0 jr
+        1: 1 jr
+    :"second-future": 
+      :default: 
+        :other: In {0} sekondes
+        0: In 0 sekondes
+        1: In 1 sekond

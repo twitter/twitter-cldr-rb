@@ -1,520 +1,1566 @@
----
-:el:
-  :languages:
-    :aa: Αφάρ
-    :ab: Αμπχαζικά
-    :ace: Αχινίζ
-    :ach: Ακολί
-    :ada: Αντάνγκμε
-    :ady: Αντιγκέα
-    :ae: Αβεστάν
-    :af: Αφρικάανς
-    :afa: Αφροασιατική γλώσσα
-    :afh: Αφριχίλι
-    :ain: Αϊνού
-    :ak: Ακάν
-    :akk: Ακάντιαν
-    :ale: Αλούτ
-    :alg: Γλώσσα Αλγκονκιάν
-    :alt: Νότια Αλαταϊκά
-    :am: Αμαρικά
-    :an: Αραγκονικά
-    :ang: Παλαιά Αγγλικά
-    :anp: Ανγκικά
-    :apa: Γλώσσα Απάτσι
-    :ar: Αραβικά
-    :arc: Αραμαϊκά
-    :arn: Αρουκάνιαν
-    :arp: Αράπαχο
-    :art: Τεχνητή γλώσσα
-    :arw: Αραγουάκ
-    :as: Ασαμεζικά
-    :asa: Άσου
-    :ast: Αστουριανά
-    :ath: Γλώσσα Αθαπάσκαν
-    :aus: Αυστραλιανή γλώσσα
-    :av: Άβαρικ
-    :awa: Αγουαντί
-    :ay: Αϊμάρα
-    :az: Αζερικά
-    :ba: Μπασκίρ
-    :bad: Μπάντα
-    :bai: Γλώσσα Μπαμιλέκ
-    :bal: Μπαλούτσι
-    :ban: Μπαλινίζ
-    :bas: Μπάσα
-    :bat: Βαλτική γλώσσα
-    :be: Λευκορωσικά
-    :bej: Μπέζα
-    :bem: Μπέμπα
-    :ber: Μπέρμπερ
-    :bez: Μπένα
-    :bg: Βουλγαρικά
-    :bh: Μπιχάρι
-    :bho: Μποζπούρι
-    :bi: Μπισλάμα
-    :bik: Μπικόλ
-    :bin: Μπίνι
-    :bla: Σικσίκα
-    :bm: Μπαμπάρα
-    :bn: Μπενγκάλι
-    :bnt: Μπαντού
-    :bo: Θιβετιανά
-    :br: Βρετονικά
-    :bra: Μπρατζ
-    :brx: Μπόντο
-    :bs: Βοσνιακά
-    :btk: Μπατάκ
-    :bua: Μπουριάτ
-    :bug: Μπουγκίζ
-    :byn: Μπλιν
-    :ca: Καταλανικά
-    :cad: Κάντο
-    :cai: Ινδιανική γλώσσα Κεντρικής Αμερικής
-    :car: Καρίμπ
-    :cau: Καυκάσια γλώσσα
-    :cch: Ατσάμ
-    :ce: Τσέτσνιαν
-    :ceb: Κεμπουάνο
-    :cel: Κελτική γλώσσα
-    :ch: Καμόρρο
-    :chb: Τσίμπτσα
-    :chg: Τσαγκατάι
-    :chk: Τσουκίζι
-    :chm: Μάρι
-    :chn: Ιδιωματικά Σινούκ
-    :cho: Τσοκτάου
-    :chp: Τσίπιουαν
-    :chr: Τσερόκι
-    :chy: Σεγιέν
-    :cmc: Χαμική γλώσσα
-    :co: Κορσικανικά
-    :cop: Κοπτικά
-    :cpe: Κρεόλ ή Πίντγκιν βάσει Αγγλικών
-    :cpf: Κρεόλ ή Πίντγκιν βάσει Γαλλικών
-    :cpp: Κρεόλ και Πίντγκιν βάσει Πορτογαλικών
-    :cr: Κρι
-    :crh: Τουρκικά Κριμαίας
-    :crp: Κρεόλ ή Πίντγκιν
-    :cs: Τσεχικά
-    :csb: Κασούμπιαν
-    :cu: Εκκλησιαστικά Σλαβικά
-    :cus: Γλώσσα Κουσιτίκ
-    :cv: Χουβάς
-    :cy: Ουαλικά
-    :da: Δανικά
-    :dak: Ντακότα
-    :dar: Ντάργκουα
-    :day: Νταγιάκ
-    :de: Γερμανικά
-    :de-AT: Γερμανικά Αυστρίας
-    :de-CH: Γερμανικά Ελβετίας
-    :del: Ντέλαγουερ
-    :den: Σλαβικά
-    :dgr: Ντόγκριμπ
-    :din: Ντίνκα
-    :doi: Ντόγκρι
-    :dra: Γλώσσα Ντραβίδιαν
-    :dsb: Γλώσσα Κάτω Λουσατίας
-    :dua: Ντουάλα
-    :dum: Μέσα Ολλανδικά
-    :dv: Ντιβέχι
-    :dyu: Ντογιούλα
-    :dz: Ντζόνγκχα
-    :ebu: Έμπου
-    :ee: Γι
-    :efi: Εφίκ
-    :egy: Αρχαία Αιγυπτιακά
-    :eka: Εκατζούκ
-    :el: Ελληνικά
-    :elx: Ελαμάιτ
-    :en: Αγγλικά
-    :en-AU: Αγγλικά Αυστραλίας
-    :en-CA: Αγγλικά Καναδά
-    :en-GB: Αγγλικά Ηνωμένου Βασιλείου
-    :en-US: Αγγλικά Η.Π.Α.
-    :enm: Μέσα Αγγλικά
-    :eo: Εσπεράντο
-    :es: Ισπανικά
-    :es-419: Ισπανικά Λατινικής Αμερικής
-    :es-ES: Ισπανικά Ιβηρικής
-    :et: Εσθονικά
-    :eu: Βασκικά
-    :ewo: Εγουόντο
-    :fa: Περσικά
-    :fan: Φανγκ
-    :fat: Φάντι
-    :ff: Φουλάχ
-    :fi: Φινλανδικά
-    :fil: Φιλιππινεζικά
-    :fiu: Φιννο-Ούγκριαν
-    :fj: Φίτζι
-    :fo: Φαρόε
-    :fon: Φον
-    :fr: Γαλλικά
-    :fr-CA: Γαλλικά Καναδά
-    :fr-CH: Γαλλικά Ελβετίας
-    :frm: Μέσα Γαλλικά
-    :fro: Παλαιά Γαλλικά
-    :frr: Βόρεια Φριζιανά
-    :frs: Ανατολικά Φριζιανά
-    :fur: Φριούλιαν
-    :fy: Δυτικά Φριζιανά
-    :ga: Ιρλανδικά
-    :gaa: Γκα
-    :gay: Γκάγιο
-    :gba: Γκμπάγια
-    :gd: Σκωτικά Κελτικά
-    :gem: Γερμανική γλώσσα
-    :gez: Γκιζ
-    :gil: Γκιλμπερτίζ
-    :gl: Γαλικιανά
-    :gmh: Μέσα Άνω Γερμανικά
-    :gn: Γκουαρανί
-    :goh: Παλαιά Άνω Γερμανικά
-    :gon: Γκόντι
-    :gor: Γκοροντάλο
-    :got: Γοτθικά
-    :grb: Γκρίμπο
-    :grc: Αρχαία Ελληνικά
-    :gsw: Ελβετικά Γερμανικά
-    :gu: Γκουγιαράτι
-    :gv: Μανξ
-    :gwi: Γκουίτσιν
-    :ha: Χάουσα
-    :hai: Χάιντα
-    :haw: Χαβανεζικά
-    :he: Εβραϊκά
-    :hi: Χίντι
-    :hil: Χιλιγκαγιόν
-    :him: Χιματσάλι
-    :hit: Χιτίτε
-    :hmn: Χμονγκ
-    :ho: Χίρι Μότου
-    :hr: Κροατικά
-    :hsb: Γλώσσα Άνω Λουσατίας
-    :ht: Αϊτιανά
-    :hu: Ουγγρικά
-    :hup: Χούπα
-    :hy: Αρμενικά
-    :hz: Χερέρο
-    :ia: Ιντερλίνγκουα
-    :iba: Ιμπάν
-    :id: Ινδονησιακά
-    :ie: Ιντερλίνγκουε
-    :ig: Ίγκμπο
-    :ii: Σικουάν Γι
-    :ijo: Ιζό
-    :ik: Ινουπιάκ
-    :ilo: Ιλόκο
-    :inc: Ινδική γλώσσα
-    :ine: Ινδοευρωπαϊκή γλώσσα
-    :inh: Ινγκούς
-    :io: Ίντο
-    :ira: Ιρανική γλώσσα
-    :iro: Γλώσσα Ιροκόιαν
-    :is: Ισλανδικά
-    :it: Ιταλικά
-    :iu: Ινουκτιτούτ
-    :ja: Ιαπωνικά
-    :jbo: Λόζμπαν
-    :jpr: Ιουδαϊκά-Περσικά
-    :jrb: Ιουδαϊκά-Αραβικά
-    :jv: Ιαβανεζικά
-    :ka: Γεωργιανά
-    :kaa: Κάρα-Καλπάκ
-    :kab: Καμπίλε
-    :kac: Κατσίν
-    :kaj: Τζου
-    :kam: Κάμπα
-    :kar: Καρέν
-    :kaw: Κάουι
-    :kbd: Καμπαρντιανά
-    :kcg: Τουάπ
-    :kea: Γλώσσα του Πράσινου Ακρωτηρίου
-    :kfo: Κόρο
-    :kg: Κονγκό
-    :kha: Κάσι
-    :khi: Γλώσσα Κοϊσάν
-    :kho: Κοτανικά
-    :ki: Κικούγιου
-    :kj: Κουανιγιάμα
-    :kk: Καζακικά
-    :kl: Καλααλισούτ
-    :km: Καμποτζιανά
-    :kmb: Κιμπούντου
-    :kn: Κανάντα
-    :ko: Κορεατικά
-    :kok: Κονκάνι
-    :kos: Κοσραενικά
-    :kpe: Κπέλε
-    :kr: Κανούρι
-    :krc: Καρατσάι-Μπαλκάρ
-    :krl: Καρελιακά
-    :kro: Κρου
-    :kru: Κουρούχ
-    :ks: Κασμίρι
-    :ku: Κουρδικά
-    :kum: Κουμγιούκ
-    :kut: Κουτενάι
-    :kv: Κόμι
-    :kw: Κόρνις
-    :ky: Κυργιζικά
-    :la: Λατινικά
-    :lad: Λαδίνο
-    :lah: Λάχδα
-    :lam: Λάμπα
-    :lb: Λουξεμβουργικά
-    :lez: Λαζγκιάν
-    :lg: Γκάντα
-    :li: Λιμβουργιανά
-    :ln: Λινγκάλα
-    :lo: Λαοθιανά
-    :lol: Μόνγκο
-    :loz: Λόζι
-    :lt: Λιθουανικά
-    :lu: Λούμπα-Κατάνγκα
-    :lua: Λούμπα-Λουλούα
-    :lui: Λουισένο
-    :lun: Λούντα
-    :luo: Λούο
-    :lus: Λουσάι
-    :luy: Λουχία
-    :lv: Λετονικά
-    :mad: Μαντουρίζ
-    :mag: Μαγκάχι
-    :mai: Μαϊτχίλι
-    :mak: Μακαζάρ
-    :man: Μαντίνγκο
-    :map: Οστρονέζιαν
-    :mas: Μασάι
-    :mdf: Μόκσα
-    :mdr: Μανδάρ
-    :men: Μέντε
-    :mg: Μαλαγάσι
-    :mga: Μέσα Ιρλανδικά
-    :mh: Μάρσαλ
-    :mi: Μάορι
-    :mic: Μικμάκ
-    :min: Μινανγκαμπάου
-    :mis: Διάφορες γλώσσες
-    :mk: Σλαβομακεδονικά
-    :mkh: Γλώσσα Μον-Χμερ
-    :ml: Μαλαγιαλάμ
-    :mn: Μογγολικά
-    :mnc: Μαντσού
-    :mni: Μανιπούρι
-    :mno: Γλώσσα Μανόμπο
-    :mo: Μολδαβικά
-    :moh: Μοχόκ
-    :mos: Μόσι
-    :mr: Μαράθι
-    :ms: Μαλάι
-    :mt: Μαλτεζικά
-    :mul: Πολλαπλές γλώσσες
-    :mun: Γλώσσα Μούντα
-    :mus: Κρικ
-    :mwl: Μιραντεζικά
-    :mwr: Μαργουάρι
-    :my: Βιρμανικά
-    :myn: Γλώσσα Μάγιαν
-    :myv: Έρζυα
-    :na: Ναούρου
-    :nah: Ναχουάτλ
-    :nai: Ινδιανική γλώσσα Βόρειας Αμερικής
-    :nap: Ναπολιτανικά
-    :nb: Νορβηγικά Μποκμάλ
-    :nd: Ντεμπέλε Βορρά
-    :nds: Κάτω Γερμανικά
-    :ne: Νεπάλι
-    :new: Νεγουάρι
-    :ng: Ντόνγκα
-    :nia: Νίας
-    :nic: Γλώσσα Νίγηρα-Κορδοφάνιαν
-    :niu: Νιούεαν
-    :nl: Ολλανδικά
-    :nl-BE: Φλαμανδικά
-    :nn: Νορβηγικά Νινόρσκ
-    :no: Νορβηγικά
-    :nog: Νογκάι
-    :non: Παλαιά Νορβηγικά
-    :nqo: Ν'Κο
-    :nr: Ντεμπέλε Νότου
-    :nso: Βόρεια Σόθο
-    :nub: Γλώσσα Νούμπιαν
-    :nv: Νάβαχο
-    :nwc: Κλασικά Νεουάρι
-    :ny: Νιάντζα
-    :nym: Νιαμγουέζι
-    :nyn: Νιανκόλε
-    :nyo: Νιόρο
-    :nzi: Νζίμα
-    :oc: Οκσιτανικά
-    :oj: Οζιβίγουα
-    :om: Ορόμο
-    :or: Ορίγια
-    :os: Οσετικά
-    :osa: Οσάζ
-    :ota: Οθωμανικά Τουρκικά
-    :oto: Οθωμανική γλώσσα
-    :pa: Παντζαπικά
-    :paa: Παπούα
-    :pag: Πανγκασινάν
-    :pal: Παχλάβι
-    :pam: Παμπάνγκα
-    :pap: Παπιαμέντο
-    :pau: Παλάουαν
-    :peo: Αρχαία Περσικά
-    :phi: Φιλιππινεζική γλώσσα
-    :phn: Φοινικικά
-    :pi: Πάλι
-    :pl: Πολωνικά
-    :pon: Ποχπέιαν
-    :pra: Γλώσσα Πράκριτ
-    :pro: Παλαιά Προβενσιάλ
-    :ps: Πάστο
-    :pt: Πορτογαλικά
-    :pt-BR: Πορτογαλικά Βραζιλίας
-    :pt-PT: Πορτογαλικά Ιβηρικής
-    :qu: Κετσούα
-    :raj: Ραζασθάνι
-    :rap: Ραπανούι
-    :rar: Ραροτονγκάν
-    :rm: Ρετο-Ρομανικά
-    :rn: Ρούντι
-    :ro: Ρουμανικά
-    :roa: Ρομανική γλώσσα
-    :rof: Ρόμπο
-    :rom: Ρομανί
-    :root: Ρουτ
-    :ru: Ρωσικά
-    :rup: Αρομανικά
-    :rw: Κινιαρβάντα
-    :rwk: Ρουά
-    :sa: Σανσκριτικά
-    :sad: Σαντάγουε
-    :sah: Γιακούτ
-    :sai: Ινδιανική γλώσσα Νότιας Αμερικής
-    :sal: Γλώσσα Σαλισάν
-    :sam: Σαμαρίτικα Αραμαϊκά
-    :sas: Σασάκ
-    :sat: Σαντάλι
-    :sc: Σαρδινικά
-    :scn: Σικελιανά
-    :sco: Σκωτικά
-    :sd: Σίντι
-    :se: Βόρεια Σάμι
-    :sel: Σελκούπ
-    :sem: Σημητική γλώσσα
-    :sg: Σάνγκο
-    :sga: Παλαιά Ιρλανδικά
-    :sgn: Νοηματική γλώσσα
-    :sh: Σερβοκροατικά
-    :shn: Σαν
-    :si: Σινχαλεζικά
-    :sid: Σιντάμο
-    :sio: Γλώσσα Σιουάν
-    :sit: Σινοθιβετιανή γλώσσα
-    :sk: Σλοβακικά
-    :sl: Σλοβενικά
-    :sla: Σλαβική γλώσσα
-    :sm: Σαμόαν
-    :sma: Νότια Σάμι
-    :smi: Γλώσσα Σάμι
-    :smj: Λούλε Σάμι
-    :smn: Ινάρι Σάμι
-    :sms: Σκολτ Σάμι
-    :sn: Σχόνα
-    :snk: Σονίνκε
-    :so: Σομάλι
-    :sog: Σογκντιέν
-    :son: Σονγκχάι
-    :sq: Αλβανικά
-    :sr: Σερβικά
-    :srn: Σρανάρ Τόνγκο
-    :srr: Σερέρ
-    :ss: Σουάτι
-    :ssa: Νιλο-Σαχαριανή γλώσσα
-    :st: Νότια Σόθο
-    :su: Σουδανικά
-    :suk: Σουκούμα
-    :sus: Σούσου
-    :sux: Σουμερικά
-    :sv: Σουηδικά
-    :sw: Σουαχίλι
-    :swb: Κομόρρια
-    :syc: Κλασικά Συριακά
-    :syr: Συριακά
-    :ta: Ταμίλ
-    :tai: Ταϊλανδική γλώσσα
-    :te: Τελούγκου
-    :tem: Τίμνε
-    :ter: Τερένο
-    :tet: Τέτουμ
-    :tg: Τατζίκ
-    :th: Ταϊλανδικά
-    :ti: Τιγκρίνυα
-    :tig: Τίγκρε
-    :tiv: Τιβ
-    :tk: Τουρκμενικά
-    :tkl: Τοκελάου
-    :tl: Ταγκαλόγκ
-    :tlh: Κλίνγκον
-    :tli: Τλίνγκιτ
-    :tmh: Ταμασέκ
-    :tn: Τσιγουάνα
-    :to: Τόνγκα
-    :tog: Νιάσα Τόνγκα
-    :tpi: Τοκ Πισίν
-    :tr: Τουρκικά
-    :ts: Τσόνγκα
-    :tsi: Τσίμσιαν
-    :tt: Τατάρ
-    :tum: Τουμπούκα
-    :tup: Γλώσσα Τούπι
-    :tut: Αλταϊκή γλώσσα
-    :tvl: Τουβαλού
-    :tw: Τούι
-    :ty: Ταϊτιανά
-    :tyv: Τουβίνιαν
-    :udm: Ουντμούρτ
-    :ug: Ουιγκούρ
-    :uga: Ουγκαρίτικ
-    :uk: Ουκρανικά
-    :umb: Ουμπούντου
-    :und: Άγνωστη ή ακατάλληλη γλώσσα
-    :ur: Ουρντού
-    :uz: Ουζμπεκικά
-    :vai: Βάι
-    :ve: Βένδα
-    :vi: Βιετναμεζικά
-    :vo: Βόλαπικ
-    :vot: Βότικ
-    :wa: Γουαλούν
-    :wae: Βάλσερ
-    :wak: Γλώσσα Γουακασάν
-    :wal: Γουάλαμο
-    :war: Γουάρει
-    :was: Γουασό
-    :wen: Διάλεκτος Άνω Λουσατίας
-    :wo: Γουόλοφ
-    :xal: Καλμίκ
-    :xh: Ζόσα
-    :yao: Γιάο
-    :yap: Γιαπίζ
-    :yi: Γίντις
-    :yo: Γιορούμπα
-    :ypk: Γλώσσα Γιούπικ
-    :yue: Καντονέζικα
-    :za: Ζουάνγκ
-    :zap: Ζάποτεκ
-    :zbl: Σύμβολα Bliss
-    :zen: Ζενάγκα
-    :zh: Κινεζικά
-    :zh-Hans: Απλοποιημένα Κινεζικά
-    :zh-Hant: Παραδοσιακά Κινεζικά
-    :znd: Ζάντε
-    :zu: Ζουλού
-    :zun: Ζούνι
-    :zxx: Χωρίς γλωσσολογικό περιεχόμενο
-    :zza: Ζάζα
+--- 
+:el: 
+  :languages: 
+    :sid: !binary |
+      zqPOuc69z4TOrM68zr8=
+
+    :hai: !binary |
+      zqfOrM65zr3PhM6x
+
+    :kn: !binary |
+      zprOsc69zqzOvc+EzrE=
+
+    :umb: !binary |
+      zp/Phc68z4DOv8+Nzr3PhM6/z4U=
+
+    :ka: !binary |
+      zpPOtc+Jz4HOs865zrHOvc6s
+
+    :ki: !binary |
+      zprOuc66zr/Pjc6zzrnOv8+F
+
+    :pt: !binary |
+      zqDOv8+Bz4TOv86zzrHOu865zrrOrA==
+
+    :nb: !binary |
+      zp3Ov8+BzrLOt86zzrnOus6sIM6cz4DOv866zrzOrM67
+
+    :luy: !binary |
+      zpvOv8+Fz4fOr86x
+
+    :qu: !binary |
+      zprOtc+Ez4POv8+NzrE=
+
+    :mdf: !binary |
+      zpzPjM66z4POsQ==
+
+    :bej: !binary |
+      zpzPgM6tzrbOsQ==
+
+    :vi: !binary |
+      zpLOuc61z4TOvc6xzrzOtc62zrnOus6s
+
+    :nub: !binary |
+      zpPOu8+Oz4PPg86xIM6dzr/Pjc68z4DOuc6xzr0=
+
+    :cpf: !binary |
+      zprPgc61z4zOuyDOriDOoM6vzr3PhM6zzrrOuc69IM6yzqzPg861zrkgzpPO
+      sc67zrvOuc66z47OvQ==
+
+    :mas: !binary |
+      zpzOsc+DzqzOuQ==
+
+    :sai: !binary |
+      zpnOvc60zrnOsc69zrnOus6uIM6zzrvPjs+Dz4POsSDOnc+Mz4TOuc6xz4Ig
+      zpHOvM61z4HOuc66zq7Pgg==
+
+    :bo: !binary |
+      zpjOuc6yzrXPhM65zrHOvc6s
+
+    :frs: !binary |
+      zpHOvc6xz4TOv867zrnOus6sIM6mz4HOuc62zrnOsc69zqw=
+
+    :gu: !binary |
+      zpPOus6/z4XOs865zrHPgc6sz4TOuQ==
+
+    :es: !binary |
+      zpnPg8+AzrHOvc65zrrOrA==
+
+    :mo: !binary |
+      zpzOv867zrTOsc6yzrnOus6s
+
+    :tli: !binary |
+      zqTOu86vzr3Os866zrnPhA==
+
+    :"nl-BE": !binary |
+      zqbOu86xzrzOsc69zrTOuc66zqw=
+
+    :kaa: !binary |
+      zprOrM+BzrEtzprOsc67z4DOrM66
+
+    :el: !binary |
+      zpXOu867zrfOvc65zrrOrA==
+
+    :arw: !binary |
+      zpHPgc6xzrPOv8+FzqzOug==
+
+    :my: !binary |
+      zpLOuc+BzrzOsc69zrnOus6s
+
+    :en: !binary |
+      zpHOs86zzrvOuc66zqw=
+
+    :lu: !binary |
+      zpvOv8+NzrzPgM6xLc6azrHPhM6szr3Os866zrE=
+
+    :chg: !binary |
+      zqTPg86xzrPOus6xz4TOrM65
+
+    :tg: !binary |
+      zqTOsc+EzrbOr866
+
+    :na: !binary |
+      zp3Osc6/z43Pgc6/z4U=
+
+    :eka: !binary |
+      zpXOus6xz4TOts6/z43Oug==
+
+    :li: !binary |
+      zpvOuc68zrLOv8+Fz4HOs865zrHOvc6s
+
+    :bez: !binary |
+      zpzPgM6tzr3OsQ==
+
+    :pi: !binary |
+      zqDOrM67zrk=
+
+    :"fr-CH": !binary |
+      zpPOsc67zrvOuc66zqwgzpXOu86yzrXPhM6vzrHPgg==
+
+    :ak: !binary |
+      zpHOus6szr0=
+
+    :wa: !binary |
+      zpPOv8+FzrHOu86/z43OvQ==
+
+    :hz: !binary |
+      zqfOtc+Bzq3Pgc6/
+
+    :suk: !binary |
+      zqPOv8+FzrrOv8+NzrzOsQ==
+
+    :fo: !binary |
+      zqbOsc+Bz4zOtQ==
+
+    :xal: !binary |
+      zprOsc67zrzOr866
+
+    :afh: !binary |
+      zpHPhs+BzrnPh86vzrvOuQ==
+
+    :krl: !binary |
+      zprOsc+BzrXOu865zrHOus6s
+
+    :lo: !binary |
+      zpvOsc6/zrjOuc6xzr3OrA==
+
+    :sl: !binary |
+      zqPOu86/zrLOtc69zrnOus6s
+
+    :mnc: !binary |
+      zpzOsc69z4TPg86/z40=
+
+    :bug: !binary |
+      zpzPgM6/z4XOs866zq/Otg==
+
+    :"en-AU": !binary |
+      zpHOs86zzrvOuc66zqwgzpHPhc+Dz4TPgc6xzrvOr86xz4I=
+
+    :osa: !binary |
+      zp/Pg86szrY=
+
+    :dak: !binary |
+      zp3PhM6xzrrPjM+EzrE=
+
+    :sga: !binary |
+      zqDOsc67zrHOuc6sIM6Zz4HOu86xzr3OtM65zrrOrA==
+
+    :efi: !binary |
+      zpXPhs6vzro=
+
+    :gon: !binary |
+      zpPOus+Mzr3PhM65
+
+    :sw: !binary |
+      zqPOv8+FzrHPh86vzrvOuQ==
+
+    :tw: !binary |
+      zqTOv8+Nzrk=
+
+    :"pt-PT": !binary |
+      zqDOv8+Bz4TOv86zzrHOu865zrrOrCDOmc6yzrfPgc65zrrOrs+C
+
+    :ig: !binary |
+      zorOs866zrzPgM6/
+
+    :kha: !binary |
+      zprOrM+Dzrk=
+
+    :ko: !binary |
+      zprOv8+BzrXOsc+EzrnOus6s
+
+    :zbl: !binary |
+      zqPPjc68zrLOv867zrEgQmxpc3M=
+
+    :ps: !binary |
+      zqDOrM+Dz4TOvw==
+
+    :mai: !binary |
+      zpzOsc+Kz4TPh86vzrvOuQ==
+
+    :ban: !binary |
+      zpzPgM6xzrvOuc69zq/Otg==
+
+    :und: !binary |
+      zobOs869z4nPg8+Ezrcgzq4gzrHOus6xz4TOrM67zrvOt867zrcgzrPOu8+O
+      z4PPg86x
+
+    :nog: !binary |
+      zp3Ov86zzrrOrM65
+
+    :co: !binary |
+      zprOv8+Bz4POuc66zrHOvc65zrrOrA==
+
+    :rom: !binary |
+      zqHOv868zrHOvc6v
+
+    :bg: !binary |
+      zpLOv8+FzrvOs86xz4HOuc66zqw=
+
+    :frm: !binary |
+      zpzOrc+DzrEgzpPOsc67zrvOuc66zqw=
+
+    :cr: !binary |
+      zprPgc65
+
+    :kl: !binary |
+      zprOsc67zrHOsc67zrnPg86/z43PhA==
+
+    :jbo: !binary |
+      zpvPjM62zrzPgM6xzr0=
+
+    :ca: !binary |
+      zprOsc+EzrHOu86xzr3Ouc66zqw=
+
+    :tn: !binary |
+      zqTPg865zrPOv8+FzqzOvc6x
+
+    :tiv: !binary |
+      zqTOuc6y
+
+    :got: !binary |
+      zpPOv8+EzrjOuc66zqw=
+
+    :smj: !binary |
+      zpvOv8+NzrvOtSDOo86szrzOuQ==
+
+    :chr: !binary |
+      zqTPg861z4HPjM66zrk=
+
+    :zen: !binary |
+      zpbOtc69zqzOs866zrE=
+
+    :mr: !binary |
+      zpzOsc+BzqzOuM65
+
+    :lez: !binary |
+      zpvOsc62zrPOus65zqzOvQ==
+
+    :apa: !binary |
+      zpPOu8+Oz4PPg86xIM6Rz4DOrM+Ez4POuQ==
+
+    :gem: !binary |
+      zpPOtc+BzrzOsc69zrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :ta: !binary |
+      zqTOsc68zq/Ouw==
+
+    :mwr: !binary |
+      zpzOsc+BzrPOv8+FzqzPgc65
+
+    :ceb: !binary |
+      zprOtc68z4DOv8+FzqzOvc6/
+
+    :peo: !binary |
+      zpHPgc+HzrHOr86xIM6gzrXPgc+DzrnOus6s
+
+    :dua: !binary |
+      zp3PhM6/z4XOrM67zrE=
+
+    :bh: !binary |
+      zpzPgM65z4fOrM+Bzrk=
+
+    :srn: !binary |
+      zqPPgc6xzr3OrM+BIM6kz4zOvc6zzrrOvw==
+
+    :new: !binary |
+      zp3Otc6zzr/Phc6sz4HOuQ==
+
+    :ho: !binary |
+      zqfOr8+BzrkgzpzPjM+Ezr/PhQ==
+
+    :war: !binary |
+      zpPOv8+FzqzPgc61zrk=
+
+    :ada: !binary |
+      zpHOvc+EzqzOvc6zzrrOvM61
+
+    :ky: !binary |
+      zprPhc+BzrPOuc62zrnOus6s
+
+    :kpe: !binary |
+      zprPgM6tzrvOtQ==
+
+    :bra: !binary |
+      zpzPgM+BzrHPhM62
+
+    :se: !binary |
+      zpLPjM+BzrXOuc6xIM6jzqzOvM65
+
+    :mic: !binary |
+      zpzOuc66zrzOrM66
+
+    :nzi: !binary |
+      zp3Ots6vzrzOsQ==
+
+    :cu: !binary |
+      zpXOus66zrvOt8+DzrnOsc+Dz4TOuc66zqwgzqPOu86xzrLOuc66zqw=
+
+    :zu: !binary |
+      zpbOv8+FzrvOv8+N
+
+    :gil: !binary |
+      zpPOus65zrvOvM+AzrXPgc+Ezq/Otg==
+
+    :rof: !binary |
+      zqHPjM68z4DOvw==
+
+    :sco: !binary |
+      zqPOus+Jz4TOuc66zqw=
+
+    :kbd: !binary |
+      zprOsc68z4DOsc+Bzr3PhM65zrHOvc6s
+
+    :hi: !binary |
+      zqfOr869z4TOuQ==
+
+    :tup: !binary |
+      zpPOu8+Oz4PPg86xIM6kzr/Pjc+Azrk=
+
+    :hy: !binary |
+      zpHPgc68zrXOvc65zrrOrA==
+
+    :lus: !binary |
+      zpvOv8+Fz4POrM65
+
+    :inc: !binary |
+      zpnOvc60zrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :ba: !binary |
+      zpzPgM6xz4POus6vz4E=
+
+    :fa: !binary |
+      zqDOtc+Bz4POuc66zqw=
+
+    :kru: !binary |
+      zprOv8+Fz4HOv8+Nz4c=
+
+    :nso: !binary |
+      zpLPjM+BzrXOuc6xIM6jz4zOuM6/
+
+    :ms: !binary |
+      zpzOsc67zqzOuQ==
+
+    :chp: !binary |
+      zqTPg86vz4DOuc6/z4XOsc69
+
+    :nia: !binary |
+      zp3Or86xz4I=
+
+    :tt: !binary |
+      zqTOsc+EzqzPgQ==
+
+    :rap: !binary |
+      zqHOsc+AzrHOvc6/z43OuQ==
+
+    :az: !binary |
+      zpHOts61z4HOuc66zqw=
+
+    :fat: !binary |
+      zqbOrM69z4TOuQ==
+
+    :inh: !binary |
+      zpnOvc6zzrrOv8+Nz4I=
+
+    :tai: !binary |
+      zqTOsc+KzrvOsc69zrTOuc66zq4gzrPOu8+Oz4PPg86x
+
+    :gd: !binary |
+      zqPOus+Jz4TOuc66zqwgzprOtc67z4TOuc66zqw=
+
+    :an: !binary |
+      zpHPgc6xzrPOus6/zr3Ouc66zqw=
+
+    :lad: !binary |
+      zpvOsc60zq/Ovc6/
+
+    :yue: !binary |
+      zprOsc69z4TOv869zq3Ots65zrrOsQ==
+
+    :mk: !binary |
+      zqPOu86xzrLOv868zrHOus61zrTOv869zrnOus6s
+
+    :sq: !binary |
+      zpHOu86yzrHOvc65zrrOrA==
+
+    :mun: !binary |
+      zpPOu8+Oz4PPg86xIM6czr/Pjc69z4TOsQ==
+
+    :cau: !binary |
+      zprOsc+FzrrOrM+DzrnOsSDOs867z47Pg8+DzrE=
+
+    :"es-419": !binary |
+      zpnPg8+AzrHOvc65zrrOrCDOm86xz4TOuc69zrnOus6uz4IgzpHOvM61z4HO
+      uc66zq7Pgg==
+
+    :doi: !binary |
+      zp3PhM+MzrPOus+Bzrk=
+
+    :pal: !binary |
+      zqDOsc+HzrvOrM6yzrk=
+
+    :snk: !binary |
+      zqPOv869zq/Ovc66zrU=
+
+    :him: !binary |
+      zqfOuc68zrHPhM+DzqzOu865
+
+    :wae: !binary |
+      zpLOrM67z4POtc+B
+
+    :fr: !binary |
+      zpPOsc67zrvOuc66zqw=
+
+    :sv: !binary |
+      zqPOv8+FzrfOtM65zrrOrA==
+
+    :vot: !binary |
+      zpLPjM+EzrnOug==
+
+    :km: !binary |
+      zprOsc68z4DOv8+EzrbOuc6xzr3OrA==
+
+    :kmb: !binary |
+      zprOuc68z4DOv8+Nzr3PhM6/z4U=
+
+    :sg: !binary |
+      zqPOrM69zrPOus6/
+
+    :aa: !binary |
+      zpHPhs6sz4E=
+
+    :"zh-Hans": !binary |
+      zpHPgM67zr/PgM6/zrnOt868zq3Ovc6xIM6azrnOvc61zrbOuc66zqw=
+
+    :ro: !binary |
+      zqHOv8+FzrzOsc69zrnOus6s
+
+    :men: !binary |
+      zpzOrc69z4TOtQ==
+
+    :bi: !binary |
+      zpzPgM65z4POu86szrzOsQ==
+
+    :"de-AT": !binary |
+      zpPOtc+BzrzOsc69zrnOus6sIM6Rz4XPg8+Ez4HOr86xz4I=
+
+    :xh: !binary |
+      zpbPjM+DzrE=
+
+    :nwc: !binary |
+      zprOu86xz4POuc66zqwgzp3Otc6/z4XOrM+Bzrk=
+
+    :crh: !binary |
+      zqTOv8+Fz4HOus65zrrOrCDOms+BzrnOvM6xzq/Osc+C
+
+    :nyn: !binary |
+      zp3Ouc6xzr3Ous+MzrvOtQ==
+
+    :sam: !binary |
+      zqPOsc68zrHPgc6vz4TOuc66zrEgzpHPgc6xzrzOsc+KzrrOrA==
+
+    :cel: !binary |
+      zprOtc67z4TOuc66zq4gzrPOu8+Oz4PPg86x
+
+    :gay: !binary |
+      zpPOus6szrPOuc6/
+
+    :tog: !binary |
+      zp3Ouc6sz4POsSDOpM+Mzr3Os866zrE=
+
+    :haw: !binary |
+      zqfOsc6yzrHOvc61zrbOuc66zqw=
+
+    :kam: !binary |
+      zprOrM68z4DOsQ==
+
+    :fi: !binary |
+      zqbOuc69zrvOsc69zrTOuc66zqw=
+
+    :aus: !binary |
+      zpHPhc+Dz4TPgc6xzrvOuc6xzr3OriDOs867z47Pg8+DzrE=
+
+    :lui: !binary |
+      zpvOv8+FzrnPg86tzr3Ovw==
+
+    :nap: !binary |
+      zp3Osc+Azr/Ou865z4TOsc69zrnOus6s
+
+    :chm: !binary |
+      zpzOrM+Bzrk=
+
+    :tk: !binary |
+      zqTOv8+Fz4HOus68zrXOvc65zrrOrA==
+
+    :pra: !binary |
+      zpPOu8+Oz4PPg86xIM6gz4HOrM66z4HOuc+E
+
+    :enm: !binary |
+      zpzOrc+DzrEgzpHOs86zzrvOuc66zqw=
+
+    :art: !binary |
+      zqTOtc+Hzr3Ot8+Ezq4gzrPOu8+Oz4PPg86x
+
+    :kab: !binary |
+      zprOsc68z4DOr867zrU=
+
+    :ijo: !binary |
+      zpnOts+M
+
+    :ln: !binary |
+      zpvOuc69zrPOus6szrvOsQ==
+
+    :sux: !binary |
+      zqPOv8+FzrzOtc+BzrnOus6s
+
+    :yap: !binary |
+      zpPOuc6xz4DOr862
+
+    :akk: !binary |
+      zpHOus6szr3PhM65zrHOvQ==
+
+    :day: !binary |
+      zp3PhM6xzrPOuc6szro=
+
+    :is: !binary |
+      zpnPg867zrHOvc60zrnOus6s
+
+    :lv: !binary |
+      zpvOtc+Ezr/Ovc65zrrOrA==
+
+    :kum: !binary |
+      zprOv8+FzrzOs865zr/Pjc66
+
+    :cad: !binary |
+      zprOrM69z4TOvw==
+
+    :sm: !binary |
+      zqPOsc68z4zOsc69
+
+    :mno: !binary |
+      zpPOu8+Oz4PPg86xIM6czrHOvc+MzrzPgM6/
+
+    :del: !binary |
+      zp3PhM6tzrvOsc6zzr/Phc61z4E=
+
+    :oto: !binary |
+      zp/OuM+JzrzOsc69zrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :"en-GB": !binary |
+      zpHOs86zzrvOuc66zqwgzpfOvc+JzrzOrc69zr/PhSDOks6xz4POuc67zrXO
+      r86/z4U=
+
+    :st: !binary |
+      zp3PjM+EzrnOsSDOo8+MzrjOvw==
+
+    :grb: !binary |
+      zpPOus+Bzq/OvM+Azr8=
+
+    :syr: !binary |
+      zqPPhc+BzrnOsc66zqw=
+
+    :shn: !binary |
+      zqPOsc69
+
+    :jv: !binary |
+      zpnOsc6yzrHOvc61zrbOuc66zqw=
+
+    :kho: !binary |
+      zprOv8+EzrHOvc65zrrOrA==
+
+    :pl: !binary |
+      zqDOv867z4nOvc65zrrOrA==
+
+    :uga: !binary |
+      zp/Phc6zzrrOsc+Bzq/PhM65zro=
+
+    :man: !binary |
+      zpzOsc69z4TOr869zrPOus6/
+
+    :map: !binary |
+      zp/Pg8+Ez4HOv869zq3Ots65zrHOvQ==
+
+    :ebu: !binary |
+      zojOvM+Azr/PhQ==
+
+    :no: !binary |
+      zp3Ov8+BzrLOt86zzrnOus6s
+
+    :bat: !binary |
+      zpLOsc67z4TOuc66zq4gzrPOu8+Oz4PPg86x
+
+    :sa: !binary |
+      zqPOsc69z4POus+BzrnPhM65zrrOrA==
+
+    :nqo: !binary |
+      zp0nzprOvw==
+
+    :cpe: !binary |
+      zprPgc61z4zOuyDOriDOoM6vzr3PhM6zzrrOuc69IM6yzqzPg861zrkgzpHO
+      s86zzrvOuc66z47OvQ==
+
+    :ve: !binary |
+      zpLOrc69zrTOsQ==
+
+    :sad: !binary |
+      zqPOsc69z4TOrM6zzr/Phc61
+
+    :bnt: !binary |
+      zpzPgM6xzr3PhM6/z40=
+
+    :frr: !binary |
+      zpLPjM+BzrXOuc6xIM6mz4HOuc62zrnOsc69zqw=
+
+    :lg: !binary |
+      zpPOus6szr3PhM6x
+
+    :tlh: !binary |
+      zprOu86vzr3Os866zr/OvQ==
+
+    :gsw: !binary |
+      zpXOu86yzrXPhM65zrrOrCDOk861z4HOvM6xzr3Ouc66zqw=
+
+    :jrb: !binary |
+      zpnOv8+FzrTOsc+KzrrOrC3Okc+BzrHOss65zrrOrA==
+
+    :de: !binary |
+      zpPOtc+BzrzOsc69zrnOus6s
+
+    :sms: !binary |
+      zqPOus6/zrvPhCDOo86szrzOuQ==
+
+    :zun: !binary |
+      zpbOv8+Nzr3OuQ==
+
+    :mul: !binary |
+      zqDOv867zrvOsc+AzrvOrc+CIM6zzrvPjs+Dz4POtc+C
+
+    :loz: !binary |
+      zpvPjM62zrk=
+
+    :arp: !binary |
+      zpHPgc6sz4DOsc+Hzr8=
+
+    :tet: !binary |
+      zqTOrc+Ezr/Phc68
+
+    :myv: !binary |
+      zojPgc62z4XOsQ==
+
+    :chb: !binary |
+      zqTPg86vzrzPgM+Ez4POsQ==
+
+    :dyu: !binary |
+      zp3PhM6/zrPOuc6/z43Ou86x
+
+    :bem: !binary |
+      zpzPgM6tzrzPgM6x
+
+    :phn: !binary |
+      zqbOv865zr3Ouc66zrnOus6s
+
+    :"fr-CA": !binary |
+      zpPOsc67zrvOuc66zqwgzprOsc69zrHOtM6s
+
+    :afa: !binary |
+      zpHPhs+Bzr/Osc+DzrnOsc+EzrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :ssa: !binary |
+      zp3Ouc67zr8tzqPOsc+HzrHPgc65zrHOvc6uIM6zzrvPjs+Dz4POsQ==
+
+    :fj: !binary |
+      zqbOr8+EzrbOuQ==
+
+    :hup: !binary |
+      zqfOv8+Nz4DOsQ==
+
+    :krc: !binary |
+      zprOsc+BzrHPhM+DzqzOuS3OnM+AzrHOu866zqzPgQ==
+
+    :wen: !binary |
+      zpTOuc6szrvOtc66z4TOv8+CIM6Gzr3PiSDOm86/z4XPg86xz4TOr86xz4I=
+
+    :lb: !binary |
+      zpvOv8+Fzr7Otc68zrLOv8+Fz4HOs865zrrOrA==
+
+    :ast: !binary |
+      zpHPg8+Ezr/Phc+BzrnOsc69zqw=
+
+    :ae: !binary |
+      zpHOss61z4PPhM6szr0=
+
+    :os: !binary |
+      zp/Pg861z4TOuc66zqw=
+
+    :th: !binary |
+      zqTOsc+KzrvOsc69zrTOuc66zqw=
+
+    :sk: !binary |
+      zqPOu86/zrLOsc66zrnOus6s
+
+    :mkh: !binary |
+      zpPOu8+Oz4PPg86xIM6czr/OvS3Op868zrXPgQ==
+
+    :am: !binary |
+      zpHOvM6xz4HOuc66zqw=
+
+    :bua: !binary |
+      zpzPgM6/z4XPgc65zqzPhA==
+
+    :id: !binary |
+      zpnOvc60zr/Ovc63z4POuc6xzrrOrA==
+
+    :oj: !binary |
+      zp/Ots65zrLOr86zzr/Phc6x
+
+    :cv: !binary |
+      zqfOv8+FzrLOrM+C
+
+    :sem: !binary |
+      zqPOt868zrfPhM65zrrOriDOs867z47Pg8+DzrE=
+
+    :io: !binary |
+      zorOvc+Ezr8=
+
+    :dz: !binary |
+      zp3PhM62z4zOvc6zzrrPh86x
+
+    :goh: !binary |
+      zqDOsc67zrHOuc6sIM6Gzr3PiSDOk861z4HOvM6xzr3Ouc66zqw=
+
+    :tvl: !binary |
+      zqTOv8+FzrLOsc67zr/PjQ==
+
+    :ja: !binary |
+      zpnOsc+Az4nOvc65zrrOrA==
+
+    :"pt-BR": !binary |
+      zqDOv8+Bz4TOv86zzrHOu865zrrOrCDOks+BzrHOts65zrvOr86xz4I=
+
+    :"zh-Hant": !binary |
+      zqDOsc+BzrHOtM6/z4POuc6xzrrOrCDOms65zr3Otc62zrnOus6s
+
+    :ie: !binary |
+      zpnOvc+EzrXPgc67zq/Ovc6zzrrOv8+FzrU=
+
+    :kg: !binary |
+      zprOv869zrPOus+M
+
+    :bal: !binary |
+      zpzPgM6xzrvOv8+Nz4TPg865
+
+    :vo: !binary |
+      zpLPjM67zrHPgM65zro=
+
+    :pa: !binary |
+      zqDOsc69z4TOts6xz4DOuc66zqw=
+
+    :zh: !binary |
+      zprOuc69zrXOts65zrrOrA==
+
+    :mag: !binary |
+      zpzOsc6zzrrOrM+Hzrk=
+
+    :cmc: !binary |
+      zqfOsc68zrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :ug: !binary |
+      zp/Phc65zrPOus6/z43PgQ==
+
+    :bin: !binary |
+      zpzPgM6vzr3OuQ==
+
+    :niu: !binary |
+      zp3Ouc6/z43Otc6xzr0=
+
+    :fon: !binary |
+      zqbOv869
+
+    :kcg: !binary |
+      zqTOv8+FzqzPgA==
+
+    :roa: !binary |
+      zqHOv868zrHOvc65zrrOriDOs867z47Pg8+DzrE=
+
+    :ber: !binary |
+      zpzPgM6tz4HOvM+AzrXPgQ==
+
+    :ar: !binary |
+      zpHPgc6xzrLOuc66zqw=
+
+    :smi: !binary |
+      zpPOu8+Oz4PPg86xIM6jzqzOvM65
+
+    :iro: !binary |
+      zpPOu8+Oz4PPg86xIM6Zz4HOv866z4zOuc6xzr0=
+
+    :ter: !binary |
+      zqTOtc+Bzq3Ovc6/
+
+    :gn: !binary |
+      zpPOus6/z4XOsc+BzrHOvc6v
+
+    :zap: !binary |
+      zpbOrM+Azr/PhM61zro=
+
+    :lam: !binary |
+      zpvOrM68z4DOsQ==
+
+    :anp: !binary |
+      zpHOvc6zzrrOuc66zqw=
+
+    :mn: !binary |
+      zpzOv86zzrPOv867zrnOus6s
+
+    :ce: !binary |
+      zqTPg86tz4TPg869zrnOsc69
+
+    :mwl: !binary |
+      zpzOuc+BzrHOvc+EzrXOts65zrrOrA==
+
+    :su: !binary |
+      zqPOv8+FzrTOsc69zrnOus6s
+
+    :dsb: !binary |
+      zpPOu8+Oz4PPg86xIM6azqzPhM+JIM6bzr/Phc+DzrHPhM6vzrHPgg==
+
+    :sah: !binary |
+      zpPOuc6xzrrOv8+Nz4Q=
+
+    :pau: !binary |
+      zqDOsc67zqzOv8+FzrHOvQ==
+
+    :da: !binary |
+      zpTOsc69zrnOus6s
+
+    :son: !binary |
+      zqPOv869zrPOus+HzqzOuQ==
+
+    :hmn: !binary |
+      zqfOvM6/zr3Os866
+
+    :wal: !binary |
+      zpPOv8+FzqzOu86xzrzOvw==
+
+    :kos: !binary |
+      zprOv8+Dz4HOsc61zr3Ouc66zqw=
+
+    :ku: !binary |
+      zprOv8+Fz4HOtM65zrrOrA==
+
+    :ur: !binary |
+      zp/Phc+Bzr3PhM6/z40=
+
+    :ach: !binary |
+      zpHOus6/zrvOrw==
+
+    :sd: !binary |
+      zqPOr869z4TOuQ==
+
+    :mh: !binary |
+      zpzOrM+Bz4POsc67
+
+    :bla: !binary |
+      zqPOuc66z4POr866zrE=
+
+    :tr: !binary |
+      zqTOv8+Fz4HOus65zrrOrA==
+
+    :csb: !binary |
+      zprOsc+Dzr/Pjc68z4DOuc6xzr0=
+
+    :nyo: !binary |
+      zp3Ouc+Mz4HOvw==
+
+    :sc: !binary |
+      zqPOsc+BzrTOuc69zrnOus6s
+
+    :pap: !binary |
+      zqDOsc+AzrnOsc68zq3Ovc+Ezr8=
+
+    :scn: !binary |
+      zqPOuc66zrXOu865zrHOvc6s
+
+    :gez: !binary |
+      zpPOus65zrY=
+
+    :he: !binary |
+      zpXOss+BzrHPis66zqw=
+
+    :tum: !binary |
+      zqTOv8+FzrzPgM6/z43Ous6x
+
+    :ht: !binary |
+      zpHPis+EzrnOsc69zqw=
+
+    :kaw: !binary |
+      zprOrM6/z4XOuQ==
+
+    :awa: !binary |
+      zpHOs86/z4XOsc69z4TOrw==
+
+    :gwi: !binary |
+      zpPOus6/z4XOr8+Ez4POuc69
+
+    :bad: !binary |
+      zpzPgM6szr3PhM6x
+
+    :nr: !binary |
+      zp3PhM61zrzPgM6tzrvOtSDOnc+Mz4TOv8+F
+
+    :sio: !binary |
+      zpPOu8+Oz4PPg86xIM6jzrnOv8+FzqzOvQ==
+
+    :luo: !binary |
+      zpvOv8+Nzr8=
+
+    :sh: !binary |
+      zqPOtc+BzrLOv866z4HOv86xz4TOuc66zqw=
+
+    :ts: !binary |
+      zqTPg8+Mzr3Os866zrE=
+
+    :ng: !binary |
+      zp3PhM+Mzr3Os866zrE=
+
+    :cho: !binary |
+      zqTPg86/zrrPhM6szr/PhQ==
+
+    :raj: !binary |
+      zqHOsc62zrHPg864zqzOvc65
+
+    :fur: !binary |
+      zqbPgc65zr/Pjc67zrnOsc69
+
+    :ay: !binary |
+      zpHPis68zqzPgc6x
+
+    :fan: !binary |
+      zqbOsc69zrPOug==
+
+    :ilo: !binary |
+      zpnOu8+MzrrOvw==
+
+    :kw: !binary |
+      zprPjM+Bzr3Ouc+C
+
+    :syc: !binary |
+      zprOu86xz4POuc66zqwgzqPPhc+BzrnOsc66zqw=
+
+    :ga: !binary |
+      zpnPgc67zrHOvc60zrnOus6s
+
+    :kv: !binary |
+      zprPjM68zrk=
+
+    :mi: !binary |
+      zpzOrM6/z4HOuQ==
+
+    :alg: !binary |
+      zpPOu8+Oz4PPg86xIM6RzrvOs866zr/Ovc66zrnOrM69
+
+    :ypk: !binary |
+      zpPOu8+Oz4PPg86xIM6TzrnOv8+Nz4DOuc66
+
+    :nd: !binary |
+      zp3PhM61zrzPgM6tzrvOtSDOks6/z4HPgc6s
+
+    :mos: !binary |
+      zpzPjM+Dzrk=
+
+    :car: !binary |
+      zprOsc+Bzq/OvM+A
+
+    :so: !binary |
+      zqPOv868zqzOu865
+
+    :din: !binary |
+      zp3PhM6vzr3Ous6x
+
+    :ii: !binary |
+      zqPOuc66zr/Phc6szr0gzpPOuQ==
+
+    :pag: !binary |
+      zqDOsc69zrPOus6xz4POuc69zqzOvQ==
+
+    :hil: !binary |
+      zqfOuc67zrnOs866zrHOs865z4zOvQ==
+
+    :tig: !binary |
+      zqTOr86zzrrPgc61
+
+    :sit: !binary |
+      zqPOuc69zr/OuM65zrLOtc+EzrnOsc69zq4gzrPOu8+Oz4PPg86x
+
+    :kj: !binary |
+      zprOv8+FzrHOvc65zrPOuc6szrzOsQ==
+
+    :ru: !binary |
+      zqHPic+DzrnOus6s
+
+    :vai: !binary |
+      zpLOrM65
+
+    :kk: !binary |
+      zprOsc62zrHOus65zrrOrA==
+
+    :mdr: !binary |
+      zpzOsc69zrTOrM+B
+
+    :bho: !binary |
+      zpzPgM6/zrbPgM6/z43Pgc65
+
+    :rn: !binary |
+      zqHOv8+Nzr3PhM65
+
+    :cpp: !binary |
+      zprPgc61z4zOuyDOus6xzrkgzqDOr869z4TOs866zrnOvSDOss6sz4POtc65
+      IM6gzr/Pgc+Ezr/Os86xzrvOuc66z47OvQ==
+
+    :wo: !binary |
+      zpPOv8+Fz4zOu86/z4Y=
+
+    :nv: !binary |
+      zp3OrM6yzrHPh86/
+
+    :sal: !binary |
+      zpPOu8+Oz4PPg86xIM6jzrHOu865z4POrM69
+
+    :nah: !binary |
+      zp3Osc+Hzr/Phc6sz4TOuw==
+
+    :bs: !binary |
+      zpLOv8+Dzr3Ouc6xzrrOrA==
+
+    :gaa: !binary |
+      zpPOus6x
+
+    :ha: !binary |
+      zqfOrM6/z4XPg86x
+
+    :eu: !binary |
+      zpLOsc+DzrrOuc66zqw=
+
+    :tmh: !binary |
+      zqTOsc68zrHPg86tzro=
+
+    :kac: !binary |
+      zprOsc+Ez4POr869
+
+    :lua: !binary |
+      zpvOv8+NzrzPgM6xLc6bzr/Phc67zr/Pjc6x
+
+    :ne: !binary |
+      zp3Otc+AzqzOu865
+
+    :ath: !binary |
+      zpPOu8+Oz4PPg86xIM6RzrjOsc+AzqzPg866zrHOvQ==
+
+    :ti: !binary |
+      zqTOuc6zzrrPgc6vzr3Phc6x
+
+    :root: !binary |
+      zqHOv8+Fz4Q=
+
+    :nai: !binary |
+      zpnOvc60zrnOsc69zrnOus6uIM6zzrvPjs+Dz4POsSDOks+Mz4HOtc65zrHP
+      giDOkc68zrXPgc65zrrOrs+C
+
+    :chk: !binary |
+      zqTPg86/z4XOus6vzrbOuQ==
+
+    :arc: !binary |
+      zpHPgc6xzrzOsc+KzrrOrA==
+
+    :pon: !binary |
+      zqDOv8+Hz4DOrc65zrHOvQ==
+
+    :elx: !binary |
+      zpXOu86xzrzOrM65z4Q=
+
+    :brx: !binary |
+      zpzPgM+Mzr3PhM6/
+
+    :sus: !binary |
+      zqPOv8+Nz4POv8+F
+
+    :iba: !binary |
+      zpnOvM+AzqzOvQ==
+
+    :ff: !binary |
+      zqbOv8+FzrvOrM+H
+
+    :kro: !binary |
+      zprPgc6/z4U=
+
+    :yao: !binary |
+      zpPOuc6szr8=
+
+    :lt: !binary |
+      zpvOuc64zr/Phc6xzr3Ouc66zqw=
+
+    :ain: !binary |
+      zpHPis69zr/PjQ==
+
+    :sla: !binary |
+      zqPOu86xzrLOuc66zq4gzrPOu8+Oz4PPg86x
+
+    :min: !binary |
+      zpzOuc69zrHOvc6zzrrOsc68z4DOrM6/z4U=
+
+    :mni: !binary |
+      zpzOsc69zrnPgM6/z43Pgc65
+
+    :byn: !binary |
+      zpzPgM67zrnOvQ==
+
+    :ota: !binary |
+      zp/OuM+JzrzOsc69zrnOus6sIM6kzr/Phc+BzrrOuc66zqw=
+
+    :"en-CA": !binary |
+      zpHOs86zzrvOuc66zqwgzprOsc69zrHOtM6s
+
+    :dar: !binary |
+      zp3PhM6sz4HOs866zr/Phc6x
+
+    :egy: !binary |
+      zpHPgc+HzrHOr86xIM6RzrnOs8+Fz4DPhM65zrHOus6s
+
+    :sgn: !binary |
+      zp3Ov863zrzOsc+EzrnOus6uIM6zzrvPjs+Dz4POsQ==
+
+    :gor: !binary |
+      zpPOus6/z4HOv869z4TOrM67zr8=
+
+    :nl: !binary |
+      zp/Ou867zrHOvc60zrnOus6s
+
+    :udm: !binary |
+      zp/Phc69z4TOvM6/z43Pgc+E
+
+    :ine: !binary |
+      zpnOvc60zr/Otc+Fz4HPic+AzrHPis66zq4gzrPOu8+Oz4PPg86x
+
+    :khi: !binary |
+      zpPOu8+Oz4PPg86xIM6azr/Pis+DzqzOvQ==
+
+    :zza: !binary |
+      zpbOrM62zrE=
+
+    :bas: !binary |
+      zpzPgM6sz4POsQ==
+
+    :mak: !binary |
+      zpzOsc66zrHOts6sz4E=
+
+    :uz: !binary |
+      zp/Phc62zrzPgM61zrrOuc66zqw=
+
+    :cop: !binary |
+      zprOv8+Az4TOuc66zqw=
+
+    :non: !binary |
+      zqDOsc67zrHOuc6sIM6dzr/Pgc6yzrfOs865zrrOrA==
+
+    :fro: !binary |
+      zqDOsc67zrHOuc6sIM6TzrHOu867zrnOus6s
+
+    :rup: !binary |
+      zpHPgc6/zrzOsc69zrnOus6s
+
+    :bn: !binary |
+      zpzPgM61zr3Os866zqzOu865
+
+    :grc: !binary |
+      zpHPgc+HzrHOr86xIM6VzrvOu863zr3Ouc66zqw=
+
+    :jpr: !binary |
+      zpnOv8+FzrTOsc+KzrrOrC3OoM61z4HPg865zrrOrA==
+
+    :cs: !binary |
+      zqTPg861z4fOuc66zqw=
+
+    :smn: !binary |
+      zpnOvc6sz4HOuSDOo86szrzOuQ==
+
+    :tkl: !binary |
+      zqTOv866zrXOu86szr/PhQ==
+
+    :lol: !binary |
+      zpzPjM69zrPOus6/
+
+    :arn: !binary |
+      zpHPgc6/z4XOus6szr3Ouc6xzr0=
+
+    :znd: !binary |
+      zpbOrM69z4TOtQ==
+
+    :mt: !binary |
+      zpzOsc67z4TOtc62zrnOus6s
+
+    :myn: !binary |
+      zpPOu8+Oz4PPg86xIM6czqzOs865zrHOvQ==
+
+    :ch: !binary |
+      zprOsc68z4zPgc+Bzr8=
+
+    :te: !binary |
+      zqTOtc67zr/Pjc6zzrrOv8+F
+
+    :ab: !binary |
+      zpHOvM+Az4fOsc62zrnOus6s
+
+    :dum: !binary |
+      zpzOrc+DzrEgzp/Ou867zrHOvc60zrnOus6s
+
+    :asa: !binary |
+      zobPg86/z4U=
+
+    :phi: !binary |
+      zqbOuc67zrnPgM+AzrnOvc61zrbOuc66zq4gzrPOu8+Oz4PPg86x
+
+    :et: !binary |
+      zpXPg864zr/Ovc65zrrOrA==
+
+    :hsb: !binary |
+      zpPOu8+Oz4PPg86xIM6Gzr3PiSDOm86/z4XPg86xz4TOr86xz4I=
+
+    :tl: !binary |
+      zqTOsc6zzrrOsc67z4zOs866
+
+    :srr: !binary |
+      zqPOtc+Bzq3PgQ==
+
+    :kr: !binary |
+      zprOsc69zr/Pjc+Bzrk=
+
+    :ady: !binary |
+      zpHOvc+EzrnOs866zq3OsQ==
+
+    :sat: !binary |
+      zqPOsc69z4TOrM67zrk=
+
+    :la: !binary |
+      zpvOsc+EzrnOvc65zrrOrA==
+
+    :was: !binary |
+      zpPOv8+FzrHPg8+M
+
+    :btk: !binary |
+      zpzPgM6xz4TOrM66
+
+    :si: !binary |
+      zqPOuc69z4fOsc67zrXOts65zrrOrA==
+
+    :mis: !binary |
+      zpTOuc6sz4bOv8+BzrXPgiDOs867z47Pg8+DzrXPgg==
+
+    :ny: !binary |
+      zp3Ouc6szr3PhM62zrE=
+
+    :zxx: !binary |
+      zqfPic+Bzq/PgiDOs867z4nPg8+Dzr/Ou86/zrPOuc66z4wgz4DOtc+BzrnO
+      tc+Hz4zOvM61zr3Ovw==
+
+    :oc: !binary |
+      zp/Ous+DzrnPhM6xzr3Ouc66zqw=
+
+    :cus: !binary |
+      zpPOu8+Oz4PPg86xIM6azr/Phc+DzrnPhM6vzro=
+
+    :rwk: !binary |
+      zqHOv8+Fzqw=
+
+    :sel: !binary |
+      zqPOtc67zrrOv8+Nz4A=
+
+    :dv: !binary |
+      zp3PhM65zrLOrc+Hzrk=
+
+    :gmh: !binary |
+      zpzOrc+DzrEgzobOvc+JIM6TzrXPgc68zrHOvc65zrrOrA==
+
+    :tut: !binary |
+      zpHOu8+EzrHPis66zq4gzrPOu8+Oz4PPg86x
+
+    :ia: !binary |
+      zpnOvc+EzrXPgc67zq/Ovc6zzrrOv8+FzrE=
+
+    :kfo: !binary |
+      zprPjM+Bzr8=
+
+    :hu: !binary |
+      zp/Phc6zzrPPgc65zrrOrA==
+
+    :gv: !binary |
+      zpzOsc69zr4=
+
+    :mad: !binary |
+      zpzOsc69z4TOv8+Fz4HOr862
+
+    :tyv: !binary |
+      zqTOv8+FzrLOr869zrnOsc69
+
+    :or: !binary |
+      zp/Pgc6vzrPOuc6x
+
+    :bai: !binary |
+      zpPOu8+Oz4PPg86xIM6cz4DOsc68zrnOu86tzro=
+
+    :ty: !binary |
+      zqTOsc+Kz4TOuc6xzr3OrA==
+
+    :nic: !binary |
+      zpPOu8+Oz4PPg86xIM6dzq/Os863z4HOsS3Oms6/z4HOtM6/z4bOrM69zrnO
+      sc69
+
+    :chy: !binary |
+      zqPOtc6zzrnOrc69
+
+    :kaj: !binary |
+      zqTOts6/z4U=
+
+    :rar: !binary |
+      zqHOsc+Bzr/PhM6/zr3Os866zqzOvQ==
+
+    :alt: !binary |
+      zp3PjM+EzrnOsSDOkc67zrHPhM6xz4rOus6s
+
+    :be: !binary |
+      zpvOtc+FzrrOv8+Bz4nPg865zrrOrA==
+
+    :fiu: !binary |
+      zqbOuc69zr3Ovy3On8+NzrPOus+BzrnOsc69
+
+    :sma: !binary |
+      zp3PjM+EzrnOsSDOo86szrzOuQ==
+
+    :ira: !binary |
+      zpnPgc6xzr3Ouc66zq4gzrPOu8+Oz4PPg86x
+
+    :tem: !binary |
+      zqTOr868zr3OtQ==
+
+    :gl: !binary |
+      zpPOsc67zrnOus65zrHOvc6s
+
+    :af: !binary |
+      zpHPhs+BzrnOus6szrHOvc+C
+
+    :za: !binary |
+      zpbOv8+FzqzOvc6zzro=
+
+    :lah: !binary |
+      zpvOrM+HzrTOsQ==
+
+    :ang: !binary |
+      zqDOsc67zrHOuc6sIM6RzrPOs867zrnOus6s
+
+    :ml: !binary |
+      zpzOsc67zrHOs865zrHOu86szrw=
+
+    :sr: !binary |
+      zqPOtc+BzrLOuc66zqw=
+
+    :cch: !binary |
+      zpHPhM+DzqzOvA==
+
+    :mus: !binary |
+      zprPgc65zro=
+
+    :kea: !binary |
+      zpPOu8+Oz4PPg86xIM+Ezr/PhSDOoM+BzqzPg865zr3Ov8+FIM6RzrrPgc+J
+      z4TOt8+Bzq/Ov8+F
+
+    :dra: !binary |
+      zpPOu8+Oz4PPg86xIM6dz4TPgc6xzrLOr860zrnOsc69
+
+    :pam: !binary |
+      zqDOsc68z4DOrM69zrPOus6x
+
+    :"es-ES": !binary |
+      zpnPg8+AzrHOvc65zrrOrCDOmc6yzrfPgc65zrrOrs+C
+
+    :eo: !binary |
+      zpXPg8+AzrXPgc6szr3PhM6/
+
+    :sog: !binary |
+      zqPOv86zzrrOvc+EzrnOrc69
+
+    :hit: !binary |
+      zqfOuc+Ezq/PhM61
+
+    :uk: !binary |
+      zp/Phc66z4HOsc69zrnOus6s
+
+    :ace: !binary |
+      zpHPh865zr3Or862
+
+    :wak: !binary |
+      zpPOu8+Oz4PPg86xIM6Tzr/Phc6xzrrOsc+DzqzOvQ==
+
+    :ss: !binary |
+      zqPOv8+FzqzPhM65
+
+    :ks: !binary |
+      zprOsc+DzrzOr8+Bzrk=
+
+    :kok: !binary |
+      zprOv869zrrOrM69zrk=
+
+    :bik: !binary |
+      zpzPgM65zrrPjM67
+
+    :rw: !binary |
+      zprOuc69zrnOsc+BzrLOrM69z4TOsQ==
+
+    :mga: !binary |
+      zpzOrc+DzrEgzpnPgc67zrHOvc60zrnOus6s
+
+    :it: !binary |
+      zpnPhM6xzrvOuc66zqw=
+
+    :crp: !binary |
+      zprPgc61z4zOuyDOriDOoM6vzr3PhM6zzrrOuc69
+
+    :yo: !binary |
+      zpPOuc6/z4HOv8+NzrzPgM6x
+
+    :nym: !binary |
+      zp3Ouc6xzrzOs86/z4XOrc62zrk=
+
+    :"de-CH": !binary |
+      zpPOtc+BzrzOsc69zrnOus6sIM6VzrvOss61z4TOr86xz4I=
+
+    :om: !binary |
+      zp/Pgc+MzrzOvw==
+
+    :cy: !binary |
+      zp/Phc6xzrvOuc66zqw=
+
+    :gba: !binary |
+      zpPOus68z4DOrM6zzrnOsQ==
+
+    :to: !binary |
+      zqTPjM69zrPOus6x
+
+    :sas: !binary |
+      zqPOsc+DzqzOug==
+
+    :kar: !binary |
+      zprOsc+Bzq3OvQ==
+
+    :fil: !binary |
+      zqbOuc67zrnPgM+AzrnOvc61zrbOuc66zqw=
+
+    :br: !binary |
+      zpLPgc61z4TOv869zrnOus6s
+
+    :tsi: !binary |
+      zqTPg86vzrzPg865zrHOvQ==
+
+    :hr: !binary |
+      zprPgc6/zrHPhM65zrrOrA==
+
+    :av: !binary |
+      zobOss6xz4HOuc66
+
+    :nn: !binary |
+      zp3Ov8+BzrLOt86zzrnOus6sIM6dzrnOvc+Mz4HPg866
+
+    :lun: !binary |
+      zpvOv8+Nzr3PhM6x
+
+    :nds: !binary |
+      zprOrM+Ez4kgzpPOtc+BzrzOsc69zrnOus6s
+
+    :chn: !binary |
+      zpnOtM65z4nOvM6xz4TOuc66zqwgzqPOuc69zr/Pjc66
+
+    :tpi: !binary |
+      zqTOv866IM6gzrnPg86vzr0=
+
+    :pro: !binary |
+      zqDOsc67zrHOuc6sIM6gz4HOv86yzrXOvc+DzrnOrM67
+
+    :ewo: !binary |
+      zpXOs86/z4XPjM69z4TOvw==
+
+    :as: !binary |
+      zpHPg86xzrzOtc62zrnOus6s
+
+    :ee: !binary |
+      zpPOuQ==
+
+    :swb: !binary |
+      zprOv868z4zPgc+BzrnOsQ==
+
+    :fy: !binary |
+      zpTPhc+EzrnOus6sIM6mz4HOuc62zrnOsc69zqw=
+
+    :ik: !binary |
+      zpnOvc6/z4XPgM65zqzOug==
+
+    :iu: !binary |
+      zpnOvc6/z4XOus+EzrnPhM6/z43PhA==
+
+    :mg: !binary |
+      zpzOsc67zrHOs86sz4POuQ==
+
+    :rm: !binary |
+      zqHOtc+Ezr8tzqHOv868zrHOvc65zrrOrA==
+
+    :yi: !binary |
+      zpPOr869z4TOuc+C
+
+    :kut: !binary |
+      zprOv8+Fz4TOtc69zqzOuQ==
+
+    :ale: !binary |
+      zpHOu86/z43PhA==
+
+    :sn: !binary |
+      zqPPh8+Mzr3OsQ==
+
+    :den: !binary |
+      zqPOu86xzrLOuc66zqw=
+
+    :moh: !binary |
+      zpzOv8+Hz4zOug==
+
+    :cai: !binary |
+      zpnOvc60zrnOsc69zrnOus6uIM6zzrvPjs+Dz4POsSDOms61zr3PhM+BzrnO
+      us6uz4IgzpHOvM61z4HOuc66zq7Pgg==
+
+    :paa: !binary |
+      zqDOsc+Azr/Pjc6x
+
+    :"en-US": !binary |
+      zpHOs86zzrvOuc66zqwgzpcuzqAuzpEu
+
+    :dgr: !binary |
+      zp3PhM+MzrPOus+BzrnOvM+A
+
+    :bm: !binary |
+      zpzPgM6xzrzPgM6sz4HOsQ==
+

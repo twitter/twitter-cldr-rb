@@ -1,489 +1,1467 @@
----
-:fa:
-  :languages:
-    :aa: آفاری
-    :ab: آبخازی
-    :ace: آچئی
-    :ach: آچولیایی
-    :ada: آدانگمه‌ای
-    :ady: آدیجیایی
-    :ae: اوستایی
-    :af: آفریکانس
-    :afa: زبان افریقا و آسیایی
-    :afh: آفریهیلی
-    :ain: آینویی
-    :ak: آکان
-    :akk: آکدی
-    :ale: آلئوتی
-    :alg: زبان آلگونکینی
-    :alt: آلتایی جنوبی
-    :am: امهری
-    :an: آراگونی
-    :ang: انگلیسی باستان
-    :anp: آنگیکا
-    :apa: زبان آپاچیایی
-    :ar: عربی
-    :arc: آرامی
-    :arn: آروکانیایی
-    :arp: آراپاهویی
-    :art: زبان ساختگی
-    :arw: آراواکی
-    :as: آسامی
-    :ath: زبان آتاپاسکایی
-    :aus: زبان استرالیایی
-    :av: آواری
-    :ay: آیمارایی
-    :az: آذربایجانی
-    :ba: باشغیری
-    :bad: باندایی
-    :bal: بلوچی
-    :ban: بالیایی
-    :bas: باسایی
-    :bat: زبان بالتیکی
-    :be: بلوروسی
-    :bej: بجایی
-    :bem: بمبایی
-    :ber: بربری
-    :bg: بلغاری
-    :bh: بیهاری
-    :bho: بوجپوری
-    :bi: بیسلاما
-    :bik: بیکولی
-    :bin: بینی
-    :bm: بامبارایی
-    :bn: بنگالی
-    :bnt: بانتویی
-    :bo: تبتی
-    :br: برتانیایی
-    :bra: براج
-    :bs: بوسنیایی
-    :btk: باتاکی
-    :bua: بوریاتی
-    :bug: بوگیایی
-    :byn: بلین
-    :ca: کاتالان
-    :cad: کادویی
-    :cai: زبان سرخپوستی امریکای مرکزی
-    :car: کاریبی
-    :cau: زبان قفقازی
-    :ce: چچنی
-    :ceb: سبویی
-    :cel: زبان سلتی
-    :ch: چامورویی
-    :chb: چیبچا
-    :chg: جغتایی
-    :chk: چوکی
-    :chm: ماریایی
-    :cho: چوکتویی
-    :chp: چیپه‌ویه‌ای
-    :chr: چروکیایی
-    :chy: شایانی
-    :co: کورسی
-    :cop: قبطی
-    :cpe: کریول یا پیجین مبتنی بر انگلیسی
-    :cpf: کریول یا پیجین مبتنی بر فرانسوی
-    :cpp: کریول یا پیجین مبتنی بر پرتغالی
-    :cr: کریایی
-    :crh: ترکی کریمه
-    :crp: کریول یا پیجین
-    :cs: چکی
-    :csb: کاشوبی
-    :cu: اسلاوی کلیسایی
-    :cus: زبان کوشی
-    :cv: چوواشی
-    :cy: ویلزی
-    :da: دانمارکی
-    :dak: داکوتایی
-    :dar: دارقینی
-    :day: دایاک
-    :de: آلمانی
-    :de-AT: آلمانی اتریش
-    :de-CH: آلمانی علیای سوئیس
-    :del: دلاواری
-    :dgr: دوگریب
-    :din: دینکایی
-    :doi: دوگری
-    :dra: زبان دراویدی
-    :dsb: صُربی سفلی
-    :dua: دوآلایی
-    :dum: هلندی میانه
-    :dv: مالدیوی
-    :dyu: دایولایی
-    :dz: جونخایی
-    :ee: اوه‌ای
-    :efi: افیکی
-    :egy: مصری کهن
-    :eka: اکاجوک
-    :el: یونانی
-    :elx: عیلامی
-    :en: انگلیسی
-    :en-AU: انگلیسی استرالیا
-    :en-CA: انگلیسی کانادا
-    :en-GB: انگلیسی بریتانیا
-    :en-US: انگلیسی امریکا
-    :enm: انگلیسی میانه
-    :eo: اسپرانتو
-    :es: اسپانیایی
-    :es-419: اسپانیایی امریکای لاتین
-    :es-ES: اسپانیایی اسپانیا
-    :et: استونیایی
-    :eu: باسکی
-    :ewo: اواندو
-    :fa: فارسی
-    :fan: فانکی
-    :fat: فانتیایی
-    :ff: فولایی
-    :fi: فنلاندی
-    :fil: فیلیپینی
-    :fiu: زبان فین و اوگرایی
-    :fj: فیجیایی
-    :fo: فارویی
-    :fon: فونی
-    :fr: فرانسوی
-    :fr-CA: فرانسوی کانادا
-    :fr-CH: فرانسوی سوئیس
-    :frm: فرانسوی میانه
-    :fro: فرانسوی باستان
-    :frr: فریزی شمالی
-    :frs: فریزی شرقی
-    :fur: فریولیایی
-    :fy: فریزی غربی
-    :ga: ایرلندی
-    :gaa: گایی
-    :gay: گایویی
-    :gba: گبایایی
-    :gd: گیلی اسکاتلندی
-    :gem: زبان ژرمنی
-    :gez: گی‌ئزی
-    :gil: گیلبرتی
-    :gl: گالیسیایی
-    :gmh: آلمانی علیای میانه
-    :gn: گوارانی
-    :goh: آلمانی علیای باستان
-    :gon: گوندی
-    :gor: گورونتالو
-    :got: گوتی
-    :grb: گریبویی
-    :grc: یونانی کهن
-    :gsw: آلمانی سوئیسی
-    :gu: گجراتی
-    :gv: مانی
-    :gwi: گویچ این
-    :ha: هوسیایی
-    :hai: هایدایی
-    :haw: هاوائیایی
-    :he: عبری
-    :hi: هندی
-    :hil: هیلی‌گاینونی
-    :him: هیماچالی
-    :hit: هیتی
-    :hmn: همونگ
-    :ho: موتویی هیری
-    :hr: کروات
-    :hsb: صُربی علیا
-    :ht: هائیتیایی
-    :hu: مجاری
-    :hup: هوپا
-    :hy: ارمنی
-    :hz: هریرویی
-    :ia: میان‌زبان
-    :iba: آیبن
-    :id: اندونزیایی
-    :ie: اکسیدنتال
-    :ig: ایگبویی
-    :ii: یی سیچوان
-    :ijo: ایجویی
-    :ik: اینوپیک
-    :ilo: ایلوکویی
-    :inc: زبان هندیک
-    :ine: زبان هند و اروپایی
-    :inh: اینگوشی
-    :io: ایدو
-    :ira: زبان ایرانی
-    :iro: زبان ایروکوایی
-    :is: ایسلندی
-    :it: ایتالیایی
-    :iu: اینوکتیتوت
-    :ja: ژاپنی
-    :jbo: لوجبان
-    :jpr: فارسی یهودی
-    :jrb: عربی یهودی
-    :jv: جاوه‌ای
-    :ka: گرجی
-    :kaa: قره‌قالپاقی
-    :kab: قبایلی
-    :kac: کاچینی
-    :kaj: جو
-    :kam: کامبایی
-    :kar: کارنی
-    :kaw: کاویایی
-    :kbd: کاباردینی
-    :kfo: کورو
-    :kg: کنگویی
-    :kha: خاسیایی
-    :khi: زبان خواسی
-    :kho: ختنی
-    :ki: کیکویویی
-    :kj: کوانیاما
-    :kk: قزاقی
-    :kl: گرینلندی
-    :km: خمری
-    :kmb: کیمبوندویی
-    :kn: کاناده‌ای
-    :ko: کره‌ای
-    :kok: کنکانی
-    :kpe: کپله‌ای
-    :kr: کانوریایی
-    :krc: قره‌چایی‐بالکاری
-    :kro: کرویی
-    :kru: کوروخی
-    :ks: کشمیری
-    :ku: کردی
-    :kum: کومیکی
-    :kut: کوتنی
-    :kv: کومیایی
-    :kw: کرنوالی
-    :ky: قرقیزی
-    :la: لاتینی
-    :lad: لادینو
-    :lah: لاهندا
-    :lam: لامبا
-    :lb: لوگزامبورگی
-    :lez: لزگی
-    :lg: گاندایی
-    :li: لیمبورگی
-    :ln: لینگالا
-    :lo: لائوسی
-    :lol: مونگویی
-    :loz: لوزیایی
-    :lt: لیتوانیایی
-    :lu: لوبایی‐کاتانگا
-    :lua: لوبایی‐لولوا
-    :lui: لویسنو
-    :lun: لوندایی
-    :luo: لوئویی
-    :lus: لوشه‌ای
-    :lv: لتونیایی
-    :mad: مادورایی
-    :mag: ماگاهیایی
-    :mai: مایدیلی
-    :mak: ماکاسار
-    :man: ماندینگویی
-    :map: زبان آسترونیزیایی
-    :mas: ماسایی
-    :mdf: مکشایی
-    :mdr: ماندار
-    :men: منده‌ای
-    :mg: مالاگاسیایی
-    :mga: ایرلندی میانه
-    :mh: مارشالی
-    :mi: مائوریایی
-    :mic: میکماکی
-    :min: مینانگ‌کابویی
-    :mis: زبان متفرقه
-    :mk: مقدونی
-    :mkh: زبان مون‌خمری
-    :ml: مالایالامی
-    :mn: مغولی
-    :mnc: مانچویی
-    :mni: میته‌ای
-    :mno: زبان مانوبو
-    :mo: مولداویایی
-    :moh: موهاکی
-    :mos: ماسیایی
-    :mr: مراتی
-    :ms: مالایی
-    :mt: مالتی
-    :mul: چندین زبان
-    :mun: زبان موندایی
-    :mus: کریکی
-    :mwr: مارواری
-    :my: برمه‌ای
-    :myn: زبان مایایی
-    :myv: ارزیایی
-    :na: نائورویی
-    :nah: ناواتلی
-    :nai: زبان سرخپوستی امریکای شمالی
-    :nap: ناپلی
-    :nb: بوکسمال نروژی
-    :nd: انده‌بله‌ای شمالی
-    :nds: آلمانی سفلی
-    :ne: نپالی
-    :new: نواریایی
-    :ng: اندونگایی
-    :nia: نیاسی
-    :niu: نیویی
-    :nl: هلندی
-    :nl-BE: فلمنگی
-    :nn: نرس جدید نروژی
-    :no: نروژی
-    :nog: نغایی
-    :non: نرس باستان
-    :nr: انده‌بله‌ای جنوبی
-    :nso: سوتویی شمالی
-    :nub: زبان نوبیایی
-    :nv: ناواهویی
-    :nwc: نواریایی کلاسیک
-    :ny: نیانجایی
-    :nym: نیام‌وزیایی
-    :nyn: نیانکوله‌ای
-    :nyo: نیورویی
-    :nzi: نزیمایی
-    :oc: اوکیتایی
-    :oj: اوجیبوایی
-    :om: اورومویی
-    :or: اوریه‌ای
-    :os: آسی
-    :osa: اوسیجی
-    :ota: ترکی عثمانی
-    :oto: زبان اتومیایی
-    :pa: پنجابی
-    :paa: زبان پاپوایی
-    :pag: پانگاسینانی
-    :pal: پهلوی
-    :pam: پامپانگایی
-    :pap: پاپیامنتو
-    :pau: پالائویی
-    :peo: فارسی باستان
-    :phi: زبان فیلیپینی
-    :phn: فنیقی
-    :pi: پالی
-    :pl: لهستانی
-    :pon: پانپیی
-    :pra: زبان پراکریتی
-    :pro: پرووانسی باستان
-    :ps: پشتو
-    :pt: پرتغالی
-    :pt-BR: پرتغالی برزیل
-    :pt-PT: پرتغالی پرتغال
-    :qu: کچوایی
-    :raj: راجستانی
-    :rap: راپانویی
-    :rar: راروتونگایی
-    :rm: رومانش
-    :rn: روندیایی
-    :ro: رومانیایی
-    :roa: زبان رومیایی
-    :rom: رومانویی
-    :root: ریشه
-    :ru: روسی
-    :rw: کینیارواندایی
-    :sa: سنسکریت
-    :sad: سانداوه‌ای
-    :sah: یاقوتی
-    :sai: زبان سرخپوستی امریکای جنوبی
-    :sal: زبان سالیشی
-    :sam: آرامی سامری
-    :sas: ساساکی
-    :sat: سانتالی
-    :sc: ساردینیایی
-    :scn: سیسیلی
-    :sco: اسکاتلندی
-    :sd: سندی
-    :se: سامی شمالی
-    :sel: سلکوپی
-    :sem: زبان سامی
-    :sg: سانگویی
-    :sga: ایرلندی باستان
-    :sgn: زبان اشاره
-    :sh: صرب و کرواتی
-    :shn: شانی
-    :si: سینهالی
-    :sid: سیدامویی
-    :sio: زبان سویی
-    :sit: زبان چین و تبتی
-    :sk: اسلواکی
-    :sl: اسلووینیایی
-    :sla: زبان اسلاوی
-    :sm: ساموآیی
-    :sn: شونایی
-    :snk: سونینکه‌ای
-    :so: سومالیایی
-    :sog: سغدی
-    :son: سونغایی
-    :sq: آلبانیایی
-    :sr: صربی
-    :srn: تاکی‌تاکی
-    :srr: سریری
-    :ss: سوازیایی
-    :ssa: زبان نیلی و صحرایی
-    :st: سوتویی جنوبی
-    :su: سوندایی
-    :suk: سوکومایی
-    :sus: سوسویی
-    :sux: سومری
-    :sv: سوئدی
-    :sw: سواحلی
-    :swb: کوموری
-    :syc: سریانی کلاسیک
-    :syr: سریانی
-    :ta: تامیلی
-    :tai: زبان تایی
-    :te: تلوگویی
-    :tem: تمنه‌ای
-    :ter: ترنو
-    :tet: تتومی
-    :tg: تاجیکی
-    :th: تایلندی
-    :ti: تیگرینیایی
-    :tig: تیگره‌ای
-    :tiv: تیوی
-    :tk: ترکمنی
-    :tl: تاگالوگی
-    :tlh: کلینگون
-    :tli: تلین‌گیتی
-    :tmh: تاماشقی
-    :tn: تسوانایی
-    :to: تونگایی
-    :tog: تونگایی نیاسا
-    :tpi: توک‌پیسینی
-    :tr: ترکی
-    :ts: تسونگایی
-    :tsi: تسیم‌شیانی
-    :tt: تاتاری
-    :tum: تومبوکایی
-    :tup: زبان توپیایی
-    :tut: زبان آلتاییک
-    :tvl: تووالویی
-    :tw: توی‌یایی
-    :ty: تاهیتیایی
-    :tyv: تووایی
-    :udm: اودمورتی
-    :ug: اویغوری
-    :uga: اوگاریتی
-    :uk: اوکراینی
-    :umb: امبوندویی
-    :und: زبان نامشخص
-    :ur: اردو
-    :uz: ازبکی
-    :vai: ویایی
-    :ve: وندایی
-    :vi: ویتنامی
-    :vo: ولاپوک
-    :vot: وتی
-    :wa: والونی
-    :wak: زبان واکاشی
-    :wal: والامو
-    :war: وارایی
-    :was: واشویی
-    :wen: زبان صُربی
-    :wo: ولوفی
-    :xal: قلموقی
-    :xh: خوسایی
-    :yao: یائویی
-    :yap: یاپی
-    :yi: یدی
-    :yo: یوروبایی
-    :ypk: زبان یوپیکی
-    :yue: کانتونیز
-    :za: چوانگی
-    :zap: زاپوتکی
-    :zen: زناگا
-    :zh: چینی
-    :zh-Hans: چینی ساده‌شده
-    :zh-Hant: چینی سنتی
-    :znd: زانده‌ای
-    :zu: زولویی
-    :zun: زونیایی
-    :zxx: بدون محتوای زبانی
-    :zza: زازایی
+--- 
+:fa: 
+  :languages: 
+    :sid: !binary |
+      2LPbjNiv2KfZhdmI24zbjA==
+
+    :hai: !binary |
+      2YfYp9uM2K/Yp9uM24w=
+
+    :kn: !binary |
+      2qnYp9mG2KfYr9mH4oCM2KfbjA==
+
+    :umb: !binary |
+      2KfZhdio2YjZhtiv2YjbjNuM
+
+    :ka: !binary |
+      2q/Ysdis24w=
+
+    :ki: !binary |
+      2qnbjNqp2YjbjNmI24zbjA==
+
+    :pt: !binary |
+      2b7Ysdiq2LrYp9mE24w=
+
+    :nb: !binary |
+      2KjZiNqp2LPZhdin2YQg2YbYsdmI2pjbjA==
+
+    :qu: !binary |
+      2qnahtmI2KfbjNuM
+
+    :mdf: !binary |
+      2YXaqdi02KfbjNuM
+
+    :bej: !binary |
+      2KjYrNin24zbjA==
+
+    :vi: !binary |
+      2YjbjNiq2YbYp9mF24w=
+
+    :nub: !binary |
+      2LLYqNin2YYg2YbZiNio24zYp9uM24w=
+
+    :cpf: !binary |
+      2qnYsduM2YjZhCDbjNinINm+24zYrNuM2YYg2YXYqNiq2YbbjCDYqNixINmB
+      2LHYp9mG2LPZiNuM
+
+    :mas: !binary |
+      2YXYp9iz2KfbjNuM
+
+    :sai: !binary |
+      2LLYqNin2YYg2LPYsdiu2b7ZiNiz2KrbjCDYp9mF2LHbjNqp2KfbjCDYrNmG
+      2YjYqNuM
+
+    :bo: !binary |
+      2KrYqNiq24w=
+
+    :frs: !binary |
+      2YHYsduM2LLbjCDYtNix2YLbjA==
+
+    :gu: !binary |
+      2q/YrNix2KfYqtuM
+
+    :es: !binary |
+      2KfYs9m+2KfZhtuM2KfbjNuM
+
+    :mo: !binary |
+      2YXZiNmE2K/Yp9mI24zYp9uM24w=
+
+    :tli: !binary |
+      2KrZhNuM2YbigIzar9uM2KrbjA==
+
+    :"nl-BE": !binary |
+      2YHZhNmF2Ybar9uM
+
+    :kaa: !binary |
+      2YLYsdmH4oCM2YLYp9mE2b7Yp9mC24w=
+
+    :el: !binary |
+      24zZiNmG2KfZhtuM
+
+    :arw: !binary |
+      2KLYsdin2YjYp9qp24w=
+
+    :my: !binary |
+      2KjYsdmF2YfigIzYp9uM
+
+    :en: !binary |
+      2KfZhtqv2YTbjNiz24w=
+
+    :lu: !binary |
+      2YTZiNio2KfbjNuM4oCQ2qnYp9iq2KfZhtqv2Kc=
+
+    :chg: !binary |
+      2KzYutiq2KfbjNuM
+
+    :tg: !binary |
+      2KrYp9is24zaqduM
+
+    :na: !binary |
+      2YbYp9im2YjYsdmI24zbjA==
+
+    :eka: !binary |
+      2Kfaqdin2KzZiNqp
+
+    :li: !binary |
+      2YTbjNmF2KjZiNix2q/bjA==
+
+    :pi: !binary |
+      2b7Yp9mE24w=
+
+    :"fr-CH": !binary |
+      2YHYsdin2YbYs9mI24wg2LPZiNim24zYsw==
+
+    :ak: !binary |
+      2KLaqdin2YY=
+
+    :wa: !binary |
+      2YjYp9mE2YjZhtuM
+
+    :hz: !binary |
+      2YfYsduM2LHZiNuM24w=
+
+    :suk: !binary |
+      2LPZiNqp2YjZhdin24zbjA==
+
+    :fo: !binary |
+      2YHYp9ix2YjbjNuM
+
+    :xal: !binary |
+      2YLZhNmF2YjZgtuM
+
+    :afh: !binary |
+      2KLZgdix24zZh9uM2YTbjA==
+
+    :lo: !binary |
+      2YTYp9im2YjYs9uM
+
+    :sl: !binary |
+      2KfYs9mE2YjZiNuM2YbbjNin24zbjA==
+
+    :mnc: !binary |
+      2YXYp9mG2obZiNuM24w=
+
+    :bug: !binary |
+      2KjZiNqv24zYp9uM24w=
+
+    :"en-AU": !binary |
+      2KfZhtqv2YTbjNiz24wg2KfYs9iq2LHYp9mE24zYpw==
+
+    :osa: !binary |
+      2KfZiNiz24zYrNuM
+
+    :dak: !binary |
+      2K/Yp9qp2YjYqtin24zbjA==
+
+    :sga: !binary |
+      2KfbjNix2YTZhtiv24wg2KjYp9iz2KrYp9mG
+
+    :efi: !binary |
+      2KfZgduM2qnbjA==
+
+    :gon: !binary |
+      2q/ZiNmG2K/bjA==
+
+    :sw: !binary |
+      2LPZiNin2K3ZhNuM
+
+    :tw: !binary |
+      2KrZiNuM4oCM24zYp9uM24w=
+
+    :"pt-PT": !binary |
+      2b7Ysdiq2LrYp9mE24wg2b7Ysdiq2LrYp9mE
+
+    :ig: !binary |
+      2KfbjNqv2KjZiNuM24w=
+
+    :kha: !binary |
+      2K7Yp9iz24zYp9uM24w=
+
+    :ko: !binary |
+      2qnYsdmH4oCM2KfbjA==
+
+    :ps: !binary |
+      2b7YtNiq2Yg=
+
+    :mai: !binary |
+      2YXYp9uM2K/bjNmE24w=
+
+    :ban: !binary |
+      2KjYp9mE24zYp9uM24w=
+
+    :und: !binary |
+      2LLYqNin2YYg2YbYp9mF2LTYrti1
+
+    :nog: !binary |
+      2YbYutin24zbjA==
+
+    :co: !binary |
+      2qnZiNix2LPbjA==
+
+    :rom: !binary |
+      2LHZiNmF2KfZhtmI24zbjA==
+
+    :bg: !binary |
+      2KjZhNi62KfYsduM
+
+    :frm: !binary |
+      2YHYsdin2YbYs9mI24wg2YXbjNin2YbZhw==
+
+    :cr: !binary |
+      2qnYsduM2KfbjNuM
+
+    :kl: !binary |
+      2q/YsduM2YbZhNmG2K/bjA==
+
+    :jbo: !binary |
+      2YTZiNis2KjYp9mG
+
+    :ca: !binary |
+      2qnYp9iq2KfZhNin2YY=
+
+    :tn: !binary |
+      2KrYs9mI2KfZhtin24zbjA==
+
+    :tiv: !binary |
+      2KrbjNmI24w=
+
+    :got: !binary |
+      2q/ZiNiq24w=
+
+    :chr: !binary |
+      2obYsdmI2qnbjNin24zbjA==
+
+    :zen: !binary |
+      2LLZhtin2q/Ypw==
+
+    :mr: !binary |
+      2YXYsdin2KrbjA==
+
+    :lez: !binary |
+      2YTYstqv24w=
+
+    :apa: !binary |
+      2LLYqNin2YYg2KLZvtin2obbjNin24zbjA==
+
+    :gem: !binary |
+      2LLYqNin2YYg2pjYsdmF2YbbjA==
+
+    :ta: !binary |
+      2KrYp9mF24zZhNuM
+
+    :mwr: !binary |
+      2YXYp9ix2YjYp9ix24w=
+
+    :ceb: !binary |
+      2LPYqNmI24zbjA==
+
+    :peo: !binary |
+      2YHYp9ix2LPbjCDYqNin2LPYqtin2YY=
+
+    :dua: !binary |
+      2K/ZiNii2YTYp9uM24w=
+
+    :bh: !binary |
+      2KjbjNmH2KfYsduM
+
+    :srn: !binary |
+      2KrYp9qp24zigIzYqtin2qnbjA==
+
+    :new: !binary |
+      2YbZiNin2LHbjNin24zbjA==
+
+    :ho: !binary |
+      2YXZiNiq2YjbjNuMINmH24zYsduM
+
+    :war: !binary |
+      2YjYp9ix2KfbjNuM
+
+    :ada: !binary |
+      2KLYr9in2Ybar9mF2YfigIzYp9uM
+
+    :ky: !binary |
+      2YLYsdmC24zYstuM
+
+    :kpe: !binary |
+      2qnZvtmE2YfigIzYp9uM
+
+    :bra: !binary |
+      2KjYsdin2Kw=
+
+    :se: !binary |
+      2LPYp9mF24wg2LTZhdin2YTbjA==
+
+    :mic: !binary |
+      2YXbjNqp2YXYp9qp24w=
+
+    :cu: !binary |
+      2KfYs9mE2KfZiNuMINqp2YTbjNiz2KfbjNuM
+
+    :zu: !binary |
+      2LLZiNmE2YjbjNuM
+
+    :nzi: !binary |
+      2YbYstuM2YXYp9uM24w=
+
+    :gil: !binary |
+      2q/bjNmE2KjYsdiq24w=
+
+    :sco: !binary |
+      2KfYs9qp2KfYqtmE2YbYr9uM
+
+    :kbd: !binary |
+      2qnYp9io2KfYsdiv24zZhtuM
+
+    :hi: !binary |
+      2YfZhtiv24w=
+
+    :tup: !binary |
+      2LLYqNin2YYg2KrZiNm+24zYp9uM24w=
+
+    :hy: !binary |
+      2KfYsdmF2YbbjA==
+
+    :lus: !binary |
+      2YTZiNi02YfigIzYp9uM
+
+    :inc: !binary |
+      2LLYqNin2YYg2YfZhtiv24zaqQ==
+
+    :ba: !binary |
+      2KjYp9i02LrbjNix24w=
+
+    :fa: !binary |
+      2YHYp9ix2LPbjA==
+
+    :kru: !binary |
+      2qnZiNix2YjYrtuM
+
+    :nso: !binary |
+      2LPZiNiq2YjbjNuMINi02YXYp9mE24w=
+
+    :ms: !binary |
+      2YXYp9mE2KfbjNuM
+
+    :chp: !binary |
+      2obbjNm+2YfigIzZiNuM2YfigIzYp9uM
+
+    :nia: !binary |
+      2YbbjNin2LPbjA==
+
+    :tt: !binary |
+      2KrYp9iq2KfYsduM
+
+    :rap: !binary |
+      2LHYp9m+2KfZhtmI24zbjA==
+
+    :az: !binary |
+      2KLYsNix2KjYp9uM2KzYp9mG24w=
+
+    :fat: !binary |
+      2YHYp9mG2KrbjNin24zbjA==
+
+    :inh: !binary |
+      2KfbjNmG2q/ZiNi024w=
+
+    :tai: !binary |
+      2LLYqNin2YYg2KrYp9uM24w=
+
+    :gd: !binary |
+      2q/bjNmE24wg2KfYs9qp2KfYqtmE2YbYr9uM
+
+    :an: !binary |
+      2KLYsdin2q/ZiNmG24w=
+
+    :lad: !binary |
+      2YTYp9iv24zZhtmI
+
+    :yue: !binary |
+      2qnYp9mG2KrZiNmG24zYsg==
+
+    :mk: !binary |
+      2YXZgtiv2YjZhtuM
+
+    :sq: !binary |
+      2KLZhNio2KfZhtuM2KfbjNuM
+
+    :mun: !binary |
+      2LLYqNin2YYg2YXZiNmG2K/Yp9uM24w=
+
+    :cau: !binary |
+      2LLYqNin2YYg2YLZgdmC2KfYstuM
+
+    :"es-419": !binary |
+      2KfYs9m+2KfZhtuM2KfbjNuMINin2YXYsduM2qnYp9uMINmE2KfYqtuM2YY=
+
+    :doi: !binary |
+      2K/ZiNqv2LHbjA==
+
+    :pal: !binary |
+      2b7Zh9mE2YjbjA==
+
+    :snk: !binary |
+      2LPZiNmG24zZhtqp2YfigIzYp9uM
+
+    :him: !binary |
+      2YfbjNmF2Kfahtin2YTbjA==
+
+    :fr: !binary |
+      2YHYsdin2YbYs9mI24w=
+
+    :vot: !binary |
+      2YjYqtuM
+
+    :km: !binary |
+      2K7Zhdix24w=
+
+    :kmb: !binary |
+      2qnbjNmF2KjZiNmG2K/ZiNuM24w=
+
+    :sg: !binary |
+      2LPYp9mG2q/ZiNuM24w=
+
+    :sv: !binary |
+      2LPZiNim2K/bjA==
+
+    :aa: !binary |
+      2KLZgdin2LHbjA==
+
+    :"zh-Hans": !binary |
+      2obbjNmG24wg2LPYp9iv2YfigIzYtNiv2Yc=
+
+    :ro: !binary |
+      2LHZiNmF2KfZhtuM2KfbjNuM
+
+    :men: !binary |
+      2YXZhtiv2YfigIzYp9uM
+
+    :bi: !binary |
+      2KjbjNiz2YTYp9mF2Kc=
+
+    :"de-AT": !binary |
+      2KLZhNmF2KfZhtuMINin2KrYsduM2LQ=
+
+    :xh: !binary |
+      2K7ZiNiz2KfbjNuM
+
+    :nwc: !binary |
+      2YbZiNin2LHbjNin24zbjCDaqdmE2KfYs9uM2qk=
+
+    :crh: !binary |
+      2KrYsdqp24wg2qnYsduM2YXZhw==
+
+    :nyn: !binary |
+      2YbbjNin2YbaqdmI2YTZh+KAjNin24w=
+
+    :sam: !binary |
+      2KLYsdin2YXbjCDYs9in2YXYsduM
+
+    :cel: !binary |
+      2LLYqNin2YYg2LPZhNiq24w=
+
+    :gay: !binary |
+      2q/Yp9uM2YjbjNuM
+
+    :tog: !binary |
+      2KrZiNmG2q/Yp9uM24wg2YbbjNin2LPYpw==
+
+    :haw: !binary |
+      2YfYp9mI2KfYptuM2KfbjNuM
+
+    :kam: !binary |
+      2qnYp9mF2KjYp9uM24w=
+
+    :fi: !binary |
+      2YHZhtmE2KfZhtiv24w=
+
+    :aus: !binary |
+      2LLYqNin2YYg2KfYs9iq2LHYp9mE24zYp9uM24w=
+
+    :lui: !binary |
+      2YTZiNuM2LPZhtmI
+
+    :chm: !binary |
+      2YXYp9ix24zYp9uM24w=
+
+    :tk: !binary |
+      2KrYsdqp2YXZhtuM
+
+    :nap: !binary |
+      2YbYp9m+2YTbjA==
+
+    :pra: !binary |
+      2LLYqNin2YYg2b7Ysdin2qnYsduM2KrbjA==
+
+    :enm: !binary |
+      2KfZhtqv2YTbjNiz24wg2YXbjNin2YbZhw==
+
+    :art: !binary |
+      2LLYqNin2YYg2LPYp9iu2Krar9uM
+
+    :kab: !binary |
+      2YLYqNin24zZhNuM
+
+    :ijo: !binary |
+      2KfbjNis2YjbjNuM
+
+    :ln: !binary |
+      2YTbjNmG2q/Yp9mE2Kc=
+
+    :sux: !binary |
+      2LPZiNmF2LHbjA==
+
+    :yap: !binary |
+      24zYp9m+24w=
+
+    :akk: !binary |
+      2KLaqdiv24w=
+
+    :day: !binary |
+      2K/Yp9uM2KfaqQ==
+
+    :is: !binary |
+      2KfbjNiz2YTZhtiv24w=
+
+    :lv: !binary |
+      2YTYqtmI2YbbjNin24zbjA==
+
+    :kum: !binary |
+      2qnZiNmF24zaqduM
+
+    :cad: !binary |
+      2qnYp9iv2YjbjNuM
+
+    :sm: !binary |
+      2LPYp9mF2YjYotuM24w=
+
+    :mno: !binary |
+      2LLYqNin2YYg2YXYp9mG2YjYqNmI
+
+    :del: !binary |
+      2K/ZhNin2YjYp9ix24w=
+
+    :oto: !binary |
+      2LLYqNin2YYg2KfYqtmI2YXbjNin24zbjA==
+
+    :"en-GB": !binary |
+      2KfZhtqv2YTbjNiz24wg2KjYsduM2KrYp9mG24zYpw==
+
+    :st: !binary |
+      2LPZiNiq2YjbjNuMINis2YbZiNio24w=
+
+    :grb: !binary |
+      2q/YsduM2KjZiNuM24w=
+
+    :syr: !binary |
+      2LPYsduM2KfZhtuM
+
+    :shn: !binary |
+      2LTYp9mG24w=
+
+    :jv: !binary |
+      2KzYp9mI2YfigIzYp9uM
+
+    :kho: !binary |
+      2K7YqtmG24w=
+
+    :pl: !binary |
+      2YTZh9iz2KrYp9mG24w=
+
+    :uga: !binary |
+      2KfZiNqv2KfYsduM2KrbjA==
+
+    :man: !binary |
+      2YXYp9mG2K/bjNmG2q/ZiNuM24w=
+
+    :no: !binary |
+      2YbYsdmI2pjbjA==
+
+    :map: !binary |
+      2LLYqNin2YYg2KLYs9iq2LHZiNmG24zYstuM2KfbjNuM
+
+    :bat: !binary |
+      2LLYqNin2YYg2KjYp9mE2KrbjNqp24w=
+
+    :sa: !binary |
+      2LPZhtiz2qnYsduM2Ko=
+
+    :cpe: !binary |
+      2qnYsduM2YjZhCDbjNinINm+24zYrNuM2YYg2YXYqNiq2YbbjCDYqNixINin
+      2Ybar9mE24zYs9uM
+
+    :ve: !binary |
+      2YjZhtiv2KfbjNuM
+
+    :sad: !binary |
+      2LPYp9mG2K/Yp9mI2YfigIzYp9uM
+
+    :bnt: !binary |
+      2KjYp9mG2KrZiNuM24w=
+
+    :frr: !binary |
+      2YHYsduM2LLbjCDYtNmF2KfZhNuM
+
+    :lg: !binary |
+      2q/Yp9mG2K/Yp9uM24w=
+
+    :tlh: !binary |
+      2qnZhNuM2Ybar9mI2YY=
+
+    :gsw: !binary |
+      2KLZhNmF2KfZhtuMINiz2YjYptuM2LPbjA==
+
+    :jrb: !binary |
+      2LnYsdio24wg24zZh9mI2K/bjA==
+
+    :de: !binary |
+      2KLZhNmF2KfZhtuM
+
+    :zun: !binary |
+      2LLZiNmG24zYp9uM24w=
+
+    :mul: !binary |
+      2obZhtiv24zZhiDYstio2KfZhg==
+
+    :loz: !binary |
+      2YTZiNiy24zYp9uM24w=
+
+    :arp: !binary |
+      2KLYsdin2b7Yp9mH2YjbjNuM
+
+    :tet: !binary |
+      2KrYqtmI2YXbjA==
+
+    :myv: !binary |
+      2KfYsdiy24zYp9uM24w=
+
+    :chb: !binary |
+      2obbjNio2obYpw==
+
+    :dyu: !binary |
+      2K/Yp9uM2YjZhNin24zbjA==
+
+    :bem: !binary |
+      2KjZhdio2KfbjNuM
+
+    :phn: !binary |
+      2YHZhtuM2YLbjA==
+
+    :"fr-CA": !binary |
+      2YHYsdin2YbYs9mI24wg2qnYp9mG2KfYr9in
+
+    :afa: !binary |
+      2LLYqNin2YYg2KfZgdix24zZgtinINmIINii2LPbjNin24zbjA==
+
+    :ssa: !binary |
+      2LLYqNin2YYg2YbbjNmE24wg2Ygg2LXYrdix2KfbjNuM
+
+    :fj: !binary |
+      2YHbjNis24zYp9uM24w=
+
+    :hup: !binary |
+      2YfZiNm+2Kc=
+
+    :krc: !binary |
+      2YLYsdmH4oCM2obYp9uM24zigJDYqNin2YTaqdin2LHbjA==
+
+    :wen: !binary |
+      2LLYqNin2YYg2LXZj9ix2KjbjA==
+
+    :lb: !binary |
+      2YTZiNqv2LLYp9mF2KjZiNix2q/bjA==
+
+    :ae: !binary |
+      2KfZiNiz2KrYp9uM24w=
+
+    :os: !binary |
+      2KLYs9uM
+
+    :th: !binary |
+      2KrYp9uM2YTZhtiv24w=
+
+    :sk: !binary |
+      2KfYs9mE2YjYp9qp24w=
+
+    :mkh: !binary |
+      2LLYqNin2YYg2YXZiNmG4oCM2K7Zhdix24w=
+
+    :am: !binary |
+      2KfZhdmH2LHbjA==
+
+    :bua: !binary |
+      2KjZiNix24zYp9iq24w=
+
+    :id: !binary |
+      2KfZhtiv2YjZhtiy24zYp9uM24w=
+
+    :oj: !binary |
+      2KfZiNis24zYqNmI2KfbjNuM
+
+    :cv: !binary |
+      2obZiNmI2KfYtNuM
+
+    :sem: !binary |
+      2LLYqNin2YYg2LPYp9mF24w=
+
+    :io: !binary |
+      2KfbjNiv2Yg=
+
+    :dz: !binary |
+      2KzZiNmG2K7Yp9uM24w=
+
+    :goh: !binary |
+      2KLZhNmF2KfZhtuMINi52YTbjNin24wg2KjYp9iz2KrYp9mG
+
+    :tvl: !binary |
+      2KrZiNmI2KfZhNmI24zbjA==
+
+    :ja: !binary |
+      2pjYp9m+2YbbjA==
+
+    :"pt-BR": !binary |
+      2b7Ysdiq2LrYp9mE24wg2KjYsdiy24zZhA==
+
+    :"zh-Hant": !binary |
+      2obbjNmG24wg2LPZhtiq24w=
+
+    :ie: !binary |
+      2Kfaqdiz24zYr9mG2KrYp9mE
+
+    :kg: !binary |
+      2qnZhtqv2YjbjNuM
+
+    :bal: !binary |
+      2KjZhNmI2obbjA==
+
+    :vo: !binary |
+      2YjZhNin2b7ZiNqp
+
+    :pa: !binary |
+      2b7Zhtis2KfYqNuM
+
+    :zh: !binary |
+      2obbjNmG24w=
+
+    :mag: !binary |
+      2YXYp9qv2KfZh9uM2KfbjNuM
+
+    :ug: !binary |
+      2KfZiNuM2LrZiNix24w=
+
+    :bin: !binary |
+      2KjbjNmG24w=
+
+    :niu: !binary |
+      2YbbjNmI24zbjA==
+
+    :fon: !binary |
+      2YHZiNmG24w=
+
+    :roa: !binary |
+      2LLYqNin2YYg2LHZiNmF24zYp9uM24w=
+
+    :ber: !binary |
+      2KjYsdio2LHbjA==
+
+    :ar: !binary |
+      2LnYsdio24w=
+
+    :iro: !binary |
+      2LLYqNin2YYg2KfbjNix2YjaqdmI2KfbjNuM
+
+    :ter: !binary |
+      2KrYsdmG2Yg=
+
+    :gn: !binary |
+      2q/ZiNin2LHYp9mG24w=
+
+    :zap: !binary |
+      2LLYp9m+2YjYqtqp24w=
+
+    :lam: !binary |
+      2YTYp9mF2KjYpw==
+
+    :anp: !binary |
+      2KLZhtqv24zaqdin
+
+    :mn: !binary |
+      2YXYutmI2YTbjA==
+
+    :ce: !binary |
+      2obahtmG24w=
+
+    :su: !binary |
+      2LPZiNmG2K/Yp9uM24w=
+
+    :dsb: !binary |
+      2LXZj9ix2KjbjCDYs9mB2YTbjA==
+
+    :sah: !binary |
+      24zYp9mC2YjYqtuM
+
+    :pau: !binary |
+      2b7Yp9mE2KfYptmI24zbjA==
+
+    :da: !binary |
+      2K/Yp9mG2YXYp9ix2qnbjA==
+
+    :son: !binary |
+      2LPZiNmG2LrYp9uM24w=
+
+    :hmn: !binary |
+      2YfZhdmI2Ybarw==
+
+    :wal: !binary |
+      2YjYp9mE2KfZhdmI
+
+    :ku: !binary |
+      2qnYsdiv24w=
+
+    :ur: !binary |
+      2KfYsdiv2Yg=
+
+    :ach: !binary |
+      2KLahtmI2YTbjNin24zbjA==
+
+    :sd: !binary |
+      2LPZhtiv24w=
+
+    :mh: !binary |
+      2YXYp9ix2LTYp9mE24w=
+
+    :tr: !binary |
+      2KrYsdqp24w=
+
+    :csb: !binary |
+      2qnYp9i02YjYqNuM
+
+    :nyo: !binary |
+      2YbbjNmI2LHZiNuM24w=
+
+    :sc: !binary |
+      2LPYp9ix2K/bjNmG24zYp9uM24w=
+
+    :pap: !binary |
+      2b7Yp9m+24zYp9mF2YbYqtmI
+
+    :scn: !binary |
+      2LPbjNiz24zZhNuM
+
+    :gez: !binary |
+      2q/bjOKAjNim2LLbjA==
+
+    :tum: !binary |
+      2KrZiNmF2KjZiNqp2KfbjNuM
+
+    :ht: !binary |
+      2YfYp9im24zYqtuM2KfbjNuM
+
+    :kaw: !binary |
+      2qnYp9mI24zYp9uM24w=
+
+    :he: !binary |
+      2LnYqNix24w=
+
+    :gwi: !binary |
+      2q/ZiNuM2oYg2KfbjNmG
+
+    :bad: !binary |
+      2KjYp9mG2K/Yp9uM24w=
+
+    :sio: !binary |
+      2LLYqNin2YYg2LPZiNuM24w=
+
+    :nr: !binary |
+      2KfZhtiv2YfigIzYqNmE2YfigIzYp9uMINis2YbZiNio24w=
+
+    :luo: !binary |
+      2YTZiNim2YjbjNuM
+
+    :sh: !binary |
+      2LXYsdioINmIINqp2LHZiNin2KrbjA==
+
+    :ts: !binary |
+      2KrYs9mI2Ybar9in24zbjA==
+
+    :ng: !binary |
+      2KfZhtiv2YjZhtqv2KfbjNuM
+
+    :cho: !binary |
+      2obZiNqp2KrZiNuM24w=
+
+    :raj: !binary |
+      2LHYp9is2LPYqtin2YbbjA==
+
+    :fur: !binary |
+      2YHYsduM2YjZhNuM2KfbjNuM
+
+    :ay: !binary |
+      2KLbjNmF2KfYsdin24zbjA==
+
+    :fan: !binary |
+      2YHYp9mG2qnbjA==
+
+    :ilo: !binary |
+      2KfbjNmE2YjaqdmI24zbjA==
+
+    :kw: !binary |
+      2qnYsdmG2YjYp9mE24w=
+
+    :syc: !binary |
+      2LPYsduM2KfZhtuMINqp2YTYp9iz24zaqQ==
+
+    :ga: !binary |
+      2KfbjNix2YTZhtiv24w=
+
+    :kv: !binary |
+      2qnZiNmF24zYp9uM24w=
+
+    :alg: !binary |
+      2LLYqNin2YYg2KLZhNqv2YjZhtqp24zZhtuM
+
+    :ypk: !binary |
+      2LLYqNin2YYg24zZiNm+24zaqduM
+
+    :mi: !binary |
+      2YXYp9im2YjYsduM2KfbjNuM
+
+    :nd: !binary |
+      2KfZhtiv2YfigIzYqNmE2YfigIzYp9uMINi02YXYp9mE24w=
+
+    :mos: !binary |
+      2YXYp9iz24zYp9uM24w=
+
+    :car: !binary |
+      2qnYp9ix24zYqNuM
+
+    :so: !binary |
+      2LPZiNmF2KfZhNuM2KfbjNuM
+
+    :din: !binary |
+      2K/bjNmG2qnYp9uM24w=
+
+    :ii: !binary |
+      24zbjCDYs9uM2obZiNin2YY=
+
+    :pag: !binary |
+      2b7Yp9mG2q/Yp9iz24zZhtin2YbbjA==
+
+    :hil: !binary |
+      2YfbjNmE24zigIzar9in24zZhtmI2YbbjA==
+
+    :tig: !binary |
+      2KrbjNqv2LHZh+KAjNin24w=
+
+    :sit: !binary |
+      2LLYqNin2YYg2obbjNmGINmIINiq2KjYqtuM
+
+    :kj: !binary |
+      2qnZiNin2YbbjNin2YXYpw==
+
+    :ru: !binary |
+      2LHZiNiz24w=
+
+    :vai: !binary |
+      2YjbjNin24zbjA==
+
+    :kk: !binary |
+      2YLYstin2YLbjA==
+
+    :mdr: !binary |
+      2YXYp9mG2K/Yp9ix
+
+    :bho: !binary |
+      2KjZiNis2b7ZiNix24w=
+
+    :rn: !binary |
+      2LHZiNmG2K/bjNin24zbjA==
+
+    :cpp: !binary |
+      2qnYsduM2YjZhCDbjNinINm+24zYrNuM2YYg2YXYqNiq2YbbjCDYqNixINm+
+      2LHYqti62KfZhNuM
+
+    :wo: !binary |
+      2YjZhNmI2YHbjA==
+
+    :nv: !binary |
+      2YbYp9mI2KfZh9mI24zbjA==
+
+    :sal: !binary |
+      2LLYqNin2YYg2LPYp9mE24zYtNuM
+
+    :nah: !binary |
+      2YbYp9mI2KfYqtmE24w=
+
+    :bs: !binary |
+      2KjZiNiz2YbbjNin24zbjA==
+
+    :gaa: !binary |
+      2q/Yp9uM24w=
+
+    :ha: !binary |
+      2YfZiNiz24zYp9uM24w=
+
+    :tmh: !binary |
+      2KrYp9mF2KfYtNmC24w=
+
+    :kac: !binary |
+      2qnYp9qG24zZhtuM
+
+    :eu: !binary |
+      2KjYp9iz2qnbjA==
+
+    :ne: !binary |
+      2YbZvtin2YTbjA==
+
+    :lua: !binary |
+      2YTZiNio2KfbjNuM4oCQ2YTZiNmE2YjYpw==
+
+    :ath: !binary |
+      2LLYqNin2YYg2KLYqtin2b7Yp9iz2qnYp9uM24w=
+
+    :ti: !binary |
+      2KrbjNqv2LHbjNmG24zYp9uM24w=
+
+    :root: !binary |
+      2LHbjNi02Yc=
+
+    :nai: !binary |
+      2LLYqNin2YYg2LPYsdiu2b7ZiNiz2KrbjCDYp9mF2LHbjNqp2KfbjCDYtNmF
+      2KfZhNuM
+
+    :chk: !binary |
+      2obZiNqp24w=
+
+    :arc: !binary |
+      2KLYsdin2YXbjA==
+
+    :pon: !binary |
+      2b7Yp9mG2b7bjNuM
+
+    :elx: !binary |
+      2LnbjNmE2KfZhduM
+
+    :sus: !binary |
+      2LPZiNiz2YjbjNuM
+
+    :iba: !binary |
+      2KLbjNio2YY=
+
+    :ff: !binary |
+      2YHZiNmE2KfbjNuM
+
+    :yao: !binary |
+      24zYp9im2YjbjNuM
+
+    :lt: !binary |
+      2YTbjNiq2YjYp9mG24zYp9uM24w=
+
+    :kro: !binary |
+      2qnYsdmI24zbjA==
+
+    :ain: !binary |
+      2KLbjNmG2YjbjNuM
+
+    :sla: !binary |
+      2LLYqNin2YYg2KfYs9mE2KfZiNuM
+
+    :min: !binary |
+      2YXbjNmG2KfZhtqv4oCM2qnYp9io2YjbjNuM
+
+    :mni: !binary |
+      2YXbjNiq2YfigIzYp9uM
+
+    :byn: !binary |
+      2KjZhNuM2YY=
+
+    :ota: !binary |
+      2KrYsdqp24wg2LnYq9mF2KfZhtuM
+
+    :"en-CA": !binary |
+      2KfZhtqv2YTbjNiz24wg2qnYp9mG2KfYr9in
+
+    :dar: !binary |
+      2K/Yp9ix2YLbjNmG24w=
+
+    :sgn: !binary |
+      2LLYqNin2YYg2KfYtNin2LHZhw==
+
+    :egy: !binary |
+      2YXYtdix24wg2qnZh9mG
+
+    :gor: !binary |
+      2q/ZiNix2YjZhtiq2KfZhNmI
+
+    :nl: !binary |
+      2YfZhNmG2K/bjA==
+
+    :udm: !binary |
+      2KfZiNiv2YXZiNix2KrbjA==
+
+    :ine: !binary |
+      2LLYqNin2YYg2YfZhtivINmIINin2LHZiNm+2KfbjNuM
+
+    :khi: !binary |
+      2LLYqNin2YYg2K7ZiNin2LPbjA==
+
+    :zza: !binary |
+      2LLYp9iy2KfbjNuM
+
+    :bas: !binary |
+      2KjYp9iz2KfbjNuM
+
+    :mak: !binary |
+      2YXYp9qp2KfYs9in2LE=
+
+    :uz: !binary |
+      2KfYstio2qnbjA==
+
+    :cop: !binary |
+      2YLYqNi324w=
+
+    :non: !binary |
+      2YbYsdizINio2KfYs9iq2KfZhg==
+
+    :fro: !binary |
+      2YHYsdin2YbYs9mI24wg2KjYp9iz2KrYp9mG
+
+    :bn: !binary |
+      2KjZhtqv2KfZhNuM
+
+    :grc: !binary |
+      24zZiNmG2KfZhtuMINqp2YfZhg==
+
+    :jpr: !binary |
+      2YHYp9ix2LPbjCDbjNmH2YjYr9uM
+
+    :cs: !binary |
+      2obaqduM
+
+    :lol: !binary |
+      2YXZiNmG2q/ZiNuM24w=
+
+    :arn: !binary |
+      2KLYsdmI2qnYp9mG24zYp9uM24w=
+
+    :znd: !binary |
+      2LLYp9mG2K/Zh+KAjNin24w=
+
+    :mt: !binary |
+      2YXYp9mE2KrbjA==
+
+    :myn: !binary |
+      2LLYqNin2YYg2YXYp9uM2KfbjNuM
+
+    :ch: !binary |
+      2obYp9mF2YjYsdmI24zbjA==
+
+    :te: !binary |
+      2KrZhNmI2q/ZiNuM24w=
+
+    :ab: !binary |
+      2KLYqNiu2KfYstuM
+
+    :dum: !binary |
+      2YfZhNmG2K/bjCDZhduM2KfZhtmH
+
+    :phi: !binary |
+      2LLYqNin2YYg2YHbjNmE24zZvtuM2YbbjA==
+
+    :et: !binary |
+      2KfYs9iq2YjZhtuM2KfbjNuM
+
+    :hsb: !binary |
+      2LXZj9ix2KjbjCDYudmE24zYpw==
+
+    :tl: !binary |
+      2KrYp9qv2KfZhNmI2q/bjA==
+
+    :srr: !binary |
+      2LPYsduM2LHbjA==
+
+    :kr: !binary |
+      2qnYp9mG2YjYsduM2KfbjNuM
+
+    :ady: !binary |
+      2KLYr9uM2KzbjNin24zbjA==
+
+    :la: !binary |
+      2YTYp9iq24zZhtuM
+
+    :sat: !binary |
+      2LPYp9mG2KrYp9mE24w=
+
+    :was: !binary |
+      2YjYp9i02YjbjNuM
+
+    :btk: !binary |
+      2KjYp9iq2KfaqduM
+
+    :si: !binary |
+      2LPbjNmG2YfYp9mE24w=
+
+    :mis: !binary |
+      2LLYqNin2YYg2YXYqtmB2LHZgtmH
+
+    :ny: !binary |
+      2YbbjNin2YbYrNin24zbjA==
+
+    :zxx: !binary |
+      2KjYr9mI2YYg2YXYrdiq2YjYp9uMINiy2KjYp9mG24w=
+
+    :oc: !binary |
+      2KfZiNqp24zYqtin24zbjA==
+
+    :cus: !binary |
+      2LLYqNin2YYg2qnZiNi024w=
+
+    :sel: !binary |
+      2LPZhNqp2YjZvtuM
+
+    :dv: !binary |
+      2YXYp9mE2K/bjNmI24w=
+
+    :gmh: !binary |
+      2KLZhNmF2KfZhtuMINi52YTbjNin24wg2YXbjNin2YbZhw==
+
+    :tut: !binary |
+      2LLYqNin2YYg2KLZhNiq2KfbjNuM2qk=
+
+    :ia: !binary |
+      2YXbjNin2YbigIzYstio2KfZhg==
+
+    :kfo: !binary |
+      2qnZiNix2Yg=
+
+    :hu: !binary |
+      2YXYrNin2LHbjA==
+
+    :gv: !binary |
+      2YXYp9mG24w=
+
+    :mad: !binary |
+      2YXYp9iv2YjYsdin24zbjA==
+
+    :tyv: !binary |
+      2KrZiNmI2KfbjNuM
+
+    :or: !binary |
+      2KfZiNix24zZh+KAjNin24w=
+
+    :ty: !binary |
+      2KrYp9mH24zYqtuM2KfbjNuM
+
+    :chy: !binary |
+      2LTYp9uM2KfZhtuM
+
+    :kaj: !binary |
+      2KzZiA==
+
+    :alt: !binary |
+      2KLZhNiq2KfbjNuMINis2YbZiNio24w=
+
+    :rar: !binary |
+      2LHYp9ix2YjYqtmI2Ybar9in24zbjA==
+
+    :be: !binary |
+      2KjZhNmI2LHZiNiz24w=
+
+    :fiu: !binary |
+      2LLYqNin2YYg2YHbjNmGINmIINin2Yjar9ix2KfbjNuM
+
+    :ira: !binary |
+      2LLYqNin2YYg2KfbjNix2KfZhtuM
+
+    :tem: !binary |
+      2KrZhdmG2YfigIzYp9uM
+
+    :gl: !binary |
+      2q/Yp9mE24zYs9uM2KfbjNuM
+
+    :af: !binary |
+      2KLZgdix24zaqdin2YbYsw==
+
+    :za: !binary |
+      2obZiNin2Ybar9uM
+
+    :lah: !binary |
+      2YTYp9mH2YbYr9in
+
+    :ang: !binary |
+      2KfZhtqv2YTbjNiz24wg2KjYp9iz2KrYp9mG
+
+    :ml: !binary |
+      2YXYp9mE2KfbjNin2YTYp9mF24w=
+
+    :sr: !binary |
+      2LXYsdio24w=
+
+    :mus: !binary |
+      2qnYsduM2qnbjA==
+
+    :dra: !binary |
+      2LLYqNin2YYg2K/Ysdin2YjbjNiv24w=
+
+    :pam: !binary |
+      2b7Yp9mF2b7Yp9mG2q/Yp9uM24w=
+
+    :"es-ES": !binary |
+      2KfYs9m+2KfZhtuM2KfbjNuMINin2LPZvtin2YbbjNin
+
+    :eo: !binary |
+      2KfYs9m+2LHYp9mG2KrZiA==
+
+    :sog: !binary |
+      2LPYutiv24w=
+
+    :hit: !binary |
+      2YfbjNiq24w=
+
+    :uk: !binary |
+      2KfZiNqp2LHYp9uM2YbbjA==
+
+    :ace: !binary |
+      2KLahtim24w=
+
+    :wak: !binary |
+      2LLYqNin2YYg2YjYp9qp2KfYtNuM
+
+    :ss: !binary |
+      2LPZiNin2LLbjNin24zbjA==
+
+    :ks: !binary |
+      2qnYtNmF24zYsduM
+
+    :kok: !binary |
+      2qnZhtqp2KfZhtuM
+
+    :bik: !binary |
+      2KjbjNqp2YjZhNuM
+
+    :rw: !binary |
+      2qnbjNmG24zYp9ix2YjYp9mG2K/Yp9uM24w=
+
+    :mga: !binary |
+      2KfbjNix2YTZhtiv24wg2YXbjNin2YbZhw==
+
+    :it: !binary |
+      2KfbjNiq2KfZhNuM2KfbjNuM
+
+    :crp: !binary |
+      2qnYsduM2YjZhCDbjNinINm+24zYrNuM2YY=
+
+    :yo: !binary |
+      24zZiNix2YjYqNin24zbjA==
+
+    :nym: !binary |
+      2YbbjNin2YXigIzZiNiy24zYp9uM24w=
+
+    :"de-CH": !binary |
+      2KLZhNmF2KfZhtuMINi52YTbjNin24wg2LPZiNim24zYsw==
+
+    :om: !binary |
+      2KfZiNix2YjZhdmI24zbjA==
+
+    :cy: !binary |
+      2YjbjNmE2LLbjA==
+
+    :gba: !binary |
+      2q/YqNin24zYp9uM24w=
+
+    :to: !binary |
+      2KrZiNmG2q/Yp9uM24w=
+
+    :sas: !binary |
+      2LPYp9iz2KfaqduM
+
+    :kar: !binary |
+      2qnYp9ix2YbbjA==
+
+    :fil: !binary |
+      2YHbjNmE24zZvtuM2YbbjA==
+
+    :br: !binary |
+      2KjYsdiq2KfZhtuM2KfbjNuM
+
+    :tsi: !binary |
+      2KrYs9uM2YXigIzYtNuM2KfZhtuM
+
+    :hr: !binary |
+      2qnYsdmI2KfYqg==
+
+    :av: !binary |
+      2KLZiNin2LHbjA==
+
+    :nn: !binary |
+      2YbYsdizINis2K/bjNivINmG2LHZiNqY24w=
+
+    :lun: !binary |
+      2YTZiNmG2K/Yp9uM24w=
+
+    :nds: !binary |
+      2KLZhNmF2KfZhtuMINiz2YHZhNuM
+
+    :tpi: !binary |
+      2KrZiNqp4oCM2b7bjNiz24zZhtuM
+
+    :pro: !binary |
+      2b7YsdmI2YjYp9mG2LPbjCDYqNin2LPYqtin2YY=
+
+    :as: !binary |
+      2KLYs9in2YXbjA==
+
+    :ewo: !binary |
+      2KfZiNin2YbYr9mI
+
+    :ee: !binary |
+      2KfZiNmH4oCM2KfbjA==
+
+    :swb: !binary |
+      2qnZiNmF2YjYsduM
+
+    :fy: !binary |
+      2YHYsduM2LLbjCDYutix2KjbjA==
+
+    :ik: !binary |
+      2KfbjNmG2YjZvtuM2qk=
+
+    :iu: !binary |
+      2KfbjNmG2Yjaqdiq24zYqtmI2Ko=
+
+    :yi: !binary |
+      24zYr9uM
+
+    :mg: !binary |
+      2YXYp9mE2Kfar9in2LPbjNin24zbjA==
+
+    :kut: !binary |
+      2qnZiNiq2YbbjA==
+
+    :ale: !binary |
+      2KLZhNim2YjYqtuM
+
+    :rm: !binary |
+      2LHZiNmF2KfZhti0
+
+    :sn: !binary |
+      2LTZiNmG2KfbjNuM
+
+    :moh: !binary |
+      2YXZiNmH2KfaqduM
+
+    :cai: !binary |
+      2LLYqNin2YYg2LPYsdiu2b7ZiNiz2KrbjCDYp9mF2LHbjNqp2KfbjCDZhdix
+      2qnYstuM
+
+    :paa: !binary |
+      2LLYqNin2YYg2b7Yp9m+2YjYp9uM24w=
+
+    :"en-US": !binary |
+      2KfZhtqv2YTbjNiz24wg2KfZhdix24zaqdin
+
+    :dgr: !binary |
+      2K/ZiNqv2LHbjNio
+
+    :bm: !binary |
+      2KjYp9mF2KjYp9ix2KfbjNuM
+

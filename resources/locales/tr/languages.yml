@@ -1,511 +1,579 @@
----
-:tr:
-  :languages:
-    :aa: Afar
-    :ab: Abhazca
-    :ace: Achinese
-    :ach: Acoli
-    :ada: Adangme
-    :ady: Adigece
-    :ae: Avestçe
-    :af: Afrikaan Dili
-    :afa: Afro-Asyatik Diller
-    :afh: Afrihili
-    :ain: Ayni Dili
-    :ak: Akan
-    :akk: Akad Dili
-    :ale: Aleut
-    :alg: Algonkin Dili
-    :alt: Güney Altayca
-    :am: Amharca
-    :an: Aragonca
-    :ang: Eski İngilizce
-    :anp: Angika
-    :apa: Apaçi Dilleri
-    :ar: Arapça
-    :arc: Aramice
-    :arn: Araukanya Dili
-    :arp: Arapaho Dili
-    :art: Yapay Diller
-    :arw: Arawak Dili
-    :as: Assamca
-    :ast: Asturyasca
-    :ath: Atabaşkan Dilleri
-    :aus: Avustralya Dilleri
-    :av: Avar Dili
-    :awa: Awadhi
-    :ay: Aymara
-    :az: Azeri
-    :ba: Başkırtça
-    :bad: Banda Dili
-    :bai: Bamileke Dilleri
-    :bal: Baluchi
-    :ban: Bali Dili
-    :bas: Basa Dili
-    :bat: Baltık Dilleri
-    :be: Beyaz Rusça
-    :bej: Beja Dili
-    :bem: Bemba
-    :ber: Berberi
-    :bg: Bulgarca
-    :bh: Bihari
-    :bho: Arayanice
-    :bi: Bislama
-    :bik: Bikol
-    :bin: Bini
-    :bla: Siksika
-    :bm: Bambara
-    :bn: Bengalce
-    :bnt: Bantu Dili
-    :bo: Tibetçe
-    :br: Bretonca
-    :bra: Braj
-    :bs: Boşnakça
-    :btk: Batak
-    :bua: Buryat
-    :bug: Bugis
-    :byn: Blin
-    :ca: Katalanca
-    :cad: Caddo
-    :cai: Orta Amerika Yerli Dilleri
-    :car: Carib
-    :cau: Kafkas Dilleri
-    :cch: Atsam
-    :ce: Çeçence
-    :ceb: Cebuano
-    :cel: Kelt Dilleri
-    :ch: Chamorro
-    :chb: Chibcha
-    :chg: Çağatay Dili
-    :chk: Chuukese
-    :chm: Mari
-    :chn: Chinook Jargon
-    :cho: Choctaw
-    :chp: Chipewyan
-    :chr: Çeroki
-    :chy: Şayen Dili
-    :cmc: Chamic Dilleri
-    :co: Korsikaca
-    :cop: Kıptice
-    :cpe: İngilizce tabanlı Creole ve Pidgin Dilleri
-    :cpf: Fransızca tabanlı Creole ve Pidgin Dilleri
-    :cpp: Portekizce tabanlı Creole ve Pidgin Dilleri
-    :cr: Cree
-    :crh: Kırım Türkçesi
-    :crp: Creole ve Pidgin Dilleri
-    :cs: Çekçe
-    :csb: Kashubian
-    :cu: Kilise Slavcası
-    :cus: Kuşitik Diller
-    :cv: Çuvaşça
-    :cy: Galce
-    :da: Danca
-    :dak: Dakota
-    :dar: Dargince
-    :day: Dayak
-    :de: Almanca
-    :de-AT: Avusturya Almancası
-    :de-CH: İsviçre Yüksek Almancası
-    :del: Delaware
-    :den: Slavey
-    :dgr: Dogrib
-    :din: Dinka
-    :doi: Dogri
-    :dra: Dravid Dilleri
-    :dsb: Aşağı Sorbça
-    :dua: Duala
-    :dum: Ortaçağ Felemenkçesi
-    :dv: Divehi
-    :dyu: Dyula
-    :dz: Butan Dili
-    :ee: Ewe
-    :efi: Efik
-    :egy: Eski Mısır Dili
-    :eka: Ekajuk
-    :el: Yunanca
-    :elx: Elam
-    :en: İngilizce
-    :en-AU: Avustralya İngilizcesi
-    :en-CA: Kanada İngilizcesi
-    :en-GB: İngiliz İngilizcesi
-    :en-US: Amerikan İngilizcesi
-    :enm: Ortaçağ İngilizcesi
-    :eo: Esperanto
-    :es: İspanyolca
-    :es-419: Latin Amerika İspanyolcası
-    :es-ES: İber İspanyolcası
-    :et: Estonca
-    :eu: Baskça
-    :ewo: Ewondo
-    :fa: Farsça
-    :fan: Fang
-    :fat: Fanti
-    :ff: Fulah
-    :fi: Fince
-    :fil: Filipino
-    :fiu: Finno - Ugrik Diller
-    :fj: Fiji Dili
-    :fo: Faroe Dili
-    :fon: Fon
-    :fr: Fransızca
-    :fr-CA: Kanada Fransızcası
-    :fr-CH: İsviçre Fransızcası
-    :frm: Ortaçağ Fransızcası
-    :fro: Eski Fransızca
-    :frr: Kuzey Frizce
-    :frs: Doğu Frizcesi
-    :fur: Friulian
-    :fy: Batı Frizcesi
-    :ga: İrlanda Dili
-    :gaa: Ga
-    :gay: Gayo
-    :gba: Gbaya
-    :gd: İskoç Gal Dili
-    :gem: Cermen Dilleri
-    :gez: Geez
-    :gil: Kiribati Dili
-    :gl: Galiçyaca
-    :gmh: Ortaçağ Yüksek Almancası
-    :gn: Guarani
-    :goh: Eski Yüksek Almanca
-    :gon: Gondi
-    :gor: Gorontalo
-    :got: Gotça
-    :grb: Grebo
-    :grc: Antik Yunanca
-    :gsw: İsviçre Almancası
-    :gu: Gücerat Dili
-    :gv: Manks
-    :gwi: Gwichʼin
-    :ha: Hausa
+--- 
+:tr: 
+  :languages: 
+    :sid: Sidamo
     :hai: Haida
-    :haw: Hawaii Dili
-    :he: İbranice
-    :hi: Hintçe
-    :hil: Hiligaynon
-    :him: Himachali
-    :hit: Hititçe
-    :hmn: Hmong
-    :ho: Hiri Motu
-    :hr: Hırvatça
-    :hsb: Yukarı Sorbça
-    :ht: Haiti Dili
-    :hu: Macarca
-    :hup: Hupa
-    :hy: Ermenice
-    :hz: Herero
-    :ia: Interlingua
-    :iba: Iban
-    :id: Endonezce
-    :ie: Interlingue
-    :ig: İgbo Dili
-    :ii: Sichuan Yi
-    :ijo: Ijo
-    :ik: Inupiak
-    :ilo: Iloko
-    :inc: Hint Dilleri
-    :ine: Hint-Avrupa Dilleri
-    :inh: İnguşça
-    :io: Ido
-    :ira: İran Dilleri
-    :iro: İroqua Dili
-    :is: İzlandaca
-    :it: İtalyanca
-    :iu: Inuktitut
-    :ja: Japonca
-    :jbo: Lojban
-    :jpr: Yahudi Farsçası
-    :jrb: Yahudi Arapçası
-    :jv: Cava Dili
-    :ka: Gürcüce
-    :kaa: Karakalpakça
-    :kab: Kabile
-    :kac: Kaçin
-    :kaj: Jju
-    :kam: Kamba
-    :kar: Karen
-    :kaw: Kawi
-    :kbd: Kabardeyce
-    :kcg: Tyap
-    :kfo: Koro
-    :kg: Kongo
-    :kha: Khasi
-    :khi: Hoisan Dilleri
-    :kho: Hotanca
-    :ki: Kikuyu
-    :kj: Kuanyama
-    :kk: Kazakça
-    :kl: Grönland Dili
-    :km: Kamboçya Dili
-    :kmb: Kimbundu
     :kn: Kannada
-    :ko: Korece
-    :kok: Konkani
-    :kos: Kosraean
-    :kpe: Kpelle
-    :kr: Kanuri
-    :krc: Karaçay-Balkarca
-    :krl: Karelyaca
-    :kro: Kru
-    :kru: Kurukh
-    :ks: Keşmirce
-    :ku: Kürtçe
-    :kum: Kumukça
-    :kut: Kutenai
-    :kv: Komi
-    :kw: Kernevekçe
-    :ky: Kırgızca
-    :la: Latince
-    :lad: Ladino
-    :lah: Lahnda
-    :lam: Lamba
-    :lb: Lüksemburgca
-    :lez: Lezgice
-    :lg: Ganda
-    :li: Limburgca
-    :ln: Lingala
-    :lo: Laos Dili
-    :lol: Mongo
-    :loz: Lozi
-    :lt: Litvanyaca
+    :umb: Umbundu
+    :ka: !binary |
+      R8O8cmPDvGNl
+
+    :ki: Kikuyu
+    :pt: Portekizce
+    :nb: !binary |
+      Tm9ydmXDp8OnZSBCb2ttw6Vs
+
+    :qu: Quechua
+    :mdf: "Mok\xC5\x9Fa Dili"
+    :bej: Beja Dili
+    :vi: Vietnamca
+    :nub: Nubian Dilleri
+    :cpf: "Frans\xC4\xB1zca tabanl\xC4\xB1 Creole ve Pidgin Dilleri"
+    :mas: Masai
+    :sai: "G\xC3\xBCney Amerika Yerli Dilleri"
+    :bo: "Tibet\xC3\xA7e"
+    :frs: "Do\xC4\x9Fu Frizcesi"
+    :gu: "G\xC3\xBCcerat Dili"
+    :es: "\xC4\xB0spanyolca"
+    :mo: Moldovaca
+    :tli: Tlingit
+    :"nl-BE": Flamanca
+    :kaa: "Karakalpak\xC3\xA7a"
+    :el: Yunanca
+    :arw: Arawak Dili
+    :my: Birmanya Dili
+    :en: "\xC4\xB0ngilizce"
     :lu: Luba-Katanga
-    :lua: Luba-Lulua
-    :lui: Luiseno
-    :lun: Lunda
-    :luo: Luo
-    :lus: Lushai
-    :lv: Letonca
-    :mad: Madura Dili
-    :mag: Magahi
+    :chg: "\xC3\x87a\xC4\x9Fatay Dili"
+    :tg: "Tacik\xC3\xA7e"
+    :na: Nauru Dili
+    :eka: Ekajuk
+    :li: Limburgca
+    :pi: Pali
+    :"fr-CH": !binary |
+      xLBzdmnDp3JlIEZyYW5zxLF6Y2FzxLE=
+
+    :ak: Akan
+    :wa: Valonca
+    :hz: Herero
+    :suk: Sukuma
+    :fo: Faroe Dili
+    :xal: !binary |
+      S2FsbcSxa8OnYQ==
+
+    :afh: Afrihili
+    :krl: Karelyaca
+    :lo: Laos Dili
+    :sl: Slovence
+    :mnc: "Man\xC3\xA7urya Dili"
+    :bug: Bugis
+    :"en-AU": "Avustralya \xC4\xB0ngilizcesi"
+    :osa: Osage
+    :dak: Dakota
+    :sga: "Eski \xC4\xB0rlandaca"
+    :efi: Efik
+    :gon: Gondi
+    :sw: Svahili
+    :tw: Tvi
+    :"pt-PT": "\xC4\xB0ber Portekizcesi"
+    :ig: "\xC4\xB0gbo Dili"
+    :kha: Khasi
+    :ko: Korece
+    :zbl: Blis Sembolleri
+    :ps: "Pe\xC5\x9Ftuca"
     :mai: Maithili
-    :mak: Makasar
+    :ban: Bali Dili
+    :und: Bilinmeyen Dil
+    :nog: Nogayca
+    :co: Korsikaca
+    :rom: Romanca
+    :bg: Bulgarca
+    :frm: !binary |
+      T3J0YcOnYcSfIEZyYW5zxLF6Y2FzxLE=
+
+    :cr: Cree
+    :kl: "Gr\xC3\xB6nland Dili"
+    :jbo: Lojban
+    :ca: Katalanca
+    :tn: Setsvana
+    :tiv: Tiv
+    :got: !binary |
+      R290w6dh
+
+    :smj: Lule Sami
+    :chr: "\xC3\x87eroki"
+    :zen: Zenaga
+    :mr: Marathi
+    :lez: Lezgice
+    :apa: "Apa\xC3\xA7i Dilleri"
+    :gem: Cermen Dilleri
+    :ta: Tamilce
+    :mwr: Marvari
+    :ceb: Cebuano
+    :peo: "Eski Fars\xC3\xA7a"
+    :dua: Duala
+    :bh: Bihari
+    :srn: Sranan Tongo
+    :new: Nevari
+    :ho: Hiri Motu
+    :war: Varay
+    :ada: Adangme
+    :ky: !binary |
+      S8SxcmfEsXpjYQ==
+
+    :kpe: Kpelle
+    :bra: Braj
+    :se: Kuzey Sami
+    :mic: Micmac
+    :cu: "Kilise Slavcas\xC4\xB1"
+    :zu: Zulu
+    :nzi: Nzima
+    :gil: Kiribati Dili
+    :sco: Scots
+    :kbd: Kabardeyce
+    :hi: "Hint\xC3\xA7e"
+    :tup: Tupi Dilleri
+    :hy: Ermenice
+    :lus: Lushai
+    :inc: Hint Dilleri
+    :ba: !binary |
+      QmHFn2vEsXJ0w6dh
+
+    :fa: "Fars\xC3\xA7a"
+    :kru: Kurukh
+    :nso: Kuzey Sotho
+    :ms: Malay
+    :chp: Chipewyan
+    :nia: Nias
+    :tt: Tatarca
+    :rap: Rapanui
+    :az: Azeri
+    :fat: Fanti
+    :inh: !binary |
+      xLBuZ3XFn8OnYQ==
+
+    :tai: Tai Dili
+    :gd: "\xC4\xB0sko\xC3\xA7 Gal Dili"
+    :an: Aragonca
+    :lad: Ladino
+    :yue: Kantonca
+    :mk: Makedonca
+    :sq: "Arnavut\xC3\xA7a"
+    :mun: Munda Dilleri
+    :cau: Kafkas Dilleri
+    :"es-419": "Latin Amerika \xC4\xB0spanyolcas\xC4\xB1"
+    :doi: Dogri
+    :pal: Pehlevi Dili
+    :snk: Soninke
+    :him: Himachali
+    :fr: "Frans\xC4\xB1zca"
+    :sv: !binary |
+      xLBzdmXDp8OnZQ==
+
+    :vot: Votic
+    :km: "Kambo\xC3\xA7ya Dili"
+    :kmb: Kimbundu
+    :sg: Sangho
+    :aa: Afar
+    :"zh-Hans": "Basitle\xC5\x9Ftirilmi\xC5\x9F \xC3\x87ince"
+    :ro: Romence
+    :men: Mende
+    :bi: Bislama
+    :"de-AT": "Avusturya Almancas\xC4\xB1"
+    :xh: Zosa
+    :nwc: Klasik Nevari
+    :crh: !binary |
+      S8SxcsSxbSBUw7xya8OnZXNp
+
+    :nyn: Nyankole
+    :sam: "Samarit Aramcas\xC4\xB1"
+    :cel: Kelt Dilleri
+    :gay: Gayo
+    :tog: Nyasa Tonga
+    :haw: Hawaii Dili
+    :kam: Kamba
+    :fi: Fince
+    :aus: Avustralya Dilleri
+    :lui: Luiseno
+    :nap: Napolice
+    :chm: Mari
+    :tk: "T\xC3\xBCrkmence"
+    :pra: Prakrit Dilleri
+    :enm: "Orta\xC3\xA7a\xC4\x9F \xC4\xB0ngilizcesi"
+    :art: Yapay Diller
+    :kab: Kabile
+    :ijo: Ijo
+    :ln: Lingala
+    :sux: "S\xC3\xBCmerce"
+    :yap: !binary |
+      WWFww6dh
+
+    :akk: Akad Dili
+    :day: Dayak
+    :is: "\xC4\xB0zlandaca"
+    :lv: Letonca
+    :kum: "Kumuk\xC3\xA7a"
+    :cad: Caddo
+    :sm: Samoa Dili
+    :mno: Manobo Dilleri
+    :del: Delaware
+    :oto: Otomi Dilleri
+    :"en-GB": "\xC4\xB0ngiliz \xC4\xB0ngilizcesi"
+    :st: "G\xC3\xBCney Sotho"
+    :grb: Grebo
+    :syr: "S\xC3\xBCryanice"
+    :shn: Shan Dili
+    :jv: Cava Dili
+    :kho: Hotanca
+    :pl: !binary |
+      TGVow6dl
+
+    :uga: Ugarit Dili
     :man: Mandingo
     :map: Avustronezya Dili
-    :mas: Masai
-    :mdf: Mokşa Dili
-    :mdr: Mandar
-    :men: Mende
-    :mg: Malagasi
-    :mga: Ortaçağ İrlandacası
-    :mh: Marshall Adaları Dili
-    :mi: Maori
-    :mic: Micmac
-    :min: Minangkabau
-    :mis: Çeşitli Diller
-    :mk: Makedonca
-    :mkh: Mon-Khmer Dilleri
-    :ml: Malayalam
-    :mn: Moğolca
-    :mnc: Mançurya Dili
-    :mni: Manipuri
-    :mno: Manobo Dilleri
-    :mo: Moldovaca
-    :moh: Mohavk Dili
-    :mos: Mossi
-    :mr: Marathi
-    :ms: Malay
-    :mt: Maltaca
-    :mul: Birden Fazla Dil
-    :mun: Munda Dilleri
-    :mus: Creek
-    :mwl: Miranda Dili
-    :mwr: Marvari
-    :my: Birmanya Dili
-    :myn: Maya Dilleri
-    :myv: Erzya
-    :na: Nauru Dili
-    :nah: Nahuatl
-    :nai: Kuzey Amerika Yerli Dilleri
-    :nap: Napolice
-    :nb: Norveççe Bokmål
-    :nd: Kuzey Ndebele
-    :nds: Aşağı Almanca
-    :ne: Nepalce
-    :new: Nevari
-    :ng: Ndonga
-    :nia: Nias
-    :nic: Nijer-Kordofan Dilleri
-    :niu: Niuean
-    :nl: Felemenkçe
-    :nl-BE: Flamanca
-    :nn: Norveççe Nynorsk
-    :no: Norveççe
-    :nog: Nogayca
-    :non: Eski Norse
-    :nqo: N’Ko
-    :nr: Güney Ndebele
-    :nso: Kuzey Sotho
-    :nub: Nubian Dilleri
-    :nv: Navaho Dili
-    :nwc: Klasik Nevari
-    :ny: Nyanja
-    :nym: Nyamvezi
-    :nyn: Nyankole
-    :nyo: Nyoro
-    :nzi: Nzima
-    :oc: Oksitanca
-    :oj: Ojibva Dili
-    :om: Oromo
-    :or: Oriya
-    :os: Osetçe
-    :osa: Osage
-    :ota: Osmanlı Türkçesi
-    :oto: Otomi Dilleri
-    :pa: Pencap Dili
-    :paa: Papua Dilleri
-    :pag: Pangasinan
-    :pal: Pehlevi Dili
-    :pam: Pampanga
-    :pap: Papiamento
-    :pau: Palau Dili
-    :peo: Eski Farsça
-    :phi: Filipinler Dilleri
-    :phn: Fenike Dili
-    :pi: Pali
-    :pl: Lehçe
-    :pon: Pohnpeian
-    :pra: Prakrit Dilleri
-    :pro: Eski Provensal
-    :ps: Peştuca
-    :pt: Portekizce
-    :pt-BR: Brezilya Portekizcesi
-    :pt-PT: İber Portekizcesi
-    :qu: Quechua
-    :raj: Rajasthani
-    :rap: Rapanui
-    :rar: Rarotongan
-    :rm: Rhaeto-Roman Dili
-    :rn: Kirundi
-    :ro: Romence
-    :roa: Roman Dilleri
-    :rom: Romanca
-    :root: Köken
-    :ru: Rusça
-    :rup: Ulahça
-    :rw: Kinyarwanda
-    :sa: Sanskritçe
-    :sad: Sandave
-    :sah: Yakutça
-    :sai: Güney Amerika Yerli Dilleri
-    :sal: Salishan Dilleri
-    :sam: Samarit Aramcası
-    :sas: Sasak
-    :sat: Santali
-    :sc: Sardunya Dili
-    :scn: Sicilyaca
-    :sco: Scots
-    :sd: Sindhi
-    :se: Kuzey Sami
-    :sel: Selkup
-    :sem: Semitik Diller
-    :sg: Sangho
-    :sga: Eski İrlandaca
-    :sgn: İşaret Dilleri
-    :sh: Sırp-Hırvat Dili
-    :shn: Shan Dili
-    :si: Seylanca
-    :sid: Sidamo
-    :sio: Siu Dilleri
-    :sit: Sino-Tibet Dilleri
-    :sk: Slovakça
-    :sl: Slovence
-    :sla: Slav Dilleri
-    :sm: Samoa Dili
-    :sma: Güney Sami
-    :smi: Sami Dilleri
-    :smj: Lule Sami
-    :smn: Inari Sami
-    :sms: Skolt Sami
-    :sn: Shona
-    :snk: Soninke
-    :so: Somali Dili
-    :sog: Sogdiana Dili
-    :son: Songhai
-    :sq: Arnavutça
-    :sr: Sırpça
-    :srn: Sranan Tongo
-    :srr: Serer
-    :ss: Sisvati
-    :ssa: Nil-Sahara Dilleri
-    :st: Güney Sotho
-    :su: Sunda Dili
-    :suk: Sukuma
-    :sus: Susu
-    :sux: Sümerce
-    :sv: İsveççe
-    :sw: Svahili
-    :swb: Komorca
-    :syc: Klasik Süryanice
-    :syr: Süryanice
-    :ta: Tamilce
-    :tai: Tai Dili
-    :te: Telugu
-    :tem: Timne
-    :ter: Tereno
-    :tet: Tetum
-    :tg: Tacikçe
-    :th: Tayca
-    :ti: Tigrinya
-    :tig: Tigre
-    :tiv: Tiv
-    :tk: Türkmence
-    :tkl: Tokelau
-    :tl: Takalotça
-    :tlh: Klingon
-    :tli: Tlingit
-    :tmh: Tamaşek
-    :tn: Setsvana
-    :to: Tonga
-    :tog: Nyasa Tonga
-    :tpi: Tok Pisin
-    :tr: Türkçe
-    :ts: Tsonga
-    :tsi: Tsimshian
-    :tt: Tatarca
-    :tum: Tumbuka
-    :tup: Tupi Dilleri
-    :tut: Altay Dilleri
-    :tvl: Tuvalu
-    :tw: Tvi
-    :ty: Tahiti Dili
-    :tyv: Tuvaca
-    :udm: Udmurtça
-    :ug: Uygurca
-    :uga: Ugarit Dili
-    :uk: Ukraynaca
-    :umb: Umbundu
-    :und: Bilinmeyen Dil
-    :ur: Urduca
-    :uz: Özbekçe
-    :vai: Vai
+    :no: !binary |
+      Tm9ydmXDp8OnZQ==
+
+    :bat: "Balt\xC4\xB1k Dilleri"
+    :sa: "Sanskrit\xC3\xA7e"
+    :nqo: !binary |
+      TuKAmUtv
+
+    :cpe: "\xC4\xB0ngilizce tabanl\xC4\xB1 Creole ve Pidgin Dilleri"
     :ve: Venda
-    :vi: Vietnamca
-    :vo: Volapük
-    :vot: Votic
-    :wa: Valonca
-    :wak: Vakaşan Dilleri
-    :wal: Valamo
-    :war: Varay
-    :was: Vaşo
-    :wen: Sorb Dilleri
-    :wo: Volofca
-    :xal: Kalmıkça
-    :xh: Zosa
-    :yao: Yao
-    :yap: Yapça
-    :yi: Yidiş
-    :yo: Yoruba
-    :ypk: Yupik Dili
-    :yue: Kantonca
-    :za: Zhuang
-    :zap: Zapotek Dili
-    :zbl: Blis Sembolleri
-    :zen: Zenaga
-    :zh: Çince
-    :zh-Hans: Basitleştirilmiş Çince
-    :zh-Hant: Geleneksel Çince
-    :znd: Zande
-    :zu: Zulu
+    :sad: Sandave
+    :bnt: Bantu Dili
+    :frr: Kuzey Frizce
+    :lg: Ganda
+    :tlh: Klingon
+    :gsw: "\xC4\xB0svi\xC3\xA7re Almancas\xC4\xB1"
+    :jrb: "Yahudi Arap\xC3\xA7as\xC4\xB1"
+    :de: Almanca
+    :sms: Skolt Sami
     :zun: Zuni
-    :zxx: Dilbilim içeriği yok
+    :mul: Birden Fazla Dil
+    :loz: Lozi
+    :arp: Arapaho Dili
+    :tet: Tetum
+    :myv: Erzya
+    :chb: Chibcha
+    :dyu: Dyula
+    :bem: Bemba
+    :phn: Fenike Dili
+    :"fr-CA": "Kanada Frans\xC4\xB1zcas\xC4\xB1"
+    :afa: Afro-Asyatik Diller
+    :ssa: Nil-Sahara Dilleri
+    :fj: Fiji Dili
+    :hup: Hupa
+    :krc: "Kara\xC3\xA7ay-Balkarca"
+    :wen: Sorb Dilleri
+    :lb: "L\xC3\xBCksemburgca"
+    :ast: Asturyasca
+    :ae: "Avest\xC3\xA7e"
+    :os: "Oset\xC3\xA7e"
+    :th: Tayca
+    :sk: "Slovak\xC3\xA7a"
+    :mkh: Mon-Khmer Dilleri
+    :am: Amharca
+    :bua: Buryat
+    :id: Endonezce
+    :oj: Ojibva Dili
+    :cv: !binary |
+      w4d1dmHFn8OnYQ==
+
+    :sem: Semitik Diller
+    :io: Ido
+    :dz: Butan Dili
+    :goh: "Eski Y\xC3\xBCksek Almanca"
+    :tvl: Tuvalu
+    :ja: Japonca
+    :"pt-BR": Brezilya Portekizcesi
+    :"zh-Hant": "Geleneksel \xC3\x87ince"
+    :ie: Interlingue
+    :kg: Kongo
+    :bal: Baluchi
+    :vo: "Volap\xC3\xBCk"
+    :pa: Pencap Dili
+    :zh: !binary |
+      w4dpbmNl
+
+    :mag: Magahi
+    :cmc: Chamic Dilleri
+    :ug: Uygurca
+    :bin: Bini
+    :niu: Niuean
+    :fon: Fon
+    :kcg: Tyap
+    :roa: Roman Dilleri
+    :ber: Berberi
+    :ar: "Arap\xC3\xA7a"
+    :smi: Sami Dilleri
+    :iro: "\xC4\xB0roqua Dili"
+    :ter: Tereno
+    :gn: Guarani
+    :zap: Zapotek Dili
+    :lam: Lamba
+    :anp: Angika
+    :mn: "Mo\xC4\x9Folca"
+    :ce: !binary |
+      w4dlw6dlbmNl
+
+    :mwl: Miranda Dili
+    :su: Sunda Dili
+    :dsb: !binary |
+      QcWfYcSfxLEgU29yYsOnYQ==
+
+    :sah: "Yakut\xC3\xA7a"
+    :pau: Palau Dili
+    :da: Danca
+    :son: Songhai
+    :hmn: Hmong
+    :wal: Valamo
+    :kos: Kosraean
+    :ku: !binary |
+      S8O8cnTDp2U=
+
+    :ur: Urduca
+    :ach: Acoli
+    :sd: Sindhi
+    :mh: "Marshall Adalar\xC4\xB1 Dili"
+    :bla: Siksika
+    :tr: !binary |
+      VMO8cmvDp2U=
+
+    :csb: Kashubian
+    :nyo: Nyoro
+    :sc: Sardunya Dili
+    :pap: Papiamento
+    :scn: Sicilyaca
+    :gez: Geez
+    :he: "\xC4\xB0branice"
+    :tum: Tumbuka
+    :ht: Haiti Dili
+    :kaw: Kawi
+    :awa: Awadhi
+    :gwi: "Gwich\xCA\xBCin"
+    :bad: Banda Dili
+    :nr: "G\xC3\xBCney Ndebele"
+    :sio: Siu Dilleri
+    :luo: Luo
+    :sh: "S\xC4\xB1rp-H\xC4\xB1rvat Dili"
+    :ts: Tsonga
+    :ng: Ndonga
+    :cho: Choctaw
+    :raj: Rajasthani
+    :fur: Friulian
+    :ay: Aymara
+    :fan: Fang
+    :ilo: Iloko
+    :kw: "Kernevek\xC3\xA7e"
+    :syc: "Klasik S\xC3\xBCryanice"
+    :ga: "\xC4\xB0rlanda Dili"
+    :kv: Komi
+    :mi: Maori
+    :alg: Algonkin Dili
+    :ypk: Yupik Dili
+    :nd: Kuzey Ndebele
+    :mos: Mossi
+    :car: Carib
+    :so: Somali Dili
+    :din: Dinka
+    :ii: Sichuan Yi
+    :pag: Pangasinan
+    :hil: Hiligaynon
+    :tig: Tigre
+    :sit: Sino-Tibet Dilleri
+    :kj: Kuanyama
+    :ru: !binary |
+      UnVzw6dh
+
+    :vai: Vai
+    :kk: "Kazak\xC3\xA7a"
+    :mdr: Mandar
+    :bho: Arayanice
+    :rn: Kirundi
+    :cpp: "Portekizce tabanl\xC4\xB1 Creole ve Pidgin Dilleri"
+    :wo: Volofca
+    :nv: Navaho Dili
+    :sal: Salishan Dilleri
+    :nah: Nahuatl
+    :bs: !binary |
+      Qm/Fn25ha8OnYQ==
+
+    :gaa: Ga
+    :ha: Hausa
+    :eu: "Bask\xC3\xA7a"
+    :tmh: "Tama\xC5\x9Fek"
+    :kac: !binary |
+      S2HDp2lu
+
+    :lua: Luba-Lulua
+    :ne: Nepalce
+    :ath: "Ataba\xC5\x9Fkan Dilleri"
+    :ti: Tigrinya
+    :root: !binary |
+      S8O2a2Vu
+
+    :nai: Kuzey Amerika Yerli Dilleri
+    :chk: Chuukese
+    :arc: Aramice
+    :pon: Pohnpeian
+    :elx: Elam
+    :sus: Susu
+    :iba: Iban
+    :ff: Fulah
+    :kro: Kru
+    :yao: Yao
+    :lt: Litvanyaca
+    :ain: Ayni Dili
+    :sla: Slav Dilleri
+    :min: Minangkabau
+    :mni: Manipuri
+    :byn: Blin
+    :ota: !binary |
+      T3NtYW5sxLEgVMO8cmvDp2VzaQ==
+
+    :"en-CA": "Kanada \xC4\xB0ngilizcesi"
+    :dar: Dargince
+    :egy: "Eski M\xC4\xB1s\xC4\xB1r Dili"
+    :sgn: "\xC4\xB0\xC5\x9Faret Dilleri"
+    :gor: Gorontalo
+    :nl: "Felemenk\xC3\xA7e"
+    :udm: "Udmurt\xC3\xA7a"
+    :ine: Hint-Avrupa Dilleri
+    :khi: Hoisan Dilleri
     :zza: Zazaca
+    :bas: Basa Dili
+    :mak: Makasar
+    :uz: !binary |
+      w5Z6YmVrw6dl
+
+    :cop: "K\xC4\xB1ptice"
+    :non: Eski Norse
+    :fro: "Eski Frans\xC4\xB1zca"
+    :rup: "Ulah\xC3\xA7a"
+    :bn: Bengalce
+    :grc: Antik Yunanca
+    :jpr: "Yahudi Fars\xC3\xA7as\xC4\xB1"
+    :cs: !binary |
+      w4dla8OnZQ==
+
+    :smn: Inari Sami
+    :tkl: Tokelau
+    :lol: Mongo
+    :arn: Araukanya Dili
+    :znd: Zande
+    :mt: Maltaca
+    :myn: Maya Dilleri
+    :ch: Chamorro
+    :te: Telugu
+    :ab: Abhazca
+    :dum: "Orta\xC3\xA7a\xC4\x9F Felemenk\xC3\xA7esi"
+    :phi: Filipinler Dilleri
+    :et: Estonca
+    :hsb: "Yukar\xC4\xB1 Sorb\xC3\xA7a"
+    :tl: "Takalot\xC3\xA7a"
+    :srr: Serer
+    :kr: Kanuri
+    :ady: Adigece
+    :sat: Santali
+    :la: Latince
+    :was: !binary |
+      VmHFn28=
+
+    :btk: Batak
+    :si: Seylanca
+    :mis: "\xC3\x87e\xC5\x9Fitli Diller"
+    :ny: Nyanja
+    :zxx: "Dilbilim i\xC3\xA7eri\xC4\x9Fi yok"
+    :oc: Oksitanca
+    :cus: "Ku\xC5\x9Fitik Diller"
+    :sel: Selkup
+    :dv: Divehi
+    :gmh: "Orta\xC3\xA7a\xC4\x9F Y\xC3\xBCksek Almancas\xC4\xB1"
+    :tut: Altay Dilleri
+    :ia: Interlingua
+    :kfo: Koro
+    :hu: Macarca
+    :gv: Manks
+    :mad: Madura Dili
+    :tyv: Tuvaca
+    :or: Oriya
+    :bai: Bamileke Dilleri
+    :ty: Tahiti Dili
+    :nic: Nijer-Kordofan Dilleri
+    :chy: "\xC5\x9Eayen Dili"
+    :kaj: Jju
+    :rar: Rarotongan
+    :alt: "G\xC3\xBCney Altayca"
+    :be: "Beyaz Rus\xC3\xA7a"
+    :fiu: Finno - Ugrik Diller
+    :sma: "G\xC3\xBCney Sami"
+    :ira: "\xC4\xB0ran Dilleri"
+    :tem: Timne
+    :gl: "Gali\xC3\xA7yaca"
+    :af: Afrikaan Dili
+    :za: Zhuang
+    :lah: Lahnda
+    :ang: "Eski \xC4\xB0ngilizce"
+    :ml: Malayalam
+    :sr: !binary |
+      U8SxcnDDp2E=
+
+    :cch: Atsam
+    :mus: Creek
+    :dra: Dravid Dilleri
+    :pam: Pampanga
+    :"es-ES": "\xC4\xB0ber \xC4\xB0spanyolcas\xC4\xB1"
+    :eo: Esperanto
+    :sog: "Sogdiana\xC2\xA0Dili"
+    :hit: "Hitit\xC3\xA7e"
+    :uk: Ukraynaca
+    :ace: Achinese
+    :wak: "Vaka\xC5\x9Fan Dilleri"
+    :ss: Sisvati
+    :ks: "Ke\xC5\x9Fmirce"
+    :kok: Konkani
+    :bik: Bikol
+    :rw: Kinyarwanda
+    :mga: !binary |
+      T3J0YcOnYcSfIMSwcmxhbmRhY2FzxLE=
+
+    :it: "\xC4\xB0talyanca"
+    :crp: Creole ve Pidgin Dilleri
+    :yo: Yoruba
+    :nym: Nyamvezi
+    :"de-CH": "\xC4\xB0svi\xC3\xA7re Y\xC3\xBCksek Almancas\xC4\xB1"
+    :om: Oromo
+    :cy: Galce
+    :gba: Gbaya
+    :to: Tonga
+    :sas: Sasak
+    :kar: Karen
+    :fil: Filipino
+    :br: Bretonca
+    :tsi: Tsimshian
+    :hr: !binary |
+      SMSxcnZhdMOnYQ==
+
+    :av: Avar Dili
+    :nn: "Norve\xC3\xA7\xC3\xA7e Nynorsk"
+    :lun: Lunda
+    :nds: !binary |
+      QcWfYcSfxLEgQWxtYW5jYQ==
+
+    :chn: Chinook Jargon
+    :tpi: Tok Pisin
+    :pro: Eski Provensal
+    :as: Assamca
+    :ewo: Ewondo
+    :ee: Ewe
+    :swb: Komorca
+    :fy: "Bat\xC4\xB1 Frizcesi"
+    :ik: Inupiak
+    :iu: Inuktitut
+    :mg: Malagasi
+    :rm: Rhaeto-Roman Dili
+    :yi: !binary |
+      WWlkacWf
+
+    :kut: Kutenai
+    :ale: Aleut
+    :sn: Shona
+    :den: Slavey
+    :moh: Mohavk Dili
+    :cai: Orta Amerika Yerli Dilleri
+    :paa: Papua Dilleri
+    :"en-US": "Amerikan \xC4\xB0ngilizcesi"
+    :dgr: Dogrib
+    :bm: Bambara

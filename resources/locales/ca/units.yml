@@ -1,136 +1,136 @@
----
-:ca:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} dia'
-        :other: ! '{0} dies'
-      :short:
-        :one: ! '{0} dia'
-        :other: ! '{0} dies'
-    :day-future:
-      :default:
-        0: D'aquí a 0 dies
-        1: D'aquí a 1 dia
-        :one: D'aquí a {0} dia
-        :other: D'aquí a {0} dies
-    :day-past:
-      :default:
-        0: Fa 0 dies
-        1: Fa 1 dia
-        :one: Fa {0} dia
-        :other: Fa {0} dies
-    :hour:
-      :default:
-        :one: ! '{0} hora'
-        :other: ! '{0} hores'
-      :short:
-        :one: ! '{0} h'
-        :other: ! '{0} h'
-    :hour-future:
-      :default:
-        0: D'aquí a 0 hores
-        1: D'aquí a 1 hora
-        :one: D'aquí a {0} hora
-        :other: D'aquí a {0} hores
-    :hour-past:
-      :default:
-        0: Fa 0 hores
-        1: Fa 1 hora
-        :one: Fa {0} hora
+--- 
+:ca: 
+  :units: 
+    :"hour-past": 
+      :default: 
         :other: Fa {0} hores
-    :minute:
-      :default:
-        :one: ! '{0} minut'
-        :other: ! '{0} minuts'
-      :short:
-        :one: ! '{0} m'
-        :other: ! '{0} m'
-    :minute-future:
-      :default:
-        0: D'aquí a 0 minuts
-        1: D'aquí a 1 minut
-        :one: D'aquí a {0} minut
-        :other: D'aquí a {0} minuts
-    :minute-past:
-      :default:
-        0: Fa 0 minuts
-        1: Fa 1 minut
-        :one: Fa {0} minut
-        :other: Fa {0} minuts
-    :month:
-      :default:
-        :one: ! '{0} mes'
-        :other: ! '{0} mesos'
-      :short:
-        :one: ! '{0} mes'
-        :other: ! '{0} mesos'
-    :month-future:
-      :default:
-        0: D'aquí a 0 mesos
-        1: D'aquí a 1 mes
-        :one: D'aquí a {0} mes
-        :other: D'aquí a {0} mesos
-    :month-past:
-      :default:
-        0: Fa 0 mesos
-        1: Fa 1 mes
-        :one: Fa {0} mes
-        :other: Fa {0} mesos
-    :second:
-      :default:
-        :one: ! '{0} segon'
-        :other: ! '{0} segons'
-      :short:
-        :one: ! '{0} s'
-        :other: ! '{0} s'
-    :second-future:
-      :default:
-        0: D'aquí a 0 segons
-        1: D'aquí a 1 segon
-        :one: D'aquí a {0} segon
-        :other: D'aquí a {0} segons
-    :second-past:
-      :default:
-        0: Fa 0 segons
-        1: Fa 1 segon
-        :one: Fa {0} segon
+        0: Fa 0 hores
+        :one: Fa {0} hora
+        1: Fa 1 hora
+    :hour: 
+      :default: 
+        :other: "{0} hores"
+        :one: "{0} hora"
+      :short: 
+        :other: "{0} h"
+        :one: "{0} h"
+    :"second-past": 
+      :default: 
         :other: Fa {0} segons
-    :week:
-      :default:
-        :one: ! '{0} setmana'
-        :other: ! '{0} setmanes'
-      :short:
-        :one: ! '{0} setmana'
-        :other: ! '{0} setmanes'
-    :week-future:
-      :default:
-        0: D'aquí a 0 setmanes
-        1: D'aquí a 1 setmana
-        :one: D'aquí a {0} setmana
-        :other: D'aquí a {0} setmanes
-    :week-past:
-      :default:
-        0: Fa 0 setmanes
-        1: Fa 1 setmana
-        :one: Fa {0} setmana
+        0: Fa 0 segons
+        :one: Fa {0} segon
+        1: Fa 1 segon
+    :week: 
+      :default: 
+        :other: "{0} setmanes"
+        :one: "{0} setmana"
+      :short: 
+        :other: "{0} setmanes"
+        :one: "{0} setmana"
+    :"minute-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} minuts"
+        0: "D'aqu\xC3\xAD a 0 minuts"
+        :one: "D'aqu\xC3\xAD a {0} minut"
+        1: "D'aqu\xC3\xAD a 1 minut"
+    :"week-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} setmanes"
+        0: "D'aqu\xC3\xAD a 0 setmanes"
+        :one: "D'aqu\xC3\xAD a {0} setmana"
+        1: "D'aqu\xC3\xAD a 1 setmana"
+    :day: 
+      :default: 
+        :other: "{0} dies"
+        :one: "{0} dia"
+      :short: 
+        :other: "{0} dies"
+        :one: "{0} dia"
+    :"minute-past": 
+      :default: 
+        :other: Fa {0} minuts
+        0: Fa 0 minuts
+        :one: Fa {0} minut
+        1: Fa 1 minut
+    :"day-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} dies"
+        0: "D'aqu\xC3\xAD a 0 dies"
+        :one: "D'aqu\xC3\xAD a {0} dia"
+        1: "D'aqu\xC3\xAD a 1 dia"
+    :"week-past": 
+      :default: 
         :other: Fa {0} setmanes
-    :year:
-      :default:
-        :one: ! '{0} any'
-        :other: ! '{0} anys'
-      :short:
-        :one: ! '{0} any'
-        :other: ! '{0} anys'
-    :year-future:
-      :default:
-        0: D'aquí a 0 anys
-        1: D'aquí a 1 any
-        :one: D'aquí a {0} any
-        :other: D'aquí a {0} anys
-    :year-past:
-      :default:
-        0: Fa 0 anys
-        1: Fa 1 any
-        :one: Fa {0} any
+        0: Fa 0 setmanes
+        :one: Fa {0} setmana
+        1: Fa 1 setmana
+    :"month-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} mesos"
+        0: "D'aqu\xC3\xAD a 0 mesos"
+        :one: "D'aqu\xC3\xAD a {0} mes"
+        1: "D'aqu\xC3\xAD a 1 mes"
+    :minute: 
+      :default: 
+        :other: "{0} minuts"
+        :one: "{0} minut"
+      :short: 
+        :other: "{0} m"
+        :one: "{0} m"
+    :"day-past": 
+      :default: 
+        :other: Fa {0} dies
+        0: Fa 0 dies
+        :one: Fa {0} dia
+        1: Fa 1 dia
+    :"year-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} anys"
+        0: "D'aqu\xC3\xAD a 0 anys"
+        :one: "D'aqu\xC3\xAD a {0} any"
+        1: "D'aqu\xC3\xAD a 1 any"
+    :"month-past": 
+      :default: 
+        :other: Fa {0} mesos
+        0: Fa 0 mesos
+        :one: Fa {0} mes
+        1: Fa 1 mes
+    :month: 
+      :default: 
+        :other: "{0} mesos"
+        :one: "{0} mes"
+      :short: 
+        :other: "{0} mesos"
+        :one: "{0} mes"
+    :"hour-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} hores"
+        0: "D'aqu\xC3\xAD a 0 hores"
+        :one: "D'aqu\xC3\xAD a {0} hora"
+        1: "D'aqu\xC3\xAD a 1 hora"
+    :second: 
+      :default: 
+        :other: "{0} segons"
+        :one: "{0} segon"
+      :short: 
+        :other: "{0} s"
+        :one: "{0} s"
+    :"year-past": 
+      :default: 
         :other: Fa {0} anys
+        0: Fa 0 anys
+        :one: Fa {0} any
+        1: Fa 1 any
+    :year: 
+      :default: 
+        :other: "{0} anys"
+        :one: "{0} any"
+      :short: 
+        :other: "{0} anys"
+        :one: "{0} any"
+    :"second-future": 
+      :default: 
+        :other: "D'aqu\xC3\xAD a {0} segons"
+        0: "D'aqu\xC3\xAD a 0 segons"
+        :one: "D'aqu\xC3\xAD a {0} segon"
+        1: "D'aqu\xC3\xAD a 1 segon"

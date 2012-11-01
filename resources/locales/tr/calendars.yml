@@ -1,229 +1,298 @@
----
-:tr:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: Cum
-            :mon: Pzt
-            :sat: Cmt
-            :sun: Paz
-            :thu: Per
-            :tue: Sal
-            :wed: Çar
-          :narrow:
-            :fri: C
-            :mon: P
-            :sat: C
-            :sun: P
-            :thu: P
-            :tue: S
-            :wed: Ç
-          :wide:
-            :fri: Cuma
-            :mon: Pazartesi
-            :sat: Cumartesi
-            :sun: Pazar
-            :thu: Perşembe
-            :tue: Salı
-            :wed: Çarşamba
-        :stand-alone:
-          :abbreviated:
-            :fri: Cum
-            :mon: Pzt
-            :sat: Cmt
-            :sun: Paz
-            :thu: Per
-            :tue: Sal
-            :wed: Çar
-          :narrow:
-            :fri: C
-            :mon: P
-            :sat: C
-            :sun: P
-            :thu: P
-            :tue: S
-            :wed: Ç
-          :wide:
-            :fri: Cuma
-            :mon: Pazartesi
-            :sat: Cumartesi
-            :sun: Pazar
-            :thu: Perşembe
-            :tue: Salı
-            :wed: Çarşamba
-      :eras:
-        :abbr:
-          0: MÖ
-          1: MS
-        :name:
-          0: Milattan Önce
+--- 
+:tr: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
+          0: "Milattan \xC3\x96nce"
           1: Milattan Sonra
-        :narrow:
-          0: ''
-      :fields:
-        :day: Gün
-        :dayperiod: AM/PM
-        :era: Miladi Dönem
+        :narrow: 
+          0: ""
+        :abbr: 
+          0: !binary |
+            TcOW
+
+          1: MS
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: 
+            1: !binary |
+              w4cx
+
+            2: !binary |
+              w4cy
+
+            3: !binary |
+              w4cz
+
+            4: !binary |
+              w4c0
+
+          :wide: 
+            1: "1. \xC3\xA7eyrek"
+            2: "2. \xC3\xA7eyrek"
+            3: "3. \xC3\xA7eyrek"
+            4: "4. \xC3\xA7eyrek"
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+        :format: 
+          :abbreviated: 
+            1: !binary |
+              w4cx
+
+            2: !binary |
+              w4cy
+
+            3: !binary |
+              w4cz
+
+            4: !binary |
+              w4c0
+
+          :wide: 
+            1: "1. \xC3\xA7eyrek"
+            2: "2. \xC3\xA7eyrek"
+            3: "3. \xC3\xA7eyrek"
+            4: "4. \xC3\xA7eyrek"
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :date: 
+          :full: 
+            :pattern: d MMMM y EEEE
+          :medium: 
+            :pattern: d MMM y
+          :default: :"calendars.gregorian.formats.date.medium"
+          :long: 
+            :pattern: d MMMM y
+          :short: 
+            :pattern: dd.MM.yyyy
+        :time: 
+          :full: 
+            :pattern: HH:mm:ss zzzz
+          :medium: 
+            :pattern: HH:mm:ss
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: HH:mm:ss z
+          :short: 
+            :pattern: HH:mm
+      :periods: 
+        :"stand-alone": {}
+
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :wide: 
+            :pm: PM
+            :am: AM
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            5: May
+            11: Kas
+            6: Haz
+            1: Oca
+            12: Ara
+            7: Tem
+            2: !binary |
+              xZ51Yg==
+
+            8: !binary |
+              QcSfdQ==
+
+            3: Mar
+            9: Eyl
+            4: Nis
+            10: Eki
+          :wide: 
+            5: !binary |
+              TWF5xLFz
+
+            11: !binary |
+              S2FzxLFt
+
+            6: Haziran
+            1: Ocak
+            12: "Aral\xC4\xB1k"
+            7: Temmuz
+            2: !binary |
+              xZ51YmF0
+
+            8: "A\xC4\x9Fustos"
+            3: Mart
+            9: !binary |
+              RXlsw7xs
+
+            4: Nisan
+            10: Ekim
+          :narrow: 
+            5: M
+            11: K
+            6: H
+            1: O
+            12: A
+            7: T
+            2: !binary |
+              xZ4=
+
+            8: A
+            3: M
+            9: E
+            4: N
+            10: E
+        :format: 
+          :abbreviated: 
+            5: May
+            11: Kas
+            6: Haz
+            1: Oca
+            12: Ara
+            7: Tem
+            2: !binary |
+              xZ51Yg==
+
+            8: !binary |
+              QcSfdQ==
+
+            3: Mar
+            9: Eyl
+            4: Nis
+            10: Eki
+          :wide: 
+            5: !binary |
+              TWF5xLFz
+
+            11: !binary |
+              S2FzxLFt
+
+            6: Haziran
+            1: Ocak
+            12: "Aral\xC4\xB1k"
+            7: Temmuz
+            2: !binary |
+              xZ51YmF0
+
+            8: "A\xC4\x9Fustos"
+            3: Mart
+            9: !binary |
+              RXlsw7xs
+
+            4: Nisan
+            10: Ekim
+          :narrow: 
+            5: M
+            11: K
+            6: H
+            1: O
+            12: A
+            7: T
+            2: !binary |
+              xZ4=
+
+            8: A
+            3: M
+            9: E
+            4: N
+            10: E
+      :fields: 
         :hour: Saat
+        :week: Hafta
+        :era: "Miladi D\xC3\xB6nem"
+        :weekday: !binary |
+          SGFmdGFuxLFuIEfDvG7DvA==
+
+        :day: !binary |
+          R8O8bg==
+
+        :dayperiod: AM/PM
         :minute: Dakika
         :month: Ay
         :second: Saniye
-        :week: Hafta
-        :weekday: Haftanın Günü
-        :year: Yıl
         :zone: Saat Dilimi
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: d MMMM y EEEE
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: dd.MM.yyyy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: HH:mm:ss zzzz
-          :long:
-            :pattern: HH:mm:ss z
-          :medium:
-            :pattern: HH:mm:ss
-          :short:
-            :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: Oca
-            10: Eki
-            11: Kas
-            12: Ara
-            2: Şub
-            3: Mar
-            4: Nis
-            5: May
-            6: Haz
-            7: Tem
-            8: Ağu
-            9: Eyl
-          :narrow:
-            1: O
-            10: E
-            11: K
-            12: A
-            2: Ş
-            3: M
-            4: N
-            5: M
-            6: H
-            7: T
-            8: A
-            9: E
-          :wide:
-            1: Ocak
-            10: Ekim
-            11: Kasım
-            12: Aralık
-            2: Şubat
-            3: Mart
-            4: Nisan
-            5: Mayıs
-            6: Haziran
-            7: Temmuz
-            8: Ağustos
-            9: Eylül
-        :stand-alone:
-          :abbreviated:
-            1: Oca
-            10: Eki
-            11: Kas
-            12: Ara
-            2: Şub
-            3: Mar
-            4: Nis
-            5: May
-            6: Haz
-            7: Tem
-            8: Ağu
-            9: Eyl
-          :narrow:
-            1: O
-            10: E
-            11: K
-            12: A
-            2: Ş
-            3: M
-            4: N
-            5: M
-            6: H
-            7: T
-            8: A
-            9: E
-          :wide:
-            1: Ocak
-            10: Ekim
-            11: Kasım
-            12: Aralık
-            2: Şubat
-            3: Mart
-            4: Nisan
-            5: Mayıs
-            6: Haziran
-            7: Temmuz
-            8: Ağustos
-            9: Eylül
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :am: AM
-            :pm: PM
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: Ç1
-            2: Ç2
-            3: Ç3
-            4: Ç4
-          :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-          :wide:
-            1: 1. çeyrek
-            2: 2. çeyrek
-            3: 3. çeyrek
-            4: 4. çeyrek
-        :stand-alone:
-          :abbreviated:
-            1: Ç1
-            2: Ç2
-            3: Ç3
-            4: Ç4
-          :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-          :wide:
-            1: 1. çeyrek
-            2: 2. çeyrek
-            3: 3. çeyrek
-            4: 4. çeyrek
+        :year: !binary |
+          WcSxbA==
+
+      :days: 
+        :"stand-alone": 
+          :abbreviated: 
+            :sun: Paz
+            :sat: Cmt
+            :tue: Sal
+            :wed: !binary |
+              w4dhcg==
+
+            :thu: Per
+            :mon: Pzt
+            :fri: Cum
+          :wide: 
+            :sun: Pazar
+            :sat: Cumartesi
+            :tue: !binary |
+              U2FsxLE=
+
+            :wed: !binary |
+              w4dhcsWfYW1iYQ==
+
+            :thu: "Per\xC5\x9Fembe"
+            :mon: Pazartesi
+            :fri: Cuma
+          :narrow: 
+            :sun: P
+            :sat: C
+            :tue: S
+            :wed: !binary |
+              w4c=
+
+            :thu: P
+            :mon: P
+            :fri: C
+        :format: 
+          :abbreviated: 
+            :sun: Paz
+            :sat: Cmt
+            :tue: Sal
+            :wed: !binary |
+              w4dhcg==
+
+            :thu: Per
+            :mon: Pzt
+            :fri: Cum
+          :wide: 
+            :sun: Pazar
+            :sat: Cumartesi
+            :tue: !binary |
+              U2FsxLE=
+
+            :wed: !binary |
+              w4dhcsWfYW1iYQ==
+
+            :thu: "Per\xC5\x9Fembe"
+            :mon: Pazartesi
+            :fri: Cuma
+          :narrow: 
+            :sun: P
+            :sat: C
+            :tue: S
+            :wed: !binary |
+              w4c=
+
+            :thu: P
+            :mon: P
+            :fri: C

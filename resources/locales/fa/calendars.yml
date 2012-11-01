@@ -1,230 +1,549 @@
----
-:fa:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-          :narrow:
-            :fri: ج
-            :mon: د
-            :sat: ش
-            :sun: ی
-            :thu: پ
-            :tue: س
-            :wed: چ
-          :wide:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-        :stand-alone:
-          :abbreviated:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-          :narrow:
-            :fri: ج
-            :mon: د
-            :sat: ش
-            :sun: ی
-            :thu: پ
-            :tue: س
-            :wed: چ
-          :wide:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-      :eras:
-        :abbr:
-          0: ق.م.
-          1: م.
-        :name:
-          0: قبل از میلاد
-          1: میلادی
-        :narrow:
-          0: ق
-          1: م
-      :fields:
-        :day: روز
-        :dayperiod: قبل/بعدازظهر
-        :era: دوره
-        :hour: ساعت
-        :minute: دقیقه
-        :month: ماه
-        :second: ثانیه
-        :week: هفته
-        :weekday: روز هفته
-        :year: سال
-        :zone: منطقهٔ زمانی
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.long
-          :full:
+--- 
+:fa: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
+          0: !binary |
+            2YLYqNmEINin2LIg2YXbjNmE2KfYrw==
+
+          1: !binary |
+            2YXbjNmE2KfYr9uM
+
+        :narrow: 
+          0: !binary |
+            2YI=
+
+          1: !binary |
+            2YU=
+
+        :abbr: 
+          0: !binary |
+            2YIu2YUu
+
+          1: !binary |
+            2YUu
+
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: 
+            1: !binary |
+              2LPigIzZhdux
+
+            2: !binary |
+              2LPigIzZhduy
+
+            3: !binary |
+              2LPigIzZhduz
+
+            4: !binary |
+              2LPigIzZhdu0
+
+          :wide: 
+            1: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2KfZiNmE
+
+            2: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2K/ZiNmF
+
+            3: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2LPZiNmF
+
+            4: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2obZh9in2LHZhQ==
+
+          :narrow: 
+            1: !binary |
+              27E=
+
+            2: !binary |
+              27I=
+
+            3: !binary |
+              27M=
+
+            4: !binary |
+              27Q=
+
+        :format: 
+          :abbreviated: 
+            1: !binary |
+              2LPigIzZhdux
+
+            2: !binary |
+              2LPigIzZhduy
+
+            3: !binary |
+              2LPigIzZhduz
+
+            4: !binary |
+              2LPigIzZhdu0
+
+          :wide: 
+            1: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2KfZiNmE
+
+            2: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2K/ZiNmF
+
+            3: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2LPZiNmF
+
+            4: !binary |
+              2LPZh+KAjNmF2KfZh9mH2ZQg2obZh9in2LHZhQ==
+
+          :narrow: 
+            1: !binary |
+              27E=
+
+            2: !binary |
+              27I=
+
+            3: !binary |
+              27M=
+
+            4: !binary |
+              27Q=
+
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: !binary |
+              e3tkYXRlfX3YjCDYs9in2LnYqiB7e3RpbWV9fQ==
+
+          :medium: 
+            :pattern: "{{date}}\xD8\x8C\xE2\x80\x8F {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: !binary |
+              e3tkYXRlfX3YjCDYs9in2LnYqiB7e3RpbWV9fQ==
+
+          :short: 
+            :pattern: "{{date}}\xD8\x8C\xE2\x80\x8F {{time}}"
+        :date: 
+          :full: 
             :pattern: EEEE d MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
+          :medium: 
             :pattern: d MMM y
-          :short:
+          :default: :"calendars.gregorian.formats.date.long"
+          :long: 
+            :pattern: d MMMM y
+          :short: 
             :pattern: yyyy/M/d
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}}، ساعت {{time}}'
-          :long:
-            :pattern: ! '{{date}}، ساعت {{time}}'
-          :medium:
-            :pattern: ! '{{date}}،‏ {{time}}'
-          :short:
-            :pattern: ! '{{date}}،‏ {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
+        :time: 
+          :full: 
             :pattern: H:mm:ss (zzzz)
-          :long:
-            :pattern: H:mm:ss (z)
-          :medium:
+          :medium: 
             :pattern: H:mm:ss
-          :short:
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: H:mm:ss (z)
+          :short: 
             :pattern: H:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: ژانویهٔ
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریهٔ
-            3: مارس
-            4: آوریل
-            5: مهٔ
-            6: ژوئن
-            7: ژوئیهٔ
-            8: اوت
-            9: سپتامبر
-          :narrow:
-            1: ژ
-            10: ا
-            11: ن
-            12: د
-            2: ف
-            3: م
-            4: آ
-            5: م
-            6: ژ
-            7: ژ
-            8: ا
-            9: س
-          :wide:
-            1: ژانویهٔ
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریهٔ
-            3: مارس
-            4: آوریل
-            5: مهٔ
-            6: ژوئن
-            7: ژوئیهٔ
-            8: اوت
-            9: سپتامبر
-        :stand-alone:
-          :abbreviated:
-            1: ژانویه
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریه
-            3: مارس
-            4: آوریل
-            5: مه
-            6: ژوئن
-            7: ژوئیه
-            8: اوت
-            9: سپتامبر
-          :narrow:
-            1: ژ
-            10: ا
-            11: ن
-            12: د
-            2: ف
-            3: م
-            4: آ
-            5: م
-            6: ژ
-            7: ژ
-            8: ا
-            9: س
-          :wide:
-            1: ژانویه
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریه
-            3: مارس
-            4: آوریل
-            5: مه
-            6: ژوئن
-            7: ژوئیه
-            8: اوت
-            9: سپتامبر
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :am: قبل‌ازظهر
-            :pm: بعدازظهر
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: س‌م۱
-            2: س‌م۲
-            3: س‌م۳
-            4: س‌م۴
-          :narrow:
-            1: ۱
-            2: ۲
-            3: ۳
-            4: ۴
-          :wide:
-            1: سه‌ماههٔ اول
-            2: سه‌ماههٔ دوم
-            3: سه‌ماههٔ سوم
-            4: سه‌ماههٔ چهارم
-        :stand-alone:
-          :abbreviated:
-            1: س‌م۱
-            2: س‌م۲
-            3: س‌م۳
-            4: س‌م۴
-          :narrow:
-            1: ۱
-            2: ۲
-            3: ۳
-            4: ۴
-          :wide:
-            1: سه‌ماههٔ اول
-            2: سه‌ماههٔ دوم
-            3: سه‌ماههٔ سوم
-            4: سه‌ماههٔ چهارم
+      :periods: 
+        :"stand-alone": {}
+
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :wide: 
+            :pm: !binary |
+              2KjYudiv2KfYsti42YfYsQ==
+
+            :am: !binary |
+              2YLYqNmE4oCM2KfYsti42YfYsQ==
+
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            5: !binary |
+              2YXZhw==
+
+            11: !binary |
+              2YbZiNin2YXYqNix
+
+            6: !binary |
+              2pjZiNim2YY=
+
+            1: !binary |
+              2pjYp9mG2YjbjNmH
+
+            12: !binary |
+              2K/Ys9in2YXYqNix
+
+            7: !binary |
+              2pjZiNim24zZhw==
+
+            2: !binary |
+              2YHZiNix24zZhw==
+
+            8: !binary |
+              2KfZiNiq
+
+            3: !binary |
+              2YXYp9ix2LM=
+
+            9: !binary |
+              2LPZvtiq2KfZhdio2LE=
+
+            4: !binary |
+              2KLZiNix24zZhA==
+
+            10: !binary |
+              2Kfaqdiq2KjYsQ==
+
+          :wide: 
+            5: !binary |
+              2YXZhw==
+
+            11: !binary |
+              2YbZiNin2YXYqNix
+
+            6: !binary |
+              2pjZiNim2YY=
+
+            1: !binary |
+              2pjYp9mG2YjbjNmH
+
+            12: !binary |
+              2K/Ys9in2YXYqNix
+
+            7: !binary |
+              2pjZiNim24zZhw==
+
+            2: !binary |
+              2YHZiNix24zZhw==
+
+            8: !binary |
+              2KfZiNiq
+
+            3: !binary |
+              2YXYp9ix2LM=
+
+            9: !binary |
+              2LPZvtiq2KfZhdio2LE=
+
+            4: !binary |
+              2KLZiNix24zZhA==
+
+            10: !binary |
+              2Kfaqdiq2KjYsQ==
+
+          :narrow: 
+            5: !binary |
+              2YU=
+
+            11: !binary |
+              2YY=
+
+            6: !binary |
+              2pg=
+
+            1: !binary |
+              2pg=
+
+            12: !binary |
+              2K8=
+
+            7: !binary |
+              2pg=
+
+            2: !binary |
+              2YE=
+
+            8: !binary |
+              2Kc=
+
+            3: !binary |
+              2YU=
+
+            9: !binary |
+              2LM=
+
+            4: !binary |
+              2KI=
+
+            10: !binary |
+              2Kc=
+
+        :format: 
+          :abbreviated: 
+            5: !binary |
+              2YXZh9mU
+
+            11: !binary |
+              2YbZiNin2YXYqNix
+
+            6: !binary |
+              2pjZiNim2YY=
+
+            1: !binary |
+              2pjYp9mG2YjbjNmH2ZQ=
+
+            12: !binary |
+              2K/Ys9in2YXYqNix
+
+            7: !binary |
+              2pjZiNim24zZh9mU
+
+            2: !binary |
+              2YHZiNix24zZh9mU
+
+            8: !binary |
+              2KfZiNiq
+
+            3: !binary |
+              2YXYp9ix2LM=
+
+            9: !binary |
+              2LPZvtiq2KfZhdio2LE=
+
+            4: !binary |
+              2KLZiNix24zZhA==
+
+            10: !binary |
+              2Kfaqdiq2KjYsQ==
+
+          :wide: 
+            5: !binary |
+              2YXZh9mU
+
+            11: !binary |
+              2YbZiNin2YXYqNix
+
+            6: !binary |
+              2pjZiNim2YY=
+
+            1: !binary |
+              2pjYp9mG2YjbjNmH2ZQ=
+
+            12: !binary |
+              2K/Ys9in2YXYqNix
+
+            7: !binary |
+              2pjZiNim24zZh9mU
+
+            2: !binary |
+              2YHZiNix24zZh9mU
+
+            8: !binary |
+              2KfZiNiq
+
+            3: !binary |
+              2YXYp9ix2LM=
+
+            9: !binary |
+              2LPZvtiq2KfZhdio2LE=
+
+            4: !binary |
+              2KLZiNix24zZhA==
+
+            10: !binary |
+              2Kfaqdiq2KjYsQ==
+
+          :narrow: 
+            5: !binary |
+              2YU=
+
+            11: !binary |
+              2YY=
+
+            6: !binary |
+              2pg=
+
+            1: !binary |
+              2pg=
+
+            12: !binary |
+              2K8=
+
+            7: !binary |
+              2pg=
+
+            2: !binary |
+              2YE=
+
+            8: !binary |
+              2Kc=
+
+            3: !binary |
+              2YU=
+
+            9: !binary |
+              2LM=
+
+            4: !binary |
+              2KI=
+
+            10: !binary |
+              2Kc=
+
+      :fields: 
+        :hour: !binary |
+          2LPYp9i52Ko=
+
+        :week: !binary |
+          2YfZgdiq2Yc=
+
+        :era: !binary |
+          2K/ZiNix2Yc=
+
+        :weekday: !binary |
+          2LHZiNiyINmH2YHYqtmH
+
+        :day: !binary |
+          2LHZiNiy
+
+        :dayperiod: !binary |
+          2YLYqNmEL9io2LnYr9in2LLYuNmH2LE=
+
+        :minute: !binary |
+          2K/ZgtuM2YLZhw==
+
+        :month: !binary |
+          2YXYp9mH
+
+        :second: !binary |
+          2KvYp9mG24zZhw==
+
+        :zone: !binary |
+          2YXZhti32YLZh9mUINiy2YXYp9mG24w=
+
+        :year: !binary |
+          2LPYp9mE
+
+      :days: 
+        :"stand-alone": 
+          :abbreviated: 
+            :sun: !binary |
+              24zaqdi02YbYqNmH
+
+            :sat: !binary |
+              2LTZhtio2Yc=
+
+            :tue: !binary |
+              2LPZh+KAjNi02YbYqNmH
+
+            :wed: !binary |
+              2obZh9in2LHYtNmG2KjZhw==
+
+            :thu: !binary |
+              2b7Zhtis2LTZhtio2Yc=
+
+            :mon: !binary |
+              2K/ZiNi02YbYqNmH
+
+            :fri: !binary |
+              2KzZhdi52Yc=
+
+          :wide: 
+            :sun: !binary |
+              24zaqdi02YbYqNmH
+
+            :sat: !binary |
+              2LTZhtio2Yc=
+
+            :tue: !binary |
+              2LPZh+KAjNi02YbYqNmH
+
+            :wed: !binary |
+              2obZh9in2LHYtNmG2KjZhw==
+
+            :thu: !binary |
+              2b7Zhtis2LTZhtio2Yc=
+
+            :mon: !binary |
+              2K/ZiNi02YbYqNmH
+
+            :fri: !binary |
+              2KzZhdi52Yc=
+
+          :narrow: 
+            :sun: !binary |
+              24w=
+
+            :sat: !binary |
+              2LQ=
+
+            :tue: !binary |
+              2LM=
+
+            :wed: !binary |
+              2oY=
+
+            :thu: !binary |
+              2b4=
+
+            :mon: !binary |
+              2K8=
+
+            :fri: !binary |
+              2Kw=
+
+        :format: 
+          :abbreviated: 
+            :sun: !binary |
+              24zaqdi02YbYqNmH
+
+            :sat: !binary |
+              2LTZhtio2Yc=
+
+            :tue: !binary |
+              2LPZh+KAjNi02YbYqNmH
+
+            :wed: !binary |
+              2obZh9in2LHYtNmG2KjZhw==
+
+            :thu: !binary |
+              2b7Zhtis2LTZhtio2Yc=
+
+            :mon: !binary |
+              2K/ZiNi02YbYqNmH
+
+            :fri: !binary |
+              2KzZhdi52Yc=
+
+          :wide: 
+            :sun: !binary |
+              24zaqdi02YbYqNmH
+
+            :sat: !binary |
+              2LTZhtio2Yc=
+
+            :tue: !binary |
+              2LPZh+KAjNi02YbYqNmH
+
+            :wed: !binary |
+              2obZh9in2LHYtNmG2KjZhw==
+
+            :thu: !binary |
+              2b7Zhtis2LTZhtio2Yc=
+
+            :mon: !binary |
+              2K/ZiNi02YbYqNmH
+
+            :fri: !binary |
+              2KzZhdi52Yc=
+
+          :narrow: 
+            :sun: !binary |
+              24w=
+
+            :sat: !binary |
+              2LQ=
+
+            :tue: !binary |
+              2LM=
+
+            :wed: !binary |
+              2oY=
+
+            :thu: !binary |
+              2b4=
+
+            :mon: !binary |
+              2K8=
+
+            :fri: !binary |
+              2Kw=
+

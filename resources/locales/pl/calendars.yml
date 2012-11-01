@@ -1,236 +1,255 @@
----
-:pl:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: pt.
-            :mon: pon.
-            :sat: sob.
-            :sun: niedz.
-            :thu: czw.
-            :tue: wt.
-            :wed: śr.
-          :narrow:
-            :fri: P
-            :mon: P
-            :sat: S
-            :sun: N
-            :thu: C
-            :tue: W
-            :wed: Ś
-          :wide:
-            :fri: piątek
-            :mon: poniedziałek
-            :sat: sobota
-            :sun: niedziela
-            :thu: czwartek
-            :tue: wtorek
-            :wed: środa
-        :stand-alone:
-          :abbreviated:
-            :fri: pt.
-            :mon: pon.
-            :sat: sob.
-            :sun: niedz.
-            :thu: czw.
-            :tue: wt.
-            :wed: śr.
-          :narrow:
-            :fri: P
-            :mon: P
-            :sat: S
-            :sun: N
-            :thu: C
-            :tue: W
-            :wed: Ś
-          :wide:
-            :fri: piątek
-            :mon: poniedziałek
-            :sat: sobota
-            :sun: niedziela
-            :thu: czwartek
-            :tue: wtorek
-            :wed: środa
-      :eras:
-        :abbr:
+--- 
+:pl: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
           0: p.n.e.
           1: n.e.
-        :name:
+        :narrow: 
+          0: ""
+        :abbr: 
           0: p.n.e.
           1: n.e.
-        :narrow:
-          0: ''
-      :fields:
-        :day: Dzień
-        :dayperiod: Dayperiod
-        :era: Era
-        :hour: Godzina
-        :minute: Minuta
-        :month: Miesiąc
-        :second: Sekunda
-        :week: Tydzień
-        :weekday: Dzień tygodnia
-        :year: Rok
-        :zone: Strefa
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: EEEE, d MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: dd.MM.yyyy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
-            :pattern: HH:mm:ss zzzz
-          :long:
-            :pattern: HH:mm:ss z
-          :medium:
-            :pattern: HH:mm:ss
-          :short:
-            :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: sty
-            10: paź
-            11: lis
-            12: gru
-            2: lut
-            3: mar
-            4: kwi
-            5: maj
-            6: cze
-            7: lip
-            8: sie
-            9: wrz
-          :narrow:
-            1: s
-            10: p
-            11: l
-            12: g
-            2: l
-            3: m
-            4: k
-            5: m
-            6: c
-            7: l
-            8: s
-            9: w
-          :wide:
-            1: stycznia
-            10: października
-            11: listopada
-            12: grudnia
-            2: lutego
-            3: marca
-            4: kwietnia
-            5: maja
-            6: czerwca
-            7: lipca
-            8: sierpnia
-            9: września
-        :stand-alone:
-          :abbreviated:
-            1: sty
-            10: paź
-            11: lis
-            12: gru
-            2: lut
-            3: mar
-            4: kwi
-            5: maj
-            6: cze
-            7: lip
-            8: sie
-            9: wrz
-          :narrow:
-            1: s
-            10: p
-            11: l
-            12: g
-            2: l
-            3: m
-            4: k
-            5: m
-            6: c
-            7: l
-            8: s
-            9: w
-          :wide:
-            1: styczeń
-            10: październik
-            11: listopad
-            12: grudzień
-            2: luty
-            3: marzec
-            4: kwiecień
-            5: maj
-            6: czerwiec
-            7: lipiec
-            8: sierpień
-            9: wrzesień
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :afternoon: po południu
-            :am: AM
-            :earlyMorning: nad ranem
-            :evening: wieczorem
-            :lateMorning: przed południem
-            :morning: rano
-            :night: w nocy
-            :noon: w południe
-            :pm: PM
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: K1
-            2: K2
-            3: K3
-            4: K4
-          :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-          :wide:
-            1: I kwartał
-            2: II kwartał
-            3: III kwartał
-            4: IV kwartał
-        :stand-alone:
-          :abbreviated:
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: 
             1: 1 kw.
             2: 2 kw.
             3: 3 kw.
             4: 4 kw.
-          :narrow:
+          :wide: 
+            1: "I kwarta\xC5\x82"
+            2: "II kwarta\xC5\x82"
+            3: "III kwarta\xC5\x82"
+            4: "IV kwarta\xC5\x82"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: I kwartał
-            2: II kwartał
-            3: III kwartał
-            4: IV kwartał
+        :format: 
+          :abbreviated: 
+            1: K1
+            2: K2
+            3: K3
+            4: K4
+          :wide: 
+            1: "I kwarta\xC5\x82"
+            2: "II kwarta\xC5\x82"
+            3: "III kwarta\xC5\x82"
+            4: "IV kwarta\xC5\x82"
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :date: 
+          :full: 
+            :pattern: EEEE, d MMMM y
+          :medium: 
+            :pattern: d MMM y
+          :default: :"calendars.gregorian.formats.date.medium"
+          :long: 
+            :pattern: d MMMM y
+          :short: 
+            :pattern: dd.MM.yyyy
+        :time: 
+          :full: 
+            :pattern: HH:mm:ss zzzz
+          :medium: 
+            :pattern: HH:mm:ss
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: HH:mm:ss z
+          :short: 
+            :pattern: HH:mm
+      :periods: 
+        :"stand-alone": {}
+
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :wide: 
+            :noon: "w po\xC5\x82udnie"
+            :afternoon: "po po\xC5\x82udniu"
+            :pm: PM
+            :earlyMorning: nad ranem
+            :lateMorning: "przed po\xC5\x82udniem"
+            :am: AM
+            :evening: wieczorem
+            :morning: rano
+            :night: w nocy
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            5: maj
+            11: lis
+            6: cze
+            1: sty
+            12: gru
+            7: lip
+            2: lut
+            8: sie
+            3: mar
+            9: wrz
+            4: kwi
+            10: !binary |
+              cGHFug==
+
+          :wide: 
+            5: maj
+            11: listopad
+            6: czerwiec
+            1: "stycze\xC5\x84"
+            12: "grudzie\xC5\x84"
+            7: lipiec
+            2: luty
+            8: "sierpie\xC5\x84"
+            3: marzec
+            9: "wrzesie\xC5\x84"
+            4: "kwiecie\xC5\x84"
+            10: "pa\xC5\xBAdziernik"
+          :narrow: 
+            5: m
+            11: l
+            6: c
+            1: s
+            12: g
+            7: l
+            2: l
+            8: s
+            3: m
+            9: w
+            4: k
+            10: p
+        :format: 
+          :abbreviated: 
+            5: maj
+            11: lis
+            6: cze
+            1: sty
+            12: gru
+            7: lip
+            2: lut
+            8: sie
+            3: mar
+            9: wrz
+            4: kwi
+            10: !binary |
+              cGHFug==
+
+          :wide: 
+            5: maja
+            11: listopada
+            6: czerwca
+            1: stycznia
+            12: grudnia
+            7: lipca
+            2: lutego
+            8: sierpnia
+            3: marca
+            9: "wrze\xC5\x9Bnia"
+            4: kwietnia
+            10: "pa\xC5\xBAdziernika"
+          :narrow: 
+            5: m
+            11: l
+            6: c
+            1: s
+            12: g
+            7: l
+            2: l
+            8: s
+            3: m
+            9: w
+            4: k
+            10: p
+      :fields: 
+        :hour: Godzina
+        :week: "Tydzie\xC5\x84"
+        :era: Era
+        :weekday: "Dzie\xC5\x84 tygodnia"
+        :day: !binary |
+          RHppZcWE
+
+        :dayperiod: Dayperiod
+        :minute: Minuta
+        :month: "Miesi\xC4\x85c"
+        :second: Sekunda
+        :zone: Strefa
+        :year: Rok
+      :days: 
+        :"stand-alone": 
+          :abbreviated: 
+            :sun: niedz.
+            :sat: sob.
+            :tue: wt.
+            :wed: !binary |
+              xZtyLg==
+
+            :thu: czw.
+            :mon: pon.
+            :fri: pt.
+          :wide: 
+            :sun: niedziela
+            :sat: sobota
+            :tue: wtorek
+            :wed: !binary |
+              xZtyb2Rh
+
+            :thu: czwartek
+            :mon: "poniedzia\xC5\x82ek"
+            :fri: "pi\xC4\x85tek"
+          :narrow: 
+            :sun: N
+            :sat: S
+            :tue: W
+            :wed: !binary |
+              xZo=
+
+            :thu: C
+            :mon: P
+            :fri: P
+        :format: 
+          :abbreviated: 
+            :sun: niedz.
+            :sat: sob.
+            :tue: wt.
+            :wed: !binary |
+              xZtyLg==
+
+            :thu: czw.
+            :mon: pon.
+            :fri: pt.
+          :wide: 
+            :sun: niedziela
+            :sat: sobota
+            :tue: wtorek
+            :wed: !binary |
+              xZtyb2Rh
+
+            :thu: czwartek
+            :mon: "poniedzia\xC5\x82ek"
+            :fri: "pi\xC4\x85tek"
+          :narrow: 
+            :sun: N
+            :sat: S
+            :tue: W
+            :wed: !binary |
+              xZo=
+
+            :thu: C
+            :mon: P
+            :fri: P

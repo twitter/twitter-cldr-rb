@@ -1,143 +1,325 @@
----
-:el:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} ημέρα'
-        :other: ! '{0} ημέρες'
-      :short:
-        0: 0 ημέρες
-        1: 1 ημέρα
-        :other: ! '{0} ημέρες'
-    :day-future:
-      :default:
-        0: Σε 0 ημέρες
-        1: Σε 1 ημέρα
-        :one: Σε {0} ημέρα
-        :other: Σε {0} ημέρες
-    :day-past:
-      :default:
-        0: Πριν από 0 ημέρες
-        1: Πριν από 1 ημέρα
-        :one: Πριν από {0} ημέρα
-        :other: Πριν από {0} ημέρες
-    :hour:
-      :default:
-        :one: ! '{0} ώρα'
-        :other: ! '{0} ώρες'
-      :short:
-        0: 0 ώρες
-        1: 1 ώρα
-        :other: ! '{0} ώρες'
-    :hour-future:
-      :default:
-        0: Σε 0 ώρες
-        1: Σε 1 ώρα
-        :one: Σε {0} ώρα
-        :other: Σε {0} ώρες
-    :hour-past:
-      :default:
-        0: Πριν από 0 ώρες
-        1: Πριν από 1 ώρα
-        :one: Πριν από {0} ώρα
-        :other: Πριν από {0} ώρες
-    :minute:
-      :default:
-        :one: ! '{0} λεπτό'
-        :other: ! '{0} λεπτά'
-      :short:
-        0: 0 λεπτά
-        1: 1 λεπτό
-        :other: ! '{0} λεπτά'
-    :minute-future:
-      :default:
-        0: Σε 0 λεπτά
-        1: Σε 1 λεπτό
-        :one: Σε {0} λεπτό
-        :other: Σε {0} λεπτά
-    :minute-past:
-      :default:
-        0: Πριν από 0 λεπτά
-        1: Πριν από 1 λεπτό
-        :one: Πριν από {0} λεπτό
-        :other: Πριν από {0} λεπτά
-    :month:
-      :default:
-        :one: ! '{0} μήνας'
-        :other: ! '{0} μήνες'
-      :short:
-        0: 0 μήνες
-        1: 1 μήνας
-        :other: ! '{0} μήνες'
-    :month-future:
-      :default:
-        0: Σε 0 μήνες
-        1: Σε 1 μήνα
-        :one: Σε {0} μήνα
-        :other: Σε {0} μήνες
-    :month-past:
-      :default:
-        0: Πριν από 0 μήνες
-        1: Πριν από 1 μήνα
-        :one: Πριν από {0} μήνα
-        :other: Πριν από {0} μήνες
-    :second:
-      :default:
-        :one: ! '{0} δευτερόλεπτο'
-        :other: ! '{0} δευτερόλεπτα'
-      :short:
-        0: 0 δευτερόλεπτα
-        1: 1 δευτερόλεπτο
-        :other: ! '{0} δευτερόλεπτα'
-    :second-future:
-      :default:
-        0: Σε 0 δευτερόλεπτα
-        1: Σε 1 δευτερόλεπτο
-        :one: Σε {0} δευτερόλεπτο
-        :other: Σε {0} δευτερόλεπτα
-    :second-past:
-      :default:
-        0: Πριν από 0 δευτερόλεπτα
-        1: Πριν από 1 δευτερόλεπτο
-        :one: Πριν από {0} δευτερόλεπτο
-        :other: Πριν από {0} δευτερόλεπτα
-    :week:
-      :default:
-        :one: ! '{0} εβδομάδα'
-        :other: ! '{0} εβδομάδες'
-      :short:
-        0: 0 εβδομάδες
-        1: 1 εβδομάδα
-        :other: ! '{0} εβδομάδες'
-    :week-future:
-      :default:
-        0: Σε 0 εβδομάδες
-        1: Σε 1 εβδομάδα
-        :one: Σε {0} εβδομάδα
-        :other: Σε {0} εβδομάδες
-    :week-past:
-      :default:
-        0: Πριν από 0 εβδομάδες
-        1: Πριν από 1 εβδομάδα
-        :one: Πριν από {0} εβδομάδα
-        :other: Πριν από {0} εβδομάδες
-    :year:
-      :default:
-        :one: ! '{0} έτος'
-        :other: ! '{0} έτη'
-      :short:
-        0: 0 έτη
-        1: 1 έτος
-        :other: ! '{0} έτη'
-    :year-future:
-      :default:
-        0: Σε 0 έτη
-        1: Σε 1 έτος
-        :one: Σε {0} έτος
-        :other: Σε {0} έτη
-    :year-past:
-      :default:
-        0: Πριν από 0 έτη
-        1: Πριν από 1 έτος
-        :one: Πριν από {0} έτος
-        :other: Πριν από {0} έτη
+--- 
+:el: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDPjs+BzrXPgg==
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgz47Pgc61z4I=
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDPjs+BzrE=
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgz47Pgc6x
+
+    :hour: 
+      :default: 
+        :other: !binary |
+          ezB9IM+Oz4HOtc+C
+
+        :one: !binary |
+          ezB9IM+Oz4HOsQ==
+
+      :short: 
+        :other: !binary |
+          ezB9IM+Oz4HOtc+C
+
+        0: !binary |
+          MCDPjs+BzrXPgg==
+
+        1: !binary |
+          MSDPjs+BzrE=
+
+    :"second-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOtM61z4XPhM61z4HPjM67zrXPgM+EzrE=
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzrTOtc+Fz4TOtc+Bz4zOu861z4DPhM6x
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOtM61z4XPhM61z4HPjM67zrXPgM+Ezr8=
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzrTOtc+Fz4TOtc+Bz4zOu861z4DPhM6/
+
+    :week: 
+      :default: 
+        :other: !binary |
+          ezB9IM61zrLOtM6/zrzOrM60zrXPgg==
+
+        :one: !binary |
+          ezB9IM61zrLOtM6/zrzOrM60zrE=
+
+      :short: 
+        :other: !binary |
+          ezB9IM61zrLOtM6/zrzOrM60zrXPgg==
+
+        0: !binary |
+          MCDOtc6yzrTOv868zqzOtM61z4I=
+
+        1: !binary |
+          MSDOtc6yzrTOv868zqzOtM6x
+
+    :"minute-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzrvOtc+Az4TOrA==
+
+        0: !binary |
+          zqPOtSAwIM67zrXPgM+Ezqw=
+
+        :one: !binary |
+          zqPOtSB7MH0gzrvOtc+Az4TPjA==
+
+        1: !binary |
+          zqPOtSAxIM67zrXPgM+Ez4w=
+
+    :"week-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzrXOss60zr/OvM6szrTOtc+C
+
+        0: !binary |
+          zqPOtSAwIM61zrLOtM6/zrzOrM60zrXPgg==
+
+        :one: !binary |
+          zqPOtSB7MH0gzrXOss60zr/OvM6szrTOsQ==
+
+        1: !binary |
+          zqPOtSAxIM61zrLOtM6/zrzOrM60zrE=
+
+    :day: 
+      :default: 
+        :other: !binary |
+          ezB9IM63zrzOrc+BzrXPgg==
+
+        :one: !binary |
+          ezB9IM63zrzOrc+BzrE=
+
+      :short: 
+        :other: !binary |
+          ezB9IM63zrzOrc+BzrXPgg==
+
+        0: !binary |
+          MCDOt868zq3Pgc61z4I=
+
+        1: !binary |
+          MSDOt868zq3Pgc6x
+
+    :"minute-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOu861z4DPhM6s
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzrvOtc+Az4TOrA==
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOu861z4DPhM+M
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzrvOtc+Az4TPjA==
+
+    :"day-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzrfOvM6tz4HOtc+C
+
+        0: !binary |
+          zqPOtSAwIM63zrzOrc+BzrXPgg==
+
+        :one: !binary |
+          zqPOtSB7MH0gzrfOvM6tz4HOsQ==
+
+        1: !binary |
+          zqPOtSAxIM63zrzOrc+BzrE=
+
+    :"week-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOtc6yzrTOv868zqzOtM61z4I=
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzrXOss60zr/OvM6szrTOtc+C
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOtc6yzrTOv868zqzOtM6x
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzrXOss60zr/OvM6szrTOsQ==
+
+    :"month-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzrzOrs69zrXPgg==
+
+        0: !binary |
+          zqPOtSAwIM68zq7Ovc61z4I=
+
+        :one: !binary |
+          zqPOtSB7MH0gzrzOrs69zrE=
+
+        1: !binary |
+          zqPOtSAxIM68zq7Ovc6x
+
+    :minute: 
+      :default: 
+        :other: !binary |
+          ezB9IM67zrXPgM+Ezqw=
+
+        :one: !binary |
+          ezB9IM67zrXPgM+Ez4w=
+
+      :short: 
+        :other: !binary |
+          ezB9IM67zrXPgM+Ezqw=
+
+        0: !binary |
+          MCDOu861z4DPhM6s
+
+        1: !binary |
+          MSDOu861z4DPhM+M
+
+    :"day-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOt868zq3Pgc61z4I=
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzrfOvM6tz4HOtc+C
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOt868zq3Pgc6x
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzrfOvM6tz4HOsQ==
+
+    :"year-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzq3PhM63
+
+        0: !binary |
+          zqPOtSAwIM6tz4TOtw==
+
+        :one: !binary |
+          zqPOtSB7MH0gzq3PhM6/z4I=
+
+        1: !binary |
+          zqPOtSAxIM6tz4TOv8+C
+
+    :"month-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOvM6uzr3Otc+C
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzrzOrs69zrXPgg==
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOvM6uzr3OsQ==
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzrzOrs69zrE=
+
+    :month: 
+      :default: 
+        :other: !binary |
+          ezB9IM68zq7Ovc61z4I=
+
+        :one: !binary |
+          ezB9IM68zq7Ovc6xz4I=
+
+      :short: 
+        :other: !binary |
+          ezB9IM68zq7Ovc61z4I=
+
+        0: !binary |
+          MCDOvM6uzr3Otc+C
+
+        1: !binary |
+          MSDOvM6uzr3Osc+C
+
+    :"hour-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gz47Pgc61z4I=
+
+        0: !binary |
+          zqPOtSAwIM+Oz4HOtc+C
+
+        :one: !binary |
+          zqPOtSB7MH0gz47Pgc6x
+
+        1: !binary |
+          zqPOtSAxIM+Oz4HOsQ==
+
+    :second: 
+      :default: 
+        :other: !binary |
+          ezB9IM60zrXPhc+EzrXPgc+MzrvOtc+Az4TOsQ==
+
+        :one: !binary |
+          ezB9IM60zrXPhc+EzrXPgc+MzrvOtc+Az4TOvw==
+
+      :short: 
+        :other: !binary |
+          ezB9IM60zrXPhc+EzrXPgc+MzrvOtc+Az4TOsQ==
+
+        0: !binary |
+          MCDOtM61z4XPhM61z4HPjM67zrXPgM+EzrE=
+
+        1: !binary |
+          MSDOtM61z4XPhM61z4HPjM67zrXPgM+Ezr8=
+
+    :"year-past": 
+      :default: 
+        :other: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOrc+Ezrc=
+
+        0: !binary |
+          zqDPgc65zr0gzrHPgM+MIDAgzq3PhM63
+
+        :one: !binary |
+          zqDPgc65zr0gzrHPgM+MIHswfSDOrc+Ezr/Pgg==
+
+        1: !binary |
+          zqDPgc65zr0gzrHPgM+MIDEgzq3PhM6/z4I=
+
+    :year: 
+      :default: 
+        :other: !binary |
+          ezB9IM6tz4TOtw==
+
+        :one: !binary |
+          ezB9IM6tz4TOv8+C
+
+      :short: 
+        :other: !binary |
+          ezB9IM6tz4TOtw==
+
+        0: !binary |
+          MCDOrc+Ezrc=
+
+        1: !binary |
+          MSDOrc+Ezr/Pgg==
+
+    :"second-future": 
+      :default: 
+        :other: !binary |
+          zqPOtSB7MH0gzrTOtc+Fz4TOtc+Bz4zOu861z4DPhM6x
+
+        0: !binary |
+          zqPOtSAwIM60zrXPhc+EzrXPgc+MzrvOtc+Az4TOsQ==
+
+        :one: !binary |
+          zqPOtSB7MH0gzrTOtc+Fz4TOtc+Bz4zOu861z4DPhM6/
+
+        1: !binary |
+          zqPOtSAxIM60zrXPhc+EzrXPgc+MzrvOtc+Az4TOvw==
+

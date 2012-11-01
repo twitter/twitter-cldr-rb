@@ -1,44 +1,52 @@
----
-:nb:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ¤ #,##0.00
-        :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :short:
-            1000: 0
-            10000: 0
-            100000: 0
-            1000000: 0.0 mill
-            10000000: 00 mill
-            100000000: 000 mill
-            1000000000: 0.0 mrd
-            10000000000: 00 mrd
-            100000000000: 000 mrd
-            1000000000000: 0.0 bill
-            10000000000000: 00 bill
-            100000000000000: 000 bill
-      :percent:
-        :patterns:
-          :default: ! '#,##0 %'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ! ','
+--- 
+:nb: 
+  :numbers: 
+    :symbols: 
+      :minus_sign: "-"
+      :alias: ""
       :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ! '-'
+      :per_mille: !binary |
+        4oCw
+
+      :group: !binary |
+        wqA=
+
+      :infinity: !binary |
+        4oie
+
+      :percent_sign: "%"
       :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
+      :list: ;
       :plus_sign: +
+      :decimal: ","
+    :formats: 
+      :scientific: 
+        :patterns: 
+          :default: "#E0"
+      :percent: 
+        :patterns: 
+          :default: "#,##0\xC2\xA0%"
+      :currency: 
+        :unit: 
+          :other: "{0} {1}"
+          :one: "{0} {1}"
+        :patterns: 
+          :default: !binary |
+            wqTCoCMsIyMwLjAw
+
+      :decimal: 
+        :patterns: 
+          :default: "#,##0.###"
+          :short: 
+            100000000000: "000\xC2\xA0mrd"
+            1000000000000: "0.0\xC2\xA0bill"
+            1000000000: "0.0\xC2\xA0mrd"
+            100000000000000: "000\xC2\xA0bill"
+            10000: 0
+            1000000: "0.0\xC2\xA0mill"
+            100000000: "000\xC2\xA0mill"
+            10000000000: "00\xC2\xA0mrd"
+            10000000000000: "00\xC2\xA0bill"
+            1000: 0
+            100000: 0
+            10000000: "00\xC2\xA0mill"

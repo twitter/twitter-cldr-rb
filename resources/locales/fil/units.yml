@@ -1,122 +1,122 @@
----
-:fil:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} araw'
-        :other: ! '{0} araw'
-      :short:
-        :one: ! '{0} arw'
-        :other: ! '{0} arw'
-    :day-future:
-      :default:
-        0: Sa 0 na araw
-        1: Sa 1 araw
-        :other: Sa {0} (na) araw
-    :day-past:
-      :default:
-        0: Nakalipas na 0 araw
-        1: Nakalipas na 1 araw
-        :other: Nakalipas na {0} (na) araw
-    :hour:
-      :default:
-        :one: ! '{0} oras'
-        :other: ! '{0} oras'
-      :short:
-        :one: ! '{0} or'
-        :other: ! '{0} or'
-    :hour-future:
-      :default:
-        0: Sa 0 oras
-        1: Sa 1 oras
-        :other: Sa {0} (na) oras
-    :hour-past:
-      :default:
+--- 
+:fil: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) oras
         0: Nakalipas na 0 oras
         1: Nakalipas na 1 oras
-        :other: Nakalipas na {0} (na) oras
-    :minute:
-      :default:
-        :one: ! '{0} minuto'
-        :other: ! '{0} minuto'
-      :short:
-        :one: ! '{0} min'
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
-        0: Sa 0 minuto
-        1: Sa 1 minuto
-        :other: Sa {0} (na) minuto
-    :minute-past:
-      :default:
-        0: Nakalipas na 0 na minuto
-        1: Nakalipas na 1 minuto
-        :other: Nakalipas na {0} (na) minuto
-    :month:
-      :default:
-        :one: ! '{0} buwan'
-        :other: ! '{0} buwan'
-      :short:
-        :one: ! '{0} buw'
-        :other: ! '{0} buw'
-    :month-future:
-      :default:
-        0: Sa 0 na buwan
-        1: Sa 1 buwan
-        :other: Sa {0} (na) buwan
-    :month-past:
-      :default:
-        0: Nakalipas na 0 buwan
-        1: Nakalipas na 1 buwan
-        :other: Nakalipas na {0} (na) buwan
-    :second:
-      :default:
-        :one: ! '{0} segundo'
-        :other: ! '{0} segundo'
-      :short:
-        :one: ! '{0} seg'
-        :other: ! '{0} seg'
-    :second-future:
-      :default:
-        0: Sa 0 segundo
-        1: Sa 1 segundo
-        :other: Sa {0} (na) segundo
-    :second-past:
-      :default:
+    :hour: 
+      :default: 
+        :other: "{0} oras"
+        :one: "{0} oras"
+      :short: 
+        :other: "{0} or"
+        :one: "{0} or"
+    :"second-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) segundo
         0: Nakalipas na 0 segundo
         1: Nakalipas na 1 segundo
-        :other: Nakalipas na {0} (na) segundo
-    :week:
-      :default:
-        :one: ! '{0} linggo'
-        :other: ! '{0} linggo'
-      :short:
-        :one: ! '{0} ling'
-        :other: ! '{0} ling'
-    :week-future:
-      :default:
+    :week: 
+      :default: 
+        :other: "{0} linggo"
+        :one: "{0} linggo"
+      :short: 
+        :other: "{0} ling"
+        :one: "{0} ling"
+    :"minute-future": 
+      :default: 
+        :other: Sa {0} (na) minuto
+        0: Sa 0 minuto
+        1: Sa 1 minuto
+    :"week-future": 
+      :default: 
+        :other: Sa {0} (na) linggo
         0: Sa 0 linggo
         1: Sa 1 linggo
-        :other: Sa {0} (na) linggo
-    :week-past:
-      :default:
+    :day: 
+      :default: 
+        :other: "{0} araw"
+        :one: "{0} araw"
+      :short: 
+        :other: "{0} arw"
+        :one: "{0} arw"
+    :"minute-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) minuto
+        0: Nakalipas na 0 na minuto
+        1: Nakalipas na 1 minuto
+    :"day-future": 
+      :default: 
+        :other: Sa {0} (na) araw
+        0: Sa 0 na araw
+        1: Sa 1 araw
+    :"week-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) linggo
         0: Nakalipas na 0 na linggo
         1: Nakalipas na 1 linggo
-        :other: Nakalipas na {0} (na) linggo
-    :year:
-      :default:
-        :one: ! '{0} taon'
-        :other: ! '{0} taon'
-      :short:
-        :one: ! '{0} ta'
-        :other: ! '{0} ta'
-    :year-future:
-      :default:
+    :"month-future": 
+      :default: 
+        :other: Sa {0} (na) buwan
+        0: Sa 0 na buwan
+        1: Sa 1 buwan
+    :minute: 
+      :default: 
+        :other: "{0} minuto"
+        :one: "{0} minuto"
+      :short: 
+        :other: "{0} min"
+        :one: "{0} min"
+    :"day-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) araw
+        0: Nakalipas na 0 araw
+        1: Nakalipas na 1 araw
+    :"year-future": 
+      :default: 
+        :other: Sa {0} (na) taon
         0: Sa 0 na taon
         1: Sa 1 taon
-        :other: Sa {0} (na) taon
-    :year-past:
-      :default:
+    :"month-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) buwan
+        0: Nakalipas na 0 buwan
+        1: Nakalipas na 1 buwan
+    :month: 
+      :default: 
+        :other: "{0} buwan"
+        :one: "{0} buwan"
+      :short: 
+        :other: "{0} buw"
+        :one: "{0} buw"
+    :"hour-future": 
+      :default: 
+        :other: Sa {0} (na) oras
+        0: Sa 0 oras
+        1: Sa 1 oras
+    :second: 
+      :default: 
+        :other: "{0} segundo"
+        :one: "{0} segundo"
+      :short: 
+        :other: "{0} seg"
+        :one: "{0} seg"
+    :"year-past": 
+      :default: 
+        :other: Nakalipas na {0} (na) taon
         0: Nakalipas na 0 taon
         1: Nakalipas na 1 taon
-        :other: Nakalipas na {0} (na) taon
+    :year: 
+      :default: 
+        :other: "{0} taon"
+        :one: "{0} taon"
+      :short: 
+        :other: "{0} ta"
+        :one: "{0} ta"
+    :"second-future": 
+      :default: 
+        :other: Sa {0} (na) segundo
+        0: Sa 0 segundo
+        1: Sa 1 segundo

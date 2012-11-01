@@ -58,6 +58,8 @@ module TwitterCldr
       end
 
       def import_per_locale(current_locale)
+        return if !File.exist?(File.join(@output_path, current_locale)) and current_locale != "root"
+
         this_currencies = {}
         get_currencies(current_locale).each_pair do |code, data|
           this_currencies[code] ||= {}
@@ -68,7 +70,7 @@ module TwitterCldr
 
         return if this_currencies.size == 0
 
-        FileUtils.mkdir_p File.join(@output_path, current_locale)
+        FileUtils.mkdir_p(File.join(@output_path, current_locale))
 
         this_currencies = Hash[this_currencies.sort_by{|a,b| a.to_s <=> b.to_s}]
         File.open(File.join(@output_path, current_locale, 'currencies.yml'), 'w') do |output|

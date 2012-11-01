@@ -1,282 +1,843 @@
----
-:he:
-  :languages:
-    :aa: אפארית
-    :ab: אבחזית
-    :ady: אדיגית
-    :ae: אבסטן
-    :af: אפריקאנס
-    :afa: שפה אפרו-אסייתית
-    :afh: אפריהילי
-    :ain: אינו
-    :ak: אקאן
-    :akk: אכדית
-    :am: אמהרית
-    :ang: אנגלית עתיקה
-    :apa: שפה אפאצ׳ית
-    :ar: ערבית
-    :arc: ארמית
-    :art: שפה מלאכותית
-    :as: אסאמית
-    :ast: אסטורית
-    :aus: שפה אוסטרלית
-    :awa: אוואדית
-    :ay: איימארית
-    :az: אזרית
-    :ba: בשקירית
-    :bal: באלוצ׳י
-    :ban: בלינזית
-    :bat: שפות בלטיות
-    :be: בלארוסית
-    :bej: בז׳ה
-    :ber: ברברית
-    :bg: בולגרית
-    :bh: ביהארי
-    :bi: ביסלמה
-    :bn: בנגלית
-    :bnt: בנטו
-    :bo: טיבטית
-    :br: ברטונית
-    :bs: בוסנית
-    :ca: קטלאנית
-    :cad: קאדו
-    :cai: שפה אינדיאנית מרכז-אמריקאית
-    :cau: שפה קווקזית
-    :ce: צ׳צ׳נית
-    :ceb: קבואנו
-    :cel: שפה קלטית
-    :chg: צ׳אגאטאי
-    :chr: צ׳רוקי
-    :co: קורסיקנית
-    :cop: קופטית
-    :crh: טטרית של קרים
-    :crp: שפה קראולית או פידג׳אנית
-    :cs: צ׳כית
-    :cu: סלאבית כנסייתית עתיקה
-    :cy: וולשית
-    :da: דנית
-    :dak: דקוטה
-    :de: גרמנית
-    :de-AT: גרמנית אוסטרית
-    :de-CH: גרמנית שוויצרית (גבוהה)
-    :del: דלאוור
-    :den: סלאבית
-    :doi: דוגרי
-    :dum: הולנדית תיכונה
-    :dv: דיבהי
-    :dz: דזונקה
-    :efi: אפיק
-    :egy: מצרית עתיקה
-    :el: יוונית
-    :elx: עילמית
-    :en: אנגלית
-    :en-AU: אנגלית אוסטרלית
-    :en-CA: אנגלית קנדית
-    :en-GB: אנגלית בריטית
-    :en-US: אנגלית אמריקנית
-    :enm: אנגלית תיכונה
-    :eo: אספרנטו
-    :es: ספרדית
-    :es-419: ספרדית לטינו־אמריקאית
-    :es-ES: ספרדית איברית
-    :et: אסטונית
-    :eu: בסקית
-    :fa: פרסית
-    :fi: פינית
-    :fil: פיליפינית
-    :fj: פיג׳ית
-    :fo: פארואזית
-    :fr: צרפתית
-    :fr-CA: צרפתית קנדית
-    :fr-CH: צרפתית שוויצרית
-    :frm: צרפתית תיכונה
-    :fro: צרפתית עתיקה
-    :frr: פריזית צפונית
-    :fy: פריזית
-    :ga: אירית
-    :gd: גאלית סקוטית
-    :gem: שפה גרמאנית
-    :gez: געז
-    :gl: גליציאנית
-    :gn: גוארני
-    :gon: גונדי
-    :got: גותית
-    :grc: יוונית עתיקה
-    :gsw: גרמנית שוויצרית
-    :gu: גוג׳ראטית
-    :gv: מאנית
-    :ha: האוסה
-    :haw: הוואית
-    :he: עברית
-    :hi: הינדי
-    :hit: חיתית
-    :ho: הארי מוטו
-    :hr: קרואטית
-    :ht: האיטית
-    :hu: הונגרית
-    :hy: ארמנית
-    :ia: ‏אינטרלינגואה
-    :id: אינדונזית
-    :ie: אינטרלינגה
-    :ig: איגבו
-    :ine: שפה הודו-אירופית
-    :inh: אינגושית
-    :io: אידו
-    :ira: שפה איראנית
-    :is: איסלנדית
-    :it: איטלקית
-    :iu: אינוקטיטוט
-    :ja: יפנית
-    :jpr: פרסית יהודית
-    :jrb: ערבית יהודית
-    :jv: יאוונית
-    :ka: גיאורגית
-    :kab: קבילה
-    :kk: קזחית
-    :kl: קאלאליסוטית
-    :km: קמרית
-    :kn: קנאדה
-    :ko: קוריאנית
-    :ks: קשמירית
-    :ku: כורדית
-    :kw: קורנית
-    :ky: קירגיזית
-    :la: לטינית
-    :lad: לדינו
-    :lb: לוקסמבורגית
-    :ln: לינגלה
-    :lo: לאית
-    :lt: ליטאית
-    :lv: לטבית
-    :mag: מאגאהית
-    :mai: מאיטילית
-    :map: אוסטרונזית
-    :mas: מאסאית
-    :mg: מלגשית
-    :mga: אירית תיכונה
-    :mi: מאורית
-    :mis: שפה אחרת
-    :mk: מקדונית
-    :ml: מלאיאלם
-    :mn: מונגולית
-    :mni: מניפורית
-    :mo: מולדבית
-    :mr: מרטהי
-    :ms: מלאית
-    :mt: מלטית
-    :mul: מספר שפות
-    :my: בורמזית
-    :myn: מאיה
-    :na: נאורית
-    :nah: נאהואטל
-    :nai: שפה אינדיאנית צפון-אמריקאית
-    :nap: נפוליטנית
-    :nb: ‏נורבגית ספרותית
-    :nd: צפון נדבלה
-    :nds: גרמנית תחתית
-    :ne: נפאלית
-    :nl: הולנדית
-    :nl-BE: פלמית
-    :nn: נורבגית חדשה
-    :no: נורבגית
-    :non: ‏נורדית עתיקה
-    :nso: סוטו הצפונית
-    :nub: שפות נבטיות
-    :nv: נבחו
-    :nwc: נווארית קלאסית
-    :ny: ניאנג'ה
-    :oc: אוקסיטנית
-    :or: אוריה
-    :os: אוסטית
-    :ota: טורקית עותומנית
-    :pa: פנג׳אבית
-    :peo: פרסית עתיקה
-    :phi: שפה פיליפינית
-    :phn: פניקית
-    :pl: פולנית
-    :ps: פושטו
-    :pt: פורטוגלית
-    :pt-BR: פורטוגזית ברזילאית
-    :pt-PT: פורטוגלית אירופית
-    :qu: קצ'ואה
-    :raj: ראג׳סטן
-    :rm: רומאנש
-    :rn: קירונדי
-    :ro: רומנית
-    :rom: רומאנית
-    :ru: רוסית
-    :rup: ארומנית
-    :rw: קינירואנדה
-    :sa: סנסקריט
-    :sai: שפה אינדיאנית דרום אמריקאית
-    :sam: ארמית שומרונית
-    :sat: סאנטלי
-    :sc: סרדינית
-    :scn: סיציליאנית
-    :sco: סקוטית
-    :sd: סינדהית
-    :se: לאפית צפונית
-    :sem: שפה שמית
-    :sg: סנגו
-    :sga: אירית עתיקה
-    :sgn: שפת סימנים
-    :sh: סרבו-קרואטית
-    :si: סינהלה
-    :sid: סידמו
-    :sit: שפה סינו־טיבטית
-    :sk: סלובקית
-    :sl: סלובנית
-    :sla: שפה סלאבית
-    :sm: סמואית
-    :smi: שפת סאמי
-    :sn: שונה
-    :so: סומלית
-    :sq: אלבנית
-    :sr: סרבית
-    :ss: סיסוואטי
-    :st: ססות׳ו
-    :su: סודנית
-    :sux: שומרית
-    :sv: שוודית
-    :sw: סווהילית
-    :swb: קומורו
-    :syr: סורית
-    :ta: טמילית
-    :te: טלוגו
-    :tet: טטום
-    :tg: טג׳יקית
-    :th: תאי
-    :ti: טיגרינאית
-    :tk: טורקמנית
-    :tl: טגלוג
-    :tlh: קלינגון
-    :tn: צוואנה
-    :to: טונגאית
-    :tpi: טוק פיסין
-    :tr: טורקית
-    :ts: טסונגה
-    :tt: טטרית
-    :tw: טווי
-    :ty: טהיטית
-    :ug: אויגור
-    :uga: אוגריתית
-    :uk: אוקראינית
-    :und: שפה לא ידועה או לא תקפה
-    :ur: אורדו
-    :uz: אוזבקית
-    :ve: וונדה
-    :vi: ויאטנמית
-    :vo: ‏וולאפיק
-    :wo: ג׳ולוף
-    :xh: קסוסה
-    :yap: יאפזית
-    :yi: יידיש
-    :yo: יורובה
-    :yue: קנטונזית
-    :zap: זאפוטק
-    :zen: זנאגה
-    :zh: סינית
-    :zh-Hans: סינית (מפושטת)
-    :zh-Hant: סינית מסורתית
-    :zu: זולו
-    :zxx: ללא תוכן לשוני
+--- 
+:he: 
+  :languages: 
+    :hr: !binary |
+      16fXqNeV15DXmNeZ16o=
+
+    :yue: !binary |
+      16fXoNeY15XXoNeW15nXqg==
+
+    :ve: !binary |
+      15XXldeg15PXlA==
+
+    :ae: !binary |
+      15DXkdeh15jXnw==
+
+    :tr: !binary |
+      15jXldeo16fXmdeq
+
+    :phi: !binary |
+      16nXpNeUINek15nXnNeZ16TXmdeg15nXqg==
+
+    :nn: !binary |
+      16DXldeo15HXkteZ16og15fXk9ep15Q=
+
+    :nd: !binary |
+      16bXpNeV158g16DXk9eR15zXlA==
+
+    :hit: !binary |
+      15fXmdeq15nXqg==
+
+    :"en-GB": !binary |
+      15DXoNeS15zXmdeqINeR16jXmdeY15nXqg==
+
+    :ber: !binary |
+      15HXqNeR16jXmdeq
+
+    :nl: !binary |
+      15TXldec16DXk9eZ16o=
+
+    :tpi: !binary |
+      15jXldenINek15nXodeZ158=
+
+    :gn: !binary |
+      15LXldeQ16jXoNeZ
+
+    :rm: !binary |
+      16jXldee15DXoNep
+
+    :"de-CH": !binary |
+      15LXqNee16DXmdeqINep15XXldeZ16bXqNeZ16ogKNeS15HXldeU15Qp
+
+    :mn: !binary |
+      157Xldeg15LXldec15nXqg==
+
+    :mga: !binary |
+      15DXmdeo15nXqiDXqteZ15vXldeg15Q=
+
+    :ak: !binary |
+      15DXp9eQ158=
+
+    :bej: !binary |
+      15HXltez15Q=
+
+    :fi: !binary |
+      16TXmdeg15nXqg==
+
+    :su: !binary |
+      16HXldeT16DXmdeq
+
+    :fo: !binary |
+      16TXkNeo15XXkNeW15nXqg==
+
+    :uga: !binary |
+      15DXldeS16jXmdeq15nXqg==
+
+    :lo: !binary |
+      15zXkNeZ16o=
+
+    :kl: !binary |
+      16fXkNec15DXnNeZ16HXldeY15nXqg==
+
+    :mag: !binary |
+      157XkNeS15DXlNeZ16o=
+
+    :awa: !binary |
+      15DXldeV15DXk9eZ16o=
+
+    :af: !binary |
+      15DXpNeo15nXp9eQ16DXoQ==
+
+    :ms: !binary |
+      157XnNeQ15nXqg==
+
+    :sl: !binary |
+      16HXnNeV15HXoNeZ16o=
+
+    :chr: !binary |
+      16bXs9eo15XXp9eZ
+
+    :apa: !binary |
+      16nXpNeUINeQ16TXkNem17PXmdeq
+
+    :kk: !binary |
+      16fXlteX15nXqg==
+
+    :na: !binary |
+      16DXkNeV16jXmdeq
+
+    :"fr-CH": !binary |
+      16bXqNek16rXmdeqINep15XXldeZ16bXqNeZ16o=
+
+    :ceb: !binary |
+      16fXkdeV15DXoNeV
+
+    :id: !binary |
+      15DXmdeg15PXldeg15bXmdeq
+
+    :rn: !binary |
+      16fXmdeo15XXoNeT15k=
+
+    :zap: !binary |
+      15bXkNek15XXmNen
+
+    :ain: !binary |
+      15DXmdeg15U=
+
+    :wo: !binary |
+      15LXs9eV15zXldej
+
+    :hy: !binary |
+      15DXqNee16DXmdeq
+
+    :nso: !binary |
+      16HXldeY15Ug15TXptek15XXoNeZ16o=
+
+    :pt: !binary |
+      16TXldeo15jXldeS15zXmdeq
+
+    :ho: !binary |
+      15TXkNeo15kg157XldeY15U=
+
+    :bn: !binary |
+      15HXoNeS15zXmdeq
+
+    :grc: !binary |
+      15nXldeV16DXmdeqINei16rXmden15Q=
+
+    :tt: !binary |
+      15jXmNeo15nXqg==
+
+    :aa: !binary |
+      15DXpNeQ16jXmdeq
+
+    :kn: !binary |
+      16fXoNeQ15PXlA==
+
+    :art: !binary |
+      16nXpNeUINee15zXkNeb15XXqteZ16o=
+
+    :bi: !binary |
+      15HXmdeh15zXnteU
+
+    :he: !binary |
+      16LXkdeo15nXqg==
+
+    :sit: !binary |
+      16nXpNeUINeh15nXoNeV1r7XmNeZ15HXmNeZ16o=
+
+    :mt: !binary |
+      157XnNeY15nXqg==
+
+    :te: !binary |
+      15jXnNeV15LXlQ==
+
+    :sc: !binary |
+      16HXqNeT15nXoNeZ16o=
+
+    :gv: !binary |
+      157XkNeg15nXqg==
+
+    :crh: !binary |
+      15jXmNeo15nXqiDXqdecINen16jXmded
+
+    :ca: !binary |
+      16fXmNec15DXoNeZ16o=
+
+    :zh: !binary |
+      16HXmdeg15nXqg==
+
+    :sco: !binary |
+      16HXp9eV15jXmdeq
+
+    :lv: !binary |
+      15zXmNeR15nXqg==
+
+    :ast: !binary |
+      15DXodeY15XXqNeZ16o=
+
+    :non: !binary |
+      4oCP16DXldeo15PXmdeqINei16rXmden15Q=
+
+    :eo: !binary |
+      15DXodek16jXoNeY15U=
+
+    :sm: !binary |
+      16HXnteV15DXmdeq
+
+    :am: !binary |
+      15DXnteU16jXmdeq
+
+    :rup: !binary |
+      15DXqNeV157XoNeZ16o=
+
+    :sa: !binary |
+      16HXoNeh16fXqNeZ15g=
+
+    :en: !binary |
+      15DXoNeS15zXmdeq
+
+    :ks: !binary |
+      16fXqdee15nXqNeZ16o=
+
+    :rw: !binary |
+      16fXmdeg15nXqNeV15DXoNeT15Q=
+
+    :is: !binary |
+      15DXmdeh15zXoNeT15nXqg==
+
+    :ira: !binary |
+      16nXpNeUINeQ15nXqNeQ16DXmdeq
+
+    :iu: !binary |
+      15DXmdeg15XXp9eY15nXmNeV15g=
+
+    :to: !binary |
+      15jXldeg15LXkNeZ16o=
+
+    :nap: !binary |
+      16DXpNeV15zXmdeY16DXmdeq
+
+    :dz: !binary |
+      15PXlteV16DXp9eU
+
+    :ie: !binary |
+      15DXmdeg15jXqNec15nXoNeS15Q=
+
+    :yo: !binary |
+      15nXldeo15XXkdeU
+
+    :"zh-Hant": !binary |
+      16HXmdeg15nXqiDXnteh15XXqNeq15nXqg==
+
+    :cai: !binary |
+      16nXpNeUINeQ15nXoNeT15nXkNeg15nXqiDXnteo15vXli3XkNee16jXmden
+      15DXmdeq
+
+    :sv: !binary |
+      16nXldeV15PXmdeq
+
+    :pa: !binary |
+      16TXoNeS17PXkNeR15nXqg==
+
+    :"es-ES": !binary |
+      16HXpNeo15PXmdeqINeQ15nXkdeo15nXqg==
+
+    :bo: !binary |
+      15jXmdeR15jXmdeq
+
+    :sux: !binary |
+      16nXldee16jXmdeq
+
+    :os: !binary |
+      15DXldeh15jXmdeq
+
+    :yap: !binary |
+      15nXkNek15bXmdeq
+
+    :ug: !binary |
+      15DXldeZ15LXldeo
+
+    :gu: !binary |
+      15LXldeS17PXqNeQ15jXmdeq
+
+    :ss: !binary |
+      16HXmdeh15XXldeQ15jXmQ==
+
+    :my: !binary |
+      15HXldeo157XlteZ16o=
+
+    :ay: !binary |
+      15DXmdeZ157XkNeo15nXqg==
+
+    :hu: !binary |
+      15TXldeg15LXqNeZ16o=
+
+    :ga: !binary |
+      15DXmdeo15nXqg==
+
+    :sg: !binary |
+      16HXoNeS15U=
+
+    :tg: !binary |
+      15jXktez15nXp9eZ16o=
+
+    :de: !binary |
+      15LXqNee16DXmdeq
+
+    :ban: !binary |
+      15HXnNeZ16DXlteZ16o=
+
+    :"pt-BR": !binary |
+      16TXldeo15jXldeS15bXmdeqINeR16jXlteZ15zXkNeZ16o=
+
+    :sem: !binary |
+      16nXpNeUINep157Xmdeq
+
+    :mi: !binary |
+      157XkNeV16jXmdeq
+
+    :gez: !binary |
+      15LXoteW
+
+    :nah: !binary |
+      16DXkNeU15XXkNeY15w=
+
+    :so: !binary |
+      16HXldee15zXmdeq
+
+    :nub: !binary |
+      16nXpNeV16og16DXkdeY15nXldeq
+
+    :co: !binary |
+      16fXldeo16HXmden16DXmdeq
+
+    :frm: !binary |
+      16bXqNek16rXmdeqINeq15nXm9eV16DXlA==
+
+    :sai: !binary |
+      16nXpNeUINeQ15nXoNeT15nXkNeg15nXqiDXk9eo15XXnSDXkNee16jXmden
+      15DXmdeq
+
+    :ky: !binary |
+      16fXmdeo15LXmdeW15nXqg==
+
+    :vo: !binary |
+      4oCP15XXldec15DXpNeZ16c=
+
+    :"nl-BE": !binary |
+      16TXnNee15nXqg==
+
+    :egy: !binary |
+      157Xpteo15nXqiDXoteq15nXp9eU
+
+    :se: !binary |
+      15zXkNek15nXqiDXptek15XXoNeZ16o=
+
+    :elx: !binary |
+      16LXmdec157Xmdeq
+
+    :zu: !binary |
+      15bXldec15U=
+
+    :fa: !binary |
+      16TXqNeh15nXqg==
+
+    :raj: !binary |
+      16jXkNeS17PXodeY158=
+
+    :ine: !binary |
+      16nXpNeUINeU15XXk9eVLdeQ15nXqNeV16TXmdeq
+
+    :tl: !binary |
+      15jXktec15XXkg==
+
+    :cel: !binary |
+      16nXpNeUINen15zXmNeZ16o=
+
+    :cau: !binary |
+      16nXpNeUINen15XXlden15bXmdeq
+
+    :ur: !binary |
+      15DXldeo15PXlQ==
+
+    :peo: !binary |
+      16TXqNeh15nXqiDXoteq15nXp9eU
+
+    :haw: !binary |
+      15TXldeV15DXmdeq
+
+    :doi: !binary |
+      15PXldeS16jXmQ==
+
+    :uz: !binary |
+      15DXldeW15HXp9eZ16o=
+
+    :ady: !binary |
+      15DXk9eZ15LXmdeq
+
+    :mni: !binary |
+      157XoNeZ16TXldeo15nXqg==
+
+    :"en-CA": !binary |
+      15DXoNeS15zXmdeqINen16DXk9eZ16o=
+
+    :ko: !binary |
+      16fXldeo15nXkNeg15nXqg==
+
+    :ln: !binary |
+      15zXmdeg15LXnNeU
+
+    :be: !binary |
+      15HXnNeQ16jXldeh15nXqg==
+
+    :syr: !binary |
+      16HXldeo15nXqg==
+
+    :sw: !binary |
+      16HXldeV15TXmdec15nXqg==
+
+    :ota: !binary |
+      15jXldeo16fXmdeqINei15XXqteV157XoNeZ16o=
+
+    :gl: !binary |
+      15LXnNeZ16bXmdeQ16DXmdeq
+
+    :tk: !binary |
+      15jXldeo16fXnteg15nXqg==
+
+    :bat: !binary |
+      16nXpNeV16og15HXnNeY15nXldeq
+
+    :"de-AT": !binary |
+      15LXqNee16DXmdeqINeQ15XXodeY16jXmdeq
+
+    :nb: !binary |
+      4oCP16DXldeo15HXkteZ16og16HXpNeo15XXqteZ16o=
+
+    :afa: !binary |
+      16nXpNeUINeQ16TXqNeVLdeQ16HXmdeZ16rXmdeq
+
+    :eu: !binary |
+      15HXoden15nXqg==
+
+    :sgn: !binary |
+      16nXpNeqINeh15nXnteg15nXnQ==
+
+    :ml: !binary |
+      157XnNeQ15nXkNec150=
+
+    :nwc: !binary |
+      16DXldeV15DXqNeZ16og16fXnNeQ16HXmdeq
+
+    :br: !binary |
+      15HXqNeY15XXoNeZ16o=
+
+    :sr: !binary |
+      16HXqNeR15nXqg==
+
+    :fj: !binary |
+      16TXmdeS17PXmdeq
+
+    :sam: !binary |
+      15DXqNee15nXqiDXqdeV157XqNeV16DXmdeq
+
+    :lb: !binary |
+      15zXlden16HXnteR15XXqNeS15nXqg==
+
+    :frr: !binary |
+      16TXqNeZ15bXmdeqINem16TXldeg15nXqg==
+
+    :sk: !binary |
+      16HXnNeV15HXp9eZ16o=
+
+    :smi: !binary |
+      16nXpNeqINeh15DXnteZ
+
+    :jrb: !binary |
+      16LXqNeR15nXqiDXmdeU15XXk9eZ16o=
+
+    :ka: !binary |
+      15LXmdeQ15XXqNeS15nXqg==
+
+    :qu: !binary |
+      16fXpifXldeQ15Q=
+
+    :"fr-CA": !binary |
+      16bXqNek16rXmdeqINen16DXk9eZ16o=
+
+    :ce: !binary |
+      16bXs9em17PXoNeZ16o=
+
+    :vi: !binary |
+      15XXmdeQ15jXoNee15nXqg==
+
+    :phn: !binary |
+      16TXoNeZ16fXmdeq
+
+    :ht: !binary |
+      15TXkNeZ15jXmdeq
+
+    :afh: !binary |
+      15DXpNeo15nXlNeZ15zXmQ==
+
+    :pl: !binary |
+      16TXldec16DXmdeq
+
+    :bg: !binary |
+      15HXldec15LXqNeZ16o=
+
+    :"en-US": !binary |
+      15DXoNeS15zXmdeqINeQ157XqNeZ16fXoNeZ16o=
+
+    :ts: !binary |
+      15jXodeV16DXkteU
+
+    :got: !binary |
+      15LXldeq15nXqg==
+
+    :dak: !binary |
+      15PXp9eV15jXlA==
+
+    :ny: !binary |
+      16DXmdeQ16DXkifXlA==
+
+    :sid: !binary |
+      16HXmdeT157XlQ==
+
+    :mr: !binary |
+      157XqNeY15TXmQ==
+
+    :gon: !binary |
+      15LXldeg15PXmQ==
+
+    :arc: !binary |
+      15DXqNee15nXqg==
+
+    :st: !binary |
+      16HXodeV16rXs9eV
+
+    :fil: !binary |
+      16TXmdec15nXpNeZ16DXmdeq
+
+    :ta: !binary |
+      15jXnteZ15zXmdeq
+
+    :mai: !binary |
+      157XkNeZ15jXmdec15nXqg==
+
+    :th: !binary |
+      16rXkNeZ
+
+    :ba: !binary |
+      15HXqden15nXqNeZ16o=
+
+    :ar: !binary |
+      16LXqNeR15nXqg==
+
+    :scn: !binary |
+      16HXmdem15nXnNeZ15DXoNeZ16o=
+
+    :lt: !binary |
+      15zXmdeY15DXmdeq
+
+    :sla: !binary |
+      16nXpNeUINeh15zXkNeR15nXqg==
+
+    :rom: !binary |
+      16jXldee15DXoNeZ16o=
+
+    :km: !binary |
+      16fXnteo15nXqg==
+
+    :nai: !binary |
+      16nXpNeUINeQ15nXoNeT15nXkNeg15nXqiDXptek15XXny3XkNee16jXmden
+      15DXmdeq
+
+    :dv: !binary |
+      15PXmdeR15TXmQ==
+
+    :ro: !binary |
+      16jXldee16DXmdeq
+
+    :inh: !binary |
+      15DXmdeg15LXldep15nXqg==
+
+    :kab: !binary |
+      16fXkdeZ15zXlA==
+
+    :akk: !binary |
+      15DXm9eT15nXqg==
+
+    :zen: !binary |
+      15bXoNeQ15LXlA==
+
+    :xh: !binary |
+      16fXodeV16HXlA==
+
+    :lad: !binary |
+      15zXk9eZ16DXlQ==
+
+    :ia: !binary |
+      4oCP15DXmdeg15jXqNec15nXoNeS15XXkNeU
+
+    :dum: !binary |
+      15TXldec16DXk9eZ16og16rXmdeb15XXoNeU
+
+    :sat: !binary |
+      16HXkNeg15jXnNeZ
+
+    :ru: !binary |
+      16jXldeh15nXqg==
+
+    :or: !binary |
+      15DXldeo15nXlA==
+
+    :"es-419": !binary |
+      16HXpNeo15PXmdeqINec15jXmdeg15XWvteQ157XqNeZ16fXkNeZ16o=
+
+    :bnt: !binary |
+      15HXoNeY15U=
+
+    :cad: !binary |
+      16fXkNeT15U=
+
+    :gsw: !binary |
+      15LXqNee16DXmdeqINep15XXldeZ16bXqNeZ16o=
+
+    :del: !binary |
+      15PXnNeQ15XXldeo
+
+    :fr: !binary |
+      16bXqNek16rXmdeq
+
+    :tn: !binary |
+      16bXldeV15DXoNeU
+
+    :da: !binary |
+      15PXoNeZ16o=
+
+    :ty: !binary |
+      15jXlNeZ15jXmdeq
+
+    :sh: !binary |
+      16HXqNeR15Ut16fXqNeV15DXmNeZ16o=
+
+    :as: !binary |
+      15DXodeQ157Xmdeq
+
+    :mis: !binary |
+      16nXpNeUINeQ15fXqNeq
+
+    :hi: !binary |
+      15TXmdeg15PXmQ==
+
+    :mul: !binary |
+      157Xodek16gg16nXpNeV16o=
+
+    :oc: !binary |
+      15DXlden16HXmdeY16DXmdeq
+
+    :tet: !binary |
+      15jXmNeV150=
+
+    :fy: !binary |
+      16TXqNeZ15bXmdeq
+
+    :crp: !binary |
+      16nXpNeUINen16jXkNeV15zXmdeqINeQ15Ug16TXmdeT15LXs9eQ16DXmdeq
+
+    :"zh-Hans": !binary |
+      16HXmdeg15nXqiAo157XpNeV16nXmNeqKQ==
+
+    :cs: !binary |
+      16bXs9eb15nXqg==
+
+    :mg: !binary |
+      157XnNeS16nXmdeq
+
+    :mas: !binary |
+      157XkNeh15DXmdeq
+
+    :bal: !binary |
+      15HXkNec15XXptez15k=
+
+    :mo: !binary |
+      157Xldec15PXkdeZ16o=
+
+    :sn: !binary |
+      16nXldeg15Q=
+
+    :ku: !binary |
+      15vXldeo15PXmdeq
+
+    :nds: !binary |
+      15LXqNee16DXmdeqINeq15fXqteZ16o=
+
+    :io: !binary |
+      15DXmdeT15U=
+
+    :kw: !binary |
+      16fXldeo16DXmdeq
+
+    :efi: !binary |
+      15DXpNeZ16c=
+
+    :chg: !binary |
+      16bXs9eQ15LXkNeY15DXmQ==
+
+    :tlh: !binary |
+      16fXnNeZ16DXkteV158=
+
+    :sd: !binary |
+      16HXmdeg15PXlNeZ16o=
+
+    :ig: !binary |
+      15DXmdeS15HXlQ==
+
+    :bh: !binary |
+      15HXmdeU15DXqNeZ
+
+    :bs: !binary |
+      15HXldeh16DXmdeq
+
+    :uk: !binary |
+      15DXlden16jXkNeZ16DXmdeq
+
+    :swb: !binary |
+      16fXldee15XXqNeV
+
+    :ps: !binary |
+      16TXldep15jXlQ==
+
+    :den: !binary |
+      16HXnNeQ15HXmdeq
+
+    :map: !binary |
+      15DXldeh15jXqNeV16DXlteZ16o=
+
+    :ha: !binary |
+      15TXkNeV16HXlA==
+
+    :yi: !binary |
+      15nXmdeT15nXqQ==
+
+    :und: !binary |
+      16nXpNeUINec15Ag15nXk9eV16LXlCDXkNeVINec15Ag16rXp9ek15Q=
+
+    :"en-AU": !binary |
+      15DXoNeS15zXmdeqINeQ15XXodeY16jXnNeZ16o=
+
+    :az: !binary |
+      15DXlteo15nXqg==
+
+    :ja: !binary |
+      15nXpNeg15nXqg==
+
+    :ne: !binary |
+      16DXpNeQ15zXmdeq
+
+    :ti: !binary |
+      15jXmdeS16jXmdeg15DXmdeq
+
+    :it: !binary |
+      15DXmdeY15zXp9eZ16o=
+
+    :gd: !binary |
+      15LXkNec15nXqiDXoden15XXmNeZ16o=
+
+    :cu: !binary |
+      16HXnNeQ15HXmdeqINeb16DXodeZ15nXqteZ16og16LXqteZ16fXlA==
+
+    :gem: !binary |
+      16nXpNeUINeS16jXnteQ16DXmdeq
+
+    :"pt-PT": !binary |
+      16TXldeo15jXldeS15zXmdeqINeQ15nXqNeV16TXmdeq
+
+    :no: !binary |
+      16DXldeo15HXkteZ16o=
+
+    :sga: !binary |
+      15DXmdeo15nXqiDXoteq15nXp9eU
+
+    :mk: !binary |
+      157Xp9eT15XXoNeZ16o=
+
+    :ab: !binary |
+      15DXkdeX15bXmdeq
+
+    :es: !binary |
+      16HXpNeo15PXmdeq
+
+    :cop: !binary |
+      16fXldek15jXmdeq
+
+    :nv: !binary |
+      16DXkdeX15U=
+
+    :et: !binary |
+      15DXodeY15XXoNeZ16o=
+
+    :tw: !binary |
+      15jXldeV15k=
+
+    :sq: !binary |
+      15DXnNeR16DXmdeq
+
+    :fro: !binary |
+      16bXqNek16rXmdeqINei16rXmden15Q=
+
+    :aus: !binary |
+      16nXpNeUINeQ15XXodeY16jXnNeZ16o=
+
+    :la: !binary |
+      15zXmNeZ16DXmdeq
+
+    :jpr: !binary |
+      16TXqNeh15nXqiDXmdeU15XXk9eZ16o=
+
+    :si: !binary |
+      16HXmdeg15TXnNeU
+
+    :el: !binary |
+      15nXldeV16DXmdeq
+
+    :jv: !binary |
+      15nXkNeV15XXoNeZ16o=
+
+    :enm: !binary |
+      15DXoNeS15zXmdeqINeq15nXm9eV16DXlA==
+
+    :zxx: !binary |
+      15zXnNeQINeq15XXm9efINec16nXldeg15k=
+
+    :ang: !binary |
+      15DXoNeS15zXmdeqINei16rXmden15Q=
+
+    :myn: !binary |
+      157XkNeZ15Q=
+
+    :cy: !binary |
+      15XXldec16nXmdeq
+

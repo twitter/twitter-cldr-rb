@@ -1,205 +1,205 @@
----
-:pl:
-  :units:
-    :day:
-      :default:
-        0: 0 dni
-        1: 1 dzień
-        :few: ! '{0} dni'
-        :many: ! '{0} dni'
-        :one: ! '{0} dzień'
-        :other: ! '{0} dni'
-      :short:
-        0: 0 dni
-        1: 1 dzień
-        :few: ! '{0} dni'
-        :many: ! '{0} dni'
-        :one: ! '{0} dzień'
-        :other: ! '{0} dni'
-    :day-future:
-      :default:
-        0: Za 0 dni
-        1: Za 1 dzień
-        :few: Za {0} dni
-        :many: In {0} days
-        :other: Za {0} dni
-    :day-past:
-      :default:
-        0: 0 dni temu
-        1: 1 dzień temu
-        :few: ! '{0} dni temu'
-        :many: ! '{0} days ago'
-        :other: ! '{0} dni temu'
-    :hour:
-      :default:
-        0: 0 godzin
-        1: 1 godzina
-        :few: ! '{0} godziny'
-        :many: ! '{0} godzin'
-        :one: ! '{0} godzina'
-        :other: ! '{0} godzin'
-      :short:
-        0: 0 godz.
-        1: 1 godz.
-        :few: ! '{0} godz.'
-        :many: ! '{0} godz.'
-        :one: ! '{0} godz.'
-        :other: ! '{0} godz.'
-    :hour-future:
-      :default:
-        0: Za 0 godzin
-        1: Za 1 godzinę
-        :few: Za {0} godziny
-        :many: In {0} hours
-        :other: Za {0} godzin
-    :hour-past:
-      :default:
+--- 
+:pl: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: "{0} godzin temu"
         0: 0 godzin temu
-        1: 1 godzinę temu
-        :few: ! '{0} godziny temu'
-        :many: ! '{0} hours ao'
-        :other: ! '{0} godzin temu'
-    :minute:
-      :default:
-        0: 0 minut
-        1: 1 minuta
-        :few: ! '{0} minuty'
-        :many: ! '{0} minut'
-        :one: ! '{0} minuta'
-        :other: ! '{0} minut'
-      :short:
-        0: 0 min
-        1: 1 min
-        :few: ! '{0} min'
-        :many: ! '{0} min.'
-        :one: ! '{0} min.'
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
+        1: "1 godzin\xC4\x99 temu"
+        :few: "{0} godziny temu"
+        :many: "{0} hours ao"
+    :hour: 
+      :default: 
+        :other: "{0} godzin"
+        0: 0 godzin
+        :one: "{0} godzina"
+        1: 1 godzina
+        :few: "{0} godziny"
+        :many: "{0} godzin"
+      :short: 
+        :other: "{0} godz."
+        0: 0 godz.
+        :one: "{0} godz."
+        1: 1 godz.
+        :few: "{0} godz."
+        :many: "{0} godz."
+    :"second-past": 
+      :default: 
+        :other: "{0} sekund temu"
+        0: 0 sekund temu
+        1: "1 sekund\xC4\x99 temu"
+        :few: "{0} sekundy temu"
+        :many: "{0} seconds ago"
+    :week: 
+      :default: 
+        :other: "{0} tygodni"
+        0: 0 tygodni
+        :one: "{0} tydzie\xC5\x84"
+        1: "1 tydzie\xC5\x84"
+        :few: "{0} tygodnie"
+        :many: "{0} tygodni"
+      :short: 
+        :other: "{0} tyg."
+        0: 0 tyg.
+        :one: "{0} tydz."
+        1: 1 tydz.
+        :few: "{0} tyg."
+        :many: "{0} tyg."
+    :"minute-future": 
+      :default: 
+        :other: Za {0} minut
         0: Za 0 minut
-        1: Za 1 minutę
+        1: "Za 1 minut\xC4\x99"
         :few: Za {0} minuty
         :many: In {0} minutes
-        :other: Za {0} minut
-    :minute-past:
-      :default:
-        0: 0 minut temu
-        1: 1 minutę temu
-        :few: ! '{0} minuty temu'
-        :many: ! '{0} minutes ago'
-        :other: ! '{0} minut temu'
-    :month:
-      :default:
-        0: 0 miesięcy
-        1: 1 miesiąc
-        :few: ! '{0} miesiące'
-        :many: ! '{0} miesięcy'
-        :one: ! '{0} miesiąc'
-        :other: ! '{0} miesięcy'
-      :short:
-        0: 0 mies.
-        1: 1 mies.
-        :few: ! '{0} mies.'
-        :many: ! '{0} mies.'
-        :one: ! '{0} mies.'
-        :other: ! '{0} mies.'
-    :month-future:
-      :default:
-        0: Za 0 miesięcy
-        1: Za 1 miesiąc
-        :few: Za {0} miesiące
-        :many: In {0} months
-        :other: Za {0} miesięcy
-    :month-past:
-      :default:
-        0: 0 miesięcy temu
-        1: 1 miesiąc temu
-        :few: ! '{0} miesiące temu'
-        :many: ! '{0} months ago'
-        :other: ! '{0} miesięcy temu'
-    :second:
-      :default:
-        0: 0 sekund
-        1: 1 sekunda
-        :few: ! '{0} sekundy'
-        :many: ! '{0} sekund'
-        :one: ! '{0} sekunda'
-        :other: ! '{0} sekund'
-      :short:
-        0: 0 s
-        1: 1 s
-        :few: ! '{0} sek.'
-        :many: ! '{0} sek.'
-        :one: ! '{0} sek.'
-        :other: ! '{0} s'
-    :second-future:
-      :default:
-        0: Za 0 sekund
-        1: Za 1 sekundę
-        :few: Za {0} sekundy
-        :many: In {0} seconds
-        :other: Za {0} sekund
-    :second-past:
-      :default:
-        0: 0 sekund temu
-        1: 1 sekundę temu
-        :few: ! '{0} sekundy temu'
-        :many: ! '{0} seconds ago'
-        :other: ! '{0} sekund temu'
-    :week:
-      :default:
-        0: 0 tygodni
-        1: 1 tydzień
-        :few: ! '{0} tygodnie'
-        :many: ! '{0} tygodni'
-        :one: ! '{0} tydzień'
-        :other: ! '{0} tygodni'
-      :short:
-        0: 0 tyg.
-        1: 1 tydz.
-        :few: ! '{0} tyg.'
-        :many: ! '{0} tyg.'
-        :one: ! '{0} tydz.'
-        :other: ! '{0} tyg.'
-    :week-future:
-      :default:
+    :"week-future": 
+      :default: 
+        :other: Za {0} tygodni
         0: Za 0 tygodni
-        1: Za 1 tydzień
+        1: "Za 1 tydzie\xC5\x84"
         :few: Za {0} tygodnie
         :many: In {0} weeks
-        :other: Za {0} tygodni
-    :week-past:
-      :default:
+    :day: 
+      :default: 
+        :other: "{0} dni"
+        0: 0 dni
+        :one: "{0} dzie\xC5\x84"
+        1: "1 dzie\xC5\x84"
+        :few: "{0} dni"
+        :many: "{0} dni"
+      :short: 
+        :other: "{0} dni"
+        0: 0 dni
+        :one: "{0} dzie\xC5\x84"
+        1: "1 dzie\xC5\x84"
+        :few: "{0} dni"
+        :many: "{0} dni"
+    :"minute-past": 
+      :default: 
+        :other: "{0} minut temu"
+        0: 0 minut temu
+        1: "1 minut\xC4\x99 temu"
+        :few: "{0} minuty temu"
+        :many: "{0} minutes ago"
+    :"day-future": 
+      :default: 
+        :other: Za {0} dni
+        0: Za 0 dni
+        1: "Za 1 dzie\xC5\x84"
+        :few: Za {0} dni
+        :many: In {0} days
+    :"week-past": 
+      :default: 
+        :other: "{0} tygodni temu"
         0: 0 tygodni temu
-        1: 1 tydzień temu
-        :few: ! '{0} tygodnie temu'
-        :many: ! '{0} weeks ago'
-        :other: ! '{0} tygodni temu'
-    :year:
-      :default:
-        0: 0 lat
-        1: 1 rok
-        :few: ! '{0} lata'
-        :many: ! '{0} lat'
-        :one: ! '{0} rok'
-        :other: ! '{0} roku'
-      :short:
-        0: 0 lat
-        1: 1 rok
-        :few: ! '{0} lata'
-        :many: ! '{0} lat'
-        :one: ! '{0} rok'
-    :year-future:
-      :default:
+        1: "1 tydzie\xC5\x84 temu"
+        :few: "{0} tygodnie temu"
+        :many: "{0} weeks ago"
+    :"month-future": 
+      :default: 
+        :other: "Za {0} miesi\xC4\x99cy"
+        0: "Za 0 miesi\xC4\x99cy"
+        1: "Za 1 miesi\xC4\x85c"
+        :few: "Za {0} miesi\xC4\x85ce"
+        :many: In {0} months
+    :minute: 
+      :default: 
+        :other: "{0} minut"
+        0: 0 minut
+        :one: "{0} minuta"
+        1: 1 minuta
+        :few: "{0} minuty"
+        :many: "{0} minut"
+      :short: 
+        :other: "{0} min"
+        0: 0 min
+        :one: "{0} min."
+        1: 1 min
+        :few: "{0} min"
+        :many: "{0} min."
+    :"day-past": 
+      :default: 
+        :other: "{0} dni temu"
+        0: 0 dni temu
+        1: "1 dzie\xC5\x84 temu"
+        :few: "{0} dni temu"
+        :many: "{0} days ago"
+    :"year-future": 
+      :default: 
+        :other: Za {0} lat
         0: Za 0 lat
         1: Za 1 rok
         :few: Za {0} lata
         :many: In {0} years
-        :other: Za {0} lat
-    :year-past:
-      :default:
+    :"month-past": 
+      :default: 
+        :other: "{0} miesi\xC4\x99cy temu"
+        0: "0 miesi\xC4\x99cy temu"
+        1: "1 miesi\xC4\x85c temu"
+        :few: "{0} miesi\xC4\x85ce temu"
+        :many: "{0} months ago"
+    :month: 
+      :default: 
+        :other: "{0} miesi\xC4\x99cy"
+        0: "0 miesi\xC4\x99cy"
+        :one: "{0} miesi\xC4\x85c"
+        1: "1 miesi\xC4\x85c"
+        :few: "{0} miesi\xC4\x85ce"
+        :many: "{0} miesi\xC4\x99cy"
+      :short: 
+        :other: "{0} mies."
+        0: 0 mies.
+        :one: "{0} mies."
+        1: 1 mies.
+        :few: "{0} mies."
+        :many: "{0} mies."
+    :"hour-future": 
+      :default: 
+        :other: Za {0} godzin
+        0: Za 0 godzin
+        1: "Za 1 godzin\xC4\x99"
+        :few: Za {0} godziny
+        :many: In {0} hours
+    :second: 
+      :default: 
+        :other: "{0} sekund"
+        0: 0 sekund
+        :one: "{0} sekunda"
+        1: 1 sekunda
+        :few: "{0} sekundy"
+        :many: "{0} sekund"
+      :short: 
+        :other: "{0} s"
+        0: 0 s
+        :one: "{0} sek."
+        1: 1 s
+        :few: "{0} sek."
+        :many: "{0} sek."
+    :"year-past": 
+      :default: 
+        :other: "{0} lat temu"
         0: 0 lat temu
         1: 1 rok temu
-        :few: ! '{0} lata temu'
-        :many: ! '{0} years ago'
-        :other: ! '{0} lat temu'
+        :few: "{0} lata temu"
+        :many: "{0} years ago"
+    :year: 
+      :default: 
+        :other: "{0} roku"
+        0: 0 lat
+        :one: "{0} rok"
+        1: 1 rok
+        :few: "{0} lata"
+        :many: "{0} lat"
+      :short: 
+        0: 0 lat
+        :one: "{0} rok"
+        1: 1 rok
+        :few: "{0} lata"
+        :many: "{0} lat"
+    :"second-future": 
+      :default: 
+        :other: Za {0} sekund
+        0: Za 0 sekund
+        1: "Za 1 sekund\xC4\x99"
+        :few: Za {0} sekundy
+        :many: In {0} seconds

@@ -1,200 +1,437 @@
----
-:uk:
-  :calendars:
-    :gregorian:
-      :days:
-        :format:
-          :abbreviated:
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :wide:
-            :fri: Пʼятниця
-            :mon: Понеділок
-            :sat: Субота
-            :sun: Неділя
-            :thu: Четвер
-            :tue: Вівторок
-            :wed: Середа
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
-            :fri: П
-            :mon: П
-            :sat: С
-            :sun: Н
-            :thu: Ч
-            :tue: В
-            :wed: С
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
-          0: до н.е.
-          1: н.е.
-        :name:
-          0: до нашої ери
-          1: нашої ери
-        :narrow:
-          0: ''
-      :fields:
-        :day: День
-        :dayperiod: Частина доби
-        :era: Ера
-        :hour: Година
-        :minute: Хвилина
-        :month: Місяць
-        :second: Секунда
-        :week: Тиждень
-        :weekday: День тижня
-        :year: Рік
-        :zone: Зона
-      :formats:
-        :date:
-          :default: :calendars.gregorian.formats.date.medium
-          :full:
-            :pattern: EEEE, d MMMM y 'р'.
-          :long:
-            :pattern: d MMMM y 'р'.
-          :medium:
+--- 
+:uk: 
+  :calendars: 
+    :gregorian: 
+      :eras: 
+        :name: 
+          0: !binary |
+            0LTQviDQvdCw0YjQvtGXINC10YDQuA==
+
+          1: !binary |
+            0L3QsNGI0L7RlyDQtdGA0Lg=
+
+        :narrow: 
+          0: ""
+        :abbr: 
+          0: !binary |
+            0LTQviDQvS7QtS4=
+
+          1: !binary |
+            0L0u0LUu
+
+      :quarters: 
+        :"stand-alone": 
+          :abbreviated: 
+            1: !binary |
+              MS3QuSDQutCyLg==
+
+            2: !binary |
+              Mi3QuSDQutCyLg==
+
+            3: !binary |
+              My3QuSDQutCyLg==
+
+            4: !binary |
+              NC3QuSDQutCyLg==
+
+          :wide: 
+            1: !binary |
+              MS3QuSDQutCy0LDRgNGC0LDQuw==
+
+            2: !binary |
+              Mi3QuSDQutCy0LDRgNGC0LDQuw==
+
+            3: !binary |
+              My3QuSDQutCy0LDRgNGC0LDQuw==
+
+            4: !binary |
+              NC3QuSDQutCy0LDRgNGC0LDQuw==
+
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+        :format: 
+          :abbreviated: 
+            1: !binary |
+              SSDQutCyLg==
+
+            2: !binary |
+              SUkg0LrQsi4=
+
+            3: !binary |
+              SUlJINC60LIu
+
+            4: !binary |
+              SVYg0LrQsi4=
+
+          :wide: 
+            1: !binary |
+              SSDQutCy0LDRgNGC0LDQuw==
+
+            2: !binary |
+              SUkg0LrQstCw0YDRgtCw0Ls=
+
+            3: !binary |
+              SUlJINC60LLQsNGA0YLQsNC7
+
+            4: !binary |
+              SVYg0LrQstCw0YDRgtCw0Ls=
+
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
+      :formats: 
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :default: :"calendars.gregorian.formats.datetime.medium"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :date: 
+          :full: 
+            :pattern: "EEEE, d MMMM y '\xD1\x80'."
+          :medium: 
             :pattern: d MMM y
-          :short:
+          :default: :"calendars.gregorian.formats.date.medium"
+          :long: 
+            :pattern: "d MMMM y '\xD1\x80'."
+          :short: 
             :pattern: dd.MM.yy
-        :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :default: :calendars.gregorian.formats.time.medium
-          :full:
+        :time: 
+          :full: 
             :pattern: HH:mm:ss zzzz
-          :long:
-            :pattern: HH:mm:ss z
-          :medium:
+          :medium: 
             :pattern: HH:mm:ss
-          :short:
+          :default: :"calendars.gregorian.formats.time.medium"
+          :long: 
+            :pattern: HH:mm:ss z
+          :short: 
             :pattern: HH:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: січ.
-            10: жовт.
-            11: лист.
-            12: груд.
-            2: лют.
-            3: бер.
-            4: квіт.
-            5: трав.
-            6: черв.
-            7: лип.
-            8: серп.
-            9: вер.
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: січня
-            10: жовтня
-            11: листопада
-            12: грудня
-            2: лютого
-            3: березня
-            4: квітня
-            5: травня
-            6: червня
-            7: липня
-            8: серпня
-            9: вересня
-        :stand-alone:
-          :abbreviated:
-            1: Січ
-            10: Жов
-            11: Лис
-            12: Гру
-            2: Лют
-            3: Бер
-            4: Кві
-            5: Тра
-            6: Чер
-            7: Лип
-            8: Сер
-            9: Вер
-          :narrow:
-            1: С
-            10: Ж
-            11: Л
-            12: Г
-            2: Л
-            3: Б
-            4: К
-            5: Т
-            6: Ч
-            7: Л
-            8: С
-            9: В
-          :wide:
-            1: Січень
-            10: Жовтень
-            11: Листопад
-            12: Грудень
-            2: Лютий
-            3: Березень
-            4: Квітень
-            5: Травень
-            6: Червень
-            7: Липень
-            8: Серпень
-            9: Вересень
-      :periods:
-        :format:
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
-          :wide:
-            :afternoon: дня
-            :am: дп
-            :evening: вечора
-            :morning: ранку
-            :night: ночі
-            :pm: пп
-        :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: I кв.
-            2: II кв.
-            3: III кв.
-            4: IV кв.
-          :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-          :wide:
-            1: I квартал
-            2: II квартал
-            3: III квартал
-            4: IV квартал
-        :stand-alone:
-          :abbreviated:
-            1: 1-й кв.
-            2: 2-й кв.
-            3: 3-й кв.
-            4: 4-й кв.
-          :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
-          :wide:
-            1: 1-й квартал
-            2: 2-й квартал
-            3: 3-й квартал
-            4: 4-й квартал
+      :periods: 
+        :"stand-alone": {}
+
+        :format: 
+          :abbreviated: :"calendars.gregorian.dayPeriods.format.wide"
+          :wide: 
+            :afternoon: !binary |
+              0LTQvdGP
+
+            :pm: !binary |
+              0L/Qvw==
+
+            :am: !binary |
+              0LTQvw==
+
+            :evening: !binary |
+              0LLQtdGH0L7RgNCw
+
+            :morning: !binary |
+              0YDQsNC90LrRgw==
+
+            :night: !binary |
+              0L3QvtGH0ZY=
+
+          :narrow: :"calendars.gregorian.dayPeriods.format.abbreviated"
+      :months: 
+        :"stand-alone": 
+          :abbreviated: 
+            5: !binary |
+              0KLRgNCw
+
+            11: !binary |
+              0JvQuNGB
+
+            6: !binary |
+              0KfQtdGA
+
+            1: !binary |
+              0KHRltGH
+
+            12: !binary |
+              0JPRgNGD
+
+            7: !binary |
+              0JvQuNC/
+
+            2: !binary |
+              0JvRjtGC
+
+            8: !binary |
+              0KHQtdGA
+
+            3: !binary |
+              0JHQtdGA
+
+            9: !binary |
+              0JLQtdGA
+
+            4: !binary |
+              0JrQstGW
+
+            10: !binary |
+              0JbQvtCy
+
+          :wide: 
+            5: !binary |
+              0KLRgNCw0LLQtdC90Yw=
+
+            11: !binary |
+              0JvQuNGB0YLQvtC/0LDQtA==
+
+            6: !binary |
+              0KfQtdGA0LLQtdC90Yw=
+
+            1: !binary |
+              0KHRltGH0LXQvdGM
+
+            12: !binary |
+              0JPRgNGD0LTQtdC90Yw=
+
+            7: !binary |
+              0JvQuNC/0LXQvdGM
+
+            2: !binary |
+              0JvRjtGC0LjQuQ==
+
+            8: !binary |
+              0KHQtdGA0L/QtdC90Yw=
+
+            3: !binary |
+              0JHQtdGA0LXQt9C10L3RjA==
+
+            9: !binary |
+              0JLQtdGA0LXRgdC10L3RjA==
+
+            4: !binary |
+              0JrQstGW0YLQtdC90Yw=
+
+            10: !binary |
+              0JbQvtCy0YLQtdC90Yw=
+
+          :narrow: 
+            5: !binary |
+              0KI=
+
+            11: !binary |
+              0Js=
+
+            6: !binary |
+              0Kc=
+
+            1: !binary |
+              0KE=
+
+            12: !binary |
+              0JM=
+
+            7: !binary |
+              0Js=
+
+            2: !binary |
+              0Js=
+
+            8: !binary |
+              0KE=
+
+            3: !binary |
+              0JE=
+
+            9: !binary |
+              0JI=
+
+            4: !binary |
+              0Jo=
+
+            10: !binary |
+              0JY=
+
+        :format: 
+          :abbreviated: 
+            5: !binary |
+              0YLRgNCw0LIu
+
+            11: !binary |
+              0LvQuNGB0YIu
+
+            6: !binary |
+              0YfQtdGA0LIu
+
+            1: !binary |
+              0YHRltGHLg==
+
+            12: !binary |
+              0LPRgNGD0LQu
+
+            7: !binary |
+              0LvQuNC/Lg==
+
+            2: !binary |
+              0LvRjtGCLg==
+
+            8: !binary |
+              0YHQtdGA0L8u
+
+            3: !binary |
+              0LHQtdGALg==
+
+            9: !binary |
+              0LLQtdGALg==
+
+            4: !binary |
+              0LrQstGW0YIu
+
+            10: !binary |
+              0LbQvtCy0YIu
+
+          :wide: 
+            5: !binary |
+              0YLRgNCw0LLQvdGP
+
+            11: !binary |
+              0LvQuNGB0YLQvtC/0LDQtNCw
+
+            6: !binary |
+              0YfQtdGA0LLQvdGP
+
+            1: !binary |
+              0YHRltGH0L3Rjw==
+
+            12: !binary |
+              0LPRgNGD0LTQvdGP
+
+            7: !binary |
+              0LvQuNC/0L3Rjw==
+
+            2: !binary |
+              0LvRjtGC0L7Qs9C+
+
+            8: !binary |
+              0YHQtdGA0L/QvdGP
+
+            3: !binary |
+              0LHQtdGA0LXQt9C90Y8=
+
+            9: !binary |
+              0LLQtdGA0LXRgdC90Y8=
+
+            4: !binary |
+              0LrQstGW0YLQvdGP
+
+            10: !binary |
+              0LbQvtCy0YLQvdGP
+
+          :narrow: :"calendars.gregorian.months.stand-alone.narrow"
+      :fields: 
+        :hour: !binary |
+          0JPQvtC00LjQvdCw
+
+        :week: !binary |
+          0KLQuNC20LTQtdC90Yw=
+
+        :era: !binary |
+          0JXRgNCw
+
+        :weekday: !binary |
+          0JTQtdC90Ywg0YLQuNC20L3Rjw==
+
+        :day: !binary |
+          0JTQtdC90Yw=
+
+        :dayperiod: !binary |
+          0KfQsNGB0YLQuNC90LAg0LTQvtCx0Lg=
+
+        :minute: !binary |
+          0KXQstC40LvQuNC90LA=
+
+        :month: !binary |
+          0JzRltGB0Y/RhtGM
+
+        :second: !binary |
+          0KHQtdC60YPQvdC00LA=
+
+        :zone: !binary |
+          0JfQvtC90LA=
+
+        :year: !binary |
+          0KDRltC6
+
+      :days: 
+        :"stand-alone": 
+          :abbreviated: :"calendars.gregorian.days.format.abbreviated"
+          :wide: :"calendars.gregorian.days.format.wide"
+          :narrow: 
+            :sun: !binary |
+              0J0=
+
+            :sat: !binary |
+              0KE=
+
+            :tue: !binary |
+              0JI=
+
+            :wed: !binary |
+              0KE=
+
+            :thu: !binary |
+              0Kc=
+
+            :mon: !binary |
+              0J8=
+
+            :fri: !binary |
+              0J8=
+
+        :format: 
+          :abbreviated: 
+            :sun: !binary |
+              0J3QtA==
+
+            :sat: !binary |
+              0KHQsQ==
+
+            :tue: !binary |
+              0JLRgg==
+
+            :wed: !binary |
+              0KHRgA==
+
+            :thu: !binary |
+              0KfRgg==
+
+            :mon: !binary |
+              0J/QvQ==
+
+            :fri: !binary |
+              0J/Rgg==
+
+          :wide: 
+            :sun: !binary |
+              0J3QtdC00ZbQu9GP
+
+            :sat: !binary |
+              0KHRg9Cx0L7RgtCw
+
+            :tue: !binary |
+              0JLRltCy0YLQvtGA0L7Qug==
+
+            :wed: !binary |
+              0KHQtdGA0LXQtNCw
+
+            :thu: !binary |
+              0KfQtdGC0LLQtdGA
+
+            :mon: !binary |
+              0J/QvtC90LXQtNGW0LvQvtC6
+
+            :fri: !binary |
+              0J/KvNGP0YLQvdC40YbRjw==
+
+          :narrow: :"calendars.gregorian.days.stand-alone.narrow"

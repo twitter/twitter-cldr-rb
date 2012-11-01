@@ -1,220 +1,556 @@
----
-:ar:
-  :units:
-    :day:
-      :default:
-        :few: ! '{0} أيام'
-        :many: ! '{0} يوماً'
-        :one: يوم
-        :other: ! '{0} يوم'
-        :two: يومان
-        :zero: لا أيام
-      :short:
-        :few: ! '{0} أيام'
-        :many: ! '{0} يوماً'
-        :one: يوم
-        :other: ! '{0} يوم'
-        :two: يومان
-        :zero: لا أيام
-    :day-future:
-      :default:
-        0: خلال 0 يوم
-        1: خلال يوم واحد
-        :few: خلال {0} أيام
-        :many: خلال {0} يومًا
-        :other: خلال {0} من الأيام
-        :two: خلال يومين
-    :day-past:
-      :default:
-        0: قبل 0 يوم
-        1: قبل يوم واحد
-        :few: قبل {0} أيام
-        :many: قبل {0} يومًا
-        :other: قبل {0} من الأيام
-        :two: قبل يومين
-    :hour:
-      :default:
-        :few: ! '{0} ساعات'
-        :many: ! '{0} ساعةً'
-        :one: ساعة
-        :other: ! '{0} ساعة'
-        :two: ساعتان
-        :zero: لا ساعات
-      :short:
-        :few: ! '{0} س'
-        :many: ! '{0} س'
-        :one: ساعة
-        :other: ! '{0} س'
-        :two: ساعتان
-        :zero: لا ساعات
-    :hour-future:
-      :default:
-        0: خلال 0 ساعة
-        1: خلال ساعة واحدة
-        :few: خلال {0} ساعات
-        :many: خلال {0} ساعة
-        :other: خلال {0} من الساعات
-        :two: خلال ساعتين
-    :hour-past:
-      :default:
-        0: قبل 0 ساعة
-        1: قبل ساعة واحدة
-        :few: قبل {0} ساعات
-        :many: قبل {0} ساعة
-        :other: قبل {0} من الساعات
-        :two: قبل ساعتين
-    :minute:
-      :default:
-        :few: ! '{0} دقائق'
-        :many: ! '{0} دقيقةً'
-        :one: دقيقة
-        :other: ! '{0} دقيقة'
-        :two: دقيقتان
-        :zero: لا دقائق
-      :short:
-        :few: ! '{0} د'
-        :many: ! '{0} د'
-        :one: دقيقة
-        :other: ! '{0} د'
-        :two: دقيقتان
-        :zero: لا دقائق
-    :minute-future:
-      :default:
-        0: خلال 0 دقيقة
-        1: خلال دقيقة واحدة
-        :few: خلال {0} دقائق
-        :many: خلال {0} دقيقة
-        :other: خلال {0} من الدقائق
-        :two: خلال دقيقتين
-    :minute-past:
-      :default:
-        0: قبل 0 دقيقة
-        1: قبل دقيقة واحدة
-        :few: قبل {0} دقائق
-        :many: قبل {0} دقيقة
-        :other: قبل {0} من الدقائق
-        :two: قبل دقيقتين
-    :month:
-      :default:
-        :few: ! '{0} أشهر'
-        :many: ! '{0} شهراً'
-        :one: شهر
-        :other: ! '{0} شهر'
-        :two: شهران
-        :zero: لا أشهر
-      :short:
-        :few: ! '{0} أشهر'
-        :many: ! '{0} شهراً'
-        :one: شهر
-        :other: ! '{0} شهر'
-        :two: شهران
-        :zero: لا أشهر
-    :month-future:
-      :default:
-        0: خلال 0 شهر
-        1: خلال شهر واحد
-        :few: خلال {0} شهور
-        :many: خلال {0} شهرًا
-        :other: خلال {0} من الشهور
-        :two: خلال شهرين
-    :month-past:
-      :default:
-        0: قبل 0 شهر
-        1: قبل شهر واحد
-        :few: قبل {0} أشهر
-        :many: قبل {0} شهرًا
-        :other: قبل {0} من الشهور
-        :two: قبل شهرين
-    :second:
-      :default:
-        :few: ! '{0} ثوان'
-        :many: ! '{0} ثانيةً'
-        :one: ثانية
-        :other: ! '{0} ثانية'
-        :two: ثانيتان
-        :zero: لا ثوان
-      :short:
-        :few: ! '{0} ث'
-        :many: ! '{0} ث'
-        :one: ثانية
-        :other: ! '{0} ث'
-        :two: ثانيتان
-        :zero: لا ثوان
-    :second-future:
-      :default:
-        0: خلال 0 ثانية
-        1: خلال ثانية واحدة
-        :few: خلال {0} ثوانِ
-        :many: خلال {0} ثانية
-        :other: خلال {0} من الثواني
-        :two: خلال ثانيتين
-    :second-past:
-      :default:
-        0: قبل 0 ثانية
-        1: قبل ثانية واحدة
-        :few: قبل {0} ثوانِ
-        :many: قبل {0} ثانية
-        :other: قبل {0} من الثواني
-        :two: قبل ثانيتين
-    :week:
-      :default:
-        :few: ! '{0} أسابيع'
-        :many: ! '{0} أسبوعاً'
-        :one: أسبوع
-        :other: ! '{0} أسبوع'
-        :two: أسبوعان
-        :zero: لا أسابيع
-      :short:
-        :few: ! '{0} أسابيع'
-        :many: ! '{0} أسبوعاً'
-        :one: أسبوع
-        :other: ! '{0} أسبوع'
-        :two: أسبوعان
-        :zero: لا أسابيع
-    :week-future:
-      :default:
-        0: خلال 0 أسبوع
-        1: خلال أسبوع واحد
-        :few: خلال {0} أسابيع
-        :many: خلال {0} أسبوعًا
-        :other: خلال {0} من الأسابيع
-        :two: خلال أسبوعين
-    :week-past:
-      :default:
-        0: قبل 0 أسبوع
-        1: قبل أسبوع واحد
-        :few: قبل {0} أسابيع
-        :many: قبل {0} أسبوعًا
-        :other: قبل {0} من الأسابيع
-        :two: قبل أسبوعين
-    :year:
-      :default:
-        :few: ! '{0} سنوات'
-        :many: ! '{0} سنةً'
-        :one: سنة
-        :other: ! '{0} سنة'
-        :two: سنتان
-        :zero: لا سنوات
-      :short:
-        :few: ! '{0} سنوات'
-        :many: ! '{0} سنةً'
-        :one: سنة
-        :other: ! '{0} سنة'
-        :two: سنتان
-        :zero: لا سنوات
-    :year-future:
-      :default:
-        0: خلال 0 سنة
-        1: خلال سنة واحدة
-        :few: خلال {0} سنوات
-        :many: خلال {0} سنة
-        :other: خلال {0} من السنوات
-        :two: خلال سنتين
-    :year-past:
-      :default:
-        0: قبل 0 سنة
-        1: قبل سنة واحدة
-        :few: قبل {0} سنوات
-        :many: قبل {0} سنة
-        :other: قبل {0} من السنوات
-        :two: قبل سنتين
+--- 
+:ar: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYs9in2LnYp9iq
+
+        :two: !binary |
+          2YLYqNmEINiz2KfYudiq2YrZhg==
+
+        0: !binary |
+          2YLYqNmEIDAg2LPYp9i52Kk=
+
+        1: !binary |
+          2YLYqNmEINiz2KfYudipINmI2KfYrdiv2Kk=
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYs9in2LnYp9iq
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYs9in2LnYqQ==
+
+    :hour: 
+      :default: 
+        :other: !binary |
+          ezB9INiz2KfYudip
+
+        :two: !binary |
+          2LPYp9i52KrYp9mG
+
+        :zero: !binary |
+          2YTYpyDYs9in2LnYp9iq
+
+        :one: !binary |
+          2LPYp9i52Kk=
+
+        :few: !binary |
+          ezB9INiz2KfYudin2Ko=
+
+        :many: !binary |
+          ezB9INiz2KfYudip2Ys=
+
+      :short: 
+        :other: !binary |
+          ezB9INiz
+
+        :two: !binary |
+          2LPYp9i52KrYp9mG
+
+        :zero: !binary |
+          2YTYpyDYs9in2LnYp9iq
+
+        :one: !binary |
+          2LPYp9i52Kk=
+
+        :few: !binary |
+          ezB9INiz
+
+        :many: !binary |
+          ezB9INiz
+
+    :"second-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYq9mI2KfZhtmK
+
+        :two: !binary |
+          2YLYqNmEINir2KfZhtmK2KrZitmG
+
+        0: !binary |
+          2YLYqNmEIDAg2KvYp9mG2YrYqQ==
+
+        1: !binary |
+          2YLYqNmEINir2KfZhtmK2Kkg2YjYp9it2K/YqQ==
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYq9mI2KfZhtmQ
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYq9in2YbZitip
+
+    :week: 
+      :default: 
+        :other: !binary |
+          ezB9INij2LPYqNmI2Lk=
+
+        :two: !binary |
+          2KPYs9io2YjYudin2YY=
+
+        :zero: !binary |
+          2YTYpyDYo9iz2KfYqNmK2Lk=
+
+        :one: !binary |
+          2KPYs9io2YjYuQ==
+
+        :few: !binary |
+          ezB9INij2LPYp9io2YrYuQ==
+
+        :many: !binary |
+          ezB9INij2LPYqNmI2LnYp9mL
+
+      :short: 
+        :other: !binary |
+          ezB9INij2LPYqNmI2Lk=
+
+        :two: !binary |
+          2KPYs9io2YjYudin2YY=
+
+        :zero: !binary |
+          2YTYpyDYo9iz2KfYqNmK2Lk=
+
+        :one: !binary |
+          2KPYs9io2YjYuQ==
+
+        :few: !binary |
+          ezB9INij2LPYp9io2YrYuQ==
+
+        :many: !binary |
+          ezB9INij2LPYqNmI2LnYp9mL
+
+    :"minute-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNiv2YLYp9im2YI=
+
+        :two: !binary |
+          2K7ZhNin2YQg2K/ZgtmK2YLYqtmK2YY=
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYr9mC2YrZgtip
+
+        1: !binary |
+          2K7ZhNin2YQg2K/ZgtmK2YLYqSDZiNin2K3Yr9ip
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INiv2YLYp9im2YI=
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INiv2YLZitmC2Kk=
+
+    :"week-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNij2LPYp9io2YrYuQ==
+
+        :two: !binary |
+          2K7ZhNin2YQg2KPYs9io2YjYudmK2YY=
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYo9iz2KjZiNi5
+
+        1: !binary |
+          2K7ZhNin2YQg2KPYs9io2YjYuSDZiNin2K3Yrw==
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INij2LPYp9io2YrYuQ==
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INij2LPYqNmI2LnZi9in
+
+    :day: 
+      :default: 
+        :other: !binary |
+          ezB9INmK2YjZhQ==
+
+        :two: !binary |
+          2YrZiNmF2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYo9mK2KfZhQ==
+
+        :one: !binary |
+          2YrZiNmF
+
+        :few: !binary |
+          ezB9INij2YrYp9mF
+
+        :many: !binary |
+          ezB9INmK2YjZhdin2Ys=
+
+      :short: 
+        :other: !binary |
+          ezB9INmK2YjZhQ==
+
+        :two: !binary |
+          2YrZiNmF2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYo9mK2KfZhQ==
+
+        :one: !binary |
+          2YrZiNmF
+
+        :few: !binary |
+          ezB9INij2YrYp9mF
+
+        :many: !binary |
+          ezB9INmK2YjZhdin2Ys=
+
+    :"minute-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYr9mC2KfYptmC
+
+        :two: !binary |
+          2YLYqNmEINiv2YLZitmC2KrZitmG
+
+        0: !binary |
+          2YLYqNmEIDAg2K/ZgtmK2YLYqQ==
+
+        1: !binary |
+          2YLYqNmEINiv2YLZitmC2Kkg2YjYp9it2K/YqQ==
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYr9mC2KfYptmC
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYr9mC2YrZgtip
+
+    :"day-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNij2YrYp9mF
+
+        :two: !binary |
+          2K7ZhNin2YQg2YrZiNmF2YrZhg==
+
+        0: !binary |
+          2K7ZhNin2YQgMCDZitmI2YU=
+
+        1: !binary |
+          2K7ZhNin2YQg2YrZiNmFINmI2KfYrdiv
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INij2YrYp9mF
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INmK2YjZhdmL2Kc=
+
+    :"week-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYo9iz2KfYqNmK2Lk=
+
+        :two: !binary |
+          2YLYqNmEINij2LPYqNmI2LnZitmG
+
+        0: !binary |
+          2YLYqNmEIDAg2KPYs9io2YjYuQ==
+
+        1: !binary |
+          2YLYqNmEINij2LPYqNmI2Lkg2YjYp9it2K8=
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYo9iz2KfYqNmK2Lk=
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYo9iz2KjZiNi52YvYpw==
+
+    :"month-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNi02YfZiNix
+
+        :two: !binary |
+          2K7ZhNin2YQg2LTZh9ix2YrZhg==
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYtNmH2LE=
+
+        1: !binary |
+          2K7ZhNin2YQg2LTZh9ixINmI2KfYrdiv
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INi02YfZiNix
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INi02YfYsdmL2Kc=
+
+    :minute: 
+      :default: 
+        :other: !binary |
+          ezB9INiv2YLZitmC2Kk=
+
+        :two: !binary |
+          2K/ZgtmK2YLYqtin2YY=
+
+        :zero: !binary |
+          2YTYpyDYr9mC2KfYptmC
+
+        :one: !binary |
+          2K/ZgtmK2YLYqQ==
+
+        :few: !binary |
+          ezB9INiv2YLYp9im2YI=
+
+        :many: !binary |
+          ezB9INiv2YLZitmC2KnZiw==
+
+      :short: 
+        :other: !binary |
+          ezB9INiv
+
+        :two: !binary |
+          2K/ZgtmK2YLYqtin2YY=
+
+        :zero: !binary |
+          2YTYpyDYr9mC2KfYptmC
+
+        :one: !binary |
+          2K/ZgtmK2YLYqQ==
+
+        :few: !binary |
+          ezB9INiv
+
+        :many: !binary |
+          ezB9INiv
+
+    :"day-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYo9mK2KfZhQ==
+
+        :two: !binary |
+          2YLYqNmEINmK2YjZhdmK2YY=
+
+        0: !binary |
+          2YLYqNmEIDAg2YrZiNmF
+
+        1: !binary |
+          2YLYqNmEINmK2YjZhSDZiNin2K3Yrw==
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYo9mK2KfZhQ==
+
+        :many: !binary |
+          2YLYqNmEIHswfSDZitmI2YXZi9in
+
+    :"year-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNiz2YbZiNin2Ko=
+
+        :two: !binary |
+          2K7ZhNin2YQg2LPZhtiq2YrZhg==
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYs9mG2Kk=
+
+        1: !binary |
+          2K7ZhNin2YQg2LPZhtipINmI2KfYrdiv2Kk=
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INiz2YbZiNin2Ko=
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INiz2YbYqQ==
+
+    :"month-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYtNmH2YjYsQ==
+
+        :two: !binary |
+          2YLYqNmEINi02YfYsdmK2YY=
+
+        0: !binary |
+          2YLYqNmEIDAg2LTZh9ix
+
+        1: !binary |
+          2YLYqNmEINi02YfYsSDZiNin2K3Yrw==
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYo9i02YfYsQ==
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYtNmH2LHZi9in
+
+    :month: 
+      :default: 
+        :other: !binary |
+          ezB9INi02YfYsQ==
+
+        :two: !binary |
+          2LTZh9ix2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYo9i02YfYsQ==
+
+        :one: !binary |
+          2LTZh9ix
+
+        :few: !binary |
+          ezB9INij2LTZh9ix
+
+        :many: !binary |
+          ezB9INi02YfYsdin2Ys=
+
+      :short: 
+        :other: !binary |
+          ezB9INi02YfYsQ==
+
+        :two: !binary |
+          2LTZh9ix2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYo9i02YfYsQ==
+
+        :one: !binary |
+          2LTZh9ix
+
+        :few: !binary |
+          ezB9INij2LTZh9ix
+
+        :many: !binary |
+          ezB9INi02YfYsdin2Ys=
+
+    :"hour-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNiz2KfYudin2Ko=
+
+        :two: !binary |
+          2K7ZhNin2YQg2LPYp9i52KrZitmG
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYs9in2LnYqQ==
+
+        1: !binary |
+          2K7ZhNin2YQg2LPYp9i52Kkg2YjYp9it2K/YqQ==
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INiz2KfYudin2Ko=
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INiz2KfYudip
+
+    :second: 
+      :default: 
+        :other: !binary |
+          ezB9INir2KfZhtmK2Kk=
+
+        :two: !binary |
+          2KvYp9mG2YrYqtin2YY=
+
+        :zero: !binary |
+          2YTYpyDYq9mI2KfZhg==
+
+        :one: !binary |
+          2KvYp9mG2YrYqQ==
+
+        :few: !binary |
+          ezB9INir2YjYp9mG
+
+        :many: !binary |
+          ezB9INir2KfZhtmK2KnZiw==
+
+      :short: 
+        :other: !binary |
+          ezB9INir
+
+        :two: !binary |
+          2KvYp9mG2YrYqtin2YY=
+
+        :zero: !binary |
+          2YTYpyDYq9mI2KfZhg==
+
+        :one: !binary |
+          2KvYp9mG2YrYqQ==
+
+        :few: !binary |
+          ezB9INir
+
+        :many: !binary |
+          ezB9INir
+
+    :"year-past": 
+      :default: 
+        :other: !binary |
+          2YLYqNmEIHswfSDZhdmGINin2YTYs9mG2YjYp9iq
+
+        :two: !binary |
+          2YLYqNmEINiz2YbYqtmK2YY=
+
+        0: !binary |
+          2YLYqNmEIDAg2LPZhtip
+
+        1: !binary |
+          2YLYqNmEINiz2YbYqSDZiNin2K3Yr9ip
+
+        :few: !binary |
+          2YLYqNmEIHswfSDYs9mG2YjYp9iq
+
+        :many: !binary |
+          2YLYqNmEIHswfSDYs9mG2Kk=
+
+    :year: 
+      :default: 
+        :other: !binary |
+          ezB9INiz2YbYqQ==
+
+        :two: !binary |
+          2LPZhtiq2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYs9mG2YjYp9iq
+
+        :one: !binary |
+          2LPZhtip
+
+        :few: !binary |
+          ezB9INiz2YbZiNin2Ko=
+
+        :many: !binary |
+          ezB9INiz2YbYqdmL
+
+      :short: 
+        :other: !binary |
+          ezB9INiz2YbYqQ==
+
+        :two: !binary |
+          2LPZhtiq2KfZhg==
+
+        :zero: !binary |
+          2YTYpyDYs9mG2YjYp9iq
+
+        :one: !binary |
+          2LPZhtip
+
+        :few: !binary |
+          ezB9INiz2YbZiNin2Ko=
+
+        :many: !binary |
+          ezB9INiz2YbYqdmL
+
+    :"second-future": 
+      :default: 
+        :other: !binary |
+          2K7ZhNin2YQgezB9INmF2YYg2KfZhNir2YjYp9mG2Yo=
+
+        :two: !binary |
+          2K7ZhNin2YQg2KvYp9mG2YrYqtmK2YY=
+
+        0: !binary |
+          2K7ZhNin2YQgMCDYq9in2YbZitip
+
+        1: !binary |
+          2K7ZhNin2YQg2KvYp9mG2YrYqSDZiNin2K3Yr9ip
+
+        :few: !binary |
+          2K7ZhNin2YQgezB9INir2YjYp9mG2ZA=
+
+        :many: !binary |
+          2K7ZhNin2YQgezB9INir2KfZhtmK2Kk=
+

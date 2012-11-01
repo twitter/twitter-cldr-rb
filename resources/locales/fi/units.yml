@@ -1,136 +1,160 @@
----
-:fi:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} päivä'
-        :other: ! '{0} päivää'
-      :short:
-        :one: ! '{0} pv'
-        :other: ! '{0} pv'
-    :day-future:
-      :default:
-        0: alle päivän päästä
-        1: päivän päästä
-        :one: ! '{0} päivän päästä'
-        :other: ! '{0} päivän päästä'
-    :day-past:
-      :default:
-        0: alle päivä sitten
-        1: päivä sitten
-        :one: ! '{0} päivä sitten'
-        :other: ! '{0} päivää sitten'
-    :hour:
-      :default:
-        :one: ! '{0} tunti'
-        :other: ! '{0} tuntia'
-      :short:
-        :one: ! '{0} t'
-        :other: ! '{0} t'
-    :hour-future:
-      :default:
-        0: alle tunnin päästä
-        1: tunnin päästä
-        :one: ! '{0} tunnin päästä'
-        :other: ! '{0} tunnin päästä'
-    :hour-past:
-      :default:
+--- 
+:fi: 
+  :units: 
+    :"hour-past": 
+      :default: 
+        :other: "{0} tuntia sitten"
         0: alle tunti sitten
+        :one: "{0} tunti sitten"
         1: tunti sitten
-        :one: ! '{0} tunti sitten'
-        :other: ! '{0} tuntia sitten'
-    :minute:
-      :default:
-        :one: ! '{0} minuutti'
-        :other: ! '{0} minuuttia'
-      :short:
-        :one: ! '{0} min'
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
-        0: alle minuutin päästä
-        1: minuutin päästä
-        :one: ! '{0} minuutin päästä'
-        :other: ! '{0} minuutin päästä'
-    :minute-past:
-      :default:
-        0: alle minuutti sitten
-        1: minuutti sitten
-        :one: ! '{0} minuutti sitten'
-        :other: ! '{0} minuuttia sitten'
-    :month:
-      :default:
-        :one: ! '{0} kuukausi'
-        :other: ! '{0} kuukautta'
-      :short:
-        :one: ! '{0} kk'
-        :other: ! '{0} kk'
-    :month-future:
-      :default:
-        0: alle kuukauden päästä
-        1: kuukauden päästä
-        :one: ! '{0} kuukauden päästä'
-        :other: ! '{0} kuukauden päästä'
-    :month-past:
-      :default:
-        0: alle kuukausi sitten
-        1: kuukausi sitten
-        :one: ! '{0} kuukausi sitten'
-        :other: ! '{0} kuukautta sitten'
-    :second:
-      :default:
-        :one: ! '{0} sekunti'
-        :other: ! '{0} sekuntia'
-      :short:
-        :one: ! '{0} s'
-        :other: ! '{0} s'
-    :second-future:
-      :default:
-        0: alle sekunnin päästä
-        1: sekunnin päästä
-        :one: ! '{0} sekunnin päästä'
-        :other: ! '{0} sekunnin päästä'
-    :second-past:
-      :default:
+    :hour: 
+      :default: 
+        :other: "{0} tuntia"
+        :one: "{0} tunti"
+      :short: 
+        :other: "{0} t"
+        :one: "{0} t"
+    :"second-past": 
+      :default: 
+        :other: "{0} sekuntia sitten"
         0: alle sekunti sitten
+        :one: "{0} sekunti sitten"
         1: sekunti sitten
-        :one: ! '{0} sekunti sitten'
-        :other: ! '{0} sekuntia sitten'
-    :week:
-      :default:
-        :one: ! '{0} viikko'
-        :other: ! '{0} viikkoa'
-      :short:
-        :one: ! '{0} vk'
-        :other: ! '{0} vk'
-    :week-future:
-      :default:
-        0: alle viikon päästä
-        1: viikon päästä
-        :one: ! '{0} viikon päästä'
-        :other: ! '{0} viikon päästä'
-    :week-past:
-      :default:
+    :week: 
+      :default: 
+        :other: "{0} viikkoa"
+        :one: "{0} viikko"
+      :short: 
+        :other: "{0} vk"
+        :one: "{0} vk"
+    :"minute-future": 
+      :default: 
+        :other: "{0} minuutin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle minuutin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} minuutin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          bWludXV0aW4gcMOkw6RzdMOk
+
+    :"week-future": 
+      :default: 
+        :other: "{0} viikon p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle viikon p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} viikon p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          dmlpa29uIHDDpMOkc3TDpA==
+
+    :day: 
+      :default: 
+        :other: !binary |
+          ezB9IHDDpGl2w6TDpA==
+
+        :one: !binary |
+          ezB9IHDDpGl2w6Q=
+
+      :short: 
+        :other: "{0} pv"
+        :one: "{0} pv"
+    :"minute-past": 
+      :default: 
+        :other: "{0} minuuttia sitten"
+        0: alle minuutti sitten
+        :one: "{0} minuutti sitten"
+        1: minuutti sitten
+    :"day-future": 
+      :default: 
+        :other: !binary |
+          ezB9IHDDpGl2w6RuIHDDpMOkc3TDpA==
+
+        0: !binary |
+          YWxsZSBww6RpdsOkbiBww6TDpHN0w6Q=
+
+        :one: !binary |
+          ezB9IHDDpGl2w6RuIHDDpMOkc3TDpA==
+
+        1: !binary |
+          cMOkaXbDpG4gcMOkw6RzdMOk
+
+    :"week-past": 
+      :default: 
+        :other: "{0} viikkoa sitten"
         0: alle viikko sitten
+        :one: "{0} viikko sitten"
         1: viikko sitten
-        :one: ! '{0} viikko sitten'
-        :other: ! '{0} viikkoa sitten'
-    :year:
-      :default:
-        :one: ! '{0} vuosi'
-        :other: ! '{0} vuotta'
-      :short:
-        :one: ! '{0} v'
-        :other: ! '{0} v'
-    :year-future:
-      :default:
-        0: alle vuoden päästä
-        1: vuoden päästä
-        :one: ! '{0} vuoden päästä'
-        :other: ! '{0} vuoden päästä'
-    :year-past:
-      :default:
+    :"month-future": 
+      :default: 
+        :other: "{0} kuukauden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle kuukauden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} kuukauden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          a3V1a2F1ZGVuIHDDpMOkc3TDpA==
+
+    :minute: 
+      :default: 
+        :other: "{0} minuuttia"
+        :one: "{0} minuutti"
+      :short: 
+        :other: "{0} min"
+        :one: "{0} min"
+    :"day-past": 
+      :default: 
+        :other: "{0} p\xC3\xA4iv\xC3\xA4\xC3\xA4 sitten"
+        0: "alle p\xC3\xA4iv\xC3\xA4 sitten"
+        :one: "{0} p\xC3\xA4iv\xC3\xA4 sitten"
+        1: "p\xC3\xA4iv\xC3\xA4 sitten"
+    :"year-future": 
+      :default: 
+        :other: "{0} vuoden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle vuoden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} vuoden p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          dnVvZGVuIHDDpMOkc3TDpA==
+
+    :"month-past": 
+      :default: 
+        :other: "{0} kuukautta sitten"
+        0: alle kuukausi sitten
+        :one: "{0} kuukausi sitten"
+        1: kuukausi sitten
+    :month: 
+      :default: 
+        :other: "{0} kuukautta"
+        :one: "{0} kuukausi"
+      :short: 
+        :other: "{0} kk"
+        :one: "{0} kk"
+    :"hour-future": 
+      :default: 
+        :other: "{0} tunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle tunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} tunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          dHVubmluIHDDpMOkc3TDpA==
+
+    :second: 
+      :default: 
+        :other: "{0} sekuntia"
+        :one: "{0} sekunti"
+      :short: 
+        :other: "{0} s"
+        :one: "{0} s"
+    :"year-past": 
+      :default: 
+        :other: "{0} vuotta sitten"
         0: alle vuosi sitten
+        :one: "{0} vuosi sitten"
         1: vuosi sitten
-        :one: ! '{0} vuosi sitten'
-        :other: ! '{0} vuotta sitten'
+    :year: 
+      :default: 
+        :other: "{0} vuotta"
+        :one: "{0} vuosi"
+      :short: 
+        :other: "{0} v"
+        :one: "{0} v"
+    :"second-future": 
+      :default: 
+        :other: "{0} sekunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        0: "alle sekunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        :one: "{0} sekunnin p\xC3\xA4\xC3\xA4st\xC3\xA4"
+        1: !binary |
+          c2VrdW5uaW4gcMOkw6RzdMOk
+

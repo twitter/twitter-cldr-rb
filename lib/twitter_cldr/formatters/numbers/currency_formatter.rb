@@ -14,6 +14,7 @@ module TwitterCldr
       def format(number, options = {})
         options[:currency] ||= "USD"
         currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
+        currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
 
         digits_and_rounding = resource(options[:currency])
         options[:precision] ||= digits_and_rounding[:digits]

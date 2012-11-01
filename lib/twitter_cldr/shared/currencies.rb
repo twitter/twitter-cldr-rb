@@ -7,27 +7,31 @@ module TwitterCldr
   module Shared
     module Currencies
       class << self
-        # def countries
-        #   resource.keys.map(&:to_s)
-        # end
+        def countries
+          resource_countries.keys.map(&:to_s)
+        end
 
         def currency_codes(locale = :en)
           resource(locale).keys.map{|c| c.to_s}
         end
 
-        # def for_country(country_name)
-        #   resource[country_name.to_sym]
-        # end
+        def for_country(country_name, locale = :en)
+          for_code(resource_countries[country_name.to_sym][:code], locale)
+        end
 
         def for_code(currency_code, locale = :en)
           currency_code = currency_code.to_sym
           data = resource(locale)[currency_code]
           { :currency => currency_code,
             :name => data[:name],
-            :symbol => (data[:symbol] || "#{currency_code} ").to_s } if data
+            :symbol => data[:symbol] } if data
         end
 
         private
+
+        def resource_countries
+          @resource_countries ||= TwitterCldr.get_resource(:shared, :currencies)
+        end
 
         def resource(locale)
           locale = locale.to_sym

@@ -36,12 +36,12 @@ describe CurrencyFormatter do
     end
 
     it "should use the currency precision" do
-      @formatter.format(12, :currency => "TND").should == "TND 12.000"
+      @formatter.format(12, :currency => "TND").should == "TND12.000"
     end
 
     it "should use the currency rounding" do
-      @formatter.format(12.03, :currency => "CHF").should == "CHF 12.05"
-      @formatter.format(12.02, :currency => "CHF").should == "CHF 12.00"
+      @formatter.format(12.03, :currency => "CHF").should == "CHF12.05"
+      @formatter.format(12.02, :currency => "CHF").should == "CHF12.00"
     end
   end
 end

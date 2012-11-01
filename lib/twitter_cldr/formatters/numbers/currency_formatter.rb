@@ -19,7 +19,7 @@ module TwitterCldr
         options[:precision] ||= digits_and_rounding[:digits]
         options[:rounding] ||= digits_and_rounding[:rounding]
 
-        super(number, options).gsub('¤', currency[:symbol])
+        super(number, options).gsub('¤', (currency[:symbol] || currency[:currency].to_s))
       end
 
       private

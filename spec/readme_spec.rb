@@ -26,7 +26,7 @@ describe "README" do
     1337.localize(:es).to_s.should == "1.337"
     spaces(1337.localize(:es).to_currency.to_s).should == "1.337,00 $"
     spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1.337,00 €"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "PEN").to_s).should == "1.337,00 PEN "
+    spaces(1337.localize(:es).to_currency.to_s(:currency => "PEN").to_s).should == "1.337,00 PEN"
     1337.localize(:es).to_percent.to_s.should == "1.337%"
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
@@ -46,7 +46,7 @@ describe "README" do
     currency_codes.should include("LTL")
     currency_codes.should include("PHP")
 
-    # TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => "Dollar", :symbol => "$", :code => "CAD" }
+    TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian Dollar"}
     TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian Dollar"}
   end
 

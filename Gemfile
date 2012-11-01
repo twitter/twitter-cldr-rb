@@ -12,6 +12,7 @@ group :development do
   gem 'ruby_parser', '~> 2.3.1'
 
   gem 'ruby-cldr', :github => 'KL-7/ruby-cldr', :branch => 'for-twitter-cldr'
+  gem 'ya2yaml', :git => "git://github.com/camertron/ya2yaml.git"
 
   platform :ruby do
     gem 'therubyracer',  '~> 0.9.10'

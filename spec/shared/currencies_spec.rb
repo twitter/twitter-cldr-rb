@@ -34,7 +34,6 @@ describe Currencies do
       data = Currencies.for_country("Peru")
 
       data.should be_a(Hash)
-      data.should_not include(:country)
       data.should include(
         :currency => :PEN,
         :name => "Peruvian Nuevo Sol",
@@ -48,7 +47,6 @@ describe Currencies do
       data = Currencies.for_code("PEN")
 
       data.should be_a(Hash)
-      data.should_not include(:code)
       data.should include(
           :name => "Peruvian Nuevo Sol",
           :currency => :PEN,

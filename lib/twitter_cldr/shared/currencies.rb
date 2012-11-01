@@ -16,6 +16,7 @@ module TwitterCldr
         end
 
         def for_country(country_name, locale = :en)
+          return nil if !resource_countries[country_name.to_sym]
           for_code(resource_countries[country_name.to_sym][:code], locale)
         end
 

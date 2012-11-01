@@ -15,6 +15,7 @@ module TwitterCldr
         options[:currency] ||= "USD"
         currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
         currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
+        currency ||= { :symbol => options[:currency], :currency => options[:currency] }
 
         digits_and_rounding = resource(options[:currency])
         options[:precision] ||= digits_and_rounding[:digits]

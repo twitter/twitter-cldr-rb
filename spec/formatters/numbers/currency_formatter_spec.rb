@@ -34,5 +34,33 @@ describe CurrencyFormatter do
     it "overrides the default precision" do
       @formatter.format(12, :precision => 3).should == "$12.000"
     end
+
+    describe "Peculiar decimal-points currencies" do
+      it "should return 3 decimal points for OMR" do
+        @formatter.format(50.0, :currency => "OMR").should == "﷼50.000"
+      end
+      
+      it "should return 3 decimal points for Oman" do
+        @formatter.format(50.0, :currency => "Oman").should == "﷼50.000"
+      end
+      
+      it "should return 2 decimal points for SGD" do
+        @formatter.format(50.0, :currency => "SGD").should == "$50.00"
+      end
+      
+      it "should return 2 decimal points for SGD even the number has the precision as 3" do
+        @formatter.format(50.003, :currency => "SGD").should == "$50.00"
+      end
+      
+      it "should return 0 decimal points for JPY" do
+        @formatter.format(50.0, :currency => "JPY").should == "¥50"
+      end
+    end
+    
+    describe "Peculiar rounding" do
+      it "should return 2 decimal points with rounding to 0.05 for CHF" do
+        @formatter.format(50.13, :currency => "CHF").should == "CHF50.15"
+      end
+    end
   end
 end

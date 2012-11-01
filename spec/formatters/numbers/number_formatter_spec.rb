@@ -82,4 +82,18 @@ describe NumberFormatter do
       @formatter.format(1337.37).should == "1 337,37"
     end
   end
+  
+  describe "#round_to" do
+    it "should round to the nearest 0.05" do
+      @formatter.send(:round_to, 13.03, 2, 5).should == 13.05
+    end
+    
+    it "should round to the nearest 0.05" do
+      @formatter.send(:round_to, 13.02, 2, 5).should == 13.0
+    end  
+    
+    it "should round to 0.05 even if it has precision as 1" do
+      @formatter.send(:round_to, 13.7, 2, 5).should == 13.7
+    end
+  end
 end

@@ -95,6 +95,14 @@ namespace :update do
     ).import
   end
 
+  desc 'Import currency precision and rounding resource'
+  task :currency_precision_and_rounding, :cldr_path do |_, args|
+    TwitterCldr::Resources::CurrencyPrecisionAndRoundingImporter.new(
+        args[:cldr_path] || './vendor/cldr',
+        './resources/shared'
+    ).import
+  end
+
   desc 'Import language codes'
   task :language_codes, :language_codes_data do |_, args|
     TwitterCldr::Resources::LanguageCodesImporter.new(

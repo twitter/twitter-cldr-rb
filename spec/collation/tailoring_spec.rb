@@ -14,40 +14,44 @@ describe 'Unicode collation tailoring' do
   #
   it 'passes tailoring test for each supported locale', :slow => true do
     TwitterCldr.supported_locales.each do |locale|
-      collator = Collator.new(locale)
+      tailor_file = File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")
 
-      print "#{locale}\t-\t"
+      if File.exist?(tailor_file)
+        collator = Collator.new(locale)
 
-      lines = File.open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |file|
-        file.lines.map(&:strip)
-      end
+        print "#{locale}\t-\t"
 
-      active_tests  = lines.count(&method(:tailoring_test?))
-      pending_tests = lines.count(&method(:pending_tailoring_test?))
-      print "tests:  %-4d active, %5.1f%% %5s pending\t-\t" % [active_tests, (100.0 * pending_tests / (pending_tests + active_tests)), "(#{pending_tests})"]
-
-      last_number = last = nil
-
-      failures = lines.each_with_index.inject([]) do |memo, (current, number)|
-        if tailoring_test?(current)
-          memo << [last_number + 1, last, current] if tailoring_test?(last) && collator.compare(last, current) == 1
-
-          last = current
-          last_number = number
-        elsif pending_tailoring_test?(current)
-          last_number = last = nil
+        lines = File.open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |file|
+          file.lines.map(&:strip)
         end
 
-        memo
-      end
+        active_tests  = lines.count(&method(:tailoring_test?))
+        pending_tests = lines.count(&method(:pending_tailoring_test?))
+        print "tests:  %-4d active, %5.1f%% %5s pending\t-\t" % [active_tests, (100.0 * pending_tests / (pending_tests + active_tests)), "(#{pending_tests})"]
 
-      if failures.empty?
-        puts "OK"
-      else
-        failures_info = "#{failures.size} failures: #{failures.inspect}"
+        last_number = last = nil
 
-        puts failures_info
-        failures.should(be_empty, "#{locale} - #{failures_info}")
+        failures = lines.each_with_index.inject([]) do |memo, (current, number)|
+          if tailoring_test?(current)
+            memo << [last_number + 1, last, current] if tailoring_test?(last) && collator.compare(last, current) == 1
+
+            last = current
+            last_number = number
+          elsif pending_tailoring_test?(current)
+            last_number = last = nil
+          end
+
+          memo
+        end
+
+        if failures.empty?
+          puts "OK"
+        else
+          failures_info = "#{failures.size} failures: #{failures.inspect}"
+
+          puts failures_info
+          failures.should(be_empty, "#{locale} - #{failures_info}")
+        end
       end
     end
   end

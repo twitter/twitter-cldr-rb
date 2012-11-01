@@ -31,7 +31,7 @@ describe LocalizedString do
       let(:horses) { { :one => '1 horse', :other => '%{horses_count} horses' } }
 
       before(:each) do
-        stub(Formatters::Plurals::Rules).rule_for { |n, _| n == 1 ? :one : :other  }
+        stub(TwitterCldr::Formatters::Plurals::Rules).rule_for { |n, _| n == 1 ? :one : :other  }
       end
 
       it 'interpolates named placeholders' do
@@ -117,6 +117,57 @@ describe LocalizedString do
   describe "#code_points" do
     it "returns an array of Unicode code points for the string" do
       "español".localize.code_points.should == [0x65, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C]
+    end
+  end
+
+  describe "#each_char" do
+    it "iterates over each character in the string if a block is given" do
+      index = 0
+      str = "twitter"
+
+      str.localize.each_char do |char|
+        str.chars.to_a[index].should == char
+        index += 1
+      end
+    end
+
+    it "returns an enumerator if no block is given" do
+      "twitter".localize.each_char.should be_a(Enumerator)
+    end
+
+    it "responds to a few other methods from Enumerable" do
+      upcased = "twitter".localize.map { |letter| letter.upcase }
+      upcased.size.should == 7
+      upcased.join.should == "TWITTER"
+
+      "twitter".localize.inject("") { |str, letter| str = "#{letter}#{str}"; str }.should == "rettiwt"
+    end
+  end
+
+  describe "#to_yaml" do
+    it "should be able to successfully roundtrip the string" do
+      YAML.load("coolio".localize.to_yaml).should == "coolio"
+      YAML.load("coolió".localize.to_yaml).should == "coolió"
+    end
+  end
+
+  describe "#to_bidi" do
+    it "should return an instance of TwitterCldr::Shared::Bidi" do
+      "abc".localize.to_bidi.should be_a(TwitterCldr::Shared::Bidi)
+    end
+  end
+
+  describe "#to_reordered_s" do
+    it "should reverse the order a basic RTL string" do
+      str = "{0} \331\210 {1}".gsub("{0}", "a").gsub("{1}", "b")
+      chars = str.chars.to_a
+      chars.first.should == "a"
+      chars.last.should == "b"
+
+      result = str.localize.to_reordered_s(:direction => :RTL)
+      result_chars = result.chars.to_a
+      result_chars.first.should == "b"
+      result_chars.last.should == "a"
     end
   end
 

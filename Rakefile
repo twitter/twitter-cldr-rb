@@ -129,28 +129,3 @@ namespace :update do
     TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
   end
 end
-
-namespace :js do
-  desc 'Build JS files'
-  task :build do
-    TwitterCldr.require_js
-    FileUtils.mkdir_p(TwitterCldr::Js.build_dir)
-    TwitterCldr::Js.output_dir = File.expand_path(ENV["OUTPUT_DIR"])
-    TwitterCldr::Js.make(:locales => TwitterCldr.supported_locales)
-    TwitterCldr::Js.install
-  end
-
-  desc 'Run JS specs'
-  task :test do
-    TwitterCldr.require_js
-    FileUtils.mkdir_p(TwitterCldr::Js.build_dir)
-    TwitterCldr::Js.make(:locales => [:en])
-    puts "Running JavaScript tests (Jasmine)..."
-    TwitterCldr::Js.test
-    FileUtils.rm_rf(TwitterCldr::Js.build_dir)
-    puts "\nRunning Ruby tests (RSpec)..."
-    Dir.chdir(File.join(File.dirname(__FILE__), "js")) do
-      Rake::Task["spec"].execute
-    end
-  end
-end

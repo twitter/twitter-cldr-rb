@@ -13,5 +13,6 @@ module TwitterCldr
     autoload :Numbers,       'twitter_cldr/shared/numbers'
     autoload :PhoneCodes,    'twitter_cldr/shared/phone_codes'
     autoload :PostalCodes,   'twitter_cldr/shared/postal_codes'
+    autoload :Bidi,          'twitter_cldr/shared/bidi'
   end
 end

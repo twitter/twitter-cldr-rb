@@ -26,7 +26,7 @@ describe "README" do
     1337.localize(:es).to_s.should == "1.337"
     spaces(1337.localize(:es).to_currency.to_s).should == "1.337,00 $"
     spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1.337,00 €"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "Peru").to_s).should == "1.337,00 S/."
+    spaces(1337.localize(:es).to_currency.to_s(:currency => "PEN").to_s).should == "1.337,00 PEN "
     1337.localize(:es).to_percent.to_s.should == "1.337%"
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
@@ -36,18 +36,18 @@ describe "README" do
   end
 
   it "verifies extra currency data" do
-    countries = TwitterCldr::Shared::Currencies.countries
-    countries.should be_a(Array)
-    countries.should include("Lithuania")
-    countries.should include("Philippines")
+    # countries = TwitterCldr::Shared::Currencies.countries
+    # countries.should be_a(Array)
+    # countries.should include("Lithuania")
+    # countries.should include("Philippines")
 
     currency_codes = TwitterCldr::Shared::Currencies.currency_codes
     currency_codes.should be_a(Array)
     currency_codes.should include("LTL")
     currency_codes.should include("PHP")
 
-    TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => "Dollar", :symbol => "$", :code => "CAD" }
-    TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => "Dollar", :symbol => "$", :country => "Canada"}
+    # TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => "Dollar", :symbol => "$", :code => "CAD" }
+    TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian Dollar"}
   end
 
   it "verifies dates" do

@@ -7,9 +7,9 @@ module TwitterCldr
   module Shared
     module Currencies
       class << self
-        def countries
-          resource.keys.map(&:to_s)
-        end
+        # def countries
+        #   resource.keys.map(&:to_s)
+        # end
 
         def currency_codes(locale = :en)
           resource(locale).keys.map{|c| c.to_s}
@@ -22,8 +22,9 @@ module TwitterCldr
         def for_code(currency_code, locale = :en)
           currency_code = currency_code.to_sym
           data = resource(locale)[currency_code]
-          { :currency => data[:name],
-            :symbol => (data[:symbol] || currency_code).to_s } if data
+          { :currency => currency_code,
+            :name => data[:name],
+            :symbol => (data[:symbol] || "#{currency_code} ").to_s } if data
         end
 
         private
@@ -33,10 +34,11 @@ module TwitterCldr
           @resource ||= {}
           return @resource[locale] if @resource[locale]
 
-          fallbacks = ["root"]
           fallbacks = locale.to_s.split("_").inject([]) do |list, t|
             list.push((list.length == 0) ? t : "#{list.last}_#{t}")
           end.reverse
+
+          fallbacks.push("root")
 
           @resource[locale] = {}
 

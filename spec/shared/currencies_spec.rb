@@ -50,8 +50,9 @@ describe Currencies do
       data.should be_a(Hash)
       data.should_not include(:code)
       data.should include(
-          :currency => "Peruvian Nuevo Sol",
-          :symbol => "PEN"
+          :name => "Peruvian Nuevo Sol",
+          :currency => "PEN",
+          :symbol => "PEN "
           # :symbol   => "S/."
       )
     end

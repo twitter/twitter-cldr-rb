@@ -22,17 +22,26 @@ describe CurrencyFormatter do
       @formatter.format(-12).should == "-($12.00)"
     end
 
-    it "should use the specified currency symbol when specified" do
-      # S/. is the symbol for the Peruvian Nuevo Sol, just in case you were curious
-      @formatter.format(12, :currency => "S/.").should == "S/.12.00"
-    end
+    # it "should use the specified currency symbol when specified" do
+    #   # S/. is the symbol for the Peruvian Nuevo Sol, just in case you were curious
+    #   @formatter.format(12, :currency => "S/.").should == "S/.12.00"
+    # end
 
     it "should use the currency symbol for the corresponding currency code" do
-      @formatter.format(12, :currency => "PEN").should == "S/.12.00"
+      @formatter.format(12, :currency => "THB").should == "฿12.00"
     end
 
     it "overrides the default precision" do
       @formatter.format(12, :precision => 3).should == "$12.000"
+    end
+
+    it "should use the currency precision" do
+      @formatter.format(12, :currency => "TND").should == "TND 12.000"
+    end
+
+    it "should use the currency rounding" do
+      @formatter.format(12.03, :currency => "CHF").should == "CHF 12.05"
+      @formatter.format(12.02, :currency => "CHF").should == "CHF 12.00"
     end
   end
 end

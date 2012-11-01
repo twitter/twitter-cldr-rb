@@ -12,19 +12,20 @@ module TwitterCldr
       end
 
       def format(number, options = {})
-        if options[:currency]
-          currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
-          currency ||= { :symbol => options[:currency] }
-        else
-          currency = { :symbol => "$" }
-        end
+        options[:currency] ||= "USD"
+        currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
+
+        digits_and_rounding = resource(options[:currency])
+        options[:precision] ||= digits_and_rounding[:digits]
+        options[:rounding] ||= digits_and_rounding[:rounding]
 
         super(number, options).gsub('¤', currency[:symbol])
       end
 
-      def default_format_options_for(number)
-        precision = precision_from(number)
-        { :precision => precision == 0 ? 2 : precision }
+      private
+      def resource(code)
+        @resource ||= TwitterCldr.get_resource(:shared, :currency_digits_and_rounding)
+        (@resource[code.to_sym] || @resource[:DEFAULT])
       end
     end
   end

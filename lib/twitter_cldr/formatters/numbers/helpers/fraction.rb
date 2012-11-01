@@ -17,6 +17,7 @@ module TwitterCldr
 
         def apply(fraction, options = {})
           precision = options[:precision] || self.precision
+
           if precision > 0
             decimal + interpolate(format(options), fraction, :left)
           else

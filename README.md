@@ -154,6 +154,27 @@ ts.to_s                         # Vor 1 Tag
 ts.to_s(:unit => :hour)         # Vor 24 Stunden
 ```
 
+### Lists
+
+TwitterCLDR supports formatting lists of strings as you might do in English by using commas, eg: "Apples, cherries, and oranges".  Use the `localize` method on an array followed by a call to `to_sentence`:
+
+```ruby
+["apples", "cherries", "oranges"].localize.to_sentence  # "apples, cherries, and oranges"
+["apples", "cherries", "oranges"].localize(:es).to_sentence  # "apples, cherries y oranges"
+```
+
+Behind the scenes, these convenience methods are creating instances of `ListFormatter`.  You can do the same thing if you're feeling adventurous:
+
+```ruby
+f = TwitterCldr::Formatters::ListFormatter.new(:locale => :en)
+f.format(["Larry", "Curly", "Moe"])  # "Larry, Curly, and Moe"
+
+f = TwitterCldr::Formatters::ListFormatter.new(:locale => :es)
+f.format(["Larry", "Curly", "Moe"])  # "Larry, Curly y Moe"
+```
+
+The TwitterCLDR `ListFormatter` class is smart enough to handle right-to-left (RTL) text and will format the list "backwards" in these cases (note that what looks backwards to English speakers looks frontwards for RTL speakers).  See the section on handling bidirectional text below for more information.
+
 ### Plural Rules
 
 Some languages, like English, have "countable" nouns.  You probably know this concept better as "plural" and "singular", i.e. the difference between "strawberry" and "strawberries".  Other languages, like Russian, have three plural forms: one (numbers ending in 1), few (numbers ending in 2, 3, or 4), and many (everything else).  Still other languages like Japanese don't use countable nouns at all.
@@ -475,6 +496,40 @@ collator.get_sort_key("Älg")             # [39, 61, 51, 1, 134, 157, 6, 1, 143,
 
 **Note**: The TwitterCLDR collator does not currently pass all the collation tests provided by Unicode, but for some strange reasons.  See the [summary](https://gist.github.com/f4ee3bd280a2257c5641) of these discrepancies if you're curious.
 
+### Handling Bidirectional Text
+
+When it comes to displaying text written in both right-to-left (RTL) and left-to-right (LTR) languages, most display systems run into problems.  The trouble is that Arabic or Hebrew text and English text (for example) often get scrambled visually and are therefore difficult to read.  It's not usually the basic ASCII characters like A-Z that get scrambled - it's most often punctuation marks and the like that are confusingly mixed up (they are considered "weak" types by Unicode).
+
+To mitigate this problem, Unicode supports special invisible characters that force visual reordering so that mixed RTL and LTR (called "bidirectional") text renders naturally on the screen.  The Unicode Consortium has developed an algorithm (The Unicode Bidirectional Algorithm, or UBA) that intelligently inserts these control characters where appropriate.  You can make use of the UBA implementation in TwitterCLDR by creating a new instance of `TwitterCldr::Shared::Bidi` using the `from_string` static method, and manipulating it like so:
+
+```ruby
+bidi = TwitterCldr::Shared::Bidi.from_string("hello نزوة world", :direction => :RTL)
+bidi.reorder_visually!
+bidi.to_s
+```
+
+**Disclaimer**: Google Translate tells me the Arabic in the example above means "fancy", but my confidence is not very high, especially since all the letters are unattached. Apologies to any native speakers :)
+
+### Unicode YAML Support
+
+Ruby 1.8 does not come with great Unicode support, and nowhere is this more apparent then when dumping Unicode characters in YAML.  The Psych gem by @tenderlove is a good replacement and is the default in Ruby 1.9, but requires libyaml and still doesn't handle Unicode characters perfectly.  To mitigate this problem (especially in Ruby 1.8), TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
+
+You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
+
+```ruby
+{ :hello => "world" }.localize.to_yaml
+["hello", "world"].localize.to_yaml
+"hello, world".localize.to_yaml
+```
+
+Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
+
+```ruby
+TwitterCldr::Shared::YAML.dump({ :hello => "world" })
+TwitterCldr::Shared::YAML.dump(["hello", "world"])
+TwitterCldr::Shared::YAML.dump("hello, world")
+```
+
 ## About Twitter-specific Locales
 
 Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes however, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:
@@ -512,35 +567,7 @@ Tests are written in RSpec using RR as the mocking framework.
 
 ## JavaScript Support
 
-TwitterCLDR currently supports localization of dates and times in JavaScript.  More awesome features are coming soon.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
-
-### Generating the JavaScript
-
-You can automatically generate the JavaScript version of TwitterCLDR using this Rubygem.  Here's the one-liner:
-
-`bundle exec rake js:build OUTPUT_DIR=/path/to/desired/output/location`
-
-If you'd like to customize the generated output further, you'll need to require the `TwitterCldr::Js` namespace.  You can choose the locales to export and whether to export a minified version alongside the full version for each locale.
-
-```ruby
-require 'twitter_cldr'
-
-TwitterCldr.require_js                                   # require JavaScript environment
-TwitterCldr::Js.output_dir = "/path/to/output/location"
-TwitterCldr::Js.make(:locales => [:de, :sv, :ja, :ar],   # generate files for German, Swedish,
-                     :minify => true)                    # Japanese, and Arabic
-TwitterCldr::Js.install                                  # copy files to output directory
-```
-
-### Running Tests (JS)
-
-A JavaScript test suite comes with twitter-cldr-rb.  You'll need to install the Qt libs to be able to run the suite, as it uses [jasmine](https://github.com/pivotal/jasmine-gem) and [jasmine-headless-webkit](http://johnbintz.github.com/jasmine-headless-webkit/).
-
-1. Install qt (eg. `brew install qt`, `sudo apt-get install qt4`, etc)
-2. Run `bundle`
-3. Run `bundle exec rake js:test`
-
-The tests are located in `js/spec` and look similar to RSpec tests.
+TwitterCLDR currently supports localization of certain textual objects in JavaScript via the twitter-cldr-js gem.  See [http://github.com/twitter/twitter-cldr-js](http://github.com/twitter/twitter-cldr-js) for details.
 
 ## Authors
 

@@ -46,6 +46,34 @@ describe LocalizedArray do
       end
     end
   end
+
+  describe "#each" do
+    it "should iterate over the items in the array and yield each one" do
+      arr = [1, 2, 3]
+      index = 0
+
+      arr.localize.each do |item|
+        arr[index].should == item
+        index += 1
+      end
+    end
+
+    it "should support a few of the other methods in Enumerable" do
+      [1, 2, 3].localize.inject(0) { |sum, num| sum += num; sum }.should == 6
+      [1, 2, 3].localize.map { |item| item + 1 }.should == [2, 3, 4]
+    end
+  end
+
+  describe "#to_yaml" do
+    it "should be able to successfully roundtrip the array" do
+      arr = [:foo, "bar", Object.new]
+      result = YAML.load(arr.localize.to_yaml)
+
+      result[0].should == :foo
+      result[1].should == "bar"
+      result[2].should be_a(Object)
+    end
+  end
 end
 
 class FakeCollator

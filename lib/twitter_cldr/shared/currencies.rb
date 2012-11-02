@@ -8,18 +8,17 @@ module TwitterCldr
     module Currencies
       class << self
         def countries
-          Kernel.warn("Currencies#countries will be deprecated. Please stop using it.")
+          Kernel.warn("Currencies#countries will be deprecated. Please use Currencies#for_code.")
           resource_countries.keys.map(&:to_s)
         end
 
         def currency_codes(locale = :en)
-          resource(locale).keys.map{|c| c.to_s}
+          resource(locale).keys.map { |c| c.to_s }
         end
 
         def for_country(country_name, locale = :en)
-          Kernel.warn("Currencies#for_country will be deprecated. Please stop using it.")
-          return nil if !resource_countries[country_name.to_sym]
-          for_code(resource_countries[country_name.to_sym][:code], locale)
+          Kernel.warn("Currencies#for_country will be deprecated. Please use Currencies#for_code.")
+          for_code(resource_countries[country_name.to_sym][:code], locale) if resource_countries[country_name.to_sym]
         end
 
         def for_code(currency_code, locale = :en)

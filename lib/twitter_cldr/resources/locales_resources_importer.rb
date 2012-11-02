@@ -55,7 +55,6 @@ module TwitterCldr
         Cldr::Export.export(:components => ["currency_digits_and_rounding"], :target => File.join(@output_path, 'shared')) do |component, locale, path|
           deep_symbolize(component, locale, path)
         end
-        
 
         copy_zh_hant_plurals
       end

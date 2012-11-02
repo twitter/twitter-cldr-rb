@@ -27,7 +27,7 @@ module TwitterCldr
       private
       def resource(code)
         @resource ||= TwitterCldr.get_resource(:shared, :currency_digits_and_rounding)
-        (@resource[code.to_sym] || @resource[:DEFAULT])
+        @resource[code.to_sym] || @resource[:DEFAULT]
       end
     end
   end

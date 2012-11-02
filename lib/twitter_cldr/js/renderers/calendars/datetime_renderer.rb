@@ -23,10 +23,6 @@ module TwitterCldr
             end
             tokens.to_json
           end
-
-          def calendar
-            TwitterCldr::Tokenizers::DateTimeTokenizer.new(:locale => @locale).calendar.to_json
-          end
         end
       end
     end

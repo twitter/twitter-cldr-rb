@@ -45,7 +45,8 @@ module TwitterCldr
           :numbers => TwitterCldr::Js::Renderers::Numbers::NumbersRenderer,
           :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer,
           :lists => TwitterCldr::Js::Renderers::Shared::ListRenderer,
-          :bidi => TwitterCldr::Js::Renderers::Shared::BidiRenderer
+          :bidi => TwitterCldr::Js::Renderers::Shared::BidiRenderer,
+          :calendar => TwitterCldr::Js::Renderers::Shared::CalendarRenderer
         }
       end
     end

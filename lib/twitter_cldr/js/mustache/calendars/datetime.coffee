@@ -4,7 +4,6 @@
 class TwitterCldr.DateTimeFormatter
   constructor: ->
     @tokens = `{{{tokens}}}`
-    @calendar = `{{{calendar}}}`
     @weekday_keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
     @methods = # ignoring u, l, g, j, A
       'G': 'era'
@@ -60,9 +59,9 @@ class TwitterCldr.DateTimeFormatter
   era: (date, pattern, length) ->
     switch length
       when 1, 2, 3
-        choices = @calendar["eras"]["abbr"]
+        choices = TwitterCldr.Calendar.calendar["eras"]["abbr"]
       else
-        choices = @calendar["eras"]["name"]
+        choices = TwitterCldr.Calendar.calendar["eras"]["name"]
 
     index = if (date.getFullYear() < 0) then 0 else 1
     return choices[index]
@@ -95,9 +94,9 @@ class TwitterCldr.DateTimeFormatter
       when 2
         return ("0000" + quarter.toString()).slice(-length)
       when 3
-        return @calendar.quarters.format.abbreviated[quarter]
+        return TwitterCldr.Calendar.calendar.quarters.format.abbreviated[quarter]
       when 4
-        return @calendar.quarters.format.wide[quarter]
+        return TwitterCldr.Calendar.calendar.quarters.format.wide[quarter]
 
   quarter_stand_alone: (date, pattern, length) ->
     quarter = (date.getMonth() - 1) / 3 + 1
@@ -112,7 +111,7 @@ class TwitterCldr.DateTimeFormatter
       when 4
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       when 5
-        return @calendar.quarters['stand-alone'].narrow[quarter]
+        return TwitterCldr.Calendar.calendar.quarters['stand-alone'].narrow[quarter]
 
   month: (date, pattern, length) ->
     month_str = (date.getMonth() + 1).toString()
@@ -123,9 +122,9 @@ class TwitterCldr.DateTimeFormatter
       when 2
         return ("0000" + month_str).slice(-length)
       when 3
-        return @calendar.months.format.abbreviated[month_str]
+        return TwitterCldr.Calendar.calendar.months.format.abbreviated[month_str]
       when 4
-        return @calendar.months.format.wide[month_str]
+        return TwitterCldr.Calendar.calendar.months.format.wide[month_str]
       when 5
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       else
@@ -142,7 +141,7 @@ class TwitterCldr.DateTimeFormatter
       when 4
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       when 5
-        return @calendar.months['stand-alone'].narrow[date.month]
+        return TwitterCldr.Calendar.calendar.months['stand-alone'].narrow[date.month]
       else
         throw "Unknown date format"
 
@@ -158,11 +157,11 @@ class TwitterCldr.DateTimeFormatter
 
     switch length
       when 1, 2, 3
-        return @calendar.days.format.abbreviated[key]
+        return TwitterCldr.Calendar.calendar.days.format.abbreviated[key]
       when 4
-        return @calendar.days.format.wide[key]
+        return TwitterCldr.Calendar.calendar.days.format.wide[key]
       when 5
-        return @calendar.days['stand-alone'].narrow[key]
+        return TwitterCldr.Calendar.calendar.days['stand-alone'].narrow[key]
 
   weekday_local: (date, pattern, length) ->
     # "Like E except adds a numeric value depending on the local starting day of the week"
@@ -183,9 +182,9 @@ class TwitterCldr.DateTimeFormatter
 
   period: (time, pattern, length) ->
     if time.getHours() > 11
-      return @calendar.periods.format.wide["pm"]
+      return TwitterCldr.Calendar.calendar.periods.format.wide["pm"]
     else
-      return @calendar.periods.format.wide["am"]
+      return TwitterCldr.Calendar.calendar.periods.format.wide["am"]
 
   hour: (time, pattern, length) ->
     hour = time.getHours()

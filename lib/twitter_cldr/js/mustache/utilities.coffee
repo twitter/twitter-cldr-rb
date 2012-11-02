@@ -45,7 +45,7 @@ class TwitterCldr.Utilities
     result
 
   @pack_array: (char_arr) ->
-    (@from_char_code(char) for char in char_arr).join("")
+    (@from_char_code(cur_char) for cur_char in char_arr).join("")
 
   @arraycopy: (orig, orig_index, dest, dest_index, length) ->
     for elem, count in orig[orig_index...(orig_index + length)]

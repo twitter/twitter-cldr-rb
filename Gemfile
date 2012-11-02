@@ -8,7 +8,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'tanin47/ruby-cldr'
+  gem 'ruby-cldr', :github => 'tanin47/ruby-cldr', :ref => "aabe67a0da625b014bf4af72f41326cb586d0bd2"
 end
 
 group :test do

@@ -45,7 +45,7 @@ namespace :update do
   task :locales_resources, :cldr_path do |_, args|
     TwitterCldr::Resources::LocalesResourcesImporter.new(
         args[:cldr_path] || './vendor/cldr',
-        './resources/locales'
+        './resources'
     ).import
   end
 

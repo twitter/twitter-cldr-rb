@@ -46,8 +46,8 @@ describe "README" do
     currency_codes.should include("LTL")
     currency_codes.should include("PHP")
 
-    TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian Dollar"}
-    TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian Dollar"}
+    TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian dollar"}
+    TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian dollar"}
   end
 
   it "verifies dates" do

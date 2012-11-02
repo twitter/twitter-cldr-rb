@@ -36,7 +36,7 @@ describe Currencies do
       data.should be_a(Hash)
       data.should include(
         :currency => :PEN,
-        :name => "Peruvian Nuevo Sol",
+        :name => "Peruvian nuevo sol",
         :symbol   => nil
       )
     end
@@ -48,9 +48,9 @@ describe Currencies do
 
       data.should be_a(Hash)
       data.should include(
-          :name => "Peruvian Nuevo Sol",
-          :currency => :PEN,
-          :symbol => nil
+        :name => "Peruvian nuevo sol",
+        :currency => :PEN,
+        :symbol => nil
       )
     end
   end

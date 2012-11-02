@@ -79,14 +79,6 @@ namespace :update do
     ).import
   end
 
-  desc 'Import currencies resource'
-  task :currencies, :cldr_path do |_, args|
-    TwitterCldr::Resources::CurrenciesImporter.new(
-        args[:cldr_path] || './vendor/cldr',
-        './resources/locales'
-    ).import
-  end
-
   desc 'Import currency digits and rounding resource'
    task :currency_digits_and_rounding, :cldr_path do |_, args|
      TwitterCldr::Resources::CurrencyDigitsAndRoundingImporter.new(

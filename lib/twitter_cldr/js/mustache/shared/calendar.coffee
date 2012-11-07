@@ -2,7 +2,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 class TwitterCldr.Calendar
-  @calendar = `{{{calendar}}}`
+  @calendar: `{{{calendar}}}`
 
   @months: (options = {}) ->
     root = @get_root("months", options)

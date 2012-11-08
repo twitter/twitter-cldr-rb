@@ -4,6 +4,8 @@ gemspec
 
 group :development, :test do
   gem 'rake'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do

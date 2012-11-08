@@ -16,19 +16,19 @@ describe TimespanFormatter do
       options = { :direction => :none }
       formatter.format(44, options).should match_normalized("44 Sekunden")
       formatter.format(45, options).should match_normalized("1 Minute")
-      
+
       formatter.format(2699, options).should match_normalized("45 Minuten")
       formatter.format(2700, options).should match_normalized("1 Stunde")
-      
+
       formatter.format(64799, options).should match_normalized("18 Stunden")
       formatter.format(64800, options).should match_normalized("1 Tag")
-      
+
       formatter.format(453599, options).should match_normalized("5 Tage")
       formatter.format(453600, options).should match_normalized("1 Woche")
-      
+
       formatter.format(1972307, options).should match_normalized("3 Wochen")
       formatter.format(1972308, options).should match_normalized("1 Monat")
-      
+
       formatter.format(23667694, options).should match_normalized("9 Monate")
       formatter.format(23667695, options).should match_normalized("1 Jahr")
     end

@@ -3,6 +3,7 @@
 
 class TwitterCldr.TimespanFormatter
   constructor: ->
+    @approximate_multiplier = 0.75
     @default_type = "default"
     @tokens = `{{{tokens}}}`
     @time_in_seconds = {
@@ -15,9 +16,11 @@ class TwitterCldr.TimespanFormatter
       "year":   31556926
     }
 
-  format: (seconds, options = {}) ->
+  format: (seconds, fmt_options = {}) ->
+    options = {}
+    options[key] = obj for key, obj of fmt_options
     options["direction"] ||= (if seconds < 0 then "ago" else "until")
-    options["unit"] = this.calculate_unit(Math.abs(seconds)) if options["unit"] is null or options["unit"] is undefined
+    options["unit"] = this.calculate_unit(Math.abs(seconds), options) if options["unit"] is null or options["unit"] is undefined
     options["type"] ||= @default_type
     options["number"] = this.calculate_time(Math.abs(seconds), options["unit"])
     number = this.calculate_time(Math.abs(seconds), options["unit"])
@@ -26,21 +29,19 @@ class TwitterCldr.TimespanFormatter
     strings = (token.value for token in @tokens[options["direction"]][options["unit"]][options["type"]][options["rule"]])
     strings.join("").replace(/\{[0-9]\}/, number.toString())
 
-  calculate_unit: (seconds) ->
-    if seconds < 30
-      "second"
-    else if seconds < 2670
-      "minute"
-    else if seconds < 86369
-      "hour"
-    else if seconds < 604800
-      "day"
-    else if seconds < 2591969
-      "week"
-    else if seconds < 31556926
-      "month"
-    else
-      "year"
+  calculate_unit: (seconds, unit_options = {}) ->
+    options = {}
+    options[key] = obj for key, obj of unit_options
+    options["approximate"] = true unless options?.approximate?
+    multiplier = if options.approximate then @approximate_multiplier else 1
+
+    if seconds < (@time_in_seconds.minute * multiplier) then "second"
+    else if seconds < (@time_in_seconds.hour * multiplier) then "minute"
+    else if seconds < (@time_in_seconds.day * multiplier) then "hour"
+    else if seconds < (@time_in_seconds.week * multiplier) then "day"
+    else if seconds < (@time_in_seconds.month * multiplier) then "week"
+    else if seconds < (@time_in_seconds.year * multiplier) then "month"
+    else "year"
 
   # 0 <-> 29 secs                                                   # => seconds
   # 30 secs <-> 44 mins, 29 secs                                    # => minutes

@@ -21,7 +21,7 @@ module TwitterCldr
 
         # required alias definition that adds twitter_cldr to Twitter's static build process
         def module_def
-          %Q(`/*-module-*/\n/*_lib/twitter_cldr_*/`)
+          %Q(`/*-module-/\n/*_lib/twitter_cldr_*/`)
         end
       end
     end

@@ -9,6 +9,50 @@ describe("TimespanFormatter", function() {
   });
 
   describe("#format", function() {
+    it("approximates timespans accurately", function() {
+      var options = {direction: "none"}
+      expect(formatter.format(44, options)).toEqual("44 seconds");
+      expect(formatter.format(45, options)).toEqual("1 minute");
+
+      expect(formatter.format(2699, options)).toEqual("45 minutes");
+      expect(formatter.format(2700, options)).toEqual("1 hour");
+
+      expect(formatter.format(64799, options)).toEqual("18 hours");
+      expect(formatter.format(64800, options)).toEqual("1 day");
+
+      expect(formatter.format(453599, options)).toEqual("5 days");
+      expect(formatter.format(453600, options)).toEqual("1 week");
+
+      expect(formatter.format(1972307, options)).toEqual("3 weeks");
+      expect(formatter.format(1972308, options)).toEqual("1 month");
+
+      expect(formatter.format(23667694, options)).toEqual("9 months");
+      expect(formatter.format(23667695, options)).toEqual("1 year");
+    });
+
+    it("doesn't approximate timespans if explicity asked not to", function() {
+      var options = {direction: "none", approximate: false}
+      expect(formatter.format(44, options)).toEqual("44 seconds");
+      expect(formatter.format(45, options)).toEqual("45 seconds");
+
+      expect(formatter.format(2699, options)).toEqual("45 minutes");
+      expect(formatter.format(2700, options)).toEqual("45 minutes");
+
+      expect(formatter.format(64799, options)).toEqual("18 hours");
+      expect(formatter.format(64800, options)).toEqual("18 hours");
+
+      expect(formatter.format(453599, options)).toEqual("5 days");
+      expect(formatter.format(453600, options)).toEqual("5 days");
+
+      expect(formatter.format(1972307, options)).toEqual("3 weeks");
+      expect(formatter.format(1972308, options)).toEqual("3 weeks");
+
+      expect(formatter.format(23667694, options)).toEqual("9 months");
+      expect(formatter.format(23667695, options)).toEqual("9 months");
+
+      expect(formatter.format(31556926, options)).toEqual("1 year");
+    });
+
     it("works for a variety of units for a non-directional timespan", function() {
       expect(formatter.format(3273932, {
         unit: "year",

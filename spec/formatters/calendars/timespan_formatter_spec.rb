@@ -12,8 +12,8 @@ describe TimespanFormatter do
   describe "#format" do
     let(:formatter) { TimespanFormatter.new(:locale => :de) }
 
-    it "approximates timespans accurately" do
-      options = { :direction => :none }
+    it "approximates timespans accurately if explicity asked to" do
+      options = { :direction => :none, :approximate => true }
       formatter.format(44, options).should match_normalized("44 Sekunden")
       formatter.format(45, options).should match_normalized("1 Minute")
 
@@ -33,8 +33,8 @@ describe TimespanFormatter do
       formatter.format(23667695, options).should match_normalized("1 Jahr")
     end
 
-    it "doesn't approximate timespans if explicity asked not to" do
-      options = { :direction => :none, :approximate => false }
+    it "doesn't approximate timespans by default" do
+      options = { :direction => :none }
       formatter.format(44, options).should match_normalized("44 Sekunden")
       formatter.format(45, options).should match_normalized("45 Sekunden")
 

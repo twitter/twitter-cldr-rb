@@ -40,7 +40,7 @@ module TwitterCldr
 
       def calculate_unit(seconds, unit_options = {})
         options = unit_options.dup
-        options[:approximate] = true if options[:approximate].nil?
+        options[:approximate] = false if options[:approximate].nil?
         multiplier = options[:approximate] ? APPROXIMATE_MULTIPLIER : 1
 
         if seconds < (TIME_IN_SECONDS[:minute] * multiplier) then :second

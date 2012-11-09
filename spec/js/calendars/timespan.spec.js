@@ -9,8 +9,8 @@ describe("TimespanFormatter", function() {
   });
 
   describe("#format", function() {
-    it("approximates timespans accurately", function() {
-      var options = {direction: "none"}
+    it("approximates timespans accurately if explicity asked to", function() {
+      var options = {direction: "none", approximate: true}
       expect(formatter.format(44, options)).toEqual("44 seconds");
       expect(formatter.format(45, options)).toEqual("1 minute");
 
@@ -30,8 +30,8 @@ describe("TimespanFormatter", function() {
       expect(formatter.format(23667695, options)).toEqual("1 year");
     });
 
-    it("doesn't approximate timespans if explicity asked not to", function() {
-      var options = {direction: "none", approximate: false}
+    it("doesn't approximate timespans by default", function() {
+      var options = {direction: "none"}
       expect(formatter.format(44, options)).toEqual("44 seconds");
       expect(formatter.format(45, options)).toEqual("45 seconds");
 

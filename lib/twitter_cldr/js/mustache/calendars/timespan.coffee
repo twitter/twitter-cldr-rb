@@ -32,7 +32,7 @@ class TwitterCldr.TimespanFormatter
   calculate_unit: (seconds, unit_options = {}) ->
     options = {}
     options[key] = obj for key, obj of unit_options
-    options["approximate"] = true unless options?.approximate?
+    options["approximate"] = false unless options.approximate?
     multiplier = if options.approximate then @approximate_multiplier else 1
 
     if seconds < (@time_in_seconds.minute * multiplier) then "second"

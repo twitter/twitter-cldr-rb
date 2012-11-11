@@ -8,9 +8,9 @@ module TwitterCldr
     class DateTokenizer < TwitterCldr::Tokenizers::DateTimeTokenizer
       TOKEN_SPLITTER_REGEX = /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/
       TOKEN_TYPE_REGEXES = {
-        :composite => { :regex => /^\#\{[^\}]+\}/, :content => /^\#\{([^\}]+)\}/ },
-        :pattern   => { :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/ },
-        :plaintext => { :regex => // }
+        :composite => { :regex => /^\#\{[^\}]+\}/, :content => /^\#\{([^\}]+)\}/, :priority => 1 },
+        :pattern   => { :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/, :priority => 2 },
+        :plaintext => { :regex => //, :priority => 3 }
       }
 
       def initialize(options = {})

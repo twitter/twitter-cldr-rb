@@ -3,6 +3,9 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'pry'
+require 'pry-nav'
+
 module TwitterCldr
   module Tokenizers
     class Base
@@ -21,24 +24,24 @@ module TwitterCldr
       # Not to be confused with tokenize_pattern, which pulls out placeholders.  Tokenize_format actually splits a completely
       # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
-        final = []
-        text.split(token_splitter_regex_for(type)).each_with_index do |token, index|
+        text.split(token_splitter_regex_for(type)).each_with_index.inject([]) do |ret, (token, index)|
           unless index == 0 && token == ""
-            token_type_regexes_for(type).each_pair do |token_type, matchers|
-              if token =~ matchers[:regex]
-                if token_type == :composite
-                  content = token.match(matchers[:content])[1]
-                  final << CompositeToken.new(tokenize_format(content))
-                else
-                  final << Token.new(:value => token, :type => token_type)
-                end
+            regexes = token_type_regexes_for(type)
 
-                break
-              end
+            token_type = regexes.inject([]) do |match_ret, (token_type, matchers)|
+              match_ret << token_type if token =~ matchers[:regex]
+              match_ret
+            end.min { |a, b| regexes[a][:priority] <=> regexes[b][:priority] }
+
+            if token_type == :composite
+              content = token.match(regexes[token_type][:content])[1]
+              ret << CompositeToken.new(tokenize_format(content))
+            else
+              ret << Token.new(:value => token, :type => token_type)
             end
           end
+          ret
         end
-        final
       end
 
       def token_type_regexes_for(type)

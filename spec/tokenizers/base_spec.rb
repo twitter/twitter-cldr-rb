@@ -198,10 +198,10 @@ describe Base do
       stub(@base).token_type_regexes do
         {
           :else => {
-            :a => { :regex => /a/ },
-            :b => { :regex => /b/ },
-            :c => { :regex => /c/ },
-            :plaintext => { :regex => // }
+            :a => { :regex => /a/, :priority => 1 },
+            :b => { :regex => /b/, :priority => 1 },
+            :c => { :regex => /c/, :priority => 1 },
+            :plaintext => { :regex => //, :priority => 2 }
           }
         }
       end

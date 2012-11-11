@@ -11,7 +11,7 @@ module TwitterCldr
 
     class CustomLocalesResourcesImporter
 
-      API_ENDPOINT = "http://translate.twttr.com/api/2/twitter/phrase/%s/translations.json"
+      API_ENDPOINT = "http://translate.twitter.com/api/2/twitter/phrase/%s/translations.json"
 
       TIME_PERIODS = {
           :day    => 19636,

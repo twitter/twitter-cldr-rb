@@ -24,7 +24,7 @@ describe Currencies do
     it "should list all supported country codes" do
       codes = Currencies.currency_codes
 
-      codes.size.should == 112
+      codes.size.should == 296
       codes.should include(*TEST_CODES)
     end
   end
@@ -34,11 +34,10 @@ describe Currencies do
       data = Currencies.for_country("Peru")
 
       data.should be_a(Hash)
-      data.should_not include(:country)
       data.should include(
-        :code     => "PEN",
-        :currency => "Nuevo Sol",
-        :symbol   => "S/."
+        :currency => :PEN,
+        :name => "Peruvian nuevo sol",
+        :symbol   => nil
       )
     end
   end
@@ -48,11 +47,10 @@ describe Currencies do
       data = Currencies.for_code("PEN")
 
       data.should be_a(Hash)
-      data.should_not include(:code)
       data.should include(
-          :country  => "Peru",
-          :currency => "Nuevo Sol",
-          :symbol   => "S/."
+        :name => "Peruvian nuevo sol",
+        :currency => :PEN,
+        :symbol => nil
       )
     end
   end

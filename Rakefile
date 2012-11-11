@@ -45,7 +45,7 @@ namespace :update do
   task :locales_resources, :cldr_path do |_, args|
     TwitterCldr::Resources::LocalesResourcesImporter.new(
         args[:cldr_path] || './vendor/cldr',
-        './resources/locales'
+        './resources'
     ).import
   end
 
@@ -76,6 +76,14 @@ namespace :update do
     TwitterCldr::Resources::CompositionExclusionsImporter.new(
         args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
         './resources/unicode_data'
+    ).import
+  end
+
+  desc 'Import currency digits and rounding resource'
+   task :currency_digits_and_rounding, :cldr_path do |_, args|
+     TwitterCldr::Resources::CurrencyDigitsAndRoundingImporter.new(
+         args[:cldr_path] || './vendor/cldr',
+        './resources/shared'
     ).import
   end
 

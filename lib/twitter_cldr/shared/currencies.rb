@@ -6,34 +6,41 @@
 module TwitterCldr
   module Shared
     module Currencies
-
       class << self
-
         def countries
-          resource.keys.map(&:to_s)
+          Kernel.warn("Currencies#countries will be deprecated. Please use Currencies#for_code.")
+          resource_countries.keys.map(&:to_s)
         end
 
-        def currency_codes
-          resource.values.map { |data| data[:code] }
+        def currency_codes(locale = :en)
+          resource(locale).keys.map { |c| c.to_s }
         end
 
-        def for_country(country_name)
-          resource[country_name.to_sym]
+        def for_country(country_name, locale = :en)
+          Kernel.warn("Currencies#for_country will be deprecated. Please use Currencies#for_code.")
+          for_code(resource_countries[country_name.to_sym][:code], locale) if resource_countries[country_name.to_sym]
         end
 
-        def for_code(currency_code)
-          country_name, data = resource.detect { |_, data| data[:code] == currency_code }
-          { :country => country_name.to_s, :currency => data[:currency], :symbol => data[:symbol] } if data
+        def for_code(currency_code, locale = :en)
+          currency_code = currency_code.to_sym
+          data = resource(locale)[currency_code]
+          { :currency => currency_code,
+            :name => data[:one],
+            :symbol => data[:symbol] } if data
         end
 
         private
 
-        def resource
-          @resource ||= TwitterCldr.get_resource(:shared, :currencies)
+        def resource_countries
+          @resource_countries ||= TwitterCldr.get_resource(:shared, :currencies)
         end
 
+        def resource(locale)
+          locale = locale.to_sym
+          @resource ||= {}
+          @resource[locale] ||= TwitterCldr.get_resource(:locales, locale, :currencies)[locale][:currencies]
+        end
       end
-
     end
   end
 end

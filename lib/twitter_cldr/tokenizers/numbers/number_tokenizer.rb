@@ -9,8 +9,8 @@ module TwitterCldr
       VALID_TYPES = [:decimal, :percent, :currency]
       TOKEN_SPLITTER_REGEX = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
       TOKEN_TYPE_REGEXES = {
-        :pattern => { :regex => /[0?#,\.]*/ },
-        :plaintext => { :regex => // }
+        :pattern => { :regex => /[0?#,\.]*/, :priority => 1 },
+        :plaintext => { :regex => //, :priority => 2 }
       }
 
       def initialize(options = {})

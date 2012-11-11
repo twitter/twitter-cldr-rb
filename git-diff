@@ -1,0 +1,14 @@
+#! /usr/bin/env ruby
+
+excl = [
+  "resources/collation",
+  "resources/custom",
+  "resources/locales",
+  "resources/shared",
+  "resources/unicode_data",
+].map { |pattern| "grep -v #{pattern}" }
+
+files = `git diff --diff-filter=ACMRTUXB --name-only master . | #{excl.join(" | ")}`.split("\n")
+`git diff master #{files.join(" ")} > /tmp/twitter-cldr-rb.diff`
+`git diff --diff-filter=D master . >> /tmp/twitter-cldr-rb.diff`
+exec "less /tmp/twitter-cldr-rb.diff"

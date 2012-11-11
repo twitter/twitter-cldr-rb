@@ -82,7 +82,7 @@ describe LocalizedDateTime do
         fmt = TwitterCldr::Formatters::DateTimeFormatter.new(:locale => locale)
         fmt.additional_format_selector.patterns.each do |pattern|
           lambda { fmt.format(DateTime.now, :type => :additional, :format => pattern.to_s) }.should_not raise_error
-          lambda { DateTime.now.localize(:locale).to_s(:format => pattern.to_s) }
+          lambda { DateTime.now.localize(:locale).to_s(:format => pattern.to_s) }.should_not raise_error
         end
       end
     end

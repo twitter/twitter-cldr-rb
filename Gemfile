@@ -10,7 +10,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :path => "/Users/cdutro/workspace/ruby-cldr" #:github => 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
 end
 
 group :test do

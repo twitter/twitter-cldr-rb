@@ -54,14 +54,23 @@ module TwitterCldr
 
       protected
 
+      # there is incomplete era data in CLDR for certain locales like Hindi
+      # fall back if that happens
       def era(date, pattern, length)
         choices = case length
+          when 0
+            ["", ""]
           when 1..3
             @tokenizer.calendar[:eras][:abbr]
           else
             @tokenizer.calendar[:eras][:name]
         end
-        choices[date.year < 0 ? 0 : 1]
+
+        if result = choices[date.year < 0 ? 0 : 1]
+          result
+        else
+          era(date, pattern, length - 1)
+        end
       end
 
       def year(date, pattern, length)

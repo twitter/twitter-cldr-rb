@@ -194,8 +194,8 @@ describe DateTimeFormatter do
     end
 
     it "test: pattern MMM" do
-      @formatter.send(:month, Date.new(2010,  1, 1), 'MMM', 3).should == 'Jan'
-      @formatter.send(:month, Date.new(2010, 10, 1), 'MMM', 3).should == 'Okt'
+      @formatter.send(:month, Date.new(2010,  1, 1), 'MMM', 3).should == 'Jan.'
+      @formatter.send(:month, Date.new(2010, 10, 1), 'MMM', 3).should == 'Okt.'
     end
 
     it "test: pattern MMMM" do

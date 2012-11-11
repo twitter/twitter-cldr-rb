@@ -120,7 +120,7 @@ describe Base do
       result = @base.send(:tokens_for, [:fake_key], "fake_type")
       result[0].value.should == "token1"
       result[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type|nil".hash].should == result
 
       result_again = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_again.object_id.should == result.object_id
@@ -130,7 +130,7 @@ describe Base do
       result_en = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_en[0].value.should == "token1"
       result_en[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result_en
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type|nil".hash].should == result_en
       result_en2 = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_en2.object_id.should == result_en.object_id
 
@@ -138,7 +138,7 @@ describe Base do
       result_pt = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_pt[0].value.should == "token1"
       result_pt[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type".hash].should == result_pt
+      @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type|nil".hash].should == result_pt
       result_pt.object_id.should_not == result_en.object_id
       result_pt2 = @base.send(:tokens_for, [:fake_key], "fake_type")
       result_pt2.object_id.should == result_pt.object_id
@@ -191,11 +191,21 @@ describe Base do
   # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
   describe "#tokenize_format" do
     it "assigns the right token types to the tokens" do
-      stub(@base).token_splitter_regex { /([abc])/ }
-      stub(@base).token_type_regexes { [{ :type => :a, :regex => /a/ },
-                                        { :type => :b, :regex => /b/ },
-                                        { :type => :c, :regex => /c/ },
-                                        { :type => :plaintext, :regex => // }] }
+      stub(@base).token_splitter_regexes do
+        { :else => /([abc])/ }
+      end
+
+      stub(@base).token_type_regexes do
+        {
+          :else => {
+            :a => { :regex => /a/ },
+            :b => { :regex => /b/ },
+            :c => { :regex => /c/ },
+            :plaintext => { :regex => // }
+          }
+        }
+      end
+
       tokens = @base.send(:tokenize_format, "a b c")
       tokens.size.should == 5
 

@@ -7,22 +7,32 @@ module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
       VALID_TYPES = [:decimal, :percent, :currency]
+      TOKEN_SPLITTER_REGEX = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
+      TOKEN_TYPE_REGEXES = {
+        :pattern => { :regex => /[0?#,\.]*/ },
+        :plaintext => { :regex => // }
+      }
 
       def initialize(options = {})
         super(options)
 
         @type = options[:type] || :decimal
 
-        @token_splitter_regex = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
-        @token_type_regexes   = [{ :type => :pattern, :regex => /[0?#,\.]*/ }, { :type => :plaintext, :regex => // }]
+        @token_splitter_regexes = {
+          :else => TOKEN_SPLITTER_REGEX
+        }
+
+        @token_type_regexes = {
+          :else => TOKEN_TYPE_REGEXES
+        }
 
         @base_path   = [:numbers, :formats]
         @symbol_path = [:numbers, :symbols]
 
         @paths = {
-            :default  => [:patterns, :default],
-            :positive => [:patterns, :positive],
-            :negative => [:patterns, :negative]
+          :default  => [:patterns, :default],
+          :positive => [:patterns, :positive],
+          :negative => [:patterns, :negative]
         }
       end
 

@@ -22,7 +22,6 @@ module TwitterCldr
             when :composite
               result << eval(process_tokens(token.tokens, obj)).to_s
             when :pattern
-              binding.pry
               result << self.result_for_token(token, index, obj)
             else
               if token.value.size > 0 && token.value[0].chr == "'" && token.value[-1].chr == "'"

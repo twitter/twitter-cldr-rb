@@ -71,8 +71,18 @@ describe LocalizedDateTime do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |type|
+        (TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES - [:additional]).each do |type|
           lambda { DateTime.now.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
+        end
+      end
+    end
+
+    it "don't raise errors for additional date formats" do
+      TwitterCldr.supported_locales.each do |locale|
+        fmt = TwitterCldr::Formatters::DateTimeFormatter.new(:locale => locale)
+        fmt.additional_format_selector.patterns.each do |pattern|
+          lambda { fmt.format(DateTime.now, :type => :additional, :format => pattern.to_s) }.should_not raise_error
+          lambda { DateTime.now.localize(:locale).to_s(:format => pattern.to_s) }
         end
       end
     end

@@ -2,6 +2,42 @@
 :ru:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :E: ccc
+        :Ed: ccc, d
+        :H: H
+        :Hm: H:mm
+        :Hms: H:mm:ss
+        :M: L
+        :MEd: E, dd.MM
+        :MMM: LLL
+        :MMMEd: ccc, d MMM
+        :MMMd: d MMM
+        :MMdd: dd.MM
+        :Md: dd.MM
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: MM.y
+        :yMEd: ccc, d.MM.y 'г'.
+        :yMMM: LLL y
+        :yMMMEd: E, d MMM y
+        :yMMMd: d MMM y 'г'.
+        :yMd: dd.MM.y
+        :yQQQ: QQQ y 'г'.
+        :yQQQQ: y QQQQ
+        :yyMM: MM.yy
+        :yyMMM: LLL yy
+        :yyMMMEd: E, d MMM yy
+        :yyQQQ: QQQ yy
+        :yyyy: y
+        :yyyyLLLL: LLLL y
+        :yyyyMM: MM.yyyy
+        :yyyyMMMM: LLLL y
+        :yyyyQQQQ: QQQQ y 'г'.
       :days:
         :format:
           :abbreviated:
@@ -13,13 +49,21 @@
             :tue: вт
             :wed: ср
           :narrow:
-            :fri: П
-            :mon: Пн
-            :sat: С
-            :sun: В
-            :thu: Ч
-            :tue: Вт
-            :wed: С
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
+          :short:
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide:
             :fri: пятница
             :mon: понедельник
@@ -45,6 +89,14 @@
             :thu: Ч
             :tue: В
             :wed: С
+          :short:
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide:
             :fri: Пятница
             :mon: Понедельник
@@ -79,11 +131,11 @@
         :date:
           :default: :calendars.gregorian.formats.date.medium
           :full:
-            :pattern: EEEE, d MMMM y 'г'.
+            :pattern: EEEE, d MMMM y 'г'.
           :long:
-            :pattern: d MMMM y 'г'.
+            :pattern: d MMMM y 'г'.
           :medium:
-            :pattern: dd.MM.yyyy
+            :pattern: dd MMM y 'г'.
           :short:
             :pattern: dd.MM.yy
         :datetime:
@@ -217,10 +269,18 @@
             3: 3-й квартал
             4: 4-й квартал
         :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated:
+            1: 1-й кв.
+            2: 2-й кв.
+            3: 3-й кв.
+            4: 4-й кв.
           :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide:
+            1: 1-й квартал
+            2: 2-й квартал
+            3: 3-й квартал
+            4: 4-й квартал

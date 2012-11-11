@@ -2,6 +2,39 @@
 :es:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: E d
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, d/M
+        :MMM: LLL
+        :MMMEd: E d MMM
+        :MMMMd: d 'de' MMMM
+        :MMMd: d MMM
+        :MMMdd: dd-MMM
+        :MMd: d/MM
+        :MMdd: dd/MM
+        :Md: d/M
+        :d: d
+        :h: hh a
+        :hm: hh:mm a
+        :hms: hh:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M/y
+        :yMEd: EEE, d/M/y
+        :yMMM: MMM y
+        :yMMMEd: EEE, d 'de' MMMM 'de' y
+        :yMMMM: MMMM 'de' y
+        :yMMMd: d MMM y
+        :yMd: d/M/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ 'de' y
+        :yyMM: MM/yy
+        :yyMMM: MMM-yy
+        :yyyyMM: MM/yyyy
       :days:
         :format:
           :abbreviated:
@@ -13,6 +46,14 @@
             :tue: mar
             :wed: mié
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short:
+            :fri: V
+            :mon: L
+            :sat: S
+            :sun: D
+            :thu: J
+            :tue: M
+            :wed: X
           :wide:
             :fri: viernes
             :mon: lunes
@@ -24,6 +65,14 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
+            :fri: V
+            :mon: L
+            :sat: S
+            :sun: D
+            :thu: J
+            :tue: M
+            :wed: X
+          :short:
             :fri: V
             :mon: L
             :sat: S
@@ -115,7 +164,18 @@
             9: septiembre
         :stand-alone:
           :abbreviated:
+            1: ene
+            10: oct
+            11: nov
+            12: dic
+            2: feb
+            3: mar
+            4: abr
             5: mayo
+            6: jun
+            7: jul
+            8: ago
+            9: sep
           :narrow:
             1: E
             10: O

@@ -11,19 +11,32 @@
       :decimal:
         :patterns:
           :default: ! '#,##0.###'
+          :long:
+            1000: 0 tusen
+            10000: 00 tusen
+            100000: 000 tusen
+            1000000: 0 miljoner
+            10000000: 00 miljoner
+            100000000: 000 miljoner
+            1000000000: 0 miljarder
+            10000000000: 00 miljarder
+            100000000000: 000 miljarder
+            1000000000000: 0 biljoner
+            10000000000000: 00 biljoner
+            100000000000000: 000 biljoner
           :short:
-            1000: 0
-            10000: 0
-            100000: 0
-            1000000: 0.0 mjn
-            10000000: 00 mjn
-            100000000: 000 mjn
-            1000000000: 0.0 mjd
-            10000000000: 00 mjd
-            100000000000: 000 mjd
-            1000000000000: 0.0 trl
-            10000000000000: 00 trl
-            100000000000000: 000 trl
+            1000: 0 tn
+            10000: 00 tn
+            100000: 000 tn
+            1000000: 0 mn
+            10000000: 00 mn
+            100000000: 000 mn
+            1000000000: 0 md
+            10000000000: 00 md
+            100000000000: 000 md
+            1000000000000: 0 bn
+            10000000000000: 00 bn
+            100000000000000: 000 bn
       :percent:
         :patterns:
           :default: ! '#,##0 %'
@@ -32,6 +45,8 @@
           :default: ! '#E0'
     :symbols:
       :alias: ''
+      :currency_decimal: ! ':'
+      :currency_group: .
       :decimal: ! ','
       :exponential: ×10^
       :group:  

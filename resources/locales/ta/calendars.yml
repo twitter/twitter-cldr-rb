@@ -2,6 +2,35 @@
 :ta:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d E
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, d/M
+        :MMM: LLL
+        :MMMEd: E, d MMM
+        :MMMMd: d MMMM
+        :MMMd: d MMM
+        :MMdd: dd-MM
+        :Md: d/M
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M/y
+        :yMEd: E, d/M/y
+        :yMMM: MMM y
+        :yMMMEd: E, d MMM, y
+        :yMMMd: d MMM, y
+        :yMd: d/M/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
+        :yyyyMM: MM-yyyy
+        :yyyyMMMM: MMMM y
       :days:
         :format:
           :abbreviated:
@@ -13,6 +42,14 @@
             :tue: செ
             :wed: பு
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short:
+            :fri: வெ
+            :mon: தி
+            :sat: ச
+            :sun: ஞா
+            :thu: வி
+            :tue: செ
+            :wed: பு
           :wide:
             :fri: வெள்ளி
             :mon: திங்கள்
@@ -24,6 +61,14 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
+            :fri: வெ
+            :mon: தி
+            :sat: ச
+            :sun: ஞா
+            :thu: வி
+            :tue: செ
+            :wed: பு
+          :short:
             :fri: வெ
             :mon: தி
             :sat: ச
@@ -178,11 +223,11 @@
             :am: முற்பகல்
             :pm: பிற்பகல்
           :narrow:
-            :am: முற்பகல்
-            :pm: பிற்பகல்
+            :am: AM
+            :pm: PM
           :wide:
-            :am: முற்பகல்
-            :pm: பிற்பகல்
+            :am: AM
+            :pm: PM
         :stand-alone: {}
       :quarters:
         :format:

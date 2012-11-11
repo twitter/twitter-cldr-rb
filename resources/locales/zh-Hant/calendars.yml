@@ -2,6 +2,39 @@
 :zh-Hant:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d日（E）
+        :H: H時
+        :Hm: H:mm
+        :Hms: H:mm:ss
+        :M: M月
+        :MEd: M/d（E）
+        :MMM: LLL
+        :MMMEd: M月d日E
+        :MMMMdd: M月dd日
+        :MMMd: M月d日
+        :MMdd: MM/dd
+        :Md: M/d
+        :d: d日
+        :h: ah時
+        :hm: ah:mm
+        :hms: ah:mm:ss
+        :ms: mm:ss
+        :y: y年
+        :yM: y/M
+        :yMEd: y/M/d（E）
+        :yMMM: y年M月
+        :yMMMEd: y年M月d日E
+        :yMMMd: y年M月d日
+        :yMd: y/M/d
+        :yQQQ: y年QQQ
+        :yQQQQ: y年QQQQ
+        :yyMM: yy-MM
+        :yyMMM: yy年M月
+        :yyQQQ: yy年第Q季度
+        :yyyy: y年
+        :yyyyM: y年M月
+        :yyyyMMMM: y年M月
       :days:
         :format:
           :abbreviated:
@@ -13,6 +46,14 @@
             :tue: 週二
             :wed: 週三
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short:
+            :fri: 五
+            :mon: 一
+            :sat: 六
+            :sun: 日
+            :thu: 四
+            :tue: 二
+            :wed: 三
           :wide:
             :fri: 星期五
             :mon: 星期一
@@ -24,6 +65,14 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
+            :fri: 五
+            :mon: 一
+            :sat: 六
+            :sun: 日
+            :thu: 四
+            :tue: 二
+            :wed: 三
+          :short:
             :fri: 五
             :mon: 一
             :sat: 六
@@ -143,7 +192,16 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :afternoon: 下午
+            :am: 上午
+            :earlyMorning: 清晨
+            :midDay: 中午
+            :morning: 上午
+            :night: 晚上
+            :noon: 中午
+            :pm: 下午
+            :weeHours: 凌晨
           :wide:
             :afternoon: 下午
             :am: 上午

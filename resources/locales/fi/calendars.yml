@@ -2,6 +2,38 @@
 :fi:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: E d.
+        :H: H
+        :Hm: H.mm
+        :Hms: H.mm.ss
+        :M: L
+        :MEd: E d.M.
+        :MMM: LLL
+        :MMMEd: ccc d. MMM
+        :MMMd: d. MMM
+        :Md: d.M.
+        :d: d
+        :h: h a
+        :hm: h.mm a
+        :hms: h.mm.ss a
+        :ms: mm.ss
+        :y: y
+        :yM: L.yyyy
+        :yMEd: E d.M.yyyy
+        :yMMM: LLL y
+        :yMMMEd: E d. MMM y
+        :yMMMMccccd: cccc d. MMMM y
+        :yMMMd: d. MMM y
+        :yMd: d.M.yyyy
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
+        :yyMM: M.yy
+        :yyMMM: LLLL yy
+        :yyyyM: M.yyyy
+        :yyyyMEd: E d.M.yyyy
+        :yyyyMMMM: LLLL y
+        :yyyyQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -20,6 +52,14 @@
             :thu: T
             :tue: T
             :wed: K
+          :short:
+            :fri: pe
+            :mon: ma
+            :sat: la
+            :sun: su
+            :thu: to
+            :tue: ti
+            :wed: ke
           :wide:
             :fri: perjantaina
             :mon: maanantaina
@@ -45,6 +85,14 @@
             :thu: T
             :tue: T
             :wed: K
+          :short:
+            :fri: pe
+            :mon: ma
+            :sat: la
+            :sun: su
+            :thu: to
+            :tue: ti
+            :wed: ke
           :wide:
             :fri: perjantai
             :mon: maanantai
@@ -79,7 +127,7 @@
         :date:
           :default: :calendars.gregorian.formats.date.medium
           :full:
-            :pattern: cccc, d. MMMM y
+            :pattern: cccc d. MMMM y
           :long:
             :pattern: d. MMMM y
           :medium:

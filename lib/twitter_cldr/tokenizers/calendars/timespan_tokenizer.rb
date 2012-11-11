@@ -15,43 +15,43 @@ module TwitterCldr
         @token_splitter_regex = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/ # creates spaces
 
         @token_type_regexes = [
-            { :type => :pattern, :regex => /[0?#,\.]*/ }, # splits token at right places
-            { :type => :plaintext, :regex => // }
+          { :type => :pattern, :regex => /[0?#,\.]*/ }, # splits token at right places
+          { :type => :plaintext, :regex => // }
         ]
 
         @base_path = [:units]
 
         @paths = {
-            :ago => {
-                :default => :'hour-past',
-                :second  => :'second-past',
-                :minute  => :'minute-past',
-                :hour    => :'hour-past',
-                :day     => :'day-past',
-                :week    => :'week-past',
-                :month   => :'month-past',
-                :year    => :'year-past'
-            },
-            :until => {
-                :default => :'hour-future',
-                :second  => :'second-future',
-                :minute  => :'minute-future',
-                :hour    => :'hour-future',
-                :day     => :'day-future',
-                :week    => :'week-future',
-                :month   => :'month-future',
-                :year    => :'year-future'
-            },
-            :none => {
-                :default => :second,
-                :second  => :second,
-                :minute  => :minute,
-                :hour    => :hour,
-                :day     => :day,
-                :week    => :week,
-                :month   => :month,
-                :year    => :year
-            }
+          :ago => {
+            :default => :'hour-past',
+            :second  => :'second-past',
+            :minute  => :'minute-past',
+            :hour    => :'hour-past',
+            :day     => :'day-past',
+            :week    => :'week-past',
+            :month   => :'month-past',
+            :year    => :'year-past'
+          },
+          :until => {
+            :default => :'hour-future',
+            :second  => :'second-future',
+            :minute  => :'minute-future',
+            :hour    => :'hour-future',
+            :day     => :'day-future',
+            :week    => :'week-future',
+            :month   => :'month-future',
+            :year    => :'year-future'
+          },
+          :none => {
+            :default => :second,
+            :second  => :second,
+            :minute  => :minute,
+            :hour    => :hour,
+            :day     => :day,
+            :week    => :week,
+            :month   => :month,
+            :year    => :year
+          }
         }
       end
 

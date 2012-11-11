@@ -48,6 +48,10 @@ module TwitterCldr
         self.send(METHODS[token.value[0].chr], date, token.value, token.value.size)
       end
 
+      def additional_format_selector
+        @tokenizer.additional_format_selector
+      end
+
       protected
 
       def era(date, pattern, length)
@@ -132,10 +136,8 @@ module TwitterCldr
           when 2
             date.month.to_s.rjust(length, '0')
           when 3
-            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             @tokenizer.calendar[:months][:'stand-alone'][:abbreviated][date.month]
           when 4
-            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             @tokenizer.calendar[:months][:'stand-alone'][:wide][date.month]
           when 5
             @tokenizer.calendar[:months][:'stand-alone'][:narrow][date.month]

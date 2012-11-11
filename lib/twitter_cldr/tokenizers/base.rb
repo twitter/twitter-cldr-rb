@@ -7,7 +7,7 @@ module TwitterCldr
   module Tokenizers
     class Base
       attr_reader :resource, :locale
-      attr_reader :token_splitter_regex, :token_type_regexes, :paths
+      attr_reader :token_splitter_regexes, :token_type_regexes, :paths, :format
       attr_accessor :type, :placeholders
 
       def initialize(options = {})
@@ -22,15 +22,15 @@ module TwitterCldr
       # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
         final = []
-        text.split(token_splitter_regex).each_with_index do |token, index|
+        text.split(token_splitter_regex_for(type)).each_with_index do |token, index|
           unless index == 0 && token == ""
-            token_type_regexes.each do |token_type|
-              if token =~ token_type[:regex]
-                if token_type[:type] == :composite
-                  content = token.match(token_type[:content])[1]
+            token_type_regexes_for(type).each_pair do |token_type, matchers|
+              if token =~ matchers[:regex]
+                if token_type == :composite
+                  content = token.match(matchers[:content])[1]
                   final << CompositeToken.new(tokenize_format(content))
                 else
-                  final << Token.new(:value => token, :type => token_type[:type])
+                  final << Token.new(:value => token, :type => token_type)
                 end
 
                 break
@@ -41,9 +41,17 @@ module TwitterCldr
         final
       end
 
+      def token_type_regexes_for(type)
+        token_type_regexes[type] || token_type_regexes[:else]
+      end
+
+      def token_splitter_regex_for(type)
+        token_splitter_regexes[type] || token_splitter_regexes[:else]
+      end
+
       def tokens_for(path, type)
         @@token_cache ||= {}
-        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type, format)
 
         unless @@token_cache.include?(cache_key)
           result = []

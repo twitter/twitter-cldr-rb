@@ -2,6 +2,31 @@
 :eu:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d E
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, M/d
+        :MMM: LLL
+        :MMMEd: E, MMM d
+        :MMMd: MMM d
+        :Md: M/d
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: y-M
+        :yMEd: E, M/d/y
+        :yMMM: MMM y
+        :yMMMEd: E, MMM d, y
+        :yMMMd: MMM d, y
+        :yMd: y-M-d
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -20,6 +45,14 @@
             :thu: A
             :tue: A
             :wed: A
+          :short:
+            :fri: or.
+            :mon: al.
+            :sat: lr.
+            :sun: ig.
+            :thu: og.
+            :tue: ar.
+            :wed: az.
           :wide:
             :fri: ostirala
             :mon: astelehena
@@ -38,6 +71,14 @@
             :thu: A
             :tue: A
             :wed: L
+          :short:
+            :fri: or.
+            :mon: al.
+            :sat: lr.
+            :sun: ig.
+            :thu: og.
+            :tue: ar.
+            :wed: az.
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
@@ -63,9 +104,9 @@
         :date:
           :default: :calendars.gregorian.formats.date.medium
           :full:
-            :pattern: EEEE, y'eko' MMMM'ren' dd'a'
+            :pattern: EEEE, y MMMM dd
           :long:
-            :pattern: y'eko' MMM'ren' dd'a'
+            :pattern: y MMMM d
           :medium:
             :pattern: y MMM d
           :short:

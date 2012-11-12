@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'rspec'
+require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 
 class FastGettext

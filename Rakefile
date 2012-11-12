@@ -32,12 +32,15 @@ namespace :spec do
 end
 
 if RUBY_VERSION < '1.9.0'
-  desc 'Run all examples with RCov'
+  desc 'Run specs with RCov'
   RSpec::Core::RakeTask.new('spec:rcov') do |t|
-    t.rcov      = true
-    t.pattern   = './spec/**/*_spec.rb'
-    t.rcov_opts = %w(-T --sort coverage --exclude gems/,spec/)
+    t.rcov       = true
+    t.pattern    = './spec/**/*_spec.rb'
+    t.rcov_opts  = '-T --sort coverage --exclude gems/,spec/'
   end
+
+  desc 'Run full specs suit with RCov'
+  task 'spec:rcov:full' => %w[spec:full_spec_env spec:rcov]
 end
 
 namespace :update do

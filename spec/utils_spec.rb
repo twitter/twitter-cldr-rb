@@ -28,22 +28,26 @@ describe TwitterCldr::Utils do
     end
   end
 
-  describe "#deep_merge!" do
+  describe "#deep_merge! and #deep_merge_hash" do
     it "combines two non-nested hashes with different keys" do
       first = { :foo => "bar" }
+      TwitterCldr::Utils.deep_merge_hash(first, { :bar => "baz" }).should == { :foo => "bar", :bar => "baz" }
       TwitterCldr::Utils.deep_merge!(first, { :bar => "baz" }).should == { :foo => "bar", :bar => "baz" }
     end
 
     it "combines two non-nested hashes with the same keys" do
       first = { :foo => "bar" }
+      TwitterCldr::Utils.deep_merge_hash(first, { :foo => "baz" }).should == { :foo => "baz" }
       TwitterCldr::Utils.deep_merge!(first, { :foo => "baz" }).should == { :foo => "baz" }
     end
 
     it "combines two nested hashes" do
       first = { :foo => "bar", :second => { :bar => "baz", :twitter => "rocks" } }
       second = { :foo => "baz", :third => { :whassup => "cool" }, :second => { :twitter => "rules" } }
+      result = { :foo => "baz", :second => { :bar => "baz", :twitter => "rules" }, :third => { :whassup => "cool" } }
+      TwitterCldr::Utils.deep_merge_hash(first, second).should == result
       TwitterCldr::Utils.deep_merge!(first, second)
-      first.should == { :foo => "baz", :second => { :bar => "baz", :twitter => "rules" }, :third => { :whassup => "cool" } }
+      first.should == result
     end
 
     it "replaces arrays with simple types" do

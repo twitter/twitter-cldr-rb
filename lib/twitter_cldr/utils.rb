@@ -34,15 +34,19 @@ module TwitterCldr
         first
       end
 
-      def deep_merge(first, second, &block)
-        if first.is_a?(Hash) && second.is_a?(Hash)
-          second.inject({}) { |ret, (key, val)| ret[key] = deep_merge(first[key], val, &block); ret }
-        elsif first.is_a?(Array) && second.is_a?(Array)
-          second.each_with_index.map { |elem, index| deep_merge(first[index], elem, &block) }
-        else
-          return yield first, second if block_given?
-          second.dup
+      def deep_merge_hash(first, second, &block)
+        target = first.dup
+
+        second.keys.each do |key|
+          if second[key].is_a?(Hash) && first[key].is_a?(Hash)
+            target[key] = deep_merge_hash(target[key], second[key], &block)
+            next
+          end
+
+          target[key] = block_given? ? yield(first[key], second[key]) : second[key]
         end
+
+        target
       end
 
       def compute_cache_key(*pieces)

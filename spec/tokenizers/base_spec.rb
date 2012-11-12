@@ -216,4 +216,38 @@ describe Base do
       tokens[4].value.should == "c"; tokens[4].type.should == :c
     end
   end
+
+  describe "#token_type_regexes_for" do
+    before(:each) do
+      @base.instance_variable_set(:'@token_type_regexes', {
+        :blarg => "blarg",
+        :else => "otherwise"
+      })
+    end
+
+    it "returns the correct regexes by name" do
+      @base.send(:token_type_regexes_for, :blarg).should == "blarg"
+    end
+
+    it "defaults to the regexes stored at :else if the name given can't be found" do
+      @base.send(:token_type_regexes_for, :foo).should == "otherwise"
+    end
+  end
+
+  describe "#token_splitter_regex_for" do
+    before(:each) do
+      @base.instance_variable_set(:'@token_splitter_regexes', {
+        :blarg => "blarg",
+        :else => "otherwise"
+      })
+    end
+
+    it "returns the correct regexes by name" do
+      @base.send(:token_splitter_regex_for, :blarg).should == "blarg"
+    end
+
+    it "defaults to the regexes stored at :else if the name given can't be found" do
+      @base.send(:token_splitter_regex_for, :foo).should == "otherwise"
+    end
+  end
 end

@@ -416,5 +416,53 @@ describe DateTimeFormatter do
       @formatter.send(:era, Date.new(2012, 1, 1), 'GGGG', 4).should == "Anno Domini"
       @formatter.send(:era, Date.new(-1, 1, 1), 'GGGG', 4).should == "Before Christ"
     end
+
+    it "should fall back if the calendar doesn't contain the appropriate era data" do
+      stub(@formatter.tokenizer).calendar do
+        {
+          :eras => {
+            :abbr => {
+              0 => "abbr0",
+              1 => "abbr1"
+            },
+            :name => {
+              0 => "name0"
+            }
+          }
+        }
+      end
+
+      date = Date.new(2012, 1, 1)
+      mock.proxy(@formatter).era(date, "GGGG", 4)  # first attempts to find full name era
+      mock.proxy(@formatter).era(date, "GGG", 3)   # falls back to abbreviated era
+      @formatter.send(:era, date, 'GGGG', 4).should == "abbr1"
+    end
+  end
+
+  describe "#month_stand_alone" do
+    it "pattern L" do
+      @formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'L', 1).should == "1"
+      @formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'L', 1).should == "10"
+    end
+
+    it "pattern LL" do
+      @formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LL', 2).should == "01"
+      @formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LL', 2).should == "10"
+    end
+
+    it "pattern LLL" do
+      @formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LLL', 3).should == "Jan"
+      @formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LLL', 3).should == "Okt"
+    end
+
+    it "pattern LLLL" do
+      @formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LLLL', 4).should == "Januar"
+      @formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LLLL', 4).should == "Oktober"
+    end
+
+    it "pattern LLLLL" do
+      @formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LLLLL', 5).should == "J"
+      @formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LLLLL', 5).should == "O"
+    end
   end
 end

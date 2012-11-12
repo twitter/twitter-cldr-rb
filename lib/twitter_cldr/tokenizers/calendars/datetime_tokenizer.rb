@@ -61,7 +61,7 @@ module TwitterCldr
       protected
 
       def merge_token_type_regexes(first, second)
-        TwitterCldr::Utils.deep_merge(first, second) do |left, right|
+        TwitterCldr::Utils.deep_merge_hash(first, second) do |left, right|
           if right.is_a?(Regexp) && left.is_a?(Regexp)
             Regexp.union(left, right)
           else
@@ -101,8 +101,8 @@ module TwitterCldr
 
       def init_placeholders
         @placeholders = [
-            { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
-            { :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }
+          { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
+          { :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }
         ]
       end
 

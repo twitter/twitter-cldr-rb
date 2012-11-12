@@ -13,7 +13,7 @@ module TwitterCldr
       end
 
       def find_closest(goal_pattern)
-        if goal_pattern.strip.empty?
+        if !goal_pattern || goal_pattern.strip.empty?
           nil
         else
           rank(goal_pattern).min do |(p1, score1), (p2, score2)|
@@ -50,7 +50,11 @@ module TwitterCldr
 
       def position_score(entities, goal_entities)
         goal_entities.each_with_index.inject(0) do |sum, (goal_entity, index)|
-          sum + ((entities.index(goal_entity) || 0) - index).abs
+          if found = entities.index(goal_entity)
+            sum + (found - index).abs
+          else
+            sum
+          end
         end
       end
 
@@ -63,9 +67,10 @@ module TwitterCldr
       def count_score(entities, goal_entities)
         goal_entities.inject(0) do |sum, goal_entity|
           if found_entity = entities.select { |entity| entity[0] == goal_entity[0] }.first
-            sum += (found_entity.size - goal_entity.size).abs
+            sum + (found_entity.size - goal_entity.size).abs
+          else
+            sum
           end
-          sum
         end
       end
 

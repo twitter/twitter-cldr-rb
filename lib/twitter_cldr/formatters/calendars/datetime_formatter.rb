@@ -69,7 +69,7 @@ module TwitterCldr
         if result = choices[date.year < 0 ? 0 : 1]
           result
         else
-          era(date, pattern, length - 1)
+          era(date, pattern[0..-2], length - 1)
         end
       end
 

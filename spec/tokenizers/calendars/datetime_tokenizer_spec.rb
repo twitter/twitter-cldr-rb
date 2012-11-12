@@ -8,6 +8,8 @@ require 'spec_helper'
 include TwitterCldr::Tokenizers
 
 describe DateTimeTokenizer do
+  let(:tokenizer) { DateTimeTokenizer.new }
+
   describe "#initialize" do
     it "chooses gregorian as the calendar type if none is specified" do
       DateTimeTokenizer.new.calendar_type.should == :gregorian
@@ -15,7 +17,7 @@ describe DateTimeTokenizer do
     end
 
     it "initializes individual date and time placeholder tokenizers" do
-      placeholders = DateTimeTokenizer.new.placeholders
+      placeholders = tokenizer.placeholders
       placeholders[0][:name].should == :time
       placeholders[0][:object].should be_a(TimeTokenizer)
       placeholders[1][:name].should == :date
@@ -25,7 +27,6 @@ describe DateTimeTokenizer do
 
   describe "#tokens" do
     it "should choose the default date time path if no other type is specified" do
-      tokenizer = DateTimeTokenizer.new
       mock.proxy(tokenizer.paths)[:default]
       tokenizer.tokens
     end
@@ -71,7 +72,6 @@ describe DateTimeTokenizer do
         :e => 101
       }
 
-      tokenizer = DateTimeTokenizer.new
       tokenizer.send(:mirror_resource, :from => from, :to => to)
 
       to[:a].should == 1
@@ -86,6 +86,33 @@ describe DateTimeTokenizer do
       from[:b][:d].should == 3
       from[:e].size.should == 1
       from[:e][:f].should == 4
+    end
+  end
+
+  describe "#merge_token_type_regexes" do
+    it "merges the token type regex hash recursively, uniting regexes" do
+      first = {
+        :type1 => { :regex => /a/, :content => /aa/, :priority => 1 },
+        :type2 => { :regex => /b/, :priority => 2 },
+      }
+
+      second = {
+        :type1 => { :regex => /c/, :content => /cc/, :priority => 1 },
+        :type2 => { :regex => /d/, :priority => 2 },
+      }
+
+      tokenizer.send(:merge_token_type_regexes, first, second).should == {
+        :type1 => { :regex => Regexp.union(/a/, /c/), :content => Regexp.union(/aa/, /cc/), :priority => 1 },
+        :type2 => { :regex => Regexp.union(/b/, /d/), :priority => 2 }
+      }
+    end
+  end
+
+  describe "#pattern_for" do
+    it "returns the closest matching pattern if this tokenizer has been set up to handle additional date formats" do
+      tokenizer.instance_variable_set(:'@type', :additional)
+      tokenizer.instance_variable_set(:'@format', "MMMd")
+      tokenizer.send(:pattern_for, { :MMMd => "found me!" }).should == "found me!"
     end
   end
 end

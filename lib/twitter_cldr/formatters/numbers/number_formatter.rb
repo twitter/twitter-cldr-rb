@@ -11,13 +11,15 @@ module TwitterCldr
       DEFAULT_SYMBOLS = { :group => ',', :decimal => '.', :plus_sign => '+', :minus_sign => '-' }
 
       def initialize(options = {})
+        @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => extract_locale(options))
         @symbols = DEFAULT_SYMBOLS.merge(tokenizer.symbols)
       end
 
       def format(number, options = {})
         opts = self.default_format_options_for(number).merge(options)
-        prefix, suffix, integer_format, fraction_format = *partition_tokens(self.get_tokens(number, opts))
-        
+        prefix, suffix, integer_format, fraction_format = *partition_tokens(get_tokens(number, opts))
+        number = transform_number(number)
+
         int, fraction = parse_number(number, opts)
         result =  integer_format.apply(int, opts)
         result << fraction_format.apply(fraction, opts) if fraction
@@ -25,6 +27,10 @@ module TwitterCldr
       end
 
       protected
+
+      def transform_number(number)
+        number  # noop for base class
+      end
 
       def partition_tokens(tokens)
         [tokens[0] || "",
@@ -34,7 +40,7 @@ module TwitterCldr
       end
 
       def parse_number(number, options = {})
-        precision = options[:precision] || self.precision_from(number)
+        precision = options[:precision] || precision_from(number)
         number = "%.#{precision}f" % round_to(number, precision).abs
         number.split(".")
       end
@@ -50,7 +56,8 @@ module TwitterCldr
       end
 
       def get_tokens(obj, options = {})
-        obj.abs == obj ? @tokenizer.tokens(:sign => :positive) : @tokenizer.tokens(:sign => :negative)
+        opts = options.dup.merge(:sign => obj.abs == obj ? :positive : :negative)
+        @tokenizer.tokens(opts)
       end
     end
   end

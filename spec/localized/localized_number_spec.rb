@@ -71,12 +71,12 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(10, :en) }
 
       it 'should default precision to zero' do
-        mock.proxy(number.formatter).format(number.base_obj, {})
+        mock.proxy(number.formatter).format(number.base_obj, { :type => :decimal })
         number.to_s.should == "10"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 2)
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 2, :type => :decimal)
         number.to_s(:precision => 2).should == "10.00"
       end
     end
@@ -85,12 +85,12 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(10, :en, :type => :currency) }
 
       it "should default to a precision of 2" do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 2)
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 2, :type => :currency)
         number.to_s(:precision => 2).should == "$10.00"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1)
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :currency)
         number.to_s(:precision => 1).should == "$10.0"
       end
     end
@@ -99,13 +99,41 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(10, :en, :type => :percent) }
 
       it "should default to a precision of 0" do
-        mock.proxy(number.formatter).format(number.base_obj, {})
+        mock.proxy(number.formatter).format(number.base_obj, { :type => :percent })
         number.to_s.should == "10%"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1)
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :percent)
         number.to_s(:precision => 1).should == "10.0%"
+      end
+    end
+
+    context 'short decimals' do
+      let(:number) { LocalizedNumber.new(1000, :en, :type => :short_decimal) }
+
+      it "should default to a precision of 0" do
+        mock.proxy(number.formatter).format(number.base_obj, { :type => :short_decimal })
+        number.to_s.should == "1K"
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :short_decimal)
+        number.to_s(:precision => 1).should == "1.0K"
+      end
+    end
+
+    context 'long decimals' do
+      let(:number) { LocalizedNumber.new(1000, :en, :type => :long_decimal) }
+
+      it "should default to a precision of 0" do
+        mock.proxy(number.formatter).format(number.base_obj, { :type => :long_decimal })
+        number.to_s.should == "1 thousand"
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :long_decimal)
+        number.to_s(:precision => 1).should == "1.0 thousand"
       end
     end
   end

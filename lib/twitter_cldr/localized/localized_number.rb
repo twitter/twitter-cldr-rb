@@ -7,8 +7,14 @@ module TwitterCldr
   module Localized
 
     class LocalizedNumber < LocalizedObject
-      TYPES = [:decimal, :currency, :percent]
       DEFAULT_TYPE = :decimal
+      TYPES = [
+        :decimal,
+        :short_decimal,
+        :long_decimal,
+        :currency,
+        :percent,
+      ]
 
       attr_reader :type
 
@@ -28,7 +34,7 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        @formatter.format(@base_obj, options)
+        @formatter.format(@base_obj, options.merge(:type => @type))
       end
 
       def plural_rule
@@ -38,7 +44,7 @@ module TwitterCldr
       protected
 
       def formatter_const
-        TwitterCldr::Formatters.const_get("#{@type.to_s.capitalize}Formatter")
+        TwitterCldr::Formatters.const_get("#{@type.to_s.split("_").map(&:capitalize).join}Formatter")
       end
 
       def to_type(target_type)

@@ -12,6 +12,8 @@ module TwitterCldr
 
       def initialize(options = {})
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
+        @type = options[:type] || :default
+        @format = options[:format]
 
         @token_splitter_regexes = {
           :additional => Regexp.union(
@@ -43,9 +45,9 @@ module TwitterCldr
       end
 
       def tokens(options = {})
-        @type = options[:type] || :default
-        @format = options[:format]
-        tokens_for(full_path_for(paths[@type]), @type)
+        @type = options[:type] || @type || :default
+        @format = options[:format] || @format
+        tokens_for(full_path_for(paths[@type]))
       end
 
       def calendar

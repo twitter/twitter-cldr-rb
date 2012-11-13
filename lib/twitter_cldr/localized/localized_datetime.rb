@@ -40,8 +40,12 @@ module TwitterCldr
         TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
       end
 
-      def to_s
-        to_default_s
+      def to_s(options = {})
+        if options[:format]
+          @formatter.format(@base_obj, options.merge(:type => :additional))
+        else
+          to_default_s
+        end
       end
 
       def to_date

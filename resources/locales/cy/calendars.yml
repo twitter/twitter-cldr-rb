@@ -2,6 +2,31 @@
 :cy:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d E
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, d/M
+        :MMM: LLL
+        :MMMEd: E, d MMM
+        :MMMd: d MMM
+        :Md: d/M
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M/y
+        :yMEd: E, d/M/y
+        :yMMM: MMM y
+        :yMMMEd: E, d MMM y
+        :yMMMd: d MMM y
+        :yMd: d/M/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -12,7 +37,22 @@
             :thu: Iau
             :tue: Maw
             :wed: Mer
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: G
+            :mon: L
+            :sat: S
+            :sun: S
+            :thu: I
+            :tue: M
+            :wed: M
+          :short:
+            :fri: Gw
+            :mon: Ll
+            :sat: Sa
+            :sun: Su
+            :thu: Ia
+            :tue: Ma
+            :wed: Me
           :wide:
             :fri: Dydd Gwener
             :mon: Dydd Llun
@@ -24,6 +64,12 @@
         :stand-alone:
           :abbreviated:
             :fri: Gwe
+            :mon: Llun
+            :sat: Sad
+            :sun: Sul
+            :thu: Iau
+            :tue: Maw
+            :wed: Mer
           :narrow:
             :fri: G
             :mon: L
@@ -32,6 +78,14 @@
             :thu: I
             :tue: M
             :wed: M
+          :short:
+            :fri: Gw
+            :mon: Ll
+            :sat: Sa
+            :sun: Su
+            :thu: Ia
+            :tue: Ma
+            :wed: Me
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
@@ -101,26 +155,6 @@
             7: Gorff
             8: Awst
             9: Medi
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: Ionawr
-            10: Hydref
-            11: Tachwedd
-            12: Rhagfyr
-            2: Chwefror
-            3: Mawrth
-            4: Ebrill
-            5: Mai
-            6: Mehefin
-            7: Gorffenaf
-            8: Awst
-            9: Medi
-        :stand-alone:
-          :abbreviated:
-            2: Chwe
-            3: Maw
-            4: Ebr
-            7: Gor
           :narrow:
             1: I
             10: H
@@ -135,11 +169,64 @@
             8: A
             9: M
           :wide:
+            1: Ionawr
+            10: Hydref
+            11: Tachwedd
+            12: Rhagfyr
+            2: Chwefror
+            3: Mawrth
+            4: Ebrill
+            5: Mai
+            6: Mehefin
             7: Gorffennaf
+            8: Awst
+            9: Medi
+        :stand-alone:
+          :abbreviated:
+            1: Ion
+            10: Hyd
+            11: Tach
+            12: Rhag
+            2: Chwe
+            3: Maw
+            4: Ebr
+            5: Mai
+            6: Meh
+            7: Gor
+            8: Awst
+            9: Medi
+          :narrow:
+            1: I
+            10: H
+            11: T
+            12: R
+            2: C
+            3: M
+            4: E
+            5: M
+            6: M
+            7: G
+            8: A
+            9: M
+          :wide:
+            1: Ionawr
+            10: Hydref
+            11: Tachwedd
+            12: Rhagfyr
+            2: Chwefror
+            3: Mawrth
+            4: Ebrill
+            5: Mai
+            6: Mehefin
+            7: Gorffennaf
+            8: Awst
+            9: Medi
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: AM
+            :pm: PM
           :wide:
             :am: AM
             :pm: PM
@@ -152,6 +239,8 @@
             3: Ch3
             4: Ch4
           :narrow:
+            1: 1
+            2: 2
             3: 3
             4: 4
           :wide:
@@ -171,7 +260,7 @@
             3: 3
             4: 4
           :wide:
-            1: Chwarter 1af
+            1: chwarter 1af
             2: 2il chwarter
             3: 3ydd chwarter
             4: 4ydd chwarter

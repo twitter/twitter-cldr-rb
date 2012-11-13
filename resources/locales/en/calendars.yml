@@ -2,6 +2,36 @@
 :en:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
+        :Ed: d E
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, M/d
+        :MMM: LLL
+        :MMMEd: E, MMM d
+        :MMMd: MMM d
+        :Md: M/d
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M/y
+        :yMEd: E, M/d/y
+        :yMMM: MMM y
+        :yMMMEd: E, MMM d, y
+        :yMMMd: MMM d, y
+        :yMd: M/d/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -13,6 +43,14 @@
             :tue: Tue
             :wed: Wed
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short:
+            :fri: Fr
+            :mon: Mo
+            :sat: Sa
+            :sun: Su
+            :thu: Th
+            :tue: Tu
+            :wed: We
           :wide:
             :fri: Friday
             :mon: Monday
@@ -31,6 +69,7 @@
             :thu: T
             :tue: T
             :wed: W
+          :short: :calendars.gregorian.days.format.short
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
@@ -68,13 +107,13 @@
         :datetime:
           :default: :calendars.gregorian.formats.datetime.medium
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
         :time:
           :default: :calendars.gregorian.formats.time.medium
           :full:

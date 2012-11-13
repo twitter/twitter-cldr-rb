@@ -6,54 +6,67 @@
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
-      VALID_TYPES = [:decimal, :percent, :currency]
+      VALID_TYPES = [:decimal, :percent, :currency, :short_decimal, :long_decimal]
+      TOKEN_SPLITTER_REGEX = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
+      TOKEN_TYPE_REGEXES = {
+        :pattern => { :regex => /[0?#,\.]*/, :priority => 1 },
+        :plaintext => { :regex => //, :priority => 2 }
+      }
 
       def initialize(options = {})
         super(options)
 
-        @type = options[:type] || :decimal
+        @token_splitter_regexes = {
+          :else => TOKEN_SPLITTER_REGEX
+        }
 
-        @token_splitter_regex = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
-        @token_type_regexes   = [{ :type => :pattern, :regex => /[0?#,\.]*/ }, { :type => :plaintext, :regex => // }]
+        @token_type_regexes = {
+          :else => TOKEN_TYPE_REGEXES
+        }
 
         @base_path   = [:numbers, :formats]
         @symbol_path = [:numbers, :symbols]
 
         @paths = {
-            :default  => [:patterns, :default],
-            :positive => [:patterns, :positive],
-            :negative => [:patterns, :negative]
+          :default       => [:decimal, :patterns],
+          :decimal       => [:decimal, :patterns],
+          :long_decimal  => [:decimal, :patterns, :long],
+          :short_decimal => [:decimal, :patterns, :short],
+          :currency      => [:currency, :patterns],
+          :percent       => [:percent, :patterns]
         }
       end
 
       def tokens(options = {})
-        unless traverse(full_path_for(:positive))
-          key_path = full_path_for(:default)
+        @type = options[:type] || @type || :default
+        @format = options[:format] || @format || :default
 
-          positive, negative = traverse(key_path).split(/;/)
+        path = full_path
+        positive, negative = traverse(path).split(/;/)
+        sign = options[:sign] || :positive
 
-          insert_point = traverse(key_path[0..-2])
-          insert_point[:positive] = positive
-
-          if negative
-            insert_point[:negative] = "#{symbols[:minus] || '-'}#{negative}"
+        pattern = case sign
+          when :negative
+            if negative
+              "#{symbols[:minus] || '-'}#{negative}"
+            else
+              "#{symbols[:minus] || '-'}#{positive}"
+            end
           else
-            insert_point[:negative] = "#{symbols[:minus] || '-'}#{positive}"
-          end
+            positive
         end
 
-        sign = options[:sign] || :positive
-        tokens_for(full_path_for(sign), nil)
+        tokens_for_pattern(pattern, path, [sign])
       end
 
       def symbols
-        self.traverse(@symbol_path)
+        traverse(@symbol_path)
       end
 
       protected
 
-      def full_path_for(path)
-        @base_path + [@type] + paths[path]
+      def full_path
+        @base_path + paths[@type] + [@format]
       end
 
       def init_resources

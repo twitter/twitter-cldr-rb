@@ -30,7 +30,10 @@ require 'spec_helper'
 require 'yaml'
 
 # Psych doesn't handle Unicode characters properly, have to use Syck instead.
-YAML::ENGINE.yamler = 'syck' if YAML.const_defined?(:ENGINE)
+if YAML.const_defined?(:ENGINE)
+  require 'syck'
+  YAML::ENGINE.yamler = 'syck'
+end
 
 # There's an incompatibility in how ruby handles struct dumps
 # between versions that's beyond our scope.

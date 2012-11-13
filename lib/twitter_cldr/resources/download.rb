@@ -8,7 +8,7 @@ require 'cldr/download'
 module TwitterCldr
   module Resources
 
-    CLDR_URL = 'http://unicode.org/Public/cldr/21/core.zip'
+    CLDR_URL = 'http://unicode.org/Public/cldr/22.1/core.zip'
 
     class << self
 

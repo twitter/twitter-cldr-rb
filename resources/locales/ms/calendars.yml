@@ -2,6 +2,34 @@
 :ms:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d E
+        :H: HH
+        :Hm: HH:mm
+        :Hmm: H:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E, d-M
+        :MMM: LLL
+        :MMMEd: E, d MMM
+        :MMMMd: d MMMM
+        :MMMd: d MMM
+        :MMdd: dd/MM
+        :Md: d-M
+        :d: d
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M-y
+        :yMEd: E, d/M/y
+        :yMMM: MMM y
+        :yMMMEd: E, d MMM y
+        :yMMMd: d MMM y
+        :yMd: d/M/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -20,6 +48,14 @@
             :thu: K
             :tue: S
             :wed: R
+          :short:
+            :fri: Ju
+            :mon: Is
+            :sat: Sa
+            :sun: Ah
+            :thu: Kh
+            :tue: Se
+            :wed: Ra
           :wide:
             :fri: Jumaat
             :mon: Isnin
@@ -29,7 +65,14 @@
             :tue: Selasa
             :wed: Rabu
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: Jum
+            :mon: Isn
+            :sat: Sab
+            :sun: Ahd
+            :thu: Kha
+            :tue: Sel
+            :wed: Rab
           :narrow:
             :fri: J
             :mon: I
@@ -38,7 +81,22 @@
             :thu: K
             :tue: S
             :wed: R
-          :wide: :calendars.gregorian.days.format.wide
+          :short:
+            :fri: Ju
+            :mon: Is
+            :sat: Sa
+            :sun: Ah
+            :thu: Kh
+            :tue: Se
+            :wed: Ra
+          :wide:
+            :fri: Jumaat
+            :mon: Isnin
+            :sat: Sabtu
+            :sun: Ahad
+            :thu: Khamis
+            :tue: Selasa
+            :wed: Rabu
       :eras:
         :abbr:
           0: S.M.
@@ -132,7 +190,19 @@
             8: Ogos
             9: September
         :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated:
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Dis
+            2: Feb
+            3: Mac
+            4: Apr
+            5: Mei
+            6: Jun
+            7: Jul
+            8: Ogos
+            9: Sep
           :narrow:
             1: J
             10: O
@@ -146,7 +216,19 @@
             7: J
             8: O
             9: S
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: Januari
+            10: Oktober
+            11: November
+            12: Disember
+            2: Februari
+            3: Mac
+            4: April
+            5: Mei
+            6: Jun
+            7: Julai
+            8: Ogos
+            9: September
       :periods:
         :format:
           :abbreviated:

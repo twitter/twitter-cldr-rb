@@ -2,6 +2,33 @@
 :id:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: E, d
+        :H: HH
+        :Hm: HH.mm
+        :Hms: HH.mm.ss
+        :M: L
+        :MEd: E, d/M
+        :MMM: LLL
+        :MMMEd: E, d MMM
+        :MMMMEd: E, d MMMM
+        :MMMMd: d MMMM
+        :MMMd: d MMM
+        :Md: d/M
+        :d: d
+        :h: h a
+        :hm: h.mm a
+        :hms: h.mm.ss a
+        :ms: mm.ss
+        :y: y
+        :yM: M/y
+        :yMEd: E, d/M/y
+        :yMMM: MMM y
+        :yMMMEd: E, d MMM y
+        :yMMMd: d MMM y
+        :yMd: d/M/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -12,7 +39,22 @@
             :thu: Kam
             :tue: Sel
             :wed: Rab
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: J
+            :mon: S
+            :sat: S
+            :sun: M
+            :thu: K
+            :tue: S
+            :wed: R
+          :short:
+            :fri: Jum
+            :mon: Sen
+            :sat: Sab
+            :sun: Min
+            :thu: Kam
+            :tue: Sel
+            :wed: Rab
           :wide:
             :fri: Jumat
             :mon: Senin
@@ -22,7 +64,14 @@
             :tue: Selasa
             :wed: Rabu
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: Jum
+            :mon: Sen
+            :sat: Sab
+            :sun: Min
+            :thu: Kam
+            :tue: Sel
+            :wed: Rab
           :narrow:
             :fri: J
             :mon: S
@@ -31,15 +80,32 @@
             :thu: K
             :tue: S
             :wed: R
-          :wide: :calendars.gregorian.days.format.wide
+          :short:
+            :fri: Jum
+            :mon: Sen
+            :sat: Sab
+            :sun: Min
+            :thu: Kam
+            :tue: Sel
+            :wed: Rab
+          :wide:
+            :fri: Jumat
+            :mon: Senin
+            :sat: Sabtu
+            :sun: Minggu
+            :thu: Kamis
+            :tue: Selasa
+            :wed: Rabu
       :eras:
         :abbr:
           0: SM
           1: M
         :name:
-          0: ''
+          0: SM
+          1: M
         :narrow:
-          0: ''
+          0: SM
+          1: M
       :fields:
         :day: Hari
         :dayperiod: Siang/Malam
@@ -76,13 +142,13 @@
         :time:
           :default: :calendars.gregorian.formats.time.medium
           :full:
-            :pattern: H:mm:ss zzzz
+            :pattern: HH.mm.ss zzzz
           :long:
-            :pattern: HH:mm:ss z
+            :pattern: HH.mm.ss z
           :medium:
-            :pattern: HH:mm:ss
+            :pattern: HH.mm.ss
           :short:
-            :pattern: HH:mm
+            :pattern: HH.mm
       :months:
         :format:
           :abbreviated:
@@ -98,7 +164,19 @@
             7: Jul
             8: Agt
             9: Sep
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow:
+            1: J
+            10: O
+            11: N
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           :wide:
             1: Januari
             10: Oktober
@@ -113,7 +191,19 @@
             8: Agustus
             9: September
         :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated:
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Des
+            2: Feb
+            3: Mar
+            4: Apr
+            5: Mei
+            6: Jun
+            7: Jul
+            8: Agt
+            9: Sep
           :narrow:
             1: J
             10: O
@@ -127,11 +217,25 @@
             7: J
             8: A
             9: S
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: Januari
+            10: Oktober
+            11: November
+            12: Desember
+            2: Februari
+            3: Maret
+            4: April
+            5: Mei
+            6: Juni
+            7: Juli
+            8: Agustus
+            9: September
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: AM
+            :pm: PM
           :wide:
             :am: AM
             :pm: PM
@@ -149,10 +253,10 @@
             3: 3
             4: 4
           :wide:
-            1: kuartal pertama
-            2: kuartal kedua
-            3: kuartal ketiga
-            4: kuartal keempat
+            1: Kuartal ke-1
+            2: Kuartal ke-2
+            3: Kuartal ke-3
+            4: Kuartal ke-4
         :stand-alone:
           :abbreviated:
             1: K1
@@ -165,7 +269,7 @@
             3: 3
             4: 4
           :wide:
-            1: kuartal pertama
-            2: kuartal kedua
-            3: kuartal ketiga
-            4: kuartal keempat
+            1: Kuartal ke-1
+            2: Kuartal ke-2
+            3: Kuartal ke-3
+            4: Kuartal ke-4

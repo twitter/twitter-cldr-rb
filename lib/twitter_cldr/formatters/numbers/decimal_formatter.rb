@@ -6,11 +6,6 @@
 module TwitterCldr
   module Formatters
     class DecimalFormatter < NumberFormatter
-      def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => self.extract_locale(options), :type => :decimal)
-        super
-      end
-
       def format(number, options = {})
         super(number, options)
       rescue TypeError, ArgumentError

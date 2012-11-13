@@ -1,0 +1,14 @@
+:th:
+  :calendars:
+    :buddhist:
+      :formats:
+        :date:
+          :default: :calendars.buddhist.formats.date.medium
+          :full:
+            :pattern: EEEEที่ d MMMM G y
+          :long:
+            :pattern: ! 'd MMMM พ.ศ. #{y + 543}'
+          :medium:
+            :pattern: ! 'd MMM #{y + 543}'
+          :short:
+            :pattern: d/M/#{y + 543}

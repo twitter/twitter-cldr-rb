@@ -15,7 +15,7 @@ module TwitterCldr
   end
 end
 
-describe Base do
+describe TwitterCldr::Tokenizers::Base do
   before(:each) do
     @base = TwitterCldr::Tokenizers::Base.new  # do NOT do this in production - must use subclass
   end
@@ -86,23 +86,26 @@ describe Base do
 
   describe "#expand_pattern" do
     it "recursively calls expand_pattern if a symbol (keypath) is given" do
+      @base.type = :fake_type
       mock(@base).traverse([:another, :path]) { "found_me" }
       mock(@base).pattern_for("found_me") { "pattern_text" }
-      mock.proxy(@base).expand_pattern("pattern_text", :fake_type)
-      mock.proxy(@base).expand_pattern(:'another.path', :fake_type)
-      @base.send(:expand_pattern, :'another.path', :fake_type).should == [{ :value => "pattern_text", :type => :plaintext }]
+      mock.proxy(@base).expand_pattern("pattern_text")
+      mock.proxy(@base).expand_pattern(:'another.path')
+      @base.send(:expand_pattern, :'another.path').should == [{ :value => "pattern_text", :type => :plaintext }]
     end
 
     it "expands placeholders as necessary" do
       placeholder_obj = Object.new
       mock(placeholder_obj).tokens(:type => :man) { ["token1", "token2"] }
       @base.placeholders = [{ :name => "wallace", :object => placeholder_obj }]
-      @base.send(:expand_pattern, "{{wallace}} rules", :man).should == ["token1", "token2", { :type => :plaintext, :value => " rules" }]
+      @base.type = :man
+      @base.send(:expand_pattern, "{{wallace}} rules").should == ["token1", "token2", { :type => :plaintext, :value => " rules" }]
     end
 
     it "doesn't choke if the placeholder can't be found" do
       @base.placeholders = [{ :name => "gromit", :object => "dog" }]
-      @base.send(:expand_pattern, "{{wallace}} rules", :man).should == [{ :type => :plaintext, :value => " rules" }]
+      @base.type = :man
+      @base.send(:expand_pattern, "{{wallace}} rules").should == [{ :type => :plaintext, :value => " rules" }]
     end
   end
 
@@ -113,34 +116,37 @@ describe Base do
     before(:each) do
       stub(@base).traverse([:fake_key]) { "fake_pattern" }
       stub(@base).pattern_for("fake_pattern") { "fake_expandable_pattern" }
-      stub(@base).expand_pattern("fake_expandable_pattern", "fake_type") { [token1, token2] }
+      stub(@base).expand_pattern("fake_expandable_pattern") { [token1, token2] }
     end
 
     it "caches tokens" do
-      result = @base.send(:tokens_for, [:fake_key], "fake_type")
+      @base.type = "fake_type"
+      result = @base.send(:tokens_for, [:fake_key])
       result[0].value.should == "token1"
       result[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type|nil".hash].should == result
 
-      result_again = @base.send(:tokens_for, [:fake_key], "fake_type")
+      @base.type = "fake_type"
+      result_again = @base.send(:tokens_for, [:fake_key])
       result_again.object_id.should == result.object_id
     end
 
     it "caches tokens per language" do
-      result_en = @base.send(:tokens_for, [:fake_key], "fake_type")
+      @base.type = "fake_type"
+      result_en = @base.send(:tokens_for, [:fake_key])
       result_en[0].value.should == "token1"
       result_en[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type".hash].should == result_en
-      result_en2 = @base.send(:tokens_for, [:fake_key], "fake_type")
+      @base.class.send(:class_variable_get, :'@@token_cache')["en|fake_key|fake_type|nil".hash].should == result_en
+      result_en2 = @base.send(:tokens_for, [:fake_key])
       result_en2.object_id.should == result_en.object_id
 
       @base.instance_variable_set(:'@locale', :pt)
-      result_pt = @base.send(:tokens_for, [:fake_key], "fake_type")
+      result_pt = @base.send(:tokens_for, [:fake_key])
       result_pt[0].value.should == "token1"
       result_pt[1].value.should == "token2"
-      @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type".hash].should == result_pt
+      @base.class.send(:class_variable_get, :'@@token_cache')["pt|fake_key|fake_type|nil".hash].should == result_pt
       result_pt.object_id.should_not == result_en.object_id
-      result_pt2 = @base.send(:tokens_for, [:fake_key], "fake_type")
+      result_pt2 = @base.send(:tokens_for, [:fake_key])
       result_pt2.object_id.should == result_pt.object_id
       result_pt2.object_id.should_not == result_en.object_id
       result_pt2.object_id.should_not == result_en2.object_id
@@ -191,11 +197,21 @@ describe Base do
   # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
   describe "#tokenize_format" do
     it "assigns the right token types to the tokens" do
-      stub(@base).token_splitter_regex { /([abc])/ }
-      stub(@base).token_type_regexes { [{ :type => :a, :regex => /a/ },
-                                        { :type => :b, :regex => /b/ },
-                                        { :type => :c, :regex => /c/ },
-                                        { :type => :plaintext, :regex => // }] }
+      stub(@base).token_splitter_regexes do
+        { :else => /([abc])/ }
+      end
+
+      stub(@base).token_type_regexes do
+        {
+          :else => {
+            :a => { :regex => /a/, :priority => 1 },
+            :b => { :regex => /b/, :priority => 1 },
+            :c => { :regex => /c/, :priority => 1 },
+            :plaintext => { :regex => //, :priority => 2 }
+          }
+        }
+      end
+
       tokens = @base.send(:tokenize_format, "a b c")
       tokens.size.should == 5
 
@@ -204,6 +220,40 @@ describe Base do
       tokens[2].value.should == "b"; tokens[2].type.should == :b
       tokens[3].value.should == " "; tokens[3].type.should == :plaintext
       tokens[4].value.should == "c"; tokens[4].type.should == :c
+    end
+  end
+
+  describe "#token_type_regexes_for" do
+    before(:each) do
+      @base.instance_variable_set(:'@token_type_regexes', {
+        :blarg => "blarg",
+        :else => "otherwise"
+      })
+    end
+
+    it "returns the correct regexes by name" do
+      @base.send(:token_type_regexes_for, :blarg).should == "blarg"
+    end
+
+    it "defaults to the regexes stored at :else if the name given can't be found" do
+      @base.send(:token_type_regexes_for, :foo).should == "otherwise"
+    end
+  end
+
+  describe "#token_splitter_regex_for" do
+    before(:each) do
+      @base.instance_variable_set(:'@token_splitter_regexes', {
+        :blarg => "blarg",
+        :else => "otherwise"
+      })
+    end
+
+    it "returns the correct regexes by name" do
+      @base.send(:token_splitter_regex_for, :blarg).should == "blarg"
+    end
+
+    it "defaults to the regexes stored at :else if the name given can't be found" do
+      @base.send(:token_splitter_regex_for, :foo).should == "otherwise"
     end
   end
 end

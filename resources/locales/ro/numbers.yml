@@ -12,22 +12,35 @@
       :decimal:
         :patterns:
           :default: ! '#,##0.###'
+          :long:
+            1000: 0 de mii
+            10000: 00 de mii
+            100000: 000 de mii
+            1000000: 0 de milioane
+            10000000: 00 de milioane
+            100000000: 000 de milioane
+            1000000000: 0 de miliarde
+            10000000000: 00 de miliarde
+            100000000000: 000 de miliarde
+            1000000000000: 0 de trilioane
+            10000000000000: 00 de trilioane
+            100000000000000: 000 de trilioane
           :short:
-            1000: 0.0 mii
-            10000: 00 mii
-            100000: 000 mii
-            1000000: 0.0 mil'.'
+            1000: 0 K
+            10000: 00 K
+            100000: 000 K
+            1000000: 0 mil'.'
             10000000: 00 mil'.'
             100000000: 000 mil'.'
-            1000000000: 0.0 mld'.'
+            1000000000: 0 mld'.'
             10000000000: 00 mld'.'
             100000000000: 000 mld'.'
-            1000000000000: 0.0 bln'.'
-            10000000000000: 00 bln'.'
-            100000000000000: 000 bln'.'
+            1000000000000: 0 T
+            10000000000000: 00 T
+            100000000000000: 000 T
       :percent:
         :patterns:
-          :default: ! '#,##0%'
+          :default: ! '#,##0 %'
       :scientific:
         :patterns:
           :default: ! '#E0'

@@ -7,8 +7,8 @@ module TwitterCldr
   module Tokenizers
     class Base
       attr_reader :resource, :locale
-      attr_reader :token_splitter_regex, :token_type_regexes, :paths
-      attr_accessor :type, :placeholders
+      attr_reader :token_splitter_regexes, :token_type_regexes, :paths
+      attr_accessor :type, :format, :placeholders
 
       def initialize(options = {})
         @locale = TwitterCldr.convert_locale(options[:locale] || TwitterCldr::DEFAULT_LOCALE)
@@ -21,33 +21,45 @@ module TwitterCldr
       # Not to be confused with tokenize_pattern, which pulls out placeholders.  Tokenize_format actually splits a completely
       # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
-        final = []
-        text.split(token_splitter_regex).each_with_index do |token, index|
+        text.split(token_splitter_regex_for(type)).each_with_index.inject([]) do |ret, (token, index)|
           unless index == 0 && token == ""
-            token_type_regexes.each do |token_type|
-              if token =~ token_type[:regex]
-                if token_type[:type] == :composite
-                  content = token.match(token_type[:content])[1]
-                  final << CompositeToken.new(tokenize_format(content))
-                else
-                  final << Token.new(:value => token, :type => token_type[:type])
-                end
+            regexes = token_type_regexes_for(type)
 
-                break
-              end
+            token_type = regexes.inject([]) do |match_ret, (token_type, matchers)|
+              match_ret << token_type if token =~ matchers[:regex]
+              match_ret
+            end.min { |a, b| regexes[a][:priority] <=> regexes[b][:priority] }
+
+            if token_type == :composite
+              content = token.match(regexes[token_type][:content])[1]
+              ret << CompositeToken.new(tokenize_format(content))
+            else
+              ret << Token.new(:value => token, :type => token_type)
             end
           end
+          ret
         end
-        final
       end
 
-      def tokens_for(path, type)
+      def token_type_regexes_for(type)
+        token_type_regexes[type] || token_type_regexes[:else]
+      end
+
+      def token_splitter_regex_for(type)
+        token_splitter_regexes[type] || token_splitter_regexes[:else]
+      end
+
+      def tokens_for(path, additional_cache_key_params = [])
+        tokens_for_pattern(pattern_for(traverse(path)), path, additional_cache_key_params)
+      end
+
+      def tokens_for_pattern(pattern, path, additional_cache_key_params = [])
         @@token_cache ||= {}
-        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type, format || "nil", *additional_cache_key_params)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = expand_pattern(pattern_for(traverse(path)), type)
+          tokens = expand_pattern(pattern)
 
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
@@ -108,10 +120,10 @@ module TwitterCldr
         end
       end
 
-      def expand_pattern(format_str, type)
+      def expand_pattern(format_str)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          expand_pattern(pattern_for(traverse(format_str.to_s.split('.').map(&:to_sym))), type)
+          expand_pattern(pattern_for(traverse(format_str.to_s.split('.').map(&:to_sym))))
         else
           parts = tokenize_pattern(format_str)
           final = []

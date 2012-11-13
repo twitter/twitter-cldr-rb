@@ -6,22 +6,31 @@
 module TwitterCldr
   module Tokenizers
     class DateTokenizer < TwitterCldr::Tokenizers::DateTimeTokenizer
+      TOKEN_SPLITTER_REGEX = /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/
+      TOKEN_TYPE_REGEXES = {
+        :composite => { :regex => /^\#\{[^\}]+\}/, :content => /^\#\{([^\}]+)\}/, :priority => 1 },
+        :pattern   => { :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/, :priority => 2 },
+        :plaintext => { :regex => //, :priority => 3 }
+      }
+
       def initialize(options = {})
         super(options)
-        @token_splitter_regex = /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/
 
-        @token_type_regexes = [
-            { :type => :composite, :regex => /^\#\{[^\}]+\}/, :content => /^\#\{([^\}]+)\}/ },
-            { :type => :pattern,   :regex => /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/ },
-            { :type => :plaintext, :regex => // }
-        ]
+        @token_splitter_regexes = {
+          :else => TOKEN_SPLITTER_REGEX
+        }
+
+        @token_type_regexes = {
+          :else => TOKEN_TYPE_REGEXES
+        }
 
         @paths = {
-            :default => [:formats, :date, :default],
-            :full    => [:formats, :date, :full],
-            :long    => [:formats, :date, :long],
-            :medium  => [:formats, :date, :medium],
-            :short   => [:formats, :date, :short]
+          :default    => [:formats, :date, :default],
+          :full       => [:formats, :date, :full],
+          :long       => [:formats, :date, :long],
+          :medium     => [:formats, :date, :medium],
+          :short      => [:formats, :date, :short],
+          :additional => [:additional_formats]
         }
       end
 

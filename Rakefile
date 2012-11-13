@@ -41,6 +41,24 @@ if RUBY_VERSION < '1.9.0'
 
   desc 'Run full specs suit with RCov'
   task 'spec:rcov:full' => %w[spec:full_spec_env spec:rcov]
+else
+  namespace :spec do
+    desc 'Run specs with SimpleCov'
+    task :scov => ['spec:simplecov_env', :spec] do
+      require 'launchy'
+      Launchy.open 'coverage/index.html'
+    end
+
+    desc 'Run full specs suit with SimpleCov'
+    task 'scov:full' => %w[spec:full_spec_env spec:scov]
+
+    task :simplecov_env do
+      puts 'Cleaning up coverage reports'
+      rm_rf 'coverage'
+
+      ENV['SCOV'] = 'true'
+    end
+  end
 end
 
 namespace :update do

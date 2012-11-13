@@ -7,6 +7,12 @@ require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 
+if ENV['SCOV']
+  require 'simplecov'
+  SimpleCov.start
+  puts 'Running simplecov'
+end
+
 class FastGettext
   class << self
     @@locale = :en

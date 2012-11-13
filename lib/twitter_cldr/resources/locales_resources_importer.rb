@@ -12,7 +12,7 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
-      COMPONENTS = %w[calendars languages numbers units plurals lists layout]
+      COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies]
 
       # Arguments:
       #
@@ -39,16 +39,20 @@ module TwitterCldr
       # Copies zh plurals to zh-Hant (they can share, but locale code needs to be different).
       #
       def copy_zh_hant_plurals
-        File.open(File.join(@output_path, 'zh-Hant', 'plurals.yml'), 'w:utf-8') do |output|
-          data = YAML.load(File.read(File.join(@output_path, 'zh', 'plurals.yml')))
+        File.open(File.join(@output_path, 'locales', 'zh-Hant', 'plurals.yml'), 'w:utf-8') do |output|
+          data = YAML.load(File.read(File.join(@output_path, 'locales', 'zh', 'plurals.yml')))
           output.write(YAML.dump(:'zh-Hant' => data[:zh].gsub(':zh', ":'zh-Hant'")))
         end
       end
 
       def import_components
-        Cldr::Export.export(:locales => TwitterCldr.supported_locales, :components => COMPONENTS, :target => @output_path) do |component, locale, path|
+        Cldr::Export.export(:locales => TwitterCldr.supported_locales, :components => COMPONENTS, :target => File.join(@output_path, 'locales')) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
+          deep_symbolize(component, locale, path)
+        end
+
+        Cldr::Export.export(:components => ["currency_digits_and_rounding"], :target => File.join(@output_path, 'shared')) do |component, locale, path|
           deep_symbolize(component, locale, path)
         end
 
@@ -65,7 +69,7 @@ module TwitterCldr
       end
 
       def process_plurals(component, locale, path)
-        return unless component == 'plurals'
+        return unless component == 'Plurals'
 
         plural_rules = File.read(path)
 
@@ -79,7 +83,7 @@ module TwitterCldr
       # TODO: export buddhist calendar from CLDR data instead of using BUDDHIST_CALENDAR constant.
       #
       def add_buddhist_calendar(component, locale, path)
-        return unless component == 'calendars' && locale == :th
+        return unless component == 'Calendars' && locale == :th
 
         data = YAML.load(File.read(path))
         data['th']['calendars']['buddhist'] = BUDDHIST_CALENDAR

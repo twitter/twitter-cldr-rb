@@ -16,10 +16,6 @@ module TwitterCldr
       def format(number, options = {})
         super(number, options).gsub('¤', @tokenizer.symbols[:percent_sign] || DEFAULT_PERCENT_SIGN)
       end
-
-      def default_format_options_for(number)
-        { :precision => 0 }
-      end
     end
   end
 end

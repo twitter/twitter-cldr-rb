@@ -28,11 +28,20 @@ describe CurrencyFormatter do
     end
 
     it "should use the currency symbol for the corresponding currency code" do
-      @formatter.format(12, :currency => "PEN").should == "S/.12.00"
+      @formatter.format(12, :currency => "THB").should == "฿12.00"
     end
 
     it "overrides the default precision" do
       @formatter.format(12, :precision => 3).should == "$12.000"
+    end
+
+    it "should use the currency precision" do
+      @formatter.format(12, :currency => "TND").should == "TND12.000"
+    end
+
+    it "should use the currency rounding" do
+      @formatter.format(12.03, :currency => "CHF").should == "CHF12.05"
+      @formatter.format(12.02, :currency => "CHF").should == "CHF12.00"
     end
   end
 end

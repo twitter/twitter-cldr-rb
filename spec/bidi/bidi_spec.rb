@@ -20,7 +20,7 @@ def expand_bitset_str(bitset)
 end
 
 describe Bidi do
-  it "should pass the derived tests in classpath_bidi_test.txt" do
+  it "should pass the derived tests in classpath_bidi_test.txt", :slow => true do
     expected_level_data = []
     expected_reorder_data = []
     num_failed = 0

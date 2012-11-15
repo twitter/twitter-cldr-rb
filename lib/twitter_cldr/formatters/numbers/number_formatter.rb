@@ -15,8 +15,8 @@ module TwitterCldr
         @symbols = DEFAULT_SYMBOLS.merge(tokenizer.symbols)
       end
 
-      def format(number, options = {})
-        opts = self.default_format_options_for(number).merge(options)
+      def format(number, opts = {})
+        opts[:precision] ||= precision_from(number)
         prefix, suffix, integer_format, fraction_format = *partition_tokens(get_tokens(number, opts))
         number = transform_number(number)
 

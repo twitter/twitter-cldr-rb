@@ -95,7 +95,6 @@ class TwitterCldr.CurrencyFormatter extends TwitterCldr.NumberFormatter
     if options.currency
       if TwitterCldr.Currencies?
         currency = TwitterCldr.Currencies.for_code(options.currency)
-        currency ||= TwitterCldr.Currencies.for_country(options.currency)
         currency ||= symbol: options.currency
       else
         currency = symbol: options.currency

@@ -24,7 +24,7 @@ describe("CurrencyFormatter", function() {
     });
 
     it("should use the currency symbol for the corresponding currency code", function() {
-      expect(formatter.format(12, {currency: "PEN"})).toEqual("S/.12.00");
+      expect(formatter.format(12, {currency: "PEN"})).toEqual("PEN12.00");
     });
 
     it("overrides the default precision", function() {

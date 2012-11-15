@@ -11,8 +11,8 @@ module TwitterCldr
           self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "../..", "mustache/shared/currencies.coffee"))
 
           def currencies
-            TwitterCldr::Shared::Currencies.countries.inject({}) do |ret, country_name|
-              ret[country_name] = TwitterCldr::Shared::Currencies.for_country(country_name)
+            TwitterCldr::Shared::Currencies.currency_codes.inject({}) do |ret, currency_code|
+              ret[currency_code] = TwitterCldr::Shared::Currencies.for_code(currency_code)
               ret
             end.to_json
           end

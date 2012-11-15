@@ -27,13 +27,13 @@ class TwitterCldr.AdditionalDateFormatSelector
     last_char = ""
     result = []
 
-    for char in pattern_key
-      if char == last_char
-        result[result.length - 1] += char
+    for cur_char in pattern_key
+      if cur_char == last_char
+        result[result.length - 1] += cur_char
       else
-        result.push(char)
+        result.push(cur_char)
 
-      last_char = char
+      last_char = cur_char
 
     result
 

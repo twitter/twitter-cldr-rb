@@ -4,14 +4,8 @@
 class TwitterCldr.Currencies
   @currencies = `{{{currencies}}}`
 
-  @countries: ->
-    @names ||= (country_name for country_name, data of @currencies)
-
   @currency_codes: ->
     @codes ||= (data.code for country_name, data of @currencies)
-
-  @for_country: (country_name) ->
-    @currencies[country_name]
 
   @for_code: (currency_code) ->
     final = null

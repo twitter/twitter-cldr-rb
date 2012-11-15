@@ -2,6 +2,37 @@
 :hu:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d., E
+        :H: H
+        :Hm: H:mm
+        :Hms: H:mm:ss
+        :M: L
+        :MEd: M. d., E
+        :MMM: LLL
+        :MMMEd: MMM d., E
+        :MMMMd: MMMM d.
+        :MMMd: MMM d.
+        :MMdd: MM.dd.
+        :Md: M. d.
+        :d: d
+        :h: a h
+        :hm: a h:mm
+        :hms: a h:mm:ss
+        :mmss: mm:ss
+        :ms: mm:ss
+        :y: y
+        :yM: y.M.
+        :yMEd: yyyy.MM.dd., E
+        :yMMM: y. MMM
+        :yMMMEd: y. MMM d., E
+        :yMMMd: y. MMM d.
+        :yMd: yyyy.MM.dd.
+        :yQQQ: y. QQQ
+        :yQQQQ: y. QQQQ
+        :yyQQQ: yy/QQQ
+        :yyyyMM: yyyy.MM
+        :yyyyMMMM: y. MMMM
       :days:
         :format:
           :abbreviated:
@@ -20,6 +51,14 @@
             :thu: Cs
             :tue: K
             :wed: Sz
+          :short:
+            :fri: P
+            :mon: H
+            :sat: Szo
+            :sun: V
+            :thu: Cs
+            :tue: K
+            :wed: Sze
           :wide:
             :fri: péntek
             :mon: hétfő
@@ -45,6 +84,14 @@
             :thu: Cs
             :tue: K
             :wed: Sz
+          :short:
+            :fri: P
+            :mon: H
+            :sat: Szo
+            :sun: V
+            :thu: Cs
+            :tue: K
+            :wed: Sze
           :wide:
             :fri: péntek
             :mon: hétfő
@@ -74,7 +121,7 @@
         :week: hét
         :weekday: hét napja
         :year: év
-        :zone: zóna
+        :zone: időzóna
       :formats:
         :date:
           :default: :calendars.gregorian.formats.date.medium
@@ -221,10 +268,10 @@
             3: N3
             4: N4
           :narrow:
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: 1.
+            2: 2.
+            3: 3.
+            4: 4.
           :wide:
             1: 1. negyedév
             2: 2. negyedév

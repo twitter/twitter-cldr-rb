@@ -11,17 +11,30 @@
       :decimal:
         :patterns:
           :default: ! '#,##0.###'
+          :long:
+            1000: 0 tusen
+            10000: 00 tusen
+            100000: 000 tusen
+            1000000: 0 millioner
+            10000000: 00 millioner
+            100000000: 000 millioner
+            1000000000: 0 milliarder
+            10000000000: 00 milliarder
+            100000000000: 000 milliarder
+            1000000000000: 0 billioner
+            10000000000000: 00 billioner
+            100000000000000: 000 billioner
           :short:
             1000: 0
             10000: 0
             100000: 0
-            1000000: 0.0 mill
+            1000000: 0 mill
             10000000: 00 mill
             100000000: 000 mill
-            1000000000: 0.0 mrd
+            1000000000: 0 mrd
             10000000000: 00 mrd
             100000000000: 000 mrd
-            1000000000000: 0.0 bill
+            1000000000000: 0 bill
             10000000000000: 00 bill
             100000000000000: 000 bill
       :percent:

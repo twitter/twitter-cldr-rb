@@ -34,8 +34,8 @@ describe LocalizedDate do
       loc_date = date.localize(:ar)
       loc_date.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("قبل 756 ساعة")
       loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("قبل 32 يومًا")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :month).should match_normalized("قبل شهر واحد")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :year).should match_normalized("قبل 0 سنة")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :month).should match_normalized("قبل 1 من الشهور")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :year).should match_normalized("قبل 0 من السنوات")
 
       loc_date = date.localize(:fa)
       loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("32 روز پیش")
@@ -125,7 +125,7 @@ describe LocalizedDate do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |type|
+        (TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES - [:additional]).each do |type|
           lambda { Date.today.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
         end
       end

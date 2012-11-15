@@ -32,7 +32,7 @@ describe LocalizedDateTime do
     it "should stringify with buddhist calendar" do
       # Ensure that buddhist calendar data is present in th locale.
       TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist].should_not(
-          be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
+        be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
       )
 
       #date_time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
@@ -71,10 +71,34 @@ describe LocalizedDateTime do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |type|
-          lambda { DateTime.now.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
+        (TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES - [:additional]).each do |type|
+          lambda { date_time.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
         end
       end
+    end
+
+    it "don't raise errors for additional date formats" do
+      TwitterCldr.supported_locales.each do |locale|
+        fmt = TwitterCldr::Formatters::DateTimeFormatter.new(:locale => locale)
+        fmt.additional_format_selector.patterns.each do |pattern|
+          lambda { fmt.format(date_time, :type => :additional, :format => pattern.to_s) }.should_not raise_error
+          lambda { date_time.localize(locale).to_s(:format => pattern.to_s) }.should_not raise_error
+        end
+      end
+    end
+  end
+
+  describe "#to_s" do
+    it "uses the default format if no :format is given" do
+      loc_date = date_time.localize
+      mock.proxy(loc_date).to_default_s
+      loc_date.to_s.should == "Sep 20, 1987, 10:05:00 p.m."
+    end
+
+    it "uses the given format instead of the default when specified" do
+      loc_date = date_time.localize
+      mock.proxy(loc_date).to_default_s.never
+      date_time.localize.to_s(:format => "MMMd").should == "Sep 20"
     end
   end
 

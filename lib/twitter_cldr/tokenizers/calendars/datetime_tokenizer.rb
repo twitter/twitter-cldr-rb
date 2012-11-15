@@ -8,37 +8,67 @@ module TwitterCldr
     class DateTimeTokenizer < Base
       attr_reader :placeholders, :calendar_type
 
-      VALID_TYPES = [:default, :full, :long, :medium, :short]
+      VALID_TYPES = [:default, :full, :long, :medium, :short, :additional]
 
       def initialize(options = {})
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
 
-        @token_splitter_regex = //
-        @token_type_regexes   = [{ :type => :plaintext, :regex => // }]
+        @token_splitter_regexes = {
+          :additional => Regexp.union(
+            DateTokenizer::TOKEN_SPLITTER_REGEX,
+            TimeTokenizer::TOKEN_SPLITTER_REGEX
+          ),
+          :else => //
+        }
+
+        @token_type_regexes = {
+          :additional => merge_token_type_regexes(DateTokenizer::TOKEN_TYPE_REGEXES, TimeTokenizer::TOKEN_TYPE_REGEXES),
+          :else => {
+            :plaintext => { :regex => // }
+          }
+        }
 
         @base_path = [:calendars]
 
         @paths = {
-            :default => [:formats, :datetime, :default],
-            :full    => [:formats, :datetime, :full],
-            :long    => [:formats, :datetime, :long],
-            :medium  => [:formats, :datetime, :medium],
-            :short   => [:formats, :datetime, :short]
+          :default    => [:formats, :datetime, :default],
+          :full       => [:formats, :datetime, :full],
+          :long       => [:formats, :datetime, :long],
+          :medium     => [:formats, :datetime, :medium],
+          :short      => [:formats, :datetime, :short],
+          :additional => [:additional_formats]
         }
 
         super(options)
       end
 
       def tokens(options = {})
-        type = options[:type] || :default
-        tokens_for(full_path_for(paths[type]), type)
+        @type = options[:type] || :default
+        @format = options[:format]
+        tokens_for(full_path_for(paths[@type]), @type)
       end
 
       def calendar
         @resource[:calendars][@calendar_type]
       end
 
+      def additional_format_selector
+        @additional_format_selector ||= AdditionalDateFormatSelector.new(
+          @resource[:calendars][@calendar_type][:additional_formats]
+        )
+      end
+
       protected
+
+      def merge_token_type_regexes(first, second)
+        TwitterCldr::Utils.deep_merge_hash(first, second) do |left, right|
+          if right.is_a?(Regexp) && left.is_a?(Regexp)
+            Regexp.union(left, right)
+          else
+            left
+          end
+        end
+      end
 
       def full_path_for(path, calendar_type = @calendar_type)
         @base_path + [calendar_type] + path
@@ -71,13 +101,18 @@ module TwitterCldr
 
       def init_placeholders
         @placeholders = [
-            { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
-            { :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }
+          { :name => :time, :object => TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) },
+          { :name => :date, :object => TwitterCldr::Tokenizers::DateTokenizer.new(:locale => @locale, :calendar_type => @calendar_type) }
         ]
       end
 
       def pattern_for(resource)
-        resource.is_a?(Hash) ? resource[:pattern] : resource
+        case type
+          when :additional
+            resource[additional_format_selector.find_closest(format).to_sym]
+          else
+            resource.is_a?(Hash) ? resource[:pattern] : resource
+        end
       end
     end
   end

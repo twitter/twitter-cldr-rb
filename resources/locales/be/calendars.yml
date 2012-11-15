@@ -2,6 +2,35 @@
 :be:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: d E
+        :H: HH
+        :Hm: HH.mm
+        :Hms: HH.mm.ss
+        :M: L
+        :MEd: E, d MMM
+        :MMM: LLL
+        :MMMEd: E, d MMM
+        :MMMMEd: MMMM d, EEEE
+        :MMMMd: MMMM d
+        :MMMd: d MMM
+        :Md: d.M
+        :d: d
+        :h: h a
+        :hm: h.mm a
+        :hms: h.mm.ss a
+        :ms: mm.ss
+        :y: y
+        :yM: MM/yyyy
+        :yMEd: E, dd/MM/yyyy
+        :yMMM: MMM y
+        :yMMMEd: E, d MMM y
+        :yMMMM: MMMM y
+        :yMMMd: d MMM y
+        :yMd: d.M.yy
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
+        :yyyyM: MM/yyyy
       :days:
         :format:
           :abbreviated:
@@ -13,6 +42,7 @@
             :tue: аў
             :wed: ср
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short: :calendars.gregorian.days.format.abbreviated
           :wide:
             :fri: пятніца
             :mon: панядзелак
@@ -31,6 +61,7 @@
             :thu: ч
             :tue: а
             :wed: с
+          :short: :calendars.gregorian.days.format.short
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
@@ -99,7 +130,18 @@
             8: жні
             9: вер
           :narrow:
+            1: с
+            10: к
+            11: л
+            12: с
+            2: л
+            3: с
+            4: к
             5: т
+            6: ч
+            7: л
+            8: ж
+            9: в
           :wide:
             1: студзень
             10: кастрычнік
@@ -115,7 +157,18 @@
             9: верасень
         :stand-alone:
           :abbreviated:
+            1: сту
+            10: кас
+            11: ліс
+            12: сне
+            2: лют
+            3: сак
+            4: кра
             5: тра
+            6: чэр
+            7: ліп
+            8: жні
+            9: вер
           :narrow:
             1: с
             10: к
@@ -130,7 +183,18 @@
             8: ж
             9: в
           :wide:
+            1: студзень
+            10: кастрычнік
+            11: лістапад
+            12: снежань
+            2: люты
+            3: сакавік
+            4: красавік
             5: травень
+            6: чэрвень
+            7: ліпень
+            8: жнівень
+            9: верасень
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide

@@ -48,16 +48,29 @@ module TwitterCldr
         self.send(METHODS[token.value[0].chr], date, token.value, token.value.size)
       end
 
+      def additional_format_selector
+        @tokenizer.additional_format_selector
+      end
+
       protected
 
+      # there is incomplete era data in CLDR for certain locales like Hindi
+      # fall back if that happens
       def era(date, pattern, length)
         choices = case length
+          when 0
+            ["", ""]
           when 1..3
             @tokenizer.calendar[:eras][:abbr]
           else
             @tokenizer.calendar[:eras][:name]
         end
-        choices[date.year < 0 ? 0 : 1]
+
+        if result = choices[date.year < 0 ? 0 : 1]
+          result
+        else
+          era(date, pattern[0..-2], length - 1)
+        end
       end
 
       def year(date, pattern, length)
@@ -132,10 +145,8 @@ module TwitterCldr
           when 2
             date.month.to_s.rjust(length, '0')
           when 3
-            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             @tokenizer.calendar[:months][:'stand-alone'][:abbreviated][date.month]
           when 4
-            raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             @tokenizer.calendar[:months][:'stand-alone'][:wide][date.month]
           when 5
             @tokenizer.calendar[:months][:'stand-alone'][:narrow][date.month]

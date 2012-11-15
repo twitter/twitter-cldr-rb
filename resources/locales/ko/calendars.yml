@@ -2,6 +2,40 @@
 :ko:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :EEEEd: d일 EEEE
+        :Ed: d일 (E)
+        :H: H시
+        :HHmmss: HH:mm:ss
+        :Hm: HH:mm
+        :Hms: H시 m분 s초
+        :M: M월
+        :MEEEEd: M. d. EEEE
+        :MEd: M. d. (E)
+        :MMM: LLL
+        :MMMEd: MMM d일 (E)
+        :MMMd: MMM d일
+        :MMdd: MM. dd
+        :Md: M. d.
+        :d: d일
+        :h: a h시
+        :hm: a h:mm
+        :hms: a h:mm:ss
+        :mmss: mm:ss
+        :ms: mm:ss
+        :y: y년
+        :yM: yyyy. M.
+        :yMEd: yyyy. M. d. (E)
+        :yMMM: y년 MMM
+        :yMMMEEEEd: y년 MMM d일 EEEE
+        :yMMMEd: y년 MMM d일 (E)
+        :yMMMd: y년 MMM d일
+        :yMd: yyyy. M. d.
+        :yQQQ: y년 QQQ
+        :yQQQQ: y년 QQQQ
+        :yyMM: yy. M.
+        :yyMMM: yy년 MMM
+        :yyyyMM: yyyy. MM
       :days:
         :format:
           :abbreviated:
@@ -13,6 +47,14 @@
             :tue: 화
             :wed: 수
           :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :short:
+            :fri: 금
+            :mon: 월
+            :sat: 토
+            :sun: 일
+            :thu: 목
+            :tue: 화
+            :wed: 수
           :wide:
             :fri: 금요일
             :mon: 월요일
@@ -24,6 +66,14 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
+            :fri: 금
+            :mon: 월
+            :sat: 토
+            :sun: 일
+            :thu: 목
+            :tue: 화
+            :wed: 수
+          :short:
             :fri: 금
             :mon: 월
             :sat: 토

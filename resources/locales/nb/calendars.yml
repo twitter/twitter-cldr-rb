@@ -2,6 +2,35 @@
 :nb:
   :calendars:
     :gregorian:
+      :additional_formats:
+        :Ed: E d.
+        :H: HH
+        :Hm: HH:mm
+        :Hms: HH:mm:ss
+        :M: L
+        :MEd: E d.M
+        :MMM: LLL
+        :MMMEd: E d. MMM
+        :MMMd: d. MMM
+        :MMdd: d.M.
+        :Md: d.M.
+        :d: d.
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
+        :ms: mm:ss
+        :y: y
+        :yM: M y
+        :yMEd: E d.MM.y
+        :yMMM: MMM y
+        :yMMMEd: E d. MMM y
+        :yMMMd: d. MMM y
+        :yMd: d.M.yyyy
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
+        :yyMM: MM.yy
+        :yyMMM: MMM yy
+        :yyyyMMMM: MMMM y
       :days:
         :format:
           :abbreviated:
@@ -19,6 +48,15 @@
             :sun: S
             :thu: T
             :tue: T
+            :wed: O
+          :short:
+            :fri: fr.
+            :mon: ma.
+            :sat: lø.
+            :sun: sø.
+            :thu: to.
+            :tue: ti.
+            :wed: on.
           :wide:
             :fri: fredag
             :mon: mandag
@@ -44,6 +82,14 @@
             :thu: T
             :tue: T
             :wed: O
+          :short:
+            :fri: fr.
+            :mon: ma.
+            :sat: lø.
+            :sun: sø.
+            :thu: to.
+            :tue: ti.
+            :wed: on.
           :wide:
             :fri: fredag
             :mon: mandag
@@ -60,7 +106,8 @@
           0: f.Kr.
           1: e.Kr.
         :narrow:
-          0: ''
+          0: f.Kr.
+          1: e.Kr.
       :fields:
         :day: dag
         :dayperiod: AM/PM

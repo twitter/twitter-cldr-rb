@@ -13,13 +13,13 @@ describe DateTokenizer do
       tokenizer = TimeTokenizer.new(:locale => :de)
       got       = tokenizer.tokens(:type => :full)
       expected  = [
-          { :value => "HH", :type => :pattern },
-          { :value => ":", :type => :plaintext },
-          { :value => "mm", :type => :pattern },
-          { :value => ":", :type => :plaintext },
-          { :value => "ss", :type => :pattern },
-          { :value => " ", :type => :plaintext },
-          { :value => "zzzz", :type => :pattern }
+        { :value => "HH", :type => :pattern },
+        { :value => ":", :type => :plaintext },
+        { :value => "mm", :type => :pattern },
+        { :value => ":", :type => :plaintext },
+        { :value => "ss", :type => :pattern },
+        { :value => " ", :type => :plaintext },
+        { :value => "zzzz", :type => :pattern }
       ]
       check_token_list(got, expected)
     end
@@ -28,15 +28,15 @@ describe DateTokenizer do
       tokenizer = TimeTokenizer.new(:locale => :ko)
       got       = tokenizer.tokens(:type => :full)
       expected  = [
-          { :value => "a", :type => :pattern },
-          { :value => " ", :type => :plaintext },
-          { :value => "h", :type => :pattern },
-          { :value => "시 ", :type => :plaintext },
-          { :value => "m", :type => :pattern },
-          { :value => "분 ", :type => :plaintext },
-          { :value => "s", :type => :pattern },
-          { :value => "초 ", :type => :plaintext },
-          { :value => "zzzz", :type => :pattern }
+        { :value => "a", :type => :pattern },
+        { :value => " ", :type => :plaintext },
+        { :value => "h", :type => :pattern },
+        { :value => "시 ", :type => :plaintext },
+        { :value => "m", :type => :pattern },
+        { :value => "분 ", :type => :plaintext },
+        { :value => "s", :type => :pattern },
+        { :value => "초 ", :type => :plaintext },
+        { :value => "zzzz", :type => :pattern }
       ]
       check_token_list(got, expected)
     end

@@ -15,7 +15,7 @@ module TwitterCldr
       protected
 
       def process_tokens(tokens, obj)
-        result = ''
+        result = ""
 
         tokens.each_with_index do |token, index|
           case token.type

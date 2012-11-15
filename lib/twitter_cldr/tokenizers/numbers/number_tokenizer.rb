@@ -45,7 +45,7 @@ module TwitterCldr
         @format = options[:format] || @format || :default
 
         path = full_path
-        positive, negative = traverse(path).split(/;/)
+        positive, negative = traverse(path).to_s.split(/;/)
         sign = options[:sign] || :positive
 
         pattern = case sign
@@ -64,6 +64,13 @@ module TwitterCldr
 
       def symbols
         traverse(@symbol_path)
+      end
+
+      def valid_types
+        VALID_TYPES.select do |type|
+          result = traverse(@base_path + @paths[type])
+          !!result ? result.size > 0 : result
+        end
       end
 
       protected

@@ -414,5 +414,32 @@ describe("DateTimeFormatter", function() {
       expect(formatter.era(new Date(2012, 1, 1), 'GGGG', 4)).toEqual("Anno Domini");
       expect(formatter.era(new Date(-1, 1, 1), 'GGGG', 4)).toEqual("Before Christ");
     });
+
+    it("should fall back if the calendar doesn't contain the appropriate era data", function() {
+      old_era_data = TwitterCldr.Calendar.calendar.eras;
+      TwitterCldr.Calendar.calendar.eras = {
+        abbr: {
+          0: "abbr0",
+          1: "abbr1"
+        },
+        name: {
+          0: "name0"
+        }
+      };
+
+      date = new Date(2012, 1, 1);
+      expect(formatter.era(date, 'GGGG', 4)).toEqual("abbr1");
+      TwitterCldr.Calendar.calendar.eras = old_era_data;
+    });
+  });
+
+  describe("#format", function() {
+    it("don't raise errors for additional date formats", function() {
+      var patterns = formatter.additional_format_selector().patterns();
+      for (key in patterns) {
+        // these shouldn't raise errors
+        formatter.format(new Date(), {format: "additional", type: patterns[key]});
+      }
+    });
   });
 });

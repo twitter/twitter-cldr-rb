@@ -20,11 +20,15 @@ class TwitterCldr.NumberFormatter
       opts[key] = if options[key]? then options[key] else opts[key]
 
     [prefix, suffix, integer_format, fraction_format] = this.partition_tokens(this.get_tokens(number, opts))
+    number = this.transform_number(number)
     [int, fraction] = this.parse_number(number, opts)
     result = integer_format.apply(parseFloat(int), opts)
     result += fraction_format.apply(fraction, opts) if fraction
     sign = if number < 0 && prefix != "-" then @symbols.minus_sign || @default_symbols.minus_sign else ""
     "#{prefix}#{result}#{suffix}"
+
+  transform_number: (number) ->
+    number  # noop for base class
 
   partition_tokens: (tokens) ->
     [
@@ -108,6 +112,43 @@ class TwitterCldr.CurrencyFormatter extends TwitterCldr.NumberFormatter
   get_tokens: (number, options = {}) ->
     if number < 0 then @all_tokens.currency.negative else @all_tokens.currency.positive
 
+class TwitterCldr.AbbreviatedNumberFormatter extends TwitterCldr.NumberFormatter
+  NUMBER_MAX: Math.pow(10, 15)
+  NUMBER_MIN: 1000
+
+  default_format_options_for: (number) ->
+    precision: this.precision_from(number)
+
+  get_type: ->
+    "decimal"
+
+  get_key: (number) ->
+    zeroes = ("0" for i in [0...(Math.floor(number).toString().length - 1)]).join("")
+    "1#{zeroes}"
+
+  get_tokens: (number, options = {}) ->
+    type = if (number < @NUMBER_MAX) && (number >= @NUMBER_MIN) then this.get_type() else "decimal"
+    format = if type == this.get_type() then this.get_key(number) else null
+    tokens = @all_tokens[type]
+    tokens = if number < 0 then tokens.negative else tokens.positive
+    tokens = tokens[format] if format?
+    tokens
+
+  transform_number: (number) ->
+    if (number < @NUMBER_MAX) && (number >= @NUMBER_MIN)
+      sig_figs = ((parseInt(number).toString().length - 1) % 3)
+      parseInt(number.toString()[0..sig_figs])
+    else
+      number
+
+class TwitterCldr.ShortDecimalFormatter extends TwitterCldr.AbbreviatedNumberFormatter
+  get_type: ->
+    "short_decimal"
+
+class TwitterCldr.LongDecimalFormatter extends TwitterCldr.AbbreviatedNumberFormatter
+  get_type: ->
+    "long_decimal"
+
 class TwitterCldr.NumberFormatter.BaseHelper
   interpolate: (string, value, orientation = "right") ->
     value = value.toString()
@@ -149,7 +190,8 @@ class TwitterCldr.NumberFormatter.IntegerHelper extends TwitterCldr.NumberFormat
     (token for token in tokens when token != null).reverse().join(@separator)
 
   parse_groups: (format) ->
-    return [] unless index = format.lastIndexOf(',')
+    index = format.lastIndexOf(',')
+    return [] unless index > 0
     rest = format[0...index]
     widths = [format.length - index - 1]
     widths.push(rest.length - rest.lastIndexOf(',') - 1) if rest.lastIndexOf(',') > -1

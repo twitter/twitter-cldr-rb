@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+include TwitterCldr::Tokenizers
+
 module TwitterCldr
   module Js
     module Renderers
@@ -11,11 +13,23 @@ module TwitterCldr
           self.template_file = File.expand_path(File.join(File.dirname(__FILE__), "../..", "mustache/numbers/numbers.coffee"))
 
           def tokens
-            TwitterCldr::Tokenizers::NumberTokenizer::VALID_TYPES.inject({}) do |ret, type|
-              tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:type => type, :locale => @locale)
+            tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => @locale)
+            tokenizer.valid_types.inject({}) do |ret, type|
               ret[type] = {}
               [:positive, :negative].each do |sign|
-                ret[type][sign] = tokenizer.tokens(:sign => sign)
+                ret[type][sign] = case type
+                  when :short_decimal, :long_decimal
+                    (NumberTokenizer::ABBREVIATED_MIN_POWER..NumberTokenizer::ABBREVIATED_MAX_POWER).inject({}) do |formats, i|
+                      formats[10 ** i] = tokenizer.tokens(
+                        :sign => sign,
+                        :type => type,
+                        :format => 10 ** i
+                      )
+                      formats
+                    end
+                  else
+                    tokenizer.tokens(:sign => sign, :type => type)
+                end
               end
               ret
             end.to_json

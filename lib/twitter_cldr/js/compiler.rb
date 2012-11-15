@@ -42,6 +42,7 @@ module TwitterCldr
           :plural_rules => TwitterCldr::Js::Renderers::PluralRules::PluralRulesRenderer,
           :timespan => TwitterCldr::Js::Renderers::Calendars::TimespanRenderer,
           :datetime => TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer,
+          :additional_date_format_selector => TwitterCldr::Js::Renderers::Calendars::AdditionalDateFormatSelectorRenderer,
           :numbers => TwitterCldr::Js::Renderers::Numbers::NumbersRenderer,
           :currencies => TwitterCldr::Js::Renderers::Shared::CurrenciesRenderer,
           :lists => TwitterCldr::Js::Renderers::Shared::ListRenderer,

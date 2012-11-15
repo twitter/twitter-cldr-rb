@@ -40,31 +40,44 @@ class TwitterCldr.DateTimeFormatter
 
       switch token.type
         when "pattern"
-          return this.result_for_token(token, obj)
+          this.result_for_token(token, obj)
         else
           if token.value.length > 0 && token.value[0] == "'" && token.value[token.value.length - 1] == "'"
-            return token.value.substring(1, token.value.length - 1)
+            token.value.substring(1, token.value.length - 1)
           else
-            return token.value
+            token.value
 
     tokens = this.get_tokens(obj, options)
-    return (format_token(token) for token in tokens).join("")
+    (format_token(token) for token in tokens).join("")
 
   get_tokens: (obj, options) ->
-    return @tokens[options.format || "date_time"][options.type || "default"]
+    format = options.format || "date_time"
+    type = options.type || "default"
+
+    if format == "additional"
+      @tokens["date_time"][format][this.additional_format_selector().find_closest(options.type)]
+    else
+      @tokens[format][type]
 
   result_for_token: (token, date) ->
-    return this[@methods[token.value[0]]](date, token.value, token.value.length)
+    this[@methods[token.value[0]]](date, token.value, token.value.length)
+
+  additional_format_selector: ->
+    new TwitterCldr.AdditionalDateFormatSelector(@tokens["date_time"]["additional"])
 
   era: (date, pattern, length) ->
     switch length
+      when 0
+        choices = ["", ""]
       when 1, 2, 3
         choices = TwitterCldr.Calendar.calendar["eras"]["abbr"]
       else
         choices = TwitterCldr.Calendar.calendar["eras"]["name"]
 
     index = if (date.getFullYear() < 0) then 0 else 1
-    return choices[index]
+    result = choices[index]
+
+    if result? then result else this.era(date, pattern[0..-2], length - 1)
 
   year: (date, pattern, length) ->
     year = date.getFullYear().toString()
@@ -76,7 +89,7 @@ class TwitterCldr.DateTimeFormatter
     if length > 1
       year = ("0000" + year).slice(-length)
 
-    return year
+    year
 
   year_of_week_of_year: (date, pattern, length) ->
     throw 'not implemented'
@@ -90,78 +103,80 @@ class TwitterCldr.DateTimeFormatter
 
     switch length
       when 1
-        return quarter.toString()
+        quarter.toString()
       when 2
-        return ("0000" + quarter.toString()).slice(-length)
+        ("0000" + quarter.toString()).slice(-length)
       when 3
-        return TwitterCldr.Calendar.calendar.quarters.format.abbreviated[quarter]
+        TwitterCldr.Calendar.calendar.quarters.format.abbreviated[quarter]
       when 4
-        return TwitterCldr.Calendar.calendar.quarters.format.wide[quarter]
+        TwitterCldr.Calendar.calendar.quarters.format.wide[quarter]
 
   quarter_stand_alone: (date, pattern, length) ->
     quarter = (date.getMonth() - 1) / 3 + 1
 
     switch length
       when 1
-        return quarter.toString()
+        quarter.toString()
       when 2
-        return ("0000" + quarter.toString()).slice(-length)
+        ("0000" + quarter.toString()).slice(-length)
       when 3
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       when 4
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       when 5
-        return TwitterCldr.Calendar.calendar.quarters['stand-alone'].narrow[quarter]
+        TwitterCldr.Calendar.calendar.quarters['stand-alone'].narrow[quarter]
 
   month: (date, pattern, length) ->
     month_str = (date.getMonth() + 1).toString()
 
     switch length
       when 1
-        return month_str
+        month_str
       when 2
-        return ("0000" + month_str).slice(-length)
+        ("0000" + month_str).slice(-length)
       when 3
-        return TwitterCldr.Calendar.calendar.months.format.abbreviated[month_str]
+        TwitterCldr.Calendar.calendar.months.format.abbreviated[month_str]
       when 4
-        return TwitterCldr.Calendar.calendar.months.format.wide[month_str]
+        TwitterCldr.Calendar.calendar.months.format.wide[month_str]
       when 5
         throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
       else
         throw "Unknown date format"
 
   month_stand_alone: (date, pattern, length) ->
+    month_str = (date.getMonth() + 1).toString()
+
     switch length
       when 1
-        return date.getMonth().toString()
+        month_str
       when 2
-        return ("0000" + date.getMonth().toString()).slice(-length)
+        ("0000" + month_str).slice(-length)
       when 3
-        throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
+        TwitterCldr.Calendar.calendar.months['stand-alone'].abbreviated[month_str]
       when 4
-        throw 'not yet implemented (requires cldr\'s "multiple inheritance")'
+        TwitterCldr.Calendar.calendar.months['stand-alone'].wide[month_str]
       when 5
-        return TwitterCldr.Calendar.calendar.months['stand-alone'].narrow[date.month]
+        TwitterCldr.Calendar.calendar.months['stand-alone'].narrow[month_str]
       else
         throw "Unknown date format"
 
   day: (date, pattern, length) ->
     switch length
       when 1
-        return date.getDate().toString()
+        date.getDate().toString()
       when 2
-        return ("0000" + date.getDate().toString()).slice(-length)
+        ("0000" + date.getDate().toString()).slice(-length)
 
   weekday: (date, pattern, length) ->
     key = @weekday_keys[date.getDay()]
 
     switch length
       when 1, 2, 3
-        return TwitterCldr.Calendar.calendar.days.format.abbreviated[key]
+        TwitterCldr.Calendar.calendar.days.format.abbreviated[key]
       when 4
-        return TwitterCldr.Calendar.calendar.days.format.wide[key]
+        TwitterCldr.Calendar.calendar.days.format.wide[key]
       when 5
-        return TwitterCldr.Calendar.calendar.days['stand-alone'].narrow[key]
+        TwitterCldr.Calendar.calendar.days['stand-alone'].narrow[key]
 
   weekday_local: (date, pattern, length) ->
     # "Like E except adds a numeric value depending on the local starting day of the week"
@@ -169,22 +184,22 @@ class TwitterCldr.DateTimeFormatter
     switch length
       when 1, 2
         day = date.getDay()
-        return (if day == 0 then "7" else day.toString())
+        if day == 0 then "7" else day.toString()
       else
-        return this.weekday(date, pattern, length)
+        this.weekday(date, pattern, length)
 
   weekday_local_stand_alone: (date, pattern, length) ->
     switch length
       when 1
-        return this.weekday_local(date, pattern, length)
+        this.weekday_local(date, pattern, length)
       else
-        return this.weekday(date, pattern, length)
+        this.weekday(date, pattern, length)
 
   period: (time, pattern, length) ->
     if time.getHours() > 11
-      return TwitterCldr.Calendar.calendar.periods.format.wide["pm"]
+      TwitterCldr.Calendar.calendar.periods.format.wide["pm"]
     else
-      return TwitterCldr.Calendar.calendar.periods.format.wide["am"]
+      TwitterCldr.Calendar.calendar.periods.format.wide["am"]
 
   hour: (time, pattern, length) ->
     hour = time.getHours()
@@ -203,27 +218,27 @@ class TwitterCldr.DateTimeFormatter
           hour = 24
 
     if length == 1
-      return hour.toString()
+      hour.toString()
     else
-      return ("000000" + hour.toString()).slice(-length)
+      ("000000" + hour.toString()).slice(-length)
 
   minute: (time, pattern, length) ->
     if length == 1
-      return time.getMinutes().toString()
+      time.getMinutes().toString()
     else
-      return ("000000" + time.getMinutes().toString()).slice(-length)
+      ("000000" + time.getMinutes().toString()).slice(-length)
 
   second: (time, pattern, length) ->
     if length == 1
-      return time.getSeconds().toString()
+      time.getSeconds().toString()
     else
-      return ("000000" + time.getSeconds().toString()).slice(-length)
+      ("000000" + time.getSeconds().toString()).slice(-length)
 
   second_fraction: (time, pattern, length) ->
     if length > 6
       throw 'can not use the S format with more than 6 digits'
 
-    return ("000000" + Math.round(Math.pow(time.getMilliseconds() * 100.0, 6 - length)).toString()).slice(-length)
+    ("000000" + Math.round(Math.pow(time.getMilliseconds() * 100.0, 6 - length)).toString()).slice(-length)
 
   timezone: (time, pattern, length) ->
     offset = time.getTimezoneOffset()

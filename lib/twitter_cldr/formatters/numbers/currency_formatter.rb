@@ -6,10 +6,8 @@
 module TwitterCldr
   module Formatters
     class CurrencyFormatter < NumberFormatter
-      def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => self.extract_locale(options), :type => :currency)
-        super
-      end
+      DEFAULT_CURRENCY_SYMBOL = "$"
+      DEFAULT_PRECISION = 2
 
       def format(number, options = {})
         options[:currency] ||= "USD"
@@ -28,6 +26,14 @@ module TwitterCldr
       def resource(code)
         @resource ||= TwitterCldr.get_resource(:shared, :currency_digits_and_rounding)
         @resource[code.to_sym] || @resource[:DEFAULT]
+      end
+
+      def get_tokens(obj, options = {})
+        opts = options.dup.merge(
+          :sign => obj.abs == obj ? :positive : :negative,
+          :type => :currency
+        )
+        @tokenizer.tokens(opts)
       end
     end
   end

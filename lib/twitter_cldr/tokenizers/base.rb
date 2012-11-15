@@ -7,8 +7,8 @@ module TwitterCldr
   module Tokenizers
     class Base
       attr_reader :resource, :locale
-      attr_reader :token_splitter_regexes, :token_type_regexes, :paths, :format
-      attr_accessor :type, :placeholders
+      attr_reader :token_splitter_regexes, :token_type_regexes, :paths
+      attr_accessor :type, :format, :placeholders
 
       def initialize(options = {})
         @locale = TwitterCldr.convert_locale(options[:locale] || TwitterCldr::DEFAULT_LOCALE)
@@ -49,13 +49,17 @@ module TwitterCldr
         token_splitter_regexes[type] || token_splitter_regexes[:else]
       end
 
-      def tokens_for(path, type)
+      def tokens_for(path, additional_cache_key_params = [])
+        tokens_for_pattern(pattern_for(traverse(path)), path, additional_cache_key_params)
+      end
+
+      def tokens_for_pattern(pattern, path, additional_cache_key_params = [])
         @@token_cache ||= {}
-        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type, format || "nil")
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type, format || "nil", *additional_cache_key_params)
 
         unless @@token_cache.include?(cache_key)
           result = []
-          tokens = expand_pattern(pattern_for(traverse(path)), type)
+          tokens = expand_pattern(pattern)
 
           tokens.each do |token|
             if token.is_a?(Token) || token.is_a?(CompositeToken)
@@ -116,10 +120,10 @@ module TwitterCldr
         end
       end
 
-      def expand_pattern(format_str, type)
+      def expand_pattern(format_str)
         if format_str.is_a?(Symbol)
           # symbols mean another path was given
-          expand_pattern(pattern_for(traverse(format_str.to_s.split('.').map(&:to_sym))), type)
+          expand_pattern(pattern_for(traverse(format_str.to_s.split('.').map(&:to_sym))))
         else
           parts = tokenize_pattern(format_str)
           final = []

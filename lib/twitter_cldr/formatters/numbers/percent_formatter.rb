@@ -8,13 +8,20 @@ module TwitterCldr
     class PercentFormatter < NumberFormatter
       DEFAULT_PERCENT_SIGN = "%"
 
-      def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => self.extract_locale(options), :type => :percent)
-        super
-      end
-
       def format(number, options = {})
         super(number, options).gsub('¤', @tokenizer.symbols[:percent_sign] || DEFAULT_PERCENT_SIGN)
+      end
+
+      def default_format_options_for(number)
+        { :precision => 0 }
+      end
+
+      def get_tokens(obj, options = {})
+        opts = options.dup.merge(
+          :sign => obj.abs == obj ? :positive : :negative,
+          :type => :percent
+        )
+        @tokenizer.tokens(opts)
       end
     end
   end

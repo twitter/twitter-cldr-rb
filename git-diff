@@ -8,7 +8,9 @@ excl = [
   "resources/unicode_data",
 ].map { |pattern| "grep -v #{pattern}" }
 
-files = `git diff --diff-filter=ACMRTUXB --name-only master . | #{excl.join(" | ")}`.split("\n")
-`git diff master #{files.join(" ")} > /tmp/twitter-cldr-rb.diff`
-`git diff --diff-filter=D master . >> /tmp/twitter-cldr-rb.diff`
+base_branch = ENV["BRANCH"] || "master"
+
+files = `git diff --diff-filter=ACMRTUXB --name-only #{base_branch} . | #{excl.join(" | ")}`.split("\n")
+`git diff #{base_branch} #{files.join(" ")} > /tmp/twitter-cldr-rb.diff`
+`git diff --diff-filter=D #{base_branch} . >> /tmp/twitter-cldr-rb.diff`
 exec "less /tmp/twitter-cldr-rb.diff"

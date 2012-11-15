@@ -10,7 +10,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "additional_date_time_formats"
+  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
 end
 
 group :test do

@@ -6,6 +6,9 @@
 module TwitterCldr
   module Tokenizers
     class NumberTokenizer < Base
+      ABBREVIATED_MIN_POWER = 3
+      ABBREVIATED_MAX_POWER = 14
+
       VALID_TYPES = [:decimal, :percent, :currency, :short_decimal, :long_decimal]
       TOKEN_SPLITTER_REGEX = /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/
       TOKEN_TYPE_REGEXES = {

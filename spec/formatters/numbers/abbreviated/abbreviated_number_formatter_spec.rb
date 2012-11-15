@@ -4,8 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
-require 'pry'
-require 'pry-nav'
 
 include TwitterCldr::Formatters
 

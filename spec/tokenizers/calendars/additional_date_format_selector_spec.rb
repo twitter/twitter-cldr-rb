@@ -98,7 +98,7 @@ describe AdditionalDateFormatSelector do
     it "returns the next closest match (lowest score) if an exact match can't be found" do
       selector.find_closest("MMMMd").should == "MMMd"
       selector.find_closest("mHs").should == "Hms"
-      selector.find_closest("Ehds").should == "Ehms"
+      selector.find_closest("Med").should == "MEd"
     end
 
     it "returns nil if an empty pattern is given" do

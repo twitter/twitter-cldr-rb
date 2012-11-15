@@ -6,8 +6,8 @@
 module TwitterCldr
   module Formatters
     class AbbreviatedNumberFormatter < NumberFormatter
-      NUMBER_MAX = (10 ** 15)
-      NUMBER_MIN = 1000
+      NUMBER_MAX = 10 ** (TwitterCldr::Tokenizers::NumberTokenizer::ABBREVIATED_MAX_POWER + 1)
+      NUMBER_MIN = 10 ** TwitterCldr::Tokenizers::NumberTokenizer::ABBREVIATED_MIN_POWER
 
       def default_format_options_for(number)
         { :precision => 0 }

@@ -10,20 +10,22 @@ module TwitterCldr
       DEFAULT_PRECISION = 2
 
       def format(number, options = {})
-        if options[:currency]
-          currency ||= TwitterCldr::Shared::Currencies.for_code(options[:currency])
-          currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
-          currency ||= { :symbol => options[:currency] }
-        else
-          currency = { :symbol => DEFAULT_CURRENCY_SYMBOL }
-        end
+        options[:currency] ||= "USD"
+        currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
+        currency ||= TwitterCldr::Shared::Currencies.for_country(options[:currency])
+        currency ||= { :symbol => options[:currency], :currency => options[:currency] }
 
-        super(number, options).gsub('¤', currency[:symbol])
+        digits_and_rounding = resource(options[:currency])
+        options[:precision] ||= digits_and_rounding[:digits]
+        options[:rounding] ||= digits_and_rounding[:rounding]
+
+        super(number, options).gsub('¤', (currency[:symbol] || currency[:currency].to_s))
       end
 
-      def default_format_options_for(number)
-        precision = precision_from(number)
-        { :precision => precision == 0 ? DEFAULT_PRECISION : precision }
+      private
+      def resource(code)
+        @resource ||= TwitterCldr.get_resource(:shared, :currency_digits_and_rounding)
+        @resource[code.to_sym] || @resource[:DEFAULT]
       end
 
       def get_tokens(obj, options = {})

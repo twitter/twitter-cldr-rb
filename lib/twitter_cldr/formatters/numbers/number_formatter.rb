@@ -41,13 +41,21 @@ module TwitterCldr
 
       def parse_number(number, options = {})
         precision = options[:precision] || precision_from(number)
-        number = "%.#{precision}f" % round_to(number, precision).abs
+        rounding = options[:rounding] || 0
+
+        number = "%.#{precision}f" % round_to(number, precision, rounding).abs
         number.split(".")
       end
 
-      def round_to(number, precision)
+      def round_to(number, precision, rounding = 0)
         factor = 10 ** precision
-        (number * factor).round.to_f / factor
+        result = (number * factor).round.to_f / factor
+        if rounding > 0
+          rounding = rounding.to_f / factor
+          result = (result *  (1.0 / rounding)).round.to_f / (1.0 / rounding)
+        end
+
+        result
       end
 
       def precision_from(num)

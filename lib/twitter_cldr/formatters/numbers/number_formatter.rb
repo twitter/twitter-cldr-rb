@@ -14,10 +14,10 @@ module TwitterCldr
         @symbols = DEFAULT_SYMBOLS.merge(tokenizer.symbols)
       end
 
-      def format(number, options = {})
-        opts = self.default_format_options_for(number).merge(options)
+      def format(number, opts = {})
+        opts[:precision] ||= precision_from(number)
         prefix, suffix, integer_format, fraction_format = *partition_tokens(self.get_tokens(number, opts))
-        
+
         int, fraction = parse_number(number, opts)
         result =  integer_format.apply(int, opts)
         result << fraction_format.apply(fraction, opts) if fraction
@@ -35,13 +35,21 @@ module TwitterCldr
 
       def parse_number(number, options = {})
         precision = options[:precision] || self.precision_from(number)
-        number = "%.#{precision}f" % round_to(number, precision).abs
+        rounding = options[:rounding] || 0
+
+        number = "%.#{precision}f" % round_to(number, precision, rounding).abs
         number.split(".")
       end
 
-      def round_to(number, precision)
+      def round_to(number, precision, rounding = 0)
         factor = 10 ** precision
-        (number * factor).round.to_f / factor
+        result = (number * factor).round.to_f / factor
+        if rounding > 0
+          rounding = rounding.to_f / factor
+          result = (result *  (1.0 / rounding)).round.to_f / (1.0 / rounding)
+        end
+
+        result
       end
 
       def precision_from(num)

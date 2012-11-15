@@ -16,10 +16,6 @@ module TwitterCldr
       rescue TypeError, ArgumentError
         number
       end
-
-      def default_format_options_for(number)
-        { :precision => precision_from(number) }
-      end
     end
   end
 end

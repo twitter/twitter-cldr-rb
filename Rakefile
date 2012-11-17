@@ -141,4 +141,12 @@ namespace :update do
   task :canonical_compositions do
     TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
   end
+
+  desc 'Import normalization quick check data'
+  task :normalization_quick_check do
+    TwitterCldr::Resources::NormalizationQuickCheckImporter.new(
+      './vendor',
+      './resources/unicode_data'
+    ).import
+  end
 end

@@ -26,7 +26,14 @@ module TwitterCldr
         protected
 
         def decompose(code_points)
-          code_points.map { |code_point| decompose_recursively(code_point) }.flatten
+          code_points.inject([]) do |ret, code_point|
+            if requires_normalization?(code_point)
+              ret += decompose_recursively(code_point)
+            else
+              ret << code_point
+            end
+            ret
+          end
         end
 
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.

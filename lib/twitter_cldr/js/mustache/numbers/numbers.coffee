@@ -21,8 +21,8 @@ class TwitterCldr.NumberFormatter
 
     [prefix, suffix, integer_format, fraction_format] = this.partition_tokens(this.get_tokens(number, opts))
     number = this.transform_number(number)
-    [int, fraction] = this.parse_number(number, opts)
-    result = integer_format.apply(parseFloat(int), opts)
+    [intg, fraction] = this.parse_number(number, opts)
+    result = integer_format.apply(parseFloat(intg), opts)
     result += fraction_format.apply(fraction, opts) if fraction
     sign = if number < 0 && prefix != "-" then @symbols.minus_sign || @default_symbols.minus_sign else ""
     "#{prefix}#{result}#{suffix}"

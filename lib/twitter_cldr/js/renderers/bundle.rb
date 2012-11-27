@@ -18,11 +18,6 @@ module TwitterCldr
         def is_rtl?
           TwitterCldr::Shared::Languages.is_rtl?(self[:locale])
         end
-
-        # required alias definition that adds twitter_cldr to Twitter's static build process
-        def module_def
-          %Q(`/*-module-*/\n/*_lib/twitter_cldr_*/`)
-        end
       end
     end
   end

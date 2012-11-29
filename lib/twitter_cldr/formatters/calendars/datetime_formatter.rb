@@ -52,6 +52,10 @@ module TwitterCldr
         @tokenizer.additional_format_selector
       end
 
+      def self.additional_formats_for(locale)
+        new(:locale => locale).additional_format_selector.patterns.map(&:to_s)
+      end
+
       protected
 
       # there is incomplete era data in CLDR for certain locales like Hindi

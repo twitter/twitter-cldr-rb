@@ -79,6 +79,18 @@ TwitterCldr::Shared::Currencies.for_country("Canada")      # { :currency => "Dol
 TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dollar", :symbol => "$", :country => "Canada"}
 ```
 
+#### Short / Long Decimals
+
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+
+```ruby
+2337.localize.to_short_decimal.to_s     # 2K
+1337123.localize.to_short_decimal.to_s  # 1M
+
+2337.localize.to_long_decimal.to_s      # 2 thousand
+1337123.localize.to_long_decimal.to_s   # 1 million
+```
+
 ### Dates and Times
 
 `Date`, `Time`, and `DateTime` objects are supported:
@@ -121,11 +133,11 @@ TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja)
 You can use any of the returned formats as the `:format` option when creating new instances of `LocalizedDateTime` or `DateTimeFormatter`:
 
 ```ruby
-# 2012/11/28 16:06:02
+# 2011/12/12 21:44:57
 DateTime.now.localize(:ja).to_s
 
-# 28日水曜日
-DateTime.now.localize(:ja).to_s(:format => :EEEEd)
+# 12日月曜日
+DateTime.now.localize(:ja).to_s(:format => "EEEEd")
 ```
 
 It's important to know that, even though a format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
@@ -163,8 +175,6 @@ It's important to know that, even though a format may not be available across lo
 | yMd    | 11/28/2012       |
 | yQQQ   | Q4 2012          |
 | yQQQQ  | 4th quarter 2012 |
-
-
 
 
 #### Relative Dates and Times
@@ -210,6 +220,14 @@ ts.to_s(:unit => :hour)         # In 24 Stunden
 ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
 ts.to_s                         # Vor 1 Tag
 ts.to_s(:unit => :hour)         # Vor 24 Stunden
+```
+
+By default, timespans are exact representations of a given unit of elapsed time.  TwitterCLDR also supports approximate timespans which round up to the nearest larger unit.  For example, "44 seconds" remains "44 seconds" while "45 seconds" becomes "1 minute".  To approximate, pass the `:approximate => true` option into `to_s`:
+
+```ruby
+TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # In 44 seconds
+TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # In 1 minute
+TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # In 1 minute
 ```
 
 ### Lists
@@ -622,6 +640,10 @@ No external requirements.
 `bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
 
 Tests are written in RSpec using RR as the mocking framework.
+
+## Test Coverage
+
+You can run the development test coverage suite with `bundle exec rake spec:cov`, or the full suite with `bundle exec rake spec:cov:full`.  TwitterCLDR uses RCov under Ruby 1.8 and Simplecov under Ruby 1.9.
 
 ## JavaScript Support
 

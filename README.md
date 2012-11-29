@@ -84,23 +84,23 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dol
 `Date`, `Time`, and `DateTime` objects are supported:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s                    # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
-DateTime.now.localize(:es).to_long_s                    # "12 de diciembre de 2011 21:44:57 -08:00"
-DateTime.now.localize(:es).to_medium_s                  # "12/12/2011 21:44:57"
-DateTime.now.localize(:es).to_short_s                   # "12/12/11 21:44"
+DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
+DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011 21:44:57 -08:00"
+DateTime.now.localize(:es).to_medium_s             # "12/12/2011 21:44:57"
+DateTime.now.localize(:es).to_short_s              # "12/12/11 21:44"
 
-Date.today.localize(:es).to_full_s                      # "lunes 12 de diciembre de 2011"
-Date.today.localize(:es).to_long_s                      # "12 de diciembre de 2011"
-Date.today.localize(:es).to_medium_s                    # "12/12/2011"
-Date.today.localize(:es).to_short_s                     # "12/12/11"
+Date.today.localize(:es).to_full_s                 # "lunes 12 de diciembre de 2011"
+Date.today.localize(:es).to_long_s                 # "12 de diciembre de 2011"
+Date.today.localize(:es).to_medium_s               # "12/12/2011"
+Date.today.localize(:es).to_short_s                # "12/12/11"
 
-Time.now.localize(:es).to_full_s                        # "21:44:57 UTC -0800"
-Time.now.localize(:es).to_long_s                        # "21:44:57 UTC"
-Time.now.localize(:es).to_medium_s                      # "21:44:57"
-Time.now.localize(:es).to_short_s                       # "21:44"
+Time.now.localize(:es).to_full_s                   # "21:44:57 UTC -0800"
+Time.now.localize(:es).to_long_s                   # "21:44:57 UTC"
+Time.now.localize(:es).to_medium_s                 # "21:44:57"
+Time.now.localize(:es).to_short_s                  # "21:44"
 ```
 
-The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
+The default CLDR data set only includes 4 date formats, full, long, medium, and short.  See below for a list of additional formats.
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
@@ -108,6 +108,64 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 dt = TwitterCldr::Localized::LocalizedDateTime.new(DateTime.now, :es)
 dt.to_short_s  # ...etc
 ```
+
+#### Additional Date Formats
+
+Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varys for each locale.  To get a full list, use the `additional_formats_for` method:
+
+```ruby
+# ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ] 
+TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja)
+```
+
+You can use any of the returned formats as the `:format` option when creating new instances of `LocalizedDateTime` or `DateTimeFormatter`:
+
+```ruby
+# 2012/11/28 16:06:02
+DateTime.now.localize(:ja).to_s
+
+# 28日水曜日
+DateTime.now.localize(:ja).to_s(:format => :EEEEd)
+```
+
+It's important to know that, even though a format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
+
+##### List of additional date format examples for English:
+
+| Format | Output           |
+|:-------|------------------|
+| EHm    | Wed 17:05        |
+| EHms   | Wed 17:05:33     |
+| Ed     | 28 Wed           |
+| Ehm    | Wed 5:05 p.m.    |
+| Ehms   | Wed 5:05:33 p.m. |
+| Gy     | 2012 AD          |
+| H      | 17               |
+| Hm     | 17:05            |
+| Hms    | 17:05:33         |
+| M      | 11               |
+| MEd    | Wed 11/28        |
+| MMM    | Nov              |
+| MMMEd  | Wed Nov 28       |
+| MMMd   | Nov 28           |
+| Md     | 11/28            |
+| d      | 28               |
+| h      | 5 p.m.           |
+| hm     | 5:05 p.m.        |
+| hms    | 5:05:33 p.m.     |
+| ms     | 05:33            |
+| y      | 2012             |
+| yM     | 11/2012          |
+| yMEd   | Wed 11/28/2012   |
+| yMMM   | Nov 2012         |
+| yMMMEd | Wed Nov 28 2012  |
+| yMMMd  | Nov 28 2012      |
+| yMd    | 11/28/2012       |
+| yQQQ   | Q4 2012          |
+| yQQQQ  | 4th quarter 2012 |
+
+
+
 
 #### Relative Dates and Times
 

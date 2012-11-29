@@ -79,28 +79,40 @@ TwitterCldr::Shared::Currencies.for_country("Canada")      # { :currency => "Dol
 TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dollar", :symbol => "$", :country => "Canada"}
 ```
 
+#### Short / Long Decimals
+
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+
+```ruby
+2337.localize.to_short_decimal.to_s     # 2K
+1337123.localize.to_short_decimal.to_s  # 1M
+
+2337.localize.to_long_decimal.to_s      # 2 thousand
+1337123.localize.to_long_decimal.to_s   # 1 million
+```
+
 ### Dates and Times
 
 `Date`, `Time`, and `DateTime` objects are supported:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s                    # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
-DateTime.now.localize(:es).to_long_s                    # "12 de diciembre de 2011 21:44:57 -08:00"
-DateTime.now.localize(:es).to_medium_s                  # "12/12/2011 21:44:57"
-DateTime.now.localize(:es).to_short_s                   # "12/12/11 21:44"
+DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011 21:44:57 UTC -0800"
+DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011 21:44:57 -08:00"
+DateTime.now.localize(:es).to_medium_s             # "12/12/2011 21:44:57"
+DateTime.now.localize(:es).to_short_s              # "12/12/11 21:44"
 
-Date.today.localize(:es).to_full_s                      # "lunes 12 de diciembre de 2011"
-Date.today.localize(:es).to_long_s                      # "12 de diciembre de 2011"
-Date.today.localize(:es).to_medium_s                    # "12/12/2011"
-Date.today.localize(:es).to_short_s                     # "12/12/11"
+Date.today.localize(:es).to_full_s                 # "lunes 12 de diciembre de 2011"
+Date.today.localize(:es).to_long_s                 # "12 de diciembre de 2011"
+Date.today.localize(:es).to_medium_s               # "12/12/2011"
+Date.today.localize(:es).to_short_s                # "12/12/11"
 
-Time.now.localize(:es).to_full_s                        # "21:44:57 UTC -0800"
-Time.now.localize(:es).to_long_s                        # "21:44:57 UTC"
-Time.now.localize(:es).to_medium_s                      # "21:44:57"
-Time.now.localize(:es).to_short_s                       # "21:44"
+Time.now.localize(:es).to_full_s                   # "21:44:57 UTC -0800"
+Time.now.localize(:es).to_long_s                   # "21:44:57 UTC"
+Time.now.localize(:es).to_medium_s                 # "21:44:57"
+Time.now.localize(:es).to_short_s                  # "21:44"
 ```
 
-The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
+The default CLDR data set only includes 4 date formats, full, long, medium, and short.  See below for a list of additional formats.
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
@@ -108,6 +120,62 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 dt = TwitterCldr::Localized::LocalizedDateTime.new(DateTime.now, :es)
 dt.to_short_s  # ...etc
 ```
+
+#### Additional Date Formats
+
+Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varys for each locale.  To get a full list, use the `additional_formats_for` method:
+
+```ruby
+# ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ] 
+TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja)
+```
+
+You can use any of the returned formats as the `:format` option when creating new instances of `LocalizedDateTime` or `DateTimeFormatter`:
+
+```ruby
+# 2011/12/12 21:44:57
+DateTime.now.localize(:ja).to_s
+
+# 12日月曜日
+DateTime.now.localize(:ja).to_s(:format => "EEEEd")
+```
+
+It's important to know that, even though a format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
+
+##### List of additional date format examples for English:
+
+| Format | Output           |
+|:-------|------------------|
+| EHm    | Wed 17:05        |
+| EHms   | Wed 17:05:33     |
+| Ed     | 28 Wed           |
+| Ehm    | Wed 5:05 p.m.    |
+| Ehms   | Wed 5:05:33 p.m. |
+| Gy     | 2012 AD          |
+| H      | 17               |
+| Hm     | 17:05            |
+| Hms    | 17:05:33         |
+| M      | 11               |
+| MEd    | Wed 11/28        |
+| MMM    | Nov              |
+| MMMEd  | Wed Nov 28       |
+| MMMd   | Nov 28           |
+| Md     | 11/28            |
+| d      | 28               |
+| h      | 5 p.m.           |
+| hm     | 5:05 p.m.        |
+| hms    | 5:05:33 p.m.     |
+| ms     | 05:33            |
+| y      | 2012             |
+| yM     | 11/2012          |
+| yMEd   | Wed 11/28/2012   |
+| yMMM   | Nov 2012         |
+| yMMMEd | Wed Nov 28 2012  |
+| yMMMd  | Nov 28 2012      |
+| yMd    | 11/28/2012       |
+| yQQQ   | Q4 2012          |
+| yQQQQ  | 4th quarter 2012 |
+
 
 #### Relative Dates and Times
 
@@ -152,6 +220,14 @@ ts.to_s(:unit => :hour)         # In 24 Stunden
 ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
 ts.to_s                         # Vor 1 Tag
 ts.to_s(:unit => :hour)         # Vor 24 Stunden
+```
+
+By default, timespans are exact representations of a given unit of elapsed time.  TwitterCLDR also supports approximate timespans which round up to the nearest larger unit.  For example, "44 seconds" remains "44 seconds" while "45 seconds" becomes "1 minute".  To approximate, pass the `:approximate => true` option into `to_s`:
+
+```ruby
+TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # In 44 seconds
+TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # In 1 minute
+TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # In 1 minute
 ```
 
 ### Lists
@@ -564,6 +640,10 @@ No external requirements.
 `bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
 
 Tests are written in RSpec using RR as the mocking framework.
+
+## Test Coverage
+
+You can run the development test coverage suite with `bundle exec rake spec:cov`, or the full suite with `bundle exec rake spec:cov:full`.  TwitterCLDR uses RCov under Ruby 1.8 and Simplecov under Ruby 1.9.
 
 ## JavaScript Support
 

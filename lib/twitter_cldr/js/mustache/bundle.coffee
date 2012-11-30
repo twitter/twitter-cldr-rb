@@ -10,6 +10,7 @@
 // Description: Provides date, time, number, and list formatting functionality for various Twitter-supported locales in Javascript.
 ###
 
+# required alias definition that adds twitter_cldr to Twitter's static build process
 ###<<module_def>>###
 
 TwitterCldr = {}
@@ -19,6 +20,14 @@ TwitterCldr.is_rtl = true;
 {{^is_rtl?}}
 TwitterCldr.is_rtl = false;
 {{/is_rtl?}}
+
 {{> utilities}}
 {{{contents}}}
-exports[key] = obj for key, obj of TwitterCldr if exports?  # for node
+
+root = if exports?
+  exports
+else
+  this.TwitterCldr = {}
+  this.TwitterCldr
+
+root[key] = obj for key, obj of TwitterCldr

@@ -10,7 +10,7 @@ Currently, twitter-cldr-js supports the following:
 3. Number formatting (decimal, currency, and percentage)
 4. Plural rules
 
-## Usage in the Rails Asset Pipeline
+## Usage with Rails
 
 twitter-cldr-js provides a single `.js` file per locale.  You can include a locale-specific version (eg. Spanish) in your JavaScript manifest (`app/assets/javascripts/application.js`) like this:
 
@@ -46,7 +46,61 @@ fmt.format(new Date(), {"format": "time", "type": "medium"}); // "21:46:09"
 fmt.format(new Date(), {"format": "time", "type": "short"});  // "21:47"
 ```
 
-The CLDR data set only includes 4 specific date formats, full, long, medium, and short, so you'll have to choose amongst them for the one that best fits your needs.  Yes, it's limiting, but the 4 formats get the job done most of the time :)
+The default CLDR data set only includes 4 date formats, full, long, medium, and short.  See below for a list of additional formats.
+
+#### Additional Date Formats
+
+Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varys for each locale.  To get a full list, use the `additional_formats` method:
+
+```javascript
+// ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ] 
+TwitterCldr.DateTimeFormatter.additional_formats();
+```
+
+You can use any of the returned formats as the `format` option when formatting dates:
+
+```javascript
+// 30/11/2012 15:38:33
+fmt.format(new Date(), {});
+// 30 de noviembre
+fmt.format(new Date(), {"format": "additional", "type": "EEEEd"});
+```
+
+It's important to know that, even though a format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
+
+##### List of additional date format examples for English:
+
+| Format | Output           |
+|:-------|------------------|
+| EHm    | Wed 17:05        |
+| EHms   | Wed 17:05:33     |
+| Ed     | 28 Wed           |
+| Ehm    | Wed 5:05 p.m.    |
+| Ehms   | Wed 5:05:33 p.m. |
+| Gy     | 2012 AD          |
+| H      | 17               |
+| Hm     | 17:05            |
+| Hms    | 17:05:33         |
+| M      | 11               |
+| MEd    | Wed 11/28        |
+| MMM    | Nov              |
+| MMMEd  | Wed Nov 28       |
+| MMMd   | Nov 28           |
+| Md     | 11/28            |
+| d      | 28               |
+| h      | 5 p.m.           |
+| hm     | 5:05 p.m.        |
+| hms    | 5:05:33 p.m.     |
+| ms     | 05:33            |
+| y      | 2012             |
+| yM     | 11/2012          |
+| yMEd   | Wed 11/28/2012   |
+| yMMM   | Nov 2012         |
+| yMMMEd | Wed Nov 28 2012  |
+| yMMMd  | Nov 28 2012      |
+| yMd    | 11/28/2012       |
+| yQQQ   | Q4 2012          |
+| yQQQQ  | 4th quarter 2012 |
 
 ### Relative Dates and Times
 
@@ -73,6 +127,14 @@ fmt.format(180, {direction: "none", type: "abbreviated"});           // "3m"
 fmt.format(180, {direction: "none", type: "short", unit: "second"}); // "180 secs"
 ```
 
+By default, timespans are exact representations of a given unit of elapsed time.  TwitterCLDR also supports approximate timespans which round up to the nearest larger unit.  For example, "44 seconds" remains "44 seconds" while "45 seconds" becomes "1 minute".  To approximate, pass the `approximate: true` option:
+
+```javascript
+fmt.format(44, {approximate: true});  // Dentro de 44 segundos
+fmt.format(45, {approximate: true});  // Dentro de 1 minuto
+fmt.format(52, {approximate: true});  // Dentro de 1 minuto
+```
+
 ### Numbers
 
 twitter-cldr-js number formatting supports decimals, currencies, and percentages.
@@ -92,8 +154,6 @@ fmt.format(1337, {precision: 2});      // "1.337,00"
 ```javascript
 var fmt = new TwitterCldr.CurrencyFormatter();
 fmt.format(1337, {currency: "EUR"});                 // 1.337,00 €
-fmt.format(1337, {currency: "Peru"});                // 1.337,00 S/.
-fmt.format(1337, {currency: "Peru", precision: 3});  // 1.337,000 S/.
 ```
 
 #### Percentages
@@ -122,6 +182,20 @@ Get all the rules for your language:
 ```javascript
 TwitterCldr.PluralRules.all();            // ["one", "few", "many", "other"]
 ```
+
+### Handling Bidirectional Text
+
+When it comes to displaying text written in both right-to-left (RTL) and left-to-right (LTR) languages, most display systems run into problems.  The trouble is that Arabic or Hebrew text and English text (for example) often get scrambled visually and are therefore difficult to read.  It's not usually the basic ASCII characters like A-Z that get scrambled - it's most often punctuation marks and the like that are confusingly mixed up (they are considered "weak" types by Unicode).
+
+To mitigate this problem, Unicode supports special invisible characters that force visual reordering so that mixed RTL and LTR (called "bidirectional") text renders naturally on the screen.  The Unicode Consortium has developed an algorithm (The Unicode Bidirectional Algorithm, or UBA) that intelligently inserts these control characters where appropriate.  You can make use of the UBA implementation in TwitterCLDR by creating a new instance of `TwitterCldr.Bidi` via the `from_string` method, and manipulating it like so:
+
+```javascript
+var bidi_str = TwitterCldr.Bidi.from_string("hello نزوة world", {"direction": "RTL"});
+bidi.reorder_visually();
+bidi.toString();
+```
+
+**Disclaimer**: Google Translate tells me the Arabic in the example above means "fancy", but my confidence is not very high, especially since all the letters are unattached. Apologies to any native speakers :)
 
 ### Generating the JavaScript
 

@@ -8,7 +8,9 @@ Currently, twitter-cldr-js supports the following:
 1. Date and time formatting
 2. Relative date and time formatting (eg. 1 month ago)
 3. Number formatting (decimal, currency, and percentage)
-4. Plural rules
+4. Long/short decimals
+5. Plural rules
+6. Bidirectional reordering
 
 ## Usage with Rails
 
@@ -149,6 +151,20 @@ fmt.format(-1337);                     // "-1.337"
 fmt.format(1337, {precision: 2});      // "1.337,00"
 ```
 
+#### Short / Long Decimals
+
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand":
+
+```javascript
+var fmt = new TwitterCldr.ShortDecimalFormatter();
+fmt.format(2337);     // 2K
+fmt.format(1337123);  // 1M
+
+fmt = new TwitterCldr.LongDecimalFormatter();
+fmt.format(2337);     // 2 thousand
+fmt.format(1337123);  // 1 million
+```
+
 #### Currencies
 
 ```javascript
@@ -201,11 +217,11 @@ bidi.toString();
 
 The JavaScript files that make up twitter-cldr-js can be automatically generated for each language via a set of Rake tasks.
 
-* Build js files in the current directory: `bundle exec rake twitter_cldr:compile`
-* Build js files into a given directory: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir`
-* Build only the specified locales: `bundle exec rake twitter_cldr:compile OUTPUT_DIR=/path/to/output/dir LOCALES=ar,he,ko,ja`
+* Build js files in the current directory: `bundle exec rake twitter_cldr:js:compile`
+* Build js files into a given directory: `bundle exec rake twitter_cldr:js:compile OUTPUT_DIR=/path/to/output/dir`
+* Build only the specified locales: `bundle exec rake twitter_cldr:js:compile OUTPUT_DIR=/path/to/output/dir LOCALES=ar,he,ko,ja`
 
-* Rebuild the js files internally in the gem: `bundle exec rake twitter_cldr:update`
+* Rebuild the js files internally in the gem: `bundle exec rake twitter_cldr:js:update`
 
 ## Requirements
 

@@ -65,6 +65,9 @@ class TwitterCldr.DateTimeFormatter
   additional_format_selector: ->
     new TwitterCldr.AdditionalDateFormatSelector(@tokens["date_time"]["additional"])
 
+  @additional_formats: ->
+    new TwitterCldr.DateTimeFormatter().additional_format_selector().patterns()
+
   era: (date, pattern, length) ->
     switch length
       when 0

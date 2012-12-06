@@ -59,8 +59,12 @@ module TwitterCldr
       end
 
       def exist_score(entities, goal_entities)
-        goal_entities.count do |goal_entity|
-          !entities.any? { |entity| entity[0] == goal_entity[0] }
+        goal_entities.inject(0) do |sum, goal_entity|
+          if !entities.any? { |entity| entity[0] == goal_entity[0] }
+            sum + 1
+          else
+            sum
+          end
         end
       end
 

@@ -54,19 +54,37 @@ module TwitterCldr
 
   class << self
 
+    attr_accessor :locale
+
     def resources
       @resources ||= TwitterCldr::Resources::Loader.new
     end
 
-    def get_locale
-      if defined?(FastGettext)
-        locale = FastGettext.locale
-        locale = DEFAULT_LOCALE if locale.to_s.empty?
-      else
-        locale = DEFAULT_LOCALE
-      end
+    def locale=(new_locale)
+      @locale = new_locale
+    end
 
+    def locale
+      locale = @locale ? @locale : find_fallback
+      locale = DEFAULT_LOCALE if locale.to_s.empty?
       (supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
+    end
+
+    def with_locale(locale)
+      raise "Unsupported locale" unless supported_locale?(locale)
+      old_locale = @locale
+      @locale = locale
+      yield
+      @locale = old_locale
+    end
+
+    def register_locale_fallback(proc_or_locale)
+      case proc_or_locale.class.to_s
+        when "Symbol", "String", "Proc"
+          locale_fallbacks << proc_or_locale
+        else
+          raise "A locale fallback must be of type String, Symbol, or Proc."
+      end
     end
 
     def convert_locale(locale)
@@ -86,8 +104,38 @@ module TwitterCldr
     def supported_locale?(locale)
       !!locale && supported_locales.include?(convert_locale(locale))
     end
+
+    protected
+
+    def find_fallback
+      (locale_fallbacks.size - 1).downto(0).each do |i|
+        result = if locale_fallbacks[i].is_a?(Proc)
+          begin
+            locale_fallbacks[i].call
+          rescue
+            nil
+          end
+        else
+          locale_fallbacks[i]
+        end
+        return result if result
+      end
+    end
+
+    def locale_fallbacks
+      @locale_fallbacks ||= []
+    end
+
   end
 
 end
+
+TwitterCldr.register_locale_fallback(lambda do
+  I18n.locale if defined?(I18n) && I18n.respond_to?(:locale)
+end)
+
+TwitterCldr.register_locale_fallback(lambda do
+  FastGettext.locale if defined?(FastGettext) && FastGettext.respond_to?(:locale)
+end)
 
 require 'twitter_cldr/core_ext'

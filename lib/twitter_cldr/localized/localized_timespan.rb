@@ -8,7 +8,7 @@ module TwitterCldr
 
     class LocalizedTimespan < LocalizedObject
       def initialize(seconds, options = {})
-        super(seconds, options[:locale] || TwitterCldr.get_locale, options)
+        super(seconds, options[:locale] || TwitterCldr.locale, options)
       end
 
       def to_s(options = {})

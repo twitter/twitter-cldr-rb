@@ -28,7 +28,7 @@ describe Languages do
 
     it "defaults source and destination language to English if not given" do
       Languages.translate_language("Russian").should == "Russian"
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Languages.translate_language("Russian").should == "ruso"
     end
 
@@ -53,7 +53,7 @@ describe Languages do
     it "should return the language in the default locale for the given locale code" do
       Languages.from_code(:es).should == "Spanish"
       Languages.from_code(:ru).should == "Russian"
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Languages.from_code(:es).should == "español"
     end
   end
@@ -78,7 +78,7 @@ describe Languages do
       langs[:ru].should == "Russian"
       langs[:de].should == "German"
 
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       langs = Languages.all
       langs.should be_a(Hash)
       langs[:ru].should == "ruso"

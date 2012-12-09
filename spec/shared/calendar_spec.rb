@@ -18,7 +18,7 @@ describe Calendar do
 
   describe '#initialize' do
     it 'returns calendar for default locale and type' do
-      stub(TwitterCldr).get_locale { :fr }
+      stub(TwitterCldr).locale { :fr }
       cal = Calendar.new
 
       cal.locale.should == :fr

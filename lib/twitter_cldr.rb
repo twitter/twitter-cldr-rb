@@ -16,7 +16,8 @@ require 'forwardable'
 require 'twitter_cldr/version'
 
 Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
-
+require 'pry'
+require 'pry-nav'
 module TwitterCldr
 
   autoload :Formatters,    'twitter_cldr/formatters'
@@ -88,6 +89,16 @@ module TwitterCldr
           raise "A locale fallback must be of type String, Symbol, or Proc."
       end
       nil
+    end
+
+    def reset_locale_fallbacks
+      locale_fallbacks.clear
+      TwitterCldr.register_locale_fallback(lambda { I18n.locale if defined?(I18n) && I18n.respond_to?(:locale) })
+      TwitterCldr.register_locale_fallback(lambda { FastGettext.locale if defined?(FastGettext) && FastGettext.respond_to?(:locale) })
+    end
+
+    def locale_fallbacks
+      @locale_fallbacks ||= []
     end
 
     def reset_locale_fallbacks

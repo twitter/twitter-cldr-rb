@@ -16,7 +16,8 @@ require 'forwardable'
 require 'twitter_cldr/version'
 
 Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
-
+require 'pry'
+require 'pry-nav'
 module TwitterCldr
 
   autoload :Formatters,    'twitter_cldr/formatters'
@@ -65,7 +66,7 @@ module TwitterCldr
     end
 
     def locale
-      locale = @locale ? @locale : find_fallback
+      locale = supported_locale?(@locale) ? @locale : find_fallback
       locale = DEFAULT_LOCALE if locale.to_s.empty?
       (supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
     end
@@ -87,8 +88,18 @@ module TwitterCldr
       end
     end
 
+    def reset_locale_fallbacks
+      locale_fallbacks.clear
+      TwitterCldr.register_locale_fallback(lambda { I18n.locale if defined?(I18n) && I18n.respond_to?(:locale) })
+      TwitterCldr.register_locale_fallback(lambda { FastGettext.locale if defined?(FastGettext) && FastGettext.respond_to?(:locale) })
+    end
+
+    def locale_fallbacks
+      @locale_fallbacks ||= []
+    end
+
     def convert_locale(locale)
-      locale = locale.to_sym
+      locale = locale.to_sym if locale.respond_to?(:to_sym)
       TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
@@ -120,22 +131,13 @@ module TwitterCldr
         end
         return result if result
       end
-    end
-
-    def locale_fallbacks
-      @locale_fallbacks ||= []
+      nil
     end
 
   end
 
 end
 
-TwitterCldr.register_locale_fallback(lambda do
-  I18n.locale if defined?(I18n) && I18n.respond_to?(:locale)
-end)
-
-TwitterCldr.register_locale_fallback(lambda do
-  FastGettext.locale if defined?(FastGettext) && FastGettext.respond_to?(:locale)
-end)
+TwitterCldr.reset_locale_fallbacks
 
 require 'twitter_cldr/core_ext'

@@ -11,15 +11,6 @@ TEST_COUNTRIES = ["Australia", "Thailand", "Russia", "China", "Japan", "Peru", "
 TEST_CODES     = %w[AUD THB RUB CNY JPY PEN ZAR INR KRW GBP]
 
 describe Currencies do
-  describe "#countries" do
-    it "should list all supported countries" do
-      countries = Currencies.countries
-
-      countries.size.should == 112
-      countries.should include(*TEST_COUNTRIES)
-    end
-  end
-
   describe "#currency_codes" do
     it "should list all supported country codes" do
       codes = Currencies.currency_codes
@@ -29,28 +20,26 @@ describe Currencies do
     end
   end
 
-  describe "#for_country" do
-    it "should return all information for the given country" do
-      data = Currencies.for_country("Peru")
-
+  describe "#for_code" do
+    it "should return all information for PEN" do
+      data = Currencies.for_code("PEN")
       data.should be_a(Hash)
       data.should include(
-        :currency => :PEN,
-        :name => "Peruvian nuevo sol",
-        :symbol   => nil
+        :name        => "Peruvian nuevo sol",
+        :currency    => :PEN,
+        :symbol      => "S/.",
+        :cldr_symbol => nil
       )
     end
-  end
 
-  describe "#for_code" do
-    it "should return all information for the given currency code" do
-      data = Currencies.for_code("PEN")
-
+    it "should return all information for CAD, a currency code with multiple possible symbols" do
+      data = Currencies.for_code("CAD")
       data.should be_a(Hash)
       data.should include(
-        :name => "Peruvian nuevo sol",
-        :currency => :PEN,
-        :symbol => nil
+        :name        => "Canadian dollar",
+        :currency    => :CAD,
+        :symbol      => "$",
+        :cldr_symbol => "CA$"
       )
     end
   end

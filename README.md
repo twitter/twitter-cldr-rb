@@ -42,7 +42,6 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 # currencies, default USD
 1337.localize(:es).to_currency.to_s                        # 1.337,00 $
 1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1.337,00 €
-1337.localize(:es).to_currency.to_s(:currency => "Peru")   # 1.337,00 S/.
 
 # percentages
 1337.localize(:es).to_percent.to_s                         # 1.337%
@@ -63,20 +62,14 @@ num.to_currency.to_s  # ...etc
 
 #### More on Currencies
 
-If you're looking for a list of supported countries and currencies, use the `TwitterCldr::Shared::Currencies` class:
+If you're looking for a list of supported currencies, use the `TwitterCldr::Shared::Currencies` class:
 
 ```ruby
-# all supported countries
-TwitterCldr::Shared::Currencies.countries                  # ["Lithuania", "Philippines", ... ]
-
 # all supported currency codes
 TwitterCldr::Shared::Currencies.currency_codes             # ["LTL", "PHP" ... ]
 
-# data for a specific country
-TwitterCldr::Shared::Currencies.for_country("Canada")      # { :currency => "Dollar", :symbol => "$", :code => "CAD" }
-
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Dollar", :symbol => "$", :country => "Canada"}
+TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Canadian dollar", :symbol => "$", :cldr_symbol => "CA$", :country => "Canada" }
 ```
 
 #### Short / Long Decimals

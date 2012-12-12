@@ -119,7 +119,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varys for each locale.  To get a full list, use the `additional_formats_for` method:
 
 ```ruby
-# ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ] 
+# ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ]
 TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja)
 ```
 

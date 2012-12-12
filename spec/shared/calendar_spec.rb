@@ -13,7 +13,7 @@ describe Calendar do
 
   before(:each) do
     # clear cache for each test
-    Calendar.class_variable_set(:@@calendar_cache, {})
+    Calendar.send(:class_variable_set, :@@calendar_cache, {})
   end
 
   describe '#initialize' do

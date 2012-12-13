@@ -3,7 +3,7 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :Ed: E ה-d
+        :Ed: E ה־d
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -45,29 +45,29 @@
             :mon: יום ב׳
             :sat: שבת
             :sun: יום א׳
-            :thu: יום ה׳
+            :thu: יום ה
             :tue: יום ג׳
             :wed: יום ד׳
           :narrow:
             :fri: ו׳
-            :mon: ב'
+            :mon: ב׳
             :sat: ש׳
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
+            :sun: א׳
+            :thu: ה
+            :tue: ג׳
+            :wed: ד׳
           :short:
-            :fri: ו'
-            :mon: ב'
-            :sat: ש'
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה
+            :tue: ג׳
+            :wed: ד׳
           :wide:
             :fri: יום שישי
             :mon: יום שני
-            :sat: יום שבת
+            :sat: שבת
             :sun: יום ראשון
             :thu: יום חמישי
             :tue: יום שלישי
@@ -75,21 +75,21 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
-            :fri: ו
+            :fri: ו׳
             :mon: ב׳
-            :sat: ש
+            :sat: ש׳
             :sun: א׳
-            :thu: ה׳
+            :thu: ה
             :tue: ג׳
             :wed: ד׳
           :short:
-            :fri: ו'
-            :mon: ב'
-            :sat: ש'
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה
+            :tue: ג׳
+            :wed: ד׳
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
@@ -116,11 +116,11 @@
         :date:
           :default: :calendars.gregorian.formats.date.medium
           :full:
-            :pattern: EEEE, d בMMMM y
+            :pattern: EEEE, ה־d בMMMM y
           :long:
-            :pattern: d בMMMM y
+            :pattern: ה־d בMMMM y
           :medium:
-            :pattern: d בMMM yyyy
+            :pattern: ה־d בMMM yyyy
           :short:
             :pattern: dd/MM/yy
         :datetime:

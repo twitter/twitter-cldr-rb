@@ -20,8 +20,9 @@ module TwitterCldr
             result = {
               :currency    => currency_code,
               :name        => data[:one],
-              :cldr_symbol => data[:symbol],
-              :symbol      => data[:symbol]
+              :cldr_symbol => data[:symbol] || currency_code.to_s,
+              :symbol      => data[:symbol] || currency_code.to_s,
+              :code_points => (data[:symbol] || currency_code.to_s).unpack("U*")
             }
 
             result.merge!(symbol_data) if symbol_data

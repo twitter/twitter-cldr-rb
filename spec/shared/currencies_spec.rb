@@ -28,7 +28,7 @@ describe Currencies do
         :name        => "Peruvian nuevo sol",
         :currency    => :PEN,
         :symbol      => "S/.",
-        :cldr_symbol => nil
+        :cldr_symbol => "PEN"
       )
     end
 
@@ -41,6 +41,13 @@ describe Currencies do
         :symbol      => "$",
         :cldr_symbol => "CA$"
       )
+    end
+
+    it "verifies that all code_points values are equivalent to their corresponding symbols" do
+      Currencies.currency_codes.select do |code|
+        data = Currencies.for_code(code)
+        data[:code_points].pack("U*").should == data[:symbol]
+      end
     end
   end
 end

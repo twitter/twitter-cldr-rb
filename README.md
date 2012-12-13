@@ -69,7 +69,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # ["LTL", "PHP" ... ]
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Canadian dollar", :symbol => "$", :cldr_symbol => "CA$", :country => "Canada" }
+TwitterCldr::Shared::Currencies.for_code("CAD")            # { :currency => "Canadian dollar", :symbol => "$", :code_points => [36], :cldr_symbol => "CA$", :country => "Canada" }
 ```
 
 #### Short / Long Decimals

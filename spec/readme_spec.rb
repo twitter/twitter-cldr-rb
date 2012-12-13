@@ -44,7 +44,7 @@ describe "README" do
       :cldr_symbol => "CA$",
       :symbol => "$",
       :name => "Canadian dollar",
-      :unicode_hex=>[36]
+      :code_points => [36]
     }
   end
 

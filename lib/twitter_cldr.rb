@@ -16,8 +16,7 @@ require 'forwardable'
 require 'twitter_cldr/version'
 
 Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
-require 'pry'
-require 'pry-nav'
+
 module TwitterCldr
 
   autoload :Formatters,    'twitter_cldr/formatters'

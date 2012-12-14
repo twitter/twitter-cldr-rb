@@ -162,6 +162,14 @@ describe TwitterCldr do
     end
   end
 
+  describe "#with_locale" do
+    it "should only change the locale in the context of the block" do
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+      TwitterCldr.with_locale(:es) { TwitterCldr::Shared::Languages.from_code(:es) }.should match_normalized("español")
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+    end
+  end
+
   describe '#resources' do
     it 'returns @resources' do
       resources = TwitterCldr::Resources::Loader.new

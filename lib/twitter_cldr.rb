@@ -75,8 +75,9 @@ module TwitterCldr
       raise "Unsupported locale" unless supported_locale?(locale)
       old_locale = @locale
       @locale = locale
-      yield
+      result = yield
       @locale = old_locale
+      result
     end
 
     def register_locale_fallback(proc_or_locale)

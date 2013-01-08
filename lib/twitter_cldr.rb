@@ -86,6 +86,7 @@ module TwitterCldr
         else
           raise "A locale fallback must be of type String, Symbol, or Proc."
       end
+      nil
     end
 
     def reset_locale_fallbacks

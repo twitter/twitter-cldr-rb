@@ -168,6 +168,21 @@ describe TwitterCldr do
       TwitterCldr.with_locale(:es) { TwitterCldr::Shared::Languages.from_code(:es) }.should match_normalized("español")
       TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
     end
+
+    it "switches the locale back to the original if the block raises an error" do
+      TwitterCldr.locale.should == :en
+      locale_inside_block = nil
+
+      lambda do
+        TwitterCldr.with_locale(:es) do
+          locale_inside_block = TwitterCldr.locale
+          raise "Error!"
+        end
+      end.should raise_error
+
+      locale_inside_block.should == :es
+      TwitterCldr.locale.should == :en
+    end
   end
 
   describe '#resources' do

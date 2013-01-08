@@ -12,7 +12,7 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
-      COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies]
+      COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies territories]
 
       # Arguments:
       #

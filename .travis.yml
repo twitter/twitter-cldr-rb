@@ -6,5 +6,12 @@ rvm:
 matrix:
   allow_failures:
     - rvm: jruby-head
-script: 'bundle exec rake spec:full'
+env:
+  - "FULL_SPEC=true TEST_FOLDERS=spec/bidi"
+  - "FULL_SPEC=true TEST_FOLDERS=spec/collation"
+  - "FULL_SPEC=true TEST_FOLDERS=spec/normalization_spec.rb spec/normalization"
+  - "FULL_SPEC=true TEST_FOLDERS=spec/formatters spec/localized spec/resources"
+  - "FULL_SPEC=true TEST_FOLDERS=spec/shared spec/tokenizers spec/utils_spec.rb spec/utils"
+  - "FULL_SPEC=true TEST_FOLDERS=spec/core_ext_spec.rb spec/readme_spec.rb spec/twitter_cldr_spec.rb"
+script: 'bundle exec rspec $TEST_FOLDERS'
 before_script: 'gem install bundler'

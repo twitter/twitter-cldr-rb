@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
+include TwitterCldr::Normalization
 
 describe Base do
   describe "#combining_class_for" do

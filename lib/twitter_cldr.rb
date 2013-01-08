@@ -75,6 +75,7 @@ module TwitterCldr
       old_locale = @locale
       @locale = locale
       result = yield
+    ensure
       @locale = old_locale
       result
     end
@@ -120,15 +121,15 @@ module TwitterCldr
     protected
 
     def find_fallback
-      (locale_fallbacks.size - 1).downto(0).each do |i|
-        result = if locale_fallbacks[i].is_a?(Proc)
+      locale_fallbacks.reverse_each do |fallback|
+        result = if fallback.is_a?(Proc)
           begin
-            locale_fallbacks[i].call
+            fallback.call
           rescue
             nil
           end
         else
-          locale_fallbacks[i]
+          fallback
         end
         return result if result
       end

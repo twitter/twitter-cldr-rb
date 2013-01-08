@@ -278,6 +278,13 @@ describe TwitterCldr do
       TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
     end
 
+    it "doesn't mess up if the given locale isn't supported" do
+      TwitterCldr.locale = :pt
+      TwitterCldr.locale.should == :pt
+      lambda { TwitterCldr.with_locale(:xx) {} }.should raise_error
+      TwitterCldr.locale.should == :pt
+    end
+
     it "switches the locale back to the original if the block raises an error" do
       TwitterCldr.locale.should == :en
       locale_inside_block = nil

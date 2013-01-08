@@ -72,12 +72,15 @@ module TwitterCldr
 
     def with_locale(locale)
       raise "Unsupported locale" unless supported_locale?(locale)
-      old_locale = @locale
-      @locale = locale
-      result = yield
-    ensure
-      @locale = old_locale
-      result
+
+      begin
+        old_locale = @locale
+        @locale = locale
+        result = yield
+      ensure
+        @locale = old_locale
+        result
+      end
     end
 
     def register_locale_fallback(proc_or_locale)
@@ -88,16 +91,6 @@ module TwitterCldr
           raise "A locale fallback must be of type String, Symbol, or Proc."
       end
       nil
-    end
-
-    def reset_locale_fallbacks
-      locale_fallbacks.clear
-      TwitterCldr.register_locale_fallback(lambda { I18n.locale if defined?(I18n) && I18n.respond_to?(:locale) })
-      TwitterCldr.register_locale_fallback(lambda { FastGettext.locale if defined?(FastGettext) && FastGettext.respond_to?(:locale) })
-    end
-
-    def locale_fallbacks
-      @locale_fallbacks ||= []
     end
 
     def reset_locale_fallbacks

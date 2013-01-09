@@ -30,8 +30,6 @@ module TwitterCldr
         end
 
         def translate_territory(territory, source_locale = :en, dest_locale = TwitterCldr.get_locale)
-          puts "territories:"
-          puts get_resource(source_locale)[:territories].inspect
           territory_code = get_resource(source_locale)[:territories].detect { |_, val| val.downcase == territory.downcase }.first
           get_resource(dest_locale)[:territories][territory_code] if territory_code
         rescue

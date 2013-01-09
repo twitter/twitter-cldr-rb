@@ -24,7 +24,7 @@ describe Territories do
       Territories.translate_territory("Hong Kong", :en, :es).should == "Hong Kong"
       Territories.translate_territory("Ivory Coast", :en, :es).should == "Costa de Marfil"
       Territories.translate_territory("Macau", :en, :es).should == "Macao"
-      Territories.translate_territory("Macedona [FYROM]", :en, :es).should == "Macedonia [ERYM]"
+      Territories.translate_territory("Macedonia [FYROM]", :en, :es).should == "Macedonia [ERYM]"
     end
 
     it "should be capitalization agnostic" do

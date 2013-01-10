@@ -37,7 +37,7 @@ module TwitterCldr
               arg.map { |elem| deep_normalize_territory_code_keys(elem) }
             when Hash
               normalized = arg.inject({}) do |carry, (key, value)|
-                normalized_key = TwitterCldr::Utils::Territories.normalize_territory_code(key)
+                normalized_key = normalize_territory_code(key)
                 carry[normalized_key] = deep_normalize_territory_code_keys(value)
                 carry
               end

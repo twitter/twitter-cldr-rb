@@ -28,14 +28,6 @@ describe TwitterCldr::Utils do
     end
   end
 
-  describe "#deep_normalize_territory_code_keys" do
-    TwitterCldr::Utils.deep_normalize_territory_code_keys(
-      { "is" => [ { "US" => "United States",
-                    5 => "Suður-Ameríka" },
-                  { "009" => "Eyjaálfa" } ] }
-    ).should == { :is => [ { :us => "United States" }, { } ] }
-  end
-
   describe "#deep_merge! and #deep_merge_hash" do
     it "combines two non-nested hashes with different keys" do
       first = { :foo => "bar" }

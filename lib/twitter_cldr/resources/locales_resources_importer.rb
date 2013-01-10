@@ -74,13 +74,13 @@ module TwitterCldr
       # we downcase them here.
       #
       # (There is also some trickery relating to three-digit UN "area codes"
-      # used by CLDR; see comment of TwitterCldr::Utils.deep_normalize_territory_code_keys.)
+      # used by CLDR; see comment of deep_normalize_territory_code_keys.)
       def downcase_territory_codes(component, locale, path)
         return unless component == 'Territories'
 
         data = YAML.load(File.read(path))
         File.open(path, 'w:utf-8') do |output|
-          output.write(YAML.dump(TwitterCldr::Utils.deep_normalize_territory_code_keys(data)))
+          output.write(YAML.dump(self.deep_normalize_territory_code_keys(data)))
         end
       end
 
@@ -94,6 +94,33 @@ module TwitterCldr
         end
 
         FileUtils.rm(path)
+      end
+
+      # Normalizes each key in the 'arg' hash or constituent hashes as
+      # if it were a territory code.
+      #
+      # In addition, removes entries in hashes where the key begins with a digit.
+      # Because of the way the twitter-cldr-rb YAML resource pipeline works,
+      # these three-digit codes get mangled (e.g. interpreted as octal then
+      # reinterpreted out in decimal), and translations for UN three-digit
+      # area codes cannot be trusted.
+      def self.deep_normalize_territory_code_keys(arg)
+        case arg
+          when Array
+            arg.map { |elem| self.deep_normalize_territory_code_keys(elem) }
+          when Hash
+            normalized = arg.inject({}) do |carry, (key, value)|
+              normalized_key = TwitterCldr::Shared::Territories.normalize_territory_code(key)
+              carry[normalized_key] = self.deep_normalize_territory_code_keys(value)
+              carry
+            end
+            normalized.delete_if do |key, _|
+              key.to_s =~ /^\d+$/
+            end
+            normalized
+          else
+            arg
+        end
       end
 
       # TODO: export buddhist calendar from CLDR data instead of using BUDDHIST_CALENDAR constant.

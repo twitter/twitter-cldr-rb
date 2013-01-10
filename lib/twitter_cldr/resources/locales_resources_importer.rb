@@ -80,7 +80,7 @@ module TwitterCldr
 
         data = YAML.load(File.read(path))
         File.open(path, 'w:utf-8') do |output|
-          output.write(YAML.dump(self.deep_normalize_territory_code_keys(data)))
+          output.write(YAML.dump(LocalesResourcesImporter.deep_normalize_territory_code_keys(data)))
         end
       end
 

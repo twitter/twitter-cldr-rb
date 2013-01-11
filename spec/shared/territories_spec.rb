@@ -63,6 +63,10 @@ describe Territories do
       Territories.from_territory_code_for_locale(:es, :en).should match_normalized("Spain")
       Territories.from_territory_code_for_locale(:gb, :es).should match_normalized("Reino Unido")
     end
+
+    it "should work with Traditional Chinese" do
+      Territories.from_territory_code_for_locale(:US, :"zh-Hant").should match_normalized("美國")
+    end
   end
 
   describe "#from_territory_code" do

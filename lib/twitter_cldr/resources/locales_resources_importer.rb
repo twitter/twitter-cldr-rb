@@ -79,8 +79,12 @@ module TwitterCldr
         return unless component == 'Territories'
 
         data = YAML.load(File.read(path))
+        data.keys.each do |l|
+          data[l] = TwitterCldr::Utils::Territories.deep_normalize_territory_code_keys(data[l])
+        end
+
         File.open(path, 'w:utf-8') do |output|
-          output.write(YAML.dump(TwitterCldr::Utils::Territories.deep_normalize_territory_code_keys(data)))
+          output.write(YAML.dump(data))
         end
       end
 

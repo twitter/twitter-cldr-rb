@@ -54,14 +54,10 @@ module TwitterCldr
 
   class << self
 
-    attr_accessor :locale
+    attr_writer :locale
 
     def resources
       @resources ||= TwitterCldr::Resources::Loader.new
-    end
-
-    def locale=(new_locale)
-      @locale = new_locale
     end
 
     def locale

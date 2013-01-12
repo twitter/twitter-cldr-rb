@@ -80,8 +80,8 @@ module TwitterCldr
     end
 
     def register_locale_fallback(proc_or_locale)
-      case proc_or_locale.class.to_s
-        when "Symbol", "String", "Proc"
+      case proc_or_locale
+        when Symbol, String, Proc
           locale_fallbacks << proc_or_locale
         else
           raise "A locale fallback must be of type String, Symbol, or Proc."

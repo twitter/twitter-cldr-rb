@@ -613,7 +613,7 @@ TwitterCldr.convert_locale(:msa)              # :ms
 TwitterCldr.convert_locale(:ms)               # :ms
 ```
 
-There are a few functions in TwitterCLDR that don't require a locale code, and instead use the default locale by calling `TwitterCldr.get_locale`.  The `get_locale` function defers to `FastGettext.locale` when the FastGettext library is available, and falls back on :en (English) when it's not.  (Twitter uses the FastGettext gem to retrieve translations efficiently in Ruby).
+There are a few functions in TwitterCLDR that don't require a locale code, and instead use the default locale by calling `TwitterCldr.locale`.  The `locale` function defers to `FastGettext.locale` when the FastGettext library is available, and falls back on :en (English) when it's not.  (Twitter uses the FastGettext gem to retrieve translations efficiently in Ruby).
 
 ```ruby
 TwitterCldr.get_locale    # will return :en

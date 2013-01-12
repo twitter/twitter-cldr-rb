@@ -21,14 +21,14 @@ describe Languages do
       Languages.translate_language("RUSSIAN", :en, :es).should match_normalized("ruso")
     end
 
-    it "defaults the destination language to English (or whatever FastGettext.locale is)" do
+    it "defaults the destination language to English (or whatever the global locale is)" do
       Languages.translate_language("Ruso", :es).should match_normalized("Russian")
       Languages.translate_language("русский", :ru).should match_normalized("Russian")
     end
 
     it "defaults source and destination language to English if not given" do
       Languages.translate_language("Russian").should match_normalized("Russian")
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Languages.translate_language("Russian").should match_normalized("ruso")
     end
 
@@ -53,7 +53,7 @@ describe Languages do
     it "should return the language in the default locale for the given locale code" do
       Languages.from_code(:es).should match_normalized("Spanish")
       Languages.from_code(:ru).should match_normalized("Russian")
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Languages.from_code(:es).should match_normalized("español")
     end
   end

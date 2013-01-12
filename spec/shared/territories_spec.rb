@@ -32,14 +32,14 @@ describe Territories do
       Territories.translate_territory("RUSSIA", :en, :es).should match_normalized("Rusia")
     end
 
-    it "defaults the destination language to English (or whatever FastGettext.locale is)" do
+    it "defaults the destination language to English (or whatever the global locale is)" do
       Territories.translate_territory("Rusia", :es).should match_normalized("Russia")
       Territories.translate_territory("Россия", :ru).should match_normalized("Russia")
     end
 
     it "defaults source and destination language to English if not given" do
       Territories.translate_territory("Russia").should match_normalized("Russia")
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Territories.translate_territory("Russia").should match_normalized("Rusia")
     end
 
@@ -73,7 +73,7 @@ describe Territories do
     it "should return the language in the default locale for the given locale code" do
       Territories.from_territory_code(:ES).should match_normalized("Spain")
       Territories.from_territory_code(:RU).should match_normalized("Russia")
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       Territories.from_territory_code(:ES).should match_normalized("España")
     end
   end
@@ -98,7 +98,7 @@ describe Territories do
       territories[:ru].should match_normalized("Russia")
       territories[:de].should match_normalized("Germany")
 
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       territories = Territories.all
       territories.should be_a(Hash)
       territories[:ru].should match_normalized("Rusia")

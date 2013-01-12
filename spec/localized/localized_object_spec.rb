@@ -81,7 +81,7 @@ describe LocalizedObject do
     end
 
     it 'uses default locale and empty options hash by default' do
-      mock(LocalizedClass).new(localizable_object, TwitterCldr.get_locale, {})
+      mock(LocalizedClass).new(localizable_object, TwitterCldr.locale, {})
       localizable_object.localize
     end
   end

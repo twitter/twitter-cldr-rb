@@ -273,8 +273,9 @@ describe "README" do
   end
 
   it "verifies locale defaults" do
-    TwitterCldr.get_locale.should == :en
+    TwitterCldr.locale.should == :en
+    TwitterCldr.locale = nil
     FastGettext.locale = "ru"
-    TwitterCldr.get_locale.should == :ru
+    TwitterCldr.locale.should == :ru
   end
 end

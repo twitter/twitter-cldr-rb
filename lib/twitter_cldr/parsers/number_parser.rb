@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Parsers
-  
+
     class InvalidNumberError < StandardError; end
 
     class NumberParser

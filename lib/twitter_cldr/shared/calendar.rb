@@ -32,7 +32,7 @@ module TwitterCldr
 
       attr_reader :locale, :calendar_type
 
-      def initialize(locale = TwitterCldr.get_locale, calendar_type = TwitterCldr::DEFAULT_CALENDAR_TYPE)
+      def initialize(locale = TwitterCldr.locale, calendar_type = TwitterCldr::DEFAULT_CALENDAR_TYPE)
         @locale = TwitterCldr.convert_locale(locale)
         @calendar_type = calendar_type
       end

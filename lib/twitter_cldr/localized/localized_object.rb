@@ -27,7 +27,7 @@ module TwitterCldr
 
       def self.localize(klass)
         klass.class_eval <<-LOCALIZE, __FILE__, __LINE__ + 1
-          def localize(locale = TwitterCldr.get_locale, options = {})
+          def localize(locale = TwitterCldr.locale, options = {})
             #{self}.new(self, locale, options)
           end
         LOCALIZE

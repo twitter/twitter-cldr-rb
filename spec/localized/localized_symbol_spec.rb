@@ -12,7 +12,7 @@ describe LocalizedSymbol do
   describe "#as_language_code" do
     it "returns the correct localized language from the symbol" do
       :es.localize.as_language_code.should == "Spanish"
-      FastGettext.locale = :es
+      TwitterCldr.locale = :es
       :es.localize.as_language_code.should == "español"
     end
 

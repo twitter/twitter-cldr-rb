@@ -12,7 +12,7 @@ describe Numbers do
     let(:symbols) { { :nan => 'NaN', :minus_sign => '-' } }
 
     it 'returns numerical symbols for default locale' do
-      stub(TwitterCldr).get_locale { :jp }
+      stub(TwitterCldr).locale { :jp }
       stub(TwitterCldr).get_locale_resource(:jp, :numbers) { { :jp => { :numbers => { :symbols => symbols } } } }
       TwitterCldr::Shared::Numbers.symbols.should == symbols
     end

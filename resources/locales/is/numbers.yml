@@ -1,0 +1,57 @@
+---
+:is:
+  :numbers:
+    :formats:
+      :currency:
+        :patterns:
+          :default: ¤#,##0.00;(¤#,##0.00)
+        :unit:
+          :one: ! '{0} {1}'
+          :other: ! '{0} {1}'
+      :decimal:
+        :patterns:
+          :default: ! '#,##0.###'
+          :long:
+            1000: 0 þúsund
+            10000: 00 þúsund
+            100000: 000 þúsund
+            1000000: 0 milljónir
+            10000000: 00 milljónir
+            100000000: 000 milljónir
+            1000000000: 0 milljarðar
+            10000000000: 00 milljarðar
+            100000000000: 000 milljarðar
+            1000000000000: 0 billjónir
+            10000000000000: 00 billjónir
+            100000000000000: 000 billjónir
+          :short:
+            1000: 0 þ'.'
+            10000: 00 þ'.'
+            100000: 000 þ'.'
+            1000000: 0 m'.'
+            10000000: 00 m'.'
+            100000000: 000 m'.'
+            1000000000: 0 ma'.'
+            10000000000: 00 ma'.'
+            100000000000: 000 ma'.'
+            1000000000000: 0 bn
+            10000000000000: 00 bn
+            100000000000000: 000 bn
+      :percent:
+        :patterns:
+          :default: ! '#,##0%'
+      :scientific:
+        :patterns:
+          :default: ! '#E0'
+    :symbols:
+      :alias: ''
+      :decimal: ! ','
+      :exponential: E
+      :group: .
+      :infinity: ∞
+      :list: ;
+      :minus_sign: ! '-'
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: ! '%'
+      :plus_sign: +

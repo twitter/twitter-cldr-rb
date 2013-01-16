@@ -60,7 +60,7 @@ describe Rules do
 
   describe "#all" do
     it "gets rules for the default locale (usually supplied by FastGettext)" do
-      mock(TwitterCldr).get_locale { :ru }
+      mock(TwitterCldr).locale { :ru }
       Rules.all.should =~ [:one, :few, :many, :other]
     end
   end

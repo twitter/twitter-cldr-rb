@@ -14,5 +14,6 @@ module TwitterCldr
     autoload :PhoneCodes,    'twitter_cldr/shared/phone_codes'
     autoload :PostalCodes,   'twitter_cldr/shared/postal_codes'
     autoload :Bidi,          'twitter_cldr/shared/bidi'
+    autoload :Territories,     'twitter_cldr/shared/territories'
   end
 end

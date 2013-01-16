@@ -36,6 +36,20 @@ module TwitterCldr
         @base_obj.dup
       end
 
+      def to_i(options = {})
+        to_f(options).to_i
+      end
+
+      def to_f(options = {})
+        if TwitterCldr::Parsers::NumberParser.is_numeric?(@base_obj)
+          TwitterCldr::Parsers::NumberParser.new(@locale).parse(@base_obj, options)
+        else
+          @base_obj.to_f
+        end
+      rescue
+        @base_obj.to_f
+      end
+
       def size
         code_points.size
       end

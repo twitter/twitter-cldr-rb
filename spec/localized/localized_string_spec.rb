@@ -90,6 +90,39 @@ describe LocalizedString do
     end
   end
 
+  describe "#to_f" do
+    it "should correctly parse a number with a thousands separator" do
+      "1,300".localize.to_f.should == 1300.0
+      "1.300".localize(:es).to_f.should == 1300.0
+    end
+
+    it "should correctly parse a number with a decimal separator" do
+      "1.300".localize.to_f.should == 1.3
+      "1,300".localize(:es).to_f.should == 1.3
+    end
+
+    it "should correctly parse a number with a thousands and a decimal separator" do
+      "1,300.05".localize.to_f.should == 1300.05
+      "1.300,05".localize(:es).to_f.should == 1300.05
+    end
+
+    it "should return zero if the string contains no numbers" do
+      "abc".localize.to_f.should == 0.0
+    end
+
+    it "should return only the numbers at the beginning of the string if the string contains any non-numeric characters" do
+      "1abc".localize.to_f.should == 1.0
+      "a1bc".localize.to_f.should == 0.0
+    end
+  end
+
+  describe "#to_i" do
+    it "should chop off the decimal" do
+      "1,300.05".localize.to_i.should == 1300
+      "1.300,05".localize(:es).to_i.should == 1300
+    end
+  end
+
   describe "#normalize" do
     let(:string) { 'string' }
     let(:normalized_string) { 'normalized' }

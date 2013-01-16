@@ -42,12 +42,12 @@ module TwitterCldr
 
       def to_f(options = {})
         if TwitterCldr::Parsers::NumberParser.is_numeric?(@base_obj)
-          TwitterCldr::Parsers::NumberParser.new(@locale).parse(@base_obj, options)
+          TwitterCldr::Parsers::NumberParser.new(@locale).try_parse(@base_obj, options) do |result|
+            result || @base_obj.to_f
+          end
         else
           @base_obj.to_f
         end
-      rescue
-        @base_obj.to_f
       end
 
       def size

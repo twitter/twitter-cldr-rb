@@ -58,18 +58,24 @@ module TwitterCldr
       def tokens(options = {})
         path = full_path(options[:direction], options[:unit], options[:type])
         pluralization = options[:rule] || TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
+        available = traverse(path)
 
         case pluralization # sometimes the plural rule will return ":one" when the resource only contains a path with "1"
           when :zero
-            pluralization = 0 if token_exists(path + [0])
+            pluralization = 0 if available.include?(0)
           when :one
-            pluralization = 1 if token_exists(path + [1])
+            pluralization = 1 if available.include?(1)
           when :two
-            pluralization = 2 if token_exists(path + [2])
+            pluralization = 2 if available.include?(2)
         end
-        path << pluralization
 
-        tokens_with_placeholders_for(path) if token_exists(path)
+        if available.include?(pluralization)
+          path << pluralization
+        else
+          path << available.keys.first
+        end
+
+        tokens_with_placeholders_for(path)
       end
 
       def token_exists(path)

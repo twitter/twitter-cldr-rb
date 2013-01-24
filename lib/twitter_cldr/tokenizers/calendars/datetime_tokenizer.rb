@@ -116,6 +116,10 @@ module TwitterCldr
             resource.is_a?(Hash) ? resource[:pattern] : resource
         end
       end
+
+      def pattern_cache
+        @@pattern_cache ||= {}
+      end
     end
   end
 end

@@ -16,7 +16,8 @@ module TwitterCldr
         if !goal_pattern || goal_pattern.strip.empty?
           nil
         else
-          rank(goal_pattern).min do |(p1, score1), (p2, score2)|
+          cache_key = TwitterCldr::Utils.compute_cache_key(goal_pattern)
+          pattern_cache[cache_key] ||= rank(goal_pattern).min do |(p1, score1), (p2, score2)|
             score1 <=> score2
           end.first
         end
@@ -27,6 +28,10 @@ module TwitterCldr
       end
 
       protected
+
+      def pattern_cache
+        @pattern_cache ||= {}
+      end
 
       def separate(pattern_key)
         last_char = ""

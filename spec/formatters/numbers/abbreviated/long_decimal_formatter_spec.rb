@@ -4,6 +4,8 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
+require 'pry'
+require 'pry-nav'
 
 include TwitterCldr::Formatters
 
@@ -32,6 +34,11 @@ describe LongDecimalFormatter do
   end
 
   it "formats the number as if it were a straight decimal if it's less than 1000" do
-    @formatter.format(500).should == "500"
+    begin
+      @formatter.format(500).should == "500"
+    rescue
+      binding.pry
+      @formatter.format(500).should == "500"
+    end
   end
 end

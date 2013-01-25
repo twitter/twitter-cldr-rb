@@ -11,7 +11,11 @@ module TwitterCldr
       DEFAULT_SYMBOLS = { :group => ',', :decimal => '.', :plus_sign => '+', :minus_sign => '-' }
 
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => extract_locale(options))
+        locale = extract_locale(options)
+        cache_key = TwitterCldr::Utils.compute_cache_key(locale)
+        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::NumberTokenizer.new(
+          :locale => locale
+        )
         @symbols = DEFAULT_SYMBOLS.merge(tokenizer.symbols)
       end
 
@@ -27,6 +31,10 @@ module TwitterCldr
       end
 
       protected
+
+      def tokenizer_cache
+        @@tokenizer_cache ||= {}
+      end
 
       def transform_number(number)
         number  # noop for base class

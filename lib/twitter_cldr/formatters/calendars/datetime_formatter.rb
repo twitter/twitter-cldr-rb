@@ -42,7 +42,7 @@ module TwitterCldr
 
       def initialize(options = {})
         locale = extract_locale(options)
-        cache_key = TwitterCldr::Utils.compute_cache_key(locale, options[:calendar_type])
+        cache_key = TwitterCldr::Utils.compute_cache_key("datetime", locale, options[:calendar_type])
         @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::DateTimeTokenizer.new(
           :locale => locale,
           :calendar_type => options[:calendar_type]

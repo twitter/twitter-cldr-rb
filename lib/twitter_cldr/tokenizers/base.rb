@@ -34,7 +34,7 @@ module TwitterCldr
               content = token.match(regexes[token_type][:content])[1]
               ret << CompositeToken.new(tokenize_format(content))
             else
-              ret << Token.new(:value => token, :type => token_type)
+              ret << Token.new(:value => token, :type => token_type)  # .gsub(/\A\'/, "").chomp("'")
             end
           end
           ret
@@ -75,7 +75,7 @@ module TwitterCldr
       end
 
       def tokens_with_placeholders_for(key)
-        cache_key = compute_cache_key(@locale, key, type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, key, type)
 
         unless token_cache.include?(cache_key)
           result = []
@@ -91,14 +91,6 @@ module TwitterCldr
 
       def token_cache
         @@token_cache ||= {}
-      end
-
-      def compute_cache_key(*pieces)
-        if pieces && pieces.size > 0
-          pieces.join("|").hash
-        else
-          0
-        end
       end
 
       def init_placeholders

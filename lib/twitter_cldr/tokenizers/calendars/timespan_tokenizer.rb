@@ -56,6 +56,7 @@ module TwitterCldr
       end
 
       def tokens(options = {})
+        # tokens_with_placeholders_for(full_path(:none, :second, :short, :two))
         path = full_path(options[:direction], options[:unit], options[:type])
         pluralization = options[:rule] || TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
         available = traverse(path)
@@ -72,15 +73,11 @@ module TwitterCldr
         if available.include?(pluralization)
           path << pluralization
         else
+          return [] unless available.keys.first
           path << available.keys.first
         end
 
         tokens_with_placeholders_for(path)
-      end
-
-      def token_exists(path)
-        cache_key = compute_cache_key(@locale, path.join('.'))
-        token_cache.include?(cache_key) || !!traverse(path)
       end
 
       def all_types_for(unit, direction)

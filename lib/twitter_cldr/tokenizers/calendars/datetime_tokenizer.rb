@@ -55,12 +55,17 @@ module TwitterCldr
       end
 
       def additional_format_selector
-        @additional_format_selector ||= AdditionalDateFormatSelector.new(
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, @calendar_type)
+        @additional_format_selector = format_selector_cache[cache_key] ||= AdditionalDateFormatSelector.new(
           @resource[:calendars][@calendar_type][:additional_formats]
         )
       end
 
       protected
+
+      def format_selector_cache
+        @@format_selector_cache ||= {}
+      end
 
       def merge_token_type_regexes(first, second)
         TwitterCldr::Utils.deep_merge_hash(first, second) do |left, right|

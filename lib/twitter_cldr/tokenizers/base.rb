@@ -34,7 +34,7 @@ module TwitterCldr
               content = token.match(regexes[token_type][:content])[1]
               ret << CompositeToken.new(tokenize_format(content))
             else
-              ret << Token.new(:value => token, :type => token_type)  # .gsub(/\A\'/, "").chomp("'")
+              ret << Token.new(:value => token, :type => token_type)
             end
           end
           ret

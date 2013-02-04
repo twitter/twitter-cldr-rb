@@ -20,7 +20,7 @@ module TwitterCldr
             DateTokenizer::TOKEN_SPLITTER_REGEX,
             TimeTokenizer::TOKEN_SPLITTER_REGEX
           ),
-          :else => //
+          :else => /([^\s]+)/  # groups of non-space chars
         }
 
         @token_type_regexes = {

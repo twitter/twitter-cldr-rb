@@ -4,5 +4,5 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  VERSION = "2.1.0.beta"
+  VERSION = "2.1.0.beta2"
 end

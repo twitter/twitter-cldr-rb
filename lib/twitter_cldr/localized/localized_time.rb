@@ -12,6 +12,18 @@ module TwitterCldr
         LocalizedDateTime.new(DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}"), @locale, :calendar_type => @calendar_type)
       end
 
+      def to_time(base_time = Time.now)
+        self
+      end
+
+      def gmtime
+        LocalizedTime.new(@base_obj.gmtime, @locale, :calendar_type => @calendar_type)
+      end
+
+      def localtime
+        LocalizedTime.new(@base_obj.localtime, @locale, :calendar_type => @calendar_type)
+      end
+
       protected
 
       def formatter_const

@@ -41,8 +41,8 @@ module TwitterCldr
       end
 
       def tokens(options = {})
-        @type = options[:type] || @type || :default
-        @format = options[:format] || @format || :default
+        @type = options[:type] || :default
+        @format = options[:format] || :default
 
         path = full_path
         positive, negative = traverse(path).to_s.split(/;/)

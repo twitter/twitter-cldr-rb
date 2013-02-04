@@ -7,7 +7,12 @@ module TwitterCldr
   module Formatters
     class TimeFormatter < DateTimeFormatter
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::TimeTokenizer.new(:locale => extract_locale(options), :calendar_type => options[:calendar_type])
+        locale = extract_locale(options)
+        cache_key = TwitterCldr::Utils.compute_cache_key("time", locale, options[:calendar_type])
+        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::TimeTokenizer.new(
+          :locale => locale,
+          :calendar_type => options[:calendar_type]
+        )
       end
     end
   end

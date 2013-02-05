@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+$:.unshift File.join(File.dirname(__FILE__), 'lib')
+
 require 'rubygems' unless ENV['NO_RUBYGEMS']
 
 require 'bundler'

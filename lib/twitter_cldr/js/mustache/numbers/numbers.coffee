@@ -101,7 +101,9 @@ class TwitterCldr.CurrencyFormatter extends TwitterCldr.NumberFormatter
     else
       currency = symbol: @default_currency_symbol
 
-    super(number, options).replace('¤', currency.symbol)
+    symbol = if options.use_cldr_symbol then currency.cldr_symbol else currency.symbol
+
+    super(number, options).replace('¤', symbol)
 
   default_format_options_for: (number) ->
     precision = this.precision_from(number)

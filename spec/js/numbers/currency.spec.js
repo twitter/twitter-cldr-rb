@@ -24,7 +24,14 @@ describe("CurrencyFormatter", function() {
     });
 
     it("should use the currency symbol for the corresponding currency code", function() {
-      expect(formatter.format(12, {currency: "PEN"})).toEqual("PEN12.00");
+      expect(formatter.format(12, {currency: "JPY"})).toEqual("¥12.00");
+    });
+
+    it("should use the cldr_symbol for the corresponding currency code if use_cldr_code is specified", function() {
+      TwitterCldr.Currencies.currencies = {
+        "JPY": {symbol: "¥", cldr_symbol: "YEN", currency: "JPY", "name": "Japanese yen"}
+      };
+      expect(formatter.format(12, {currency: "JPY", use_cldr_symbol: true})).toEqual("YEN12.00");
     });
 
     it("overrides the default precision", function() {

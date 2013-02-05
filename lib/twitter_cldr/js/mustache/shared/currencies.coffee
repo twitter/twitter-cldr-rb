@@ -10,10 +10,10 @@ class TwitterCldr.Currencies
   @for_code: (currency_code) ->
     result = null
     for country_name, data of @currencies
-      if data.code == currency_code
+      if data.currency == currency_code
         result =
           country: country_name
-          code: data.code
+          cldr_symbol: data.cldr_symbol
           symbol: data.symbol
           currency: data.currency
         break

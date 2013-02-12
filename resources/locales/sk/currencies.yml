@@ -4,7 +4,9 @@
     :ADP:
       :one: Andorská peseta
     :AED:
-      :one: UAE dirham
+      :few: SAE dirhamy
+      :one: SAE dirham
+      :other: UAE dirham
     :AFN:
       :one: Afganský afgání
     :ALL:
@@ -12,7 +14,9 @@
     :AMD:
       :one: Armenský dram
     :ANG:
-      :one: Nizozemský Antilský guilder
+      :few: antilské guldeny
+      :one: antilský gulden
+      :other: Nizozemský Antilský guilder
     :AOA:
       :one: Angolská kwanza
     :AOK:
@@ -33,7 +37,7 @@
       :few: austrálske doláre
       :one: austrálsky dolár
       :other: austrálskych dolárov, austrálskeho dolára
-      :symbol: AU$
+      :symbol: AUD
     :AWG:
       :one: Arubský guilder
     :AZM:
@@ -43,9 +47,13 @@
     :BAD:
       :one: Bosnianský dinár
     :BAM:
+      :few: Bosnianský konvertibilná marka
       :one: Bosnianský konvertibilná marka
+      :other: Bosnianský konvertibilná marka
     :BBD:
+      :few: Barbadoský dolár
       :one: Barbadoský dolár
+      :other: Barbadoský dolár
     :BDT:
       :one: Bangladéšska taka
     :BEC:
@@ -57,15 +65,21 @@
     :BGL:
       :one: Bulharský leva
     :BGN:
+      :few: Bulharský leva nový
       :one: Bulharský leva nový
+      :other: Bulharský leva nový
     :BHD:
+      :few: Bahraiský dinár
       :one: Bahraiský dinár
+      :other: Bahraiský dinár
     :BIF:
       :one: Burundský frank
     :BMD:
       :one: Bermudský dolár
     :BND:
+      :few: Bruneiský dolár
       :one: Bruneiský dolár
+      :other: Bruneiský dolár
     :BOB:
       :one: Bolívijské boliviano
     :BOP:
@@ -82,7 +96,7 @@
       :few: brazílske realy
       :one: brazílsky real
       :other: brazílskych realov, brazílskeho realu
-      :symbol: R$
+      :symbol: BRL
     :BRN:
       :one: Brazílske Cruzado Novo
     :BRR:
@@ -90,24 +104,36 @@
     :BSD:
       :one: Bahamský dolár
     :BTN:
+      :few: Bhutansky ngultrum
       :one: Bhutansky ngultrum
+      :other: Bhutansky ngultrum
     :BUK:
       :one: Burmese Kyat
     :BWP:
-      :one: Botswanan Pula
+      :few: botswanské puly
+      :one: botswanská pula
+      :other: Botswanan Pula
     :BYB:
+      :few: Belarussian nový rubeľ (1994-1999)
       :one: Belarussian nový rubeľ (1994-1999)
+      :other: Belarussian nový rubeľ (1994-1999)
     :BYR:
+      :few: Belarussian rubeľ
       :one: Belarussian rubeľ
+      :other: Belarussian rubeľ
     :BZD:
+      :few: Belize dolár
       :one: Belize dolár
+      :other: Belize dolár
     :CAD:
       :few: kanadské doláre
       :one: kanadský dolár
       :other: kanadských dolárov, kanadského dolára
-      :symbol: CA$
+      :symbol: CAD
     :CDF:
+      :few: Konžský frank Congolais
       :one: Konžský frank Congolais
+      :other: Konžský frank Congolais
     :CHF:
       :few: švajčiarske franky
       :one: švajčiarsky frank
@@ -120,11 +146,15 @@
       :few: čínske jüany
       :one: čínsky jüan
       :other: čínskych jüanov, čínskeho jüana
-      :symbol: CN¥
+      :symbol: CNY
     :COP:
-      :one: Colombijské peso
+      :few: kolumbijské pesos
+      :one: kolumbijské peso
+      :other: kolumbijských pesos
     :CRC:
+      :few: Kostarikský colon
       :one: Kostarikský colon
+      :other: Kostarikský colon
     :CSK:
       :one: Československá koruna
     :CUC:
@@ -132,7 +162,9 @@
     :CUP:
       :one: Kubánske peso
     :CVE:
-      :one: Cape Verde eskudo
+      :few: kapverdské escudá
+      :one: kapverdské escudo
+      :other: Cape Verde eskudo
     :CYP:
       :one: Cypruská libra
     :CZK:
@@ -158,7 +190,9 @@
     :ECV:
       :one: Ekuadorský Unidad de Valor Constante (UVC)
     :EEK:
+      :few: Estónska kroon
       :one: Estónska kroon
+      :other: Estónska kroon
     :EGP:
       :one: Egyptská libra
     :ERN:
@@ -171,19 +205,22 @@
       :few: eurá
       :one: euro
       :other: eur, eura
-      :symbol: €
+      :symbol: EUR
     :FIM:
       :one: Finská marka
     :FJD:
-      :one: Fiji dolár
+      :few: fidžijské doláre
+      :one: fidžijský dolár
+      :other: Fiji dolár
     :FKP:
       :one: Falklandská libra
     :FRF:
       :one: Francúzsky frank
     :GBP:
+      :few: britských libier, britskej libry
       :one: britská libra
       :other: britských libier, britskej libry
-      :symbol: £
+      :symbol: GBP
     :GEK:
       :one: Gruzínsky Kupon Larit
     :GEL:
@@ -195,7 +232,9 @@
     :GIP:
       :one: Gibraltarská libra
     :GMD:
+      :few: Gambský dalasi
       :one: Gambský dalasi
+      :other: Gambský dalasi
     :GNF:
       :one: Guinejský frank
     :GNS:
@@ -209,16 +248,20 @@
     :GWE:
       :one: Portugalská Guinea eskudo
     :GWP:
+      :few: Guinea-Bissau peso
       :one: Guinea-Bissau peso
+      :other: Guinea-Bissau peso
     :GYD:
       :one: Guyanský dolár
     :HKD:
       :few: hongkongské doláre
       :one: hongkongský dolár
       :other: hongkongských dolárov, hongkongského dolára
-      :symbol: HK$
+      :symbol: HKD
     :HNL:
+      :few: Hoduraská lempira
       :one: Hoduraská lempira
+      :other: Hoduraská lempira
     :HRD:
       :one: Chorvátsky dinár
     :HRK:
@@ -244,7 +287,7 @@
       :few: indické rupie
       :one: indická rupia
       :other: indických rupií, indickej rupie
-      :symbol: ₹
+      :symbol: INR
     :IQD:
       :one: Iracký dinár
     :IRR:
@@ -261,34 +304,44 @@
       :few: japonské jeny
       :one: japonský jen
       :other: japonských jenov
-      :symbol: JP¥
+      :symbol: JPY
     :KES:
       :one: Keňský šiling
     :KGS:
-      :one: Kyrgyský som
+      :few: kirgizské somy
+      :one: kirgizský som
+      :other: Kyrgyský som
     :KHR:
       :one: Kambodžský riel
     :KMF:
+      :few: komorské franky
       :one: Comoro frank
+      :other: komorských frankov
     :KPW:
       :one: Severokórejský won
     :KRW:
       :few: juhokórejské wony
       :one: juhokórejský won
       :other: juhokórejských wonov
-      :symbol: ₩
+      :symbol: KRW
     :KWD:
+      :few: Kuvaitský dinár
       :one: Kuvaitský dinár
+      :other: Kuvaitský dinár
     :KYD:
       :one: Kajmanský dolár
     :KZT:
+      :few: Kazažský tenge
       :one: Kazažský tenge
+      :other: Kazažský tenge
     :LAK:
       :one: Laoský kip
     :LBP:
       :one: Libanonská libra
     :LKR:
+      :few: Šrilanská rupia
       :one: Šrilanská rupia
+      :other: Šrilanská rupia
     :LRD:
       :one: Libérský dolár
     :LSL:
@@ -328,19 +381,27 @@
     :MNT:
       :one: Mongolský tugrik
     :MOP:
+      :few: Macao Pataca
       :one: Macao Pataca
+      :other: Macao Pataca
     :MRO:
+      :few: Mauritania Ouguiya
       :one: Mauritania Ouguiya
+      :other: Mauritania Ouguiya
     :MTL:
       :one: Maltská lira
     :MTP:
       :one: Maltská libra
     :MUR:
+      :few: Mauritská rupia
       :one: Mauritská rupia
+      :other: Mauritská rupia
     :MVR:
       :one: Maldivská rufiyaa
     :MWK:
+      :few: Malavská kwacha
       :one: Malavská kwacha
+      :other: Malavská kwacha
     :MXN:
       :few: mexické pesos
       :one: mexické peso
@@ -351,19 +412,33 @@
     :MXV:
       :one: Mexické Unidad de Inversion (UDI)
     :MYR:
+      :few: Malajský ringgit
       :one: Malajský ringgit
+      :other: Malajský ringgit
     :MZE:
+      :few: Mozambijské eskudo
       :one: Mozambijské eskudo
+      :other: Mozambijské eskudo
     :MZM:
+      :few: Mozambijské metical
       :one: Mozambijské metical
+      :other: Mozambijské metical
+    :MZN:
+      :few: mozambické meticaly
+      :one: mozambický metical
+      :other: mozambických meticalov, mozambického meticalu
     :NAD:
+      :few: Namibský dolár
       :one: Namibský dolár
+      :other: Namibský dolár
     :NGN:
       :one: Nigerská naira
     :NIC:
       :one: Nikaragujská cordoba
     :NIO:
+      :few: Nikaragujská Cordoba Oro
       :one: Nikaragujská Cordoba Oro
+      :other: Nikaragujská Cordoba Oro
     :NLG:
       :one: Nizozemský guilder
     :NOK:
@@ -382,11 +457,15 @@
     :PEI:
       :one: Peruvský inti
     :PEN:
+      :few: Peruvský sol Nuevo
       :one: Peruvský sol Nuevo
+      :other: Peruvský sol Nuevo
     :PES:
       :one: Peruvský sol
     :PGK:
+      :few: Papua Nová Guinea kina
       :one: Papua Nová Guinea kina
+      :other: Papua Nová Guinea kina
     :PHP:
       :one: Filipínske peso
     :PKR:
@@ -401,13 +480,19 @@
     :PTE:
       :one: Portugalské eskudo
     :PYG:
+      :few: Paraguayské guarani
       :one: Paraguayské guarani
+      :other: Paraguayské guarani
     :QAR:
+      :few: Qatarský rial
       :one: Qatarský rial
+      :other: Qatarský rial
     :ROL:
       :one: Rumunský leu
     :RON:
+      :few: Rumunský Lei
       :one: Rumunský Lei
+      :other: Rumunský Lei
     :RSD:
       :one: Srbský dinár
     :RUB:
@@ -423,9 +508,13 @@
       :one: saudskoarabský rial
       :other: saudskoarabských rialov, saudskoarabského rialu
     :SBD:
+      :few: Solomon Islands dolár
       :one: Solomon Islands dolár
+      :other: Solomon Islands dolár
     :SCR:
+      :few: Sejšelská rupia
       :one: Sejšelská rupia
+      :other: Sejšelská rupia
     :SDD:
       :one: Sudánsky dinár
     :SDG:
@@ -435,41 +524,58 @@
     :SEK:
       :few: švédske koruny
       :one: švédska koruna
+      :other: Švédska koruna
     :SGD:
       :one: Singapúrsky dolár
     :SHP:
+      :few: Libra
       :one: Libra
+      :other: Libra
     :SIT:
       :one: Slovinský Tolar
     :SKK:
       :one: Slovenská koruna
     :SLL:
+      :few: Sierra Leone Leone
       :one: Sierra Leone Leone
+      :other: Sierra Leone Leone
     :SOS:
       :one: Somálsky šiling
     :SRD:
       :one: Surinamský dolár
     :SRG:
       :one: Surinamský guilder
+    :SSP:
+      :few: Juhosudánske libry
+      :one: Juhosudánska libra
+      :other: Juhosudánskych libier
     :STD:
+      :few: Sao Tome a Principe dobra
       :one: Sao Tome a Principe dobra
+      :other: Sao Tome a Principe dobra
     :SUR:
       :one: Sovietský rubeľ
     :SVC:
+      :few: El Salvadorský colon
       :one: El Salvadorský colon
+      :other: El Salvadorský colon
     :SYP:
       :one: Syrská libra
     :SZL:
+      :few: Swaziland lilangeni
       :one: Swaziland lilangeni
+      :other: Swaziland lilangeni
     :THB:
       :few: thajské bahty
       :one: thajský baht
       :other: thajských bahtov, thajského bahtu
-      :symbol: ฿
+      :symbol: THB
     :TJR:
       :one: Tadžikistanský rubeľ
     :TJS:
+      :few: Tadžikistanský somoni
       :one: Tadžikistanský somoni
+      :other: Tadžikistanský somoni
     :TMM:
       :one: Turkménsky manat (1993-2009)
     :TMT:
@@ -477,7 +583,9 @@
     :TND:
       :one: Tuniský dinár
     :TOP:
+      :few: Tonga Paʻanga
       :one: Tonga Paʻanga
+      :other: Tonga Paʻanga
     :TPE:
       :one: Timorské eskudo
     :TRL:
@@ -487,16 +595,20 @@
       :one: nová turecká líra
       :other: nových tureckých lír, novej tureckej líry
     :TTD:
+      :few: Trinidad a Tobago dolár
       :one: Trinidad a Tobago dolár
+      :other: Trinidad a Tobago dolár
     :TWD:
       :few: nové taiwanské doláre
       :one: nový taiwanský dolár
       :other: nových taiwanských dolárov, nového taiwanského dolára
-      :symbol: NT$
+      :symbol: TWD
     :TZS:
       :one: Tanzanský šiling
     :UAH:
+      :few: Ukrainská hrivna
       :one: Ukrainská hrivna
+      :other: Ukrainská hrivna
     :UAK:
       :one: Ukrainský karbovanetz
     :UGS:
@@ -507,7 +619,7 @@
       :few: americké doláre
       :one: americký dolár
       :other: amerických dolárov, amerického dolára
-      :symbol: US$
+      :symbol: USD
     :USN:
       :one: US dolár (Next day)
     :USS:
@@ -515,27 +627,37 @@
     :UYP:
       :one: Uruguajské peso (1975-1993)
     :UYU:
+      :few: Uruguajské peso Uruguayo
       :one: Uruguajské peso Uruguayo
+      :other: Uruguajské peso Uruguayo
     :UZS:
+      :few: Uzbekistanský sum
       :one: Uzbekistanský sum
+      :other: Uzbekistanský sum
     :VEB:
-      :one: Venezuelský bolivar
+      :one: Venezuelský bolívar (1871-2008)
     :VEF:
       :one: Venezuelský bolívar
     :VND:
       :one: Vietnamský dong
       :symbol: ₫
     :VUV:
+      :few: Vanuatu vatu
       :one: Vanuatu vatu
+      :other: Vanuatu vatu
     :WST:
+      :few: Západná Samoa tala
       :one: Západná Samoa tala
+      :other: Západná Samoa tala
     :XAF:
       :one: CFA frank BEAC
       :symbol: FCFA
     :XAU:
       :one: Zlato
     :XCD:
+      :few: East Caribbean dolár
       :one: East Caribbean dolár
+      :other: East Caribbean dolár
       :symbol: EC$
     :XDR:
       :one: Špeciálne práva čerpania
@@ -550,7 +672,9 @@
       :one: CFP frank
       :symbol: CFPF
     :XXX:
+      :few: Neznáma mena
       :one: Neznáma mena
+      :other: Neznáma mena
     :YDD:
       :one: Jemenský dinár
     :YER:
@@ -568,10 +692,22 @@
       :one: juhoafrický rand
       :other: juhoafrických randov, juhoafrického randu
     :ZMK:
+      :few: Zambská kwacha
       :one: Zambská kwacha
+      :other: Zambská kwacha
     :ZRN:
       :one: Zairský nový zaire
     :ZRZ:
       :one: Zairský Zaire
     :ZWD:
+      :few: Zimbabský dolár
       :one: Zimbabský dolár
+      :other: Zimbabský dolár
+    :ZWL:
+      :few: zimbabwianske doláre (2009)
+      :one: zimbabwiansky dolár (2009)
+      :other: zimbabwianskych dolárov (2009), zimbabwianskeho dolára (2009)
+    :ZWR:
+      :few: zimbabwianske doláre (2008)
+      :one: zimbabwiansky dolár (2008)
+      :other: zimbabwianskych dolárov (2008), zimbabwianskeho dolára (2008)

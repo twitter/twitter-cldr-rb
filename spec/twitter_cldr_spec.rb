@@ -62,17 +62,242 @@ describe TwitterCldr do
     end
   end
 
-  describe "#get_locale" do
-    context "with FastGettext locale" do
-      it "should return the FastGettext locale" do
-        mock(FastGettext).locale { "es" }
-        TwitterCldr.get_locale.should == :es
+  describe "#locale" do
+    context "with explicit locale" do
+      it "should return the same locale the user sets (if it's supported)" do
+        TwitterCldr.locale = :es
+        TwitterCldr.locale.should == :es
       end
 
-      it "should return the default locale if the FastGettext locale is unsupported" do
-        mock(FastGettext).locale { "bogus" }
-        TwitterCldr.get_locale.should == TwitterCldr::DEFAULT_LOCALE
+      it "should convert strings to symbols" do
+        TwitterCldr.locale = "es"
+        TwitterCldr.locale.should == :es
       end
+
+      it "should fall back if the user sets an unsupported locale" do
+        FastGettext.locale = :ko
+        TwitterCldr.locale = "blarg"
+        TwitterCldr.locale.should == :ko
+
+        FastGettext.locale = nil
+        I18n.locale = :hu
+        TwitterCldr.locale.should == :hu
+      end
+    end
+
+    context "with implicit locale (fallbacks)" do
+      before(:each) do
+        TwitterCldr.locale = nil
+      end
+
+      it "should return FastGettext locale before I18n locale and fall back gracefully" do
+        FastGettext.locale = :pt
+        I18n.locale = :ar
+        TwitterCldr.locale.should == :pt
+
+        FastGettext.locale = nil
+        TwitterCldr.locale.should == :ar
+
+        I18n.locale = nil
+        TwitterCldr.locale.should == :en
+      end
+
+      context "with only FastGettext locale" do
+        before(:each) do
+          I18n.locale = nil  # disable I18n fallback
+        end
+
+        it "should return the FastGettext locale if it's supported" do
+          FastGettext.locale = "vi"
+          TwitterCldr.locale.should == :vi
+        end
+
+        it "should return the default locale if the FastGettext locale is unsupported" do
+          FastGettext.locale = "bogus"
+          TwitterCldr.locale.should == TwitterCldr::DEFAULT_LOCALE
+        end
+      end
+
+      context "with only I18n locale" do
+        before(:each) do
+          FastGettext.locale = nil  # disable FastGettext fallback
+        end
+
+        it "should return the I18n locale if it's supported" do
+          I18n.locale = "ru"
+          TwitterCldr.locale.should == :ru
+        end
+
+        it "should return the default locale if the I18n locale is unsupported" do
+          I18n.locale = "bogus"
+          TwitterCldr.locale.should == TwitterCldr::DEFAULT_LOCALE
+        end
+      end
+
+      context "with a custom fallback" do
+        before(:each) do
+          @allow = false
+          TwitterCldr.register_locale_fallback(lambda { @allow ? :uk : nil })
+        end
+
+        it "should fall back to the custom locale" do
+          TwitterCldr.locale.should == :en
+          @allow = true
+          TwitterCldr.locale.should == :uk
+        end
+
+        it "should fall back to the next fallback option if the custom one returns nil" do
+          FastGettext.locale = :lv
+          TwitterCldr.locale.should == :lv
+          @allow = true
+          TwitterCldr.locale.should == :uk
+        end
+
+        it "should not return the fallback locale if it's unsupported" do
+          TwitterCldr.reset_locale_fallbacks
+          TwitterCldr.register_locale_fallback(lambda { :zzz })
+          TwitterCldr.locale.should == :en
+        end
+      end
+
+      it "should fall back if the user sets an unsupported locale" do
+        FastGettext.locale = :ko
+        TwitterCldr.locale = "blarg"
+        TwitterCldr.locale.should == :ko
+
+        FastGettext.locale = nil
+        I18n.locale = :hu
+        TwitterCldr.locale.should == :hu
+      end
+    end
+
+    context "with implicit locale (fallbacks)" do
+      before(:each) do
+        TwitterCldr.locale = nil
+      end
+
+      it "should return FastGettext locale before I18n locale and fall back gracefully" do
+        FastGettext.locale = :pt
+        I18n.locale = :ar
+        TwitterCldr.locale.should == :pt
+
+        FastGettext.locale = nil
+        TwitterCldr.locale.should == :ar
+
+        I18n.locale = nil
+        TwitterCldr.locale.should == :en
+      end
+
+      context "with only FastGettext locale" do
+        before(:each) do
+          I18n.locale = nil  # disable I18n fallback
+        end
+
+        it "should return the FastGettext locale if it's supported" do
+          FastGettext.locale = "vi"
+          TwitterCldr.locale.should == :vi
+        end
+
+        it "should return the default locale if the FastGettext locale is unsupported" do
+          FastGettext.locale = "bogus"
+          TwitterCldr.locale.should == TwitterCldr::DEFAULT_LOCALE
+        end
+      end
+
+      context "with only I18n locale" do
+        before(:each) do
+          FastGettext.locale = nil  # disable FastGettext fallback
+        end
+
+        it "should return the I18n locale if it's supported" do
+          I18n.locale = "ru"
+          TwitterCldr.locale.should == :ru
+        end
+
+        it "should return the default locale if the I18n locale is unsupported" do
+          I18n.locale = "bogus"
+          TwitterCldr.locale.should == TwitterCldr::DEFAULT_LOCALE
+        end
+      end
+
+      context "with a custom fallback" do
+        before(:each) do
+          @allow = false
+          TwitterCldr.register_locale_fallback(lambda { @allow ? :uk : nil })
+        end
+
+        it "should fall back to the custom locale" do
+          TwitterCldr.locale.should == :en
+          @allow = true
+          TwitterCldr.locale.should == :uk
+        end
+
+        it "should fall back to the next fallback option if the custom one returns nil" do
+          FastGettext.locale = :lv
+          TwitterCldr.locale.should == :lv
+          @allow = true
+          TwitterCldr.locale.should == :uk
+        end
+
+        it "should not return the fallback locale if it's unsupported" do
+          TwitterCldr.reset_locale_fallbacks
+          TwitterCldr.register_locale_fallback(lambda { :zzz })
+          TwitterCldr.locale.should == :en
+        end
+      end
+    end
+  end
+
+  describe "#with_locale" do
+    it "should only change the locale in the context of the block" do
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+      TwitterCldr.with_locale(:es) { TwitterCldr::Shared::Languages.from_code(:es) }.should match_normalized("español")
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+    end
+
+    it "switches the locale back to the original if the block raises an error" do
+      TwitterCldr.locale.should == :en
+      locale_inside_block = nil
+
+      lambda do
+        TwitterCldr.with_locale(:es) do
+          locale_inside_block = TwitterCldr.locale
+          raise "Error!"
+        end
+      end.should raise_error
+
+      locale_inside_block.should == :es
+      TwitterCldr.locale.should == :en
+    end
+  end
+
+  describe "#with_locale" do
+    it "should only change the locale in the context of the block" do
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+      TwitterCldr.with_locale(:es) { TwitterCldr::Shared::Languages.from_code(:es) }.should match_normalized("español")
+      TwitterCldr::Shared::Languages.from_code(:es).should == "Spanish"
+    end
+
+    it "doesn't mess up if the given locale isn't supported" do
+      TwitterCldr.locale = :pt
+      TwitterCldr.locale.should == :pt
+      lambda { TwitterCldr.with_locale(:xx) {} }.should raise_error
+      TwitterCldr.locale.should == :pt
+    end
+
+    it "switches the locale back to the original if the block raises an error" do
+      TwitterCldr.locale.should == :en
+      locale_inside_block = nil
+
+      lambda do
+        TwitterCldr.with_locale(:es) do
+          locale_inside_block = TwitterCldr.locale
+          raise "Error!"
+        end
+      end.should raise_error
+
+      locale_inside_block.should == :es
+      TwitterCldr.locale.should == :en
     end
   end
 

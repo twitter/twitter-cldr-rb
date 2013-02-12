@@ -12,66 +12,64 @@ describe LocalizedDate do
   let(:date) { Date.today }
 
   describe "#ago" do
-    let(:date) { Date.new(2010,7,6) }
-    let(:base_time) { Time.gm(2010,8,6,12,12,30) }
+    let(:date) { Date.new(2010, 7, 6) }
+    let(:base_time) { Time.gm(2010, 8, 6, 12, 12, 30) }
 
     it "should ago-ify from now when no base_time given" do
-      stub(Time).now { Time.gm(2010,8,6,12,12,30) }
+      stub(Time).now { Time.gm(2010, 8, 6, 12, 12, 30) }
       loc_date = date.localize(:ko)
-      loc_date.ago.to_s(:unit => :hour).should match_normalized("756시간 전")
+      loc_date.ago.to_s(:unit => :hour).should match_normalized("744시간 전")
     end
 
     it "should ago-ify with appropriate unit when no unit given" do
       loc_date = date.localize(:en)
       loc_date.ago(:base_time => base_time).to_s.should match_normalized("1 month ago")
-      loc_date.ago(:base_time => Time.gm(2010,12,6,12,12,30)).to_s.should match_normalized("5 months ago")
-      loc_date.ago(:base_time => Time.gm(2010,7,7,12,12,30)).to_s.should match_normalized("2 days ago")
-      loc_date.ago(:base_time => Time.gm(2010,7,6,12,12,30)).to_s.should match_normalized("12 hours ago")
-      loc_date.ago(:base_time => Time.gm(2010,7,6,0,39,0)).to_s.should match_normalized("39 minutes ago")
+      loc_date.ago(:base_time => Time.gm(2010, 12, 6, 12, 12, 30)).to_s.should match_normalized("5 months ago")
+      loc_date.ago(:base_time => Time.gm(2010, 7, 7, 12, 12, 30)).to_s.should match_normalized("1 day ago")
     end
 
     it "should ago-ify with strings regardless of variable's placement or existence" do
       loc_date = date.localize(:ar)
-      loc_date.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("قبل 756 ساعة")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("قبل 32 يومًا")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("قبل 744 ساعة")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("قبل 31 يومًا")
       loc_date.ago(:base_time => base_time).to_s(:unit => :month).should match_normalized("قبل 1 من الشهور")
       loc_date.ago(:base_time => base_time).to_s(:unit => :year).should match_normalized("قبل 0 من السنوات")
 
       loc_date = date.localize(:fa)
-      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("32 روز پیش")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("31 روز پیش")
 
       loc_date = date.localize(:en)
-      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("32 days ago")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("31 days ago")
     end
 
     it "should ago-ify a date with a number of different units" do
-      date = Date.new(2010,6,6)
+      date = Date.new(2010, 6, 6)
       loc_date = date.localize(:de)
-      loc_date.ago(:base_time => base_time).to_s(:unit => :second).should match_normalized("Vor 5314350 Sekunden")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :minute).should match_normalized("Vor 88573 Minuten")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("Vor 1476 Stunden")
-      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("Vor 62 Tagen")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :second).should match_normalized("Vor 5270400 Sekunden")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :minute).should match_normalized("Vor 87840 Minuten")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("Vor 1464 Stunden")
+      loc_date.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("Vor 61 Tagen")
       loc_date.ago(:base_time => base_time).to_s(:unit => :month).should match_normalized("Vor 2 Monaten")
       loc_date.ago(:base_time => base_time).to_s(:unit => :year).should match_normalized("Vor 0 Jahren")
     end
 
     it "should return an error if called on a date in the future" do
-      date = Date.new(2010,10,10)
+      date = Date.new(2010, 10, 10)
       loc_date = date.localize(:de)
       lambda { loc_date.ago(base_time, :second)}.should raise_error(ArgumentError)
     end
   end
 
   describe "#until" do
-    let(:base_time) { Time.gm(2010,8,6,12,12,30) }
+    let(:base_time) { Time.gm(2010, 8, 6, 12, 12, 30) }
 
     it "should until-ify with a number of different units" do
-      date = Date.new(2010,10,10)
+      date = Date.new(2010, 10, 10)
       loc_date = date.localize(:de)
-      loc_date.until(:base_time => base_time).to_s(:unit => :second).should match_normalized("In 5572050 Sekunden")
-      loc_date.until(:base_time => base_time).to_s(:unit => :minute).should match_normalized("In 92868 Minuten")
-      loc_date.until(:base_time => base_time).to_s(:unit => :hour).should match_normalized("In 1548 Stunden")
-      loc_date.until(:base_time => base_time).to_s(:unit => :day).should match_normalized("In 64 Tagen")
+      loc_date.until(:base_time => base_time).to_s(:unit => :second).should match_normalized("In 5616000 Sekunden")
+      loc_date.until(:base_time => base_time).to_s(:unit => :minute).should match_normalized("In 93600 Minuten")
+      loc_date.until(:base_time => base_time).to_s(:unit => :hour).should match_normalized("In 1560 Stunden")
+      loc_date.until(:base_time => base_time).to_s(:unit => :day).should match_normalized("In 65 Tagen")
       loc_date.until(:base_time => base_time).to_s(:unit => :month).should match_normalized("In 2 Monaten")
       loc_date.until(:base_time => base_time).to_s(:unit => :year).should match_normalized("In 0 Jahren")
     end

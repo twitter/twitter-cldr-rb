@@ -43,7 +43,7 @@ describe Loader do
       lambda { loader.get_resource(:foo, :bar) }.should raise_error(ArgumentError, "Resource 'foo/bar.yml' not found.")
     end
 
-    context "custom resources" do
+    context 'custom resources' do
       it "doesn't merge the custom resource if it doesn't exist" do
         mock(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
         loader.get_resource(:foo, :bar).should == { :foo => "bar" }
@@ -82,6 +82,80 @@ describe Loader do
       mock(loader).get_resource(:locales, :'zh-Hant', :numbers) { 'foo' }
 
       loader.get_locale_resource('zh-tw', :numbers).should == 'foo'
+    end
+  end
+
+  describe '#resource_loaded' do
+    it 'should return true if the resource is cached, false otherwise' do
+      loader.preload_resources_for_locale(:de, :numbers)
+      loader.resource_loaded?(:locales, :de, :numbers).should be_true
+      loader.resource_loaded?(:locales, :de, :calendars).should be_false
+    end
+  end
+
+  describe '#locale_resource_loaded' do
+    it 'should return true if the locale resource is cached, false otherwise' do
+      loader.preload_resources_for_locale(:de, :numbers)
+      loader.locale_resource_loaded?(:de, :numbers).should be_true
+      loader.locale_resource_loaded?(:de, :calendars).should be_false
+    end
+  end
+
+  describe '#resource_types' do
+    it 'returns the list of available resource types' do
+      types = loader.resource_types
+      types.should be_a(Array)
+      types.should include(:calendars)
+      types.should include(:numbers)
+      types.should include(:units)
+    end
+  end
+
+  describe '#preload_resources_for_locale' do
+    it 'loads potentially multiple resources into the cache' do
+      loader.preload_resources_for_locale(:ar, :calendars, :units)
+      loader.locale_resource_loaded?(:ar, :calendars).should be_true
+      loader.locale_resource_loaded?(:ar, :units).should be_true
+      loader.locale_resource_loaded?(:en, :units).should be_false
+    end
+
+    it 'loads all resources for the locale if the :all resource type is specified' do
+      loader.preload_resources_for_locale(:ar, :all)
+      loader.resource_types.each do |resource_type|
+        loader.locale_resource_loaded?(:ar, resource_type).should be_true
+        loader.locale_resource_loaded?(:en, resource_type).should be_false
+      end
+    end
+  end
+
+  describe '#preload_resource_for_locales' do
+    it 'loads a single resource for potentially multiple locales into the cache' do
+      loader.preload_resource_for_locales(:calendars, :sv, :bn)
+      loader.locale_resource_loaded?(:sv, :calendars).should be_true
+      loader.locale_resource_loaded?(:bn, :calendars).should be_true
+      loader.locale_resource_loaded?(:sv, :units).should be_false
+    end
+  end
+
+  describe '#preload_resources_for_all_locales' do
+    it 'loads potentially multiple resources for all locales' do
+      loader.preload_resources_for_all_locales(:plurals, :lists)
+      TwitterCldr.supported_locales.each do |locale|
+        loader.locale_resource_loaded?(locale, :plurals).should be_true
+        loader.locale_resource_loaded?(locale, :lists).should be_true
+        loader.locale_resource_loaded?(locale, :calendars).should be_false
+      end
+    end
+  end
+
+  describe '#preload_all_resources' do
+    it 'loads all resources for all locales' do
+      loader.preload_all_resources
+      TwitterCldr.supported_locales.each do |locale|
+        loader.resource_types.each do |resource_type|
+          loader.locale_resource_loaded?(locale, resource_type).should be_true
+        end
+      end
     end
   end
 

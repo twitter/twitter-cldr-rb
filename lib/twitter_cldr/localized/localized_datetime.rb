@@ -27,15 +27,15 @@ module TwitterCldr
       end
 
       def ago(options = {})
-        base_time = options[:base_time] || Time.now
-        seconds = self.to_time.base_obj.to_i - base_time.to_i
+        base_time = (options[:base_time] || Time.now).gmtime
+        seconds = self.to_time(base_time).base_obj.gmtime.to_i - base_time.to_i
         raise ArgumentError.new('Start date is after end date. Consider using "until" function.') if seconds > 0
         TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
       end
 
       def until(options = {})
-        base_time = options[:base_time] || Time.now
-        seconds = self.to_time.base_obj.to_i - base_time.to_i
+        base_time = (options[:base_time] || Time.now).gmtime
+        seconds = self.to_time(base_time).base_obj.gmtime.to_i - base_time.to_i
         raise ArgumentError.new('End date is before start date. Consider using "ago" function.') if seconds < 0
         TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
       end
@@ -49,11 +49,24 @@ module TwitterCldr
       end
 
       def to_date
-        LocalizedDate.new(Date.parse(@base_obj.strftime("%Y-%m-%dT%H:%M:%S%z")), @locale, :calendar_type => @calendar_type)
+        date = Date.new(@base_obj.year, @base_obj.month, @base_obj.day)
+        LocalizedDate.new(date, @locale, :calendar_type => @calendar_type)
       end
 
-      def to_time
-        LocalizedTime.new(Time.parse(@base_obj.strftime("%Y-%m-%dT%H:%M:%S%z")), @locale, :calendar_type => @calendar_type)
+      def to_time(base = Time.now)
+        utc_dt = @base_obj.new_offset(0)
+
+        time = Time.gm(
+          utc_dt.year,
+          utc_dt.month,
+          utc_dt.day,
+          utc_dt.hour,
+          utc_dt.min,
+          utc_dt.sec,
+          utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
+        )
+
+        LocalizedTime.new(time, @locale, :calendar_type => @calendar_type)
       end
 
       protected

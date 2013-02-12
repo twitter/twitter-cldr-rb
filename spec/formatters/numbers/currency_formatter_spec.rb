@@ -24,7 +24,16 @@ describe CurrencyFormatter do
 
     it "should use the specified currency symbol when specified" do
       # S/. is the symbol for the Peruvian Nuevo Sol, just in case you were curious
-      @formatter.format(12, :currency => "S/.").should == "S/.12.00"
+      @formatter.format(12, :symbol => "S/.").should == "S/.12.00"
+    end
+
+    it "should use the currency code as the symbol if the currency code can't be identified" do
+      @formatter.format(12, :currency => "XYZ").should == "XYZ12.00"
+    end
+
+    it "should respect the :use_cldr_symbol option" do
+      @formatter.format(12, :currency => "CAD").should == "$12.00"
+      @formatter.format(12, :currency => "CAD", :use_cldr_symbol => true).should == "CA$12.00"
     end
 
     it "should use the currency symbol for the corresponding currency code" do
@@ -35,7 +44,7 @@ describe CurrencyFormatter do
       @formatter.format(12, :precision => 3).should == "$12.000"
     end
 
-    it "should use the currency precision" do
+    it "should use the currency-specific default precision" do
       @formatter.format(12, :currency => "TND").should == "TND12.000"
     end
 

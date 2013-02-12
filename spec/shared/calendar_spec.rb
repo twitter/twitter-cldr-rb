@@ -11,9 +11,14 @@ describe Calendar do
 
   let(:calendar) { Calendar.new(:de) }
 
+  before(:each) do
+    # clear cache for each test
+    Calendar.send(:class_variable_set, :@@calendar_cache, {})
+  end
+
   describe '#initialize' do
     it 'returns calendar for default locale and type' do
-      stub(TwitterCldr).get_locale { :fr }
+      stub(TwitterCldr).locale { :fr }
       cal = Calendar.new
 
       cal.locale.should == :fr
@@ -127,6 +132,123 @@ describe Calendar do
         stub(TwitterCldr).get_locale_resource { { :de => {} } }
         calendar.weekdays(:wide).should == nil
       end
+    end
+  end
+
+  describe '#fields' do
+    it 'returns the list of fields for the locale (eg. weekday, month, etc)' do
+      fields = calendar.fields
+      fields[:hour].should match_normalized("Stunde")
+      fields[:dayperiod].should match_normalized("Tageshälfte")
+      fields[:weekday].should match_normalized("Wochentag")
+
+      fields = Calendar.new(:ja).fields
+      fields[:hour].should match_normalized("時")
+      fields[:dayperiod].should match_normalized("午前/午後")
+      fields[:weekday].should match_normalized("曜日")
+    end
+  end
+
+  describe '#quarters' do
+    it 'returns default quarters' do
+      calendar.quarters.should == {
+        1 => "1. Quartal",
+        2 => "2. Quartal",
+        3 => "3. Quartal",
+        4 => "4. Quartal"
+      }
+    end
+
+    it 'returns quarters with other name forms' do
+      calendar.quarters(:abbreviated).should == {
+        1 => "Q1", 2 => "Q2",
+        3 => "Q3", 4 => "Q4"
+      }
+
+      calendar.quarters(:narrow).should == {
+        1 => 1, 2 => 2,
+        3 => 3, 4 => 4
+      }
+    end
+  end
+
+  describe '#periods' do
+    it 'returns default periods' do
+      periods = calendar.periods
+      periods[:am].should == "vorm."
+      periods[:pm].should == "nachm."
+    end
+
+    it 'returns quarters with other name forms' do
+      periods = calendar.periods(:abbreviated)
+      periods[:am].should == "vorm."
+      periods[:pm].should == "nachm."
+    end
+  end
+
+  describe '#eras' do
+    it 'returns default eras' do
+      calendar.eras.should == {
+        0 => "v. Chr.",
+        1 => "n. Chr."
+      }
+    end
+
+    it 'returns eras with other name forms' do
+      calendar.eras(:abbr).should == {
+        0 => "v. Chr.",
+        1 => "n. Chr."
+      }
+    end
+  end
+
+  describe '#date_order' do
+    it 'should return the correct date order for a few different locales' do
+      Calendar.new(:en).date_order.should == [:month, :day, :year]
+      Calendar.new(:ja).date_order.should == [:year, :month, :day]
+      Calendar.new(:ar).date_order.should == [:day, :month, :year]
+    end
+  end
+
+  describe '#time_order' do
+    it 'should return the correct time order for a few different locales' do
+      Calendar.new(:en).time_order.should == [:hour, :minute, :second, :period]
+      Calendar.new(:ja).time_order.should == [:hour, :minute, :second]
+      Calendar.new(:ar).time_order.should == [:hour, :minute, :second, :period]
+    end
+  end
+
+  describe '#datetime_order' do
+    it 'should return the correct date and time order for a few different locales' do
+      Calendar.new(:en).datetime_order.should == [:month, :day, :year, :hour, :minute, :second, :period]
+      Calendar.new(:ja).datetime_order.should == [:year, :month, :day, :hour, :minute, :second]
+      Calendar.new(:ar).datetime_order.should == [:day, :month, :year, :hour, :minute, :second, :period]
+    end
+  end
+
+  describe '#methods_for_tokens' do
+    it 'converts pattern tokens into their corresponding method names' do
+      tokens = [TwitterCldr::Tokenizers::Token.new(:value => "YYYY", :type => :pattern)]
+      calendar.send(:methods_for_tokens, tokens).should == [:year_of_week_of_year]
+    end
+
+    it 'ignores plaintext tokens' do
+      tokens = [TwitterCldr::Tokenizers::Token.new(:value => "blarg", :type => :plaintext)]
+      calendar.send(:methods_for_tokens, tokens).should == []
+    end
+  end
+
+  describe '#resolve_methods' do
+    it 'converts certain method names to their basic equivalents' do
+      calendar.send(:resolve_methods, [:year_of_week_of_year]).should == [:year]
+      calendar.send(:resolve_methods, [:weekday_local]).should == [:weekday]
+      calendar.send(:resolve_methods, [:day_of_month, :second_fraction]).should == [:day, :second]
+    end
+
+    it 'does not convert basic method names' do
+      calendar.send(:resolve_methods, [:year]).should == [:year]
+      calendar.send(:resolve_methods, [:day, :month]).should == [:day, :month]
+      calendar.send(:resolve_methods, [:minute, :hour, :second]).should == [:minute, :hour, :second]
     end
   end
 

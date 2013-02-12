@@ -21,8 +21,22 @@ class FastGettext
       @@locale
     end
 
-    def locale=(value)
-      @@locale = value
+    def locale=(new_locale)
+      @@locale = new_locale
+    end
+  end
+end
+
+class I18n
+  class << self
+    @@locale = :en
+
+    def locale
+      @@locale
+    end
+
+    def locale=(new_locale)
+      @@locale = new_locale
     end
   end
 end
@@ -35,7 +49,10 @@ RSpec.configure do |config|
   config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
 
   config.before(:each) do
+    TwitterCldr.reset_locale_fallbacks
+    TwitterCldr.locale = :en
     FastGettext.locale = :en
+    I18n.locale = :en
   end
 end
 

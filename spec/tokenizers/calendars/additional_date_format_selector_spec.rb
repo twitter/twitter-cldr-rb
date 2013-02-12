@@ -30,9 +30,9 @@ describe AdditionalDateFormatSelector do
 
   describe "#exist_score" do
     it "calculates a higher score if an entity doesn't exist" do
-      goal_entities = selector.send(:separate, "MMMd")
+      goal_entities = selector.send(:separate, "MMMEd")
       entities      = selector.send(:separate, "d")
-      selector.send(:exist_score, entities, goal_entities).should == 1
+      selector.send(:exist_score, entities, goal_entities).should == 2
     end
 
     it "calculates a zero score if all entities exist" do

@@ -14,10 +14,10 @@ module TwitterCldr
       API_ENDPOINT = "http://translate.twitter.com/api/2/twitter/phrase/%s/translations.json"
 
       TIME_PERIODS = {
-          :day    => 19636,
-          :hour   => 19638,
-          :minute => 19634,
-          :second => 19639
+        :day    => 19636,
+        :hour   => 19638,
+        :minute => 19634,
+        :second => 19639
       }
 
       # Arguments:

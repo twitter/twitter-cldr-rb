@@ -54,10 +54,9 @@ module TwitterCldr
       end
 
       def tokens_for_pattern(pattern, path, additional_cache_key_params = [])
-        @@token_cache ||= {}
         cache_key = TwitterCldr::Utils.compute_cache_key(@locale, path.join('.'), type, format || "nil", *additional_cache_key_params)
 
-        unless @@token_cache.include?(cache_key)
+        unless token_cache.include?(cache_key)
           result = []
           tokens = expand_pattern(pattern)
 
@@ -69,33 +68,29 @@ module TwitterCldr
             end
           end
 
-          @@token_cache[cache_key] = result
+          token_cache[cache_key] = result
         end
 
-        @@token_cache[cache_key]
+        token_cache[cache_key]
       end
 
       def tokens_with_placeholders_for(key)
-        @@token_cache ||= {}
-        cache_key = compute_cache_key(@locale, key, type)
+        cache_key = TwitterCldr::Utils.compute_cache_key(@locale, key, type)
 
-        unless @@token_cache.include?(cache_key)
+        unless token_cache.include?(cache_key)
           result = []
           tokens = tokenize_pattern(pattern_for(traverse(key)))
           tokens.each do |token|
             result << token
           end
-          @@token_cache[cache_key] = result
+          token_cache[cache_key] = result
         end
-        @@token_cache[cache_key]
+
+        token_cache[cache_key]
       end
 
-      def compute_cache_key(*pieces)
-        if pieces && pieces.size > 0
-          pieces.join("|").hash
-        else
-          0
-        end
+      def token_cache
+        @@token_cache ||= {}
       end
 
       def init_placeholders

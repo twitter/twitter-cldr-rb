@@ -9,7 +9,6 @@ module TwitterCldr
     autoload :CollationTriesDumper,               'twitter_cldr/resources/collation_tries_dumper'
     autoload :CompositionExclusionsImporter,      'twitter_cldr/resources/composition_exclusions_importer'
     autoload :CurrenciesImporter,                 'twitter_cldr/resources/currencies_importer'
-    autoload :CurrencyDigitsAndRoundingImporter,  'twitter_cldr/resources/currency_digits_and_rounding_importer'
     autoload :CustomLocalesResourcesImporter,     'twitter_cldr/resources/custom_locales_resources_importer'
     autoload :LanguageCodesImporter,              'twitter_cldr/resources/language_codes_importer'
     autoload :Loader,                             'twitter_cldr/resources/loader'

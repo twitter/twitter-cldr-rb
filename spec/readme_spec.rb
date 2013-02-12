@@ -26,7 +26,6 @@ describe "README" do
     1337.localize(:es).to_s.should == "1.337"
     spaces(1337.localize(:es).to_currency.to_s).should == "1.337,00 $"
     spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1.337,00 €"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "Peru").to_s).should == "1.337,00 PEN"
     1337.localize(:es).to_percent.to_s.should == "1.337%"
     1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
     1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
@@ -36,18 +35,25 @@ describe "README" do
   end
 
   it "verifies extra currency data" do
-    countries = TwitterCldr::Shared::Currencies.countries
-    countries.should be_a(Array)
-    countries.should include("Lithuania")
-    countries.should include("Philippines")
-
     currency_codes = TwitterCldr::Shared::Currencies.currency_codes
     currency_codes.should be_a(Array)
     currency_codes.should include("LTL")
     currency_codes.should include("PHP")
+    TwitterCldr::Shared::Currencies.for_code("CAD").should == {
+      :currency => :CAD,
+      :cldr_symbol => "CA$",
+      :symbol => "$",
+      :name => "Canadian dollar",
+      :code_points => [36]
+    }
+  end
 
-    TwitterCldr::Shared::Currencies.for_country("Canada").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian dollar"}
-    TwitterCldr::Shared::Currencies.for_code("CAD").should == { :currency => :CAD, :symbol => "CA$", :name => "Canadian dollar"}
+  it "verifies short and long decimals" do
+    2337.localize.to_short_decimal.to_s.should == "2K"
+    1337123.localize.to_short_decimal.to_s.should == "1M"
+
+    2337.localize.to_long_decimal.to_s.should == "2 thousand"
+    1337123.localize.to_long_decimal.to_s.should == "1 million"
   end
 
   it "verifies dates" do
@@ -74,6 +80,13 @@ describe "README" do
     dt.to_short_s.should == "12/12/11 21:44"
   end
 
+  it "verifies additional date formats" do
+    date_time = DateTime.new(2011, 12, 12, 21, 44, 57, -8.0 / 24.0)
+    TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja).should be_a(Array)
+    date_time.localize(:ja).to_s.should == "2011/12/12 21:44:57"
+    date_time.localize(:ja).to_s(:format => "EEEEd").should == "12日月曜日"
+  end
+
   it "verifies relative time spans" do
     (DateTime.now - 1).localize.ago.to_s.should match_normalized("1 day ago")
     (DateTime.now - 0.5).localize.ago.to_s.should match_normalized("12 hours ago")  # (i.e. half a day)
@@ -97,6 +110,12 @@ describe "README" do
     ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
     ts.to_s.should match_normalized("Vor 1 Tag")
     ts.to_s(:unit => :hour).should match_normalized("Vor 24 Stunden")
+  end
+
+  it "verifies approximate timespans" do
+    TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true).should == "In 44 seconds"
+    TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true).should == "In 1 minute"
+    TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true).should == "In 1 minute"
   end
 
   it "verifies plural rules" do
@@ -254,8 +273,9 @@ describe "README" do
   end
 
   it "verifies locale defaults" do
-    TwitterCldr.get_locale.should == :en
+    TwitterCldr.locale.should == :en
+    TwitterCldr.locale = nil
     FastGettext.locale = "ru"
-    TwitterCldr.get_locale.should == :ru
+    TwitterCldr.locale.should == :ru
   end
 end

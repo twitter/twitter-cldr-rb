@@ -41,7 +41,12 @@ module TwitterCldr
       }
 
       def initialize(options = {})
-        @tokenizer = TwitterCldr::Tokenizers::DateTimeTokenizer.new(:locale => extract_locale(options), :calendar_type => options[:calendar_type])
+        locale = extract_locale(options)
+        cache_key = TwitterCldr::Utils.compute_cache_key("datetime", locale, options[:calendar_type])
+        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::DateTimeTokenizer.new(
+          :locale => locale,
+          :calendar_type => options[:calendar_type]
+        )
       end
 
       def result_for_token(token, index, date)
@@ -52,7 +57,15 @@ module TwitterCldr
         @tokenizer.additional_format_selector
       end
 
+      def self.additional_formats_for(locale)
+        new(:locale => locale).additional_format_selector.patterns.map(&:to_s)
+      end
+
       protected
+
+      def tokenizer_cache
+        @@tokenizer_cache ||= {}
+      end
 
       # there is incomplete era data in CLDR for certain locales like Hindi
       # fall back if that happens

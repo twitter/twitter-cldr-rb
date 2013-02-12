@@ -21,14 +21,18 @@ module TwitterCldr
       }
 
       def initialize(options = {})
+        locale = extract_locale(options)
         @direction = options[:direction]
-        @tokenizer = TwitterCldr::Tokenizers::TimespanTokenizer.new(:locale => extract_locale(options))
+        cache_key = TwitterCldr::Utils.compute_cache_key(locale)
+        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::TimespanTokenizer.new(
+          :locale => locale
+        )
       end
 
       def format(seconds, fmt_options = {})
         options = fmt_options.dup
         options[:type]      ||= DEFAULT_TYPE
-        options[:direction] ||= @direction || (seconds < 0 ? :ago : :until)
+        options[:direction] ||= (seconds < 0 ? :ago : :until)
         options[:unit]      ||= calculate_unit(seconds.abs, options)
 
         options[:number] = calculate_time(seconds.abs, options[:unit])
@@ -36,6 +40,12 @@ module TwitterCldr
         tokens = @tokenizer.tokens(options)
         strings = tokens.map { |token| token[:value] }
         strings.join.gsub(/\{[0-9]\}/, options[:number].to_s)
+      end
+
+      protected
+
+      def tokenizer_cache
+        @@tokenizer_cache ||= {}
       end
 
       def calculate_unit(seconds, unit_options = {})

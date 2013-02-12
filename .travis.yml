@@ -7,9 +7,11 @@ matrix:
   allow_failures:
     - rvm: jruby-head
 env:
-  - "FULL_SPEC=true TEST_FOLDERS=spec/bidi"
-  - "FULL_SPEC=true TEST_FOLDERS=spec/collation"
-  - "FULL_SPEC=true TEST_FOLDERS='spec/normalization_spec.rb spec/normalization'"
-  - "FULL_SPEC=true TEST_FOLDERS='spec/formatters spec/localized spec/resources spec/shared spec/tokenizers spec/utils_spec.rb spec/utils spec/core_ext_spec.rb spec/readme_spec.rb spec/twitter_cldr_spec.rb'"
-script: 'bundle exec rspec $TEST_FOLDERS'
+  - 'RSPEC_COMMAND="--tag ~slow spec"'
+  - 'RSPEC_COMMAND="--tag slow spec/bidi/bidi_spec.rb"'
+  - 'RSPEC_COMMAND="--tag slow spec/collation/collation_spec.rb"'
+  - 'RSPEC_COMMAND="--tag slow spec/collation/tailoring_spec.rb"'
+  - 'RSPEC_COMMAND="--tag slow spec/collation/trie_dumps_spec.rb"'
+  - 'RSPEC_COMMAND="--tag slow spec/normalization/normalization_spec.rb"'
+script: 'bundle exec rspec $RSPEC_COMMAND'
 before_script: 'gem install bundler'

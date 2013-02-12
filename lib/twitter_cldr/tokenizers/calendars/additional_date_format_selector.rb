@@ -19,7 +19,7 @@ module TwitterCldr
           cache_key = TwitterCldr::Utils.compute_cache_key(goal_pattern)
           pattern_cache[cache_key] ||= if @pattern_hash.include?(goal_pattern)
             @pattern_hash[goal_pattern]
-          else            
+          else
             rank(goal_pattern).min do |(p1, score1), (p2, score2)|
               score1 <=> score2
             end.first

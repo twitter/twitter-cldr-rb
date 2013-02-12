@@ -90,6 +90,7 @@ describe AdditionalDateFormatSelector do
 
   describe "#find_closest" do
     it "returns an exact match if it exists" do
+      selector.find_closest("h").should == "h"
       selector.find_closest("MMMd").should == "MMMd"
       selector.find_closest("Hms").should == "Hms"
       selector.find_closest("yQQQQ").should == "yQQQQ"

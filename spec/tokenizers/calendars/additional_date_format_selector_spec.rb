@@ -4,8 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
-require 'pry'
-require 'pry-nav'
 
 include TwitterCldr::Tokenizers
 
@@ -92,10 +90,10 @@ describe AdditionalDateFormatSelector do
 
   describe "#find_closest" do
     it "returns an exact match if it exists" do
-      selector.find_closest("h").should == "h a"
-      selector.find_closest("MMMd").should == "MMM d"
-      selector.find_closest("Hms").should == "HH:mm:ss"
-      selector.find_closest("yQQQQ").should == "QQQQ y"
+      selector.find_closest("h").should == "h"
+      selector.find_closest("MMMd").should == "MMMd"
+      selector.find_closest("Hms").should == "Hms"
+      selector.find_closest("yQQQQ").should == "yQQQQ"
     end
 
     it "returns the next closest match (lowest score) if an exact match can't be found" do

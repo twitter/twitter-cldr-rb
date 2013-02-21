@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.summary  = "Ruby implementation of the ICU (International Components for Unicode) that uses the Common Locale Data Repository to format dates, plurals, and more."
 
-  s.add_dependency 'json', '>= 1.1.9'
+  s.add_dependency 'json'
 
   s.require_path = 'lib'
 

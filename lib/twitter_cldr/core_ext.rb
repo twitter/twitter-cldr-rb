@@ -7,6 +7,6 @@
   TwitterCldr::Localized::LocalizedNumber.localize(klass)
 end
 
-[Array, Date, DateTime, String, Symbol, Time, Hash].each do |klass|
+[Array, DateTime, String, Symbol, Time, Hash].each do |klass|
   TwitterCldr::Localized::const_get("Localized#{klass}").localize(klass)
 end

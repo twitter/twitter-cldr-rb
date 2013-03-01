@@ -1,3 +1,8 @@
+== 2.3.0
+
+* Adding timezone support to date/time formatting.
+* Removing the localize method from Date objects.  Call to_date on a LocalizedDateTime or LocalizedTime object instead.
+
 == 2.2.0
 
 * Relaxing JSON dependency to give users more version flexibility. JSON gem now has no version number in twitter-cldr-rb.

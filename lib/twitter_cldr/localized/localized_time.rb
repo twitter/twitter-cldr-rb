@@ -9,22 +9,31 @@ module TwitterCldr
     class LocalizedTime < LocalizedDateTime
       def to_datetime(date)
         date_obj = date.is_a?(LocalizedDate) ? date.base_obj : date
-        LocalizedDateTime.new(DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}"), @locale, :calendar_type => @calendar_type)
+        dt = DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}")
+        LocalizedDateTime.new(dt, @locale, :calendar_type => @calendar_type, :timezone => @timezone)
       end
 
       def to_time(base_time = Time.now)
         self
       end
 
+      def to_date
+        LocalizedDate.new(@base_obj, @locale, chain_params)
+      end
+
       def gmtime
-        LocalizedTime.new(@base_obj.gmtime, @locale, :calendar_type => @calendar_type)
+        LocalizedTime.new(@base_obj.gmtime, @locale, chain_params)
       end
 
       def localtime
-        LocalizedTime.new(@base_obj.localtime, @locale, :calendar_type => @calendar_type)
+        LocalizedTime.new(@base_obj.localtime, @locale, chain_params)
       end
 
       protected
+
+      def base_in_timezone
+        timezone_info.utc_to_local(@base_obj.utc)
+      end
 
       def formatter_const
         TwitterCldr::Formatters::TimeFormatter

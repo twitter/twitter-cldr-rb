@@ -7,25 +7,44 @@ module TwitterCldr
   module Localized
 
     class LocalizedDate < LocalizedDateTime
-      def to_datetime(time)
-        time_obj = time.is_a?(LocalizedTime) ? time.base_obj : time
-        LocalizedDateTime.new(DateTime.parse("#{@base_obj.strftime("%Y-%m-%d")}T#{time_obj.strftime("%H:%M:%S%z")}"), @locale, :calendar_type => @calendar_type)
+      def to_datetime(time = Time.now)
+        dt = DateTime.parse("#{@base_obj.strftime("%Y-%m-%d")}T#{unwrap_time_obj(time).strftime("%H:%M:%S%z")}")
+        LocalizedDateTime.new(dt, @locale, chain_params)
       end
 
       def to_time(base = Time.now)
-        time = Time.gm(
-          @base_obj.year,
-          @base_obj.month,
-          @base_obj.day,
-          base.hour,
-          base.min,
-          base.sec
-        )
+        case @base_obj
+          when Time
+            LocalizedTime.new(@base_obj, @locale, chain_params)
+          when DateTime
+            utc_dt = @base_obj.new_offset(0)
 
-        LocalizedTime.new(time, @locale, :calendar_type => @calendar_type)
+            time = Time.gm(
+              utc_dt.year,
+              utc_dt.month,
+              utc_dt.day,
+              utc_dt.hour,
+              utc_dt.min,
+              utc_dt.sec,
+              utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
+            )
+
+            LocalizedTime.new(time, @locale, chain_params)
+          else
+            nil
+        end
       end
 
       protected
+
+      def unwrap_time_obj(time)
+        time.is_a?(LocalizedTime) ? time.base_obj : time
+      end
+
+      def base_in_timezone
+        time = unwrap_time_obj(to_time)
+        timezone_info.utc_to_local(time.is_a?(DateTime) ? time.new_offset(0) : time.utc)
+      end
 
       def formatter_const
         TwitterCldr::Formatters::DateFormatter

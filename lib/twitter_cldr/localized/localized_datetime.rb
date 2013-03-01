@@ -3,20 +3,23 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'tzinfo'
+
 module TwitterCldr
   module Localized
 
     class LocalizedDateTime < LocalizedObject
-      attr_reader :calendar_type
+      attr_reader :calendar_type, :timezone
 
       def initialize(obj, locale, options = {})
         super
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
+        @timezone = options[:timezone] || "UTC"
       end
 
       TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
         define_method "to_#{format_type}_s" do
-          @formatter.format(@base_obj, :type => format_type.to_sym)
+          @formatter.format(base_in_timezone, :type => format_type.to_sym)
         end
       end
 
@@ -42,15 +45,14 @@ module TwitterCldr
 
       def to_s(options = {})
         if options[:format]
-          @formatter.format(@base_obj, options.merge(:type => :additional))
+          @formatter.format(base_in_timezone, options.merge(:type => :additional))
         else
           to_default_s
         end
       end
 
       def to_date
-        date = Date.new(@base_obj.year, @base_obj.month, @base_obj.day)
-        LocalizedDate.new(date, @locale, :calendar_type => @calendar_type)
+        LocalizedDate.new(@base_obj, @locale, chain_params)
       end
 
       def to_time(base = Time.now)
@@ -66,13 +68,29 @@ module TwitterCldr
           utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
         )
 
-        LocalizedTime.new(time, @locale, :calendar_type => @calendar_type)
+        LocalizedTime.new(time, @locale, chain_params)
+      end
+
+      def with_timezone(timezone)
+        self.class.new(@base_obj, @locale, chain_params.merge(:timezone => timezone))
       end
 
       protected
 
+      def chain_params
+        { :calendar_type => @calendar_type, :timezone => @timezone }
+      end
+
+      def base_in_timezone
+        timezone_info.utc_to_local(@base_obj.new_offset(0))
+      end
+
       def formatter_const
         TwitterCldr::Formatters::DateTimeFormatter
+      end
+
+      def timezone_info
+        (@@timezone_info ||= {})[@timezone] ||= TZInfo::Timezone.get(@timezone)
       end
     end
 

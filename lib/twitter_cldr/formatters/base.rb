@@ -9,12 +9,12 @@ module TwitterCldr
       attr_reader :tokenizer
 
       def format(obj, options = {})
-        process_tokens(self.get_tokens(obj, options), obj)
+        process_tokens(self.get_tokens(obj, options), obj, options)
       end
 
       protected
 
-      def process_tokens(tokens, obj)
+      def process_tokens(tokens, obj, options = {})
         result = ""
 
         tokens.each_with_index do |token, index|
@@ -22,7 +22,7 @@ module TwitterCldr
             when :composite
               result << eval(process_tokens(token.tokens, obj)).to_s
             when :pattern
-              result << self.result_for_token(token, index, obj)
+              result << self.result_for_token(token, index, obj, options)
             else
               if token.value.size > 0 && token.value[0].chr == "'" && token.value[-1].chr == "'"
                 result << token.value[1..-2]

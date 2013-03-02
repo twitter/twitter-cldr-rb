@@ -60,8 +60,8 @@ describe "README" do
     date_time = DateTime.new(2011, 12, 12, 21, 44, 57, 0.0)
     time = Time.at(date_time.localize.to_time.base_obj.utc)
 
-    date_time.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011 21:44:57 UTC +0000"
-    date_time.localize(:es).to_long_s.should == "12 de diciembre de 2011 21:44:57 +00:00"
+    date_time.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011 21:44:57 UTC +00:00"
+    date_time.localize(:es).to_long_s.should == "12 de diciembre de 2011 21:44:57 UTC"
     date_time.localize(:es).to_medium_s.should == "12/12/2011 21:44:57"
     date_time.localize(:es).to_short_s.should == "12/12/11 21:44"
 
@@ -70,7 +70,7 @@ describe "README" do
     date_time.localize(:es).to_date.to_medium_s.should == "12/12/2011"
     date_time.localize(:es).to_date.to_short_s.should == "12/12/11"
 
-    time.localize(:es).to_full_s.should match(/21:44:57 UTC [-+]\d{4}/)
+    time.localize(:es).to_full_s.should match(/21:44:57 UTC [-+]\d{2}:\d{2}/)
     time.localize(:es).to_long_s.should == "21:44:57 UTC"
     time.localize(:es).to_medium_s.should == "21:44:57"
     time.localize(:es).to_short_s.should == "21:44"

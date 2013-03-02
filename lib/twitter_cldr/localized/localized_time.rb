@@ -10,7 +10,7 @@ module TwitterCldr
       def to_datetime(date)
         date_obj = date.is_a?(LocalizedDate) ? date.base_obj : date
         dt = DateTime.parse("#{date_obj.strftime("%Y-%m-%d")}T#{@base_obj.strftime("%H:%M:%S%z")}")
-        LocalizedDateTime.new(dt, @locale, :calendar_type => @calendar_type, :timezone => @timezone)
+        LocalizedDateTime.new(dt, @locale, chain_params)
       end
 
       def to_time(base_time = Time.now)

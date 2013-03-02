@@ -19,7 +19,7 @@ module TwitterCldr
 
       TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
         define_method "to_#{format_type}_s" do
-          @formatter.format(base_in_timezone, :type => format_type.to_sym)
+          @formatter.format(base_in_timezone, chain_params.merge(:type => format_type.to_sym))
         end
       end
 

@@ -6,6 +6,10 @@
 # This class has been adapted from Sven Fuch's ruby-cldr gem
 # See LICENSE for the accompanying license for his contributions
 
+require 'tzinfo'
+require 'pry'
+require 'pry-nav'
+
 module TwitterCldr
   module Formatters
     class DateTimeFormatter < Base
@@ -49,8 +53,8 @@ module TwitterCldr
         )
       end
 
-      def result_for_token(token, index, date)
-        self.send(METHODS[token.value[0].chr], date, token.value, token.value.size)
+      def result_for_token(token, index, date, options = {})
+        self.send(METHODS[token.value[0].chr], date, token.value, token.value.size, options)
       end
 
       def additional_format_selector
@@ -69,7 +73,7 @@ module TwitterCldr
 
       # there is incomplete era data in CLDR for certain locales like Hindi
       # fall back if that happens
-      def era(date, pattern, length)
+      def era(date, pattern, length, options = {})
         choices = case length
           when 0
             ["", ""]
@@ -86,22 +90,22 @@ module TwitterCldr
         end
       end
 
-      def year(date, pattern, length)
+      def year(date, pattern, length, options = {})
         year = date.year.to_s
         year = year.length == 1 ? year : year[-2, 2] if length == 2
         year = year.rjust(length, '0') if length > 1
         year
       end
 
-      def year_of_week_of_year(date, pattern, length)
+      def year_of_week_of_year(date, pattern, length, options = {})
         raise NotImplementedError
       end
 
-      def day_of_week_in_month(date, pattern, length) # e.g. 2nd Wed in July
+      def day_of_week_in_month(date, pattern, length, options = {}) # e.g. 2nd Wed in July
         raise NotImplementedError
       end
 
-      def quarter(date, pattern, length)
+      def quarter(date, pattern, length, options = {})
         quarter = (date.month.to_i - 1) / 3 + 1
         case length
           when 1
@@ -115,7 +119,7 @@ module TwitterCldr
         end
       end
 
-      def quarter_stand_alone(date, pattern, length)
+      def quarter_stand_alone(date, pattern, length, options = {})
         quarter = (date.month.to_i - 1) / 3 + 1
         case length
           when 1
@@ -133,7 +137,7 @@ module TwitterCldr
         end
       end
 
-      def month(date, pattern, length)
+      def month(date, pattern, length, options = {})
         case length
           when 1
             date.month.to_s
@@ -151,7 +155,7 @@ module TwitterCldr
         end
       end
 
-      def month_stand_alone(date, pattern, length)
+      def month_stand_alone(date, pattern, length, options = {})
         case length
           when 1
             date.month.to_s
@@ -168,7 +172,7 @@ module TwitterCldr
         end
       end
 
-      def day(date, pattern, length)
+      def day(date, pattern, length, options = {})
         case length
           when 1
             date.day.to_s
@@ -177,7 +181,7 @@ module TwitterCldr
         end
       end
 
-      def weekday(date, pattern, length)
+      def weekday(date, pattern, length, options = {})
         key = WEEKDAY_KEYS[date.wday]
         case length
           when 1..3
@@ -189,7 +193,7 @@ module TwitterCldr
         end
       end
 
-      def weekday_local(date, pattern, length)
+      def weekday_local(date, pattern, length, options = {})
         # "Like E except adds a numeric value depending on the local starting day of the week"
         # CLDR does not contain data as to which day is the first day of the week, so we will assume Monday (Ruby default)
         case length
@@ -200,7 +204,7 @@ module TwitterCldr
         end
       end
 
-      def weekday_local_stand_alone(date, pattern, length)
+      def weekday_local_stand_alone(date, pattern, length, options = {})
         case length
           when 1
             weekday_local(date, pattern, length)
@@ -209,14 +213,14 @@ module TwitterCldr
         end
       end
 
-      def period(time, pattern, length)
+      def period(time, pattern, length, options = {})
         # Always use :wide form. Day-period design was changed in CLDR -
         # http://cldr.unicode.org/development/development-process/design-proposals/day-period-design that means some
         # major changes are required for a full support of day periods.
         @tokenizer.calendar[:periods][:format][:wide][time.strftime('%p').downcase.to_sym]
       end
 
-      def hour(time, pattern, length)
+      def hour(time, pattern, length, options = {})
         hour = time.hour
         hour = case pattern[0, 1]
           when 'h' # [1-12]
@@ -231,29 +235,36 @@ module TwitterCldr
         length == 1 ? hour.to_s : hour.to_s.rjust(length, '0')
       end
 
-      def minute(time, pattern, length)
+      def minute(time, pattern, length, options = {})
         length == 1 ? time.min.to_s : time.min.to_s.rjust(length, '0')
       end
 
-      def second(time, pattern, length)
+      def second(time, pattern, length, options = {})
         length == 1 ? time.sec.to_s : time.sec.to_s.rjust(length, '0')
       end
 
-      def second_fraction(time, pattern, length)
+      def second_fraction(time, pattern, length, options = {})
         raise ArgumentError.new('can not use the S format with more than 6 digits') if length > 6
         (time.usec.to_f / 10 ** (6 - length)).round.to_s.rjust(length, '0')
       end
 
-      def timezone(time, pattern, length)
+      def timezone(time, pattern, length, options = {})
+        # ruby is dumb and doesn't let you set non-UTC timezones in dates/times, so we have to pass it as an option instead
+        timezone_info = TZInfo::Timezone.get(options[:timezone] || "UTC")
+
         case length
           when 1..3
-            time.zone
+            timezone_info.current_period.abbreviation.to_s
           else
-            "UTC #{time.strftime("%z")}"
+            hours = (timezone_info.current_period.utc_offset.to_f / 60 ** 2).abs
+            divisor = hours.to_i
+            minutes = (hours % (divisor == 0 ? 1 : divisor)) * 60
+            sign = timezone_info.current_period.utc_offset < 0 ? "-" : "+"
+            "UTC #{sign}#{divisor.to_s.rjust(2, "0")}:#{minutes.floor.to_s.rjust(2, "0")}"
         end
       end
 
-      def timezone_generic_non_location(time, pattern, length)
+      def timezone_generic_non_location(time, pattern, length, options = {})
         raise NotImplementedError, 'requires timezone translation data'
       end
     end

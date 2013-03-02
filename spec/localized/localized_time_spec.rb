@@ -70,10 +70,10 @@ describe LocalizedTime do
 
   describe "#with_timezone" do
     it "calculates the right time depending on the timezone" do
-      time = Time.local(2000, 5, 12, 22, 5).localize
-      time.to_s.should == "5:05:00 a.m."
-      time.with_timezone("America/Los_Angeles").to_s.should == "10:05:00 p.m."
-      time.with_timezone("America/New_York").to_s.should == "1:05:00 a.m."
+      time = Time.utc(2000, 5, 12, 22, 5).localize
+      time.to_s.should == "10:05:00 p.m."
+      time.with_timezone("America/Los_Angeles").to_s.should == "3:05:00 p.m."
+      time.with_timezone("America/New_York").to_s.should == "6:05:00 p.m."
     end
   end
 

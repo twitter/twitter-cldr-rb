@@ -7,8 +7,6 @@
 # See LICENSE for the accompanying license for his contributions
 
 require 'tzinfo'
-require 'pry'
-require 'pry-nav'
 
 module TwitterCldr
   module Formatters

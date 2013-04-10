@@ -80,7 +80,7 @@ namespace :update do
     TwitterCldr::Resources::TailoringImporter.new(
         args[:cldr_path] || './vendor/cldr',
         './resources/collation/tailoring',
-        args[:icu4j_jar_path] ||'./vendor/icu4j-49_1.jar'
+        args[:icu4j_jar_path] ||'./vendor/icu4j-50_1_1.jar'
     ).import(TwitterCldr.supported_locales)
   end
 

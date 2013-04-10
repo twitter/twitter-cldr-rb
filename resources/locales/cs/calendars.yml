@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E, d.
+        :Gy: y G
+        :GyMMM: LLLL y G
+        :GyMMMEd: E, d. M. y G
+        :GyMMMd: d. M. y G
         :H: H
         :Hm: H:mm
         :Hms: H:mm:ss
@@ -23,13 +27,11 @@
         :yMEd: E, d. M. y
         :yMMM: LLLL y
         :yMMMEd: E, d. M. y
+        :yMMMM: LLLL y
         :yMMMd: d. M. y
         :yMd: d. M. y
         :yQQQ: QQQ y
         :yQQQQ: QQQQ y
-        :yyyy: y
-        :yyyyM: M/yyyy
-        :yyyyMMMM: LLLL y
       :days:
         :format:
           :abbreviated:
@@ -121,17 +123,15 @@
         :zone: Časové pásmo
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, d. MMMM y
           :long:
             :pattern: d. MMMM y
           :medium:
-            :pattern: d. M. yyyy
+            :pattern: d. M. y
           :short:
             :pattern: dd.MM.yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -141,7 +141,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: H:mm:ss zzzz
           :long:
@@ -235,11 +234,11 @@
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
-            :am: AM
-            :pm: PM
+            :am: dop.
+            :pm: odp.
           :wide:
-            :am: AM
-            :pm: PM
+            :am: dop.
+            :pm: odp.
         :stand-alone: {}
       :quarters:
         :format:

@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: d日（E）
+        :Gy: Gy年
+        :GyMMM: Gy年M月
+        :GyMMMEd: Gy年M月d日E
+        :GyMMMd: Gy年M月d日
         :H: H時
         :Hm: H:mm
         :Hms: H:mm:ss
@@ -23,18 +27,14 @@
         :y: y年
         :yM: y/M
         :yMEd: y/M/d（E）
+        :yMM: y-MM
         :yMMM: y年M月
         :yMMMEd: y年M月d日E
+        :yMMMM: y年M月
         :yMMMd: y年M月d日
         :yMd: y/M/d
         :yQQQ: y年QQQ
         :yQQQQ: y年QQQQ
-        :yyMM: yy-MM
-        :yyMMM: yy年M月
-        :yyQQQ: yy年第Q季度
-        :yyyy: y年
-        :yyyyM: y年M月
-        :yyyyMMMM: y年M月
       :days:
         :format:
           :abbreviated:
@@ -103,17 +103,15 @@
         :zone: 時區
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: y年M月d日EEEE
           :long:
             :pattern: y年M月d日
           :medium:
-            :pattern: yyyy/M/d
+            :pattern: y/M/d
           :short:
             :pattern: y/M/d
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}}{{time}}'
           :long:
@@ -123,7 +121,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: zzzzah時mm分ss秒
           :long:

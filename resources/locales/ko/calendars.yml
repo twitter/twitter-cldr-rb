@@ -5,6 +5,11 @@
       :additional_formats:
         :EEEEd: d일 EEEE
         :Ed: d일 (E)
+        :Gy: G y년
+        :GyMMM: G y년 MMM
+        :GyMMMEEEEd: G y년 MMM d일 EEEE
+        :GyMMMEd: G y년 MMM d일 (E)
+        :GyMMMd: G y년 MMM d일
         :H: H시
         :HHmmss: HH:mm:ss
         :Hm: HH:mm
@@ -13,9 +18,9 @@
         :MEEEEd: M. d. EEEE
         :MEd: M. d. (E)
         :MMM: LLL
+        :MMMEEEEd: MMM d일 EEEE
         :MMMEd: MMM d일 (E)
         :MMMd: MMM d일
-        :MMdd: MM. dd
         :Md: M. d.
         :d: d일
         :h: a h시
@@ -24,18 +29,17 @@
         :mmss: mm:ss
         :ms: mm:ss
         :y: y년
-        :yM: yyyy. M.
-        :yMEd: yyyy. M. d. (E)
+        :yM: y. M.
+        :yMEEEEd: y. M. d. EEEE
+        :yMEd: y. M. d. (E)
+        :yMM: y. M.
         :yMMM: y년 MMM
         :yMMMEEEEd: y년 MMM d일 EEEE
         :yMMMEd: y년 MMM d일 (E)
         :yMMMd: y년 MMM d일
-        :yMd: yyyy. M. d.
+        :yMd: y. M. d.
         :yQQQ: y년 QQQ
         :yQQQQ: y년 QQQQ
-        :yyMM: yy. M.
-        :yyMMM: yy년 MMM
-        :yyyyMM: yyyy. MM
       :days:
         :format:
           :abbreviated:
@@ -105,17 +109,15 @@
         :zone: 시간대
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: y년 M월 d일 EEEE
           :long:
             :pattern: y년 M월 d일
           :medium:
-            :pattern: yyyy. M. d.
+            :pattern: y. M. d.
           :short:
             :pattern: yy. M. d.
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -125,7 +127,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: a h시 m분 s초 zzzz
           :long:

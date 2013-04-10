@@ -48,9 +48,11 @@ describe CurrencyFormatter do
       @formatter.format(12, :currency => "TND").should == "TND12.000"
     end
 
-    it "should use the currency rounding" do
-      @formatter.format(12.03, :currency => "CHF").should == "CHF12.05"
-      @formatter.format(12.02, :currency => "CHF").should == "CHF12.00"
+    it "should use the currency rounding for the currency code" do
+      # The rounding value for CHF changed from 5 to 0 in CLDR 23, so we have to pass
+      # :rounding explicitly to test its effects.
+      @formatter.format(12.03, :currency => "CHF", :rounding => 5).should == "CHF12.05"
+      @formatter.format(12.02, :currency => "CHF", :rounding => 5).should == "CHF12.00"
     end
   end
 end

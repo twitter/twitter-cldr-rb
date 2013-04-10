@@ -10,7 +10,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'day_period_variants' # 'svenfuchs/ruby-cldr'
 end
 
 group :test do

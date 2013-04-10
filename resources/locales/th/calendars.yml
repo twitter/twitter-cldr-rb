@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E d
+        :Gy: G y
+        :GyMMM: MMM G y
+        :GyMMMEd: E d MMM G y
+        :GyMMMd: d MMM G y
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -22,17 +26,15 @@
         :mmss: mm:ss
         :ms: mm:ss
         :y: y
-        :yM: M/yyyy
-        :yMEd: E d/M/yyyy
+        :yM: M/y
+        :yMEd: E d/M/y
         :yMMM: MMM y
         :yMMMEd: E d MMM y
         :yMMMM: MMMM y
         :yMMMd: d MMM y
-        :yMd: d/M/yyyy
+        :yMd: d/M/y
         :yQQQ: QQQ y
         :yQQQQ: QQQQ y
-        :yyyyM: M/yyyy
-        :yyyyMMMM: MMMM y
       :days:
         :format:
           :abbreviated:
@@ -124,7 +126,6 @@
         :zone: เขต
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEEที่ d MMMM G y
           :long:
@@ -134,7 +135,6 @@
           :short:
             :pattern: d/M/yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}}, {{time}}'
           :long:
@@ -144,7 +144,6 @@
           :short:
             :pattern: ! '{{date}}, {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: H นาฬิกา mm นาที ss วินาที zzzz
           :long:

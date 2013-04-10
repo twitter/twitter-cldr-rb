@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E d.
+        :Gy: G y
+        :GyMMM: G y MMM
+        :GyMMMEd: G y MMM d, E
+        :GyMMMd: G y MMM d
         :H: H
         :Hm: H:mm
         :Hms: H:mm:ss
@@ -22,17 +26,15 @@
         :mmss: mm:ss
         :ms: mm:ss
         :y: y
-        :yM: M.yyyy
+        :yM: M.y
         :yMEd: E d. M. y
         :yMMM: LLL y
         :yMMMEd: E, d. MMM y
         :yMMMM: LLLL y
-        :yMMMd: d.M.yyyy
-        :yMd: d.M.yyyy
+        :yMMMd: d.M.y
+        :yMd: d.M.y
         :yQQQ: QQQ y
         :yQQQQ: QQQQ y
-        :yyyyM: M.yyyy
-        :yyyyMMMM: LLLL y
       :days:
         :format:
           :abbreviated:
@@ -122,17 +124,15 @@
         :zone: Časové pásmo
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, d. MMMM y
           :long:
             :pattern: d. MMMM y
           :medium:
-            :pattern: d.M.yyyy
+            :pattern: d.M.y
           :short:
-            :pattern: d.M.yyyy
+            :pattern: d.M.y
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -142,7 +142,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: H:mm:ss zzzz
           :long:
@@ -166,46 +165,22 @@
             7: júl
             8: aug
             9: sep
-          :narrow:
-            1: j
-            10: o
-            11: n
-            12: d
-            2: f
-            3: m
-            4: a
-            5: m
-            6: j
-            7: j
-            8: a
-            9: s
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide:
-            1: január
-            10: október
-            11: november
-            12: december
-            2: február
-            3: marec
-            4: apríl
-            5: máj
-            6: jún
-            7: júl
-            8: august
-            9: september
+            1: januára
+            10: októbra
+            11: novembra
+            12: decembra
+            2: februára
+            3: marca
+            4: apríla
+            5: mája
+            6: júna
+            7: júla
+            8: augusta
+            9: septembra
         :stand-alone:
-          :abbreviated:
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
-            5: máj
-            6: jún
-            7: júl
-            8: aug
-            9: sep
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
           :narrow:
             1: j
             10: o

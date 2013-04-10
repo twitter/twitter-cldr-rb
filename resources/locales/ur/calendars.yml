@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: d E
+        :Gy: G y
+        :GyMMM: G y MMM
+        :GyMMMEd: G y MMM d, E
+        :GyMMMd: G y MMM d
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -96,7 +100,6 @@
         :zone: منطقہ وقت
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE، d MMMM، y
           :long:
@@ -106,7 +109,6 @@
           :short:
             :pattern: d/M/yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -116,7 +118,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: h:mm:ss a zzzz
           :long:
@@ -173,12 +174,12 @@
       :periods:
         :format:
           :abbreviated:
-            :am: دن
-            :pm: رات
+            :am: قبل دوپہر
+            :pm: بعد دوپہر
           :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
           :wide:
-            :am: دن
-            :pm: رات
+            :am: قبل دوپہر
+            :pm: بعد دوپہر
         :stand-alone: {}
       :quarters:
         :format:

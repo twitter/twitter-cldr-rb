@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E d
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -23,20 +27,15 @@
         :hms: h:mm:ss a
         :ms: mm:ss
         :y: y
-        :yM: yyyy-MM
-        :yMEd: E, yyyy-MM-dd
+        :yM: y-MM
+        :yMEd: E, y-MM-dd
+        :yMM: y-MM
         :yMMM: MMM y
         :yMMMEd: E d MMM y
         :yMMMd: d MMM y
-        :yMd: yyyy-MM-dd
+        :yMd: y-MM-dd
         :yQQQ: y QQQ
         :yQQQQ: y QQQQ
-        :yyMM: yy-MM
-        :yyMMM: MMM -yy
-        :yyQQQ: QQQ yy
-        :yyyyMM: yyyy-MM
-        :yyyyMMM: MMM y
-        :yyyyQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -73,13 +72,13 @@
             :wed: onsdag
         :stand-alone:
           :abbreviated:
-            :fri: fre
-            :mon: mån
-            :sat: lör
-            :sun: sön
-            :thu: tor
-            :tue: tis
-            :wed: ons
+            :fri: Fre
+            :mon: Mån
+            :sat: Lör
+            :sun: Sön
+            :thu: Tor
+            :tue: Tis
+            :wed: Ons
           :narrow:
             :fri: F
             :mon: M
@@ -89,21 +88,21 @@
             :tue: T
             :wed: O
           :short:
-            :fri: fr
-            :mon: må
-            :sat: lö
-            :sun: sö
-            :thu: to
-            :tue: ti
+            :fri: Fr
+            :mon: Må
+            :sat: Lö
+            :sun: Sö
+            :thu: To
+            :tue: Ti
             :wed: true
           :wide:
-            :fri: fredag
-            :mon: måndag
-            :sat: lördag
-            :sun: söndag
-            :thu: torsdag
-            :tue: tisdag
-            :wed: onsdag
+            :fri: Fredag
+            :mon: Måndag
+            :sat: Lördag
+            :sun: Söndag
+            :thu: Torsdag
+            :tue: Tisdag
+            :wed: Onsdag
       :eras:
         :abbr:
           0: f.Kr.
@@ -128,7 +127,6 @@
         :zone: tidszon
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE'en' 'den' d:'e' MMMM y
           :long:
@@ -136,9 +134,8 @@
           :medium:
             :pattern: d MMM y
           :short:
-            :pattern: yyyy-MM-dd
+            :pattern: y-MM-dd
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -148,7 +145,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: ! '''kl''. HH:mm:ss zzzz'
           :long:
@@ -200,18 +196,18 @@
             9: september
         :stand-alone:
           :abbreviated:
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
-            5: maj
-            6: jun
-            7: jul
-            8: aug
-            9: sep
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: Maj
+            6: Jun
+            7: Jul
+            8: Aug
+            9: Sep
           :narrow:
             1: J
             10: O
@@ -226,18 +222,18 @@
             8: A
             9: S
           :wide:
-            1: januari
-            10: oktober
-            11: november
-            12: december
-            2: februari
-            3: mars
-            4: april
-            5: maj
-            6: juni
-            7: juli
-            8: augusti
-            9: september
+            1: Januari
+            10: Oktober
+            11: November
+            12: December
+            2: Februari
+            3: Mars
+            4: April
+            5: Maj
+            6: Juni
+            7: Juli
+            8: Augusti
+            9: September
       :periods:
         :format:
           :abbreviated:

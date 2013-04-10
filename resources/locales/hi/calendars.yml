@@ -4,7 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: d E
-        :GGGGyMMMMEEEEdd: EEEE,dd MMMM GGGGy
+        :Gy: Gy
+        :GyMMM: MMM Gy
+        :GyMMMEd: E, d MMM Gy
+        :GyMMMd: d MMM Gy
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -26,17 +29,15 @@
         :y: y
         :yM: M-y
         :yMEd: E, d/M/y
+        :yMM: MM-y
         :yMMM: MMM y
         :yMMMEd: E, d MMM y
+        :yMMMM: MMMM y
         :yMMMd: d MMM, y
+        :yMMdd: dd-MM-y
         :yMd: d/M/y
         :yQQQ: QQQ y
         :yQQQQ: QQQQ y
-        :yyMMMEd: E, d MMM yy
-        :yyMMMd: d MMM, yy
-        :yyMMdd: dd-MM-yy
-        :yyyyMM: MM-yyyy
-        :yyyyMMMM: MMMM y
       :days:
         :format:
           :abbreviated:
@@ -105,17 +106,15 @@
         :zone: क्षेत्र
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, d MMMM y
           :long:
             :pattern: d MMMM y
           :medium:
-            :pattern: dd-MM-yyyy
+            :pattern: dd-MM-y
           :short:
             :pattern: d-M-yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -125,7 +124,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: h:mm:ss a zzzz
           :long:

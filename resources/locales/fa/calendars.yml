@@ -4,7 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E d
-        :GGGGyyyyMMMMd: d MMMM y GGGG
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E d MMM y G
+        :GyMMMd: d MMM y G
         :H: H
         :HHmmZ: HH:mm (Z)
         :Hm: H:mm
@@ -29,13 +32,11 @@
         :yMMM: MMM y
         :yMMMEd: E d MMM y
         :yMMMM: MMMM y
+        :yMMMMEEEEd: EEEE d MMMM y
         :yMMMd: d MMM y
         :yMd: y/M/d
         :yQQQ: QQQQ y
         :yQQQQ: QQQQ y
-        :yyyyM: yyyy/M
-        :yyyyMMMM: MMMM yyyy
-        :yyyyMMMMEEEEd: EEEE d MMMM yyyy
       :days:
         :format:
           :abbreviated:
@@ -127,7 +128,6 @@
         :zone: منطقهٔ زمانی
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.long
           :full:
             :pattern: EEEE d MMMM y
           :long:
@@ -135,9 +135,8 @@
           :medium:
             :pattern: d MMM y
           :short:
-            :pattern: yyyy/M/d
+            :pattern: y/M/d
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}}، ساعت {{time}}'
           :long:
@@ -147,7 +146,6 @@
           :short:
             :pattern: ! '{{date}}،‏ {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: H:mm:ss (zzzz)
           :long:

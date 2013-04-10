@@ -9,6 +9,9 @@
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
         :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -95,7 +98,6 @@
         :zone: Time Zone
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, MMMM d, y
           :long:
@@ -105,7 +107,6 @@
           :short:
             :pattern: M/d/yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} ''at'' {{time}}'
           :long:
@@ -115,7 +116,6 @@
           :short:
             :pattern: ! '{{date}}, {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: h:mm:ss a zzzz
           :long:
@@ -177,9 +177,12 @@
             :noon: n
             :pm: p
           :wide:
-            :am: a.m.
+            :am: AM
             :noon: noon
-            :pm: p.m.
+            :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

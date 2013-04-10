@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: E, d
+        :Gy: G y
+        :GyMMM: MMM y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
@@ -120,17 +124,15 @@
         :zone: Zona Waktu
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
-            :pattern: EEEE, dd MMMM yyyy
+            :pattern: EEEE, dd MMMM y
           :long:
-            :pattern: d MMMM yyyy
+            :pattern: d MMMM y
           :medium:
-            :pattern: d MMM yyyy
+            :pattern: d MMM y
           :short:
             :pattern: dd/MM/yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -140,7 +142,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: HH.mm.ss zzzz
           :long:

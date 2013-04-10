@@ -34,8 +34,6 @@ module TwitterCldr
 
       EMPTY_TAILORING_DATA = { :collator_options => {}, :tailored_table => '', :suppressed_contractions => '' }
 
-      ICU4J_URL = 'http://download.icu-project.org/files/icu4j/49.1/icu4j-49_1.jar'
-
       class ImportError < RuntimeError; end
 
       # Arguments:
@@ -59,7 +57,7 @@ module TwitterCldr
       private
 
       def require_icu4j(icu4j_path)
-        TwitterCldr::Resources.download_if_necessary(icu4j_path, ICU4J_URL)
+        TwitterCldr::Resources.download_icu4j_if_necessary(icu4j_path)
         require icu4j_path
       end
 

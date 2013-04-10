@@ -92,7 +92,7 @@ describe LocalizedDateTime do
     it "uses the default format if no :format is given" do
       loc_date = date_time.localize
       mock.proxy(loc_date).to_default_s
-      loc_date.to_s.should == "Sep 20, 1987, 10:05:00 p.m."
+      loc_date.to_s.should == "Sep 20, 1987, 10:05:00 PM"
     end
 
     it "uses the given format instead of the default when specified" do
@@ -105,9 +105,9 @@ describe LocalizedDateTime do
   describe "#with_timezone" do
     it "calculates the right time depending on the timezone" do
       loc_date = date_time.localize
-      loc_date.to_s.should == "Sep 20, 1987, 10:05:00 p.m."
-      loc_date.with_timezone("America/Los_Angeles").to_s.should == "Sep 20, 1987, 3:05:00 p.m."
-      loc_date.with_timezone("America/New_York").to_s.should == "Sep 20, 1987, 6:05:00 p.m."
+      loc_date.to_s.should == "Sep 20, 1987, 10:05:00 PM"
+      loc_date.with_timezone("America/Los_Angeles").to_s.should == "Sep 20, 1987, 3:05:00 PM"
+      loc_date.with_timezone("America/New_York").to_s.should == "Sep 20, 1987, 6:05:00 PM"
     end
   end
 

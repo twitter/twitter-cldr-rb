@@ -5,6 +5,10 @@
       :additional_formats:
         :E: ccc
         :Ed: ccc, d
+        :Gy: y G
+        :GyMMM: LLL y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y 'г'. G
         :H: H
         :Hm: H:mm
         :Hms: H:mm:ss
@@ -21,23 +25,17 @@
         :hms: h:mm:ss a
         :ms: mm:ss
         :y: y
+        :yLLLL: LLLL y
         :yM: MM.y
         :yMEd: ccc, d.MM.y 'г'.
+        :yMM: MM.y
         :yMMM: LLL y
         :yMMMEd: E, d MMM y
+        :yMMMM: LLLL y
         :yMMMd: d MMM y 'г'.
         :yMd: dd.MM.y
         :yQQQ: QQQ y 'г'.
-        :yQQQQ: y QQQQ
-        :yyMM: MM.yy
-        :yyMMM: LLL yy
-        :yyMMMEd: E, d MMM yy
-        :yyQQQ: QQQ yy
-        :yyyy: y
-        :yyyyLLLL: LLLL y
-        :yyyyMM: MM.yyyy
-        :yyyyMMMM: LLLL y
-        :yyyyQQQQ: QQQQ y 'г'.
+        :yQQQQ: QQQQ y 'г'.
       :days:
         :format:
           :abbreviated:
@@ -129,7 +127,6 @@
         :zone: Часовой пояс
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, d MMMM y 'г'.
           :long:
@@ -139,7 +136,6 @@
           :short:
             :pattern: dd.MM.yy
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}}, {{time}}'
           :long:
@@ -149,7 +145,6 @@
           :short:
             :pattern: ! '{{date}}, {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: H:mm:ss zzzz
           :long:

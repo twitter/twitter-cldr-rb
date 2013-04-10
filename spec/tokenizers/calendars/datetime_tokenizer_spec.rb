@@ -26,8 +26,8 @@ describe DateTimeTokenizer do
   end
 
   describe "#tokens" do
-    it "should choose the default date time path if no other type is specified" do
-      mock.proxy(tokenizer.paths)[:default]
+    it "as of CLDR 23, should choose the medium date time path if no other type is specified" do
+      mock.proxy(tokenizer.paths)[:medium]
       tokenizer.tokens
     end
 

@@ -4,6 +4,10 @@
     :gregorian:
       :additional_formats:
         :Ed: d E
+        :Gy: G y
+        :GyMMM: G y MMM
+        :GyMMMEd: G y MMM d, E
+        :GyMMMd: G y MMM d
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -102,7 +106,6 @@
         :zone: Ordu-eremua
       :formats:
         :date:
-          :default: :calendars.gregorian.formats.date.medium
           :full:
             :pattern: EEEE, y MMMM dd
           :long:
@@ -110,9 +113,8 @@
           :medium:
             :pattern: y MMM d
           :short:
-            :pattern: yyyy-MM-dd
+            :pattern: y-MM-dd
         :datetime:
-          :default: :calendars.gregorian.formats.datetime.medium
           :full:
             :pattern: ! '{{date}} {{time}}'
           :long:
@@ -122,7 +124,6 @@
           :short:
             :pattern: ! '{{date}} {{time}}'
         :time:
-          :default: :calendars.gregorian.formats.time.medium
           :full:
             :pattern: HH:mm:ss zzzz
           :long:

@@ -15,7 +15,7 @@ describe Currencies do
     it "should list all supported country codes" do
       codes = Currencies.currency_codes
 
-      codes.size.should == 296
+      codes.size.should == 297
       codes.should include(*TEST_CODES)
     end
   end

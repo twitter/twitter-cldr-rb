@@ -3,12 +3,16 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'pry'
+require 'pry-nav'
+
 module TwitterCldr
   module Tokenizers
     class DateTimeTokenizer < Base
       attr_reader :placeholders, :calendar_type
 
       VALID_TYPES = [:default, :full, :long, :medium, :short, :additional]
+      DEFAULT_TYPE = :medium
 
       def initialize(options = {})
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
@@ -33,7 +37,6 @@ module TwitterCldr
         @base_path = [:calendars]
 
         @paths = {
-          :default    => [:formats, :datetime, :default],
           :full       => [:formats, :datetime, :full],
           :long       => [:formats, :datetime, :long],
           :medium     => [:formats, :datetime, :medium],
@@ -47,6 +50,7 @@ module TwitterCldr
       def tokens(options = {})
         @type = options[:type] || @type || :default
         @format = options[:format] || @format
+        @type = DEFAULT_TYPE if @type == :default
         tokens_for(full_path_for(paths[@type]))
       end
 

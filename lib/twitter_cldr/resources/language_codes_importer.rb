@@ -13,17 +13,17 @@ module TwitterCldr
       BCP_47_FILE, ISO_639_FILE = %w[bcp-47.txt iso-639.txt]
 
       INPUT_DATA = {
-          BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry',
-          ISO_639_FILE => 'http://www.sil.org/iso639-3/iso-639-3_20120614.tab'
+        BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry',
+        ISO_639_FILE => 'http://www-01.sil.org/iso639-3/iso-639-3_20120614.tab'
       }
 
       KEYS_TO_STANDARDS = {
-          :iso_639_1      => :iso_639_1,
-          :iso_639_2      => :iso_639_2,
-          :iso_639_2_term => :iso_639_2,
-          :iso_639_3      => :iso_639_3,
-          :bcp_47         => :bcp_47,
-          :bcp_47_alt     => :bcp_47
+        :iso_639_1      => :iso_639_1,
+        :iso_639_2      => :iso_639_2,
+        :iso_639_2_term => :iso_639_2,
+        :iso_639_3      => :iso_639_3,
+        :bcp_47         => :bcp_47,
+        :bcp_47_alt     => :bcp_47
       }
 
       def initialize(input_path, output_path)

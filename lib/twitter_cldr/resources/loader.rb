@@ -77,7 +77,7 @@ module TwitterCldr
         base = YAML.load(read_resource_file(path))
         custom_path = File.join("custom", path)
 
-        if merge_custom && resource_exists?(custom_path)
+        if merge_custom && resource_exists?(custom_path) && !TwitterCldr.disable_custom_locale_formatting
           TwitterCldr::Utils.deep_merge!(base, load_resource(custom_path, false))
         end
 

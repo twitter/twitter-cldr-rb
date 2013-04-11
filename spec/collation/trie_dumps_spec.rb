@@ -9,7 +9,7 @@ include TwitterCldr::Collation
 
 describe 'trie dumps', :slow => true do
   let(:default_trie) { TrieBuilder.load_default_trie }
-  let(:error_message)    { 'expected trie dump to be up-to-date.' }
+  let(:error_message) { 'expected trie dump to be up-to-date.' }
 
   it 'has a valid default Fractional Collation Elements trie dump' do
     TrieLoader.load_default_trie.to_hash.should(eq(default_trie.to_hash), error_message)

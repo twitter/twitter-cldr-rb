@@ -56,6 +56,7 @@ module TwitterCldr
   class << self
 
     attr_writer :locale
+    attr_accessor :disable_custom_locale_formatting
 
     def resources
       @resources ||= TwitterCldr::Resources::Loader.new

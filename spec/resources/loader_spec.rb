@@ -49,16 +49,25 @@ describe Loader do
         loader.get_resource(:foo, :bar).should == { :foo => "bar" }
       end
 
-      it 'merges the given file with its corresponding custom resource if it exists' do
-        mock(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
-        mock(loader).resource_exists?('custom/foo/bar.yml') { true }
-        mock(loader).read_resource_file('custom/foo/bar.yml') { ":bar: baz" }
+      context 'with a custom resource' do
+        before(:each) do
+          stub(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
+          stub(loader).resource_exists?('custom/foo/bar.yml') { true }
+          stub(loader).read_resource_file('custom/foo/bar.yml') { ":bar: baz" }
+        end
 
-        # make sure load_resource is called with custom = false the second time
-        mock.proxy(loader).load_resource("foo/bar.yml")
-        mock.proxy(loader).load_resource("custom/foo/bar.yml", false)
+        it 'merges the given file with its corresponding custom resource if it exists' do
+          # make sure load_resource is called with custom = false the second time
+          mock.proxy(loader).load_resource("foo/bar.yml")
+          mock.proxy(loader).load_resource("custom/foo/bar.yml", false)
 
-        loader.get_resource(:foo, :bar).should == { :foo => "bar", :bar => "baz" }
+          loader.get_resource(:foo, :bar).should == { :foo => "bar", :bar => "baz" }
+        end
+
+        it 'does not merge the custom resource if custom resources are disabled' do
+          TwitterCldr.disable_custom_locale_resources = true
+          loader.get_resource(:foo, :bar).should == { :foo => "bar" }
+        end
       end
     end
   end

@@ -67,6 +67,7 @@ describe Loader do
         it 'does not merge the custom resource if custom resources are disabled' do
           TwitterCldr.disable_custom_locale_resources = true
           loader.get_resource(:foo, :bar).should == { :foo => "bar" }
+          TwitterCldr.disable_custom_locale_resources = false
         end
       end
     end

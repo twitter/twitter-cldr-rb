@@ -213,8 +213,8 @@ describe("DateTimeFormatter", function() {
 
   describe("#period", function() {
     it("test: a", function() {
-      expect(formatter.period(new Date(2000, 0, 1, 1, 1, 1), 'a', 1)).toEqual('a.m.');
-      expect(formatter.period(new Date(2000, 0, 1, 15, 1, 1), 'a', 1)).toEqual('p.m.');
+      expect(formatter.period(new Date(2000, 0, 1, 1, 1, 1), 'a', 1)).toEqual('AM');
+      expect(formatter.period(new Date(2000, 0, 1, 15, 1, 1), 'a', 1)).toEqual('PM');
     });
   });
 

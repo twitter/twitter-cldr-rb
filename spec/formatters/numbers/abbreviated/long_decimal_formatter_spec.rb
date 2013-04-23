@@ -34,4 +34,8 @@ describe LongDecimalFormatter do
   it "formats the number as if it were a straight decimal if it's less than 1000" do
     @formatter.format(500).should == "500"
   end
+
+  it "respects the :precision option" do
+    @formatter.format(12345, :precision => 3).should match_normalized("12.345 thousand")
+  end
 end

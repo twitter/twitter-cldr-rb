@@ -36,8 +36,9 @@ module TwitterCldr
 
       def transform_number(number)
         if (number < NUMBER_MAX) && (number >= NUMBER_MIN)
-          sig_figs = ((number.to_i.to_s.size - 1) % 3)
-          number.to_s[0..sig_figs].to_i
+          power = (((number.to_s.length - 1) / 3) * 3).floor
+          factor = (10 ** power).to_f
+          number / factor
         else
           number
         end

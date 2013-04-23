@@ -137,8 +137,9 @@ class TwitterCldr.AbbreviatedNumberFormatter extends TwitterCldr.NumberFormatter
 
   transform_number: (number) ->
     if (number < @NUMBER_MAX) && (number >= @NUMBER_MIN)
-      sig_figs = ((parseInt(number).toString().length - 1) % 3)
-      parseInt(number.toString()[0..sig_figs])
+      power = Math.floor((number.toString().length - 1) / 3) * 3
+      factor = Math.pow(10, power)
+      number / factor
     else
       number
 

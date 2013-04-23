@@ -53,5 +53,9 @@ describe("ShortDecimalFormatter", function() {
     it("formats the number as if it were a straight decimal if it's less than 1000", function() {
       expect(formatter.format(500)).toEqual("500");
     });
+
+		it("respects the :precision option", function() {
+			expect(formatter.format(12345, {precision: 3})).toEqual("12.345K");
+		});
   });
 });

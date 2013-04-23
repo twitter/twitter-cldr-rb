@@ -30,7 +30,10 @@ RSpec::Core::RakeTask.new("spec:ruby") do |t|
 end
 
 desc 'Run JavaScript specs'
-task "spec:js" => ["twitter_cldr:js:update"] do
+task "spec:js" do
+  ENV["LOCALES"] = "en"
+  Rake::Task["twitter_cldr:js:update"].invoke
+
   puts "\nJasmine Specs"
   failures = 0
 

@@ -5,10 +5,7 @@
 
 require 'rails'
 require 'twitter_cldr'
-require 'mustache'
 require 'json'
-require 'uglifier'
-require 'coffee-script'
 require 'rake'
 
 require 'twitter_cldr/js/version'

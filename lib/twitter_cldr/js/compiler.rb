@@ -3,6 +3,10 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'mustache'
+require 'uglifier'
+require 'coffee-script'
+
 module TwitterCldr
   module Js
     class Compiler

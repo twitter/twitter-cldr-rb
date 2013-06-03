@@ -5,6 +5,6 @@
 
 module TwitterCldr
   module Js
-    VERSION = "2.2.0"
+    VERSION = "2.2.1"
   end
 end

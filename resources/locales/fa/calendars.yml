@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E d MMM y G
@@ -238,7 +242,10 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :afternoon: عصر
             :am: قبل‌ازظهر
@@ -248,6 +255,9 @@
             :night: شب
             :noon: ظهر
             :pm: بعدازظهر
+            :variant:
+              :am: a.m.
+              :pm: p.m.
             :weeHours: نیمه‌شب
         :stand-alone: {}
       :quarters:

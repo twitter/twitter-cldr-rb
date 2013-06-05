@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E, d.
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: LLLL y G
         :GyMMMEd: E, d. M. y G
@@ -235,10 +239,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
             :am: dop.
+            :noon: n
             :pm: odp.
           :wide:
             :am: dop.
+            :noon: noon
             :pm: odp.
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

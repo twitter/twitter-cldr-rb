@@ -10,7 +10,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr'
+  gem 'ruby-cldr', :path => "~/workspace/ruby-cldr" #:github => 'camertron/ruby-cldr', :branch => "fix_pural_fallbacks"
 end
 
 group :test do

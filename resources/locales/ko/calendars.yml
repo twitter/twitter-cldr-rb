@@ -4,7 +4,11 @@
     :gregorian:
       :additional_formats:
         :EEEEd: d일 EEEE
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d일 (E)
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: G y년
         :GyMMM: G y년 MMM
         :GyMMMEEEEd: G y년 MMM d일 EEEE
@@ -94,7 +98,8 @@
           0: 서력기원전
           1: 서력기원
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: 일
         :dayperiod: 오전/오후
@@ -137,7 +142,19 @@
             :pattern: a h:mm
       :months:
         :format:
-          :abbreviated: :calendars.gregorian.months.format.wide
+          :abbreviated:
+            1: Jan
+            10: Oct
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: May
+            6: Jun
+            7: Jul
+            8: Aug
+            9: Sep
           :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide:
             1: 1월
@@ -171,10 +188,17 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: 오전
+            :noon: noon
             :pm: 오후
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

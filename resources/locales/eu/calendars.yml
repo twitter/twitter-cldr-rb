@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d E
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -89,9 +93,11 @@
           0: K.a.
           1: K.o.
         :name:
-          0: ''
+          0: Before Christ
+          1: Anno Domini
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: Eguna
         :dayperiod: AM//PM
@@ -184,10 +190,15 @@
             :pm: PM
           :narrow:
             :am: a
+            :noon: n
             :pm: p
           :wide:
             :am: AM
+            :noon: noon
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

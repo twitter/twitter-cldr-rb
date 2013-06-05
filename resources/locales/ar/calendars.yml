@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E، d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E، d MMM، y G
@@ -104,7 +108,8 @@
           0: قبل الميلاد
           1: ميلادي
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: يوم
         :dayperiod: ص/م
@@ -217,14 +222,25 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: ص
+            :noon: noon
             :pm: م
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:
-          :abbreviated: :calendars.gregorian.quarters.format.wide
+          :abbreviated:
+            1: Q1
+            2: Q2
+            3: Q3
+            4: Q4
           :narrow:
             1: ١
             2: ٢

@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d E
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: d MMM y G E
@@ -111,7 +115,8 @@
           0: Milattan Önce
           1: Milattan Sonra
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: Gün
         :dayperiod: ÖÖ/ÖS
@@ -236,10 +241,17 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: ÖÖ
+            :noon: noon
             :pm: ÖS
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

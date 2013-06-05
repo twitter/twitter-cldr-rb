@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :Ed: d, E
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
+        :Ed: d E
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: H
         :Hm: H.mm
         :Hms: H.mm.ss
@@ -32,10 +36,10 @@
         :yMMM: MMM y
         :yMMMEd: E, d MMM y
         :yMMMM: MMMM y
-        :yMMMd: y MMM d
-        :yMd: y-MM-dd
-        :yQQQ: y QQQ
-        :yQQQQ: y QQQQ
+        :yMMMd: MMM d, y
+        :yMd: M/d/y
+        :yQQQ: QQQ y
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
@@ -47,7 +51,14 @@
             :tue: Mar
             :wed: Mër
           :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short: :calendars.gregorian.days.format.abbreviated
+          :short:
+            :fri: Fr
+            :mon: Mo
+            :sat: Sa
+            :sun: Su
+            :thu: Th
+            :tue: Tu
+            :wed: We
           :wide:
             :fri: e premte
             :mon: e hënë
@@ -73,12 +84,14 @@
           0: p.e.r.
           1: n.e.r.
         :name:
-          0: ''
+          0: Before Christ
+          1: Anno Domini
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: Day
-        :dayperiod: Dayperiod
+        :dayperiod: AM/PM
         :era: Era
         :hour: Hour
         :minute: Minute
@@ -87,7 +100,7 @@
         :week: Week
         :weekday: Day of the Week
         :year: Year
-        :zone: Zone
+        :zone: Time Zone
       :formats:
         :date:
           :full:
@@ -100,13 +113,13 @@
             :pattern: yy-MM-dd
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: h.mm.ss.a zzzz
@@ -164,20 +177,31 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: PD
+            :noon: noon
             :pm: MD
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:
-          :abbreviated: :calendars.gregorian.quarters.format.wide
-          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
-          :wide:
+          :abbreviated:
             1: Q1
             2: Q2
             3: Q3
             4: Q4
+          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
+          :wide:
+            1: 1st quarter
+            2: 2nd quarter
+            3: 3rd quarter
+            4: 4th quarter
         :stand-alone:
           :abbreviated: :calendars.gregorian.quarters.format.abbreviated
           :narrow:

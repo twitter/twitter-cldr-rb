@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :Ed: d, E
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
+        :Ed: d E
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
@@ -45,7 +49,14 @@
             :tue: аў
             :wed: ср
           :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short: :calendars.gregorian.days.format.abbreviated
+          :short:
+            :fri: Fr
+            :mon: Mo
+            :sat: Sa
+            :sun: Su
+            :thu: Th
+            :tue: Tu
+            :wed: We
           :wide:
             :fri: пятніца
             :mon: панядзелак
@@ -71,9 +82,11 @@
           0: да н.э.
           1: н.э.
         :name:
-          0: ''
+          0: Before Christ
+          1: Anno Domini
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: дзень
         :dayperiod: ДП/ПП
@@ -98,13 +111,13 @@
             :pattern: d.M.yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}} ''at'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: ! '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: HH.mm.ss zzzz
@@ -198,10 +211,17 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: да палудня
+            :noon: noon
             :pm: пасля палудня
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone:
           :abbreviated:
             :am: раніцы

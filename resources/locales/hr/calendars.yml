@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E, d.
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y. G
         :GyMMM: LLL y. G
         :GyMMMEd: E, d. MMM y. G
@@ -246,15 +250,20 @@
             :noon: podne
           :narrow:
             :afternoon: popodne
+            :am: a
             :earlyMorning: ujutro
             :evening: navečer
             :morning: prijepodne
             :night: noću
             :noon: n
+            :pm: p
           :wide:
             :am: AM
             :noon: podne
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone:
           :abbreviated:
             :afternoon: popodne

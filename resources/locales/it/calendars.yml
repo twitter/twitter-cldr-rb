@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E d MMM y G
@@ -93,7 +97,8 @@
           0: a.C.
           1: d.C
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: giorno
         :dayperiod: periodo del giorno
@@ -220,10 +225,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
             :am: m.
+            :noon: n
             :pm: p.
           :wide:
             :am: AM
+            :noon: noon
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

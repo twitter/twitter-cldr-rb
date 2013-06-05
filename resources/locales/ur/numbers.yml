@@ -11,6 +11,19 @@
       :decimal:
         :patterns:
           :default: ! '#,##0.###'
+          :long:
+            1000: 0 thousand
+            10000: 00 thousand
+            100000: 000 thousand
+            1000000: 0 million
+            10000000: 00 million
+            100000000: 000 million
+            1000000000: 0 billion
+            10000000000: 00 billion
+            100000000000: 000 billion
+            1000000000000: 0 trillion
+            10000000000000: 00 trillion
+            100000000000000: 000 trillion
           :short:
             1000: 0 ہزار
             10000: 00 ہزار

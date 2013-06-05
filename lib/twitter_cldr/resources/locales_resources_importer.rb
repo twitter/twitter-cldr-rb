@@ -46,14 +46,27 @@ module TwitterCldr
       end
 
       def import_components
-        Cldr::Export.export(:locales => TwitterCldr.supported_locales, :components => COMPONENTS, :target => File.join(@output_path, 'locales')) do |component, locale, path|
+        export_args = {
+          :locales => TwitterCldr.supported_locales,
+          :components => COMPONENTS,
+          :target => File.join(@output_path, 'locales'),
+          :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+        }
+
+        Cldr::Export.export(export_args) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
           deep_symbolize(component, locale, path)
         end
 
-        Cldr::Export.export(:components => ["currency_digits_and_rounding"], :target => File.join(@output_path, 'shared')) do |component, locale, path|
+        export_args = {
+          :components => ["currency_digits_and_rounding"],
+          :target => File.join(@output_path, 'shared'),
+          :merge => true
+        }
+
+        Cldr::Export.export(export_args) do |component, locale, path|
           deep_symbolize(component, locale, path)
         end
 

@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d日（E）
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: Gy年
         :GyMMM: Gy年M月
         :GyMMMEd: Gy年M月d日E
@@ -45,7 +49,14 @@
             :thu: 週四
             :tue: 週二
             :wed: 週三
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: 五
+            :mon: 一
+            :sat: 六
+            :sun: 日
+            :thu: 四
+            :tue: 二
+            :wed: 三
           :short:
             :fri: 五
             :mon: 一
@@ -63,7 +74,14 @@
             :tue: 星期二
             :wed: 星期三
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: 周五
+            :mon: 周一
+            :sat: 周六
+            :sun: 周日
+            :thu: 周四
+            :tue: 周二
+            :wed: 周三
           :narrow:
             :fri: 五
             :mon: 一
@@ -80,15 +98,24 @@
             :thu: 四
             :tue: 二
             :wed: 三
-          :wide: :calendars.gregorian.days.format.wide
+          :wide:
+            :fri: 星期五
+            :mon: 星期一
+            :sat: 星期六
+            :sun: 星期日
+            :thu: 星期四
+            :tue: 星期二
+            :wed: 星期三
       :eras:
         :abbr:
           0: 西元前
           1: 西元
         :name:
-          0: ''
+          0: 公元前
+          1: 公元
         :narrow:
-          0: ''
+          0: 公元前
+          1: 公元
       :fields:
         :day: 日
         :dayperiod: 上午/下午
@@ -144,7 +171,19 @@
             7: 7月
             8: 8月
             9: 9月
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow:
+            1: 1
+            10: 10
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
           :wide:
             1: 1月
             10: 10月
@@ -185,7 +224,19 @@
             7: 7
             8: 8
             9: 9
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: 一月
+            10: 十月
+            11: 十一月
+            12: 十二月
+            2: 二月
+            3: 三月
+            4: 四月
+            5: 五月
+            6: 六月
+            7: 七月
+            8: 八月
+            9: 九月
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
@@ -208,6 +259,9 @@
             :night: 晚上
             :noon: 中午
             :pm: 下午
+            :variant:
+              :am: a.m.
+              :pm: p.m.
             :weeHours: 凌晨
         :stand-alone: {}
       :quarters:
@@ -228,10 +282,18 @@
             3: 第3季
             4: 第4季
         :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated:
+            1: 1季度
+            2: 2季度
+            3: 3季度
+            4: 4季度
           :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide:
+            1: 第一季度
+            2: 第二季度
+            3: 第三季度
+            4: 第四季度

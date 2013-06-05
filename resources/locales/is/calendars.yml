@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: e d.
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -199,10 +203,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
             :am: f.h.
+            :noon: n
             :pm: e.h.
           :wide:
             :am: f.h.
+            :noon: noon
             :pm: e.h.
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone:
           :wide:
             :am: árdegi

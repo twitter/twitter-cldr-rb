@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E, d 'de' MMMM 'de' y G
@@ -91,7 +95,8 @@
           0: antes de Cristo
           1: anno Dómini
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: día
         :dayperiod: periodo del día
@@ -192,10 +197,17 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: a.m.
+            :noon: noon
             :pm: p.m.
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

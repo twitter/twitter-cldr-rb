@@ -4,7 +4,11 @@
     :gregorian:
       :additional_formats:
         :E: ccc
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: ccc, d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: LLL y G
         :GyMMMEd: E, d MMM y G
@@ -241,10 +245,15 @@
             :pm: после полудня
           :narrow:
             :am: дп
+            :noon: n
             :pm: пп
           :wide:
             :am: до полудня
+            :noon: noon
             :pm: после полудня
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

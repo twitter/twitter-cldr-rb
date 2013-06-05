@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: G y
         :GyMMM: MMM G y
         :GyMMMEd: E d MMM G y
@@ -238,10 +242,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
             :am: ก่อนเที่ยง
+            :noon: n
             :pm: หลังเที่ยง
           :wide:
             :am: ก่อนเที่ยง
+            :noon: noon
             :pm: หลังเที่ยง
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d E
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -96,7 +100,8 @@
           0: கிறிஸ்துவுக்கு முன்
           1: அனோ டோமினி
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: நாள்
         :dayperiod: முற்பகல்/பிற்பகல்
@@ -225,10 +230,15 @@
             :pm: பிற்பகல்
           :narrow:
             :am: AM
+            :noon: n
             :pm: PM
           :wide:
             :am: AM
+            :noon: noon
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

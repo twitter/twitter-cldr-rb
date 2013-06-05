@@ -3,11 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d E
-        :Gy: G y
-        :GyMMM: G y MMM
-        :GyMMMEd: G y MMM d, E
-        :GyMMMd: G y MMM d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
+        :Gy: y G
+        :GyMMM: MMM y G
+        :GyMMMEd: E, MMM d, y G
+        :GyMMMd: MMM d, y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -87,9 +91,11 @@
           0: খৃষ্টপূর্ব
           1: খৃষ্টাব্দ
         :name:
-          0: ''
+          0: Before Christ
+          1: Anno Domini
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: দিন
         :dayperiod: পূর্বাহ্ণ/অপরাহ্ণ
@@ -132,7 +138,19 @@
             :pattern: h:mm a
       :months:
         :format:
-          :abbreviated: :calendars.gregorian.months.format.wide
+          :abbreviated:
+            1: Jan
+            10: Oct
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: May
+            6: Jun
+            7: Jul
+            8: Aug
+            9: Sep
           :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide:
             1: জানুয়ারী
@@ -168,10 +186,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
             :am: পূর্বাহ্ণ
+            :noon: n
             :pm: অপরাহ্ণ
           :wide:
             :am: পূর্বাহ্ণ
+            :noon: noon
             :pm: অপরাহ্ণ
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E d MMM y G
@@ -107,7 +111,8 @@
           0: avant Jésus-Christ
           1: après Jésus-Christ
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: jour
         :dayperiod: cadran
@@ -249,6 +254,9 @@
             :night: soir
             :noon: midi
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone:
           :abbreviated:
             :afternoon: ap.m.

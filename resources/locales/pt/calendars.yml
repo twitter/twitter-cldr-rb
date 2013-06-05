@@ -3,7 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: E, d
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM 'de' y G
         :GyMMMEd: E, d 'de' MMM 'de' y G
@@ -110,7 +114,8 @@
           0: Antes de Cristo
           1: Ano do Senhor
         :narrow:
-          0: ''
+          0: B
+          1: A
       :fields:
         :day: Dia
         :dayperiod: Período do dia
@@ -239,6 +244,7 @@
             :pm: PM
           :narrow:
             :am: a
+            :noon: n
             :pm: p
           :wide:
             :afternoon: tarde
@@ -247,6 +253,9 @@
             :night: noite
             :noon: meio-dia
             :pm: PM
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone:
           :abbreviated:
             :afternoon: tarde

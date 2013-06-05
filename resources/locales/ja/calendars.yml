@@ -4,7 +4,11 @@
     :gregorian:
       :additional_formats:
         :EEEEd: d日EEEE
+        :EHm: E HH:mm
+        :EHms: E HH:mm:ss
         :Ed: d日(E)
+        :Ehm: E h:mm a
+        :Ehms: E h:mm:ss a
         :Gy: Gy年
         :GyMMM: Gy年M月
         :GyMMMEEEEd: Gy年M月d日EEEE
@@ -136,7 +140,19 @@
             :pattern: H:mm
       :months:
         :format:
-          :abbreviated: :calendars.gregorian.months.format.wide
+          :abbreviated:
+            1: Jan
+            10: Oct
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: May
+            6: Jun
+            7: Jul
+            8: Aug
+            9: Sep
           :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide:
             1: 1月
@@ -170,11 +186,17 @@
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow:
+            :am: a
+            :noon: n
+            :pm: p
           :wide:
             :am: 午前
             :noon: 正午
             :pm: 午後
+            :variant:
+              :am: a.m.
+              :pm: p.m.
         :stand-alone: {}
       :quarters:
         :format:

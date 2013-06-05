@@ -112,7 +112,7 @@ module TwitterCldr
     end
 
     def supported_locales
-      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
+      @supported_locales ||= [:en_GB] #Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
     end
 
     def supported_locale?(locale)

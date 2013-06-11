@@ -24,15 +24,19 @@ module TwitterCldr
       LAST_BYTE_MASK = 0xFF
 
       LOCALES_MAP = {
-          :'zh-Hant' => :'zh_Hant',
-          :id => :root,
-          :it => :root,
-          :ms => :root,
-          :nl => :root,
-          :pt => :root
+        :'zh-Hant' => :'zh_Hant',
+        :id => :root,
+        :it => :root,
+        :ms => :root,
+        :nl => :root,
+        :pt => :root
       }
 
-      EMPTY_TAILORING_DATA = { :collator_options => {}, :tailored_table => '', :suppressed_contractions => '' }
+      EMPTY_TAILORING_DATA = {
+        :collator_options => {},
+        :tailored_table => '',
+        :suppressed_contractions => ''
+      }
 
       class ImportError < RuntimeError; end
 

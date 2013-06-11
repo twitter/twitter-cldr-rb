@@ -9,7 +9,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'nokogiri'
+  gem 'nokogiri', "~> 1.5.9"
   gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
 end
 

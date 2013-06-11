@@ -33,7 +33,10 @@ require 'yaml'
 if YAML.const_defined?(:ENGINE)
   # Fix undefined method `syck_to_yaml' for class `Object' error on MRI 1.9.3.
   # Target only MRI >= 1.9, because on other Rubies, e.g., JRuby, requiring 'syck' results in a LoadError.
-  require 'syck' if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'ruby'
+  if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'ruby' && RUBY_VERSION >= "1.9.0" && RUBY_VERSION < "2.0.0"
+    require 'syck'
+  end
+
   YAML::ENGINE.yamler = 'syck'
 end
 

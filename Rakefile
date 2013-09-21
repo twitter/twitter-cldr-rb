@@ -61,70 +61,99 @@ else
   end
 end
 
+task :update do
+  tasks = [
+    "update:locales_resources",
+    "update:tailoring_data",
+    "update:unicode_data",
+    "update:composition_exclusions",
+    "update:postal_codes",
+    "update:phone_codes",
+    "update:language_codes",
+    "update:collation_tries",
+    "update:canonical_compositions",
+    "update:rbnf_tests"
+  ]
+
+  tasks.each do |task|
+    puts "Executing #{task}"
+    Rake::Task[task].invoke
+  end
+end
+
 namespace :update do
+  ICU_JAR = './vendor/icu4j-51_2.jar'
+
+  progress_reporter = lambda do |done, total, text|
+    percent = ((done.to_f / total.to_f) * 100).to_i
+    puts "  (#{percent}%)\t#{text}"
+  end
+
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|
     TwitterCldr::Resources::LocalesResourcesImporter.new(
-        args[:cldr_path] || './vendor/cldr',
-        './resources'
-    ).import
+      args[:cldr_path] || './vendor/cldr',
+      './resources'
+    ).import(&progress_reporter)
   end
 
   desc 'Import custom locales resources'
   task :custom_locales_resources do
-    TwitterCldr::Resources::CustomLocalesResourcesImporter.new('./resources/custom/locales').import
+    TwitterCldr::Resources::CustomLocalesResourcesImporter.new(
+      './resources/custom/locales'
+    ).import(&progress_reporter)
   end
 
   desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
   task :tailoring_data, :cldr_path, :icu4j_jar_path do |_, args|
     TwitterCldr::Resources::TailoringImporter.new(
-        args[:cldr_path] || './vendor/cldr',
-        './resources/collation/tailoring',
-        args[:icu4j_jar_path] || './vendor/icu4j-51_2.jar'
+      args[:cldr_path] || './vendor/cldr',
+      './resources/collation/tailoring',
+      args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
   end
 
   desc 'Import Unicode data resources'
   task :unicode_data, :unicode_data_path do |_, args|
     TwitterCldr::Resources::UnicodeDataImporter.new(
-        args[:unicode_data_path] || './vendor/unicode-data',
-        './resources/unicode_data'
+      args[:unicode_data_path] || './vendor/unicode-data',
+      './resources/unicode_data'
     ).import
   end
 
   desc 'Import composition exclusions resource'
   task :composition_exclusions, :derived_normalization_props_path do |_, args|
     TwitterCldr::Resources::CompositionExclusionsImporter.new(
-        args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
-        './resources/unicode_data'
+      args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
+      './resources/unicode_data'
     ).import
   end
 
   desc 'Import postal codes resource'
   task :postal_codes, :cldr_path do |_, args|
     TwitterCldr::Resources::PostalCodesImporter.new(
-        args[:cldr_path] || './vendor/cldr',
-        './resources/shared'
+      args[:cldr_path] || './vendor/cldr',
+      './resources/shared'
     ).import
   end
 
   desc 'Import phone codes resource'
   task :phone_codes, :cldr_path do |_, args|
     TwitterCldr::Resources::PhoneCodesImporter.new(
-        args[:cldr_path] || './vendor/cldr',
-        './resources/shared'
+      args[:cldr_path] || './vendor/cldr',
+      './resources/shared'
     ).import
   end
 
   desc 'Import language codes'
   task :language_codes, :language_codes_data do |_, args|
     TwitterCldr::Resources::LanguageCodesImporter.new(
-        args[:language_codes_data] || './vendor/language-codes',
-        './resources/shared'
+      args[:language_codes_data] || './vendor/language-codes',
+      './resources/shared'
     ).import
   end
 
-  desc 'Update default and tailoring tries dumps'
+  desc 'Update default and tailoring tries dumps (should be executed using JRuby 1.7 in 1.9 mode)'
   task :collation_tries do
     TwitterCldr::Resources::CollationTriesDumper.update_dumps
   end
@@ -132,5 +161,20 @@ namespace :update do
   desc 'Update canonical compositions resource'
   task :canonical_compositions do
     TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
+  end
+
+  desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :bidi_tests do |_, args|
+    TwitterCldr::Resources::BidiTestImporter.new(
+      './spec/bidi'
+    ).import
+  end
+
+  desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :rbnf_tests, :icu4j_jar_path do |_, args|
+    TwitterCldr::Resources::RbnfTestImporter.new(
+      './spec/rbnf/locales',
+      args[:icu4j_jar_path] || ICU_JAR
+    ).import(TwitterCldr.supported_locales)
   end
 end

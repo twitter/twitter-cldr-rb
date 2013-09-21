@@ -12,8 +12,9 @@ module TwitterCldr
 
         def update_dumps
           update_default_trie_dump
-          #TwitterCldr.supported_locales
-          [:he].each { |locale| update_tailoring_trie_dump(locale) }
+          TwitterCldr.supported_locales.each do |locale|
+            update_tailoring_trie_dump(locale)
+          end
         end
 
         private

@@ -1,0 +1,258 @@
+---
+:ru:
+  :rbnf:
+    :grouping:
+    - :ruleset:
+      - :rules:
+        - :rule: =#,###0.#=;
+          :value: x.x
+        - :rule: =%spellout-numbering=;
+          :value: 0
+        :type: spellout-numbering-year
+      - :rules:
+        - :rule: =%spellout-cardinal-masculine=;
+          :value: 0
+        :type: spellout-numbering
+      - :rules:
+        - :rule: минус >>;
+          :value: -x
+        - :rule: << запятая >>;
+          :value: x.x
+        - :rule: ноль;
+          :value: 0
+        - :rule: один;
+          :value: 1
+        - :rule: два;
+          :value: 2
+        - :rule: три;
+          :value: 3
+        - :rule: четыре;
+          :value: 4
+        - :rule: пять;
+          :value: 5
+        - :rule: шесть;
+          :value: 6
+        - :rule: семь;
+          :value: 7
+        - :rule: восемь;
+          :value: 8
+        - :rule: девять;
+          :value: 9
+        - :rule: десять;
+          :value: 10
+        - :rule: одиннадцать;
+          :value: 11
+        - :rule: двенадцать;
+          :value: 12
+        - :rule: тринадцать;
+          :value: 13
+        - :rule: четырнадцать;
+          :value: 14
+        - :rule: пятнадцать;
+          :value: 15
+        - :rule: шестнадцать;
+          :value: 16
+        - :rule: семнадцать;
+          :value: 17
+        - :rule: восемнадцать;
+          :value: 18
+        - :rule: девятнадцать;
+          :value: 19
+        - :rule: двадцать[ >>];
+          :value: 20
+        - :rule: тридцать[ >>];
+          :value: 30
+        - :rule: сорок[ >>];
+          :value: 40
+        - :rule: пятьдесят[ >>];
+          :value: 50
+        - :rule: шестьдесят[ >>];
+          :value: 60
+        - :rule: семьдесят[ >>];
+          :value: 70
+        - :rule: восемьдесят[ >>];
+          :value: 80
+        - :rule: девяносто[ >>];
+          :value: 90
+        - :rule: сто[ >>];
+          :value: 100
+        - :rule: <%spellout-cardinal-feminine<сти[ >>];
+          :value: 200
+        - :rule: <%spellout-cardinal-feminine<ста[ >>];
+          :value: 300
+        - :rule: <%spellout-cardinal-feminine<сот[ >>];
+          :value: 500
+        - :rule: <%spellout-cardinal-feminine< тысяча[ >>];
+          :value: 1000
+        - :rule: <%spellout-cardinal-feminine< тысячи[ >>];
+          :value: 2000
+        - :rule: <%spellout-cardinal-feminine< тысяч[ >>];
+          :value: 5000
+        - :rule: <%spellout-cardinal-masculine< миллион[ >>];
+          :value: 1000000
+        - :rule: <%spellout-cardinal-masculine< миллионы[ >>];
+          :value: 2000000
+        - :rule: <%spellout-cardinal-masculine< миллионов[ >>];
+          :value: 5000000
+        - :rule: <%spellout-cardinal-masculine< миллиард[ >>];
+          :value: 1000000000
+        - :rule: <%spellout-cardinal-masculine< миллиарды[ >>];
+          :value: 2000000000
+        - :rule: <%spellout-cardinal-masculine< миллиардов[ >>];
+          :value: 5000000000
+        - :rule: <%spellout-cardinal-masculine< биллион[ >>];
+          :value: 1000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионы[ >>];
+          :value: 2000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионов[ >>];
+          :value: 5000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиард[ >>];
+          :value: 1000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиарды[ >>];
+          :value: 2000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиардов[ >>];
+          :value: 5000000000000000
+        - :rule: =#,##0=;
+          :value: 1000000000000000000
+        :type: spellout-cardinal-masculine
+      - :rules:
+        - :rule: минус >>;
+          :value: -x
+        - :rule: << запятая >>;
+          :value: x.x
+        - :rule: ноль;
+          :value: 0
+        - :rule: одно;
+          :value: 1
+        - :rule: два;
+          :value: 2
+        - :rule: =%spellout-cardinal-masculine=;
+          :value: 3
+        - :rule: двадцать[ >>];
+          :value: 20
+        - :rule: тридцать[ >>];
+          :value: 30
+        - :rule: сорок[ >>];
+          :value: 40
+        - :rule: пятьдесят[ >>];
+          :value: 50
+        - :rule: шестьдесят[ >>];
+          :value: 60
+        - :rule: семьдесят[ >>];
+          :value: 70
+        - :rule: восемьдесят[ >>];
+          :value: 80
+        - :rule: девяносто[ >>];
+          :value: 90
+        - :rule: сто[ >>];
+          :value: 100
+        - :rule: <%spellout-cardinal-feminine<сти[ >>];
+          :value: 200
+        - :rule: <%spellout-cardinal-feminine<ста[ >>];
+          :value: 300
+        - :rule: <%spellout-cardinal-feminine<сот[ >>];
+          :value: 500
+        - :rule: <%spellout-cardinal-feminine< тысяча[ >>];
+          :value: 1000
+        - :rule: <%spellout-cardinal-feminine< тысячи[ >>];
+          :value: 2000
+        - :rule: <%spellout-cardinal-feminine< тысяч[ >>];
+          :value: 5000
+        - :rule: <%spellout-cardinal-masculine< миллион[ >>];
+          :value: 1000000
+        - :rule: <%spellout-cardinal-masculine< миллионы[ >>];
+          :value: 2000000
+        - :rule: <%spellout-cardinal-masculine< миллионов[ >>];
+          :value: 5000000
+        - :rule: <%spellout-cardinal-masculine< миллиард[ >>];
+          :value: 1000000000
+        - :rule: <%spellout-cardinal-masculine< миллиарды[ >>];
+          :value: 2000000000
+        - :rule: <%spellout-cardinal-masculine< миллиардов[ >>];
+          :value: 5000000000
+        - :rule: <%spellout-cardinal-masculine< биллион[ >>];
+          :value: 1000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионы[ >>];
+          :value: 2000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионов[ >>];
+          :value: 5000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиард[ >>];
+          :value: 1000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиарды[ >>];
+          :value: 2000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиардов[ >>];
+          :value: 5000000000000000
+        - :rule: =#,##0=;
+          :value: 1000000000000000000
+        :type: spellout-cardinal-neuter
+      - :rules:
+        - :rule: минус >>;
+          :value: -x
+        - :rule: << запятая >>;
+          :value: x.x
+        - :rule: ноль;
+          :value: 0
+        - :rule: одна;
+          :value: 1
+        - :rule: две;
+          :value: 2
+        - :rule: =%spellout-cardinal-masculine=;
+          :value: 3
+        - :rule: двадцать[ >>];
+          :value: 20
+        - :rule: тридцать[ >>];
+          :value: 30
+        - :rule: сорок[ >>];
+          :value: 40
+        - :rule: пятьдесят[ >>];
+          :value: 50
+        - :rule: шестьдесят[ >>];
+          :value: 60
+        - :rule: семьдесят[ >>];
+          :value: 70
+        - :rule: восемьдесят[ >>];
+          :value: 80
+        - :rule: девяносто[ >>];
+          :value: 90
+        - :rule: сто[ >>];
+          :value: 100
+        - :rule: <%spellout-cardinal-feminine<сти[ >>];
+          :value: 200
+        - :rule: <%spellout-cardinal-feminine<ста[ >>];
+          :value: 300
+        - :rule: <%spellout-cardinal-feminine<сот[ >>];
+          :value: 500
+        - :rule: <%spellout-cardinal-feminine< тысяча[ >>];
+          :value: 1000
+        - :rule: <%spellout-cardinal-feminine< тысячи[ >>];
+          :value: 2000
+        - :rule: <%spellout-cardinal-feminine< тысяч[ >>];
+          :value: 5000
+        - :rule: <%spellout-cardinal-masculine< миллион[ >>];
+          :value: 1000000
+        - :rule: <%spellout-cardinal-masculine< миллионы[ >>];
+          :value: 2000000
+        - :rule: <%spellout-cardinal-masculine< миллионов[ >>];
+          :value: 5000000
+        - :rule: <%spellout-cardinal-masculine< миллиард[ >>];
+          :value: 1000000000
+        - :rule: <%spellout-cardinal-masculine< миллиарды[ >>];
+          :value: 2000000000
+        - :rule: <%spellout-cardinal-masculine< миллиардов[ >>];
+          :value: 5000000000
+        - :rule: <%spellout-cardinal-masculine< биллион[ >>];
+          :value: 1000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионы[ >>];
+          :value: 2000000000000
+        - :rule: <%spellout-cardinal-masculine< биллионов[ >>];
+          :value: 5000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиард[ >>];
+          :value: 1000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиарды[ >>];
+          :value: 2000000000000000
+        - :rule: <%spellout-cardinal-masculine< биллиардов[ >>];
+          :value: 5000000000000000
+        - :rule: =#,##0=;
+          :value: 1000000000000000000
+        :type: spellout-cardinal-feminine
+      :type: SpelloutRules

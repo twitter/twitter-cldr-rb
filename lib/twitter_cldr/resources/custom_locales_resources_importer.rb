@@ -5,7 +5,6 @@
 
 require 'json'
 require 'open-uri'
-require 'pry-nav'
 
 module TwitterCldr
   module Resources

@@ -11,6 +11,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
   gem 'ruby-cldr', :path => "~/workspace/ruby-cldr" #:github => 'svenfuchs/ruby-cldr'
+  gem 'ruby2ruby', "~> 2.0.6"
 end
 
 group :test do

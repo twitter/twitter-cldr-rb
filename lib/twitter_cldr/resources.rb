@@ -19,6 +19,6 @@ module TwitterCldr
     autoload :TailoringImporter,                  'twitter_cldr/resources/tailoring_importer'
     autoload :UnicodeDataImporter,                'twitter_cldr/resources/unicode_data_importer'
     autoload :BidiTestImporter,                   'twitter_cldr/resources/bidi_test_importer'
-    autoload :RbnfTestImporter,                   'twitter_cldr/resources/rbnf_test_importer'
+    autoload :Rbnf,                               'twitter_cldr/resources/rbnf'
   end
 end

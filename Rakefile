@@ -72,7 +72,8 @@ task :update do
     "update:language_codes",
     "update:collation_tries",
     "update:canonical_compositions",
-    "update:rbnf_tests"
+    "update:rbnf_tests",
+    "update:rbnf_classes"
   ]
 
   tasks.each do |task|
@@ -172,9 +173,16 @@ namespace :update do
 
   desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :rbnf_tests, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::RbnfTestImporter.new(
+    TwitterCldr::Resources::Rbnf::TestImporter.new(
       './spec/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
+  end
+
+  desc 'Generate rule-based number formatter classes for each locale'
+  task :rbnf_classes do |_, args|
+    TwitterCldr::Resources::Rbnf::ClassGenerator.new(
+      './lib/twitter_cldr/formatters/numbers/rbnf'
+    ).generate(["en"], &progress_reporter) # TwitterCldr.supported_locales
   end
 end

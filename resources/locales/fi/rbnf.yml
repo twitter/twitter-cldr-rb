@@ -1,0 +1,72 @@
+---
+:fi:
+  :rbnf:
+    :grouping:
+    - :ruleset:
+      - :rules:
+        - :rule: miinus >>;
+          :value: -x
+        - :rule: =#,###0.#=;
+          :value: x.x
+        - :rule: =%spellout-numbering=;
+          :value: 0
+        :type: spellout-numbering-year
+      - :rules:
+        - :rule: =%spellout-cardinal=;
+          :value: 0
+        :type: spellout-numbering
+      - :rules:
+        - :rule: miinus >>;
+          :value: -x
+        - :rule: << pilkku >>;
+          :value: x.x
+        - :rule: nolla;
+          :value: 0
+        - :rule: yksi;
+          :value: 1
+        - :rule: kaksi;
+          :value: 2
+        - :rule: kolme;
+          :value: 3
+        - :rule: neljä;
+          :value: 4
+        - :rule: viisi;
+          :value: 5
+        - :rule: kuusi;
+          :value: 6
+        - :rule: seitsemän;
+          :value: 7
+        - :rule: kahdeksan;
+          :value: 8
+        - :rule: yhdeksän;
+          :value: 9
+        - :rule: kymmenen;
+          :value: 10
+        - :rule: '>>toista;'
+          :value: 11
+        - :rule: <<kymmentä[­>>];
+          :value: 20
+        - :rule: sata[­>>];
+          :value: 100
+        - :rule: <<­sataa[­>>];
+          :value: 200
+        - :rule: tuhat[­>>];
+          :value: 1000
+        - :rule: <<­tuhatta[­>>];
+          :value: 2000
+        - :rule: << miljoona[ >>];
+          :value: 1000000
+        - :rule: << miljoonaa[ >>];
+          :value: 2000000
+        - :rule: << miljardi[ >>];
+          :value: 1000000000
+        - :rule: << miljardia[ >>];
+          :value: 2000000000
+        - :rule: << biljoona[ >>];
+          :value: 1000000000000
+        - :rule: << biljoonaa[ >>];
+          :value: 2000000000000
+        - :rule: =#,##0=;
+          :value: 1000000000000000000
+        :type: spellout-cardinal
+      :type: SpelloutRules

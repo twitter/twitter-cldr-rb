@@ -16,7 +16,6 @@ module TwitterCldr
 
         # Arguments:
         #
-        #   input_path  - path to a directory containing CLDR data
         #   output_path - output directory for imported YAML files
         #
         def initialize(output_path)
@@ -46,9 +45,10 @@ module TwitterCldr
 
           class_name = TwitterCldr::Shared::Languages.from_code(locale).gsub(" ", "")
           file_name = File.join(output_path, "#{locale.to_s}.rb")
-          module_hierarchy = %w[TwitterCldr Formatters Rbnf]
+          module_hierarchy = %w[TwitterCldr Formatters RuleBasedNumberFormatter]
 
           class_ast = RuleSet.create_class_ast(
+            locale,
             class_name,
             function_asts,
             module_hierarchy

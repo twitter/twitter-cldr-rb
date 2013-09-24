@@ -10,8 +10,8 @@ end
 
 group :development do
   gem 'nokogiri', "~> 1.5.9"
-  gem 'ruby-cldr', :path => "~/workspace/ruby-cldr" #:github => 'svenfuchs/ruby-cldr'
-  gem 'ruby2ruby', "~> 2.0.6"
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'rbnf'
+  gem 'ruby2ruby', :github => 'camertron/ruby2ruby', :branch => 'not_equals'
 end
 
 group :test do
@@ -28,4 +28,3 @@ group :test do
     gem 'launchy'
   end
 end
-

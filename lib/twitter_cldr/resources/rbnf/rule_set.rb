@@ -24,21 +24,34 @@ module TwitterCldr
             .gsub('GREEKNUMERALMAJUSCULES', 'GreekNumeralMajuscules')
         end
 
-        def self.create_class_ast(class_name, function_asts, module_hierarchy = [])
-          self_class = s(:sclass, s(:self), *function_asts)
-          klass = s(:class, class_name, nil, self_class)
-
-          if module_hierarchy && !module_hierarchy.empty?
-            mod = s(:module, module_hierarchy.last, klass)
-
-            (0...module_hierarchy.size - 1).reverse_each do |i|
-              mod = s(:module, module_hierarchy[i], mod)
-            end
-
-            mod
-          else
-            klass
+        def self.create_class_ast(locale, class_name, function_asts, module_hierarchy = [])
+          if module_hierarchy.size < 1
+            raise "Must have a module hierarchy of at least depth 1."
           end
+
+          klass = s(:attrasgn,
+            s(:ivar, :@formatters),
+            :[]=,
+            s(:lit, locale),
+            s(:cdecl,
+              class_name,
+              s(:iter,
+                s(:call, s(:const, :Class), :new),
+                s(:args),
+                s(:block,
+                  s(:sclass, s(:self), *function_asts)
+                )
+              )
+            )
+          )
+
+          mod = s(:module, module_hierarchy.last, klass)
+
+          (0...module_hierarchy.size - 1).reverse_each do |i|
+            mod = s(:module, module_hierarchy[i], mod)
+          end
+
+          mod
         end
 
         def add_rule(rule)
@@ -154,7 +167,13 @@ module TwitterCldr
                   # "-n"
                   s(:call, s(:call, nil, :n), :-@)
                 else
-                  exp = (Math.log(rule.value.to_i) / Math.log(rule.radix)).floor
+                  val = rule.value.to_i
+                  exp = if val > 0
+                    (Math.log(val) / Math.log(rule.radix)).floor
+                  else
+                    1
+                  end
+
                   divisor = exp >= 0 ? rule.radix ** exp : 1
 
                   # "n % divisor"

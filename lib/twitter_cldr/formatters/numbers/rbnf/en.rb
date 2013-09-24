@@ -5,17 +5,17 @@
 
 module TwitterCldr
   module Formatters
-    module Rbnf
-      class English
+    module RuleBasedNumberFormatter
+      @formatters[:en] = English = Class.new do
         class << self
-          def render2dYear(n)
+          (def render2dYear(n)
             return renderSpelloutNumbering(n) if (n >= 10)
             return ("oh-" + renderSpelloutNumbering(n)) if (n >= 1)
             return "hundred" if (n >= 0)
           end
           private(:render2dYear)
           def renderSpelloutNumberingYear(n)
-            is_fractional = n.!=(n.floor)
+            is_fractional = (n != n.floor)
             return ("minus " + renderSpelloutNumberingYear(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return renderSpelloutNumbering(n) if (n >= 10000)
@@ -90,7 +90,7 @@ module TwitterCldr
             return renderSpelloutCardinalVerbose(n) if (n >= 0)
           end
           def renderSpelloutCardinal(n)
-            is_fractional = n.!=(n.floor)
+            is_fractional = (n != n.floor)
             return ("minus " + renderSpelloutCardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
               return ((renderSpelloutCardinal(n.floor) + " point ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
@@ -186,7 +186,7 @@ module TwitterCldr
           end
           private(:renderCommas)
           def renderSpelloutCardinalVerbose(n)
-            is_fractional = n.!=(n.floor)
+            is_fractional = (n != n.floor)
             return ("minus " + renderSpelloutCardinalVerbose(-n)) if (n < 0)
             if is_fractional and (n > 1) then
               return ((renderSpelloutCardinalVerbose(n.floor) + " point ") + renderSpelloutCardinalVerbose(n.to_s.gsub(/d*./, "").to_f))
@@ -226,7 +226,7 @@ module TwitterCldr
           end
           private(:renderTh)
           def renderSpelloutOrdinal(n)
-            is_fractional = n.!=(n.floor)
+            is_fractional = (n != n.floor)
             return ("minus " + renderSpelloutOrdinal(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
@@ -288,7 +288,7 @@ module TwitterCldr
           end
           private(:renderCommasO)
           def renderSpelloutOrdinalVerbose(n)
-            is_fractional = n.!=(n.floor)
+            is_fractional = (n != n.floor)
             return ("minus " + renderSpelloutOrdinalVerbose(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
@@ -328,7 +328,7 @@ module TwitterCldr
           def renderDigitsOrdinal(n)
             return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
             return (n.to_s + renderDigitsOrdinalIndicator(n)) if (n >= 0)
-          end
+          end)
         end
       end
     end

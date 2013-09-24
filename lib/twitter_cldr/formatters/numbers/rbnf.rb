@@ -5,8 +5,23 @@
 
 module TwitterCldr
   module Formatters
-    class RuleBasedNumberFormatter
-      # @TODO: implement me, or maybe just use individual formatters in formatters/numbers/rbnf? Not sure yet.
+    module RuleBasedNumberFormatter
+
+      def self.for_locale(locale)
+        locale = TwitterCldr.convert_locale(locale)
+        @formatters ||= {}
+        require path_for(locale) unless @formatters[locale]
+        @formatters[locale]
+      rescue LoadError
+        nil  # locale doesn't have a formatter
+      end
+
+      private
+
+      def self.path_for(locale)
+        "twitter_cldr/formatters/numbers/rbnf/#{locale}"
+      end
+
     end
   end
 end

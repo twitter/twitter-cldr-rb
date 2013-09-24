@@ -10,7 +10,11 @@ end
 
 group :development do
   gem 'nokogiri', "~> 1.5.9"
+
+  # https://github.com/svenfuchs/ruby-cldr/pull/18
   gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'rbnf'
+
+  # https://github.com/seattlerb/ruby2ruby/pull/24
   gem 'ruby2ruby', :github => 'camertron/ruby2ruby', :branch => 'not_equals'
 end
 

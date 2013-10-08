@@ -29,14 +29,22 @@ describe SortKeyBuilder do
       SortKeyBuilder.new(collation_elements).collation_elements.should == collation_elements
     end
 
-    it 'accepts case-first option as the second argument' do
+    it 'accepts case-first option as an option' do
       SortKeyBuilder::VALID_CASE_FIRST_OPTIONS.each do |case_first|
-        lambda { SortKeyBuilder.new([], case_first) }.should_not raise_error
+        lambda { SortKeyBuilder.new([], :case_first => case_first) }.should_not raise_error
       end
     end
 
     it 'raises an ArgumentError for invalid case-first option' do
-      lambda { SortKeyBuilder.new([], :wat) }.should raise_error(ArgumentError)
+      lambda { SortKeyBuilder.new([], :case_first => :wat) }.should raise_error(ArgumentError)
+    end
+
+    it 'raises an ArgumentError for an invalid maximum_level option' do
+      lambda { SortKeyBuilder.new([], :maximum_level => :wat) }.should raise_error(ArgumentError)
+    end
+
+    it 'raises an ArgumentError for non-hash second argument' do
+      lambda { SortKeyBuilder.new([], :upper) }.should raise_error(ArgumentError)
     end
   end
 
@@ -103,32 +111,46 @@ describe SortKeyBuilder do
 
       context 'when case_first is :upper' do
         it 'inverts case bits and subtract bottom addition from bytes that are smaller than common' do
-          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :upper).bytes_array.should == [1, 1, 201, 80, 15]
+          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :case_first => :upper).bytes_array.should == [1, 1, 201, 80, 15]
         end
 
         it 'compresses tertiary weights' do
-          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :upper).bytes_array.should == [1, 1, 0xC4, 0xE7, 0xC3]
+          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :case_first => :upper).bytes_array.should == [1, 1, 0xC4, 0xE7, 0xC3]
         end
 
         it 'compresses tertiary weights into multiple bytes if necessary' do
-          SortKeyBuilder.new([[0, 0, 5]] * 100, :upper).bytes_array.should == [1, 1, 0x9C, 0x9C, 0xB3]
+          SortKeyBuilder.new([[0, 0, 5]] * 100, :case_first => :upper).bytes_array.should == [1, 1, 0x9C, 0x9C, 0xB3]
         end
       end
 
       context 'when case_first is :lower' do
         it 'leaves case bits and adds top addition to bytes that are greater than common' do
-          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :lower).bytes_array.should == [1, 1, 73, 144, 207]
+          SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :case_first => :lower).bytes_array.should == [1, 1, 73, 144, 207]
         end
 
         it 'compresses tertiary weights' do
-          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :lower).bytes_array.should == [1, 1, 0x44, 0x67, 6]
+          SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :case_first => :lower).bytes_array.should == [1, 1, 0x44, 0x67, 6]
         end
 
         it 'compresses tertiary weights into multiple bytes if necessary' do
-          SortKeyBuilder.new([[0, 0, 5]] * 100, :lower).bytes_array.should == [1, 1, 0x1A, 0x1A, 0x1A, 0x1A, 0x14]
+          SortKeyBuilder.new([[0, 0, 5]] * 100, :case_first => :lower).bytes_array.should == [1, 1, 0x1A, 0x1A, 0x1A, 0x1A, 0x14]
         end
       end
     end
+
+    describe ":maximum_level option" do
+      context "when :maximum_level is 2" do
+        it 'does not include tertiary weights' do
+          SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 2).bytes_array.should == [63, 66, 1, 13, 81]
+        end
+      end
+      context "when :maximum_level is 1" do
+        it 'only includes primary weights' do
+          SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 1).bytes_array.should == [63, 66]
+        end
+      end
+    end
+
   end
 
 end

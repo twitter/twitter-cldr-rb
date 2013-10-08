@@ -32,8 +32,10 @@ module TwitterCldr
         string_a == string_b ? 0 : get_sort_key(string_a) <=> get_sort_key(string_b)
       end
 
-      def get_sort_key(string_or_code_points)
-        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points), @options[:case_first])
+      # Second arg options, supports an option :maximum_level, to
+      # pass on to SortKeyBuilder :maximum_level. 
+      def get_sort_key(string_or_code_points, method_options = {})
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points), :case_first => @options[:case_first], :maximum_level => method_options[:maximum_level])
       end
 
       def get_collation_elements(string_or_code_points)

@@ -39,6 +39,10 @@ describe SortKeyBuilder do
       lambda { SortKeyBuilder.new([], :case_first => :wat) }.should raise_error(ArgumentError)
     end
 
+    it 'raises an ArgumentError for an invalid maximum_level option' do
+      lambda { SortKeyBuilder.new([], :maximum_level => :wat) }.should raise_error(ArgumentError)
+    end
+
     it 'raises an ArgumentError for non-hash second argument' do
       lambda { SortKeyBuilder.new([], :upper) }.should raise_error(ArgumentError)
     end
@@ -133,6 +137,20 @@ describe SortKeyBuilder do
         end
       end
     end
+
+    describe ":maximum_level option" do
+      context "when :maximum_level is 2" do
+        it 'does not include tertiary weights' do
+          SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 2).bytes_array.should == [63, 66, 1, 13, 81]
+        end
+      end
+      context "when :maximum_level is 1" do
+        it 'only includes primary weights' do
+          SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 1).bytes_array.should == [63, 66]
+        end
+      end
+    end
+
   end
 
 end

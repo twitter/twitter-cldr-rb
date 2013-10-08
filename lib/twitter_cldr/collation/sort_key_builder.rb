@@ -17,7 +17,8 @@ module TwitterCldr
 
       LEVEL_SEPARATOR = 1 # separate levels in a sort key '01' bytes
 
-      VALID_CASE_FIRST_OPTIONS = [nil, :lower, :upper]
+      VALID_CASE_FIRST_OPTIONS    = [nil, :lower, :upper]
+      VALID_MAXIMUM_LEVEL_OPTIONS = [nil, 1, 2, 3]
 
       attr_reader :collation_elements, :case_first
 
@@ -28,6 +29,7 @@ module TwitterCldr
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
       #   options            - hash of options:
       #     case_first       - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
+      #     maximum_level    - only append weights to maximum level specified (1 or 2), can be useful for searching/matching applications
       #
       # An instance of the class is created only to prevent passing of @collation_elements and @bytes_array from one
       # method into another while forming the sort key.
@@ -41,16 +43,20 @@ module TwitterCldr
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
       #   options            - hash of options:
       #     case_first       - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
+      #     maximum_level    - only append weights to maximum level specified (1 or 2), can be useful for searching/matching applications
       #
       def initialize(collation_elements, options = {})
         raise ArgumentError, "second argument should be an options hash, not `#{options}`. Do you mean `:case_first => #{options}`?" unless options.kind_of? Hash
 
         case_first = options[:case_first]
-
         raise ArgumentError, "invalid case-first options '#{case_first.inspect}'" unless VALID_CASE_FIRST_OPTIONS.include?(case_first)
+
+        maximum_level = options[:maximum_level]
+        raise ArgumentError, "invalid maximum_level option 'options[:maximum_level]'" unless VALID_MAXIMUM_LEVEL_OPTIONS.include?(maximum_level)
 
         @collation_elements = collation_elements
         @case_first         = case_first
+        @maximum_level      = maximum_level
 
         init_tertiary_constants
       end
@@ -65,8 +71,8 @@ module TwitterCldr
         @bytes_array = []
 
         append_primary_bytes
-        append_secondary_bytes
-        append_tertiary_bytes
+        append_secondary_bytes unless @maximum_level && (@maximum_level < 2)
+        append_tertiary_bytes  unless @maximum_level && (@maximum_level < 3)
 
         @bytes_array
       end

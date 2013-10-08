@@ -107,7 +107,7 @@ describe Collator do
     before(:each) { mock(TrieLoader).load_default_trie { trie } }
 
     describe 'calculating sort key' do
-      before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, nil) { sort_key } }
+      before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, :case_first => nil) { sort_key } }
 
       it 'calculates sort key for a string' do
         mock(collator).get_collation_elements(string) { collation_elements }
@@ -131,7 +131,7 @@ describe Collator do
         collator = Collator.new(locale)
 
         mock(collator).get_collation_elements(code_points) { collation_elements }
-        mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first) { sort_key }
+        mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, :case_first => case_first) { sort_key }
 
         collator.get_sort_key(code_points).should == sort_key
       end

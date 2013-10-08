@@ -26,21 +26,27 @@ module TwitterCldr
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
-      #   case_first         - case-first sorting order setting.
+      #   options            - hash of options:
+      #     case_first       - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
       #
       # An instance of the class is created only to prevent passing of @collation_elements and @bytes_array from one
       # method into another while forming the sort key.
       #
-      def self.build(collation_elements, case_first = nil)
-        new(collation_elements, case_first).bytes_array
+      def self.build(collation_elements, options = nil)
+        new(collation_elements, options).bytes_array
       end
 
       # Arguments:
       #
       #   collation_elements - an array of collation elements, represented as arrays of integer weights.
-      #   case_first         - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
+      #   options            - hash of options:
+      #     case_first       - optional case-first sorting order setting: :upper, :lower, nil (discard case bits).
       #
-      def initialize(collation_elements, case_first = nil)
+      def initialize(collation_elements, options = {})
+        raise ArgumentError, "second argument should be an options hash, not `#{options}`. Do you mean `:case_first => #{options}`?" unless options.kind_of? Hash
+
+        case_first = options[:case_first]
+
         raise ArgumentError, "invalid case-first options '#{case_first.inspect}'" unless VALID_CASE_FIRST_OPTIONS.include?(case_first)
 
         @collation_elements = collation_elements

@@ -6,11 +6,13 @@
 module TwitterCldr
   module Formatters
     class DecimalFormatter < NumberFormatter
-      def format(number, options = {})
-        super(number, options)
+
+      def format(tokens, number, options = {})
+        super
       rescue TypeError, ArgumentError
         number
       end
+
     end
   end
 end

@@ -7,11 +7,17 @@ module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
 
-      def self.for_locale(locale)
+      def self.for_locale(locale, group = nil)
         locale = TwitterCldr.convert_locale(locale)
         @formatters ||= {}
         require path_for(locale) unless @formatters[locale]
-        @formatters[locale]
+        mod = @formatters[locale]
+
+        if group
+          mod.const_get(group.to_s.capitalize.to_sym)
+        else
+          mod
+        end
       rescue LoadError
         nil  # locale doesn't have a formatter
       end

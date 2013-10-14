@@ -6,82 +6,84 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:ta] = Tamil = Class.new do
+      @formatters[:ta] = Tamil = Module.new { }
+      
+      class Tamil::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinal(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal(n) if (n >= 0)
           end
-          def renderSpelloutCardinal(n)
+          def format_spellout_cardinal(n)
             is_fractional = (n != n.floor)
-            return ("எதிர்ம " + renderSpelloutCardinal(-n)) if (n < 0)
+            return ("எதிர்ம " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinal(n.floor) + " புள்ளி ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " புள்ளி ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000) then
-              return ((renderSpelloutCardinal((n / 10000000.0).floor) + " கோடி") + ((n == 10000000) ? ("") : ((" " + renderSpelloutCardinal((n % 10000000))))))
+              return ((format_spellout_cardinal((n / 10000000.0).floor) + " கோடி") + ((n == 10000000) ? ("") : ((" " + format_spellout_cardinal((n % 10000000))))))
             end
             if (n >= 100000) then
-              return ((renderSpelloutCardinal((n / 100000.0).floor) + " லட்சம்") + ((n == 100000) ? ("") : ((" " + renderSpelloutCardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 100000.0).floor) + " லட்சம்") + ((n == 100000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinal((n / 1000.0).floor) + " ஆயிரம்") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000.0).floor) + " ஆயிரம்") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 900) then
-              return ("தொள்ளாயிரம்" + ((n == 900) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("தொள்ளாயிரம்" + ((n == 900) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 800) then
-              return ("எண்நூறு" + ((n == 800) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("எண்நூறு" + ((n == 800) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 700) then
-              return ("எழுநூறு" + ((n == 700) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("எழுநூறு" + ((n == 700) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 600) then
-              return ("அறுநூறு" + ((n == 600) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("அறுநூறு" + ((n == 600) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 500) then
-              return ("ஐநூறு" + ((n == 500) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("ஐநூறு" + ((n == 500) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 400) then
-              return ("நாநூறூ" + ((n == 400) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("நாநூறூ" + ((n == 400) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 300) then
-              return ("முந்நூறு" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("முந்நூறு" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 200) then
-              return ("இருநூறு" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("இருநூறு" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 100) then
-              return ("நூறு" + ((n == 100) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("நூறு" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 90) then
-              return ("தொண்ணூறு" + ((n == 90) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("தொண்ணூறு" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 80) then
-              return ("எண்பது" + ((n == 80) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("எண்பது" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 70) then
-              return ("எழுபது" + ((n == 70) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("எழுபது" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 60) then
-              return ("அறுபது" + ((n == 60) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("அறுபது" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 50) then
-              return ("ஐம்பது" + ((n == 50) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("ஐம்பது" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 40) then
-              return ("நாற்பது" + ((n == 40) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("நாற்பது" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 30) then
-              return ("முப்பது" + ((n == 30) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("முப்பது" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 20) then
-              return ("இருபது" + ((n == 20) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("இருபது" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             return "பத்தொன்பது" if (n >= 19)
             return "பதினெட்டு" if (n >= 18)
@@ -104,9 +106,9 @@ module TwitterCldr
             return "ஒன்று" if (n >= 1)
             return "பூஜ்யம்" if (n >= 0)
           end
-          def renderSpelloutOrdinal(n)
+          def format_spellout_ordinal(n)
             is_fractional = (n != n.floor)
-            return ("எதிர்ம " + renderSpelloutOrdinal(-n)) if (n < 0)
+            return ("எதிர்ம " + format_spellout_ordinal(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + "ாவது") if (n >= 21)
             return "இருபதாவது" if (n >= 20)
@@ -131,10 +133,15 @@ module TwitterCldr
             return "முதலாவது" if (n >= 1)
             return "பூஜ்யம்" if (n >= 0)
           end
-          def renderDigitsOrdinal(n)
-            return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
+        end
+      end
+      
+      class Tamil::Ordinal
+        class << self
+          def format_digits_ordinal(n)
+            return ("−" + format_digits_ordinal(-n)) if (n < 0)
             return (n.to_s + ".") if (n >= 0)
-          end)
+          end
         end
       end
     end

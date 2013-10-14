@@ -17,11 +17,11 @@ module TwitterCldr
         @timezone = options[:timezone] || "UTC"
       end
 
-      TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
-        define_method "to_#{format_type}_s" do
-          @formatter.format(base_in_timezone, chain_params.merge(:type => format_type.to_sym))
-        end
-      end
+      # TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
+      #   define_method "to_#{format_type}_s" do
+      #     @formatter.format(base_in_timezone, chain_params.merge(:type => format_type.to_sym))
+      #   end
+      # end
 
       def to_timespan(options = {})
         base_time = options[:base_time] || Time.now

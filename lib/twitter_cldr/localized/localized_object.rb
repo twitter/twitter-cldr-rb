@@ -18,7 +18,7 @@ module TwitterCldr
         options = options.dup
         options[:locale] = @locale
 
-        @formatter = formatter_const.new(options) if formatter_const
+        # @formatter = formatter_const.new(options) if formatter_const
       end
 
       def formatter_const

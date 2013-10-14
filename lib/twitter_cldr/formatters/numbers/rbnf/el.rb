@@ -6,137 +6,153 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:el] = Greek = Class.new do
+      @formatters[:el] = Greek = Module.new { }
+      
+      class Greek::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinalNeuter(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal_neuter(n) if (n >= 0)
           end
-          def renderSpelloutCardinalMasculine(n)
+          def format_spellout_cardinal_masculine(n)
             is_fractional = (n != n.floor)
-            return ("μείον " + renderSpelloutCardinalMasculine(-n)) if (n < 0)
+            return ("μείον " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalMasculine(n.floor) + " κόμμα ") + renderSpelloutCardinalMasculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " κόμμα ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 1000000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
               end))
             end
             if (n >= 2000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 1000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
               end))
             end
             if (n >= 2000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 1000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000)))
               end))
             end
             if (n >= 2000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 1000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " χίλιάδες") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " χίλιάδες") + (if (n == 2000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 1000) then
-              return ("χίλιοι" + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("χίλιοι" + (if (n == 1000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 900) then
-              return ("εννιακόσιοι" + ((n == 900) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("εννιακόσιοι" + ((n == 900) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακόσιοι" + ((n == 800) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("οκτακόσιοι" + ((n == 800) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακόσιοι" + ((n == 700) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("επτακόσιοι" + ((n == 700) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακόσιοι" + ((n == 600) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("εξακόσιοι" + ((n == 600) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακόσιοι" + ((n == 500) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("πεντακόσιοι" + ((n == 500) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 400) then
-              return ("τετρακόσιοι" + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("τετρακόσιοι" + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακόσιοι" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("τριακόσιοι" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακόσιοι" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("διακόσιοι" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατό" + ((n == 100) ? ("") : (("ν " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("εκατό" + (if (n == 100) then
+                ""
+              else
+                ("ν " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξήντα" + ((n == 60) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("εξήντα" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 50) then
-              return ("πενήντα" + ((n == 50) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("πενήντα" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 40) then
-              return ("σαράντα" + ((n == 40) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("σαράντα" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριάντα" + ((n == 30) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("τριάντα" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 20) then
-              return ("είκοσι" + ((n == 20) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("είκοσι" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
             end
-            return ("δεκα­" + renderSpelloutCardinalMasculine((n % 10))) if (n >= 13)
+            if (n >= 13) then
+              return ("δεκα­" + format_spellout_cardinal_masculine((n % 10)))
+            end
             return "δώδεκα" if (n >= 12)
             return "έντεκα" if (n >= 11)
             return "δέκα" if (n >= 10)
@@ -151,127 +167,131 @@ module TwitterCldr
             return "ένας" if (n >= 1)
             return "μηδέν" if (n >= 0)
           end
-          def renderSpelloutCardinalFeminine(n)
+          def format_spellout_cardinal_feminine(n)
             is_fractional = (n != n.floor)
-            return ("μείον " + renderSpelloutCardinalFeminine(-n)) if (n < 0)
+            return ("μείον " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalFeminine(n.floor) + " κόμμα ") + renderSpelloutCardinalFeminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " κόμμα ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 1000000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
               end))
             end
             if (n >= 2000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 1000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
               end))
             end
             if (n >= 2000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 1000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000)))
               end))
             end
             if (n >= 2000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 1000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " χίλιάδες") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " χίλιάδες") + (if (n == 2000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 1000) then
-              return ("χίλιες" + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("χίλιες" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 900) then
-              return ("εννιακόσιες" + ((n == 900) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("εννιακόσιες" + ((n == 900) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακόσιες" + ((n == 800) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("οκτακόσιες" + ((n == 800) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακόσιες" + ((n == 700) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("επτακόσιες" + ((n == 700) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακόσιες" + ((n == 600) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("εξακόσιες" + ((n == 600) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακόσιες" + ((n == 500) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("πεντακόσιες" + ((n == 500) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 400) then
-              return ("τετρακόσιες" + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("τετρακόσιες" + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακόσιες" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("τριακόσιες" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακόσιες" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("διακόσιες" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατό" + ((n == 100) ? ("") : (("ν " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("εκατό" + ((n == 100) ? ("") : (("ν " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 90) then
-              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξήντα" + ((n == 60) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("εξήντα" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 50) then
-              return ("πενήντα" + ((n == 50) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("πενήντα" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 40) then
-              return ("σαράντα" + ((n == 40) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("σαράντα" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριάντα" + ((n == 30) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("τριάντα" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 20) then
-              return ("είκοσι" + ((n == 20) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("είκοσι" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
             end
-            return ("δεκα­" + renderSpelloutCardinalFeminine((n % 10))) if (n >= 13)
+            return ("δεκα­" + format_spellout_cardinal_feminine((n % 10))) if (n >= 13)
             return "δώδεκα" if (n >= 12)
             return "έντεκα" if (n >= 11)
             return "δέκα" if (n >= 10)
@@ -286,127 +306,127 @@ module TwitterCldr
             return "μία" if (n >= 1)
             return "μηδέν" if (n >= 0)
           end
-          def renderSpelloutCardinalNeuter(n)
+          def format_spellout_cardinal_neuter(n)
             is_fractional = (n != n.floor)
-            return ("μείον " + renderSpelloutCardinalNeuter(-n)) if (n < 0)
+            return ("μείον " + format_spellout_cardinal_neuter(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalNeuter(n.floor) + " κόμμα ") + renderSpelloutCardinalNeuter(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_neuter(n.floor) + " κόμμα ") + format_spellout_cardinal_neuter(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " τετράκις εκατομμύρια") + (if (n == 2000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 1000000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμύριο") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000000000)))
               end))
             end
             if (n >= 2000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " τρισεκατομμύρια") + (if (n == 2000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 1000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμύριο") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000000)))
               end))
             end
             if (n >= 2000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " δισεκατομμύρια") + (if (n == 2000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 1000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμύριο") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000)))
               end))
             end
             if (n >= 2000000) then
-              return ((renderSpelloutCardinalNeuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " εκατομμύρια") + (if (n == 2000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 1000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμύριο") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " χίλιάδες") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " χίλιάδες") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 1000))))))
             end
             if (n >= 1000) then
-              return ("χίλια" + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("χίλια" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 900) then
-              return ("εννιακόσια" + ((n == 900) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("εννιακόσια" + ((n == 900) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακόσια" + ((n == 800) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("οκτακόσια" + ((n == 800) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακόσια" + ((n == 700) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("επτακόσια" + ((n == 700) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακόσια" + ((n == 600) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("εξακόσια" + ((n == 600) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακόσια" + ((n == 500) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("πεντακόσια" + ((n == 500) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 400) then
-              return ("τετρακόσια" + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("τετρακόσια" + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακόσια" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("τριακόσια" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακόσια" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("διακόσια" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατό" + ((n == 100) ? ("") : (("ν " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("εκατό" + ((n == 100) ? ("") : (("ν " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 90) then
-              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("εννενήντα" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("ογδόντα" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("εβδομήντα" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξήντα" + ((n == 60) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("εξήντα" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 50) then
-              return ("πενήντα" + ((n == 50) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("πενήντα" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 40) then
-              return ("σαράντα" + ((n == 40) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("σαράντα" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριάντα" + ((n == 30) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("τριάντα" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 20) then
-              return ("είκοσι" + ((n == 20) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("είκοσι" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 10))))))
             end
-            return ("δεκα­" + renderSpelloutCardinalNeuter((n % 10))) if (n >= 13)
+            return ("δεκα­" + format_spellout_cardinal_neuter((n % 10))) if (n >= 13)
             return "δώδεκα" if (n >= 12)
             return "έντεκα" if (n >= 11)
             return "δέκα" if (n >= 10)
@@ -421,125 +441,165 @@ module TwitterCldr
             return "ένα" if (n >= 1)
             return "μηδέν" if (n >= 0)
           end
-          def renderSpelloutOrdinalMasculine(n)
+          def format_spellout_ordinal_masculine(n)
             is_fractional = (n != n.floor)
-            return ("μείον " + renderSpelloutOrdinalMasculine(-n)) if (n < 0)
+            return ("μείον " + format_spellout_ordinal_masculine(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστός") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστός") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalMasculine((n % 100000000000000)))
+                (" " + format_spellout_ordinal_masculine((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστός") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστός") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalMasculine((n % 100000000000)))
+                (" " + format_spellout_ordinal_masculine((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμυριοστός") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμυριοστός") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalMasculine((n % 100000000)))
+                (" " + format_spellout_ordinal_masculine((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμυριοστός ") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμυριοστός ") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalMasculine((n % 100000)))
+                (" " + format_spellout_ordinal_masculine((n % 100000)))
               end))
             end
             if (n >= 11000) then
-              return ((renderSpelloutCardinalNeuter((n / 11000.0).floor) + " χιλιοστός") + ((n == 11000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ((format_spellout_cardinal_neuter((n / 11000.0).floor) + " χιλιοστός") + (if (n == 11000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 10000) then
-              return ("δεκάκις χιλιοστός" + ((n == 10000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("δεκάκις χιλιοστός" + (if (n == 10000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 9000) then
-              return ("εννεάκις χιλιοστός" + ((n == 9000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("εννεάκις χιλιοστός" + (if (n == 9000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 8000) then
-              return ("οκτάκις χιλιοστός" + ((n == 8000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("οκτάκις χιλιοστός" + (if (n == 8000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 7000) then
-              return ("επτάκις χιλιοστός" + ((n == 7000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("επτάκις χιλιοστός" + (if (n == 7000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 6000) then
-              return ("εξάκις χιλιοστός" + ((n == 6000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("εξάκις χιλιοστός" + (if (n == 6000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 5000) then
-              return ("πεντάκις χιλιοστός" + ((n == 5000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("πεντάκις χιλιοστός" + (if (n == 5000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 4000) then
-              return ("τετράκις χιλιοστός" + ((n == 4000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("τετράκις χιλιοστός" + (if (n == 4000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 3000) then
-              return ("τρισχιλιοστός" + ((n == 3000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("τρισχιλιοστός" + (if (n == 3000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 2000) then
-              return ("δισχιλιοστός" + ((n == 2000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 1000))))))
+              return ("δισχιλιοστός" + (if (n == 2000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 1000) then
-              return ("χιλιοστός" + ((n == 1000) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("χιλιοστός" + ((n == 1000) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 900) then
-              return ("εννεακοσιοστός" + ((n == 900) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("εννεακοσιοστός" + ((n == 900) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακοσιοστός" + ((n == 800) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("οκτακοσιοστός" + ((n == 800) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακοσιοστός" + ((n == 700) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("επτακοσιοστός" + ((n == 700) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακοσιοστός" + ((n == 600) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("εξακοσιοστός" + ((n == 600) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακοσιοστός" + ((n == 500) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("πεντακοσιοστός" + ((n == 500) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 400) then
-              return ("τετρακοσιοστός" + ((n == 400) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("τετρακοσιοστός" + ((n == 400) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακοσιοστός" + ((n == 300) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("τριακοσιοστός" + ((n == 300) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακοσιοστός" + ((n == 200) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("διακοσιοστός" + ((n == 200) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατοστός" + ((n == 100) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 100))))))
+              return ("εκατοστός" + ((n == 100) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 100))))))
             end
             if (n >= 90) then
-              return ("εννενηκοστός" + ((n == 90) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("εννενηκοστός" + ((n == 90) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδοηκοστός" + ((n == 80) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("ογδοηκοστός" + ((n == 80) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομηκοστός" + ((n == 70) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("εβδομηκοστός" + ((n == 70) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξηκοστός" + ((n == 60) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("εξηκοστός" + ((n == 60) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 50) then
-              return ("πεντηκοστός" + ((n == 50) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("πεντηκοστός" + ((n == 50) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 40) then
-              return ("τεσσαρακοστός" + ((n == 40) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("τεσσαρακοστός" + ((n == 40) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριακοστός" + ((n == 30) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("τριακοστός" + ((n == 30) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 20) then
-              return ("εικοστός" + ((n == 20) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("εικοστός" + ((n == 20) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             if (n >= 13) then
-              return ("δέκατος" + ((n == 13) ? ("") : ((" " + renderSpelloutOrdinalMasculine((n % 10))))))
+              return ("δέκατος" + ((n == 13) ? ("") : ((" " + format_spellout_ordinal_masculine((n % 10))))))
             end
             return "δωδέκατος" if (n >= 12)
             return "ενδέκατος" if (n >= 11)
@@ -555,125 +615,133 @@ module TwitterCldr
             return "πρώτος" if (n >= 1)
             return "μηδενικός" if (n >= 0)
           end
-          def renderSpelloutOrdinalFeminine(n)
+          def format_spellout_ordinal_feminine(n)
             is_fractional = (n != n.floor)
-            return ("μείον " + renderSpelloutOrdinalFeminine(-n)) if (n < 0)
+            return ("μείον " + format_spellout_ordinal_feminine(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστή") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστή") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalFeminine((n % 100000000000000)))
+                (" " + format_spellout_ordinal_feminine((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστή") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστή") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalFeminine((n % 100000000000)))
+                (" " + format_spellout_ordinal_feminine((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμυριοστή") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμυριοστή") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalFeminine((n % 100000000)))
+                (" " + format_spellout_ordinal_feminine((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμυριοστή ") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμυριοστή ") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalFeminine((n % 100000)))
+                (" " + format_spellout_ordinal_feminine((n % 100000)))
               end))
             end
             if (n >= 11000) then
-              return ((renderSpelloutCardinalNeuter((n / 11000.0).floor) + " χιλιοστή") + ((n == 11000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ((format_spellout_cardinal_neuter((n / 11000.0).floor) + " χιλιοστή") + (if (n == 11000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 10000) then
-              return ("δεκάκις χιλιοστή" + ((n == 10000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("δεκάκις χιλιοστή" + (if (n == 10000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 9000) then
-              return ("εννεάκις χιλιοστή" + ((n == 9000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("εννεάκις χιλιοστή" + ((n == 9000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 8000) then
-              return ("οκτάκις χιλιοστή" + ((n == 8000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("οκτάκις χιλιοστή" + ((n == 8000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 7000) then
-              return ("επτάκις χιλιοστή" + ((n == 7000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("επτάκις χιλιοστή" + ((n == 7000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 6000) then
-              return ("εξάκις χιλιοστή" + ((n == 6000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("εξάκις χιλιοστή" + ((n == 6000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 5000) then
-              return ("πεντάκις χιλιοστή" + ((n == 5000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("πεντάκις χιλιοστή" + ((n == 5000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 4000) then
-              return ("τετράκις χιλιοστή" + ((n == 4000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("τετράκις χιλιοστή" + ((n == 4000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 3000) then
-              return ("τρισχιλιοστή" + ((n == 3000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("τρισχιλιοστή" + ((n == 3000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 2000) then
-              return ("δισχιλιοστή" + ((n == 2000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 1000))))))
+              return ("δισχιλιοστή" + ((n == 2000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 1000))))))
             end
             if (n >= 1000) then
-              return ("χιλιοστή" + ((n == 1000) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("χιλιοστή" + ((n == 1000) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 900) then
-              return ("εννεακοσιοστή" + ((n == 900) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("εννεακοσιοστή" + ((n == 900) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακοσιοστή" + ((n == 800) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("οκτακοσιοστή" + ((n == 800) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακοσιοστή" + ((n == 700) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("επτακοσιοστή" + ((n == 700) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακοσιοστή" + ((n == 600) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("εξακοσιοστή" + ((n == 600) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακοσιοστή" + ((n == 500) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("πεντακοσιοστή" + ((n == 500) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 400) then
-              return ("τρετρακοσιοστή" + ((n == 400) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("τρετρακοσιοστή" + ((n == 400) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακοσιοστή" + ((n == 300) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("τριακοσιοστή" + ((n == 300) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακοσιοστή" + ((n == 200) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("διακοσιοστή" + ((n == 200) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατοστή" + ((n == 100) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 100))))))
+              return ("εκατοστή" + ((n == 100) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 100))))))
             end
             if (n >= 90) then
-              return ("εννενηκοστή" + ((n == 90) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("εννενηκοστή" + ((n == 90) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδοηκοστή" + ((n == 80) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("ογδοηκοστή" + ((n == 80) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομηκοστή" + ((n == 70) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("εβδομηκοστή" + ((n == 70) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξηκοστή" + ((n == 60) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("εξηκοστή" + ((n == 60) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 50) then
-              return ("πεντηκοστή" + ((n == 50) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("πεντηκοστή" + ((n == 50) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 40) then
-              return ("τεσσαρακοστή" + ((n == 40) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("τεσσαρακοστή" + ((n == 40) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριακοστή" + ((n == 30) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("τριακοστή" + ((n == 30) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 20) then
-              return ("εικοστή" + ((n == 20) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("εικοστή" + ((n == 20) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             if (n >= 13) then
-              return ("δέκατη" + ((n == 13) ? ("") : ((" " + renderSpelloutOrdinalFeminine((n % 10))))))
+              return ("δέκατη" + ((n == 13) ? ("") : ((" " + format_spellout_ordinal_feminine((n % 10))))))
             end
             return "δωδέκατη" if (n >= 12)
             return "ενδέκατη" if (n >= 11)
@@ -689,119 +757,123 @@ module TwitterCldr
             return "πρώτη" if (n >= 1)
             return "μηδενική" if (n >= 0)
           end
-          def renderSpelloutOrdinalNeuter(n)
-            return ("μείον " + renderSpelloutOrdinalNeuter(-n)) if (n < 0)
+          def format_spellout_ordinal_neuter(n)
+            return ("μείον " + format_spellout_ordinal_neuter(-n)) if (n < 0)
             return (n.to_s + ".") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστό") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " τετράκις εκατομμυριοστό") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalNeuter((n % 100000000000000)))
+                (" " + format_spellout_ordinal_neuter((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστό") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " τρισεκατομμυριοστό") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalNeuter((n % 100000000000)))
+                (" " + format_spellout_ordinal_neuter((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000000.0).floor) + " δισεκατομμυριοστό") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " δισεκατομμυριοστό") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutOrdinalNeuter((n % 100000000)))
+                (" " + format_spellout_ordinal_neuter((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalNeuter((n / 1000000.0).floor) + " εκατομμυριοστό ") + ((n == 1000000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100000))))))
+              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " εκατομμυριοστό ") + (if (n == 1000000) then
+                ""
+              else
+                (" " + format_spellout_ordinal_neuter((n % 100000)))
+              end))
             end
             if (n >= 11000) then
-              return ((renderSpelloutCardinalNeuter((n / 11000.0).floor) + " χιλιοστό") + ((n == 11000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ((format_spellout_cardinal_neuter((n / 11000.0).floor) + " χιλιοστό") + ((n == 11000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 10000) then
-              return ("δεκάκις χιλιοστό" + ((n == 10000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("δεκάκις χιλιοστό" + ((n == 10000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 9000) then
-              return ("εννεάκις χιλιοστό" + ((n == 9000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("εννεάκις χιλιοστό" + ((n == 9000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 8000) then
-              return ("οκτάκις χιλιοστό" + ((n == 8000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("οκτάκις χιλιοστό" + ((n == 8000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 7000) then
-              return ("επτάκις χιλιοστό" + ((n == 7000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("επτάκις χιλιοστό" + ((n == 7000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 6000) then
-              return ("εξάκις χιλιοστό" + ((n == 6000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("εξάκις χιλιοστό" + ((n == 6000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 5000) then
-              return ("πεντάκις χιλιοστό" + ((n == 5000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("πεντάκις χιλιοστό" + ((n == 5000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 4000) then
-              return ("τετράκις χιλιοστό" + ((n == 4000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("τετράκις χιλιοστό" + ((n == 4000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 3000) then
-              return ("τρισχιλιοστό" + ((n == 3000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("τρισχιλιοστό" + ((n == 3000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 2000) then
-              return ("δισχιλιοστό" + ((n == 2000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 1000))))))
+              return ("δισχιλιοστό" + ((n == 2000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 1000))))))
             end
             if (n >= 1000) then
-              return ("χιλιοστό" + ((n == 1000) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("χιλιοστό" + ((n == 1000) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 900) then
-              return ("εννεακοσιοστό" + ((n == 900) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("εννεακοσιοστό" + ((n == 900) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 800) then
-              return ("οκτακοσιοστό" + ((n == 800) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("οκτακοσιοστό" + ((n == 800) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 700) then
-              return ("επτακοσιοστό" + ((n == 700) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("επτακοσιοστό" + ((n == 700) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 600) then
-              return ("εξακοσιοστός" + ((n == 600) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("εξακοσιοστός" + ((n == 600) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 500) then
-              return ("πεντακοσιοστό" + ((n == 500) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("πεντακοσιοστό" + ((n == 500) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 400) then
-              return ("τετρακοσιοστό" + ((n == 400) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("τετρακοσιοστό" + ((n == 400) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 300) then
-              return ("τριακοσιοστό" + ((n == 300) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("τριακοσιοστό" + ((n == 300) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 200) then
-              return ("διακοσιοστό" + ((n == 200) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("διακοσιοστό" + ((n == 200) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 100) then
-              return ("εκατοστό" + ((n == 100) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 100))))))
+              return ("εκατοστό" + ((n == 100) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 100))))))
             end
             if (n >= 90) then
-              return ("εννενηκοστό" + ((n == 90) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("εννενηκοστό" + ((n == 90) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 80) then
-              return ("ογδοηκοστό" + ((n == 80) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("ογδοηκοστό" + ((n == 80) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 70) then
-              return ("εβδομηκοστό" + ((n == 70) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("εβδομηκοστό" + ((n == 70) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 60) then
-              return ("εξηκοστό" + ((n == 60) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("εξηκοστό" + ((n == 60) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 50) then
-              return ("πεντηκοστό" + ((n == 50) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("πεντηκοστό" + ((n == 50) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 40) then
-              return ("τεσσαρακοστό" + ((n == 40) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("τεσσαρακοστό" + ((n == 40) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 30) then
-              return ("τριακοστό" + ((n == 30) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("τριακοστό" + ((n == 30) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 20) then
-              return ("εικοστό" + ((n == 20) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("εικοστό" + ((n == 20) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             if (n >= 13) then
-              return ("δέκατο" + ((n == 13) ? ("") : ((" " + renderSpelloutOrdinalNeuter((n % 10))))))
+              return ("δέκατο" + ((n == 13) ? ("") : ((" " + format_spellout_ordinal_neuter((n % 10))))))
             end
             return "δωδέκατο" if (n >= 12)
             return "ενδέκατο" if (n >= 11)
@@ -816,7 +888,7 @@ module TwitterCldr
             return "δεύτερο" if (n >= 2)
             return "πρώτο" if (n >= 1)
             return "μηδενικό" if (n >= 0)
-          end)
+          end
         end
       end
     end

@@ -6,12 +6,7 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:gl] = Galician = Class.new do
-        class << self
-          (# do nothing
-          )
-        end
-      end
+      @formatters[:gl] = Galician = Module.new { }
     end
   end
 end

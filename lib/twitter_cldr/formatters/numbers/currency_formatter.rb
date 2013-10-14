@@ -6,10 +6,8 @@
 module TwitterCldr
   module Formatters
     class CurrencyFormatter < NumberFormatter
-      DEFAULT_CURRENCY_SYMBOL = "$"
-      DEFAULT_PRECISION = 2
 
-      def format(number, options = {})
+      def format(tokens, number, options = {})
         options[:currency] ||= "USD"
         currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
         currency ||= {
@@ -27,7 +25,7 @@ module TwitterCldr
 
         symbol = options[:use_cldr_symbol] ? currency[:cldr_symbol] : currency[:symbol]
         symbol ||= currency[:currency].to_s
-        super(number, options).gsub('¤', symbol)
+        super.gsub('¤', symbol)
       end
 
       private
@@ -37,13 +35,6 @@ module TwitterCldr
         @resource[code.to_sym] || @resource[:DEFAULT]
       end
 
-      def get_tokens(obj, options = {})
-        opts = options.dup.merge(
-          :sign => obj.abs == obj ? :positive : :negative,
-          :type => :currency
-        )
-        @tokenizer.tokens(opts)
-      end
     end
   end
 end

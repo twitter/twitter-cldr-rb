@@ -6,12 +6,7 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:ur] = Urdu = Class.new do
-        class << self
-          (# do nothing
-          )
-        end
-      end
+      @formatters[:ur] = Urdu = Module.new { }
     end
   end
 end

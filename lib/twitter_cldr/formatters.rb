@@ -5,11 +5,9 @@
 
 module TwitterCldr
   module Formatters
-    autoload :Base, 'twitter_cldr/formatters/base'
+    autoload :Formatter,                  'twitter_cldr/formatters/formatter'
 
-    autoload :DateTimeFormatter,          'twitter_cldr/formatters/calendars/datetime_formatter'
-    autoload :DateFormatter,              'twitter_cldr/formatters/calendars/date_formatter'
-    autoload :TimeFormatter,              'twitter_cldr/formatters/calendars/time_formatter'
+    autoload :DateTimeFormatter,          'twitter_cldr/formatters/calendars/date_time_formatter'
     autoload :TimespanFormatter,          'twitter_cldr/formatters/calendars/timespan_formatter'
 
     autoload :Numbers,                    'twitter_cldr/formatters/numbers'

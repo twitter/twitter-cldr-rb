@@ -6,149 +6,195 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:en] = English = Class.new do
+      @formatters[:en] = English = Module.new { }
+      
+      class English::Spellout
         class << self
-          (def render2dYear(n)
-            return renderSpelloutNumbering(n) if (n >= 10)
-            return ("oh-" + renderSpelloutNumbering(n)) if (n >= 1)
+          def format_2d_year(n)
+            return format_spellout_numbering(n) if (n >= 10)
+            return ("oh-" + format_spellout_numbering(n)) if (n >= 1)
             return "hundred" if (n >= 0)
           end
-          private(:render2dYear)
-          def renderSpelloutNumberingYear(n)
+          private(:format_2d_year)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
-            return ("minus " + renderSpelloutNumberingYear(-n)) if (n < 0)
+            return ("minus " + format_spellout_numbering_year(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 10000)
+            return format_spellout_numbering(n) if (n >= 10000)
             if (n >= 9100) then
-              return ((renderSpelloutNumberingYear((n / 9100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 9100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 9010) then
-              return ((renderSpelloutNumberingYear((n / 9010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 9010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 9000)
+            return format_spellout_numbering(n) if (n >= 9000)
             if (n >= 8100) then
-              return ((renderSpelloutNumberingYear((n / 8100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 8100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 8010) then
-              return ((renderSpelloutNumberingYear((n / 8010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 8010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 8000)
+            return format_spellout_numbering(n) if (n >= 8000)
             if (n >= 7100) then
-              return ((renderSpelloutNumberingYear((n / 7100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 7100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 7010) then
-              return ((renderSpelloutNumberingYear((n / 7010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 7010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 7000)
+            return format_spellout_numbering(n) if (n >= 7000)
             if (n >= 6100) then
-              return ((renderSpelloutNumberingYear((n / 6100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 6100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 6010) then
-              return ((renderSpelloutNumberingYear((n / 6010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 6010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 6000)
+            return format_spellout_numbering(n) if (n >= 6000)
             if (n >= 5100) then
-              return ((renderSpelloutNumberingYear((n / 5100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 5100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 5010) then
-              return ((renderSpelloutNumberingYear((n / 5010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 5010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 5000)
+            return format_spellout_numbering(n) if (n >= 5000)
             if (n >= 4100) then
-              return ((renderSpelloutNumberingYear((n / 4100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 4100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 4010) then
-              return ((renderSpelloutNumberingYear((n / 4010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 4010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 4000)
+            return format_spellout_numbering(n) if (n >= 4000)
             if (n >= 3100) then
-              return ((renderSpelloutNumberingYear((n / 3100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 3100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 3010) then
-              return ((renderSpelloutNumberingYear((n / 3010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 3010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 3000)
+            return format_spellout_numbering(n) if (n >= 3000)
             if (n >= 2100) then
-              return ((renderSpelloutNumberingYear((n / 2100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 2100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 2010) then
-              return ((renderSpelloutNumberingYear((n / 2010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 2010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 2000)
+            return format_spellout_numbering(n) if (n >= 2000)
             if (n >= 1100) then
-              return ((renderSpelloutNumberingYear((n / 1100.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 1100.0).floor) + " ") + format_2d_year((n % 100)))
             end
             if (n >= 1010) then
-              return ((renderSpelloutNumberingYear((n / 1010.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_year((n / 1010.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinal(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal(n) if (n >= 0)
           end
-          def renderSpelloutNumberingVerbose(n)
-            return renderSpelloutCardinalVerbose(n) if (n >= 0)
+          def format_spellout_numbering_verbose(n)
+            return format_spellout_cardinal_verbose(n) if (n >= 0)
           end
-          def renderSpelloutCardinal(n)
+          def format_spellout_cardinal(n)
             is_fractional = (n != n.floor)
-            return ("minus " + renderSpelloutCardinal(-n)) if (n < 0)
+            return ("minus " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinal(n.floor) + " point ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " point ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinal((n / 1.0e+15).floor) + " quadrillion") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal((n / 1.0e+15).floor) + " quadrillion") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000000.0).floor) + " trillion") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " trillion") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000.0).floor) + " billion") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " billion") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinal((n / 1000000.0).floor) + " million") + ((n == 1000000) ? ("") : ((" " + renderSpelloutCardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000.0).floor) + " million") + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100000)))
+              end))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinal((n / 1000.0).floor) + " thousand") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000.0).floor) + " thousand") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 100) then
-              return ((renderSpelloutCardinal((n / 100.0).floor) + " hundred") + ((n == 100) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 100.0).floor) + " hundred") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("ninety" + ((n == 90) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("ninety" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 80) then
-              return ("eighty" + ((n == 80) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("eighty" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 70) then
-              return ("seventy" + ((n == 70) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("seventy" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 60) then
-              return ("sixty" + ((n == 60) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("sixty" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 50) then
-              return ("fifty" + ((n == 50) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("fifty" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 40) then
-              return ("forty" + ((n == 40) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("forty" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 30) then
-              return ("thirty" + ((n == 30) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("thirty" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             if (n >= 20) then
-              return ("twenty" + ((n == 20) ? ("") : (("-" + renderSpelloutCardinal((n % 10))))))
+              return ("twenty" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                ("-" + format_spellout_cardinal((n % 10)))
+              end))
             end
             return "nineteen" if (n >= 19)
             return "eighteen" if (n >= 18)
@@ -171,92 +217,104 @@ module TwitterCldr
             return "one" if (n >= 1)
             return "zero" if (n >= 0)
           end
-          def renderAnd(n)
-            return (" " + renderSpelloutCardinalVerbose(n)) if (n >= 100)
-            return (" and " + renderSpelloutCardinalVerbose(n)) if (n >= 1)
+          def format_and(n)
+            return (" " + format_spellout_cardinal_verbose(n)) if (n >= 100)
+            return (" and " + format_spellout_cardinal_verbose(n)) if (n >= 1)
           end
-          private(:renderAnd)
-          def renderCommas(n)
-            return (" " + renderSpelloutCardinalVerbose(n)) if (n >= 1000000)
+          private(:format_and)
+          def format_commas(n)
+            return (" " + format_spellout_cardinal_verbose(n)) if (n >= 1000000)
             if (n >= 1000) then
-              return (((" " + renderSpelloutCardinalVerbose((n / 1000.0).floor)) + " thousand") + ((n == 1000) ? ("") : (renderCommas((n % 100)))))
+              return (((" " + format_spellout_cardinal_verbose((n / 1000.0).floor)) + " thousand") + (((n == 1000) or ((n % 10) == 0)) ? ("") : (format_commas((n % 100)))))
             end
-            return (" " + renderSpelloutCardinalVerbose(n)) if (n >= 100)
-            return (" and " + renderSpelloutCardinalVerbose(n)) if (n >= 1)
+            return (" " + format_spellout_cardinal_verbose(n)) if (n >= 100)
+            return (" and " + format_spellout_cardinal_verbose(n)) if (n >= 1)
           end
-          private(:renderCommas)
-          def renderSpelloutCardinalVerbose(n)
+          private(:format_commas)
+          def format_spellout_cardinal_verbose(n)
             is_fractional = (n != n.floor)
-            return ("minus " + renderSpelloutCardinalVerbose(-n)) if (n < 0)
+            return ("minus " + format_spellout_cardinal_verbose(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalVerbose(n.floor) + " point ") + renderSpelloutCardinalVerbose(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_verbose(n.floor) + " point ") + format_spellout_cardinal_verbose(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalVerbose((n / 1.0e+15).floor) + " quadrillion") + ((n == 1000000000000000) ? ("") : (renderCommas((n % 100000000000000)))))
+              return ((format_spellout_cardinal_verbose((n / 1.0e+15).floor) + " quadrillion") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_commas((n % 100000000000000))
+              end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalVerbose((n / 1000000000000.0).floor) + " trillion") + ((n == 1000000000000) ? ("") : (renderCommas((n % 100000000000)))))
+              return ((format_spellout_cardinal_verbose((n / 1000000000000.0).floor) + " trillion") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_commas((n % 100000000000))
+              end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalVerbose((n / 1000000000.0).floor) + " billion") + ((n == 1000000000) ? ("") : (renderCommas((n % 100000000)))))
+              return ((format_spellout_cardinal_verbose((n / 1000000000.0).floor) + " billion") + (if ((n == 1000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_commas((n % 100000000))
+              end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalVerbose((n / 1000000.0).floor) + " million") + ((n == 1000000) ? ("") : (renderCommas((n % 100000)))))
+              return ((format_spellout_cardinal_verbose((n / 1000000.0).floor) + " million") + (((n == 1000000) or ((n % 10) == 0)) ? ("") : (format_commas((n % 100000)))))
             end
             if (n >= 100000) then
-              return ((renderSpelloutCardinalVerbose((n / 100000.0).floor) + " thousand") + ((n == 100000) ? ("") : (renderCommas((n % 1000)))))
+              return ((format_spellout_cardinal_verbose((n / 100000.0).floor) + " thousand") + (((n == 100000) or ((n % 10) == 0)) ? ("") : (format_commas((n % 1000)))))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinalVerbose((n / 1000.0).floor) + " thousand") + ((n == 1000) ? ("") : (renderAnd((n % 100)))))
+              return ((format_spellout_cardinal_verbose((n / 1000.0).floor) + " thousand") + (((n == 1000) or ((n % 10) == 0)) ? ("") : (format_and((n % 100)))))
             end
             if (n >= 100) then
-              return ((renderSpelloutCardinalVerbose((n / 100.0).floor) + " hundred") + ((n == 100) ? ("") : (renderAnd((n % 100)))))
+              return ((format_spellout_cardinal_verbose((n / 100.0).floor) + " hundred") + (((n == 100) or ((n % 10) == 0)) ? ("") : (format_and((n % 100)))))
             end
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderTieth(n)
-            return ("ty-" + renderSpelloutOrdinal(n)) if (n >= 1)
+          def format_tieth(n)
+            return ("ty-" + format_spellout_ordinal(n)) if (n >= 1)
             return "tieth" if (n >= 0)
           end
-          private(:renderTieth)
-          def renderTh(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          private(:format_tieth)
+          def format_th(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "th" if (n >= 0)
           end
-          private(:renderTh)
-          def renderSpelloutOrdinal(n)
+          private(:format_th)
+          def format_spellout_ordinal(n)
             is_fractional = (n != n.floor)
-            return ("minus " + renderSpelloutOrdinal(-n)) if (n < 0)
+            return ("minus " + format_spellout_ordinal(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutNumbering((n / 1.0e+15).floor) + " quadrillion") + renderTh((n % 100000000000000)))
+              return ((format_spellout_numbering((n / 1.0e+15).floor) + " quadrillion") + format_th((n % 100000000000000)))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutNumbering((n / 1000000000000.0).floor) + " trillion") + renderTh((n % 100000000000)))
+              return ((format_spellout_numbering((n / 1000000000000.0).floor) + " trillion") + format_th((n % 100000000000)))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutNumbering((n / 1000000000.0).floor) + " billion") + renderTh((n % 100000000)))
+              return ((format_spellout_numbering((n / 1000000000.0).floor) + " billion") + format_th((n % 100000000)))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutNumbering((n / 1000000.0).floor) + " million") + renderTh((n % 100000)))
+              return ((format_spellout_numbering((n / 1000000.0).floor) + " million") + format_th((n % 100000)))
             end
             if (n >= 1000) then
-              return ((renderSpelloutNumbering((n / 1000.0).floor) + " thousand") + renderTh((n % 100)))
+              return ((format_spellout_numbering((n / 1000.0).floor) + " thousand") + format_th((n % 100)))
             end
             if (n >= 100) then
-              return ((renderSpelloutNumbering((n / 100.0).floor) + " hundred") + renderTh((n % 100)))
+              return ((format_spellout_numbering((n / 100.0).floor) + " hundred") + format_th((n % 100)))
             end
-            return ("nine" + renderTieth((n % 10))) if (n >= 90)
-            return ("eigh" + renderTieth((n % 10))) if (n >= 80)
-            return ("seven" + renderTieth((n % 10))) if (n >= 70)
-            return ("six" + renderTieth((n % 10))) if (n >= 60)
-            return ("fif" + renderTieth((n % 10))) if (n >= 50)
-            return ("for" + renderTieth((n % 10))) if (n >= 40)
-            return ("thir" + renderTieth((n % 10))) if (n >= 30)
-            return ("twen" + renderTieth((n % 10))) if (n >= 20)
-            return (renderSpelloutNumbering(n) + "th") if (n >= 13)
+            return ("nine" + format_tieth((n % 10))) if (n >= 90)
+            return ("eigh" + format_tieth((n % 10))) if (n >= 80)
+            return ("seven" + format_tieth((n % 10))) if (n >= 70)
+            return ("six" + format_tieth((n % 10))) if (n >= 60)
+            return ("fif" + format_tieth((n % 10))) if (n >= 50)
+            return ("for" + format_tieth((n % 10))) if (n >= 40)
+            return ("thir" + format_tieth((n % 10))) if (n >= 30)
+            return ("twen" + format_tieth((n % 10))) if (n >= 20)
+            return (format_spellout_numbering(n) + "th") if (n >= 13)
             return "twelfth" if (n >= 12)
             return "eleventh" if (n >= 11)
             return "tenth" if (n >= 10)
@@ -271,64 +329,69 @@ module TwitterCldr
             return "first" if (n >= 1)
             return "zeroth" if (n >= 0)
           end
-          def renderAndO(n)
-            return (" " + renderSpelloutOrdinalVerbose(n)) if (n >= 100)
-            return (" and " + renderSpelloutOrdinalVerbose(n)) if (n >= 1)
+          def format_and_o(n)
+            return (" " + format_spellout_ordinal_verbose(n)) if (n >= 100)
+            return (" and " + format_spellout_ordinal_verbose(n)) if (n >= 1)
             return "th" if (n >= 0)
           end
-          private(:renderAndO)
-          def renderCommasO(n)
-            return (" " + renderSpelloutOrdinalVerbose(n)) if (n >= 1000000)
+          private(:format_and_o)
+          def format_commas_o(n)
+            return (" " + format_spellout_ordinal_verbose(n)) if (n >= 1000000)
             if (n >= 1000) then
-              return (((" " + renderSpelloutCardinalVerbose((n / 1000.0).floor)) + " thousand") + renderCommasO((n % 100)))
+              return (((" " + format_spellout_cardinal_verbose((n / 1000.0).floor)) + " thousand") + format_commas_o((n % 100)))
             end
-            return (" " + renderSpelloutOrdinalVerbose(n)) if (n >= 100)
-            return (" and " + renderSpelloutOrdinalVerbose(n)) if (n >= 1)
+            return (" " + format_spellout_ordinal_verbose(n)) if (n >= 100)
+            return (" and " + format_spellout_ordinal_verbose(n)) if (n >= 1)
             return "th" if (n >= 0)
           end
-          private(:renderCommasO)
-          def renderSpelloutOrdinalVerbose(n)
+          private(:format_commas_o)
+          def format_spellout_ordinal_verbose(n)
             is_fractional = (n != n.floor)
-            return ("minus " + renderSpelloutOrdinalVerbose(-n)) if (n < 0)
+            return ("minus " + format_spellout_ordinal_verbose(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + ".") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutNumberingVerbose((n / 1.0e+15).floor) + " quadrillion") + renderCommasO((n % 100000000000000)))
+              return ((format_spellout_numbering_verbose((n / 1.0e+15).floor) + " quadrillion") + format_commas_o((n % 100000000000000)))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutNumberingVerbose((n / 1000000000000.0).floor) + " trillion") + renderCommasO((n % 100000000000)))
+              return ((format_spellout_numbering_verbose((n / 1000000000000.0).floor) + " trillion") + format_commas_o((n % 100000000000)))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutNumberingVerbose((n / 1000000000.0).floor) + " billion") + renderCommasO((n % 100000000)))
+              return ((format_spellout_numbering_verbose((n / 1000000000.0).floor) + " billion") + format_commas_o((n % 100000000)))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutNumberingVerbose((n / 1000000.0).floor) + " million") + renderCommasO((n % 100000)))
+              return ((format_spellout_numbering_verbose((n / 1000000.0).floor) + " million") + format_commas_o((n % 100000)))
             end
             if (n >= 100000) then
-              return ((renderSpelloutNumberingVerbose((n / 100000.0).floor) + " thousand") + renderCommasO((n % 1000)))
+              return ((format_spellout_numbering_verbose((n / 100000.0).floor) + " thousand") + format_commas_o((n % 1000)))
             end
             if (n >= 1000) then
-              return ((renderSpelloutNumberingVerbose((n / 1000.0).floor) + " thousand") + renderAndO((n % 100)))
+              return ((format_spellout_numbering_verbose((n / 1000.0).floor) + " thousand") + format_and_o((n % 100)))
             end
             if (n >= 100) then
-              return ((renderSpelloutNumberingVerbose((n / 100.0).floor) + " hundred") + renderAndO((n % 100)))
+              return ((format_spellout_numbering_verbose((n / 100.0).floor) + " hundred") + format_and_o((n % 100)))
             end
-            return renderSpelloutOrdinal(n) if (n >= 0)
+            return format_spellout_ordinal(n) if (n >= 0)
           end
-          def renderDigitsOrdinalIndicator(n)
-            return renderDigitsOrdinalIndicator((n % 100)) if (n >= 100)
-            return renderDigitsOrdinalIndicator((n % 10)) if (n >= 20)
+        end
+      end
+      
+      class English::Ordinal
+        class << self
+          def format_digits_ordinal_indicator(n)
+            return format_digits_ordinal_indicator((n % 100)) if (n >= 100)
+            return format_digits_ordinal_indicator((n % 10)) if (n >= 20)
             return "th" if (n >= 4)
             return "rd" if (n >= 3)
             return "nd" if (n >= 2)
             return "st" if (n >= 1)
             return "th" if (n >= 0)
           end
-          private(:renderDigitsOrdinalIndicator)
-          def renderDigitsOrdinal(n)
-            return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
-            return (n.to_s + renderDigitsOrdinalIndicator(n)) if (n >= 0)
-          end)
+          private(:format_digits_ordinal_indicator)
+          def format_digits_ordinal(n)
+            return ("−" + format_digits_ordinal(-n)) if (n < 0)
+            return (n.to_s + format_digits_ordinal_indicator(n)) if (n >= 0)
+          end
         end
       end
     end

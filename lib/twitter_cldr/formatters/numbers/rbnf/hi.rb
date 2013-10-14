@@ -6,48 +6,50 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:hi] = Hindi = Class.new do
+      @formatters[:hi] = Hindi = Module.new { }
+      
+      class Hindi::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinal(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal(n) if (n >= 0)
           end
-          def renderSpelloutCardinal(n)
+          def format_spellout_cardinal(n)
             is_fractional = (n != n.floor)
-            return ("ऋण " + renderSpelloutCardinal(-n)) if (n < 0)
+            return ("ऋण " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinal(n.floor) + " दशमलव ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " दशमलव ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 100000000000) then
-              return ((renderSpelloutCardinal((n / 100000000000.0).floor) + " खरब") + (if (n == 100000000000) then
+              return ((format_spellout_cardinal((n / 100000000000.0).floor) + " खरब") + (if (n == 100000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000.0).floor) + " अरब") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " अरब") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 100000000)))
               end))
             end
             if (n >= 10000000) then
-              return ((renderSpelloutCardinal((n / 10000000.0).floor) + " करोड़") + ((n == 10000000) ? ("") : ((" " + renderSpelloutCardinal((n % 10000000))))))
+              return ((format_spellout_cardinal((n / 10000000.0).floor) + " करोड़") + ((n == 10000000) ? ("") : ((" " + format_spellout_cardinal((n % 10000000))))))
             end
             if (n >= 100000) then
-              return ((renderSpelloutCardinal((n / 100000.0).floor) + " लाख") + ((n == 100000) ? ("") : ((" " + renderSpelloutCardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 100000.0).floor) + " लाख") + ((n == 100000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinal((n / 1000.0).floor) + " हज़ार") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000.0).floor) + " हज़ार") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 100) then
-              return ((renderSpelloutCardinal((n / 100.0).floor) + " सौ") + ((n == 100) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 100.0).floor) + " सौ") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             return "निन्यानबे" if (n >= 99)
             return "अट्ठानबे" if (n >= 98)
@@ -150,11 +152,11 @@ module TwitterCldr
             return "एक" if (n >= 1)
             return "शून्य" if (n >= 0)
           end
-          def renderSpelloutOrdinalMasculine(n)
+          def format_spellout_ordinal_masculine(n)
             is_fractional = (n != n.floor)
-            return ("ऋण " + renderSpelloutOrdinalMasculine(-n)) if (n < 0)
+            return ("ऋण " + format_spellout_ordinal_masculine(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
-            return (renderSpelloutCardinal(n) + "वाँ") if (n >= 7)
+            return (format_spellout_cardinal(n) + "वाँ") if (n >= 7)
             return "छठा" if (n >= 6)
             return "पाँचवाँ" if (n >= 5)
             return "चौथा" if (n >= 4)
@@ -163,11 +165,11 @@ module TwitterCldr
             return "पहला" if (n >= 1)
             return "शून्यवाँ" if (n >= 0)
           end
-          def renderSpelloutOrdinalFeminine(n)
+          def format_spellout_ordinal_feminine(n)
             is_fractional = (n != n.floor)
-            return ("ऋण " + renderSpelloutOrdinalFeminine(-n)) if (n < 0)
+            return ("ऋण " + format_spellout_ordinal_feminine(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
-            return (renderSpelloutCardinal(n) + "वी") if (n >= 7)
+            return (format_spellout_cardinal(n) + "वी") if (n >= 7)
             return "छठी" if (n >= 6)
             return "पाँचवी" if (n >= 5)
             return "चौथी" if (n >= 4)
@@ -176,10 +178,15 @@ module TwitterCldr
             return "पहली" if (n >= 1)
             return "शून्यवी" if (n >= 0)
           end
-          def renderDigitsOrdinal(n)
-            return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
+        end
+      end
+      
+      class Hindi::Ordinal
+        class << self
+          def format_digits_ordinal(n)
+            return ("−" + format_digits_ordinal(-n)) if (n < 0)
             return (n.to_s + ".") if (n >= 0)
-          end)
+          end
         end
       end
     end

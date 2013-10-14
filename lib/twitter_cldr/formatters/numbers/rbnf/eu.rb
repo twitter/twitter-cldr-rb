@@ -6,12 +6,7 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:eu] = Basque = Class.new do
-        class << self
-          (# do nothing
-          )
-        end
-      end
+      @formatters[:eu] = Basque = Module.new { }
     end
   end
 end

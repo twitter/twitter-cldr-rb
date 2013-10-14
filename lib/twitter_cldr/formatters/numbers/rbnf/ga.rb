@@ -6,32 +6,34 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:ga] = Irish = Class.new do
+      @formatters[:ga] = Irish = Module.new { }
+      
+      class Irish::Spellout
         class << self
-          (def renderLenientParse(n)
+          def format_lenient_parse(n)
             return ((" ' ' " + " '") + "' ") if (n >= 0)
           end
-          private(:renderLenientParse)
-          def render2dYear(n)
-            return renderSpelloutNumberingNoA(n) if (n >= 10)
-            return ("agus " + renderSpelloutNumbering(n)) if (n >= 0)
+          private(:format_lenient_parse)
+          def format_2d_year(n)
+            return format_spellout_numbering_no_a(n) if (n >= 10)
+            return ("agus " + format_spellout_numbering(n)) if (n >= 0)
           end
-          private(:render2dYear)
-          def renderSpelloutNumberingYear(n)
+          private(:format_2d_year)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
-            return ("míneas " + renderSpelloutNumberingYear(-n)) if (n < 0)
+            return ("míneas " + format_spellout_numbering_year(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 10000)
+            return format_spellout_numbering(n) if (n >= 10000)
             if (n >= 1000) then
-              return ((renderSpelloutNumberingNoA((n / 1000.0).floor) + " ") + render2dYear((n % 100)))
+              return ((format_spellout_numbering_no_a((n / 1000.0).floor) + " ") + format_2d_year((n % 100)))
             end
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumberingNoA(n)
-            return renderSpelloutNumbering(n) if (n >= 20)
-            return (renderSpelloutNumberingNoA((n % 10)) + " déag") if (n >= 13)
-            return (renderSpelloutNumberingNoA((n % 10)) + " dhéag") if (n >= 12)
-            return (renderSpelloutNumberingNoA((n % 10)) + " déag") if (n >= 11)
+          def format_spellout_numbering_no_a(n)
+            return format_spellout_numbering(n) if (n >= 20)
+            return (format_spellout_numbering_no_a((n % 10)) + " déag") if (n >= 13)
+            return (format_spellout_numbering_no_a((n % 10)) + " dhéag") if (n >= 12)
+            return (format_spellout_numbering_no_a((n % 10)) + " déag") if (n >= 11)
             return "deich" if (n >= 10)
             return "naoi" if (n >= 9)
             return "ocht" if (n >= 8)
@@ -44,71 +46,71 @@ module TwitterCldr
             return "aon" if (n >= 1)
             return "náid" if (n >= 0)
           end
-          private(:renderSpelloutNumberingNoA)
-          def renderSpelloutNumbering(n)
+          private(:format_spellout_numbering_no_a)
+          def format_spellout_numbering(n)
             is_fractional = (n != n.floor)
-            return ("míneas " + renderSpelloutNumbering(-n)) if (n < 0)
+            return ("míneas " + format_spellout_numbering(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutNumbering(n.floor) + " pointe ") + renderSpelloutNumbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_numbering(n.floor) + " pointe ") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return (renderQuadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
+              return (format_quadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutNumbering((n % 100000000000000)))
+                (" " + format_spellout_numbering((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return (renderTrillions((n / 1000000000000.0).floor) + (if (n == 1000000000000) then
+              return (format_trillions((n / 1000000000000.0).floor) + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutNumbering((n % 100000000000)))
+                (" " + format_spellout_numbering((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return (renderBillions((n / 1000000000.0).floor) + (if (n == 1000000000) then
+              return (format_billions((n / 1000000000.0).floor) + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutNumbering((n % 100000000)))
+                (" " + format_spellout_numbering((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return (renderMillions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + renderSpelloutNumbering((n % 100000))))))
+              return (format_millions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + format_spellout_numbering((n % 100000))))))
             end
             if (n >= 1000) then
-              return (renderThousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + renderSpelloutNumbering((n % 100))))))
+              return (format_thousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + format_spellout_numbering((n % 100))))))
             end
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + ((n == 100) ? ("") : (renderIsNumber((n % 100)))))
+              return (format_hundreds((n / 100.0).floor) + ((n == 100) ? ("") : (format_is_number((n % 100)))))
             end
             if (n >= 90) then
-              return ("nócha" + ((n == 90) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("nócha" + ((n == 90) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 80) then
-              return ("ochtó" + ((n == 80) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("ochtó" + ((n == 80) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 70) then
-              return ("seachtó" + ((n == 70) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("seachtó" + ((n == 70) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 60) then
-              return ("seasca" + ((n == 60) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("seasca" + ((n == 60) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 50) then
-              return ("caoga" + ((n == 50) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("caoga" + ((n == 50) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 40) then
-              return ("daichead" + ((n == 40) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("daichead" + ((n == 40) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 30) then
-              return ("tríocha" + ((n == 30) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("tríocha" + ((n == 30) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
             if (n >= 20) then
-              return ("fiche" + ((n == 20) ? ("") : ((" " + renderSpelloutNumbering((n % 10))))))
+              return ("fiche" + ((n == 20) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
             end
-            return (renderSpelloutNumbering((n % 10)) + " déag") if (n >= 13)
-            return (renderSpelloutNumbering((n % 10)) + " dhéag") if (n >= 12)
-            return (renderSpelloutNumbering((n % 10)) + " déag") if (n >= 11)
+            return (format_spellout_numbering((n % 10)) + " déag") if (n >= 13)
+            return (format_spellout_numbering((n % 10)) + " dhéag") if (n >= 12)
+            return (format_spellout_numbering((n % 10)) + " déag") if (n >= 11)
             return "a deich" if (n >= 10)
             return "a naoi" if (n >= 9)
             return "a hocht" if (n >= 8)
@@ -121,75 +123,107 @@ module TwitterCldr
             return "a haon" if (n >= 1)
             return "a náid" if (n >= 0)
           end
-          def renderIsNumber(n)
-            return (" " + renderSpelloutNumbering(n)) if (n >= 1)
-            return (" is " + renderSpelloutNumbering(n)) if (n >= 0)
+          def format_is_number(n)
+            return (" " + format_spellout_numbering(n)) if (n >= 1)
+            return (" is " + format_spellout_numbering(n)) if (n >= 0)
           end
-          private(:renderIsNumber)
-          def renderIsNumberp(n)
-            return (" " + renderNumberp(n)) if (n >= 1)
-            return (" is " + renderNumberp(n)) if (n >= 0)
+          private(:format_is_number)
+          def format_is_numberp(n)
+            return (" " + format_numberp(n)) if (n >= 1)
+            return (" is " + format_numberp(n)) if (n >= 0)
           end
-          private(:renderIsNumberp)
-          def renderNumberp(n)
-            return renderSpelloutCardinalPrefixpart(n) if (n >= 20)
-            return (renderSpelloutCardinalPrefixpart(n) + " déag") if (n >= 13)
+          private(:format_is_numberp)
+          def format_numberp(n)
+            return format_spellout_cardinal_prefixpart(n) if (n >= 20)
+            return (format_spellout_cardinal_prefixpart(n) + " déag") if (n >= 13)
             return "dó dhéag" if (n >= 12)
-            return renderSpelloutCardinalPrefixpart(n) if (n >= 0)
+            return format_spellout_cardinal_prefixpart(n) if (n >= 0)
           end
-          private(:renderNumberp)
-          def renderSpelloutCardinal(n)
-            return renderSpelloutNumbering(n) if (n >= 0)
+          private(:format_numberp)
+          def format_spellout_cardinal(n)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutCardinalPrefixpart(n)
+          def format_spellout_cardinal_prefixpart(n)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return (renderQuadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
+              return (format_quadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderNumberp((n % 100000000000000)))
+                (" " + format_numberp((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return (renderTrillions((n / 1000000000000.0).floor) + ((n == 1000000000000) ? ("") : ((" " + renderNumberp((n % 100000000000))))))
+              return (format_trillions((n / 1000000000000.0).floor) + ((n == 1000000000000) ? ("") : ((" " + format_numberp((n % 100000000000))))))
             end
             if (n >= 1000000000) then
-              return (renderBillions((n / 1000000000.0).floor) + ((n == 1000000000) ? ("") : ((" " + renderNumberp((n % 100000000))))))
+              return (format_billions((n / 1000000000.0).floor) + ((n == 1000000000) ? ("") : ((" " + format_numberp((n % 100000000))))))
             end
             if (n >= 1000000) then
-              return (renderMillions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + renderNumberp((n % 100000))))))
+              return (format_millions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + format_numberp((n % 100000))))))
             end
             if (n >= 1000) then
-              return (renderThousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + renderNumberp((n % 100))))))
+              return (format_thousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + format_numberp((n % 100))))))
             end
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + ((n == 100) ? ("") : (renderIsNumberp((n % 100)))))
+              return (format_hundreds((n / 100.0).floor) + ((n == 100) ? ("") : (format_is_numberp((n % 100)))))
             end
             if (n >= 90) then
-              return ("nócha" + ((n == 90) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("nócha" + (if (n == 90) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 80) then
-              return ("ochtó" + ((n == 80) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("ochtó" + (if (n == 80) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 70) then
-              return ("seachtó" + ((n == 70) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("seachtó" + (if (n == 70) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 60) then
-              return ("seasca" + ((n == 60) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("seasca" + (if (n == 60) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 50) then
-              return ("caoga" + ((n == 50) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("caoga" + (if (n == 50) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 40) then
-              return ("daichead" + ((n == 40) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("daichead" + (if (n == 40) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 30) then
-              return ("tríocha" + ((n == 30) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("tríocha" + (if (n == 30) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
             if (n >= 20) then
-              return ("fiche" + ((n == 20) ? ("") : ((" is " + renderSpelloutCardinalPrefixpart((n % 10))))))
+              return ("fiche" + (if (n == 20) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+              end))
             end
-            return renderSpelloutCardinalPrefixpart((n % 10)) if (n >= 11)
+            return format_spellout_cardinal_prefixpart((n % 10)) if (n >= 11)
             return "deich" if (n >= 10)
             return "naoi" if (n >= 9)
             return "ocht" if (n >= 8)
@@ -202,14 +236,14 @@ module TwitterCldr
             return "aon" if (n >= 1)
             return "náid" if (n >= 0)
           end
-          private(:renderSpelloutCardinalPrefixpart)
-          def renderIs(n)
-            return renderIs((n % 10)) if (n >= 10)
+          private(:format_spellout_cardinal_prefixpart)
+          def format_is(n)
+            return format_is((n % 10)) if (n >= 10)
             return "" if (n >= 1)
             return " is" if (n >= 0)
           end
-          private(:renderIs)
-          def renderHundreds(n)
+          private(:format_is)
+          def format_hundreds(n)
             return "naoi gcéad" if (n >= 9)
             return "ocht gcéad" if (n >= 8)
             return "seacht gcéad" if (n >= 7)
@@ -220,147 +254,158 @@ module TwitterCldr
             return "dhá chéad" if (n >= 2)
             return "céad" if (n >= 1)
           end
-          private(:renderHundreds)
-          def renderThousands(n)
+          private(:format_hundreds)
+          def format_thousands(n)
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + renderIsThousands((n % 100)))
+              return (format_hundreds((n / 100.0).floor) + format_is_thousands((n % 100)))
             end
             if (n >= 2) then
-              return ((renderSpelloutCardinalPrefixpart(n) + " ") + renderThousandp(n))
+              return ((format_spellout_cardinal_prefixpart(n) + " ") + format_thousandp(n))
             end
             return "míle" if (n >= 1)
           end
-          private(:renderThousands)
-          def renderThousandp(n)
-            return renderThousand(n) if (n >= 20)
-            return (renderThousand(n) + " dhéag") if (n >= 11)
-            return renderThousand(n) if (n >= 2)
+          private(:format_thousands)
+          def format_thousandp(n)
+            return format_thousand(n) if (n >= 20)
+            return (format_thousand(n) + " dhéag") if (n >= 11)
+            return format_thousand(n) if (n >= 2)
           end
-          private(:renderThousandp)
-          def renderThousand(n)
-            return renderThousand((n % 10)) if (n >= 11)
+          private(:format_thousandp)
+          def format_thousand(n)
+            return format_thousand((n % 10)) if (n >= 11)
             return "míle" if (n >= 7)
             return "mhíle" if (n >= 1)
             return "míle" if (n >= 0)
           end
-          private(:renderThousand)
-          def renderIsThousands(n)
-            return ((renderIs(n) + " ") + renderThousands(n)) if (n >= 20)
-            return (" is " + renderThousands(n)) if (n >= 11)
+          private(:format_thousand)
+          def format_is_thousands(n)
+            return ((format_is(n) + " ") + format_thousands(n)) if (n >= 20)
+            return (" is " + format_thousands(n)) if (n >= 11)
             if (n >= 1) then
-              return (((" is " + renderSpelloutCardinalPrefixpart(n)) + " ") + renderThousand(n))
+              return (((" is " + format_spellout_cardinal_prefixpart(n)) + " ") + format_thousand(n))
             end
-            return (" " + renderThousand(n)) if (n >= 0)
+            return (" " + format_thousand(n)) if (n >= 0)
           end
-          private(:renderIsThousands)
-          def renderMillions(n)
+          private(:format_is_thousands)
+          def format_millions(n)
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + renderIsMillions((n % 100)))
+              return (format_hundreds((n / 100.0).floor) + format_is_millions((n % 100)))
             end
             if (n >= 2) then
-              return ((renderSpelloutCardinalPrefixpart(n) + " ") + renderMillionsp(n))
+              return ((format_spellout_cardinal_prefixpart(n) + " ") + format_millionsp(n))
             end
             return "milliún" if (n >= 1)
           end
-          private(:renderMillions)
-          def renderMillionsp(n)
-            return renderMillion(n) if (n >= 20)
-            return (renderMillion(n) + " déag") if (n >= 11)
-            return renderMillion(n) if (n >= 2)
+          private(:format_millions)
+          def format_millionsp(n)
+            return format_million(n) if (n >= 20)
+            return (format_million(n) + " déag") if (n >= 11)
+            return format_million(n) if (n >= 2)
           end
-          private(:renderMillionsp)
-          def renderMillion(n)
-            return renderMillion((n % 10)) if (n >= 11)
+          private(:format_millionsp)
+          def format_million(n)
+            return format_million((n % 10)) if (n >= 11)
             return "milliún" if (n >= 7)
             return "mhilliún" if (n >= 1)
             return "milliún" if (n >= 0)
           end
-          private(:renderMillion)
-          def renderIsMillions(n)
-            return ((renderIs(n) + " ") + renderMillions(n)) if (n >= 20)
-            return (" is " + renderMillions(n)) if (n >= 11)
+          private(:format_million)
+          def format_is_millions(n)
+            return ((format_is(n) + " ") + format_millions(n)) if (n >= 20)
+            return (" is " + format_millions(n)) if (n >= 11)
             if (n >= 1) then
-              return (((" is " + renderSpelloutCardinalPrefixpart(n)) + " ") + renderMillion(n))
+              return (((" is " + format_spellout_cardinal_prefixpart(n)) + " ") + format_million(n))
             end
-            return (" " + renderMillion(n)) if (n >= 0)
+            return (" " + format_million(n)) if (n >= 0)
           end
-          private(:renderIsMillions)
-          def renderBillions(n)
+          private(:format_is_millions)
+          def format_billions(n)
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + renderIsBillions((n % 100)))
+              return (format_hundreds((n / 100.0).floor) + format_is_billions((n % 100)))
             end
-            return (renderSpelloutCardinalPrefixpart(n) + " billiún") if (n >= 20)
-            return (renderSpelloutCardinalPrefixpart(n) + " billiún déag") if (n >= 11)
-            return (renderSpelloutCardinalPrefixpart(n) + " billiún") if (n >= 2)
+            return (format_spellout_cardinal_prefixpart(n) + " billiún") if (n >= 20)
+            if (n >= 11) then
+              return (format_spellout_cardinal_prefixpart(n) + " billiún déag")
+            end
+            return (format_spellout_cardinal_prefixpart(n) + " billiún") if (n >= 2)
             return "billiún" if (n >= 1)
           end
-          private(:renderBillions)
-          def renderIsBillions(n)
-            return ((renderIs(n) + " ") + renderBillions(n)) if (n >= 20)
-            return (" is " + renderBillions(n)) if (n >= 11)
+          private(:format_billions)
+          def format_is_billions(n)
+            return ((format_is(n) + " ") + format_billions(n)) if (n >= 20)
+            return (" is " + format_billions(n)) if (n >= 11)
             if (n >= 1) then
-              return ((" is " + renderSpelloutCardinalPrefixpart(n)) + " billiún")
+              return ((" is " + format_spellout_cardinal_prefixpart(n)) + " billiún")
             end
             return " billiún" if (n >= 0)
           end
-          private(:renderIsBillions)
-          def renderTrillions(n)
+          private(:format_is_billions)
+          def format_trillions(n)
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + renderIsTrillions((n % 100)))
+              return (format_hundreds((n / 100.0).floor) + format_is_trillions((n % 100)))
             end
             if (n >= 2) then
-              return ((renderSpelloutCardinalPrefixpart(n) + " ") + renderTrillionsp(n))
+              return ((format_spellout_cardinal_prefixpart(n) + " ") + format_trillionsp(n))
             end
             return "thrilliún" if (n >= 1)
           end
-          private(:renderTrillions)
-          def renderTrillionsp(n)
-            return renderTrillion(n) if (n >= 20)
-            return (renderTrillion(n) + " déag") if (n >= 11)
-            return renderTrillion(n) if (n >= 2)
+          private(:format_trillions)
+          def format_trillionsp(n)
+            return format_trillion(n) if (n >= 20)
+            return (format_trillion(n) + " déag") if (n >= 11)
+            return format_trillion(n) if (n >= 2)
           end
-          private(:renderTrillionsp)
-          def renderTrillion(n)
-            return renderTrillion((n % 10)) if (n >= 11)
+          private(:format_trillionsp)
+          def format_trillion(n)
+            return format_trillion((n % 10)) if (n >= 11)
             return "dtrilliún" if (n >= 7)
             return "thrilliún" if (n >= 1)
             return "dtrilliún" if (n >= 0)
           end
-          private(:renderTrillion)
-          def renderIsTrillions(n)
-            return ((renderIs(n) + " ") + renderTrillions(n)) if (n >= 20)
-            return (" is " + renderTrillions(n)) if (n >= 11)
+          private(:format_trillion)
+          def format_is_trillions(n)
+            return ((format_is(n) + " ") + format_trillions(n)) if (n >= 20)
+            return (" is " + format_trillions(n)) if (n >= 11)
             if (n >= 1) then
-              return (((" is " + renderSpelloutCardinalPrefixpart(n)) + " ") + renderTrillion(n))
+              return (((" is " + format_spellout_cardinal_prefixpart(n)) + " ") + format_trillion(n))
             end
-            return (" " + renderTrillion(n)) if (n >= 0)
+            return (" " + format_trillion(n)) if (n >= 0)
           end
-          private(:renderIsTrillions)
-          def renderQuadrillions(n)
+          private(:format_is_trillions)
+          def format_quadrillions(n)
             if (n >= 100) then
-              return (renderHundreds((n / 100.0).floor) + renderIsQuadrillions((n % 100)))
+              return (format_hundreds((n / 100.0).floor) + format_is_quadrillions((n % 100)))
             end
-            return (renderSpelloutCardinalPrefixpart(n) + " quadrilliún") if (n >= 20)
+            if (n >= 20) then
+              return (format_spellout_cardinal_prefixpart(n) + " quadrilliún")
+            end
             if (n >= 11) then
-              return (renderSpelloutCardinalPrefixpart(n) + " quadrilliún déag")
+              return (format_spellout_cardinal_prefixpart(n) + " quadrilliún déag")
             end
-            return (renderSpelloutCardinalPrefixpart(n) + " quadrilliún") if (n >= 2)
+            if (n >= 2) then
+              return (format_spellout_cardinal_prefixpart(n) + " quadrilliún")
+            end
             return "quadrilliún" if (n >= 1)
           end
-          private(:renderQuadrillions)
-          def renderIsQuadrillions(n)
-            return ((renderIs(n) + " ") + renderQuadrillions(n)) if (n >= 20)
-            return (" is " + renderQuadrillions(n)) if (n >= 11)
+          private(:format_quadrillions)
+          def format_is_quadrillions(n)
+            return ((format_is(n) + " ") + format_quadrillions(n)) if (n >= 20)
+            return (" is " + format_quadrillions(n)) if (n >= 11)
             if (n >= 1) then
-              return ((" is " + renderSpelloutCardinalPrefixpart(n)) + " quadrilliún")
+              return ((" is " + format_spellout_cardinal_prefixpart(n)) + " quadrilliún")
             end
             return " quadrilliún" if (n >= 0)
           end
-          private(:renderIsQuadrillions)
-          def renderDigitsOrdinal(n)
-            return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
+          private(:format_is_quadrillions)
+        end
+      end
+      
+      class Irish::Ordinal
+        class << self
+          def format_digits_ordinal(n)
+            return ("−" + format_digits_ordinal(-n)) if (n < 0)
             return (n.to_s + "ú") if (n >= 0)
-          end)
+          end
         end
       end
     end

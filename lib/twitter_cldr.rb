@@ -27,6 +27,7 @@ module TwitterCldr
   autoload :Resources,     'twitter_cldr/resources'
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
+  autoload :DataReaders,   'twitter_cldr/data_readers'
   autoload :Utils,         'twitter_cldr/utils'
 
   extend SingleForwardable

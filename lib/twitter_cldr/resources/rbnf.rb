@@ -8,6 +8,7 @@ module TwitterCldr
     module Rbnf
       autoload :TestImporter,   'twitter_cldr/resources/rbnf/test_importer'
       autoload :ClassGenerator, 'twitter_cldr/resources/rbnf/class_generator'
+      autoload :Grouping,       'twitter_cldr/resources/rbnf/rule_set'
       autoload :RuleSet,        'twitter_cldr/resources/rbnf/rule_set'
       autoload :Rule,           'twitter_cldr/resources/rbnf/rule'
       autoload :RuleParts,      'twitter_cldr/resources/rbnf/rule'

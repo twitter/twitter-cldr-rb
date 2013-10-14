@@ -6,82 +6,84 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:hu] = Hungarian = Class.new do
+      @formatters[:hu] = Hungarian = Module.new { }
+      
+      class Hungarian::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
-            return ("minusz " + renderSpelloutNumberingYear(-n)) if (n < 0)
+            return ("minusz " + format_spellout_numbering_year(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 10000)
+            return format_spellout_numbering(n) if (n >= 10000)
             if (n >= 1100) then
-              return ((renderSpelloutNumberingYear((n / 1100.0).floor) + "­száz") + ((n == 1100) ? ("") : (("­" + renderSpelloutNumberingYear((n % 100))))))
+              return ((format_spellout_numbering_year((n / 1100.0).floor) + "­száz") + ((n == 1100) ? ("") : (("­" + format_spellout_numbering_year((n % 100))))))
             end
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinal(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal(n) if (n >= 0)
           end
-          def renderSpelloutCardinal(n)
+          def format_spellout_cardinal(n)
             is_fractional = (n != n.floor)
-            return ("minusz " + renderSpelloutCardinal(-n)) if (n < 0)
+            return ("minusz " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinal(n.floor) + " vessző ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " vessző ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinal((n / 1.0e+15).floor) + " billiárd") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal((n / 1.0e+15).floor) + " billiárd") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000000.0).floor) + " billió") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " billió") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000.0).floor) + " milliárd") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " milliárd") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinal((n / 1000000.0).floor) + " millió") + ((n == 1000000) ? ("") : ((" " + renderSpelloutCardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000.0).floor) + " millió") + ((n == 1000000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinal((n / 1000.0).floor) + "­ezer") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000.0).floor) + "­ezer") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 100) then
-              return ((renderSpelloutCardinal((n / 100.0).floor) + "­száz") + ((n == 100) ? ("") : (("­" + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 100.0).floor) + "­száz") + ((n == 100) ? ("") : (("­" + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 90) then
-              return ("kilencven" + ((n == 90) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("kilencven" + ((n == 90) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 80) then
-              return ("nyolcvan" + ((n == 80) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("nyolcvan" + ((n == 80) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 70) then
-              return ("hetven" + ((n == 70) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("hetven" + ((n == 70) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 60) then
-              return ("hatvan" + ((n == 60) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("hatvan" + ((n == 60) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 50) then
-              return ("ötven" + ((n == 50) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("ötven" + ((n == 50) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 40) then
-              return ("negyven" + ((n == 40) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("negyven" + ((n == 40) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 30) then
-              return ("harminc" + ((n == 30) ? ("") : (("­" + renderSpelloutCardinal((n % 10))))))
+              return ("harminc" + ((n == 30) ? ("") : (("­" + format_spellout_cardinal((n % 10))))))
             end
-            return ("huszon­" + renderSpelloutCardinal((n % 10))) if (n >= 21)
+            return ("huszon­" + format_spellout_cardinal((n % 10))) if (n >= 21)
             return "húsz" if (n >= 20)
-            return ("tizen­" + renderSpelloutCardinal((n % 10))) if (n >= 11)
+            return ("tizen­" + format_spellout_cardinal((n % 10))) if (n >= 11)
             return "tíz" if (n >= 10)
             return "kilenc" if (n >= 9)
             return "nyolc" if (n >= 8)
@@ -93,7 +95,7 @@ module TwitterCldr
             return "kettő" if (n >= 2)
             return "egy" if (n >= 1)
             return "nulla" if (n >= 0)
-          end)
+          end
         end
       end
     end

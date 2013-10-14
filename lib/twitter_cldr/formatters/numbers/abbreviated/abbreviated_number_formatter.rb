@@ -6,12 +6,12 @@
 module TwitterCldr
   module Formatters
     class AbbreviatedNumberFormatter < NumberFormatter
-      NUMBER_MAX = 10 ** (TwitterCldr::Tokenizers::NumberTokenizer::ABBREVIATED_MAX_POWER + 1)
-      NUMBER_MIN = 10 ** TwitterCldr::Tokenizers::NumberTokenizer::ABBREVIATED_MIN_POWER
 
-      def default_format_options_for(number)
-        { :precision => 0 }
-      end
+      ABBREVIATED_MIN_POWER = 3
+      ABBREVIATED_MAX_POWER = 14
+
+      NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
+      NUMBER_MIN = 10 ** ABBREVIATED_MIN_POWER
 
       def get_tokens(obj, options = {})
         type = (obj < NUMBER_MAX) && (obj >= NUMBER_MIN) ? get_type : :decimal
@@ -26,10 +26,6 @@ module TwitterCldr
 
       protected
 
-      def get_type
-        :decimal
-      end
-
       def get_key(number)
         "1#{"0" * (number.to_i.to_s.size - 1)}".to_i
       end
@@ -43,6 +39,7 @@ module TwitterCldr
           number
         end
       end
+
     end
   end
 end

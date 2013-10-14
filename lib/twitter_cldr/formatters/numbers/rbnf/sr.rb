@@ -6,92 +6,102 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:sr] = Serbian = Class.new do
+      @formatters[:sr] = Serbian = Module.new { }
+      
+      class Serbian::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinalMasculine(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal_masculine(n) if (n >= 0)
           end
-          def renderSpelloutCardinalMasculine(n)
+          def format_spellout_cardinal_masculine(n)
             is_fractional = (n != n.floor)
-            return ("минус " + renderSpelloutCardinalMasculine(-n)) if (n < 0)
+            return ("минус " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalMasculine(n.floor) + " кома ") + renderSpelloutCardinalMasculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " кома ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalMasculine((n % 100000)))
+                (" " + format_spellout_cardinal_masculine((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " хиљада") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " хиљада") + (if (n == 2000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 1000)))
+              end))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinalFeminine((n / 1000.0).floor) + " хиљаду") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " хиљаду") + (if (n == 1000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 400) then
-              return ((renderSpelloutCardinalFeminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 300) then
-              return ("триста" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("триста" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 200) then
-              return ("двеста" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("двеста" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 100) then
-              return ("сто" + ((n == 100) ? ("") : ((" " + renderSpelloutCardinalMasculine((n % 100))))))
+              return ("сто" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
             end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 80) then
-              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 70) then
-              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 60) then
-              return ("шездесет" + ((n == 60) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("шездесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 40) then
-              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 30) then
-              return ("тридесет" + ((n == 30) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("тридесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             if (n >= 20) then
-              return ("двадесет" + ((n == 20) ? ("") : ((" и " + renderSpelloutCardinalMasculine((n % 10))))))
+              return ("двадесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
             end
             return "деветнаест" if (n >= 19)
             return "осамнаест" if (n >= 18)
@@ -114,198 +124,202 @@ module TwitterCldr
             return "један" if (n >= 1)
             return "нула" if (n >= 0)
           end
-          def renderSpelloutCardinalNeuter(n)
+          def format_spellout_cardinal_neuter(n)
             is_fractional = (n != n.floor)
-            return ("минус " + renderSpelloutCardinalNeuter(-n)) if (n < 0)
+            return ("минус " + format_spellout_cardinal_neuter(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalNeuter(n.floor) + " кома ") + renderSpelloutCardinalNeuter(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_neuter(n.floor) + " кома ") + format_spellout_cardinal_neuter(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalNeuter((n % 100000)))
+                (" " + format_spellout_cardinal_neuter((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " хиљада") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " хиљада") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 1000))))))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinalFeminine((n / 1000.0).floor) + " хиљаду") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " хиљаду") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 400) then
-              return ((renderSpelloutCardinalFeminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 300) then
-              return ("триста" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("триста" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 200) then
-              return ("двеста" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("двеста" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 100) then
-              return ("сто" + ((n == 100) ? ("") : ((" " + renderSpelloutCardinalNeuter((n % 100))))))
+              return ("сто" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
             end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 80) then
-              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 70) then
-              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 60) then
-              return ("шездесет" + ((n == 60) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("шездесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 40) then
-              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 30) then
-              return ("тридесет" + ((n == 30) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("тридесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
             if (n >= 20) then
-              return ("двадесет" + ((n == 20) ? ("") : ((" и " + renderSpelloutCardinalNeuter((n % 10))))))
+              return ("двадесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
             end
-            return renderSpelloutCardinalMasculine(n) if (n >= 3)
+            return format_spellout_cardinal_masculine(n) if (n >= 3)
             return "два" if (n >= 2)
             return "једно" if (n >= 1)
             return "нула" if (n >= 0)
           end
-          def renderSpelloutCardinalFeminine(n)
+          def format_spellout_cardinal_feminine(n)
             is_fractional = (n != n.floor)
-            return ("минус " + renderSpelloutCardinalFeminine(-n)) if (n < 0)
+            return ("минус " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinalFeminine(n.floor) + " кома ") + renderSpelloutCardinalFeminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " кома ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinalMasculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
                 ""
               else
-                (" " + renderSpelloutCardinalFeminine((n % 100000)))
+                (" " + format_spellout_cardinal_feminine((n % 100000)))
               end))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinalFeminine((n / 2000.0).floor) + " хиљада") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 1000))))))
+              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " хиљада") + (if (n == 2000) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 1000) then
-              return ((renderSpelloutCardinalFeminine((n / 1000.0).floor) + " хиљаду") + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " хиљаду") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 400) then
-              return ((renderSpelloutCardinalFeminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 400.0).floor) + "сто") + ((n == 400) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 300) then
-              return ("триста" + ((n == 300) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("триста" + ((n == 300) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 200) then
-              return ("двеста" + ((n == 200) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("двеста" + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 100) then
-              return ("сто" + ((n == 100) ? ("") : ((" " + renderSpelloutCardinalFeminine((n % 100))))))
+              return ("сто" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
             end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 80) then
-              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("осамдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 70) then
-              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("седамдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 60) then
-              return ("шездесет" + ((n == 60) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("шездесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 40) then
-              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("четрдесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 30) then
-              return ("тридесет" + ((n == 30) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("тридесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
             if (n >= 20) then
-              return ("двадесет" + ((n == 20) ? ("") : ((" и " + renderSpelloutCardinalFeminine((n % 10))))))
+              return ("двадесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
             end
-            return renderSpelloutCardinalMasculine(n) if (n >= 3)
+            return format_spellout_cardinal_masculine(n) if (n >= 3)
             return "две" if (n >= 2)
             return "једна" if (n >= 1)
             return "нула" if (n >= 0)
           end
-          def renderOrdi(n)
-            return (" и " + renderSpelloutOrdinal(n)) if (n >= 1)
+          def format_ordi(n)
+            return (" и " + format_spellout_ordinal(n)) if (n >= 1)
             return "и" if (n >= 0)
           end
-          private(:renderOrdi)
-          def renderOrdti(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          private(:format_ordi)
+          def format_ordti(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "ти" if (n >= 0)
           end
-          private(:renderOrdti)
-          def renderSpelloutOrdinal(n)
+          private(:format_ordti)
+          def format_spellout_ordinal(n)
             is_fractional = (n != n.floor)
-            return ("минус " + renderSpelloutOrdinal(-n)) if (n < 0)
+            return ("минус " + format_spellout_ordinal(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             if (n >= 400) then
-              return ((renderSpelloutCardinalFeminine((n / 400.0).floor) + "сто") + renderOrdti((n % 100)))
+              return ((format_spellout_cardinal_feminine((n / 400.0).floor) + "сто") + format_ordti((n % 100)))
             end
-            return ("триста" + renderOrdti((n % 100))) if (n >= 300)
-            return ("двеста" + renderOrdti((n % 100))) if (n >= 200)
-            return ("сто" + renderOrdti((n % 100))) if (n >= 100)
-            return ("деведесет" + renderOrdi((n % 10))) if (n >= 90)
-            return ("осамдесет" + renderOrdi((n % 10))) if (n >= 80)
-            return ("седамдесет" + renderOrdi((n % 10))) if (n >= 70)
-            return ("шездесет" + renderOrdi((n % 10))) if (n >= 60)
-            return ("педесет" + renderOrdi((n % 10))) if (n >= 50)
-            return ("четрдесет" + renderOrdi((n % 10))) if (n >= 40)
-            return ("тридесет" + renderOrdi((n % 10))) if (n >= 30)
-            return ("двадесет" + renderOrdi((n % 10))) if (n >= 20)
+            return ("триста" + format_ordti((n % 100))) if (n >= 300)
+            return ("двеста" + format_ordti((n % 100))) if (n >= 200)
+            return ("сто" + format_ordti((n % 100))) if (n >= 100)
+            return ("деведесет" + format_ordi((n % 10))) if (n >= 90)
+            return ("осамдесет" + format_ordi((n % 10))) if (n >= 80)
+            return ("седамдесет" + format_ordi((n % 10))) if (n >= 70)
+            return ("шездесет" + format_ordi((n % 10))) if (n >= 60)
+            return ("педесет" + format_ordi((n % 10))) if (n >= 50)
+            return ("четрдесет" + format_ordi((n % 10))) if (n >= 40)
+            return ("тридесет" + format_ordi((n % 10))) if (n >= 30)
+            return ("двадесет" + format_ordi((n % 10))) if (n >= 20)
             return "деветнаести" if (n >= 19)
             return "осамнаести" if (n >= 18)
             return "седамнаести" if (n >= 17)
@@ -326,7 +340,7 @@ module TwitterCldr
             return "други" if (n >= 2)
             return "први" if (n >= 1)
             return "нулти" if (n >= 0)
-          end)
+          end
         end
       end
     end

@@ -8,6 +8,9 @@ require 'sexp'
 module TwitterCldr
   module Resources
     module Rbnf
+
+      Grouping = Struct.new(:name, :rule_sets)
+
       class RuleSet
 
         attr_reader :type, :access, :rules
@@ -17,41 +20,56 @@ module TwitterCldr
           @access = access
         end
 
-        def self.get_safe_renderer_name(renderer_name)
-          "render-#{renderer_name}"
-            .gsub(/[^\w-]/, '-')
-            .gsub(/[-_]+([0-9a-z])/i) { |match| $1.upcase }
-            .gsub('GREEKNUMERALMAJUSCULES', 'GreekNumeralMajuscules')
-        end
+        class << self
 
-        def self.create_class_ast(locale, class_name, function_asts, module_hierarchy = [])
-          if module_hierarchy.size < 1
-            raise "Must have a module hierarchy of at least depth 1."
+          def get_safe_renderer_name(renderer_name)
+            "format-#{renderer_name}"
+              .gsub(/[^\w-]/, '-')
+              .gsub(/[-_]+/, '_')
+              .gsub('GREEKNUMERALMAJUSCULES', 'GreekNumeralMajuscules')
           end
 
-          klass = s(:attrasgn,
-            s(:ivar, :@formatters),
-            :[]=,
-            s(:lit, locale),
-            s(:cdecl,
-              class_name,
-              s(:iter,
-                s(:call, s(:const, :Class), :new),
-                s(:args),
-                s(:block,
-                  s(:sclass, s(:self), *function_asts)
+          def get_safe_grouping_name(grouping_name)
+            grouping_name.gsub(/Rules\z/, "")
+          end
+
+          def get_safe_class_name(locale)
+            TwitterCldr::Shared::Languages.from_code(locale).gsub(" ", "").to_sym
+          end
+
+          def create_class_ast(namespace, class_name, function_asts)
+            s(:class, s(:colon2, s(:const, namespace), class_name), nil, s(:sclass, s(:self), *function_asts))
+          end
+
+          def create_module_memo_ast(locale, class_name)
+            s(:attrasgn,
+              s(:ivar, :@formatters),
+              :[]=,
+              s(:lit, locale),
+              s(:cdecl,
+                class_name,
+                s(:iter,
+                  s(:call, s(:const, :Module), :new),
+                  s(:args)
                 )
               )
             )
-          )
-
-          mod = s(:module, module_hierarchy.last, klass)
-
-          (0...module_hierarchy.size - 1).reverse_each do |i|
-            mod = s(:module, module_hierarchy[i], mod)
           end
 
-          mod
+          def create_module_ast(sexps, module_hierarchy = [])
+            if module_hierarchy.size < 1
+              raise "Must have a module hierarchy of at least depth 1."
+            end
+
+            mod = s(:module, module_hierarchy.last, *sexps)
+
+            (0...module_hierarchy.size - 1).reverse_each do |i|
+              mod = s(:module, module_hierarchy[i], mod)
+            end
+
+            mod
+          end
+
         end
 
         def add_rule(rule)
@@ -209,11 +227,26 @@ module TwitterCldr
                 Rule.new(rule.value, rule_parts.optional, rule.radix)
               )
 
-              # "(n == #{rule.value.to_i(10)} ? '' : #{optional_rule_expression_ast})"
+              # n == #{rule.value.to_i}
+              conditions = s(:call,
+                s(:call, nil, :n), :==, s(:lit, rule.value.to_i)
+              )
+
+              # n == #{rule.value.to_i} && n % 10 == 0
+              conditions = if rule_parts.skip_multiple_of_ten?
+                s(:or,
+                  conditions,
+                  s(:call,
+                    s(:call, s(:call, nil, :n), :%, s(:lit, 10)), :==, s(:lit, 0)
+                  )
+                )
+              else
+                conditions
+              end
+
+              # "(conditions ? '' : #{optional_rule_expression_ast})"
               ast_list << s(:if,
-                s(:call,
-                  s(:call, nil, :n), :==, s(:lit, rule.value.to_i)  # to_i(rule.radix)
-                ),
+                conditions,
                 s(:str, ""),
                 optional_rule_expression_ast
               )

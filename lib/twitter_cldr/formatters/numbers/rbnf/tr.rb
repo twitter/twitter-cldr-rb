@@ -6,85 +6,87 @@
 module TwitterCldr
   module Formatters
     module RuleBasedNumberFormatter
-      @formatters[:tr] = Turkish = Class.new do
+      @formatters[:tr] = Turkish = Module.new { }
+      
+      class Turkish::Spellout
         class << self
-          (def renderSpelloutNumberingYear(n)
+          def format_spellout_numbering_year(n)
             is_fractional = (n != n.floor)
             return n.to_s if is_fractional and (n > 1)
-            return renderSpelloutNumbering(n) if (n >= 0)
+            return format_spellout_numbering(n) if (n >= 0)
           end
-          def renderSpelloutNumbering(n)
-            return renderSpelloutCardinal(n) if (n >= 0)
+          def format_spellout_numbering(n)
+            return format_spellout_cardinal(n) if (n >= 0)
           end
-          def renderSpelloutCardinal(n)
+          def format_spellout_cardinal(n)
             is_fractional = (n != n.floor)
-            return ("eksi " + renderSpelloutCardinal(-n)) if (n < 0)
+            return ("eksi " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((renderSpelloutCardinal(n.floor) + " virgül ") + renderSpelloutCardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " virgül ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutCardinal((n / 1.0e+15).floor) + " katrilyon") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal((n / 1.0e+15).floor) + " katrilyon") + (if (n == 1000000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000000.0).floor) + " trilyon") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " trilyon") + (if (n == 1000000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutCardinal((n / 1000000000.0).floor) + " milyar") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " milyar") + (if (n == 1000000000) then
                 ""
               else
-                (" " + renderSpelloutCardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 100000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((renderSpelloutCardinal((n / 1000000.0).floor) + " milyon") + ((n == 1000000) ? ("") : ((" " + renderSpelloutCardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000.0).floor) + " milyon") + ((n == 1000000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
             end
             if (n >= 2000) then
-              return ((renderSpelloutCardinal((n / 2000.0).floor) + " bin") + ((n == 2000) ? ("") : ((" " + renderSpelloutCardinal((n % 1000))))))
+              return ((format_spellout_cardinal((n / 2000.0).floor) + " bin") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal((n % 1000))))))
             end
             if (n >= 1000) then
-              return ("bin" + ((n == 1000) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("bin" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 200) then
-              return ((renderSpelloutCardinal((n / 200.0).floor) + " yüz") + ((n == 200) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 200.0).floor) + " yüz") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 100) then
-              return ("yüz" + ((n == 100) ? ("") : ((" " + renderSpelloutCardinal((n % 100))))))
+              return ("yüz" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
             end
             if (n >= 90) then
-              return ("doksan" + ((n == 90) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("doksan" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 80) then
-              return ("seksen" + ((n == 80) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("seksen" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 70) then
-              return ("yetmiş" + ((n == 70) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("yetmiş" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 60) then
-              return ("altmış" + ((n == 60) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("altmış" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 50) then
-              return ("elli" + ((n == 50) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("elli" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 40) then
-              return ("kırk" + ((n == 40) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("kırk" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 30) then
-              return ("otuz" + ((n == 30) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("otuz" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 20) then
-              return ("yirmi" + ((n == 20) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("yirmi" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             if (n >= 10) then
-              return ("on" + ((n == 10) ? ("") : ((" " + renderSpelloutCardinal((n % 10))))))
+              return ("on" + ((n == 10) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
             end
             return "dokuz" if (n >= 9)
             return "sekiz" if (n >= 8)
@@ -97,60 +99,60 @@ module TwitterCldr
             return "bir" if (n >= 1)
             return "sıfır" if (n >= 0)
           end
-          def renderInci(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          def format_inci(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "inci" if (n >= 0)
           end
-          private(:renderInci)
-          def renderNci(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          private(:format_inci)
+          def format_nci(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "nci" if (n >= 0)
           end
-          private(:renderNci)
-          def renderNc-(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          private(:format_nci)
+          def format_nc_(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "üncü" if (n >= 0)
           end
-          private(:"renderNc-")
-          def renderUncu(n)
-            return (" " + renderSpelloutOrdinal(n)) if (n >= 1)
+          private(:format_nc_)
+          def format_uncu(n)
+            return (" " + format_spellout_ordinal(n)) if (n >= 1)
             return "uncu" if (n >= 0)
           end
-          private(:renderUncu)
-          def renderSpelloutOrdinal(n)
+          private(:format_uncu)
+          def format_spellout_ordinal(n)
             is_fractional = (n != n.floor)
-            return ("eksi " + renderSpelloutOrdinal(-n)) if (n < 0)
+            return ("eksi " + format_spellout_ordinal(-n)) if (n < 0)
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + "'inci") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((renderSpelloutNumbering((n / 1.0e+15).floor) + " katrilyon") + renderUncu((n % 100000000000000)))
+              return ((format_spellout_numbering((n / 1.0e+15).floor) + " katrilyon") + format_uncu((n % 100000000000000)))
             end
             if (n >= 1000000000000) then
-              return ((renderSpelloutNumbering((n / 1000000000000.0).floor) + " trilyon") + renderUncu((n % 100000000000)))
+              return ((format_spellout_numbering((n / 1000000000000.0).floor) + " trilyon") + format_uncu((n % 100000000000)))
             end
             if (n >= 1000000000) then
-              return ((renderSpelloutNumbering((n / 1000000000.0).floor) + " milyar") + "ıncı")
+              return ((format_spellout_numbering((n / 1000000000.0).floor) + " milyar") + "ıncı")
             end
             if (n >= 1000000) then
-              return ((renderSpelloutNumbering((n / 1000000.0).floor) + " milyon") + renderUncu((n % 100000)))
+              return ((format_spellout_numbering((n / 1000000.0).floor) + " milyon") + format_uncu((n % 100000)))
             end
             if (n >= 2000) then
-              return ((renderSpelloutNumbering((n / 2000.0).floor) + " bin") + renderInci((n % 1000)))
+              return ((format_spellout_numbering((n / 2000.0).floor) + " bin") + format_inci((n % 1000)))
             end
-            return ("bin" + renderInci((n % 100))) if (n >= 1000)
+            return ("bin" + format_inci((n % 100))) if (n >= 1000)
             if (n >= 200) then
-              return ((renderSpelloutNumbering((n / 200.0).floor) + " yüz") + "üncü")
+              return ((format_spellout_numbering((n / 200.0).floor) + " yüz") + "üncü")
             end
             return ("yüz" + "üncü") if (n >= 100)
             return ("doksan" + "ıncı") if (n >= 90)
-            return ("seksen" + renderInci((n % 10))) if (n >= 80)
-            return ("yetmiş" + renderInci((n % 10))) if (n >= 70)
+            return ("seksen" + format_inci((n % 10))) if (n >= 80)
+            return ("yetmiş" + format_inci((n % 10))) if (n >= 70)
             return ("altmış" + "ıncı") if (n >= 60)
-            return ("elli" + renderNci((n % 10))) if (n >= 50)
+            return ("elli" + format_nci((n % 10))) if (n >= 50)
             return ("kırk" + "ıncı") if (n >= 40)
-            return ("otuz" + renderUncu((n % 10))) if (n >= 30)
-            return ("yirmi" + renderNci((n % 10))) if (n >= 20)
-            return ("on" + renderUncu((n % 10))) if (n >= 10)
+            return ("otuz" + format_uncu((n % 10))) if (n >= 30)
+            return ("yirmi" + format_nci((n % 10))) if (n >= 20)
+            return ("on" + format_uncu((n % 10))) if (n >= 10)
             return "dokuzuncu" if (n >= 9)
             return "sekizinci" if (n >= 8)
             return "yedinci" if (n >= 7)
@@ -162,14 +164,19 @@ module TwitterCldr
             return "birinci" if (n >= 1)
             return "sıfırıncı" if (n >= 0)
           end
-          def renderDigitsOrdinalIndicator(n)
+        end
+      end
+      
+      class Turkish::Ordinal
+        class << self
+          def format_digits_ordinal_indicator(n)
             return "inci" if (n >= 0)
           end
-          private(:renderDigitsOrdinalIndicator)
-          def renderDigitsOrdinal(n)
-            return ("−" + renderDigitsOrdinal(-n)) if (n < 0)
-            return (n.to_s + renderDigitsOrdinalIndicator(n)) if (n >= 0)
-          end)
+          private(:format_digits_ordinal_indicator)
+          def format_digits_ordinal(n)
+            return ("−" + format_digits_ordinal(-n)) if (n < 0)
+            return (n.to_s + format_digits_ordinal_indicator(n)) if (n >= 0)
+          end
         end
       end
     end

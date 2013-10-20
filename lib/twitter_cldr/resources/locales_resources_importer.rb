@@ -12,8 +12,7 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
-      LOCALE_COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies territories rbnf]
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root]
+      COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies territories]
 
       # Arguments:
       #
@@ -25,9 +24,9 @@ module TwitterCldr
         @output_path = output_path
       end
 
-      def import(&block)
+      def import
         prepare_ruby_cldr
-        import_components(&block)
+        import_components
       end
 
       private
@@ -49,39 +48,26 @@ module TwitterCldr
       def import_components
         export_args = {
           :locales => TwitterCldr.supported_locales,
-          :components => LOCALE_COMPONENTS,
+          :components => COMPONENTS,
           :target => File.join(@output_path, 'locales'),
           :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
-
-        counter = 0
-        total = export_args[:locales].size + SHARED_COMPONENTS.size
-        prev_locale = nil
 
         Cldr::Export.export(export_args) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
           deep_symbolize(component, locale, path)
-
-          if prev_locale != locale
-            counter += 1
-            yield counter, total, locale.to_s if block_given?
-          end
-
-          prev_locale = locale
         end
 
         export_args = {
-          :components => SHARED_COMPONENTS,
+          :components => ["currency_digits_and_rounding"],
           :target => File.join(@output_path, 'shared'),
           :merge => true
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
           deep_symbolize(component, locale, path)
-          counter += 1
-          yield counter, total, component if block_given?
         end
 
         copy_zh_hant_plurals
@@ -139,15 +125,15 @@ module TwitterCldr
       end
 
       BUDDHIST_CALENDAR = {
-        'formats' => {
-          'date' => {
-            'default' => :'calendars.buddhist.formats.date.medium',
-            'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
-            'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
-            'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
-            'short'   => { 'pattern' => 'd/M/#{y + 543}' }
+          'formats' => {
+              'date' => {
+                  'default' => :'calendars.buddhist.formats.date.medium',
+                  'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
+                  'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
+                  'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
+                  'short'   => { 'pattern' => 'd/M/#{y + 543}' }
+              }
           }
-        }
       }
 
     end

@@ -5,7 +5,6 @@
 
 module TwitterCldr
   module Resources
-    autoload :IcuBasedImporter,                   'twitter_cldr/resources/icu_based_importer'
     autoload :CanonicalCompositionsUpdater,       'twitter_cldr/resources/canonical_compositions_updater'
     autoload :CollationTriesDumper,               'twitter_cldr/resources/collation_tries_dumper'
     autoload :CompositionExclusionsImporter,      'twitter_cldr/resources/composition_exclusions_importer'
@@ -19,6 +18,5 @@ module TwitterCldr
     autoload :TailoringImporter,                  'twitter_cldr/resources/tailoring_importer'
     autoload :UnicodeDataImporter,                'twitter_cldr/resources/unicode_data_importer'
     autoload :BidiTestImporter,                   'twitter_cldr/resources/bidi_test_importer'
-    autoload :Rbnf,                               'twitter_cldr/resources/rbnf'
   end
 end

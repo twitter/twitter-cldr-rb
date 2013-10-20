@@ -86,7 +86,7 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 
 ### Dates and Times
 
-`Date`, `Time`, and `DateTime` objects are supported:
+`Time`, and `DateTime` objects are supported.  `Date` objects are supported transiently:
 
 ```ruby
 DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011 21:44:57 UTC -08:00"
@@ -94,15 +94,15 @@ DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011 21
 DateTime.now.localize(:es).to_medium_s             # "12/12/2011 21:44:57"
 DateTime.now.localize(:es).to_short_s              # "12/12/11 21:44"
 
-Date.today.localize(:es).to_full_s                 # "lunes 12 de diciembre de 2011"
-Date.today.localize(:es).to_long_s                 # "12 de diciembre de 2011"
-Date.today.localize(:es).to_medium_s               # "12/12/2011"
-Date.today.localize(:es).to_short_s                # "12/12/11"
-
 Time.now.localize(:es).to_full_s                   # "21:44:57 UTC -0800"
 Time.now.localize(:es).to_long_s                   # "21:44:57 UTC"
 Time.now.localize(:es).to_medium_s                 # "21:44:57"
 Time.now.localize(:es).to_short_s                  # "21:44"
+
+DateTime.now.localize(:es).to_date.to_full_s       # "lunes 12 de diciembre de 2011"
+DateTime.now.localize(:es).to_date.to_long_s       # "12 de diciembre de 2011"
+DateTime.now.localize(:es).to_date.to_medium_s     # "12/12/2011"
+DateTime.now.localize(:es).to_date.to_short_s      # "12/12/11"
 ```
 
 The default CLDR data set only includes 4 date formats, full, long, medium, and short.  See below for a list of additional formats.

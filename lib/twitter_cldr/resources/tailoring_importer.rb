@@ -4,13 +4,16 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'nokogiri'
+require 'java'
+
+require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
     # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version 49.1 (available at
     # http://download.icu-project.org/files/icu4j/49.1/icu4j-49_1.jar).
     #
-    class TailoringImporter < IcuBasedImporter
+    class TailoringImporter
 
       SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
       SIMPLE_RULES      = %w[p s t i]
@@ -52,10 +55,15 @@ module TwitterCldr
 
       def import(locales)
         TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
-        locales.each { |locale, idx| import_locale(locale) }
+        locales.each { |locale| import_locale(locale) }
       end
 
       private
+
+      def require_icu4j(icu4j_path)
+        TwitterCldr::Resources.download_icu4j_if_necessary(icu4j_path)
+        require icu4j_path
+      end
 
       def import_locale(locale)
         print "Importing %8s\t--\t" % locale
@@ -114,9 +122,9 @@ module TwitterCldr
         end
 
         {
-          :collator_options        => parse_collator_options(collation_rules),
-          :tailored_table          => parse_tailorings(collation_rules, locale),
-          :suppressed_contractions => parse_suppressed_contractions(collation_rules)
+            :collator_options        => parse_collator_options(collation_rules),
+            :tailored_table          => parse_tailorings(collation_rules, locale),
+            :suppressed_contractions => parse_suppressed_contractions(collation_rules)
         }
       end
 

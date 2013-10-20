@@ -183,6 +183,6 @@ namespace :update do
   task :rbnf_classes do |_, args|
     TwitterCldr::Resources::Rbnf::ClassGenerator.new(
       './lib/twitter_cldr/formatters/numbers/rbnf'
-    ).generate(["en"], &progress_reporter)
+    ).generate(TwitterCldr.supported_locales, &progress_reporter)
   end
 end

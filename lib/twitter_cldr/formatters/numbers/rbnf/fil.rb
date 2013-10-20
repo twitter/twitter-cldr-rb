@@ -20,15 +20,27 @@ module TwitterCldr
           end
           def format_number_times(n)
             if (n >= 1000) then
-              return ((format_number_times((n / 1000.0).floor) + " libó") + ((n == 1000) ? ("") : (("’t " + format_number_times((n % 100))))))
+              return ((format_number_times((n / 1000).floor) + " libó") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                ("’t " + format_number_times((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_number_times((n / 100.0).floor) + " daán") + ((n == 100) ? ("") : ((" at " + format_number_times((n % 100))))))
+              return ((format_number_times((n / 100).floor) + " daán") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" at " + format_number_times((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_number_times((n / 20.0).floor) + " pû") + ((n == 20) ? ("") : (("’t " + format_number_times((n % 10))))))
+              return ((format_number_times((n / 100).floor) + " pû") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                ("’t " + format_number_times((n % 100)))
+              end))
             end
-            return ("labíng-" + format_number_times((n % 10))) if (n >= 11)
+            return ("labíng-" + format_number_times((n % 100))) if (n >= 11)
             return "sampûng" if (n >= 10)
             return "siyám na" if (n >= 9)
             return "walóng" if (n >= 8)
@@ -45,43 +57,59 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " tuldok ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " tuldok ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_number_times((n / 1.0e+15).floor) + " katrilyón") + (if (n == 1000000000000000) then
+              return ((format_number_times((n / 1000000000000000).floor) + " katrilyón") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" at " + format_spellout_cardinal((n % 100000000000000)))
+                (" at " + format_spellout_cardinal((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_number_times((n / 1000000000000.0).floor) + " trilyón") + (if (n == 1000000000000) then
+              return ((format_number_times((n / 1000000000000).floor) + " trilyón") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" at " + format_spellout_cardinal((n % 100000000000)))
+                (" at " + format_spellout_cardinal((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_number_times((n / 1000000000.0).floor) + " bilyón") + (if (n == 1000000000) then
+              return ((format_number_times((n / 1000000000).floor) + " bilyón") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" at " + format_spellout_cardinal((n % 100000000)))
+                (" at " + format_spellout_cardinal((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_number_times((n / 1000000.0).floor) + " milyón") + ((n == 1000000) ? ("") : ((" at " + format_spellout_cardinal((n % 100000))))))
+              return ((format_number_times((n / 1000000).floor) + " milyón") + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" at " + format_spellout_cardinal((n % 1000000)))
+              end))
             end
             if (n >= 1000) then
-              return ((format_number_times((n / 1000.0).floor) + " libó") + ((n == 1000) ? ("") : (("’t " + format_spellout_cardinal((n % 100))))))
+              return ((format_number_times((n / 1000).floor) + " libó") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                ("’t " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_number_times((n / 100.0).floor) + " daán") + ((n == 100) ? ("") : ((" at " + format_spellout_cardinal((n % 100))))))
+              return ((format_number_times((n / 100).floor) + " daán") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" at " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_number_times((n / 20.0).floor) + " pû") + ((n == 20) ? ("") : (("’t " + format_spellout_cardinal((n % 10))))))
+              return ((format_number_times((n / 100).floor) + " pû") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                ("’t " + format_spellout_cardinal((n % 100)))
+              end))
             end
-            return ("labíng-" + format_spellout_cardinal((n % 10))) if (n >= 11)
+            return ("labíng-" + format_spellout_cardinal((n % 100))) if (n >= 11)
             return "sampû" if (n >= 10)
             return "siyám" if (n >= 9)
             return "waló" if (n >= 8)

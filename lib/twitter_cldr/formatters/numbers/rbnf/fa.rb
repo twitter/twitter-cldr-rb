@@ -22,79 +22,155 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("منفی " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " ممیز ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " ممیز ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000)
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " هزار میلیارد") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000).floor) + " هزار میلیارد") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_cardinal((n % 100000000000)))
+                (" و " + format_spellout_cardinal((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " میلیارد") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000).floor) + " میلیارد") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_cardinal((n % 100000000)))
+                (" و " + format_spellout_cardinal((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal((n / 1000000.0).floor) + " میلیون") + ((n == 1000000) ? ("") : ((" و " + format_spellout_cardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000).floor) + " میلیون") + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000000)))
+              end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal((n / 1000.0).floor) + " هزار") + ((n == 1000) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000).floor) + " هزار") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 900) then
-              return ("نهصد" + ((n == 900) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("نهصد" + (if ((n == 900) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 800) then
-              return ("هشتصد" + ((n == 800) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("هشتصد" + (if ((n == 800) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 700) then
-              return ("هفتصد" + ((n == 700) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("هفتصد" + (if ((n == 700) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 600) then
-              return ("ششصد" + ((n == 600) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("ششصد" + (if ((n == 600) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 500) then
-              return ("پانصد" + ((n == 500) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("پانصد" + (if ((n == 500) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 400) then
-              return ("چهارصد" + ((n == 400) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("چهارصد" + (if ((n == 400) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 300) then
-              return ("سیصد" + ((n == 300) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("سیصد" + (if ((n == 300) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ("دویست" + ((n == 200) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("دویست" + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("صد" + ((n == 100) ? ("") : ((" و " + format_spellout_cardinal((n % 100))))))
+              return ("صد" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("نود" + ((n == 90) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("نود" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("هشتاد" + ((n == 80) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("هشتاد" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("هفتاد" + ((n == 70) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("هفتاد" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("شصت" + ((n == 60) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("شصت" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("پنجاه" + ((n == 50) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("پنجاه" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("چهل" + ((n == 40) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("چهل" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("سی" + ((n == 30) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("سی" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("بیست" + ((n == 20) ? ("") : ((" و " + format_spellout_cardinal((n % 10))))))
+              return ("بیست" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_cardinal((n % 100)))
+              end))
             end
             return "نوزده" if (n >= 19)
             return "هجده" if (n >= 18)

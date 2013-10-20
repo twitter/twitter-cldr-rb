@@ -22,34 +22,50 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("ऋण " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " दशमलव ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " दशमलव ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 100000000000) then
-              return ((format_spellout_cardinal((n / 100000000000.0).floor) + " खरब") + (if (n == 100000000000) then
+              return ((format_spellout_cardinal((n / 100000000000).floor) + " खरब") + (if ((n == 100000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal((n % 100000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " अरब") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000).floor) + " अरब") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 1000000000)))
               end))
             end
             if (n >= 10000000) then
-              return ((format_spellout_cardinal((n / 10000000.0).floor) + " करोड़") + ((n == 10000000) ? ("") : ((" " + format_spellout_cardinal((n % 10000000))))))
+              return ((format_spellout_cardinal((n / 10000000).floor) + " करोड़") + (if ((n == 10000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 10000000)))
+              end))
             end
             if (n >= 100000) then
-              return ((format_spellout_cardinal((n / 100000.0).floor) + " लाख") + ((n == 100000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 100000).floor) + " लाख") + (if ((n == 100000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100000)))
+              end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal((n / 1000.0).floor) + " हज़ार") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000).floor) + " हज़ार") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal((n / 100.0).floor) + " सौ") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 100).floor) + " सौ") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             return "निन्यानबे" if (n >= 99)
             return "अट्ठानबे" if (n >= 98)

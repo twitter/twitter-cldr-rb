@@ -19,107 +19,171 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("ناقص " + format_spellout_numbering(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_numbering(n.floor) + " فاصل ") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_numbering(n.floor) + " فاصل ") + format_spellout_numbering((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_numbering_m((n / 2.0e+15).floor) + " بليار") + (if (n == 2000000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000000).floor) + " بليار") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("بليار" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("بليار" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000).floor) + " بليون") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000000000)))
+                (" و " + format_spellout_numbering((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000000.0).floor) + " بليون") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("بليون" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("بليون" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000).floor) + " مليار") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000000)))
+                (" و " + format_spellout_numbering((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000.0).floor) + " مليار") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("مليار" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("مليار" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_numbering_m((n / 10000000).floor) + " مليون") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000)))
+                (" و " + format_spellout_numbering((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_numbering_m((n / 2000000.0).floor) + " مليون") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("مليون" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("مليون" + ((n == 1000000) ? ("") : ((" و " + format_spellout_numbering((n % 100000))))))
-            end
             if (n >= 11000) then
-              return ((format_spellout_numbering_m((n / 11000.0).floor) + " ألف") + ((n == 11000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ((format_spellout_numbering_m((n / 1000000).floor) + " ألف") + (if ((n == 11000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000000)))
+              end))
             end
             if (n >= 3000) then
-              return ((format_spellout_numbering((n / 3000.0).floor) + " آلاف") + ((n == 3000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ((format_spellout_numbering((n / 10000).floor) + " آلاف") + (if ((n == 3000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000)))
+              end))
             end
             if (n >= 2000) then
-              return ("ألفين" + ((n == 2000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ("ألفين" + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("ألف" + ((n == 1000) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("ألف" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 300) then
-              return ((format_spellout_numbering((n / 300.0).floor) + " مائة") + ((n == 300) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ((format_spellout_numbering((n / 1000).floor) + " مائة") + (if ((n == 300) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ("مائتان" + ((n == 200) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("مائتان" + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("مائة" + ((n == 100) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("مائة" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return (((n == 90) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "تسعون")
+              return ((if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "تسعون")
             end
             if (n >= 80) then
-              return (((n == 80) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ثمانون")
+              return ((if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ثمانون")
             end
             if (n >= 70) then
-              return (((n == 70) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "سبعون")
+              return ((if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "سبعون")
             end
             if (n >= 60) then
-              return (((n == 60) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ستون")
+              return ((if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ستون")
             end
             if (n >= 50) then
-              return (((n == 50) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "خمسون")
+              return ((if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "خمسون")
             end
             if (n >= 40) then
-              return (((n == 40) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "أربعون")
+              return ((if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "أربعون")
             end
             if (n >= 30) then
-              return (((n == 30) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ثلاثون")
+              return ((if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ثلاثون")
             end
             if (n >= 20) then
-              return (((n == 20) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "عشرون")
+              return ((if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "عشرون")
             end
-            return (format_spellout_numbering((n % 10)) + " عشر") if (n >= 13)
+            return (format_spellout_numbering((n % 100)) + " عشر") if (n >= 13)
             return "إثنا عشر" if (n >= 12)
             return "إحدى عشر" if (n >= 11)
             return "عشرة" if (n >= 10)
@@ -138,107 +202,171 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("ناقص " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " فاصل ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " فاصل ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_numbering_m((n / 2.0e+15).floor) + " بليار") + (if (n == 2000000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000000).floor) + " بليار") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("بليار" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("بليار" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000).floor) + " بليون") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000000000)))
+                (" و " + format_spellout_numbering((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000000.0).floor) + " بليون") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("بليون" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("بليون" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000).floor) + " مليار") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000000)))
+                (" و " + format_spellout_numbering((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000.0).floor) + " مليار") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("مليار" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("مليار" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_numbering_m((n / 10000000).floor) + " مليون") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering((n % 100000000)))
+                (" و " + format_spellout_numbering((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_numbering_m((n / 2000000.0).floor) + " مليون") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("مليون" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("مليون" + ((n == 1000000) ? ("") : ((" و " + format_spellout_numbering((n % 100000))))))
-            end
             if (n >= 11000) then
-              return ((format_spellout_numbering_m((n / 11000.0).floor) + " ألف") + ((n == 11000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ((format_spellout_numbering_m((n / 1000000).floor) + " ألف") + (if ((n == 11000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000000)))
+              end))
             end
             if (n >= 3000) then
-              return ((format_spellout_numbering((n / 3000.0).floor) + " آلاف") + ((n == 3000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ((format_spellout_numbering((n / 10000).floor) + " آلاف") + (if ((n == 3000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000)))
+              end))
             end
             if (n >= 2000) then
-              return ("ألفي" + ((n == 2000) ? ("") : ((" و " + format_spellout_numbering((n % 1000))))))
+              return ("ألفي" + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("ألف" + ((n == 1000) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("ألف" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 300) then
-              return ((format_spellout_numbering((n / 300.0).floor) + " مائة") + ((n == 300) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ((format_spellout_numbering((n / 1000).floor) + " مائة") + (if ((n == 300) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ("مائتان" + ((n == 200) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("مائتان" + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("مائة" + ((n == 100) ? ("") : ((" و " + format_spellout_numbering((n % 100))))))
+              return ("مائة" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return (((n == 90) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "تسعون")
+              return ((if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "تسعون")
             end
             if (n >= 80) then
-              return (((n == 80) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ثمانون")
+              return ((if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ثمانون")
             end
             if (n >= 70) then
-              return (((n == 70) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "سبعون")
+              return ((if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "سبعون")
             end
             if (n >= 60) then
-              return (((n == 60) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ستون")
+              return ((if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ستون")
             end
             if (n >= 50) then
-              return (((n == 50) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "خمسون")
+              return ((if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "خمسون")
             end
             if (n >= 40) then
-              return (((n == 40) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "أربعون")
+              return ((if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "أربعون")
             end
             if (n >= 30) then
-              return (((n == 30) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "ثلاثون")
+              return ((if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "ثلاثون")
             end
             if (n >= 20) then
-              return (((n == 20) ? ("") : ((format_spellout_numbering((n % 10)) + " و "))) + "عشرون")
+              return ((if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering((n % 100)) + " و ")
+              end) + "عشرون")
             end
-            return (format_spellout_numbering((n % 10)) + " عشر") if (n >= 13)
+            return (format_spellout_numbering((n % 100)) + " عشر") if (n >= 13)
             return "إثنتا عشرة" if (n >= 12)
             return "إحدى عشر" if (n >= 11)
             return "عشرة" if (n >= 10)
@@ -256,107 +384,167 @@ module TwitterCldr
           def format_spellout_numbering_m(n)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_numbering_m((n / 2.0e+15).floor) + " بليار") + (if (n == 2000000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000000).floor) + " بليار") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("بليار" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("بليار" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000).floor) + " بليون") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000000.0).floor) + " بليون") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("بليون" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("بليون" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000).floor) + " مليار") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000.0).floor) + " مليار") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("مليار" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("مليار" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_numbering_m((n / 10000000).floor) + " مليون") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_numbering_m((n / 2000000.0).floor) + " مليون") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("مليون" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("مليون" + (if (n == 1000000) then
+            if (n >= 11000) then
+              return ((format_spellout_numbering_m((n / 1000000).floor) + " ألف") + (if ((n == 11000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000)))
+                (" و " + format_spellout_numbering_m((n % 1000000)))
               end))
             end
-            if (n >= 11000) then
-              return ((format_spellout_numbering_m((n / 11000.0).floor) + " ألف") + ((n == 11000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
-            end
             if (n >= 3000) then
-              return ((format_spellout_numbering((n / 3000.0).floor) + " آلاف") + ((n == 3000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
+              return ((format_spellout_numbering((n / 10000).floor) + " آلاف") + (if ((n == 3000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000)))
+              end))
             end
             if (n >= 2000) then
-              return ("ألفي" + ((n == 2000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
+              return ("ألفي" + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("ألف" + ((n == 1000) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("ألف" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 300) then
-              return ((format_spellout_numbering((n / 300.0).floor) + " مائة") + ((n == 300) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ((format_spellout_numbering((n / 1000).floor) + " مائة") + (if ((n == 300) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ("مائتان" + ((n == 200) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("مائتان" + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("مائة" + ((n == 100) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("مائة" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return (((n == 90) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "تسعون")
+              return ((if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "تسعون")
             end
             if (n >= 80) then
-              return (((n == 80) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ثمانون")
+              return ((if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ثمانون")
             end
             if (n >= 70) then
-              return (((n == 70) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "سبعون")
+              return ((if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "سبعون")
             end
             if (n >= 60) then
-              return (((n == 60) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ستون")
+              return ((if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ستون")
             end
             if (n >= 50) then
-              return (((n == 50) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "خمسون")
+              return ((if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "خمسون")
             end
             if (n >= 40) then
-              return (((n == 40) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "أربعون")
+              return ((if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "أربعون")
             end
             if (n >= 30) then
-              return (((n == 30) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ثلاثون")
+              return ((if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ثلاثون")
             end
             if (n >= 20) then
-              return (((n == 20) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "عشرون")
+              return ((if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "عشرون")
             end
-            return (format_spellout_numbering_m((n % 10)) + " عشر") if (n >= 13)
+            return (format_spellout_numbering_m((n % 100)) + " عشر") if (n >= 13)
             return "إثنا عشر" if (n >= 12)
             return "إحدى عشر" if (n >= 11)
             return "عشرة" if (n >= 10)
@@ -376,111 +564,173 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("ناقص " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return (((format_spellout_numbering_m(n.floor) + " فاصل ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f)) + " ")
+              return (((format_spellout_numbering_m(n.floor) + " فاصل ") + format_spellout_cardinal_masculine((n % 10))) + " ")
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_numbering_m((n / 2.0e+15).floor) + " بليار") + (if (n == 2000000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000000).floor) + " بليار") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("بليار" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("بليار" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000000).floor) + " بليون") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000000.0).floor) + " بليون") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("بليون" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("بليون" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_numbering_m((n / 10000000000).floor) + " مليار") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_numbering_m((n / 2000000000.0).floor) + " مليار") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("مليار" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("مليار" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_numbering_m((n / 10000000).floor) + " مليون") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000000)))
+                (" و " + format_spellout_numbering_m((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_numbering_m((n / 2000000.0).floor) + " مليون") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("مليون" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" و " + format_spellout_numbering_m((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("مليون" + (if (n == 1000000) then
+            if (n >= 11000) then
+              return ((format_spellout_numbering_m((n / 1000000).floor) + " ألف") + (if ((n == 11000) or ((n % 10) == 0)) then
                 ""
               else
-                (" و " + format_spellout_numbering_m((n % 100000)))
+                (" و " + format_spellout_numbering_m((n % 1000000)))
               end))
             end
-            if (n >= 11000) then
-              return ((format_spellout_numbering_m((n / 11000.0).floor) + " ألف") + ((n == 11000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
-            end
             if (n >= 3000) then
-              return ((format_spellout_numbering((n / 3000.0).floor) + " آلاف") + ((n == 3000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
+              return ((format_spellout_numbering((n / 10000).floor) + " آلاف") + (if ((n == 3000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000)))
+              end))
             end
             if (n >= 2000) then
-              return ("ألفي" + ((n == 2000) ? ("") : ((" و " + format_spellout_numbering_m((n % 1000))))))
+              return ("ألفي" + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("ألف" + ((n == 1000) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("ألف" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 300) then
-              return ((format_spellout_numbering((n / 300.0).floor) + " مائة") + ((n == 300) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ((format_spellout_numbering((n / 1000).floor) + " مائة") + (if ((n == 300) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ("مائتان" + ((n == 200) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("مائتان" + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("مائة" + ((n == 100) ? ("") : ((" و " + format_spellout_numbering_m((n % 100))))))
+              return ("مائة" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" و " + format_spellout_numbering_m((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return (((n == 90) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "تسعون")
+              return ((if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "تسعون")
             end
             if (n >= 80) then
-              return (((n == 80) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ثمانون")
+              return ((if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ثمانون")
             end
             if (n >= 70) then
-              return (((n == 70) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "سبعون")
+              return ((if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "سبعون")
             end
             if (n >= 60) then
-              return (((n == 60) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ستون")
+              return ((if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ستون")
             end
             if (n >= 50) then
-              return (((n == 50) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "خمسون")
+              return ((if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "خمسون")
             end
             if (n >= 40) then
-              return (((n == 40) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "أربعون")
+              return ((if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "أربعون")
             end
             if (n >= 30) then
-              return (((n == 30) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "ثلاثون")
+              return ((if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "ثلاثون")
             end
             if (n >= 20) then
-              return (((n == 20) ? ("") : ((format_spellout_numbering_m((n % 10)) + " و "))) + "عشرون")
+              return ((if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (format_spellout_numbering_m((n % 100)) + " و ")
+              end) + "عشرون")
             end
-            return (format_spellout_cardinal_masculine((n % 10)) + " عشر") if (n >= 13)
+            if (n >= 13) then
+              return (format_spellout_cardinal_masculine((n % 100)) + " عشر")
+            end
             return "إثنا عشر" if (n >= 12)
             return "إحدى عشر" if (n >= 11)
             return "عشرة" if (n >= 10)

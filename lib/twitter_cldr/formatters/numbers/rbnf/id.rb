@@ -22,49 +22,73 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " titik ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " titik ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal((n / 1.0e+15).floor) + " bilyar") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000000).floor) + " bilyar") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000000000)))
+                (" " + format_spellout_cardinal((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " bilyun") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000).floor) + " bilyun") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " milyar") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000).floor) + " milyar") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal((n / 1000000.0).floor) + " juts") + ((n == 1000000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000).floor) + " juts") + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000000)))
+              end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal((n / 2000.0).floor) + " ribu") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal((n % 1000))))))
+              return ((format_spellout_cardinal((n / 10000).floor) + " ribu") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("seribu" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ("seribu" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_cardinal((n / 200.0).floor) + " ratus") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000).floor) + " ratus") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("seratus" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ("seratus" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal((n / 20.0).floor) + " puluh") + ((n == 20) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ((format_spellout_cardinal((n / 100).floor) + " puluh") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
-            return (format_spellout_cardinal((n % 10)) + " belas") if (n >= 12)
+            return (format_spellout_cardinal((n % 100)) + " belas") if (n >= 12)
             return "sebelas" if (n >= 11)
             return "sepuluh" if (n >= 10)
             return "sembilan" if (n >= 9)

@@ -12,7 +12,7 @@ module TwitterCldr
         class << self
           def format_lenient_parse(n)
             if (n >= 0) then
-              return ((((((((((((n == 0) ? ("") : ("last primary ignorable ")) + " ") + format_lenient_parse((n / 0.0).floor)) + " ' ' ") + format_lenient_parse((n / 0.0).floor)) + " '") + "' ") + format_lenient_parse((n / 0.0).floor)) + " '-' ") + format_lenient_parse((n / 0.0).floor)) + " '­'")
+              return (((((((((((((n == 0) or ((n % 10) == 0)) ? ("") : ("last primary ignorable ")) + " ") + format_lenient_parse((n / 10).floor)) + " ' ' ") + format_lenient_parse((n / 10).floor)) + " '") + "' ") + format_lenient_parse((n / 10).floor)) + " '-' ") + format_lenient_parse((n / 10).floor)) + " '­'")
             end
           end
           private(:format_lenient_parse)
@@ -25,75 +25,91 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("meno " + format_spellout_numbering(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_numbering(n.floor) + " virgola ") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_numbering(n.floor) + " virgola ") + format_spellout_numbering((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2.0e+15).floor) + " biliardi") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000000).floor) + " biliardi") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("un biliardo" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_numbering((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("un biliardo" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000).floor) + " bilioni") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000000000)))
+                (" " + format_spellout_numbering((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000000.0).floor) + " bilioni") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("un bilione" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_numbering((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("un bilione" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000).floor) + " miliardi") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000000)))
+                (" " + format_spellout_numbering((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000.0).floor) + " miliardi") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("un miliardo" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_numbering((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("un miliardo" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000).floor) + " milioni") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000)))
+                (" " + format_spellout_numbering((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000.0).floor) + " milioni") + ((n == 2000000) ? ("") : ((" " + format_spellout_numbering((n % 1000000))))))
-            end
             if (n >= 1000000) then
-              return ("un milione" + ((n == 1000000) ? ("") : ((" " + format_spellout_numbering((n % 100000))))))
+              return ("un milione" + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 1000000)))
+              end))
             end
             if (n >= 2000) then
-              return ((format_msc_no_final((n / 2000.0).floor) + "­mila") + ((n == 2000) ? ("") : (("­" + format_spellout_numbering((n % 1000))))))
+              return ((format_msc_no_final((n / 10000).floor) + "­mila") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                ("­" + format_spellout_numbering((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("mille" + ((n == 1000) ? ("") : (("­" + format_spellout_numbering((n % 100))))))
+              return ("mille" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                ("­" + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_numbering((n / 200.0).floor) + "­cent") + format_msco_with_o((n % 100)))
+              return ((format_spellout_numbering((n / 1000).floor) + "­cent") + format_msco_with_o((n % 1000)))
             end
             return ("cent" + format_msco_with_o((n % 100))) if (n >= 100)
-            return ("novant" + format_msco_with_a((n % 10))) if (n >= 90)
-            return ("ottant" + format_msco_with_a((n % 10))) if (n >= 80)
-            return ("settant" + format_msco_with_a((n % 10))) if (n >= 70)
-            return ("sessant" + format_msco_with_a((n % 10))) if (n >= 60)
-            return ("cinquant" + format_msco_with_a((n % 10))) if (n >= 50)
-            return ("quarant" + format_msco_with_a((n % 10))) if (n >= 40)
-            return ("trent" + format_msco_with_a((n % 10))) if (n >= 30)
-            return ("vent" + format_msco_with_i((n % 10))) if (n >= 20)
+            return ("novant" + format_msco_with_a((n % 100))) if (n >= 90)
+            return ("ottant" + format_msco_with_a((n % 100))) if (n >= 80)
+            return ("settant" + format_msco_with_a((n % 100))) if (n >= 70)
+            return ("sessant" + format_msco_with_a((n % 100))) if (n >= 60)
+            return ("cinquant" + format_msco_with_a((n % 100))) if (n >= 50)
+            return ("quarant" + format_msco_with_a((n % 100))) if (n >= 40)
+            return ("trent" + format_msco_with_a((n % 100))) if (n >= 30)
+            return ("vent" + format_msco_with_i((n % 100))) if (n >= 20)
             return "diciannove" if (n >= 19)
             return "diciotto" if (n >= 18)
             return "diciassette" if (n >= 17)
@@ -153,91 +169,91 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("meno " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " virgola ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " virgola ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2.0e+15).floor) + " biliardi") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000000).floor) + " biliardi") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("un biliardo" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("un biliardo" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000).floor) + " bilioni") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000000.0).floor) + " bilioni") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("un bilione" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("un bilione" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000).floor) + " miliardi") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000.0).floor) + " miliardi") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("un miliardo" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("un miliardo" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000).floor) + " milioni") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000.0).floor) + " milioni") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("un milione" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("un milione" + (if (n == 1000000) then
+            if (n >= 2000) then
+              return ((format_msc_no_final((n / 10000).floor) + "­mila") + (if ((n == 2000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000)))
+                ("­" + format_spellout_cardinal_masculine((n % 10000)))
               end))
             end
-            if (n >= 2000) then
-              return ((format_msc_no_final((n / 2000.0).floor) + "­mila") + (if (n == 2000) then
+            if (n >= 1000) then
+              return ("mille" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 ("­" + format_spellout_cardinal_masculine((n % 1000)))
               end))
             end
-            if (n >= 1000) then
-              return ("mille" + (if (n == 1000) then
-                ""
-              else
-                ("­" + format_spellout_cardinal_masculine((n % 100)))
-              end))
-            end
             if (n >= 200) then
-              return ((format_spellout_cardinal_masculine((n / 200.0).floor) + "­cent") + format_msc_with_o((n % 100)))
+              return ((format_spellout_cardinal_masculine((n / 1000).floor) + "­cent") + format_msc_with_o((n % 1000)))
             end
             return ("cent" + format_msc_with_o((n % 100))) if (n >= 100)
-            return ("novant" + format_msc_with_a((n % 10))) if (n >= 90)
-            return ("ottant" + format_msc_with_a((n % 10))) if (n >= 80)
-            return ("settant" + format_msc_with_a((n % 10))) if (n >= 70)
-            return ("sessant" + format_msc_with_a((n % 10))) if (n >= 60)
-            return ("cinquant" + format_msc_with_a((n % 10))) if (n >= 50)
-            return ("quarant" + format_msc_with_a((n % 10))) if (n >= 40)
-            return ("trent" + format_msc_with_a((n % 10))) if (n >= 30)
-            return ("vent" + format_msc_with_i((n % 10))) if (n >= 20)
+            return ("novant" + format_msc_with_a((n % 100))) if (n >= 90)
+            return ("ottant" + format_msc_with_a((n % 100))) if (n >= 80)
+            return ("settant" + format_msc_with_a((n % 100))) if (n >= 70)
+            return ("sessant" + format_msc_with_a((n % 100))) if (n >= 60)
+            return ("cinquant" + format_msc_with_a((n % 100))) if (n >= 50)
+            return ("quarant" + format_msc_with_a((n % 100))) if (n >= 40)
+            return ("trent" + format_msc_with_a((n % 100))) if (n >= 30)
+            return ("vent" + format_msc_with_i((n % 100))) if (n >= 20)
             return format_spellout_numbering(n) if (n >= 2)
             return "un" if (n >= 1)
             return "zero" if (n >= 0)
@@ -269,17 +285,17 @@ module TwitterCldr
           def format_msc_no_final(n)
             return "ERROR" if (n >= 1000)
             if (n >= 200) then
-              return ((format_msc_no_final((n / 200.0).floor) + "­cent") + format_msc_with_o_nofinal((n % 100)))
+              return ((format_msc_no_final((n / 1000).floor) + "­cent") + format_msc_with_o_nofinal((n % 1000)))
             end
             return ("cent" + format_msc_with_o_nofinal((n % 100))) if (n >= 100)
-            return ("novant" + format_msc_with_a_nofinal((n % 10))) if (n >= 90)
-            return ("ottant" + format_msc_with_a_nofinal((n % 10))) if (n >= 80)
-            return ("settant" + format_msc_with_a_nofinal((n % 10))) if (n >= 70)
-            return ("sessant" + format_msc_with_a_nofinal((n % 10))) if (n >= 60)
-            return ("cinquant" + format_msc_with_a_nofinal((n % 10))) if (n >= 50)
-            return ("quarant" + format_msc_with_a_nofinal((n % 10))) if (n >= 40)
-            return ("trent" + format_msc_with_a_nofinal((n % 10))) if (n >= 30)
-            return ("vent" + format_msc_with_i_nofinal((n % 10))) if (n >= 20)
+            return ("novant" + format_msc_with_a_nofinal((n % 100))) if (n >= 90)
+            return ("ottant" + format_msc_with_a_nofinal((n % 100))) if (n >= 80)
+            return ("settant" + format_msc_with_a_nofinal((n % 100))) if (n >= 70)
+            return ("sessant" + format_msc_with_a_nofinal((n % 100))) if (n >= 60)
+            return ("cinquant" + format_msc_with_a_nofinal((n % 100))) if (n >= 50)
+            return ("quarant" + format_msc_with_a_nofinal((n % 100))) if (n >= 40)
+            return ("trent" + format_msc_with_a_nofinal((n % 100))) if (n >= 30)
+            return ("vent" + format_msc_with_i_nofinal((n % 100))) if (n >= 20)
             return format_spellout_cardinal_masculine(n) if (n >= 2)
             return "ERROR" if (n >= 0)
           end
@@ -306,87 +322,91 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("meno " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " virgola ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " virgola ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2.0e+15).floor) + " biliardi") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000000).floor) + " biliardi") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("un biliardo" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("un biliardo" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000000).floor) + " bilioni") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000000.0).floor) + " bilioni") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("un bilione" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("un bilione" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000000).floor) + " miliardi") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000.0).floor) + " miliardi") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("un miliardo" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("un miliardo" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_masculine((n / 10000000).floor) + " milioni") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000.0).floor) + " milioni") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("un milione" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("un milione" + (if (n == 1000000) then
+            if (n >= 2000) then
+              return ((format_msc_no_final((n / 10000).floor) + "­mila") + (if ((n == 2000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000)))
+                ("­" + format_spellout_cardinal_feminine((n % 10000)))
               end))
             end
-            if (n >= 2000) then
-              return ((format_msc_no_final((n / 2000.0).floor) + "­mila") + (if (n == 2000) then
+            if (n >= 1000) then
+              return ("mille" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 ("­" + format_spellout_cardinal_feminine((n % 1000)))
               end))
             end
-            if (n >= 1000) then
-              return ("mille" + ((n == 1000) ? ("") : (("­" + format_spellout_cardinal_feminine((n % 100))))))
-            end
             if (n >= 200) then
-              return ((format_spellout_cardinal_feminine((n / 200.0).floor) + "­cent") + format_fem_with_o((n % 100)))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + "­cent") + format_fem_with_o((n % 1000)))
             end
             return ("cent" + format_fem_with_o((n % 100))) if (n >= 100)
-            return ("novant" + format_fem_with_a((n % 10))) if (n >= 90)
-            return ("ottant" + format_fem_with_a((n % 10))) if (n >= 80)
-            return ("settant" + format_fem_with_a((n % 10))) if (n >= 70)
-            return ("sessant" + format_fem_with_a((n % 10))) if (n >= 60)
-            return ("cinquant" + format_fem_with_a((n % 10))) if (n >= 50)
-            return ("quarant" + format_fem_with_a((n % 10))) if (n >= 40)
-            return ("trent" + format_fem_with_a((n % 10))) if (n >= 30)
-            return ("vent" + format_fem_with_i((n % 10))) if (n >= 20)
+            return ("novant" + format_fem_with_a((n % 100))) if (n >= 90)
+            return ("ottant" + format_fem_with_a((n % 100))) if (n >= 80)
+            return ("settant" + format_fem_with_a((n % 100))) if (n >= 70)
+            return ("sessant" + format_fem_with_a((n % 100))) if (n >= 60)
+            return ("cinquant" + format_fem_with_a((n % 100))) if (n >= 50)
+            return ("quarant" + format_fem_with_a((n % 100))) if (n >= 40)
+            return ("trent" + format_fem_with_a((n % 100))) if (n >= 30)
+            return ("vent" + format_fem_with_i((n % 100))) if (n >= 20)
             return format_spellout_numbering(n) if (n >= 2)
             return "una" if (n >= 1)
             return "zero" if (n >= 0)
@@ -415,46 +435,46 @@ module TwitterCldr
             return n.to_s if is_fractional and (n > 1)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2.0e+15).floor) + "biliard­") + format_ordinal_esimo_with_o((n % 1000000000000000)))
+              return ((format_spellout_cardinal_masculine((n / 10000000000000000).floor) + "biliard­") + format_ordinal_esimo_with_o((n % 10000000000000000)))
             end
             if (n >= 1000000000000000) then
-              return ("biliard­" + format_ordinal_esimo_with_o((n % 100000000000000)))
+              return ("biliard­" + format_ordinal_esimo_with_o((n % 1000000000000000)))
             end
             if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000000.0).floor) + "bilion­") + format_ordinal_esimo((n % 1000000000000)))
+              return ((format_spellout_cardinal_masculine((n / 10000000000000).floor) + "bilion­") + format_ordinal_esimo((n % 10000000000000)))
             end
             if (n >= 1000000000000) then
-              return ("bilione­" + format_ordinal_esimo((n % 100000000000)))
+              return ("bilione­" + format_ordinal_esimo((n % 1000000000000)))
             end
             if (n >= 2000000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000000.0).floor) + "miliard­") + format_ordinal_esimo_with_o((n % 1000000000)))
+              return ((format_spellout_cardinal_masculine((n / 10000000000).floor) + "miliard­") + format_ordinal_esimo_with_o((n % 10000000000)))
             end
             if (n >= 1000000000) then
-              return ("miliard­" + format_ordinal_esimo_with_o((n % 100000000)))
+              return ("miliard­" + format_ordinal_esimo_with_o((n % 1000000000)))
             end
             if (n >= 2000000) then
-              return ((format_spellout_cardinal_masculine((n / 2000000.0).floor) + "milion­") + format_ordinal_esimo((n % 1000000)))
+              return ((format_spellout_cardinal_masculine((n / 10000000).floor) + "milion­") + format_ordinal_esimo((n % 10000000)))
             end
-            return ("milione­" + format_ordinal_esimo((n % 100000))) if (n >= 1000000)
+            return ("milione­" + format_ordinal_esimo((n % 1000000))) if (n >= 1000000)
             if (n >= 2001) then
-              return ((format_spellout_cardinal_masculine((n / 2001.0).floor) + "­mila­") + format_ordinal_esimo((n % 1000)))
+              return ((format_spellout_cardinal_masculine((n / 10000).floor) + "­mila­") + format_ordinal_esimo((n % 10000)))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_masculine((n / 2000.0).floor) + "­mille­") + format_ordinal_esimo((n % 1000)))
+              return ((format_spellout_cardinal_masculine((n / 10000).floor) + "­mille­") + format_ordinal_esimo((n % 10000)))
             end
-            return ("mille­" + format_ordinal_esimo((n % 100))) if (n >= 1000)
+            return ("mille­" + format_ordinal_esimo((n % 1000))) if (n >= 1000)
             if (n >= 200) then
-              return ((format_spellout_cardinal_masculine((n / 200.0).floor) + "­cent") + format_ordinal_esimo_with_o((n % 100)))
+              return ((format_spellout_cardinal_masculine((n / 1000).floor) + "­cent") + format_ordinal_esimo_with_o((n % 1000)))
             end
             return ("cent" + format_ordinal_esimo_with_o((n % 100))) if (n >= 100)
-            return ("novant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 90)
-            return ("ottant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 80)
-            return ("settant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 70)
-            return ("sessant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 60)
-            return ("cinquant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 50)
-            return ("quarant" + format_ordinal_esimo_with_a((n % 10))) if (n >= 40)
-            return ("trent" + format_ordinal_esimo_with_a((n % 10))) if (n >= 30)
-            return ("vent" + format_ordinal_esimo_with_i((n % 10))) if (n >= 20)
+            return ("novant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 90)
+            return ("ottant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 80)
+            return ("settant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 70)
+            return ("sessant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 60)
+            return ("cinquant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 50)
+            return ("quarant" + format_ordinal_esimo_with_a((n % 100))) if (n >= 40)
+            return ("trent" + format_ordinal_esimo_with_a((n % 100))) if (n >= 30)
+            return ("vent" + format_ordinal_esimo_with_i((n % 100))) if (n >= 20)
             return "diciannovesimo" if (n >= 19)
             return "diciottesimo" if (n >= 18)
             return "diciassettesimo" if (n >= 17)
@@ -538,46 +558,46 @@ module TwitterCldr
             return n.to_s if is_fractional and (n > 1)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + "biliard­") + format_ordinal_esima_with_o((n % 1000000000000000)))
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + "biliard­") + format_ordinal_esima_with_o((n % 10000000000000000)))
             end
             if (n >= 1000000000000000) then
-              return ("biliard­" + format_ordinal_esima_with_o((n % 100000000000000)))
+              return ("biliard­" + format_ordinal_esima_with_o((n % 1000000000000000)))
             end
             if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + "bilion­") + format_ordinal_esima((n % 1000000000000)))
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + "bilion­") + format_ordinal_esima((n % 10000000000000)))
             end
             if (n >= 1000000000000) then
-              return ("bilione­" + format_ordinal_esima((n % 100000000000)))
+              return ("bilione­" + format_ordinal_esima((n % 1000000000000)))
             end
             if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + "miliard­") + format_ordinal_esima_with_o((n % 1000000000)))
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + "miliard­") + format_ordinal_esima_with_o((n % 10000000000)))
             end
             if (n >= 1000000000) then
-              return ("miliard­" + format_ordinal_esima_with_o((n % 100000000)))
+              return ("miliard­" + format_ordinal_esima_with_o((n % 1000000000)))
             end
             if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + "milion­") + format_ordinal_esima((n % 1000000)))
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + "milion­") + format_ordinal_esima((n % 10000000)))
             end
-            return ("milione­" + format_ordinal_esima((n % 100000))) if (n >= 1000000)
+            return ("milione­" + format_ordinal_esima((n % 1000000))) if (n >= 1000000)
             if (n >= 2001) then
-              return ((format_spellout_cardinal_feminine((n / 2001.0).floor) + "­mila­") + format_ordinal_esima((n % 1000)))
+              return ((format_spellout_cardinal_feminine((n / 10000).floor) + "­mila­") + format_ordinal_esima((n % 10000)))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + "­mille­") + format_ordinal_esima((n % 1000)))
+              return ((format_spellout_cardinal_feminine((n / 10000).floor) + "­mille­") + format_ordinal_esima((n % 10000)))
             end
-            return ("mille­" + format_ordinal_esima((n % 100))) if (n >= 1000)
+            return ("mille­" + format_ordinal_esima((n % 1000))) if (n >= 1000)
             if (n >= 200) then
-              return ((format_spellout_cardinal_feminine((n / 200.0).floor) + "­cent") + format_ordinal_esima_with_o((n % 100)))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + "­cent") + format_ordinal_esima_with_o((n % 1000)))
             end
             return ("cent" + format_ordinal_esima_with_o((n % 100))) if (n >= 100)
-            return ("novant" + format_ordinal_esima_with_a((n % 10))) if (n >= 90)
-            return ("ottant" + format_ordinal_esima_with_a((n % 10))) if (n >= 80)
-            return ("settant" + format_ordinal_esima_with_a((n % 10))) if (n >= 70)
-            return ("sessant" + format_ordinal_esima_with_a((n % 10))) if (n >= 60)
-            return ("cinquant" + format_ordinal_esima_with_a((n % 10))) if (n >= 50)
-            return ("quarant" + format_ordinal_esima_with_a((n % 10))) if (n >= 40)
-            return ("trent" + format_ordinal_esima_with_a((n % 10))) if (n >= 30)
-            return ("vent" + format_ordinal_esima_with_i((n % 10))) if (n >= 20)
+            return ("novant" + format_ordinal_esima_with_a((n % 100))) if (n >= 90)
+            return ("ottant" + format_ordinal_esima_with_a((n % 100))) if (n >= 80)
+            return ("settant" + format_ordinal_esima_with_a((n % 100))) if (n >= 70)
+            return ("sessant" + format_ordinal_esima_with_a((n % 100))) if (n >= 60)
+            return ("cinquant" + format_ordinal_esima_with_a((n % 100))) if (n >= 50)
+            return ("quarant" + format_ordinal_esima_with_a((n % 100))) if (n >= 40)
+            return ("trent" + format_ordinal_esima_with_a((n % 100))) if (n >= 30)
+            return ("vent" + format_ordinal_esima_with_i((n % 100))) if (n >= 20)
             return "diciannovesima" if (n >= 19)
             return "diciottesima" if (n >= 18)
             return "diciassettesima" if (n >= 17)

@@ -22,55 +22,71 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("míneas " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " pointe ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " pointe ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1.0e+15).floor) + " kwadriliwn") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000000).floor) + " kwadriliwn") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000.0).floor) + " triliwn") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000).floor) + " triliwn") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000.0).floor) + " biliwn") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000).floor) + " biliwn") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000.0).floor) + " miliwn") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000).floor) + " miliwn") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000.0).floor) + " mil") + (if (n == 1000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000).floor) + " mil") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 1000)))
+              end))
+            end
+            if (n >= 100) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " cant") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
-            if (n >= 100) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 100.0).floor) + " cant") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
-            end
             if (n >= 30) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 30.0).floor) + " deg") + ((n == 30) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " deg") + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("dau ddeg" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("dau ddeg" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 10) then
-              return ("un deg" + ((n == 10) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("un deg" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 10)))
+              end))
             end
             return "naw" if (n >= 9)
             return "wyth" if (n >= 8)
@@ -89,67 +105,67 @@ module TwitterCldr
               return ("míneas " + format_spellout_cardinal_masculine_before_consonant(-n))
             end
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine_before_consonant(n.floor) + " pointe ") + format_spellout_cardinal_masculine_before_consonant(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine_before_consonant(n.floor) + " pointe ") + format_spellout_cardinal_masculine_before_consonant((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1.0e+15).floor) + " kwadriliwn") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000000).floor) + " kwadriliwn") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000.0).floor) + " triliwn") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000).floor) + " triliwn") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000.0).floor) + " biliwn") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000).floor) + " biliwn") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000.0).floor) + " miliwn") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000).floor) + " miliwn") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100000)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000.0).floor) + " mil") + (if (n == 1000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000).floor) + " mil") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 100.0).floor) + " cant") + (if (n == 100) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " cant") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine_before_consonant((n % 100)))
               end))
             end
             if (n >= 30) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 30.0).floor) + " deg") + (if (n == 30) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " deg") + (if ((n == 30) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 10)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100)))
               end))
             end
             if (n >= 20) then
-              return ("dau ddeg" + (if (n == 20) then
+              return ("dau ddeg" + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine_before_consonant((n % 10)))
+                (" " + format_spellout_cardinal_masculine_before_consonant((n % 100)))
               end))
             end
             if (n >= 10) then
-              return ("un deg" + (if (n == 10) then
+              return ("un deg" + (if ((n == 10) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine_before_consonant((n % 10)))
@@ -170,51 +186,71 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("míneas " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " pointe ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " pointe ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1.0e+15).floor) + " kwadriliwn") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000000).floor) + " kwadriliwn") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000.0).floor) + " triliwn") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000).floor) + " triliwn") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000.0).floor) + " biliwn") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000).floor) + " biliwn") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000.0).floor) + " miliwn") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000).floor) + " miliwn") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000.0).floor) + " mil") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000).floor) + " mil") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 100.0).floor) + " cant") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " cant") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 30.0).floor) + " deg") + ((n == 30) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " deg") + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("dau ddeg" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("dau ddeg" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 10) then
-              return ("un deg" + ((n == 10) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("un deg" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 10)))
+              end))
             end
             return "naw" if (n >= 9)
             return "wyth" if (n >= 8)
@@ -233,67 +269,67 @@ module TwitterCldr
               return ("míneas " + format_spellout_cardinal_feminine_before_consonant(-n))
             end
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine_before_consonant(n.floor) + " pointe ") + format_spellout_cardinal_feminine_before_consonant(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine_before_consonant(n.floor) + " pointe ") + format_spellout_cardinal_feminine_before_consonant((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1.0e+15).floor) + " kwadriliwn") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000000).floor) + " kwadriliwn") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000.0).floor) + " triliwn") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000000).floor) + " triliwn") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000.0).floor) + " biliwn") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000000).floor) + " biliwn") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000.0).floor) + " miliwn") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000000).floor) + " miliwn") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100000)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000.0).floor) + " mil") + (if (n == 1000) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 1000).floor) + " mil") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 100.0).floor) + " cant") + (if (n == 100) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " cant") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine_before_consonant((n % 100)))
               end))
             end
             if (n >= 30) then
-              return ((format_spellout_cardinal_masculine_before_consonant((n / 30.0).floor) + " deg") + (if (n == 30) then
+              return ((format_spellout_cardinal_masculine_before_consonant((n / 100).floor) + " deg") + (if ((n == 30) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 10)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100)))
               end))
             end
             if (n >= 20) then
-              return ("dau ddeg" + (if (n == 20) then
+              return ("dau ddeg" + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine_before_consonant((n % 10)))
+                (" " + format_spellout_cardinal_feminine_before_consonant((n % 100)))
               end))
             end
             if (n >= 10) then
-              return ("un deg" + (if (n == 10) then
+              return ("un deg" + (if ((n == 10) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine_before_consonant((n % 10)))

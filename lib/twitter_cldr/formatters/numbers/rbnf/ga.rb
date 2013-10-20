@@ -25,15 +25,15 @@ module TwitterCldr
             return n.to_s if is_fractional and (n > 1)
             return format_spellout_numbering(n) if (n >= 10000)
             if (n >= 1000) then
-              return ((format_spellout_numbering_no_a((n / 1000.0).floor) + " ") + format_2d_year((n % 100)))
+              return ((format_spellout_numbering_no_a((n / 10000).floor) + " ") + format_2d_year((n % 10000)))
             end
             return format_spellout_numbering(n) if (n >= 0)
           end
           def format_spellout_numbering_no_a(n)
             return format_spellout_numbering(n) if (n >= 20)
-            return (format_spellout_numbering_no_a((n % 10)) + " déag") if (n >= 13)
-            return (format_spellout_numbering_no_a((n % 10)) + " dhéag") if (n >= 12)
-            return (format_spellout_numbering_no_a((n % 10)) + " déag") if (n >= 11)
+            return (format_spellout_numbering_no_a((n % 100)) + " déag") if (n >= 13)
+            return (format_spellout_numbering_no_a((n % 100)) + " dhéag") if (n >= 12)
+            return (format_spellout_numbering_no_a((n % 100)) + " déag") if (n >= 11)
             return "deich" if (n >= 10)
             return "naoi" if (n >= 9)
             return "ocht" if (n >= 8)
@@ -51,66 +51,106 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("míneas " + format_spellout_numbering(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_numbering(n.floor) + " pointe ") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_numbering(n.floor) + " pointe ") + format_spellout_numbering((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return (format_quadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
+              return (format_quadrillions((n / 1000000000000000).floor) + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000000000)))
+                (" " + format_spellout_numbering((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return (format_trillions((n / 1000000000000.0).floor) + (if (n == 1000000000000) then
+              return (format_trillions((n / 1000000000000).floor) + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000000)))
+                (" " + format_spellout_numbering((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return (format_billions((n / 1000000000.0).floor) + (if (n == 1000000000) then
+              return (format_billions((n / 1000000000).floor) + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_numbering((n % 100000000)))
+                (" " + format_spellout_numbering((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return (format_millions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + format_spellout_numbering((n % 100000))))))
+              return (format_millions((n / 1000000).floor) + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 1000000)))
+              end))
             end
             if (n >= 1000) then
-              return (format_thousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + format_spellout_numbering((n % 100))))))
+              return (format_thousands((n / 1000).floor) + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + ((n == 100) ? ("") : (format_is_number((n % 100)))))
+              return (format_hundreds((n / 100).floor) + (((n == 100) or ((n % 10) == 0)) ? ("") : (format_is_number((n % 100)))))
             end
             if (n >= 90) then
-              return ("nócha" + ((n == 90) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("nócha" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("ochtó" + ((n == 80) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("ochtó" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("seachtó" + ((n == 70) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("seachtó" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("seasca" + ((n == 60) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("seasca" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("caoga" + ((n == 50) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("caoga" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("daichead" + ((n == 40) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("daichead" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("tríocha" + ((n == 30) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("tríocha" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("fiche" + ((n == 20) ? ("") : ((" " + format_spellout_numbering((n % 10))))))
+              return ("fiche" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_numbering((n % 100)))
+              end))
             end
-            return (format_spellout_numbering((n % 10)) + " déag") if (n >= 13)
-            return (format_spellout_numbering((n % 10)) + " dhéag") if (n >= 12)
-            return (format_spellout_numbering((n % 10)) + " déag") if (n >= 11)
+            return (format_spellout_numbering((n % 100)) + " déag") if (n >= 13)
+            return (format_spellout_numbering((n % 100)) + " dhéag") if (n >= 12)
+            return (format_spellout_numbering((n % 100)) + " déag") if (n >= 11)
             return "a deich" if (n >= 10)
             return "a naoi" if (n >= 9)
             return "a hocht" if (n >= 8)
@@ -146,84 +186,100 @@ module TwitterCldr
           def format_spellout_cardinal_prefixpart(n)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return (format_quadrillions((n / 1.0e+15).floor) + (if (n == 1000000000000000) then
+              return (format_quadrillions((n / 1000000000000000).floor) + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_numberp((n % 100000000000000)))
+                (" " + format_numberp((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return (format_trillions((n / 1000000000000.0).floor) + ((n == 1000000000000) ? ("") : ((" " + format_numberp((n % 100000000000))))))
-            end
-            if (n >= 1000000000) then
-              return (format_billions((n / 1000000000.0).floor) + ((n == 1000000000) ? ("") : ((" " + format_numberp((n % 100000000))))))
-            end
-            if (n >= 1000000) then
-              return (format_millions((n / 1000000.0).floor) + ((n == 1000000) ? ("") : ((" " + format_numberp((n % 100000))))))
-            end
-            if (n >= 1000) then
-              return (format_thousands((n / 1000.0).floor) + ((n == 1000) ? ("") : ((" " + format_numberp((n % 100))))))
-            end
-            if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + ((n == 100) ? ("") : (format_is_numberp((n % 100)))))
-            end
-            if (n >= 90) then
-              return ("nócha" + (if (n == 90) then
+              return (format_trillions((n / 1000000000000).floor) + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" " + format_numberp((n % 1000000000000)))
+              end))
+            end
+            if (n >= 1000000000) then
+              return (format_billions((n / 1000000000).floor) + (if ((n == 1000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_numberp((n % 1000000000)))
+              end))
+            end
+            if (n >= 1000000) then
+              return (format_millions((n / 1000000).floor) + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_numberp((n % 1000000)))
+              end))
+            end
+            if (n >= 1000) then
+              return (format_thousands((n / 1000).floor) + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_numberp((n % 1000)))
+              end))
+            end
+            if (n >= 100) then
+              return (format_hundreds((n / 100).floor) + (((n == 100) or ((n % 10) == 0)) ? ("") : (format_is_numberp((n % 100)))))
+            end
+            if (n >= 90) then
+              return ("nócha" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 80) then
-              return ("ochtó" + (if (n == 80) then
+              return ("ochtó" + (if ((n == 80) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 70) then
-              return ("seachtó" + (if (n == 70) then
+              return ("seachtó" + (if ((n == 70) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 60) then
-              return ("seasca" + (if (n == 60) then
+              return ("seasca" + (if ((n == 60) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 50) then
-              return ("caoga" + (if (n == 50) then
+              return ("caoga" + (if ((n == 50) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 40) then
-              return ("daichead" + (if (n == 40) then
+              return ("daichead" + (if ((n == 40) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 30) then
-              return ("tríocha" + (if (n == 30) then
+              return ("tríocha" + (if ((n == 30) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
             if (n >= 20) then
-              return ("fiche" + (if (n == 20) then
+              return ("fiche" + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                (" is " + format_spellout_cardinal_prefixpart((n % 10)))
+                (" is " + format_spellout_cardinal_prefixpart((n % 100)))
               end))
             end
-            return format_spellout_cardinal_prefixpart((n % 10)) if (n >= 11)
+            return format_spellout_cardinal_prefixpart((n % 100)) if (n >= 11)
             return "deich" if (n >= 10)
             return "naoi" if (n >= 9)
             return "ocht" if (n >= 8)
@@ -257,7 +313,7 @@ module TwitterCldr
           private(:format_hundreds)
           def format_thousands(n)
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + format_is_thousands((n % 100)))
+              return (format_hundreds((n / 100).floor) + format_is_thousands((n % 100)))
             end
             if (n >= 2) then
               return ((format_spellout_cardinal_prefixpart(n) + " ") + format_thousandp(n))
@@ -272,7 +328,7 @@ module TwitterCldr
           end
           private(:format_thousandp)
           def format_thousand(n)
-            return format_thousand((n % 10)) if (n >= 11)
+            return format_thousand((n % 100)) if (n >= 11)
             return "míle" if (n >= 7)
             return "mhíle" if (n >= 1)
             return "míle" if (n >= 0)
@@ -289,7 +345,7 @@ module TwitterCldr
           private(:format_is_thousands)
           def format_millions(n)
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + format_is_millions((n % 100)))
+              return (format_hundreds((n / 100).floor) + format_is_millions((n % 100)))
             end
             if (n >= 2) then
               return ((format_spellout_cardinal_prefixpart(n) + " ") + format_millionsp(n))
@@ -304,7 +360,7 @@ module TwitterCldr
           end
           private(:format_millionsp)
           def format_million(n)
-            return format_million((n % 10)) if (n >= 11)
+            return format_million((n % 100)) if (n >= 11)
             return "milliún" if (n >= 7)
             return "mhilliún" if (n >= 1)
             return "milliún" if (n >= 0)
@@ -321,7 +377,7 @@ module TwitterCldr
           private(:format_is_millions)
           def format_billions(n)
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + format_is_billions((n % 100)))
+              return (format_hundreds((n / 100).floor) + format_is_billions((n % 100)))
             end
             return (format_spellout_cardinal_prefixpart(n) + " billiún") if (n >= 20)
             if (n >= 11) then
@@ -342,7 +398,7 @@ module TwitterCldr
           private(:format_is_billions)
           def format_trillions(n)
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + format_is_trillions((n % 100)))
+              return (format_hundreds((n / 100).floor) + format_is_trillions((n % 100)))
             end
             if (n >= 2) then
               return ((format_spellout_cardinal_prefixpart(n) + " ") + format_trillionsp(n))
@@ -357,7 +413,7 @@ module TwitterCldr
           end
           private(:format_trillionsp)
           def format_trillion(n)
-            return format_trillion((n % 10)) if (n >= 11)
+            return format_trillion((n % 100)) if (n >= 11)
             return "dtrilliún" if (n >= 7)
             return "thrilliún" if (n >= 1)
             return "dtrilliún" if (n >= 0)
@@ -374,7 +430,7 @@ module TwitterCldr
           private(:format_is_trillions)
           def format_quadrillions(n)
             if (n >= 100) then
-              return (format_hundreds((n / 100.0).floor) + format_is_quadrillions((n % 100)))
+              return (format_hundreds((n / 100).floor) + format_is_quadrillions((n % 100)))
             end
             if (n >= 20) then
               return (format_spellout_cardinal_prefixpart(n) + " quadrilliún")

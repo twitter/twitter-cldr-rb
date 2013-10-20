@@ -22,70 +22,106 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("минус " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " кома ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " кома ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000000).floor) + " билијарда") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000).floor) + " билион") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000).floor) + " милијарда") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000).floor) + " милион") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000)))
+                (" " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " илјада") + (if (n == 1000) then
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " илјада") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 1000)))
+              end))
+            end
+            if (n >= 100) then
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "сто") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
-            if (n >= 100) then
-              return ((format_spellout_cardinal_feminine((n / 100.0).floor) + "сто") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
-            end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("деведесет" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("осумдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("осумдесет" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("седумдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("седумдесет" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("шеесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("шеесет" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("педесет" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("четириесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("четириесет" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("триесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("триесет" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("дваесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("дваесет" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             return "деветнаесет" if (n >= 19)
             return "осумнаесет" if (n >= 18)
@@ -112,66 +148,106 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("минус " + format_spellout_cardinal_neuter(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_neuter(n.floor) + " кома ") + format_spellout_cardinal_neuter(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_neuter(n.floor) + " кома ") + format_spellout_cardinal_neuter((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000000).floor) + " билијарда") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000).floor) + " билион") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000).floor) + " милијарда") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000).floor) + " милион") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000)))
+                (" " + format_spellout_cardinal_neuter((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " илјада") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " илјада") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_feminine((n / 100.0).floor) + "сто") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "сто") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("деведесет" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("осумдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("осумдесет" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("седумдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("седумдесет" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("шеесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("шеесет" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("педесет" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("четириесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("четириесет" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("триесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("триесет" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("дваесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("дваесет" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             return format_spellout_cardinal_masculine(n) if (n >= 3)
             return "два" if (n >= 2)
@@ -182,66 +258,106 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("минус " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " кома ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " кома ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1.0e+15).floor) + " билијарда") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000000).floor) + " билијарда") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000000.0).floor) + " билион") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000000).floor) + " билион") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000000.0).floor) + " милијарда") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000000).floor) + " милијарда") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal_masculine((n / 1000000.0).floor) + " милион") + (if (n == 1000000) then
+              return ((format_spellout_cardinal_masculine((n / 1000000).floor) + " милион") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000)))
+                (" " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_feminine((n / 1000.0).floor) + " илјада") + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " илјада") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_feminine((n / 100.0).floor) + "сто") + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "сто") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("деведесет" + ((n == 90) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("деведесет" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("осумдесет" + ((n == 80) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("осумдесет" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("седумдесет" + ((n == 70) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("седумдесет" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("шеесет" + ((n == 60) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("шеесет" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("педесет" + ((n == 50) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("педесет" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("четириесет" + ((n == 40) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("четириесет" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("триесет" + ((n == 30) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("триесет" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("дваесет" + ((n == 20) ? ("") : ((" и " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("дваесет" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" и " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             return format_spellout_cardinal_masculine(n) if (n >= 3)
             return "две" if (n >= 2)

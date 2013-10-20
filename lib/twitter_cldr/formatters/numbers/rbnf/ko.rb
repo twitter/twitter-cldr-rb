@@ -18,10 +18,10 @@ module TwitterCldr
           def format_spellout_numbering(n)
             is_fractional = (n != n.floor)
             if is_fractional and (n > 1) then
-              return ((format_spellout_numbering(n.floor) + "점") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_numbering(n.floor) + "점") + format_spellout_numbering((n % 10)))
             end
             if (n > 0) and (n < 1) then
-              return ((format_spellout_cardinal_sinokorean(n.floor) + "점") + format_spellout_numbering(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_sinokorean(n.floor) + "점") + format_spellout_numbering((n % 10)))
             end
             return format_spellout_cardinal_sinokorean(n) if (n >= 1)
             return "공" if (n >= 0)
@@ -30,61 +30,85 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("마이너스 " + format_spellout_cardinal_sinokorean(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_sinokorean(n.floor) + "점") + format_spellout_cardinal_sinokorean(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_sinokorean(n.floor) + "점") + format_spellout_cardinal_sinokorean((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_sinokorean((n % 10000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_sinokorean((n % 100000000000)))
+                (" " + format_spellout_cardinal_sinokorean((n % 1000000000000)))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_sinokorean((n % 100000000)))
               end))
             end
             if (n >= 20000) then
-              return ((format_spellout_cardinal_sinokorean((n / 20000.0).floor) + "만") + (if (n == 20000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000).floor) + "만") + (if ((n == 20000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_sinokorean((n % 10000)))
+                (" " + format_spellout_cardinal_sinokorean((n % 100000)))
               end))
             end
             if (n >= 10000) then
-              return ("만" + (if (n == 10000) then
+              return ("만" + (if ((n == 10000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_sinokorean((n % 10000)))
               end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_sinokorean((n / 2000.0).floor) + "천") + ((n == 2000) ? ("") : (format_spellout_cardinal_sinokorean((n % 1000)))))
+              return ((format_spellout_cardinal_sinokorean((n / 10000).floor) + "천") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 10000))
+              end))
             end
             if (n >= 1000) then
-              return ("천" + ((n == 1000) ? ("") : (format_spellout_cardinal_sinokorean((n % 100)))))
+              return ("천" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 1000))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_cardinal_sinokorean((n / 200.0).floor) + "백") + ((n == 200) ? ("") : (format_spellout_cardinal_sinokorean((n % 100)))))
+              return ((format_spellout_cardinal_sinokorean((n / 1000).floor) + "백") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 1000))
+              end))
             end
             if (n >= 100) then
-              return ("백" + ((n == 100) ? ("") : (format_spellout_cardinal_sinokorean((n % 100)))))
+              return ("백" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 100))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal_sinokorean((n / 20.0).floor) + "십") + ((n == 20) ? ("") : (format_spellout_cardinal_sinokorean((n % 10)))))
+              return ((format_spellout_cardinal_sinokorean((n / 100).floor) + "십") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 100))
+              end))
             end
             if (n >= 10) then
-              return ("십" + ((n == 10) ? ("") : (format_spellout_cardinal_sinokorean((n % 10)))))
+              return ("십" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_sinokorean((n % 10))
+              end))
             end
             return "구" if (n >= 9)
             return "팔" if (n >= 8)
@@ -105,95 +129,131 @@ module TwitterCldr
             return format_spellout_cardinal_sinokorean(n) if is_fractional and (n > 1)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_native_attributive((n % 10000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_native_attributive((n % 100000000000)))
+                (" " + format_spellout_cardinal_native_attributive((n % 1000000000000)))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_native_attributive((n % 100000000)))
               end))
             end
             if (n >= 20000) then
-              return ((format_spellout_cardinal_sinokorean((n / 20000.0).floor) + "만") + (if (n == 20000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000).floor) + "만") + (if ((n == 20000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_native_attributive((n % 10000)))
+                (" " + format_spellout_cardinal_native_attributive((n % 100000)))
               end))
             end
             if (n >= 10000) then
-              return ("만" + (if (n == 10000) then
+              return ("만" + (if ((n == 10000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_native_attributive((n % 10000)))
               end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_sinokorean((n / 2000.0).floor) + "천") + (if (n == 2000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000).floor) + "천") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 10000))
+              end))
+            end
+            if (n >= 1000) then
+              return ("천" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_native_attributive((n % 1000))
               end))
             end
-            if (n >= 1000) then
-              return ("천" + (if (n == 1000) then
-                ""
-              else
-                format_spellout_cardinal_native_attributive((n % 100))
-              end))
-            end
             if (n >= 200) then
-              return ((format_spellout_cardinal_sinokorean((n / 200.0).floor) + "백") + (if (n == 200) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000).floor) + "백") + (if ((n == 200) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_cardinal_native_attributive((n % 100))
+                format_spellout_cardinal_native_attributive((n % 1000))
               end))
             end
             if (n >= 100) then
-              return ("백" + (if (n == 100) then
+              return ("백" + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_native_attributive((n % 100))
               end))
             end
             if (n >= 90) then
-              return ("아흔" + ((n == 90) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("아흔" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 80) then
-              return ("여든" + ((n == 80) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("여든" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 70) then
-              return ("일흔" + ((n == 70) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("일흔" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 60) then
-              return ("예순" + ((n == 60) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("예순" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 50) then
-              return ("쉰" + ((n == 50) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("쉰" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 40) then
-              return ("마흔" + ((n == 40) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("마흔" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 30) then
-              return ("서른" + ((n == 30) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("서른" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 21) then
-              return ("스물" + ((n == 21) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("스물" + (if ((n == 21) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             return "스무" if (n >= 20)
             if (n >= 10) then
-              return ("열" + ((n == 10) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("열" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 10))
+              end))
             end
             return "아홉" if (n >= 9)
             return "여덟" if (n >= 8)
@@ -212,31 +272,67 @@ module TwitterCldr
             return format_spellout_cardinal_sinokorean(n) if is_fractional and (n > 1)
             return format_spellout_cardinal_sinokorean(n) if (n >= 100)
             if (n >= 90) then
-              return ("아흔" + ((n == 90) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("아흔" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 80) then
-              return ("여든" + ((n == 80) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("여든" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 70) then
-              return ("일흔" + ((n == 70) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("일흔" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 60) then
-              return ("예순" + ((n == 60) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("예순" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 50) then
-              return ("쉰" + ((n == 50) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("쉰" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 40) then
-              return ("마흔" + ((n == 40) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("마흔" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 30) then
-              return ("서른" + ((n == 30) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("서른" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 20) then
-              return ("스물" + ((n == 20) ? ("") : (format_spellout_cardinal_native((n % 10)))))
+              return ("스물" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native((n % 100))
+              end))
             end
             if (n >= 10) then
-              return ("열" + ((n == 10) ? ("") : ((" " + format_spellout_cardinal_native((n % 10))))))
+              return ("열" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_native((n % 10)))
+              end))
             end
             return "아홉" if (n >= 9)
             return "여덟" if (n >= 8)
@@ -255,37 +351,53 @@ module TwitterCldr
             return format_spellout_cardinal_sinokorean(n) if is_fractional and (n > 1)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_financial((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_financial((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_financial((n % 10000000000000000))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_financial((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_financial((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_cardinal_financial((n % 100000000000))
+                format_spellout_cardinal_financial((n % 1000000000000))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_financial((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_financial((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_financial((n % 100000000))
               end))
             end
             if (n >= 10000) then
-              return ((format_spellout_cardinal_financial((n / 10000.0).floor) + "만") + ((n == 10000) ? ("") : (format_spellout_cardinal_financial((n % 10000)))))
+              return ((format_spellout_cardinal_financial((n / 10000).floor) + "만") + (if ((n == 10000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 10000))
+              end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_financial((n / 1000.0).floor) + "천") + ((n == 1000) ? ("") : (format_spellout_cardinal_financial((n % 100)))))
+              return ((format_spellout_cardinal_financial((n / 1000).floor) + "천") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 1000))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_financial((n / 100.0).floor) + "백") + ((n == 100) ? ("") : (format_spellout_cardinal_financial((n % 100)))))
+              return ((format_spellout_cardinal_financial((n / 100).floor) + "백") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 100))
+              end))
             end
             if (n >= 10) then
-              return ((format_spellout_cardinal_financial((n / 10.0).floor) + "십") + ((n == 10) ? ("") : (format_spellout_cardinal_financial((n % 10)))))
+              return ((format_spellout_cardinal_financial((n / 10).floor) + "십") + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 10))
+              end))
             end
             return "구" if (n >= 9)
             return "팔" if (n >= 8)
@@ -312,29 +424,29 @@ module TwitterCldr
           def format_spellout_ordinal_sinokorean_count_smaller(n)
             return format_spellout_ordinal_sinokorean_count_larger(n) if (n >= 50)
             if (n >= 40) then
-              return ("마흔" + (if (n == 40) then
+              return ("마흔" + (if ((n == 40) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_smaller((n % 10))
+                format_spellout_ordinal_sinokorean_count_smaller((n % 100))
               end))
             end
             if (n >= 30) then
-              return ("서른" + (if (n == 30) then
+              return ("서른" + (if ((n == 30) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_smaller((n % 10))
+                format_spellout_ordinal_sinokorean_count_smaller((n % 100))
               end))
             end
             if (n >= 21) then
-              return ("스물" + (if (n == 21) then
+              return ("스물" + (if ((n == 21) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_smaller((n % 10))
+                format_spellout_ordinal_sinokorean_count_smaller((n % 100))
               end))
             end
             return "스무" if (n >= 20)
             if (n >= 10) then
-              return ("열" + (if (n == 10) then
+              return ("열" + (if ((n == 10) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_sinokorean_count_smaller((n % 10))
@@ -354,112 +466,112 @@ module TwitterCldr
           private(:format_spellout_ordinal_sinokorean_count_smaller)
           def format_spellout_ordinal_sinokorean_count_larger(n)
             if (n >= 10000000000000000) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_sinokorean_count_larger((n % 10000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_sinokorean_count_larger((n % 100000000000)))
+                (" " + format_spellout_ordinal_sinokorean_count_larger((n % 1000000000000)))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_sinokorean_count_larger((n % 100000000)))
               end))
             end
             if (n >= 20000) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 20000.0).floor) + "만") + (if (n == 20000) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 100000).floor) + "만") + (if ((n == 20000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_sinokorean_count_larger((n % 10000)))
+                (" " + format_spellout_ordinal_sinokorean_count_larger((n % 100000)))
               end))
             end
             if (n >= 10000) then
-              return ("만" + (if (n == 10000) then
+              return ("만" + (if ((n == 10000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_sinokorean_count_larger((n % 10000)))
               end))
             end
             if (n >= 2000) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 2000.0).floor) + "천") + (if (n == 2000) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 10000).floor) + "천") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_sinokorean_count_larger((n % 10000))
+              end))
+            end
+            if (n >= 1000) then
+              return ("천" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_sinokorean_count_larger((n % 1000))
               end))
             end
-            if (n >= 1000) then
-              return ("천" + (if (n == 1000) then
-                ""
-              else
-                format_spellout_ordinal_sinokorean_count_larger((n % 100))
-              end))
-            end
             if (n >= 200) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 200.0).floor) + "백") + (if (n == 200) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 1000).floor) + "백") + (if ((n == 200) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 100))
+                format_spellout_ordinal_sinokorean_count_larger((n % 1000))
               end))
             end
             if (n >= 100) then
-              return ("백" + (if (n == 100) then
+              return ("백" + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 90) then
-              return ("구십" + (if (n == 90) then
+              return ("구십" + (if ((n == 90) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 80) then
-              return ("팔십" + (if (n == 80) then
+              return ("팔십" + (if ((n == 80) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 70) then
-              return ("칠십" + (if (n == 70) then
+              return ("칠십" + (if ((n == 70) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 60) then
-              return ("육십" + (if (n == 60) then
+              return ("육십" + (if ((n == 60) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 50) then
-              return ("오십" + (if (n == 50) then
+              return ("오십" + (if ((n == 50) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 20) then
-              return ((format_spellout_ordinal_sinokorean_count_larger((n / 20.0).floor) + "십") + (if (n == 20) then
+              return ((format_spellout_ordinal_sinokorean_count_larger((n / 100).floor) + "십") + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_sinokorean_count_larger((n % 10))
+                format_spellout_ordinal_sinokorean_count_larger((n % 100))
               end))
             end
             if (n >= 10) then
-              return ("십" + (if (n == 10) then
+              return ("십" + (if ((n == 10) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_sinokorean_count_larger((n % 10))
@@ -494,88 +606,116 @@ module TwitterCldr
           def format_spellout_ordinal_native_count_larger(n)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_count_larger((n % 10000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_native_count_larger((n % 100000000000)))
+                (" " + format_spellout_ordinal_native_count_larger((n % 1000000000000)))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_count_larger((n % 100000000)))
               end))
             end
             if (n >= 20000) then
-              return ((format_spellout_cardinal_sinokorean((n / 20000.0).floor) + "만") + (if (n == 20000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000).floor) + "만") + (if ((n == 20000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_native_count_larger((n % 10000)))
+                (" " + format_spellout_ordinal_native_count_larger((n % 100000)))
               end))
             end
             if (n >= 10000) then
-              return ("만" + (if (n == 10000) then
+              return ("만" + (if ((n == 10000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_count_larger((n % 10000)))
               end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_sinokorean((n / 2000.0).floor) + "천") + (if (n == 2000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000).floor) + "천") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_count_larger((n % 10000))
+              end))
+            end
+            if (n >= 1000) then
+              return ("천" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_native_count_larger((n % 1000))
               end))
             end
-            if (n >= 1000) then
-              return ("천" + (if (n == 1000) then
-                ""
-              else
-                format_spellout_ordinal_native_count_larger((n % 100))
-              end))
-            end
             if (n >= 200) then
-              return ((format_spellout_cardinal_sinokorean((n / 200.0).floor) + "백") + (if (n == 200) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000).floor) + "백") + (if ((n == 200) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_ordinal_native_count_larger((n % 100))
+                format_spellout_ordinal_native_count_larger((n % 1000))
               end))
             end
             if (n >= 100) then
-              return ("백" + (if (n == 100) then
+              return ("백" + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_native_count_larger((n % 100))
               end))
             end
             if (n >= 90) then
-              return ("아흔" + ((n == 90) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("아흔" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 80) then
-              return ("여든" + ((n == 80) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("여든" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 70) then
-              return ("일흔" + ((n == 70) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("일흔" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 60) then
-              return ("예순" + ((n == 60) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("예순" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 50) then
-              return ("쉰" + ((n == 50) ? ("") : (format_spellout_cardinal_native_attributive((n % 10)))))
+              return ("쉰" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_native_attributive((n % 100))
+              end))
             end
             if (n >= 40) then
-              return ("마흔" + ((n == 40) ? ("") : (format_spellout_ordinal_native_count_larger((n % 10)))))
+              return ("마흔" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_count_larger((n % 100))
+              end))
             end
             if (n >= 30) then
-              return ("서른" + ((n == 30) ? ("") : (format_spellout_ordinal_native_count_larger((n % 10)))))
+              return ("서른" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_count_larger((n % 100))
+              end))
             end
             return format_spellout_cardinal_native_attributive(n) if (n >= 2)
             return "한" if (n >= 1)
@@ -605,87 +745,131 @@ module TwitterCldr
           def format_spellout_ordinal_native_smaller(n)
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1.0e+16).floor) + "경") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000000000000000).floor) + "경") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_smaller_x02((n % 10000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 1000000000000.0).floor) + "조") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000000000000).floor) + "조") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_native_smaller_x02((n % 100000000000)))
+                (" " + format_spellout_ordinal_native_smaller_x02((n % 1000000000000)))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_sinokorean((n / 100000000.0).floor) + "억") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000000).floor) + "억") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_smaller_x02((n % 100000000)))
               end))
             end
             if (n >= 20000) then
-              return ((format_spellout_cardinal_sinokorean((n / 20000.0).floor) + "만") + (if (n == 20000) then
+              return ((format_spellout_cardinal_sinokorean((n / 100000).floor) + "만") + (if ((n == 20000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_ordinal_native_smaller_x02((n % 10000)))
+                (" " + format_spellout_ordinal_native_smaller_x02((n % 100000)))
               end))
             end
             if (n >= 10000) then
-              return ("만" + (if (n == 10000) then
+              return ("만" + (if ((n == 10000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_ordinal_native_smaller_x02((n % 10000)))
               end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal_sinokorean((n / 2000.0).floor) + "천") + (if (n == 2000) then
+              return ((format_spellout_cardinal_sinokorean((n / 10000).floor) + "천") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller_x02((n % 10000))
+              end))
+            end
+            if (n >= 1000) then
+              return ("천" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_native_smaller_x02((n % 1000))
               end))
             end
-            if (n >= 1000) then
-              return ("천" + (if (n == 1000) then
+            if (n >= 200) then
+              return ((format_spellout_cardinal_sinokorean((n / 1000).floor) + "백") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller_x02((n % 1000))
+              end))
+            end
+            if (n >= 100) then
+              return ("백" + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_ordinal_native_smaller_x02((n % 100))
               end))
             end
-            if (n >= 200) then
-              return ((format_spellout_cardinal_sinokorean((n / 200.0).floor) + "백") + ((n == 200) ? ("") : (format_spellout_ordinal_native_smaller_x02((n % 100)))))
-            end
-            if (n >= 100) then
-              return ("백" + ((n == 100) ? ("") : (format_spellout_ordinal_native_smaller_x02((n % 100)))))
-            end
             if (n >= 90) then
-              return ("아흔" + ((n == 90) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("아흔" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 80) then
-              return ("여든" + ((n == 80) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("여든" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 70) then
-              return ("일흔" + ((n == 70) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("일흔" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 60) then
-              return ("예순" + ((n == 60) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("예순" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 50) then
-              return ("쉰" + ((n == 50) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("쉰" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 40) then
-              return ("마흔" + ((n == 40) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("마흔" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 30) then
-              return ("서른" + ((n == 30) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("서른" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             if (n >= 21) then
-              return ("스물" + ((n == 21) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("스물" + (if ((n == 21) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 100))
+              end))
             end
             return "스무" if (n >= 20)
             if (n >= 10) then
-              return ("열" + ((n == 10) ? ("") : (format_spellout_ordinal_native_smaller((n % 10)))))
+              return ("열" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_ordinal_native_smaller((n % 10))
+              end))
             end
             return "아홉" if (n >= 9)
             return "여덟" if (n >= 8)

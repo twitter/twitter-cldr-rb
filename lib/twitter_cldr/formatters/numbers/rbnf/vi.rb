@@ -44,34 +44,42 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("âm " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " phẩy ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " phẩy ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " tỷ") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000).floor) + " tỷ") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_after_thousand_or_more((n % 100000000)))
+                (" " + format_after_thousand_or_more((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal((n / 1000000.0).floor) + " triệu") + (if (n == 1000000) then
+              return ((format_spellout_cardinal((n / 1000000).floor) + " triệu") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_after_thousand_or_more((n % 100000)))
+                (" " + format_after_thousand_or_more((n % 1000000)))
               end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal((n / 1000.0).floor) + " nghìn") + ((n == 1000) ? ("") : ((" " + format_after_thousand_or_more((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000).floor) + " nghìn") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_after_thousand_or_more((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal((n / 100.0).floor) + " trăm") + ((n == 100) ? ("") : ((" " + format_after_hundred((n % 100))))))
+              return ((format_spellout_cardinal((n / 100).floor) + " trăm") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_after_hundred((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal((n / 20.0).floor) + " mươi") + ((n == 20) ? ("") : ((" " + format_x_ty((n % 10))))))
+              return ((format_spellout_cardinal((n / 100).floor) + " mươi") + (((n == 20) or ((n % 10) == 0)) ? ("") : ((" " + format_x_ty((n % 100))))))
             end
             if (n >= 10) then
-              return ("mười" + ((n == 10) ? ("") : ((" " + format_teen((n % 10))))))
+              return ("mười" + (((n == 10) or ((n % 10) == 0)) ? ("") : ((" " + format_teen((n % 10))))))
             end
             return "chín" if (n >= 9)
             return "tám" if (n >= 8)

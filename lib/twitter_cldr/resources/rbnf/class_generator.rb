@@ -5,8 +5,6 @@
 
 require 'ruby2ruby'
 
-require 'pry-nav'
-
 module TwitterCldr
   module Resources
     module Rbnf

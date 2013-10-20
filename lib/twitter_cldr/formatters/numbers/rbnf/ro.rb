@@ -22,94 +22,102 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " virgulă ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " virgulă ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " biliarde") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000000).floor) + " biliarde") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000000).floor) + " biliard") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " biliard") + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000).floor) + " bilioane") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " bilioane") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000).floor) + " bilion") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " bilion") + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000).floor) + " miliarde") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " miliarde") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000).floor) + " miliard") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " miliard") + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000).floor) + " milioane") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " milioane") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000).floor) + " milion") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " milion") + (if (n == 1000000) then
+            if (n >= 2000) then
+              return ((format_spellout_cardinal_feminine((n / 10000).floor) + " mii") + (if ((n == 2000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_masculine((n % 100000)))
+                (" " + format_spellout_cardinal_masculine((n % 10000)))
               end))
             end
-            if (n >= 2000) then
-              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " mii") + (if (n == 2000) then
+            if (n >= 1000) then
+              return ("una mie" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 1000)))
               end))
             end
-            if (n >= 1000) then
-              return ("una mie" + (if (n == 1000) then
+            if (n >= 200) then
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " sute") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_masculine((n % 1000)))
+              end))
+            end
+            if (n >= 100) then
+              return ("una sută" + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
-            if (n >= 200) then
-              return ((format_spellout_cardinal_feminine((n / 200.0).floor) + " sute") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
-            end
-            if (n >= 100) then
-              return ("una sută" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_masculine((n % 100))))))
-            end
             if (n >= 20) then
-              return ((format_spellout_cardinal_feminine((n / 20.0).floor) + "zeci") + (if (n == 20) then
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "zeci") + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                (" şi " + format_spellout_cardinal_masculine((n % 10)))
+                (" şi " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 12) then
-              return (format_spellout_cardinal_masculine((n % 10)) + "sprezece")
+              return (format_spellout_cardinal_masculine((n % 100)) + "sprezece")
             end
             return "unsprezece" if (n >= 11)
             return "zece" if (n >= 10)
@@ -128,86 +136,102 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " virgulă ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " virgulă ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " biliarde") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000000).floor) + " biliarde") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000000).floor) + " biliard") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " biliard") + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000).floor) + " bilioane") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " bilioane") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000).floor) + " bilion") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " bilion") + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000).floor) + " miliarde") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " miliarde") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000).floor) + " miliard") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " miliard") + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000).floor) + " milioane") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " milioane") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000).floor) + " milion") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " milion") + (if (n == 1000000) then
+            if (n >= 2000) then
+              return ((format_spellout_cardinal_feminine((n / 10000).floor) + " mii") + (if ((n == 2000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_feminine((n % 100000)))
+                (" " + format_spellout_cardinal_feminine((n % 10000)))
               end))
             end
-            if (n >= 2000) then
-              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " mii") + (if (n == 2000) then
+            if (n >= 1000) then
+              return ("una mie" + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_feminine((n % 1000)))
               end))
             end
-            if (n >= 1000) then
-              return ("una mie" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
-            end
             if (n >= 200) then
-              return ((format_spellout_cardinal_feminine((n / 200.0).floor) + " sute") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " sute") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("una sută" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_feminine((n % 100))))))
+              return ("una sută" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal_feminine((n / 20.0).floor) + "zeci") + ((n == 20) ? ("") : ((" şi " + format_spellout_cardinal_feminine((n % 10))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "zeci") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" şi " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 12) then
-              return (format_spellout_cardinal_feminine((n % 10)) + "sprezece")
+              return (format_spellout_cardinal_feminine((n % 100)) + "sprezece")
             end
             return format_spellout_cardinal_masculine(n) if (n >= 3)
             return "două" if (n >= 2)
@@ -218,79 +242,99 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal_neuter(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_neuter(n.floor) + " virgulă ") + format_spellout_cardinal_neuter(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_neuter(n.floor) + " virgulă ") + format_spellout_cardinal_neuter((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2.0e+15).floor) + " biliarde") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000000).floor) + " biliarde") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000000).floor) + " biliard") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_neuter((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1.0e+15).floor) + " biliard") + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000000).floor) + " bilioane") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000000.0).floor) + " bilioane") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000000).floor) + " bilion") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_neuter((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000000.0).floor) + " bilion") + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000000).floor) + " miliarde") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000000)))
+                (" " + format_spellout_cardinal_neuter((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000000.0).floor) + " miliarde") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000000).floor) + " miliard") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_neuter((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000000.0).floor) + " miliard") + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_neuter((n / 10000000).floor) + " milioane") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000000)))
+                (" " + format_spellout_cardinal_neuter((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_neuter((n / 2000000.0).floor) + " milioane") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ((format_spellout_cardinal_neuter((n / 1000000).floor) + " milion") + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" " + format_spellout_cardinal_neuter((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ((format_spellout_cardinal_neuter((n / 1000000.0).floor) + " milion") + (if (n == 1000000) then
+            if (n >= 2000) then
+              return ((format_spellout_cardinal_feminine((n / 10000).floor) + " mii") + (if ((n == 2000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal_neuter((n % 100000)))
+                (" " + format_spellout_cardinal_neuter((n % 10000)))
               end))
             end
-            if (n >= 2000) then
-              return ((format_spellout_cardinal_feminine((n / 2000.0).floor) + " mii") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 1000))))))
-            end
             if (n >= 1000) then
-              return ("una mie" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
+              return ("una mie" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_cardinal_feminine((n / 200.0).floor) + " sute") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
+              return ((format_spellout_cardinal_feminine((n / 1000).floor) + " sute") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("una sută" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal_neuter((n % 100))))))
+              return ("una sută" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal_feminine((n / 20.0).floor) + "zeci") + ((n == 20) ? ("") : ((" şi " + format_spellout_cardinal_neuter((n % 10))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "zeci") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" şi " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             return format_spellout_cardinal_feminine(n) if (n >= 2)
             return "unu" if (n >= 1)

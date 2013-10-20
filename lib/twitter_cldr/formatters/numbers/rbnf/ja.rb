@@ -21,13 +21,13 @@ module TwitterCldr
           end
           def format_spellout_numbering_year_digits(n)
             if (n >= 1000) then
-              return (format_spellout_numbering_year_digits((n / 1000.0).floor) + format_spellout_numbering_year_digits((n % 100)))
+              return (format_spellout_numbering_year_digits((n / 1000).floor) + format_spellout_numbering_year_digits((n % 1000)))
             end
             if (n >= 100) then
-              return (format_spellout_numbering_year_digits((n / 100.0).floor) + format_spellout_numbering_year_digits((n % 100)))
+              return (format_spellout_numbering_year_digits((n / 100).floor) + format_spellout_numbering_year_digits((n % 100)))
             end
             if (n >= 10) then
-              return (format_spellout_numbering_year_digits((n / 10.0).floor) + format_spellout_numbering_year_digits((n % 10)))
+              return (format_spellout_numbering_year_digits((n / 10).floor) + format_spellout_numbering_year_digits((n % 10)))
             end
             return format_spellout_numbering(n) if (n >= 0)
           end
@@ -39,44 +39,64 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("マイナス" + format_spellout_cardinal_financial(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_financial(n.floor) + "点") + format_spellout_cardinal_financial(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_financial(n.floor) + "点") + format_spellout_cardinal_financial((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal_financial((n / 1.0e+16).floor) + "京") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal_financial((n / 10000000000000000).floor) + "京") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_financial((n % 10000000000000000))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal_financial((n / 1000000000000.0).floor) + "兆") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal_financial((n / 1000000000000).floor) + "兆") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_cardinal_financial((n % 100000000000))
+                format_spellout_cardinal_financial((n % 1000000000000))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal_financial((n / 100000000.0).floor) + "億") + (if (n == 100000000) then
+              return ((format_spellout_cardinal_financial((n / 100000000).floor) + "億") + (if ((n == 100000000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal_financial((n % 100000000))
               end))
             end
             if (n >= 10000) then
-              return ((format_spellout_cardinal_financial((n / 10000.0).floor) + "萬") + ((n == 10000) ? ("") : (format_spellout_cardinal_financial((n % 10000)))))
+              return ((format_spellout_cardinal_financial((n / 10000).floor) + "萬") + (if ((n == 10000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 10000))
+              end))
             end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_financial((n / 1000.0).floor) + "千") + ((n == 1000) ? ("") : (format_spellout_cardinal_financial((n % 100)))))
+              return ((format_spellout_cardinal_financial((n / 1000).floor) + "千") + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 1000))
+              end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_financial((n / 100.0).floor) + "百") + ((n == 100) ? ("") : (format_spellout_cardinal_financial((n % 100)))))
+              return ((format_spellout_cardinal_financial((n / 100).floor) + "百") + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 100))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal_financial((n / 20.0).floor) + "拾") + ((n == 20) ? ("") : (format_spellout_cardinal_financial((n % 10)))))
+              return ((format_spellout_cardinal_financial((n / 100).floor) + "拾") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 100))
+              end))
             end
             if (n >= 10) then
-              return ("拾" + ((n == 10) ? ("") : (format_spellout_cardinal_financial((n % 10)))))
+              return ("拾" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal_financial((n % 10))
+              end))
             end
             return "九" if (n >= 9)
             return "八" if (n >= 8)
@@ -93,46 +113,78 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("マイナス" + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + "・") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + "・") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 10000000000000000) then
-              return ((format_spellout_cardinal((n / 1.0e+16).floor) + "京") + (if (n == 10000000000000000) then
+              return ((format_spellout_cardinal((n / 10000000000000000).floor) + "京") + (if ((n == 10000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 format_spellout_cardinal((n % 10000000000000000))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + "兆") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000).floor) + "兆") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                format_spellout_cardinal((n % 100000000000))
+                format_spellout_cardinal((n % 1000000000000))
               end))
             end
             if (n >= 100000000) then
-              return ((format_spellout_cardinal((n / 100000000.0).floor) + "億") + ((n == 100000000) ? ("") : (format_spellout_cardinal((n % 100000000)))))
+              return ((format_spellout_cardinal((n / 100000000).floor) + "億") + (if ((n == 100000000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 100000000))
+              end))
             end
             if (n >= 10000) then
-              return ((format_spellout_cardinal((n / 10000.0).floor) + "万") + ((n == 10000) ? ("") : (format_spellout_cardinal((n % 10000)))))
+              return ((format_spellout_cardinal((n / 10000).floor) + "万") + (if ((n == 10000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 10000))
+              end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal((n / 2000.0).floor) + "千") + ((n == 2000) ? ("") : (format_spellout_cardinal((n % 1000)))))
+              return ((format_spellout_cardinal((n / 10000).floor) + "千") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 10000))
+              end))
             end
             if (n >= 1000) then
-              return ("千" + ((n == 1000) ? ("") : (format_spellout_cardinal((n % 100)))))
+              return ("千" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 1000))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_cardinal((n / 200.0).floor) + "百") + ((n == 200) ? ("") : (format_spellout_cardinal((n % 100)))))
+              return ((format_spellout_cardinal((n / 1000).floor) + "百") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 1000))
+              end))
             end
             if (n >= 100) then
-              return ("百" + ((n == 100) ? ("") : (format_spellout_cardinal((n % 100)))))
+              return ("百" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 100))
+              end))
             end
             if (n >= 20) then
-              return ((format_spellout_cardinal((n / 20.0).floor) + "十") + ((n == 20) ? ("") : (format_spellout_cardinal((n % 10)))))
+              return ((format_spellout_cardinal((n / 100).floor) + "十") + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 100))
+              end))
             end
             if (n >= 10) then
-              return ("十" + ((n == 10) ? ("") : (format_spellout_cardinal((n % 10)))))
+              return ("十" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                format_spellout_cardinal((n % 10))
+              end))
             end
             return "九" if (n >= 9)
             return "八" if (n >= 8)

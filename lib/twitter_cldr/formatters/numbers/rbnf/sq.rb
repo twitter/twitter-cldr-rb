@@ -22,93 +22,109 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " presje ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " presje ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + " biliarë") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + " biliarë") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_masculine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("një biliar" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("një biliar" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + " bilionë") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" e " + format_spellout_cardinal_masculine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + " bilionë") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("një bilion" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("një bilion" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + " miliarë") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" e " + format_spellout_cardinal_masculine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + " miliarë") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("një miliar" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("një miliar" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + " milionë") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" e " + format_spellout_cardinal_masculine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + " milionë") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("një milion" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("një milion" + (if (n == 1000000) then
-                ""
-              else
-                (" e " + format_spellout_cardinal_masculine((n % 100000)))
-              end))
-            end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine((n / 1000.0).floor) + " mijë") + (if (n == 1000) then
+              return ((format_spellout_cardinal_masculine((n / 1000).floor) + " mijë") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_masculine((n % 100)))
+                (" e " + format_spellout_cardinal_masculine((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_masculine((n / 100.0).floor) + "qind") + (if (n == 100) then
+              return ((format_spellout_cardinal_masculine((n / 100).floor) + "qind") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 50) then
-              return ((format_spellout_cardinal_feminine((n / 50.0).floor) + "dhjetë") + ((n == 50) ? ("") : ((" e " + format_spellout_cardinal_masculine((n % 10))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "dhjetë") + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("dyzet" + ((n == 40) ? ("") : ((" e " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("dyzet" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("tridhjetë" + ((n == 30) ? ("") : ((" e " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("tridhjetë" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("njëzet" + ((n == 20) ? ("") : ((" e " + format_spellout_cardinal_masculine((n % 10))))))
+              return ("njëzet" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_masculine((n % 100)))
+              end))
             end
             if (n >= 11) then
-              return (format_spellout_cardinal_masculine((n % 10)) + "mbëdhjetë")
+              return (format_spellout_cardinal_masculine((n % 100)) + "mbëdhjetë")
             end
             return "dhjetë" if (n >= 10)
             return "nëntë" if (n >= 9)
@@ -126,90 +142,106 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("minus " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " presje ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " presje ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + " biliarë") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + " biliarë") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_feminine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("një biliar" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("një biliar" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + " bilionë") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" e " + format_spellout_cardinal_feminine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + " bilionë") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("një bilion" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("një bilion" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + " miliarë") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" e " + format_spellout_cardinal_feminine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + " miliarë") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("një miliar" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("një miliar" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + " milionë") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" e " + format_spellout_cardinal_feminine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + " milionë") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("një milion" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("një milion" + (if (n == 1000000) then
-                ""
-              else
-                (" e " + format_spellout_cardinal_feminine((n % 100000)))
-              end))
-            end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_masculine((n / 1000.0).floor) + " mijë") + (if (n == 1000) then
+              return ((format_spellout_cardinal_masculine((n / 1000).floor) + " mijë") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" e " + format_spellout_cardinal_feminine((n % 100)))
+                (" e " + format_spellout_cardinal_feminine((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_masculine((n / 100.0).floor) + "qind") + (if (n == 100) then
+              return ((format_spellout_cardinal_masculine((n / 100).floor) + "qind") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" e " + format_spellout_cardinal_feminine((n % 100)))
               end))
             end
             if (n >= 50) then
-              return ((format_spellout_cardinal_feminine((n / 50.0).floor) + "dhjetë") + ((n == 50) ? ("") : ((" e " + format_spellout_cardinal_feminine((n % 10))))))
+              return ((format_spellout_cardinal_feminine((n / 100).floor) + "dhjetë") + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("dyzet" + ((n == 40) ? ("") : ((" e " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("dyzet" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("tridhjetë" + ((n == 30) ? ("") : ((" e " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("tridhjetë" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("njëzet" + ((n == 20) ? ("") : ((" e " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("njëzet" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" e " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             return format_spellout_cardinal_masculine(n) if (n >= 4)
             return "tri" if (n >= 3)

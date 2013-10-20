@@ -16,7 +16,11 @@ module TwitterCldr
             return n.to_s if is_fractional and (n > 1)
             return format_spellout_numbering(n) if (n >= 10000)
             if (n >= 1100) then
-              return ((format_spellout_numbering_year((n / 1100.0).floor) + " hundrað") + ((n == 1100) ? ("") : ((" og " + format_spellout_numbering_year((n % 100))))))
+              return ((format_spellout_numbering_year((n / 10000).floor) + " hundrað") + (if ((n == 1100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_numbering_year((n % 10000)))
+              end))
             end
             return format_spellout_numbering(n) if (n >= 0)
           end
@@ -27,133 +31,133 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("mínus " + format_spellout_cardinal_masculine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_masculine(n.floor) + " komma ") + format_spellout_cardinal_masculine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_masculine(n.floor) + " komma ") + format_spellout_cardinal_masculine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + " billiarður") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + " billiarður") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_masculine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("ein billiarð" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_masculine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("ein billiarð" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + " billiónur") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 100000000000000)))
+                (" og " + format_spellout_cardinal_masculine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + " billiónur") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("ein billión" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_masculine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("ein billión" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + " milliarður") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 100000000000)))
+                (" og " + format_spellout_cardinal_masculine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + " milliarður") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("ein milliarð" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_masculine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("ein milliarð" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + " milliónur") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 100000000)))
+                (" og " + format_spellout_cardinal_masculine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + " milliónur") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("ein millión" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_masculine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("ein millión" + (if (n == 1000000) then
-                ""
-              else
-                (" og " + format_spellout_cardinal_masculine((n % 100000)))
-              end))
-            end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_neuter((n / 1000.0).floor) + " þúsund") + (if (n == 1000) then
+              return ((format_spellout_cardinal_neuter((n / 1000).floor) + " þúsund") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 100)))
+                (" og " + format_spellout_cardinal_masculine((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_neuter((n / 100.0).floor) + "­hundrað") + (if (n == 100) then
+              return ((format_spellout_cardinal_neuter((n / 100).floor) + "­hundrað") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 90) then
-              return ("níutíu" + (if (n == 90) then
+              return ("níutíu" + (if ((n == 90) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 80) then
-              return ("áttatíu" + (if (n == 80) then
+              return ("áttatíu" + (if ((n == 80) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 70) then
-              return ("sjötíu" + (if (n == 70) then
+              return ("sjötíu" + (if ((n == 70) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 60) then
-              return ("sextíu" + (if (n == 60) then
+              return ("sextíu" + (if ((n == 60) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 50) then
-              return ("fimmtíu" + (if (n == 50) then
+              return ("fimmtíu" + (if ((n == 50) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 40) then
-              return ("fjörutíu" + (if (n == 40) then
+              return ("fjörutíu" + (if ((n == 40) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 30) then
-              return ("þrjátíu" + (if (n == 30) then
+              return ("þrjátíu" + (if ((n == 30) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             if (n >= 20) then
-              return ("tuttugu" + (if (n == 20) then
+              return ("tuttugu" + (if ((n == 20) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_masculine((n % 10)))
+                (" og " + format_spellout_cardinal_masculine((n % 100)))
               end))
             end
             return "nítján" if (n >= 19)
@@ -181,98 +185,134 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("mínus " + format_spellout_cardinal_neuter(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_neuter(n.floor) + " komma ") + format_spellout_cardinal_neuter(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_neuter(n.floor) + " komma ") + format_spellout_cardinal_neuter((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + " billiarður") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + " billiarður") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("ein billiarð" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_neuter((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("ein billiarð" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + " billiónur") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_neuter((n % 100000000000000)))
+                (" og " + format_spellout_cardinal_neuter((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + " billiónur") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("ein billión" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_neuter((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("ein billión" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + " milliarður") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_neuter((n % 100000000000)))
+                (" og " + format_spellout_cardinal_neuter((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + " milliarður") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("ein milliarð" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_neuter((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("ein milliarð" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + " milliónur") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_neuter((n % 100000000)))
+                (" og " + format_spellout_cardinal_neuter((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + " milliónur") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("ein millión" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_neuter((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("ein millión" + (if (n == 1000000) then
+            if (n >= 1000) then
+              return ((format_spellout_cardinal_neuter((n / 1000).floor) + " þúsund") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_neuter((n % 100000)))
+                (" og " + format_spellout_cardinal_neuter((n % 1000)))
               end))
             end
-            if (n >= 1000) then
-              return ((format_spellout_cardinal_neuter((n / 1000.0).floor) + " þúsund") + (if (n == 1000) then
+            if (n >= 100) then
+              return ((format_spellout_cardinal_neuter((n / 100).floor) + "­hundrað") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_neuter((n % 100)))
               end))
             end
-            if (n >= 100) then
-              return ((format_spellout_cardinal_neuter((n / 100.0).floor) + "­hundrað") + ((n == 100) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 100))))))
-            end
             if (n >= 90) then
-              return ("níutíu" + ((n == 90) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("níutíu" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("áttatíu" + ((n == 80) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("áttatíu" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("sjötíu" + ((n == 70) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("sjötíu" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("sextíu" + ((n == 60) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("sextíu" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("fimmtíu" + ((n == 50) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("fimmtíu" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("fjörutíu" + ((n == 40) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("fjörutíu" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("þrjátíu" + ((n == 30) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("þrjátíu" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("tuttugu" + ((n == 20) ? ("") : ((" og " + format_spellout_cardinal_neuter((n % 10))))))
+              return ("tuttugu" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_neuter((n % 100)))
+              end))
             end
             return format_spellout_cardinal_masculine(n) if (n >= 5)
             return "fjögur" if (n >= 4)
@@ -285,102 +325,134 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("mínus " + format_spellout_cardinal_feminine(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal_feminine(n.floor) + " komma ") + format_spellout_cardinal_feminine(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal_feminine(n.floor) + " komma ") + format_spellout_cardinal_feminine((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 2000000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2.0e+15).floor) + " billiarður") + (if (n == 2000000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000000).floor) + " billiarður") + (if ((n == 2000000000000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 10000000000000000)))
+              end))
+            end
+            if (n >= 1000000000000000) then
+              return ("ein billiarð" + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_feminine((n % 1000000000000000)))
               end))
             end
-            if (n >= 1000000000000000) then
-              return ("ein billiarð" + (if (n == 1000000000000000) then
+            if (n >= 2000000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000000).floor) + " billiónur") + (if ((n == 2000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_feminine((n % 100000000000000)))
+                (" og " + format_spellout_cardinal_feminine((n % 10000000000000)))
               end))
             end
-            if (n >= 2000000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000000.0).floor) + " billiónur") + (if (n == 2000000000000) then
+            if (n >= 1000000000000) then
+              return ("ein billión" + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_feminine((n % 1000000000000)))
               end))
             end
-            if (n >= 1000000000000) then
-              return ("ein billión" + (if (n == 1000000000000) then
+            if (n >= 2000000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000000).floor) + " milliarður") + (if ((n == 2000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_feminine((n % 100000000000)))
+                (" og " + format_spellout_cardinal_feminine((n % 10000000000)))
               end))
             end
-            if (n >= 2000000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000000.0).floor) + " milliarður") + (if (n == 2000000000) then
+            if (n >= 1000000000) then
+              return ("ein milliarð" + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_feminine((n % 1000000000)))
               end))
             end
-            if (n >= 1000000000) then
-              return ("ein milliarð" + (if (n == 1000000000) then
+            if (n >= 2000000) then
+              return ((format_spellout_cardinal_feminine((n / 10000000).floor) + " milliónur") + (if ((n == 2000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_feminine((n % 100000000)))
+                (" og " + format_spellout_cardinal_feminine((n % 10000000)))
               end))
             end
-            if (n >= 2000000) then
-              return ((format_spellout_cardinal_feminine((n / 2000000.0).floor) + " milliónur") + (if (n == 2000000) then
+            if (n >= 1000000) then
+              return ("ein millión" + (if ((n == 1000000) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_feminine((n % 1000000)))
               end))
             end
-            if (n >= 1000000) then
-              return ("ein millión" + (if (n == 1000000) then
-                ""
-              else
-                (" og " + format_spellout_cardinal_feminine((n % 100000)))
-              end))
-            end
             if (n >= 1000) then
-              return ((format_spellout_cardinal_neuter((n / 1000.0).floor) + " þúsund") + (if (n == 1000) then
+              return ((format_spellout_cardinal_neuter((n / 1000).floor) + " þúsund") + (if ((n == 1000) or ((n % 10) == 0)) then
                 ""
               else
-                (" og " + format_spellout_cardinal_feminine((n % 100)))
+                (" og " + format_spellout_cardinal_feminine((n % 1000)))
               end))
             end
             if (n >= 100) then
-              return ((format_spellout_cardinal_neuter((n / 100.0).floor) + "­hundrað") + (if (n == 100) then
+              return ((format_spellout_cardinal_neuter((n / 100).floor) + "­hundrað") + (if ((n == 100) or ((n % 10) == 0)) then
                 ""
               else
                 (" og " + format_spellout_cardinal_feminine((n % 100)))
               end))
             end
             if (n >= 90) then
-              return ("níutíu" + ((n == 90) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("níutíu" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("áttatíu" + ((n == 80) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("áttatíu" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("sjötíu" + ((n == 70) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("sjötíu" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("sextíu" + ((n == 60) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("sextíu" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("fimmtíu" + ((n == 50) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("fimmtíu" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("fjörutíu" + ((n == 40) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("fjörutíu" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("þrjátíu" + ((n == 30) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("þrjátíu" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("tuttugu" + ((n == 20) ? ("") : ((" og " + format_spellout_cardinal_feminine((n % 10))))))
+              return ("tuttugu" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" og " + format_spellout_cardinal_feminine((n % 100)))
+              end))
             end
             return format_spellout_cardinal_masculine(n) if (n >= 5)
             return "fjórar" if (n >= 4)

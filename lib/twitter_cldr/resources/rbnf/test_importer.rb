@@ -59,13 +59,16 @@ module TwitterCldr
         end
 
         def import_locale(ulocale, groupings)
-          groupings.map do |grouping|
+          groupings.inject({}) do |grouping_ret, grouping|
             formatter = RuleBasedNumberFormat.new(ulocale, grouping)
-            formatter.getRuleSetNames.inject({}) do |ruleset_ret, ruleset_name|
+            grouping_name = get_grouping_display_name(grouping)
+            grouping_ret[grouping_name] = formatter.getRuleSetNames.inject({}) do |ruleset_ret, ruleset_name|
               ruleset_display_name = formatter.getRuleSetDisplayName(ruleset_name, ulocale)
+              ruleset_display_name = TwitterCldr::Resources::Rbnf::RuleSet.get_display_name(ruleset_display_name)
               ruleset_ret[ruleset_display_name] = import_ruleset(formatter, ruleset_name)
               ruleset_ret
             end
+            grouping_ret
           end
         end
 
@@ -80,6 +83,17 @@ module TwitterCldr
 
         def output_file_for(locale)
           File.join(output_path, locale, "rbnf_test.yml")
+        end
+
+        def get_grouping_display_name(grouping)
+          case grouping
+            when RuleBasedNumberFormat::SPELLOUT
+              "spellout"
+            when RuleBasedNumberFormat::ORDINAL
+              "ordinal"
+            when RuleBasedNumberFormat::DURATION
+              "duration"
+          end
         end
 
       end

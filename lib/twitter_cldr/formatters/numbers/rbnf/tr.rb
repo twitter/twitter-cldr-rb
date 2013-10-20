@@ -22,71 +22,127 @@ module TwitterCldr
             is_fractional = (n != n.floor)
             return ("eksi " + format_spellout_cardinal(-n)) if (n < 0)
             if is_fractional and (n > 1) then
-              return ((format_spellout_cardinal(n.floor) + " virgül ") + format_spellout_cardinal(n.to_s.gsub(/d*./, "").to_f))
+              return ((format_spellout_cardinal(n.floor) + " virgül ") + format_spellout_cardinal((n % 10)))
             end
             return n.to_s if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_cardinal((n / 1.0e+15).floor) + " katrilyon") + (if (n == 1000000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000000).floor) + " katrilyon") + (if ((n == 1000000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000000000)))
+                (" " + format_spellout_cardinal((n % 1000000000000000)))
               end))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_cardinal((n / 1000000000000.0).floor) + " trilyon") + (if (n == 1000000000000) then
+              return ((format_spellout_cardinal((n / 1000000000000).floor) + " trilyon") + (if ((n == 1000000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000000)))
+                (" " + format_spellout_cardinal((n % 1000000000000)))
               end))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_cardinal((n / 1000000000.0).floor) + " milyar") + (if (n == 1000000000) then
+              return ((format_spellout_cardinal((n / 1000000000).floor) + " milyar") + (if ((n == 1000000000) or ((n % 10) == 0)) then
                 ""
               else
-                (" " + format_spellout_cardinal((n % 100000000)))
+                (" " + format_spellout_cardinal((n % 1000000000)))
               end))
             end
             if (n >= 1000000) then
-              return ((format_spellout_cardinal((n / 1000000.0).floor) + " milyon") + ((n == 1000000) ? ("") : ((" " + format_spellout_cardinal((n % 100000))))))
+              return ((format_spellout_cardinal((n / 1000000).floor) + " milyon") + (if ((n == 1000000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000000)))
+              end))
             end
             if (n >= 2000) then
-              return ((format_spellout_cardinal((n / 2000.0).floor) + " bin") + ((n == 2000) ? ("") : ((" " + format_spellout_cardinal((n % 1000))))))
+              return ((format_spellout_cardinal((n / 10000).floor) + " bin") + (if ((n == 2000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 10000)))
+              end))
             end
             if (n >= 1000) then
-              return ("bin" + ((n == 1000) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ("bin" + (if ((n == 1000) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 200) then
-              return ((format_spellout_cardinal((n / 200.0).floor) + " yüz") + ((n == 200) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ((format_spellout_cardinal((n / 1000).floor) + " yüz") + (if ((n == 200) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 1000)))
+              end))
             end
             if (n >= 100) then
-              return ("yüz" + ((n == 100) ? ("") : ((" " + format_spellout_cardinal((n % 100))))))
+              return ("yüz" + (if ((n == 100) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 90) then
-              return ("doksan" + ((n == 90) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("doksan" + (if ((n == 90) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 80) then
-              return ("seksen" + ((n == 80) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("seksen" + (if ((n == 80) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 70) then
-              return ("yetmiş" + ((n == 70) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("yetmiş" + (if ((n == 70) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 60) then
-              return ("altmış" + ((n == 60) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("altmış" + (if ((n == 60) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 50) then
-              return ("elli" + ((n == 50) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("elli" + (if ((n == 50) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 40) then
-              return ("kırk" + ((n == 40) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("kırk" + (if ((n == 40) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 30) then
-              return ("otuz" + ((n == 30) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("otuz" + (if ((n == 30) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 20) then
-              return ("yirmi" + ((n == 20) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("yirmi" + (if ((n == 20) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 100)))
+              end))
             end
             if (n >= 10) then
-              return ("on" + ((n == 10) ? ("") : ((" " + format_spellout_cardinal((n % 10))))))
+              return ("on" + (if ((n == 10) or ((n % 10) == 0)) then
+                ""
+              else
+                (" " + format_spellout_cardinal((n % 10)))
+              end))
             end
             return "dokuz" if (n >= 9)
             return "sekiz" if (n >= 8)
@@ -125,33 +181,33 @@ module TwitterCldr
             return n.to_s if is_fractional and (n > 1)
             return (n.to_s + "'inci") if (n >= 1000000000000000000)
             if (n >= 1000000000000000) then
-              return ((format_spellout_numbering((n / 1.0e+15).floor) + " katrilyon") + format_uncu((n % 100000000000000)))
+              return ((format_spellout_numbering((n / 1000000000000000).floor) + " katrilyon") + format_uncu((n % 1000000000000000)))
             end
             if (n >= 1000000000000) then
-              return ((format_spellout_numbering((n / 1000000000000.0).floor) + " trilyon") + format_uncu((n % 100000000000)))
+              return ((format_spellout_numbering((n / 1000000000000).floor) + " trilyon") + format_uncu((n % 1000000000000)))
             end
             if (n >= 1000000000) then
-              return ((format_spellout_numbering((n / 1000000000.0).floor) + " milyar") + "ıncı")
+              return ((format_spellout_numbering((n / 1000000000).floor) + " milyar") + "ıncı")
             end
             if (n >= 1000000) then
-              return ((format_spellout_numbering((n / 1000000.0).floor) + " milyon") + format_uncu((n % 100000)))
+              return ((format_spellout_numbering((n / 1000000).floor) + " milyon") + format_uncu((n % 1000000)))
             end
             if (n >= 2000) then
-              return ((format_spellout_numbering((n / 2000.0).floor) + " bin") + format_inci((n % 1000)))
+              return ((format_spellout_numbering((n / 10000).floor) + " bin") + format_inci((n % 10000)))
             end
-            return ("bin" + format_inci((n % 100))) if (n >= 1000)
+            return ("bin" + format_inci((n % 1000))) if (n >= 1000)
             if (n >= 200) then
-              return ((format_spellout_numbering((n / 200.0).floor) + " yüz") + "üncü")
+              return ((format_spellout_numbering((n / 1000).floor) + " yüz") + "üncü")
             end
             return ("yüz" + "üncü") if (n >= 100)
             return ("doksan" + "ıncı") if (n >= 90)
-            return ("seksen" + format_inci((n % 10))) if (n >= 80)
-            return ("yetmiş" + format_inci((n % 10))) if (n >= 70)
+            return ("seksen" + format_inci((n % 100))) if (n >= 80)
+            return ("yetmiş" + format_inci((n % 100))) if (n >= 70)
             return ("altmış" + "ıncı") if (n >= 60)
-            return ("elli" + format_nci((n % 10))) if (n >= 50)
+            return ("elli" + format_nci((n % 100))) if (n >= 50)
             return ("kırk" + "ıncı") if (n >= 40)
-            return ("otuz" + format_uncu((n % 10))) if (n >= 30)
-            return ("yirmi" + format_nci((n % 10))) if (n >= 20)
+            return ("otuz" + format_uncu((n % 100))) if (n >= 30)
+            return ("yirmi" + format_nci((n % 100))) if (n >= 20)
             return ("on" + format_uncu((n % 10))) if (n >= 10)
             return "dokuzuncu" if (n >= 9)
             return "sekizinci" if (n >= 8)

@@ -22,11 +22,15 @@ module TwitterCldr
 
         class << self
 
-          def get_safe_renderer_name(renderer_name)
-            "format-#{renderer_name}"
+          def get_display_name(name)
+            name
               .gsub(/[^\w-]/, '-')
               .gsub(/[-_]+/, '_')
               .gsub('GREEKNUMERALMAJUSCULES', 'GreekNumeralMajuscules')
+          end
+
+          def get_safe_renderer_name(renderer_name)
+            get_display_name("format-#{renderer_name}")
           end
 
           def get_safe_grouping_name(grouping_name)
@@ -155,9 +159,10 @@ module TwitterCldr
               expr = if rule_parts.special_char == '<'
                 if rule.value =~ /\A\d+\z/
                   # "(n / #{rule.value.to_f}).floor"
+                  divisor = divisor_for(rule)
                   s(:call,
                     s(:call,
-                      s(:call, nil, :n), :/, s(:lit, rule.value.to_f)
+                      s(:call, nil, :n), :/, s(:lit, divisor)
                     ),
                     :floor
                   )
@@ -185,16 +190,8 @@ module TwitterCldr
                   # "-n"
                   s(:call, s(:call, nil, :n), :-@)
                 else
-                  val = rule.value.to_i
-                  exp = if val > 0
-                    (Math.log(val) / Math.log(rule.radix)).floor
-                  else
-                    1
-                  end
-
-                  divisor = exp >= 0 ? rule.radix ** exp : 1
-
                   # "n % divisor"
+                  divisor = divisor_for(rule)
                   s(:call, s(:call, nil, :n), :%, s(:lit, divisor))
                 end
               elsif rule_parts.special_char == "="
@@ -232,7 +229,7 @@ module TwitterCldr
                 s(:call, nil, :n), :==, s(:lit, rule.value.to_i)
               )
 
-              # n == #{rule.value.to_i} && n % 10 == 0
+              # n == #{rule.value.to_i} || n % 10 == 0
               conditions = if rule_parts.skip_multiple_of_ten?
                 s(:or,
                   conditions,
@@ -269,6 +266,17 @@ module TwitterCldr
           end
 
           ast
+        end
+
+        def divisor_for(rule)
+          val = rule.value.to_i
+          exp = if val > 0
+            (Math.log(val) / Math.log(rule.radix || 10)).ceil
+          else
+            1
+          end
+
+          divisor = exp >= 0 ? rule.radix ** exp : 1
         end
 
         def condition_to_statement_ast(condition_ast, rule)

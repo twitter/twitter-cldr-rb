@@ -68,30 +68,44 @@ module TwitterCldr
         end
 
         def for_canonical_decomposition(code_points)
-          find(canonical_compositions[code_points]) if canonical_compositions.has_key?(code_points)
+          if canonical_compositions.has_key?(code_points)
+            find(canonical_compositions[code_points])
+          end
         end
 
         def canonical_compositions
-          @canonical_compositions ||= TwitterCldr.get_resource(:unicode_data, :canonical_compositions)
+          @canonical_compositions ||=
+            TwitterCldr.get_resource(:unicode_data, :canonical_compositions)
         end
 
         def hangul_type(code_point)
-          return unless code_point
-
-          [:lparts, :vparts, :tparts, :compositions].each do |type|
-            hangul_blocks[type].each do |range|
-              return type if range.include?(code_point)
+          hangul_type_cache[code_point] ||= begin
+            if code_point
+              [:lparts, :vparts, :tparts, :compositions].each do |type|
+                hangul_blocks[type].each do |range|
+                  return type if range.include?(code_point)
+                end
+              end
+            else
+              nil
             end
           end
+        end
 
-          nil
+        def hangul_type_cache
+          @hangul_type_cache ||= {}
         end
 
         def excluded_from_composition?(code_point)
-          composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
+          composition_exclusion_cache[code_point] ||=
+            composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
         end
 
         private
+
+        def composition_exclusion_cache
+          @composition_exclusion_cache ||= {}
+        end
 
         def hangul_blocks
           @hangul_blocks ||= TwitterCldr.get_resource(:unicode_data, :hangul_blocks)
@@ -102,7 +116,12 @@ module TwitterCldr
         end
 
         def get_block(code_point)
-          blocks.detect { |_, range|  range.include?(code_point) }
+          block_cache[code_point] ||=
+            blocks.detect { |_, range|  range.include?(code_point) }
+        end
+
+        def block_cache
+          @block_cache ||= {}
         end
 
         def blocks

@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'ruby-prof'
+
 require 'spec_helper'
 
 require 'open-uri'
@@ -26,6 +28,16 @@ describe 'Unicode Normalization Algorithms' do
       run_test(described_class, invariants, FULL_NORMALIZATION_TEST_PATH)
     end
   end
+
+  # before(:each) do
+  #   RubyProf.start
+  # end
+  # 
+  # after(:each) do
+  #   result = RubyProf.stop
+  #   printer = RubyProf::FlatPrinter.new(result)
+  #   printer.print(STDOUT)
+  # end
 
   describe NFD do
     let(:invariants) { { 3 => [1, 2, 3], 5 => [4, 5] } }

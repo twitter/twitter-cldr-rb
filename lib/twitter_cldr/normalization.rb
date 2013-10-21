@@ -5,12 +5,13 @@
 
 module TwitterCldr
   module Normalization
-    autoload :Base,   'twitter_cldr/normalization/base'
-    autoload :Hangul, 'twitter_cldr/normalization/hangul'
-    autoload :NFC,    'twitter_cldr/normalization/nfc'
-    autoload :NFD,    'twitter_cldr/normalization/nfd'
-    autoload :NFKC,   'twitter_cldr/normalization/nfkc'
-    autoload :NFKD,   'twitter_cldr/normalization/nfkd'
+    autoload :Base,       'twitter_cldr/normalization/base'
+    autoload :Hangul,     'twitter_cldr/normalization/hangul'
+    autoload :QuickCheck, 'twitter_cldr/normalization/quick_check'
+    autoload :NFC,        'twitter_cldr/normalization/nfc'
+    autoload :NFD,        'twitter_cldr/normalization/nfd'
+    autoload :NFKC,       'twitter_cldr/normalization/nfkc'
+    autoload :NFKD,       'twitter_cldr/normalization/nfkd'
 
     VALID_NORMALIZERS  = [:NFD, :NFKD, :NFC, :NFKC]
     DEFAULT_NORMALIZER = :NFD

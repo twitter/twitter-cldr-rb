@@ -60,9 +60,7 @@ module TwitterCldr
         end
 
         def hangul_syllable?(code_point)
-          # syllable_cache.fetch(code_point) do
-            (SBASE...SLIMIT).include?(code_point)
-          # end
+          (SBASE...SLIMIT).include?(code_point)
         end
 
         private

@@ -27,11 +27,7 @@ module TwitterCldr
 
         def decompose(code_points)
           code_points.inject([]) do |ret, code_point|
-            if requires_normalization?(code_point)
-              ret += decompose_recursively(code_point)
-            else
-              ret << code_point
-            end
+            ret += decompose_recursively(code_point)
             ret
           end
         end
@@ -40,7 +36,7 @@ module TwitterCldr
         #
         def decompose_recursively(code_point)
           unicode_data = TwitterCldr::Shared::CodePoint.find(code_point)
-          return code_point unless unicode_data
+          return [code_point] unless unicode_data
 
           if unicode_data.hangul_type == :compositions
             decompose_hangul(code_point)
@@ -55,7 +51,7 @@ module TwitterCldr
           if decompose?(unicode_data)
             unicode_data.decomposition.map { |code_point| decompose_recursively(code_point) }.flatten
           else
-            unicode_data.code_point
+            [unicode_data.code_point]
           end
         end
 

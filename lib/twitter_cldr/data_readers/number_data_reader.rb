@@ -3,6 +3,9 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+include TwitterCldr::Tokenizers
+include TwitterCldr::Formatters
+
 module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
@@ -10,7 +13,7 @@ module TwitterCldr
       BASE_PATH   = [:numbers, :formats]
       SYMBOL_PATH = [:numbers, :symbols]
 
-      FORMAT_PATHS = {
+      TYPE_PATHS = {
         :default       => [:decimal, :patterns],
         :decimal       => [:decimal, :patterns],
         :long_decimal  => [:decimal, :patterns, :long],
@@ -19,12 +22,26 @@ module TwitterCldr
         :percent       => [:percent, :patterns]
       }
 
-      def pattern_for(options = {})
-        type = options[:type] || :default
-        format = options[:format] || :default
-        sign = options[:sign] || :positive
+      DEFAULT_TYPE = :decimal
+      DEFAULT_FORMAT = :default
+      DEFAULT_SIGN = :positive
 
-        path = BASE_PATH + FORMAT_PATHS[type]
+      attr_reader :type, :format, :sign
+
+      def initialize(locale, options = {})
+        super(locale)
+        @type = options[:type] || DEFAULT_TYPE
+
+        unless type && TYPE_PATHS.include?(type.to_sym)
+          raise ArgumentError.new("Type #{type} is not supported")
+        end
+
+        @format = options[:format] || DEFAULT_FORMAT
+        @sign = options[:sign] || DEFAULT_SIGN
+      end
+
+      def pattern
+        path = BASE_PATH + TYPE_PATHS[type]
         pattern = traverse(path)
 
         if pattern[format]
@@ -40,6 +57,18 @@ module TwitterCldr
 
       def symbols
         @symbols ||= traverse(SYMBOL_PATH)
+      end
+
+      def tokenizer
+        @tokenizer ||= NumberTokenizer.new(self)
+      end
+
+      def formatter
+        @formatter ||= begin
+          klass_name = type.to_s.split("_").map(&:capitalize).join
+          klass = TwitterCldr::Formatters.const_get(:"#{klass_name}Formatter")
+          klass.new(self)
+        end
       end
 
       private

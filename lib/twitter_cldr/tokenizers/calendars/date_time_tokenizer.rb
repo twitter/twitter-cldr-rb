@@ -13,7 +13,7 @@ module TwitterCldr
         @data_reader = data_reader
       end
 
-      def tokenize(pattern, data_reader)
+      def tokenize(pattern)
         PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
       end
 

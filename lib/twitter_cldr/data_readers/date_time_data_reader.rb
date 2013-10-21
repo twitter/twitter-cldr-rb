@@ -3,19 +3,36 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+include TwitterCldr::Tokenizers
+
 module TwitterCldr
   module DataReaders
     class DateTimeDataReader < CalendarDataReader
 
       def date_reader
-        @date_reader ||= DateDataReader.new(locale)
+        @date_reader ||= DateDataReader.new(locale, gather_options)
       end
 
       def time_reader
-        @time_reader ||= TimeDataReader.new(locale)
+        @time_reader ||= TimeDataReader.new(locale, gather_options)
+      end
+
+      def tokenizer
+        @tokenizer ||= DateTimeTokenizer.new(self)
+      end
+
+      def formatter
+        @formatter ||= DateTimeFormatter.new(self)
       end
 
       protected
+
+      def gather_options
+        {
+          :type => type,
+          :calendar_type => calendar_type
+        }
+      end
 
       def path_for(type, calendar_type)
         [:calendars, calendar_type, :formats, :datetime]

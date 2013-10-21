@@ -10,7 +10,7 @@ module TwitterCldr
       DEFAULT_PERCENT_SIGN = "%"
 
       def format(tokens, number, options = {})
-        super(number, options).gsub('¤', data_reader.symbols[:percent_sign] || DEFAULT_PERCENT_SIGN)
+        super(tokens, number, options).gsub('¤', data_reader.symbols[:percent_sign] || DEFAULT_PERCENT_SIGN)
       end
 
     end

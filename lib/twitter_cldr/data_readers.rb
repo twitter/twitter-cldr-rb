@@ -11,5 +11,6 @@ module TwitterCldr
     autoload :DateTimeDataReader, "twitter_cldr/data_readers/date_time_data_reader"
     autoload :DateDataReader,     "twitter_cldr/data_readers/date_data_reader"
     autoload :TimeDataReader,     "twitter_cldr/data_readers/time_data_reader"
+    autoload :TimespanDataReader, "twitter_cldr/data_readers/timespan_data_reader"
   end
 end

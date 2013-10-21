@@ -5,71 +5,11 @@
 
 module TwitterCldr
   module Formatters
-    class TimespanFormatter < Base
+    class TimespanFormatter < Formatter
 
-      DEFAULT_TYPE = :default
-      APPROXIMATE_MULTIPLIER = 0.75
-
-      TIME_IN_SECONDS = {
-        :second => 1,
-        :minute => 60,
-        :hour   => 3600,
-        :day    => 86400,
-        :week   => 604800,
-        :month  => 2629743.83,
-        :year   => 31556926
-      }
-
-      def initialize(options = {})
-        locale = extract_locale(options)
-        @direction = options[:direction]
-        cache_key = TwitterCldr::Utils.compute_cache_key(locale)
-        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::TimespanTokenizer.new(
-          :locale => locale
-        )
-      end
-
-      def format(seconds, fmt_options = {})
-        options = fmt_options.dup
-        options[:type]      ||= DEFAULT_TYPE
-        options[:direction] ||= (seconds < 0 ? :ago : :until)
-        options[:unit]      ||= calculate_unit(seconds.abs, options)
-
-        options[:number] = calculate_time(seconds.abs, options[:unit])
-
-        tokens = @tokenizer.tokens(options)
-        strings = tokens.map { |token| token[:value] }
-        strings.join.gsub(/\{[0-9]\}/, options[:number].to_s)
-      end
-
-      protected
-
-      def tokenizer_cache
-        @@tokenizer_cache ||= {}
-      end
-
-      def calculate_unit(seconds, unit_options = {})
-        options = unit_options.dup
-        options[:approximate] = false if options[:approximate].nil?
-        multiplier = options[:approximate] ? APPROXIMATE_MULTIPLIER : 1
-
-        if seconds < (TIME_IN_SECONDS[:minute] * multiplier) then :second
-        elsif seconds < (TIME_IN_SECONDS[:hour] * multiplier) then :minute
-        elsif seconds < (TIME_IN_SECONDS[:day] * multiplier) then :hour
-        elsif seconds < (TIME_IN_SECONDS[:week] * multiplier) then :day
-        elsif seconds < (TIME_IN_SECONDS[:month] * multiplier) then :week
-        elsif seconds < (TIME_IN_SECONDS[:year] * multiplier) then :month
-        else :year end
-      end
-
-      # 0 <-> 29 secs                                                   # => seconds
-      # 30 secs <-> 44 mins, 29 secs                                    # => minutes
-      # 44 mins, 30 secs <-> 23 hrs, 59 mins, 29 secs                   # => hours
-      # 23 hrs, 59 mins, 29 secs <-> 29 days, 23 hrs, 59 mins, 29 secs  # => days
-      # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
-      # 1 yr <-> max time or date                                       # => years
-      def calculate_time(seconds, unit)
-        (seconds.to_f / TIME_IN_SECONDS[unit].to_f).round.to_i
+      def format(tokens, number, options = {})
+        strings = tokens.map { |token| token.value }
+        strings.join.gsub(/\{[0-9]\}/, number.abs.to_s)
       end
 
     end

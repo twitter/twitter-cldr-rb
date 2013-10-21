@@ -6,6 +6,7 @@
 module TwitterCldr
   module Formatters
     class NumberFormatter < Base
+
       attr_reader :symbols
 
       DEFAULT_SYMBOLS = {

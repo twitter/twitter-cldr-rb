@@ -13,13 +13,10 @@ module TwitterCldr
       class << self
 
         def requires_normalization?(code_point, algorithm)
-          key = TwitterCldr::Utils.compute_cache_key(code_point, algorithm)
-          requires_cache[key] = if requires_cache[key].nil?
+          TwitterCldr.caches.requires_normalization_cache.fetch("#{code_point}-#{algorithm}") do
             resource_for(algorithm).any? do |range|
               range.include?(code_point)
             end
-          else
-            requires_cache[key]
           end
         end
 
@@ -31,7 +28,10 @@ module TwitterCldr
 
         def resource_for(algorithm)
           @resources ||= {}
-          @resources[algorithm] ||= TwitterCldr.get_resource("unicode_data", "#{algorithm.to_s.downcase}_quick_check")
+          @resources[algorithm] ||= TwitterCldr.get_resource(
+            "unicode_data",
+            "#{algorithm.to_s.downcase}_quick_check"
+          )
         end
 
       end

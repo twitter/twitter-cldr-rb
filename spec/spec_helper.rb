@@ -49,6 +49,7 @@ RSpec.configure do |config|
   config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
 
   config.before(:each) do
+    TwitterCldr.caches.expire_all
     TwitterCldr.reset_locale_fallbacks
     TwitterCldr.locale = :en
     FastGettext.locale = :en

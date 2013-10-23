@@ -26,11 +26,11 @@ module TwitterCldr
         protected
 
         def compose(code_points)
-          final = []
+          final = Hamster.list
           hangul_code_points = []
 
           code_points.each_with_index do |code_point, index|
-            final << code_point
+            final = final.cons(code_point)
             hangul_type = TwitterCldr::Shared::CodePoint.hangul_type(code_point)
             next_hangul_type = TwitterCldr::Shared::CodePoint.hangul_type(code_points[index + 1])
 
@@ -44,12 +44,12 @@ module TwitterCldr
             end
 
             if hangul_code_points.size > 1 && !next_hangul_type
-              final.pop(hangul_code_points.size)
-              final << compose_hangul(hangul_code_points)
+              final = final.drop(hangul_code_points.size).cons(compose_hangul(hangul_code_points))
               hangul_code_points.clear
             end
           end
 
+          final = final.reverse.to_a
           compose_normal(final)
           final
         end

@@ -78,21 +78,21 @@ describe CodePoint do
 
     it "fetches valid information for the specified code point" do
       test_code_points_data(
-          0x17D1  => [0x17D1, "KHMER SIGN VIRIAM", "Mn", "0", "NSM", "", "", "", "", "N", "", "", "", "", ""],
-          0xFE91  => [0xFE91, "ARABIC LETTER BEH INITIAL FORM", "Lo", "0", "AL", "<initial> 0628", "", "", "", "N", "GLYPH FOR INITIAL ARABIC BAA", "", "", "", ""],
-          0x24B5  => [0x24B5, "PARENTHESIZED LATIN SMALL LETTER Z", "So", "0", "L", "<compat> 0028 007A 0029", "", "", "", "N", "", "", "", "", ""],
-          0x2128  => [0x2128, "BLACK-LETTER CAPITAL Z", "Lu", "0", "L", "<font> 005A", "", "", "", "N", "BLACK-LETTER Z", "", "", "", ""],
-          0x1F241 => [0x1F241, "TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09", "So", "0", "L", "<compat> 3014 4E09 3015", "", "", "", "N", "", "", "", "", ""]
+        0x17D1  => [0x17D1, "KHMER SIGN VIRIAM", "Mn", "0", "NSM", "", "", "", "", "N", "", "", "", "", ""],
+        0xFE91  => [0xFE91, "ARABIC LETTER BEH INITIAL FORM", "Lo", "0", "AL", "<initial> 0628", "", "", "", "N", "GLYPH FOR INITIAL ARABIC BAA", "", "", "", ""],
+        0x24B5  => [0x24B5, "PARENTHESIZED LATIN SMALL LETTER Z", "So", "0", "L", "<compat> 0028 007A 0029", "", "", "", "N", "", "", "", "", ""],
+        0x2128  => [0x2128, "BLACK-LETTER CAPITAL Z", "Lu", "0", "L", "<font> 005A", "", "", "", "N", "BLACK-LETTER Z", "", "", "", ""],
+        0x1F241 => [0x1F241, "TORTOISE SHELL BRACKETED CJK UNIFIED IDEOGRAPH-4E09", "So", "0", "L", "<compat> 3014 4E09 3015", "", "", "", "N", "", "", "", "", ""]
       )
     end
 
     it "fetches valid information for a code point within a range" do
       test_code_points_data(
-          0x4E11 => [0x4E11, "<CJK Ideograph>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xAC55 => [0xAC55, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xD7A1 => [0xD7A1, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xDAAA => [0xDAAA, "<Non Private Use High Surrogate>", "Cs", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
-          0xF8FE => [0xF8FE, "<Private Use>", "Co", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
+        0x4E11 => [0x4E11, "<CJK Ideograph>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+        0xAC55 => [0xAC55, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+        0xD7A1 => [0xD7A1, "<Hangul Syllable>", "Lo", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+        0xDAAA => [0xDAAA, "<Non Private Use High Surrogate>", "Cs", "0", "L", "", "", "", "", "N", "", "", "", "", ""],
+        0xF8FE => [0xF8FE, "<Private Use>", "Co", "0", "L", "", "", "", "", "N", "", "", "", "", ""]
       )
     end
 
@@ -111,19 +111,12 @@ describe CodePoint do
     let(:canonical_compositions) { { [123, 456] => 789 } }
 
     before(:each) do
-      # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@canonical_compositions, nil)
       stub(CodePoint).find { |code_point| "I'm code point #{code_point}" }
-    end
-
-    after(:all) do
-      # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@canonical_compositions, nil)
     end
 
     context "with a stubbed decomposition map" do
       before(:each) do
-        mock(TwitterCldr).get_resource(:unicode_data, :canonical_compositions) { canonical_compositions }
+        stub(TwitterCldr).get_resource(:unicode_data, :canonical_compositions) { canonical_compositions }
       end
 
       it "should return a code point with the correct value" do
@@ -133,12 +126,6 @@ describe CodePoint do
       it "should return nil if no decomposition mapping exists" do
         CodePoint.for_canonical_decomposition([987]).should be_nil
       end
-    end
-
-    it "should cache the decomposition map" do
-      mock(TwitterCldr).get_resource(:unicode_data, :canonical_compositions) { canonical_compositions }.once
-      CodePoint.for_canonical_decomposition([0xA0]).should be_nil
-      CodePoint.for_canonical_decomposition([0xA0]).should be_nil
     end
   end
 
@@ -183,10 +170,6 @@ describe CodePoint do
   end
 
   describe "#get_block" do
-    before(:each) do
-      CodePoint.send(:block_cache).clear
-    end
-
     it "finds the block that corresponds to the code point" do
       stub(TwitterCldr).get_resource(:unicode_data, :blocks) { [[:klingon, 122..307], [:hirogen, 1337..2200]] }
       CodePoint.send(:get_block, 200).should  == [:klingon, 122..307]

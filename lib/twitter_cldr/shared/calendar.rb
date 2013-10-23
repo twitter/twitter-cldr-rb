@@ -107,8 +107,7 @@ module TwitterCldr
       end
 
       def get_data(*path)
-        cache_key = TwitterCldr::Utils.compute_cache_key([@locale] + path)
-        calendar_cache.fetch(cache_key) do |key|
+        TwitterCldr.caches.calendar_data_cache.fetch([@locale] + path) do |key|
           data = TwitterCldr::Utils.traverse_hash(calendar_data, path)
           redirect = parse_redirect(data)
           calendar_cache[key] = if redirect

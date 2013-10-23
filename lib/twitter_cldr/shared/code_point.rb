@@ -57,7 +57,7 @@ module TwitterCldr
       class << self
 
         def find(code_point)
-          code_point_cache[code_point] ||= begin
+          TwitterCldr.caches.code_point_cache.fetch(code_point) do
             target = get_block(code_point)
 
             return unless target && target.first
@@ -70,18 +70,17 @@ module TwitterCldr
         end
 
         def for_canonical_decomposition(code_points)
-          if canonical_compositions.has_key?(code_points)
-            find(canonical_compositions[code_points])
+          if composition = canonical_compositions[code_points]
+            find(composition)
           end
         end
 
         def canonical_compositions
-          @canonical_compositions ||=
-            TwitterCldr.get_resource(:unicode_data, :canonical_compositions)
+          TwitterCldr.get_resource(:unicode_data, :canonical_compositions)
         end
 
         def hangul_type(code_point)
-          hangul_type_cache[code_point] ||= begin
+          TwitterCldr.caches.hangul_type_cache.fetch(code_point) do
             if code_point
               [:lparts, :vparts, :tparts, :compositions].each do |type|
                 hangul_blocks[type].each do |range|
@@ -95,40 +94,26 @@ module TwitterCldr
           end
         end
 
-        def hangul_type_cache
-          @hangul_type_cache ||= {}
-        end
-
         def excluded_from_composition?(code_point)
-          composition_exclusion_cache[code_point] ||=
+          TwitterCldr.caches.composition_exclusion_cache.fetch(code_point) do
             composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
+          end
         end
 
         private
 
-        def code_point_cache
-          @code_point_cache ||= {}
-        end
-
-        def composition_exclusion_cache
-          @composition_exclusion_cache ||= {}
-        end
-
         def hangul_blocks
-          @hangul_blocks ||= TwitterCldr.get_resource(:unicode_data, :hangul_blocks)
+          TwitterCldr.get_resource(:unicode_data, :hangul_blocks)
         end
 
         def composition_exclusions
-          @composition_exclusions ||= TwitterCldr.get_resource(:unicode_data, :composition_exclusions)
+          TwitterCldr.get_resource(:unicode_data, :composition_exclusions)
         end
 
         def get_block(code_point)
-          block_cache[code_point] ||=
-            blocks.detect { |_, range|  range.include?(code_point) }
-        end
-
-        def block_cache
-          @block_cache ||= {}
+          TwitterCldr.caches.block_cache.fetch(code_point) do
+            blocks.detect { |_, range| range.include?(code_point) }
+          end
         end
 
         def blocks

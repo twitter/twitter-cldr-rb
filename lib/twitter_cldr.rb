@@ -14,6 +14,7 @@ require 'fileutils'
 require 'forwardable'
 
 require 'twitter_cldr/version'
+require 'twitter_cldr/cache'
 
 Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
 

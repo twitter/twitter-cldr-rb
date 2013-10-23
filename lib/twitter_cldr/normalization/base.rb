@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'hamster'
+require 'hamster/list'
 
 module TwitterCldr
   module Normalization
@@ -18,16 +18,11 @@ module TwitterCldr
         end
 
         def combining_class_for(code_point)
-          combining_class_cache[code_point] ||=
+          TwitterCldr.caches.combining_class_cache.fetch(code_point) do
             TwitterCldr::Shared::CodePoint.find(code_point).combining_class.to_i
+          end
         rescue NoMethodError
           0
-        end
-
-        protected
-
-        def combining_class_cache
-          @combining_class_cache ||= {}
         end
 
       end

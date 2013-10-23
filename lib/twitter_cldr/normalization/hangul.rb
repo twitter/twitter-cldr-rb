@@ -41,7 +41,7 @@ module TwitterCldr
         # Also see http://source.icu-project.org/repos/icu/icuhtml/trunk/design/collation/ICU_collation_design.htm#Hangul_Implicit_CEs
         #
         def decompose(code_point)
-          decomposition_cache[code_point] ||= begin
+          TwitterCldr.caches.decomposition_cache.fetch(code_point) do
             l = code_point - SBASE
 
             t = l % TCOUNT
@@ -60,17 +60,9 @@ module TwitterCldr
         end
 
         def hangul_syllable?(code_point)
-          (SBASE...SLIMIT).include?(code_point)
-        end
-
-        private
-
-        def syllable_cache
-          @syllable_cache ||= {}
-        end
-
-        def decomposition_cache
-          @decomposition_cache ||= {}
+          TwitterCldr.caches.hangul_syllable_cache.fetch(code_point) do
+            (SBASE...SLIMIT).include?(code_point)
+          end
         end
 
       end

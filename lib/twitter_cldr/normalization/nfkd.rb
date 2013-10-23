@@ -25,7 +25,7 @@ module TwitterCldr
         protected
 
         def decompose(code_points)
-          code_points.inject(Hamster.list) do |ret, code_point|
+          list = code_points.inject(Hamster.list) do |ret, code_point|
             decompose_recursively(code_point).each do |decomp_cp|
               ret = ret.cons(decomp_cp)
             end

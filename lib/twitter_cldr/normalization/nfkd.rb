@@ -16,7 +16,6 @@ module TwitterCldr
     #
     class NFKD < Base
 
-
       class << self
 
         def normalize_code_points(code_points)
@@ -26,10 +25,12 @@ module TwitterCldr
         protected
 
         def decompose(code_points)
-          code_points.inject([]) do |ret, code_point|
-            ret += decompose_recursively(code_point)
+          code_points.inject(Hamster.list) do |ret, code_point|
+            decompose_recursively(code_point).each do |decomp_cp|
+              ret = ret.cons(decomp_cp)
+            end
             ret
-          end
+          end.reverse.to_a
         end
 
         # Recursively decomposes a given code point with the values in its Decomposition Mapping property.
@@ -85,7 +86,6 @@ module TwitterCldr
           end
 
           result.concat(stable_sort(accum)) unless accum.empty?
-
           result.map { |cp_with_cc| cp_with_cc[0] }
         end
 

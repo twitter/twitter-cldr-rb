@@ -13,6 +13,12 @@ module TwitterCldr
 
       class << self
 
+        VALID_HANGUL_SEQUENCES = [
+          [0, :lparts],
+          [1, :vparts],
+          [2, :tparts]
+        ]
+
         def normalize_code_points(code_points)
           compose(TwitterCldr::Normalization::NFKD.normalize_code_points(code_points))
         end
@@ -49,7 +55,7 @@ module TwitterCldr
         end
 
         def valid_hangul_sequence?(buffer_size, hangul_type)
-          [[0, :lparts], [1, :vparts], [2, :tparts]].include?([buffer_size, hangul_type])
+          VALID_HANGUL_SEQUENCES.include?([buffer_size, hangul_type])
         end
 
         def compose_hangul(code_points)

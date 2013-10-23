@@ -57,14 +57,16 @@ module TwitterCldr
       class << self
 
         def find(code_point)
-          target = get_block(code_point)
+          code_point_cache[code_point] ||= begin
+            target = get_block(code_point)
 
-          return unless target && target.first
+            return unless target && target.first
 
-          block_data      = TwitterCldr.get_resource(:unicode_data, :blocks, target.first)
-          code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
+            block_data      = TwitterCldr.get_resource(:unicode_data, :blocks, target.first)
+            code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
 
-          CodePoint.new(*code_point_data) if code_point_data
+            CodePoint.new(*code_point_data) if code_point_data
+          end
         end
 
         def for_canonical_decomposition(code_points)
@@ -102,6 +104,10 @@ module TwitterCldr
         end
 
         private
+
+        def code_point_cache
+          @code_point_cache ||= {}
+        end
 
         def composition_exclusion_cache
           @composition_exclusion_cache ||= {}

@@ -18,7 +18,7 @@ describe 'Unicode Normalization Algorithms' do
 
   shared_examples_for 'a normalization algorithm' do
     before(:each) do
-      CodePoint.send(:block_cache).clear
+      TwitterCldr::Shared::CodePoint.send(:block_cache).clear
     end
 
     it 'passes all the tests in NormalizationTestShort.txt' do

@@ -88,6 +88,7 @@ module TwitterCldr
                   return type if range.include?(code_point)
                 end
               end
+              nil
             else
               nil
             end

@@ -17,6 +17,10 @@ describe 'Unicode Normalization Algorithms' do
   FULL_NORMALIZATION_TEST_URL = 'http://unicode.org/Public/UNIDATA/NormalizationTest.txt'
 
   shared_examples_for 'a normalization algorithm' do
+    before(:each) do
+      CodePoint.send(:block_cache).clear
+    end
+
     it 'passes all the tests in NormalizationTestShort.txt' do
       run_test(described_class, invariants, SHORT_NORMALIZATION_TEST_PATH)
     end

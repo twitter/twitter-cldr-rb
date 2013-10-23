@@ -144,12 +144,13 @@ describe CodePoint do
 
   describe "#hangul_type" do
     before(:each) do
+      # CodePoint.instance_variable_set(:'@hangul_type_cache', {})
       stub(CodePoint).hangul_blocks {
         {
-            :lparts       => [1..10],
-            :vparts       => [21..30],
-            :tparts       => [41..50],
-            :compositions => [1..50]
+          :lparts       => [1..10],
+          :vparts       => [21..30],
+          :tparts       => [41..50],
+          :compositions => [1..50]
         }
       }
     end
@@ -182,6 +183,10 @@ describe CodePoint do
   end
 
   describe "#get_block" do
+    before(:each) do
+      CodePoint.send(:block_cache).clear
+    end
+
     it "finds the block that corresponds to the code point" do
       stub(TwitterCldr).get_resource(:unicode_data, :blocks) { [[:klingon, 122..307], [:hirogen, 1337..2200]] }
       CodePoint.send(:get_block, 200).should  == [:klingon, 122..307]

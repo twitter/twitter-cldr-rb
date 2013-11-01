@@ -13,13 +13,19 @@ module TwitterCldr
 
       attr_reader :calendar_type, :timezone
 
+      class << self
+        def types
+          TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys
+        end
+      end
+
       def initialize(obj, locale, options = {})
         super
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
         @timezone = options[:timezone] || "UTC"
       end
 
-      TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys.each do |type|
+      types.each do |type|
         define_method "to_#{type}_s" do
           # @ TODO: these need to be cheap to create
           data_reader = data_reader_for(type)

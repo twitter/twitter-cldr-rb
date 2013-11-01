@@ -9,13 +9,21 @@ module TwitterCldr
   module Localized
     class LocalizedNumber < LocalizedObject
 
+      attr_reader :type, :format
+
       def initialize(obj, locale, options = {})
-        @type = options[:type]
-        @format = options[:format]
+        @type = options[:type] || NumberDataReader::DEFAULT_TYPE
+        @format = options[:format] || NumberDataReader::DEFAULT_FORMAT
         super
       end
 
-      NumberDataReader::TYPE_PATHS.keys.each do |type|
+      class << self
+        def types
+          NumberDataReader::TYPE_PATHS.keys
+        end
+      end
+
+      types.each do |type|
         define_method "to_#{type}" do
           to_type(type)
         end
@@ -27,7 +35,7 @@ module TwitterCldr
           :format => @format
         })
 
-        tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
+        tokens = data_reader.tokenizer.tokenize(data_reader.pattern(base_obj))
         data_reader.formatter.format(tokens, base_obj, options)
       end
 

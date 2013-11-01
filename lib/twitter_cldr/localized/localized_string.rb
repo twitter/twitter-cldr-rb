@@ -16,12 +16,8 @@ module TwitterCldr
       # pluralization specification).
       #
       def %(args)
-        pluralized = args.is_a?(Hash) ? @formatter.format(@base_obj, args) : @base_obj
+        pluralized = args.is_a?(Hash) ? formatter.format(@base_obj, args) : @base_obj
         TwitterCldr::Utils.interpolate(pluralized, args)
-      end
-
-      def formatter_const
-        TwitterCldr::Formatters::PluralFormatter
       end
 
       def normalize(options = {})
@@ -92,6 +88,13 @@ module TwitterCldr
 
       def to_reordered_s(options = {})
         to_bidi(options).reorder_visually!.to_s
+      end
+
+      protected
+
+      def formatter
+        @formatter ||=
+          TwitterCldr::Formatters::PluralFormatter.for_locale(locale)
       end
 
     end

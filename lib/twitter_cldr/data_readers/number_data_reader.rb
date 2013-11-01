@@ -6,9 +6,17 @@
 include TwitterCldr::Tokenizers
 include TwitterCldr::Formatters
 
+require 'pry-nav'
+
 module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
+
+      ABBREVIATED_MIN_POWER = 3
+      ABBREVIATED_MAX_POWER = 14
+
+      NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
+      NUMBER_MIN = 10 ** ABBREVIATED_MIN_POWER
 
       BASE_PATH   = [:numbers, :formats]
       SYMBOL_PATH = [:numbers, :symbols]
@@ -21,6 +29,8 @@ module TwitterCldr
         :currency      => [:currency, :patterns],
         :percent       => [:percent, :patterns]
       }
+
+      ABBREVIATED_TYPES = [:long_decimal, :short_decimal]
 
       DEFAULT_TYPE = :decimal
       DEFAULT_FORMAT = :default
@@ -40,12 +50,18 @@ module TwitterCldr
         @sign = options[:sign] || DEFAULT_SIGN
       end
 
-      def pattern
+      def pattern(number = nil)
+        validate_type_for(number, type)
+
         path = BASE_PATH + TYPE_PATHS[type]
         pattern = traverse(path)
 
         if pattern[format]
           pattern = pattern[format]
+        end
+
+        if number
+          pattern = pattern_for_number(pattern, number)
         end
 
         if pattern.is_a?(String)
@@ -72,6 +88,27 @@ module TwitterCldr
       end
 
       private
+
+      def validate_type_for(number, type)
+        if ABBREVIATED_TYPES.include?(type)
+          if (number >= NUMBER_MAX) || (number < NUMBER_MIN)
+            raise StandardError, "The given number is too large or too small to be"\
+              "formatted into a #{type.to_s.gsub("_", " ")}"
+          end
+        end
+      end
+
+      def get_key_for(number)
+        "1#{"0" * (number.to_i.to_s.size - 1)}".to_i
+      end
+
+      def pattern_for_number(pattern, number)
+        if pattern.is_a?(Hash)
+          pattern[get_key_for(number)] || pattern
+        else
+          pattern
+        end
+      end
 
       def pattern_for_sign(pattern, sign)
         if pattern.include?(";")

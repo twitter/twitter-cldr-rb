@@ -7,17 +7,29 @@ require 'json'
 
 module TwitterCldr
   module Formatters
-    class PluralFormatter < Base
+    class PluralFormatter
 
       PLURALIZATION_REGEXP = Regexp.union(
           /%\{(\w+?):(\w+?)\}/,   # regular pluralization pattern
           /%<(\{.*?\})>/          # inline pluralization pattern
       )
 
-      attr_accessor :locale
+      class << self
+        def for_locale(locale)
+          formatter_cache[locale] ||= PluralFormatter.new(locale)
+        end
 
-      def initialize(options = {})
-        self.locale = extract_locale(options)
+        protected
+
+        def formatter_cache
+          @formatter_cache ||= {}
+        end
+      end
+
+      attr_reader :locale
+
+      def initialize(locale)
+        @locale = TwitterCldr.convert_locale(locale)
       end
 
       # Replaces every pluralization token in the +string+ with a phrase formed using a number and a pluralization

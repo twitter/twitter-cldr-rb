@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'pry-nav'
+
 include TwitterCldr::DataReaders
 
 module TwitterCldr
@@ -30,14 +32,14 @@ module TwitterCldr
         unit = options[:unit] || calculate_unit(base_obj.abs, options)
         direction = options[:direction] || (base_obj < 0 ? :ago : :until)
         type = options[:type] || DEFAULT_TYPE
+        number = calculate_time(base_obj, unit)
 
-        data_reader = TimespanDataReader.new(locale, base_obj, {
+        data_reader = TimespanDataReader.new(locale, number, {
           :unit => unit,
           :direction => direction,
           :type => type
         })
 
-        number = calculate_time(base_obj, data_reader.unit)
         tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
         data_reader.formatter.format(tokens, number, options)
       end
@@ -65,7 +67,7 @@ module TwitterCldr
       # 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
       # 1 yr <-> max time or date                                       # => years
       def calculate_time(seconds, unit)
-        (seconds.to_f / TIME_IN_SECONDS[unit].to_f).round.to_i
+        (seconds.to_f / TIME_IN_SECONDS[unit].to_f).abs.round.to_i
       end
 
     end

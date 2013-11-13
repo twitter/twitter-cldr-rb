@@ -22,6 +22,9 @@ module TwitterCldr
       # expanded format string into whatever parts are defined by the subclass's token type and token splitter regexes.
       def tokenize_format(text)
         text.split(token_splitter_regex_for(type)).each_with_index.inject([]) do |ret, (token, index)|
+          if token.include?("'")
+            token = token.delete("'")
+          end
           unless index == 0 && token == ""
             regexes = token_type_regexes_for(type)
 

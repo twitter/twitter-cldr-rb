@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Formatters
-    class ListFormatter < Base
+    class ListFormatter < Formatter
 
       attr_accessor :locale
 

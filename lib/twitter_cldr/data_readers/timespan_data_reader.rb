@@ -10,6 +10,8 @@ module TwitterCldr
   module DataReaders
     class TimespanDataReader < DataReader
 
+      DEFAULT_DIRECTION = :none
+      DEFAULT_TYPE = :default
       VALID_UNITS = [:second, :minute, :hour, :day, :week, :month, :year]
       BASE_PATH = [:units]
 
@@ -51,8 +53,8 @@ module TwitterCldr
       def initialize(locale, seconds, options = {})
         super(locale)
 
-        @type = options[:type]
-        @direction = options[:direction]
+        @type = options[:type] || DEFAULT_TYPE
+        @direction = options[:direction] || DEFAULT_DIRECTION
         @unit = options[:unit]
 
         @rule = options[:rule] ||

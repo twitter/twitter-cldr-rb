@@ -6,8 +6,6 @@
 include TwitterCldr::Tokenizers
 include TwitterCldr::Formatters
 
-require 'pry-nav'
-
 module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader

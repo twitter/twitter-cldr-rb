@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'pry-nav'
+
 module TwitterCldr
   module Formatters
     module Numbers
@@ -10,6 +12,7 @@ module TwitterCldr
         attr_reader :format, :separator, :groups
 
         def initialize(token, symbols = {})
+          binding.pry
           format     = token.value.split('.')[0]
           @format    = prepare_format(format, symbols)
           @groups    = parse_groups(format)

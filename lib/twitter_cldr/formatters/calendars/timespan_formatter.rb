@@ -8,8 +8,7 @@ module TwitterCldr
     class TimespanFormatter < Formatter
 
       def format(tokens, number, options = {})
-        strings = tokens.map { |token| token.value }
-        strings.join.gsub(/\{[0-9]\}/, number.abs.to_s)
+        tokens.map(&:value).join.gsub(/\{[0-9]\}/, number.abs.to_s)
       end
 
     end

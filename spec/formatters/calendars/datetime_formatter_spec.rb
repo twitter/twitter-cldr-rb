@@ -9,7 +9,8 @@ include TwitterCldr::Formatters
 
 describe DateTimeFormatter do
   before(:each) do
-    @formatter = DateTimeFormatter.new(:locale => :de)
+    data_reader = DateTimeDataReader.new(:de)
+    @formatter = DateTimeFormatter.new(data_reader)
   end
 
   describe "#day" do
@@ -394,7 +395,8 @@ describe DateTimeFormatter do
 
   describe "#era" do
     before(:each) do
-      @formatter = DateTimeFormatter.new(:locale => :en)
+      data_reader = DateTimeDataReader.new(:en)
+      @formatter = DateTimeFormatter.new(data_reader)
     end
 
     it "test: pattern G" do
@@ -418,7 +420,7 @@ describe DateTimeFormatter do
     end
 
     it "should fall back if the calendar doesn't contain the appropriate era data" do
-      stub(@formatter.tokenizer).calendar do
+      stub(@formatter.data_reader).calendar do
         {
           :eras => {
             :abbr => {

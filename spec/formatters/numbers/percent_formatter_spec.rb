@@ -29,6 +29,6 @@ describe PercentFormatter do
   it "should respect the :precision option" do
     pattern = data_reader.pattern(negative_number)
     tokens = tokenizer.tokenize(pattern)
-    formatter.format(tokens, -12, :precision => 3).should match_normalized("-12,000 %")
+    formatter.format(tokens, negative_number, :precision => 3).should match_normalized("-12,000 %")
   end
 end

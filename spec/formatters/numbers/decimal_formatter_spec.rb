@@ -8,33 +8,31 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe DecimalFormatter do
-  before(:each) do
-    @formatter = DecimalFormatter.new(:locale => :nl)
-  end
+  let(:data_reader) { NumberDataReader.new(:nl, :type => :decimal) }
+  let(:formatter) { data_reader.formatter }
+  let(:tokenizer) { data_reader.tokenizer }
+  let(:negative_number) { -12 }
+  let(:number) { 12 }
 
   describe "#format" do
     it "should format positive decimals correctly" do
-      @formatter.format(12.0).should == "12,0"
+      pattern = data_reader.pattern(number)
+      tokens = tokenizer.tokenize(pattern)
+      formatter.format(tokens, number).should == "12"
     end
 
     it "should format negative decimals correctly" do
-      @formatter.format(-12.0).should == "-12,0"
+      pattern = data_reader.pattern(negative_number)
+      tokens = tokenizer.tokenize(pattern)
+      formatter.format(tokens, negative_number).should == "-12"
     end
 
     it "should respect the :precision option" do
-      @formatter.format(-12, :precision => 3).should == "-12,000"
-    end
-  end
-
-  describe "#get_tokens" do
-    it "should ask the tokenizer for the tokens for a positive number" do
-      mock(@formatter.tokenizer).tokens(:sign => :positive) { true }
-      @formatter.send(:get_tokens, 12)
-    end
-
-    it "should ask the tokenizer for the tokens for a negative number" do
-      mock(@formatter.tokenizer).tokens(:sign => :negative) { true }
-      @formatter.send(:get_tokens, -12)
+      { number => "12,000", negative_number => "-12,000" }.each_pair do |num, formatted|
+        pattern = data_reader.pattern(num)
+        tokens = tokenizer.tokenize(pattern)
+        formatter.format(tokens, num, :precision => 3).should == formatted
+      end
     end
   end
 end

@@ -28,7 +28,7 @@ module TwitterCldr
       def tokenizer
         @tokenizer ||= Tokenizer.new(
           /([^0*#,\.]*)([0#,\.]+)([^0*#,\.]*)$/, [
-            TokenRecognizer.new(:pattern, /[0?#,\.]*/),
+            TokenRecognizer.new(:pattern, /[0?#,\.]+/),
             TokenRecognizer.new(:plaintext, //)
           ]
         )

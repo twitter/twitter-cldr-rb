@@ -34,7 +34,7 @@ module TwitterCldr
       DEFAULT_FORMAT = :default
       DEFAULT_SIGN = :positive
 
-      attr_reader :type, :format, :sign
+      attr_reader :type, :format
 
       def initialize(locale, options = {})
         super(locale)
@@ -45,12 +45,12 @@ module TwitterCldr
         end
 
         @format = options[:format] || DEFAULT_FORMAT
-        @sign = options[:sign] || DEFAULT_SIGN
       end
 
       def pattern(number = nil)
         validate_type_for(number, type)
 
+        sign = number < 0 ? :negative : :positive 
         path = BASE_PATH + TYPE_PATHS[type]
         pattern = traverse(path)
 
@@ -90,7 +90,7 @@ module TwitterCldr
       def validate_type_for(number, type)
         if ABBREVIATED_TYPES.include?(type)
           if (number >= NUMBER_MAX) || (number < NUMBER_MIN)
-            raise StandardError, "The given number is too large or too small to be"\
+            raise StandardError, "The given number is too large or too small to be "\
               "formatted into a #{type.to_s.gsub("_", " ")}"
           end
         end

@@ -10,9 +10,13 @@ module TwitterCldr
       protected
 
       def transform_number(number)
-        power = (((number.to_s.length - 1) / 3) * 3).floor
-        factor = (10 ** power).to_f
-        number / factor
+        if number < NumberDataReader::NUMBER_MAX && number >= NumberDataReader::NUMBER_MIN
+          power = (((number.to_s.length - 1) / 3) * 3).floor
+          factor = (10 ** power).to_f
+          number / factor
+        else
+          number
+        end
       end
 
     end

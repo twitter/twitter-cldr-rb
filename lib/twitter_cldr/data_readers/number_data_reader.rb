@@ -48,10 +48,13 @@ module TwitterCldr
       end
 
       def pattern(number = nil)
-        validate_type_for(number, type)
-
         sign = number < 0 ? :negative : :positive 
-        path = BASE_PATH + TYPE_PATHS[type]
+        path = BASE_PATH + if valid_type_for?(number, type)
+          TYPE_PATHS[type]
+        else
+          TYPE_PATHS[:default]
+        end
+
         pattern = traverse(path)
 
         if pattern[format]
@@ -87,12 +90,15 @@ module TwitterCldr
 
       private
 
-      def validate_type_for(number, type)
-        if ABBREVIATED_TYPES.include?(type)
-          if (number >= NUMBER_MAX) || (number < NUMBER_MIN)
-            raise StandardError, "The given number is too large or too small to be "\
-              "formatted into a #{type.to_s.gsub("_", " ")}"
-          end
+      def abbreviated?(type)
+        ABBREVIATED_TYPES.include?(type)
+      end
+
+      def valid_type_for?(number, type)
+        if abbreviated?(type)
+          (number < NUMBER_MAX) && (number >= NUMBER_MIN)
+        else
+          TYPE_PATHS.include?(type)
         end
       end
 

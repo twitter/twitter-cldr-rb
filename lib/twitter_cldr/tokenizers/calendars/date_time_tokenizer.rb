@@ -14,10 +14,36 @@ module TwitterCldr
       end
 
       def tokenize(pattern)
-        PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
+        expand_tokens(
+          PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
+        )
       end
 
       protected
+
+      def expand_tokens(tokens)
+        tokens.inject([]) do |ret, token|
+          ret += case token.type
+            when :date
+              expand_date(token)
+            when :time
+              expand_time(token)
+            else
+              [token]
+          end
+          ret
+        end
+      end
+
+      def expand_date(token)
+        date_reader = data_reader.date_reader
+        date_reader.tokenizer.tokenize(date_reader.pattern)
+      end
+
+      def expand_time(token)
+        time_reader = data_reader.time_reader
+        time_reader.tokenizer.tokenize(time_reader.pattern)
+      end
 
       def tokenizer
         @tokenizer ||= Tokenizer.new(
@@ -28,29 +54,6 @@ module TwitterCldr
           ]
         )
       end
-
-      # def tokenizer
-      #   @tokenizer ||= begin
-      #     date_tk = DateTokenizer.tokenizer
-      #     time_tk = TimeTokenizer.tokenizer
-      # 
-      #     recognizers = [date_tk.recognizer_at(:composite)]
-      #     recognizers += [:pattern, :plaintext].map do |token_type|
-      #       TokenRecognizer.new(
-      #         token_type,
-      #         Regexp.union(
-      #           date_tk.recognizer_at(token_type),
-      #           time_tk.recognizer_at(token_type)
-      #         )
-      #       )
-      #     end
-      # 
-      #     Tokenizer.new(
-      #       Regexp.union(date_tk.regex, time_tk.regex),
-      #       recognizers
-      #     )
-      #   end
-      # end
 
     end
   end

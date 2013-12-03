@@ -12,8 +12,8 @@ module TwitterCldr
       attr_reader :type, :format
 
       def initialize(obj, locale, options = {})
-        @type = options[:type] || NumberDataReader::DEFAULT_TYPE
-        @format = options[:format] || NumberDataReader::DEFAULT_FORMAT
+        @type = options[:type]
+        @format = options[:format]
         super
       end
 
@@ -44,15 +44,6 @@ module TwitterCldr
       end
 
       protected
-
-      def abbreviated?
-        case type
-          when :short_decimal, :long_decimal
-            true
-          else
-            false
-        end
-      end
 
       def to_type(target_type)
         self.class.new(base_obj, locale, {

@@ -9,8 +9,8 @@ module TwitterCldr
 
       attr_accessor :locale
 
-      def initialize(options = {})
-        @locale = TwitterCldr.convert_locale(extract_locale(options))
+      def initialize(locale = TwitterCldr.locale)
+        @locale = TwitterCldr.convert_locale(locale)
       end
 
       def format(list)

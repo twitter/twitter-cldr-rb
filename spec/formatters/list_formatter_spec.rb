@@ -10,11 +10,11 @@ include TwitterCldr::Formatters
 describe ListFormatter do
   describe '#initialize' do
     it 'fetches locale from options hash' do
-      ListFormatter.new(:locale => :pt).locale.should == :pt
+      ListFormatter.new(:pt).locale.should == :pt
     end
 
     it "uses default locale if it's not passed in options hash" do
-      ListFormatter.new.locale.should == TwitterCldr::DEFAULT_LOCALE
+      ListFormatter.new.locale.should == TwitterCldr.locale
     end
   end
 

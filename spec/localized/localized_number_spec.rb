@@ -13,8 +13,8 @@ describe LocalizedNumber do
     let(:decimal)  { LocalizedNumber.new(10, :en) }
     let(:currency) { LocalizedNumber.new(10, :en, :type => :currency) }
 
-    it 'uses :decimal type by default' do
-      decimal.type.should == :decimal
+    it 'uses nil type by default (defers decision to data reader)' do
+      decimal.type.should == nil
     end
 
     it 'uses provided type if there is one' do

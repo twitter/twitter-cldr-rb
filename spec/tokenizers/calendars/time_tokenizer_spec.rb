@@ -7,12 +7,13 @@ require 'spec_helper'
 
 include TwitterCldr::Tokenizers
 
-describe DateTokenizer do
+describe TimeTokenizer do
   describe "#tokens" do
     it "should tokenize a time string correctly (i.e. German)" do
-      tokenizer = TimeTokenizer.new(:locale => :de)
-      got       = tokenizer.tokens(:type => :full)
+      data_reader = TimeDataReader.new(:de, :type => :full)
+      got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
+        { :value => "", :type => :plaintext },
         { :value => "HH", :type => :pattern },
         { :value => ":", :type => :plaintext },
         { :value => "mm", :type => :pattern },
@@ -25,9 +26,10 @@ describe DateTokenizer do
     end
 
     it "should tokenize patterns with non-latin characters correctly (i.e. Korean)" do
-      tokenizer = TimeTokenizer.new(:locale => :ko)
-      got       = tokenizer.tokens(:type => :full)
+      data_reader = TimeDataReader.new(:ko, :type => :full)
+      got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
+        { :value => "", :type => :plaintext },
         { :value => "a", :type => :pattern },
         { :value => " ", :type => :plaintext },
         { :value => "h", :type => :pattern },

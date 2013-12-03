@@ -10,8 +10,8 @@ module TwitterCldr
     class PluralFormatter
 
       PLURALIZATION_REGEXP = Regexp.union(
-          /%\{(\w+?):(\w+?)\}/,   # regular pluralization pattern
-          /%<(\{.*?\})>/          # inline pluralization pattern
+        /%\{(\w+?):(\w+?)\}/,   # regular pluralization pattern
+        /%<(\{.*?\})>/          # inline pluralization pattern
       )
 
       class << self
@@ -28,7 +28,7 @@ module TwitterCldr
 
       attr_reader :locale
 
-      def initialize(locale)
+      def initialize(locale = TwitterCldr.locale)
         @locale = TwitterCldr.convert_locale(locale)
       end
 

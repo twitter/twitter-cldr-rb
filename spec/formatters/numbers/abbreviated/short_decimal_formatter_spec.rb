@@ -8,34 +8,47 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe ShortDecimalFormatter do
-  before(:each) do
-    @formatter = ShortDecimalFormatter.new(:locale => :en)
-  end
+  let(:data_reader) { NumberDataReader.new(:en, :type => :short_decimal) }
+  let(:formatter) { data_reader.formatter }
+  let(:tokenizer) { data_reader.tokenizer }
 
   it "formats valid numbers correctly (from 10^3 - 10^15)" do
-    @formatter.format(10 ** 3).should match_normalized("1K")
-    @formatter.format(10 ** 4).should match_normalized("10K")
-    @formatter.format(10 ** 5).should match_normalized("100K")
-    @formatter.format(10 ** 6).should match_normalized("1M")
-    @formatter.format(10 ** 7).should match_normalized("10M")
-    @formatter.format(10 ** 8).should match_normalized("100M")
-    @formatter.format(10 ** 9).should match_normalized("1B")
-    @formatter.format(10 ** 10).should match_normalized("10B")
-    @formatter.format(10 ** 11).should match_normalized("100B")
-    @formatter.format(10 ** 12).should match_normalized("1T")
-    @formatter.format(10 ** 13).should match_normalized("10T")
-    @formatter.format(10 ** 14).should match_normalized("100T")
+    expected = {
+      10 ** 3 => "1K",
+      10 ** 4 => "10K",
+      10 ** 5 => "100K",
+      10 ** 6 => "1M",
+      10 ** 7 => "10M",
+      10 ** 8 => "100M",
+      10 ** 9 => "1B",
+      10 ** 10 => "10B",
+      10 ** 11 => "100B",
+      10 ** 12 => "1T",
+      10 ** 13 => "10T",
+      10 ** 14 => "100T"
+    }
+
+    expected.each do |num, text|
+      pattern = data_reader.pattern(num)
+      formatter.format(tokenizer.tokenize(pattern), num).should == text
+    end
   end
 
   it "formats the number as if it were a straight decimal if it exceeds 10^15" do
-    @formatter.format(10**15).should == "1,000,000,000,000,000"
+    number = 10**15
+    pattern = data_reader.pattern(number)
+    formatter.format(tokenizer.tokenize(pattern), number).should == "1,000,000,000,000,000"
   end
 
   it "formats the number as if it were a straight decimal if it's less than 1000" do
-    @formatter.format(500).should == "500"
+    number = 500
+    pattern = data_reader.pattern(number)
+    formatter.format(tokenizer.tokenize(pattern), number).should == "500"
   end
 
   it "respects the :precision option" do
-    @formatter.format(12345, :precision => 3).should match_normalized("12.345K")
+    number = 12345
+    pattern = data_reader.pattern(number)
+    formatter.format(tokenizer.tokenize(pattern), number, :precision => 3).should match_normalized("12.345K")
   end
 end

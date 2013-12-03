@@ -63,15 +63,15 @@ module TwitterCldr
       end
 
       def date_order(options = {})
-        get_order_for(TwitterCldr::Tokenizers::DateTokenizer, options)
+        get_order_for(TwitterCldr::DataReaders::DateDataReader, options)
       end
 
       def time_order(options = {})
-        get_order_for(TwitterCldr::Tokenizers::TimeTokenizer, options)
+        get_order_for(TwitterCldr::DataReaders::TimeDataReader, options)
       end
 
       def datetime_order(options = {})
-        get_order_for(TwitterCldr::Tokenizers::DateTimeTokenizer, options)
+        get_order_for(TwitterCldr::DataReaders::DateTimeDataReader, options)
       end
 
       private
@@ -80,11 +80,12 @@ module TwitterCldr
         @@calendar_cache ||= {}
       end
 
-      def get_order_for(const, options)
-        opts = options.merge(:locale => @locale)
-        cache_key = TwitterCldr::Utils.compute_cache_key([const.to_s] + opts.keys.sort + opts.values.sort)
+      def get_order_for(data_reader_const, options)
+        key_array = [data_reader_const.to_s, @locale] + options.keys.sort + options.values.sort
+        cache_key = TwitterCldr::Utils.compute_cache_key(key_array)
         calendar_cache.fetch(cache_key) do |key|
-          tokens = const.new(opts).tokens
+          data_reader = data_reader_const.new(@locale, options)
+          tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
           calendar_cache[cache_key] = resolve_methods(methods_for_tokens(tokens))
         end
       end

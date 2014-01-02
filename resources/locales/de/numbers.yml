@@ -3,14 +3,16 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.00 ¤'
+          :default: '#,##0.00 ¤'
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.###'
+          :default: '#,##0.###'
           :long:
             1000: 0 Tausend
             10000: 00 Tausend
@@ -25,9 +27,9 @@
             10000000000000: 00 Billionen
             100000000000000: 000 Billionen
           :short:
-            1000: 0
-            10000: 0
-            100000: 0
+            1000: 0 Tsd
+            10000: 00 Tsd
+            100000: 000 Tsd
             1000000: 0 Mio
             10000000: 00 Mio
             100000000: 000 Mio
@@ -38,20 +40,23 @@
             10000000000000: 00 Bio
             100000000000000: 000 Bio
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0 %'
+          :default: '#,##0 %'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
-      :decimal: ! ','
+      :decimal: ','
       :exponential: E
       :group: .
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ·

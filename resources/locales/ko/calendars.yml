@@ -4,11 +4,11 @@
     :gregorian:
       :additional_formats:
         :EEEEd: d일 EEEE
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: (E) HH:mm
+        :EHms: (E) HH:mm:ss
         :Ed: d일 (E)
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: (E) a h:mm
+        :Ehms: (E) a h:mm:ss
         :Gy: G y년
         :GyMMM: G y년 MMM
         :GyMMMEEEEd: G y년 MMM d일 EEEE
@@ -124,13 +124,13 @@
             :pattern: yy. M. d.
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: a h시 m분 s초 zzzz
@@ -143,19 +143,31 @@
       :months:
         :format:
           :abbreviated:
-            1: Jan
-            10: Oct
-            11: Nov
-            12: Dec
-            2: Feb
-            3: Mar
-            4: Apr
-            5: May
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+            1: 1월
+            10: 10월
+            11: 11월
+            12: 12월
+            2: 2월
+            3: 3월
+            4: 4월
+            5: 5월
+            6: 6월
+            7: 7월
+            8: 8월
+            9: 9월
+          :narrow:
+            1: 1월
+            10: 10월
+            11: 11월
+            12: 12월
+            2: 2월
+            3: 3월
+            4: 4월
+            5: 5월
+            6: 6월
+            7: 7월
+            8: 8월
+            9: 9월
           :wide:
             1: 1월
             10: 10월
@@ -170,7 +182,19 @@
             8: 8월
             9: 9월
         :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated:
+            1: 1월
+            10: 10월
+            11: 11월
+            12: 12월
+            2: 2월
+            3: 3월
+            4: 4월
+            5: 5월
+            6: 6월
+            7: 7월
+            8: 8월
+            9: 9월
           :narrow:
             1: 1월
             10: 10월
@@ -218,10 +242,18 @@
             3: 제 3/4분기
             4: 제 4/4분기
         :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated:
+            1: 1분기
+            2: 2분기
+            3: 3분기
+            4: 4분기
           :narrow:
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide:
+            1: 제 1/4분기
+            2: 제 2/4분기
+            3: 제 3/4분기
+            4: 제 4/4분기

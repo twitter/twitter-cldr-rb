@@ -42,7 +42,7 @@ module TwitterCldr
 
       def to_s(options = {})
         tokens = tokenizer.tokenize(data_reader.pattern_for(:type => type))
-        formatter.format(tokens, base_obj, options)
+        formatter.format(tokens, base_obj, options.merge(:type => type))
       end
 
       def plural_rule

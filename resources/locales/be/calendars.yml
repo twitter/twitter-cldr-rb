@@ -9,18 +9,18 @@
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
         :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMM: LLL y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
         :M: L
-        :MEd: E, d MMM
+        :MEd: E, d.M
         :MMM: LLL
         :MMMEd: E, d MMM
-        :MMMMEd: MMMM d, EEEE
-        :MMMMd: MMMM d
+        :MMMMEd: E, d MMMM
+        :MMMMd: d MMMM
         :MMMd: d MMM
         :Md: d.M
         :d: d
@@ -29,11 +29,11 @@
         :hms: h.mm.ss a
         :ms: mm.ss
         :y: y
-        :yM: MM/y
-        :yMEd: E, dd/MM/y
-        :yMMM: MMM y
+        :yM: M.y
+        :yMEd: E, d.M.y
+        :yMMM: LLL y
         :yMMMEd: E, d MMM y
-        :yMMMM: MMMM y
+        :yMMMM: LLLL y
         :yMMMd: d MMM y
         :yMd: d.M.y
         :yQQQ: QQQ y
@@ -82,8 +82,8 @@
           0: да н.э.
           1: н.э.
         :name:
-          0: Before Christ
-          1: Anno Domini
+          0: Before Common Era
+          1: Common Era
         :narrow:
           0: B
           1: A
@@ -111,13 +111,13 @@
             :pattern: d.M.yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} ''at'' {{time}}'
+            :pattern: '{{date}} ''at'' {{time}}'
           :long:
-            :pattern: ! '{{date}} ''at'' {{time}}'
+            :pattern: '{{date}} ''at'' {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: HH.mm.ss zzzz
@@ -137,7 +137,7 @@
             2: лют
             3: сак
             4: кра
-            5: май
+            5: мая
             6: чэр
             7: ліп
             8: жні
@@ -150,24 +150,24 @@
             2: л
             3: с
             4: к
-            5: т
+            5: м
             6: ч
             7: л
             8: ж
             9: в
           :wide:
-            1: студзень
-            10: кастрычнік
-            11: лістапад
-            12: снежань
-            2: люты
-            3: сакавік
-            4: красавік
-            5: май
-            6: чэрвень
-            7: ліпень
-            8: жнівень
-            9: верасень
+            1: студзеня
+            10: кастрычніка
+            11: лістапада
+            12: снежня
+            2: лютага
+            3: сакавіка
+            4: красавіка
+            5: мая
+            6: чэрвеня
+            7: ліпеня
+            8: жніўня
+            9: верасня
         :stand-alone:
           :abbreviated:
             1: сту
@@ -177,7 +177,7 @@
             2: лют
             3: сак
             4: кра
-            5: тра
+            5: май
             6: чэр
             7: ліп
             8: жні
@@ -203,7 +203,7 @@
             2: люты
             3: сакавік
             4: красавік
-            5: травень
+            5: май
             6: чэрвень
             7: ліпень
             8: жнівень

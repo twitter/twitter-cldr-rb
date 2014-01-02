@@ -3,18 +3,20 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##,##0.00¤;(#,##,##0.00¤)'
+          :default: '#,##,##0.00¤;(#,##,##0.00¤)'
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##,##0.###'
+          :default: '#,##,##0.###'
           :long:
             1000: 0 হাজার
             10000: 00 হাজার
-            100000: 000 হাজার
+            100000: 0 লাখ
             1000000: 0 মিলিয়ন
             10000000: 00 মিলিয়ন
             100000000: 000 মিলিয়ন
@@ -27,7 +29,7 @@
           :short:
             1000: 0K
             10000: 00K
-            100000: 000K
+            100000: 0 লাখ
             1000000: 0M
             10000000: 00M
             100000000: 000M
@@ -38,20 +40,23 @@
             10000000000000: 00T
             100000000000000: 000T
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##,##0%'
+          :default: '#,##,##0%'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
       :decimal: .
       :exponential: E
-      :group: ! ','
+      :group: ','
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

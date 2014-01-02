@@ -3,14 +3,16 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ¤#,##0.00
+          :default: ¤#,##0.00;(¤#,##0.00)
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.###'
+          :default: '#,##0.###'
           :long:
             1000: 0千
             10000: 0万
@@ -38,20 +40,23 @@
             10000000000000: 00兆
             100000000000000: 000兆
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0%'
+          :default: '#,##0%'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
       :decimal: .
       :exponential: E
-      :group: ! ','
+      :group: ','
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

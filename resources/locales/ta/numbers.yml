@@ -3,14 +3,16 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ¤ #,##,##0.00
+          :default: ¤#,##0.00;(¤#,##0.00)
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##,##0.###'
+          :default: '#,##,##0.###'
           :long:
             1000: 0 ஆயிரம்
             10000: 00 ஆயிரம்
@@ -25,33 +27,36 @@
             10000000000000: 00 டிரில்லியன்
             100000000000000: 000 டிரில்லியன்
           :short:
-            1000: 0K
-            10000: 00K
-            100000: 000K
-            1000000: 0M
-            10000000: 00M
-            100000000: 000M
-            1000000000: 0B
-            10000000000: 00B
-            100000000000: 000B
-            1000000000000: 0T
-            10000000000000: 00T
-            100000000000000: 000T
+            1000: 0ஆ
+            10000: 00ஆ
+            100000: 000ஆ
+            1000000: 0மி
+            10000000: 00மி
+            100000000: 000மி
+            1000000000: 0பி
+            10000000000: 00பி
+            100000000000: 000பி
+            1000000000000: 0டி
+            10000000000000: 00டி
+            100000000000000: 000டி
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##,##0%'
+          :default: '#,##,##0%'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
       :decimal: .
       :exponential: E
-      :group: ! ','
+      :group: ','
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

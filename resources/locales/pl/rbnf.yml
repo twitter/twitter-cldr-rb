@@ -1,276 +1,410 @@
----
-:pl:
-  :rbnf:
-    :grouping:
-    - :ruleset:
-      - :rules:
-        - :rule: =#,###0.#=;
-          :value: x.x
-        - :rule: =%spellout-numbering=;
-          :value: 0
-        :type: spellout-numbering-year
-      - :rules:
-        - :rule: =%spellout-cardinal-masculine=;
-          :value: 0
-        :type: spellout-numbering
-      - :rules:
-        - :rule: minus >>;
-          :value: -x
-        - :rule: << przecinek >>;
-          :value: x.x
-        - :rule: zero;
-          :value: 0
-        - :rule: jeden;
-          :value: 1
-        - :rule: dwa;
-          :value: 2
-        - :rule: trzy;
-          :value: 3
-        - :rule: cztery;
-          :value: 4
-        - :rule: pięć;
-          :value: 5
-        - :rule: sześć;
-          :value: 6
-        - :rule: siedem;
-          :value: 7
-        - :rule: osiem;
-          :value: 8
-        - :rule: dziewięć;
-          :value: 9
-        - :rule: dziesięć;
-          :value: 10
-        - :rule: jedenaście;
-          :value: 11
-        - :rule: dwanaście;
-          :value: 12
-        - :rule: trzynaście;
-          :value: 13
-        - :rule: czternaście;
-          :value: 14
-        - :rule: piętnaście;
-          :value: 15
-        - :rule: szesnaście;
-          :value: 16
-        - :rule: siedemnaście;
-          :value: 17
-        - :rule: osiemnaście;
-          :value: 18
-        - :rule: dziewiętnaście;
-          :value: 19
-        - :rule: dwadzieścia[ >>];
-          :value: 20
-        - :rule: trzydzieści[ >>];
-          :value: 30
-        - :rule: czterdzieści[ >>];
-          :value: 40
-        - :rule: <<dziesiąt[ >>];
-          :value: 50
-        - :rule: sto[ >>];
-          :value: 100
-        - :rule: <%spellout-cardinal-feminine<ście[ >>];
-          :value: 200
-        - :rule: <%spellout-cardinal-feminine<sta[ >>];
-          :value: 300
-        - :rule: <%spellout-cardinal-feminine<set[ >>];
-          :value: 500
-        - :rule: <%spellout-cardinal-masculine< tysiąc[ >>];
-          :value: 1000
-        - :rule: <%spellout-cardinal-masculine< tysiące[ >>];
-          :value: 2000
-        - :rule: <%spellout-cardinal-masculine< tysięcy[ >>];
-          :value: 5000
-        - :rule: <%spellout-cardinal-masculine< milion[ >>];
-          :value: 1000000
-        - :rule: <%spellout-cardinal-masculine< miliony[ >>];
-          :value: 2000000
-        - :rule: <%spellout-cardinal-masculine< milionów[ >>];
-          :value: 5000000
-        - :rule: <%spellout-cardinal-masculine< miliard[ >>];
-          :value: 1000000000
-        - :rule: <%spellout-cardinal-masculine< miliardy[ >>];
-          :value: 2000000000
-        - :rule: <%spellout-cardinal-masculine< miliardów[ >>];
-          :value: 5000000000
-        - :rule: <%spellout-cardinal-masculine< bilion[ >>];
-          :value: 1000000000000
-        - :rule: <%spellout-cardinal-masculine< biliony[ >>];
-          :value: 2000000000000
-        - :rule: <%spellout-cardinal-masculine< bilionów[ >>];
-          :value: 5000000000000
-        - :rule: <%spellout-cardinal-masculine< biliard[ >>];
-          :value: 1000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardy[ >>];
-          :value: 2000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardów[ >>];
-          :value: 5000000000000000
-        - :rule: =#,##0=;
-          :value: 1000000000000000000
-        :type: spellout-cardinal-masculine
-      - :rules:
-        - :rule: minus >>;
-          :value: -x
-        - :rule: << przecinek >%%spellout-fraction>;
-          :value: x.x
-        - :rule: zero;
-          :value: 0
-        - :rule: jedno;
-          :value: 1
-        - :rule: =%%spellout-cardinal-neuter-priv=;
-          :value: 2
-        :type: spellout-cardinal-neuter
-      - :access: private
-        :rules:
-        - :rule: jeden;
-          :value: 1
-        - :rule: =%spellout-cardinal-masculine=;
-          :value: 2
-        - :rule: dwadzieścia[ >>];
-          :value: 20
-        - :rule: trzydzieści[ >>];
-          :value: 30
-        - :rule: czterdzieści[ >>];
-          :value: 40
-        - :rule: <<dziesiąt[ >>];
-          :value: 50
-        - :rule: sto[ >>];
-          :value: 100
-        - :rule: <%spellout-cardinal-feminine<ście[ >>];
-          :value: 200
-        - :rule: <%spellout-cardinal-feminine<sta[ >>];
-          :value: 300
-        - :rule: <%spellout-cardinal-feminine<set[ >>];
-          :value: 500
-        - :rule: <%spellout-cardinal-masculine< tysiąc[ >>];
-          :value: 1000
-        - :rule: <%spellout-cardinal-masculine< tysiące[ >>];
-          :value: 2000
-        - :rule: <%spellout-cardinal-masculine< tysięcy[ >>];
-          :value: 5000
-        - :rule: <%spellout-cardinal-masculine< milion[ >>];
-          :value: 1000000
-        - :rule: <%spellout-cardinal-masculine< miliony[ >>];
-          :value: 2000000
-        - :rule: <%spellout-cardinal-masculine< milionów[ >>];
-          :value: 5000000
-        - :rule: <%spellout-cardinal-masculine< miliard[ >>];
-          :value: 1000000000
-        - :rule: <%spellout-cardinal-masculine< miliardy[ >>];
-          :value: 2000000000
-        - :rule: <%spellout-cardinal-masculine< miliardów[ >>];
-          :value: 5000000000
-        - :rule: <%spellout-cardinal-masculine< bilion[ >>];
-          :value: 1000000000000
-        - :rule: <%spellout-cardinal-masculine< biliony[ >>];
-          :value: 2000000000000
-        - :rule: <%spellout-cardinal-masculine< bilionów[ >>];
-          :value: 5000000000000
-        - :rule: <%spellout-cardinal-masculine< biliard[ >>];
-          :value: 1000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardy[ >>];
-          :value: 2000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardów[ >>];
-          :value: 5000000000000000
-        - :rule: =#,##0=;
-          :value: 1000000000000000000
-        :type: spellout-cardinal-neuter-priv
-      - :rules:
-        - :rule: minus >>;
-          :value: -x
-        - :rule: << przecinek >%%spellout-fraction>;
-          :value: x.x
-        - :rule: zero;
-          :value: 0
-        - :rule: jedna;
-          :value: 1
-        - :rule: =%%spellout-cardinal-feminine-priv=;
-          :value: 2
-        :type: spellout-cardinal-feminine
-      - :access: private
-        :rules:
-        - :rule: jeden;
-          :value: 1
-        - :rule: dwie;
-          :value: 2
-        - :rule: =%spellout-cardinal-masculine=;
-          :value: 3
-        - :rule: dwadzieścia[ >>];
-          :value: 20
-        - :rule: trzydzieści[ >>];
-          :value: 30
-        - :rule: czterdzieści[ >>];
-          :value: 40
-        - :rule: <<dziesiąt[ >>];
-          :value: 50
-        - :rule: sto[ >>];
-          :value: 100
-        - :rule: <%spellout-cardinal-feminine<ście[ >>];
-          :value: 200
-        - :rule: <%spellout-cardinal-feminine<sta[ >>];
-          :value: 300
-        - :rule: <%spellout-cardinal-feminine<set[ >>];
-          :value: 500
-        - :rule: <%spellout-cardinal-masculine< tysiąc[ >>];
-          :value: 1000
-        - :rule: <%spellout-cardinal-masculine< tysiące[ >>];
-          :value: 2000
-        - :rule: <%spellout-cardinal-masculine< tysięcy[ >>];
-          :value: 5000
-        - :rule: <%spellout-cardinal-masculine< milion[ >>];
-          :value: 1000000
-        - :rule: <%spellout-cardinal-masculine< miliony[ >>];
-          :value: 2000000
-        - :rule: <%spellout-cardinal-masculine< milionów[ >>];
-          :value: 5000000
-        - :rule: <%spellout-cardinal-masculine< miliard[ >>];
-          :value: 1000000000
-        - :rule: <%spellout-cardinal-masculine< miliardy[ >>];
-          :value: 2000000000
-        - :rule: <%spellout-cardinal-masculine< miliardów[ >>];
-          :value: 5000000000
-        - :rule: <%spellout-cardinal-masculine< bilion[ >>];
-          :value: 1000000000000
-        - :rule: <%spellout-cardinal-masculine< biliony[ >>];
-          :value: 2000000000000
-        - :rule: <%spellout-cardinal-masculine< bilionów[ >>];
-          :value: 5000000000000
-        - :rule: <%spellout-cardinal-masculine< biliard[ >>];
-          :value: 1000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardy[ >>];
-          :value: 2000000000000000
-        - :rule: <%spellout-cardinal-masculine< biliardów[ >>];
-          :value: 5000000000000000
-        - :rule: =#,##0=;
-          :value: 1000000000000000000
-        :type: spellout-cardinal-feminine-priv
-      - :access: private
-        :rules:
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 10
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 100
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 1000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 10000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 100000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 1000000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 10000000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 100000000
-        - :rule: <%%spellout-fraction-digits<<;
-          :value: 1000000000
-        - :rule: <0<;
-          :value: 10000000000
-        :type: spellout-fraction
-      - :access: private
-        :rules:
-        - :rule: =%spellout-cardinal-masculine=;
-          :value: 0
-        - :rule: << >>;
-          :value: 10
-        :type: spellout-fraction-digits
-      :type: SpelloutRules
+--- 
+:pl: 
+  :rbnf: 
+    :grouping: 
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: "=#,###0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 0
+            :type: "spellout-numbering-year"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-masculine=;"
+                :value: 0
+            :type: "spellout-numbering"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< przecinek >>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "jeden;"
+                :value: 1
+              - 
+                :rule: "dwa;"
+                :value: 2
+              - 
+                :rule: "trzy;"
+                :value: 3
+              - 
+                :rule: "cztery;"
+                :value: 4
+              - 
+                :rule: "pięć;"
+                :value: 5
+              - 
+                :rule: "sześć;"
+                :value: 6
+              - 
+                :rule: "siedem;"
+                :value: 7
+              - 
+                :rule: "osiem;"
+                :value: 8
+              - 
+                :rule: "dziewięć;"
+                :value: 9
+              - 
+                :rule: "dziesięć;"
+                :value: 10
+              - 
+                :rule: "jedenaście;"
+                :value: 11
+              - 
+                :rule: "dwanaście;"
+                :value: 12
+              - 
+                :rule: "trzynaście;"
+                :value: 13
+              - 
+                :rule: "czternaście;"
+                :value: 14
+              - 
+                :rule: "piętnaście;"
+                :value: 15
+              - 
+                :rule: "szesnaście;"
+                :value: 16
+              - 
+                :rule: "siedemnaście;"
+                :value: 17
+              - 
+                :rule: "osiemnaście;"
+                :value: 18
+              - 
+                :rule: "dziewiętnaście;"
+                :value: 19
+              - 
+                :rule: "dwadzieścia[ >>];"
+                :value: 20
+              - 
+                :rule: "trzydzieści[ >>];"
+                :value: 30
+              - 
+                :rule: "czterdzieści[ >>];"
+                :value: 40
+              - 
+                :rule: "<<dziesiąt[ >>];"
+                :value: 50
+              - 
+                :rule: "sto[ >>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-feminine<ście[ >>];"
+                :value: 200
+              - 
+                :rule: "<%spellout-cardinal-feminine<sta[ >>];"
+                :value: 300
+              - 
+                :rule: "<%spellout-cardinal-feminine<set[ >>];"
+                :value: 500
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiąc[ >>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiące[ >>];"
+                :value: 2000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysięcy[ >>];"
+                :value: 5000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milion[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliony[ >>];"
+                :value: 2000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milionów[ >>];"
+                :value: 5000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliard[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardów[ >>];"
+                :value: 5000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliony[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilionów[ >>];"
+                :value: 5000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliard[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardów[ >>];"
+                :value: 5000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-masculine"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< przecinek >%%spellout-fraction>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "jedno;"
+                :value: 1
+              - 
+                :rule: "=%%spellout-cardinal-neuter-priv=;"
+                :value: 2
+            :type: "spellout-cardinal-neuter"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "jeden;"
+                :value: 1
+              - 
+                :rule: "=%spellout-cardinal-masculine=;"
+                :value: 2
+              - 
+                :rule: "dwadzieścia[ >>];"
+                :value: 20
+              - 
+                :rule: "trzydzieści[ >>];"
+                :value: 30
+              - 
+                :rule: "czterdzieści[ >>];"
+                :value: 40
+              - 
+                :rule: "<<dziesiąt[ >>];"
+                :value: 50
+              - 
+                :rule: "sto[ >>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-feminine<ście[ >>];"
+                :value: 200
+              - 
+                :rule: "<%spellout-cardinal-feminine<sta[ >>];"
+                :value: 300
+              - 
+                :rule: "<%spellout-cardinal-feminine<set[ >>];"
+                :value: 500
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiąc[ >>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiące[ >>];"
+                :value: 2000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysięcy[ >>];"
+                :value: 5000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milion[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliony[ >>];"
+                :value: 2000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milionów[ >>];"
+                :value: 5000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliard[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardów[ >>];"
+                :value: 5000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliony[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilionów[ >>];"
+                :value: 5000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliard[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardów[ >>];"
+                :value: 5000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-neuter-priv"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< przecinek >%%spellout-fraction>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "jedna;"
+                :value: 1
+              - 
+                :rule: "=%%spellout-cardinal-feminine-priv=;"
+                :value: 2
+            :type: "spellout-cardinal-feminine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "jeden;"
+                :value: 1
+              - 
+                :rule: "dwie;"
+                :value: 2
+              - 
+                :rule: "=%spellout-cardinal-masculine=;"
+                :value: 3
+              - 
+                :rule: "dwadzieścia[ >>];"
+                :value: 20
+              - 
+                :rule: "trzydzieści[ >>];"
+                :value: 30
+              - 
+                :rule: "czterdzieści[ >>];"
+                :value: 40
+              - 
+                :rule: "<<dziesiąt[ >>];"
+                :value: 50
+              - 
+                :rule: "sto[ >>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-feminine<ście[ >>];"
+                :value: 200
+              - 
+                :rule: "<%spellout-cardinal-feminine<sta[ >>];"
+                :value: 300
+              - 
+                :rule: "<%spellout-cardinal-feminine<set[ >>];"
+                :value: 500
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiąc[ >>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysiące[ >>];"
+                :value: 2000
+              - 
+                :rule: "<%spellout-cardinal-masculine< tysięcy[ >>];"
+                :value: 5000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milion[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliony[ >>];"
+                :value: 2000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milionów[ >>];"
+                :value: 5000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliard[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardów[ >>];"
+                :value: 5000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliony[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilionów[ >>];"
+                :value: 5000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliard[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardów[ >>];"
+                :value: 5000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-feminine-priv"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 10
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 100
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 1000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 10000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 100000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 10000000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 100000000
+              - 
+                :rule: "<%%spellout-fraction-digits<<;"
+                :value: 1000000000
+              - 
+                :rule: "<0<;"
+                :value: 10000000000
+            :type: "spellout-fraction"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-masculine=;"
+                :value: 0
+              - 
+                :rule: "<< >>;"
+                :value: 10
+            :type: "spellout-fraction-digits"
+        :type: "SpelloutRules"

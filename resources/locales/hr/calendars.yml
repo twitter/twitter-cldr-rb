@@ -26,7 +26,7 @@
         :MMdd: dd. MM.
         :Md: d. M.
         :d: d.
-        :h: hh a
+        :h: h a
         :hm: hh:mm a
         :hms: hh:mm:ss a
         :ms: mm:ss
@@ -110,8 +110,8 @@
             :wed: srijeda
       :eras:
         :abbr:
-          0: p. n. e.
-          1: A. D.
+          0: pr. n. e.
+          1: n.e.
         :name:
           0: Prije Krista
           1: Poslije Krista
@@ -119,17 +119,17 @@
           0: pr.n.e.
           1: AD
       :fields:
-        :day: dan
-        :dayperiod: dio dana
-        :era: era
-        :hour: sat
-        :minute: minuta
-        :month: mjesec
-        :second: sekunda
-        :week: tjedan
-        :weekday: dan u tjednu
-        :year: godina
-        :zone: vremenska zona
+        :day: Dan
+        :dayperiod: Prijepodne/popodne
+        :era: Era
+        :hour: Sat
+        :minute: Minuta
+        :month: Mjesec
+        :second: Sekunda
+        :week: Tjedan
+        :weekday: Dan u tjednu
+        :year: Godina
+        :zone: Vremenska zona
       :formats:
         :date:
           :full:
@@ -137,18 +137,18 @@
           :long:
             :pattern: d. MMMM y.
           :medium:
-            :pattern: d. M. y.
+            :pattern: d. MMM y.
           :short:
-            :pattern: d.M.y.
+            :pattern: d.M.yy.
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''u'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''u'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -174,18 +174,18 @@
             8: kol
             9: ruj
           :narrow:
-            1: 1.
-            10: 10.
-            11: 11.
-            12: 12.
-            2: 2.
-            3: 3.
-            4: 4.
-            5: 5.
-            6: 6.
-            7: 7.
-            8: 8.
-            9: 9.
+            1: '1.'
+            10: '10.'
+            11: '11.'
+            12: '12.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
+            5: '5.'
+            6: '6.'
+            7: '7.'
+            8: '8.'
+            9: '9.'
           :wide:
             1: siječnja
             10: listopada
@@ -214,18 +214,18 @@
             8: kol
             9: ruj
           :narrow:
-            1: 1.
-            10: 10.
-            11: 11.
-            12: 12.
-            2: 2.
-            3: 3.
-            4: 4.
-            5: 5.
-            6: 6.
-            7: 7.
-            8: 8.
-            9: 9.
+            1: '1.'
+            10: '10.'
+            11: '11.'
+            12: '12.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
+            5: '5.'
+            6: '6.'
+            7: '7.'
+            8: '8.'
+            9: '9.'
           :wide:
             1: siječanj
             10: listopad
@@ -280,10 +280,10 @@
             3: 3kv
             4: 4kv
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: 1. kvartal
             2: 2. kvartal
@@ -296,10 +296,10 @@
             3: 3kv
             4: 4kv
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: 1. kvartal
             2: 2. kvartal

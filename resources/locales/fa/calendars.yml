@@ -3,8 +3,8 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E H:mm
+        :EHms: E H:mm:ss
         :Ed: E d
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
@@ -142,13 +142,13 @@
             :pattern: y/M/d
         :datetime:
           :full:
-            :pattern: ! '{{date}}، ساعت {{time}}'
+            :pattern: '{{date}}، ساعت {{time}}'
           :long:
-            :pattern: ! '{{date}}، ساعت {{time}}'
+            :pattern: '{{date}}، ساعت {{time}}'
           :medium:
-            :pattern: ! '{{date}}،‏ {{time}}'
+            :pattern: '{{date}}،‏ {{time}}'
           :short:
-            :pattern: ! '{{date}}،‏ {{time}}'
+            :pattern: '{{date}}،‏ {{time}}'
         :time:
           :full:
             :pattern: H:mm:ss (zzzz)

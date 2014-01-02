@@ -16,7 +16,7 @@
         :Hm: HH:mm
         :Hms: HH:mm:ss
         :M: L
-        :MEd: E, d/M
+        :MEd: E d/M
         :MMM: LLL
         :MMMEd: E d MMM
         :MMMMEd: E d MMMM
@@ -50,13 +50,13 @@
             :tue: อ.
             :wed: พ.
           :narrow:
-            :fri: ศ.
-            :mon: จ.
-            :sat: ส.
-            :sun: อา.
-            :thu: พฤ.
-            :tue: อ.
-            :wed: พ.
+            :fri: ศ
+            :mon: จ
+            :sat: ส
+            :sun: อา
+            :thu: พฤ
+            :tue: อ
+            :wed: พ
           :short:
             :fri: ศ.
             :mon: จ.
@@ -83,13 +83,13 @@
             :tue: อ.
             :wed: พ.
           :narrow:
-            :fri: ศ.
-            :mon: จ.
-            :sat: ส.
-            :sun: อา.
-            :thu: พฤ.
-            :tue: อ.
-            :wed: พ.
+            :fri: ศ
+            :mon: จ
+            :sat: ส
+            :sun: อา
+            :thu: พฤ
+            :tue: อ
+            :wed: พ
           :short:
             :fri: ศ.
             :mon: จ.
@@ -108,14 +108,14 @@
             :wed: วันพุธ
       :eras:
         :abbr:
-          0: ปีก่อน ค.ศ.
-          1: ค.ศ.
+          0: ก.ส.ศ.
+          1: ส.ศ.
         :name:
-          0: ปีก่อนคริสต์ศักราช
-          1: คริสต์ศักราช
+          0: ก่อนสามัญศักราช
+          1: สามัญศักราช
         :narrow:
-          0: ก่อน ค.ศ.
-          1: ค.ศ.
+          0: ก.ส.ศ.
+          1: ส.ศ.
       :fields:
         :day: วัน
         :dayperiod: ช่วงวัน
@@ -127,7 +127,7 @@
         :week: สัปดาห์
         :weekday: วันในสัปดาห์
         :year: ปี
-        :zone: เขต
+        :zone: เขตเวลา
       :formats:
         :date:
           :full:
@@ -140,13 +140,13 @@
             :pattern: d/M/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: H นาฬิกา mm นาที ss วินาที zzzz
@@ -171,19 +171,7 @@
             7: ก.ค.
             8: ส.ค.
             9: ก.ย.
-          :narrow:
-            1: ม.ค.
-            10: ต.ค.
-            11: พ.ย.
-            12: ธ.ค.
-            2: ก.พ.
-            3: มี.ค.
-            4: เม.ย.
-            5: พ.ค.
-            6: มิ.ย
-            7: ก.ค.
-            8: ส.ค.
-            9: ก.ย.
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide:
             1: มกราคม
             10: ตุลาคม
@@ -241,9 +229,9 @@
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
-            :am: ก่อนเที่ยง
+            :am: a
             :noon: n
-            :pm: หลังเที่ยง
+            :pm: p
           :wide:
             :am: ก่อนเที่ยง
             :noon: noon
@@ -292,8 +280,8 @@
           :full:
             :pattern: EEEEที่ d MMMM G y
           :long:
-            :pattern: ! 'd MMMM พ.ศ. #{y + 543}'
+            :pattern: 'd MMMM พ.ศ. #{y + 543}'
           :medium:
-            :pattern: ! 'd MMM #{y + 543}'
+            :pattern: 'd MMM #{y + 543}'
           :short:
             :pattern: d/M/#{y + 543}

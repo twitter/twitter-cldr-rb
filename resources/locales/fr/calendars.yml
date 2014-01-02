@@ -12,7 +12,7 @@
         :GyMMM: MMM y G
         :GyMMMEd: E d MMM y G
         :GyMMMd: d MMM y G
-        :H: HH
+        :H: HH 'h'
         :Hm: HH:mm
         :Hms: HH:mm:ss
         :M: L
@@ -105,14 +105,14 @@
             :wed: mercredi
       :eras:
         :abbr:
-          0: av. J.-C.
-          1: ap. J.-C.
+          0: AEC
+          1: EC
         :name:
           0: avant Jésus-Christ
           1: après Jésus-Christ
         :narrow:
-          0: B
-          1: A
+          0: av. J.-C.
+          1: ap. J.-C.
       :fields:
         :day: jour
         :dayperiod: cadran
@@ -137,13 +137,13 @@
             :pattern: dd/MM/y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -241,8 +241,8 @@
             :am: AM
             :pm: PM
           :narrow:
-            :afternoon: ap.m.
-            :am: AM
+            :afternoon: ap.-m.
+            :am: a
             :morning: matin
             :night: soir
             :noon: midi

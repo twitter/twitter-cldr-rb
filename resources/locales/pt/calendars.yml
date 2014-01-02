@@ -3,11 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E, HH:mm
+        :EHms: E, HH:mm:ss
         :Ed: E, d
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E, h:mm a
+        :Ehms: E, h:mm:ss a
         :Gy: y G
         :GyMMM: MMM 'de' y G
         :GyMMMEd: E, d 'de' MMM 'de' y G
@@ -140,13 +140,13 @@
             :pattern: dd/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz

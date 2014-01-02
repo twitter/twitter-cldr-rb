@@ -3,15 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E, HH:mm
+        :EHms: E, HH:mm:ss
         :Ed: E d.
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :Ehm: E, h:mm a
+        :Ehms: E, h:mm:ss a
+        :Gy: y. G
+        :GyMMM: MMM y. G
+        :GyMMMEd: E, d. MMM y. G
+        :GyMMMd: d. MMM y. G
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
@@ -144,13 +144,13 @@
             :pattern: d.M.yy.
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH.mm.ss zzzz
@@ -264,10 +264,10 @@
             3: К3
             4: К4
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: Прво тромесечје
             2: Друго тромесечје
@@ -280,10 +280,10 @@
             3: К3
             4: К4
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: Прво тромесечје
             2: Друго тромесечје

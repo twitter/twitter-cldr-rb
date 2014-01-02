@@ -3,55 +3,60 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ¤#,##0.00;(¤#,##0.00)
+          :default: '#,##0.00 ¤;(#,##0.00 ¤)'
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.###'
+          :default: '#,##0.###'
           :long:
-            1000: 0 mil
-            10000: 00 mil
-            100000: 000 mil
+            1000: 0 milers
+            10000: 00 milers
+            100000: 000 milers
             1000000: 0 milions
             10000000: 00 milions
             100000000: 000 milions
-            1000000000: 0 miliards
-            10000000000: 00 miliards
-            100000000000: 000 miliards
+            1000000000: 0 milers de milions
+            10000000000: 00 milers de milions
+            100000000000: 000 milers de milions
             1000000000000: 0 bilions
             10000000000000: 00 bilions
             100000000000000: 000 bilions
           :short:
-            1000: 0 K
-            10000: 00 K
-            100000: 000 K
-            1000000: 0 M
+            1000: 0m
+            10000: 00m
+            100000: 000m
+            1000000: 0M
             10000000: 00 M
             100000000: 000 M
             1000000000: 0000 M
-            10000000000: 00k M
-            100000000000: 000k M
-            1000000000000: 0 B
+            10000000000: 00mM
+            100000000000: 000mM
+            1000000000000: 0B
             10000000000000: 00 B
             100000000000000: 000 B
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0%'
+          :default: '#,##0%'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
-      :decimal: ! ','
+      :decimal: ','
       :exponential: E
       :group: .
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

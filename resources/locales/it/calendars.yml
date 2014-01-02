@@ -3,10 +3,10 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
+        :EHm: E HH.mm
         :EHms: E HH:mm:ss
         :Ed: E d
-        :Ehm: E h:mm a
+        :Ehm: E h.mm a
         :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
@@ -46,7 +46,14 @@
             :thu: gio
             :tue: mar
             :wed: mer
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: V
+            :mon: L
+            :sat: S
+            :sun: D
+            :thu: G
+            :tue: M
+            :wed: M
           :short:
             :fri: ven
             :mon: lun
@@ -64,7 +71,14 @@
             :tue: martedì
             :wed: mercoledì
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: ven
+            :mon: lun
+            :sat: sab
+            :sun: dom
+            :thu: gio
+            :tue: mar
+            :wed: mer
           :narrow:
             :fri: V
             :mon: L
@@ -91,14 +105,14 @@
             :wed: Mercoledì
       :eras:
         :abbr:
-          0: aC
-          1: dC
+          0: BCE
+          1: CE
         :name:
-          0: a.C.
-          1: d.C
+          0: BCE
+          1: CE
         :narrow:
-          0: B
-          1: A
+          0: BCE
+          1: CE
       :fields:
         :day: giorno
         :dayperiod: periodo del giorno
@@ -110,7 +124,7 @@
         :week: settimana
         :weekday: giorno della settimana
         :year: anno
-        :zone: zona
+        :zone: fuso orario
       :formats:
         :date:
           :full:
@@ -123,13 +137,13 @@
             :pattern: dd/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -248,10 +262,10 @@
             3: 3
             4: 4
           :wide:
-            1: 1o trimestre
-            2: 2o trimestre
-            3: 3o trimestre
-            4: 4o trimestre
+            1: 1º trimestre
+            2: 2º trimestre
+            3: 3º trimestre
+            4: 4º trimestre
         :stand-alone:
           :abbreviated:
             1: T1

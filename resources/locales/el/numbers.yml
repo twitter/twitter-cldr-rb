@@ -3,14 +3,16 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.00 ¤'
+          :default: '#,##0.00 ¤'
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.###'
+          :default: '#,##0.###'
           :long:
             1000: 0 χιλιάδες
             10000: 00 χιλιάδες
@@ -31,27 +33,30 @@
             1000000: 0 εκ'.'
             10000000: 00 εκ'.'
             100000000: 000 εκ'.'
-            1000000000: 0 δις
-            10000000000: 00 δις
-            100000000000: 000 δις
-            1000000000000: 0 τρις
-            10000000000000: 00 τρις
-            100000000000000: 000 τρις
+            1000000000: 0 δισ'.'
+            10000000000: 00 δισ'.'
+            100000000000: 000 δισ'.'
+            1000000000000: 0 τρισ'.'
+            10000000000000: 00 τρισ'.'
+            100000000000000: 000 τρισ'.'
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0%'
+          :default: '#,##0%'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '[#E0]'
+          :default: '#E0'
     :symbols:
       :alias: ''
-      :decimal: ! ','
+      :decimal: ','
       :exponential: e
       :group: .
       :infinity: ∞
-      :list: ! ','
-      :minus_sign: ! '-'
+      :list: ;
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

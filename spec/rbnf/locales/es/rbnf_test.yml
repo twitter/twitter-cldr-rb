@@ -1,6 +1,6 @@
 ---
-spellout:
-  spellout_ordinal_feminine:
+SpelloutRules:
+  spellout-ordinal-feminine:
     -1141: menos milésima centésima cuadragésima primera
     -1142: menos milésima centésima cuadragésima segunda
     -1143: menos milésima centésima cuadragésima tercera
@@ -117,7 +117,7 @@ spellout:
     1143: milésima centésima cuadragésima tercera
     10311: diez milésima tricentésima undécima
     138400: ciento treinta y ocho milésima cuadringentésima
-  spellout_ordinal_feminine_plural:
+  spellout-ordinal-feminine-plural:
     -1141: menos milésima centésima cuadragésima primeras
     -1142: menos milésima centésima cuadragésima segundas
     -1143: menos milésima centésima cuadragésima terceras
@@ -234,7 +234,7 @@ spellout:
     1143: milésima centésima cuadragésima terceras
     10311: diez milésima tricentésima undécimas
     138400: ciento treinta y ocho milésima cuadringentésimas
-  spellout_ordinal_masculine:
+  spellout-ordinal-masculine:
     -1141: menos milésimo centésimo cuadragésimo primero
     -1142: menos milésimo centésimo cuadragésimo segundo
     -1143: menos milésimo centésimo cuadragésimo tercero
@@ -351,7 +351,7 @@ spellout:
     1143: milésimo centésimo cuadragésimo tercero
     10311: diez milésimo tricentésimo undécimo
     138400: ciento treinta y ocho milésimo cuadringentésimo
-  spellout_ordinal_masculine_plural:
+  spellout-ordinal-masculine-plural:
     -1141: menos milésimo centésimo cuadragésimo primeros
     -1142: menos milésimo centésimo cuadragésimo segundos
     -1143: menos milésimo centésimo cuadragésimo terceros
@@ -468,7 +468,7 @@ spellout:
     1143: milésimo centésimo cuadragésimo terceros
     10311: diez milésimo tricentésimo undécimos
     138400: ciento treinta y ocho milésimo cuadringentésimos
-  spellout_ordinal_masculine_adjective:
+  spellout-ordinal-masculine-adjective:
     -1141: menos milésimo centésimo cuadragésimo primer
     -1142: menos milésimo centésimo cuadragésimo segundo
     -1143: menos milésimo centésimo cuadragésimo tercer
@@ -585,10 +585,10 @@ spellout:
     1143: milésimo centésimo cuadragésimo tercer
     10311: diez milésimo tricentésimo undécimo
     138400: ciento treinta y ocho milésimo cuadringentésimo
-  spellout_cardinal_feminine:
-    -1141: menos mil cienta cuarenta y una
-    -1142: menos mil cienta cuarenta y dos
-    -1143: menos mil cienta cuarenta y tres
+  spellout-cardinal-feminine:
+    -1141: menos mil ciento cuarenta y una
+    -1142: menos mil ciento cuarenta y dos
+    -1143: menos mil ciento cuarenta y tres
     -100: menos cien
     -75: menos setenta y cinco
     -50: menos cincuenta
@@ -697,12 +697,12 @@ spellout:
     321: tres­cientas veintiuna
     322: tres­cientas veintidós
     323: tres­cientas veintitrés
-    1141: mil cienta cuarenta y una
-    1142: mil cienta cuarenta y dos
-    1143: mil cienta cuarenta y tres
+    1141: mil ciento cuarenta y una
+    1142: mil ciento cuarenta y dos
+    1143: mil ciento cuarenta y tres
     10311: diez mil tres­cientas once
     138400: ciento treinta y ocho mil cuatro­cientas
-  spellout_cardinal_masculine:
+  spellout-cardinal-masculine:
     -1141: menos mil ciento cuarenta y un
     -1142: menos mil ciento cuarenta y dos
     -1143: menos mil ciento cuarenta y tres
@@ -819,7 +819,7 @@ spellout:
     1143: mil ciento cuarenta y tres
     10311: diez mil trescientos once
     138400: ciento treinta y ocho mil cuatrocientos
-  spellout_numbering:
+  spellout-numbering:
     -1141: menos mil ciento cuarenta y uno
     -1142: menos mil ciento cuarenta y dos
     -1143: menos mil ciento cuarenta y tres
@@ -936,7 +936,7 @@ spellout:
     1143: mil ciento cuarenta y tres
     10311: diez mil trescientos once
     138400: ciento treinta y ocho mil cuatrocientos
-  spellout_numbering_year:
+  spellout-numbering-year:
     -1141: menos mil ciento cuarenta y uno
     -1142: menos mil ciento cuarenta y dos
     -1143: menos mil ciento cuarenta y tres
@@ -1053,11 +1053,11 @@ spellout:
     1143: mil ciento cuarenta y tres
     10311: diez mil trescientos once
     138400: ciento treinta y ocho mil cuatrocientos
-ordinal:
-  digits_ordinal:
-    -1141: −1.141º
-    -1142: −1.142º
-    -1143: −1.143º
+OrdinalRules:
+  digits-ordinal:
+    -1141: −1 141º
+    -1142: −1 142º
+    -1143: −1 143º
     -100: −100º
     -75: −75º
     -50: −50º
@@ -1166,15 +1166,15 @@ ordinal:
     321: 321º
     322: 322º
     323: 323º
-    1141: 1.141º
-    1142: 1.142º
-    1143: 1.143º
-    10311: 10.311º
-    138400: 138.400º
-  digits_ordinal_feminine:
-    -1141: −1.141ª
-    -1142: −1.142ª
-    -1143: −1.143ª
+    1141: 1 141º
+    1142: 1 142º
+    1143: 1 143º
+    10311: 10 311º
+    138400: 138 400º
+  digits-ordinal-feminine:
+    -1141: −1 141ª
+    -1142: −1 142ª
+    -1143: −1 143ª
     -100: −100ª
     -75: −75ª
     -50: −50ª
@@ -1283,15 +1283,15 @@ ordinal:
     321: 321ª
     322: 322ª
     323: 323ª
-    1141: 1.141ª
-    1142: 1.142ª
-    1143: 1.143ª
-    10311: 10.311ª
-    138400: 138.400ª
-  digits_ordinal_masculine:
-    -1141: −1.141º
-    -1142: −1.142º
-    -1143: −1.143º
+    1141: 1 141ª
+    1142: 1 142ª
+    1143: 1 143ª
+    10311: 10 311ª
+    138400: 138 400ª
+  digits-ordinal-masculine:
+    -1141: −1 141º
+    -1142: −1 142º
+    -1143: −1 143º
     -100: −100º
     -75: −75º
     -50: −50º
@@ -1400,15 +1400,15 @@ ordinal:
     321: 321º
     322: 322º
     323: 323º
-    1141: 1.141º
-    1142: 1.142º
-    1143: 1.143º
-    10311: 10.311º
-    138400: 138.400º
-  digits_ordinal_masculine_adjective:
-    -1141: −1.141ᵉʳ
-    -1142: −1.142º
-    -1143: −1.143ᵉʳ
+    1141: 1 141º
+    1142: 1 142º
+    1143: 1 143º
+    10311: 10 311º
+    138400: 138 400º
+  digits-ordinal-masculine-adjective:
+    -1141: −1 141ᵉʳ
+    -1142: −1 142º
+    -1143: −1 143ᵉʳ
     -100: −100º
     -75: −75º
     -50: −50º
@@ -1517,16 +1517,16 @@ ordinal:
     321: 321ᵉʳ
     322: 322º
     323: 323ᵉʳ
-    1141: 1.141ᵉʳ
-    1142: 1.142º
-    1143: 1.143ᵉʳ
-    10311: 10.311º
-    138400: 138.400º
-duration:
+    1141: 1 141ᵉʳ
+    1142: 1 142º
+    1143: 1 143ᵉʳ
+    10311: 10 311º
+    138400: 138 400º
+DurationRules:
   duration:
-    -1141: '-1.141'
-    -1142: '-1.142'
-    -1143: '-1.143'
+    -1141: -1 141
+    -1142: -1 142
+    -1143: -1 143
     -100: '-100'
     -75: '-75'
     -50: '-50'
@@ -1635,8 +1635,8 @@ duration:
     321: '321'
     322: '322'
     323: '323'
-    1141: '1.141'
-    1142: '1.142'
-    1143: '1.143'
-    10311: '10.311'
-    138400: '138.400'
+    1141: 1 141
+    1142: 1 142
+    1143: 1 143
+    10311: 10 311
+    138400: 138 400

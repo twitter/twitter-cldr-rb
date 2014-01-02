@@ -10,8 +10,8 @@
         :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -43,13 +43,13 @@
       :days:
         :format:
           :abbreviated:
-            :fri: Vi
-            :mon: Lu
-            :sat: Sâ
-            :sun: Du
-            :thu: Jo
-            :tue: Ma
-            :wed: Mi
+            :fri: Vin
+            :mon: Lun
+            :sat: Sâm
+            :sun: Dum
+            :thu: Joi
+            :tue: Mar
+            :wed: Mie
           :narrow:
             :fri: V
             :mon: L
@@ -76,13 +76,13 @@
             :wed: miercuri
         :stand-alone:
           :abbreviated:
-            :fri: Vi
-            :mon: Lu
-            :sat: Sâ
-            :sun: Du
-            :thu: Jo
-            :tue: Ma
-            :wed: Mi
+            :fri: Vin
+            :mon: Lun
+            :sat: Sâm
+            :sun: Dum
+            :thu: Joi
+            :tue: Mar
+            :wed: Mie
           :narrow:
             :fri: V
             :mon: L
@@ -109,8 +109,8 @@
             :wed: miercuri
       :eras:
         :abbr:
-          0: î.Hr.
-          1: d.Hr.
+          0: î.e.n
+          1: e.n.
         :name:
           0: înainte de Hristos
           1: după Hristos
@@ -119,7 +119,7 @@
           1: A
       :fields:
         :day: zi
-        :dayperiod: perioada zilei
+        :dayperiod: a.m./p.m
         :era: eră
         :hour: oră
         :minute: minut
@@ -128,7 +128,7 @@
         :week: săptămână
         :weekday: zi a săptămânii
         :year: an
-        :zone: zonă
+        :zone: fus orar
       :formats:
         :date:
           :full:
@@ -136,18 +136,18 @@
           :long:
             :pattern: d MMMM y
           :medium:
-            :pattern: dd.MM.y
+            :pattern: d MMM y
           :short:
             :pattern: dd.MM.y
         :datetime:
           :full:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :long:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -246,9 +246,9 @@
             :noon: n
             :pm: p
           :wide:
-            :am: AM
+            :am: a.m.
             :noon: noon
-            :pm: PM
+            :pm: p.m.
             :variant:
               :am: a.m.
               :pm: p.m.
@@ -264,7 +264,7 @@
             1: 1
             2: 2
             3: 3
-            4: T4
+            4: 4
           :wide:
             1: trimestrul I
             2: trimestrul al II-lea
@@ -277,10 +277,10 @@
             3: T3
             4: T4
           :narrow:
-            1: T1
-            2: T2
-            3: T3
-            4: T4
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           :wide:
             1: trimestrul I
             2: trimestrul al II-lea

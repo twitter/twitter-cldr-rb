@@ -3,14 +3,16 @@
   :numbers:
     :formats:
       :currency:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.00 ¤;(#,##0.00 ¤)'
+          :default: '#,##0.00 ¤;(#,##0.00 ¤)'
         :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
+          :one: '{0} {1}'
+          :other: '{0} {1}'
       :decimal:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0.###'
+          :default: '#,##0.###'
           :long:
             1000: 0 mille
             10000: 00 mille
@@ -25,9 +27,9 @@
             10000000000000: 00 billions
             100000000000000: 000 billions
           :short:
-            1000: 0 K
-            10000: 00 K
-            100000: 000 K
+            1000: 0 k
+            10000: 00 k
+            100000: 000 k
             1000000: 0 M
             10000000: 00 M
             100000000: 000 M
@@ -38,20 +40,23 @@
             10000000000000: 00 Bn
             100000000000000: 000 Bn
       :percent:
+        :number_system: latn
         :patterns:
-          :default: ! '#,##0 %'
+          :default: '#,##0 %'
       :scientific:
+        :number_system: latn
         :patterns:
-          :default: ! '#E0'
+          :default: '#E0'
     :symbols:
       :alias: ''
-      :decimal: ! ','
+      :decimal: ','
       :exponential: E
       :group:  
       :infinity: ∞
       :list: ;
-      :minus_sign: ! '-'
+      :minus_sign: '-'
       :nan: NaN
       :per_mille: ‰
-      :percent_sign: ! '%'
+      :percent_sign: '%'
       :plus_sign: +
+      :superscripting_exponent: ×

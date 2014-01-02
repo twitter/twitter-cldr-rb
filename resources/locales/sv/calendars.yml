@@ -109,26 +109,26 @@
             :wed: Onsdag
       :eras:
         :abbr:
-          0: f.Kr.
-          1: e.Kr.
+          0: f.v.t.
+          1: v.t.
         :name:
-          0: före Kristus
-          1: efter Kristus
+          0: före västerländsk tideräkning
+          1: västerländsk tideräkning
         :narrow:
-          0: f.Kr.
-          1: e.Kr.
+          0: fvt
+          1: vt
       :fields:
-        :day: dag
+        :day: Dag
         :dayperiod: fm/em
-        :era: era
+        :era: Era
         :hour: timme
-        :minute: minut
-        :month: månad
-        :second: sekund
-        :week: vecka
-        :weekday: veckodag
-        :year: år
-        :zone: tidszon
+        :minute: Minut
+        :month: Månad
+        :second: Sekund
+        :week: Vecka
+        :weekday: Veckodag
+        :year: År
+        :zone: Tidszon
       :formats:
         :date:
           :full:
@@ -141,16 +141,16 @@
             :pattern: y-MM-dd
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
-            :pattern: ! '''kl''. HH:mm:ss zzzz'
+            :pattern: '''kl''. HH:mm:ss zzzz'
           :long:
             :pattern: HH:mm:ss z
           :medium:

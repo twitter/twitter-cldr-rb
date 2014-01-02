@@ -16,13 +16,13 @@
         :Hm: HH:mm
         :Hms: HH:mm:ss
         :M: L
-        :MEd: E, M-d
+        :MEd: E, M/d
         :MMM: LLL
-        :MMMEd: E MMM d
-        :MMMMEd: E MMMM d
+        :MMMEd: E, MMM d
+        :MMMMEd: E, MMMM d
         :MMMMd: MMMM d
         :MMMd: MMM d
-        :Md: M-d
+        :Md: M/d
         :d: d
         :h: h a
         :hm: h:mm a
@@ -31,29 +31,36 @@
         :y: y
         :yM: M/y
         :yMEd: E, M/d/y
-        :yMM: MM-y
+        :yMM: MM/y
         :yMMM: MMM y
         :yMMMEd: E, MMM d, y
         :yMMMM: MMMM y
         :yMMMd: MMM d, y
         :yMd: M/d/y
         :yQQQ: QQQ y
-        :yQQQQ: y QQQQ
+        :yQQQQ: QQQQ y
       :days:
         :format:
           :abbreviated:
-            :fri: Bye
+            :fri: Biy
             :mon: Lun
             :sat: Sab
             :sun: Lin
             :thu: Huw
             :tue: Mar
-            :wed: Mye
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+            :wed: Miy
+          :narrow:
+            :fri: B
+            :mon: L
+            :sat: S
+            :sun: L
+            :thu: H
+            :tue: M
+            :wed: M
           :short:
             :fri: Bi
             :mon: Lu
-            :sat: Sab
+            :sat: Sa
             :sun: Li
             :thu: Hu
             :tue: Ma
@@ -86,25 +93,32 @@
           :short:
             :fri: Bi
             :mon: Lu
-            :sat: Sab
+            :sat: Sa
             :sun: Li
             :thu: Hu
             :tue: Ma
             :wed: Mi
-          :wide: :calendars.gregorian.days.format.wide
+          :wide:
+            :fri: Biyernes
+            :mon: Lunes
+            :sat: Sabado
+            :sun: Linggo
+            :thu: Huwebes
+            :tue: Martes
+            :wed: Miyerkules
       :eras:
         :abbr:
-          0: BC
-          1: AD
+          0: BCE
+          1: CE
         :name:
-          0: Before Christ
-          1: Anno Domini
+          0: Before Common Era
+          1: Common Era
         :narrow:
           0: B
           1: A
       :fields:
         :day: Araw
-        :dayperiod: Dayperiod
+        :dayperiod: AM/PM
         :era: Era
         :hour: Oras
         :minute: Minuto
@@ -113,11 +127,11 @@
         :week: Linggo
         :weekday: Araw ng Linggo
         :year: Taon
-        :zone: Zone
+        :zone: Time Zone
       :formats:
         :date:
           :full:
-            :pattern: EEEE, MMMM dd y
+            :pattern: EEEE, MMMM d, y
           :long:
             :pattern: MMMM d, y
           :medium:
@@ -126,22 +140,22 @@
             :pattern: M/d/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''ng'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''ng'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
-            :pattern: HH:mm:ss zzzz
+            :pattern: h:mm:ss a zzzz
           :long:
-            :pattern: HH:mm:ss z
+            :pattern: h:mm:ss a z
           :medium:
-            :pattern: HH:mm:ss
+            :pattern: h:mm:ss a
           :short:
-            :pattern: HH:mm
+            :pattern: h:mm a
       :months:
         :format:
           :abbreviated:
@@ -157,7 +171,19 @@
             7: Hul
             8: Ago
             9: Set
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow:
+            1: E
+            10: O
+            11: N
+            12: D
+            2: P
+            3: M
+            4: A
+            5: M
+            6: H
+            7: H
+            8: A
+            9: S
           :wide:
             1: Enero
             10: Oktubre
@@ -172,7 +198,19 @@
             8: Agosto
             9: Setyembre
         :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated:
+            1: Ene
+            10: Okt
+            11: Nob
+            12: Dis
+            2: Peb
+            3: Mar
+            4: Abr
+            5: May
+            6: Hun
+            7: Hul
+            8: Ago
+            9: Set
           :narrow:
             1: E
             10: O
@@ -186,7 +224,19 @@
             7: H
             8: A
             9: S
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: Enero
+            10: Oktubre
+            11: Nobyembre
+            12: Disyembre
+            2: Pebrero
+            3: Marso
+            4: Abril
+            5: Mayo
+            6: Hunyo
+            7: Hulyo
+            8: Agosto
+            9: Setyembre
       :periods:
         :format:
           :abbreviated:
@@ -217,8 +267,8 @@
             3: 3
             4: 4
           :wide:
-            1: ika-1 sangkapat
-            2: ika-2 sangkapat
+            1: ika-1 quarter
+            2: ika-2 quarter
             3: ika-3 quarter
             4: ika-4 na quarter
         :stand-alone:
@@ -233,7 +283,7 @@
             3: 3
             4: 4
           :wide:
-            1: ika-1 sangkapat
+            1: ika-1 quarter
             2: ika-2 quarter
-            3: ika-3 sangkapat
+            3: ika-3 quarter
             4: ika-4 na quarter

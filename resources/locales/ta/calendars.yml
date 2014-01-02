@@ -8,19 +8,19 @@
         :Ed: d E
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :Gy: G y
+        :GyMMM: G y MMM
+        :GyMMMEd: G y MMM d, E
+        :GyMMMd: G y MMM d
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
         :M: L
-        :MEd: E, d/M
+        :MEd: MM-dd, E
         :MMM: LLL
-        :MMMEd: E, d MMM
+        :MMMEd: MMM d, E
         :MMMMd: d MMMM
-        :MMMd: d MMM
+        :MMMd: MMM d
         :MMdd: dd-MM
         :Md: d/M
         :d: d
@@ -49,7 +49,14 @@
             :thu: வி
             :tue: செ
             :wed: பு
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: வெ
+            :mon: தி
+            :sat: ச
+            :sun: ஞா
+            :thu: வி
+            :tue: செ
+            :wed: பு
           :short:
             :fri: வெ
             :mon: தி
@@ -67,7 +74,14 @@
             :tue: செவ்வாய்
             :wed: புதன்
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: வெ
+            :mon: தி
+            :sat: ச
+            :sun: ஞா
+            :thu: வி
+            :tue: செ
+            :wed: பு
           :narrow:
             :fri: வெ
             :mon: தி
@@ -112,7 +126,7 @@
         :second: வினாடி
         :week: வாரம்
         :weekday: வார நாள்
-        :year: வருடம்
+        :year: ஆண்டு
         :zone: மண்டலம்
       :formats:
         :date:
@@ -126,13 +140,13 @@
             :pattern: d-M-yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: h:mm:ss a zzzz
@@ -233,9 +247,9 @@
             :noon: n
             :pm: PM
           :wide:
-            :am: AM
+            :am: முற்பகல்
             :noon: noon
-            :pm: PM
+            :pm: பிற்பகல்
             :variant:
               :am: a.m.
               :pm: p.m.

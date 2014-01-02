@@ -3,22 +3,26 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
-        :Ed: E, d.
+        :EHm: E H:mm
+        :EHms: E H:mm:ss
+        :Ed: E d.
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: LLLL y G
-        :GyMMMEd: E, d. M. y G
+        :GyMMMEd: E d. M. y G
+        :GyMMMMEd: E d. MMMM y G
+        :GyMMMMd: d. MMMM y G
         :GyMMMd: d. M. y G
         :H: H
         :Hm: H:mm
         :Hms: H:mm:ss
         :M: L
-        :MEd: E, d. M.
+        :MEd: E d. M.
         :MMM: LLL
-        :MMMEd: E, d. M.
+        :MMMEd: E d. M.
+        :MMMMEd: E d. MMMM
+        :MMMMd: d. MMMM
         :MMMd: d. M.
         :Md: d. M.
         :d: d.
@@ -28,10 +32,12 @@
         :ms: mm:ss
         :y: y
         :yM: M/y
-        :yMEd: E, d. M. y
+        :yMEd: E d. M. y
         :yMMM: LLLL y
-        :yMMMEd: E, d. M. y
+        :yMMMEd: E d. M. y
         :yMMMM: LLLL y
+        :yMMMMEd: E d. MMMM y
+        :yMMMMd: d. MMMM y
         :yMMMd: d. M. y
         :yMd: d. M. y
         :yQQQ: QQQ y
@@ -88,13 +94,13 @@
             :tue: Ú
             :wed: S
           :short:
-            :fri: Pá
-            :mon: Po
-            :sat: So
-            :sun: Ne
-            :thu: Čt
-            :tue: Út
-            :wed: St
+            :fri: pá
+            :mon: po
+            :sat: so
+            :sun: ne
+            :thu: čt
+            :tue: út
+            :wed: st
           :wide:
             :fri: pátek
             :mon: pondělí
@@ -112,7 +118,7 @@
           1: n. l.
         :narrow:
           0: př.n.l.
-          1: n. l.
+          1: n.l.
       :fields:
         :day: Den
         :dayperiod: AM/PM
@@ -128,7 +134,7 @@
       :formats:
         :date:
           :full:
-            :pattern: EEEE, d. MMMM y
+            :pattern: EEEE d. MMMM y
           :long:
             :pattern: d. MMMM y
           :medium:
@@ -137,13 +143,13 @@
             :pattern: dd.MM.yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: H:mm:ss zzzz
@@ -238,13 +244,13 @@
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
-            :am: dop.
+            :am: AM
             :noon: n
-            :pm: odp.
+            :pm: PM
           :wide:
-            :am: dop.
+            :am: AM
             :noon: noon
-            :pm: odp.
+            :pm: PM
             :variant:
               :am: a.m.
               :pm: p.m.

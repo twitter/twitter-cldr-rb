@@ -10,8 +10,8 @@
         :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH:mm
         :Hmm: H:mm
@@ -110,8 +110,8 @@
           0: S.M.
           1: TM
         :name:
-          0: Before Christ
-          1: Anno Domini
+          0: Before Common Era
+          1: Common Era
         :narrow:
           0: B
           1: A
@@ -134,18 +134,18 @@
           :long:
             :pattern: d MMMM y
           :medium:
-            :pattern: dd/MM/y
+            :pattern: d MMM y
           :short:
             :pattern: d/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: h:mm:ss a zzzz
@@ -168,7 +168,7 @@
             5: Mei
             6: Jun
             7: Jul
-            8: Ogos
+            8: Ogo
             9: Sep
           :narrow:
             1: J
@@ -208,7 +208,7 @@
             5: Mei
             6: Jun
             7: Jul
-            8: Ogos
+            8: Ogo
             9: Sep
           :narrow:
             1: J
@@ -256,10 +256,10 @@
       :quarters:
         :format:
           :abbreviated:
-            1: Suku 1
-            2: Suku Ke-2
-            3: Suku Ke-3
-            4: Suku Ke-4
+            1: S1
+            2: S2
+            3: S3
+            4: S4
           :narrow:
             1: 1
             2: 2
@@ -272,10 +272,10 @@
             4: Suku Ke-4
         :stand-alone:
           :abbreviated:
-            1: Suku 1
-            2: Suku Ke-2
-            3: Suku Ke-3
-            4: Suku Ke-4
+            1: S1
+            2: S2
+            3: S3
+            4: S4
           :narrow:
             1: 1
             2: 2

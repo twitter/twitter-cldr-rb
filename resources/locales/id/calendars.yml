@@ -3,12 +3,12 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E HH.mm
+        :EHms: E HH.mm.ss
         :Ed: E, d
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: G y
+        :Ehm: E h.mm a
+        :Ehms: E h.mm.ss a
+        :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E, d MMM y G
         :GyMMMd: d MMM y G
@@ -106,8 +106,8 @@
             :wed: Rabu
       :eras:
         :abbr:
-          0: SM
-          1: M
+          0: SEU
+          1: EU
         :name:
           0: SM
           1: M
@@ -116,7 +116,7 @@
           1: M
       :fields:
         :day: Hari
-        :dayperiod: Siang/Malam
+        :dayperiod: AM/PM
         :era: Era
         :hour: Jam
         :minute: Menit
@@ -138,13 +138,13 @@
             :pattern: dd/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH.mm.ss zzzz

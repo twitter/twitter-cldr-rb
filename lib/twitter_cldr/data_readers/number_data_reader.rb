@@ -7,6 +7,8 @@ module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
 
+      DEFAULT_NUMBER_SYSTEM = "latn"
+
       BASE_PATH   = [:numbers, :formats]
       SYMBOL_PATH = [:numbers, :symbols]
 
@@ -36,6 +38,10 @@ module TwitterCldr
         else
           pattern
         end
+      end
+
+      def number_system_for(type)
+        (traverse(BASE_PATH + [type]) || {}).fetch(:number_system, DEFAULT_NUMBER_SYSTEM)
       end
 
       def symbols

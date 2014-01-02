@@ -3,11 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E H.mm
+        :EHms: E H.mm.ss
         :Ed: E d.
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E h.mm a
+        :Ehms: E h.mm.ss a
         :Gy: y G
         :GyMMM: LLL y G
         :GyMMMEd: E d. MMM y G
@@ -25,7 +25,7 @@
         :h: h a
         :hm: h.mm a
         :hms: h.mm.ss a
-        :ms: mm.ss
+        :ms: m.ss
         :y: y
         :yM: L.y
         :yMEd: E d.M.y
@@ -107,14 +107,14 @@
             :wed: keskiviikko
       :eras:
         :abbr:
-          0: eKr.
-          1: jKr.
+          0: eaa.
+          1: jaa.
         :name:
-          0: ennen Kristuksen syntymää
-          1: jälkeen Kristuksen syntymän
+          0: ennen ajanlaskun alkua
+          1: jälkeen ajanlaskun alun
         :narrow:
-          0: eK
-          1: jK
+          0: eaa
+          1: jaa
       :fields:
         :day: päivä
         :dayperiod: vuorokaudenaika
@@ -139,13 +139,13 @@
             :pattern: d.M.y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: H.mm.ss zzzz

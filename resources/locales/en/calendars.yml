@@ -76,11 +76,11 @@
           :wide: :calendars.gregorian.days.format.wide
       :eras:
         :abbr:
-          0: BC
-          1: AD
+          0: BCE
+          1: CE
         :name:
-          0: Before Christ
-          1: Anno Domini
+          0: Before Common Era
+          1: Common Era
         :narrow:
           0: B
           1: A
@@ -108,13 +108,13 @@
             :pattern: M/d/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} ''at'' {{time}}'
+            :pattern: '{{date}} ''at'' {{time}}'
           :long:
-            :pattern: ! '{{date}} ''at'' {{time}}'
+            :pattern: '{{date}} ''at'' {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: h:mm:ss a zzzz

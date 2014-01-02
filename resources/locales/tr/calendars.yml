@@ -6,12 +6,12 @@
         :EHm: E HH:mm
         :EHms: E HH:mm:ss
         :Ed: d E
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: d MMM y G E
-        :GyMMMd: dd MMM y G
+        :Ehm: E a h:mm
+        :Ehms: E a h:mm:ss
+        :Gy: G y
+        :GyMMM: G MMM y
+        :GyMMMEd: G d MMM y E
+        :GyMMMd: G dd MMM y
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -21,12 +21,12 @@
         :MMMEd: d MMMM E
         :MMMMEd: dd MMMM E
         :MMMMd: dd MMMM
-        :MMMd: d MMMM
+        :MMMd: d MMM
         :Md: dd/MM
         :d: d
-        :h: h a
-        :hm: h:mm a
-        :hms: h:mm:ss a
+        :h: a h
+        :hm: a h:mm
+        :hms: a h:mm:ss
         :mmss: mm:ss
         :ms: mm:ss
         :y: y
@@ -109,8 +109,8 @@
             :wed: Çarşamba
       :eras:
         :abbr:
-          0: MÖ
-          1: MS
+          0: İÖ
+          1: İS
         :name:
           0: Milattan Önce
           1: Milattan Sonra
@@ -141,13 +141,13 @@
             :pattern: d.MM.y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -261,10 +261,10 @@
             3: Ç3
             4: Ç4
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: 1. çeyrek
             2: 2. çeyrek
@@ -277,10 +277,10 @@
             3: Ç3
             4: Ç4
           :narrow:
-            1: 1.
-            2: 2.
-            3: 3.
-            4: 4.
+            1: '1.'
+            2: '2.'
+            3: '3.'
+            4: '4.'
           :wide:
             1: 1. çeyrek
             2: 2. çeyrek

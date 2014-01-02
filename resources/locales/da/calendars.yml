@@ -3,11 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E HH.mm
+        :EHms: E HH.mm.ss
         :Ed: E 'd'. d.
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E h.mm a
+        :Ehms: E h.mm.ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E d. MMM y G
@@ -107,26 +107,26 @@
             :wed: onsdag
       :eras:
         :abbr:
-          0: f.Kr.
-          1: e.Kr.
+          0: f.v.t.
+          1: v.t.
         :name:
-          0: f.Kr.
-          1: e.Kr.
+          0: før vesterlandsk tidsregning
+          1: vesterlandsk tidsregning
         :narrow:
-          0: f.Kr.
-          1: e.Kr.
+          0: fvt
+          1: vt
       :fields:
-        :day: dag
-        :dayperiod: dagtid
-        :era: æra
-        :hour: time
-        :minute: minut
-        :month: måned
-        :second: sekund
-        :week: uge
-        :weekday: ugedag
-        :year: år
-        :zone: tidszone
+        :day: Dag
+        :dayperiod: AM/PM
+        :era: Æra
+        :hour: Time
+        :minute: Minut
+        :month: Måned
+        :second: Sekund
+        :week: Uge
+        :weekday: Ugedag
+        :year: År
+        :zone: Tidszone
       :formats:
         :date:
           :full:
@@ -139,13 +139,13 @@
             :pattern: dd/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''kl.'' {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} ''kl.'' {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH.mm.ss zzzz

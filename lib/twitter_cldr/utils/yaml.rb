@@ -210,7 +210,7 @@ module TwitterCldr
               obj.strftime("%Y-%m-%d %H:%M:%S#{u_sec} #{off_hm}")
             when Symbol
               prefix = @options[:use_natural_symbols] && is_one_plain_line?(obj.to_s) ? ":" : "!ruby/symbol "
-              "#{prefix}#{emit_string(obj.to_s, level)}"
+              "#{prefix}#{emit_string(obj, level)}"
             when Range
               '!ruby/range ' + obj.to_s
             when Regexp
@@ -233,21 +233,26 @@ module TwitterCldr
         end
 
         def emit_string(str, level)
-          (is_string, is_printable, is_one_line, is_one_plain_line) = string_type(str)
-          if is_string
-            if is_printable
-              if is_one_plain_line
-                emit_simple_string(str, level)
+          if @options[:quote_all_strings] && !str.is_a?(Symbol)
+            emit_quoted_string(str, level)
+          else
+            str = str.to_s
+            (is_string, is_printable, is_one_line, is_one_plain_line) = string_type(str)
+            if is_string
+              if is_printable
+                if is_one_plain_line
+                  emit_simple_string(str, level)
+                else
+                  (is_one_line || str.length < @options[:minimum_block_length]) ?
+                    emit_quoted_string(str, level) :
+                    emit_block_string(str, level)
+                end
               else
-                (is_one_line || str.length < @options[:minimum_block_length]) ?
-                  emit_quoted_string(str, level) :
-                  emit_block_string(str, level)
+                emit_quoted_string(str, level)
               end
             else
-              emit_quoted_string(str, level)
+              emit_base64_binary(str, level)
             end
-          else
-            emit_base64_binary(str, level)
           end
         end
 

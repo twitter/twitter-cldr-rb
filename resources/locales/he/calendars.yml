@@ -3,8 +3,8 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E H:mm
+        :EHms: E H:mm:ss
         :Ed: E ה-d
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
@@ -49,20 +49,20 @@
             :wed: יום ד׳
           :narrow:
             :fri: ו׳
-            :mon: ב'
+            :mon: ב׳
             :sat: ש׳
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :short:
-            :fri: ו'
-            :mon: ב'
-            :sat: ש'
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :wide:
             :fri: יום שישי
             :mon: יום שני
@@ -74,26 +74,33 @@
         :stand-alone:
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
-            :fri: ו
+            :fri: ו׳
             :mon: ב׳
-            :sat: ש
+            :sat: ש׳
             :sun: א׳
             :thu: ה׳
             :tue: ג׳
             :wed: ד׳
           :short:
-            :fri: ו'
-            :mon: ב'
-            :sat: ש'
-            :sun: א'
-            :thu: ה'
-            :tue: ג'
-            :wed: ד'
-          :wide: :calendars.gregorian.days.format.wide
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
+          :wide:
+            :fri: יום שישי
+            :mon: יום שני
+            :sat: יום שבת
+            :sun: יום ראשון
+            :thu: יום חמישי
+            :tue: יום שלישי
+            :wed: יום רביעי
       :eras:
         :abbr:
-          0: לפנה״ס
-          1: לסה״נ
+          0: BCE
+          1: CE
         :name:
           0: לפני הספירה
           1: לספירה
@@ -102,7 +109,7 @@
           1: A
       :fields:
         :day: יום
-        :dayperiod: לפה״צ/אחה״צ
+        :dayperiod: לפנה״צ/אחה״צ
         :era: תקופה
         :hour: שעה
         :minute: דקה
@@ -124,13 +131,13 @@
             :pattern: dd/MM/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} בשעה {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} בשעה {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -208,7 +215,19 @@
             7: 7
             8: 8
             9: 9
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: ינואר
+            10: אוקטובר
+            11: נובמבר
+            12: דצמבר
+            2: פברואר
+            3: מרץ
+            4: אפריל
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוגוסט
+            9: ספטמבר
       :periods:
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
@@ -227,10 +246,10 @@
       :quarters:
         :format:
           :abbreviated:
-            1: Q1
-            2: Q2
-            3: Q3
-            4: Q4
+            1: רבעון 1
+            2: רבעון 2
+            3: רבעון 3
+            4: רבעון 4
           :narrow:
             1: 1
             2: 2
@@ -242,10 +261,18 @@
             3: רבעון 3
             4: רבעון 4
         :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated:
+            1: רבעון 1
+            2: רבעון 2
+            3: רבעון 3
+            4: רבעון 4
           :narrow:
             1: ר1
             2: ר2
             3: ר3
             4: ר4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide:
+            1: רבעון 1
+            2: רבעון 2
+            3: רבעון 3
+            4: רבעון 4

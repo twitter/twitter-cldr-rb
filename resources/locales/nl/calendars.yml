@@ -106,14 +106,14 @@
             :wed: woensdag
       :eras:
         :abbr:
-          0: v.Chr.
-          1: n.Chr.
+          0: v.g.j.
+          1: g.j.
         :name:
-          0: Voor Christus
-          1: na Christus
+          0: vóór gewone jaartelling
+          1: gewone jaartelling
         :narrow:
-          0: v.C.
-          1: n.C.
+          0: vgj
+          1: gj
       :fields:
         :day: Dag
         :dayperiod: AM/PM
@@ -122,7 +122,7 @@
         :minute: Minuut
         :month: Maand
         :second: Seconde
-        :week: week
+        :week: Week
         :weekday: Dag van de week
         :year: Jaar
         :zone: Zone
@@ -138,13 +138,13 @@
             :pattern: dd-MM-yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -240,9 +240,9 @@
           :abbreviated:
             :noon: 12 uur 's middags
           :narrow:
-            :am: a
+            :am: AM
             :noon: n
-            :pm: p
+            :pm: PM
           :wide:
             :am: AM
             :noon: 12 uur 's middags

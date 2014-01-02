@@ -3,19 +3,19 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E HH.mm
+        :EHms: E HH.mm.ss
         :Ed: E d.
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E h.mm a
+        :Ehms: E h.mm.ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E d. MMM y G
         :GyMMMd: d. MMM y G
         :H: HH
-        :Hm: HH:mm
-        :Hms: HH:mm:ss
-        :M: L
+        :Hm: HH.mm
+        :Hms: HH.mm.ss
+        :M: L.
         :MEd: E d.M
         :MMM: LLL
         :MMMEd: E d. MMM
@@ -24,11 +24,11 @@
         :Md: d.M.
         :d: d.
         :h: h a
-        :hm: h:mm a
-        :hms: h:mm:ss a
-        :ms: mm:ss
+        :hm: h.mm a
+        :hms: h.mm.ss a
+        :ms: mm.ss
         :y: y
-        :yM: M y
+        :yM: M.y
         :yMEd: E d.MM.y
         :yMM: MM.y
         :yMMM: MMM y
@@ -107,26 +107,26 @@
             :wed: onsdag
       :eras:
         :abbr:
-          0: f.Kr.
-          1: e.Kr.
+          0: fvt.
+          1: vt.
         :name:
-          0: f.Kr.
-          1: e.Kr.
+          0: før vår tidsregning
+          1: vår tidsregning
         :narrow:
-          0: f.Kr.
-          1: e.Kr.
+          0: fvt.
+          1: vt
       :fields:
-        :day: dag
+        :day: Dag
         :dayperiod: AM/PM
-        :era: tidsalder
-        :hour: time
-        :minute: minutt
-        :month: måned
-        :second: sekund
-        :week: uke
-        :weekday: ukedag
-        :year: år
-        :zone: sone
+        :era: Tidsalder
+        :hour: Time
+        :minute: Minutt
+        :month: Måned
+        :second: Sekund
+        :week: Uke
+        :weekday: Ukedag
+        :year: År
+        :zone: Tidssone
       :formats:
         :date:
           :full:
@@ -139,22 +139,22 @@
             :pattern: dd.MM.yy
         :datetime:
           :full:
-            :pattern: ! '{{time}} {{date}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{time}} {{date}}'
+            :pattern: '{{date}} ''kl.'' {{time}}'
           :medium:
-            :pattern: ! '{{time}} {{date}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{time}} {{date}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
-            :pattern: ! '''kl''. HH:mm:ss zzzz'
+            :pattern: HH.mm.ss zzzz
           :long:
-            :pattern: HH:mm:ss z
+            :pattern: HH.mm.ss z
           :medium:
-            :pattern: HH:mm:ss
+            :pattern: HH.mm.ss
           :short:
-            :pattern: HH:mm
+            :pattern: HH.mm
       :months:
         :format:
           :abbreviated:
@@ -163,11 +163,11 @@
             11: nov.
             12: des.
             2: feb.
-            3: mars
+            3: mar.
             4: apr.
             5: mai
-            6: juni
-            7: juli
+            6: jun.
+            7: jul.
             8: aug.
             9: sep.
           :narrow:
@@ -246,9 +246,9 @@
             :noon: n
             :pm: p
           :wide:
-            :am: AM
+            :am: a.m.
             :noon: noon
-            :pm: PM
+            :pm: p.m.
             :variant:
               :am: a.m.
               :pm: p.m.

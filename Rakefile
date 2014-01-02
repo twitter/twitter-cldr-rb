@@ -171,18 +171,11 @@ namespace :update do
     ).import
   end
 
-  desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  desc 'Generate rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :rbnf_tests, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::Rbnf::TestImporter.new(
+    TwitterCldr::Resources::RbnfTestImporter.new(
       './spec/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
-  end
-
-  desc 'Generate rule-based number formatter classes for each locale'
-  task :rbnf_classes do |_, args|
-    TwitterCldr::Resources::Rbnf::ClassGenerator.new(
-      './lib/twitter_cldr/formatters/numbers/rbnf'
-    ).generate(TwitterCldr.supported_locales, &progress_reporter)
   end
 end

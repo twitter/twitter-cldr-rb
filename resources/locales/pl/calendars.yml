@@ -3,15 +3,15 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E, HH:mm
+        :EHms: E, HH:mm:ss
         :Ed: E, d
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E, h:mm a
+        :Ehms: E, h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -24,9 +24,9 @@
         :MMdd: d.MM
         :Md: d.MM
         :d: d
-        :h: hh a
-        :hm: hh:mm a
-        :hms: hh:mm:ss a
+        :h: h a
+        :hm: h:mm a
+        :hms: h:mm:ss a
         :ms: mm:ss
         :y: y
         :yM: MM.y
@@ -117,17 +117,17 @@
           0: B
           1: A
       :fields:
-        :day: Dzień
-        :dayperiod: Dayperiod
-        :era: Era
-        :hour: Godzina
-        :minute: Minuta
-        :month: Miesiąc
-        :second: Sekunda
-        :week: Tydzień
-        :weekday: Dzień tygodnia
-        :year: Rok
-        :zone: Strefa
+        :day: dzień
+        :dayperiod: rano / po południu / wieczorem
+        :era: era
+        :hour: godzina
+        :minute: minuta
+        :month: miesiąc
+        :second: sekunda
+        :week: tydzień
+        :weekday: dzień tygodnia
+        :year: rok
+        :zone: strefa czasowa
       :formats:
         :date:
           :full:
@@ -140,13 +140,13 @@
             :pattern: dd.MM.y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
           :short:
-            :pattern: ! '{{date}}, {{time}}'
+            :pattern: '{{date}}, {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -282,10 +282,10 @@
             3: 3 kw.
             4: 4 kw.
           :narrow:
-            1: K1
-            2: K2
-            3: K3
-            4: K4
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           :wide:
             1: I kwartał
             2: II kwartał

@@ -6,12 +6,13 @@
         :EHm: E HH:mm
         :EHms: E HH:mm:ss
         :Ed: E d.
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehm: E h:mm
+        :Ehms: E h:mm:ss
         :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMM: LLL y G
+        :GyMMMEd: E, d. MMM y G
+        :GyMMMMd: d. MMMM y G
+        :GyMMMd: d.M.y G
         :H: H
         :Hm: H:mm
         :Hms: H:mm:ss
@@ -35,6 +36,7 @@
         :yMMM: LLL y
         :yMMMEd: E, d. MMM y
         :yMMMM: LLLL y
+        :yMMMMd: d. MMMM y
         :yMMMd: d.M.y
         :yMd: d.M.y
         :yQQQ: QQQ y
@@ -111,8 +113,8 @@
           0: pred n.l.
           1: n.l.
         :name:
-          0: Before Christ
-          1: Anno Domini
+          0: Before Common Era
+          1: Common Era
         :narrow:
           0: B
           1: A
@@ -140,13 +142,13 @@
             :pattern: d.M.y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: H:mm:ss zzzz
@@ -221,9 +223,9 @@
             :noon: n
             :pm: p
           :wide:
-            :am: dopoludnia
+            :am: AM
             :noon: noon
-            :pm: popoludní
+            :pm: PM
             :variant:
               :am: a.m.
               :pm: p.m.

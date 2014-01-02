@@ -1,6 +1,6 @@
 ---
-spellout:
-  spellout_ordinal_verbose:
+SpelloutRules:
+  spellout-ordinal-verbose:
     -1141: minus one thousand one hundred and forty-first
     -1142: minus one thousand one hundred and forty-second
     -1143: minus one thousand one hundred and forty-third
@@ -117,7 +117,7 @@ spellout:
     1143: one thousand one hundred and forty-third
     10311: ten thousand three hundred and eleventh
     138400: one hundred and thirty-eight thousand, four hundredth
-  spellout_ordinal:
+  spellout-ordinal:
     -1141: minus one thousand one hundred forty-first
     -1142: minus one thousand one hundred forty-second
     -1143: minus one thousand one hundred forty-third
@@ -234,7 +234,7 @@ spellout:
     1143: one thousand one hundred forty-third
     10311: ten thousand three hundred eleventh
     138400: one hundred thirty-eight thousand four hundredth
-  spellout_cardinal_verbose:
+  spellout-cardinal-verbose:
     -1141: minus one thousand one hundred and forty-one
     -1142: minus one thousand one hundred and forty-two
     -1143: minus one thousand one hundred and forty-three
@@ -351,7 +351,7 @@ spellout:
     1143: one thousand one hundred and forty-three
     10311: ten thousand three hundred and eleven
     138400: one hundred and thirty-eight thousand, four hundred
-  spellout_cardinal:
+  spellout-cardinal:
     -1141: minus one thousand one hundred forty-one
     -1142: minus one thousand one hundred forty-two
     -1143: minus one thousand one hundred forty-three
@@ -468,7 +468,7 @@ spellout:
     1143: one thousand one hundred forty-three
     10311: ten thousand three hundred eleven
     138400: one hundred thirty-eight thousand four hundred
-  spellout_numbering_verbose:
+  spellout-numbering-verbose:
     -1141: minus one thousand one hundred and forty-one
     -1142: minus one thousand one hundred and forty-two
     -1143: minus one thousand one hundred and forty-three
@@ -585,7 +585,7 @@ spellout:
     1143: one thousand one hundred and forty-three
     10311: ten thousand three hundred and eleven
     138400: one hundred and thirty-eight thousand, four hundred
-  spellout_numbering:
+  spellout-numbering:
     -1141: minus one thousand one hundred forty-one
     -1142: minus one thousand one hundred forty-two
     -1143: minus one thousand one hundred forty-three
@@ -702,7 +702,7 @@ spellout:
     1143: one thousand one hundred forty-three
     10311: ten thousand three hundred eleven
     138400: one hundred thirty-eight thousand four hundred
-  spellout_numbering_year:
+  spellout-numbering-year:
     -1141: minus eleven forty-one
     -1142: minus eleven forty-two
     -1143: minus eleven forty-three
@@ -819,8 +819,8 @@ spellout:
     1143: eleven forty-three
     10311: ten thousand three hundred eleven
     138400: one hundred thirty-eight thousand four hundred
-ordinal:
-  digits_ordinal:
+OrdinalRules:
+  digits-ordinal:
     -1141: −1,141st
     -1142: −1,142nd
     -1143: −1,143rd
@@ -937,7 +937,7 @@ ordinal:
     1143: 1,143rd
     10311: 10,311th
     138400: 138,400th
-duration:
+DurationRules:
   duration:
     -1141: -20:-01
     -1142: -20:-02
@@ -1055,7 +1055,7 @@ duration:
     1143: '19:03'
     10311: '2:51:51'
     138400: '38:26:40'
-  in_numerals:
+  in-numerals:
     -1141: -20:-01
     -1142: -20:-02
     -1143: -20:-03
@@ -1172,7 +1172,7 @@ duration:
     1143: '19:03'
     10311: '2:51:51'
     138400: '38:26:40'
-  with_words:
+  with-words:
     -1141: -20 minutes, 1 second
     -1142: -20 minutes, -2 seconds
     -1143: -20 minutes, -3 seconds

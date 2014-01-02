@@ -10,8 +10,8 @@
         :Ehms: E h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMMEd: E، d MMM، y G
+        :GyMMMd: d MMM، y G
         :H: HH
         :Hm: HH:mm
         :Hms: HH:mm:ss
@@ -38,13 +38,13 @@
       :days:
         :format:
           :abbreviated:
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
-            :tue: Tue
-            :wed: Wed
+            :fri: جمعہ
+            :mon: سوموار
+            :sat: ہفتہ
+            :sun: اتوار
+            :thu: جمعرات
+            :tue: منگل
+            :wed: بدھ
           :narrow:
             :fri: F
             :mon: M
@@ -63,14 +63,21 @@
             :wed: بدھ
           :wide:
             :fri: جمعہ
-            :mon: پیر
+            :mon: سوموار
             :sat: ہفتہ
             :sun: اتوار
             :thu: جمعرات
             :tue: منگل
-            :wed: بده
+            :wed: بدھ
         :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated:
+            :fri: جمعہ
+            :mon: سوموار
+            :sat: ہفتہ
+            :sun: اتوار
+            :thu: جمعرات
+            :tue: منگل
+            :wed: بدھ
           :narrow:
             :fri: F
             :mon: M
@@ -87,11 +94,18 @@
             :thu: جمعرات
             :tue: منگل
             :wed: بدھ
-          :wide: :calendars.gregorian.days.format.wide
+          :wide:
+            :fri: جمعہ
+            :mon: سوموار
+            :sat: ہفتہ
+            :sun: اتوار
+            :thu: جمعرات
+            :tue: منگل
+            :wed: بدھ
       :eras:
         :abbr:
-          0: ق م
-          1: عیسوی سن
+          0: BCE
+          1: CE
         :name:
           0: قبل مسیح
           1: عیسوی سن
@@ -100,7 +114,7 @@
           1: A
       :fields:
         :day: دن
-        :dayperiod: رات/صبح
+        :dayperiod: AM/PM
         :era: عہد
         :hour: گھنٹہ
         :minute: منٹ
@@ -122,13 +136,13 @@
             :pattern: d/M/yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: h:mm:ss a zzzz
@@ -141,18 +155,18 @@
       :months:
         :format:
           :abbreviated:
-            1: Jan
-            10: Oct
-            11: Nov
-            12: Dec
-            2: Feb
-            3: Mar
-            4: Apr
-            5: May
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
+            1: جنوری
+            10: اکتوبر
+            11: نومبر
+            12: دسمبر
+            2: فروری
+            3: مارچ
+            4: اپریل
+            5: مئی
+            6: جون
+            7: جولائی
+            8: اگست
+            9: ستمبر
           :narrow:
             1: J
             10: O
@@ -174,13 +188,25 @@
             2: فروری
             3: مارچ
             4: اپریل
-            5: مئ
+            5: مئی
             6: جون
-            7: جولائ
+            7: جولائی
             8: اگست
             9: ستمبر
         :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated:
+            1: جنوری
+            10: اکتوبر
+            11: نومبر
+            12: دسمبر
+            2: فروری
+            3: مارچ
+            4: اپریل
+            5: مئی
+            6: جون
+            7: جولائی
+            8: اگست
+            9: ستمبر
           :narrow:
             1: J
             10: O
@@ -194,7 +220,19 @@
             7: J
             8: A
             9: S
-          :wide: :calendars.gregorian.months.format.wide
+          :wide:
+            1: جنوری
+            10: اکتوبر
+            11: نومبر
+            12: دسمبر
+            2: فروری
+            3: مارچ
+            4: اپریل
+            5: مئی
+            6: جون
+            7: جولائی
+            8: اگست
+            9: ستمبر
       :periods:
         :format:
           :abbreviated:

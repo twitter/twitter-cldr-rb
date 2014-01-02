@@ -9,9 +9,9 @@
         :Ehm: E h:mm a
         :Ehms: E h:mm:ss a
         :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, MMM d, y G
-        :GyMMMd: MMM d, y G
+        :GyMMM: LLL y G
+        :GyMMMEd: E, d MMM y G
+        :GyMMMd: d MMM y G
         :H: HH
         :HHmm: HH:mm
         :HHmmss: HH:mm:ss
@@ -24,18 +24,15 @@
         :MMMMEd: E, d MMMM
         :MMMMd: d MMMM
         :MMMd: d MMM
-        :MMdd: dd.MM
         :Md: dd.MM
         :d: d
         :h: h a
         :hm: h:mm a
         :hms: h:mm:ss a
-        :mmss: mm:ss
         :ms: mm:ss
         :y: y
         :yM: MM.y
         :yMEd: E, dd.MM.y
-        :yMM: MM.y
         :yMMM: LLL y
         :yMMMEd: E, d MMM y
         :yMMMM: LLLL y
@@ -53,25 +50,6 @@
             :thu: Чт
             :tue: Вт
             :wed: Ср
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short:
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
-          :wide:
-            :fri: Пʼятниця
-            :mon: Понеділок
-            :sat: Субота
-            :sun: Неділя
-            :thu: Четвер
-            :tue: Вівторок
-            :wed: Середа
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow:
             :fri: П
             :mon: П
@@ -88,7 +66,47 @@
             :thu: Чт
             :tue: Вт
             :wed: Ср
-          :wide: :calendars.gregorian.days.format.wide
+          :wide:
+            :fri: пʼятниця
+            :mon: понеділок
+            :sat: субота
+            :sun: неділя
+            :thu: четвер
+            :tue: вівторок
+            :wed: середа
+        :stand-alone:
+          :abbreviated:
+            :fri: Пт
+            :mon: Пн
+            :sat: Сб
+            :sun: Нд
+            :thu: Чт
+            :tue: Вт
+            :wed: Ср
+          :narrow:
+            :fri: П
+            :mon: П
+            :sat: С
+            :sun: Н
+            :thu: Ч
+            :tue: В
+            :wed: С
+          :short:
+            :fri: Пт
+            :mon: Пн
+            :sat: Сб
+            :sun: Нд
+            :thu: Чт
+            :tue: Вт
+            :wed: Ср
+          :wide:
+            :fri: Пʼятниця
+            :mon: Понеділок
+            :sat: Субота
+            :sun: Неділя
+            :thu: Четвер
+            :tue: Вівторок
+            :wed: Середа
       :eras:
         :abbr:
           0: до н.е.
@@ -110,7 +128,7 @@
         :week: Тиждень
         :weekday: День тижня
         :year: Рік
-        :zone: Зона
+        :zone: Часовий пояс
       :formats:
         :date:
           :full:
@@ -123,13 +141,13 @@
             :pattern: dd.MM.yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -154,7 +172,19 @@
             7: лип.
             8: серп.
             9: вер.
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow:
+            1: С
+            10: Ж
+            11: Л
+            12: Г
+            2: Л
+            3: Б
+            4: К
+            5: Т
+            6: Ч
+            7: Л
+            8: С
+            9: В
           :wide:
             1: січня
             10: жовтня
@@ -212,9 +242,12 @@
         :format:
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow:
-            :am: a
+            :afternoon: дня
+            :am: дп
+            :evening: вечора
+            :morning: ранку
             :noon: n
-            :pm: p
+            :pm: пп
           :wide:
             :afternoon: дня
             :am: дп

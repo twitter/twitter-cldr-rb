@@ -50,7 +50,14 @@
             :thu: الخميس
             :tue: الثلاثاء
             :wed: الأربعاء
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow:
+            :fri: ج
+            :mon: ن
+            :sat: س
+            :sun: ح
+            :thu: خ
+            :tue: ث
+            :wed: ر
           :short:
             :fri: الجمعة
             :mon: الاثنين
@@ -134,13 +141,13 @@
             :pattern: d‏/M‏/y
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: h:mm:ss a zzzz
@@ -165,7 +172,19 @@
             7: يوليو
             8: أغسطس
             9: سبتمبر
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow:
+            1: ي
+            10: ك
+            11: ب
+            12: د
+            2: ف
+            3: م
+            4: أ
+            5: و
+            6: ن
+            7: ل
+            8: غ
+            9: س
           :wide:
             1: يناير
             10: أكتوبر
@@ -237,10 +256,10 @@
       :quarters:
         :format:
           :abbreviated:
-            1: Q1
-            2: Q2
-            3: Q3
-            4: Q4
+            1: الربع الأول
+            2: الربع الثاني
+            3: الربع الثالث
+            4: الربع الرابع
           :narrow:
             1: ١
             2: ٢
@@ -252,10 +271,18 @@
             3: الربع الثالث
             4: الربع الرابع
         :stand-alone:
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated:
+            1: الربع الأول
+            2: الربع الثاني
+            3: الربع الثالث
+            4: الربع الرابع
           :narrow:
             1: ١
             2: ٢
             3: ٣
             4: ٤
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide:
+            1: الربع الأول
+            2: الربع الثاني
+            3: الربع الثالث
+            4: الربع الرابع

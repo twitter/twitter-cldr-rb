@@ -24,16 +24,29 @@ module TwitterCldr
 
       def format(tokens, number, options = {})
         options[:precision] ||= precision_from(number)
+        options[:type] ||= :decimal
+
         prefix, suffix, integer_format, fraction_format = *partition_tokens(tokens)
         number = transform_number(number)
 
         int, fraction = parse_number(number, options)
         result =  integer_format.apply(int, options)
         result << fraction_format.apply(fraction, options) if fraction
-        "#{prefix.to_s}#{result}#{suffix.to_s}"
+
+        numbering_system(options[:type]).transliterate(
+          "#{prefix.to_s}#{result}#{suffix.to_s}"
+        )
       end
 
       protected
+
+      # data readers should encapsulate formatting options, and when they do, this "type"
+      # argument will no longer be necessary (accessible via `data_reader.type` instead)
+      def numbering_system(type)
+        @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
+          data_reader.number_system_for(type)
+        )
+      end
 
       def transform_number(number)
         number  # noop for base class

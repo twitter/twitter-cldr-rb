@@ -3,11 +3,11 @@
   :calendars:
     :gregorian:
       :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
+        :EHm: E, HH:mm
+        :EHms: E, HH:mm:ss
         :Ed: E, d.
         :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
+        :Ehms: E, h:mm:ss a
         :Gy: y G
         :GyMMM: MMM y G
         :GyMMMEd: E, d. MMM y G
@@ -111,14 +111,14 @@
             :wed: Mittwoch
       :eras:
         :abbr:
-          0: v. Chr.
-          1: n. Chr.
+          0: v. u. Z.
+          1: u. Z.
         :name:
-          0: v. Chr.
-          1: n. Chr.
+          0: vor der gewöhnlichen Zeitrechnung
+          1: der gewöhnlichen Zeitrechnung
         :narrow:
-          0: B
-          1: A
+          0: vdZ
+          1: dZ
       :fields:
         :day: Tag
         :dayperiod: Tageshälfte
@@ -130,7 +130,7 @@
         :week: Woche
         :weekday: Wochentag
         :year: Jahr
-        :zone: Zone
+        :zone: Zeitzone
       :formats:
         :date:
           :full:
@@ -143,13 +143,13 @@
             :pattern: dd.MM.yy
         :datetime:
           :full:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :long:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :medium:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
           :short:
-            :pattern: ! '{{date}} {{time}}'
+            :pattern: '{{date}} {{time}}'
         :time:
           :full:
             :pattern: HH:mm:ss zzzz
@@ -167,7 +167,7 @@
             11: Nov.
             12: Dez.
             2: Feb.
-            3: Mär.
+            3: März
             4: Apr.
             5: Mai
             6: Juni

@@ -1,287 +1,288 @@
----
-:af:
-  :calendars:
-    :gregorian:
-      :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
-        :Ed: E d
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, d MMM y G
-        :GyMMMd: d MMM y G
-        :H: HH
-        :Hm: HH:mm
-        :Hms: HH:mm:ss
-        :M: L
-        :MEd: E, M/d
-        :MMM: LLL
-        :MMMEd: E, MMM d
-        :MMMMEd: E, MMMM d
-        :MMMMd: MMMM d
-        :MMMMdd: dd MMMM
-        :MMMd: MMM d
-        :Md: M/d
-        :d: d
-        :h: h a
-        :hm: h:mm a
-        :hms: h:mm:ss a
-        :ms: mm:ss
-        :y: y
-        :yM: M/y
-        :yMEd: E, d/M/y
-        :yMMM: MMM y
-        :yMMMEd: E, d MMM y
-        :yMMMM: MMMM y
-        :yMMMd: d MMM y
-        :yMd: M/d/y
-        :yQQQ: QQQ y
-        :yQQQQ: QQQQ y
-      :days:
-        :format:
-          :abbreviated:
-            :fri: Vr
-            :mon: Ma
-            :sat: Sa
-            :sun: So
-            :thu: Do
-            :tue: Di
-            :wed: Wo
-          :narrow:
-            :fri: V
-            :mon: M
-            :sat: S
-            :sun: S
-            :thu: D
-            :tue: D
-            :wed: W
-          :short:
-            :fri: Vr.
-            :mon: Ma.
-            :sat: Sa.
-            :sun: So.
-            :thu: Do.
-            :tue: Di.
-            :wed: Wo.
-          :wide:
-            :fri: Vrydag
-            :mon: Maandag
-            :sat: Saterdag
-            :sun: Sondag
-            :thu: Donderdag
-            :tue: Dinsdag
-            :wed: Woensdag
-        :stand-alone:
-          :abbreviated:
-            :fri: Vr
-            :mon: Ma
-            :sat: Sa
-            :sun: So
-            :thu: Do
-            :tue: Di
-            :wed: Wo
-          :narrow:
-            :fri: V
-            :mon: M
-            :sat: S
-            :sun: S
-            :thu: D
-            :tue: D
-            :wed: W
-          :short:
-            :fri: Vr.
-            :mon: Ma.
-            :sat: Sa.
-            :sun: So.
-            :thu: Do.
-            :tue: Di.
-            :wed: Wo.
-          :wide:
-            :fri: Vrydag
-            :mon: Maandag
-            :sat: Saterdag
-            :sun: Sondag
-            :thu: Donderdag
-            :tue: Dinsdag
-            :wed: Woensdag
-      :eras:
-        :abbr:
-          0: v.g.j.
-          1: g.j.
-        :name:
-          0: voor Christus
-          1: na Christus
-        :narrow:
-          0: vgj
-          1: vg
-      :fields:
-        :day: Dag
-        :dayperiod: VM/NM
-        :era: Era
-        :hour: Uur
-        :minute: Minuut
-        :month: Maand
-        :second: Sekonde
-        :week: Week
-        :weekday: Dag van die Week
-        :year: Jaar
-        :zone: Tydsone
-      :formats:
-        :date:
-          :full:
-            :pattern: EEEE dd MMMM y
-          :long:
-            :pattern: dd MMMM y
-          :medium:
-            :pattern: dd MMM y
-          :short:
-            :pattern: y-MM-dd
-        :datetime:
-          :full:
-            :pattern: '{{date}} {{time}}'
-          :long:
-            :pattern: '{{date}} {{time}}'
-          :medium:
-            :pattern: '{{date}} {{time}}'
-          :short:
-            :pattern: '{{date}} {{time}}'
-        :time:
-          :full:
-            :pattern: h:mm:ss a zzzz
-          :long:
-            :pattern: h:mm:ss a z
-          :medium:
-            :pattern: h:mm:ss a
-          :short:
-            :pattern: h:mm a
-      :months:
-        :format:
-          :abbreviated:
-            1: Jan
-            10: Okt
-            11: Nov
-            12: Des
-            2: Feb
-            3: Mar
-            4: Apr
-            5: Mei
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
-          :wide:
-            1: Januarie
-            10: Oktober
-            11: November
-            12: Desember
-            2: Februarie
-            3: Maart
-            4: April
-            5: Mei
-            6: Junie
-            7: Julie
-            8: Augustus
-            9: September
-        :stand-alone:
-          :abbreviated:
-            1: Jan
-            10: Okt
-            11: Nov
-            12: Des
-            2: Feb
-            3: Mar
-            4: Apr
-            5: Mei
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
-          :wide:
-            1: Januarie
-            10: Oktober
-            11: November
-            12: Desember
-            2: Februarie
-            3: Maart
-            4: April
-            5: Mei
-            6: Junie
-            7: Julie
-            8: Augustus
-            9: September
-      :periods:
-        :format:
+--- 
+:af: 
+  :calendars: 
+    :gregorian: 
+      :additional_formats: 
+        :EHm: "E HH:mm"
+        :EHms: "E HH:mm:ss"
+        :Ed: "E d"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
+        :Gy: "y G"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
+        :H: "HH"
+        :Hm: "HH:mm"
+        :Hms: "HH:mm:ss"
+        :M: "L"
+        :MEd: "E, M/d"
+        :MMM: "LLL"
+        :MMMEd: "E, MMM d"
+        :MMMMEd: "E, MMMM d"
+        :MMMMd: "MMMM d"
+        :MMMMdd: "dd MMMM"
+        :MMMd: "MMM d"
+        :Md: "M/d"
+        :d: "d"
+        :h: "h a"
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :ms: "mm:ss"
+        ? !ruby/symbol "y"
+        : "y"
+        :yM: "M/y"
+        :yMEd: "E, d/M/y"
+        :yMMM: "MMM y"
+        :yMMMEd: "E, d MMM y"
+        :yMMMM: "MMMM y"
+        :yMMMd: "d MMM y"
+        :yMd: "M/d/y"
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "Vr"
+            :mon: "Ma"
+            :sat: "Sa"
+            :sun: "So"
+            :thu: "Do"
+            :tue: "Di"
+            :wed: "Wo"
+          :narrow: 
+            :fri: "V"
+            :mon: "M"
+            :sat: "S"
+            :sun: "S"
+            :thu: "D"
+            :tue: "D"
+            :wed: "W"
+          :short: 
+            :fri: "Vr."
+            :mon: "Ma."
+            :sat: "Sa."
+            :sun: "So."
+            :thu: "Do."
+            :tue: "Di."
+            :wed: "Wo."
+          :wide: 
+            :fri: "Vrydag"
+            :mon: "Maandag"
+            :sat: "Saterdag"
+            :sun: "Sondag"
+            :thu: "Donderdag"
+            :tue: "Dinsdag"
+            :wed: "Woensdag"
+        :stand-alone: 
+          :abbreviated: 
+            :fri: "Vr"
+            :mon: "Ma"
+            :sat: "Sa"
+            :sun: "So"
+            :thu: "Do"
+            :tue: "Di"
+            :wed: "Wo"
+          :narrow: 
+            :fri: "V"
+            :mon: "M"
+            :sat: "S"
+            :sun: "S"
+            :thu: "D"
+            :tue: "D"
+            :wed: "W"
+          :short: 
+            :fri: "Vr."
+            :mon: "Ma."
+            :sat: "Sa."
+            :sun: "So."
+            :thu: "Do."
+            :tue: "Di."
+            :wed: "Wo."
+          :wide: 
+            :fri: "Vrydag"
+            :mon: "Maandag"
+            :sat: "Saterdag"
+            :sun: "Sondag"
+            :thu: "Donderdag"
+            :tue: "Dinsdag"
+            :wed: "Woensdag"
+      :eras: 
+        :abbr: 
+          0: "v.g.j."
+          1: "g.j."
+        :name: 
+          0: "voor Christus"
+          1: "na Christus"
+        :narrow: 
+          0: "vgj"
+          1: "vg"
+      :fields: 
+        :day: "Dag"
+        :dayperiod: "VM/NM"
+        :era: "Era"
+        :hour: "Uur"
+        :minute: "Minuut"
+        :month: "Maand"
+        :second: "Sekonde"
+        :week: "Week"
+        :weekday: "Dag van die Week"
+        :year: "Jaar"
+        :zone: "Tydsone"
+      :formats: 
+        :date: 
+          :full: 
+            :pattern: "EEEE dd MMMM y"
+          :long: 
+            :pattern: "dd MMMM y"
+          :medium: 
+            :pattern: "dd MMM y"
+          :short: 
+            :pattern: "y-MM-dd"
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :full: 
+            :pattern: "h:mm:ss a zzzz"
+          :long: 
+            :pattern: "h:mm:ss a z"
+          :medium: 
+            :pattern: "h:mm:ss a"
+          :short: 
+            :pattern: "h:mm a"
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "Jan"
+            10: "Okt"
+            11: "Nov"
+            12: "Des"
+            2: "Feb"
+            3: "Mar"
+            4: "Apr"
+            5: "Mei"
+            6: "Jun"
+            7: "Jul"
+            8: "Aug"
+            9: "Sep"
+          :narrow: 
+            1: "J"
+            10: "O"
+            11: "N"
+            12: "D"
+            2: "F"
+            3: "M"
+            4: "A"
+            5: "M"
+            6: "J"
+            7: "J"
+            8: "A"
+            9: "S"
+          :wide: 
+            1: "Januarie"
+            10: "Oktober"
+            11: "November"
+            12: "Desember"
+            2: "Februarie"
+            3: "Maart"
+            4: "April"
+            5: "Mei"
+            6: "Junie"
+            7: "Julie"
+            8: "Augustus"
+            9: "September"
+        :stand-alone: 
+          :abbreviated: 
+            1: "Jan"
+            10: "Okt"
+            11: "Nov"
+            12: "Des"
+            2: "Feb"
+            3: "Mar"
+            4: "Apr"
+            5: "Mei"
+            6: "Jun"
+            7: "Jul"
+            8: "Aug"
+            9: "Sep"
+          :narrow: 
+            1: "J"
+            10: "O"
+            11: "N"
+            12: "D"
+            2: "F"
+            3: "M"
+            4: "A"
+            5: "M"
+            6: "J"
+            7: "J"
+            8: "A"
+            9: "S"
+          :wide: 
+            1: "Januarie"
+            10: "Oktober"
+            11: "November"
+            12: "Desember"
+            2: "Februarie"
+            3: "Maart"
+            4: "April"
+            5: "Mei"
+            6: "Junie"
+            7: "Julie"
+            8: "Augustus"
+            9: "September"
+      :periods: 
+        :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow:
-            :am: a
-            :noon: n
-            :pm: p
-          :wide:
-            :am: vm.
-            :noon: noon
-            :pm: nm.
-            :variant:
-              :am: a.m.
-              :pm: p.m.
+          :narrow: 
+            :am: "a"
+            :noon: "n"
+            :pm: "p"
+          :wide: 
+            :am: "vm."
+            :noon: "noon"
+            :pm: "nm."
+            :variant: 
+              :am: "a.m."
+              :pm: "p.m."
         :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: K1
-            2: K2
-            3: K3
-            4: K4
-          :narrow:
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "K1"
+            2: "K2"
+            3: "K3"
+            4: "K4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 1ste kwartaal
-            2: 2de kwartaal
-            3: 3de kwartaal
-            4: 4de kwartaal
-        :stand-alone:
-          :abbreviated:
-            1: K1
-            2: K2
-            3: K3
-            4: K4
-          :narrow:
+          :wide: 
+            1: "1ste kwartaal"
+            2: "2de kwartaal"
+            3: "3de kwartaal"
+            4: "4de kwartaal"
+        :stand-alone: 
+          :abbreviated: 
+            1: "K1"
+            2: "K2"
+            3: "K3"
+            4: "K4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 1ste kwartaal
-            2: 2de kwartaal
-            3: 3de kwartaal
-            4: 4de kwartaal
+          :wide: 
+            1: "1ste kwartaal"
+            2: "2de kwartaal"
+            3: "3de kwartaal"
+            4: "4de kwartaal"

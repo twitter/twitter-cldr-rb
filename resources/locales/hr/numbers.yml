@@ -1,63 +1,63 @@
----
-:hr:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.00 ¤'
-        :unit:
-          :few: '{0} {1}'
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 tisuća
-            10000: 00 tisuća
-            100000: 000 tisuća
-            1000000: 0 milijuna
-            10000000: 00 milijuna
-            100000000: 000 milijuna
-            1000000000: 0 milijardi
-            10000000000: 00 milijardi
-            100000000000: 000 milijardi
-            1000000000000: 0 bilijuna
-            10000000000000: 00 bilijuna
-            100000000000000: 000 bilijuna
-          :short:
-            1000: 0 tis'.'
-            10000: 00 tis'.'
-            100000: 000 tis'.'
-            1000000: 0 mil'.'
-            10000000: 00 mil'.'
-            100000000: 000 mil'.'
-            1000000000: 0 mlr'.'
-            10000000000: 00 mlr'.'
-            100000000000: 000 mlr'.'
-            1000000000000: 0 bil'.'
-            10000000000000: 00 bil'.'
-            100000000000000: 000 bil'.'
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0%'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group: .
-      :infinity: ∞
-      :list: ;
-      :minus_sign: '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ×
+--- 
+:hr: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤"
+        :unit: 
+          :few: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 tisuća"
+            10000: "00 tisuća"
+            100000: "000 tisuća"
+            1000000: "0 milijuna"
+            10000000: "00 milijuna"
+            100000000: "000 milijuna"
+            1000000000: "0 milijardi"
+            10000000000: "00 milijardi"
+            100000000000: "000 milijardi"
+            1000000000000: "0 bilijuna"
+            10000000000000: "00 bilijuna"
+            100000000000000: "000 bilijuna"
+          :short: 
+            1000: "0 tis'.'"
+            10000: "00 tis'.'"
+            100000: "000 tis'.'"
+            1000000: "0 mil'.'"
+            10000000: "00 mil'.'"
+            100000000: "000 mil'.'"
+            1000000000: "0 mlr'.'"
+            10000000000: "00 mlr'.'"
+            100000000000: "000 mlr'.'"
+            1000000000000: "0 bil'.'"
+            10000000000000: "00 bil'.'"
+            100000000000000: "000 bil'.'"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: "."
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

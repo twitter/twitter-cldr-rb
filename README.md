@@ -1,4 +1,4 @@
-## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
+## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
 localized equivalents.  Currently supported types of text include dates, times, currencies, decimals, percentages, and symbols.
@@ -37,18 +37,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # 1.337
+1337.localize(:es).to_s                                    # 1 337
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # 1.337,00 $
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1.337,00 €
+1337.localize(:es).to_currency.to_s                        # 1 337,00 $
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1 337,00 €
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # 1.337%
-1337.localize(:es).to_percent.to_s(:precision => 2)        # 1.337,00%
+1337.localize(:es).to_percent.to_s                         # 1 337%
+1337.localize(:es).to_percent.to_s(:precision => 2)        # 1 337,00%
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # 1.337,000
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # 1 337,000
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -86,23 +86,23 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 
 ### Dates and Times
 
-`Date`, `Time`, and `DateTime` objects are supported:
+`Time`, and `DateTime` objects are supported.  `Date` objects are supported transiently:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011 21:44:57 UTC -08:00"
-DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011 21:44:57 UTC"
+DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011, 21:44:57 (UTC +00:00)"
+DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011, 21:44:57 UTC"
 DateTime.now.localize(:es).to_medium_s             # "12/12/2011 21:44:57"
 DateTime.now.localize(:es).to_short_s              # "12/12/11 21:44"
-
-Date.today.localize(:es).to_full_s                 # "lunes 12 de diciembre de 2011"
-Date.today.localize(:es).to_long_s                 # "12 de diciembre de 2011"
-Date.today.localize(:es).to_medium_s               # "12/12/2011"
-Date.today.localize(:es).to_short_s                # "12/12/11"
 
 Time.now.localize(:es).to_full_s                   # "21:44:57 UTC -0800"
 Time.now.localize(:es).to_long_s                   # "21:44:57 UTC"
 Time.now.localize(:es).to_medium_s                 # "21:44:57"
 Time.now.localize(:es).to_short_s                  # "21:44"
+
+DateTime.now.localize(:es).to_date.to_full_s       # "lunes 12 de diciembre de 2011"
+DateTime.now.localize(:es).to_date.to_long_s       # "12 de diciembre de 2011"
+DateTime.now.localize(:es).to_date.to_medium_s     # "12/12/2011"
+DateTime.now.localize(:es).to_date.to_short_s      # "12/12/11"
 ```
 
 The default CLDR data set only includes 4 date formats, full, long, medium, and short.  See below for a list of additional formats.
@@ -264,11 +264,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, ... ]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :many, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :few
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :other
 ```
 
 ### Plurals

@@ -32,11 +32,8 @@ describe LocalizedTime do
   end
 
   describe "#ago" do
-    it "should ago-ify a time with a number of different units" do
-      base_time = time + 172800
-      loc_time = time.localize(:de)
-      loc_time.ago(:base_time => base_time).to_s(:unit => :hour).should match_normalized("Vor 48 Stunden")
-      loc_time.ago(:base_time => base_time).to_s(:unit => :day).should match_normalized("Vor 2 Tagen")
+    it "should return a localized timespan" do
+      time.localize(:de).ago.should be_a(LocalizedTimespan)
     end
   end
 
@@ -61,7 +58,7 @@ describe LocalizedTime do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        (TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES - [:additional]).each do |type|
+        (CalendarDataReader.types - [:additional]).each do |type|
           lambda { Time.now.localize(locale).send(:"to_#{type}_s") }.should_not raise_error
         end
       end

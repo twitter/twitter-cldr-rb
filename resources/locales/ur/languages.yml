@@ -1,582 +1,583 @@
----
-:ur:
-  :languages:
-    :aa: Afar
-    :ab: ابقازیان
-    :ace: Achinese
-    :ach: اکولی
-    :ada: Adangme
-    :ady: Adyghe
-    :ae: Avestan
-    :af: ایفریکانز
-    :afa: Afro-Asiatic Language
-    :afh: Afrihili
-    :agq: Aghem
-    :ain: Ainu
-    :ak: اکان
-    :akk: Akkadian
-    :ale: Aleut
-    :alg: Algonquian Language
-    :alt: Southern Altai
-    :am: امہاری
-    :an: Aragonese
-    :ang: Old English
-    :anp: Angika
-    :apa: Apache Language
-    :ar: عربی
-    :ar-001: ماڈرن اسٹینڈرڈ عربی
-    :arc: Aramaic
-    :arn: Mapuche
-    :arp: Arapaho
-    :art: Artificial Language
-    :arw: Arawak
-    :as: آسامی
-    :asa: Asu
-    :ast: Asturian
-    :ath: Athapascan Language
-    :aus: Australian Language
-    :av: Avaric
-    :awa: Awadhi
-    :ay: ایمارا
-    :az: ازیری
-    :ba: Bashkir
-    :bad: Banda
-    :bai: Bamileke Language
-    :bal: Baluchi
-    :ban: Balinese
-    :bas: Basaa
-    :bat: Baltic Language
-    :bax: Bamun
-    :bbj: Ghomala
-    :be: بیلاروسی
-    :bej: Beja
-    :bem: بیمبا
-    :ber: Berber
-    :bez: Bena
-    :bfd: Bafut
-    :bg: بلغاری
-    :bh: بہاری
-    :bho: Bhojpuri
-    :bi: Bislama
-    :bik: Bikol
-    :bin: Bini
-    :bkm: Kom
-    :bla: Siksika
-    :bm: Bambara
-    :bn: بنگالی
-    :bnt: Bantu
-    :bo: تبتی
-    :br: بریٹن
-    :bra: Braj
-    :brx: Bodo
-    :bs: بوسنی
-    :bss: Akoose
-    :btk: Batak
-    :bua: Buriat
-    :bug: Buginese
-    :bum: Bulu
-    :byn: Blin
-    :byv: Medumba
-    :ca: کاٹالانین
-    :cad: Caddo
-    :cai: Central American Indian Language
-    :car: Carib
-    :cau: Caucasian Language
-    :cay: Cayuga
-    :cch: Atsam
-    :ce: Chechen
-    :ceb: Cebuano
-    :cel: Celtic Language
-    :cgg: Chiga
-    :ch: Chamorro
-    :chb: Chibcha
-    :chg: Chagatai
-    :chk: Chuukese
-    :chm: Mari
-    :chn: Chinook Jargon
-    :cho: Choctaw
-    :chp: Chipewyan
-    :chr: چیروکی
-    :chy: Cheyenne
-    :ckb: سورانی کردش
-    :cmc: Chamic Language
-    :co: کوراسیکن
-    :cop: Coptic
-    :cpe: English-based Creole or Pidgin
-    :cpf: French-based Creole or Pidgin
-    :cpp: Portuguese-based Creole or Pidgin
-    :cr: Cree
-    :crh: Crimean Turkish
-    :crp: Creole or Pidgin
-    :cs: چیک
-    :csb: Kashubian
-    :cu: Church Slavic
-    :cus: Cushitic Language
-    :cv: Chuvash
-    :cy: ویلش
-    :da: ڈینش
-    :dak: Dakota
-    :dar: Dargwa
-    :dav: Taita
-    :day: Dayak
-    :de: جرمن
-    :de-AT: آسٹریائی جرمن
-    :de-CH: سوئس ہائی جرمن
-    :del: Delaware
-    :den: Slave
-    :dgr: Dogrib
-    :din: Dinka
-    :dje: Zarma
-    :doi: Dogri
-    :dra: Dravidian Language
-    :dsb: Lower Sorbian
-    :dua: Duala
-    :dum: Middle Dutch
-    :dv: ڈیویہی
-    :dyo: Jola-Fonyi
-    :dyu: Dyula
-    :dz: ژونگکھا
-    :dzg: Dazaga
-    :ebu: Embu
-    :ee: ایو
-    :efi: ایفِک
-    :egy: Ancient Egyptian
-    :eka: Ekajuk
-    :el: یونانی
-    :elx: Elamite
-    :en: انگریزی
-    :en-AU: آسٹریلیائی انگریزی
-    :en-CA: کینیڈین انگریزی
-    :en-GB: برطانوی انگلش
-    :en-US: امریکی انگلش
-    :enm: Middle English
-    :eo: ایسپرانٹو
-    :es: ہسپانوی
-    :es-419: لاطینی امریکی ہسپانوی
-    :es-ES: یورپی ہسپانوی
-    :es-MX: میکسیکن ہسپانوی
-    :et: اسٹونین
-    :eu: باسکی
-    :ewo: Ewondo
-    :fa: فارسی
-    :fan: Fang
-    :fat: Fanti
-    :ff: Fulah
-    :fi: فینیش
-    :fil: فلیپینو
-    :fiu: Finno-Ugrian Language
-    :fj: فجی کا باشندہ
-    :fo: فیروئیز
-    :fon: Fon
-    :fr: فرانسیسی
-    :fr-CA: کینیڈین فرانسیسی
-    :fr-CH: سوئس فرینچ
-    :frm: Middle French
-    :fro: Old French
-    :frr: Northern Frisian
-    :frs: Eastern Frisian
-    :fur: Friulian
-    :fy: مغربی فریسیئن
-    :ga: آئیرِش
-    :gaa: گا
-    :gay: Gayo
-    :gba: Gbaya
-    :gd: سکاٹ گیلِک
-    :gem: Germanic Language
-    :gez: Geez
-    :gil: Gilbertese
-    :gl: گالیشیائی
-    :gmh: Middle High German
-    :gn: گُارانی
-    :goh: Old High German
-    :gon: Gondi
-    :gor: Gorontalo
-    :got: Gothic
-    :grb: Grebo
-    :grc: Ancient Greek
-    :gsw: سوئس جرمن
-    :gu: گجراتی
-    :guz: Gusii
-    :gv: Manx
-    :gwi: Gwichʼin
-    :ha: ہؤسا
-    :hai: Haida
-    :haw: ہوائی کا باشندہ
-    :he: عبرانی
-    :hi: ہندی
-    :hil: Hiligaynon
-    :him: Himachali
-    :hit: Hittite
-    :hmn: Hmong
-    :ho: Hiri Motu
-    :hr: کراتی
-    :hsb: Upper Sorbian
-    :ht: ہیتی
-    :hu: ہنگیرین
-    :hup: Hupa
-    :hy: ارمینی
-    :hz: Herero
-    :ia: بین لسانیات
-    :iba: Iban
-    :ibb: Ibibio
-    :id: انڈونیثیائی
-    :ie: Interlingue
-    :ig: اِگبو
-    :ii: Sichuan Yi
-    :ijo: Ijo
-    :ik: Inupiaq
-    :ilo: Iloko
-    :inc: Indic Language
-    :ine: Indo-European Language
-    :inh: Ingush
-    :io: Ido
-    :ira: Iranian Language
-    :iro: Iroquoian Language
-    :is: آئس لینڈ کا باشندہ
-    :it: اطالوی
-    :iu: Inuktitut
-    :ja: جاپانی
-    :jbo: Lojban
-    :jgo: Ngomba
-    :jmc: Machame
-    :jpr: Judeo-Persian
-    :jrb: Judeo-Arabic
-    :jv: جاوی
-    :ka: جارجی
-    :kaa: Kara-Kalpak
-    :kab: Kabyle
-    :kac: Kachin
-    :kaj: Jju
-    :kam: Kamba
-    :kar: Karen
-    :kaw: Kawi
-    :kbd: Kabardian
-    :kbl: Kanembu
-    :kcg: Tyap
-    :kde: Makonde
-    :kea: Kabuverdianu
-    :kfo: Koro
-    :kg: کانگو
-    :kha: Khasi
-    :khi: Khoisan Language
-    :kho: Khotanese
-    :khq: Koyra Chiini
-    :ki: Kikuyu
-    :kj: Kuanyama
-    :kk: قزاخ
-    :kkj: Kako
-    :kl: Kalaallisut
-    :kln: Kalenjin
-    :km: خمیر
-    :kmb: Kimbundu
-    :kn: کنّاڈا
-    :ko: کورین
-    :kok: Konkani
-    :kos: Kosraean
-    :kpe: Kpelle
-    :kr: Kanuri
-    :krc: Karachay-Balkar
-    :krl: Karelian
-    :kro: Kru
-    :kru: Kurukh
-    :ks: کشمیری
-    :ksb: Shambala
-    :ksf: Bafia
-    :ksh: Colognian
-    :ku: کردش
-    :kum: Kumyk
-    :kut: Kutenai
-    :kv: Komi
-    :kw: Cornish
-    :ky: کرغیزی
-    :la: لاطینی
-    :lad: Ladino
-    :lag: Langi
-    :lah: Lahnda
-    :lam: Lamba
-    :lb: لگژمبرگ کا باشندہ
-    :lez: Lezghian
-    :lg: گینڈا
-    :li: Limburgish
-    :lkt: Lakota
-    :ln: لِنگَلا
-    :lo: لاؤ
-    :lol: Mongo
-    :loz: لوزی
-    :lt: لتھُواینین
-    :lu: Luba-Katanga
-    :lua: لیوبا لولوآ
-    :lui: Luiseno
-    :lun: Lunda
-    :luo: Luo
-    :lus: Mizo
-    :luy: Luyia
-    :lv: لیٹوین
-    :mad: Madurese
-    :maf: Mafa
-    :mag: Magahi
-    :mai: Maithili
-    :mak: Makasar
-    :man: Mandingo
-    :map: Austronesian Language
-    :mas: Masai
-    :mde: Maba
-    :mdf: Moksha
-    :mdr: Mandar
-    :men: Mende
-    :mer: Meru
-    :mfe: موریسیین
-    :mg: ملاگاسی
-    :mga: Middle Irish
-    :mgh: Makhuwa-Meetto
-    :mgo: Meta'
-    :mh: Marshallese
-    :mi: ماؤری
-    :mic: Micmac
-    :min: Minangkabau
-    :mis: Miscellaneous Language
-    :mk: مقدونیائی
-    :mkh: Mon-Khmer Language
-    :ml: مالایالم
-    :mn: منگؤلی
-    :mnc: Manchu
-    :mni: Manipuri
-    :mno: Manobo Language
-    :mo: Moldavian
-    :moh: Mohawk
-    :mos: Mossi
-    :mr: مراٹهی
-    :ms: مالائی
-    :mt: مالٹی
-    :mua: Mundang
-    :mul: Multiple Languages
-    :mun: Munda Language
-    :mus: Creek
-    :mwl: Mirandese
-    :mwr: Marwari
-    :my: برمی
-    :mye: Myene
-    :myn: Mayan Language
-    :myv: Erzya
-    :na: Nauru
-    :nah: Nahuatl
-    :nai: North American Indian Language
-    :nap: Neapolitan
-    :naq: Nama
-    :nb: نارویجین بوکمل
-    :nd: شمالی دبیل
-    :nds: Low German
-    :ne: نیپالی
-    :new: Newari
-    :ng: Ndonga
-    :nia: Nias
-    :nic: Niger-Kordofanian Language
-    :niu: Niuean
-    :nl: ڈچ
-    :nl-BE: فلیمِش
-    :nmg: Kwasio
-    :nn: نورویجینی نینورسک
-    :nnh: Ngiemboon
-    :no: نارویجین
-    :nog: Nogai
-    :non: Old Norse
-    :nqo: N’Ko
-    :nr: South Ndebele
-    :nso: شمالی سوتھو
-    :nub: Nubian Language
-    :nus: Nuer
-    :nv: Navajo
-    :nwc: Classical Newari
-    :ny: نیانجا
-    :nym: Nyamwezi
-    :nyn: نینکول
-    :nyo: Nyoro
-    :nzi: Nzima
-    :oc: آکسیٹان
-    :oj: Ojibwa
-    :om: اورومو
-    :or: اورِیا
-    :os: اوسیٹک
-    :osa: Osage
-    :ota: Ottoman Turkish
-    :oto: Otomian Language
-    :pa: پنجابی
-    :paa: Papuan Language
-    :pag: Pangasinan
-    :pal: Pahlavi
-    :pam: Pampanga
-    :pap: Papiamento
-    :pau: Palauan
-    :peo: Old Persian
-    :phi: Philippine Language
-    :phn: Phoenician
-    :pi: Pali
-    :pl: پولستانی
-    :pon: Pohnpeian
-    :pra: Prakrit Language
-    :pro: Old Provençal
-    :ps: پشتو
-    :pt: پُرتگالی
-    :pt-BR: برازیلی پرتگالی
-    :pt-PT: یورپی پرتگالی
-    :qu: کویچوآ
-    :raj: Rajasthani
-    :rap: Rapanui
-    :rar: Rarotongan
-    :rm: رومانش
-    :rn: رونڈی
-    :ro: رومنی
-    :roa: Romance Language
-    :rof: Rombo
-    :rom: Romany
-    :root: Root
-    :ru: روسی
-    :rup: Aromanian
-    :rw: کینیاروانڈا
-    :rwk: Rwa
-    :sa: سَنسکرِت
-    :sad: Sandawe
-    :sah: Sakha
-    :sai: South American Indian Language
-    :sal: Salishan Language
-    :sam: Samaritan Aramaic
-    :saq: Samburu
-    :sas: Sasak
-    :sat: Santali
-    :sba: Ngambay
-    :sbp: Sangu
-    :sc: Sardinian
-    :scn: Sicilian
-    :sco: Scots
-    :sd: سندھی
-    :se: شمالی سامی
-    :see: Seneca
-    :seh: Sena
-    :sel: Selkup
-    :sem: Semitic Language
-    :ses: Koyraboro Senni
-    :sg: سانگو
-    :sga: Old Irish
-    :sgn: Sign Language
-    :sh: سربو-کروئیشین
-    :shi: Tachelhit
-    :shn: Shan
-    :shu: Chadian Arabic
-    :si: سنہالا
-    :sid: Sidamo
-    :sio: Siouan Language
-    :sit: Sino-Tibetan Language
-    :sk: سلوواک
-    :sl: سلووینیائی
-    :sla: Slavic Language
-    :sm: ساموآن
-    :sma: Southern Sami
-    :smi: Sami Language
-    :smj: Lule Sami
-    :smn: Inari Sami
-    :sms: Skolt Sami
-    :sn: شونا
-    :snk: Soninke
-    :so: صومالی
-    :sog: Sogdien
-    :son: Songhai
-    :sq: البانی
-    :sr: صربی
-    :srn: Sranan Tongo
-    :srr: Serer
-    :ss: سواتی
-    :ssa: Nilo-Saharan Language
-    :ssy: Saho
-    :st: جنوبی سوتھو
-    :su: سنڈانیز
-    :suk: Sukuma
-    :sus: Susu
-    :sux: Sumerian
-    :sv: سویڈش
-    :sw: سواحلی
-    :swb: Comorian
-    :swc: Congo Swahili
-    :syc: Classical Syriac
-    :syr: Syriac
-    :ta: تمل
-    :tai: Tai Language
-    :te: تیلگو
-    :tem: Timne
-    :teo: Teso
-    :ter: Tereno
-    :tet: ٹیٹم
-    :tg: تاجک
-    :th: تھائی
-    :ti: ٹگرینیا
-    :tig: Tigre
-    :tiv: Tiv
-    :tk: ترکمان
-    :tkl: Tokelau
-    :tl: Tagalog
-    :tlh: کلنگن
-    :tli: Tlingit
-    :tmh: Tamashek
-    :tn: سوانا
-    :to: ٹونگن
-    :tog: Nyasa Tonga
-    :tpi: ٹوک پِسِن
-    :tr: ترکی
-    :trv: Taroko
-    :ts: زونگا
-    :tsi: Tsimshian
-    :tt: تاتار
-    :tum: ٹمبوکا
-    :tup: Tupi Language
-    :tut: Altaic Language
-    :tvl: Tuvalu
-    :tw: Twi
-    :twq: Tasawaq
-    :ty: تاہیتی
-    :tyv: Tuvinian
-    :tzm: Central Atlas Tamazight
-    :udm: Udmurt
-    :ug: یوئگہر
-    :uga: Ugaritic
-    :uk: یوکرینیائی
-    :umb: Umbundu
-    :und: نامعلوم زبان
-    :ur: اردو
-    :uz: ازبیک
-    :vai: Vai
-    :ve: وینڈا
-    :vi: ویتنامی
-    :vo: Volapük
-    :vot: Votic
-    :vun: Vunjo
-    :wa: Walloon
-    :wae: Walser
-    :wak: Wakashan Language
-    :wal: Wolaytta
-    :war: Waray
-    :was: Washo
-    :wen: Sorbian Language
-    :wo: وولوف
-    :xal: Kalmyk
-    :xh: ژوسا
-    :xog: Soga
-    :yao: Yao
-    :yap: Yapese
-    :yav: Yangben
-    :ybb: Yemba
-    :yi: یدش
-    :yo: یوروبا
-    :ypk: Yupik Language
-    :yue: Cantonese
-    :za: Zhuang
-    :zap: Zapotec
-    :zbl: Blissymbols
-    :zen: Zenaga
-    :zgh: اسٹینڈرڈ مغربی امازیقی
-    :zh: چینی
-    :zh-Hans: چینی (آسان کردہ)
-    :zh-Hant: روایتی چینی
-    :znd: Zande
-    :zu: زولو
-    :zun: Zuni
-    :zxx: کوئی لسانی مواد نہیں
-    :zza: Zaza
+--- 
+:ur: 
+  :languages: 
+    :aa: "Afar"
+    :ab: "ابقازیان"
+    :ace: "Achinese"
+    :ach: "اکولی"
+    :ada: "Adangme"
+    :ady: "Adyghe"
+    :ae: "Avestan"
+    :af: "ایفریکانز"
+    :afa: "Afro-Asiatic Language"
+    :afh: "Afrihili"
+    :agq: "Aghem"
+    :ain: "Ainu"
+    :ak: "اکان"
+    :akk: "Akkadian"
+    :ale: "Aleut"
+    :alg: "Algonquian Language"
+    :alt: "Southern Altai"
+    :am: "امہاری"
+    :an: "Aragonese"
+    :ang: "Old English"
+    :anp: "Angika"
+    :apa: "Apache Language"
+    :ar: "عربی"
+    :ar-001: "ماڈرن اسٹینڈرڈ عربی"
+    :arc: "Aramaic"
+    :arn: "Mapuche"
+    :arp: "Arapaho"
+    :art: "Artificial Language"
+    :arw: "Arawak"
+    :as: "آسامی"
+    :asa: "Asu"
+    :ast: "Asturian"
+    :ath: "Athapascan Language"
+    :aus: "Australian Language"
+    :av: "Avaric"
+    :awa: "Awadhi"
+    :ay: "ایمارا"
+    :az: "ازیری"
+    :ba: "Bashkir"
+    :bad: "Banda"
+    :bai: "Bamileke Language"
+    :bal: "Baluchi"
+    :ban: "Balinese"
+    :bas: "Basaa"
+    :bat: "Baltic Language"
+    :bax: "Bamun"
+    :bbj: "Ghomala"
+    :be: "بیلاروسی"
+    :bej: "Beja"
+    :bem: "بیمبا"
+    :ber: "Berber"
+    :bez: "Bena"
+    :bfd: "Bafut"
+    :bg: "بلغاری"
+    :bh: "بہاری"
+    :bho: "Bhojpuri"
+    :bi: "Bislama"
+    :bik: "Bikol"
+    :bin: "Bini"
+    :bkm: "Kom"
+    :bla: "Siksika"
+    :bm: "Bambara"
+    :bn: "بنگالی"
+    :bnt: "Bantu"
+    :bo: "تبتی"
+    :br: "بریٹن"
+    :bra: "Braj"
+    :brx: "Bodo"
+    :bs: "بوسنی"
+    :bss: "Akoose"
+    :btk: "Batak"
+    :bua: "Buriat"
+    :bug: "Buginese"
+    :bum: "Bulu"
+    :byn: "Blin"
+    :byv: "Medumba"
+    :ca: "کاٹالانین"
+    :cad: "Caddo"
+    :cai: "Central American Indian Language"
+    :car: "Carib"
+    :cau: "Caucasian Language"
+    :cay: "Cayuga"
+    :cch: "Atsam"
+    :ce: "Chechen"
+    :ceb: "Cebuano"
+    :cel: "Celtic Language"
+    :cgg: "Chiga"
+    :ch: "Chamorro"
+    :chb: "Chibcha"
+    :chg: "Chagatai"
+    :chk: "Chuukese"
+    :chm: "Mari"
+    :chn: "Chinook Jargon"
+    :cho: "Choctaw"
+    :chp: "Chipewyan"
+    :chr: "چیروکی"
+    :chy: "Cheyenne"
+    :ckb: "سورانی کردش"
+    :cmc: "Chamic Language"
+    :co: "کوراسیکن"
+    :cop: "Coptic"
+    :cpe: "English-based Creole or Pidgin"
+    :cpf: "French-based Creole or Pidgin"
+    :cpp: "Portuguese-based Creole or Pidgin"
+    :cr: "Cree"
+    :crh: "Crimean Turkish"
+    :crp: "Creole or Pidgin"
+    :cs: "چیک"
+    :csb: "Kashubian"
+    :cu: "Church Slavic"
+    :cus: "Cushitic Language"
+    :cv: "Chuvash"
+    :cy: "ویلش"
+    :da: "ڈینش"
+    :dak: "Dakota"
+    :dar: "Dargwa"
+    :dav: "Taita"
+    :day: "Dayak"
+    :de: "جرمن"
+    :de-AT: "آسٹریائی جرمن"
+    :de-CH: "سوئس ہائی جرمن"
+    :del: "Delaware"
+    :den: "Slave"
+    :dgr: "Dogrib"
+    :din: "Dinka"
+    :dje: "Zarma"
+    :doi: "Dogri"
+    :dra: "Dravidian Language"
+    :dsb: "Lower Sorbian"
+    :dua: "Duala"
+    :dum: "Middle Dutch"
+    :dv: "ڈیویہی"
+    :dyo: "Jola-Fonyi"
+    :dyu: "Dyula"
+    :dz: "ژونگکھا"
+    :dzg: "Dazaga"
+    :ebu: "Embu"
+    :ee: "ایو"
+    :efi: "ایفِک"
+    :egy: "Ancient Egyptian"
+    :eka: "Ekajuk"
+    :el: "یونانی"
+    :elx: "Elamite"
+    :en: "انگریزی"
+    :en-AU: "آسٹریلیائی انگریزی"
+    :en-CA: "کینیڈین انگریزی"
+    :en-GB: "برطانوی انگلش"
+    :en-US: "امریکی انگلش"
+    :enm: "Middle English"
+    :eo: "ایسپرانٹو"
+    :es: "ہسپانوی"
+    :es-419: "لاطینی امریکی ہسپانوی"
+    :es-ES: "یورپی ہسپانوی"
+    :es-MX: "میکسیکن ہسپانوی"
+    :et: "اسٹونین"
+    :eu: "باسکی"
+    :ewo: "Ewondo"
+    :fa: "فارسی"
+    :fan: "Fang"
+    :fat: "Fanti"
+    :ff: "Fulah"
+    :fi: "فینیش"
+    :fil: "فلیپینو"
+    :fiu: "Finno-Ugrian Language"
+    :fj: "فجی کا باشندہ"
+    :fo: "فیروئیز"
+    :fon: "Fon"
+    :fr: "فرانسیسی"
+    :fr-CA: "کینیڈین فرانسیسی"
+    :fr-CH: "سوئس فرینچ"
+    :frm: "Middle French"
+    :fro: "Old French"
+    :frr: "Northern Frisian"
+    :frs: "Eastern Frisian"
+    :fur: "Friulian"
+    :fy: "مغربی فریسیئن"
+    :ga: "آئیرِش"
+    :gaa: "گا"
+    :gay: "Gayo"
+    :gba: "Gbaya"
+    :gd: "سکاٹ گیلِک"
+    :gem: "Germanic Language"
+    :gez: "Geez"
+    :gil: "Gilbertese"
+    :gl: "گالیشیائی"
+    :gmh: "Middle High German"
+    :gn: "گُارانی"
+    :goh: "Old High German"
+    :gon: "Gondi"
+    :gor: "Gorontalo"
+    :got: "Gothic"
+    :grb: "Grebo"
+    :grc: "Ancient Greek"
+    :gsw: "سوئس جرمن"
+    :gu: "گجراتی"
+    :guz: "Gusii"
+    :gv: "Manx"
+    :gwi: "Gwichʼin"
+    :ha: "ہؤسا"
+    :hai: "Haida"
+    :haw: "ہوائی کا باشندہ"
+    :he: "عبرانی"
+    :hi: "ہندی"
+    :hil: "Hiligaynon"
+    :him: "Himachali"
+    :hit: "Hittite"
+    :hmn: "Hmong"
+    :ho: "Hiri Motu"
+    :hr: "کراتی"
+    :hsb: "Upper Sorbian"
+    :ht: "ہیتی"
+    :hu: "ہنگیرین"
+    :hup: "Hupa"
+    :hy: "ارمینی"
+    :hz: "Herero"
+    :ia: "بین لسانیات"
+    :iba: "Iban"
+    :ibb: "Ibibio"
+    :id: "انڈونیثیائی"
+    :ie: "Interlingue"
+    :ig: "اِگبو"
+    :ii: "Sichuan Yi"
+    :ijo: "Ijo"
+    :ik: "Inupiaq"
+    :ilo: "Iloko"
+    :inc: "Indic Language"
+    :ine: "Indo-European Language"
+    :inh: "Ingush"
+    :io: "Ido"
+    :ira: "Iranian Language"
+    :iro: "Iroquoian Language"
+    :is: "آئس لینڈ کا باشندہ"
+    :it: "اطالوی"
+    :iu: "Inuktitut"
+    :ja: "جاپانی"
+    :jbo: "Lojban"
+    :jgo: "Ngomba"
+    :jmc: "Machame"
+    :jpr: "Judeo-Persian"
+    :jrb: "Judeo-Arabic"
+    :jv: "جاوی"
+    :ka: "جارجی"
+    :kaa: "Kara-Kalpak"
+    :kab: "Kabyle"
+    :kac: "Kachin"
+    :kaj: "Jju"
+    :kam: "Kamba"
+    :kar: "Karen"
+    :kaw: "Kawi"
+    :kbd: "Kabardian"
+    :kbl: "Kanembu"
+    :kcg: "Tyap"
+    :kde: "Makonde"
+    :kea: "Kabuverdianu"
+    :kfo: "Koro"
+    :kg: "کانگو"
+    :kha: "Khasi"
+    :khi: "Khoisan Language"
+    :kho: "Khotanese"
+    :khq: "Koyra Chiini"
+    :ki: "Kikuyu"
+    :kj: "Kuanyama"
+    :kk: "قزاخ"
+    :kkj: "Kako"
+    :kl: "Kalaallisut"
+    :kln: "Kalenjin"
+    :km: "خمیر"
+    :kmb: "Kimbundu"
+    :kn: "کنّاڈا"
+    :ko: "کورین"
+    :kok: "Konkani"
+    :kos: "Kosraean"
+    :kpe: "Kpelle"
+    :kr: "Kanuri"
+    :krc: "Karachay-Balkar"
+    :krl: "Karelian"
+    :kro: "Kru"
+    :kru: "Kurukh"
+    :ks: "کشمیری"
+    :ksb: "Shambala"
+    :ksf: "Bafia"
+    :ksh: "Colognian"
+    :ku: "کردش"
+    :kum: "Kumyk"
+    :kut: "Kutenai"
+    :kv: "Komi"
+    :kw: "Cornish"
+    :ky: "کرغیزی"
+    :la: "لاطینی"
+    :lad: "Ladino"
+    :lag: "Langi"
+    :lah: "Lahnda"
+    :lam: "Lamba"
+    :lb: "لگژمبرگ کا باشندہ"
+    :lez: "Lezghian"
+    :lg: "گینڈا"
+    :li: "Limburgish"
+    :lkt: "Lakota"
+    :ln: "لِنگَلا"
+    :lo: "لاؤ"
+    :lol: "Mongo"
+    :loz: "لوزی"
+    :lt: "لتھُواینین"
+    :lu: "Luba-Katanga"
+    :lua: "لیوبا لولوآ"
+    :lui: "Luiseno"
+    :lun: "Lunda"
+    :luo: "Luo"
+    :lus: "Mizo"
+    :luy: "Luyia"
+    :lv: "لیٹوین"
+    :mad: "Madurese"
+    :maf: "Mafa"
+    :mag: "Magahi"
+    :mai: "Maithili"
+    :mak: "Makasar"
+    :man: "Mandingo"
+    :map: "Austronesian Language"
+    :mas: "Masai"
+    :mde: "Maba"
+    :mdf: "Moksha"
+    :mdr: "Mandar"
+    :men: "Mende"
+    :mer: "Meru"
+    :mfe: "موریسیین"
+    :mg: "ملاگاسی"
+    :mga: "Middle Irish"
+    :mgh: "Makhuwa-Meetto"
+    :mgo: "Meta'"
+    :mh: "Marshallese"
+    :mi: "ماؤری"
+    :mic: "Micmac"
+    :min: "Minangkabau"
+    :mis: "Miscellaneous Language"
+    :mk: "مقدونیائی"
+    :mkh: "Mon-Khmer Language"
+    :ml: "مالایالم"
+    :mn: "منگؤلی"
+    :mnc: "Manchu"
+    :mni: "Manipuri"
+    :mno: "Manobo Language"
+    :mo: "Moldavian"
+    :moh: "Mohawk"
+    :mos: "Mossi"
+    :mr: "مراٹهی"
+    :ms: "مالائی"
+    :mt: "مالٹی"
+    :mua: "Mundang"
+    :mul: "Multiple Languages"
+    :mun: "Munda Language"
+    :mus: "Creek"
+    :mwl: "Mirandese"
+    :mwr: "Marwari"
+    :my: "برمی"
+    :mye: "Myene"
+    :myn: "Mayan Language"
+    :myv: "Erzya"
+    :na: "Nauru"
+    :nah: "Nahuatl"
+    :nai: "North American Indian Language"
+    :nap: "Neapolitan"
+    :naq: "Nama"
+    :nb: "نارویجین بوکمل"
+    :nd: "شمالی دبیل"
+    :nds: "Low German"
+    :ne: "نیپالی"
+    :new: "Newari"
+    :ng: "Ndonga"
+    :nia: "Nias"
+    :nic: "Niger-Kordofanian Language"
+    :niu: "Niuean"
+    :nl: "ڈچ"
+    :nl-BE: "فلیمِش"
+    :nmg: "Kwasio"
+    :nn: "نورویجینی نینورسک"
+    :nnh: "Ngiemboon"
+    ? !ruby/symbol "no"
+    : "نارویجین"
+    :nog: "Nogai"
+    :non: "Old Norse"
+    :nqo: "N’Ko"
+    :nr: "South Ndebele"
+    :nso: "شمالی سوتھو"
+    :nub: "Nubian Language"
+    :nus: "Nuer"
+    :nv: "Navajo"
+    :nwc: "Classical Newari"
+    :ny: "نیانجا"
+    :nym: "Nyamwezi"
+    :nyn: "نینکول"
+    :nyo: "Nyoro"
+    :nzi: "Nzima"
+    :oc: "آکسیٹان"
+    :oj: "Ojibwa"
+    :om: "اورومو"
+    :or: "اورِیا"
+    :os: "اوسیٹک"
+    :osa: "Osage"
+    :ota: "Ottoman Turkish"
+    :oto: "Otomian Language"
+    :pa: "پنجابی"
+    :paa: "Papuan Language"
+    :pag: "Pangasinan"
+    :pal: "Pahlavi"
+    :pam: "Pampanga"
+    :pap: "Papiamento"
+    :pau: "Palauan"
+    :peo: "Old Persian"
+    :phi: "Philippine Language"
+    :phn: "Phoenician"
+    :pi: "Pali"
+    :pl: "پولستانی"
+    :pon: "Pohnpeian"
+    :pra: "Prakrit Language"
+    :pro: "Old Provençal"
+    :ps: "پشتو"
+    :pt: "پُرتگالی"
+    :pt-BR: "برازیلی پرتگالی"
+    :pt-PT: "یورپی پرتگالی"
+    :qu: "کویچوآ"
+    :raj: "Rajasthani"
+    :rap: "Rapanui"
+    :rar: "Rarotongan"
+    :rm: "رومانش"
+    :rn: "رونڈی"
+    :ro: "رومنی"
+    :roa: "Romance Language"
+    :rof: "Rombo"
+    :rom: "Romany"
+    :root: "Root"
+    :ru: "روسی"
+    :rup: "Aromanian"
+    :rw: "کینیاروانڈا"
+    :rwk: "Rwa"
+    :sa: "سَنسکرِت"
+    :sad: "Sandawe"
+    :sah: "Sakha"
+    :sai: "South American Indian Language"
+    :sal: "Salishan Language"
+    :sam: "Samaritan Aramaic"
+    :saq: "Samburu"
+    :sas: "Sasak"
+    :sat: "Santali"
+    :sba: "Ngambay"
+    :sbp: "Sangu"
+    :sc: "Sardinian"
+    :scn: "Sicilian"
+    :sco: "Scots"
+    :sd: "سندھی"
+    :se: "شمالی سامی"
+    :see: "Seneca"
+    :seh: "Sena"
+    :sel: "Selkup"
+    :sem: "Semitic Language"
+    :ses: "Koyraboro Senni"
+    :sg: "سانگو"
+    :sga: "Old Irish"
+    :sgn: "Sign Language"
+    :sh: "سربو-کروئیشین"
+    :shi: "Tachelhit"
+    :shn: "Shan"
+    :shu: "Chadian Arabic"
+    :si: "سنہالا"
+    :sid: "Sidamo"
+    :sio: "Siouan Language"
+    :sit: "Sino-Tibetan Language"
+    :sk: "سلوواک"
+    :sl: "سلووینیائی"
+    :sla: "Slavic Language"
+    :sm: "ساموآن"
+    :sma: "Southern Sami"
+    :smi: "Sami Language"
+    :smj: "Lule Sami"
+    :smn: "Inari Sami"
+    :sms: "Skolt Sami"
+    :sn: "شونا"
+    :snk: "Soninke"
+    :so: "صومالی"
+    :sog: "Sogdien"
+    :son: "Songhai"
+    :sq: "البانی"
+    :sr: "صربی"
+    :srn: "Sranan Tongo"
+    :srr: "Serer"
+    :ss: "سواتی"
+    :ssa: "Nilo-Saharan Language"
+    :ssy: "Saho"
+    :st: "جنوبی سوتھو"
+    :su: "سنڈانیز"
+    :suk: "Sukuma"
+    :sus: "Susu"
+    :sux: "Sumerian"
+    :sv: "سویڈش"
+    :sw: "سواحلی"
+    :swb: "Comorian"
+    :swc: "Congo Swahili"
+    :syc: "Classical Syriac"
+    :syr: "Syriac"
+    :ta: "تمل"
+    :tai: "Tai Language"
+    :te: "تیلگو"
+    :tem: "Timne"
+    :teo: "Teso"
+    :ter: "Tereno"
+    :tet: "ٹیٹم"
+    :tg: "تاجک"
+    :th: "تھائی"
+    :ti: "ٹگرینیا"
+    :tig: "Tigre"
+    :tiv: "Tiv"
+    :tk: "ترکمان"
+    :tkl: "Tokelau"
+    :tl: "Tagalog"
+    :tlh: "کلنگن"
+    :tli: "Tlingit"
+    :tmh: "Tamashek"
+    :tn: "سوانا"
+    :to: "ٹونگن"
+    :tog: "Nyasa Tonga"
+    :tpi: "ٹوک پِسِن"
+    :tr: "ترکی"
+    :trv: "Taroko"
+    :ts: "زونگا"
+    :tsi: "Tsimshian"
+    :tt: "تاتار"
+    :tum: "ٹمبوکا"
+    :tup: "Tupi Language"
+    :tut: "Altaic Language"
+    :tvl: "Tuvalu"
+    :tw: "Twi"
+    :twq: "Tasawaq"
+    :ty: "تاہیتی"
+    :tyv: "Tuvinian"
+    :tzm: "Central Atlas Tamazight"
+    :udm: "Udmurt"
+    :ug: "یوئگہر"
+    :uga: "Ugaritic"
+    :uk: "یوکرینیائی"
+    :umb: "Umbundu"
+    :und: "نامعلوم زبان"
+    :ur: "اردو"
+    :uz: "ازبیک"
+    :vai: "Vai"
+    :ve: "وینڈا"
+    :vi: "ویتنامی"
+    :vo: "Volapük"
+    :vot: "Votic"
+    :vun: "Vunjo"
+    :wa: "Walloon"
+    :wae: "Walser"
+    :wak: "Wakashan Language"
+    :wal: "Wolaytta"
+    :war: "Waray"
+    :was: "Washo"
+    :wen: "Sorbian Language"
+    :wo: "وولوف"
+    :xal: "Kalmyk"
+    :xh: "ژوسا"
+    :xog: "Soga"
+    :yao: "Yao"
+    :yap: "Yapese"
+    :yav: "Yangben"
+    :ybb: "Yemba"
+    :yi: "یدش"
+    :yo: "یوروبا"
+    :ypk: "Yupik Language"
+    :yue: "Cantonese"
+    :za: "Zhuang"
+    :zap: "Zapotec"
+    :zbl: "Blissymbols"
+    :zen: "Zenaga"
+    :zgh: "اسٹینڈرڈ مغربی امازیقی"
+    :zh: "چینی"
+    :zh-Hans: "چینی (آسان کردہ)"
+    :zh-Hant: "روایتی چینی"
+    :znd: "Zande"
+    :zu: "زولو"
+    :zun: "Zuni"
+    :zxx: "کوئی لسانی مواد نہیں"
+    :zza: "Zaza"

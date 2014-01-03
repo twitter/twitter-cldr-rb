@@ -11,11 +11,11 @@ describe PluralFormatter do
 
   describe '#initialize' do
     it 'fetches locale from options hash' do
-      PluralFormatter.new(:locale => :ru).locale.should == :ru
+      PluralFormatter.new(:ru).locale.should == :ru
     end
 
-    it "uses default locale if it's not passed in options hash" do
-      PluralFormatter.new.locale.should == TwitterCldr::DEFAULT_LOCALE
+    it "uses current locale if it's not passed in options hash" do
+      PluralFormatter.new.locale.should == TwitterCldr.locale
     end
   end
 
@@ -198,7 +198,7 @@ describe PluralFormatter do
   describe '#pluralization_rule' do
     it 'delegates pluralization rule fetching to Rules.rule_for method' do
       mock(Plurals::Rules).rule_for(42, :jp) { 'result' }
-      PluralFormatter.new(:locale => :jp).send(:pluralization_rule, 42).should == 'result'
+      PluralFormatter.new(:jp).send(:pluralization_rule, 42).should == 'result'
     end
   end
 

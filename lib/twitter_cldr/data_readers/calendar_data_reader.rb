@@ -9,7 +9,7 @@ module TwitterCldr
 
       DEFAULT_TYPE = :medium
 
-      FORMAT_PATHS = {
+      TYPE_PATHS = {
         :full       => [:full, :pattern],
         :long       => [:long, :pattern],
         :medium     => [:medium, :pattern],
@@ -17,17 +17,23 @@ module TwitterCldr
         :additional => [:additional_formats]
       }
 
-      attr_reader :calendar_type
+      class << self
+        def types
+          TYPE_PATHS.keys
+        end
+      end
+
+      attr_reader :calendar_type, :type
 
       def initialize(locale, options = {})
         super(locale)
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
+        @type = options[:type] || type || :default
+        @type = DEFAULT_TYPE if type == :default
       end
 
-      def pattern_for(options = {})
-        type = options[:type] || type || :default
-        type = DEFAULT_TYPE if type == :default
-        traverse(path_for(type, calendar_type) + FORMAT_PATHS[type])
+      def pattern
+        traverse(path_for(type, calendar_type) + TYPE_PATHS[type])
       end
 
       def calendar
@@ -42,7 +48,7 @@ module TwitterCldr
 
       def resource
         @resource ||= begin
-          resource = TwitterCldr.get_locale_resource(@locale, :calendars)[@locale]
+          resource = TwitterCldr.get_locale_resource(locale, :calendars)[locale]
           resource[:calendars].each_pair do |calendar_type, options|
             next if calendar_type == TwitterCldr::DEFAULT_CALENDAR_TYPE
             mirror_resource(

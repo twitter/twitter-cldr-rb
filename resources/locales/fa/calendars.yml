@@ -1,295 +1,296 @@
----
-:fa:
-  :calendars:
-    :gregorian:
-      :additional_formats:
-        :EHm: E H:mm
-        :EHms: E H:mm:ss
-        :Ed: E d
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E d MMM y G
-        :GyMMMd: d MMM y G
-        :H: H
-        :HHmmZ: HH:mm (Z)
-        :Hm: H:mm
-        :Hms: H:mm:ss
-        :M: L
-        :MEd: E M/d
-        :MMM: LLL
-        :MMMEd: E d LLL
-        :MMMMEd: E d LLLL
-        :MMMMd: d LLLL
-        :MMMd: d LLL
-        :Md: M/d
-        :d: d
-        :h: h a
-        :hm: h:mm a
-        :hms: h:mm:ss a
-        :mmss: mm:ss
-        :ms: mm:ss
-        :y: y
-        :yM: y/M
-        :yMEd: E y/M/d
-        :yMMM: MMM y
-        :yMMMEd: E d MMM y
-        :yMMMM: MMMM y
-        :yMMMMEEEEd: EEEE d MMMM y
-        :yMMMd: d MMM y
-        :yMd: y/M/d
-        :yQQQ: QQQQ y
-        :yQQQQ: QQQQ y
-      :days:
-        :format:
-          :abbreviated:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-          :narrow:
-            :fri: ج
-            :mon: د
-            :sat: ش
-            :sun: ی
-            :thu: پ
-            :tue: س
-            :wed: چ
-          :short:
-            :fri: ج
-            :mon: ۲ش
-            :sat: ش
-            :sun: ۱ش
-            :thu: ۵ش
-            :tue: ۳ش
-            :wed: ۴ش
-          :wide:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-        :stand-alone:
-          :abbreviated:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-          :narrow:
-            :fri: ج
-            :mon: د
-            :sat: ش
-            :sun: ی
-            :thu: پ
-            :tue: س
-            :wed: چ
-          :short:
-            :fri: ج
-            :mon: ۲ش
-            :sat: ش
-            :sun: ۱ش
-            :thu: ۵ش
-            :tue: ۳ش
-            :wed: ۴ش
-          :wide:
-            :fri: جمعه
-            :mon: دوشنبه
-            :sat: شنبه
-            :sun: یکشنبه
-            :thu: پنجشنبه
-            :tue: سه‌شنبه
-            :wed: چهارشنبه
-      :eras:
-        :abbr:
-          0: ق.م.
-          1: م.
-        :name:
-          0: قبل از میلاد
-          1: میلادی
-        :narrow:
-          0: ق
-          1: م
-      :fields:
-        :day: روز
-        :dayperiod: قبل/بعدازظهر
-        :era: دوره
-        :hour: ساعت
-        :minute: دقیقه
-        :month: ماه
-        :second: ثانیه
-        :week: هفته
-        :weekday: روز هفته
-        :year: سال
-        :zone: منطقهٔ زمانی
-      :formats:
-        :date:
-          :full:
-            :pattern: EEEE d MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: y/M/d
-        :datetime:
-          :full:
-            :pattern: '{{date}}، ساعت {{time}}'
-          :long:
-            :pattern: '{{date}}، ساعت {{time}}'
-          :medium:
-            :pattern: '{{date}}،‏ {{time}}'
-          :short:
-            :pattern: '{{date}}،‏ {{time}}'
-        :time:
-          :full:
-            :pattern: H:mm:ss (zzzz)
-          :long:
-            :pattern: H:mm:ss (z)
-          :medium:
-            :pattern: H:mm:ss
-          :short:
-            :pattern: H:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: ژانویهٔ
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریهٔ
-            3: مارس
-            4: آوریل
-            5: مهٔ
-            6: ژوئن
-            7: ژوئیهٔ
-            8: اوت
-            9: سپتامبر
-          :narrow:
-            1: ژ
-            10: ا
-            11: ن
-            12: د
-            2: ف
-            3: م
-            4: آ
-            5: م
-            6: ژ
-            7: ژ
-            8: ا
-            9: س
-          :wide:
-            1: ژانویهٔ
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریهٔ
-            3: مارس
-            4: آوریل
-            5: مهٔ
-            6: ژوئن
-            7: ژوئیهٔ
-            8: اوت
-            9: سپتامبر
-        :stand-alone:
-          :abbreviated:
-            1: ژانویه
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریه
-            3: مارس
-            4: آوریل
-            5: مه
-            6: ژوئن
-            7: ژوئیه
-            8: اوت
-            9: سپتامبر
-          :narrow:
-            1: ژ
-            10: ا
-            11: ن
-            12: د
-            2: ف
-            3: م
-            4: آ
-            5: م
-            6: ژ
-            7: ژ
-            8: ا
-            9: س
-          :wide:
-            1: ژانویه
-            10: اکتبر
-            11: نوامبر
-            12: دسامبر
-            2: فوریه
-            3: مارس
-            4: آوریل
-            5: مه
-            6: ژوئن
-            7: ژوئیه
-            8: اوت
-            9: سپتامبر
-      :periods:
-        :format:
+--- 
+:fa: 
+  :calendars: 
+    :gregorian: 
+      :additional_formats: 
+        :EHm: "E H:mm"
+        :EHms: "E H:mm:ss"
+        :Ed: "E d"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
+        :Gy: "y G"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E d MMM y G"
+        :GyMMMd: "d MMM y G"
+        :H: "H"
+        :HHmmZ: "HH:mm (Z)"
+        :Hm: "H:mm"
+        :Hms: "H:mm:ss"
+        :M: "L"
+        :MEd: "E M/d"
+        :MMM: "LLL"
+        :MMMEd: "E d LLL"
+        :MMMMEd: "E d LLLL"
+        :MMMMd: "d LLLL"
+        :MMMd: "d LLL"
+        :Md: "M/d"
+        :d: "d"
+        :h: "h a"
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :mmss: "mm:ss"
+        :ms: "mm:ss"
+        ? !ruby/symbol "y"
+        : "y"
+        :yM: "y/M"
+        :yMEd: "E y/M/d"
+        :yMMM: "MMM y"
+        :yMMMEd: "E d MMM y"
+        :yMMMM: "MMMM y"
+        :yMMMMEEEEd: "EEEE d MMMM y"
+        :yMMMd: "d MMM y"
+        :yMd: "y/M/d"
+        :yQQQ: "QQQQ y"
+        :yQQQQ: "QQQQ y"
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "جمعه"
+            :mon: "دوشنبه"
+            :sat: "شنبه"
+            :sun: "یکشنبه"
+            :thu: "پنجشنبه"
+            :tue: "سه‌شنبه"
+            :wed: "چهارشنبه"
+          :narrow: 
+            :fri: "ج"
+            :mon: "د"
+            :sat: "ش"
+            :sun: "ی"
+            :thu: "پ"
+            :tue: "س"
+            :wed: "چ"
+          :short: 
+            :fri: "ج"
+            :mon: "۲ش"
+            :sat: "ش"
+            :sun: "۱ش"
+            :thu: "۵ش"
+            :tue: "۳ش"
+            :wed: "۴ش"
+          :wide: 
+            :fri: "جمعه"
+            :mon: "دوشنبه"
+            :sat: "شنبه"
+            :sun: "یکشنبه"
+            :thu: "پنجشنبه"
+            :tue: "سه‌شنبه"
+            :wed: "چهارشنبه"
+        :stand-alone: 
+          :abbreviated: 
+            :fri: "جمعه"
+            :mon: "دوشنبه"
+            :sat: "شنبه"
+            :sun: "یکشنبه"
+            :thu: "پنجشنبه"
+            :tue: "سه‌شنبه"
+            :wed: "چهارشنبه"
+          :narrow: 
+            :fri: "ج"
+            :mon: "د"
+            :sat: "ش"
+            :sun: "ی"
+            :thu: "پ"
+            :tue: "س"
+            :wed: "چ"
+          :short: 
+            :fri: "ج"
+            :mon: "۲ش"
+            :sat: "ش"
+            :sun: "۱ش"
+            :thu: "۵ش"
+            :tue: "۳ش"
+            :wed: "۴ش"
+          :wide: 
+            :fri: "جمعه"
+            :mon: "دوشنبه"
+            :sat: "شنبه"
+            :sun: "یکشنبه"
+            :thu: "پنجشنبه"
+            :tue: "سه‌شنبه"
+            :wed: "چهارشنبه"
+      :eras: 
+        :abbr: 
+          0: "ق.م."
+          1: "م."
+        :name: 
+          0: "قبل از میلاد"
+          1: "میلادی"
+        :narrow: 
+          0: "ق"
+          1: "م"
+      :fields: 
+        :day: "روز"
+        :dayperiod: "قبل/بعدازظهر"
+        :era: "دوره"
+        :hour: "ساعت"
+        :minute: "دقیقه"
+        :month: "ماه"
+        :second: "ثانیه"
+        :week: "هفته"
+        :weekday: "روز هفته"
+        :year: "سال"
+        :zone: "منطقهٔ زمانی"
+      :formats: 
+        :date: 
+          :full: 
+            :pattern: "EEEE d MMMM y"
+          :long: 
+            :pattern: "d MMMM y"
+          :medium: 
+            :pattern: "d MMM y"
+          :short: 
+            :pattern: "y/M/d"
+        :datetime: 
+          :full: 
+            :pattern: "{{date}}، ساعت {{time}}"
+          :long: 
+            :pattern: "{{date}}، ساعت {{time}}"
+          :medium: 
+            :pattern: "{{date}}،‏ {{time}}"
+          :short: 
+            :pattern: "{{date}}،‏ {{time}}"
+        :time: 
+          :full: 
+            :pattern: "H:mm:ss (zzzz)"
+          :long: 
+            :pattern: "H:mm:ss (z)"
+          :medium: 
+            :pattern: "H:mm:ss"
+          :short: 
+            :pattern: "H:mm"
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "ژانویهٔ"
+            10: "اکتبر"
+            11: "نوامبر"
+            12: "دسامبر"
+            2: "فوریهٔ"
+            3: "مارس"
+            4: "آوریل"
+            5: "مهٔ"
+            6: "ژوئن"
+            7: "ژوئیهٔ"
+            8: "اوت"
+            9: "سپتامبر"
+          :narrow: 
+            1: "ژ"
+            10: "ا"
+            11: "ن"
+            12: "د"
+            2: "ف"
+            3: "م"
+            4: "آ"
+            5: "م"
+            6: "ژ"
+            7: "ژ"
+            8: "ا"
+            9: "س"
+          :wide: 
+            1: "ژانویهٔ"
+            10: "اکتبر"
+            11: "نوامبر"
+            12: "دسامبر"
+            2: "فوریهٔ"
+            3: "مارس"
+            4: "آوریل"
+            5: "مهٔ"
+            6: "ژوئن"
+            7: "ژوئیهٔ"
+            8: "اوت"
+            9: "سپتامبر"
+        :stand-alone: 
+          :abbreviated: 
+            1: "ژانویه"
+            10: "اکتبر"
+            11: "نوامبر"
+            12: "دسامبر"
+            2: "فوریه"
+            3: "مارس"
+            4: "آوریل"
+            5: "مه"
+            6: "ژوئن"
+            7: "ژوئیه"
+            8: "اوت"
+            9: "سپتامبر"
+          :narrow: 
+            1: "ژ"
+            10: "ا"
+            11: "ن"
+            12: "د"
+            2: "ف"
+            3: "م"
+            4: "آ"
+            5: "م"
+            6: "ژ"
+            7: "ژ"
+            8: "ا"
+            9: "س"
+          :wide: 
+            1: "ژانویه"
+            10: "اکتبر"
+            11: "نوامبر"
+            12: "دسامبر"
+            2: "فوریه"
+            3: "مارس"
+            4: "آوریل"
+            5: "مه"
+            6: "ژوئن"
+            7: "ژوئیه"
+            8: "اوت"
+            9: "سپتامبر"
+      :periods: 
+        :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow:
-            :am: a
-            :noon: n
-            :pm: p
-          :wide:
-            :afternoon: عصر
-            :am: قبل‌ازظهر
-            :earlyMorning: بامداد
-            :midDay: بعدازظهر
-            :morning: صبح
-            :night: شب
-            :noon: ظهر
-            :pm: بعدازظهر
-            :variant:
-              :am: a.m.
-              :pm: p.m.
-            :weeHours: نیمه‌شب
+          :narrow: 
+            :am: "a"
+            :noon: "n"
+            :pm: "p"
+          :wide: 
+            :afternoon: "عصر"
+            :am: "قبل‌ازظهر"
+            :earlyMorning: "بامداد"
+            :midDay: "بعدازظهر"
+            :morning: "صبح"
+            :night: "شب"
+            :noon: "ظهر"
+            :pm: "بعدازظهر"
+            :variant: 
+              :am: "a.m."
+              :pm: "p.m."
+            :weeHours: "نیمه‌شب"
         :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: س‌م۱
-            2: س‌م۲
-            3: س‌م۳
-            4: س‌م۴
-          :narrow:
-            1: ۱
-            2: ۲
-            3: ۳
-            4: ۴
-          :wide:
-            1: سه‌ماههٔ اول
-            2: سه‌ماههٔ دوم
-            3: سه‌ماههٔ سوم
-            4: سه‌ماههٔ چهارم
-        :stand-alone:
-          :abbreviated:
-            1: س‌م۱
-            2: س‌م۲
-            3: س‌م۳
-            4: س‌م۴
-          :narrow:
-            1: ۱
-            2: ۲
-            3: ۳
-            4: ۴
-          :wide:
-            1: سه‌ماههٔ اول
-            2: سه‌ماههٔ دوم
-            3: سه‌ماههٔ سوم
-            4: سه‌ماههٔ چهارم
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "س‌م۱"
+            2: "س‌م۲"
+            3: "س‌م۳"
+            4: "س‌م۴"
+          :narrow: 
+            1: "۱"
+            2: "۲"
+            3: "۳"
+            4: "۴"
+          :wide: 
+            1: "سه‌ماههٔ اول"
+            2: "سه‌ماههٔ دوم"
+            3: "سه‌ماههٔ سوم"
+            4: "سه‌ماههٔ چهارم"
+        :stand-alone: 
+          :abbreviated: 
+            1: "س‌م۱"
+            2: "س‌م۲"
+            3: "س‌م۳"
+            4: "س‌م۴"
+          :narrow: 
+            1: "۱"
+            2: "۲"
+            3: "۳"
+            4: "۴"
+          :wide: 
+            1: "سه‌ماههٔ اول"
+            2: "سه‌ماههٔ دوم"
+            3: "سه‌ماههٔ سوم"
+            4: "سه‌ماههٔ چهارم"

@@ -13,8 +13,8 @@ module TwitterCldr
     class LocalesResourcesImporter
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
-      LOCALE_COMPONENTS = ["rbnf"] #%w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = [] #%w[currency_digits_and_rounding rbnf_root numbering_systems]
+      LOCALE_COMPONENTS = []#%w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
+      SHARED_COMPONENTS = ["numbering_systems"]#%w[currency_digits_and_rounding rbnf_root numbering_systems]
 
       # Arguments:
       #
@@ -26,9 +26,9 @@ module TwitterCldr
         @output_path = output_path
       end
 
-      def import(&block)
+      def import
         prepare_ruby_cldr
-        import_components(&block)
+        import_components
       end
 
       private
@@ -55,22 +55,11 @@ module TwitterCldr
           :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
 
-        counter = 0
-        total = export_args[:locales].size + SHARED_COMPONENTS.size
-        prev_locale = nil
-
         Cldr::Export.export(export_args) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
           deep_symbolize(component, locale, path)
-
-          if prev_locale != locale
-            counter += 1
-            yield counter, total, locale.to_s if block_given?
-          end
-
-          prev_locale = locale
         end
 
         export_args = {
@@ -81,8 +70,6 @@ module TwitterCldr
 
         Cldr::Export.export(export_args) do |component, locale, path|
           deep_symbolize(component, locale, path)
-          counter += 1
-          yield counter, total, component if block_given?
         end
 
         copy_zh_hant_plurals
@@ -149,15 +136,15 @@ module TwitterCldr
       end
 
       BUDDHIST_CALENDAR = {
-        'formats' => {
-          'date' => {
-            'default' => :'calendars.buddhist.formats.date.medium',
-            'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
-            'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
-            'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
-            'short'   => { 'pattern' => 'd/M/#{y + 543}' }
+          'formats' => {
+              'date' => {
+                  'default' => :'calendars.buddhist.formats.date.medium',
+                  'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
+                  'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
+                  'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
+                  'short'   => { 'pattern' => 'd/M/#{y + 543}' }
+              }
           }
-        }
       }
 
     end

@@ -1,62 +1,62 @@
----
-:fa:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: ‎¤#,##0.00;‎(¤#,##0.00)
-        :unit:
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: arabext
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 هزار
-            10000: 00 هزار
-            100000: 000 هزار
-            1000000: 0 میلیون
-            10000000: 00 میلیون
-            100000000: 000 میلیون
-            1000000000: 0 میلیارد
-            10000000000: 00 میلیارد
-            100000000000: 000 میلیارد
-            1000000000000: 0 هزار میلیارد
-            10000000000000: 00 هزار میلیارد
-            100000000000000: 000 هزار میلیارد
-          :short:
-            1000: 0K
-            10000: 00K
-            100000: 000K
-            1000000: 0M
-            10000000: 00M
-            100000000: 000M
-            1000000000: 0G
-            10000000000: 00G
-            100000000000: 000G
-            1000000000000: 0T
-            10000000000000: 00T
-            100000000000000: 000T
-      :percent:
-        :number_system: arabext
-        :patterns:
-          :default: '#,##0%'
-      :scientific:
-        :number_system: arabext
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: .
-      :exponential: E
-      :group: ','
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ‎−
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: ‎+
-      :superscripting_exponent: ×
+--- 
+:fa: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "‎¤#,##0.00;‎(¤#,##0.00)"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "arabext"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 هزار"
+            10000: "00 هزار"
+            100000: "000 هزار"
+            1000000: "0 میلیون"
+            10000000: "00 میلیون"
+            100000000: "000 میلیون"
+            1000000000: "0 میلیارد"
+            10000000000: "00 میلیارد"
+            100000000000: "000 میلیارد"
+            1000000000000: "0 هزار میلیارد"
+            10000000000000: "00 هزار میلیارد"
+            100000000000000: "000 هزار میلیارد"
+          :short: 
+            1000: "0K"
+            10000: "00K"
+            100000: "000K"
+            1000000: "0M"
+            10000000: "00M"
+            100000000: "000M"
+            1000000000: "0G"
+            10000000000: "00G"
+            100000000000: "000G"
+            1000000000000: "0T"
+            10000000000000: "00T"
+            100000000000000: "000T"
+      :percent: 
+        :number_system: "arabext"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "arabext"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: "E"
+      :group: ","
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "‎−"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "‎+"
+      :superscripting_exponent: "×"

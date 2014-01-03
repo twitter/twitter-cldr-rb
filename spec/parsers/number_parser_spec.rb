@@ -5,6 +5,8 @@
 
 require 'spec_helper'
 
+require 'pry-nav'
+
 include TwitterCldr::Parsers
 
 describe TwitterCldr::Parsers::NumberParser do
@@ -16,7 +18,7 @@ describe TwitterCldr::Parsers::NumberParser do
 
   describe "#group_separator" do
     it "returns the correct group separator" do
-      @parser.send(:group_separator).should == "\\."
+      @parser.send(:group_separator).should match_normalized(" ")
     end
   end
 
@@ -69,7 +71,7 @@ describe TwitterCldr::Parsers::NumberParser do
 
     it "returns only locale-specific separators when strict mode is on" do
       group, decimal = @parser.send(:separators, true)
-      group.should == '\.'
+      group.should match_normalized(" ")
       decimal.should == ','
     end
   end
@@ -120,7 +122,7 @@ describe TwitterCldr::Parsers::NumberParser do
     end
 
     it "correctly identifies a series of invalid cases" do
-      ["12,0,0", "5,", "5."].each do |num|
+      ["12,0,0", "5,", "5#{[160].pack("U*")}"].each do |num|
         @parser.valid?(num).should be_false
       end
     end
@@ -144,7 +146,7 @@ describe TwitterCldr::Parsers::NumberParser do
     end
 
     it "correctly raises an error when asked to parse invalid numbers" do
-      cases = ["12,0,0", "5,", "5."]
+      cases = ["12,0,0", "5,", "5#{[160].pack("U*")}"]
       cases.each do |text|
         lambda { @parser.parse(text) }.should raise_error(InvalidNumberError)
       end

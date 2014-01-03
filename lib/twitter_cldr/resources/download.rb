@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'cldr/download'
-
 module TwitterCldr
   module Resources
 
@@ -29,6 +27,14 @@ module TwitterCldr
         if File.directory?(path)
           puts "Using CLDR data from '#{path}'."
         else
+          begin
+            require 'zip'
+          rescue LoadError
+            raise StandardError.new("Unable to require 'zip'. Please switch to at least Ruby 1.9, then rebundle and try again.")
+          end
+
+          require 'cldr/download'
+
           puts "Downloading CLDR data from '#{url}' to '#{path}'."
           Cldr.download(url, path)
         end

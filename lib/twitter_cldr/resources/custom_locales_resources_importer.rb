@@ -29,17 +29,13 @@ module TwitterCldr
       end
 
       def import
-        total = TwitterCldr.supported_locales.size
-        TwitterCldr.supported_locales.each.with_index do |locale, idx|
-          import_units(locale)
-          yield idx, total, locale if block_given?
-        end
+        import_units
       end
 
       private
 
-      def import_units(locale)
-        fetch_units_data(locale).each do |data|
+      def import_units
+        fetch_units_data.each do |locale, data|
           dir_path = File.join(@output_path, locale.to_s)
 
           FileUtils.mkpath(dir_path)
@@ -50,19 +46,20 @@ module TwitterCldr
         end
       end
 
-      def fetch_units_data(locale)
+      def fetch_units_data
         TIME_PERIODS.inject({}) do |result, (label, id)|
           api_response = JSON.parse(open(API_ENDPOINT % id).read)
-          twitter_locale = TwitterCldr.twitter_locale(locale).to_s
 
-          if api_response[twitter_locale]
-            if patterns = TwitterCldr::Formatters::Plurals::Rules.all_for(locale)
-              patterns = patterns.inject({}) do |memo, rule|
-                memo[rule] = api_response[twitter_locale].gsub("%{number}", "{0}"); memo
-              end
+          TwitterCldr.supported_locales.each do |locale|
+            twitter_locale = TwitterCldr.twitter_locale(locale).to_s
 
-              set_value(result, patterns, locale, :units, label, :abbreviated)
+            next unless api_response[twitter_locale]
+
+            patterns = TwitterCldr::Formatters::Plurals::Rules.all_for(locale).inject({}) do |memo, rule|
+              memo[rule] = api_response[twitter_locale].gsub("%{number}", "{0}"); memo
             end
+
+            set_value(result, patterns, locale, :units, label, :abbreviated)
           end
 
           result

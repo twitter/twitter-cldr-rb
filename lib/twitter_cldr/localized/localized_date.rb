@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+include TwitterCldr::DataReaders
+
 module TwitterCldr
   module Localized
 
@@ -46,9 +48,16 @@ module TwitterCldr
         timezone_info.utc_to_local(time.is_a?(DateTime) ? time.new_offset(0) : time.utc)
       end
 
-      def formatter_const
-        TwitterCldr::Formatters::DateFormatter
+      def data_reader_for(type)
+        DateDataReader.new(locale, {
+          :calendar_type => calendar_type,
+          :type => type
+        })
       end
+
+      # def formatter_const
+      #   TwitterCldr::Formatters::DateFormatter
+      # end
     end
 
   end

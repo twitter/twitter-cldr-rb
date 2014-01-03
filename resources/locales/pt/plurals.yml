@@ -1,5 +1,5 @@
 ---
-:pt: '{ :''pt'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| ((n.to_i.to_s.length == 1 && ((v = n.to_s.split(".")).count > 1 ? v.last.length
-  : 0) == 0) || (n.to_i.to_s.length == 0 && ((t = n.to_s.split(".")).count > 1 ? t.last.gsub(/0+$/,
+:pt: ! '{ :''pt'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
+  { |n| ((n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length
+  : 0) == 0) || (n.to_i == 0 && ((t = n.to_s.split(".")[1] || []).count > 1 ? t.last.gsub(/0+$/,
   "").to_i : 0) == 1)) ? :one : :other } } } } }'

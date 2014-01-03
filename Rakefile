@@ -85,24 +85,19 @@ end
 namespace :update do
   ICU_JAR = './vendor/icu4j-51_2.jar'
 
-  progress_reporter = lambda do |done, total, text|
-    percent = ((done.to_f / total.to_f) * 100).to_i
-    puts "  (#{percent}%)\t#{text}"
-  end
-
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|
     TwitterCldr::Resources::LocalesResourcesImporter.new(
       args[:cldr_path] || './vendor/cldr',
       './resources'
-    ).import(&progress_reporter)
+    ).import
   end
 
   desc 'Import custom locales resources'
   task :custom_locales_resources do
     TwitterCldr::Resources::CustomLocalesResourcesImporter.new(
       './resources/custom/locales'
-    ).import(&progress_reporter)
+    ).import
   end
 
   desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
@@ -171,10 +166,10 @@ namespace :update do
     ).import
   end
 
-  desc 'Generate rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :rbnf_tests, :icu4j_jar_path do |_, args|
     TwitterCldr::Resources::RbnfTestImporter.new(
-      './spec/rbnf/locales',
+      './spec/formatters/numbers/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
   end

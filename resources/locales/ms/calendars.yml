@@ -1,288 +1,289 @@
----
-:ms:
-  :calendars:
-    :gregorian:
-      :additional_formats:
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
-        :Ed: d E
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: y G
-        :GyMMM: MMM y G
-        :GyMMMEd: E, d MMM y G
-        :GyMMMd: d MMM y G
-        :H: HH
-        :Hm: HH:mm
-        :Hmm: H:mm
-        :Hms: HH:mm:ss
-        :M: L
-        :MEd: E, d-M
-        :MMM: LLL
-        :MMMEd: E, d MMM
-        :MMMMd: d MMMM
-        :MMMd: d MMM
-        :MMdd: dd/MM
-        :Md: d-M
-        :d: d
-        :h: h a
-        :hm: h:mm a
-        :hms: h:mm:ss a
-        :ms: mm:ss
-        :y: y
-        :yM: M-y
-        :yMEd: E, d/M/y
-        :yMMM: MMM y
-        :yMMMEd: E, d MMM y
-        :yMMMd: d MMM y
-        :yMd: d/M/y
-        :yQQQ: QQQ y
-        :yQQQQ: QQQQ y
-      :days:
-        :format:
-          :abbreviated:
-            :fri: Jum
-            :mon: Isn
-            :sat: Sab
-            :sun: Ahd
-            :thu: Kha
-            :tue: Sel
-            :wed: Rab
-          :narrow:
-            :fri: J
-            :mon: I
-            :sat: S
-            :sun: A
-            :thu: K
-            :tue: S
-            :wed: R
-          :short:
-            :fri: Ju
-            :mon: Is
-            :sat: Sa
-            :sun: Ah
-            :thu: Kh
-            :tue: Se
-            :wed: Ra
-          :wide:
-            :fri: Jumaat
-            :mon: Isnin
-            :sat: Sabtu
-            :sun: Ahad
-            :thu: Khamis
-            :tue: Selasa
-            :wed: Rabu
-        :stand-alone:
-          :abbreviated:
-            :fri: Jum
-            :mon: Isn
-            :sat: Sab
-            :sun: Ahd
-            :thu: Kha
-            :tue: Sel
-            :wed: Rab
-          :narrow:
-            :fri: J
-            :mon: I
-            :sat: S
-            :sun: A
-            :thu: K
-            :tue: S
-            :wed: R
-          :short:
-            :fri: Ju
-            :mon: Is
-            :sat: Sa
-            :sun: Ah
-            :thu: Kh
-            :tue: Se
-            :wed: Ra
-          :wide:
-            :fri: Jumaat
-            :mon: Isnin
-            :sat: Sabtu
-            :sun: Ahad
-            :thu: Khamis
-            :tue: Selasa
-            :wed: Rabu
-      :eras:
-        :abbr:
-          0: S.M.
-          1: TM
-        :name:
-          0: Before Common Era
-          1: Common Era
-        :narrow:
-          0: B
-          1: A
-      :fields:
-        :day: Hari
-        :dayperiod: PG/PTG
-        :era: Era
-        :hour: Jam
-        :minute: Minit
-        :month: Bulan
-        :second: Kedua
-        :week: Minggu
-        :weekday: Hari dalam Minggu
-        :year: Tahun
-        :zone: Zon Waktu
-      :formats:
-        :date:
-          :full:
-            :pattern: EEEE, d MMMM y
-          :long:
-            :pattern: d MMMM y
-          :medium:
-            :pattern: d MMM y
-          :short:
-            :pattern: d/MM/yy
-        :datetime:
-          :full:
-            :pattern: '{{date}} {{time}}'
-          :long:
-            :pattern: '{{date}} {{time}}'
-          :medium:
-            :pattern: '{{date}} {{time}}'
-          :short:
-            :pattern: '{{date}} {{time}}'
-        :time:
-          :full:
-            :pattern: h:mm:ss a zzzz
-          :long:
-            :pattern: h:mm:ss a z
-          :medium:
-            :pattern: h:mm:ss a
-          :short:
-            :pattern: h:mm a
-      :months:
-        :format:
-          :abbreviated:
-            1: Jan
-            10: Okt
-            11: Nov
-            12: Dis
-            2: Feb
-            3: Mac
-            4: Apr
-            5: Mei
-            6: Jun
-            7: Jul
-            8: Ogo
-            9: Sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: O
-            9: S
-          :wide:
-            1: Januari
-            10: Oktober
-            11: November
-            12: Disember
-            2: Februari
-            3: Mac
-            4: April
-            5: Mei
-            6: Jun
-            7: Julai
-            8: Ogos
-            9: September
-        :stand-alone:
-          :abbreviated:
-            1: Jan
-            10: Okt
-            11: Nov
-            12: Dis
-            2: Feb
-            3: Mac
-            4: Apr
-            5: Mei
-            6: Jun
-            7: Jul
-            8: Ogo
-            9: Sep
-          :narrow:
-            1: J
-            10: O
-            11: N
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: O
-            9: S
-          :wide:
-            1: Januari
-            10: Oktober
-            11: November
-            12: Disember
-            2: Februari
-            3: Mac
-            4: April
-            5: Mei
-            6: Jun
-            7: Julai
-            8: Ogos
-            9: September
-      :periods:
-        :format:
-          :abbreviated:
-            :am: pg
-            :pm: ptg
-          :narrow:
-            :am: a
-            :noon: n
-            :pm: p
-          :wide:
-            :am: PG
-            :noon: noon
-            :pm: PTG
-            :variant:
-              :am: a.m.
-              :pm: p.m.
+--- 
+:ms: 
+  :calendars: 
+    :gregorian: 
+      :additional_formats: 
+        :EHm: "E HH:mm"
+        :EHms: "E HH:mm:ss"
+        :Ed: "d E"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
+        :Gy: "y G"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
+        :H: "HH"
+        :Hm: "HH:mm"
+        :Hmm: "H:mm"
+        :Hms: "HH:mm:ss"
+        :M: "L"
+        :MEd: "E, d-M"
+        :MMM: "LLL"
+        :MMMEd: "E, d MMM"
+        :MMMMd: "d MMMM"
+        :MMMd: "d MMM"
+        :MMdd: "dd/MM"
+        :Md: "d-M"
+        :d: "d"
+        :h: "h a"
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :ms: "mm:ss"
+        ? !ruby/symbol "y"
+        : "y"
+        :yM: "M-y"
+        :yMEd: "E, d/M/y"
+        :yMMM: "MMM y"
+        :yMMMEd: "E, d MMM y"
+        :yMMMd: "d MMM y"
+        :yMd: "d/M/y"
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "Jum"
+            :mon: "Isn"
+            :sat: "Sab"
+            :sun: "Ahd"
+            :thu: "Kha"
+            :tue: "Sel"
+            :wed: "Rab"
+          :narrow: 
+            :fri: "J"
+            :mon: "I"
+            :sat: "S"
+            :sun: "A"
+            :thu: "K"
+            :tue: "S"
+            :wed: "R"
+          :short: 
+            :fri: "Ju"
+            :mon: "Is"
+            :sat: "Sa"
+            :sun: "Ah"
+            :thu: "Kh"
+            :tue: "Se"
+            :wed: "Ra"
+          :wide: 
+            :fri: "Jumaat"
+            :mon: "Isnin"
+            :sat: "Sabtu"
+            :sun: "Ahad"
+            :thu: "Khamis"
+            :tue: "Selasa"
+            :wed: "Rabu"
+        :stand-alone: 
+          :abbreviated: 
+            :fri: "Jum"
+            :mon: "Isn"
+            :sat: "Sab"
+            :sun: "Ahd"
+            :thu: "Kha"
+            :tue: "Sel"
+            :wed: "Rab"
+          :narrow: 
+            :fri: "J"
+            :mon: "I"
+            :sat: "S"
+            :sun: "A"
+            :thu: "K"
+            :tue: "S"
+            :wed: "R"
+          :short: 
+            :fri: "Ju"
+            :mon: "Is"
+            :sat: "Sa"
+            :sun: "Ah"
+            :thu: "Kh"
+            :tue: "Se"
+            :wed: "Ra"
+          :wide: 
+            :fri: "Jumaat"
+            :mon: "Isnin"
+            :sat: "Sabtu"
+            :sun: "Ahad"
+            :thu: "Khamis"
+            :tue: "Selasa"
+            :wed: "Rabu"
+      :eras: 
+        :abbr: 
+          0: "S.M."
+          1: "TM"
+        :name: 
+          0: "Before Common Era"
+          1: "Common Era"
+        :narrow: 
+          0: "B"
+          1: "A"
+      :fields: 
+        :day: "Hari"
+        :dayperiod: "PG/PTG"
+        :era: "Era"
+        :hour: "Jam"
+        :minute: "Minit"
+        :month: "Bulan"
+        :second: "Kedua"
+        :week: "Minggu"
+        :weekday: "Hari dalam Minggu"
+        :year: "Tahun"
+        :zone: "Zon Waktu"
+      :formats: 
+        :date: 
+          :full: 
+            :pattern: "EEEE, d MMMM y"
+          :long: 
+            :pattern: "d MMMM y"
+          :medium: 
+            :pattern: "d MMM y"
+          :short: 
+            :pattern: "d/MM/yy"
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :full: 
+            :pattern: "h:mm:ss a zzzz"
+          :long: 
+            :pattern: "h:mm:ss a z"
+          :medium: 
+            :pattern: "h:mm:ss a"
+          :short: 
+            :pattern: "h:mm a"
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "Jan"
+            10: "Okt"
+            11: "Nov"
+            12: "Dis"
+            2: "Feb"
+            3: "Mac"
+            4: "Apr"
+            5: "Mei"
+            6: "Jun"
+            7: "Jul"
+            8: "Ogo"
+            9: "Sep"
+          :narrow: 
+            1: "J"
+            10: "O"
+            11: "N"
+            12: "D"
+            2: "F"
+            3: "M"
+            4: "A"
+            5: "M"
+            6: "J"
+            7: "J"
+            8: "O"
+            9: "S"
+          :wide: 
+            1: "Januari"
+            10: "Oktober"
+            11: "November"
+            12: "Disember"
+            2: "Februari"
+            3: "Mac"
+            4: "April"
+            5: "Mei"
+            6: "Jun"
+            7: "Julai"
+            8: "Ogos"
+            9: "September"
+        :stand-alone: 
+          :abbreviated: 
+            1: "Jan"
+            10: "Okt"
+            11: "Nov"
+            12: "Dis"
+            2: "Feb"
+            3: "Mac"
+            4: "Apr"
+            5: "Mei"
+            6: "Jun"
+            7: "Jul"
+            8: "Ogo"
+            9: "Sep"
+          :narrow: 
+            1: "J"
+            10: "O"
+            11: "N"
+            12: "D"
+            2: "F"
+            3: "M"
+            4: "A"
+            5: "M"
+            6: "J"
+            7: "J"
+            8: "O"
+            9: "S"
+          :wide: 
+            1: "Januari"
+            10: "Oktober"
+            11: "November"
+            12: "Disember"
+            2: "Februari"
+            3: "Mac"
+            4: "April"
+            5: "Mei"
+            6: "Jun"
+            7: "Julai"
+            8: "Ogos"
+            9: "September"
+      :periods: 
+        :format: 
+          :abbreviated: 
+            :am: "pg"
+            :pm: "ptg"
+          :narrow: 
+            :am: "a"
+            :noon: "n"
+            :pm: "p"
+          :wide: 
+            :am: "PG"
+            :noon: "noon"
+            :pm: "PTG"
+            :variant: 
+              :am: "a.m."
+              :pm: "p.m."
         :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: S1
-            2: S2
-            3: S3
-            4: S4
-          :narrow:
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "S1"
+            2: "S2"
+            3: "S3"
+            4: "S4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: Suku pertama
-            2: Suku Ke-2
-            3: Suku Ke-3
-            4: Suku Ke-4
-        :stand-alone:
-          :abbreviated:
-            1: S1
-            2: S2
-            3: S3
-            4: S4
-          :narrow:
+          :wide: 
+            1: "Suku pertama"
+            2: "Suku Ke-2"
+            3: "Suku Ke-3"
+            4: "Suku Ke-4"
+        :stand-alone: 
+          :abbreviated: 
+            1: "S1"
+            2: "S2"
+            3: "S3"
+            4: "S4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: Suku pertama
-            2: Suku Ke-2
-            3: Suku Ke-3
-            4: Suku Ke-4
+          :wide: 
+            1: "Suku pertama"
+            2: "Suku Ke-2"
+            3: "Suku Ke-3"
+            4: "Suku Ke-4"

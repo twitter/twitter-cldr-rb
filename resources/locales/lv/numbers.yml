@@ -1,63 +1,63 @@
----
-:lv:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: ¤#,##0.00
-        :unit:
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-          :zero: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 tūkstoši
-            10000: 00 tūkstoši
-            100000: 000 tūkstoši
-            1000000: 0 miljoni
-            10000000: 00 miljoni
-            100000000: 000 miljoni
-            1000000000: 0 miljardi
-            10000000000: 00 miljardi
-            100000000000: 000 miljardi
-            1000000000000: 0 triljoni
-            10000000000000: 00 triljoni
-            100000000000000: 000 triljoni
-          :short:
-            1000: 0 tūkst'.'
-            10000: 00 tūkst'.'
-            100000: 000 tūkst'.'
-            1000000: 0 milj'.'
-            10000000: 00 milj'.'
-            100000000: 000 milj'.'
-            1000000000: 0 mljrd'.'
-            10000000000: 00 mljrd'.'
-            100000000000: 000 mljrd'.'
-            1000000000000: 0 trilj'.'
-            10000000000000: 00 trilj'.'
-            100000000000000: 000 trilj'.'
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0%'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: '-'
-      :nan: nav skaitlis
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ·
+--- 
+:lv: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "¤#,##0.00"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+          :zero: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 tūkstoši"
+            10000: "00 tūkstoši"
+            100000: "000 tūkstoši"
+            1000000: "0 miljoni"
+            10000000: "00 miljoni"
+            100000000: "000 miljoni"
+            1000000000: "0 miljardi"
+            10000000000: "00 miljardi"
+            100000000000: "000 miljardi"
+            1000000000000: "0 triljoni"
+            10000000000000: "00 triljoni"
+            100000000000000: "000 triljoni"
+          :short: 
+            1000: "0 tūkst'.'"
+            10000: "00 tūkst'.'"
+            100000: "000 tūkst'.'"
+            1000000: "0 milj'.'"
+            10000000: "00 milj'.'"
+            100000000: "000 milj'.'"
+            1000000000: "0 mljrd'.'"
+            10000000000: "00 mljrd'.'"
+            100000000000: "000 mljrd'.'"
+            1000000000000: "0 trilj'.'"
+            10000000000000: "00 trilj'.'"
+            100000000000000: "000 trilj'.'"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: " "
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "nav skaitlis"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "·"

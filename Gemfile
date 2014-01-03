@@ -6,6 +6,10 @@ group :development, :test do
   gem 'rake'
   gem 'pry'
   gem 'pry-nav'
+
+  if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java"
+    gem 'ruby-prof'
+  end
 end
 
 group :development do
@@ -23,7 +27,10 @@ end
 group :test do
   gem 'rspec', '~> 2.11.0'
   gem 'rr',    '~> 1.0.4'
-  gem 'rubyzip'
+
+  if RUBY_VERSION >= "1.9"
+    gem 'rubyzip'
+  end
 
   platform :mri_18 do
     gem 'rcov'
@@ -34,3 +41,4 @@ group :test do
     gem 'launchy'
   end
 end
+

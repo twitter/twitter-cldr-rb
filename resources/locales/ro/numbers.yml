@@ -1,63 +1,63 @@
----
-:ro:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.00 ¤;(#,##0.00 ¤)'
-        :unit:
-          :few: '{0} {1}'
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 de mii
-            10000: 00 de mii
-            100000: 000 de mii
-            1000000: 0 de milioane
-            10000000: 00 de milioane
-            100000000: 000 de milioane
-            1000000000: 0 de miliarde
-            10000000000: 00 de miliarde
-            100000000000: 000 de miliarde
-            1000000000000: 0 de trilioane
-            10000000000000: 00 de trilioane
-            100000000000000: 000 de trilioane
-          :short:
-            1000: 0 K
-            10000: 00 K
-            100000: 000 K
-            1000000: 0 mil'.'
-            10000000: 00 mil'.'
-            100000000: 000 mil'.'
-            1000000000: 0 mld'.'
-            10000000000: 00 mld'.'
-            100000000000: 000 mld'.'
-            1000000000000: 0 tril'.'
-            10000000000000: 00 tril'.'
-            100000000000000: 000 tril'.'
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0 %'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group: .
-      :infinity: ∞
-      :list: ;
-      :minus_sign: '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ×
+--- 
+:ro: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤;(#,##0.00 ¤)"
+        :unit: 
+          :few: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 de mii"
+            10000: "00 de mii"
+            100000: "000 de mii"
+            1000000: "0 de milioane"
+            10000000: "00 de milioane"
+            100000000: "000 de milioane"
+            1000000000: "0 de miliarde"
+            10000000000: "00 de miliarde"
+            100000000000: "000 de miliarde"
+            1000000000000: "0 de trilioane"
+            10000000000000: "00 de trilioane"
+            100000000000000: "000 de trilioane"
+          :short: 
+            1000: "0 K"
+            10000: "00 K"
+            100000: "000 K"
+            1000000: "0 mil'.'"
+            10000000: "00 mil'.'"
+            100000000: "000 mil'.'"
+            1000000000: "0 mld'.'"
+            10000000000: "00 mld'.'"
+            100000000000: "000 mld'.'"
+            1000000000000: "0 tril'.'"
+            10000000000000: "00 tril'.'"
+            100000000000000: "000 tril'.'"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0 %"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: "."
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

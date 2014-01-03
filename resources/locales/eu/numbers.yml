@@ -1,62 +1,62 @@
----
-:eu:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.00 ¤;(#,##0.00 ¤)'
-        :unit:
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
+--- 
+:eu: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤;(#,##0.00 ¤)"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
             1000: 0
             10000: 0
             100000: 0
-            1000000: 0 milioi
-            10000000: 00 milioi
-            100000000: 000 milioi
-            1000000000: 0000 milioi
-            10000000000: 00000 milioi
-            100000000000: 000000 milioi
-            1000000000000: 0 bilioi
-            10000000000000: 00 bilioi
-            100000000000000: 000 bilioi
-          :short:
+            1000000: "0 milioi"
+            10000000: "00 milioi"
+            100000000: "000 milioi"
+            1000000000: "0000 milioi"
+            10000000000: "00000 milioi"
+            100000000000: "000000 milioi"
+            1000000000000: "0 bilioi"
+            10000000000000: "00 bilioi"
+            100000000000000: "000 bilioi"
+          :short: 
             1000: 0
             10000: 0
             100000: 0
-            1000000: 0 M
-            10000000: 00 M
-            100000000: 000 M
-            1000000000: 0000 M
-            10000000000: 00000 M
-            100000000000: 000000 M
-            1000000000000: 0 B
-            10000000000000: 00 B
-            100000000000000: 000 B
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '% #,##0'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group: .
-      :infinity: ∞
-      :list: ;
-      :minus_sign: '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ×
+            1000000: "0 M"
+            10000000: "00 M"
+            100000000: "000 M"
+            1000000000: "0000 M"
+            10000000000: "00000 M"
+            100000000000: "000000 M"
+            1000000000000: "0 B"
+            10000000000000: "00 B"
+            100000000000000: "000 B"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "% #,##0"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: "."
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

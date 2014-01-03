@@ -1,62 +1,62 @@
----
-:nb:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: ¤ #,##0.00
-        :unit:
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 tusen
-            10000: 00 tusen
-            100000: 000 tusen
-            1000000: 0 millioner
-            10000000: 00 millioner
-            100000000: 000 millioner
-            1000000000: 0 milliarder
-            10000000000: 00 milliarder
-            100000000000: 000 milliarder
-            1000000000000: 0 billioner
-            10000000000000: 00 billioner
-            100000000000000: 000 billioner
-          :short:
-            1000: 0 K
-            10000: 00 K
-            100000: 000 K
-            1000000: 0 mill
-            10000000: 00 mill
-            100000000: 000 mill
-            1000000000: 0 mrd
-            10000000000: 00 mrd
-            100000000000: 000 mrd
-            1000000000000: 0 bill
-            10000000000000: 00 bill
-            100000000000000: 000 bill
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0 %'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: −
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ×
+--- 
+:nb: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "¤ #,##0.00"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 tusen"
+            10000: "00 tusen"
+            100000: "000 tusen"
+            1000000: "0 millioner"
+            10000000: "00 millioner"
+            100000000: "000 millioner"
+            1000000000: "0 milliarder"
+            10000000000: "00 milliarder"
+            100000000000: "000 milliarder"
+            1000000000000: "0 billioner"
+            10000000000000: "00 billioner"
+            100000000000000: "000 billioner"
+          :short: 
+            1000: "0 K"
+            10000: "00 K"
+            100000: "000 K"
+            1000000: "0 mill"
+            10000000: "00 mill"
+            100000000: "000 mill"
+            1000000000: "0 mrd"
+            10000000000: "00 mrd"
+            100000000000: "000 mrd"
+            1000000000000: "0 bill"
+            10000000000000: "00 bill"
+            100000000000000: "000 bill"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0 %"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: " "
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "−"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

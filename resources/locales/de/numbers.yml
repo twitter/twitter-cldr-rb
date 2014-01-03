@@ -1,62 +1,62 @@
----
-:de:
-  :numbers:
-    :formats:
-      :currency:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.00 ¤'
-        :unit:
-          :one: '{0} {1}'
-          :other: '{0} {1}'
-      :decimal:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0.###'
-          :long:
-            1000: 0 Tausend
-            10000: 00 Tausend
-            100000: 000 Tausend
-            1000000: 0 Millionen
-            10000000: 00 Millionen
-            100000000: 000 Millionen
-            1000000000: 0 Milliarden
-            10000000000: 00 Milliarden
-            100000000000: 000 Milliarden
-            1000000000000: 0 Billionen
-            10000000000000: 00 Billionen
-            100000000000000: 000 Billionen
-          :short:
-            1000: 0 Tsd
-            10000: 00 Tsd
-            100000: 000 Tsd
-            1000000: 0 Mio
-            10000000: 00 Mio
-            100000000: 000 Mio
-            1000000000: 0 Mrd
-            10000000000: 00 Mrd
-            100000000000: 000 Mrd
-            1000000000000: 0 Bio
-            10000000000000: 00 Bio
-            100000000000000: 000 Bio
-      :percent:
-        :number_system: latn
-        :patterns:
-          :default: '#,##0 %'
-      :scientific:
-        :number_system: latn
-        :patterns:
-          :default: '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ','
-      :exponential: E
-      :group: .
-      :infinity: ∞
-      :list: ;
-      :minus_sign: '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: '%'
-      :plus_sign: +
-      :superscripting_exponent: ·
+--- 
+:de: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 Tausend"
+            10000: "00 Tausend"
+            100000: "000 Tausend"
+            1000000: "0 Millionen"
+            10000000: "00 Millionen"
+            100000000: "000 Millionen"
+            1000000000: "0 Milliarden"
+            10000000000: "00 Milliarden"
+            100000000000: "000 Milliarden"
+            1000000000000: "0 Billionen"
+            10000000000000: "00 Billionen"
+            100000000000000: "000 Billionen"
+          :short: 
+            1000: "0 Tsd"
+            10000: "00 Tsd"
+            100000: "000 Tsd"
+            1000000: "0 Mio"
+            10000000: "00 Mio"
+            100000000: "000 Mio"
+            1000000000: "0 Mrd"
+            10000000000: "00 Mrd"
+            100000000000: "000 Mrd"
+            1000000000000: "0 Bio"
+            10000000000000: "00 Bio"
+            100000000000000: "000 Bio"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0 %"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: "."
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "·"

@@ -1,4 +1,4 @@
 ---
-:sv: '{ :''sv'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| (n.to_i.to_s.length == 1 && ((v = n.to_s.split(".")).count > 1 ? v.last.length
+:sv: ! '{ :''sv'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
+  { |n| (n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length
   : 0) == 0) ? :one : :other } } } } }'

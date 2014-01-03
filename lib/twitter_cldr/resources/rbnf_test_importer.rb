@@ -22,6 +22,7 @@ module TwitterCldr
         [-100, -75, -50, -24],
         (0..100),
         [321, 322, 323, 1_141, 1_142, 1_143, 10_311, 138_400]
+        # [41.0, 5.22, 8.90, 555.1212, -14.90, -999.701]  # decimals really aren't supported yet
       ]
 
       def initialize(output_path, icu4j_path)

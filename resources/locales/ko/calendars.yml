@@ -1,259 +1,260 @@
----
-:ko:
-  :calendars:
-    :gregorian:
-      :additional_formats:
-        :EEEEd: d일 EEEE
-        :EHm: (E) HH:mm
-        :EHms: (E) HH:mm:ss
-        :Ed: d일 (E)
-        :Ehm: (E) a h:mm
-        :Ehms: (E) a h:mm:ss
-        :Gy: G y년
-        :GyMMM: G y년 MMM
-        :GyMMMEEEEd: G y년 MMM d일 EEEE
-        :GyMMMEd: G y년 MMM d일 (E)
-        :GyMMMd: G y년 MMM d일
-        :H: H시
-        :HHmmss: HH:mm:ss
-        :Hm: HH:mm
-        :Hms: H시 m분 s초
-        :M: M월
-        :MEEEEd: M. d. EEEE
-        :MEd: M. d. (E)
-        :MMM: LLL
-        :MMMEEEEd: MMM d일 EEEE
-        :MMMEd: MMM d일 (E)
-        :MMMd: MMM d일
-        :Md: M. d.
-        :d: d일
-        :h: a h시
-        :hm: a h:mm
-        :hms: a h:mm:ss
-        :mmss: mm:ss
-        :ms: mm:ss
-        :y: y년
-        :yM: y. M.
-        :yMEEEEd: y. M. d. EEEE
-        :yMEd: y. M. d. (E)
-        :yMM: y. M.
-        :yMMM: y년 MMM
-        :yMMMEEEEd: y년 MMM d일 EEEE
-        :yMMMEd: y년 MMM d일 (E)
-        :yMMMd: y년 MMM d일
-        :yMd: y. M. d.
-        :yQQQ: y년 QQQ
-        :yQQQQ: y년 QQQQ
-      :days:
-        :format:
-          :abbreviated:
-            :fri: 금
-            :mon: 월
-            :sat: 토
-            :sun: 일
-            :thu: 목
-            :tue: 화
-            :wed: 수
+--- 
+:ko: 
+  :calendars: 
+    :gregorian: 
+      :additional_formats: 
+        :EEEEd: "d일 EEEE"
+        :EHm: "(E) HH:mm"
+        :EHms: "(E) HH:mm:ss"
+        :Ed: "d일 (E)"
+        :Ehm: "(E) a h:mm"
+        :Ehms: "(E) a h:mm:ss"
+        :Gy: "G y년"
+        :GyMMM: "G y년 MMM"
+        :GyMMMEEEEd: "G y년 MMM d일 EEEE"
+        :GyMMMEd: "G y년 MMM d일 (E)"
+        :GyMMMd: "G y년 MMM d일"
+        :H: "H시"
+        :HHmmss: "HH:mm:ss"
+        :Hm: "HH:mm"
+        :Hms: "H시 m분 s초"
+        :M: "M월"
+        :MEEEEd: "M. d. EEEE"
+        :MEd: "M. d. (E)"
+        :MMM: "LLL"
+        :MMMEEEEd: "MMM d일 EEEE"
+        :MMMEd: "MMM d일 (E)"
+        :MMMd: "MMM d일"
+        :Md: "M. d."
+        :d: "d일"
+        :h: "a h시"
+        :hm: "a h:mm"
+        :hms: "a h:mm:ss"
+        :mmss: "mm:ss"
+        :ms: "mm:ss"
+        ? !ruby/symbol "y"
+        : "y년"
+        :yM: "y. M."
+        :yMEEEEd: "y. M. d. EEEE"
+        :yMEd: "y. M. d. (E)"
+        :yMM: "y. M."
+        :yMMM: "y년 MMM"
+        :yMMMEEEEd: "y년 MMM d일 EEEE"
+        :yMMMEd: "y년 MMM d일 (E)"
+        :yMMMd: "y년 MMM d일"
+        :yMd: "y. M. d."
+        :yQQQ: "y년 QQQ"
+        :yQQQQ: "y년 QQQQ"
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
           :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short:
-            :fri: 금
-            :mon: 월
-            :sat: 토
-            :sun: 일
-            :thu: 목
-            :tue: 화
-            :wed: 수
-          :wide:
-            :fri: 금요일
-            :mon: 월요일
-            :sat: 토요일
-            :sun: 일요일
-            :thu: 목요일
-            :tue: 화요일
-            :wed: 수요일
-        :stand-alone:
+          :short: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
+          :wide: 
+            :fri: "금요일"
+            :mon: "월요일"
+            :sat: "토요일"
+            :sun: "일요일"
+            :thu: "목요일"
+            :tue: "화요일"
+            :wed: "수요일"
+        :stand-alone: 
           :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
-            :fri: 금
-            :mon: 월
-            :sat: 토
-            :sun: 일
-            :thu: 목
-            :tue: 화
-            :wed: 수
-          :short:
-            :fri: 금
-            :mon: 월
-            :sat: 토
-            :sun: 일
-            :thu: 목
-            :tue: 화
-            :wed: 수
+          :narrow: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
+          :short: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
           :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
-          0: 기원전
-          1: 서기
-        :name:
-          0: 서력기원전
-          1: 서력기원
-        :narrow:
-          0: B
-          1: A
-      :fields:
-        :day: 일
-        :dayperiod: 오전/오후
-        :era: 연호
-        :hour: 시
-        :minute: 분
-        :month: 월
-        :second: 초
-        :week: 주
-        :weekday: 요일
-        :year: 년
-        :zone: 시간대
-      :formats:
-        :date:
-          :full:
-            :pattern: y년 M월 d일 EEEE
-          :long:
-            :pattern: y년 M월 d일
-          :medium:
-            :pattern: y. M. d.
-          :short:
-            :pattern: yy. M. d.
-        :datetime:
-          :full:
-            :pattern: '{{date}} {{time}}'
-          :long:
-            :pattern: '{{date}} {{time}}'
-          :medium:
-            :pattern: '{{date}} {{time}}'
-          :short:
-            :pattern: '{{date}} {{time}}'
-        :time:
-          :full:
-            :pattern: a h시 m분 s초 zzzz
-          :long:
-            :pattern: a h시 m분 s초 z
-          :medium:
-            :pattern: a h:mm:ss
-          :short:
-            :pattern: a h:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: 1월
-            10: 10월
-            11: 11월
-            12: 12월
-            2: 2월
-            3: 3월
-            4: 4월
-            5: 5월
-            6: 6월
-            7: 7월
-            8: 8월
-            9: 9월
-          :narrow:
-            1: 1월
-            10: 10월
-            11: 11월
-            12: 12월
-            2: 2월
-            3: 3월
-            4: 4월
-            5: 5월
-            6: 6월
-            7: 7월
-            8: 8월
-            9: 9월
-          :wide:
-            1: 1월
-            10: 10월
-            11: 11월
-            12: 12월
-            2: 2월
-            3: 3월
-            4: 4월
-            5: 5월
-            6: 6월
-            7: 7월
-            8: 8월
-            9: 9월
-        :stand-alone:
-          :abbreviated:
-            1: 1월
-            10: 10월
-            11: 11월
-            12: 12월
-            2: 2월
-            3: 3월
-            4: 4월
-            5: 5월
-            6: 6월
-            7: 7월
-            8: 8월
-            9: 9월
-          :narrow:
-            1: 1월
-            10: 10월
-            11: 11월
-            12: 12월
-            2: 2월
-            3: 3월
-            4: 4월
-            5: 5월
-            6: 6월
-            7: 7월
-            8: 8월
-            9: 9월
+      :eras: 
+        :abbr: 
+          0: "기원전"
+          1: "서기"
+        :name: 
+          0: "서력기원전"
+          1: "서력기원"
+        :narrow: 
+          0: "B"
+          1: "A"
+      :fields: 
+        :day: "일"
+        :dayperiod: "오전/오후"
+        :era: "연호"
+        :hour: "시"
+        :minute: "분"
+        :month: "월"
+        :second: "초"
+        :week: "주"
+        :weekday: "요일"
+        :year: "년"
+        :zone: "시간대"
+      :formats: 
+        :date: 
+          :full: 
+            :pattern: "y년 M월 d일 EEEE"
+          :long: 
+            :pattern: "y년 M월 d일"
+          :medium: 
+            :pattern: "y. M. d."
+          :short: 
+            :pattern: "yy. M. d."
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :full: 
+            :pattern: "a h시 m분 s초 zzzz"
+          :long: 
+            :pattern: "a h시 m분 s초 z"
+          :medium: 
+            :pattern: "a h:mm:ss"
+          :short: 
+            :pattern: "a h:mm"
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
+          :narrow: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
+          :wide: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
+        :stand-alone: 
+          :abbreviated: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
+          :narrow: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
           :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
+      :periods: 
+        :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow:
-            :am: a
-            :noon: n
-            :pm: p
-          :wide:
-            :am: 오전
-            :noon: noon
-            :pm: 오후
-            :variant:
-              :am: a.m.
-              :pm: p.m.
+          :narrow: 
+            :am: "a"
+            :noon: "n"
+            :pm: "p"
+          :wide: 
+            :am: "오전"
+            :noon: "noon"
+            :pm: "오후"
+            :variant: 
+              :am: "a.m."
+              :pm: "p.m."
         :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: 1분기
-            2: 2분기
-            3: 3분기
-            4: 4분기
-          :narrow:
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "1분기"
+            2: "2분기"
+            3: "3분기"
+            4: "4분기"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 제 1/4분기
-            2: 제 2/4분기
-            3: 제 3/4분기
-            4: 제 4/4분기
-        :stand-alone:
-          :abbreviated:
-            1: 1분기
-            2: 2분기
-            3: 3분기
-            4: 4분기
-          :narrow:
+          :wide: 
+            1: "제 1/4분기"
+            2: "제 2/4분기"
+            3: "제 3/4분기"
+            4: "제 4/4분기"
+        :stand-alone: 
+          :abbreviated: 
+            1: "1분기"
+            2: "2분기"
+            3: "3분기"
+            4: "4분기"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 제 1/4분기
-            2: 제 2/4분기
-            3: 제 3/4분기
-            4: 제 4/4분기
+          :wide: 
+            1: "제 1/4분기"
+            2: "제 2/4분기"
+            3: "제 3/4분기"
+            4: "제 4/4분기"

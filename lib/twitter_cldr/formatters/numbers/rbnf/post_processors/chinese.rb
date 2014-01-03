@@ -1,3 +1,9 @@
+# This code was ported from the java version available here:
+# http://grepcode.com/file/repo1.maven.org/maven2/com.ibm.icu/icu4j/51.2/com/ibm/icu/text/RBNFChinesePostProcessor.java
+
+# This code is incomplete, untested, and unused. It should remain here until
+# I can figure out why it's necessary in ICU and wether to make use of it here or not.
+
 RULE_SET_NAMES = ["traditional", "simplified", "accounting", "time"]
 DIAN = 40670  # decimal point
 MARKERS = [

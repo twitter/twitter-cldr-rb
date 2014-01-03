@@ -43,16 +43,10 @@ module TwitterCldr
         'V' => :timezone_metazone
       }
 
-      attr_reader :data_reader
-
-      def initialize(data_reader)
-        @data_reader = data_reader
-      end
-
       protected
 
       def format_pattern(token, index, obj, options)
-        send(METHODS[token.value[0].chr], date, token.value, token.value.size, options)
+        send(METHODS[token.value[0].chr], obj, token.value, token.value.size, options)
       end
 
       def calendar

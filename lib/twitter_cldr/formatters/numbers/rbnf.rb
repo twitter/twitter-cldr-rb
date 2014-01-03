@@ -23,8 +23,10 @@ module TwitterCldr
 
       class RbnfFormatter
 
-        DEFAULT_RULE_SET_NAME = "spellout-numbering"
-        DEFAULT_RULE_GROUP_NAME = "SpelloutRules"
+        DEFAULT_SPELLOUT_OPTIONS = {
+          :rule_group => "SpelloutRules",
+          :rule_set => "spellout-numbering"
+        }
 
         attr_reader :locale
 
@@ -34,7 +36,7 @@ module TwitterCldr
 
         def format(number, options = {})
           rule_group_name, rule_set_name = *if options[:rule_group].nil? && options[:rule_set].nil?
-            [DEFAULT_RULE_GROUP_NAME, DEFAULT_RULE_SET_NAME]
+            [DEFAULT_CARDINAL_OPTIONS[:rule_group], DEFAULT_CARDINAL_OPTIONS[:rule_set]]
           else
             [options[:rule_group], options[:rule_set]]
           end

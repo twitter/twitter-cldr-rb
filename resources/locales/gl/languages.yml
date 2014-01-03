@@ -1,582 +1,583 @@
----
-:gl:
-  :languages:
-    :aa: Afar
-    :ab: abkhazo
-    :ace: Achinese
-    :ach: acoli
-    :ada: Adangme
-    :ady: Adyghe
-    :ae: Avestan
-    :af: afrikaans
-    :afa: lingua afro-asiática
-    :afh: Afrihili
-    :agq: Aghem
-    :ain: Ainu
-    :ak: akán
-    :akk: Akkadian
-    :ale: Aleut
-    :alg: lingua algonquina
-    :alt: Southern Altai
-    :am: amárico
-    :an: aragonés
-    :ang: Old English
-    :anp: Angika
-    :apa: lingua apache
-    :ar: árabe
-    :ar-001: árabe estándar moderno
-    :arc: arameo
-    :arn: Mapuche
-    :arp: Arapaho
-    :art: lingua artificial
-    :arw: Arawak
-    :as: assamés
-    :asa: Asu
-    :ast: asturiano
-    :ath: Athapascan Language
-    :aus: lingua australiana
-    :av: Avaric
-    :awa: Awadhi
-    :ay: aimará
-    :az: acerbaixano
-    :ba: Bashkir
-    :bad: Banda
-    :bai: Bamileke Language
-    :bal: Baluchi
-    :ban: Balinese
-    :bas: Basaa
-    :bat: lingua báltica
-    :bax: Bamun
-    :bbj: Ghomala
-    :be: bielorruso
-    :bej: Beja
-    :bem: bemba
-    :ber: Berber
-    :bez: Bena
-    :bfd: Bafut
-    :bg: búlgaro
-    :bh: bihari
-    :bho: Bhojpuri
-    :bi: Bislama
-    :bik: Bikol
-    :bin: Bini
-    :bkm: Kom
-    :bla: Siksika
-    :bm: Bambara
-    :bn: bengalí
-    :bnt: Bantu
-    :bo: tibetano
-    :br: bretón
-    :bra: Braj
-    :brx: Bodo
-    :bs: bosnio
-    :bss: Akoose
-    :btk: Batak
-    :bua: Buriat
-    :bug: Buginese
-    :bum: Bulu
-    :byn: Blin
-    :byv: Medumba
-    :ca: catalán
-    :cad: Caddo
-    :cai: lingua india centroamericana
-    :car: Carib
-    :cau: lingua caucásica
-    :cay: Cayuga
-    :cch: Atsam
-    :ce: Chechen
-    :ceb: Cebuano
-    :cel: lingua céltica
-    :cgg: Chiga
-    :ch: Chamorro
-    :chb: Chibcha
-    :chg: Chagatai
-    :chk: Chuukese
-    :chm: Mari
-    :chn: Chinook Jargon
-    :cho: Choctaw
-    :chp: Chipewyan
-    :chr: cheroqui
-    :chy: Cheyenne
-    :ckb: curdo soraní
-    :cmc: Chamic Language
-    :co: corso
-    :cop: Coptic
-    :cpe: English-based Creole or Pidgin
-    :cpf: French-based Creole or Pidgin
-    :cpp: Portuguese-based Creole or Pidgin
-    :cr: Cree
-    :crh: Crimean Turkish
-    :crp: Creole or Pidgin
-    :cs: checo
-    :csb: Kashubian
-    :cu: eslavo eclesiástico
-    :cus: Cushitic Language
-    :cv: Chuvash
-    :cy: galés
-    :da: dinamarqués
-    :dak: Dakota
-    :dar: Dargwa
-    :dav: Taita
-    :day: Dayak
-    :de: alemán
-    :de-AT: alemán de austria
-    :de-CH: alto alemán suízo
-    :del: Delaware
-    :den: Slave
-    :dgr: Dogrib
-    :din: Dinka
-    :dje: Zarma
-    :doi: Dogri
-    :dra: Dravidian Language
-    :dsb: Lower Sorbian
-    :dua: Duala
-    :dum: Middle Dutch
-    :dv: divehi
-    :dyo: Jola-Fonyi
-    :dyu: Dyula
-    :dz: dzongkha
-    :dzg: Dazaga
-    :ebu: Embu
-    :ee: ewé
-    :efi: ibibio
-    :egy: exipcio antigo
-    :eka: Ekajuk
-    :el: grego
-    :elx: Elamite
-    :en: inglés
-    :en-AU: inglés australiano
-    :en-CA: inglés canadiano
-    :en-GB: inglés R.U.
-    :en-US: inglés EUA
-    :enm: Middle English
-    :eo: esperanto
-    :es: español
-    :es-419: español latinoamericano
-    :es-ES: castelán
-    :es-MX: español de México
-    :et: estoniano
-    :eu: éuscaro
-    :ewo: Ewondo
-    :fa: persa
-    :fan: Fang
-    :fat: Fanti
-    :ff: Fulah
-    :fi: finés
-    :fil: filipino
-    :fiu: lingua finno-úgrica
-    :fj: fixiano
-    :fo: faroés
-    :fon: Fon
-    :fr: francés
-    :fr-CA: francés canadiano
-    :fr-CH: francés suízo
-    :frm: Middle French
-    :fro: Old French
-    :frr: Northern Frisian
-    :frs: Eastern Frisian
-    :fur: Friulian
-    :fy: frisón
-    :ga: irlandés
-    :gaa: ga
-    :gay: Gayo
-    :gba: Gbaya
-    :gd: gaélico escocés
-    :gem: lingua xermánica
-    :gez: Geez
-    :gil: Gilbertese
-    :gl: galego
-    :gmh: Middle High German
-    :gn: guaraní
-    :goh: Old High German
-    :gon: Gondi
-    :gor: Gorontalo
-    :got: Gothic
-    :grb: Grebo
-    :grc: grego antigo
-    :gsw: alemán suízo
-    :gu: guxaratiano
-    :guz: Gusii
-    :gv: Manx
-    :gwi: Gwichʼin
-    :ha: hausa
-    :hai: Haida
-    :haw: hawaiano
-    :he: hebreo
-    :hi: hindi
-    :hil: Hiligaynon
-    :him: Himachali
-    :hit: Hittite
-    :hmn: Hmong
-    :ho: Hiri Motu
-    :hr: croata
-    :hsb: Upper Sorbian
-    :ht: haitiano
-    :hu: húngaro
-    :hup: Hupa
-    :hy: armenio
-    :hz: Herero
-    :ia: interlingua
-    :iba: Iban
-    :ibb: Ibibio
-    :id: indonesio
-    :ie: Interlingue
-    :ig: ibo
-    :ii: Sichuan Yi
-    :ijo: Ijo
-    :ik: Inupiaq
-    :ilo: Iloko
-    :inc: lingua índica
-    :ine: lingua indoeuropea
-    :inh: Ingush
-    :io: Ido
-    :ira: Iranian Language
-    :iro: Iroquoian Language
-    :is: islandés
-    :it: italiano
-    :iu: Inuktitut
-    :ja: xaponés
-    :jbo: Lojban
-    :jgo: Ngomba
-    :jmc: Machame
-    :jpr: Judeo-Persian
-    :jrb: Judeo-Arabic
-    :jv: xavanés
-    :ka: xeorxiano
-    :kaa: Kara-Kalpak
-    :kab: Kabyle
-    :kac: Kachin
-    :kaj: Jju
-    :kam: Kamba
-    :kar: Karen
-    :kaw: Kawi
-    :kbd: Kabardian
-    :kbl: Kanembu
-    :kcg: Tyap
-    :kde: Makonde
-    :kea: Kabuverdianu
-    :kfo: Koro
-    :kg: kongo
-    :kha: Khasi
-    :khi: Khoisan Language
-    :kho: Khotanese
-    :khq: Koyra Chiini
-    :ki: Kikuyu
-    :kj: Kuanyama
-    :kk: casaco
-    :kkj: Kako
-    :kl: Kalaallisut
-    :kln: Kalenjin
-    :km: cambodiano
-    :kmb: Kimbundu
-    :kn: kannada
-    :ko: coreano
-    :kok: Konkani
-    :kos: Kosraean
-    :kpe: Kpelle
-    :kr: Kanuri
-    :krc: Karachay-Balkar
-    :krl: Karelian
-    :kro: Kru
-    :kru: Kurukh
-    :ks: cachemir
-    :ksb: Shambala
-    :ksf: Bafia
-    :ksh: Colognian
-    :ku: kurdo
-    :kum: Kumyk
-    :kut: Kutenai
-    :kv: Komi
-    :kw: Cornish
-    :ky: quirguiz
-    :la: latín
-    :lad: Ladino
-    :lag: Langi
-    :lah: Lahnda
-    :lam: Lamba
-    :lb: luxemburgués
-    :lez: Lezghian
-    :lg: ganda
-    :li: Limburgish
-    :lkt: Lakota
-    :ln: lingala
-    :lo: laotiano
-    :lol: Mongo
-    :loz: lozi
-    :lt: lituano
-    :lu: Luba-Katanga
-    :lua: luba-lulua
-    :lui: Luiseno
-    :lun: Lunda
-    :luo: Luo
-    :lus: Mizo
-    :luy: Luyia
-    :lv: letón
-    :mad: Madurese
-    :maf: Mafa
-    :mag: Magahi
-    :mai: Maithili
-    :mak: Makasar
-    :man: Mandingo
-    :map: Austronesian Language
-    :mas: Masai
-    :mde: Maba
-    :mdf: Moksha
-    :mdr: Mandar
-    :men: Mende
-    :mer: Meru
-    :mfe: crioulo mauritano
-    :mg: malgaxe
-    :mga: Middle Irish
-    :mgh: Makhuwa-Meetto
-    :mgo: Meta'
-    :mh: Marshallese
-    :mi: maorí
-    :mic: Micmac
-    :min: Minangkabau
-    :mis: lingua miscelánea
-    :mk: macedonio
-    :mkh: Mon-Khmer Language
-    :ml: malabar
-    :mn: mongol
-    :mnc: Manchu
-    :mni: Manipuri
-    :mno: Manobo Language
-    :mo: Moldavian
-    :moh: Mohawk
-    :mos: Mossi
-    :mr: marathi
-    :ms: malaio
-    :mt: maltés
-    :mua: Mundang
-    :mul: varias linguas
-    :mun: Munda Language
-    :mus: Creek
-    :mwl: Mirandese
-    :mwr: Marwari
-    :my: birmano
-    :mye: Myene
-    :myn: Mayan Language
-    :myv: Erzya
-    :na: Nauru
-    :nah: Nahuatl
-    :nai: lingua india norteamericana
-    :nap: Neapolitan
-    :naq: Nama
-    :nb: noruegués bokmal
-    :nd: ndebele do norte
-    :nds: Low German
-    :ne: nepalí
-    :new: Newari
-    :ng: Ndonga
-    :nia: Nias
-    :nic: Niger-Kordofanian Language
-    :niu: Niuean
-    :nl: holandés
-    :nl-BE: flamenco
-    :nmg: Kwasio
-    :nn: noruegués nynorsk
-    :nnh: Ngiemboon
-    :no: noruegués
-    :nog: Nogai
-    :non: Old Norse
-    :nqo: N’Ko
-    :nr: South Ndebele
-    :nso: sesotho sa leboa
-    :nub: lingua nubia
-    :nus: Nuer
-    :nv: Navajo
-    :nwc: Classical Newari
-    :ny: chewa
-    :nym: Nyamwezi
-    :nyn: nyankole
-    :nyo: Nyoro
-    :nzi: Nzima
-    :oc: occitano
-    :oj: Ojibwa
-    :om: oromo
-    :or: oriya
-    :os: osetio
-    :osa: Osage
-    :ota: Ottoman Turkish
-    :oto: Otomian Language
-    :pa: punjabi
-    :paa: Papuan Language
-    :pag: Pangasinan
-    :pal: Pahlavi
-    :pam: Pampanga
-    :pap: Papiamento
-    :pau: Palauan
-    :peo: Old Persian
-    :phi: lingua filipina
-    :phn: Phoenician
-    :pi: Pali
-    :pl: polaco
-    :pon: Pohnpeian
-    :pra: Prakrit Language
-    :pro: Old Provençal
-    :ps: paxtún
-    :pt: portugués
-    :pt-BR: portugués brasileiro
-    :pt-PT: portugués europeo
-    :qu: quechua
-    :raj: Rajasthani
-    :rap: Rapanui
-    :rar: Rarotongan
-    :rm: romanche
-    :rn: rundi
-    :ro: romanés
-    :roa: lingua románica
-    :rof: Rombo
-    :rom: Romany
-    :root: Root
-    :ru: ruso
-    :rup: Aromanian
-    :rw: ruandés
-    :rwk: Rwa
-    :sa: sánscrito
-    :sad: Sandawe
-    :sah: Sakha
-    :sai: lingua india sudamericana
-    :sal: Salishan Language
-    :sam: Samaritan Aramaic
-    :saq: Samburu
-    :sas: Sasak
-    :sat: Santali
-    :sba: Ngambay
-    :sbp: Sangu
-    :sc: Sardinian
-    :scn: Sicilian
-    :sco: Scots
-    :sd: sindhi
-    :se: sami do norte
-    :see: Seneca
-    :seh: Sena
-    :sel: Selkup
-    :sem: lingua semita
-    :ses: Koyraboro Senni
-    :sg: sango
-    :sga: Old Irish
-    :sgn: lingua de signos
-    :sh: serbocroata
-    :shi: Tachelhit
-    :shn: Shan
-    :shu: Chadian Arabic
-    :si: cingalés
-    :sid: Sidamo
-    :sio: Siouan Language
-    :sit: Sino-Tibetan Language
-    :sk: eslovaco
-    :sl: esloveno
-    :sla: lingua eslávica
-    :sm: samoano
-    :sma: Southern Sami
-    :smi: Sami Language
-    :smj: Lule Sami
-    :smn: Inari Sami
-    :sms: Skolt Sami
-    :sn: shona
-    :snk: Soninke
-    :so: somalí
-    :sog: Sogdien
-    :son: Songhai
-    :sq: albanés
-    :sr: serbio
-    :srn: Sranan Tongo
-    :srr: Serer
-    :ss: swati
-    :ssa: lingua do nilo-sáhara
-    :ssy: Saho
-    :st: sesoto
-    :su: sondanés
-    :suk: Sukuma
-    :sus: Susu
-    :sux: Sumerian
-    :sv: sueco
-    :sw: swahili
-    :swb: Comorian
-    :swc: Congo Swahili
-    :syc: Classical Syriac
-    :syr: Syriac
-    :ta: tamil
-    :tai: Tai Language
-    :te: telugu
-    :tem: Timne
-    :teo: Teso
-    :ter: Tereno
-    :tet: tetún
-    :tg: taxico
-    :th: tailandés
-    :ti: tigriña
-    :tig: Tigre
-    :tiv: Tiv
-    :tk: turcomano
-    :tkl: Tokelau
-    :tl: tagalo
-    :tlh: klingon
-    :tli: Tlingit
-    :tmh: Tamashek
-    :tn: tswana
-    :to: tonganés
-    :tog: Nyasa Tonga
-    :tpi: tok pisin
-    :tr: turco
-    :trv: Taroko
-    :ts: xitsonga
-    :tsi: Tsimshian
-    :tt: tártaro
-    :tum: tumbuka
-    :tup: Tupi Language
-    :tut: lingua altaica
-    :tvl: Tuvalu
-    :tw: Twi
-    :twq: Tasawaq
-    :ty: tahitiano
-    :tyv: Tuvinian
-    :tzm: Central Atlas Tamazight
-    :udm: Udmurt
-    :ug: uigur
-    :uga: Ugaritic
-    :uk: ucraíno
-    :umb: Umbundu
-    :und: lingua descoñecida ou non válida
-    :ur: urdú
-    :uz: uzbeco
-    :vai: Vai
-    :ve: venda
-    :vi: vietnamita
-    :vo: Volapük
-    :vot: Votic
-    :vun: Vunjo
-    :wa: Walloon
-    :wae: Walser
-    :wak: Wakashan Language
-    :wal: Wolaytta
-    :war: Waray
-    :was: Washo
-    :wen: Sorbian Language
-    :wo: wólof
-    :xal: Kalmyk
-    :xh: xhosa
-    :xog: Soga
-    :yao: Yao
-    :yap: Yapese
-    :yav: Yangben
-    :ybb: Yemba
-    :yi: yiddish
-    :yo: ioruba
-    :ypk: Yupik Language
-    :yue: Cantonese
-    :za: Zhuang
-    :zap: Zapotec
-    :zbl: Blissymbols
-    :zen: Zenaga
-    :zgh: tamazight de Marrocos estándar
-    :zh: chinés
-    :zh-Hans: chinés simplificado
-    :zh-Hant: chinés tradicional
-    :znd: Zande
-    :zu: zulú
-    :zun: Zuni
-    :zxx: sen contido lingüístico
-    :zza: Zaza
+--- 
+:gl: 
+  :languages: 
+    :aa: "Afar"
+    :ab: "abkhazo"
+    :ace: "Achinese"
+    :ach: "acoli"
+    :ada: "Adangme"
+    :ady: "Adyghe"
+    :ae: "Avestan"
+    :af: "afrikaans"
+    :afa: "lingua afro-asiática"
+    :afh: "Afrihili"
+    :agq: "Aghem"
+    :ain: "Ainu"
+    :ak: "akán"
+    :akk: "Akkadian"
+    :ale: "Aleut"
+    :alg: "lingua algonquina"
+    :alt: "Southern Altai"
+    :am: "amárico"
+    :an: "aragonés"
+    :ang: "Old English"
+    :anp: "Angika"
+    :apa: "lingua apache"
+    :ar: "árabe"
+    :ar-001: "árabe estándar moderno"
+    :arc: "arameo"
+    :arn: "Mapuche"
+    :arp: "Arapaho"
+    :art: "lingua artificial"
+    :arw: "Arawak"
+    :as: "assamés"
+    :asa: "Asu"
+    :ast: "asturiano"
+    :ath: "Athapascan Language"
+    :aus: "lingua australiana"
+    :av: "Avaric"
+    :awa: "Awadhi"
+    :ay: "aimará"
+    :az: "acerbaixano"
+    :ba: "Bashkir"
+    :bad: "Banda"
+    :bai: "Bamileke Language"
+    :bal: "Baluchi"
+    :ban: "Balinese"
+    :bas: "Basaa"
+    :bat: "lingua báltica"
+    :bax: "Bamun"
+    :bbj: "Ghomala"
+    :be: "bielorruso"
+    :bej: "Beja"
+    :bem: "bemba"
+    :ber: "Berber"
+    :bez: "Bena"
+    :bfd: "Bafut"
+    :bg: "búlgaro"
+    :bh: "bihari"
+    :bho: "Bhojpuri"
+    :bi: "Bislama"
+    :bik: "Bikol"
+    :bin: "Bini"
+    :bkm: "Kom"
+    :bla: "Siksika"
+    :bm: "Bambara"
+    :bn: "bengalí"
+    :bnt: "Bantu"
+    :bo: "tibetano"
+    :br: "bretón"
+    :bra: "Braj"
+    :brx: "Bodo"
+    :bs: "bosnio"
+    :bss: "Akoose"
+    :btk: "Batak"
+    :bua: "Buriat"
+    :bug: "Buginese"
+    :bum: "Bulu"
+    :byn: "Blin"
+    :byv: "Medumba"
+    :ca: "catalán"
+    :cad: "Caddo"
+    :cai: "lingua india centroamericana"
+    :car: "Carib"
+    :cau: "lingua caucásica"
+    :cay: "Cayuga"
+    :cch: "Atsam"
+    :ce: "Chechen"
+    :ceb: "Cebuano"
+    :cel: "lingua céltica"
+    :cgg: "Chiga"
+    :ch: "Chamorro"
+    :chb: "Chibcha"
+    :chg: "Chagatai"
+    :chk: "Chuukese"
+    :chm: "Mari"
+    :chn: "Chinook Jargon"
+    :cho: "Choctaw"
+    :chp: "Chipewyan"
+    :chr: "cheroqui"
+    :chy: "Cheyenne"
+    :ckb: "curdo soraní"
+    :cmc: "Chamic Language"
+    :co: "corso"
+    :cop: "Coptic"
+    :cpe: "English-based Creole or Pidgin"
+    :cpf: "French-based Creole or Pidgin"
+    :cpp: "Portuguese-based Creole or Pidgin"
+    :cr: "Cree"
+    :crh: "Crimean Turkish"
+    :crp: "Creole or Pidgin"
+    :cs: "checo"
+    :csb: "Kashubian"
+    :cu: "eslavo eclesiástico"
+    :cus: "Cushitic Language"
+    :cv: "Chuvash"
+    :cy: "galés"
+    :da: "dinamarqués"
+    :dak: "Dakota"
+    :dar: "Dargwa"
+    :dav: "Taita"
+    :day: "Dayak"
+    :de: "alemán"
+    :de-AT: "alemán de austria"
+    :de-CH: "alto alemán suízo"
+    :del: "Delaware"
+    :den: "Slave"
+    :dgr: "Dogrib"
+    :din: "Dinka"
+    :dje: "Zarma"
+    :doi: "Dogri"
+    :dra: "Dravidian Language"
+    :dsb: "Lower Sorbian"
+    :dua: "Duala"
+    :dum: "Middle Dutch"
+    :dv: "divehi"
+    :dyo: "Jola-Fonyi"
+    :dyu: "Dyula"
+    :dz: "dzongkha"
+    :dzg: "Dazaga"
+    :ebu: "Embu"
+    :ee: "ewé"
+    :efi: "ibibio"
+    :egy: "exipcio antigo"
+    :eka: "Ekajuk"
+    :el: "grego"
+    :elx: "Elamite"
+    :en: "inglés"
+    :en-AU: "inglés australiano"
+    :en-CA: "inglés canadiano"
+    :en-GB: "inglés R.U."
+    :en-US: "inglés EUA"
+    :enm: "Middle English"
+    :eo: "esperanto"
+    :es: "español"
+    :es-419: "español latinoamericano"
+    :es-ES: "castelán"
+    :es-MX: "español de México"
+    :et: "estoniano"
+    :eu: "éuscaro"
+    :ewo: "Ewondo"
+    :fa: "persa"
+    :fan: "Fang"
+    :fat: "Fanti"
+    :ff: "Fulah"
+    :fi: "finés"
+    :fil: "filipino"
+    :fiu: "lingua finno-úgrica"
+    :fj: "fixiano"
+    :fo: "faroés"
+    :fon: "Fon"
+    :fr: "francés"
+    :fr-CA: "francés canadiano"
+    :fr-CH: "francés suízo"
+    :frm: "Middle French"
+    :fro: "Old French"
+    :frr: "Northern Frisian"
+    :frs: "Eastern Frisian"
+    :fur: "Friulian"
+    :fy: "frisón"
+    :ga: "irlandés"
+    :gaa: "ga"
+    :gay: "Gayo"
+    :gba: "Gbaya"
+    :gd: "gaélico escocés"
+    :gem: "lingua xermánica"
+    :gez: "Geez"
+    :gil: "Gilbertese"
+    :gl: "galego"
+    :gmh: "Middle High German"
+    :gn: "guaraní"
+    :goh: "Old High German"
+    :gon: "Gondi"
+    :gor: "Gorontalo"
+    :got: "Gothic"
+    :grb: "Grebo"
+    :grc: "grego antigo"
+    :gsw: "alemán suízo"
+    :gu: "guxaratiano"
+    :guz: "Gusii"
+    :gv: "Manx"
+    :gwi: "Gwichʼin"
+    :ha: "hausa"
+    :hai: "Haida"
+    :haw: "hawaiano"
+    :he: "hebreo"
+    :hi: "hindi"
+    :hil: "Hiligaynon"
+    :him: "Himachali"
+    :hit: "Hittite"
+    :hmn: "Hmong"
+    :ho: "Hiri Motu"
+    :hr: "croata"
+    :hsb: "Upper Sorbian"
+    :ht: "haitiano"
+    :hu: "húngaro"
+    :hup: "Hupa"
+    :hy: "armenio"
+    :hz: "Herero"
+    :ia: "interlingua"
+    :iba: "Iban"
+    :ibb: "Ibibio"
+    :id: "indonesio"
+    :ie: "Interlingue"
+    :ig: "ibo"
+    :ii: "Sichuan Yi"
+    :ijo: "Ijo"
+    :ik: "Inupiaq"
+    :ilo: "Iloko"
+    :inc: "lingua índica"
+    :ine: "lingua indoeuropea"
+    :inh: "Ingush"
+    :io: "Ido"
+    :ira: "Iranian Language"
+    :iro: "Iroquoian Language"
+    :is: "islandés"
+    :it: "italiano"
+    :iu: "Inuktitut"
+    :ja: "xaponés"
+    :jbo: "Lojban"
+    :jgo: "Ngomba"
+    :jmc: "Machame"
+    :jpr: "Judeo-Persian"
+    :jrb: "Judeo-Arabic"
+    :jv: "xavanés"
+    :ka: "xeorxiano"
+    :kaa: "Kara-Kalpak"
+    :kab: "Kabyle"
+    :kac: "Kachin"
+    :kaj: "Jju"
+    :kam: "Kamba"
+    :kar: "Karen"
+    :kaw: "Kawi"
+    :kbd: "Kabardian"
+    :kbl: "Kanembu"
+    :kcg: "Tyap"
+    :kde: "Makonde"
+    :kea: "Kabuverdianu"
+    :kfo: "Koro"
+    :kg: "kongo"
+    :kha: "Khasi"
+    :khi: "Khoisan Language"
+    :kho: "Khotanese"
+    :khq: "Koyra Chiini"
+    :ki: "Kikuyu"
+    :kj: "Kuanyama"
+    :kk: "casaco"
+    :kkj: "Kako"
+    :kl: "Kalaallisut"
+    :kln: "Kalenjin"
+    :km: "cambodiano"
+    :kmb: "Kimbundu"
+    :kn: "kannada"
+    :ko: "coreano"
+    :kok: "Konkani"
+    :kos: "Kosraean"
+    :kpe: "Kpelle"
+    :kr: "Kanuri"
+    :krc: "Karachay-Balkar"
+    :krl: "Karelian"
+    :kro: "Kru"
+    :kru: "Kurukh"
+    :ks: "cachemir"
+    :ksb: "Shambala"
+    :ksf: "Bafia"
+    :ksh: "Colognian"
+    :ku: "kurdo"
+    :kum: "Kumyk"
+    :kut: "Kutenai"
+    :kv: "Komi"
+    :kw: "Cornish"
+    :ky: "quirguiz"
+    :la: "latín"
+    :lad: "Ladino"
+    :lag: "Langi"
+    :lah: "Lahnda"
+    :lam: "Lamba"
+    :lb: "luxemburgués"
+    :lez: "Lezghian"
+    :lg: "ganda"
+    :li: "Limburgish"
+    :lkt: "Lakota"
+    :ln: "lingala"
+    :lo: "laotiano"
+    :lol: "Mongo"
+    :loz: "lozi"
+    :lt: "lituano"
+    :lu: "Luba-Katanga"
+    :lua: "luba-lulua"
+    :lui: "Luiseno"
+    :lun: "Lunda"
+    :luo: "Luo"
+    :lus: "Mizo"
+    :luy: "Luyia"
+    :lv: "letón"
+    :mad: "Madurese"
+    :maf: "Mafa"
+    :mag: "Magahi"
+    :mai: "Maithili"
+    :mak: "Makasar"
+    :man: "Mandingo"
+    :map: "Austronesian Language"
+    :mas: "Masai"
+    :mde: "Maba"
+    :mdf: "Moksha"
+    :mdr: "Mandar"
+    :men: "Mende"
+    :mer: "Meru"
+    :mfe: "crioulo mauritano"
+    :mg: "malgaxe"
+    :mga: "Middle Irish"
+    :mgh: "Makhuwa-Meetto"
+    :mgo: "Meta'"
+    :mh: "Marshallese"
+    :mi: "maorí"
+    :mic: "Micmac"
+    :min: "Minangkabau"
+    :mis: "lingua miscelánea"
+    :mk: "macedonio"
+    :mkh: "Mon-Khmer Language"
+    :ml: "malabar"
+    :mn: "mongol"
+    :mnc: "Manchu"
+    :mni: "Manipuri"
+    :mno: "Manobo Language"
+    :mo: "Moldavian"
+    :moh: "Mohawk"
+    :mos: "Mossi"
+    :mr: "marathi"
+    :ms: "malaio"
+    :mt: "maltés"
+    :mua: "Mundang"
+    :mul: "varias linguas"
+    :mun: "Munda Language"
+    :mus: "Creek"
+    :mwl: "Mirandese"
+    :mwr: "Marwari"
+    :my: "birmano"
+    :mye: "Myene"
+    :myn: "Mayan Language"
+    :myv: "Erzya"
+    :na: "Nauru"
+    :nah: "Nahuatl"
+    :nai: "lingua india norteamericana"
+    :nap: "Neapolitan"
+    :naq: "Nama"
+    :nb: "noruegués bokmal"
+    :nd: "ndebele do norte"
+    :nds: "Low German"
+    :ne: "nepalí"
+    :new: "Newari"
+    :ng: "Ndonga"
+    :nia: "Nias"
+    :nic: "Niger-Kordofanian Language"
+    :niu: "Niuean"
+    :nl: "holandés"
+    :nl-BE: "flamenco"
+    :nmg: "Kwasio"
+    :nn: "noruegués nynorsk"
+    :nnh: "Ngiemboon"
+    ? !ruby/symbol "no"
+    : "noruegués"
+    :nog: "Nogai"
+    :non: "Old Norse"
+    :nqo: "N’Ko"
+    :nr: "South Ndebele"
+    :nso: "sesotho sa leboa"
+    :nub: "lingua nubia"
+    :nus: "Nuer"
+    :nv: "Navajo"
+    :nwc: "Classical Newari"
+    :ny: "chewa"
+    :nym: "Nyamwezi"
+    :nyn: "nyankole"
+    :nyo: "Nyoro"
+    :nzi: "Nzima"
+    :oc: "occitano"
+    :oj: "Ojibwa"
+    :om: "oromo"
+    :or: "oriya"
+    :os: "osetio"
+    :osa: "Osage"
+    :ota: "Ottoman Turkish"
+    :oto: "Otomian Language"
+    :pa: "punjabi"
+    :paa: "Papuan Language"
+    :pag: "Pangasinan"
+    :pal: "Pahlavi"
+    :pam: "Pampanga"
+    :pap: "Papiamento"
+    :pau: "Palauan"
+    :peo: "Old Persian"
+    :phi: "lingua filipina"
+    :phn: "Phoenician"
+    :pi: "Pali"
+    :pl: "polaco"
+    :pon: "Pohnpeian"
+    :pra: "Prakrit Language"
+    :pro: "Old Provençal"
+    :ps: "paxtún"
+    :pt: "portugués"
+    :pt-BR: "portugués brasileiro"
+    :pt-PT: "portugués europeo"
+    :qu: "quechua"
+    :raj: "Rajasthani"
+    :rap: "Rapanui"
+    :rar: "Rarotongan"
+    :rm: "romanche"
+    :rn: "rundi"
+    :ro: "romanés"
+    :roa: "lingua románica"
+    :rof: "Rombo"
+    :rom: "Romany"
+    :root: "Root"
+    :ru: "ruso"
+    :rup: "Aromanian"
+    :rw: "ruandés"
+    :rwk: "Rwa"
+    :sa: "sánscrito"
+    :sad: "Sandawe"
+    :sah: "Sakha"
+    :sai: "lingua india sudamericana"
+    :sal: "Salishan Language"
+    :sam: "Samaritan Aramaic"
+    :saq: "Samburu"
+    :sas: "Sasak"
+    :sat: "Santali"
+    :sba: "Ngambay"
+    :sbp: "Sangu"
+    :sc: "Sardinian"
+    :scn: "Sicilian"
+    :sco: "Scots"
+    :sd: "sindhi"
+    :se: "sami do norte"
+    :see: "Seneca"
+    :seh: "Sena"
+    :sel: "Selkup"
+    :sem: "lingua semita"
+    :ses: "Koyraboro Senni"
+    :sg: "sango"
+    :sga: "Old Irish"
+    :sgn: "lingua de signos"
+    :sh: "serbocroata"
+    :shi: "Tachelhit"
+    :shn: "Shan"
+    :shu: "Chadian Arabic"
+    :si: "cingalés"
+    :sid: "Sidamo"
+    :sio: "Siouan Language"
+    :sit: "Sino-Tibetan Language"
+    :sk: "eslovaco"
+    :sl: "esloveno"
+    :sla: "lingua eslávica"
+    :sm: "samoano"
+    :sma: "Southern Sami"
+    :smi: "Sami Language"
+    :smj: "Lule Sami"
+    :smn: "Inari Sami"
+    :sms: "Skolt Sami"
+    :sn: "shona"
+    :snk: "Soninke"
+    :so: "somalí"
+    :sog: "Sogdien"
+    :son: "Songhai"
+    :sq: "albanés"
+    :sr: "serbio"
+    :srn: "Sranan Tongo"
+    :srr: "Serer"
+    :ss: "swati"
+    :ssa: "lingua do nilo-sáhara"
+    :ssy: "Saho"
+    :st: "sesoto"
+    :su: "sondanés"
+    :suk: "Sukuma"
+    :sus: "Susu"
+    :sux: "Sumerian"
+    :sv: "sueco"
+    :sw: "swahili"
+    :swb: "Comorian"
+    :swc: "Congo Swahili"
+    :syc: "Classical Syriac"
+    :syr: "Syriac"
+    :ta: "tamil"
+    :tai: "Tai Language"
+    :te: "telugu"
+    :tem: "Timne"
+    :teo: "Teso"
+    :ter: "Tereno"
+    :tet: "tetún"
+    :tg: "taxico"
+    :th: "tailandés"
+    :ti: "tigriña"
+    :tig: "Tigre"
+    :tiv: "Tiv"
+    :tk: "turcomano"
+    :tkl: "Tokelau"
+    :tl: "tagalo"
+    :tlh: "klingon"
+    :tli: "Tlingit"
+    :tmh: "Tamashek"
+    :tn: "tswana"
+    :to: "tonganés"
+    :tog: "Nyasa Tonga"
+    :tpi: "tok pisin"
+    :tr: "turco"
+    :trv: "Taroko"
+    :ts: "xitsonga"
+    :tsi: "Tsimshian"
+    :tt: "tártaro"
+    :tum: "tumbuka"
+    :tup: "Tupi Language"
+    :tut: "lingua altaica"
+    :tvl: "Tuvalu"
+    :tw: "Twi"
+    :twq: "Tasawaq"
+    :ty: "tahitiano"
+    :tyv: "Tuvinian"
+    :tzm: "Central Atlas Tamazight"
+    :udm: "Udmurt"
+    :ug: "uigur"
+    :uga: "Ugaritic"
+    :uk: "ucraíno"
+    :umb: "Umbundu"
+    :und: "lingua descoñecida ou non válida"
+    :ur: "urdú"
+    :uz: "uzbeco"
+    :vai: "Vai"
+    :ve: "venda"
+    :vi: "vietnamita"
+    :vo: "Volapük"
+    :vot: "Votic"
+    :vun: "Vunjo"
+    :wa: "Walloon"
+    :wae: "Walser"
+    :wak: "Wakashan Language"
+    :wal: "Wolaytta"
+    :war: "Waray"
+    :was: "Washo"
+    :wen: "Sorbian Language"
+    :wo: "wólof"
+    :xal: "Kalmyk"
+    :xh: "xhosa"
+    :xog: "Soga"
+    :yao: "Yao"
+    :yap: "Yapese"
+    :yav: "Yangben"
+    :ybb: "Yemba"
+    :yi: "yiddish"
+    :yo: "ioruba"
+    :ypk: "Yupik Language"
+    :yue: "Cantonese"
+    :za: "Zhuang"
+    :zap: "Zapotec"
+    :zbl: "Blissymbols"
+    :zen: "Zenaga"
+    :zgh: "tamazight de Marrocos estándar"
+    :zh: "chinés"
+    :zh-Hans: "chinés simplificado"
+    :zh-Hant: "chinés tradicional"
+    :znd: "Zande"
+    :zu: "zulú"
+    :zun: "Zuni"
+    :zxx: "sen contido lingüístico"
+    :zza: "Zaza"

@@ -1,6 +1,6 @@
 ---
-:ar: '{ :''ar'' => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few, :many,
-  :other], :rule => lambda { |n| n.to_f == 0 ? :zero : n.to_f == 1 ? :one : n.to_f
-  == 2 ? :two : (((n.to_f % 100) % 1).zero? && (3..10).include?(n.to_f % 100)) ? :few
-  : (((n.to_f % 100) % 1).zero? && (11..99).include?(n.to_f % 100)) ? :many : :other
-  } } } } }'
+:ar: ! '{ :''ar'' => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few,
+  :many, :other], :rule => lambda { |n| n.to_f.abs == 0 ? :zero : n.to_f.abs == 1
+  ? :one : n.to_f.abs == 2 ? :two : (((n.to_f.abs % 100) % 1).zero? && (3..10).include?(n.to_f.abs
+  % 100)) ? :few : (((n.to_f.abs % 100) % 1).zero? && (11..99).include?(n.to_f.abs
+  % 100)) ? :many : :other } } } } }'

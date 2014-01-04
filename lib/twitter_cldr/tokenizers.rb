@@ -15,6 +15,5 @@ module TwitterCldr
     autoload :TimeTokenizer,                'twitter_cldr/tokenizers/calendars/time_tokenizer'
     autoload :NumberTokenizer,              'twitter_cldr/tokenizers/numbers/number_tokenizer'
     autoload :TimespanTokenizer,            'twitter_cldr/tokenizers/calendars/timespan_tokenizer'
-    autoload :AdditionalDateFormatSelector, 'twitter_cldr/tokenizers/calendars/additional_date_format_selector'
   end
 end

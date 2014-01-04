@@ -120,20 +120,20 @@ Besides the default date formats, CLDR supports a number of additional ones.  Th
 
 ```ruby
 # ["EEEEd", "Ed", "GGGGyMd", "H", "Hm", "Hms", "M", "MEd", "MMM", "MMMEEEEd", "MMMEd", ... ]
-TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja)
+DateTime.now.localize(:ja).additional_formats
 ```
 
-You can use any of the returned formats as the `:format` option when creating new instances of `LocalizedDateTime` or `DateTimeFormatter`:
+You can use any of the returned formats as the argument to the `to_additional_s` method:
 
 ```ruby
 # 2011/12/12 21:44:57
-DateTime.now.localize(:ja).to_s
+DateTime.now.localize(:ja).to_additional_s
 
 # 12日月曜日
-DateTime.now.localize(:ja).to_s(:format => "EEEEd")
+DateTime.now.localize(:ja).to_additional_s("EEEEd")
 ```
 
-It's important to know that, even though a format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
+It's important to know that, even though any given format may not be available across locales, TwitterCLDR will do it's best to approximate if no exact match can be found.
 
 ##### List of additional date format examples for English:
 

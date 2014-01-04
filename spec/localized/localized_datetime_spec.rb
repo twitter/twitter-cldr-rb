@@ -77,15 +77,14 @@ describe LocalizedDateTime do
       end
     end
 
-    it "don't raise errors for additional date formats" # do
-    #       TwitterCldr.supported_locales.each do |locale|
-    #         fmt = TwitterCldr::Formatters::DateTimeFormatter.new(:locale => locale)
-    #         fmt.additional_format_selector.patterns.each do |pattern|
-    #           lambda { fmt.format(date_time, :type => :additional, :format => pattern.to_s) }.should_not raise_error
-    #           lambda { date_time.localize(locale).to_s(:format => pattern.to_s) }.should_not raise_error
-    #         end
-    #       end
-    #     end
+    it "don't raise errors for additional date formats" do
+      TwitterCldr.supported_locales.each do |locale|
+        data_reader = CalendarDataReader.new(locale)
+        data_reader.additional_format_selector.patterns.each do |pattern|
+          lambda { date_time.localize(locale).to_additional_s(pattern.to_s) }.should_not raise_error
+        end
+      end
+    end
   end
 
   describe "#to_s" do
@@ -94,12 +93,6 @@ describe LocalizedDateTime do
       mock.proxy(loc_date).to_default_s
       loc_date.to_s.should == "Sep 20, 1987, 10:05:00 PM"
     end
-
-    it "uses the given format instead of the default when specified" # do
-    #       loc_date = date_time.localize
-    #       mock.proxy(loc_date).to_default_s.never
-    #       date_time.localize.to_s(:format => "MMMd").should == "Sep 20"
-    #     end
   end
 
   describe "#with_timezone" do

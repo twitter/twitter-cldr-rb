@@ -23,21 +23,32 @@ module TwitterCldr
         end
       end
 
-      attr_reader :calendar_type, :type
+      attr_reader :calendar_type, :type, :additional_format
 
       def initialize(locale, options = {})
         super(locale)
         @calendar_type = options[:calendar_type] || TwitterCldr::DEFAULT_CALENDAR_TYPE
         @type = options[:type] || type || :default
         @type = DEFAULT_TYPE if type == :default
+        @additional_format = options[:additional_format]
       end
 
       def pattern
-        traverse(path_for(type, calendar_type) + TYPE_PATHS[type])
+        if type == :additional
+          additional_format_selector.find_closest(additional_format)
+        else
+          traverse(path_for(type, calendar_type) + TYPE_PATHS[type])
+        end
       end
 
       def calendar
         resource[:calendars][calendar_type]
+      end
+
+      def additional_format_selector
+        @format_selector ||= AdditionalDateFormatSelector.new(
+          traverse([:calendars, calendar_type, :additional_formats])
+        )
       end
 
       protected

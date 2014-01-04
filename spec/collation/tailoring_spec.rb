@@ -22,7 +22,7 @@ describe 'Unicode collation tailoring' do
         print "#{locale}\t-\t"
 
         lines = File.open(File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")) do |file|
-          file.lines.map(&:strip)
+          file.each_line.map(&:strip)
         end
 
         active_tests  = lines.count(&method(:tailoring_test?))

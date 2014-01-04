@@ -45,7 +45,6 @@ describe NumberTokenizer do
     it "correctly parses prefixes (i.e. English (American) currency)" do
       data_reader = NumberDataReader.new(:en, :type => :currency)
       got = data_reader.tokenizer.tokenize(data_reader.pattern(number))
-      puts got.inspect
       expected = [
         { :value => "¤", :type => :plaintext },
         { :value => "#,##0.00", :type => :pattern }

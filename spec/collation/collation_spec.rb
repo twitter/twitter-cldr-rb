@@ -6,7 +6,6 @@
 require 'spec_helper'
 
 require 'open-uri'
-require 'zip'
 
 include TwitterCldr::Collation
 
@@ -71,6 +70,8 @@ END
   #
   def prepare_full_test
     return if File.file?(FULL_COLLATION_TEST_PATH)
+
+    require 'zip'
 
     print '  Downloading CollationAuxillary.zip ... '
     zip_file = Tempfile.new('CollationAuxillary.zip')

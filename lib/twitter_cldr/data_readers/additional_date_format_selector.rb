@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Tokenizers
+  module DataReaders
     class AdditionalDateFormatSelector
       attr_reader :pattern_hash
 
@@ -18,17 +18,19 @@ module TwitterCldr
         else
           cache_key = TwitterCldr::Utils.compute_cache_key(goal_pattern)
           pattern_cache[cache_key] ||= if @pattern_hash.include?(goal_pattern.to_sym)
-            goal_pattern
+            goal_pattern.to_sym
           else
             rank(goal_pattern).min do |(p1, score1), (p2, score2)|
               score1 <=> score2
-            end.first
+            end.first.to_sym
           end
+
+          @pattern_hash[pattern_cache[cache_key]]
         end
       end
 
       def patterns
-        @pattern_hash.keys
+        @pattern_hash.keys.map(&:to_s)
       end
 
       protected

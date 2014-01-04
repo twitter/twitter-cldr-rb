@@ -34,6 +34,15 @@ module TwitterCldr
         end
       end
 
+      def to_additional_s(additional_format)
+        data_reader = data_reader_for(:additional, {
+          :additional_format => additional_format
+        })
+
+        tokens = data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        data_reader.formatter.format(tokens, base_in_timezone)
+      end
+
       alias :to_default_s :to_medium_s
 
       def to_timespan(options = {})
@@ -56,12 +65,12 @@ module TwitterCldr
         TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
       end
 
-      def to_s(options = {})
-        if options[:format]
-          @formatter.format(base_in_timezone, options.merge(:type => :additional))
-        else
-          to_default_s
-        end
+      def additional_formats
+        data_reader_for(nil).additional_format_selector.patterns
+      end
+
+      def to_s
+        to_default_s
       end
 
       def to_date
@@ -90,11 +99,11 @@ module TwitterCldr
 
       protected
 
-      def data_reader_for(type)
-        DateTimeDataReader.new(locale, {
+      def data_reader_for(type, options = {})
+        DateTimeDataReader.new(locale, options.merge({
           :calendar_type => calendar_type,
           :type => type
-        })
+        }))
       end
 
       def chain_params

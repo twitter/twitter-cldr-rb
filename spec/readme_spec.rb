@@ -79,12 +79,13 @@ describe "README" do
     dt.to_short_s.should == "12/12/11 21:44"
   end
 
-  it "verifies additional date formats" # do
-  #     date_time = DateTime.new(2011, 12, 12, 21, 44, 57, 0.0)
-  #     TwitterCldr::Formatters::DateTimeFormatter.additional_formats_for(:ja).should be_a(Array)
-  #     date_time.localize(:ja).to_s.should == "2011/12/12 21:44:57"
-  #     date_time.localize(:ja).to_s(:format => "EEEEd").should == "12日月曜日"
-  #   end
+  it "verifies additional date formats" do
+    date_time = DateTime.new(2011, 12, 12, 21, 44, 57, 0.0)
+    loc_date = date_time.localize(:ja)
+    loc_date.additional_formats.should be_a(Array)
+    loc_date.to_s.should == "2011/12/12 21:44:57"
+    loc_date.to_additional_s("EEEEd").should == "12日月曜日"
+  end
 
   it "verifies relative time spans" do
     (DateTime.now - 1).localize.ago.to_s.should match_normalized("1 day ago")

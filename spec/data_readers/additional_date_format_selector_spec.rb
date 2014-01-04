@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Tokenizers
+include TwitterCldr::DataReaders
 
 describe AdditionalDateFormatSelector do
   let(:selector) do
@@ -90,16 +90,16 @@ describe AdditionalDateFormatSelector do
 
   describe "#find_closest" do
     it "returns an exact match if it exists" do
-      selector.find_closest("h").should == "h"
-      selector.find_closest("MMMd").should == "MMMd"
-      selector.find_closest("Hms").should == "Hms"
-      selector.find_closest("yQQQQ").should == "yQQQQ"
+      selector.find_closest("h").should == selector.pattern_hash[:h]
+      selector.find_closest("MMMd").should == selector.pattern_hash[:MMMd]
+      selector.find_closest("Hms").should == selector.pattern_hash[:Hms]
+      selector.find_closest("yQQQQ").should == selector.pattern_hash[:yQQQQ]
     end
 
     it "returns the next closest match (lowest score) if an exact match can't be found" do
-      selector.find_closest("MMMMd").should == "MMMd"
-      selector.find_closest("mHs").should == "Hms"
-      selector.find_closest("Med").should == "MEd"
+      selector.find_closest("MMMMd").should == selector.pattern_hash[:MMMd]
+      selector.find_closest("mHs").should == selector.pattern_hash[:Hms]
+      selector.find_closest("Med").should == selector.pattern_hash[:MEd]
     end
 
     it "returns nil if an empty pattern is given" do
@@ -121,11 +121,11 @@ describe AdditionalDateFormatSelector do
     it "returns a list of all available patterns" do
       patterns = selector.patterns
       patterns.should be_a(Array)
-      patterns.should include(:MMMd)
-      patterns.should include(:yQQQ)
-      patterns.should include(:yQQQQ)
-      patterns.should include(:EHms)
-      patterns.should include(:d)
+      patterns.should include("MMMd")
+      patterns.should include("yQQQ")
+      patterns.should include("yQQQQ")
+      patterns.should include("EHms")
+      patterns.should include("d")
     end
   end
 

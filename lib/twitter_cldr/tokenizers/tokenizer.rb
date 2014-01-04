@@ -16,6 +16,25 @@ module TwitterCldr
 
       attr_reader :splitter, :recognizers
 
+      def self.union(*tokenizers)
+        recognizers = tokenizers.inject([]) do |ret, tokenizer|
+          ret + tokenizer.recognizers.inject([]) do |recog_ret, recognizer|
+            if (block_given? && yield(recognizer)) || !block_given?
+              recog_ret << recognizer
+            end
+            recog_ret
+          end
+        end
+
+        splitter = Regexp.compile(
+          tokenizers.map do |tokenizer|
+            tokenizer.splitter.source
+          end.join("|")
+        )
+
+        new(splitter, recognizers)
+      end
+
       def initialize(splitter, recognizers)
         @splitter = splitter
         @recognizers = recognizers

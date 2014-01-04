@@ -42,12 +42,4 @@ describe DateTimeTokenizer do
       check_token_list(got, expected)
     end
   end
-
-  describe "#pattern_for" do
-    it "returns the closest matching pattern if this tokenizer has been set up to handle additional date formats" # do
-     #      tokenizer.instance_variable_set(:'@type', :additional)
-     #      tokenizer.instance_variable_set(:'@format', "MMMd")
-     #      tokenizer.send(:pattern_for, { :MMMd => "found me!" }).should == "found me!"
-     #    end
-  end
 end

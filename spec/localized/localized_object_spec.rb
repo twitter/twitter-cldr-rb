@@ -41,11 +41,6 @@ describe LocalizedObject do
       LocalizedClass.new(base_object, :foobar).locale.should == TwitterCldr::DEFAULT_LOCALE
     end
 
-    it 'passes options (including locale) to formatter' do
-      mock(LocalizedFormatter).new(options.merge(:locale => locale))
-      LocalizedClass.new(base_object, locale, options)
-    end
-
     it "doesn't change original options hash" do
       lambda { LocalizedClass.new(base_object, locale, options) }.should_not change { options }
     end

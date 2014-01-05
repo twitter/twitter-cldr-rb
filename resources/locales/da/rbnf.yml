@@ -1,0 +1,194 @@
+--- 
+:da: 
+  :rbnf: 
+    :grouping: 
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,###0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 0
+              - 
+                :radix: 100
+                :rule: "<<­hundred[ og >>];"
+                :value: 1100
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 10000
+            :type: "spellout-numbering-year"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 0
+            :type: "spellout-numbering"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< komma >>;"
+                :value: "x.x"
+              - 
+                :rule: "nul;"
+                :value: 0
+              - 
+                :rule: "et;"
+                :value: 1
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 2
+            :type: "spellout-cardinal-neuter"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 0
+            :type: "spellout-cardinal-masculine"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 0
+            :type: "spellout-cardinal-feminine"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< komma >>;"
+                :value: "x.x"
+              - 
+                :rule: "nul;"
+                :value: 0
+              - 
+                :rule: "en;"
+                :value: 1
+              - 
+                :rule: "to;"
+                :value: 2
+              - 
+                :rule: "tre;"
+                :value: 3
+              - 
+                :rule: "fire;"
+                :value: 4
+              - 
+                :rule: "fem;"
+                :value: 5
+              - 
+                :rule: "seks;"
+                :value: 6
+              - 
+                :rule: "syv;"
+                :value: 7
+              - 
+                :rule: "otte;"
+                :value: 8
+              - 
+                :rule: "ni;"
+                :value: 9
+              - 
+                :rule: "ti;"
+                :value: 10
+              - 
+                :rule: "elve;"
+                :value: 11
+              - 
+                :rule: "tolv;"
+                :value: 12
+              - 
+                :rule: "tretten;"
+                :value: 13
+              - 
+                :rule: "fjorten;"
+                :value: 14
+              - 
+                :rule: "femten;"
+                :value: 15
+              - 
+                :rule: "seksten;"
+                :value: 16
+              - 
+                :rule: "sytten;"
+                :value: 17
+              - 
+                :rule: "atten;"
+                :value: 18
+              - 
+                :rule: "nitten;"
+                :value: 19
+              - 
+                :rule: "[>>­og­]tyve;"
+                :value: 20
+              - 
+                :rule: "[>>­og­]tredive;"
+                :value: 30
+              - 
+                :rule: "[>>­og­]fyrre;"
+                :value: 40
+              - 
+                :rule: "[>>­og­]halvtreds;"
+                :value: 50
+              - 
+                :rule: "[>>­og­]tres;"
+                :value: 60
+              - 
+                :rule: "[>>­og­]halvfjerds;"
+                :value: 70
+              - 
+                :rule: "[>>­og­]firs;"
+                :value: 80
+              - 
+                :rule: "[>>­og­]halvfems;"
+                :value: 90
+              - 
+                :rule: "et­hundrede[ og >>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-neuter<­hundred[ og >>];"
+                :value: 200
+              - 
+                :rule: "et tusinde[ og >>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-neuter< tusind[ og >>];"
+                :value: 2000
+              - 
+                :rule: "en million[ og >>];"
+                :value: 1000000
+              - 
+                :rule: "<< millioner[ og >>];"
+                :value: 2000000
+              - 
+                :rule: "en milliard[ og >>];"
+                :value: 1000000000
+              - 
+                :rule: "<< milliarder[ og >>];"
+                :value: 2000000000
+              - 
+                :rule: "en billion[ og >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<< billioner[ og >>];"
+                :value: 2000000000000
+              - 
+                :rule: "en billiard[ og >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<< billiarder[ og >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-reale"
+        :type: "SpelloutRules"

@@ -18,12 +18,12 @@ module TwitterCldr
         options = options.dup
         options[:locale] = @locale
 
-        @formatter = formatter_const.new(options) if formatter_const
+        # @formatter = formatter_const.new(options) if formatter_const
       end
 
-      def formatter_const
-        raise NotImplementedError
-      end
+      # def formatter_const
+      #   raise NotImplementedError
+      # end
 
       def self.localize(klass)
         klass.class_eval <<-LOCALIZE, __FILE__, __LINE__ + 1

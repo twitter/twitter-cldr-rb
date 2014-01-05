@@ -3,13 +3,11 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'cldr/download'
-
 module TwitterCldr
   module Resources
 
-    CLDR_URL = 'http://unicode.org/Public/cldr/23.1/core.zip'
-    ICU4J_URL = 'http://download.icu-project.org/files/icu4j/51.2/icu4j-51_2.jar'
+    CLDR_URL = 'http://unicode.org/Public/cldr/24/core.zip'
+    ICU4J_URL = 'http://download.icu-project.org/files/icu4j/52.1/icu4j-52_1.jar'
 
     class << self
 
@@ -29,6 +27,14 @@ module TwitterCldr
         if File.directory?(path)
           puts "Using CLDR data from '#{path}'."
         else
+          begin
+            require 'zip'
+          rescue LoadError
+            raise StandardError.new("Unable to require 'zip'. Please switch to at least Ruby 1.9, then rebundle and try again.")
+          end
+
+          require 'cldr/download'
+
           puts "Downloading CLDR data from '#{url}' to '#{path}'."
           Cldr.download(url, path)
         end

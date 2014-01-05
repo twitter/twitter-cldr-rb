@@ -10,10 +10,9 @@ require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
-    # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version 49.1 (available at
-    # http://download.icu-project.org/files/icu4j/49.1/icu4j-49_1.jar).
+    # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version >= 49.1.
     #
-    class TailoringImporter
+    class TailoringImporter < IcuBasedImporter
 
       SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
       SIMPLE_RULES      = %w[p s t i]
@@ -59,11 +58,6 @@ module TwitterCldr
       end
 
       private
-
-      def require_icu4j(icu4j_path)
-        TwitterCldr::Resources.download_icu4j_if_necessary(icu4j_path)
-        require icu4j_path
-      end
 
       def import_locale(locale)
         print "Importing %8s\t--\t" % locale

@@ -13,29 +13,17 @@ describe LocalizedNumber do
     let(:decimal)  { LocalizedNumber.new(10, :en) }
     let(:currency) { LocalizedNumber.new(10, :en, :type => :currency) }
 
-    it 'uses :decimal type by default' do
-      decimal.type.should == :decimal
-    end
-
-    it 'setups DecimalFormatter by default' do
-      decimal.formatter.should be_an_instance_of(TwitterCldr::Formatters::DecimalFormatter)
+    it 'uses nil type by default (defers decision to data reader)' do
+      decimal.type.should == nil
     end
 
     it 'uses provided type if there is one' do
       currency.type.should == :currency
     end
 
-    it 'setups formatter corresponding to the specified type' do
-      currency.formatter.should be_an_instance_of(TwitterCldr::Formatters::CurrencyFormatter)
-    end
-
-    it 'setups formatter with correct locale' do
-      mock.proxy(TwitterCldr::Formatters::DecimalFormatter).new(:locale => :es)
-      LocalizedNumber.new(10, :es)
-    end
-
-    it 'raises ArguemntError if unsupported type is passed' do
-      lambda { LocalizedNumber.new(10, :en, :type => :foo) }.should raise_error(ArgumentError, 'type foo is not supported')
+    it 'sets up object with correct locale, falls back to default locale' do
+      LocalizedNumber.new(10, :es).locale.should == :es
+      LocalizedNumber.new(10, :blarg).locale.should == TwitterCldr::DEFAULT_LOCALE
     end
   end
 
@@ -43,7 +31,7 @@ describe LocalizedNumber do
     let(:number)   { LocalizedNumber.new(10, :en) }
     let(:currency) { LocalizedNumber.new(10, :en, :type => :currency) }
 
-    LocalizedNumber::TYPES.each do |type|
+    LocalizedNumber.types.each do |type|
       describe "#to_#{type}" do
         let(:method) { "to_#{type}" }
 
@@ -51,7 +39,7 @@ describe LocalizedNumber do
           number.send(method).object_id.should_not == number.object_id
         end
 
-        it 'creates an object of appropriate type, but does not change the type of the original object' do
+        it 'creates an object of the appropriate type, but does not change the type of the original object' do
           new_number = currency.send(method)
           new_number.type.should == type
           currency.type.should == :currency
@@ -59,24 +47,29 @@ describe LocalizedNumber do
 
         it 'creates a new object with the same base object and locale' do
           percent = LocalizedNumber.new(42, :fr, :type => :percent)
-          mock.proxy(TwitterCldr::Localized::LocalizedNumber).new(42, :fr, :type => type)
-          percent.send(method)
+          new_percent = percent.send(method)
+          new_percent.locale.should == :fr
+          new_percent.base_obj.should == 42
         end
       end
     end
   end
 
   describe '#to_s' do
+    it 'raises ArguemntError if unsupported type is passed' do
+      lambda do
+        LocalizedNumber.new(10, :en, :type => :foo).to_s
+      end.should raise_error(ArgumentError, 'Type foo is not supported')
+    end
+
     context 'decimals' do
       let(:number) { LocalizedNumber.new(10, :en) }
 
       it 'should default precision to zero' do
-        mock.proxy(number.formatter).format(number.base_obj, { :type => :decimal })
         number.to_s.should == "10"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 2, :type => :decimal)
         number.to_s(:precision => 2).should == "10.00"
       end
     end
@@ -85,12 +78,10 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(10, :en, :type => :currency) }
 
       it "should default to a precision of 2" do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 2, :type => :currency)
         number.to_s(:precision => 2).should == "$10.00"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :currency)
         number.to_s(:precision => 1).should == "$10.0"
       end
     end
@@ -99,12 +90,10 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(10, :en, :type => :percent) }
 
       it "should default to a precision of 0" do
-        mock.proxy(number.formatter).format(number.base_obj, { :type => :percent })
         number.to_s.should == "10%"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :percent)
         number.to_s(:precision => 1).should == "10.0%"
       end
     end
@@ -113,12 +102,10 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(1000, :en, :type => :short_decimal) }
 
       it "should default to a precision of 0" do
-        mock.proxy(number.formatter).format(number.base_obj, { :type => :short_decimal })
         number.to_s.should == "1K"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :short_decimal)
         number.to_s(:precision => 1).should == "1.0K"
       end
     end
@@ -127,12 +114,10 @@ describe LocalizedNumber do
       let(:number) { LocalizedNumber.new(1000, :en, :type => :long_decimal) }
 
       it "should default to a precision of 0" do
-        mock.proxy(number.formatter).format(number.base_obj, { :type => :long_decimal })
         number.to_s.should == "1 thousand"
       end
 
       it 'should not overwrite precision when explicitly passed' do
-        mock.proxy(number.formatter).format(number.base_obj, :precision => 1, :type => :long_decimal)
         number.to_s(:precision => 1).should == "1.0 thousand"
       end
     end
@@ -141,7 +126,7 @@ describe LocalizedNumber do
   describe '#plural_rule' do
     it 'returns the appropriate plural rule for the number' do
       1.localize(:ru).plural_rule.should == :one
-      2.localize(:ru).plural_rule.should == :few
+      2.localize(:ru).plural_rule.should == :other
       5.localize(:ru).plural_rule.should == :many
     end
 

@@ -14,6 +14,7 @@ describe Calendar do
   before(:each) do
     # clear cache for each test
     Calendar.send(:class_variable_set, :@@calendar_cache, {})
+    Calendar.send(:class_variable_set, :@@field_cache, {})
   end
 
   describe '#initialize' do
@@ -189,15 +190,15 @@ describe Calendar do
   describe '#eras' do
     it 'returns default eras' do
       calendar.eras.should == {
-        0 => "v. Chr.",
-        1 => "n. Chr."
+        0 => "vor der gewöhnlichen Zeitrechnung",
+        1 => "der gewöhnlichen Zeitrechnung"
       }
     end
 
     it 'returns eras with other name forms' do
       calendar.eras(:abbr).should == {
-        0 => "v. Chr.",
-        1 => "n. Chr."
+        0 => "v. u. Z.",
+        1 => "u. Z."
       }
     end
   end

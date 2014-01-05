@@ -13,7 +13,7 @@ describe Rules do
       result = Rules.send(:get_resource, :ru)
 
       result.should include(:keys, :rule)
-      result[:keys].size.should == 4
+      result[:keys].size.should == 3
       result[:rule].should be_a(Proc)
     end
   end
@@ -29,8 +29,8 @@ describe Rules do
     it "returns the correct values for Russian rules" do
       rules = {
           :one  => [1, 101],
-          :few  => [2, 3, 4, 102],
-          :many => ((5..11).to_a + [111])
+          :many => ((5..11).to_a + [111]),
+          :other  => [2, 3, 4, 102]
       }
 
       rules.each do |rule, examples|
@@ -48,7 +48,7 @@ describe Rules do
   describe "#all_for" do
     it "returns a list of all applicable rules for the given locale" do
       Rules.all_for(:en).should =~ [:one, :other]
-      Rules.all_for(:ru).should =~ [:one, :few, :many, :other]
+      Rules.all_for(:ru).should =~ [:one, :many, :other]
     end
 
     it "returns nil on error" do
@@ -61,7 +61,7 @@ describe Rules do
   describe "#all" do
     it "gets rules for the default locale (usually supplied by FastGettext)" do
       mock(TwitterCldr).locale { :ru }
-      Rules.all.should =~ [:one, :few, :many, :other]
+      Rules.all.should =~ [:one, :many, :other]
     end
   end
 end

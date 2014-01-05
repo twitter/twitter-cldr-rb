@@ -1,59 +1,64 @@
----
-:pl:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ! '#,##0.00 ¤;(#,##0.00 ¤)'
-        :unit:
-          :few: ! '{0} {1}'
-          :many: ! '{0} {1}'
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :long:
-            1000: 0 tysiąca
-            10000: 00 tysiąca
-            100000: 000 tysiąca
-            1000000: 0 miliona
-            10000000: 00 miliona
-            100000000: 000 miliona
-            1000000000: 0 miliarda
-            10000000000: 00 miliarda
-            100000000000: 000 miliarda
-            1000000000000: 0 biliona
-            10000000000000: 00 biliona
-            100000000000000: 000 biliona
-          :short:
-            1000: 0 tys'.'
-            10000: 00 tys'.'
-            100000: 000 tys'.'
-            1000000: 0 mln
-            10000000: 00 mln
-            100000000: 000 mln
-            1000000000: 0 mld
-            10000000000: 00 mld
-            100000000000: 000 mld
-            1000000000000: 0 bln
-            10000000000000: 00 bln
-            100000000000000: 000 bln
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ! ','
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ! '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
-      :plus_sign: +
+--- 
+:pl: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤;(#,##0.00 ¤)"
+        :unit: 
+          :few: "{0} {1}"
+          :many: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 tysiąca"
+            10000: "00 tysiąca"
+            100000: "000 tysiąca"
+            1000000: "0 miliona"
+            10000000: "00 miliona"
+            100000000: "000 miliona"
+            1000000000: "0 miliarda"
+            10000000000: "00 miliarda"
+            100000000000: "000 miliarda"
+            1000000000000: "0 biliona"
+            10000000000000: "00 biliona"
+            100000000000000: "000 biliona"
+          :short: 
+            1000: "0 tys'.'"
+            10000: "00 tys'.'"
+            100000: "000 tys'.'"
+            1000000: "0 mln"
+            10000000: "00 mln"
+            100000000: "000 mln"
+            1000000000: "0 mld"
+            10000000000: "00 mld"
+            100000000000: "000 mld"
+            1000000000000: "0 bln"
+            10000000000000: "00 bln"
+            100000000000000: "000 bln"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: " "
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

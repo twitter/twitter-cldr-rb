@@ -1,5 +1,12 @@
 ---
-:pl: ! '{ :pl => { :i18n => { :plural => { :keys => [:one, :few, :many, :other], :rule
-  => lambda { |n| n == 1 ? :one : [2, 3, 4].include?(n % 10) && ![12, 13, 14].include?(n
-  % 100) ? :few : n != 1 && [0, 1].include?(n % 10) || [5, 6, 7, 8, 9].include?(n
-  % 10) || [12, 13, 14].include?(n % 100) ? :many : :other } } } } }'
+:pl: ! '{ :''pl'' => { :i18n => { :plural => { :keys => [:one, :few, :many, :other],
+  :rule => lambda { |n| (n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count >
+  1 ? v.last.length : 0) == 0) ? :one : (((v = n.to_s.split(".")[1] || []).count >
+  1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (2..4).include?(n.to_i
+  % 10)) && (((n.to_i % 100) % 1).zero? && !(12..14).include?(n.to_i % 100))) ? :few
+  : ((((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0) == 0 && n.to_i
+  != 1 && (((n.to_i % 10) % 1).zero? && (0..1).include?(n.to_i % 10))) || (((v = n.to_s.split(".")[1]
+  || []).count > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (5..9).include?(n.to_i
+  % 10))) || (((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0) ==
+  0 && (((n.to_i % 100) % 1).zero? && (12..14).include?(n.to_i % 100)))) ? :many :
+  :other } } } } }'

@@ -5,11 +5,19 @@
 
 require 'tzinfo'
 
+include TwitterCldr::DataReaders
+
 module TwitterCldr
   module Localized
-
     class LocalizedDateTime < LocalizedObject
+
       attr_reader :calendar_type, :timezone
+
+      class << self
+        def types
+          TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys
+        end
+      end
 
       def initialize(obj, locale, options = {})
         super
@@ -17,11 +25,25 @@ module TwitterCldr
         @timezone = options[:timezone] || "UTC"
       end
 
-      TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES.each do |format_type|
-        define_method "to_#{format_type}_s" do
-          @formatter.format(base_in_timezone, chain_params.merge(:type => format_type.to_sym))
+      types.each do |type|
+        define_method "to_#{type}_s" do
+          # @ TODO: these need to be cheap to create
+          data_reader = data_reader_for(type)
+          tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
+          data_reader.formatter.format(tokens, base_in_timezone)
         end
       end
+
+      def to_additional_s(additional_format)
+        data_reader = data_reader_for(:additional, {
+          :additional_format => additional_format
+        })
+
+        tokens = data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        data_reader.formatter.format(tokens, base_in_timezone)
+      end
+
+      alias :to_default_s :to_medium_s
 
       def to_timespan(options = {})
         base_time = options[:base_time] || Time.now
@@ -43,12 +65,12 @@ module TwitterCldr
         TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
       end
 
-      def to_s(options = {})
-        if options[:format]
-          @formatter.format(base_in_timezone, options.merge(:type => :additional))
-        else
-          to_default_s
-        end
+      def additional_formats
+        data_reader_for(nil).additional_format_selector.patterns
+      end
+
+      def to_s
+        to_default_s
       end
 
       def to_date
@@ -77,6 +99,13 @@ module TwitterCldr
 
       protected
 
+      def data_reader_for(type, options = {})
+        DateTimeDataReader.new(locale, options.merge({
+          :calendar_type => calendar_type,
+          :type => type
+        }))
+      end
+
       def chain_params
         { :calendar_type => @calendar_type, :timezone => @timezone }
       end
@@ -85,14 +114,10 @@ module TwitterCldr
         timezone_info.utc_to_local(@base_obj.new_offset(0))
       end
 
-      def formatter_const
-        TwitterCldr::Formatters::DateTimeFormatter
-      end
-
       def timezone_info
         (@@timezone_info ||= {})[@timezone] ||= TZInfo::Timezone.get(@timezone)
       end
-    end
 
+    end
   end
 end

@@ -5,35 +5,45 @@
 
 module TwitterCldr
   module Formatters
-    class NumberFormatter < Base
-      attr_reader :symbols
+    class NumberFormatter < Formatter
 
-      DEFAULT_SYMBOLS = { :group => ',', :decimal => '.', :plus_sign => '+', :minus_sign => '-' }
+      DEFAULT_SYMBOLS = {
+        :group => ',',
+        :decimal => '.',
+        :plus_sign => '+',
+        :minus_sign => '-'
+      }
 
-      def initialize(options = {})
-        locale = extract_locale(options)
-        cache_key = TwitterCldr::Utils.compute_cache_key(locale)
-        @tokenizer = tokenizer_cache[cache_key] ||= TwitterCldr::Tokenizers::NumberTokenizer.new(
-          :locale => locale
-        )
-        @symbols = DEFAULT_SYMBOLS.merge(tokenizer.symbols)
+      attr_reader :data_reader
+
+      def initialize(data_reader)
+        @data_reader = data_reader
       end
 
-      def format(number, opts = {})
-        opts[:precision] ||= precision_from(number)
-        prefix, suffix, integer_format, fraction_format = *partition_tokens(get_tokens(number, opts))
+      def format(tokens, number, options = {})
+        options[:precision] ||= precision_from(number)
+        options[:type] ||= :decimal
+
+        prefix, suffix, integer_format, fraction_format = *partition_tokens(tokens)
         number = transform_number(number)
 
-        int, fraction = parse_number(number, opts)
-        result =  integer_format.apply(int, opts)
-        result << fraction_format.apply(fraction, opts) if fraction
-        "#{prefix.to_s}#{result}#{suffix.to_s}"
+        int, fraction = parse_number(number, options)
+        result =  integer_format.apply(int, options)
+        result << fraction_format.apply(fraction, options) if fraction
+
+        numbering_system(options[:type]).transliterate(
+          "#{prefix.to_s}#{result}#{suffix.to_s}"
+        )
       end
 
       protected
 
-      def tokenizer_cache
-        @@tokenizer_cache ||= {}
+      # data readers should encapsulate formatting options, and when they do, this "type"
+      # argument will no longer be necessary (accessible via `data_reader.type` instead)
+      def numbering_system(type)
+        @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
+          data_reader.number_system_for(type)
+        )
       end
 
       def transform_number(number)
@@ -41,10 +51,22 @@ module TwitterCldr
       end
 
       def partition_tokens(tokens)
-        [tokens[0] || "",
-         tokens[2] || "",
-         Numbers::Integer.new(tokens[1], @tokenizer.symbols),
-         Numbers::Fraction.new(tokens[1], @tokenizer.symbols)]
+        [
+          token_val_from(tokens[0]),
+          token_val_from(tokens[2]),
+          Numbers::Integer.new(
+            tokens[1],
+            data_reader.symbols
+          ),
+          Numbers::Fraction.new(
+            tokens[1],
+            data_reader.symbols
+          )
+        ]
+      end
+
+      def token_val_from(token)
+        token ? token.value : ""
       end
 
       def parse_number(number, options = {})
@@ -71,10 +93,6 @@ module TwitterCldr
         parts.size == 2 ? parts[1].size : 0
       end
 
-      def get_tokens(obj, options = {})
-        opts = options.dup.merge(:sign => obj.abs == obj ? :positive : :negative)
-        @tokenizer.tokens(opts)
-      end
     end
   end
 end

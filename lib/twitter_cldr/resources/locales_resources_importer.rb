@@ -12,7 +12,9 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
-      COMPONENTS = %w[calendars languages numbers units plurals lists layout currencies territories]
+      # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
+      LOCALE_COMPONENTS = []#%w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
+      SHARED_COMPONENTS = ["numbering_systems"]#%w[currency_digits_and_rounding rbnf_root numbering_systems]
 
       # Arguments:
       #
@@ -48,7 +50,7 @@ module TwitterCldr
       def import_components
         export_args = {
           :locales => TwitterCldr.supported_locales,
-          :components => COMPONENTS,
+          :components => LOCALE_COMPONENTS,
           :target => File.join(@output_path, 'locales'),
           :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
@@ -61,7 +63,7 @@ module TwitterCldr
         end
 
         export_args = {
-          :components => ["currency_digits_and_rounding"],
+          :components => SHARED_COMPONENTS,
           :target => File.join(@output_path, 'shared'),
           :merge => true
         }
@@ -78,7 +80,16 @@ module TwitterCldr
         data = YAML.load(File.read(path))
 
         File.open(path, 'w:utf-8') do |output|
-          output.write(YAML.dump(TwitterCldr::Utils.deep_symbolize_keys(data)))
+          output.write(
+            # Quote all strings for compat with 1.8. This is important because
+            # RBNF syntax includes characters that are significant in the Yaml
+            # syntax, like >, <, etc. Psych doesn't have problems parsing them,
+            # but Syck does (ruby 1.8).
+            TwitterCldr::Utils::YAML.dump(TwitterCldr::Utils.deep_symbolize_keys(data), {
+              :quote_all_strings => true,
+              :use_natural_symbols => true
+            })
+          )
         end
       end
 

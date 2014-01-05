@@ -1,0 +1,940 @@
+---
+SpelloutRules:
+  spellout-cardinal:
+    -1141: míneas míle, céad daichead a haon
+    -1142: míneas míle, céad daichead a dó
+    -1143: míneas míle, céad daichead a trí
+    -100: míneas céad
+    -75: míneas seachtó a cúig
+    -50: míneas caoga
+    -24: míneas fiche a ceathair
+    0: a náid
+    1: a haon
+    2: a dó
+    3: a trí
+    4: a ceathair
+    5: a cúig
+    6: a sé
+    7: a seacht
+    8: a hocht
+    9: a naoi
+    10: a deich
+    11: a haon déag
+    12: a dó dhéag
+    13: a trí déag
+    14: a ceathair déag
+    15: a cúig déag
+    16: a sé déag
+    17: a seacht déag
+    18: a hocht déag
+    19: a naoi déag
+    20: fiche
+    21: fiche a haon
+    22: fiche a dó
+    23: fiche a trí
+    24: fiche a ceathair
+    25: fiche a cúig
+    26: fiche a sé
+    27: fiche a seacht
+    28: fiche a hocht
+    29: fiche a naoi
+    30: tríocha
+    31: tríocha a haon
+    32: tríocha a dó
+    33: tríocha a trí
+    34: tríocha a ceathair
+    35: tríocha a cúig
+    36: tríocha a sé
+    37: tríocha a seacht
+    38: tríocha a hocht
+    39: tríocha a naoi
+    40: daichead
+    41: daichead a haon
+    42: daichead a dó
+    43: daichead a trí
+    44: daichead a ceathair
+    45: daichead a cúig
+    46: daichead a sé
+    47: daichead a seacht
+    48: daichead a hocht
+    49: daichead a naoi
+    50: caoga
+    51: caoga a haon
+    52: caoga a dó
+    53: caoga a trí
+    54: caoga a ceathair
+    55: caoga a cúig
+    56: caoga a sé
+    57: caoga a seacht
+    58: caoga a hocht
+    59: caoga a naoi
+    60: seasca
+    61: seasca a haon
+    62: seasca a dó
+    63: seasca a trí
+    64: seasca a ceathair
+    65: seasca a cúig
+    66: seasca a sé
+    67: seasca a seacht
+    68: seasca a hocht
+    69: seasca a naoi
+    70: seachtó
+    71: seachtó a haon
+    72: seachtó a dó
+    73: seachtó a trí
+    74: seachtó a ceathair
+    75: seachtó a cúig
+    76: seachtó a sé
+    77: seachtó a seacht
+    78: seachtó a hocht
+    79: seachtó a naoi
+    80: ochtó
+    81: ochtó a haon
+    82: ochtó a dó
+    83: ochtó a trí
+    84: ochtó a ceathair
+    85: ochtó a cúig
+    86: ochtó a sé
+    87: ochtó a seacht
+    88: ochtó a hocht
+    89: ochtó a naoi
+    90: nócha
+    91: nócha a haon
+    92: nócha a dó
+    93: nócha a trí
+    94: nócha a ceathair
+    95: nócha a cúig
+    96: nócha a sé
+    97: nócha a seacht
+    98: nócha a hocht
+    99: nócha a naoi
+    100: céad
+    321: trí chéad fiche a haon
+    322: trí chéad fiche a dó
+    323: trí chéad fiche a trí
+    1141: míle, céad daichead a haon
+    1142: míle, céad daichead a dó
+    1143: míle, céad daichead a trí
+    10311: deich míle, trí chéad a haon déag
+    138400: céad tríocha is ocht míle, ceithre chéad
+  spellout-numbering:
+    -1141: míneas míle, céad daichead a haon
+    -1142: míneas míle, céad daichead a dó
+    -1143: míneas míle, céad daichead a trí
+    -100: míneas céad
+    -75: míneas seachtó a cúig
+    -50: míneas caoga
+    -24: míneas fiche a ceathair
+    0: a náid
+    1: a haon
+    2: a dó
+    3: a trí
+    4: a ceathair
+    5: a cúig
+    6: a sé
+    7: a seacht
+    8: a hocht
+    9: a naoi
+    10: a deich
+    11: a haon déag
+    12: a dó dhéag
+    13: a trí déag
+    14: a ceathair déag
+    15: a cúig déag
+    16: a sé déag
+    17: a seacht déag
+    18: a hocht déag
+    19: a naoi déag
+    20: fiche
+    21: fiche a haon
+    22: fiche a dó
+    23: fiche a trí
+    24: fiche a ceathair
+    25: fiche a cúig
+    26: fiche a sé
+    27: fiche a seacht
+    28: fiche a hocht
+    29: fiche a naoi
+    30: tríocha
+    31: tríocha a haon
+    32: tríocha a dó
+    33: tríocha a trí
+    34: tríocha a ceathair
+    35: tríocha a cúig
+    36: tríocha a sé
+    37: tríocha a seacht
+    38: tríocha a hocht
+    39: tríocha a naoi
+    40: daichead
+    41: daichead a haon
+    42: daichead a dó
+    43: daichead a trí
+    44: daichead a ceathair
+    45: daichead a cúig
+    46: daichead a sé
+    47: daichead a seacht
+    48: daichead a hocht
+    49: daichead a naoi
+    50: caoga
+    51: caoga a haon
+    52: caoga a dó
+    53: caoga a trí
+    54: caoga a ceathair
+    55: caoga a cúig
+    56: caoga a sé
+    57: caoga a seacht
+    58: caoga a hocht
+    59: caoga a naoi
+    60: seasca
+    61: seasca a haon
+    62: seasca a dó
+    63: seasca a trí
+    64: seasca a ceathair
+    65: seasca a cúig
+    66: seasca a sé
+    67: seasca a seacht
+    68: seasca a hocht
+    69: seasca a naoi
+    70: seachtó
+    71: seachtó a haon
+    72: seachtó a dó
+    73: seachtó a trí
+    74: seachtó a ceathair
+    75: seachtó a cúig
+    76: seachtó a sé
+    77: seachtó a seacht
+    78: seachtó a hocht
+    79: seachtó a naoi
+    80: ochtó
+    81: ochtó a haon
+    82: ochtó a dó
+    83: ochtó a trí
+    84: ochtó a ceathair
+    85: ochtó a cúig
+    86: ochtó a sé
+    87: ochtó a seacht
+    88: ochtó a hocht
+    89: ochtó a naoi
+    90: nócha
+    91: nócha a haon
+    92: nócha a dó
+    93: nócha a trí
+    94: nócha a ceathair
+    95: nócha a cúig
+    96: nócha a sé
+    97: nócha a seacht
+    98: nócha a hocht
+    99: nócha a naoi
+    100: céad
+    321: trí chéad fiche a haon
+    322: trí chéad fiche a dó
+    323: trí chéad fiche a trí
+    1141: míle, céad daichead a haon
+    1142: míle, céad daichead a dó
+    1143: míle, céad daichead a trí
+    10311: deich míle, trí chéad a haon déag
+    138400: céad tríocha is ocht míle, ceithre chéad
+  spellout-numbering-year:
+    -1141: míneas aon déag daichead a haon
+    -1142: míneas aon déag daichead a dó
+    -1143: míneas aon déag daichead a trí
+    -100: míneas céad
+    -75: míneas seachtó a cúig
+    -50: míneas caoga
+    -24: míneas fiche a ceathair
+    0: a náid
+    1: a haon
+    2: a dó
+    3: a trí
+    4: a ceathair
+    5: a cúig
+    6: a sé
+    7: a seacht
+    8: a hocht
+    9: a naoi
+    10: a deich
+    11: a haon déag
+    12: a dó dhéag
+    13: a trí déag
+    14: a ceathair déag
+    15: a cúig déag
+    16: a sé déag
+    17: a seacht déag
+    18: a hocht déag
+    19: a naoi déag
+    20: fiche
+    21: fiche a haon
+    22: fiche a dó
+    23: fiche a trí
+    24: fiche a ceathair
+    25: fiche a cúig
+    26: fiche a sé
+    27: fiche a seacht
+    28: fiche a hocht
+    29: fiche a naoi
+    30: tríocha
+    31: tríocha a haon
+    32: tríocha a dó
+    33: tríocha a trí
+    34: tríocha a ceathair
+    35: tríocha a cúig
+    36: tríocha a sé
+    37: tríocha a seacht
+    38: tríocha a hocht
+    39: tríocha a naoi
+    40: daichead
+    41: daichead a haon
+    42: daichead a dó
+    43: daichead a trí
+    44: daichead a ceathair
+    45: daichead a cúig
+    46: daichead a sé
+    47: daichead a seacht
+    48: daichead a hocht
+    49: daichead a naoi
+    50: caoga
+    51: caoga a haon
+    52: caoga a dó
+    53: caoga a trí
+    54: caoga a ceathair
+    55: caoga a cúig
+    56: caoga a sé
+    57: caoga a seacht
+    58: caoga a hocht
+    59: caoga a naoi
+    60: seasca
+    61: seasca a haon
+    62: seasca a dó
+    63: seasca a trí
+    64: seasca a ceathair
+    65: seasca a cúig
+    66: seasca a sé
+    67: seasca a seacht
+    68: seasca a hocht
+    69: seasca a naoi
+    70: seachtó
+    71: seachtó a haon
+    72: seachtó a dó
+    73: seachtó a trí
+    74: seachtó a ceathair
+    75: seachtó a cúig
+    76: seachtó a sé
+    77: seachtó a seacht
+    78: seachtó a hocht
+    79: seachtó a naoi
+    80: ochtó
+    81: ochtó a haon
+    82: ochtó a dó
+    83: ochtó a trí
+    84: ochtó a ceathair
+    85: ochtó a cúig
+    86: ochtó a sé
+    87: ochtó a seacht
+    88: ochtó a hocht
+    89: ochtó a naoi
+    90: nócha
+    91: nócha a haon
+    92: nócha a dó
+    93: nócha a trí
+    94: nócha a ceathair
+    95: nócha a cúig
+    96: nócha a sé
+    97: nócha a seacht
+    98: nócha a hocht
+    99: nócha a naoi
+    100: céad
+    321: trí chéad fiche a haon
+    322: trí chéad fiche a dó
+    323: trí chéad fiche a trí
+    1141: aon déag daichead a haon
+    1142: aon déag daichead a dó
+    1143: aon déag daichead a trí
+    10311: deich míle, trí chéad a haon déag
+    138400: céad tríocha is ocht míle, ceithre chéad
+OrdinalRules:
+  digits-ordinal:
+    -1141: −1,141ú
+    -1142: −1,142ú
+    -1143: −1,143ú
+    -100: −100ú
+    -75: −75ú
+    -50: −50ú
+    -24: −24ú
+    0: 0ú
+    1: 1ú
+    2: 2ú
+    3: 3ú
+    4: 4ú
+    5: 5ú
+    6: 6ú
+    7: 7ú
+    8: 8ú
+    9: 9ú
+    10: 10ú
+    11: 11ú
+    12: 12ú
+    13: 13ú
+    14: 14ú
+    15: 15ú
+    16: 16ú
+    17: 17ú
+    18: 18ú
+    19: 19ú
+    20: 20ú
+    21: 21ú
+    22: 22ú
+    23: 23ú
+    24: 24ú
+    25: 25ú
+    26: 26ú
+    27: 27ú
+    28: 28ú
+    29: 29ú
+    30: 30ú
+    31: 31ú
+    32: 32ú
+    33: 33ú
+    34: 34ú
+    35: 35ú
+    36: 36ú
+    37: 37ú
+    38: 38ú
+    39: 39ú
+    40: 40ú
+    41: 41ú
+    42: 42ú
+    43: 43ú
+    44: 44ú
+    45: 45ú
+    46: 46ú
+    47: 47ú
+    48: 48ú
+    49: 49ú
+    50: 50ú
+    51: 51ú
+    52: 52ú
+    53: 53ú
+    54: 54ú
+    55: 55ú
+    56: 56ú
+    57: 57ú
+    58: 58ú
+    59: 59ú
+    60: 60ú
+    61: 61ú
+    62: 62ú
+    63: 63ú
+    64: 64ú
+    65: 65ú
+    66: 66ú
+    67: 67ú
+    68: 68ú
+    69: 69ú
+    70: 70ú
+    71: 71ú
+    72: 72ú
+    73: 73ú
+    74: 74ú
+    75: 75ú
+    76: 76ú
+    77: 77ú
+    78: 78ú
+    79: 79ú
+    80: 80ú
+    81: 81ú
+    82: 82ú
+    83: 83ú
+    84: 84ú
+    85: 85ú
+    86: 86ú
+    87: 87ú
+    88: 88ú
+    89: 89ú
+    90: 90ú
+    91: 91ú
+    92: 92ú
+    93: 93ú
+    94: 94ú
+    95: 95ú
+    96: 96ú
+    97: 97ú
+    98: 98ú
+    99: 99ú
+    100: 100ú
+    321: 321ú
+    322: 322ú
+    323: 323ú
+    1141: 1,141ú
+    1142: 1,142ú
+    1143: 1,143ú
+    10311: 10,311ú
+    138400: 138,400ú
+DurationRules:
+  duration:
+    -1141: -20:-01
+    -1142: -20:-02
+    -1143: -20:-03
+    -100: -2:-40
+    -75: -2:-15
+    -50: -50 sec.
+    -24: -24 sec.
+    0: 0 sec.
+    1: 1 sec.
+    2: 2 sec.
+    3: 3 sec.
+    4: 4 sec.
+    5: 5 sec.
+    6: 6 sec.
+    7: 7 sec.
+    8: 8 sec.
+    9: 9 sec.
+    10: 10 sec.
+    11: 11 sec.
+    12: 12 sec.
+    13: 13 sec.
+    14: 14 sec.
+    15: 15 sec.
+    16: 16 sec.
+    17: 17 sec.
+    18: 18 sec.
+    19: 19 sec.
+    20: 20 sec.
+    21: 21 sec.
+    22: 22 sec.
+    23: 23 sec.
+    24: 24 sec.
+    25: 25 sec.
+    26: 26 sec.
+    27: 27 sec.
+    28: 28 sec.
+    29: 29 sec.
+    30: 30 sec.
+    31: 31 sec.
+    32: 32 sec.
+    33: 33 sec.
+    34: 34 sec.
+    35: 35 sec.
+    36: 36 sec.
+    37: 37 sec.
+    38: 38 sec.
+    39: 39 sec.
+    40: 40 sec.
+    41: 41 sec.
+    42: 42 sec.
+    43: 43 sec.
+    44: 44 sec.
+    45: 45 sec.
+    46: 46 sec.
+    47: 47 sec.
+    48: 48 sec.
+    49: 49 sec.
+    50: 50 sec.
+    51: 51 sec.
+    52: 52 sec.
+    53: 53 sec.
+    54: 54 sec.
+    55: 55 sec.
+    56: 56 sec.
+    57: 57 sec.
+    58: 58 sec.
+    59: 59 sec.
+    60: '1:00'
+    61: '1:01'
+    62: '1:02'
+    63: '1:03'
+    64: '1:04'
+    65: '1:05'
+    66: '1:06'
+    67: '1:07'
+    68: '1:08'
+    69: '1:09'
+    70: '1:10'
+    71: '1:11'
+    72: '1:12'
+    73: '1:13'
+    74: '1:14'
+    75: '1:15'
+    76: '1:16'
+    77: '1:17'
+    78: '1:18'
+    79: '1:19'
+    80: '1:20'
+    81: '1:21'
+    82: '1:22'
+    83: '1:23'
+    84: '1:24'
+    85: '1:25'
+    86: '1:26'
+    87: '1:27'
+    88: '1:28'
+    89: '1:29'
+    90: '1:30'
+    91: '1:31'
+    92: '1:32'
+    93: '1:33'
+    94: '1:34'
+    95: '1:35'
+    96: '1:36'
+    97: '1:37'
+    98: '1:38'
+    99: '1:39'
+    100: '1:40'
+    321: '5:21'
+    322: '5:22'
+    323: '5:23'
+    1141: '19:01'
+    1142: '19:02'
+    1143: '19:03'
+    10311: '2:51:51'
+    138400: '38:26:40'
+  in-numerals:
+    -1141: -20:-01
+    -1142: -20:-02
+    -1143: -20:-03
+    -100: -2:-40
+    -75: -2:-15
+    -50: -50 sec.
+    -24: -24 sec.
+    0: 0 sec.
+    1: 1 sec.
+    2: 2 sec.
+    3: 3 sec.
+    4: 4 sec.
+    5: 5 sec.
+    6: 6 sec.
+    7: 7 sec.
+    8: 8 sec.
+    9: 9 sec.
+    10: 10 sec.
+    11: 11 sec.
+    12: 12 sec.
+    13: 13 sec.
+    14: 14 sec.
+    15: 15 sec.
+    16: 16 sec.
+    17: 17 sec.
+    18: 18 sec.
+    19: 19 sec.
+    20: 20 sec.
+    21: 21 sec.
+    22: 22 sec.
+    23: 23 sec.
+    24: 24 sec.
+    25: 25 sec.
+    26: 26 sec.
+    27: 27 sec.
+    28: 28 sec.
+    29: 29 sec.
+    30: 30 sec.
+    31: 31 sec.
+    32: 32 sec.
+    33: 33 sec.
+    34: 34 sec.
+    35: 35 sec.
+    36: 36 sec.
+    37: 37 sec.
+    38: 38 sec.
+    39: 39 sec.
+    40: 40 sec.
+    41: 41 sec.
+    42: 42 sec.
+    43: 43 sec.
+    44: 44 sec.
+    45: 45 sec.
+    46: 46 sec.
+    47: 47 sec.
+    48: 48 sec.
+    49: 49 sec.
+    50: 50 sec.
+    51: 51 sec.
+    52: 52 sec.
+    53: 53 sec.
+    54: 54 sec.
+    55: 55 sec.
+    56: 56 sec.
+    57: 57 sec.
+    58: 58 sec.
+    59: 59 sec.
+    60: '1:00'
+    61: '1:01'
+    62: '1:02'
+    63: '1:03'
+    64: '1:04'
+    65: '1:05'
+    66: '1:06'
+    67: '1:07'
+    68: '1:08'
+    69: '1:09'
+    70: '1:10'
+    71: '1:11'
+    72: '1:12'
+    73: '1:13'
+    74: '1:14'
+    75: '1:15'
+    76: '1:16'
+    77: '1:17'
+    78: '1:18'
+    79: '1:19'
+    80: '1:20'
+    81: '1:21'
+    82: '1:22'
+    83: '1:23'
+    84: '1:24'
+    85: '1:25'
+    86: '1:26'
+    87: '1:27'
+    88: '1:28'
+    89: '1:29'
+    90: '1:30'
+    91: '1:31'
+    92: '1:32'
+    93: '1:33'
+    94: '1:34'
+    95: '1:35'
+    96: '1:36'
+    97: '1:37'
+    98: '1:38'
+    99: '1:39'
+    100: '1:40'
+    321: '5:21'
+    322: '5:22'
+    323: '5:23'
+    1141: '19:01'
+    1142: '19:02'
+    1143: '19:03'
+    10311: '2:51:51'
+    138400: '38:26:40'
+  hms:
+    -1141: '-20:-013600/60: <#,##0<>>>'
+    -1142: '-20:-023600/60: <#,##0<>>>'
+    -1143: '-20:-033600/60: <#,##0<>>>'
+    -100: '-02:-403600/60: <#,##0<>>>'
+    -75: '-02:-153600/60: <#,##0<>>>'
+    -50: ':-50'
+    -24: ':-24'
+    0: ':00'
+    1: ':01'
+    2: ':02'
+    3: ':03'
+    4: ':04'
+    5: ':05'
+    6: ':06'
+    7: ':07'
+    8: ':08'
+    9: ':09'
+    10: ':10'
+    11: ':11'
+    12: ':12'
+    13: ':13'
+    14: ':14'
+    15: ':15'
+    16: ':16'
+    17: ':17'
+    18: ':18'
+    19: ':19'
+    20: ':20'
+    21: ':21'
+    22: ':22'
+    23: ':23'
+    24: ':24'
+    25: ':25'
+    26: ':26'
+    27: ':27'
+    28: ':28'
+    29: ':29'
+    30: ':30'
+    31: ':31'
+    32: ':32'
+    33: ':33'
+    34: ':34'
+    35: ':35'
+    36: ':36'
+    37: ':37'
+    38: ':38'
+    39: ':39'
+    40: ':40'
+    41: ':41'
+    42: ':42'
+    43: ':43'
+    44: ':44'
+    45: ':45'
+    46: ':46'
+    47: ':47'
+    48: ':48'
+    49: ':49'
+    50: ':50'
+    51: ':51'
+    52: ':52'
+    53: ':53'
+    54: ':54'
+    55: ':55'
+    56: ':56'
+    57: ':57'
+    58: ':58'
+    59: ':59'
+    60: '01:003600/60: <#,##0<>>>'
+    61: '01:013600/60: <#,##0<>>>'
+    62: '01:023600/60: <#,##0<>>>'
+    63: '01:033600/60: <#,##0<>>>'
+    64: '01:043600/60: <#,##0<>>>'
+    65: '01:053600/60: <#,##0<>>>'
+    66: '01:063600/60: <#,##0<>>>'
+    67: '01:073600/60: <#,##0<>>>'
+    68: '01:083600/60: <#,##0<>>>'
+    69: '01:093600/60: <#,##0<>>>'
+    70: '01:103600/60: <#,##0<>>>'
+    71: '01:113600/60: <#,##0<>>>'
+    72: '01:123600/60: <#,##0<>>>'
+    73: '01:133600/60: <#,##0<>>>'
+    74: '01:143600/60: <#,##0<>>>'
+    75: '01:153600/60: <#,##0<>>>'
+    76: '01:163600/60: <#,##0<>>>'
+    77: '01:173600/60: <#,##0<>>>'
+    78: '01:183600/60: <#,##0<>>>'
+    79: '01:193600/60: <#,##0<>>>'
+    80: '01:203600/60: <#,##0<>>>'
+    81: '01:213600/60: <#,##0<>>>'
+    82: '01:223600/60: <#,##0<>>>'
+    83: '01:233600/60: <#,##0<>>>'
+    84: '01:243600/60: <#,##0<>>>'
+    85: '01:253600/60: <#,##0<>>>'
+    86: '01:263600/60: <#,##0<>>>'
+    87: '01:273600/60: <#,##0<>>>'
+    88: '01:283600/60: <#,##0<>>>'
+    89: '01:293600/60: <#,##0<>>>'
+    90: '01:303600/60: <#,##0<>>>'
+    91: '01:313600/60: <#,##0<>>>'
+    92: '01:323600/60: <#,##0<>>>'
+    93: '01:333600/60: <#,##0<>>>'
+    94: '01:343600/60: <#,##0<>>>'
+    95: '01:353600/60: <#,##0<>>>'
+    96: '01:363600/60: <#,##0<>>>'
+    97: '01:373600/60: <#,##0<>>>'
+    98: '01:383600/60: <#,##0<>>>'
+    99: '01:393600/60: <#,##0<>>>'
+    100: '01:403600/60: <#,##0<>>>'
+    321: '05:213600/60: <#,##0<>>>'
+    322: '05:223600/60: <#,##0<>>>'
+    323: '05:233600/60: <#,##0<>>>'
+    1141: '19:013600/60: <#,##0<>>>'
+    1142: '19:023600/60: <#,##0<>>>'
+    1143: '19:033600/60: <#,##0<>>>'
+    10311: '171:513600/60: <#,##0<>>>'
+    138400: '2306:403600/60: <#,##0<>>>'
+  with-words:
+    -1141: -20 nÃ³imÃ©ad, -1 soicind
+    -1142: -20 nÃ³imÃ©ad, -2 soicind
+    -1143: -20 nÃ³imÃ©ad, -3 soicind
+    -100: -2 nÃ³imÃ©ad, -40 soicind
+    -75: -2 nÃ³imÃ©ad, -15 soicind
+    -50: -50 soicind
+    -24: -24 soicind
+    0: 0 soicind
+    1: 1 soicind
+    2: 2 soicind
+    3: 3 soicind
+    4: 4 soicind
+    5: 5 soicind
+    6: 6 soicind
+    7: 7 soicind
+    8: 8 soicind
+    9: 9 soicind
+    10: 10 soicind
+    11: 11 soicind
+    12: 12 soicind
+    13: 13 soicind
+    14: 14 soicind
+    15: 15 soicind
+    16: 16 soicind
+    17: 17 soicind
+    18: 18 soicind
+    19: 19 soicind
+    20: 20 soicind
+    21: 21 soicind
+    22: 22 soicind
+    23: 23 soicind
+    24: 24 soicind
+    25: 25 soicind
+    26: 26 soicind
+    27: 27 soicind
+    28: 28 soicind
+    29: 29 soicind
+    30: 30 soicind
+    31: 31 soicind
+    32: 32 soicind
+    33: 33 soicind
+    34: 34 soicind
+    35: 35 soicind
+    36: 36 soicind
+    37: 37 soicind
+    38: 38 soicind
+    39: 39 soicind
+    40: 40 soicind
+    41: 41 soicind
+    42: 42 soicind
+    43: 43 soicind
+    44: 44 soicind
+    45: 45 soicind
+    46: 46 soicind
+    47: 47 soicind
+    48: 48 soicind
+    49: 49 soicind
+    50: 50 soicind
+    51: 51 soicind
+    52: 52 soicind
+    53: 53 soicind
+    54: 54 soicind
+    55: 55 soicind
+    56: 56 soicind
+    57: 57 soicind
+    58: 58 soicind
+    59: 59 soicind
+    60: 1 nÃ³imÃ©ad
+    61: 1 nÃ³imÃ©ad, 1 soicind
+    62: 1 nÃ³imÃ©ad, 2 soicind
+    63: 1 nÃ³imÃ©ad, 3 soicind
+    64: 1 nÃ³imÃ©ad, 4 soicind
+    65: 1 nÃ³imÃ©ad, 5 soicind
+    66: 1 nÃ³imÃ©ad, 6 soicind
+    67: 1 nÃ³imÃ©ad, 7 soicind
+    68: 1 nÃ³imÃ©ad, 8 soicind
+    69: 1 nÃ³imÃ©ad, 9 soicind
+    70: 1 nÃ³imÃ©ad, 10 soicind
+    71: 1 nÃ³imÃ©ad, 11 soicind
+    72: 1 nÃ³imÃ©ad, 12 soicind
+    73: 1 nÃ³imÃ©ad, 13 soicind
+    74: 1 nÃ³imÃ©ad, 14 soicind
+    75: 1 nÃ³imÃ©ad, 15 soicind
+    76: 1 nÃ³imÃ©ad, 16 soicind
+    77: 1 nÃ³imÃ©ad, 17 soicind
+    78: 1 nÃ³imÃ©ad, 18 soicind
+    79: 1 nÃ³imÃ©ad, 19 soicind
+    80: 1 nÃ³imÃ©ad, 20 soicind
+    81: 1 nÃ³imÃ©ad, 21 soicind
+    82: 1 nÃ³imÃ©ad, 22 soicind
+    83: 1 nÃ³imÃ©ad, 23 soicind
+    84: 1 nÃ³imÃ©ad, 24 soicind
+    85: 1 nÃ³imÃ©ad, 25 soicind
+    86: 1 nÃ³imÃ©ad, 26 soicind
+    87: 1 nÃ³imÃ©ad, 27 soicind
+    88: 1 nÃ³imÃ©ad, 28 soicind
+    89: 1 nÃ³imÃ©ad, 29 soicind
+    90: 1 nÃ³imÃ©ad, 30 soicind
+    91: 1 nÃ³imÃ©ad, 31 soicind
+    92: 1 nÃ³imÃ©ad, 32 soicind
+    93: 1 nÃ³imÃ©ad, 33 soicind
+    94: 1 nÃ³imÃ©ad, 34 soicind
+    95: 1 nÃ³imÃ©ad, 35 soicind
+    96: 1 nÃ³imÃ©ad, 36 soicind
+    97: 1 nÃ³imÃ©ad, 37 soicind
+    98: 1 nÃ³imÃ©ad, 38 soicind
+    99: 1 nÃ³imÃ©ad, 39 soicind
+    100: 1 nÃ³imÃ©ad, 40 soicind
+    321: 5 nÃ³imÃ©ad, 21 soicind
+    322: 5 nÃ³imÃ©ad, 22 soicind
+    323: 5 nÃ³imÃ©ad, 23 soicind
+    1141: 19 nÃ³imÃ©ad, 1 soicind
+    1142: 19 nÃ³imÃ©ad, 2 soicind
+    1143: 19 nÃ³imÃ©ad, 3 soicind
+    10311: 2 uair, 51 nÃ³imÃ©ad, 51 soicind
+    138400: 38 n-uaire, 26 nÃ³imÃ©ad, 40 soicind

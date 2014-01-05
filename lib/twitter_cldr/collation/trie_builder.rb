@@ -31,7 +31,7 @@ module TwitterCldr
         private
 
         def parse_collation_elements_table(table, trie = TwitterCldr::Collation::Trie.new)
-          table.lines.each do |line|
+          table.each_line do |line|
             trie.set(parse_code_points($1), parse_collation_element($2)) if COLLATION_ELEMENT_REGEXP =~ line
           end
 

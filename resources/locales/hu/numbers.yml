@@ -1,57 +1,62 @@
----
-:hu:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ! '#,##0.00 ¤'
-        :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :long:
-            1000: 0 ezer
-            10000: 00 ezer
-            100000: 000 ezer
-            1000000: 0 millió
-            10000000: 00 millió
-            100000000: 000 millió
-            1000000000: 0 milliárd
-            10000000000: 00 milliárd
-            100000000000: 000 milliárd
-            1000000000000: 0 billió
-            10000000000000: 00 billió
-            100000000000000: 000 billió
-          :short:
-            1000: 0 E
-            10000: 00 E
-            100000: 000 E
-            1000000: 0 M
-            10000000: 00 M
-            100000000: 000 M
-            1000000000: 0 Mrd
-            10000000000: 00 Mrd
-            100000000000: 000 Mrd
-            1000000000000: 0 B
-            10000000000000: 00 B
-            100000000000000: 000 B
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: ! ','
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ! '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
-      :plus_sign: +
+--- 
+:hu: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.00 ¤"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 ezer"
+            10000: "00 ezer"
+            100000: "000 ezer"
+            1000000: "0 millió"
+            10000000: "00 millió"
+            100000000: "000 millió"
+            1000000000: "0 milliárd"
+            10000000000: "00 milliárd"
+            100000000000: "000 milliárd"
+            1000000000000: "0 billió"
+            10000000000000: "00 billió"
+            100000000000000: "000 billió"
+          :short: 
+            1000: "0 E"
+            10000: "00 E"
+            100000: "000 E"
+            1000000: "0 M"
+            10000000: "00 M"
+            100000000: "000 M"
+            1000000000: "0 Mrd"
+            10000000000: "00 Mrd"
+            100000000000: "000 Mrd"
+            1000000000000: "0 B"
+            10000000000000: "00 B"
+            100000000000000: "000 B"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: "E"
+      :group: " "
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

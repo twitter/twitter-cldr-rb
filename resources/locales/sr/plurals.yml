@@ -1,5 +1,13 @@
 ---
-:sr: ! '{ :sr => { :i18n => { :plural => { :keys => [:one, :few, :many, :other], :rule
-  => lambda { |n| n % 10 == 1 && n % 100 != 11 ? :one : [2, 3, 4].include?(n % 10)
-  && ![12, 13, 14].include?(n % 100) ? :few : n % 10 == 0 || [5, 6, 7, 8, 9].include?(n
-  % 10) || [11, 12, 13, 14].include?(n % 100) ? :many : :other } } } } }'
+:sr: ! '{ :''sr'' => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule
+  => lambda { |n| ((((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length :
+  0) == 0 && n.to_i % 10 == 1 && n.to_i % 100 != 11) || (((f = n.to_s.split(".")[1]
+  || []).count > 1 ? f.last.to_i : 0) % 10 == 1 && ((f = n.to_s.split(".")[1] || []).count
+  > 1 ? f.last.to_i : 0) % 100 != 11)) ? :one : ((((v = n.to_s.split(".")[1] || []).count
+  > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (2..4).include?(n.to_i
+  % 10)) && (((n.to_i % 100) % 1).zero? && !(12..14).include?(n.to_i % 100))) || ((((((f
+  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10) % 1).zero? && (2..4).include?(((f
+  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10)) && (((((f = n.to_s.split(".")[1]
+  || []).count > 1 ? f.last.to_i : 0) % 100) % 1).zero? && !(12..14).include?(((f
+  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 100)))) ? :few : :other
+  } } } } }'

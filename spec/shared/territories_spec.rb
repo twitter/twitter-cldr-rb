@@ -17,14 +17,14 @@ describe Territories do
     end
 
     it "should use alternate/short names" do
-      Territories.translate_territory("Congo [DRC]", :en, :es).should match_normalized("Congo [República Democrática del Congo]")
-      Territories.translate_territory("Congo [Republic]", :en, :es).should match_normalized("Congo [República]")
+      Territories.translate_territory("Congo (DRC)", :en, :es).should match_normalized("Congo (República Democrática del Congo)")
+      Territories.translate_territory("Congo (Republic)", :en, :es).should match_normalized("Congo (República)")
       Territories.translate_territory("East Timor", :en, :es).should match_normalized("Timor Oriental")
-      Territories.translate_territory("Falkland Islands [Islas Malvinas]", :en, :es).should match_normalized("Islas Malvinas [Islas Falkland]")
+      Territories.translate_territory("Falkland Islands (Islas Malvinas)", :en, :es).should match_normalized("Islas Malvinas (Islas Falkland)")
       Territories.translate_territory("Hong Kong", :en, :es).should match_normalized("Hong Kong")
       Territories.translate_territory("Ivory Coast", :en, :es).should match_normalized("Costa de Marfil")
       Territories.translate_territory("Macau", :en, :es).should match_normalized("Macao")
-      Territories.translate_territory("Macedonia [FYROM]", :en, :es).should match_normalized("Macedonia [ERYM]")
+      Territories.translate_territory("Macedonia (FYROM)", :en, :es).should match_normalized("Macedonia (ERYM)")
     end
 
     it "should be capitalization agnostic" do
@@ -56,12 +56,12 @@ describe Territories do
   describe "#from_territory_code_for_locale" do
     it "should return the territory in the correct locale for the given locale code (i.e. RU in English should be Russia)" do
       Territories.from_territory_code_for_locale(:ES, :en).should match_normalized("Spain")
-      Territories.from_territory_code_for_locale(:GB, :es).should match_normalized("Reino Unido")
+      Territories.from_territory_code_for_locale(:GB, :es).should match_normalized("UK")
     end
 
     it "should work with lower-case country codes as well" do
       Territories.from_territory_code_for_locale(:es, :en).should match_normalized("Spain")
-      Territories.from_territory_code_for_locale(:gb, :es).should match_normalized("Reino Unido")
+      Territories.from_territory_code_for_locale(:gb, :es).should match_normalized("UK")
     end
 
     it "should work with Traditional Chinese" do

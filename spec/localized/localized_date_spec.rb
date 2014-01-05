@@ -123,7 +123,7 @@ describe LocalizedDate do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        (TwitterCldr::Tokenizers::DateTimeTokenizer::VALID_TYPES - [:additional]).each do |type|
+        (LocalizedDate.types - [:additional]).each do |type|
           lambda { DateTime.now.localize(locale).to_date.send(:"to_#{type}_s") }.should_not raise_error
         end
       end

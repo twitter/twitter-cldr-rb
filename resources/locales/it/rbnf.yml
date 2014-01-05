@@ -1,0 +1,1189 @@
+--- 
+:it: 
+  :rbnf: 
+    :grouping: 
+      - 
+        :ruleset: 
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "&[last primary ignorable ] << ' ' << ',' << '-' << '­';"
+                :value: 0
+            :type: "lenient-parse"
+          - 
+            :rules: 
+              - 
+                :rule: "=#,###0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 0
+            :type: "spellout-numbering-year"
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "<< virgola >>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "uno;"
+                :value: 1
+              - 
+                :rule: "due;"
+                :value: 2
+              - 
+                :rule: "tre;"
+                :value: 3
+              - 
+                :rule: "quattro;"
+                :value: 4
+              - 
+                :rule: "cinque;"
+                :value: 5
+              - 
+                :rule: "sei;"
+                :value: 6
+              - 
+                :rule: "sette;"
+                :value: 7
+              - 
+                :rule: "otto;"
+                :value: 8
+              - 
+                :rule: "nove;"
+                :value: 9
+              - 
+                :rule: "dieci;"
+                :value: 10
+              - 
+                :rule: "undici;"
+                :value: 11
+              - 
+                :rule: "dodici;"
+                :value: 12
+              - 
+                :rule: "tredici;"
+                :value: 13
+              - 
+                :rule: "quattordici;"
+                :value: 14
+              - 
+                :rule: "quindici;"
+                :value: 15
+              - 
+                :rule: "sedici;"
+                :value: 16
+              - 
+                :rule: "diciassette;"
+                :value: 17
+              - 
+                :rule: "diciotto;"
+                :value: 18
+              - 
+                :rule: "diciannove;"
+                :value: 19
+              - 
+                :rule: "vent>%%msco-with-i>;"
+                :value: 20
+              - 
+                :rule: "trent>%%msco-with-a>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%msco-with-a>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%msco-with-a>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%msco-with-a>;"
+                :value: 60
+              - 
+                :rule: "settant>%%msco-with-a>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%msco-with-a>;"
+                :value: 80
+              - 
+                :rule: "novant>%%msco-with-a>;"
+                :value: 90
+              - 
+                :rule: "cent>%%msco-with-o>;"
+                :value: 100
+              - 
+                :rule: "<<­cent>%%msco-with-o>;"
+                :value: 200
+              - 
+                :rule: "mille[­>>];"
+                :value: 1000
+              - 
+                :rule: "<%%msc-no-final<­mila[­>>];"
+                :value: 2000
+              - 
+                :rule: "un milione[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milioni[ >>];"
+                :value: 2000000
+              - 
+                :rule: "un miliardo[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardi[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "un bilione[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilioni[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "un biliardo[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardi[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-numbering"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "i;"
+                :value: 0
+              - 
+                :rule: "­uno;"
+                :value: 1
+              - 
+                :rule: "i­due;"
+                :value: 2
+              - 
+                :rule: "i­tré;"
+                :value: 3
+              - 
+                :rule: "i­=%spellout-numbering=;"
+                :value: 4
+              - 
+                :rule: "­otto;"
+                :value: 8
+              - 
+                :rule: "i­nove;"
+                :value: 9
+              - 
+                :rule: "ERROR;"
+                :value: 10
+            :type: "msco-with-i"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "a;"
+                :value: 0
+              - 
+                :rule: "­uno;"
+                :value: 1
+              - 
+                :rule: "a­due;"
+                :value: 2
+              - 
+                :rule: "a­tré;"
+                :value: 3
+              - 
+                :rule: "a­=%spellout-numbering=;"
+                :value: 4
+              - 
+                :rule: "­otto;"
+                :value: 8
+              - 
+                :rule: "a­nove;"
+                :value: 9
+              - 
+                :rule: "ERROR;"
+                :value: 10
+            :type: "msco-with-a"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "o;"
+                :value: 0
+              - 
+                :rule: "o­uno;"
+                :value: 1
+              - 
+                :rule: "o­due;"
+                :value: 2
+              - 
+                :rule: "o­tré;"
+                :value: 3
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 4
+              - 
+                :rule: "­otto;"
+                :value: 8
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 9
+              - 
+                :rule: "­=%spellout-numbering=;"
+                :value: 80
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 90
+            :type: "msco-with-o"
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "<< virgola >>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "un;"
+                :value: 1
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 2
+              - 
+                :rule: "vent>%%msc-with-i>;"
+                :value: 20
+              - 
+                :rule: "trent>%%msc-with-a>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%msc-with-a>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%msc-with-a>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%msc-with-a>;"
+                :value: 60
+              - 
+                :rule: "settant>%%msc-with-a>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%msc-with-a>;"
+                :value: 80
+              - 
+                :rule: "novant>%%msc-with-a>;"
+                :value: 90
+              - 
+                :rule: "cent>%%msc-with-o>;"
+                :value: 100
+              - 
+                :rule: "<<­cent>%%msc-with-o>;"
+                :value: 200
+              - 
+                :rule: "mille[­>>];"
+                :value: 1000
+              - 
+                :rule: "<%%msc-no-final<­mila[­>>];"
+                :value: 2000
+              - 
+                :rule: "un milione[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milioni[ >>];"
+                :value: 2000000
+              - 
+                :rule: "un miliardo[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardi[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "un bilione[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilioni[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "un biliardo[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardi[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-masculine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "i;"
+                :value: 0
+              - 
+                :rule: "­un;"
+                :value: 1
+              - 
+                :rule: "=%%msco-with-i=;"
+                :value: 2
+            :type: "msc-with-i"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "a;"
+                :value: 0
+              - 
+                :rule: "­un;"
+                :value: 1
+              - 
+                :rule: "=%%msco-with-a=;"
+                :value: 2
+            :type: "msc-with-a"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "o;"
+                :value: 0
+              - 
+                :rule: "o­uno;"
+                :value: 1
+              - 
+                :rule: "o­due;"
+                :value: 2
+              - 
+                :rule: "o­tré;"
+                :value: 3
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 4
+              - 
+                :rule: "­otto;"
+                :value: 8
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 9
+              - 
+                :rule: "­=%spellout-numbering=;"
+                :value: 80
+              - 
+                :rule: "o­=%spellout-numbering=;"
+                :value: 90
+            :type: "msc-with-o"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "ERROR;"
+                :value: 0
+              - 
+                :rule: "=%spellout-cardinal-masculine=;"
+                :value: 2
+              - 
+                :rule: "vent>%%msc-with-i-nofinal>;"
+                :value: 20
+              - 
+                :rule: "trent>%%msc-with-a-nofinal>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%msc-with-a-nofinal>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%msc-with-a-nofinal>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%msc-with-a-nofinal>;"
+                :value: 60
+              - 
+                :rule: "settant>%%msc-with-a-nofinal>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%msc-with-a-nofinal>;"
+                :value: 80
+              - 
+                :rule: "novant>%%msc-with-a-nofinal>;"
+                :value: 90
+              - 
+                :rule: "cent>%%msc-with-o-nofinal>;"
+                :value: 100
+              - 
+                :rule: "<<­cent>%%msc-with-o-nofinal>;"
+                :value: 200
+              - 
+                :rule: "ERROR;"
+                :value: 1000
+            :type: "msc-no-final"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "=%%msc-with-i=;"
+                :value: 0
+              - 
+                :rule: "a­tre;"
+                :value: 3
+              - 
+                :rule: "=%%msc-with-i=;"
+                :value: 4
+            :type: "msc-with-i-nofinal"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "=%%msc-with-a=;"
+                :value: 0
+              - 
+                :rule: "a­tre;"
+                :value: 3
+              - 
+                :rule: "=%%msc-with-a=;"
+                :value: 4
+            :type: "msc-with-a-nofinal"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "=%%msc-with-o=;"
+                :value: 0
+              - 
+                :rule: "o­tre;"
+                :value: 3
+              - 
+                :rule: "=%%msc-with-o=;"
+                :value: 4
+            :type: "msc-with-o-nofinal"
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "<< virgola >>;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "una;"
+                :value: 1
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 2
+              - 
+                :rule: "vent>%%fem-with-i>;"
+                :value: 20
+              - 
+                :rule: "trent>%%fem-with-a>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%fem-with-a>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%fem-with-a>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%fem-with-a>;"
+                :value: 60
+              - 
+                :rule: "settant>%%fem-with-a>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%fem-with-a>;"
+                :value: 80
+              - 
+                :rule: "novant>%%fem-with-a>;"
+                :value: 90
+              - 
+                :rule: "cent>%%fem-with-o>;"
+                :value: 100
+              - 
+                :rule: "<<­cent>%%fem-with-o>;"
+                :value: 200
+              - 
+                :rule: "mille[­>>];"
+                :value: 1000
+              - 
+                :rule: "<%%msc-no-final<­mila[­>>];"
+                :value: 2000
+              - 
+                :rule: "un milione[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< milioni[ >>];"
+                :value: 2000000
+              - 
+                :rule: "un miliardo[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< miliardi[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "un bilione[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< bilioni[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "un biliardo[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine< biliardi[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal-feminine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "i;"
+                :value: 0
+              - 
+                :rule: "­una;"
+                :value: 1
+              - 
+                :rule: "=%%msco-with-i=;"
+                :value: 2
+            :type: "fem-with-i"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "a;"
+                :value: 0
+              - 
+                :rule: "­una;"
+                :value: 1
+              - 
+                :rule: "=%%msco-with-a=;"
+                :value: 2
+            :type: "fem-with-a"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "o;"
+                :value: 0
+              - 
+                :rule: "o­una;"
+                :value: 1
+              - 
+                :rule: "=%%msco-with-o=;"
+                :value: 2
+            :type: "fem-with-o"
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "primo;"
+                :value: 1
+              - 
+                :rule: "secondo;"
+                :value: 2
+              - 
+                :rule: "terzo;"
+                :value: 3
+              - 
+                :rule: "quarto;"
+                :value: 4
+              - 
+                :rule: "quinto;"
+                :value: 5
+              - 
+                :rule: "sesto;"
+                :value: 6
+              - 
+                :rule: "settimo;"
+                :value: 7
+              - 
+                :rule: "ottavo;"
+                :value: 8
+              - 
+                :rule: "nono;"
+                :value: 9
+              - 
+                :rule: "decimo;"
+                :value: 10
+              - 
+                :rule: "undicesimo;"
+                :value: 11
+              - 
+                :rule: "dodicesimo;"
+                :value: 12
+              - 
+                :rule: "tredicesimo;"
+                :value: 13
+              - 
+                :rule: "quattordicesimo;"
+                :value: 14
+              - 
+                :rule: "quindicesimo;"
+                :value: 15
+              - 
+                :rule: "sedicesimo;"
+                :value: 16
+              - 
+                :rule: "diciassettesimo;"
+                :value: 17
+              - 
+                :rule: "diciottesimo;"
+                :value: 18
+              - 
+                :rule: "diciannovesimo;"
+                :value: 19
+              - 
+                :rule: "vent>%%ordinal-esimo-with-i>;"
+                :value: 20
+              - 
+                :rule: "trent>%%ordinal-esimo-with-a>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%ordinal-esimo-with-a>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%ordinal-esimo-with-a>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%ordinal-esimo-with-a>;"
+                :value: 60
+              - 
+                :rule: "settant>%%ordinal-esimo-with-a>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%ordinal-esimo-with-a>;"
+                :value: 80
+              - 
+                :rule: "novant>%%ordinal-esimo-with-a>;"
+                :value: 90
+              - 
+                :rule: "cent>%%ordinal-esimo-with-o>;"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-masculine<­cent>%%ordinal-esimo-with-o>;"
+                :value: 200
+              - 
+                :rule: "mille­>%%ordinal-esimo>;"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-masculine<­mille­>%%ordinal-esimo>;"
+                :value: 2000
+              - 
+                :rule: "<%spellout-cardinal-masculine<­mila­>%%ordinal-esimo>;"
+                :value: 2001
+              - 
+                :rule: "milione­>%%ordinal-esimo>;"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-masculine<milion­>%%ordinal-esimo>;"
+                :value: 2000000
+              - 
+                :rule: "miliard­>%%ordinal-esimo-with-o>;"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine<miliard­>%%ordinal-esimo-with-o>;"
+                :value: 2000000000
+              - 
+                :rule: "bilione­>%%ordinal-esimo>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine<bilion­>%%ordinal-esimo>;"
+                :value: 2000000000000
+              - 
+                :rule: "biliard­>%%ordinal-esimo-with-o>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-masculine<biliard­>%%ordinal-esimo-with-o>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-ordinal-masculine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "simo;"
+                :value: 0
+              - 
+                :rule: "­unesimo;"
+                :value: 1
+              - 
+                :rule: "­duesimo;"
+                :value: 2
+              - 
+                :rule: "­treesimo;"
+                :value: 3
+              - 
+                :rule: "­quattresimo;"
+                :value: 4
+              - 
+                :rule: "­cinquesimo;"
+                :value: 5
+              - 
+                :rule: "­seiesimo;"
+                :value: 6
+              - 
+                :rule: "­settesimo;"
+                :value: 7
+              - 
+                :rule: "­ottesimo;"
+                :value: 8
+              - 
+                :rule: "­novesimo;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-masculine=;"
+                :value: 10
+            :type: "ordinal-esimo"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esimo;"
+                :value: 0
+              - 
+                :rule: "­unesimo;"
+                :value: 1
+              - 
+                :rule: "i­duesimo;"
+                :value: 2
+              - 
+                :rule: "i­treesimo;"
+                :value: 3
+              - 
+                :rule: "i­quattresimo;"
+                :value: 4
+              - 
+                :rule: "i­cinquesimo;"
+                :value: 5
+              - 
+                :rule: "i­seiesimo;"
+                :value: 6
+              - 
+                :rule: "i­settesimo;"
+                :value: 7
+              - 
+                :rule: "­ottesimo;"
+                :value: 8
+              - 
+                :rule: "i­novesimo;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-masculine=;"
+                :value: 10
+            :type: "ordinal-esimo-with-i"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esimo;"
+                :value: 0
+              - 
+                :rule: "­unesimo;"
+                :value: 1
+              - 
+                :rule: "a­duesimo;"
+                :value: 2
+              - 
+                :rule: "a­treesimo;"
+                :value: 3
+              - 
+                :rule: "a­quattresimo;"
+                :value: 4
+              - 
+                :rule: "a­cinquesimo;"
+                :value: 5
+              - 
+                :rule: "a­seiesimo;"
+                :value: 6
+              - 
+                :rule: "a­settesimo;"
+                :value: 7
+              - 
+                :rule: "­ottesimo;"
+                :value: 8
+              - 
+                :rule: "a­novesimo;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-masculine=;"
+                :value: 10
+            :type: "ordinal-esimo-with-a"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esimo;"
+                :value: 0
+              - 
+                :rule: "­unesimo;"
+                :value: 1
+              - 
+                :rule: "o­duesimo;"
+                :value: 2
+              - 
+                :rule: "o­treesimo;"
+                :value: 3
+              - 
+                :rule: "o­quattresimo;"
+                :value: 4
+              - 
+                :rule: "o­cinquesimo;"
+                :value: 5
+              - 
+                :rule: "o­seiesimo;"
+                :value: 6
+              - 
+                :rule: "o­settesimo;"
+                :value: 7
+              - 
+                :rule: "­ottesimo;"
+                :value: 8
+              - 
+                :rule: "o­novesimo;"
+                :value: 9
+              - 
+                :rule: "o­=%spellout-ordinal-masculine=;"
+                :value: 10
+            :type: "ordinal-esimo-with-o"
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "zero;"
+                :value: 0
+              - 
+                :rule: "prima;"
+                :value: 1
+              - 
+                :rule: "seconda;"
+                :value: 2
+              - 
+                :rule: "terza;"
+                :value: 3
+              - 
+                :rule: "quarta;"
+                :value: 4
+              - 
+                :rule: "quinta;"
+                :value: 5
+              - 
+                :rule: "sesta;"
+                :value: 6
+              - 
+                :rule: "settima;"
+                :value: 7
+              - 
+                :rule: "ottava;"
+                :value: 8
+              - 
+                :rule: "nona;"
+                :value: 9
+              - 
+                :rule: "decima;"
+                :value: 10
+              - 
+                :rule: "undicesima;"
+                :value: 11
+              - 
+                :rule: "dodicesima;"
+                :value: 12
+              - 
+                :rule: "tredicesima;"
+                :value: 13
+              - 
+                :rule: "quattordicesima;"
+                :value: 14
+              - 
+                :rule: "quindicesima;"
+                :value: 15
+              - 
+                :rule: "sedicesima;"
+                :value: 16
+              - 
+                :rule: "diciassettesima;"
+                :value: 17
+              - 
+                :rule: "diciottesima;"
+                :value: 18
+              - 
+                :rule: "diciannovesima;"
+                :value: 19
+              - 
+                :rule: "vent>%%ordinal-esima-with-i>;"
+                :value: 20
+              - 
+                :rule: "trent>%%ordinal-esima-with-a>;"
+                :value: 30
+              - 
+                :rule: "quarant>%%ordinal-esima-with-a>;"
+                :value: 40
+              - 
+                :rule: "cinquant>%%ordinal-esima-with-a>;"
+                :value: 50
+              - 
+                :rule: "sessant>%%ordinal-esima-with-a>;"
+                :value: 60
+              - 
+                :rule: "settant>%%ordinal-esima-with-a>;"
+                :value: 70
+              - 
+                :rule: "ottant>%%ordinal-esima-with-a>;"
+                :value: 80
+              - 
+                :rule: "novant>%%ordinal-esima-with-a>;"
+                :value: 90
+              - 
+                :rule: "cent>%%ordinal-esima-with-o>;"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-feminine<­cent>%%ordinal-esima-with-o>;"
+                :value: 200
+              - 
+                :rule: "mille­>%%ordinal-esima>;"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-feminine<­mille­>%%ordinal-esima>;"
+                :value: 2000
+              - 
+                :rule: "<%spellout-cardinal-feminine<­mila­>%%ordinal-esima>;"
+                :value: 2001
+              - 
+                :rule: "milione­>%%ordinal-esima>;"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-feminine<milion­>%%ordinal-esima>;"
+                :value: 2000000
+              - 
+                :rule: "miliard­>%%ordinal-esima-with-o>;"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine<miliard­>%%ordinal-esima-with-o>;"
+                :value: 2000000000
+              - 
+                :rule: "bilione­>%%ordinal-esima>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine<bilion­>%%ordinal-esima>;"
+                :value: 2000000000000
+              - 
+                :rule: "biliard­>%%ordinal-esima-with-o>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine<biliard­>%%ordinal-esima-with-o>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-ordinal-feminine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "sima;"
+                :value: 0
+              - 
+                :rule: "­unesima;"
+                :value: 1
+              - 
+                :rule: "­duesima;"
+                :value: 2
+              - 
+                :rule: "­treesima;"
+                :value: 3
+              - 
+                :rule: "­quattresima;"
+                :value: 4
+              - 
+                :rule: "­cinquesima;"
+                :value: 5
+              - 
+                :rule: "­seiesima;"
+                :value: 6
+              - 
+                :rule: "­settesima;"
+                :value: 7
+              - 
+                :rule: "­ottesima;"
+                :value: 8
+              - 
+                :rule: "­novesima;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-feminine=;"
+                :value: 10
+            :type: "ordinal-esima"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esima;"
+                :value: 0
+              - 
+                :rule: "­unesima;"
+                :value: 1
+              - 
+                :rule: "i­duesima;"
+                :value: 2
+              - 
+                :rule: "i­treesima;"
+                :value: 3
+              - 
+                :rule: "i­quattresima;"
+                :value: 4
+              - 
+                :rule: "i­cinquesima;"
+                :value: 5
+              - 
+                :rule: "i­seiesima;"
+                :value: 6
+              - 
+                :rule: "i­settesima;"
+                :value: 7
+              - 
+                :rule: "­ottesima;"
+                :value: 8
+              - 
+                :rule: "i­novesima;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-feminine=;"
+                :value: 10
+            :type: "ordinal-esima-with-i"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esima;"
+                :value: 0
+              - 
+                :rule: "­unesima;"
+                :value: 1
+              - 
+                :rule: "a­duesima;"
+                :value: 2
+              - 
+                :rule: "a­treesima;"
+                :value: 3
+              - 
+                :rule: "a­quattresima;"
+                :value: 4
+              - 
+                :rule: "a­cinquesima;"
+                :value: 5
+              - 
+                :rule: "a­seiesima;"
+                :value: 6
+              - 
+                :rule: "a­settesima;"
+                :value: 7
+              - 
+                :rule: "­ottesima;"
+                :value: 8
+              - 
+                :rule: "a­novesima;"
+                :value: 9
+              - 
+                :rule: "=%spellout-ordinal-feminine=;"
+                :value: 10
+            :type: "ordinal-esima-with-a"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "esima;"
+                :value: 0
+              - 
+                :rule: "­unesima;"
+                :value: 1
+              - 
+                :rule: "o­duesima;"
+                :value: 2
+              - 
+                :rule: "o­treesima;"
+                :value: 3
+              - 
+                :rule: "o­quattresima;"
+                :value: 4
+              - 
+                :rule: "o­cinquesima;"
+                :value: 5
+              - 
+                :rule: "o­seiesima;"
+                :value: 6
+              - 
+                :rule: "o­settesima;"
+                :value: 7
+              - 
+                :rule: "­ottesima;"
+                :value: 8
+              - 
+                :rule: "o­novesima;"
+                :value: 9
+              - 
+                :rule: "o­=%spellout-ordinal-feminine=;"
+                :value: 10
+            :type: "ordinal-esima-with-o"
+        :type: "SpelloutRules"
+      - 
+        :ruleset: 
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "º;"
+                :value: 0
+            :type: "dord-mascabbrev"
+          - 
+            :rules: 
+              - 
+                :rule: "−>>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0==%%dord-mascabbrev=;"
+                :value: 0
+            :type: "digits-ordinal-masculine"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "ª;"
+                :value: 0
+            :type: "dord-femabbrev"
+          - 
+            :rules: 
+              - 
+                :rule: "−>>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0==%%dord-femabbrev=;"
+                :value: 0
+            :type: "digits-ordinal-feminine"
+          - 
+            :rules: 
+              - 
+                :rule: "=%digits-ordinal-masculine=;"
+                :value: 0
+            :type: "digits-ordinal"
+        :type: "OrdinalRules"

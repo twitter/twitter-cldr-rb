@@ -17,11 +17,7 @@ group :development do
 
   # https://github.com/svenfuchs/ruby-cldr/pull/18
   # gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
-  # gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "numbering_systems"
-  gem 'ruby-cldr', :path => "~/workspace/ruby-cldr"
-
-  # https://github.com/seattlerb/ruby2ruby/pull/24
-  # gem 'ruby2ruby', :github => 'camertron/ruby2ruby', :branch => 'not_equals'
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "fix_plurals"
 end
 
 group :test do

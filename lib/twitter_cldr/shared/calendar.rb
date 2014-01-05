@@ -38,28 +38,40 @@ module TwitterCldr
       end
 
       def months(names_form = :wide, format = DEFAULT_FORMAT)
-        data = get_with_names_form(:months, names_form, format)
-        data && data.sort_by { |m| m.first }.map { |m| m.last }
+        cache_field_data(:months, names_form, format) do
+          data = get_with_names_form(:months, names_form, format)
+          data && data.sort_by { |m| m.first }.map { |m| m.last }
+        end
       end
 
       def weekdays(names_form = :wide, format = DEFAULT_FORMAT)
-        get_with_names_form(:days, names_form, format)
+        cache_field_data(:weekdays, names_form, format) do
+          get_with_names_form(:days, names_form, format)
+        end
       end
 
       def fields
-        get_data(:fields)
+        cache_field_data(:fields) do
+          get_data(:fields)
+        end
       end
 
       def quarters(names_form = :wide, format = DEFAULT_FORMAT)
-        get_with_names_form(:quarters, names_form, format)
+        cache_field_data(:quarters, names_form, format) do
+          get_with_names_form(:quarters, names_form, format)
+        end
       end
 
       def periods(names_form = :wide, format = DEFAULT_PERIOD_FORMAT)
-        get_with_names_form(:periods, names_form, format)
+        cache_field_data(:periods, names_form, format) do
+          get_with_names_form(:periods, names_form, format)
+        end
       end
 
       def eras(names_form = :name)
-        get_data(:eras)[names_form]
+        cache_field_data(:eras, names_form) do
+          get_data(:eras)[names_form]
+        end
       end
 
       def date_order(options = {})
@@ -75,6 +87,17 @@ module TwitterCldr
       end
 
       private
+
+      def cache_field_data(field, names_form = nil, format = nil)
+        cache_key = TwitterCldr::Utils.compute_cache_key(locale, field, names_form, format)
+        field_cache[cache_key] ||= begin
+          yield
+        end
+      end
+
+      def field_cache
+        @@field_cache ||= {}
+      end
 
       def calendar_cache
         @@calendar_cache ||= {}

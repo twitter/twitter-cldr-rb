@@ -29,7 +29,7 @@ module TwitterCldr
 
       def expand_tokens(tokens)
         tokens.inject([]) do |ret, token|
-          ret += case token.type
+          ret + case token.type
             when :date
               expand_date(token)
             when :time
@@ -37,7 +37,6 @@ module TwitterCldr
             else
               [token]
           end
-          ret
         end
       end
 

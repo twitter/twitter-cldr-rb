@@ -60,9 +60,9 @@ module TwitterCldr
           when 0
             ["", ""]
           when 1..3
-            calendar[:eras][:abbr]
+            calendar.eras(:abbr)
           else
-            calendar[:eras][:name]
+            calendar.eras(:name)
         end
 
         if result = choices[date.year < 0 ? 0 : 1]
@@ -95,9 +95,9 @@ module TwitterCldr
           when 2
             quarter.to_s.rjust(length, '0')
           when 3
-            calendar[:quarters][:format][:abbreviated][quarter]
+            calendar.quarters(:abbreviated, :format)[quarter]
           when 4
-            calendar[:quarters][:format][:wide][quarter]
+            calendar.quarters(:wide, :format)[quarter]
         end
       end
 
@@ -115,7 +115,7 @@ module TwitterCldr
             raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             # calendar[:quarters][:'stand-alone'][:wide][key]
           when 5
-            calendar[:quarters][:'stand-alone'][:narrow][quarter]
+            calendar.quarters(:narrow)[quarter]
         end
       end
 
@@ -126,9 +126,9 @@ module TwitterCldr
           when 2
             date.month.to_s.rjust(length, '0')
           when 3
-            calendar[:months][:format][:abbreviated][date.month]
+            calendar.months(:abbreviated, :format)[date.month - 1]
           when 4
-            calendar[:months][:format][:wide][date.month]
+            calendar.months(:wide, :format)[date.month - 1]
           when 5
             raise NotImplementedError, 'requires cldr\'s "multiple inheritance"'
             # calendar[:months][:format][:narrow][date.month]
@@ -144,11 +144,11 @@ module TwitterCldr
           when 2
             date.month.to_s.rjust(length, '0')
           when 3
-            calendar[:months][:'stand-alone'][:abbreviated][date.month]
+            calendar.months(:abbreviated)[date.month - 1]
           when 4
-            calendar[:months][:'stand-alone'][:wide][date.month]
+            calendar.months(:wide)[date.month - 1]
           when 5
-            calendar[:months][:'stand-alone'][:narrow][date.month]
+            calendar.months(:narrow)[date.month - 1]
           else
             # raise unknown date format
         end
@@ -167,11 +167,11 @@ module TwitterCldr
         key = WEEKDAY_KEYS[date.wday]
         case length
           when 1..3
-            calendar[:days][:format][:abbreviated][key]
+            calendar.weekdays(:abbreviated, :format)[key]
           when 4
-            calendar[:days][:format][:wide][key]
+            calendar.weekdays(:wide, :format)[key]
           when 5
-            calendar[:days][:'stand-alone'][:narrow][key]
+            calendar.weekdays(:narrow)[key]
         end
       end
 
@@ -199,7 +199,7 @@ module TwitterCldr
         # Always use :wide form. Day-period design was changed in CLDR -
         # http://cldr.unicode.org/development/development-process/design-proposals/day-period-design that means some
         # major changes are required for a full support of day periods.
-        calendar[:periods][:format][:wide][time.strftime('%p').downcase.to_sym]
+        calendar.periods(:wide)[time.strftime('%p').downcase.to_sym]
       end
 
       def hour(time, pattern, length, options = {})

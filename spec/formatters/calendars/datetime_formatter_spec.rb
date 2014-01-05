@@ -420,18 +420,12 @@ describe DateTimeFormatter do
     end
 
     it "should fall back if the calendar doesn't contain the appropriate era data" do
-      stub(@formatter.data_reader).calendar do
-        {
-          :eras => {
-            :abbr => {
-              0 => "abbr0",
-              1 => "abbr1"
-            },
-            :name => {
-              0 => "name0"
-            }
-          }
-        }
+      stub(@formatter.data_reader.calendar).eras(:abbr) do
+        { 0 => "abbr0", 1 => "abbr1" }
+      end
+
+      stub(@formatter.data_reader.calendar).eras(:name) do
+        { 0 => "name0" }
       end
 
       date = Date.new(2012, 1, 1)

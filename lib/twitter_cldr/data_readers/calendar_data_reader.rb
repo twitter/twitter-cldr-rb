@@ -42,7 +42,7 @@ module TwitterCldr
       end
 
       def calendar
-        resource[:calendars][calendar_type]
+        @calendar ||= TwitterCldr::Shared::Calendar.new(locale)
       end
 
       def additional_format_selector

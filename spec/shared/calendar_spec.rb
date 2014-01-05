@@ -14,6 +14,7 @@ describe Calendar do
   before(:each) do
     # clear cache for each test
     Calendar.send(:class_variable_set, :@@calendar_cache, {})
+    Calendar.send(:class_variable_set, :@@field_cache, {})
   end
 
   describe '#initialize' do

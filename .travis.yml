@@ -12,4 +12,7 @@ env:
   - "FULL_SPEC=true TEST_FOLDERS='spec/normalization_spec.rb spec/normalization'"
   - "FULL_SPEC=true TEST_FOLDERS='spec/formatters spec/localized spec/resources spec/shared spec/tokenizers spec/utils_spec.rb spec/utils spec/core_ext_spec.rb spec/readme_spec.rb spec/twitter_cldr_spec.rb'"
 script: 'bundle exec rspec $TEST_FOLDERS'
+before_install:
+  - gem update --system 2.1.11
+  - gem --version
 before_script: 'gem install bundler'

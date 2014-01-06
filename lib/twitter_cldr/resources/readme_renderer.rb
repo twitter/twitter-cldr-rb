@@ -7,6 +7,9 @@ require 'erb'
 
 module TwitterCldr
   module Resources
+
+    ReadmeAssertionFailure = Struct.new(:message, :line_number)
+
     class ReadmeRenderer
 
       attr_reader :text, :assertion_failures
@@ -36,8 +39,15 @@ module TwitterCldr
           expected = expected.localize.normalize(:using => :NFKC).to_s
         end
 
-        assertion_failures << [got, expected] unless got == expected
-        got  # for now...
+        unless got == expected
+          line_num = line_num_from_stack_trace(Kernel.caller)
+          assertion_failures << ReadmeAssertionFailure.new(
+            "Expected `#{got}` to be `#{expected}` in README on line #{line_num}",
+            line_num
+          )
+        end
+
+        got
       end
 
       def assert_true(got)
@@ -53,8 +63,18 @@ module TwitterCldr
         begin
           proc.call
         rescue => e
-          assertion_failures << [e, nil]
+          line_num = line_num_from_stack_trace(Kernel.caller)
+          assertion_failures << ReadmeAssertionFailure.new(
+            "Expected README line #{line_num} not to raise an exception, but it did:\n#{e.message}\n#{e.backtrace.join("\n")}",
+            line_num
+          )
         end
+      end
+
+      private
+
+      def line_num_from_stack_trace(trace)
+        trace[0].split(":")[1].to_i  # kind of a hack...
       end
 
       def ellipsize(obj)

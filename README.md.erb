@@ -140,9 +140,7 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
-<% datetime.localize(:en).additional_formats.each do |pattern| %>
-| <%= pattern.ljust(10, " ") %> | <%= datetime.localize(:en).to_additional_s(pattern).ljust(22, " ") %> |
-<% end %>
+<% datetime.localize(:en).additional_formats.each do |pattern| %>| <%= pattern.ljust(10, " ") %> | <%= datetime.localize(:en).to_additional_s(pattern).ljust(22, " ") %> |<%= "\n" %><% end %>
 
 
 #### Relative Dates and Times

@@ -20,7 +20,7 @@ module TwitterCldr
       end
 
       def render
-        ERB.new(text, nil, ">").result(binding)
+        ERB.new(text).result(binding)
       end
 
       def datetime

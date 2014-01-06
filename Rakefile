@@ -73,7 +73,7 @@ task :update do
     "update:collation_tries",
     "update:canonical_compositions",
     "update:rbnf_tests",
-    "update:rbnf_classes"
+    "update:rbnf_classes",
     "update:readme"
   ]
 
@@ -187,6 +187,13 @@ namespace :update do
     renderer = TwitterCldr::Resources::ReadmeRenderer.new(
       File.read("./README.md.erb")
     )
-    puts renderer.render
+
+    File.open("./README.md", "w+") do |f|
+      f.write(renderer.render)
+    end
+
+    if renderer.assertion_failures.size > 0
+      puts "There were errors encountered while updating the README. Please run specs for details"
+    end
   end
 end

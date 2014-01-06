@@ -1,16 +1,19 @@
+# encoding: UTF-8
+
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
 require 'erb'
-require 'twitter_cldr'
-require 'pry-nav'
 
 module TwitterCldr
   module Resources
     class ReadmeRenderer
 
-      attr_reader :text, :failed_assertions
+      attr_reader :text, :assertion_failures
 
       def initialize(text)
         @text = text
-        @failed_assertions = []
+        @assertion_failures = []
       end
 
       def render
@@ -33,7 +36,7 @@ module TwitterCldr
           expected = expected.localize.normalize(:using => :NFKC).to_s
         end
 
-        failed_assertions << [got, expected] unless got == expected
+        assertion_failures << [got, expected] unless got == expected
         got  # for now...
       end
 
@@ -45,17 +48,32 @@ module TwitterCldr
         assert(got, false)
       end
 
+      def assert_no_error(proc)
+        error = nil
+        begin
+          proc.call
+        rescue => e
+          assertion_failures << [e, nil]
+        end
+      end
+
       def ellipsize(obj)
-        if obj.is_a?(Array)
-          "[#{obj.map(&:inspect).join(", ")}, ... ]"
+        case obj
+          when Array
+            "[#{obj.map(&:inspect).join(", ")}, ... ]"
+          when Hash
+            hash_text = obj.map { |key, val| "#{key.inspect} => #{val.inspect}" }.join(", ")
+            "{ ... #{hash_text} ... }"
+        end
+      end
+
+      def slice_hash(hash, keys)
+        hash.inject({}) do |ret, (key, val)|
+          ret[key] = val if keys.include?(key)
+          ret
         end
       end
 
     end
   end
 end
-
-contents = File.read("/Users/legrandfromage/workspace/twitter-cldr-rb/README.md.erb")
-rr = ReadmeRenderer.new(contents)
-puts rr.render
-puts rr.failed_assertions.inspect

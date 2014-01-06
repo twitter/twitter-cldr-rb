@@ -21,5 +21,6 @@ module TwitterCldr
     autoload :BidiTestImporter,                   'twitter_cldr/resources/bidi_test_importer'
     autoload :NormalizationQuickCheckImporter,    'twitter_cldr/resources/normalization_quick_check_importer'
     autoload :RbnfTestImporter,                   'twitter_cldr/resources/rbnf_test_importer'
+    autoload :ReadmeRenderer,                     'twitter_cldr/resources/readme_renderer'
   end
 end

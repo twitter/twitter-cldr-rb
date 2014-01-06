@@ -213,10 +213,10 @@ Behind the scenes, these convenience methods are creating instances of `ListForm
 
 ```ruby
 f = TwitterCldr::Formatters::ListFormatter.new(:en)
-f.format(["Larry", "Curly", "Moe"])  # <% assert(TwitterCldr::Formatters::ListFormatter.new(:en).format(["Larry", "Curly", "Moe"]), "Larry, Curly, and Moe").inspect %>
+f.format(["Larry", "Curly", "Moe"])  # <%= assert(TwitterCldr::Formatters::ListFormatter.new(:en).format(["Larry", "Curly", "Moe"]), "Larry, Curly, and Moe").inspect %>
 
 f = TwitterCldr::Formatters::ListFormatter.new(:es)
-f.format(["Larry", "Curly", "Moe"])  # <% assert(TwitterCldr::Formatters::ListFormatter.new(:es).format(["Larry", "Curly", "Moe"]), "Larry, Curly y Moe").inspect %>
+f.format(["Larry", "Curly", "Moe"])  # <%= assert(TwitterCldr::Formatters::ListFormatter.new(:es).format(["Larry", "Curly", "Moe"]), "Larry, Curly y Moe").inspect %>
 ```
 
 The TwitterCLDR `ListFormatter` class is smart enough to handle right-to-left (RTL) text and will format the list "backwards" in these cases (note that what looks backwards to English speakers looks frontwards for RTL speakers).  See the section on handling bidirectional text below for more information.
@@ -325,21 +325,21 @@ In addition to translating language codes, TwitterCLDR provides access to the fu
 
 ```ruby
 # get all languages for the default locale
-TwitterCldr::Shared::Languages.all                                                  # { ... :"zh-Hant" => "Traditional Chinese", :vi => "Vietnamese" ... }
+TwitterCldr::Shared::Languages.all                                                  # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Languages.all, [:"zh-Hant", :vi]), { :"zh-Hant" => "Traditional Chinese", :vi => "Vietnamese" })) %>
 
 # get all languages for a specific locale
-TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :"zh-Hant" => "chino tradicional", :vi => "vietnamita" ... }
+TwitterCldr::Shared::Languages.all_for(:es)                                         # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Languages.all_for(:es), [:"zh-Hant", :vi]), { :"zh-Hant" => "chino tradicional", :vi => "vietnamita" })) %>
 
 # get a language by its code for the default locale
-TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Chinese"
+TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # <%= assert(TwitterCldr::Shared::Languages.from_code(:'zh-Hant'), "Traditional Chinese").inspect %>
 
 # get a language from its code for a specific locale
-TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # "chino tradicional"
+TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # <%= assert(TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es), "chino tradicional").inspect %>
 
 # translate a language from one locale to another
 # signature: translate_language(lang, source_locale, destination_locale)
-TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Chinese"
-TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
+TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # <%= assert(TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en), "Traditional Chinese").inspect %>
+TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # <%= assert(TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es), "chino tradicional").inspect %>
 ```
 
 ### Postal Codes
@@ -348,29 +348,29 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # true
-TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # false
+TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")) %>
+TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # <%= assert_false(TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")) %>
 
 # England (Great Britain)
-TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # true
+TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")) %>
 
 # Sweden
-TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # true
+TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")) %>
 
 # Canada
-TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # true
+TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")) %>
 ```
 
 Get a list of supported territories by using the `#territories` method:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.territories  # [:ve, :iq, :cx, :cv, ...]
+TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr::Shared::PostalCodes.territories.sort[0..4], [:ad, :am, :ar, :as, :at])) %>
 ```
 
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # /\d{5}([ \-]\d{4})?/
+TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PostalCodes.regex_for_territory(:us), /\d{5}([ \-]\d{4})?/).inspect %>
 ```
 
 ### Phone Codes
@@ -379,76 +379,76 @@ Look up phone codes by territory:
 
 ```ruby
 # United States
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # "1"
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:us), "1").inspect %>
 
 # Perú
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # "51"
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe), "51").inspect %>
 
 # Egypt
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # "20"
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg), "20").inspect %>
 
 # Denmark
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # "45"
+TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk), "45").inspect %>
 ```
 
 Get a list of supported territories by using the `#territories` method:
 
 ```ruby
-TwitterCldr::Shared::PhoneCodes.territories  # [:zw, :an, :tr, :by, :mh, ...]
+TwitterCldr::Shared::PhoneCodes.territories  # <%= ellipsize(assert(TwitterCldr::Shared::PhoneCodes.territories.sort[0..4], [:ac, :ad, :ae, :af, :ag])) %>
 ```
 
 ### Language Codes
 
-Over the years, different standards for language codes have accumulated.  Probably the two most popular are ISO-639 and BCP-47 and their children.  TwitterCLDR provides a way to convert between these codes systematically.
+Over the years, different standards for language codes have accumulated.  Probably the two most popular are ISO-639 and BCP-47 and their children.  TwitterCLDR provides a way to convert between these codes programmatically.
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2)  # :spa
+TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2)  # <%= assert(TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_639_2), :spa).inspect %>
 ```
 
 Use the `standards_for` method to get the standards that are available for conversion from a given code.  In the example below, note that the first argument, `:es`, is the correct BCP-47 language code for Spanish, which is the second argument.  The return value comprises all the available conversions:
 
 ```ruby
-# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+# <%= assert(TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47), [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]).inspect %>
 TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
 ```
 
 Get a list of supported standards for a full English language name:
 
 ```ruby
-# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+# <%= assert(TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish), [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]).inspect %>
 TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
 ```
 
 Get a list of supported languages:
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.languages  # [:Spanish, :German, :Norwegian, :Arabic ... ]
+TwitterCldr::Shared::LanguageCodes.languages  # <%= ellipsize(assert(TwitterCldr::Shared::LanguageCodes.languages.select { |item| [:Arabic, :German, :Norwegian, :Spanish].include?(item) }.sort, [:Arabic, :German, :Norwegian, :Spanish])) %>
 ```
 
 Determine valid standards:
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1)  # true
-TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg)      # false
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1)  # <%= assert_true(TwitterCldr::Shared::LanguageCodes.valid_standard?(:iso_639_1)) %>
+TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg)      # <%= assert_false(TwitterCldr::Shared::LanguageCodes.valid_standard?(:blarg)) %>
 ```
 
 Determine valid codes:
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47)     # true
-TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)  # false
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47)     # <%= assert_true(TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :bcp_47)) %>
+TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)  # <%= assert_false(TwitterCldr::Shared::LanguageCodes.valid_code?(:es, :iso_639_2)) %>
 ```
 
 Convert the full English name of a language into a language code:
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2)  # :spa
+TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2)  # <%= assert(TwitterCldr::Shared::LanguageCodes.from_language(:Spanish, :iso_639_2), :spa).inspect %>
 ```
 
 Convert a language code into it's full English name:
 
 ```ruby
-TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
+TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # <%= assert(TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2), "Spanish").inspect %>
 ```
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
@@ -460,38 +460,39 @@ TwitterCLDR provides ways to retrieve individual code points as well as normaliz
 Retrieve data for code points:
 
 ```ruby
+<% code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9) %>
 code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9)
-code_point.name             # "LOVE HOTEL"
-code_point.bidi_mirrored    # "N"
-code_point.category         # "So"
-code_point.combining_class  # "0"
+code_point.name             # <%= assert(code_point.name, "LOVE HOTEL").inspect %>
+code_point.bidi_mirrored    # <%= assert(code_point.bidi_mirrored, "N").inspect %>
+code_point.category         # <%= assert(code_point.category, "So").inspect %>
+code_point.combining_class  # <%= assert(code_point.combining_class, "0").inspect %>
 ```
 
 Convert characters to code points:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.from_string("¿")  # [0xBF]
+TwitterCldr::Utils::CodePoints.from_string("¿")  # <%= assert(TwitterCldr::Utils::CodePoints.from_string("¿"), [0xBF]).inspect %>
 ```
 
 Convert code points to characters:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
+TwitterCldr::Utils::CodePoints.to_string([0xBF])  # <%= assert(TwitterCldr::Utils::CodePoints.to_string([0xBF]), "¿").inspect %>
 ```
 
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # "français"
+TwitterCldr::Normalization::NFD.normalize("français")  # <%= assert(TwitterCldr::Normalization::NFD.normalize("français"), "français").inspect %>
 ```
 
 Normalization is easier to see in hex:
 
 ```ruby
-# [101, 115, 112, 97, 241, 111, 108]
+# <%= assert(TwitterCldr::Utils::CodePoints.from_string("español"), [101, 115, 112, 97, 241, 111, 108]).inspect %>
 TwitterCldr::Utils::CodePoints.from_string("español")
 
-# [101, 115, 112, 97, 110, 771, 111, 108]
+# <%= assert(TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español")), [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
 TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
 ```
 
@@ -500,17 +501,17 @@ Notice in the example above that the letter "ñ" was transformed from `241` to `
 A few convenience methods also exist for `String` that make it easy to normalize and get code points for strings:
 
 ```ruby
-# [101, 115, 112, 97, 241, 111, 108]
+# <%= assert("español".localize.code_points, [101, 115, 112, 97, 241, 111, 108]).inspect %>
 "español".localize.code_points
 
-# [101, 115, 112, 97, 110, 771, 111, 108]
+# <%= assert("español".localize.normalize.code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
 "español".localize.normalize.code_points
 ```
 
 Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, NFC, and NFKC algorithms are all supported (default is NFD):
 
 ```ruby
-# [101, 115, 112, 97, 110, 771, 111, 108]
+# <%= assert("español".localize.normalize(:using => :NFKD).code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
 "español".localize.normalize(:using => :NFKD).code_points
 ```
 
@@ -519,29 +520,31 @@ Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, 
 TwitterCLDR contains an implementation of the [Unicode Collation Algorithm (UCA)](http://unicode.org/reports/tr10/) that provides language-sensitive text sorting capabilities.  Conveniently, all you have to do is use the `sort` method in combination with the familiar `localize` method.  Notice the difference between the default Ruby sort, which simply compares bytes, and the proper language-aware sort from TwitterCLDR in this German example:
 
 ```ruby
-["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "Älg"]
-["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["Älg", "Art", "Ved", "Wasa"]
+["Art", "Wasa", "Älg", "Ved"].sort                       # <%= assert(["Art", "Wasa", "Älg", "Ved"].sort, ["Art", "Ved", "Wasa", "Älg"]).inspect %>
+["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # <%= assert(["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a, ["Älg", "Art", "Ved", "Wasa"]).inspect %>
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedArray`, then using the `TwitterCldr::Collation::Collator` class to sort the elements:
 
 ```ruby
+<% collator = TwitterCldr::Collation::Collator.new(:de) %>
 collator = TwitterCldr::Collation::Collator.new(:de)
-collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["Älg", "Art", "Ved", "Wasa"]
-collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["Älg", "Art", "Ved", "Wasa"]
+collator.sort(["Art", "Wasa", "Älg", "Ved"])      # <%= assert(collator.sort(["Art", "Wasa", "Älg", "Ved"]), ["Älg", "Art", "Ved", "Wasa"]).inspect %>
+collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # <%= assert(collator.sort!(["Art", "Wasa", "Älg", "Ved"]), ["Älg", "Art", "Ved", "Wasa"]).inspect %>
 ```
 
 The `TwitterCldr::Collation::Collator` class also provides methods to compare two strings, get sort keys, and calculate collation elements for individual strings:
 
 ```ruby
+<% collator = TwitterCldr::Collation::Collator.new(:de) %>
 collator = TwitterCldr::Collation::Collator.new(:de)
-collator.compare("Art", "Älg")           # 1
-collator.compare("Älg", "Art")           # -1
-collator.compare("Art", "Art")           # 0
+collator.compare("Art", "Älg")           # <%= assert(collator.compare("Art", "Älg"), 1).inspect %>
+collator.compare("Älg", "Art")           # <%= assert(collator.compare("Älg", "Art"), -1).inspect %>
+collator.compare("Art", "Art")           # <%= assert(collator.compare("Art", "Art"), 0).inspect %>
 
-collator.get_collation_elements("Älg")   # [[39, 5, 143], [0, 157, 5], [61, 5, 5], [51, 5, 5]]
+collator.get_collation_elements("Älg")   # <%= assert(collator.get_collation_elements("Älg"), [[39, 5, 143], [0, 157, 5], [61, 5, 5], [51, 5, 5]]).inspect %>
 
-collator.get_sort_key("Älg")             # [39, 61, 51, 1, 134, 157, 6, 1, 143, 7]
+collator.get_sort_key("Älg")             # <%= assert(collator.get_sort_key("Älg"), [39, 61, 51, 1, 134, 157, 6, 1, 143, 7]).inspect %>
 ```
 
 **Note**: The TwitterCLDR collator does not currently pass all the collation tests provided by Unicode, but for some strange reasons.  See the [summary](https://gist.github.com/f4ee3bd280a2257c5641) of these discrepancies if you're curious.
@@ -553,6 +556,13 @@ When it comes to displaying text written in both right-to-left (RTL) and left-to
 To mitigate this problem, Unicode supports special invisible characters that force visual reordering so that mixed RTL and LTR (called "bidirectional") text renders naturally on the screen.  The Unicode Consortium has developed an algorithm (The Unicode Bidirectional Algorithm, or UBA) that intelligently inserts these control characters where appropriate.  You can make use of the UBA implementation in TwitterCLDR by creating a new instance of `TwitterCldr::Shared::Bidi` using the `from_string` static method, and manipulating it like so:
 
 ```ruby
+<%
+  assert_no_error(lambda do
+    bidi = TwitterCldr::Shared::Bidi.from_string("hello نزوة world", :direction => :RTL)
+    bidi.reorder_visually!
+    bidi.to_s
+  end)
+%>
 bidi = TwitterCldr::Shared::Bidi.from_string("hello نزوة world", :direction => :RTL)
 bidi.reorder_visually!
 bidi.to_s
@@ -567,17 +577,17 @@ Ruby 1.8 does not come with great Unicode support, and nowhere is this more appa
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
 ```ruby
-{ :hello => "world" }.localize.to_yaml
-["hello", "world"].localize.to_yaml
-"hello, world".localize.to_yaml
+{ :hello => "world" }.localize.to_yaml <% assert_no_error(lambda { { :hello => "world" }.localize.to_yaml }) %>
+["hello", "world"].localize.to_yaml <% assert_no_error(lambda { { :hello => "world" }.localize.to_yaml }) %>
+"hello, world".localize.to_yaml <% assert_no_error(lambda { "hello, world".localize.to_yaml }) %>
 ```
 
 Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-TwitterCldr::Shared::YAML.dump({ :hello => "world" })
-TwitterCldr::Shared::YAML.dump(["hello", "world"])
-TwitterCldr::Shared::YAML.dump("hello, world")
+TwitterCldr::Shared::YAML.dump({ :hello => "world" }) <% assert_no_error(lambda { TwitterCldr::Utils::YAML.dump({ :hello => "world" }) }) %>
+TwitterCldr::Shared::YAML.dump(["hello", "world"]) <% assert_no_error(lambda { TwitterCldr::Utils::YAML.dump(["hello", "world"]) }) %>
+TwitterCldr::Shared::YAML.dump("hello, world") <% assert_no_error(lambda { TwitterCldr::Utils::YAML.dump("hello, world") }) %>
 ```
 
 ## About Twitter-specific Locales
@@ -585,24 +595,24 @@ TwitterCldr::Shared::YAML.dump("hello, world")
 Twitter tries to always use BCP-47 language codes.  Data from the CLDR doesn't always match those codes however, so TwitterCLDR provides a `convert_locale` method to convert between the two.  All functionality throughout the entire gem defers to `convert_locale` before retrieving CLDR data.  `convert_locale` supports Twitter-supported BCP-47 language codes as well as CLDR locale codes, so you don't have to guess which one to use.  Here are a few examples:
 
 ```ruby
-TwitterCldr.convert_locale(:'zh-cn')          # :zh
-TwitterCldr.convert_locale(:zh)               # :zh
-TwitterCldr.convert_locale(:'zh-tw')          # :'zh-Hant'
-TwitterCldr.convert_locale(:'zh-Hant')        # :'zh-Hant'
+TwitterCldr.convert_locale(:'zh-cn')          # <%= assert(TwitterCldr.convert_locale(:'zh-cn'), :zh).inspect %>
+TwitterCldr.convert_locale(:zh)               # <%= assert(TwitterCldr.convert_locale(:zh), :zh).inspect %>
+TwitterCldr.convert_locale(:'zh-tw')          # <%= assert(TwitterCldr.convert_locale(:'zh-tw'), :'zh-Hant').inspect %>
+TwitterCldr.convert_locale(:'zh-Hant')        # <%= assert(TwitterCldr.convert_locale(:'zh-Hant'), :'zh-Hant').inspect %>
 
-TwitterCldr.convert_locale(:msa)              # :ms
-TwitterCldr.convert_locale(:ms)               # :ms
+TwitterCldr.convert_locale(:msa)              # <%= assert(TwitterCldr.convert_locale(:msa), :ms).inspect %>
+TwitterCldr.convert_locale(:ms)               # <%= assert(TwitterCldr.convert_locale(:ms), :ms).inspect %>
 ```
 
 There are a few functions in TwitterCLDR that don't require a locale code, and instead use the default locale by calling `TwitterCldr.locale`.  The `locale` function defers to `FastGettext.locale` when the FastGettext library is available, and falls back on :en (English) when it's not.  (Twitter uses the FastGettext gem to retrieve translations efficiently in Ruby).
 
 ```ruby
-TwitterCldr.get_locale    # will return :en
+TwitterCldr.get_locale    # will return <%= assert(TwitterCldr.locale, :en).inspect %>
 
 require 'fast_gettext'
 FastGettext.locale = "ru"
 
-TwitterCldr.get_locale    # will return :ru
+TwitterCldr.locale    # will return :ru
 ```
 
 ## Requirements

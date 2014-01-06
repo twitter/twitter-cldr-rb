@@ -31,7 +31,7 @@ module TwitterCldr
       end
 
       def to_sentence
-        TwitterCldr::Formatters::ListFormatter.new(:locale => locale).format(base_obj)
+        TwitterCldr::Formatters::ListFormatter.new(locale).format(base_obj)
       end
 
       def each

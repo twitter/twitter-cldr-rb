@@ -17,7 +17,8 @@ group :development do
 
   # https://github.com/svenfuchs/ruby-cldr/pull/18
   # gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "fix_plurals"
+  # gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "fix_plurals"
+  gem 'ruby-cldr', :path => "~/workspace/ruby-cldr"
 end
 
 group :test do

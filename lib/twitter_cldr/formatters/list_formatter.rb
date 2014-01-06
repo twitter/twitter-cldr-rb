@@ -13,25 +13,31 @@ module TwitterCldr
         @locale = TwitterCldr.convert_locale(locale)
       end
 
-      def format(list)
-        if resource.include?(list.size)
-          compose(resource[list.size], list)
-        else
-          compose_list(list)
+      def format(list, type = :default)
+        if res = resource_for_type(type)
+          if res.include?(list.size)
+            compose(res[list.size], list)
+          else
+            compose_list(list, res)
+          end
         end
+      end
+
+      def types
+        resource.keys
       end
 
       protected
 
-      def compose_list(list)
-        result = compose(resource[:end] || resource[:middle] || "", [list[-2], list[-1]])
+      def compose_list(list, res)
+        result = compose(res[:end] || res[:middle] || "", [list[-2], list[-1]])
 
         # Ruby ranges don't support subtraction for some reason (eg. -3..-5).
         # Instead, we use a positive counter and negate it on array access.
         (3..list.size).each do |i|
           format_sym = i == list.size ? :start : :middle
-          format_sym = :middle unless resource.include?(format_sym)
-          result = compose(resource[format_sym] || "", [list[-i], result])
+          format_sym = :middle unless res.include?(format_sym)
+          result = compose(res[format_sym] || "", [list[-i], result])
         end
 
         result
@@ -53,6 +59,10 @@ module TwitterCldr
         else
           elements[0] || ""
         end
+      end
+
+      def resource_for_type(type)
+        resource[type]
       end
 
       def resource

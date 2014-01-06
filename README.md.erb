@@ -138,8 +138,8 @@ It's important to know that, even though any given format may not be available a
 
 ##### List of additional date format examples for English:
 
-| Format | Output           |
-|:-------|------------------|
+| Format     | Output                 |
+|:-----------|------------------------|
 <% datetime.localize(:en).additional_formats.each do |pattern| %>
 | <%= pattern.ljust(10, " ") %> | <%= datetime.localize(:en).to_additional_s(pattern).ljust(22, " ") %> |
 <% end %>

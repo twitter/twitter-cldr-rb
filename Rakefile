@@ -74,6 +74,7 @@ task :update do
     "update:canonical_compositions",
     "update:rbnf_tests",
     "update:rbnf_classes"
+    "update:readme"
   ]
 
   tasks.each do |task|
@@ -180,5 +181,12 @@ namespace :update do
       './spec/formatters/numbers/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
+  end
+
+  task :readme do |_, args|
+    renderer = TwitterCldr::Resources::ReadmeRenderer.new(
+      File.read("./README.md.erb")
+    )
+    puts renderer.render
   end
 end

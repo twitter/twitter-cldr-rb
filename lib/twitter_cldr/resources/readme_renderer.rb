@@ -5,6 +5,13 @@
 
 require 'erb'
 
+# patch to add compare operator to Symbol (for mri 1.8)
+class Symbol
+  def <=>(other)
+    to_s <=> other.to_s
+  end
+end
+
 module TwitterCldr
   module Resources
 
@@ -28,7 +35,7 @@ module TwitterCldr
       end
 
       def time
-        @time ||= Time.new(2014, 2, 14, 12, 20, 5, 0)
+        @time ||= Time.gm(2014, 2, 14, 12, 20, 5, 0)
       end
 
       private
@@ -39,15 +46,24 @@ module TwitterCldr
           expected = expected.localize.normalize(:using => :NFKC).to_s
         end
 
-        unless got == expected
+        unless equal?(got, expected)
           line_num = line_num_from_stack_trace(Kernel.caller)
           assertion_failures << ReadmeAssertionFailure.new(
-            "Expected `#{got}` to be `#{expected}` in README on line #{line_num}",
+            "Expected `#{got.inspect}` to be `#{expected.inspect}` in README on line #{line_num}",
             line_num
           )
         end
 
         got
+      end
+
+      def equal?(obj1, obj2)
+        case obj1
+          when Array
+            obj1 - obj2 == []
+          else
+            obj1 == obj2
+        end
       end
 
       def assert_true(got)

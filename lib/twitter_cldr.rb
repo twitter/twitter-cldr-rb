@@ -29,6 +29,7 @@ module TwitterCldr
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
   autoload :DataReaders,   'twitter_cldr/data_readers'
   autoload :Utils,         'twitter_cldr/utils'
+  autoload :Transforms,    'twitter_cldr/transforms'
 
   extend SingleForwardable
 

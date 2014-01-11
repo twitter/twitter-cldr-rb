@@ -1,4 +1,3 @@
 ---
-:nl: ! '{ :''nl'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| (n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length
-  : 0) == 0) ? :one : :other } } } } }'
+:nl: '{ :''nl'' => { :i18n => { :plural => { :keys => [:one], :rule => lambda { |n|
+  n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : :other } } } } }'

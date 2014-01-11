@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'cldr/export'
+require 'pry-nav'
 
 require 'twitter_cldr/resources/download'
 
@@ -13,8 +14,8 @@ module TwitterCldr
     class LocalesResourcesImporter
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
-      LOCALE_COMPONENTS = [calendars languages numbers plurals lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = [currency_digits_and_rounding rbnf_root numbering_systems]
+      LOCALE_COMPONENTS = ["plurals"]#%w(calendars languages numbers plurals lists layout currencies territories rbnf)  # units
+      SHARED_COMPONENTS = []#["transforms"] # %w(currency_digits_and_rounding rbnf_root numbering_systems)
 
       # Arguments:
       #
@@ -59,7 +60,7 @@ module TwitterCldr
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
-          deep_symbolize(component, locale, path)
+          deep_symbolize(component)
         end
 
         export_args = {
@@ -69,13 +70,13 @@ module TwitterCldr
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
-          deep_symbolize(component, locale, path)
+          deep_symbolize(path)
         end
 
         copy_zh_hant_plurals
       end
 
-      def deep_symbolize(component, locale, path)
+      def deep_symbolize(path)
         return unless File.extname(path) == '.yml'
         data = YAML.load(File.read(path))
 

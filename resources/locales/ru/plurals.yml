@@ -1,9 +1,8 @@
 ---
-:ru: ! '{ :''ru'' => { :i18n => { :plural => { :keys => [:one, :many, :other], :rule
-  => lambda { |n| (((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0)
-  == 0 && n.to_i % 10 == 1 && n.to_i % 100 != 11) ? :one : ((((v = n.to_s.split(".")[1]
-  || []).count > 1 ? v.last.length : 0) == 0 && n.to_i % 10 == 0) || (((v = n.to_s.split(".")[1]
-  || []).count > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (5..9).include?(n.to_i
-  % 10))) || (((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0) ==
-  0 && (((n.to_i % 100) % 1).zero? && (11..14).include?(n.to_i % 100)))) ? :many :
-  :other } } } } }'
+:ru: '{ :''ru'' => { :i18n => { :plural => { :keys => [:one, :few, :many], :rule =>
+  lambda { |n| n = n.respond_to?(:abs) ? n.abs : 0;(n.to_f % 10 == 1 && n.to_f % 100
+  != 11) ? :one : ((((n.to_f % 10) % 1).zero? && (2..4).include?(n.to_f % 10)) &&
+  (((n.to_f % 100) % 1).zero? && !(12..14).include?(n.to_f % 100))) ? :few : (n.to_f
+  % 10 == 0 || (((n.to_f % 10) % 1).zero? && (5..9).include?(n.to_f % 10)) || (((n.to_f
+  % 100) % 1).zero? && (11..14).include?(n.to_f % 100))) ? :many : :other } } } }
+  }'

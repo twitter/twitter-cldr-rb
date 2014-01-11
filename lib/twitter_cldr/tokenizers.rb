@@ -16,6 +16,7 @@ module TwitterCldr
     autoload :TimeTokenizer,                'twitter_cldr/tokenizers/calendars/time_tokenizer'
     autoload :NumberTokenizer,              'twitter_cldr/tokenizers/numbers/number_tokenizer'
     autoload :RbnfTokenizer,                'twitter_cldr/tokenizers/numbers/rbnf_tokenizer'
+    autoload :TransformTokenizer,           'twitter_cldr/tokenizers/transforms/transform_tokenizer'
     autoload :TimespanTokenizer,            'twitter_cldr/tokenizers/calendars/timespan_tokenizer'
   end
 end

@@ -10,8 +10,8 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, d MMM y G"
-        :GyMMMd: "d MMM y G"
+        :GyMMMEd: "E, MMM d, y G"
+        :GyMMMd: "MMM d, y G"
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -50,14 +50,7 @@
             :thu: "Do"
             :tue: "Di"
             :wed: "Wo"
-          :narrow: 
-            :fri: "V"
-            :mon: "M"
-            :sat: "S"
-            :sun: "S"
-            :thu: "D"
-            :tue: "D"
-            :wed: "W"
+          :narrow: :calendars.gregorian.days.stand-alone.narrow
           :short: 
             :fri: "Vr."
             :mon: "Ma."
@@ -75,14 +68,7 @@
             :tue: "Dinsdag"
             :wed: "Woensdag"
         :stand-alone: 
-          :abbreviated: 
-            :fri: "Vr"
-            :mon: "Ma"
-            :sat: "Sa"
-            :sun: "So"
-            :thu: "Do"
-            :tue: "Di"
-            :wed: "Wo"
+          :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow: 
             :fri: "V"
             :mon: "M"
@@ -99,34 +85,27 @@
             :thu: "Do."
             :tue: "Di."
             :wed: "Wo."
-          :wide: 
-            :fri: "Vrydag"
-            :mon: "Maandag"
-            :sat: "Saterdag"
-            :sun: "Sondag"
-            :thu: "Donderdag"
-            :tue: "Dinsdag"
-            :wed: "Woensdag"
+          :wide: :calendars.gregorian.days.format.wide
       :eras: 
         :abbr: 
-          0: "v.g.j."
-          1: "g.j."
+          0: "v.C."
+          1: "n.C."
         :name: 
           0: "voor Christus"
           1: "na Christus"
         :narrow: 
-          0: "vgj"
-          1: "vg"
+          0: "B"
+          1: "A"
       :fields: 
         :day: "Dag"
-        :dayperiod: "VM/NM"
+        :dayperiod: "AM/PM"
         :era: "Era"
         :hour: "Uur"
         :minute: "Minuut"
         :month: "Maand"
         :second: "Sekonde"
         :week: "Week"
-        :weekday: "Dag van die Week"
+        :weekday: "Weeksdag"
         :year: "Jaar"
         :zone: "Tydsone"
       :formats: 
@@ -172,19 +151,7 @@
             7: "Jul"
             8: "Aug"
             9: "Sep"
-          :narrow: 
-            1: "J"
-            10: "O"
-            11: "N"
-            12: "D"
-            2: "F"
-            3: "M"
-            4: "A"
-            5: "M"
-            6: "J"
-            7: "J"
-            8: "A"
-            9: "S"
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide: 
             1: "Januarie"
             10: "Oktober"
@@ -199,19 +166,7 @@
             8: "Augustus"
             9: "September"
         :stand-alone: 
-          :abbreviated: 
-            1: "Jan"
-            10: "Okt"
-            11: "Nov"
-            12: "Des"
-            2: "Feb"
-            3: "Mar"
-            4: "Apr"
-            5: "Mei"
-            6: "Jun"
-            7: "Jul"
-            8: "Aug"
-            9: "Sep"
+          :abbreviated: :calendars.gregorian.months.format.abbreviated
           :narrow: 
             1: "J"
             10: "O"
@@ -271,18 +226,10 @@
             3: "3de kwartaal"
             4: "4de kwartaal"
         :stand-alone: 
-          :abbreviated: 
-            1: "K1"
-            2: "K2"
-            3: "K3"
-            4: "K4"
+          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: 
-            1: "1ste kwartaal"
-            2: "2de kwartaal"
-            3: "3de kwartaal"
-            4: "4de kwartaal"
+          :wide: :calendars.gregorian.quarters.format.wide

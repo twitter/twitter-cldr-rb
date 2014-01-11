@@ -5,7 +5,7 @@
       :currency: 
         :number_system: "arab"
         :patterns: 
-          :default: "¤#,##0.00;(¤#,##0.00)"
+          :default: "¤ #,##0.00;¤ #,##0.00-"
         :unit: 
           :few: "{0} {1}"
           :many: "{0} {1}"
@@ -16,7 +16,7 @@
       :decimal: 
         :number_system: "arab"
         :patterns: 
-          :default: "#,##0.###"
+          :default: "#,##0.###;#,##0.###-"
           :long: 
             1000: "0 ألف"
             10000: "00 ألف"
@@ -58,9 +58,8 @@
       :group: ","
       :infinity: "∞"
       :list: ";"
-      :minus_sign: "‎-"
+      :minus_sign: "-"
       :nan: "NaN"
       :per_mille: "‰"
       :percent_sign: "%"
-      :plus_sign: "‎+"
-      :superscripting_exponent: "×"
+      :plus_sign: "+"

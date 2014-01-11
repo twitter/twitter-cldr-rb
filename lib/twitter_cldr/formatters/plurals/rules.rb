@@ -31,6 +31,7 @@ module TwitterCldr
           def get_resource(locale)
             locale = TwitterCldr.convert_locale(locale)
             cache_key = TwitterCldr::Utils.compute_cache_key(locale)
+            puts locale
             locale_cache[cache_key] ||= eval(TwitterCldr.get_locale_resource(locale, :plurals)[locale])[locale][:i18n][:plural]
           end
 

@@ -66,6 +66,7 @@ task :update do
     "update:locales_resources",
     "update:tailoring_data",
     "update:unicode_data",
+    "update:generate_casefolder",  # must come after unicode data
     "update:composition_exclusions",
     "update:postal_codes",
     "update:phone_codes",
@@ -116,6 +117,14 @@ namespace :update do
       args[:unicode_data_path] || './vendor/unicode-data',
       './resources/unicode_data'
     ).import
+  end
+
+  desc 'Generate the casefolder class. Depends on unicode data'
+  task :casefolder do
+    TwitterCldr::Resources::CasefolderClassGenerator.new(
+      './lib/twitter_cldr/resources/casefolder.rb.erb',
+      './lib/twitter_cldr/shared'
+    ).generate
   end
 
   desc 'Import composition exclusions resource'

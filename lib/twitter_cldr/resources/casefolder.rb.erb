@@ -1,0 +1,52 @@
+# encoding: UTF-8
+
+# Copyright 2012 Twitter, Inc
+# http://www.apache.org/licenses/LICENSE-2.0
+
+module TwitterCldr
+  module Shared
+    class Casefolder
+      class << self
+
+        CASEFOLDING_REGEX_C = /[<%= casefolding_char_class_for("C") %>]/
+        CASEFOLDING_REGEX_F = /[<%= casefolding_char_class_for("F") %>]/
+        CASEFOLDING_REGEX_S = /[<%= casefolding_char_class_for("S") %>]/
+
+        CASEFOLDING_HASH = <%= inspect_hash_in_lines(casefolding_hash_for(["C", "F", "S"]), 9, 5) %>
+
+        def simple_casefold(str)
+          perform_casefold(str, simple_casefold_regex)
+        end
+
+        def full_casefold(str)
+          perform_casefold(str, full_casefold_regex)
+        end
+
+        alias :casefold :full_casefold
+
+        def common_casefold(str)
+          perform_casefold(str, CASEFOLDING_REGEX_C)
+        end
+
+        private
+
+        def perform_casefold(str, regex)
+          str.gsub(regex) do |s|
+            s.unpack("U*").inject([]) do |ret, ss|
+              ret + CASEFOLDING_HASH[ss]
+            end.pack("U*")
+          end
+        end
+
+        def simple_casefold_regex
+          @simple_casefold_regex ||= Regexp.union(CASEFOLDING_REGEX_C, CASEFOLDING_REGEX_S)
+        end
+
+        def full_casefold_regex
+          @full_casefold_regex ||= Regexp.union(CASEFOLDING_REGEX_C, CASEFOLDING_REGEX_F)
+        end
+
+      end
+    end
+  end
+end

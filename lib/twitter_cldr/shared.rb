@@ -16,5 +16,6 @@ module TwitterCldr
     autoload :Bidi,            'twitter_cldr/shared/bidi'
     autoload :Territories,     'twitter_cldr/shared/territories'
     autoload :NumberingSystem, 'twitter_cldr/shared/numbering_system'
+    autoload :Casefolder,      'twitter_cldr/shared/casefolder'
   end
 end

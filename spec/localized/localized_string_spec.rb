@@ -147,6 +147,26 @@ describe LocalizedString do
     end
   end
 
+  describe "#casefold" do
+    it 'returns a LocalizedString' do
+      str = "Weißrussland".localize.casefold
+      str.should be_an_instance_of(LocalizedString)
+      str.to_s.should == "weissrussland"
+    end
+
+    it 'does not pass the t option by default' do
+      "Istanbul".localize.casefold.to_s.should == "istanbul"
+    end
+
+    it 'uses the t option when explicitly given' do
+      "Istanbul".localize.casefold(:t => true).to_s.should == "ıstanbul"
+    end
+
+    it 'uses t by default if the locale is tr (az not supported)' do
+      "Istanbul".localize(:tr).casefold.to_s.should == "ıstanbul"
+    end
+  end
+
   describe "#code_points" do
     it "returns an array of Unicode code points for the string" do
       "español".localize.code_points.should == [0x65, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C]

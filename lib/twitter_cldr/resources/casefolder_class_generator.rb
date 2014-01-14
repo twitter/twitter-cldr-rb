@@ -26,7 +26,7 @@ module TwitterCldr
       end
 
       def casefolding_char_class_for(status)
-        to_regex_char_class(casefolding_data_for(status))
+        to_regex_char_sequence(casefolding_data_for(status))
       end
 
       def casefolding_hash_for(statuses)
@@ -50,11 +50,8 @@ module TwitterCldr
 
       private
 
-      def to_regex_char_class(casefold_data)
-        casefold_data.inject("") do |ret, (source, _)|
-          ret << to_utf8(source)
-          ret
-        end
+      def to_regex_char_sequence(casefold_data)
+        casefold_data.map { |(source, _)| to_utf8(source) }.join("|")
       end
 
       def to_utf8(obj)
@@ -63,8 +60,8 @@ module TwitterCldr
       end
 
       def casefolding_data_for(status)
-        resource.inject({}) do |ret, (source, data)|
-          ret[source] = data[:target] if data[:status] == status
+        resource.inject({}) do |ret, data|
+          ret[data[:source]] = data[:target] if data[:status] == status
           ret
         end
       end

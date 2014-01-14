@@ -77,13 +77,12 @@ module TwitterCldr
       end
 
       def import_casefolding_data
-        parse_standard_file(casefold_data_file).inject({}) do |ret, data|
-          source = data[0].hex
-          ret[source] = {
+        parse_standard_file(casefold_data_file).map do |data|
+          {
+            :source => data[0].hex,
             :target => data[2].split(" ").map(&:hex),
             :status => data[1]
           }
-          ret
         end
       end
 

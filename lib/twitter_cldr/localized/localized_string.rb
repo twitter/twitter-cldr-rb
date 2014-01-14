@@ -24,6 +24,18 @@ module TwitterCldr
         TwitterCldr::Normalization.normalize(@base_obj, options).localize(@locale)
       end
 
+      def casefold(options = {})
+        unless options.include?(:t)
+          # Turkish and azerbaijani use the dotless i and therefore have a few
+          # special casefolding rules. Note "az" is not actually supported yet.
+          options[:t] = [:tr, :az].include?(@locale)
+        end
+
+        TwitterCldr::Shared::Casefolder.
+          casefold(@base_obj, options[:t]).
+          localize(@locale)
+      end
+
       def code_points
         TwitterCldr::Utils::CodePoints.from_string(@base_obj)
       end

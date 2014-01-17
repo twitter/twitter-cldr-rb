@@ -17,5 +17,7 @@ module TwitterCldr
     autoload :NumberTokenizer,              'twitter_cldr/tokenizers/numbers/number_tokenizer'
     autoload :RbnfTokenizer,                'twitter_cldr/tokenizers/numbers/rbnf_tokenizer'
     autoload :TimespanTokenizer,            'twitter_cldr/tokenizers/calendars/timespan_tokenizer'
+    autoload :UnicodeSetTokenizer,          'twitter_cldr/tokenizers/unicode_set/unicode_set_tokenizer'
+    autoload :SegmentationTokenizer,        'twitter_cldr/tokenizers/segmentation/segmentation_tokenizer'
   end
 end

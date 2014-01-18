@@ -3,17 +3,19 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'pry-nav'
+
 module TwitterCldr
   module Tokenizers
 
     class TokenRecognizer
 
-      attr_reader :token_type, :regex, :context, :cleaner
+      attr_reader :token_type, :regex, :content, :cleaner
 
       def initialize(token_type, regex, content = nil, &block)
         @token_type = token_type
         @regex = regex
-        @context = context
+        @content = content
         @cleaner = block
       end
 
@@ -33,7 +35,7 @@ module TwitterCldr
 
     class Tokenizer
 
-      attr_reader :splitter, :recognizers
+      attr_reader :recognizers, :custom_splitter, :remove_empty_entries
 
       def self.union(*tokenizers)
         recognizers = tokenizers.inject([]) do |ret, tokenizer|
@@ -45,11 +47,21 @@ module TwitterCldr
           end
         end
 
-        new(recognizers)
+        splitter = if tokenizers.all?(&:custom_splitter)
+          Regexp.compile(
+            tokenizers.map do |tokenizer|
+              tokenizer.custom_splitter.source
+            end.join("|")
+          )
+        end
+
+        new(recognizers, splitter)
       end
 
-      def initialize(recognizers)
+      def initialize(recognizers, splitter = nil, remove_empty_entries = true)
         @recognizers = recognizers
+        @custom_splitter = splitter
+        @remove_empty_entries = remove_empty_entries
       end
 
       def recognizer_at(token_type)
@@ -73,7 +85,9 @@ module TwitterCldr
             content = token_text.match(recognizer.content)[1]
             ret << CompositeToken.new(tokenize(content))
           else
-            if (cleaned_text = recognizer.clean(token_text)).size > 0
+            cleaned_text = recognizer.clean(token_text)
+
+            if (remove_empty_entries && cleaned_text.size > 0) || !remove_empty_entries
               ret << Token.new(
                 :value => cleaned_text,
                 :type => recognizer.token_type
@@ -88,11 +102,11 @@ module TwitterCldr
       private
 
       def splitter
-        @splitter ||= Regexp.new(
+        @splitter ||= (@custom_splitter || Regexp.new(
           "(" + recognizers.map do |recognizer|
             recognizer.regex.source
           end.join("|") + ")"
-        )
+        ))
       end
 
       def clear_splitter

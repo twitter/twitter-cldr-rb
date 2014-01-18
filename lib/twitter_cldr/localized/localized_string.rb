@@ -49,8 +49,8 @@ module TwitterCldr
       end
 
       def to_f(options = {})
-        if TwitterCldr::Parsers::NumberParser.is_numeric?(@base_obj)
-          TwitterCldr::Parsers::NumberParser.new(@locale).try_parse(@base_obj, options) do |result|
+        if TwitterCldr::Formatters::NumberParser.is_numeric?(@base_obj)
+          TwitterCldr::Formatters::NumberParser.new(@locale).try_parse(@base_obj, options) do |result|
             result || @base_obj.to_f
           end
         else

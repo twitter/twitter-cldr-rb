@@ -9,7 +9,7 @@ require 'pry-nav'
 
 include TwitterCldr::Parsers
 
-describe TwitterCldr::Parsers::NumberParser do
+describe TwitterCldr::Formatters::NumberParser do
   let(:separators) { ["\\.", ","] }
 
   before(:each) do

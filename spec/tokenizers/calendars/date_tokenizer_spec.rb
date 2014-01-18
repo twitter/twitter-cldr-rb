@@ -13,17 +13,12 @@ describe DateTokenizer do
       data_reader = DateDataReader.new(:es, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
         { :value => "EEEE", :type => :pattern },
         { :value => ", ", :type => :plaintext },
         { :value => "d", :type => :pattern },
-        { :value => "", :type => :plaintext },
         { :value => " 'de' ", :type => :plaintext },
-        { :value => "", :type => :plaintext },
         { :value => "MMMM", :type => :pattern },
-        { :value => "", :type => :plaintext },
         { :value => " 'de' ", :type => :plaintext },
-        { :value => "", :type => :plaintext },
         { :value => "y", :type => :pattern }
       ]
       check_token_list(got, expected)
@@ -33,7 +28,6 @@ describe DateTokenizer do
       data_reader = DateDataReader.new(:ja, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
         { :value => "y", :type => :pattern },
         { :value => "年", :type => :plaintext },
         { :value => "M", :type => :pattern },
@@ -54,7 +48,6 @@ describe DateTokenizer do
       data_reader = DateDataReader.new(:th, :type => :long, :calendar_type => :buddhist)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
         { :value => "d", :type => :pattern },
         { :value => " ", :type => :plaintext },
         { :value => "MMMM", :type => :pattern },

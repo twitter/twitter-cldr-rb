@@ -15,21 +15,15 @@ describe DateTimeTokenizer do
     it "should expand date and time placeholders and return the correct list of tokens" do
       got = tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
-        { :value => "", :type => :plaintext },
         { :value => "EEEE", :type => :pattern },
         { :value => ", ", :type => :plaintext },
         { :value => "d", :type => :pattern },
-        { :value => "", :type => :plaintext },
         { :value => " 'de' ", :type => :plaintext },
-        { :value => "", :type => :plaintext },
         { :value => "MMMM", :type => :pattern },
-        { :value => "", :type => :plaintext },
         { :value => " 'de' ", :type => :plaintext },
-        { :value => "", :type => :plaintext },
         { :value => "y", :type => :pattern },
-        { :value => ", ", :type => :plaintext },
-        { :value => "", :type => :plaintext },
+        { :value => ",", :type => :plaintext },
+        { :value => " ", :type => :plaintext },
         { :value => "H", :type => :pattern },
         { :value => ":", :type => :plaintext },
         { :value => "mm", :type => :pattern },

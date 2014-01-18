@@ -20,13 +20,10 @@ module TwitterCldr
       protected
 
       def tokenizer
-        @tokenizer ||= Tokenizer.new(
-          # creates spaces
-          /([^0*#,\.\{\}]*)(\{?[0#,\.]+\}?)([^0*#,\.\{\}]*)$/, [
-            TokenRecognizer.new(:pattern, /\{?[0?#,\.]+\}?/),
-            TokenRecognizer.new(:plaintext, //)
-          ]
-        )
+        @tokenizer ||= Tokenizer.new([
+          TokenRecognizer.new(:pattern, /\{?[0?#,\.]+\}?/),
+          TokenRecognizer.new(:plaintext, //)
+        ], /([^0*#,\.\{\}]*)(\{?[0#,\.]+\}?)([^0*#,\.\{\}]*)$/)
       end
 
     end

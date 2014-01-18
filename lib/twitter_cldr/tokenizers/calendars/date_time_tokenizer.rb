@@ -65,13 +65,11 @@ module TwitterCldr
       end
 
       def tokenizer
-        @tokenizer ||= Tokenizer.new(
-          /(\{\{date\}\}|\{\{time\}\})/, [
-            TokenRecognizer.new(:date, /\{\{date\}\}/),
-            TokenRecognizer.new(:time, /\{\{time\}\}/),
-            TokenRecognizer.new(:plaintext, //)
-          ]
-        )
+        @tokenizer ||= Tokenizer.new([
+          TokenRecognizer.new(:date, /\{\{date\}\}/),
+          TokenRecognizer.new(:time, /\{\{time\}\}/),
+          TokenRecognizer.new(:plaintext, //)
+        ])
       end
 
     end

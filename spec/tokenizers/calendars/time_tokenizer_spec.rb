@@ -13,7 +13,6 @@ describe TimeTokenizer do
       data_reader = TimeDataReader.new(:de, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
         { :value => "HH", :type => :pattern },
         { :value => ":", :type => :plaintext },
         { :value => "mm", :type => :pattern },
@@ -29,7 +28,6 @@ describe TimeTokenizer do
       data_reader = TimeDataReader.new(:ko, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
-        { :value => "", :type => :plaintext },
         { :value => "a", :type => :pattern },
         { :value => " ", :type => :plaintext },
         { :value => "h", :type => :pattern },

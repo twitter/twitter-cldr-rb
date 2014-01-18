@@ -42,7 +42,6 @@ module TwitterCldr
         ]
 
         @tokenizer ||= Tokenizer.new(
-          /(#{recognizers.map { |rec| rec.regex.source }.join("|")})/,
           recognizers + [
             TokenRecognizer.new(:plaintext, //)  # catch-all
           ]

@@ -18,13 +18,11 @@ module TwitterCldr
       end
 
       def tokenizer
-        @tokenizer ||= Tokenizer.new(
-          /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/, [
-            TokenRecognizer.new(:composite, /^\#\{[^\}]+\}/, /^\#\{([^\}]+)\}/),
-            TokenRecognizer.new(:pattern, /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/),
-            TokenRecognizer.new(:plaintext, //)
-          ]
-        )
+        @tokenizer ||= Tokenizer.new([
+          TokenRecognizer.new(:composite, /^\#\{[^\}]+\}/, /^\#\{([^\}]+)\}/),
+          TokenRecognizer.new(:pattern, /^(?:G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5})/),
+          TokenRecognizer.new(:plaintext, //)
+        ], /(\s*\'[\w\s-]+\'\s*|G{1,5}|y+|Y+|Q{1,4}|q{1,5}|M{1,5}|L{1,5}|d{1,2}|F{1}|E{1,5}|e{1,5}|c{1,5}|\#\{[^\}]+\})/)
       end
 
     end

@@ -5,6 +5,7 @@
 
 module TwitterCldr
   module Parsers
-    # autoload :NumberParser, 'twitter_cldr/parsers/number_parser'
+    autoload :Parser,             'twitter_cldr/parsers/parser'
+    autoload :UnicodeRegexParser, 'twitter_cldr/parsers/unicode_regex_parser'
   end
 end

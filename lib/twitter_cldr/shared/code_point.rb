@@ -24,22 +24,41 @@ module TwitterCldr
       :simple_titlecase_map
     ]
 
-    CodePoint = Struct.new(*CODE_POINT_FIELDS) do
+    class CodePoint
       DECOMPOSITION_DATA_INDEX = 5
-
       DECOMPOSITION_REGEX = /^(?:<(.+)>\s+)?(.+)?$/
+      INDICES = [:category, :combining_class, :bidi_class]
 
-      attr_accessor :compatibility_decomposition_tag
+      attr_reader :fields
 
-      def initialize(*)
-        super
-
-        if decomposition =~ DECOMPOSITION_REGEX
-          self.compatibility_decomposition_tag = $1
-          self.decomposition = $2 && $2.split.map(&:hex)
-        else
-          raise ArgumentError, "decomposition #{decomposition.inspect} has invalid format"
+      (CODE_POINT_FIELDS - [:decomposition]).each_with_index do |field, idx|
+        define_method field do
+          fields[idx]
         end
+      end
+
+      def decomposition
+        @decomposition ||= begin
+          if decomposition =~ DECOMPOSITION_REGEX
+            $2 && $2.split.map(&:hex)
+          else
+            raise ArgumentError, "decomposition #{decomposition.inspect} has invalid format"
+          end
+        end
+      end
+
+      def compatibility_decomposition_tag
+        @compat_decomp_tag ||= begin
+          if decomposition =~ DECOMPOSITION_REGEX
+            $1
+          else
+            raise ArgumentError, "decomposition #{decomposition.inspect} has invalid format"
+          end
+        end
+      end
+
+      def initialize(fields)
+        @fields = fields
       end
 
       def compatibility_decomposition?
@@ -65,7 +84,17 @@ module TwitterCldr
             block_data      = TwitterCldr.get_resource(:unicode_data, :blocks, target.first)
             code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
 
-            CodePoint.new(*code_point_data) if code_point_data
+            CodePoint.new(code_point_data) if code_point_data
+          end
+        end
+
+        INDICES.each do |index_name|
+          define_method :"codes_for_#{index_name}" do |search_terms|
+            index = (index_cache[index_name] ||= TwitterCldr.get_resource(
+              :unicode_data, :indices, index_name
+            ))
+
+            index[search_terms]
           end
         end
 
@@ -95,16 +124,20 @@ module TwitterCldr
           end
         end
 
-        def hangul_type_cache
-          @hangul_type_cache ||= {}
-        end
-
         def excluded_from_composition?(code_point)
           composition_exclusion_cache[code_point] ||=
             composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
         end
 
         private
+
+        def index_cache
+          @index_cache ||= {}
+        end
+
+        def hangul_type_cache
+          @hangul_type_cache ||= {}
+        end
 
         def code_point_cache
           @code_point_cache ||= {}

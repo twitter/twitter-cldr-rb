@@ -28,6 +28,9 @@ module TwitterCldr
         blocks           = import_blocks
         unicode_data     = import_unicode_data(blocks)
         casefolding_data = import_casefolding_data
+        index_data       = build_indices(
+          TwitterCldr::Shared::CodePoint::INDICES, unicode_data
+        )
 
         File.open(File.join(@output_path, 'blocks.yml'), 'w') do |output|
           YAML.dump(blocks, output)
@@ -43,6 +46,14 @@ module TwitterCldr
 
         File.open(File.join(@output_path, 'casefolding.yml'), 'w') do |output|
           YAML.dump(casefolding_data, output)
+        end
+
+        FileUtils.mkdir_p(File.join(@output_path, 'indices'))
+
+        index_data.each_pair do |index_name, data|
+          File.open(File.join(@output_path, "indices", "#{index_name}.yml"), 'w') do |output|
+            YAML.dump(data, output)
+          end
         end
       end
 
@@ -83,6 +94,24 @@ module TwitterCldr
             :target => data[2].split(" ").map(&:hex),
             :status => data[1]
           }
+        end
+      end
+
+      def build_indices(indices, unicode_data)
+        indices.inject({}) do |index_ret, index_name|
+          field_index = TwitterCldr::Shared::CODE_POINT_FIELDS.find_index do |field|
+            field == index_name
+          end
+
+          index_ret[index_name] = Hash.new { |hash, key| hash[key] = [] }
+
+          unicode_data.each_pair do |block_name, block_data|
+            block_data.each_pair do |code_point, data|
+              index_ret[index_name][data[field_index]] << code_point
+            end
+          end
+
+          index_ret
         end
       end
 

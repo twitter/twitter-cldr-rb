@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Tokenizers
-    class UnicodeSetTokenizer
+    class UnicodeRegexTokenizer
 
       extend Forwardable
       def_delegator :tokenizer, :insert_before
@@ -30,22 +30,17 @@ module TwitterCldr
             TokenRecognizer.new(:character_set, /\[:[\w]+:\]|\\p\{[\w]+\}/),  # [:Lu:] or \p{Lu}
             TokenRecognizer.new(:negated_character_set, /\[:\^[\w]+:\]|\\P\{[\w]+\}/),  #[:^Lu:] or \P{Lu}
             TokenRecognizer.new(:unicode_char, /\\u[a-fA-F0-9]{1,6}/),
+            TokenRecognizer.new(:multichar_string, /\{[#{w}]+\}/u),
 
+            TokenRecognizer.new(:escaped_character, /\\#{w}/u),
             TokenRecognizer.new(:negate, /\^/),
-            TokenRecognizer.new(:star, /\*/),
-            TokenRecognizer.new(:question_mark, /\?/),
-            TokenRecognizer.new(:pipe, /\|/),
-            TokenRecognizer.new(:intersection, /&/),
+            TokenRecognizer.new(:ampersand, /&/),
             TokenRecognizer.new(:dash, /-/),
 
-            TokenRecognizer.new(:open_curly, /\{/),
-            TokenRecognizer.new(:close_curly, /\}/),
-            TokenRecognizer.new(:open_paren, /\(/),
-            TokenRecognizer.new(:close_paren, /\)/),
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),
 
-            TokenRecognizer.new(:literal, //) do |val|
+            TokenRecognizer.new(:string, //) do |val|
               val.strip
             end
           ]

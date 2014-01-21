@@ -9,19 +9,13 @@ module TwitterCldr
 
       class UnexpectedTokenError < StandardError; end
 
-      class RuleParser
-
-        def reset
-          @token_index = 0
-        end
-
-        def parse(tokens)
-          @tokens = tokens
-          reset
-          switch([])
-        end
+      class RuleParser < TwitterCldr::Parsers::Parser
 
         private
+
+        def do_parse
+          switch([])
+        end
 
         def switch(list)
           send(current_token.type, list)
@@ -86,28 +80,6 @@ module TwitterCldr
             next_token(current_token.type)
           end
           contents
-        end
-
-        def next_token(type)
-          unless current_token.type == type
-            raise UnexpectedTokenError.new("Unexpected token #{current_token.type} \"#{current_token.value}\"")
-          end
-
-          @token_index += 1
-
-          while empty?(current_token)
-            @token_index += 1
-          end
-
-          current_token
-        end
-
-        def empty?(token)
-          token.type == :plaintext && token.value == ""
-        end
-
-        def current_token
-          @tokens[@token_index]
         end
 
       end

@@ -8,9 +8,16 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe CodePoint do
+  after(:each) do
+    CodePoint.instance_variable_set(:@composition_exclusion_cache, nil)
+    CodePoint.instance_variable_set(:@canonical_compositions, nil)
+    CodePoint.instance_variable_set(:@block_cache, nil)
+    CodePoint.instance_variable_set(:@blocks, nil)
+  end
+
   describe "#initialize" do
     let(:unicode_data) { ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', decomposition, "", "", "", 'N', "", "", "", "", ""] }
-    let(:code_point)   { CodePoint.new(*unicode_data) }
+    let(:code_point)   { CodePoint.new(unicode_data) }
 
     context 'when decomposition is canonical' do
       let(:decomposition) { '0028 007A 0029' }
@@ -59,17 +66,13 @@ describe CodePoint do
         code_point.should_not be_compatibility_decomposition
       end
     end
-
-    it 'raises ArgumentError if decomposition has invalid format' do
-
-    end
   end
 
   describe "#find" do
     it "retrieves information for any valid code point" do
       data = CodePoint.find(0x301)
       data.should be_a(CodePoint)
-      data.values.length.should == 15
+      data.fields.length.should == 15
     end
 
     it "returns nil if the information is not found" do
@@ -111,14 +114,7 @@ describe CodePoint do
     let(:canonical_compositions) { { [123, 456] => 789 } }
 
     before(:each) do
-      # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@canonical_compositions, nil)
       stub(CodePoint).find { |code_point| "I'm code point #{code_point}" }
-    end
-
-    after(:all) do
-      # clear the decomposition map after each test so mocks/stubs work
-      CodePoint.instance_variable_set(:@canonical_compositions, nil)
     end
 
     context "with a stubbed decomposition map" do
@@ -144,7 +140,6 @@ describe CodePoint do
 
   describe "#hangul_type" do
     before(:each) do
-      # CodePoint.instance_variable_set(:'@hangul_type_cache', {})
       stub(CodePoint).hangul_blocks {
         {
           :lparts       => [1..10],

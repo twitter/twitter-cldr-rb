@@ -6,6 +6,7 @@
 module TwitterCldr
   module Parsers
     autoload :Parser,             'twitter_cldr/parsers/parser'
+    autoload :SymbolTable,        'twitter_cldr/parsers/symbol_table'
     autoload :UnicodeRegexParser, 'twitter_cldr/parsers/unicode_regex_parser'
   end
 end

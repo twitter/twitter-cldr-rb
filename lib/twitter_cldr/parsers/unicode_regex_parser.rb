@@ -3,152 +3,25 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+include TwitterCldr::Shared
+
 module TwitterCldr
   module Parsers
-
-    class UnicodeRegexp
-
-      attr_reader :elements
-
-      def initialize(elements)
-        @elements = elements
-      end
-
-      def to_regexp(modifiers = nil)
-        Regexp.new(to_regexp_str, modifiers)
-      end
-
-      def to_regexp_str
-        @elements.inject("") do |ret, element|
-          ret << case element
-            when Token
-              element.value
-            else
-              element.to_regexp_str
-          end
-
-          ret
-        end
-      end
-
-    end
-
-    class CharacterRange
-
-      attr_reader :initial, :final
-
-      def initialize(initial, final)
-        @initial = initial
-        @final = final
-      end
-
-      # Unfortunately, due to the ambiguity of having both character
-      # ranges and set operations in the same syntax (which both use
-      # the "-" operator and square brackets), we have to treat
-      # CharacterRange as both a token and an operand. This type method
-      # helps it behave like a token.
-      def type
-        :character_range
-      end
-
-      def to_set
-        Set.new(
-          (initial.to_set.first..final.to_set.first).to_a
-        )
-      end
-
-    end
-
-    # This is analogous to ICU's UnicodeSet class.
-    class CharacterClass
-
-      GROUPING_PAIRS = {
-        :close_bracket => :open_bracket
-      }
-
-      # Character classes can include set operations (eg. union, intersection, etc).      
-      Operator = Struct.new(:operator, :left, :right)
-
-      class << self
-
-        def opening_types
-          @opening_types ||= GROUPING_PAIRS.values
-        end
-
-        def closing_types
-          @closing_types ||= GROUPING_PAIRS.keys
-        end
-
-        def opening_type_for(type)
-          GROUPING_PAIRS[type]
-        end
-
-      end
-
-      def initialize(root, negated = false)
-        @root = root
-        @negated = negated
-      end
-
-      def to_regexp(modifiers = nil)
-        Regexp.new(to_regexp_str, modifiers)
-      end
-
-      def to_regexp_str
-        to_regex_str_helper(root)
-      end
-
-      private
-
-      attr_reader :root
-
-      def evaluate(node)
-        if node.is_a?(Operator)
-          case node.operator
-            when :union
-              evaluate(node.left).union(
-                evaluate(node.right)
-              )
-            when :dash
-              evaluate(node.left).difference(
-                evaluate(node.right)
-              )
-          end
-        else
-          if node
-            node.to_set
-          else
-            Set.new
-          end
-        end
-      end
-
-      def to_utf8(str)
-        str.bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
-      end
-
-    end
-
-    Variable = Struct.new(:name)
-
-    # unicode_char, escaped_char, string, multichar_string
-    UnicodeString = Struct.new(:codepoints) do
-      def to_set
-        Set.new(codepoints)
-      end
-    end
-
-    CharacterSet = Struct.new(:name, :negated) do
-      def to_set
-        # TODO
-        Set.new
-      end
-    end
-
     class UnicodeRegexParser < Parser
 
-      def parse(tokens)
-        super(identify_ranges(tokens))
+      autoload :Component,      "twitter_cldr/parsers/unicode_regex/component"
+      autoload :CharacterClass, "twitter_cldr/parsers/unicode_regex/character_class"
+      autoload :CharacterRange, "twitter_cldr/parsers/unicode_regex/character_range"
+      autoload :CharacterSet,   "twitter_cldr/parsers/unicode_regex/character_set"
+      autoload :Literal,        "twitter_cldr/parsers/unicode_regex/literal"
+      autoload :UnicodeString,  "twitter_cldr/parsers/unicode_regex/unicode_string"
+
+      def parse(tokens, symbol_table = nil)
+        super(
+          identify_ranges(
+            substitute_variables(tokens, symbol_table)
+          )
+        )
       end
 
       private
@@ -159,6 +32,8 @@ module TwitterCldr
         :multichar_string, :string, :escaped_character, :character_range
       ]
 
+      # "Ranges" here means regex ranges, i.e. inside a character class, not the
+      # Ruby range data type.
       def identify_ranges(tokens)
         result = []
         i = 0
@@ -166,7 +41,7 @@ module TwitterCldr
         while i < tokens.size
           # Character class entities side-by-side are treated as unions. Add a
           # special placeholder token to help out the expression parser.
-          if valid_character_class_token?(result.last)
+          if valid_character_class_token?(result.last) && tokens[i].type != :close_bracket
             result << Token.new(:type => :union)
           end
 
@@ -188,6 +63,18 @@ module TwitterCldr
         result
       end
 
+      def substitute_variables(tokens, symbol_table)
+        return tokens unless symbol_table
+        tokens.inject([]) do |ret, token|
+          if token.type == :variable && sub = symbol_table.fetch(token.value)
+            ret += sub
+          else
+            ret << token
+          end
+          ret
+        end
+      end
+
       def make_character_range(initial, final)
         CharacterRange.new(initial, final)
       end
@@ -197,14 +84,16 @@ module TwitterCldr
       end
 
       def do_parse
-        regex = UnicodeRegexp.new([])
+        regex = UnicodeRegex.new([])
 
         while current_token
-          regex.elements << case current_token.type
+          case current_token.type
             when :open_bracket
-              character_class
+              regex.elements << character_class
+            when :union
+              next_token(:union)
             else
-              send(current_token.type, current_token)
+              regex.elements << send(current_token.type, current_token)
               next_token(current_token.type)
           end
         end
@@ -220,19 +109,13 @@ module TwitterCldr
 
       def negated_character_set(token)
         CharacterSet.new(
-          token.value.gsub(/[\[\]:\\p\{\}^]/, ""), true
+          token.value.gsub(/[\[\]:\\p\\P\{\}^]/, ""), true
         )
       end
 
       def unicode_char(token)
         UnicodeString.new(
           [token.value.gsub(/^\\u/, "").to_i(16)]
-        )
-      end
-
-      def escaped_char(token)
-        UnicodeString.new(
-          token.value.gsub(/^\\/, "").unpack("U*")
         )
       end
 
@@ -243,12 +126,22 @@ module TwitterCldr
       end
 
       def multichar_string(token)
-        string
+        UnicodeString.new(
+          token.value.gsub(/[\{\}]/, "").unpack("U*")
+        )
       end
 
-      def variable(token)
-        Variable.new(token.value)
+      def escaped_char(token)
+        Literal.new(token.value.gsub(/^\\/, ""))
       end
+
+      def special_char(token)
+        Literal.new(token.value)
+      end
+
+      alias :negate :special_char
+      alias :pipe :special_char
+      alias :ampersand :special_char
 
       # current_token is already a CharacterRange object
       def character_range(token)
@@ -267,24 +160,30 @@ module TwitterCldr
             # unary operators.
             when :negate
               negated = true
+
             when *CharacterClass.closing_types
               last_operator = peek(operator_stack)
               open_count -= 1
 
               until last_operator.type == CharacterClass.opening_type_for(current_token.type)
                 node = operator_node(
-                  operator_stack.pop.type, operand_stack.pop, operand_stack.pop
+                  operator_stack.pop.type,
+                  operand_stack.pop,
+                  operand_stack.pop
                 )
 
                 operand_stack.push(node)
                 last_operator = peek(operator_stack)
               end
               operator_stack.pop
+
             when *CharacterClass.opening_types
               open_count += 1
               operator_stack.push(current_token)
+
             when :pipe, :ampersand, :dash, :union
               operator_stack.push(current_token)
+
             else
               operand_stack.push(
                 send(current_token.type, current_token)

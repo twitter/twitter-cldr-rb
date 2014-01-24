@@ -5,8 +5,6 @@
 
 require 'spec_helper'
 
-require 'pry-nav'
-
 include TwitterCldr::Parsers
 
 describe TwitterCldr::Formatters::NumberParser do

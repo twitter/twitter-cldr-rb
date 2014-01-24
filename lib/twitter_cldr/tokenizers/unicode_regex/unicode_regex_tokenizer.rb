@@ -19,7 +19,7 @@ module TwitterCldr
       def tokenizer
         @tokenizer ||= begin
           w = if RUBY_VERSION <= "1.8.7"
-            "\w"
+            "\\w"
           else
             "[:word:]"
           end
@@ -35,7 +35,11 @@ module TwitterCldr
             TokenRecognizer.new(:escaped_character, /\\#{w}/u),
             TokenRecognizer.new(:negate, /\^/),
             TokenRecognizer.new(:ampersand, /&/),
+            TokenRecognizer.new(:pipe, /\|/),
             TokenRecognizer.new(:dash, /-/),
+
+            # stuff that shouldn't be converted to codepoints
+            TokenRecognizer.new(:special_char, /[$?:{}()*+,\/\\]/),
 
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),

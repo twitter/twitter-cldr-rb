@@ -17,5 +17,6 @@ module TwitterCldr
     autoload :Territories,     'twitter_cldr/shared/territories'
     autoload :NumberingSystem, 'twitter_cldr/shared/numbering_system'
     autoload :Casefolder,      'twitter_cldr/shared/casefolder'
+    autoload :UnicodeRegex,    'twitter_cldr/shared/unicode_regex'
   end
 end

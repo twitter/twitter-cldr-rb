@@ -50,10 +50,24 @@ module TwitterCldr
 
         FileUtils.mkdir_p(File.join(@output_path, 'indices'))
 
-        index_data.each_pair do |index_name, data|
+        indices = index_data
+
+        indices.each_pair do |index_name, data|
           File.open(File.join(@output_path, "indices", "#{index_name}.yml"), 'w') do |output|
             YAML.dump(data, output)
           end
+        end
+
+        File.open(File.join(@output_path, "indices", "keys.yml"), 'w') do |output|
+          YAML.dump(
+            indices.inject({}) do |ret, (index_name, data)|
+              data.keys.each do |prop|
+                ret[prop] ||= []
+                ret[prop] << index_name
+              end
+              ret
+            end, output
+          )
         end
       end
 
@@ -107,7 +121,7 @@ module TwitterCldr
 
           unicode_data.each_pair do |block_name, block_data|
             block_data.each_pair do |code_point, data|
-              index_ret[index_name][data[field_index]] << code_point
+              index_ret[index_name][data[field_index].to_sym] << code_point
             end
           end
 

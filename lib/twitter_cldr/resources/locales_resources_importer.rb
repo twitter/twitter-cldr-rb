@@ -104,7 +104,7 @@ module TwitterCldr
 
         data = YAML.load(File.read(path))
         data.keys.each do |l|
-          data[l] = TwitterCldr::Utils::Territories.deep_normalize_territory_code_keys(data[l])
+          data[l] = TwitterCldr::Shared::Territories.deep_normalize_territory_code_keys(data[l])
         end
 
         File.open(path, 'w:utf-8') do |output|

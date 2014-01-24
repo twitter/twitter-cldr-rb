@@ -13,8 +13,8 @@ module TwitterCldr
     class LocalesResourcesImporter
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
-      LOCALE_COMPONENTS = [calendars languages numbers plurals lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = [currency_digits_and_rounding rbnf_root numbering_systems]
+      LOCALE_COMPONENTS = %w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
+      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems]
 
       # Arguments:
       #

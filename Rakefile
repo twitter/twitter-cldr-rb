@@ -74,7 +74,6 @@ task :update do
     "update:collation_tries",
     "update:canonical_compositions",
     "update:rbnf_tests",
-    "update:rbnf_classes",
     "update:readme"
   ]
 
@@ -120,7 +119,7 @@ namespace :update do
   end
 
   desc 'Generate the casefolder class. Depends on unicode data'
-  task :casefolder do
+  task :generate_casefolder do
     TwitterCldr::Resources::CasefolderClassGenerator.new(
       './lib/twitter_cldr/resources/casefolder.rb.erb',
       './lib/twitter_cldr/shared'

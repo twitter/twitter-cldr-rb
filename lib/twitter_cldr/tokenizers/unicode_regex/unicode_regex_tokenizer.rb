@@ -27,12 +27,12 @@ module TwitterCldr
           recognizers = [
             # The variable name can contain letters and digits, but must start with a letter.
             TokenRecognizer.new(:variable, /\$[#{w}][#{w}\d]*/u),
-            TokenRecognizer.new(:character_set, /\[:[\w]+:\]|\\p\{[\w]+\}/),  # [:Lu:] or \p{Lu}
-            TokenRecognizer.new(:negated_character_set, /\[:\^[\w]+:\]|\\P\{[\w]+\}/),  #[:^Lu:] or \P{Lu}
-            TokenRecognizer.new(:unicode_char, /\\u[a-fA-F0-9]{1,6}/),
+            TokenRecognizer.new(:character_set, /\[:[\w]+:\]|\\p\{[\w=]+\}/),  # [:Lu:] or \p{Lu} or \p{Sentence_Break=CF}
+            TokenRecognizer.new(:negated_character_set, /\[:\^[\w]+:\]|\\P\{[\w=]+\}/),  #[:^Lu:] or \P{Lu}
+            TokenRecognizer.new(:unicode_char, /\\u\{?[a-fA-F0-9]{1,6}\}?/),
             TokenRecognizer.new(:multichar_string, /\{[#{w}]+\}/u),
 
-            TokenRecognizer.new(:escaped_character, /\\#{w}/u),
+            TokenRecognizer.new(:escaped_character, /\\./),
             TokenRecognizer.new(:negate, /\^/),
             TokenRecognizer.new(:ampersand, /&/),
             TokenRecognizer.new(:pipe, /\|/),

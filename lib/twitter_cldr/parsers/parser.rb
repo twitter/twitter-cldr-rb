@@ -11,10 +11,10 @@ module TwitterCldr
     # base class, not meant to be instantiated
     class Parser
 
-      def parse(tokens)
+      def parse(tokens, options = {})
         @tokens = tokens
         reset
-        do_parse
+        do_parse(options)
       end
 
       def reset

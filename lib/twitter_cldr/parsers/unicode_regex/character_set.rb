@@ -10,27 +10,54 @@ module TwitterCldr
   module Parsers
     class UnicodeRegexParser
 
-      # Can only exist in character classes
+      # Can exist inside and outside of character classes
       class CharacterSet < Component
 
-        attr_reader :name, :negated
+        attr_reader :property, :property_value
 
-        def initialize(name, negated)
-          @name = name
-          @negated = negated
+        def initialize(text)
+          if (name_parts = text.split("=")).size == 2
+            @property = name_parts[0].downcase
+            @property_value = name_parts[1].to_sym
+          else
+            @property_value = text
+          end
+        end
+
+        def to_regexp_str
+          parts = to_set.to_a(true).map do |element|
+            case element
+              when Range
+                "[#{to_utf8(element.first)}-#{to_utf8(element.last)}]"
+              else
+                to_utf8(element)
+            end
+          end
+
+          "(?:#{parts.join("|")})"
         end
 
         def to_set
-          range_set = RangeSet.from_array(
-            TwitterCldr::Shared::CodePoint.code_points_for_property(name)
-          )
+          codepoints.subtract(UnicodeRegex.invalid_regexp_chars)
+        end
 
-          range_set = range_set.subtract(UnicodeRegex.invalid_regexp_chars)
+        private
 
-          if negated
-            UnicodeRegex.valid_regexp_chars.subtract(range_set)
+        def codepoints
+          if property
+            ranges = CodePoint.send(:"code_points_for_#{property}", property_value)
+
+            if ranges
+              RangeSet.new(ranges)
+            else
+              raise UnicodeRegexParserError.new(
+                "Couldn't find property '#{property}' containing property value '#{property_value}'"
+              )
+            end
           else
-            range_set
+            RangeSet.new(
+              CodePoint.code_points_for_property_value(property_value)
+            )
           end
         end
 

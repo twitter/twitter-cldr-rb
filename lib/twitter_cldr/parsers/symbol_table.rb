@@ -8,6 +8,8 @@ include TwitterCldr::Utils
 module TwitterCldr
   module Parsers
 
+    # This is really just a thin layer on top of Hash.
+    # Nice to have it abstracted in case we have to add custom behavior.
     class SymbolTable
 
       attr_reader :symbols

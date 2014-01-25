@@ -18,7 +18,8 @@ module TwitterCldr
         }
 
         # Character classes can include set operations (eg. union, intersection, etc).      
-        Operator = Struct.new(:operator, :left, :right)
+        BinaryOperator = Struct.new(:operator, :left, :right)
+        UnaryOperator = Struct.new(:operator, :child)
 
         class << self
 
@@ -36,11 +37,12 @@ module TwitterCldr
 
         end
 
-        attr_reader :negated
-
-        def initialize(root, negated = false)
+        def initialize(root)
           @root = root
-          @negated = negated
+        end
+
+        def type
+          :character_class
         end
 
         def to_regexp(modifiers = nil)
@@ -63,8 +65,7 @@ module TwitterCldr
         end
 
         def to_set
-          set = evaluate(root)
-          negated ? UnicodeRegex.valid_regexp_chars.subtract(set) : set
+          evaluate(root)
         end
 
         private
@@ -73,7 +74,15 @@ module TwitterCldr
 
         def evaluate(node)
           case node
-            when Operator
+            when UnaryOperator
+              case node.operator
+                when :negate
+                  UnicodeRegex.valid_regexp_chars.subtract(
+                    evaluate(node.child)
+                  )
+              end
+
+            when BinaryOperator
               case node.operator
                 when :union, :pipe
                   evaluate(node.left).union(
@@ -93,7 +102,7 @@ module TwitterCldr
               if node
                 node.to_set
               else
-                RangeSet.new
+                RangeSet.new([])
               end
           end
         end

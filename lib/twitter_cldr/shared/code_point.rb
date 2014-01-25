@@ -27,8 +27,13 @@ module TwitterCldr
     class CodePoint
       DECOMPOSITION_DATA_INDEX = 5
       DECOMPOSITION_REGEX = /^(?:<(.+)>\s+)?(.+)?$/
+
       INDICES = [
         :category, :bidi_class, :bidi_mirrored
+      ]
+
+      PROPERTIES = [
+        :sentence_break, :line_break, :word_break
       ]
 
       attr_reader :fields
@@ -101,12 +106,18 @@ module TwitterCldr
           end
         end
 
+        PROPERTIES.each do |property_name|
+          define_method :"code_points_for_#{property_name}" do |value|
+            get_property_data(property_name)[value]
+          end
+        end
+
         # Search for code points wherein at least one property value contains prop_value.
         # For example, if prop_value is set to :Zs, this method will return all code
         # points that are considered spaces. If prop value is simply :Z, this method
         # will return all code points who have a property value that contains :Z, i.e.
         # spaces as well as line separators (:Zl) and paragraph separators (:Zp).
-        def code_points_for_property(prop_value)
+        def code_points_for_property_value(prop_value)
           index_key_cache[prop_value] ||= index_keys.inject([]) do |ret, (index_key, index_names)|
             if index_key.to_s.include?(prop_value.to_s)
               index_names.each do |index_name|
@@ -164,8 +175,18 @@ module TwitterCldr
           )
         end
 
+        def get_property_data(property_name)
+          property_data_cache[property_name] ||= TwitterCldr.get_resource(
+            :unicode_data, :properties, property_name
+          )
+        end
+
         def index_cache
           @index_cache ||= {}
+        end
+
+        def property_data_cache
+          @property_data_cache ||= {}
         end
 
         def hangul_type_cache

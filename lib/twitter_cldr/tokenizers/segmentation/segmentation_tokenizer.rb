@@ -20,9 +20,9 @@ module TwitterCldr
             TokenRecognizer.new(:no_break, /\303\227/u),  # × character
           ]
 
-          us_tokenizer = UnicodeSetTokenizer.new
-          us_tokenizer.insert_before(:literal, *recognizers)
-          us_tokenizer
+          ur_tokenizer = UnicodeRegexTokenizer.new
+          ur_tokenizer.insert_before(:string, *recognizers)
+          ur_tokenizer
         end
       end
 

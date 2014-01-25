@@ -5,8 +5,8 @@
 
 module TwitterCldr
   module Parsers
-    class UnicodeRegex
-      class Literal
+    class UnicodeRegexParser
+      class Literal < Component
 
         attr_reader :text
 

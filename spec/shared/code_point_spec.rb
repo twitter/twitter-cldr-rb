@@ -110,6 +110,38 @@ describe CodePoint do
     end
   end
 
+  describe "#code_points_for{index}" do
+    it "returns code points for the given general unicode property name" do
+      cps = CodePoint.code_points_for_category(:Cc)
+      cps.should be_a(Array)
+      cps.first.should == (1..31)
+
+      cps = CodePoint.code_points_for_bidi_class(:BN)
+      cps.should be_a(Array)
+      cps.first.should == (1..8)
+
+      cps = CodePoint.code_points_for_bidi_mirrored(:N)
+      cps.should be_a(Array)
+      cps.first.should == (1..39)
+    end
+  end
+
+  describe "#code_points_for_property_value" do
+    it "returns code points for the given unicode property and value" do
+      cps = CodePoint.code_points_for_line_break(:CM)
+      cps.should be_a(Array)
+      cps.first.should == (1..8)
+
+      cps = CodePoint.code_points_for_sentence_break(:Extend)
+      cps.should be_a(Array)
+      cps.first.should == (769..879)
+
+      cps = CodePoint.code_points_for_word_break(:Hebrew_Letter)
+      cps.should be_a(Array)
+      cps.first.should == (1489..1514)
+    end
+  end
+
   describe "#for_canonical_decomposition" do
     let(:canonical_compositions) { { [123, 456] => 789 } }
 

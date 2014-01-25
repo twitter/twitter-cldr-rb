@@ -25,18 +25,23 @@ module TwitterCldr
         # rangify([1, 2, 4], false) returns [1..2, 4..4]
         # rangify([1, 2, 4], true) returns [1..2, 4]
         def rangify(list, compress = false)
-          last_item = list.first
+          last_item = nil
+
           list.sort.inject([]) do |ret, item|
-            diff = item - last_item
+            if last_item
+              diff = item - last_item
 
-            if diff > 0
-              if diff == 1
-                ret << [] if ret.size == 0
-                ret[-1] << item
-              else
-                ret << [item]
+              if diff > 0
+                if diff == 1
+                  ret[-1] << item
+                else
+                  ret << [item]
+                end
+
+                last_item = item
               end
-
+            else
+              ret << [item]
               last_item = item
             end
 
@@ -82,8 +87,21 @@ module TwitterCldr
         Set.new(to_full_a)
       end
 
-      def include?(num)
-        ranges.any? { |range| range.include?(num) }
+      def include?(obj)
+        case obj
+          when Numeric
+            ranges.any? { |range| range.include?(obj) }
+          when Range
+            ranges.any? do |range|
+              range.first <= obj.first && range.last >= obj.last
+            end
+          else
+            false
+        end
+      end
+
+      def empty?
+        ranges.empty?
       end
 
       def union(range_set)
@@ -107,6 +125,7 @@ module TwitterCldr
       end
 
       def subtract(range_set)
+        return self if range_set.empty?
         remaining = range_set.ranges.dup
         current_ranges = ranges.dup
         new_ranges = []
@@ -186,7 +205,6 @@ module TwitterCldr
 
       # subtracts range1 from range2 (range2 - range1)
       def find_subtraction(range1, range2)
-        # binding.pry
         # case: range1 contains range2 entirely (also handles equal case)
         result = if range1.first <= range2.first && range2.last <= range1.last
           []

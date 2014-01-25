@@ -9,7 +9,7 @@ module TwitterCldr
 
       # unicode_char, escaped_char, string, multichar_string
       # Can exist inside and outside of character classes
-      class UnicodeString
+      class UnicodeString < Component
 
         attr_reader :codepoints
 

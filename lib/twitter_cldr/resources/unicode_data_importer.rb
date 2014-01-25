@@ -4,11 +4,14 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'twitter_cldr/resources/download'
+require 'pry-nav'
+
+include TwitterCldr::Utils
 
 module TwitterCldr
   module Resources
 
-    class UnicodeDataImporter
+    class UnicodeDataImporter < UnicodeImporter
 
       BLOCKS_URL           = 'ftp://ftp.unicode.org/Public/UNIDATA/Blocks.txt'
       UNICODE_DATA_URL     = 'ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt'
@@ -126,24 +129,12 @@ module TwitterCldr
           end
 
           index_ret
-        end
-      end
-
-      def parse_standard_file(file)
-        if block_given?
-          File.open(file) do |input|
-            input.each_line do |line|
-              unless line.split[0] == "#"
-                comment_idx = line.index("#") || line.size
-                line = line.chomp[0..comment_idx]
-                if line.size > 0
-                  yield line.split(';', -1).map(&:strip)
-                end
-              end
-            end
+        end.inject({}) do |index_ret, (index_key, index_data)|
+          index_ret[index_key] = index_data.inject({}) do |field_ret, (field_key, field_data)|
+            field_ret[field_key] = RangeSet.rangify(field_data)
+            field_ret
           end
-        else
-          enum_for(__method__, file)
+          index_ret
         end
       end
 

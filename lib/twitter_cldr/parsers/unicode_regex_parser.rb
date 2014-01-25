@@ -7,6 +7,9 @@ include TwitterCldr::Shared
 
 module TwitterCldr
   module Parsers
+
+    class UnicodeRegexParserError < StandardError; end
+
     class UnicodeRegexParser < Parser
 
       autoload :Component,      "twitter_cldr/parsers/unicode_regex/component"
@@ -16,11 +19,11 @@ module TwitterCldr
       autoload :Literal,        "twitter_cldr/parsers/unicode_regex/literal"
       autoload :UnicodeString,  "twitter_cldr/parsers/unicode_regex/unicode_string"
 
-      def parse(tokens, symbol_table = nil)
+      def parse(tokens, options = {})
         super(
-          identify_ranges(
-            substitute_variables(tokens, symbol_table)
-          )
+          preprocess(
+            substitute_variables(tokens, options[:symbol_table])
+          ), options
         )
       end
 
@@ -32,18 +35,31 @@ module TwitterCldr
         :multichar_string, :string, :escaped_character, :character_range
       ]
 
-      # "Ranges" here means regex ranges, i.e. inside a character class, not the
-      # Ruby range data type.
-      def identify_ranges(tokens)
+      NEGATED_TOKEN_TYPES = [
+        :negated_character_set
+      ]
+
+      BINARY_OPERATORS = [
+        :pipe, :ampersand, :dash, :union
+      ]
+
+      UNARY_OPERATORS = [
+        :negate
+      ]
+
+      # Identifies regex ranges and makes implicit operators explicit
+      def preprocess(tokens)
         result = []
         i = 0
 
         while i < tokens.size
-          # Character class entities side-by-side are treated as unions. Add a
-          # special placeholder token to help out the expression parser.
-          if valid_character_class_token?(result.last) && tokens[i].type != :close_bracket
-            result << Token.new(:type => :union)
-          end
+          # Character class entities side-by-side are treated as unions. So
+          # are side-by-side character classes. Add a special placeholder token
+          # to help out the expression parser.
+          add_union = (valid_character_class_token?(result.last) && tokens[i].type != :close_bracket) ||
+            (result.last && result.last.type == :close_bracket && tokens[i].type == :open_bracket)
+
+          result << Token.new(:type => :union) if add_union
 
           is_range = valid_character_class_token?(tokens[i]) &&
             valid_character_class_token?(tokens[i + 2]) &&
@@ -55,7 +71,17 @@ module TwitterCldr
             result << make_character_range(initial, final)
             i += 3
           else
-            result << tokens[i]
+            if negated_token?(tokens[i])
+              result += [
+                Token.new(:type => :open_bracket),
+                Token.new(:type => :negate),
+                tokens[i],
+                Token.new(:type => :close_bracket)
+              ]
+            else
+              result << tokens[i]
+            end
+
             i += 1
           end
         end
@@ -67,7 +93,9 @@ module TwitterCldr
         return tokens unless symbol_table
         tokens.inject([]) do |ret, token|
           if token.type == :variable && sub = symbol_table.fetch(token.value)
-            ret += sub
+            # variables can themselves contain references to other variables
+            # note: this could be cached somehow
+            ret += substitute_variables(sub, symbol_table)
           else
             ret << token
           end
@@ -79,11 +107,23 @@ module TwitterCldr
         CharacterRange.new(initial, final)
       end
 
+      def negated_token?(token)
+        token && NEGATED_TOKEN_TYPES.include?(token.type)
+      end
+
       def valid_character_class_token?(token)
         token && CHARACTER_CLASS_TOKEN_TYPES.include?(token.type)
       end
 
-      def do_parse
+      def unary_operator?(token)
+        token && UNARY_OPERATORS.include?(token.type)
+      end
+
+      def binary_operator?(token)
+        token && BINARY_OPERATORS.include?(token.type)
+      end
+
+      def do_parse(options)
         regex = UnicodeRegex.new([])
 
         while current_token
@@ -103,19 +143,19 @@ module TwitterCldr
 
       def character_set(token)
         CharacterSet.new(
-          token.value.gsub(/[\[\]:\\p\{\}]/, ""), false
+          token.value.gsub(/^\\p/, "").gsub(/[\{\}\[\]:]/, "")
         )
       end
 
       def negated_character_set(token)
         CharacterSet.new(
-          token.value.gsub(/[\[\]:\\p\\P\{\}^]/, ""), true
+          token.value.gsub(/^\\[pP]/, "").gsub(/[\{\}\[\]:^]/, "")
         )
       end
 
       def unicode_char(token)
         UnicodeString.new(
-          [token.value.gsub(/^\\u/, "").to_i(16)]
+          [token.value.gsub(/^\\u/, "").gsub(/[\{\}]/, "").to_i(16)]
         )
       end
 
@@ -131,8 +171,8 @@ module TwitterCldr
         )
       end
 
-      def escaped_char(token)
-        Literal.new(token.value.gsub(/^\\/, ""))
+      def escaped_character(token)
+        Literal.new(token.value)
       end
 
       def special_char(token)
@@ -152,25 +192,23 @@ module TwitterCldr
         operator_stack = []
         operand_stack = []
         open_count = 0
-        negated = false
 
         while true
           case current_token.type
-            # Are nested negations allowed? If they are, we'll need to support
-            # unary operators.
-            when :negate
-              negated = true
-
             when *CharacterClass.closing_types
               last_operator = peek(operator_stack)
               open_count -= 1
 
               until last_operator.type == CharacterClass.opening_type_for(current_token.type)
-                node = operator_node(
-                  operator_stack.pop.type,
-                  operand_stack.pop,
-                  operand_stack.pop
-                )
+                operator = operator_stack.pop
+
+                node = if unary_operator?(operator)
+                  unary_operator_node(operator.type, operand_stack.pop)
+                else
+                  binary_operator_node(
+                    operator.type, operand_stack.pop, operand_stack.pop
+                  )
+                end
 
                 operand_stack.push(node)
                 last_operator = peek(operator_stack)
@@ -181,7 +219,7 @@ module TwitterCldr
               open_count += 1
               operator_stack.push(current_token)
 
-            when :pipe, :ampersand, :dash, :union
+            when *BINARY_OPERATORS, *UNARY_OPERATORS
               operator_stack.push(current_token)
 
             else
@@ -194,18 +232,22 @@ module TwitterCldr
           break if operator_stack.empty? && open_count == 0
         end
 
-        CharacterClass.new(
-          operand_stack.pop, negated
-        )
+        CharacterClass.new(operand_stack.pop)
       end
 
       def peek(array)
         array.last
       end
 
-      def operator_node(operator, right, left)
-        CharacterClass::Operator.new(
+      def binary_operator_node(operator, right, left)
+        CharacterClass::BinaryOperator.new(
           operator, left, right
+        )
+      end
+
+      def unary_operator_node(operator, child)
+        CharacterClass::UnaryOperator.new(
+          operator, child
         )
       end
 

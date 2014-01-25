@@ -66,6 +66,7 @@ task :update do
     "update:locales_resources",
     "update:tailoring_data",
     "update:unicode_data",
+    "update:unicode_properties",
     "update:generate_casefolder",  # must come after unicode data
     "update:composition_exclusions",
     "update:postal_codes",
@@ -115,6 +116,14 @@ namespace :update do
     TwitterCldr::Resources::UnicodeDataImporter.new(
       args[:unicode_data_path] || './vendor/unicode-data',
       './resources/unicode_data'
+    ).import
+  end
+
+  desc 'Import Unicode property resources'
+  task :unicode_properties, :unicode_properties_path do |_, args|
+    TwitterCldr::Resources::UnicodePropertiesImporter.new(
+      args[:unicode_properties_path] || './vendor/unicode-data/properties',
+      './resources/unicode_data/properties'
     ).import
   end
 

@@ -8,6 +8,35 @@ require 'spec_helper'
 include TwitterCldr::Utils
 
 describe RangeSet do
+  describe "rangify" do
+    it "should identify runs in an array of integers and return an array of ranges" do
+      RangeSet.rangify([1, 2, 3, 6, 7, 8, 11, 14, 17, 18, 19]).
+        should == [1..3, 6..8, 11..11, 14..14, 17..19]
+    end
+
+    it "should not rangify zero-length values when told to compress" do
+      RangeSet.rangify([1, 2, 3, 5, 8, 11, 12], true).
+        should == [1..3, 5, 8, 11..12]
+    end
+  end
+
+  describe "#to_a" do
+    it "should return a copy of the ranges in the set" do
+      set = RangeSet.new([1..10])
+      set.to_a.object_id.should_not == set.ranges.object_id
+    end
+
+    it "should return compressed ranges when asked" do
+      RangeSet.new([1..10, 12..12]).to_a(true).should == [1..10, 12]
+    end
+  end
+
+  describe "#to_full_a" do
+    it "expands all ranges" do
+      RangeSet.new([1..5]).to_full_a.should == [1, 2, 3, 4, 5]
+    end
+  end
+
   describe "#new" do
     it "should flatten leading overlapping ranges" do
       RangeSet.new([3..10, 1..8]).to_a.should == [1..10]
@@ -83,6 +112,11 @@ describe RangeSet do
       set = RangeSet.new([1..5, 7..10]).subtract(RangeSet.new([3..8]))
       set.to_a.should == [1..2, 9..10]
     end
+
+    it "does not change object when subtracting an empty set" do
+      set = RangeSet.new([1..5]).subtract(RangeSet.new([]))
+      set.to_a.should == [1..5]
+    end
   end
 
   describe "#difference" do
@@ -99,6 +133,23 @@ describe RangeSet do
     it "returns the symmetric difference between trailing overlapping ranges" do
       set = RangeSet.new([1..5]).difference(RangeSet.new([3..8]))
       set.to_a.should == [1..2, 6..8]
+    end
+  end
+
+  describe "#include?" do
+    let (:set) { RangeSet.new([1..5, 9..16]) }
+
+    it "returns true if the set completely includes the range, false otherwise" do
+      set.should include(10..15)
+      set.should_not include(3..8)
+      set.should_not include(8..14)
+    end
+
+    it "returns true if the set contains the value, false otherwise" do
+      set.should include(3)
+      set.should include(10)
+      set.should_not include(6)
+      set.should_not include(8)
     end
   end
 end

@@ -18,6 +18,5 @@ module TwitterCldr
     autoload :RbnfTokenizer,                'twitter_cldr/tokenizers/numbers/rbnf_tokenizer'
     autoload :TimespanTokenizer,            'twitter_cldr/tokenizers/calendars/timespan_tokenizer'
     autoload :UnicodeRegexTokenizer,        'twitter_cldr/tokenizers/unicode_regex/unicode_regex_tokenizer'
-    autoload :SegmentationTokenizer,        'twitter_cldr/tokenizers/segmentation/segmentation_tokenizer'
   end
 end

@@ -12,6 +12,14 @@ describe UnicodeRegex do
     UnicodeRegex.compile(str, "", symbol_table)
   end
 
+  let(:symbol_table) do
+    tokenizer = TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new
+    table = TwitterCldr::Parsers::SymbolTable.new({
+      "$FOO" => tokenizer.tokenize("[g-k]"),
+      "$BAR" => tokenizer.tokenize("[p-s]")
+    })
+  end
+
   context "basic operations" do
     let(:regex) { compile("[abc]") }
 
@@ -44,18 +52,14 @@ describe UnicodeRegex do
         compile("[a-z0-9]").to_regexp_str.should == "(?:[\\60-\\71]|[\\141-\\172])"
         compile("[\\u0067-\\u0071]").to_regexp_str.should == "(?:[\\147-\\161])"
       end
+
+      it "should properly substitute variables" do
+        compile("$FOO$BAR", symbol_table).to_regexp_str.should == "(?:[\\147-\\153])(?:[\\160-\\163])"
+      end
     end
   end
 
   context "with a few variables" do
-    let(:symbol_table) do
-      tokenizer = TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new
-      table = TwitterCldr::Parsers::SymbolTable.new({
-        "$FOO" => tokenizer.tokenize("[g-k]"),
-        "$BAR" => tokenizer.tokenize("[p-s]")
-      })
-    end
-
     describe "#match" do
       it "should substitute variables from the symbol table" do
         regex = compile("$FOO $BAR", symbol_table)

@@ -7,7 +7,7 @@ require 'spec_helper'
 
 include TwitterCldr::Parsers
 
-describe TwitterCldr::Formatters::NumberParser do
+describe NumberParser do
   let(:separators) { ["\\.", ","] }
 
   before(:each) do

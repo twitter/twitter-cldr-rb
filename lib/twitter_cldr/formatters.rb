@@ -18,7 +18,6 @@ module TwitterCldr
     autoload :LongDecimalFormatter,       'twitter_cldr/formatters/numbers/abbreviated/long_decimal_formatter'
     autoload :CurrencyFormatter,          'twitter_cldr/formatters/numbers/currency_formatter'
     autoload :PercentFormatter,           'twitter_cldr/formatters/numbers/percent_formatter'
-    autoload :NumberParser,               'twitter_cldr/formatters/numbers/number_parser'
     autoload :Rbnf,                       'twitter_cldr/formatters/numbers/rbnf'
 
     autoload :Plurals,                    'twitter_cldr/formatters/plurals'

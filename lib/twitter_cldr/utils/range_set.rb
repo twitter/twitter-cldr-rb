@@ -206,7 +206,6 @@ module TwitterCldr
         elsif range1.first <= range2.first && range1.last >= range2.last
           [range1.first, range2.first].max..[range1.last, range2.last].min
         end
-        binding.pry if val.first > val.last
         val
       end
 

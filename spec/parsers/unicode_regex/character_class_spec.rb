@@ -19,8 +19,8 @@ describe UnicodeRegexParser::CharacterClass do
     parser.parse(tokens, options)
   end
 
-  def char_class_from(regex)
-    regex.elements.first
+  def char_class_from(elements)
+    elements.first
   end
 
   describe "#to_set" do

@@ -14,14 +14,22 @@ module TwitterCldr
 
         # ord is good enough (don't need unpack) because ASCII chars
         # have the same numbers as their unicode equivalents
+        def self.ordinalize(char)
+          if char.respond_to?(:ord)
+            char.ord
+          else
+            char[0]
+          end
+        end
+
         SPECIAL_CHARACTERS = {
           "s" => [32],  # space
           "t" => [9],   # tab
           "r" => [13],  # carriage return
           "n" => [10],  # newline
           "f" => [12],  # form feed
-          "d" => ("0".."9").to_a.map { |c| c[0] },
-          "w" => (("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + ["_"]).map { |c| c[0] }
+          "d" => ("0".."9").to_a.map { |c| ordinalize(c) },
+          "w" => (("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + ["_"]).map { |c| ordinalize(c) }
         }
 
         def initialize(text)
@@ -39,10 +47,14 @@ module TwitterCldr
             if SPECIAL_CHARACTERS.include?(special_char.downcase)
               set_for_special_char(special_char)
             else
-              RangeSet.from_array([special_char.ord])
+              RangeSet.from_array([
+                self.class.ordinalize(special_char)
+              ])
             end
           else
-            RangeSet.from_array([text.ord])
+            RangeSet.from_array([
+              self.class.ordinalize(text)
+            ])
           end
         end
 

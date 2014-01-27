@@ -22,6 +22,8 @@ module TwitterCldr
 
       def normalize(options = {})
         TwitterCldr::Normalization.normalize(@base_obj, options).localize(@locale)
+      rescue => e
+        binding.pry
       end
 
       def casefold(options = {})

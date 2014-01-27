@@ -158,7 +158,14 @@ module TwitterCldr
       def flatten
         return if ranges.size <= 1
 
-        sorted_ranges = ranges.sort { |a, b| a.first <=> b.first }
+        sorted_ranges = ranges.sort do |a, b|
+          if is_numeric_range?(a) && is_numeric_range?(b)
+            a.first <=> b.first
+          else
+            1
+          end
+        end
+
         new_ranges = [sorted_ranges.first]
 
         sorted_ranges.each do |range|

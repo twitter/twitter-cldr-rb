@@ -13,7 +13,7 @@ module TwitterCldr
 
         private
 
-        def do_parse
+        def do_parse(options)
           switch([])
         end
 

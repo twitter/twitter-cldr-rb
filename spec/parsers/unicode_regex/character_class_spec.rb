@@ -79,5 +79,39 @@ describe UnicodeRegexParser::CharacterClass do
         0..1, 8..8191, 8236..55295, 57344..1114111
       ]
     end
+
+    it "supports literal and escaped characters" do
+      char_class = char_class_from(parse(tokenize("[abc\\edf\\g]")))
+      char_class.to_set.to_a(true).should == [97..103]
+    end
+
+    it "supports special switch characters" do
+      char_class = char_class_from(parse(tokenize("[\\w]")))  # a-z, A-Z, 0-9, _
+      char_class.to_set.to_a(true).should == [48..57, 65..90, 95, 97..122]
+    end
+
+    it "supports negated switch characters" do
+      char_class = char_class_from(parse(tokenize("[\\D]")))  # i.e. NOT \w
+      char_class.to_set.to_a(true).should == [
+        0..1, 8..47, 58..55295, 57344..1114111
+      ]
+    end
+  end
+
+  describe "#to_regexp_str" do
+    it "wraps ranges in square brackets" do
+      char_class = char_class_from(parse(tokenize("[a-z]")))
+      char_class.to_regexp_str.should == "(?:[\\141-\\172])"
+    end
+
+    it "octal-encodes and wraps sequential characters to isolate bytes" do
+      char_class = char_class_from(parse(tokenize("[{foo}]")))
+      char_class.to_regexp_str.should == "(?:(?:\\146)(?:\\157)(?:\\157))"
+    end
+
+    it "combines multiple components with 'or' pipe characters" do
+      char_class = char_class_from(parse(tokenize("[{foo}abc]")))
+      char_class.to_regexp_str.should == "(?:(?:\\146)(?:\\157)(?:\\157)|[\\141-\\143])"
+    end
   end
 end

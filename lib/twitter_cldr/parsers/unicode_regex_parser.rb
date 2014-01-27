@@ -124,21 +124,21 @@ module TwitterCldr
       end
 
       def do_parse(options)
-        regex = UnicodeRegex.new([])
+        elements = []
 
         while current_token
           case current_token.type
             when :open_bracket
-              regex.elements << character_class
+              elements << character_class
             when :union
               next_token(:union)
             else
-              regex.elements << send(current_token.type, current_token)
+              elements << send(current_token.type, current_token)
               next_token(current_token.type)
           end
         end
 
-        regex
+        elements
       end
 
       def character_set(token)
@@ -219,7 +219,7 @@ module TwitterCldr
               open_count += 1
               operator_stack.push(current_token)
 
-            when *BINARY_OPERATORS, *UNARY_OPERATORS
+            when *(BINARY_OPERATORS + UNARY_OPERATORS)
               operator_stack.push(current_token)
 
             else

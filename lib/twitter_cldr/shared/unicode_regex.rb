@@ -11,6 +11,14 @@ module TwitterCldr
 
       class << self
 
+        def compile(str, symbol_table = nil)
+          new(
+            parser.parse(tokenizer.tokenize(str), {
+              :symbol_table => symbol_table
+            })
+          )
+        end
+
         # All unicode characters
         def all_unicode
           @all_unicode ||= RangeSet.new([0..0x10FFFF])
@@ -27,6 +35,16 @@ module TwitterCldr
           @valid_regexp_chars ||= all_unicode.subtract(invalid_regexp_chars)
         end
 
+        private
+
+        def tokenizer
+          @tokenizer ||= TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new
+        end
+
+        def parser
+          @parser ||= TwitterCldr::Parsers::UnicodeRegexParser.new
+        end
+
       end
 
       attr_reader :elements
@@ -40,7 +58,7 @@ module TwitterCldr
       end
 
       def to_regexp_str
-        @regexp_str ||= @elements.map(&:to_regexp_str).join
+        @regexp_str ||= elements.map(&:to_regexp_str).join
       end
 
     end

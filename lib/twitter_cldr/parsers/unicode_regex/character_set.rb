@@ -25,16 +25,7 @@ module TwitterCldr
         end
 
         def to_regexp_str
-          parts = to_set.to_a(true).map do |element|
-            case element
-              when Range
-                "[#{to_utf8(element.first)}-#{to_utf8(element.last)}]"
-              else
-                to_utf8(element)
-            end
-          end
-
-          "(?:#{parts.join("|")})"
+          set_to_regex(to_set)
         end
 
         def to_set
@@ -45,13 +36,21 @@ module TwitterCldr
 
         def codepoints
           if property
-            ranges = CodePoint.send(:"code_points_for_#{property}", property_value)
+            method = :"code_points_for_#{property}"
 
-            if ranges
-              RangeSet.new(ranges)
+            if CodePoint.respond_to?(method)
+              ranges = CodePoint.send(method, property_value)
+
+              if ranges
+                RangeSet.new(ranges)
+              else
+                raise UnicodeRegexParserError.new(
+                  "Couldn't find property '#{property}' containing property value '#{property_value}'"
+                )
+              end
             else
               raise UnicodeRegexParserError.new(
-                "Couldn't find property '#{property}' containing property value '#{property_value}'"
+                "Couldn't find property '#{property}"
               )
             end
           else

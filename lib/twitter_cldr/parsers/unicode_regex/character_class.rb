@@ -45,23 +45,8 @@ module TwitterCldr
           :character_class
         end
 
-        def to_regexp(modifiers = nil)
-          Regexp.new(to_regexp_str, modifiers)
-        end
-
         def to_regexp_str
-          range_strs = to_set.to_a(true).map do |range|
-            case range
-              when Range
-                "[#{to_utf8(range.first)}-#{to_utf8(range.last)}]"
-              when Array
-                range.map { |elem| "(?:#{to_utf8(elem)})" }.join
-              else
-                to_utf8(range)
-            end
-          end
-
-          "(?:#{range_strs.join("|")})"
+          set_to_regex(to_set)
         end
 
         def to_set
@@ -74,16 +59,12 @@ module TwitterCldr
 
         def evaluate(node)
           case node
-            when UnaryOperator
+            when UnaryOperator, BinaryOperator
               case node.operator
                 when :negate
                   UnicodeRegex.valid_regexp_chars.subtract(
                     evaluate(node.child)
                   )
-              end
-
-            when BinaryOperator
-              case node.operator
                 when :union, :pipe
                   evaluate(node.left).union(
                     evaluate(node.right)

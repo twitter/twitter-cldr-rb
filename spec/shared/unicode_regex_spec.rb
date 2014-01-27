@@ -8,8 +8,8 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe UnicodeRegex do
-  def compile(str)
-    UnicodeRegex.compile(str)
+  def compile(str, symbol_table = nil)
+    UnicodeRegex.compile(str, "", symbol_table)
   end
 
   context "basic operations" do
@@ -43,6 +43,26 @@ describe UnicodeRegex do
       it "should properly turn various complex regexes into strings" do
         compile("[a-z0-9]").to_regexp_str.should == "(?:[\\60-\\71]|[\\141-\\172])"
         compile("[\\u0067-\\u0071]").to_regexp_str.should == "(?:[\\147-\\161])"
+      end
+    end
+  end
+
+  context "with a few variables" do
+    let(:symbol_table) do
+      tokenizer = TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new
+      table = TwitterCldr::Parsers::SymbolTable.new({
+        "$FOO" => tokenizer.tokenize("[g-k]"),
+        "$BAR" => tokenizer.tokenize("[p-s]")
+      })
+    end
+
+    describe "#match" do
+      it "should substitute variables from the symbol table" do
+        regex = compile("$FOO $BAR", symbol_table)
+        regex.should exactly_match("h r")
+        regex.should exactly_match("j q")
+        regex.should_not exactly_match("h t")
+        regex.should_not exactly_match("c s")
       end
     end
   end

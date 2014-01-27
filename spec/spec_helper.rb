@@ -63,6 +63,17 @@ RSpec::Matchers.define :match_normalized do |expected|
   end
 end
 
+RSpec::Matchers.define :exactly_match do |expected|
+  match do |actual|
+    if actual.respond_to?(:match)
+      m = actual.match(expected)
+      m.to_a.first == expected
+    else
+      expected === actual
+    end
+  end
+end
+
 def check_token_list(got, expected)
   got.size.should == expected.size
   expected.each_with_index do |exp_hash, index|

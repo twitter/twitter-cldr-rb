@@ -8,12 +8,15 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe CodePoint do
-  after(:each) do
+  def clear
     CodePoint.instance_variable_set(:@composition_exclusion_cache, nil)
     CodePoint.instance_variable_set(:@canonical_compositions, nil)
     CodePoint.instance_variable_set(:@block_cache, nil)
     CodePoint.instance_variable_set(:@blocks, nil)
   end
+
+  after(:each) { clear }
+  before(:each) { clear }
 
   describe "#initialize" do
     let(:unicode_data) { ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', decomposition, "", "", "", 'N', "", "", "", "", ""] }

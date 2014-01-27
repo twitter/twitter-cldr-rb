@@ -11,11 +11,11 @@ module TwitterCldr
 
       class << self
 
-        def compile(str, symbol_table = nil)
+        def compile(str, modifiers = "", symbol_table = nil)
           new(
             parser.parse(tokenizer.tokenize(str), {
               :symbol_table => symbol_table
-            })
+            }), modifiers
           )
         end
 
@@ -24,7 +24,7 @@ module TwitterCldr
           @all_unicode ||= RangeSet.new([0..0x10FFFF])
         end
 
-        # A few <control> characters (2..7) and public/private surrogates (55296..57343).
+        # A few <control> characters (i.e. 2..7) and public/private surrogates (i.e. 55296..57343).
         # These don't play nicely with Ruby's regular expression engine, and I think we
         # can safely disregard them.
         def invalid_regexp_chars
@@ -47,14 +47,19 @@ module TwitterCldr
 
       end
 
-      attr_reader :elements
+      extend Forwardable
+      def_delegator :to_regexp, :match
+      def_delegator :to_regexp, :=~
 
-      def initialize(elements)
+      attr_reader :elements, :modifiers
+
+      def initialize(elements, modifiers = nil)
         @elements = elements
+        @modifiers = nil
       end
 
-      def to_regexp(modifiers = nil)
-        Regexp.new(to_regexp_str, modifiers)
+      def to_regexp
+        @regexp ||= Regexp.new(to_regexp_str, modifiers)
       end
 
       def to_regexp_str

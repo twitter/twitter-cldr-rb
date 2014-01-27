@@ -39,7 +39,7 @@ module TwitterCldr
             TokenRecognizer.new(:dash, /-/),
 
             # stuff that shouldn't be converted to codepoints
-            TokenRecognizer.new(:special_char, /[$?:{}()*+,\/\\]/),
+            TokenRecognizer.new(:special_char, /\{\d,?\d?\}|[$?:{}()*+,\/\\]/),
 
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),

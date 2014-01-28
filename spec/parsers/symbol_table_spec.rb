@@ -13,7 +13,7 @@ describe SymbolTable do
   describe "#fetch" do
     it "should be able to retrieve values for symbols" do
       table.fetch(:a).should == "b"
-      table.fetch(:z).should be_nil
+      lambda { table.fetch(:z) }.should raise_error(KeyError)
     end
   end
 

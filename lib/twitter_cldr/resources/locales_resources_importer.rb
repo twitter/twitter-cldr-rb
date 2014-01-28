@@ -14,7 +14,7 @@ module TwitterCldr
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
       LOCALE_COMPONENTS = %w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems]
+      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root]
 
       # Arguments:
       #
@@ -136,15 +136,15 @@ module TwitterCldr
       end
 
       BUDDHIST_CALENDAR = {
-          'formats' => {
-              'date' => {
-                  'default' => :'calendars.buddhist.formats.date.medium',
-                  'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
-                  'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
-                  'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
-                  'short'   => { 'pattern' => 'd/M/#{y + 543}' }
-              }
+        'formats' => {
+          'date' => {
+            'default' => :'calendars.buddhist.formats.date.medium',
+            'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
+            'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
+            'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
+            'short'   => { 'pattern' => 'd/M/#{y + 543}' }
           }
+        }
       }
 
     end

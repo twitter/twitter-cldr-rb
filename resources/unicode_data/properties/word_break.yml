@@ -1,9 +1,17 @@
 ---
-:Double_Quote: []
-:Single_Quote: []
+:Double_Quote:
+- !ruby/range
+  begin: 34
+  end: 34
+  excl: false
+:Single_Quote:
+- !ruby/range
+  begin: 39
+  end: 39
+  excl: false
 :Hebrew_Letter:
 - !ruby/range
-  begin: 1489
+  begin: 1488
   end: 1514
   excl: false
 - !ruby/range
@@ -42,11 +50,19 @@
   begin: 64326
   end: 64335
   excl: false
-:CR: []
-:LF: []
+:CR:
+- !ruby/range
+  begin: 13
+  end: 13
+  excl: false
+:LF:
+- !ruby/range
+  begin: 10
+  end: 10
+  excl: false
 :Newline:
 - !ruby/range
-  begin: 12
+  begin: 11
   end: 12
   excl: false
 - !ruby/range
@@ -59,7 +75,7 @@
   excl: false
 :Extend:
 - !ruby/range
-  begin: 769
+  begin: 768
   end: 879
   excl: false
 - !ruby/range
@@ -884,10 +900,14 @@
   excl: false
 :Regional_Indicator:
 - !ruby/range
-  begin: 127463
+  begin: 127462
   end: 127487
   excl: false
 :Format:
+- !ruby/range
+  begin: 173
+  end: 173
+  excl: false
 - !ruby/range
   begin: 1536
   end: 1540
@@ -950,7 +970,7 @@
   excl: false
 :Katakana:
 - !ruby/range
-  begin: 12338
+  begin: 12337
   end: 12341
   excl: false
 - !ruby/range
@@ -987,7 +1007,7 @@
   excl: false
 :ALetter:
 - !ruby/range
-  begin: 66
+  begin: 65
   end: 90
   excl: false
 - !ruby/range
@@ -2668,6 +2688,10 @@
   excl: false
 :MidLetter:
 - !ruby/range
+  begin: 58
+  end: 58
+  excl: false
+- !ruby/range
   begin: 183
   end: 183
   excl: false
@@ -2700,6 +2724,10 @@
   end: 65306
   excl: false
 :MidNum:
+- !ruby/range
+  begin: 44
+  end: 44
+  excl: false
 - !ruby/range
   begin: 59
   end: 59
@@ -2754,6 +2782,10 @@
   excl: false
 :MidNumLet:
 - !ruby/range
+  begin: 46
+  end: 46
+  excl: false
+- !ruby/range
   begin: 8216
   end: 8217
   excl: false
@@ -2775,7 +2807,7 @@
   excl: false
 :Numeric:
 - !ruby/range
-  begin: 49
+  begin: 48
   end: 57
   excl: false
 - !ruby/range
@@ -2943,6 +2975,10 @@
   end: 120831
   excl: false
 :ExtendNumLet:
+- !ruby/range
+  begin: 95
+  end: 95
+  excl: false
 - !ruby/range
   begin: 8255
   end: 8256

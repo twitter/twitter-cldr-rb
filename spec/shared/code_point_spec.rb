@@ -133,15 +133,15 @@ describe CodePoint do
     it "returns code points for the given unicode property and value" do
       cps = CodePoint.code_points_for_line_break(:CM)
       cps.should be_a(Array)
-      cps.first.should == (1..8)
+      cps.first.should == (0..8)
 
       cps = CodePoint.code_points_for_sentence_break(:Extend)
       cps.should be_a(Array)
-      cps.first.should == (769..879)
+      cps.first.should == (768..879)
 
       cps = CodePoint.code_points_for_word_break(:Hebrew_Letter)
       cps.should be_a(Array)
-      cps.first.should == (1489..1514)
+      cps.first.should == (1488..1514)
     end
   end
 

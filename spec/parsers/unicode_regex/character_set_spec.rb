@@ -19,7 +19,7 @@ describe UnicodeRegexParser::CharacterSet do
     it "should return a set containing codepoints for the given named property" do
       char_set = UnicodeRegexParser::CharacterSet.new("Sentence_Break=Sp")
       char_set.to_set.to_a(true).should == [
-        11..12, 32, 160, 5760, 8192..8202, 8239, 8287, 12288
+        9, 11..12, 32, 160, 5760, 8192..8202, 8239, 8287, 12288
       ]
     end
 

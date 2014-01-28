@@ -18,5 +18,6 @@ module TwitterCldr
     autoload :NumberingSystem, 'twitter_cldr/shared/numbering_system'
     autoload :Casefolder,      'twitter_cldr/shared/casefolder'
     autoload :UnicodeRegex,    'twitter_cldr/shared/unicode_regex'
+    autoload :BreakIterator,   'twitter_cldr/shared/break_iterator'
   end
 end

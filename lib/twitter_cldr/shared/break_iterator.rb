@@ -20,6 +20,14 @@ module TwitterCldr
         each_boundary(str, "sentence", &block)
       end
 
+      def each_word(str, &block)
+        raise NotImplementedError.new("Word segmentation is not currently supported.")
+      end
+
+      def each_line(str, &block)
+        raise NotImplementedError.new("Line segmentation is not currently supported.")
+      end
+
       private
 
       def boundary_name_for(str)
@@ -29,25 +37,26 @@ module TwitterCldr
       def each_boundary(str, boundary_type)
         if block_given?
           rules = compile_rules_for(boundary_type)
-          current = ""
-          current_offset = 0
+          match = nil
+          last_offset = 0
+          current_position = 0
+          search_str = str.dup
 
-          str.each_char do |c|
-            current << c
+          until search_str.size == 0
+            rule = rules.find { |rule| match = rule.match(search_str) }
 
-            rules.each_with_index do |rule, idx|
-              if match = rule.match(current)
-                if rule.boundary_symbol == :break
-                  yield current[0..(match.boundary_offset - 1)]
-                  current = current[match.boundary_offset..-1]
-                  current_offset += match.boundary_offset
-                end
-              end
+            if rule.boundary_symbol == :break
+              break_offset = current_position + match.boundary_offset
+              yield str[last_offset...break_offset]
+              last_offset = break_offset
             end
+
+            search_str = search_str[match.boundary_offset..-1]
+            current_position += match.boundary_offset
           end
 
-          if current_offset < str.size
-            yield current
+          if last_offset < (str.size - 1)
+            yield str[last_offset..-1]
           end
         else
           to_enum(__method__, str, boundary_type)
@@ -58,8 +67,8 @@ module TwitterCldr
         rule_cache[boundary_type] ||= begin
           boundary_name = boundary_name_for(boundary_type)
           boundary_data = resource_for(boundary_name)
-          @symbol_table = symbol_table_for(boundary_data)
-          rules_for(boundary_data, @symbol_table)
+          symbol_table = symbol_table_for(boundary_data)
+          rules_for(boundary_data, symbol_table)
         end
       end
 
@@ -92,7 +101,7 @@ module TwitterCldr
       def rules_for(boundary_data, symbol_table)
         boundary_data[:rules].map do |rule|
           r = segmentation_parser.parse(
-            segmentation_tokenizer.tokenize(add_anchors(rule[:value])), {
+            segmentation_tokenizer.tokenize(rule[:value]), {
               :symbol_table => symbol_table
             }
           )
@@ -101,11 +110,6 @@ module TwitterCldr
           r.id = rule[:id]
           r
         end
-      end
-
-      # helps ensure we only find exact matches
-      def add_anchors(val)
-        val # "^#{val}$"
       end
 
       def segmentation_tokenizer

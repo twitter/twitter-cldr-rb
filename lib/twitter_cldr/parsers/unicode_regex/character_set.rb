@@ -42,6 +42,7 @@ module TwitterCldr
               ranges = CodePoint.send(method, property_value)
 
               if ranges
+                # RangeSet.new([ranges.first])
                 RangeSet.new(ranges)
               else
                 raise UnicodeRegexParserError.new(
@@ -55,6 +56,7 @@ module TwitterCldr
             end
           else
             RangeSet.new(
+              # [CodePoint.code_points_for_property_value(property_value).first]
               CodePoint.code_points_for_property_value(property_value)
             )
           end

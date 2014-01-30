@@ -7,8 +7,6 @@ module TwitterCldr
   module Formatters
     module Rbnf
 
-      class UnexpectedTokenError < StandardError; end
-
       class RuleParser < TwitterCldr::Parsers::Parser
 
         private

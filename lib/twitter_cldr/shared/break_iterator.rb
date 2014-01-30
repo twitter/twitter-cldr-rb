@@ -10,9 +10,10 @@ module TwitterCldr
   module Shared
     class BreakIterator
 
-      # We ask for locale here because of locale-specific segmentation
-      # tailorings, which currently aren't supported. This parameter is ignored.
-      def initialize(locale = :root)
+      attr_reader :locale, :use_uli_exceptions
+
+      def initialize(locale = TwitterCldr.locale, options = {})
+        @use_uli_exceptions = !!options.fetch(:use_uli_exceptions, true)
         @locale = locale
       end
 
@@ -36,7 +37,7 @@ module TwitterCldr
 
       def each_boundary(str, boundary_type)
         if block_given?
-          rules = compile_rules_for(boundary_type)
+          rules = compile_rules_for(locale, boundary_type)
           match = nil
           last_offset = 0
           current_position = 0
@@ -63,17 +64,61 @@ module TwitterCldr
         end
       end
 
-      def compile_rules_for(boundary_type)
-        rule_cache[boundary_type] ||= begin
-          boundary_name = boundary_name_for(boundary_type)
-          boundary_data = resource_for(boundary_name)
-          symbol_table = symbol_table_for(boundary_data)
-          rules_for(boundary_data, symbol_table)
+      # See the comment above exceptions_for. Basically, we only support exceptions
+      # for the "sentence" boundary type since the ULI JSON data doesn't distinguish
+      # between boundary types.
+      def compile_exception_rule_for(locale, boundary_type, boundary_name)
+        if boundary_type == "sentence"
+          cache_key = TwitterCldr::Utils.compute_cache_key(locale, boundary_type)
+          exceptions_cache[cache_key] ||= begin
+            exceptions = exceptions_for(locale, boundary_name)
+            regex_contents = exceptions.map { |exc| Regexp.escape(exc) }.join("|")
+            segmentation_parser.parse(
+              segmentation_tokenizer.tokenize("(?:#{regex_contents}) ×")
+            )
+          end
         end
       end
 
+      def exceptions_cache
+        @@exceptions_cache ||= {}
+      end
+
+      # Grabs rules from segment_root, applies custom tailorings (our own, NOT from CLDR),
+      # and optionally integrates ULI exceptions.
+      def compile_rules_for(locale, boundary_type)
+        rules = rule_cache[boundary_type] ||= begin
+          boundary_name = boundary_name_for(boundary_type)
+          boundary_data = resource_for(boundary_name)
+          symbol_table = symbol_table_for(boundary_data)
+          root_rules = rules_for(boundary_data, symbol_table)
+
+          tailoring_boundary_data = tailoring_resource_for(locale, boundary_name)
+          tailoring_rules = rules_for(tailoring_boundary_data, symbol_table)
+          merge_rules(root_rules, tailoring_rules)
+        end
+
+        if use_uli_exceptions
+          exception_rule = compile_exception_rule_for(locale, boundary_type, boundary_name)
+          rules.insert(0, exception_rule)
+        end
+
+        rules
+      end
+
+      # replaces ruleset1's rules with rules with the same id from ruleset2
+      def merge_rules(ruleset1, ruleset2)
+        result = ruleset1.dup
+        ruleset2.each do |new_rule|
+          if existing_idx = result.find_index { |rule| rule.id == new_rule.id }
+            result[existing_idx] = new_rule
+          end
+        end
+        result
+      end
+
       def rule_cache
-        @rule_cache ||= {}
+        @@rule_cache ||= {}
       end
 
       def symbol_table_for(boundary_data)
@@ -82,12 +127,12 @@ module TwitterCldr
           id = variable[:id].to_s
           tokens = segmentation_tokenizer.tokenize(variable[:value])
           # note: variables can be redefined (add replaces if key already exists)
-          table.add(id, resolve(tokens, table))
+          table.add(id, resolve_symbols(tokens, table))
         end
         table
       end
 
-      def resolve(tokens, symbol_table)
+      def resolve_symbols(tokens, symbol_table)
         tokens.inject([]) do |ret, token|
           if token.type == :variable
             ret += symbol_table.fetch(token.value)
@@ -120,13 +165,41 @@ module TwitterCldr
         @@segmentation_parser ||= SegmentationParser.new
       end
 
-      # tailoring would probably be done here
       def resource_for(boundary_name)
         root_resource[:segments][boundary_name.to_sym]
       end
 
+      def tailoring_resource_for(locale, boundary_name)
+        cache_key = TwitterCldr::Utils.compute_cache_key(locale, boundary_name)
+        tailoring_resource_cache[cache_key] ||= begin
+          res = TwitterCldr.get_resource("shared", "segments", "tailorings", locale)
+          res[locale][:segments][boundary_name.to_sym]
+        end
+      end
+
+      def tailoring_resource_cache
+        @@tailoring_resource_cache ||= {}
+      end
+
       def root_resource
-        @@root_resource ||= TwitterCldr.get_resource("shared", "segments_root")
+        @@root_resource ||= TwitterCldr.get_resource("shared", "segments", "segments_root")
+      end
+
+      # The boundary_name param is not currently used since the ULI JSON resource that
+      # exceptions are generated from does not distinguish between boundary types. The
+      # XML version does, however, so the JSON will hopefully catch up at some point and
+      # we can make use of this second parameter. For the time being, compile_exception_rule_for
+      # (which calls this function) assumes a "sentence" boundary type.
+      def exceptions_for(locale, boundary_name)
+        exceptions_resource_cache[locale] ||= begin
+          TwitterCldr.get_resource("uli", "segments", locale)[locale][:exceptions]
+        rescue ArgumentError
+          []
+        end
+      end
+
+      def exceptions_resource_cache
+        @@exceptions_resource_cache ||= {}
       end
 
     end

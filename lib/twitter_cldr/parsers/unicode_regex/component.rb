@@ -11,7 +11,7 @@ module TwitterCldr
         protected
 
         def to_utf8(codepoints)
-          Array(codepoints).pack("U*").bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
+          Array(codepoints).pack("U*").bytes.map { |s| "\\" + s.to_s(8) }.join
         end
 
         def range_to_regex(range)

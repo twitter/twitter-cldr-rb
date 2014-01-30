@@ -59,7 +59,7 @@ module TwitterCldr
         # consistent with how territory codes are surfaced in TwitterCLDR
         # methods relating to phone and postal codes.
         def normalize_territory_code(territory_code)
-          return nil if territory_code.nil?
+          return if territory_code.nil?
           territory_code.to_s.downcase.gsub(/^0+/, '').to_sym
         end
 

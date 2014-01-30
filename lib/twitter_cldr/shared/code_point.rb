@@ -38,7 +38,7 @@ module TwitterCldr
 
       attr_reader :fields
 
-      (CODE_POINT_FIELDS).each_with_index do |field, idx|
+      CODE_POINT_FIELDS.each_with_index do |field, idx|
         unless field == :decomposition
           define_method field do
             fields[idx]

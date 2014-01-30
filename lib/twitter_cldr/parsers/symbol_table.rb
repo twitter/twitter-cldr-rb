@@ -19,7 +19,7 @@ module TwitterCldr
       end
 
       def fetch(symbol)
-        symbols[symbol]
+        symbols.fetch(symbol)
       end
 
       def add(symbol, value)

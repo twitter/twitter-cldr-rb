@@ -11,13 +11,12 @@ module TwitterCldr
         protected
 
         def to_utf8(codepoints)
-          codepoints = codepoints.is_a?(Array) ? codepoints : [codepoints]
-          codepoints.pack("U*").bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
+          Array(codepoints).pack("U*").bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
         end
 
         def range_to_regex(range)
           if range.first.is_a?(Array)
-            range.map { |elem| "(?:#{to_utf8(elem)})" }.join
+            array_to_regex(range)
           else
             "[#{to_utf8(range.first)}-#{to_utf8(range.last)}]"
           end

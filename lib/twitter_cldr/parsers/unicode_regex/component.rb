@@ -12,8 +12,10 @@ module TwitterCldr
 
         def to_utf8(codepoints)
           codepoints = codepoints.is_a?(Array) ? codepoints : [codepoints]
-          # codepoints.pack("U*").bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
-          codepoints.map { |cp| "\\u{#{cp.to_s(16).rjust(4, "0")}}"}.join
+          # note: we do this for ruby 1.8 compatibility
+          # if we didn't have to support 1.8, we could do this instead:
+          # codepoints.map { |cp| "\\u{#{cp.to_s(16).rjust(4, "0")}}"}.join
+          codepoints.pack("U*").bytes.to_a.map { |s| "\\" + s.to_s(8) }.join
         end
 
         def range_to_regex(range)

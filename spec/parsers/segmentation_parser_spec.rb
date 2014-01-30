@@ -28,22 +28,20 @@ describe SegmentationParser do
   describe "#parse" do
     it "should parse a rule with a break" do
       seg = parse(tokenize("[a-z] ÷ [0-9]"))
-      seg.left.to_regexp_str.should == "(?:[\\141-\\172])"
-      seg.right.to_regexp_str.should == "(?:[\\60-\\71])"
+      seg.left.to_regexp_str.should == "\\A(?:[\\141-\\172])"
+      seg.right.to_regexp_str.should == "\\A(?:[\\60-\\71])"
       seg.boundary_symbol.should == :break
     end
 
     it "should parse a rule with a non-break" do
       seg = parse(tokenize("[a-z] × [0-9]"))
-      seg.left.to_regexp_str.should == "(?:[\\141-\\172])"
-      seg.right.to_regexp_str.should == "(?:[\\60-\\71])"
+      seg.regex.to_regexp_str.should == "\\A(?:[\\141-\\172])(?:[\\60-\\71])"
       seg.boundary_symbol.should == :no_break
     end
 
     it "should parse a rule containing a variable" do
       seg = parse(tokenize("$FOO × bar"), :symbol_table => symbol_table)
-      seg.left.to_regexp_str.should == "(?:[\\141-\\143])"
-      seg.right.to_regexp_str.should == "(?:\\142)(?:\\141)(?:\\162)"
+      seg.regex.to_regexp_str.should == "\\A(?:[\\141-\\143])(?:\\142)(?:\\141)(?:\\162)"
       seg.boundary_symbol.should == :no_break
     end
   end

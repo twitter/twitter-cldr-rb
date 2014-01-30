@@ -7,6 +7,10 @@ require 'set'
 
 module TwitterCldr
   module Utils
+
+    # An integer set, implemented under the hood with ranges. The idea is
+    # that it's more efficient to store sequential data in ranges rather
+    # than as single elements. By definition, RangeSets contain no duplicates.
     class RangeSet
 
       attr_reader :ranges
@@ -64,13 +68,12 @@ module TwitterCldr
 
       def to_a(compress = false)
         if compress
-          ranges.inject([]) do |ret, range|
+          ranges.map do |range|
             if range.first == range.last
-              ret << range.first
+              range.first
             else
-              ret << range
+              range
             end
-            ret
           end
         else
           ranges.dup

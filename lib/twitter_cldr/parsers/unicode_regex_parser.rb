@@ -193,7 +193,7 @@ module TwitterCldr
         operand_stack = []
         open_count = 0
 
-        while true
+        loop do
           case current_token.type
             when *CharacterClass.closing_types
               last_operator = peek(operator_stack)

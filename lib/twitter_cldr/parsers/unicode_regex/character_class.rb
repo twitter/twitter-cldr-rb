@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-include TwitterCldr::Shared
-
 module TwitterCldr
   module Parsers
     class UnicodeRegexParser
@@ -83,7 +80,7 @@ module TwitterCldr
               if node
                 node.to_set
               else
-                RangeSet.new([])
+                TwitterCldr::Utils::RangeSet.new([])
               end
           end
         end

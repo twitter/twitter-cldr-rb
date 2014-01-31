@@ -5,8 +5,6 @@
 
 require 'twitter_cldr/resources/download'
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Resources
 
@@ -130,7 +128,7 @@ module TwitterCldr
           index_ret
         end.inject({}) do |index_ret, (index_key, index_data)|
           index_ret[index_key] = index_data.inject({}) do |field_ret, (field_key, field_data)|
-            field_ret[field_key] = RangeSet.rangify(field_data)
+            field_ret[field_key] = TwitterCldr::Utils::RangeSet.rangify(field_data)
             field_ret
           end
           index_ret

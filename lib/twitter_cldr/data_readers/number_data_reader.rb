@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Tokenizers
-include TwitterCldr::Formatters
-
 module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
@@ -82,7 +79,7 @@ module TwitterCldr
       end
 
       def tokenizer
-        @tokenizer ||= NumberTokenizer.new(self)
+        @tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(self)
       end
 
       def formatter

@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Tokenizers
-include TwitterCldr::Formatters
-
 module TwitterCldr
   module DataReaders
     class TimespanDataReader < DataReader
@@ -78,11 +75,11 @@ module TwitterCldr
       end
 
       def tokenizer
-        TimespanTokenizer.new(self)
+        TwitterCldr::Tokenizers::TimespanTokenizer.new(self)
       end
 
       def formatter
-        TimespanFormatter.new(self)
+        TwitterCldr::Formatters::TimespanFormatter.new(self)
       end
 
       def all_types

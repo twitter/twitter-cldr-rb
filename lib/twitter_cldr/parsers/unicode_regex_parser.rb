@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Shared
-
 module TwitterCldr
   module Parsers
 
@@ -47,6 +45,13 @@ module TwitterCldr
         :negate
       ]
 
+      def make_token(type, value = nil)
+        TwitterCldr::Tokenizers::Token.new({
+          :type => type,
+          :value => value
+        })
+      end
+
       # Identifies regex ranges and makes implicit operators explicit
       def preprocess(tokens)
         result = []
@@ -59,7 +64,7 @@ module TwitterCldr
           add_union = (valid_character_class_token?(result.last) && tokens[i].type != :close_bracket) ||
             (result.last && result.last.type == :close_bracket && tokens[i].type == :open_bracket)
 
-          result << Token.new(:type => :union) if add_union
+          result << make_token(:union) if add_union
 
           is_range = valid_character_class_token?(tokens[i]) &&
             valid_character_class_token?(tokens[i + 2]) &&
@@ -73,10 +78,10 @@ module TwitterCldr
           else
             if negated_token?(tokens[i])
               result += [
-                Token.new(:type => :open_bracket),
-                Token.new(:type => :negate),
+                make_token(:open_bracket),
+                make_token(:negate),
                 tokens[i],
-                Token.new(:type => :close_bracket)
+                make_token(:close_bracket)
               ]
             else
               result << tokens[i]

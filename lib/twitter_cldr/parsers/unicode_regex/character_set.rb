@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-include TwitterCldr::Shared
-
 module TwitterCldr
   module Parsers
     class UnicodeRegexParser
@@ -38,11 +35,11 @@ module TwitterCldr
           if property
             method = :"code_points_for_#{property}"
 
-            if CodePoint.respond_to?(method)
-              ranges = CodePoint.send(method, property_value)
+            if TwitterCldr::Shared::CodePoint.respond_to?(method)
+              ranges = TwitterCldr::Shared::CodePoint.send(method, property_value)
 
               if ranges
-                RangeSet.new(ranges)
+                TwitterCldr::Utils::RangeSet.new(ranges)
               else
                 raise UnicodeRegexParserError.new(
                   "Couldn't find property '#{property}' containing property value '#{property_value}'"
@@ -54,7 +51,7 @@ module TwitterCldr
               )
             end
           else
-            RangeSet.new(
+            TwitterCldr::Utils::RangeSet.new(
               CodePoint.code_points_for_property_value(property_value)
             )
           end

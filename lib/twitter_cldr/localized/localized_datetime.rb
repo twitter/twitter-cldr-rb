@@ -5,8 +5,6 @@
 
 require 'tzinfo'
 
-include TwitterCldr::DataReaders
-
 module TwitterCldr
   module Localized
     class LocalizedDateTime < LocalizedObject
@@ -100,7 +98,7 @@ module TwitterCldr
       protected
 
       def data_reader_for(type, options = {})
-        DateTimeDataReader.new(locale, options.merge({
+        TwitterCldr::DataReaders::DateTimeDataReader.new(locale, options.merge({
           :calendar_type => calendar_type,
           :type => type
         }))

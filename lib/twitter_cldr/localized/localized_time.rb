@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::DataReaders
-
 module TwitterCldr
   module Localized
 
@@ -38,7 +36,7 @@ module TwitterCldr
       end
 
       def data_reader_for(type)
-        TimeDataReader.new(locale, {
+        TwitterCldr::DataReaders::TimeDataReader.new(locale, {
           :calendar_type => calendar_type,
           :type => type
         })

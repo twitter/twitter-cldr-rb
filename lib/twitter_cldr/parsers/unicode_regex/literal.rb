@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Parsers
     class UnicodeRegexParser
@@ -47,12 +45,12 @@ module TwitterCldr
             if SPECIAL_CHARACTERS.include?(special_char.downcase)
               set_for_special_char(special_char)
             else
-              RangeSet.from_array([
+              TwitterCldr::Utils::RangeSet.from_array([
                 self.class.ordinalize(special_char)
               ])
             end
           else
-            RangeSet.from_array([
+            TwitterCldr::Utils::RangeSet.from_array([
               self.class.ordinalize(text)
             ])
           end
@@ -62,7 +60,9 @@ module TwitterCldr
 
         def set_for_special_char(char)
           special_char_set_cache[char] ||= begin
-            chars = RangeSet.from_array(SPECIAL_CHARACTERS[char.downcase])
+            chars = TwitterCldr::Utils::RangeSet.from_array(
+              SPECIAL_CHARACTERS[char.downcase]
+            )
 
             if char.upcase == char
               UnicodeRegex.valid_regexp_chars.subtract(chars)

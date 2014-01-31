@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::DataReaders
-
 module TwitterCldr
   module Localized
 
@@ -49,16 +47,12 @@ module TwitterCldr
       end
 
       def data_reader_for(type)
-        DateDataReader.new(locale, {
+        TwitterCldr::DataReaders::DateDataReader.new(locale, {
           :calendar_type => calendar_type,
           :type => type
         })
       end
 
-      # def formatter_const
-      #   TwitterCldr::Formatters::DateFormatter
-      # end
     end
-
   end
 end

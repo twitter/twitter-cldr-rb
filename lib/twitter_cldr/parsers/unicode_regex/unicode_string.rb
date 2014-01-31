@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Parsers
     class UnicodeRegexParser
@@ -26,9 +24,9 @@ module TwitterCldr
           # with data types that aren't true integer ranges. I can't think
           # of any other way to support multichar strings :(
           if codepoints.size > 1
-            RangeSet.new([codepoints..codepoints])
+            TwitterCldr::Utils::RangeSet.new([codepoints..codepoints])
           else
-            RangeSet.new([codepoints.first..codepoints.first])
+            TwitterCldr::Utils::RangeSet.new([codepoints.first..codepoints.first])
           end
         end
 

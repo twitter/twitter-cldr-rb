@@ -202,14 +202,16 @@ module TwitterCldr
       end
 
       def find_intersection(range1, range2)
-        val = if range1.last >= range2.first && range1.last <= range2.last
+        # range2 entirely contains range1
+        if range2.first <= range1.first && range1.last <= range2.last
+          range1.dup
+        elsif range1.last >= range2.first && range1.last <= range2.last
           range2.first..range1.last
         elsif range1.first >= range2.first && range1.first <= range2.last
           range1.first..range2.last
         elsif range1.first <= range2.first && range1.last >= range2.last
           [range1.first, range2.first].max..[range1.last, range2.last].min
         end
-        val
       end
 
       # subtracts range1 from range2 (range2 - range1)

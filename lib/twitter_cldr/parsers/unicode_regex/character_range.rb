@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Parsers
     class UnicodeRegexParser
@@ -30,7 +28,7 @@ module TwitterCldr
         end
 
         def to_set
-          RangeSet.new(
+          TwitterCldr::Utils::RangeSet.new(
             [initial.to_set.to_full_a.first..final.to_set.to_full_a.first]
           )
         end

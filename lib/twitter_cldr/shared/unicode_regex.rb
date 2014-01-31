@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Shared
     class UnicodeRegex
@@ -21,14 +19,18 @@ module TwitterCldr
 
         # All unicode characters
         def all_unicode
-          @all_unicode ||= RangeSet.new([0..0x10FFFF])
+          @all_unicode ||= TwitterCldr::Utils::RangeSet.new(
+            [0..0x10FFFF]
+          )
         end
 
         # A few <control> characters (i.e. 2..7) and public/private surrogates (i.e. 55296..57343).
         # These don't play nicely with Ruby's regular expression engine, and I think we
         # can safely disregard them.
         def invalid_regexp_chars
-          @invalid_regexp_chars ||= RangeSet.new([2..7, 55296..57343])
+          @invalid_regexp_chars ||= TwitterCldr::Utils::RangeSet.new(
+            [2..7, 55296..57343]
+          )
         end
 
         def valid_regexp_chars

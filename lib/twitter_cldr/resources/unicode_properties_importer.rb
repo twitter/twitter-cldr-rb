@@ -5,8 +5,6 @@
 
 require 'twitter_cldr/resources/download'
 
-include TwitterCldr::Utils
-
 module TwitterCldr
   module Resources
 
@@ -45,7 +43,7 @@ module TwitterCldr
                   ret[name] += expand_range(data[0])
                   ret
                 end.inject({}) do |ret, (key, data)|
-                  ret[key] = RangeSet.rangify(data)
+                  ret[key] = TwitterCldr::Utils::RangeSet.rangify(data)
                   ret
                 end
               )

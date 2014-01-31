@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Shared
-
 module TwitterCldr
   module Parsers
 
@@ -109,12 +107,14 @@ module TwitterCldr
       end
 
       def begin_token
-        @@begin_token ||= Token.new(:type => :special_char, :value => "\\A")
+        @@begin_token ||= TwitterCldr::Tokenizers::Token.new(
+          :type => :special_char, :value => "\\A"
+        )
       end
 
       def parse_regex(tokens, options)
         unless tokens.empty?
-          UnicodeRegex.new(
+          TwitterCldr::Shared::UnicodeRegex.new(
             regex_parser.parse(tokens, options)
           )
         end

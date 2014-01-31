@@ -63,6 +63,14 @@ describe RangeSet do
 
       set.to_a.should == [1..11, 14..18]
     end
+
+    it "should aggregate the ranges correctly even if they're given in reverse order" do
+      set = RangeSet.new([3..10]).union(RangeSet.new([1..4]))
+      set.to_a.should == [1..10]
+
+      set = RangeSet.new([1..4]).union(RangeSet.new([3..10]))
+      set.to_a.should == [1..10]
+    end
   end
 
   describe "#intersection" do
@@ -89,6 +97,14 @@ describe RangeSet do
     it "returns partial intersections when the range set contains multiple matching ranges" do
       set = RangeSet.new([1..5, 7..10]).intersection(RangeSet.new([3..8]))
       set.to_a.should == [3..5, 7..8]
+    end
+
+    it "doesn't matter what order the ranges are compared in" do
+      set = RangeSet.new([2..3]).intersection(RangeSet.new([1..4]))
+      set.to_a.should == [2..3]
+
+      set = RangeSet.new([1..4]).intersection(RangeSet.new([2..3]))
+      set.to_a.should == [2..3]
     end
   end
 

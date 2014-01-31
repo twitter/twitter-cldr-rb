@@ -100,6 +100,7 @@ module TwitterCldr
 
         if use_uli_exceptions
           exception_rule = compile_exception_rule_for(locale, boundary_type, boundary_name)
+          rules = rules.dup  # avoid modifying the cached rules
           rules.insert(0, exception_rule)
         end
 

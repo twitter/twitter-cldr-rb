@@ -26,7 +26,9 @@ module TwitterCldr
         end
 
         def to_set
-          codepoints.subtract(UnicodeRegex.invalid_regexp_chars)
+          codepoints.subtract(
+            TwitterCldr::Shared::UnicodeRegex.invalid_regexp_chars
+          )
         end
 
         private

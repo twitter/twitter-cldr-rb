@@ -189,10 +189,10 @@ describe UnicodeRegex do
 
       it "should match a regex with a complicated expression inside the char class" do
         # not [separators U space-tilde] diff [letters diff numbers]  (diff is commutative)
-        # i.e. anything that's not a letter, number, or separator
         regex = compile("[^[\\p{Z}\\u0020-\\u007f]-[\\p{L}]-[\\p{N}]]")
-        regex.should exactly_match("\t")  # tab
-        regex.should exactly_match("\v")  # vertical tab
+        regex.should exactly_match(" ")
+        regex.should exactly_match(",")
+        regex.should_not exactly_match("a")
       end
     end
   end

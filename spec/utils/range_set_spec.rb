@@ -98,13 +98,13 @@ describe RangeSet do
       set = RangeSet.new([1..5, 7..10]).intersection(RangeSet.new([3..8]))
       set.to_a.should == [3..5, 7..8]
     end
-  end
 
-  describe "#find_intersection" do
-    it "doesn't matter what order the arguments are passed in" do
-      set = RangeSet.new([])
-      set.send(:find_intersection, 2..3, 1..4).should == (2..3)
-      set.send(:find_intersection, 1..4, 2..3).should == (2..3)
+    it "doesn't matter what order the ranges are compared in" do
+      set = RangeSet.new([2..3]).intersection(RangeSet.new([1..4]))
+      set.to_a.should == [2..3]
+
+      set = RangeSet.new([1..4]).intersection(RangeSet.new([2..3]))
+      set.to_a.should == [2..3]
     end
   end
 

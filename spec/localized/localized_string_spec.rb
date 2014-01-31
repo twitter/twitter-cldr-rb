@@ -167,6 +167,24 @@ describe LocalizedString do
     end
   end
 
+  describe "#each_sentence" do
+    it "returns an enumerator if not passed a block" do
+      "foo bar".localize.each_sentence.should be_a(Enumerator)
+    end
+
+    it "yields sentences as localized strings" do
+      str = "Quick. Brown. Fox.".localize
+
+      str.each_sentence do |sentence|
+        sentence.should be_a(LocalizedString)
+      end
+
+      str.each_sentence.to_a.map(&:to_s).should == [
+        "Quick.", " Brown.", " Fox."
+      ]
+    end
+  end
+
   describe "#code_points" do
     it "returns an array of Unicode code points for the string" do
       "español".localize.code_points.should == [0x65, 0x73, 0x70, 0x61, 0xF1, 0x6F, 0x6C]

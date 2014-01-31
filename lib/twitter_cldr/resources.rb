@@ -5,6 +5,7 @@
 
 module TwitterCldr
   module Resources
+    autoload :Uli,                                'twitter_cldr/resources/uli'
     autoload :UnicodeImporter,                    'twitter_cldr/resources/unicode_importer'
     autoload :IcuBasedImporter,                   'twitter_cldr/resources/icu_based_importer'
     autoload :CanonicalCompositionsUpdater,       'twitter_cldr/resources/canonical_compositions_updater'

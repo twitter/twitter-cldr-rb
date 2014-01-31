@@ -11,6 +11,9 @@ module TwitterCldr
         protected
 
         def to_utf8(codepoints)
+          # note: we do this for ruby 1.8 compatibility
+          # if we didn't have to support 1.8, we could do this instead:
+          # Array(codepoints).map { |cp| "\\u{#{cp.to_s(16).rjust(4, "0")}}"}.join
           Array(codepoints).pack("U*").bytes.map { |s| "\\" + s.to_s(8) }.join
         end
 

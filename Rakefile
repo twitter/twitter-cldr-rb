@@ -75,6 +75,7 @@ task :update do
     "update:collation_tries",
     "update:canonical_compositions",
     "update:rbnf_tests",
+    "update:segment_exceptions",
     "update:readme"
   ]
 
@@ -198,6 +199,13 @@ namespace :update do
       './spec/formatters/numbers/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
+  end
+
+  task :segment_exceptions do
+    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
+      './vendor/uli/segments',
+      './resources/uli/segments'
+    ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
   end
 
   task :readme do |_, args|

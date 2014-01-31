@@ -1,0 +1,8 @@
+--- 
+:en:
+  :segments:
+    :SentenceBreak:
+      :rules:
+        -
+          :id: 9
+          :value: " ( $STerm | $ATerm ) $Close* ÷ ( $Close | $Sp | $Sep | $CR | $LF ) "  # override non-break in original with break

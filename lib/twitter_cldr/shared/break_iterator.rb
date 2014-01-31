@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Parsers
-include TwitterCldr::Tokenizers
-
 module TwitterCldr
   module Shared
     class BreakIterator
@@ -159,7 +156,7 @@ module TwitterCldr
       end
 
       def self.segmentation_tokenizer
-        @segmentation_tokenizer ||= SegmentationTokenizer.new
+        @segmentation_tokenizer ||= TwitterCldr::Tokenizers::SegmentationTokenizer.new
       end
 
       def segmentation_tokenizer
@@ -167,7 +164,7 @@ module TwitterCldr
       end
 
       def self.segmentation_parser
-        @segmentation_parser ||= SegmentationParser.new
+        @segmentation_parser ||= TwitterCldr::Parsers::SegmentationParser.new
       end
 
       def segmentation_parser

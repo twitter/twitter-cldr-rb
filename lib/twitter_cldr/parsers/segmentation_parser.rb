@@ -107,7 +107,11 @@ module TwitterCldr
       end
 
       def begin_token
-        @@begin_token ||= TwitterCldr::Tokenizers::Token.new(
+        self.class.begin_token
+      end
+
+      def self.begin_token
+        @begin_token ||= TwitterCldr::Tokenizers::Token.new(
           :type => :special_char, :value => "\\A"
         )
       end
@@ -121,7 +125,11 @@ module TwitterCldr
       end
 
       def regex_parser
-        @@regex_parser ||= UnicodeRegexParser.new
+        self.class.regex_parser
+      end
+
+      def self.regex_parser
+        @regex_parser ||= UnicodeRegexParser.new
       end
 
     end

@@ -120,7 +120,7 @@ module TwitterCldr
       end
 
       def symbol_table_for(boundary_data)
-        table = SymbolTable.new
+        table = TwitterCldr::Parsers::SymbolTable.new
         boundary_data[:variables].each do |variable|
           id = variable[:id].to_s
           tokens = segmentation_tokenizer.tokenize(variable[:value])

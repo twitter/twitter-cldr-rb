@@ -8,6 +8,10 @@ require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 require 'pry-nav'
 
+if RUBY_VERSION <= "1.8.7"
+  require 'oniguruma'
+end
+
 if ENV['SCOV']
   require 'simplecov'
   SimpleCov.start

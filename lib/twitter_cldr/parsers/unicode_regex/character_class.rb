@@ -59,7 +59,7 @@ module TwitterCldr
             when UnaryOperator, BinaryOperator
               case node.operator
                 when :negate
-                  UnicodeRegex.valid_regexp_chars.subtract(
+                  TwitterCldr::Shared::UnicodeRegex.valid_regexp_chars.subtract(
                     evaluate(node.child)
                   )
                 when :union, :pipe

@@ -41,7 +41,7 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 # currencies, default USD
 1337.localize(:es).to_currency.to_s                        # "1 337,00 $"
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 €"
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 \342\202\254"
 
 # percentages
 1337.localize(:es).to_percent.to_s                         # "1 337%"
@@ -71,7 +71,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # ["ADP", "AED", "AFA", "AFN", ... ]
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :name=>"Canadian dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}
+TwitterCldr::Shared::Currencies.for_code("CAD")            # {:code_points=>[36], :symbol=>"$", :cldr_symbol=>"CA$", :name=>"Canadian dollar", :currency=>:CAD}
 ```
 
 #### Short / Long Decimals
@@ -130,7 +130,7 @@ DateTime.now.localize(:ja).additional_formats
 You can use any of the returned formats as the argument to the `to_additional_s` method:
 
 ```ruby
-# "14日金曜日"
+# "14\346\227\245\351\207\221\346\233\234\346\227\245"
 DateTime.now.localize(:ja).to_additional_s("EEEEd")
 ```
 
@@ -140,38 +140,38 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
-| EHm        | Fri 12:20              |
-| EHms       | Fri 12:20:05           |
-| Ed         | 14 Fri                 |
-| Ehm        | Fri 12:20 PM           |
-| Ehms       | Fri 12:20:05 PM        |
-| Gy         | 2014 CE                |
-| GyMMM      | Feb 2014 CE            |
-| GyMMMEd    | Fri, Feb 14, 2014 CE   |
-| GyMMMd     | Feb 14, 2014 CE        |
-| H          | 12                     |
-| Hm         | 12:20                  |
-| Hms        | 12:20:05               |
-| M          | 2                      |
-| MEd        | Fri, 2/14              |
-| MMM        | Feb                    |
-| MMMEd      | Fri, Feb 14            |
-| MMMd       | Feb 14                 |
-| Md         | 2/14                   |
-| d          | 14                     |
-| h          | 12 PM                  |
-| hm         | 12:20 PM               |
-| hms        | 12:20:05 PM            |
-| ms         | 20:05                  |
 | y          | 2014                   |
+| M          | 2                      |
+| EHms       | Fri 12:20:05           |
 | yM         | 2/2014                 |
-| yMEd       | Fri, 2/14/2014         |
-| yMMM       | Feb 2014               |
-| yMMMEd     | Fri, Feb 14, 2014      |
+| ms         | 20:05                  |
+| GyMMMEd    | Fri, Feb 14, 2014 CE   |
 | yMMMd      | Feb 14, 2014           |
+| MEd        | Fri, 2/14              |
+| Ed         | 14 Fri                 |
+| yMEd       | Fri, 2/14/2014         |
+| GyMMMd     | Feb 14, 2014 CE        |
 | yMd        | 2/14/2014              |
+| MMM        | Feb                    |
+| Ehm        | Fri 12:20 PM           |
+| H          | 12                     |
 | yQQQ       | Q1 2014                |
+| MMMEd      | Fri, Feb 14            |
+| Ehms       | Fri 12:20:05 PM        |
+| yMMM       | Feb 2014               |
+| Md         | 2/14                   |
+| Hm         | 12:20                  |
 | yQQQQ      | 1st quarter 2014       |
+| hm         | 12:20 PM               |
+| h          | 12 PM                  |
+| Gy         | 2014 CE                |
+| yMMMEd     | Fri, Feb 14, 2014      |
+| d          | 14                     |
+| Hms        | 12:20:05               |
+| EHm        | Fri 12:20              |
+| hms        | 12:20:05 PM            |
+| MMMd       | Feb 14                 |
+| GyMMM      | Feb 2014 CE            |
 
 
 
@@ -340,7 +340,7 @@ When you pass a Hash as an argument and specify placeholders with `%<foo>d`, Twi
 You can use the localize convenience method on language code symbols to get their equivalents in another language:
 
 ```ruby
-:es.localize(:es).as_language_code                         # "español"
+:es.localize(:es).as_language_code                         # "espa\303\261ol"
 :ru.localize(:es).as_language_code                         # "ruso"
 ```
 
@@ -355,10 +355,10 @@ In addition to translating language codes, TwitterCLDR provides access to the fu
 
 ```ruby
 # get all languages for the default locale
-TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Chinese" ... }
+TwitterCldr::Shared::Languages.all                                                  # { ... :"zh-Hant" => "Traditional Chinese", :vi => "Vietnamese" ... }
 
 # get all languages for a specific locale
-TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino tradicional" ... }
+TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :"zh-Hant" => "chino tradicional", :vi => "vietnamita" ... }
 
 # get a language by its code for the default locale
 TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Chinese"
@@ -438,14 +438,14 @@ TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_63
 Use the `standards_for` method to get the standards that are available for conversion from a given code.  In the example below, note that the first argument, `:es`, is the correct BCP-47 language code for Spanish, which is the second argument.  The return value comprises all the available conversions:
 
 ```ruby
-# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+# [:iso_639_1, :iso_639_3, :bcp_47, :iso_639_2]
 TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
 ```
 
 Get a list of supported standards for a full English language name:
 
 ```ruby
-# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
+# [:iso_639_1, :iso_639_3, :bcp_47, :iso_639_2]
 TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
 ```
 
@@ -507,13 +507,13 @@ TwitterCldr::Utils::CodePoints.from_string("¿")  # [191]
 Convert code points to characters:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
+TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "\302\277"
 ```
 
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # "français"
+TwitterCldr::Normalization::NFD.normalize("français")  # "fran\303\247ais"
 ```
 
 Normalization is easier to see in hex:
@@ -550,8 +550,8 @@ Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, 
 TwitterCLDR contains an implementation of the [Unicode Collation Algorithm (UCA)](http://unicode.org/reports/tr10/) that provides language-sensitive text sorting capabilities.  Conveniently, all you have to do is use the `sort` method in combination with the familiar `localize` method.  Notice the difference between the default Ruby sort, which simply compares bytes, and the proper language-aware sort from TwitterCLDR in this German example:
 
 ```ruby
-["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "Älg"]
-["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["Älg", "Art", "Ved", "Wasa"]
+["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "\303\204lg"]
+["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["\303\204lg", "Art", "Ved", "Wasa"]
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedArray`, then using the `TwitterCldr::Collation::Collator` class to sort the elements:
@@ -559,8 +559,8 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 ```ruby
 
 collator = TwitterCldr::Collation::Collator.new(:de)
-collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["Älg", "Art", "Ved", "Wasa"]
-collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["Älg", "Art", "Ved", "Wasa"]
+collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["\303\204lg", "Art", "Ved", "Wasa"]
+collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["\303\204lg", "Art", "Ved", "Wasa"]
 ```
 
 The `TwitterCldr::Collation::Collator` class also provides methods to compare two strings, get sort keys, and calculate collation elements for individual strings:

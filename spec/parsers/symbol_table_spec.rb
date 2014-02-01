@@ -13,7 +13,13 @@ describe SymbolTable do
   describe "#fetch" do
     it "should be able to retrieve values for symbols" do
       table.fetch(:a).should == "b"
-      lambda { table.fetch(:z) }.should raise_error(KeyError)
+      fetch = lambda { table.fetch(:z) }
+
+      if RUBY_VERSION > "1.8.7"
+        fetch.should raise_error(KeyError)
+      else
+        fetch.should raise_error(IndexError)
+      end
     end
   end
 

@@ -61,7 +61,15 @@ module TwitterCldr
       end
 
       def to_regexp
-        @regexp ||= Regexp.new(to_regexp_str, modifiers)
+        if RUBY_VERSION <= "1.8.7"
+          begin
+            Oniguruma::ORegexp.new(to_regexp_str, modifiers)
+          rescue NameError
+            raise "Unicode regular expressions require the Oniguruma gem when using Ruby 1.8. Please install, require, and retry."
+          end
+        else
+          @regexp ||= Regexp.new(to_regexp_str, modifiers)
+        end
       end
 
       def to_regexp_str

@@ -10,6 +10,10 @@ group :development, :test do
   if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java"
     gem 'ruby-prof'
   end
+
+  if RUBY_VERSION <= "1.8.7"
+    gem 'oniguruma'
+  end
 end
 
 group :development do

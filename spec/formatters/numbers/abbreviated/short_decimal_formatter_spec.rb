@@ -8,7 +8,10 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe ShortDecimalFormatter do
-  let(:data_reader) { NumberDataReader.new(:en, :type => :short_decimal) }
+  let(:data_reader) do
+    TwitterCldr::DataReaders::NumberDataReader.new(:en, :type => :short_decimal)
+  end
+
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
 

@@ -26,7 +26,7 @@ module TwitterCldr
         end
 
         def from_string(str)
-          from_chars(str.chars.to_a)
+          str.unpack("U*")
         end
 
         def to_string(code_points)

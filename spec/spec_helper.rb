@@ -9,6 +9,7 @@ require 'twitter_cldr'
 require 'pry-nav'
 
 if RUBY_VERSION <= "1.8.7"
+  $KCODE = "UTF-8"
   require 'oniguruma'
 end
 

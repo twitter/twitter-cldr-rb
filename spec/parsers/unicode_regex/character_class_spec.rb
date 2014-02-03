@@ -57,14 +57,14 @@ describe UnicodeRegexParser::CharacterClass do
     it "pulls in ranges for unicode character sets" do
       char_class = char_class_from(parse(tokenize("[\\p{Zs}]")))
       char_class.to_set.to_a(true).should == [
-        160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        32, 160, 5760, 6158, 8192..8202, 8239, 8287, 12288
       ]
     end
 
     it "computes unions between unicode character sets" do
       char_class = char_class_from(parse(tokenize("[[\\p{Zs}][\\p{Cc}]]")))
       char_class.to_set.to_a(true).should == [
-        1, 8..31, 127..160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        0..1, 8..32, 127..160, 5760, 6158, 8192..8202, 8239, 8287, 12288
       ]
     end
 

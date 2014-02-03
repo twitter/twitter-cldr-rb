@@ -54,7 +54,7 @@ module TwitterCldr
             end
           else
             TwitterCldr::Utils::RangeSet.new(
-              CodePoint.code_points_for_property_value(property_value)
+              TwitterCldr::Shared::CodePoint.code_points_for_property_value(property_value)
             )
           end
         end

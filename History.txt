@@ -6,8 +6,10 @@
 * Major overhaul of most formatters, now using data readers to encapsulate format options and read pattern data.
 * Adding support for different numbering systems (eg. arab, latn, etc), number formatter updated accordingly.
 * Partial upgrade to CLDR v24 (missing units).
-* Executable README.
 * Support for simple/full/Turkic casefolding. Upper/lowercasing support still needed.
+* Support for Unicode regular expressions. Requires oniguruma for use in Ruby 1.8.
+* Text segmentation by sentence (word and line support coming soon).
+* Executable README.
 
 == 2.4.2
 

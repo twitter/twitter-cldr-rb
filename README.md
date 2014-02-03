@@ -1,3 +1,5 @@
+
+
 ## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
@@ -41,7 +43,7 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 # currencies, default USD
 1337.localize(:es).to_currency.to_s                        # "1 337,00 $"
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 \342\202\254"
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 €"
 
 # percentages
 1337.localize(:es).to_percent.to_s                         # "1 337%"
@@ -71,7 +73,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # ["ADP", "AED", "AFA", "AFN", ... ]
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # {:code_points=>[36], :symbol=>"$", :cldr_symbol=>"CA$", :name=>"Canadian dollar", :currency=>:CAD}
+TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :name=>"Canadian dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}
 ```
 
 #### Short / Long Decimals
@@ -84,6 +86,65 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 
 2337.localize.to_long_decimal.to_s      # "2 thousand"
 1337123.localize.to_long_decimal.to_s   # "1 million"
+```
+
+### Number Spellout, Ordinalization, and More
+
+TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.
+
+#### Spellout
+
+For easy spellout formatting, check out the `LocalizedNumber#spellout` method:
+
+```ruby
+123.localize.spellout     # one hundred twenty-three
+25_641.localize.spellout  # twenty-five thousand six hundred forty-one
+```
+
+As always, you can call `#localize` with a locale symbol:
+
+```ruby
+123.localize(:es).spellout     # ciento veintitrés
+25_641.localize(:ru).spellout  # двадцать пять тысяч шестьсот сорок один
+```
+
+#### Ordinalization and More
+
+The available rule-based number formats defined by the CLDR data set vary by language. Some languages support ordinal and cardinal numbers, occasionally with an additional masculine/feminine option, while others do not. You'll need to consult the list of available formats for your language.
+
+Rule-based number formats are categorized by groups, and within groups by rulesets. You'll need to specify both to make use of all the available formats for your language.
+
+To get a list of supported groups, use the `#group_names` method:
+
+```ruby
+123.localize(:pt).rbnf.group_names  # ["SpelloutRules", "OrdinalRules"]
+```
+
+To get a list of supported rulesets for a group name, use the `#rule_set_names_for_group` method:
+
+```ruby
+# ["digits-ordinal-masculine", "digits-ordinal-feminine", "digits-ordinal"]
+123.localize(:pt).rbnf.rule_set_names_for_group("OrdinalRules")
+```
+
+Once you've chosen a group and ruleset, you can pass them to the `to_rbnf_s` method:
+
+```ruby
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-feminine")  # 123a
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-masculine") # 123o
+```
+
+For comparison, here's what English ordinal formatting looks like:
+
+```ruby
+123.localize.to_rbnf_s("OrdinalRules", "digits-ordinal")  # 123rd
+```
+
+For English (and other languages), you can also specify an ordinal spellout:
+
+```ruby
+123.localize.to_rbnf_s("SpelloutRules", "spellout-ordinal")  # one hundred twenty-third
+123.localize(:pt).to_rbnf_s("SpelloutRules", "spellout-ordinal-masculine")  # centésimo vigésimo terceiro
 ```
 
 ### Dates and Times
@@ -130,7 +191,7 @@ DateTime.now.localize(:ja).additional_formats
 You can use any of the returned formats as the argument to the `to_additional_s` method:
 
 ```ruby
-# "14\346\227\245\351\207\221\346\233\234\346\227\245"
+# "14日金曜日"
 DateTime.now.localize(:ja).to_additional_s("EEEEd")
 ```
 
@@ -140,38 +201,38 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
-| y          | 2014                   |
-| M          | 2                      |
-| EHms       | Fri 12:20:05           |
-| yM         | 2/2014                 |
-| ms         | 20:05                  |
-| GyMMMEd    | Fri, Feb 14, 2014 CE   |
-| yMMMd      | Feb 14, 2014           |
-| MEd        | Fri, 2/14              |
-| Ed         | 14 Fri                 |
-| yMEd       | Fri, 2/14/2014         |
-| GyMMMd     | Feb 14, 2014 CE        |
-| yMd        | 2/14/2014              |
-| MMM        | Feb                    |
-| Ehm        | Fri 12:20 PM           |
-| H          | 12                     |
-| yQQQ       | Q1 2014                |
-| MMMEd      | Fri, Feb 14            |
-| Ehms       | Fri 12:20:05 PM        |
-| yMMM       | Feb 2014               |
-| Md         | 2/14                   |
-| Hm         | 12:20                  |
-| yQQQQ      | 1st quarter 2014       |
-| hm         | 12:20 PM               |
-| h          | 12 PM                  |
-| Gy         | 2014 CE                |
-| yMMMEd     | Fri, Feb 14, 2014      |
-| d          | 14                     |
-| Hms        | 12:20:05               |
 | EHm        | Fri 12:20              |
-| hms        | 12:20:05 PM            |
-| MMMd       | Feb 14                 |
+| EHms       | Fri 12:20:05           |
+| Ed         | 14 Fri                 |
+| Ehm        | Fri 12:20 PM           |
+| Ehms       | Fri 12:20:05 PM        |
+| Gy         | 2014 CE                |
 | GyMMM      | Feb 2014 CE            |
+| GyMMMEd    | Fri, Feb 14, 2014 CE   |
+| GyMMMd     | Feb 14, 2014 CE        |
+| H          | 12                     |
+| Hm         | 12:20                  |
+| Hms        | 12:20:05               |
+| M          | 2                      |
+| MEd        | Fri, 2/14              |
+| MMM        | Feb                    |
+| MMMEd      | Fri, Feb 14            |
+| MMMd       | Feb 14                 |
+| Md         | 2/14                   |
+| d          | 14                     |
+| h          | 12 PM                  |
+| hm         | 12:20 PM               |
+| hms        | 12:20:05 PM            |
+| ms         | 20:05                  |
+| y          | 2014                   |
+| yM         | 2/2014                 |
+| yMEd       | Fri, 2/14/2014         |
+| yMMM       | Feb 2014               |
+| yMMMEd     | Fri, Feb 14, 2014      |
+| yMMMd      | Feb 14, 2014           |
+| yMd        | 2/14/2014              |
+| yQQQ       | Q1 2014                |
+| yQQQQ      | 1st quarter 2014       |
 
 
 
@@ -340,7 +401,7 @@ When you pass a Hash as an argument and specify placeholders with `%<foo>d`, Twi
 You can use the localize convenience method on language code symbols to get their equivalents in another language:
 
 ```ruby
-:es.localize(:es).as_language_code                         # "espa\303\261ol"
+:es.localize(:es).as_language_code                         # "español"
 :ru.localize(:es).as_language_code                         # "ruso"
 ```
 
@@ -355,10 +416,10 @@ In addition to translating language codes, TwitterCLDR provides access to the fu
 
 ```ruby
 # get all languages for the default locale
-TwitterCldr::Shared::Languages.all                                                  # { ... :"zh-Hant" => "Traditional Chinese", :vi => "Vietnamese" ... }
+TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Chinese" ... }
 
 # get all languages for a specific locale
-TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :"zh-Hant" => "chino tradicional", :vi => "vietnamita" ... }
+TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino tradicional" ... }
 
 # get a language by its code for the default locale
 TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Chinese"
@@ -438,14 +499,14 @@ TwitterCldr::Shared::LanguageCodes.convert(:es, :from => :bcp_47, :to => :iso_63
 Use the `standards_for` method to get the standards that are available for conversion from a given code.  In the example below, note that the first argument, `:es`, is the correct BCP-47 language code for Spanish, which is the second argument.  The return value comprises all the available conversions:
 
 ```ruby
-# [:iso_639_1, :iso_639_3, :bcp_47, :iso_639_2]
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
 TwitterCldr::Shared::LanguageCodes.standards_for(:es, :bcp_47)
 ```
 
 Get a list of supported standards for a full English language name:
 
 ```ruby
-# [:iso_639_1, :iso_639_3, :bcp_47, :iso_639_2]
+# [:bcp_47, :iso_639_1, :iso_639_2, :iso_639_3]
 TwitterCldr::Shared::LanguageCodes.standards_for_language(:Spanish)
 ```
 
@@ -483,6 +544,84 @@ TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
 
+### Unicode Regular Expressions
+
+Unicode regular expressions are an extension of the normal regular expression syntax. All of the changes are local to the regex's character class feature and provide support for multi-character strings, Unicode character escapes, set operations (unions, intersections, and differences), and character sets.
+
+#### Changes to Character Classes
+
+Here's a complete list of the operations you can do inside a Unicode regex's character class.
+
+| Regex              | Description                                                                                                         |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------|
+|`[a]`               | The set containing 'a'.                                                                                             |
+|`[a-z]`             | The set containing 'a' through 'z' and all letters in between, in Unicode order.                                    |
+|`[^a-z]`            | The set containing all characters except 'a' through 'z', that is, U+0000 through 'a'-1 and 'z'+1 through U+10FFFF. |
+|`[[pat1][pat2]]`    | The union of sets specified by pat1 and pat2.                                                                       |
+|`[[pat1]&[pat2]]`   | The intersection of sets specified by pat1 and pat2.                                                                |
+|`[[pat1]-[pat2]]`   | The [symmetric difference](http://en.wikipedia.org/wiki/Symmetric_difference) of sets specified by pat1 and pat2.   |
+|`[:Lu:] or \p{Lu}`  | The set of characters having the specified Unicode property; in this case, Unicode uppercase letters.               |
+|`[:^Lu:] or \P{Lu}` | The set of characters not having the given Unicode property.                                                        |
+
+For a description of available Unicode properties, see [Wikipedia](http://en.wikipedia.org/wiki/Unicode_character_property#General_Category) (click on "[show]").
+
+#### Using Unicode Regexes
+
+Create Unicode regular expressions via the `#compile` method:
+
+```ruby
+
+regex = TwitterCldr::Shared::UnicodeRegex.compile("[:Lu:]+")
+```
+
+Once compiled, instances of `UnicodeRegex` behave just like normal Ruby regexes and support the `#match` and `#=~` methods:
+
+```ruby
+
+regex.match("ABC")  # <MatchData "ABC">
+regex =~ "fooABC"   # 3
+```
+
+Protip: Try to avoid negation in character classes (eg. [^abc] and \P{Lu}) as it tends to negatively affect both performance when constructing regexes as well as matching.
+
+#### Support for Ruby 1.8
+
+Ruby 1.8 does not allow escaped Unicode characters in regular expressions and restricts their maximum length. TwitterCLDR's `UnicodeRegex` class supports escaped unicode characters in Ruby 1.8, but cannot offer a work-around for the length issue. For this reason, Ruby 1.8 users are required to install the oniguruma regex engine and require the oniguruma gem in their projects.
+
+To install oniguruma, run `brew install oniguruma` on MacOS, `[sudo] apt-get install libonig-dev` on Ubuntu (you may need to search for other instructions specific to your platform). Then, install the oniguruma gem via your Gemfile or on your system via `gem install oniguruma`. Once installed, `require oniguruma` somewhere in your project before making use of the `TwitterCldr::Shared::UnicodeRegex` class.
+
+### Text Segmentation
+
+TwitterCLDR currently supports text segmentation by sentence as described in the [Unicode Technical Report #29](http://www.unicode.org/reports/tr29/). The segmentation algorithm makes use of Unicode regular expressions (described above). Because of this, if you're running Ruby 1.8, you'll need to follow the instructions above to install the oniguruma regular expression engine. Segmentation by word, line, and grapheme boundaries could also be supported if someone wants them.
+
+You can break a string into sentences using the `LocalizedString#each_sentence` method:
+
+```ruby
+"The. Quick. Brown. Fox.".localize.each_sentence do |sentence|
+  puts sentence.to_s  # "The.", " Quick.", " Brown.", " Fox."
+end
+```
+
+Under the hood, text segmentation is performed by the `BreakIterator` class (name borrowed from ICU). You can use it directly if you're feeling adventurous:
+
+```ruby
+
+iterator = TwitterCldr::Shared::BreakIterator.new(:en)
+iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
+  puts sentence  # "The.", " Quick.", " Brown.", " Fox."
+end
+```
+
+To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
+
+```ruby
+
+iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
+  puts sentence  # "I like Ms.", " Murphy, she's nice."
+end
+```
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.
@@ -507,13 +646,15 @@ TwitterCldr::Utils::CodePoints.from_string("¿")  # [191]
 Convert code points to characters:
 
 ```ruby
-TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "\302\277"
+TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
 ```
+
+#### Normalization
 
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # "fran\303\247ais"
+TwitterCldr::Normalization::NFD.normalize("français")  # "français"
 ```
 
 Normalization is easier to see in hex:
@@ -545,13 +686,29 @@ Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, 
 "español".localize.normalize(:using => :NFKD).code_points
 ```
 
+#### Casefolding
+
+Casefolding is, generally speaking, the process of converting uppercase characters to lowercase ones so as to make text uniform and therefore easier to search. The canonical example of this is the German double "s". The "ß" character is transformed into "ss" by casefolding.
+
+```ruby
+"Hello, World".localize.casefold.to_s  # hello, world
+"Weißrussland".localize.casefold.to_s  # weissrussland
+```
+
+Turkic languages make use of the regular and dotted uppercase i characters "I" and "İ". Normal casefolding will convert a dotless uppercase "I" to a lowercase, dotted "i", which is correct in English. Turkic languages however expect the lowercase version of a dotless uppercase "I" to be a lowercase, dotless "ı". Pass the `:t` option to the `casefold` method to force Turkic treatment of "i" characters. By default, the `:t` option is set to true for Turkish and Azerbaijani:
+
+```ruby
+"Istanbul".localize.casefold(:t => true).to_s  # ıstanbul
+"Istanbul".localize(:tr).casefold.to_s         # ıstanbul
+```
+
 ### Sorting (Collation)
 
 TwitterCLDR contains an implementation of the [Unicode Collation Algorithm (UCA)](http://unicode.org/reports/tr10/) that provides language-sensitive text sorting capabilities.  Conveniently, all you have to do is use the `sort` method in combination with the familiar `localize` method.  Notice the difference between the default Ruby sort, which simply compares bytes, and the proper language-aware sort from TwitterCLDR in this German example:
 
 ```ruby
-["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "\303\204lg"]
-["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["\303\204lg", "Art", "Ved", "Wasa"]
+["Art", "Wasa", "Älg", "Ved"].sort                       # ["Art", "Ved", "Wasa", "Älg"]
+["Art", "Wasa", "Älg", "Ved"].localize(:de).sort.to_a    # ["Älg", "Art", "Ved", "Wasa"]
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedArray`, then using the `TwitterCldr::Collation::Collator` class to sort the elements:
@@ -559,8 +716,8 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 ```ruby
 
 collator = TwitterCldr::Collation::Collator.new(:de)
-collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["\303\204lg", "Art", "Ved", "Wasa"]
-collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["\303\204lg", "Art", "Ved", "Wasa"]
+collator.sort(["Art", "Wasa", "Älg", "Ved"])      # ["Älg", "Art", "Ved", "Wasa"]
+collator.sort!(["Art", "Wasa", "Älg", "Ved"])     # ["Älg", "Art", "Ved", "Wasa"]
 ```
 
 The `TwitterCldr::Collation::Collator` class also provides methods to compare two strings, get sort keys, and calculate collation elements for individual strings:
@@ -637,6 +794,18 @@ require 'fast_gettext'
 FastGettext.locale = "ru"
 
 TwitterCldr.locale    # will return :ru
+```
+
+## Compatibility
+
+TwitterCLDR is fully compatible with Ruby 1.8.7, 1.9.3, 2.0.0, and, experimentally, 2.1.0. We are considering dropping support for Ruby 1.8. If you still need to use TwitterCLDR in a Ruby 1.8 environment, please let us know as soon as possible. Please note that certain TwitterCLDR features require additional dependencies or considerations when run on Ruby 1.8. Refer to the sections above for details.
+
+#### Notes on Ruby 1.8
+
+Numerous TwitterCLDR features have been built with the assumption that they will only ever be used on UTF-8 encoded text, which is mostly due to the need to support Ruby 1.8. For this reason, you may find it necessary to set the global `$KCODE` variable to `"UTF-8"`. Setting this variable tells Ruby what encoding to use when loading source files. TwitterCLDR will **not** set this value for you.
+
+```ruby
+$KCODE = "UTF-8"
 ```
 
 ## Requirements

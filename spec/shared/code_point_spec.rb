@@ -117,15 +117,15 @@ describe CodePoint do
     it "returns code points for the given general unicode property name" do
       cps = CodePoint.code_points_for_category(:Cc)
       cps.should be_a(Array)
-      cps.first.should == (1..31)
+      cps.first.should == (0..31)
 
       cps = CodePoint.code_points_for_bidi_class(:BN)
       cps.should be_a(Array)
-      cps.first.should == (1..8)
+      cps.first.should == (0..8)
 
       cps = CodePoint.code_points_for_bidi_mirrored(:N)
       cps.should be_a(Array)
-      cps.first.should == (1..39)
+      cps.first.should == (0..39)
     end
   end
 

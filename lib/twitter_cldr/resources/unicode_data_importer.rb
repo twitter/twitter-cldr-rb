@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'twitter_cldr/resources/download'
+require 'pry-nav'
 
 module TwitterCldr
   module Resources

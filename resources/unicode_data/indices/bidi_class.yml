@@ -1,7 +1,7 @@
 ---
 :BN:
 - !ruby/range
-  begin: 1
+  begin: 0
   end: 8
   excl: false
 - !ruby/range
@@ -50,6 +50,10 @@
   excl: false
 :S:
 - !ruby/range
+  begin: 9
+  end: 9
+  excl: false
+- !ruby/range
   begin: 11
   end: 11
   excl: false
@@ -58,6 +62,10 @@
   end: 31
   excl: false
 :B:
+- !ruby/range
+  begin: 10
+  end: 10
+  excl: false
 - !ruby/range
   begin: 13
   end: 13
@@ -75,6 +83,10 @@
   end: 8233
   excl: false
 :WS:
+- !ruby/range
+  begin: 12
+  end: 12
+  excl: false
 - !ruby/range
   begin: 32
   end: 32
@@ -105,7 +117,7 @@
   excl: false
 :ON:
 - !ruby/range
-  begin: 34
+  begin: 33
   end: 34
   excl: false
 - !ruby/range
@@ -790,7 +802,7 @@
   excl: false
 :ET:
 - !ruby/range
-  begin: 36
+  begin: 35
   end: 37
   excl: false
 - !ruby/range
@@ -879,6 +891,10 @@
   excl: false
 :ES:
 - !ruby/range
+  begin: 43
+  end: 43
+  excl: false
+- !ruby/range
   begin: 45
   end: 45
   excl: false
@@ -911,6 +927,10 @@
   end: 65293
   excl: false
 :CS:
+- !ruby/range
+  begin: 44
+  end: 44
+  excl: false
 - !ruby/range
   begin: 46
   end: 47
@@ -961,7 +981,7 @@
   excl: false
 :EN:
 - !ruby/range
-  begin: 49
+  begin: 48
   end: 57
   excl: false
 - !ruby/range
@@ -1006,7 +1026,7 @@
   excl: false
 :L:
 - !ruby/range
-  begin: 66
+  begin: 65
   end: 90
   excl: false
 - !ruby/range
@@ -3219,7 +3239,7 @@
   excl: false
 :NSM:
 - !ruby/range
-  begin: 769
+  begin: 768
   end: 879
   excl: false
 - !ruby/range
@@ -4084,6 +4104,10 @@
   excl: false
 :R:
 - !ruby/range
+  begin: 1470
+  end: 1470
+  excl: false
+- !ruby/range
   begin: 1472
   end: 1472
   excl: false
@@ -4277,7 +4301,7 @@
   excl: false
 :AN:
 - !ruby/range
-  begin: 1537
+  begin: 1536
   end: 1540
   excl: false
 - !ruby/range
@@ -4297,6 +4321,10 @@
   end: 69246
   excl: false
 :AL:
+- !ruby/range
+  begin: 1544
+  end: 1544
+  excl: false
 - !ruby/range
   begin: 1547
   end: 1547
@@ -4517,8 +4545,28 @@
   begin: 126635
   end: 126651
   excl: false
-:LRE: []
-:RLE: []
-:PDF: []
-:LRO: []
-:RLO: []
+:LRE:
+- !ruby/range
+  begin: 8234
+  end: 8234
+  excl: false
+:RLE:
+- !ruby/range
+  begin: 8235
+  end: 8235
+  excl: false
+:PDF:
+- !ruby/range
+  begin: 8236
+  end: 8236
+  excl: false
+:LRO:
+- !ruby/range
+  begin: 8237
+  end: 8237
+  excl: false
+:RLO:
+- !ruby/range
+  begin: 8238
+  end: 8238
+  excl: false

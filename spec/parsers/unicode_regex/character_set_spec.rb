@@ -12,7 +12,7 @@ describe UnicodeRegexParser::CharacterSet do
     it "should return a set containing codepoints for the given general property" do
       char_set = UnicodeRegexParser::CharacterSet.new("Zs")
       char_set.to_set.to_a(true).should == [
-        160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        32, 160, 5760, 6158, 8192..8202, 8239, 8287, 12288
       ]
     end
 

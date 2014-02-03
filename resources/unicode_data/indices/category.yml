@@ -1,7 +1,7 @@
 ---
 :Cc:
 - !ruby/range
-  begin: 1
+  begin: 0
   end: 31
   excl: false
 - !ruby/range
@@ -9,6 +9,10 @@
   end: 159
   excl: false
 :Zs:
+- !ruby/range
+  begin: 32
+  end: 32
+  excl: false
 - !ruby/range
   begin: 160
   end: 160
@@ -39,7 +43,7 @@
   excl: false
 :Po:
 - !ruby/range
-  begin: 34
+  begin: 33
   end: 35
   excl: false
 - !ruby/range
@@ -580,6 +584,10 @@
   excl: false
 :Sc:
 - !ruby/range
+  begin: 36
+  end: 36
+  excl: false
+- !ruby/range
   begin: 162
   end: 165
   excl: false
@@ -644,6 +652,10 @@
   end: 65510
   excl: false
 :Ps:
+- !ruby/range
+  begin: 40
+  end: 40
+  excl: false
 - !ruby/range
   begin: 91
   end: 91
@@ -930,6 +942,10 @@
   excl: false
 :Pe:
 - !ruby/range
+  begin: 41
+  end: 41
+  excl: false
+- !ruby/range
   begin: 93
   end: 93
   excl: false
@@ -1207,6 +1223,10 @@
   excl: false
 :Sm:
 - !ruby/range
+  begin: 43
+  end: 43
+  excl: false
+- !ruby/range
   begin: 60
   end: 62
   excl: false
@@ -1464,6 +1484,10 @@
   excl: false
 :Pd:
 - !ruby/range
+  begin: 45
+  end: 45
+  excl: false
+- !ruby/range
   begin: 1418
   end: 1418
   excl: false
@@ -1525,7 +1549,7 @@
   excl: false
 :Nd:
 - !ruby/range
-  begin: 49
+  begin: 48
   end: 57
   excl: false
 - !ruby/range
@@ -1694,7 +1718,7 @@
   excl: false
 :Lu:
 - !ruby/range
-  begin: 66
+  begin: 65
   end: 90
   excl: false
 - !ruby/range
@@ -4127,6 +4151,10 @@
   excl: false
 :Sk:
 - !ruby/range
+  begin: 94
+  end: 94
+  excl: false
+- !ruby/range
   begin: 96
   end: 96
   excl: false
@@ -4232,6 +4260,10 @@
   excl: false
 :Pc:
 - !ruby/range
+  begin: 95
+  end: 95
+  excl: false
+- !ruby/range
   begin: 8255
   end: 8256
   excl: false
@@ -4253,7 +4285,7 @@
   excl: false
 :Ll:
 - !ruby/range
-  begin: 98
+  begin: 97
   end: 122
   excl: false
 - !ruby/range
@@ -6698,6 +6730,10 @@
   excl: false
 :So:
 - !ruby/range
+  begin: 166
+  end: 166
+  excl: false
+- !ruby/range
   begin: 169
   end: 169
   excl: false
@@ -7306,6 +7342,10 @@
   end: 128883
   excl: false
 :Lo:
+- !ruby/range
+  begin: 170
+  end: 170
+  excl: false
 - !ruby/range
   begin: 186
   end: 186
@@ -8812,6 +8852,10 @@
   excl: false
 :Pi:
 - !ruby/range
+  begin: 171
+  end: 171
+  excl: false
+- !ruby/range
   begin: 8216
   end: 8216
   excl: false
@@ -8852,6 +8896,10 @@
   end: 11808
   excl: false
 :Cf:
+- !ruby/range
+  begin: 173
+  end: 173
+  excl: false
 - !ruby/range
   begin: 1536
   end: 1540
@@ -8906,7 +8954,7 @@
   excl: false
 :No:
 - !ruby/range
-  begin: 179
+  begin: 178
   end: 179
   excl: false
 - !ruby/range
@@ -9075,6 +9123,10 @@
   excl: false
 :Pf:
 - !ruby/range
+  begin: 187
+  end: 187
+  excl: false
+- !ruby/range
   begin: 8217
   end: 8217
   excl: false
@@ -9111,6 +9163,10 @@
   end: 11809
   excl: false
 :Lt:
+- !ruby/range
+  begin: 453
+  end: 453
+  excl: false
 - !ruby/range
   begin: 456
   end: 456
@@ -9149,7 +9205,7 @@
   excl: false
 :Lm:
 - !ruby/range
-  begin: 689
+  begin: 688
   end: 705
   excl: false
 - !ruby/range
@@ -9358,7 +9414,7 @@
   excl: false
 :Mn:
 - !ruby/range
-  begin: 769
+  begin: 768
   end: 879
   excl: false
 - !ruby/range
@@ -10239,7 +10295,7 @@
   excl: false
 :Me:
 - !ruby/range
-  begin: 1161
+  begin: 1160
   end: 1161
   excl: false
 - !ruby/range
@@ -10255,6 +10311,10 @@
   end: 42610
   excl: false
 :Mc:
+- !ruby/range
+  begin: 2307
+  end: 2307
+  excl: false
 - !ruby/range
   begin: 2363
   end: 2363
@@ -10757,7 +10817,7 @@
   excl: false
 :Nl:
 - !ruby/range
-  begin: 5871
+  begin: 5870
   end: 5872
   excl: false
 - !ruby/range
@@ -10804,9 +10864,21 @@
   begin: 74752
   end: 74850
   excl: false
-:Zl: []
-:Zp: []
+:Zl:
+- !ruby/range
+  begin: 8232
+  end: 8232
+  excl: false
+:Zp:
+- !ruby/range
+  begin: 8233
+  end: 8233
+  excl: false
 :Cs:
+- !ruby/range
+  begin: 55296
+  end: 55296
+  excl: false
 - !ruby/range
   begin: 56191
   end: 56192
@@ -10820,6 +10892,10 @@
   end: 57343
   excl: false
 :Co:
+- !ruby/range
+  begin: 57344
+  end: 57344
+  excl: false
 - !ruby/range
   begin: 63743
   end: 63743

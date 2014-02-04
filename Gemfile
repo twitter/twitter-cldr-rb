@@ -6,6 +6,7 @@ group :development, :test do
   gem 'rake'
   gem 'pry'
   gem 'pry-nav'
+  gem 'rbench'
 
   if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java"
     gem 'ruby-prof'

@@ -61,6 +61,21 @@ else
   end
 end
 
+task :benchmark do
+  Dir.glob("./benchmark/**").each do |file|
+    load file
+    $stdout.write("\n")
+  end
+end
+
+namespace :benchmark do
+  Dir.glob("./benchmark/**").each do |file|
+    task File.basename(file).chomp(".rb").to_sym do
+      load file
+    end
+  end
+end
+
 task :update do
   tasks = [
     "update:locales_resources",

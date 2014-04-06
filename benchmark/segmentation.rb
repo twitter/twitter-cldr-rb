@@ -5,7 +5,10 @@
 
 require 'rbench'
 require 'twitter_cldr'
-require 'oniguruma'
+
+if RUBY_VERSION <= "1.8.7"
+  require 'oniguruma'
+end
 
 RBench.run(10) do
   column :times

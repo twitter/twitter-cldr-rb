@@ -57,12 +57,18 @@ module TwitterCldr
       end
 
       def get_normalized_code_points(str_or_code_points)
-        code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
+        str = if str_or_code_points.is_a?(String)
+          str_or_code_points
+        else
+          TwitterCldr::Utils::CodePoints.to_string(str_or_code_points)
+        end
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
         # non-ignorable test from CollationTest_NON_IGNORABLE.txt). ICU uses some optimizations to apply normalization
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
-        TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
+        TwitterCldr::Utils::CodePoints.from_string(
+          TwitterCldr::Normalization.normalize(str)
+        )
       end
 
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value
@@ -99,7 +105,7 @@ module TwitterCldr
         while non_starter_pos < code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
           non_starter_code_point = code_points[non_starter_pos]
-          combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point)
+          combining_class        = TwitterCldr::Shared::CodePoint.find(non_starter_code_point).combining_class.to_i
 
           # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
           break if combining_class == 0 || used_combining_classes[combining_class]

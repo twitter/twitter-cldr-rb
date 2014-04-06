@@ -84,8 +84,9 @@ describe Collator do
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
 
     before :each do
-      mock(TwitterCldr::Normalization::NFD).normalize_code_points(code_points) { code_points }
-      stub(TwitterCldr::Normalization::Base).combining_class_for { 0 }
+      any_instance_of(TwitterCldr::Shared::CodePoint) do |instance|
+        stub(instance).combining_class_for { 0 }
+      end
     end
 
     it 'returns collation elements for a string' do
@@ -214,7 +215,7 @@ describe Collator do
       mock(TrieLoader).load_default_trie { TrieBuilder.load_default_trie }
       mock(TrieLoader).load_tailored_trie.with_any_args { |*args| TrieBuilder.load_tailored_trie(*args) }
 
-      stub(TwitterCldr::Normalization::NFD).normalize_code_points { |code_points| code_points }
+      stub(TwitterCldr::Normalization).normalize_code_points { |code_points| code_points }
     end
 
     let(:locale)            { :some_locale }

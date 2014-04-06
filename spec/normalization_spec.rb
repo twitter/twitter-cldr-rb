@@ -12,13 +12,13 @@ describe TwitterCldr::Normalization do
     let(:normalized_string) { 'normalized' }
 
     it 'it uses NFD by default' do
-      mock(TwitterCldr::Normalization::NFD).normalize(string) { normalized_string }
+      mock(Eprun).normalize(string, :nfd) { normalized_string }
       TwitterCldr::Normalization.normalize(string).should == normalized_string
     end
 
     it "uses specified algorithm if there is any" do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      TwitterCldr::Normalization.normalize(string, :using => :NFKD).should == normalized_string
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      TwitterCldr::Normalization.normalize(string, :using => :nfkd).should == normalized_string
     end
 
     it "raises an ArgumentError if passed an unsupported normalizer name" do
@@ -27,14 +27,14 @@ describe TwitterCldr::Normalization do
       end.should raise_error(ArgumentError)
     end
 
-    it 'accepts normalizer name in a lower case' do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      TwitterCldr::Normalization.normalize(string, :using => :nfkd).should == normalized_string
+    it 'accepts normalizer name in upper case' do
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      TwitterCldr::Normalization.normalize(string, :using => :NFKD).should == normalized_string
     end
 
     it 'accepts a string' do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      TwitterCldr::Normalization.normalize(string, :using => 'NFKD').should == normalized_string
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      TwitterCldr::Normalization.normalize(string, :using => 'nfkd').should == normalized_string
     end
 
   end

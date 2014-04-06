@@ -622,7 +622,7 @@ TwitterCldr::Utils::CodePoints.to_string([0xBF])  # <%= assert(TwitterCldr::Util
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # <%= assert(TwitterCldr::Normalization::NFD.normalize("français"), "français").inspect %>
+TwitterCldr::Normalization.normalize("français")  # <%= assert(TwitterCldr::Normalization.normalize("français"), "français").inspect %>
 ```
 
 Normalization is easier to see in hex:
@@ -631,8 +631,8 @@ Normalization is easier to see in hex:
 # <%= assert(TwitterCldr::Utils::CodePoints.from_string("español"), [101, 115, 112, 97, 241, 111, 108]).inspect %>
 TwitterCldr::Utils::CodePoints.from_string("español")
 
-# <%= assert(TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español")), [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
-TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
+# <%= assert(TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español")), [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
+TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español"))
 ```
 
 Notice in the example above that the letter "ñ" was transformed from `241` to `110 771`, which represent the "n" and the "˜" respectively.
@@ -650,7 +650,7 @@ A few convenience methods also exist for `String` that make it easy to normalize
 Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, NFC, and NFKC algorithms are all supported (default is NFD):
 
 ```ruby
-# <%= assert("español".localize.normalize(:using => :NFKD).code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
+# <%= assert("español".localize.normalize(:using => :nfkd).code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
 "español".localize.normalize(:using => :NFKD).code_points
 ```
 

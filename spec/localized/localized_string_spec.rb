@@ -133,12 +133,12 @@ describe LocalizedString do
     end
 
     it 'it uses NFD by default' do
-      mock(TwitterCldr::Normalization::NFD).normalize(string) { normalized_string }
+      mock(Eprun).normalize(string, :nfd) { normalized_string }
       localized_string.normalize.base_obj.should == normalized_string
     end
 
     it "uses specified algorithm if there is any" do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
       localized_string.normalize(:using => :NFKD).base_obj.should == normalized_string
     end
 

@@ -69,6 +69,9 @@ module TwitterCldr
         TwitterCldr::Utils::CodePoints.from_string(
           TwitterCldr::Normalization.normalize(str)
         )
+      rescue ArgumentError
+        # Meant to rescue encoding errors. Some tests do not provide valid UTF-8 sequences.
+        TwitterCldr::Utils::CodePoints.from_string(str)
       end
 
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value

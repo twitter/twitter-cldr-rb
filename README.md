@@ -654,7 +654,7 @@ TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # "français"
+TwitterCldr::Normalization.normalize("français")  # "français"
 ```
 
 Normalization is easier to see in hex:
@@ -664,7 +664,7 @@ Normalization is easier to see in hex:
 TwitterCldr::Utils::CodePoints.from_string("español")
 
 # [101, 115, 112, 97, 110, 771, 111, 108]
-TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
+TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español"))
 ```
 
 Notice in the example above that the letter "ñ" was transformed from `241` to `110 771`, which represent the "n" and the "˜" respectively.
@@ -839,6 +839,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2012 Twitter, Inc.
+Copyright 2014 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

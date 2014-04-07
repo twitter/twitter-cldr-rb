@@ -1,7 +1,7 @@
 == 3.0.0
 
 * Adding maximum_level option to SortKeyBuilder to limit the size of collation sort keys (@jrochkind).
-* Significant performance enhancements for normalization, estimated ~70% speed improvement.
+* Significant performance enhancements for normalization via the eprun gem.
 * Adding the rule-based number formatters (123 becomes "one hundred twenty-three").
 * Major overhaul of most formatters, now using data readers to encapsulate format options and read pattern data.
 * Adding support for different numbering systems (eg. arab, latn, etc), number formatter updated accordingly.

@@ -439,17 +439,21 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # true
-TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # false
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.valid?("94103")     # true
+postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
+postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
+postal_code.valid?("280 12")    # true
 
 # Canada
-TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
+postal_code.valid?("V3H 1Z7")   # true
 ```
 
 Get a list of supported territories by using the `#territories` method:
@@ -461,7 +465,14 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ad, :am, :ar, :as, :at, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # /\d{5}([ \-]\d{4})?/
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.regexp  # /\d{5}([ \-]\d{4})?/
+```
+
+Get a sample of valid postal codes with the `#sample` method:
+
+```ruby
+postal_code.sample(5)  # ["83526", "31748-8754", "55851", "25788-4914", "55335"]
 ```
 
 ### Phone Codes

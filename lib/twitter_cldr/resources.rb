@@ -26,5 +26,6 @@ module TwitterCldr
     autoload :RbnfTestImporter,                   'twitter_cldr/resources/rbnf_test_importer'
     autoload :ReadmeRenderer,                     'twitter_cldr/resources/readme_renderer'
     autoload :CasefolderClassGenerator,           'twitter_cldr/resources/casefolder_class_generator'
+    autoload :RegexpAstGenerator,                 'twitter_cldr/resources/regexp_ast_generator'
   end
 end

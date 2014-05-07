@@ -21,19 +21,24 @@ describe RegexpAst do
     "ZXIwOwow\n"
   end
 
+  def check_ast(obj)
+    obj.should be_a(RegexpAst::Root)
+    expr = obj.expressions.first
+    expr.should be_a(RegexpAst::Literal)
+    expr.text.should == 'foobar'
+  end
+
   describe "#dump" do
-    it "should serialize the ast to a correct base64-encoded string" do
-      RegexpAst.dump(ast).should == ast_dump
+    it "should correctly serialize the ast" do
+      obj = Marshal.load(Base64.decode64(RegexpAst.dump(ast)))
+      check_ast(obj)
     end
   end
 
   describe "#load" do
     it "should load the dumped ast and construct a valid object" do
       obj = RegexpAst.load(ast_dump)
-      obj.should be_a(RegexpAst::Root)
-      expr = obj.expressions.first
-      expr.should be_a(RegexpAst::Literal)
-      expr.text.should == 'foobar'
+      check_ast(obj)
     end
   end
 end

@@ -1,52 +1,17 @@
----
-# We don't support numbering system-specific separators yet
-:ar:
-  OrdinalRules:
-    digits-ordinal:
-    - -1141
-    - -1142
-    - -1143
-    - 1141
-    - 1142
-    - 1143
-    - 10311
-    - 138400
-
-# honest to goodness ICU bugs
-:ja:
-  SpelloutRules:
-    spellout-numbering-year:
-    - -1141
-    - -1142
-    - -1143
-:zh:
-  SpelloutRules:
-    spellout-numbering-year:
-    - -1141
-    - -1142
-    - -1143
 :zh-Hant:
   SpelloutRules:
     spellout-numbering-year:
     - -1141
     - -1142
     - -1143
-:ko:
-  SpelloutRules:
-    spellout-ordinal-sinokorean:
-    - -1141
-    - -1142
-    - -1143
-
-# ICU's DecimalFormat reports 100 should be 100 but we say it should be 1,00.
-# Problem stems from issue with our NumberFormatter which doesn't correctly
-# identify grouping sizes.
-#
-# http://www.icu-project.org/apiref/icu4j/com/ibm/icu/text/DecimalFormat.html
-#    If a pattern contains multiple grouping separators, the interval between
-#    the last one and the end of the integer defines the primary grouping size,
-#    and the interval between the last two defines the secondary grouping size.
-#    All others are ignored, so "#,##,###,####" == "###,###,####" == "##,#,###,####"."
+:hi:
+  OrdinalRules:
+    digits-ordinal:
+    - -100
+    - 100
+    - 321
+    - 322
+    - 323
 :ta:
   SpelloutRules:
     spellout-ordinal:
@@ -62,13 +27,147 @@
     - 321
     - 322
     - 323
-
-# Same problem as Tamil above.
-:hi:
+:ja:
+  SpelloutRules:
+    spellout-numbering-year:
+    - -1141
+    - -1142
+    - -1143
+:zh:
+  SpelloutRules:
+    spellout-numbering-year:
+    - -1141
+    - -1142
+    - -1143
+:cy:
+  SpelloutRules:
+    spellout-numbering-year:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+    spellout-cardinal-masculine-before-consonant:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+    spellout-cardinal-feminine-before-consonant:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+    spellout-cardinal-feminine:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+    spellout-numbering:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+    spellout-cardinal-masculine:
+    - -1141
+    - -1142
+    - -1143
+    - -100
+    - -75
+    - -50
+    - -24
+:sv:
   OrdinalRules:
     digits-ordinal:
-    - -100
-    - 100
+    - -1141
+    - -1142
+    - 1
+    - 2
+    - 21
+    - 22
+    - 31
+    - 32
+    - 41
+    - 42
+    - 51
+    - 52
+    - 61
+    - 62
+    - 71
+    - 72
+    - 81
+    - 82
+    - 91
+    - 92
     - 321
     - 322
-    - 323
+    - 1141
+    - 1142
+:es:
+  OrdinalRules:
+    digits-ordinal-masculine-adjective:
+    - -1141
+    - -1142
+    - -1143
+    - 1141
+    - 1142
+    - 1143
+    - 10311
+    - 138400
+    digits-ordinal-masculine:
+    - -1141
+    - -1142
+    - -1143
+    - 1141
+    - 1142
+    - 1143
+    - 10311
+    - 138400
+    digits-ordinal-feminine:
+    - -1141
+    - -1142
+    - -1143
+    - 1141
+    - 1142
+    - 1143
+    - 10311
+    - 138400
+    digits-ordinal:
+    - -1141
+    - -1142
+    - -1143
+    - 1141
+    - 1142
+    - 1143
+    - 10311
+    - 138400
+:ko:
+  SpelloutRules:
+    spellout-ordinal-sinokorean:
+    - -1141
+    - -1142
+    - -1143
+:ar:
+  OrdinalRules:
+    digits-ordinal:
+    - -1141
+    - -1142
+    - -1143
+    - 1141
+    - 1142
+    - 1143
+    - 10311
+    - 138400

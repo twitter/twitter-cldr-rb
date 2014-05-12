@@ -16,7 +16,7 @@ describe NumberParser do
 
   describe "#group_separator" do
     it "returns the correct group separator" do
-      @parser.send(:group_separator).should match_normalized(" ")
+      @parser.send(:group_separator).should match_normalized('\.')
     end
   end
 
@@ -69,7 +69,7 @@ describe NumberParser do
 
     it "returns only locale-specific separators when strict mode is on" do
       group, decimal = @parser.send(:separators, true)
-      group.should match_normalized(" ")
+      group.should match_normalized('\.')
       decimal.should == ','
     end
   end
@@ -120,6 +120,7 @@ describe NumberParser do
     end
 
     it "correctly identifies a series of invalid cases" do
+      @parser = NumberParser.new(:ru)
       ["12,0,0", "5,", "5#{[160].pack("U*")}"].each do |num|
         @parser.valid?(num).should be_false
       end
@@ -144,6 +145,7 @@ describe NumberParser do
     end
 
     it "correctly raises an error when asked to parse invalid numbers" do
+      @parser = NumberParser.new(:ru)
       cases = ["12,0,0", "5,", "5#{[160].pack("U*")}"]
       cases.each do |text|
         lambda { @parser.parse(text) }.should raise_error(InvalidNumberError)

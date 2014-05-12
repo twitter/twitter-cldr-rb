@@ -1,4 +1,5 @@
 ---
-:da: ! '{ :''da'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| (n.to_f.abs == 1 || (((t = n.to_s.split(".")[1] || []).count > 1 ? t.last.gsub(/0+$/,
-  "").to_i : 0) != 0 && [0, 1].include?(n.to_i))) ? :one : :other } } } } }'
+:da: '{ :''da'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
+  { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
+  : m); (n.to_f == 1 || (((t = n.to_s.split(".")[1]) ? t.gsub(/0+$/, "").to_i : 0)
+  != 0 && [0, 1].include?(n.to_i))) ? :one : :other } } } } }'

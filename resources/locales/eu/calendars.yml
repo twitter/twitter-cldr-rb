@@ -30,9 +30,12 @@
         : "y"
         :yM: "y/M"
         :yMEd: "y/M/d, E"
-        :yMMM: "y('e')'ko' MMM"
-        :yMMMEd: "y('e')'ko' MMM d, E"
-        :yMMMd: "y('e')'ko' MMM d"
+        :yMMM: "y MMM"
+        :yMMMEd: "y MMM d, E"
+        :yMMMM: "y('e')'ko' MMMM"
+        :yMMMMEd: "y('e')'ko' MMMM d, E"
+        :yMMMMd: "y('e')'ko' MMMM d"
+        :yMMMd: "y MMM d"
         :yMd: "y/M/d"
         :yQQQ: "y('e')'ko' QQQ"
         :yQQQQ: "y('e')'ko' QQQQ"
@@ -248,8 +251,8 @@
             :noon: "noon"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

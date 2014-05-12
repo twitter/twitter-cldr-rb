@@ -55,29 +55,33 @@ describe RbnfFormatter do
 
               # running basic test suite only runs spellout-numbering tests (for speed)
               it "formats correctly", :slow => rule_set_name != "spellout-numbering" do
-                test_data[group_name][rule_set_name].each_pair do |number, expected|
-                  got = formatter.format(number, {
-                    :rule_group => group_name,
-                    :rule_set => rule_set_name
-                  })
+                if test_data[group_name][rule_set_name]
+                  test_data[group_name][rule_set_name].each_pair do |number, expected|
+                    got = formatter.format(number, {
+                      :rule_group => group_name,
+                      :rule_set => rule_set_name
+                    })
 
-                  if got != expected
-                    opts = {
-                      :locale => locale, :group => group_name,
-                      :rule_set => rule_set_name, :number => number
-                    }
+                    if got != expected
+                      opts = {
+                        :locale => locale, :group => group_name,
+                        :rule_set => rule_set_name, :number => number
+                      }
 
-                    unless allowed_failure?(opts)
-                      failures[locale] ||= {}
-                      failures[locale][group_name] ||= {}
-                      failures[locale][group_name][rule_set_name] ||= []
-                      failures[locale][group_name][rule_set_name] << number
+                      unless allowed_failure?(opts)
+                        failures[locale] ||= {}
+                        failures[locale][group_name] ||= {}
+                        failures[locale][group_name][rule_set_name] ||= []
+                        failures[locale][group_name][rule_set_name] << number
+                        got.should == expected
+                      end
+                    else
                       got.should == expected
                     end
-                  else
-                    got.should == expected
-                  end
 
+                  end
+                else
+                  puts "Warning: couldn't find test data for #{group_name}, #{rule_set_name}"
                 end
               end
 
@@ -91,7 +95,7 @@ describe RbnfFormatter do
   after(:all) do
     if failures.size > 0
       puts "\nFailure hash:"
-      puts failures.inspect
+      puts YAML.dump(failures)
     end
   end
 

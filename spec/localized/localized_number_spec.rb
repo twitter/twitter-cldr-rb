@@ -126,8 +126,9 @@ describe LocalizedNumber do
   describe '#plural_rule' do
     it 'returns the appropriate plural rule for the number' do
       1.localize(:ru).plural_rule.should == :one
-      2.localize(:ru).plural_rule.should == :other
+      2.localize(:ru).plural_rule.should == :few
       5.localize(:ru).plural_rule.should == :many
+      19.5.localize(:ru).plural_rule.should == :other
     end
 
     it 'takes FastGettext.locale into account' do

@@ -39,18 +39,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1 337").inspect %>
+1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1.337").inspect %>
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1 337,00 $").inspect %>
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1 337,00 €").inspect %>
+1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1.337,00 $").inspect %>
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1.337,00 €").inspect %>
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1 337%").inspect %>
-1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1 337,00%").inspect %>
+1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1.337%").inspect %>
+1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1.337,00%").inspect %>
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1 337,000").inspect %>
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1.337,000").inspect %>
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -62,7 +62,7 @@ num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
-<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1 337,00 $") %>
+<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1.337,00 $") %>
 
 #### More on Currencies
 
@@ -288,7 +288,7 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # <%= assert(1.localize(:ru).plural_rule, :one).inspect %>
-2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :other).inspect %>
+2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :few).inspect %>
 5.localize(:ru).plural_rule                                # <%= assert(5.localize(:ru).plural_rule, :many).inspect %>
 ```
 
@@ -300,11 +300,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # <%= assert(TwitterC
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:es), [:one, :other]).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :many, :other]).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :few, :many, :other]).inspect %>
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru), :one).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :other).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :few).inspect %>
 ```
 
 ### Plurals

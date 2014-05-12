@@ -19,8 +19,8 @@
         :MEd: "E d/M"
         :MMM: "LLL"
         :MMMEd: "E d MMM"
-        :MMMMEd: "E d:'e' MMMM"
-        :MMMMd: "d:'e' MMMM"
+        :MMMMEd: "E d MMMM"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMd: "d/M"
         :MMdd: "dd/MM"
@@ -133,7 +133,7 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE'en' 'den' d:'e' MMMM y"
+            :pattern: "EEEE d MMMM y"
           :long: 
             :pattern: "d MMMM y"
           :medium: 
@@ -253,8 +253,8 @@
             :noon: "noon"
             :pm: "em"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: 
           :abbreviated: 
             :am: "fm"

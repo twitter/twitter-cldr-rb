@@ -6,7 +6,7 @@
 module TwitterCldr
   module Resources
 
-    CLDR_URL = 'http://unicode.org/Public/cldr/24/core.zip'
+    CLDR_URL = 'http://unicode.org/Public/cldr/25/core.zip'
     ICU4J_URL = 'http://download.icu-project.org/files/icu4j/52.1/icu4j-52_1.jar'
 
     class << self

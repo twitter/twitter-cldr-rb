@@ -1,13 +1,9 @@
 ---
-:hr: ! '{ :''hr'' => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule
-  => lambda { |n| ((((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length :
-  0) == 0 && n.to_i % 10 == 1 && n.to_i % 100 != 11) || (((f = n.to_s.split(".")[1]
-  || []).count > 1 ? f.last.to_i : 0) % 10 == 1 && ((f = n.to_s.split(".")[1] || []).count
-  > 1 ? f.last.to_i : 0) % 100 != 11)) ? :one : ((((v = n.to_s.split(".")[1] || []).count
-  > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (2..4).include?(n.to_i
-  % 10)) && (((n.to_i % 100) % 1).zero? && !(12..14).include?(n.to_i % 100))) || ((((((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10) % 1).zero? && (2..4).include?(((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10)) && (((((f = n.to_s.split(".")[1]
-  || []).count > 1 ? f.last.to_i : 0) % 100) % 1).zero? && !(12..14).include?(((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 100)))) ? :few : :other
-  } } } } }'
+:hr: '{ :''hr'' => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule
+  => lambda { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
+  : m); ((((v = n.to_s.split(".")[1]) ? v.length : 0) == 0 && n.to_i % 10 == 1 &&
+  n.to_i % 100 != 11) || (((f = n.to_s.split(".")[1]) ? f.to_i : 0) % 10 == 1 && ((f
+  = n.to_s.split(".")[1]) ? f.to_i : 0) % 100 != 11)) ? :one : ((((v = n.to_s.split(".")[1])
+  ? v.length : 0) == 0 && (2..4).include?(n.to_i % 10) && !(12..14).include?(n.to_i
+  % 100)) || ((2..4).include?(((f = n.to_s.split(".")[1]) ? f.to_i : 0) % 10) && !(12..14).include?(((f
+  = n.to_s.split(".")[1]) ? f.to_i : 0) % 100))) ? :few : :other } } } } }'

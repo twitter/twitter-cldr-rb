@@ -41,6 +41,52 @@
                 :rule: "负>>;"
                 :value: "-x"
               - 
+                :rule: "=#,##0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "〇;"
+                :value: 0
+              - 
+                :rule: "初=%spellout-numbering=;"
+                :value: 1
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 11
+              - 
+                :rule: "=%%numbering-days=;"
+                :value: 21
+            :type: "spellout-numbering-days"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 0
+              - 
+                :rule: "廿>>;"
+                :value: 21
+              - 
+                :rule: "<<十;"
+                :value: 30
+              - 
+                :rule: "丗>>;"
+                :value: 31
+              - 
+                :rule: "<<十;"
+                :value: 40
+              - 
+                :rule: "卌>>;"
+                :value: 41
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 50
+            :type: "numbering-days"
+          - 
+            :rules: 
+              - 
+                :rule: "负>>;"
+                :value: "-x"
+              - 
                 :rule: "<<点>>>;"
                 :value: "x.x"
               - 

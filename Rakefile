@@ -86,7 +86,7 @@ task :update do
 end
 
 namespace :update do
-  ICU_JAR = './vendor/icu4j-51_2.jar'
+  ICU_JAR = './vendor/icu4j-52_1.jar'
 
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|

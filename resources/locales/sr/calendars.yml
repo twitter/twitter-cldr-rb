@@ -21,7 +21,6 @@
         :MMMEd: "E d. MMM"
         :MMMMEd: "E d. MMMM"
         :MMMMd: "d. MMMM"
-        :MMMMdd: "dd. MMMM"
         :MMMd: "d. MMM"
         :MMMdd: "dd.MMM"
         :MMdd: "MM-dd"
@@ -33,15 +32,15 @@
         :ms: "mm.ss"
         ? !ruby/symbol "y"
         : "y."
-        :yM: "y-M"
-        :yMEd: "E, d. M. y."
-        :yMM: "MM.y"
+        :yM: "M.y."
+        :yMEd: "E, d.M.y."
+        :yMM: "MM.y."
         :yMMM: "MMM y."
         :yMMMEd: "E, d. MMM y."
         :yMMMM: "MMMM y."
         :yMMMd: "d. MMM y."
-        :yMMdd: "dd.MM.y"
-        :yMd: "d. M. y."
+        :yMMdd: "dd.MM.y."
+        :yMd: "d.M.y."
         :yQQQ: "QQQ. y"
         :yQQQQ: "QQQQ. y"
       :days: 
@@ -254,8 +253,8 @@
             :noon: "noon"
             :pm: "поподне"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

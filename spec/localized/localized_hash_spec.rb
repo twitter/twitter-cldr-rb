@@ -13,10 +13,10 @@ describe LocalizedHash do
       hash = { :foo => "bar", "string_key" => Object.new }
       result = YAML.load(hash.localize.to_yaml)
 
-      result.should include(:foo)
-      result.should include("string_key")
-      result[:foo].should == "bar"
-      result["string_key"].should be_a(Object)
+      expect(result).to include(:foo)
+      expect(result).to include("string_key")
+      expect(result[:foo]).to eq("bar")
+      expect(result["string_key"]).to be_a(Object)
     end
   end
 end

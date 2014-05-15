@@ -32,9 +32,9 @@ describe Parser do
     it "should reset the token index" do
       parser.parse(tokens)
       parser.send(:next_token, :a)
-      parser.send(:current_token).type.should == :b
+      expect(parser.send(:current_token).type).to eq(:b)
       parser.reset
-      parser.send(:current_token).type.should == :a
+      expect(parser.send(:current_token).type).to eq(:a)
     end
   end
 
@@ -42,19 +42,19 @@ describe Parser do
     it "should advance to the next token" do
       parser.parse(tokens)
       parser.send(:next_token, :a)
-      parser.send(:current_token).type.should == :b
+      expect(parser.send(:current_token).type).to eq(:b)
     end
 
     it "should raise an error after encountering an unexpected token" do
       parser.parse(tokens)
-      lambda { parser.send(:next_token, :z) }.should raise_error(UnexpectedTokenError)
+      expect { parser.send(:next_token, :z) }.to raise_error(UnexpectedTokenError)
     end
   end
 
   describe "#current_token" do
     it "returns the current token" do
       parser.parse(tokens)
-      parser.send(:current_token).type.should == :a
+      expect(parser.send(:current_token).type).to eq(:a)
     end
   end
 end

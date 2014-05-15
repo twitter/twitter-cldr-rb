@@ -17,18 +17,18 @@ describe PercentFormatter do
   it "should format the number correctly" do
     pattern = data_reader.pattern(number)
     tokens = tokenizer.tokenize(pattern)
-    formatter.format(tokens, number).should == "12 %"
+    expect(formatter.format(tokens, number)).to eq("12 %")
   end
 
   it "should format negative numbers correctly" do
     pattern = data_reader.pattern(negative_number)
     tokens = tokenizer.tokenize(pattern)
-    formatter.format(tokens, negative_number).should == "-12 %"
+    expect(formatter.format(tokens, negative_number)).to eq("-12 %")
   end
 
   it "should respect the :precision option" do
     pattern = data_reader.pattern(negative_number)
     tokens = tokenizer.tokenize(pattern)
-    formatter.format(tokens, negative_number, :precision => 3).should match_normalized("-12,000 %")
+    expect(formatter.format(tokens, negative_number, :precision => 3)).to match_normalized("-12,000 %")
   end
 end

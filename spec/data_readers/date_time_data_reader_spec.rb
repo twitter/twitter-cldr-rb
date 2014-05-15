@@ -12,8 +12,8 @@ describe DateTimeDataReader do
 
   describe "#initialize" do
     it "chooses gregorian as the calendar type if none is specified" do
-      DateTimeDataReader.new(:es).calendar_type.should == :gregorian
-      DateTimeDataReader.new(:es, :calendar_type => :julian).calendar_type.should == :julian
+      expect(DateTimeDataReader.new(:es).calendar_type).to eq(:gregorian)
+      expect(DateTimeDataReader.new(:es, :calendar_type => :julian).calendar_type).to eq(:julian)
     end
   end
 

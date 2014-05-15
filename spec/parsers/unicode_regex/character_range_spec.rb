@@ -15,7 +15,7 @@ describe UnicodeRegexParser::CharacterRange do
         UnicodeRegexParser::UnicodeString.new([98])
       )
 
-      range.to_set.to_a(true).should == [97..98]
+      expect(range.to_set.to_a(true)).to eq([97..98])
     end
   end
 end

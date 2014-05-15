@@ -33,7 +33,7 @@ describe LongDecimalFormatter do
 
     expected.each do |num, text|
       pattern = data_reader.pattern(num)
-      formatter.format(tokenizer.tokenize(pattern), num).should == text
+      expect(formatter.format(tokenizer.tokenize(pattern), num)).to eq(text)
     end
   end
 
@@ -43,14 +43,14 @@ describe LongDecimalFormatter do
   end
 
   it "formats the number as if it were a straight decimal if it exceeds 10^15" do
-    format_number(10**15).should == "1,000,000,000,000,000"
+    expect(format_number(10**15)).to eq("1,000,000,000,000,000")
   end
 
   it "formats the number as if it were a straight decimal if it's less than 1000" do
-    format_number(500).should == "500"
+    expect(format_number(500)).to eq("500")
   end
 
   it "respects the :precision option" do
-    format_number(12345, :precision => 3).should match_normalized("12.345 thousand")
+    expect(format_number(12345, :precision => 3)).to match_normalized("12.345 thousand")
   end
 end

@@ -67,6 +67,6 @@ describe Bidi do
       end
     end
 
-    num_failed.should == 0
+    expect(num_failed).to eq(0)
   end
 end

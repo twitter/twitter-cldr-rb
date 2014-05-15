@@ -25,8 +25,8 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '~> 2.11.0'
-  gem 'rr',    '~> 1.0.4'
+  gem 'rspec', '~> 2.14.0'
+  gem 'rr',    '~> 1.1.2'
 
   if RUBY_VERSION >= "1.9"
     gem 'rubyzip'

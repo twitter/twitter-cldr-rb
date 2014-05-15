@@ -33,25 +33,25 @@ describe ShortDecimalFormatter do
 
     expected.each do |num, text|
       pattern = data_reader.pattern(num)
-      formatter.format(tokenizer.tokenize(pattern), num).should == text
+      expect(formatter.format(tokenizer.tokenize(pattern), num)).to eq(text)
     end
   end
 
   it "formats the number as if it were a straight decimal if it exceeds 10^15" do
     number = 10**15
     pattern = data_reader.pattern(number)
-    formatter.format(tokenizer.tokenize(pattern), number).should == "1,000,000,000,000,000"
+    expect(formatter.format(tokenizer.tokenize(pattern), number)).to eq("1,000,000,000,000,000")
   end
 
   it "formats the number as if it were a straight decimal if it's less than 1000" do
     number = 500
     pattern = data_reader.pattern(number)
-    formatter.format(tokenizer.tokenize(pattern), number).should == "500"
+    expect(formatter.format(tokenizer.tokenize(pattern), number)).to eq("500")
   end
 
   it "respects the :precision option" do
     number = 12345
     pattern = data_reader.pattern(number)
-    formatter.format(tokenizer.tokenize(pattern), number, :precision => 3).should match_normalized("12.345K")
+    expect(formatter.format(tokenizer.tokenize(pattern), number, :precision => 3)).to match_normalized("12.345K")
   end
 end

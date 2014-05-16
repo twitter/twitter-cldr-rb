@@ -17,30 +17,30 @@ describe TrieWithFallback do
   describe '#get' do
     it 'returns result if the key is present' do
       dont_allow(fallback).get
-      trie.get([1, 2, 3]).should == 'value'
+      expect(trie.get([1, 2, 3])).to eq('value')
     end
 
     it 'resorts to the fallback if the key is not present' do
       mock(fallback).get([3, 2, 1]) { 'fallback-value' }
-      trie.get([3, 2, 1]).should == 'fallback-value'
+      expect(trie.get([3, 2, 1])).to eq('fallback-value')
     end
   end
 
   describe '#find_prefix' do
     it 'returns result if the key is present' do
       dont_allow(fallback).find_prefix
-      trie.find_prefix([1, 2, 3, 4]).first(2).should == ['value', 3]
+      expect(trie.find_prefix([1, 2, 3, 4]).first(2)).to eq(['value', 3])
     end
 
     it 'resorts to the fallback if the key is not present' do
       mock(fallback).find_prefix([3, 2, 1]) { 'fallback-result' }
-      trie.find_prefix([3, 2, 1]).should == 'fallback-result'
+      expect(trie.find_prefix([3, 2, 1])).to eq('fallback-result')
     end
   end
 
   describe 'marshaling' do
     it 'does not dump fallback' do
-      Marshal.load(Marshal.dump(TrieWithFallback.new(Trie.new))).fallback.should be_nil
+      expect(Marshal.load(Marshal.dump(TrieWithFallback.new(Trie.new))).fallback).to be_nil
     end
   end
 

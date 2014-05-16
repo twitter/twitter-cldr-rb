@@ -21,15 +21,15 @@ describe Collator do
     end
 
     it 'returns default fractional collation elements trie' do
-      Collator.default_trie.should == trie
+      expect(Collator.default_trie).to eq(trie)
     end
 
     it 'loads the trie only once' do
-      Collator.default_trie.object_id.should == Collator.default_trie.object_id
+      expect(Collator.default_trie.object_id).to eq(Collator.default_trie.object_id)
     end
 
     it 'locks the trie' do
-      Collator.default_trie.should be_locked
+      expect(Collator.default_trie).to be_locked
     end
   end
 
@@ -43,15 +43,15 @@ describe Collator do
     end
 
     it 'returns default fractional collation elements trie' do
-      Collator.tailored_trie(locale).should == trie
+      expect(Collator.tailored_trie(locale)).to eq(trie)
     end
 
     it 'loads the trie only once' do
-      Collator.tailored_trie(locale).object_id.should == Collator.tailored_trie(locale).object_id
+      expect(Collator.tailored_trie(locale).object_id).to eq(Collator.tailored_trie(locale).object_id)
     end
 
     it 'locks the trie' do
-      Collator.tailored_trie(locale).should be_locked
+      expect(Collator.tailored_trie(locale)).to be_locked
     end
   end
 
@@ -62,17 +62,17 @@ describe Collator do
 
     context 'without locale' do
       it 'initializes default collator' do
-        Collator.new.locale.should be_nil
+        expect(Collator.new.locale).to be_nil
       end
     end
 
     context 'with locale' do
       it 'initialized tailored collator with provided locale' do
-        Collator.new(:ru).locale.should == :ru
+        expect(Collator.new(:ru).locale).to eq(:ru)
       end
 
       it 'converts locale' do
-        Collator.new(:no).locale.should == :nb
+        expect(Collator.new(:no).locale).to eq(:nb)
       end
     end
   end
@@ -90,11 +90,11 @@ describe Collator do
     end
 
     it 'returns collation elements for a string' do
-      collator.get_collation_elements(string).should == collation_elements
+      expect(collator.get_collation_elements(string)).to eq(collation_elements)
     end
 
     it 'returns collation elements for an array of code points (represented as hex strings)' do
-      collator.get_collation_elements(code_points).should == collation_elements
+      expect(collator.get_collation_elements(code_points)).to eq(collation_elements)
     end
   end
 
@@ -112,12 +112,12 @@ describe Collator do
 
       it 'calculates sort key for a string' do
         mock(collator).get_collation_elements(string) { collation_elements }
-        collator.get_sort_key(string).should == sort_key
+        expect(collator.get_sort_key(string)).to eq(sort_key)
       end
 
       it 'calculates sort key for an array of code points (represented as hex strings)' do
         mock(collator).get_collation_elements(code_points) { collation_elements }
-        collator.get_sort_key(code_points).should == sort_key
+        expect(collator.get_sort_key(code_points)).to eq(sort_key)
       end
     end
 
@@ -135,7 +135,7 @@ describe Collator do
         mock(collator).get_collation_elements(code_points) { collation_elements }
         mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, :case_first => case_first, :maximum_level => nil) { sort_key }
 
-        collator.get_sort_key(code_points).should == sort_key
+        expect(collator.get_sort_key(code_points)).to eq(sort_key)
       end
 
       it 'passes maximum_level option to sort key builder' do 
@@ -147,7 +147,7 @@ describe Collator do
         mock(collator).get_collation_elements(code_points) { collation_elements }
         mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, :case_first => case_first, :maximum_level => maximum_level) { sort_key }
 
-        collator.get_sort_key(code_points, :maximum_level => maximum_level).should == sort_key
+        expect(collator.get_sort_key(code_points, :maximum_level => maximum_level)).to eq(sort_key)
       end
 
     end
@@ -164,14 +164,14 @@ describe Collator do
       stub_sort_key(collator, 'foo', sort_key)
       stub_sort_key(collator, 'bar', another_sort_key)
 
-      collator.compare('foo', 'bar').should == -1
-      collator.compare('bar', 'foo').should == 1
+      expect(collator.compare('foo', 'bar')).to eq(-1)
+      expect(collator.compare('bar', 'foo')).to eq(1)
     end
 
     it 'returns 0 without computing sort keys if the strings are equal' do
       dont_allow(collator).get_sort_key
 
-      collator.compare('foo', 'foo').should == 0
+      expect(collator.compare('foo', 'foo')).to eq(0)
     end
   end
 
@@ -188,18 +188,18 @@ describe Collator do
 
     describe '#sort' do
       it 'sorts strings by sort keys' do
-        collator.sort(array).should == sorted
+        expect(collator.sort(array)).to eq(sorted)
       end
 
       it 'does not change the original array' do
-        lambda { collator.sort(array) }.should_not change { array }
+        expect { collator.sort(array) }.not_to change { array }
       end
     end
 
     describe '#sort!' do
       it 'sorts strings array by sort keys in-place ' do
         collator.sort!(array)
-        array.should == sorted
+        expect(array).to eq(sorted)
       end
     end
   end
@@ -224,28 +224,28 @@ describe Collator do
 
     describe 'tailoring rules support' do
       it 'tailored collation elements are used' do
-        default_collator.get_collation_elements([0x490]).should  == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
-        tailored_collator.get_collation_elements([0x490]).should == [[0x5C1B, 5, 0x86]]
+        expect(default_collator.get_collation_elements([0x490])).to  eq([[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]])
+        expect(tailored_collator.get_collation_elements([0x490])).to eq([[0x5C1B, 5, 0x86]])
 
-        default_collator.get_collation_elements([0x491]).should  == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
-        tailored_collator.get_collation_elements([0x491]).should == [[0x5C1B, 5, 5]]
+        expect(default_collator.get_collation_elements([0x491])).to  eq([[0x5C1A, 5, 9], [0, 0xDBB9, 9]])
+        expect(tailored_collator.get_collation_elements([0x491])).to eq([[0x5C1B, 5, 5]])
       end
 
       it 'original contractions for tailored elements are applied' do
-        default_collator.get_collation_elements([0x491, 0x306]).should  == [[0x5C, 0xDB, 9]]
-        tailored_collator.get_collation_elements([0x491, 0x306]).should == [[0x5C, 0xDB, 9]]
+        expect(default_collator.get_collation_elements([0x491, 0x306])).to  eq([[0x5C, 0xDB, 9]])
+        expect(tailored_collator.get_collation_elements([0x491, 0x306])).to eq([[0x5C, 0xDB, 9]])
       end
     end
 
     describe 'contractions suppressing support' do
       it 'suppressed contractions are ignored' do
-        default_collator.get_collation_elements([0x41A, 0x301]).should  == [[0x5CCC, 5, 0x8F]]
-        tailored_collator.get_collation_elements([0x41A, 0x301]).should == [[0x5C6C, 5, 0x8F], [0, 0x8D, 5]]
+        expect(default_collator.get_collation_elements([0x41A, 0x301])).to  eq([[0x5CCC, 5, 0x8F]])
+        expect(tailored_collator.get_collation_elements([0x41A, 0x301])).to eq([[0x5C6C, 5, 0x8F], [0, 0x8D, 5]])
       end
 
       it 'non-suppressed contractions are used' do
-        default_collator.get_collation_elements([0x415, 0x306]).should  == [[0x5C36, 5, 0x8F]]
-        tailored_collator.get_collation_elements([0x415, 0x306]).should == [[0x5C36, 5, 0x8F]]
+        expect(default_collator.get_collation_elements([0x415, 0x306])).to  eq([[0x5C36, 5, 0x8F]])
+        expect(tailored_collator.get_collation_elements([0x415, 0x306])).to eq([[0x5C36, 5, 0x8F]])
       end
     end
 

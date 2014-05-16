@@ -80,10 +80,10 @@ RSpec::Matchers.define :exactly_match do |expected|
 end
 
 def check_token_list(got, expected)
-  got.size.should == expected.size
+  expect(got.size).to eq(expected.size)
   expected.each_with_index do |exp_hash, index|
     exp_hash.each_pair do |exp_key, exp_val|
-      got[index].send(exp_key).should == exp_val
+      expect(got[index].send(exp_key)).to eq(exp_val)
     end
   end
 end

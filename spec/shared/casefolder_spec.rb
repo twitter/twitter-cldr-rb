@@ -10,13 +10,13 @@ include TwitterCldr::Shared
 describe Casefolder do
   describe "#casefold" do
     it "should casefold a few canonical examples" do
-      Casefolder.casefold("Weißrussland").should == "weissrussland"
-      Casefolder.casefold("Hello, World").should == "hello, world"
+      expect(Casefolder.casefold("Weißrussland")).to eq("weissrussland")
+      expect(Casefolder.casefold("Hello, World")).to eq("hello, world")
     end
 
     it "should correctly casefold the Turkic i character" do
-      Casefolder.casefold("Istanbul", true).should == "ıstanbul"
-      Casefolder.casefold("İstanbul", true).should == "istanbul"
+      expect(Casefolder.casefold("Istanbul", true)).to eq("ıstanbul")
+      expect(Casefolder.casefold("İstanbul", true)).to eq("istanbul")
     end
 
     # the files used in this test come from the unicode_utils gem
@@ -24,7 +24,7 @@ describe Casefolder do
       base_path = File.dirname(__FILE__)
       text = File.read(File.join(base_path, "casefolding.txt"))
       expected = File.read(File.join(base_path, "casefolding_expected.txt"))
-      Casefolder.casefold(text).should == expected
+      expect(Casefolder.casefold(text)).to eq(expected)
     end
   end
 end

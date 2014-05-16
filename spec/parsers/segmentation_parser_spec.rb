@@ -30,21 +30,21 @@ describe "Segmentation" do
     describe "#parse" do
       it "should parse a rule with a break" do
         rule = parse(tokenize("[a-z] ÷ [0-9]"))
-        rule.left.to_regexp_str.should == "\\A(?:[\\141-\\172])"
-        rule.right.to_regexp_str.should == "\\A(?:[\\60-\\71])"
-        rule.boundary_symbol.should == :break
+        expect(rule.left.to_regexp_str).to eq("\\A(?:[\\141-\\172])")
+        expect(rule.right.to_regexp_str).to eq("\\A(?:[\\60-\\71])")
+        expect(rule.boundary_symbol).to eq(:break)
       end
 
       it "should parse a rule with a non-break" do
         rule = parse(tokenize("[a-z] × [0-9]"))
-        rule.regex.to_regexp_str.should == "\\A(?:[\\141-\\172])(?:[\\60-\\71])"
-        rule.boundary_symbol.should == :no_break
+        expect(rule.regex.to_regexp_str).to eq("\\A(?:[\\141-\\172])(?:[\\60-\\71])")
+        expect(rule.boundary_symbol).to eq(:no_break)
       end
 
       it "should parse a rule containing a variable" do
         rule = parse(tokenize("$FOO × bar"), :symbol_table => symbol_table)
-        rule.regex.to_regexp_str.should == "\\A(?:[\\141-\\143])(?:\\142)(?:\\141)(?:\\162)"
-        rule.boundary_symbol.should == :no_break
+        expect(rule.regex.to_regexp_str).to eq("\\A(?:[\\141-\\143])(?:\\142)(?:\\141)(?:\\162)")
+        expect(rule.boundary_symbol).to eq(:no_break)
       end
     end
   end
@@ -54,19 +54,19 @@ describe "Segmentation" do
       let(:rule) { parse(tokenize("[a-z] ÷ [0-9]")) }
 
       it "rule should be the right type" do
-        rule.should be_a(SegmentationParser::BreakRule)
+        expect(rule).to be_a(SegmentationParser::BreakRule)
       end
 
       it "should match and return the right offset and text" do
         match = rule.match("c7")
-        match.boundary_offset.should == 1
-        match.text.should == "c7"
+        expect(match.boundary_offset).to eq(1)
+        expect(match.text).to eq("c7")
       end
 
       it "should not match if the input string doesn't contain a matching right- and/or left-hand side" do
-        rule.match("C7").should be_nil
-        rule.match("cc").should be_nil
-        rule.match("CC").should be_nil
+        expect(rule.match("C7")).to be_nil
+        expect(rule.match("cc")).to be_nil
+        expect(rule.match("CC")).to be_nil
       end
     end
   end
@@ -76,20 +76,20 @@ describe "Segmentation" do
       let(:rule) { parse(tokenize("[a-z] × [0-9]")) }
 
       it "rule should be the right type" do
-        rule.should be_a(SegmentationParser::NoBreakRule)
+        expect(rule).to be_a(SegmentationParser::NoBreakRule)
       end
 
       it "should match and return the right offset and text" do
         match = rule.match("c7")
         # non-break rules send you to the end of the match (maybe that's wrong?)
-        match.boundary_offset.should == 2
-        match.text.should == "c7"
+        expect(match.boundary_offset).to eq(2)
+        expect(match.text).to eq("c7")
       end
 
       it "should not match if the input string doesn't contain matching text" do
-        rule.match("C7").should be_nil
-        rule.match("cc").should be_nil
-        rule.match("CC").should be_nil
+        expect(rule.match("C7")).to be_nil
+        expect(rule.match("cc")).to be_nil
+        expect(rule.match("CC")).to be_nil
       end
     end
   end

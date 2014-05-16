@@ -12,17 +12,17 @@ describe Rules do
     it "calls eval on the hash that gets returned, lambdas and all" do
       result = Rules.send(:get_resource, :ru)
 
-      result.should include(:keys, :rule)
-      result[:keys].size.should == 3
-      result[:rule].should be_a(Proc)
+      expect(result).to include(:keys, :rule)
+      expect(result[:keys].size).to eq(3)
+      expect(result[:rule]).to be_a(Proc)
     end
   end
 
   describe "#rule_for" do
     it "returns :one for English 1, :other for everything else" do
-      Rules.rule_for(1, :en).should == :one
+      expect(Rules.rule_for(1, :en)).to eq(:one)
       [5, 9, 10, 20, 60, 99, 100, 103, 141].each do |num|
-        Rules.rule_for(num, :en).should == :other
+        expect(Rules.rule_for(num, :en)).to eq(:other)
       end
     end
 
@@ -34,34 +34,34 @@ describe Rules do
       }
 
       rules.each do |rule, examples|
-        examples.each { |n| Rules.rule_for(n, :ru).should == rule }
+        examples.each { |n| expect(Rules.rule_for(n, :ru)).to eq(rule) }
       end
     end
 
     it "returns :other if there's an error" do
       stub(Rules).get_resource { lambda { raise "Jelly beans" } }
-      Rules.rule_for(1, :en).should == :other
-      Rules.rule_for(1, :ru).should == :other
+      expect(Rules.rule_for(1, :en)).to eq(:other)
+      expect(Rules.rule_for(1, :ru)).to eq(:other)
     end
   end
 
   describe "#all_for" do
     it "returns a list of all applicable rules for the given locale" do
-      Rules.all_for(:en).should =~ [:one, :other]
-      Rules.all_for(:ru).should =~ [:one, :many, :other]
+      expect(Rules.all_for(:en)).to match_array([:one, :other])
+      expect(Rules.all_for(:ru)).to match_array([:one, :many, :other])
     end
 
     it "returns nil on error" do
       stub(Rules).get_resource { lambda { raise "Jelly beans" } }
-      Rules.all_for(:en).should be_nil
-      Rules.all_for(:ru).should be_nil
+      expect(Rules.all_for(:en)).to be_nil
+      expect(Rules.all_for(:ru)).to be_nil
     end
   end
 
   describe "#all" do
     it "gets rules for the default locale (usually supplied by FastGettext)" do
       mock(TwitterCldr).locale { :ru }
-      Rules.all.should =~ [:one, :many, :other]
+      expect(Rules.all).to match_array([:one, :many, :other])
     end
   end
 end

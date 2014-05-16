@@ -11,7 +11,7 @@ describe 'Core classes localization' do
     describe klass do
       it 'has public instance method #localize' do
         # convert methods names to symbols (they're strings in 1.8)
-        klass.public_instance_methods.map(&:to_sym).should include(:localize)
+        expect(klass.public_instance_methods.map(&:to_sym)).to include(:localize)
       end
     end
   end

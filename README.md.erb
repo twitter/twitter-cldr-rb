@@ -429,7 +429,7 @@ TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PostalCodes.regex_for_territory(:us), /\d{5}([ \-]\d{4})?/).inspect %>
+TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PostalCodes.regex_for_territory(:us), /\A\d{5}([ \-]\d{4})?\z/).inspect %>
 ```
 
 ### Phone Codes

@@ -30,7 +30,7 @@ module TwitterCldr
         doc = File.open(File.join(@input_path, POSTAL_CODES_PATH)) { |file| Nokogiri::XML(file) }
 
         postal_codes = doc.xpath('//postCodeRegex').inject({}) do |memo, node|
-          memo[node.attr('territoryId').downcase.to_sym] = Regexp.new(node.text); memo
+          memo[node.attr('territoryId').downcase.to_sym] = Regexp.new("\\A#{node.text}\\z"); memo
         end
 
         postal_codes = Hash[postal_codes.sort_by(&:first)]

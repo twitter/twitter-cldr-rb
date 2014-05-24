@@ -72,10 +72,10 @@ describe RbnfFormatter do
                       failures[locale][group_name] ||= {}
                       failures[locale][group_name][rule_set_name] ||= []
                       failures[locale][group_name][rule_set_name] << number
-                      got.should == expected
+                      expect(got).to eq(expected)
                     end
                   else
-                    got.should == expected
+                    expect(got).to eq(expected)
                   end
 
                 end

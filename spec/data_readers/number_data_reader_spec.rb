@@ -12,7 +12,7 @@ describe NumberDataReader do
 
   describe "#get_key_for" do
     it "builds a power-of-ten key based on the number of digits in the input" do
-      (3..15).each { |i| data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}").should == 10 ** i }
+      (3..15).each { |i| expect(data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}")).to eq(10 ** i) }
     end
   end
 end

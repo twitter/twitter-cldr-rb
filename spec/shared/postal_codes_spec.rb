@@ -12,15 +12,15 @@ describe PostalCodes do
     let(:territories) { PostalCodes.territories }
 
     it 'returns an array' do
-      territories.should be_instance_of(Array)
+      expect(territories).to be_instance_of(Array)
     end
 
     it 'returns symbols' do
-      territories.each { |territory| territory.should be_instance_of(Symbol) }
+      territories.each { |territory| expect(territory).to be_instance_of(Symbol) }
     end
 
     it 'returns supported territories' do
-      territories.should include(:br, :fr, :jp)
+      expect(territories).to include(:br, :fr, :jp)
     end
   end
 

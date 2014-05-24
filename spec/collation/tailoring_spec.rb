@@ -49,7 +49,7 @@ describe 'Unicode collation tailoring' do
         else
           failures_info = "#{failures.size} failures: #{failures.inspect}"
           puts failures_info
-          failures.should(be_empty, "#{locale} - #{failures_info}")
+          expect(failures).to(be_empty, "#{locale} - #{failures_info}")
         end
       end
     end

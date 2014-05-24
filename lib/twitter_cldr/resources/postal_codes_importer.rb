@@ -35,7 +35,18 @@ module TwitterCldr
 
         postal_codes = Hash[postal_codes.sort_by(&:first)]
 
-        File.open(File.join(@output_path, 'postal_codes.yml'), 'w') { |output| output.write(YAML.dump(postal_codes)) }
+        postal_codes = postal_codes.each_with_object({}) do |(territory, regex), memo|
+          memo[territory] = {
+            :regex => regex,
+            :ast => TwitterCldr::Utils::RegexpAst.dump(
+              RegexpAstGenerator.generate(regex.source)
+            )
+          }
+        end
+
+        File.open(File.join(@output_path, 'postal_codes.yml'), 'w') do |output|
+          output.write(YAML.dump(postal_codes))
+        end
       end
 
     end

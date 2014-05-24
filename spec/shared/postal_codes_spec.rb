@@ -24,45 +24,51 @@ describe PostalCodes do
     end
   end
 
-  describe '#regex_for_territory' do
-    let(:regex)     { /\d{5}[\-]?\d{3}/ }
-    let(:territory) { :br }
-
-    before(:each) { mock(PostalCodes).resource { { territory => regex } } }
-
-    it 'returns postal code regex for a given territory' do
-      expect(PostalCodes.regex_for_territory(territory)).to eq(regex)
-    end
-
-    it 'returns nil if the regex is missing' do
-      expect(PostalCodes.regex_for_territory(:foo)).to be_nil
+  describe "#new" do
+    it "should raise an error if the territory isn't supported" do
+      lambda { PostalCodes.for_territory(:xx) }.should raise_error(InvalidTerritoryError)
     end
 
     it 'accepts strings' do
-      expect(PostalCodes.regex_for_territory(territory.to_s)).to eq(regex)
+      PostalCodes.for_territory("us").should be_a(PostalCodes)
     end
 
     it 'accepts upper-case strings' do
-      expect(PostalCodes.regex_for_territory(territory.to_s.upcase)).to eq(regex)
+      PostalCodes.for_territory("US").should be_a(PostalCodes)
     end
   end
 
-  describe '#valid?' do
-    let(:regex)     { /\d{5}[\-]?\d{3}/ }
-    let(:territory) { :br }
+  context "with a PostalCodes instance" do
+    let(:postal_code) { PostalCodes.for_territory(:us) }
 
-    before(:each) { mock(PostalCodes).resource { { territory => regex } } }
-
-    it 'returns true if a given postal code satisfies the regexp' do
-      expect(PostalCodes.valid?(territory, '12345-321')).to be_true
+    describe '#regexp' do
+      it 'returns postal code regex for a given territory' do
+        postal_code.regexp.should be_a(Regexp)
+      end
     end
 
-    it "returns false if a given postal code doesn't satisfy the regexp" do
-      expect(PostalCodes.valid?(territory, 'postal-code')).to be_false
+    describe '#valid?' do
+      it 'returns true if a given postal code satisfies the regexp' do
+        postal_code.valid?('12345-6789').should be_true
+      end
+
+      it "returns false if a given postal code doesn't satisfy the regexp" do
+        postal_code.valid?('postal-code').should be_false
+      end
     end
 
-    it 'returns false if the regexp is missing' do
-      expect(PostalCodes.valid?(:foo, '12345-321')).to be_false
+    describe "#sample" do
+      PostalCodes.territories.each do |territory|
+        postal_code = PostalCodes.for_territory(territory)
+
+        it "returns samples that match #{territory}" do
+          postal_code.sample(10).each do |sample|
+            result = postal_code.valid?(sample)
+            puts "Failed with example #{sample}" unless result
+            result.should be_true
+          end
+        end
+      end
     end
   end
 end

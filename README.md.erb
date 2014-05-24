@@ -407,17 +407,21 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")) %>
-TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # <%= assert_false(TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
+postal_code.valid?("94103")     # <%= assert_true(postal_code.valid?("94103")) %>
+postal_code.valid?("9410")      # <%= assert_false(postal_code.valid?("9410")) %>
 
 # England (Great Britain)
-TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) %>
+postal_code.valid?("BS98 1TL")  # <%= assert_true(postal_code.valid?("BS98 1TL")) %>
 
 # Sweden
-TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) %>
+postal_code.valid?("280 12")    # <%= assert_true(postal_code.valid?("280 12")) %>
 
 # Canada
-TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) %>
+postal_code.valid?("V3H 1Z7")   # <%= assert_true(postal_code.valid?("V3H 1Z7")) %>
 ```
 
 Get a list of supported territories by using the `#territories` method:
@@ -429,7 +433,14 @@ TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PostalCodes.regex_for_territory(:us), /\d{5}([ \-]\d{4})?/).inspect %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
+postal_code.regexp  # <%= assert(postal_code.regexp, /\d{5}([ \-]\d{4})?/).inspect %>
+```
+
+Get a sample of valid postal codes with the `#sample` method:
+
+```ruby
+postal_code.sample(5)  # <%= postal_code.sample(5).to_s %>
 ```
 
 ### Phone Codes

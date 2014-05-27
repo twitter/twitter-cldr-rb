@@ -8,10 +8,10 @@ module TwitterCldr
     class Casefolder
       class << self
 
-        CASEFOLDING_REGEX_C = /<%= casefolding_char_class_for("C") %>/
-        CASEFOLDING_REGEX_F = /<%= casefolding_char_class_for("F") %>/
-        CASEFOLDING_REGEX_S = /<%= casefolding_char_class_for("S") %>/
-        CASEFOLDING_REGEX_T = /<%= casefolding_char_class_for("T") %>/
+        CASEFOLDING_SOURCE_C = "<%= casefolding_char_class_for("C") %>"
+        CASEFOLDING_SOURCE_F = "<%= casefolding_char_class_for("F") %>"
+        CASEFOLDING_SOURCE_S = "<%= casefolding_char_class_for("S") %>"
+        CASEFOLDING_SOURCE_T = "<%= casefolding_char_class_for("T") %>"
 
         CASEFOLDING_HASH = <%= inspect_hash_in_lines(casefolding_hash_for(["C", "F", "S"]), 8, 5) %>
         CASEFOLDING_HASH_T = CASEFOLDING_HASH.merge(
@@ -46,16 +46,20 @@ module TwitterCldr
         end
 
         def simple_casefold_regex
-          @simple_casefold_regex ||= Regexp.union(CASEFOLDING_REGEX_C, CASEFOLDING_REGEX_S)
+          @simple_casefold_regex ||= Regexp.new("#{CASEFOLDING_SOURCE_C}|#{CASEFOLDING_SOURCE_S}")
         end
 
         def full_casefold_regex
-          @full_casefold_regex ||= Regexp.union(CASEFOLDING_REGEX_C, CASEFOLDING_REGEX_F)
+          @full_casefold_regex ||= Regexp.new("#{CASEFOLDING_SOURCE_C}|#{CASEFOLDING_SOURCE_F}")
         end
 
         def regex_with_t(regex)
-          @regex_with_t_cache[regex.source] ||=
-            Regexp.union(regex, CASEFOLDING_REGEX_T)
+          regex_with_t_cache[regex.source] ||=
+            Regexp.new("#{regex.source}|#{CASEFOLDING_SOURCE_T}")
+        end
+
+        def regex_with_t_cache
+          @regex_with_t_cache ||= {}
         end
 
       end

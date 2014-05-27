@@ -46,7 +46,7 @@ module TwitterCldr
           expected = expected.localize.normalize(:using => :NFKC).to_s
         end
 
-        unless equal?(got, expected)
+        unless objs_equal?(got, expected)
           line_num = line_num_from_stack_trace(Kernel.caller)
           assertion_failures << ReadmeAssertionFailure.new(
             "Expected `#{got.inspect}` to be `#{expected.inspect}` in README on line #{line_num}",
@@ -57,7 +57,7 @@ module TwitterCldr
         got
       end
 
-      def equal?(obj1, obj2)
+      def objs_equal?(obj1, obj2)
         case obj1
           when Array
             obj1 - obj2 == []

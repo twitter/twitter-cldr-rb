@@ -4,10 +4,17 @@ gemspec
 
 group :development, :test do
   gem 'rake'
-  gem 'pry'
-  gem 'pry-nav'
 
-  if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java"
+  platform :mri do
+    gem 'pry'
+    gem 'pry-nav'
+  end
+
+  platform :rbx do
+    gem 'rubinius-debugger'
+  end
+
+  if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java" && RUBY_ENGINE != "rbx"
     gem 'ruby-prof'
   end
 

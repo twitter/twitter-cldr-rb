@@ -65,7 +65,7 @@ module TwitterCldr
             )
 
             if char.upcase == char
-              UnicodeRegex.valid_regexp_chars.subtract(chars)
+              TwitterCldr::Shared::UnicodeRegex.valid_regexp_chars.subtract(chars)
             else
               chars
             end

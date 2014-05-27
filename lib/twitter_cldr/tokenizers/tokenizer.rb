@@ -100,11 +100,10 @@ module TwitterCldr
       private
 
       def splitter
-        @splitter ||= (@custom_splitter || Regexp.new(
-          "(" + recognizers.map do |recognizer|
-            recognizer.regex.source
-          end.join("|") + ")"
-        ))
+        @splitter ||= (@custom_splitter || begin
+          sources = recognizers.map { |rec| rec.regex.source }
+          Regexp.new("(" + sources.join("|") + ")")
+        end)
       end
 
       def clear_splitter

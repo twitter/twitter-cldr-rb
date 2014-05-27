@@ -6,6 +6,7 @@
 require 'spec_helper'
 
 include TwitterCldr::Parsers
+include TwitterCldr::Tokenizers
 
 describe UnicodeRegexParser::CharacterClass do
   let(:tokenizer) { UnicodeRegexTokenizer.new }

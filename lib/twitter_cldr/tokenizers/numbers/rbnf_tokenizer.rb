@@ -14,38 +14,43 @@ module TwitterCldr
       private
 
       def tokenizer
-        # i.e. %spellout-numbering, %%2d-year
-        rule_regex = if RUBY_VERSION <= "1.8.7"
-          /%%?[\w\-]+/u
-        else
-          Regexp.new("%%?[[:word:]\-]+")
-        end
+        @tokenizer ||= begin
+          # i.e. %spellout-numbering, %%2d-year
+          rule_regex = if RUBY_VERSION <= "1.8.7"
+            /%%?[\w\-]+/u
+          else
+            Regexp.new("%%?[[:word:]\-]+")
+          end
 
-        recognizers = [
-          # special rule descriptors
-          TokenRecognizer.new(:negative, /-x/),
-          TokenRecognizer.new(:improper_fraction, /x\.x/),
-          TokenRecognizer.new(:proper_fraction, /0\.x/),
-          TokenRecognizer.new(:master, /x\.0/),
+          recognizers = [
+            # special rule descriptors
+            TokenRecognizer.new(:negative, /-x/),
+            TokenRecognizer.new(:improper_fraction, /x\.x/),
+            TokenRecognizer.new(:proper_fraction, /0\.x/),
+            TokenRecognizer.new(:master, /x\.0/),
 
-          # normal rule descriptors
-          TokenRecognizer.new(:equals, /=/),
-          TokenRecognizer.new(:rule, rule_regex),
-          TokenRecognizer.new(:right_arrow, />/),
-          TokenRecognizer.new(:left_arrow, /</),
-          TokenRecognizer.new(:open_bracket, /\[/),
-          TokenRecognizer.new(:close_bracket, /\]/),
-          TokenRecognizer.new(:decimal, /[0#][0#,\.]+/),
+            # normal rule descriptors
+            TokenRecognizer.new(:equals, /=/),
+            TokenRecognizer.new(:rule, rule_regex),
+            TokenRecognizer.new(:right_arrow, />/),
+            TokenRecognizer.new(:left_arrow, /</),
+            TokenRecognizer.new(:open_bracket, /\[/),
+            TokenRecognizer.new(:close_bracket, /\]/),
+            TokenRecognizer.new(:decimal, /[0#][0#,\.]+/),
 
-          # ending
-          TokenRecognizer.new(:semicolon, /;/),
-        ]
-
-        @tokenizer ||= Tokenizer.new(
-          recognizers + [
-            TokenRecognizer.new(:plaintext, //)  # catch-all
+            # ending
+            TokenRecognizer.new(:semicolon, /;/),
           ]
-        )
+
+          splitter_source = recognizers.map { |r| r.regex.source }.join("|")
+          splitter = Regexp.new("(#{splitter_source})")
+
+          Tokenizer.new(
+            recognizers + [
+              TokenRecognizer.new(:plaintext, //)  # catch-all
+            ], splitter
+          )
+        end
       end
 
     end

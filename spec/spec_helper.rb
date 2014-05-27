@@ -6,7 +6,15 @@
 require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
-require 'pry-nav'
+
+# only mri
+if RUBY_ENGINE == "ruby"
+  require 'pry-nav'
+end
+
+if RUBY_ENGINE == "rbx"
+  require 'rubinius/debugger'
+end
 
 if RUBY_VERSION <= "1.8.7"
   $KCODE = "UTF-8"

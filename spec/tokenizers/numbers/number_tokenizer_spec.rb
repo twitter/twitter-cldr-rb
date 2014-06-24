@@ -12,7 +12,7 @@ describe NumberTokenizer do
     let(:number) { 10 }
 
     it "gets tokens for a latin language (i.e. Portuguese)" do
-      data_reader = NumberDataReader.new(:pt)
+      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:pt)
       got = data_reader.tokenizer.tokenize(data_reader.pattern(number))
       expected = [
         { :value => "", :type => :plaintext },
@@ -22,7 +22,7 @@ describe NumberTokenizer do
     end
 
     it "gets tokens for a non-latin language (i.e. Russian)" do
-      data_reader = NumberDataReader.new(:ru)
+      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:ru)
       got = data_reader.tokenizer.tokenize(data_reader.pattern(number))
       expected = [
         { :value => "", :type => :plaintext },
@@ -32,7 +32,7 @@ describe NumberTokenizer do
     end
 
     it "correctly parses suffixes (i.e. Russian currency)" do
-      data_reader = NumberDataReader.new(:ru, :type => :currency)
+      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:ru, :type => :currency)
       got = data_reader.tokenizer.tokenize(data_reader.pattern(number))
       expected = [
         { :value => "", :type => :plaintext },
@@ -43,7 +43,7 @@ describe NumberTokenizer do
     end
 
     it "correctly parses prefixes (i.e. English (American) currency)" do
-      data_reader = NumberDataReader.new(:en, :type => :currency)
+      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:en, :type => :currency)
       got = data_reader.tokenizer.tokenize(data_reader.pattern(number))
       expected = [
         { :value => "¤", :type => :plaintext },

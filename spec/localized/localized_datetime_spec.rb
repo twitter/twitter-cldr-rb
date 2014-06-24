@@ -79,7 +79,7 @@ describe LocalizedDateTime do
 
     it "don't raise errors for additional date formats" do
       TwitterCldr.supported_locales.each do |locale|
-        data_reader = CalendarDataReader.new(locale)
+        data_reader = TwitterCldr::DataReaders::CalendarDataReader.new(locale)
         data_reader.additional_format_selector.patterns.each do |pattern|
           # puts "#{locale}: #{pattern}"
           # lambda { date_time.localize(locale).to_additional_s(pattern.to_s) }.should_not raise_error

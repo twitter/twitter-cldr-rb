@@ -9,7 +9,7 @@ include TwitterCldr::Formatters
 
 describe DateTimeFormatter do
   before(:each) do
-    data_reader = DateTimeDataReader.new(:de)
+    data_reader = TwitterCldr::DataReaders::DateTimeDataReader.new(:de)
     @formatter = DateTimeFormatter.new(data_reader)
   end
 
@@ -395,7 +395,7 @@ describe DateTimeFormatter do
 
   describe "#era" do
     before(:each) do
-      data_reader = DateTimeDataReader.new(:en)
+      data_reader = TwitterCldr::DataReaders::DateTimeDataReader.new(:en)
       @formatter = DateTimeFormatter.new(data_reader)
     end
 

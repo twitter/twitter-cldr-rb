@@ -8,7 +8,7 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe DecimalFormatter do
-  let(:data_reader) { NumberDataReader.new(:nl, :type => :decimal) }
+  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:nl, :type => :decimal) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
   let(:negative_number) { -12 }

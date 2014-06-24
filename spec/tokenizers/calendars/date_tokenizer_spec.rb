@@ -10,7 +10,7 @@ include TwitterCldr::Tokenizers
 describe DateTokenizer do
   describe "#tokens" do
     it "should tokenize plaintext segments correctly (i.e. Spanish)" do
-      data_reader = DateDataReader.new(:es, :type => :full)
+      data_reader = TwitterCldr::DataReaders::DateDataReader.new(:es, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
         { :value => "EEEE", :type => :pattern },
@@ -25,7 +25,7 @@ describe DateTokenizer do
     end
 
     it "should tokenize patterns with non-latin characters correctly (i.e. Japanese)" do
-      data_reader = DateDataReader.new(:ja, :type => :full)
+      data_reader = TwitterCldr::DataReaders::DateDataReader.new(:ja, :type => :full)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
         { :value => "y", :type => :pattern },
@@ -45,7 +45,7 @@ describe DateTokenizer do
         be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
       )
 
-      data_reader = DateDataReader.new(:th, :type => :long, :calendar_type => :buddhist)
+      data_reader = TwitterCldr::DataReaders::DateDataReader.new(:th, :type => :long, :calendar_type => :buddhist)
       got = data_reader.tokenizer.tokenize(data_reader.pattern)
       expected  = [
         { :value => "d", :type => :pattern },

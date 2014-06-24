@@ -58,7 +58,7 @@ describe LocalizedTime do
   describe 'formatters' do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        (CalendarDataReader.types - [:additional]).each do |type|
+        (TwitterCldr::DataReaders::CalendarDataReader.types - [:additional]).each do |type|
           expect { Time.now.localize(locale).send(:"to_#{type}_s") }.not_to raise_error
         end
       end

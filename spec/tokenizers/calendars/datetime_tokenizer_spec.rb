@@ -6,10 +6,9 @@
 require 'spec_helper'
 
 include TwitterCldr::Tokenizers
-include TwitterCldr::DataReaders
 
 describe DateTimeTokenizer do
-  let(:data_reader) { DateTimeDataReader.new(:es, :type => :full) }
+  let(:data_reader) { TwitterCldr::DataReaders::DateTimeDataReader.new(:es, :type => :full) }
   let(:tokenizer) { data_reader.tokenizer }
 
   describe "#tokenize" do

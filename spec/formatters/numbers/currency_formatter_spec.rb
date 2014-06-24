@@ -9,7 +9,7 @@ include TwitterCldr::Formatters
 
 describe CurrencyFormatter do
   describe "#format" do
-    let(:data_reader) { NumberDataReader.new(:msa, :type => :currency) }
+    let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:msa, :type => :currency) }
     let(:tokenizer) { data_reader.tokenizer }
     let(:formatter) { data_reader.formatter }
 

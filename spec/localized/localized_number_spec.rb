@@ -74,6 +74,12 @@ describe LocalizedNumber do
           expect(LocalizedNumber.new(7000, :ko, :type => :long_decimal).to_s).to eq("7000")
         end
       end
+
+      context "when the patter uses 'ten thousands' abbreviation" do
+        it "formats the number properly" do
+          expect(LocalizedNumber.new(93_000_000, :'zh-Hant', :type => :long_decimal).to_s).to match_normalized("9300萬")
+        end
+      end
     end
   end
 

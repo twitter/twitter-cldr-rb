@@ -11,8 +11,8 @@ module TwitterCldr
       ABBREVIATED_MIN_POWER = 3
       ABBREVIATED_MAX_POWER = 14
 
-      NUMBER_MIN   = 10 ** ABBREVIATED_MIN_POWER
-      NUMBER_MAX   = 10 ** (ABBREVIATED_MAX_POWER + 1)
+      NUMBER_MIN = 10 ** ABBREVIATED_MIN_POWER
+      NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
 
       BASE_PATH   = [:numbers, :formats]
       SYMBOL_PATH = [:numbers, :symbols]

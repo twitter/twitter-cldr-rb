@@ -11,8 +11,8 @@ module TwitterCldr
       ABBREVIATED_MIN_POWER = 3
       ABBREVIATED_MAX_POWER = 14
 
-      NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
       NUMBER_MIN = 10 ** ABBREVIATED_MIN_POWER
+      NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
 
       BASE_PATH   = [:numbers, :formats]
       SYMBOL_PATH = [:numbers, :symbols]
@@ -98,7 +98,7 @@ module TwitterCldr
 
       def valid_type_for?(number, type)
         if abbreviated?(type)
-          (number < NUMBER_MAX) && (number >= NUMBER_MIN)
+          self.class.within_abbreviation_range?(number)
         else
           TYPE_PATHS.include?(type)
         end
@@ -137,6 +137,9 @@ module TwitterCldr
         end
       end
 
+      def self.within_abbreviation_range?(number)
+        NUMBER_MIN <= number && number < NUMBER_MAX
+      end
     end
   end
 end

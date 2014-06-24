@@ -33,8 +33,18 @@ module TwitterCldr
           :format => @format
         })
 
-        tokens = data_reader.tokenizer.tokenize(data_reader.pattern(base_obj))
-        data_reader.formatter.format(tokens, base_obj, options.merge(:type => @type))
+        pattern = data_reader.pattern(base_obj)
+
+        if pattern == 0
+          # can't format the number for current locale
+          base_obj.to_s
+        else
+          data_reader.formatter.format(
+            data_reader.tokenizer.tokenize(pattern),
+            base_obj,
+            options.merge(:type => @type)
+          )
+        end
       end
 
       def plural_rule

@@ -12,7 +12,7 @@ module TwitterCldr
       protected
 
       def truncate_number(number, integer_format)
-        if TwitterCldr::DataReaders::NumberDataReader::NUMBER_RANGE.cover?(number)
+        if TwitterCldr::DataReaders::NumberDataReader.within_abbreviation_range?(number)
           if integer_format.format =~ FORMAT_REGEX
             factor = [0, number.to_i.to_s.length - integer_format.format.length].max
             number / (10.0 ** factor)

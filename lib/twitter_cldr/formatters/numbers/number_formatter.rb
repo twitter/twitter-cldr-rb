@@ -25,7 +25,7 @@ module TwitterCldr
         options[:type] ||= :decimal
 
         prefix, suffix, integer_format, fraction_format = *partition_tokens(tokens)
-        number = transform_number(number)
+        number = truncate_number(number, integer_format)
 
         int, fraction = parse_number(number, options)
         result =  integer_format.apply(int, options)
@@ -46,7 +46,7 @@ module TwitterCldr
         )
       end
 
-      def transform_number(number)
+      def truncate_number(number, integer_format)
         number  # noop for base class
       end
 

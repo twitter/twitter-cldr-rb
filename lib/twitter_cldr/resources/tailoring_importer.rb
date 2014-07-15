@@ -10,7 +10,8 @@ require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
-    # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version >= 49.1.
+    # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
+    # and CLDR version <= 23 (v24 syntax is not supported yet).
     #
     class TailoringImporter < IcuBasedImporter
 
@@ -225,7 +226,7 @@ module TwitterCldr
       end
 
       def get_code_points(string)
-        TwitterCldr::Normalization::NFD.normalize_code_points(TwitterCldr::Utils::CodePoints.from_string(string))
+        TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize(string))
       end
 
     end

@@ -5,10 +5,8 @@ gemspec
 group :development, :test do
   gem 'rake'
 
-  platform :mri do
-    gem 'pry'
-    gem 'pry-nav'
-  end
+  gem 'pry'
+  gem 'pry-nav'
 
   platform :rbx do
     gem 'rubinius-debugger'

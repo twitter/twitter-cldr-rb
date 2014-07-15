@@ -63,10 +63,10 @@ end
 
 task :update do
   tasks = if RUBY_PLATFORM == 'java'
-    # these should be run using JRuby 1.7 in 1.9 mode
+    # these should be run using JRuby 1.7 in 1.9 mode and CLDR v23 (v24 syntax is not supported yet)
     [
-      "update:collation_tries", # per locale
       "update:tailoring_data",  # per locale
+      "update:collation_tries", # per locale, must come after update:tailoring_data
       "update:rbnf_tests",      # per locale
     ]
   else

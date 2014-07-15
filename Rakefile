@@ -65,24 +65,24 @@ task :update do
   tasks = if RUBY_PLATFORM == 'java'
     # these should be run using JRuby 1.7 in 1.9 mode
     [
-      "update:collation_tries",
-      "update:tailoring_data",
-      "update:rbnf_tests",
+      "update:collation_tries", # per locale
+      "update:tailoring_data",  # per locale
+      "update:rbnf_tests",      # per locale
     ]
   else
     puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
 
     [
-      "update:locales_resources",
+      "update:locales_resources",      # per locale
       "update:unicode_data",
       "update:unicode_properties",
-      "update:generate_casefolder",  # must come after unicode data
+      "update:generate_casefolder",    # must come after unicode data
       "update:composition_exclusions",
       "update:postal_codes",
       "update:phone_codes",
       "update:language_codes",
       "update:canonical_compositions",
-      "update:segment_exceptions",
+      "update:segment_exceptions",     # per locale
       "update:readme"
     ]
   end
@@ -92,6 +92,8 @@ task :update do
     Rake::Task[task].invoke
   end
 end
+
+# TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
 
 namespace :update do
   ICU_JAR = './vendor/icu4j-51_2.jar'

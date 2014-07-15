@@ -44,7 +44,7 @@ module TwitterCldr
       def copy_zh_hant_plurals
         File.open(File.join(@output_path, 'locales', 'zh-Hant', 'plurals.yml'), 'w:utf-8') do |output|
           data = YAML.load(File.read(File.join(@output_path, 'locales', 'zh', 'plurals.yml')))
-          output.write(YAML.dump(:'zh-Hant' => data[:zh].gsub(':zh', ":'zh-Hant'")))
+          output.write(YAML.dump(:'zh-Hant' => data[:zh].gsub(":'zh'", ":'zh-Hant'")))
         end
       end
 

@@ -8,6 +8,7 @@ rvm:
   - jruby-head
 matrix:
   allow_failures:
+    - rvm: rbx-2.2.7
     - rvm: jruby-head
 env:
   - 'RSPEC_OPTIONS="--tag ~slow spec"'

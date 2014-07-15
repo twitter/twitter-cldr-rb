@@ -3,6 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'fileutils'
 require 'cldr/export'
 
 require 'twitter_cldr/resources/download'
@@ -47,6 +48,13 @@ module TwitterCldr
         end
       end
 
+      def move_segments_root_file
+        FileUtils.move(
+          File.join(@output_path, 'shared', 'segments_root.yml'),
+          File.join(@output_path, 'shared', 'segments', 'segments_root.yml')
+        )
+      end
+
       def import_components
         export_args = {
           :locales => TwitterCldr.supported_locales,
@@ -72,6 +80,7 @@ module TwitterCldr
           deep_symbolize(component, locale, path)
         end
 
+        move_segments_root_file
         copy_zh_hant_plurals
       end
 

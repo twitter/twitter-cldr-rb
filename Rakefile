@@ -62,22 +62,30 @@ else
 end
 
 task :update do
-  tasks = [
-    "update:locales_resources",
-    "update:tailoring_data",
-    "update:unicode_data",
-    "update:unicode_properties",
-    "update:generate_casefolder",  # must come after unicode data
-    "update:composition_exclusions",
-    "update:postal_codes",
-    "update:phone_codes",
-    "update:language_codes",
-    "update:collation_tries",
-    "update:canonical_compositions",
-    "update:rbnf_tests",
-    "update:segment_exceptions",
-    "update:readme"
-  ]
+  tasks = if RUBY_PLATFORM == 'java'
+    # these should be run using JRuby 1.7 in 1.9 mode
+    [
+      "update:collation_tries",
+      "update:tailoring_data",
+      "update:rbnf_tests",
+    ]
+  else
+    puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
+
+    [
+      "update:locales_resources",
+      "update:unicode_data",
+      "update:unicode_properties",
+      "update:generate_casefolder",  # must come after unicode data
+      "update:composition_exclusions",
+      "update:postal_codes",
+      "update:phone_codes",
+      "update:language_codes",
+      "update:canonical_compositions",
+      "update:segment_exceptions",
+      "update:readme"
+    ]
+  end
 
   tasks.each do |task|
     puts "Executing #{task}"

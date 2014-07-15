@@ -63,7 +63,7 @@ end
 
 task :update do
   tasks = if RUBY_PLATFORM == 'java'
-    # these should be run using JRuby 1.7 in 1.9 mode and CLDR v23 (v24 syntax is not supported yet)
+    # these should be run using JRuby 1.7 in 1.9 mode and CLDR v23 (v24 collation rules syntax is not supported yet)
     [
       "update:tailoring_data",  # per locale
       "update:collation_tries", # per locale, must come after update:tailoring_data

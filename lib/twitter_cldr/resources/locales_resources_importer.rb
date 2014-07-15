@@ -50,10 +50,11 @@ module TwitterCldr
       end
 
       def move_segments_root_file
-        FileUtils.move(
-          File.join(@output_path, 'shared', 'segments_root.yml'),
-          File.join(@output_path, 'shared', 'segments', 'segments_root.yml')
-        )
+        file_path = File.join(@output_path, 'shared', 'segments_root.yml')
+
+        if File.file?(file_path)
+          FileUtils.move(file_path, File.join(@output_path, 'shared', 'segments', 'segments_root.yml'))
+        end
       end
 
       def import_components

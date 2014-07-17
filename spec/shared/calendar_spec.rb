@@ -11,11 +11,14 @@ describe Calendar do
 
   let(:calendar) { Calendar.new(:de) }
 
-  before(:each) do
+  def clear_cache
     # clear cache for each test
     Calendar.send(:class_variable_set, :@@calendar_cache, {})
     Calendar.send(:class_variable_set, :@@field_cache, {})
   end
+
+  before(:each) { clear_cache }
+  after(:each) { clear_cache }
 
   describe '#initialize' do
     it 'returns calendar for default locale and type' do

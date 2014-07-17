@@ -5,10 +5,8 @@ gemspec
 group :development, :test do
   gem 'rake'
 
-  platform :mri do
-    gem 'pry'
-    gem 'pry-nav'
-  end
+  gem 'pry'
+  gem 'pry-nav'
 
   platform :rbx do
     gem 'rubinius-debugger'
@@ -28,9 +26,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  # https://github.com/svenfuchs/ruby-cldr/pull/18
-  # gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "segmentation"
+  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :tag => 'v0.1.1'
 end
 
 group :test do

@@ -56,6 +56,10 @@ describe Rules do
       expect(Rules.all_for(:en)).to be_nil
       expect(Rules.all_for(:ru)).to be_nil
     end
+
+    it "returns data for zh-Hant" do
+      expect(Rules.all_for(:'zh-Hant')).to match_array([:other])
+    end
   end
 
   describe "#all" do

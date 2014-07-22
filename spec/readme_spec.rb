@@ -23,15 +23,15 @@ describe "README" do
 
   it "verifies number formatting" do
     nbsp = "\xC2\xA0"
-    1337.localize(:es).to_s.should == "1.337"
-    spaces(1337.localize(:es).to_currency.to_s).should == "1.337,00 $"
-    spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1.337,00 €"
-    1337.localize(:es).to_percent.to_s.should == "1.337%"
-    1337.localize(:es).to_percent.to_s(:precision => 2).should == "1.337,00%"
-    1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1.337,000"
+    1337.localize(:es).to_s.should == "1 337"
+    spaces(1337.localize(:es).to_currency.to_s).should == "1 337,00 $"
+    spaces(1337.localize(:es).to_currency.to_s(:currency => "EUR").to_s).should == "1 337,00 €"
+    1337.localize(:es).to_percent.to_s.should == "1 337%"
+    1337.localize(:es).to_percent.to_s(:precision => 2).should == "1 337,00%"
+    1337.localize(:es).to_decimal.to_s(:precision => 3).should == "1 337,000"
 
     num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
-    spaces(num.to_currency.to_s).should == "1.337,00 $"
+    spaces(num.to_currency.to_s).should == "1 337,00 $"
   end
 
   it "verifies extra currency data" do
@@ -60,8 +60,8 @@ describe "README" do
     date_time = DateTime.new(2011, 12, 12, 21, 44, 57, 0.0)
     time = Time.at(date_time.localize.to_time.base_obj.utc)
 
-    date_time.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011 21:44:57 UTC +00:00"
-    date_time.localize(:es).to_long_s.should == "12 de diciembre de 2011 21:44:57 UTC"
+    date_time.localize(:es).to_full_s.should == "lunes, 12 de diciembre de 2011, 21:44:57 (UTC +00:00)"
+    date_time.localize(:es).to_long_s.should == "12 de diciembre de 2011, 21:44:57 UTC"
     date_time.localize(:es).to_medium_s.should == "12/12/2011 21:44:57"
     date_time.localize(:es).to_short_s.should == "12/12/11 21:44"
 
@@ -70,7 +70,7 @@ describe "README" do
     date_time.localize(:es).to_date.to_medium_s.should == "12/12/2011"
     date_time.localize(:es).to_date.to_short_s.should == "12/12/11"
 
-    time.localize(:es).to_full_s.should match(/21:44:57 UTC [-+]\d{2}:\d{2}/)
+    time.localize(:es).to_full_s.should == "21:44:57 (UTC +00:00)"
     time.localize(:es).to_long_s.should == "21:44:57 UTC"
     time.localize(:es).to_medium_s.should == "21:44:57"
     time.localize(:es).to_short_s.should == "21:44"
@@ -119,16 +119,16 @@ describe "README" do
 
   it "verifies plural rules" do
     1.localize(:ru).plural_rule.should == :one
-    2.localize(:ru).plural_rule.should == :few
+    2.localize(:ru).plural_rule.should == :other
     5.localize(:ru).plural_rule.should == :many
 
     TwitterCldr::Formatters::Plurals::Rules.all.should == [:one, :other]
     TwitterCldr::Formatters::Plurals::Rules.all_for(:es).should == [:one, :other]
-    TwitterCldr::Formatters::Plurals::Rules.all_for(:ru).should == [:one, :few, :many, :other]
+    TwitterCldr::Formatters::Plurals::Rules.all_for(:ru).should == [:one, :many, :other]
 
     # get the rule for a number in a specific locale
     TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru).should == :one
-    TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru).should == :few
+    TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru).should == :other
   end
 
   describe "plural interpolation" do

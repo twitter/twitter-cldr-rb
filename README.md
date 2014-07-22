@@ -37,18 +37,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # 1.337
+1337.localize(:es).to_s                                    # 1 337
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # 1.337,00 $
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1.337,00 €
+1337.localize(:es).to_currency.to_s                        # 1 337,00 $
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # 1 337,00 €
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # 1.337%
-1337.localize(:es).to_percent.to_s(:precision => 2)        # 1.337,00%
+1337.localize(:es).to_percent.to_s                         # 1 337%
+1337.localize(:es).to_percent.to_s(:precision => 2)        # 1 337,00%
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # 1.337,000
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # 1 337,000
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -89,8 +89,8 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 `Date`, `Time`, and `DateTime` objects are supported:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011 21:44:57 UTC -08:00"
-DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011 21:44:57 UTC"
+DateTime.now.localize(:es).to_full_s               # "lunes, 12 de diciembre de 2011, 21:44:57 (UTC +00:00)"
+DateTime.now.localize(:es).to_long_s               # "12 de diciembre de 2011, 21:44:57 UTC"
 DateTime.now.localize(:es).to_medium_s             # "12/12/2011 21:44:57"
 DateTime.now.localize(:es).to_short_s              # "12/12/11 21:44"
 
@@ -252,7 +252,7 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # :one
-2.localize(:ru).plural_rule                                # :few
+2.localize(:ru).plural_rule                                # :other
 5.localize(:ru).plural_rule                                # :many
 ```
 
@@ -264,11 +264,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, ... ]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :many, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :few
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :other
 ```
 
 ### Plurals

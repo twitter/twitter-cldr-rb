@@ -46,14 +46,16 @@ describe DateTimeTokenizer do
         { :value => "'de'", :type => :plaintext },
         { :value => " ", :type => :plaintext },
         { :value => "y", :type => :pattern },
+        { :value => ",", :type => :plaintext },
         { :value => " ", :type => :plaintext },
-        { :value => "HH", :type => :pattern },
+        { :value => "H", :type => :pattern },
         { :value => ":", :type => :plaintext },
         { :value => "mm", :type => :pattern },
         { :value => ":", :type => :plaintext },
         { :value => "ss", :type => :pattern },
-        { :value => " ", :type => :plaintext },
-        { :value => "zzzz", :type => :pattern }
+        { :value => " (", :type => :plaintext },
+        { :value => "zzzz", :type => :pattern },
+        { :value => ")", :type => :plaintext }
       ]
       check_token_list(got, expected)
     end

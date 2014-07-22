@@ -43,10 +43,10 @@ describe NumberTokenizer do
       check_token_list(got, expected)
     end
 
-    it "correctly parses prefixes (i.e. Italian currency)" do
-      tokenizer = NumberTokenizer.new(:locale => :it)
+    it "correctly parses prefixes (i.e. English (American) currency)" do
+      tokenizer = NumberTokenizer.new(:locale => :en)
       got = tokenizer.tokens(:type => :currency)
-      expected = [{ :value => "¤ ", :type => :pattern },
+      expected = [{ :value => "¤", :type => :pattern },
                   { :value => "#,##0.00", :type => :pattern }]
       check_token_list(got, expected)
     end

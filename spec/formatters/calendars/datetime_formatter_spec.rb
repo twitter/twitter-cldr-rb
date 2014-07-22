@@ -398,23 +398,23 @@ describe DateTimeFormatter do
     end
 
     it "test: pattern G" do
-      @formatter.send(:era, Date.new(2012, 1, 1), 'G', 1).should == "AD"
-      @formatter.send(:era, Date.new(-1, 1, 1), 'G', 1).should == "BC"
+      @formatter.send(:era, Date.new(2012, 1, 1), 'G', 1).should == "CE"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'G', 1).should == "BCE"
     end
 
     it "test: pattern GG" do
-      @formatter.send(:era, Date.new(2012, 1, 1), 'GG', 2).should == "AD"
-      @formatter.send(:era, Date.new(-1, 1, 1), 'GG', 2).should == "BC"
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GG', 2).should == "CE"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GG', 2).should == "BCE"
     end
 
     it "test: pattern GGG" do
-      @formatter.send(:era, Date.new(2012, 1, 1), 'GGG', 3).should == "AD"
-      @formatter.send(:era, Date.new(-1, 1, 1), 'GGG', 3).should == "BC"
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GGG', 3).should == "CE"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GGG', 3).should == "BCE"
     end
 
     it "test: pattern GGGG" do
-      @formatter.send(:era, Date.new(2012, 1, 1), 'GGGG', 4).should == "Anno Domini"
-      @formatter.send(:era, Date.new(-1, 1, 1), 'GGGG', 4).should == "Before Christ"
+      @formatter.send(:era, Date.new(2012, 1, 1), 'GGGG', 4).should == "Common Era"
+      @formatter.send(:era, Date.new(-1, 1, 1), 'GGGG', 4).should == "Before Common Era"
     end
 
     it "should fall back if the calendar doesn't contain the appropriate era data" do

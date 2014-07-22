@@ -1,57 +1,62 @@
----
-:ur:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ¤#,##0.00
-        :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :long:
-            1000: 0 thousand
-            10000: 00 thousand
-            100000: 000 thousand
-            1000000: 0 million
-            10000000: 00 million
-            100000000: 000 million
-            1000000000: 0 billion
-            10000000000: 00 billion
-            100000000000: 000 billion
-            1000000000000: 0 trillion
-            10000000000000: 00 trillion
-            100000000000000: 000 trillion
-          :short:
-            1000: 0 ہزار
-            10000: 00 ہزار
-            100000: 0 لاکھ
-            1000000: 00 لاکھ
-            10000000: 0 کروڑ
-            100000000: 00 کروڑ
-            1000000000: 0 ارب
-            10000000000: 00 ارب
-            100000000000: 0 کھرب
-            1000000000000: 00 کھرب
-            10000000000000: 000 کھرب
-            100000000000000: 0000 کھرب
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: .
-      :exponential: E
-      :group: ! ','
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ! '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
-      :plus_sign: +
+--- 
+:ur: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "¤#,##0.00‎"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: "0 thousand"
+            10000: "00 thousand"
+            100000: "000 thousand"
+            1000000: "0 million"
+            10000000: "00 million"
+            100000000: "000 million"
+            1000000000: "0 billion"
+            10000000000: "00 billion"
+            100000000000: "000 billion"
+            1000000000000: "0 trillion"
+            10000000000000: "00 trillion"
+            100000000000000: "000 trillion"
+          :short: 
+            1000: "0 ہزار"
+            10000: "00 ہزار"
+            100000: "0 لاکھ"
+            1000000: "00 لاکھ"
+            10000000: "0 کروڑ"
+            100000000: "00 کروڑ"
+            1000000000: "0 ارب"
+            10000000000: "00 ارب"
+            100000000000: "0 کھرب"
+            1000000000000: "00 کھرب"
+            10000000000000: "00T"
+            100000000000000: "000T"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: "E"
+      :group: ","
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "‎-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "‎+"
+      :superscripting_exponent: "×"

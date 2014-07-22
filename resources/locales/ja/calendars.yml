@@ -1,175 +1,181 @@
----
-:ja:
-  :calendars:
-    :gregorian:
-      :additional_formats:
-        :EEEEd: d日EEEE
-        :EHm: E HH:mm
-        :EHms: E HH:mm:ss
-        :Ed: d日(E)
-        :Ehm: E h:mm a
-        :Ehms: E h:mm:ss a
-        :Gy: Gy年
-        :GyMMM: Gy年M月
-        :GyMMMEEEEd: Gy年M月d日EEEE
-        :GyMMMEd: Gy年M月d日(E)
-        :GyMMMd: Gy年M月d日
-        :H: H時
-        :Hm: H:mm
-        :Hms: H:mm:ss
-        :M: M月
-        :MEEEEd: M/dEEEE
-        :MEd: M/d(E)
-        :MMM: M月
-        :MMMEEEEd: M月d日EEEE
-        :MMMEd: M月d日(E)
-        :MMMd: M月d日
-        :Md: M/d
-        :d: d日
-        :h: aK時
-        :hm: aK:mm
-        :hms: aK:mm:ss
-        :ms: mm:ss
-        :y: y年
-        :yM: y/M
-        :yMEEEEd: y/M/dEEEE
-        :yMEd: y/M/d(E)
-        :yMM: y/MM
-        :yMMM: y年M月
-        :yMMMEEEEd: y年M月d日EEEE
-        :yMMMEd: y年M月d日(E)
-        :yMMMd: y年M月d日
-        :yMd: y/M/d
-        :yQQQ: y/QQQ
-        :yQQQQ: yQQQQ
-      :days:
-        :format:
-          :abbreviated:
-            :fri: 金
-            :mon: 月
-            :sat: 土
-            :sun: 日
-            :thu: 木
-            :tue: 火
-            :wed: 水
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short:
-            :fri: 金
-            :mon: 月
-            :sat: 土
-            :sun: 日
-            :thu: 木
-            :tue: 火
-            :wed: 水
-          :wide:
-            :fri: 金曜日
-            :mon: 月曜日
-            :sat: 土曜日
-            :sun: 日曜日
-            :thu: 木曜日
-            :tue: 火曜日
-            :wed: 水曜日
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
-          :narrow:
-            :fri: 金
-            :mon: 月
-            :sat: 土
-            :sun: 日
-            :thu: 木
-            :tue: 火
-            :wed: 水
-          :short:
-            :fri: 金
-            :mon: 月
-            :sat: 土
-            :sun: 日
-            :thu: 木
-            :tue: 火
-            :wed: 水
-          :wide: :calendars.gregorian.days.format.wide
-      :eras:
-        :abbr:
-          0: 紀元前
-          1: 西暦
-        :name:
-          0: 紀元前
-          1: 西暦
-        :narrow:
-          0: BC
-          1: AD
-      :fields:
-        :day: 日
-        :dayperiod: 午前/午後
-        :era: 時代
-        :hour: 時
-        :minute: 分
-        :month: 月
-        :second: 秒
-        :week: 週
-        :weekday: 曜日
-        :year: 年
-        :zone: タイムゾーン
-      :formats:
-        :date:
-          :full:
-            :pattern: y年M月d日EEEE
-          :long:
-            :pattern: y年M月d日
-          :medium:
-            :pattern: y/MM/dd
-          :short:
-            :pattern: y/MM/dd
-        :datetime:
-          :full:
-            :pattern: ! '{{date}} {{time}}'
-          :long:
-            :pattern: ! '{{date}} {{time}}'
-          :medium:
-            :pattern: ! '{{date}} {{time}}'
-          :short:
-            :pattern: ! '{{date}} {{time}}'
-        :time:
-          :full:
-            :pattern: H時mm分ss秒 zzzz
-          :long:
-            :pattern: H:mm:ss z
-          :medium:
-            :pattern: H:mm:ss
-          :short:
-            :pattern: H:mm
-      :months:
-        :format:
-          :abbreviated:
-            1: Jan
-            10: Oct
-            11: Nov
-            12: Dec
-            2: Feb
-            3: Mar
-            4: Apr
-            5: May
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
-          :wide:
-            1: 1月
-            10: 10月
-            11: 11月
-            12: 12月
-            2: 2月
-            3: 3月
-            4: 4月
-            5: 5月
-            6: 6月
-            7: 7月
-            8: 8月
-            9: 9月
-        :stand-alone:
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
-          :narrow:
+--- 
+:ja: 
+  :calendars: 
+    :gregorian: 
+      :additional_formats: 
+        :EEEEd: "d日EEEE"
+        :EHm: "HH 時 mm 分 (E)"
+        :EHms: "HH 時 mm 分 ss 秒 (E)"
+        :Ed: "d日(E)"
+        :Ehm: "a K 時 mm 分 (E)"
+        :Ehms: "a K 時 mm 分 ss 秒 (E)"
+        :Gy: "Gy年"
+        :GyMMM: "Gy年M月"
+        :GyMMMEEEEd: "Gy年M月d日EEEE"
+        :GyMMMEd: "Gy年M月d日(E)"
+        :GyMMMd: "Gy年M月d日"
+        :H: "H時"
+        :Hm: "H:mm"
+        :Hms: "H:mm:ss"
+        :M: "M月"
+        :MEEEEd: "M/dEEEE"
+        :MEd: "M/d(E)"
+        :MMM: "M月"
+        :MMMEEEEd: "M月d日EEEE"
+        :MMMEd: "M月d日(E)"
+        :MMMd: "M月d日"
+        :Md: "M/d"
+        :d: "d日"
+        :h: "aK時"
+        :hm: "aK:mm"
+        :hms: "aK:mm:ss"
+        :ms: "mm:ss"
+        ? !ruby/symbol "y"
+        : "y年"
+        :yM: "y/M"
+        :yMEEEEd: "y/M/dEEEE"
+        :yMEd: "y/M/d(E)"
+        :yMM: "y/MM"
+        :yMMM: "y年M月"
+        :yMMMEEEEd: "y年M月d日EEEE"
+        :yMMMEd: "y年M月d日(E)"
+        :yMMMd: "y年M月d日"
+        :yMd: "y/M/d"
+        :yQQQ: "y/QQQ"
+        :yQQQQ: "yQQQQ"
+      :days: 
+        :format: 
+          :abbreviated: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :narrow: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :short: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :wide: 
+            :fri: "金曜日"
+            :mon: "月曜日"
+            :sat: "土曜日"
+            :sun: "日曜日"
+            :thu: "木曜日"
+            :tue: "火曜日"
+            :wed: "水曜日"
+        :stand-alone: 
+          :abbreviated: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :narrow: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :short: 
+            :fri: "金"
+            :mon: "月"
+            :sat: "土"
+            :sun: "日"
+            :thu: "木"
+            :tue: "火"
+            :wed: "水"
+          :wide: 
+            :fri: "金曜日"
+            :mon: "月曜日"
+            :sat: "土曜日"
+            :sun: "日曜日"
+            :thu: "木曜日"
+            :tue: "火曜日"
+            :wed: "水曜日"
+      :eras: 
+        :abbr: 
+          0: "西暦紀元前"
+          1: "西暦"
+        :name: 
+          0: "西暦紀元前"
+          1: "西暦"
+        :narrow: 
+          0: "BCE"
+          1: "CE"
+      :fields: 
+        :day: "日"
+        :dayperiod: "午前/午後"
+        :era: "時代"
+        :hour: "時"
+        :minute: "分"
+        :month: "月"
+        :second: "秒"
+        :week: "週"
+        :weekday: "曜日"
+        :year: "年"
+        :zone: "タイムゾーン"
+      :formats: 
+        :date: 
+          :full: 
+            :pattern: "y年M月d日EEEE"
+          :long: 
+            :pattern: "y年M月d日"
+          :medium: 
+            :pattern: "y/MM/dd"
+          :short: 
+            :pattern: "y/MM/dd"
+        :datetime: 
+          :full: 
+            :pattern: "{{date}} {{time}}"
+          :long: 
+            :pattern: "{{date}} {{time}}"
+          :medium: 
+            :pattern: "{{date}} {{time}}"
+          :short: 
+            :pattern: "{{date}} {{time}}"
+        :time: 
+          :full: 
+            :pattern: "H時mm分ss秒 zzzz"
+          :long: 
+            :pattern: "H:mm:ss z"
+          :medium: 
+            :pattern: "H:mm:ss"
+          :short: 
+            :pattern: "H:mm"
+      :months: 
+        :format: 
+          :abbreviated: 
+            1: "1月"
+            10: "10月"
+            11: "11月"
+            12: "12月"
+            2: "2月"
+            3: "3月"
+            4: "4月"
+            5: "5月"
+            6: "6月"
+            7: "7月"
+            8: "8月"
+            9: "9月"
+          :narrow: 
             1: 1
             10: 10
             11: 11
@@ -182,48 +188,104 @@
             7: 7
             8: 8
             9: 9
-          :wide: :calendars.gregorian.months.format.wide
-      :periods:
-        :format:
+          :wide: 
+            1: "1月"
+            10: "10月"
+            11: "11月"
+            12: "12月"
+            2: "2月"
+            3: "3月"
+            4: "4月"
+            5: "5月"
+            6: "6月"
+            7: "7月"
+            8: "8月"
+            9: "9月"
+        :stand-alone: 
+          :abbreviated: 
+            1: "1月"
+            10: "10月"
+            11: "11月"
+            12: "12月"
+            2: "2月"
+            3: "3月"
+            4: "4月"
+            5: "5月"
+            6: "6月"
+            7: "7月"
+            8: "8月"
+            9: "9月"
+          :narrow: 
+            1: 1
+            10: 10
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
+          :wide: 
+            1: "1月"
+            10: "10月"
+            11: "11月"
+            12: "12月"
+            2: "2月"
+            3: "3月"
+            4: "4月"
+            5: "5月"
+            6: "6月"
+            7: "7月"
+            8: "8月"
+            9: "9月"
+      :periods: 
+        :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow:
-            :am: a
-            :noon: n
-            :pm: p
-          :wide:
-            :am: 午前
-            :noon: 正午
-            :pm: 午後
-            :variant:
-              :am: a.m.
-              :pm: p.m.
+          :narrow: 
+            :am: "午前"
+            :noon: "正午"
+            :pm: "午後"
+          :wide: 
+            :am: "午前"
+            :noon: "正午"
+            :pm: "午後"
+            :variant: 
+              :am: "a.m."
+              :pm: "p.m."
         :stand-alone: {}
-      :quarters:
-        :format:
-          :abbreviated:
-            1: 1Q
-            2: 2Q
-            3: 3Q
-            4: 4Q
-          :narrow:
+      :quarters: 
+        :format: 
+          :abbreviated: 
+            1: "Q1"
+            2: "Q2"
+            3: "Q3"
+            4: "Q4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide:
-            1: 第1四半期
-            2: 第2四半期
-            3: 第3四半期
-            4: 第4四半期
-        :stand-alone:
-          :abbreviated:
-            1: Q1
-            2: Q2
-            3: Q3
-            4: Q4
-          :narrow:
+          :wide: 
+            1: "第1四半期"
+            2: "第2四半期"
+            3: "第3四半期"
+            4: "第4四半期"
+        :stand-alone: 
+          :abbreviated: 
+            1: "Q1"
+            2: "Q2"
+            3: "Q3"
+            4: "Q4"
+          :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide: 
+            1: "第1四半期"
+            2: "第2四半期"
+            3: "第3四半期"
+            4: "第4四半期"

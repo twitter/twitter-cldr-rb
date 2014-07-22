@@ -1,0 +1,206 @@
+--- 
+:fi: 
+  :rbnf: 
+    :grouping: 
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: "miinus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,###0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "=%spellout-numbering=;"
+                :value: 0
+            :type: "spellout-numbering-year"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal=;"
+                :value: 0
+            :type: "spellout-numbering"
+          - 
+            :rules: 
+              - 
+                :rule: "miinus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< pilkku >>;"
+                :value: "x.x"
+              - 
+                :rule: "nolla;"
+                :value: 0
+              - 
+                :rule: "yksi;"
+                :value: 1
+              - 
+                :rule: "kaksi;"
+                :value: 2
+              - 
+                :rule: "kolme;"
+                :value: 3
+              - 
+                :rule: "neljä;"
+                :value: 4
+              - 
+                :rule: "viisi;"
+                :value: 5
+              - 
+                :rule: "kuusi;"
+                :value: 6
+              - 
+                :rule: "seitsemän;"
+                :value: 7
+              - 
+                :rule: "kahdeksan;"
+                :value: 8
+              - 
+                :rule: "yhdeksän;"
+                :value: 9
+              - 
+                :rule: "kymmenen;"
+                :value: 10
+              - 
+                :rule: ">>toista;"
+                :value: 11
+              - 
+                :rule: "<<kymmentä[­>>];"
+                :value: 20
+              - 
+                :rule: "sata[­>>];"
+                :value: 100
+              - 
+                :rule: "<<­sataa[­>>];"
+                :value: 200
+              - 
+                :rule: "tuhat[­>>];"
+                :value: 1000
+              - 
+                :rule: "<<­tuhatta[­>>];"
+                :value: 2000
+              - 
+                :rule: "<< miljoona[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<< miljoonaa[ >>];"
+                :value: 2000000
+              - 
+                :rule: "<< miljardi[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<< miljardia[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "<< biljoona[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<< biljoonaa[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-cardinal"
+          - 
+            :access: "private"
+            :rules: 
+              - 
+                :rule: ";"
+                :value: 0
+              - 
+                :rule: "kahdes;"
+                :value: 2
+              - 
+                :rule: "=%spellout-ordinal=;"
+                :value: 3
+            :type: "spellout-ordinal-larger"
+          - 
+            :rules: 
+              - 
+                :rule: "miinus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: "x.x"
+              - 
+                :rule: "nolla;"
+                :value: 0
+              - 
+                :rule: "ensimmäinen;"
+                :value: 1
+              - 
+                :rule: "toinen;"
+                :value: 2
+              - 
+                :rule: "kolmas;"
+                :value: 3
+              - 
+                :rule: "neljäs;"
+                :value: 4
+              - 
+                :rule: "viides;"
+                :value: 5
+              - 
+                :rule: "kuudes;"
+                :value: 6
+              - 
+                :rule: "seitsemäs;"
+                :value: 7
+              - 
+                :rule: "kahdeksas;"
+                :value: 8
+              - 
+                :rule: "yhdeksäs;"
+                :value: 9
+              - 
+                :rule: "kymmenes;"
+                :value: 10
+              - 
+                :rule: "yhdestoista;"
+                :value: 11
+              - 
+                :rule: "kahdestoista;"
+                :value: 12
+              - 
+                :rule: ">>toista;"
+                :value: 13
+              - 
+                :rule: "<%%spellout-ordinal-larger<kymmenes[>>];"
+                :value: 20
+              - 
+                :rule: "sadas[>>];"
+                :value: 100
+              - 
+                :rule: "<%%spellout-ordinal-larger<sadas[>>];"
+                :value: 200
+              - 
+                :rule: "tuhannes[>>];"
+                :value: 1000
+              - 
+                :rule: "<%%spellout-ordinal-larger<tuhannes[>>];"
+                :value: 2000
+              - 
+                :rule: "miljoonas[>>];"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-ordinal-larger< miljoonas[>>];"
+                :value: 2000000
+              - 
+                :rule: "miljardis[>>];"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-ordinal-larger< miljardis[>>];"
+                :value: 2000000000
+              - 
+                :rule: "biljoonas[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-ordinal-larger< biljoonas[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: "spellout-ordinal"
+        :type: "SpelloutRules"

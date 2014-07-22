@@ -1,7 +1,23 @@
----
-:cs:
-  :lists:
-    2: ! '{0} a {1}'
-    :end: ! '{0} a {1}'
-    :middle: ! '{0}, {1}'
-    :start: ! '{0}, {1}'
+--- 
+:cs: 
+  :lists: 
+    :default: 
+      2: "{0} a {1}"
+      :end: "{0} a {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :unit: 
+      2: "{0} a {1}"
+      :end: "{0} a {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :unit-narrow: 
+      2: "{0} {1}"
+      :end: "{0} {1}"
+      :middle: "{0} {1}"
+      :start: "{0} {1}"
+    :unit-short: 
+      2: "{0}, {1}"
+      :end: "{0} a {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"

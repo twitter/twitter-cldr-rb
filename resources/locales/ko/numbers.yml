@@ -1,57 +1,62 @@
----
-:ko:
-  :numbers:
-    :formats:
-      :currency:
-        :patterns:
-          :default: ¤#,##0.00;(¤#,##0.00)
-        :unit:
-          :one: ! '{0} {1}'
-          :other: ! '{0} {1}'
-      :decimal:
-        :patterns:
-          :default: ! '#,##0.###'
-          :long:
+--- 
+:ko: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "¤#,##0.00;(¤#,##0.00)"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
             1000: 0
-            10000: 0만
-            100000: 00만
-            1000000: 000만
-            10000000: 0000만
-            100000000: 0억
-            1000000000: 00억
-            10000000000: 000억
-            100000000000: 0000억
-            1000000000000: 0조
-            10000000000000: 00조
-            100000000000000: 000조
-          :short:
+            10000: "0만"
+            100000: "00만"
+            1000000: "000만"
+            10000000: "0000만"
+            100000000: "0억"
+            1000000000: "00억"
+            10000000000: "000억"
+            100000000000: "0000억"
+            1000000000000: "0조"
+            10000000000000: "00조"
+            100000000000000: "000조"
+          :short: 
             1000: 0
-            10000: 0만
-            100000: 00만
-            1000000: 000만
-            10000000: 0000만
-            100000000: 0억
-            1000000000: 00억
-            10000000000: 000억
-            100000000000: 0000억
-            1000000000000: 0조
-            10000000000000: 00조
-            100000000000000: 000조
-      :percent:
-        :patterns:
-          :default: ! '#,##0%'
-      :scientific:
-        :patterns:
-          :default: ! '#E0'
-    :symbols:
-      :alias: ''
-      :decimal: .
-      :exponential: E
-      :group: ! ','
-      :infinity: ∞
-      :list: ;
-      :minus_sign: ! '-'
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: ! '%'
-      :plus_sign: +
+            10000: "0만"
+            100000: "00만"
+            1000000: "000만"
+            10000000: "0000만"
+            100000000: "0억"
+            1000000000: "00억"
+            10000000000: "000억"
+            100000000000: "0000억"
+            1000000000000: "0조"
+            10000000000000: "00조"
+            100000000000000: "000조"
+      :percent: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: "latn"
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: "E"
+      :group: ","
+      :infinity: "∞"
+      :list: ";"
+      :minus_sign: "-"
+      :nan: "NaN"
+      :per_mille: "‰"
+      :percent_sign: "%"
+      :plus_sign: "+"
+      :superscripting_exponent: "×"

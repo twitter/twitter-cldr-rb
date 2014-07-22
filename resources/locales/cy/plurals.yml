@@ -1,4 +1,5 @@
 ---
-:cy: ! '{ :cy => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few, :many,
-  :other], :rule => lambda { |n| n == 0 ? :zero : n == 1 ? :one : n == 2 ? :two :
-  n == 3 ? :few : n == 6 ? :many : :other } } } } }'
+:cy: ! '{ :''cy'' => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few,
+  :many, :other], :rule => lambda { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0]
+  == "-" ? m[1,m.length] : m); n.to_f == 0 ? :zero : n.to_f == 1 ? :one : n.to_f ==
+  2 ? :two : n.to_f == 3 ? :few : n.to_f == 6 ? :many : :other } } } } }'

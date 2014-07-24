@@ -47,7 +47,12 @@ module TwitterCldr
       end
 
       def import_components
-        Cldr::Export.export(:locales => TwitterCldr.supported_locales, :components => COMPONENTS, :target => File.join(@output_path, 'locales')) do |component, locale, path|
+        Cldr::Export.export(
+          :locales    => TwitterCldr.supported_locales,
+          :components => COMPONENTS,
+          :target     => File.join(@output_path, 'locales'),
+          :merge      => true
+        ) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)

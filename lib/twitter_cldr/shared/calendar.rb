@@ -86,6 +86,10 @@ module TwitterCldr
         get_order_for(TwitterCldr::DataReaders::DateTimeDataReader, options)
       end
 
+      def calendar_data
+        @calendar_data ||= TwitterCldr::Utils.traverse_hash(resource, [locale, :calendars, calendar_type])
+      end
+
       private
 
       def cache_field_data(field, names_form = nil, format = nil)
@@ -152,10 +156,6 @@ module TwitterCldr
 
       def redirect_regexp
         Regexp.new("^calendars\.#{calendar_type}\.(.*)$")
-      end
-
-      def calendar_data
-        @calendar_data ||= TwitterCldr::Utils.traverse_hash(resource, [locale, :calendars, calendar_type])
       end
 
       def resource

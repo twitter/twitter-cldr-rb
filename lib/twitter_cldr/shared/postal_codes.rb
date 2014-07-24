@@ -19,13 +19,11 @@ module TwitterCldr
         def for_territory(territory)
           key = territory.to_s.downcase.to_sym
           if res = resource[key]
-            territory_cache[key] ||= begin
-              new(
-                territory,
-                res[:regex],
-                TwitterCldr::Utils::RegexpAst.load(res[:ast])
-              )
-            end
+            territory_cache[key] ||= new(
+              territory,
+              res[:regex],
+              TwitterCldr::Utils::RegexpAst.load(res[:ast])
+            )
           else
             raise InvalidTerritoryError, "invalid territory"
           end

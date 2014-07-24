@@ -10,7 +10,7 @@ end
 
 group :development do
   gem 'nokogiri'
-  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', :github => 'kl-7/ruby-cldr', :branch => 'kl_old_plurals_format'
 end
 
 group :test do

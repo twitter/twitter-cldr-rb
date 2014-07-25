@@ -17,11 +17,13 @@ module TwitterCldr
         :additional => [:additional_formats]
       }
 
-      attr_reader :calendar_type, :type, :additional_format
-
-      def self.types
-        TYPE_PATHS.keys
+      class << self
+        def types
+          TYPE_PATHS.keys
+        end
       end
+
+      attr_reader :calendar_type, :type, :additional_format
 
       def initialize(locale, options = {})
         super(locale)

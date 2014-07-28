@@ -34,6 +34,10 @@ module TwitterCldr
 
       attr_reader :type, :format
 
+      def self.types
+        TYPE_PATHS.keys
+      end
+
       def initialize(locale, options = {})
         super(locale)
         @type = options[:type] || DEFAULT_TYPE

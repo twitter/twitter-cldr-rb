@@ -17,7 +17,7 @@ module TwitterCldr
 
       class << self
         def types
-          TwitterCldr::DataReaders::NumberDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::NumberDataReader.types
         end
       end
 

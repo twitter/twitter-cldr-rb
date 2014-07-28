@@ -13,7 +13,7 @@ module TwitterCldr
 
       class << self
         def types
-          TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::CalendarDataReader.types
         end
       end
 

@@ -100,7 +100,6 @@ module TwitterCldr
         def rule_set_from_resource(rule_set_data)
           RuleSet.new(
             rule_set_data[:rules].map do |rule|
-              binding.pry unless rule[:rule].is_a?(String)
               Rule.new(rule[:value], rule[:rule], rule[:radix])
             end,
             rule_set_data[:type],

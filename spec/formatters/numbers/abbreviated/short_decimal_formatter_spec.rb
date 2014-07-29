@@ -67,4 +67,13 @@ describe ShortDecimalFormatter do
       expect(format_number(number)).to match_normalized("9300万")
     end
   end
+
+  context "with Russian locale" do
+    let(:locale) { :ru }
+
+    it "formats a number with a literal period" do
+      number = 1_000
+      expect(format_number(number)).to match_normalized("1 тыс.")
+    end
+  end
 end

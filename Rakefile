@@ -73,7 +73,7 @@ task :update do
     puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
 
     [
-      "update:locales_resources",      # per locale
+      "update:locales_resources",      # per locale (+ units resources using different CLDR and ruby-cldr, see LocalesResourcesImporter)
       "update:unicode_data",
       "update:unicode_properties",
       "update:generate_casefolder",    # must come after unicode data

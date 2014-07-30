@@ -63,7 +63,7 @@ end
 
 task :update do
   tasks = if RUBY_PLATFORM == 'java'
-    # these should be run using JRuby 1.7 in 1.9 mode and CLDR v23 (v24 collation rules syntax is not supported yet)
+    # these should be run using JRuby 1.7 in 1.9 mode, ICU4J v52.1, and CLDR v23.1 (v24 collation rules syntax is not supported yet)
     [
       "update:tailoring_data",  # per locale
       "update:collation_tries", # per locale, must come after update:tailoring_data
@@ -96,7 +96,7 @@ end
 # TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
 
 namespace :update do
-  ICU_JAR = './vendor/icu4j-51_2.jar'
+  ICU_JAR = './vendor/icu4j-52_1.jar'
 
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|

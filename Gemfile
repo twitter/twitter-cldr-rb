@@ -26,7 +26,9 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :tag => 'v0.1.1'
+  # gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :tag => 'v0.1.1'
+  # TODO: revert once https://github.com/svenfuchs/ruby-cldr/pull/31 is merged and new ruby-cldr is tagged/released
+  gem 'ruby-cldr', :github => 'kl-7/ruby-cldr', :branch => 'kl_regions'
 end
 
 group :test do

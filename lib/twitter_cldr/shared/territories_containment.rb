@@ -9,6 +9,8 @@ module TwitterCldr
 
       class << self
 
+        # Returns true if the first territory contains the second one. Returns false otherwise.
+        # Raises an ArgumentError exception if one of the territories is invalid.
         def contains(parent_code, child_code)
           validate_territory(parent_code)
           validate_territory(child_code)
@@ -26,19 +28,29 @@ module TwitterCldr
           false
         end
 
+        # Returns the immediate parent of the territory with the given code.
+        # Raises an ArgumentError exception if the territory code is invalid.
         def parent(territory_code)
-          parents_map.fetch(territory_code) do
-            raise unknown_territory_exception
-          end
+          validate_territory(territory_code)
+
+          parents_map[territory_code]
+        end
+
+        # Returns the immediate parent of the territory with the given code.
+        # Raises an ArgumentError exception if the territory code is invalid.
+        def children(territory_code)
+          validate_territory(territory_code)
+
+          containment_map[territory_code]
         end
 
         protected
 
         def validate_territory(territory_code)
-          raise unknown_territory_exception unless parents_map.include?(territory_code)
+          raise unknown_territory_exception(territory_code) unless parents_map.include?(territory_code)
         end
 
-        def unknown_territory_exception
+        def unknown_territory_exception(territory_code)
           ArgumentError.new("unknown territory code #{territory_code.inspect}")
         end
 
@@ -56,7 +68,7 @@ module TwitterCldr
         end
 
         def containment_map
-          @containment_map ||= get_resource.inject({}) do |memo, (territory, children)|
+          @containment_map ||= get_resource.inject(Hash.new { |h, k| h[k] = [] }) do |memo, (territory, children)|
             memo[territory.to_s] = children[:contains].map(&:to_s)
             memo
           end

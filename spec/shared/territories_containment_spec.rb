@@ -22,6 +22,20 @@ describe TerritoriesContainment do
     end
   end
 
+  describe '.children' do
+    it 'returns the immediate children of the territory' do
+      expect(TerritoriesContainment.children('151')).to eq(%w[BG BY CZ HU MD PL RO RU SK SU UA])
+    end
+
+    it 'returns an empty array when given a bottom-level territory' do
+      expect(TerritoriesContainment.children('RU')).to eq([])
+    end
+
+    it 'raises an exception when given an invalid territory code' do
+      expect { TerritoriesContainment.children('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+    end
+  end
+
   describe '.contains' do
     it 'returns true if the first territory (immediately) contains the second one' do
       expect(TerritoriesContainment.contains('151', 'RU')).to be_true
@@ -47,8 +61,12 @@ describe TerritoriesContainment do
       expect(TerritoriesContainment.contains('RU', 'RU')).to be_false
     end
 
-    xit 'raises an exception is one of the territory codes is invalid'
-  end
+    it 'raises an exception is the first territory is invalid' do
+      expect { TerritoriesContainment.contains('UN', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+    end
 
-  xit 'works with lower-case territory codes'
+    it 'raises an exception is the second territory is invalid' do
+      expect { TerritoriesContainment.contains('RU', 'UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+    end
+  end
 end

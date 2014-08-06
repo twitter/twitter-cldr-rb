@@ -20,10 +20,10 @@ module TwitterCldr
           while child_code
             immediate_parent = parent(child_code)
 
-            if immediate_parent != parent_code
-              child_code = immediate_parent
-            else
+            if immediate_parent == parent_code
               return true
+            else
+              child_code = immediate_parent
             end
           end
 
@@ -46,6 +46,13 @@ module TwitterCldr
           containment_map[territory_code]
         end
 
+        def containment_map
+          @containment_map ||= get_resource.inject(Hash.new { |h, k| h[k] = [] }) do |memo, (territory, children)|
+            memo[territory.to_s] = children[:contains].map(&:to_s)
+            memo
+          end
+        end
+
         protected
 
         def validate_territory(territory_code)
@@ -65,13 +72,6 @@ module TwitterCldr
               memo[child] = territory
             end
 
-            memo
-          end
-        end
-
-        def containment_map
-          @containment_map ||= get_resource.inject(Hash.new { |h, k| h[k] = [] }) do |memo, (territory, children)|
-            memo[territory.to_s] = children[:contains].map(&:to_s)
             memo
           end
         end

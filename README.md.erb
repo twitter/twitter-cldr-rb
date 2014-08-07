@@ -529,7 +529,7 @@ Provides an API for determining territories containment as described [here](http
 
 ```ruby
 TwitterCldr::Shared::TerritoriesContainment.children('151') # <%= ellipsize(assert(TwitterCldr::Shared::TerritoriesContainment.children('151'), ["BG", "BY", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "SU", "UA"])) %>
-TwitterCldr::Shared::TerritoriesContainment.children('RU') # <%= assert(TwitterCldr::Shared::TerritoriesContainment.children('RU'), []) %>
+TwitterCldr::Shared::TerritoriesContainment.children('RU')  # <%= assert(TwitterCldr::Shared::TerritoriesContainment.children('RU'), []) %>
 
 TwitterCldr::Shared::TerritoriesContainment.parents('013') # <%= assert(TwitterCldr::Shared::TerritoriesContainment.parents('013'), ['003', '019', '419']) %>
 TwitterCldr::Shared::TerritoriesContainment.parents('001') # <%= assert(TwitterCldr::Shared::TerritoriesContainment.parents('001'), []) %>

@@ -472,7 +472,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["99276", "10399-5412", "57502", "23950", "78566"]
+postal_code.sample(5)  # ["93733-7601", "65796-6586", "93519", "46536", "53158"]
 ```
 
 ### Phone Codes
@@ -561,7 +561,7 @@ Provides an API for determining territories containment as described [here](http
 
 ```ruby
 TwitterCldr::Shared::TerritoriesContainment.children('151') # ["BG", "BY", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "SU", "UA", ... ]
-TwitterCldr::Shared::TerritoriesContainment.children('RU') # []
+TwitterCldr::Shared::TerritoriesContainment.children('RU')  # []
 
 TwitterCldr::Shared::TerritoriesContainment.parents('013') # ["003", "019", "419"]
 TwitterCldr::Shared::TerritoriesContainment.parents('001') # []

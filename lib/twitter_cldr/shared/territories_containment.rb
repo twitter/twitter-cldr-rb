@@ -17,22 +17,15 @@ module TwitterCldr
           validate_territory(parent_code)
           validate_territory(child_code)
 
-          while child_code
-            immediate_parent = parent(child_code)
+          immediate_children = children(parent_code)
 
-            if immediate_parent == parent_code
-              return true
-            else
-              child_code = immediate_parent
-            end
-          end
-
-          false
+          immediate_children.include?(child_code) ||
+            immediate_children.any? { |immediate_child| contains(immediate_child, child_code) }
         end
 
         # Returns the immediate parent of the territory with the given code.
         # Raises an ArgumentError exception if the territory code is invalid.
-        def parent(territory_code)
+        def parents(territory_code)
           validate_territory(territory_code)
 
           parents_map[territory_code]
@@ -65,11 +58,12 @@ module TwitterCldr
 
         def parents_map
           @parents_map ||= containment_map.inject({}) do |memo, (territory, children)|
-            # make sure even the top-level territories are present in the map (with 'nil' as their parent)
-            memo[territory] = nil unless memo.include?(territory)
+            # make sure that the top-level territories are explicitly present in the map (with [] as their parent)
+            memo[territory] = [] unless memo.include?(territory)
 
             children.each do |child|
-              memo[child] = territory
+              memo[child] = [] unless memo.include?(child)
+              memo[child] << territory # do not override
             end
 
             memo

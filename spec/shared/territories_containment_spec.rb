@@ -8,17 +8,21 @@ require 'spec_helper'
 include TwitterCldr::Shared
 
 describe TerritoriesContainment do
-  describe '.parent' do
+  describe '.parents' do
     it 'returns the parent territory' do
-      expect(TerritoriesContainment.parent('RU')).to eq('151')
+      expect(TerritoriesContainment.parents('RU')).to eq(['151'])
+    end
+
+    it 'returns multiple parents' do
+      expect(TerritoriesContainment.parents('013')).to match_array(%w[003 019 419])
     end
 
     it 'returns nil when given a top-level territory' do
-      expect(TerritoriesContainment.parent('001')).to eq(nil)
+      expect(TerritoriesContainment.parents('001')).to eq([])
     end
 
     it 'raises an exception when given an invalid territory code' do
-      expect { TerritoriesContainment.parent('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { TerritoriesContainment.parents('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
     end
   end
 
@@ -47,6 +51,11 @@ describe TerritoriesContainment do
 
     it 'returns true if the first territory (non-immediately) contains the second one' do
       expect(TerritoriesContainment.contains('419', 'BZ')).to be_true
+    end
+
+    it 'returns true if a territory is part of multiple parent territories' do
+      expect(TerritoriesContainment.contains('019', '013')).to be_true
+      expect(TerritoriesContainment.contains('419', '013')).to be_true
     end
 
     it 'returns true if the first territory is a top-level territory' do

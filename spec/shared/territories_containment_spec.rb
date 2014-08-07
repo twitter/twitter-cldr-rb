@@ -17,7 +17,7 @@ describe TerritoriesContainment do
       expect(TerritoriesContainment.parents('013')).to match_array(%w[003 019 419])
     end
 
-    it 'returns nil when given a top-level territory' do
+    it 'returns [] when given a top-level territory' do
       expect(TerritoriesContainment.parents('001')).to eq([])
     end
 

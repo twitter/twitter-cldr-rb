@@ -6,7 +6,6 @@
 module TwitterCldr
   module Shared
 
-    # TODO: update README (here and in twitter-cldr-js)
     module TerritoriesContainment
 
       class << self

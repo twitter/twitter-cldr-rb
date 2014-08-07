@@ -555,7 +555,7 @@ TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
 
-### Territories containment
+### Territories Containment
 
 Provides an API for determining territories containment as described [here](http://www.unicode.org/cldr/charts/25/supplemental/territory_containment_un_m_49.html):
 

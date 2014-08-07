@@ -472,7 +472,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["15175", "65142", "23110", "81366", "81295-6386"]
+postal_code.sample(5)  # ["99276", "10399-5412", "57502", "23950", "78566"]
 ```
 
 ### Phone Codes
@@ -554,6 +554,22 @@ TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
 ```
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
+
+### Territories containment
+
+Provides an API for determining territories containment as described [here](http://www.unicode.org/cldr/charts/25/supplemental/territory_containment_un_m_49.html):
+
+```ruby
+TwitterCldr::Shared::TerritoriesContainment.children('151') # ["BG", "BY", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "SU", "UA", ... ]
+TwitterCldr::Shared::TerritoriesContainment.children('RU') # []
+
+TwitterCldr::Shared::TerritoriesContainment.parents('013') # ["003", "019", "419"]
+TwitterCldr::Shared::TerritoriesContainment.parents('001') # []
+
+TwitterCldr::Shared::TerritoriesContainment.contains('151', 'RU') # true
+TwitterCldr::Shared::TerritoriesContainment.contains('419', 'BZ') # true
+TwitterCldr::Shared::TerritoriesContainment.contains('419', 'FR') # false
+```
 
 ### Unicode Regular Expressions
 

@@ -12,14 +12,14 @@ module TwitterCldr
 
         # Returns true if the first territory contains the second one. Returns false otherwise.
         # Raises an ArgumentError exception if one of the territories is invalid.
-        def contains(parent_code, child_code)
+        def contains?(parent_code, child_code)
           validate_territory(parent_code)
           validate_territory(child_code)
 
           immediate_children = children(parent_code)
 
           immediate_children.include?(child_code) ||
-            immediate_children.any? { |immediate_child| contains(immediate_child, child_code) }
+            immediate_children.any? { |immediate_child| contains?(immediate_child, child_code) }
         end
 
         # Returns the immediate parent of the territory with the given code.

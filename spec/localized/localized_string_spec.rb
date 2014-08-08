@@ -242,4 +242,13 @@ describe LocalizedString do
     end
   end
 
+  describe '#to_territory' do
+    let(:code) { 'JP' }
+    let(:territory) { code.localize.to_territory }
+
+    it 'returns a territory' do
+      expect(territory).to be_a(TwitterCldr::Shared::Territory)
+      expect(territory.code).to eq(code)
+    end
+  end
 end

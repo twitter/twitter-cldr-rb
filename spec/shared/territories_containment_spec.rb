@@ -44,42 +44,42 @@ describe TerritoriesContainment do
     end
   end
 
-  describe '.contains' do
+  describe '.contains?' do
     it 'returns true if the first territory (immediately) contains the second one' do
-      expect(TerritoriesContainment.contains('151', 'RU')).to be_true
+      expect(TerritoriesContainment.contains?('151', 'RU')).to be_true
     end
 
     it 'returns true if the first territory (non-immediately) contains the second one' do
-      expect(TerritoriesContainment.contains('419', 'BZ')).to be_true
+      expect(TerritoriesContainment.contains?('419', 'BZ')).to be_true
     end
 
     it 'returns true if a territory is part of multiple parent territories' do
-      expect(TerritoriesContainment.contains('019', '013')).to be_true
-      expect(TerritoriesContainment.contains('419', '013')).to be_true
+      expect(TerritoriesContainment.contains?('019', '013')).to be_true
+      expect(TerritoriesContainment.contains?('419', '013')).to be_true
     end
 
     it 'returns true if the first territory is a top-level territory' do
-      expect(TerritoriesContainment.contains('001', '145')).to be_true
+      expect(TerritoriesContainment.contains?('001', '145')).to be_true
     end
 
     it 'returns false if the first territory does not contain the second one' do
-      expect(TerritoriesContainment.contains('419', 'RU')).to be_false
+      expect(TerritoriesContainment.contains?('419', 'RU')).to be_false
     end
 
     it 'returns false if the second territory is a top-level territory' do
-      expect(TerritoriesContainment.contains('419', '001')).to be_false
+      expect(TerritoriesContainment.contains?('419', '001')).to be_false
     end
 
     it 'returns false if both territories are identical' do
-      expect(TerritoriesContainment.contains('RU', 'RU')).to be_false
+      expect(TerritoriesContainment.contains?('RU', 'RU')).to be_false
     end
 
     it 'raises an exception is the first territory is invalid' do
-      expect { TerritoriesContainment.contains('UN', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { TerritoriesContainment.contains?('UN', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
     end
 
     it 'raises an exception is the second territory is invalid' do
-      expect { TerritoriesContainment.contains('RU', 'UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { TerritoriesContainment.contains?('RU', 'UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
     end
   end
 end

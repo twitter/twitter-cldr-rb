@@ -566,9 +566,16 @@ TwitterCldr::Shared::TerritoriesContainment.children('RU')  # []
 TwitterCldr::Shared::TerritoriesContainment.parents('013') # ["003", "019", "419"]
 TwitterCldr::Shared::TerritoriesContainment.parents('001') # []
 
-TwitterCldr::Shared::TerritoriesContainment.contains('151', 'RU') # true
-TwitterCldr::Shared::TerritoriesContainment.contains('419', 'BZ') # true
-TwitterCldr::Shared::TerritoriesContainment.contains('419', 'FR') # false
+TwitterCldr::Shared::TerritoriesContainment.contains?('151', 'RU') # true
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'BZ') # true
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'FR') # false
+```
+
+You can also use `Territory` class and `to_territory` method in `LocalizedString` class to access these features:
+
+```ruby
+TwitterCldr::Shared::Territory.new("013").parents # ["003", "019", "419"]
+'419'.localize.to_territory.contains?('BZ') # true
 ```
 
 ### Unicode Regular Expressions

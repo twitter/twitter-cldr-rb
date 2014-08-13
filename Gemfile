@@ -26,7 +26,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :tag => 'v0.1.1'
+  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :ref => 'cddf44b885'
 end
 
 group :test do

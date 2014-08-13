@@ -211,6 +211,7 @@ namespace :update do
     ).import(TwitterCldr.supported_locales)
   end
 
+  desc 'Import segments exceptions'
   task :segment_exceptions do
     TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
       './vendor/uli/segments',
@@ -218,6 +219,7 @@ namespace :update do
     ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
   end
 
+  desc 'Update README'
   task :readme do |_, args|
     renderer = TwitterCldr::Resources::ReadmeRenderer.new(
       File.read("./README.md.erb")

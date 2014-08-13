@@ -112,6 +112,10 @@ module TwitterCldr
         to_bidi(options).reorder_visually!.to_s
       end
 
+      def to_territory
+        TwitterCldr::Shared::Territory.new(@base_obj)
+      end
+
       protected
 
       def formatter

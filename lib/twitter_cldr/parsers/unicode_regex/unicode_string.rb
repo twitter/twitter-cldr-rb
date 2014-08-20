@@ -32,7 +32,7 @@ module TwitterCldr
 
         def to_regexp_str
           cps = codepoints.is_a?(Array) ? codepoints : [codepoints]
-          array_to_regex(codepoints)
+          array_to_regex(cps)
         end
 
       end

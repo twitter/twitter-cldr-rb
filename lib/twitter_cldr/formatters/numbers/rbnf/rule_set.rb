@@ -96,7 +96,7 @@ module TwitterCldr
             # "numerator" is the numerator of the fraction is the
             # denominator is the LCD.  The numerator if the the rule's
             # base value is the denomiator is "numerator" times the
-            # base value divided bythe LCD.  Here we check to see if
+            # base value divided by the LCD.  Here we check to see if
             # that's an integer, and if not, how close it is to being
             # an integer.
             temp_difference = numerator * BigDecimal.new(rules[i].base_value) % least_common_multiple

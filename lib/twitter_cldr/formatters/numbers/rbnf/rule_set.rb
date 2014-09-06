@@ -90,15 +90,15 @@ module TwitterCldr
 
           # for each rule, do the following...
           difference = 10 ** 30  # some absurdly large number
-          winner = 0;
+          winner = 0
 
           index.upto(rules.size - 1) do |i|
-            # "numerator" is the numerator of the fraction is the
-            # denominator is the LCD.  The numerator if the the rule's
-            # base value is the denomiator is "numerator" times the
-            # base value divided by the LCD.  Here we check to see if
-            # that's an integer, and if not, how close it is to being
-            # an integer.
+            # "numerator" is the numerator of the fraction, if the
+            # denominator is the LCD.  The numerator, if the rule's
+            # base value is the denomiator, is "numerator" times
+            # the base value divided by the LCD.  Here we check to
+            # see if that's an integer, and if not, how close it is
+            # to being an integer.
             temp_difference = numerator * BigDecimal.new(rules[i].base_value) % least_common_multiple
 
             # normalize the result of the above calculation: we want

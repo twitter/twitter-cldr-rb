@@ -6,11 +6,20 @@
 require 'spec_helper'
 
 include TwitterCldr::Formatters
+include TwitterCldr::Tokenizers
 
 describe DateTimeFormatter do
   before(:each) do
     data_reader = TwitterCldr::DataReaders::DateTimeDataReader.new(:de)
     @formatter = DateTimeFormatter.new(data_reader)
+  end
+
+  describe 'plaintext' do
+    it "removes single quotes around plaintext tokens" do
+      tokens = [Token.new(:value => "'at'", :type => 'plaintext')]
+      date = Date.new(2010, 1, 10)
+      expect(@formatter.format(tokens, date, {})).to eq("at")
+    end
   end
 
   describe "#day" do

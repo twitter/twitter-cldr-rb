@@ -11,7 +11,7 @@ describe LocalizedDateTime do
 
   let(:date_time) { DateTime.new(1987, 9, 20, 22, 5) }
 
-  describe '#initilize' do
+  describe '#initialize' do
     it 'sets calendar type' do
       expect(date_time.localize(:th, :calendar_type => :buddhist).calendar_type).to eq(:buddhist)
     end
@@ -39,6 +39,11 @@ describe LocalizedDateTime do
       date_time.localize(:th, :calendar_type => :buddhist).to_long_s
       date_time.localize(:th, :calendar_type => :buddhist).to_medium_s
       date_time.localize(:th, :calendar_type => :buddhist).to_short_s
+    end
+
+    it "should remove quotes around plaintext tokens" do
+      # notice there are no single quotes around the "at"
+      expect(date_time.localize(:en).to_long_s).to eq("September 20, 1987 at 10:05:00 PM UTC")
     end
   end
 

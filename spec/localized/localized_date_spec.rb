@@ -120,7 +120,14 @@ describe LocalizedDate do
     end
   end
 
-  describe 'formatters' do
+  describe "#to_additional_s" do
+    it "should format using additional patterns" do
+      date = date_time.localize(:en).to_date
+      expect(date.to_additional_s("yMMMd")).to eq("Sep 17, 2014")
+    end
+  end
+
+  describe "formatters" do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
         (LocalizedDate.types - [:additional]).each do |type|

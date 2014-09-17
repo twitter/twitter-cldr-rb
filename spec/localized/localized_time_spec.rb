@@ -65,6 +65,13 @@ describe LocalizedTime do
     end
   end
 
+  describe "#to_additional_s" do
+    it "should format using additional patterns" do
+      time = Time.local(2000, 5, 12, 22, 5)
+      expect(time.localize.to_additional_s("Hms")).to eq("05:05:00")
+    end
+  end
+
   describe "#with_timezone" do
     it "calculates the right time depending on the timezone" do
       time = Time.utc(2000, 5, 12, 22, 5).localize

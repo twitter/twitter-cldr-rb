@@ -46,11 +46,13 @@ module TwitterCldr
         timezone_info.utc_to_local(time.is_a?(DateTime) ? time.new_offset(0) : time.utc)
       end
 
-      def data_reader_for(type)
-        TwitterCldr::DataReaders::DateDataReader.new(locale, {
-          :calendar_type => calendar_type,
-          :type => type
-        })
+      def data_reader_for(type, options = {})
+        TwitterCldr::DataReaders::DateDataReader.new(
+          locale, options.merge({
+            :calendar_type => calendar_type,
+            :type => type
+          })
+        )
       end
 
     end

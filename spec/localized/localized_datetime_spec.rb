@@ -94,6 +94,12 @@ describe LocalizedDateTime do
     end
   end
 
+  describe "#to_additional_s" do
+    it "should format using additional patterns" do
+      expect(date_time.localize(:en).to_additional_s("EHms")).to eq("Sun 22:05:00")
+    end
+  end
+
   describe "#to_s" do
     it "uses the default format if no :format is given" do
       loc_date = date_time.localize

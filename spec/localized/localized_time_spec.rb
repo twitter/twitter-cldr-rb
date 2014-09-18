@@ -67,8 +67,8 @@ describe LocalizedTime do
 
   describe "#to_additional_s" do
     it "should format using additional patterns" do
-      time = Time.local(2000, 5, 12, 22, 5)
-      expect(time.localize(:es).to_additional_s("Hms")).to eq("5:05:00")
+      time = Time.utc(2000, 5, 12, 22, 5)
+      expect(time.localize(:es).to_additional_s("Hms")).to eq("22:05:00")
     end
   end
 

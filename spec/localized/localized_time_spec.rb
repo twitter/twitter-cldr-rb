@@ -21,7 +21,7 @@ describe LocalizedTime do
     it "should stringify with buddhist calendar" do
       # Ensure that buddhist calendar data is present in th locale.
       expect(TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist]).not_to(
-          be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
+        be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
       )
 
       #time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
@@ -68,7 +68,7 @@ describe LocalizedTime do
   describe "#to_additional_s" do
     it "should format using additional patterns" do
       time = Time.local(2000, 5, 12, 22, 5)
-      expect(time.localize.to_additional_s("Hms")).to eq("05:05:00")
+      expect(time.localize(:es).to_additional_s("Hms")).to eq("5:05:00")
     end
   end
 

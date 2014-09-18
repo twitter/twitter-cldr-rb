@@ -121,9 +121,11 @@ describe LocalizedDate do
   end
 
   describe "#to_additional_s" do
+    let(:date_time) { DateTime.new(2010, 7, 6, 12, 12, 30) }
+
     it "should format using additional patterns" do
       date = date_time.localize(:en).to_date
-      expect(date.to_additional_s("yMMMd")).to eq("Sep 17, 2014")
+      expect(date.to_additional_s("yMMMd")).to eq("Jul 6, 2010")
     end
   end
 

@@ -41,16 +41,32 @@ module TwitterCldr
 
       end
 
-      attr_reader :territory, :regexp, :ast
+      attr_reader :territory, :regexp, :single_regexp, :multi_regexp, :ast
 
       def initialize(territory, regexp, ast)
         @territory = territory
         @regexp = regexp
+        if @regexp
+          @single_regexp = Regexp.new("\\A#{regexp.source}\\z")
+          @multi_regexp = Regexp.new("\\b#{regexp.source}\\b")
+        end
         @ast = ast
       end
 
       def valid?(postal_code)
-        !!(regexp && regexp =~ postal_code)
+        !!(single_regexp && single_regexp =~ postal_code)
+      end
+
+      def find_all(postal_codes)
+        # we cannot use String#scan here as some of the CLDR regular
+        # expressions have capture groups while others don't making
+        # it completely unpredictable what that method might return
+        offset = 0; matches = []
+        while match = multi_regexp.match(postal_codes, offset)
+          matches << match[0]
+          offset += match.offset(0)[1]
+        end
+        matches
       end
 
       def sample(sample_size = 1)

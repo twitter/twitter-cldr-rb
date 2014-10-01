@@ -26,7 +26,8 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr', :ref => 'cddf44b885'
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'plural_rules'
+  gem 'cldr-plurals', '~> 1.0.0'
 end
 
 group :test do

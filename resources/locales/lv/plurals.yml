@@ -1,10 +1,11 @@
 ---
-:lv: ! '{ :''lv'' => { :i18n => { :plural => { :keys => [:zero, :one, :other], :rule
-  => lambda { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
-  : m); (n.to_f % 10 == 0 || (((n.to_f % 100) % 1).zero? && (11..19).include?(n.to_f
-  % 100)) || (((v = n.to_s.split(".")[1]) ? v.length : 0) == 2 && (11..19).include?(((f
-  = n.to_s.split(".")[1]) ? f.to_i : 0) % 100))) ? :zero : ((n.to_f % 10 == 1 && n.to_f
-  % 100 != 11) || (((v = n.to_s.split(".")[1]) ? v.length : 0) == 2 && ((f = n.to_s.split(".")[1])
-  ? f.to_i : 0) % 10 == 1 && ((f = n.to_s.split(".")[1]) ? f.to_i : 0) % 100 != 11)
-  || (((v = n.to_s.split(".")[1]) ? v.length : 0) != 2 && ((f = n.to_s.split(".")[1])
-  ? f.to_i : 0) % 10 == 1)) ? :one : :other } } } } }'
+:lv:
+  :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+    w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n % 10 == 1 &&
+    n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2 && f
+    % 10 == 1)) ? :one : (((n % 10 == 0 || (11..19).include?(n % 100)) || (v == 2
+    && (11..19).include?(f % 100))) ? :zero : :other)) }'
+  :names:
+  - :one
+  - :zero
+  - :other

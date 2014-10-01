@@ -1,4 +1,8 @@
 ---
-:nb: ! '{ :''nb'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
-  : m); n.to_f == 1 ? :one : :other } } } } }'
+:nb:
+  :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+    w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one : :other)
+    }'
+  :names:
+  - :one
+  - :other

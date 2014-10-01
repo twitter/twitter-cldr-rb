@@ -16,8 +16,8 @@ module TwitterCldr
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate.
       #       Meanwhile, use ruby-cldr v0.0.2 and CLDR 22.1 to update units.yml files.
-      LOCALE_COMPONENTS = %w[calendars languages numbers plural_rules lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root territories_containment]
+      LOCALE_COMPONENTS = ['plural_rules'] #%w[calendars languages numbers plural_rules lists layout currencies territories rbnf]  # units
+      SHARED_COMPONENTS = [] #%w[currency_digits_and_rounding rbnf_root numbering_systems segments_root territories_containment]
 
       # Arguments:
       #
@@ -117,22 +117,25 @@ module TwitterCldr
       def process_plurals(component, locale, path)
         return unless component == 'PluralRules'
 
-        rule_list = CldrPlurals::Compiler::RuleList.new(locale)
         output_file = File.join(File.dirname(path), 'plurals.yml')
 
-        YAML.load(File.read(path))[locale.to_s].each_pair do |name, rule_text|
-          rule_list.add_rule(name.to_sym, rule_text) unless name == 'other'
+        plurals = YAML.load(File.read(path))[locale.to_s].inject({}) do |ret, (rule_type, rule_data)|
+          rule_list = CldrPlurals::Compiler::RuleList.new(locale)
+
+          rule_data.each_pair do |name, rule_text|
+            rule_list.add_rule(name.to_sym, rule_text) unless name == 'other'
+          end
+
+          ret[rule_type.to_sym] = {
+            :rule => rule_list.to_code(:ruby),
+            :names => rule_list.rules.map(&:name) + [:other]
+          }
+
+          ret
         end
 
         File.open(output_file, 'w:utf-8') do |output|
-          output.write(
-            YAML.dump(
-              locale => {
-                :rule => rule_list.to_code(:ruby),
-                :names => rule_list.rules.map(&:name) + [:other]
-              }
-            )
-          )
+          output.write(YAML.dump(locale => plurals))
         end
       end
 

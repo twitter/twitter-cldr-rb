@@ -12,16 +12,18 @@ module TwitterCldr
 
         class << self
 
-          def all
-            all_for(TwitterCldr.locale)
+          DEFAULT_TYPE = :plurals
+
+          def all(type = DEFAULT_TYPE)
+            all_for(TwitterCldr.locale, type)
           end
 
-          def all_for(locale)
-            names(locale)
+          def all_for(locale, type = DEFAULT_TYPE)
+            names(locale, type)
           end
 
-          def rule_for(number, locale = TwitterCldr.locale)
-            rule(locale).call(number.to_s, CldrPlurals::RubyRuntime)
+          def rule_for(number, locale = TwitterCldr.locale, type = DEFAULT_TYPE)
+            rule(locale, type).call(number.to_s, CldrPlurals::RubyRuntime)
           rescue
             :other
           end
@@ -33,16 +35,19 @@ module TwitterCldr
             cache_key = TwitterCldr::Utils.compute_cache_key(locale)
             locale_cache[cache_key] ||= begin
               rsrc = TwitterCldr.get_locale_resource(locale, :plurals)[locale]
-              rsrc.merge(:rule => eval(rsrc[:rule]))
+              rsrc.inject({}) do |ret, (rule_type, rule_data)|
+                ret[rule_type] = rule_data.merge(:rule => eval(rule_data[:rule]))
+                ret
+              end
             end
           end
 
-          def rule(locale)
-            get_resource(locale)[:rule]
+          def rule(locale, type)
+            get_resource(locale)[type][:rule]
           end
 
-          def names(locale)
-            get_resource(locale)[:names]
+          def names(locale, type)
+            get_resource(locale)[type][:names]
           end
 
           def locale_cache

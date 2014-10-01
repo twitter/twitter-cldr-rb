@@ -12,9 +12,12 @@ describe Rules do
     it "calls eval on the hash that gets returned, lambdas and all" do
       result = Rules.send(:get_resource, :ru)
 
-      expect(result).to include(:names, :rule)
-      expect(result[:names].size).to eq(4)
-      expect(result[:rule]).to be_a(Proc)
+      [:plurals, :ordinals].each do |type|
+        expect(result).to include(type)
+        expect(result[type]).to include(:names, :rule)
+        expect(result[type][:names].size).to eq(4)
+        expect(result[type][:rule]).to be_a(Proc)
+      end
     end
   end
 
@@ -44,6 +47,16 @@ describe Rules do
       expect(Rules.rule_for(1, :en)).to eq(:other)
       expect(Rules.rule_for(1, :ru)).to eq(:other)
     end
+
+    it "supports ordinal plurals" do
+      expect(Rules.rule_for(1, :en, :ordinals)).to eq(:one)
+      expect(Rules.rule_for(2, :en, :ordinals)).to eq(:two)
+      expect(Rules.rule_for(3, :en, :ordinals)).to eq(:few)
+      expect(Rules.rule_for(4, :en, :ordinals)).to eq(:other)
+      expect(Rules.rule_for(11, :en, :ordinals)).to eq(:other)
+      expect(Rules.rule_for(13, :en, :ordinals)).to eq(:other)
+      expect(Rules.rule_for(22, :en, :ordinals)).to eq(:two)
+    end
   end
 
   describe "#all_for" do
@@ -55,12 +68,25 @@ describe Rules do
     it "returns data for zh-Hant" do
       expect(Rules.all_for(:'zh-Hant')).to match_array([:one, :other])
     end
+
+    it "returns ordinal plurals if asked" do
+      expect(Rules.all_for(:en, :ordinals)).to match_array([
+        :one, :two, :few, :other
+      ])
+    end
   end
 
   describe "#all" do
-    it "gets rules for the default locale (usually supplied by FastGettext)" do
+    before(:each) do
       mock(TwitterCldr).locale { :ru }
+    end
+
+    it "gets rules for the default locale (usually supplied by FastGettext)" do
       expect(Rules.all).to match_array([:one, :few, :many, :other])
+    end
+
+    it "returns ordinal rules for the default locale if asked" do
+      expect(Rules.all(:ordinals)).to match_array([:one, :two, :few, :other])
     end
   end
 end

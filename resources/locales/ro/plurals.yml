@@ -1,6 +1,15 @@
 ---
 :ro:
-  :ordinals:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((v != 0 || n ==
+      0) || (n != 1 && (1..19).include?(n % 100))) ? :few : ((i == 1 && v == 0) ?
+      :one : :other)) }'
+    :names:
+    - :few
+    - :one
+    - :other
+  :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
       w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((n % 10 == 3 &&
       n % 100 != 13) ? :few : (n == 1 ? :one : ((n % 10 == 2 && n % 100 != 12) ? :two
@@ -9,13 +18,4 @@
     - :few
     - :one
     - :two
-    - :other
-  :plurals:
-    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((v != 0 || n ==
-      0) || (n != 1 && (1..19).include?(n % 100))) ? :few : ((i == 1 && v == 0) ?
-      :one : :other)) }'
-    :names:
-    - :few
-    - :one
     - :other

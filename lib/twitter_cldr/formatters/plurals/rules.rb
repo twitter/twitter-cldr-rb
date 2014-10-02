@@ -12,7 +12,7 @@ module TwitterCldr
 
         class << self
 
-          DEFAULT_TYPE = :plurals
+          DEFAULT_TYPE = :cardinal
 
           def all(type = DEFAULT_TYPE)
             all_for(TwitterCldr.locale, type)

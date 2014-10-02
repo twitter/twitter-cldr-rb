@@ -1,10 +1,9 @@
 ---
 :cy:
-  :ordinals:
+  :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((n == 3) || (n
-      == 4)) ? :few : (((n == 5) || (n == 6)) ? :many : (n == 1 ? :one : (n == 2 ?
-      :two : (((n == 0) || (n == 7) || (n == 8) || (n == 9)) ? :zero : :other)))))
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 3 ? :few :
+      (n == 6 ? :many : (n == 1 ? :one : (n == 2 ? :two : (n == 0 ? :zero : :other)))))
       }'
     :names:
     - :few
@@ -13,10 +12,11 @@
     - :two
     - :zero
     - :other
-  :plurals:
+  :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 3 ? :few :
-      (n == 6 ? :many : (n == 1 ? :one : (n == 2 ? :two : (n == 0 ? :zero : :other)))))
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((n == 3) || (n
+      == 4)) ? :few : (((n == 5) || (n == 6)) ? :many : (n == 1 ? :one : (n == 2 ?
+      :two : (((n == 0) || (n == 7) || (n == 8) || (n == 9)) ? :zero : :other)))))
       }'
     :names:
     - :few

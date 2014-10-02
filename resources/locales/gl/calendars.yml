@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -21,7 +22,6 @@
         :MMMEd: "E d MMM"
         :MMMMEd: "E d MMMM"
         :MMMMd: "d MMMM"
-        :MMMMdd: "dd MMMM"
         :MMMd: "d MMM"
         :MMdd: "dd/MM"
         :Md: "d-M"
@@ -111,25 +111,42 @@
             :wed: "Mércores"
       :eras: 
         :abbr: 
-          0: "BCE"
-          1: "CE"
+          0: "a.C."
+          1: "d.C."
         :name: 
-          0: "antes de Cristo"
-          1: "despois de Cristo"
+          0: "a.C."
+          1: "d.C."
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "Día"
+        :day-narrow: "Día"
+        :day-short: "Día"
         :dayperiod: "a.m./p.m."
         :era: "Era"
         :hour: "Hora"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "Minuto"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "Mes"
+        :month-narrow: "Mes"
+        :month-short: "Mes"
+        :quarter: "Trimestre"
+        :quarter-narrow: "trim."
+        :quarter-short: "trim."
         :second: "Segundo"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "Semana"
+        :week-narrow: "sem."
+        :week-short: "sem."
         :weekday: "Día da semana"
         :year: "Ano"
+        :year-narrow: "Ano"
+        :year-short: "Ano"
         :zone: "Fuso horario"
       :formats: 
         :date: 
@@ -247,15 +264,15 @@
             :pm: "p.m."
           :narrow: 
             :am: "a"
-            :noon: "n"
+            :noon: "m"
             :pm: "p"
           :wide: 
             :am: "a.m."
-            :noon: "noon"
+            :noon: "mediodía"
             :pm: "p.m."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 
@@ -287,6 +304,6 @@
             4: 4
           :wide: 
             1: "1o trimestre"
-            2: "2o trimestre"
+            2: "2º trimestre"
             3: "3o trimestre"
             4: "4o trimestre"

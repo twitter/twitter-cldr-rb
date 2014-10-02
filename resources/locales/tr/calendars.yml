@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -113,22 +114,39 @@
           0: "İÖ"
           1: "İS"
         :name: 
-          0: "Milattan Önce"
-          1: "Milattan Sonra"
+          0: "İsa’dan Önce"
+          1: "İsa’dan Sonra"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "Gün"
+        :day-narrow: "gün"
+        :day-short: "gün"
         :dayperiod: "ÖÖ/ÖS"
         :era: "Miladi Dönem"
         :hour: "Saat"
+        :hour-narrow: "sa."
+        :hour-short: "sa."
         :minute: "Dakika"
+        :minute-narrow: "dk."
+        :minute-short: "dk."
         :month: "Ay"
+        :month-narrow: "ay"
+        :month-short: "ay"
+        :quarter: "Çeyrek"
+        :quarter-narrow: "çyr."
+        :quarter-short: "çyr."
         :second: "Saniye"
+        :second-narrow: "sn."
+        :second-short: "sn."
         :week: "Hafta"
+        :week-narrow: "hf."
+        :week-short: "hf."
         :weekday: "Haftanın Günü"
         :year: "Yıl"
+        :year-narrow: "yıl"
+        :year-short: "yıl"
         :zone: "Saat Dilimi"
       :formats: 
         :date: 
@@ -243,16 +261,16 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "öö"
+            :noon: "ö"
+            :pm: "ös"
           :wide: 
             :am: "ÖÖ"
-            :noon: "noon"
+            :noon: "öğle"
             :pm: "ÖS"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

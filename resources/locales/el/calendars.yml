@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -34,9 +35,9 @@
         : "y"
         :yM: "M/y"
         :yMEd: "E, d/M/y"
-        :yMMM: "LLL y"
+        :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
-        :yMMMM: "LLLL y"
+        :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
         :yMd: "d/M/y"
         :yQQQ: "y QQQ"
@@ -113,23 +114,40 @@
           0: "π.Κ.Χ."
           1: "ΚΧ"
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: "πριν από την Κοινή Χρονολογία"
+          1: "Κοινή Χρονολογία"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "Ημέρα"
+        :day-narrow: "ημέρα"
+        :day-short: "ημέρα"
         :dayperiod: "π.μ./μ.μ."
         :era: "Περίοδος"
         :hour: "Ώρα"
+        :hour-narrow: "ώ"
+        :hour-short: "ώρ."
         :minute: "Λεπτό"
+        :minute-narrow: "λ"
+        :minute-short: "λεπ."
         :month: "Μήνας"
+        :month-narrow: "μήν."
+        :month-short: "μήν."
+        :quarter: "Τρίμηνο"
+        :quarter-narrow: "τρίμ."
+        :quarter-short: "τρίμ."
         :second: "Δευτερόλεπτο"
+        :second-narrow: "δ"
+        :second-short: "δευτ."
         :week: "Εβδομάδα"
+        :week-narrow: "εβδ."
+        :week-short: "εβδ."
         :weekday: "Ημέρα εβδομάδας"
         :year: "Έτος"
-        :zone: "Ζώνη"
+        :year-narrow: "έτ."
+        :year-short: "έτ."
+        :zone: "Ζώνη ώρας"
       :formats: 
         :date: 
           :full: 
@@ -146,9 +164,9 @@
           :long: 
             :pattern: "{{date}} - {{time}}"
           :medium: 
-            :pattern: "{{date}} - {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} - {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -243,16 +261,16 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "π"
+            :noon: "μεσ."
+            :pm: "μ"
           :wide: 
             :am: "π.μ."
-            :noon: "noon"
+            :noon: "μεσημέρι"
             :pm: "μ.μ."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

@@ -3,15 +3,16 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
-        :Gy: "y G"
-        :GyMMM: "MMM y G"
-        :GyMMMEd: "E, d MMM y G"
-        :GyMMMd: "d MMM y G"
+        :Gy: "G y"
+        :GyMMM: "G y MMM"
+        :GyMMMEd: "G y MMM d, E"
+        :GyMMMd: "G y MMM d"
         :H: "HH"
         :Hm: "HH:mm"
         :Hmm: "H:mm"
@@ -111,22 +112,39 @@
           0: "S.M."
           1: "TM"
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: "S.M."
+          1: "TM"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "Hari"
+        :day-narrow: "hari"
+        :day-short: "hari"
         :dayperiod: "PG/PTG"
         :era: "Era"
         :hour: "Jam"
+        :hour-narrow: "jam"
+        :hour-short: "jam"
         :minute: "Minit"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "Bulan"
-        :second: "Kedua"
+        :month-narrow: "bln"
+        :month-short: "bln"
+        :quarter: "Suku Tahun"
+        :quarter-narrow: "suku"
+        :quarter-short: "suku"
+        :second: "Saat"
+        :second-narrow: "saat"
+        :second-short: "saat"
         :week: "Minggu"
+        :week-narrow: "mgu"
+        :week-short: "mgu"
         :weekday: "Hari dalam Minggu"
         :year: "Tahun"
+        :year-narrow: "thn"
+        :year-short: "thn"
         :zone: "Zon Waktu"
       :formats: 
         :date: 
@@ -244,15 +262,15 @@
             :pm: "ptg"
           :narrow: 
             :am: "a"
-            :noon: "n"
+            :noon: "t"
             :pm: "p"
           :wide: 
             :am: "PG"
-            :noon: "noon"
+            :noon: "t/hari"
             :pm: "PTG"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

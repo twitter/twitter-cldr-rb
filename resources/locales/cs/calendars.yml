@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d."
@@ -119,18 +120,35 @@
           1: "n. l."
         :narrow: 
           0: "př.n.l."
-          1: "n.l."
+          1: "n. l."
       :fields: 
         :day: "Den"
+        :day-narrow: "den"
+        :day-short: "den"
         :dayperiod: "AM/PM"
         :era: "Letopočet"
         :hour: "Hodina"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "Minuta"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "Měsíc"
+        :month-narrow: "měs."
+        :month-short: "měs."
+        :quarter: "Čtvrtletí"
+        :quarter-narrow: "Q"
+        :quarter-short: "Q"
         :second: "Sekunda"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "Týden"
+        :week-narrow: "týd."
+        :week-short: "týd."
         :weekday: "Den v týdnu"
         :year: "Rok"
+        :year-narrow: "r."
+        :year-short: "r."
         :zone: "Časové pásmo"
       :formats: 
         :date: 
@@ -216,18 +234,18 @@
             8: "srp"
             9: "zář"
           :narrow: 
-            1: "l"
-            10: "ř"
-            11: "l"
-            12: "p"
-            2: "ú"
-            3: "b"
-            4: "d"
-            5: "k"
-            6: "č"
-            7: "č"
-            8: "s"
-            9: "z"
+            1: 1
+            10: 10
+            11: 11
+            12: 12
+            2: 2
+            3: 3
+            4: 4
+            5: 5
+            6: 6
+            7: 7
+            8: 8
+            9: 9
           :wide: 
             1: "leden"
             10: "říjen"
@@ -246,15 +264,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "AM"
-            :noon: "n"
+            :noon: "pol."
             :pm: "PM"
           :wide: 
             :am: "AM"
-            :noon: "noon"
+            :noon: "poledne"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

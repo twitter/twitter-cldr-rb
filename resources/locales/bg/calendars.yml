@@ -3,25 +3,31 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :EHm: "E HH:mm"
+        :E: "ccc"
+        :EHm: "E, HH:mm"
         :EHms: "E, H:mm:ss"
         :Ed: "E, d"
         :Ehm: "E, h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehms: "E, h:mm:ss a"
         :Gy: "y 'г'. G"
-        :GyMMM: "MMM y 'г'. G"
-        :GyMMMEd: "E, d MMM y 'г'. G"
-        :GyMMMd: "d MMM y 'г'. G"
+        :GyMMM: "MM.y 'г'. G"
+        :GyMMMEd: "E, d.MM.y 'г'. G"
+        :GyMMMM: "MMMM y 'г'. G"
+        :GyMMMMEd: "E, d MMMM y 'г'. G"
+        :GyMMMMd: "d MMMM y 'г'. G"
+        :GyMMMd: "d.MM.y 'г'. G"
         :H: "H"
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
         :M: "L"
         :MEd: "E, d.MM"
-        :MMM: "LLL"
-        :MMMEd: "E, d MMM"
+        :MMM: "MM"
+        :MMMEd: "E, d.MM"
+        :MMMM: "LLLL"
+        :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
         :MMMMdd: "d MMMM"
-        :MMMd: "d MMM"
+        :MMMd: "d.MM"
         :Md: "d.MM"
         :d: "d"
         :h: "h a"
@@ -32,11 +38,12 @@
         : "y 'г'."
         :yM: "M.y 'г'."
         :yMEd: "E, d.MM.y 'г'."
-        :yMM: "MM.y 'г'."
-        :yMMM: "MMM y 'г'."
-        :yMMMEd: "E, d MMM y 'г'."
+        :yMMM: "MM.y 'г'."
+        :yMMMEd: "E, d.MM.y 'г'."
         :yMMMM: "MMMM y 'г'."
-        :yMMMd: "d MMM y 'г'."
+        :yMMMMEd: "E, d MMMM y 'г'."
+        :yMMMMd: "d MMMM y 'г'."
+        :yMMMd: "d.MM.y 'г'."
         :yMd: "d.MM.y 'г'."
         :yQQQ: "QQQ y 'г'."
         :yQQQQ: "QQQQ y 'г'."
@@ -110,24 +117,41 @@
       :eras: 
         :abbr: 
           0: "пр.н.е."
-          1: "от н.е."
+          1: "сл.н.е."
         :name: 
-          0: "пр.Хр."
-          1: "сл.Хр."
+          0: "преди новата ера"
+          1: "след новата ера"
         :narrow: 
           0: "B"
           1: "сл.н.е."
       :fields: 
         :day: "ден"
+        :day-narrow: "д"
+        :day-short: "д"
         :dayperiod: "пр.об./сл.об."
         :era: "ера"
         :hour: "час"
+        :hour-narrow: "ч"
+        :hour-short: "ч"
         :minute: "минута"
+        :minute-narrow: "мин"
+        :minute-short: "мин"
         :month: "месец"
+        :month-narrow: "м"
+        :month-short: "м"
+        :quarter: "тримесечие"
+        :quarter-narrow: "трим."
+        :quarter-short: "трим."
         :second: "секунда"
+        :second-narrow: "с"
+        :second-short: "с"
         :week: "седмица"
+        :week-narrow: "седм"
+        :week-short: "седм"
         :weekday: "ден от седмицата"
         :year: "година"
+        :year-narrow: "г."
+        :year-short: "г."
         :zone: "часова зона"
       :formats: 
         :date: 
@@ -138,7 +162,7 @@
           :medium: 
             :pattern: "d.MM.y 'г'."
           :short: 
-            :pattern: "d.MM.yy"
+            :pattern: "d.MM.yy 'г'."
         :datetime: 
           :full: 
             :pattern: "{{date}}, {{time}}"
@@ -242,47 +266,47 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "пр.об."
+            :noon: "пл."
+            :pm: "сл.об."
           :wide: 
             :am: "пр.об."
-            :noon: "noon"
+            :noon: "пладне"
             :pm: "сл.об."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "1 трим."
-            2: "2 трим."
-            3: "3 трим."
-            4: "4 трим."
+            1: "1. трим."
+            2: "2. трим."
+            3: "3. трим."
+            4: "4. трим."
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
           :wide: 
-            1: "1-во тримесечие"
-            2: "2-ро тримесечие"
-            3: "3-то тримесечие"
-            4: "4-то тримесечие"
+            1: "1. тримесечие"
+            2: "2. тримесечие"
+            3: "3. тримесечие"
+            4: "4. тримесечие"
         :stand-alone: 
           :abbreviated: 
-            1: "1 трим."
-            2: "2 трим."
-            3: "3 трим."
-            4: "4 трим."
+            1: "1. трим."
+            2: "2. трим."
+            3: "3. трим."
+            4: "4. трим."
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
           :wide: 
-            1: "1-во тримесечие"
-            2: "2-ро тримесечие"
-            3: "3-то тримесечие"
-            4: "4-то тримесечие"
+            1: "1. тримесечие"
+            2: "2. тримесечие"
+            3: "3. тримесечие"
+            4: "4. тримесечие"

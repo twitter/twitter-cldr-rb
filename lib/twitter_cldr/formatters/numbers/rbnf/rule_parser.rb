@@ -12,6 +12,7 @@ module TwitterCldr
         private
 
         def do_parse(options)
+          @locale = options.fetch(:locale, TwitterCldr.locale)
           switch([])
         end
 
@@ -45,6 +46,16 @@ module TwitterCldr
           end
 
           list << sub
+          switch(list)
+        end
+
+        def plural(list)
+          sub = Plural.from_string(
+            @locale, current_token.value
+          )
+
+          list << sub
+          next_token(:plural)
           switch(list)
         end
 

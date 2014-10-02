@@ -16,8 +16,8 @@ module TwitterCldr
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate.
       #       Meanwhile, use ruby-cldr v0.0.2 and CLDR 22.1 to update units.yml files.
-      LOCALE_COMPONENTS = %w[calendars languages numbers plural_rules lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root territories_containment]
+      LOCALE_COMPONENTS = [] # %w[calendars languages numbers plural_rules lists layout currencies territories rbnf]  # units
+      SHARED_COMPONENTS = ['rbnf_root'] # %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root territories_containment]
 
       # Arguments:
       #
@@ -57,11 +57,15 @@ module TwitterCldr
           :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
 
+        locales = Set.new
+
         Cldr::Export.export(export_args) do |component, locale, path|
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
           deep_symbolize(component, locale, path)
+          locales.add(locale)
+          STDOUT.write "\r#{locale}, #{locales.size} of #{TwitterCldr.supported_locales.size} total"
         end
 
         export_args = {

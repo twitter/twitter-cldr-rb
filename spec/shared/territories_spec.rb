@@ -56,12 +56,12 @@ describe Territories do
   describe "#from_territory_code_for_locale" do
     it "should return the territory in the correct locale for the given locale code (i.e. RU in English should be Russia)" do
       expect(Territories.from_territory_code_for_locale(:ES, :en)).to match_normalized("Spain")
-      expect(Territories.from_territory_code_for_locale(:GB, :es)).to match_normalized("UK")
+      expect(Territories.from_territory_code_for_locale(:GB, :es)).to match_normalized("RU") # reino unido
     end
 
     it "should work with lower-case country codes as well" do
       expect(Territories.from_territory_code_for_locale(:es, :en)).to match_normalized("Spain")
-      expect(Territories.from_territory_code_for_locale(:gb, :es)).to match_normalized("UK")
+      expect(Territories.from_territory_code_for_locale(:gb, :es)).to match_normalized("RU") # reino unido
     end
 
     it "should work with Traditional Chinese" do

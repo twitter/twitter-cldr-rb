@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json'
   s.add_dependency 'camertron-eprun'
   s.add_dependency 'tzinfo'
+  s.add_dependency 'cldr-plurals-runtime-rb', '~> 1.0.0'
 
   s.require_path = 'lib'
 

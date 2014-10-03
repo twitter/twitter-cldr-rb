@@ -1,9 +1,22 @@
 ---
-:hr: ! '{ :''hr'' => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule
-  => lambda { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
-  : m); ((((v = n.to_s.split(".")[1]) ? v.length : 0) == 0 && n.to_i % 10 == 1 &&
-  n.to_i % 100 != 11) || (((f = n.to_s.split(".")[1]) ? f.to_i : 0) % 10 == 1 && ((f
-  = n.to_s.split(".")[1]) ? f.to_i : 0) % 100 != 11)) ? :one : ((((v = n.to_s.split(".")[1])
-  ? v.length : 0) == 0 && (2..4).include?(n.to_i % 10) && !(12..14).include?(n.to_i
-  % 100)) || ((2..4).include?(((f = n.to_s.split(".")[1]) ? f.to_i : 0) % 10) && !(12..14).include?(((f
-  = n.to_s.split(".")[1]) ? f.to_i : 0) % 100))) ? :few : :other } } } } }'
+:hr:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((v == 0 && (2..4).include?(i
+      % 10)) && !(12..14).include?(i % 100)) || ((2..4).include?(f % 10) && !(12..14).include?(f
+      % 100))) ? :few : ((((v == 0 && i % 10 == 1) && i % 100 != 11) || (f % 10 ==
+      1 && f % 100 != 11)) ? :one : :other)) }'
+    :names:
+    - :few
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((n % 10 == 3 &&
+      n % 100 != 13) ? :few : ((n % 10 == 1 && n % 100 != 11) ? :one : ((n % 10 ==
+      2 && n % 100 != 12) ? :two : :other))) }'
+    :names:
+    - :few
+    - :one
+    - :two
+    - :other

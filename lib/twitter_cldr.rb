@@ -33,7 +33,7 @@ module TwitterCldr
   extend SingleForwardable
 
   # version of CLDR that was used for generating YAML files in the resources/ directory
-  CLDR_VERSION = '21.0' # release date: 2012-02-10
+  CLDR_VERSION = '26.0' # release date: 2014-09-18
 
   DEFAULT_LOCALE = :en
   DEFAULT_CALENDAR_TYPE = :gregorian

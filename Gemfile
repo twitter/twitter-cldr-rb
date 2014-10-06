@@ -20,7 +20,7 @@ group :development, :test do
     gem 'oniguruma'
   end
 
-  gem 'regexp_parser', '~> 0.1.5'
+  gem 'regexp_parser', '~> 0.1.6'
 end
 
 group :development do

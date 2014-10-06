@@ -41,16 +41,32 @@ module TwitterCldr
 
       end
 
-      attr_reader :territory, :regexp, :ast
+      attr_reader :territory, :regexp, :single_regexp, :multi_regexp, :ast
 
       def initialize(territory, regexp, ast)
         @territory = territory
         @regexp = regexp
+        if @regexp
+          @single_regexp = build_regexp "\\A#{regexp.source}\\z"
+          @multi_regexp = build_regexp "\\b#{regexp.source}\\b"
+        end
         @ast = ast
       end
 
       def valid?(postal_code)
-        !!(regexp && regexp =~ postal_code)
+        !!(single_regexp && single_regexp =~ postal_code)
+      end
+
+      def find_all(postal_codes)
+        # we cannot use String#scan here as some of the CLDR regular
+        # expressions have capture groups while others don't making
+        # it completely unpredictable what that method might return
+        offset = 0; matches = []
+        while match = multi_regexp.match(postal_codes, offset)
+          matches << match[0]
+          offset += match.offset(0)[1]
+        end
+        matches
       end
 
       def sample(sample_size = 1)
@@ -58,6 +74,18 @@ module TwitterCldr
       end
 
       private
+
+      def build_regexp(regexp_str, modifiers = '')
+        if RUBY_VERSION <= "1.8.7"
+          begin
+            Oniguruma::ORegexp.new(regexp_str, modifiers)
+          rescue NameError
+            raise "Postal codes require the Oniguruma gem when using Ruby 1.8. Please install, require, and retry."
+          end
+        else
+          Regexp.new(regexp_str, modifiers)
+        end
+      end
 
       def generator
         generator_cache[territory] ||= PostalCodeGenerator.new(ast)

@@ -456,6 +456,14 @@ postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca)
 postal_code.valid?("V3H 1Z7")   # true
 ```
 
+Match all valid postal codes in a string with the `#find_all` method:
+
+```ruby
+# United States
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.find_all("12345 23456")    # ["12345", "23456"]
+```
+
 Get a list of supported territories by using the `#territories` method:
 
 ```ruby

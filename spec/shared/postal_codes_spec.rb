@@ -47,9 +47,25 @@ describe PostalCodes do
       end
     end
 
+    describe '#find_all' do
+      it 'matches valid postal codes' do
+        expect(postal_code.find_all("12345 23456")).to eql(['12345', '23456'])
+      end
+
+      it 'does not match invalid postal codes' do
+        expect(postal_code.find_all("123456 23456")).to eql(['23456'])
+        expect(postal_code.find_all("12345 234567")).to eql(['12345'])
+        expect(postal_code.find_all("12345 234567 34567")).to eql(['12345', '34567'])
+      end
+    end
+
     describe '#valid?' do
       it 'returns true if a given postal code satisfies the regexp' do
         postal_code.valid?('12345-6789').should be_true
+      end
+
+      it 'returns false if a given postal code adds extra characters to an otherwise valid code' do
+        postal_code.valid?('123456').should be_false
       end
 
       it "returns false if a given postal code doesn't satisfy the regexp" do

@@ -47,8 +47,8 @@ module TwitterCldr
         @territory = territory
         @regexp = regexp
         if @regexp
-          @single_regexp = Regexp.new("\\A#{regexp.source}\\z")
-          @multi_regexp = Regexp.new("\\b#{regexp.source}\\b")
+          @single_regexp = build_regexp "\\A#{regexp.source}\\z"
+          @multi_regexp = build_regexp "\\b#{regexp.source}\\b"
         end
         @ast = ast
       end
@@ -74,6 +74,18 @@ module TwitterCldr
       end
 
       private
+
+      def build_regexp(regexp_str, modifiers = '')
+        if RUBY_VERSION <= "1.8.7"
+          begin
+            Oniguruma::ORegexp.new(regexp_str, modifiers)
+          rescue NameError
+            raise "Postal codes require the Oniguruma gem when using Ruby 1.8. Please install, require, and retry."
+          end
+        else
+          Regexp.new(regexp_str, modifiers)
+        end
+      end
 
       def generator
         generator_cache[territory] ||= PostalCodeGenerator.new(ast)

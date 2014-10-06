@@ -1,6 +1,23 @@
 ---
-:ga: ! '{ :''ga'' => { :i18n => { :plural => { :keys => [:one, :two, :few, :many,
-  :other], :rule => lambda { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0]
-  == "-" ? m[1,m.length] : m); n.to_f == 1 ? :one : n.to_f == 2 ? :two : ((n.to_f
-  % 1).zero? && (3..6).include?(n.to_f)) ? :few : ((n.to_f % 1).zero? && (7..10).include?(n.to_f))
-  ? :many : :other } } } } }'
+:ga:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((3..6).include?(n)
+      ? :few : ((7..10).include?(n) ? :many : (n == 1 ? :one : (n == 2 ? :two : :other))))
+      }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((n % 10 == 3 &&
+      n % 100 != 13) ? :few : ((n % 10 == 1 && n % 100 != 11) ? :one : ((n % 10 ==
+      2 && n % 100 != 12) ? :two : :other))) }'
+    :names:
+    - :few
+    - :one
+    - :two
+    - :other

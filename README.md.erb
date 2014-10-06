@@ -288,8 +288,9 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # <%= assert(1.localize(:ru).plural_rule, :one).inspect %>
-2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :other).inspect %>
+2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :few).inspect %>
 5.localize(:ru).plural_rule                                # <%= assert(5.localize(:ru).plural_rule, :many).inspect %>
+10.0.localize(:ru).plural_rule                             # <%= assert(10.0.localize(:ru).plural_rule, :other).inspect %>
 ```
 
 Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::Plurals::Rules` class.  You can do the same thing (and a bit more) if you're feeling adventurous:
@@ -300,11 +301,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # <%= assert(TwitterC
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:es), [:one, :other]).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :many, :other]).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :few, :many, :other]).inspect %>
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru), :one).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :other).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :few).inspect %>
 ```
 
 ### Plurals

@@ -1,4 +1,19 @@
 ---
-:vi: ! '{ :''vi'' => { :i18n => { :plural => { :keys => [:other], :rule => lambda
-  { |n| n = n.respond_to?(:abs) ? n.abs : ((m = n.to_s)[0] == "-" ? m[1,m.length]
-  : m); :other } } } } }'
+:vi:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((i == 1 && v ==
+      0) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((n % 10 == 3 &&
+      n % 100 != 13) ? :few : (n == 1 ? :one : ((n % 10 == 2 && n % 100 != 12) ? :two
+      : :other))) }'
+    :names:
+    - :few
+    - :one
+    - :two
+    - :other

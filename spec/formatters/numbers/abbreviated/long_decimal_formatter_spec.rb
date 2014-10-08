@@ -9,48 +9,64 @@ include TwitterCldr::Formatters
 
 describe LongDecimalFormatter do
   let(:data_reader) do
-    TwitterCldr::DataReaders::NumberDataReader.new(:en, :type => :long_decimal)
-  end
-
-  let(:formatter) { data_reader.formatter }
-  let(:tokenizer) { data_reader.tokenizer }
-
-  it "formats valid numbers correctly (from 10^3 - 10^15)" do
-    expected = {
-      10 ** 3 => "1 thousand",
-      10 ** 4 => "10 thousand",
-      10 ** 5 => "100 thousand",
-      10 ** 6 => "1 million",
-      10 ** 7 => "10 million",
-      10 ** 8 => "100 million",
-      10 ** 9 => "1 billion",
-      10 ** 10 => "10 billion",
-      10 ** 11 => "100 billion",
-      10 ** 12 => "1 trillion",
-      10 ** 13 => "10 trillion",
-      10 ** 14 => "100 trillion"
-    }
-
-    expected.each do |num, text|
-      pattern = data_reader.pattern(num)
-      expect(formatter.format(tokenizer.tokenize(pattern), num)).to eq(text)
-    end
+    TwitterCldr::DataReaders::NumberDataReader.new(locale, :type => :long_decimal)
   end
 
   def format_number(number, options = {})
-    pattern = data_reader.pattern(number)
-    formatter.format(tokenizer.tokenize(pattern), number, options)
+    data_reader.format_number(number, options)
   end
 
-  it "formats the number as if it were a straight decimal if it exceeds 10^15" do
-    expect(format_number(10**15)).to eq("1,000,000,000,000,000")
+  context "with English locale" do
+    let (:locale) { :en }
+
+    it "formats valid numbers correctly (from 10^3 - 10^15)" do
+      expected = {
+        10 ** 3 => "1 thousand",
+        10 ** 4 => "10 thousand",
+        10 ** 5 => "100 thousand",
+        10 ** 6 => "1 million",
+        10 ** 7 => "10 million",
+        10 ** 8 => "100 million",
+        10 ** 9 => "1 billion",
+        10 ** 10 => "10 billion",
+        10 ** 11 => "100 billion",
+        10 ** 12 => "1 trillion",
+        10 ** 13 => "10 trillion",
+        10 ** 14 => "100 trillion"
+      }
+
+      expected.each do |num, text|
+        expect(format_number(num)).to eq(text)
+      end
+    end
+
+    it "formats the number as if it were a straight decimal if it exceeds 10^15" do
+      expect(format_number(10**15)).to eq("1,000,000,000,000,000")
+    end
+
+    it "formats the number as if it were a straight decimal if it's less than 1000" do
+      expect(format_number(500)).to eq("500")
+    end
+
+    it "respects the :precision option" do
+      expect(format_number(12345, :precision => 3)).to match_normalized("12.345 thousand")
+    end
   end
 
-  it "formats the number as if it were a straight decimal if it's less than 1000" do
-    expect(format_number(500)).to eq("500")
-  end
+  context "with Russian locale" do
+    let(:locale) { :ru }
 
-  it "respects the :precision option" do
-    expect(format_number(12345, :precision => 3)).to match_normalized("12.345 thousand")
+    it "respects pluralization rules" do
+      expect(format_number(1123)).to match_normalized("1 тысяча")
+      expect(format_number(1123, :precision => 3)).to match_normalized("1,123 тысячи")
+    end
+
+    # TODO: requires pluralization from CLDR 26
+    xit 'works with :few in Russian' do
+      expect(format_number(7123, :precision => 3)).to match_normalized("7,123 тысячи")
+      expect(format_number(7123)).to match_normalized("7 тысяч") # different pluralization when precision is 0
+    end
+
+    xit 'works when pattern is 0 (e.g., for Japanese)'
   end
 end

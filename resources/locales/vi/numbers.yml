@@ -14,31 +14,79 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 nghìn"
-            10000: "00 nghìn"
-            100000: "000 nghìn"
-            1000000: "0 triệu"
-            10000000: "00 triệu"
-            100000000: "000 triệu"
-            1000000000: "0 tỷ"
-            10000000000: "00 tỷ"
-            100000000000: "000 tỷ"
-            1000000000000: "0 nghìn tỷ"
-            10000000000000: "00 nghìn tỷ"
-            100000000000000: "000 nghìn tỷ"
+            1000: 
+              :one: "0 thousand"
+              :other: "0 nghìn"
+            10000: 
+              :one: "00 thousand"
+              :other: "00 nghìn"
+            100000: 
+              :one: "000 thousand"
+              :other: "000 nghìn"
+            1000000: 
+              :one: "0 million"
+              :other: "0 triệu"
+            10000000: 
+              :one: "00 million"
+              :other: "00 triệu"
+            100000000: 
+              :one: "000 million"
+              :other: "000 triệu"
+            1000000000: 
+              :one: "0 billion"
+              :other: "0 tỷ"
+            10000000000: 
+              :one: "00 billion"
+              :other: "00 tỷ"
+            100000000000: 
+              :one: "000 billion"
+              :other: "000 tỷ"
+            1000000000000: 
+              :one: "0 trillion"
+              :other: "0 nghìn tỷ"
+            10000000000000: 
+              :one: "00 trillion"
+              :other: "00 nghìn tỷ"
+            100000000000000: 
+              :one: "000 trillion"
+              :other: "000 nghìn tỷ"
           :short: 
-            1000: "0 N"
-            10000: "00 N"
-            100000: "000 N"
-            1000000: "0 Tr"
-            10000000: "00 Tr"
-            100000000: "000 Tr"
-            1000000000: "0 T"
-            10000000000: "00 T"
-            100000000000: "000 T"
-            1000000000000: "0 NT"
-            10000000000000: "00 NT"
-            100000000000000: "000 NT"
+            1000: 
+              :one: "0K"
+              :other: "0 N"
+            10000: 
+              :one: "00K"
+              :other: "00 N"
+            100000: 
+              :one: "000K"
+              :other: "000 N"
+            1000000: 
+              :one: "0M"
+              :other: "0 Tr"
+            10000000: 
+              :one: "00M"
+              :other: "00 Tr"
+            100000000: 
+              :one: "000M"
+              :other: "000 Tr"
+            1000000000: 
+              :one: "0B"
+              :other: "0 T"
+            10000000000: 
+              :one: "00B"
+              :other: "00 T"
+            100000000000: 
+              :one: "000B"
+              :other: "000 T"
+            1000000000000: 
+              :one: "0T"
+              :other: "0 NT"
+            10000000000000: 
+              :one: "00T"
+              :other: "00 NT"
+            100000000000000: 
+              :one: "000T"
+              :other: "000 NT"
       :percent: 
         :number_system: "latn"
         :patterns: 

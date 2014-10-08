@@ -16,31 +16,127 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 tisíc"
-            10000: "00 tisíc"
-            100000: "000 tisíc"
-            1000000: "0 milionů"
-            10000000: "00 milionů"
-            100000000: "000 milionů"
-            1000000000: "0 miliard"
-            10000000000: "00 miliard"
-            100000000000: "000 miliard"
-            1000000000000: "0 bilionů"
-            10000000000000: "00 bilionů"
-            100000000000000: "000 bilionů"
+            1000: 
+              :few: "0 tisíce"
+              :many: "0 tisíce"
+              :one: "0 tisíc"
+              :other: "0 tisíc"
+            10000: 
+              :few: "00 tisíc"
+              :many: "00 tisíce"
+              :one: "00 tisíc"
+              :other: "00 tisíc"
+            100000: 
+              :few: "000 tisíc"
+              :many: "000 tisíce"
+              :one: "000 tisíc"
+              :other: "000 tisíc"
+            1000000: 
+              :few: "0 miliony"
+              :many: "0 milionu"
+              :one: "0 milion"
+              :other: "0 milionů"
+            10000000: 
+              :few: "00 milionů"
+              :many: "00 milionu"
+              :one: "00 milionů"
+              :other: "00 milionů"
+            100000000: 
+              :few: "000 milionů"
+              :many: "000 milionu"
+              :one: "000 milionů"
+              :other: "000 milionů"
+            1000000000: 
+              :few: "0 miliardy"
+              :many: "0 miliardy"
+              :one: "0 miliarda"
+              :other: "0 miliard"
+            10000000000: 
+              :few: "00 miliard"
+              :many: "00 miliard"
+              :one: "00 miliard"
+              :other: "00 miliard"
+            100000000000: 
+              :few: "000 miliard"
+              :many: "000 miliard"
+              :one: "000 miliard"
+              :other: "000 miliard"
+            1000000000000: 
+              :few: "0 biliony"
+              :many: "0 bilionu"
+              :one: "0 bilion"
+              :other: "0 bilionů"
+            10000000000000: 
+              :few: "00 bilionů"
+              :many: "00 bilionů"
+              :one: "00 bilionů"
+              :other: "00 bilionů"
+            100000000000000: 
+              :few: "000 bilionů"
+              :many: "000 bilionů"
+              :one: "000 bilionů"
+              :other: "000 bilionů"
           :short: 
-            1000: "0 tis'.'"
-            10000: "00 tis'.'"
-            100000: "000 tis'.'"
-            1000000: "0 mil'.'"
-            10000000: "00 mil'.'"
-            100000000: "000 mil'.'"
-            1000000000: "0 mld'.'"
-            10000000000: "00 mld'.'"
-            100000000000: "000 mld'.'"
-            1000000000000: "0 bil'.'"
-            10000000000000: "00 bil'.'"
-            100000000000000: "000 bil'.'"
+            1000: 
+              :few: "0 tis'.'"
+              :many: "0 tis'.'"
+              :one: "0 tis'.'"
+              :other: "0 tis'.'"
+            10000: 
+              :few: "00 tis'.'"
+              :many: "00 tis'.'"
+              :one: "00 tis'.'"
+              :other: "00 tis'.'"
+            100000: 
+              :few: "000 tis'.'"
+              :many: "000 tis'.'"
+              :one: "000 tis'.'"
+              :other: "000 tis'.'"
+            1000000: 
+              :few: "0 mil'.'"
+              :many: "0 mil'.'"
+              :one: "0 mil'.'"
+              :other: "0 mil'.'"
+            10000000: 
+              :few: "00 mil'.'"
+              :many: "00 mil'.'"
+              :one: "00 mil'.'"
+              :other: "00 mil'.'"
+            100000000: 
+              :few: "000 mil'.'"
+              :many: "000 mil'.'"
+              :one: "000 mil'.'"
+              :other: "000 mil'.'"
+            1000000000: 
+              :few: "0 mld'.'"
+              :many: "0 mld'.'"
+              :one: "0 mld'.'"
+              :other: "0 mld'.'"
+            10000000000: 
+              :few: "00 mld'.'"
+              :many: "00 mld'.'"
+              :one: "00 mld'.'"
+              :other: "00 mld'.'"
+            100000000000: 
+              :few: "000 mld'.'"
+              :many: "000 mld'.'"
+              :one: "000 mld'.'"
+              :other: "000 mld'.'"
+            1000000000000: 
+              :few: "0 bil'.'"
+              :many: "0 bil'.'"
+              :one: "0 bil'.'"
+              :other: "0 bil'.'"
+            10000000000000: 
+              :few: "00 bil'.'"
+              :many: "00 bil'.'"
+              :one: "00 bil'.'"
+              :other: "00 bil'.'"
+            100000000000000: 
+              :few: "000 bil'.'"
+              :many: "000 bil'.'"
+              :one: "000 bil'.'"
+              :other: "000 bil'.'"
       :percent: 
         :number_system: "latn"
         :patterns: 

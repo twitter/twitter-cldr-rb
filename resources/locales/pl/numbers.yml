@@ -16,31 +16,127 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 tysiąca"
-            10000: "00 tysiąca"
-            100000: "000 tysiąca"
-            1000000: "0 miliona"
-            10000000: "00 miliona"
-            100000000: "000 miliona"
-            1000000000: "0 miliarda"
-            10000000000: "00 miliarda"
-            100000000000: "000 miliarda"
-            1000000000000: "0 biliona"
-            10000000000000: "00 biliona"
-            100000000000000: "000 biliona"
+            1000: 
+              :few: "0 tysiące"
+              :many: "0 tysięcy"
+              :one: "0 tysiąc"
+              :other: "0 tysiąca"
+            10000: 
+              :few: "00 tysiące"
+              :many: "00 tysięcy"
+              :one: "00 tysiąc"
+              :other: "00 tysiąca"
+            100000: 
+              :few: "000 tysiące"
+              :many: "000 tysięcy"
+              :one: "000 tysiąc"
+              :other: "000 tysiąca"
+            1000000: 
+              :few: "0 miliony"
+              :many: "0 milionów"
+              :one: "0 milion"
+              :other: "0 miliona"
+            10000000: 
+              :few: "00 miliony"
+              :many: "00 milionów"
+              :one: "00 milion"
+              :other: "00 miliona"
+            100000000: 
+              :few: "000 miliony"
+              :many: "000 milionów"
+              :one: "000 milion"
+              :other: "000 miliona"
+            1000000000: 
+              :few: "0 miliardy"
+              :many: "0 miliardów"
+              :one: "0 miliard"
+              :other: "0 miliarda"
+            10000000000: 
+              :few: "00 miliardy"
+              :many: "00 miliardów"
+              :one: "00 miliard"
+              :other: "00 miliarda"
+            100000000000: 
+              :few: "000 miliardy"
+              :many: "000 miliardów"
+              :one: "000 miliard"
+              :other: "000 miliarda"
+            1000000000000: 
+              :few: "0 biliony"
+              :many: "0 bilionów"
+              :one: "0 bilion"
+              :other: "0 biliona"
+            10000000000000: 
+              :few: "00 biliony"
+              :many: "00 bilionów"
+              :one: "00 bilion"
+              :other: "00 biliona"
+            100000000000000: 
+              :few: "000 biliony"
+              :many: "000 bilionów"
+              :one: "000 bilion"
+              :other: "000 biliona"
           :short: 
-            1000: "0 tys'.'"
-            10000: "00 tys'.'"
-            100000: "000 tys'.'"
-            1000000: "0 mln"
-            10000000: "00 mln"
-            100000000: "000 mln"
-            1000000000: "0 mld"
-            10000000000: "00 mld"
-            100000000000: "000 mld"
-            1000000000000: "0 bln"
-            10000000000000: "00 bln"
-            100000000000000: "000 bln"
+            1000: 
+              :few: "0 tys'.'"
+              :many: "0 tys'.'"
+              :one: "0 tys'.'"
+              :other: "0 tys'.'"
+            10000: 
+              :few: "00 tys'.'"
+              :many: "00 tys'.'"
+              :one: "00 tys'.'"
+              :other: "00 tys'.'"
+            100000: 
+              :few: "000 tys'.'"
+              :many: "000 tys'.'"
+              :one: "000 tys'.'"
+              :other: "000 tys'.'"
+            1000000: 
+              :few: "0 mln"
+              :many: "0 mln"
+              :one: "0 mln"
+              :other: "0 mln"
+            10000000: 
+              :few: "00 mln"
+              :many: "00 mln"
+              :one: "00 mln"
+              :other: "00 mln"
+            100000000: 
+              :few: "000 mln"
+              :many: "000 mln"
+              :one: "000 mln"
+              :other: "000 mln"
+            1000000000: 
+              :few: "0 mld"
+              :many: "0 mld"
+              :one: "0 mld"
+              :other: "0 mld"
+            10000000000: 
+              :few: "00 mld"
+              :many: "00 mld"
+              :one: "00 mld"
+              :other: "00 mld"
+            100000000000: 
+              :few: "000 mld"
+              :many: "000 mld"
+              :one: "000 mld"
+              :other: "000 mld"
+            1000000000000: 
+              :few: "0 bln"
+              :many: "0 bln"
+              :one: "0 bln"
+              :other: "0 bln"
+            10000000000000: 
+              :few: "00 bln"
+              :many: "00 bln"
+              :one: "00 bln"
+              :other: "00 bln"
+            100000000000000: 
+              :few: "000 bln"
+              :many: "000 bln"
+              :one: "000 bln"
+              :other: "000 bln"
       :percent: 
         :number_system: "latn"
         :patterns: 

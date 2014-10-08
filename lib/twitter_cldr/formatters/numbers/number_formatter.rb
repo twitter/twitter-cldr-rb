@@ -25,7 +25,7 @@ module TwitterCldr
         options[:type] ||= :decimal
 
         prefix, suffix, integer_format, fraction_format = *partition_tokens(tokens)
-        number = truncate_number(number, integer_format)
+        number = truncate_number(number, integer_format.format.length)
 
         int, fraction = parse_number(number, options)
         result =  integer_format.apply(int, options)
@@ -36,6 +36,10 @@ module TwitterCldr
         )
       end
 
+      def truncate_number(number, decimal_digits)
+        number # noop for base class
+      end
+
       protected
 
       # data readers should encapsulate formatting options, and when they do, this "type"
@@ -44,10 +48,6 @@ module TwitterCldr
         @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
           data_reader.number_system_for(type)
         )
-      end
-
-      def truncate_number(number, integer_format)
-        number  # noop for base class
       end
 
       def partition_tokens(tokens)

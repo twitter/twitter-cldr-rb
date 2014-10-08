@@ -28,23 +28,10 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        data_reader = TwitterCldr::DataReaders::NumberDataReader.new(locale, {
+        TwitterCldr::DataReaders::NumberDataReader.new(locale, {
           :type => @type,
           :format => @format
-        })
-
-        pattern = data_reader.pattern(base_obj)
-
-        if pattern == 0
-          # can't format the number for current locale
-          base_obj.to_s
-        else
-          data_reader.formatter.format(
-            data_reader.tokenizer.tokenize(pattern),
-            base_obj,
-            options.merge(:type => @type)
-          )
-        end
+        }).format_number(base_obj, options.merge(:type => @type))
       end
 
       def plural_rule

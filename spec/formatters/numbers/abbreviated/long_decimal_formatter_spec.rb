@@ -15,8 +15,13 @@ describe LongDecimalFormatter do
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
 
-  it "formats valid numbers correctly (from 10^3 - 10^15)" do
-    expected = {
+  def format_number(number, options = {})
+    pattern = data_reader.pattern(number)
+    formatter.format(tokenizer.tokenize(pattern), number, options)
+  end
+
+  let(:expected) {
+    {
       10 ** 3 => "1 thousand",
       10 ** 4 => "10 thousand",
       10 ** 5 => "100 thousand",
@@ -30,27 +35,41 @@ describe LongDecimalFormatter do
       10 ** 13 => "10 trillion",
       10 ** 14 => "100 trillion"
     }
+  }
 
+  it "formats valid numbers correctly (from 10^3 - 10^15)" do
     expected.each do |num, text|
-      pattern = data_reader.pattern(num)
-      expect(formatter.format(tokenizer.tokenize(pattern), num)).to eq(text)
+      expect(format_number(num)).to eq(text)
     end
   end
 
-  def format_number(number, options = {})
-    pattern = data_reader.pattern(number)
-    formatter.format(tokenizer.tokenize(pattern), number, options)
+  it "formats valid negative numbers correctly (from -10^15 - -10^3)" do
+    expected.each do |num, text|
+      expect(format_number(-num)).to eq("-#{text}")
+    end
   end
 
-  it "formats the number as if it were a straight decimal if it exceeds 10^15" do
+  it "formats the number as if it were a straight decimal if it's >= 10^15" do
     expect(format_number(10**15)).to eq("1,000,000,000,000,000")
   end
 
-  it "formats the number as if it were a straight decimal if it's less than 1000" do
+  it "formats the number as if it were a straight decimal if it <= -10^15" do
+    expect(format_number(- 10**15)).to eq("-1,000,000,000,000,000")
+  end
+
+  it "formats the number as if it were a straight decimal if it's < 1000" do
     expect(format_number(500)).to eq("500")
+  end
+
+  it "formats the number as if it were a straight decimal if it's > -1000" do
+    expect(format_number(-500)).to eq("-500")
   end
 
   it "respects the :precision option" do
     expect(format_number(12345, :precision => 3)).to match_normalized("12.345 thousand")
+  end
+
+  it "respects the :precision option for negative numbers" do
+    expect(format_number(-12345, :precision => 3)).to match_normalized("-12.345 thousand")
   end
 end

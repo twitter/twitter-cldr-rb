@@ -5,7 +5,7 @@
       :currency: 
         :number_system: "latn"
         :patterns: 
-          :default: "¤#,##0.00‎"
+          :default: "¤ #,##,##0.00"
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -15,41 +15,41 @@
           :default: "#,##0.###"
           :long: 
             1000: 
-              :one: "0 thousand"
-              :other: "0 thousand"
+              :one: "0 ہزار"
+              :other: "0 ہزار"
             10000: 
-              :one: "00 thousand"
-              :other: "00 thousand"
+              :one: "00 ہزار"
+              :other: "00 ہزار"
             100000: 
-              :one: "000 thousand"
-              :other: "000 thousand"
+              :one: "0 لاکھ"
+              :other: "0 لاکھ"
             1000000: 
-              :one: "0 million"
-              :other: "0 million"
+              :one: "00 لاکھ"
+              :other: "00 لاکھ"
             10000000: 
-              :one: "00 million"
-              :other: "00 million"
+              :one: "0 کروڑ"
+              :other: "0 کروڑ"
             100000000: 
-              :one: "000 million"
-              :other: "000 million"
+              :one: "00 کروڑ"
+              :other: "00 کروڑ"
             1000000000: 
-              :one: "0 billion"
-              :other: "0 billion"
+              :one: "0 ارب"
+              :other: "0 ارب"
             10000000000: 
-              :one: "00 billion"
-              :other: "00 billion"
+              :one: "00 ارب"
+              :other: "00 ارب"
             100000000000: 
-              :one: "000 billion"
-              :other: "000 billion"
+              :one: "0 کھرب"
+              :other: "0 کھرب"
             1000000000000: 
-              :one: "0 trillion"
-              :other: "0 trillion"
+              :one: "00 کھرب"
+              :other: "00 کھرب"
             10000000000000: 
-              :one: "00 trillion"
-              :other: "00 trillion"
+              :one: "00 ٹریلین"
+              :other: "00 ٹریلین"
             100000000000000: 
-              :one: "000 trillion"
-              :other: "000 trillion"
+              :one: "000 ٹریلین"
+              :other: "000 ٹریلین"
           :short: 
             1000: 
               :one: "0 ہزار"
@@ -82,15 +82,15 @@
               :one: "00 کھرب"
               :other: "00 کھرب"
             10000000000000: 
-              :one: "00T"
-              :other: "00T"
+              :one: "00 ٹریلین"
+              :other: "00 ٹریلین"
             100000000000000: 
-              :one: "000T"
-              :other: "000T"
+              :one: "000 ٹریلین"
+              :other: "000 ٹریلین"
       :percent: 
         :number_system: "latn"
         :patterns: 
-          :default: "#,##0%"
+          :default: "#,##,##0%"
       :scientific: 
         :number_system: "latn"
         :patterns: 
@@ -108,3 +108,4 @@
       :percent_sign: "%"
       :plus_sign: "‎+"
       :superscripting_exponent: "×"
+      :time_separator: ":"

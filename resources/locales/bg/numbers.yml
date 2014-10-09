@@ -5,7 +5,7 @@
       :currency: 
         :number_system: "latn"
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: "#,##0.00 ¤;(#,##0.00 ¤)"
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -21,7 +21,7 @@
               :one: "00 хиляди"
               :other: "00 хиляди"
             100000: 
-              :one: "000 Х"
+              :one: "000 хиляди"
               :other: "000 хиляди"
             1000000: 
               :one: "0 милион"
@@ -108,3 +108,4 @@
       :percent_sign: "%"
       :plus_sign: "+"
       :superscripting_exponent: "."
+      :time_separator: ":"

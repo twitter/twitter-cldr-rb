@@ -3,40 +3,40 @@
 :ar:
   OrdinalRules:
     digits-ordinal:
-    - -1141
-    - -1142
-    - -1143
-    - 1141
-    - 1142
-    - 1143
-    - 10311
-    - 138400
+      - -1141
+      - -1142
+      - -1143
+      - 1141
+      - 1142
+      - 1143
+      - 10311
+      - 138400
 
 # honest to goodness ICU bugs
 :ja:
   SpelloutRules:
     spellout-numbering-year:
-    - -1141
-    - -1142
-    - -1143
+      - -1141
+      - -1142
+      - -1143
 :zh:
   SpelloutRules:
     spellout-numbering-year:
-    - -1141
-    - -1142
-    - -1143
+      - -1141
+      - -1142
+      - -1143
 :zh-Hant:
   SpelloutRules:
     spellout-numbering-year:
-    - -1141
-    - -1142
-    - -1143
+      - -1141
+      - -1142
+      - -1143
 :ko:
   SpelloutRules:
     spellout-ordinal-sinokorean:
-    - -1141
-    - -1142
-    - -1143
+      - -1141
+      - -1142
+      - -1143
 
 # ICU's DecimalFormat reports 100 should be 100 but we say it should be 1,00.
 # Problem stems from issue with our NumberFormatter which doesn't correctly
@@ -50,25 +50,37 @@
 :ta:
   SpelloutRules:
     spellout-ordinal:
-    - -100
-    - 100
-    - 321
-    - 322
-    - 323
+      - -100
+      - 100
+      - 321
+      - 322
+      - 323
   OrdinalRules:
     digits-ordinal:
-    - -100
-    - 100
-    - 321
-    - 322
-    - 323
+      - -100
+      - 100
+      - 321
+      - 322
+      - 323
 
 # Same problem as Tamil above.
 :hi:
   OrdinalRules:
     digits-ordinal:
-    - -100
-    - 100
-    - 321
-    - 322
-    - 323
+      - -100
+      - 100
+      - 321
+      - 322
+      - 323
+    digits-ordinal-masculine:
+      - -100
+      - 100
+      - 321
+      - 322
+      - 323
+    digits-ordinal-feminine:
+      - -100
+      - 100
+      - 321
+      - 322
+      - 323

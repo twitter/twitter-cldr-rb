@@ -52,41 +52,41 @@
               :other: "0000 खरब"
           :short: 
             1000: 
-              :one: 0
-              :other: 0
+              :one: "0 हज़ार"
+              :other: "0 हज़ार"
             10000: 
-              :one: 0
-              :other: 0
+              :one: "00 हज़ार"
+              :other: "00 हज़ार"
             100000: 
-              :one: "0L"
-              :other: "0L"
+              :one: "0 लाख"
+              :other: "0 लाख"
             1000000: 
-              :one: "00L"
-              :other: "00L"
+              :one: "00 लाख"
+              :other: "00 लाख"
             10000000: 
-              :one: "0Cr"
-              :other: "0Cr"
+              :one: "0 क'.'"
+              :other: "0 क'.'"
             100000000: 
-              :one: "00Cr"
-              :other: "00Cr"
+              :one: "00 क'.'"
+              :other: "00 क'.'"
             1000000000: 
-              :one: "000Cr"
-              :other: "000Cr"
+              :one: "0 अ'.'"
+              :other: "0 अ'.'"
             10000000000: 
-              :one: "00B"
-              :other: "00B"
+              :one: "00 अ'.'"
+              :other: "00 अ'.'"
             100000000000: 
-              :one: "000B"
-              :other: "000B"
+              :one: "0 ख'.'"
+              :other: "0 ख'.'"
             1000000000000: 
-              :one: "0T"
-              :other: "0T"
+              :one: "00 ख'.'"
+              :other: "00 ख'.'"
             10000000000000: 
-              :one: "00T"
-              :other: "00T"
+              :one: "0 नील"
+              :other: "0 नील"
             100000000000000: 
-              :one: "000T"
-              :other: "000T"
+              :one: "00 नील"
+              :other: "00 नील"
       :percent: 
         :number_system: "latn"
         :patterns: 
@@ -94,7 +94,7 @@
       :scientific: 
         :number_system: "latn"
         :patterns: 
-          :default: "#E0"
+          :default: "[#E0]"
     :symbols: 
       :alias: ""
       :decimal: "."
@@ -108,3 +108,4 @@
       :percent_sign: "%"
       :plus_sign: "+"
       :superscripting_exponent: "×"
+      :time_separator: ":"

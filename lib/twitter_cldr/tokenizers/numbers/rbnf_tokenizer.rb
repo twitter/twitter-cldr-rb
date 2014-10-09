@@ -37,6 +37,7 @@ module TwitterCldr
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),
             TokenRecognizer.new(:decimal, /[0#][0#,\.]+/),
+            TokenRecognizer.new(:plural, /\$\(.*\)\$/),
 
             # ending
             TokenRecognizer.new(:semicolon, /;/),

@@ -14,12 +14,13 @@ module TwitterCldr
         PROPER_FRACTION = "0.x"
         NEGATIVE = "-x"
 
-        attr_reader :base_value, :rule_text, :radix
+        attr_reader :base_value, :rule_text, :radix, :locale
 
-        def initialize(base_value, rule_text, radix)
+        def initialize(base_value, rule_text, radix, locale)
           @base_value = base_value
           @rule_text = rule_text
           @radix = radix
+          @locale = locale
         end
 
         def divisor
@@ -76,7 +77,7 @@ module TwitterCldr
         private
 
         def inline_substitutions(tokens)
-          parser.parse(tokens)
+          parser.parse(tokens, :locale => locale)
         end
 
         def parser

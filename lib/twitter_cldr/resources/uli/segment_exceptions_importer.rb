@@ -12,7 +12,7 @@ module TwitterCldr
     module Uli
       class SegmentExceptionsImporter
 
-        URL = "http://unicode.org/uli/trac/export/38/trunk/abbrs/json/%{locale}.json"
+        URL = "http://unicode.org/uli/trac/export/58/trunk/abbrs/json/%{locale}.json"
 
         attr_reader :input_path, :output_path
 

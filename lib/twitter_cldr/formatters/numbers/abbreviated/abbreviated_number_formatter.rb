@@ -9,7 +9,7 @@ module TwitterCldr
 
       def truncate_number(number, decimal_digits)
         if TwitterCldr::DataReaders::NumberDataReader.within_abbreviation_range?(number)
-          factor = [0, number.to_i.to_s.length - decimal_digits].max
+          factor = [0, number.to_i.abs.to_s.length - decimal_digits].max
           number / (10.0 ** factor)
         else
           number

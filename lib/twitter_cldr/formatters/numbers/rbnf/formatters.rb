@@ -120,7 +120,6 @@ module TwitterCldr
         end
 
         def plural(number, rule, token)
-          # binding.pry if number == 1141 && locale == :pl
           token.render(number / rule.divisor)
         end
 

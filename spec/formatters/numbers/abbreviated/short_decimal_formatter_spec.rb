@@ -21,9 +21,8 @@ describe ShortDecimalFormatter do
 
   context "with English locale" do
     let(:locale) { :en }
-
-    it "formats valid numbers correctly (from 10^3 - 10^15)" do
-      expected = {
+    let(:expected) {
+      {
         10 ** 3 => "1K",
         10 ** 4 => "10K",
         10 ** 5 => "100K",
@@ -37,25 +36,49 @@ describe ShortDecimalFormatter do
         10 ** 13 => "10T",
         10 ** 14 => "100T"
       }
+    }
 
+    it "formats valid numbers correctly (from 10^3 - 10^15)" do
       expected.each do |num, text|
         expect(format_number(num)).to eq(text)
+        expect(format_number(-num)).to eq("-#{text}")
       end
     end
 
-    it "formats the number as if it were a straight decimal if it exceeds 10^15" do
+    it "formats valid negative numbers correctly (from -10^15 - -10^3)" do
+      expected.each do |num, text|
+        expect(format_number(-num)).to eq("-#{text}")
+      end
+    end
+
+    it "formats the number as if it were a straight decimal if it's >= 10^15" do
       number = 10 ** 15
       expect(format_number(number)).to eq("1,000,000,000,000,000")
     end
 
-    it "formats the number as if it were a straight decimal if it's less than 1000" do
+    it "formats the number as if it were a straight decimal if it's <= -10^15" do
+      number = - 10 ** 15
+      expect(format_number(number)).to eq("-1,000,000,000,000,000")
+    end
+
+    it "formats the number as if it were a straight decimal if it's < 1000" do
       number = 500
       expect(format_number(number)).to eq("500")
+    end
+
+    it "formats the number as if it were a straight decimal if it's > -1000" do
+      number = -500
+      expect(format_number(number)).to eq("-500")
     end
 
     it "respects the :precision option" do
       number = 12345
       expect(format_number(number, :precision => 3)).to match_normalized("12.345K")
+    end
+
+    it "respects the :precision option for negative numbers" do
+      number = -12345
+      expect(format_number(number, :precision => 3)).to match_normalized("-12.345K")
     end
   end
 

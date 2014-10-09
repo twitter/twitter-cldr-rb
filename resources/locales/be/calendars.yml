@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -90,15 +91,24 @@
           1: "A"
       :fields: 
         :day: "дзень"
+        :day-short: "day"
         :dayperiod: "ДП/ПП"
         :era: "эра"
         :hour: "гадзіна"
+        :hour-short: "hr."
         :minute: "хвіліна"
+        :minute-short: "min."
         :month: "месяц"
+        :month-short: "mo."
+        :quarter: "Quarter"
+        :quarter-short: "qtr."
         :second: "секунда"
+        :second-short: "sec."
         :week: "тыдзень"
+        :week-short: "wk."
         :weekday: "дзень тыдня"
         :year: "год"
+        :year-short: "yr."
         :zone: "Zone"
       :formats: 
         :date: 
@@ -221,8 +231,8 @@
             :noon: "noon"
             :pm: "пасля палудня"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: 
           :abbreviated: 
             :am: "раніцы"

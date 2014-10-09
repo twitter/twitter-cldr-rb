@@ -3,9 +3,10 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
-        :Ed: "E 'd'. d."
+        :Ed: "E 'den' d."
         :Ehm: "E h.mm a"
         :Ehms: "E h.mm.ss a"
         :Gy: "y G"
@@ -118,22 +119,39 @@
           1: "vt"
       :fields: 
         :day: "Dag"
+        :day-narrow: "dag"
+        :day-short: "dag"
         :dayperiod: "AM/PM"
         :era: "Æra"
         :hour: "Time"
+        :hour-narrow: "t"
+        :hour-short: "t."
         :minute: "Minut"
+        :minute-narrow: "min"
+        :minute-short: "min."
         :month: "Måned"
+        :month-narrow: "md."
+        :month-short: "md."
+        :quarter: "Kvartal"
+        :quarter-narrow: "kvt."
+        :quarter-short: "kvt."
         :second: "Sekund"
+        :second-narrow: "s"
+        :second-short: "sek."
         :week: "Uge"
+        :week-narrow: "uge"
+        :week-short: "uge"
         :weekday: "Ugedag"
         :year: "År"
+        :year-narrow: "år"
+        :year-short: "år"
         :zone: "Tidszone"
       :formats: 
         :date: 
           :full: 
             :pattern: "EEEE 'den' d. MMMM y"
           :long: 
-            :pattern: "d. MMM y"
+            :pattern: "d. MMMM y"
           :medium: 
             :pattern: "dd/MM/y"
           :short: 
@@ -250,8 +268,8 @@
             :noon: "middag"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: 
           :wide: 
             :am: "formiddag"
@@ -259,10 +277,10 @@
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "K1"
-            2: "K2"
-            3: "K3"
-            4: "K4"
+            1: "1. kvt."
+            2: "2. kvt."
+            3: "3. kvt."
+            4: "4. kvt."
           :narrow: 
             1: 1
             2: 2
@@ -275,10 +293,10 @@
             4: "4. kvartal"
         :stand-alone: 
           :abbreviated: 
-            1: "K1"
-            2: "K2"
-            3: "K3"
-            4: "K4"
+            1: "1. kvt."
+            2: "2. kvt."
+            3: "3. kvt."
+            4: "4. kvt."
           :narrow: 
             1: 1
             2: 2

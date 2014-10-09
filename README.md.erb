@@ -39,18 +39,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1 337").inspect %>
+1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1.337").inspect %>
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1 337,00 $").inspect %>
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1 337,00 €").inspect %>
+1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1.337,00 $").inspect %>
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1.337,00 €").inspect %>
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1 337%").inspect %>
-1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1 337,00%").inspect %>
+1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1.337 %").inspect %>
+1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1.337,00 %").inspect %>
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1 337,000").inspect %>
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1.337,000").inspect %>
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -62,7 +62,7 @@ num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
-<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1 337,00 $") %>
+<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1.337,00 $") %>
 
 #### More on Currencies
 
@@ -154,7 +154,7 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)").inspect %>
 DateTime.now.localize(:es).to_long_s               # <%= assert(datetime.localize(:es).to_long_s, "14 de febrero de 2014, 12:20:05 UTC").inspect %>
-DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14/2/2014 12:20:05").inspect %>
+DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 de feb. de 2014 12:20:05").inspect %>
 DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14 12:20").inspect %>
 
 Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (UTC +00:00)").inspect %>
@@ -164,7 +164,7 @@ Time.now.localize(:es).to_short_s                  # <%= assert(time.localize(:e
 
 DateTime.now.localize(:es).to_date.to_full_s       # <%= assert(datetime.localize(:es).to_date.to_full_s, "viernes, 14 de febrero de 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_long_s       # <%= assert(datetime.localize(:es).to_date.to_long_s, "14 de febrero de 2014").inspect %>
-DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14/2/2014").inspect %>
+DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14 de feb. de 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_short_s      # <%= assert(datetime.localize(:es).to_date.to_short_s, "14/2/14").inspect %>
 ```
 
@@ -184,7 +184,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", "H"])) %>
+# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd"])) %>
 DateTime.now.localize(:ja).additional_formats
 ```
 

@@ -18,6 +18,7 @@ module TwitterCldr
       autoload :RuleGroup,    "twitter_cldr/formatters/numbers/rbnf/rule_group"
       autoload :RuleParser,   "twitter_cldr/formatters/numbers/rbnf/rule_parser"
       autoload :Substitution, "twitter_cldr/formatters/numbers/rbnf/substitution"
+      autoload :Plural,       "twitter_cldr/formatters/numbers/rbnf/plural"
 
       class PrivateRuleSetError < StandardError; end
 
@@ -100,7 +101,7 @@ module TwitterCldr
         def rule_set_from_resource(rule_set_data)
           RuleSet.new(
             rule_set_data[:rules].map do |rule|
-              Rule.new(rule[:value], rule[:rule], rule[:radix])
+              Rule.new(rule[:value], rule[:rule], rule[:radix], locale)
             end,
             rule_set_data[:type],
             rule_set_data[:access] || "public"

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -24,9 +25,9 @@
         :MMdd: "dd-MM"
         :Md: "d/M"
         :d: "d"
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
+        :h: "a h"
+        :hm: "a h:mm"
+        :hms: "a h:mm:ss"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -109,26 +110,43 @@
             :wed: "புதன்"
       :eras: 
         :abbr: 
-          0: "கி.மு."
-          1: "கி.பி."
+          0: "பொ.ச.மு"
+          1: "பொ.ச"
         :name: 
-          0: "கிறிஸ்துவுக்கு முன்"
-          1: "அனோ டோமினி"
+          0: "பொ.ச.மு"
+          1: "பொ.ச"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "நாள்"
+        :day-narrow: "நாள்"
+        :day-short: "நாள்"
         :dayperiod: "முற்பகல்/பிற்பகல்"
         :era: "காலம்"
         :hour: "மணி"
+        :hour-narrow: "ம"
+        :hour-short: "மநே."
         :minute: "நிமிடம்"
+        :minute-narrow: "நிமி"
+        :minute-short: "நிமி."
         :month: "மாதம்"
-        :second: "வினாடி"
+        :month-narrow: "மாதம்"
+        :month-short: "மாதம்"
+        :quarter: "காலாண்டு"
+        :quarter-narrow: "காலாண்டு"
+        :quarter-short: "காலாண்டு"
+        :second: "விநாடி"
+        :second-narrow: "வி"
+        :second-short: "விநா."
         :week: "வாரம்"
-        :weekday: "வார நாள்"
+        :week-narrow: "வாரம்"
+        :week-short: "வாரம்"
+        :weekday: "வாரத்தின் நாள்"
         :year: "ஆண்டு"
-        :zone: "மண்டலம்"
+        :year-narrow: "ஆண்டு"
+        :year-short: "ஆண்டு"
+        :zone: "நேர மண்டலம்"
       :formats: 
         :date: 
           :full: 
@@ -141,13 +159,13 @@
             :pattern: "d-M-yy"
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} ’அன்று’ {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} ’அன்று’ {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -244,16 +262,16 @@
             :am: "முற்பகல்"
             :pm: "பிற்பகல்"
           :narrow: 
-            :am: "AM"
-            :noon: "n"
-            :pm: "PM"
+            :am: "மு.ப"
+            :noon: "ம"
+            :pm: "பி.ப"
           :wide: 
             :am: "முற்பகல்"
-            :noon: "noon"
+            :noon: "நண்பகல்"
             :pm: "பிற்பகல்"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

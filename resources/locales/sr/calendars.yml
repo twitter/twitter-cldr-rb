@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "E"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E d."
@@ -21,7 +22,6 @@
         :MMMEd: "E d. MMM"
         :MMMMEd: "E d. MMMM"
         :MMMMd: "d. MMMM"
-        :MMMMdd: "dd. MMMM"
         :MMMd: "d. MMM"
         :MMMdd: "dd.MMM"
         :MMdd: "MM-dd"
@@ -33,15 +33,15 @@
         :ms: "mm.ss"
         ? !ruby/symbol "y"
         : "y."
-        :yM: "y-M"
-        :yMEd: "E, d. M. y."
-        :yMM: "MM.y"
+        :yM: "M.y."
+        :yMEd: "E, d.M.y."
+        :yMM: "MM.y."
         :yMMM: "MMM y."
         :yMMMEd: "E, d. MMM y."
         :yMMMM: "MMMM y."
         :yMMMd: "d. MMM y."
-        :yMMdd: "dd.MM.y"
-        :yMd: "d. M. y."
+        :yMMdd: "dd.MM.y."
+        :yMd: "d.M.y."
         :yQQQ: "QQQ. y"
         :yQQQQ: "QQQQ. y"
       :days: 
@@ -116,23 +116,40 @@
           0: "п. н. е."
           1: "н. е."
         :name: 
-          0: "Пре нове ере"
-          1: "Нове ере"
+          0: "п. н. е."
+          1: "н. е."
         :narrow: 
           0: "п.н.е."
           1: "н.е."
       :fields: 
         :day: "дан"
-        :dayperiod: "пре подне/поподне"
+        :day-narrow: "д."
+        :day-short: "д."
+        :dayperiod: "пре подне/по подне"
         :era: "ера"
-        :hour: "час"
+        :hour: "сат"
+        :hour-narrow: "ч."
+        :hour-short: "ч."
         :minute: "минут"
+        :minute-narrow: "мин."
+        :minute-short: "мин."
         :month: "месец"
+        :month-narrow: "м."
+        :month-short: "мес."
+        :quarter: "квартал"
+        :quarter-narrow: "квартал"
+        :quarter-short: "квартал"
         :second: "секунд"
+        :second-narrow: "с."
+        :second-short: "сек."
         :week: "недеља"
+        :week-narrow: "н."
+        :week-short: "нед."
         :weekday: "дан у недељи"
         :year: "година"
-        :zone: "зона"
+        :year-narrow: "г."
+        :year-short: "год."
+        :zone: "временска зона"
       :formats: 
         :date: 
           :full: 
@@ -251,11 +268,11 @@
             :pm: "p"
           :wide: 
             :am: "пре подне"
-            :noon: "noon"
-            :pm: "поподне"
+            :noon: "у подне"
+            :pm: "по подне"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

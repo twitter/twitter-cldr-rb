@@ -3,9 +3,10 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "E d"
+        :Ed: "d E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
@@ -15,7 +16,7 @@
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :M: "LL"
+        :M: "L"
         :MEd: "E dd/MM"
         :MMM: "LLL"
         :MMMEd: "E d MMM"
@@ -90,15 +91,27 @@
           1: "A"
       :fields: 
         :day: "Day"
+        :day-short: "day"
         :dayperiod: "am/pm"
         :era: "Era"
         :hour: "Hour"
+        :hour-narrow: "h"
+        :hour-short: "hr."
         :minute: "Minute"
+        :minute-narrow: "m"
+        :minute-short: "min."
         :month: "Month"
+        :month-short: "mo."
+        :quarter: "Quarter"
+        :quarter-short: "qtr."
         :second: "Second"
+        :second-narrow: "s"
+        :second-short: "sec."
         :week: "Week"
+        :week-short: "wk."
         :weekday: "Day of the Week"
         :year: "Year"
+        :year-short: "yr."
         :zone: "Time Zone"
       :formats: 
         :date: 
@@ -112,13 +125,13 @@
             :pattern: "dd/MM/y"
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'at' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'at' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -185,8 +198,8 @@
             :noon: "noon"
             :pm: "pm"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

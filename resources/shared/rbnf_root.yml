@@ -250,12 +250,70 @@
               :value: 10000
           :type: "armenian-upper"
         - 
+          :access: "private"
+          :rules: 
+            - 
+              :rule: "=%ethiopic=;"
+              :value: 1
+            - 
+              :rule: "<<፼[>>];"
+              :value: 10000
+            - 
+              :rule: "<<፼>%%ethiopic-p1>;"
+              :value: 100000000
+            - 
+              :rule: "<<፼>%%ethiopic-p2>;"
+              :value: 1000000000000
+            - 
+              :rule: "<<፼>%%ethiopic-p3>;"
+              :value: 10000000000000000
+          :type: "ethiopic-p"
+        - 
+          :access: "private"
+          :rules: 
+            - 
+              :rule: "፼;"
+              :value: 0
+            - 
+              :rule: "፼=%%ethiopic-p=;"
+              :value: 1
+            - 
+              :rule: "<%ethiopic<፼[>%ethiopic>];"
+              :value: 10000
+          :type: "ethiopic-p1"
+        - 
+          :access: "private"
+          :rules: 
+            - 
+              :rule: "፼፼;"
+              :value: 0
+            - 
+              :rule: "፼፼=%%ethiopic-p=;"
+              :value: 1
+            - 
+              :rule: "<%ethiopic<፼>%%ethiopic-p1>;"
+              :value: 100000000
+          :type: "ethiopic-p2"
+        - 
+          :access: "private"
+          :rules: 
+            - 
+              :rule: "፼፼፼;"
+              :value: 0
+            - 
+              :rule: "፼፼፼=%%ethiopic-p=;"
+              :value: 1
+            - 
+              :rule: "<%ethiopic<፼>%%ethiopic-p2>;"
+              :value: 1000000000000
+          :type: "ethiopic-p3"
+        - 
           :rules: 
             - 
               :rule: "−>>;"
               :value: "-x"
             - 
-              :rule: "<<፡>>>;"
+              :rule: "<<፡>>;"
               :value: "x.x"
             - 
               :rule: "ባዶ;"
@@ -327,22 +385,22 @@
               :rule: "<<፼[>>];"
               :value: 20000
             - 
-              :rule: "፼፼[>>];"
+              :rule: "፼>%%ethiopic-p1>;"
               :value: 100000000
             - 
-              :rule: "<<፼፼[>>];"
+              :rule: "<<፼>%%ethiopic-p1>;"
               :value: 200000000
             - 
-              :rule: "፼፼፼[>>];"
+              :rule: "፼>%%ethiopic-p2>;"
               :value: 1000000000000
             - 
-              :rule: "<<፼፼፼[>>];"
+              :rule: "<<፼>%%ethiopic-p2>;"
               :value: 2000000000000
             - 
-              :rule: "፼፼፼፼[>>];"
+              :rule: "፼>%%ethiopic-p3>;"
               :value: 10000000000000000
             - 
-              :rule: "<<፼፼፼፼[>>];"
+              :rule: "<<፼>%%ethiopic-p3>;"
               :value: 20000000000000000
             - 
               :rule: "=#,###0=;"
@@ -1165,15 +1223,6 @@
             - 
               :rule: "=%hebrew=[׳];"
               :value: 100
-            - 
-              :rule: "=%hebrew=[׳];"
-              :value: 200
-            - 
-              :rule: "=%hebrew=[׳];"
-              :value: 300
-            - 
-              :rule: "=%hebrew=;"
-              :value: 400
             - 
               :rule: "=%hebrew=׳;"
               :value: 401

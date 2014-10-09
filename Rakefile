@@ -96,7 +96,7 @@ end
 # TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
 
 namespace :update do
-  ICU_JAR = './vendor/icu4j-52_1.jar'
+  ICU_JAR = './vendor/icu4j.jar'
 
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E, d"
@@ -110,22 +111,39 @@
           0: "SEU"
           1: "EU"
         :name: 
-          0: "SM"
-          1: "M"
+          0: "Sebelum Era Umum"
+          1: "Era Umum"
         :narrow: 
           0: "SM"
           1: "M"
       :fields: 
         :day: "Hari"
+        :day-narrow: "h"
+        :day-short: "h"
         :dayperiod: "AM/PM"
         :era: "Era"
         :hour: "Jam"
+        :hour-narrow: "j"
+        :hour-short: "jam"
         :minute: "Menit"
+        :minute-narrow: "m"
+        :minute-short: "mnt."
         :month: "Bulan"
+        :month-narrow: "bln."
+        :month-short: "bln."
+        :quarter: "Triwulan"
+        :quarter-narrow: "triwln."
+        :quarter-short: "triwln."
         :second: "Detik"
+        :second-narrow: "d"
+        :second-short: "dtk."
         :week: "Minggu"
+        :week-narrow: "mgg."
+        :week-short: "mgg."
         :weekday: "Hari dalam Seminggu"
         :year: "Tahun"
+        :year-narrow: "thn."
+        :year-short: "thn."
         :zone: "Zona Waktu"
       :formats: 
         :date: 
@@ -241,15 +259,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "AM"
-            :noon: "n"
+            :noon: "tengah hari"
             :pm: "PM"
           :wide: 
             :am: "AM"
-            :noon: "noon"
+            :noon: "tengah hari"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

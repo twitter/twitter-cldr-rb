@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -101,35 +102,52 @@
             :tue: "Ma"
             :wed: "Mi"
           :wide: 
-            :fri: "vineri"
-            :mon: "luni"
-            :sat: "sâmbătă"
-            :sun: "duminică"
-            :thu: "joi"
-            :tue: "marți"
-            :wed: "miercuri"
+            :fri: "Vineri"
+            :mon: "Luni"
+            :sat: "Sâmbătă"
+            :sun: "Duminică"
+            :thu: "Joi"
+            :tue: "Marți"
+            :wed: "Miercuri"
       :eras: 
         :abbr: 
           0: "î.e.n"
           1: "e.n."
         :name: 
-          0: "înainte de Hristos"
-          1: "după Hristos"
+          0: "înaintea erei noastre"
+          1: "era noastră"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
-        :day: "zi"
-        :dayperiod: "a.m./p.m"
-        :era: "eră"
-        :hour: "oră"
-        :minute: "minut"
-        :month: "lună"
-        :second: "secundă"
-        :week: "săptămână"
-        :weekday: "zi a săptămânii"
-        :year: "an"
-        :zone: "fus orar"
+        :day: "Zi"
+        :day-narrow: "zi"
+        :day-short: "zi"
+        :dayperiod: "a.m/p.m."
+        :era: "Eră"
+        :hour: "Oră"
+        :hour-narrow: "h"
+        :hour-short: "h"
+        :minute: "Minut"
+        :minute-narrow: "m"
+        :minute-short: "min."
+        :month: "Lună"
+        :month-narrow: "lună"
+        :month-short: "lună"
+        :quarter: "Trimestru"
+        :quarter-narrow: "trim."
+        :quarter-short: "trim."
+        :second: "Secundă"
+        :second-narrow: "s"
+        :second-short: "sec."
+        :week: "Săptămână"
+        :week-narrow: "săpt."
+        :week-short: "săpt."
+        :weekday: "Zi a săptămânii"
+        :year: "An"
+        :year-narrow: "an"
+        :year-short: "an"
+        :zone: "Fus orar"
       :formats: 
         :date: 
           :full: 
@@ -227,32 +245,32 @@
             8: "A"
             9: "S"
           :wide: 
-            1: "ianuarie"
-            10: "octombrie"
-            11: "noiembrie"
-            12: "decembrie"
-            2: "februarie"
-            3: "martie"
-            4: "aprilie"
-            5: "mai"
-            6: "iunie"
-            7: "iulie"
-            8: "august"
-            9: "septembrie"
+            1: "Ianuarie"
+            10: "Octombrie"
+            11: "Noiembrie"
+            12: "Decembrie"
+            2: "Februarie"
+            3: "Martie"
+            4: "Aprilie"
+            5: "Mai"
+            6: "Iunie"
+            7: "Iulie"
+            8: "August"
+            9: "Septembrie"
       :periods: 
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "a.m."
+            :noon: "prânz"
+            :pm: "p.m."
           :wide: 
             :am: "a.m."
-            :noon: "noon"
+            :noon: "la prânz"
             :pm: "p.m."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 
@@ -273,17 +291,17 @@
             4: "trimestrul al IV-lea"
         :stand-alone: 
           :abbreviated: 
-            1: "T1"
-            2: "T2"
-            3: "T3"
-            4: "T4"
+            1: "Trim. I"
+            2: "Trim. II"
+            3: "Trim. III"
+            4: "Trim. IV"
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
           :wide: 
-            1: "trimestrul I"
-            2: "trimestrul al II-lea"
-            3: "trimestrul al III-lea"
-            4: "trimestrul al IV-lea"
+            1: "Trimestrul I"
+            2: "Trimestrul al II-lea"
+            3: "Trimestrul al III-lea"
+            4: "Trimestrul al IV-lea"

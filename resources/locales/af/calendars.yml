@@ -3,27 +3,28 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E hh:mm a"
+        :Ehms: "E hh:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, d MMM y G"
-        :GyMMMd: "d MMM y G"
+        :GyMMMEd: "E, dd MMM y G"
+        :GyMMMd: "dd MMM y G"
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :M: "L"
-        :MEd: "E, M/d"
+        :MEd: "E, d/M"
         :MMM: "LLL"
-        :MMMEd: "E, MMM d"
-        :MMMMEd: "E, MMMM d"
-        :MMMMd: "MMMM d"
+        :MMMEd: "E d MMM"
+        :MMMMEd: "E d MMMM"
+        :MMMMd: "d MMM"
         :MMMMdd: "dd MMMM"
-        :MMMd: "MMM d"
-        :Md: "M/d"
+        :MMMd: "d MMM"
+        :Md: "dd-MM"
         :d: "d"
         :h: "h a"
         :hm: "h:mm a"
@@ -31,13 +32,13 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "M/y"
-        :yMEd: "E, d/M/y"
+        :yM: "MM-y"
+        :yMEd: "E y-MM-dd"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
-        :yMd: "M/d/y"
+        :yMd: "y-MM-dd"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
@@ -112,27 +113,44 @@
           0: "v.g.j."
           1: "g.j."
         :name: 
-          0: "voor Christus"
-          1: "na Christus"
+          0: "v.g.j."
+          1: "g.j."
         :narrow: 
           0: "vgj"
           1: "vg"
       :fields: 
         :day: "Dag"
+        :day-narrow: "d."
+        :day-short: "d."
         :dayperiod: "VM/NM"
         :era: "Era"
         :hour: "Uur"
+        :hour-narrow: "u."
+        :hour-short: "u."
         :minute: "Minuut"
+        :minute-narrow: "m."
+        :minute-short: "min."
         :month: "Maand"
+        :month-narrow: "md."
+        :month-short: "md."
+        :quarter: "Kwartaal"
+        :quarter-narrow: "kw."
+        :quarter-short: "kw."
         :second: "Sekonde"
+        :second-narrow: "s."
+        :second-short: "sek."
         :week: "Week"
+        :week-narrow: "wk."
+        :week-short: "wk."
         :weekday: "Dag van die Week"
         :year: "Jaar"
+        :year-narrow: "j."
+        :year-short: "j."
         :zone: "Tydsone"
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE dd MMMM y"
+            :pattern: "EEEE, dd MMMM y"
           :long: 
             :pattern: "dd MMMM y"
           :medium: 
@@ -160,12 +178,12 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "Jan"
+            1: "Jan."
             10: "Okt"
             11: "Nov"
             12: "Des"
-            2: "Feb"
-            3: "Mar"
+            2: "Feb."
+            3: "Mrt."
             4: "Apr"
             5: "Mei"
             6: "Jun"
@@ -200,12 +218,12 @@
             9: "September"
         :stand-alone: 
           :abbreviated: 
-            1: "Jan"
+            1: "Jan."
             10: "Okt"
             11: "Nov"
             12: "Des"
-            2: "Feb"
-            3: "Mar"
+            2: "Feb."
+            3: "Mrt."
             4: "Apr"
             5: "Mei"
             6: "Jun"
@@ -242,16 +260,16 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "v"
+            :noon: "m"
+            :pm: "n"
           :wide: 
             :am: "vm."
-            :noon: "noon"
+            :noon: "middag"
             :pm: "nm."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

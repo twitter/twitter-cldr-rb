@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E, H:mm"
         :EHms: "E, H:mm:ss"
         :Ed: "E d"
@@ -18,10 +19,10 @@
         :M: "L"
         :MEd: "E, d/M"
         :MMM: "LLL"
-        :MMMEd: "E d 'de' MMM"
+        :MMMEd: "E, d 'de' MMM"
         :MMMMd: "d 'de' MMMM"
         :MMMd: "d 'de' MMM"
-        :MMMdd: "dd-MMM"
+        :MMMdd: "d 'de' MMM"
         :MMd: "d/M"
         :MMdd: "d/M"
         :Md: "d/M"
@@ -92,7 +93,7 @@
             :sun: "D"
             :thu: "J"
             :tue: "M"
-            :wed: "M"
+            :wed: "X"
           :short: 
             :fri: "VI"
             :mon: "LU"
@@ -114,23 +115,40 @@
           0: "a. e. c."
           1: "e. c."
         :name: 
-          0: "antes de Cristo"
-          1: "anno Dómini"
+          0: "a. e. c."
+          1: "e. c."
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
-        :day: "día"
-        :dayperiod: "periodo del día"
-        :era: "era"
-        :hour: "hora"
-        :minute: "minuto"
-        :month: "mes"
-        :second: "segundo"
-        :week: "semana"
-        :weekday: "día de la semana"
-        :year: "año"
-        :zone: "zona horaria"
+        :day: "Día"
+        :day-narrow: "d"
+        :day-short: "d"
+        :dayperiod: "a. m./p. m."
+        :era: "Era"
+        :hour: "Hora"
+        :hour-narrow: "h"
+        :hour-short: "h"
+        :minute: "Minuto"
+        :minute-narrow: "min"
+        :minute-short: "min"
+        :month: "Mes"
+        :month-narrow: "m"
+        :month-short: "m"
+        :quarter: "Trimestre"
+        :quarter-narrow: "trim."
+        :quarter-short: "trim."
+        :second: "Segundo"
+        :second-narrow: "s"
+        :second-short: "s"
+        :week: "Semana"
+        :week-narrow: "sem."
+        :week-short: "sem."
+        :weekday: "Día de la semana"
+        :year: "Año"
+        :year-narrow: "a"
+        :year-short: "a"
+        :zone: "Zona horaria"
       :formats: 
         :date: 
           :full: 
@@ -138,7 +156,7 @@
           :long: 
             :pattern: "d 'de' MMMM 'de' y"
           :medium: 
-            :pattern: "d/M/y"
+            :pattern: "d 'de' MMM 'de' y"
           :short: 
             :pattern: "d/M/yy"
         :datetime: 
@@ -245,15 +263,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "a.m."
-            :noon: "n"
+            :noon: "m."
             :pm: "p.m."
           :wide: 
             :am: "a. m."
-            :noon: "noon"
+            :noon: "mediodía"
             :pm: "p. m."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

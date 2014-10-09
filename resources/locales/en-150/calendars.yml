@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -87,15 +88,24 @@
           1: "A"
       :fields: 
         :day: "Day"
+        :day-short: "day"
         :dayperiod: "AM/PM"
         :era: "Era"
         :hour: "Hour"
+        :hour-short: "hr."
         :minute: "Minute"
+        :minute-short: "min."
         :month: "Month"
+        :month-short: "mo."
+        :quarter: "Quarter"
+        :quarter-short: "qtr."
         :second: "Second"
+        :second-short: "sec."
         :week: "Week"
+        :week-short: "wk."
         :weekday: "Day of the Week"
         :year: "Year"
+        :year-short: "yr."
         :zone: "Time Zone"
       :formats: 
         :date: 
@@ -120,11 +130,11 @@
           :full: 
             :pattern: "HH 'h' mm 'min' ss 's' zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -182,8 +192,8 @@
             :noon: "noon"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

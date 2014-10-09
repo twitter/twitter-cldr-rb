@@ -506,37 +506,12 @@
       - 
         :ruleset: 
           - 
-            :access: "private"
-            :rules: 
-              - 
-                :rule: "th;"
-                :value: 0
-              - 
-                :rule: "st;"
-                :value: 1
-              - 
-                :rule: "nd;"
-                :value: 2
-              - 
-                :rule: "rd;"
-                :value: 3
-              - 
-                :rule: "th;"
-                :value: 4
-              - 
-                :rule: ">>;"
-                :value: 20
-              - 
-                :rule: ">>;"
-                :value: 100
-            :type: "digits-ordinal-indicator"
-          - 
             :rules: 
               - 
                 :rule: "−>>;"
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%digits-ordinal-indicator=;"
+                :rule: "=#,##0=$(ordinal,one{st}two{nd}few{rd}other{th})$;"
                 :value: 0
             :type: "digits-ordinal"
         :type: "OrdinalRules"

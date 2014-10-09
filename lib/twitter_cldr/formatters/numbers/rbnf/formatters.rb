@@ -16,7 +16,6 @@ module TwitterCldr
 
           def format(number, rule_set, rule_group, locale)
             rule = rule_set.rule_for(number)
-            # puts "#{number}, #{rule.base_value}: '" + rule.rule_text + "'"
             formatter = formatter_for(rule, rule_set, rule_group, locale)
             result = formatter.format(number, rule)
             keep_soft_hyphens ? result : remove_soft_hyphens(result)
@@ -118,6 +117,10 @@ module TwitterCldr
 
         def semicolon(number, rule, token)
           ""
+        end
+
+        def plural(number, rule, token)
+          token.render(number / rule.divisor)
         end
 
         protected

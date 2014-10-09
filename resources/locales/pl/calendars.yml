@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
@@ -109,25 +110,42 @@
             :wed: "środa"
       :eras: 
         :abbr: 
-          0: "p.n.e."
-          1: "n.e."
+          0: "BCE"
+          1: "CE"
         :name: 
-          0: "p.n.e."
-          1: "n.e."
+          0: "BCE"
+          1: "CE"
         :narrow: 
           0: "B"
           1: "A"
       :fields: 
         :day: "dzień"
+        :day-narrow: "dzień"
+        :day-short: "dzień"
         :dayperiod: "rano / po południu / wieczorem"
         :era: "era"
         :hour: "godzina"
+        :hour-narrow: "g."
+        :hour-short: "godz."
         :minute: "minuta"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "miesiąc"
+        :month-narrow: "mc"
+        :month-short: "mies."
+        :quarter: "kwartał"
+        :quarter-narrow: "kw."
+        :quarter-short: "kw."
         :second: "sekunda"
+        :second-narrow: "s"
+        :second-short: "sek."
         :week: "tydzień"
+        :week-narrow: "tydz."
+        :week-short: "tydz."
         :weekday: "dzień tygodnia"
         :year: "rok"
+        :year-narrow: "r."
+        :year-short: "r."
         :zone: "strefa czasowa"
       :formats: 
         :date: 
@@ -256,8 +274,8 @@
             :noon: "w południe"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
@@ -116,15 +117,24 @@
           1: "O"
       :fields: 
         :day: "Dydd"
+        :day-short: "day"
         :dayperiod: "AM/PM"
         :era: "Oes"
         :hour: "Awr"
+        :hour-short: "hr."
         :minute: "Munud"
+        :minute-short: "min."
         :month: "Mis"
+        :month-short: "mo."
+        :quarter: "Quarter"
+        :quarter-short: "qtr."
         :second: "Eiliad"
+        :second-short: "sec."
         :week: "Wythnos"
-        :weekday: "Dydd o'r Wythnos"
+        :week-short: "wk."
+        :weekday: "Dydd o’r Wythnos"
         :year: "Blwyddyn"
+        :year-short: "yr."
         :zone: "Cylchfa Amser"
       :formats: 
         :date: 
@@ -135,7 +145,7 @@
           :medium: 
             :pattern: "d MMM y"
           :short: 
-            :pattern: "dd/MM/y"
+            :pattern: "dd/MM/yy"
         :datetime: 
           :full: 
             :pattern: "{{date}} 'am' {{time}}"
@@ -247,8 +257,8 @@
             :noon: "hanner dydd"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

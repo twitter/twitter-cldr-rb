@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "E"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -112,22 +113,39 @@
           0: "AEC"
           1: "EC"
         :name: 
-          0: "avant Jésus-Christ"
-          1: "après Jésus-Christ"
+          0: "avant l’ère commune"
+          1: "ère commune"
         :narrow: 
-          0: "av. J.-C."
-          1: "ap. J.-C."
+          0: "AEC"
+          1: "EC"
       :fields: 
         :day: "jour"
-        :dayperiod: "cadran"
+        :day-narrow: "j"
+        :day-short: "j"
+        :dayperiod: "système horaire"
         :era: "ère"
         :hour: "heure"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "minute"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "mois"
+        :month-narrow: "m."
+        :month-short: "m."
+        :quarter: "trimestre"
+        :quarter-narrow: "trim."
+        :quarter-short: "trim."
         :second: "seconde"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "semaine"
+        :week-narrow: "sem."
+        :week-short: "sem."
         :weekday: "jour de la semaine"
         :year: "année"
+        :year-narrow: "a"
+        :year-short: "a"
         :zone: "fuseau horaire"
       :formats: 
         :date: 
@@ -141,9 +159,9 @@
             :pattern: "yy-MM-dd"
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'à' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'à' {{time}}"
           :medium: 
             :pattern: "{{date}} {{time}}"
           :short: 
@@ -259,8 +277,8 @@
             :noon: "midi"
             :pm: "PM"
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: 
           :abbreviated: 
             :afternoon: "ap.m."

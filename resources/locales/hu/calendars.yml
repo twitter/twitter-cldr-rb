@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d., E"
@@ -108,25 +109,42 @@
             :wed: "szerda"
       :eras: 
         :abbr: 
-          0: "Kr. e."
-          1: "Kr. u."
+          0: "i. e."
+          1: "i. sz."
         :name: 
-          0: "időszámításunk előtt"
-          1: "időszámításunk szerint"
+          0: "i. e."
+          1: "i. sz."
         :narrow: 
           0: "ie."
           1: "isz."
       :fields: 
         :day: "nap"
+        :day-narrow: "nap"
+        :day-short: "nap"
         :dayperiod: "napszak"
         :era: "éra"
         :hour: "óra"
+        :hour-narrow: "óra"
+        :hour-short: "óra"
         :minute: "perc"
+        :minute-narrow: "perc"
+        :minute-short: "perc"
         :month: "hónap"
+        :month-narrow: "hónap"
+        :month-short: "hónap"
+        :quarter: "negyedév"
+        :quarter-narrow: "negyedév"
+        :quarter-short: "negyedév"
         :second: "másodperc"
+        :second-narrow: "másodperc"
+        :second-short: "másodperc"
         :week: "hét"
+        :week-narrow: "hét"
+        :week-short: "hét"
         :weekday: "hét napja"
         :year: "év"
+        :year-narrow: "év"
+        :year-short: "év"
         :zone: "időzóna"
       :formats: 
         :date: 
@@ -135,7 +153,7 @@
           :long: 
             :pattern: "y. MMMM d."
           :medium: 
-            :pattern: "y MMM d"
+            :pattern: "y. MMM d."
           :short: 
             :pattern: "y. MM. dd."
         :datetime: 
@@ -242,15 +260,15 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "de."
-            :noon: "n"
+            :noon: "dél"
             :pm: "du."
           :wide: 
             :am: "de."
-            :noon: "noon"
+            :noon: "dél"
             :pm: "du."
             :variant: 
-              :am: "a.m."
-              :pm: "p.m."
+              :am: "am"
+              :pm: "pm"
         :stand-alone: {}
       :quarters: 
         :format: 

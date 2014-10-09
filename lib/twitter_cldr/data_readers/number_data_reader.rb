@@ -109,7 +109,7 @@ module TwitterCldr
       end
 
       def get_key_for(number)
-        "1#{"0" * (number.to_i.to_s.size - 1)}".to_i
+        "1#{"0" * (number.to_i.abs.to_s.size - 1)}".to_i
       end
 
       def pattern_for_number(pattern, number)
@@ -127,7 +127,7 @@ module TwitterCldr
         else
           case sign
             when :negative
-              "#{symbols[:minus] || '-'}#{pattern}"
+              "#{symbols[:minus_sign] || '-'}#{pattern}"
             else
               pattern
           end
@@ -142,7 +142,8 @@ module TwitterCldr
       end
 
       def self.within_abbreviation_range?(number)
-        NUMBER_MIN <= number && number < NUMBER_MAX
+        abs_value = number.abs
+        NUMBER_MIN <= abs_value && abs_value < NUMBER_MAX
       end
     end
   end

@@ -7,13 +7,6 @@ module TwitterCldr
   module Formatters
     class NumberFormatter < Formatter
 
-      DEFAULT_SYMBOLS = {
-        :group => ',',
-        :decimal => '.',
-        :plus_sign => '+',
-        :minus_sign => '-'
-      }
-
       attr_reader :data_reader
 
       def initialize(data_reader)

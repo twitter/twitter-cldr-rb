@@ -133,7 +133,6 @@ module TwitterCldr
             pattern_sample = range_pattern.values.first
 
             if pattern_sample != 0
-              # TODO: if the pattern is missing for the pluralization rule, do we raise an exception or fall back to 'pattern'?
               range_pattern.fetch(pluralization_rule(number, pattern_sample, decimal))
             else
               0
@@ -152,7 +151,9 @@ module TwitterCldr
 
       def pluralization_rule(number, pattern, decimal)
         truncated_number = truncate_number(number, pattern)
-        truncated_number = truncated_number.to_i if decimal # decimal and fractional numbers might have different pluralization
+        # decimal and fractional numbers might have different pluralization,
+        # so it's important to convert to integer if we want a decimal result
+        truncated_number = truncated_number.to_i if decimal
         TwitterCldr::Formatters::Plurals::Rules.rule_for(truncated_number, locale)
       end
 

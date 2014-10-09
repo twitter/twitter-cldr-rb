@@ -81,11 +81,18 @@ describe LongDecimalFormatter do
       expect(format_number(1123, :precision => 3)).to match_normalized("1,123 тысячи")
     end
 
-    # TODO: requires pluralization from CLDR 26
-    xit 'works with :few in Russian' do
+    it 'works with :few in Russian' do
       expect(format_number(7123, :precision => 3)).to match_normalized("7,123 тысячи")
       expect(format_number(7123)).to match_normalized("7 тысяч") # different pluralization when precision is 0
     end
+
+  context 'with Korean locale' do
+    let(:locale) { :ko }
+
+    xit 'works for Korean' do
+      expect(format_number(1_000_000)).to match_normalized("100만") # not "1 million"
+    end
+  end
 
     xit 'works when pattern is 0 (e.g., for Japanese)'
   end

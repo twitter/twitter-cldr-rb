@@ -9,11 +9,8 @@
     - :other
   :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((n % 10 == 3 &&
-      n % 100 != 13) ? :few : (n == 1 ? :one : ((n % 10 == 2 && n % 100 != 12) ? :two
-      : :other))) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
+      :other) }'
     :names:
-    - :few
     - :one
-    - :two
     - :other

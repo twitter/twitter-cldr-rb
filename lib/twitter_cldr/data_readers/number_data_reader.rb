@@ -32,6 +32,8 @@ module TwitterCldr
       DEFAULT_FORMAT = :default
       DEFAULT_SIGN = :positive
 
+      REDIRECT_REGEX = /\Anumbers\.formats\.\w+\.patterns\.\w+\z/
+
       attr_reader :type, :format
 
       def self.types
@@ -49,7 +51,20 @@ module TwitterCldr
         @format = options[:format] || DEFAULT_FORMAT
       end
 
-      def pattern(number = nil)
+      def format_number(number, options = [])
+        precision = options[:precision] || 0
+        pattern_for_number = pattern(number, precision == 0)
+
+        if pattern_for_number == 0
+          # there's no specific formatting for the number in the current locale
+          number.to_s
+        else
+          tokens = tokenizer.tokenize(pattern_for_number)
+          formatter.format(tokens, number, options)
+        end
+      end
+
+      def pattern(number = nil, decimal = true)
         sign = number < 0 ? :negative : :positive 
         path = BASE_PATH + if valid_type_for?(number, type)
           TYPE_PATHS[type]
@@ -57,14 +72,14 @@ module TwitterCldr
           TYPE_PATHS[:default]
         end
 
-        pattern = traverse(path)
+        pattern = get_pattern_data(path)
 
         if pattern[format]
           pattern = pattern[format]
         end
 
         if number
-          pattern = pattern_for_number(pattern, number)
+          pattern = pattern_for_number(pattern, number, decimal)
         end
 
         if pattern.is_a?(String)
@@ -96,6 +111,16 @@ module TwitterCldr
 
       private
 
+      def get_pattern_data(path)
+        data = traverse(path)
+
+        if data.is_a?(Symbol) && data.to_s =~ REDIRECT_REGEX
+          get_pattern_data(data.to_s.split('.').map(&:to_sym))
+        else
+          data
+        end
+      end
+
       def abbreviated?(type)
         ABBREVIATED_TYPES.include?(type)
       end
@@ -112,12 +137,38 @@ module TwitterCldr
         "1#{"0" * (number.to_i.abs.to_s.size - 1)}".to_i
       end
 
-      def pattern_for_number(pattern, number)
+      def pattern_for_number(pattern, number, decimal)
         if pattern.is_a?(Hash)
-          pattern[get_key_for(number)] || pattern
+          range_pattern = pattern[get_key_for(number)]
+
+          if range_pattern
+            pattern_sample = range_pattern.values.first
+
+            if pattern_sample != 0
+              rule = pluralization_rule(number, pattern_sample, decimal)
+              # fall back to :other and raise an exception if it's missing as well
+              range_pattern.fetch(rule, range_pattern.fetch(:other))
+            else
+              0
+            end
+          else
+            pattern
+          end
         else
           pattern
         end
+      end
+
+      def truncate_number(number, pattern)
+        formatter.truncate_number(number, tokenizer.tokenize(pattern)[1].value.size)
+      end
+
+      def pluralization_rule(number, pattern, decimal)
+        truncated_number = truncate_number(number, pattern)
+        # decimal and fractional numbers might have different pluralization,
+        # so it's important to convert to integer if we want a decimal result
+        truncated_number = truncated_number.to_i if decimal
+        TwitterCldr::Formatters::Plurals::Rules.rule_for(truncated_number, locale)
       end
 
       def pattern_for_sign(pattern, sign)

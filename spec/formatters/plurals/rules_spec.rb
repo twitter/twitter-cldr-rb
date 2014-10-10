@@ -15,9 +15,11 @@ describe Rules do
       [:cardinal, :ordinal].each do |type|
         expect(result).to include(type)
         expect(result[type]).to include(:names, :rule)
-        expect(result[type][:names].size).to eq(4)
         expect(result[type][:rule]).to be_a(Proc)
       end
+
+      expect(result[:cardinal][:names].size).to eq(4)
+      expect(result[:ordinal][:names].size).to eq(1)
     end
   end
 
@@ -66,7 +68,7 @@ describe Rules do
     end
 
     it "returns data for zh-Hant" do
-      expect(Rules.all_for(:'zh-Hant')).to match_array([:one, :other])
+      expect(Rules.all_for(:'zh-Hant')).to match_array([:other])
     end
 
     it "returns ordinal plurals if asked" do
@@ -86,7 +88,7 @@ describe Rules do
     end
 
     it "returns ordinal rules for the default locale if asked" do
-      expect(Rules.all(:ordinal)).to match_array([:one, :two, :few, :other])
+      expect(Rules.all(:ordinal)).to match_array([:other])
     end
   end
 end

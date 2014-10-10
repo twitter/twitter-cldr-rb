@@ -15,31 +15,25 @@ describe AbbreviatedNumberFormatter do
   describe "#truncate_number" do
     let(:number) { 1234 }
 
-    def truncate(number, integer_format)
-      integer_formatter = Object.new
-      stub(integer_formatter).format { integer_format }
-      formatter.send(:truncate_number, number, integer_formatter)
+    def truncate(number, decimal_digits)
+      formatter.send(:truncate_number, number, decimal_digits)
     end
 
-    it "truncates the number based on the integer format string" do
-      expect(truncate(number, "0")).to eq(1.234)
-      expect(truncate(number, "00")).to eq(12.34)
-      expect(truncate(number, "000")).to eq(123.4)
-      expect(truncate(number, "0000")).to eq(1234)
-      expect(truncate(number, "00000")).to eq(1234)
-      expect(truncate(number, "000000")).to eq(1234)
-    end
-
-    it "raises an exception if the format string is invalid" do
-      expect { truncate(number, "00.00") }.to raise_error(ArgumentError)
+    it "truncates the number based on number of decimal digits requested" do
+      expect(truncate(number, 1)).to eq(1.234)
+      expect(truncate(number, 2)).to eq(12.34)
+      expect(truncate(number, 3)).to eq(123.4)
+      expect(truncate(number, 4)).to eq(1234)
+      expect(truncate(number, 5)).to eq(1234)
+      expect(truncate(number, 6)).to eq(1234)
     end
 
     it "returns the original number if less than 10^3" do
-      expect(truncate(999, "000")).to eq(999)
+      expect(truncate(999, 3)).to eq(999)
     end
 
     it "returns the original number if greater than 10^15" do
-      expect(truncate(10 ** 15, "000")).to eq(10 ** 15)
+      expect(truncate(10 ** 15, 3)).to eq(10 ** 15)
     end
   end
 end

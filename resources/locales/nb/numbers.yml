@@ -14,31 +14,79 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 tusen"
-            10000: "00 tusen"
-            100000: "000 tusen"
-            1000000: "0 millioner"
-            10000000: "00 millioner"
-            100000000: "000 millioner"
-            1000000000: "0 milliarder"
-            10000000000: "00 milliarder"
-            100000000000: "000 milliarder"
-            1000000000000: "0 billioner"
-            10000000000000: "00 billioner"
-            100000000000000: "000 billioner"
+            1000: 
+              :one: "0 tusen"
+              :other: "0 tusen"
+            10000: 
+              :one: "00 tusen"
+              :other: "00 tusen"
+            100000: 
+              :one: "000 tusen"
+              :other: "000 tusen"
+            1000000: 
+              :one: "0 million"
+              :other: "0 millioner"
+            10000000: 
+              :one: "00 million"
+              :other: "00 millioner"
+            100000000: 
+              :one: "000 million"
+              :other: "000 millioner"
+            1000000000: 
+              :one: "0 milliard"
+              :other: "0 milliarder"
+            10000000000: 
+              :one: "00 milliard"
+              :other: "00 milliarder"
+            100000000000: 
+              :one: "000 milliard"
+              :other: "000 milliarder"
+            1000000000000: 
+              :one: "0 billion"
+              :other: "0 billioner"
+            10000000000000: 
+              :one: "00 billioner"
+              :other: "00 billioner"
+            100000000000000: 
+              :one: "000 billioner"
+              :other: "000 billioner"
           :short: 
-            1000: "0 K"
-            10000: "00 K"
-            100000: "000 K"
-            1000000: "0 mill"
-            10000000: "00 mill"
-            100000000: "000 mill"
-            1000000000: "0 mrd"
-            10000000000: "00 mrd"
-            100000000000: "000 mrd"
-            1000000000000: "0 bill"
-            10000000000000: "00 bill"
-            100000000000000: "000 bill"
+            1000: 
+              :one: "0 K"
+              :other: "0 K"
+            10000: 
+              :one: "00 K"
+              :other: "00 K"
+            100000: 
+              :one: "000 K"
+              :other: "000 K"
+            1000000: 
+              :one: "0 mill"
+              :other: "0 mill"
+            10000000: 
+              :one: "00 mill"
+              :other: "00 mill"
+            100000000: 
+              :one: "000 mill"
+              :other: "000 mill"
+            1000000000: 
+              :one: "0 mrd"
+              :other: "0 mrd"
+            10000000000: 
+              :one: "00 mrd"
+              :other: "00 mrd"
+            100000000000: 
+              :one: "000 mrd"
+              :other: "000 mrd"
+            1000000000000: 
+              :one: "0 bill"
+              :other: "0 bill"
+            10000000000000: 
+              :one: "00 bill"
+              :other: "00 bill"
+            100000000000000: 
+              :one: "000 bill"
+              :other: "000 bill"
       :percent: 
         :number_system: "latn"
         :patterns: 

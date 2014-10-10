@@ -6,7 +6,7 @@
         :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
+        :Ed: "d, E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
@@ -51,14 +51,7 @@
             :tue: "аў"
             :wed: "ср"
           :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short: 
-            :fri: "Fr"
-            :mon: "Mo"
-            :sat: "Sa"
-            :sun: "Su"
-            :thu: "Th"
-            :tue: "Tu"
-            :wed: "We"
+          :short: :calendars.gregorian.days.format.abbreviated
           :wide: 
             :fri: "пятніца"
             :mon: "панядзелак"
@@ -84,31 +77,21 @@
           0: "да н.э."
           1: "н.э."
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: ""
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "дзень"
-        :day-short: "day"
         :dayperiod: "ДП/ПП"
         :era: "эра"
         :hour: "гадзіна"
-        :hour-short: "hr."
         :minute: "хвіліна"
-        :minute-short: "min."
         :month: "месяц"
-        :month-short: "mo."
         :quarter: "Quarter"
-        :quarter-short: "qtr."
         :second: "секунда"
-        :second-short: "sec."
         :week: "тыдзень"
-        :week-short: "wk."
         :weekday: "дзень тыдня"
         :year: "год"
-        :year-short: "yr."
         :zone: "Zone"
       :formats: 
         :date: 
@@ -122,13 +105,13 @@
             :pattern: "d.M.yy"
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :long: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
           :short: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
             :pattern: "HH.mm.ss zzzz"
@@ -230,9 +213,6 @@
             :am: "да палудня"
             :noon: "noon"
             :pm: "пасля палудня"
-            :variant: 
-              :am: "am"
-              :pm: "pm"
         :stand-alone: 
           :abbreviated: 
             :am: "раніцы"

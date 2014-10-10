@@ -24,7 +24,7 @@ describe CurrencyFormatter do
 
     it "handles negative numbers" do
       # yes, the parentheses really are part of the format, don't worry about it
-      expect(format_currency(-12)).to eq("($12.00)")
+      expect(format_currency(-12)).to eq("-$12.00")
     end
 
     it "should use the specified currency symbol when specified" do

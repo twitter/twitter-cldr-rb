@@ -32,6 +32,8 @@ module TwitterCldr
       DEFAULT_FORMAT = :default
       DEFAULT_SIGN = :positive
 
+      REDIRECT_REGEX = /\Anumbers\.formats\.\w+\.patterns\.\w+\z/
+
       attr_reader :type, :format
 
       def self.types
@@ -70,7 +72,7 @@ module TwitterCldr
           TYPE_PATHS[:default]
         end
 
-        pattern = traverse(path)
+        pattern = get_pattern_data(path)
 
         if pattern[format]
           pattern = pattern[format]
@@ -109,6 +111,16 @@ module TwitterCldr
 
       private
 
+      def get_pattern_data(path)
+        data = traverse(path)
+
+        if data.is_a?(Symbol) && data.to_s =~ REDIRECT_REGEX
+          get_pattern_data(data.to_s.split('.').map(&:to_sym))
+        else
+          data
+        end
+      end
+
       def abbreviated?(type)
         ABBREVIATED_TYPES.include?(type)
       end
@@ -133,7 +145,9 @@ module TwitterCldr
             pattern_sample = range_pattern.values.first
 
             if pattern_sample != 0
-              range_pattern.fetch(pluralization_rule(number, pattern_sample, decimal))
+              rule = pluralization_rule(number, pattern_sample, decimal)
+              # fall back to :other and raise an exception if it's missing as well
+              range_pattern.fetch(rule, range_pattern.fetch(:other))
             else
               0
             end

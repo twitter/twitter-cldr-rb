@@ -5,9 +5,8 @@
       :currency: 
         :number_system: "latn"
         :patterns: 
-          :default: "¤#,##0.00;(¤#,##0.00)"
+          :default: "¤ #,##0.00"
         :unit: 
-          :one: "{0} {1}"
           :other: "{0}{1}"
       :decimal: 
         :number_system: "latn"
@@ -15,77 +14,53 @@
           :default: "#,##0.###"
           :long: 
             1000: 
-              :one: "0 thousand"
               :other: "0千"
             10000: 
-              :one: "00 thousand"
               :other: "0万"
             100000: 
-              :one: "000 thousand"
               :other: "00万"
             1000000: 
-              :one: "0 million"
               :other: "000万"
             10000000: 
-              :one: "00 million"
               :other: "0000万"
             100000000: 
-              :one: "000 million"
               :other: "0亿"
             1000000000: 
-              :one: "0 billion"
               :other: "00亿"
             10000000000: 
-              :one: "00 billion"
               :other: "000亿"
             100000000000: 
-              :one: "000 billion"
               :other: "0000亿"
             1000000000000: 
-              :one: "0 trillion"
               :other: "0兆"
             10000000000000: 
-              :one: "00 trillion"
               :other: "00兆"
             100000000000000: 
-              :one: "000 trillion"
               :other: "000兆"
           :short: 
             1000: 
-              :one: "0K"
               :other: "0千"
             10000: 
-              :one: "00K"
               :other: "0万"
             100000: 
-              :one: "000K"
               :other: "00万"
             1000000: 
-              :one: "0M"
               :other: "000万"
             10000000: 
-              :one: "00M"
               :other: "0000万"
             100000000: 
-              :one: "000M"
               :other: "0亿"
             1000000000: 
-              :one: "0B"
               :other: "00亿"
             10000000000: 
-              :one: "00B"
               :other: "000亿"
             100000000000: 
-              :one: "000B"
               :other: "0000亿"
             1000000000000: 
-              :one: "0T"
               :other: "0兆"
             10000000000000: 
-              :one: "00T"
               :other: "00兆"
             100000000000000: 
-              :one: "000T"
               :other: "000兆"
       :percent: 
         :number_system: "latn"

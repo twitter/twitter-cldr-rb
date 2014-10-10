@@ -97,5 +97,14 @@ describe ShortDecimalFormatter do
     end
   end
 
+  context "with IT locale" do
+    let(:locale) { :it }
+
+    it "works when the pattern is 0" do
+      expect(format_number(100_000)).to match_normalized("100000")
+      expect(format_number(700_000)).to match_normalized("700000")
+    end
+  end
+
   xit 'respects pluralization rules'
 end

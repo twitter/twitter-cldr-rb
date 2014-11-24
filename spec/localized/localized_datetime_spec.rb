@@ -98,6 +98,14 @@ describe LocalizedDateTime do
     it "should format using additional patterns" do
       expect(date_time.localize(:en).to_additional_s("EHms")).to eq("Sun 22:05:00")
     end
+
+    it "should properly handle single quotes escaping" do
+      expect(date_time.localize(:ru).to_additional_s("GyMMMd")).to eq("20 сент. 1987 г. н. э.")
+    end
+
+    it "should unescape multiple groups" do
+      expect(date_time.localize(:es).to_additional_s("yMMMd")).to eq("20 de sept. de 1987")
+    end
   end
 
   describe "#to_s" do

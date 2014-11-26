@@ -143,7 +143,7 @@ module TwitterCldr
 
     def lowercase_locales_map
       @lowercase_locales_map ||= supported_locales.inject({}) do |memo, locale|
-        lowercase = locale.downcase
+        lowercase = locale.to_s.downcase.to_sym
         memo[lowercase] = locale unless lowercase == locale
         memo
       end

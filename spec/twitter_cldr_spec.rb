@@ -22,6 +22,16 @@ describe TwitterCldr do
       expect(TwitterCldr.supported_locale?(:'zh-tw')).to be_true
       expect(TwitterCldr.supported_locale?(:msa)).to be_true
     end
+
+    it "should work with lowercase region codes" do
+      expect(TwitterCldr.supported_locale?('en-gb')).to be_true
+      expect(TwitterCldr.supported_locale?('zh-hant')).to be_true
+    end
+
+    it "should work with upper case region codes" do
+      expect(TwitterCldr.supported_locale?('en-GB')).to be_true
+      expect(TwitterCldr.supported_locale?('zh-Hant')).to be_true
+    end
   end
 
   describe "#supported_locales" do

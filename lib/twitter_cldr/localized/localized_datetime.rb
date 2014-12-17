@@ -28,7 +28,7 @@ module TwitterCldr
           # @ TODO: these need to be cheap to create
           data_reader = data_reader_for(type)
           tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
-          data_reader.formatter.format(tokens, base_in_timezone)
+          data_reader.formatter.format(tokens, base_in_timezone, chain_params)
         end
       end
 

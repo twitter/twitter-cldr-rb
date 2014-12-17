@@ -45,6 +45,10 @@ describe LocalizedDateTime do
       # notice there are no single quotes around the "at"
       expect(date_time.localize(:en).to_long_s).to eq("September 20, 1987 at 10:05:00 PM UTC")
     end
+
+    it 'should stringify with proper time zone' do
+      expect(date_time.localize(:en).with_timezone('America/Los_Angeles').to_long_s).to eq("September 20, 1987 at 3:05:00 PM PST")
+    end
   end
 
   describe "#to_date" do

@@ -1,3 +1,5 @@
+<% $KCODE = "UTF-8" if RUBY_VERSION <= "1.8.7" %>
+
 ## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
@@ -37,18 +39,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1 337").inspect %>
+1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1.337").inspect %>
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1 337,00 $").inspect %>
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1 337,00 €").inspect %>
+1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1.337,00 $").inspect %>
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1.337,00 €").inspect %>
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1 337%").inspect %>
-1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1 337,00%").inspect %>
+1337.localize(:es).to_percent.to_s                         # <%= assert(1337.localize(:es).to_percent.to_s, "1.337 %").inspect %>
+1337.localize(:es).to_percent.to_s(:precision => 2)        # <%= assert(1337.localize(:es).to_percent.to_s(:precision => 2), "1.337,00 %").inspect %>
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1 337,000").inspect %>
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # <%= assert(1337.localize(:es).to_decimal.to_s(:precision => 3) ,"1.337,000").inspect %>
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -60,7 +62,7 @@ num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
-<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1 337,00 $") %>
+<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1.337,00 $") %>
 
 #### More on Currencies
 
@@ -86,6 +88,65 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 1337123.localize.to_long_decimal.to_s   # <%= assert(1337123.localize.to_long_decimal.to_s, "1 million").inspect %>
 ```
 
+### Number Spellout, Ordinalization, and More
+
+TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.
+
+#### Spellout
+
+For easy spellout formatting, check out the `LocalizedNumber#spellout` method:
+
+```ruby
+123.localize.spellout     # <%= assert(123.localize.spellout, "one hundred twenty-three") %>
+25_641.localize.spellout  # <%= assert(25_641.localize.spellout, "twenty-five thousand six hundred forty-one") %>
+```
+
+As always, you can call `#localize` with a locale symbol:
+
+```ruby
+123.localize(:es).spellout     # <%= assert(123.localize(:es).spellout, "ciento veintitrés") %>
+25_641.localize(:ru).spellout  # <%= assert(25_641.localize(:ru).spellout, "двадцать пять тысяч шестьсот сорок один") %>
+```
+
+#### Ordinalization and More
+
+The available rule-based number formats defined by the CLDR data set vary by language. Some languages support ordinal and cardinal numbers, occasionally with an additional masculine/feminine option, while others do not. You'll need to consult the list of available formats for your language.
+
+Rule-based number formats are categorized by groups, and within groups by rulesets. You'll need to specify both to make use of all the available formats for your language.
+
+To get a list of supported groups, use the `#group_names` method:
+
+```ruby
+123.localize(:pt).rbnf.group_names  # <%= assert(123.localize(:pt).rbnf.group_names, ["SpelloutRules", "OrdinalRules"]).inspect %>
+```
+
+To get a list of supported rulesets for a group name, use the `#rule_set_names_for_group` method:
+
+```ruby
+# <%= assert(123.localize(:pt).rbnf.rule_set_names_for_group("OrdinalRules"), ["digits-ordinal-masculine", "digits-ordinal-feminine", "digits-ordinal"]).inspect %>
+123.localize(:pt).rbnf.rule_set_names_for_group("OrdinalRules")
+```
+
+Once you've chosen a group and ruleset, you can pass them to the `to_rbnf_s` method:
+
+```ruby
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-feminine")  # <%= assert(123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-feminine"), "123a") %>
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-masculine") # <%= assert(123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-masculine"), "123o") %>
+```
+
+For comparison, here's what English ordinal formatting looks like:
+
+```ruby
+123.localize.to_rbnf_s("OrdinalRules", "digits-ordinal")  # <%= assert(123.localize.to_rbnf_s("OrdinalRules", "digits-ordinal"), "123rd") %>
+```
+
+For English (and other languages), you can also specify an ordinal spellout:
+
+```ruby
+123.localize.to_rbnf_s("SpelloutRules", "spellout-ordinal")  # <%= assert(123.localize.to_rbnf_s("SpelloutRules", "spellout-ordinal"), "one hundred twenty-third") %>
+123.localize(:pt).to_rbnf_s("SpelloutRules", "spellout-ordinal-masculine")  # <%= assert(123.localize(:pt).to_rbnf_s("SpelloutRules", "spellout-ordinal-masculine"), "centésimo vigésimo terceiro") %>
+```
+
 ### Dates and Times
 
 `Time`, and `DateTime` objects are supported.  `Date` objects are supported transiently:
@@ -93,7 +154,7 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 ```ruby
 DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)").inspect %>
 DateTime.now.localize(:es).to_long_s               # <%= assert(datetime.localize(:es).to_long_s, "14 de febrero de 2014, 12:20:05 UTC").inspect %>
-DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14/2/2014 12:20:05").inspect %>
+DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 de feb. de 2014 12:20:05").inspect %>
 DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14 12:20").inspect %>
 
 Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (UTC +00:00)").inspect %>
@@ -103,7 +164,7 @@ Time.now.localize(:es).to_short_s                  # <%= assert(time.localize(:e
 
 DateTime.now.localize(:es).to_date.to_full_s       # <%= assert(datetime.localize(:es).to_date.to_full_s, "viernes, 14 de febrero de 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_long_s       # <%= assert(datetime.localize(:es).to_date.to_long_s, "14 de febrero de 2014").inspect %>
-DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14/2/2014").inspect %>
+DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14 de feb. de 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_short_s      # <%= assert(datetime.localize(:es).to_date.to_short_s, "14/2/14").inspect %>
 ```
 
@@ -123,7 +184,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", "H"])) %>
+# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd"])) %>
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -227,8 +288,9 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # <%= assert(1.localize(:ru).plural_rule, :one).inspect %>
-2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :other).inspect %>
+2.localize(:ru).plural_rule                                # <%= assert(2.localize(:ru).plural_rule, :few).inspect %>
 5.localize(:ru).plural_rule                                # <%= assert(5.localize(:ru).plural_rule, :many).inspect %>
+10.0.localize(:ru).plural_rule                             # <%= assert(10.0.localize(:ru).plural_rule, :other).inspect %>
 ```
 
 Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::Plurals::Rules` class.  You can do the same thing (and a bit more) if you're feeling adventurous:
@@ -239,11 +301,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # <%= assert(TwitterC
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:es), [:one, :other]).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :many, :other]).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :few, :many, :other]).inspect %>
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru), :one).inspect %>
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :other).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # <%= assert(TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru), :few).inspect %>
 ```
 
 ### Plurals
@@ -346,17 +408,29 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")) %>
-TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # <%= assert_false(TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
+postal_code.valid?("94103")     # <%= assert_true(postal_code.valid?("94103")) %>
+postal_code.valid?("9410")      # <%= assert_false(postal_code.valid?("9410")) %>
 
 # England (Great Britain)
-TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) %>
+postal_code.valid?("BS98 1TL")  # <%= assert_true(postal_code.valid?("BS98 1TL")) %>
 
 # Sweden
-TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) %>
+postal_code.valid?("280 12")    # <%= assert_true(postal_code.valid?("280 12")) %>
 
 # Canada
-TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # <%= assert_true(TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")) %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) %>
+postal_code.valid?("V3H 1Z7")   # <%= assert_true(postal_code.valid?("V3H 1Z7")) %>
+```
+
+Match all valid postal codes in a string with the `#find_all` method:
+
+```ruby
+# United States
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
+postal_code.find_all("12345 23456")    # <%= assert(postal_code.find_all("12345 23456"), ['12345', '23456']).inspect %>
 ```
 
 Get a list of supported territories by using the `#territories` method:
@@ -368,7 +442,14 @@ TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PostalCodes.regex_for_territory(:us), /\d{5}([ \-]\d{4})?/).inspect %>
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
+postal_code.regexp  # <%= assert(postal_code.regexp, /\d{5}([ \-]\d{4})?/).inspect %>
+```
+
+Get a sample of valid postal codes with the `#sample` method:
+
+```ruby
+postal_code.sample(5)  # <%= postal_code.sample(5).to_s %>
 ```
 
 ### Phone Codes
@@ -451,6 +532,107 @@ TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # <%= assert(T
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
 
+### Territories Containment
+
+Provides an API for determining territories containment as described [here](http://www.unicode.org/cldr/charts/25/supplemental/territory_containment_un_m_49.html):
+
+```ruby
+TwitterCldr::Shared::TerritoriesContainment.children('151') # <%= ellipsize(assert(TwitterCldr::Shared::TerritoriesContainment.children('151'), ["BG", "BY", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "SU", "UA"])) %>
+TwitterCldr::Shared::TerritoriesContainment.children('RU')  # <%= assert(TwitterCldr::Shared::TerritoriesContainment.children('RU'), []) %>
+
+TwitterCldr::Shared::TerritoriesContainment.parents('013') # <%= assert(TwitterCldr::Shared::TerritoriesContainment.parents('013'), ['003', '019', '419']) %>
+TwitterCldr::Shared::TerritoriesContainment.parents('001') # <%= assert(TwitterCldr::Shared::TerritoriesContainment.parents('001'), []) %>
+
+TwitterCldr::Shared::TerritoriesContainment.contains?('151', 'RU') # <%= assert_true(TwitterCldr::Shared::TerritoriesContainment.contains?('151', 'RU')) %>
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'BZ') # <%= assert_true(TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'BZ')) %>
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'FR') # <%= assert_false(TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'FR')) %>
+```
+
+You can also use `Territory` class and `to_territory` method in `LocalizedString` class to access these features:
+
+```ruby
+TwitterCldr::Shared::Territory.new("013").parents # <%= assert(TwitterCldr::Shared::Territory.new("013").parents, ['003', '019', '419']) %>
+'419'.localize.to_territory.contains?('BZ') # <%= assert_true('419'.localize.to_territory.contains?('BZ')) %>
+```
+
+### Unicode Regular Expressions
+
+Unicode regular expressions are an extension of the normal regular expression syntax. All of the changes are local to the regex's character class feature and provide support for multi-character strings, Unicode character escapes, set operations (unions, intersections, and differences), and character sets.
+
+#### Changes to Character Classes
+
+Here's a complete list of the operations you can do inside a Unicode regex's character class.
+
+| Regex              | Description                                                                                                         |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------|
+|`[a]`               | The set containing 'a'.                                                                                             |
+|`[a-z]`             | The set containing 'a' through 'z' and all letters in between, in Unicode order.                                    |
+|`[^a-z]`            | The set containing all characters except 'a' through 'z', that is, U+0000 through 'a'-1 and 'z'+1 through U+10FFFF. |
+|`[[pat1][pat2]]`    | The union of sets specified by pat1 and pat2.                                                                       |
+|`[[pat1]&[pat2]]`   | The intersection of sets specified by pat1 and pat2.                                                                |
+|`[[pat1]-[pat2]]`   | The [symmetric difference](http://en.wikipedia.org/wiki/Symmetric_difference) of sets specified by pat1 and pat2.   |
+|`[:Lu:] or \p{Lu}`  | The set of characters having the specified Unicode property; in this case, Unicode uppercase letters.               |
+|`[:^Lu:] or \P{Lu}` | The set of characters not having the given Unicode property.                                                        |
+
+For a description of available Unicode properties, see [Wikipedia](http://en.wikipedia.org/wiki/Unicode_character_property#General_Category) (click on "[show]").
+
+#### Using Unicode Regexes
+
+Create Unicode regular expressions via the `#compile` method:
+
+```ruby
+<% regex = TwitterCldr::Shared::UnicodeRegex.compile("[:Lu:]+") %>
+regex = TwitterCldr::Shared::UnicodeRegex.compile("[:Lu:]+")
+```
+
+Once compiled, instances of `UnicodeRegex` behave just like normal Ruby regexes and support the `#match` and `#=~` methods:
+
+```ruby
+<% assert(regex.match("ABC")[0], "ABC") %>
+regex.match("ABC")  # <%= regex.match("ABC").inspect[1..-1] %>
+regex =~ "fooABC"   # <%= assert(regex =~ "fooABC", 3) %>
+```
+
+Protip: Try to avoid negation in character classes (eg. [^abc] and \P{Lu}) as it tends to negatively affect both performance when constructing regexes as well as matching.
+
+#### Support for Ruby 1.8
+
+Ruby 1.8 does not allow escaped Unicode characters in regular expressions and restricts their maximum length. TwitterCLDR's `UnicodeRegex` class supports escaped unicode characters in Ruby 1.8, but cannot offer a work-around for the length issue. For this reason, Ruby 1.8 users are required to install the oniguruma regex engine and require the oniguruma gem in their projects.
+
+To install oniguruma, run `brew install oniguruma` on MacOS, `[sudo] apt-get install libonig-dev` on Ubuntu (you may need to search for other instructions specific to your platform). Then, install the oniguruma gem via your Gemfile or on your system via `gem install oniguruma`. Once installed, `require oniguruma` somewhere in your project before making use of the `TwitterCldr::Shared::UnicodeRegex` class.
+
+### Text Segmentation
+
+TwitterCLDR currently supports text segmentation by sentence as described in the [Unicode Technical Report #29](http://www.unicode.org/reports/tr29/). The segmentation algorithm makes use of Unicode regular expressions (described above). Because of this, if you're running Ruby 1.8, you'll need to follow the instructions above to install the oniguruma regular expression engine. Segmentation by word, line, and grapheme boundaries could also be supported if someone wants them.
+
+You can break a string into sentences using the `LocalizedString#each_sentence` method:
+
+```ruby
+"The. Quick. Brown. Fox.".localize.each_sentence do |sentence|
+  puts sentence.to_s  # <%= assert("The. Quick. Brown. Fox.".localize.each_sentence.to_a.map(&:to_s), ["The.", " Quick.", " Brown.", " Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
+end
+```
+
+Under the hood, text segmentation is performed by the `BreakIterator` class (name borrowed from ICU). You can use it directly if you're feeling adventurous:
+
+```ruby
+<% iterator = TwitterCldr::Shared::BreakIterator.new(:en) %>
+iterator = TwitterCldr::Shared::BreakIterator.new(:en)
+iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
+  puts sentence  # <%= assert(iterator.each_sentence("The. Quick. Brown. Fox.").to_a, ["The.", " Quick.", " Brown.", " Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
+end
+```
+
+To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
+
+```ruby
+<% iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false) %>
+iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
+  puts sentence  # <%= assert(iterator.each_sentence("I like Ms. Murphy, she's nice.").to_a, ["I like Ms.", " Murphy, she's nice."]).map { |s| "\"#{s}\"" }.join(", ") %>
+end
+```
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.
@@ -478,10 +660,12 @@ Convert code points to characters:
 TwitterCldr::Utils::CodePoints.to_string([0xBF])  # <%= assert(TwitterCldr::Utils::CodePoints.to_string([0xBF]), "¿").inspect %>
 ```
 
+#### Normalization
+
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # <%= assert(TwitterCldr::Normalization::NFD.normalize("français"), "français").inspect %>
+TwitterCldr::Normalization.normalize("français")  # <%= assert(TwitterCldr::Normalization.normalize("français"), "français").inspect %>
 ```
 
 Normalization is easier to see in hex:
@@ -490,8 +674,8 @@ Normalization is easier to see in hex:
 # <%= assert(TwitterCldr::Utils::CodePoints.from_string("español"), [101, 115, 112, 97, 241, 111, 108]).inspect %>
 TwitterCldr::Utils::CodePoints.from_string("español")
 
-# <%= assert(TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español")), [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
-TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
+# <%= assert(TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español")), [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
+TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español"))
 ```
 
 Notice in the example above that the letter "ñ" was transformed from `241` to `110 771`, which represent the "n" and the "˜" respectively.
@@ -509,8 +693,24 @@ A few convenience methods also exist for `String` that make it easy to normalize
 Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, NFC, and NFKC algorithms are all supported (default is NFD):
 
 ```ruby
-# <%= assert("español".localize.normalize(:using => :NFKD).code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
+# <%= assert("español".localize.normalize(:using => :nfkd).code_points, [101, 115, 112, 97, 110, 771, 111, 108]).inspect %>
 "español".localize.normalize(:using => :NFKD).code_points
+```
+
+#### Casefolding
+
+Casefolding is, generally speaking, the process of converting uppercase characters to lowercase ones so as to make text uniform and therefore easier to search. The canonical example of this is the German double "s". The "ß" character is transformed into "ss" by casefolding.
+
+```ruby
+"Hello, World".localize.casefold.to_s  # <%= assert("Hello, World".localize.casefold.to_s, "hello, world") %>
+"Weißrussland".localize.casefold.to_s  # <%= assert("Weißrussland".localize.casefold.to_s, "weissrussland") %>
+```
+
+Turkic languages make use of the regular and dotted uppercase i characters "I" and "İ". Normal casefolding will convert a dotless uppercase "I" to a lowercase, dotted "i", which is correct in English. Turkic languages however expect the lowercase version of a dotless uppercase "I" to be a lowercase, dotless "ı". Pass the `:t` option to the `casefold` method to force Turkic treatment of "i" characters. By default, the `:t` option is set to true for Turkish and Azerbaijani:
+
+```ruby
+"Istanbul".localize.casefold(:t => true).to_s  # <%= assert("Istanbul".localize.casefold(:t => true).to_s, "ıstanbul") %>
+"Istanbul".localize(:tr).casefold.to_s         # <%= assert("Istanbul".localize(:tr).casefold.to_s, "ıstanbul") %>
 ```
 
 ### Sorting (Collation)
@@ -613,6 +813,18 @@ FastGettext.locale = "ru"
 TwitterCldr.locale    # will return :ru
 ```
 
+## Compatibility
+
+TwitterCLDR is fully compatible with Ruby 1.8.7, 1.9.3, 2.0.0, 2.1.0, and Rubinius (v2.2.7). We are considering dropping support for Ruby 1.8. If you still need to use TwitterCLDR in a Ruby 1.8 environment, please let us know as soon as possible. Please note that certain TwitterCLDR features require additional dependencies or considerations when run on Ruby 1.8. Refer to the sections above for details.
+
+#### Notes on Ruby 1.8
+
+Numerous TwitterCLDR features have been built with the assumption that they will only ever be used on UTF-8 encoded text, which is mostly due to the need to support Ruby 1.8. For this reason, you may find it necessary to set the global `$KCODE` variable to `"UTF-8"`. Setting this variable tells Ruby what encoding to use when loading source files. TwitterCLDR will **not** set this value for you.
+
+```ruby
+$KCODE = "UTF-8"
+```
+
 ## Requirements
 
 No external requirements.
@@ -644,6 +856,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2012 Twitter, Inc.
+Copyright 2014 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

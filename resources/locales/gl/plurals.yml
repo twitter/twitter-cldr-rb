@@ -1,3 +1,14 @@
 ---
-:gl: '{ :''gl'' => { :i18n => { :plural => { :keys => [:one], :rule => lambda { |n|
-  n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : :other } } } } }'
+:gl:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((i == 1 && v ==
+      0) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

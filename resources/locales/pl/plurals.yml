@@ -1,8 +1,18 @@
 ---
-:pl: '{ :''pl'' => { :i18n => { :plural => { :keys => [:one, :few, :many], :rule =>
-  lambda { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : ((((n.to_f
-  % 10) % 1).zero? && (2..4).include?(n.to_f % 10)) && (((n.to_f % 100) % 1).zero?
-  && !(12..14).include?(n.to_f % 100))) ? :few : ((n.to_f != 1 && (((n.to_f % 10)
-  % 1).zero? && (0..1).include?(n.to_f % 10))) || (((n.to_f % 10) % 1).zero? && (5..9).include?(n.to_f
-  % 10)) || (((n.to_f % 100) % 1).zero? && (12..14).include?(n.to_f % 100))) ? :many
-  : :other } } } } }'
+:pl:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((v == 0 && (2..4).include?(i
+      % 10)) && !(12..14).include?(i % 100)) ? :few : (((((v == 0 && i != 1) && (0..1).include?(i
+      % 10)) || (v == 0 && (5..9).include?(i % 10))) || (v == 0 && (12..14).include?(i
+      % 100))) ? :many : ((i == 1 && v == 0) ? :one : :other))) }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

@@ -24,22 +24,52 @@ module TwitterCldr
       :simple_titlecase_map
     ]
 
-    CodePoint = Struct.new(*CODE_POINT_FIELDS) do
+    class CodePoint
       DECOMPOSITION_DATA_INDEX = 5
-
       DECOMPOSITION_REGEX = /^(?:<(.+)>\s+)?(.+)?$/
 
-      attr_accessor :compatibility_decomposition_tag
+      INDICES = [
+        :category, :bidi_class, :bidi_mirrored
+      ]
 
-      def initialize(*)
-        super
+      PROPERTIES = [
+        :sentence_break, :line_break, :word_break
+      ]
 
-        if decomposition =~ DECOMPOSITION_REGEX
-          self.compatibility_decomposition_tag = $1
-          self.decomposition = $2 && $2.split.map(&:hex)
-        else
-          raise ArgumentError, "decomposition #{decomposition.inspect} has invalid format"
+      attr_reader :fields
+
+      CODE_POINT_FIELDS.each_with_index do |field, idx|
+        unless field == :decomposition
+          define_method field do
+            fields[idx]
+          end
         end
+      end
+
+      def decomposition
+        @decomposition ||= begin
+          decomp = fields[DECOMPOSITION_DATA_INDEX]
+          if decomp =~ DECOMPOSITION_REGEX
+            $2 && $2.split.map(&:hex)
+          else
+            raise ArgumentError, "decomposition #{decomp.inspect} has invalid format"
+          end
+        end
+      end
+
+      def compatibility_decomposition_tag
+        @compat_decomp_tag ||= begin
+          decomp = fields[DECOMPOSITION_DATA_INDEX]
+          if decomp =~ DECOMPOSITION_REGEX
+            $1
+          else
+            raise ArgumentError, "decomposition #{decomp.inspect} has invalid format"
+          end
+        end
+      end
+
+      def initialize(fields)
+        @fields = fields
       end
 
       def compatibility_decomposition?
@@ -65,7 +95,36 @@ module TwitterCldr
             block_data      = TwitterCldr.get_resource(:unicode_data, :blocks, target.first)
             code_point_data = block_data.fetch(code_point) { |cp| get_range_start(cp, block_data) }
 
-            CodePoint.new(*code_point_data) if code_point_data
+            CodePoint.new(code_point_data) if code_point_data
+          end
+        end
+
+        # Methods that return a list of code points for the given property name.
+        INDICES.each do |index_name|
+          define_method :"code_points_for_#{index_name}" do |value|
+            get_index(index_name)[value]
+          end
+        end
+
+        PROPERTIES.each do |property_name|
+          define_method :"code_points_for_#{property_name}" do |value|
+            get_property_data(property_name)[value]
+          end
+        end
+
+        # Search for code points wherein at least one property value contains prop_value.
+        # For example, if prop_value is set to :Zs, this method will return all code
+        # points that are considered spaces. If prop value is simply :Z, this method
+        # will return all code points who have a property value that contains :Z, i.e.
+        # spaces as well as line separators (:Zl) and paragraph separators (:Zp).
+        def code_points_for_property_value(prop_value)
+          index_key_cache[prop_value] ||= index_keys.inject([]) do |ret, (index_key, index_names)|
+            if index_key.to_s.include?(prop_value.to_s)
+              index_names.each do |index_name|
+                ret += get_index(index_name)[index_key]
+              end
+            end
+            ret
           end
         end
 
@@ -95,16 +154,44 @@ module TwitterCldr
           end
         end
 
-        def hangul_type_cache
-          @hangul_type_cache ||= {}
-        end
-
         def excluded_from_composition?(code_point)
           composition_exclusion_cache[code_point] ||=
             composition_exclusions.any? { |exclusion| exclusion.include?(code_point) }
         end
 
         private
+
+        def index_key_cache
+          @index_key_cache ||= {}
+        end
+
+        def index_keys
+          @index_keys ||= TwitterCldr.get_resource(:unicode_data, :indices, "keys")
+        end
+
+        def get_index(index_name)
+          index_cache[index_name] ||= TwitterCldr.get_resource(
+            :unicode_data, :indices, index_name
+          )
+        end
+
+        def get_property_data(property_name)
+          property_data_cache[property_name] ||= TwitterCldr.get_resource(
+            :unicode_data, :properties, property_name
+          )
+        end
+
+        def index_cache
+          @index_cache ||= {}
+        end
+
+        def property_data_cache
+          @property_data_cache ||= {}
+        end
+
+        def hangul_type_cache
+          @hangul_type_cache ||= {}
+        end
 
         def code_point_cache
           @code_point_cache ||= {}
@@ -132,7 +219,7 @@ module TwitterCldr
         end
 
         def blocks
-          TwitterCldr.get_resource(:unicode_data, :blocks)
+          @blocks ||= TwitterCldr.get_resource(:unicode_data, :blocks)
         end
 
         # Check if block constitutes a range. The code point beginning a range will have a name enclosed in <>, ending with 'First'

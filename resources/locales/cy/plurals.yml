@@ -1,5 +1,27 @@
 ---
-:cy: '{ :''cy'' => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few, :many],
-  :rule => lambda { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 0 ? :zero :
-  n.to_f == 1 ? :one : n.to_f == 2 ? :two : n.to_f == 3 ? :few : n.to_f == 6 ? :many
-  : :other } } } } }'
+:cy:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 3 ? :few :
+      (n == 6 ? :many : (n == 1 ? :one : (n == 2 ? :two : (n == 0 ? :zero : :other)))))
+      }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :zero
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((n == 3) || (n
+      == 4)) ? :few : (((n == 5) || (n == 6)) ? :many : (n == 1 ? :one : (n == 2 ?
+      :two : (((n == 0) || (n == 7) || (n == 8) || (n == 9)) ? :zero : :other)))))
+      }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :zero
+    - :other

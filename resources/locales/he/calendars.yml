@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E ה-d"
@@ -16,11 +17,11 @@
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :M: "L"
-        :MEd: "E, d/M"
+        :MEd: "E, d.M"
         :MMM: "LLL"
         :MMMEd: "E, d בMMM"
         :MMMd: "d בMMM"
-        :Md: "d/M"
+        :Md: "d.M"
         :d: "d"
         :h: "‏h a"
         :hm: "h:mm a"
@@ -29,15 +30,15 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: "M.y"
-        :yMEd: "E, d/M/y"
-        :yMM: "MM/y"
+        :yMEd: "E, d.M.y"
+        :yMM: "M.y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d בMMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d בMMM y"
         :yMd: "d.M.y"
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
@@ -73,7 +74,14 @@
             :tue: "יום שלישי"
             :wed: "יום רביעי"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated: 
+            :fri: "יום ו׳"
+            :mon: "יום ב׳"
+            :sat: "שבת"
+            :sun: "יום א׳"
+            :thu: "יום ה׳"
+            :tue: "יום ג׳"
+            :wed: "יום ד׳"
           :narrow: 
             :fri: "ו׳"
             :mon: "ב׳"
@@ -100,25 +108,41 @@
             :wed: "יום רביעי"
       :eras: 
         :abbr: 
-          0: "BCE"
-          1: "CE"
+          0: "לפנה״ס"
+          1: "לספירה"
         :name: 
-          0: "לפני הספירה"
+          0: "לפנה״ס"
           1: "לספירה"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "יום"
+        :day-narrow: "יום"
+        :day-short: "יום"
         :dayperiod: "לפנה״צ/אחה״צ"
         :era: "תקופה"
         :hour: "שעה"
+        :hour-narrow: "שע׳"
+        :hour-short: "שעה"
         :minute: "דקה"
+        :minute-narrow: "דק׳"
+        :minute-short: "דק׳"
         :month: "חודש"
+        :month-narrow: "חו׳"
+        :month-short: "חו׳"
+        :quarter: "רבעון"
+        :quarter-narrow: "רבע׳"
+        :quarter-short: "רבע׳"
         :second: "שנייה"
+        :second-narrow: "שנ׳"
+        :second-short: "שנ׳"
         :week: "שבוע"
+        :week-narrow: "שב׳"
+        :week-short: "שב׳"
         :weekday: "יום בשבוע"
         :year: "שנה"
+        :year-narrow: "שנ׳"
+        :year-short: "שנ׳"
         :zone: "אזור"
       :formats: 
         :date: 
@@ -129,7 +153,7 @@
           :medium: 
             :pattern: "d בMMM y"
           :short: 
-            :pattern: "dd/MM/yy"
+            :pattern: "d.M.y"
         :datetime: 
           :full: 
             :pattern: "{{date}} בשעה {{time}}"
@@ -151,18 +175,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "ינו"
-            10: "אוק"
-            11: "נוב"
-            12: "דצמ"
-            2: "פבר"
+            1: "ינו׳"
+            10: "אוק׳"
+            11: "נוב׳"
+            12: "דצמ׳"
+            2: "פבר׳"
             3: "מרץ"
-            4: "אפר"
+            4: "אפר׳"
             5: "מאי"
-            6: "יונ"
-            7: "יול"
-            8: "אוג"
-            9: "ספט"
+            6: "יוני"
+            7: "יולי"
+            8: "אוג׳"
+            9: "ספט׳"
           :narrow: 
             1: 1
             10: 10
@@ -199,8 +223,8 @@
             3: "מרץ"
             4: "אפר׳"
             5: "מאי"
-            6: "יונ׳"
-            7: "יול׳"
+            6: "יוני"
+            7: "יולי"
             8: "אוג׳"
             9: "ספט׳"
           :narrow: 
@@ -233,16 +257,13 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "לפנה״צ"
+            :noon: "בצהריים"
+            :pm: "אחה״צ"
           :wide: 
             :am: "לפנה״צ"
-            :noon: "noon"
+            :noon: "בצהריים"
             :pm: "אחה״צ"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

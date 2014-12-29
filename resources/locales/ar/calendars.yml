@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E، d"
@@ -104,24 +105,40 @@
       :eras: 
         :abbr: 
           0: "ق.م"
-          1: "م"
+          1: "ب.م"
         :name: 
           0: "قبل الميلاد"
-          1: "ميلادي"
+          1: "بعد الميلاد"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "يوم"
+        :day-narrow: "يوم"
+        :day-short: "يوم"
         :dayperiod: "ص/م"
         :era: "العصر"
         :hour: "الساعات"
+        :hour-narrow: "الساعات"
+        :hour-short: "الساعات"
         :minute: "الدقائق"
+        :minute-narrow: "الدقائق"
+        :minute-short: "الدقائق"
         :month: "الشهر"
+        :month-narrow: "الشهر"
+        :month-short: "الشهر"
+        :quarter: "ربع السنة"
+        :quarter-narrow: "ربع السنة"
+        :quarter-short: "ربع السنة"
         :second: "الثواني"
+        :second-narrow: "الثواني"
+        :second-short: "الثواني"
         :week: "الأسبوع"
+        :week-narrow: "الأسبوع"
+        :week-short: "الأسبوع"
         :weekday: "اليوم"
         :year: "السنة"
+        :year-narrow: "السنة"
+        :year-short: "السنة"
         :zone: "التوقيت"
       :formats: 
         :date: 
@@ -224,16 +241,13 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "ص"
+            :noon: "ظ"
+            :pm: "م"
           :wide: 
             :am: "ص"
-            :noon: "noon"
+            :noon: "ظ"
             :pm: "م"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

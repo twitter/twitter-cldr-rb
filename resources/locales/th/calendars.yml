@@ -15,6 +15,7 @@
             :pattern: "d/M/#{y + 543}"
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -131,22 +132,39 @@
           1: "ส.ศ."
       :fields: 
         :day: "วัน"
+        :day-narrow: "วัน"
+        :day-short: "วัน"
         :dayperiod: "ช่วงวัน"
         :era: "สมัย"
         :hour: "ชั่วโมง"
+        :hour-narrow: "ชม."
+        :hour-short: "ชม."
         :minute: "นาที"
+        :minute-narrow: "น."
+        :minute-short: "น."
         :month: "เดือน"
+        :month-narrow: "เดือน"
+        :month-short: "เดือน"
+        :quarter: "ไตรมาส"
+        :quarter-narrow: "ไตรมาส"
+        :quarter-short: "ไตรมาส"
         :second: "วินาที"
+        :second-narrow: "วิ"
+        :second-short: "วิ"
         :week: "สัปดาห์"
+        :week-narrow: "สัปดาห์"
+        :week-short: "สัปดาห์"
         :weekday: "วันในสัปดาห์"
         :year: "ปี"
+        :year-narrow: "ปี"
+        :year-short: "ปี"
         :zone: "เขตเวลา"
       :formats: 
         :date: 
           :full: 
             :pattern: "EEEEที่ d MMMM G y"
           :long: 
-            :pattern: "d MMMM y"
+            :pattern: "d MMMM G y"
           :medium: 
             :pattern: "d MMM y"
           :short: 
@@ -184,7 +202,19 @@
             7: "ก.ค."
             8: "ส.ค."
             9: "ก.ย."
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow: 
+            1: "ม.ค."
+            10: "ต.ค."
+            11: "พ.ย."
+            12: "ธ.ค."
+            2: "ก.พ."
+            3: "มี.ค."
+            4: "เม.ย."
+            5: "พ.ค."
+            6: "มิ.ย."
+            7: "ก.ค."
+            8: "ส.ค."
+            9: "ก.ย."
           :wide: 
             1: "มกราคม"
             10: "ตุลาคม"
@@ -247,11 +277,8 @@
             :pm: "p"
           :wide: 
             :am: "ก่อนเที่ยง"
-            :noon: "noon"
+            :noon: "เที่ยง"
             :pm: "หลังเที่ยง"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

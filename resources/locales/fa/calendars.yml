@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d"
@@ -111,25 +112,42 @@
             :wed: "چهارشنبه"
       :eras: 
         :abbr: 
-          0: "ق.م."
-          1: "م."
+          0: "قبل از عصر حاضر"
+          1: "عصر حاضر"
         :name: 
-          0: "قبل از میلاد"
-          1: "میلادی"
+          0: "قبل از عصر حاضر"
+          1: "عصر حاضر"
         :narrow: 
-          0: "ق"
-          1: "م"
+          0: "قبل از عصر حاضر"
+          1: "عصر حاضر"
       :fields: 
         :day: "روز"
+        :day-narrow: "روز"
+        :day-short: "روز"
         :dayperiod: "قبل/بعدازظهر"
         :era: "دوره"
         :hour: "ساعت"
+        :hour-narrow: "ساعت"
+        :hour-short: "ساعت"
         :minute: "دقیقه"
+        :minute-narrow: "دقیقه"
+        :minute-short: "دقیقه"
         :month: "ماه"
+        :month-narrow: "ماه"
+        :month-short: "ماه"
+        :quarter: "سه‌ماهه"
+        :quarter-narrow: "سه‌ماهه"
+        :quarter-short: "سه‌ماهه"
         :second: "ثانیه"
+        :second-narrow: "ثانیه"
+        :second-short: "ثانیه"
         :week: "هفته"
+        :week-narrow: "هفته"
+        :week-short: "هفته"
         :weekday: "روز هفته"
         :year: "سال"
+        :year-narrow: "سال"
+        :year-short: "سال"
         :zone: "منطقهٔ زمانی"
       :formats: 
         :date: 
@@ -244,9 +262,9 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "ق"
+            :noon: "ظ"
+            :pm: "ب"
           :wide: 
             :afternoon: "عصر"
             :am: "قبل‌ازظهر"
@@ -256,9 +274,6 @@
             :night: "شب"
             :noon: "ظهر"
             :pm: "بعدازظهر"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
             :weeHours: "نیمه‌شب"
         :stand-alone: {}
       :quarters: 

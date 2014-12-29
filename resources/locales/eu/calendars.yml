@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d, E"
@@ -30,9 +31,12 @@
         : "y"
         :yM: "y/M"
         :yMEd: "y/M/d, E"
-        :yMMM: "y('e')'ko' MMM"
-        :yMMMEd: "y('e')'ko' MMM d, E"
-        :yMMMd: "y('e')'ko' MMM d"
+        :yMMM: "y MMM"
+        :yMMMEd: "y MMM d, E"
+        :yMMMM: "y('e')'ko' MMMM"
+        :yMMMMEd: "y('e')'ko' MMMM d, E"
+        :yMMMMd: "y('e')'ko' MMMM d"
+        :yMMMd: "y MMM d"
         :yMd: "y/M/d"
         :yQQQ: "y('e')'ko' QQQ"
         :yQQQQ: "y('e')'ko' QQQQ"
@@ -72,13 +76,13 @@
             :wed: "asteazkena"
         :stand-alone: 
           :abbreviated: 
-            :fri: "or."
-            :mon: "al."
-            :sat: "lr."
-            :sun: "ig."
-            :thu: "og."
-            :tue: "ar."
-            :wed: "az."
+            :fri: "Or."
+            :mon: "Al."
+            :sat: "Lr."
+            :sun: "Ig."
+            :thu: "Og."
+            :tue: "Ar."
+            :wed: "Az."
           :narrow: 
             :fri: "O"
             :mon: "A"
@@ -96,34 +100,50 @@
             :tue: "ar."
             :wed: "az."
           :wide: 
-            :fri: "ostirala"
-            :mon: "astelehena"
-            :sat: "larunbata"
-            :sun: "igandea"
-            :thu: "osteguna"
-            :tue: "asteartea"
-            :wed: "asteazkena"
+            :fri: "Ostirala"
+            :mon: "Astelehena"
+            :sat: "Larunbata"
+            :sun: "Igandea"
+            :thu: "Osteguna"
+            :tue: "Asteartea"
+            :wed: "Asteazkena"
       :eras: 
         :abbr: 
           0: "K.a."
           1: "K.o."
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: "K.a."
+          1: "K.o."
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "Eguna"
+        :day-narrow: "eg."
+        :day-short: "eg."
         :dayperiod: "AM//PM"
         :era: "Aroa"
         :hour: "Ordua"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "Minutua"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "Hilabetea"
+        :month-narrow: "hil."
+        :month-short: "hil."
+        :quarter: "Hiruhilekoa"
+        :quarter-narrow: "hiruhil."
+        :quarter-short: "hiruhil."
         :second: "Segundoa"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "Astea"
+        :week-narrow: "ast."
+        :week-short: "ast."
         :weekday: "Asteguna"
         :year: "Urtea"
+        :year-narrow: "urtea"
+        :year-short: "urtea"
         :zone: "Ordu-zona"
       :formats: 
         :date: 
@@ -134,7 +154,7 @@
           :medium: 
             :pattern: "y MMM d"
           :short: 
-            :pattern: "y-MM-dd"
+            :pattern: "y/MM/dd"
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -146,9 +166,9 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "HH:mm:ss (zzzz)"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "HH:mm:ss (z)"
           :medium: 
             :pattern: "HH:mm:ss"
           :short: 
@@ -196,18 +216,18 @@
             9: "irailak"
         :stand-alone: 
           :abbreviated: 
-            1: "urt."
-            10: "urr."
-            11: "aza."
-            12: "abe."
-            2: "ots."
-            3: "mar."
-            4: "api."
-            5: "mai."
-            6: "eka."
-            7: "uzt."
-            8: "abu."
-            9: "ira."
+            1: "Urt."
+            10: "Urr."
+            11: "Aza."
+            12: "Abe."
+            2: "Ots."
+            3: "Mar."
+            4: "Api."
+            5: "Mai."
+            6: "Eka."
+            7: "Uzt."
+            8: "Abu."
+            9: "Ira."
           :narrow: 
             1: "U"
             10: "U"
@@ -222,34 +242,31 @@
             8: "A"
             9: "I"
           :wide: 
-            1: "urtarrila"
-            10: "urria"
-            11: "azaroa"
-            12: "abendua"
-            2: "otsaila"
-            3: "martxoa"
-            4: "apirila"
-            5: "maiatza"
-            6: "ekaina"
-            7: "uztaila"
-            8: "abuztua"
-            9: "iraila"
+            1: "Urtarrila"
+            10: "Urria"
+            11: "Azaroa"
+            12: "Abendua"
+            2: "Otsaila"
+            3: "Martxoa"
+            4: "Apirila"
+            5: "Maiatza"
+            6: "Ekaina"
+            7: "Uztaila"
+            8: "Abuztua"
+            9: "Iraila"
       :periods: 
         :format: 
           :abbreviated: 
             :am: "AM"
             :pm: "PM"
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "g"
+            :noon: "e"
+            :pm: "a"
           :wide: 
             :am: "AM"
-            :noon: "noon"
+            :noon: "eguerdia"
             :pm: "PM"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

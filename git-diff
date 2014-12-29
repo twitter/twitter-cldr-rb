@@ -6,6 +6,7 @@ excl = [
   "resources/locales",
   "resources/shared",
   "resources/unicode_data",
+  "resources/uli",
 ].map { |pattern| "grep -v #{pattern}" }
 
 base_branch = ENV["BRANCH"] || "master"

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E H.mm"
         :EHms: "E H.mm.ss"
         :Ed: "E d."
@@ -118,15 +119,32 @@
           1: "jaa"
       :fields: 
         :day: "päivä"
+        :day-narrow: "pv"
+        :day-short: "pv"
         :dayperiod: "vuorokaudenaika"
         :era: "aikakausi"
         :hour: "tunti"
+        :hour-narrow: "t"
+        :hour-short: "t"
         :minute: "minuutti"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "kuukausi"
+        :month-narrow: "kk"
+        :month-short: "kk"
+        :quarter: "neljännesvuosi"
+        :quarter-narrow: "nelj."
+        :quarter-short: "neljännes"
         :second: "sekunti"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "viikko"
+        :week-narrow: "vk"
+        :week-short: "vk"
         :weekday: "viikonpäivä"
         :year: "vuosi"
+        :year-narrow: "v"
+        :year-short: "v"
         :zone: "aikavyöhyke"
       :formats: 
         :date: 
@@ -244,15 +262,12 @@
             :pm: "ip."
           :narrow: 
             :am: "ap."
-            :noon: "n"
+            :noon: "kp."
             :pm: "ip."
           :wide: 
             :am: "ap."
-            :noon: "noon"
+            :noon: "keskipäivä"
             :pm: "ip."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: 
           :wide: 
             :am: "ap."

@@ -6,7 +6,19 @@
 require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
-require 'pry-nav'
+
+if defined?(RUBY_ENGINE)
+  if RUBY_ENGINE == "rbx"
+    require 'rubinius/debugger'
+  elsif RUBY_ENGINE == "ruby"
+    require 'pry-nav'
+  end
+end
+
+if RUBY_VERSION <= "1.8.7"
+  $KCODE = "UTF-8"
+  require 'oniguruma'
+end
 
 if ENV['SCOV']
   require 'simplecov'
@@ -63,11 +75,22 @@ RSpec::Matchers.define :match_normalized do |expected|
   end
 end
 
+RSpec::Matchers.define :exactly_match do |expected|
+  match do |actual|
+    if actual.respond_to?(:match)
+      m = actual.match(expected)
+      m.to_a.first == expected
+    else
+      expected === actual
+    end
+  end
+end
+
 def check_token_list(got, expected)
-  got.size.should == expected.size
+  expect(got.size).to eq(expected.size)
   expected.each_with_index do |exp_hash, index|
     exp_hash.each_pair do |exp_key, exp_val|
-      got[index].send(exp_key).should == exp_val
+      expect(got[index].send(exp_key)).to eq(exp_val)
     end
   end
 end

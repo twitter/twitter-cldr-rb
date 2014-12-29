@@ -1,4 +1,17 @@
 ---
-:lv: '{ :''lv'' => { :i18n => { :plural => { :keys => [:zero, :one], :rule => lambda
-  { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 0 ? :zero : (n.to_f % 10 ==
-  1 && n.to_f % 100 != 11) ? :one : :other } } } } }'
+:lv:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n % 10 == 1
+      && n % 100 != 11) || ((v == 2 && f % 10 == 1) && f % 100 != 11)) || (v != 2
+      && f % 10 == 1)) ? :one : (((n % 10 == 0 || (11..19).include?(n % 100)) || (v
+      == 2 && (11..19).include?(f % 100))) ? :zero : :other)) }'
+    :names:
+    - :one
+    - :zero
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

@@ -3,11 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :EHm: "E HH:mm"
-        :EHms: "E HH:mm:ss"
+        :E: "ccc"
+        :EHm: "E, HH:mm"
+        :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E, h:mm a"
+        :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
@@ -16,15 +17,14 @@
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :M: "L"
-        :MEd: "E, d/M"
+        :MEd: "E, d.M"
         :MMM: "LLL"
-        :MMMEd: "E d MMM"
-        :MMMMEd: "E d MMMM"
+        :MMMEd: "E, d MMM"
+        :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
-        :MMMMdd: "dd MMMM"
         :MMMd: "d MMM"
-        :MMdd: "dd/MM"
-        :Md: "d/M"
+        :MMdd: "d.M"
+        :Md: "d.M"
         :d: "d"
         :h: "h a"
         :hm: "h:mm a"
@@ -32,15 +32,15 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "M/y"
-        :yMEd: "E, d/M/y"
+        :yM: "M.y"
+        :yMEd: "E, d.M.y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
-        :yMd: "dd/MM/y"
-        :yQQQ: "QQQ y"
-        :yQQQQ: "QQQQ y"
+        :yMd: "d.M.y"
+        :yQQQ: "QQQ, y"
+        :yQQQQ: "QQQQ, y"
       :days: 
         :format: 
           :abbreviated: 
@@ -101,13 +101,13 @@
             :tue: "Mar"
             :wed: "Mër"
           :wide: 
-            :fri: "e premte"
-            :mon: "e hënë"
-            :sat: "e shtunë"
-            :sun: "e diel"
-            :thu: "e enjte"
-            :tue: "e martë"
-            :wed: "e mërkurë"
+            :fri: "E premte"
+            :mon: "E hënë"
+            :sat: "E shtunë"
+            :sun: "E diel"
+            :thu: "E enjte"
+            :tue: "E martë"
+            :wed: "E mërkurë"
       :eras: 
         :abbr: 
           0: "p.e.s"
@@ -120,35 +120,52 @@
           1: "e.s."
       :fields: 
         :day: "ditë"
+        :day-narrow: "ditë"
+        :day-short: "ditë"
         :dayperiod: "periudhë e ditës"
         :era: "erë"
         :hour: "orë"
+        :hour-narrow: "orë"
+        :hour-short: "orë"
         :minute: "minutë"
+        :minute-narrow: "min."
+        :minute-short: "min."
         :month: "muaj"
+        :month-narrow: "muaj"
+        :month-short: "muaj"
+        :quarter: "tremujor"
+        :quarter-narrow: "tremujor"
+        :quarter-short: "tremujor"
         :second: "sekondë"
+        :second-narrow: "sek."
+        :second-short: "sek."
         :week: "javë"
+        :week-narrow: "javë"
+        :week-short: "javë"
         :weekday: "ditë e javës"
         :year: "vit"
-        :zone: "zonë"
+        :year-narrow: "vit"
+        :year-short: "vit"
+        :zone: "brezi orar"
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, dd MMMM y"
+            :pattern: "EEEE, d MMMM y"
           :long: 
-            :pattern: "dd MMMM y"
+            :pattern: "d MMMM y"
           :medium: 
-            :pattern: "dd/MM/y"
+            :pattern: "d MMM y"
           :short: 
-            :pattern: "dd/MM/yy"
+            :pattern: "d.M.yy"
         :datetime: 
           :full: 
             :pattern: "{{date}} 'në' {{time}}"
           :long: 
             :pattern: "{{date}} 'në' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -227,40 +244,37 @@
             8: "G"
             9: "S"
           :wide: 
-            1: "janar"
-            10: "tetor"
-            11: "nëntor"
-            12: "dhjetor"
-            2: "shkurt"
-            3: "mars"
-            4: "prill"
-            5: "maj"
-            6: "qershor"
-            7: "korrik"
-            8: "gusht"
-            9: "shtator"
+            1: "Janar"
+            10: "Tetor"
+            11: "Nëntor"
+            12: "Dhjetor"
+            2: "Shkurt"
+            3: "Mars"
+            4: "Prill"
+            5: "Maj"
+            6: "Qershor"
+            7: "Korrik"
+            8: "Gusht"
+            9: "Shtator"
       :periods: 
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "AM"
-            :noon: "n"
+            :noon: "MD"
             :pm: "PM"
           :wide: 
             :am: "paradite"
-            :noon: "noon"
+            :noon: "mesditë"
             :pm: "pasdite"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "T1"
-            2: "T2"
-            3: "T3"
-            4: "T4"
+            1: "tremujori I"
+            2: "tremujori II"
+            3: "tremujori III"
+            4: "tremujori IV"
           :narrow: 
             1: 1
             2: 2
@@ -273,17 +287,17 @@
             4: "tremujori i katërt"
         :stand-alone: 
           :abbreviated: 
-            1: "T1"
-            2: "T2"
-            3: "T3"
-            4: "T4"
+            1: "Tremujori I"
+            2: "Tremujori II"
+            3: "Tremujori III"
+            4: "Tremujori IV"
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
           :wide: 
-            1: "tremujori I"
-            2: "tremujori II"
-            3: "tremujori III"
-            4: "tremujori IV"
+            1: "Tremujori i 1-rë"
+            2: "Tremujori i 2-të"
+            3: "Tremujori i 3-të"
+            4: "Tremujori i 4-t"

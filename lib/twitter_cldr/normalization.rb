@@ -3,34 +3,23 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'eprun'
+
 module TwitterCldr
   module Normalization
-    autoload :Base,       'twitter_cldr/normalization/base'
-    autoload :Hangul,     'twitter_cldr/normalization/hangul'
-    autoload :QuickCheck, 'twitter_cldr/normalization/quick_check'
-    autoload :NFC,        'twitter_cldr/normalization/nfc'
-    autoload :NFD,        'twitter_cldr/normalization/nfd'
-    autoload :NFKC,       'twitter_cldr/normalization/nfkc'
-    autoload :NFKD,       'twitter_cldr/normalization/nfkd'
 
-    VALID_NORMALIZERS  = [:NFD, :NFKD, :NFC, :NFKC]
-    DEFAULT_NORMALIZER = :NFD
+    VALID_NORMALIZERS  = [:nfd, :nfkd, :nfc, :nfkc]
+    DEFAULT_NORMALIZER = :nfd
 
     class << self
 
       def normalize(string, options = {})
-        normalizer(options[:using] || DEFAULT_NORMALIZER).normalize(string)
-      end
+        form = options.fetch(:using, DEFAULT_NORMALIZER).to_s.downcase.to_sym
 
-      private
-
-      def normalizer(normalizer_name)
-        const_name = normalizer_name.to_s.upcase.to_sym
-
-        if VALID_NORMALIZERS.include?(const_name)
-          const_get(const_name)
+        if VALID_NORMALIZERS.include?(form)
+          Eprun.normalize(string, form)
         else
-          raise ArgumentError.new("#{normalizer_name.inspect} is not a valid normalizer (valid normalizers are #{VALID_NORMALIZERS.join(', ')})")
+          raise ArgumentError.new("#{form.inspect} is not a valid normalizer (valid normalizers are #{VALID_NORMALIZERS.join(', ')})")
         end
       end
 

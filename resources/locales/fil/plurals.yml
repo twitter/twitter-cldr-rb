@@ -1,4 +1,18 @@
 ---
-:fil: '{ :''fil'' => { :i18n => { :plural => { :keys => [:one], :rule => lambda {
-  |n| n = n.respond_to?(:abs) ? n.abs : 0;((n.to_f % 1).zero? && (0..1).include?(n.to_f))
-  ? :one : :other } } } } }'
+:fil:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((v == 0 && ((i
+      == 1) || (i == 2) || (i == 3))) || (v == 0 && ((i % 10 != 4) && (i % 10 != 6)
+      && (i % 10 != 9)))) || (v != 0 && ((f % 10 != 4) && (f % 10 != 6) && (f % 10
+      != 9)))) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
+      :other) }'
+    :names:
+    - :one
+    - :other

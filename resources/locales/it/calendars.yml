@@ -3,10 +3,11 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :EHm: "E HH.mm"
+        :E: "ccc"
+        :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h.mm a"
+        :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
@@ -22,9 +23,9 @@
         :MMMd: "d MMM"
         :Md: "d/M"
         :d: "d"
-        :h: "hh a"
-        :hm: "hh:mm a"
-        :hms: "hh:mm:ss a"
+        :h: "h a"
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -115,25 +116,42 @@
           0: "BCE"
           1: "CE"
       :fields: 
-        :day: "giorno"
-        :dayperiod: "periodo del giorno"
-        :era: "era"
-        :hour: "ora"
-        :minute: "minuto"
-        :month: "mese"
-        :second: "secondo"
-        :week: "settimana"
-        :weekday: "giorno della settimana"
-        :year: "anno"
-        :zone: "fuso orario"
+        :day: "Giorno"
+        :day-narrow: "g"
+        :day-short: "g"
+        :dayperiod: "AM/PM"
+        :era: "Era"
+        :hour: "Ora"
+        :hour-narrow: "h"
+        :hour-short: "h."
+        :minute: "Minuto"
+        :minute-narrow: "m"
+        :minute-short: "min."
+        :month: "Mese"
+        :month-narrow: "mese"
+        :month-short: "mese"
+        :quarter: "Trimestre"
+        :quarter-narrow: "trim."
+        :quarter-short: "trim."
+        :second: "Secondo"
+        :second-narrow: "s"
+        :second-short: "sec."
+        :week: "Settimana"
+        :week-narrow: "sett."
+        :week-short: "sett."
+        :weekday: "Giorno della settimana"
+        :year: "Anno"
+        :year-narrow: "anno"
+        :year-short: "anno"
+        :zone: "Fuso orario"
       :formats: 
         :date: 
           :full: 
             :pattern: "EEEE d MMMM y"
           :long: 
-            :pattern: "dd MMMM y"
+            :pattern: "d MMMM y"
           :medium: 
-            :pattern: "dd/MMM/y"
+            :pattern: "dd MMM y"
           :short: 
             :pattern: "dd/MM/yy"
         :datetime: 
@@ -142,9 +160,9 @@
           :long: 
             :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -244,11 +262,8 @@
             :pm: "p."
           :wide: 
             :am: "AM"
-            :noon: "noon"
+            :noon: "mezzogiorno"
             :pm: "PM"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 
@@ -279,7 +294,7 @@
             3: 3
             4: 4
           :wide: 
-            1: "Primo trimestre"
-            2: "Secondo trimestre"
-            3: "Terzo trimestre"
-            4: "Quarto trimestre"
+            1: "1º trimestre"
+            2: "2º trimestre"
+            3: "3º trimestre"
+            4: "4º trimestre"

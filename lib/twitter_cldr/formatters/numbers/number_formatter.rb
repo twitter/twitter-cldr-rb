@@ -7,13 +7,6 @@ module TwitterCldr
   module Formatters
     class NumberFormatter < Formatter
 
-      DEFAULT_SYMBOLS = {
-        :group => ',',
-        :decimal => '.',
-        :plus_sign => '+',
-        :minus_sign => '-'
-      }
-
       attr_reader :data_reader
 
       def initialize(data_reader)
@@ -25,7 +18,7 @@ module TwitterCldr
         options[:type] ||= :decimal
 
         prefix, suffix, integer_format, fraction_format = *partition_tokens(tokens)
-        number = transform_number(number)
+        number = truncate_number(number, integer_format.format.length)
 
         int, fraction = parse_number(number, options)
         result =  integer_format.apply(int, options)
@@ -36,6 +29,10 @@ module TwitterCldr
         )
       end
 
+      def truncate_number(number, decimal_digits)
+        number # noop for base class
+      end
+
       protected
 
       # data readers should encapsulate formatting options, and when they do, this "type"
@@ -44,10 +41,6 @@ module TwitterCldr
         @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
           data_reader.number_system_for(type)
         )
-      end
-
-      def transform_number(number)
-        number  # noop for base class
       end
 
       def partition_tokens(tokens)

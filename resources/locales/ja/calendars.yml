@@ -3,12 +3,13 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EEEEd: "d日EEEE"
-        :EHm: "HH 時 mm 分 (E)"
-        :EHms: "HH 時 mm 分 ss 秒 (E)"
+        :EHm: "H:mm (E)"
+        :EHms: "H:mm:ss (E)"
         :Ed: "d日(E)"
-        :Ehm: "a K 時 mm 分 (E)"
-        :Ehms: "a K 時 mm 分 ss 秒 (E)"
+        :Ehm: "aK:mm (E)"
+        :Ehms: "aK:mm:ss (E)"
         :Gy: "Gy年"
         :GyMMM: "Gy年M月"
         :GyMMMEEEEd: "Gy年M月d日EEEE"
@@ -113,24 +114,41 @@
       :eras: 
         :abbr: 
           0: "西暦紀元前"
-          1: "西暦"
+          1: "西暦紀元"
         :name: 
           0: "西暦紀元前"
-          1: "西暦"
+          1: "西暦紀元"
         :narrow: 
           0: "BCE"
           1: "CE"
       :fields: 
         :day: "日"
+        :day-narrow: "日"
+        :day-short: "日"
         :dayperiod: "午前/午後"
         :era: "時代"
         :hour: "時"
+        :hour-narrow: "時"
+        :hour-short: "時"
         :minute: "分"
+        :minute-narrow: "分"
+        :minute-short: "分"
         :month: "月"
+        :month-narrow: "月"
+        :month-short: "月"
+        :quarter: "四半期"
+        :quarter-narrow: "四半期"
+        :quarter-short: "四半期"
         :second: "秒"
+        :second-narrow: "秒"
+        :second-short: "秒"
         :week: "週"
+        :week-narrow: "週"
+        :week-short: "週"
         :weekday: "曜日"
         :year: "年"
+        :year-narrow: "年"
+        :year-short: "年"
         :zone: "タイムゾーン"
       :formats: 
         :date: 
@@ -252,9 +270,6 @@
             :am: "午前"
             :noon: "正午"
             :pm: "午後"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

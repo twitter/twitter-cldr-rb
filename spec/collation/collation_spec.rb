@@ -41,7 +41,7 @@ describe 'Unicode Collation Algorithm' do
 
         if previous_sort_key
           result = (previous_sort_key <=> current_sort_key).nonzero? || (previous_code_points <=> current_code_points)
-          result.should(eq(-1), error_message(previous_str_code_points, previous_sort_key, current_str_code_points, current_sort_key))
+          expect(result).to(eq(-1), error_message(previous_str_code_points, previous_sort_key, current_str_code_points, current_sort_key))
         end
 
         previous_sort_key        = current_sort_key

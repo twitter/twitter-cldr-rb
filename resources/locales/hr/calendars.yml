@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E, d."
@@ -16,15 +17,14 @@
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :M: "L."
-        :MEd: "E, d. M."
+        :MEd: "E, dd.MM."
         :MMM: "LLL"
         :MMMEd: "E, d. MMM"
         :MMMMEd: "E, d. MMMM"
         :MMMMd: "d. MMMM"
-        :MMMMdd: "dd. MMMM"
         :MMMd: "d. MMM"
         :MMdd: "dd. MM."
-        :Md: "d. M."
+        :Md: "dd.MM."
         :d: "d."
         :h: "h a"
         :hm: "hh:mm a"
@@ -32,14 +32,14 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y."
-        :yM: "M. y."
-        :yMEd: "E, d. M. y."
+        :yM: "MM.y."
+        :yMEd: "E, dd.MM.y."
         :yMM: "MM. y."
         :yMMM: "LLL y."
         :yMMMEd: "E, d. MMM y."
         :yMMMM: "LLLL y."
         :yMMMd: "d. MMM y."
-        :yMd: "d. M. y."
+        :yMd: "dd.MM.y."
         :yQQQ: "QQQ y."
         :yQQQQ: "QQQQ y."
       :days: 
@@ -114,22 +114,39 @@
           0: "pr. n. e."
           1: "n.e."
         :name: 
-          0: "Prije Krista"
-          1: "Poslije Krista"
+          0: "pr. n. e."
+          1: "n.e."
         :narrow: 
           0: "pr.n.e."
           1: "AD"
       :fields: 
         :day: "Dan"
-        :dayperiod: "Prijepodne/popodne"
+        :day-narrow: "d."
+        :day-short: "d."
+        :dayperiod: "AM/PM"
         :era: "Era"
         :hour: "Sat"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "Minuta"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "Mjesec"
+        :month-narrow: "m."
+        :month-short: "mj."
+        :quarter: "Kvartal"
+        :quarter-narrow: "kv."
+        :quarter-short: "kv."
         :second: "Sekunda"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "Tjedan"
+        :week-narrow: "tj."
+        :week-short: "tj."
         :weekday: "Dan u tjednu"
         :year: "Godina"
+        :year-narrow: "g."
+        :year-short: "g."
         :zone: "Vremenska zona"
       :formats: 
         :date: 
@@ -140,7 +157,7 @@
           :medium: 
             :pattern: "d. MMM y."
           :short: 
-            :pattern: "d.M.yy."
+            :pattern: "dd.MM.y."
         :datetime: 
           :full: 
             :pattern: "{{date}} 'u' {{time}}"
@@ -251,20 +268,17 @@
             :noon: "podne"
           :narrow: 
             :afternoon: "popodne"
-            :am: "a"
+            :am: "AM"
             :earlyMorning: "ujutro"
             :evening: "navečer"
             :morning: "prijepodne"
             :night: "noću"
-            :noon: "n"
-            :pm: "p"
+            :noon: "P"
+            :pm: "PM"
           :wide: 
             :am: "AM"
             :noon: "podne"
             :pm: "PM"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: 
           :abbreviated: 
             :afternoon: "popodne"

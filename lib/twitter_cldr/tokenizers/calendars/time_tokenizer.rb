@@ -18,12 +18,10 @@ module TwitterCldr
       end
 
       def tokenizer
-        @tokenizer ||= Tokenizer.new(
-          /(\'[\w\s-]+\'|a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4})/, [
-            TokenRecognizer.new(:pattern, /^(a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4})/),
-            TokenRecognizer.new(:plaintext, //)
-          ]
-        )
+        @tokenizer ||= Tokenizer.new([
+          TokenRecognizer.new(:pattern, /^(a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4})/),
+          TokenRecognizer.new(:plaintext, //)
+        ], /(\'[\w\s-]+\'|a{1}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4})/)
       end
 
     end

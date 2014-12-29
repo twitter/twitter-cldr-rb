@@ -3,10 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'pry-nav'
-
-include TwitterCldr::DataReaders
-
 module TwitterCldr
   module Localized
     class LocalizedTimespan < LocalizedObject
@@ -34,7 +30,7 @@ module TwitterCldr
         type = options[:type] || DEFAULT_TYPE
         number = calculate_time(base_obj, unit)
 
-        data_reader = TimespanDataReader.new(locale, number, {
+        data_reader = TwitterCldr::DataReaders::TimespanDataReader.new(locale, number, {
           :unit => unit,
           :direction => direction,
           :type => type

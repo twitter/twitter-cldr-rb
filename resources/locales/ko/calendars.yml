@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EEEEd: "d일 EEEE"
         :EHm: "(E) HH:mm"
         :EHms: "(E) HH:mm:ss"
@@ -55,7 +56,14 @@
             :thu: "목"
             :tue: "화"
             :wed: "수"
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
           :short: 
             :fri: "금"
             :mon: "월"
@@ -73,7 +81,14 @@
             :tue: "화요일"
             :wed: "수요일"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated: 
+            :fri: "금"
+            :mon: "월"
+            :sat: "토"
+            :sun: "일"
+            :thu: "목"
+            :tue: "화"
+            :wed: "수"
           :narrow: 
             :fri: "금"
             :mon: "월"
@@ -90,28 +105,51 @@
             :thu: "목"
             :tue: "화"
             :wed: "수"
-          :wide: :calendars.gregorian.days.format.wide
+          :wide: 
+            :fri: "금요일"
+            :mon: "월요일"
+            :sat: "토요일"
+            :sun: "일요일"
+            :thu: "목요일"
+            :tue: "화요일"
+            :wed: "수요일"
       :eras: 
         :abbr: 
+          0: "BCE"
+          1: "CE"
+        :name: 
           0: "기원전"
           1: "서기"
-        :name: 
-          0: "서력기원전"
-          1: "서력기원"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "일"
+        :day-narrow: "일"
+        :day-short: "일"
         :dayperiod: "오전/오후"
         :era: "연호"
         :hour: "시"
+        :hour-narrow: "시"
+        :hour-short: "시"
         :minute: "분"
+        :minute-narrow: "분"
+        :minute-short: "분"
         :month: "월"
+        :month-narrow: "월"
+        :month-short: "월"
+        :quarter: "분기"
+        :quarter-narrow: "분기"
+        :quarter-short: "분기"
         :second: "초"
+        :second-narrow: "초"
+        :second-short: "초"
         :week: "주"
+        :week-narrow: "주"
+        :week-short: "주"
         :weekday: "요일"
         :year: "년"
+        :year-narrow: "년"
+        :year-short: "년"
         :zone: "시간대"
       :formats: 
         :date: 
@@ -209,21 +247,30 @@
             7: "7월"
             8: "8월"
             9: "9월"
-          :wide: :calendars.gregorian.months.format.wide
+          :wide: 
+            1: "1월"
+            10: "10월"
+            11: "11월"
+            12: "12월"
+            2: "2월"
+            3: "3월"
+            4: "4월"
+            5: "5월"
+            6: "6월"
+            7: "7월"
+            8: "8월"
+            9: "9월"
       :periods: 
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "오전"
+            :noon: "정오"
+            :pm: "오후"
           :wide: 
             :am: "오전"
-            :noon: "noon"
+            :noon: "정오"
             :pm: "오후"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

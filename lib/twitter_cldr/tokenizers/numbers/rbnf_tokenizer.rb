@@ -37,16 +37,19 @@ module TwitterCldr
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),
             TokenRecognizer.new(:decimal, /[0#][0#,\.]+/),
+            TokenRecognizer.new(:plural, /\$\(.*\)\$/),
 
             # ending
             TokenRecognizer.new(:semicolon, /;/),
           ]
 
+          splitter_source = recognizers.map { |r| r.regex.source }.join("|")
+          splitter = Regexp.new("(#{splitter_source})")
+
           Tokenizer.new(
-            /(#{recognizers.map { |rec| rec.regex.source }.join("|")})/,
             recognizers + [
               TokenRecognizer.new(:plaintext, //)  # catch-all
-            ]
+            ], splitter
           )
         end
       end

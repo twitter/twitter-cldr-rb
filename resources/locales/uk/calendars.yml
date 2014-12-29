@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E, d"
@@ -111,24 +112,41 @@
       :eras: 
         :abbr: 
           0: "до н.е."
-          1: "н.е."
+          1: "н. е."
         :name: 
           0: "до нашої ери"
           1: "нашої ери"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: "до н. е."
+          1: "н. е."
       :fields: 
         :day: "День"
+        :day-narrow: "д."
+        :day-short: "д."
         :dayperiod: "Частина доби"
         :era: "Ера"
         :hour: "Година"
+        :hour-narrow: "год"
+        :hour-short: "год"
         :minute: "Хвилина"
+        :minute-narrow: "хв"
+        :minute-short: "хв"
         :month: "Місяць"
+        :month-narrow: "міс."
+        :month-short: "міс."
+        :quarter: "Квартал"
+        :quarter-narrow: "кв."
+        :quarter-short: "кв."
         :second: "Секунда"
+        :second-narrow: "с"
+        :second-short: "с"
         :week: "Тиждень"
+        :week-narrow: "тиж."
+        :week-short: "тиж."
         :weekday: "День тижня"
         :year: "Рік"
+        :year-narrow: "р."
+        :year-short: "р."
         :zone: "Часовий пояс"
       :formats: 
         :date: 
@@ -137,7 +155,7 @@
           :long: 
             :pattern: "d MMMM y 'р'."
           :medium: 
-            :pattern: "d MMM y"
+            :pattern: "d MMM y 'р'."
           :short: 
             :pattern: "dd.MM.yy"
         :datetime: 
@@ -247,7 +265,7 @@
             :am: "дп"
             :evening: "вечора"
             :morning: "ранку"
-            :noon: "n"
+            :noon: "п"
             :pm: "пп"
           :wide: 
             :afternoon: "дня"
@@ -255,11 +273,8 @@
             :evening: "вечора"
             :morning: "ранку"
             :night: "ночі"
-            :noon: "noon"
+            :noon: "полудня"
             :pm: "пп"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

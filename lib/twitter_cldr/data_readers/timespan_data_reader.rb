@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Tokenizers
-include TwitterCldr::Formatters
-
 module TwitterCldr
   module DataReaders
     class TimespanDataReader < DataReader
@@ -78,22 +75,14 @@ module TwitterCldr
       end
 
       def tokenizer
-        TimespanTokenizer.new(self)
+        TwitterCldr::Tokenizers::TimespanTokenizer.new(self)
       end
 
       def formatter
-        TimespanFormatter.new(self)
-      end
-
-      def all_types
-        traverse(BASE_PATH + [PATHS[direction][unit]]).keys
+        TwitterCldr::Formatters::TimespanFormatter.new(self)
       end
 
       protected
-
-      def default_type
-        all_types.first
-      end
 
       def pluralization_for(rule, available)
         # sometimes the plural rule will return ":one" when the resource only contains a path with "1"
@@ -114,12 +103,19 @@ module TwitterCldr
       end
 
       def resource
-        @resource = begin
-          raw = TwitterCldr.get_locale_resource(locale, :units)
-          raw[TwitterCldr.convert_locale(locale)]
-        end
+        @resource ||= self.class.resource_for_locale(locale)
       end
 
+      class << self
+        def all_types_for(locale, unit, direction)
+          TwitterCldr::Utils.traverse_hash(resource_for_locale(locale), BASE_PATH + [PATHS[direction][unit]]).keys
+        end
+
+        def resource_for_locale(locale)
+          @resources ||= {}
+          @resources[locale] ||= TwitterCldr.get_locale_resource(locale, :units)[TwitterCldr.convert_locale(locale)]
+        end
+      end
     end
   end
 end

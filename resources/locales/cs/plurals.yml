@@ -1,4 +1,17 @@
 ---
-:cs: '{ :''cs'' => { :i18n => { :plural => { :keys => [:one, :few], :rule => lambda
-  { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : ((n.to_f % 1).zero?
-  && (2..4).include?(n.to_f)) ? :few : :other } } } } }'
+:cs:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((2..4).include?(i)
+      && v == 0) ? :few : (v != 0 ? :many : ((i == 1 && v == 0) ? :one : :other)))
+      }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E d."
@@ -118,15 +119,32 @@
           1: "vt"
       :fields: 
         :day: "Dag"
+        :day-narrow: "dag"
+        :day-short: "dag"
         :dayperiod: "AM/PM"
         :era: "Tidsalder"
         :hour: "Time"
+        :hour-narrow: "t"
+        :hour-short: "t"
         :minute: "Minutt"
+        :minute-narrow: "m"
+        :minute-short: "min"
         :month: "Måned"
+        :month-narrow: "md."
+        :month-short: "mnd."
+        :quarter: "Kvartal"
+        :quarter-narrow: "kv."
+        :quarter-short: "kv."
         :second: "Sekund"
+        :second-narrow: "s"
+        :second-short: "sek"
         :week: "Uke"
+        :week-narrow: "uke"
+        :week-short: "uke"
         :weekday: "Ukedag"
         :year: "År"
+        :year-narrow: "år"
+        :year-short: "år"
         :zone: "Tidssone"
       :formats: 
         :date: 
@@ -137,7 +155,7 @@
           :medium: 
             :pattern: "d. MMM y"
           :short: 
-            :pattern: "dd.MM.yy"
+            :pattern: "dd.MM.y"
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -244,15 +262,12 @@
             :pm: "p.m."
           :narrow: 
             :am: "a"
-            :noon: "n"
+            :noon: 12
             :pm: "p"
           :wide: 
             :am: "a.m."
-            :noon: "noon"
+            :noon: "kl. 12"
             :pm: "p.m."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: 
           :wide: 
             :am: "AM"

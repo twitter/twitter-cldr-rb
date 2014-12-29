@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -10,8 +11,8 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM G y"
-        :GyMMMEd: "E, d MMM, G y"
-        :GyMMMd: "d MMM, G y"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -22,8 +23,7 @@
         :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
-        :MMMdd: "dd MMM"
-        :MMdd: "dd-MM"
+        :MMdd: "dd/MM"
         :Md: "d/M"
         :d: "d"
         :h: "h a"
@@ -34,12 +34,12 @@
         : "y"
         :yM: "M/y"
         :yMEd: "E, d/M/y"
-        :yMM: "MM-y"
+        :yMM: "MM/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
         :yMMMM: "MMMM y"
-        :yMMMd: "d MMM, y"
-        :yMMdd: "dd-MM-y"
+        :yMMMd: "d MMM y"
+        :yMMdd: "dd/MM/y"
         :yMd: "d/M/y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
@@ -112,25 +112,41 @@
             :wed: "बुधवार"
       :eras: 
         :abbr: 
-          0: "ईसा-पूर्व"
-          1: "ईस्वी"
+          0: "ईसवी पूर्व"
+          1: "ईसवी"
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: "ईसवी पूर्व"
+          1: "ईसवी"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "दिन"
-        :dayperiod: "AM/PM"
+        :day-narrow: "दिन"
+        :day-short: "दिन"
+        :dayperiod: "पूर्वाह्न/अपराह्न"
         :era: "युग"
         :hour: "घंटा"
+        :hour-narrow: "घं."
+        :hour-short: "घं."
         :minute: "मिनट"
+        :minute-narrow: "मि."
+        :minute-short: "मि."
         :month: "माह"
+        :month-narrow: "माह"
+        :month-short: "माह"
+        :quarter: "तिमाही"
+        :quarter-narrow: "तिमाही"
+        :quarter-short: "तिमाही"
         :second: "सेकंड"
+        :second-narrow: "से."
+        :second-short: "से."
         :week: "सप्ताह"
+        :week-narrow: "सप्ताह"
+        :week-short: "सप्ताह"
         :weekday: "सप्ताह का दिन"
         :year: "वर्ष"
+        :year-narrow: "वर्ष"
+        :year-short: "वर्ष"
         :zone: "समय क्षेत्र"
       :formats: 
         :date: 
@@ -139,9 +155,9 @@
           :long: 
             :pattern: "d MMMM y"
           :medium: 
-            :pattern: "dd-MM-y"
+            :pattern: "dd/MM/y"
           :short: 
-            :pattern: "d-M-yy"
+            :pattern: "d/M/yy"
         :datetime: 
           :full: 
             :pattern: "{{date}} को {{time}}"
@@ -163,18 +179,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "जन"
-            10: "अक्टू"
-            11: "नवं"
-            12: "दिसं"
-            2: "फ़र"
+            1: "जन॰"
+            10: "अक्तू॰"
+            11: "नव॰"
+            12: "दिस॰"
+            2: "फ़र॰"
             3: "मार्च"
-            4: "अप्रै"
+            4: "अप्रैल"
             5: "मई"
             6: "जून"
-            7: "जुला"
-            8: "अग"
-            9: "सितं"
+            7: "जुल॰"
+            8: "अग॰"
+            9: "सित॰"
           :narrow: 
             1: "ज"
             10: "अ"
@@ -190,7 +206,7 @@
             9: "सि"
           :wide: 
             1: "जनवरी"
-            10: "अक्टूबर"
+            10: "अक्तूबर"
             11: "नवंबर"
             12: "दिसंबर"
             2: "फ़रवरी"
@@ -203,18 +219,18 @@
             9: "सितंबर"
         :stand-alone: 
           :abbreviated: 
-            1: "जन"
-            10: "अक्टू"
-            11: "नवं"
-            12: "दिसं"
-            2: "फ़र"
+            1: "जन॰"
+            10: "अक्तू॰"
+            11: "नव॰"
+            12: "दिस॰"
+            2: "फ़र॰"
             3: "मार्च"
-            4: "अप्रै"
+            4: "अप्रैल"
             5: "मई"
             6: "जून"
-            7: "जुला"
-            8: "अग"
-            9: "सितं"
+            7: "जुल॰"
+            8: "अग॰"
+            9: "सित॰"
           :narrow: 
             1: "ज"
             10: "अ"
@@ -230,7 +246,7 @@
             9: "सि"
           :wide: 
             1: "जनवरी"
-            10: "अक्टूबर"
+            10: "अक्तूबर"
             11: "नवंबर"
             12: "दिसंबर"
             2: "फ़रवरी"
@@ -248,15 +264,12 @@
             :pm: "अपर"
           :narrow: 
             :am: "पू"
-            :noon: "n"
+            :noon: "दोप"
             :pm: "अ"
           :wide: 
             :am: "पूर्वाह्न"
-            :noon: "noon"
+            :noon: "दोपहर"
             :pm: "अपराह्न"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

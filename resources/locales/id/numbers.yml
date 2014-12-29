@@ -5,40 +5,63 @@
       :currency: 
         :number_system: "latn"
         :patterns: 
-          :default: "¤#,##0.00;(¤#,##0.00)"
+          :default: "¤#,##0.00"
         :unit: 
-          :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
         :number_system: "latn"
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 ribu"
-            10000: "00 ribu"
-            100000: "000 ribu"
-            1000000: "0 juta"
-            10000000: "00 juta"
-            100000000: "000 juta"
-            1000000000: "0 miliar"
-            10000000000: "00 miliar"
-            100000000000: "000 miliar"
-            1000000000000: "0 triliun"
-            10000000000000: "00 triliun"
-            100000000000000: "000 triliun"
+            1000: 
+              :other: "0 ribu"
+            10000: 
+              :other: "00 ribu"
+            100000: 
+              :other: "000 ribu"
+            1000000: 
+              :other: "0 juta"
+            10000000: 
+              :other: "00 juta"
+            100000000: 
+              :other: "000 juta"
+            1000000000: 
+              :other: "0 miliar"
+            10000000000: 
+              :other: "00 miliar"
+            100000000000: 
+              :other: "000 miliar"
+            1000000000000: 
+              :other: "0 triliun"
+            10000000000000: 
+              :other: "00 triliun"
+            100000000000000: 
+              :other: "000 triliun"
           :short: 
-            1000: 0
-            10000: "00 rb"
-            100000: "000 rb"
-            1000000: "0 jt"
-            10000000: "00 jt"
-            100000000: "000 jt"
-            1000000000: "0 M"
-            10000000000: "00 M"
-            100000000000: "000 M"
-            1000000000000: "0 T"
-            10000000000000: "00 T"
-            100000000000000: "000 T"
+            1000: 
+              :other: 0
+            10000: 
+              :other: "00 rb"
+            100000: 
+              :other: "000 rb"
+            1000000: 
+              :other: "0 jt"
+            10000000: 
+              :other: "00 jt"
+            100000000: 
+              :other: "000 jt"
+            1000000000: 
+              :other: "0 M"
+            10000000000: 
+              :other: "00 M"
+            100000000000: 
+              :other: "000 M"
+            1000000000000: 
+              :other: "0 T"
+            10000000000000: 
+              :other: "00 T"
+            100000000000000: 
+              :other: "000 T"
       :percent: 
         :number_system: "latn"
         :patterns: 
@@ -60,3 +83,4 @@
       :percent_sign: "%"
       :plus_sign: "+"
       :superscripting_exponent: "×"
+      :time_separator: "."

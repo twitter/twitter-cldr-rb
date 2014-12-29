@@ -1,4 +1,17 @@
 ---
-:he: '{ :''he'' => { :i18n => { :plural => { :keys => [:one, :two, :many], :rule =>
-  lambda { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : n.to_f ==
-  2 ? :two : (n.to_f != 0 && n.to_f % 10 == 0) ? :many : :other } } } } }'
+:he:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((v == 0 && !(0..10).include?(n))
+      && n % 10 == 0) ? :many : ((i == 1 && v == 0) ? :one : ((i == 2 && v == 0) ?
+      :two : :other))) }'
+    :names:
+    - :many
+    - :one
+    - :two
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

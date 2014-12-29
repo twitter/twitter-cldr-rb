@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d."
@@ -38,7 +39,7 @@
         :yMMMM: "y. 'g'. MMMM"
         :yMMMd: "y. 'g'. d. MMM"
         :yMd: "d.M.y."
-        :yQQQ: "QQQ y"
+        :yQQQ: "y. 'g'. QQQ"
         :yQQQQ: "y. 'g'. QQQQ"
       :days: 
         :format: 
@@ -118,16 +119,33 @@
           0: "pmē"
           1: "mē"
       :fields: 
-        :day: "Diena"
+        :day: "diena"
+        :day-narrow: "d."
+        :day-short: "d."
         :dayperiod: "Priekšpusdienā/pēcpusdienā"
         :era: "Ēra"
         :hour: "Stundas"
+        :hour-narrow: "h"
+        :hour-short: "st."
         :minute: "Minūtes"
+        :minute-narrow: "min"
+        :minute-short: "min."
         :month: "Mēnesis"
+        :month-narrow: "mēn."
+        :month-short: "mēn."
+        :quarter: "ceturksnis"
+        :quarter-narrow: "cet."
+        :quarter-short: "cet."
         :second: "Sekundes"
-        :week: "Nedēļa"
-        :weekday: "Nedēļas diena"
+        :second-narrow: "s"
+        :second-short: "sek."
+        :week: "nedēļa"
+        :week-narrow: "ned."
+        :week-short: "ned."
+        :weekday: "nedēļas diena"
         :year: "Gads"
+        :year-narrow: "g."
+        :year-short: "g."
         :zone: "Laika josla"
       :formats: 
         :date: 
@@ -242,24 +260,21 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+            :am: "priekšp."
+            :noon: "pusd."
+            :pm: "pēcp."
           :wide: 
             :am: "priekšpusdienā"
-            :noon: "noon"
+            :noon: "pusdienlaikā"
             :pm: "pēcpusdienā"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "C1"
-            2: "C2"
-            3: "C3"
-            4: "C4"
+            1: "1. cet."
+            2: "2. cet."
+            3: "3. cet."
+            4: "4. cet."
           :narrow: 
             1: "1."
             2: "2."
@@ -272,10 +287,10 @@
             4: "4. ceturksnis"
         :stand-alone: 
           :abbreviated: 
-            1: "C1"
-            2: "C2"
-            3: "C3"
-            4: "C4"
+            1: "1. cet."
+            2: "2. cet."
+            3: "3. cet."
+            4: "4. cet."
           :narrow: 
             1: "1."
             2: "2."

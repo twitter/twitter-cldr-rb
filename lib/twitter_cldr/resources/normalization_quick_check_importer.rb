@@ -25,25 +25,12 @@ module TwitterCldr
       def import
         parse_props_file.each_pair do |algorithm, code_point_list|
           File.open(File.join(@output_path, "#{algorithm.downcase}_quick_check.yml"), "w+") do |f|
-            f.write(YAML.dump(rangify(partition_prop_list(code_point_list))))
+            f.write(YAML.dump(TwitterCldr::Utils::RangeSet.rangify(code_point_list)))
           end
         end
       end
 
       private
-
-      def rangify(lists)
-        lists.map { |list| (list.first..list.last) }
-      end
-
-      def partition_prop_list(list)
-        last_item = 0
-        list.inject([]) do |ret, item|
-          (item - last_item == 1) ? ret[-1] << item : ret << [item]
-          last_item = item
-          ret
-        end
-      end
 
       def parse_props_file
         check_table = {}

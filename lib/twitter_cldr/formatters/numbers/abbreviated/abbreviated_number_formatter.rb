@@ -7,13 +7,10 @@ module TwitterCldr
   module Formatters
     class AbbreviatedNumberFormatter < NumberFormatter
 
-      protected
-
-      def transform_number(number)
-        if number < NumberDataReader::NUMBER_MAX && number >= NumberDataReader::NUMBER_MIN
-          power = (((number.to_s.length - 1) / 3) * 3).floor
-          factor = (10 ** power).to_f
-          number / factor
+      def truncate_number(number, decimal_digits)
+        if TwitterCldr::DataReaders::NumberDataReader.within_abbreviation_range?(number)
+          factor = [0, number.to_i.abs.to_s.length - decimal_digits].max
+          number / (10.0 ** factor)
         else
           number
         end

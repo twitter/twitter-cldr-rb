@@ -12,7 +12,32 @@ describe NumberDataReader do
 
   describe "#get_key_for" do
     it "builds a power-of-ten key based on the number of digits in the input" do
-      (3..15).each { |i| data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}").should == 10 ** i }
+      (3..15).each { |i| expect(data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}")).to eq(10 ** i) }
+    end
+  end
+
+  describe "#pattern" do
+    let(:symbols) { { :nan => 'NaN', :minus_sign => '<->' } } # unique locale-specific minus sign
+
+    before(:each) do
+      stub(TwitterCldr).get_locale_resource(:en, :numbers) {
+        {
+          :en => {
+            :numbers => {
+              :formats => { :decimal => { :patterns => { :default => "#,##0.###" } } },
+              :symbols => symbols
+            }
+          }
+        }
+      }
+    end
+
+    it "returns pattern for a number" do
+      expect(data_reader.pattern(2)).to eq("#,##0.###")
+    end
+
+    it "returns pattern for a negative number" do
+      expect(data_reader.pattern(-2)).to eq("<->#,##0.###")
     end
   end
 end

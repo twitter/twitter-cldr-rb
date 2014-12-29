@@ -1,12 +1,71 @@
+== 3.1.0
+
+* Updated resources from CLDR v26 (except the collation data).
+* Added support for ordinal plurals.
+* Added PostalCodes#find_all method.
+* Added negative numbers abbreviation.
+* Fixed pluralization for abbreviated numbers.
+* Fixed pluralization rules by not merging 'en' rules into every locale.
+
+== 3.0.10
+
+* Adding Date back in as a localizable object.
+
+== 3.0.9
+
+* Fixing date and time formatting issue where calling `to_additional_s` on an instance of `LocalizedDate` could raise an error.
+
+== 3.0.8
+
+* Fixing issue causing extraneous single quotes to appear in formatted dates and times.
+
+== 3.0.7
+
+* Territories containment support.
+
+== 3.0.6
+
+* Add en-150 and es-419 locales.
+
+== 3.0.5
+
+* Fixed short numbers formatting for ru and other locales that use patterns
+  with literal periods.
+
+== 3.0.4
+
+* Fixed short numbers formatting for ja, ko, af, and a few other locales.
+* Added more locales: de-CH, en-AU, en-CA, en-GB, en-IE, en-SG, en-ZA,
+  es-CO, es-MX, es-US, fr-BE, fr-CA, fr-CH, it-CH.
+
+== 3.0.3
+
+* Rubinius support.
+
+== 3.0.2
+
+* Adding ability to generate sample postal codes from their regexes.
+
+== 3.0.1
+
+* Fixing abbreviated timespan formats for en-GB (backport from 2.4.3).
+
 == 3.0.0
 
 * Adding maximum_level option to SortKeyBuilder to limit the size of collation sort keys (@jrochkind).
-* Significant performance enhancements for normalization, estimated ~70% speed improvement.
+* Significant performance enhancements for normalization via the eprun gem.
 * Adding the rule-based number formatters (123 becomes "one hundred twenty-three").
 * Major overhaul of most formatters, now using data readers to encapsulate format options and read pattern data.
 * Adding support for different numbering systems (eg. arab, latn, etc), number formatter updated accordingly.
 * Partial upgrade to CLDR v24 (missing units).
+* Support for simple/full/Turkic casefolding. Upper/lowercasing support still needed.
+* Support for Unicode regular expressions. Requires oniguruma for use in Ruby 1.8.
+* Text segmentation by sentence (word and line support coming soon).
 * Executable README.
+
+== 2.4.3
+
+* Fixing abbreviated timespan formats for en-GB.
 
 == 2.4.2
 

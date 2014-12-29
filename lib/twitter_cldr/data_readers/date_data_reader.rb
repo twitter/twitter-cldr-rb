@@ -3,19 +3,16 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::Tokenizers
-include TwitterCldr::Formatters
-
 module TwitterCldr
   module DataReaders
     class DateDataReader < CalendarDataReader
 
       def tokenizer
-        @tokenizer ||= DateTokenizer.new(self)
+        @tokenizer ||= TwitterCldr::Tokenizers::DateTokenizer.new(self)
       end
 
       def formatter
-        @formatter ||= DateTimeFormatter.new(self)
+        @formatter ||= TwitterCldr::Formatters::DateTimeFormatter.new(self)
       end
 
       protected

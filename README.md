@@ -1,3 +1,5 @@
+
+
 ## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
@@ -84,6 +86,65 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 
 2337.localize.to_long_decimal.to_s      # "2 thousand"
 1337123.localize.to_long_decimal.to_s   # "1 million"
+```
+
+### Number Spellout, Ordinalization, and More
+
+TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.
+
+#### Spellout
+
+For easy spellout formatting, check out the `LocalizedNumber#spellout` method:
+
+```ruby
+123.localize.spellout     # one hundred twenty-three
+25_641.localize.spellout  # twenty-five thousand six hundred forty-one
+```
+
+As always, you can call `#localize` with a locale symbol:
+
+```ruby
+123.localize(:es).spellout     # ciento veintitrés
+25_641.localize(:ru).spellout  # двадцать пять тысяч шестьсот сорок один
+```
+
+#### Ordinalization and More
+
+The available rule-based number formats defined by the CLDR data set vary by language. Some languages support ordinal and cardinal numbers, occasionally with an additional masculine/feminine option, while others do not. You'll need to consult the list of available formats for your language.
+
+Rule-based number formats are categorized by groups, and within groups by rulesets. You'll need to specify both to make use of all the available formats for your language.
+
+To get a list of supported groups, use the `#group_names` method:
+
+```ruby
+123.localize(:pt).rbnf.group_names  # ["SpelloutRules", "OrdinalRules"]
+```
+
+To get a list of supported rulesets for a group name, use the `#rule_set_names_for_group` method:
+
+```ruby
+# ["digits-ordinal-masculine", "digits-ordinal-feminine", "digits-ordinal"]
+123.localize(:pt).rbnf.rule_set_names_for_group("OrdinalRules")
+```
+
+Once you've chosen a group and ruleset, you can pass them to the `to_rbnf_s` method:
+
+```ruby
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-feminine")  # 123a
+123.localize(:pt).to_rbnf_s("OrdinalRules", "digits-ordinal-masculine") # 123o
+```
+
+For comparison, here's what English ordinal formatting looks like:
+
+```ruby
+123.localize.to_rbnf_s("OrdinalRules", "digits-ordinal")  # 123rd
+```
+
+For English (and other languages), you can also specify an ordinal spellout:
+
+```ruby
+123.localize.to_rbnf_s("SpelloutRules", "spellout-ordinal")  # one hundred twenty-third
+123.localize(:pt).to_rbnf_s("SpelloutRules", "spellout-ordinal-masculine")  # centésimo vigésimo terceiro
 ```
 
 ### Dates and Times
@@ -378,17 +439,29 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-TwitterCldr::Shared::PostalCodes.valid?(:us, "94103")     # true
-TwitterCldr::Shared::PostalCodes.valid?(:us, "9410")      # false
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.valid?("94103")     # true
+postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-TwitterCldr::Shared::PostalCodes.valid?(:gb, "BS98 1TL")  # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
+postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-TwitterCldr::Shared::PostalCodes.valid?(:se, "280 12")    # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
+postal_code.valid?("280 12")    # true
 
 # Canada
-TwitterCldr::Shared::PostalCodes.valid?(:ca, "V3H 1Z7")   # true
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
+postal_code.valid?("V3H 1Z7")   # true
+```
+
+Match all valid postal codes in a string with the `#find_all` method:
+
+```ruby
+# United States
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.find_all("12345 23456")    # ["12345", "23456"]
 ```
 
 Get a list of supported territories by using the `#territories` method:
@@ -400,7 +473,14 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ad, :am, :ar, :as, :at, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.regex_for_territory(:us)  # /\d{5}([ \-]\d{4})?/
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code.regexp  # /\d{5}([ \-]\d{4})?/
+```
+
+Get a sample of valid postal codes with the `#sample` method:
+
+```ruby
+postal_code.sample(5)  # ["93733-7601", "65796-6586", "93519", "46536", "53158"]
 ```
 
 ### Phone Codes
@@ -483,6 +563,107 @@ TwitterCldr::Shared::LanguageCodes.to_language(:spa, :iso_639_2)  # "Spanish"
 
 **NOTE**: All of the functions in `TwitterCldr::Shared::LanguageCodes` accept both symbol and string parameters.
 
+### Territories Containment
+
+Provides an API for determining territories containment as described [here](http://www.unicode.org/cldr/charts/25/supplemental/territory_containment_un_m_49.html):
+
+```ruby
+TwitterCldr::Shared::TerritoriesContainment.children('151') # ["BG", "BY", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "SU", "UA", ... ]
+TwitterCldr::Shared::TerritoriesContainment.children('RU')  # []
+
+TwitterCldr::Shared::TerritoriesContainment.parents('013') # ["003", "019", "419"]
+TwitterCldr::Shared::TerritoriesContainment.parents('001') # []
+
+TwitterCldr::Shared::TerritoriesContainment.contains?('151', 'RU') # true
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'BZ') # true
+TwitterCldr::Shared::TerritoriesContainment.contains?('419', 'FR') # false
+```
+
+You can also use `Territory` class and `to_territory` method in `LocalizedString` class to access these features:
+
+```ruby
+TwitterCldr::Shared::Territory.new("013").parents # ["003", "019", "419"]
+'419'.localize.to_territory.contains?('BZ') # true
+```
+
+### Unicode Regular Expressions
+
+Unicode regular expressions are an extension of the normal regular expression syntax. All of the changes are local to the regex's character class feature and provide support for multi-character strings, Unicode character escapes, set operations (unions, intersections, and differences), and character sets.
+
+#### Changes to Character Classes
+
+Here's a complete list of the operations you can do inside a Unicode regex's character class.
+
+| Regex              | Description                                                                                                         |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------|
+|`[a]`               | The set containing 'a'.                                                                                             |
+|`[a-z]`             | The set containing 'a' through 'z' and all letters in between, in Unicode order.                                    |
+|`[^a-z]`            | The set containing all characters except 'a' through 'z', that is, U+0000 through 'a'-1 and 'z'+1 through U+10FFFF. |
+|`[[pat1][pat2]]`    | The union of sets specified by pat1 and pat2.                                                                       |
+|`[[pat1]&[pat2]]`   | The intersection of sets specified by pat1 and pat2.                                                                |
+|`[[pat1]-[pat2]]`   | The [symmetric difference](http://en.wikipedia.org/wiki/Symmetric_difference) of sets specified by pat1 and pat2.   |
+|`[:Lu:] or \p{Lu}`  | The set of characters having the specified Unicode property; in this case, Unicode uppercase letters.               |
+|`[:^Lu:] or \P{Lu}` | The set of characters not having the given Unicode property.                                                        |
+
+For a description of available Unicode properties, see [Wikipedia](http://en.wikipedia.org/wiki/Unicode_character_property#General_Category) (click on "[show]").
+
+#### Using Unicode Regexes
+
+Create Unicode regular expressions via the `#compile` method:
+
+```ruby
+
+regex = TwitterCldr::Shared::UnicodeRegex.compile("[:Lu:]+")
+```
+
+Once compiled, instances of `UnicodeRegex` behave just like normal Ruby regexes and support the `#match` and `#=~` methods:
+
+```ruby
+
+regex.match("ABC")  # <MatchData "ABC">
+regex =~ "fooABC"   # 3
+```
+
+Protip: Try to avoid negation in character classes (eg. [^abc] and \P{Lu}) as it tends to negatively affect both performance when constructing regexes as well as matching.
+
+#### Support for Ruby 1.8
+
+Ruby 1.8 does not allow escaped Unicode characters in regular expressions and restricts their maximum length. TwitterCLDR's `UnicodeRegex` class supports escaped unicode characters in Ruby 1.8, but cannot offer a work-around for the length issue. For this reason, Ruby 1.8 users are required to install the oniguruma regex engine and require the oniguruma gem in their projects.
+
+To install oniguruma, run `brew install oniguruma` on MacOS, `[sudo] apt-get install libonig-dev` on Ubuntu (you may need to search for other instructions specific to your platform). Then, install the oniguruma gem via your Gemfile or on your system via `gem install oniguruma`. Once installed, `require oniguruma` somewhere in your project before making use of the `TwitterCldr::Shared::UnicodeRegex` class.
+
+### Text Segmentation
+
+TwitterCLDR currently supports text segmentation by sentence as described in the [Unicode Technical Report #29](http://www.unicode.org/reports/tr29/). The segmentation algorithm makes use of Unicode regular expressions (described above). Because of this, if you're running Ruby 1.8, you'll need to follow the instructions above to install the oniguruma regular expression engine. Segmentation by word, line, and grapheme boundaries could also be supported if someone wants them.
+
+You can break a string into sentences using the `LocalizedString#each_sentence` method:
+
+```ruby
+"The. Quick. Brown. Fox.".localize.each_sentence do |sentence|
+  puts sentence.to_s  # "The.", " Quick.", " Brown.", " Fox."
+end
+```
+
+Under the hood, text segmentation is performed by the `BreakIterator` class (name borrowed from ICU). You can use it directly if you're feeling adventurous:
+
+```ruby
+
+iterator = TwitterCldr::Shared::BreakIterator.new(:en)
+iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
+  puts sentence  # "The.", " Quick.", " Brown.", " Fox."
+end
+```
+
+To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
+
+```ruby
+
+iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
+  puts sentence  # "I like Ms.", " Murphy, she's nice."
+end
+```
+
 ### Unicode Data
 
 TwitterCLDR provides ways to retrieve individual code points as well as normalize and decompose Unicode text.
@@ -510,10 +691,12 @@ Convert code points to characters:
 TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
 ```
 
+#### Normalization
+
 Normalize/decompose a Unicode string (NFD, NFKD, NFC, and NFKC implementations available).  Note that the normalized string will almost always look the same as the original string because most character display systems automatically combine decomposed characters.
 
 ```ruby
-TwitterCldr::Normalization::NFD.normalize("français")  # "français"
+TwitterCldr::Normalization.normalize("français")  # "français"
 ```
 
 Normalization is easier to see in hex:
@@ -523,7 +706,7 @@ Normalization is easier to see in hex:
 TwitterCldr::Utils::CodePoints.from_string("español")
 
 # [101, 115, 112, 97, 110, 771, 111, 108]
-TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization::NFD.normalize("español"))
+TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize("español"))
 ```
 
 Notice in the example above that the letter "ñ" was transformed from `241` to `110 771`, which represent the "n" and the "˜" respectively.
@@ -543,6 +726,22 @@ Specify a specific normalization algorithm via the `:using` option.  NFD, NFKD, 
 ```ruby
 # [101, 115, 112, 97, 110, 771, 111, 108]
 "español".localize.normalize(:using => :NFKD).code_points
+```
+
+#### Casefolding
+
+Casefolding is, generally speaking, the process of converting uppercase characters to lowercase ones so as to make text uniform and therefore easier to search. The canonical example of this is the German double "s". The "ß" character is transformed into "ss" by casefolding.
+
+```ruby
+"Hello, World".localize.casefold.to_s  # hello, world
+"Weißrussland".localize.casefold.to_s  # weissrussland
+```
+
+Turkic languages make use of the regular and dotted uppercase i characters "I" and "İ". Normal casefolding will convert a dotless uppercase "I" to a lowercase, dotted "i", which is correct in English. Turkic languages however expect the lowercase version of a dotless uppercase "I" to be a lowercase, dotless "ı". Pass the `:t` option to the `casefold` method to force Turkic treatment of "i" characters. By default, the `:t` option is set to true for Turkish and Azerbaijani:
+
+```ruby
+"Istanbul".localize.casefold(:t => true).to_s  # ıstanbul
+"Istanbul".localize(:tr).casefold.to_s         # ıstanbul
 ```
 
 ### Sorting (Collation)
@@ -639,6 +838,18 @@ FastGettext.locale = "ru"
 TwitterCldr.locale    # will return :ru
 ```
 
+## Compatibility
+
+TwitterCLDR is fully compatible with Ruby 1.8.7, 1.9.3, 2.0.0, 2.1.0, and Rubinius (v2.2.7). We are considering dropping support for Ruby 1.8. If you still need to use TwitterCLDR in a Ruby 1.8 environment, please let us know as soon as possible. Please note that certain TwitterCLDR features require additional dependencies or considerations when run on Ruby 1.8. Refer to the sections above for details.
+
+#### Notes on Ruby 1.8
+
+Numerous TwitterCLDR features have been built with the assumption that they will only ever be used on UTF-8 encoded text, which is mostly due to the need to support Ruby 1.8. For this reason, you may find it necessary to set the global `$KCODE` variable to `"UTF-8"`. Setting this variable tells Ruby what encoding to use when loading source files. TwitterCLDR will **not** set this value for you.
+
+```ruby
+$KCODE = "UTF-8"
+```
+
 ## Requirements
 
 No external requirements.
@@ -670,6 +881,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2012 Twitter, Inc.
+Copyright 2014 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

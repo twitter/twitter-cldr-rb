@@ -5,8 +5,6 @@
 
 require 'spec_helper'
 
-include TwitterCldr
-
 describe TwitterCldr::Normalization do
 
   describe "#normalize" do
@@ -14,27 +12,29 @@ describe TwitterCldr::Normalization do
     let(:normalized_string) { 'normalized' }
 
     it 'it uses NFD by default' do
-      mock(TwitterCldr::Normalization::NFD).normalize(string) { normalized_string }
-      Normalization.normalize(string).should == normalized_string
+      mock(Eprun).normalize(string, :nfd) { normalized_string }
+      expect(TwitterCldr::Normalization.normalize(string)).to eq(normalized_string)
     end
 
     it "uses specified algorithm if there is any" do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      Normalization.normalize(string, :using => :NFKD).should == normalized_string
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(TwitterCldr::Normalization.normalize(string, :using => :nfkd)).to eq(normalized_string)
     end
 
     it "raises an ArgumentError if passed an unsupported normalizer name" do
-      lambda { Normalization.normalize(string, :using => :blarg) }.should raise_error(ArgumentError)
+      expect do
+        TwitterCldr::Normalization.normalize(string, :using => :blarg)
+      end.to raise_error(ArgumentError)
     end
 
-    it 'accepts normalizer name in a lower case' do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      Normalization.normalize(string, :using => :nfkd).should == normalized_string
+    it 'accepts normalizer name in upper case' do
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(TwitterCldr::Normalization.normalize(string, :using => :NFKD)).to eq(normalized_string)
     end
 
     it 'accepts a string' do
-      mock(TwitterCldr::Normalization::NFKD).normalize(string) { normalized_string }
-      Normalization.normalize(string, :using => 'NFKD').should == normalized_string
+      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(TwitterCldr::Normalization.normalize(string, :using => 'nfkd')).to eq(normalized_string)
     end
 
   end

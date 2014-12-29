@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E d."
@@ -111,22 +112,39 @@
           0: "f.l.t."
           1: "l.t."
         :name: 
-          0: "fyrir látlaus tímatal"
-          1: "látlaus tímatal"
+          0: "fyrir kristið tímatal"
+          1: "kristið tímatal"
         :narrow: 
           0: "flt"
           1: "lt"
       :fields: 
         :day: "dagur"
+        :day-narrow: "dagur"
+        :day-short: "dagur"
         :dayperiod: "f.h./e.h."
         :era: "tímabil"
         :hour: "klukkustund"
+        :hour-narrow: "klst."
+        :hour-short: "klst."
         :minute: "mínúta"
+        :minute-narrow: "mín."
+        :minute-short: "mín."
         :month: "mánuður"
+        :month-narrow: "mán."
+        :month-short: "mán."
+        :quarter: "ársfjórðungur"
+        :quarter-narrow: "ársfjórðungur"
+        :quarter-short: "ársfjórðungur"
         :second: "sekúnda"
+        :second-narrow: "sek."
+        :second-short: "sek."
         :week: "vika"
+        :week-narrow: "vika"
+        :week-short: "vika"
         :weekday: "vikudagur"
         :year: "ár"
+        :year-narrow: "ár"
+        :year-short: "ár"
         :zone: "tímabelti"
       :formats: 
         :date: 
@@ -241,16 +259,13 @@
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "f.h."
-            :noon: "n"
-            :pm: "e.h."
+            :am: "f."
+            :noon: "h."
+            :pm: "e."
           :wide: 
             :am: "f.h."
-            :noon: "noon"
+            :noon: "hádegi"
             :pm: "e.h."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: 
           :wide: 
             :am: "árdegi"

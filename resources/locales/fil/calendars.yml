@@ -3,15 +3,16 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
-        :Gy: "y G"
-        :GyMMM: "MMM y G"
-        :GyMMMEd: "E, MMM d, y G"
-        :GyMMMd: "MMM d, y G"
+        :Gy: "G y"
+        :GyMMM: "G y MMM"
+        :GyMMMEd: "G y MMM d, E"
+        :GyMMMd: "G y MMM d"
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -112,22 +113,38 @@
           0: "BCE"
           1: "CE"
         :name: 
-          0: "Before Common Era"
-          1: "Common Era"
+          0: "BCE"
+          1: "CE"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "Araw"
+        :day-narrow: "Araw"
+        :day-short: "Araw"
         :dayperiod: "AM/PM"
         :era: "Era"
         :hour: "Oras"
+        :hour-narrow: "hr."
+        :hour-short: "hr."
         :minute: "Minuto"
+        :minute-narrow: "min."
+        :minute-short: "min."
         :month: "Buwan"
+        :month-narrow: "mo."
+        :month-short: "mo."
+        :quarter: "Quarter"
+        :quarter-narrow: "qtr."
+        :quarter-short: "qtr."
         :second: "Segundo"
+        :second-narrow: "seg."
+        :second-short: "seg."
         :week: "Linggo"
+        :week-narrow: "wk."
+        :week-short: "wk."
         :weekday: "Araw ng Linggo"
         :year: "Taon"
+        :year-narrow: "yr."
+        :year-short: "yr."
         :zone: "Time Zone"
       :formats: 
         :date: 
@@ -141,9 +158,9 @@
             :pattern: "M/d/yy"
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'ng' {{time}}"
+            :pattern: "{{date}} 'nang' {{time}}"
           :long: 
-            :pattern: "{{date}} 'ng' {{time}}"
+            :pattern: "{{date}} 'nang' {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
@@ -245,15 +262,12 @@
             :pm: "PM"
           :narrow: 
             :am: "a"
-            :noon: "n"
+            :noon: "tanghali"
             :pm: "p"
           :wide: 
             :am: "AM"
-            :noon: "noon"
+            :noon: "tanghali"
             :pm: "PM"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

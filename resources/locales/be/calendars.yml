@@ -3,9 +3,10 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
+        :Ed: "d, E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
@@ -50,14 +51,7 @@
             :tue: "аў"
             :wed: "ср"
           :narrow: :calendars.gregorian.days.stand-alone.narrow
-          :short: 
-            :fri: "Fr"
-            :mon: "Mo"
-            :sat: "Sa"
-            :sun: "Su"
-            :thu: "Th"
-            :tue: "Tu"
-            :wed: "We"
+          :short: :calendars.gregorian.days.format.abbreviated
           :wide: 
             :fri: "пятніца"
             :mon: "панядзелак"
@@ -83,11 +77,9 @@
           0: "да н.э."
           1: "н.э."
         :name: 
-          0: "Before Christ"
-          1: "Anno Domini"
+          0: ""
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
         :day: "дзень"
         :dayperiod: "ДП/ПП"
@@ -95,6 +87,7 @@
         :hour: "гадзіна"
         :minute: "хвіліна"
         :month: "месяц"
+        :quarter: "Quarter"
         :second: "секунда"
         :week: "тыдзень"
         :weekday: "дзень тыдня"
@@ -112,13 +105,13 @@
             :pattern: "d.M.yy"
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :long: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
           :short: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
             :pattern: "HH.mm.ss zzzz"
@@ -220,9 +213,6 @@
             :am: "да палудня"
             :noon: "noon"
             :pm: "пасля палудня"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: 
           :abbreviated: 
             :am: "раніцы"

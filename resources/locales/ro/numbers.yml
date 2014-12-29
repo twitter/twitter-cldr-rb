@@ -5,7 +5,7 @@
       :currency: 
         :number_system: "latn"
         :patterns: 
-          :default: "#,##0.00 ¤;(#,##0.00 ¤)"
+          :default: "#,##0.00 ¤"
         :unit: 
           :few: "{0} {1}"
           :one: "{0} {1}"
@@ -15,31 +15,103 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 de mii"
-            10000: "00 de mii"
-            100000: "000 de mii"
-            1000000: "0 de milioane"
-            10000000: "00 de milioane"
-            100000000: "000 de milioane"
-            1000000000: "0 de miliarde"
-            10000000000: "00 de miliarde"
-            100000000000: "000 de miliarde"
-            1000000000000: "0 de trilioane"
-            10000000000000: "00 de trilioane"
-            100000000000000: "000 de trilioane"
+            1000: 
+              :few: "0 mii"
+              :one: "0 mie"
+              :other: "0 de mii"
+            10000: 
+              :few: "00 mii"
+              :one: "00 mie"
+              :other: "00 de mii"
+            100000: 
+              :few: "000 mii"
+              :one: "000 mie"
+              :other: "000 de mii"
+            1000000: 
+              :few: "0 milioane"
+              :one: "0 milion"
+              :other: "0 de milioane"
+            10000000: 
+              :few: "00 milioane"
+              :one: "00 milion"
+              :other: "00 de milioane"
+            100000000: 
+              :few: "000 milioane"
+              :one: "000 milion"
+              :other: "000 de milioane"
+            1000000000: 
+              :few: "0 miliarde"
+              :one: "0 miliard"
+              :other: "0 de miliarde"
+            10000000000: 
+              :few: "00 miliarde"
+              :one: "00 miliard"
+              :other: "00 de miliarde"
+            100000000000: 
+              :few: "000 miliarde"
+              :one: "000 miliard"
+              :other: "000 de miliarde"
+            1000000000000: 
+              :few: "0 trilioane"
+              :one: "0 trilion"
+              :other: "0 de trilioane"
+            10000000000000: 
+              :few: "00 trilioane"
+              :one: "00 trilion"
+              :other: "00 de trilioane"
+            100000000000000: 
+              :few: "000 trilioane"
+              :one: "000 trilion"
+              :other: "000 de trilioane"
           :short: 
-            1000: "0 K"
-            10000: "00 K"
-            100000: "000 K"
-            1000000: "0 mil'.'"
-            10000000: "00 mil'.'"
-            100000000: "000 mil'.'"
-            1000000000: "0 mld'.'"
-            10000000000: "00 mld'.'"
-            100000000000: "000 mld'.'"
-            1000000000000: "0 tril'.'"
-            10000000000000: "00 tril'.'"
-            100000000000000: "000 tril'.'"
+            1000: 
+              :few: "0 K"
+              :one: "0 K"
+              :other: "0 K"
+            10000: 
+              :few: "00 K"
+              :one: "00 K"
+              :other: "00 K"
+            100000: 
+              :few: "000 K"
+              :one: "000 K"
+              :other: "000 K"
+            1000000: 
+              :few: "0 mil'.'"
+              :one: "0 mil'.'"
+              :other: "0 mil'.'"
+            10000000: 
+              :few: "00 mil'.'"
+              :one: "00 mil'.'"
+              :other: "00 mil'.'"
+            100000000: 
+              :few: "000 mil'.'"
+              :one: "000 mil'.'"
+              :other: "000 mil'.'"
+            1000000000: 
+              :few: "0 mld'.'"
+              :one: "0 mld'.'"
+              :other: "0 mld'.'"
+            10000000000: 
+              :few: "00 mld'.'"
+              :one: "00 mld'.'"
+              :other: "00 mld'.'"
+            100000000000: 
+              :few: "000 mld'.'"
+              :one: "000 mld'.'"
+              :other: "000 mld'.'"
+            1000000000000: 
+              :few: "0 tril'.'"
+              :one: "0 tril'.'"
+              :other: "0 tril'.'"
+            10000000000000: 
+              :few: "00 tril'.'"
+              :one: "00 tril'.'"
+              :other: "00 tril'.'"
+            100000000000000: 
+              :few: "000 tril'.'"
+              :one: "000 tril'.'"
+              :other: "000 tril'.'"
       :percent: 
         :number_system: "latn"
         :patterns: 
@@ -61,3 +133,4 @@
       :percent_sign: "%"
       :plus_sign: "+"
       :superscripting_exponent: "×"
+      :time_separator: ":"

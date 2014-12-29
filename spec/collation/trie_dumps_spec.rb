@@ -12,7 +12,7 @@ describe 'trie dumps', :slow => true do
   let(:error_message) { 'expected trie dump to be up-to-date.' }
 
   it 'has a valid default Fractional Collation Elements trie dump' do
-    TrieLoader.load_default_trie.to_hash.should(eq(default_trie.to_hash), error_message)
+    expect(TrieLoader.load_default_trie.to_hash).to(eq(default_trie.to_hash), error_message)
   end
 
   TwitterCldr.supported_locales.each do |locale|
@@ -20,7 +20,7 @@ describe 'trie dumps', :slow => true do
       loaded_trie = TrieLoader.load_tailored_trie(locale, Trie.new)
       fresh_trie  = TrieBuilder.load_tailored_trie(locale, default_trie)
 
-      loaded_trie.to_hash.should(eq(fresh_trie.to_hash), error_message)
+      expect(loaded_trie.to_hash).to(eq(fresh_trie.to_hash), error_message)
     end
   end
 end

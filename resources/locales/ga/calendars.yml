@@ -3,24 +3,25 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
+        :Ed: "E d"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, MMM d, y G"
-        :GyMMMd: "MMM d, y G"
+        :GyMMMEd: "E d MMM y G"
+        :GyMMMd: "d MMM y G"
         :H: "HH"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :M: "L"
-        :MEd: "E, M/d"
+        :M: "LL"
+        :MEd: "E dd/MM"
         :MMM: "LLL"
-        :MMMEd: "E, MMM d"
-        :MMMd: "MMM d"
-        :Md: "M/d"
+        :MMMEd: "E d MMM"
+        :MMMd: "d MMM"
+        :Md: "dd/MM"
         :d: "d"
         :h: "h a"
         :hm: "h:mm a"
@@ -28,12 +29,12 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "M/y"
-        :yMEd: "E, M/d/y"
+        :yM: "MM/y"
+        :yMEd: "E dd/MM/y"
         :yMMM: "MMM y"
-        :yMMMEd: "E, MMM d, y"
-        :yMMMd: "MMM d, y"
-        :yMd: "M/d/y"
+        :yMMMEd: "E d MMM y"
+        :yMMMd: "d MMM y"
+        :yMd: "dd/MM/y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
@@ -46,15 +47,22 @@
             :thu: "Déar"
             :tue: "Máirt"
             :wed: "Céad"
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow: 
+            :fri: "A"
+            :mon: "L"
+            :sat: "S"
+            :sun: "D"
+            :thu: "D"
+            :tue: "M"
+            :wed: "C"
           :short: 
-            :fri: "Fr"
-            :mon: "Mo"
+            :fri: "Ao"
+            :mon: "Lu"
             :sat: "Sa"
-            :sun: "Su"
-            :thu: "Th"
-            :tue: "Tu"
-            :wed: "We"
+            :sun: "Do"
+            :thu: "Dé"
+            :tue: "Má"
+            :wed: "Cé"
           :wide: 
             :fri: "Dé hAoine"
             :mon: "Dé Luain"
@@ -64,7 +72,14 @@
             :tue: "Dé Máirt"
             :wed: "Dé Céadaoin"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated: 
+            :fri: "Aoine"
+            :mon: "Luan"
+            :sat: "Sath"
+            :sun: "Domh"
+            :thu: "Déar"
+            :tue: "Máirt"
+            :wed: "Céad"
           :narrow: 
             :fri: "A"
             :mon: "L"
@@ -73,30 +88,61 @@
             :thu: "D"
             :tue: "M"
             :wed: "C"
-          :short: :calendars.gregorian.days.format.short
-          :wide: :calendars.gregorian.days.format.wide
+          :short: 
+            :fri: "Ao"
+            :mon: "Lu"
+            :sat: "Sa"
+            :sun: "Do"
+            :thu: "Dé"
+            :tue: "Má"
+            :wed: "Cé"
+          :wide: 
+            :fri: "Dé hAoine"
+            :mon: "Dé Luain"
+            :sat: "Dé Sathairn"
+            :sun: "Dé Domhnaigh"
+            :thu: "Déardaoin"
+            :tue: "Dé Máirt"
+            :wed: "Dé Céadaoin"
       :eras: 
         :abbr: 
-          0: "RC"
-          1: "AD"
+          0: "RCR"
+          1: "CR"
         :name: 
-          0: "Roimh Chríost"
-          1: "Anno Domini"
+          0: "Roimh Chomh-Ré"
+          1: "Comh-Ré"
         :narrow: 
-          0: "B"
-          1: "A"
+          0: "RCR"
+          1: "CR"
       :fields: 
         :day: "Lá"
+        :day-narrow: "Lá"
+        :day-short: "Lá"
         :dayperiod: "a.m./p.m."
         :era: "Ré"
         :hour: "Uair"
+        :hour-narrow: "u"
+        :hour-short: "uair"
         :minute: "Nóiméad"
+        :minute-narrow: "n"
+        :minute-short: "nóim."
         :month: "Mí"
+        :month-narrow: "mí"
+        :month-short: "mí"
+        :quarter: "Ráithe"
+        :quarter-narrow: "ráithe"
+        :quarter-short: "ráithe"
         :second: "Soicind"
+        :second-narrow: "s"
+        :second-short: "soic."
         :week: "Seachtain"
+        :week-narrow: "scht."
+        :week-short: "scht."
         :weekday: "Lá na seachtaine"
         :year: "Bliain"
-        :zone: "Crios"
+        :year-narrow: "bl."
+        :year-short: "bl."
+        :zone: "Crios Ama"
       :formats: 
         :date: 
           :full: 
@@ -109,13 +155,13 @@
             :pattern: "dd/MM/y"
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :long: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
           :short: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -140,7 +186,19 @@
             7: "Iúil"
             8: "Lún"
             9: "MFómh"
-          :narrow: :calendars.gregorian.months.stand-alone.narrow
+          :narrow: 
+            1: "E"
+            10: "D"
+            11: "S"
+            12: "N"
+            2: "F"
+            3: "M"
+            4: "A"
+            5: "B"
+            6: "M"
+            7: "I"
+            8: "L"
+            9: "M"
           :wide: 
             1: "Eanáir"
             10: "Deireadh Fómhair"
@@ -155,7 +213,19 @@
             8: "Lúnasa"
             9: "Meán Fómhair"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated: 
+            1: "Ean"
+            10: "DFómh"
+            11: "Samh"
+            12: "Noll"
+            2: "Feabh"
+            3: "Márta"
+            4: "Aib"
+            5: "Beal"
+            6: "Meith"
+            7: "Iúil"
+            8: "Lún"
+            9: "MFómh"
           :narrow: 
             1: "E"
             10: "D"
@@ -169,21 +239,30 @@
             7: "I"
             8: "L"
             9: "M"
-          :wide: :calendars.gregorian.months.format.wide
+          :wide: 
+            1: "Eanáir"
+            10: "Deireadh Fómhair"
+            11: "Samhain"
+            12: "Nollaig"
+            2: "Feabhra"
+            3: "Márta"
+            4: "Aibreán"
+            5: "Bealtaine"
+            6: "Meitheamh"
+            7: "Iúil"
+            8: "Lúnasa"
+            9: "Meán Fómhair"
       :periods: 
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "a"
-            :noon: "n"
+            :noon: "ml"
             :pm: "p"
           :wide: 
             :am: "a.m."
-            :noon: "noon"
+            :noon: "meán lae"
             :pm: "p.m."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 
@@ -192,17 +271,29 @@
             2: "R2"
             3: "R3"
             4: "R4"
-          :narrow: :calendars.gregorian.quarters.stand-alone.narrow
+          :narrow: 
+            1: 1
+            2: 2
+            3: 3
+            4: 4
           :wide: 
             1: "1ú ráithe"
             2: "2ú ráithe"
             3: "3ú ráithe"
             4: "4ú ráithe"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.quarters.format.abbreviated
+          :abbreviated: 
+            1: "R1"
+            2: "R2"
+            3: "R3"
+            4: "R4"
           :narrow: 
             1: 1
             2: 2
             3: 3
             4: 4
-          :wide: :calendars.gregorian.quarters.format.wide
+          :wide: 
+            1: "1ú ráithe"
+            2: "2ú ráithe"
+            3: "3ú ráithe"
+            4: "4ú ráithe"

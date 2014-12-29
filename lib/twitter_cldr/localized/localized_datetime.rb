@@ -5,8 +5,6 @@
 
 require 'tzinfo'
 
-include TwitterCldr::DataReaders
-
 module TwitterCldr
   module Localized
     class LocalizedDateTime < LocalizedObject
@@ -15,7 +13,7 @@ module TwitterCldr
 
       class << self
         def types
-          TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::CalendarDataReader.types
         end
       end
 
@@ -39,7 +37,12 @@ module TwitterCldr
           :additional_format => additional_format
         })
 
-        tokens = data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        tokens = if data_reader.tokenizer.respond_to?(:full_tokenize)
+          data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        else
+          data_reader.tokenizer.tokenize(data_reader.pattern)
+        end
+
         data_reader.formatter.format(tokens, base_in_timezone)
       end
 
@@ -100,10 +103,12 @@ module TwitterCldr
       protected
 
       def data_reader_for(type, options = {})
-        DateTimeDataReader.new(locale, options.merge({
-          :calendar_type => calendar_type,
-          :type => type
-        }))
+        TwitterCldr::DataReaders::DateTimeDataReader.new(
+          locale, options.merge({
+            :calendar_type => calendar_type,
+            :type => type
+          })
+        )
       end
 
       def chain_params

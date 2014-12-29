@@ -1,3 +1,20 @@
 ---
-:bn: '{ :''bn'' => { :i18n => { :plural => { :keys => [:one], :rule => lambda { |n|
-  n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : :other } } } } }'
+:bn:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((i == 0 || n ==
+      1) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 4 ? :few :
+      (n == 6 ? :many : (((n == 1) || (n == 5) || (n == 7) || (n == 8) || (n == 9)
+      || (n == 10)) ? :one : (((n == 2) || (n == 3)) ? :two : :other)))) }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :other

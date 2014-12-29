@@ -10,11 +10,11 @@ include TwitterCldr::Formatters
 describe ListFormatter do
   describe '#initialize' do
     it 'fetches locale from options hash' do
-      ListFormatter.new(:pt).locale.should == :pt
+      expect(ListFormatter.new(:pt).locale).to eq(:pt)
     end
 
     it "uses default locale if it's not passed in options hash" do
-      ListFormatter.new.locale.should == TwitterCldr.locale
+      expect(ListFormatter.new.locale).to eq(TwitterCldr.locale)
     end
   end
 
@@ -27,9 +27,9 @@ describe ListFormatter do
       end
 
       it "formats English lists correctly using various types" do
-        @formatter.format(list).should == "larry, curly, and moe"
-        @formatter.format(list, :unit).should == "larry, curly, moe"
-        @formatter.format(list, :"unit-narrow").should == "larry curly moe"
+        expect(@formatter.format(list)).to eq("larry, curly, and moe")
+        expect(@formatter.format(list, :unit)).to eq("larry, curly, moe")
+        expect(@formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
       end
     end
 
@@ -39,9 +39,9 @@ describe ListFormatter do
       end
 
       it "formats Spanish lists correctly using various types" do
-        @formatter.format(list).should == "larry, curly y moe"
-        @formatter.format(list, :unit).should == "larry, curly y moe"
-        @formatter.format(list, :"unit-narrow").should == "larry curly moe"
+        expect(@formatter.format(list)).to eq("larry, curly y moe")
+        expect(@formatter.format(list, :unit)).to eq("larry, curly y moe")
+        expect(@formatter.format(list, :"unit-narrow")).to eq("larry, curly, moe")
       end
     end
   end

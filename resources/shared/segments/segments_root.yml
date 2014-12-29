@@ -1,0 +1,731 @@
+--- 
+:segments: 
+  :GraphemeClusterBreak: 
+    :rules: 
+      - 
+        :id: 3
+        :value: " $CR × $LF "
+      - 
+        :id: 4
+        :value: " ( $Control | $CR | $LF ) ÷ "
+      - 
+        :id: 5
+        :value: " ÷ ( $Control | $CR | $LF ) "
+      - 
+        :id: 6
+        :value: " $L × ( $L | $V | $LV | $LVT ) "
+      - 
+        :id: 7
+        :value: " ( $LV | $V ) × ( $V | $T ) "
+      - 
+        :id: 8
+        :value: " ( $LVT | $T) × $T "
+      - 
+        :id: "8.1"
+        :value: " $Regional_Indicator × $Regional_Indicator "
+      - 
+        :id: 9
+        :value: " × $Extend "
+      - 
+        :id: "9.1"
+        :value: " × $SpacingMark "
+    :variables: 
+      - 
+        :id: "$CR"
+        :value: "\\p{Grapheme_Cluster_Break=CR}"
+      - 
+        :id: "$LF"
+        :value: "\\p{Grapheme_Cluster_Break=LF}"
+      - 
+        :id: "$Control"
+        :value: "\\p{Grapheme_Cluster_Break=Control}"
+      - 
+        :id: "$Extend"
+        :value: "\\p{Grapheme_Cluster_Break=Extend}"
+      - 
+        :id: "$SpacingMark"
+        :value: "\\p{Grapheme_Cluster_Break=SpacingMark}"
+      - 
+        :id: "$L"
+        :value: "\\p{Grapheme_Cluster_Break=L}"
+      - 
+        :id: "$V"
+        :value: "\\p{Grapheme_Cluster_Break=V}"
+      - 
+        :id: "$T"
+        :value: "\\p{Grapheme_Cluster_Break=T}"
+      - 
+        :id: "$LV"
+        :value: "\\p{Grapheme_Cluster_Break=LV}"
+      - 
+        :id: "$LVT"
+        :value: "\\p{Grapheme_Cluster_Break=LVT}"
+      - 
+        :id: "$Regional_Indicator"
+        :value: "\\p{Grapheme_Cluster_Break=Regional_Indicator}"
+  :LineBreak: 
+    :rules: 
+      - 
+        :id: 4
+        :value: " $BK ÷ "
+      - 
+        :id: "5.01"
+        :value: " $CR × $LF "
+      - 
+        :id: "5.02"
+        :value: " $CR ÷ "
+      - 
+        :id: "5.03"
+        :value: " $LF ÷ "
+      - 
+        :id: "5.04"
+        :value: " $NL ÷ "
+      - 
+        :id: 6
+        :value: " × ( $BK | $CR | $LF | $NL ) "
+      - 
+        :id: "7.01"
+        :value: " × $SP "
+      - 
+        :id: "7.02"
+        :value: " × $ZW "
+      - 
+        :id: 8
+        :value: " $ZW $SP* ÷ "
+      - 
+        :id: 9
+        :value: " $Spec2_ × $CM "
+      - 
+        :id: "11.01"
+        :value: " × $WJ "
+      - 
+        :id: "11.02"
+        :value: " $WJ × "
+      - 
+        :id: 12
+        :value: " $GL × "
+      - 
+        :id: "12.1"
+        :value: " $Spec3a_ × $GL "
+      - 
+        :id: "12.2"
+        :value: " $Spec3b_ $CM+ × $GL "
+      - 
+        :id: "12.3"
+        :value: " ^ $CM+ × $GL "
+      - 
+        :id: "13.01"
+        :value: " × $EX "
+      - 
+        :id: "13.02"
+        :value: " $Spec4_ × ($CL | $CP | $IS | $SY) "
+      - 
+        :id: "13.03"
+        :value: " $Spec4_ $CM+ × ($CL | $CP | $IS | $SY) "
+      - 
+        :id: "13.04"
+        :value: " ^ $CM+ × ($CL | $CP | $IS | $SY) "
+      - 
+        :id: 14
+        :value: " $OP $SP* × "
+      - 
+        :id: 15
+        :value: " $QU $SP* × $OP "
+      - 
+        :id: 16
+        :value: " ($CL | $CP) $SP* × $NS "
+      - 
+        :id: 17
+        :value: " $B2 $SP* × $B2 "
+      - 
+        :id: 18
+        :value: " $SP ÷ "
+      - 
+        :id: "19.01"
+        :value: " × $QU "
+      - 
+        :id: "19.02"
+        :value: " $QU × "
+      - 
+        :id: "20.01"
+        :value: " ÷ $CB "
+      - 
+        :id: "20.02"
+        :value: " $CB ÷ "
+      - 
+        :id: "21.01"
+        :value: " × $BA "
+      - 
+        :id: "21.02"
+        :value: " × $HY "
+      - 
+        :id: "21.03"
+        :value: " × $NS "
+      - 
+        :id: "21.04"
+        :value: " $BB × "
+      - 
+        :id: "21.1"
+        :value: " $HL ($HY | $BA) × "
+      - 
+        :id: "21.2"
+        :value: " $SY × $HL "
+      - 
+        :id: "22.01"
+        :value: " ($AL | $HL) × $IN "
+      - 
+        :id: "22.02"
+        :value: " $ID × $IN "
+      - 
+        :id: "22.03"
+        :value: " $IN × $IN "
+      - 
+        :id: "22.04"
+        :value: " $NU × $IN "
+      - 
+        :id: "23.01"
+        :value: " $ID × $PO "
+      - 
+        :id: "23.02"
+        :value: " ($AL | $HL) × $NU "
+      - 
+        :id: "23.03"
+        :value: " $NU × ($AL | $HL) "
+      - 
+        :id: "24.01"
+        :value: " $PR × $ID "
+      - 
+        :id: "24.02"
+        :value: " $PR × ($AL | $HL) "
+      - 
+        :id: "24.03"
+        :value: " $PO × ($AL | $HL) "
+      - 
+        :id: "25.01"
+        :value: " ($PR | $PO) × ( $OP | $HY )? $NU "
+      - 
+        :id: "25.02"
+        :value: " ( $OP | $HY ) × $NU "
+      - 
+        :id: "25.03"
+        :value: " $NU × ($NU | $SY | $IS) "
+      - 
+        :id: "25.04"
+        :value: " $NU ($NU | $SY | $IS)* × ($NU | $SY | $IS | $CL | $CP) "
+      - 
+        :id: "25.05"
+        :value: " $NU ($NU | $SY | $IS)* ($CL | $CP)? × ($PO | $PR) "
+      - 
+        :id: "26.01"
+        :value: " $JL × $JL | $JV | $H2 | $H3 "
+      - 
+        :id: "26.02"
+        :value: " $JV | $H2 × $JV | $JT "
+      - 
+        :id: "26.03"
+        :value: " $JT | $H3 × $JT "
+      - 
+        :id: "27.01"
+        :value: " $JL | $JV | $JT | $H2 | $H3 × $IN "
+      - 
+        :id: "27.02"
+        :value: " $JL | $JV | $JT | $H2 | $H3 × $PO "
+      - 
+        :id: "27.03"
+        :value: " $PR × $JL | $JV | $JT | $H2 | $H3 "
+      - 
+        :id: 28
+        :value: " ($AL | $HL) × ($AL | $HL) "
+      - 
+        :id: 29
+        :value: " $IS × ($AL | $HL) "
+      - 
+        :id: "30.01"
+        :value: " ($AL | $HL | $NU) × $OP "
+      - 
+        :id: "30.02"
+        :value: " $CP × ($AL | $HL | $NU) "
+      - 
+        :id: "30.11"
+        :value: " $RI × $RI "
+    :variables: 
+      - 
+        :id: "$AI"
+        :value: "\\p{Line_Break=Ambiguous}"
+      - 
+        :id: "$AL"
+        :value: "\\p{Line_Break=Alphabetic}"
+      - 
+        :id: "$B2"
+        :value: "\\p{Line_Break=Break_Both}"
+      - 
+        :id: "$BA"
+        :value: "\\p{Line_Break=Break_After}"
+      - 
+        :id: "$BB"
+        :value: "\\p{Line_Break=Break_Before}"
+      - 
+        :id: "$BK"
+        :value: "\\p{Line_Break=Mandatory_Break}"
+      - 
+        :id: "$CB"
+        :value: "\\p{Line_Break=Contingent_Break}"
+      - 
+        :id: "$CL"
+        :value: "\\p{Line_Break=Close_Punctuation}"
+      - 
+        :id: "$CP"
+        :value: "\\p{Line_Break=CP}"
+      - 
+        :id: "$CM"
+        :value: "\\p{Line_Break=Combining_Mark}"
+      - 
+        :id: "$CR"
+        :value: "\\p{Line_Break=Carriage_Return}"
+      - 
+        :id: "$EX"
+        :value: "\\p{Line_Break=Exclamation}"
+      - 
+        :id: "$GL"
+        :value: "\\p{Line_Break=Glue}"
+      - 
+        :id: "$H2"
+        :value: "\\p{Line_Break=H2}"
+      - 
+        :id: "$H3"
+        :value: "\\p{Line_Break=H3}"
+      - 
+        :id: "$HL"
+        :value: "\\p{Line_Break=HL}"
+      - 
+        :id: "$HY"
+        :value: "\\p{Line_Break=Hyphen}"
+      - 
+        :id: "$ID"
+        :value: "\\p{Line_Break=Ideographic}"
+      - 
+        :id: "$IN"
+        :value: "\\p{Line_Break=Inseparable}"
+      - 
+        :id: "$IS"
+        :value: "\\p{Line_Break=Infix_Numeric}"
+      - 
+        :id: "$JL"
+        :value: "\\p{Line_Break=JL}"
+      - 
+        :id: "$JT"
+        :value: "\\p{Line_Break=JT}"
+      - 
+        :id: "$JV"
+        :value: "\\p{Line_Break=JV}"
+      - 
+        :id: "$LF"
+        :value: "\\p{Line_Break=Line_Feed}"
+      - 
+        :id: "$NL"
+        :value: "\\p{Line_Break=Next_Line}"
+      - 
+        :id: "$NS"
+        :value: "\\p{Line_Break=Nonstarter}"
+      - 
+        :id: "$NU"
+        :value: "\\p{Line_Break=Numeric}"
+      - 
+        :id: "$OP"
+        :value: "\\p{Line_Break=Open_Punctuation}"
+      - 
+        :id: "$PO"
+        :value: "\\p{Line_Break=Postfix_Numeric}"
+      - 
+        :id: "$PR"
+        :value: "\\p{Line_Break=Prefix_Numeric}"
+      - 
+        :id: "$QU"
+        :value: "\\p{Line_Break=Quotation}"
+      - 
+        :id: "$SA"
+        :value: "\\p{Line_Break=Complex_Context}"
+      - 
+        :id: "$SG"
+        :value: "\\p{Line_Break=Surrogate}"
+      - 
+        :id: "$SP"
+        :value: "\\p{Line_Break=Space}"
+      - 
+        :id: "$SY"
+        :value: "\\p{Line_Break=Break_Symbols}"
+      - 
+        :id: "$WJ"
+        :value: "\\p{Line_Break=Word_Joiner}"
+      - 
+        :id: "$XX"
+        :value: "\\p{Line_Break=Unknown}"
+      - 
+        :id: "$ZW"
+        :value: "\\p{Line_Break=ZWSpace}"
+      - 
+        :id: "$CJ"
+        :value: "\\p{Line_Break=Conditional_Japanese_Starter}"
+      - 
+        :id: "$RI"
+        :value: "\\p{Line_Break=Regional_Indicator}"
+      - 
+        :id: "$AL"
+        :value: "[$AI $AL $XX $SA $SG]"
+      - 
+        :id: "$NS"
+        :value: "[$NS $CJ]"
+      - 
+        :id: "$X"
+        :value: "$CM*"
+      - 
+        :id: "$Spec1_"
+        :value: "[$SP $BK $CR $LF $NL $ZW]"
+      - 
+        :id: "$Spec2_"
+        :value: "[^ $SP $BK $CR $LF $NL $ZW]"
+      - 
+        :id: "$Spec3a_"
+        :value: "[^ $SP $BA $HY $CM]"
+      - 
+        :id: "$Spec3b_"
+        :value: "[^ $BA $HY $CM]"
+      - 
+        :id: "$Spec4_"
+        :value: "[^ $NU $CM]"
+      - 
+        :id: "$AI"
+        :value: "($AI $X)"
+      - 
+        :id: "$AL"
+        :value: "($AL $X)"
+      - 
+        :id: "$B2"
+        :value: "($B2 $X)"
+      - 
+        :id: "$BA"
+        :value: "($BA $X)"
+      - 
+        :id: "$BB"
+        :value: "($BB $X)"
+      - 
+        :id: "$CB"
+        :value: "($CB $X)"
+      - 
+        :id: "$CL"
+        :value: "($CL $X)"
+      - 
+        :id: "$CP"
+        :value: "($CP $X)"
+      - 
+        :id: "$CM"
+        :value: "($CM $X)"
+      - 
+        :id: "$CM"
+        :value: "($CM $X)"
+      - 
+        :id: "$GL"
+        :value: "($GL $X)"
+      - 
+        :id: "$H2"
+        :value: "($H2 $X)"
+      - 
+        :id: "$H3"
+        :value: "($H3 $X)"
+      - 
+        :id: "$HL"
+        :value: "($HL $X)"
+      - 
+        :id: "$HY"
+        :value: "($HY $X)"
+      - 
+        :id: "$ID"
+        :value: "($ID $X)"
+      - 
+        :id: "$IN"
+        :value: "($IN $X)"
+      - 
+        :id: "$IS"
+        :value: "($IS $X)"
+      - 
+        :id: "$JL"
+        :value: "($JL $X)"
+      - 
+        :id: "$JT"
+        :value: "($JT $X)"
+      - 
+        :id: "$JV"
+        :value: "($JV $X)"
+      - 
+        :id: "$NS"
+        :value: "($NS $X)"
+      - 
+        :id: "$NU"
+        :value: "($NU $X)"
+      - 
+        :id: "$OP"
+        :value: "($OP $X)"
+      - 
+        :id: "$PO"
+        :value: "($PO $X)"
+      - 
+        :id: "$PR"
+        :value: "($PR $X)"
+      - 
+        :id: "$QU"
+        :value: "($QU $X)"
+      - 
+        :id: "$SA"
+        :value: "($SA $X)"
+      - 
+        :id: "$SG"
+        :value: "($SG $X)"
+      - 
+        :id: "$SY"
+        :value: "($SY $X)"
+      - 
+        :id: "$WJ"
+        :value: "($WJ $X)"
+      - 
+        :id: "$XX"
+        :value: "($XX $X)"
+      - 
+        :id: "$RI"
+        :value: "($RI $X)"
+      - 
+        :id: "$AL"
+        :value: "($AL | ^ $CM | (?<=$Spec1_) $CM)"
+  :SentenceBreak: 
+    :rules: 
+      - 
+        :id: 3
+        :value: " $CR × $LF "
+      - 
+        :id: 4
+        :value: " ($Sep | $CR | $LF) ÷ "
+      - 
+        :id: 5
+        :value: " × [$Format $Extend] "
+      - 
+        :id: 6
+        :value: " $ATerm × $Numeric "
+      - 
+        :id: 7
+        :value: " $Upper $ATerm × $Upper "
+      - 
+        :id: 8
+        :value: " $ATerm $Close* $Sp* × $NotPreLower_* $Lower "
+      - 
+        :id: "8.1"
+        :value: " ($STerm | $ATerm) $Close* $Sp* × ($SContinue | $STerm | $ATerm) "
+      - 
+        :id: 9
+        :value: " ( $STerm | $ATerm ) $Close* × ( $Close | $Sp | $Sep | $CR | $LF ) "
+      - 
+        :id: 10
+        :value: " ( $STerm | $ATerm ) $Close* $Sp* × ( $Sp | $Sep | $CR | $LF ) "
+      - 
+        :id: 11
+        :value: " ( $STerm | $ATerm ) $Close* $Sp* ($Sep | $CR | $LF)? ÷ "
+      - 
+        :id: 12
+        :value: " × $Any "
+    :variables: 
+      - 
+        :id: "$CR"
+        :value: "\\p{Sentence_Break=CR}"
+      - 
+        :id: "$LF"
+        :value: "\\p{Sentence_Break=LF}"
+      - 
+        :id: "$Extend"
+        :value: "\\p{Sentence_Break=Extend}"
+      - 
+        :id: "$Format"
+        :value: "\\p{Sentence_Break=Format}"
+      - 
+        :id: "$Sep"
+        :value: "\\p{Sentence_Break=Sep}"
+      - 
+        :id: "$Sp"
+        :value: "\\p{Sentence_Break=Sp}"
+      - 
+        :id: "$Lower"
+        :value: "\\p{Sentence_Break=Lower}"
+      - 
+        :id: "$Upper"
+        :value: "\\p{Sentence_Break=Upper}"
+      - 
+        :id: "$OLetter"
+        :value: "\\p{Sentence_Break=OLetter}"
+      - 
+        :id: "$Numeric"
+        :value: "\\p{Sentence_Break=Numeric}"
+      - 
+        :id: "$ATerm"
+        :value: "\\p{Sentence_Break=ATerm}"
+      - 
+        :id: "$STerm"
+        :value: "\\p{Sentence_Break=STerm}"
+      - 
+        :id: "$Close"
+        :value: "\\p{Sentence_Break=Close}"
+      - 
+        :id: "$SContinue"
+        :value: "\\p{Sentence_Break=SContinue}"
+      - 
+        :id: "$Any"
+        :value: "."
+      - 
+        :id: "$FE"
+        :value: "[$Format $Extend]"
+      - 
+        :id: "$NotPreLower_"
+        :value: "[^ $OLetter $Upper $Lower $Sep $CR $LF $STerm $ATerm]"
+      - 
+        :id: "$Sp"
+        :value: "($Sp $FE*)"
+      - 
+        :id: "$Lower"
+        :value: "($Lower $FE*)"
+      - 
+        :id: "$Upper"
+        :value: "($Upper $FE*)"
+      - 
+        :id: "$OLetter"
+        :value: "($OLetter $FE*)"
+      - 
+        :id: "$Numeric"
+        :value: "($Numeric $FE*)"
+      - 
+        :id: "$ATerm"
+        :value: "($ATerm $FE*)"
+      - 
+        :id: "$STerm"
+        :value: "($STerm $FE*)"
+      - 
+        :id: "$Close"
+        :value: "($Close $FE*)"
+      - 
+        :id: "$SContinue"
+        :value: "($SContinue $FE*)"
+  :WordBreak: 
+    :rules: 
+      - 
+        :id: 3
+        :value: " $CR × $LF "
+      - 
+        :id: "3.1"
+        :value: " ($Newline | $CR | $LF) ÷ "
+      - 
+        :id: "3.2"
+        :value: " ÷ ($Newline | $CR | $LF) "
+      - 
+        :id: 4
+        :value: " $NotBreak_ × [$Format $Extend] "
+      - 
+        :id: 5
+        :value: " $ALetter × $ALetter "
+      - 
+        :id: 6
+        :value: " $ALetter × ($MidLetter | $MidNumLet) $ALetter "
+      - 
+        :id: 7
+        :value: " $ALetter ($MidLetter | $MidNumLet) × $ALetter "
+      - 
+        :id: 8
+        :value: " $Numeric × $Numeric "
+      - 
+        :id: 9
+        :value: " $ALetter × $Numeric "
+      - 
+        :id: 10
+        :value: " $Numeric × $ALetter "
+      - 
+        :id: 11
+        :value: " $Numeric ($MidNum | $MidNumLet) × $Numeric "
+      - 
+        :id: 12
+        :value: " $Numeric × ($MidNum | $MidNumLet) $Numeric "
+      - 
+        :id: 13
+        :value: " $Katakana × $Katakana "
+      - 
+        :id: "13.1"
+        :value: " ($ALetter | $Numeric | $Katakana | $ExtendNumLet) × $ExtendNumLet "
+      - 
+        :id: "13.2"
+        :value: " $ExtendNumLet × ($ALetter | $Numeric | $Katakana) "
+      - 
+        :id: "13.3"
+        :value: " $Regional_Indicator × $Regional_Indicator "
+    :variables: 
+      - 
+        :id: "$CR"
+        :value: "\\p{Word_Break=CR}"
+      - 
+        :id: "$LF"
+        :value: "\\p{Word_Break=LF}"
+      - 
+        :id: "$Newline"
+        :value: "\\p{Word_Break=Newline}"
+      - 
+        :id: "$Extend"
+        :value: "\\p{Word_Break=Extend}"
+      - 
+        :id: "$Format"
+        :value: "\\p{Word_Break=Format}"
+      - 
+        :id: "$Katakana"
+        :value: "\\p{Word_Break=Katakana}"
+      - 
+        :id: "$ALetter"
+        :value: "\\p{Word_Break=ALetter}"
+      - 
+        :id: "$MidLetter"
+        :value: "\\p{Word_Break=MidLetter}"
+      - 
+        :id: "$MidNum"
+        :value: "\\p{Word_Break=MidNum}"
+      - 
+        :id: "$MidNumLet"
+        :value: "\\p{Word_Break=MidNumLet}"
+      - 
+        :id: "$Numeric"
+        :value: "\\p{Word_Break=Numeric}"
+      - 
+        :id: "$ExtendNumLet"
+        :value: "\\p{Word_Break=ExtendNumLet}"
+      - 
+        :id: "$Regional_Indicator"
+        :value: "\\p{Word_Break=Regional_Indicator}"
+      - 
+        :id: "$FE"
+        :value: "[$Format $Extend]"
+      - 
+        :id: "$NotBreak_"
+        :value: "[^ $Newline $CR $LF ]"
+      - 
+        :id: "$Katakana"
+        :value: "($Katakana $FE*)"
+      - 
+        :id: "$ALetter"
+        :value: "($ALetter $FE*)"
+      - 
+        :id: "$MidLetter"
+        :value: "($MidLetter $FE*)"
+      - 
+        :id: "$MidNum"
+        :value: "($MidNum $FE*)"
+      - 
+        :id: "$MidNumLet"
+        :value: "($MidNumLet $FE*)"
+      - 
+        :id: "$Numeric"
+        :value: "($Numeric $FE*)"
+      - 
+        :id: "$ExtendNumLet"
+        :value: "($ExtendNumLet $FE*)"
+      - 
+        :id: "$Regional_Indicator"
+        :value: "($Regional_Indicator $FE*)"

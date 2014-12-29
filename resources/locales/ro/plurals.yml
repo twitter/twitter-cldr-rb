@@ -1,5 +1,18 @@
 ---
-:ro: '{ :''ro'' => { :i18n => { :plural => { :keys => [:one, :few], :rule => lambda
-  { |n| n = n.respond_to?(:abs) ? n.abs : 0;n.to_f == 1 ? :one : (n.to_f == 0 || (n.to_f
-  != 1 && (((n.to_f % 100) % 1).zero? && (1..19).include?(n.to_f % 100)))) ? :few
-  : :other } } } } }'
+:ro:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((v != 0 || n ==
+      0) || (n != 1 && (1..19).include?(n % 100))) ? :few : ((i == 1 && v == 0) ?
+      :one : :other)) }'
+    :names:
+    - :few
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
+      :other) }'
+    :names:
+    - :one
+    - :other

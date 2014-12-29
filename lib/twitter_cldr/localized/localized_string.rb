@@ -21,7 +21,29 @@ module TwitterCldr
       end
 
       def normalize(options = {})
-        TwitterCldr::Normalization.normalize(@base_obj, options).localize(@locale)
+        TwitterCldr::Normalization.normalize(@base_obj, options).localize(locale)
+      end
+
+      def casefold(options = {})
+        unless options.include?(:t)
+          # Turkish and azerbaijani use the dotless i and therefore have a few
+          # special casefolding rules. Note "az" is not actually supported yet.
+          options[:t] = [:tr, :az].include?(locale)
+        end
+
+        TwitterCldr::Shared::Casefolder.
+          casefold(@base_obj, options[:t]).
+          localize(locale)
+      end
+
+      def each_sentence
+        if block_given?
+          break_iterator.each_sentence(@base_obj) do |sentence|
+            yield sentence.localize
+          end
+        else
+          to_enum(__method__)
+        end
       end
 
       def code_points
@@ -37,8 +59,8 @@ module TwitterCldr
       end
 
       def to_f(options = {})
-        if TwitterCldr::Parsers::NumberParser.is_numeric?(@base_obj)
-          TwitterCldr::Parsers::NumberParser.new(@locale).try_parse(@base_obj, options) do |result|
+        if number_parser.class.is_numeric?(@base_obj)
+          number_parser.try_parse(@base_obj, options) do |result|
             result || @base_obj.to_f
           end
         else
@@ -90,11 +112,23 @@ module TwitterCldr
         to_bidi(options).reorder_visually!.to_s
       end
 
+      def to_territory
+        TwitterCldr::Shared::Territory.new(@base_obj)
+      end
+
       protected
 
       def formatter
         @formatter ||=
           TwitterCldr::Formatters::PluralFormatter.for_locale(locale)
+      end
+
+      def break_iterator
+        @break_iterator ||= TwitterCldr::Shared::BreakIterator.new(locale)
+      end
+
+      def number_parser
+        @number_parser ||= TwitterCldr::Parsers::NumberParser.new(locale)
       end
 
     end

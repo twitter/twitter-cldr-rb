@@ -1,3 +1,12 @@
 ---
-:th: '{ :''th'' => { :i18n => { :plural => { :keys => [], :rule => lambda { |n| n
-  = n.respond_to?(:abs) ? n.abs : 0;:other } } } } }'
+:th:
+  :cardinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

@@ -62,20 +62,30 @@ else
 end
 
 task :update do
-  tasks = [
-    "update:locales_resources",
-    "update:tailoring_data",
-    "update:unicode_data",
-    "update:composition_exclusions",
-    "update:postal_codes",
-    "update:phone_codes",
-    "update:language_codes",
-    "update:collation_tries",
-    "update:canonical_compositions",
-    "update:rbnf_tests",
-    "update:rbnf_classes",
-    "update:readme"
-  ]
+  tasks = if RUBY_PLATFORM == 'java'
+    # these should be run using JRuby 1.7 in 1.9 mode, ICU4J v51.2, and CLDR v23.1 (v24 collation rules syntax is not supported yet)
+    [
+      "update:tailoring_data",  # per locale
+      "update:collation_tries", # per locale, must come after update:tailoring_data
+      "update:rbnf_tests",      # per locale
+    ]
+  else
+    puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
+
+    [
+      "update:locales_resources",      # per locale (+ units resources using different CLDR and ruby-cldr, see LocalesResourcesImporter)
+      "update:unicode_data",
+      "update:unicode_properties",
+      "update:generate_casefolder",    # must come after unicode data
+      "update:composition_exclusions",
+      "update:postal_codes",
+      "update:phone_codes",
+      "update:language_codes",
+      "update:canonical_compositions",
+      "update:segment_exceptions",     # per locale
+      "update:readme"
+    ]
+  end
 
   tasks.each do |task|
     puts "Executing #{task}"
@@ -83,8 +93,10 @@ task :update do
   end
 end
 
+# TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
+
 namespace :update do
-  ICU_JAR = './vendor/icu4j-51_2.jar'
+  ICU_JAR = './vendor/icu4j.jar'
 
   desc 'Import locales resources'
   task :locales_resources, :cldr_path do |_, args|
@@ -116,6 +128,22 @@ namespace :update do
       args[:unicode_data_path] || './vendor/unicode-data',
       './resources/unicode_data'
     ).import
+  end
+
+  desc 'Import Unicode property resources'
+  task :unicode_properties, :unicode_properties_path do |_, args|
+    TwitterCldr::Resources::UnicodePropertiesImporter.new(
+      args[:unicode_properties_path] || './vendor/unicode-data/properties',
+      './resources/unicode_data/properties'
+    ).import
+  end
+
+  desc 'Generate the casefolder class. Depends on unicode data'
+  task :generate_casefolder do
+    TwitterCldr::Resources::CasefolderClassGenerator.new(
+      './lib/twitter_cldr/resources/casefolder.rb.erb',
+      './lib/twitter_cldr/shared'
+    ).generate
   end
 
   desc 'Import composition exclusions resource'
@@ -183,6 +211,15 @@ namespace :update do
     ).import(TwitterCldr.supported_locales)
   end
 
+  desc 'Import segments exceptions'
+  task :segment_exceptions do
+    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
+      './vendor/uli/segments',
+      './resources/uli/segments'
+    ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
+  end
+
+  desc 'Update README'
   task :readme do |_, args|
     renderer = TwitterCldr::Resources::ReadmeRenderer.new(
       File.read("./README.md.erb")

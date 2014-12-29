@@ -3,9 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-include TwitterCldr::DataReaders
-include TwitterCldr::Formatters::Rbnf
-
 module TwitterCldr
   module Localized
     class LocalizedNumber < LocalizedObject
@@ -20,7 +17,7 @@ module TwitterCldr
 
       class << self
         def types
-          NumberDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::NumberDataReader.types
         end
       end
 
@@ -31,13 +28,10 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        data_reader = NumberDataReader.new(locale, {
+        TwitterCldr::DataReaders::NumberDataReader.new(locale, {
           :type => @type,
           :format => @format
-        })
-
-        tokens = data_reader.tokenizer.tokenize(data_reader.pattern(base_obj))
-        data_reader.formatter.format(tokens, base_obj, options.merge(:type => @type))
+        }).format_number(base_obj, options.merge(:type => @type))
       end
 
       def plural_rule
@@ -45,7 +39,9 @@ module TwitterCldr
       end
 
       def spellout
-        rbnf.format(base_obj, RbnfFormatter::DEFAULT_SPELLOUT_OPTIONS)
+        rbnf.format(
+          base_obj, TwitterCldr::Formatters::Rbnf::RbnfFormatter::DEFAULT_SPELLOUT_OPTIONS
+        )
       end
 
       def to_rbnf_s(group_name, rule_set_name)
@@ -56,7 +52,7 @@ module TwitterCldr
       end
 
       def rbnf
-        @rbnf ||= RbnfFormatter.new(locale)
+        @rbnf ||= TwitterCldr::Formatters::Rbnf::RbnfFormatter.new(locale)
       end
 
       protected

@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d"
@@ -33,7 +34,7 @@
         : "y"
         :yM: "M/y"
         :yMEd: "E, d/M/y"
-        :yMMM: "LLL y"
+        :yMMM: "LLL 'de' y"
         :yMMMEd: "E, d MMM, y"
         :yMMMM: "LLLL 'de' y"
         :yMMMd: "d MMM y"
@@ -97,7 +98,7 @@
             :sat: "ds."
             :sun: "dg."
             :thu: "dj."
-            :tue: "dm."
+            :tue: "dt."
             :wed: "dc."
           :wide: 
             :fri: "divendres"
@@ -109,25 +110,42 @@
             :wed: "dimecres"
       :eras: 
         :abbr: 
+          0: "AEC"
+          1: "EC"
+        :name: 
+          0: "abans de l’Era Comuna"
+          1: "Era Comuna"
+        :narrow: 
           0: "a. de la n. e."
           1: "de la n.e."
-        :name: 
-          0: "a. de la n. e."
-          1: "de la n. e."
-        :narrow: 
-          0: "aC"
-          1: "dC"
       :fields: 
         :day: "dia"
+        :day-narrow: "dia"
+        :day-short: "dia"
         :dayperiod: "a. m./p. m."
         :era: "era"
         :hour: "hora"
+        :hour-narrow: "h"
+        :hour-short: "h"
         :minute: "minut"
+        :minute-narrow: "min"
+        :minute-short: "min"
         :month: "mes"
+        :month-narrow: "mes"
+        :month-short: "mes"
+        :quarter: "trimestre"
+        :quarter-narrow: "T"
+        :quarter-short: "trim."
         :second: "segon"
+        :second-narrow: "s"
+        :second-short: "s"
         :week: "setmana"
+        :week-narrow: "setm."
+        :week-short: "setm."
         :weekday: "dia de la setmana"
         :year: "any"
+        :year-narrow: "any"
+        :year-short: "any"
         :zone: "zona"
       :formats: 
         :date: 
@@ -136,27 +154,27 @@
           :long: 
             :pattern: "d MMMM 'de' y"
           :medium: 
-            :pattern: "dd/MM/y"
+            :pattern: "d MMM y"
           :short: 
             :pattern: "d/M/yy"
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'a les' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} , {{time}}"
           :short: 
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "H.mm.ss zzzz"
+            :pattern: "H:mm:ss zzzz"
           :long: 
-            :pattern: "H.mm.ss z"
+            :pattern: "H:mm:ss z"
           :medium: 
-            :pattern: "H.mm.ss"
+            :pattern: "H:mm:ss"
           :short: 
-            :pattern: "H.mm"
+            :pattern: "H:mm"
       :months: 
         :format: 
           :abbreviated: 
@@ -164,7 +182,7 @@
             10: "oct."
             11: "nov."
             12: "des."
-            2: "feb."
+            2: "febr."
             3: "març"
             4: "abr."
             5: "maig"
@@ -204,7 +222,7 @@
             10: "oct."
             11: "nov."
             12: "des."
-            2: "feb."
+            2: "febr."
             3: "març"
             4: "abr."
             5: "maig"
@@ -243,15 +261,12 @@
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
             :am: "a.m."
-            :noon: "n"
+            :noon: "md"
             :pm: "p.m."
           :wide: 
             :am: "a. m."
-            :noon: "noon"
+            :noon: "migdia"
             :pm: "p. m."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
         :stand-alone: {}
       :quarters: 
         :format: 

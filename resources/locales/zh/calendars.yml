@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: "ccc"
         :EHm: "EHH:mm"
         :EHms: "EHH:mm:ss"
         :Ed: "d日E"
@@ -30,7 +31,7 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y年"
-        :yM: "y/M"
+        :yM: "y年M月"
         :yMEd: "y/M/dE"
         :yMM: "y年M月"
         :yMMM: "y年M月"
@@ -119,15 +120,32 @@
           1: "公元"
       :fields: 
         :day: "日"
+        :day-narrow: "日"
+        :day-short: "日"
         :dayperiod: "上午/下午"
         :era: "纪元"
         :hour: "小时"
+        :hour-narrow: "小时"
+        :hour-short: "小时"
         :minute: "分钟"
+        :minute-narrow: "分钟"
+        :minute-short: "分钟"
         :month: "月"
+        :month-narrow: "月"
+        :month-short: "月"
+        :quarter: "季"
+        :quarter-narrow: "季"
+        :quarter-short: "季"
         :second: "秒钟"
+        :second-narrow: "秒钟"
+        :second-short: "秒钟"
         :week: "周"
-        :weekday: "星期"
+        :week-narrow: "周"
+        :week-short: "周"
+        :weekday: "工作日"
         :year: "年"
+        :year-narrow: "年"
+        :year-short: "年"
         :zone: "时区"
       :formats: 
         :date: 
@@ -260,9 +278,6 @@
             :night: "晚上"
             :noon: "中午"
             :pm: "下午"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
             :weeHours: "凌晨"
         :stand-alone: {}
       :quarters: 

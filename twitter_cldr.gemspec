@@ -15,8 +15,9 @@ Gem::Specification.new do |s|
   s.summary  = "Ruby implementation of the ICU (International Components for Unicode) that uses the Common Locale Data Repository to format dates, plurals, and more."
 
   s.add_dependency 'json'
-  s.add_dependency 'hamster'
+  s.add_dependency 'camertron-eprun'
   s.add_dependency 'tzinfo'
+  s.add_dependency 'cldr-plurals-runtime-rb', '~> 1.0.0'
 
   s.require_path = 'lib'
 

@@ -10,8 +10,8 @@ include TwitterCldr::Localized
 describe LocalizedTimespan do
   it "should format a numer of seconds in different units" do
     timespan = LocalizedTimespan.new(-172800, :locale => :de)
-    timespan.to_s(:unit => :hour).should match_normalized("Vor 48 Stunden")
-    timespan.to_s(:unit => :day).should match_normalized("Vor 2 Tagen")
+    expect(timespan.to_s(:unit => :hour)).to match_normalized("Vor 48 Stunden")
+    expect(timespan.to_s(:unit => :day)).to match_normalized("Vor 2 Tagen")
   end
 
   it "approximates timespans accurately if explicity asked" do
@@ -37,7 +37,7 @@ describe LocalizedTimespan do
 
     expected.each_pair do |seconds, text|
       timespan = LocalizedTimespan.new(seconds, :locale => :de)
-      timespan.to_s(options).should match_normalized(text)
+      expect(timespan.to_s(options)).to match_normalized(text)
     end
   end
 
@@ -61,7 +61,7 @@ describe LocalizedTimespan do
 
     expected.each_pair do |seconds, text|
       timespan = LocalizedTimespan.new(seconds, :locale => :de)
-      timespan.to_s(options).should match_normalized(text)
+      expect(timespan.to_s(options)).to match_normalized(text)
     end
   end
 
@@ -80,7 +80,7 @@ describe LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        timespan.to_s(options.merge(:unit => unit)).should match_normalized(text)
+        expect(timespan.to_s(options.merge(:unit => unit))).to match_normalized(text)
       end
     end
   end
@@ -99,7 +99,7 @@ describe LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        timespan.to_s(:unit => unit).should match_normalized(text)
+        expect(timespan.to_s(:unit => unit)).to match_normalized(text)
       end
     end
   end
@@ -118,7 +118,7 @@ describe LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        timespan.to_s(:unit => unit).should match_normalized(text)
+        expect(timespan.to_s(:unit => unit)).to match_normalized(text)
       end
     end
   end
@@ -137,7 +137,7 @@ describe LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        timespan.to_s(options.merge(:unit => unit)).should match_normalized(text)
+        expect(timespan.to_s(options.merge(:unit => unit))).to match_normalized(text)
       end
     end
   end

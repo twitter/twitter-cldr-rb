@@ -5,9 +5,14 @@
 
 module TwitterCldr
   module Transforms
-
-    autoload :Graph,     "twitter_cldr/transforms/graph"
-    autoload :GraphNode, "twitter_cldr/transforms/graph"
-
+    autoload :Rule,                'twitter_cldr/transforms/rule'
+    autoload :RuleSet,             'twitter_cldr/transforms/rule_set'
+    autoload :Filter,              'twitter_cldr/transforms/filter'
+    autoload :RegexFilter,         'twitter_cldr/transforms/regex_filter'
+    autoload :NormalizationFilter, 'twitter_cldr/transforms/normalization_filter'
+    autoload :Conversion,          'twitter_cldr/transforms/conversion'
+    autoload :Variable,            'twitter_cldr/transforms/variable'
+    autoload :Resolvable,          'twitter_cldr/transforms/resolvable'
+    autoload :Cursor,              'twitter_cldr/transforms/cursor'
   end
 end

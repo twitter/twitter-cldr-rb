@@ -6,13 +6,14 @@
 module TwitterCldr
   module Transforms
 
+    # Decides which filter (or transform) to apply
     class Filter < Rule
       class << self
-        def parse(rule_text)
-          if NormalizationFilter.can_parse?(rule_text)
-            NormalizationFilter.parse(rule_text.strip)
+        def parse(rule_text, symbol_table)
+          if NormalizationTransform.can_parse?(rule_text)
+            NormalizationTransform.parse(rule_text.strip, symbol_table)
           else
-            RegexFilter.parse(rule_text)
+            RegexFilter.parse(rule_text, symbol_table)
           end
         end
       end

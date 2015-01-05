@@ -14,7 +14,7 @@ module TwitterCldr
           var_name = name
           next_token(:equals)
           var_value = value
-          Variable.new(var_name, var_value)
+          [var_name, var_value]
         end
 
         def name
@@ -34,12 +34,18 @@ module TwitterCldr
       end
 
       class << self
-        def parse(rule_text)
+        def parse(rule_text, symbol_table)
           tokens = tokenizer.tokenize(
             unescape(rule_text)
           )
 
-          parser.parse(tokens)
+          var_name, value_tokens = parser.parse(tokens)
+
+          Variable.new(
+            var_name, replace_symbols(
+              value_tokens, symbol_table
+            )
+          )
         end
 
         protected
@@ -63,30 +69,11 @@ module TwitterCldr
         end
       end
 
-      include Resolvable
       attr_reader :name, :value_tokens
 
       def initialize(name, value_tokens)
         @name = name
         @value_tokens = value_tokens
-      end
-
-      def resolve(symbol_table)
-        @resolved ||=
-          ResolvedVariable.new(
-            name, resolve_token_group(
-              value_tokens, symbol_table
-            )
-          )
-      end
-    end
-
-    class ResolvedVariable
-      attr_reader :name, :value
-
-      def initialize(name, value)
-        @name = name
-        @value = value
       end
     end
 

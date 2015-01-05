@@ -6,11 +6,11 @@
 module TwitterCldr
   module Transforms
 
-    class NormalizationFilter < Rule
+    class NormalizationTransform < Transform
       NORMALIZATION_FORMS = %w(nfc nfd nfkc nfkd)
 
       class << self
-        def parse(rule_text)
+        def parse(rule_text, symbol_table)
           new(*get_forms(rule_text))
         end
 
@@ -51,11 +51,15 @@ module TwitterCldr
 
       def apply_to(cursor)
         form = form_for(cursor.direction)
-        new_text = TwitterCldr::Normalization.normalize(
-          cursor.text, using: form
-        )
+
+        new_text, new_ranges = transform_each_range_in(cursor) do |range|
+          normalized_segment = TwitterCldr::Normalization.normalize(
+            cursor.text[range], using: form
+          )
+        end
 
         cursor.set_text(new_text)
+        cursor.set_ranges(new_ranges)
         cursor.reset_position
       end
 

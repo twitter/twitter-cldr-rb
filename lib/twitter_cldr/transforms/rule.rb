@@ -23,6 +23,16 @@ module TwitterCldr
             .gsub("''", "'")
             .gsub("\\'", "'")
         end
+
+        def replace_symbols(tokens, symbol_table)
+          tokens.flat_map do |token|
+            if token.type == :variable
+              symbol_table[token.value].value_tokens
+            else
+              Array(token)
+            end
+          end
+        end
       end
     end
 

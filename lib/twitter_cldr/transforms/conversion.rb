@@ -7,21 +7,21 @@ module TwitterCldr
   module Transforms
 
     class Conversion < Rule
-      autoload :Base,            'twitter_cldr/transforms/conversion/base'
-      autoload :Node,            'twitter_cldr/transforms/conversion/node'
-      autoload :ResolvedNode,    'twitter_cldr/transforms/conversion/node'
-      autoload :DirectionNode,   'twitter_cldr/transforms/conversion/direction_node'
-      autoload :Context,         'twitter_cldr/transforms/conversion/context'
-      autoload :ResolvedContext, 'twitter_cldr/transforms/conversion/context'
-      autoload :Parser,          'twitter_cldr/transforms/conversion/parser'
+      autoload :Parser, 'twitter_cldr/transforms/conversion/parser'
+      autoload :Side,   'twitter_cldr/transforms/conversion/side'
 
       class << self
-        def parse(rule_text)
-          tokens = tokenizer.tokenize(
-            unescape(remove_comment(rule_text))
+        def parse(rule_text, symbol_table)
+          cleaned_rule_text = unescape(
+            remove_comment(rule_text)
           )
 
-          new(parser.parse(tokens))
+          tokens = replace_symbols(
+            tokenizer.tokenize(cleaned_rule_text),
+            symbol_table
+          )
+
+          parser.parse(tokens)
         end
 
         protected
@@ -60,39 +60,52 @@ module TwitterCldr
         end
       end
 
-      attr_reader :root
+      attr_reader :direction, :left, :right
 
-      def initialize(root)
-        @root = root
+      def initialize(direction, left, right)
+        @direction = direction
+        @left = left
+        @right = right
       end
 
-      def resolve(symbol_table)
-        ResolvedConversion.new(
-          root.resolve(symbol_table)
-        )
-      end
-    end
-
-    class ResolvedConversion
-      attr_reader :root
-
-      def initialize(root)
-        @root = root
-      end
-
-      def match(cursor)
-        if correct_direction?(cursor.direction)
+      def first_side
+        case direction
+          when :bidirectional, :forward
+            left
+          else
+            right
         end
       end
 
-      protected
-
-      def correct_direction?(direction)
-        if direction == :bidirectional
-          true
-        else
-          direction == root.operator
+      def second_side
+        case direction
+          when :bidirectional, :forward
+            right
+          else
+            left
         end
+      end
+
+      def index_value
+        first_side.index_value
+      end
+
+      def match?(cursor)
+        first_side.match?(cursor)
+      end
+
+      def original
+        first_side.before_context +
+          first_side.key +
+          first_side.after_context
+      end
+
+      def replacement
+        second_side.key
+      end
+
+      def cursor_offset
+        second_side.cursor_offset
       end
     end
 

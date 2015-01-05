@@ -6,21 +6,40 @@
 module TwitterCldr
   module Transforms
 
-    class RegexFilter < Rule
+    class RegexFilter < Filter
       class << self
-        def parse(rule_text)
-          new(
-            TwitterCldr::Shared::UnicodeRegex.compile(
-              unescape(rule_text[2..-2].strip)
-            ).to_regexp
-          )
+        def parse(rule_text, symbol_table)
+          rule_text = unescape(rule_text[2..-2].strip)
+          inverse = inverse?(rule_text)
+
+          str = TwitterCldr::Shared::UnicodeRegex.compile(
+            clean_rule(rule_text, inverse)
+          ).to_regexp_str
+
+          new(/#{str}/n)
+        end
+
+        protected
+
+        def inverse?(rule_text)
+          rule_text.start_with?('(')
+        end
+
+        def clean_rule(rule_text, inverse)
+          if inverse
+            rule_text[1..-2]
+          else
+            rule_text
+          end
         end
       end
 
-      attr_reader :regexp
+      attr_reader :regexp, :inverse
+      alias :inverse? :inverse
 
-      def initialize(regexp)
+      def initialize(regexp, inverse = false)
         @regexp = regexp
+        @inverse = inverse
       end
 
       def resolve(symbol_table)
@@ -28,12 +47,24 @@ module TwitterCldr
       end
 
       def apply_to(cursor)
-        new_text = cursor.text.scan(regexp).each_with_object('') do |match, ret|
-          ret << match
-        end
+        cursor.set_ranges(
+          cursor.ranges.intersection(
+            ranges_for(cursor)
+          )
+        )
+      end
 
-        cursor.set_text(new_text)
-        cursor.reset_position
+      protected
+
+      def ranges_for(cursor)
+        TwitterCldr::Utils::RangeSet.new(
+          [].tap do |ranges|
+            cursor.text.scan(regexp) do
+              start, finish = Regexp.last_match.offset(0)
+              ranges << (start..(finish - 1))
+            end
+          end
+        )
       end
     end
 

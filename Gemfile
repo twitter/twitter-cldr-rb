@@ -36,6 +36,7 @@ group :test do
 
   if RUBY_VERSION >= "1.9"
     gem 'rubyzip'
+    gem 'coveralls', require: false
   end
 
   platform :mri_18 do

@@ -10,6 +10,7 @@ group :development do
   gem 'mustache', '~> 0.99.4'
   gem 'nokogiri'
   gem 'ruby_parser', '~> 2.3.1'
+  gem 'coveralls', require: false
 
   gem 'ruby-cldr', :github => 'KL-7/ruby-cldr', :branch => 'for-twitter-cldr'
 

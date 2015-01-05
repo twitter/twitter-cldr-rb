@@ -5,6 +5,8 @@
 
 require 'rspec'
 require 'twitter_cldr'
+require 'coveralls'
+Coveralls.wear!
 
 class FastGettext
   class << self

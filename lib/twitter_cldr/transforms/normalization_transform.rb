@@ -54,7 +54,7 @@ module TwitterCldr
 
         new_text, new_ranges = transform_each_range_in(cursor) do |range|
           normalized_segment = TwitterCldr::Normalization.normalize(
-            cursor.text[range], using: form
+            cursor.text[range], :using => form
           )
         end
 

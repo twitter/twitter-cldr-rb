@@ -49,7 +49,7 @@ module TwitterCldr
           Regexp.compile(
             tokenizers.map do |tokenizer|
               tokenizer.custom_splitter.source
-            end.join("|")
+            end.join("|"), nil, 'u'
           )
         end
 
@@ -102,7 +102,7 @@ module TwitterCldr
       def splitter
         @splitter ||= (@custom_splitter || begin
           sources = recognizers.map { |rec| rec.regex.source }
-          Regexp.new("(" + sources.join("|") + ")")
+          Regexp.new("(" + sources.join("|") + ")", nil, 'u')
         end)
       end
 

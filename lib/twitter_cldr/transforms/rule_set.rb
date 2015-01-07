@@ -63,14 +63,6 @@ module TwitterCldr
           end
         end
 
-        def resolve(rules, symbol_table)
-          rules.each_with_object([]) do |rule, ret|
-            unless rule.is_a?(Variable)
-              ret << rule.resolve(symbol_table)
-            end
-          end
-        end
-
         def parse_each(resource, symbol_table)
           rules_from(resource).each do |rule_text|
             yield parse_rule(rule_text, symbol_table)
@@ -91,7 +83,7 @@ module TwitterCldr
 
           if rule_text[0..1] == '::'
             :filter
-          elsif rule_text[0] == '$'
+          elsif rule_text[0..0] == '$'
             :variable
           else
             :conversion
@@ -131,68 +123,39 @@ module TwitterCldr
       end
 
       def transform(text, direction = :forward)
-        original_encoding = text.encoding
-        text.force_encoding(Encoding::ASCII_8BIT)
-        cursor = Cursor.new(text, direction)
+        cursor = Cursor.new(text.dup, direction)
         filter_rule.apply_to(cursor) if filter_rule
 
         until cursor.eos?
           if rule = find_matching_rule_at(cursor)
-            insert_bytes(
-              cursor.text,
-              cursor.position,
-              rule.replacement,
-              rule.replacement.bytesize - rule.original.bytesize
-            )
+            start = cursor.position
+            stop = cursor.position + sizeof(rule.original)
+            cursor.text[start...stop] = rule.replacement
 
             cursor.advance(
-              rule.replacement.bytesize + rule.cursor_offset
+              sizeof(rule.replacement) + rule.cursor_offset
             )
           else
             cursor.advance
           end
         end
 
-        cursor.text.force_encoding(original_encoding)
+        cursor.text.to_s
       end
 
       protected
 
-      def insert_bytes(str, pos, new_str, byte_length)
-        # increase length of string by n bytes
-        if byte_length >= 0
-          str << ('a' * byte_length)
-
-          # shift string array
-          (str.bytesize - 1).downto(pos) do |i|
-            str.setbyte(i, str.getbyte(i - byte_length))
-          end
-        else
-          delete_bytes(str, pos, byte_length.abs)
-        end
-
-        # insert new bytes
-        0.upto(new_str.bytesize - 1) do |i|
-          str.setbyte(pos + i, new_str.getbyte(i))
-        end
-      end
-
-      def delete_bytes(str, pos, length)
-        pos.upto(str.bytesize - length - 1) do |i|
-          str.setbyte(i, str.getbyte(i + length))
-        end
-
-        str.replace(
-          str.byteslice(0, str.bytesize - length)
-        )
+      def sizeof(str)
+        TwitterCldr::Utils::ByteString.sizeof(str)
       end
 
       def build_rule_index(ct_rules)
         index_hash = Hash.new { |h, k| h[k] = [] }
-        ct_rules.each_with_object(index_hash) do |rule, ret|
+        ct_rules.inject(index_hash) do |ret, rule|
           if rule.respond_to?(:index_value)
             ret[rule.index_value] << rule
           end
+          ret
         end
       end
 

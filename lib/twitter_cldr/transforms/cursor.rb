@@ -24,7 +24,7 @@ module TwitterCldr
       end
 
       def set_text(new_text)
-        @text = new_text
+        @text = TwitterCldr::Utils::ByteString.new(new_text)
       end
 
       def set_ranges(range_set)

@@ -59,8 +59,8 @@ module TwitterCldr
       def ranges_for(cursor)
         TwitterCldr::Utils::RangeSet.new(
           [].tap do |ranges|
-            cursor.text.scan(regexp) do
-              start, finish = Regexp.last_match.offset(0)
+            cursor.text.scan(regexp) do |match|
+              start, finish = match.offset(0)
               ranges << (start..(finish - 1))
             end
           end

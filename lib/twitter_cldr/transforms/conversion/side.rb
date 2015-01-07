@@ -18,13 +18,6 @@ module TwitterCldr
           @cursor_offset = cursor_offset
         end
 
-        def to_regexp
-          @regexp ||= begin
-            str = TwitterCldr::Shared::UnicodeRegex.compile(key).to_regexp_str
-            /#{str}/n
-          end
-        end
-
         def match?(cursor)
           idx = cursor.text.index(to_regexp, cursor.position)
           idx == cursor.position
@@ -32,7 +25,18 @@ module TwitterCldr
 
         def index_value
           # index value is int value of first byte
-          key.unpack('C').first
+          @index_value ||= key.unpack('C').first
+        end
+
+        protected
+
+        def to_regexp
+          @regexp ||= begin
+            str = TwitterCldr::Shared::UnicodeRegex.compile(
+              "#{before_context}#{key}#{after_context}"
+            ).to_regexp_str
+            /#{str}/n
+          end
         end
       end
 

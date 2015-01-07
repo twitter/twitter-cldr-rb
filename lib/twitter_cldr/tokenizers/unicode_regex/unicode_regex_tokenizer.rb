@@ -38,7 +38,7 @@ module TwitterCldr
             TokenRecognizer.new(:open_bracket, /\[/),
             TokenRecognizer.new(:close_bracket, /\]/),
 
-            TokenRecognizer.new(:string, //) do |val|
+            TokenRecognizer.new(:string, //u) do |val|
               val == " " ? val : val.strip
             end
           ]

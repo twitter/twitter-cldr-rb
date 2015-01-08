@@ -482,7 +482,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["38020", "83006", "17086", "04902-7122", "89347"]
+postal_code.sample(5)  # ["10923", "88185", "05466", "19797-5720", "47810"]
 ```
 
 ### Phone Codes

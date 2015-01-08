@@ -48,6 +48,5 @@ group :test do
     gem 'launchy'
     gem 'coveralls', :require => false
   end
-
 end
 

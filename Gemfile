@@ -46,9 +46,8 @@ group :test do
   platform :mri_19 do
     gem 'simplecov'
     gem 'launchy'
+    gem 'coveralls', :require => false
   end
 
-  gem 'coveralls', :require => false
-  gem 'mime-types', '~> 1.25'
 end
 

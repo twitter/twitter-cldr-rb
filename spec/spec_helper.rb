@@ -7,6 +7,9 @@ require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 
+require 'coveralls'
+Coveralls.wear!
+
 if defined?(RUBY_ENGINE)
   if RUBY_ENGINE == "rbx"
     require 'rubinius/debugger'

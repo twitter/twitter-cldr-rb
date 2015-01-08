@@ -46,5 +46,7 @@ group :test do
     gem 'simplecov'
     gem 'launchy'
   end
+
+  gem 'coveralls', :require => false
 end
 

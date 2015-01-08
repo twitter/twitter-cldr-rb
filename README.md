@@ -1,6 +1,6 @@
 
 
-## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb) [![Coverage Status](https://img.shields.io/coveralls/twitter/twitter-cldr-rb.svg)](https://coveralls.io/r/twitter/twitter-cldr-rb?branch=master)
+## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb) [![Coverage Status](https://coveralls.io/repos/twitter/twitter-cldr-rb/badge.png?branch=master)](https://coveralls.io/r/twitter/twitter-cldr-rb?branch=master)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
 localized equivalents.  Currently supported types of text include dates, times, currencies, decimals, percentages, and symbols.
@@ -482,7 +482,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["89949-6564", "80656", "25927-4419", "32275-0803", "73274-0240"]
+postal_code.sample(5)  # ["38020", "83006", "17086", "04902-7122", "89347"]
 ```
 
 ### Phone Codes

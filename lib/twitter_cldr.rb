@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
-
 require 'yaml'
 require 'date'
 require 'time'
@@ -40,6 +38,7 @@ module TwitterCldr
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
 
+  # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
       :msa     => :ms,

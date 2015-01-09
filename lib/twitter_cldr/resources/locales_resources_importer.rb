@@ -87,6 +87,7 @@ module TwitterCldr
 
         File.open(path, 'w:utf-8') do |output|
           output.write(
+            # TODO: remove and ensure that resources are imported in the same format
             # Quote all strings for compat with 1.8. This is important because
             # RBNF syntax includes characters that are significant in the Yaml
             # syntax, like >, <, etc. Psych doesn't have problems parsing them,

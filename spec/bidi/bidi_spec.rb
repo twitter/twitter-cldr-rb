@@ -28,7 +28,6 @@ describe Bidi do
     File.open(BIDI_TEST_PATH, 'r').each_line do |s|
       cur_line = s.strip
       first_char = cur_line[0]
-      first_char = first_char.chr if first_char.is_a?(Fixnum)  # conversion for ruby 1.8
 
       case first_char
         when "#"

@@ -37,11 +37,7 @@ describe UnicodeRegex do
 
     describe "#to_regexp" do
       it "should return a ruby Regexp" do
-        if RUBY_VERSION <= "1.8.7"
-          expect(regex.to_regexp).to be_a(Oniguruma::ORegexp)
-        else
-          expect(regex.to_regexp).to be_a(Regexp)
-        end
+        expect(regex.to_regexp).to be_a(Regexp)
       end
 
       it "should properly turn various basic regexes into strings" do

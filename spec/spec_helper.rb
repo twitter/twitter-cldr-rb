@@ -6,24 +6,10 @@
 require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
+require 'pry-nav'
+require 'coveralls'
 
-if defined?(RUBY_ENGINE)
-  if RUBY_ENGINE == "rbx"
-    require 'rubinius/debugger'
-  elsif RUBY_ENGINE == "ruby"
-    require 'pry-nav'
-  end
-end
-
-if RUBY_VERSION <= "1.8.7"
-  $KCODE = "UTF-8"
-  require 'oniguruma'
-end
-
-if RUBY_VERSION >= "1.9.0"
-  require 'coveralls'
-  Coveralls.wear!
-end
+Coveralls.wear!
 
 if ENV['SCOV']
   require 'simplecov'

@@ -16,11 +16,7 @@ module TwitterCldr
       def tokenizer
         @tokenizer ||= begin
           # i.e. %spellout-numbering, %%2d-year
-          rule_regex = if RUBY_VERSION <= "1.8.7"
-            /%%?[\w\-]+/u
-          else
-            Regexp.new("%%?[[:word:]\-]+")
-          end
+          rule_regex = Regexp.new("%%?[[:word:]\-]+")
 
           recognizers = [
             # special rule descriptors

@@ -15,7 +15,3 @@ env:
   - 'RSPEC_OPTIONS="--tag slow spec/collation/tailoring_spec.rb spec/collation/trie_dumps_spec.rb"'
   - 'RSPEC_OPTIONS="--tag slow spec/formatters/numbers/rbnf/rbnf_spec.rb"'
 script: 'bundle exec rspec $RSPEC_OPTIONS'
-before_install:
-  - gem update --system 2.1.11
-  - gem --version
-before_script: 'gem install bundler'

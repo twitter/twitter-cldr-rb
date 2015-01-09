@@ -1,6 +1,6 @@
 
 
-## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
+## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb) [![Coverage Status](https://coveralls.io/repos/twitter/twitter-cldr-rb/badge.png?branch=master)](https://coveralls.io/r/twitter/twitter-cldr-rb?branch=master)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
 localized equivalents.  Currently supported types of text include dates, times, currencies, decimals, percentages, and symbols.
@@ -39,18 +39,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # "1 337"
+1337.localize(:es).to_s                                    # "1.337"
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # "1 337,00 $"
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 €"
+1337.localize(:es).to_currency.to_s                        # "1.337,00 $"
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1.337,00 €"
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # "1 337%"
-1337.localize(:es).to_percent.to_s(:precision => 2)        # "1 337,00%"
+1337.localize(:es).to_percent.to_s                         # "1.337 %"
+1337.localize(:es).to_percent.to_s(:precision => 2)        # "1.337,00 %"
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # "1 337,000"
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # "1.337,000"
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -154,7 +154,7 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)"
 DateTime.now.localize(:es).to_long_s               # "14 de febrero de 2014, 12:20:05 UTC"
-DateTime.now.localize(:es).to_medium_s             # "14/2/2014 12:20:05"
+DateTime.now.localize(:es).to_medium_s             # "14 de feb. de 2014 12:20:05"
 DateTime.now.localize(:es).to_short_s              # "14/2/14 12:20"
 
 Time.now.localize(:es).to_full_s                   # "12:20:05 (UTC +00:00)"
@@ -164,7 +164,7 @@ Time.now.localize(:es).to_short_s                  # "12:20"
 
 DateTime.now.localize(:es).to_date.to_full_s       # "viernes, 14 de febrero de 2014"
 DateTime.now.localize(:es).to_date.to_long_s       # "14 de febrero de 2014"
-DateTime.now.localize(:es).to_date.to_medium_s     # "14/2/2014"
+DateTime.now.localize(:es).to_date.to_medium_s     # "14 de feb. de 2014"
 DateTime.now.localize(:es).to_date.to_short_s      # "14/2/14"
 ```
 
@@ -184,7 +184,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# ["EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", "H", ... ]
+# ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", ... ]
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -201,6 +201,7 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
+| E          | Fri                    |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -320,8 +321,9 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # :one
-2.localize(:ru).plural_rule                                # :other
+2.localize(:ru).plural_rule                                # :few
 5.localize(:ru).plural_rule                                # :many
+10.0.localize(:ru).plural_rule                             # :other
 ```
 
 Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::Plurals::Rules` class.  You can do the same thing (and a bit more) if you're feeling adventurous:
@@ -332,11 +334,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :other
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :few
 ```
 
 ### Plurals
@@ -480,7 +482,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["93733-7601", "65796-6586", "93519", "46536", "53158"]
+postal_code.sample(5)  # ["10923", "88185", "05466", "19797-5720", "47810"]
 ```
 
 ### Phone Codes

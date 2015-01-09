@@ -20,6 +20,11 @@ if RUBY_VERSION <= "1.8.7"
   require 'oniguruma'
 end
 
+if RUBY_VERSION >= "1.9.0"
+  require 'coveralls'
+  Coveralls.wear!
+end
+
 if ENV['SCOV']
   require 'simplecov'
   SimpleCov.start

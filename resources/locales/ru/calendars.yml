@@ -3,7 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :E: "ccc"
+        :E: ccc
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "ccc, d"
@@ -13,17 +13,17 @@
         :GyMMM: "LLL y G"
         :GyMMMEd: "E, d MMM y 'г'. G"
         :GyMMMd: "d MMM y 'г'. G"
-        :H: "H"
+        :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
-        :M: "L"
+        :M: L
         :MEd: "E, dd.MM"
-        :MMM: "LLL"
+        :MMM: LLL
         :MMMEd: "ccc, d MMM"
         :MMMd: "d MMM"
-        :MMdd: "dd.MM"
-        :Md: "dd.MM"
-        :d: "d"
+        :MMdd: dd.MM
+        :Md: dd.MM
+        :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
@@ -31,83 +31,83 @@
         ? !ruby/symbol "y"
         : "y"
         :yLLLL: "LLLL y"
-        :yM: "MM.y"
+        :yM: MM.y
         :yMEd: "ccc, d.MM.y 'г'."
-        :yMM: "MM.y"
+        :yMM: MM.y
         :yMMM: "LLL y"
         :yMMMEd: "E, d MMM y 'г'."
         :yMMMM: "LLLL y"
         :yMMMd: "d MMM y 'г'."
-        :yMd: "dd.MM.y"
+        :yMd: dd.MM.y
         :yQQQ: "QQQ y 'г'."
         :yQQQQ: "QQQQ y 'г'."
       :days: 
         :format: 
           :abbreviated: 
-            :fri: "пт"
-            :mon: "пн"
-            :sat: "сб"
-            :sun: "вс"
-            :thu: "чт"
-            :tue: "вт"
-            :wed: "ср"
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :narrow: 
-            :fri: "пт"
-            :mon: "пн"
-            :sat: "сб"
-            :sun: "вс"
-            :thu: "чт"
-            :tue: "вт"
-            :wed: "ср"
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :short: 
-            :fri: "пт"
-            :mon: "пн"
-            :sat: "сб"
-            :sun: "вс"
-            :thu: "чт"
-            :tue: "вт"
-            :wed: "ср"
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide: 
-            :fri: "пятница"
-            :mon: "понедельник"
-            :sat: "суббота"
-            :sun: "воскресенье"
-            :thu: "четверг"
-            :tue: "вторник"
-            :wed: "среда"
+            :fri: пятница
+            :mon: понедельник
+            :sat: суббота
+            :sun: воскресенье
+            :thu: четверг
+            :tue: вторник
+            :wed: среда
         :stand-alone: 
           :abbreviated: 
-            :fri: "Пт"
-            :mon: "Пн"
-            :sat: "Сб"
-            :sun: "Вс"
-            :thu: "Чт"
-            :tue: "Вт"
-            :wed: "Ср"
+            :fri: Пт
+            :mon: Пн
+            :sat: Сб
+            :sun: Вс
+            :thu: Чт
+            :tue: Вт
+            :wed: Ср
           :narrow: 
-            :fri: "П"
-            :mon: "П"
-            :sat: "С"
-            :sun: "В"
-            :thu: "Ч"
-            :tue: "В"
-            :wed: "С"
+            :fri: П
+            :mon: П
+            :sat: С
+            :sun: В
+            :thu: Ч
+            :tue: В
+            :wed: С
           :short: 
-            :fri: "пт"
-            :mon: "пн"
-            :sat: "сб"
-            :sun: "вс"
-            :thu: "чт"
-            :tue: "вт"
-            :wed: "ср"
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide: 
-            :fri: "Пятница"
-            :mon: "Понедельник"
-            :sat: "Суббота"
-            :sun: "Воскресенье"
-            :thu: "Четверг"
-            :tue: "Вторник"
-            :wed: "Среда"
+            :fri: Пятница
+            :mon: Понедельник
+            :sat: Суббота
+            :sun: Воскресенье
+            :thu: Четверг
+            :tue: Вторник
+            :wed: Среда
       :eras: 
         :abbr: 
           0: "до н. э."
@@ -117,35 +117,35 @@
           1: "н. э."
         :narrow: 
           0: "до н.э."
-          1: "н.э."
+          1: н.э.
       :fields: 
-        :day: "День"
-        :day-narrow: "дн."
-        :day-short: "дн."
-        :dayperiod: "ДП/ПП"
-        :era: "Эра"
-        :hour: "Час"
-        :hour-narrow: "ч."
-        :hour-short: "ч."
-        :minute: "Минута"
-        :minute-narrow: "мин."
-        :minute-short: "мин."
-        :month: "Месяц"
-        :month-narrow: "мес."
-        :month-short: "мес."
-        :quarter: "Квартал"
-        :quarter-narrow: "кв."
-        :quarter-short: "кв."
-        :second: "Секунда"
-        :second-narrow: "с"
-        :second-short: "сек."
-        :week: "Неделя"
-        :week-narrow: "нед."
-        :week-short: "нед."
+        :day: День
+        :day-narrow: дн.
+        :day-short: дн.
+        :dayperiod: ДП/ПП
+        :era: Эра
+        :hour: Час
+        :hour-narrow: ч.
+        :hour-short: ч.
+        :minute: Минута
+        :minute-narrow: мин.
+        :minute-short: мин.
+        :month: Месяц
+        :month-narrow: мес.
+        :month-short: мес.
+        :quarter: Квартал
+        :quarter-narrow: кв.
+        :quarter-short: кв.
+        :second: Секунда
+        :second-narrow: с
+        :second-short: сек.
+        :week: Неделя
+        :week-narrow: нед.
+        :week-short: нед.
         :weekday: "День недели"
-        :year: "Год"
-        :year-narrow: "г."
-        :year-short: "г."
+        :year: Год
+        :year-narrow: г.
+        :year-short: г.
         :zone: "Часовой пояс"
       :formats: 
         :date: 
@@ -156,7 +156,7 @@
           :medium: 
             :pattern: "d MMM y 'г'."
           :short: 
-            :pattern: "dd.MM.yy"
+            :pattern: dd.MM.yy
         :datetime: 
           :full: 
             :pattern: "{{date}}, {{time}}"
@@ -178,97 +178,97 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "янв."
-            10: "окт."
-            11: "нояб."
-            12: "дек."
-            2: "февр."
-            3: "марта"
-            4: "апр."
-            5: "мая"
-            6: "июня"
-            7: "июля"
-            8: "авг."
-            9: "сент."
+            1: янв.
+            10: окт.
+            11: нояб.
+            12: дек.
+            2: февр.
+            3: марта
+            4: апр.
+            5: мая
+            6: июня
+            7: июля
+            8: авг.
+            9: сент.
           :narrow: 
-            1: "Я"
-            10: "О"
-            11: "Н"
-            12: "Д"
-            2: "Ф"
-            3: "М"
-            4: "А"
-            5: "М"
-            6: "И"
-            7: "И"
-            8: "А"
-            9: "С"
+            1: Я
+            10: О
+            11: Н
+            12: Д
+            2: Ф
+            3: М
+            4: А
+            5: М
+            6: И
+            7: И
+            8: А
+            9: С
           :wide: 
-            1: "января"
-            10: "октября"
-            11: "ноября"
-            12: "декабря"
-            2: "февраля"
-            3: "марта"
-            4: "апреля"
-            5: "мая"
-            6: "июня"
-            7: "июля"
-            8: "августа"
-            9: "сентября"
+            1: января
+            10: октября
+            11: ноября
+            12: декабря
+            2: февраля
+            3: марта
+            4: апреля
+            5: мая
+            6: июня
+            7: июля
+            8: августа
+            9: сентября
         :stand-alone: 
           :abbreviated: 
-            1: "янв."
-            10: "окт."
-            11: "нояб."
-            12: "дек."
-            2: "февр."
-            3: "март"
-            4: "апр."
-            5: "май"
-            6: "июнь"
-            7: "июль"
-            8: "авг."
-            9: "сент."
+            1: янв.
+            10: окт.
+            11: нояб.
+            12: дек.
+            2: февр.
+            3: март
+            4: апр.
+            5: май
+            6: июнь
+            7: июль
+            8: авг.
+            9: сент.
           :narrow: 
-            1: "Я"
-            10: "О"
-            11: "Н"
-            12: "Д"
-            2: "Ф"
-            3: "М"
-            4: "А"
-            5: "М"
-            6: "И"
-            7: "И"
-            8: "А"
-            9: "С"
+            1: Я
+            10: О
+            11: Н
+            12: Д
+            2: Ф
+            3: М
+            4: А
+            5: М
+            6: И
+            7: И
+            8: А
+            9: С
           :wide: 
-            1: "январь"
-            10: "октябрь"
-            11: "ноябрь"
-            12: "декабрь"
-            2: "февраль"
-            3: "март"
-            4: "апрель"
-            5: "май"
-            6: "июнь"
-            7: "июль"
-            8: "август"
-            9: "сентябрь"
+            1: январь
+            10: октябрь
+            11: ноябрь
+            12: декабрь
+            2: февраль
+            3: март
+            4: апрель
+            5: май
+            6: июнь
+            7: июль
+            8: август
+            9: сентябрь
       :periods: 
         :format: 
           :abbreviated: 
-            :am: "AM"
-            :pm: "PM"
+            :am: AM
+            :pm: PM
           :narrow: 
-            :am: "AM"
-            :noon: "полдень"
-            :pm: "PM"
+            :am: AM
+            :noon: полдень
+            :pm: PM
           :wide: 
-            :am: "AM"
-            :noon: "полдень"
-            :pm: "PM"
+            :am: AM
+            :noon: полдень
+            :pm: PM
         :stand-alone: {}
       :quarters: 
         :format: 

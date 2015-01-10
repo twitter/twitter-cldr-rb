@@ -3,14 +3,14 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#,##0.###"
           :long: 
@@ -52,60 +52,60 @@
               :other: "000 biljoonaa"
           :short: 
             1000: 
-              :one: "0 t'.'"
-              :other: "0 t'.'"
+              :one: 0 t'.'
+              :other: 0 t'.'
             10000: 
-              :one: "00 t'.'"
-              :other: "00 t'.'"
+              :one: 00 t'.'
+              :other: 00 t'.'
             100000: 
-              :one: "000 t'.'"
-              :other: "000 t'.'"
+              :one: 000 t'.'
+              :other: 000 t'.'
             1000000: 
-              :one: "0 milj'.'"
-              :other: "0 milj'.'"
+              :one: 0 milj'.'
+              :other: 0 milj'.'
             10000000: 
-              :one: "00 milj'.'"
-              :other: "00 milj'.'"
+              :one: 00 milj'.'
+              :other: 00 milj'.'
             100000000: 
-              :one: "000 milj'.'"
-              :other: "000 milj'.'"
+              :one: 000 milj'.'
+              :other: 000 milj'.'
             1000000000: 
-              :one: "0 mrd'.'"
-              :other: "0 mrd'.'"
+              :one: 0 mrd'.'
+              :other: 0 mrd'.'
             10000000000: 
-              :one: "00 mrd'.'"
-              :other: "00 mrd'.'"
+              :one: 00 mrd'.'
+              :other: 00 mrd'.'
             100000000000: 
-              :one: "000 mrd'.'"
-              :other: "000 mrd'.'"
+              :one: 000 mrd'.'
+              :other: 000 mrd'.'
             1000000000000: 
-              :one: "0 bilj'.'"
-              :other: "0 bilj'.'"
+              :one: 0 bilj'.'
+              :other: 0 bilj'.'
             10000000000000: 
-              :one: "00 bilj'.'"
-              :other: "00 bilj'.'"
+              :one: 00 bilj'.'
+              :other: 00 bilj'.'
             100000000000000: 
-              :one: "000 bilj'.'"
-              :other: "000 bilj'.'"
+              :one: 000 bilj'.'
+              :other: 000 bilj'.'
       :percent: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#,##0 %"
       :scientific: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#E0"
     :symbols: 
       :alias: ""
       :decimal: ","
-      :exponential: "E"
-      :group: " "
-      :infinity: "∞"
-      :list: ";"
-      :minus_sign: "−"
-      :nan: "epäluku"
-      :per_mille: "‰"
+      :exponential: E
+      :group:  
+      :infinity: ∞
+      :list: ;
+      :minus_sign: −
+      :nan: epäluku
+      :per_mille: ‰
       :percent_sign: "%"
-      :plus_sign: "+"
-      :superscripting_exponent: "×"
+      :plus_sign: +
+      :superscripting_exponent: ×
       :time_separator: "."

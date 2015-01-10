@@ -102,17 +102,19 @@ describe UnicodeRegexParser::CharacterClass do
   describe "#to_regexp_str" do
     it "wraps ranges in square brackets" do
       char_class = char_class_from(parse(tokenize("[a-z]")))
-      expect(char_class.to_regexp_str).to eq("(?:[\\141-\\172])")
+      expect(char_class.to_regexp_str).to eq("(?:[\\u{0061}-\\u{007a}])")
     end
 
     it "octal-encodes and wraps sequential characters to isolate bytes" do
       char_class = char_class_from(parse(tokenize("[{foo}]")))
-      expect(char_class.to_regexp_str).to eq("(?:(?:\\146)(?:\\157)(?:\\157))")
+      expect(char_class.to_regexp_str).to eq("(?:(?:\\u{0066})(?:\\u{006f})(?:\\u{006f}))")
     end
 
     it "combines multiple components with 'or' pipe characters" do
       char_class = char_class_from(parse(tokenize("[{foo}abc]")))
-      expect(char_class.to_regexp_str).to eq("(?:(?:\\146)(?:\\157)(?:\\157)|[\\141-\\143])")
+      expect(char_class.to_regexp_str).to eq(
+        "(?:(?:\\u{0066})(?:\\u{006f})(?:\\u{006f})|[\\u{0061}-\\u{0063}])"
+      )
     end
   end
 end

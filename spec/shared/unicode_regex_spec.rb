@@ -31,7 +31,7 @@ describe UnicodeRegex do
 
     describe "#to_regexp_str" do
       it "should return the string representation of this regex" do
-        expect(regex.to_regexp_str).to eq("(?:[\\141-\\143])")
+        expect(regex.to_regexp_str).to eq("(?:[\\u{0061}-\\u{0063}])")
       end
     end
 
@@ -41,20 +41,24 @@ describe UnicodeRegex do
       end
 
       it "should properly turn various basic regexes into strings" do
-        expect(compile("^abc$").to_regexp_str).to eq("^(?:\\141)(?:\\142)(?:\\143)$")
-        expect(compile("a(b)c").to_regexp_str).to eq("(?:\\141)((?:\\142))(?:\\143)")
-        expect(compile("a(?:b)c").to_regexp_str).to eq("(?:\\141)(?:(?:\\142))(?:\\143)")
-        expect(compile("a{1,3}").to_regexp_str).to eq("(?:\\141){1,3}")
-        expect(compile("[abc]").to_regexp_str).to eq("(?:[\\141-\\143])")
+        expect(compile("^abc$").to_regexp_str).to eq("^(?:\\u{0061})(?:\\u{0062})(?:\\u{0063})$")
+        expect(compile("a(b)c").to_regexp_str).to eq("(?:\\u{0061})((?:\\u{0062}))(?:\\u{0063})")
+        expect(compile("a(?:b)c").to_regexp_str).to eq("(?:\\u{0061})(?:(?:\\u{0062}))(?:\\u{0063})")
+        expect(compile("a{1,3}").to_regexp_str).to eq("(?:\\u{0061}){1,3}")
+        expect(compile("[abc]").to_regexp_str).to eq("(?:[\\u{0061}-\\u{0063}])")
       end
 
       it "should properly turn various complex regexes into strings" do
-        expect(compile("[a-z0-9]").to_regexp_str).to eq("(?:[\\60-\\71]|[\\141-\\172])")
-        expect(compile("[\\u0067-\\u0071]").to_regexp_str).to eq("(?:[\\147-\\161])")
+        expect(compile("[a-z0-9]").to_regexp_str).to eq(
+          "(?:[\\u{0030}-\\u{0039}]|[\\u{0061}-\\u{007a}])"
+        )
+        expect(compile("[\\u0067-\\u0071]").to_regexp_str).to eq("(?:[\\u{0067}-\\u{0071}])")
       end
 
       it "should properly substitute variables" do
-        expect(compile("$FOO$BAR", symbol_table).to_regexp_str).to eq("(?:[\\147-\\153])(?:[\\160-\\163])")
+        expect(compile("$FOO$BAR", symbol_table).to_regexp_str).to eq(
+          "(?:[\\u{0067}-\\u{006b}])(?:[\\u{0070}-\\u{0073}])"
+        )
       end
     end
   end

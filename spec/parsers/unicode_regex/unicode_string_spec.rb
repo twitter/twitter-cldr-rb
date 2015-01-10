@@ -21,7 +21,7 @@ describe UnicodeRegexParser::UnicodeString do
 
     it "should covert the codepoints to a valid regex" do
       str = UnicodeRegexParser::UnicodeString.new(97)
-      expect(str.to_regexp_str).to eq"(?:\\141)"
+      expect(str.to_regexp_str).to eq("(?:\\u{0061})")
     end
   end
 end

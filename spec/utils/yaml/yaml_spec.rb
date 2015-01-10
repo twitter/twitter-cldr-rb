@@ -128,11 +128,9 @@ describe TwitterCldr::Utils do
       end
     end
 
-    if RUBY_VERSION >= "1.9"
-      it "should preserve hash order" do
-        h = { 'a' => 1, 'c' => 3, 'b' => 2 }
-        expect(TwitterCldr::Utils::YAML.dump(h, :preserve_order => true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
-      end
+    it "should preserve hash order" do
+      h = { 'a' => 1, 'c' => 3, 'b' => 2 }
+      expect(TwitterCldr::Utils::YAML.dump(h, :preserve_order => true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
     end
 
     it "tests normalization of line breaks" do

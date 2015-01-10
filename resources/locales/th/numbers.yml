@@ -3,13 +3,13 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "¤#,##0.00"
         :unit: 
           :other: "{0} {1}"
       :decimal: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0.###"
           :long: 
@@ -39,48 +39,48 @@
               :other: "000 ล้านล้าน"
           :short: 
             1000: 
-              :other: 0 พ'.'
+              :other: "0 พ'.'"
             10000: 
-              :other: 0 ม'.'
+              :other: "0 ม'.'"
             100000: 
-              :other: 0 ส'.'
+              :other: "0 ส'.'"
             1000000: 
-              :other: 0 ล'.'
+              :other: "0 ล'.'"
             10000000: 
-              :other: 00 ล'.'
+              :other: "00 ล'.'"
             100000000: 
-              :other: 000 ล'.'
+              :other: "000 ล'.'"
             1000000000: 
-              :other: 0 พ'.'ล'.'
+              :other: "0 พ'.'ล'.'"
             10000000000: 
-              :other: 0 ม'.'ล'.'
+              :other: "0 ม'.'ล'.'"
             100000000000: 
-              :other: 0 ส'.'ล'.'
+              :other: "0 ส'.'ล'.'"
             1000000000000: 
-              :other: 0 ล'.'ล'.'
+              :other: "0 ล'.'ล'.'"
             10000000000000: 
-              :other: 00 ล'.'ล'.'
+              :other: "00 ล'.'ล'.'"
             100000000000000: 
-              :other: 000 ล'.'ล'.'
+              :other: "000 ล'.'ล'.'"
       :percent: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#E0"
     :symbols: 
       :alias: ""
       :decimal: "."
-      :exponential: E
+      :exponential: "E"
       :group: ","
-      :infinity: ∞
-      :list: ;
+      :infinity: "∞"
+      :list: ";"
       :minus_sign: "-"
-      :nan: NaN
-      :per_mille: ‰
+      :nan: "NaN"
+      :per_mille: "‰"
       :percent_sign: "%"
-      :plus_sign: +
-      :superscripting_exponent: ×
+      :plus_sign: "+"
+      :superscripting_exponent: "×"
       :time_separator: ":"

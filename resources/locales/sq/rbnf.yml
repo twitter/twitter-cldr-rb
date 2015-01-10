@@ -8,17 +8,17 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
-            :type: spellout-numbering-year
+            :type: "spellout-numbering-year"
           - 
             :rules: 
               - 
-                :rule: =%spellout-cardinal-masculine=;
+                :rule: "=%spellout-cardinal-masculine=;"
                 :value: 0
-            :type: spellout-numbering
+            :type: "spellout-numbering"
           - 
             :rules: 
               - 
@@ -26,39 +26,39 @@
                 :value: "-x"
               - 
                 :rule: "<< presje >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zero;
+                :rule: "zero;"
                 :value: 0
               - 
-                :rule: një;
+                :rule: "një;"
                 :value: 1
               - 
-                :rule: dy;
+                :rule: "dy;"
                 :value: 2
               - 
-                :rule: tre;
+                :rule: "tre;"
                 :value: 3
               - 
-                :rule: katër;
+                :rule: "katër;"
                 :value: 4
               - 
-                :rule: pesë;
+                :rule: "pesë;"
                 :value: 5
               - 
-                :rule: gjashtë;
+                :rule: "gjashtë;"
                 :value: 6
               - 
-                :rule: shtatë;
+                :rule: "shtatë;"
                 :value: 7
               - 
-                :rule: tetë;
+                :rule: "tetë;"
                 :value: 8
               - 
-                :rule: nëntë;
+                :rule: "nëntë;"
                 :value: 9
               - 
-                :rule: dhjetë;
+                :rule: "dhjetë;"
                 :value: 10
               - 
                 :rule: ">%spellout-cardinal-masculine>mbëdhjetë;"
@@ -108,7 +108,7 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-masculine
+            :type: "spellout-cardinal-masculine"
           - 
             :rules: 
               - 
@@ -116,21 +116,21 @@
                 :value: "-x"
               - 
                 :rule: "<< presje >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zero;
+                :rule: "zero;"
                 :value: 0
               - 
-                :rule: një;
+                :rule: "një;"
                 :value: 1
               - 
-                :rule: dy;
+                :rule: "dy;"
                 :value: 2
               - 
-                :rule: tri;
+                :rule: "tri;"
                 :value: 3
               - 
-                :rule: =%spellout-cardinal-masculine=;
+                :rule: "=%spellout-cardinal-masculine=;"
                 :value: 4
               - 
                 :rule: "njëzet[ e >>];"
@@ -177,5 +177,5 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-feminine
-        :type: SpelloutRules
+            :type: "spellout-cardinal-feminine"
+        :type: "SpelloutRules"

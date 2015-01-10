@@ -11,54 +11,24 @@
                 :value: "-x"
               - 
                 :rule: "=#,###0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
               - 
                 :radix: 100
                 :rule: "<<­hundred[ og >>];"
                 :value: 1100
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10000
-            :type: spellout-numbering-year
+            :type: "spellout-numbering-year"
           - 
             :rules: 
               - 
-                :rule: =%spellout-cardinal-reale=;
+                :rule: "=%spellout-cardinal-reale=;"
                 :value: 0
-            :type: spellout-numbering
-          - 
-            :rules: 
-              - 
-                :rule: "minus >>;"
-                :value: "-x"
-              - 
-                :rule: "<< komma >>;"
-                :value: x.x
-              - 
-                :rule: nul;
-                :value: 0
-              - 
-                :rule: et;
-                :value: 1
-              - 
-                :rule: =%spellout-cardinal-reale=;
-                :value: 2
-            :type: spellout-cardinal-neuter
-          - 
-            :rules: 
-              - 
-                :rule: =%spellout-cardinal-reale=;
-                :value: 0
-            :type: spellout-cardinal-masculine
-          - 
-            :rules: 
-              - 
-                :rule: =%spellout-cardinal-reale=;
-                :value: 0
-            :type: spellout-cardinal-feminine
+            :type: "spellout-numbering"
           - 
             :rules: 
               - 
@@ -66,66 +36,96 @@
                 :value: "-x"
               - 
                 :rule: "<< komma >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: nul;
+                :rule: "nul;"
                 :value: 0
               - 
-                :rule: en;
+                :rule: "et;"
                 :value: 1
               - 
-                :rule: to;
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 2
+            :type: "spellout-cardinal-neuter"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 0
+            :type: "spellout-cardinal-masculine"
+          - 
+            :rules: 
+              - 
+                :rule: "=%spellout-cardinal-reale=;"
+                :value: 0
+            :type: "spellout-cardinal-feminine"
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< komma >>;"
+                :value: "x.x"
+              - 
+                :rule: "nul;"
+                :value: 0
+              - 
+                :rule: "en;"
+                :value: 1
+              - 
+                :rule: "to;"
                 :value: 2
               - 
-                :rule: tre;
+                :rule: "tre;"
                 :value: 3
               - 
-                :rule: fire;
+                :rule: "fire;"
                 :value: 4
               - 
-                :rule: fem;
+                :rule: "fem;"
                 :value: 5
               - 
-                :rule: seks;
+                :rule: "seks;"
                 :value: 6
               - 
-                :rule: syv;
+                :rule: "syv;"
                 :value: 7
               - 
-                :rule: otte;
+                :rule: "otte;"
                 :value: 8
               - 
-                :rule: ni;
+                :rule: "ni;"
                 :value: 9
               - 
-                :rule: ti;
+                :rule: "ti;"
                 :value: 10
               - 
-                :rule: elve;
+                :rule: "elve;"
                 :value: 11
               - 
-                :rule: tolv;
+                :rule: "tolv;"
                 :value: 12
               - 
-                :rule: tretten;
+                :rule: "tretten;"
                 :value: 13
               - 
-                :rule: fjorten;
+                :rule: "fjorten;"
                 :value: 14
               - 
-                :rule: femten;
+                :rule: "femten;"
                 :value: 15
               - 
-                :rule: seksten;
+                :rule: "seksten;"
                 :value: 16
               - 
-                :rule: sytten;
+                :rule: "sytten;"
                 :value: 17
               - 
-                :rule: atten;
+                :rule: "atten;"
                 :value: 18
               - 
-                :rule: nitten;
+                :rule: "nitten;"
                 :value: 19
               - 
                 :rule: "[>>­og­]tyve;"
@@ -190,5 +190,5 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-reale
-        :type: SpelloutRules
+            :type: "spellout-cardinal-reale"
+        :type: "SpelloutRules"

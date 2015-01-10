@@ -8,116 +8,116 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
               - 
-                :rule: =%%spellout-numbering-year-digits=;
+                :rule: "=%%spellout-numbering-year-digits=;"
                 :value: 1000
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10000
-            :type: spellout-numbering-year
+            :type: "spellout-numbering-year"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
               - 
-                :rule: <<>>>;
+                :rule: "<<>>>;"
                 :value: 10
               - 
-                :rule: <<>>>;
+                :rule: "<<>>>;"
                 :value: 100
               - 
-                :rule: <<>>>;
+                :rule: "<<>>>;"
                 :value: 1000
-            :type: spellout-numbering-year-digits
+            :type: "spellout-numbering-year-digits"
           - 
             :rules: 
               - 
-                :rule: 负>>;
+                :rule: "负>>;"
                 :value: "-x"
               - 
                 :rule: "=#,##0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: 〇;
+                :rule: "〇;"
                 :value: 0
               - 
-                :rule: 初=%spellout-numbering=;
+                :rule: "初=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 11
               - 
-                :rule: =%%numbering-days=;
+                :rule: "=%%numbering-days=;"
                 :value: 21
-            :type: spellout-numbering-days
+            :type: "spellout-numbering-days"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
               - 
-                :rule: 廿>>;
+                :rule: "廿>>;"
                 :value: 21
               - 
-                :rule: <<十;
+                :rule: "<<十;"
                 :value: 30
               - 
-                :rule: 丗>>;
+                :rule: "丗>>;"
                 :value: 31
               - 
-                :rule: <<十;
+                :rule: "<<十;"
                 :value: 40
               - 
-                :rule: 卌>>;
+                :rule: "卌>>;"
                 :value: 41
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 50
-            :type: numbering-days
+            :type: "numbering-days"
           - 
             :rules: 
               - 
-                :rule: 负>>;
+                :rule: "负>>;"
                 :value: "-x"
               - 
-                :rule: <<点>>>;
-                :value: x.x
+                :rule: "<<点>>>;"
+                :value: "x.x"
               - 
-                :rule: 〇;
+                :rule: "〇;"
                 :value: 0
               - 
-                :rule: 一;
+                :rule: "一;"
                 :value: 1
               - 
-                :rule: 二;
+                :rule: "二;"
                 :value: 2
               - 
-                :rule: 三;
+                :rule: "三;"
                 :value: 3
               - 
-                :rule: 四;
+                :rule: "四;"
                 :value: 4
               - 
-                :rule: 五;
+                :rule: "五;"
                 :value: 5
               - 
-                :rule: 六;
+                :rule: "六;"
                 :value: 6
               - 
-                :rule: 七;
+                :rule: "七;"
                 :value: 7
               - 
-                :rule: 八;
+                :rule: "八;"
                 :value: 8
               - 
-                :rule: 九;
+                :rule: "九;"
                 :value: 9
               - 
                 :rule: "十[>>];"
@@ -146,137 +146,137 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: spellout-numbering
+            :type: "spellout-numbering"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 一=%spellout-numbering=;
+                :rule: "一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 20
-            :type: number2
+            :type: "number2"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 〇一=%spellout-numbering=;
+                :rule: "〇一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 20
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 100
-            :type: number3
+            :type: "number3"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 〇一=%spellout-numbering=;
+                :rule: "〇一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 20
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 1000
-            :type: number4
+            :type: "number4"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 〇一=%spellout-numbering=;
+                :rule: "〇一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 20
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10000
-            :type: number5
+            :type: "number5"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 〇一=%spellout-numbering=;
+                :rule: "〇一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 20
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10000000
-            :type: number8
+            :type: "number8"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 〇一=%spellout-numbering=;
+                :rule: "〇一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: 〇=%spellout-numbering=;
+                :rule: "〇=%spellout-numbering=;"
                 :value: 20
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 1000000000000
-            :type: number13
+            :type: "number13"
           - 
             :rules: 
               - 
-                :rule: 负>>;
+                :rule: "负>>;"
                 :value: "-x"
               - 
-                :rule: <<点>>>;
-                :value: x.x
+                :rule: "<<点>>>;"
+                :value: "x.x"
               - 
-                :rule: 零;
+                :rule: "零;"
                 :value: 0
               - 
-                :rule: 壹;
+                :rule: "壹;"
                 :value: 1
               - 
-                :rule: 贰;
+                :rule: "贰;"
                 :value: 2
               - 
-                :rule: 叁;
+                :rule: "叁;"
                 :value: 3
               - 
-                :rule: 肆;
+                :rule: "肆;"
                 :value: 4
               - 
-                :rule: 伍;
+                :rule: "伍;"
                 :value: 5
               - 
-                :rule: 陆;
+                :rule: "陆;"
                 :value: 6
               - 
-                :rule: 柒;
+                :rule: "柒;"
                 :value: 7
               - 
-                :rule: 捌;
+                :rule: "捌;"
                 :value: 8
               - 
-                :rule: 玖;
+                :rule: "玖;"
                 :value: 9
               - 
                 :rule: "拾[>>];"
@@ -305,140 +305,140 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-financial
+            :type: "spellout-cardinal-financial"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 壹=%spellout-cardinal-financial=;
+                :rule: "壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 20
-            :type: financialnumber2
+            :type: "financialnumber2"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 零壹=%spellout-cardinal-financial=;
+                :rule: "零壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 100
-            :type: financialnumber3
+            :type: "financialnumber3"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 零壹=%spellout-cardinal-financial=;
+                :rule: "零壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 1000
-            :type: financialnumber4
+            :type: "financialnumber4"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 零壹=%spellout-cardinal-financial=;
+                :rule: "零壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 10000
-            :type: financialnumber5
+            :type: "financialnumber5"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 零壹=%spellout-cardinal-financial=;
+                :rule: "零壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 10000000
-            :type: financialnumber8
+            :type: "financialnumber8"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 1
               - 
-                :rule: 零壹=%spellout-cardinal-financial=;
+                :rule: "零壹=%spellout-cardinal-financial=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-financial=;
+                :rule: "零=%spellout-cardinal-financial=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-financial=;
+                :rule: "=%spellout-cardinal-financial=;"
                 :value: 1000000000000
-            :type: financialnumber13
+            :type: "financialnumber13"
           - 
             :rules: 
               - 
-                :rule: 负>>;
+                :rule: "负>>;"
                 :value: "-x"
               - 
-                :rule: <<点>>>;
-                :value: x.x
+                :rule: "<<点>>>;"
+                :value: "x.x"
               - 
-                :rule: 零;
+                :rule: "零;"
                 :value: 0
               - 
-                :rule: 一;
+                :rule: "一;"
                 :value: 1
               - 
-                :rule: 二;
+                :rule: "二;"
                 :value: 2
               - 
-                :rule: 三;
+                :rule: "三;"
                 :value: 3
               - 
-                :rule: 四;
+                :rule: "四;"
                 :value: 4
               - 
-                :rule: 五;
+                :rule: "五;"
                 :value: 5
               - 
-                :rule: 六;
+                :rule: "六;"
                 :value: 6
               - 
-                :rule: 七;
+                :rule: "七;"
                 :value: 7
               - 
-                :rule: 八;
+                :rule: "八;"
                 :value: 8
               - 
-                :rule: 九;
+                :rule: "九;"
                 :value: 9
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10
               - 
                 :rule: "<<百[>%%cardinal2>];"
@@ -461,140 +461,140 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal
+            :type: "spellout-cardinal"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 一=%spellout-numbering=;
+                :rule: "一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 20
-            :type: cardinal2
+            :type: "cardinal2"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal=;
+                :rule: "零一=%spellout-cardinal=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal=;
+                :rule: "零=%spellout-cardinal=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal=;
+                :rule: "=%spellout-cardinal=;"
                 :value: 100
-            :type: cardinal3
+            :type: "cardinal3"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal=;
+                :rule: "零一=%spellout-cardinal=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal=;
+                :rule: "零=%spellout-cardinal=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal=;
+                :rule: "=%spellout-cardinal=;"
                 :value: 1000
-            :type: cardinal4
+            :type: "cardinal4"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal=;
+                :rule: "零一=%spellout-cardinal=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal=;
+                :rule: "零=%spellout-cardinal=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal=;
+                :rule: "=%spellout-cardinal=;"
                 :value: 10000
-            :type: cardinal5
+            :type: "cardinal5"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal=;
+                :rule: "零一=%spellout-cardinal=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal=;
+                :rule: "零=%spellout-cardinal=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal=;
+                :rule: "=%spellout-cardinal=;"
                 :value: 10000000
-            :type: cardinal8
+            :type: "cardinal8"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal=;
+                :rule: "零一=%spellout-cardinal=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal=;
+                :rule: "零=%spellout-cardinal=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal=;
+                :rule: "=%spellout-cardinal=;"
                 :value: 1000000000000
-            :type: cardinal13
+            :type: "cardinal13"
           - 
             :rules: 
               - 
-                :rule: 负>>;
+                :rule: "负>>;"
                 :value: "-x"
               - 
-                :rule: =%spellout-cardinal=;
-                :value: x.x
+                :rule: "=%spellout-cardinal=;"
+                :value: "x.x"
               - 
-                :rule: 零;
+                :rule: "零;"
                 :value: 0
               - 
-                :rule: 一;
+                :rule: "一;"
                 :value: 1
               - 
-                :rule: 两;
+                :rule: "两;"
                 :value: 2
               - 
-                :rule: 三;
+                :rule: "三;"
                 :value: 3
               - 
-                :rule: 四;
+                :rule: "四;"
                 :value: 4
               - 
-                :rule: 五;
+                :rule: "五;"
                 :value: 5
               - 
-                :rule: 六;
+                :rule: "六;"
                 :value: 6
               - 
-                :rule: 七;
+                :rule: "七;"
                 :value: 7
               - 
-                :rule: 八;
+                :rule: "八;"
                 :value: 8
               - 
-                :rule: 九;
+                :rule: "九;"
                 :value: 9
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 10
               - 
                 :rule: "<<百[>%%cardinal-alternate2-2>];"
@@ -617,110 +617,110 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-alternate2
+            :type: "spellout-cardinal-alternate2"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 一=%spellout-numbering=;
+                :rule: "一=%spellout-numbering=;"
                 :value: 10
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 20
-            :type: cardinal-alternate2-2
+            :type: "cardinal-alternate2-2"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal-alternate2=;
+                :rule: "零一=%spellout-cardinal-alternate2=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-alternate2=;
+                :rule: "零=%spellout-cardinal-alternate2=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-alternate2=;
+                :rule: "=%spellout-cardinal-alternate2=;"
                 :value: 100
-            :type: cardinal-alternate2-3
+            :type: "cardinal-alternate2-3"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal-alternate2=;
+                :rule: "零一=%spellout-cardinal-alternate2=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-alternate2=;
+                :rule: "零=%spellout-cardinal-alternate2=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-alternate2=;
+                :rule: "=%spellout-cardinal-alternate2=;"
                 :value: 1000
-            :type: cardinal-alternate2-4
+            :type: "cardinal-alternate2-4"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal-alternate2=;
+                :rule: "零一=%spellout-cardinal-alternate2=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-alternate2=;
+                :rule: "零=%spellout-cardinal-alternate2=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-alternate2=;
+                :rule: "=%spellout-cardinal-alternate2=;"
                 :value: 10000
-            :type: cardinal-alternate2-5
+            :type: "cardinal-alternate2-5"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal-alternate2=;
+                :rule: "零一=%spellout-cardinal-alternate2=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-alternate2=;
+                :rule: "零=%spellout-cardinal-alternate2=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-alternate2=;
+                :rule: "=%spellout-cardinal-alternate2=;"
                 :value: 10000000
-            :type: cardinal-alternate2-8
+            :type: "cardinal-alternate2-8"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: 零=%spellout-numbering=;
+                :rule: "零=%spellout-numbering=;"
                 :value: 1
               - 
-                :rule: 零一=%spellout-cardinal-alternate2=;
+                :rule: "零一=%spellout-cardinal-alternate2=;"
                 :value: 10
               - 
-                :rule: 零=%spellout-cardinal-alternate2=;
+                :rule: "零=%spellout-cardinal-alternate2=;"
                 :value: 20
               - 
-                :rule: =%spellout-cardinal-alternate2=;
+                :rule: "=%spellout-cardinal-alternate2=;"
                 :value: 1000000000000
-            :type: cardinal-alternate2-13
+            :type: "cardinal-alternate2-13"
           - 
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: 第=%spellout-numbering=;
+                :rule: "第=%spellout-numbering=;"
                 :value: 0
-            :type: spellout-ordinal
-        :type: SpelloutRules
+            :type: "spellout-ordinal"
+        :type: "SpelloutRules"
       - 
         :ruleset: 
           - 
@@ -731,5 +731,5 @@
               - 
                 :rule: "第=#,###0=;"
                 :value: 0
-            :type: digits-ordinal
-        :type: OrdinalRules
+            :type: "digits-ordinal"
+        :type: "OrdinalRules"

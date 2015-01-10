@@ -3,14 +3,14 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0.00 ¤"
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0.###"
           :long: 
@@ -52,60 +52,60 @@
               :other: "000 bilions"
           :short: 
             1000: 
-              :one: 0m
-              :other: 0m
+              :one: "0m"
+              :other: "0m"
             10000: 
-              :one: 00m
-              :other: 00m
+              :one: "00m"
+              :other: "00m"
             100000: 
-              :one: 000m
-              :other: 000m
+              :one: "000m"
+              :other: "000m"
             1000000: 
-              :one: 0M
-              :other: 0M
+              :one: "0M"
+              :other: "0M"
             10000000: 
-              :one: 00 M
-              :other: 00 M
+              :one: "00 M"
+              :other: "00 M"
             100000000: 
-              :one: 000 M
-              :other: 000 M
+              :one: "000 M"
+              :other: "000 M"
             1000000000: 
-              :one: 0000 M
-              :other: 0000 M
+              :one: "0000 M"
+              :other: "0000 M"
             10000000000: 
-              :one: 00mM
-              :other: 00mM
+              :one: "00mM"
+              :other: "00mM"
             100000000000: 
-              :one: 000mM
-              :other: 000mM
+              :one: "000mM"
+              :other: "000mM"
             1000000000000: 
-              :one: 0B
-              :other: 0B
+              :one: "0B"
+              :other: "0B"
             10000000000000: 
-              :one: 00 B
-              :other: 00 B
+              :one: "00 B"
+              :other: "00 B"
             100000000000000: 
-              :one: 000 B
-              :other: 000 B
+              :one: "000 B"
+              :other: "000 B"
       :percent: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#E0"
     :symbols: 
       :alias: ""
       :decimal: ","
-      :exponential: E
+      :exponential: "E"
       :group: "."
-      :infinity: ∞
-      :list: ;
+      :infinity: "∞"
+      :list: ";"
       :minus_sign: "-"
-      :nan: NaN
-      :per_mille: ‰
+      :nan: "NaN"
+      :per_mille: "‰"
       :percent_sign: "%"
-      :plus_sign: +
-      :superscripting_exponent: ×
+      :plus_sign: "+"
+      :superscripting_exponent: "×"
       :time_separator: ":"

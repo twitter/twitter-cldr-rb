@@ -8,21 +8,21 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: =%spellout-numbering=;
+                :rule: "=%spellout-numbering=;"
                 :value: 0
-            :type: spellout-numbering-year
+            :type: "spellout-numbering-year"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: s;
+                :rule: "s;"
                 :value: 0
               - 
                 :rule: " =%spellout-cardinal-masculine=;"
                 :value: 1
-            :type: spellout-numbering-cents
+            :type: "spellout-numbering-cents"
           - 
             :rules: 
               - 
@@ -30,15 +30,15 @@
                 :value: "-x"
               - 
                 :rule: "<< coma >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zero;
+                :rule: "zero;"
                 :value: 0
               - 
-                :rule: u;
+                :rule: "u;"
                 :value: 1
               - 
-                :rule: =%spellout-cardinal-masculine=;
+                :rule: "=%spellout-cardinal-masculine=;"
                 :value: 2
               - 
                 :rule: "vint[-i->>];"
@@ -68,7 +68,7 @@
                 :rule: "cent[->>];"
                 :value: 100
               - 
-                :rule: <%spellout-cardinal-masculine<-cent>%%spellout-numbering-cents>;
+                :rule: "<%spellout-cardinal-masculine<-cent>%%spellout-numbering-cents>;"
                 :value: 200
               - 
                 :rule: "mil[ >>];"
@@ -103,17 +103,17 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-numbering
+            :type: "spellout-numbering"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: s;
+                :rule: "s;"
                 :value: 0
               - 
                 :rule: " =%spellout-cardinal-masculine=;"
                 :value: 1
-            :type: spellout-cardinal-masculine-cents
+            :type: "spellout-cardinal-masculine-cents"
           - 
             :rules: 
               - 
@@ -121,66 +121,66 @@
                 :value: "-x"
               - 
                 :rule: "<< coma >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zero;
+                :rule: "zero;"
                 :value: 0
               - 
-                :rule: un;
+                :rule: "un;"
                 :value: 1
               - 
-                :rule: dos;
+                :rule: "dos;"
                 :value: 2
               - 
-                :rule: tres;
+                :rule: "tres;"
                 :value: 3
               - 
-                :rule: quatre;
+                :rule: "quatre;"
                 :value: 4
               - 
-                :rule: cinc;
+                :rule: "cinc;"
                 :value: 5
               - 
-                :rule: sis;
+                :rule: "sis;"
                 :value: 6
               - 
-                :rule: set;
+                :rule: "set;"
                 :value: 7
               - 
-                :rule: vuit;
+                :rule: "vuit;"
                 :value: 8
               - 
-                :rule: nou;
+                :rule: "nou;"
                 :value: 9
               - 
-                :rule: deu;
+                :rule: "deu;"
                 :value: 10
               - 
-                :rule: onze;
+                :rule: "onze;"
                 :value: 11
               - 
-                :rule: dotze;
+                :rule: "dotze;"
                 :value: 12
               - 
-                :rule: tretze;
+                :rule: "tretze;"
                 :value: 13
               - 
-                :rule: catorze;
+                :rule: "catorze;"
                 :value: 14
               - 
-                :rule: quinze;
+                :rule: "quinze;"
                 :value: 15
               - 
-                :rule: setze;
+                :rule: "setze;"
                 :value: 16
               - 
-                :rule: disset;
+                :rule: "disset;"
                 :value: 17
               - 
-                :rule: divuit;
+                :rule: "divuit;"
                 :value: 18
               - 
-                :rule: dinou;
+                :rule: "dinou;"
                 :value: 19
               - 
                 :rule: "vint[-i->>];"
@@ -210,7 +210,7 @@
                 :rule: "cent[->>];"
                 :value: 100
               - 
-                :rule: <%spellout-cardinal-masculine<-cent>%%spellout-cardinal-masculine-cents>;
+                :rule: "<%spellout-cardinal-masculine<-cent>%%spellout-cardinal-masculine-cents>;"
                 :value: 200
               - 
                 :rule: "mil[ >>];"
@@ -245,17 +245,17 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-masculine
+            :type: "spellout-cardinal-masculine"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: s;
+                :rule: "s;"
                 :value: 0
               - 
                 :rule: " =%spellout-cardinal-feminine=;"
                 :value: 1
-            :type: spellout-cardinal-feminine-cents
+            :type: "spellout-cardinal-feminine-cents"
           - 
             :rules: 
               - 
@@ -263,18 +263,18 @@
                 :value: "-x"
               - 
                 :rule: "<< coma >>;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zero;
+                :rule: "zero;"
                 :value: 0
               - 
-                :rule: una;
+                :rule: "una;"
                 :value: 1
               - 
-                :rule: dues;
+                :rule: "dues;"
                 :value: 2
               - 
-                :rule: =%spellout-cardinal-masculine=;
+                :rule: "=%spellout-cardinal-masculine=;"
                 :value: 3
               - 
                 :rule: "vint[-i->>];"
@@ -304,7 +304,7 @@
                 :rule: "cent[->>];"
                 :value: 100
               - 
-                :rule: <%spellout-cardinal-masculine<-cent>%%spellout-cardinal-feminine-cents>;
+                :rule: "<%spellout-cardinal-masculine<-cent>%%spellout-cardinal-feminine-cents>;"
                 :value: 200
               - 
                 :rule: "mil[ >>];"
@@ -339,27 +339,27 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: spellout-cardinal-feminine
+            :type: "spellout-cardinal-feminine"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: è;
+                :rule: "è;"
                 :value: 0
               - 
                 :rule: " =%spellout-ordinal-masculine=;"
                 :value: 1
-            :type: spellout-ordinal-masculine-cont
+            :type: "spellout-ordinal-masculine-cont"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: è;
+                :rule: "è;"
                 :value: 0
               - 
                 :rule: "s =%spellout-ordinal-masculine=;"
                 :value: 1
-            :type: spellout-ordinal-masculine-conts
+            :type: "spellout-ordinal-masculine-conts"
           - 
             :rules: 
               - 
@@ -367,126 +367,126 @@
                 :value: "-x"
               - 
                 :rule: "=#,##0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zeroè;
+                :rule: "zeroè;"
                 :value: 0
               - 
-                :rule: primer;
+                :rule: "primer;"
                 :value: 1
               - 
-                :rule: segon;
+                :rule: "segon;"
                 :value: 2
               - 
-                :rule: tercer;
+                :rule: "tercer;"
                 :value: 3
               - 
-                :rule: quart;
+                :rule: "quart;"
                 :value: 4
               - 
-                :rule: cinquè;
+                :rule: "cinquè;"
                 :value: 5
               - 
-                :rule: sisè;
+                :rule: "sisè;"
                 :value: 6
               - 
-                :rule: setè;
+                :rule: "setè;"
                 :value: 7
               - 
-                :rule: vuitè;
+                :rule: "vuitè;"
                 :value: 8
               - 
-                :rule: novè;
+                :rule: "novè;"
                 :value: 9
               - 
-                :rule: desè;
+                :rule: "desè;"
                 :value: 10
               - 
-                :rule: onzè;
+                :rule: "onzè;"
                 :value: 11
               - 
-                :rule: dotzè;
+                :rule: "dotzè;"
                 :value: 12
               - 
-                :rule: tretzè;
+                :rule: "tretzè;"
                 :value: 13
               - 
-                :rule: catorzè;
+                :rule: "catorzè;"
                 :value: 14
               - 
-                :rule: quinzè;
+                :rule: "quinzè;"
                 :value: 15
               - 
-                :rule: setzè;
+                :rule: "setzè;"
                 :value: 16
               - 
-                :rule: dissetè;
+                :rule: "dissetè;"
                 :value: 17
               - 
-                :rule: divuitè;
+                :rule: "divuitè;"
                 :value: 18
               - 
-                :rule: dinovè;
+                :rule: "dinovè;"
                 :value: 19
               - 
-                :rule: vintè;
+                :rule: "vintè;"
                 :value: 20
               - 
-                :rule: vint-i->>;
+                :rule: "vint-i->>;"
                 :value: 21
               - 
-                :rule: trentè;
+                :rule: "trentè;"
                 :value: 30
               - 
-                :rule: trenta->>;
+                :rule: "trenta->>;"
                 :value: 31
               - 
-                :rule: quarantè;
+                :rule: "quarantè;"
                 :value: 40
               - 
-                :rule: quaranta->>;
+                :rule: "quaranta->>;"
                 :value: 41
               - 
-                :rule: cinquantè;
+                :rule: "cinquantè;"
                 :value: 50
               - 
-                :rule: cinquanta->>;
+                :rule: "cinquanta->>;"
                 :value: 51
               - 
-                :rule: seixantè;
+                :rule: "seixantè;"
                 :value: 60
               - 
-                :rule: seixanta->>;
+                :rule: "seixanta->>;"
                 :value: 61
               - 
-                :rule: setantè;
+                :rule: "setantè;"
                 :value: 70
               - 
-                :rule: setanta->>;
+                :rule: "setanta->>;"
                 :value: 71
               - 
-                :rule: vuitantè;
+                :rule: "vuitantè;"
                 :value: 80
               - 
-                :rule: vuitanta->>;
+                :rule: "vuitanta->>;"
                 :value: 81
               - 
-                :rule: norantè;
+                :rule: "norantè;"
                 :value: 90
               - 
-                :rule: noranta->>;
+                :rule: "noranta->>;"
                 :value: 91
               - 
-                :rule: centè;
+                :rule: "centè;"
                 :value: 100
               - 
-                :rule: cent->>;
+                :rule: "cent->>;"
                 :value: 101
               - 
-                :rule: <%spellout-cardinal-masculine<-cent>%%spellout-ordinal-masculine-cont>;
+                :rule: "<%spellout-cardinal-masculine<-cent>%%spellout-ordinal-masculine-cont>;"
                 :value: 200
               - 
-                :rule: mil>%%spellout-ordinal-masculine-cont>;
+                :rule: "mil>%%spellout-ordinal-masculine-cont>;"
                 :value: 1000
               - 
                 :rule: "<%spellout-cardinal-masculine< mil>%%spellout-ordinal-masculine-cont>;"
@@ -518,27 +518,27 @@
               - 
                 :rule: "=#,##0=è;"
                 :value: 1000000000000000000
-            :type: spellout-ordinal-masculine
+            :type: "spellout-ordinal-masculine"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: ena;
+                :rule: "ena;"
                 :value: 0
               - 
                 :rule: " =%spellout-ordinal-feminine=;"
                 :value: 1
-            :type: spellout-ordinal-feminine-cont
+            :type: "spellout-ordinal-feminine-cont"
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: ena;
+                :rule: "ena;"
                 :value: 0
               - 
                 :rule: "s =%spellout-ordinal-feminine=;"
                 :value: 1
-            :type: spellout-ordinal-feminine-conts
+            :type: "spellout-ordinal-feminine-conts"
           - 
             :rules: 
               - 
@@ -546,126 +546,126 @@
                 :value: "-x"
               - 
                 :rule: "=#,##0.#=;"
-                :value: x.x
+                :value: "x.x"
               - 
-                :rule: zerona;
+                :rule: "zerona;"
                 :value: 0
               - 
-                :rule: primera;
+                :rule: "primera;"
                 :value: 1
               - 
-                :rule: segona;
+                :rule: "segona;"
                 :value: 2
               - 
-                :rule: tercera;
+                :rule: "tercera;"
                 :value: 3
               - 
-                :rule: quarta;
+                :rule: "quarta;"
                 :value: 4
               - 
-                :rule: cinquena;
+                :rule: "cinquena;"
                 :value: 5
               - 
-                :rule: sisena;
+                :rule: "sisena;"
                 :value: 6
               - 
-                :rule: setena;
+                :rule: "setena;"
                 :value: 7
               - 
-                :rule: vuitena;
+                :rule: "vuitena;"
                 :value: 8
               - 
-                :rule: novena;
+                :rule: "novena;"
                 :value: 9
               - 
-                :rule: desena;
+                :rule: "desena;"
                 :value: 10
               - 
-                :rule: onzena;
+                :rule: "onzena;"
                 :value: 11
               - 
-                :rule: dotzena;
+                :rule: "dotzena;"
                 :value: 12
               - 
-                :rule: tretzena;
+                :rule: "tretzena;"
                 :value: 13
               - 
-                :rule: catorzena;
+                :rule: "catorzena;"
                 :value: 14
               - 
-                :rule: quinzena;
+                :rule: "quinzena;"
                 :value: 15
               - 
-                :rule: setzena;
+                :rule: "setzena;"
                 :value: 16
               - 
-                :rule: dissetena;
+                :rule: "dissetena;"
                 :value: 17
               - 
-                :rule: divuitena;
+                :rule: "divuitena;"
                 :value: 18
               - 
-                :rule: dinovena;
+                :rule: "dinovena;"
                 :value: 19
               - 
-                :rule: vintena;
+                :rule: "vintena;"
                 :value: 20
               - 
-                :rule: vint-i->>;
+                :rule: "vint-i->>;"
                 :value: 21
               - 
-                :rule: trentena;
+                :rule: "trentena;"
                 :value: 30
               - 
-                :rule: trenta->>;
+                :rule: "trenta->>;"
                 :value: 31
               - 
-                :rule: quarantena;
+                :rule: "quarantena;"
                 :value: 40
               - 
-                :rule: quaranta->>;
+                :rule: "quaranta->>;"
                 :value: 41
               - 
-                :rule: cinquantena;
+                :rule: "cinquantena;"
                 :value: 50
               - 
-                :rule: cinquanta->>;
+                :rule: "cinquanta->>;"
                 :value: 51
               - 
-                :rule: seixantena;
+                :rule: "seixantena;"
                 :value: 60
               - 
-                :rule: seixanta->>;
+                :rule: "seixanta->>;"
                 :value: 61
               - 
-                :rule: setantena;
+                :rule: "setantena;"
                 :value: 70
               - 
-                :rule: setanta->>;
+                :rule: "setanta->>;"
                 :value: 71
               - 
-                :rule: vuitantena;
+                :rule: "vuitantena;"
                 :value: 80
               - 
-                :rule: vuitanta->>;
+                :rule: "vuitanta->>;"
                 :value: 81
               - 
-                :rule: norantena;
+                :rule: "norantena;"
                 :value: 90
               - 
-                :rule: noranta->>;
+                :rule: "noranta->>;"
                 :value: 91
               - 
-                :rule: centena;
+                :rule: "centena;"
                 :value: 100
               - 
-                :rule: cent->>;
+                :rule: "cent->>;"
                 :value: 101
               - 
-                :rule: <%spellout-cardinal-masculine<-cent>%%spellout-ordinal-feminine-cont>;
+                :rule: "<%spellout-cardinal-masculine<-cent>%%spellout-ordinal-feminine-cont>;"
                 :value: 200
               - 
-                :rule: mil>%%spellout-ordinal-feminine-cont>;
+                :rule: "mil>%%spellout-ordinal-feminine-cont>;"
                 :value: 1000
               - 
                 :rule: "<%spellout-cardinal-masculine< mil>%%spellout-ordinal-feminine-cont>;"
@@ -697,30 +697,30 @@
               - 
                 :rule: "=#,##0=ena;"
                 :value: 1000000000000000000
-            :type: spellout-ordinal-feminine
-        :type: SpelloutRules
+            :type: "spellout-ordinal-feminine"
+        :type: "SpelloutRules"
       - 
         :ruleset: 
           - 
-            :access: private
+            :access: "private"
             :rules: 
               - 
-                :rule: è;
+                :rule: "è;"
                 :value: 0
               - 
-                :rule: r;
+                :rule: "r;"
                 :value: 1
               - 
-                :rule: n;
+                :rule: "n;"
                 :value: 2
               - 
-                :rule: r;
+                :rule: "r;"
                 :value: 3
               - 
-                :rule: t;
+                :rule: "t;"
                 :value: 4
               - 
-                :rule: è;
+                :rule: "è;"
                 :value: 5
               - 
                 :rule: ">>;"
@@ -728,29 +728,29 @@
               - 
                 :rule: ">>;"
                 :value: 100
-            :type: digits-ordinal-indicator-m
+            :type: "digits-ordinal-indicator-m"
           - 
             :rules: 
               - 
-                :rule: −>>;
+                :rule: "−>>;"
                 :value: "-x"
               - 
                 :rule: "=#,##0==%%digits-ordinal-indicator-m=;"
                 :value: 0
-            :type: digits-ordinal-masculine
+            :type: "digits-ordinal-masculine"
           - 
             :rules: 
               - 
-                :rule: −>>;
+                :rule: "−>>;"
                 :value: "-x"
               - 
                 :rule: "=#,##0=a;"
                 :value: 0
-            :type: digits-ordinal-feminine
+            :type: "digits-ordinal-feminine"
           - 
             :rules: 
               - 
-                :rule: =%digits-ordinal-masculine=;
+                :rule: "=%digits-ordinal-masculine=;"
                 :value: 0
-            :type: digits-ordinal
-        :type: OrdinalRules
+            :type: "digits-ordinal"
+        :type: "OrdinalRules"

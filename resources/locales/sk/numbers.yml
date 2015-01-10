@@ -3,7 +3,7 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0.00 ¤"
         :unit: 
@@ -12,7 +12,7 @@
           :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0.###"
           :long: 
@@ -78,84 +78,84 @@
               :other: "000 biliónov"
           :short: 
             1000: 
-              :few: 0 tis'.'
-              :many: 0 tis'.'
-              :one: 0 tis'.'
-              :other: 0 tis'.'
+              :few: "0 tis'.'"
+              :many: "0 tis'.'"
+              :one: "0 tis'.'"
+              :other: "0 tis'.'"
             10000: 
-              :few: 00 tis'.'
-              :many: 00 tis'.'
-              :one: 00 tis'.'
-              :other: 00 tis'.'
+              :few: "00 tis'.'"
+              :many: "00 tis'.'"
+              :one: "00 tis'.'"
+              :other: "00 tis'.'"
             100000: 
-              :few: 000 tis'.'
-              :many: 000 tis'.'
-              :one: 000 tis'.'
-              :other: 000 tis'.'
+              :few: "000 tis'.'"
+              :many: "000 tis'.'"
+              :one: "000 tis'.'"
+              :other: "000 tis'.'"
             1000000: 
-              :few: 0 mil'.'
-              :many: 0 mil'.'
-              :one: 0 mil'.'
-              :other: 0 mil'.'
+              :few: "0 mil'.'"
+              :many: "0 mil'.'"
+              :one: "0 mil'.'"
+              :other: "0 mil'.'"
             10000000: 
-              :few: 00 mil'.'
-              :many: 00 mil'.'
-              :one: 00 mil'.'
-              :other: 00 mil'.'
+              :few: "00 mil'.'"
+              :many: "00 mil'.'"
+              :one: "00 mil'.'"
+              :other: "00 mil'.'"
             100000000: 
-              :few: 000 mil'.'
-              :many: 000 mil'.'
-              :one: 000 mil'.'
-              :other: 000 mil'.'
+              :few: "000 mil'.'"
+              :many: "000 mil'.'"
+              :one: "000 mil'.'"
+              :other: "000 mil'.'"
             1000000000: 
-              :few: 0 mld'.'
-              :many: 0 mld'.'
-              :one: 0 mld'.'
-              :other: 0 mld'.'
+              :few: "0 mld'.'"
+              :many: "0 mld'.'"
+              :one: "0 mld'.'"
+              :other: "0 mld'.'"
             10000000000: 
-              :few: 00 mld'.'
-              :many: 00 mld'.'
-              :one: 00 mld'.'
-              :other: 00 mld'.'
+              :few: "00 mld'.'"
+              :many: "00 mld'.'"
+              :one: "00 mld'.'"
+              :other: "00 mld'.'"
             100000000000: 
-              :few: 000 mld'.'
-              :many: 000 mld'.'
-              :one: 000 mld'.'
-              :other: 000 mld'.'
+              :few: "000 mld'.'"
+              :many: "000 mld'.'"
+              :one: "000 mld'.'"
+              :other: "000 mld'.'"
             1000000000000: 
-              :few: 0 bil'.'
-              :many: 0 bil'.'
-              :one: 0 bil'.'
-              :other: 0 bil'.'
+              :few: "0 bil'.'"
+              :many: "0 bil'.'"
+              :one: "0 bil'.'"
+              :other: "0 bil'.'"
             10000000000000: 
-              :few: 00 bil'.'
-              :many: 00 bil'.'
-              :one: 00 bil'.'
-              :other: 00 bil'.'
+              :few: "00 bil'.'"
+              :many: "00 bil'.'"
+              :one: "00 bil'.'"
+              :other: "00 bil'.'"
             100000000000000: 
-              :few: 000 bil'.'
-              :many: 000 bil'.'
-              :one: 000 bil'.'
-              :other: 000 bil'.'
+              :few: "000 bil'.'"
+              :many: "000 bil'.'"
+              :one: "000 bil'.'"
+              :other: "000 bil'.'"
       :percent: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#,##0 %"
       :scientific: 
-        :number_system: latn
+        :number_system: "latn"
         :patterns: 
           :default: "#E0"
     :symbols: 
       :alias: ""
       :decimal: ","
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
+      :exponential: "E"
+      :group: " "
+      :infinity: "∞"
+      :list: ";"
       :minus_sign: "-"
-      :nan: NaN
-      :per_mille: ‰
+      :nan: "NaN"
+      :per_mille: "‰"
       :percent_sign: "%"
-      :plus_sign: +
-      :superscripting_exponent: ×
+      :plus_sign: "+"
+      :superscripting_exponent: "×"
       :time_separator: ":"

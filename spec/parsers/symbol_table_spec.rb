@@ -15,11 +15,7 @@ describe SymbolTable do
       expect(table.fetch(:a)).to eq("b")
       fetch = lambda { table.fetch(:z) }
 
-      if RUBY_VERSION > "1.8.7"
-        expect(fetch).to raise_error(KeyError)
-      else
-        expect(fetch).to raise_error(IndexError)
-      end
+      expect(fetch).to raise_error(KeyError)
     end
   end
 

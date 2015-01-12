@@ -26,7 +26,7 @@ module TwitterCldr
               utc_dt.hour,
               utc_dt.min,
               utc_dt.sec,
-              utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
+              utc_dt.sec_fraction * 1_000_000
             )
 
             LocalizedTime.new(time, @locale, chain_params)

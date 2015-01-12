@@ -8,82 +8,82 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 0
               - 
-                :rule: "元;"
+                :rule: 元;
                 :value: 1
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 2
               - 
-                :rule: "=%%spellout-numbering-year-digits=;"
+                :rule: =%%spellout-numbering-year-digits=;
                 :value: 1000
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 10000
-            :type: "spellout-numbering-year"
+            :type: spellout-numbering-year
           - 
-            :access: "private"
+            :access: private
             :rules: 
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 0
               - 
-                :rule: "<<>>>;"
+                :rule: <<>>>;
                 :value: 10
               - 
-                :rule: "<<>>>;"
+                :rule: <<>>>;
                 :value: 100
               - 
-                :rule: "<<>>>;"
+                :rule: <<>>>;
                 :value: 1000
-            :type: "spellout-numbering-year-digits"
+            :type: spellout-numbering-year-digits
           - 
             :rules: 
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 0
-            :type: "spellout-numbering"
+            :type: spellout-numbering
           - 
             :rules: 
               - 
-                :rule: "マイナス>>;"
+                :rule: マイナス>>;
                 :value: "-x"
               - 
-                :rule: "<<点>>>;"
-                :value: "x.x"
+                :rule: <<点>>>;
+                :value: x.x
               - 
-                :rule: "零;"
+                :rule: 零;
                 :value: 0
               - 
-                :rule: "壱;"
+                :rule: 壱;
                 :value: 1
               - 
-                :rule: "弐;"
+                :rule: 弐;
                 :value: 2
               - 
-                :rule: "参;"
+                :rule: 参;
                 :value: 3
               - 
-                :rule: "四;"
+                :rule: 四;
                 :value: 4
               - 
-                :rule: "伍;"
+                :rule: 伍;
                 :value: 5
               - 
-                :rule: "六;"
+                :rule: 六;
                 :value: 6
               - 
-                :rule: "七;"
+                :rule: 七;
                 :value: 7
               - 
-                :rule: "八;"
+                :rule: 八;
                 :value: 8
               - 
-                :rule: "九;"
+                :rule: 九;
                 :value: 9
               - 
                 :rule: "拾[>>];"
@@ -112,44 +112,44 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal-financial"
+            :type: spellout-cardinal-financial
           - 
             :rules: 
               - 
-                :rule: "マイナス>>;"
+                :rule: マイナス>>;
                 :value: "-x"
               - 
-                :rule: "<<・>>>;"
-                :value: "x.x"
+                :rule: <<・>>>;
+                :value: x.x
               - 
-                :rule: "〇;"
+                :rule: 〇;
                 :value: 0
               - 
-                :rule: "一;"
+                :rule: 一;
                 :value: 1
               - 
-                :rule: "二;"
+                :rule: 二;
                 :value: 2
               - 
-                :rule: "三;"
+                :rule: 三;
                 :value: 3
               - 
-                :rule: "四;"
+                :rule: 四;
                 :value: 4
               - 
-                :rule: "五;"
+                :rule: 五;
                 :value: 5
               - 
-                :rule: "六;"
+                :rule: 六;
                 :value: 6
               - 
-                :rule: "七;"
+                :rule: 七;
                 :value: 7
               - 
-                :rule: "八;"
+                :rule: 八;
                 :value: 8
               - 
-                :rule: "九;"
+                :rule: 九;
                 :value: 9
               - 
                 :rule: "十[>>];"
@@ -184,17 +184,17 @@
               - 
                 :rule: "=#,###0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal"
+            :type: spellout-cardinal
           - 
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "第=%spellout-numbering=;"
+                :rule: 第=%spellout-numbering=;
                 :value: 0
-            :type: "spellout-ordinal"
-        :type: "SpelloutRules"
+            :type: spellout-ordinal
+        :type: SpelloutRules
       - 
         :ruleset: 
           - 
@@ -205,5 +205,5 @@
               - 
                 :rule: "第=#,###0=;"
                 :value: 0
-            :type: "digits-ordinal"
-        :type: "OrdinalRules"
+            :type: digits-ordinal
+        :type: OrdinalRules

@@ -8,17 +8,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
 
-  platform :rbx do
-    gem 'rubinius-debugger'
-  end
-
-  if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java" && RUBY_ENGINE != "rbx"
-    gem 'ruby-prof'
-  end
-
-  if RUBY_VERSION <= "1.8.7"
-    gem 'oniguruma'
-  end
+  gem 'ruby-prof' unless RUBY_PLATFORM == "java"
 
   gem 'regexp_parser', '~> 0.1.6'
 end
@@ -35,18 +25,10 @@ group :test do
   gem 'rspec', '~> 2.14.0'
   gem 'rr',    '~> 1.1.2'
 
-  if RUBY_VERSION >= "1.9"
-    gem 'rubyzip'
-    gem 'coveralls', :require => false
-  end
+  gem 'rubyzip'
+  gem 'coveralls', :require => false
 
-  platform :mri_18 do
-    gem 'rcov'
-  end
-
-  platform :mri_19 do
-    gem 'simplecov'
-    gem 'launchy'
-  end
+  gem 'simplecov'
+  gem 'launchy'
 end
 

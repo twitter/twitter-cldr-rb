@@ -10,14 +10,14 @@ module TwitterCldr
       include Enumerable
 
       # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
-      # +TwitterCldr::Utils.interpolate+ method for interpolation syntax).
+      # standard String#% method documentation for interpolation syntax).
       #
       # If +args+ is a Hash than pluralization is performed before interpolation (see +PluralFormatter+ class for
       # pluralization specification).
       #
       def %(args)
         pluralized = args.is_a?(Hash) ? formatter.format(@base_obj, args) : @base_obj
-        TwitterCldr::Utils.interpolate(pluralized, args)
+        escape_plural_interpolation(pluralized) % args
       end
 
       def normalize(options = {})
@@ -117,6 +117,11 @@ module TwitterCldr
       end
 
       protected
+
+      def escape_plural_interpolation(string)
+        # escape plura interpolation patterns ()see PluralFormatter)
+        string.gsub(TwitterCldr::Formatters::PluralFormatter::PLURALIZATION_REGEXP, '%\0')
+      end
 
       def formatter
         @formatter ||=

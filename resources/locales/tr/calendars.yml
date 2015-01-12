@@ -3,7 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :E: "ccc"
+        :E: ccc
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -13,18 +13,18 @@
         :GyMMM: "G MMM y"
         :GyMMMEd: "G d MMM y E"
         :GyMMMd: "G dd MMM y"
-        :H: "HH"
+        :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :M: "L"
+        :M: L
         :MEd: "dd/MM E"
-        :MMM: "LLL"
+        :MMM: LLL
         :MMMEd: "d MMMM E"
         :MMMMEd: "dd MMMM E"
         :MMMMd: "dd MMMM"
         :MMMd: "d MMM"
-        :Md: "dd/MM"
-        :d: "d"
+        :Md: dd/MM
+        :d: d
         :h: "a h"
         :hm: "a h:mm"
         :hms: "a h:mm:ss"
@@ -32,120 +32,120 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "MM/y"
+        :yM: MM/y
         :yMEd: "dd.MM.y E"
-        :yMM: "MM.y"
+        :yMM: MM.y
         :yMMM: "MMM y"
         :yMMMEd: "d MMM y E"
         :yMMMM: "MMMM y"
         :yMMMd: "dd MMM y"
-        :yMd: "dd.MM.y"
-        :yQQQ: "y/QQQ"
-        :yQQQQ: "y/QQQQ"
+        :yMd: dd.MM.y
+        :yQQQ: y/QQQ
+        :yQQQQ: y/QQQQ
       :days: 
         :format: 
           :abbreviated: 
-            :fri: "Cum"
-            :mon: "Pzt"
-            :sat: "Cmt"
-            :sun: "Paz"
-            :thu: "Per"
-            :tue: "Sal"
-            :wed: "Çar"
+            :fri: Cum
+            :mon: Pzt
+            :sat: Cmt
+            :sun: Paz
+            :thu: Per
+            :tue: Sal
+            :wed: Çar
           :narrow: 
-            :fri: "C"
-            :mon: "P"
-            :sat: "C"
-            :sun: "P"
-            :thu: "P"
-            :tue: "S"
-            :wed: "Ç"
+            :fri: C
+            :mon: P
+            :sat: C
+            :sun: P
+            :thu: P
+            :tue: S
+            :wed: Ç
           :short: 
-            :fri: "Cu"
-            :mon: "Pt"
-            :sat: "Ct"
-            :sun: "Pa"
-            :thu: "Pe"
-            :tue: "Sa"
-            :wed: "Ça"
+            :fri: Cu
+            :mon: Pt
+            :sat: Ct
+            :sun: Pa
+            :thu: Pe
+            :tue: Sa
+            :wed: Ça
           :wide: 
-            :fri: "Cuma"
-            :mon: "Pazartesi"
-            :sat: "Cumartesi"
-            :sun: "Pazar"
-            :thu: "Perşembe"
-            :tue: "Salı"
-            :wed: "Çarşamba"
+            :fri: Cuma
+            :mon: Pazartesi
+            :sat: Cumartesi
+            :sun: Pazar
+            :thu: Perşembe
+            :tue: Salı
+            :wed: Çarşamba
         :stand-alone: 
           :abbreviated: 
-            :fri: "Cum"
-            :mon: "Pzt"
-            :sat: "Cmt"
-            :sun: "Paz"
-            :thu: "Per"
-            :tue: "Sal"
-            :wed: "Çar"
+            :fri: Cum
+            :mon: Pzt
+            :sat: Cmt
+            :sun: Paz
+            :thu: Per
+            :tue: Sal
+            :wed: Çar
           :narrow: 
-            :fri: "C"
-            :mon: "P"
-            :sat: "C"
-            :sun: "P"
-            :thu: "P"
-            :tue: "S"
-            :wed: "Ç"
+            :fri: C
+            :mon: P
+            :sat: C
+            :sun: P
+            :thu: P
+            :tue: S
+            :wed: Ç
           :short: 
-            :fri: "Cu"
-            :mon: "Pt"
-            :sat: "Ct"
-            :sun: "Pa"
-            :thu: "Pe"
-            :tue: "Sa"
-            :wed: "Ça"
+            :fri: Cu
+            :mon: Pt
+            :sat: Ct
+            :sun: Pa
+            :thu: Pe
+            :tue: Sa
+            :wed: Ça
           :wide: 
-            :fri: "Cuma"
-            :mon: "Pazartesi"
-            :sat: "Cumartesi"
-            :sun: "Pazar"
-            :thu: "Perşembe"
-            :tue: "Salı"
-            :wed: "Çarşamba"
+            :fri: Cuma
+            :mon: Pazartesi
+            :sat: Cumartesi
+            :sun: Pazar
+            :thu: Perşembe
+            :tue: Salı
+            :wed: Çarşamba
       :eras: 
         :abbr: 
-          0: "İÖ"
-          1: "İS"
+          0: İÖ
+          1: İS
         :name: 
           0: "İsa’dan Önce"
           1: "İsa’dan Sonra"
         :narrow: 
           0: ""
       :fields: 
-        :day: "Gün"
-        :day-narrow: "gün"
-        :day-short: "gün"
-        :dayperiod: "ÖÖ/ÖS"
+        :day: Gün
+        :day-narrow: gün
+        :day-short: gün
+        :dayperiod: ÖÖ/ÖS
         :era: "Miladi Dönem"
-        :hour: "Saat"
-        :hour-narrow: "sa."
-        :hour-short: "sa."
-        :minute: "Dakika"
-        :minute-narrow: "dk."
-        :minute-short: "dk."
-        :month: "Ay"
-        :month-narrow: "ay"
-        :month-short: "ay"
-        :quarter: "Çeyrek"
-        :quarter-narrow: "çyr."
-        :quarter-short: "çyr."
-        :second: "Saniye"
-        :second-narrow: "sn."
-        :second-short: "sn."
-        :week: "Hafta"
-        :week-narrow: "hf."
-        :week-short: "hf."
+        :hour: Saat
+        :hour-narrow: sa.
+        :hour-short: sa.
+        :minute: Dakika
+        :minute-narrow: dk.
+        :minute-short: dk.
+        :month: Ay
+        :month-narrow: ay
+        :month-short: ay
+        :quarter: Çeyrek
+        :quarter-narrow: çyr.
+        :quarter-short: çyr.
+        :second: Saniye
+        :second-narrow: sn.
+        :second-short: sn.
+        :week: Hafta
+        :week-narrow: hf.
+        :week-short: hf.
         :weekday: "Haftanın Günü"
-        :year: "Yıl"
-        :year-narrow: "yıl"
-        :year-short: "yıl"
+        :year: Yıl
+        :year-narrow: yıl
+        :year-short: yıl
         :zone: "Saat Dilimi"
       :formats: 
         :date: 
@@ -156,7 +156,7 @@
           :medium: 
             :pattern: "d MMM y"
           :short: 
-            :pattern: "d.MM.y"
+            :pattern: d.MM.y
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -178,103 +178,103 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "Oca"
-            10: "Eki"
-            11: "Kas"
-            12: "Ara"
-            2: "Şub"
-            3: "Mar"
-            4: "Nis"
-            5: "May"
-            6: "Haz"
-            7: "Tem"
-            8: "Ağu"
-            9: "Eyl"
+            1: Oca
+            10: Eki
+            11: Kas
+            12: Ara
+            2: Şub
+            3: Mar
+            4: Nis
+            5: May
+            6: Haz
+            7: Tem
+            8: Ağu
+            9: Eyl
           :narrow: 
-            1: "O"
-            10: "E"
-            11: "K"
-            12: "A"
-            2: "Ş"
-            3: "M"
+            1: O
+            10: E
+            11: K
+            12: A
+            2: Ş
+            3: M
             4: "N"
-            5: "M"
-            6: "H"
-            7: "T"
-            8: "A"
-            9: "E"
+            5: M
+            6: H
+            7: T
+            8: A
+            9: E
           :wide: 
-            1: "Ocak"
-            10: "Ekim"
-            11: "Kasım"
-            12: "Aralık"
-            2: "Şubat"
-            3: "Mart"
-            4: "Nisan"
-            5: "Mayıs"
-            6: "Haziran"
-            7: "Temmuz"
-            8: "Ağustos"
-            9: "Eylül"
+            1: Ocak
+            10: Ekim
+            11: Kasım
+            12: Aralık
+            2: Şubat
+            3: Mart
+            4: Nisan
+            5: Mayıs
+            6: Haziran
+            7: Temmuz
+            8: Ağustos
+            9: Eylül
         :stand-alone: 
           :abbreviated: 
-            1: "Oca"
-            10: "Eki"
-            11: "Kas"
-            12: "Ara"
-            2: "Şub"
-            3: "Mar"
-            4: "Nis"
-            5: "May"
-            6: "Haz"
-            7: "Tem"
-            8: "Ağu"
-            9: "Eyl"
+            1: Oca
+            10: Eki
+            11: Kas
+            12: Ara
+            2: Şub
+            3: Mar
+            4: Nis
+            5: May
+            6: Haz
+            7: Tem
+            8: Ağu
+            9: Eyl
           :narrow: 
-            1: "O"
-            10: "E"
-            11: "K"
-            12: "A"
-            2: "Ş"
-            3: "M"
+            1: O
+            10: E
+            11: K
+            12: A
+            2: Ş
+            3: M
             4: "N"
-            5: "M"
-            6: "H"
-            7: "T"
-            8: "A"
-            9: "E"
+            5: M
+            6: H
+            7: T
+            8: A
+            9: E
           :wide: 
-            1: "Ocak"
-            10: "Ekim"
-            11: "Kasım"
-            12: "Aralık"
-            2: "Şubat"
-            3: "Mart"
-            4: "Nisan"
-            5: "Mayıs"
-            6: "Haziran"
-            7: "Temmuz"
-            8: "Ağustos"
-            9: "Eylül"
+            1: Ocak
+            10: Ekim
+            11: Kasım
+            12: Aralık
+            2: Şubat
+            3: Mart
+            4: Nisan
+            5: Mayıs
+            6: Haziran
+            7: Temmuz
+            8: Ağustos
+            9: Eylül
       :periods: 
         :format: 
           :abbreviated: :calendars.gregorian.dayPeriods.format.wide
           :narrow: 
-            :am: "öö"
-            :noon: "ö"
-            :pm: "ös"
+            :am: öö
+            :noon: ö
+            :pm: ös
           :wide: 
-            :am: "ÖÖ"
-            :noon: "öğle"
-            :pm: "ÖS"
+            :am: ÖÖ
+            :noon: öğle
+            :pm: ÖS
         :stand-alone: {}
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "Ç1"
-            2: "Ç2"
-            3: "Ç3"
-            4: "Ç4"
+            1: Ç1
+            2: Ç2
+            3: Ç3
+            4: Ç4
           :narrow: 
             1: "1."
             2: "2."
@@ -287,10 +287,10 @@
             4: "4. çeyrek"
         :stand-alone: 
           :abbreviated: 
-            1: "Ç1"
-            2: "Ç2"
-            3: "Ç3"
-            4: "Ç4"
+            1: Ç1
+            2: Ç2
+            3: Ç3
+            4: Ç4
           :narrow: 
             1: "1."
             2: "2."

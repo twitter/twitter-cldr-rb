@@ -8,63 +8,63 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 0
-            :type: "spellout-numbering-year"
+            :type: spellout-numbering-year
           - 
             :rules: 
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 0
-            :type: "spellout-numbering"
+            :type: spellout-numbering
           - 
-            :access: "private"
+            :access: private
             :rules: 
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 0
               - 
-                :rule: "lăm;"
+                :rule: lăm;
                 :value: 5
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 6
-            :type: "teen"
+            :type: teen
           - 
-            :access: "private"
+            :access: private
             :rules: 
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 0
               - 
-                :rule: "mốt;"
+                :rule: mốt;
                 :value: 1
               - 
-                :rule: "=%%teen=;"
+                :rule: =%%teen=;
                 :value: 2
-            :type: "x-ty"
+            :type: x-ty
           - 
-            :access: "private"
+            :access: private
             :rules: 
               - 
                 :rule: "lẻ =%spellout-cardinal=;"
                 :value: 0
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 10
-            :type: "after-hundred"
+            :type: after-hundred
           - 
-            :access: "private"
+            :access: private
             :rules: 
               - 
                 :rule: "không trăm =%%after-hundred=;"
                 :value: 0
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 100
-            :type: "after-thousand-or-more"
+            :type: after-thousand-or-more
           - 
             :rules: 
               - 
@@ -72,36 +72,36 @@
                 :value: "-x"
               - 
                 :rule: "<< phẩy >>;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "không;"
+                :rule: không;
                 :value: 0
               - 
-                :rule: "một;"
+                :rule: một;
                 :value: 1
               - 
-                :rule: "hai;"
+                :rule: hai;
                 :value: 2
               - 
-                :rule: "ba;"
+                :rule: ba;
                 :value: 3
               - 
-                :rule: "bốn;"
+                :rule: bốn;
                 :value: 4
               - 
-                :rule: "năm;"
+                :rule: năm;
                 :value: 5
               - 
-                :rule: "sáu;"
+                :rule: sáu;
                 :value: 6
               - 
-                :rule: "bảy;"
+                :rule: bảy;
                 :value: 7
               - 
-                :rule: "tám;"
+                :rule: tám;
                 :value: 8
               - 
-                :rule: "chín;"
+                :rule: chín;
                 :value: 9
               - 
                 :rule: "mười[ >%%teen>];"
@@ -124,12 +124,12 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal"
+            :type: spellout-cardinal
           - 
             :rules: 
               - 
                 :rule: "=#,##0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
                 :rule: "thứ =%spellout-cardinal=;"
                 :value: 0
@@ -148,17 +148,17 @@
               - 
                 :rule: "thứ =%spellout-cardinal=;"
                 :value: 5
-            :type: "spellout-ordinal"
-        :type: "SpelloutRules"
+            :type: spellout-ordinal
+        :type: SpelloutRules
       - 
         :ruleset: 
           - 
             :rules: 
               - 
-                :rule: "−>>;"
+                :rule: −>>;
                 :value: "-x"
               - 
                 :rule: "thứ =#,##0=;"
                 :value: 0
-            :type: "digits-ordinal"
-        :type: "OrdinalRules"
+            :type: digits-ordinal
+        :type: OrdinalRules

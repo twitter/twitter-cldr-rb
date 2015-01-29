@@ -46,7 +46,6 @@ module TwitterCldr
 
       def weekdays(names_form = :wide, format = DEFAULT_FORMAT)
         cache_field_data(:weekdays, names_form, format) do
-          binding.pry
           get_with_names_form(:days, names_form, format)
         end
       end

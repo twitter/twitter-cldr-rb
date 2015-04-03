@@ -3,8 +3,6 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
-
 require 'yaml'
 require 'date'
 require 'time'
@@ -41,6 +39,7 @@ module TwitterCldr
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
 
+  # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
       :msa     => :ms,
@@ -65,6 +64,8 @@ module TwitterCldr
     end
 
     def locale
+      # doing all this work in locale getter rather than locale setter makes it possible to use locale fallbacks
+      # even if they were configured (or became available) after @locale was already assigned an unsupported locale
       locale = supported_locale?(@locale) ? @locale : find_fallback
       locale = DEFAULT_LOCALE if locale.to_s.empty?
       (supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
@@ -105,6 +106,7 @@ module TwitterCldr
 
     def convert_locale(locale)
       locale = locale.to_sym if locale.respond_to?(:to_sym)
+      locale = lowercase_locales_map.fetch(locale, locale)
       TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
@@ -137,6 +139,14 @@ module TwitterCldr
         return result if result
       end
       nil
+    end
+
+    def lowercase_locales_map
+      @lowercase_locales_map ||= supported_locales.inject({}) do |memo, locale|
+        lowercase = locale.to_s.downcase.to_sym
+        memo[lowercase] = locale unless lowercase == locale
+        memo
+      end
     end
 
   end

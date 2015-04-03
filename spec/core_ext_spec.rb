@@ -10,8 +10,7 @@ describe 'Core classes localization' do
   [Array, Bignum, DateTime, Fixnum, Float, String, Symbol, Time].each do |klass|
     describe klass do
       it 'has public instance method #localize' do
-        # convert methods names to symbols (they're strings in 1.8)
-        expect(klass.public_instance_methods.map(&:to_sym)).to include(:localize)
+        expect(klass.public_instance_methods).to include(:localize)
       end
     end
   end

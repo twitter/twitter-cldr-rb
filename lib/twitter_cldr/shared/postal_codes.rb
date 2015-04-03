@@ -76,15 +76,7 @@ module TwitterCldr
       private
 
       def build_regexp(regexp_str, modifiers = '')
-        if RUBY_VERSION <= "1.8.7"
-          begin
-            Oniguruma::ORegexp.new(regexp_str, modifiers)
-          rescue NameError
-            raise "Postal codes require the Oniguruma gem when using Ruby 1.8. Please install, require, and retry."
-          end
-        else
-          Regexp.new(regexp_str, modifiers)
-        end
+        Regexp.new(regexp_str, modifiers)
       end
 
       def generator

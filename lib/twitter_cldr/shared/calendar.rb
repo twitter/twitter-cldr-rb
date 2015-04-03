@@ -10,7 +10,7 @@ module TwitterCldr
       DEFAULT_FORMAT = :'stand-alone'
       DEFAULT_PERIOD_FORMAT = :format
 
-      NAMES_FORMS = [:wide, :narrow, :abbreviated]
+      NAMES_FORMS = [:wide, :narrow, :short, :abbreviated, :foo]
       ERAS_NAMES_FORMS = [:abbr, :name]
 
       DATETIME_METHOD_MAP = {

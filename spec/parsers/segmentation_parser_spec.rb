@@ -30,20 +30,24 @@ describe "Segmentation" do
     describe "#parse" do
       it "should parse a rule with a break" do
         rule = parse(tokenize("[a-z] ÷ [0-9]"))
-        expect(rule.left.to_regexp_str).to eq("\\A(?:[\\141-\\172])")
-        expect(rule.right.to_regexp_str).to eq("\\A(?:[\\60-\\71])")
+        expect(rule.left.to_regexp_str).to eq("\\A(?:[\\u{0061}-\\u{007a}])")
+        expect(rule.right.to_regexp_str).to eq("\\A(?:[\\u{0030}-\\u{0039}])")
         expect(rule.boundary_symbol).to eq(:break)
       end
 
       it "should parse a rule with a non-break" do
         rule = parse(tokenize("[a-z] × [0-9]"))
-        expect(rule.regex.to_regexp_str).to eq("\\A(?:[\\141-\\172])(?:[\\60-\\71])")
+        expect(rule.regex.to_regexp_str).to eq(
+          "\\A(?:[\\u{0061}-\\u{007a}])(?:[\\u{0030}-\\u{0039}])"
+        )
         expect(rule.boundary_symbol).to eq(:no_break)
       end
 
       it "should parse a rule containing a variable" do
         rule = parse(tokenize("$FOO × bar"), :symbol_table => symbol_table)
-        expect(rule.regex.to_regexp_str).to eq("\\A(?:[\\141-\\143])(?:\\142)(?:\\141)(?:\\162)")
+        expect(rule.regex.to_regexp_str).to eq(
+          "\\A(?:[\\u{0061}-\\u{0063}])(?:\\u{0062})(?:\\u{0061})(?:\\u{0072})"
+        )
         expect(rule.boundary_symbol).to eq(:no_break)
       end
     end

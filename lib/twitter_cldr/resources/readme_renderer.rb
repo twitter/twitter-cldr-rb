@@ -5,13 +5,6 @@
 
 require 'erb'
 
-# patch to add compare operator to Symbol (for mri 1.8)
-class Symbol
-  def <=>(other)
-    to_s <=> other.to_s
-  end
-end
-
 module TwitterCldr
   module Resources
 

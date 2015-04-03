@@ -88,14 +88,10 @@ module TwitterCldr
 
         File.open(path, 'w:utf-8') do |output|
           output.write(
-            # Quote all strings for compat with 1.8. This is important because
-            # RBNF syntax includes characters that are significant in the Yaml
-            # syntax, like >, <, etc. Psych doesn't have problems parsing them,
-            # but Syck does (ruby 1.8).
-            TwitterCldr::Utils::YAML.dump(TwitterCldr::Utils.deep_symbolize_keys(data), {
-              :quote_all_strings => true,
+            TwitterCldr::Utils::YAML.dump(
+              TwitterCldr::Utils.deep_symbolize_keys(data),
               :use_natural_symbols => true
-            })
+            )
           )
         end
       end

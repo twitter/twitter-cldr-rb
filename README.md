@@ -1,6 +1,4 @@
-
-
-## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb)
+## twitter-cldr-rb [![Build Status](https://secure.travis-ci.org/twitter/twitter-cldr-rb.png?branch=master)](http://travis-ci.org/twitter/twitter-cldr-rb) [![Code Climate](https://codeclimate.com/github/twitter/twitter-cldr-rb.png)](https://codeclimate.com/github/twitter/twitter-cldr-rb) [![Coverage Status](https://coveralls.io/repos/twitter/twitter-cldr-rb/badge.png?branch=master)](https://coveralls.io/r/twitter/twitter-cldr-rb?branch=master)
 
 TwitterCldr uses Unicode's Common Locale Data Repository (CLDR) to format certain types of text into their
 localized equivalents.  Currently supported types of text include dates, times, currencies, decimals, percentages, and symbols.
@@ -39,18 +37,18 @@ TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localizat
 
 ```ruby
 # default formatting with to_s
-1337.localize(:es).to_s                                    # "1 337"
+1337.localize(:es).to_s                                    # "1.337"
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # "1 337,00 $"
-1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1 337,00 €"
+1337.localize(:es).to_currency.to_s                        # "1.337,00 $"
+1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1.337,00 €"
 
 # percentages
-1337.localize(:es).to_percent.to_s                         # "1 337%"
-1337.localize(:es).to_percent.to_s(:precision => 2)        # "1 337,00%"
+1337.localize(:es).to_percent.to_s                         # "1.337 %"
+1337.localize(:es).to_percent.to_s(:precision => 2)        # "1.337,00 %"
 
 # decimals
-1337.localize(:es).to_decimal.to_s(:precision => 3)        # "1 337,000"
+1337.localize(:es).to_decimal.to_s(:precision => 3)        # "1.337,000"
 ```
 
 **Note**: The `:precision` option can be used with all these number formatters.
@@ -154,7 +152,7 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)"
 DateTime.now.localize(:es).to_long_s               # "14 de febrero de 2014, 12:20:05 UTC"
-DateTime.now.localize(:es).to_medium_s             # "14/2/2014 12:20:05"
+DateTime.now.localize(:es).to_medium_s             # "14 de feb. de 2014 12:20:05"
 DateTime.now.localize(:es).to_short_s              # "14/2/14 12:20"
 
 Time.now.localize(:es).to_full_s                   # "12:20:05 (UTC +00:00)"
@@ -164,7 +162,7 @@ Time.now.localize(:es).to_short_s                  # "12:20"
 
 DateTime.now.localize(:es).to_date.to_full_s       # "viernes, 14 de febrero de 2014"
 DateTime.now.localize(:es).to_date.to_long_s       # "14 de febrero de 2014"
-DateTime.now.localize(:es).to_date.to_medium_s     # "14/2/2014"
+DateTime.now.localize(:es).to_date.to_medium_s     # "14 de feb. de 2014"
 DateTime.now.localize(:es).to_date.to_short_s      # "14/2/14"
 ```
 
@@ -184,7 +182,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# ["EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", "H", ... ]
+# ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", ... ]
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -201,6 +199,7 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
+| E          | Fri                    |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -320,8 +319,9 @@ TwitterCLDR makes it easy to find the plural rules for any numeric value:
 
 ```ruby
 1.localize(:ru).plural_rule                                # :one
-2.localize(:ru).plural_rule                                # :other
+2.localize(:ru).plural_rule                                # :few
 5.localize(:ru).plural_rule                                # :many
+10.0.localize(:ru).plural_rule                             # :other
 ```
 
 Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::Plurals::Rules` class.  You can do the same thing (and a bit more) if you're feeling adventurous:
@@ -332,11 +332,11 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
-TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :other
+TwitterCldr::Formatters::Plurals::Rules.rule_for(2, :ru)   # :few
 ```
 
 ### Plurals
@@ -375,13 +375,10 @@ NOTE: If you're using TwitterCLDR with Rails 3, you may see an error if you try 
 '%<{"count": {"one": "only one", "other": "tons more!"}}'.to_str.localize % { :count => 2 }
 ```
 
-The `LocalizedString` class supports all forms of interpolation and combines support from both Ruby 1.8 and 1.9:
+The `LocalizedString` class supports all forms of interpolation:
 
 ```ruby
-# Ruby 1.8
-"five euros plus %.3f in tax" % (13.25 * 0.087)
-
-# Ruby 1.9
+# Ruby
 "five euros plus %.3f in tax" % (13.25 * 0.087)
 "there are %{count} horses in the barn" % { :count => "5" }
 
@@ -390,7 +387,7 @@ The `LocalizedString` class supports all forms of interpolation and combines sup
 "there are %{count} horses in the barn".localize % { :count => "5" }
 ```
 
-When you pass a Hash as an argument and specify placeholders with `%<foo>d`, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`.  In this way, TwitterCLDR supports both Ruby 1.8 and 1.9 interpolation syntax in the same string:
+When you pass a Hash as an argument and specify placeholders with `%<foo>d`, TwitterCLDR will interpret the hash values as named arguments and format the string according to the instructions appended to the closing `>`:
 
 ```ruby
 "five euros plus %<percent>.3f in %{noun}".localize % { :percent => 13.25 * 0.087, :noun => "tax" }
@@ -480,7 +477,7 @@ postal_code.regexp  # /\d{5}([ \-]\d{4})?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["93733-7601", "65796-6586", "93519", "46536", "53158"]
+postal_code.sample(5)  # ["20274-2080", "17661", "18705", "77929", "73034-2737"]
 ```
 
 ### Phone Codes
@@ -626,15 +623,9 @@ regex =~ "fooABC"   # 3
 
 Protip: Try to avoid negation in character classes (eg. [^abc] and \P{Lu}) as it tends to negatively affect both performance when constructing regexes as well as matching.
 
-#### Support for Ruby 1.8
-
-Ruby 1.8 does not allow escaped Unicode characters in regular expressions and restricts their maximum length. TwitterCLDR's `UnicodeRegex` class supports escaped unicode characters in Ruby 1.8, but cannot offer a work-around for the length issue. For this reason, Ruby 1.8 users are required to install the oniguruma regex engine and require the oniguruma gem in their projects.
-
-To install oniguruma, run `brew install oniguruma` on MacOS, `[sudo] apt-get install libonig-dev` on Ubuntu (you may need to search for other instructions specific to your platform). Then, install the oniguruma gem via your Gemfile or on your system via `gem install oniguruma`. Once installed, `require oniguruma` somewhere in your project before making use of the `TwitterCldr::Shared::UnicodeRegex` class.
-
 ### Text Segmentation
 
-TwitterCLDR currently supports text segmentation by sentence as described in the [Unicode Technical Report #29](http://www.unicode.org/reports/tr29/). The segmentation algorithm makes use of Unicode regular expressions (described above). Because of this, if you're running Ruby 1.8, you'll need to follow the instructions above to install the oniguruma regular expression engine. Segmentation by word, line, and grapheme boundaries could also be supported if someone wants them.
+TwitterCLDR currently supports text segmentation by sentence as described in the [Unicode Technical Report #29](http://www.unicode.org/reports/tr29/). The segmentation algorithm makes use of Unicode regular expressions (described above). Segmentation by word, line, and grapheme boundaries could also be supported if someone wants them.
 
 You can break a string into sentences using the `LocalizedString#each_sentence` method:
 
@@ -795,7 +786,7 @@ bidi.to_s
 
 ### Unicode YAML Support
 
-Ruby 1.8 does not come with great Unicode support, and nowhere is this more apparent then when dumping Unicode characters in YAML.  The Psych gem by @tenderlove is a good replacement and is the default in Ruby 1.9, but requires libyaml and still doesn't handle Unicode characters perfectly.  To mitigate this problem (especially in Ruby 1.8), TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
+The Psych gem that is the default YAML engine inRuby 1.9 doesn't handle Unicode characters perfectly.  To mitigate this problem, TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
 
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
@@ -840,15 +831,7 @@ TwitterCldr.locale    # will return :ru
 
 ## Compatibility
 
-TwitterCLDR is fully compatible with Ruby 1.8.7, 1.9.3, 2.0.0, 2.1.0, and Rubinius (v2.2.7). We are considering dropping support for Ruby 1.8. If you still need to use TwitterCLDR in a Ruby 1.8 environment, please let us know as soon as possible. Please note that certain TwitterCLDR features require additional dependencies or considerations when run on Ruby 1.8. Refer to the sections above for details.
-
-#### Notes on Ruby 1.8
-
-Numerous TwitterCLDR features have been built with the assumption that they will only ever be used on UTF-8 encoded text, which is mostly due to the need to support Ruby 1.8. For this reason, you may find it necessary to set the global `$KCODE` variable to `"UTF-8"`. Setting this variable tells Ruby what encoding to use when loading source files. TwitterCLDR will **not** set this value for you.
-
-```ruby
-$KCODE = "UTF-8"
-```
+TwitterCLDR is fully compatible with Ruby 1.9.3, 2.0.0, 2.2.0.
 
 ## Requirements
 
@@ -862,7 +845,7 @@ Tests are written in RSpec using RR as the mocking framework.
 
 ## Test Coverage
 
-You can run the development test coverage suite with `bundle exec rake spec:cov`, or the full suite with `bundle exec rake spec:cov:full`.  TwitterCLDR uses RCov under Ruby 1.8 and Simplecov under Ruby 1.9.
+You can run the development test coverage suite (using simplecov) with `bundle exec rake spec:cov`, or the full suite with `bundle exec rake spec:cov:full`.
 
 ## JavaScript Support
 

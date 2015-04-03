@@ -23,11 +23,7 @@ module TwitterCldr
       protected
 
       def format_plaintext(token, index, obj, options)
-        if match = token.value.match(/([\s]*)'(.*)'([\s]*)/)
-          match.captures.join
-        else
-          token.value
-        end
+        token.value.gsub(/'([^']+)'/, '\1') # remove single-quote escaping for "real" characters
       end
 
       def format_composite(token, index, obj, options)

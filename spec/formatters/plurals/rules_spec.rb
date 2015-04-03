@@ -76,6 +76,14 @@ describe Rules do
         :one, :two, :few, :other
       ])
     end
+
+    it "works with upercase region code" do
+      expect(TwitterCldr::Formatters::Plurals::Rules.all_for('en-gb')).to match_array([:one, :other])
+    end
+
+    it "works with lowercase region code" do
+      expect(TwitterCldr::Formatters::Plurals::Rules.all_for('en-gb')).to match_array([:one, :other])
+    end
   end
 
   describe "#all" do

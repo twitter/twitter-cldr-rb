@@ -28,7 +28,7 @@ module TwitterCldr
           # @ TODO: these need to be cheap to create
           data_reader = data_reader_for(type)
           tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
-          data_reader.formatter.format(tokens, base_in_timezone)
+          data_reader.formatter.format(tokens, base_in_timezone, chain_params)
         end
       end
 
@@ -90,7 +90,7 @@ module TwitterCldr
           utc_dt.hour,
           utc_dt.min,
           utc_dt.sec,
-          utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
+          utc_dt.sec_fraction * 1_000_000
         )
 
         LocalizedTime.new(time, @locale, chain_params)

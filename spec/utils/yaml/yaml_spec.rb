@@ -32,25 +32,13 @@ require 'yaml'
 # Psych doesn't handle Unicode characters properly, have to use Syck instead.
 if YAML.const_defined?(:ENGINE)
   # Fix undefined method `syck_to_yaml' for class `Object' error on MRI 1.9.3.
-  # Target only MRI >= 1.9, because on other Rubies, e.g., JRuby, requiring 'syck' results in a LoadError.
-  if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'ruby' && RUBY_VERSION >= "1.9.0" && RUBY_VERSION < "2.0.0"
+  # Target only MRI ~1.9, because on other Rubies, e.g., JRuby, requiring 'syck' results in a LoadError.
+  if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'ruby' && RUBY_VERSION < "2.0.0"
     require 'syck'
   end
 
   YAML::ENGINE.yamler = 'syck'
 end
-
-# There's an incompatibility in how ruby handles struct dumps
-# between versions that's beyond our scope.
-# (One uses strings internally, the other symbols.)
-# This just enables tests to pass.
-class << Struct
-  alias yaml_new_without_indifferent_keys yaml_new
-  def yaml_new(klass, tag, val)
-    val.keys.each { |k, v| val[k.to_sym] = val.delete(k) }
-    yaml_new_without_indifferent_keys(klass, tag, val)
-  end
-end if RUBY_VERSION >= "1.9" && RUBY_VERSION <= "1.9.1"  # yaml_new is deprecated in 1.9.2 and later
 
 STRUCT_KLASS = Struct::new('Foo', :bar, :buz)
 class Moo
@@ -140,11 +128,9 @@ describe TwitterCldr::Utils do
       end
     end
 
-    if RUBY_VERSION >= "1.9"
-      it "should preserve hash order" do
-        h = { 'a' => 1, 'c' => 3, 'b' => 2 }
-        expect(TwitterCldr::Utils::YAML.dump(h, :preserve_order => true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
-      end
+    it "should preserve hash order" do
+      h = { 'a' => 1, 'c' => 3, 'b' => 2 }
+      expect(TwitterCldr::Utils::YAML.dump(h, :preserve_order => true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
     end
 
     it "tests normalization of line breaks" do
@@ -430,15 +416,13 @@ describe TwitterCldr::Utils do
     end
 
     it "tests binary dumps" do
-      unless RUBY_VERSION < '1.9.0'
-        y = nil
+      y = nil
 
-        expect { y = TwitterCldr::Utils::YAML.dump('日本語'.force_encoding('ASCII-8BIT')) }.not_to raise_error
-        expect(y).to eq("--- !binary |\n  5pel5pys6Kqe\n\n")
+      expect { y = TwitterCldr::Utils::YAML.dump('日本語'.force_encoding('ASCII-8BIT')) }.not_to raise_error
+      expect(y).to eq("--- !binary |\n  5pel5pys6Kqe\n\n")
 
-        expect { y = TwitterCldr::Utils::YAML.dump('日本語'.encode('EUC-JP').force_encoding('UTF-8')) }.not_to raise_error
-        expect(y).to eq("--- !binary |\n  xvzL3Ljs\n\n")
-      end
+      expect { y = TwitterCldr::Utils::YAML.dump('日本語'.encode('EUC-JP').force_encoding('UTF-8')) }.not_to raise_error
+      expect(y).to eq("--- !binary |\n  xvzL3Ljs\n\n")
     end
 
   end

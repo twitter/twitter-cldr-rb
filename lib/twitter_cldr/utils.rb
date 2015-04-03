@@ -73,5 +73,3 @@ module TwitterCldr
 
   end
 end
-
-require 'twitter_cldr/utils/interpolation'

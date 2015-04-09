@@ -47,7 +47,7 @@ describe LocalizedDateTime do
     end
 
     it 'should stringify with proper time zone' do
-      expect(date_time.localize(:en).with_timezone('America/Los_Angeles').to_long_s).to eq("September 20, 1987 at 3:05:00 PM PST")
+      expect(date_time.localize(:en).with_timezone('Asia/Tokyo').to_long_s).to eq("September 21, 1987 at 7:05:00 AM JST")
     end
   end
 

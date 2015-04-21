@@ -25,7 +25,7 @@ module TwitterCldr
         currency_digits_and_rounding rbnf_root
         numbering_systems segments_root
         territories_containment likely_subtags
-        variables aliases region_currencies
+        variables aliases
       ]
 
       # Arguments:

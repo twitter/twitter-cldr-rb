@@ -47,7 +47,12 @@ describe LocalizedDateTime do
     end
 
     it 'should stringify with proper time zone' do
-      expect(date_time.localize(:en).with_timezone('America/Los_Angeles').to_long_s).to eq("September 20, 1987 at 3:05:00 PM PST")
+      tz_str = TZInfo::Timezone.get('America/Los_Angeles').strftime('%Z')
+      date_str = date_time.localize(:en).with_timezone('America/Los_Angeles').to_long_s
+
+      expect(date_str).to eq(
+        "September 20, 1987 at 3:05:00 PM #{tz_str}"
+      )
     end
   end
 

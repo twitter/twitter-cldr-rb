@@ -16,7 +16,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', :github => 'kl-7/ruby-cldr', :branch => 'kl_nubmber_patttern_pluralization'
+  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => 'likely_subtags'
   gem 'i18n', '~> 0.6.11'
   gem 'cldr-plurals', '~> 1.0.0'
 end

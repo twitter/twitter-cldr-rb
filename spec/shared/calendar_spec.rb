@@ -170,8 +170,8 @@ describe Calendar do
       })
 
       expect(calendar.quarters(:narrow)).to eq({
-        1 => 1, 2 => 2,
-        3 => 3, 4 => 4
+        1 => "1", 2 => "2",
+        3 => "3", 4 => "4"
       })
     end
   end

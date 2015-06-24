@@ -1,0 +1,111 @@
+--- 
+:mr: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: deva
+        :patterns: 
+          :default: "¤#,##0.00"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: deva
+        :patterns: 
+          :default: "#,##,##0.###"
+          :long: 
+            1000: 
+              :one: "0 हजार"
+              :other: "0 हजार"
+            10000: 
+              :one: "00 हजार"
+              :other: "00 हजार"
+            100000: 
+              :one: "000 हजार"
+              :other: "000 हजार"
+            1000000: 
+              :one: "0 दशलक्ष"
+              :other: "0 दशलक्ष"
+            10000000: 
+              :one: "00 दशलक्ष"
+              :other: "00 दशलक्ष"
+            100000000: 
+              :one: "000 दशलक्ष"
+              :other: "000 दशलक्ष"
+            1000000000: 
+              :one: "0 महापद्म"
+              :other: "0 महापद्म"
+            10000000000: 
+              :one: "00 महापद्म"
+              :other: "00 महापद्म"
+            100000000000: 
+              :one: "000 महापद्म"
+              :other: "000 महापद्म"
+            1000000000000: 
+              :one: "0 खरब"
+              :other: "0 खरब"
+            10000000000000: 
+              :one: "00 खरब"
+              :other: "00 खरब"
+            100000000000000: 
+              :one: "000 खरब"
+              :other: "000 खरब"
+          :short: 
+            1000: 
+              :one: 0 ह
+              :other: 0 ह
+            10000: 
+              :one: 00 ह
+              :other: 00 ह
+            100000: 
+              :one: 0 लाख
+              :other: 0 लाख
+            1000000: 
+              :one: 00 लाख
+              :other: 00 लाख
+            10000000: 
+              :one: 0 कोटी
+              :other: 0 कोटी
+            100000000: 
+              :one: 00 कोटी
+              :other: 00 कोटी
+            1000000000: 
+              :one: 0 अब्ज
+              :other: 0 अब्ज
+            10000000000: 
+              :one: 00 अब्ज
+              :other: 00 अब्ज
+            100000000000: 
+              :one: 0 खर्व
+              :other: 0 खर्व
+            1000000000000: 
+              :one: 00 खर्व
+              :other: 00 खर्व
+            10000000000000: 
+              :one: 0 पद्म
+              :other: 0 पद्म
+            100000000000000: 
+              :one: 00 पद्म
+              :other: 00 पद्म
+      :percent: 
+        :number_system: deva
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: deva
+        :patterns: 
+          :default: "[#E0]"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group: ","
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

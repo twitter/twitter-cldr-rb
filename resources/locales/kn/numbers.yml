@@ -1,0 +1,111 @@
+--- 
+:kn: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "¤#,##0.00"
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            1000: 
+              :one: "0 ಸಾವಿರ"
+              :other: "0 ಸಾವಿರ"
+            10000: 
+              :one: "00 ಸಾವಿರ"
+              :other: "00 ಸಾವಿರ"
+            100000: 
+              :one: "000 ಸಾವಿರ"
+              :other: "000 ಸಾವಿರ"
+            1000000: 
+              :one: "0 ಮಿಲಿಯನ್"
+              :other: "0 ಮಿಲಿಯನ್"
+            10000000: 
+              :one: "00 ಮಿಲಿಯನ್"
+              :other: "00 ಮಿಲಿಯನ್"
+            100000000: 
+              :one: "000 ಮಿಲಿಯನ್"
+              :other: "000 ಮಿಲಿಯನ್"
+            1000000000: 
+              :one: "0 ಬಿಲಿಯನ್"
+              :other: "0 ಬಿಲಿಯನ್"
+            10000000000: 
+              :one: "00 ಬಿಲಿಯನ್"
+              :other: "00 ಬಿಲಿಯನ್"
+            100000000000: 
+              :one: "000 ಬಿಲಿಯನ್"
+              :other: "000 ಬಿಲಿಯನ್"
+            1000000000000: 
+              :one: "0 ಟ್ರಿಲಿಯನ್‌"
+              :other: "0 ಟ್ರಿಲಿಯನ್‌"
+            10000000000000: 
+              :one: "00 ಟ್ರಿಲಿಯನ್‌"
+              :other: "00 ಟ್ರಿಲಿಯನ್‌"
+            100000000000000: 
+              :one: "000 ಟ್ರಿಲಿಯನ್‌"
+              :other: "000 ಟ್ರಿಲಿಯನ್‌"
+          :short: 
+            1000: 
+              :one: 0ಸಾ
+              :other: 0ಸಾ
+            10000: 
+              :one: 00ಸಾ
+              :other: 00ಸಾ
+            100000: 
+              :one: 000ಸಾ
+              :other: 000ಸಾ
+            1000000: 
+              :one: 0ಮಿ
+              :other: 0ಮಿ
+            10000000: 
+              :one: 00ಮಿ
+              :other: 00ಮಿ
+            100000000: 
+              :one: 000ಮಿ
+              :other: 000ಮಿ
+            1000000000: 
+              :one: 0ಬಿ
+              :other: 0ಬಿ
+            10000000000: 
+              :one: 00ಬಿ
+              :other: 00ಬಿ
+            100000000000: 
+              :one: 000ಬಿ
+              :other: 000ಬಿ
+            1000000000000: 
+              :one: 0ಟ್ರಿ
+              :other: 0ಟ್ರಿ
+            10000000000000: 
+              :one: 00ಟ್ರಿ
+              :other: 00ಟ್ರಿ
+            100000000000000: 
+              :one: 000ಟ್ರಿ
+              :other: 000ಟ್ರಿ
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group: ","
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

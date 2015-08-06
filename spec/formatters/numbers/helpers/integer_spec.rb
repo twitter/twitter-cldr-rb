@@ -76,6 +76,11 @@ describe Integer do
         expect(TwitterCldr::Formatters::Numbers::Integer.new(token).apply(123456789)).to eq('12,34,56,789')
       end
 
+      it "test: multiple groups with a primary and secondary group size and a short string" do
+        token = Token.new(:value => "#,##,##0", :type => :pattern)
+        expect(TwitterCldr::Formatters::Numbers::Integer.new(token).apply(123)).to eq('123')
+      end
+
       it "test: does not group when no digits left of the grouping position" do
         token = Token.new(:value => "#,###", :type => :pattern)
         expect(TwitterCldr::Formatters::Numbers::Integer.new(token).apply(123)).to eq('123')

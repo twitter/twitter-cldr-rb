@@ -1,0 +1,638 @@
+--- 
+:gu: 
+  :currencies: 
+    :AED: 
+      :one: "[UAE] દિરહામ"
+      :other: "[UAE] દિરહામ"
+      :symbol: AED
+    :AFN: 
+      :one: "અફ્ગાન અફ્ગાની"
+      :other: "અફ્ગાન અફ્ગાની"
+      :symbol: AFN
+    :ALL: 
+      :one: "અલ્બેનિયન લેક"
+      :other: "અલ્બેનિયન લેક"
+      :symbol: ALL
+    :AMD: 
+      :one: "અર્મેનિયન ડ્રેમ"
+      :other: "અર્મેનિયન ડ્રેમ"
+      :symbol: AMD
+    :ANG: 
+      :one: "નેધરલેંડ એંટિલિન ગિલ્ડર"
+      :other: "નેધરલેંડ એંટિલિન ગિલ્ડર"
+      :symbol: ANG
+    :AOA: 
+      :one: "અંગોલિયન ક્વાન્ઝા"
+      :other: "અંગોલિયન ક્વાન્ઝા"
+      :symbol: AOA
+    :ARS: 
+      :one: "અર્જેન્ટીના પેસો"
+      :other: "અર્જેન્ટીના પેસો"
+      :symbol: ARS
+    :AUD: 
+      :one: "ઑસ્ટ્રેલિયન ડૉલર"
+      :other: "ઑસ્ટ્રેલિયન ડૉલર"
+      :symbol: A$
+    :AWG: 
+      :one: "અરુબન ફ્લોરિન"
+      :other: "અરુબન ફ્લોરિન"
+      :symbol: AWG
+    :AZN: 
+      :one: "અઝરબૈજાની મનાત"
+      :other: "અઝરબૈજાની મનાત"
+      :symbol: AZN
+    :BAM: 
+      :one: "બોસ્નિયા અને હર્ઝેગોવિના રૂપાંતર યોગ્ય માર્ક"
+      :other: "બોસ્નિયા અને હર્ઝેગોવિના રૂપાંતર યોગ્ય માર્ક"
+      :symbol: BAM
+    :BBD: 
+      :one: "બાર્બાડિયન ડોલર"
+      :other: "બાર્બાડિયન ડોલર"
+      :symbol: BBD
+    :BDT: 
+      :one: "બાંગલાદેશી ટાકા"
+      :other: "બાંગલાદેશી ટાકા"
+      :symbol: BDT
+    :BGN: 
+      :one: "બલ્ગેરીયન લેવ"
+      :other: "બલ્ગેરીયન લેવ"
+      :symbol: BGN
+    :BHD: 
+      :one: "બેહરિની દિનાર"
+      :other: "બેહરિની દિનાર"
+      :symbol: BHD
+    :BIF: 
+      :one: "બુરુન્ડિયન ફ્રેંક"
+      :other: "બુરુન્ડિયન ફ્રેંક"
+      :symbol: BIF
+    :BMD: 
+      :one: "બર્મુડન ડોલર"
+      :other: "બર્મુડન ડોલર"
+      :symbol: BMD
+    :BND: 
+      :one: "બ્રુનેઇ ડોલર"
+      :other: "બ્રુનેઇ ડોલર"
+      :symbol: BND
+    :BOB: 
+      :one: "બોલિવિયન બોલિવિયાનો"
+      :other: "બોલિવિયન બોલિવિયાનો"
+      :symbol: BOB
+    :BRL: 
+      :one: "બ્રાઝિલીયન રિઆલ"
+      :other: "બ્રાઝિલીયન રિઆલ"
+      :symbol: R$
+    :BSD: 
+      :one: "બહામિયન ડોલર"
+      :other: "બહામિયન ડોલર"
+      :symbol: BSD
+    :BTN: 
+      :one: "ભુતાનિઝ એંગુલ્ત્રમ"
+      :other: "ભુતાનિઝ એંગુલ્ત્રમ"
+      :symbol: BTN
+    :BWP: 
+      :one: "બોત્સવાનન પુલા"
+      :other: "બોત્સવાનન પુલા"
+      :symbol: BWP
+    :BYR: 
+      :one: "બેલારુશિયન રૂબલ"
+      :other: "બેલારુશિયન રૂબલ"
+      :symbol: BYR
+    :BZD: 
+      :one: "બેલિઝ ડોલર"
+      :other: "બેલિઝ ડોલર"
+      :symbol: BZD
+    :CAD: 
+      :one: "કેનેડિયન ડૉલર"
+      :other: "કેનેડિયન ડૉલર"
+      :symbol: CA$
+    :CDF: 
+      :one: "કોંગોલિઝ ફ્રેંક"
+      :other: "કોંગોલિઝ ફ્રેંક"
+      :symbol: CDF
+    :CHF: 
+      :one: "સ્વિસ ફ્રેંક"
+      :other: "સ્વિસ ફ્રેંક"
+      :symbol: CHF
+    :CLP: 
+      :one: "ચિલિઅન પેસો"
+      :other: "ચિલિઅન પેસો"
+      :symbol: CLP
+    :CNY: 
+      :one: "ચાઇનિઝ યુઆન"
+      :other: "ચાઇનિઝ યુઆન"
+      :symbol: CN¥
+    :COP: 
+      :one: "કોલમ્બિયન પેસો"
+      :other: "કોલમ્બિયન પેસો"
+      :symbol: COP
+    :CRC: 
+      :one: "કોસ્ટા રિકન કોલોન"
+      :other: "કોસ્ટા રિકન કોલોન"
+      :symbol: CRC
+    :CUC: 
+      :one: "ક્યુબન રૂપાંતર યોગ્ય પેસો"
+      :other: "ક્યુબન રૂપાંતર યોગ્ય પેસો"
+      :symbol: CUC
+    :CUP: 
+      :one: "ક્યુબન પેસો"
+      :other: "ક્યુબન પેસો"
+      :symbol: CUP
+    :CVE: 
+      :one: "કેપ વર્દિયન એસ્કુડો"
+      :other: "કેપ વર્દિયન એસ્કુડો"
+      :symbol: CVE
+    :CZK: 
+      :one: "ચેક રીપબ્લિક કોરુના"
+      :other: "ચેક રીપબ્લિક કોરુના"
+      :symbol: CZK
+    :DJF: 
+      :one: "જિબુટિયન ફ્રેંક"
+      :other: "જિબુટિયન ફ્રેંક"
+      :symbol: DJF
+    :DKK: 
+      :one: "ડેનિશ ક્રોન"
+      :other: "ડેનિશ ક્રોન"
+      :symbol: DKK
+    :DOP: 
+      :one: "ડોમિનિકન પેસો"
+      :other: "ડોમિનિકન પેસો"
+      :symbol: DOP
+    :DZD: 
+      :one: "અલ્જિરિયન દિનાર"
+      :other: "અલ્જિરિયન દિનાર"
+      :symbol: DZD
+    :EGP: 
+      :one: "ઇજિપ્તિયન પાઉન્ડ"
+      :other: "ઇજિપ્તિયન પાઉન્ડ"
+      :symbol: EGP
+    :ERN: 
+      :one: "એરિટ્રેયન નક્ફા"
+      :other: "એરિટ્રેયન નક્ફા"
+      :symbol: ERN
+    :ESP: 
+      :symbol: ₧
+    :ETB: 
+      :one: "ઇથિયોપીયન બિર"
+      :other: "ઇથિયોપીયન બિર"
+      :symbol: ETB
+    :EUR: 
+      :one: યુરો
+      :other: યુરો
+      :symbol: €
+    :FJD: 
+      :one: "ફિજિઅન ડોલર"
+      :other: "ફિજિઅન ડોલર"
+      :symbol: FJD
+    :FKP: 
+      :one: "ફૉકલેન્ડ આઇલેંડ્સ પાઉન્ડ"
+      :other: "ફૉકલેન્ડ આઇલેંડ્સ પાઉન્ડ"
+      :symbol: FKP
+    :GBP: 
+      :one: "બ્રિટિશ પાઉન્ડ સ્ટર્લિંગ"
+      :other: "બ્રિટિશ પાઉન્ડ સ્ટર્લિંગ"
+      :symbol: £
+    :GEL: 
+      :one: "જ્યોર્જિઅન લારી"
+      :other: "જ્યોર્જિઅન લારી"
+      :symbol: GEL
+    :GHS: 
+      :one: "ઘાનાઇયન સેડી"
+      :other: "ઘાનાઇયન સેડી"
+      :symbol: GHS
+    :GIP: 
+      :one: "જીબ્રાલ્ટર પાઉન્ડ"
+      :other: "જીબ્રાલ્ટર પાઉન્ડ"
+      :symbol: GIP
+    :GMD: 
+      :one: "ગેમ્બિયન દલાસી"
+      :other: "ગેમ્બિયન દલાસી"
+      :symbol: GMD
+    :GNF: 
+      :one: "ગિનીયન ફ્રેંક"
+      :other: "ગિનીયન ફ્રેંક"
+      :symbol: GNF
+    :GTQ: 
+      :one: "ગ્વાટેમાલા કુઇટ્ઝલ"
+      :other: "ગ્વાટેમાલા કુઇટ્ઝલ"
+      :symbol: GTQ
+    :GYD: 
+      :one: "ગયાનિઝ ડોલર"
+      :other: "ગયાનિઝ ડોલર"
+      :symbol: GYD
+    :HKD: 
+      :one: "હોંગ કોંગ ડૉલર"
+      :other: "હોંગ કોંગ ડૉલર"
+      :symbol: HK$
+    :HNL: 
+      :one: "હોન્ડ્યુરન લેમ્પિરા"
+      :other: "હોન્ડ્યુરન લેમ્પિરા"
+      :symbol: HNL
+    :HRK: 
+      :one: "ક્રોએશિયન ક્યુના"
+      :other: "ક્રોએશિયન ક્યુના"
+      :symbol: HRK
+    :HTG: 
+      :one: "હાઇટિઇન ગોર્ડ"
+      :other: "હાઇટિઇન ગોર્ડ"
+      :symbol: HTG
+    :HUF: 
+      :one: "હંગેરીયન ફોરિન્ત"
+      :other: "હંગેરીયન ફોરિન્ત"
+      :symbol: HUF
+    :IDR: 
+      :one: "ઇન્ડોનેશિયન રૂપિયા"
+      :other: "ઇન્ડોનેશિયન રૂપિયા"
+      :symbol: IDR
+    :ILS: 
+      :one: "ઇઝરાયેલી ન્યુ શેકલ"
+      :other: "ઇઝરાયેલી ન્યુ શેકલ"
+      :symbol: ₪
+    :INR: 
+      :one: "ભારતીય રૂપિયા"
+      :other: "ભારતીય રૂપિયા"
+      :symbol: ₹
+    :IQD: 
+      :one: "ઇરાકી દિનાર"
+      :other: "ઇરાકી દિનાર"
+      :symbol: IQD
+    :IRR: 
+      :one: "ઇરાનિયન રિયાલ"
+      :other: "ઇરાનિયન રિયાલ"
+      :symbol: IRR
+    :ISK: 
+      :one: "આઇસલેન્ડિક ક્રોના"
+      :other: "આઇસલેન્ડિક ક્રોના"
+      :symbol: ISK
+    :JMD: 
+      :one: "જમૈકિયન ડોલર"
+      :other: "જમૈકિયન ડોલર"
+      :symbol: JMD
+    :JOD: 
+      :one: "જોર્ડનિયન દિનાર"
+      :other: "જોર્ડનિયન દિનાર"
+      :symbol: JOD
+    :JPY: 
+      :one: "જાપાનીઝ યેન"
+      :other: "જાપાનીઝ યેન"
+      :symbol: JP¥
+    :KES: 
+      :one: "કેન્યેન શિલિંગ"
+      :other: "કેન્યેન શિલિંગ"
+      :symbol: KES
+    :KGS: 
+      :one: "કિર્ગિસ્તાની સોમ"
+      :other: "કિર્ગિસ્તાની સોમ"
+      :symbol: KGS
+    :KHR: 
+      :one: "કેમ્બોડિયન રીઅલ"
+      :other: "કેમ્બોડિયન રીઅલ"
+      :symbol: KHR
+    :KMF: 
+      :one: "કોમોરિઅન ફ્રેંક"
+      :other: "કોમોરિઅન ફ્રેંક"
+      :symbol: KMF
+    :KPW: 
+      :one: "ઉત્તર કોરિયન વન"
+      :other: "ઉત્તર કોરિયન વન"
+      :symbol: KPW
+    :KRW: 
+      :one: "દક્ષિણ કોરિયન વન"
+      :other: "દક્ષિણ કોરિયન વન"
+      :symbol: ₩
+    :KWD: 
+      :one: "કુવૈતી દિનાર"
+      :other: "કુવૈતી દિનાર"
+      :symbol: KWD
+    :KYD: 
+      :one: "કેયમેન આઇલેંડ્સ ડોલર"
+      :other: "કેયમેન આઇલેંડ્સ ડોલર"
+      :symbol: KYD
+    :KZT: 
+      :one: "કઝાકિસ્તાની ટેંગ"
+      :other: "કઝાકિસ્તાની ટેંગ"
+      :symbol: KZT
+    :LAK: 
+      :one: "લાઓશિયન કિપ"
+      :other: "લાઓશિયન કિપ"
+      :symbol: LAK
+    :LBP: 
+      :one: "લેબેનિઝ પાઉન્ડ"
+      :other: "લેબેનિઝ પાઉન્ડ"
+      :symbol: LBP
+    :LKR: 
+      :one: "શ્રી લંકન રૂપી"
+      :other: "શ્રી લંકન રૂપી"
+      :symbol: LKR
+    :LRD: 
+      :one: "લિબેરિયન ડોલર"
+      :other: "લિબેરિયન ડોલર"
+      :symbol: LRD
+    :LSL: 
+      :one: "લેસોથો લોતી"
+    :LTL: 
+      :one: "લિથુએનિયન લિતાસ"
+      :other: "લિથુએનિયન લિતાસ"
+      :symbol: LTL
+    :LVL: 
+      :one: "લાતવિયન લેત્સ"
+      :other: "લાતવિયન લેત્સ"
+      :symbol: LVL
+    :LYD: 
+      :one: "લિબ્યન દિનાર"
+      :other: "લિબ્યન દિનાર"
+      :symbol: LYD
+    :MAD: 
+      :one: "મોરોક્કન દિરહામ"
+      :other: "મોરોક્કન દિરહામ"
+      :symbol: MAD
+    :MDL: 
+      :one: "મોલડોવેન લિયુ"
+      :other: "મોલડોવેન લિયુ"
+      :symbol: MDL
+    :MGA: 
+      :one: "માલાગેસી અરીઆરી"
+      :other: "માલાગેસી અરીઆરી"
+      :symbol: MGA
+    :MKD: 
+      :one: "મેસેડોનિયન દિનાર"
+      :other: "મેસેડોનિયન દિનાર"
+      :symbol: MKD
+    :MMK: 
+      :one: "મ્યાંમાર ક્યાત"
+      :other: "મ્યાંમાર ક્યાત"
+      :symbol: MMK
+    :MNT: 
+      :one: "મોંગોલિયન ટગરિક"
+      :other: "મોંગોલિયન ટગરિક"
+      :symbol: MNT
+    :MOP: 
+      :one: "માકાનિઝ પતાકા"
+      :other: "માકાનિઝ પતાકા"
+      :symbol: MOP
+    :MRO: 
+      :one: "મોરીશેનિયન ઓગુયા"
+      :other: "મોરીશેનિયન ઓગુયા"
+      :symbol: MRO
+    :MUR: 
+      :one: "મોરેશીઅન રૂપી"
+      :other: "મોરેશીઅન રૂપી"
+      :symbol: MUR
+    :MVR: 
+      :one: "માલ્દિવિયન રુફિયા"
+      :other: "માલ્દિવિયન રુફિયા"
+      :symbol: MVR
+    :MWK: 
+      :one: "માલાવિયન ક્વાચા"
+      :other: "માલાવિયન ક્વાચા"
+      :symbol: MWK
+    :MXN: 
+      :one: "મેક્સિકન પેસો"
+      :other: "મેક્સિકન પેસો"
+      :symbol: MX$
+    :MYR: 
+      :one: "મલેશિયન રિંગ્ગેટ"
+      :other: "મલેશિયન રિંગ્ગેટ"
+      :symbol: MYR
+    :MZN: 
+      :one: "મોઝામ્બિકન મેટિકલ"
+      :other: "મોઝામ્બિકન મેટિકલ"
+      :symbol: MZN
+    :NAD: 
+      :one: "નામિબિયન ડોલર"
+      :other: "નામિબિયન ડોલર"
+      :symbol: NAD
+    :NGN: 
+      :one: "નાઇજીરિયન નૈરા"
+      :other: "નાઇજીરિયન નૈરા"
+      :symbol: NGN
+    :NIO: 
+      :one: "નિકારાગુઅન કોર્ડોબા"
+      :other: "નિકારાગુઅન કોર્ડોબા"
+      :symbol: NIO
+    :NOK: 
+      :one: "નૉર્વેજિયન ક્રોન"
+      :other: "નૉર્વેજિયન ક્રોન"
+      :symbol: NOK
+    :NPR: 
+      :one: "નેપાલિઝ રૂપી"
+      :other: "નેપાલિઝ રૂપી"
+      :symbol: NPR
+    :NZD: 
+      :one: "ન્યૂઝિલેંડ ડૉલર"
+      :other: "ન્યૂઝિલેંડ ડૉલર"
+      :symbol: NZ$
+    :OMR: 
+      :one: "ઓમાની રિયાલ"
+      :other: "ઓમાની રિયાલ"
+      :symbol: OMR
+    :PAB: 
+      :one: "પનામેનિયન બાલ્બોઆ"
+      :other: "પનામેનિયન બાલ્બોઆ"
+      :symbol: PAB
+    :PEN: 
+      :one: "પેરુવિયન ન્યુવો સોલ"
+      :other: "પેરુવિયન ન્યુવો સોલ"
+      :symbol: PEN
+    :PGK: 
+      :one: "પાપુઆ ન્યૂ ગિનીયન કિના"
+      :other: "પાપુઆ ન્યૂ ગિનીયન કિના"
+      :symbol: PGK
+    :PHP: 
+      :one: "ફિલીપાઇન પેસો"
+      :other: "ફિલીપાઇન પેસો"
+      :symbol: PHP
+    :PKR: 
+      :one: "પાકિસ્તાની રૂપી"
+      :other: "પાકિસ્તાની રૂપી"
+      :symbol: PKR
+    :PLN: 
+      :one: "પોલિસ ઝ્લોટી"
+      :other: "પોલિસ ઝ્લોટી"
+      :symbol: PLN
+    :PYG: 
+      :one: "પરાગ્વેયન ગુઆરાની"
+      :other: "પરાગ્વેયન ગુઆરાની"
+      :symbol: PYG
+    :QAR: 
+      :one: "કતારી રિયાલ"
+      :other: "કતારી રિયાલ"
+      :symbol: QAR
+    :RON: 
+      :one: "રોમાનિયન લેઉ"
+      :other: "રોમાનિયન લેઉ"
+      :symbol: RON
+    :RSD: 
+      :one: "સર્બિયન દિનાર"
+      :other: "સર્બિયન દિનાર"
+      :symbol: RSD
+    :RUB: 
+      :one: "રશિયન રબલ"
+      :other: "રશિયન રબલ"
+      :symbol: RUB
+    :RUR: 
+      :symbol: р.
+    :RWF: 
+      :one: "રવાંડન ફ્રેંક"
+      :other: "રવાંડન ફ્રેંક"
+      :symbol: RWF
+    :SAR: 
+      :one: "સાઉદી રિયાલ"
+      :other: "સાઉદી રિયાલ"
+      :symbol: SAR
+    :SBD: 
+      :one: "સોલોમન આઇલેંડ્સ ડોલર"
+      :other: "સોલોમન આઇલેંડ્સ ડોલર"
+      :symbol: SBD
+    :SCR: 
+      :one: "સેશેલોઈ રૂપી"
+      :other: "સેશેલોઈ રૂપી"
+      :symbol: SCR
+    :SDG: 
+      :one: "સુદાનિઝ પાઉન્ડ"
+      :other: "સુદાનિઝ પાઉન્ડ"
+      :symbol: SDG
+    :SEK: 
+      :one: "સ્વીડિશ ક્રોના"
+      :other: "સ્વીડિશ ક્રોના"
+      :symbol: SEK
+    :SGD: 
+      :one: "સિંગાપુર ડૉલર"
+      :other: "સિંગાપુર ડૉલર"
+      :symbol: SGD
+    :SHP: 
+      :one: "સેંટ હેલેના પાઉન્ડ"
+      :other: "સેંટ હેલેના પાઉન્ડ"
+      :symbol: SHP
+    :SLL: 
+      :one: "સિએરા લિઓનિઅન લિઓન"
+      :other: "સિએરા લિઓનિઅન લિઓન"
+      :symbol: SLL
+    :SOS: 
+      :one: "સોમાલી શિલિંગ"
+      :other: "સોમાલી શિલિંગ"
+      :symbol: SOS
+    :SRD: 
+      :one: "સૂરીનામિઝ ડોલર"
+      :other: "સૂરીનામિઝ ડોલર"
+      :symbol: SRD
+    :SSP: 
+      :one: "દક્ષિણ સુદાનિઝ પાઉન્ડ"
+      :other: "દક્ષિણ સુદાનિઝ પાઉન્ડ"
+      :symbol: SSP
+    :STD: 
+      :one: "સાઓ ટૉમ એન્ડ પ્રિંસાઇપ ડોબ્રા"
+      :other: "સાઓ ટૉમ એન્ડ પ્રિંસાઇપ ડોબ્રા"
+      :symbol: STD
+    :SYP: 
+      :one: "સાઇરિયન પાઉન્ડ"
+      :other: "સાઇરિયન પાઉન્ડ"
+      :symbol: SYP
+    :SZL: 
+      :one: "સ્વાઝી લિલાન્ગેની"
+      :other: "સ્વાઝી લિલાન્ગેની"
+      :symbol: SZL
+    :THB: 
+      :one: "થાઇ બાહ્ત"
+      :other: "થાઇ બાહ્ત"
+      :symbol: ฿
+    :TJS: 
+      :one: "તાજિકિસ્તાની સોમોની"
+      :other: "તાજિકિસ્તાની સોમોની"
+      :symbol: TJS
+    :TMT: 
+      :one: "તુર્કમેનિસ્તાની મનત"
+      :other: "તુર્કમેનિસ્તાની મનત"
+      :symbol: TMT
+    :TND: 
+      :one: "ટ્યુનિશિયન દિનાર"
+      :other: "ટ્યુનિશિયન દિનાર"
+      :symbol: TND
+    :TOP: 
+      :one: "ટોંગન પ’અંગા"
+      :other: "ટોંગન પ’અંગા"
+      :symbol: TOP
+    :TRY: 
+      :one: "તુર્કિશ લિરા"
+      :other: "તુર્કિશ લિરા"
+      :symbol: TRY
+    :TTD: 
+      :one: "ત્રિનિદાદ અને ટોબેગો ડોલર"
+      :other: "ત્રિનિદાદ અને ટોબેગો ડોલર"
+      :symbol: TTD
+    :TWD: 
+      :one: "ન્યુ તાઇવાન ડૉલર"
+      :other: "ન્યુ તાઇવાન ડૉલર"
+      :symbol: NT$
+    :TZS: 
+      :one: "તાન્ઝાનિયન શિલિંગ"
+      :other: "તાન્ઝાનિયન શિલિંગ"
+      :symbol: TZS
+    :UAH: 
+      :one: "યુક્રેનિયન હ્રિવિનિયા"
+      :other: "યુક્રેનિયન હ્રિવિનિયા"
+      :symbol: UAH
+    :UGX: 
+      :one: "યુગાંડન શિલિંગ"
+      :other: "યુગાંડન શિલિંગ"
+      :symbol: UGX
+    :USD: 
+      :one: "યુઍસ ડોલર"
+      :other: "યુઍસ ડોલર"
+      :symbol: US$
+    :UYU: 
+      :one: "ઉરુગ્વેયન પેસો"
+      :other: "ઉરુગ્વેયન પેસો"
+      :symbol: UYU
+    :UZS: 
+      :one: "ઉઝ્બેકિસ્તાન સોમ"
+      :other: "ઉઝ્બેકિસ્તાન સોમ"
+      :symbol: UZS
+    :VEF: 
+      :one: "વેનેઝુએલન બોલિવર"
+      :other: "વેનેઝુએલન બોલિવર"
+      :symbol: VEF
+    :VND: 
+      :one: "વિયેતનામીસ ડોંગ"
+      :other: "વિયેતનામીસ ડોંગ"
+      :symbol: ₫
+    :VUV: 
+      :one: "વનૌતુ વાતુ"
+      :other: "વનૌતુ વાતુ"
+      :symbol: VUV
+    :WST: 
+      :one: "સમોઅન તાલા"
+      :other: "સમોઅન તાલા"
+      :symbol: WST
+    :XAF: 
+      :one: "[CFA] ફ્રેંક [BEAC]"
+      :other: "[CFA] ફ્રેંક [BEAC]"
+      :symbol: FCFA
+    :XCD: 
+      :one: "ઇસ્ટ કેરિબિયન ડોલર"
+      :other: "ઇસ્ટ કેરિબિયન ડોલર"
+      :symbol: EC$
+    :XOF: 
+      :one: "[CFA] ફ્રેંક [BCEAO]"
+      :other: "[CFA] ફ્રેંક [BCEAO]"
+      :symbol: CFA
+    :XPF: 
+      :one: "[CFP] ફ્રેંક"
+      :other: "[CFP] ફ્રેંક"
+      :symbol: CFPF
+    :XXX: 
+      :one: "અજ્ઞાત ચલણ"
+      :other: "અજ્ઞાત ચલણ"
+    :YER: 
+      :one: "યેમેની રિઆલ"
+      :other: "યેમેની રિઆલ"
+      :symbol: YER
+    :ZAR: 
+      :one: "દક્ષિણ આફ્રિકી રેંડ"
+      :other: "દક્ષિણ આફ્રિકી રેંડ"
+      :symbol: ZAR
+    :ZMK: 
+      :one: "ઝામ્બિયન ક્વાચા (1968–2012)"
+    :ZMW: 
+      :one: "ઝામ્બિયન ક્વાચા"
+      :other: "ઝામ્બિયન ક્વાચા"
+      :symbol: ZMW

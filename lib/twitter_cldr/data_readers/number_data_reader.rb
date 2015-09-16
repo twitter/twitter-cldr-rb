@@ -51,7 +51,7 @@ module TwitterCldr
         @format = options[:format] || DEFAULT_FORMAT
       end
 
-      def format_number(number, options = [])
+      def format_number(number, options = {})
         precision = options[:precision] || 0
         pattern_for_number = pattern(number, precision == 0)
 

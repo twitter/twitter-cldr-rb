@@ -16,6 +16,16 @@ describe NumberDataReader do
     end
   end
 
+  describe '#format_number' do
+    it 'works with options' do
+      expect(data_reader.format_number(1000, :precision => 2)).to eq('1,000.00')
+    end
+
+    it "works when options aren't specified" do
+      expect(data_reader.format_number(1000)).to eq('1,000')
+    end
+  end
+
   describe "#pattern" do
     let(:symbols) { { :nan => 'NaN', :minus_sign => '<->' } } # unique locale-specific minus sign
 

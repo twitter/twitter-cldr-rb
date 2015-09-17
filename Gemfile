@@ -10,7 +10,7 @@ group :development, :test do
 
   gem 'ruby-prof' unless RUBY_PLATFORM == "java"
 
-  gem 'regexp_parser', '~> 0.1.6'
+  gem 'regexp_parser', '~> 0.1'
 end
 
 group :development do

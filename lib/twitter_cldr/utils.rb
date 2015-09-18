@@ -11,7 +11,6 @@ module TwitterCldr
     autoload :RangeSet,      'twitter_cldr/utils/range_set'
     autoload :RegexpAst,     'twitter_cldr/utils/regexp_ast'
     autoload :RegexpSampler, 'twitter_cldr/utils/regexp_sampler'
-    autoload :ByteString,    'twitter_cldr/utils/byte_string'
 
     class << self
 

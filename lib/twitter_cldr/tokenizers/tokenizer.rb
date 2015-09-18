@@ -102,7 +102,7 @@ module TwitterCldr
       def splitter
         @splitter ||= (@custom_splitter || begin
           sources = recognizers.map { |rec| rec.regex.source }
-          Regexp.new("(" + sources.join("|") + ")", nil, 'u')
+          Regexp.new("(" + sources.join("|") + ")")
         end)
       end
 

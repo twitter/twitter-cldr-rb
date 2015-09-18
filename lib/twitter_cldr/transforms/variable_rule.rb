@@ -6,7 +6,7 @@
 module TwitterCldr
   module Transforms
 
-    class Variable < Rule
+    class VariableRule < Rule
       class Parser < TwitterCldr::Parsers::Parser
         private
 
@@ -41,7 +41,7 @@ module TwitterCldr
 
           var_name, value_tokens = parser.parse(tokens)
 
-          Variable.new(
+          VariableRule.new(
             var_name, replace_symbols(
               value_tokens, symbol_table
             )

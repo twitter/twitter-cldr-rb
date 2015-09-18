@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Transforms
-    class Conversion < Rule
+    module Conversions
 
       class Parser < TwitterCldr::Parsers::Parser
         private
@@ -15,7 +15,7 @@ module TwitterCldr
           direction = get_direction_from(current_token)
           next_token(:direction)
           second_side = side
-          Conversion.new(direction, first_side, second_side)
+          ConversionRule.new(direction, first_side, second_side)
         end
 
         # a { b | c } d <> e { f | g } h ;

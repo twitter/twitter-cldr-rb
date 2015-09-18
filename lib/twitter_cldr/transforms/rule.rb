@@ -6,6 +6,8 @@
 module TwitterCldr
   module Transforms
 
+    class NotInvertibleError < StandardError; end
+
     # Base class for all transform rules
     class Rule
       class << self
@@ -33,6 +35,31 @@ module TwitterCldr
             end
           end
         end
+      end
+
+      def can_invert?
+        raise NotImplementedError,
+          "#{__method__} must be defined in derived classes"
+      end
+
+      def is_ct_rule?
+        raise NotImplementedError,
+          "#{__method__} must be defined in derived classes"
+      end
+
+      def forward?
+        raise NotImplementedError,
+          "#{__method__} must be defined in derived classes"
+      end
+
+      def backward?
+        raise NotImplementedError,
+          "#{__method__} must be defined in derived classes"
+      end
+
+      def invert
+        raise NotImplementedError,
+          "#{__method__} must be defined in derived classes"
       end
     end
 

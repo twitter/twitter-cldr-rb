@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Transforms
-    class Conversion < Rule
+    module Conversions
 
       class Side
         attr_reader :before_context, :key
@@ -25,7 +25,7 @@ module TwitterCldr
 
         def index_value
           # index value is int value of first byte
-          @index_value ||= key.unpack('C').first
+          @index_value ||= key.getbyte(0)
         end
 
         protected
@@ -35,7 +35,7 @@ module TwitterCldr
             str = TwitterCldr::Shared::UnicodeRegex.compile(
               "#{before_context}#{key}#{after_context}"
             ).to_regexp_str
-            /#{str}/n
+            /#{str}/
           end
         end
       end

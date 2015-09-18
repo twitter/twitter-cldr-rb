@@ -7,11 +7,10 @@ module TwitterCldr
   module Transforms
 
     class Cursor
-      attr_reader :text, :direction, :position, :ranges
+      attr_reader :text, :position, :ranges
 
-      def initialize(text, direction = :forward)
+      def initialize(text)
         set_text(text)
-        @direction = direction
         reset_position
 
         @ranges = TwitterCldr::Utils::RangeSet.new(
@@ -24,7 +23,7 @@ module TwitterCldr
       end
 
       def set_text(new_text)
-        @text = TwitterCldr::Utils::ByteString.new(new_text)
+        @text = new_text
       end
 
       def set_ranges(range_set)

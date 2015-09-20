@@ -13,5 +13,7 @@ module TwitterCldr
     autoload :Conversions,  'twitter_cldr/transforms/conversions'
     autoload :VariableRule, 'twitter_cldr/transforms/variable_rule'
     autoload :Cursor,       'twitter_cldr/transforms/cursor'
+    autoload :Transformer,  'twitter_cldr/transforms/transformer'
+    autoload :Locale,       'twitter_cldr/transforms/transformer'  # @TODO: remove me
   end
 end

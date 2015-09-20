@@ -50,12 +50,9 @@ module TwitterCldr
           self
         end
 
-        def apply_to(cursor)
-          cursor.set_ranges(
-            cursor.ranges.intersection(
-              ranges_for(cursor)
-            )
-          )
+        def matches?(cursor)
+          idx = cursor.text.index(regexp, cursor.position)
+          idx == cursor.position
         end
 
         def forward?
@@ -64,19 +61,6 @@ module TwitterCldr
 
         def backward?
           direction == :backward
-        end
-
-        protected
-
-        def ranges_for(cursor)
-          TwitterCldr::Utils::RangeSet.new(
-            [].tap do |ranges|
-              cursor.text.scan(regexp) do
-                start, finish = Regexp.last_match.offset(0)
-                ranges << (start..(finish - 1))
-              end
-            end
-          )
         end
       end
 

@@ -7,15 +7,11 @@ module TwitterCldr
   module Transforms
 
     class Cursor
-      attr_reader :text, :position, :ranges
+      attr_reader :text, :position
 
       def initialize(text)
         set_text(text)
         reset_position
-
-        @ranges = TwitterCldr::Utils::RangeSet.new(
-          [0..(text.length - 1)]
-        )
       end
 
       def advance(amount = 1)
@@ -24,18 +20,6 @@ module TwitterCldr
 
       def set_text(new_text)
         @text = new_text
-      end
-
-      def set_ranges(range_set)
-        @ranges = range_set
-      end
-
-      def each_range(&block)
-        if block_given?
-          ranges.ranges.each(&block)
-        else
-          to_enum(__method__)
-        end
       end
 
       def reset_position

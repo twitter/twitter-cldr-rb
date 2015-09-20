@@ -19,19 +19,21 @@ module TwitterCldr
       end
 
       def transform(text)
-        binding.pry
         cursor = Cursor.new(text.dup)
-        filter_rule.apply_to(cursor) if filter_rule
 
         until cursor.eos?
-          if rule = find_matching_rule_at(cursor)
-            start = cursor.position
-            stop = cursor.position + rule.original.size
-            cursor.text[start...stop] = rule.replacement
+          if filter_rule && filter_rule.matches?(cursor)
+            if rule = find_matching_rule_at(cursor)
+              start = cursor.position
+              stop = cursor.position + rule.original.size
+              cursor.text[start...stop] = rule.replacement
 
-            cursor.advance(
-              rule.replacement.size + rule.cursor_offset
-            )
+              cursor.advance(
+                rule.replacement.size + rule.cursor_offset
+              )
+            else
+              cursor.advance
+            end
           else
             cursor.advance
           end

@@ -14,11 +14,27 @@ module TwitterCldr
         def load(resource_name)
           rule_groups[resource_name] ||= begin
             resource = resource_for(resource_name)
-            new(parse_resource(resource))
+            direction = direction_from(resource)
+            new(parse_resource(resource), direction)
           end
         end
 
+        def exists?(resource_name)
+          TwitterCldr.resource_exists?(
+            'shared', 'transforms', resource_name
+          )
+        end
+
         protected
+
+        def direction_from(resource)
+          case transform_from(resource)[:direction]
+            when 'both'
+              :bidirectional
+            else
+              :forward
+          end
+        end
 
         def rule_groups
           @rule_groups ||= {}
@@ -75,7 +91,11 @@ module TwitterCldr
         end
 
         def rules_from(resource)
-          resource[:transforms].first[:rules]
+          transform_from(resource)[:rules]
+        end
+
+        def transform_from(resource)
+          resource[:transforms].first
         end
 
         def resource_for(resource_name)
@@ -83,10 +103,16 @@ module TwitterCldr
         end
       end
 
-      attr_reader :rules
+      attr_reader :rules, :direction
 
-      def initialize(rules)
+      def initialize(rules, direction)
         @rules = rules
+        @direction = direction
+      end
+
+      # all rules are either forward or bidirectional
+      def bidirectional?
+        direction == :bidirectional
       end
 
       def forward_rule_set

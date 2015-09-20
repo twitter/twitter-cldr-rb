@@ -52,7 +52,7 @@ describe Loader do
       context 'with a custom resource' do
         before(:each) do
           stub(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
-          stub(loader).resource_exists?('custom/foo/bar.yml') { true }
+          stub(loader).custom_resource_exists?('custom/foo/bar.yml') { true }
           stub(loader).read_resource_file('custom/foo/bar.yml') { ":bar: baz" }
         end
 

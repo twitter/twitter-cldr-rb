@@ -13,35 +13,35 @@ module TwitterCldr
       BASE_PATH = [:units]
 
       PATHS = {
-        :ago => {
-          :default => :'hour-past',
-          :second  => :'second-past',
-          :minute  => :'minute-past',
-          :hour    => :'hour-past',
-          :day     => :'day-past',
-          :week    => :'week-past',
-          :month   => :'month-past',
-          :year    => :'year-past'
+        ago: {
+          default: :'hour-past',
+          second:  :'second-past',
+          minute:  :'minute-past',
+          hour:    :'hour-past',
+          day:     :'day-past',
+          week:    :'week-past',
+          month:   :'month-past',
+          year:    :'year-past'
         },
-        :until => {
-          :default => :'hour-future',
-          :second  => :'second-future',
-          :minute  => :'minute-future',
-          :hour    => :'hour-future',
-          :day     => :'day-future',
-          :week    => :'week-future',
-          :month   => :'month-future',
-          :year    => :'year-future'
+        until: {
+          default: :'hour-future',
+          second:  :'second-future',
+          minute:  :'minute-future',
+          hour:    :'hour-future',
+          day:     :'day-future',
+          week:    :'week-future',
+          month:   :'month-future',
+          year:    :'year-future'
         },
-        :none => {
-          :default => :second,
-          :second  => :second,
-          :minute  => :minute,
-          :hour    => :hour,
-          :day     => :day,
-          :week    => :week,
-          :month   => :month,
-          :year    => :year
+        none: {
+          default: :second,
+          second:  :second,
+          minute:  :minute,
+          hour:    :hour,
+          day:     :day,
+          week:    :week,
+          month:   :month,
+          year:    :year
         }
       }
 

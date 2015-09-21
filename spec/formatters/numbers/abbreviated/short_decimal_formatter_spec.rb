@@ -9,7 +9,7 @@ include TwitterCldr::Formatters
 
 describe ShortDecimalFormatter do
   let(:data_reader) do
-    TwitterCldr::DataReaders::NumberDataReader.new(locale, :type => :short_decimal)
+    TwitterCldr::DataReaders::NumberDataReader.new(locale, type: :short_decimal)
   end
 
   def format_number(number, options = {})
@@ -70,12 +70,12 @@ describe ShortDecimalFormatter do
 
     it "respects the :precision option" do
       number = 12345
-      expect(format_number(number, :precision => 3)).to match_normalized("12.345K")
+      expect(format_number(number, precision: 3)).to match_normalized("12.345K")
     end
 
     it "respects the :precision option for negative numbers" do
       number = -12345
-      expect(format_number(number, :precision => 3)).to match_normalized("-12.345K")
+      expect(format_number(number, precision: 3)).to match_normalized("-12.345K")
     end
   end
 

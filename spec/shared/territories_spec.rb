@@ -121,7 +121,7 @@ describe Territories do
       { "is" => [ { "US" => "United States",
                     5 => "Suður-Ameríka" },
                   { "009" => "Eyjaálfa" } ] }
-    ).should == { :is => [ { :us => "United States" }, { } ] }
+    ).should == { is: [ { us: "United States" }, { } ] }
   end
 
 end

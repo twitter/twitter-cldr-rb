@@ -248,11 +248,11 @@ module TwitterCldr
         @tertiary_bottom_count = total_tertiary_count - @tertiary_top_count
 
         @tertiary_common_space = {
-            :common       => @tertiary_common,
-            :bottom       => @tertiary_bottom,
-            :bottom_count => @tertiary_bottom_count,
-            :top          => @tertiary_top,
-            :top_count    => @tertiary_top_count
+            common:       @tertiary_common,
+            bottom:       @tertiary_bottom,
+            bottom_count: @tertiary_bottom_count,
+            top:          @tertiary_top,
+            top_count:    @tertiary_top_count
         }
       end
 
@@ -275,11 +275,11 @@ module TwitterCldr
       SECONDARY_BOTTOM_COUNT = SECONDARY_TOTAL_COUNT - SECONDARY_TOP_COUNT
 
       SECONDARY_COMMON_SPACE = {
-          :common       => SECONDARY_COMMON,
-          :bottom       => SECONDARY_BOTTOM,
-          :bottom_count => SECONDARY_BOTTOM_COUNT,
-          :top          => SECONDARY_TOP,
-          :top_count    => SECONDARY_TOP_COUNT
+          common:       SECONDARY_COMMON,
+          bottom:       SECONDARY_BOTTOM,
+          bottom_count: SECONDARY_BOTTOM_COUNT,
+          top:          SECONDARY_TOP,
+          top_count:    SECONDARY_TOP_COUNT
       }
 
       # Tertiary level compression constants

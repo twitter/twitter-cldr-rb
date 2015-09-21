@@ -35,8 +35,8 @@ module TwitterCldr
 
       def assert(got, expected)
         if got.is_a?(String) && expected.is_a?(String)
-          got = got.localize.normalize(:using => :NFKC).to_s
-          expected = expected.localize.normalize(:using => :NFKC).to_s
+          got = got.localize.normalize(using: :NFKC).to_s
+          expected = expected.localize.normalize(using: :NFKC).to_s
         end
 
         unless objs_equal?(got, expected)

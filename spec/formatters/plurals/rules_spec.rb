@@ -33,10 +33,10 @@ describe Rules do
 
     it "returns the correct values for Russian rules" do
       rules = {
-          :one  => [1, 101],
-          :few => [2, 3, 4],
-          :many => ((5..11).to_a + [111]),
-          :other  => [10.0, 100.0, 1000.0]
+          one:  [1, 101],
+          few: [2, 3, 4],
+          many: ((5..11).to_a + [111]),
+          other:  [10.0, 100.0, 1000.0]
       }
 
       rules.each do |rule, examples|

@@ -20,7 +20,7 @@ describe 'Unicode Collation Algorithm' do
     run_test(SHORT_COLLATION_TEST_PATH)
   end
 
-  it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE.txt', :slow => true do
+  it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE.txt', slow: true do
     prepare_full_test
     run_test(FULL_COLLATION_TEST_PATH)
   end

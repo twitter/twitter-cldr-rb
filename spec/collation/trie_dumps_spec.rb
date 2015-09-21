@@ -7,7 +7,7 @@ require 'spec_helper'
 
 include TwitterCldr::Collation
 
-describe 'trie dumps', :slow => true do
+describe 'trie dumps', slow: true do
   let(:default_trie) { TrieBuilder.load_default_trie }
   let(:error_message) { 'expected trie dump to be up-to-date.' }
 

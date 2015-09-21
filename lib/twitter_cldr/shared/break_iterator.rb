@@ -145,7 +145,7 @@ module TwitterCldr
         boundary_data[:rules].map do |rule|
           r = segmentation_parser.parse(
             segmentation_tokenizer.tokenize(rule[:value]), {
-              :symbol_table => symbol_table
+              symbol_table: symbol_table
             }
           )
 

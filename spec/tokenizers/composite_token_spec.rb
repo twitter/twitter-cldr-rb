@@ -10,8 +10,8 @@ include TwitterCldr::Tokenizers
 describe CompositeToken do
   describe "#initialize" do
     it "should set an array of tokens" do
-  		token_0 = Token.new(:type => "my_type_0", :value => "my_value_0")
-  		token_1 = Token.new(:type => "my_type_1", :value => "my_value_1")
+  		token_0 = Token.new(type: "my_type_0", value: "my_value_0")
+  		token_1 = Token.new(type: "my_type_1", value: "my_value_1")
 
   		composite_token = CompositeToken.new([token_0, token_1])
   		expect(composite_token.tokens.map { |t| t.type }).to eq(["my_type_0", "my_type_1"])
@@ -19,8 +19,8 @@ describe CompositeToken do
   	end
 
     it "should return content" do
-  		token_0 = Token.new(:type => "my_type_0", :value => "my_value_0")
-  		token_1 = Token.new(:type => "my_type_1", :value => "my_value_1")
+  		token_0 = Token.new(type: "my_type_0", value: "my_value_0")
+  		token_1 = Token.new(type: "my_type_1", value: "my_value_1")
 
   		composite_token = CompositeToken.new([token_0, token_1])
   		expect(composite_token.to_s).to eq("my_value_0my_value_1")

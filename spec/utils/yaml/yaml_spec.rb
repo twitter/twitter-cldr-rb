@@ -65,11 +65,11 @@ describe TwitterCldr::Utils do
     end
 
     it "tests available options" do
-      opt = { :syck_compatible => true }
+      opt = { syck_compatible: true }
       'foobar'.localize.to_yaml(opt)
 
       # dump should not change the option hash
-      expect(opt).to eq({ :syck_compatible => true })
+      expect(opt).to eq({ syck_compatible: true })
 
       [
         [
@@ -77,27 +77,27 @@ describe TwitterCldr::Utils do
           "--- \n- \"\\u0086\"\n- |-\n    a\xe2\x80\xa8    b\xe2\x80\xa9    c\n- |4-\n     abc\n    xyz\n",
         ],
         [
-          { :indent_size => 4 },
+          { indent_size: 4 },
           "--- \n- \"\\u0086\"\n- |-\n        a\xe2\x80\xa8        b\xe2\x80\xa9        c\n- |8-\n         abc\n        xyz\n",
         ],
         [
-          { :minimum_block_length => 16 },
+          { minimum_block_length: 16 },
           "--- \n- \"\\u0086\"\n- \"a\\Lb\\Pc\"\n- \" abc\\nxyz\"\n",
         ],
         [
-          { :printable_with_syck => true },
+          { printable_with_syck: true },
           "--- \n- \"\\u0086\"\n- |-\n    a\xe2\x80\xa8    b\xe2\x80\xa9    c\n- \" abc\\n\\\n    xyz\"\n",
         ],
         [
-          { :escape_b_specific => true },
+          { escape_b_specific: true },
           "--- \n- \"\\u0086\"\n- \"a\\Lb\\Pc\"\n- |4-\n     abc\n    xyz\n",
         ],
         [
-          { :escape_as_utf8 => true },
+          { escape_as_utf8: true },
           "--- \n- \"\\xc2\\x86\"\n- |-\n    a\xe2\x80\xa8    b\xe2\x80\xa9    c\n- |4-\n     abc\n    xyz\n",
         ],
         [
-          { :syck_compatible => true },
+          { syck_compatible: true },
           "--- \n- \"\\xc2\\x86\"\n- \"a\\xe2\\x80\\xa8b\\xe2\\x80\\xa9c\"\n- \" abc\\n\\\n    xyz\"\n",
         ],
       ].each do |opt, yaml|
@@ -124,13 +124,13 @@ describe TwitterCldr::Utils do
           "--- \nb: 2\na: 1\nc: 3\n",
         ],
       ].each do |hash_order, yaml|
-        expect(TwitterCldr::Utils::YAML.dump({ 'a' => 1, 'c' => 3, 'b' => 2 }, :hash_order => hash_order)).to eq(yaml)
+        expect(TwitterCldr::Utils::YAML.dump({ 'a' => 1, 'c' => 3, 'b' => 2 }, hash_order: hash_order)).to eq(yaml)
       end
     end
 
     it "should preserve hash order" do
       h = { 'a' => 1, 'c' => 3, 'b' => 2 }
-      expect(TwitterCldr::Utils::YAML.dump(h, :preserve_order => true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
+      expect(TwitterCldr::Utils::YAML.dump(h, preserve_order: true)).to eq("--- \na: 1\nc: 3\nb: 2\n")
     end
 
     it "tests normalization of line breaks" do
@@ -147,7 +147,7 @@ describe TwitterCldr::Utils do
         ["\r\xe2\x80\xa8\r\n", "--- \"\\n\\L\\n\"\n"],
         ["\r\xe2\x80\xa9\r\n", "--- \"\\n\\P\\n\"\n"],
       ].each do |src, yaml|
-        expect(src.localize.to_yaml(:minimum_block_length => 16)).to eq(yaml)
+        expect(src.localize.to_yaml(minimum_block_length: 16)).to eq(yaml)
       end
     end
 
@@ -196,8 +196,8 @@ describe TwitterCldr::Utils do
             (c = [ucs_code + ofs].pack('U'))
             next unless c.valid_encoding? if c.respond_to? :valid_encoding?
             y = c.localize.to_yaml(
-              :escape_b_specific => true,
-              :escape_as_utf8    => true
+              escape_b_specific: true,
+              escape_as_utf8:    true
             )
 
             r = YAML.load(y)
@@ -269,7 +269,7 @@ describe TwitterCldr::Utils do
       ].each do |c|
         ['', 'hoge'].each do |ext|
           src = (c.class == String) ? (c + ext) : c
-          y = TwitterCldr::Utils::YAML.dump(src, :escape_as_utf8 => true)
+          y = TwitterCldr::Utils::YAML.dump(src, escape_as_utf8: true)
           r = YAML.load(y)
 
           if (RUBY_VERSION >= "2.0.0" || RUBY_PLATFORM == "java") && c.is_a?(String) && c.downcase == "null"
@@ -290,9 +290,9 @@ describe TwitterCldr::Utils do
         	  chars.each do |k|
         	    src = [i, j, k].join
         	    y = TwitterCldr::Utils::YAML.dump(src,
-        	      :printable_with_syck => true,
-        	      :escape_b_specific   => true,
-        	      :escape_as_utf8      => true
+        	      printable_with_syck: true,
+        	      escape_b_specific:   true,
+        	      escape_as_utf8:      true
         	    )
         	    r = YAML.load(y)
         	    expect(src).to eq(r)
@@ -315,12 +315,12 @@ describe TwitterCldr::Utils do
 
     it "tests successful roundtrip of natural symbols" do
       symbol1 = :"Batman: The Dark Knight - Why So Serious?!"
-      result_symbol1 = YAML.load(TwitterCldr::Utils::YAML.dump(symbol1, :use_natural_symbols => true))
+      result_symbol1 = YAML.load(TwitterCldr::Utils::YAML.dump(symbol1, use_natural_symbols: true))
       expect(symbol1).to eq(result_symbol1)
 
       symbol2 = :batman
-      expect(TwitterCldr::Utils::YAML.dump(symbol2, :use_natural_symbols => true)).to include(":batman")
-      result_symbol2 = YAML.load(TwitterCldr::Utils::YAML.dump(symbol2, :use_natural_symbols => true))
+      expect(TwitterCldr::Utils::YAML.dump(symbol2, use_natural_symbols: true)).to include(":batman")
+      result_symbol2 = YAML.load(TwitterCldr::Utils::YAML.dump(symbol2, use_natural_symbols: true))
       expect(symbol2).to eq(result_symbol2)
     end
 
@@ -372,7 +372,7 @@ describe TwitterCldr::Utils do
           else
             obj
         end
-        y = TwitterCldr::Utils::YAML.dump(src, :syck_compatible => true)
+        y = TwitterCldr::Utils::YAML.dump(src, syck_compatible: true)
         r = YAML.load(y)
         expect(src).to eq(r)
       end
@@ -401,7 +401,7 @@ describe TwitterCldr::Utils do
         [Date.today, -9.011, 0.023, 4, -5, {1=>-2, -1=>@text, '_foo'=>'bar', 'ぬお-ぬお'=>321}],
         {1=>-2, -1=>@gif, '_foo'=>'bar', 'ぬお-ぬお'=>321},
       ].each do |src|
-        y = TwitterCldr::Utils::YAML.dump(src, :syck_compatible => true)
+        y = TwitterCldr::Utils::YAML.dump(src, syck_compatible: true)
         r = YAML.load(y)
         expect(src).to eq(r)
       end

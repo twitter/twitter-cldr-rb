@@ -25,9 +25,9 @@ describe LocalizedTime do
       )
 
       #time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      time.localize(:th, :calendar_type => :buddhist).to_long_s
-      time.localize(:th, :calendar_type => :buddhist).to_medium_s
-      time.localize(:th, :calendar_type => :buddhist).to_short_s
+      time.localize(:th, calendar_type: :buddhist).to_long_s
+      time.localize(:th, calendar_type: :buddhist).to_medium_s
+      time.localize(:th, calendar_type: :buddhist).to_short_s
     end
   end
 

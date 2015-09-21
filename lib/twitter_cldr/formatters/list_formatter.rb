@@ -51,7 +51,7 @@ module TwitterCldr
           result.gsub!(/\{(\d+)\}/) { $1 }  # unfortunately "{" and "}" are weak types - must replace
 
           if TwitterCldr::Shared::Languages.is_rtl?(@locale)
-            result = result.localize.to_reordered_s(:direction => :RTL)
+            result = result.localize.to_reordered_s(direction: :RTL)
           end
 
           result.gsub!(/(\d+)/) { elements[$1.to_i] }

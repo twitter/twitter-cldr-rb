@@ -10,7 +10,7 @@ include TwitterCldr::Tokenizers
 describe Token do
   describe "#initialize" do
     it "should set instance variables passed in the options hash" do
-      token = Token.new(:type => "my_type", :value => "my_value")
+      token = Token.new(type: "my_type", value: "my_value")
       expect(token.type).to eq("my_type")
       expect(token.value).to eq("my_value")
     end
@@ -18,7 +18,7 @@ describe Token do
 
   describe "#to_s" do
     it "should return the token's value" do
-      expect(Token.new(:value => "my_value").to_s).to eq("my_value")
+      expect(Token.new(value: "my_value").to_s).to eq("my_value")
     end
   end
 end

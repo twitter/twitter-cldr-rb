@@ -37,8 +37,8 @@ module TwitterCldr
 
         postal_codes = postal_codes.each_with_object({}) do |(territory, regex), memo|
           memo[territory] = {
-            :regex => regex,
-            :ast => TwitterCldr::Utils::RegexpAst.dump(
+            regex: regex,
+            ast: TwitterCldr::Utils::RegexpAst.dump(
               RegexpAstGenerator.generate(regex.source)
             )
           }

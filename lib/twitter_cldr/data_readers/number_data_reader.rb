@@ -18,12 +18,12 @@ module TwitterCldr
       SYMBOL_PATH = [:numbers, :symbols]
 
       TYPE_PATHS = {
-        :default       => [:decimal, :patterns],
-        :decimal       => [:decimal, :patterns],
-        :long_decimal  => [:decimal, :patterns, :long],
-        :short_decimal => [:decimal, :patterns, :short],
-        :currency      => [:currency, :patterns],
-        :percent       => [:percent, :patterns]
+        default:       [:decimal, :patterns],
+        decimal:       [:decimal, :patterns],
+        long_decimal:  [:decimal, :patterns, :long],
+        short_decimal: [:decimal, :patterns, :short],
+        currency:      [:currency, :patterns],
+        percent:       [:percent, :patterns]
       }
 
       ABBREVIATED_TYPES = [:long_decimal, :short_decimal]

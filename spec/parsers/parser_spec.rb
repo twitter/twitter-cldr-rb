@@ -15,9 +15,9 @@ describe Parser do
   let(:parser) { FakeParser.new }
   let(:tokens) do
     [
-      Token.new(:type => :a, :value => "a"),
-      Token.new(:type => :b, :value => "b"),
-      Token.new(:type => :c, :value => "c")
+      Token.new(type: :a, value: "a"),
+      Token.new(type: :b, value: "b"),
+      Token.new(type: :c, value: "c")
     ]
   end
 

@@ -47,8 +47,8 @@ module TwitterCldr
 
       def make_token(type, value = nil)
         TwitterCldr::Tokenizers::Token.new({
-          :type => type,
-          :value => value
+          type: type,
+          value: value
         })
       end
 

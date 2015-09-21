@@ -25,10 +25,10 @@ describe Currencies do
       data = Currencies.for_code("PEN")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        :name        => "Peruvian nuevo sol",
-        :currency    => :PEN,
-        :symbol      => "S/.",
-        :cldr_symbol => "PEN"
+        name:        "Peruvian nuevo sol",
+        currency:    :PEN,
+        symbol:      "S/.",
+        cldr_symbol: "PEN"
       )
     end
 
@@ -36,10 +36,10 @@ describe Currencies do
       data = Currencies.for_code("CAD")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        :name        => "Canadian dollar",
-        :currency    => :CAD,
-        :symbol      => "$",
-        :cldr_symbol => "CA$"
+        name:        "Canadian dollar",
+        currency:    :CAD,
+        symbol:      "$",
+        cldr_symbol: "CA$"
       )
     end
 

@@ -48,9 +48,9 @@ end
 RSpec.configure do |config|
   config.mock_with :rr
 
-  config.filter_run(:focus => true)
+  config.filter_run(focus: true)
   config.run_all_when_everything_filtered = true
-  config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
+  config.filter_run_excluding(slow: true) unless ENV['FULL_SPEC']
 
   config.before(:each) do
     TwitterCldr.reset_locale_fallbacks
@@ -62,7 +62,7 @@ end
 
 RSpec::Matchers.define :match_normalized do |expected|
   match do |actual|
-    expected.localize.normalize(:using => :NFKC).to_s == actual.localize.normalize(:using => :NFKC).to_s
+    expected.localize.normalize(using: :NFKC).to_s == actual.localize.normalize(using: :NFKC).to_s
   end
 end
 

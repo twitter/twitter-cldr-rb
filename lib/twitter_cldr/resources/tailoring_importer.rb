@@ -25,11 +25,11 @@ module TwitterCldr
 
       LOCALES_MAP = {
         :'zh-Hant' => :'zh_Hant',
-        id: :root,
-        it: :root,
-        ms: :root,
-        nl: :root,
-        pt: :root
+        :id => :root,
+        :it => :root,
+        :ms => :root,
+        :nl => :root,
+        :pt => :root
       }
 
       EMPTY_TAILORING_DATA = {

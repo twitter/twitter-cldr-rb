@@ -41,10 +41,10 @@ module TwitterCldr
   # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
-      msa:     :ms,
+      :msa     => :ms,
       :'zh-cn' => :zh,
       :'zh-tw' => :'zh-Hant',
-      no:      :nb
+      :no      => :nb
   }
 
   # maps cldr locales to twitter locales

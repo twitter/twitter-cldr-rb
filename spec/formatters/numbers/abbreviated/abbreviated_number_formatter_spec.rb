@@ -9,7 +9,7 @@ include TwitterCldr::Formatters
 include TwitterCldr::Tokenizers
 
 describe AbbreviatedNumberFormatter do
-  let(:formatter) { AbbreviatedNumberFormatter.new(:locale => :en) }
+  let(:formatter) { AbbreviatedNumberFormatter.new(locale: :en) }
   let(:number) { 123456 }
 
   describe "#truncate_number" do

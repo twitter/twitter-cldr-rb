@@ -21,7 +21,7 @@ describe Loader do
 
     it 'symbolizes hash keys' do
       stub_resource_file(resource_path, "---\n:a:\n  :b: 3\n")
-      expect(loader.get_resource(:random, :resource)).to eq({ :a => { :b => 3 } })
+      expect(loader.get_resource(:random, :resource)).to eq({ a: { b: 3 } })
     end
 
     it 'loads the resource only once' do
@@ -46,7 +46,7 @@ describe Loader do
     context 'custom resources' do
       it "doesn't merge the custom resource if it doesn't exist" do
         mock(loader).read_resource_file('foo/bar.yml') { ":foo: bar" }
-        expect(loader.get_resource(:foo, :bar)).to eq({ :foo => "bar" })
+        expect(loader.get_resource(:foo, :bar)).to eq({ foo: "bar" })
       end
 
       context 'with a custom resource' do
@@ -61,12 +61,12 @@ describe Loader do
           mock.proxy(loader).load_resource("foo/bar.yml")
           mock.proxy(loader).load_resource("custom/foo/bar.yml", false)
 
-          expect(loader.get_resource(:foo, :bar)).to eq({ :foo => "bar", :bar => "baz" })
+          expect(loader.get_resource(:foo, :bar)).to eq({ foo: "bar", bar: "baz" })
         end
 
         it 'does not merge the custom resource if custom resources are disabled' do
           TwitterCldr.disable_custom_locale_resources = true
-          expect(loader.get_resource(:foo, :bar)).to eq({ :foo => "bar" })
+          expect(loader.get_resource(:foo, :bar)).to eq({ foo: "bar" })
           TwitterCldr.disable_custom_locale_resources = false
         end
       end

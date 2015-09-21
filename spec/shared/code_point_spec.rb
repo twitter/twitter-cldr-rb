@@ -177,10 +177,10 @@ describe CodePoint do
     before(:each) do
       stub(CodePoint).hangul_blocks {
         {
-          :lparts       => [1..10],
-          :vparts       => [21..30],
-          :tparts       => [41..50],
-          :compositions => [1..50]
+          lparts:       [1..10],
+          vparts:       [21..30],
+          tparts:       [41..50],
+          compositions: [1..50]
         }
       }
     end

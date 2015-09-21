@@ -112,7 +112,7 @@ module TwitterCldr
 
       def self.begin_token
         @begin_token ||= TwitterCldr::Tokenizers::Token.new(
-          :type => :special_char, :value => "\\A"
+          type: :special_char, value: "\\A"
         )
       end
 

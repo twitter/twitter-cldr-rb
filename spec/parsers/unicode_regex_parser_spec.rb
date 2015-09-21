@@ -32,7 +32,7 @@ describe UnicodeRegexParser do
 
     it "replaces variables" do
       symbol_table = SymbolTable.new("$VAR" => tokenize("\\p{L}"))
-      elements = parse(tokenize("($VAR)?"), :symbol_table => symbol_table)
+      elements = parse(tokenize("($VAR)?"), symbol_table: symbol_table)
       expect(elements[1]).to be_a(UnicodeRegexParser::CharacterSet)
       expect(elements[1].property_value).to eq("L")
     end

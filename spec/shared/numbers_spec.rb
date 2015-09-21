@@ -9,21 +9,21 @@ include TwitterCldr::Shared
 
 describe Numbers do
   describe "#symbols" do
-    let(:symbols) { { :nan => 'NaN', :minus_sign => '-' } }
+    let(:symbols) { { nan: 'NaN', minus_sign: '-' } }
 
     it 'returns numerical symbols for default locale' do
       stub(TwitterCldr).locale { :jp }
-      stub(TwitterCldr).get_locale_resource(:jp, :numbers) { { :jp => { :numbers => { :symbols => symbols } } } }
+      stub(TwitterCldr).get_locale_resource(:jp, :numbers) { { jp: { numbers: { symbols: symbols } } } }
       expect(TwitterCldr::Shared::Numbers.symbols).to eq(symbols)
     end
 
     it 'returns numerical symbols for default locale' do
-      stub(TwitterCldr).get_locale_resource(:np, :numbers) { { :np => { :numbers => { :symbols => symbols } } } }
+      stub(TwitterCldr).get_locale_resource(:np, :numbers) { { np: { numbers: { symbols: symbols } } } }
       expect(TwitterCldr::Shared::Numbers.symbols(:np)).to eq(symbols)
     end
 
     it 'converts locale' do
-      stub(TwitterCldr).get_locale_resource(:'zh-Hant', :numbers) { { :'zh-Hant' => { :numbers => { :symbols => symbols } } } }
+      stub(TwitterCldr).get_locale_resource(:'zh-Hant', :numbers) { { :'zh-Hant' => { numbers: { symbols: symbols } } } }
       expect(TwitterCldr::Shared::Numbers.symbols('zh-tw')).to eq(symbols)
     end
 

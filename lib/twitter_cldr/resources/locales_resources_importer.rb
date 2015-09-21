@@ -51,10 +51,10 @@ module TwitterCldr
 
       def import_components
         export_args = {
-          :locales => TwitterCldr.supported_locales,
-          :components => LOCALE_COMPONENTS,
-          :target => File.join(@output_path, 'locales'),
-          :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+          locales: TwitterCldr.supported_locales,
+          components: LOCALE_COMPONENTS,
+          target: File.join(@output_path, 'locales'),
+          merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
 
         locales = Set.new
@@ -69,9 +69,9 @@ module TwitterCldr
         end
 
         export_args = {
-          :components => SHARED_COMPONENTS,
-          :target => File.join(@output_path, 'shared'),
-          :merge => true
+          components: SHARED_COMPONENTS,
+          target: File.join(@output_path, 'shared'),
+          merge: true
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
@@ -89,7 +89,7 @@ module TwitterCldr
           output.write(
             TwitterCldr::Utils::YAML.dump(
               TwitterCldr::Utils.deep_symbolize_keys(data),
-              :use_natural_symbols => true
+              use_natural_symbols: true
             )
           )
         end
@@ -127,8 +127,8 @@ module TwitterCldr
           end
 
           ret[rule_type.to_sym] = {
-            :rule => rule_list.to_code(:ruby),
-            :names => rule_list.rules.map(&:name) + [:other]
+            rule: rule_list.to_code(:ruby),
+            names: rule_list.rules.map(&:name) + [:other]
           }
 
           ret

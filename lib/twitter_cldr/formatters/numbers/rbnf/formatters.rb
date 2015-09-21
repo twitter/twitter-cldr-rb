@@ -95,7 +95,7 @@ module TwitterCldr
             @decimal_tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(@data_reader)
             decimal_tokens = @decimal_tokenizer.tokenize(decimal_format)
             @decimal_formatter ||= TwitterCldr::Formatters::NumberFormatter.new(@data_reader)
-            @decimal_formatter.format(decimal_tokens, number, :type => :decimal)
+            @decimal_formatter.format(decimal_tokens, number, type: :decimal)
           else
             RuleFormatter.format(number, rule_set, rule_group, locale)
           end

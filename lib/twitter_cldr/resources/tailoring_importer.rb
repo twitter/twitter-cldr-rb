@@ -33,9 +33,9 @@ module TwitterCldr
       }
 
       EMPTY_TAILORING_DATA = {
-        :collator_options => {},
-        :tailored_table => '',
-        :suppressed_contractions => ''
+        collator_options: {},
+        tailored_table: '',
+        suppressed_contractions: ''
       }
 
       class ImportError < RuntimeError; end
@@ -117,9 +117,9 @@ module TwitterCldr
         end
 
         {
-            :collator_options        => parse_collator_options(collation_rules),
-            :tailored_table          => parse_tailorings(collation_rules, locale),
-            :suppressed_contractions => parse_suppressed_contractions(collation_rules)
+            collator_options:        parse_collator_options(collation_rules),
+            tailored_table:          parse_tailorings(collation_rules, locale),
+            suppressed_contractions: parse_suppressed_contractions(collation_rules)
         }
       end
 

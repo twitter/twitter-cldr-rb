@@ -18,23 +18,23 @@ describe TwitterCldr::Normalization do
 
     it "uses specified algorithm if there is any" do
       mock(Eprun).normalize(string, :nfkd) { normalized_string }
-      expect(TwitterCldr::Normalization.normalize(string, :using => :nfkd)).to eq(normalized_string)
+      expect(TwitterCldr::Normalization.normalize(string, using: :nfkd)).to eq(normalized_string)
     end
 
     it "raises an ArgumentError if passed an unsupported normalizer name" do
       expect do
-        TwitterCldr::Normalization.normalize(string, :using => :blarg)
+        TwitterCldr::Normalization.normalize(string, using: :blarg)
       end.to raise_error(ArgumentError)
     end
 
     it 'accepts normalizer name in upper case' do
       mock(Eprun).normalize(string, :nfkd) { normalized_string }
-      expect(TwitterCldr::Normalization.normalize(string, :using => :NFKD)).to eq(normalized_string)
+      expect(TwitterCldr::Normalization.normalize(string, using: :NFKD)).to eq(normalized_string)
     end
 
     it 'accepts a string' do
       mock(Eprun).normalize(string, :nfkd) { normalized_string }
-      expect(TwitterCldr::Normalization.normalize(string, :using => 'nfkd')).to eq(normalized_string)
+      expect(TwitterCldr::Normalization.normalize(string, using: 'nfkd')).to eq(normalized_string)
     end
 
   end

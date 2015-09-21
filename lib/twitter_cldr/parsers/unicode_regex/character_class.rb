@@ -11,7 +11,7 @@ module TwitterCldr
       class CharacterClass < Component
 
         GROUPING_PAIRS = {
-          :close_bracket => :open_bracket
+          close_bracket: :open_bracket
         }
 
         # Character classes can include set operations (eg. union, intersection, etc).      

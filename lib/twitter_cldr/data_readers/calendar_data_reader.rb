@@ -10,11 +10,11 @@ module TwitterCldr
       DEFAULT_TYPE = :medium
 
       TYPE_PATHS = {
-        :full       => [:full, :pattern],
-        :long       => [:long, :pattern],
-        :medium     => [:medium, :pattern],
-        :short      => [:short, :pattern],
-        :additional => [:additional_formats]
+        full:       [:full, :pattern],
+        long:       [:long, :pattern],
+        medium:     [:medium, :pattern],
+        short:      [:short, :pattern],
+        additional: [:additional_formats]
       }
 
       class << self
@@ -63,8 +63,8 @@ module TwitterCldr
           resource[:calendars].each_pair do |calendar_type, options|
             next if calendar_type == TwitterCldr::DEFAULT_CALENDAR_TYPE
             mirror_resource(
-              :from => resource[:calendars][TwitterCldr::DEFAULT_CALENDAR_TYPE],
-              :to   => resource[:calendars][calendar_type]
+              from: resource[:calendars][TwitterCldr::DEFAULT_CALENDAR_TYPE],
+              to:   resource[:calendars][calendar_type]
             )
           end
           resource
@@ -80,7 +80,7 @@ module TwitterCldr
             to[key] = from[key]
           else
             if to[key].is_a?(Hash) and from[key].is_a?(Hash)
-              mirror_resource(:from => from[key], :to => to[key])
+              mirror_resource(from: from[key], to: to[key])
             end
           end
         end

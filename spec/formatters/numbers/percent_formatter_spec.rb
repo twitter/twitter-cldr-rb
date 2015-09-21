@@ -8,7 +8,7 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe PercentFormatter do
-  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:da, :type => :percent) }
+  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:da, type: :percent) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
   let(:negative_number) { -12 }
@@ -29,6 +29,6 @@ describe PercentFormatter do
   it "should respect the :precision option" do
     pattern = data_reader.pattern(negative_number)
     tokens = tokenizer.tokenize(pattern)
-    expect(formatter.format(tokens, negative_number, :precision => 3)).to match_normalized("-12,000 %")
+    expect(formatter.format(tokens, negative_number, precision: 3)).to match_normalized("-12,000 %")
   end
 end

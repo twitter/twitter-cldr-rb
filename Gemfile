@@ -16,7 +16,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', path: '~/workspace/ruby-cldr' # :github => 'kl-7/ruby-cldr', :branch => 'kl_nubmber_patttern_pluralization'
+  gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
   gem 'i18n', '~> 0.6.11'
   gem 'cldr-plurals', '~> 1.0.0'
 end
@@ -26,7 +26,7 @@ group :test do
   gem 'rr',    '~> 1.1.2'
 
   gem 'rubyzip'
-  gem 'coveralls', :require => false
+  gem 'coveralls', require: false
 
   gem 'simplecov'
   gem 'launchy'

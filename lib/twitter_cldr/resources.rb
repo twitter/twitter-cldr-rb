@@ -21,6 +21,7 @@ module TwitterCldr
     autoload :TailoringImporter,                  'twitter_cldr/resources/tailoring_importer'
     autoload :UnicodeDataImporter,                'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodePropertiesImporter,          'twitter_cldr/resources/unicode_properties_importer'
+    autoload :UnicodeScriptsImporter,             'twitter_cldr/resources/unicode_scripts_importer'
     autoload :BidiTestImporter,                   'twitter_cldr/resources/bidi_test_importer'
     autoload :NormalizationQuickCheckImporter,    'twitter_cldr/resources/normalization_quick_check_importer'
     autoload :RbnfTestImporter,                   'twitter_cldr/resources/rbnf_test_importer'

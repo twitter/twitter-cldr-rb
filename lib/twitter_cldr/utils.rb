@@ -8,7 +8,9 @@ module TwitterCldr
 
     autoload :CodePoints,     'twitter_cldr/utils/code_points'
     autoload :YAML,           'twitter_cldr/utils/yaml'
+    autoload :RangeHelpers,   'twitter_cldr/utils/range_helpers'
     autoload :RangeSet,       'twitter_cldr/utils/range_set'
+    autoload :RangeHash,      'twitter_cldr/utils/range_hash'
     autoload :RegexpAst,      'twitter_cldr/utils/regexp_ast'
     autoload :RegexpSampler,  'twitter_cldr/utils/regexp_sampler'
     autoload :ScriptDetector, 'twitter_cldr/utils/script_detector'

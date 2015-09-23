@@ -156,7 +156,9 @@ module TwitterCldr
         union(range_set).subtract(intersection(range_set))
       end
 
-      private
+      protected
+
+      include RangeHelpers
 
       def flatten
         return if ranges.size <= 1
@@ -185,20 +187,6 @@ module TwitterCldr
         end
 
         @ranges = new_ranges
-      end
-
-      # returns true if range1 and range2 are within 1 of each other
-      def adjacent?(range1, range2)
-        is_numeric_range?(range1) && is_numeric_range?(range2) &&
-          (range1.last == range2.first - 1 || range2.first == range1.last + 1)
-      end
-
-      def overlap?(range1, range2)
-        is_numeric_range?(range1) && is_numeric_range?(range2) && (
-          (range1.last >= range2.first && range1.last <= range2.last) ||
-          (range1.first >= range2.first && range1.first <= range2.last) ||
-          (range1.first <= range2.first && range1.last >= range2.last)
-        )
       end
 
       def find_intersection(range1, range2)
@@ -231,10 +219,6 @@ module TwitterCldr
         end
 
         result.reject { |r| r.first > r.last }
-      end
-
-      def is_numeric_range?(range)
-        range.first.is_a?(Numeric) && range.last.is_a?(Numeric)
       end
 
     end

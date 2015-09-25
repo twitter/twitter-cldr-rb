@@ -9,7 +9,7 @@ include TwitterCldr::Shared
 
 describe BreakIterator do
   describe "#each_sentence" do
-    let(:iterator) { BreakIterator.new(:en, :use_uli_exceptions => true) }
+    let(:iterator) { BreakIterator.new(:en, use_uli_exceptions: true) }
 
     it "should return an enumerator if called without a block" do
       expect(iterator.each_sentence("foo bar")).to be_a(Enumerator)
@@ -57,7 +57,7 @@ describe BreakIterator do
     end
 
     context "without ULI exceptions" do
-      let(:iterator) { BreakIterator.new(:en, :use_uli_exceptions => false) }
+      let(:iterator) { BreakIterator.new(:en, use_uli_exceptions: false) }
 
       it "splits on certain abbreviations like Mr. and Mrs. (use ULI rules to avoid this behavior)" do
         str = "I really like Mrs. Patterson. She's nice."

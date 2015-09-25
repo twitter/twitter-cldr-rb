@@ -68,12 +68,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_locale_resource { { :de => { :calendars => { :gregorian => { :months => { :'stand-alone' => {} } } } } } }
+        stub(TwitterCldr).get_locale_resource { { de: { calendars: { gregorian: { months: { :'stand-alone' => {} } } } } } }
         expect(calendar.months(:wide)).to eq(nil)
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_locale_resource { { :de => {} } }
+        stub(TwitterCldr).get_locale_resource { { de: {} } }
         expect(calendar.months(:wide)).to eq(nil)
       end
     end
@@ -83,41 +83,41 @@ describe Calendar do
     context 'when data is available' do
       it 'returns weekdays list in a wide names form by default' do
         expect(calendar.weekdays).to eq({
-            :sun => 'Sonntag',
-            :mon => 'Montag',
-            :tue => 'Dienstag',
-            :wed => 'Mittwoch',
-            :thu => 'Donnerstag',
-            :fri => 'Freitag',
-            :sat => 'Samstag'
+            sun: 'Sonntag',
+            mon: 'Montag',
+            tue: 'Dienstag',
+            wed: 'Mittwoch',
+            thu: 'Donnerstag',
+            fri: 'Freitag',
+            sat: 'Samstag'
         })
       end
 
       it 'supports wide names form' do
         expect(calendar.weekdays(:wide)).to eq({
-            :sun => 'Sonntag',
-            :mon => 'Montag',
-            :tue => 'Dienstag',
-            :wed => 'Mittwoch',
-            :thu => 'Donnerstag',
-            :fri => 'Freitag',
-            :sat => 'Samstag'
+            sun: 'Sonntag',
+            mon: 'Montag',
+            tue: 'Dienstag',
+            wed: 'Mittwoch',
+            thu: 'Donnerstag',
+            fri: 'Freitag',
+            sat: 'Samstag'
         })
       end
 
       it 'supports narrow names form' do
-        expect(calendar.weekdays(:narrow)).to eq({ :sun => 'S', :mon => 'M', :tue => 'D', :wed => 'M', :thu => 'D', :fri => 'F', :sat => 'S' })
+        expect(calendar.weekdays(:narrow)).to eq({ sun: 'S', mon: 'M', tue: 'D', wed: 'M', thu: 'D', fri: 'F', sat: 'S' })
       end
 
       it 'supports abbreviated names form' do
         expect(calendar.weekdays(:abbreviated)).to eq({
-            :sun => 'So',
-            :mon => 'Mo',
-            :tue => 'Di',
-            :wed => 'Mi',
-            :thu => 'Do',
-            :fri => 'Fr',
-            :sat => 'Sa'
+            sun: 'So',
+            mon: 'Mo',
+            tue: 'Di',
+            wed: 'Mi',
+            thu: 'Do',
+            fri: 'Fr',
+            sat: 'Sa'
         })
       end
 
@@ -128,12 +128,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_locale_resource { { :de => { :calendars => { :gregorian => { :days => { :'stand-alone' => {} } } } } } }
+        stub(TwitterCldr).get_locale_resource { { de: { calendars: { gregorian: { days: { :'stand-alone' => {} } } } } } }
         expect(calendar.weekdays(:wide)).to eq(nil)
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_locale_resource { { :de => {} } }
+        stub(TwitterCldr).get_locale_resource { { de: {} } }
         expect(calendar.weekdays(:wide)).to eq(nil)
       end
     end
@@ -232,12 +232,12 @@ describe Calendar do
 
   describe '#methods_for_tokens' do
     it 'converts pattern tokens into their corresponding method names' do
-      tokens = [TwitterCldr::Tokenizers::Token.new(:value => "YYYY", :type => :pattern)]
+      tokens = [TwitterCldr::Tokenizers::Token.new(value: "YYYY", type: :pattern)]
       expect(calendar.send(:methods_for_tokens, tokens)).to eq([:year_of_week_of_year])
     end
 
     it 'ignores plaintext tokens' do
-      tokens = [TwitterCldr::Tokenizers::Token.new(:value => "blarg", :type => :plaintext)]
+      tokens = [TwitterCldr::Tokenizers::Token.new(value: "blarg", type: :plaintext)]
       expect(calendar.send(:methods_for_tokens, tokens)).to eq([])
     end
   end

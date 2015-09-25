@@ -28,30 +28,30 @@ describe NumberParser do
 
   describe "#identify" do
     it "properly identifies a numeric value" do
-      expect(@parser.send(:identify, "7841", *separators)).to eq({ :value => "7841", :type => :numeric })
+      expect(@parser.send(:identify, "7841", *separators)).to eq({ value: "7841", type: :numeric })
     end
 
     it "properly identifies a decimal separator" do
-      expect(@parser.send(:identify, ",", *separators)).to eq({ :value => ",", :type => :decimal })
+      expect(@parser.send(:identify, ",", *separators)).to eq({ value: ",", type: :decimal })
     end
 
     it "properly identifies a group separator" do
-      expect(@parser.send(:identify, ".", *separators)).to eq({ :value => ".", :type => :group })
+      expect(@parser.send(:identify, ".", *separators)).to eq({ value: ".", type: :group })
     end
 
     it "returns nil if the text doesn't match a number or either separators" do
-      expect(@parser.send(:identify, "abc", *separators)).to eq({ :value => "abc", :type => nil })
+      expect(@parser.send(:identify, "abc", *separators)).to eq({ value: "abc", type: nil })
     end
   end
 
   describe "#tokenize" do
     it "splits text by numericality and group/decimal separators" do
       expect(@parser.send(:tokenize, "1,33.00", *separators)).to eq([
-        { :value => "1",  :type => :numeric },
-        { :value => ",",  :type => :decimal },
-        { :value => "33", :type => :numeric },
-        { :value => ".",  :type => :group },
-        { :value => "00", :type => :numeric }
+        { value: "1",  type: :numeric },
+        { value: ",",  type: :decimal },
+        { value: "33", type: :numeric },
+        { value: ".",  type: :group },
+        { value: "00", type: :numeric }
       ])
     end
 
@@ -152,7 +152,7 @@ describe NumberParser do
 
     context "non-strict" do
       it "succeeds in parsing even if inexact punctuation is used" do
-        expect(@parser.parse("5 100", :strict => false)).to eq(5100)
+        expect(@parser.parse("5 100", strict: false)).to eq(5100)
       end
     end
   end

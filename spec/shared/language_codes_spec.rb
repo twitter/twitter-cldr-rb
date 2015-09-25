@@ -58,24 +58,24 @@ describe LanguageCodes do
 
   describe '#convert' do
     it 'converts codes between different standards' do
-      expect(LanguageCodes.convert(:Spanish, :from => :name,      :to => :bcp_47   )).to eq(:es)
-      expect(LanguageCodes.convert(:es,      :from => :bcp_47,    :to => :iso_639_1)).to eq(:es)
-      expect(LanguageCodes.convert(:es,      :from => :iso_639_1, :to => :iso_639_2)).to eq(:spa)
-      expect(LanguageCodes.convert(:spa,     :from => :iso_639_2, :to => :iso_639_3)).to eq(:spa)
-      expect(LanguageCodes.convert(:spa,     :from => :iso_639_3, :to => :name     )).to eq(:Spanish)
+      expect(LanguageCodes.convert(:Spanish, from: :name,      to: :bcp_47   )).to eq(:es)
+      expect(LanguageCodes.convert(:es,      from: :bcp_47,    to: :iso_639_1)).to eq(:es)
+      expect(LanguageCodes.convert(:es,      from: :iso_639_1, to: :iso_639_2)).to eq(:spa)
+      expect(LanguageCodes.convert(:spa,     from: :iso_639_2, to: :iso_639_3)).to eq(:spa)
+      expect(LanguageCodes.convert(:spa,     from: :iso_639_3, to: :name     )).to eq(:Spanish)
     end
 
     it 'converts from terminology iso_639_2 codes' do
-      expect(LanguageCodes.convert(:hye, :from => :iso_639_2, :to => :bcp_47)).to eq(:hy)
+      expect(LanguageCodes.convert(:hye, from: :iso_639_2, to: :bcp_47)).to eq(:hy)
     end
 
     it 'converts from alternative bcp_47 codes' do
-      expect(LanguageCodes.convert('ar-adf', :from => :bcp_47, :to => :iso_639_3)).to eq(:adf)
+      expect(LanguageCodes.convert('ar-adf', from: :bcp_47, to: :iso_639_3)).to eq(:adf)
     end
 
     it 'returns nil if conversion data is missing' do
-      expect(LanguageCodes.convert(:bsq, :from => :bcp_47, :to => :iso_639_1)).to be_nil
-      expect(LanguageCodes.convert(:FooBar, :from => :name, :to => :iso_639_1)).to be_nil
+      expect(LanguageCodes.convert(:bsq, from: :bcp_47, to: :iso_639_1)).to be_nil
+      expect(LanguageCodes.convert(:FooBar, from: :name, to: :iso_639_1)).to be_nil
     end
 
     it 'accepts strings' do
@@ -83,16 +83,16 @@ describe LanguageCodes do
     end
 
     it 'raises exception if :from or :to options are missing' do
-      [[:es, { :to => :bcp_47 }], [:es, { :from => :bcp_47 }], [:es]].each do |args|
+      [[:es, { to: :bcp_47 }], [:es, { from: :bcp_47 }], [:es]].each do |args|
         expect { LanguageCodes.convert(*args) }.to raise_exception(ArgumentError, "options :from and :to are required")
       end
     end
 
     it 'raises exception if :from or :to have invalid values' do
       [
-          [:es, { :from => :foobar, :to => :bcp_47 }],
-          [:es, { :from => :bcp_47, :to => :foobar }],
-          [:es, { :from => :foobar, :to => :foobar }]
+          [:es, { from: :foobar, to: :bcp_47 }],
+          [:es, { from: :bcp_47, to: :foobar }],
+          [:es, { from: :foobar, to: :foobar }]
       ].each do |args|
         expect { LanguageCodes.convert(*args) }.to raise_exception(ArgumentError, ':foobar is not a valid standard name')
       end

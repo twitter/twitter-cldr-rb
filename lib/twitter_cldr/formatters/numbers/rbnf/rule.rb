@@ -77,7 +77,7 @@ module TwitterCldr
         private
 
         def inline_substitutions(tokens)
-          parser.parse(tokens, :locale => locale)
+          parser.parse(tokens, locale: locale)
         end
 
         def parser

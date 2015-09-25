@@ -13,7 +13,7 @@ describe LocalizedDateTime do
 
   describe '#initialize' do
     it 'sets calendar type' do
-      expect(date_time.localize(:th, :calendar_type => :buddhist).calendar_type).to eq(:buddhist)
+      expect(date_time.localize(:th, calendar_type: :buddhist).calendar_type).to eq(:buddhist)
     end
 
     it 'uses default calendar type' do
@@ -36,9 +36,9 @@ describe LocalizedDateTime do
       )
 
       #date_time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      date_time.localize(:th, :calendar_type => :buddhist).to_long_s
-      date_time.localize(:th, :calendar_type => :buddhist).to_medium_s
-      date_time.localize(:th, :calendar_type => :buddhist).to_short_s
+      date_time.localize(:th, calendar_type: :buddhist).to_long_s
+      date_time.localize(:th, calendar_type: :buddhist).to_medium_s
+      date_time.localize(:th, calendar_type: :buddhist).to_short_s
     end
 
     it "should remove quotes around plaintext tokens" do
@@ -47,12 +47,7 @@ describe LocalizedDateTime do
     end
 
     it 'should stringify with proper time zone' do
-      tz_str = TZInfo::Timezone.get('America/Los_Angeles').strftime('%Z')
-      date_str = date_time.localize(:en).with_timezone('America/Los_Angeles').to_long_s
-
-      expect(date_str).to eq(
-        "September 20, 1987 at 3:05:00 PM #{tz_str}"
-      )
+      expect(date_time.localize(:en).with_timezone('Asia/Tokyo').to_long_s).to eq("September 21, 1987 at 7:05:00 AM JST")
     end
   end
 
@@ -62,7 +57,7 @@ describe LocalizedDateTime do
     end
 
     it 'forwards calendar type' do
-      date_time.localize(:th, :calendar_type => :buddhist).to_date.calendar_type == :buddhist
+      date_time.localize(:th, calendar_type: :buddhist).to_date.calendar_type == :buddhist
     end
   end
 
@@ -72,7 +67,7 @@ describe LocalizedDateTime do
     end
 
     it 'forwards calendar type' do
-      date_time.localize(:th, :calendar_type => :buddhist).to_time.calendar_type == :buddhist
+      date_time.localize(:th, calendar_type: :buddhist).to_time.calendar_type == :buddhist
     end
   end
 

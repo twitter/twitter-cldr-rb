@@ -133,9 +133,9 @@ module TwitterCldr
           @options[:minimum_block_length] = 0 if @options[:minimum_block_length].to_i <= 0
           @options.update(
             {
-              :printable_with_syck  => true,
-              :escape_b_specific    => true,
-              :escape_as_utf8       => true,
+              printable_with_syck:  true,
+              escape_b_specific:    true,
+              escape_as_utf8:       true,
             }
           ) if @options[:syck_compatible]
 

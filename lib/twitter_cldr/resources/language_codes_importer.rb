@@ -18,12 +18,12 @@ module TwitterCldr
       }
 
       KEYS_TO_STANDARDS = {
-        :iso_639_1      => :iso_639_1,
-        :iso_639_2      => :iso_639_2,
-        :iso_639_2_term => :iso_639_2,
-        :iso_639_3      => :iso_639_3,
-        :bcp_47         => :bcp_47,
-        :bcp_47_alt     => :bcp_47
+        iso_639_1:      :iso_639_1,
+        iso_639_2:      :iso_639_2,
+        iso_639_2_term: :iso_639_2,
+        iso_639_3:      :iso_639_3,
+        bcp_47:         :bcp_47,
+        bcp_47_alt:     :bcp_47
       }
 
       def initialize(input_path, output_path)
@@ -197,7 +197,7 @@ module TwitterCldr
         end
 
         language_codes_map.each do |name, codes|
-          table[:name][name] = { :name => name }.merge(codes)
+          table[:name][name] = { name: name }.merge(codes)
         end
 
         table[:name].values.each do |data|

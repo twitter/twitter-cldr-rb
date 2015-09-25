@@ -25,8 +25,8 @@ module TwitterCldr
       class RbnfFormatter
 
         DEFAULT_SPELLOUT_OPTIONS = {
-          :rule_group => "SpelloutRules",
-          :rule_set => "spellout-numbering"
+          rule_group: "SpelloutRules",
+          rule_set: "spellout-numbering"
         }
 
         attr_reader :locale

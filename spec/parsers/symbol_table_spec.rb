@@ -8,7 +8,7 @@ require 'spec_helper'
 include TwitterCldr::Parsers
 
 describe SymbolTable do
-  let(:table) { SymbolTable.new(:a => "b", :c => "d") }
+  let(:table) { SymbolTable.new(a: "b", c: "d") }
 
   describe "#fetch" do
     it "should be able to retrieve values for symbols" do

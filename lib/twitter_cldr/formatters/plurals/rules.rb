@@ -36,7 +36,7 @@ module TwitterCldr
             locale_cache[cache_key] ||= begin
               rsrc = TwitterCldr.get_locale_resource(locale, :plurals)[locale]
               rsrc.inject({}) do |ret, (rule_type, rule_data)|
-                ret[rule_type] = rule_data.merge(:rule => eval(rule_data[:rule]))
+                ret[rule_type] = rule_data.merge(rule: eval(rule_data[:rule]))
                 ret
               end
             end

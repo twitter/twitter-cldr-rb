@@ -31,16 +31,16 @@ describe SortKeyBuilder do
 
     it 'accepts case-first option as an option' do
       SortKeyBuilder::VALID_CASE_FIRST_OPTIONS.each do |case_first|
-        expect { SortKeyBuilder.new([], :case_first => case_first) }.not_to raise_error
+        expect { SortKeyBuilder.new([], case_first: case_first) }.not_to raise_error
       end
     end
 
     it 'raises an ArgumentError for invalid case-first option' do
-      expect { SortKeyBuilder.new([], :case_first => :wat) }.to raise_error(ArgumentError)
+      expect { SortKeyBuilder.new([], case_first: :wat) }.to raise_error(ArgumentError)
     end
 
     it 'raises an ArgumentError for an invalid maximum_level option' do
-      expect { SortKeyBuilder.new([], :maximum_level => :wat) }.to raise_error(ArgumentError)
+      expect { SortKeyBuilder.new([], maximum_level: :wat) }.to raise_error(ArgumentError)
     end
 
     it 'raises an ArgumentError for non-hash second argument' do
@@ -113,29 +113,29 @@ describe SortKeyBuilder do
 
       context 'when case_first is :upper' do
         it 'inverts case bits and subtract bottom addition from bytes that are smaller than common' do
-          expect(SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :case_first => :upper).bytes_array).to eq([1, 1, 201, 80, 15])
+          expect(SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], case_first: :upper).bytes_array).to eq([1, 1, 201, 80, 15])
         end
 
         it 'compresses tertiary weights' do
-          expect(SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :case_first => :upper).bytes_array).to eq([1, 1, 0xC4, 0xE7, 0xC3])
+          expect(SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], case_first: :upper).bytes_array).to eq([1, 1, 0xC4, 0xE7, 0xC3])
         end
 
         it 'compresses tertiary weights into multiple bytes if necessary' do
-          expect(SortKeyBuilder.new([[0, 0, 5]] * 100, :case_first => :upper).bytes_array).to eq([1, 1, 0x9C, 0x9C, 0xB3])
+          expect(SortKeyBuilder.new([[0, 0, 5]] * 100, case_first: :upper).bytes_array).to eq([1, 1, 0x9C, 0x9C, 0xB3])
         end
       end
 
       context 'when case_first is :lower' do
         it 'leaves case bits and adds top addition to bytes that are greater than common' do
-          expect(SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], :case_first => :lower).bytes_array).to eq([1, 1, 73, 144, 207])
+          expect(SortKeyBuilder.new([[0, 0, 9], [0, 0, 80], [0, 0, 143]], case_first: :lower).bytes_array).to eq([1, 1, 73, 144, 207])
         end
 
         it 'compresses tertiary weights' do
-          expect(SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], :case_first => :lower).bytes_array).to eq([1, 1, 0x44, 0x67, 6])
+          expect(SortKeyBuilder.new([[0, 0, 5], [0, 0, 5], [0, 0, 39], [0, 0, 5], [0, 0, 5]], case_first: :lower).bytes_array).to eq([1, 1, 0x44, 0x67, 6])
         end
 
         it 'compresses tertiary weights into multiple bytes if necessary' do
-          expect(SortKeyBuilder.new([[0, 0, 5]] * 100, :case_first => :lower).bytes_array).to eq([1, 1, 0x1A, 0x1A, 0x1A, 0x1A, 0x14])
+          expect(SortKeyBuilder.new([[0, 0, 5]] * 100, case_first: :lower).bytes_array).to eq([1, 1, 0x1A, 0x1A, 0x1A, 0x1A, 0x14])
         end
       end
     end
@@ -143,12 +143,12 @@ describe SortKeyBuilder do
     describe ":maximum_level option" do
       context "when :maximum_level is 2" do
         it 'does not include tertiary weights' do
-          expect(SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 2).bytes_array).to eq([63, 66, 1, 13, 81])
+          expect(SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], maximum_level: 2).bytes_array).to eq([63, 66, 1, 13, 81])
         end
       end
       context "when :maximum_level is 1" do
         it 'only includes primary weights' do
-          expect(SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], :maximum_level => 1).bytes_array).to eq([63, 66])
+          expect(SortKeyBuilder.new([[63, 13, 149], [66, 81, 143]], maximum_level: 1).bytes_array).to eq([63, 66])
         end
       end
     end

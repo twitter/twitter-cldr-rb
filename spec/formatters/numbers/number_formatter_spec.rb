@@ -8,7 +8,7 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe NumberFormatter do
-  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:sv, :type => :decimal) }
+  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:sv, type: :decimal) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
 
@@ -46,12 +46,12 @@ describe NumberFormatter do
 
   describe "#parse_number" do
     it "should round and split the given number by decimal" do
-      expect(formatter.send(:parse_number, 12, :precision => 0)).to eq(["12"])
-      expect(formatter.send(:parse_number, 12.2, :precision => 0)).to eq(["12"])
-      expect(formatter.send(:parse_number, 12.5, :precision => 0)).to eq(["13"])
-      expect(formatter.send(:parse_number, 12.25, :precision => 1)).to eq(["12", "3"])
-      expect(formatter.send(:parse_number, 12.25, :precision => 2)).to eq(["12", "25"])
-      expect(formatter.send(:parse_number, 12.25, :precision => 3)).to eq(["12", "250"])
+      expect(formatter.send(:parse_number, 12, precision: 0)).to eq(["12"])
+      expect(formatter.send(:parse_number, 12.2, precision: 0)).to eq(["12"])
+      expect(formatter.send(:parse_number, 12.5, precision: 0)).to eq(["13"])
+      expect(formatter.send(:parse_number, 12.25, precision: 1)).to eq(["12", "3"])
+      expect(formatter.send(:parse_number, 12.25, precision: 2)).to eq(["12", "25"])
+      expect(formatter.send(:parse_number, 12.25, precision: 3)).to eq(["12", "250"])
     end
   end
 
@@ -71,11 +71,11 @@ describe NumberFormatter do
 
     context "should respect the :precision option" do
       it "formats with precision of 0" do
-        expect(format_number(12.1, :precision => 0)).to eq("12")
+        expect(format_number(12.1, precision: 0)).to eq("12")
       end
 
       it "rounds and formats with precision of 1" do
-        expect(format_number(12.25, :precision => 1)).to eq("12,3")
+        expect(format_number(12.25, precision: 1)).to eq("12,3")
       end
     end
 

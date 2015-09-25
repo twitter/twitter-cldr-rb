@@ -7,9 +7,9 @@ require 'spec_helper'
 
 describe TwitterCldr::Utils do
   describe '#deep_symbolize_keys' do
-    let(:hash) { { 'foo' => { 'bar' => { 'baz' => 'woot' }, :ar => [1, 2] }, 42 => { 'baz' => 'wat' } } }
+    let(:hash) { { 'foo' => { 'bar' => { 'baz' => 'woot' }, ar: [1, 2] }, 42 => { 'baz' => 'wat' } } }
 
-    let(:symbolized_hash) { { :foo => { :bar => { :baz => 'woot' }, :ar => [1, 2] }, 42 => { :baz => 'wat' } } }
+    let(:symbolized_hash) { { foo: { bar: { baz: 'woot' }, ar: [1, 2] }, 42 => { baz: 'wat' } } }
 
     it 'symbolizes string keys of a hash' do
       expect(TwitterCldr::Utils.deep_symbolize_keys(hash)).to eq(symbolized_hash)
@@ -20,7 +20,7 @@ describe TwitterCldr::Utils do
     end
 
     it 'deeply symbolizes elements of an array nested in a hash' do
-      expect(TwitterCldr::Utils.deep_symbolize_keys({ 'foo' => [1, hash] })).to eq({ :foo => [1, symbolized_hash] })
+      expect(TwitterCldr::Utils.deep_symbolize_keys({ 'foo' => [1, hash] })).to eq({ foo: [1, symbolized_hash] })
     end
 
     it 'leaves arguments of other types alone' do
@@ -30,21 +30,21 @@ describe TwitterCldr::Utils do
 
   describe "#deep_merge! and #deep_merge_hash" do
     it "combines two non-nested hashes with different keys" do
-      first = { :foo => "bar" }
-      expect(TwitterCldr::Utils.deep_merge_hash(first, { :bar => "baz" })).to eq({ :foo => "bar", :bar => "baz" })
-      expect(TwitterCldr::Utils.deep_merge!(first, { :bar => "baz" })).to eq({ :foo => "bar", :bar => "baz" })
+      first = { foo: "bar" }
+      expect(TwitterCldr::Utils.deep_merge_hash(first, { bar: "baz" })).to eq({ foo: "bar", bar: "baz" })
+      expect(TwitterCldr::Utils.deep_merge!(first, { bar: "baz" })).to eq({ foo: "bar", bar: "baz" })
     end
 
     it "combines two non-nested hashes with the same keys" do
-      first = { :foo => "bar" }
-      expect(TwitterCldr::Utils.deep_merge_hash(first, { :foo => "baz" })).to eq({ :foo => "baz" })
-      expect(TwitterCldr::Utils.deep_merge!(first, { :foo => "baz" })).to eq({ :foo => "baz" })
+      first = { foo: "bar" }
+      expect(TwitterCldr::Utils.deep_merge_hash(first, { foo: "baz" })).to eq({ foo: "baz" })
+      expect(TwitterCldr::Utils.deep_merge!(first, { foo: "baz" })).to eq({ foo: "baz" })
     end
 
     it "combines two nested hashes" do
-      first = { :foo => "bar", :second => { :bar => "baz", :twitter => "rocks" } }
-      second = { :foo => "baz", :third => { :whassup => "cool" }, :second => { :twitter => "rules" } }
-      result = { :foo => "baz", :second => { :bar => "baz", :twitter => "rules" }, :third => { :whassup => "cool" } }
+      first = { foo: "bar", second: { bar: "baz", twitter: "rocks" } }
+      second = { foo: "baz", third: { whassup: "cool" }, second: { twitter: "rules" } }
+      result = { foo: "baz", second: { bar: "baz", twitter: "rules" }, third: { whassup: "cool" } }
       expect(TwitterCldr::Utils.deep_merge_hash(first, second)).to eq(result)
       TwitterCldr::Utils.deep_merge!(first, second)
       expect(first).to eq(result)
@@ -56,17 +56,17 @@ describe TwitterCldr::Utils do
     end
 
     it "merges a nested hash with a few simple array replacements" do
-      first = { :foo => "bar", :second => { :bar => "baz", :twitter => [1, 2, 3] } }
-      second = { :foo => [18], :third => { :whassup => "cool" }, :second => { :twitter => [4, 5, 6] } }
+      first = { foo: "bar", second: { bar: "baz", twitter: [1, 2, 3] } }
+      second = { foo: [18], third: { whassup: "cool" }, second: { twitter: [4, 5, 6] } }
       TwitterCldr::Utils.deep_merge!(first, second)
-      expect(first).to eq({ :foo => [18], :second => { :bar => "baz", :twitter => [4, 5, 6] }, :third => { :whassup => "cool" } })
+      expect(first).to eq({ foo: [18], second: { bar: "baz", twitter: [4, 5, 6] }, third: { whassup: "cool" } })
     end
 
     it "merges hashes within arrays" do
-      first = [1, { :foo => "bar" }, { :bar => "baz" }, 8]
-      second = [2, { :foo => "bar2" }, { :bar => "baz2", :twitter => "rules" }, 8, 9]
+      first = [1, { foo: "bar" }, { bar: "baz" }, 8]
+      second = [2, { foo: "bar2" }, { bar: "baz2", twitter: "rules" }, 8, 9]
       TwitterCldr::Utils.deep_merge!(first, second)
-      expect(first).to eq([2, { :foo => "bar2" }, { :bar => "baz2", :twitter => "rules" }, 8, 9])
+      expect(first).to eq([2, { foo: "bar2" }, { bar: "baz2", twitter: "rules" }, 8, 9])
     end
   end
 
@@ -82,15 +82,15 @@ describe TwitterCldr::Utils do
 
   describe '#traverse_hash' do
     it 'returns value from the hash at the given path' do
-      expect(TwitterCldr::Utils.traverse_hash({ :foo => { :bar => 2, 'baz' => { 4 => 42 } } }, [:foo, 'baz', 4])).to eq(42)
+      expect(TwitterCldr::Utils.traverse_hash({ foo: { bar: 2, 'baz' => { 4 => 42 } } }, [:foo, 'baz', 4])).to eq(42)
     end
 
     it 'returns nil if the value is missing' do
-      expect(TwitterCldr::Utils.traverse_hash({ :foo => { :bar => 2 } }, [:foo, :baz])).to be_nil
+      expect(TwitterCldr::Utils.traverse_hash({ foo: { bar: 2 } }, [:foo, :baz])).to be_nil
     end
 
     it 'returns nil path is empty' do
-      expect(TwitterCldr::Utils.traverse_hash({ :foo => 42 }, [])).to be_nil
+      expect(TwitterCldr::Utils.traverse_hash({ foo: 42 }, [])).to be_nil
     end
 
     it 'returns nil if not a Hash is passed' do

@@ -87,8 +87,8 @@ module TwitterCldr
 
             if (remove_empty_entries && cleaned_text.size > 0) || !remove_empty_entries
               ret << Token.new(
-                :value => cleaned_text,
-                :type => recognizer.token_type
+                value: cleaned_text,
+                type: recognizer.token_type
               )
             end
           end

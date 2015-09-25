@@ -11,13 +11,13 @@ module TwitterCldr
       APPROXIMATE_MULTIPLIER = 0.75
 
       TIME_IN_SECONDS = {
-        :second => 1,
-        :minute => 60,
-        :hour   => 3600,
-        :day    => 86400,
-        :week   => 604800,
-        :month  => 2629743.83,
-        :year   => 31556926
+        second: 1,
+        minute: 60,
+        hour:   3600,
+        day:    86400,
+        week:   604800,
+        month:  2629743.83,
+        year:   31556926
       }
 
       def initialize(seconds, options = {})
@@ -31,9 +31,9 @@ module TwitterCldr
         number = calculate_time(base_obj, unit)
 
         data_reader = TwitterCldr::DataReaders::TimespanDataReader.new(locale, number, {
-          :unit => unit,
-          :direction => direction,
-          :type => type
+          unit: unit,
+          direction: direction,
+          type: type
         })
 
         tokens = data_reader.tokenizer.tokenize(data_reader.pattern)

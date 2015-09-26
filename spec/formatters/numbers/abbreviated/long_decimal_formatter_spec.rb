@@ -9,7 +9,7 @@ include TwitterCldr::Formatters
 
 describe LongDecimalFormatter do
   let(:data_reader) do
-    TwitterCldr::DataReaders::NumberDataReader.new(locale, :type => :long_decimal)
+    TwitterCldr::DataReaders::NumberDataReader.new(locale, type: :long_decimal)
   end
 
   def format_number(number, options = {})
@@ -65,11 +65,11 @@ describe LongDecimalFormatter do
     end
 
     it "respects the :precision option" do
-      expect(format_number(12345, :precision => 3)).to match_normalized("12.345 thousand")
+      expect(format_number(12345, precision: 3)).to match_normalized("12.345 thousand")
     end
 
     it "respects the :precision option for negative numbers" do
-      expect(format_number(-12345, :precision => 3)).to match_normalized("-12.345 thousand")
+      expect(format_number(-12345, precision: 3)).to match_normalized("-12.345 thousand")
     end
   end
 
@@ -78,11 +78,11 @@ describe LongDecimalFormatter do
 
     it "respects pluralization rules" do
       expect(format_number(1123)).to match_normalized("1 тысяча")
-      expect(format_number(1123, :precision => 3)).to match_normalized("1,123 тысячи")
+      expect(format_number(1123, precision: 3)).to match_normalized("1,123 тысячи")
     end
 
     it 'works with :few in Russian' do
-      expect(format_number(7123, :precision => 3)).to match_normalized("7,123 тысячи")
+      expect(format_number(7123, precision: 3)).to match_normalized("7,123 тысячи")
       expect(format_number(7123)).to match_normalized("7 тысяч") # different pluralization when precision is 0
     end
   end

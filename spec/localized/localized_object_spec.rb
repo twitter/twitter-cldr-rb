@@ -23,7 +23,7 @@ describe LocalizedObject do
     let(:base_object) { 'base-object' }
     let(:locale) { :fr }
     let(:localized_object) { LocalizedClass.new(base_object, locale) }
-    let(:options) { { :foobar => 'value' } }
+    let(:options) { { foobar: 'value' } }
 
     it 'sets base object' do
       expect(localized_object.base_obj).to eq(base_object)
@@ -58,7 +58,7 @@ describe LocalizedObject do
 
   describe '#localize' do
     let(:locale)  { :ru }
-    let(:options) { { :option => 'value' } }
+    let(:options) { { option: 'value' } }
 
     let(:localizable_object) do
       some_class = Class.new

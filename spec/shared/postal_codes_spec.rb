@@ -78,12 +78,32 @@ describe PostalCodes do
         postal_code = PostalCodes.for_territory(territory)
 
         it "returns samples that match #{territory}" do
-          postal_code.sample(10).each do |sample|
-            result = postal_code.valid?(sample)
-            puts "Failed with example #{sample}" unless result
-            result.should be_true
+          if postal_code.has_generator?
+            postal_code.sample(10).each do |sample|
+              result = postal_code.valid?(sample)
+              puts "Failed with example #{sample}" unless result
+              result.should be_true
+            end
           end
         end
+      end
+    end
+  end
+
+  context 'with a postal code that has no AST' do
+    let(:postal_code) { PostalCodes.new(:xx, /\d{5}/, nil) }
+
+    describe '#sample' do
+      it 'raises an exception' do
+        expect { postal_code.sample }.to raise_error(
+          MissingPostcodeGeneratorError
+        )
+      end
+    end
+
+    describe '#has_generator?' do
+      it 'returns false' do
+        expect(postal_code).to_not have_generator
       end
     end
   end

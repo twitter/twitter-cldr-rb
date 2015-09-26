@@ -37,7 +37,7 @@ module TwitterCldr
             File.open(output_file, "w+") do |f|
               YAML.dump({
                 locale => {
-                  :exceptions => exceptions["data"]["abbrs"]
+                  exceptions: exceptions["data"]["abbrs"]
                 }
               }, f)
             end

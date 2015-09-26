@@ -14,20 +14,20 @@ module TwitterCldr
       ERAS_NAMES_FORMS = [:abbr, :name]
 
       DATETIME_METHOD_MAP = {
-        :year_of_week_of_year => :year,
-        :quarter_stand_alone => :quarter,
-        :month_stand_alone => :month,
-        :day_of_month => :day,
-        :day_of_week_in_month => :day,
-        :weekday_local => :weekday,
-        :weekday_local_stand_alone => :weekday,
-        :second_fraction => :second,
-        :timezone_generic_non_location => :timezone,
-        :timezone_metazone => :timezone
+        year_of_week_of_year: :year,
+        quarter_stand_alone: :quarter,
+        month_stand_alone: :month,
+        day_of_month: :day,
+        day_of_week_in_month: :day,
+        weekday_local: :weekday,
+        weekday_local_stand_alone: :weekday,
+        second_fraction: :second,
+        timezone_generic_non_location: :timezone,
+        timezone_metazone: :timezone
       }
 
       REDIRECT_CONVERSIONS = {
-        :dayPeriods => :periods
+        dayPeriods: :periods
       }
 
       attr_reader :locale, :calendar_type

@@ -54,17 +54,17 @@ describe RbnfFormatter do
             describe rule_set_name.gsub("-", " ") do
 
               # running basic test suite only runs spellout-numbering tests (for speed)
-              it "formats correctly", :slow => rule_set_name != "spellout-numbering" do
+              it "formats correctly", slow: rule_set_name != "spellout-numbering" do
                 test_data[group_name][rule_set_name].each_pair do |number, expected|
                   got = formatter.format(number, {
-                    :rule_group => group_name,
-                    :rule_set => rule_set_name
+                    rule_group: group_name,
+                    rule_set: rule_set_name
                   })
 
                   if got != expected
                     opts = {
-                      :locale => locale, :group => group_name,
-                      :rule_set => rule_set_name, :number => number
+                      locale: locale, group: group_name,
+                      rule_set: rule_set_name, number: number
                     }
 
                     unless allowed_failure?(opts)

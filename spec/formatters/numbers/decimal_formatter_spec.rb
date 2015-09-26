@@ -8,7 +8,7 @@ require 'spec_helper'
 include TwitterCldr::Formatters
 
 describe DecimalFormatter do
-  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:nl, :type => :decimal) }
+  let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:nl, type: :decimal) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
   let(:negative_number) { -12 }
@@ -31,7 +31,7 @@ describe DecimalFormatter do
       { number => "12,000", negative_number => "-12,000" }.each_pair do |num, formatted|
         pattern = data_reader.pattern(num)
         tokens = tokenizer.tokenize(pattern)
-        expect(formatter.format(tokens, num, :precision => 3)).to eq(formatted)
+        expect(formatter.format(tokens, num, precision: 3)).to eq(formatted)
       end
     end
   end

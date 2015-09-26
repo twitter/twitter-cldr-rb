@@ -212,11 +212,12 @@ module TwitterCldr
 
             while low <= high
               mid = (low + high) / 2
+              mid_base_value = rules[mid].base_value
 
               case
-                when rules[mid].base_value > base_value
+                when mid_base_value > base_value
                   high = mid - 1
-                when rules[mid].base_value < base_value
+                when mid_base_value < base_value
                   low = mid + 1
                 else
                   break

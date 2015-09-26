@@ -12,13 +12,16 @@ describe NumberDataReader do
 
   describe "#get_key_for" do
     it "builds a power-of-ten key based on the number of digits in the input" do
-      (3..15).each { |i| expect(data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}")).to eq(10 ** i) }
+      (3..15).each do |i|
+        value = data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}")
+        expect(value).to eq((10 ** i).to_s.to_sym)
+      end
     end
   end
 
   describe '#format_number' do
     it 'works with options' do
-      expect(data_reader.format_number(1000, :precision => 2)).to eq('1,000.00')
+      expect(data_reader.format_number(1000, precision: 2)).to eq('1,000.00')
     end
 
     it "works when options aren't specified" do
@@ -27,15 +30,15 @@ describe NumberDataReader do
   end
 
   describe "#pattern" do
-    let(:symbols) { { :nan => 'NaN', :minus_sign => '<->' } } # unique locale-specific minus sign
+    let(:symbols) { { nan: 'NaN', minus_sign: '<->' } } # unique locale-specific minus sign
 
     before(:each) do
       stub(TwitterCldr).get_locale_resource(:en, :numbers) {
         {
-          :en => {
-            :numbers => {
-              :formats => { :decimal => { :patterns => { :default => "#,##0.###" } } },
-              :symbols => symbols
+          en: {
+            numbers: {
+              formats: { decimal: { patterns: { default: "#,##0.###" } } },
+              symbols: symbols
             }
           }
         }

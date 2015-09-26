@@ -44,7 +44,7 @@ describe "Segmentation" do
       end
 
       it "should parse a rule containing a variable" do
-        rule = parse(tokenize("$FOO × bar"), :symbol_table => symbol_table)
+        rule = parse(tokenize("$FOO × bar"), symbol_table: symbol_table)
         expect(rule.regex.to_regexp_str).to eq(
           "\\A(?:[\\u{0061}-\\u{0063}])(?:\\u{0062})(?:\\u{0061})(?:\\u{0072})"
         )

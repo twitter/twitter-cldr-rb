@@ -16,7 +16,7 @@ describe DateTimeFormatter do
 
   describe 'plaintext' do
     it "removes single quotes around plaintext tokens" do
-      tokens = [Token.new(:value => "'at'", :type => 'plaintext')]
+      tokens = [Token.new(value: "'at'", type: 'plaintext')]
       date = Date.new(2010, 1, 10)
       expect(@formatter.format(tokens, date, {})).to eq("at")
     end

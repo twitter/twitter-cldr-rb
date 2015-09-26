@@ -15,100 +15,124 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: 
+            ? !ruby/symbol "1000"
+            : 
               :few: "0 tisuće"
               :one: "0 tisuća"
               :other: "0 tisuća"
-            10000: 
+            ? !ruby/symbol "10000"
+            : 
               :few: "00 tisuće"
               :one: "00 tisuća"
               :other: "00 tisuća"
-            100000: 
+            ? !ruby/symbol "100000"
+            : 
               :few: "000 tisuće"
               :one: "000 tisuća"
               :other: "000 tisuća"
-            1000000: 
+            ? !ruby/symbol "1000000"
+            : 
               :few: "0 milijuna"
               :one: "0 milijun"
               :other: "0 milijuna"
-            10000000: 
+            ? !ruby/symbol "10000000"
+            : 
               :few: "00 milijuna"
               :one: "00 milijun"
               :other: "00 milijuna"
-            100000000: 
+            ? !ruby/symbol "100000000"
+            : 
               :few: "000 milijuna"
               :one: "000 milijun"
               :other: "000 milijuna"
-            1000000000: 
+            ? !ruby/symbol "1000000000"
+            : 
               :few: "0 milijarde"
               :one: "0 milijarda"
               :other: "0 milijardi"
-            10000000000: 
+            ? !ruby/symbol "10000000000"
+            : 
               :few: "00 milijarde"
               :one: "00 milijarda"
               :other: "00 milijardi"
-            100000000000: 
+            ? !ruby/symbol "100000000000"
+            : 
               :few: "000 milijarde"
               :one: "000 milijarda"
               :other: "000 milijardi"
-            1000000000000: 
+            ? !ruby/symbol "1000000000000"
+            : 
               :few: "0 bilijuna"
               :one: "0 bilijun"
               :other: "0 bilijuna"
-            10000000000000: 
+            ? !ruby/symbol "10000000000000"
+            : 
               :few: "00 bilijuna"
               :one: "00 bilijun"
               :other: "00 bilijuna"
-            100000000000000: 
+            ? !ruby/symbol "100000000000000"
+            : 
               :few: "000 bilijuna"
               :one: "000 bilijun"
               :other: "000 bilijuna"
           :short: 
-            1000: 
+            ? !ruby/symbol "1000"
+            : 
               :few: 0 tis'.'
               :one: 0 tis'.'
               :other: 0 tis'.'
-            10000: 
+            ? !ruby/symbol "10000"
+            : 
               :few: 00 tis'.'
               :one: 00 tis'.'
               :other: 00 tis'.'
-            100000: 
+            ? !ruby/symbol "100000"
+            : 
               :few: 000 tis'.'
               :one: 000 tis'.'
               :other: 000 tis'.'
-            1000000: 
+            ? !ruby/symbol "1000000"
+            : 
               :few: 0 mil'.'
               :one: 0 mil'.'
               :other: 0 mil'.'
-            10000000: 
+            ? !ruby/symbol "10000000"
+            : 
               :few: 00 mil'.'
               :one: 00 mil'.'
               :other: 00 mil'.'
-            100000000: 
+            ? !ruby/symbol "100000000"
+            : 
               :few: 000 mil'.'
               :one: 000 mil'.'
               :other: 000 mil'.'
-            1000000000: 
+            ? !ruby/symbol "1000000000"
+            : 
               :few: 0 mlr'.'
               :one: 0 mlr'.'
               :other: 0 mlr'.'
-            10000000000: 
+            ? !ruby/symbol "10000000000"
+            : 
               :few: 00 mlr'.'
               :one: 00 mlr'.'
               :other: 00 mlr'.'
-            100000000000: 
+            ? !ruby/symbol "100000000000"
+            : 
               :few: 000 mlr'.'
               :one: 000 mlr'.'
               :other: 000 mlr'.'
-            1000000000000: 
+            ? !ruby/symbol "1000000000000"
+            : 
               :few: 0 bil'.'
               :one: 0 bil'.'
               :other: 0 bil'.'
-            10000000000000: 
+            ? !ruby/symbol "10000000000000"
+            : 
               :few: 00 bil'.'
               :one: 00 bil'.'
               :other: 00 bil'.'
-            100000000000000: 
+            ? !ruby/symbol "100000000000000"
+            : 
               :few: 000 bil'.'
               :one: 000 bil'.'
               :other: 000 bil'.'

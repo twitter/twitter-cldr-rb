@@ -17,8 +17,17 @@ module TwitterCldr
 
       # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate.
       #       Meanwhile, use ruby-cldr v0.0.2 and CLDR 22.1 to update units.yml files.
-      LOCALE_COMPONENTS = %w[calendars languages numbers plural_rules lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root territories_containment]
+      LOCALE_COMPONENTS = %w[
+        calendars languages numbers plural_rules lists
+        territories rbnf
+      ]  # units
+
+      SHARED_COMPONENTS = %w[
+        currency_digits_and_rounding rbnf_root
+        numbering_systems segments_root
+        territories_containment likely_subtags
+        variables aliases
+      ]
 
       # Arguments:
       #
@@ -52,10 +61,10 @@ module TwitterCldr
 
       def import_components
         export_args = {
-          :locales => TwitterCldr.supported_locales,
-          :components => LOCALE_COMPONENTS,
-          :target => File.join(@output_path, 'locales'),
-          :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+          locales: TwitterCldr.supported_locales,
+          components: LOCALE_COMPONENTS,
+          target: File.join(@output_path, 'locales'),
+          merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
 
         locales = Set.new
@@ -70,9 +79,9 @@ module TwitterCldr
         end
 
         export_args = {
-          :components => SHARED_COMPONENTS,
-          :target => File.join(@output_path, 'shared'),
-          :merge => true
+          components: SHARED_COMPONENTS,
+          target: File.join(@output_path, 'shared'),
+          merge: true
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
@@ -90,7 +99,7 @@ module TwitterCldr
           output.write(
             TwitterCldr::Utils::YAML.dump(
               TwitterCldr::Utils.deep_symbolize_keys(data),
-              :use_natural_symbols => true
+              use_natural_symbols: true
             )
           )
         end
@@ -128,8 +137,8 @@ module TwitterCldr
           end
 
           ret[rule_type.to_sym] = {
-            :rule => rule_list.to_code(:ruby),
-            :names => rule_list.rules.map(&:name) + [:other]
+            rule: rule_list.to_code(:ruby),
+            names: rule_list.rules.map(&:name) + [:other]
           }
 
           ret

@@ -26,7 +26,6 @@ module TwitterCldr
 
       def walk(node)
         method = :"walk_#{class_name_for(node)}"
-        puts method unless respond_to?(method, true)
         respond_to?(method, true) ? send(method, node) : ""
       end
 

@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
+require 'eprun'
 
 include TwitterCldr::Localized
 
@@ -28,53 +29,53 @@ describe LocalizedString do
     end
 
     context 'when argument is a Hash' do
-      let(:horses) { { :one => '1 horse', :other => '%{horses_count} horses' } }
+      let(:horses) { { one: '1 horse', other: '%{horses_count} horses' } }
 
       before(:each) do
         stub(TwitterCldr::Formatters::Plurals::Rules).rule_for { |n, _| n == 1 ? :one : :other  }
       end
 
       it 'interpolates named placeholders' do
-        expect('%<num>.2f is a %{noun}'.localize % { :num => 3.1415, :noun => 'number' }).to eq('3.14 is a number')
+        expect('%<num>.2f is a %{noun}'.localize % { num: 3.1415, noun: 'number' }).to eq('3.14 is a number')
       end
 
       it 'performs regular pluralization' do
-        expect('%{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses }).to eq('2 horses')
+        expect('%{horses_count:horses}'.localize % { horses_count: 2, horses: horses }).to eq('2 horses')
       end
 
       it 'performs inline pluralization' do
         string = '%<{ "horses_count": { "other": "%{horses_count} horses" } }>'.localize
-        expect(string % { :horses_count => 2 }).to eq('2 horses')
+        expect(string % { horses_count: 2 }).to eq('2 horses')
       end
 
       it 'performs both formatting and regular pluralization simultaneously' do
         string = '%{msg}: %{horses_count:horses}'.localize
-        expect(string % { :horses_count => 2, :horses => horses, :msg => 'result' }).to eq('result: 2 horses')
+        expect(string % { horses_count: 2, horses: horses, msg: 'result' }).to eq('result: 2 horses')
       end
 
       it 'performs both formatting and inline pluralization simultaneously' do
         string = '%{msg}: %<{"horses_count": {"other": "%{horses_count} horses"}}>'.localize
-        expect(string % { :horses_count => 2, :msg => 'result' }).to eq('result: 2 horses')
+        expect(string % { horses_count: 2, msg: 'result' }).to eq('result: 2 horses')
       end
 
       it 'performs both formatted interpolation and inline pluralization simultaneously' do
         string = '%<number>d, %<{"horses_count": {"other": "%{horses_count} horses" }}>'.localize
-        expect(string % { :number => 3.14, :horses_count => 2 }).to eq('3, 2 horses')
+        expect(string % { number: 3.14, horses_count: 2 }).to eq('3, 2 horses')
       end
 
       it 'leaves regular pluralization placeholders unchanged if not enough information given' do
         string = '%{msg}: %{horses_count:horses}'.localize
-        expect(string % { :msg => 'no pluralization' } ).to eq('no pluralization: %{horses_count:horses}')
+        expect(string % { msg: 'no pluralization' } ).to eq('no pluralization: %{horses_count:horses}')
       end
 
       it 'leaves inline pluralization placeholders unchanged if not enough information given' do
         string = '%<number>d, %<{"horses_count": {"one": "one horse"}}>'.localize
-        expect(string % { :number => 3.14, :horses_count => 2 }).to eq('3, %<{"horses_count": {"one": "one horse"}}>')
+        expect(string % { number: 3.14, horses_count: 2 }).to eq('3, %<{"horses_count": {"one": "one horse"}}>')
       end
 
       it 'raises KeyError when value for a named placeholder is missing' do
         expect do
-          '%{msg}: %{horses_count:horses}'.localize % { :horses_count => 2, :horses => horses }
+          '%{msg}: %{horses_count:horses}'.localize % { horses_count: 2, horses: horses }
         end.to raise_error(KeyError)
       end
     end
@@ -139,11 +140,11 @@ describe LocalizedString do
 
     it "uses specified algorithm if there is any" do
       mock(Eprun).normalize(string, :nfkd) { normalized_string }
-      expect(localized_string.normalize(:using => :NFKD).base_obj).to eq(normalized_string)
+      expect(localized_string.normalize(using: :NFKD).base_obj).to eq(normalized_string)
     end
 
     it "raises an ArgumentError if passed an unsupported normalization form" do
-      expect { localized_string.normalize(:using => :blarg) }.to raise_error(ArgumentError)
+      expect { localized_string.normalize(using: :blarg) }.to raise_error(ArgumentError)
     end
   end
 
@@ -159,7 +160,7 @@ describe LocalizedString do
     end
 
     it 'uses the t option when explicitly given' do
-      expect("Istanbul".localize.casefold(:t => true).to_s).to eq("ıstanbul")
+      expect("Istanbul".localize.casefold(t: true).to_s).to eq("ıstanbul")
     end
 
     it 'uses t by default if the locale is tr (az not supported)' do
@@ -235,7 +236,7 @@ describe LocalizedString do
       expect(chars.first).to eq("a")
       expect(chars.last).to eq("b")
 
-      result = str.localize.to_reordered_s(:direction => :RTL)
+      result = str.localize.to_reordered_s(direction: :RTL)
       result_chars = result.chars.to_a
       expect(result_chars.first).to eq("b")
       expect(result_chars.last).to eq("a")
@@ -249,6 +250,12 @@ describe LocalizedString do
     it 'returns a territory' do
       expect(territory).to be_a(TwitterCldr::Shared::Territory)
       expect(territory.code).to eq(code)
+    end
+  end
+
+  describe '#script' do
+    it 'detects the script the string is written in' do
+      expect('Кирилл'.localize.script).to eq('Cyrillic')
     end
   end
 end

@@ -18,12 +18,12 @@ module TwitterCldr
       SYMBOL_PATH = [:numbers, :symbols]
 
       TYPE_PATHS = {
-        :default       => [:decimal, :patterns],
-        :decimal       => [:decimal, :patterns],
-        :long_decimal  => [:decimal, :patterns, :long],
-        :short_decimal => [:decimal, :patterns, :short],
-        :currency      => [:currency, :patterns],
-        :percent       => [:percent, :patterns]
+        default:       [:decimal, :patterns],
+        decimal:       [:decimal, :patterns],
+        long_decimal:  [:decimal, :patterns, :long],
+        short_decimal: [:decimal, :patterns, :short],
+        currency:      [:currency, :patterns],
+        percent:       [:percent, :patterns]
       }
 
       ABBREVIATED_TYPES = [:long_decimal, :short_decimal]
@@ -55,7 +55,7 @@ module TwitterCldr
         precision = options[:precision] || 0
         pattern_for_number = pattern(number, precision == 0)
 
-        if pattern_for_number == 0
+        if pattern_for_number == '0'
           # there's no specific formatting for the number in the current locale
           number.to_s
         else
@@ -65,7 +65,7 @@ module TwitterCldr
       end
 
       def pattern(number = nil, decimal = true)
-        sign = number < 0 ? :negative : :positive 
+        sign = number < 0 ? :negative : :positive
         path = BASE_PATH + if valid_type_for?(number, type)
           TYPE_PATHS[type]
         else
@@ -134,7 +134,7 @@ module TwitterCldr
       end
 
       def get_key_for(number)
-        "1#{"0" * (number.to_i.abs.to_s.size - 1)}".to_i
+        "1#{"0" * (number.to_i.abs.to_s.size - 1)}".to_s.to_sym
       end
 
       def pattern_for_number(pattern, number, decimal)

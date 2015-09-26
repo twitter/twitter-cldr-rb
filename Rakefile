@@ -131,7 +131,7 @@ namespace :update do
   task :unicode_scripts, :unicode_scripts_path do |_, args|
     TwitterCldr::Resources::UnicodeScriptsImporter.new(
       args[:unicode_scripts_path] || './vendor/unicode-data',
-      './resources/unicode_data/scripts.yml'
+      './resources/unicode_data/properties/scripts.yml'
     ).import
   end
 

@@ -69,7 +69,9 @@ module TwitterCldr
         end
 
         def resource
-          @resource ||= TwitterCldr.get_resource('unicode_data', 'scripts')
+          @resource ||= TwitterCldr.get_resource(
+            'unicode_data', 'properties', 'script'
+          )
         end
 
       end

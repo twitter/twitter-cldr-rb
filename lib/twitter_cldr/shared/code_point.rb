@@ -33,7 +33,7 @@ module TwitterCldr
       ]
 
       PROPERTIES = [
-        :sentence_break, :line_break, :word_break
+        :sentence_break, :line_break, :word_break, :script
       ]
 
       attr_reader :fields

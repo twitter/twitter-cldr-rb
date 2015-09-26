@@ -233,7 +233,11 @@ module TwitterCldr
         @variants = Array(variants)
       end
 
-      def with_likely_subtags
+      def full_script
+        @full_script ||= PropertyAliases.long_alias_for(:sc, script)
+      end
+
+      def maximize
         if Locale.grandfathered?(to_s)
           self
         else

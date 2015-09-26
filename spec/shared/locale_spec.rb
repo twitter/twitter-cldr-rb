@@ -152,13 +152,13 @@ describe Locale do
     let(:locale) { Locale.new('ko', nil, 'KR') }
 
     # see likely_subtags_spec.rb for the complete likely subtags test suite
-    describe '#with_likely_subtags' do
+    describe '#maximize' do
       it 'returns a Locale instance' do
-        expect(locale.with_likely_subtags).to be_a(Locale)
+        expect(locale.maximize).to be_a(Locale)
       end
 
       it 'does not modify grandfathered locales' do
-        locale = Locale.new('i-navajo').with_likely_subtags
+        locale = Locale.new('i-navajo').maximize
         expect(locale.language).to eq('i-navajo')
       end
     end

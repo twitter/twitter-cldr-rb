@@ -8,7 +8,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
 
-  gem 'ruby-prof' unless RUBY_PLATFORM == "java"
+  gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
 
   gem 'regexp_parser', '~> 0.1'
 end
@@ -30,5 +30,7 @@ group :test do
 
   gem 'simplecov'
   gem 'launchy'
+
+  gem 'benchmark-ips'
 end
 

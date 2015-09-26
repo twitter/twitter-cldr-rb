@@ -116,6 +116,10 @@ module TwitterCldr
         TwitterCldr::Shared::Territory.new(@base_obj)
       end
 
+      def script
+        TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).best_guess
+      end
+
       protected
 
       def escape_plural_interpolation(string)

@@ -20,6 +20,7 @@ module TwitterCldr
     autoload :PhoneCodes,             'twitter_cldr/shared/phone_codes'
     autoload :PostalCodeGenerator,    'twitter_cldr/shared/postal_code_generator'
     autoload :PostalCodes,            'twitter_cldr/shared/postal_codes'
+    autoload :PropertyAliases,        'twitter_cldr/shared/property_aliases'
     autoload :Territories,            'twitter_cldr/shared/territories'
     autoload :TerritoriesContainment, 'twitter_cldr/shared/territories_containment'
     autoload :Territory,              'twitter_cldr/shared/territory'

@@ -64,6 +64,8 @@ task :update do
       "update:locales_resources",      # per locale (+ units resources using different CLDR and ruby-cldr, see LocalesResourcesImporter)
       "update:unicode_data",
       "update:unicode_properties",
+      "update:unicode_scripts",
+      "update:unicode_property_value_aliases",
       "update:generate_casefolder",    # must come after unicode data
       "update:composition_exclusions",
       "update:postal_codes",
@@ -123,6 +125,22 @@ namespace :update do
     TwitterCldr::Resources::UnicodePropertiesImporter.new(
       args[:unicode_properties_path] || './vendor/unicode-data/properties',
       './resources/unicode_data/properties'
+    ).import
+  end
+
+  desc 'Import Unicode script resources'
+  task :unicode_scripts, :unicode_scripts_path do |_, args|
+    TwitterCldr::Resources::UnicodeScriptsImporter.new(
+      args[:unicode_scripts_path] || './vendor/unicode-data',
+      './resources/unicode_data/scripts.yml'
+    ).import
+  end
+
+  desc 'Import unicode property value aliases'
+  task :unicode_property_value_aliases, :property_value_aliases_path do |_, args|
+    TwitterCldr::Resources::UnicodePropertyValueAliasesImporter.new(
+      args[:property_value_aliases_path] || './vendor/unicode-data',
+      './resources/unicode_data/property_value_aliases.yml'
     ).import
   end
 

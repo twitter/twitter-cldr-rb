@@ -58,7 +58,7 @@ module TwitterCldr
             code_points = CodePoint.code_points_for_property_value(property_value)
 
             if code_points.empty?
-              code_points = CodePoint.code_points_for_script(property_value)
+              code_points = CodePoint.code_points_for_script(property_value) || []
             end
 
             TwitterCldr::Utils::RangeSet.new(code_points)

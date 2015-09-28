@@ -50,7 +50,7 @@ module TwitterCldr
         protected
 
         def scores_for(text)
-          Hash.new { |h, k| h[k] = 0 }.tap do |result|
+          Hash.new(0).tap do |result|
             text.chars.each do |char|
               script = scripts_hash[char]
               result[script] += 1 if script

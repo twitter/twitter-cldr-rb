@@ -22,9 +22,7 @@ module TwitterCldr
       end
 
       def import
-        File.open(@output_path, 'w+') do |f|
-          f.write(YAML.dump(parse_scripts))
-        end
+        File.write(@output_path, YAML.dump(parse_scripts))
       end
 
       protected

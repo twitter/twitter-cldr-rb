@@ -47,7 +47,7 @@ module TwitterCldr
           )
         end
 
-        protected
+        private
 
         def scores_for(text)
           Hash.new(0).tap do |result|

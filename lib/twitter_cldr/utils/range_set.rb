@@ -107,6 +107,11 @@ module TwitterCldr
         ranges.empty?
       end
 
+      def <<(range)
+        ranges << range
+        flatten
+      end
+
       def union(range_set)
         self.class.new(range_set.ranges + ranges)
       end

@@ -14,77 +14,101 @@
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: 
+            ? !ruby/symbol "1000"
+            : 
               :one: "0 mil"
               :other: "0 mil"
-            10000: 
+            ? !ruby/symbol "10000"
+            : 
               :one: "00 mil"
               :other: "00 mil"
-            100000: 
+            ? !ruby/symbol "100000"
+            : 
               :one: "000 mil"
               :other: "000 mil"
-            1000000: 
+            ? !ruby/symbol "1000000"
+            : 
               :one: "0 millón"
               :other: "0 millóns"
-            10000000: 
+            ? !ruby/symbol "10000000"
+            : 
               :one: "00 millóns"
               :other: "00 millóns"
-            100000000: 
+            ? !ruby/symbol "100000000"
+            : 
               :one: "000 millóns"
               :other: "000 millóns"
-            1000000000: 
+            ? !ruby/symbol "1000000000"
+            : 
               :one: "0 mil millóns"
               :other: "0 mil millóns"
-            10000000000: 
+            ? !ruby/symbol "10000000000"
+            : 
               :one: "00 mil millóns"
               :other: "00 mil millóns"
-            100000000000: 
+            ? !ruby/symbol "100000000000"
+            : 
               :one: "000 mil millóns"
               :other: "000 mil millóns"
-            1000000000000: 
+            ? !ruby/symbol "1000000000000"
+            : 
               :one: "0 billóns"
               :other: "0 billóns"
-            10000000000000: 
+            ? !ruby/symbol "10000000000000"
+            : 
               :one: "00 billóns"
               :other: "00 billóns"
-            100000000000000: 
+            ? !ruby/symbol "100000000000000"
+            : 
               :one: "000 billóns"
               :other: "000 billóns"
           :short: 
-            1000: 
+            ? !ruby/symbol "1000"
+            : 
               :one: 0K
               :other: 0K
-            10000: 
+            ? !ruby/symbol "10000"
+            : 
               :one: 00K
               :other: 00K
-            100000: 
+            ? !ruby/symbol "100000"
+            : 
               :one: 000K
               :other: 000K
-            1000000: 
+            ? !ruby/symbol "1000000"
+            : 
               :one: 0M
               :other: 0M
-            10000000: 
+            ? !ruby/symbol "10000000"
+            : 
               :one: 00M
               :other: 00M
-            100000000: 
+            ? !ruby/symbol "100000000"
+            : 
               :one: 000M
               :other: 000M
-            1000000000: 
+            ? !ruby/symbol "1000000000"
+            : 
               :one: 0k M
               :other: 0k M
-            10000000000: 
+            ? !ruby/symbol "10000000000"
+            : 
               :one: 00k M
               :other: 00k M
-            100000000000: 
+            ? !ruby/symbol "100000000000"
+            : 
               :one: 000k M
               :other: 000k M
-            1000000000000: 
+            ? !ruby/symbol "1000000000000"
+            : 
               :one: 0 B
               :other: 0 B
-            10000000000000: 
+            ? !ruby/symbol "10000000000000"
+            : 
               :one: 00 B
               :other: 00 B
-            100000000000000: 
+            ? !ruby/symbol "100000000000000"
+            : 
               :one: 000 B
               :other: 000 B
       :percent: 

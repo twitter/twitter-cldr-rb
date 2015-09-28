@@ -23,6 +23,14 @@ describe UnicodeRegexParser::CharacterSet do
       ])
     end
 
+    it "should return a set containing codepoints for the given script" do
+      char_set = UnicodeRegexParser::CharacterSet.new('Katakana')
+      expect(char_set.to_set.to_a(true)).to eq([
+        12449..12538, 12541..12543, 12784..12799, 13008..13054, 13056..13143,
+        65382..65391, 65393..65437, 110592
+      ])
+    end
+
     it "should raise an exception when given an invalid property name or value" do
       expect do
         UnicodeRegexParser::CharacterSet.new("Foobar=Sp").to_set

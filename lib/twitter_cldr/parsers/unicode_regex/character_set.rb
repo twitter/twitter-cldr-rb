@@ -10,6 +10,8 @@ module TwitterCldr
       # Can exist inside and outside of character classes
       class CharacterSet < Component
 
+        include TwitterCldr::Shared
+
         attr_reader :property, :property_value
 
         def initialize(text)
@@ -37,8 +39,8 @@ module TwitterCldr
           if property
             method = :"code_points_for_#{property}"
 
-            if TwitterCldr::Shared::CodePoint.respond_to?(method)
-              ranges = TwitterCldr::Shared::CodePoint.send(method, property_value)
+            if CodePoint.respond_to?(method)
+              ranges = CodePoint.send(method, property_value)
 
               if ranges
                 TwitterCldr::Utils::RangeSet.new(ranges)
@@ -53,9 +55,13 @@ module TwitterCldr
               )
             end
           else
-            TwitterCldr::Utils::RangeSet.new(
-              TwitterCldr::Shared::CodePoint.code_points_for_property_value(property_value)
-            )
+            code_points = CodePoint.code_points_for_property_value(property_value)
+
+            if code_points.empty?
+              code_points = CodePoint.code_points_for_script(property_value) || []
+            end
+
+            TwitterCldr::Utils::RangeSet.new(code_points)
           end
         end
 

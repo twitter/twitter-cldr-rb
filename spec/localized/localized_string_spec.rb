@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
+require 'eprun'
 
 include TwitterCldr::Localized
 
@@ -249,6 +250,12 @@ describe LocalizedString do
     it 'returns a territory' do
       expect(territory).to be_a(TwitterCldr::Shared::Territory)
       expect(territory.code).to eq(code)
+    end
+  end
+
+  describe '#script' do
+    it 'detects the script the string is written in' do
+      expect('Кирилл'.localize.script).to eq('Cyrillic')
     end
   end
 end

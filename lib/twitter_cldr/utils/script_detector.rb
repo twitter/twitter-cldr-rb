@@ -14,17 +14,8 @@ module TwitterCldr
       end
 
       def best_guess
-        max_score = 0
-        max_script_name = nil
-
-        scores.each_pair do |script_name, score|
-          if score > max_score
-            max_score = score
-            max_script_name = script_name
-          end
-        end
-
-        max_script_name
+        max_score = scores.max_by { |(_, score)| score }
+        max_score.first if max_score
       end
 
       def score_for(script_name)

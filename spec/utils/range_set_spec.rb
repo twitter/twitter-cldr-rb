@@ -158,7 +158,7 @@ describe RangeSet do
   end
 
   describe "#include?" do
-    let (:set) { RangeSet.new([1..5, 9..16]) }
+    let(:set) { RangeSet.new([1..5, 9..16]) }
 
     it "returns true if the set completely includes the range, false otherwise" do
       expect(set).to include(10..15)
@@ -171,6 +171,25 @@ describe RangeSet do
       expect(set).to include(10)
       expect(set).not_to include(6)
       expect(set).not_to include(8)
+    end
+  end
+
+  describe '#<<' do
+    let(:set) { RangeSet.new([5..10]) }
+
+    it "adds a new range to the set when nothing overlaps" do
+      set << (1..3)
+      expect(set.to_a).to eq([1..3, 5..10])
+    end
+
+    it "adds a new range to the set and handles overlapping" do
+      set << (3..6)
+      expect(set.to_a).to eq([3..10])
+    end
+
+    it "adds a new range to the set and handles full overlapping" do
+      set << (1..15)
+      expect(set.to_a).to eq([1..15])
     end
   end
 end

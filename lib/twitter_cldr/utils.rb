@@ -7,7 +7,6 @@ module TwitterCldr
   module Utils
 
     autoload :CodePoints,     'twitter_cldr/utils/code_points'
-    autoload :RangeHelpers,   'twitter_cldr/utils/range_helpers'
     autoload :RangeSet,       'twitter_cldr/utils/range_set'
     autoload :RegexpAst,      'twitter_cldr/utils/regexp_ast'
     autoload :RegexpSampler,  'twitter_cldr/utils/regexp_sampler'

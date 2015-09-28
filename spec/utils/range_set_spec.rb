@@ -124,6 +124,11 @@ describe RangeSet do
       expect(set.to_a).to eq([1..3, 7..10])
     end
 
+    it "results in an empty set if the deducted range entirely overlaps the existing ranges" do
+      set = RangeSet.new([3..10]).subtract(RangeSet.new([1..15]))
+      expect(set.to_a).to eq([])
+    end
+
     it "subtracts the intersection when the range set contians multiple matching ranges" do
       set = RangeSet.new([1..5, 7..10]).subtract(RangeSet.new([3..8]))
       expect(set.to_a).to eq([1..2, 9..10])

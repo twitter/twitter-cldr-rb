@@ -431,14 +431,14 @@ postal_code.find_all("12345 23456")    # <%= assert(postal_code.find_all("12345 
 Get a list of supported territories by using the `#territories` method:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr::Shared::PostalCodes.territories.sort[0..4], [:ad, :am, :ar, :as, :at])) %>
+TwitterCldr::Shared::PostalCodes.territories  # <%= ellipsize(assert(TwitterCldr::Shared::PostalCodes.territories.sort[0..4], [:ac, :ad, :af, :ai, :al])) %>
 ```
 
 Just want the regex?  No problem:
 
 ```ruby
 postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) <% postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) %>
-postal_code.regexp  # <%= assert(postal_code.regexp, /\d{5}([ \-]\d{4})?/).inspect %>
+postal_code.regexp  # <%= assert(postal_code.regexp, /(\d{5})(?:[ \-](\d{4}))?/).inspect %>
 ```
 
 Get a sample of valid postal codes with the `#sample` method:

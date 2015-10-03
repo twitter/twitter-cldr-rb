@@ -32,14 +32,14 @@ module TwitterCldr
 
       def load
         each_territory.each_with_object({}) do |territory, ret|
-          if regex = get_regex_for(territory)
-            ret[territory] = {
-              regex: Regexp.compile(regex),
-              ast: TwitterCldr::Utils::RegexpAst.dump(
-                RegexpAstGenerator.generate(regex)
-              )
-            }
-          end
+          next unless regex = get_regex_for(territory)
+
+          ret[territory] = {
+            regex: Regexp.compile(regex),
+            ast: TwitterCldr::Utils::RegexpAst.dump(
+              RegexpAstGenerator.generate(regex)
+            )
+          }
         end
       end
 

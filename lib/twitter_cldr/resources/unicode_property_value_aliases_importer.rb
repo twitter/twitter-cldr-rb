@@ -22,9 +22,7 @@ module TwitterCldr
       end
 
       def import
-        File.open(@output_path, 'w+') do |f|
-          f.write(YAML.dump(parse_property_value_aliases))
-        end
+        File.write(@output_path, YAML.dump(parse_property_value_aliases))
       end
 
       protected

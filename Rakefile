@@ -152,9 +152,8 @@ namespace :update do
   end
 
   desc 'Import postal codes resource'
-  task :postal_codes, :cldr_path do |_, args|
+  task :postal_codes do
     TwitterCldr::Resources::PostalCodesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
       './resources/shared'
     ).import
   end

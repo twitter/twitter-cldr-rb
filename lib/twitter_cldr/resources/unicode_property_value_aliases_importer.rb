@@ -25,7 +25,7 @@ module TwitterCldr
         File.write(@output_path, YAML.dump(parse_property_value_aliases))
       end
 
-      protected
+      private
 
       def parse_property_value_aliases
         Hash.new { |h, k| h[k] = [] }.tap do |result|

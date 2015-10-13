@@ -26,7 +26,7 @@ module TwitterCldr
         # 5. Get the components of the cleaned-up tag (language¹, script¹, and
         #    region¹), plus any variants if they exist (including keywords).
         def parse(locale_text)
-          locale_text.strip!
+          locale_text = locale_text.strip
           return Locale.new(locale_text) if grandfathered?(locale_text)
 
           normalize(locale_text).tap do |locale|
@@ -59,7 +59,7 @@ module TwitterCldr
           grandfathered.include?(locale_text)
         end
 
-        protected
+        private
 
         def normalize(locale_text)
           Locale.new(nil).tap do |locale|
@@ -188,9 +188,7 @@ module TwitterCldr
             locale.region = nil
           end
 
-          if !locale.language
-            locale.language = 'und'
-          end
+          locale.language ||= 'und'
         end
 
         def languages

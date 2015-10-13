@@ -15,7 +15,7 @@ module TwitterCldr
           lookup(locale)
         end
 
-        protected
+        private
 
         # Try each of the following in order (where the fields exist). The
         # notation field³ means field¹ if it exists, otherwise field².
@@ -32,7 +32,14 @@ module TwitterCldr
         # 4. Lookup language¹. If in the table, return language² _ script³ _
         #    region³ + variants.
         def lookup(locale)
-          first_lookup(locale)
+          first_lookup(locale) ||
+            second_lookup(locale) ||
+            third_lookup(locale) ||
+            fourth_lookup(locale) ||
+            raise(
+              UnrecognizedSubtagsError,
+              "couldn't find matching subtags for #{locale}"
+            )
         end
 
         def first_lookup(locale)
@@ -41,11 +48,9 @@ module TwitterCldr
 
             if replacement = subtags_resource[code.to_sym]
               language2, script2, region2 = Locale.split(replacement)
-              return Locale.new(language2, script2, region2, locale.variants)
+              Locale.new(language2, script2, region2, locale.variants)
             end
           end
-
-          second_lookup(locale)
         end
 
         def second_lookup(locale)
@@ -54,13 +59,11 @@ module TwitterCldr
 
             if replacement = subtags_resource[code.to_sym]
               language2, script2, region2 = Locale.split(replacement)
-              return Locale.new(
+              Locale.new(
                 language2, script2, locale.region || region2, locale.variants
               )
             end
           end
-
-          third_lookup(locale)
         end
 
         def third_lookup(locale)
@@ -69,20 +72,18 @@ module TwitterCldr
 
             if replacement = subtags_resource[code.to_sym]
               language2, script2, region2 = Locale.split(replacement)
-              return Locale.new(
+              Locale.new(
                 language2, locale.script || script2, region2, locale.variants
               )
             end
           end
-
-          fourth_lookup(locale)
         end
 
         def fourth_lookup(locale)
           if locale.language
             if replacement = subtags_resource[locale.language.to_sym]
               language2, script2, region2 = Locale.split(replacement)
-              return Locale.new(
+              Locale.new(
                 language2,
                 locale.script || script2,
                 locale.region || region2,
@@ -90,9 +91,6 @@ module TwitterCldr
               )
             end
           end
-
-          raise UnrecognizedSubtagsError,
-            "couldn't find matching subtags for #{locale}"
         end
 
         def subtags_resource

@@ -25,7 +25,7 @@ module TwitterCldr
           resource[property_name.to_sym]
         end
 
-        protected
+        private
 
         def abbreviated_index_for(property_name)
           abbreviated_indices[property_name] ||=

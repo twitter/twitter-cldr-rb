@@ -65,6 +65,7 @@ task :update do
       "update:unicode_data",
       "update:unicode_properties",
       "update:unicode_scripts",
+      "update:unicode_property_value_aliases",
       "update:generate_casefolder",    # must come after unicode data
       "update:composition_exclusions",
       "update:postal_codes",
@@ -132,6 +133,14 @@ namespace :update do
     TwitterCldr::Resources::UnicodeScriptsImporter.new(
       args[:unicode_scripts_path] || './vendor/unicode-data',
       './resources/unicode_data/properties/script.yml'
+    ).import
+  end
+
+  desc 'Import unicode property value aliases'
+  task :unicode_property_value_aliases, :property_value_aliases_path do |_, args|
+    TwitterCldr::Resources::UnicodePropertyValueAliasesImporter.new(
+      args[:property_value_aliases_path] || './vendor/unicode-data',
+      './resources/unicode_data/property_value_aliases.yml'
     ).import
   end
 

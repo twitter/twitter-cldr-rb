@@ -156,12 +156,6 @@ module TwitterCldr
         def replace_deprecated_language_subtags(locale)
           language = locale.language ? locale.language.to_sym : nil
           if found_alias = aliases_resource[:language][language]
-            replacement = if found_alias.is_a?(Array)
-              found_alias.first
-            else
-              found_alias
-            end
-
             locale.language = found_alias
           end
         end
@@ -169,12 +163,6 @@ module TwitterCldr
         def replace_deprecated_territory_subtags(locale)
           region = locale.region ? locale.region.to_sym : nil
           if found_alias = aliases_resource[:territory][region]
-            replacement = if found_alias.is_a?(Array)
-              found_alias.first
-            else
-              found_alias
-            end
-
             locale.region = found_alias
           end
         end

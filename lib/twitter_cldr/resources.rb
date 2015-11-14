@@ -19,6 +19,7 @@ module TwitterCldr
     autoload :PhoneCodesImporter,                  'twitter_cldr/resources/phone_codes_importer'
     autoload :PostalCodesImporter,                 'twitter_cldr/resources/postal_codes_importer'
     autoload :TailoringImporter,                   'twitter_cldr/resources/tailoring_importer'
+    autoload :TailoringTestsImporter,              'twitter_cldr/resources/tailoring_tests_importer'
     autoload :UnicodeDataImporter,                 'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodePropertiesImporter,           'twitter_cldr/resources/unicode_properties_importer'
     autoload :UnicodeScriptsImporter,              'twitter_cldr/resources/unicode_scripts_importer'

@@ -8,6 +8,8 @@ require 'java'
 
 require 'twitter_cldr/resources/download'
 
+require 'pry-nav'
+
 module TwitterCldr
   module Resources
     # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
@@ -29,7 +31,9 @@ module TwitterCldr
         :it => :root,
         :ms => :root,
         :nl => :root,
-        :pt => :root
+        :pt => :root,
+        # :en => :root,
+        # :ga => :root
       }
 
       EMPTY_TAILORING_DATA = {
@@ -137,38 +141,69 @@ module TwitterCldr
       end
 
       def parse_tailorings(data, locale)
-        rules = data && data.at_xpath('rules')
-
-        return '' unless rules
+        if data && cr = data.at_xpath('cr')
+          rules = cr.text.strip.split("\n").map(&:strip)
+        else
+          return ''
+        end
 
         collator = Java::ComIbmIcuText::Collator.get_instance(Java::JavaUtil::Locale.new(locale.to_s))
 
-        rules.children.map do |child|
-          validate_tailoring_rule(child)
+        rules.map do |rule_text|
+          rules = parse_rule(rule_text)
 
-          if child.name =~ LEVEL_RULE_REGEXP
-            if $2.empty?
-              table_entry_for_rule(collator, child.text)
-            else
-              child.text.chars.map { |char| table_entry_for_rule(collator, char) }
-            end
-          elsif child.name == 'x'
-            context = ''
-            child.children.inject([]) do |memo, c|
-              if SIMPLE_RULES.include?(c.name)
-                memo << table_entry_for_rule(collator, context + c.text)
-              elsif c.name == 'context'
-                context = c.text
-              elsif c.name != 'extend'
-                raise ImportError, "Rule '#{c.name}' inside <x></x> is not supported."
+          rules.each do |rule|
+            level, text = rule
+            # validate_tailoring_rule(rule)
+
+            # if child.name =~ LEVEL_RULE_REGEXP
+            if level =~ LEVEL_RULE_REGEXP
+              if $2.empty?
+                # table_entry_for_rule(collator, child.text)
+                table_entry_for_rule(collator, text)
+              else
+                # child.text.chars.map { |char| table_entry_for_rule(collator, char) }
+                text.chars.map { |char| table_entry_for_rule(collator, char) }
               end
+            # elsif child.name == 'x'
+            #   context = ''
+            #   child.children.inject([]) do |memo, c|
+            #     if SIMPLE_RULES.include?(c.name)
+            #       memo << table_entry_for_rule(collator, context + c.text)
+            #     elsif c.name == 'context'
+            #       context = c.text
+            #     elsif c.name != 'extend'
+            #       raise ImportError, "Rule '#{c.name}' inside <x></x> is not supported."
+            #     end
 
-              memo
+            #     memo
+            #   end
+            else
+              raise ImportError, "Tag '#{level}' is not supported." unless IGNORED_TAGS.include?(level)
+              # raise ImportError, "Tag '#{child.name}' is not supported." unless IGNORED_TAGS.include?(child.name)
             end
-          else
-            raise ImportError, "Tag '#{child.name}' is not supported." unless IGNORED_TAGS.include?(child.name)
           end
         end.flatten.compact.join("\n")
+      end
+
+      def parse_rule(rule_text)
+        puts rule_text
+        tokens = rule_text.split(/([&=]|[<]+)/).reject(&:empty?)
+        level = nil
+
+        [].tap do |rules|
+          tokens.each do |token|
+            case token
+              when '<' then level = 'p'
+              when '<<' then level = 's'
+              when '<<<' then level = 't'
+              when '=' then level = 'i'
+              when '&'
+              else
+                rules << [level, token] if level
+            end
+          end
+        end
       end
 
       def table_entry_for_rule(collator, tailored_value)

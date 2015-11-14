@@ -6,8 +6,16 @@
 module TwitterCldr
   module Resources
 
-    CLDR_URL = 'http://unicode.org/Public/cldr/26/core.zip'
-    ICU4J_URL = 'http://download.icu-project.org/files/icu4j/54.1/icu4j-54_1.jar'
+    # CLDR_VERSION    = '26'
+    # ICU_VERSION     = '54.1.1'
+    UNICODE_VERSION = '6.1.0'
+
+    CLDR_VERSION    = '24'
+    ICU_VERSION     = '52.1'
+
+    CLDR_URL    = "http://unicode.org/Public/cldr/#{CLDR_VERSION}/core.zip"
+    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{ICU_VERSION}/icu4j-#{ICU_VERSION.gsub('.', '_')}.jar"
+    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{UNICODE_VERSION}"
 
     # Use these instead to update collation and tailoring data
     # CLDR_URL = 'http://unicode.org/Public/cldr/23.1/core.zip'

@@ -8,8 +8,6 @@ require 'java'
 
 require 'twitter_cldr/resources/download'
 
-require 'pry-nav'
-
 module TwitterCldr
   module Resources
     # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
@@ -31,9 +29,7 @@ module TwitterCldr
         :it => :root,
         :ms => :root,
         :nl => :root,
-        :pt => :root,
-        # :en => :root,
-        # :ga => :root
+        :pt => :root
       }
 
       EMPTY_TAILORING_DATA = {

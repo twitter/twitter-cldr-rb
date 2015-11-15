@@ -7,6 +7,7 @@ require 'rubygems' unless ENV['NO_RUBYGEMS']
 
 require 'bundler'
 require 'digest'
+require 'fileutils'
 
 require 'rspec/core/rake_task'
 require 'rubygems/package_task'
@@ -55,6 +56,7 @@ task :update do
     [
       "update:tailoring_data",  # per locale
       "update:collation_tries", # per locale, must come after update:tailoring_data
+      "update:tailoring_tests", # per locale, if available in CLDR v21, must come after tailoring_data and collation_tries
       "update:rbnf_tests",      # per locale
     ]
   else
@@ -85,6 +87,13 @@ end
 
 # TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
 
+task :clean_vendored do
+  Dir.glob('./vendor/*') do |file_or_dir|
+    puts "Removing #{file_or_dir}"
+    FileUtils.rm_rf(file_or_dir)
+  end
+end
+
 namespace :update do
   ICU_JAR = './vendor/icu4j.jar'
 
@@ -108,6 +117,15 @@ namespace :update do
     TwitterCldr::Resources::TailoringImporter.new(
       args[:cldr_path] || './vendor/cldr',
       './resources/collation/tailoring',
+      args[:icu4j_jar_path] || ICU_JAR
+    ).import(TwitterCldr.supported_locales)
+  end
+
+  desc 'Import tailoring tests from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :tailoring_tests, :cldr_path, :icu4j_jar_path do |_, args|
+    TwitterCldr::Resources::TailoringTestsImporter.new(
+      args[:cldr_path] || './vendor/cldr_for_collation',
+      './spec/collation/tailoring_tests',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
   end

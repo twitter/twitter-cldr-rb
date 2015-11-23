@@ -192,8 +192,8 @@ describe UnicodeRegex do
       end
 
       it "should match a regex with a complicated expression inside the char class" do
-        # not [separators U space-tilde] diff [letters diff numbers]  (diff is commutative)
-        regex = compile("[^[\\p{Z}\\u0020-\\u007f]-[\\p{L}]-[\\p{N}]]")
+        # [separators U space-tilde] diff [letters diff numbers]  (diff is commutative)
+        regex = compile("[[\\p{Z}\\u0020-\\u007f]-[\\p{L}]-[\\p{N}]]")
         expect(regex).to exactly_match(" ")
         expect(regex).to exactly_match(",")
         expect(regex).not_to exactly_match("a")

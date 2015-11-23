@@ -64,14 +64,11 @@ task :update do
       "update:locales_resources",      # per locale (+ units resources using different CLDR and ruby-cldr, see LocalesResourcesImporter)
       "update:unicode_data",
       "update:unicode_properties",
-      "update:unicode_scripts",
-      "update:unicode_property_value_aliases",
+      "update:unicode_property_aliases",
       "update:generate_casefolder",    # must come after unicode data
-      "update:composition_exclusions",
       "update:postal_codes",
       "update:phone_codes",
       "update:language_codes",
-      "update:canonical_compositions",
       "update:segment_exceptions",     # per locale
       "update:readme"
     ]
@@ -121,26 +118,18 @@ namespace :update do
   end
 
   desc 'Import Unicode property resources'
-  task :unicode_properties, :unicode_properties_path do |_, args|
-    TwitterCldr::Resources::UnicodePropertiesImporter.new(
-      args[:unicode_properties_path] || './vendor/unicode-data/properties',
+  task :unicode_properties, :properties_path do |_, args|
+    TwitterCldr::Resources::Properties::PropertiesImporter.new(
+      args[:properties_path] || './vendor/unicode-data/properties',
       './resources/unicode_data/properties'
     ).import
   end
 
-  desc 'Import Unicode script resources'
-  task :unicode_scripts, :unicode_scripts_path do |_, args|
-    TwitterCldr::Resources::UnicodeScriptsImporter.new(
-      args[:unicode_scripts_path] || './vendor/unicode-data',
-      './resources/unicode_data/properties/script.yml'
-    ).import
-  end
-
   desc 'Import unicode property value aliases'
-  task :unicode_property_value_aliases, :property_value_aliases_path do |_, args|
-    TwitterCldr::Resources::UnicodePropertyValueAliasesImporter.new(
-      args[:property_value_aliases_path] || './vendor/unicode-data',
-      './resources/unicode_data/property_value_aliases.yml'
+  task :unicode_property_aliases, :property_aliases_path do |_, args|
+    TwitterCldr::Resources::UnicodePropertyAliasesImporter.new(
+      args[:property_aliases_path] || './vendor/unicode-data',
+      './resources/unicode_data'
     ).import
   end
 
@@ -150,14 +139,6 @@ namespace :update do
       './lib/twitter_cldr/resources/casefolder.rb.erb',
       './lib/twitter_cldr/shared'
     ).generate
-  end
-
-  desc 'Import composition exclusions resource'
-  task :composition_exclusions, :derived_normalization_props_path do |_, args|
-    TwitterCldr::Resources::CompositionExclusionsImporter.new(
-      args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
-      './resources/unicode_data'
-    ).import
   end
 
   desc 'Import postal codes resource'
@@ -186,11 +167,6 @@ namespace :update do
   desc 'Update default and tailoring tries dumps (should be executed using JRuby 1.7 in 1.9 mode)'
   task :collation_tries do
     TwitterCldr::Resources::CollationTriesDumper.update_dumps
-  end
-
-  desc 'Update canonical compositions resource'
-  task :canonical_compositions do
-    TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
   end
 
   desc 'Import normalization quick check data'

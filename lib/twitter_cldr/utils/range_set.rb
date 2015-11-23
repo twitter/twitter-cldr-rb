@@ -13,6 +13,8 @@ module TwitterCldr
     # than as single elements. By definition, RangeSets contain no duplicates.
     class RangeSet
 
+      include Enumerable
+
       attr_reader :ranges
 
       class << self
@@ -93,11 +95,9 @@ module TwitterCldr
       def include?(obj)
         case obj
           when Numeric
-            ranges.any? { |range| range.include?(obj) }
+            includes_numeric?(obj)
           when Range
-            ranges.any? do |range|
-              range.first <= obj.first && range.last >= obj.last
-            end
+            includes_range?(obj)
           else
             false
         end
@@ -161,7 +161,72 @@ module TwitterCldr
         union(range_set).subtract(intersection(range_set))
       end
 
-      protected
+      def each_range(&block)
+        ranges.each(&block)
+      end
+
+      def each(&block)
+        if block_given?
+          ranges.each do |range|
+            range.each(&block)
+          end
+        else
+          to_enum(__method__)
+        end
+      end
+
+      private
+
+      def includes_numeric?(num)
+        result = bsearch do |range|
+          if num >= range.first && num <= range.last
+            0
+          elsif num < range.first
+            -1
+          else
+            1
+          end
+        end
+
+        !!result
+      end
+
+      def includes_range?(range)
+        bsearch do |cur_range|
+          if full_overlap?(cur_range, range)
+            0
+          elsif front_overlap?(cur_range, range)
+            return false
+          elsif rear_overlap?(cur_range, range)
+            return false
+          elsif range.first < cur_range.first
+            -1
+          else
+            1
+          end
+        end
+      end
+
+      def bsearch
+        low = 0
+        mid = 0
+        high = ranges.length - 1
+
+        while low <= high
+          mid = (low + high) >> 1
+
+          case yield(ranges[mid])
+            when 0
+              return ranges[mid]
+            when -1
+              high = mid - 1
+            else
+              low = mid + 1
+          end
+        end
+
+        nil
+      end
 
       def overlap?(range1, range2)
         is_numeric_range?(range1) && is_numeric_range?(range2) && (

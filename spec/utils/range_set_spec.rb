@@ -124,6 +124,11 @@ describe RangeSet do
       expect(set.to_a).to eq([1..3, 7..10])
     end
 
+    it "results in an empty set if the deducted range entirely overlaps the existing ranges" do
+      set = RangeSet.new([3..10]).subtract(RangeSet.new([1..15]))
+      expect(set.to_a).to eq([])
+    end
+
     it "subtracts the intersection when the range set contians multiple matching ranges" do
       set = RangeSet.new([1..5, 7..10]).subtract(RangeSet.new([3..8]))
       expect(set.to_a).to eq([1..2, 9..10])
@@ -153,7 +158,7 @@ describe RangeSet do
   end
 
   describe "#include?" do
-    let (:set) { RangeSet.new([1..5, 9..16]) }
+    let(:set) { RangeSet.new([1..5, 9..16]) }
 
     it "returns true if the set completely includes the range, false otherwise" do
       expect(set).to include(10..15)
@@ -166,6 +171,41 @@ describe RangeSet do
       expect(set).to include(10)
       expect(set).not_to include(6)
       expect(set).not_to include(8)
+    end
+  end
+
+  describe '#<<' do
+    let(:set) { RangeSet.new([5..10]) }
+
+    it "adds a new range to the set when nothing overlaps" do
+      set << (1..3)
+      expect(set.to_a).to eq([1..3, 5..10])
+    end
+
+    it "adds a new range to the set and handles overlapping" do
+      set << (3..6)
+      expect(set.to_a).to eq([3..10])
+    end
+
+    it "adds a new range to the set and handles full overlapping" do
+      set << (1..15)
+      expect(set.to_a).to eq([1..15])
+    end
+  end
+
+  describe "#each_range" do
+    let(:set) { RangeSet.new([5..10, 15..20]) }
+
+    it "yields each individual range to the block" do
+      expect(set.each_range.to_a).to eq([5..10, 15..20])
+    end
+  end
+
+  describe "#each" do
+    let(:set) { RangeSet.new([5..10]) }
+
+    it "yields each number the set contains (as opposed to each range)" do
+      expect(set.each.to_a).to eq([5, 6, 7, 8, 9, 10])
     end
   end
 end

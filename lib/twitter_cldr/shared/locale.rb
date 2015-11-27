@@ -26,7 +26,7 @@ module TwitterCldr
         # 5. Get the components of the cleaned-up tag (language¹, script¹, and
         #    region¹), plus any variants if they exist (including keywords).
         def parse(locale_text)
-          locale_text.strip!
+          locale_text = locale_text.strip
           return Locale.new(locale_text) if grandfathered?(locale_text)
 
           normalize(locale_text).tap do |locale|
@@ -59,7 +59,7 @@ module TwitterCldr
           grandfathered.include?(locale_text)
         end
 
-        protected
+        private
 
         def normalize(locale_text)
           Locale.new(nil).tap do |locale|
@@ -156,12 +156,6 @@ module TwitterCldr
         def replace_deprecated_language_subtags(locale)
           language = locale.language ? locale.language.to_sym : nil
           if found_alias = aliases_resource[:language][language]
-            replacement = if found_alias.is_a?(Array)
-              found_alias.first
-            else
-              found_alias
-            end
-
             locale.language = found_alias
           end
         end
@@ -169,12 +163,6 @@ module TwitterCldr
         def replace_deprecated_territory_subtags(locale)
           region = locale.region ? locale.region.to_sym : nil
           if found_alias = aliases_resource[:territory][region]
-            replacement = if found_alias.is_a?(Array)
-              found_alias.first
-            else
-              found_alias
-            end
-
             locale.region = found_alias
           end
         end
@@ -188,9 +176,7 @@ module TwitterCldr
             locale.region = nil
           end
 
-          if !locale.language
-            locale.language = 'und'
-          end
+          locale.language ||= 'und'
         end
 
         def languages
@@ -234,7 +220,8 @@ module TwitterCldr
       end
 
       def full_script
-        @full_script ||= PropertyAliases.long_alias_for(:sc, script)
+        # fall back to abbreviated script if long alias can't be found
+        @full_script ||= PropertyValueAliases.long_alias_for('sc', script) || script
       end
 
       def maximize

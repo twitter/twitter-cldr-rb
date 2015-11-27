@@ -14,17 +14,8 @@ module TwitterCldr
       end
 
       def best_guess
-        max_score = 0
-        max_script_name = nil
-
-        scores.each_pair do |script_name, score|
-          if score > max_score
-            max_score = score
-            max_script_name = script_name
-          end
-        end
-
-        max_script_name
+        max_score = scores.max_by { |(_, score)| score }
+        max_score.first if max_score
       end
 
       def score_for(script_name)
@@ -34,6 +25,8 @@ module TwitterCldr
     end
 
     class ScriptDetector
+
+      PROPERTY_NAME = 'Script'
 
       class << self
 
@@ -47,10 +40,10 @@ module TwitterCldr
           )
         end
 
-        protected
+        private
 
         def scores_for(text)
-          Hash.new { |h, k| h[k] = 0 }.tap do |result|
+          Hash.new(0).tap do |result|
             text.chars.each do |char|
               script = scripts_hash[char]
               result[script] += 1 if script
@@ -59,19 +52,20 @@ module TwitterCldr
         end
 
         def scripts_hash
-          @scripts_hash ||= resource.each_with_object({}) do |(script_name, ranges), ret|
-            ranges.each do |range|
-              range.to_a.each do |code_point|
-                ret[[code_point].pack('U*')] = script_name
-              end
+          @scripts_hash ||= scripts.each_with_object({}) do |script_name, ret|
+            code_points = properties.code_points_for_property(PROPERTY_NAME, script_name)
+            code_points.each do |code_point|
+              ret[[code_point].pack("U*")] = script_name
             end
           end
         end
 
-        def resource
-          @resource ||= TwitterCldr.get_resource(
-            'unicode_data', 'properties', 'script'
-          )
+        def scripts
+          @scripts ||= properties.property_values_for(PROPERTY_NAME)
+        end
+
+        def properties
+          TwitterCldr::Shared::CodePoint.properties
         end
 
       end

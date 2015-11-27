@@ -49,3 +49,10 @@ describe ScriptDetector do
     end
   end
 end
+
+describe ScriptDetectionResult do
+  it 'returns nil if no scripts were detected' do
+    result = ScriptDetectionResult.new({})
+    expect(result.best_guess).to be_nil
+  end
+end

@@ -464,20 +464,20 @@ postal_code.find_all("12345 23456")    # ["12345", "23456"]
 Get a list of supported territories by using the `#territories` method:
 
 ```ruby
-TwitterCldr::Shared::PostalCodes.territories  # [:ad, :am, :ar, :as, :at, ... ]
+TwitterCldr::Shared::PostalCodes.territories  # [:ac, :ad, :af, :ai, :al, ... ]
 ```
 
 Just want the regex?  No problem:
 
 ```ruby
 postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
-postal_code.regexp  # /\d{5}([ \-]\d{4})?/
+postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 ```
 
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["20274-2080", "17661", "18705", "77929", "73034-2737"]
+postal_code.sample(5)  # ["79220", "97037-1396", "41756", "07232-5538", "99181-2266"]
 ```
 
 ### Phone Codes

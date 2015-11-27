@@ -1,13 +1,42 @@
 ---
-:ad:
-  :regex: !ruby/regexp /AD\d{3}/
+:ac:
+  :regex: !ruby/regexp /ASCN 1ZZ/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiDUFTQ04gMVpaBjoGRVQ7BlsAOhBAcXVhbnRp
+    ZmllcjA7CjA=
+:ad:
+  :regex: !ruby/regexp /AD[1-7]0\d/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkxpdGVyYWwIOgpAdGV4dEkiB0FEBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBv
-    OilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsK
-    bzouVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIH
-    OglAbWF4aQg6CUBtaW5pCDsKMA==
+    OjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0
+    CToNQG1lbWJlcnNbBiIIMS03Og1AbmVnYXRlZEY7BlsAOwowbzsHCDsISSIG
+    MAY7CVQ7BlsAOwowbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA7CjA7CjA=
+:af:
+  :regex: !ruby/regexp /\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
+:ai:
+  :regex: !ruby/regexp /2640/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiCTI2NDAGOgZFVDsGWwA6EEBxdWFudGlmaWVy
+    MDsKMA==
+:al:
+  :regex: !ruby/regexp /\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :am:
   :regex: !ruby/regexp /(37)?\d{4}/
   :ast: |
@@ -19,24 +48,31 @@
     cgc6CUBtYXhpBjoJQG1pbmkAbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdl
     eHBBc3Q6OkRpZ2l0BzsGWwA7C287DAc7DWkJOw5pCTsLMA==
 :ar:
-  :regex: !ruby/regexp /([A-HJ-NP-Z])?\d{4}([A-Z]{3})?/
+  :regex: !ruby/regexp /((?:[A-HJ-NP-Z])?\d{4})([A-Z]{3})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sIbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbBm86MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
-    OjpDaGFyYWN0ZXJTZXQJOg1AbWVtYmVyc1sIIghBLUgiCEotTiIIUC1aOg1A
-    bmVnYXRlZEY7BlsAOhBAcXVhbnRpZmllcjA7C286LlR3aXR0ZXJDbGRyOjpV
-    dGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkGOglAbWluaQBv
-    OilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsL
-    bzsMBzsNaQk7DmkJbzsHBzsGWwZvOwgJOwlbBiIIQS1aOwpGOwZbADsLbzsM
-    BzsNaQg7DmkIOwtvOwwHOw1pBjsOaQA7CzA=
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpQYXNzaXZlBzsGWwZvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFz
+    dDo6Q2hhcmFjdGVyU2V0CToNQG1lbWJlcnNbCCIIQS1IIghKLU4iCFAtWjoN
+    QG5lZ2F0ZWRGOwZbADoQQHF1YW50aWZpZXIwOwxvOi5Ud2l0dGVyQ2xkcjo6
+    VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpBjoJQG1pbmkA
+    bzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7
+    DG87DQc7DmkJOw9pCTsMMG87Bwc7BlsGbzsJCTsKWwYiCEEtWjsLRjsGWwA7
+    DG87DQc7DmkIOw9pCDsMbzsNBzsOaQY7D2kAOwww
 :as:
-  :regex: !ruby/regexp /96799/
+  :regex: !ruby/regexp /(96799)(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCjk2Nzk5BjoGRVQ7BlsAOhBAcXVhbnRpZmll
-    cjA7CjA=
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbBm86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgo5Njc5OQY6BkVUOwZbADoQQHF1YW50aWZp
+    ZXIwOwswbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlBhc3Np
+    dmUHOwZbB286MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFy
+    YWN0ZXJTZXQJOg1AbWVtYmVyc1sGIgYtOg1AbmVnYXRlZEY7BlsAOwswbzsH
+    BzsGWwZvOilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQH
+    OwZbADsLbzouVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50
+    aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsLMDsLbzsRBzsSaQY7E2kAOwsw
 :at:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -75,11 +111,11 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :bb:
-  :regex: !ruby/regexp /(BB\d{5})?/
+  :regex: !ruby/regexp /(?:BB\d{5})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OlBhc3NpdmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
     OjpMaXRlcmFsCDoKQHRleHRJIgdCQgY6BkVUOwZbADoQQHF1YW50aWZpZXIw
     bzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7
     C286LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVy
@@ -106,20 +142,31 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :bh:
-  :regex: !ruby/regexp /((1[0-2]|[2-9])\d{2})?/
+  :regex: !ruby/regexp /(?:(?:\d|1[0-2])\d{2})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbB287Bwc7BlsGbzovVHdpdHRlckNsZHI6OlV0aWxzOjpS
+    OlBhc3NpdmUHOwZbB287Bwc7BlsGbzovVHdpdHRlckNsZHI6OlV0aWxzOjpS
     ZWdleHBBc3Q6OkFsdGVybmF0aW9uBzsGWwdvOixUd2l0dGVyQ2xkcjo6VXRp
-    bHM6OlJlZ2V4cEFzdDo6U2VxdWVuY2UHOwZbB286K1R3aXR0ZXJDbGRyOjpV
-    dGlsczo6UmVnZXhwQXN0OjpMaXRlcmFsCDoKQHRleHRJIgYxBjoGRVQ7BlsA
-    OhBAcXVhbnRpZmllcjBvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFz
-    dDo6Q2hhcmFjdGVyU2V0CToNQG1lbWJlcnNbBiIIMC0yOg1AbmVnYXRlZEY7
-    BlsAOw0wOw0wbzsJBzsGWwZvOw4JOw9bBiIIMi05OxBGOwZbADsNMDsNMDsN
-    MDsNMG86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7
-    BlsAOw1vOi5Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRp
-    Zmllcgc6CUBtYXhpBzoJQG1pbmkHOw1vOxIHOxNpBjsUaQA7DTA=
+    bHM6OlJlZ2V4cEFzdDo6U2VxdWVuY2UHOwZbBm86KVR3aXR0ZXJDbGRyOjpV
+    dGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcjA7CzBv
+    OwkHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRl
+    cmFsCDoKQHRleHRJIgYxBjoGRVQ7BlsAOwswbzowVHdpdHRlckNsZHI6OlV0
+    aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNldAk6DUBtZW1iZXJzWwYiCDAt
+    MjoNQG5lZ2F0ZWRGOwZbADsLMDsLMDsLMDsLMG87Cgc7BlsAOwtvOi5Ud2l0
+    dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhp
+    BzoJQG1pbmkHOwtvOxIHOxNpBjsUaQA7CzA=
+:bl:
+  :regex: !ruby/regexp /9[78][01]\d{2}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiBjkGOgZFVDsGWwA6EEBxdWFudGlmaWVyMG86
+    MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJ
+    Og1AbWVtYmVyc1sHIgY3IgY4Og1AbmVnYXRlZEY7BlsAOwowbzsLCTsMWwci
+    BjAiBjE7DUY7BlsAOwowbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBB
+    c3Q6OkRpZ2l0BzsGWwA7Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
+    QXN0OjpRdWFudGlmaWVyBzoJQG1heGkHOglAbWluaQc7CjA=
 :bm:
   :regex: !ruby/regexp /[A-Z]{2}[ ]?[A-Z0-9]{2}/
   :ast: |
@@ -150,6 +197,13 @@
     aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJOg1A
     bWVtYmVyc1sGIgYtOg1AbmVnYXRlZEY7BlsAOwhvOwkHOwppBjsLaQBvOwcH
     OwZbADsIbzsJBzsKaQg7C2kIOwgw
+:bt:
+  :regex: !ruby/regexp /\d{5}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :by:
   :regex: !ruby/regexp /\d{6}/
   :ast: |
@@ -185,13 +239,6 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
-:ck:
-  :regex: !ruby/regexp /\d{4}/
-  :ast: |
-    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :cl:
   :regex: !ruby/regexp /\d{7}/
   :ast: |
@@ -200,6 +247,13 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQw6CUBtaW5pDDsIMA==
 :cn:
+  :regex: !ruby/regexp /\d{6}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCzsIMA==
+:co:
   :regex: !ruby/regexp /\d{6}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
@@ -218,13 +272,6 @@
     aQk7CjBvOwgHOwZbCG87CQc7BlsAOwpvOwsHOwxpCDsNaQhvOitUd2l0dGVy
     Q2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6TGl0ZXJhbAg6CkB0ZXh0SSIGLQY6
     BkVUOwZbADsKMG87CQc7BlsAOwpvOwsHOwxpCTsNaQk7CjA7CjA7CjA=
-:cs:
-  :regex: !ruby/regexp /\d{5}/
-  :ast: |
-    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :cv:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -285,21 +332,20 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :ec:
-  :regex: !ruby/regexp /([A-Z]\d{4}[A-Z]|(?:[A-Z]{2})?\d{6})?/
+  :regex: !ruby/regexp /(?:[A-Z]\d{4}[A-Z]|(?:[A-Z]{2})?\d{6})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbBm86L1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OlBhc3NpdmUHOwZbBm86L1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
     OjpBbHRlcm5hdGlvbgc7BlsHbzosVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdl
     eHBBc3Q6OlNlcXVlbmNlBzsGWwhvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJl
     Z2V4cEFzdDo6Q2hhcmFjdGVyU2V0CToNQG1lbWJlcnNbBiIIQS1aOg1AbmVn
     YXRlZEY7BlsAOhBAcXVhbnRpZmllcjBvOilUd2l0dGVyQ2xkcjo6VXRpbHM6
     OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsNbzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCW87Cgk7
-    C1sGIghBLVo7DEY7BlsAOw0wOw0wbzsJBzsGWwdvOitUd2l0dGVyQ2xkcjo6
-    VXRpbHM6OlJlZ2V4cEFzdDo6UGFzc2l2ZQc7BlsGbzsKCTsLWwYiCEEtWjsM
-    RjsGWwA7DW87Dwc7EGkHOxFpBzsNbzsPBzsQaQY7EWkAbzsOBzsGWwA7DW87
-    Dwc7EGkLOxFpCzsNMDsNMDsNbzsPBzsQaQY7EWkAOw0w
+    C1sGIghBLVo7DEY7BlsAOw0wOw0wbzsJBzsGWwdvOwcHOwZbBm87Cgk7C1sG
+    IghBLVo7DEY7BlsAOw1vOw8HOxBpBzsRaQc7DW87Dwc7EGkGOxFpAG87Dgc7
+    BlsAOw1vOw8HOxBpCzsRaQs7DTA7DTA7DW87Dwc7EGkGOxFpADsNMA==
 :ee:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -308,6 +354,13 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :eg:
+  :regex: !ruby/regexp /\d{5}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:eh:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
@@ -343,18 +396,19 @@
     OkxpdGVyYWwIOgpAdGV4dEkiDUZJUVEgMVpaBjoGRVQ7BlsAOhBAcXVhbnRp
     ZmllcjA7CjA=
 :fm:
-  :regex: !ruby/regexp /(9694[1-4])([ \-]\d{4})?/
+  :regex: !ruby/regexp /(9694[1-4])(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
     OjpMaXRlcmFsCDoKQHRleHRJIgk5Njk0BjoGRVQ7BlsAOhBAcXVhbnRpZmll
     cjBvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVy
-    U2V0CToNQG1lbWJlcnNbBiIIMS00Og1AbmVnYXRlZEY7BlsAOwswOwswbzsH
-    BzsGWwdvOwwJOw1bBiIGLTsORjsGWwA7CzBvOilUd2l0dGVyQ2xkcjo6VXRp
-    bHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsLbzouVHdpdHRlckNsZHI6OlV0
-    aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsL
-    bzsQBzsRaQY7EmkAOwsw
+    U2V0CToNQG1lbWJlcnNbBiIIMS00Og1AbmVnYXRlZEY7BlsAOwswOwswbzor
+    VHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlBhc3NpdmUHOwZbB287
+    DAk7DVsGIgYtOw5GOwZbADsLMG87Bwc7BlsGbzopVHdpdHRlckNsZHI6OlV0
+    aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7C286LlR3aXR0ZXJDbGRyOjpV
+    dGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkJOglAbWluaQk7
+    CzA7C287EQc7EmkGOxNpADsLMA==
 :fo:
   :regex: !ruby/regexp /\d{3}/
   :ast: |
@@ -373,7 +427,7 @@
     bWVtYmVyc1sAOg1AbmVnYXRlZEY7BlsAOwhvOwkHOwppBjsLaQBvOwcHOwZb
     ADsIbzsJBzsKaQg7C2kIOwgw
 :gb:
-  :regex: !ruby/regexp /GIR[ ]?0AA|((AB|AL|B|BA|BB|BD|BH|BL|BN|BR|BS|BT|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(\d[\dA-Z]?[
+  :regex: !ruby/regexp /GIR[ ]?0AA|((AB|AL|B|BA|BB|BD|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(\d[\dA-Z]?[
     ]?\d[ABD-HJLN-UW-Z]{2}))|BFPO[ ]?\d{1,4}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
@@ -386,7 +440,7 @@
     dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhp
     BjoJQG1pbmkAbzsJCDsKSSIIMEFBBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm86
     K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwdv
-    OxMHOwZbBm87Bwc7BlsBfG87CAc7BlsGbzsJCDsKSSIHQUIGOwtUOwZbADsM
+    OxMHOwZbBm87Bwc7BlsBfW87CAc7BlsGbzsJCDsKSSIHQUIGOwtUOwZbADsM
     MDsMMG87CAc7BlsGbzsJCDsKSSIHQUwGOwtUOwZbADsMMDsMMG87CAc7BlsG
     bzsJCDsKSSIGQgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdCQQY7
     C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdCQgY7C1Q7BlsAOwwwOwww
@@ -395,95 +449,96 @@
     BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdCTgY7C1Q7BlsAOwwwOwwwbzsI
     BzsGWwZvOwkIOwpJIgdCUgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
     IgdCUwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdCVAY7C1Q7BlsA
-    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDQQY7C1Q7BlsAOwwwOwwwbzsIBzsG
-    WwZvOwkIOwpJIgdDQgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdD
-    RgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDSAY7C1Q7BlsAOwww
-    OwwwbzsIBzsGWwZvOwkIOwpJIgdDTQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
-    OwkIOwpJIgdDTwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDUgY7
-    C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDVAY7C1Q7BlsAOwwwOwww
-    bzsIBzsGWwZvOwkIOwpJIgdDVgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
-    OwpJIgdDVwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdEQQY7C1Q7
-    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdERAY7C1Q7BlsAOwwwOwwwbzsI
-    BzsGWwZvOwkIOwpJIgdERQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
-    IgdERwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdESAY7C1Q7BlsA
-    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdETAY7C1Q7BlsAOwwwOwwwbzsIBzsG
-    WwZvOwkIOwpJIgdETgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdE
-    VAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdEWQY7C1Q7BlsAOwww
-    OwwwbzsIBzsGWwZvOwkIOwpJIgZFBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87
-    CQg7CkkiB0VDBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0VIBjsL
-    VDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0VOBjsLVDsGWwA7DDA7DDBv
-    OwgHOwZbBm87CQg7CkkiB0VYBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7
-    CkkiB0ZLBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0ZZBjsLVDsG
-    WwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiBkcGOwtUOwZbADsMMDsMMG87CAc7
-    BlsGbzsJCDsKSSIHR0wGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
-    R1kGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHR1UGOwtUOwZbADsM
-    MDsMMG87CAc7BlsGbzsJCDsKSSIHSEEGOwtUOwZbADsMMDsMMG87CAc7BlsG
-    bzsJCDsKSSIHSEQGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSEcG
-    OwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSFAGOwtUOwZbADsMMDsM
-    MG87CAc7BlsGbzsJCDsKSSIHSFIGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
-    CDsKSSIHSFMGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSFUGOwtU
-    OwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSFgGOwtUOwZbADsMMDsMMG87
-    CAc7BlsGbzsJCDsKSSIHSUcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsK
-    SSIHSU0GOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSVAGOwtUOwZb
-    ADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSVYGOwtUOwZbADsMMDsMMG87CAc7
-    BlsGbzsJCDsKSSIHSkUGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
-    S0EGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHS1QGOwtUOwZbADsM
-    MDsMMG87CAc7BlsGbzsJCDsKSSIHS1cGOwtUOwZbADsMMDsMMG87CAc7BlsG
-    bzsJCDsKSSIHS1kGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIGTAY7
-    C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMQQY7C1Q7BlsAOwwwOwww
-    bzsIBzsGWwZvOwkIOwpJIgdMRAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
-    OwpJIgdMRQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMTAY7C1Q7
-    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMTgY7C1Q7BlsAOwwwOwwwbzsI
-    BzsGWwZvOwkIOwpJIgdMUwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
-    IgdMVQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgZNBjsLVDsGWwA7
-    DDA7DDBvOwgHOwZbBm87CQg7CkkiB01FBjsLVDsGWwA7DDA7DDBvOwgHOwZb
-    Bm87CQg7CkkiB01LBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB01M
-    BjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiBk4GOwtUOwZbADsMMDsM
-    MG87CAc7BlsGbzsJCDsKSSIHTkUGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
-    CDsKSSIHTkcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHTk4GOwtU
-    OwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHTlAGOwtUOwZbADsMMDsMMG87
-    CAc7BlsGbzsJCDsKSSIHTlIGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsK
-    SSIHTlcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHT0wGOwtUOwZb
-    ADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHT1gGOwtUOwZbADsMMDsMMG87CAc7
-    BlsGbzsJCDsKSSIHUEEGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
-    UEUGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUEgGOwtUOwZbADsM
-    MDsMMG87CAc7BlsGbzsJCDsKSSIHUEwGOwtUOwZbADsMMDsMMG87CAc7BlsG
-    bzsJCDsKSSIHUE8GOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUFIG
-    OwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUkcGOwtUOwZbADsMMDsM
-    MG87CAc7BlsGbzsJCDsKSSIHUkgGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
-    CDsKSSIHUk0GOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIGUwY7C1Q7
-    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTQQY7C1Q7BlsAOwwwOwwwbzsI
-    BzsGWwZvOwkIOwpJIgdTRQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
-    IgdTRwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTSwY7C1Q7BlsA
-    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTTAY7C1Q7BlsAOwwwOwwwbzsIBzsG
-    WwZvOwkIOwpJIgdTTQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdT
-    TgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTTwY7C1Q7BlsAOwww
-    OwwwbzsIBzsGWwZvOwkIOwpJIgdTUAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
-    OwkIOwpJIgdTUgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTUwY7
-    C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTVAY7C1Q7BlsAOwwwOwww
-    bzsIBzsGWwZvOwkIOwpJIgdTVwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
-    OwpJIgdTWQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUQQY7C1Q7
-    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdURAY7C1Q7BlsAOwwwOwwwbzsI
-    BzsGWwZvOwkIOwpJIgdURgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
-    IgdUTgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUUQY7C1Q7BlsA
-    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUUgY7C1Q7BlsAOwwwOwwwbzsIBzsG
-    WwZvOwkIOwpJIgdUUwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdU
-    VwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdVQgY7C1Q7BlsAOwww
-    OwwwbzsIBzsGWwZvOwkIOwpJIgZXBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87
-    CQg7CkkiB1dBBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dDBjsL
-    VDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dEBjsLVDsGWwA7DDA7DDBv
-    OwgHOwZbBm87CQg7CkkiB1dGBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7
-    CkkiB1dOBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dSBjsLVDsG
-    WwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dTBjsLVDsGWwA7DDA7DDBvOwgH
-    OwZbBm87CQg7CkkiB1dWBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7Ckki
-    B1lPBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1pFBjsLVDsGWwA7
-    DDA7DDA7DDA7DDBvOxMHOwZbCm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVn
-    ZXhwQXN0OjpEaWdpdAc7BlsAOwwwbzsNCTsOWwdJIggwLTkGOwtUIghBLVo7
-    D0Y7BlsAOwxvOxAHOxFpBjsSaQBvOw0JOw5bADsPRjsGWwA7DG87EAc7EWkG
-    OxJpAG87FAc7BlsAOwwwbzsNCTsOWwwiBkEiBkIiCEQtSCIGSiIGTCIITi1V
-    IghXLVo7D0Y7BlsAOwxvOxAHOxFpBzsSaQc7DDA7DDA7DDBvOwgHOwZbCG87
-    CQg7CkkiCUJGUE8GOwtUOwZbADsMMG87DQk7DlsAOw9GOwZbADsMbzsQBzsR
-    aQY7EmkAbzsUBzsGWwA7DG87EAc7EWkJOxJpBjsMMDsMMDsMMA==
+    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdCWAY7C1Q7BlsAOwwwOwwwbzsIBzsG
+    WwZvOwkIOwpJIgdDQQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdD
+    QgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDRgY7C1Q7BlsAOwww
+    OwwwbzsIBzsGWwZvOwkIOwpJIgdDSAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
+    OwkIOwpJIgdDTQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDTwY7
+    C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDUgY7C1Q7BlsAOwwwOwww
+    bzsIBzsGWwZvOwkIOwpJIgdDVAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
+    OwpJIgdDVgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdDVwY7C1Q7
+    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdEQQY7C1Q7BlsAOwwwOwwwbzsI
+    BzsGWwZvOwkIOwpJIgdERAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
+    IgdERQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdERwY7C1Q7BlsA
+    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdESAY7C1Q7BlsAOwwwOwwwbzsIBzsG
+    WwZvOwkIOwpJIgdETAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdE
+    TgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdEVAY7C1Q7BlsAOwww
+    OwwwbzsIBzsGWwZvOwkIOwpJIgdEWQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
+    OwkIOwpJIgZFBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0VDBjsL
+    VDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0VIBjsLVDsGWwA7DDA7DDBv
+    OwgHOwZbBm87CQg7CkkiB0VOBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7
+    CkkiB0VYBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0ZLBjsLVDsG
+    WwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB0ZZBjsLVDsGWwA7DDA7DDBvOwgH
+    OwZbBm87CQg7CkkiBkcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
+    R0wGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHR1kGOwtUOwZbADsM
+    MDsMMG87CAc7BlsGbzsJCDsKSSIHR1UGOwtUOwZbADsMMDsMMG87CAc7BlsG
+    bzsJCDsKSSIHSEEGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSEQG
+    OwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSEcGOwtUOwZbADsMMDsM
+    MG87CAc7BlsGbzsJCDsKSSIHSFAGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
+    CDsKSSIHSFIGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSFMGOwtU
+    OwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSFUGOwtUOwZbADsMMDsMMG87
+    CAc7BlsGbzsJCDsKSSIHSFgGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsK
+    SSIHSUcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSU0GOwtUOwZb
+    ADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHSVAGOwtUOwZbADsMMDsMMG87CAc7
+    BlsGbzsJCDsKSSIHSVYGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
+    SkUGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHS0EGOwtUOwZbADsM
+    MDsMMG87CAc7BlsGbzsJCDsKSSIHS1QGOwtUOwZbADsMMDsMMG87CAc7BlsG
+    bzsJCDsKSSIHS1cGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHS1kG
+    OwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIGTAY7C1Q7BlsAOwwwOwww
+    bzsIBzsGWwZvOwkIOwpJIgdMQQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
+    OwpJIgdMRAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMRQY7C1Q7
+    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMTAY7C1Q7BlsAOwwwOwwwbzsI
+    BzsGWwZvOwkIOwpJIgdMTgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
+    IgdMUwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdMVQY7C1Q7BlsA
+    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgZNBjsLVDsGWwA7DDA7DDBvOwgHOwZb
+    Bm87CQg7CkkiB01FBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB01L
+    BjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB01MBjsLVDsGWwA7DDA7
+    DDBvOwgHOwZbBm87CQg7CkkiBk4GOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
+    CDsKSSIHTkUGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHTkcGOwtU
+    OwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHTk4GOwtUOwZbADsMMDsMMG87
+    CAc7BlsGbzsJCDsKSSIHTlAGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsK
+    SSIHTlIGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHTlcGOwtUOwZb
+    ADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHT0wGOwtUOwZbADsMMDsMMG87CAc7
+    BlsGbzsJCDsKSSIHT1gGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIH
+    UEEGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUEUGOwtUOwZbADsM
+    MDsMMG87CAc7BlsGbzsJCDsKSSIHUEgGOwtUOwZbADsMMDsMMG87CAc7BlsG
+    bzsJCDsKSSIHUEwGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUE8G
+    OwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUFIGOwtUOwZbADsMMDsM
+    MG87CAc7BlsGbzsJCDsKSSIHUkcGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJ
+    CDsKSSIHUkgGOwtUOwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIHUk0GOwtU
+    OwZbADsMMDsMMG87CAc7BlsGbzsJCDsKSSIGUwY7C1Q7BlsAOwwwOwwwbzsI
+    BzsGWwZvOwkIOwpJIgdTQQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
+    IgdTRQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTRwY7C1Q7BlsA
+    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTSwY7C1Q7BlsAOwwwOwwwbzsIBzsG
+    WwZvOwkIOwpJIgdTTAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdT
+    TQY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTTgY7C1Q7BlsAOwww
+    OwwwbzsIBzsGWwZvOwkIOwpJIgdTTwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
+    OwkIOwpJIgdTUAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTUgY7
+    C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTUwY7C1Q7BlsAOwwwOwww
+    bzsIBzsGWwZvOwkIOwpJIgdTVAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkI
+    OwpJIgdTVwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdTWQY7C1Q7
+    BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUQQY7C1Q7BlsAOwwwOwwwbzsI
+    BzsGWwZvOwkIOwpJIgdURAY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJ
+    IgdURgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUTgY7C1Q7BlsA
+    OwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUUQY7C1Q7BlsAOwwwOwwwbzsIBzsG
+    WwZvOwkIOwpJIgdUUgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdU
+    UwY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZvOwkIOwpJIgdUVwY7C1Q7BlsAOwww
+    OwwwbzsIBzsGWwZvOwkIOwpJIgdVQgY7C1Q7BlsAOwwwOwwwbzsIBzsGWwZv
+    OwkIOwpJIgZXBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dBBjsL
+    VDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dDBjsLVDsGWwA7DDA7DDBv
+    OwgHOwZbBm87CQg7CkkiB1dEBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7
+    CkkiB1dGBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dOBjsLVDsG
+    WwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1dSBjsLVDsGWwA7DDA7DDBvOwgH
+    OwZbBm87CQg7CkkiB1dTBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7Ckki
+    B1dWBjsLVDsGWwA7DDA7DDBvOwgHOwZbBm87CQg7CkkiB1lPBjsLVDsGWwA7
+    DDA7DDBvOwgHOwZbBm87CQg7CkkiB1pFBjsLVDsGWwA7DDA7DDA7DDA7DDBv
+    OxMHOwZbCm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpEaWdp
+    dAc7BlsAOwwwbzsNCTsOWwdJIggwLTkGOwtUIghBLVo7D0Y7BlsAOwxvOxAH
+    OxFpBjsSaQBvOw0JOw5bADsPRjsGWwA7DG87EAc7EWkGOxJpAG87FAc7BlsA
+    OwwwbzsNCTsOWwwiBkEiBkIiCEQtSCIGSiIGTCIITi1VIghXLVo7D0Y7BlsA
+    OwxvOxAHOxFpBzsSaQc7DDA7DDA7DDBvOwgHOwZbCG87CQg7CkkiCUJGUE8G
+    OwtUOwZbADsMMG87DQk7DlsAOw9GOwZbADsMbzsQBzsRaQY7EmkAbzsUBzsG
+    WwA7DG87EAc7EWkJOxJpBjsMMDsMMDsMMA==
 :ge:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -515,6 +570,13 @@
     cgc6CUBtYXhpBjoJQG1pbmkAbzsMCTsNWwA7DkY7BlsAOwpvOw8HOxBpBjsR
     aQBvOwsHOwZbADsKMG87DAk7DVsMIgZBIgZCIghELUgiBkoiBkwiCE4tVSII
     Vy1aOw5GOwZbADsKbzsPBzsQaQc7EWkHOwow
+:gi:
+  :regex: !ruby/regexp /GX11 1AA/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiDUdYMTEgMUFBBjoGRVQ7BlsAOhBAcXVhbnRp
+    ZmllcjA7CjA=
 :gl:
   :regex: !ruby/regexp /39\d{2}/
   :ast: |
@@ -543,15 +605,15 @@
     c3Q6OkRpZ2l0BzsGWwA7Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
     QXN0OjpRdWFudGlmaWVyBzoJQG1heGkHOglAbWluaQc7CjA=
 :gr:
-  :regex: !ruby/regexp /\d{3}[ ]?\d{2}/
+  :regex: !ruby/regexp /\d{3} ?\d{2}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sIbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86MFR3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJOg1A
-    bWVtYmVyc1sAOg1AbmVnYXRlZEY7BlsAOwhvOwkHOwppBjsLaQBvOwcHOwZb
-    ADsIbzsJBzsKaQc7C2kHOwgw
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86K1R3
+    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRlcmFsCDoKQHRleHRJ
+    IgYgBjoGRVQ7BlsAOwhvOwkHOwppBjsLaQBvOwcHOwZbADsIbzsJBzsKaQc7
+    C2kHOwgw
 :gs:
   :regex: !ruby/regexp /SIQQ 1ZZ/
   :ast: |
@@ -567,18 +629,23 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :gu:
-  :regex: !ruby/regexp /969[123]\d([ \-]\d{4})?/
+  :regex: !ruby/regexp /(969(?:[12]\d|3[12]))(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCDk2OQY6BkVUOwZbADoQQHF1YW50aWZpZXIw
-    bzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNl
-    dAk6DUBtZW1iZXJzWwgiBjEiBjIiBjM6DUBuZWdhdGVkRjsGWwA7CjBvOilU
-    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsKMG86
-    K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwdv
-    OwsJOwxbBiIGLTsNRjsGWwA7CjBvOw4HOwZbADsKbzouVHdpdHRlckNsZHI6
-    OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5p
-    CTsKbzsQBzsRaQY7EmkAOwow
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgg5NjkGOgZFVDsGWwA6EEBxdWFudGlmaWVy
+    MG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsG
+    WwZvOi9Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6QWx0ZXJuYXRp
+    b24HOwZbB286LFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpTZXF1
+    ZW5jZQc7BlsHbzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNo
+    YXJhY3RlclNldAk6DUBtZW1iZXJzWwciBjEiBjI6DUBuZWdhdGVkRjsGWwA7
+    CzBvOilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZb
+    ADsLMDsLMG87Dgc7BlsHbzsICDsJSSIGMwY7ClQ7BlsAOwswbzsPCTsQWwci
+    BjEiBjI7EUY7BlsAOwswOwswOwswOwswOwswbzsMBzsGWwdvOw8JOxBbBiIG
+    LTsRRjsGWwA7CzBvOwcHOwZbBm87Egc7BlsAOwtvOi5Ud2l0dGVyQ2xkcjo6
+    VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpCToJQG1pbmkJ
+    OwswOwtvOxMHOxRpBjsVaQA7CzA=
 :gw:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -594,14 +661,12 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :hn:
-  :regex: !ruby/regexp /(?:\d{5})?/
+  :regex: !ruby/regexp /\d{5}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OlBhc3NpdmUHOwZbBm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
-    OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcm86LlR3aXR0ZXJDbGRyOjpVdGls
-    czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkKOglAbWluaQo7CW87
-    Cgc7C2kGOwxpADsJMA==
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :hr:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -631,12 +696,14 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :il:
-  :regex: !ruby/regexp /\d{5}/
+  :regex: !ruby/regexp /\d{5}(?:\d{2})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    eHByZXNzaW9uc1sHbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCm86K1R3
+    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsGWwZvOwcH
+    OwZbADsIbzsJBzsKaQc7C2kHOwhvOwkHOwppBjsLaQA7CDA=
 :im:
   :regex: !ruby/regexp /IM\d[\dA-Z]?[ ]?\d[ABD-HJLN-UW-Z]{2}/
   :ast: |
@@ -671,6 +738,16 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:ir:
+  :regex: !ruby/regexp /\d{5}-?\d{5}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sIbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCm86K1R3
+    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRlcmFsCDoKQHRleHRJ
+    IgYtBjoGRVQ7BlsAOwhvOwkHOwppBjsLaQBvOwcHOwZbADsIbzsJBzsKaQo7
+    C2kKOwgw
 :is:
   :regex: !ruby/regexp /\d{3}/
   :ast: |
@@ -706,14 +783,15 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :jp:
-  :regex: !ruby/regexp /\d{3}-\d{4}/
+  :regex: !ruby/regexp /\d{3}-?\d{4}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sIbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86K1R3
     aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRlcmFsCDoKQHRleHRJ
-    IgYtBjoGRVQ7BlsAOwgwbzsHBzsGWwA7CG87CQc7CmkJOwtpCTsIMA==
+    IgYtBjoGRVQ7BlsAOwhvOwkHOwppBjsLaQBvOwcHOwZbADsIbzsJBzsKaQk7
+    C2kJOwgw
 :ke:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -736,15 +814,19 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :kr:
-  :regex: !ruby/regexp /\d{3}[\-]\d{3}/
+  :regex: !ruby/regexp /\d{3}(?:\d{2}|[\-]\d{3})/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sIbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    eHByZXNzaW9uc1sHbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86MFR3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJOg1A
-    bWVtYmVyc1sGIgYtOg1AbmVnYXRlZEY7BlsAOwgwbzsHBzsGWwA7CG87CQc7
-    CmkIOwtpCDsIMA==
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86K1R3
+    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsGWwZvOi9U
+    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6QWx0ZXJuYXRpb24HOwZb
+    B286LFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpTZXF1ZW5jZQc7
+    BlsGbzsHBzsGWwA7CG87CQc7CmkHOwtpBzsIMG87Dgc7BlsHbzowVHdpdHRl
+    ckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNldAk6DUBtZW1i
+    ZXJzWwYiBi06DUBuZWdhdGVkRjsGWwA7CDBvOwcHOwZbADsIbzsJBzsKaQg7
+    C2kIOwgwOwgwOwgwOwgw
 :kw:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -752,6 +834,16 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:ky:
+  :regex: !ruby/regexp /KY\d-\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiB0tZBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBv
+    OilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsK
+    MG87Bwg7CEkiBi0GOwlUOwZbADsKMG87Cwc7BlsAOwpvOi5Ud2l0dGVyQ2xk
+    cjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpCToJQG1p
+    bmkJOwow
 :kz:
   :regex: !ruby/regexp /\d{6}/
   :ast: |
@@ -767,17 +859,17 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :lb:
-  :regex: !ruby/regexp /(\d{4}([ ]?\d{4})?)?/
+  :regex: !ruby/regexp /(?:(?:\d{4})(?:[ ]?(?:\d{4}))?)?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbB286KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
-    OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcm86LlR3aXR0ZXJDbGRyOjpVdGls
-    czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkJOglAbWluaQlvOwcH
-    OwZbB286MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0
-    ZXJTZXQJOg1AbWVtYmVyc1sAOg1AbmVnYXRlZEY7BlsAOwlvOwoHOwtpBjsM
-    aQBvOwgHOwZbADsJbzsKBzsLaQk7DGkJOwlvOwoHOwtpBjsMaQA7CW87Cgc7
-    C2kGOwxpADsJMA==
+    OlBhc3NpdmUHOwZbB287Bwc7BlsGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpS
+    ZWdleHBBc3Q6OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNs
+    ZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBt
+    aW5pCTsJMG87Bwc7BlsHbzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBB
+    c3Q6OkNoYXJhY3RlclNldAk6DUBtZW1iZXJzWwA6DUBuZWdhdGVkRjsGWwA7
+    CW87Cgc7C2kGOwxpAG87Bwc7BlsGbzsIBzsGWwA7CW87Cgc7C2kJOwxpCTsJ
+    MDsJbzsKBzsLaQY7DGkAOwlvOwoHOwtpBjsMaQA7CTA=
 :li:
   :regex: !ruby/regexp /(948[5-9])|(949[0-7])/
   :ast: |
@@ -827,12 +919,14 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :lv:
-  :regex: !ruby/regexp /\d{4}/
+  :regex: !ruby/regexp /LV-\d{4}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiCExWLQY6BkVUOwZbADoQQHF1YW50aWZpZXIw
+    bzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7
+    Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVy
+    BzoJQG1heGkJOglAbWluaQk7CjA=
 :ma:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -865,6 +959,17 @@
     KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7BlsAOwpv
     Oi5Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6
     CUBtYXhpCToJQG1pbmkJOwow
+:mf:
+  :regex: !ruby/regexp /9[78][01]\d{2}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiBjkGOgZFVDsGWwA6EEBxdWFudGlmaWVyMG86
+    MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJ
+    Og1AbWVtYmVyc1sHIgY3IgY4Og1AbmVnYXRlZEY7BlsAOwowbzsLCTsMWwci
+    BjAiBjE7DUY7BlsAOwowbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBB
+    c3Q6OkRpZ2l0BzsGWwA7Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
+    QXN0OjpRdWFudGlmaWVyBzoJQG1heGkHOglAbWluaQc7CjA=
 :mg:
   :regex: !ruby/regexp /\d{3}/
   :ast: |
@@ -873,18 +978,19 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCDsIMA==
 :mh:
-  :regex: !ruby/regexp /969[67]\d([ \-]\d{4})?/
+  :regex: !ruby/regexp /(969[67]\d)(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCDk2OQY6BkVUOwZbADoQQHF1YW50aWZpZXIw
-    bzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNl
-    dAk6DUBtZW1iZXJzWwciBjYiBjc6DUBuZWdhdGVkRjsGWwA7CjBvOilUd2l0
-    dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsKMG86K1R3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwdvOwsJ
-    OwxbBiIGLTsNRjsGWwA7CjBvOw4HOwZbADsKbzouVHdpdHRlckNsZHI6OlV0
-    aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsK
-    bzsQBzsRaQY7EmkAOwow
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbCG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgg5NjkGOgZFVDsGWwA6EEBxdWFudGlmaWVy
+    MG86MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJT
+    ZXQJOg1AbWVtYmVyc1sHIgY2IgY3Og1AbmVnYXRlZEY7BlsAOwswbzopVHdp
+    dHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7CzA7CzBv
+    OitUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UGFzc2l2ZQc7BlsH
+    bzsMCTsNWwYiBi07DkY7BlsAOwswbzsHBzsGWwZvOw8HOwZbADsLbzouVHdp
+    dHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4
+    aQk6CUBtaW5pCTsLMDsLbzsRBzsSaQY7E2kAOwsw
 :mk:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -892,26 +998,34 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
-:mn:
-  :regex: !ruby/regexp /\d{6}/
+:mm:
+  :regex: !ruby/regexp /\d{5}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCzsIMA==
-:mp:
-  :regex: !ruby/regexp /9695[012]([ \-]\d{4})?/
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:mn:
+  :regex: !ruby/regexp /\d{5}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sIbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCTk2OTUGOgZFVDsGWwA6EEBxdWFudGlmaWVy
-    MG86MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJT
-    ZXQJOg1AbWVtYmVyc1sIIgYwIgYxIgYyOg1AbmVnYXRlZEY7BlsAOwowbzor
-    VHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNhcHR1cmUHOwZbB287
-    Cwk7DFsGIgYtOw1GOwZbADsKMG86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVn
-    ZXhwQXN0OjpEaWdpdAc7BlsAOwpvOi5Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJl
-    Z2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpCToJQG1pbmkJOwpvOxAHOxFp
-    BjsSaQA7CjA=
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:mp:
+  :regex: !ruby/regexp /(9695[012])(?:[ \-](\d{4}))?/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgk5Njk1BjoGRVQ7BlsAOhBAcXVhbnRpZmll
+    cjBvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVy
+    U2V0CToNQG1lbWJlcnNbCCIGMCIGMSIGMjoNQG5lZ2F0ZWRGOwZbADsLMDsL
+    MG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsG
+    WwdvOwwJOw1bBiIGLTsORjsGWwA7CzBvOwcHOwZbBm86KVR3aXR0ZXJDbGRy
+    OjpVdGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7BlsAOwtvOi5Ud2l0dGVyQ2xk
+    cjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpCToJQG1p
+    bmkJOwswOwtvOxEHOxJpBjsTaQA7CzA=
 :mq:
   :regex: !ruby/regexp /9[78]2\d{2}/
   :ast: |
@@ -934,16 +1048,20 @@
     OwpvOwsHOwxpBjsNaQBvOilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFz
     dDo6RGlnaXQHOwZbADsKbzsLBzsMaQk7DWkHOwow
 :mu:
-  :regex: !ruby/regexp /(\d{3}[A-Z]{2}\d{3})?/
+  :regex: !ruby/regexp /(?:\d{3}(?:\d{2}|[A-Z]{2}\d{3}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbCG86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OlBhc3NpdmUHOwZbB286KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
     OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcm86LlR3aXR0ZXJDbGRyOjpVdGls
-    czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkIOglAbWluaQhvOjBU
-    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0CToN
-    QG1lbWJlcnNbBiIIQS1aOg1AbmVnYXRlZEY7BlsAOwlvOwoHOwtpBzsMaQdv
-    OwgHOwZbADsJbzsKBzsLaQg7DGkIOwlvOwoHOwtpBjsMaQA7CTA=
+    czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkIOglAbWluaQhvOwcH
+    OwZbBm86L1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpBbHRlcm5h
+    dGlvbgc7BlsHbzosVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlNl
+    cXVlbmNlBzsGWwZvOwgHOwZbADsJbzsKBzsLaQc7DGkHOwkwbzsOBzsGWwdv
+    OjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0
+    CToNQG1lbWJlcnNbBiIIQS1aOg1AbmVnYXRlZEY7BlsAOwlvOwoHOwtpBzsM
+    aQdvOwgHOwZbADsJbzsKBzsLaQg7DGkIOwkwOwkwOwkwOwlvOwoHOwtpBjsM
+    aQA7CTA=
 :mv:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -965,6 +1083,13 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:mz:
+  :regex: !ruby/regexp /\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
 :nc:
   :regex: !ruby/regexp /988\d{2}/
   :ast: |
@@ -989,28 +1114,21 @@
     OkxpdGVyYWwIOgpAdGV4dEkiCTI4OTkGOgZFVDsGWwA6EEBxdWFudGlmaWVy
     MDsKMA==
 :ng:
-  :regex: !ruby/regexp /(\d{6})?/
+  :regex: !ruby/regexp /(?:\d{6})?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbBm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OlBhc3NpdmUHOwZbBm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
     OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcm86LlR3aXR0ZXJDbGRyOjpVdGls
     czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkLOglAbWluaQs7CW87
     Cgc7C2kGOwxpADsJMA==
 :ni:
-  :regex: !ruby/regexp /((\d{4}-)?\d{3}-\d{3}(-\d{1})?)?/
+  :regex: !ruby/regexp /\d{5}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbCm87Bwc7BlsHbzopVHdpdHRlckNsZHI6OlV0aWxzOjpS
-    ZWdleHBBc3Q6OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNs
-    ZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBt
-    aW5pCW86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRlcmFs
-    CDoKQHRleHRJIgYtBjoGRVQ7BlsAOwkwOwlvOwoHOwtpBjsMaQBvOwgHOwZb
-    ADsJbzsKBzsLaQg7DGkIbzsNCDsOSSIGLQY7D1Q7BlsAOwkwbzsIBzsGWwA7
-    CW87Cgc7C2kIOwxpCG87Bwc7BlsHbzsNCDsOSSIGLQY7D1Q7BlsAOwkwbzsI
-    BzsGWwA7CW87Cgc7C2kGOwxpBjsJbzsKBzsLaQY7DGkAOwlvOwoHOwtpBjsM
-    aQA7CTA=
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :nl:
   :regex: !ruby/regexp /\d{4}[ ]?[A-Z]{2}/
   :ast: |
@@ -1052,6 +1170,23 @@
     MDsLbzouVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZp
     ZXIHOglAbWF4aQY6CUBtaW5pAG86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVn
     ZXhwQXN0OjpEaWdpdAc7BlsAOwtvOwwHOw1pCDsOaQg7CzA=
+:pe:
+  :regex: !ruby/regexp /(?:LIMA \d|CALLAO 0?)\d|[0-2]\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzovVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkFsdGVybmF0aW9uBzsGWwdvOixUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4
+    cEFzdDo6U2VxdWVuY2UHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVn
+    ZXhwQXN0OjpQYXNzaXZlBzsGWwZvOwcHOwZbB287CAc7BlsHbzorVHdpdHRl
+    ckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkxpdGVyYWwIOgpAdGV4dEkiCkxJ
+    TUEgBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBvOilUd2l0dGVyQ2xkcjo6VXRp
+    bHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsNMDsNMG87CAc7BlsHbzsKCDsL
+    SSIMQ0FMTEFPIAY7DFQ7BlsAOw0wbzsKCDsLSSIGMAY7DFQ7BlsAOw1vOi5U
+    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBt
+    YXhpBjoJQG1pbmkAOw0wOw0wOw0wbzsOBzsGWwA7DTA7DTBvOwgHOwZbB286
+    MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDaGFyYWN0ZXJTZXQJ
+    Og1AbWVtYmVyc1sGIggwLTI6DUBuZWdhdGVkRjsGWwA7DTBvOw4HOwZbADsN
+    bzsPBzsQaQk7EWkJOw0wOw0wOw0w
 :pf:
   :regex: !ruby/regexp /987\d{2}/
   :ast: |
@@ -1110,36 +1245,45 @@
     OkxpdGVyYWwIOgpAdGV4dEkiDVBDUk4gMVpaBjoGRVQ7BlsAOhBAcXVhbnRp
     ZmllcjA7CjA=
 :pr:
-  :regex: !ruby/regexp /00[679]\d{2}([ \-]\d{4})?/
+  :regex: !ruby/regexp /(00[679]\d{2})(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sJbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiBzAwBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBv
-    OjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0
-    CToNQG1lbWJlcnNbCCIGNiIGNyIGOToNQG5lZ2F0ZWRGOwZbADsKMG86KVR3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7BlsAOwpvOi5U
-    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBt
-    YXhpBzoJQG1pbmkHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkNhcHR1cmUHOwZbB287Cwk7DFsGIgYtOw1GOwZbADsKMG87Dgc7BlsAOwpv
-    Ow8HOxBpCTsRaQk7Cm87Dwc7EGkGOxFpADsKMA==
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbCG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgcwMAY6BkVUOwZbADoQQHF1YW50aWZpZXIw
+    bzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNl
+    dAk6DUBtZW1iZXJzWwgiBjYiBjciBjk6DUBuZWdhdGVkRjsGWwA7CzBvOilU
+    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsLbzou
+    VHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglA
+    bWF4aQc6CUBtaW5pBzsLMG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
+    QXN0OjpQYXNzaXZlBzsGWwdvOwwJOw1bBiIGLTsORjsGWwA7CzBvOwcHOwZb
+    Bm87Dwc7BlsAOwtvOxAHOxFpCTsSaQk7CzA7C287EAc7EWkGOxJpADsLMA==
 :pt:
-  :regex: !ruby/regexp /\d{4}([\-]\d{3})?/
+  :regex: !ruby/regexp /\d{4}-\d{3}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sHbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    eHByZXNzaW9uc1sIbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCW86K1R3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwdvOjBU
-    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0CToN
-    QG1lbWJlcnNbBiIGLToNQG5lZ2F0ZWRGOwZbADsIMG87Bwc7BlsAOwhvOwkH
-    OwppCDsLaQg7CG87CQc7CmkGOwtpADsIMA==
+    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpMaXRlcmFsCDoKQHRleHRJ
+    IgYtBjoGRVQ7BlsAOwgwbzsHBzsGWwA7CG87CQc7CmkIOwtpCDsIMA==
 :pw:
-  :regex: !ruby/regexp /96940/
+  :regex: !ruby/regexp /(969(?:39|40))(?:[ \-](\d{4}))?/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCjk2OTQwBjoGRVQ7BlsAOhBAcXVhbnRpZmll
-    cjA7CjA=
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIgg5NjkGOgZFVDsGWwA6EEBxdWFudGlmaWVy
+    MG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsG
+    WwZvOi9Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6QWx0ZXJuYXRp
+    b24HOwZbB286LFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpTZXF1
+    ZW5jZQc7BlsGbzsICDsJSSIHMzkGOwpUOwZbADsLMDsLMG87Dgc7BlsGbzsI
+    CDsJSSIHNDAGOwpUOwZbADsLMDsLMDsLMDsLMDsLMG87DAc7BlsHbzowVHdp
+    dHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNldAk6DUBt
+    ZW1iZXJzWwYiBi06DUBuZWdhdGVkRjsGWwA7CzBvOwcHOwZbBm86KVR3aXR0
+    ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpEaWdpdAc7BlsAOwtvOi5Ud2l0
+    dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhp
+    CToJQG1pbmkJOwswOwtvOxMHOxRpBjsVaQA7CzA=
 :py:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -1166,12 +1310,12 @@
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCzsIMA==
 :rs:
-  :regex: !ruby/regexp /\d{6}/
+  :regex: !ruby/regexp /\d{5,6}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCzsIMA==
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCjsIMA==
 :ru:
   :regex: !ruby/regexp /\d{6}/
   :ast: |
@@ -1260,6 +1404,16 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+:sv:
+  :regex: !ruby/regexp /CP [1-3][1-7][0-2]\d/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sKbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiCENQIAY6BkVUOwZbADoQQHF1YW50aWZpZXIw
+    bzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNl
+    dAk6DUBtZW1iZXJzWwYiCDEtMzoNQG5lZ2F0ZWRGOwZbADsKMG87Cwk7DFsG
+    IggxLTc7DUY7BlsAOwowbzsLCTsMWwYiCDAtMjsNRjsGWwA7CjBvOilUd2l0
+    dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsKMDsKMA==
 :sz:
   :regex: !ruby/regexp /[HLMS]\d{3}/
   :ast: |
@@ -1269,6 +1423,13 @@
     dGVkRjsGWwA6EEBxdWFudGlmaWVyMG86KVR3aXR0ZXJDbGRyOjpVdGlsczo6
     UmVnZXhwQXN0OjpEaWdpdAc7BlsAOwpvOi5Ud2l0dGVyQ2xkcjo6VXRpbHM6
     OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhpCDoJQG1pbmkIOwow
+:ta:
+  :regex: !ruby/regexp /TDCU 1ZZ/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiDVREQ1UgMVpaBjoGRVQ7BlsAOhBAcXVhbnRp
+    ZmllcjA7CjA=
 :tc:
   :regex: !ruby/regexp /TKCA 1ZZ/
   :ast: |
@@ -1320,6 +1481,13 @@
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQg6CUBtaW5pCG86K1R3
     aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwZvOwcH
     OwZbADsIbzsJBzsKaQc7C2kHOwhvOwkHOwppBjsLaQA7CDA=
+:tz:
+  :regex: !ruby/regexp /\d{4,5}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCTsIMA==
 :ua:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -1327,17 +1495,25 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
-:us:
-  :regex: !ruby/regexp /\d{5}([ \-]\d{4})?/
+:um:
+  :regex: !ruby/regexp /96898/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sHbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCm86K1R3
-    aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpDYXB0dXJlBzsGWwdvOjBU
-    d2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Q2hhcmFjdGVyU2V0CToN
-    QG1lbWJlcnNbBiIGLToNQG5lZ2F0ZWRGOwZbADsIMG87Bwc7BlsAOwhvOwkH
-    OwppCTsLaQk7CG87CQc7CmkGOwtpADsIMA==
+    eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiCjk2ODk4BjoGRVQ7BlsAOhBAcXVhbnRpZmll
+    cjA7CjA=
+:us:
+  :regex: !ruby/regexp /(\d{5})(?:[ \-](\d{4}))?/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbBm86KVR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpEaWdpdAc7BlsAOhBAcXVhbnRpZmllcm86LlR3aXR0ZXJDbGRyOjpVdGls
+    czo6UmVnZXhwQXN0OjpRdWFudGlmaWVyBzoJQG1heGkKOglAbWluaQo7CTBv
+    OitUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UGFzc2l2ZQc7BlsH
+    bzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNoYXJhY3RlclNl
+    dAk6DUBtZW1iZXJzWwYiBi06DUBuZWdhdGVkRjsGWwA7CTBvOwcHOwZbBm87
+    CAc7BlsAOwlvOwoHOwtpCTsMaQk7CTA7CW87Cgc7C2kGOwxpADsJMA==
 :uy:
   :regex: !ruby/regexp /\d{5}/
   :ast: |
@@ -1359,6 +1535,15 @@
     eHByZXNzaW9uc1sGbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkxpdGVyYWwIOgpAdGV4dEkiCjAwMTIwBjoGRVQ7BlsAOhBAcXVhbnRpZmll
     cjA7CjA=
+:vc:
+  :regex: !ruby/regexp /VC\d{4}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiB1ZDBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBv
+    OilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsK
+    bzouVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIH
+    OglAbWF4aQk6CUBtaW5pCTsKMA==
 :ve:
   :regex: !ruby/regexp /\d{4}/
   :ast: |
@@ -1366,23 +1551,40 @@
     eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
     OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
     OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQk6CUBtaW5pCTsIMA==
-:vi:
-  :regex: !ruby/regexp /008(([0-4]\d)|(5[01]))([ \-]\d{4})?/
+:vg:
+  :regex: !ruby/regexp /VG\d{4}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sIbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkxpdGVyYWwIOgpAdGV4dEkiCDAwOAY6BkVUOwZbADoQQHF1YW50aWZpZXIw
-    bzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkNhcHR1cmUHOwZb
-    Bm86L1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpBbHRlcm5hdGlv
-    bgc7BlsHbzosVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlNlcXVl
-    bmNlBzsGWwZvOwsHOwZbB286MFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
-    QXN0OjpDaGFyYWN0ZXJTZXQJOg1AbWVtYmVyc1sGIggwLTQ6DUBuZWdhdGVk
-    RjsGWwA7CjBvOilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGln
-    aXQHOwZbADsKMDsKMDsKMG87DQc7BlsGbzsLBzsGWwdvOwcIOwhJIgY1BjsJ
-    VDsGWwA7CjBvOw4JOw9bByIGMCIGMTsQRjsGWwA7CjA7CjA7CjA7CjA7CjBv
-    OwsHOwZbB287Dgk7D1sGIgYtOxBGOwZbADsKMG87EQc7BlsAOwpvOi5Ud2l0
-    dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRpZmllcgc6CUBtYXhp
-    CToJQG1pbmkJOwpvOxIHOxNpBjsUaQA7CjA=
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkxpdGVyYWwIOgpAdGV4dEkiB1ZHBjoGRVQ7BlsAOhBAcXVhbnRpZmllcjBv
+    OilUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6RGlnaXQHOwZbADsK
+    bzouVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OlF1YW50aWZpZXIH
+    OglAbWF4aQk6CUBtaW5pCTsKMA==
+:vi:
+  :regex: !ruby/regexp /(008(?:(?:[0-4]\d)|(?:5[01])))(?:[ \-](\d{4}))?/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sHbzorVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNhcHR1cmUHOwZbB286K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0
+    OjpMaXRlcmFsCDoKQHRleHRJIggwMDgGOgZFVDsGWwA6EEBxdWFudGlmaWVy
+    MG86K1R3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpQYXNzaXZlBzsG
+    WwZvOi9Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6QWx0ZXJuYXRp
+    b24HOwZbB286LFR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpTZXF1
+    ZW5jZQc7BlsGbzsMBzsGWwdvOjBUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4
+    cEFzdDo6Q2hhcmFjdGVyU2V0CToNQG1lbWJlcnNbBiIIMC00Og1AbmVnYXRl
+    ZEY7BlsAOwswbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRp
+    Z2l0BzsGWwA7CzA7CzA7CzBvOw4HOwZbBm87DAc7BlsHbzsICDsJSSIGNQY7
+    ClQ7BlsAOwswbzsPCTsQWwciBjAiBjE7EUY7BlsAOwswOwswOwswOwswOwsw
+    OwswbzsMBzsGWwdvOw8JOxBbBiIGLTsRRjsGWwA7CzBvOwcHOwZbBm87Egc7
+    BlsAOwtvOi5Ud2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6UXVhbnRp
+    Zmllcgc6CUBtYXhpCToJQG1pbmkJOwswOwtvOxMHOxRpBjsVaQA7CzA=
+:vn:
+  :regex: !ruby/regexp /\d{6}/
+  :ast: |
+    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
+    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
+    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQs6CUBtaW5pCzsIMA==
 :wf:
   :regex: !ruby/regexp /986\d{2}/
   :ast: |
@@ -1393,12 +1595,14 @@
     Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVy
     BzoJQG1heGkHOglAbWluaQc7CjA=
 :xk:
-  :regex: !ruby/regexp /\d{5}/
+  :regex: !ruby/regexp /[1-7]\d{4}/
   :ast: |
     BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
+    eHByZXNzaW9uc1sHbzowVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
+    OkNoYXJhY3RlclNldAk6DUBtZW1iZXJzWwYiCDEtNzoNQG5lZ2F0ZWRGOwZb
+    ADoQQHF1YW50aWZpZXIwbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBB
+    c3Q6OkRpZ2l0BzsGWwA7Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhw
+    QXN0OjpRdWFudGlmaWVyBzoJQG1heGkJOglAbWluaQk7CjA=
 :yt:
   :regex: !ruby/regexp /976\d{2}/
   :ast: |
@@ -1408,13 +1612,6 @@
     bzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6OkRpZ2l0BzsGWwA7
     Cm86LlR3aXR0ZXJDbGRyOjpVdGlsczo6UmVnZXhwQXN0OjpRdWFudGlmaWVy
     BzoJQG1heGkHOglAbWluaQc7CjA=
-:yu:
-  :regex: !ruby/regexp /\d{5}/
-  :ast: |
-    BAhvOihUd2l0dGVyQ2xkcjo6VXRpbHM6OlJlZ2V4cEFzdDo6Um9vdAc6EUBl
-    eHByZXNzaW9uc1sGbzopVHdpdHRlckNsZHI6OlV0aWxzOjpSZWdleHBBc3Q6
-    OkRpZ2l0BzsGWwA6EEBxdWFudGlmaWVybzouVHdpdHRlckNsZHI6OlV0aWxz
-    OjpSZWdleHBBc3Q6OlF1YW50aWZpZXIHOglAbWF4aQo6CUBtaW5pCjsIMA==
 :za:
   :regex: !ruby/regexp /\d{4}/
   :ast: |

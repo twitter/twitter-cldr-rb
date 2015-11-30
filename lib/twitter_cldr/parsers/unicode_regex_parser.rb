@@ -201,31 +201,9 @@ module TwitterCldr
         loop do
           case current_token.type
             when *CharacterClass.closing_types
-              last_operator = peek(operator_stack)
               open_count -= 1
-
-              until last_operator.type == CharacterClass.opening_type_for(current_token.type)
-                operator = operator_stack.pop
-
-                node = if unary_operator?(operator)
-                  unary_operator_node(operator.type, operand_stack.pop)
-                else
-                  binary_operator_node(
-                    operator.type, operand_stack.pop, operand_stack.pop
-                  )
-                end
-
-                operand_stack.push(node)
-                last_operator = peek(operator_stack)
-              end
-
-              operator_stack.pop
-
-              if n = @tokens[@token_index + 1]
-                if valid_character_class_token?(n) && open_count > 0
-                  operator_stack.push(make_token(:union))
-                end
-              end
+              build_until_open(operator_stack, operand_stack)
+              add_implicit_union(operator_stack, open_count)
 
             when *CharacterClass.opening_types
               open_count += 1
@@ -235,12 +213,7 @@ module TwitterCldr
               operator_stack.push(current_token)
 
             else
-              if n = @tokens[@token_index + 1]
-                if valid_character_class_token?(n) && open_count > 0
-                  operator_stack.push(make_token(:union))
-                end
-              end
-
+              add_implicit_union(operator_stack, open_count)
               operand_stack.push(
                 send(current_token.type, current_token)
               )
@@ -251,6 +224,38 @@ module TwitterCldr
         end
 
         CharacterClass.new(operand_stack.pop)
+      end
+
+      def build_until_open(operator_stack, operand_stack)
+        last_operator = peek(operator_stack)
+        opening_type = CharacterClass.opening_type_for(current_token.type)
+
+        until last_operator.type == opening_type
+          operator = operator_stack.pop
+          node = get_operator_node(operator, operand_stack)
+          operand_stack.push(node)
+          last_operator = peek(operator_stack)
+        end
+
+        operator_stack.pop
+      end
+
+      def get_operator_node(operator, operand_stack)
+        if unary_operator?(operator)
+          unary_operator_node(operator.type, operand_stack.pop)
+        else
+          binary_operator_node(
+            operator.type, operand_stack.pop, operand_stack.pop
+          )
+        end
+      end
+
+      def add_implicit_union(operator_stack, open_count)
+        if n = @tokens[@token_index + 1]
+          if valid_character_class_token?(n) && open_count > 0
+            operator_stack.push(make_token(:union))
+          end
+        end
       end
 
       def peek(array)

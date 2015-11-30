@@ -43,5 +43,16 @@ describe PropertyNormalizer do
       expect(name).to be_nil
       expect(value).to be_nil
     end
+
+    it 'fixes casing of property names' do
+      name, value = normalizer.normalize('ideographic')
+      expect(name).to eq('Ideographic')
+    end
+
+    it 'fixes casing of property names and values' do
+      name, value = normalizer.normalize('sc', 'han')
+      expect(name).to eq('Script')
+      expect(value).to eq('Han')
+    end
   end
 end

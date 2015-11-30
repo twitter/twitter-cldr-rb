@@ -19,7 +19,12 @@ module TwitterCldr
         if property_value
           name, value = resolve_candidates(candidates, property_value)
         else
-          name = candidates.find { |c| database.include?(c) }
+          candidates.each do |c|
+            if name = resolve_property_name_case(c)
+              break
+            end
+          end
+
           value = nil
         end
 
@@ -39,15 +44,49 @@ module TwitterCldr
       end
 
       def resolve_name_value_candidates(property_name_candidates, value_candidates)
-        property_name_candidates.each do |property_name|
+        property_name_candidates.each do |name_candidate|
           value_candidates.each do |value_candidate|
-            if database.include?(property_name, value_candidate)
-              return [property_name, value_candidate]
+            if cased_property_name = resolve_property_name_case(name_candidate)
+              if value_candidate
+                cased_property_value = resolve_property_value_case(
+                  cased_property_name, value_candidate
+                )
+
+                if cased_property_value
+                  return [
+                    cased_property_name, cased_property_value
+                  ]
+                end
+              else
+                if database.include?(cased_property_name, value_candidate)
+                  return [
+                    cased_property_name, value_candidate
+                  ]
+                end
+              end
             end
           end
         end
 
         []
+      end
+
+      def resolve_property_name_case(property_name)
+        name_idx = database.property_names.index do |name|
+          name.casecmp(property_name).zero?
+        end
+
+        database.property_names[name_idx] if name_idx
+      end
+
+      def resolve_property_value_case(property_name, property_value)
+        property_values = database.property_values_for(property_name)
+
+        value_idx = property_values.index do |value|
+          value.casecmp(property_value).zero?
+        end
+
+        property_values[value_idx] if value_idx
       end
 
       def find_property_name_candidates(property_name)

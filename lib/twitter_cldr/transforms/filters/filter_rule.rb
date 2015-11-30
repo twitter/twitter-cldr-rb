@@ -7,19 +7,19 @@ module TwitterCldr
   module Transforms
     module Filters
 
-      # Decides which filter (or transform) to apply
+      # Decides which filter to apply
       class FilterRule < Rule
         class << self
           def parse(rule_text, symbol_table)
-            if Functions::NormalizationFunction.can_parse?(rule_text)
-              Functions::NormalizationFunction.parse(rule_text.strip, symbol_table)
-            else
-              Filters::RegexFilter.parse(rule_text, symbol_table)
-            end
+            Filters::RegexFilter.parse(rule_text, symbol_table)
           end
         end
 
-        def is_ct_rule?
+        def is_transform_rule?
+          false
+        end
+
+        def is_conversion_rule?
           false
         end
 

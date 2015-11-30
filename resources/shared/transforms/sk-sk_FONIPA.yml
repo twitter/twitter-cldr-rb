@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$soften = [ptťkcčsš$] ;"
       - ":: NFC () ;"
@@ -69,5 +69,6 @@
       - "z > z ;"
       - "ž } $soften > ʃ ;"
       - "ž > ʒ ;"
-    :source: "sk"
-    :target: "sk_FONIPA"
+    :source: sk
+    :target: sk_FONIPA
+    :variant: ~

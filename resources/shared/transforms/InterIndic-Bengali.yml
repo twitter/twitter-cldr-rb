@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ঁ;          # SIGN CANDRABINDU"
       - "\\uE002>ং;          # SIGN ANUSVARA"
@@ -79,10 +79,10 @@
       - "\\uE04C>ৌ;    # VOWEL SIGN AU"
       - "\\uE04D>্;          # SIGN VIRAMA"
       - "\\uE050>ওং;    #  InterIndic-Bengali: OM"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>;                # LENGTH MARK"
       - "\\uE056>ৈ;          # REMAP (indicExceptions.txt): \\u09D6>ৈ = AI LENGTH MARK>VOWEL SIGN AI"
       - "\\uE057>ৗ;          # AU LENGTH MARK"
@@ -132,5 +132,6 @@
       - "\\uE083>ৎ;          # Khanda-ta"
       - "0 > ০;             # FALLBACK FOR TAMIL"
       - "1 > ১;"
-    :source: "InterIndic"
-    :target: "Bengali"
+    :source: InterIndic
+    :target: Bengali
+    :variant: ~

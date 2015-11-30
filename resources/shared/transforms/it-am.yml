@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::NFD(NFC);"
       - "::Lower();"
@@ -193,5 +193,6 @@
       - "z > ዝ;"
       - "[:nonspacing mark:] > ;"
       - "::NFC(NFD);"
-    :source: "it"
-    :target: "am"
+    :source: it
+    :target: am
+    :variant: ~

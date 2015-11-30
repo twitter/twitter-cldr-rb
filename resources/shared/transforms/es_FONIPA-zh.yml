@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$word_boundary = [-\\ $];"
       - "$vowel = [aeijouw];       # Vowels and glides"
@@ -492,5 +492,6 @@
       - "$word_boundary { 西 > 锡 ;"
       - "海 } $word_boundary > 亥 ;"
       - "::NFC;"
-    :source: "es_FONIPA"
-    :target: "zh"
+    :source: es_FONIPA
+    :target: zh
+    :variant: ~

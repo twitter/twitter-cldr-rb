@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГҒДЕӘЖЗИЫКҜЛМНОӨПРСТУҮФХҺЧҸШЙЭЮЯабвгғдеәжзиыкҝлмноөпрстуүфхһчҹш’йэюя] ;"
       - ":: NFD (NFC) ;"
@@ -88,5 +88,5 @@
       - "Я} $lower > Yȧ ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YȦ ; # CYRILLIC CAPITAL LETTER YA"
       - "я > yȧ ; # CYRILLIC SMALL LETTER YA"
-    :source: "Azerbaijani"
-    :target: "Latin"
+    :source: Azerbaijani
+    :target: Latin

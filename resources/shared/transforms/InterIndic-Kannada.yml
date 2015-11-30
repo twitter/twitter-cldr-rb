@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE033\\uE03C>ೞ; # LETTER FA"
       - "\\uE001>ಂ; # REMAP (indicExceptions.txt): \\u0C81>ಂ = SIGN CANDRABINDU>SIGN ANUSVARA"
@@ -51,7 +51,7 @@
       - "\\uE02D>ಭ; # LETTER BHA"
       - "\\uE02E>ಮ; # LETTER MA"
       - "\\uE02F>ಯ; # LETTER YA"
-      - "\\uE030\\uE03C>ಱ;"
+      - \uE030\uE03C>ಱ;
       - "\\uE030>ರ; # LETTER RA"
       - "\\uE031>ಱ; # LETTER RRA"
       - "\\uE032>ಲ; # LETTER LA"
@@ -81,10 +81,10 @@
       - "\\uE04C>ೌ; # VOWEL SIGN AU"
       - "\\uE04D>್; # SIGN VIRAMA"
       - "\\uE050>ಓಂ; # REMAP (indicExceptions.txt): \\u0CD0>ಓಂ = OM>LETTER OO.SIGN ANUSVARA"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>ೕ; # LENGTH MARK"
       - "\\uE056>ೖ; # AI LENGTH MARK"
       - "\\uE057>ೌ; # REMAP (indicExceptions.txt): \\u0CD7>ೌ = AU LENGTH MARK>VOWEL SIGN AU"
@@ -134,5 +134,6 @@
       - "\\uE083>ತ್;  # Bengali Khanda-ta"
       - "0 > ೦;    # FALLBACK FOR TAMIL"
       - "1 > ೧;"
-    :source: "InterIndic"
-    :target: "Kannada"
+    :source: InterIndic
+    :target: Kannada
+    :variant: ~

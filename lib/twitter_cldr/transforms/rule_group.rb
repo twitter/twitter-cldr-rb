@@ -19,6 +19,11 @@ module TwitterCldr
           end
         end
 
+        def build(rule_list, direction)
+          rules = parse_rules(rule_list)
+          new(rules, direction)
+        end
+
         def exists?(resource_name)
           TwitterCldr.resource_exists?(
             'shared', 'transforms', resource_name
@@ -41,10 +46,14 @@ module TwitterCldr
         end
 
         def parse_resource(resource)
+          parse_rules(rules_from(resource))
+        end
+
+        def parse_rules(rule_list)
           symbol_table = {}
           rules = []
 
-          parse_each(resource, symbol_table) do |rule|
+          parse_each_rule(rule_list, symbol_table) do |rule|
             if rule.is_a?(VariableRule)
               symbol_table[rule.name] = rule
             else
@@ -55,8 +64,8 @@ module TwitterCldr
           rules
         end
 
-        def parse_each(resource, symbol_table)
-          rules_from(resource).each do |rule_text|
+        def parse_each_rule(rule_list, symbol_table)
+          rule_list.each do |rule_text|
             yield parse_rule(rule_text, symbol_table)
           end
         end
@@ -73,7 +82,7 @@ module TwitterCldr
             when 'Variable'
               VariableRule
             else
-              const = Transforms.const_get(rule_type + 's')
+              const = TwitterCldr::Transforms.const_get(rule_type + 's')
               const.const_get(rule_type + 'Rule')
           end
         end
@@ -81,12 +90,15 @@ module TwitterCldr
         def identify_rule_type(rule_text)
           rule_text.strip!
 
-          if rule_text[0..1] == '::'
-            :filter
-          elsif rule_text[0..0] == '$'
-            :variable
-          else
-            :conversion
+          case rule_text
+            when /\A::[\s]*\(?[\s]*\[/
+              :filter
+            when /\A::/
+              :transform
+            when /([^\\]|\A)[<>]{1,2}/
+              :conversion
+            else
+              :variable
           end
         end
 
@@ -118,12 +130,16 @@ module TwitterCldr
       def forward_rule_set
         @forward_rule_set ||= begin
           ct_rules = rules.select do |rule|
-            rule.forward? && rule.is_ct_rule?
+            rule.forward? && (
+              rule.is_transform_rule? || rule.is_conversion_rule?
+            )
           end
 
           filter_rule = if is_forward_filter?(rules.first)
             rules.first
           end
+
+          filter_rule ||= Filters::NoFilter.new
 
           RuleSet.new(filter_rule, ct_rules)
         end
@@ -144,6 +160,8 @@ module TwitterCldr
           filter_rule = if is_backward_filter?(rules.last)
             rules.last
           end
+
+          filter_rule ||= Filters::NoFilter.new
 
           RuleSet.new(filter_rule, ct_rules)
         end

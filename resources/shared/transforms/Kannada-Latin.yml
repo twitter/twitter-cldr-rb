@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[ಂ-ಃಅ-ಌಎ-ಐಒ-ನಪ-ಳವ-ಹ಼-ೄೆ-ೈೊ-್ೕ-ೖೞೠ-ೡ೦-೯];"
       - "::NFD;"
       - "::Kannada-InterIndic;"
       - "::InterIndic-Latin;"
       - "::NFC;"
-    :source: "Kannada"
-    :target: "Latin"
+    :source: Kannada
+    :target: Latin
+    :variant: ~

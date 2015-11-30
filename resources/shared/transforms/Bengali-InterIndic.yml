@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "ো>\\uE04B; # VOWEL SIGN O"
       - "ৌ>\\uE04C; # VOWEL SIGN AU"
@@ -63,8 +63,8 @@
       - "ৄ>\\uE044; # VOWEL SIGN VOCALIC RR"
       - "ে>\\uE047; # VOWEL SIGN E"
       - "ৈ>\\uE048; # VOWEL SIGN AI"
-      - "ো>\\uE04B;"
-      - "ৌ>\\uE04C;"
+      - ো>\uE04B;
+      - ৌ>\uE04C;
       - "্>\\uE04D; # SIGN VIRAMA"
       - "ৎ>\\uE083; # Khanda-ta"
       - "ৗ>\\uE057; # AU LENGTH MARK"
@@ -95,5 +95,6 @@
       - "৺>\\uE07B; # ISSHAR"
       - "।>\\uE064;        # DANDA"
       - "॥>\\uE065;        # DOUBLE DANDA"
-    :source: "Bengali"
-    :target: "InterIndic"
+    :source: Bengali
+    :target: InterIndic
+    :variant: ~

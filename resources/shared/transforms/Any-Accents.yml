@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - ":: NFD (NFC) ;"
       - "$pre = \\< ;"
@@ -47,5 +47,6 @@
       - "$pre i $post <> ɪ ; # LATIN LETTER SMALL CAPITAL I"
       - "$pre v $post <> ʌ ; # LATIN SMALL LETTER TURNED V"
       - ":: NFC (NFD) ;"
-    :source: "Any"
-    :target: "Accents"
+    :source: Any
+    :target: Accents
+    :variant: ~

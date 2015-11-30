@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЪЬЭЮЯЎҚҒҲабвгдеёжзийклмнопрстуфхцчшъьэюяўқғҳ] ;"
       - ":: NFD (NFC) ;"
@@ -112,5 +112,5 @@
       - "ғ > gh ; # CYRILLIC SMALL LETTER GHE WITH STROKE"
       - "Ҳ > H ; # CYRILLIC CAPITAL LETTER HA WITH DESCENDER"
       - "ҳ > h ; # CYRILLIC SMALL LETTER HA WITH DESCENDER"
-    :source: "Uzbek"
-    :target: "Latin"
+    :source: Uzbek
+    :target: Latin

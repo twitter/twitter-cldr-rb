@@ -16,6 +16,8 @@ module TwitterCldr
           next_token(:direction)
           second_side = side
           ConversionRule.new(direction, first_side, second_side)
+        rescue => e
+          binding.pry
         end
 
         # a { b | c } d <> e { f | g } h ;
@@ -48,7 +50,7 @@ module TwitterCldr
 
           Side.new(
             join_values(before_context),
-            join_values(key),
+            key,
             join_values(after_context),
             cursor_offset
           )

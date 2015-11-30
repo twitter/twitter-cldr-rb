@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ஂ; # FALLBACK SIGN CANDRABINDU"
       - "\\uE002>ஂ; # SIGN ANUSVARA"
@@ -42,7 +42,7 @@
       - "\\uE025>த; # REMAP (indicExceptions.txt): \\u0BA5>த = LETTER THA>LETTER TA"
       - "\\uE026>த; # REMAP (indicExceptions.txt): \\u0BA6>த = LETTER DA>LETTER TA"
       - "\\uE027>த; # REMAP (indicExceptions.txt): \\u0BA7>த = LETTER DHA>LETTER TA"
-      - "\\uE028\\uE03C>ன;"
+      - \uE028\uE03C>ன;
       - "\\uE028>ந; # LETTER NA"
       - "\\uE029>ன; # LETTER NNNA"
       - "\\uE02A>ப; # LETTER PA"
@@ -51,11 +51,11 @@
       - "\\uE02D>ப; # REMAP (indicExceptions.txt): \\u0BAD>ப = LETTER BHA>LETTER PA"
       - "\\uE02E>ம; # LETTER MA"
       - "\\uE02F>ய; # LETTER YA"
-      - "\\uE030\\uE03C>ற;"
+      - \uE030\uE03C>ற;
       - "\\uE030>ர; # LETTER RA"
       - "\\uE031>ற; # LETTER RRA"
       - "\\uE032>ல; # LETTER LA"
-      - "\\uE033\\uE03C>ழ;"
+      - \uE033\uE03C>ழ;
       - "\\uE033>ள; # LETTER LLA"
       - "\\uE034>ழ; # LETTER LLLA"
       - "\\uE035>வ; # LETTER VA"
@@ -82,10 +82,10 @@
       - "\\uE04C>ௌ; # VOWEL SIGN AU"
       - "\\uE04D>்; # SIGN VIRAMA"
       - "\\uE050>ஓம்; # REMAP (indicExceptions.txt): \\u0BD0>ஓம் = OM>LETTER OO.LETTER MA.SIGN VIRAMA"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>; # UNMAPPED InterIndic-Tamil: LENGTH MARK"
       - "\\uE056>ை; # REMAP (indicExceptions.txt): \\u0BD6>ை = AI LENGTH MARK>VOWEL SIGN AI"
       - "\\uE057>ௗ; # AU LENGTH MARK"
@@ -133,5 +133,6 @@
       - "\\uE081>வ; # FALLBACK FOR ORIYA LETTER WA"
       - "\\uE082>;       # Devanagari Glottal Stop"
       - "\\uE083>த்;  # Bengali Khanda-ta"
-    :source: "InterIndic"
-    :target: "Tamil"
+    :source: InterIndic
+    :target: Tamil
+    :variant: ~

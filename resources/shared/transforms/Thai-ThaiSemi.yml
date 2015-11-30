@@ -1,9 +1,10 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "$thai = [[:thai:] ก-ฺเ-๛] ;"
       - "$thai { ' ' } $thai > '; ' ;"
-    :source: "Thai"
-    :target: "ThaiSemi"
+    :source: Thai
+    :target: ThaiSemi
+    :variant: ~

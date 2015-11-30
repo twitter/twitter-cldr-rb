@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[[:script=bengali:][।-॥ঁ-ঃঅ-ঌএ-ঐও-নপ-রলশ-হ়-ৄে-ৈো-্ৗড়-ঢ়য়-ৣ০-৺ৎ]];"
       - "::NFD;"
       - "::Bengali-InterIndic;"
       - "::InterIndic-Latin;"
       - "::NFC;"
-    :source: "Bengali"
-    :target: "Latin"
+    :source: Bengali
+    :target: Latin
+    :variant: ~

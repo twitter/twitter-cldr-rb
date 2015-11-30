@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::NFC;"
       - "::Lower;"
@@ -57,5 +57,6 @@
       - "ý > iː ;"
       - "z > z ;"
       - "ž > ʒ ;"
-    :source: "cs"
-    :target: "cs_FONIPA"
+    :source: cs
+    :target: cs_FONIPA
+    :variant: ~

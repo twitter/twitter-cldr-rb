@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::NFD();"
       - "I } [^[:ccc=Not_Reordered:][:ccc=Above:]]* [:ccc=Above:] > i \\u0307;"
@@ -12,5 +12,6 @@
       - "Ĩ > i \\u0307 \\u0303;"
       - "::Any-Lower();"
       - "::NFC();"
-    :source: "lt"
-    :target: "Lower"
+    :source: lt
+    :target: Lower
+    :variant: ~

@@ -10,55 +10,59 @@ module TwitterCldr
   module Transforms
 
     class RuleSet
-      attr_reader :filter_rule, :ct_rules, :rule_index
+      attr_reader :filter_rule, :rules
 
       def initialize(filter_rule, ct_rules)
         @filter_rule = filter_rule
-        @ct_rules = ct_rules
-        @rule_index = build_rule_index(ct_rules)
+        @rules = partition(ct_rules)
       end
 
       def transform(text)
         cursor = Cursor.new(text.dup)
-
-        until cursor.eos?
-          if filter_rule && filter_rule.matches?(cursor)
-            if rule = find_matching_rule_at(cursor)
-              start = cursor.position
-              stop = cursor.position + rule.original.size
-              cursor.text[start...stop] = rule.replacement
-
-              cursor.advance(
-                rule.replacement.size + rule.cursor_offset
-              )
-            else
-              cursor.advance
-            end
-          else
-            cursor.advance
-          end
-        end
-
+        rules.each { |rule| rule.apply_to(cursor) }
         cursor.text
       end
 
-      protected
+      private
 
-      def build_rule_index(ct_rules)
-        index_hash = Hash.new { |h, k| h[k] = [] }
-        ct_rules.inject(index_hash) do |ret, rule|
-          if rule.respond_to?(:index_value)
-            ret[rule.index_value] << rule
+      def partition(ct_rules)
+        [].tap do |result|
+          until ct_rules.empty?
+            trans_rules = take_transforms(ct_rules)
+            conv_rules = take_conversions(ct_rules)
+            result.concat(trans_rules)
+
+            unless conv_rules.empty?
+              result << make_conversion_rule_set(conv_rules)
+            end
           end
-          ret
         end
       end
 
-      def find_matching_rule_at(cursor)
-        index_value = cursor.text[cursor.position].bytes.first
-        rule_index[index_value].find do |rule|
-          rule.match?(cursor)
+      def take_transforms(rules)
+        take_rules(rules, &:is_transform_rule?)
+      end
+
+      def take_conversions(rules)
+        take_rules(rules, &:is_conversion_rule?)
+      end
+
+      def take_rules(rules)
+        [].tap do |result|
+          rules.reject! do |rule|
+            if yield(rule)
+              result << rule
+            else
+              break
+            end
+          end
         end
+      end
+
+      def make_conversion_rule_set(rules)
+        TwitterCldr::Transforms::ConversionRuleSet.new(
+          filter_rule, rules
+        )
       end
     end
 

@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
       - "::NFD;"
       - "::Devanagari-InterIndic;"
       - "::InterIndic-Malayalam;"
       - "::NFC;"
-    :source: "Devanagari"
-    :target: "Malayalam"
+    :source: Devanagari
+    :target: Malayalam
+    :variant: ~

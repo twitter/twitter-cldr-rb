@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "ொ>\\uE04A;# VOWEL SIGN O"
       - "ோ>\\uE04B;# VOWEL SIGN OO"
@@ -66,6 +66,7 @@
       - "௰>\\uE067\\uE066;          # UNMAPPED Tamil-InterIndic: NUMBER TEN"
       - "௱>\\uE067\\uE066\\uE066;     # UNMAPPED Tamil-InterIndic: NUMBER ONE HUNDRED"
       - "௲>\\uE067\\uE066\\uE066\\uE066;# UNMAPPED Tamil-InterIndic: NUMBER ONE THOUSAND"
-      - "\\u0BE6>\\uE066;"
-    :source: "Tamil"
-    :target: "InterIndic"
+      - \u0BE6>\uE066;
+    :source: Tamil
+    :target: InterIndic
+    :variant: ~

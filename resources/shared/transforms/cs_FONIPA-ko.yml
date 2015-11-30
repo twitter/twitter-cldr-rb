@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$vowel = [aeɛiɪoux];"
       - "$start = [\\u0020$];"
@@ -83,5 +83,6 @@
       - "ː          > ;"
       - "\\u0020     > ;  # space"
       - ":: Latin-Hangul ();"
-    :source: "cs_FONIPA"
-    :target: "ko"
+    :source: cs_FONIPA
+    :target: ko
+    :variant: ~

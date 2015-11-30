@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: NFD (NFC);"
       - "[\\u0304\\u0301\\u030C\\u0300\\u0306] > ;"
@@ -115,5 +115,6 @@
       - "zi > цзы;"
       - "z  > цз;"
       - ":: NFC ();"
-    :source: "zh_Latn_PINYIN"
-    :target: "ru"
+    :source: zh_Latn_PINYIN
+    :target: ru
+    :variant: ~

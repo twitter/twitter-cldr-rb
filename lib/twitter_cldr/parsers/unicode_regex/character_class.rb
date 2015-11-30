@@ -14,7 +14,7 @@ module TwitterCldr
           close_bracket: :open_bracket
         }
 
-        # Character classes can include set operations (eg. union, intersection, etc).      
+        # Character classes can include set operations (eg. union, intersection, etc).
         BinaryOperator = Struct.new(:operator, :left, :right)
         UnaryOperator = Struct.new(:operator, :child)
 
@@ -50,9 +50,24 @@ module TwitterCldr
           evaluate(root)
         end
 
+        def codepoints
+          codepoints_from(root)
+        end
+
         private
 
         attr_reader :root
+
+        def codepoints_from(node)
+          case node
+            when UnaryOperator
+              codepoints_from(node.child)
+            when BinaryOperator
+              codepoints_from(node.left) + codepoints_from(node.right)
+            else
+              node.codepoints
+          end
+        end
 
         def evaluate(node)
           case node

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$vowel = [aeiouw] ;       # Vowels and glides"
       - "$not_vowel = [^$vowel] ;"
@@ -185,5 +185,6 @@
       - "ʒ > ジュ ;"
       - "ː > ー ;"
       - "' ' > ・;"
-    :source: "sk_FONIPA"
-    :target: "ja"
+    :source: sk_FONIPA
+    :target: ja
+    :variant: ~

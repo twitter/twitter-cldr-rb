@@ -9,28 +9,26 @@ module TwitterCldr
 
       class ConversionRule < Rule
         class << self
+          include TwitterCldr::Tokenizers
+
           def parse(rule_text, symbol_table)
-            cleaned_rule_text = unescape(
-              remove_comment(rule_text)
-            )
-
-            tokens = replace_symbols(
-              tokenizer.tokenize(cleaned_rule_text),
-              symbol_table
-            )
-
+            tokens = tokenize(rule_text, symbol_table)
             parser.parse(tokens)
           end
 
           protected
 
-          def parser
-            @parser ||= Parser.new
+          def tokenize(rule_text, symbol_table)
+            cleaned_rule_text = remove_comment(rule_text)
+            tokens = tokenizer.tokenize(cleaned_rule_text)
+            tokens = preprocess_tokens(tokens)
+            replace_symbols(tokens, symbol_table)
           end
 
           def remove_comment(rule_text)
-            if rule_idx = rule_text.index('#')
-              rule_text[0...rule_idx]
+            # comment must come after semicolon
+            if rule_idx = rule_text.index(/;[ ]*#/)
+              rule_text[0..rule_idx]
             else
               rule_text
             end
@@ -42,19 +40,7 @@ module TwitterCldr
           end
 
           def tokenizer
-            @tokenizer ||= begin
-              recognizers = [
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:variable, /\$\w[\w\d]*/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:direction, /[<>]{1,2}/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:cursor, /\|/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:before_context, /[{]/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:after_context, /[}]/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:semicolon, /;/),
-                TwitterCldr::Tokenizers::TokenRecognizer.new(:string, //)
-              ]
-
-              TwitterCldr::Tokenizers::Tokenizer.new(recognizers)
-            end
+            @tokenizer ||= TwitterCldr::Transforms::Tokenizer.new
           end
         end
 
@@ -78,7 +64,11 @@ module TwitterCldr
           direction == :backward
         end
 
-        def is_ct_rule?
+        def is_transform_rule?
+          false
+        end
+
+        def is_conversion_rule?
           true
         end
 
@@ -91,22 +81,38 @@ module TwitterCldr
           end
         end
 
-        def index_value
-          left.index_value
+        def codepoints
+          left.codepoints
         end
 
-        def match?(cursor)
-          left.match?(cursor)
+        def has_codepoints?
+          left.has_codepoints?
+        end
+
+        def match(cursor)
+          left.match(cursor)
         end
 
         def original
-          left.before_context +
-            left.key +
-            left.after_context
+          @original ||= begin
+            key = left.key.inject('') do |ret, token|
+              ret + (token.type == :capture ? '' : token.value)
+            end
+
+            left.before_context + key + left.after_context
+          end
         end
 
-        def replacement
-          right.key
+        def replacement_for(cursor)
+          right.key.inject('') do |ret, token|
+            ret + case token.type
+              when :capture
+                idx = token.value[1..-1].to_i - 1
+                cursor.captures[idx]
+              else
+                token.value
+            end
+          end
         end
 
         def cursor_offset

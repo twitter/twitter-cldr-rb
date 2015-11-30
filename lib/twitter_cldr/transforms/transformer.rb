@@ -34,9 +34,9 @@ module TwitterCldr
           !!get(source_locale_str, target_locale_str)
         end
 
-        def get(source_locale_str, target_locale_str)
-          resource_name = join_locale_strs(source_locale_str, target_locale_str)
-          reversed_resource_name = join_locale_strs(target_locale_str, source_locale_str)
+        def get(source_locale_str, target_locale_str, variant_str = nil)
+          resource_name = join_locale_strs(source_locale_str, target_locale_str, variant_str)
+          reversed_resource_name = join_locale_strs(target_locale_str, source_locale_str, variant_str)
 
           if RuleGroup.exists?(resource_name)
             RuleGroup.load(resource_name).forward_rule_set
@@ -66,14 +66,14 @@ module TwitterCldr
           end
         end
 
-        def join_locale_strs(source_str, target_str)
-          "#{source_str}-#{target_str}"
+        def join_locale_strs(*strs)
+          strs.compact.join('-')
         end
 
         def join_subtags(tags, variant)
-          result = tags.join('_')
-          resut << "_#{variant}" if variant
-          result
+          tags.join('_').tap do |result|
+            result << "_#{variant}" if variant
+          end
         end
 
         def variants_for(source_locale, target_locale)

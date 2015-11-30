@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[ఁ-ఃఅ-ఌఎ-ఐఒ-నప-ళవ-హా-ౄె-ైొ-్ౕ-ౖౠ-ౡ౦-౯];"
       - "::NFD;"
       - "::Telugu-InterIndic;"
       - "::InterIndic-Malayalam;"
       - "::NFC;"
-    :source: "Telugu"
-    :target: "Malayalam"
+    :source: Telugu
+    :target: Malayalam
+    :variant: ~

@@ -28,9 +28,13 @@ module TwitterCldr
       private
 
       # Types that are allowed to be used in character ranges.
-      CHARACTER_CLASS_TOKEN_TYPES = [
+      RANGED_CHARACTER_CLASS_TOKEN_TYPES = [
         :variable, :character_set, :negated_character_set, :unicode_char,
         :multichar_string, :string, :escaped_character, :character_range
+      ]
+
+      CHARACTER_CLASS_TOKEN_TYPES = RANGED_CHARACTER_CLASS_TOKEN_TYPES + [
+        :open_bracket, :special_char
       ]
 
       NEGATED_TOKEN_TYPES = [
@@ -52,22 +56,14 @@ module TwitterCldr
         })
       end
 
-      # Identifies regex ranges and makes implicit operators explicit
+      # Identifies regex ranges
       def preprocess(tokens)
         result = []
         i = 0
 
         while i < tokens.size
-          # Character class entities side-by-side are treated as unions. So
-          # are side-by-side character classes. Add a special placeholder token
-          # to help out the expression parser.
-          add_union = (valid_character_class_token?(result.last) && tokens[i].type != :close_bracket) ||
-            (result.last && result.last.type == :close_bracket && tokens[i].type == :open_bracket)
-
-          result << make_token(:union) if add_union
-
-          is_range = valid_character_class_token?(tokens[i]) &&
-            valid_character_class_token?(tokens[i + 2]) &&
+          is_range = valid_ranged_character_class_token?(tokens[i]) &&
+            valid_ranged_character_class_token?(tokens[i + 2]) &&
             tokens[i + 1].type == :dash
 
           if is_range
@@ -118,6 +114,10 @@ module TwitterCldr
 
       def valid_character_class_token?(token)
         token && CHARACTER_CLASS_TOKEN_TYPES.include?(token.type)
+      end
+
+      def valid_ranged_character_class_token?(token)
+        token && RANGED_CHARACTER_CLASS_TOKEN_TYPES.include?(token.type)
       end
 
       def unary_operator?(token)
@@ -218,7 +218,14 @@ module TwitterCldr
                 operand_stack.push(node)
                 last_operator = peek(operator_stack)
               end
+
               operator_stack.pop
+
+              if n = @tokens[@token_index + 1]
+                if valid_character_class_token?(n) && open_count > 0
+                  operator_stack.push(make_token(:union))
+                end
+              end
 
             when *CharacterClass.opening_types
               open_count += 1
@@ -228,6 +235,12 @@ module TwitterCldr
               operator_stack.push(current_token)
 
             else
+              if n = @tokens[@token_index + 1]
+                if valid_character_class_token?(n) && open_count > 0
+                  operator_stack.push(make_token(:union))
+                end
+              end
+
               operand_stack.push(
                 send(current_token.type, current_token)
               )

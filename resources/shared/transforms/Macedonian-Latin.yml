@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГДЃЕЖЗЅИЈКЛЉМНЊОПРСТЌУФХЦЧЏШабвгдѓежзѕијклљмнњопрстќуфхцчџш’] ;"
       - ":: NFD (NFC) ;"
@@ -84,5 +84,5 @@
       - "џ > dž ; # CYRILLIC SMALL LETTER SHA"
       - "Ш > Š ; # CYRILLIC CAPITAL LETTER SHA"
       - "ш > š ; # CYRILLIC SMALL LETTER SHA"
-    :source: "Macedonian"
-    :target: "Latin"
+    :source: Macedonian
+    :target: Latin

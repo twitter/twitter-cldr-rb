@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "ઁ>\\uE001; # SIGN CANDRABINDU"
       - "ં>\\uE002; # SIGN ANUSVARA"
@@ -86,5 +86,6 @@
       - "।>\\uE064; # DANDA"
       - "॥>\\uE065; # DOUBLE DANDA"
       - "૰>\\uE070; # ABBREVIATION SIGN"
-    :source: "Gujarati"
-    :target: "InterIndic"
+    :source: Gujarati
+    :target: InterIndic
+    :variant: ~

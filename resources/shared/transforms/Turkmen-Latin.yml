@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: NFD (NFC) ;"
       - "$prime  = ʹ ;"
@@ -117,5 +117,5 @@
       - "Я} $lower > Ya ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YA ; # CYRILLIC CAPITAL LETTER YA"
       - "я > ya ; # CYRILLIC SMALL LETTER YA"
-    :source: "Turkmen"
-    :target: "Latin"
+    :source: Turkmen
+    :target: Latin

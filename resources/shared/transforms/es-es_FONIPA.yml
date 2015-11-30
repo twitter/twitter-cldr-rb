@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$bow = [-\\ $] ;  # Beginning of word."
       - "$consonant = [bβdðfgɣʝklʎmnŋɲθprɾstʧx] ;"
@@ -76,5 +76,6 @@
       - "[mnɲŋ  $] { ɣ > g ;"
       - "n } [gɣk] > ŋ ;"
       - "::NFC;"
-    :source: "es"
-    :target: "es_FONIPA"
+    :source: es
+    :target: es_FONIPA
+    :variant: ~

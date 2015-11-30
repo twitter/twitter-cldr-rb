@@ -29,6 +29,10 @@ module TwitterCldr
       def eos?
         position >= text.size
       end
+
+      def index_values
+        text[position].bytes
+      end
     end
 
   end

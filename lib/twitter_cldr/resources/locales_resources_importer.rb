@@ -27,6 +27,8 @@ module TwitterCldr
         rbnf
       ]  # units
 
+      LOCALE_COMPONENTS.clear
+
       SHARED_COMPONENTS = %w[
         currency_digits_and_rounding
         rbnf_root
@@ -36,7 +38,10 @@ module TwitterCldr
         likely_subtags
         variables
         aliases
+        transforms
       ]
+
+      SHARED_COMPONENTS = %w(transforms)
 
       # Arguments:
       #

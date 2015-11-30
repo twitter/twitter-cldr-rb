@@ -1,10 +1,10 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЮЯЬабвгґдеєжзиіїйклмнопрстуфхцчшщюяь’] ;"
-      - ":: NFD (NFC) ;"
+      - ":: NFC ;"
       - "$prime  = ʹ ;"
       - "$doublePrime = ʺ ;"
       - "$upperConsonants = [БВГҐДЖЗЙКЛМНПРСТФХЦЧШЩЬ] ;"
@@ -110,5 +110,5 @@
       - "Ь > $prime ; # CYRILLIC CAPITAL LETTER SOFT SIGN"
       - "ь > $prime ; # CYRILLIC SMALL LETTER SOFT SIGN"
       - "’ > $doublePrime ; # LEFT SINGLE QUOTATION MARK"
-    :source: "Ukrainian"
-    :target: "Latin"
+    :source: Ukrainian
+    :target: Latin

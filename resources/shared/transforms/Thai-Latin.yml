@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[[:thai:] ก-ฺเ-๛];"
       - "::NFD;"
@@ -10,5 +10,6 @@
       - "::Thai-ThaiLogical;"
       - "::ThaiLogical-Latin;"
       - "::NFC;"
-    :source: "Thai"
-    :target: "Latin"
+    :source: Thai
+    :target: Latin
+    :variant: ~

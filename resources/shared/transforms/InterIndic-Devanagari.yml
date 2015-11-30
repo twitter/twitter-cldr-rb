@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE028\\uE03C > ऩ;  #\\uE029"
       - "\\uE030\\uE03C > ऱ;  #\\uE031"
@@ -144,5 +144,6 @@
       - "\\uE081>व;  # FALLBACK FOR ORIYA LETTER WA"
       - "\\uE082>ॽ;     # Devanagari Glottal Sign"
       - "\\uE083>त्;  # Bengali Khanda-ta"
-    :source: "InterIndic"
-    :target: "Devanagari"
+    :source: InterIndic
+    :target: Devanagari
+    :variant: ~

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$word_boundary = [-\\ $] ;"
       - "$vowel = [aeijouw] ;       # Vowels and glides"
@@ -140,5 +140,6 @@
       - "xu > フ ;"
       - "x > フ ;"
       - "::NFC;"
-    :source: "es_FONIPA"
-    :target: "ja"
+    :source: es_FONIPA
+    :target: ja
+    :variant: ~

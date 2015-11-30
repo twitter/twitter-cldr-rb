@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "$t = '_';  # X-SAMPA representation of IPA tie bar."
       - "::NFD;"
@@ -171,5 +171,6 @@
       - "ʧ > t $t S;    # LATIN SMALL LETTER TESH DIGRAPH"
       - "ʨ > t $t 's\\'; # LATIN SMALL LETTER TC DIGRAPH WITH CURL"
       - "::NFC;"
-    :source: "IPA"
-    :target: "XSampa"
+    :source: IPA
+    :target: XSampa
+    :variant: ~

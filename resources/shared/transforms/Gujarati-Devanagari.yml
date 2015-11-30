@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[।-॥ઁ-ઃઅ-ઍએ-ઑઓ-નપ-રલ-ળવ-હ઼-ૅે-ૉો-્ૐૠૡ૦-૯];"
       - "::NFD;"
       - "::Gujarati-InterIndic;"
       - "::InterIndic-Devanagari;"
       - "::NFC;"
-    :source: "Gujarati"
-    :target: "Devanagari"
+    :source: Gujarati
+    :target: Devanagari
+    :variant: ~

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - ":: [[:Hebrew:] [:^ccc=0:] [ְ-ֹֻ-ּׁ-ׂℵ-ℸֿ̄] - [ֽ]] ;"
       - ":: nfkd (nfc) ;"
@@ -67,5 +67,6 @@
       - ":: (lower);"
       - ":: nfc (nfd) ;"
       - ":: ([[:Latin:] [:^ccc=0:] [ʻ-ʼ̀-̧̱̂̇̌̀-́    ̄ ]]);"
-    :source: "Hebrew"
-    :target: "Latin"
+    :source: Hebrew
+    :target: Latin
+    :variant: ~

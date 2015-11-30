@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - ":: [[:Arabic:][:block=ARABIC:][‎ⁿ،؛؟ـً-ٕ٠-٬۰-۹﷼ښ]] ;"
       - ":: NFKD (NFC);"
@@ -104,5 +104,6 @@
       - ":: (lower) ;"
       - "::NFC (NFD);"
       - ":: ( [[:Latin:] [%,.0-9;?ʾ-ʿ̂-̄̈-̣̰̊-̱̹;ˌ]] );"
-    :source: "Arabic"
-    :target: "Latin"
+    :source: Arabic
+    :target: Latin
+    :variant: ~

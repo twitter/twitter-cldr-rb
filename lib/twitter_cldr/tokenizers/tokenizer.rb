@@ -79,17 +79,19 @@ module TwitterCldr
             recognizer.recognizes?(token_text)
           end
 
-          if recognizer.token_type == :composite
-            content = token_text.match(recognizer.content)[1]
-            ret << CompositeToken.new(tokenize(content))
-          else
-            cleaned_text = recognizer.clean(token_text)
+          if recognizer
+            if recognizer.token_type == :composite
+              content = token_text.match(recognizer.content)[1]
+              ret << CompositeToken.new(tokenize(content))
+            else
+              cleaned_text = recognizer.clean(token_text)
 
-            if (remove_empty_entries && cleaned_text.size > 0) || !remove_empty_entries
-              ret << Token.new(
-                value: cleaned_text,
-                type: recognizer.token_type
-              )
+              if (remove_empty_entries && cleaned_text.size > 0) || !remove_empty_entries
+                ret << Token.new(
+                  value: cleaned_text,
+                  type: recognizer.token_type
+                )
+              end
             end
           end
 

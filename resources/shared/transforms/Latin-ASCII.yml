@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - ":: [[:Latin:][:Common:][:Inherited:][〇]] ;"
       - ":: NFD() ;"
@@ -284,6 +284,7 @@
       - "₣ > 'Fr.' ; # 20A3;FRENCH FRANC SIGN (from ‹character-fallback›)"
       - "₤ > 'L.' ; # 20A4;LIRA SIGN (from ‹character-fallback›)"
       - "₧ > Pts ; # 20A7;PESETA SIGN (from ‹character-fallback›)"
+      - "₺ > TL ; # 20BA;TURKISH LIRA SIGN (from ‹character-fallback›)"
       - "₹ > Rs ; # 20B9;INDIAN RUPEE SIGN (from ‹character-fallback›)"
       - "℀ > 'a/c' ; # 2100;ACCOUNT OF (compat)"
       - "℁ > 'a/s' ; # 2101;ADDRESSED TO THE SUBJECT (compat)"
@@ -688,5 +689,6 @@
       - "⩴ > '::=' ; # 2A74;DOUBLE COLON EQUAL (compat)"
       - "⩵ > '==' ; # 2A75;TWO CONSECUTIVE EQUALS SIGNS (compat)"
       - "⩶ > '===' ; # 2A76;THREE CONSECUTIVE EQUALS SIGNS (compat)"
-    :source: "Latin"
-    :target: "ASCII"
+    :source: Latin
+    :target: ASCII
+    :variant: ~

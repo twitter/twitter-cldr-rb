@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ം; # REMAP (indicExceptions.txt): \\u0D01>ം = SIGN CANDRABINDU>SIGN ANUSVARA"
       - "\\uE002>ം; # SIGN ANUSVARA"
@@ -50,11 +50,11 @@
       - "\\uE02D>ഭ; # LETTER BHA"
       - "\\uE02E>മ; # LETTER MA"
       - "\\uE02F>യ; # LETTER YA"
-      - "\\uE030\\uE03C>റ;"
+      - \uE030\uE03C>റ;
       - "\\uE030>ര; # LETTER RA"
       - "\\uE031>റ; # LETTER RRA"
       - "\\uE032>ല; # LETTER LA"
-      - "\\uE033\\uE03C>ഴ;"
+      - \uE033\uE03C>ഴ;
       - "\\uE033>ള; # LETTER LLA"
       - "\\uE034>ഴ; # LETTER LLLA"
       - "\\uE035>വ; # LETTER VA"
@@ -81,10 +81,10 @@
       - "\\uE04C>ൌ; # VOWEL SIGN AU"
       - "\\uE04D>്; # SIGN VIRAMA"
       - "\\uE050>ഓം; # UNMAPPED InterIndic-Malayalam: OM"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>; # FALLBACK BLOW AWAY LENGTH MARK"
       - "\\uE056>ൈ; # REMAP (indicExceptions.txt): \\u0D56>ൈ = AI LENGTH MARK>VOWEL SIGN AI"
       - "\\uE057>ൗ; # AU LENGTH MARK"
@@ -134,5 +134,6 @@
       - "\\uE083>ത്;  # Bengali Khanda-ta"
       - "0 > ൦;    # FALLBACK FOR TAMIL"
       - "1 > ൧;"
-    :source: "InterIndic"
-    :target: "Malayalam"
+    :source: InterIndic
+    :target: Malayalam
+    :variant: ~

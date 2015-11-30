@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: NFC () ;"
       - ":: Lower () ;"
@@ -83,5 +83,6 @@
       - "u > u ;"
       - "v > v ;"
       - "z > z ;"
-    :source: "ro"
-    :target: "ro_FONIPA"
+    :source: ro
+    :target: ro_FONIPA
+    :variant: ~

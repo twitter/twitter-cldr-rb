@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[[:script=Latin:][:M:]-];"
       - "::NFD;"
       - "::Lower;"
       - "::Latin-ConjoiningJamo;"
       - "::[[:script=Latin:][:M:]] NFC;"
-    :source: "Latin"
-    :target: "Jamo"
+    :source: Latin
+    :target: Jamo
+    :variant: ~

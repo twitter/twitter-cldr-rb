@@ -76,6 +76,10 @@ module TwitterCldr
           path.split(File::SEPARATOR).join if path
         end.compact
 
+        if name_indicates_value_prefix?(property_name)
+          values += values.map { |v| v[0] }
+        end
+
         property_values[property_name] = if values.length == 0
           nil
         else

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒᄭᄯᄲᄶᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᆨᆫᆮᆯᆰᆱᆲᆷᆸᆺᆼᆽᆾᆿᇀᇁ] ;"
       - ":: NFD (NFC) ;"
@@ -277,5 +277,5 @@
       - "ᇁ}$wordBoundary > p ; # HANGUL JONGSEONG PHIEUPH"
       - "ᆰ}$wordBoundary > k ; # HANGUL JONGSEONG RIEUL-KIYEOK"
       - "ᆲ}$wordBoundary > p ; # HANGUL JONGSEONG RIEUL-PIEUP"
-    :source: "Korean"
-    :target: "Latin"
+    :source: Korean
+    :target: Latin

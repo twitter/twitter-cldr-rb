@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯҐабвгдеёжзійклмнопрстуўфхцчшщъыьэюя’ґ] ;"
       - ":: NFD (NFC) ;"
@@ -103,5 +103,5 @@
       - "’ > $doublePrime ; # LEFT SINGLE QUOTATION MARK"
       - "Ґ > G ; # CYRILLIC CAPITAL LETTER GHE WITH UPTURN"
       - "ґ > g ; # CYRILLIC SMALL LETTER GHE WITH UPTURN"
-    :source: "Belarusian"
-    :target: "Latin"
+    :source: Belarusian
+    :target: Latin

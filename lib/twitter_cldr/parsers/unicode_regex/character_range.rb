@@ -33,6 +33,10 @@ module TwitterCldr
           )
         end
 
+        def codepoints
+          to_set.to_full_a
+        end
+
       end
     end
   end

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ఁ; # SIGN CANDRABINDU"
       - "\\uE002>ం; # SIGN ANUSVARA"
@@ -50,7 +50,7 @@
       - "\\uE02D>భ; # LETTER BHA"
       - "\\uE02E>మ; # LETTER MA"
       - "\\uE02F>య; # LETTER YA"
-      - "\\uE030\\uE03C>ఱ;"
+      - \uE030\uE03C>ఱ;
       - "\\uE030>ర; # LETTER RA"
       - "\\uE031>ఱ; # LETTER RRA"
       - "\\uE032>ల; # LETTER LA"
@@ -80,10 +80,10 @@
       - "\\uE04C>ౌ; # VOWEL SIGN AU"
       - "\\uE04D>్; # SIGN VIRAMA"
       - "\\uE050>ఓం; # REMAP (indicExceptions.txt): \\u0C50>ఓం = OM>LETTER OO.SIGN ANUSVARA"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>ౕ; # LENGTH MARK"
       - "\\uE056>ౖ; # AI LENGTH MARK"
       - "\\uE057>ౌ; # REMAP (indicExceptions.txt): \\u0C57>ౌ = AU LENGTH MARK>VOWEL SIGN AU"
@@ -133,5 +133,6 @@
       - "\\uE083>త్;  # Bengali Khanda-ta"
       - "0 > ౦;    # FALLBACK FOR TAMIL"
       - "1 > ౧;"
-    :source: "InterIndic"
-    :target: "Telugu"
+    :source: InterIndic
+    :target: Telugu
+    :variant: ~

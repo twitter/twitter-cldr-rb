@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - ":: [[ᄀ-ᄒᄚᄡ\\u1160-ᅵᆪᆬ-ᆭᆰ-ᆵ<-↓│■○\\u3000-。「-」゙-゚ァ-ロワヲ-ヴヷヺ-ー！-～￠-￦][',.A-Za-z~À-ÖØ-öø-ďĒ-ĥĨ-İĴ-ķĹ-ľŃ-ňŌ-őŔ-ťŨ-žƠ-ơƯ-ưǍ-ǜǞ-ǣǦ-ǭǰǴ-ǵǸ-țȞ-ȟȦ-ȳ̄Ӣ-ӣӮ-ӯḀ-ẙẠ-ỹᾱᾹῑῙῡῩK-Å]] ;"
       - ":: [:Latin:] fullwidth-halfwidth ();"
@@ -269,5 +269,6 @@
       - ":: NFC (NFD) ;"
       - ":: ([[:Katakana:][\\u309B\\u309C\\u30A0\\u30FC\\uFF70\\uFF9E\\uFF9F]] halfwidth-fullwidth);"
       - ":: ( [[\\ -~¢-£¥-¦¬̄₩｡-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ￨-￮][~、-。がぎぐげござじずぜぞだぢづでどば-ぱび-ぴぶ-ぷべ-ぺぼ-ぽゔ゙-゛ゞァ-ヺー-ヾ][\\u309B\\u309C\\u30A0\\u30FC\\uFF70\\uFF9E\\uFF9F]] ) ;"
-    :source: "Latin"
-    :target: "Katakana"
+    :source: Latin
+    :target: Katakana
+    :variant: ~

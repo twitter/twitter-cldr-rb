@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ଁ; # SIGN CANDRABINDU"
       - "\\uE002>ଂ; # SIGN ANUSVARA"
@@ -79,10 +79,10 @@
       - "\\uE04C>ୌ; # VOWEL SIGN AU"
       - "\\uE04D>୍; # SIGN VIRAMA"
       - "\\uE050>ଓଁ; # FALLBACK \\u0B50>ଓଁ = OM>LETTER O.SIGN CANDRABINDU"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>; # UNMAPPED InterIndic-Oriya: LENGTH MARK"
       - "\\uE056>ୖ; # AI LENGTH MARK"
       - "\\uE057>ୗ; # AU LENGTH MARK"
@@ -132,5 +132,6 @@
       - "\\uE083>ତ୍;  # Bengali Khanda-ta"
       - "0 > ୦;    # FALLBACK FOR TAMIL"
       - "1 > ୧;"
-    :source: "InterIndic"
-    :target: "Oriya"
+    :source: InterIndic
+    :target: Oriya
+    :variant: ~

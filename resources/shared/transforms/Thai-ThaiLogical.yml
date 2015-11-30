@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "$thai = [[:thai:] ก-ฺเ-๛] ;"
       - "' '  < $thai { '; '  } $thai;"
@@ -10,5 +10,6 @@
       - "$thai_non_reversing = [$thai - $thai_reversing ];"
       - "( $thai_reversing ) ( $thai_non_reversing ) > $2 $1;"
       - "$2 $1 < ( $thai_non_reversing ) ( $thai_reversing ) ;"
-    :source: "Thai"
-    :target: "ThaiLogical"
+    :source: Thai
+    :target: ThaiLogical
+    :variant: ~

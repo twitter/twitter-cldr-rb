@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "ँ>\\uE001;  # SIGN CANDRABINDU"
       - "ं>\\uE002;  # SIGN ANUSVARA"
@@ -43,7 +43,7 @@
       - "द>\\uE026;  # LETTER DA"
       - "ध>\\uE027;  # LETTER DHA"
       - "न>\\uE028;  # LETTER NA"
-      - "ऩ>\\uE029;"
+      - ऩ>\uE029;
       - "प>\\uE02A;  # LETTER PA"
       - "फ>\\uE02B;  # LETTER PHA"
       - "ब>\\uE02C;  # LETTER BA"
@@ -51,10 +51,10 @@
       - "म>\\uE02E;  # LETTER MA"
       - "य>\\uE02F;  # LETTER YA"
       - "र>\\uE030;  # LETTER RA"
-      - "ऱ>\\uE031;"
+      - ऱ>\uE031;
       - "ल>\\uE032;  # LETTER LA"
       - "ळ>\\uE033;  # LETTER LLA"
-      - "ऴ>\\uE034;"
+      - ऴ>\uE034;
       - "व>\\uE035;  # LETTER VA"
       - "श>\\uE036;  # LETTER SHA"
       - "ष>\\uE037;  # LETTER SSA"
@@ -83,14 +83,14 @@
       - "॒>\\uE052;       # UNMAPPED STRESS SIGN ANUDATTA"
       - "॓>\\uE053;       # UNMAPPED GRAVE ACCENT"
       - "॔>\\uE054;       # UNMAPPED ACUTE ACCENT"
-      - "क़>\\uE058;"
-      - "ख़>\\uE059;"
-      - "ग़>\\uE05A;"
-      - "ज़>\\uE05B;"
-      - "ड़>\\uE05C;"
-      - "ढ़>\\uE05D;"
-      - "फ़>\\uE05E;"
-      - "य़>\\uE05F;"
+      - क़>\uE058;
+      - ख़>\uE059;
+      - ग़>\uE05A;
+      - ज़>\uE05B;
+      - ड़>\uE05C;
+      - ढ़>\uE05D;
+      - फ़>\uE05E;
+      - य़>\uE05F;
       - "ॠ>\\uE060;  # LETTER VOCALIC RR"
       - "ॡ>\\uE061;  # LETTER VOCALIC LL"
       - "ॢ>\\uE062;  # VOWEL SIGN VOCALIC L"
@@ -109,5 +109,6 @@
       - "९>\\uE06F;  # DIGIT NINE"
       - "॰>\\uE070;  # Devanagari-InterIndic: ABBREVIATION SIGN"
       - "ॽ>\\uE082;  # Devanagari Glottal Stop"
-    :source: "Devanagari"
-    :target: "InterIndic"
+    :source: Devanagari
+    :target: InterIndic
+    :variant: ~

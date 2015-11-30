@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$word_boundary = [-\\ $];"
       - "$vowel = [аеийоуыьэюяёъ];"
@@ -436,5 +436,6 @@
       - "я > ヤ ;"
       - "ё > ョ ;"
       - "::NFC;"
-    :source: "ru"
-    :target: "ja"
+    :source: ru
+    :target: ja
+    :variant: ~

@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::NFD();"
       - "[:cased:] [:case-ignorable:]* {I } [^[:ccc=Not_Reordered:][:ccc=Above:]]* [:ccc=Above:] > i \\u0307;"
@@ -14,5 +14,6 @@
       - "[:Soft_Dotted:] [^[:ccc=Not_Reordered:][:ccc=Above:]]* { \\u0307 > ;"
       - "([:Lowercase:]) > &Any-Upper($1) ;"
       - "::NFC();"
-    :source: "lt"
-    :target: "Title"
+    :source: lt
+    :target: Title
+    :variant: ~

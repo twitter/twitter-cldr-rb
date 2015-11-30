@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[।-॥ઁ-ઃઅ-ઍએ-ઑઓ-નપ-રલ-ળવ-હ઼-ૅે-ૉો-્ૐૠૡ૦-૯];"
       - "::NFD;"
       - "::Gujarati-InterIndic;"
       - "::InterIndic-Bengali;"
       - "::NFC;"
-    :source: "Gujarati"
-    :target: "Bengali"
+    :source: Gujarati
+    :target: Bengali
+    :variant: ~

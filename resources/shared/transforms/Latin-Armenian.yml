@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "::NFD(NFC);"
       - "ev <> և ;"
@@ -85,5 +85,6 @@
       - "Ō <> Օ ;"
       - "F <> Ֆ ;"
       - "::NFC(NFD);"
-    :source: "Latin"
-    :target: "Armenian"
+    :source: Latin
+    :target: Armenian
+    :variant: ~

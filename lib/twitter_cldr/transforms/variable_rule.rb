@@ -15,6 +15,8 @@ module TwitterCldr
           next_token(:equals)
           var_value = value
           [var_name, var_value]
+        rescue => e
+          binding.pry
         end
 
         def name
@@ -35,9 +37,8 @@ module TwitterCldr
 
       class << self
         def parse(rule_text, symbol_table)
-          tokens = tokenizer.tokenize(
-            unescape(rule_text)
-          )
+          tokens = tokenizer.tokenize(rule_text)
+          tokens = preprocess_tokens(tokens)
 
           var_name, value_tokens = parser.parse(tokens)
 
@@ -56,24 +57,15 @@ module TwitterCldr
         end
 
         def tokenizer
-          @tokenizer ||= begin
-            recognizers = [
-              TwitterCldr::Tokenizers::TokenRecognizer.new(:variable, /\$\w[\w\d]*/),
-              TwitterCldr::Tokenizers::TokenRecognizer.new(:equals, /=/),
-              TwitterCldr::Tokenizers::TokenRecognizer.new(:semicolon, /;/),
-              TwitterCldr::Tokenizers::TokenRecognizer.new(:string, //)
-            ]
-
-            TwitterCldr::Tokenizers::Tokenizer.new(recognizers)
-          end
+          @tokenizer ||= TwitterCldr::Transforms::Tokenizer.new
         end
       end
 
       attr_reader :name, :value_tokens
 
-      def initialize(name, value_tokens)
+      def initialize(name, value)
         @name = name
-        @value_tokens = value_tokens
+        @value_tokens = value
       end
     end
 

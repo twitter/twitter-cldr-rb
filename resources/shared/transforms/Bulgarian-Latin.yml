@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: [АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯѪѢабвгдежзийклмнопрстуфхцчшщъьюяѫѣ] ;"
       - ":: NFD (NFC) ;"
@@ -94,5 +94,5 @@
       - "Ѣ} $lower > Ye ; # CYRILLIC CAPITAL LETTER YAT"
       - "Ѣ > YE ; # CYRILLIC CAPITAL LETTER YAT"
       - "ѣ > ye ; # CYRILLIC SMALL LETTER YAT"
-    :source: "Bulgarian"
-    :target: "Latin"
+    :source: Bulgarian
+    :target: Latin

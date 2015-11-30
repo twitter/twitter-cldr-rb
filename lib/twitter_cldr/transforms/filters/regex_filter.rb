@@ -10,7 +10,7 @@ module TwitterCldr
       class RegexFilter < FilterRule
         class << self
           def parse(rule_text, symbol_table)
-            rule_text = unescape(rule_text[2..-2].strip)
+            rule_text = rule_text[2..-2].strip
             direction = direction_for(rule_text)
 
             str = TwitterCldr::Shared::UnicodeRegex.compile(

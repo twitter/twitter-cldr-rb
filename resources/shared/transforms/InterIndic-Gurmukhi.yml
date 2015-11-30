@@ -1,14 +1,14 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "$vowel = [ਅ-ਔ ਾ-੍];"
       - "$consonant = [ਕ-ਹ];"
       - "\\uE001>ਁ;       # SIGN CHANDRABINDU"
       - "$vowel{\\uE002>ਂ; # SIGN ANUSVARA (ਂ = SIGN BINDI)"
       - "$consonant{\\uE002>ੰ; # SIGN TIPPI"
-      - "\\uE002>ਂ;"
+      - \uE002>ਂ;
       - "\\uE003>;       # FALLBACK BLOW AWAY SIGN VISARGA"
       - "\\uE004>ਅ; # FALLBACK TO LETTER A"
       - "\\uE005>ਅ; # LETTER A"
@@ -83,10 +83,10 @@
       - "\\uE04C>ੌ; # VOWEL SIGN AU"
       - "\\uE04D>੍; # SIGN VIRAMA"
       - "\\uE050>ਏਂ; #  FALLBACK to OO+BINDI : OM"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>; # FALLBACK BLOW AWAY LENGTH MARK"
       - "\\uE056>ੈ; # REMAP (indicExceptions.txt): \\u0A56>ੈ = AI LENGTH MARK>VOWEL SIGN AI"
       - "\\uE057>ੌ; # REMAP (indicExceptions.txt): \\u0A57>ੌ = AU LENGTH MARK>VOWEL SIGN AU"
@@ -136,5 +136,6 @@
       - "\\uE083>ਤ੍;  # Bengali Khanda-ta"
       - "0 > ੦;       # FALLBACK FOR TAMIL"
       - "1 > ੧;"
-    :source: "InterIndic"
-    :target: "Gurmukhi"
+    :source: InterIndic
+    :target: Gurmukhi
+    :variant: ~

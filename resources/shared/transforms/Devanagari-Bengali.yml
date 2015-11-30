@@ -1,12 +1,13 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
       - "::NFD;"
       - "::Devanagari-InterIndic;"
       - "::InterIndic-Bengali;"
       - "::NFC;"
-    :source: "Devanagari"
-    :target: "Bengali"
+    :source: Devanagari
+    :target: Bengali
+    :variant: ~

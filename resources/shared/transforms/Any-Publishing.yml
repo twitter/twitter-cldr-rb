@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "$single = \\' ;"
       - "$space = ' ' ;"
@@ -17,5 +17,6 @@
       - "$single <> ’;"
       - "$space {$space} > ;"
       - "'--' <> — ;"
-    :source: "Any"
-    :target: "Publishing"
+    :source: Any
+    :target: Publishing
+    :variant: ~

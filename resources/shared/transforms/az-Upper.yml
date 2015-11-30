@@ -1,9 +1,10 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
-      - "i>İ;"
+      - i>İ;
       - "::Any-Upper();"
-    :source: "az"
-    :target: "Upper"
+    :source: az
+    :target: Upper
+    :variant: ~

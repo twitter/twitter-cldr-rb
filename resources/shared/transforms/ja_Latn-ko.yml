@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::NFD(NFC);"
       - "::[:Latin:] Lower();"
@@ -87,5 +87,6 @@
       - "v    > | b ;"
       - "p > ᄑ ;"
       - "::NFC(NFD);"
-    :source: "ja_Latn"
-    :target: "ko"
+    :source: ja_Latn
+    :target: ko
+    :variant: ~

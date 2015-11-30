@@ -1,10 +1,12 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "::Han-Spacedhan();"
-      - "藏文>zàngwén;"
+      - "藏 } \\u0020? 文 >zàng;"
+      - "重 } \\u0020? 庆 >chóng;"
+      - "沈 } \\u0020? 阳 >shěn;"
       - "[呵锕阿𠼞𥥩𨉚]>ā;"
       - "[嗄]>á;"
       - "[啊]>a;"
@@ -1613,5 +1615,6 @@
       - "[㝾佐唨左繓𠂇𥙀𦈛𧲭𨀨]>zuǒ;"
       - "[㑅㘀㘴㤰㭮䔘䟶作侳做唑坐岝岞座怍祚糳胙葃葄袏阼飵𠱯𡯨𡹥𥅁𥥏𥽿𦥬𧃘𨐳𨝨𪎲]>zuò;"
       - "[咗蓙]>zuo;"
-    :source: "Han"
-    :target: "Latin"
+    :source: Han
+    :target: Latin
+    :variant: ~

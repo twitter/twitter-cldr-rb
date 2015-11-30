@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - ":: NFC () ;"
       - ":: Lower () ;"
@@ -93,5 +93,6 @@
       - "ʐ } [$] > ʂ ;"
       - "ʑ } [$] > ɕ ;"
       - "z } [$] > s ;"
-    :source: "pl"
-    :target: "pl_FONIPA"
+    :source: pl
+    :target: pl_FONIPA
+    :variant: ~

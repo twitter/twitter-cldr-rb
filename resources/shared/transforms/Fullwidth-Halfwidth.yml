@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "both"
+    :direction: both
     :rules: 
       - "ガ<>ｶﾞ; # to KATAKANA LETTER GA"
       - "ギ<>ｷﾞ; # to KATAKANA LETTER GI"
@@ -255,5 +255,6 @@
       - "↓<>￬; # to HALFWIDTH DOWNWARDS ARROW"
       - "■<>￭; # to HALFWIDTH BLACK SQUARE"
       - "○<>￮; # to HALFWIDTH WHITE CIRCLE"
-    :source: "Fullwidth"
-    :target: "Halfwidth"
+    :source: Fullwidth
+    :target: Halfwidth
+    :variant: ~

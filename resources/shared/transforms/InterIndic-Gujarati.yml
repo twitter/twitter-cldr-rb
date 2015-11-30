@@ -1,7 +1,7 @@
 --- 
 :transforms: 
   - 
-    :direction: "forward"
+    :direction: forward
     :rules: 
       - "\\uE001>ઁ; # SIGN CANDRABINDU"
       - "\\uE002>ં; # SIGN ANUSVARA"
@@ -79,10 +79,10 @@
       - "\\uE04C>ૌ; # VOWEL SIGN AU"
       - "\\uE04D>્; # SIGN VIRAMA"
       - "\\uE050>ૐ; # OM"
-      - "\\uE051>;"
-      - "\\uE052>;"
-      - "\\uE053>;"
-      - "\\uE054>;"
+      - \uE051>;
+      - \uE052>;
+      - \uE053>;
+      - \uE054>;
       - "\\uE055>; # UNMAPPED InterIndic-Gujarati: LENGTH MARK"
       - "\\uE056>ૈ; # REMAP (indicExceptions.txt): \\u0AD6>ૈ = AI LENGTH MARK>VOWEL SIGN AI"
       - "\\uE057>ૌ; # REMAP (indicExceptions.txt): \\u0AD7>ૌ = AU LENGTH MARK>VOWEL SIGN AU"
@@ -132,5 +132,6 @@
       - "\\uE083>ત્;  # Bengali Khanda-ta"
       - "0 > ૦;        # FALLBACK FOR TAMIL"
       - "1 > ૧;"
-    :source: "InterIndic"
-    :target: "Gujarati"
+    :source: InterIndic
+    :target: Gujarati
+    :variant: ~

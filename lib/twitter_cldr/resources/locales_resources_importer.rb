@@ -6,7 +6,6 @@
 require 'fileutils'
 require 'cldr-plurals'
 require 'cldr/export'
-require 'pry-nav'
 
 require 'twitter_cldr/resources/download'
 
@@ -27,8 +26,6 @@ module TwitterCldr
         rbnf
       ]  # units
 
-      LOCALE_COMPONENTS.clear
-
       SHARED_COMPONENTS = %w[
         currency_digits_and_rounding
         rbnf_root
@@ -40,8 +37,6 @@ module TwitterCldr
         aliases
         transforms
       ]
-
-      SHARED_COMPONENTS = %w(transforms)
 
       # Arguments:
       #

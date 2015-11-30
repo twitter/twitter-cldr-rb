@@ -82,11 +82,13 @@ module TwitterCldr
       def resolve_property_value_case(property_name, property_value)
         property_values = database.property_values_for(property_name)
 
-        value_idx = property_values.index do |value|
-          value.casecmp(property_value).zero?
-        end
+        if property_values
+          value_idx = property_values.index do |value|
+            value.casecmp(property_value).zero?
+          end
 
-        property_values[value_idx] if value_idx
+          property_values[value_idx] if value_idx
+        end
       end
 
       def find_property_name_candidates(property_name)

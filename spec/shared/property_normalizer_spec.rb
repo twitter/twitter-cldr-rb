@@ -44,6 +44,12 @@ describe PropertyNormalizer do
       expect(value).to be_nil
     end
 
+    it 'handles valid name but invalid value' do
+      name, value = normalizer.normalize('ideographic', 'ideographic')
+      expect(name).to be_nil
+      expect(value).to be_nil
+    end
+
     it 'fixes casing of property names' do
       name, value = normalizer.normalize('ideographic')
       expect(name).to eq('Ideographic')

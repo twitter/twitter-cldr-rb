@@ -33,7 +33,15 @@ module TwitterCldr
         end
 
         def codepoints
-          CodePoint.code_points_for_property(*normalized_property)
+          code_points = CodePoint.code_points_for_property(
+            *normalized_property
+          )
+
+          if code_points.empty?
+            raise UnicodeRegexParserError,
+              "Couldn't find property '#{property_name}' containing "\
+              "property value '#{property_value}'"
+          end
         end
 
         private
@@ -41,29 +49,39 @@ module TwitterCldr
         def normalized_property
           @normalized_property ||= begin
             property_name_candidates.each do |property_name|
-              property_value_candidates.each do |property_value|
-                prop_name, prop_value = CodePoint.properties.normalize(
-                  property_name, property_value
-                )
+              prop_name, prop_value = normalized_property_value(
+                property_name, property_value_candidates
+              )
 
-                if prop_name
-                  return [prop_name, prop_value]
-                end
+              if prop_name
+                return [prop_name, prop_value]
               end
             end
+
+            [nil, nil]
           end
         end
 
-        def property_name_candidates
-          if property_name
-            [property_name]
-          else
-            [property_value, 'General_Category', 'Script']
+        def normalized_property_value(property_name, property_value_candidates)
+          property_value_candidates.each do |property_value|
+            prop_name, prop_value = CodePoint.properties.normalize(
+              property_name, property_value
+            )
+
+            if prop_name
+              return [prop_name, prop_value]
+            end
           end
+
+          [nil, nil]
         end
 
         def property_value_candidates
-          [property_value, nil].uniq
+          if property_name && property_value
+            [property_value]
+          else
+            [property_value, nil]
+          end
         end
 
       end

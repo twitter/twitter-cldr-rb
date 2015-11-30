@@ -16,8 +16,6 @@ module TwitterCldr
           next_token(:direction)
           second_side = side
           ConversionRule.new(direction, first_side, second_side)
-        rescue => e
-          binding.pry
         end
 
         # a { b | c } d <> e { f | g } h ;

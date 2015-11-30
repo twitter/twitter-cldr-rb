@@ -62,7 +62,6 @@ module TwitterCldr
         end
 
         def match_after(cursor, key_match)
-          binding.pry
           if match = after_context_regexp.match(cursor.text, key_match.end(0))
             match if match.begin(0) == key_match.end(0)
           end

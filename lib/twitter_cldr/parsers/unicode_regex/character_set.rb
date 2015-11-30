@@ -66,37 +66,6 @@ module TwitterCldr
           [property_value, nil].uniq
         end
 
-        # def codepoints
-        #   binding.pry if property_value == 'Letter'
-        #   code_points = CodePoint.code_points_for_property(
-        #     property_name, property_value
-        #   )
-
-        #   if code_points.empty?
-        #     code_points = CodePoint.code_points_for_property(
-        #       property_value
-        #     )
-        #   end
-
-        #   if code_points.empty?
-        #     %w(General_Category Script).each do |name|
-        #       code_points = CodePoint.code_points_for_property(
-        #         name, property_value
-        #       )
-
-        #       break unless code_points.empty?
-        #     end
-        #   end
-
-        #   if code_points.empty?
-        #     raise UnicodeRegexParserError,
-        #       "Couldn't find property '#{property_name}' containing "\
-        #       "property value '#{property_value}'"
-        #   end
-
-        #   code_points
-        # end
-
       end
     end
   end

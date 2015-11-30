@@ -69,8 +69,6 @@ module TwitterCldr
               Array(token)
             end
           end
-        rescue => e
-          binding.pry
         end
       end
 

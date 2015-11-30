@@ -15,8 +15,6 @@ module TwitterCldr
           next_token(:equals)
           var_value = value
           [var_name, var_value]
-        rescue => e
-          binding.pry
         end
 
         def name

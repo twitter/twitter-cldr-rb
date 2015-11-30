@@ -27,13 +27,7 @@ module TwitterCldr
               start = side_match.start
               stop = side_match.stop
               replacement = rule.replacement_for(cursor)
-
-              if start == stop
-                cursor.text.insert(start + 1, replacement)
-                cursor.advance(1)
-              else
-                cursor.text[start...stop] = replacement
-              end
+              cursor.text[start...stop] = replacement
 
               cursor.advance(
                 replacement.size + rule.cursor_offset

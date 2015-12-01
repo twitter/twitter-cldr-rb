@@ -42,28 +42,28 @@ module TwitterCldr
               "Couldn't find property '#{property_name}' containing "\
               "property value '#{property_value}'"
           end
+
+          code_points
         end
 
         private
 
         def normalized_property
-          @normalized_property ||= begin
-            property_name_candidates.each do |property_name|
-              prop_name, prop_value = normalized_property_value(
-                property_name, property_value_candidates
-              )
+          property_value_candidates.each do |property_value|
+            prop_name, prop_value = normalized_property_name(
+              property_value, property_name_candidates
+            )
 
-              if prop_name
-                return [prop_name, prop_value]
-              end
+            if prop_name
+              return [prop_name, prop_value]
             end
-
-            [nil, nil]
           end
+
+          [nil, nil]
         end
 
-        def normalized_property_value(property_name, property_value_candidates)
-          property_value_candidates.each do |property_value|
+        def normalized_property_name(property_value, property_name_candidates)
+          property_name_candidates.each do |property_name|
             prop_name, prop_value = CodePoint.properties.normalize(
               property_name, property_value
             )
@@ -76,11 +76,19 @@ module TwitterCldr
           [nil, nil]
         end
 
+        def property_name_candidates
+          if property_name
+            [property_name]
+          else
+            [property_value, 'General_Category', 'Script']
+          end
+        end
+
         def property_value_candidates
           if property_name && property_value
             [property_value]
           else
-            [property_value, nil]
+            [property_value, nil].uniq
           end
         end
 

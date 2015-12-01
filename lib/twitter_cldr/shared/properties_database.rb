@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'set'
+
 module TwitterCldr
   module Shared
 
@@ -122,7 +124,7 @@ module TwitterCldr
 
             if code_points.include?(code_point)
               if property_value
-                properties[property_name] ||= []
+                properties[property_name] ||= Set.new
                 properties[property_name] << property_value
               else
                 properties[property_name] = nil

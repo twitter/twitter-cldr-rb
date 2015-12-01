@@ -3,6 +3,9 @@ require 'pry-nav'
 require 'benchmark'
 require 'ruby-prof'
 
+transformer = TwitterCldr::Transforms::Transformer.get('Arabic', 'Latin')
+puts transformer.transform("مقالة اليوم المختارة")
+
 # result = RubyProf.profile do
 # puts(Benchmark.measure do
   transformer = TwitterCldr::Transforms::Transformer.get('Han', 'Latin')

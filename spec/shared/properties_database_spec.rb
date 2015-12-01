@@ -89,8 +89,8 @@ describe PropertiesDatabase do
       it 'returns a property set for the given code point' do
         property_set = database.properties_for_code_point(65)
         expect(property_set).to be_a(PropertySet)
-        expect(property_set.general_category).to eq(['Lu'])
-        expect(property_set.word_break).to eq(['ALetter'])
+        expect(property_set.general_category).to eq(Set.new(%w(Lu)))
+        expect(property_set.word_break).to eq(Set.new(%w(ALetter)))
       end
     end
 

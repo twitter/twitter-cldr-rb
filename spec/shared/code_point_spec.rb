@@ -63,8 +63,8 @@ describe CodePoint do
       code_point = CodePoint.find(65)
       properties = code_point.properties
       expect(properties.alphabetic).to be_true
-      expect(properties.script).to eq(%w(Latin))
-      expect(properties.general_category).to eq(%w(Lu))
+      expect(properties.script).to eq(Set.new(%w(Latin)))
+      expect(properties.general_category).to eq(Set.new(%w(L Lu)))
     end
   end
 

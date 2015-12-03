@@ -7,7 +7,7 @@ module TwitterCldr
   module Transforms
     module Filters
 
-      class NoFilter < FilterRule
+      class NullFilter < FilterRule
         def matches?(cursor)
           true
         end

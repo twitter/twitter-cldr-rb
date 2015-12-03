@@ -64,10 +64,6 @@ module TwitterCldr
           true
         end
 
-        def is_conversion_rule?
-          false
-        end
-
         def can_invert?
           !!backward_form
         end

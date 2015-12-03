@@ -16,7 +16,7 @@ module TwitterCldr
             parser.parse(tokens)
           end
 
-          protected
+          private
 
           def tokenize(rule_text, symbol_table)
             cleaned_rule_text = remove_comment(rule_text)
@@ -62,10 +62,6 @@ module TwitterCldr
 
         def backward?
           direction == :backward
-        end
-
-        def is_transform_rule?
-          false
         end
 
         def is_conversion_rule?

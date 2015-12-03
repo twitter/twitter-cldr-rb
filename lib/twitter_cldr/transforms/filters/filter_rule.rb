@@ -15,12 +15,8 @@ module TwitterCldr
           end
         end
 
-        def is_transform_rule?
-          false
-        end
-
-        def is_conversion_rule?
-          false
+        def is_filter_rule?
+          true
         end
 
         def can_invert?

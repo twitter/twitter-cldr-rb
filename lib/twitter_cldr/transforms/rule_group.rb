@@ -30,7 +30,7 @@ module TwitterCldr
           )
         end
 
-        protected
+        private
 
         def direction_from(resource)
           case transform_from(resource)[:direction]
@@ -127,54 +127,57 @@ module TwitterCldr
         direction == :bidirectional
       end
 
+      alias_method :can_invert?, :bidirectional?
+
       def forward_rule_set
         @forward_rule_set ||= begin
-          ct_rules = rules.select do |rule|
-            rule.forward? && (
-              rule.is_transform_rule? || rule.is_conversion_rule?
-            )
-          end
-
-          filter_rule = if is_forward_filter?(rules.first)
-            rules.first
-          end
-
-          filter_rule ||= Filters::NoFilter.new
-
-          RuleSet.new(filter_rule, ct_rules)
+          RuleSet.new(
+            filter_rule, inverse_filter_rule, ct_rules
+          )
         end
       end
 
       def backward_rule_set
-        @backward_rule_set ||= begin
-          ct_rules = rules.each_with_object([]) do |rule, ret|
-            if rule.is_ct_rule?
-              if rule.backward?
-                ret << rule
-              elsif rule.can_invert?
-                ret << rule.invert
-              end
-            end
-          end
-
-          filter_rule = if is_backward_filter?(rules.last)
-            rules.last
-          end
-
-          filter_rule ||= Filters::NoFilter.new
-
-          RuleSet.new(filter_rule, ct_rules)
+        if can_invert?
+          @backward_rule_set ||= forward_rule_set.invert
+        else
+          raise NotInvertibleError,
+            "cannot invert this #{self.class.name}"
         end
       end
 
-      protected
+      private
+
+      def ct_rules
+        @ct_rules ||= rules.select do |rule|
+          rule.forward? && (
+            rule.is_transform_rule? || rule.is_conversion_rule?
+          )
+        end
+      end
+
+      def filter_rule
+        @filter_rule ||= if is_forward_filter?(rules.first)
+          rules.first
+        else
+          Filters::NullFilter.new
+        end
+      end
+
+      def inverse_filter_rule
+        @inverse_filter_rule ||= if is_backward_filter?(rules.last)
+          rules.last
+        else
+          Filters::NullFilter.new
+        end
+      end
 
       def is_forward_filter?(rule)
-        rule.is_a?(Filters::FilterRule) && !rule.backward?
+        rule.is_filter_rule? && !rule.backward?
       end
 
       def is_backward_filter?(rule)
-        rule.is_a?(Filters::FilterRule) && rule.backward?
+        rule.is_filter_rule? && rule.backward?
       end
     end
 

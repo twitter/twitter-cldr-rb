@@ -34,7 +34,8 @@ group :test do
 
   gem 'simplecov'
   gem 'launchy'
-
-  gem 'benchmark-ips'
 end
 
+group :development, :test do
+  gem 'benchmark-ips'
+end

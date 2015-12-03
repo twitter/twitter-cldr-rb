@@ -16,22 +16,6 @@ module TwitterCldr
       ]
 
       class << self
-        # def unescape(text)
-        #   # For a real space in the rules, place quotes around it.
-        #   # For a real backslash, either double it \\, or quote it '\'.
-        #   # For a real single quote, double it '', or place a backslash before it \'.
-        #   # (Remove superfluous spaces. spaces have no meaning unless they're escaped).
-        #   text.
-        #     #gsub(/([^']) ([^'])/) { "#{$1}#{$2}" }.  # remove superfluous spaces
-        #     #gsub(/([^']) ([^'])/) { "#{$1}#{$2}" }.  # second time to get missed spaces
-        #     gsub("' '", ' ').
-        #     gsub(/\\(.)/, '\1').
-        #     gsub("'\\'", '\\').
-        #     gsub('\\\\', '\\').
-        #     gsub("''", "'").
-        #     gsub("\\'", "'")
-        # end
-
         def preprocess_tokens(tokens)
           tokens.map do |token|
             case token.type
@@ -50,10 +34,10 @@ module TwitterCldr
           case token.type
             when :quoted_string
               token.value[1..-2]
-            when :escaped_char
-              token.value.sub(/\A\\/, '')
-            when :escaped_backslash
-              '\\'
+            # when :escaped_char
+            #   token.value.sub(/\A\\/, '')
+            # when :escaped_backslash
+            #   '\\'
             when :doubled_quote
               "'"
             else
@@ -77,9 +61,16 @@ module TwitterCldr
           "#{__method__} must be defined in derived classes"
       end
 
-      def is_ct_rule?
-        raise NotImplementedError,
-          "#{__method__} must be defined in derived classes"
+      def is_filter_rule?
+        false
+      end
+
+      def is_transform_rule?
+        false
+      end
+
+      def is_conversion_rule?
+        false
       end
 
       def forward?

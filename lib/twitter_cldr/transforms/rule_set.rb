@@ -10,10 +10,11 @@ module TwitterCldr
   module Transforms
 
     class RuleSet
-      attr_reader :filter_rule, :rules
+      attr_reader :filter_rule, :inverse_filter_rule, :rules
 
-      def initialize(filter_rule, ct_rules)
+      def initialize(filter_rule, inverse_filter_rule, ct_rules)
         @filter_rule = filter_rule
+        @inverse_filter_rule = inverse_filter_rule
         @rules = partition(ct_rules)
       end
 
@@ -21,6 +22,13 @@ module TwitterCldr
         cursor = Cursor.new(text.dup)
         rules.each { |rule| rule.apply_to(cursor) }
         cursor.text
+      end
+
+      def invert
+        self.class.new(
+          inverse_filter_rule, filter_rule,
+          rules.reverse.map(&:invert)
+        )
       end
 
       private
@@ -34,6 +42,12 @@ module TwitterCldr
 
             unless conv_rules.empty?
               result << make_conversion_rule_set(conv_rules)
+            end
+
+            # handles the ConversionRuleSet case, which is neither
+            # a transform rule nor a conversion rule
+            if trans_rules.empty? && conv_rules.empty?
+              result << ct_rules.delete_at(0)
             end
           end
         end
@@ -61,7 +75,7 @@ module TwitterCldr
 
       def make_conversion_rule_set(rules)
         TwitterCldr::Transforms::ConversionRuleSet.new(
-          filter_rule, rules
+          filter_rule, inverse_filter_rule, rules
         )
       end
     end

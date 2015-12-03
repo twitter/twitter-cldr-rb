@@ -8,7 +8,7 @@ module TwitterCldr
 
     module Filters
       autoload :FilterRule,  'twitter_cldr/transforms/filters/filter_rule'
-      autoload :NoFilter,    'twitter_cldr/transforms/filters/no_filter'
+      autoload :NullFilter,  'twitter_cldr/transforms/filters/null_filter'
       autoload :RegexFilter, 'twitter_cldr/transforms/filters/regex_filter'
     end
 

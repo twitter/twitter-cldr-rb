@@ -10,12 +10,42 @@ module TwitterCldr
   module Transforms
 
     class ConversionRuleSet
-      attr_reader :filter_rule, :rules, :rule_index
+      attr_reader :filter_rule, :inverse_filter_rule
+      attr_reader :rules, :rule_index
 
-      def initialize(filter_rule, rules)
+      def initialize(filter_rule, inverse_filter_rule, rules)
         @rules = rules
         @filter_rule = filter_rule
+        @inverse_filter_rule = inverse_filter_rule
         @rule_index = build_rule_index(rules)
+      end
+
+      def foward?
+        true
+      end
+
+      def backward?
+        false
+      end
+
+      # whether or not this rule set can be inverted
+      # is decided by the rule group
+      def can_invert?
+        true
+      end
+
+      def is_transform_rule?
+        false
+      end
+
+      def is_conversion_rule?
+        false
+      end
+
+      def invert
+        ConversionRuleSet.new(
+          inverse_filter_rule, filter_rule, inverted_rules
+        )
       end
 
       def apply_to(cursor)
@@ -42,6 +72,18 @@ module TwitterCldr
       end
 
       private
+
+      def inverted_rules
+        @inverted_rules ||= begin
+          rules.each_with_object([]) do |rule, ret|
+            if rule.backward?
+              ret << rule
+            elsif rule.can_invert?
+              ret << rule.invert
+            end
+          end
+        end
+      end
 
       def find_matching_rule_at(cursor)
         if rules = rule_index.get(cursor.index_values)

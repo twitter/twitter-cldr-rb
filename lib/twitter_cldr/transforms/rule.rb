@@ -11,40 +11,11 @@ module TwitterCldr
     # Base class for all transform rules
     class Rule
       STRING_TYPES = [
-        :quoted_string, :escaped_char,
-        :escaped_backslash, :doubled_quote
+        :escaped_char, :unicode_char, :escaped_backslash,
+        :quoted_string, :doubled_quote
       ]
 
       class << self
-        def preprocess_tokens(tokens)
-          tokens.map do |token|
-            case token.type
-              when *STRING_TYPES
-                TwitterCldr::Tokenizers::Token.new.tap do |t|
-                  t.type = :string
-                  t.value = token_value(token)
-                end
-              else
-                token
-            end
-          end
-        end
-
-        def token_value(token)
-          case token.type
-            when :quoted_string
-              token.value[1..-2]
-            # when :escaped_char
-            #   token.value.sub(/\A\\/, '')
-            # when :escaped_backslash
-            #   '\\'
-            when :doubled_quote
-              "'"
-            else
-              token.value
-          end
-        end
-
         def replace_symbols(tokens, symbol_table)
           tokens.inject([]) do |ret, token|
             ret + if token.type == :variable
@@ -54,6 +25,51 @@ module TwitterCldr
             end
           end
         end
+
+        def token_value(token)
+          case token.type
+            when :escaped_char
+              token.value.sub(/\A\\/, '')
+            when :unicode_char
+              hex = token.value.sub(/\A\\u/, '')
+              [hex.to_i(16)].pack('U*')
+            when :escaped_backslash
+              '\\'
+            when :quoted_string
+              token.value[1..-2]
+            when :doubled_quote
+              "'"
+            else
+              token.value
+          end
+        end
+
+        def token_string(tokens)
+          tokens.inject('') do |ret, token|
+            ret + token_value(token)
+          end
+        end
+
+        def regexp_token_string(tokens)
+          tokens.inject('') do |ret, token|
+            val = token_value(token)
+
+            ret + case token.type
+              when *STRING_TYPES
+                Regexp.escape(val)
+              else
+                val
+            end
+          end
+        end
+      end
+
+      def token_value(token)
+        self.class.token_value(token)
+      end
+
+      def token_string(tokens)
+        self.class.token_string(tokens)
       end
 
       def can_invert?

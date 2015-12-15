@@ -10,7 +10,7 @@ module TwitterCldr
       # Decides which filter to apply
       class FilterRule < Rule
         class << self
-          def parse(rule_text, symbol_table)
+          def parse(rule_text, symbol_table, index)
             Filters::RegexFilter.parse(rule_text, symbol_table)
           end
         end

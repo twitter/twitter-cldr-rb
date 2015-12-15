@@ -65,14 +65,16 @@ module TwitterCldr
         end
 
         def parse_each_rule(rule_list, symbol_table)
-          rule_list.each do |rule_text|
-            yield parse_rule(rule_text, symbol_table)
+          rule_list.each_with_index do |rule_text, idx|
+            yield parse_rule(rule_text, symbol_table, idx)
           end
         end
 
-        def parse_rule(rule_text, symbol_table)
+        def parse_rule(rule_text, symbol_table, index)
           rule_type = identify_rule_type(rule_text)
-          class_for_rule_type(rule_type).parse(rule_text, symbol_table)
+          class_for_rule_type(rule_type).parse(
+            rule_text, symbol_table, index
+          )
         end
 
         def class_for_rule_type(rule_type)
@@ -150,9 +152,7 @@ module TwitterCldr
 
       def ct_rules
         @ct_rules ||= rules.select do |rule|
-          rule.forward? && (
-            rule.is_transform_rule? || rule.is_conversion_rule?
-          )
+          rule.is_transform_rule? || rule.is_conversion_rule?
         end
       end
 

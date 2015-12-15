@@ -6,13 +6,6 @@
 module TwitterCldr
   module Transforms
 
-    # @TODO: remove this when likely subtags code is committed
-    Locale = Struct.new(:language, :script, :region, :variant) do
-      def maximize
-        self
-      end
-    end
-
     class Transformer
       CHAIN = [
         :normal_fallback1, :normal_fallback2, :laddered_fallback1,
@@ -35,8 +28,13 @@ module TwitterCldr
         end
 
         def get(source_locale_str, target_locale_str, variant_str = nil)
-          resource_name = join_locale_strs(source_locale_str, target_locale_str, variant_str)
-          reversed_resource_name = join_locale_strs(target_locale_str, source_locale_str, variant_str)
+          resource_name = join_locale_strs(
+            source_locale_str, target_locale_str, variant_str
+          )
+
+          reversed_resource_name = join_locale_strs(
+            target_locale_str, source_locale_str, variant_str
+          )
 
           if RuleGroup.exists?(resource_name)
             RuleGroup.load(resource_name).forward_rule_set
@@ -49,7 +47,7 @@ module TwitterCldr
           end
         end
 
-        protected
+        private
 
         def find_in_chains(source_chain, target_chain, variants)
           variants.each do |variant|

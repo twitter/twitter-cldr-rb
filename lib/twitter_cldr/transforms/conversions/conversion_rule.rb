@@ -11,9 +11,14 @@ module TwitterCldr
         class << self
           include TwitterCldr::Tokenizers
 
-          def parse(rule_text, symbol_table)
+          def parse(rule_text, symbol_table, index)
+            options = {
+              original_rule_text: rule_text,
+              index: index
+            }
+
             tokens = tokenize(rule_text, symbol_table)
-            parser.parse(tokens)
+            parser.parse(tokens, options)
           end
 
           private
@@ -21,7 +26,7 @@ module TwitterCldr
           def tokenize(rule_text, symbol_table)
             cleaned_rule_text = remove_comment(rule_text)
             tokens = tokenizer.tokenize(cleaned_rule_text)
-            tokens = preprocess_tokens(tokens)
+            # tokens = preprocess_tokens(tokens)
             replace_symbols(tokens, symbol_table)
           end
 
@@ -45,15 +50,18 @@ module TwitterCldr
         end
 
         attr_reader :direction, :left, :right
+        attr_reader :original_rule_text, :index
 
-        def initialize(direction, left, right)
+        def initialize(direction, left, right, original_rule_text, index)
           @direction = direction
           @left = left
           @right = right
+          @original_rule_text = original_rule_text
+          @index = index
         end
 
         def can_invert?
-          direction == :bidirectional
+          direction == :bidirectional || direction == :backward
         end
 
         def forward?
@@ -70,7 +78,16 @@ module TwitterCldr
 
         def invert
           if can_invert?
-            self.class.new(@direction, right, left)
+            case direction
+              when :backward
+                self.class.new(
+                  :forward, left, right, original_rule_text, index
+                )
+              else
+                self.class.new(
+                  direction, right, left, original_rule_text, index
+                )
+            end
           else
             raise NotInvertibleError,
               "cannot invert this #{self.class.name}"
@@ -99,14 +116,14 @@ module TwitterCldr
           end
         end
 
-        def replacement_for(cursor)
+        def replacement_for(side_match)
           right.key.inject('') do |ret, token|
             ret + case token.type
               when :capture
                 idx = token.value[1..-1].to_i - 1
-                cursor.captures[idx]
+                side_match.captures[idx]
               else
-                token.value
+                token_value(token)
             end
           end
         end

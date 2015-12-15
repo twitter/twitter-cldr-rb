@@ -11,6 +11,7 @@ module TwitterCldr
     autoload :Filters,           'twitter_cldr/transforms/filters'
     autoload :Locale,            'twitter_cldr/transforms/transformer'  # @TODO: remove me
     autoload :Rule,              'twitter_cldr/transforms/rule'
+    autoload :RuleMatch,         'twitter_cldr/transforms/rule_match'
     autoload :RuleSet,           'twitter_cldr/transforms/rule_set'
     autoload :RuleGroup,         'twitter_cldr/transforms/rule_group'
     autoload :Tokenizer,         'twitter_cldr/transforms/tokenizer'

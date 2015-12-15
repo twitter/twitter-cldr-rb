@@ -51,16 +51,16 @@ module TwitterCldr
       def apply_to(cursor)
         until cursor.eos?
           if filter_rule.matches?(cursor)
-            rule, side_match = find_matching_rule_at(cursor)
+            rule_match = find_matching_rule_at(cursor)
 
-            if rule
-              start = side_match.start
-              stop = side_match.stop
-              replacement = rule.replacement_for(cursor)
+            if rule_match
+              start = rule_match.start
+              stop = rule_match.stop
+              replacement = rule_match.replacement
               cursor.text[start...stop] = replacement
 
               cursor.advance(
-                replacement.size + rule.cursor_offset
+                replacement.size + rule_match.cursor_offset
               )
             else
               cursor.advance
@@ -76,9 +76,7 @@ module TwitterCldr
       def inverted_rules
         @inverted_rules ||= begin
           rules.each_with_object([]) do |rule, ret|
-            if rule.backward?
-              ret << rule
-            elsif rule.can_invert?
+            if rule.can_invert?
               ret << rule.invert
             end
           end
@@ -86,18 +84,41 @@ module TwitterCldr
       end
 
       def find_matching_rule_at(cursor)
+        indexed_match = find_matching_indexed_rule_at(cursor)
+        blank_key_match = find_matching_blank_key_rule_at(cursor)
+
+        if indexed_match
+          if blank_key_match
+            if blank_key_match < indexed_match
+              blank_key_match
+            else
+              indexed_match
+            end
+          else
+            indexed_match
+          end
+        else
+          blank_key_match
+        end
+      end
+
+      def find_matching_indexed_rule_at(cursor)
         if rules = rule_index.get(cursor.index_values)
           rules.each do |rule|
             if side_match = rule.match(cursor)
-              return [rule, side_match]
+              return RuleMatch.new(rule, side_match)
             end
           end
         end
 
+        nil
+      end
+
+      def find_matching_blank_key_rule_at(cursor)
         if rules = rule_index.get([0])
           rules.each do |rule|
             if side_match = rule.match(cursor)
-              return [rule, side_match]
+              return RuleMatch.new(rule, side_match)
             end
           end
         end
@@ -107,7 +128,9 @@ module TwitterCldr
 
       def build_rule_index(rules)
         TwitterCldr::Collation::Trie.new.tap do |trie|
-          rules.each do |rule|
+          rules.each_with_index do |rule, idx|
+            next unless rule.forward?
+
             if rule.has_codepoints?
               codepoints = rule.codepoints
 

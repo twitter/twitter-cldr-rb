@@ -23,13 +23,15 @@ module TwitterCldr
         end
 
         def apply_to(cursor)
-          cursor.set_text(
-            TwitterCldr::Normalization.normalize(
-              cursor.text, using: forward_form
+          if forward_form
+            cursor.set_text(
+              TwitterCldr::Normalization.normalize(
+                cursor.text, using: forward_form
+              )
             )
-          )
 
-          cursor.reset_position
+            cursor.reset_position
+          end
         end
       end
 

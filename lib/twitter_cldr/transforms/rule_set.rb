@@ -44,8 +44,11 @@ module TwitterCldr
               result << make_conversion_rule_set(conv_rules)
             end
 
-            # handles the ConversionRuleSet case, which is neither
-            # a transform rule nor a conversion rule
+            # Handles the ConversionRuleSet case, which is neither
+            # a transform rule nor a conversion rule.
+            # ConversionRuleSets can occasionally exist in the list
+            # of rules if, say, the rule set is being inverted and
+            # therefore already contains a list of partitioned rules.
             if trans_rules.empty? && conv_rules.empty?
               result << ct_rules.delete_at(0)
             end

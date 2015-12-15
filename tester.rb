@@ -3,21 +3,48 @@ require 'pry-nav'
 require 'benchmark/ips'
 require 'ruby-prof'
 
+# rules = [
+#   "$sep = \\-;",
+#   "$Gi = ᄀ;",
+#   "$Nf = ᆫ;",
+#   "$latinMedialEnd = [aeiou];",
+#   "$latinMedial = [aeiouwy];",
+#   "$IEUNG = ᄋ;",
+#   "$NG = ᆼ;",
+#   "$jamoMedial = [ᅡ-ᅵ];",
+#   "$sep < $latinMedialEnd n g {} $IEUNG $jamoMedial;"
+# ]
+
+# group = TwitterCldr::Transforms::RuleGroup.build(
+#   rules, :bidirectional
+# )
+
+# cursor = TwitterCldr::Transforms::Cursor.new(TwitterCldr::Normalization.normalize("gimchang옥", using: :nfkd))
+# cursor.advance(8)
+
+# binding.pry
+# group.rules.first.match(cursor)
+
+transformer = TwitterCldr::Transforms::Transformer.get('Bengali', 'Latin')
+puts transformer.transform("নির্বাচিত নিবন্ধ")
+
+
 transformer = TwitterCldr::Transforms::Transformer.get('Hangul', 'Latin')
 puts transformer.transform("김창옥")
-exit 0
 
-# transformer = TwitterCldr::Transforms::Transformer.get('Armenian', 'Latin')
-# puts transformer.transform("հեռախոսներ")
+# two armenian transformers exist, the inverse of Latin-Armenian
+# appears to be what ICU uses
+transformer = TwitterCldr::Transforms::Transformer.get('Latin', 'Armenian').invert
+puts transformer.transform("հեռախոսներ")  # expecting heṙaxosner
 
-# transformer = TwitterCldr::Transforms::Transformer.get('Arabic', 'Latin')
-# puts transformer.transform("مقالة اليوم المختارة")
+transformer = TwitterCldr::Transforms::Transformer.get('Arabic', 'Latin')
+puts transformer.transform("مقالة اليوم المختارة")
 
 # result = RubyProf.profile do
 # puts(Benchmark.measure do
-  # transformer = TwitterCldr::Transforms::Transformer.get('Han', 'Latin')
+  transformer = TwitterCldr::Transforms::Transformer.get('Han', 'Latin')
   # binding.pry
-  # puts transformer.transform("因此只有两场风暴因造成")
+  puts transformer.transform("因此只有两场风暴因造成")
   # binding.pry
 # end)
 # end
@@ -37,28 +64,28 @@ exit 0
 # printer = RubyProf::FlatPrinter.new(result)
 # printer.print(STDOUT, {})
 
-# transformer = TwitterCldr::Transforms::Transformer.get('Hiragana', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Hiragana', 'Latin')
 # Benchmark.ips do |x|
 #   x.report do
-    # puts transformer.transform("くろねこさま")
+    puts transformer.transform("くろねこさま")
   # end
 
   # x.compare!
 # end
 
-# transformer = TwitterCldr::Transforms::Transformer.get('Greek', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Greek', 'Latin')
 # binding.pry
 # Benchmark.ips do |x|
   # x.report do
-    # puts transformer.transform("Αλφαβητικός Κατάλογος")
+    puts transformer.transform("Αλφαβητικός Κατάλογος")
   # end
 
 #   x.compare!
 # end
-# puts transformer.transform("διαφορετικούς")
+puts transformer.transform("διαφορετικούς")
 
-# transformer = TwitterCldr::Transforms::Transformer.get('Cyrillic', 'Latin')
-# puts transformer.transform('Влади́мир Влади́мирович Пу́тин')
+transformer = TwitterCldr::Transforms::Transformer.get('Cyrillic', 'Latin')
+puts transformer.transform('Влади́мир Влади́мирович Пу́тин')
 
 # c = TwitterCldr::Transforms::Cursor.new("因此只有两场风暴因造成")
 # c.advance(10)

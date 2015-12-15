@@ -34,9 +34,9 @@ module TwitterCldr
       end
 
       class << self
-        def parse(rule_text, symbol_table)
+        def parse(rule_text, symbol_table, index)
           tokens = tokenizer.tokenize(rule_text)
-          tokens = preprocess_tokens(tokens)
+          # tokens = preprocess_tokens(tokens)
 
           var_name, value_tokens = parser.parse(tokens)
 

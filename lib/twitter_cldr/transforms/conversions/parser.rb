@@ -15,7 +15,25 @@ module TwitterCldr
           direction = get_direction_from(current_token)
           next_token(:direction)
           second_side = side
-          ConversionRule.new(direction, first_side, second_side)
+
+          first_side, second_side = rearrange_sides(
+            direction, first_side, second_side
+          )
+
+          ConversionRule.new(
+            direction, first_side, second_side,
+            options[:original_rule_text],
+            options[:index]
+          )
+        end
+
+        def rearrange_sides(direction, first_side, second_side)
+          case direction
+            when :backward
+              [second_side, first_side]
+            else
+              [first_side, second_side]
+          end
         end
 
         # a { b | c } d <> e { f | g } h ;

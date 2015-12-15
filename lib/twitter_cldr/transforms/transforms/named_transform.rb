@@ -18,10 +18,12 @@ module TwitterCldr
         end
 
         def apply_to(cursor)
-          source, target, variant = forward_form.split('-')
-          rule_set = Transformer.get(source, target, variant)
-          cursor.set_text(rule_set.transform(cursor.text))
-          cursor.reset_position
+          if forward_form
+            source, target, variant = forward_form.split('-')
+            rule_set = Transformer.get(source, target, variant)
+            cursor.set_text(rule_set.transform(cursor.text))
+            cursor.reset_position
+          end
         end
       end
     end

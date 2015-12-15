@@ -17,7 +17,7 @@ module TwitterCldr
         REGEX = /\A::[ ]*([\w\- ]+)?[ ]*(\([\w\- ]*\))?[ ]*;/
 
         class << self
-          def parse(rule_text, symbol_table)
+          def parse(rule_text, symbol_table, index)
             match = rule_text.match(REGEX)
             forward_form = get_forward_form(match.captures[0])
             backward_form = get_backward_form(match.captures[1])

@@ -69,7 +69,8 @@ module TwitterCldr
 
         def has_codepoints?
           if first_elem = key_u_regexp.elements.first
-            first_elem.respond_to?(:codepoints)
+            first_elem.respond_to?(:codepoints) &&
+              !first_elem.codepoints.empty?
           else
             false
           end
@@ -94,7 +95,9 @@ module TwitterCldr
 
         def key_u_regexp
           @key_u_regexp ||=
-            TwitterCldr::Shared::UnicodeRegex.compile(key.map(&:value).join)
+            TwitterCldr::Shared::UnicodeRegex.compile(
+              Rule.regexp_token_string(key)
+            )
         end
 
         def key_regexp

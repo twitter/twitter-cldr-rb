@@ -10,12 +10,14 @@ module TwitterCldr
   module Transforms
 
     class RuleSet
-      attr_reader :filter_rule, :inverse_filter_rule, :rules
+      attr_reader :filter_rule, :inverse_filter_rule
+      attr_reader :rules, :transform_id
 
-      def initialize(filter_rule, inverse_filter_rule, ct_rules)
+      def initialize(filter_rule, inverse_filter_rule, ct_rules, transform_id)
         @filter_rule = filter_rule
         @inverse_filter_rule = inverse_filter_rule
         @rules = partition(ct_rules)
+        @transform_id = transform_id
       end
 
       def transform(text)
@@ -27,7 +29,7 @@ module TwitterCldr
       def invert
         self.class.new(
           inverse_filter_rule, filter_rule,
-          rules.reverse.map(&:invert)
+          rules.reverse.map(&:invert), transform_id
         )
       end
 

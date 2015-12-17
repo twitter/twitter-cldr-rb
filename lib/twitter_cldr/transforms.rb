@@ -13,10 +13,10 @@ module TwitterCldr
     autoload :Rule,              'twitter_cldr/transforms/rule'
     autoload :RuleMatch,         'twitter_cldr/transforms/rule_match'
     autoload :RuleSet,           'twitter_cldr/transforms/rule_set'
-    autoload :RuleGroup,         'twitter_cldr/transforms/rule_group'
     autoload :Tokenizer,         'twitter_cldr/transforms/tokenizer'
     autoload :Transformer,       'twitter_cldr/transforms/transformer'
     autoload :Transforms,        'twitter_cldr/transforms/transforms'
+    autoload :TransformId,       'twitter_cldr/transforms/transform_id'
     autoload :VariableRule,      'twitter_cldr/transforms/variable_rule'
   end
 end

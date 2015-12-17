@@ -13,9 +13,11 @@ module TwitterCldr
       end
 
       def resource_exists?(*path)
-        File.exist?(
-          File.join(TwitterCldr::RESOURCES_DIR, resource_file_path(path))
-        )
+        File.exist?(absolute_resource_path(resource_file_path(path)))
+      end
+
+      def absolute_resource_path(path)
+        File.join(TwitterCldr::RESOURCES_DIR, path)
       end
 
       def get_locale_resource(locale, resource_name)
@@ -99,7 +101,7 @@ module TwitterCldr
       end
 
       def read_resource_file(path)
-        file_path = File.join(TwitterCldr::RESOURCES_DIR, path)
+        file_path = absolute_resource_path(path)
 
         if File.file?(file_path)
           File.read(file_path)

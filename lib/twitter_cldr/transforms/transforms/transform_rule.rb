@@ -9,11 +9,6 @@ module TwitterCldr
 
       # Base class for transforms
       class TransformRule < Rule
-        TRANSFORMS = [
-          NormalizationTransform,
-          NamedTransform
-        ]
-
         REGEX = /\A::[ ]*([\w\- ]+)?[ ]*(\([\w\- ]*\))?[ ]*;/
 
         class << self
@@ -27,8 +22,14 @@ module TwitterCldr
 
           private
 
+          # make this a method rather than a constant to avoid issues
+          # with Marshal.load
+          def transforms
+            @transforms ||= [NormalizationTransform, NamedTransform]
+          end
+
           def find_transform(forward_form, backward_form)
-            TRANSFORMS.find do |transform|
+            transforms.find do |transform|
               transform.accepts?(forward_form, backward_form)
             end
           end

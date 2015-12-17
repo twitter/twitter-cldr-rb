@@ -25,24 +25,46 @@ require 'ruby-prof'
 # binding.pry
 # group.rules.first.match(cursor)
 
-transformer = TwitterCldr::Transforms::Transformer.get('Bengali', 'Latin')
+
+transformer = TwitterCldr::Transforms::Transformer.get('Serbian-Latin/BGN')
+puts transformer.transform("На данашњи дан")
+
+
+transformer = TwitterCldr::Transforms::Transformer.get('Oriya-Latin')
+# expecting u'ikipiṛi'ā bẏabahāra karibē kipari
+puts transformer.transform("ଉଇକିପିଡ଼ିଆ ବ୍ୟବହାର କରିବେ କିପରି")
+
+
+transformer = TwitterCldr::Transforms::Transformer.get('Kannada-Latin')
+puts transformer.transform("ಈ ತಿಂಗಳ ಪ್ರಮುಖ ದಿನಗಳು")
+
+
+transformer = TwitterCldr::Transforms::Transformer.get('Gurmukhi-Latin')
+puts transformer.transform("ਅੱਜ ਇਤਿਹਾਸ ਵਿੱਚ")
+
+
+transformer = TwitterCldr::Transforms::Transformer.get('Gujarati-Latin')
+puts transformer.transform("આ માસનો ઉમદા લેખ")
+
+
+transformer = TwitterCldr::Transforms::Transformer.get('Bengali-Latin')
 puts transformer.transform("নির্বাচিত নিবন্ধ")
 
 
-transformer = TwitterCldr::Transforms::Transformer.get('Hangul', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Hangul-Latin')
 puts transformer.transform("김창옥")
 
 # two armenian transformers exist, the inverse of Latin-Armenian
 # appears to be what ICU uses
-transformer = TwitterCldr::Transforms::Transformer.get('Latin', 'Armenian').invert
+transformer = TwitterCldr::Transforms::Transformer.get('Latin-Armenian').invert
 puts transformer.transform("հեռախոսներ")  # expecting heṙaxosner
 
-transformer = TwitterCldr::Transforms::Transformer.get('Arabic', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Arabic-Latin')
 puts transformer.transform("مقالة اليوم المختارة")
 
 # result = RubyProf.profile do
 # puts(Benchmark.measure do
-  transformer = TwitterCldr::Transforms::Transformer.get('Han', 'Latin')
+  transformer = TwitterCldr::Transforms::Transformer.get('Han-Latin')
   # binding.pry
   puts transformer.transform("因此只有两场风暴因造成")
   # binding.pry
@@ -64,7 +86,7 @@ puts transformer.transform("مقالة اليوم المختارة")
 # printer = RubyProf::FlatPrinter.new(result)
 # printer.print(STDOUT, {})
 
-transformer = TwitterCldr::Transforms::Transformer.get('Hiragana', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Hiragana-Latin')
 # Benchmark.ips do |x|
 #   x.report do
     puts transformer.transform("くろねこさま")
@@ -73,7 +95,7 @@ transformer = TwitterCldr::Transforms::Transformer.get('Hiragana', 'Latin')
   # x.compare!
 # end
 
-transformer = TwitterCldr::Transforms::Transformer.get('Greek', 'Latin')
+transformer = TwitterCldr::Transforms::Transformer.get('Greek-Latin')
 # binding.pry
 # Benchmark.ips do |x|
   # x.report do
@@ -84,7 +106,8 @@ transformer = TwitterCldr::Transforms::Transformer.get('Greek', 'Latin')
 # end
 puts transformer.transform("διαφορετικούς")
 
-transformer = TwitterCldr::Transforms::Transformer.get('Cyrillic', 'Latin')
+
+transformer = TwitterCldr::Transforms::Transformer.get('Cyrillic-Latin')
 puts transformer.transform('Влади́мир Влади́мирович Пу́тин')
 
 # c = TwitterCldr::Transforms::Cursor.new("因此只有两场风暴因造成")

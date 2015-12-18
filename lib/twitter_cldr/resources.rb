@@ -21,6 +21,7 @@ module TwitterCldr
     autoload :ReadmeRenderer,                 'twitter_cldr/resources/readme_renderer'
     autoload :RegexpAstGenerator,             'twitter_cldr/resources/regexp_ast_generator'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
+    autoload :TransformTestImporter,          'twitter_cldr/resources/transform_test_importer'
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeImporter,                'twitter_cldr/resources/unicode_importer'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'

@@ -19,10 +19,19 @@ module TwitterCldr
 
         def apply_to(cursor)
           if forward_form
-            rule_set = Transformer.get(forward_form)
-            cursor.set_text(rule_set.transform(cursor.text))
+            unless is_null_form?(forward_form)
+              rule_set = Transformer.get(forward_form)
+              cursor.set_text(rule_set.transform(cursor.text))
+            end
+
             cursor.reset_position
           end
+        end
+
+        private
+
+        def is_null_form?(form)
+          form.downcase == 'null'
         end
       end
     end

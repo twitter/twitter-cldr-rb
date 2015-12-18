@@ -241,13 +241,28 @@ module TwitterCldr
       end
 
       def get_operator_node(operator, operand_stack)
-        if unary_operator?(operator)
-          unary_operator_node(operator.type, operand_stack.pop)
+        if operator.type == :dash && operand_stack.size < 2
+          get_non_range_dash_node(operator, operand_stack)
         else
-          binary_operator_node(
-            operator.type, operand_stack.pop, operand_stack.pop
-          )
+          if unary_operator?(operator)
+            unary_operator_node(operator.type, operand_stack.pop)
+          else
+            binary_operator_node(
+              operator.type, operand_stack.pop, operand_stack.pop
+            )
+          end
         end
+      end
+
+      # Most regular expression engines allow character classes
+      # to contain a literal hyphen caracter as the first character.
+      # For example, [-abc] is a legal expression. It denotes a
+      # character class that contains the letters '-', 'a', 'b',
+      # and 'c'. For example, /[-abc]*/.match('-ba') returns 0 in Ruby.
+      def get_non_range_dash_node(operator, operand_stack)
+        binary_operator_node(
+          :union, operand_stack.pop, string(make_token(:string, '-'))
+        )
       end
 
       def add_implicit_union(operator_stack, open_count)

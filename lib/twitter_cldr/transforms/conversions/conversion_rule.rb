@@ -24,19 +24,9 @@ module TwitterCldr
           private
 
           def tokenize(rule_text, symbol_table)
-            cleaned_rule_text = remove_comment(rule_text)
+            cleaned_rule_text = Rule.remove_comment(rule_text)
             tokens = tokenizer.tokenize(cleaned_rule_text)
-            # tokens = preprocess_tokens(tokens)
             replace_symbols(tokens, symbol_table)
-          end
-
-          def remove_comment(rule_text)
-            # comment must come after semicolon
-            if rule_idx = rule_text.index(/;[ ]*#/)
-              rule_text[0..rule_idx]
-            else
-              rule_text
-            end
           end
 
           # Warning: not thread-safe

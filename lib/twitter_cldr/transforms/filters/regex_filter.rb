@@ -10,6 +10,7 @@ module TwitterCldr
       class RegexFilter < FilterRule
         class << self
           def parse(rule_text, symbol_table)
+            rule_text = Rule.remove_comment(rule_text)
             rule_text = rule_text[2..-2].strip
             direction = direction_for(rule_text)
 
@@ -20,7 +21,7 @@ module TwitterCldr
             new(/#{str}/, direction)
           end
 
-          protected
+          private
 
           def direction_for(rule_text)
             if rule_text.start_with?('(')

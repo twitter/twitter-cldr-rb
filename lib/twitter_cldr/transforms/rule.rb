@@ -62,6 +62,15 @@ module TwitterCldr
             end
           end
         end
+
+        def remove_comment(rule_text)
+          # comment must come after semicolon
+          if rule_idx = rule_text.index(/;[\s]*#/)
+            rule_text[0..rule_idx]
+          else
+            rule_text
+          end
+        end
       end
 
       def token_value(token)

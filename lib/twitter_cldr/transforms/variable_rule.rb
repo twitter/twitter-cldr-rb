@@ -35,9 +35,8 @@ module TwitterCldr
 
       class << self
         def parse(rule_text, symbol_table, index)
-          tokens = tokenizer.tokenize(rule_text)
-          # tokens = preprocess_tokens(tokens)
-
+          cleaned_rule_text = Rule.remove_comment(rule_text)
+          tokens = tokenizer.tokenize(cleaned_rule_text)
           var_name, value_tokens = parser.parse(tokens)
 
           VariableRule.new(
@@ -47,7 +46,7 @@ module TwitterCldr
           )
         end
 
-        protected
+        private
 
         # Warning: not thread-safe
         def parser

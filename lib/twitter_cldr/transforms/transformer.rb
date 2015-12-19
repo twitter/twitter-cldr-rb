@@ -98,8 +98,8 @@ module TwitterCldr
           symbol_table = {}
           rules = []
 
-          parse_each_rule(rule_list, symbol_table) do |rule|
-            if rule.is_a?(VariableRule)
+          parse_each_rule(rule_list, symbol_table) do |rule_type, rule|
+            if rule_type == :variable
               symbol_table[rule.name] = rule
             else
               rules << rule
@@ -111,15 +111,16 @@ module TwitterCldr
 
         def parse_each_rule(rule_list, symbol_table)
           rule_list.each_with_index do |rule_text, idx|
-            yield parse_rule(rule_text, symbol_table, idx)
-          end
-        end
+            rule_type = identify_rule_type(rule_text)
 
-        def parse_rule(rule_text, symbol_table, index)
-          rule_type = identify_rule_type(rule_text)
-          class_for_rule_type(rule_type).parse(
-            rule_text, symbol_table, index
-          )
+            unless rule_type == :comment
+              rule = class_for_rule_type(rule_type).parse(
+                rule_text, symbol_table, idx
+              )
+
+              yield rule_type, rule
+            end
+          end
         end
 
         def class_for_rule_type(rule_type)
@@ -142,6 +143,8 @@ module TwitterCldr
               :filter
             when /\A::/
               :transform
+            when /\A#/
+              :comment
             when /([^\\]|\A)[<>]{1,2}/
               :conversion
             else

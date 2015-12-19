@@ -175,6 +175,12 @@ module TwitterCldr
         end
       end
 
+      def size
+        ranges.inject(0) do |sum, range|
+          sum + range.size
+        end
+      end
+
       private
 
       def includes_numeric?(num)

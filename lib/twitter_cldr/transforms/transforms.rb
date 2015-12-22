@@ -7,6 +7,7 @@ module TwitterCldr
   module Transforms
 
     module Transforms
+      autoload :CasingTransform,        'twitter_cldr/transforms/transforms/casing_transform'
       autoload :NamedTransform,         'twitter_cldr/transforms/transforms/named_transform'
       autoload :NormalizationTransform, 'twitter_cldr/transforms/transforms/normalization_transform'
       autoload :Parser,                 'twitter_cldr/transforms/transforms/parser'

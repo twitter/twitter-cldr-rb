@@ -16,7 +16,7 @@ module TwitterCldr
 
       # most of these were taken from wikipedia, lol
       TEXT_SAMPLES = {
-        latin: ["from today's featured article"],  # @TODO test capital letters,
+        latin: ["From today's featured article"],  # @TODO test capital letters,
         serbian: ["На данашњи дан"],
         oriya: ["ଉଇକିପିଡ଼ିଆ ବ୍ୟବହାର କରିବେ କିପରି"],
         kannada: ["ಈ ತಿಂಗಳ ಪ್ರಮುಖ ದಿನಗಳು"],

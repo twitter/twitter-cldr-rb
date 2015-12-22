@@ -8,7 +8,6 @@ module TwitterCldr
     module Transforms
 
       class NamedTransform < TransformRule
-        REGEX = /\A::[\s]*([\w]+-[\w]+)\(?([\w]+-[\w]+)\)?[\s]*/
         Transformer = TwitterCldr::Transforms::Transformer
 
         class << self

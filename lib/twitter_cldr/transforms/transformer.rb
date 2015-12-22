@@ -6,6 +6,8 @@
 module TwitterCldr
   module Transforms
 
+    class InvalidTransformRuleError < StandardError; end
+
     class Transformer
       CHAIN = [
         :normal_fallback1, :normal_fallback2, :laddered_fallback1,
@@ -127,6 +129,9 @@ module TwitterCldr
               )
 
               yield rule
+            else
+              raise InvalidTransformRuleError,
+                "Invalid rule: '#{rule_text}'"
             end
           end
         end

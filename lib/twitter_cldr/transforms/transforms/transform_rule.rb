@@ -50,7 +50,9 @@ module TwitterCldr
           # make this a method rather than a constant to avoid issues
           # with Marshal.load
           def transforms
-            @transforms ||= [NormalizationTransform, NamedTransform]
+            @transforms ||= [
+              NormalizationTransform, NamedTransform, CasingTransform
+            ]
           end
         end
 

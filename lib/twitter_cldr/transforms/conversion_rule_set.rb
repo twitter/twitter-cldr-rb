@@ -29,7 +29,7 @@ module TwitterCldr
       end
 
       # whether or not this rule set can be inverted
-      # is decided by the rule group
+      # is decided by the transformer
       def can_invert?
         true
       end

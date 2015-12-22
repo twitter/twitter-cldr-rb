@@ -9,48 +9,48 @@ module TwitterCldr
 
       # Base class for transforms
       class TransformRule < Rule
-        REGEX = /\A::[ ]*([\w\- ]+)?[ ]*(\([\w\- ]*\))?[ ]*;/
-
         class << self
           def parse(rule_text, symbol_table, index)
-            match = rule_text.match(REGEX)
-            forward_form = get_forward_form(match.captures[0])
-            backward_form = get_backward_form(match.captures[1])
-            transform = find_transform(forward_form, backward_form)
-            transform.new(forward_form, backward_form)
+            rule_text = Rule.remove_comment(rule_text)
+            rule_text = rule_text[2..-2].strip
+            tokens = tokenizer.tokenize(rule_text)
+            forward_form, backward_form = parser.parse(tokens)
+
+            transform_class = transforms.find do |transform|
+              transform.accepts?(forward_form, backward_form)
+            end
+
+            transform_class.new(forward_form, backward_form)
+          end
+
+          def accepts?(rule_text)
+            rule_text = Rule.remove_comment(rule_text)
+            rule_text = rule_text[2..-2].strip
+            tokens = tokenizer.tokenize(rule_text)
+            forward_form, backward_form = parser.parse(tokens)
+
+            transforms.any? do |transform|
+              transform.accepts?(forward_form, backward_form)
+            end
+          rescue
+            false
           end
 
           private
+
+          def parser
+            @parser ||= Parser.new
+          end
+
+          def tokenizer
+            @tokenizer ||=
+              TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new
+          end
 
           # make this a method rather than a constant to avoid issues
           # with Marshal.load
           def transforms
             @transforms ||= [NormalizationTransform, NamedTransform]
-          end
-
-          def find_transform(forward_form, backward_form)
-            transforms.find do |transform|
-              transform.accepts?(forward_form, backward_form)
-            end
-          end
-
-          def get_forward_form(str)
-            if str
-              str = str.strip
-              str.empty? ? nil : str
-            end
-          end
-
-          def get_backward_form(str)
-            if str
-              str = str.strip
-
-              if str.start_with?('(') && str.end_with?(')')
-                str = str[1..-2]
-              end
-
-              str.empty? ? nil : str
-            end
           end
         end
 
@@ -59,6 +59,7 @@ module TwitterCldr
         def initialize(forward_form, backward_form)
           @forward_form = forward_form
           @backward_form = backward_form
+          after_initialize
         end
 
         def is_transform_rule?
@@ -84,6 +85,11 @@ module TwitterCldr
             raise NotInvertibleError,
               "cannot invert this #{self.class.name}"
           end
+        end
+
+        private
+
+        def after_initialize
         end
       end
 

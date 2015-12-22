@@ -5,6 +5,7 @@
 
 module TwitterCldr
   module Transforms
+    autoload :CommentRule,       'twitter_cldr/transforms/comment_rule'
     autoload :Conversions,       'twitter_cldr/transforms/conversions'
     autoload :ConversionRuleSet, 'twitter_cldr/transforms/conversion_rule_set'
     autoload :Cursor,            'twitter_cldr/transforms/cursor'

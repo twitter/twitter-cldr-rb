@@ -98,6 +98,14 @@ module TwitterCldr
         false
       end
 
+      def is_variable?
+        false
+      end
+
+      def is_comment?
+        false
+      end
+
       def forward?
         raise NotImplementedError,
           "#{__method__} must be defined in derived classes"

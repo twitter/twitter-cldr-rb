@@ -20,6 +20,12 @@ module TwitterCldr
         @transform_id = transform_id
       end
 
+      def clone_with_replacement_filter(replacement_filter)
+        self.class.new(
+          replacement_filter, nil, rules, transform_id
+        )
+      end
+
       def transform(text)
         cursor = Cursor.new(text.dup)
         rules.each { |rule| rule.apply_to(cursor) }

@@ -46,9 +46,12 @@ module TwitterCldr
           )
         end
 
+        def accepts?(rule_text)
+          !!(rule_text =~ /\A[\s]*\$[\w]+[\s]*=/)
+        end
+
         private
 
-        # Warning: not thread-safe
         def parser
           @parser ||= Parser.new
         end
@@ -63,6 +66,10 @@ module TwitterCldr
       def initialize(name, value)
         @name = name
         @value_tokens = value
+      end
+
+      def is_variable?
+        true
       end
     end
 

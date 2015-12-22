@@ -21,6 +21,10 @@ module TwitterCldr
             parser.parse(tokens, options)
           end
 
+          def accepts?(rule_text)
+            !!(rule_text =~ /([^\\]|\A)[<>]{1,2}/)
+          end
+
           private
 
           def tokenize(rule_text, symbol_table)

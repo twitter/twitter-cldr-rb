@@ -12,6 +12,14 @@ module TwitterCldr
         :normal_fallback3, :laddered_fallback2
       ]
 
+      RULE_CLASSES = [
+        CommentRule,
+        VariableRule,
+        Transforms::TransformRule,
+        Filters::FilterRule,
+        Conversions::ConversionRule,
+      ]
+
       class << self
         def for_locales(source_locale, target_locale)
           source_chain = map_chain_for(source_locale)
@@ -26,6 +34,8 @@ module TwitterCldr
         def exists?(transform_id_str)
           id = TransformId.parse(transform_id_str)
           resource_exists?(id) || resource_exists?(id.reverse)
+        rescue
+          false
         end
 
         def get(transform_id_str)
@@ -98,10 +108,10 @@ module TwitterCldr
           symbol_table = {}
           rules = []
 
-          parse_each_rule(rule_list, symbol_table) do |rule_type, rule|
-            if rule_type == :variable
+          parse_each_rule(rule_list, symbol_table) do |rule|
+            if rule.is_variable?
               symbol_table[rule.name] = rule
-            else
+            elsif !rule.is_comment?
               rules << rule
             end
           end
@@ -111,44 +121,19 @@ module TwitterCldr
 
         def parse_each_rule(rule_list, symbol_table)
           rule_list.each_with_index do |rule_text, idx|
-            rule_type = identify_rule_type(rule_text)
-
-            unless rule_type == :comment
-              rule = class_for_rule_type(rule_type).parse(
+            if klass = identify_class(rule_text)
+              rule = klass.parse(
                 rule_text, symbol_table, idx
               )
 
-              yield rule_type, rule
+              yield rule
             end
           end
         end
 
-        def class_for_rule_type(rule_type)
-          rule_type = rule_type.to_s.capitalize
-
-          case rule_type
-            when 'Variable'
-              VariableRule
-            else
-              const = TwitterCldr::Transforms.const_get(rule_type + 's')
-              const.const_get(rule_type + 'Rule')
-          end
-        end
-
-        def identify_rule_type(rule_text)
-          rule_text.strip!
-
-          case rule_text
-            when /\A::[\s]*\(?[\s]*\[/
-              :filter
-            when /\A::/
-              :transform
-            when /\A#/
-              :comment
-            when /([^\\]|\A)[<>]{1,2}/
-              :conversion
-            else
-              :variable
+        def identify_class(rule_text)
+          RULE_CLASSES.find do |klass|
+            klass.accepts?(rule_text)
           end
         end
 

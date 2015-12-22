@@ -8,8 +8,6 @@ module TwitterCldr
     module Transforms
 
       class NormalizationTransform < TransformRule
-        NORMALIZATION_FORMS = %w(NFC NFD NFKC NFKD)
-
         class << self
           def accepts?(forward_form, backward_form)
             valid_form?(forward_form) && valid_form?(backward_form)
@@ -18,19 +16,38 @@ module TwitterCldr
           private
 
           def valid_form?(form)
-            !form || NORMALIZATION_FORMS.include?(form)
+            !form || (
+              form && TwitterCldr::Normalization::VALID_NORMALIZERS.include?(
+                form.transform.downcase.to_sym
+              )
+            )
           end
         end
 
+        attr_reader :forward_transform, :backward_transform
+
         def apply_to(cursor)
-          if forward_form
+          if forward_transform
             cursor.set_text(
               TwitterCldr::Normalization.normalize(
-                cursor.text, using: forward_form
+                cursor.text, using: forward_transform
               )
             )
 
             cursor.reset_position
+          end
+        end
+
+        private
+
+        def after_initialize
+          @forward_transform = symbolize_transform(forward_form)
+          @backward_transform = symbolize_transform(backward_form)
+        end
+
+        def symbolize_transform(form)
+          if form && form.has_transform?
+            form.transform.downcase.to_sym
           end
         end
       end

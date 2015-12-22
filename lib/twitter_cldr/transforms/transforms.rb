@@ -7,9 +7,11 @@ module TwitterCldr
   module Transforms
 
     module Transforms
-      autoload :TransformRule,          'twitter_cldr/transforms/transforms/transform_rule'
       autoload :NamedTransform,         'twitter_cldr/transforms/transforms/named_transform'
       autoload :NormalizationTransform, 'twitter_cldr/transforms/transforms/normalization_transform'
+      autoload :Parser,                 'twitter_cldr/transforms/transforms/parser'
+      autoload :TransformPair,          'twitter_cldr/transforms/transforms/transform_pair'
+      autoload :TransformRule,          'twitter_cldr/transforms/transforms/transform_rule'
     end
 
   end

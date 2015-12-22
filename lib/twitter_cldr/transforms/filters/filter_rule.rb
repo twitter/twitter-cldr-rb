@@ -13,6 +13,10 @@ module TwitterCldr
           def parse(rule_text, symbol_table, index)
             Filters::RegexFilter.parse(rule_text, symbol_table)
           end
+
+          def accepts?(rule_text)
+            Filters::RegexFilter.accepts?(rule_text)
+          end
         end
 
         def is_filter_rule?

@@ -21,6 +21,10 @@ module TwitterCldr
             new(/#{str}/, direction)
           end
 
+          def accepts?(rule_text)
+            !!(rule_text =~ /\A::[\s]*\(?[\s]*\[/)
+          end
+
           private
 
           def direction_for(rule_text)

@@ -25,6 +25,9 @@ require 'ruby-prof'
 # binding.pry
 # group.rules.first.match(cursor)
 
+transformer = TwitterCldr::Transforms::Transformer.get('Latin-Katakana')
+puts transformer.transform("kuronekosama")
+
 
 transformer = TwitterCldr::Transforms::Transformer.get('Serbian-Latin/BGN')
 puts transformer.transform("На данашњи дан")

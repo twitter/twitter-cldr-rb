@@ -55,7 +55,7 @@ module TwitterCldr
       private
 
       def join_urls(*urls)
-        urls.map { |u| u.sub(/[\\\/]$/, '') }.join('/')
+        urls.map { |u| u.chomp('/') }.join('/')
       end
 
     end

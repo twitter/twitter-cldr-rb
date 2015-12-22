@@ -51,11 +51,11 @@ module TwitterCldr
       def store(key, value, override = true)
         final = store_p(key)
 
-        unless final.value && !override
+        if final.value.nil? || override
           final.value = value
 
           path = File.join(path_root, *key, VALUE_FILE)
-          File.open(path, 'w+') { |f| f.write(Marshal.dump(value)) }
+          File.write(path, Marshal.dump(value))
         end
       end
 

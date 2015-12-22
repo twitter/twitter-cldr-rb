@@ -6,13 +6,9 @@
 module TwitterCldr
   module Resources
 
-    class << self
-      include TwitterCldr::Versions
-    end
-
-    CLDR_URL    = "http://unicode.org/Public/cldr/#{cldr_version}/core.zip"
-    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{icu_version}/icu4j-#{icu_version.gsub('.', '_')}.jar"
-    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{unicode_version}"
+    CLDR_URL    = "http://unicode.org/Public/cldr/#{Versions.cldr_version}/core.zip"
+    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{Versions.icu_version}/icu4j-#{Versions.icu_version.gsub('.', '_')}.jar"
+    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{Versions.unicode_version}"
 
     class << self
 
@@ -59,7 +55,7 @@ module TwitterCldr
       private
 
       def join_urls(*urls)
-        urls.map { |u| u.sub(/[\\\/]$/, '') }.join('/')
+        urls.map { |u| u.chomp('/') }.join('/')
       end
 
     end

@@ -98,11 +98,7 @@ module TwitterCldr
           unless PropertySet.method_defined?(method_name)
             define_method(method_name) do
               if properties_hash.include?(property_name)
-                if properties_hash[property_name]
-                  properties_hash[property_name]
-                else
-                  true
-                end
+                properties_hash[property_name] || true
               else
                 false
               end

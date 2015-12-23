@@ -199,12 +199,13 @@ module TwitterCldr
 
       def includes_range?(range)
         bsearch do |cur_range|
+          fo = front_overlap?(cur_range, range)
+          ro = rear_overlap?(cur_range, range)
+
+          return false if fo || ro
+
           if full_overlap?(cur_range, range)
             0
-          elsif front_overlap?(cur_range, range)
-            return false
-          elsif rear_overlap?(cur_range, range)
-            return false
           elsif range.first < cur_range.first
             -1
           else
@@ -216,10 +217,10 @@ module TwitterCldr
       def bsearch
         low = 0
         mid = 0
-        high = ranges.length - 1
+        high = ranges.size - 1
 
         while low <= high
-          mid = (low + high) >> 1
+          mid = (low + high) / 2
 
           case yield(ranges[mid])
             when 0

@@ -12,12 +12,11 @@ module TwitterCldr
 
         include TwitterCldr::Shared
 
-        attr_reader :property, :property_value
+        attr_reader :property_name, :property_value
 
         def initialize(text)
           if (name_parts = text.split("=")).size == 2
-            @property = name_parts[0].downcase
-            @property_value = name_parts[1].to_sym
+            @property_name, @property_value = name_parts
           else
             @property_value = text
           end
@@ -36,33 +35,27 @@ module TwitterCldr
         private
 
         def codepoints
-          if property
-            method = :"code_points_for_#{property}"
+          code_points = CodePoint.code_points_for_property(
+            property_name, property_value
+          )
 
-            if CodePoint.respond_to?(method)
-              ranges = CodePoint.send(method, property_value)
-
-              if ranges
-                TwitterCldr::Utils::RangeSet.new(ranges)
-              else
-                raise UnicodeRegexParserError.new(
-                  "Couldn't find property '#{property}' containing property value '#{property_value}'"
-                )
-              end
-            else
-              raise UnicodeRegexParserError.new(
-                "Couldn't find property '#{property}"
-              )
-            end
-          else
-            code_points = CodePoint.code_points_for_property_value(property_value)
-
+          %w(General_Category Script).each do |name|
             if code_points.empty?
-              code_points = CodePoint.code_points_for_script(property_value) || []
+              code_points = CodePoint.code_points_for_property(
+                name, property_value
+              )
+            else
+              break
             end
-
-            TwitterCldr::Utils::RangeSet.new(code_points)
           end
+
+          if code_points.empty?
+            raise UnicodeRegexParserError,
+              "Couldn't find property '#{property_name}' containing "\
+              "property value '#{property_value}'"
+          end
+
+          code_points
         end
 
       end

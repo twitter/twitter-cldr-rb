@@ -151,6 +151,20 @@ describe Locale do
   context 'with a locale instance' do
     let(:locale) { Locale.new('ko', nil, 'KR') }
 
+    describe '#full_script' do
+      it 'calculates the long name of the script using Unicode property data' do
+        locale = Locale.new('ru_RU').maximize
+        expect(locale.script).to eq('Cyrl')
+        expect(locale.full_script).to eq('Cyrillic')
+      end
+
+      it 'returns the abbreviated name if no long name can be found in property data' do
+        max_locale = locale.maximize
+        expect(max_locale.script).to eq('Kore')
+        expect(max_locale.full_script).to eq('Kore')
+      end
+    end
+
     # see likely_subtags_spec.rb for the complete likely subtags test suite
     describe '#maximize' do
       it 'returns a Locale instance' do

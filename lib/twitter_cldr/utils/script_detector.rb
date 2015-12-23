@@ -26,6 +26,8 @@ module TwitterCldr
 
     class ScriptDetector
 
+      PROPERTY_NAME = 'Script'
+
       class << self
 
         def detect_scripts(text)
@@ -50,19 +52,20 @@ module TwitterCldr
         end
 
         def scripts_hash
-          @scripts_hash ||= resource.each_with_object({}) do |(script_name, ranges), ret|
-            ranges.each do |range|
-              range.to_a.each do |code_point|
-                ret[[code_point].pack('U*')] = script_name
-              end
+          @scripts_hash ||= scripts.each_with_object({}) do |script_name, ret|
+            code_points = properties.code_points_for_property(PROPERTY_NAME, script_name)
+            code_points.each do |code_point|
+              ret[[code_point].pack("U*")] = script_name
             end
           end
         end
 
-        def resource
-          @resource ||= TwitterCldr.get_resource(
-            'unicode_data', 'properties', 'script'
-          )
+        def scripts
+          @scripts ||= properties.property_values_for(PROPERTY_NAME)
+        end
+
+        def properties
+          TwitterCldr::Shared::CodePoint.properties
         end
 
       end

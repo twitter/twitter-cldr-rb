@@ -6,17 +6,9 @@
 module TwitterCldr
   module Resources
 
-    CLDR_VERSION    = '26'
-    ICU_VERSION     = '54.1'
-    UNICODE_VERSION = '6.1.0'
-
-    CLDR_URL    = "http://unicode.org/Public/cldr/#{CLDR_VERSION}/core.zip"
-    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{ICU_VERSION}/icu4j-#{ICU_VERSION.gsub('.', '_')}.jar"
-    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{UNICODE_VERSION}"
-
-    # Use these instead to update collation and tailoring data
-    # CLDR_URL = 'http://unicode.org/Public/cldr/23.1/core.zip'
-    # ICU4J_URL = 'http://download.icu-project.org/files/icu4j/51.2/icu4j-51_2.jar'
+    CLDR_URL    = "http://unicode.org/Public/cldr/#{Versions.cldr_version}/core.zip"
+    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{Versions.icu_version}/icu4j-#{Versions.icu_version.gsub('.', '_')}.jar"
+    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{Versions.unicode_version}"
 
     class << self
 
@@ -63,7 +55,7 @@ module TwitterCldr
       private
 
       def join_urls(*urls)
-        urls.map { |u| u.sub(/[\\\/]$/, '') }.join('/')
+        urls.map { |u| u.chomp('/') }.join('/')
       end
 
     end

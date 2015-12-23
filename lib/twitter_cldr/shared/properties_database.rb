@@ -35,6 +35,8 @@ module TwitterCldr
             node.value
           elsif name_indicates_value_prefix?(property_name)
             concat_children(key)
+          else
+            RangeSet.new([])
           end
         else
           RangeSet.new([])
@@ -53,9 +55,8 @@ module TwitterCldr
       end
 
       def properties_for_code_point(code_point)
-        code_point_cache[code_point] ||= begin
+        code_point_cache[code_point] ||=
           PropertySet.new(lookup_code_point(code_point))
-        end
       end
 
       def property_names

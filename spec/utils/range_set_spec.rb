@@ -192,4 +192,20 @@ describe RangeSet do
       expect(set.to_a).to eq([1..15])
     end
   end
+
+  describe "#each_range" do
+    let(:set) { RangeSet.new([5..10, 15..20]) }
+
+    it "yields each individual range to the block" do
+      expect(set.each_range.to_a).to eq([5..10, 15..20])
+    end
+  end
+
+  describe "#each" do
+    let(:set) { RangeSet.new([5..10]) }
+
+    it "yields each number the set contains (as opposed to each range)" do
+      expect(set.each.to_a).to eq([5, 6, 7, 8, 9, 10])
+    end
+  end
 end

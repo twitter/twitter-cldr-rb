@@ -31,8 +31,21 @@ module TwitterCldr
         private
 
         def load
+          range_start = nil
+
           super do |data, ret|
             code_points = expand_range(data[0])
+
+            # UnicodeData.txt can contain ranges of characters
+            # specified with "First" and "Last" identifiers in
+            # the name field.
+            if data[1].include?(', First')
+              range_start = code_points.first
+              next
+            elsif data[1].include?(', Last')
+              code_points = (range_start..code_points.first).to_a
+              range_start = nil
+            end
 
             PROPERTIES.each_pair do |idx, property_name|
               property_value = format_property_value(data[idx])

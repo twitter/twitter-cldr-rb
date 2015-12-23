@@ -220,7 +220,8 @@ module TwitterCldr
       end
 
       def full_script
-        @full_script ||= PropertyAliases.long_alias_for(:sc, script)
+        # fall back to abbreviated script if long alias can't be found
+        @full_script ||= PropertyValueAliases.long_alias_for('sc', script) || script
       end
 
       def maximize

@@ -29,6 +29,7 @@ group :test do
 
   gem 'rubyzip'
   gem 'coveralls', require: false
+  gem 'tins', '~> 1.6.0', require: false  # 1.7 breaks ruby 1.9 support
 
   gem 'simplecov'
   gem 'launchy'

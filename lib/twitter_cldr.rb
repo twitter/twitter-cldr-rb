@@ -8,7 +8,6 @@ require 'date'
 require 'time'
 require 'fileutils'
 
-# gems
 require 'forwardable'
 
 require 'twitter_cldr/version'
@@ -17,21 +16,19 @@ Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
 
 module TwitterCldr
 
-  autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Collation,     'twitter_cldr/collation'
+  autoload :DataReaders,   'twitter_cldr/data_readers'
+  autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Localized,     'twitter_cldr/localized'
   autoload :Normalization, 'twitter_cldr/normalization'
   autoload :Parsers,       'twitter_cldr/parsers'
   autoload :Resources,     'twitter_cldr/resources'
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
-  autoload :DataReaders,   'twitter_cldr/data_readers'
   autoload :Utils,         'twitter_cldr/utils'
+  autoload :Versions,      'twitter_cldr/versions'
 
   extend SingleForwardable
-
-  # version of CLDR that was used for generating YAML files in the resources/ directory
-  CLDR_VERSION = '26.0' # release date: 2014-09-18
 
   DEFAULT_LOCALE = :en
   DEFAULT_CALENDAR_TYPE = :gregorian
@@ -41,10 +38,10 @@ module TwitterCldr
   # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
-      :msa     => :ms,
-      :'zh-cn' => :zh,
-      :'zh-tw' => :'zh-Hant',
-      :no      => :nb
+    :msa     => :ms,
+    :'zh-cn' => :zh,
+    :'zh-tw' => :'zh-Hant',
+    :no      => :nb
   }
 
   # maps cldr locales to twitter locales

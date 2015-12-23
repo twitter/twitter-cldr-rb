@@ -6,12 +6,9 @@
 module TwitterCldr
   module Resources
 
-    CLDR_URL = 'http://unicode.org/Public/cldr/26/core.zip'
-    ICU4J_URL = 'http://download.icu-project.org/files/icu4j/54.1/icu4j-54_1.jar'
-
-    # Use these instead to update collation and tailoring data
-    # CLDR_URL = 'http://unicode.org/Public/cldr/23.1/core.zip'
-    # ICU4J_URL = 'http://download.icu-project.org/files/icu4j/51.2/icu4j-51_2.jar'
+    CLDR_URL    = "http://unicode.org/Public/cldr/#{Versions.cldr_version}/core.zip"
+    ICU4J_URL   = "http://download.icu-project.org/files/icu4j/#{Versions.icu_version}/icu4j-#{Versions.icu_version.gsub('.', '_')}.jar"
+    UNICODE_URL = "ftp://ftp.unicode.org/Public/#{Versions.unicode_version}"
 
     class << self
 
@@ -49,6 +46,16 @@ module TwitterCldr
       def download_icu4j_if_necessary(path, url = ICU4J_URL)
         download_if_necessary(path, url)
         path
+      end
+
+      def download_unicode_data_if_necessary(path, url)
+        download_if_necessary(path, join_urls(UNICODE_URL, url))
+      end
+
+      private
+
+      def join_urls(*urls)
+        urls.map { |u| u.chomp('/') }.join('/')
       end
 
     end

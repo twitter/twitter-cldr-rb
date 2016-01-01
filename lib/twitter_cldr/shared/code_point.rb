@@ -6,41 +6,35 @@
 module TwitterCldr
   module Shared
 
-    CODE_POINT_FIELDS = [
-      :code_point,
-      :name,
-      :category,
-      :combining_class,
-      :bidi_class,
-      :decomposition,
-      :digit_value,
-      :non_decimal_digit_value,
-      :numeric_value,
-      :bidi_mirrored,
-      :unicode1_name,
-      :iso_comment,
-      :simple_uppercase_map,
-      :simple_lowercase_map,
-      :simple_titlecase_map
-    ]
-
     class CodePoint
-      DECOMPOSITION_DATA_INDEX = 5
       DECOMPOSITION_REGEX = /^(?:<(.+)>\s+)?(.+)?$/
+      MAX_CODE_POINT = 1_112_111
 
       attr_reader :fields
 
-      CODE_POINT_FIELDS.each_with_index do |field, idx|
-        unless field == :decomposition
-          define_method field do
-            fields[idx]
-          end
-        end
+      def code_point
+        @fields[0]
+      end
+
+      def name
+        @fields[1]
+      end
+
+      def category
+        @fields[2]
+      end
+
+      def combining_class
+        @fields[3]
+      end
+
+      def bidi_class
+        @fields[4]
       end
 
       def decomposition
         @decomposition ||= begin
-          decomp = fields[DECOMPOSITION_DATA_INDEX]
+          decomp = fields[5]
           if decomp =~ DECOMPOSITION_REGEX
             $2 && $2.split.map(&:hex)
           else
@@ -52,13 +46,55 @@ module TwitterCldr
 
       def compatibility_decomposition_tag
         @compat_decomp_tag ||= begin
-          decomp = fields[DECOMPOSITION_DATA_INDEX]
+          decomp = fields[5]
           if decomp =~ DECOMPOSITION_REGEX
             $1
           else
             raise ArgumentError,
               "decomposition #{decomp.inspect} has invalid format"
           end
+        end
+      end
+
+      def digit_value
+        @fields[6]
+      end
+
+      def non_decimal_digit_value
+        @fields[7]
+      end
+
+      def numeric_value
+        @fields[8]
+      end
+
+      def bidi_mirrored
+        @fields[9]
+      end
+
+      def unicode1_name
+        @fields[10]
+      end
+
+      def iso_comment
+        @fields[11]
+      end
+
+      def simple_uppercase_map
+        @uppercase ||= field_or_nil(12) do |val|
+          [val.to_i(16)].pack('U*')
+        end
+      end
+
+      def simple_lowercase_map
+        @lowercase ||= field_or_nil(13) do |val|
+          [val.to_i(16)].pack('U*')
+        end
+      end
+
+      def simple_titlecase_map
+        @titlecase ||= field_or_nil(14) do |val|
+          [val.to_i(16)].pack('U*')
         end
       end
 
@@ -70,9 +106,20 @@ module TwitterCldr
         self.class.properties.properties_for_code_point(code_point)
       end
 
+      private
+
+      def field_or_nil(index)
+        val = @fields[index]
+        if val && !val.empty?
+          yield val
+        end
+      end
+
       class << self
 
-        def find(code_point)
+        include Enumerable
+
+        def get(code_point)
           code_point_cache[code_point] ||= begin
             target = get_block(code_point)
 
@@ -97,6 +144,22 @@ module TwitterCldr
 
         def properties_for_code_point(code_point)
           properties.properties_for_code_point(code_point)
+        end
+
+        def each
+          if block_given?
+            (0..max).each do |cp|
+              if found_cp = get(cp)
+                yield found_cp
+              end
+            end
+          else
+            to_enum(__method__)
+          end
+        end
+
+        def max
+          MAX_CODE_POINT
         end
 
         private

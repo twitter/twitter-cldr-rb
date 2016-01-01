@@ -68,6 +68,12 @@ module TwitterCldr
         @regexp_str ||= elements.map(&:to_regexp_str).join
       end
 
+      def to_s
+        @elements.inject('') do |ret, element|
+          ret + element.to_s
+        end
+      end
+
     end
   end
 end

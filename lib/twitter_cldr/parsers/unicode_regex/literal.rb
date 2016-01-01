@@ -56,6 +56,10 @@ module TwitterCldr
           end
         end
 
+        def to_s
+          text
+        end
+
         private
 
         def set_for_special_char(char)

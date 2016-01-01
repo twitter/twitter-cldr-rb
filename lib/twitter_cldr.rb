@@ -23,6 +23,7 @@ module TwitterCldr
   autoload :Normalization, 'twitter_cldr/normalization'
   autoload :Parsers,       'twitter_cldr/parsers'
   autoload :Resources,     'twitter_cldr/resources'
+  autoload :Segmentation,  'twitter_cldr/segmentation'
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
   autoload :Utils,         'twitter_cldr/utils'

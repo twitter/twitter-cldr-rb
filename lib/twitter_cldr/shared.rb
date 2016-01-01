@@ -6,7 +6,6 @@
 module TwitterCldr
   module Shared
     autoload :Bidi,                   'twitter_cldr/shared/bidi'
-    autoload :BreakIterator,          'twitter_cldr/shared/break_iterator'
     autoload :Calendar,               'twitter_cldr/shared/calendar'
     autoload :Casefolder,             'twitter_cldr/shared/casefolder'
     autoload :CodePoint,              'twitter_cldr/shared/code_point'

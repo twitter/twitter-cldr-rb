@@ -598,27 +598,27 @@ You can break a string into sentences using the `LocalizedString#each_sentence` 
 
 ```ruby
 "The. Quick. Brown. Fox.".localize.each_sentence do |sentence|
-  puts sentence.to_s  # <%= assert("The. Quick. Brown. Fox.".localize.each_sentence.to_a.map(&:to_s), ["The.", " Quick.", " Brown.", " Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
+  puts sentence.to_s  # <%= assert("The. Quick. Brown. Fox.".localize.each_sentence.to_a.map(&:to_s), ["The. ", "Quick. ", "Brown. ", "Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
 end
 ```
 
 Under the hood, text segmentation is performed by the `BreakIterator` class (name borrowed from ICU). You can use it directly if you're feeling adventurous:
 
 ```ruby
-<% iterator = TwitterCldr::Shared::BreakIterator.new(:en) %>
-iterator = TwitterCldr::Shared::BreakIterator.new(:en)
+<% iterator = TwitterCldr::Segmentation::BreakIterator.new(:en) %>
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en)
 iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
-  puts sentence  # <%= assert(iterator.each_sentence("The. Quick. Brown. Fox.").to_a, ["The.", " Quick.", " Brown.", " Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
+  puts sentence  # <%= assert(iterator.each_sentence("The. Quick. Brown. Fox.").to_a, ["The. ", "Quick. ", "Brown. ", "Fox."]).map { |s| "\"#{s}\"" }.join(", ") %>
 end
 ```
 
 To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
 
 ```ruby
-<% iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false) %>
-iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false)
+<% iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => false) %>
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => false)
 iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
-  puts sentence  # <%= assert(iterator.each_sentence("I like Ms. Murphy, she's nice.").to_a, ["I like Ms.", " Murphy, she's nice."]).map { |s| "\"#{s}\"" }.join(", ") %>
+  puts sentence  # <%= assert(iterator.each_sentence("I like Ms. Murphy, she's nice.").to_a, ["I like Ms. ", "Murphy, she's nice."]).map { |s| "\"#{s}\"" }.join(", ") %>
 end
 ```
 

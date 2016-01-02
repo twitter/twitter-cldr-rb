@@ -46,6 +46,16 @@ module TwitterCldr
         end
       end
 
+      def each_word
+        if block_given?
+          break_iterator.each_word(@base_obj) do |word|
+            yield word.localize
+          end
+        else
+          to_enum(__method__)
+        end
+      end
+
       def code_points
         TwitterCldr::Utils::CodePoints.from_string(@base_obj)
       end
@@ -133,7 +143,7 @@ module TwitterCldr
       end
 
       def break_iterator
-        @break_iterator ||= TwitterCldr::Shared::BreakIterator.new(locale)
+        @break_iterator ||= TwitterCldr::Segmentation::BreakIterator.new(locale)
       end
 
       def number_parser

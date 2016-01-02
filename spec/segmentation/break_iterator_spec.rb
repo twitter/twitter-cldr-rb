@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
+include TwitterCldr::Segmentation
 
 describe BreakIterator do
   describe "#each_sentence" do
@@ -18,31 +18,31 @@ describe BreakIterator do
     it "splits a simple string into sentences" do
       str = "The. Quick. Brown. Fox."
       expect(iterator.each_sentence(str).to_a).to eq([
-        "The.", " Quick.", " Brown.", " Fox."
+        "The. ", "Quick. ", "Brown. ", "Fox."
       ])
     end
 
     it "does not split on commas, for example" do
       str = "The. Quick, brown. Fox."
       expect(iterator.each_sentence(str).to_a).to eq([
-        "The.", " Quick, brown.", " Fox."
+        "The. ", "Quick, brown. ", "Fox."
       ])
     end
 
     it "does not split periods in the midst of other letters, eg. in a URL" do
       str = "Visit us. Go to http://translate.twitter.com."
       expect(iterator.each_sentence(str).to_a).to eq([
-        "Visit us.",
-        " Go to http://translate.twitter.com."
+        "Visit us. ",
+        "Go to http://translate.twitter.com."
       ])
     end
 
     it "splits on sentences that end with other kinds of punctuation" do
       str = "Help us translate! Speak another language? You really, really rock."
       expect(iterator.each_sentence(str).to_a).to eq([
-        "Help us translate!",
-        " Speak another language?",
-        " You really, really rock."
+        "Help us translate! ",
+        "Speak another language? ",
+        "You really, really rock."
       ])
     end
 
@@ -50,8 +50,8 @@ describe BreakIterator do
       it "does not split on certain abbreviations like Mr. and Mrs." do
         str = "I really like Mrs. Patterson. She's nice."
         expect(iterator.each_sentence(str).to_a).to eq([
-          "I really like Mrs. Patterson.",
-          " She's nice."
+          "I really like Mrs. Patterson. ",
+          "She's nice."
         ])
       end
     end
@@ -62,11 +62,40 @@ describe BreakIterator do
       it "splits on certain abbreviations like Mr. and Mrs. (use ULI rules to avoid this behavior)" do
         str = "I really like Mrs. Patterson. She's nice."
         expect(iterator.each_sentence(str).to_a).to eq([
-          "I really like Mrs.",
-          " Patterson.",
-          " She's nice."
+          "I really like Mrs. ",
+          "Patterson. ",
+          "She's nice."
         ])
       end
+    end
+  end
+
+  describe "#each_word" do
+    let(:iterator) { BreakIterator.new(:en) }
+
+    it "should return an enumerator if called without a block" do
+      expect(iterator.each_word("foo bar")).to be_a(Enumerator)
+    end
+
+    it "splits a simple string into words" do
+      str = "the quick brown fox"
+      expect(iterator.each_word(str).to_a).to eq([
+        "the", " ", "quick", " ", "brown", " ", "fox"
+      ])
+    end
+
+    it "breaks around periods" do
+      str = "The. Quick. Brown. Fox."
+      expect(iterator.each_word(str).to_a).to eq([
+        "The", ".", " ", "Quick", ".", " ", "Brown", ".", " ", "Fox", "."
+      ])
+    end
+
+    it "does not break at apostrophes" do
+      str = "I like cats. They're cute."
+      expect(iterator.each_word(str).to_a).to eq([
+        "I", " ", "like", " ", "cats", ".", " ", "They're", " ", "cute", "."
+      ])
     end
   end
 end

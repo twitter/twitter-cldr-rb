@@ -33,6 +33,10 @@ module TwitterCldr
           )
         end
 
+        def to_s
+          "#{initial.to_s}-#{final.to_s}"
+        end
+
       end
     end
   end

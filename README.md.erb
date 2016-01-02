@@ -629,8 +629,8 @@ TwitterCLDR provides ways to retrieve individual code points as well as normaliz
 Retrieve data for code points:
 
 ```ruby
-<% code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9) %>
-code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9)
+<% code_point = TwitterCldr::Shared::CodePoint.get(0x1F3E9) %>
+code_point = TwitterCldr::Shared::CodePoint.get(0x1F3E9)
 code_point.name             # <%= assert(code_point.name, "LOVE HOTEL").inspect %>
 code_point.bidi_mirrored    # <%= assert(code_point.bidi_mirrored, "N").inspect %>
 code_point.category         # <%= assert(code_point.category, "So").inspect %>

@@ -63,7 +63,7 @@ END
       test_data.each_with_index do |test, idx|
         next if skip_cases.include?(test)
         test_parts = parse(test)
-        test_case_boundaries = boundaries(test_parts)[1..-1]
+        test_case_boundaries = boundaries(test_parts)
         test_case_string = string(test_parts)
         result_boundaries = rule_set.each_boundary(test_case_string).to_a
         expect(result_boundaries).to(

@@ -78,7 +78,7 @@ module TwitterCldr
 
       def modifier_union
         @modifier_union ||=
-          modifiers.each_char.inject(0) do |ret, modifier_char|
+          (modifiers || '').each_char.inject(0) do |ret, modifier_char|
             ret | case modifier_char
               when 'm'
                 Regexp::MULTILINE

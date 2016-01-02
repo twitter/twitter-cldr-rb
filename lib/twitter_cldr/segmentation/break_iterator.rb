@@ -16,12 +16,12 @@ module TwitterCldr
 
       def each_sentence(str, &block)
         rule_set = rule_set_for('sentence')
-        rule_set.each_boundary(str, &block)
+        each_boundary(rule_set, str, &block)
       end
 
       def each_word(str, &block)
         rule_set = rule_set_for('word')
-        rule_set.each_boundary(str, &block)
+        each_boundary(rule_set, str, &block)
       end
 
       def each_grapheme_cluster(str, &block)
@@ -35,6 +35,19 @@ module TwitterCldr
       end
 
       private
+
+      def each_boundary(rule_set, str)
+        if block_given?
+          last_offset = 0
+
+          rule_set.each_boundary(str) do |boundary_position|
+            yield str[last_offset...boundary_position]
+            last_offset = boundary_position
+          end
+        else
+          to_enum(__method__, rule_set, str)
+        end
+      end
 
       def rule_set_for(boundary_type)
         RuleSet.load(locale, boundary_type, options)

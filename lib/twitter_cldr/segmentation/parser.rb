@@ -51,7 +51,7 @@ module TwitterCldr
       def parse_regex(tokens, options)
         unless tokens.empty?
           TwitterCldr::Shared::UnicodeRegex.new(
-            regex_parser.parse(tokens, options)
+            regex_parser.parse(tokens, options), 'm'
           )
         end
       end

@@ -30,15 +30,15 @@ module TwitterCldr
       def each_boundary(str)
         if block_given?
           cursor = Cursor.new(str)
-          last_offset = 0
+          last_boundary = 0
 
           until cursor.eof?
             match = find_match(cursor)
             rule = match.rule
 
             if rule.break?
-              yield str[last_offset...match.boundary_position]
-              last_offset = match.boundary_position
+              yield match.boundary_position
+              last_boundary = match.boundary_position
             end
 
             if match.boundary_position == cursor.position
@@ -49,6 +49,9 @@ module TwitterCldr
               )
             end
           end
+
+          # implicit end of text boundary
+          yield str.size unless last_boundary == str.size
         else
           to_enum(__method__, str)
         end

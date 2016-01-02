@@ -12,15 +12,11 @@ module TwitterCldr
     class Rule
 
       attr_reader :left, :right
-      attr_accessor :string, :id, :implicit
-
-      alias_method :implicit?, :implicit
+      attr_accessor :string, :id
 
       def initialize(left, right)
         @left = left
         @right = right
-        @implicit = false
-        @regex = Regexp.new("#{left.to_regexp_str}#{right.to_regexp_str}")
       end
 
       def match(cursor)

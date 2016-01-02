@@ -55,17 +55,19 @@ module TwitterCldr
         end
 
         def apply_lower(cursor)
-          # @TODO apply unicode lowercasing logic
-          cursor.set_text(cursor.text.downcase)
+          cursor.set_text(caser.downcase(cursor.text))
         end
 
         def apply_upper(cursor)
-          # @TODO apply unicode uppercasing logic
-          cursor.set_text(cursor.text.upcase)
+          cursor.set_text(caser.upcase(cursor.text))
         end
 
         def apply_title(cursor)
-          # @TODO apply unicode titlecasing logic
+          cursor.set_text(caser.titlecase(cursor.text))
+        end
+
+        def caser
+          TwitterCldr::Shared::Caser
         end
       end
 

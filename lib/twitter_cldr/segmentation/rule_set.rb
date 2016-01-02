@@ -32,6 +32,9 @@ module TwitterCldr
           cursor = Cursor.new(str)
           last_boundary = 0
 
+          # implicit start of text boundary
+          yield 0
+
           until cursor.eof?
             match = find_match(cursor)
             rule = match.rule

@@ -54,6 +54,10 @@ module TwitterCldr
           codepoints_from(root)
         end
 
+        def to_s
+          stringify(root)
+        end
+
         private
 
         attr_reader :root
@@ -66,6 +70,26 @@ module TwitterCldr
               codepoints_from(node.left) + codepoints_from(node.right)
             else
               node.codepoints
+          end
+        end
+
+        def stringify(node)
+          case node
+            when UnaryOperator, BinaryOperator
+              op_str = case node.operator
+                when :negate then '^'
+                when :union, :pipe then ''
+                when :dash then '-'
+                when :ampersand then '&'
+              end
+
+              left = stringify(node.left)
+              right = stringify(node.right)
+
+              "#{left}#{op_str}#{right}"
+
+            else
+              node.to_s
           end
         end
 

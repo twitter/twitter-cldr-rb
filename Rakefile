@@ -13,6 +13,8 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
+require 'pry-nav'
+
 Bundler::GemHelper.install_tasks
 
 task :default => :spec
@@ -57,6 +59,7 @@ task :update do
       "update:collation_tries", # per locale, must come after update:tailoring_data
       "update:rbnf_tests",      # per locale
       "update:transform_tests"
+      "update:bidi_tests"
     ]
   else
     puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
@@ -71,6 +74,7 @@ task :update do
       "update:phone_codes",
       "update:language_codes",
       "update:segment_exceptions",     # per locale
+      "update:segment_tests",
       "update:readme"
     ]
   end
@@ -201,12 +205,20 @@ namespace :update do
     ).import
   end
 
-  desc 'Import segments exceptions'
+  desc 'Import segment exceptions'
   task :segment_exceptions do
     TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
       './vendor/uli/segments',
       './resources/uli/segments'
     ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
+  end
+
+  desc 'Import segment tests'
+  task :segment_tests do
+    TwitterCldr::Resources::SegmentTestsImporter.new(
+      './vendor/unicode-data/segments',
+      './resources/shared/segments/tests'
+    ).import
   end
 
   desc 'Update README'

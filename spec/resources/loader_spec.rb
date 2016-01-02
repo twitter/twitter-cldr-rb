@@ -40,7 +40,7 @@ describe Loader do
 
     it 'raises an exception if resource file is missing' do
       mock(File).file?(File.join(TwitterCldr::RESOURCES_DIR, 'foo/bar.yml')) { false }
-      expect { loader.get_resource(:foo, :bar) }.to raise_error(ArgumentError, "Resource 'foo/bar.yml' not found.")
+      expect { loader.get_resource(:foo, :bar) }.to raise_error(ResourceLoadError, "Resource 'foo/bar.yml' not found.")
     end
 
     context 'custom resources' do

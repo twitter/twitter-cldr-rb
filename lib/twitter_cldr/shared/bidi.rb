@@ -5,7 +5,7 @@
 
 # This code was adapted from GNU Classpath, but modified significantly.  Ordinarily, derivatives are
 # treated as falling under the same license as the original source, but classpath comes with the
-# following exception: 
+# following exception:
 #
 # "As a special exception, the copyright holders of this library give you
 # permission to link this library with independent modules to produce an
@@ -46,7 +46,7 @@ module TwitterCldr
 
         def compute_types(arr)
           arr.map do |code_point|
-            TwitterCldr::Shared::CodePoint.find(code_point).bidi_class.to_sym
+            TwitterCldr::Shared::CodePoint.get(code_point).bidi_class.to_sym
           end
         end
       end

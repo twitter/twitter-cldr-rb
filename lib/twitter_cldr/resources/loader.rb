@@ -6,6 +6,8 @@
 module TwitterCldr
   module Resources
 
+    class ResourceLoadError < StandardError; end
+
     class Loader
 
       def get_resource(*path)
@@ -106,7 +108,8 @@ module TwitterCldr
         if File.file?(file_path)
           File.read(file_path)
         else
-          raise ArgumentError.new("Resource '#{path}' not found.")
+          raise ResourceLoadError,
+            "Resource '#{path}' not found."
         end
       end
 

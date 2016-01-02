@@ -32,6 +32,16 @@ module TwitterCldr
           )
         end
 
+        def to_s
+          if property_value
+            "[:#{property_name}=#{property_value}:]"
+          else
+            "[:#{property_name}:]"
+          end
+        end
+
+        private
+
         def codepoints
           code_points = CodePoint.code_points_for_property(
             *normalized_property

@@ -60,7 +60,7 @@ describe CodePoint do
 
   describe '#properties' do
     it 'identifies all properties belonging to the code point' do
-      code_point = CodePoint.find(65)
+      code_point = CodePoint.get(65)
       properties = code_point.properties
       expect(properties.alphabetic).to be_true
       expect(properties.script).to eq(Set.new(%w(Latin)))
@@ -96,15 +96,15 @@ describe CodePoint do
     end
   end
 
-  describe ".find" do
+  describe ".get" do
     it "retrieves information for any valid code point" do
-      data = CodePoint.find(0x301)
+      data = CodePoint.get(0x301)
       expect(data).to be_a(CodePoint)
       expect(data.fields.length).to eq(15)
     end
 
     it "returns nil if the information is not found" do
-      expect(CodePoint.find(0xFFFFFFF)).to be_nil
+      expect(CodePoint.get(0xFFFFFFF)).to be_nil
     end
 
     it "fetches valid information for the specified code point" do
@@ -129,7 +129,7 @@ describe CodePoint do
 
     def test_code_points_data(test_data)
       test_data.each do |code_point, data|
-        cp_data = CodePoint.find(code_point)
+        cp_data = CodePoint.get(code_point)
 
         expect(cp_data).not_to be_nil
 

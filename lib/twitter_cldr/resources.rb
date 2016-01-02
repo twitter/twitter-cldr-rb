@@ -20,6 +20,7 @@ module TwitterCldr
     autoload :RbnfTestImporter,               'twitter_cldr/resources/rbnf_test_importer'
     autoload :ReadmeRenderer,                 'twitter_cldr/resources/readme_renderer'
     autoload :RegexpAstGenerator,             'twitter_cldr/resources/regexp_ast_generator'
+    autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
     autoload :TransformTestImporter,          'twitter_cldr/resources/transform_test_importer'
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'

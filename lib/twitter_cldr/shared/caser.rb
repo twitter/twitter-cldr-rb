@@ -17,10 +17,43 @@ module TwitterCldr
           string.gsub(REGEX, lowercasing_hash)
         end
 
-        def titlecase
+        # toTitlecase(X): Find the word boundaries in X according
+        # to Unicode Standard Annex #29, "Unicode Text Segmentation."
+        # For each word boundary, find the first cased character F
+        # following the word boundary. If F exists, map F to
+        # Titlecase_Mapping(F); then map all characters C between F
+        # and the following word boundary to Lowercase_Mapping(C).
+        def titlecase(string)
+          string.dup.tap do |result|
+            boundary_rule_set.each_boundary(result).each_cons(2) do |boundary_pair|
+              if cased_pos = first_cased(string, *boundary_pair)
+                result[cased_pos] = titlecasing_hash[result[cased_pos]]
+
+                (cased_pos + 1).upto(boundary_pair.last - 1) do |pos|
+                  result[pos] = lowercasing_hash[result[pos]]
+                end
+              end
+            end
+          end
         end
 
         private
+
+        def first_cased(string, start_pos, end_pos)
+          start_pos.upto(end_pos) do |pos|
+            return pos if cased?(string[pos])
+          end
+        end
+
+        def boundary_rule_set
+          @boundary_rule_set ||= Segmentation::RuleSet.load(:en, 'word')
+        end
+
+        def cased?(char)
+          props = CodePoint.properties_for_code_point(char.ord)
+          props.general_category.include?('Lt') ||
+            props.uppercase || props.lowercase
+        end
 
         def uppercasing_hash
           @uppercasing_hash ||= Hash.new do |hash, key|

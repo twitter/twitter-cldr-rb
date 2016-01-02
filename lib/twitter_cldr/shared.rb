@@ -8,6 +8,7 @@ module TwitterCldr
     autoload :Bidi,                   'twitter_cldr/shared/bidi'
     autoload :Calendar,               'twitter_cldr/shared/calendar'
     autoload :Casefolder,             'twitter_cldr/shared/casefolder'
+    autoload :Caser,                  'twitter_cldr/shared/caser'
     autoload :CodePoint,              'twitter_cldr/shared/code_point'
     autoload :Currencies,             'twitter_cldr/shared/currencies'
     autoload :LanguageCodes,          'twitter_cldr/shared/language_codes'

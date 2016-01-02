@@ -60,6 +60,18 @@ describe UnicodeRegex do
           "(?:[\\u{0067}-\\u{006b}])(?:[\\u{0070}-\\u{0073}])"
         )
       end
+
+      it "supports modifiers" do
+        regex = UnicodeRegex.compile('abc', 'm').to_regexp
+        expect(regex.options).to eq(Regexp::MULTILINE)
+      end
+
+      it "supports multiple modifiers at once" do
+        regex = UnicodeRegex.compile('abc', 'mi').to_regexp
+        expect(regex.options).to eq(
+          Regexp::MULTILINE | Regexp::IGNORECASE
+        )
+      end
     end
   end
 

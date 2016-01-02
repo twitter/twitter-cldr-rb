@@ -57,11 +57,11 @@ module TwitterCldr
 
       def initialize(elements, modifiers = nil)
         @elements = elements
-        @modifiers = nil
+        @modifiers = modifiers
       end
 
       def to_regexp
-        @regexp ||= Regexp.new(to_regexp_str, modifiers)
+        @regexp ||= Regexp.new(to_regexp_str, modifier_union)
       end
 
       def to_regexp_str
@@ -72,6 +72,26 @@ module TwitterCldr
         @elements.inject('') do |ret, element|
           ret + element.to_s
         end
+      end
+
+      private
+
+      def modifier_union
+        @modifier_union ||=
+          modifiers.each_char.inject(0) do |ret, modifier_char|
+            ret | case modifier_char
+              when 'm'
+                Regexp::MULTILINE
+              when 'i'
+                Regexp::IGNORECASE
+              when 'x'
+                Regexp::EXTENDED
+              when 'n'
+                Regexp::NOENCODING
+              else
+                0
+            end
+          end
       end
 
     end

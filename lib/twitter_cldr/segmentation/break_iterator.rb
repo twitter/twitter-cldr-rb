@@ -38,11 +38,8 @@ module TwitterCldr
 
       def each_boundary(rule_set, str)
         if block_given?
-          last_offset = 0
-
-          rule_set.each_boundary(str) do |boundary_position|
-            yield str[last_offset...boundary_position]
-            last_offset = boundary_position
+          rule_set.each_boundary(str).each_cons(2) do |start, stop|
+            yield str[start...stop]
           end
         else
           to_enum(__method__, rule_set, str)

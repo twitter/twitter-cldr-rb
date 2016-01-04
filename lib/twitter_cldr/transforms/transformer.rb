@@ -66,7 +66,7 @@ module TwitterCldr
 
             Dir.glob(File.join(path, '*.*')).each do |file|
               file = File.basename(file.chomp(File.extname(file)))
-              source, target, variant = TransformId.split_file_name(file)
+              source, target, variant = TransformId.split(file)
               yield TransformId.join(source, target, variant)
             end
           else
@@ -168,8 +168,9 @@ module TwitterCldr
               source_chain.each do |source|
                 source_str = join_subtags(source, variant)
                 target_str = join_subtags(target, variant)
+                transform_id_str = TransformId.join(source_str, target_str)
 
-                if rule_set = get(source_str, target_str)
+                if rule_set = get(transform_id_str)
                   return rule_set
                 end
               end
@@ -184,7 +185,7 @@ module TwitterCldr
         end
 
         def variants_for(source_locale, target_locale)
-          [source_locale.variant, target_locale.variant, nil].uniq
+          (source_locale.variants + target_locale.variants + [nil]).uniq
         end
 
         def map_chain_for(locale)

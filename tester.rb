@@ -25,6 +25,10 @@ require 'ruby-prof'
 # binding.pry
 # group.rules.first.match(cursor)
 
+# transformer = TwitterCldr::Transforms::Transformer.get('Latin-Devanagari')
+# puts transformer.transform("From today's featured article") == 'फ़्रॊम् तॊदय्स् फ़ॆअतुरॆद् अर्तिच्लॆ'
+# exit 0
+
 transformer = TwitterCldr::Transforms::Transformer.get('Latin-Katakana')
 puts transformer.transform("kuronekosama")
 

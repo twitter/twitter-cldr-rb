@@ -6,10 +6,21 @@
 module TwitterCldr
   module Transforms
 
+    class InvalidTransformIdError < StandardError; end
+
     class TransformId
       class << self
         def parse(str)
-          new(*str.split(/[\-\/]/))
+          if normalized = normalize(str)
+            new(*split(normalized))
+          else
+            raise InvalidTransformIdError,
+              "'#{str}' is not a valid transform id"
+          end
+        end
+
+        def split(str)
+          str.split(/[\-\/]/)
         end
 
         def join(source, target, variant = nil)
@@ -17,8 +28,24 @@ module TwitterCldr
           variant ? "#{base}/#{variant}" : base
         end
 
-        def split_file_name(file_name)
-          file_name.split('-')
+        def join_file_name(parts)
+          parts.compact.join('-')
+        end
+
+        private
+
+        def normalize(str)
+          normalization_index[str.downcase]
+        end
+
+        def normalization_index
+          @index ||=
+            Transformer.each_transform.each_with_object({}) do |key, ret|
+              source, target, variant = split(key)
+              reverse_key = join_file_name([target, source, variant])
+              ret[key.downcase] = key
+              ret[reverse_key.downcase] = reverse_key
+          end
         end
       end
 
@@ -39,7 +66,7 @@ module TwitterCldr
       end
 
       def file_name
-        [source, target, variant].compact.join('-')
+        self.class.join_file_name([source, target, variant])
       end
 
       def to_s

@@ -51,7 +51,8 @@ module TwitterCldr
           # with Marshal.load
           def transforms
             @transforms ||= [
-              NormalizationTransform, NamedTransform, CasingTransform
+              NormalizationTransform, NamedTransform, CasingTransform,
+              BreakInternalTransform
             ]
           end
         end

@@ -58,7 +58,7 @@ task :update do
       "update:tailoring_data",  # per locale
       "update:collation_tries", # per locale, must come after update:tailoring_data
       "update:rbnf_tests",      # per locale
-      "update:transform_tests"
+      "update:transform_tests",
       "update:bidi_tests"
     ]
   else

@@ -54,10 +54,6 @@ module TwitterCldr
           @index = index
         end
 
-        def can_invert?
-          direction == :bidirectional || direction == :backward
-        end
-
         def forward?
           direction == :bidirectional || direction == :forward
         end
@@ -71,20 +67,15 @@ module TwitterCldr
         end
 
         def invert
-          if can_invert?
-            case direction
-              when :backward
-                self.class.new(
-                  :forward, left, right, original_rule_text, index
-                )
-              else
-                self.class.new(
-                  direction, right, left, original_rule_text, index
-                )
-            end
-          else
-            raise NotInvertibleError,
-              "cannot invert this #{self.class.name}"
+          case direction
+            when :backward
+              self.class.new(
+                :forward, left, right, original_rule_text, index
+              )
+            else
+              self.class.new(
+                direction, right, left, original_rule_text, index
+              )
           end
         end
 

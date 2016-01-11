@@ -37,7 +37,7 @@ module TwitterCldr
 
           def clean_rule(rule_text, direction)
             if direction == :backward
-              rule_text[1..-2]
+              rule_text[1..-2].strip
             else
               rule_text
             end

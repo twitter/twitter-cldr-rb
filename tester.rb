@@ -3,6 +3,10 @@ require 'pry-nav'
 require 'benchmark/ips'
 require 'ruby-prof'
 
+transformer = TwitterCldr::Transforms::Transformer.get('Latin-Arabic')
+puts transformer.transform("From today's featured article")
+exit 0
+
 # rules = [
 #   "$sep = \\-;",
 #   "$Gi = ᄀ;",

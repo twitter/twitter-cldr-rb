@@ -22,10 +22,6 @@ module TwitterCldr
         def is_filter_rule?
           true
         end
-
-        def can_invert?
-          false
-        end
       end
 
     end

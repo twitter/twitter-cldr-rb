@@ -45,6 +45,14 @@ module TwitterCldr
         def is_null_form?(form)
           self.class.is_null_form?(form)
         end
+
+        def after_initialize
+          if forward_form
+            @backward_form = TransformPair.new(
+              nil, TransformId.parse(forward_form.transform).reverse.to_s
+            )
+          end
+        end
       end
     end
   end

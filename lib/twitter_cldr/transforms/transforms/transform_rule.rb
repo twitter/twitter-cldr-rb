@@ -69,10 +69,6 @@ module TwitterCldr
           true
         end
 
-        def can_invert?
-          !!backward_form
-        end
-
         def forward?
           !!forward_form
         end
@@ -82,12 +78,7 @@ module TwitterCldr
         end
 
         def invert
-          if can_invert?
-            self.class.new(backward_form, forward_form)
-          else
-            raise NotInvertibleError,
-              "cannot invert this #{self.class.name}"
-          end
+          self.class.new(backward_form, forward_form)
         end
 
         private

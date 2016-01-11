@@ -26,6 +26,7 @@ describe RuleSet do
 
     test[:samples].each_pair.with_index do |(source, target), idx|
       it "transforms sample ##{idx + 1} using #{test[:id]}" do
+        puts test[:id]
         result = transformer.transform(source)
         expect(result).to match_normalized(target)
       end

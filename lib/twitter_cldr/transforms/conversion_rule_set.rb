@@ -28,12 +28,6 @@ module TwitterCldr
         false
       end
 
-      # whether or not this rule set can be inverted
-      # is decided by the transformer
-      def can_invert?
-        true
-      end
-
       def is_transform_rule?
         false
       end
@@ -76,9 +70,9 @@ module TwitterCldr
       def inverted_rules
         @inverted_rules ||= begin
           rules.each_with_object([]) do |rule, ret|
-            if rule.can_invert?
+            # if rule.can_invert?
               ret << rule.invert
-            end
+            # end
           end
         end
       end

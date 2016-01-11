@@ -9,7 +9,29 @@ module TwitterCldr
     class InvalidTransformIdError < StandardError; end
 
     class TransformId
+      CHAIN = [
+        :normal_fallback1, :normal_fallback2, :laddered_fallback1,
+        :normal_fallback3, :laddered_fallback2
+      ]
+
       class << self
+        def find(source_locale_str, target_locale_str)
+          source_locale = parse_locale(source_locale_str)
+          target_locale = parse_locale(target_locale_str)
+          source_chain = map_chain_for(source_locale)
+          target_chain = map_chain_for(target_locale)
+          variants = variants_for(source_locale, target_locale)
+
+          # add original locale strings to chain in case they aren't actually
+          # locales (think 'hiragana', etc)
+          source_chain << [source_locale_str.to_s]
+          target_chain << [target_locale_str.to_s]
+
+          find_in_chains(
+            source_chain, target_chain, variants
+          )
+        end
+
         def parse(str)
           if normalized = normalize(str)
             new(*split(normalized))
@@ -34,18 +56,77 @@ module TwitterCldr
 
         private
 
+        def parse_locale(locale_str)
+          TwitterCldr::Shared::Locale.parse(locale_str.to_s).maximize
+        end
+
         def normalize(str)
-          normalization_index[str.downcase]
+          source, target, variant = split(str)
+          normalization_index[
+            join_file_name([source, target, variant]).downcase
+          ]
         end
 
         def normalization_index
           @index ||=
             Transformer.each_transform.each_with_object({}) do |key, ret|
               source, target, variant = split(key)
+              key = join_file_name([source, target, variant])
               reverse_key = join_file_name([target, source, variant])
               ret[key.downcase] = key
               ret[reverse_key.downcase] = reverse_key
           end
+        end
+
+        def find_in_chains(source_chain, target_chain, variants)
+          variants.each do |variant|
+            target_chain.each do |target|
+              source_chain.each do |source|
+                source_str = join_subtags(source, variant)
+                target_str = join_subtags(target, variant)
+                transform_id_str = TransformId.join(source_str, target_str)
+
+                if Transformer.exists?(transform_id_str)
+                  return TransformId.parse(transform_id_str)
+                end
+              end
+            end
+          end
+          nil
+        end
+
+        def join_subtags(tags, variant)
+          tags.join('_').tap do |result|
+            result << "_#{variant}" if variant
+          end
+        end
+
+        def variants_for(source_locale, target_locale)
+          (source_locale.variants + target_locale.variants + [nil]).uniq
+        end
+
+        def map_chain_for(locale)
+          CHAIN.map { |link| send(link, locale) }
+        end
+
+        def normal_fallback1(locale)
+          [locale.language, locale.full_script, locale.region]
+        end
+
+        def normal_fallback2(locale)
+          [locale.language, locale.full_script]
+        end
+
+        def normal_fallback3(locale)
+          [locale.language]
+        end
+
+        def laddered_fallback1(locale)
+          [locale.language, locale.region]
+        end
+
+        def laddered_fallback2(locale)
+          [locale.full_script]
         end
       end
 

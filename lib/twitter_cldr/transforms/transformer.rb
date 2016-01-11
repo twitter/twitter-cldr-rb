@@ -9,11 +9,6 @@ module TwitterCldr
     class InvalidTransformRuleError < StandardError; end
 
     class Transformer
-      CHAIN = [
-        :normal_fallback1, :normal_fallback2, :laddered_fallback1,
-        :normal_fallback3, :laddered_fallback2
-      ]
-
       RULE_CLASSES = [
         CommentRule,
         VariableRule,
@@ -23,25 +18,12 @@ module TwitterCldr
       ]
 
       class << self
-        def for_locales(source_locale, target_locale)
-          source_chain = map_chain_for(source_locale)
-          target_chain = map_chain_for(target_locale)
-          variants = variants_for(source_locale, target_locale)
-
-          find_in_chains(
-            source_chain, target_chain, variants
-          )
+        def exists?(transform_id_or_str)
+          !!get(transform_id_or_str)
         end
 
-        def exists?(transform_id_str)
-          id = TransformId.parse(transform_id_str)
-          resource_exists?(id) || resource_exists?(id.reverse)
-        rescue
-          false
-        end
-
-        def get(transform_id_str)
-          id = TransformId.parse(transform_id_str)
+        def get(transform_id_or_str)
+          id = parse_id(transform_id_or_str)
 
           if resource_exists?(id)
             load(id).forward_rule_set
@@ -49,11 +31,7 @@ module TwitterCldr
             reversed_id = id.reverse
 
             if resource_exists?(reversed_id)
-              transformer = load(reversed_id)
-
-              if transformer.bidirectional?
-                transformer.backward_rule_set
-              end
+              load(reversed_id).backward_rule_set
             end
           end
         end
@@ -75,6 +53,15 @@ module TwitterCldr
         end
 
         private
+
+        def parse_id(transform_id)
+          case transform_id
+            when TransformId
+              transform_id
+            else
+              TransformId.parse(transform_id)
+          end
+        end
 
         def load(transform_id)
           transformers[transform_id.to_s] ||= begin
@@ -160,56 +147,6 @@ module TwitterCldr
           TwitterCldr.resource_exists?(
             'shared', 'transforms', transform_id.file_name
           )
-        end
-
-        def find_in_chains(source_chain, target_chain, variants)
-          variants.each do |variant|
-            target_chain.each do |target|
-              source_chain.each do |source|
-                source_str = join_subtags(source, variant)
-                target_str = join_subtags(target, variant)
-                transform_id_str = TransformId.join(source_str, target_str)
-
-                if rule_set = get(transform_id_str)
-                  return rule_set
-                end
-              end
-            end
-          end
-        end
-
-        def join_subtags(tags, variant)
-          tags.join('_').tap do |result|
-            result << "_#{variant}" if variant
-          end
-        end
-
-        def variants_for(source_locale, target_locale)
-          (source_locale.variants + target_locale.variants + [nil]).uniq
-        end
-
-        def map_chain_for(locale)
-          CHAIN.map { |link| send(link, locale) }
-        end
-
-        def normal_fallback1(locale)
-          [locale.language, locale.script, locale.region]
-        end
-
-        def normal_fallback2(locale)
-          [locale.language, locale.script]
-        end
-
-        def normal_fallback3(locale)
-          [locale.language]
-        end
-
-        def laddered_fallback1(locale)
-          [locale.language, locale.region]
-        end
-
-        def laddered_fallback2(locale)
-          [locale.script]
         end
       end
 

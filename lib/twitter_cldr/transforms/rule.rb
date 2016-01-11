@@ -81,11 +81,6 @@ module TwitterCldr
         self.class.token_string(tokens)
       end
 
-      def can_invert?
-        raise NotImplementedError,
-          "#{__method__} must be defined in derived classes"
-      end
-
       def is_filter_rule?
         false
       end

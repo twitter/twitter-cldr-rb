@@ -50,19 +50,29 @@ module TwitterCldr
 
       def generate_test_data(transforms)
         transforms.each_with_object([]) do |transform_id_str, ret|
-          id = transform_id.parse(transform_id_str)
+          forward_id = transform_id.parse(transform_id_str)
 
-          if have_text_samples_for?(id.source)
-            samples = text_samples_for(id.source)
-            ret << {
-              id: transform_id_str,
-              samples: generate_transform_samples(id, samples)
-            }
+          [forward_id, forward_id.reverse].each do |id|
+            if id_exists?(id) && have_text_samples_for?(id.source)
+              samples = text_samples_for(id.source)
+              transformed_samples = generate_transform_samples(id, samples)
+
+              if transformed_samples
+                ret << {
+                  id: id.to_s,
+                  samples: transformed_samples
+                }
+              end
+            end
           end
         end
       end
 
       private
+
+      def id_exists?(id)
+        TwitterCldr::Transforms::Transformer.exists?(id)
+      end
 
       def generate_transform_samples(id, samples)
         trans = com.ibm.icu.text.Transliterator.getInstance(id.to_s)
@@ -73,7 +83,7 @@ module TwitterCldr
         # illegal transform id
         # this happens specifically with Serbian-Latin, although
         # that appears to be a totally valid transform id
-        {}
+        nil
       end
 
       def have_text_samples_for?(script)

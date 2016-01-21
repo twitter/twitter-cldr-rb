@@ -36,6 +36,24 @@ module TwitterCldr
           localize(locale)
       end
 
+      def downcase
+        self.class.new(
+          TwitterCldr::Shared::Caser.downcase(@base_obj), locale
+        )
+      end
+
+      def upcase
+        self.class.new(
+          TwitterCldr::Shared::Caser.upcase(@base_obj), locale
+        )
+      end
+
+      def titlecase
+        self.class.new(
+          TwitterCldr::Shared::Caser.titlecase(@base_obj), locale
+        )
+      end
+
       def each_sentence
         if block_given?
           break_iterator.each_sentence(@base_obj) do |sentence|

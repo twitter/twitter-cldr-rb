@@ -32,22 +32,4 @@ describe RuleSet do
       end
     end
   end
-
-  it 'transforms using Armenian-Latin' do
-    transformer = Transformer.get('Armenian-Latin')
-    result = transformer.transform('հեռախոսներ')
-    expect(result).to eq('herrakhosner')
-  end
-
-  it 'transforms to Armenian using the inverted Latin-Armenian rule set' do
-    transformer = Transformer.get('Latin-Armenian').invert
-    result = transformer.transform('հեռախոսներ')
-    expect(result).to eq('heṙaxosner')
-  end
-
-  it 'transforms using Armenian-Latin/BGN' do
-    transformer = Transformer.get('Armenian-Latin/BGN')
-    result = transformer.transform('հեռախոսներ')
-    expect(result).to eq('herrakhosner')
-  end
 end

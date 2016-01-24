@@ -20,6 +20,8 @@ module TwitterCldr
       class << self
         def exists?(transform_id_or_str)
           !!get(transform_id_or_str)
+        rescue
+          false
         end
 
         def get(transform_id_or_str)

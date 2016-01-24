@@ -163,8 +163,6 @@ module TwitterCldr
         direction == :bidirectional
       end
 
-      alias_method :can_invert?, :bidirectional?
-
       def forward_rule_set
         @forward_rule_set ||= begin
           RuleSet.new(
@@ -175,7 +173,7 @@ module TwitterCldr
       end
 
       def backward_rule_set
-        if can_invert?
+        if bidirectional?
           @backward_rule_set ||= forward_rule_set.invert
         else
           raise NotInvertibleError,

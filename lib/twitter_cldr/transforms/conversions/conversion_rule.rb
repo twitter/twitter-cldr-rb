@@ -62,6 +62,14 @@ module TwitterCldr
           direction == :backward
         end
 
+        def bidirectional?
+          direction == :bidirectional
+        end
+
+        def can_invert?
+          bidirectional? || backward?
+        end
+
         def is_conversion_rule?
           true
         end

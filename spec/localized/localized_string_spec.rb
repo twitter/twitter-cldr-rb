@@ -181,7 +181,7 @@ describe LocalizedString do
       end
 
       expect(str.each_sentence.to_a.map(&:to_s)).to eq([
-        "Quick.", " Brown.", " Fox."
+        "Quick. ", "Brown. ", "Fox."
       ])
     end
   end

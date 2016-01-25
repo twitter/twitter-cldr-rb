@@ -168,6 +168,26 @@ describe LocalizedString do
     end
   end
 
+  describe "#downcase" do
+    it 'lowercases the string' do
+      expect('FoObAr'.localize(:en).downcase.to_s).to eq('foobar')
+    end
+  end
+
+  describe "#upcase" do
+    it 'uppercases the string' do
+      expect('foObAr'.localize(:en).upcase.to_s).to eq('FOOBAR')
+    end
+  end
+
+  describe "#titlecase" do
+    it 'titlecases the string' do
+      expect('cats are cool'.localize(:en).titlecase.to_s).to(
+        eq('Cats Are Cool')
+      )
+    end
+  end
+
   describe "#each_sentence" do
     it "returns an enumerator if not passed a block" do
       expect("foo bar".localize.each_sentence).to be_a(Enumerator)

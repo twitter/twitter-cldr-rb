@@ -9,7 +9,7 @@ include TwitterCldr::Collation
 
 describe Collator do
 
-  let(:trie) { Trie.new }
+  let(:trie) { TwitterCldr::Utils::Trie.new }
 
   before(:each) { clear_tries_cache }
   after(:all)   { clear_tries_cache }
@@ -125,9 +125,9 @@ describe Collator do
       let(:case_first)    { :upper }
       let(:locale)        { :uk }
       let(:maximum_level) { 2 }
-      
+
       it 'passes case-first sort option to sort key builder' do
-        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
+        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { TwitterCldr::Utils::Trie.new }
         mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
 
         collator = Collator.new(locale)
@@ -138,8 +138,8 @@ describe Collator do
         expect(collator.get_sort_key(code_points)).to eq(sort_key)
       end
 
-      it 'passes maximum_level option to sort key builder' do 
-        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
+      it 'passes maximum_level option to sort key builder' do
+        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { TwitterCldr::Utils::Trie.new }
         mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
 
         collator = Collator.new(locale)

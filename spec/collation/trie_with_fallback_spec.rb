@@ -9,7 +9,7 @@ include TwitterCldr::Collation
 
 describe TrieWithFallback do
 
-  let(:fallback) { Trie.new }
+  let(:fallback) { TwitterCldr::Utils::Trie.new }
   let(:trie)     { TrieWithFallback.new(fallback) }
 
   before(:each) { trie.add([1, 2, 3], 'value') }

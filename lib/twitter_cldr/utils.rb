@@ -13,6 +13,7 @@ module TwitterCldr
     autoload :RegexpSampler,         'twitter_cldr/utils/regexp_sampler'
     autoload :ScriptDetector,        'twitter_cldr/utils/script_detector'
     autoload :ScriptDetectionResult, 'twitter_cldr/utils/script_detector'
+    autoload :Trie,                  'twitter_cldr/utils/trie'
     autoload :YAML,                  'twitter_cldr/utils/yaml'
 
     class << self

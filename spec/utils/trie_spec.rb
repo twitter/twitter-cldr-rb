@@ -5,7 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Collation
+include TwitterCldr::Utils
 
 describe Trie do
 

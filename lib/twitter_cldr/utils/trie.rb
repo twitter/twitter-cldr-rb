@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Collation
+  module Utils
 
     # This class represents a trie - a tree data structure, also known as a prefix tree.
     #

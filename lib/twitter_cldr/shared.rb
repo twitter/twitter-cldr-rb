@@ -11,6 +11,7 @@ module TwitterCldr
     autoload :Caser,                  'twitter_cldr/shared/caser'
     autoload :CodePoint,              'twitter_cldr/shared/code_point'
     autoload :Currencies,             'twitter_cldr/shared/currencies'
+    autoload :Hyphenator,             'twitter_cldr/shared/hyphenator'
     autoload :LanguageCodes,          'twitter_cldr/shared/language_codes'
     autoload :Languages,              'twitter_cldr/shared/languages'
     autoload :LikelySubtags,          'twitter_cldr/shared/likely_subtags'

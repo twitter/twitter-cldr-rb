@@ -10,6 +10,7 @@ module TwitterCldr
     autoload :CollationTriesDumper,           'twitter_cldr/resources/collation_tries_dumper'
     autoload :CurrenciesImporter,             'twitter_cldr/resources/currencies_importer'
     autoload :CustomLocalesResourcesImporter, 'twitter_cldr/resources/custom_locales_resources_importer'
+    autoload :HyphenationImporter,            'twitter_cldr/resources/hyphenation_importer'
     autoload :IcuBasedImporter,               'twitter_cldr/resources/icu_based_importer'
     autoload :LanguageCodesImporter,          'twitter_cldr/resources/language_codes_importer'
     autoload :Loader,                         'twitter_cldr/resources/loader'

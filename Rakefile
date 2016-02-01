@@ -74,7 +74,8 @@ task :update do
       "update:language_codes",
       "update:segment_exceptions",     # per locale
       "update:segment_tests",
-      "update:readme"
+      "update:readme",
+      "update:hyphenation"
     ]
   end
 
@@ -209,6 +210,15 @@ namespace :update do
     TwitterCldr::Resources::SegmentTestsImporter.new(
       './vendor/unicode-data/segments',
       './resources/shared/segments/tests'
+    ).import
+  end
+
+  desc 'Import hyphenation dictionaries'
+  task :hyphenation_dictionaries do
+    TwitterCldr::Resources::HyphenationImporter.new(
+      './vendor/hyphenation/dictionaries',
+      './resources/shared/hyphenation',
+      '0d3b5e5314e68c3cf5d573b2e7bdc11143dcb821'
     ).import
   end
 

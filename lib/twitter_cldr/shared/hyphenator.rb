@@ -117,11 +117,13 @@ module TwitterCldr
       end
 
       def left_hyphen_min
-        options.fetch(:lefthyphenmin, DEFAULT_LEFT_HYPHEN_MIN)
+        @left_hyphen_min ||=
+          options.fetch(:lefthyphenmin, DEFAULT_LEFT_HYPHEN_MIN)
       end
 
       def right_hyphen_min
-        options.fetch(:righthyphenmin, DEFAULT_RIGHT_HYPHEN_MIN)
+        @right_hyphen_min ||=
+          options.fetch(:righthyphenmin, DEFAULT_RIGHT_HYPHEN_MIN)
       end
 
       def build_trie_from(rules)

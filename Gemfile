@@ -7,6 +7,7 @@ group :development, :test do
 
   gem 'pry'
   gem 'pry-nav'
+  gem 'byebug'
 
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
 

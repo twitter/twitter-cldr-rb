@@ -75,7 +75,7 @@ module TwitterCldr
             end
 
             if idx > 0 && in_bounds?(idx, text.size)
-              yield idx if break_weights[idx] % 2 == 0
+              yield idx + 1 if break_weights[idx] % 2 == 1
             end
           end
         else
@@ -104,6 +104,7 @@ module TwitterCldr
           if segment =~ /\d/
             int_seg = segment.to_i
             idx = (start_idx + pattern_idx) - 1
+            break if idx >= break_weights.size
 
             break_weights[idx] = if break_weights[idx] > int_seg
               break_weights[idx]

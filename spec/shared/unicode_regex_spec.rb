@@ -210,6 +210,13 @@ describe UnicodeRegex do
         expect(regex).to exactly_match(",")
         expect(regex).not_to exactly_match("a")
       end
+
+      it "should treat a dash that is the first character of a character class as a literal dash instead of a range" do
+        regex = compile("[-abc]*")
+        expect(regex).to exactly_match("a-b-c")
+        expect(regex).to exactly_match("--a")
+        expect(regex).not_to exactly_match("def")
+      end
     end
   end
 end

@@ -28,9 +28,13 @@ module TwitterCldr
       private
 
       # Types that are allowed to be used in character ranges.
-      CHARACTER_CLASS_TOKEN_TYPES = [
+      RANGED_CHARACTER_CLASS_TOKEN_TYPES = [
         :variable, :character_set, :negated_character_set, :unicode_char,
         :multichar_string, :string, :escaped_character, :character_range
+      ]
+
+      CHARACTER_CLASS_TOKEN_TYPES = RANGED_CHARACTER_CLASS_TOKEN_TYPES + [
+        :open_bracket, :special_char
       ]
 
       NEGATED_TOKEN_TYPES = [
@@ -52,22 +56,14 @@ module TwitterCldr
         })
       end
 
-      # Identifies regex ranges and makes implicit operators explicit
+      # Identifies regex ranges
       def preprocess(tokens)
         result = []
         i = 0
 
         while i < tokens.size
-          # Character class entities side-by-side are treated as unions. So
-          # are side-by-side character classes. Add a special placeholder token
-          # to help out the expression parser.
-          add_union = (valid_character_class_token?(result.last) && tokens[i].type != :close_bracket) ||
-            (result.last && result.last.type == :close_bracket && tokens[i].type == :open_bracket)
-
-          result << make_token(:union) if add_union
-
-          is_range = valid_character_class_token?(tokens[i]) &&
-            valid_character_class_token?(tokens[i + 2]) &&
+          is_range = valid_ranged_character_class_token?(tokens[i]) &&
+            valid_ranged_character_class_token?(tokens[i + 2]) &&
             tokens[i + 1].type == :dash
 
           if is_range
@@ -118,6 +114,10 @@ module TwitterCldr
 
       def valid_character_class_token?(token)
         token && CHARACTER_CLASS_TOKEN_TYPES.include?(token.type)
+      end
+
+      def valid_ranged_character_class_token?(token)
+        token && RANGED_CHARACTER_CLASS_TOKEN_TYPES.include?(token.type)
       end
 
       def unary_operator?(token)
@@ -201,24 +201,9 @@ module TwitterCldr
         loop do
           case current_token.type
             when *CharacterClass.closing_types
-              last_operator = peek(operator_stack)
               open_count -= 1
-
-              until last_operator.type == CharacterClass.opening_type_for(current_token.type)
-                operator = operator_stack.pop
-
-                node = if unary_operator?(operator)
-                  unary_operator_node(operator.type, operand_stack.pop)
-                else
-                  binary_operator_node(
-                    operator.type, operand_stack.pop, operand_stack.pop
-                  )
-                end
-
-                operand_stack.push(node)
-                last_operator = peek(operator_stack)
-              end
-              operator_stack.pop
+              build_until_open(operator_stack, operand_stack)
+              add_implicit_union(operator_stack, open_count)
 
             when *CharacterClass.opening_types
               open_count += 1
@@ -228,6 +213,7 @@ module TwitterCldr
               operator_stack.push(current_token)
 
             else
+              add_implicit_union(operator_stack, open_count)
               operand_stack.push(
                 send(current_token.type, current_token)
               )
@@ -238,6 +224,53 @@ module TwitterCldr
         end
 
         CharacterClass.new(operand_stack.pop)
+      end
+
+      def build_until_open(operator_stack, operand_stack)
+        last_operator = peek(operator_stack)
+        opening_type = CharacterClass.opening_type_for(current_token.type)
+
+        until last_operator.type == opening_type
+          operator = operator_stack.pop
+          node = get_operator_node(operator, operand_stack)
+          operand_stack.push(node)
+          last_operator = peek(operator_stack)
+        end
+
+        operator_stack.pop
+      end
+
+      def get_operator_node(operator, operand_stack)
+        if operator.type == :dash && operand_stack.size < 2
+          get_non_range_dash_node(operator, operand_stack)
+        else
+          if unary_operator?(operator)
+            unary_operator_node(operator.type, operand_stack.pop)
+          else
+            binary_operator_node(
+              operator.type, operand_stack.pop, operand_stack.pop
+            )
+          end
+        end
+      end
+
+      # Most regular expression engines allow character classes
+      # to contain a literal hyphen caracter as the first character.
+      # For example, [-abc] is a legal expression. It denotes a
+      # character class that contains the letters '-', 'a', 'b',
+      # and 'c'. For example, /[-abc]*/.match('-ba') returns 0 in Ruby.
+      def get_non_range_dash_node(operator, operand_stack)
+        binary_operator_node(
+          :union, operand_stack.pop, string(make_token(:string, '-'))
+        )
+      end
+
+      def add_implicit_union(operator_stack, open_count)
+        if n = @tokens[@token_index + 1]
+          if valid_character_class_token?(n) && open_count > 0
+            operator_stack.push(make_token(:union))
+          end
+        end
       end
 
       def peek(array)

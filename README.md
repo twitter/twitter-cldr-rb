@@ -430,6 +430,43 @@ TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)
 TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
 ```
 
+### World Territories
+
+You can use the localize convenience method on territory code symbols to get their equivalents in another language:
+
+```ruby
+:gb.localize(:pt).as_territory                         # "Reino Unido"
+:cz.localize(:pt).as_territory                         # "República Tcheca"
+```
+
+Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
+
+```ruby
+ls = TwitterCldr::Localized::LocalizedSymbol.new(:gb, :pt)
+ls.as_territory  # "Reino Unido"
+```
+
+In addition to translating territory codes, TwitterCLDR provides access to the full set of supported methods via the `TwitterCldr::Shared::Territories` class:
+
+```ruby
+# get all territories for the default locale
+TwitterCldr::Shared::Territories.all                                                 # { ... :tl=>"East Timor", :tm=>"Turkmenistan" ... }
+
+# get all territories for a specific locale
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl=>"República Democrática de Timor-Leste", :tm=>"Turcomenistão" ... }
+
+# get a territory by its code for the default locale
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "U.K."
+
+# get a territory from its code for a specific locale
+TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # "Reino Unido"
+
+# translate a territory from one locale to another
+# signature: translate_territory(territory_name, source_locale, destination_locale)
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "U.K."
+TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # "Reino Unido"
+```
+
 ### Postal Codes
 
 The CLDR contains postal code validation regexes for a number of countries.

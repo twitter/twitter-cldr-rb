@@ -257,6 +257,15 @@ TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # 
 TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true), "In 1 minute").inspect %>
 ```
 
+### Calendar Data
+
+CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
+
+```ruby
+TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # <%= assert(TwitterCldr::Shared::Calendar.new(:sv).months.take(3), ["Januari", "Februari", "Mars"]).inspect %>
+```
+
+
 ### Lists
 
 TwitterCLDR supports formatting lists of strings as you might do in English by using commas, eg: "Apples, cherries, and oranges".  Use the `localize` method on an array followed by a call to `to_sentence`:

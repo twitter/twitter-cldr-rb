@@ -6,6 +6,7 @@
 require 'spec_helper'
 
 include TwitterCldr::Parsers
+include TwitterCldr::Tokenizers
 
 class FakeParser < Parser
   def do_parse(options); end
@@ -55,6 +56,21 @@ describe Parser do
     it "returns the current token" do
       parser.parse(tokens)
       expect(parser.send(:current_token).type).to eq(:a)
+    end
+  end
+
+  describe "#eof" do
+    it "should return true if all tokens have been used" do
+      parser.parse(tokens)
+      parser.send(:next_token, :a)
+      parser.send(:next_token, :b)
+      parser.send(:next_token, :c)
+      expect(parser).to be_eof
+    end
+
+    it "should return false if not all tokens have been used" do
+      parser.parse(tokens)
+      expect(parser).to_not be_eof
     end
   end
 end

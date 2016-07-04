@@ -86,7 +86,7 @@ module TwitterCldr
         property_values[property_name] = if values.length == 0
           nil
         else
-          values
+          values.uniq
         end
       end
 

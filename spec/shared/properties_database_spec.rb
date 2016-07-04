@@ -109,6 +109,21 @@ describe PropertiesDatabase do
           expect(values).to include(script)
         end
       end
+
+      it 'correctly expands value prefixes for General_Category' do
+        values = database.property_values_for('General_Category')
+        expect(values).to include('Cc')
+        expect(values).to include('C')
+
+        expect(values).to include('Lo')
+        expect(values).to include('L')
+
+        expect(values).to include('Pd')
+        expect(values).to include('P')
+
+        expect(values).to include('Sm')
+        expect(values).to include('S')
+      end
     end
 
     describe '#each_property_pair' do

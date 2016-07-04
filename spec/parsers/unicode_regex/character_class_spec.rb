@@ -117,4 +117,16 @@ describe UnicodeRegexParser::CharacterClass do
       )
     end
   end
+
+  describe "#codepoints" do
+    it "lists all the codepoints in a range" do
+      char_class = char_class_from(parse(tokenize("[a-z]")))
+      expect(char_class.codepoints).to eq((97..122).to_a)
+    end
+
+    it "lists all the codepoints in a union" do
+      char_class = char_class_from(parse(tokenize("[[abc][def]]")))
+      expect(char_class.codepoints).to eq((97..102).to_a)
+    end
+  end
 end

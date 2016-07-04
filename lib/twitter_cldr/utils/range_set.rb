@@ -177,11 +177,16 @@ module TwitterCldr
 
       def size
         ranges.inject(0) do |sum, range|
-          sum + range.size
+          sum + range_length(range)
         end
       end
 
       private
+
+      def range_length(range)
+        len = (range.last - range.first)
+        range.exclude_end? ? len : len + 1
+      end
 
       def includes_numeric?(num)
         result = bsearch do |range|

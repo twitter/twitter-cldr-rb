@@ -290,6 +290,15 @@ TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # 
 TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # "In 1 minute"
 ```
 
+### Calendar Data
+
+CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
+
+```ruby
+TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # ["Januari", "Februari", "Mars"]
+```
+
+
 ### Lists
 
 TwitterCLDR supports formatting lists of strings as you might do in English by using commas, eg: "Apples, cherries, and oranges".  Use the `localize` method on an array followed by a call to `to_sentence`:
@@ -450,10 +459,10 @@ In addition to translating territory codes, TwitterCLDR provides access to the f
 
 ```ruby
 # get all territories for the default locale
-TwitterCldr::Shared::Territories.all                                                 # { ... :tl=>"East Timor", :tm=>"Turkmenistan" ... }
+TwitterCldr::Shared::Territories.all                                                 # { ... :tl => "East Timor", :tm => "Turkmenistan" ... }
 
 # get all territories for a specific locale
-TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl=>"República Democrática de Timor-Leste", :tm=>"Turcomenistão" ... }
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "República Democrática de Timor-Leste", :tm => "Turcomenistão" ... }
 
 # get a territory by its code for the default locale
 TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "U.K."
@@ -668,7 +677,7 @@ You can break a string into sentences using the `LocalizedString#each_sentence` 
 
 ```ruby
 "The. Quick. Brown. Fox.".localize.each_sentence do |sentence|
-  puts sentence.to_s  # "The.", " Quick.", " Brown.", " Fox."
+  puts sentence.to_s  # "The. ", "Quick. ", "Brown. ", "Fox."
 end
 ```
 
@@ -676,9 +685,9 @@ Under the hood, text segmentation is performed by the `BreakIterator` class (nam
 
 ```ruby
 
-iterator = TwitterCldr::Shared::BreakIterator.new(:en)
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en)
 iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
-  puts sentence  # "The.", " Quick.", " Brown.", " Fox."
+  puts sentence  # "The. ", "Quick. ", "Brown. ", "Fox."
 end
 ```
 
@@ -686,9 +695,9 @@ To improve segmentation accuracy, a list of special segmentation exceptions have
 
 ```ruby
 
-iterator = TwitterCldr::Shared::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => false)
 iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
-  puts sentence  # "I like Ms.", " Murphy, she's nice."
+  puts sentence  # "I like Ms. ", "Murphy, she's nice."
 end
 ```
 
@@ -700,7 +709,7 @@ Retrieve data for code points:
 
 ```ruby
 
-code_point = TwitterCldr::Shared::CodePoint.find(0x1F3E9)
+code_point = TwitterCldr::Shared::CodePoint.get(0x1F3E9)
 code_point.name             # "LOVE HOTEL"
 code_point.bidi_mirrored    # "N"
 code_point.category         # "So"
@@ -901,6 +910,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2015 Twitter, Inc.
+Copyright 2016 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

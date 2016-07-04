@@ -172,6 +172,20 @@ describe UnicodeRegex do
         expect(regex).not_to exactly_match("a")
       end
 
+      it "should match a regex containing a unioned character set" do
+        regex = compile("[[:L:][:White_Space:]]*")
+        expect(regex).to exactly_match("abc")
+        expect(regex).to exactly_match("くøß")
+        expect("a b c _ d".gsub(regex.to_regexp, "")).to eq("_")
+      end
+
+      it "should match a regex containing a negated unioned character set" do
+        regex = compile("[^[:L:][:White_Space:]]*")
+        expect(regex).to exactly_match(".,/")
+        expect(regex).to_not exactly_match("a b c")
+        expect("a b c _ d".gsub(regex.to_regexp, "")).to eq("a b c  d")
+      end
+
       it "should match a regex containing a negated character set (alternate syntax)" do
         regex = compile("[[:^Zs:]]")
         expect(regex).to exactly_match("a")
@@ -209,6 +223,13 @@ describe UnicodeRegex do
         expect(regex).to exactly_match(" ")
         expect(regex).to exactly_match(",")
         expect(regex).not_to exactly_match("a")
+      end
+
+      it "should treat a dash that is the first character of a character class as a literal dash instead of a range" do
+        regex = compile("[-abc]*")
+        expect(regex).to exactly_match("a-b-c")
+        expect(regex).to exactly_match("--a")
+        expect(regex).not_to exactly_match("def")
       end
     end
   end

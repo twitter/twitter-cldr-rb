@@ -1,3 +1,14 @@
+== 3.3.0
+
+* Added `#as_territory` convenience method to LocalizedSymbol (@Anthony-Gaudino).
+* Improved documentation for world territories (@Anthony-Gaudino).
+* Fixed issues with Unicode regular expressions
+  - Unicode properties not recognized correctly
+  - Unicode properties not unioned correctly when placed side-by-side
+  - Inverted unicode properties not unioned correctly
+  - Leading dashes in character classes now treated as literals instead of as
+    denoting a range
+
 == 3.2.1
 * Fix units for Gujarati, Kannada, Marathi
 

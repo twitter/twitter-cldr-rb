@@ -44,18 +44,8 @@ module TwitterCldr
 
         def codepoints
           code_points = CodePoint.code_points_for_property(
-            property_name, property_value
+            *normalized_property
           )
-
-          %w(General_Category Script).each do |name|
-            if code_points.empty?
-              code_points = CodePoint.code_points_for_property(
-                name, property_value
-              )
-            else
-              break
-            end
-          end
 
           if code_points.empty?
             raise UnicodeRegexParserError,
@@ -64,6 +54,52 @@ module TwitterCldr
           end
 
           code_points
+        end
+
+        private
+
+        def normalized_property
+          property_value_candidates.each do |property_value|
+            prop_name, prop_value = normalized_property_name(
+              property_value, property_name_candidates
+            )
+
+            if prop_name
+              return [prop_name, prop_value]
+            end
+          end
+
+          [nil, nil]
+        end
+
+        def normalized_property_name(property_value, property_name_candidates)
+          property_name_candidates.each do |property_name|
+            prop_name, prop_value = CodePoint.properties.normalize(
+              property_name, property_value
+            )
+
+            if prop_name
+              return [prop_name, prop_value]
+            end
+          end
+
+          [nil, nil]
+        end
+
+        def property_name_candidates
+          if property_name
+            [property_name]
+          else
+            [property_value, 'General_Category', 'Script']
+          end
+        end
+
+        def property_value_candidates
+          if property_name && property_value
+            [property_value]
+          else
+            [property_value, nil].uniq
+          end
         end
 
       end

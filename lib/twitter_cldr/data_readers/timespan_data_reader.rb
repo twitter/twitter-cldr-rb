@@ -9,8 +9,8 @@ module TwitterCldr
 
       DEFAULT_DIRECTION = :none
       DEFAULT_TYPE = :default
-      VALID_UNITS = [:second, :minute, :hour, :day, :week, :month, :year]
-      BASE_PATH = [:units]
+      VALID_FIELDS = [:second, :minute, :hour, :day, :week, :month, :year]
+      BASE_PATH = [:fields]
 
       PATHS = {
         ago: {
@@ -23,6 +23,7 @@ module TwitterCldr
           month:   :'month-past',
           year:    :'year-past'
         },
+
         until: {
           default: :'hour-future',
           second:  :'second-future',
@@ -33,6 +34,7 @@ module TwitterCldr
           month:   :'month-future',
           year:    :'year-future'
         },
+
         none: {
           default: :second,
           second:  :second,
@@ -113,7 +115,7 @@ module TwitterCldr
 
         def resource_for_locale(locale)
           @resources ||= {}
-          @resources[locale] ||= TwitterCldr.get_locale_resource(locale, :units)[TwitterCldr.convert_locale(locale)]
+          @resources[locale] ||= TwitterCldr.get_locale_resource(locale, :fields)[TwitterCldr.convert_locale(locale)]
         end
       end
     end

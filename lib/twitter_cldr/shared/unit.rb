@@ -13,11 +13,11 @@ module TwitterCldr
           subtype_for(locale).new(value, locale)
         end
 
+        private
+
         def resource_for(locale)
           TwitterCldr.get_locale_resource(locale, :units)[locale][:units]
         end
-
-        private
 
         def subtype_for(locale)
           subtypes[locale] ||= begin
@@ -79,7 +79,7 @@ module TwitterCldr
       end
 
       def resource
-        @resource ||= self.class.resource_for(locale)
+        @resource ||= self.class.send(:resource_for, locale)
       end
     end
   end

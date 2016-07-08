@@ -151,7 +151,7 @@ module TwitterCldr
       protected
 
       def escape_plural_interpolation(string)
-        # escape plura interpolation patterns ()see PluralFormatter)
+        # escape plural interpolation patterns (see PluralFormatter)
         string.gsub(TwitterCldr::Formatters::PluralFormatter::PLURALIZATION_REGEXP, '%\0')
       end
 

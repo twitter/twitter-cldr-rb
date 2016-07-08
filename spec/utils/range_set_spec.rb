@@ -208,4 +208,16 @@ describe RangeSet do
       expect(set.each.to_a).to eq([5, 6, 7, 8, 9, 10])
     end
   end
+
+  describe "#size" do
+    it "returns the number of items in the set" do
+      set = RangeSet.from_array([1, 3, 5])
+      expect(set.size).to eq(3)
+    end
+
+    it "includes all elements in ranges" do
+      set = RangeSet.from_array([1, 2, 3, 5, 6, 7])
+      expect(set.size).to eq(6)
+    end
+  end
 end

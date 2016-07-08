@@ -89,7 +89,7 @@ describe PropertiesDatabase do
       it 'returns a property set for the given code point' do
         property_set = database.properties_for_code_point(65)
         expect(property_set).to be_a(PropertySet)
-        expect(property_set.general_category).to eq(Set.new(%w(Lu)))
+        expect(property_set.general_category).to eq(Set.new(%w(L Lu)))
         expect(property_set.word_break).to eq(Set.new(%w(ALetter)))
       end
     end
@@ -108,6 +108,21 @@ describe PropertiesDatabase do
         %w(Cyrillic Latin Hangul Han Bengali Tagalog Yi).each do |script|
           expect(values).to include(script)
         end
+      end
+
+      it 'correctly expands value prefixes for General_Category' do
+        values = database.property_values_for('General_Category')
+        expect(values).to include('Cc')
+        expect(values).to include('C')
+
+        expect(values).to include('Lo')
+        expect(values).to include('L')
+
+        expect(values).to include('Pd')
+        expect(values).to include('P')
+
+        expect(values).to include('Sm')
+        expect(values).to include('S')
       end
     end
 

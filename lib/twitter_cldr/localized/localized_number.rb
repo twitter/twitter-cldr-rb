@@ -55,7 +55,11 @@ module TwitterCldr
         @rbnf ||= TwitterCldr::Formatters::Rbnf::RbnfFormatter.new(locale)
       end
 
-      protected
+      def to_unit
+        TwitterCldr::Shared::Unit.create(base_obj, locale)
+      end
+
+      private
 
       def to_type(target_type)
         self.class.new(base_obj, locale, {

@@ -86,6 +86,31 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 1337123.localize.to_long_decimal.to_s   # <%= assert(1337123.localize.to_long_decimal.to_s, "1 million").inspect %>
 ```
 
+### Units
+
+TwitterCLDR supports formatting numbers with an attached unit, for example "12 degrees Celsius". It's easy to make use of this functionality via the `#to_unit` method:
+
+```ruby
+12.localize.to_unit.length_mile  # <%= assert(12.localize.to_unit.length_mile, "12 miles").inspect %>
+12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 миль").inspect %>
+```
+Units support a few different forms, long, short, and narrow:
+
+```ruby
+12.localize.to_unit.mass_kilogram(form: :short)  # <%= assert(12.localize.to_unit.mass_kilogram(form: :short), "12 kg").inspect %>
+```
+
+To get a list of all available unit types, use the `#unit_types` method:
+
+```ruby
+unit = 12.localize.to_unit
+unit.unit_types  # => [:length_mile, :temperature_celsius, :mass_kilogram, ...]
+```
+
+<% assert(12.localize.to_unit.unit_types.include?(:length_mile), true) %>
+<% assert(12.localize.to_unit.unit_types.include?(:temperature_celsius), true) %>
+<% assert(12.localize.to_unit.unit_types.include?(:mass_kilogram), true) %>
+
 ### Number Spellout, Ordinalization, and More
 
 TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.
@@ -257,6 +282,15 @@ TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # 
 TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true), "In 1 minute").inspect %>
 ```
 
+### Calendar Data
+
+CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
+
+```ruby
+TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # <%= assert(TwitterCldr::Shared::Calendar.new(:sv).months.take(3), ["Januari", "Februari", "Mars"]).inspect %>
+```
+
+
 ### Lists
 
 TwitterCLDR supports formatting lists of strings as you might do in English by using commas, eg: "Apples, cherries, and oranges".  Use the `localize` method on an array followed by a call to `to_sentence`:
@@ -395,6 +429,43 @@ TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)            
 # signature: translate_language(lang, source_locale, destination_locale)
 TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # <%= assert(TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en), "Traditional Chinese").inspect %>
 TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # <%= assert(TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es), "chino tradicional").inspect %>
+```
+
+### World Territories
+
+You can use the localize convenience method on territory code symbols to get their equivalents in another language:
+
+```ruby
+:gb.localize(:pt).as_territory                         # <%= assert(:gb.localize(:pt).as_territory, "Reino Unido").inspect %>
+:cz.localize(:pt).as_territory                         # <%= assert(:cz.localize(:pt).as_territory, "República Tcheca").inspect %>
+```
+
+Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
+
+```ruby
+ls = TwitterCldr::Localized::LocalizedSymbol.new(:gb, :pt)
+ls.as_territory  # <%= assert(TwitterCldr::Localized::LocalizedSymbol.new(:gb, :pt).as_territory, "Reino Unido").inspect %>
+```
+
+In addition to translating territory codes, TwitterCLDR provides access to the full set of supported methods via the `TwitterCldr::Shared::Territories` class:
+
+```ruby
+# get all territories for the default locale
+TwitterCldr::Shared::Territories.all                                                 # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all, [:tl, :tm]), { :tl=>"East Timor", :tm=>"Turkmenistan" })) %>
+
+# get all territories for a specific locale
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all_for(:pt), [:tl, :tm]), { :tl=>"República Democrática de Timor-Leste", :tm=>"Turcomenistão" })) %>
+
+# get a territory by its code for the default locale
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # <%= assert(TwitterCldr::Shared::Territories.from_territory_code(:'gb'), "U.K.").inspect %>
+
+# get a territory from its code for a specific locale
+TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # <%= assert(TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt), "Reino Unido").inspect %>
+
+# translate a territory from one locale to another
+# signature: translate_territory(territory_name, source_locale, destination_locale)
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # <%= assert(TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en), "U.K.").inspect %>
+TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # <%= assert(TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt), "Reino Unido").inspect %>
 ```
 
 ### Postal Codes

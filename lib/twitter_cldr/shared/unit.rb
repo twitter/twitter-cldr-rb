@@ -15,6 +15,10 @@ module TwitterCldr
 
         private
 
+        def reader_for(locale)
+          readers[locale] ||= TwitterCldr::DataReaders::NumberDataReader.new(locale)
+        end
+
         def resource_for(locale)
           TwitterCldr.get_locale_resource(locale, :units)[locale][:units]
         end
@@ -24,7 +28,7 @@ module TwitterCldr
             klass = Class.new(Unit)
 
             all_unit_types_for(locale).each do |unit_type|
-              method_name = unit_type.to_s.gsub('-', '_')
+              method_name = unit_type_to_method_name(unit_type)
               klass.send(:define_method, method_name) do |*args|
                 format(unit_type, *args)
               end
@@ -34,17 +38,41 @@ module TwitterCldr
           end
         end
 
+        def all_unit_types_for(locale)
+          unit_types[locale] ||= begin
+            resource = resource_for(locale)
+            lengths = resource[:unitLength].keys
+
+            lengths.each_with_object(Set.new) do |length, ret|
+              ret.merge(resource[:unitLength][length].keys)
+            end
+          end
+        end
+
+        def all_unit_methods_for(locale)
+          unit_methods[locale] ||= all_unit_types_for(locale).map do |unit_type|
+            unit_type_to_method_name(unit_type).to_sym
+          end
+        end
+
+        def unit_type_to_method_name(unit_type)
+          unit_type.to_s.gsub('-', '_')
+        end
+
         def subtypes
           @subtypes ||= {}
         end
 
-        def all_unit_types_for(locale)
-          resource = resource_for(locale)
-          lengths = resource[:unitLength].keys
+        def unit_types
+          @unit_types ||= {}
+        end
 
-          lengths.each_with_object(Set.new) do |length, ret|
-            ret.merge(resource[:unitLength][length].keys)
-          end
+        def unit_methods
+          @unit_methods ||= {}
+        end
+
+        def readers
+          @readers ||= {}
         end
       end
 
@@ -57,13 +85,25 @@ module TwitterCldr
         @locale = locale
       end
 
+      def unit_types
+        self.class.send(:all_unit_methods_for, locale)
+      end
+
       private
 
       def format(unit_type, options = {})
         form = options.fetch(:form, DEFAULT_FORM)
 
         if variant = variant_for(form, unit_type)
-          variant.sub('{0}', value.to_s)
+          variant.sub('{0}', formatted_value)
+        end
+      end
+
+      def formatted_value
+        if value.is_a?(Numeric)
+          self.class.send(:reader_for, locale).format_number(value)
+        else
+          value
         end
       end
 

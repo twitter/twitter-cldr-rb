@@ -16,8 +16,26 @@ describe Unit do
     end
   end
 
+  describe '#unit_types' do
+    let(:unit) { Unit.create(42, :en) }
+
+    it 'lists all possible unit types' do
+      expect(unit.unit_types).to include(:mass_kilogram)
+      expect(unit.unit_types).to include(:length_mile)
+      expect(unit.unit_types).to include(:temperature_celsius)
+    end
+  end
+
   describe 'en' do
     let(:locale) { :en }
+
+    it 'uses number formatting rules when appropriate' do
+      expect(Unit.create(1234, locale).volume_liter).to eq('1,234 liters')
+    end
+
+    it 'does not format numbers if given a string' do
+      expect(Unit.create('1234', locale).volume_liter).to eq('1234 liters')
+    end
 
     describe 'long form' do
       describe '#length_mile' do
@@ -95,6 +113,14 @@ describe Unit do
 
   describe 'ru' do
     let(:locale) { :ru }
+
+    it 'uses number formatting rules when appropriate' do
+      expect(Unit.create(1234, locale).volume_liter).to eq('1 234 литра')
+    end
+
+    it 'does not format numbers if given a string' do
+      expect(Unit.create('1234', locale).volume_liter).to eq('1234 литра')
+    end
 
     describe 'long form' do
       describe '#length_mile' do
@@ -181,6 +207,14 @@ describe Unit do
 
   describe 'ko' do
     let(:locale) { :ko }
+
+    it 'uses number formatting rules when appropriate' do
+      expect(Unit.create(1234, locale).volume_liter).to eq('1,234리터')
+    end
+
+    it 'does not format numbers if given a string' do
+      expect(Unit.create('1234', locale).volume_liter).to eq('1234리터')
+    end
 
     describe 'long form' do
       describe '#length_mile' do

@@ -31,5 +31,6 @@ module TwitterCldr
     autoload :TerritoriesContainment, 'twitter_cldr/shared/territories_containment'
     autoload :Territory,              'twitter_cldr/shared/territory'
     autoload :UnicodeRegex,           'twitter_cldr/shared/unicode_regex'
+    autoload :Unit,                   'twitter_cldr/shared/unit'
   end
 end

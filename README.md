@@ -86,6 +86,31 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 1337123.localize.to_long_decimal.to_s   # "1 million"
 ```
 
+### Units
+
+TwitterCLDR supports formatting numbers with an attached unit, for example "12 degrees Celsius". It's easy to make use of this functionality via the `#to_unit` method:
+
+```ruby
+12.localize.to_unit.length_mile  # "12 miles"
+12.localize(:ru).to_unit.length_mile  # "12 миль"
+```
+Units support a few different forms, long, short, and narrow:
+
+```ruby
+12.localize.to_unit.mass_kilogram(form: :short)  # "12 kg"
+```
+
+To get a list of all available unit types, use the `#unit_types` method:
+
+```ruby
+unit = 12.localize.to_unit
+unit.unit_types  # => [:length_mile, :temperature_celsius, :mass_kilogram, ...]
+```
+
+
+
+
+
 ### Number Spellout, Ordinalization, and More
 
 TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.
@@ -523,7 +548,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["79220", "97037-1396", "41756", "07232-5538", "99181-2266"]
+postal_code.sample(5)  # ["04937-1403", "24033-3284", "40707-3618", "56564", "53993"]
 ```
 
 ### Phone Codes

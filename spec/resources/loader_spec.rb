@@ -117,16 +117,16 @@ describe Loader do
       expect(types).to be_a(Array)
       expect(types).to include(:calendars)
       expect(types).to include(:numbers)
-      expect(types).to include(:units)
+      expect(types).to include(:fields)
     end
   end
 
   describe '#preload_resources_for_locale' do
     it 'loads potentially multiple resources into the cache' do
-      loader.preload_resources_for_locale(:ar, :calendars, :units)
+      loader.preload_resources_for_locale(:ar, :calendars, :fields)
       expect(loader.locale_resource_loaded?(:ar, :calendars)).to be_true
-      expect(loader.locale_resource_loaded?(:ar, :units)).to be_true
-      expect(loader.locale_resource_loaded?(:en, :units)).to be_false
+      expect(loader.locale_resource_loaded?(:ar, :fields)).to be_true
+      expect(loader.locale_resource_loaded?(:en, :fields)).to be_false
     end
 
     it 'loads all resources for the locale if the :all resource type is specified' do

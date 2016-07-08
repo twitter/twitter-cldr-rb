@@ -86,6 +86,31 @@ In addition to formatting regular decimals, TwitterCLDR supports short and long 
 1337123.localize.to_long_decimal.to_s   # <%= assert(1337123.localize.to_long_decimal.to_s, "1 million").inspect %>
 ```
 
+### Units
+
+TwitterCLDR supports formatting numbers with an attached unit, for example "12 degrees Celsius". It's easy to make use of this functionality via the `#to_unit` method:
+
+```ruby
+12.localize.to_unit.length_mile  # <%= assert(12.localize.to_unit.length_mile, "12 miles").inspect %>
+12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 миль").inspect %>
+```
+Units support a few different forms, long, short, and narrow:
+
+```ruby
+12.localize.to_unit.mass_kilogram(form: :short)  # <%= assert(12.localize.to_unit.mass_kilogram(form: :short), "12 kg").inspect %>
+```
+
+To get a list of all available unit types, use the `#unit_types` method:
+
+```ruby
+unit = 12.localize.to_unit
+unit.unit_types  # => [:length_mile, :temperature_celsius, :mass_kilogram, ...]
+```
+
+<% assert(12.localize.to_unit.unit_types.include?(:length_mile), true) %>
+<% assert(12.localize.to_unit.unit_types.include?(:temperature_celsius), true) %>
+<% assert(12.localize.to_unit.unit_types.include?(:mass_kilogram), true) %>
+
 ### Number Spellout, Ordinalization, and More
 
 TwitterCLDR's rule-based number formatters are capable of transforming integers into their written equivalents. Note that rule-based formatting of decimal numbers is currently not supported for languages other than English.

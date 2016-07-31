@@ -18,7 +18,7 @@ group :development do
 
   gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
   gem 'i18n', '~> 0.6.11'
-  gem 'cldr-plurals', '~> 1.0.0'
+  gem 'cldr-plurals', '~> 1.0'
 
   gem 'rest-client', '~> 1.8'
 end

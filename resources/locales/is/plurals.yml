@@ -2,8 +2,8 @@
 :is:
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((t == 0 && i
-      % 10 == 1) && i % 100 != 11) || t != 0) ? :one : :other) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((((t == 0) &&
+      (i % 10 == 1))) && (i % 100 != 11))) || (t != 0)) ? :one : :other) }'
     :names:
     - :one
     - :other

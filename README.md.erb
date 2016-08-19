@@ -177,7 +177,7 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)").inspect %>
 DateTime.now.localize(:es).to_long_s               # <%= assert(datetime.localize(:es).to_long_s, "14 de febrero de 2014, 12:20:05 UTC").inspect %>
-DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 de feb. de 2014 12:20:05").inspect %>
+DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 feb. 2014 12:20:05").inspect %>
 DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14 12:20").inspect %>
 
 Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (UTC +00:00)").inspect %>
@@ -187,7 +187,7 @@ Time.now.localize(:es).to_short_s                  # <%= assert(time.localize(:e
 
 DateTime.now.localize(:es).to_date.to_full_s       # <%= assert(datetime.localize(:es).to_date.to_full_s, "viernes, 14 de febrero de 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_long_s       # <%= assert(datetime.localize(:es).to_date.to_long_s, "14 de febrero de 2014").inspect %>
-DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14 de feb. de 2014").inspect %>
+DateTime.now.localize(:es).to_date.to_medium_s     # <%= assert(datetime.localize(:es).to_date.to_medium_s, "14 feb. 2014").inspect %>
 DateTime.now.localize(:es).to_date.to_short_s      # <%= assert(datetime.localize(:es).to_date.to_short_s, "14/2/14").inspect %>
 ```
 
@@ -287,7 +287,7 @@ TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # 
 CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
 
 ```ruby
-TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # <%= assert(TwitterCldr::Shared::Calendar.new(:sv).months.take(3), ["Januari", "Februari", "Mars"]).inspect %>
+TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # <%= assert(TwitterCldr::Shared::Calendar.new(:sv).months.take(3), ["januari", "februari", "mars"]).inspect %>
 ```
 
 
@@ -457,15 +457,15 @@ TwitterCldr::Shared::Territories.all                                            
 TwitterCldr::Shared::Territories.all_for(:pt)                                        # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all_for(:pt), [:tl, :tm]), { :tl=>"República Democrática de Timor-Leste", :tm=>"Turcomenistão" })) %>
 
 # get a territory by its code for the default locale
-TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # <%= assert(TwitterCldr::Shared::Territories.from_territory_code(:'gb'), "U.K.").inspect %>
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # <%= assert(TwitterCldr::Shared::Territories.from_territory_code(:'gb'), "UK").inspect %>
 
 # get a territory from its code for a specific locale
 TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # <%= assert(TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt), "Reino Unido").inspect %>
 
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
-TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # <%= assert(TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en), "U.K.").inspect %>
-TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # <%= assert(TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt), "Reino Unido").inspect %>
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # <%= assert(TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en), "UK").inspect %>
+TwitterCldr::Shared::Territories.translate_territory("UK", :en, :pt)               # <%= assert(TwitterCldr::Shared::Territories.translate_territory("UK", :en, :pt), "Reino Unido").inspect %>
 ```
 
 ### Postal Codes

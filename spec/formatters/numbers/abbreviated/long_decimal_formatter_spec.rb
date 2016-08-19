@@ -94,12 +94,4 @@ describe LongDecimalFormatter do
       expect(format_number(1_000_000)).to match_normalized("100만") # not "1 million"
     end
   end
-
-  context 'with BE locale' do
-    let(:locale) { :be }
-
-    it 'handles redirects' do
-      expect(format_number(1_000_000)).to match_normalized("1M")
-    end
-  end
 end

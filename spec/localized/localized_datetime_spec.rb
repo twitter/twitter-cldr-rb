@@ -108,7 +108,7 @@ describe LocalizedDateTime do
     end
 
     it "should unescape multiple groups" do
-      expect(date_time.localize(:es).to_additional_s("yMMMd")).to eq("20 de sept. de 1987")
+      expect(date_time.localize(:es).to_additional_s("yMMMMd")).to eq("20 de septiembre de 1987")
     end
   end
 

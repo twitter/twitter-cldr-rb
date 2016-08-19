@@ -41,7 +41,7 @@ describe ListFormatter do
       it "formats Spanish lists correctly using various types" do
         expect(@formatter.format(list)).to eq("larry, curly y moe")
         expect(@formatter.format(list, :unit)).to eq("larry, curly y moe")
-        expect(@formatter.format(list, :"unit-narrow")).to eq("larry, curly, moe")
+        expect(@formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
       end
     end
   end

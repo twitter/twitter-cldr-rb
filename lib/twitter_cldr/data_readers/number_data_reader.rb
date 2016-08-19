@@ -55,6 +55,8 @@ module TwitterCldr
         precision = options[:precision] || 0
         pattern_for_number = pattern(number, precision == 0)
 
+        options[:locale] = self.locale
+
         if pattern_for_number == '0'
           # there's no specific formatting for the number in the current locale
           number.to_s

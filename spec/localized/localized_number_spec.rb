@@ -112,6 +112,12 @@ describe LocalizedNumber do
       it 'should not overwrite precision when explicitly passed' do
         expect(number.to_s(precision: 1)).to eq("$10.0")
       end
+
+      let(:number) { LocalizedNumber.new(10, :"en-AU", type: :currency) }
+
+      it "it should respect number's locale when picking currency symbol" do
+        expect(number.to_s(currency: "USD", use_cldr_symbol: true)).to eq("USD10.00")
+      end
     end
 
     context 'percentages' do

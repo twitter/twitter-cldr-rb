@@ -18,18 +18,23 @@
         :H: H時
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "H:mm:ss v"
+        :Hmv: "H:mm v"
         :M: M月
         :MEEEEd: M/dEEEE
         :MEd: M/d(E)
         :MMM: M月
         :MMMEEEEd: M月d日EEEE
         :MMMEd: M月d日(E)
+        :MMMMd: M月d日
         :MMMd: M月d日
         :Md: M/d
         :d: d日
         :h: aK時
         :hm: "aK:mm"
         :hms: "aK:mm:ss"
+        :hmsv: "aK:mm:ss v"
+        :hmv: "aK:mm v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : y年
@@ -40,6 +45,7 @@
         :yMMM: y年M月
         :yMMMEEEEd: y年M月d日EEEE
         :yMMMEd: y年M月d日(E)
+        :yMMMM: y年M月
         :yMMMd: y年M月d日
         :yMd: y/M/d
         :yQQQ: y/QQQ
@@ -261,16 +267,67 @@
             9: 9月
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
+          :abbreviated: 
+            :afternoon1: 昼
             :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
+            :noon: 正午
+            :pm: 午後
+          :narrow: 
+            :afternoon1: 昼
+            :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
             :noon: 正午
             :pm: 午後
           :wide: 
+            :afternoon1: 昼
             :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
             :noon: 正午
             :pm: 午後
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: 昼
+            :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
+            :noon: 正午
+            :pm: 午後
+          :narrow: 
+            :afternoon1: 昼
+            :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
+            :noon: 正午
+            :pm: 午後
+          :wide: 
+            :afternoon1: 昼
+            :am: 午前
+            :evening1: 夕方
+            :midnight: 真夜中
+            :morning1: 朝
+            :night1: 夜
+            :night2: 夜中
+            :noon: 正午
+            :pm: 午後
       :quarters: 
         :format: 
           :abbreviated: 

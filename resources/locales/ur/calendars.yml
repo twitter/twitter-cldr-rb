@@ -16,16 +16,21 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E، d/M"
         :MMM: LLL
         :MMMEd: "E، d MMM"
+        :MMMMd: "MMMM d"
         :MMMd: "d MMM"
         :Md: d/M
         :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -33,6 +38,7 @@
         :yMEd: "E، d/M/y"
         :yMMM: "MMM y"
         :yMMMEd: "E، d MMM، y"
+        :yMMMM: "y MMMM"
         :yMMMd: "d MMM، y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
@@ -106,11 +112,11 @@
             :wed: بدھ
       :eras: 
         :abbr: 
-          0: "ق م"
-          1: CE
+          0: "قبل مسیح"
+          1: عیسوی
         :name: 
           0: "قبل مسیح"
-          1: CE
+          1: عیسوی
         :narrow: 
           0: ""
       :fields: 
@@ -126,7 +132,7 @@
         :minute-narrow: منٹ
         :minute-short: منٹ
         :month: مہینہ
-        :month-narrow: مہ
+        :month-narrow: ماہ
         :month-short: ماہ
         :quarter: "سہ ماہی"
         :quarter-narrow: "سہ ماہی"
@@ -254,17 +260,60 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: "قبل دوپہر"
-            :pm: "بعد دوپہر"
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
+            :am: AM
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
+            :pm: PM
           :narrow: 
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
             :am: a
-            :noon: "n"
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
             :pm: p
           :wide: 
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
             :am: "قبل دوپہر"
-            :noon: دوپہر
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
             :pm: "بعد دوپہر"
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
+            :am: AM
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
+            :pm: PM
+          :narrow: 
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
+            :am: a
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
+            :pm: p
+          :wide: 
+            :afternoon1: دوپہر
+            :afternoon2: "سہ پہر"
+            :am: AM
+            :evening1: شام
+            :midnight: "آدھی رات"
+            :morning1: صبح
+            :night1: رات
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

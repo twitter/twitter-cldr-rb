@@ -26,8 +26,11 @@
                 :rule: "menos >>;"
                 :value: "-x"
               - 
-                :rule: "<< coma >>;"
+                :rule: "<< punto >>;"
                 :value: x.x
+              - 
+                :rule: "<< coma >>;"
+                :value: "x,x"
               - 
                 :rule: cero;
                 :value: 0
@@ -185,8 +188,11 @@
                 :rule: "menos >>;"
                 :value: "-x"
               - 
-                :rule: "<< coma >>;"
+                :rule: "<< punto >>;"
                 :value: x.x
+              - 
+                :rule: "<< coma >>;"
+                :value: "x,x"
               - 
                 :rule: cero;
                 :value: 0
@@ -281,8 +287,11 @@
                 :rule: "menos >>;"
                 :value: "-x"
               - 
-                :rule: "<< coma >>;"
+                :rule: "<< punto >>;"
                 :value: x.x
+              - 
+                :rule: "<< coma >>;"
+                :value: "x,x"
               - 
                 :rule: cero;
                 :value: 0
@@ -422,6 +431,12 @@
                 :rule: decimo>>;
                 :value: 13
               - 
+                :rule: decim>>;
+                :value: 18
+              - 
+                :rule: decimo>>;
+                :value: 19
+              - 
                 :rule: "vigésimo[ >>];"
                 :value: 20
               - 
@@ -554,14 +569,14 @@
                 :rule: décimo;
                 :value: 10
               - 
-                :rule: undécimo;
+                :rule: decimo>>;
                 :value: 11
               - 
-                :rule: duodécimo;
-                :value: 12
+                :rule: decim>>;
+                :value: 18
               - 
                 :rule: decimo>>;
-                :value: 13
+                :value: 19
               - 
                 :rule: "vigésimo[ >>];"
                 :value: 20
@@ -695,14 +710,14 @@
                 :rule: décima;
                 :value: 10
               - 
-                :rule: undécima;
+                :rule: decimo>>;
                 :value: 11
               - 
-                :rule: duodécima;
-                :value: 12
+                :rule: decim>>;
+                :value: 18
               - 
                 :rule: decimo>>;
-                :value: 13
+                :value: 19
               - 
                 :rule: "vigésima[ >>];"
                 :value: 20
@@ -810,7 +825,7 @@
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-mascabbrev=;"
+                :rule: "=#,##0=.=%%dord-mascabbrev=;"
                 :value: 0
             :type: digits-ordinal-masculine-adjective
           - 
@@ -819,7 +834,7 @@
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0=º;"
+                :rule: "=#,##0=.º;"
                 :value: 0
             :type: digits-ordinal-masculine
           - 
@@ -828,7 +843,7 @@
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0=ª;"
+                :rule: "=#,##0=.ª;"
                 :value: 0
             :type: digits-ordinal-feminine
           - 

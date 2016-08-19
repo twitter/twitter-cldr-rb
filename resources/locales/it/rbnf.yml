@@ -176,9 +176,6 @@
               - 
                 :rule: i­nove;
                 :value: 9
-              - 
-                :rule: ERROR;
-                :value: 10
             :type: msco-with-i
           - 
             :access: private
@@ -204,9 +201,6 @@
               - 
                 :rule: a­nove;
                 :value: 9
-              - 
-                :rule: ERROR;
-                :value: 10
             :type: msco-with-a
           - 
             :access: private
@@ -381,11 +375,8 @@
             :access: private
             :rules: 
               - 
-                :rule: ERROR;
-                :value: 0
-              - 
                 :rule: =%spellout-cardinal-masculine=;
-                :value: 2
+                :value: 0
               - 
                 :rule: vent>%%msc-with-i-nofinal>;
                 :value: 20
@@ -416,9 +407,6 @@
               - 
                 :rule: <<­cent>%%msc-with-o-nofinal>;
                 :value: 200
-              - 
-                :rule: ERROR;
-                :value: 1000
             :type: msc-no-final
           - 
             :access: private
@@ -690,7 +678,7 @@
                 :rule: milione­>%%ordinal-esimo>;
                 :value: 1000000
               - 
-                :rule: <%spellout-cardinal-masculine<milion­>%%ordinal-esimo>;
+                :rule: <%spellout-cardinal-masculine<milione­>%%ordinal-esimo>;
                 :value: 2000000
               - 
                 :rule: miliard­>%%ordinal-esimo-with-o>;
@@ -973,7 +961,7 @@
                 :rule: milione­>%%ordinal-esima>;
                 :value: 1000000
               - 
-                :rule: <%spellout-cardinal-feminine<milion­>%%ordinal-esima>;
+                :rule: <%spellout-cardinal-feminine<milione­>%%ordinal-esima>;
                 :value: 2000000
               - 
                 :rule: miliard­>%%ordinal-esima-with-o>;

@@ -183,6 +183,9 @@
         :id: 22.04
         :value: " $NU × $IN "
       - 
+        :id: 22.05
+        :value: " $EX × $IN "
+      - 
         :id: 23.01
         :value: " $ID × $PO "
       - 
@@ -511,7 +514,7 @@
         :value: " $ATerm × $Numeric "
       - 
         :id: 7
-        :value: " $Upper $ATerm × $Upper "
+        :value: " ($Upper | $Lower) $ATerm × $Upper "
       - 
         :id: 8
         :value: " $ATerm $Close* $Sp* × $NotPreLower_* $Lower "

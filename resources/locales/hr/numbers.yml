@@ -6,6 +6,67 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0000¤
+              :one: 0000¤
+              :other: 0000¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 tis'.' ¤
+              :one: 00 tis'.' ¤
+              :other: 00 tis'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 tis'.' ¤
+              :one: 000 tis'.' ¤
+              :other: 000 tis'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 mil'.' ¤
+              :one: 0 mil'.' ¤
+              :other: 0 mil'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 mil'.' ¤
+              :one: 00 mil'.' ¤
+              :other: 00 mil'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 mil'.' ¤
+              :one: 000 mil'.' ¤
+              :other: 000 mil'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 mlr'.' ¤
+              :one: 0 mlr'.' ¤
+              :other: 0 mlr'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 mlr'.' ¤
+              :one: 00 mlr'.' ¤
+              :other: 00 mlr'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 mlr'.' ¤
+              :one: 000 mlr'.' ¤
+              :other: 000 mlr'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 bil'.' ¤
+              :one: 0 bil'.' ¤
+              :other: 0 bil'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 bil'.' ¤
+              :one: 00 bil'.' ¤
+              :other: 00 bil'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 bil'.' ¤
+              :one: 000 bil'.' ¤
+              :other: 000 bil'.' ¤
         :unit: 
           :few: "{0} {1}"
           :one: "{0} {1}"

@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "¤ #,##,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤ 0 ہزار
+              :other: ¤ 0 ہزار
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤ 00 ہزار
+              :other: ¤ 00 ہزار
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤ 0 لاکھ
+              :other: ¤ 0 لاکھ
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤ 00 لاکھ
+              :other: ¤ 00 لاکھ
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤ 0 کروڑ
+              :other: ¤ 0 کروڑ
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤ 00 کروڑ
+              :other: ¤ 00 کروڑ
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤ 0 ارب
+              :other: ¤ 0 ارب
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤ 00 ارب
+              :other: ¤ 00 ارب
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤ 0 کھرب
+              :other: ¤ 0 کھرب
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤0 ٹریلین
+              :other: ¤0 ٹریلین
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤ 00 ٹریلین
+              :other: ¤ 00 ٹریلین
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤ 000 ٹریلین
+              :other: ¤ 000 ٹریلین
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"

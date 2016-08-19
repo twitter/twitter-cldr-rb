@@ -6,10 +6,71 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 mii ¤
+              :one: 0 mie ¤
+              :other: 0 mii ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 mii ¤
+              :one: 00 mii ¤
+              :other: 00 mii ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 mii ¤
+              :one: 000 mii ¤
+              :other: 000 mii ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 mil'.' ¤
+              :one: 0 mil'.' ¤
+              :other: 0 mil'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 mil'.' ¤
+              :one: 00 mil'.' ¤
+              :other: 00 mil'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 mil'.' ¤
+              :one: 000 mil'.' ¤
+              :other: 000 mil'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 mld'.' ¤
+              :one: 0 mld'.' ¤
+              :other: 0 mld'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 mld'.' ¤
+              :one: 00 mld'.' ¤
+              :other: 00 mld'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 mld'.' ¤
+              :one: 000 mld'.' ¤
+              :other: 000 mld'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 tril'.' ¤
+              :one: 0 tril'.' ¤
+              :other: 0 tril'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 tril'.' ¤
+              :one: 00 tril'.' ¤
+              :other: 00 tril'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 tril'.' ¤
+              :one: 000 tril'.' ¤
+              :other: 000 tril'.' ¤
         :unit: 
           :few: "{0} {1}"
           :one: "{0} {1}"
-          :other: "{0} {1}"
+          :other: "{0} de {1}"
       :decimal: 
         :number_system: latn
         :patterns: 

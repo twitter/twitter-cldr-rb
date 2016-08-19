@@ -23,7 +23,7 @@
                 :rule: "minus >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -131,11 +131,29 @@
           - 
             :rules: 
               - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: infinity;
+                :value: Inf
+              - 
+                :rule: "not a number;"
+                :value: NaN
+              - 
                 :rule: =%spellout-cardinal=;
                 :value: 0
             :type: spellout-numbering
           - 
             :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: infinity;
+                :value: Inf
+              - 
+                :rule: "not a number;"
+                :value: NaN
               - 
                 :rule: =%spellout-cardinal-verbose=;
                 :value: 0
@@ -148,6 +166,12 @@
               - 
                 :rule: "<< point >>;"
                 :value: x.x
+              - 
+                :rule: infinite;
+                :value: Inf
+              - 
+                :rule: "not a number;"
+                :value: NaN
               - 
                 :rule: zero;
                 :value: 0
@@ -289,6 +313,12 @@
                 :rule: "<< point >>;"
                 :value: x.x
               - 
+                :rule: infinite;
+                :value: Inf
+              - 
+                :rule: "not a number;"
+                :value: NaN
+              - 
                 :rule: =%spellout-numbering=;
                 :value: 0
               - 
@@ -345,6 +375,9 @@
               - 
                 :rule: "=#,##0.#=;"
                 :value: x.x
+              - 
+                :rule: infinitieth;
+                :value: Inf
               - 
                 :rule: zeroth;
                 :value: 0
@@ -473,6 +506,9 @@
               - 
                 :rule: "=#,##0.#=;"
                 :value: x.x
+              - 
+                :rule: infinitieth;
+                :value: Inf
               - 
                 :rule: =%spellout-ordinal=;
                 :value: 0

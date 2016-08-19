@@ -17,7 +17,7 @@
                 :value: 0
               - 
                 :radix: 100
-                :rule: "<<­hundre[­og­>>];"
+                :rule: "<<­hundre[ og >>];"
                 :value: 1100
               - 
                 :rule: =%spellout-numbering=;
@@ -26,9 +26,15 @@
           - 
             :rules: 
               - 
-                :rule: =%spellout-cardinal-reale=;
+                :rule: =%%spellout-cardinal-reale=;
                 :value: 0
             :type: spellout-numbering
+          - 
+            :rules: 
+              - 
+                :rule: =%%spellout-cardinal-reale=;
+                :value: 0
+            :type: spellout-cardinal-masculine
           - 
             :rules: 
               - 
@@ -41,25 +47,154 @@
                 :rule: null;
                 :value: 0
               - 
-                :rule: et;
+                :rule: ei;
                 :value: 1
               - 
-                :rule: =%spellout-cardinal-reale=;
+                :rule: =%%spellout-cardinal-reale=;
                 :value: 2
-            :type: spellout-cardinal-neuter
-          - 
-            :rules: 
               - 
-                :rule: =%spellout-cardinal-reale=;
-                :value: 0
-            :type: spellout-cardinal-masculine
-          - 
-            :rules: 
+                :rule: "hundre[ og >>];"
+                :value: 100
               - 
-                :rule: =%spellout-cardinal-reale=;
-                :value: 0
+                :rule: "<%spellout-cardinal-neuter< hundre[ og >>];"
+                :value: 200
+              - 
+                :rule: "tusen[ >%%and-small-f>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-neuter< tusen[ >%%and-small-f>];"
+                :value: 2000
+              - 
+                :rule: "én million[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< millioner[ >>];"
+                :value: 2000000
+              - 
+                :rule: "én milliard[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliarder[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "én billion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billioner[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiarder[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
             :type: spellout-cardinal-feminine
           - 
+            :access: private
+            :rules: 
+              - 
+                :rule: "og =%spellout-cardinal-feminine=;"
+                :value: 0
+              - 
+                :rule: =%spellout-cardinal-feminine=;
+                :value: 100
+            :type: and-small-f
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< komma >>;"
+                :value: x.x
+              - 
+                :rule: null;
+                :value: 0
+              - 
+                :rule: ett;
+                :value: 1
+              - 
+                :rule: =%%spellout-cardinal-reale=;
+                :value: 2
+              - 
+                :rule: "tjue[­>>];"
+                :value: 20
+              - 
+                :rule: "tretti[­>>];"
+                :value: 30
+              - 
+                :rule: "førti[­>>];"
+                :value: 40
+              - 
+                :rule: "femti[­>>];"
+                :value: 50
+              - 
+                :rule: "seksti[­>>];"
+                :value: 60
+              - 
+                :rule: "sytti[­>>];"
+                :value: 70
+              - 
+                :rule: "åtti[­>>];"
+                :value: 80
+              - 
+                :rule: "nitti[­>>];"
+                :value: 90
+              - 
+                :rule: "hundre[ og >>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-neuter< hundre[ og >>];"
+                :value: 200
+              - 
+                :rule: "tusen[ >%%and-small-n>];"
+                :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-neuter< tusen[ >%%and-small-n>];"
+                :value: 2000
+              - 
+                :rule: "én million[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< millioner[ >>];"
+                :value: 2000000
+              - 
+                :rule: "én milliard[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliarder[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "én billion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billioner[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiarder[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-cardinal-neuter
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: "og =%spellout-cardinal-neuter=;"
+                :value: 0
+              - 
+                :rule: =%spellout-cardinal-neuter=;
+                :value: 100
+            :type: and-small-n
+          - 
+            :access: private
             :rules: 
               - 
                 :rule: "minus >>;"
@@ -89,7 +224,7 @@
                 :rule: seks;
                 :value: 6
               - 
-                :rule: syv;
+                :rule: sju;
                 :value: 7
               - 
                 :rule: åtte;
@@ -101,7 +236,7 @@
                 :rule: ti;
                 :value: 10
               - 
-                :rule: elve;
+                :rule: elleve;
                 :value: 11
               - 
                 :rule: tolv;
@@ -128,38 +263,41 @@
                 :rule: nitten;
                 :value: 19
               - 
-                :rule: "[>>­og­]tyve;"
+                :rule: "tjue[­>>];"
                 :value: 20
               - 
-                :rule: "[>>­og­]tredve;"
+                :rule: "tretti[­>>];"
                 :value: 30
               - 
-                :rule: "[>>­og­]førr;"
+                :rule: "førti[­>>];"
                 :value: 40
               - 
-                :rule: "[>>­og­]femti;"
+                :rule: "femti[­>>];"
                 :value: 50
               - 
-                :rule: "[>>­og­]seksti;"
+                :rule: "seksti[­>>];"
                 :value: 60
               - 
-                :rule: "[>>­og­]søtti;"
+                :rule: "sytti[­>>];"
                 :value: 70
               - 
-                :rule: "[>>­og­]åtti;"
+                :rule: "åtti[­>>];"
                 :value: 80
               - 
-                :rule: "[>>­og­]nitti;"
+                :rule: "nitti[­>>];"
                 :value: 90
               - 
-                :rule: "etthundre[­og­>>];"
+                :rule: "hundre[ og >>];"
                 :value: 100
               - 
-                :rule: "<%spellout-cardinal-neuter<hundre[­og­>>];"
+                :rule: "<%spellout-cardinal-neuter< hundre[ og >>];"
                 :value: 200
               - 
-                :rule: "<%spellout-cardinal-neuter< tusen[ og >>];"
+                :rule: "tusen[ >%%and-small>];"
                 :value: 1000
+              - 
+                :rule: "<%spellout-cardinal-neuter< tusen[ >%%and-small>];"
+                :value: 2000
               - 
                 :rule: "én million[ >>];"
                 :value: 1000000
@@ -188,4 +326,606 @@
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-reale
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: "og =%%spellout-cardinal-reale=;"
+                :value: 0
+              - 
+                :rule: =%%spellout-cardinal-reale=;
+                :value: 100
+            :type: and-small
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: nullte;
+                :value: 0
+              - 
+                :rule: første;
+                :value: 1
+              - 
+                :rule: andre;
+                :value: 2
+              - 
+                :rule: tredje;
+                :value: 3
+              - 
+                :rule: fjerde;
+                :value: 4
+              - 
+                :rule: femte;
+                :value: 5
+              - 
+                :rule: sjette;
+                :value: 6
+              - 
+                :rule: sjuende;
+                :value: 7
+              - 
+                :rule: åttende;
+                :value: 8
+              - 
+                :rule: niende;
+                :value: 9
+              - 
+                :rule: tiende;
+                :value: 10
+              - 
+                :rule: ellevte;
+                :value: 11
+              - 
+                :rule: tolvte;
+                :value: 12
+              - 
+                :rule: =%spellout-cardinal-neuter=de;
+                :value: 13
+              - 
+                :rule: tjue>%%ord-masc-nde>;
+                :value: 20
+              - 
+                :rule: tretti>%%ord-masc-nde>;
+                :value: 30
+              - 
+                :rule: førti>%%ord-masc-nde>;
+                :value: 40
+              - 
+                :rule: femti>%%ord-masc-nde>;
+                :value: 50
+              - 
+                :rule: seksti>%%ord-masc-nde>;
+                :value: 60
+              - 
+                :rule: sytti>%%ord-masc-nde>;
+                :value: 70
+              - 
+                :rule: åtti>%%ord-masc-nde>;
+                :value: 80
+              - 
+                :rule: nitti>%%ord-masc-nde>;
+                :value: 90
+              - 
+                :rule: <%spellout-numbering<­hundre>%%ord-masc-de>;
+                :value: 100
+              - 
+                :rule: <%spellout-numbering<­tusen>%%ord-masc-de>;
+                :value: 1000
+              - 
+                :rule: "én million>%%ord-masc-te>;"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< million>%%ord-masc-teer>;"
+                :value: 2000000
+              - 
+                :rule: "én milliard>%%ord-masc-te>;"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliard>%%ord-masc-teer>;"
+                :value: 2000000000
+              - 
+                :rule: "én billion>%%ord-masc-te>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billion>%%ord-masc-teer>;"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard>%%ord-masc-te>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiard>%%ord-masc-teer>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=.;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-masculine
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: ende;
+                :value: 0
+              - 
+                :rule: ­=%spellout-ordinal-masculine=;
+                :value: 1
+            :type: ord-masc-nde
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: de;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-masculine=;"
+                :value: 1
+            :type: ord-masc-de
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-masculine=;"
+                :value: 1
+            :type: ord-masc-te
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: "er =%spellout-ordinal-masculine=;"
+                :value: 1
+            :type: ord-masc-teer
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: nullte;
+                :value: 0
+              - 
+                :rule: første;
+                :value: 1
+              - 
+                :rule: andre;
+                :value: 2
+              - 
+                :rule: tredje;
+                :value: 3
+              - 
+                :rule: fjerde;
+                :value: 4
+              - 
+                :rule: femte;
+                :value: 5
+              - 
+                :rule: sjette;
+                :value: 6
+              - 
+                :rule: sjuende;
+                :value: 7
+              - 
+                :rule: åttende;
+                :value: 8
+              - 
+                :rule: niende;
+                :value: 9
+              - 
+                :rule: tiende;
+                :value: 10
+              - 
+                :rule: ellevte;
+                :value: 11
+              - 
+                :rule: tolvte;
+                :value: 12
+              - 
+                :rule: =%spellout-cardinal-neuter=de;
+                :value: 13
+              - 
+                :rule: tjue>%%ord-neut-nde>;
+                :value: 20
+              - 
+                :rule: tretti>%%ord-neut-nde>;
+                :value: 30
+              - 
+                :rule: førti>%%ord-neut-nde>;
+                :value: 40
+              - 
+                :rule: femti>%%ord-neut-nde>;
+                :value: 50
+              - 
+                :rule: seksti>%%ord-neut-nde>;
+                :value: 60
+              - 
+                :rule: sytti>%%ord-neut-nde>;
+                :value: 70
+              - 
+                :rule: åtti>%%ord-neut-nde>;
+                :value: 80
+              - 
+                :rule: nitti>%%ord-neut-nde>;
+                :value: 90
+              - 
+                :rule: <%spellout-numbering<­hundre>%%ord-neut-de>;
+                :value: 100
+              - 
+                :rule: <%spellout-numbering<­tusen>%%ord-neut-de>;
+                :value: 1000
+              - 
+                :rule: "én million>%%ord-neut-te>;"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< million>%%ord-neut-teer>;"
+                :value: 2000000
+              - 
+                :rule: "én milliard>%%ord-neut-te>;"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliard>%%ord-neut-teer>;"
+                :value: 2000000000
+              - 
+                :rule: "én billion>%%ord-neut-te>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billion>%%ord-neut-teer>;"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard>%%ord-neut-te>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiard>%%ord-neut-teer>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=.;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-neuter
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: ende;
+                :value: 0
+              - 
+                :rule: ­=%spellout-ordinal-neuter=;
+                :value: 1
+            :type: ord-neut-nde
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: de;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-neuter=;"
+                :value: 1
+            :type: ord-neut-de
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-neuter=;"
+                :value: 1
+            :type: ord-neut-te
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: "er =%spellout-ordinal-neuter=;"
+                :value: 1
+            :type: ord-neut-teer
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: nullte;
+                :value: 0
+              - 
+                :rule: første;
+                :value: 1
+              - 
+                :rule: andre;
+                :value: 2
+              - 
+                :rule: tredje;
+                :value: 3
+              - 
+                :rule: fjerde;
+                :value: 4
+              - 
+                :rule: femte;
+                :value: 5
+              - 
+                :rule: sjette;
+                :value: 6
+              - 
+                :rule: sjuende;
+                :value: 7
+              - 
+                :rule: åttende;
+                :value: 8
+              - 
+                :rule: niende;
+                :value: 9
+              - 
+                :rule: tiende;
+                :value: 10
+              - 
+                :rule: ellevte;
+                :value: 11
+              - 
+                :rule: tolvte;
+                :value: 12
+              - 
+                :rule: =%spellout-cardinal-neuter=de;
+                :value: 13
+              - 
+                :rule: tjue>%%ord-fem-nde>;
+                :value: 20
+              - 
+                :rule: tretti>%%ord-fem-nde>;
+                :value: 30
+              - 
+                :rule: førti>%%ord-fem-nde>;
+                :value: 40
+              - 
+                :rule: femti>%%ord-fem-nde>;
+                :value: 50
+              - 
+                :rule: seksti>%%ord-fem-nde>;
+                :value: 60
+              - 
+                :rule: sytti>%%ord-fem-nde>;
+                :value: 70
+              - 
+                :rule: åtti>%%ord-fem-nde>;
+                :value: 80
+              - 
+                :rule: nitti>%%ord-fem-nde>;
+                :value: 90
+              - 
+                :rule: <%spellout-numbering<­hundre>%%ord-fem-de>;
+                :value: 100
+              - 
+                :rule: <%spellout-numbering<­tusen>%%ord-fem-de>;
+                :value: 1000
+              - 
+                :rule: "én million>%%ord-fem-te>;"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< million>%%ord-fem-teer>;"
+                :value: 2000000
+              - 
+                :rule: "én milliard>%%ord-fem-te>;"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliard>%%ord-fem-teer>;"
+                :value: 2000000000
+              - 
+                :rule: "én billion>%%ord-fem-te>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billion>%%ord-fem-teer>;"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard>%%ord-fem-te>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiard>%%ord-fem-teer>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=.;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-feminine
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: ende;
+                :value: 0
+              - 
+                :rule: ­=%spellout-ordinal-feminine=;
+                :value: 1
+            :type: ord-fem-nde
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: de;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-feminine=;"
+                :value: 1
+            :type: ord-fem-de
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-feminine=;"
+                :value: 1
+            :type: ord-fem-te
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: "er =%spellout-ordinal-feminine=;"
+                :value: 1
+            :type: ord-fem-teer
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: nullte;
+                :value: 0
+              - 
+                :rule: første;
+                :value: 1
+              - 
+                :rule: andre;
+                :value: 2
+              - 
+                :rule: tredje;
+                :value: 3
+              - 
+                :rule: fjerde;
+                :value: 4
+              - 
+                :rule: femte;
+                :value: 5
+              - 
+                :rule: sjette;
+                :value: 6
+              - 
+                :rule: sjuende;
+                :value: 7
+              - 
+                :rule: åttende;
+                :value: 8
+              - 
+                :rule: niende;
+                :value: 9
+              - 
+                :rule: tiende;
+                :value: 10
+              - 
+                :rule: ellevte;
+                :value: 11
+              - 
+                :rule: tolvte;
+                :value: 12
+              - 
+                :rule: =%spellout-cardinal-neuter=de;
+                :value: 13
+              - 
+                :rule: tjue>%%ord-plural-nde>;
+                :value: 20
+              - 
+                :rule: tretti>%%ord-plural-nde>;
+                :value: 30
+              - 
+                :rule: førti>%%ord-plural-nde>;
+                :value: 40
+              - 
+                :rule: femti>%%ord-plural-nde>;
+                :value: 50
+              - 
+                :rule: seksti>%%ord-plural-nde>;
+                :value: 60
+              - 
+                :rule: sytti>%%ord-plural-nde>;
+                :value: 70
+              - 
+                :rule: åtti>%%ord-plural-nde>;
+                :value: 80
+              - 
+                :rule: nitti>%%ord-plural-nde>;
+                :value: 90
+              - 
+                :rule: <%spellout-numbering<­hundre>%%ord-plural-de>;
+                :value: 100
+              - 
+                :rule: <%spellout-numbering<­tusen>%%ord-plural-de>;
+                :value: 1000
+              - 
+                :rule: "én million>%%ord-plural-te>;"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< million>%%ord-plural-teer>;"
+                :value: 2000000
+              - 
+                :rule: "én milliard>%%ord-plural-te>;"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< milliard>%%ord-plural-teer>;"
+                :value: 2000000000
+              - 
+                :rule: "én billion>%%ord-plural-te>;"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billion>%%ord-plural-teer>;"
+                :value: 2000000000000
+              - 
+                :rule: "én billiard>%%ord-plural-te>;"
+                :value: 1000000000000000
+              - 
+                :rule: "<%%spellout-cardinal-reale< billiard>%%ord-plural-teer>;"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=.;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-plural
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: ende;
+                :value: 0
+              - 
+                :rule: ­=%spellout-ordinal-plural=;
+                :value: 1
+            :type: ord-plural-nde
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: de;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-plural=;"
+                :value: 1
+            :type: ord-plural-de
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: " =%spellout-ordinal-plural=;"
+                :value: 1
+            :type: ord-plural-te
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: te;
+                :value: 0
+              - 
+                :rule: "er =%spellout-ordinal-plural=;"
+                :value: 1
+            :type: ord-plural-teer
         :type: SpelloutRules

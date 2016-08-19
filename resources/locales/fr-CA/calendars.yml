@@ -16,10 +16,13 @@
         :H: "HH 'h'"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E M-d"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMd: MM-d
         :MMdd: MM-dd
@@ -28,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -93,13 +98,13 @@
             :tue: M
             :wed: M
           :short: 
-            :fri: ven.
-            :mon: lun.
-            :sat: sam.
-            :sun: dim.
-            :thu: jeu.
-            :tue: mar.
-            :wed: mer.
+            :fri: ve
+            :mon: lu
+            :sat: sa
+            :sun: di
+            :thu: je
+            :tue: ma
+            :wed: me
           :wide: 
             :fri: vendredi
             :mon: lundi
@@ -114,7 +119,7 @@
           1: EC
         :name: 
           0: "avant l’ère commune"
-          1: "ère commune"
+          1: "de l’ère commune"
         :narrow: 
           0: AEC
           1: EC
@@ -122,7 +127,7 @@
         :day: jour
         :day-narrow: j
         :day-short: j
-        :dayperiod: "système horaire"
+        :dayperiod: cadran
         :era: ère
         :hour: heure
         :hour-narrow: h
@@ -154,7 +159,7 @@
           :long: 
             :pattern: "d MMMM y"
           :medium: 
-            :pattern: y-MM-dd
+            :pattern: "d MMM y"
           :short: 
             :pattern: yy-MM-dd
         :datetime: 
@@ -168,7 +173,7 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "HH 'h' mm 'min' ss 's' zzzz"
+            :pattern: "HH:mm:ss zzzz"
           :long: 
             :pattern: "HH:mm:ss z"
           :medium: 
@@ -259,35 +264,60 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon: ap.m.
+            :afternoon1: après-midi
             :am: AM
+            :evening1: soir
+            :midnight: min.
+            :morning1: mat.
+            :night1: "du matin"
+            :noon: midi
             :pm: PM
           :narrow: 
-            :afternoon: ap.-m.
+            :afternoon1: après-midi
             :am: a
-            :morning: matin
-            :night: soir
+            :evening1: soir
+            :midnight: minuit
+            :morning1: mat.
+            :night1: nuit
             :noon: midi
             :pm: p
           :wide: 
-            :afternoon: après-midi
+            :afternoon1: "de l’après-midi"
             :am: AM
-            :morning: matin
-            :night: soir
+            :evening1: "du soir"
+            :midnight: minuit
+            :morning1: "du matin"
+            :night1: "du matin"
             :noon: midi
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon: ap.m.
-            :am: av.m.
-            :pm: ap.m.
-          :wide: 
-            :afternoon: après-midi
-            :am: avant-midi
-            :morning: matin
-            :night: soir
+            :afternoon1: ap.m.
+            :am: AM
+            :evening1: soir
+            :midnight: min.
+            :morning1: mat.
+            :night1: nuit
             :noon: midi
-            :pm: après-midi
+            :pm: PM
+          :narrow: 
+            :afternoon1: ap.m.
+            :am: AM
+            :evening1: soir
+            :midnight: min.
+            :morning1: mat.
+            :night1: nuit
+            :noon: midi
+            :pm: PM
+          :wide: 
+            :afternoon1: après-midi
+            :am: AM
+            :evening1: soir
+            :midnight: minuit
+            :morning1: matin
+            :night1: nuit
+            :noon: midi
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

@@ -4,12 +4,8 @@ gemspec
 
 group :development, :test do
   gem 'rake'
-
-  gem 'pry'
-  gem 'pry-nav'
-
+  gem 'pry-byebug'
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
-
   gem 'regexp_parser', '~> 0.1'
 end
 

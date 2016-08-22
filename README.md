@@ -268,29 +268,29 @@ In addition to formatting full dates and times, TwitterCLDR supports relative ti
 (DateTime.now - 1).localize.ago.to_s        # "1 day ago"
 (DateTime.now - 0.5).localize.ago.to_s      # "12 hours ago"  (i.e. half a day)
 
-(DateTime.now + 1).localize.until.to_s      # "In 1 day"
-(DateTime.now + 0.5).localize.until.to_s    # "In 12 hours"
+(DateTime.now + 1).localize.until.to_s      # "in 1 day"
+(DateTime.now + 0.5).localize.until.to_s    # "in 12 hours"
 ```
 
 Specify other locales:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago.to_s        # "Vor 1 Tag"
-(DateTime.now + 1).localize(:de).until.to_s      # "In 1 Tag"
+(DateTime.now - 1).localize(:de).ago.to_s        # "vor 1 Tag"
+(DateTime.now + 1).localize(:de).until.to_s      # "in 1 Tag"
 ```
 
 Force TwitterCLDR to use a specific time unit by including the `:unit` option:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour)        # "Vor 24 Stunden"
-(DateTime.now + 1).localize(:de).until.to_s(:unit => :hour)      # "In 24 Stunden"
+(DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour)        # "vor 24 Stunden"
+(DateTime.now + 1).localize(:de).until.to_s(:unit => :hour)      # "in 24 Stunden"
 ```
 
 Specify a different reference point for the time span calculation:
 
 ```ruby
 # 86400 = 1 day in seconds, 259200 = 3 days in seconds
-(Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour)  # "Vor 48 Stunden"
+(Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour)  # "vor 48 Stunden"
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
@@ -298,21 +298,21 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 ```ruby
 
 ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
-ts.to_s                         # "In 1 Tag"
-ts.to_s(:unit => :hour)         # "In 24 Stunden"
+ts.to_s                         # "in 1 Tag"
+ts.to_s(:unit => :hour)         # "in 24 Stunden"
 
 
 ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
-ts.to_s                         # "Vor 1 Tag"
-ts.to_s(:unit => :hour)         # "Vor 24 Stunden"
+ts.to_s                         # "vor 1 Tag"
+ts.to_s(:unit => :hour)         # "vor 24 Stunden"
 ```
 
 By default, timespans are exact representations of a given unit of elapsed time.  TwitterCLDR also supports approximate timespans which round up to the nearest larger unit.  For example, "44 seconds" remains "44 seconds" while "45 seconds" becomes "1 minute".  To approximate, pass the `:approximate => true` option into `to_s`:
 
 ```ruby
-TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # "In 44 seconds"
-TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # "In 1 minute"
-TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # "In 1 minute"
+TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # "in 44 seconds"
+TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # "in 1 minute"
+TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # "in 1 minute"
 ```
 
 ### Calendar Data
@@ -548,7 +548,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["04937-1403", "24033-3284", "40707-3618", "56564", "53993"]
+postal_code.sample(5)  # ["40741-8626", "87304", "02763-2183", "78302", "37171"]
 ```
 
 ### Phone Codes

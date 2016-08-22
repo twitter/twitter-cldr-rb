@@ -235,29 +235,29 @@ In addition to formatting full dates and times, TwitterCLDR supports relative ti
 (DateTime.now - 1).localize.ago.to_s        # <%= assert((DateTime.now - 1).localize.ago.to_s, "1 day ago").inspect %>
 (DateTime.now - 0.5).localize.ago.to_s      # <%= assert((DateTime.now - 0.5).localize.ago.to_s, "12 hours ago").inspect %>  (i.e. half a day)
 
-(DateTime.now + 1).localize.until.to_s      # <%= assert((DateTime.now + 1).localize.until.to_s, "In 1 day").inspect %>
-(DateTime.now + 0.5).localize.until.to_s    # <%= assert((DateTime.now + 0.5).localize.until.to_s, "In 12 hours").inspect %>
+(DateTime.now + 1).localize.until.to_s      # <%= assert((DateTime.now + 1).localize.until.to_s, "in 1 day").inspect %>
+(DateTime.now + 0.5).localize.until.to_s    # <%= assert((DateTime.now + 0.5).localize.until.to_s, "in 12 hours").inspect %>
 ```
 
 Specify other locales:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago.to_s        # <%= assert((DateTime.now - 1).localize(:de).ago.to_s, "Vor 1 Tag").inspect %>
-(DateTime.now + 1).localize(:de).until.to_s      # <%= assert((DateTime.now + 1).localize(:de).until.to_s, "In 1 Tag").inspect %>
+(DateTime.now - 1).localize(:de).ago.to_s        # <%= assert((DateTime.now - 1).localize(:de).ago.to_s, "vor 1 Tag").inspect %>
+(DateTime.now + 1).localize(:de).until.to_s      # <%= assert((DateTime.now + 1).localize(:de).until.to_s, "in 1 Tag").inspect %>
 ```
 
 Force TwitterCLDR to use a specific time unit by including the `:unit` option:
 
 ```ruby
-(DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour)        # <%= assert((DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour), "Vor 24 Stunden").inspect %>
-(DateTime.now + 1).localize(:de).until.to_s(:unit => :hour)      # <%= assert((DateTime.now + 1).localize(:de).until.to_s(:unit => :hour), "In 24 Stunden").inspect %>
+(DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour)        # <%= assert((DateTime.now - 1).localize(:de).ago.to_s(:unit => :hour), "vor 24 Stunden").inspect %>
+(DateTime.now + 1).localize(:de).until.to_s(:unit => :hour)      # <%= assert((DateTime.now + 1).localize(:de).until.to_s(:unit => :hour), "in 24 Stunden").inspect %>
 ```
 
 Specify a different reference point for the time span calculation:
 
 ```ruby
 # 86400 = 1 day in seconds, 259200 = 3 days in seconds
-(Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour)  # <%= assert((Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour), "Vor 48 Stunden").inspect %>
+(Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour)  # <%= assert((Time.now + 86400).localize(:de).ago(:base_time => (Time.now + 259200)).to_s(:unit => :hour), "vor 48 Stunden").inspect %>
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedTimespan`, whose constructor accepts a number of seconds as the first argument.  You can do the same thing if you're feeling adventurous:
@@ -265,21 +265,21 @@ Behind the scenes, these convenience methods are creating instances of `Localize
 ```ruby
 <% ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de) %>
 ts = TwitterCldr::Localized::LocalizedTimespan.new(86400, :locale => :de)
-ts.to_s                         # <%= assert(ts.to_s, "In 1 Tag").inspect %>
-ts.to_s(:unit => :hour)         # <%= assert(ts.to_s(:unit => :hour), "In 24 Stunden").inspect %>
+ts.to_s                         # <%= assert(ts.to_s, "in 1 Tag").inspect %>
+ts.to_s(:unit => :hour)         # <%= assert(ts.to_s(:unit => :hour), "in 24 Stunden").inspect %>
 
 <% ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de) %>
 ts = TwitterCldr::Localized::LocalizedTimespan.new(-86400, :locale => :de)
-ts.to_s                         # <%= assert(ts.to_s, "Vor 1 Tag").inspect %>
-ts.to_s(:unit => :hour)         # <%= assert(ts.to_s(:unit => :hour), "Vor 24 Stunden").inspect %>
+ts.to_s                         # <%= assert(ts.to_s, "vor 1 Tag").inspect %>
+ts.to_s(:unit => :hour)         # <%= assert(ts.to_s(:unit => :hour), "vor 24 Stunden").inspect %>
 ```
 
 By default, timespans are exact representations of a given unit of elapsed time.  TwitterCLDR also supports approximate timespans which round up to the nearest larger unit.  For example, "44 seconds" remains "44 seconds" while "45 seconds" becomes "1 minute".  To approximate, pass the `:approximate => true` option into `to_s`:
 
 ```ruby
-TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true), "In 44 seconds").inspect %>
-TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true), "In 1 minute").inspect %>
-TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true), "In 1 minute").inspect %>
+TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true), "in 44 seconds").inspect %>
+TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true), "in 1 minute").inspect %>
+TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true), "in 1 minute").inspect %>
 ```
 
 ### Calendar Data

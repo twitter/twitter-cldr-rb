@@ -4,19 +4,15 @@ gemspec
 
 group :development, :test do
   gem 'rake'
-
-  gem 'pry'
   gem 'pry-nav'
-
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
-
   gem 'regexp_parser', '~> 0.1'
 end
 
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'fields'
   gem 'i18n', '~> 0.6.11'
   gem 'cldr-plurals', '~> 1.0'
 

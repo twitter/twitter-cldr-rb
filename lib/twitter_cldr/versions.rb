@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Versions
-    CLDR_VERSION    = '26'
+    CLDR_VERSION    = '29'
     ICU_VERSION     = '54.1'
     UNICODE_VERSION = '6.3.0'
 

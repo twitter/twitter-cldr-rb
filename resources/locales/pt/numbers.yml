@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤0 mil
+              :other: ¤0 mil
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤00 mil
+              :other: ¤00 mil
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤000 mil
+              :other: ¤000 mil
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤0 mi
+              :other: ¤0 mi
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤00 mi
+              :other: ¤00 mi
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤000 mi
+              :other: ¤000 mi
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤0 bi
+              :other: ¤0 bi
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤00 bi
+              :other: ¤00 bi
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤000 bi
+              :other: ¤000 bi
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤0 tri
+              :other: ¤0 tri
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤00 tri
+              :other: ¤00 tri
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤000 tri
+              :other: ¤000 tri
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"

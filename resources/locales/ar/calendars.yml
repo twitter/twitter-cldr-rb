@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E، d/M"
         :MMM: LLL
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -258,16 +262,67 @@
             9: سبتمبر
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
+          :abbreviated: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
             :am: ص
-            :noon: ظ
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
+            :pm: م
+          :narrow: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
+            :am: ص
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
             :pm: م
           :wide: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
             :am: ص
-            :noon: ظ
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
             :pm: م
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
+            :am: ص
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
+            :pm: م
+          :narrow: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
+            :am: ص
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
+            :pm: م
+          :wide: 
+            :afternoon1: ظهرًا
+            :afternoon2: "بعد الظهر"
+            :am: صباحًا
+            :evening1: مساءً
+            :morning1: فجرا
+            :morning2: صباحًا
+            :night1: "منتصف الليل"
+            :night2: ليلاً
+            :pm: مساءً
       :quarters: 
         :format: 
           :abbreviated: 

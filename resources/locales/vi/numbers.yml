@@ -5,7 +5,44 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: "¤ #,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :other: 0 N ¤
+            ? !ruby/symbol "10000"
+            : 
+              :other: 00 N ¤
+            ? !ruby/symbol "100000"
+            : 
+              :other: 000 N ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :other: 0 Tr ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :other: 00 Tr ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :other: 000 Tr ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: 0 T ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: 00 T ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: 000 T ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: 0 NT ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: 00 NT ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: 000 NT ¤
         :unit: 
           :other: "{0} {1}"
       :decimal: 

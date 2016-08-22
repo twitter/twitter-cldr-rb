@@ -6,6 +6,43 @@
         :number_system: latn
         :patterns: 
           :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :other: ¤0 พ'.'
+            ? !ruby/symbol "10000"
+            : 
+              :other: ¤0 ม'.'
+            ? !ruby/symbol "100000"
+            : 
+              :other: ¤0 ส'.'
+            ? !ruby/symbol "1000000"
+            : 
+              :other: ¤0 ล'.'
+            ? !ruby/symbol "10000000"
+            : 
+              :other: ¤00 ล'.'
+            ? !ruby/symbol "100000000"
+            : 
+              :other: ¤000 ล'.'
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: ¤0 พ'.'ล'.'
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: ¤0 ม'.'ล'.'
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: ¤0 ส'.'ล'.'
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: ¤0 ล'.'ล'.'
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: ¤00 ล'.'ล'.'
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: ¤000 ล'.'ล'.'
         :unit: 
           :other: "{0} {1}"
       :decimal: 

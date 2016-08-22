@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 хил'.' ¤
+              :other: 0 хил'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 хил'.' ¤
+              :other: 00 хил'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 хил'.' ¤
+              :other: 000 хил'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 млн'.' ¤
+              :other: 0 млн'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 млн'.' ¤
+              :other: 00 млн'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 млн'.' ¤
+              :other: 000 млн'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 млрд'.' ¤
+              :other: 0 млрд'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 млрд'.' ¤
+              :other: 00 млрд'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 млрд'.' ¤
+              :other: 000 млрд'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 трлн'.' ¤
+              :other: 0 трлн'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 трлн'.' ¤
+              :other: 00 трлн'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 трлн'.' ¤
+              :other: 000 трлн'.' ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -85,8 +134,8 @@
               :other: 00 млн'.'
             ? !ruby/symbol "100000000"
             : 
-              :one: 000 млн'.'
-              :other: 000 млн'.'
+              :one: 000 млн
+              :other: 000 млн
             ? !ruby/symbol "1000000000"
             : 
               :one: 0 млрд'.'

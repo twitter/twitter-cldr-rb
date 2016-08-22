@@ -3,9 +3,58 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arabext
         :patterns: 
           :default: "‎¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 هزار ¤
+              :other: 0 هزار ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 هزار ¤
+              :other: 00 هزار ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 هزار ¤
+              :other: 000 هزار ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 میلیون ¤
+              :other: 0 میلیون ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 میلیون ¤
+              :other: 00 میلیون ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 میلیون ¤
+              :other: 000 میلیون ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 میلیارد ¤
+              :other: 0 میلیارد ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 میلیارد ¤
+              :other: 00 میلیارد ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 میلیارد ¤
+              :other: 000 میلیارد ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 هزارمیلیارد ¤
+              :other: 0 هزارمیلیارد ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 هزارمیلیارد ¤
+              :other: 00 هزارمیلیارد ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 هزارمیلیارد ¤
+              :other: 000 هزارمیلیارد ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -52,65 +101,65 @@
               :other: "000 میلیارد"
             ? !ruby/symbol "1000000000000"
             : 
-              :one: "0 هزار میلیارد"
-              :other: "0 هزار میلیارد"
+              :one: "0 هزارمیلیارد"
+              :other: "0 هزارمیلیارد"
             ? !ruby/symbol "10000000000000"
             : 
-              :one: "00 هزار میلیارد"
-              :other: "00 هزار میلیارد"
+              :one: "00 هزارمیلیارد"
+              :other: "00 هزارمیلیارد"
             ? !ruby/symbol "100000000000000"
             : 
-              :one: "000 هزار میلیارد"
-              :other: "000 هزار میلیارد"
+              :one: "000 هزارمیلیارد"
+              :other: "000 هزارمیلیارد"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0K
-              :other: 0K
+              :one: 0 هزار
+              :other: 0 هزار
             ? !ruby/symbol "10000"
             : 
-              :one: 00K
-              :other: 00K
+              :one: 00 هزار
+              :other: 00 هزار
             ? !ruby/symbol "100000"
             : 
-              :one: 000K
-              :other: 000K
+              :one: 000 هزار
+              :other: 000 هزار
             ? !ruby/symbol "1000000"
             : 
-              :one: 0M
-              :other: 0M
+              :one: 0 میلیون
+              :other: 0 میلیون
             ? !ruby/symbol "10000000"
             : 
-              :one: 00M
-              :other: 00M
+              :one: 00 میلیون
+              :other: 00 میلیون
             ? !ruby/symbol "100000000"
             : 
-              :one: 000M
-              :other: 000M
+              :one: 000 م
+              :other: 000 م
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0G
-              :other: 0G
+              :one: 0 م
+              :other: 0 م
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00G
-              :other: 00G
+              :one: 00 م
+              :other: 00 م
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000G
-              :other: 000G
+              :one: 000 میلیارد
+              :other: 000 میلیارد
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 0T
-              :other: 0T
+              :one: 0 تریلیون
+              :other: 0 تریلیون
             ? !ruby/symbol "10000000000000"
             : 
-              :one: 00T
-              :other: 00T
+              :one: 00 ت
+              :other: 00 ت
             ? !ruby/symbol "100000000000000"
             : 
-              :one: 000T
-              :other: 000T
+              :one: 000 ت
+              :other: 000 ت
       :percent: 
         :number_system: arabext
         :patterns: 
@@ -127,7 +176,7 @@
       :infinity: ∞
       :list: ;
       :minus_sign: ‎−
-      :nan: NaN
+      :nan: ناعدد
       :per_mille: ‰
       :percent_sign: "%"
       :plus_sign: ‎+

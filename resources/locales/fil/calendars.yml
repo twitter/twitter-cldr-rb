@@ -10,12 +10,14 @@
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "G y"
-        :GyMMM: "G y MMM"
-        :GyMMMEd: "G y MMM d, E"
-        :GyMMMd: "G y MMM d"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E, MMM d, y G"
+        :GyMMMd: "MMM d, y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, M/d"
         :MMM: LLL
@@ -28,6 +30,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -52,13 +56,13 @@
             :tue: Mar
             :wed: Miy
           :narrow: 
-            :fri: B
-            :mon: L
-            :sat: S
-            :sun: L
-            :thu: H
-            :tue: M
-            :wed: M
+            :fri: Biy
+            :mon: Lun
+            :sat: Sab
+            :sun: Lin
+            :thu: Huw
+            :tue: Mar
+            :wed: Miy
           :short: 
             :fri: Bi
             :mon: Lu
@@ -85,13 +89,13 @@
             :tue: Mar
             :wed: Miy
           :narrow: 
-            :fri: B
-            :mon: L
-            :sat: S
-            :sun: L
-            :thu: H
-            :tue: M
-            :wed: M
+            :fri: Biy
+            :mon: Lun
+            :sat: Sab
+            :sun: Lin
+            :thu: Huw
+            :tue: Mar
+            :wed: Miy
           :short: 
             :fri: Bi
             :mon: Lu
@@ -118,34 +122,34 @@
         :narrow: 
           0: ""
       :fields: 
-        :day: Araw
-        :day-narrow: Araw
-        :day-short: Araw
+        :day: araw
+        :day-narrow: araw
+        :day-short: araw
         :dayperiod: AM/PM
         :era: Era
-        :hour: Oras
-        :hour-narrow: hr.
-        :hour-short: hr.
-        :minute: Minuto
+        :hour: oras
+        :hour-narrow: oras
+        :hour-short: oras
+        :minute: minuto
         :minute-narrow: min.
         :minute-short: min.
-        :month: Buwan
-        :month-narrow: mo.
-        :month-short: mo.
+        :month: buwan
+        :month-narrow: buwan
+        :month-short: buwan
         :quarter: Quarter
         :quarter-narrow: qtr.
         :quarter-short: qtr.
-        :second: Segundo
+        :second: segundo
         :second-narrow: seg.
         :second-short: seg.
-        :week: Linggo
-        :week-narrow: wk.
-        :week-short: wk.
-        :weekday: "Araw ng Linggo"
-        :year: Taon
-        :year-narrow: yr.
-        :year-short: yr.
-        :zone: "Time Zone"
+        :week: linggo
+        :week-narrow: linggo
+        :week-short: linggo
+        :weekday: "araw ng linggo"
+        :year: taon
+        :year-narrow: taon
+        :year-short: taon
+        :zone: "time zone"
       :formats: 
         :date: 
           :full: 
@@ -190,18 +194,18 @@
             8: Ago
             9: Set
           :narrow: 
-            1: E
-            10: O
-            11: "N"
-            12: D
-            2: P
-            3: M
-            4: A
-            5: M
-            6: H
-            7: H
-            8: A
-            9: S
+            1: Ene
+            10: Okt
+            11: Nob
+            12: Dis
+            2: Peb
+            3: Mar
+            4: Abr
+            5: May
+            6: Hun
+            7: Hul
+            8: Ago
+            9: Set
           :wide: 
             1: Enero
             10: Oktubre
@@ -231,17 +235,17 @@
             9: Set
           :narrow: 
             1: E
-            10: O
-            11: "N"
-            12: D
+            10: Okt
+            11: Nob
+            12: Dis
             2: P
             3: M
             4: A
             5: M
-            6: H
-            7: H
-            8: A
-            9: S
+            6: Hun
+            7: Hul
+            8: Ago
+            9: Set
           :wide: 
             1: Enero
             10: Oktubre
@@ -258,17 +262,66 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: tanghali
             :am: AM
+            :evening1: "ng hapon"
+            :midnight: hatinggabi
+            :morning1: "nang umaga"
+            :morning2: madaling-araw
+            :night1: "ng gabi"
+            :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
-            :am: a
-            :noon: tanghali
-            :pm: p
+            :afternoon1: tanghali
+            :am: am
+            :evening1: hapon
+            :midnight: hatinggabi
+            :morning1: umaga
+            :morning2: madaling-araw
+            :night1: gabi
+            :noon: tanghaling-tapat
+            :pm: pm
           :wide: 
+            :afternoon1: "ng tanghali"
             :am: AM
-            :noon: tanghali
+            :evening1: "ng hapon"
+            :midnight: hatinggabi
+            :morning1: "nang umaga"
+            :morning2: madaling-araw
+            :night1: "ng gabi"
+            :noon: tanghaling-tapat
             :pm: PM
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: tanghali
+            :am: AM
+            :evening1: hapon
+            :midnight: hatinggabi
+            :morning1: umaga
+            :morning2: madaling-araw
+            :night1: gabi
+            :noon: tanghaling-tapat
+            :pm: PM
+          :narrow: 
+            :afternoon1: tanghali
+            :am: AM
+            :evening1: hapon
+            :midnight: hatinggabi
+            :morning1: umaga
+            :morning2: madaling-araw
+            :night1: gabi
+            :noon: tanghaling-tapat
+            :pm: PM
+          :wide: 
+            :afternoon1: tanghali
+            :am: AM
+            :evening1: hapon
+            :midnight: hatinggabi
+            :morning1: umaga
+            :morning2: madaling-araw
+            :night1: gabi
+            :noon: tanghaling-tapat
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

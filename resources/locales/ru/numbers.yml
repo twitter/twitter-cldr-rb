@@ -6,6 +6,79 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 тыс'.' ¤
+              :many: 0 тыс'.' ¤
+              :one: 0 тыс'.' ¤
+              :other: 0 тыс'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 тыс'.' ¤
+              :many: 00 тыс'.' ¤
+              :one: 00 тыс'.' ¤
+              :other: 00 тыс'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 тыс'.' ¤
+              :many: 000 тыс'.' ¤
+              :one: 000 тыс'.' ¤
+              :other: 000 тыс'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 млн ¤
+              :many: 0 млн ¤
+              :one: 0 млн ¤
+              :other: 0 млн ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 млн ¤
+              :many: 00 млн ¤
+              :one: 00 млн ¤
+              :other: 00 млн ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 млн ¤
+              :many: 000 млн ¤
+              :one: 000 млн ¤
+              :other: 000 млн ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 млрд ¤
+              :many: 0 млрд ¤
+              :one: 0 млрд ¤
+              :other: 0 млрд ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 млрд ¤
+              :many: 00 млрд ¤
+              :one: 00 млрд ¤
+              :other: 00 млрд ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 млрд ¤
+              :many: 000 млрд ¤
+              :one: 000 млрд ¤
+              :other: 000 млрд ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 трлн ¤
+              :many: 0 трлн ¤
+              :one: 0 трлн ¤
+              :other: 0 трлн ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 трлн ¤
+              :many: 00 трлн ¤
+              :one: 00 трлн ¤
+              :other: 00 трлн ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 трлн ¤
+              :many: 000 трлн ¤
+              :one: 000 трлн ¤
+              :other: 000 трлн ¤
         :unit: 
           :few: "{0} {1}"
           :many: "{0} {1}"

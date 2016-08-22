@@ -6,6 +6,43 @@
         :number_system: latn
         :patterns: 
           :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :other: "0"
+            ? !ruby/symbol "10000"
+            : 
+              :other: ¤0萬
+            ? !ruby/symbol "100000"
+            : 
+              :other: ¤00萬
+            ? !ruby/symbol "1000000"
+            : 
+              :other: ¤000萬
+            ? !ruby/symbol "10000000"
+            : 
+              :other: ¤0000萬
+            ? !ruby/symbol "100000000"
+            : 
+              :other: ¤0億
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: ¤00億
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: ¤000億
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: ¤0000億
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: ¤0兆
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: ¤00兆
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: ¤000兆
         :unit: 
           :other: "{0} {1}"
       :decimal: 
@@ -15,7 +52,7 @@
           :long: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0 千"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
               :other: 0萬
@@ -52,40 +89,40 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: 0K
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
-              :other: 00K
+              :other: 0萬
             ? !ruby/symbol "100000"
             : 
-              :other: 000K
+              :other: 00萬
             ? !ruby/symbol "1000000"
             : 
-              :other: 0M
+              :other: 000萬
             ? !ruby/symbol "10000000"
             : 
-              :other: 00M
+              :other: 0000萬
             ? !ruby/symbol "100000000"
             : 
-              :other: 000M
+              :other: 0億
             ? !ruby/symbol "1000000000"
             : 
-              :other: 0B
+              :other: 00億
             ? !ruby/symbol "10000000000"
             : 
-              :other: 00B
+              :other: 000億
             ? !ruby/symbol "100000000000"
             : 
-              :other: 000B
+              :other: 0000億
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0T
+              :other: 0兆
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00T
+              :other: 00兆
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000T
+              :other: 000兆
       :percent: 
         :number_system: latn
         :patterns: 

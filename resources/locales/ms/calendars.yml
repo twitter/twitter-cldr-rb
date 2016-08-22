@@ -15,8 +15,9 @@
         :GyMMMd: "G y MMM d"
         :H: HH
         :Hm: "HH:mm"
-        :Hmm: "H:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d-M"
         :MMM: LLL
@@ -29,6 +30,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -36,6 +39,7 @@
         :yMEd: "E, d/M/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
+        :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
@@ -257,17 +261,54 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: pg
-            :pm: ptg
+            :afternoon1: "tengah hari"
+            :am: PG
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
+            :pm: PTG
           :narrow: 
+            :afternoon1: "tengah hari"
             :am: a
-            :noon: t
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
             :pm: p
           :wide: 
+            :afternoon1: "tengah hari"
             :am: PG
-            :noon: t/hari
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
             :pm: PTG
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: "tengah hari"
+            :am: PG
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
+            :pm: PTG
+          :narrow: 
+            :afternoon1: "tengah hari"
+            :am: a
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
+            :pm: p
+          :wide: 
+            :afternoon1: "tengah hari"
+            :am: PG
+            :evening1: petang
+            :morning1: "tengah malam"
+            :morning2: pagi
+            :night1: malam
+            :pm: PTG
       :quarters: 
         :format: 
           :abbreviated: 

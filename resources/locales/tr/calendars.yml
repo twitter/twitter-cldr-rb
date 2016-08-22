@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "dd/MM E"
         :MMM: LLL
@@ -28,6 +30,8 @@
         :h: "a h"
         :hm: "a h:mm"
         :hms: "a h:mm:ss"
+        :hmsv: "a h:mm:ss v"
+        :hmv: "a h:mm v"
         :mmss: "mm:ss"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
@@ -258,16 +262,73 @@
             9: Eylül
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
+            :am: ÖÖ
+            :evening1: akşam
+            :midnight: "gece yarısı"
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
+            :noon: öğle
+            :pm: ÖS
           :narrow: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
             :am: öö
+            :evening1: akşam
+            :midnight: gece
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
             :noon: ö
             :pm: ös
           :wide: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
             :am: ÖÖ
+            :evening1: akşam
+            :midnight: "gece yarısı"
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
             :noon: öğle
             :pm: ÖS
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
+            :am: ÖÖ
+            :evening1: akşam
+            :midnight: "gece yarısı"
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
+            :noon: öğle
+            :pm: ÖS
+          :narrow: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
+            :am: ÖÖ
+            :evening1: akşam
+            :midnight: "gece yarısı"
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
+            :noon: öğle
+            :pm: ÖS
+          :wide: 
+            :afternoon1: "öğleden sonra"
+            :afternoon2: akşamüstü
+            :am: ÖÖ
+            :evening1: akşam
+            :midnight: "gece yarısı"
+            :morning1: sabah
+            :morning2: "öğleden önce"
+            :night1: gece
+            :noon: öğle
+            :pm: ÖS
       :quarters: 
         :format: 
           :abbreviated: 

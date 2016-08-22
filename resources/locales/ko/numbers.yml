@@ -6,6 +6,43 @@
         :number_system: latn
         :patterns: 
           :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :other: "0"
+            ? !ruby/symbol "10000"
+            : 
+              :other: ¤0만
+            ? !ruby/symbol "100000"
+            : 
+              :other: ¤00만
+            ? !ruby/symbol "1000000"
+            : 
+              :other: ¤000만
+            ? !ruby/symbol "10000000"
+            : 
+              :other: ¤0000만
+            ? !ruby/symbol "100000000"
+            : 
+              :other: ¤0억
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: ¤00억
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: ¤000억
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: ¤0000억
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: ¤0조
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: ¤00조
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: ¤000조
         :unit: 
           :other: "{0} {1}"
       :decimal: 
@@ -15,7 +52,7 @@
           :long: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0000"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
               :other: 0만
@@ -52,7 +89,7 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0000"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
               :other: 0만

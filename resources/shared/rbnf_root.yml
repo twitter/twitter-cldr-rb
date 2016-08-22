@@ -253,6 +253,372 @@
           :access: private
           :rules: 
             - 
+              :rule: а;
+              :value: 1
+            - 
+              :rule: в;
+              :value: 2
+            - 
+              :rule: г;
+              :value: 3
+            - 
+              :rule: д;
+              :value: 4
+            - 
+              :rule: є;
+              :value: 5
+            - 
+              :rule: ѕ;
+              :value: 6
+            - 
+              :rule: з;
+              :value: 7
+            - 
+              :rule: и;
+              :value: 8
+            - 
+              :rule: ѳ;
+              :value: 9
+            - 
+              :rule: і;
+              :value: 10
+          :type: cyrillic-lower-1-10
+        - 
+          :access: private
+          :rules: 
+            - 
+              :rule: ҃;
+              :value: 0
+            - 
+              :rule: ҃=%%cyrillic-lower-1-10=;
+              :value: 1
+            - 
+              :rule: а҃і;
+              :value: 11
+            - 
+              :rule: в҃і;
+              :value: 12
+            - 
+              :rule: г҃і;
+              :value: 13
+            - 
+              :rule: д҃і;
+              :value: 14
+            - 
+              :rule: є҃і;
+              :value: 15
+            - 
+              :rule: ѕ҃і;
+              :value: 16
+            - 
+              :rule: з҃і;
+              :value: 17
+            - 
+              :rule: и҃і;
+              :value: 18
+            - 
+              :rule: ѳ҃і;
+              :value: 19
+            - 
+              :rule: ҃к;
+              :value: 20
+            - 
+              :rule: к>>;
+              :value: 21
+            - 
+              :rule: ҃л;
+              :value: 30
+            - 
+              :rule: л>>;
+              :value: 31
+            - 
+              :rule: ҃м;
+              :value: 40
+            - 
+              :rule: м>>;
+              :value: 41
+            - 
+              :rule: ҃н;
+              :value: 50
+            - 
+              :rule: н>>;
+              :value: 51
+            - 
+              :rule: ҃ѯ;
+              :value: 60
+            - 
+              :rule: ѯ>>;
+              :value: 61
+            - 
+              :rule: ҃ѻ;
+              :value: 70
+            - 
+              :rule: ѻ>>;
+              :value: 71
+            - 
+              :rule: ҃п;
+              :value: 80
+            - 
+              :rule: п>>;
+              :value: 81
+            - 
+              :rule: ҃ч;
+              :value: 90
+            - 
+              :rule: ч>>;
+              :value: 91
+          :type: cyrillic-lower-final
+        - 
+          :access: private
+          :rules: 
+            - 
+              :rule: ҃;
+              :value: 0
+            - 
+              :rule: =%cyrillic-lower=;
+              :value: 1
+          :type: cyrillic-lower-post
+        - 
+          :access: private
+          :rules: 
+            - 
+              :rule: ҃;
+              :value: 0
+            - 
+              :rule: ҃҂а;
+              :value: 1
+            - 
+              :rule: ҃҂в;
+              :value: 2
+            - 
+              :rule: ҃҂г;
+              :value: 3
+            - 
+              :rule: ҃҂д;
+              :value: 4
+            - 
+              :rule: ҃҂є;
+              :value: 5
+            - 
+              :rule: ҃҂ѕ;
+              :value: 6
+            - 
+              :rule: ҃҂з;
+              :value: 7
+            - 
+              :rule: ҃҂и;
+              :value: 8
+            - 
+              :rule: ҃҂ѳ;
+              :value: 9
+            - 
+              :rule: ҃҂і;
+              :value: 10
+            - 
+              :rule: ҂а҃҂і;
+              :value: 11
+            - 
+              :rule: ҂в҃҂і;
+              :value: 12
+            - 
+              :rule: ҂г҃҂і;
+              :value: 13
+            - 
+              :rule: ҂д҃҂і;
+              :value: 14
+            - 
+              :rule: ҂є҃҂і;
+              :value: 15
+            - 
+              :rule: ҂ѕ҃҂і;
+              :value: 16
+            - 
+              :rule: ҂з҃҂і;
+              :value: 17
+            - 
+              :rule: ҂и҃҂і;
+              :value: 18
+            - 
+              :rule: ҂ѳ҃҂і;
+              :value: 19
+            - 
+              :rule: ҂к>>;
+              :value: 20
+            - 
+              :rule: ҂л>>;
+              :value: 30
+            - 
+              :rule: ҂м>>;
+              :value: 40
+            - 
+              :rule: ҂н>>;
+              :value: 50
+            - 
+              :rule: ҂ѯ>>;
+              :value: 60
+            - 
+              :rule: ҂ѻ>>;
+              :value: 70
+            - 
+              :rule: ҂п>>;
+              :value: 80
+            - 
+              :rule: ҂ч>>;
+              :value: 90
+            - 
+              :rule: ҂р>>;
+              :value: 100
+            - 
+              :rule: ҂с>>;
+              :value: 200
+            - 
+              :rule: ҂т>>;
+              :value: 300
+            - 
+              :rule: ҂у>>;
+              :value: 400
+            - 
+              :rule: ҂ф>>;
+              :value: 500
+            - 
+              :rule: ҂х>>;
+              :value: 600
+            - 
+              :rule: ҂ѱ>>;
+              :value: 700
+            - 
+              :rule: ҂ѿ>>;
+              :value: 800
+            - 
+              :rule: ҂ц>>;
+              :value: 900
+          :type: cyrillic-lower-thousands
+        - 
+          :rules: 
+            - 
+              :rule: −>>;
+              :value: "-x"
+            - 
+              :rule: <<.>>>;
+              :value: x.x
+            - 
+              :rule: 0҃;
+              :value: 0
+            - 
+              :rule: =%%cyrillic-lower-1-10=҃;
+              :value: 1
+            - 
+              :rule: а҃і;
+              :value: 11
+            - 
+              :rule: в҃і;
+              :value: 12
+            - 
+              :rule: г҃і;
+              :value: 13
+            - 
+              :rule: д҃і;
+              :value: 14
+            - 
+              :rule: є҃і;
+              :value: 15
+            - 
+              :rule: ѕ҃і;
+              :value: 16
+            - 
+              :rule: з҃і;
+              :value: 17
+            - 
+              :rule: и҃і;
+              :value: 18
+            - 
+              :rule: ѳ҃і;
+              :value: 19
+            - 
+              :rule: к>%%cyrillic-lower-final>;
+              :value: 20
+            - 
+              :rule: л>%%cyrillic-lower-final>;
+              :value: 30
+            - 
+              :rule: м>%%cyrillic-lower-final>;
+              :value: 40
+            - 
+              :rule: н>%%cyrillic-lower-final>;
+              :value: 50
+            - 
+              :rule: ѯ>%%cyrillic-lower-final>;
+              :value: 60
+            - 
+              :rule: ѻ>%%cyrillic-lower-final>;
+              :value: 70
+            - 
+              :rule: п>%%cyrillic-lower-final>;
+              :value: 80
+            - 
+              :rule: ч>%%cyrillic-lower-final>;
+              :value: 90
+            - 
+              :rule: р>%%cyrillic-lower-final>;
+              :value: 100
+            - 
+              :rule: с>%%cyrillic-lower-final>;
+              :value: 200
+            - 
+              :rule: т>%%cyrillic-lower-final>;
+              :value: 300
+            - 
+              :rule: у>%%cyrillic-lower-final>;
+              :value: 400
+            - 
+              :rule: ф>%%cyrillic-lower-final>;
+              :value: 500
+            - 
+              :rule: х>%%cyrillic-lower-final>;
+              :value: 600
+            - 
+              :rule: ѱ>%%cyrillic-lower-final>;
+              :value: 700
+            - 
+              :rule: ѿ҃;
+              :value: 800
+            - 
+              :rule: ѿ>>;
+              :value: 801
+            - 
+              :rule: ц>%%cyrillic-lower-final>;
+              :value: 900
+            - 
+              :rule: ҂<%%cyrillic-lower-1-10<>%%cyrillic-lower-post>;
+              :value: 1000
+            - 
+              :radix: 1000
+              :rule: "҂<<[ >>];"
+              :value: 10000
+            - 
+              :radix: 1000
+              :rule: "<%%cyrillic-lower-thousands<[ >>];"
+              :value: 11000
+            - 
+              :rule: "҂҂<<[ >>];"
+              :value: 1000000
+            - 
+              :rule: "҂҂҂<<[ >>];"
+              :value: 1000000000
+            - 
+              :rule: "҂҂҂҂<<[ >>];"
+              :value: 1000000000000
+            - 
+              :rule: "҂҂҂҂҂<<[ >>];"
+              :value: 1000000000000000
+            - 
+              :rule: "=#,##0=;"
+              :value: 1000000000000000000
+          :type: cyrillic-lower
+        - 
+          :access: private
+          :rules: 
+            - 
               :rule: =%ethiopic=;
               :value: 1
             - 
@@ -538,21 +904,18 @@
               :rule: −>>;
               :value: "-x"
             - 
-              :rule: "=#,##0.00=;"
+              :rule: <<.>>>;
               :value: x.x
             - 
-              :rule: 00;
-              :value: 0
-            - 
               :rule: =%%greek-numeral-minuscules=´;
-              :value: 1
-            - 
-              :rule: "=#,##0=;"
-              :value: 1000000
+              :value: 0
           :type: greek-lower
         - 
           :access: private
           :rules: 
+            - 
+              :rule: 𐆊;
+              :value: 0
             - 
               :rule: α;
               :value: 1
@@ -635,86 +998,23 @@
               :rule: "ϡ[>>];"
               :value: 900
             - 
-              :rule: "͵α[>>];"
+              :rule: "͵<<[>>];"
               :value: 1000
             - 
-              :rule: "͵β[>>];"
-              :value: 2000
-            - 
-              :rule: "͵γ[>>];"
-              :value: 3000
-            - 
-              :rule: "͵δ[>>];"
-              :value: 4000
-            - 
-              :rule: "͵ε[>>];"
-              :value: 5000
-            - 
-              :rule: "͵ϝ[>>];"
-              :value: 6000
-            - 
-              :rule: "͵ζ[>>];"
-              :value: 7000
-            - 
-              :rule: "͵η[>>];"
-              :value: 8000
-            - 
-              :rule: "͵θ[>>];"
-              :value: 9000
-            - 
-              :rule: "͵ι[>>];"
+              :rule: "<<μ[ >>];"
               :value: 10000
             - 
-              :rule: "͵κ[>>];"
-              :value: 20000
+              :rule: "<<μμ[ >>];"
+              :value: 100000000
             - 
-              :rule: "͵λ[>>];"
-              :value: 30000
+              :rule: "<<μμμ[ >>];"
+              :value: 1000000000000
             - 
-              :rule: "͵μ[>>];"
-              :value: 40000
+              :rule: "<<μμμμ[ >>];"
+              :value: 10000000000000000
             - 
-              :rule: "͵ν[>>];"
-              :value: 50000
-            - 
-              :rule: "͵ξ[>>];"
-              :value: 60000
-            - 
-              :rule: "͵ο[>>];"
-              :value: 70000
-            - 
-              :rule: "͵π[>>];"
-              :value: 80000
-            - 
-              :rule: "͵ϟ[>>];"
-              :value: 90000
-            - 
-              :rule: "͵ρ[>>];"
-              :value: 100000
-            - 
-              :rule: "͵σ[>>];"
-              :value: 200000
-            - 
-              :rule: "͵τ[>>];"
-              :value: 300000
-            - 
-              :rule: "͵υ[>>];"
-              :value: 400000
-            - 
-              :rule: "͵φ[>>];"
-              :value: 500000
-            - 
-              :rule: "͵χ[>>];"
-              :value: 600000
-            - 
-              :rule: "͵ψ[>>];"
-              :value: 700000
-            - 
-              :rule: "͵ω[>>];"
-              :value: 800000
-            - 
-              :rule: "͵ϡ[>>];"
-              :value: 900000
+              :rule: "=#,##0=;"
+              :value: 1000000000000000000
           :type: greek-numeral-minuscules
         - 
           :rules: 
@@ -722,21 +1022,18 @@
               :rule: −>>;
               :value: "-x"
             - 
-              :rule: "=#,##0.00=;"
+              :rule: <<.>>>;
               :value: x.x
             - 
-              :rule: 00;
-              :value: 0
-            - 
               :rule: =%%greek-numeral-majuscules=´;
-              :value: 1
-            - 
-              :rule: "=#,##0=;"
-              :value: 1000000
+              :value: 0
           :type: greek-upper
         - 
           :access: private
           :rules: 
+            - 
+              :rule: 𐆊;
+              :value: 0
             - 
               :rule: Α;
               :value: 1
@@ -819,87 +1116,40 @@
               :rule: "Ϡ[>>];"
               :value: 900
             - 
-              :rule: "͵Α[>>];"
+              :rule: "͵<<[>>];"
               :value: 1000
             - 
-              :rule: "͵Β[>>];"
-              :value: 2000
-            - 
-              :rule: "͵Γ[>>];"
-              :value: 3000
-            - 
-              :rule: "͵Δ[>>];"
-              :value: 4000
-            - 
-              :rule: "͵Ε[>>];"
-              :value: 5000
-            - 
-              :rule: "͵Ϝ[>>];"
-              :value: 6000
-            - 
-              :rule: "͵Ζ[>>];"
-              :value: 7000
-            - 
-              :rule: "͵Η[>>];"
-              :value: 8000
-            - 
-              :rule: "͵Θ[>>];"
-              :value: 9000
-            - 
-              :rule: "͵Ι[>>];"
+              :rule: "<<Μ[ >>];"
               :value: 10000
             - 
-              :rule: "͵Κ[>>];"
-              :value: 20000
+              :rule: "<<ΜΜ[ >>];"
+              :value: 100000000
             - 
-              :rule: "͵Λ[>>];"
-              :value: 30000
+              :rule: "<<ΜΜΜ[ >>];"
+              :value: 1000000000000
             - 
-              :rule: "͵Μ[>>];"
-              :value: 40000
+              :rule: "<<ΜΜΜΜ[ >>];"
+              :value: 10000000000000000
             - 
-              :rule: "͵Ν[>>];"
-              :value: 50000
-            - 
-              :rule: "͵Ξ[>>];"
-              :value: 60000
-            - 
-              :rule: "͵Ο[>>];"
-              :value: 70000
-            - 
-              :rule: "͵Π[>>];"
-              :value: 80000
-            - 
-              :rule: "͵Ϟ[>>];"
-              :value: 90000
-            - 
-              :rule: "͵Ρ[>>];"
-              :value: 100000
-            - 
-              :rule: "͵Σ[>>];"
-              :value: 200000
-            - 
-              :rule: "͵Τ[>>];"
-              :value: 300000
-            - 
-              :rule: "͵Υ[>>];"
-              :value: 400000
-            - 
-              :rule: "͵Φ[>>];"
-              :value: 500000
-            - 
-              :rule: "͵Χ[>>];"
-              :value: 600000
-            - 
-              :rule: "͵Ψ[>>];"
-              :value: 700000
-            - 
-              :rule: "͵Ω[>>];"
-              :value: 800000
-            - 
-              :rule: "͵Ϡ[>>];"
-              :value: 900000
+              :rule: "=#,##0=;"
+              :value: 1000000000000000000
           :type: greek-numeral-majuscules
+        - 
+          :access: private
+          :rules: 
+            - 
+              :rule: =%hebrew=;
+              :value: 0
+            - 
+              :rule: "=%hebrew=[׳];"
+              :value: 10
+            - 
+              :rule: "=%hebrew=[׳];"
+              :value: 100
+            - 
+              :rule: =%hebrew=׳;
+              :value: 401
+          :type: hebrew-thousands
         - 
           :rules: 
             - 
@@ -909,40 +1159,10 @@
               :rule: "=#,##0.00=;"
               :value: x.x
             - 
-              :rule: אפס;
+              :rule: =%hebrew-item=׳;
               :value: 0
             - 
-              :rule: א׳;
-              :value: 1
-            - 
-              :rule: ב׳;
-              :value: 2
-            - 
-              :rule: ג׳;
-              :value: 3
-            - 
-              :rule: ד׳;
-              :value: 4
-            - 
-              :rule: ה׳;
-              :value: 5
-            - 
-              :rule: ו׳;
-              :value: 6
-            - 
-              :rule: ז׳;
-              :value: 7
-            - 
-              :rule: ח׳;
-              :value: 8
-            - 
-              :rule: ט׳;
-              :value: 9
-            - 
-              :rule: י׳;
-              :value: 10
-            - 
-              :rule: "י[>%%hebrew-final>];"
+              :rule: י״>%hebrew-item>;
               :value: 11
             - 
               :rule: ט״ו;
@@ -951,109 +1171,127 @@
               :rule: ט״ז;
               :value: 16
             - 
-              :rule: "י[>%%hebrew-final>];"
+              :rule: י״>%hebrew-item>;
               :value: 17
             - 
               :rule: כ׳;
               :value: 20
             - 
-              :rule: "כ[>%%hebrew-final>];"
+              :rule: כ״>%hebrew-item>;
               :value: 21
             - 
               :rule: ל׳;
               :value: 30
             - 
-              :rule: "ל[>%%hebrew-final>];"
+              :rule: ל״>%hebrew-item>;
               :value: 31
             - 
               :rule: מ׳;
               :value: 40
             - 
-              :rule: "מ[>%%hebrew-final>];"
+              :rule: מ״>%hebrew-item>;
               :value: 41
             - 
               :rule: נ׳;
               :value: 50
             - 
-              :rule: "נ[>%%hebrew-final>];"
+              :rule: נ״>%hebrew-item>;
               :value: 51
             - 
               :rule: ס׳;
               :value: 60
             - 
-              :rule: "ס[>%%hebrew-final>];"
+              :rule: ס״>%hebrew-item>;
               :value: 61
             - 
               :rule: ע׳;
               :value: 70
             - 
-              :rule: "ע[>%%hebrew-final>];"
+              :rule: ע״>%hebrew-item>;
               :value: 71
             - 
               :rule: פ׳;
               :value: 80
             - 
-              :rule: "פ[>%%hebrew-final>];"
+              :rule: פ״>%hebrew-item>;
               :value: 81
             - 
               :rule: צ׳;
               :value: 90
             - 
-              :rule: "צ[>%%hebrew-final>];"
+              :rule: צ״>%hebrew-item>;
               :value: 91
             - 
-              :rule: ק׳;
+              :rule: ק>%%hebrew-0-99>;
               :value: 100
             - 
-              :rule: "ק[>%%hebrew-final>];"
-              :value: 101
-            - 
-              :rule: ר׳;
+              :rule: ר>%%hebrew-0-99>;
               :value: 200
             - 
-              :rule: "ר[>%%hebrew-final>];"
-              :value: 201
+              :rule: רח״צ;
+              :value: 298
             - 
-              :rule: ש׳;
+              :rule: ר>%%hebrew-0-99>;
+              :value: 299
+            - 
+              :rule: ש>%%hebrew-0-99>;
               :value: 300
             - 
-              :rule: "ש[>%%hebrew-final>];"
-              :value: 301
+              :rule: ד״ש;
+              :value: 304
             - 
-              :rule: ת׳;
+              :rule: ש>%%hebrew-0-99>;
+              :value: 305
+            - 
+              :rule: שד״מ;
+              :value: 344
+            - 
+              :rule: ש>%%hebrew-0-99>;
+              :value: 345
+            - 
+              :rule: ת>%%hebrew-0-99>;
               :value: 400
-            - 
-              :rule: "ת[>%%hebrew-final>];"
-              :value: 401
             - 
               :rule: ת״ק;
               :value: 500
             - 
-              :rule: "תק[>%%hebrew-final>];"
+              :rule: תק>%%hebrew-0-99>;
               :value: 501
             - 
               :rule: ת״ר;
               :value: 600
             - 
-              :rule: "תר[>%%hebrew-final>];"
+              :rule: תר>%%hebrew-0-99>;
               :value: 601
+            - 
+              :rule: תרח״צ;
+              :value: 698
+            - 
+              :rule: תר>%%hebrew-0-99>;
+              :value: 699
             - 
               :rule: ת״ש;
               :value: 700
             - 
-              :rule: "תש[>%%hebrew-final>];"
+              :rule: תש>%%hebrew-0-99>;
               :value: 701
+            - 
+              :rule: תשד״מ;
+              :value: 744
+            - 
+              :rule: תש>%%hebrew-0-99>;
+              :value: 745
             - 
               :rule: ת״ת;
               :value: 800
             - 
-              :rule: "תת[>%%hebrew-final>];"
+              :rule: תת>%%hebrew-0-99>;
               :value: 801
             - 
               :rule: תת״ק;
               :value: 900
             - 
-              :rule: "תתק[>%%hebrew-final>];"
+              :rule: תתק>%%hebrew-0-99>;
               :value: 901
             - 
               :rule: אלף;
@@ -1084,40 +1322,13 @@
           :access: private
           :rules: 
             - 
-              :rule: אפס;
+              :rule: ׳;
               :value: 0
             - 
-              :rule: ״א;
+              :rule: ״=%hebrew-item=;
               :value: 1
             - 
-              :rule: ״ב;
-              :value: 2
-            - 
-              :rule: ״ג;
-              :value: 3
-            - 
-              :rule: ״ד;
-              :value: 4
-            - 
-              :rule: ״ה;
-              :value: 5
-            - 
-              :rule: ״ו;
-              :value: 6
-            - 
-              :rule: ״ז;
-              :value: 7
-            - 
-              :rule: ״ח;
-              :value: 8
-            - 
-              :rule: ״ט;
-              :value: 9
-            - 
-              :rule: ״י;
-              :value: 10
-            - 
-              :rule: "י״[>%%hebrew-digit>];"
+              :rule: י״>%hebrew-item>;
               :value: 11
             - 
               :rule: ט״ו;
@@ -1126,62 +1337,67 @@
               :rule: ט״ז;
               :value: 16
             - 
-              :rule: "י״[>%%hebrew-digit>];"
+              :rule: י״>%hebrew-item>;
               :value: 17
             - 
               :rule: ״כ;
               :value: 20
             - 
-              :rule: "כ״[>%%hebrew-digit>];"
+              :rule: כ״>%hebrew-item>;
               :value: 21
             - 
               :rule: ״ל;
               :value: 30
             - 
-              :rule: "ל״[>%%hebrew-digit>];"
+              :rule: ל״>%hebrew-item>;
               :value: 31
             - 
               :rule: ״מ;
               :value: 40
             - 
-              :rule: "מ״[>%%hebrew-digit>];"
+              :rule: מ״>%hebrew-item>;
               :value: 41
             - 
               :rule: ״נ;
               :value: 50
             - 
-              :rule: "נ״[>%%hebrew-digit>];"
+              :rule: נ״>%hebrew-item>;
               :value: 51
             - 
               :rule: ״ס;
               :value: 60
             - 
-              :rule: "ס״[>%%hebrew-digit>];"
+              :rule: ס״>%hebrew-item>;
               :value: 61
             - 
               :rule: ״ע;
               :value: 70
             - 
-              :rule: "ע״[>%%hebrew-digit>];"
+              :rule: ע״>%hebrew-item>;
               :value: 71
             - 
               :rule: ״פ;
               :value: 80
             - 
-              :rule: "פ״[>%%hebrew-digit>];"
+              :rule: פ״>%hebrew-item>;
               :value: 81
             - 
               :rule: ״צ;
               :value: 90
             - 
-              :rule: "צ״[>%%hebrew-digit>];"
+              :rule: צ״>%hebrew-item>;
               :value: 91
-          :type: hebrew-final
+          :type: hebrew-0-99
         - 
-          :access: private
           :rules: 
             - 
-              :rule: אפס;
+              :rule: −>>;
+              :value: "-x"
+            - 
+              :rule: "=#,##0.00=;"
+              :value: x.x
+            - 
+              :rule: ״;
               :value: 0
             - 
               :rule: א;
@@ -1210,23 +1426,147 @@
             - 
               :rule: ט;
               :value: 9
-          :type: hebrew-digit
-        - 
-          :access: private
-          :rules: 
             - 
-              :rule: =%hebrew=;
-              :value: 0
-            - 
-              :rule: "=%hebrew=[׳];"
+              :rule: "י[>>];"
               :value: 10
             - 
-              :rule: "=%hebrew=[׳];"
+              :rule: טו;
+              :value: 15
+            - 
+              :rule: טז;
+              :value: 16
+            - 
+              :rule: י>>;
+              :value: 17
+            - 
+              :rule: "כ[>>];"
+              :value: 20
+            - 
+              :rule: "ל[>>];"
+              :value: 30
+            - 
+              :rule: "מ[>>];"
+              :value: 40
+            - 
+              :rule: "נ[>>];"
+              :value: 50
+            - 
+              :rule: "ס[>>];"
+              :value: 60
+            - 
+              :rule: "ע[>>];"
+              :value: 70
+            - 
+              :rule: "פ[>>];"
+              :value: 80
+            - 
+              :rule: "צ[>>];"
+              :value: 90
+            - 
+              :rule: "ק[>>];"
               :value: 100
             - 
-              :rule: =%hebrew=׳;
-              :value: 401
-          :type: hebrew-thousands
+              :rule: "ר[>>];"
+              :value: 200
+            - 
+              :rule: רחצ;
+              :value: 298
+            - 
+              :rule: ר>>;
+              :value: 299
+            - 
+              :rule: "ש[>>];"
+              :value: 300
+            - 
+              :rule: דש;
+              :value: 304
+            - 
+              :rule: ש>>;
+              :value: 305
+            - 
+              :rule: שדמ;
+              :value: 344
+            - 
+              :rule: ש>>;
+              :value: 345
+            - 
+              :rule: "ת[>>];"
+              :value: 400
+            - 
+              :rule: "תק[>>];"
+              :value: 500
+            - 
+              :rule: "תר[>>];"
+              :value: 600
+            - 
+              :rule: תרחצ;
+              :value: 698
+            - 
+              :rule: תר>>;
+              :value: 699
+            - 
+              :rule: "תש[>>];"
+              :value: 700
+            - 
+              :rule: תשדמ;
+              :value: 744
+            - 
+              :rule: תש>>;
+              :value: 745
+            - 
+              :rule: "תת[>>];"
+              :value: 800
+            - 
+              :rule: "תתק[>>];"
+              :value: 900
+            - 
+              :radix: 100
+              :rule: "תתר[>>];"
+              :value: 1000
+            - 
+              :radix: 100
+              :rule: "תתש[>>];"
+              :value: 1100
+            - 
+              :radix: 100
+              :rule: "תתת[>>];"
+              :value: 1200
+            - 
+              :radix: 100
+              :rule: "תתתק[>>];"
+              :value: 1300
+            - 
+              :radix: 100
+              :rule: "תתתר[>>];"
+              :value: 1400
+            - 
+              :radix: 100
+              :rule: "תתתש[>>];"
+              :value: 1500
+            - 
+              :radix: 100
+              :rule: "תתתת[>>];"
+              :value: 1600
+            - 
+              :radix: 100
+              :rule: "תתתתק[>>];"
+              :value: 1700
+            - 
+              :radix: 100
+              :rule: "תתתתר[>>];"
+              :value: 1800
+            - 
+              :radix: 100
+              :rule: "תתתתש[>>];"
+              :value: 1900
+            - 
+              :radix: 100
+              :rule: "תתתתת[>>];"
+              :value: 2000
+            - 
+              :rule: "=#,##0=;"
+              :value: 2100
+          :type: hebrew-item
         - 
           :rules: 
             - 

@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
         :MMM: LLL
@@ -28,6 +30,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -110,8 +114,8 @@
             :wed: બુધવાર
       :eras: 
         :abbr: 
-          0: "સામાન્ય યુગ પહેલા"
-          1: "સામાન્ય યુગ"
+          0: સા.યુ.પ.
+          1: સા.યુ.
         :name: 
           0: "સામાન્ય યુગ પહેલા"
           1: "સામાન્ય યુગ"
@@ -120,32 +124,32 @@
           1: ઇસ
       :fields: 
         :day: દિવસ
-        :day-narrow: દિ.
+        :day-narrow: દિવસ
         :day-short: દિ.
         :dayperiod: AM/PM
         :era: યુગ
         :hour: કલાક
-        :hour-narrow: ક
+        :hour-narrow: ક.
         :hour-short: ક.
         :minute: મિનિટ
-        :minute-narrow: મિ
+        :minute-narrow: મિ.
         :minute-short: મિ.
         :month: મહિનો
         :month-narrow: મ.
         :month-short: મ.
-        :quarter: ક્વાર્ટર
-        :quarter-narrow: ક્વા.
-        :quarter-short: ક્વા.
+        :quarter: ત્રિમાસિક
+        :quarter-narrow: ત્રિમાસ.
+        :quarter-short: ત્રિમાસ.
         :second: સેકન્ડ
-        :second-narrow: સે
-        :second-short: સેકન્ડ
+        :second-narrow: સે.
+        :second-short: સે.
         :week: અઠવાડિયું
         :week-narrow: અઠ.
         :week-short: અઠ.
         :weekday: "અઠવાડિયાનો દિવસ"
         :year: વર્ષ
-        :year-narrow: વર્ષ
-        :year-short: વર્ષ
+        :year-narrow: વ.
+        :year-short: વ.
         :zone: "સમય ઝોન"
       :formats: 
         :date: 
@@ -188,7 +192,7 @@
             5: મે
             6: જૂન
             7: જુલાઈ
-            8: ઑગ
+            8: ઑગસ્ટ
             9: સપ્ટે
           :narrow: 
             1: જા
@@ -258,16 +262,55 @@
             9: સપ્ટેમ્બર
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
+          :abbreviated: 
+            :afternoon1: બપોર
             :am: AM
-            :noon: મધ્યાહ્ન
+            :evening1: સાંજ
+            :midnight: મધ્યરાત્રિ
+            :morning1: સવાર
+            :night1: રાત્રિ
+            :pm: PM
+          :narrow: 
+            :afternoon1: બ
+            :am: AM
+            :evening1: સાં
+            :midnight: મ.રાત્રિ
+            :morning1: સ
+            :night1: રા
             :pm: PM
           :wide: 
+            :afternoon1: બપોર
             :am: AM
-            :noon: મધ્યાહ્ન
+            :evening1: સાંજ
+            :midnight: મધ્યરાત્રિ
+            :morning1: સવાર
+            :night1: રાત્રિ
             :pm: PM
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: બપોર
+            :am: AM
+            :evening1: સાંજ
+            :midnight: મધ્યરાત્રિ
+            :morning1: સવાર
+            :night1: રાત્રિ
+            :pm: PM
+          :narrow: 
+            :afternoon1: બપોર
+            :am: AM
+            :evening1: સાંજ
+            :midnight: મધ્યરાત્રિ
+            :morning1: સવાર
+            :night1: રાત્રિ
+            :pm: PM
+          :wide: 
+            :afternoon1: બપોર
+            :am: AM
+            :evening1: સાંજ
+            :midnight: મધ્યરાત્રિ
+            :morning1: સવાર
+            :night1: રાત્રિ
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 
@@ -276,10 +319,10 @@
             3: Q3
             4: Q4
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "પહેલો ત્રિમાસ"
             2: "બીજો ત્રિમાસ"
@@ -292,10 +335,10 @@
             3: Q3
             4: Q4
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "પહેલો ત્રિમાસ"
             2: "બીજો ત્રિમાસ"

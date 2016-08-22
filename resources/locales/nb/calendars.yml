@@ -16,10 +16,13 @@
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
+        :Hmsv: "HH.mm.ss v"
+        :Hmv: "HH.mm v"
         :M: L.
         :MEd: "E d.M"
         :MMM: LLL
         :MMMEd: "E d. MMM"
+        :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :MMdd: d.M.
         :Md: d.M.
@@ -27,6 +30,8 @@
         :h: "h a"
         :hm: "h.mm a"
         :hms: "h.mm.ss a"
+        :hmsv: "h.mm.ss a v"
+        :hmv: "h.mm a v"
         :ms: mm.ss
         ? !ruby/symbol "y"
         : "y"
@@ -76,13 +81,13 @@
             :wed: onsdag
         :stand-alone: 
           :abbreviated: 
-            :fri: fr.
-            :mon: ma.
-            :sat: lø.
-            :sun: sø.
-            :thu: to.
-            :tue: ti.
-            :wed: on.
+            :fri: fre.
+            :mon: man.
+            :sat: lør.
+            :sun: søn.
+            :thu: tor.
+            :tue: tir.
+            :wed: ons.
           :narrow: 
             :fri: F
             :mon: M
@@ -110,42 +115,42 @@
       :eras: 
         :abbr: 
           0: fvt.
-          1: vt.
+          1: evt.
         :name: 
           0: "før vår tidsregning"
-          1: "vår tidsregning"
+          1: "etter vår tidsregning"
         :narrow: 
           0: fvt.
-          1: vt
+          1: vt.
       :fields: 
-        :day: Dag
+        :day: dag
         :day-narrow: dag
         :day-short: dag
         :dayperiod: AM/PM
-        :era: Tidsalder
-        :hour: Time
+        :era: tidsalder
+        :hour: time
         :hour-narrow: t
         :hour-short: t
-        :minute: Minutt
+        :minute: minutt
         :minute-narrow: m
         :minute-short: min
-        :month: Måned
+        :month: måned
         :month-narrow: md.
         :month-short: mnd.
-        :quarter: Kvartal
+        :quarter: kvartal
         :quarter-narrow: kv.
         :quarter-short: kv.
-        :second: Sekund
+        :second: sekund
         :second-narrow: s
         :second-short: sek
-        :week: Uke
+        :week: uke
         :week-narrow: uke
         :week-short: uke
-        :weekday: Ukedag
-        :year: År
+        :weekday: ukedag
+        :year: år
         :year-narrow: år
         :year-short: år
-        :zone: Tidssone
+        :zone: tidssone
       :formats: 
         :date: 
           :full: 
@@ -160,20 +165,20 @@
           :full: 
             :pattern: "{{date}} {{time}}"
           :long: 
-            :pattern: "{{date}} 'kl.' {{time}}"
+            :pattern: "{{date}} 'kl'. {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH.mm.ss zzzz"
+            :pattern: "HH:mm:ss zzzz"
           :long: 
-            :pattern: "HH.mm.ss z"
+            :pattern: "HH:mm:ss z"
           :medium: 
-            :pattern: HH.mm.ss
+            :pattern: "HH:mm:ss"
           :short: 
-            :pattern: HH.mm
+            :pattern: "HH:mm"
       :months: 
         :format: 
           :abbreviated: 
@@ -258,20 +263,60 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: etterm.
             :am: a.m.
+            :evening1: kveld
+            :midnight: midn.
+            :morning1: morg.
+            :morning2: form.
+            :night1: natt
             :pm: p.m.
           :narrow: 
+            :afternoon1: em.
             :am: a
-            :noon: "12"
+            :evening1: kv.
+            :midnight: mn.
+            :morning1: mg.
+            :morning2: fm.
+            :night1: nt.
             :pm: p
           :wide: 
+            :afternoon1: ettermiddagen
             :am: a.m.
-            :noon: "kl. 12"
+            :evening1: kvelden
+            :midnight: midnatt
+            :morning1: morgenen
+            :morning2: formiddagen
+            :night1: natten
             :pm: p.m.
         :stand-alone: 
+          :abbreviated: 
+            :afternoon1: etterm.
+            :am: a.m.
+            :evening1: kveld
+            :midnight: midn.
+            :morning1: morg.
+            :morning2: form.
+            :night1: natt
+            :pm: p.m.
+          :narrow: 
+            :afternoon1: em.
+            :am: a.m.
+            :evening1: kv.
+            :midnight: mn.
+            :morning1: mg.
+            :morning2: fm.
+            :night1: nt.
+            :pm: p.m.
           :wide: 
-            :am: AM
-            :pm: PM
+            :afternoon1: ettermiddag
+            :am: a.m.
+            :evening1: kveld
+            :midnight: midnatt
+            :morning1: morgen
+            :morning2: formiddag
+            :night1: natt
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 
@@ -280,10 +325,10 @@
             3: K3
             4: K4
           :narrow: 
-            1: "1"
-            2: "2"
-            3: "3"
-            4: "4"
+            1: "1."
+            2: "2."
+            3: "3."
+            4: "4."
           :wide: 
             1: "1. kvartal"
             2: "2. kvartal"
@@ -296,10 +341,10 @@
             3: K3
             4: K4
           :narrow: 
-            1: "1"
-            2: "2"
-            3: "3"
-            4: "4"
+            1: "1."
+            2: "2."
+            3: "3."
+            4: "4."
           :wide: 
             1: "1. kvartal"
             2: "2. kvartal"

@@ -9,7 +9,8 @@ module TwitterCldr
 
       def format(tokens, number, options = {})
         options[:currency] ||= "USD"
-        currency = TwitterCldr::Shared::Currencies.for_code(options[:currency])
+        options[:locale] ||= :en
+        currency = TwitterCldr::Shared::Currencies.for_code(options[:currency], options[:locale])
         currency ||= {
           currency:    options[:currency],
           symbol:      options[:currency],

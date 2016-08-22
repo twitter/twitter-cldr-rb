@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤0K
+              :other: ¤0K
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤00K
+              :other: ¤00K
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤000K
+              :other: ¤000K
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤0M
+              :other: ¤0M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤00M
+              :other: ¤00M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤000M
+              :other: ¤000M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤0B
+              :other: ¤0B
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤00B
+              :other: ¤00B
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤000B
+              :other: ¤000B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤0T
+              :other: ¤0T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤00T
+              :other: ¤00T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤000T
+              :other: ¤000T
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -17,51 +66,51 @@
             ? !ruby/symbol "1000"
             : 
               :one: "0 libo"
-              :other: "0 libo"
+              :other: "0 na libo"
             ? !ruby/symbol "10000"
             : 
               :one: "00 libo"
-              :other: "00 libo"
+              :other: "00 na libo"
             ? !ruby/symbol "100000"
             : 
               :one: "000 libo"
-              :other: "000 libo"
+              :other: "000 na libo"
             ? !ruby/symbol "1000000"
             : 
               :one: "0 milyon"
-              :other: "0 milyon"
+              :other: "0 na milyon"
             ? !ruby/symbol "10000000"
             : 
               :one: "00 milyon"
-              :other: "00 milyon"
+              :other: "00 na milyon"
             ? !ruby/symbol "100000000"
             : 
               :one: "000 milyon"
-              :other: "000 milyon"
+              :other: "000 na milyon"
             ? !ruby/symbol "1000000000"
             : 
               :one: "0 bilyon"
-              :other: "0 bilyon"
+              :other: "0 na bilyon"
             ? !ruby/symbol "10000000000"
             : 
               :one: "00 bilyon"
-              :other: "00 bilyon"
+              :other: "00 na bilyon"
             ? !ruby/symbol "100000000000"
             : 
               :one: "000 bilyon"
-              :other: "000 bilyon"
+              :other: "000 na bilyon"
             ? !ruby/symbol "1000000000000"
             : 
               :one: "0 trilyon"
-              :other: "0 trilyon"
+              :other: "0 na trilyon"
             ? !ruby/symbol "10000000000000"
             : 
               :one: "00 trilyon"
-              :other: "00 trilyon"
+              :other: "00 na trilyon"
             ? !ruby/symbol "100000000000000"
             : 
               :one: "000 trilyon"
-              :other: "000 trilyon"
+              :other: "000 na trilyon"
           :short: 
             ? !ruby/symbol "1000"
             : 

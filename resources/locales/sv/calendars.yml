@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E d/M"
         :MMM: LLL
@@ -30,6 +32,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -38,10 +42,11 @@
         :yMM: y-MM
         :yMMM: "MMM y"
         :yMMMEd: "E d MMM y"
+        :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
         :yMd: y-MM-dd
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
@@ -78,13 +83,13 @@
             :wed: onsdag
         :stand-alone: 
           :abbreviated: 
-            :fri: Fre
-            :mon: Mån
-            :sat: Lör
-            :sun: Sön
-            :thu: Tor
-            :tue: Tis
-            :wed: Ons
+            :fri: fre
+            :mon: mån
+            :sat: lör
+            :sun: sön
+            :thu: tors
+            :tue: tis
+            :wed: ons
           :narrow: 
             :fri: F
             :mon: M
@@ -94,21 +99,21 @@
             :tue: T
             :wed: O
           :short: 
-            :fri: Fr
-            :mon: Må
-            :sat: Lö
-            :sun: Sö
-            :thu: To
-            :tue: Ti
-            :wed: "On"
+            :fri: fr
+            :mon: må
+            :sat: lö
+            :sun: sö
+            :thu: to
+            :tue: ti
+            :wed: "on"
           :wide: 
-            :fri: Fredag
-            :mon: Måndag
-            :sat: Lördag
-            :sun: Söndag
-            :thu: Torsdag
-            :tue: Tisdag
-            :wed: Onsdag
+            :fri: fredag
+            :mon: måndag
+            :sat: lördag
+            :sun: söndag
+            :thu: torsdag
+            :tue: tisdag
+            :wed: onsdag
       :eras: 
         :abbr: 
           0: f.v.t.
@@ -120,34 +125,34 @@
           0: fvt
           1: vt
       :fields: 
-        :day: Dag
+        :day: dag
         :day-narrow: dag
         :day-short: dag
         :dayperiod: fm/em
-        :era: Era
-        :hour: Timme
+        :era: era
+        :hour: timme
         :hour-narrow: h
         :hour-short: tim
-        :minute: Minut
+        :minute: minut
         :minute-narrow: m
         :minute-short: min
-        :month: Månad
+        :month: månad
         :month-narrow: m
         :month-short: m
-        :quarter: Kvartal
+        :quarter: kvartal
         :quarter-narrow: kv.
         :quarter-short: kv.
-        :second: Sekund
+        :second: sekund
         :second-narrow: s
         :second-short: sek
-        :week: Vecka
+        :week: vecka
         :week-narrow: v
         :week-short: v
-        :weekday: Veckodag
-        :year: År
+        :weekday: veckodag
+        :year: år
         :year-narrow: år
         :year-short: år
-        :zone: Tidszon
+        :zone: tidszon
       :formats: 
         :date: 
           :full: 
@@ -169,13 +174,13 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "'kl'. HH:mm:ss zzzz"
+            :pattern: "'kl'. HH.mm.ss zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "HH.mm.ss z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: HH.mm.ss
           :short: 
-            :pattern: "HH:mm"
+            :pattern: HH.mm
       :months: 
         :format: 
           :abbreviated: 
@@ -219,18 +224,18 @@
             9: september
         :stand-alone: 
           :abbreviated: 
-            1: Jan.
-            10: Okt.
-            11: Nov.
-            12: Dec.
-            2: Feb.
-            3: Mars
-            4: Apr.
-            5: Maj
-            6: Juni
-            7: Juli
-            8: Aug.
-            9: Sep.
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mars
+            4: apr.
+            5: maj
+            6: juni
+            7: juli
+            8: aug.
+            9: sep.
           :narrow: 
             1: J
             10: O
@@ -245,40 +250,74 @@
             8: A
             9: S
           :wide: 
-            1: Januari
-            10: Oktober
-            11: November
-            12: December
-            2: Februari
-            3: Mars
-            4: April
-            5: Maj
-            6: Juni
-            7: Juli
-            8: Augusti
-            9: September
+            1: januari
+            10: oktober
+            11: november
+            12: december
+            2: februari
+            3: mars
+            4: april
+            5: maj
+            6: juni
+            7: juli
+            8: augusti
+            9: september
       :periods: 
         :format: 
           :abbreviated: 
-            :am: FM
-            :pm: EM
-          :narrow: 
-            :am: f
-            :noon: p.d.
-            :pm: e
-          :wide: 
+            :afternoon1: "på efterm."
             :am: fm
-            :noon: "på dagen"
+            :evening1: "på kvällen"
+            :midnight: midnatt
+            :morning1: "på morg."
+            :morning2: "på förm."
+            :night1: "på natten"
+            :pm: em
+          :narrow: 
+            :afternoon1: "på efterm."
+            :am: fm
+            :evening1: "på kvällen"
+            :midnight: midn.
+            :morning1: "på morg."
+            :morning2: "på förm."
+            :night1: "på natten"
+            :pm: em
+          :wide: 
+            :afternoon1: "på eftermiddagen"
+            :am: fm
+            :evening1: "på kvällen"
+            :midnight: midnatt
+            :morning1: "på morgonen"
+            :morning2: "på förmiddagen"
+            :night1: "på natten"
             :pm: em
         :stand-alone: 
           :abbreviated: 
-            :am: fm
-            :pm: em
-          :narrow: 
+            :afternoon1: efterm.
             :am: f.m.
+            :evening1: kväll
+            :midnight: midnatt
+            :morning1: morgon
+            :morning2: förm.
+            :night1: natt
             :pm: e.m.
+          :narrow: 
+            :afternoon1: efterm.
+            :am: fm
+            :evening1: kväll
+            :midnight: midn.
+            :morning1: morg.
+            :morning2: förm.
+            :night1: natt
+            :pm: em
           :wide: 
+            :afternoon1: eftermiddag
             :am: förmiddag
+            :evening1: kväll
+            :midnight: midnatt
+            :morning1: morgon
+            :morning2: förmiddag
+            :night1: natt
             :pm: eftermiddag
       :quarters: 
         :format: 

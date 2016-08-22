@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L.
         :MEd: "E, dd.MM."
         :MMM: LLL
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "hh:mm a"
         :hms: "hh:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : y.
@@ -120,34 +124,34 @@
           0: pr.n.e.
           1: AD
       :fields: 
-        :day: Dan
+        :day: dan
         :day-narrow: d.
         :day-short: d.
         :dayperiod: AM/PM
-        :era: Era
-        :hour: Sat
+        :era: era
+        :hour: sat
         :hour-narrow: h
         :hour-short: h
-        :minute: Minuta
+        :minute: minuta
         :minute-narrow: min
         :minute-short: min
-        :month: Mjesec
+        :month: mjesec
         :month-narrow: m.
         :month-short: mj.
-        :quarter: Kvartal
+        :quarter: kvartal
         :quarter-narrow: kv.
         :quarter-short: kv.
-        :second: Sekunda
+        :second: sekunda
         :second-narrow: s
         :second-short: s
-        :week: Tjedan
+        :week: tjedan
         :week-narrow: tj.
         :week-short: tj.
-        :weekday: "Dan u tjednu"
-        :year: Godina
+        :weekday: "dan u tjednu"
+        :year: godina
         :year-narrow: g.
         :year-short: g.
-        :zone: "Vremenska zona"
+        :zone: "vremenska zona"
       :formats: 
         :date: 
           :full: 
@@ -260,33 +264,48 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon: popodne
-            :earlyMorning: ujutro
-            :evening: navečer
-            :morning: prijepodne
-            :night: noću
-            :noon: podne
-          :narrow: 
-            :afternoon: popodne
+            :afternoon1: popodne
             :am: AM
-            :earlyMorning: ujutro
-            :evening: navečer
-            :morning: prijepodne
-            :night: noću
-            :noon: P
+            :evening1: navečer
+            :midnight: ponoć
+            :morning1: ujutro
+            :night1: noću
+            :noon: podne
+            :pm: PM
+          :narrow: 
+            :afternoon1: popodne
+            :am: AM
+            :evening1: navečer
+            :midnight: ponoć
+            :morning1: ujutro
+            :night1: noću
+            :noon: podne
             :pm: PM
           :wide: 
+            :afternoon1: "poslije podne"
             :am: AM
+            :evening1: navečer
+            :midnight: ponoć
+            :morning1: ujutro
+            :night1: noću
             :noon: podne
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon: popodne
-            :earlyMorning: ujutro
-            :evening: navečer
-            :morning: prijepodne
-            :night: noću
+            :am: AM
+            :pm: PM
+          :narrow: 
+            :am: AM
+            :pm: PM
+          :wide: 
+            :afternoon1: popodne
+            :am: AM
+            :evening1: večer
+            :midnight: ponoć
+            :morning1: jutro
+            :night1: noć
             :noon: podne
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

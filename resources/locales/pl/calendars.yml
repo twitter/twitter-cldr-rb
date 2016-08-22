@@ -12,32 +12,40 @@
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
-        :GyMMMd: "d MMM y G"
+        :GyMMMM: "LLLL y G"
+        :GyMMMMEd: "E, d MMMM y G"
+        :GyMMMMd: "d MMMM y G"
+        :GyMMMd: "d.MM.y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d.MM"
         :MMM: LLL
-        :MMMEd: "E, d MMM"
+        :MMMEd: "E, d.MM"
+        :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
-        :MMMd: "d MMM"
-        :MMdd: d.MM
+        :MMMd: d.MM
         :Md: d.MM
         :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: MM.y
         :yMEd: "E, d.MM.y"
-        :yMM: MM.y
-        :yMMM: "LLL y"
-        :yMMMEd: "E, d MMM y"
+        :yMMM: MM.y
+        :yMMMEd: "E, d.MM.y"
         :yMMMM: "LLLL y"
-        :yMMMd: "d MMM y"
+        :yMMMMEd: "E, d MMMM y"
+        :yMMMMd: "d MMMM y"
+        :yMMMd: d.MM.y
         :yMd: d.MM.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
@@ -60,13 +68,13 @@
             :tue: W
             :wed: Ś
           :short: 
-            :fri: pt.
-            :mon: pon.
-            :sat: sob.
-            :sun: niedz.
-            :thu: czw.
-            :tue: wt.
-            :wed: śr.
+            :fri: pią
+            :mon: pon
+            :sat: sob
+            :sun: nie
+            :thu: czw
+            :tue: wto
+            :wed: śro
           :wide: 
             :fri: piątek
             :mon: poniedziałek
@@ -93,13 +101,13 @@
             :tue: W
             :wed: Ś
           :short: 
-            :fri: pt.
-            :mon: pon.
-            :sat: sob.
-            :sun: niedz.
-            :thu: czw.
-            :tue: wt.
-            :wed: śr.
+            :fri: pią
+            :mon: pon
+            :sat: sob
+            :sun: nie
+            :thu: czw
+            :tue: wto
+            :wed: śro
           :wide: 
             :fri: piątek
             :mon: poniedziałek
@@ -153,7 +161,7 @@
           :long: 
             :pattern: "d MMMM y"
           :medium: 
-            :pattern: "d MMM y"
+            :pattern: dd.MM.y
           :short: 
             :pattern: dd.MM.y
         :datetime: 
@@ -257,22 +265,53 @@
             9: wrzesień
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: "po południu"
+            :am: AM
+            :evening1: wieczorem
+            :midnight: "o północy"
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
+            :noon: "w południe"
+            :pm: PM
           :narrow: 
+            :afternoon1: "po południu"
             :am: a
+            :evening1: wieczorem
+            :midnight: "o półn."
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
             :noon: "n"
             :pm: p
           :wide: 
-            :afternoon: "po południu"
+            :afternoon1: "po południu"
             :am: AM
-            :earlyMorning: "nad ranem"
-            :evening: wieczorem
-            :lateMorning: "przed południem"
-            :morning: rano
-            :night: "w nocy"
+            :evening1: wieczorem
+            :midnight: "o północy"
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
             :noon: "w południe"
             :pm: PM
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :am: AM
+            :pm: PM
+          :narrow: 
+            :am: a
+            :pm: p
+          :wide: 
+            :afternoon1: popołudnie
+            :am: AM
+            :evening1: wieczór
+            :midnight: północ
+            :morning1: rano
+            :morning2: przedpołudnie
+            :night1: noc
+            :noon: południe
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

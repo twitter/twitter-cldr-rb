@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
         :MMM: LLL
@@ -28,6 +30,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -110,24 +114,24 @@
             :wed: बुधवार
       :eras: 
         :abbr: 
-          0: "इ. स. पू. युग"
+          0: "ईसापूर्व युग"
           1: "ख्रि. यु."
         :name: 
           0: "ईसापूर्व युग"
-          1: ईसायुग
+          1: ख्रिस्तयुग
         :narrow: 
           0: ""
       :fields: 
         :day: दिवस
         :day-narrow: दिवस
         :day-short: दिवस
-        :dayperiod: "[AM/PM]"
+        :dayperiod: "[म.पू./म.उ.]"
         :era: युग
         :hour: तास
         :hour-narrow: तास
         :hour-short: तास
         :minute: मिनिट
-        :minute-narrow: मि
+        :minute-narrow: मि.
         :minute-short: मि.
         :month: महिना
         :month-narrow: महिना
@@ -136,7 +140,7 @@
         :quarter-narrow: तिमाही
         :quarter-short: तिमाही
         :second: सेकंद
-        :second-narrow: से
+        :second-narrow: से.
         :second-short: से.
         :week: आठवडा
         :week-narrow: आठवडा
@@ -158,9 +162,9 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'रोजी' {{time}}"
+            :pattern: "{{date}} रोजी {{time}}"
           :long: 
-            :pattern: "{{date}} 'रोजी' {{time}}"
+            :pattern: "{{date}} रोजी {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
@@ -258,17 +262,72 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: AM
-            :pm: PM
-          :narrow: 
-            :am: स
-            :noon: दु
-            :pm: सं
-          :wide: 
+            :afternoon1: दुपार
             :am: म.पू.
+            :evening1: संध्याकाळ
+            :evening2: सायंकाळ
+            :midnight: मध्यरात्र
+            :morning1: पहाट
+            :morning2: सकाळ
+            :night1: रात्र
             :noon: मध्यान्ह
             :pm: म.उ.
-        :stand-alone: {}
+          :narrow: 
+            :afternoon1: दु
+            :am: स
+            :evening1: सं
+            :evening2: सा
+            :midnight: म.रा.
+            :morning1: प
+            :morning2: स
+            :night1: रा
+            :noon: म
+            :pm: सं
+          :wide: 
+            :afternoon1: दुपार
+            :am: म.पू.
+            :evening1: संध्याकाळ
+            :evening2: सायंकाळ
+            :midnight: मध्यरात्र
+            :morning1: पहाट
+            :morning2: सकाळ
+            :night1: रात्र
+            :noon: मध्यान्ह
+            :pm: म.उ.
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: दुपार
+            :am: म.पू.
+            :evening1: संध्याकाळ
+            :evening2: सायंकाळ
+            :midnight: मध्यरात्र
+            :morning1: पहाट
+            :morning2: सकाळ
+            :night1: रात्र
+            :noon: मध्यान्ह
+            :pm: म.उ.
+          :narrow: 
+            :afternoon1: दु
+            :am: म.पू.
+            :evening1: सं
+            :evening2: सा
+            :midnight: म.रा.
+            :morning1: प
+            :morning2: स
+            :night1: रा
+            :noon: म
+            :pm: म.उ.
+          :wide: 
+            :afternoon1: दुपार
+            :am: म.पू.
+            :evening1: संध्याकाळ
+            :evening2: सायंकाळ
+            :midnight: मध्यरात्र
+            :morning1: पहाट
+            :morning2: सकाळ
+            :night1: रात्र
+            :noon: मध्यान्ह
+            :pm: म.उ.
       :quarters: 
         :format: 
           :abbreviated: 

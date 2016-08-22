@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "¤ #,##0.00;¤-#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 ¤
+              :other: 0 ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 ¤
+              :other: 00 ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 ¤
+              :other: 000 ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 Mio ¤
+              :other: 0 Mio ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 Mio ¤
+              :other: 00 Mio ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 Mio ¤
+              :other: 000 Mio ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 Mrd ¤
+              :other: 0 Mrd ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 Mrd ¤
+              :other: 00 Mrd ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 Mrd ¤
+              :other: 000 Mrd ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 Bln ¤
+              :other: 0 Bln ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 Bln ¤
+              :other: 00 Bln ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 Bln ¤
+              :other: 000 Bln ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -16,16 +65,16 @@
           :long: 
             ? !ruby/symbol "1000"
             : 
-              :one: "0 migliaio"
-              :other: "0 migliaia"
+              :one: "0 mille"
+              :other: "0 mila"
             ? !ruby/symbol "10000"
             : 
-              :one: "00 migliaia"
-              :other: "00 migliaia"
+              :one: "00 mila"
+              :other: "00 mila"
             ? !ruby/symbol "100000"
             : 
-              :one: "000 migliaia"
-              :other: "000 migliaia"
+              :one: "000 mila"
+              :other: "000 mila"
             ? !ruby/symbol "1000000"
             : 
               :one: "0 milione"
@@ -52,16 +101,16 @@
               :other: "000 miliardi"
             ? !ruby/symbol "1000000000000"
             : 
-              :one: "0 migliaio di miliardi"
-              :other: "0 migliaia di miliardi"
+              :one: "0 mille miliardi"
+              :other: "0 mila miliardi"
             ? !ruby/symbol "10000000000000"
             : 
-              :one: "00 migliaia di miliardi"
-              :other: "00 migliaia di miliardi"
+              :one: "00 mila miliardi"
+              :other: "00 mila miliardi"
             ? !ruby/symbol "100000000000000"
             : 
-              :one: "000 migliaia di miliardi"
-              :other: "000 migliaia di miliardi"
+              :one: "000 mila miliardi"
+              :other: "000 mila miliardi"
           :short: 
             ? !ruby/symbol "1000"
             : 

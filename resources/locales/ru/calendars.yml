@@ -9,17 +9,20 @@
         :Ed: "ccc, d"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
-        :Gy: "y G"
+        :Gy: "y 'г'. G"
         :GyMMM: "LLL y G"
         :GyMMMEd: "E, d MMM y 'г'. G"
         :GyMMMd: "d MMM y 'г'. G"
         :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "H:mm:ss v"
+        :Hmv: "H:mm v"
         :M: L
         :MEd: "E, dd.MM"
         :MMM: LLL
         :MMMEd: "ccc, d MMM"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd.MM
         :Md: dd.MM
@@ -27,16 +30,17 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yLLLL: "LLLL y"
         :yM: MM.y
         :yMEd: "ccc, d.MM.y 'г'."
         :yMM: MM.y
-        :yMMM: "LLL y"
+        :yMMM: "LLL y 'г'."
         :yMMMEd: "E, d MMM y 'г'."
-        :yMMMM: "LLLL y"
+        :yMMMM: "LLLL y 'г'."
         :yMMMd: "d MMM y 'г'."
         :yMd: dd.MM.y
         :yQQQ: "QQQ y 'г'."
@@ -77,13 +81,13 @@
             :wed: среда
         :stand-alone: 
           :abbreviated: 
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Вс
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: вс
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :narrow: 
             :fri: П
             :mon: П
@@ -101,52 +105,52 @@
             :tue: вт
             :wed: ср
           :wide: 
-            :fri: Пятница
-            :mon: Понедельник
-            :sat: Суббота
-            :sun: Воскресенье
-            :thu: Четверг
-            :tue: Вторник
-            :wed: Среда
+            :fri: пятница
+            :mon: понедельник
+            :sat: суббота
+            :sun: воскресенье
+            :thu: четверг
+            :tue: вторник
+            :wed: среда
       :eras: 
         :abbr: 
           0: "до н. э."
           1: "н. э."
         :name: 
-          0: "до н. э."
-          1: "н. э."
+          0: "до нашей эры"
+          1: "нашей эры"
         :narrow: 
           0: "до н.э."
           1: н.э.
       :fields: 
-        :day: День
+        :day: день
         :day-narrow: дн.
         :day-short: дн.
         :dayperiod: ДП/ПП
-        :era: Эра
-        :hour: Час
+        :era: эра
+        :hour: час
         :hour-narrow: ч.
         :hour-short: ч.
-        :minute: Минута
+        :minute: минута
         :minute-narrow: мин.
         :minute-short: мин.
-        :month: Месяц
+        :month: месяц
         :month-narrow: мес.
         :month-short: мес.
-        :quarter: Квартал
+        :quarter: квартал
         :quarter-narrow: кв.
         :quarter-short: кв.
-        :second: Секунда
+        :second: секунда
         :second-narrow: с
         :second-short: сек.
-        :week: Неделя
+        :week: неделя
         :week-narrow: нед.
         :week-short: нед.
-        :weekday: "День недели"
-        :year: Год
+        :weekday: "день недели"
+        :year: год
         :year-narrow: г.
         :year-short: г.
-        :zone: "Часовой пояс"
+        :zone: "часовой пояс"
       :formats: 
         :date: 
           :full: 
@@ -183,11 +187,11 @@
             11: нояб.
             12: дек.
             2: февр.
-            3: марта
+            3: мар.
             4: апр.
             5: мая
-            6: июня
-            7: июля
+            6: июн.
+            7: июл.
             8: авг.
             9: сент.
           :narrow: 
@@ -259,17 +263,60 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: AM
-            :pm: PM
+            :afternoon1: дня
+            :am: ДП
+            :evening1: вечера
+            :midnight: полночь
+            :morning1: утра
+            :night1: ночи
+            :noon: полдень
+            :pm: ПП
           :narrow: 
-            :am: AM
+            :afternoon1: дня
+            :am: ДП
+            :evening1: вечера
+            :midnight: полночь
+            :morning1: утра
+            :night1: ночи
             :noon: полдень
-            :pm: PM
+            :pm: ПП
           :wide: 
-            :am: AM
+            :afternoon1: дня
+            :am: ДП
+            :evening1: вечера
+            :midnight: полночь
+            :morning1: утра
+            :night1: ночи
             :noon: полдень
-            :pm: PM
-        :stand-alone: {}
+            :pm: ПП
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: день
+            :am: ДП
+            :evening1: веч.
+            :midnight: полн.
+            :morning1: утро
+            :night1: ночь
+            :noon: полд.
+            :pm: ПП
+          :narrow: 
+            :afternoon1: день
+            :am: ДП
+            :evening1: веч.
+            :midnight: полн.
+            :morning1: утро
+            :night1: ночь
+            :noon: полд.
+            :pm: ПП
+          :wide: 
+            :afternoon1: день
+            :am: ДП
+            :evening1: вечер
+            :midnight: полночь
+            :morning1: утро
+            :night1: ночь
+            :noon: полдень
+            :pm: ПП
       :quarters: 
         :format: 
           :abbreviated: 

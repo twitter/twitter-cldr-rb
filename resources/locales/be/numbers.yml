@@ -5,55 +5,239 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "¤#,##0.00"
+          :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 тыс'.' ¤
+              :many: 0 тыс'.' ¤
+              :one: 0 тыс'.' ¤
+              :other: 0 тыс'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 тыс'.' ¤
+              :many: 00 тыс'.' ¤
+              :one: 00 тыс'.' ¤
+              :other: 00 тыс'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 тыс'.' ¤
+              :many: 000 тыс'.' ¤
+              :one: 000 тыс'.' ¤
+              :other: 000 тыс'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 млн ¤
+              :many: 0 млн ¤
+              :one: 0 млн ¤
+              :other: 0 млн ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 млн ¤
+              :many: 00 млн ¤
+              :one: 00 млн ¤
+              :other: 00 млн ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 млн ¤
+              :many: 000 млн ¤
+              :one: 000 млн ¤
+              :other: 000 млн ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 млрд ¤ 
+              :many: 0 млрд ¤ 
+              :one: 0 млрд ¤ 
+              :other: 0 млрд ¤ 
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 млрд ¤
+              :many: 00 млрд ¤
+              :one: 00 млрд ¤
+              :other: 00 млрд ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 млрд ¤
+              :many: 000 млрд ¤
+              :one: 000 млрд ¤
+              :other: 000 млрд ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 трлн ¤
+              :many: 0 трлн ¤
+              :one: 0 трлн ¤
+              :other: 0 трлн ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 трлн ¤
+              :many: 00 трлн ¤
+              :one: 00 трлн ¤
+              :other: 00 трлн ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 трлн ¤
+              :many: 000 трлн ¤
+              :one: 000 трлн ¤
+              :other: 000 трлн ¤
         :unit: 
+          :few: "{0} {1}"
+          :many: "{0} {1}"
+          :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
         :number_system: latn
         :patterns: 
           :default: "#,##0.###"
-          :long: :numbers.formats.decimal.patterns.short
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: "0 тысячы"
+              :many: "0 тысяч"
+              :one: "0 тысяча"
+              :other: "0 тысячы"
+            ? !ruby/symbol "10000"
+            : 
+              :few: "00 тысячы"
+              :many: "00 тысяч"
+              :one: "00 тысяча"
+              :other: "00 тысячы"
+            ? !ruby/symbol "100000"
+            : 
+              :few: "000 тысячы"
+              :many: "000 тысяч"
+              :one: "000 тысяча"
+              :other: "000 тысячы"
+            ? !ruby/symbol "1000000"
+            : 
+              :few: "0 мільёны"
+              :many: "0 мільёнаў"
+              :one: "0 мільён"
+              :other: "0 мільёна"
+            ? !ruby/symbol "10000000"
+            : 
+              :few: "00 мільёны"
+              :many: "00 мільёнаў"
+              :one: "00 мільён"
+              :other: "00 мільёна"
+            ? !ruby/symbol "100000000"
+            : 
+              :few: "000 мільёны"
+              :many: "000 мільёнаў"
+              :one: "000 мільён"
+              :other: "000 мільёна"
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: "0 мільярды"
+              :many: "0 мільярдаў"
+              :one: "0 мільярд"
+              :other: "0 мільярда"
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: "00 мільярды"
+              :many: "00 мільярдаў"
+              :one: "00 мільярд"
+              :other: "00 мільярда"
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: "000 мільярды"
+              :many: "000 мільярдаў"
+              :one: "000 мільярд"
+              :other: "000 мільярда"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: "0 трыльёны"
+              :many: "0 трыльёнаў"
+              :one: "0 трыльён"
+              :other: "0 трыльёна"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: "00 трыльёны"
+              :many: "00 трыльёнаў"
+              :one: "00 трыльён"
+              :other: "00 трыльёна"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: "000 трыльёны"
+              :many: "000 трыльёнаў"
+              :one: "000 трыльён"
+              :other: "000 трыльёна"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: 0K
+              :few: 0 тыс'.'
+              :many: 0 тыс'.'
+              :one: 0 тыс'.'
+              :other: 0 тыс'.'
             ? !ruby/symbol "10000"
             : 
-              :other: 00K
+              :few: 00 тыс'.'
+              :many: 00 тыс'.'
+              :one: 00 тыс'.'
+              :other: 00 тыс'.'
             ? !ruby/symbol "100000"
             : 
-              :other: 000K
+              :few: 000 тыс'.'
+              :many: 000 тыс'.'
+              :one: 000 тыс'.'
+              :other: 000 тыс'.'
             ? !ruby/symbol "1000000"
             : 
-              :other: 0M
+              :few: 0 млн
+              :many: 0 млн
+              :one: 0 млн
+              :other: 0 млн
             ? !ruby/symbol "10000000"
             : 
-              :other: 00M
+              :few: 00 млн
+              :many: 00 млн
+              :one: 00 млн
+              :other: 00 млн
             ? !ruby/symbol "100000000"
             : 
-              :other: 000M
+              :few: 000 млн
+              :many: 000 млн
+              :one: 000 млн
+              :other: 000 млн
             ? !ruby/symbol "1000000000"
             : 
-              :other: 0G
+              :few: 0 млрд
+              :many: 0 млрд
+              :one: 0 млрд
+              :other: 0 млрд
             ? !ruby/symbol "10000000000"
             : 
-              :other: 00G
+              :few: 00 млрд
+              :many: 00 млрд
+              :one: 00 млрд
+              :other: 00 млрд
             ? !ruby/symbol "100000000000"
             : 
-              :other: 000G
+              :few: 000 млрд
+              :many: 000 млрд
+              :one: 000 млрд
+              :other: 000 млрд
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0T
+              :few: 0 трлн
+              :many: 0 трлн
+              :one: 0 трлн
+              :other: 0 трлн
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00T
+              :few: 00 трлн
+              :many: 00 трлн
+              :one: 00 трлн
+              :other: 00 трлн
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000T
+              :few: 000 трлн
+              :many: 000 трлн
+              :one: 000 трлн
+              :other: 000 трлн
       :percent: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0%"
+          :default: "#,##0 %"
       :scientific: 
         :number_system: latn
         :patterns: 
@@ -71,4 +255,4 @@
       :percent_sign: "%"
       :plus_sign: +
       :superscripting_exponent: ×
-      :time_separator: ":"
+      :time_separator: "."

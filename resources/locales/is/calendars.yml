@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d.M."
         :MMM: LLL
@@ -28,6 +30,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -115,11 +119,11 @@
           0: "fyrir kristið tímatal"
           1: "kristið tímatal"
         :narrow: 
-          0: flt
-          1: lt
+          0: f.v.t.
+          1: v.t.
       :fields: 
         :day: dagur
-        :day-narrow: dagur
+        :day-narrow: d.
         :day-short: dagur
         :dayperiod: f.h./e.h.
         :era: tímabil
@@ -133,13 +137,13 @@
         :month-narrow: mán.
         :month-short: mán.
         :quarter: ársfjórðungur
-        :quarter-narrow: ársfjórðungur
-        :quarter-short: ársfjórðungur
+        :quarter-narrow: ársfj.
+        :quarter-short: ársfjórð.
         :second: sekúnda
         :second-narrow: sek.
         :second-short: sek.
         :week: vika
-        :week-narrow: vika
+        :week-narrow: v.
         :week-short: vika
         :weekday: vikudagur
         :year: ár
@@ -158,9 +162,9 @@
             :pattern: d.M.y
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'kl.' {{time}}"
+            :pattern: "{{date}} 'kl'. {{time}}"
           :long: 
-            :pattern: "{{date}} 'kl.' {{time}}"
+            :pattern: "{{date}} 'kl'. {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
@@ -257,19 +261,57 @@
             9: september
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: síðd.
+            :am: f.h.
+            :evening1: "að kv."
+            :midnight: miðn.
+            :morning1: "að morgni"
+            :night1: "að nóttu"
+            :noon: hád.
+            :pm: e.h.
           :narrow: 
+            :afternoon1: sd.
             :am: f.
+            :evening1: kv.
+            :midnight: mn.
+            :morning1: mrg.
+            :night1: n.
             :noon: h.
             :pm: e.
           :wide: 
+            :afternoon1: síðdegis
             :am: f.h.
+            :evening1: "að kvöldi"
+            :midnight: miðnætti
+            :morning1: "að morgni"
+            :night1: "að nóttu"
             :noon: hádegi
             :pm: e.h.
         :stand-alone: 
+          :abbreviated: 
+            :afternoon1: síðd.
+            :evening1: kv.
+            :midnight: miðn.
+            :morning1: morg.
+            :night1: nótt
+            :noon: hád.
+          :narrow: 
+            :afternoon1: sd.
+            :evening1: kv.
+            :midnight: mn.
+            :morning1: mrg.
+            :night1: n.
+            :noon: hd.
           :wide: 
-            :am: árdegi
-            :pm: síðdegi
+            :afternoon1: "eftir hádegi"
+            :am: f.h.
+            :evening1: kvöld
+            :midnight: miðnætti
+            :morning1: morgunn
+            :night1: nótt
+            :noon: hádegi
+            :pm: e.h.
       :quarters: 
         :format: 
           :abbreviated: 

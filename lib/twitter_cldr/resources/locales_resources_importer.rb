@@ -24,6 +24,7 @@ module TwitterCldr
         lists
         territories
         rbnf
+        currencies
       ]  # units
 
       SHARED_COMPONENTS = %w[

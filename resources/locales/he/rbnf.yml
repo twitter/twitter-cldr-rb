@@ -716,7 +716,7 @@
                 :rule: "מינוס >>;"
                 :value: "-x"
               - 
-                :rule: "=%spellout-cardinal-masculine= ;"
+                :rule: =%spellout-cardinal-masculine=;
                 :value: 0
               - 
                 :rule: אחד;
@@ -748,6 +748,9 @@
               - 
                 :rule: עשרת;
                 :value: 10
+              - 
+                :rule: =%spellout-cardinal-masculine=;
+                :value: 11
             :type: spellout-construct-masculine
           - 
             :access: private

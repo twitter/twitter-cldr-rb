@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 tn ¤
+              :other: 0 tn ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 tn ¤
+              :other: 00 tn ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 tn ¤
+              :other: 000 tn ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 mn ¤
+              :other: 0 mn ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 mn ¤
+              :other: 00 mn ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 mn ¤
+              :other: 000 mn ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 md ¤
+              :other: 0 md ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 md ¤
+              :other: 00 md ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 md ¤
+              :other: 000 md ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 bn ¤
+              :other: 0 bn ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 bn ¤
+              :other: 00 bn ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 bn ¤
+              :other: 000 bn ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -131,5 +180,5 @@
       :per_mille: ‰
       :percent_sign: "%"
       :plus_sign: +
-      :superscripting_exponent: ·
-      :time_separator: ":"
+      :superscripting_exponent: ×
+      :time_separator: "."

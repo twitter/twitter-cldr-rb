@@ -14,14 +14,16 @@
         :GyMMMEd: "E, d 'de' MMM 'de' y G"
         :GyMMMd: "d 'de' MMM 'de' y G"
         :H: HH
-        :HHmm: "HH:mm"
-        :HHmmss: "HH:mm:ss"
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, dd/MM"
         :MMM: LLL
         :MMMEd: "E, d 'de' MMM"
+        :MMMMEd: "E, d 'de' MMMM"
+        :MMMMd: "d 'de' MMMM"
         :MMMd: "d 'de' MMM"
         :MMdd: dd/MM
         :Md: d/M
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -37,6 +41,9 @@
         :yMM: MM/y
         :yMMM: "MMM 'de' y"
         :yMMMEd: "E, d 'de' MMM 'de' y"
+        :yMMMM: "MMMM 'de' y"
+        :yMMMMEd: "E, d 'de' MMMM 'de' y"
+        :yMMMMd: "d 'de' MMMM 'de' y"
         :yMMMd: "d 'de' MMM 'de' y"
         :yMd: dd/MM/y
         :yQQQ: "y QQQ"
@@ -113,39 +120,39 @@
           0: AEC
           1: EC
         :name: 
-          0: "Antes da Era Comum"
+          0: "antes da Era Comum"
           1: "Era Comum"
         :narrow: 
           0: ""
       :fields: 
-        :day: Dia
+        :day: dia
         :day-narrow: dia
         :day-short: dia
         :dayperiod: AM/PM
-        :era: Era
-        :hour: Hora
+        :era: era
+        :hour: hora
         :hour-narrow: h
-        :hour-short: hr.
-        :minute: Minuto
+        :hour-short: h
+        :minute: minuto
         :minute-narrow: m
         :minute-short: min.
-        :month: Mês
+        :month: mês
         :month-narrow: mês
         :month-short: mês
-        :quarter: Trimestre
+        :quarter: trimestre
         :quarter-narrow: trim.
         :quarter-short: trim.
-        :second: Segundo
+        :second: segundo
         :second-narrow: s
         :second-short: seg.
-        :week: Semana
+        :week: semana
         :week-narrow: sem.
         :week-short: sem.
-        :weekday: "Dia da semana"
-        :year: Ano
+        :weekday: "dia da semana"
+        :year: ano
         :year-narrow: ano
         :year-short: ano
-        :zone: "Fuso horário"
+        :zone: "fuso horário"
       :formats: 
         :date: 
           :full: 
@@ -258,25 +265,60 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: "da tarde"
             :am: AM
+            :evening1: "da noite"
+            :midnight: meia-noite
+            :morning1: "da manhã"
+            :night1: "da madrugada"
+            :noon: meio-dia
             :pm: PM
           :narrow: 
+            :afternoon1: "da tarde"
             :am: a
-            :noon: "n"
+            :evening1: "da noite"
+            :midnight: m
+            :morning1: "da manhã"
+            :night1: "da madrugada"
+            :noon: m
             :pm: p
           :wide: 
-            :afternoon: tarde
+            :afternoon1: "da tarde"
             :am: AM
-            :morning: manhã
-            :night: noite
+            :evening1: "da noite"
+            :midnight: meia-noite
+            :morning1: "da manhã"
+            :night1: "da madrugada"
             :noon: meio-dia
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon: tarde
-            :morning: manhã
-            :night: noite
-            :noon: meia-noite
+            :afternoon1: tarde
+            :am: AM
+            :evening1: noite
+            :midnight: meia-noite
+            :morning1: manhã
+            :night1: madrugada
+            :noon: meio-dia
+            :pm: PM
+          :narrow: 
+            :afternoon1: tarde
+            :am: AM
+            :evening1: noite
+            :midnight: meia-noite
+            :morning1: manhã
+            :night1: madrugada
+            :noon: meio-dia
+            :pm: PM
+          :wide: 
+            :afternoon1: tarde
+            :am: AM
+            :evening1: noite
+            :midnight: meia-noite
+            :morning1: manhã
+            :night1: madrugada
+            :noon: meio-dia
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

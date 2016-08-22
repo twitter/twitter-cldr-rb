@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
         :MMM: LLL
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -260,17 +264,49 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: अपराह्न
+            :am: पूर्व
+            :evening1: शाम
+            :midnight: मध्यरात्रि
+            :morning1: सुबह
+            :night1: रात
+            :pm: अपर
+          :narrow: 
+            :afternoon1: अपराह्न
+            :am: पू
+            :evening1: शाम
+            :midnight: "आधी रात"
+            :morning1: सुबह
+            :night1: शाम
+            :pm: अ
+          :wide: 
+            :afternoon1: अपराह्न
+            :am: पूर्वाह्न
+            :evening1: शाम
+            :midnight: मध्यरात्रि
+            :morning1: सुबह
+            :night1: रात
+            :pm: अपराह्न
+        :stand-alone: 
+          :abbreviated: 
             :am: पूर्व
             :pm: अपर
           :narrow: 
+            :afternoon1: अपराह्न
             :am: पू
-            :noon: दोप
+            :evening1: शाम
+            :midnight: "आधी रात"
+            :morning1: सुबह
+            :night1: रात
             :pm: अ
           :wide: 
+            :afternoon1: दोपहर
             :am: पूर्वाह्न
-            :noon: दोपहर
+            :evening1: शाम
+            :midnight: "आधी रात"
+            :morning1: सुबह
+            :night1: रात
             :pm: अपराह्न
-        :stand-alone: {}
       :quarters: 
         :format: 
           :abbreviated: 

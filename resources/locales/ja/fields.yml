@@ -16,6 +16,12 @@
           :other: "{0} 日前"
     :day-narrow: 
       :display_name: 日
+      :relative: 
+        -1: 昨日
+        -2: 一昨日
+        0: 今日
+        1: 明日
+        2: 明後日
       :relative_time: 
         :future: 
           :other: "{0} 日後"
@@ -23,6 +29,12 @@
           :other: "{0} 日前"
     :day-short: 
       :display_name: 日
+      :relative: 
+        -1: 昨日
+        -2: 一昨日
+        0: 今日
+        1: 明日
+        2: 明後日
       :relative_time: 
         :future: 
           :other: "{0} 日後"
@@ -117,6 +129,10 @@
           :other: "{0} か月前"
     :month-narrow: 
       :display_name: 月
+      :relative: 
+        -1: 先月
+        0: 今月
+        1: 翌月
       :relative_time: 
         :future: 
           :other: "{0} か月後"
@@ -124,6 +140,10 @@
           :other: "{0} か月前"
     :month-short: 
       :display_name: 月
+      :relative: 
+        -1: 先月
+        0: 今月
+        1: 翌月
       :relative_time: 
         :future: 
           :other: "{0} か月後"
@@ -261,6 +281,10 @@
           :other: "{0} 週間前"
     :week-narrow: 
       :display_name: 週
+      :relative: 
+        -1: 先週
+        0: 今週
+        1: 翌週
       :relative_time: 
         :future: 
           :other: "{0} 週間後"
@@ -268,6 +292,10 @@
           :other: "{0} 週間前"
     :week-short: 
       :display_name: 週
+      :relative: 
+        -1: 先週
+        0: 今週
+        1: 翌週
       :relative_time: 
         :future: 
           :other: "{0} 週間後"
@@ -288,6 +316,10 @@
           :other: "{0} 年前"
     :year-narrow: 
       :display_name: 年
+      :relative: 
+        -1: 昨年
+        0: 今年
+        1: 翌年
       :relative_time: 
         :future: 
           :other: "{0} 年後"
@@ -295,6 +327,10 @@
           :other: "{0} 年前"
     :year-short: 
       :display_name: 年
+      :relative: 
+        -1: 昨年
+        0: 今年
+        1: 翌年
       :relative_time: 
         :future: 
           :other: "{0} 年後"

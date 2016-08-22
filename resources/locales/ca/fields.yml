@@ -18,6 +18,12 @@
           :other: "fa {0} dies"
     :day-narrow: 
       :display_name: dia
+      :relative: 
+        -1: ahir
+        -2: abans-d’ahir
+        0: avui
+        1: demà
+        2: "demà passat"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} dia"
@@ -27,6 +33,12 @@
           :other: "fa {0} dies"
     :day-short: 
       :display_name: dia
+      :relative: 
+        -1: ahir
+        -2: abans-d’ahir
+        0: avui
+        1: demà
+        2: "demà passat"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} dia"
@@ -58,7 +70,7 @@
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} hora"
-          :other: "d’aquí {0} hores"
+          :other: "d’aquí a {0} hores"
         :past: 
           :one: "fa {0} hora"
           :other: "fa {0} hores"
@@ -76,7 +88,7 @@
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} h"
-          :other: "d’aquí {0} hores"
+          :other: "d’aquí a {0} h"
         :past: 
           :one: "fa {0} h"
           :other: "fa {0} h"
@@ -137,6 +149,10 @@
           :other: "fa {0} mesos"
     :month-narrow: 
       :display_name: mes
+      :relative: 
+        -1: "mes passat"
+        0: "aquest mes"
+        1: "mes vinent"
       :relative_time: 
         :future: 
           :one: "en {0} mes"
@@ -146,6 +162,10 @@
           :other: "fa {0} mesos"
     :month-short: 
       :display_name: mes
+      :relative: 
+        -1: "el mes passat"
+        0: "aquest mes"
+        1: "el mes que ve"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} mes"
@@ -155,6 +175,10 @@
           :other: "fa {0} mesos"
     :quarter: 
       :display_name: trimestre
+      :relative: 
+        -1: "el trimestre passat"
+        0: "aquest trimestre"
+        1: "el trimestre que ve"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} trimestre"
@@ -163,7 +187,11 @@
           :one: "fa {0} trimestre"
           :other: "fa {0} trimestres"
     :quarter-narrow: 
-      :display_name: T
+      :display_name: trim.
+      :relative: 
+        -1: "trim. passat"
+        0: "aquest trim."
+        1: "trim. vinent"
       :relative_time: 
         :future: 
           :one: "en {0} trim."
@@ -173,6 +201,10 @@
           :other: "fa {0} trim."
     :quarter-short: 
       :display_name: trim.
+      :relative: 
+        -1: "el trim. passat"
+        0: "aquest trim."
+        1: "el trim. que ve"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} trim."
@@ -261,14 +293,14 @@
         1: "dimarts que ve"
     :tue-narrow: 
       :relative: 
-        -1: "dm. passat"
-        0: "aquest dm."
-        1: "dm. que ve"
+        -1: "dt. passat"
+        0: "aquest dt."
+        1: "dt. que ve"
     :tue-short: 
       :relative: 
-        -1: "dm. passat"
-        0: "aquest dm."
-        1: "dm. que ve"
+        -1: "dt. passat"
+        0: "aquest dt."
+        1: "dt. que ve"
     :wed: 
       :relative: 
         -1: "dimecres passat"
@@ -299,6 +331,10 @@
           :other: "fa {0} setmanes"
     :week-narrow: 
       :display_name: setm.
+      :relative: 
+        -1: "setm. passada"
+        0: "aquesta setm."
+        1: "setm. vinent"
       :relative_time: 
         :future: 
           :one: "en {0} setm."
@@ -308,6 +344,10 @@
           :other: "fa {0} setm."
     :week-short: 
       :display_name: setm.
+      :relative: 
+        -1: "la setm. passada"
+        0: "aquesta setm."
+        1: "la setm. que ve"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} setm."
@@ -332,6 +372,10 @@
           :other: "fa {0} anys"
     :year-narrow: 
       :display_name: any
+      :relative: 
+        -1: "l’any passat"
+        0: enguany
+        1: "l’any que ve"
       :relative_time: 
         :future: 
           :one: "en {0} any"
@@ -341,6 +385,10 @@
           :other: "fa {0} anys"
     :year-short: 
       :display_name: any
+      :relative: 
+        -1: "l’any passat"
+        0: enguany
+        1: "l’any que ve"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} any"
@@ -349,4 +397,4 @@
           :one: "fa {0} any"
           :other: "fa {0} anys"
     :zone: 
-      :display_name: zona
+      :display_name: "fus horari"

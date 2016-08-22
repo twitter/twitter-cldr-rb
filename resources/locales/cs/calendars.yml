@@ -18,6 +18,8 @@
         :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "H:mm:ss v"
+        :Hmv: "H:mm v"
         :M: L
         :MEd: "E d. M."
         :MMM: LLL
@@ -30,6 +32,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -120,36 +124,36 @@
           1: "n. l."
         :narrow: 
           0: př.n.l.
-          1: "n. l."
+          1: n.l.
       :fields: 
-        :day: Den
+        :day: den
         :day-narrow: den
         :day-short: den
-        :dayperiod: AM/PM
-        :era: Letopočet
-        :hour: Hodina
+        :dayperiod: "část dne"
+        :era: letopočet
+        :hour: hodina
         :hour-narrow: h
         :hour-short: h
-        :minute: Minuta
+        :minute: minuta
         :minute-narrow: min
         :minute-short: min
-        :month: Měsíc
+        :month: měsíc
         :month-narrow: měs.
         :month-short: měs.
-        :quarter: Čtvrtletí
+        :quarter: čtvrtletí
         :quarter-narrow: Q
         :quarter-short: Q
-        :second: Sekunda
+        :second: sekunda
         :second-narrow: s
         :second-short: s
-        :week: Týden
+        :week: týden
         :week-narrow: týd.
         :week-short: týd.
-        :weekday: "Den v týdnu"
-        :year: Rok
+        :weekday: "den v týdnu"
+        :year: rok
         :year-narrow: r.
         :year-short: r.
-        :zone: "Časové pásmo"
+        :zone: "časové pásmo"
       :formats: 
         :date: 
           :full: 
@@ -261,16 +265,67 @@
             9: září
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
-            :am: AM
+          :abbreviated: 
+            :afternoon1: odp.
+            :am: dop.
+            :evening1: več.
+            :midnight: půln.
+            :morning1: r.
+            :morning2: dop.
+            :night1: "v n."
             :noon: pol.
-            :pm: PM
+            :pm: odp.
+          :narrow: 
+            :afternoon1: o.
+            :am: dop.
+            :evening1: v.
+            :midnight: půl.
+            :morning1: r.
+            :morning2: d.
+            :night1: n.
+            :noon: pol.
+            :pm: odp.
           :wide: 
-            :am: AM
+            :afternoon1: odpoledne
+            :am: dop.
+            :evening1: večer
+            :midnight: půlnoc
+            :morning1: ráno
+            :morning2: dopoledne
+            :night1: "v noci"
             :noon: poledne
-            :pm: PM
-        :stand-alone: {}
+            :pm: odp.
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: odpoledne
+            :am: dop.
+            :evening1: večer
+            :midnight: půlnoc
+            :morning1: ráno
+            :morning2: dopoledne
+            :night1: noc
+            :noon: poledne
+            :pm: odp.
+          :narrow: 
+            :afternoon1: odp.
+            :am: dop.
+            :evening1: več.
+            :midnight: půl.
+            :morning1: ráno
+            :morning2: dop.
+            :night1: noc
+            :noon: pol.
+            :pm: odp.
+          :wide: 
+            :afternoon1: odpoledne
+            :am: dop.
+            :evening1: večer
+            :midnight: půlnoc
+            :morning1: ráno
+            :morning2: dopoledne
+            :night1: noc
+            :noon: poledne
+            :pm: odp.
       :quarters: 
         :format: 
           :abbreviated: 

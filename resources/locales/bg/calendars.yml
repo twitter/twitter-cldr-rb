@@ -19,6 +19,8 @@
         :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d.MM"
         :MMM: MM
@@ -33,6 +35,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "m:ss"
         ? !ruby/symbol "y"
         : "y 'г'."
@@ -123,7 +127,6 @@
           1: "след новата ера"
         :narrow: 
           0: ""
-          1: сл.н.е.
       :fields: 
         :day: ден
         :day-narrow: д
@@ -146,8 +149,8 @@
         :second-narrow: с
         :second-short: с
         :week: седмица
-        :week-narrow: седм
-        :week-short: седм
+        :week-narrow: седм.
+        :week-short: седм.
         :weekday: "ден от седмицата"
         :year: година
         :year-narrow: г.
@@ -184,18 +187,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: ян.
-            10: окт.
-            11: ноем.
-            12: дек.
-            2: февр.
+            1: яну
+            10: окт
+            11: ное
+            12: дек
+            2: фев
             3: март
-            4: апр.
+            4: апр
             5: май
             6: юни
             7: юли
-            8: авг.
-            9: септ.
+            8: авг
+            9: сеп
           :narrow: 
             1: я
             10: о
@@ -224,18 +227,18 @@
             9: септември
         :stand-alone: 
           :abbreviated: 
-            1: ян.
-            10: окт.
-            11: ноем.
-            12: дек.
-            2: февр.
+            1: яну
+            10: окт
+            11: ное
+            12: дек
+            2: фев
             3: март
-            4: апр.
+            4: апр
             5: май
             6: юни
             7: юли
-            8: авг.
-            9: септ.
+            8: авг
+            9: сеп
           :narrow: 
             1: я
             10: о
@@ -264,16 +267,55 @@
             9: септември
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: следобед
+            :am: пр.об.
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обед"
+            :night1: "през нощта"
+            :pm: сл.об.
           :narrow: 
             :am: пр.об.
-            :noon: пл.
             :pm: сл.об.
           :wide: 
+            :afternoon1: следобед
             :am: пр.об.
-            :noon: пладне
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обяд"
+            :night1: "през нощта"
             :pm: сл.об.
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: следобед
+            :am: пр.об.
+            :evening1: вечер
+            :midnight: полунощ
+            :morning1: сутрин
+            :morning2: "на обед"
+            :night1: нощ
+            :pm: сл.об.
+          :narrow: 
+            :afternoon1: следобед
+            :am: пр.об.
+            :evening1: вечер
+            :midnight: полунощ
+            :morning1: сутрин
+            :morning2: "на обед"
+            :night1: нощ
+            :pm: сл.об.
+          :wide: 
+            :afternoon1: следобед
+            :am: пр.об.
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обед"
+            :night1: нощ
+            :pm: сл.об.
       :quarters: 
         :format: 
           :abbreviated: 

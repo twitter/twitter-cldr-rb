@@ -1,126 +1,711 @@
 ---
 SpelloutRules:
-  spellout-cardinal-feminine:
-    -1141: minus jeden tysiąc sto czterdzieści jeden
-    -1142: minus jeden tysiąc sto czterdzieści dwie
-    -1143: minus jeden tysiąc sto czterdzieści trzy
-    -100: minus sto
-    -75: minus siedemdziesiąt pięć
-    -50: minus pięćdziesiąt
-    -24: minus dwadzieścia cztery
-    0: zero
-    1: jedna
-    2: dwie
-    3: trzy
-    4: cztery
-    5: pięć
-    6: sześć
-    7: siedem
-    8: osiem
-    9: dziewięć
-    10: dziesięć
-    11: jedenaście
-    12: dwanaście
-    13: trzynaście
-    14: czternaście
-    15: piętnaście
-    16: szesnaście
-    17: siedemnaście
-    18: osiemnaście
-    19: dziewiętnaście
-    20: dwadzieścia
-    21: dwadzieścia jeden
-    22: dwadzieścia dwie
-    23: dwadzieścia trzy
-    24: dwadzieścia cztery
-    25: dwadzieścia pięć
-    26: dwadzieścia sześć
-    27: dwadzieścia siedem
-    28: dwadzieścia osiem
-    29: dwadzieścia dziewięć
-    30: trzydzieści
-    31: trzydzieści jeden
-    32: trzydzieści dwie
-    33: trzydzieści trzy
-    34: trzydzieści cztery
-    35: trzydzieści pięć
-    36: trzydzieści sześć
-    37: trzydzieści siedem
-    38: trzydzieści osiem
-    39: trzydzieści dziewięć
-    40: czterdzieści
-    41: czterdzieści jeden
-    42: czterdzieści dwie
-    43: czterdzieści trzy
-    44: czterdzieści cztery
-    45: czterdzieści pięć
-    46: czterdzieści sześć
-    47: czterdzieści siedem
-    48: czterdzieści osiem
-    49: czterdzieści dziewięć
-    50: pięćdziesiąt
-    51: pięćdziesiąt jeden
-    52: pięćdziesiąt dwie
-    53: pięćdziesiąt trzy
-    54: pięćdziesiąt cztery
-    55: pięćdziesiąt pięć
-    56: pięćdziesiąt sześć
-    57: pięćdziesiąt siedem
-    58: pięćdziesiąt osiem
-    59: pięćdziesiąt dziewięć
-    60: sześćdziesiąt
-    61: sześćdziesiąt jeden
-    62: sześćdziesiąt dwie
-    63: sześćdziesiąt trzy
-    64: sześćdziesiąt cztery
-    65: sześćdziesiąt pięć
-    66: sześćdziesiąt sześć
-    67: sześćdziesiąt siedem
-    68: sześćdziesiąt osiem
-    69: sześćdziesiąt dziewięć
-    70: siedemdziesiąt
-    71: siedemdziesiąt jeden
-    72: siedemdziesiąt dwie
-    73: siedemdziesiąt trzy
-    74: siedemdziesiąt cztery
-    75: siedemdziesiąt pięć
-    76: siedemdziesiąt sześć
-    77: siedemdziesiąt siedem
-    78: siedemdziesiąt osiem
-    79: siedemdziesiąt dziewięć
-    80: osiemdziesiąt
-    81: osiemdziesiąt jeden
-    82: osiemdziesiąt dwie
-    83: osiemdziesiąt trzy
-    84: osiemdziesiąt cztery
-    85: osiemdziesiąt pięć
-    86: osiemdziesiąt sześć
-    87: osiemdziesiąt siedem
-    88: osiemdziesiąt osiem
-    89: osiemdziesiąt dziewięć
-    90: dziewięćdziesiąt
-    91: dziewięćdziesiąt jeden
-    92: dziewięćdziesiąt dwie
-    93: dziewięćdziesiąt trzy
-    94: dziewięćdziesiąt cztery
-    95: dziewięćdziesiąt pięć
-    96: dziewięćdziesiąt sześć
-    97: dziewięćdziesiąt siedem
-    98: dziewięćdziesiąt osiem
-    99: dziewięćdziesiąt dziewięć
-    100: sto
-    321: trzysta dwadzieścia jeden
-    322: trzysta dwadzieścia dwie
-    323: trzysta dwadzieścia trzy
-    1141: jeden tysiąc sto czterdzieści jeden
-    1142: jeden tysiąc sto czterdzieści dwie
-    1143: jeden tysiąc sto czterdzieści trzy
-    10311: dziesięć tysięcy trzysta jedenaście
-    138400: sto trzydzieści osiem tysięcy czterysta
-  spellout-cardinal-neuter:
-    -1141: minus jeden tysiąc sto czterdzieści jeden
-    -1142: minus jeden tysiąc sto czterdzieści dwa
-    -1143: minus jeden tysiąc sto czterdzieści trzy
+  spellout-cardinal-neuter-locative:
+    -1141: minus tysiącu stu czterdziestu jeden
+    -1142: minus tysiącu stu czterdziestu dwóch
+    -1143: minus tysiącu stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zerze
+    1: jednym
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiącu stu czterdziestu jeden
+    1142: tysiącu stu czterdziestu dwóch
+    1143: tysiącu stu czterdziestu trzech
+    10311: dziesięciu tysiącach trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącach czterystu
+  spellout-cardinal-feminine-locative:
+    -1141: minus tysiącu stu czterdziestu jeden
+    -1142: minus tysiącu stu czterdziestu dwóch
+    -1143: minus tysiącu stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zerze
+    1: jednej
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiącu stu czterdziestu jeden
+    1142: tysiącu stu czterdziestu dwóch
+    1143: tysiącu stu czterdziestu trzech
+    10311: dziesięciu tysiącach trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącach czterystu
+  spellout-cardinal-masculine-locative:
+    -1141: minus tysiącu stu czterdziestu jeden
+    -1142: minus tysiącu stu czterdziestu dwóch
+    -1143: minus tysiącu stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zerze
+    1: jednym
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiącu stu czterdziestu jeden
+    1142: tysiącu stu czterdziestu dwóch
+    1143: tysiącu stu czterdziestu trzech
+    10311: dziesięciu tysiącach trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącach czterystu
+  spellout-cardinal-neuter-instrumental:
+    -1141: minus tysiącem stu czterdziestoma jeden
+    -1142: minus tysiącem stu czterdziestoma dwoma
+    -1143: minus tysiącem stu czterdziestoma trzema
+    -100: minus stu
+    -75: minus siedemdziesięcioma pięcioma
+    -50: minus pięćdziesięcioma
+    -24: minus dwudziestoma czterema
+    0: zerem
+    1: jednym
+    2: dwoma
+    3: trzema
+    4: czterema
+    5: pięcioma
+    6: sześcioma
+    7: siedmioma
+    8: ośmioma
+    9: dziewięcioma
+    10: dziesięcioma
+    11: jedenastoma
+    12: dwunastoma
+    13: trzynastoma
+    14: czternastoma
+    15: piętnastoma
+    16: szesnastoma
+    17: siedemnastoma
+    18: osiemnastoma
+    19: dziewiętnastoma
+    20: dwudziestoma
+    21: dwudziestoma jeden
+    22: dwudziestoma dwoma
+    23: dwudziestoma trzema
+    24: dwudziestoma czterema
+    25: dwudziestoma pięcioma
+    26: dwudziestoma sześcioma
+    27: dwudziestoma siedmioma
+    28: dwudziestoma ośmioma
+    29: dwudziestoma dziewięcioma
+    30: trzydziestoma
+    31: trzydziestoma jeden
+    32: trzydziestoma dwoma
+    33: trzydziestoma trzema
+    34: trzydziestoma czterema
+    35: trzydziestoma pięcioma
+    36: trzydziestoma sześcioma
+    37: trzydziestoma siedmioma
+    38: trzydziestoma ośmioma
+    39: trzydziestoma dziewięcioma
+    40: czterdziestoma
+    41: czterdziestoma jeden
+    42: czterdziestoma dwoma
+    43: czterdziestoma trzema
+    44: czterdziestoma czterema
+    45: czterdziestoma pięcioma
+    46: czterdziestoma sześcioma
+    47: czterdziestoma siedmioma
+    48: czterdziestoma ośmioma
+    49: czterdziestoma dziewięcioma
+    50: pięćdziesięcioma
+    51: pięćdziesięcioma jeden
+    52: pięćdziesięcioma dwoma
+    53: pięćdziesięcioma trzema
+    54: pięćdziesięcioma czterema
+    55: pięćdziesięcioma pięcioma
+    56: pięćdziesięcioma sześcioma
+    57: pięćdziesięcioma siedmioma
+    58: pięćdziesięcioma ośmioma
+    59: pięćdziesięcioma dziewięcioma
+    60: sześćdziesięcioma
+    61: sześćdziesięcioma jeden
+    62: sześćdziesięcioma dwoma
+    63: sześćdziesięcioma trzema
+    64: sześćdziesięcioma czterema
+    65: sześćdziesięcioma pięcioma
+    66: sześćdziesięcioma sześcioma
+    67: sześćdziesięcioma siedmioma
+    68: sześćdziesięcioma ośmioma
+    69: sześćdziesięcioma dziewięcioma
+    70: siedemdziesięcioma
+    71: siedemdziesięcioma jeden
+    72: siedemdziesięcioma dwoma
+    73: siedemdziesięcioma trzema
+    74: siedemdziesięcioma czterema
+    75: siedemdziesięcioma pięcioma
+    76: siedemdziesięcioma sześcioma
+    77: siedemdziesięcioma siedmioma
+    78: siedemdziesięcioma ośmioma
+    79: siedemdziesięcioma dziewięcioma
+    80: osiemdziesięcioma
+    81: osiemdziesięcioma jeden
+    82: osiemdziesięcioma dwoma
+    83: osiemdziesięcioma trzema
+    84: osiemdziesięcioma czterema
+    85: osiemdziesięcioma pięcioma
+    86: osiemdziesięcioma sześcioma
+    87: osiemdziesięcioma siedmioma
+    88: osiemdziesięcioma ośmioma
+    89: osiemdziesięcioma dziewięcioma
+    90: dziewięćdziesięcioma
+    91: dziewięćdziesięcioma jeden
+    92: dziewięćdziesięcioma dwoma
+    93: dziewięćdziesięcioma trzema
+    94: dziewięćdziesięcioma czterema
+    95: dziewięćdziesięcioma pięcioma
+    96: dziewięćdziesięcioma sześcioma
+    97: dziewięćdziesięcioma siedmioma
+    98: dziewięćdziesięcioma ośmioma
+    99: dziewięćdziesięcioma dziewięcioma
+    100: stu
+    321: trzystu dwudziestoma jeden
+    322: trzystu dwudziestoma dwoma
+    323: trzystu dwudziestoma trzema
+    1141: tysiącem stu czterdziestoma jeden
+    1142: tysiącem stu czterdziestoma dwoma
+    1143: tysiącem stu czterdziestoma trzema
+    10311: dziesięcioma tysiącami trzystu jedenastoma
+    138400: stu trzydziestoma ośmioma tysiącami czterystu
+  spellout-cardinal-feminine-instrumental:
+    -1141: minus tysiącem stu czterdziestoma jeden
+    -1142: minus tysiącem stu czterdziestoma dwoma
+    -1143: minus tysiącem stu czterdziestoma trzema
+    -100: minus stu
+    -75: minus siedemdziesięcioma pięcioma
+    -50: minus pięćdziesięcioma
+    -24: minus dwudziestoma czterema
+    0: zerem
+    1: jedną
+    2: dwiema
+    3: trzema
+    4: czterema
+    5: pięcioma
+    6: sześcioma
+    7: siedmioma
+    8: ośmioma
+    9: dziewięcioma
+    10: dziesięcioma
+    11: jedenastoma
+    12: dwunastoma
+    13: trzynastoma
+    14: czternastoma
+    15: piętnastoma
+    16: szesnastoma
+    17: siedemnastoma
+    18: osiemnastoma
+    19: dziewiętnastoma
+    20: dwudziestoma
+    21: dwudziestoma jeden
+    22: dwudziestoma dwoma
+    23: dwudziestoma trzema
+    24: dwudziestoma czterema
+    25: dwudziestoma pięcioma
+    26: dwudziestoma sześcioma
+    27: dwudziestoma siedmioma
+    28: dwudziestoma ośmioma
+    29: dwudziestoma dziewięcioma
+    30: trzydziestoma
+    31: trzydziestoma jeden
+    32: trzydziestoma dwoma
+    33: trzydziestoma trzema
+    34: trzydziestoma czterema
+    35: trzydziestoma pięcioma
+    36: trzydziestoma sześcioma
+    37: trzydziestoma siedmioma
+    38: trzydziestoma ośmioma
+    39: trzydziestoma dziewięcioma
+    40: czterdziestoma
+    41: czterdziestoma jeden
+    42: czterdziestoma dwoma
+    43: czterdziestoma trzema
+    44: czterdziestoma czterema
+    45: czterdziestoma pięcioma
+    46: czterdziestoma sześcioma
+    47: czterdziestoma siedmioma
+    48: czterdziestoma ośmioma
+    49: czterdziestoma dziewięcioma
+    50: pięćdziesięcioma
+    51: pięćdziesięcioma jeden
+    52: pięćdziesięcioma dwoma
+    53: pięćdziesięcioma trzema
+    54: pięćdziesięcioma czterema
+    55: pięćdziesięcioma pięcioma
+    56: pięćdziesięcioma sześcioma
+    57: pięćdziesięcioma siedmioma
+    58: pięćdziesięcioma ośmioma
+    59: pięćdziesięcioma dziewięcioma
+    60: sześćdziesięcioma
+    61: sześćdziesięcioma jeden
+    62: sześćdziesięcioma dwoma
+    63: sześćdziesięcioma trzema
+    64: sześćdziesięcioma czterema
+    65: sześćdziesięcioma pięcioma
+    66: sześćdziesięcioma sześcioma
+    67: sześćdziesięcioma siedmioma
+    68: sześćdziesięcioma ośmioma
+    69: sześćdziesięcioma dziewięcioma
+    70: siedemdziesięcioma
+    71: siedemdziesięcioma jeden
+    72: siedemdziesięcioma dwoma
+    73: siedemdziesięcioma trzema
+    74: siedemdziesięcioma czterema
+    75: siedemdziesięcioma pięcioma
+    76: siedemdziesięcioma sześcioma
+    77: siedemdziesięcioma siedmioma
+    78: siedemdziesięcioma ośmioma
+    79: siedemdziesięcioma dziewięcioma
+    80: osiemdziesięcioma
+    81: osiemdziesięcioma jeden
+    82: osiemdziesięcioma dwoma
+    83: osiemdziesięcioma trzema
+    84: osiemdziesięcioma czterema
+    85: osiemdziesięcioma pięcioma
+    86: osiemdziesięcioma sześcioma
+    87: osiemdziesięcioma siedmioma
+    88: osiemdziesięcioma ośmioma
+    89: osiemdziesięcioma dziewięcioma
+    90: dziewięćdziesięcioma
+    91: dziewięćdziesięcioma jeden
+    92: dziewięćdziesięcioma dwoma
+    93: dziewięćdziesięcioma trzema
+    94: dziewięćdziesięcioma czterema
+    95: dziewięćdziesięcioma pięcioma
+    96: dziewięćdziesięcioma sześcioma
+    97: dziewięćdziesięcioma siedmioma
+    98: dziewięćdziesięcioma ośmioma
+    99: dziewięćdziesięcioma dziewięcioma
+    100: stu
+    321: trzystu dwudziestoma jeden
+    322: trzystu dwudziestoma dwoma
+    323: trzystu dwudziestoma trzema
+    1141: tysiącem stu czterdziestoma jeden
+    1142: tysiącem stu czterdziestoma dwoma
+    1143: tysiącem stu czterdziestoma trzema
+    10311: dziesięcioma tysiącami trzystu jedenastoma
+    138400: stu trzydziestoma ośmioma tysiącami czterystu
+  spellout-cardinal-masculine-instrumental:
+    -1141: minus tysiącem stu czterdziestoma jeden
+    -1142: minus tysiącem stu czterdziestoma dwoma
+    -1143: minus tysiącem stu czterdziestoma trzema
+    -100: minus stu
+    -75: minus siedemdziesięcioma pięcioma
+    -50: minus pięćdziesięcioma
+    -24: minus dwudziestoma czterema
+    0: zerem
+    1: jednym
+    2: dwoma
+    3: trzema
+    4: czterema
+    5: pięcioma
+    6: sześcioma
+    7: siedmioma
+    8: ośmioma
+    9: dziewięcioma
+    10: dziesięcioma
+    11: jedenastoma
+    12: dwunastoma
+    13: trzynastoma
+    14: czternastoma
+    15: piętnastoma
+    16: szesnastoma
+    17: siedemnastoma
+    18: osiemnastoma
+    19: dziewiętnastoma
+    20: dwudziestoma
+    21: dwudziestoma jeden
+    22: dwudziestoma dwoma
+    23: dwudziestoma trzema
+    24: dwudziestoma czterema
+    25: dwudziestoma pięcioma
+    26: dwudziestoma sześcioma
+    27: dwudziestoma siedmioma
+    28: dwudziestoma ośmioma
+    29: dwudziestoma dziewięcioma
+    30: trzydziestoma
+    31: trzydziestoma jeden
+    32: trzydziestoma dwoma
+    33: trzydziestoma trzema
+    34: trzydziestoma czterema
+    35: trzydziestoma pięcioma
+    36: trzydziestoma sześcioma
+    37: trzydziestoma siedmioma
+    38: trzydziestoma ośmioma
+    39: trzydziestoma dziewięcioma
+    40: czterdziestoma
+    41: czterdziestoma jeden
+    42: czterdziestoma dwoma
+    43: czterdziestoma trzema
+    44: czterdziestoma czterema
+    45: czterdziestoma pięcioma
+    46: czterdziestoma sześcioma
+    47: czterdziestoma siedmioma
+    48: czterdziestoma ośmioma
+    49: czterdziestoma dziewięcioma
+    50: pięćdziesięcioma
+    51: pięćdziesięcioma jeden
+    52: pięćdziesięcioma dwoma
+    53: pięćdziesięcioma trzema
+    54: pięćdziesięcioma czterema
+    55: pięćdziesięcioma pięcioma
+    56: pięćdziesięcioma sześcioma
+    57: pięćdziesięcioma siedmioma
+    58: pięćdziesięcioma ośmioma
+    59: pięćdziesięcioma dziewięcioma
+    60: sześćdziesięcioma
+    61: sześćdziesięcioma jeden
+    62: sześćdziesięcioma dwoma
+    63: sześćdziesięcioma trzema
+    64: sześćdziesięcioma czterema
+    65: sześćdziesięcioma pięcioma
+    66: sześćdziesięcioma sześcioma
+    67: sześćdziesięcioma siedmioma
+    68: sześćdziesięcioma ośmioma
+    69: sześćdziesięcioma dziewięcioma
+    70: siedemdziesięcioma
+    71: siedemdziesięcioma jeden
+    72: siedemdziesięcioma dwoma
+    73: siedemdziesięcioma trzema
+    74: siedemdziesięcioma czterema
+    75: siedemdziesięcioma pięcioma
+    76: siedemdziesięcioma sześcioma
+    77: siedemdziesięcioma siedmioma
+    78: siedemdziesięcioma ośmioma
+    79: siedemdziesięcioma dziewięcioma
+    80: osiemdziesięcioma
+    81: osiemdziesięcioma jeden
+    82: osiemdziesięcioma dwoma
+    83: osiemdziesięcioma trzema
+    84: osiemdziesięcioma czterema
+    85: osiemdziesięcioma pięcioma
+    86: osiemdziesięcioma sześcioma
+    87: osiemdziesięcioma siedmioma
+    88: osiemdziesięcioma ośmioma
+    89: osiemdziesięcioma dziewięcioma
+    90: dziewięćdziesięcioma
+    91: dziewięćdziesięcioma jeden
+    92: dziewięćdziesięcioma dwoma
+    93: dziewięćdziesięcioma trzema
+    94: dziewięćdziesięcioma czterema
+    95: dziewięćdziesięcioma pięcioma
+    96: dziewięćdziesięcioma sześcioma
+    97: dziewięćdziesięcioma siedmioma
+    98: dziewięćdziesięcioma ośmioma
+    99: dziewięćdziesięcioma dziewięcioma
+    100: stu
+    321: trzystu dwudziestoma jeden
+    322: trzystu dwudziestoma dwoma
+    323: trzystu dwudziestoma trzema
+    1141: tysiącem stu czterdziestoma jeden
+    1142: tysiącem stu czterdziestoma dwoma
+    1143: tysiącem stu czterdziestoma trzema
+    10311: dziesięcioma tysiącami trzystu jedenastoma
+    138400: stu trzydziestoma ośmioma tysiącami czterystu
+  spellout-cardinal-neuter-accusative:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
     -100: minus sto
     -75: minus siedemdziesiąt pięć
     -50: minus pięćdziesiąt
@@ -229,15 +814,366 @@ SpelloutRules:
     321: trzysta dwadzieścia jeden
     322: trzysta dwadzieścia dwa
     323: trzysta dwadzieścia trzy
-    1141: jeden tysiąc sto czterdzieści jeden
-    1142: jeden tysiąc sto czterdzieści dwa
-    1143: jeden tysiąc sto czterdzieści trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
     10311: dziesięć tysięcy trzysta jedenaście
     138400: sto trzydzieści osiem tysięcy czterysta
-  spellout-cardinal-masculine:
-    -1141: minus jeden tysiąc sto czterdzieści jeden
-    -1142: minus jeden tysiąc sto czterdzieści dwa
-    -1143: minus jeden tysiąc sto czterdzieści trzy
+  spellout-cardinal-feminine-accusative:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwie
+    -1143: minus tysiąc sto czterdzieści trzy
+    -100: minus sto
+    -75: minus siedemdziesiąt pięć
+    -50: minus pięćdziesiąt
+    -24: minus dwadzieścia cztery
+    0: zero
+    1: jedną
+    2: dwie
+    3: trzy
+    4: cztery
+    5: pięć
+    6: sześć
+    7: siedem
+    8: osiem
+    9: dziewięć
+    10: dziesięć
+    11: jedenaście
+    12: dwanaście
+    13: trzynaście
+    14: czternaście
+    15: piętnaście
+    16: szesnaście
+    17: siedemnaście
+    18: osiemnaście
+    19: dziewiętnaście
+    20: dwadzieścia
+    21: dwadzieścia jeden
+    22: dwadzieścia dwie
+    23: dwadzieścia trzy
+    24: dwadzieścia cztery
+    25: dwadzieścia pięć
+    26: dwadzieścia sześć
+    27: dwadzieścia siedem
+    28: dwadzieścia osiem
+    29: dwadzieścia dziewięć
+    30: trzydzieści
+    31: trzydzieści jeden
+    32: trzydzieści dwie
+    33: trzydzieści trzy
+    34: trzydzieści cztery
+    35: trzydzieści pięć
+    36: trzydzieści sześć
+    37: trzydzieści siedem
+    38: trzydzieści osiem
+    39: trzydzieści dziewięć
+    40: czterdzieści
+    41: czterdzieści jeden
+    42: czterdzieści dwie
+    43: czterdzieści trzy
+    44: czterdzieści cztery
+    45: czterdzieści pięć
+    46: czterdzieści sześć
+    47: czterdzieści siedem
+    48: czterdzieści osiem
+    49: czterdzieści dziewięć
+    50: pięćdziesiąt
+    51: pięćdziesiąt jeden
+    52: pięćdziesiąt dwie
+    53: pięćdziesiąt trzy
+    54: pięćdziesiąt cztery
+    55: pięćdziesiąt pięć
+    56: pięćdziesiąt sześć
+    57: pięćdziesiąt siedem
+    58: pięćdziesiąt osiem
+    59: pięćdziesiąt dziewięć
+    60: sześćdziesiąt
+    61: sześćdziesiąt jeden
+    62: sześćdziesiąt dwie
+    63: sześćdziesiąt trzy
+    64: sześćdziesiąt cztery
+    65: sześćdziesiąt pięć
+    66: sześćdziesiąt sześć
+    67: sześćdziesiąt siedem
+    68: sześćdziesiąt osiem
+    69: sześćdziesiąt dziewięć
+    70: siedemdziesiąt
+    71: siedemdziesiąt jeden
+    72: siedemdziesiąt dwie
+    73: siedemdziesiąt trzy
+    74: siedemdziesiąt cztery
+    75: siedemdziesiąt pięć
+    76: siedemdziesiąt sześć
+    77: siedemdziesiąt siedem
+    78: siedemdziesiąt osiem
+    79: siedemdziesiąt dziewięć
+    80: osiemdziesiąt
+    81: osiemdziesiąt jeden
+    82: osiemdziesiąt dwie
+    83: osiemdziesiąt trzy
+    84: osiemdziesiąt cztery
+    85: osiemdziesiąt pięć
+    86: osiemdziesiąt sześć
+    87: osiemdziesiąt siedem
+    88: osiemdziesiąt osiem
+    89: osiemdziesiąt dziewięć
+    90: dziewięćdziesiąt
+    91: dziewięćdziesiąt jeden
+    92: dziewięćdziesiąt dwie
+    93: dziewięćdziesiąt trzy
+    94: dziewięćdziesiąt cztery
+    95: dziewięćdziesiąt pięć
+    96: dziewięćdziesiąt sześć
+    97: dziewięćdziesiąt siedem
+    98: dziewięćdziesiąt osiem
+    99: dziewięćdziesiąt dziewięć
+    100: sto
+    321: trzysta dwadzieścia jeden
+    322: trzysta dwadzieścia dwie
+    323: trzysta dwadzieścia trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwie
+    1143: tysiąc sto czterdzieści trzy
+    10311: dziesięć tysięcy trzysta jedenaście
+    138400: sto trzydzieści osiem tysięcy czterysta
+  spellout-cardinal-masculine-accusative-personal:
+    -1141: minus tysiąc stu czterdziestu jeden
+    -1142: minus tysiąc stu czterdziestu dwóch
+    -1143: minus tysiąc stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zera
+    1: jednego
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiąc stu czterdziestu jeden
+    1142: tysiąc stu czterdziestu dwóch
+    1143: tysiąc stu czterdziestu trzech
+    10311: dziesięć tysięcy trzystu jedenastu
+    138400: sto trzydzieści osiem tysięcy czterystu
+  spellout-cardinal-masculine-accusative-animate:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
+    -100: minus sto
+    -75: minus siedemdziesiąt pięć
+    -50: minus pięćdziesiąt
+    -24: minus dwadzieścia cztery
+    0: zero
+    1: jednego
+    2: dwa
+    3: trzy
+    4: cztery
+    5: pięć
+    6: sześć
+    7: siedem
+    8: osiem
+    9: dziewięć
+    10: dziesięć
+    11: jedenaście
+    12: dwanaście
+    13: trzynaście
+    14: czternaście
+    15: piętnaście
+    16: szesnaście
+    17: siedemnaście
+    18: osiemnaście
+    19: dziewiętnaście
+    20: dwadzieścia
+    21: dwadzieścia jeden
+    22: dwadzieścia dwa
+    23: dwadzieścia trzy
+    24: dwadzieścia cztery
+    25: dwadzieścia pięć
+    26: dwadzieścia sześć
+    27: dwadzieścia siedem
+    28: dwadzieścia osiem
+    29: dwadzieścia dziewięć
+    30: trzydzieści
+    31: trzydzieści jeden
+    32: trzydzieści dwa
+    33: trzydzieści trzy
+    34: trzydzieści cztery
+    35: trzydzieści pięć
+    36: trzydzieści sześć
+    37: trzydzieści siedem
+    38: trzydzieści osiem
+    39: trzydzieści dziewięć
+    40: czterdzieści
+    41: czterdzieści jeden
+    42: czterdzieści dwa
+    43: czterdzieści trzy
+    44: czterdzieści cztery
+    45: czterdzieści pięć
+    46: czterdzieści sześć
+    47: czterdzieści siedem
+    48: czterdzieści osiem
+    49: czterdzieści dziewięć
+    50: pięćdziesiąt
+    51: pięćdziesiąt jeden
+    52: pięćdziesiąt dwa
+    53: pięćdziesiąt trzy
+    54: pięćdziesiąt cztery
+    55: pięćdziesiąt pięć
+    56: pięćdziesiąt sześć
+    57: pięćdziesiąt siedem
+    58: pięćdziesiąt osiem
+    59: pięćdziesiąt dziewięć
+    60: sześćdziesiąt
+    61: sześćdziesiąt jeden
+    62: sześćdziesiąt dwa
+    63: sześćdziesiąt trzy
+    64: sześćdziesiąt cztery
+    65: sześćdziesiąt pięć
+    66: sześćdziesiąt sześć
+    67: sześćdziesiąt siedem
+    68: sześćdziesiąt osiem
+    69: sześćdziesiąt dziewięć
+    70: siedemdziesiąt
+    71: siedemdziesiąt jeden
+    72: siedemdziesiąt dwa
+    73: siedemdziesiąt trzy
+    74: siedemdziesiąt cztery
+    75: siedemdziesiąt pięć
+    76: siedemdziesiąt sześć
+    77: siedemdziesiąt siedem
+    78: siedemdziesiąt osiem
+    79: siedemdziesiąt dziewięć
+    80: osiemdziesiąt
+    81: osiemdziesiąt jeden
+    82: osiemdziesiąt dwa
+    83: osiemdziesiąt trzy
+    84: osiemdziesiąt cztery
+    85: osiemdziesiąt pięć
+    86: osiemdziesiąt sześć
+    87: osiemdziesiąt siedem
+    88: osiemdziesiąt osiem
+    89: osiemdziesiąt dziewięć
+    90: dziewięćdziesiąt
+    91: dziewięćdziesiąt jeden
+    92: dziewięćdziesiąt dwa
+    93: dziewięćdziesiąt trzy
+    94: dziewięćdziesiąt cztery
+    95: dziewięćdziesiąt pięć
+    96: dziewięćdziesiąt sześć
+    97: dziewięćdziesiąt siedem
+    98: dziewięćdziesiąt osiem
+    99: dziewięćdziesiąt dziewięć
+    100: sto
+    321: trzysta dwadzieścia jeden
+    322: trzysta dwadzieścia dwa
+    323: trzysta dwadzieścia trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
+    10311: dziesięć tysięcy trzysta jedenaście
+    138400: sto trzydzieści osiem tysięcy czterysta
+  spellout-cardinal-masculine-accusative:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
     -100: minus sto
     -75: minus siedemdziesiąt pięć
     -50: minus pięćdziesiąt
@@ -346,15 +1282,1185 @@ SpelloutRules:
     321: trzysta dwadzieścia jeden
     322: trzysta dwadzieścia dwa
     323: trzysta dwadzieścia trzy
-    1141: jeden tysiąc sto czterdzieści jeden
-    1142: jeden tysiąc sto czterdzieści dwa
-    1143: jeden tysiąc sto czterdzieści trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
+    10311: dziesięć tysięcy trzysta jedenaście
+    138400: sto trzydzieści osiem tysięcy czterysta
+  spellout-cardinal-neuter-dative:
+    -1141: minus tysiącowi stu czterdziestu jeden
+    -1142: minus tysiącowi stu czterdziestu dwóm
+    -1143: minus tysiącowi stu czterdziestu trzem
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterem
+    0: zeru
+    1: jednemu
+    2: dwóm
+    3: trzem
+    4: czterem
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóm
+    23: dwudziestu trzem
+    24: dwudziestu czterem
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóm
+    33: trzydziestu trzem
+    34: trzydziestu czterem
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóm
+    43: czterdziestu trzem
+    44: czterdziestu czterem
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóm
+    53: pięćdziesięciu trzem
+    54: pięćdziesięciu czterem
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóm
+    63: sześćdziesięciu trzem
+    64: sześćdziesięciu czterem
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóm
+    73: siedemdziesięciu trzem
+    74: siedemdziesięciu czterem
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóm
+    83: osiemdziesięciu trzem
+    84: osiemdziesięciu czterem
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóm
+    93: dziewięćdziesięciu trzem
+    94: dziewięćdziesięciu czterem
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóm
+    323: trzystu dwudziestu trzem
+    1141: tysiącowi stu czterdziestu jeden
+    1142: tysiącowi stu czterdziestu dwóm
+    1143: tysiącowi stu czterdziestu trzem
+    10311: dziesięciu tysiącom trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącom czterystu
+  spellout-cardinal-feminine-dative:
+    -1141: minus tysiącowi stu czterdziestu jeden
+    -1142: minus tysiącowi stu czterdziestu dwóm
+    -1143: minus tysiącowi stu czterdziestu trzem
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterem
+    0: zeru
+    1: jednej
+    2: dwóm
+    3: trzem
+    4: czterem
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóm
+    23: dwudziestu trzem
+    24: dwudziestu czterem
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóm
+    33: trzydziestu trzem
+    34: trzydziestu czterem
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóm
+    43: czterdziestu trzem
+    44: czterdziestu czterem
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóm
+    53: pięćdziesięciu trzem
+    54: pięćdziesięciu czterem
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóm
+    63: sześćdziesięciu trzem
+    64: sześćdziesięciu czterem
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóm
+    73: siedemdziesięciu trzem
+    74: siedemdziesięciu czterem
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóm
+    83: osiemdziesięciu trzem
+    84: osiemdziesięciu czterem
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóm
+    93: dziewięćdziesięciu trzem
+    94: dziewięćdziesięciu czterem
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóm
+    323: trzystu dwudziestu trzem
+    1141: tysiącowi stu czterdziestu jeden
+    1142: tysiącowi stu czterdziestu dwóm
+    1143: tysiącowi stu czterdziestu trzem
+    10311: dziesięciu tysiącom trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącom czterystu
+  spellout-cardinal-masculine-dative:
+    -1141: minus tysiącowi stu czterdziestu jeden
+    -1142: minus tysiącowi stu czterdziestu dwóm
+    -1143: minus tysiącowi stu czterdziestu trzem
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterem
+    0: zeru
+    1: jednemu
+    2: dwóm
+    3: trzem
+    4: czterem
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóm
+    23: dwudziestu trzem
+    24: dwudziestu czterem
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóm
+    33: trzydziestu trzem
+    34: trzydziestu czterem
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóm
+    43: czterdziestu trzem
+    44: czterdziestu czterem
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóm
+    53: pięćdziesięciu trzem
+    54: pięćdziesięciu czterem
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóm
+    63: sześćdziesięciu trzem
+    64: sześćdziesięciu czterem
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóm
+    73: siedemdziesięciu trzem
+    74: siedemdziesięciu czterem
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóm
+    83: osiemdziesięciu trzem
+    84: osiemdziesięciu czterem
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóm
+    93: dziewięćdziesięciu trzem
+    94: dziewięćdziesięciu czterem
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóm
+    323: trzystu dwudziestu trzem
+    1141: tysiącowi stu czterdziestu jeden
+    1142: tysiącowi stu czterdziestu dwóm
+    1143: tysiącowi stu czterdziestu trzem
+    10311: dziesięciu tysiącom trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysiącom czterystu
+  spellout-cardinal-neuter-genitive:
+    -1141: minus tysiąca stu czterdziestu jeden
+    -1142: minus tysiąca stu czterdziestu dwóch
+    -1143: minus tysiąca stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zera
+    1: jednego
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiąca stu czterdziestu jeden
+    1142: tysiąca stu czterdziestu dwóch
+    1143: tysiąca stu czterdziestu trzech
+    10311: dziesięciu tysięcy trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysięcy czterystu
+  spellout-cardinal-feminine-genitive:
+    -1141: minus tysiąca stu czterdziestu jeden
+    -1142: minus tysiąca stu czterdziestu dwóch
+    -1143: minus tysiąca stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zera
+    1: jednej
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiąca stu czterdziestu jeden
+    1142: tysiąca stu czterdziestu dwóch
+    1143: tysiąca stu czterdziestu trzech
+    10311: dziesięciu tysięcy trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysięcy czterystu
+  spellout-cardinal-masculine-genitive:
+    -1141: minus tysiąca stu czterdziestu jeden
+    -1142: minus tysiąca stu czterdziestu dwóch
+    -1143: minus tysiąca stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zera
+    1: jednego
+    2: dwóch
+    3: trzech
+    4: czterech
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiąca stu czterdziestu jeden
+    1142: tysiąca stu czterdziestu dwóch
+    1143: tysiąca stu czterdziestu trzech
+    10311: dziesięciu tysięcy trzystu jedenastu
+    138400: stu trzydziestu ośmiu tysięcy czterystu
+  spellout-cardinal-neuter:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
+    -100: minus sto
+    -75: minus siedemdziesiąt pięć
+    -50: minus pięćdziesiąt
+    -24: minus dwadzieścia cztery
+    0: zero
+    1: jedno
+    2: dwa
+    3: trzy
+    4: cztery
+    5: pięć
+    6: sześć
+    7: siedem
+    8: osiem
+    9: dziewięć
+    10: dziesięć
+    11: jedenaście
+    12: dwanaście
+    13: trzynaście
+    14: czternaście
+    15: piętnaście
+    16: szesnaście
+    17: siedemnaście
+    18: osiemnaście
+    19: dziewiętnaście
+    20: dwadzieścia
+    21: dwadzieścia jeden
+    22: dwadzieścia dwa
+    23: dwadzieścia trzy
+    24: dwadzieścia cztery
+    25: dwadzieścia pięć
+    26: dwadzieścia sześć
+    27: dwadzieścia siedem
+    28: dwadzieścia osiem
+    29: dwadzieścia dziewięć
+    30: trzydzieści
+    31: trzydzieści jeden
+    32: trzydzieści dwa
+    33: trzydzieści trzy
+    34: trzydzieści cztery
+    35: trzydzieści pięć
+    36: trzydzieści sześć
+    37: trzydzieści siedem
+    38: trzydzieści osiem
+    39: trzydzieści dziewięć
+    40: czterdzieści
+    41: czterdzieści jeden
+    42: czterdzieści dwa
+    43: czterdzieści trzy
+    44: czterdzieści cztery
+    45: czterdzieści pięć
+    46: czterdzieści sześć
+    47: czterdzieści siedem
+    48: czterdzieści osiem
+    49: czterdzieści dziewięć
+    50: pięćdziesiąt
+    51: pięćdziesiąt jeden
+    52: pięćdziesiąt dwa
+    53: pięćdziesiąt trzy
+    54: pięćdziesiąt cztery
+    55: pięćdziesiąt pięć
+    56: pięćdziesiąt sześć
+    57: pięćdziesiąt siedem
+    58: pięćdziesiąt osiem
+    59: pięćdziesiąt dziewięć
+    60: sześćdziesiąt
+    61: sześćdziesiąt jeden
+    62: sześćdziesiąt dwa
+    63: sześćdziesiąt trzy
+    64: sześćdziesiąt cztery
+    65: sześćdziesiąt pięć
+    66: sześćdziesiąt sześć
+    67: sześćdziesiąt siedem
+    68: sześćdziesiąt osiem
+    69: sześćdziesiąt dziewięć
+    70: siedemdziesiąt
+    71: siedemdziesiąt jeden
+    72: siedemdziesiąt dwa
+    73: siedemdziesiąt trzy
+    74: siedemdziesiąt cztery
+    75: siedemdziesiąt pięć
+    76: siedemdziesiąt sześć
+    77: siedemdziesiąt siedem
+    78: siedemdziesiąt osiem
+    79: siedemdziesiąt dziewięć
+    80: osiemdziesiąt
+    81: osiemdziesiąt jeden
+    82: osiemdziesiąt dwa
+    83: osiemdziesiąt trzy
+    84: osiemdziesiąt cztery
+    85: osiemdziesiąt pięć
+    86: osiemdziesiąt sześć
+    87: osiemdziesiąt siedem
+    88: osiemdziesiąt osiem
+    89: osiemdziesiąt dziewięć
+    90: dziewięćdziesiąt
+    91: dziewięćdziesiąt jeden
+    92: dziewięćdziesiąt dwa
+    93: dziewięćdziesiąt trzy
+    94: dziewięćdziesiąt cztery
+    95: dziewięćdziesiąt pięć
+    96: dziewięćdziesiąt sześć
+    97: dziewięćdziesiąt siedem
+    98: dziewięćdziesiąt osiem
+    99: dziewięćdziesiąt dziewięć
+    100: sto
+    321: trzysta dwadzieścia jeden
+    322: trzysta dwadzieścia dwa
+    323: trzysta dwadzieścia trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
+    10311: dziesięć tysięcy trzysta jedenaście
+    138400: sto trzydzieści osiem tysięcy czterysta
+  spellout-cardinal-feminine:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwie
+    -1143: minus tysiąc sto czterdzieści trzy
+    -100: minus sto
+    -75: minus siedemdziesiąt pięć
+    -50: minus pięćdziesiąt
+    -24: minus dwadzieścia cztery
+    0: zero
+    1: jedna
+    2: dwie
+    3: trzy
+    4: cztery
+    5: pięć
+    6: sześć
+    7: siedem
+    8: osiem
+    9: dziewięć
+    10: dziesięć
+    11: jedenaście
+    12: dwanaście
+    13: trzynaście
+    14: czternaście
+    15: piętnaście
+    16: szesnaście
+    17: siedemnaście
+    18: osiemnaście
+    19: dziewiętnaście
+    20: dwadzieścia
+    21: dwadzieścia jeden
+    22: dwadzieścia dwie
+    23: dwadzieścia trzy
+    24: dwadzieścia cztery
+    25: dwadzieścia pięć
+    26: dwadzieścia sześć
+    27: dwadzieścia siedem
+    28: dwadzieścia osiem
+    29: dwadzieścia dziewięć
+    30: trzydzieści
+    31: trzydzieści jeden
+    32: trzydzieści dwie
+    33: trzydzieści trzy
+    34: trzydzieści cztery
+    35: trzydzieści pięć
+    36: trzydzieści sześć
+    37: trzydzieści siedem
+    38: trzydzieści osiem
+    39: trzydzieści dziewięć
+    40: czterdzieści
+    41: czterdzieści jeden
+    42: czterdzieści dwie
+    43: czterdzieści trzy
+    44: czterdzieści cztery
+    45: czterdzieści pięć
+    46: czterdzieści sześć
+    47: czterdzieści siedem
+    48: czterdzieści osiem
+    49: czterdzieści dziewięć
+    50: pięćdziesiąt
+    51: pięćdziesiąt jeden
+    52: pięćdziesiąt dwie
+    53: pięćdziesiąt trzy
+    54: pięćdziesiąt cztery
+    55: pięćdziesiąt pięć
+    56: pięćdziesiąt sześć
+    57: pięćdziesiąt siedem
+    58: pięćdziesiąt osiem
+    59: pięćdziesiąt dziewięć
+    60: sześćdziesiąt
+    61: sześćdziesiąt jeden
+    62: sześćdziesiąt dwie
+    63: sześćdziesiąt trzy
+    64: sześćdziesiąt cztery
+    65: sześćdziesiąt pięć
+    66: sześćdziesiąt sześć
+    67: sześćdziesiąt siedem
+    68: sześćdziesiąt osiem
+    69: sześćdziesiąt dziewięć
+    70: siedemdziesiąt
+    71: siedemdziesiąt jeden
+    72: siedemdziesiąt dwie
+    73: siedemdziesiąt trzy
+    74: siedemdziesiąt cztery
+    75: siedemdziesiąt pięć
+    76: siedemdziesiąt sześć
+    77: siedemdziesiąt siedem
+    78: siedemdziesiąt osiem
+    79: siedemdziesiąt dziewięć
+    80: osiemdziesiąt
+    81: osiemdziesiąt jeden
+    82: osiemdziesiąt dwie
+    83: osiemdziesiąt trzy
+    84: osiemdziesiąt cztery
+    85: osiemdziesiąt pięć
+    86: osiemdziesiąt sześć
+    87: osiemdziesiąt siedem
+    88: osiemdziesiąt osiem
+    89: osiemdziesiąt dziewięć
+    90: dziewięćdziesiąt
+    91: dziewięćdziesiąt jeden
+    92: dziewięćdziesiąt dwie
+    93: dziewięćdziesiąt trzy
+    94: dziewięćdziesiąt cztery
+    95: dziewięćdziesiąt pięć
+    96: dziewięćdziesiąt sześć
+    97: dziewięćdziesiąt siedem
+    98: dziewięćdziesiąt osiem
+    99: dziewięćdziesiąt dziewięć
+    100: sto
+    321: trzysta dwadzieścia jeden
+    322: trzysta dwadzieścia dwie
+    323: trzysta dwadzieścia trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwie
+    1143: tysiąc sto czterdzieści trzy
+    10311: dziesięć tysięcy trzysta jedenaście
+    138400: sto trzydzieści osiem tysięcy czterysta
+  spellout-cardinal-masculine-personal:
+    -1141: minus tysiąc stu czterdziestu jeden
+    -1142: minus tysiąc stu czterdziestu dwóch
+    -1143: minus tysiąc stu czterdziestu trzech
+    -100: minus stu
+    -75: minus siedemdziesięciu pięciu
+    -50: minus pięćdziesięciu
+    -24: minus dwudziestu czterech
+    0: zero
+    1: jeden
+    2: dwaj
+    3: trzej
+    4: czterej
+    5: pięciu
+    6: sześciu
+    7: siedmiu
+    8: ośmiu
+    9: dziewięciu
+    10: dziesięciu
+    11: jedenastu
+    12: dwunastu
+    13: trzynastu
+    14: czternastu
+    15: piętnastu
+    16: szesnastu
+    17: siedemnastu
+    18: osiemnastu
+    19: dziewiętnastu
+    20: dwudziestu
+    21: dwudziestu jeden
+    22: dwudziestu dwóch
+    23: dwudziestu trzech
+    24: dwudziestu czterech
+    25: dwudziestu pięciu
+    26: dwudziestu sześciu
+    27: dwudziestu siedmiu
+    28: dwudziestu ośmiu
+    29: dwudziestu dziewięciu
+    30: trzydziestu
+    31: trzydziestu jeden
+    32: trzydziestu dwóch
+    33: trzydziestu trzech
+    34: trzydziestu czterech
+    35: trzydziestu pięciu
+    36: trzydziestu sześciu
+    37: trzydziestu siedmiu
+    38: trzydziestu ośmiu
+    39: trzydziestu dziewięciu
+    40: czterdziestu
+    41: czterdziestu jeden
+    42: czterdziestu dwóch
+    43: czterdziestu trzech
+    44: czterdziestu czterech
+    45: czterdziestu pięciu
+    46: czterdziestu sześciu
+    47: czterdziestu siedmiu
+    48: czterdziestu ośmiu
+    49: czterdziestu dziewięciu
+    50: pięćdziesięciu
+    51: pięćdziesięciu jeden
+    52: pięćdziesięciu dwóch
+    53: pięćdziesięciu trzech
+    54: pięćdziesięciu czterech
+    55: pięćdziesięciu pięciu
+    56: pięćdziesięciu sześciu
+    57: pięćdziesięciu siedmiu
+    58: pięćdziesięciu ośmiu
+    59: pięćdziesięciu dziewięciu
+    60: sześćdziesięciu
+    61: sześćdziesięciu jeden
+    62: sześćdziesięciu dwóch
+    63: sześćdziesięciu trzech
+    64: sześćdziesięciu czterech
+    65: sześćdziesięciu pięciu
+    66: sześćdziesięciu sześciu
+    67: sześćdziesięciu siedmiu
+    68: sześćdziesięciu ośmiu
+    69: sześćdziesięciu dziewięciu
+    70: siedemdziesięciu
+    71: siedemdziesięciu jeden
+    72: siedemdziesięciu dwóch
+    73: siedemdziesięciu trzech
+    74: siedemdziesięciu czterech
+    75: siedemdziesięciu pięciu
+    76: siedemdziesięciu sześciu
+    77: siedemdziesięciu siedmiu
+    78: siedemdziesięciu ośmiu
+    79: siedemdziesięciu dziewięciu
+    80: osiemdziesięciu
+    81: osiemdziesięciu jeden
+    82: osiemdziesięciu dwóch
+    83: osiemdziesięciu trzech
+    84: osiemdziesięciu czterech
+    85: osiemdziesięciu pięciu
+    86: osiemdziesięciu sześciu
+    87: osiemdziesięciu siedmiu
+    88: osiemdziesięciu ośmiu
+    89: osiemdziesięciu dziewięciu
+    90: dziewięćdziesięciu
+    91: dziewięćdziesięciu jeden
+    92: dziewięćdziesięciu dwóch
+    93: dziewięćdziesięciu trzech
+    94: dziewięćdziesięciu czterech
+    95: dziewięćdziesięciu pięciu
+    96: dziewięćdziesięciu sześciu
+    97: dziewięćdziesięciu siedmiu
+    98: dziewięćdziesięciu ośmiu
+    99: dziewięćdziesięciu dziewięciu
+    100: stu
+    321: trzystu dwudziestu jeden
+    322: trzystu dwudziestu dwóch
+    323: trzystu dwudziestu trzech
+    1141: tysiąc stu czterdziestu jeden
+    1142: tysiąc stu czterdziestu dwóch
+    1143: tysiąc stu czterdziestu trzech
+    10311: dziesięć tysięcy trzystu jedenastu
+    138400: sto trzydzieści osiem tysięcy czterystu
+  spellout-cardinal-masculine:
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
+    -100: minus sto
+    -75: minus siedemdziesiąt pięć
+    -50: minus pięćdziesiąt
+    -24: minus dwadzieścia cztery
+    0: zero
+    1: jeden
+    2: dwa
+    3: trzy
+    4: cztery
+    5: pięć
+    6: sześć
+    7: siedem
+    8: osiem
+    9: dziewięć
+    10: dziesięć
+    11: jedenaście
+    12: dwanaście
+    13: trzynaście
+    14: czternaście
+    15: piętnaście
+    16: szesnaście
+    17: siedemnaście
+    18: osiemnaście
+    19: dziewiętnaście
+    20: dwadzieścia
+    21: dwadzieścia jeden
+    22: dwadzieścia dwa
+    23: dwadzieścia trzy
+    24: dwadzieścia cztery
+    25: dwadzieścia pięć
+    26: dwadzieścia sześć
+    27: dwadzieścia siedem
+    28: dwadzieścia osiem
+    29: dwadzieścia dziewięć
+    30: trzydzieści
+    31: trzydzieści jeden
+    32: trzydzieści dwa
+    33: trzydzieści trzy
+    34: trzydzieści cztery
+    35: trzydzieści pięć
+    36: trzydzieści sześć
+    37: trzydzieści siedem
+    38: trzydzieści osiem
+    39: trzydzieści dziewięć
+    40: czterdzieści
+    41: czterdzieści jeden
+    42: czterdzieści dwa
+    43: czterdzieści trzy
+    44: czterdzieści cztery
+    45: czterdzieści pięć
+    46: czterdzieści sześć
+    47: czterdzieści siedem
+    48: czterdzieści osiem
+    49: czterdzieści dziewięć
+    50: pięćdziesiąt
+    51: pięćdziesiąt jeden
+    52: pięćdziesiąt dwa
+    53: pięćdziesiąt trzy
+    54: pięćdziesiąt cztery
+    55: pięćdziesiąt pięć
+    56: pięćdziesiąt sześć
+    57: pięćdziesiąt siedem
+    58: pięćdziesiąt osiem
+    59: pięćdziesiąt dziewięć
+    60: sześćdziesiąt
+    61: sześćdziesiąt jeden
+    62: sześćdziesiąt dwa
+    63: sześćdziesiąt trzy
+    64: sześćdziesiąt cztery
+    65: sześćdziesiąt pięć
+    66: sześćdziesiąt sześć
+    67: sześćdziesiąt siedem
+    68: sześćdziesiąt osiem
+    69: sześćdziesiąt dziewięć
+    70: siedemdziesiąt
+    71: siedemdziesiąt jeden
+    72: siedemdziesiąt dwa
+    73: siedemdziesiąt trzy
+    74: siedemdziesiąt cztery
+    75: siedemdziesiąt pięć
+    76: siedemdziesiąt sześć
+    77: siedemdziesiąt siedem
+    78: siedemdziesiąt osiem
+    79: siedemdziesiąt dziewięć
+    80: osiemdziesiąt
+    81: osiemdziesiąt jeden
+    82: osiemdziesiąt dwa
+    83: osiemdziesiąt trzy
+    84: osiemdziesiąt cztery
+    85: osiemdziesiąt pięć
+    86: osiemdziesiąt sześć
+    87: osiemdziesiąt siedem
+    88: osiemdziesiąt osiem
+    89: osiemdziesiąt dziewięć
+    90: dziewięćdziesiąt
+    91: dziewięćdziesiąt jeden
+    92: dziewięćdziesiąt dwa
+    93: dziewięćdziesiąt trzy
+    94: dziewięćdziesiąt cztery
+    95: dziewięćdziesiąt pięć
+    96: dziewięćdziesiąt sześć
+    97: dziewięćdziesiąt siedem
+    98: dziewięćdziesiąt osiem
+    99: dziewięćdziesiąt dziewięć
+    100: sto
+    321: trzysta dwadzieścia jeden
+    322: trzysta dwadzieścia dwa
+    323: trzysta dwadzieścia trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
     10311: dziesięć tysięcy trzysta jedenaście
     138400: sto trzydzieści osiem tysięcy czterysta
   spellout-numbering:
-    -1141: minus jeden tysiąc sto czterdzieści jeden
-    -1142: minus jeden tysiąc sto czterdzieści dwa
-    -1143: minus jeden tysiąc sto czterdzieści trzy
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
     -100: minus sto
     -75: minus siedemdziesiąt pięć
     -50: minus pięćdziesiąt
@@ -463,15 +2569,15 @@ SpelloutRules:
     321: trzysta dwadzieścia jeden
     322: trzysta dwadzieścia dwa
     323: trzysta dwadzieścia trzy
-    1141: jeden tysiąc sto czterdzieści jeden
-    1142: jeden tysiąc sto czterdzieści dwa
-    1143: jeden tysiąc sto czterdzieści trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
     10311: dziesięć tysięcy trzysta jedenaście
     138400: sto trzydzieści osiem tysięcy czterysta
   spellout-numbering-year:
-    -1141: minus jeden tysiąc sto czterdzieści jeden
-    -1142: minus jeden tysiąc sto czterdzieści dwa
-    -1143: minus jeden tysiąc sto czterdzieści trzy
+    -1141: minus tysiąc sto czterdzieści jeden
+    -1142: minus tysiąc sto czterdzieści dwa
+    -1143: minus tysiąc sto czterdzieści trzy
     -100: minus sto
     -75: minus siedemdziesiąt pięć
     -50: minus pięćdziesiąt
@@ -580,20 +2686,20 @@ SpelloutRules:
     321: trzysta dwadzieścia jeden
     322: trzysta dwadzieścia dwa
     323: trzysta dwadzieścia trzy
-    1141: jeden tysiąc sto czterdzieści jeden
-    1142: jeden tysiąc sto czterdzieści dwa
-    1143: jeden tysiąc sto czterdzieści trzy
+    1141: tysiąc sto czterdzieści jeden
+    1142: tysiąc sto czterdzieści dwa
+    1143: tysiąc sto czterdzieści trzy
     10311: dziesięć tysięcy trzysta jedenaście
     138400: sto trzydzieści osiem tysięcy czterysta
 OrdinalRules:
   digits-ordinal:
-    -1141: −1 141.
-    -1142: −1 142.
-    -1143: −1 143.
-    -100: −100.
-    -75: −75.
-    -50: −50.
-    -24: −24.
+    -1141: "−1\_141."
+    -1142: "−1\_142."
+    -1143: "−1\_143."
+    -100: "−100."
+    -75: "−75."
+    -50: "−50."
+    -24: "−24."
     0: '0.'
     1: '1.'
     2: '2.'
@@ -705,13 +2811,13 @@ OrdinalRules:
     138400: 138 400.
 DurationRules:
   duration:
-    -1141: -1 141
-    -1142: -1 142
-    -1143: -1 143
-    -100: '-100'
-    -75: '-75'
-    -50: '-50'
-    -24: '-24'
+    -1141: "-1\_141"
+    -1142: "-1\_142"
+    -1143: "-1\_143"
+    -100: "-100"
+    -75: "-75"
+    -50: "-50"
+    -24: "-24"
     0: '0'
     1: '1'
     2: '2'

@@ -2,7 +2,7 @@
 :it: 
   :fields: 
     :day: 
-      :display_name: Giorno
+      :display_name: giorno
       :relative: 
         -1: ieri
         -2: "l’altro ieri"
@@ -37,7 +37,7 @@
     :dayperiod: 
       :display_name: AM/PM
     :era: 
-      :display_name: Era
+      :display_name: era
     :fri: 
       :relative: 
         -1: "venerdì scorso"
@@ -54,7 +54,7 @@
         0: "questo ven."
         1: "ven. prossimo"
     :hour: 
-      :display_name: Ora
+      :display_name: ora
       :relative_time: 
         :future: 
           :one: "tra {0} ora"
@@ -81,7 +81,7 @@
           :one: "{0} h. fa"
           :other: "{0} h. fa"
     :minute: 
-      :display_name: Minuto
+      :display_name: minuto
       :relative_time: 
         :future: 
           :one: "tra {0} minuto"
@@ -123,7 +123,7 @@
         0: "questo lun."
         1: "lun. prossimo"
     :month: 
-      :display_name: Mese
+      :display_name: mese
       :relative: 
         -1: "mese scorso"
         0: "questo mese"
@@ -154,7 +154,11 @@
           :one: "{0} mese fa"
           :other: "{0} mesi fa"
     :quarter: 
-      :display_name: Trimestre
+      :display_name: trimestre
+      :relative: 
+        -1: "trimestre scorso"
+        0: "questo trimestre"
+        1: "trimestre prossimo"
       :relative_time: 
         :future: 
           :one: "tra {0} trimestre"
@@ -164,6 +168,10 @@
           :other: "{0} trimestri fa"
     :quarter-narrow: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. scorso"
+        0: "questo trim."
+        1: "trim. prossimo"
       :relative_time: 
         :future: 
           :one: "tra {0} trim."
@@ -173,6 +181,10 @@
           :other: "{0} trim. fa"
     :quarter-short: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. scorso"
+        0: "questo trim."
+        1: "trim. prossimo"
       :relative_time: 
         :future: 
           :one: "tra {0} trim."
@@ -285,7 +297,7 @@
         0: "questo mer."
         1: "mer. prossimo"
     :week: 
-      :display_name: Settimana
+      :display_name: settimana
       :relative: 
         -1: "settimana scorsa"
         0: "questa settimana"
@@ -316,9 +328,9 @@
           :one: "{0} sett. fa"
           :other: "{0} sett. fa"
     :weekday: 
-      :display_name: "Giorno della settimana"
+      :display_name: "giorno della settimana"
     :year: 
-      :display_name: Anno
+      :display_name: anno
       :relative: 
         -1: "anno scorso"
         0: quest’anno
@@ -349,4 +361,4 @@
           :one: "{0} anno fa"
           :other: "{0} anni fa"
     :zone: 
-      :display_name: "Fuso orario"
+      :display_name: "fuso orario"

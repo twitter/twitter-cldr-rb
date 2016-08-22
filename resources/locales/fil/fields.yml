@@ -2,7 +2,7 @@
 :fil: 
   :fields: 
     :day: 
-      :display_name: Araw
+      :display_name: araw
       :relative: 
         -1: kahapon
         -2: "Araw bago ang kahapon"
@@ -17,23 +17,35 @@
           :one: "{0} araw ang nakalipas"
           :other: "{0} (na) araw ang nakalipas"
     :day-narrow: 
-      :display_name: Araw
+      :display_name: araw
+      :relative: 
+        -1: kahapon
+        -2: "Araw bago ang kahapon"
+        0: "ngayong araw"
+        1: bukas
+        2: Samakalawa
       :relative_time: 
         :future: 
           :one: "sa {0} araw"
           :other: "sa {0} (na) araw"
         :past: 
           :one: "{0} araw ang nakalipas"
-          :other: "{0} (na) araw nakalipas"
+          :other: "{0} (na) araw ang nakalipas"
     :day-short: 
-      :display_name: Araw
+      :display_name: araw
+      :relative: 
+        -1: kahapon
+        -2: "Araw bago ang kahapon"
+        0: "ngayong araw"
+        1: bukas
+        2: Samakalawa
       :relative_time: 
         :future: 
-          :one: "sa {0} araw"
+          :one: "sa {0} (na) araw"
           :other: "sa {0} (na) araw"
         :past: 
-          :one: "{0} araw ang nakalipas"
-          :other: "{0} (na) araw nakalipas"
+          :one: "{0} (na) araw ang nakalipas"
+          :other: "{0} (na) araw ang nakalipas"
     :dayperiod: 
       :display_name: AM/PM
     :era: 
@@ -54,7 +66,7 @@
         0: "ngayong Biy."
         1: "susunod na Biy."
     :hour: 
-      :display_name: Oras
+      :display_name: oras
       :relative_time: 
         :future: 
           :one: "sa {0} oras"
@@ -63,7 +75,7 @@
           :one: "{0} oras ang nakalipas"
           :other: "{0} (na) oras ang nakalipas"
     :hour-narrow: 
-      :display_name: hr.
+      :display_name: oras
       :relative_time: 
         :future: 
           :one: "sa {0} oras"
@@ -72,23 +84,23 @@
           :one: "{0} oras nakalipas"
           :other: "{0} (na) oras nakalipas"
     :hour-short: 
-      :display_name: hr.
+      :display_name: oras
       :relative_time: 
         :future: 
           :one: "sa {0} oras"
           :other: "sa {0} (na) oras"
         :past: 
-          :one: "{0} oras nakalipas"
-          :other: "{0} (na) oras nakalipas"
+          :one: "{0} oras ang nakalipas"
+          :other: "{0} (na) oras ang nakalipas"
     :minute: 
-      :display_name: Minuto
+      :display_name: minuto
       :relative_time: 
         :future: 
           :one: "sa {0} minuto"
           :other: "sa {0} (na) minuto"
         :past: 
           :one: "{0} minuto ang nakalipas"
-          :other: "sa {0} (na) minuto"
+          :other: "{0} (na) minuto ang nakalipas"
     :minute-narrow: 
       :display_name: min.
       :relative_time: 
@@ -123,7 +135,7 @@
         0: "ngayong Lun."
         1: "susunod na Lun."
     :month: 
-      :display_name: Buwan
+      :display_name: buwan
       :relative: 
         -1: "nakaraang buwan"
         0: "ngayong buwan"
@@ -136,7 +148,11 @@
           :one: "{0} buwan ang nakalipas"
           :other: "{0} (na) buwan ang nakalipas"
     :month-narrow: 
-      :display_name: mo.
+      :display_name: buwan
+      :relative: 
+        -1: "nakaraang buwan"
+        0: "ngayong buwan"
+        1: "susunod na buwan"
       :relative_time: 
         :future: 
           :one: "sa {0} buwan"
@@ -145,7 +161,11 @@
           :one: "{0} buwan ang nakalipas"
           :other: "{0} (na) buwan ang nakalipas"
     :month-short: 
-      :display_name: mo.
+      :display_name: buwan
+      :relative: 
+        -1: "nakaraang buwan"
+        0: "ngayong buwan"
+        1: "susunod na buwan"
       :relative_time: 
         :future: 
           :one: "sa {0} buwan"
@@ -155,6 +175,10 @@
           :other: "{0} (na) buwan ang nakalipas"
     :quarter: 
       :display_name: Quarter
+      :relative: 
+        -1: "nakaraang quarter"
+        0: "ngayong quarter"
+        1: "susunod na quarter"
       :relative_time: 
         :future: 
           :one: "sa {0} quarter"
@@ -164,6 +188,10 @@
           :other: "{0} (na) quarter ang nakalipas"
     :quarter-narrow: 
       :display_name: qtr.
+      :relative: 
+        -1: "nakaraang quarter"
+        0: "ngayong quarter"
+        1: "susunod na quarter"
       :relative_time: 
         :future: 
           :one: "sa {0} quarter"
@@ -173,6 +201,10 @@
           :other: "{0} (na) quarter ang nakalipas"
     :quarter-short: 
       :display_name: qtr.
+      :relative: 
+        -1: "nakaraang quarter"
+        0: "ngayong quarter"
+        1: "susunod na quarter"
       :relative_time: 
         :future: 
           :one: "sa {0} (na) quarter"
@@ -196,7 +228,7 @@
         0: "ngayong Sab."
         1: "susunod na Sab."
     :second: 
-      :display_name: Segundo
+      :display_name: segundo
       :relative: 
         0: ngayon
       :relative_time: 
@@ -226,8 +258,8 @@
           :other: "{0} (na) seg. nakalipas"
     :sun: 
       :relative: 
-        -1: "nakaraang Linggo"
-        0: "ngayong Linggo"
+        -1: "lumipas na Linggo"
+        0: "sa Linggo"
         1: "susunod na Linggo"
     :sun-narrow: 
       :relative: 
@@ -285,7 +317,20 @@
         0: "ngayong Miy."
         1: "susunod na Miy."
     :week: 
-      :display_name: Linggo
+      :display_name: linggo
+      :relative: 
+        -1: "nakalipas na linggo"
+        0: "sa linggong ito"
+        1: "susunod na linggo"
+      :relative_time: 
+        :future: 
+          :one: "sa {0} linggo"
+          :other: "sa {0} (na) linggo"
+        :past: 
+          :one: "{0} linggo ang nakalipas"
+          :other: "{0} (na) linggo ang nakalipas"
+    :week-narrow: 
+      :display_name: linggo
       :relative: 
         -1: "nakaraang linggo"
         0: "ngayong linggo"
@@ -297,17 +342,12 @@
         :past: 
           :one: "{0} linggo ang nakalipas"
           :other: "{0} (na) linggo ang nakalipas"
-    :week-narrow: 
-      :display_name: wk.
-      :relative_time: 
-        :future: 
-          :one: "sa {0} linggo"
-          :other: "sa {0} (na) linggo"
-        :past: 
-          :one: "{0} linggo ang nakalipas"
-          :other: "{0} (na) linggo ang nakalipas"
     :week-short: 
-      :display_name: wk.
+      :display_name: linggo
+      :relative: 
+        -1: "nakaraang linggo"
+        0: "ngayong linggo"
+        1: "susunod na linggo"
       :relative_time: 
         :future: 
           :one: "sa {0} linggo"
@@ -316,9 +356,9 @@
           :one: "{0} linggo ang nakalipas"
           :other: "{0} (na) linggo ang nakalipas"
     :weekday: 
-      :display_name: "Araw ng Linggo"
+      :display_name: "araw ng linggo"
     :year: 
-      :display_name: Taon
+      :display_name: taon
       :relative: 
         -1: "nakaraang taon"
         0: "ngayong taon"
@@ -331,7 +371,11 @@
           :one: "{0} taon ang nakalipas"
           :other: "{0} (na) taon ang nakalipas"
     :year-narrow: 
-      :display_name: yr.
+      :display_name: taon
+      :relative: 
+        -1: "nakaraang taon"
+        0: "ngayong taon"
+        1: "susunod na taon"
       :relative_time: 
         :future: 
           :one: "sa {0} taon"
@@ -340,7 +384,11 @@
           :one: "{0} taon ang nakalipas"
           :other: "{0} (na) taon ang nakalipas"
     :year-short: 
-      :display_name: yr.
+      :display_name: taon
+      :relative: 
+        -1: "nakaraang taon"
+        0: "ngayong taon"
+        1: "susunod na taon"
       :relative_time: 
         :future: 
           :one: "sa {0} taon"
@@ -349,4 +397,4 @@
           :one: "{0} taon ang nakalipas"
           :other: "{0} (na) taon ang nakalipas"
     :zone: 
-      :display_name: "Time Zone"
+      :display_name: "time zone"

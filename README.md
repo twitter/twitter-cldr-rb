@@ -177,7 +177,7 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)"
 DateTime.now.localize(:es).to_long_s               # "14 de febrero de 2014, 12:20:05 UTC"
-DateTime.now.localize(:es).to_medium_s             # "14 de feb. de 2014 12:20:05"
+DateTime.now.localize(:es).to_medium_s             # "14 feb. 2014 12:20:05"
 DateTime.now.localize(:es).to_short_s              # "14/2/14 12:20"
 
 Time.now.localize(:es).to_full_s                   # "12:20:05 (UTC +00:00)"
@@ -187,7 +187,7 @@ Time.now.localize(:es).to_short_s                  # "12:20"
 
 DateTime.now.localize(:es).to_date.to_full_s       # "viernes, 14 de febrero de 2014"
 DateTime.now.localize(:es).to_date.to_long_s       # "14 de febrero de 2014"
-DateTime.now.localize(:es).to_date.to_medium_s     # "14 de feb. de 2014"
+DateTime.now.localize(:es).to_date.to_medium_s     # "14 feb. 2014"
 DateTime.now.localize(:es).to_date.to_short_s      # "14/2/14"
 ```
 
@@ -237,22 +237,28 @@ It's important to know that, even though any given format may not be available a
 | H          | 12                     |
 | Hm         | 12:20                  |
 | Hms        | 12:20:05               |
+| Hmsv       | 12:20:05 v             |
+| Hmv        | 12:20 v                |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
 | MMM        | Feb                    |
 | MMMEd      | Fri, Feb 14            |
+| MMMMd      | February 14            |
 | MMMd       | Feb 14                 |
 | Md         | 2/14                   |
 | d          | 14                     |
 | h          | 12 PM                  |
 | hm         | 12:20 PM               |
 | hms        | 12:20:05 PM            |
+| hmsv       | 12:20:05 PM v          |
+| hmv        | 12:20 PM v             |
 | ms         | 20:05                  |
 | y          | 2014                   |
 | yM         | 2/2014                 |
 | yMEd       | Fri, 2/14/2014         |
 | yMMM       | Feb 2014               |
 | yMMMEd     | Fri, Feb 14, 2014      |
+| yMMMM      | February 2014          |
 | yMMMd      | Feb 14, 2014           |
 | yMd        | 2/14/2014              |
 | yQQQ       | Q1 2014                |
@@ -320,7 +326,7 @@ TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # 
 CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
 
 ```ruby
-TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # ["Januari", "Februari", "Mars"]
+TwitterCldr::Shared::Calendar.new(:sv).months.take(3) # ["januari", "februari", "mars"]
 ```
 
 
@@ -490,15 +496,15 @@ TwitterCldr::Shared::Territories.all                                            
 TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "República Democrática de Timor-Leste", :tm => "Turcomenistão" ... }
 
 # get a territory by its code for the default locale
-TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "U.K."
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "UK"
 
 # get a territory from its code for a specific locale
 TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # "Reino Unido"
 
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
-TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "U.K."
-TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # "Reino Unido"
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "UK"
+TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # nil
 ```
 
 ### Postal Codes
@@ -548,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["40741-8626", "87304", "02763-2183", "78302", "37171"]
+postal_code.sample(5)  # ["88031", "71288-3221", "69935", "76239", "74669"]
 ```
 
 ### Phone Codes

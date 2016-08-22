@@ -125,6 +125,10 @@
       :display_name: Mes
     :month-short: 
       :display_name: Mes
+      :relative: 
+        -1: "m. pasado"
+        0: "este m."
+        1: "m. seguinte"
       :relative_time: 
         :future: 
           :one: "En {0} m."
@@ -134,6 +138,10 @@
           :other: "Hai {0} m."
     :quarter: 
       :display_name: Trimestre
+      :relative: 
+        -1: "trimestre pasado"
+        0: "este trimestre"
+        1: "seguinte trimestre"
       :relative_time: 
         :future: 
           :one: "En {0} trimestre"
@@ -143,6 +151,10 @@
           :other: "Hai {0} trimestres"
     :quarter-narrow: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. pasado"
+        0: "este trim."
+        1: "trim. seguinte"
       :relative_time: 
         :future: 
           :one: "En {0} trim."
@@ -152,6 +164,10 @@
           :other: "Hai {0} trim."
     :quarter-short: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. pasado"
+        0: "este trim."
+        1: "trim. seguinte"
       :relative_time: 
         :future: 
           :one: "En {0} trim."
@@ -231,6 +247,7 @@
     :thu-short: 
       :relative: 
         -1: "xov. pasado"
+        0: "este xov."
         1: "próximo xov."
     :tue: 
       :relative: 
@@ -279,6 +296,10 @@
       :display_name: sem.
     :week-short: 
       :display_name: sem.
+      :relative: 
+        -1: "sem. pasada"
+        0: "esta sem."
+        1: "sem. seguinte"
       :relative_time: 
         :future: 
           :one: "En {0} sem."
@@ -303,6 +324,10 @@
           :other: "Hai {0} anos"
     :year-narrow: 
       :display_name: Ano
+      :relative: 
+        -1: "ano pasado"
+        0: "este ano"
+        1: "seguinte ano"
       :relative_time: 
         :future: 
           :one: "En {0} anos"
@@ -312,6 +337,10 @@
           :other: "Hai {0} anos"
     :year-short: 
       :display_name: Ano
+      :relative: 
+        -1: "ano pasado"
+        0: "este ano"
+        1: "seguinte ano"
       :relative_time: 
         :future: 
           :one: "En {0} anos"

@@ -16,6 +16,12 @@
           :other: "{0} วันที่ผ่านมา"
     :day-narrow: 
       :display_name: วัน
+      :relative: 
+        -1: เมื่อวาน
+        -2: เมื่อวานซืน
+        0: วันนี้
+        1: พรุ่งนี้
+        2: มะรืนนี้
       :relative_time: 
         :future: 
           :other: "ใน {0} วัน"
@@ -23,6 +29,12 @@
           :other: "{0} วันที่แล้ว"
     :day-short: 
       :display_name: วัน
+      :relative: 
+        -1: เมื่อวาน
+        -2: เมื่อวานซืน
+        0: วันนี้
+        1: พรุ่งนี้
+        2: มะรืนนี้
       :relative_time: 
         :future: 
           :other: "ใน {0} วัน"
@@ -117,6 +129,10 @@
           :other: "{0} เดือนที่ผ่านมา"
     :month-narrow: 
       :display_name: เดือน
+      :relative: 
+        -1: เดือนที่แล้ว
+        0: เดือนนี้
+        1: เดือนหน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} เดือน"
@@ -124,6 +140,10 @@
           :other: "{0} เดือนที่แล้ว"
     :month-short: 
       :display_name: เดือน
+      :relative: 
+        -1: เดือนที่แล้ว
+        0: เดือนนี้
+        1: เดือนหน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} เดือน"
@@ -261,6 +281,10 @@
           :other: "{0} สัปดาห์ที่ผ่านมา"
     :week-narrow: 
       :display_name: สัปดาห์
+      :relative: 
+        -1: สัปดาห์ที่แล้ว
+        0: สัปดาห์นี้
+        1: สัปดาห์หน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} สัปดาห์"
@@ -268,6 +292,10 @@
           :other: "{0} สัปดาห์ที่แล้ว"
     :week-short: 
       :display_name: สัปดาห์
+      :relative: 
+        -1: สัปดาห์ที่แล้ว
+        0: สัปดาห์นี้
+        1: สัปดาห์หน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} สัปดาห์"
@@ -288,6 +316,10 @@
           :other: "{0} ปีที่แล้ว"
     :year-narrow: 
       :display_name: ปี
+      :relative: 
+        -1: ปีที่แล้ว
+        0: ปีนี้
+        1: ปีหน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} ปี"
@@ -295,6 +327,10 @@
           :other: "{0} ปีที่แล้ว"
     :year-short: 
       :display_name: ปี
+      :relative: 
+        -1: ปีที่แล้ว
+        0: ปีนี้
+        1: ปีหน้า
       :relative_time: 
         :future: 
           :other: "ใน {0} ปี"

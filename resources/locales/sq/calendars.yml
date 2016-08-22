@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss, v"
+        :Hmv: "HH:mm, v"
         :M: L
         :MEd: "E, d.M"
         :MMM: LLL
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a, v"
+        :hmv: "h:mm a, v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -110,7 +114,7 @@
             :wed: "E mërkurë"
       :eras: 
         :abbr: 
-          0: p.e.s
+          0: p.e.s.
           1: e.s.
         :name: 
           0: "para erës sonë"
@@ -122,7 +126,7 @@
         :day: ditë
         :day-narrow: ditë
         :day-short: ditë
-        :dayperiod: "periudhë e ditës"
+        :dayperiod: paradite/pasdite
         :era: erë
         :hour: orë
         :hour-narrow: orë
@@ -168,13 +172,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "h:mm:ss a, zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "h:mm:ss a, z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -258,16 +262,67 @@
             9: Shtator
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: "e pasdites"
+            :am: "e paradites"
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: "e paradites"
+            :night1: natë
+            :noon: mesditë
+            :pm: "e pasdites"
           :narrow: 
-            :am: AM
-            :noon: MD
-            :pm: PM
+            :afternoon1: "e pasdites"
+            :am: "e paradites"
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: "e paradites"
+            :night1: natë
+            :noon: mesditë
+            :pm: "e pasdites"
           :wide: 
+            :afternoon1: "e pasdites"
+            :am: "e paradites"
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: "e paradites"
+            :night1: natë
+            :noon: mesditë
+            :pm: "e pasdites"
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: pasdite
             :am: paradite
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: paradite
+            :night1: natë
             :noon: mesditë
             :pm: pasdite
-        :stand-alone: {}
+          :narrow: 
+            :afternoon1: pasdite
+            :am: paradite
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: paradite
+            :night1: natë
+            :noon: mesditë
+            :pm: pasdite
+          :wide: 
+            :afternoon1: pasdite
+            :am: paradite
+            :evening1: mbrëmje
+            :midnight: mesnatë
+            :morning1: mëngjes
+            :morning2: paradite
+            :night1: natë
+            :noon: mesditë
+            :pm: pasdite
       :quarters: 
         :format: 
           :abbreviated: 

@@ -17,7 +17,13 @@
           :one: "{0} ದಿನದ ಹಿಂದೆ"
           :other: "{0} ದಿನಗಳ ಹಿಂದೆ"
     :day-narrow: 
-      :display_name: ದಿ
+      :display_name: ದಿನ
+      :relative: 
+        -1: ನಿನ್ನೆ
+        -2: ಮೊನ್ನೆ
+        0: ಇಂದು
+        1: ನಾಳೆ
+        2: ನಾಡಿದ್ದು
       :relative_time: 
         :future: 
           :one: "{0} ದಿನದಲ್ಲಿ"
@@ -27,6 +33,12 @@
           :other: "{0} ದಿನಗಳ ಹಿಂದೆ"
     :day-short: 
       :display_name: ದಿನ
+      :relative: 
+        -1: ನಿನ್ನೆ
+        -2: ಮೊನ್ನೆ
+        0: ಇಂದು
+        1: ನಾಳೆ
+        2: ನಾಡಿದ್ದು
       :relative_time: 
         :future: 
           :one: "{0} ದಿನದಲ್ಲಿ"
@@ -137,6 +149,10 @@
           :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
     :month-narrow: 
       :display_name: ತಿಂಗಳು
+      :relative: 
+        -1: "ಕಳೆದ ತಿಂಗಳು"
+        0: "ಈ ತಿಂಗಳು"
+        1: "ಮುಂದಿನ ತಿಂಗಳು"
       :relative_time: 
         :future: 
           :one: "{0} ತಿಂಗಳಲ್ಲಿ"
@@ -146,6 +162,10 @@
           :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
     :month-short: 
       :display_name: ತಿಂಗಳು
+      :relative: 
+        -1: "ಕಳೆದ ತಿಂಗಳು"
+        0: "ಈ ತಿಂಗಳು"
+        1: "ಮುಂದಿನ ತಿಂಗಳು"
       :relative_time: 
         :future: 
           :one: "{0} ತಿಂಗಳಲ್ಲಿ"
@@ -155,6 +175,10 @@
           :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
     :quarter: 
       :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative: 
+        -1: "ಕಳೆದ ತ್ರೈಮಾಸಿಕ"
+        0: "ಈ ತ್ರೈಮಾಸಿಕ"
+        1: "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ"
       :relative_time: 
         :future: 
           :one: "{0} ತ್ರೈಮಾಸಿಕದಲ್ಲಿ"
@@ -164,6 +188,10 @@
           :other: "{0} ತ್ರೈಮಾಸಿಕಗಳ ಹಿಂದೆ"
     :quarter-narrow: 
       :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative: 
+        -1: "ಕಳೆದ ತ್ರೈಮಾಸಿಕ"
+        0: "ಈ ತ್ರೈಮಾಸಿಕ"
+        1: "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ"
       :relative_time: 
         :future: 
           :one: "+{0} ತ್ರೈ"
@@ -173,6 +201,10 @@
           :other: "+{0} ತ್ರೈ. ಹಿಂದೆ"
     :quarter-short: 
       :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative: 
+        -1: "ಕಳೆದ ತ್ರೈಮಾಸಿಕ"
+        0: "ಈ ತ್ರೈಮಾಸಿಕ"
+        1: "ಮುಂದಿನ ತ್ರೈಮಾಸಿಕ"
       :relative_time: 
         :future: 
           :one: "{0} ತ್ರೈ.ಮಾ.ದಲ್ಲಿ"
@@ -299,6 +331,10 @@
           :other: "{0} ವಾರಗಳ ಹಿಂದೆ"
     :week-narrow: 
       :display_name: ವಾರ
+      :relative: 
+        -1: "ಕಳೆದ ವಾರ"
+        0: "ಈ ವಾರ"
+        1: "ಮುಂದಿನ ವಾರ"
       :relative_time: 
         :future: 
           :one: "{0} ವಾರದಲ್ಲಿ"
@@ -308,6 +344,10 @@
           :other: "{0} ವಾರಗಳ ಹಿಂದೆ"
     :week-short: 
       :display_name: ವಾರ
+      :relative: 
+        -1: "ಕಳೆದ ವಾರ"
+        0: "ಈ ವಾರ"
+        1: "ಮುಂದಿನ ವಾರ"
       :relative_time: 
         :future: 
           :one: "{0} ವಾರದಲ್ಲಿ"
@@ -332,6 +372,10 @@
           :other: "{0} ವರ್ಷಗಳ ಹಿಂದೆ"
     :year-narrow: 
       :display_name: ವರ್ಷ
+      :relative: 
+        -1: "ಕಳೆದ ವರ್ಷ"
+        0: "ಈ ವರ್ಷ"
+        1: "ಮುಂದಿನ ವರ್ಷ"
       :relative_time: 
         :future: 
           :one: "{0} ವರ್ಷದಲ್ಲಿ"
@@ -341,6 +385,10 @@
           :other: "{0} ವರ್ಷಗಳ ಹಿಂದೆ"
     :year-short: 
       :display_name: ವರ್ಷ
+      :relative: 
+        -1: "ಕಳೆದ ವರ್ಷ"
+        0: "ಈ ವರ್ಷ"
+        1: "ಮುಂದಿನ ವರ್ಷ"
       :relative_time: 
         :future: 
           :one: "{0} ವರ್ಷದಲ್ಲಿ"

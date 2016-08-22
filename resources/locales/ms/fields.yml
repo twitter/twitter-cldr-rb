@@ -16,6 +16,12 @@
           :other: "{0} hari lalu"
     :day-narrow: 
       :display_name: hari
+      :relative: 
+        -1: semlm
+        -2: kelmarin
+        0: "hari ini"
+        1: esok
+        2: lusa
       :relative_time: 
         :future: 
           :other: "dlm {0} hari"
@@ -23,6 +29,12 @@
           :other: "{0} hari yg lalu"
     :day-short: 
       :display_name: hari
+      :relative: 
+        -1: semlm
+        -2: kelmarin
+        0: "hari ini"
+        1: esok
+        2: lusa
       :relative_time: 
         :future: 
           :other: "dlm {0} hari"
@@ -117,6 +129,10 @@
           :other: "{0} bulan lalu"
     :month-narrow: 
       :display_name: bln
+      :relative: 
+        -1: "bln lalu"
+        0: "bln ini"
+        1: "bln depan"
       :relative_time: 
         :future: 
           :other: "dalam {0} bln lalu"
@@ -124,6 +140,10 @@
           :other: "{0} bulan lalu"
     :month-short: 
       :display_name: bln
+      :relative: 
+        -1: "bln lalu"
+        0: "bln ini"
+        1: "bln depan"
       :relative_time: 
         :future: 
           :other: "dlm {0} bln"
@@ -131,6 +151,10 @@
           :other: "{0} bln lalu"
     :quarter: 
       :display_name: "Suku Tahun"
+      :relative: 
+        -1: "suku lepas"
+        0: "suku ini"
+        1: "suku seterusnya"
       :relative_time: 
         :future: 
           :other: "dalam {0} suku"
@@ -138,6 +162,10 @@
           :other: "{0} suku lalu"
     :quarter-narrow: 
       :display_name: suku
+      :relative: 
+        -1: "suku lepas"
+        0: "suku ini"
+        1: "suku seterusnya"
       :relative_time: 
         :future: 
           :other: "dlm {0} suku"
@@ -145,6 +173,10 @@
           :other: "{0} suku lalu"
     :quarter-short: 
       :display_name: suku
+      :relative: 
+        -1: "suku lepas"
+        0: "suku ini"
+        1: "suku seterusnya"
       :relative_time: 
         :future: 
           :other: "dlm {0} suku"
@@ -261,6 +293,10 @@
           :other: "{0} minggu lalu"
     :week-narrow: 
       :display_name: mgu
+      :relative: 
+        -1: "mng lepas"
+        0: "mng ini"
+        1: "mng depan"
       :relative_time: 
         :future: 
           :other: "dlm {0} mgu"
@@ -268,6 +304,10 @@
           :other: "{0} mgu lalu"
     :week-short: 
       :display_name: mgu
+      :relative: 
+        -1: "mng lepas"
+        0: "mng ini"
+        1: "mng depan"
       :relative_time: 
         :future: 
           :other: "dlm {0} mgu"
@@ -288,6 +328,10 @@
           :other: "{0} tahun lalu"
     :year-narrow: 
       :display_name: thn
+      :relative: 
+        -1: "thn lepas"
+        0: "thn ini"
+        1: "thn depan"
       :relative_time: 
         :future: 
           :other: "dalam {0} thn"
@@ -295,6 +339,10 @@
           :other: "{0} thn lalu"
     :year-short: 
       :display_name: thn
+      :relative: 
+        -1: "thn lepas"
+        0: "thn ini"
+        1: "thn depan"
       :relative_time: 
         :future: 
           :other: "dalam {0} thn"

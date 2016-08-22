@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :other: "{0} 중력가속도"
         :acceleration-meter-per-second-squared: 
-          :other: "{0}m/s²"
+          :other: "{0}제곱 초당 미터"
         :angle-arc-minute: 
           :other: "{0}분각"
         :angle-arc-second: 
@@ -19,6 +19,8 @@
           :other: "{0}도"
         :angle-radian: 
           :other: "{0}라디안"
+        :angle-revolution: 
+          :other: "{0}회전"
         :area-acre: 
           :other: "{0}에이커"
         :area-hectare: 
@@ -37,6 +39,10 @@
           :other: "{0}제곱마일"
         :area-square-yard: 
           :other: "{0}제곱야드"
+        :concentr-karat: 
+          :other: "{0}캐럿"
+        :consumption-liter-per-100kilometers: 
+          :other: "100킬로미터당 {0}리터"
         :consumption-liter-per-kilometer: 
           :other: "킬로미터당 {0}리터"
         :consumption-mile-per-gallon: 
@@ -61,6 +67,8 @@
           :other: "{0}테라비트"
         :digital-terabyte: 
           :other: "{0}테라바이트"
+        :duration-century: 
+          :other: "{0}세기"
         :duration-day: 
           :other: "{0}일"
         :duration-hour: 
@@ -110,7 +118,7 @@
         :frequency-megahertz: 
           :other: "{0}메가헤르츠"
         :length-astronomical-unit: 
-          :other: "{0} 천문 단위"
+          :other: "{0}천문 단위"
         :length-centimeter: 
           :other: "{0}센티미터"
         :length-decimeter: 
@@ -129,6 +137,8 @@
           :other: "{0}마이크로미터"
         :length-mile: 
           :other: "{0}마일"
+        :length-mile-scandinavian: 
+          :other: "{0}스칸디나비아 마일"
         :length-millimeter: 
           :other: "{0}밀리미터"
         :length-nanometer: 
@@ -185,10 +195,10 @@
           :other: "{0}수은주밀리미터"
         :pressure-pound-per-square-inch: 
           :other: "{0}제곱인치당 파운드"
-        :proportion-karat: 
-          :other: "{0}캐럿"
         :speed-kilometer-per-hour: 
           :other: "시속 {0}킬로미터"
+        :speed-knot: 
+          :other: "{0}노트"
         :speed-meter-per-second: 
           :other: "초속 {0}미터"
         :speed-mile-per-hour: 
@@ -197,6 +207,8 @@
           :other: "섭씨 {0}도"
         :temperature-fahrenheit: 
           :other: "화씨 {0}도"
+        :temperature-generic: 
+          :other: "{0}도"
         :temperature-kelvin: 
           :other: "{0}켈빈"
         :volume-acre-foot: 
@@ -219,6 +231,8 @@
           :other: "{0}세제곱야드"
         :volume-cup: 
           :other: "{0}컵"
+        :volume-cup-metric: 
+          :other: "{0}미터식 컵"
         :volume-deciliter: 
           :other: "{0}데시리터"
         :volume-fluid-ounce: 
@@ -235,6 +249,8 @@
           :other: "{0}밀리리터"
         :volume-pint: 
           :other: "{0}파인트"
+        :volume-pint-metric: 
+          :other: "{0}미터식 파인트"
         :volume-quart: 
           :other: "{0}쿼트"
         :volume-tablespoon: 
@@ -262,6 +278,8 @@
           :other: "{0}m²"
         :area-square-mile: 
           :other: "{0}mi²"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0}L/100km"
         :duration-day: 
           :other: "{0}일"
         :duration-hour: 
@@ -347,8 +365,10 @@
           :other: "{0}°"
         :angle-radian: 
           :other: "{0}rad"
+        :angle-revolution: 
+          :other: "{0}rev"
         :area-acre: 
-          :other: "{0}에이커"
+          :other: "{0}ac"
         :area-hectare: 
           :other: "{0}ha"
         :area-square-centimeter: 
@@ -365,10 +385,22 @@
           :other: "{0}mi²"
         :area-square-yard: 
           :other: "{0}yd²"
+        :concentr-karat: 
+          :other: "{0}kt"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0}L/100km"
         :consumption-liter-per-kilometer: 
           :other: "{0}L/km"
         :consumption-mile-per-gallon: 
           :other: "{0}mpg"
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
         :digital-bit: 
           :other: "{0}bit"
         :digital-byte: 
@@ -389,8 +421,11 @@
           :other: "{0}Tb"
         :digital-terabyte: 
           :other: "{0}TB"
+        :duration-century: 
+          :other: "{0}C"
         :duration-day: 
           :other: "{0}일"
+        :duration-day-person: {}
         :duration-hour: 
           :other: "{0}시간"
         :duration-microsecond: 
@@ -401,14 +436,17 @@
           :other: "{0}분"
         :duration-month: 
           :other: "{0}개월"
+        :duration-month-person: {}
         :duration-nanosecond: 
           :other: "{0}ns"
         :duration-second: 
           :other: "{0}초"
         :duration-week: 
           :other: "{0}주"
+        :duration-week-person: {}
         :duration-year: 
           :other: "{0}년"
+        :duration-year-person: {}
         :electric-ampere: 
           :other: "{0}A"
         :electric-milliampere: 
@@ -460,7 +498,9 @@
         :length-micrometer: 
           :other: "{0}µm"
         :length-mile: 
-          :other: "{0}mil"
+          :other: "{0}mi"
+        :length-mile-scandinavian: 
+          :other: "{0}smi"
         :length-millimeter: 
           :other: "{0}mm"
         :length-nanometer: 
@@ -500,7 +540,7 @@
         :power-gigawatt: 
           :other: "{0}GW"
         :power-horsepower: 
-          :other: "{0}HP"
+          :other: "{0}hp"
         :power-kilowatt: 
           :other: "{0}kW"
         :power-megawatt: 
@@ -519,10 +559,10 @@
           :other: "{0}mm Hg"
         :pressure-pound-per-square-inch: 
           :other: "{0}psi"
-        :proportion-karat: 
-          :other: "{0}kt"
         :speed-kilometer-per-hour: 
-          :other: "시속 {0}km"
+          :other: "{0}km/h"
+        :speed-knot: 
+          :other: "{0}kn"
         :speed-meter-per-second: 
           :other: "초속 {0}m"
         :speed-mile-per-hour: 
@@ -531,6 +571,8 @@
           :other: "{0}°C"
         :temperature-fahrenheit: 
           :other: "{0}°F"
+        :temperature-generic: 
+          :other: "{0}°"
         :temperature-kelvin: 
           :other: "{0}K"
         :volume-acre-foot: 
@@ -555,12 +597,16 @@
           :other: "{0}yd³"
         :volume-cup: 
           :other: "{0}컵"
+        :volume-cup-metric: 
+          :other: "{0}mc"
         :volume-deciliter: 
           :other: "{0}dL"
         :volume-fluid-ounce: 
           :other: "{0}fl oz"
         :volume-gallon: 
           :other: "{0}gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
         :volume-hectoliter: 
           :other: "{0}hL"
         :volume-liter: 
@@ -571,6 +617,8 @@
           :other: "{0}mL"
         :volume-pint: 
           :other: "{0}pt"
+        :volume-pint-metric: 
+          :other: "{0}mpt"
         :volume-quart: 
           :other: "{0}qt"
         :volume-tablespoon: 

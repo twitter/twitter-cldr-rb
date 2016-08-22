@@ -31,6 +31,10 @@ age:
   :long_name: V6_0
 - :abbreviated_name: '6.1'
   :long_name: V6_1
+- :abbreviated_name: '6.2'
+  :long_name: V6_2
+- :abbreviated_name: '6.3'
+  :long_name: V6_3
 - :abbreviated_name: NA
   :long_name: Unassigned
 Alpha:
@@ -55,10 +59,14 @@ bc:
   :long_name: European_Separator
 - :abbreviated_name: ET
   :long_name: European_Terminator
+- :abbreviated_name: FSI
+  :long_name: First_Strong_Isolate
 - :abbreviated_name: L
   :long_name: Left_To_Right
 - :abbreviated_name: LRE
   :long_name: Left_To_Right_Embedding
+- :abbreviated_name: LRI
+  :long_name: Left_To_Right_Isolate
 - :abbreviated_name: LRO
   :long_name: Left_To_Right_Override
 - :abbreviated_name: NSM
@@ -67,10 +75,14 @@ bc:
   :long_name: Other_Neutral
 - :abbreviated_name: PDF
   :long_name: Pop_Directional_Format
+- :abbreviated_name: PDI
+  :long_name: Pop_Directional_Isolate
 - :abbreviated_name: R
   :long_name: Right_To_Left
 - :abbreviated_name: RLE
   :long_name: Right_To_Left_Embedding
+- :abbreviated_name: RLI
+  :long_name: Right_To_Left_Isolate
 - :abbreviated_name: RLO
   :long_name: Right_To_Left_Override
 - :abbreviated_name: S
@@ -87,6 +99,13 @@ Bidi_M:
   :long_name: 'No'
 - :abbreviated_name: Y
   :long_name: 'Yes'
+bpt:
+- :abbreviated_name: c
+  :long_name: Close
+- :abbreviated_name: n
+  :long_name: None
+- :abbreviated_name: o
+  :long_name: Open
 blk:
 - :abbreviated_name: Aegean_Numbers
   :long_name: Aegean_Numbers
@@ -652,6 +671,9 @@ ccc:
   :abbreviated_name: CCC130
   :long_name: CCC130
 - :numeric: '132'
+  :abbreviated_name: CCC132
+  :long_name: CCC132
+- :numeric: '133'
   :abbreviated_name: CCC133
   :long_name: CCC133
 - :numeric: '200'
@@ -943,6 +965,8 @@ GCB:
   :long_name: LVT
 - :abbreviated_name: PP
   :long_name: Prepend
+- :abbreviated_name: RI
+  :long_name: Regional_Indicator
 - :abbreviated_name: SM
   :long_name: SpacingMark
 - :abbreviated_name: T
@@ -1388,6 +1412,8 @@ lb:
   :long_name: Prefix_Numeric
 - :abbreviated_name: QU
   :long_name: Quotation
+- :abbreviated_name: RI
+  :long_name: Regional_Indicator
 - :abbreviated_name: SA
   :long_name: Complex_Context
 - :abbreviated_name: SG
@@ -1793,12 +1819,16 @@ WSpace:
 WB:
 - :abbreviated_name: CR
   :long_name: CR
+- :abbreviated_name: DQ
+  :long_name: Double_Quote
 - :abbreviated_name: EX
   :long_name: ExtendNumLet
 - :abbreviated_name: Extend
   :long_name: Extend
 - :abbreviated_name: FO
   :long_name: Format
+- :abbreviated_name: HL
+  :long_name: Hebrew_Letter
 - :abbreviated_name: KA
   :long_name: Katakana
 - :abbreviated_name: LE
@@ -1815,6 +1845,10 @@ WB:
   :long_name: Newline
 - :abbreviated_name: NU
   :long_name: Numeric
+- :abbreviated_name: RI
+  :long_name: Regional_Indicator
+- :abbreviated_name: SQ
+  :long_name: Single_Quote
 - :abbreviated_name: XX
   :long_name: Other
 XIDC:

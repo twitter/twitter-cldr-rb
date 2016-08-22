@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E d-M"
         :MMM: LLL
@@ -27,6 +29,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -75,13 +79,13 @@
             :wed: woensdag
         :stand-alone: 
           :abbreviated: 
-            :fri: Vr
-            :mon: Ma
-            :sat: Za
-            :sun: Zo
-            :thu: Do
-            :tue: Di
-            :wed: Wo
+            :fri: vr
+            :mon: ma
+            :sat: za
+            :sun: zo
+            :thu: do
+            :tue: di
+            :wed: wo
           :narrow: 
             :fri: V
             :mon: M
@@ -99,13 +103,13 @@
             :tue: di
             :wed: wo
           :wide: 
-            :fri: Vrijdag
-            :mon: Maandag
-            :sat: Zaterdag
-            :sun: Zondag
-            :thu: Donderdag
-            :tue: Dinsdag
-            :wed: Woensdag
+            :fri: vrijdag
+            :mon: maandag
+            :sat: zaterdag
+            :sun: zondag
+            :thu: donderdag
+            :tue: dinsdag
+            :wed: woensdag
       :eras: 
         :abbr: 
           0: v.g.j.
@@ -117,34 +121,34 @@
           0: vgj
           1: gj
       :fields: 
-        :day: Dag
+        :day: dag
         :day-narrow: dag
         :day-short: dag
         :dayperiod: a.m./p.m.
-        :era: Tijdperk
+        :era: tijdperk
         :hour: Uur
         :hour-narrow: u
         :hour-short: uur
-        :minute: Minuut
+        :minute: minuut
         :minute-narrow: m
         :minute-short: min.
-        :month: Maand
+        :month: maand
         :month-narrow: mnd
         :month-short: mnd
-        :quarter: Kwartaal
+        :quarter: kwartaal
         :quarter-narrow: kwartaal
         :quarter-short: kwartaal
-        :second: Seconde
+        :second: seconde
         :second-narrow: s
         :second-short: sec.
-        :week: Week
+        :week: week
         :week-narrow: wk
         :week-short: wk
-        :weekday: "Dag van de week"
-        :year: Jaar
+        :weekday: "dag van de week"
+        :year: jaar
         :year-narrow: jr.
         :year-short: jr.
-        :zone: Zone
+        :zone: tijdzone
       :formats: 
         :date: 
           :full: 
@@ -216,18 +220,18 @@
             9: september
         :stand-alone: 
           :abbreviated: 
-            1: Jan.
-            10: Okt.
-            11: Nov.
-            12: Dec.
-            2: Feb.
-            3: Mrt.
-            4: Apr.
-            5: Mei
-            6: Jun.
-            7: Jul.
-            8: Aug.
-            9: Sep.
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mrt.
+            4: apr.
+            5: mei
+            6: jun.
+            7: jul.
+            8: aug.
+            9: sep.
           :narrow: 
             1: J
             10: O
@@ -242,36 +246,68 @@
             8: A
             9: S
           :wide: 
-            1: Januari
-            10: Oktober
-            11: November
-            12: December
-            2: Februari
-            3: Maart
-            4: April
-            5: Mei
-            6: Juni
-            7: Juli
-            8: Augustus
-            9: September
+            1: januari
+            10: oktober
+            11: november
+            12: december
+            2: februari
+            3: maart
+            4: april
+            5: mei
+            6: juni
+            7: juli
+            8: augustus
+            9: september
       :periods: 
         :format: 
           :abbreviated: 
-            :noon: "12 uur ‘s middags"
-          :narrow: 
+            :afternoon1: middag
             :am: a.m.
-            :noon: "n"
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
+            :pm: p.m.
+          :narrow: 
+            :afternoon1: middag
+            :am: a.m.
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
             :pm: p.m.
           :wide: 
+            :afternoon1: middag
             :am: a.m.
-            :noon: "12 uur ‘s middags"
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
             :pm: p.m.
         :stand-alone: 
           :abbreviated: 
+            :afternoon1: middag
             :am: a.m.
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
+            :pm: p.m.
+          :narrow: 
+            :afternoon1: middag
+            :am: a.m.
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
             :pm: p.m.
           :wide: 
-            :am: voormiddag
+            :afternoon1: middag
+            :am: a.m.
+            :evening1: avond
+            :midnight: middernacht
+            :morning1: ochtend
+            :night1: nacht
             :pm: p.m.
       :quarters: 
         :format: 

@@ -2,7 +2,7 @@
 :sv: 
   :fields: 
     :day: 
-      :display_name: Dag
+      :display_name: dag
       :relative: 
         -1: "i går"
         -2: "i förrgår"
@@ -18,6 +18,12 @@
           :other: "för {0} dagar sedan"
     :day-narrow: 
       :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i förrgår"
+        0: "i dag"
+        1: "i morgon"
+        2: "i övermorgon"
       :relative_time: 
         :future: 
           :one: "+{0} d"
@@ -27,6 +33,12 @@
           :other: "−{0} d"
     :day-short: 
       :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i förrgår"
+        0: "i dag"
+        1: "i morgon"
+        2: "i övermorgon"
       :relative_time: 
         :future: 
           :one: "om {0} d"
@@ -37,7 +49,7 @@
     :dayperiod: 
       :display_name: fm/em
     :era: 
-      :display_name: Era
+      :display_name: era
     :fri: 
       :relative: 
         -1: "fredag förra veckan"
@@ -54,7 +66,7 @@
         0: "fre. denna vecka"
         1: "fre. nästa vecka"
     :hour: 
-      :display_name: Timme
+      :display_name: timme
       :relative_time: 
         :future: 
           :one: "om {0} timme"
@@ -81,7 +93,7 @@
           :one: "för {0} tim sedan"
           :other: "för {0} tim sedan"
     :minute: 
-      :display_name: Minut
+      :display_name: minut
       :relative_time: 
         :future: 
           :one: "om {0} minut"
@@ -93,8 +105,8 @@
       :display_name: m
       :relative_time: 
         :future: 
-          :one: "+{0} m"
-          :other: "+{0} m"
+          :one: "+{0} min"
+          :other: "+{0} min"
         :past: 
           :one: "−{0} min"
           :other: "−{0} min"
@@ -123,7 +135,7 @@
         0: "mån. denna vecka"
         1: "mån. nästa vecka"
     :month: 
-      :display_name: Månad
+      :display_name: månad
       :relative: 
         -1: "förra månaden"
         0: "denna månad"
@@ -137,15 +149,23 @@
           :other: "för {0} månader sedan"
     :month-narrow: 
       :display_name: m
+      :relative: 
+        -1: "förra mån."
+        0: "denna mån."
+        1: "nästa mån."
       :relative_time: 
         :future: 
           :one: "+{0} mån."
           :other: "+{0} mån."
         :past: 
-          :one: "-{0} mån."
-          :other: "-{0} mån."
+          :one: "−{0} mån"
+          :other: "−{0} mån"
     :month-short: 
       :display_name: m
+      :relative: 
+        -1: "förra mån."
+        0: "denna mån."
+        1: "nästa mån."
       :relative_time: 
         :future: 
           :one: "om {0} mån."
@@ -154,7 +174,11 @@
           :one: "för {0} mån. sedan"
           :other: "för {0} mån. sedan"
     :quarter: 
-      :display_name: Kvartal
+      :display_name: kvartal
+      :relative: 
+        -1: "förra kvartalet"
+        0: "detta kvartal"
+        1: "nästa kvartal"
       :relative_time: 
         :future: 
           :one: "om {0} kvartal"
@@ -164,15 +188,23 @@
           :other: "för {0} kvartal sedan"
     :quarter-narrow: 
       :display_name: kv.
+      :relative: 
+        -1: "förra kv."
+        0: "detta kv."
+        1: "nästa kv."
       :relative_time: 
         :future: 
           :one: "+{0} kv."
           :other: "+{0} kv."
         :past: 
-          :one: "-{0} kv."
-          :other: "-{0} kv."
+          :one: "−{0} kv"
+          :other: "−{0} kv"
     :quarter-short: 
       :display_name: kv.
+      :relative: 
+        -1: "förra kv."
+        0: "detta kv."
+        1: "nästa kv."
       :relative_time: 
         :future: 
           :one: "om {0} kv."
@@ -196,7 +228,7 @@
         0: "lör. denna vecka"
         1: "lör. nästa vecka"
     :second: 
-      :display_name: Sekund
+      :display_name: sekund
       :relative: 
         0: nu
       :relative_time: 
@@ -285,7 +317,7 @@
         0: "ons. denna vecka"
         1: "ons. nästa vecka"
     :week: 
-      :display_name: Vecka
+      :display_name: vecka
       :relative: 
         -1: "förra veckan"
         0: "denna vecka"
@@ -299,15 +331,23 @@
           :other: "för {0} veckor sedan"
     :week-narrow: 
       :display_name: v
+      :relative: 
+        -1: "förra v."
+        0: "denna v."
+        1: "nästa v."
       :relative_time: 
         :future: 
           :one: "+{0} v."
           :other: "+{0} v."
         :past: 
-          :one: "-{0} v."
-          :other: "-{0} v."
+          :one: "−{0} v"
+          :other: "−{0} v"
     :week-short: 
       :display_name: v
+      :relative: 
+        -1: "förra v."
+        0: "denna v."
+        1: "nästa v."
       :relative_time: 
         :future: 
           :one: "om {0} v."
@@ -316,9 +356,9 @@
           :one: "för {0} v. sedan"
           :other: "för {0} v. sedan"
     :weekday: 
-      :display_name: Veckodag
+      :display_name: veckodag
     :year: 
-      :display_name: År
+      :display_name: år
       :relative: 
         -1: "i fjol"
         0: "i år"
@@ -332,15 +372,23 @@
           :other: "för {0} år sedan"
     :year-narrow: 
       :display_name: år
+      :relative: 
+        -1: "i fjol"
+        0: "i år"
+        1: "nästa år"
       :relative_time: 
         :future: 
           :one: "+{0} år"
           :other: "+{0} år"
         :past: 
-          :one: "-{0} år"
-          :other: "-{0} år"
+          :one: "−{0} år"
+          :other: "−{0} år"
     :year-short: 
       :display_name: år
+      :relative: 
+        -1: "i fjol"
+        0: "i år"
+        1: "nästa år"
       :relative_time: 
         :future: 
           :one: "om {0} år"
@@ -349,4 +397,4 @@
           :one: "för {0} år sedan"
           :other: "för {0} år sedan"
     :zone: 
-      :display_name: Tidszon
+      :display_name: tidszon

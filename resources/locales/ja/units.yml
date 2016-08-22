@@ -19,6 +19,8 @@
           :other: "{0} 度"
         :angle-radian: 
           :other: "{0} ラジアン"
+        :angle-revolution: 
+          :other: "{0} 回転"
         :area-acre: 
           :other: "{0} エーカー"
         :area-hectare: 
@@ -37,6 +39,10 @@
           :other: "{0} 平方マイル"
         :area-square-yard: 
           :other: "{0} 平方ヤード"
+        :concentr-karat: 
+          :other: "{0} 金"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0} リットル毎100キロメートル"
         :consumption-liter-per-kilometer: 
           :other: "{0} リットル毎キロメートル"
         :consumption-mile-per-gallon: 
@@ -61,6 +67,8 @@
           :other: "{0} テラビット"
         :digital-terabyte: 
           :other: "{0} テラバイト"
+        :duration-century: 
+          :other: "{0} 世紀"
         :duration-day: 
           :other: "{0} 日"
         :duration-hour: 
@@ -90,7 +98,7 @@
         :electric-volt: 
           :other: "{0} ボルト"
         :energy-calorie: 
-          :other: "{0} 熱力学カロリー"
+          :other: "{0} カロリー"
         :energy-foodcalorie: 
           :other: "{0} カロリー"
         :energy-joule: 
@@ -133,6 +141,8 @@
           :other: "{0} マイクロメートル"
         :length-mile: 
           :other: "{0} マイル"
+        :length-mile-scandinavian: 
+          :other: "{0} スカンジナビアマイル"
         :length-millimeter: 
           :other: "{0} ミリメートル"
         :length-nanometer: 
@@ -191,10 +201,10 @@
           :other: "{0} 水銀柱ミリメートル"
         :pressure-pound-per-square-inch: 
           :other: "{0} 重量ポンド毎平方インチ"
-        :proportion-karat: 
-          :other: "{0} 金"
         :speed-kilometer-per-hour: 
           :other: "時速 {0} キロメートル"
+        :speed-knot: 
+          :other: "{0} ノット"
         :speed-meter-per-second: 
           :other: "秒速 {0} メートル"
         :speed-mile-per-hour: 
@@ -203,6 +213,8 @@
           :other: "摂氏 {0} 度"
         :temperature-fahrenheit: 
           :other: "華氏 {0} 度"
+        :temperature-generic: 
+          :other: "{0}度"
         :temperature-kelvin: 
           :other: "{0} ケルビン"
         :volume-acre-foot: 
@@ -227,6 +239,8 @@
           :other: "{0} 立方ヤード"
         :volume-cup: 
           :other: "{0} カップ"
+        :volume-cup-metric: 
+          :other: "{0} メトリックカップ"
         :volume-deciliter: 
           :other: "{0} デシリットル"
         :volume-fluid-ounce: 
@@ -243,6 +257,8 @@
           :other: "{0} ミリリットル"
         :volume-pint: 
           :other: "{0} パイント"
+        :volume-pint-metric: 
+          :other: "{0} メトリックパイント"
         :volume-quart: 
           :other: "{0} クォート"
         :volume-tablespoon: 
@@ -280,6 +296,10 @@
           :other: "{0}mi²"
         :area-square-yard: 
           :other: "{0}yd²"
+        :concentr-karat: 
+          :other: "{0}K"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0}L/100km"
         :consumption-liter-per-kilometer: 
           :other: "{0}L/km"
         :consumption-mile-per-gallon: 
@@ -434,8 +454,6 @@
           :other: "{0}mm Hg"
         :pressure-pound-per-square-inch: 
           :other: "{0}psi"
-        :proportion-karat: 
-          :other: "{0}K"
         :speed-kilometer-per-hour: 
           :other: "{0}km/h"
         :speed-meter-per-second: 
@@ -443,7 +461,7 @@
         :speed-mile-per-hour: 
           :other: "{0}mi/h"
         :temperature-celsius: 
-          :other: "{0}°"
+          :other: "{0}°C"
         :temperature-fahrenheit: 
           :other: "{0}°F"
         :temperature-kelvin: 
@@ -505,6 +523,8 @@
           :other: "{0} 度"
         :angle-radian: 
           :other: "{0} rad"
+        :angle-revolution: 
+          :other: "{0} rev"
         :area-acre: 
           :other: "{0} ac"
         :area-hectare: 
@@ -523,10 +543,22 @@
           :other: "{0} mi²"
         :area-square-yard: 
           :other: "{0} yd²"
+        :concentr-karat: 
+          :other: "{0} 金"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
           :other: "{0} L/km"
         :consumption-mile-per-gallon: 
           :other: "{0} mpg"
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
         :digital-bit: 
           :other: "{0} bit"
         :digital-byte: 
@@ -547,8 +579,11 @@
           :other: "{0} Tb"
         :digital-terabyte: 
           :other: "{0} TB"
+        :duration-century: 
+          :other: "{0} c"
         :duration-day: 
           :other: "{0} 日"
+        :duration-day-person: {}
         :duration-hour: 
           :other: "{0} 時間"
         :duration-microsecond: 
@@ -559,14 +594,17 @@
           :other: "{0} 分"
         :duration-month: 
           :other: "{0} か月"
+        :duration-month-person: {}
         :duration-nanosecond: 
           :other: "{0} ns"
         :duration-second: 
           :other: "{0} 秒"
         :duration-week: 
           :other: "{0} 週間"
+        :duration-week-person: {}
         :duration-year: 
           :other: "{0} 年"
+        :duration-year-person: {}
         :electric-ampere: 
           :other: "{0} A"
         :electric-milliampere: 
@@ -576,7 +614,7 @@
         :electric-volt: 
           :other: "{0} V"
         :energy-calorie: 
-          :other: "{0} calth"
+          :other: "{0} cal"
         :energy-foodcalorie: 
           :other: "{0} cal"
         :energy-joule: 
@@ -619,6 +657,8 @@
           :other: "{0} µm"
         :length-mile: 
           :other: "{0} mi"
+        :length-mile-scandinavian: 
+          :other: "{0} smi"
         :length-millimeter: 
           :other: "{0} mm"
         :length-nanometer: 
@@ -677,10 +717,10 @@
           :other: "{0} mm Hg"
         :pressure-pound-per-square-inch: 
           :other: "{0} psi"
-        :proportion-karat: 
-          :other: "{0} 金"
         :speed-kilometer-per-hour: 
           :other: "{0} km/h"
+        :speed-knot: 
+          :other: "{0} kn"
         :speed-meter-per-second: 
           :other: "{0} m/s"
         :speed-mile-per-hour: 
@@ -689,6 +729,8 @@
           :other: "{0}°C"
         :temperature-fahrenheit: 
           :other: "{0}°F"
+        :temperature-generic: 
+          :other: "{0}°"
         :temperature-kelvin: 
           :other: "{0} K"
         :volume-acre-foot: 
@@ -713,12 +755,16 @@
           :other: "{0} yd³"
         :volume-cup: 
           :other: "{0} カップ"
+        :volume-cup-metric: 
+          :other: "{0} mc"
         :volume-deciliter: 
           :other: "{0} dL"
         :volume-fluid-ounce: 
           :other: "{0} fl oz"
         :volume-gallon: 
           :other: "{0} gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
         :volume-hectoliter: 
           :other: "{0} hL"
         :volume-liter: 
@@ -729,6 +775,8 @@
           :other: "{0} ml"
         :volume-pint: 
           :other: "{0} pt"
+        :volume-pint-metric: 
+          :other: "{0} mpt"
         :volume-quart: 
           :other: "{0} qt"
         :volume-tablespoon: 

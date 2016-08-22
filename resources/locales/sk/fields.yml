@@ -17,22 +17,22 @@
           :other: "o {0} dní"
         :past: 
           :few: "pred {0} dňami"
-          :many: "pred {0} dňom"
+          :many: "pred {0} dňa"
           :one: "pred {0} dňom"
           :other: "pred {0} dňami"
     :day-narrow: 
       :display_name: d.
       :relative_time: 
         :future: 
-          :few: "o {0} d"
-          :many: "o {0} d"
-          :one: "o {0} d"
-          :other: "o {0} d"
+          :few: "o {0} d."
+          :many: "o {0} d."
+          :one: "o {0} d."
+          :other: "o {0} d."
         :past: 
-          :few: "pred {0} d"
-          :many: "pred {0} d"
-          :one: "pred {0} d"
-          :other: "pred {0} d"
+          :few: "pred {0} d."
+          :many: "pred {0} d."
+          :one: "pred {0} d."
+          :other: "pred {0} d."
     :day-short: 
       :display_name: d.
       :relative_time: 
@@ -114,7 +114,7 @@
           :other: "o {0} minút"
         :past: 
           :few: "pred {0} minútami"
-          :many: "pred {0} minútou"
+          :many: "pred {0} minúty"
           :one: "pred {0} minútou"
           :other: "pred {0} minútami"
     :minute-narrow: 
@@ -172,7 +172,7 @@
           :other: "o {0} mesiacov"
         :past: 
           :few: "pred {0} mesiacmi"
-          :many: "pred {0} mesiacom"
+          :many: "pred {0} mesiaca"
           :one: "pred {0} mesiacom"
           :other: "pred {0} mesiacmi"
     :month-narrow: 
@@ -203,6 +203,10 @@
           :other: "pred {0} mes."
     :quarter: 
       :display_name: štvrťrok
+      :relative: 
+        -1: "minulý štvrťrok"
+        0: "tento štvrťrok"
+        1: "budúci štvrťrok"
       :relative_time: 
         :future: 
           :few: "o {0} štvrťroky"
@@ -211,11 +215,15 @@
           :other: "o {0} štvrťrokov"
         :past: 
           :few: "pred {0} štvrťrokmi"
-          :many: "pred {0} štvrťrokom"
+          :many: "pred {0} štvrťroka"
           :one: "pred {0} štvrťrokom"
           :other: "pred {0} štvrťrokmi"
     :quarter-narrow: 
       :display_name: Q
+      :relative: 
+        -1: "minulý štvrťr."
+        0: "tento štvrťr."
+        1: "budúci štvrťr."
       :relative_time: 
         :future: 
           :few: "o {0} štvrťr."
@@ -229,6 +237,10 @@
           :other: "pred {0} štvrťr."
     :quarter-short: 
       :display_name: Q
+      :relative: 
+        -1: "minulý štvrťr."
+        0: "tento štvrťr."
+        1: "budúci štvrťr."
       :relative_time: 
         :future: 
           :few: "o {0} štvrťr."
@@ -267,7 +279,7 @@
           :other: "o {0} sekúnd"
         :past: 
           :few: "pred {0} sekundami"
-          :many: "Pred {0} sekundami"
+          :many: "pred {0} sekundy"
           :one: "pred {0} sekundou"
           :other: "pred {0} sekundami"
     :second-narrow: 
@@ -338,9 +350,9 @@
         1: "budúci ut."
     :tue-short: 
       :relative: 
-        -1: "minulý ut."
-        0: "tento ut."
-        1: "budúci ut."
+        -1: "minulý utor."
+        0: "tento utor."
+        1: "budúci utor."
     :wed: 
       :relative: 
         -1: "minulú stredu"
@@ -370,7 +382,7 @@
           :other: "o {0} týždňov"
         :past: 
           :few: "pred {0} týždňami"
-          :many: "pred {0} týždňom"
+          :many: "pred {0} týždňa"
           :one: "pred {0} týždňom"
           :other: "pred {0} týždňami"
     :week-narrow: 
@@ -415,7 +427,7 @@
           :other: "o {0} rokov"
         :past: 
           :few: "pred {0} rokmi"
-          :many: "pred {0} rokom"
+          :many: "pred {0} roka"
           :one: "pred {0} rokom"
           :other: "pred {0} rokmi"
     :year-narrow: 

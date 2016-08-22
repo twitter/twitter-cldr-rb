@@ -25,6 +25,9 @@
         :angle-radian: 
           :one: "{0} bogaeining"
           :other: "{0} bogaeiningar"
+        :angle-revolution: 
+          :one: "{0} snúningur"
+          :other: "{0} snúningar"
         :area-acre: 
           :one: "{0} ekra"
           :other: "{0} ekrur"
@@ -52,6 +55,12 @@
         :area-square-yard: 
           :one: "{0} feryard"
           :other: "{0} feryardar"
+        :concentr-karat: 
+          :one: "{0} karat"
+          :other: "{0} karöt"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} lítri á 100 kílómetra"
+          :other: "{0} lítrar á 100 kílómetra"
         :consumption-liter-per-kilometer: 
           :one: "{0} lítri á kílómetra"
           :other: "{0} lítrar á kílómetra"
@@ -190,6 +199,9 @@
         :length-mile: 
           :one: "{0} míla"
           :other: "{0} mílur"
+        :length-mile-scandinavian: 
+          :one: "{0} sænsk míla"
+          :other: "{0} sænskar mílur"
         :length-millimeter: 
           :one: "{0} millimetri"
           :other: "{0} millimetrar"
@@ -274,12 +286,12 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} pund á fertommu"
           :other: "{0} pund á fertommu"
-        :proportion-karat: 
-          :one: "{0} karat"
-          :other: "{0} karöt"
         :speed-kilometer-per-hour: 
           :one: "{0} kílómetri á klukkustund"
           :other: "{0} kílómetrar á klukkustund"
+        :speed-knot: 
+          :one: "{0} hútur"
+          :other: "{0} hnútar"
         :speed-meter-per-second: 
           :one: "{0} metri á sekúndu"
           :other: "{0} metrar á sekúndu"
@@ -292,6 +304,9 @@
         :temperature-fahrenheit: 
           :one: "{0} gráða á Fahrenheit"
           :other: "{0} gráður á Fahrenheit"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} kelvin"
           :other: "{0} kelvin"
@@ -325,6 +340,9 @@
         :volume-cup: 
           :one: "{0} bolli"
           :other: "{0} bollar"
+        :volume-cup-metric: 
+          :one: "{0} ástralskur bolli"
+          :other: "{0} ástralskir bollar"
         :volume-deciliter: 
           :one: "{0} desilítri"
           :other: "{0} desilítrar"
@@ -349,6 +367,9 @@
         :volume-pint: 
           :one: "{0} hálfpottur"
           :other: "{0} hálfpottar"
+        :volume-pint-metric: 
+          :one: "{0} mpt"
+          :other: "{0} mpt"
         :volume-quart: 
           :one: "{0} kvart"
           :other: "{0} kvartar"
@@ -373,6 +394,7 @@
         :area-hectare: 
           :one: "{0} ha"
           :other: "{0} ha"
+        :area-square-centimeter: {}
         :area-square-foot: 
           :one: "{0} ferfet"
           :other: "{0} ferfet"
@@ -385,6 +407,10 @@
         :area-square-mile: 
           :one: "{0}mí²"
           :other: "{0}mí²"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0}l/100km"
+          :other: "{0}l/100km"
+        :duration-century: {}
         :duration-day: 
           :one: "{0} d."
           :other: "{0} d."
@@ -410,8 +436,8 @@
           :one: "{0}á"
           :other: "{0}á"
         :length-centimeter: 
-          :one: "{0} cm"
-          :other: "{0} cm"
+          :one: "{0}cm"
+          :other: "{0}cm"
         :length-foot: 
           :one: "{0} fet"
           :other: "{0} fet"
@@ -430,6 +456,7 @@
         :length-mile: 
           :one: "{0} mí"
           :other: "{0} mí"
+        :length-mile-scandinavian: {}
         :length-millimeter: 
           :one: "{0}mm"
           :other: "{0}mm"
@@ -487,9 +514,11 @@
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :volume-cubic-centimeter: {}
         :volume-cubic-kilometer: 
           :one: "{0} km³"
           :other: "{0} km³"
+        :volume-cubic-meter: {}
         :volume-cubic-mile: 
           :one: "{0}mi³"
           :other: "{0}mi³"
@@ -515,6 +544,9 @@
         :angle-radian: 
           :one: "{0} rad"
           :other: "{0} rad"
+        :angle-revolution: 
+          :one: "{0} sn."
+          :other: "{0} sn."
         :area-acre: 
           :one: "{0} ek."
           :other: "{0} ek."
@@ -542,12 +574,26 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-karat: 
+          :one: "{0} kt"
+          :other: "{0} kt"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} l/100 km"
+          :other: "{0} l/100 km"
         :consumption-liter-per-kilometer: 
           :one: "{0} l/km"
           :other: "{0} l/km"
         :consumption-mile-per-gallon: 
           :one: "{0} mí./gal."
           :other: "{0} mí./gal."
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
         :digital-bit: 
           :one: "{0} biti"
           :other: "{0} bitar"
@@ -578,9 +624,12 @@
         :digital-terabyte: 
           :one: "{0} TB"
           :other: "{0} TB"
+        :duration-century: 
+          :other: "{0} c"
         :duration-day: 
           :one: "{0} dagur"
           :other: "{0} dagar"
+        :duration-day-person: {}
         :duration-hour: 
           :one: "{0} klst."
           :other: "{0} klst."
@@ -596,6 +645,7 @@
         :duration-month: 
           :one: "{0} mán."
           :other: "{0} mán."
+        :duration-month-person: {}
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
@@ -605,9 +655,11 @@
         :duration-week: 
           :one: "{0} vika"
           :other: "{0} vikur"
+        :duration-week-person: {}
         :duration-year: 
           :one: "{0} ár"
           :other: "{0} ár"
+        :duration-year-person: {}
         :electric-ampere: 
           :one: "{0} A"
           :other: "{0} A"
@@ -684,6 +736,9 @@
         :length-mile: 
           :one: "{0} mí"
           :other: "{0} mí"
+        :length-mile-scandinavian: 
+          :one: "{0} sæ. míl."
+          :other: "{0} sæ. míl."
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
@@ -730,8 +785,8 @@
           :one: "{0} oz t"
           :other: "{0} oz t"
         :mass-pound: 
-          :one: "{0} p."
-          :other: "{0} p."
+          :one: "{0} lb"
+          :other: "{0} lb"
         :mass-stone: 
           :other: "{0} st"
         :mass-ton: 
@@ -770,12 +825,12 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
-        :proportion-karat: 
-          :one: "{0} kt"
-          :other: "{0} kt"
         :speed-kilometer-per-hour: 
           :one: "{0} km/klst."
           :other: "{0} km/klst."
+        :speed-knot: 
+          :one: "{0} kn"
+          :other: "{0} kn"
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -788,6 +843,9 @@
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} K"
           :other: "{0} K"
@@ -815,14 +873,17 @@
           :one: "{0} m³"
           :other: "{0} m³"
         :volume-cubic-mile: 
-          :one: "{0} rúmmíla"
-          :other: "{0} rúmmílur"
+          :one: "{0} mí³"
+          :other: "{0} mí³"
         :volume-cubic-yard: 
           :one: "{0} yd³"
           :other: "{0} yd³"
         :volume-cup: 
           :one: "{0} bolli"
           :other: "{0} bollar"
+        :volume-cup-metric: 
+          :one: "{0} ástr. bolli"
+          :other: "{0} ástr. bollar"
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
@@ -832,6 +893,8 @@
         :volume-gallon: 
           :one: "{0} gal"
           :other: "{0} gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"
@@ -847,6 +910,9 @@
         :volume-pint: 
           :one: "{0} hálfp."
           :other: "{0} hálfp."
+        :volume-pint-metric: 
+          :one: "{0} mpt"
+          :other: "{0} mpt"
         :volume-quart: 
           :one: "{0} qt"
           :other: "{0} qt"

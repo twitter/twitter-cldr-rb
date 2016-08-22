@@ -2,7 +2,7 @@
 :en-GB: 
   :fields: 
     :day: 
-      :display_name: Day
+      :display_name: day
       :relative: 
         -1: yesterday
         0: today
@@ -14,14 +14,6 @@
         :past: 
           :one: "{0} day ago"
           :other: "{0} days ago"
-    :day-narrow: 
-      :relative_time: 
-        :future: 
-          :one: "+{0} day"
-          :other: "+{0} days"
-        :past: 
-          :one: "-{0} day"
-          :other: "-{0} days"
     :day-short: 
       :display_name: day
       :relative_time: 
@@ -34,7 +26,7 @@
     :dayperiod: 
       :display_name: am/pm
     :era: 
-      :display_name: Era
+      :display_name: era
     :fri: 
       :relative: 
         -1: "last Friday"
@@ -51,7 +43,7 @@
         0: "this Fri."
         1: "next Fri."
     :hour: 
-      :display_name: Hour
+      :display_name: hour
       :relative_time: 
         :future: 
           :one: "in {0} hour"
@@ -60,25 +52,24 @@
           :one: "{0} hour ago"
           :other: "{0} hours ago"
     :hour-narrow: 
-      :display_name: h
       :relative_time: 
         :future: 
-          :one: "+{0} h"
-          :other: "+{0} h"
+          :one: "in {0} hr"
+          :other: "in {0} hr"
         :past: 
-          :one: "-{0} h"
-          :other: "-{0} h"
+          :one: "{0} hr ago"
+          :other: "{0} hr ago"
     :hour-short: 
-      :display_name: hr.
+      :display_name: hr
       :relative_time: 
         :future: 
-          :one: "in {0} hr."
-          :other: "in {0} hr."
+          :one: "in {0} hr"
+          :other: "in {0} hr"
         :past: 
-          :one: "{0} hr. ago"
-          :other: "{0} hr. ago"
+          :one: "{0} hr ago"
+          :other: "{0} hr ago"
     :minute: 
-      :display_name: Minute
+      :display_name: minute
       :relative_time: 
         :future: 
           :one: "in {0} minute"
@@ -87,23 +78,22 @@
           :one: "{0} minute ago"
           :other: "{0} minutes ago"
     :minute-narrow: 
-      :display_name: m
       :relative_time: 
         :future: 
-          :one: "+{0} m"
-          :other: "+{0} m"
+          :one: "in {0} min"
+          :other: "in {0} min"
         :past: 
-          :one: "-{0} m"
-          :other: "-{0} m"
+          :one: "{0} min ago"
+          :other: "{0} min ago"
     :minute-short: 
-      :display_name: min.
+      :display_name: min
       :relative_time: 
         :future: 
-          :one: "in {0} min."
-          :other: "in {0} min."
+          :one: "in {0} min"
+          :other: "in {0} min"
         :past: 
-          :one: "{0} min. ago"
-          :other: "{0} min. ago"
+          :one: "{0} min ago"
+          :other: "{0} min ago"
     :mon: 
       :relative: 
         -1: "last Monday"
@@ -120,7 +110,7 @@
         0: "this Mon."
         1: "next Mon."
     :month: 
-      :display_name: Month
+      :display_name: month
       :relative: 
         -1: "last month"
         0: "this month"
@@ -133,28 +123,29 @@
           :one: "{0} month ago"
           :other: "{0} months ago"
     :month-narrow: 
+      :display_name: mo
       :relative_time: 
         :future: 
-          :one: "+{0} mo."
-          :other: "+{0} mo."
+          :one: "in {0} mo"
+          :other: "in {0} mo"
         :past: 
-          :one: "-{0} mo."
-          :other: "-{0} mo."
+          :one: "{0} mo ago"
+          :other: "{0} mo ago"
     :month-short: 
-      :display_name: mo.
+      :display_name: mo
       :relative: 
         -1: "last mo."
         0: "this mo."
         1: "next mo."
       :relative_time: 
         :future: 
-          :one: "in {0} mo."
-          :other: "in {0} mo."
+          :one: "in {0} mo"
+          :other: "in {0} mo"
         :past: 
-          :one: "{0} mo. ago"
-          :other: "{0} mo. ago"
+          :one: "{0} mo ago"
+          :other: "{0} mo ago"
     :quarter: 
-      :display_name: Quarter
+      :display_name: quarter
       :relative: 
         -1: "last quarter"
         0: "this quarter"
@@ -167,26 +158,27 @@
           :one: "{0} quarter ago"
           :other: "{0} quarters ago"
     :quarter-narrow: 
+      :display_name: qtr
       :relative_time: 
         :future: 
-          :one: "+{0} Q"
-          :other: "+{0} Q"
+          :one: "in {0} qtr"
+          :other: "in {0} qtr"
         :past: 
-          :one: "-{0} Q"
-          :other: "-{0} Q"
+          :one: "{0} qtr ago"
+          :other: "{0} qtr ago"
     :quarter-short: 
-      :display_name: qtr.
+      :display_name: qtr
       :relative: 
         -1: "last qtr."
         0: "this qtr."
         1: "next qtr."
       :relative_time: 
         :future: 
-          :one: "in {0} qtr."
-          :other: "in {0} qtrs."
+          :one: "in {0} qtr"
+          :other: "in {0} qtr"
         :past: 
-          :one: "{0} qtr. ago"
-          :other: "{0} qtrs. ago"
+          :one: "{0} qtr ago"
+          :other: "{0} qtr ago"
     :sat: 
       :relative: 
         -1: "last Saturday"
@@ -203,7 +195,7 @@
         0: "this Sat."
         1: "next Sat."
     :second: 
-      :display_name: Second
+      :display_name: second
       :relative: 
         0: now
       :relative_time: 
@@ -214,25 +206,24 @@
           :one: "{0} second ago"
           :other: "{0} seconds ago"
     :second-narrow: 
-      :display_name: s
       :relative_time: 
         :future: 
-          :one: "+{0} s"
-          :other: "+{0} s"
+          :one: "in {0} sec"
+          :other: "in {0} sec"
         :past: 
-          :one: "-{0} s ago"
-          :other: "-{0} s ago"
+          :one: "{0} sec ago"
+          :other: "{0} sec ago"
     :second-short: 
-      :display_name: sec.
+      :display_name: sec
       :relative: 
         0: now
       :relative_time: 
         :future: 
-          :one: "in {0} sec."
-          :other: "in {0} sec."
+          :one: "in {0} sec"
+          :other: "in {0} sec"
         :past: 
-          :one: "{0} sec. ago"
-          :other: "{0} sec. ago"
+          :one: "{0} sec ago"
+          :other: "{0} sec ago"
     :sun: 
       :relative: 
         -1: "last Sunday"
@@ -294,7 +285,7 @@
         0: "this Wed."
         1: "next Wed."
     :week: 
-      :display_name: Week
+      :display_name: week
       :relative: 
         -1: "last week"
         0: "this week"
@@ -307,30 +298,31 @@
           :one: "{0} week ago"
           :other: "{0} weeks ago"
     :week-narrow: 
+      :display_name: wk
       :relative_time: 
         :future: 
-          :one: "+{0} wk."
-          :other: "+{0} wk."
+          :one: "in {0} wk"
+          :other: "in {0} wk"
         :past: 
-          :one: "-{0} wk."
-          :other: "-{0} wk."
+          :one: "{0} wk ago"
+          :other: "{0} wk ago"
     :week-short: 
-      :display_name: wk.
+      :display_name: wk
       :relative: 
         -1: "last wk."
         0: "this wk."
         1: "next wk."
       :relative_time: 
         :future: 
-          :one: "in {0} wk."
-          :other: "in {0} wk."
+          :one: "in {0} wk"
+          :other: "in {0} wk"
         :past: 
-          :one: "{0} wk. ago"
-          :other: "{0} wk. ago"
+          :one: "{0} wk ago"
+          :other: "{0} wk ago"
     :weekday: 
-      :display_name: "Day of the Week"
+      :display_name: "day of the week"
     :year: 
-      :display_name: Year
+      :display_name: year
       :relative: 
         -1: "last year"
         0: "this year"
@@ -345,23 +337,23 @@
     :year-narrow: 
       :relative_time: 
         :future: 
-          :one: "+{0} yr."
-          :other: "+{0} yr."
+          :one: "in {0} yr"
+          :other: "in {0} yr"
         :past: 
-          :one: "-{0} yr."
-          :other: "-{0} yr."
+          :one: "{0} yr ago"
+          :other: "{0} yr ago"
     :year-short: 
-      :display_name: yr.
+      :display_name: yr
       :relative: 
         -1: "last yr."
         0: "this yr."
         1: "next yr."
       :relative_time: 
         :future: 
-          :one: "in {0} yr."
-          :other: "in {0} yr."
+          :one: "in {0} yr"
+          :other: "in {0} yr"
         :past: 
-          :one: "{0} yr. ago"
-          :other: "{0} yr. ago"
+          :one: "{0} yr ago"
+          :other: "{0} yr ago"
     :zone: 
-      :display_name: "Time Zone"
+      :display_name: "time zone"

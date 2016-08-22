@@ -52,6 +52,9 @@
         :area-square-yard: 
           :one: "{0} yarda karratu"
           :other: "{0} yarda karratu"
+        :concentr-karat: 
+          :one: "{0} kilate"
+          :other: "{0} kilate"
         :consumption-liter-per-kilometer: 
           :one: "{0} litro kilometroko"
           :other: "{0} litro kilometroko"
@@ -274,9 +277,6 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} libra hazbete karratuko"
           :other: "{0} libra hazbete karratuko"
-        :proportion-karat: 
-          :one: "{0} kilate"
-          :other: "{0} kilate"
         :speed-kilometer-per-hour: 
           :one: "{0} kilometro orduko"
           :other: "{0} kilometro orduko"
@@ -516,6 +516,8 @@
         :angle-radian: 
           :one: "{0} rad"
           :other: "{0} rad"
+        :angle-revolution: 
+          :other: "{0} rev"
         :area-acre: 
           :one: "{0} ac"
           :other: "{0} ac"
@@ -543,12 +545,25 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-karat: 
+          :one: "{0} kt"
+          :other: "{0} kt"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
           :one: "{0} l/km"
           :other: "{0} l/km"
         :consumption-mile-per-gallon: 
           :one: "{0} mpg"
           :other: "{0} mpg"
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -579,9 +594,12 @@
         :digital-terabyte: 
           :one: "{0} TB"
           :other: "{0} TB"
+        :duration-century: 
+          :other: "{0} c"
         :duration-day: 
           :one: "{0} egun"
           :other: "{0} egun"
+        :duration-day-person: {}
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -597,6 +615,7 @@
         :duration-month: 
           :one: "{0} hilabete"
           :other: "{0} hilabete"
+        :duration-month-person: {}
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
@@ -606,9 +625,11 @@
         :duration-week: 
           :one: "{0} aste"
           :other: "{0} aste"
+        :duration-week-person: {}
         :duration-year: 
           :one: "{0} urte"
           :other: "{0} urte"
+        :duration-year-person: {}
         :electric-ampere: 
           :one: "{0} A"
           :other: "{0} A"
@@ -685,6 +706,8 @@
         :length-mile: 
           :one: "{0} mi"
           :other: "{0} mi"
+        :length-mile-scandinavian: 
+          :other: "{0} smi"
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
@@ -771,12 +794,11 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
-        :proportion-karat: 
-          :one: "{0} kt"
-          :other: "{0} kt"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
+        :speed-knot: 
+          :other: "{0} kn"
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -789,6 +811,8 @@
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :temperature-generic: 
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} K"
           :other: "{0} K"
@@ -824,6 +848,8 @@
         :volume-cup: 
           :one: "{0} c"
           :other: "{0} c"
+        :volume-cup-metric: 
+          :other: "{0} mc"
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
@@ -833,6 +859,8 @@
         :volume-gallon: 
           :one: "{0} gal"
           :other: "{0} gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"
@@ -848,6 +876,8 @@
         :volume-pint: 
           :one: "{0} pt"
           :other: "{0} pt"
+        :volume-pint-metric: 
+          :other: "{0} mpt"
         :volume-quart: 
           :one: "{0} qt"
           :other: "{0} qt"

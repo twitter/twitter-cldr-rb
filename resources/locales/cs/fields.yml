@@ -2,7 +2,7 @@
 :cs: 
   :fields: 
     :day: 
-      :display_name: Den
+      :display_name: den
       :relative: 
         -1: včera
         -2: předevčírem
@@ -22,6 +22,12 @@
           :other: "před {0} dny"
     :day-narrow: 
       :display_name: den
+      :relative: 
+        -1: včera
+        -2: předevčírem
+        0: dnes
+        1: zítra
+        2: pozítří
       :relative_time: 
         :future: 
           :few: "za {0} dny"
@@ -35,6 +41,12 @@
           :other: "před {0} dny"
     :day-short: 
       :display_name: den
+      :relative: 
+        -1: včera
+        -2: předevčírem
+        0: dnes
+        1: zítra
+        2: pozítří
       :relative_time: 
         :future: 
           :few: "za {0} dny"
@@ -47,9 +59,9 @@
           :one: "před {0} dnem"
           :other: "před {0} dny"
     :dayperiod: 
-      :display_name: AM/PM
+      :display_name: "část dne"
     :era: 
-      :display_name: Letopočet
+      :display_name: letopočet
     :fri: 
       :relative: 
         -1: "minulý pátek"
@@ -66,7 +78,7 @@
         0: "tento pátek"
         1: "příští pátek"
     :hour: 
-      :display_name: Hodina
+      :display_name: hodina
       :relative_time: 
         :future: 
           :few: "za {0} hodiny"
@@ -105,7 +117,7 @@
           :one: "před {0} h"
           :other: "před {0} h"
     :minute: 
-      :display_name: Minuta
+      :display_name: minuta
       :relative_time: 
         :future: 
           :few: "za {0} minuty"
@@ -159,7 +171,7 @@
         0: "toto pondělí"
         1: "příští pondělí"
     :month: 
-      :display_name: Měsíc
+      :display_name: měsíc
       :relative: 
         -1: "minulý měsíc"
         0: "tento měsíc"
@@ -202,7 +214,11 @@
           :one: "před {0} měs."
           :other: "před {0} měs."
     :quarter: 
-      :display_name: Čtvrtletí
+      :display_name: čtvrtletí
+      :relative: 
+        -1: "minulé čtvrtletí"
+        0: "toto čtvrtletí"
+        1: "příští čtvrtletí"
       :relative_time: 
         :future: 
           :few: "za {0} čtvrtletí"
@@ -256,7 +272,7 @@
         0: "tuto sobotu"
         1: "příští sobotu"
     :second: 
-      :display_name: Sekunda
+      :display_name: sekunda
       :relative: 
         0: nyní
       :relative_time: 
@@ -272,6 +288,8 @@
           :other: "před {0} sekundami"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: nyní
       :relative_time: 
         :future: 
           :few: "za {0} s"
@@ -285,6 +303,8 @@
           :other: "před {0} s"
     :second-short: 
       :display_name: s
+      :relative: 
+        0: nyní
       :relative_time: 
         :future: 
           :few: "za {0} s"
@@ -357,7 +377,7 @@
         0: "tuto středu"
         1: "příští středu"
     :week: 
-      :display_name: Týden
+      :display_name: týden
       :relative: 
         -1: "minulý týden"
         0: "tento týden"
@@ -375,6 +395,10 @@
           :other: "před {0} týdny"
     :week-narrow: 
       :display_name: týd.
+      :relative: 
+        -1: "minulý týd."
+        0: "tento týd."
+        1: "příští týd."
       :relative_time: 
         :future: 
           :few: "za {0} týd."
@@ -388,6 +412,10 @@
           :other: "před {0} týd."
     :week-short: 
       :display_name: týd.
+      :relative: 
+        -1: "minulý týd."
+        0: "tento týd."
+        1: "příští týd."
       :relative_time: 
         :future: 
           :few: "za {0} týd."
@@ -400,9 +428,9 @@
           :one: "před {0} týd."
           :other: "před {0} týd."
     :weekday: 
-      :display_name: "Den v týdnu"
+      :display_name: "den v týdnu"
     :year: 
-      :display_name: Rok
+      :display_name: rok
       :relative: 
         -1: "minulý rok"
         0: "tento rok"
@@ -420,6 +448,10 @@
           :other: "před {0} lety"
     :year-narrow: 
       :display_name: r.
+      :relative: 
+        -1: "minulý rok"
+        0: "tento rok"
+        1: "příští rok"
       :relative_time: 
         :future: 
           :few: "za {0} r."
@@ -433,6 +465,10 @@
           :other: "před {0} l."
     :year-short: 
       :display_name: r.
+      :relative: 
+        -1: "minulý rok"
+        0: "tento rok"
+        1: "příští rok"
       :relative_time: 
         :future: 
           :few: "za {0} r."
@@ -445,4 +481,4 @@
           :one: "před {0} r."
           :other: "před {0} l."
     :zone: 
-      :display_name: "Časové pásmo"
+      :display_name: "časové pásmo"

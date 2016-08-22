@@ -14,25 +14,37 @@
           :one: "{0} દિવસમાં"
           :other: "{0} દિવસમાં"
         :past: 
-          :one: "{0} દિવસ પહેલા"
+          :one: "{0} દિવસ પહેલાં"
           :other: "{0} દિવસ પહેલા"
     :day-narrow: 
-      :display_name: દિ.
+      :display_name: દિવસ
+      :relative: 
+        -1: ગઈકાલે
+        -2: "ગયા પરમદિવસે"
+        0: આજે
+        1: આવતીકાલે
+        2: પરમદિવસે
       :relative_time: 
         :future: 
           :one: "+{0} દિવસ"
           :other: "+{0} દિવસ"
         :past: 
-          :one: "-{0} દિવસ"
+          :one: "{0} દિવસ પહેલાં"
           :other: "-{0} દિવસ"
     :day-short: 
       :display_name: દિ.
+      :relative: 
+        -1: ગઈકાલે
+        -2: "ગયા પરમદિવસે"
+        0: આજે
+        1: આવતીકાલે
+        2: પરમદિવસે
       :relative_time: 
         :future: 
           :one: "{0} દિવસમાં"
           :other: "{0} દિવસમાં"
         :past: 
-          :one: "{0} દિવસ પહેલા"
+          :one: "{0} દિવસ પહેલાં"
           :other: "{0} દિવસ પહેલા"
     :dayperiod: 
       :display_name: AM/PM
@@ -63,7 +75,7 @@
           :one: "{0} કલાક પહેલા"
           :other: "{0} કલાક પહેલા"
     :hour-narrow: 
-      :display_name: ક
+      :display_name: ક.
       :relative_time: 
         :future: 
           :one: "{0} કલાકમાં"
@@ -90,7 +102,7 @@
           :one: "{0} મિનિટ પહેલા"
           :other: "{0} મિનિટ પહેલા"
     :minute-narrow: 
-      :display_name: મિ
+      :display_name: મિ.
       :relative_time: 
         :future: 
           :one: "{0} મિનિટમાં"
@@ -137,6 +149,10 @@
           :other: "{0} મહિના પહેલા"
     :month-narrow: 
       :display_name: મ.
+      :relative: 
+        -1: "ગયા મહિને"
+        0: "આ મહિને"
+        1: "આવતા મહિને"
       :relative_time: 
         :future: 
           :one: "+{0} મહિના"
@@ -146,6 +162,10 @@
           :other: "-{0} મહિના"
     :month-short: 
       :display_name: મ.
+      :relative: 
+        -1: "ગયા મહિને"
+        0: "આ મહિને"
+        1: "આવતા મહિને"
       :relative_time: 
         :future: 
           :one: "{0} મહિનામાં"
@@ -154,16 +174,16 @@
           :one: "{0} મહિના પહેલા"
           :other: "{0} મહિના પહેલા"
     :quarter: 
-      :display_name: ક્વાર્ટર
+      :display_name: ત્રિમાસિક
       :relative_time: 
         :future: 
-          :one: "{0} ત્રિમાસમાં"
-          :other: "{0} ત્રિમાસમાં"
+          :one: "{0} ત્રિમાસિકમાં"
+          :other: "{0} ત્રિમાસિકમાં"
         :past: 
-          :one: "{0} ત્રિમાસ પહેલાં"
-          :other: "{0} ત્રિમાસ પહેલાં"
+          :one: "{0} ત્રિમાસિક પહેલા"
+          :other: "{0} ત્રિમાસિક પહેલા"
     :quarter-narrow: 
-      :display_name: ક્વા.
+      :display_name: ત્રિમાસ.
       :relative_time: 
         :future: 
           :one: "+{0} ત્રિમાસ"
@@ -172,7 +192,7 @@
           :one: "-{0} ત્રિમાસ"
           :other: "-{0} ત્રિમાસ"
     :quarter-short: 
-      :display_name: ક્વા.
+      :display_name: ત્રિમાસ.
       :relative_time: 
         :future: 
           :one: "{0} ત્રિમાસમાં"
@@ -207,7 +227,7 @@
           :one: "{0} સેકંડ પહેલા"
           :other: "{0} સેકંડ પહેલા"
     :second-narrow: 
-      :display_name: સે
+      :display_name: સે.
       :relative_time: 
         :future: 
           :one: "{0} સેકંડમાં"
@@ -216,7 +236,7 @@
           :one: "-{0} સેકંડ પહેલા"
           :other: "-{0} સેકંડ પહેલા"
     :second-short: 
-      :display_name: સેકન્ડ
+      :display_name: સે.
       :relative_time: 
         :future: 
           :one: "{0} સેકંડમાં"
@@ -299,6 +319,10 @@
           :other: "{0} અઠવાડિયા પહેલા"
     :week-narrow: 
       :display_name: અઠ.
+      :relative: 
+        -1: "ગયા અઠવાડિયે"
+        0: "આ અઠવાડિયે"
+        1: "આવતા અઠવાડિયે"
       :relative_time: 
         :future: 
           :one: "+{0} અઠવાડિયા"
@@ -308,6 +332,10 @@
           :other: "-{0} અઠવાડિયા"
     :week-short: 
       :display_name: અઠ.
+      :relative: 
+        -1: "ગયા અઠવાડિયે"
+        0: "આ અઠવાડિયે"
+        1: "આવતા અઠવાડિયે"
       :relative_time: 
         :future: 
           :one: "{0} અઠવાડિયામાં"
@@ -331,16 +359,24 @@
           :one: "{0} વર્ષ પહેલા"
           :other: "{0} વર્ષ પહેલા"
     :year-narrow: 
-      :display_name: વર્ષ
+      :display_name: વ.
+      :relative: 
+        -1: "ગયા વર્ષે"
+        0: "આ વર્ષે"
+        1: "આવતા વર્ષે"
       :relative_time: 
         :future: 
-          :one: "+{0} વર્ષ"
+          :one: "{0} વર્ષમાં"
           :other: "+{0} વર્ષ"
         :past: 
-          :one: "-{0} વર્ષ"
+          :one: "{0} વર્ષ પહેલા"
           :other: "-{0} વર્ષ"
     :year-short: 
-      :display_name: વર્ષ
+      :display_name: વ.
+      :relative: 
+        -1: "ગયા વર્ષે"
+        0: "આ વર્ષે"
+        1: "આવતા વર્ષે"
       :relative_time: 
         :future: 
           :one: "{0} વર્ષમાં"

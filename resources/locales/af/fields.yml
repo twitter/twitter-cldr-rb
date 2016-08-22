@@ -11,13 +11,19 @@
         2: oormôre
       :relative_time: 
         :future: 
-          :one: "Oor {0} dag"
-          :other: "Oor {0} dae"
+          :one: "oor {0} minuut"
+          :other: "oor {0} minuut"
         :past: 
           :one: "{0} dag gelede"
           :other: "{0} dae gelede"
     :day-narrow: 
       :display_name: d.
+      :relative: 
+        -1: gister
+        -2: eergister
+        0: vandag
+        1: môre
+        2: oormôre
       :relative_time: 
         :future: 
           :one: "oor {0} dag"
@@ -27,6 +33,12 @@
           :other: "{0} dae gelede"
     :day-short: 
       :display_name: d.
+      :relative: 
+        -1: gister
+        -2: eergister
+        0: vandag
+        1: môre
+        2: oormôre
       :relative_time: 
         :future: 
           :one: "oor {0} dag"
@@ -37,21 +49,28 @@
     :dayperiod: 
       :display_name: VM/NM
     :era: 
-      :display_name: Era
+      :display_name: era
     :fri: 
       :relative: 
         -1: "verlede Vrydag"
         0: "hierdie Vrydag"
         1: "volgende Vrydag"
+    :fri-narrow: 
+      :relative: 
+        -1: "verlede Vr."
+        0: "dié Vr."
+        1: "vlg. Vr."
     :fri-short: 
       :relative: 
         -1: "verlede Vr."
+        0: "dié Vr."
+        1: "vlg. Vr."
     :hour: 
-      :display_name: Uur
+      :display_name: uur
       :relative_time: 
         :future: 
-          :one: "Oor {0} uur"
-          :other: "Oor {0} uur"
+          :one: "oor {0} uur"
+          :other: "oor {0} uur"
         :past: 
           :one: "{0} uur gelede"
           :other: "{0} uur gelede"
@@ -74,11 +93,11 @@
           :one: "{0} uur gelede"
           :other: "{0} uur gelede"
     :minute: 
-      :display_name: Minuut
+      :display_name: minuut
       :relative_time: 
         :future: 
-          :one: "Oor {0} minuut"
-          :other: "Oor {0} minute"
+          :one: "oor {0} minuut"
+          :other: "oor {0} minuut"
         :past: 
           :one: "{0} minuut gelede"
           :other: "{0} minute gelede"
@@ -123,8 +142,8 @@
         1: "volgende maand"
       :relative_time: 
         :future: 
-          :one: "Oor {0} maand"
-          :other: "Oor {0} maande"
+          :one: "oor {0} minuut"
+          :other: "oor {0} minuut"
         :past: 
           :one: "{0} maand gelede"
           :other: "{0} maande gelede"
@@ -147,7 +166,7 @@
           :one: "{0} md. gelede"
           :other: "{0} md. gelede"
     :quarter: 
-      :display_name: Kwartaal
+      :display_name: kwartaal
       :relative_time: 
         :future: 
           :one: "oor {0} kwartaal"
@@ -178,14 +197,24 @@
         -1: "verlede Saterdag"
         0: "hierdie Saterdag"
         1: "volgende Saterdag"
+    :sat-narrow: 
+      :relative: 
+        -1: "verlede Sa."
+        0: "dié Sa."
+        1: "vlg. Sa."
+    :sat-short: 
+      :relative: 
+        -1: "verlede Sa."
+        0: "dié Sa."
+        1: "vlg. Sa."
     :second: 
-      :display_name: Sekonde
+      :display_name: sekonde
       :relative: 
         0: nou
       :relative_time: 
         :future: 
-          :one: "Oor {0} sekonde"
-          :other: "Oor {0} sekondes"
+          :one: "oor {0} sekonde"
+          :other: "oor {0} sekondes"
         :past: 
           :one: "{0} sekonde gelede"
           :other: "{0} sekondes gelede"
@@ -275,8 +304,8 @@
         1: "volgende week"
       :relative_time: 
         :future: 
-          :one: "Oor {0} week"
-          :other: "Oor {0} weke"
+          :one: "oor {0} week"
+          :other: "oor {0} weke"
         :past: 
           :one: "{0} week gelede"
           :other: "{0} weke gelede"
@@ -299,17 +328,17 @@
           :one: "{0} w. gelede"
           :other: "{0} w. gelede"
     :weekday: 
-      :display_name: "Dag van die Week"
+      :display_name: "dag van die week"
     :year: 
-      :display_name: Jaar
+      :display_name: jaar
       :relative: 
         -1: "verlede jaar"
         0: "hierdie jaar"
         1: "volgende jaar"
       :relative_time: 
         :future: 
-          :one: "Oor {0} jaar"
-          :other: "Oor {0} jaar"
+          :one: "oor {0} jaar"
+          :other: "oor {0} jaar"
         :past: 
           :one: "{0} jaar gelede"
           :other: "{0} jaar gelede"
@@ -317,8 +346,8 @@
       :display_name: j.
       :relative_time: 
         :future: 
-          :one: "Oor {0} jaar"
-          :other: "Oor {0} jaar"
+          :one: "oor {0} jaar"
+          :other: "oor {0} jaar"
         :past: 
           :one: "{0} jaar gelede"
           :other: "{0} jaar gelede"
@@ -326,10 +355,10 @@
       :display_name: j.
       :relative_time: 
         :future: 
-          :one: "Oor {0} jaar"
-          :other: "Oor {0} jaar"
+          :one: "oor {0} jaar"
+          :other: "oor {0} jaar"
         :past: 
           :one: "{0} jaar gelede"
           :other: "{0} jaar gelede"
     :zone: 
-      :display_name: Tydsone
+      :display_name: tydsone

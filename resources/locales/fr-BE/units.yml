@@ -17,14 +17,17 @@
           :one: "{0} minute d’arc"
           :other: "{0} minutes d’arc"
         :angle-arc-second: 
-          :one: "{0} seconde d’angle"
-          :other: "{0} secondes d’angle"
+          :one: "{0} seconde d’arc"
+          :other: "{0} secondes d’arc"
         :angle-degree: 
           :one: "{0} degré"
           :other: "{0} degrés"
         :angle-radian: 
           :one: "{0} radian"
           :other: "{0} radians"
+        :angle-revolution: 
+          :one: "{0} tour"
+          :other: "{0} tours"
         :area-acre: 
           :one: "{0} acre anglo-saxonne"
           :other: "{0} acres anglo-saxonnes"
@@ -47,11 +50,17 @@
           :one: "{0} mètre carré"
           :other: "{0} mètres carrés"
         :area-square-mile: 
-          :one: "{0} mille anglais carré"
-          :other: "{0} milles anglais carrés"
+          :one: "{0} mile carré"
+          :other: "{0} miles carrés"
         :area-square-yard: 
           :one: "{0} yard carré"
           :other: "{0} yards carrés"
+        :concentr-karat: 
+          :one: "{0} carat"
+          :other: "{0} carats"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} litre aux 100 km"
+          :other: "{0} litres aux 100 km"
         :consumption-liter-per-kilometer: 
           :one: "{0} litre au kilomètre"
           :other: "{0} litres au kilomètre"
@@ -88,6 +97,9 @@
         :digital-terabyte: 
           :one: "{0} téraoctet"
           :other: "{0} téraoctets"
+        :duration-century: 
+          :one: "{0} siècle"
+          :other: "{0} siècles"
         :duration-day: 
           :one: "{0} jour"
           :other: "{0} jours"
@@ -134,8 +146,8 @@
           :one: "{0} calorie"
           :other: "{0} calories"
         :energy-foodcalorie: 
-          :one: "{0} grande calorie"
-          :other: "{0} grandes calories"
+          :one: "{0} kilocalorie"
+          :other: "{0} kilocalories"
         :energy-joule: 
           :one: "{0} joule"
           :other: "{0} joules"
@@ -192,6 +204,9 @@
         :length-mile: 
           :one: "{0} mille anglais"
           :other: "{0} milles anglais"
+        :length-mile-scandinavian: 
+          :one: "{0} mille scandinave"
+          :other: "{0} milles scandinaves"
         :length-millimeter: 
           :one: "{0} millimètre"
           :other: "{0} millimètres"
@@ -277,12 +292,12 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} livre par pouce carré"
           :other: "{0} livres par pouce carré"
-        :proportion-karat: 
-          :one: "{0} carat"
-          :other: "{0} carats"
         :speed-kilometer-per-hour: 
           :one: "{0} kilomètre par heure"
           :other: "{0} kilomètres par heure"
+        :speed-knot: 
+          :one: "{0} nœud"
+          :other: "{0} nœuds"
         :speed-meter-per-second: 
           :one: "{0} mètre par seconde"
           :other: "{0} mètres par seconde"
@@ -295,6 +310,9 @@
         :temperature-fahrenheit: 
           :one: "{0} degré Fahrenheit"
           :other: "{0} degrés Fahrenheit"
+        :temperature-generic: 
+          :one: "{0} degré"
+          :other: "{0} degrés"
         :temperature-kelvin: 
           :one: "{0} kelvin"
           :other: "{0} kelvins"
@@ -329,6 +347,9 @@
         :volume-cup: 
           :one: "{0} tasse"
           :other: "{0} tasses"
+        :volume-cup-metric: 
+          :one: "{0} tasse métrique"
+          :other: "{0} tasses métriques"
         :volume-deciliter: 
           :one: "{0} décilitre"
           :other: "{0} décilitres"
@@ -353,6 +374,9 @@
         :volume-pint: 
           :one: "{0} pinte"
           :other: "{0} pintes"
+        :volume-pint-metric: 
+          :one: "{0} pinte métrique"
+          :other: "{0} pintes métriques"
         :volume-quart: 
           :one: "{0} quart"
           :other: "{0} quarts"
@@ -379,15 +403,18 @@
         :angle-radian: 
           :one: "{0} rad"
           :other: "{0} rad"
+        :angle-revolution: {}
         :area-acre: 
           :one: "{0}ac"
           :other: "{0}ac"
         :area-hectare: 
           :one: "{0}ha"
           :other: "{0}ha"
+        :area-square-centimeter: {}
         :area-square-foot: 
           :one: "{0}pi²"
           :other: "{0}pi²"
+        :area-square-inch: {}
         :area-square-kilometer: 
           :one: "{0}km²"
           :other: "{0}km²"
@@ -397,6 +424,9 @@
         :area-square-mile: 
           :one: "{0}mi²"
           :other: "{0}mi²"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0}l/100km"
+          :other: "{0}l/100km"
         :consumption-liter-per-kilometer: {}
         :consumption-mile-per-gallon: {}
         :digital-bit: {}
@@ -409,6 +439,7 @@
         :digital-megabyte: {}
         :digital-terabit: {}
         :digital-terabyte: {}
+        :duration-century: {}
         :duration-day: 
           :one: "{0}j"
           :other: "{0}j"
@@ -463,6 +494,7 @@
         :length-mile: 
           :one: "{0}mi"
           :other: "{0}mi"
+        :length-mile-scandinavian: {}
         :length-millimeter: 
           :one: "{0}mm"
           :other: "{0}mm"
@@ -520,6 +552,7 @@
         :speed-kilometer-per-hour: 
           :one: "{0}km/h"
           :other: "{0}km/h"
+        :speed-knot: {}
         :speed-meter-per-second: 
           :one: "{0}m/s"
           :other: "{0}m/s"
@@ -527,11 +560,12 @@
           :one: "{0}mi/h"
           :other: "{0}mi/h"
         :temperature-celsius: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0}°C"
+          :other: "{0}°C"
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :temperature-generic: {}
         :temperature-kelvin: {}
         :volume-acre-foot: {}
         :volume-bushel: {}
@@ -560,6 +594,7 @@
           :one: "{0}yd³"
           :other: "{0}yd³"
         :volume-cup: {}
+        :volume-cup-metric: {}
         :volume-deciliter: 
           :one: "{0}dl"
           :other: "{0}dl"
@@ -573,8 +608,8 @@
           :one: "{0}hl"
           :other: "{0}hl"
         :volume-liter: 
-          :one: "{0}L"
-          :other: "{0}L"
+          :one: "{0}l"
+          :other: "{0}l"
         :volume-megaliter: 
           :one: "{0}Ml"
           :other: "{0}Ml"
@@ -582,6 +617,7 @@
           :one: "{0}ml"
           :other: "{0}ml"
         :volume-pint: {}
+        :volume-pint-metric: {}
         :volume-quart: {}
         :volume-tablespoon: {}
         :volume-teaspoon: {}
@@ -604,6 +640,9 @@
         :angle-radian: 
           :one: "{0} rad"
           :other: "{0} rad"
+        :angle-revolution: 
+          :one: "{0} tr"
+          :other: "{0} tr"
         :area-acre: 
           :one: "{0} ac"
           :other: "{0} ac"
@@ -631,12 +670,26 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-karat: 
+          :one: "{0} ct"
+          :other: "{0} ct"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} l/100 km"
+          :other: "{0} l/100 km"
         :consumption-liter-per-kilometer: 
-          :one: "{0} L/km"
-          :other: "{0} L/km"
+          :one: "{0} l/km"
+          :other: "{0} l/km"
         :consumption-mile-per-gallon: 
           :one: "{0} mi/gal"
           :other: "{0} mi/gal"
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -667,9 +720,13 @@
         :digital-terabyte: 
           :one: "{0} To"
           :other: "{0} To"
+        :duration-century: 
+          :one: "{0} si"
+          :other: "{0} si"
         :duration-day: 
           :one: "{0} j"
           :other: "{0} j"
+        :duration-day-person: {}
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -685,6 +742,7 @@
         :duration-month: 
           :one: "{0} m"
           :other: "{0} m"
+        :duration-month-person: {}
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
@@ -694,9 +752,11 @@
         :duration-week: 
           :one: "{0} sem."
           :other: "{0} sem."
+        :duration-week-person: {}
         :duration-year: 
           :one: "{0} an"
           :other: "{0} ans"
+        :duration-year-person: {}
         :electric-ampere: 
           :one: "{0} A"
           :other: "{0} A"
@@ -713,8 +773,8 @@
           :one: "{0} cal"
           :other: "{0} cal"
         :energy-foodcalorie: 
-          :one: "{0} Cal"
-          :other: "{0} Cal"
+          :one: "{0} kcal"
+          :other: "{0} kcal"
         :energy-joule: 
           :one: "{0} J"
           :other: "{0} J"
@@ -752,8 +812,8 @@
           :one: "{0} fat"
           :other: "{0} fat"
         :length-foot: 
-          :one: "{0} ft"
-          :other: "{0} ft"
+          :one: "{0} pi"
+          :other: "{0} pi"
         :length-furlong: 
           :other: "{0} fur"
         :length-inch: 
@@ -763,8 +823,8 @@
           :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
-          :one: "{0} a.l."
-          :other: "{0} a.l."
+          :one: "{0} al"
+          :other: "{0} al"
         :length-meter: 
           :one: "{0} m"
           :other: "{0} m"
@@ -774,6 +834,9 @@
         :length-mile: 
           :one: "{0} mi"
           :other: "{0} mi"
+        :length-mile-scandinavian: 
+          :one: "{0} smi"
+          :other: "{0} smi"
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
@@ -860,12 +923,12 @@
         :pressure-pound-per-square-inch: 
           :one: "{0} lb/po²"
           :other: "{0} lb/po²"
-        :proportion-karat: 
-          :one: "{0} ct"
-          :other: "{0} ct"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
+        :speed-knot: 
+          :one: "{0} nd"
+          :other: "{0} nd"
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -878,6 +941,9 @@
         :temperature-fahrenheit: 
           :one: "{0} °F"
           :other: "{0} °F"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} K"
           :other: "{0} K"
@@ -913,6 +979,9 @@
         :volume-cup: 
           :one: "{0} tasse"
           :other: "{0} tasses"
+        :volume-cup-metric: 
+          :one: "{0} tm"
+          :other: "{0} tm"
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
@@ -922,12 +991,14 @@
         :volume-gallon: 
           :one: "{0} gal"
           :other: "{0} gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"
         :volume-liter: 
-          :one: "{0} L"
-          :other: "{0} L"
+          :one: "{0} l"
+          :other: "{0} l"
         :volume-megaliter: 
           :one: "{0} Ml"
           :other: "{0} Ml"
@@ -937,6 +1008,9 @@
         :volume-pint: 
           :one: "{0} pte"
           :other: "{0} pte"
+        :volume-pint-metric: 
+          :one: "{0} mpt"
+          :other: "{0} mpt"
         :volume-quart: 
           :one: "{0} qt"
           :other: "{0} qt"

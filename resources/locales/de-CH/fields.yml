@@ -18,6 +18,12 @@
           :other: "vor {0} Tagen"
     :day-narrow: 
       :display_name: Tag
+      :relative: 
+        -1: gestern
+        -2: vorgestern
+        0: heute
+        1: morgen
+        2: übermorgen
       :relative_time: 
         :future: 
           :one: "in {0} Tag"
@@ -27,6 +33,12 @@
           :other: "vor {0} Tagen"
     :day-short: 
       :display_name: Tag
+      :relative: 
+        -1: gestern
+        -2: vorgestern
+        0: heute
+        1: morgen
+        2: übermorgen
       :relative_time: 
         :future: 
           :one: "in {0} Tag"
@@ -137,6 +149,10 @@
           :other: "vor {0} Monaten"
     :month-narrow: 
       :display_name: M
+      :relative: 
+        -1: "letzten Monat"
+        0: "diesen Monat"
+        1: "nächsten Monat"
       :relative_time: 
         :future: 
           :one: "in {0} Monat"
@@ -146,6 +162,10 @@
           :other: "vor {0} Monaten"
     :month-short: 
       :display_name: Monat
+      :relative: 
+        -1: "letzten Monat"
+        0: "diesen Monat"
+        1: "nächsten Monat"
       :relative_time: 
         :future: 
           :one: "in {0} Monat"
@@ -299,6 +319,10 @@
           :other: "vor {0} Wochen"
     :week-narrow: 
       :display_name: W
+      :relative: 
+        -1: "letzte Woche"
+        0: "diese Woche"
+        1: "nächste Woche"
       :relative_time: 
         :future: 
           :one: "in {0} Wo."
@@ -308,6 +332,10 @@
           :other: "vor {0} Wo."
     :week-short: 
       :display_name: Woche
+      :relative: 
+        -1: "letzte Woche"
+        0: "diese Woche"
+        1: "nächste Woche"
       :relative_time: 
         :future: 
           :one: "in {0} Woche"
@@ -332,6 +360,10 @@
           :other: "vor {0} Jahren"
     :year-narrow: 
       :display_name: J
+      :relative: 
+        -1: "letztes Jahr"
+        0: "dieses Jahr"
+        1: "nächstes Jahr"
       :relative_time: 
         :future: 
           :one: "in {0} Jahr"
@@ -341,6 +373,10 @@
           :other: "vor {0} Jahren"
     :year-short: 
       :display_name: Jahr
+      :relative: 
+        -1: "letztes Jahr"
+        0: "dieses Jahr"
+        1: "nächstes Jahr"
       :relative_time: 
         :future: 
           :one: "in {0} Jahr"

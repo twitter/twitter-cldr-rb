@@ -6,6 +6,103 @@
         :number_system: arab
         :patterns: 
           :default: "¤ #,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: ¤ 0 ألف
+              :many: ¤ 0 ألف
+              :one: ¤ 0 ألف
+              :other: ¤ 0 ألف
+              :two: ¤ 0 ألف
+              :zero: ¤ 0 ألف
+            ? !ruby/symbol "10000"
+            : 
+              :few: ¤ 00 ألف
+              :many: ¤ 00 ألف
+              :one: ¤ 00 ألف
+              :other: ¤ 00 ألف
+              :two: ¤ 00 ألف
+              :zero: ¤ 00 ألف
+            ? !ruby/symbol "100000"
+            : 
+              :few: ¤ 000 ألف
+              :many: ¤ 000 ألف
+              :one: ¤ 000 ألف
+              :other: ¤ 000 ألف
+              :two: ¤ 000 ألف
+              :zero: ¤ 000 ألف
+            ? !ruby/symbol "1000000"
+            : 
+              :few: ¤ 0 مليو
+              :many: ¤ 0 مليو
+              :one: ¤ 0 مليو
+              :other: ¤ 0 مليو
+              :two: ¤ 0 مليو
+              :zero: ¤ 0 مليو
+            ? !ruby/symbol "10000000"
+            : 
+              :few: ¤ 00 مليو
+              :many: ¤ 00 مليو
+              :one: ¤ 00 مليو
+              :other: ¤ 00 مليو
+              :two: ¤ 00 مليو
+              :zero: ¤ 00 مليو
+            ? !ruby/symbol "100000000"
+            : 
+              :few: ¤ 000 مليو
+              :many: ¤ 000 مليو
+              :one: ¤ 000 مليو
+              :other: ¤ 000 مليو
+              :two: ¤ 000 مليو
+              :zero: ¤ 000 مليو
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: ¤ 0 مليا
+              :many: ¤ 0 مليا
+              :one: ¤ 0 مليا
+              :other: ¤ 0 مليا
+              :two: ¤ 0 مليا
+              :zero: ¤ 0 مليا
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: ¤ 00 مليا
+              :many: ¤ 00 مليا
+              :one: ¤ 00 مليا
+              :other: ¤ 00 مليا
+              :two: ¤ 00 مليا
+              :zero: ¤ 00 مليا
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: ¤ 000 مليا
+              :many: ¤ 000 مليا
+              :one: ¤ 000 مليا
+              :other: ¤ 000 مليا
+              :two: ¤ 000 مليا
+              :zero: ¤ 000 مليا
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: ¤ 0 ترليو
+              :many: ¤ 0 ترليو
+              :one: ¤ 0 ترليو
+              :other: ¤ 0 ترليو
+              :two: ¤ 0 ترليو
+              :zero: ¤ 0 ترليو
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: ¤ 00 ترليو
+              :many: ¤ 00 ترليو
+              :one: ¤ 00 ترليو
+              :other: ¤ 00 ترليو
+              :two: ¤ 00 ترليو
+              :zero: ¤ 00 ترليو
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: ¤ 000 ترليو
+              :many: ¤ 000 ترليو
+              :one: ¤ 000 ترليو
+              :other: ¤ 000 ترليو
+              :two: ¤ 000 ترليو
+              :zero: ¤ 000 ترليو
         :unit: 
           :few: "{0} {1}"
           :many: "{0} {1}"
@@ -68,28 +165,28 @@
               :zero: "000 مليون"
             ? !ruby/symbol "1000000000"
             : 
-              :few: "0 بلايين"
-              :many: "0 بليون"
-              :one: "0 بليون"
-              :other: "0 بليون"
-              :two: "0 بليون"
-              :zero: "0 بليون"
+              :few: "0 مليار"
+              :many: "0 مليار"
+              :one: "0 مليار"
+              :other: "0 مليار"
+              :two: "0 مليار"
+              :zero: "0 مليار"
             ? !ruby/symbol "10000000000"
             : 
-              :few: "00 بليون"
-              :many: "00 بليون"
-              :one: "00 بليون"
-              :other: "00 بليون"
-              :two: "00 بليون"
-              :zero: "00 بليون"
+              :few: "00 مليار"
+              :many: "00 مليار"
+              :one: "00 مليار"
+              :other: "00 مليار"
+              :two: "00 مليار"
+              :zero: "00 مليار"
             ? !ruby/symbol "100000000000"
             : 
-              :few: "000 بليون"
-              :many: "000 بليون"
-              :one: "000 بليون"
-              :other: "000 بليون"
-              :two: "000 بليون"
-              :zero: "000 بليون"
+              :few: "000 مليار"
+              :many: "000 مليار"
+              :one: "000 مليار"
+              :other: "000 مليار"
+              :two: "000 مليار"
+              :zero: "000 مليار"
             ? !ruby/symbol "1000000000000"
             : 
               :few: "0 تريليونات"
@@ -165,28 +262,28 @@
               :zero: 000 مليو
             ? !ruby/symbol "1000000000"
             : 
-              :few: 0 بليو
-              :many: 0 بليو
-              :one: 0 بليو
-              :other: 0 بليو
-              :two: 0 بليو
-              :zero: 0 بليو
+              :few: 0 مليا
+              :many: 0 مليا
+              :one: 0 مليا
+              :other: 0 مليا
+              :two: 0 مليا
+              :zero: 0 مليا
             ? !ruby/symbol "10000000000"
             : 
-              :few: 00 بليو
-              :many: 00 بليو
-              :one: 00 بليو
-              :other: 00 بليو
-              :two: 00 بليو
-              :zero: 00 بليو
+              :few: 00 مليا
+              :many: 00 مليا
+              :one: 00 مليا
+              :other: 00 مليا
+              :two: 00 مليا
+              :zero: 00 مليا
             ? !ruby/symbol "100000000000"
             : 
-              :few: 000 بليو
-              :many: 000 بليو
-              :one: 000 بليو
-              :other: 000 بليو
-              :two: 000 بليو
-              :zero: 000 بليو
+              :few: 000 مليا
+              :many: 000 مليا
+              :one: 000 مليا
+              :other: 000 مليا
+              :two: 000 مليا
+              :zero: 000 مليا
             ? !ruby/symbol "1000000000000"
             : 
               :few: 0 ترليو
@@ -227,9 +324,9 @@
       :infinity: ∞
       :list: ;
       :minus_sign: ‎-
-      :nan: NaN
+      :nan: ليس رقمًا
       :per_mille: ‰
-      :percent_sign: "%"
+      :percent_sign: ٪
       :plus_sign: ‎+
       :superscripting_exponent: ×
       :time_separator: ":"

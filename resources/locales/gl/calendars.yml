@@ -16,6 +16,8 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d-M"
         :MMM: LLL
@@ -29,6 +31,8 @@
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -46,7 +50,7 @@
         :format: 
           :abbreviated: 
             :fri: ven
-            :mon: lun
+            :mon: luns
             :sat: sáb
             :sun: dom
             :thu: xov
@@ -259,17 +263,60 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: "da mediodía"
             :am: a.m.
+            :evening1: "da tarde"
+            :midnight: "da noite"
+            :morning1: "da mañá"
+            :morning2: "da mañá"
+            :night1: "da noite"
             :pm: p.m.
           :narrow: 
-            :am: a
-            :noon: m
-            :pm: p
-          :wide: 
+            :afternoon1: "da mediodía"
             :am: a.m.
-            :noon: mediodía
+            :evening1: "da tarde"
+            :midnight: "da noite"
+            :morning1: "da mañá"
+            :morning2: "da mañá"
+            :night1: "da noite"
             :pm: p.m.
-        :stand-alone: {}
+          :wide: 
+            :afternoon1: "da mediodía"
+            :am: a.m.
+            :evening1: "da tarde"
+            :midnight: "da noite"
+            :morning1: "da mañá"
+            :morning2: "da mañá"
+            :night1: "da noite"
+            :pm: p.m.
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: mediodía
+            :am: a.m.
+            :evening1: tarde
+            :midnight: medianoite
+            :morning1: madrugada
+            :morning2: mañá
+            :night1: noite
+            :pm: p.m.
+          :narrow: 
+            :afternoon1: mediodía
+            :am: a.m.
+            :evening1: tarde
+            :midnight: medianoite
+            :morning1: madrugada
+            :morning2: mañá
+            :night1: noite
+            :pm: p.m.
+          :wide: 
+            :afternoon1: mediodía
+            :am: a.m.
+            :evening1: tarde
+            :midnight: medianoite
+            :morning1: madrugada
+            :morning2: mañá
+            :night1: noite
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 
@@ -283,10 +330,10 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1o trimestre"
-            2: "2o trimestre"
-            3: "3o trimestre"
-            4: "4o trimestre"
+            1: "1º trimestre"
+            2: "2º trimestre"
+            3: "3º trimestre"
+            4: "4º trimestre"
         :stand-alone: 
           :abbreviated: 
             1: T1
@@ -299,7 +346,7 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1o trimestre"
+            1: "1º trimestre"
             2: "2º trimestre"
-            3: "3o trimestre"
-            4: "4o trimestre"
+            3: "3º trimestre"
+            4: "4º trimestre"

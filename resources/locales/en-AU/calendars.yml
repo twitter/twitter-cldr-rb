@@ -6,7 +6,7 @@
         :E: ccc
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "E d"
+        :Ed: "d E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
@@ -16,46 +16,52 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: LL
         :MEd: "E, M/d"
         :MMM: LLL
         :MMMEd: "E, MMM d"
+        :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
         :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: M/y
-        :yMEd: "E, d/M/y"
+        :yMEd: "E, M/d/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, MMM d, y"
+        :yMMMM: "MMMM y"
         :yMMMd: "MMM d, y"
-        :yMd: d/M/y
+        :yMd: M/d/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
-            :tue: Tue
-            :wed: Wed
+            :fri: Fri.
+            :mon: Mon.
+            :sat: Sat.
+            :sun: Sun.
+            :thu: Thu.
+            :tue: Tue.
+            :wed: Wed.
           :narrow: :calendars.gregorian.days.stand-alone.narrow
           :short: 
-            :fri: Fr
-            :mon: Mo
-            :sat: Sa
-            :sun: Su
-            :thu: Th
-            :tue: Tu
-            :wed: We
+            :fri: Fri.
+            :mon: Mon.
+            :sat: Sat.
+            :sun: Su.
+            :thu: Th.
+            :tue: Tu.
+            :wed: Wed.
           :wide: 
             :fri: Friday
             :mon: Monday
@@ -67,13 +73,13 @@
         :stand-alone: 
           :abbreviated: :calendars.gregorian.days.format.abbreviated
           :narrow: 
-            :fri: F
-            :mon: M
-            :sat: S
-            :sun: S
-            :thu: T
-            :tue: T
-            :wed: W
+            :fri: F.
+            :mon: M.
+            :sat: Sa.
+            :sun: Su.
+            :thu: Th.
+            :tue: Tu.
+            :wed: W.
           :short: :calendars.gregorian.days.format.short
           :wide: :calendars.gregorian.days.format.wide
       :eras: 
@@ -87,26 +93,26 @@
           0: B
           1: A
       :fields: 
-        :day: Day
+        :day: day
         :day-short: day
-        :dayperiod: AM/PM
-        :era: Era
-        :hour: Hour
-        :hour-short: hr.
-        :minute: Minute
+        :dayperiod: am/pm
+        :era: era
+        :hour: hour
+        :hour-short: h
+        :minute: minute
         :minute-short: min.
-        :month: Month
+        :month: month
         :month-short: mo.
-        :quarter: Quarter
+        :quarter: quarter
         :quarter-short: qtr.
-        :second: Second
+        :second: second
         :second-short: sec.
-        :week: Week
+        :week: week
         :week-short: wk.
-        :weekday: "Day of the Week"
-        :year: Year
+        :weekday: "day of the week"
+        :year: year
         :year-short: yr.
-        :zone: "Time Zone"
+        :zone: "time zone"
       :formats: 
         :date: 
           :full: 
@@ -116,16 +122,16 @@
           :medium: 
             :pattern: "MMM d, y"
           :short: 
-            :pattern: d/MM/y
+            :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'at' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'at' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -138,18 +144,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: Jan
-            10: Oct
-            11: Nov
-            12: Dec
-            2: Feb
-            3: Mar
-            4: Apr
+            1: Jan.
+            10: Oct.
+            11: Nov.
+            12: Dec.
+            2: Feb.
+            3: Mar.
+            4: Apr.
             5: May
-            6: Jun
-            7: Jul
-            8: Aug
-            9: Sep
+            6: Jun.
+            7: Jul.
+            8: Aug.
+            9: Sep.
           :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide: 
             1: January
@@ -167,34 +173,72 @@
         :stand-alone: 
           :abbreviated: :calendars.gregorian.months.format.abbreviated
           :narrow: 
-            1: J
-            10: O
-            11: "N"
-            12: D
-            2: F
-            3: M
-            4: A
-            5: M
-            6: J
-            7: J
-            8: A
-            9: S
+            1: Jan.
+            10: Oct.
+            11: Nov.
+            12: Dec.
+            2: Feb.
+            3: Mar.
+            4: Apr.
+            5: May
+            6: Jun.
+            7: Jul.
+            8: Aug.
+            9: Sep.
           :wide: :calendars.gregorian.months.format.wide
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
-            :am: a
-            :noon: "n"
-            :pm: p
-          :wide: 
-            :am: AM
-            :noon: noon
-            :pm: PM
+          :abbreviated: 
+            :afternoon1: afternoon
+            :am: am
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: midday
+            :pm: pm
             :variant: 
               :am: am
               :pm: pm
-        :stand-alone: {}
+          :narrow: 
+            :afternoon1: afternoon
+            :am: am
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: midday
+            :pm: pm
+          :wide: 
+            :afternoon1: afternoon
+            :am: am
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: midday
+            :pm: pm
+            :variant: 
+              :am: am
+              :pm: pm
+        :stand-alone: 
+          :abbreviated: 
+            :am: am
+            :noon: midday
+            :pm: pm
+          :narrow: 
+            :am: am
+            :noon: midday
+            :pm: pm
+          :wide: 
+            :afternoon1: afternoon
+            :am: am
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: midday
+            :pm: pm
       :quarters: 
         :format: 
           :abbreviated: 

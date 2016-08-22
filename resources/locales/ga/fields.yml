@@ -24,6 +24,12 @@
           :two: "{0} lá ó shin"
     :day-narrow: 
       :display_name: Lá
+      :relative: 
+        -1: inné
+        -2: "arú inné"
+        0: inniu
+        1: amárach
+        2: "arú amárach"
       :relative_time: 
         :future: 
           :few: "+{0} lá"
@@ -39,6 +45,12 @@
           :two: "-{0} lá"
     :day-short: 
       :display_name: Lá
+      :relative: 
+        -1: inné
+        -2: "arú inné"
+        0: inniu
+        1: amárach
+        2: "arú amárach"
       :relative_time: 
         :future: 
           :few: "i gceann {0} lá"
@@ -59,17 +71,17 @@
     :fri: 
       :relative: 
         -1: "an Aoine seo caite"
-        0: "an Aoine seo chugainn"
+        0: "an Aoine seo"
         1: "an Aoine seo chugainn"
     :fri-narrow: 
       :relative: 
         -1: "an Aoine seo caite"
-        0: "an Aoine seo chugainn"
-        1: "an Aoine seo chugainn"
+        0: "an Aoine seo"
+        1: "an Aoine seo chug."
     :fri-short: 
       :relative: 
         -1: "an Aoine seo caite"
-        0: "an Aoine seo chugainn"
+        0: "an Aoine seo"
         1: "an Aoine seo chugainn"
     :hour: 
       :display_name: Uair
@@ -164,17 +176,17 @@
     :mon: 
       :relative: 
         -1: "an Luan seo caite"
-        0: "an Luan seo chugainn"
+        0: "an Luan seo"
         1: "an Luan seo chugainn"
     :mon-narrow: 
       :relative: 
         -1: "an Luan seo caite"
-        0: "an Luan seo chugainn"
-        1: "an Luan seo chugainn"
+        0: "an Luan seo"
+        1: "an Luan seo chug."
     :mon-short: 
       :relative: 
         -1: "an Luan seo caite"
-        0: "an Luan seo chugainn"
+        0: "an Luan seo"
         1: "an Luan seo chugainn"
     :month: 
       :display_name: Mí
@@ -197,6 +209,10 @@
           :two: "{0} mhí ó shin"
     :month-narrow: 
       :display_name: mí
+      :relative: 
+        -1: "an mhí seo caite"
+        0: "an mhí seo"
+        1: "an mhí seo chugainn"
       :relative_time: 
         :future: 
           :few: "+{0} mhí"
@@ -212,6 +228,10 @@
           :two: "-{0} mhí"
     :month-short: 
       :display_name: mí
+      :relative: 
+        -1: "an mhí seo caite"
+        0: "an mhí seo"
+        1: "an mhí seo chugainn"
       :relative_time: 
         :future: 
           :few: "i gceann {0} mhí"
@@ -227,6 +247,10 @@
           :two: "{0} mhí ó shin"
     :quarter: 
       :display_name: Ráithe
+      :relative: 
+        -1: "an ráithe seo caite"
+        0: "an ráithe seo"
+        1: "an ráithe seo chugainn"
       :relative_time: 
         :future: 
           :few: "i gceann {0} ráithe"
@@ -242,6 +266,10 @@
           :two: "{0} ráithe ó shin"
     :quarter-narrow: 
       :display_name: ráithe
+      :relative: 
+        -1: "an ráithe seo caite"
+        0: "an ráithe seo"
+        1: "an ráithe seo chugainn"
       :relative_time: 
         :future: 
           :few: "+{0} R"
@@ -257,6 +285,10 @@
           :two: "-{0} R"
     :quarter-short: 
       :display_name: ráithe
+      :relative: 
+        -1: "an ráithe seo caite"
+        0: "an ráithe seo"
+        1: "an ráithe seo chugainn"
       :relative_time: 
         :future: 
           :few: "i gceann {0} ráithe"
@@ -273,20 +305,22 @@
     :sat: 
       :relative: 
         -1: "an Satharn seo caite"
-        0: "an Satharn seo chugainn"
+        0: "an Satharn seo"
         1: "an Satharn seo chugainn"
     :sat-narrow: 
       :relative: 
         -1: "an Sath seo caite"
-        0: "an Sath seo chugainn"
-        1: "an Sath seo chugainn"
+        0: "an Sath seo"
+        1: "an Sath seo chug."
     :sat-short: 
       :relative: 
         -1: "an Sath. seo caite"
-        0: "an Sath. seo chugainn"
+        0: "an Sath. seo"
         1: "an Sath. seo chugainn"
     :second: 
       :display_name: Soicind
+      :relative: 
+        0: anois
       :relative_time: 
         :future: 
           :few: "i gceann {0} shoicind"
@@ -302,6 +336,8 @@
           :two: "{0} shoicind ó shin"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: anois
       :relative_time: 
         :future: 
           :few: "+{0} s"
@@ -317,6 +353,8 @@
           :two: "-{0} s"
     :second-short: 
       :display_name: soic.
+      :relative: 
+        0: anois
       :relative_time: 
         :future: 
           :few: "i gceann {0} shoic."
@@ -333,62 +371,62 @@
     :sun: 
       :relative: 
         -1: "an Domhnach seo caite"
-        0: "an Domhnach seo chugainn"
+        0: "an Domhnach seo"
         1: "an Domhnach seo chugainn"
     :sun-narrow: 
       :relative: 
         -1: "an Domh seo caite"
-        0: "an Domh seo chugainn"
-        1: "an Domh seo chugainn"
+        0: "an Domh seo"
+        1: "an Domh seo chug."
     :sun-short: 
       :relative: 
         -1: "an Domh. seo caite"
-        0: "an Domh. seo chugainn"
+        0: "an Domh. seo"
         1: "an Domh. seo chugainn"
     :thu: 
       :relative: 
         -1: "an Déardaoin seo caite"
-        0: "an Déardaoin seo chugainn"
+        0: "an Déardaoin seo"
         1: "an Déardaoin seo chugainn"
     :thu-narrow: 
       :relative: 
         -1: "an Déar. seo caite"
-        0: "an Déar. seo chugainn"
-        1: "an Déar. seo chugainn"
+        0: "an Déar. seo"
+        1: "an Déar. seo chug."
     :thu-short: 
       :relative: 
         -1: "an Déar. seo caite"
-        0: "an Déar. seo chugainn"
+        0: "an Déar. seo"
         1: "an Déar. seo chugainn"
     :tue: 
       :relative: 
         -1: "an Mháirt seo caite"
-        0: "an Mháirt seo chugainn"
+        0: "an Mháirt seo"
         1: "an Mháirt seo chugainn"
     :tue-narrow: 
       :relative: 
         -1: "an Mháirt seo caite"
-        0: "an Mháirt seo chugainn"
-        1: "an Mháirt seo chugainn"
+        0: "an Mháirt seo"
+        1: "an Mháirt seo chug."
     :tue-short: 
       :relative: 
         -1: "an Mháirt seo caite"
-        0: "an Mháirt seo chugainn"
+        0: "an Mháirt seo"
         1: "an Mháirt seo chugainn"
     :wed: 
       :relative: 
         -1: "an Chéadaoin seo caite"
-        0: "an Chéadaoin seo chugainn"
+        0: "an Chéadaoin seo"
         1: "an Chéadaoin seo chugainn"
     :wed-narrow: 
       :relative: 
         -1: "an Chéad. seo caite"
-        0: "an Chéad. seo chugainn"
-        1: "an Chéad. seo chugainn"
+        0: "an Chéad. seo"
+        1: "an Chéad seo chug."
     :wed-short: 
       :relative: 
         -1: "an Chéad. seo caite"
-        0: "an Chéad. seo chugainn"
+        0: "an Chéad. seo"
         1: "an Chéad. seo chugainn"
     :week: 
       :display_name: Seachtain
@@ -411,6 +449,10 @@
           :two: "{0} sheachtain ó shin"
     :week-narrow: 
       :display_name: scht.
+      :relative: 
+        -1: "an tscht. seo caite"
+        0: "an tscht. seo"
+        1: "an tscht. seo chugainn"
       :relative_time: 
         :future: 
           :few: "+{0} scht."
@@ -426,6 +468,10 @@
           :two: "-{0} scht."
     :week-short: 
       :display_name: scht.
+      :relative: 
+        -1: "an tscht. seo caite"
+        0: "an tscht. seo"
+        1: "an tscht. seo chugainn"
       :relative_time: 
         :future: 
           :few: "i gceann {0} scht."
@@ -462,6 +508,10 @@
           :two: "{0} bhliain ó shin"
     :year-narrow: 
       :display_name: bl.
+      :relative: 
+        -1: anuraidh
+        0: "an bhl. seo"
+        1: "an bhl. seo chugainn"
       :relative_time: 
         :future: 
           :few: "+{0} bl."
@@ -477,6 +527,10 @@
           :two: "-{0} bhl."
     :year-short: 
       :display_name: bl.
+      :relative: 
+        -1: anuraidh
+        0: "an bhl. seo"
+        1: "an bhl. seo chugainn"
       :relative_time: 
         :future: 
           :few: "i gceann {0} bl."

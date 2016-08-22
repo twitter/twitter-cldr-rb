@@ -18,6 +18,12 @@
           :other: "{0} päivää sitten"
     :day-narrow: 
       :display_name: pv
+      :relative: 
+        -1: eilen
+        -2: toissap.
+        0: tänään
+        1: huom.
+        2: ylihuom.
       :relative_time: 
         :future: 
           :one: "{0} pv päästä"
@@ -27,6 +33,12 @@
           :other: "{0} pv sitten"
     :day-short: 
       :display_name: pv
+      :relative: 
+        -1: eilen
+        -2: toissap.
+        0: tänään
+        1: huom.
+        2: ylihuom.
       :relative_time: 
         :future: 
           :one: "{0} pv päästä"
@@ -137,6 +149,10 @@
           :other: "{0} kuukautta sitten"
     :month-narrow: 
       :display_name: kk
+      :relative: 
+        -1: "viime kk"
+        0: "tässä kk"
+        1: "ensi kk"
       :relative_time: 
         :future: 
           :one: "{0} kk päästä"
@@ -146,6 +162,10 @@
           :other: "{0} kk sitten"
     :month-short: 
       :display_name: kk
+      :relative: 
+        -1: "viime kk"
+        0: "tässä kk"
+        1: "ensi kk"
       :relative_time: 
         :future: 
           :one: "{0} kk päästä"
@@ -155,6 +175,10 @@
           :other: "{0} kk sitten"
     :quarter: 
       :display_name: neljännesvuosi
+      :relative: 
+        -1: "viime neljännesvuonna"
+        0: "tänä neljännesvuonna"
+        1: "ensi neljännesvuonna"
       :relative_time: 
         :future: 
           :one: "{0} neljännesvuoden päästä"
@@ -164,6 +188,10 @@
           :other: "{0} neljännesvuotta sitten"
     :quarter-narrow: 
       :display_name: nelj.
+      :relative: 
+        -1: "viime nelj."
+        0: "tänä nelj."
+        1: "ensi nelj."
       :relative_time: 
         :future: 
           :one: "{0} nelj. päästä"
@@ -173,6 +201,10 @@
           :other: "{0} nelj. sitten"
     :quarter-short: 
       :display_name: neljännes
+      :relative: 
+        -1: "viime neljänneksenä"
+        0: "tänä neljänneksenä"
+        1: "ensi neljänneksenä"
       :relative_time: 
         :future: 
           :one: "{0} neljänneksen päästä"
@@ -208,6 +240,8 @@
           :other: "{0} sekuntia sitten"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: nyt
       :relative_time: 
         :future: 
           :one: "{0} s päästä"
@@ -217,6 +251,8 @@
           :other: "{0} s sitten"
     :second-short: 
       :display_name: s
+      :relative: 
+        0: nyt
       :relative_time: 
         :future: 
           :one: "{0} s päästä"
@@ -299,6 +335,10 @@
           :other: "{0} viikkoa sitten"
     :week-narrow: 
       :display_name: vk
+      :relative: 
+        -1: "viime vk"
+        0: "tällä vk"
+        1: "ensi vk"
       :relative_time: 
         :future: 
           :one: "{0} vk päästä"
@@ -308,6 +348,10 @@
           :other: "{0} vk sitten"
     :week-short: 
       :display_name: vk
+      :relative: 
+        -1: "viime vk"
+        0: "tällä vk"
+        1: "ensi vk"
       :relative_time: 
         :future: 
           :one: "{0} vk päästä"
@@ -332,6 +376,10 @@
           :other: "{0} vuotta sitten"
     :year-narrow: 
       :display_name: v
+      :relative: 
+        -1: "viime v"
+        0: "tänä v"
+        1: "ensi v"
       :relative_time: 
         :future: 
           :one: "{0} v päästä"
@@ -341,12 +389,16 @@
           :other: "{0} v sitten"
     :year-short: 
       :display_name: v
+      :relative: 
+        -1: "viime v"
+        0: "tänä v"
+        1: "ensi v"
       :relative_time: 
         :future: 
-          :one: "{0} vuoden päästä"
-          :other: "{0} vuoden päästä"
+          :one: "{0} v päästä"
+          :other: "{0} v päästä"
         :past: 
-          :one: "{0} vuotta sitten"
-          :other: "{0} vuotta sitten"
+          :one: "{0} v sitten"
+          :other: "{0} v sitten"
     :zone: 
       :display_name: aikavyöhyke

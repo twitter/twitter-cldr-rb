@@ -2,7 +2,7 @@
 :nl: 
   :fields: 
     :day: 
-      :display_name: Dag
+      :display_name: dag
       :relative: 
         -1: gisteren
         -2: eergisteren
@@ -18,6 +18,12 @@
           :other: "{0} dagen geleden"
     :day-narrow: 
       :display_name: dag
+      :relative: 
+        -1: gisteren
+        -2: eergisteren
+        0: vandaag
+        1: morgen
+        2: overmorgen
       :relative_time: 
         :future: 
           :one: "over {0} dag"
@@ -27,6 +33,12 @@
           :other: "{0} dgn geleden"
     :day-short: 
       :display_name: dag
+      :relative: 
+        -1: gisteren
+        -2: eergisteren
+        0: vandaag
+        1: morgen
+        2: overmorgen
       :relative_time: 
         :future: 
           :one: "over {0} dag"
@@ -37,7 +49,7 @@
     :dayperiod: 
       :display_name: a.m./p.m.
     :era: 
-      :display_name: Tijdperk
+      :display_name: tijdperk
     :fri: 
       :relative: 
         -1: "afgelopen vrijdag"
@@ -81,7 +93,7 @@
           :one: "{0} uur geleden"
           :other: "{0} uur geleden"
     :minute: 
-      :display_name: Minuut
+      :display_name: minuut
       :relative_time: 
         :future: 
           :one: "over {0} minuut"
@@ -123,7 +135,7 @@
         0: "deze maan."
         1: "volgende week maan."
     :month: 
-      :display_name: Maand
+      :display_name: maand
       :relative: 
         -1: "vorige maand"
         0: "deze maand"
@@ -137,6 +149,10 @@
           :other: "{0} maanden geleden"
     :month-narrow: 
       :display_name: mnd
+      :relative: 
+        -1: "vorige maand"
+        0: "deze maand"
+        1: "volgende maand"
       :relative_time: 
         :future: 
           :one: "over {0} maand"
@@ -146,6 +162,10 @@
           :other: "{0} maanden geleden"
     :month-short: 
       :display_name: mnd
+      :relative: 
+        -1: "vorige maand"
+        0: "deze maand"
+        1: "volgende maand"
       :relative_time: 
         :future: 
           :one: "over {0} maand"
@@ -154,7 +174,11 @@
           :one: "{0} maand geleden"
           :other: "{0} maanden geleden"
     :quarter: 
-      :display_name: Kwartaal
+      :display_name: kwartaal
+      :relative: 
+        -1: "vorig kwartaal"
+        0: "dit kwartaal"
+        1: "volgend kwartaal"
       :relative_time: 
         :future: 
           :one: "over {0} kwartaal"
@@ -164,6 +188,10 @@
           :other: "{0} kwartalen geleden"
     :quarter-narrow: 
       :display_name: kwartaal
+      :relative: 
+        -1: "vorig kwartaal"
+        0: "dit kwartaal"
+        1: "volgend kwartaal"
       :relative_time: 
         :future: 
           :one: "over {0} kwartaal"
@@ -173,6 +201,10 @@
           :other: "{0} kwartalen geleden"
     :quarter-short: 
       :display_name: kwartaal
+      :relative: 
+        -1: "vorig kwartaal"
+        0: "dit kwartaal"
+        1: "volgend kwartaal"
       :relative_time: 
         :future: 
           :one: "over {0} kwartaal"
@@ -196,7 +228,7 @@
         0: "deze zater."
         1: "volgende week zater."
     :second: 
-      :display_name: Seconde
+      :display_name: seconde
       :relative: 
         0: nu
       :relative_time: 
@@ -208,6 +240,8 @@
           :other: "{0} seconden geleden"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: nu
       :relative_time: 
         :future: 
           :one: "over {0} sec."
@@ -217,6 +251,8 @@
           :other: "{0} sec. geleden"
     :second-short: 
       :display_name: sec.
+      :relative: 
+        0: nu
       :relative_time: 
         :future: 
           :one: "over {0} sec."
@@ -285,7 +321,7 @@
         0: "deze woens."
         1: "volgende week woens."
     :week: 
-      :display_name: Week
+      :display_name: week
       :relative: 
         -1: "vorige week"
         0: "deze week"
@@ -299,6 +335,10 @@
           :other: "{0} weken geleden"
     :week-narrow: 
       :display_name: wk
+      :relative: 
+        -1: "vorige week"
+        0: "deze week"
+        1: "volgende week"
       :relative_time: 
         :future: 
           :one: "over {0} week"
@@ -308,6 +348,10 @@
           :other: "{0} weken geleden"
     :week-short: 
       :display_name: wk
+      :relative: 
+        -1: "vorige week"
+        0: "deze week"
+        1: "volgende week"
       :relative_time: 
         :future: 
           :one: "over {0} week"
@@ -316,9 +360,9 @@
           :one: "{0} week geleden"
           :other: "{0} weken geleden"
     :weekday: 
-      :display_name: "Dag van de week"
+      :display_name: "dag van de week"
     :year: 
-      :display_name: Jaar
+      :display_name: jaar
       :relative: 
         -1: "vorig jaar"
         0: "dit jaar"
@@ -332,6 +376,10 @@
           :other: "{0} jaar geleden"
     :year-narrow: 
       :display_name: jr.
+      :relative: 
+        -1: "vorig jaar"
+        0: "dit jaar"
+        1: "volgend jaar"
       :relative_time: 
         :future: 
           :one: "over {0} jaar"
@@ -341,6 +389,10 @@
           :other: "{0} jaar geleden"
     :year-short: 
       :display_name: jr.
+      :relative: 
+        -1: "vorig jaar"
+        0: "dit jaar"
+        1: "volgend jaar"
       :relative_time: 
         :future: 
           :one: "over {0} jaar"
@@ -349,4 +401,4 @@
           :one: "{0} jaar geleden"
           :other: "{0} jaar geleden"
     :zone: 
-      :display_name: Zone
+      :display_name: tijdzone

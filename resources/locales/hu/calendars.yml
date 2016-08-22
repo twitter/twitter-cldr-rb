@@ -16,6 +16,8 @@
         :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "M. d., E"
         :MMM: LLL
@@ -27,6 +29,8 @@
         :h: "a h"
         :hm: "a h:mm"
         :hms: "a h:mm:ss"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :mmss: "mm:ss"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
@@ -257,16 +261,73 @@
             9: szeptember
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
+          :abbreviated: 
+            :afternoon1: délután
             :am: de.
+            :evening1: este
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: reggel
+            :night1: éjszaka
+            :night2: éjszaka
+            :noon: dél
+            :pm: du.
+          :narrow: 
+            :afternoon1: délután
+            :am: de.
+            :evening1: délután
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: reggel
+            :night1: éjszaka
+            :night2: éjszaka
             :noon: dél
             :pm: du.
           :wide: 
+            :afternoon1: délután
             :am: de.
+            :evening1: este
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: reggel
+            :night1: éjszaka
+            :night2: éjszaka
             :noon: dél
             :pm: du.
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: délután
+            :am: de.
+            :evening1: este
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: délelőtt
+            :night1: éjjel
+            :night2: hajnal
+            :noon: dél
+            :pm: du.
+          :narrow: 
+            :afternoon1: délután
+            :am: de.
+            :evening1: este
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: délelőtt
+            :night1: éjjel
+            :night2: hajnal
+            :noon: dél
+            :pm: du.
+          :wide: 
+            :afternoon1: délután
+            :am: de.
+            :evening1: este
+            :midnight: éjfél
+            :morning1: reggel
+            :morning2: délelőtt
+            :night1: éjjel
+            :night2: hajnal
+            :noon: dél
+            :pm: du.
       :quarters: 
         :format: 
           :abbreviated: 

@@ -6,6 +6,67 @@
         :number_system: latn
         :patterns: 
           :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 хиљ'.' ¤
+              :one: 0 хиљ'.' ¤
+              :other: 0 хиљ'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 хиљ'.' ¤
+              :one: 00 хиљ'.' ¤
+              :other: 00 хиљ'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 хиљ'.' ¤
+              :one: 000 хиљ'.' ¤
+              :other: 000 хиљ'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 мил'.' ¤
+              :one: 0 мил'.' ¤
+              :other: 0 мил'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 мил'.' ¤
+              :one: 00 мил'.' ¤
+              :other: 00 мил'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 мил'.' ¤
+              :one: 000 мил'.' ¤
+              :other: 000 мил'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 млрд'.' ¤
+              :one: 0 млрд'.' ¤
+              :other: 0 млрд'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 млрд'.' ¤
+              :one: 00 млрд'.' ¤
+              :other: 00 млрд'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 млрд'.' ¤
+              :one: 000 млрд'.' ¤
+              :other: 000 млрд'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 бил'.' ¤
+              :one: 0 бил'.' ¤
+              :other: 0 бил'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 бил'.' ¤
+              :one: 00 бил'.' ¤
+              :other: 00 бил'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 бил'.' ¤
+              :one: 000 бил'.' ¤
+              :other: 000 бил'.' ¤
         :unit: 
           :few: "{0} {1}"
           :one: "{0} {1}"
@@ -157,4 +218,4 @@
       :percent_sign: "%"
       :plus_sign: +
       :superscripting_exponent: ×
-      :time_separator: ":"
+      :time_separator: "."

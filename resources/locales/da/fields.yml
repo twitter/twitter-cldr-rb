@@ -2,7 +2,7 @@
 :da: 
   :fields: 
     :day: 
-      :display_name: Dag
+      :display_name: dag
       :relative: 
         -1: "i går"
         -2: "i forgårs"
@@ -18,6 +18,12 @@
           :other: "for {0} dage siden"
     :day-narrow: 
       :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i forgårs"
+        0: "i dag"
+        1: "i morgen"
+        2: "i overmorgen"
       :relative_time: 
         :future: 
           :one: "om {0} dag"
@@ -27,6 +33,12 @@
           :other: "for {0} dage siden"
     :day-short: 
       :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i forgårs"
+        0: "i dag"
+        1: "i morgen"
+        2: "i overmorgen"
       :relative_time: 
         :future: 
           :one: "om {0} dag"
@@ -37,7 +49,7 @@
     :dayperiod: 
       :display_name: AM/PM
     :era: 
-      :display_name: Æra
+      :display_name: æra
     :fri: 
       :relative: 
         -1: "sidste fredag"
@@ -54,7 +66,7 @@
         0: "denne fre."
         1: "næste fre."
     :hour: 
-      :display_name: Time
+      :display_name: time
       :relative_time: 
         :future: 
           :one: "om {0} time"
@@ -81,7 +93,7 @@
           :one: "for {0} time siden"
           :other: "for {0} timer siden"
     :minute: 
-      :display_name: Minut
+      :display_name: minut
       :relative_time: 
         :future: 
           :one: "om {0} minut"
@@ -123,7 +135,7 @@
         0: "denne man."
         1: "næste man."
     :month: 
-      :display_name: Måned
+      :display_name: måned
       :relative: 
         -1: "sidste måned"
         0: "denne måned"
@@ -137,6 +149,10 @@
           :other: "for {0} måneder siden"
     :month-narrow: 
       :display_name: md.
+      :relative: 
+        -1: "sidste md."
+        0: "denne md."
+        1: "næste md."
       :relative_time: 
         :future: 
           :one: "om {0} md."
@@ -146,6 +162,10 @@
           :other: "for {0} md. siden"
     :month-short: 
       :display_name: md.
+      :relative: 
+        -1: "sidste md."
+        0: "denne md."
+        1: "næste md."
       :relative_time: 
         :future: 
           :one: "om {0} md."
@@ -154,7 +174,11 @@
           :one: "for {0} md. siden"
           :other: "for {0} md. siden"
     :quarter: 
-      :display_name: Kvartal
+      :display_name: kvartal
+      :relative: 
+        -1: "sidste kvartal"
+        0: "dette kvartal"
+        1: "næste kvartal"
       :relative_time: 
         :future: 
           :one: "om {0} kvartal"
@@ -164,6 +188,10 @@
           :other: "for {0} kvartaler siden"
     :quarter-narrow: 
       :display_name: kvt.
+      :relative: 
+        -1: "sidste kvt."
+        0: "dette kvt."
+        1: "næste kvt."
       :relative_time: 
         :future: 
           :one: "om {0} kvt."
@@ -173,6 +201,10 @@
           :other: "for {0} kvt. siden"
     :quarter-short: 
       :display_name: kvt.
+      :relative: 
+        -1: "sidste kvt."
+        0: "dette kvt."
+        1: "næste kvt."
       :relative_time: 
         :future: 
           :one: "om {0} kvt."
@@ -196,7 +228,7 @@
         0: "denne lør."
         1: "næste lør."
     :second: 
-      :display_name: Sekund
+      :display_name: sekund
       :relative: 
         0: nu
       :relative_time: 
@@ -285,7 +317,7 @@
         0: "denne ons."
         1: "næste ons."
     :week: 
-      :display_name: Uge
+      :display_name: uge
       :relative: 
         -1: "sidste uge"
         0: "denne uge"
@@ -299,6 +331,10 @@
           :other: "for {0} uger siden"
     :week-narrow: 
       :display_name: uge
+      :relative: 
+        -1: "sidste uge"
+        0: "denne uge"
+        1: "næste uge"
       :relative_time: 
         :future: 
           :one: "om {0} uge"
@@ -308,6 +344,10 @@
           :other: "for {0} uger siden"
     :week-short: 
       :display_name: uge
+      :relative: 
+        -1: "sidste uge"
+        0: "denne uge"
+        1: "næste uge"
       :relative_time: 
         :future: 
           :one: "om {0} uge"
@@ -316,9 +356,9 @@
           :one: "for {0} uge siden"
           :other: "for {0} uger siden"
     :weekday: 
-      :display_name: Ugedag
+      :display_name: ugedag
     :year: 
-      :display_name: År
+      :display_name: år
       :relative: 
         -1: "sidste år"
         0: "i år"
@@ -332,6 +372,10 @@
           :other: "for {0} år siden"
     :year-narrow: 
       :display_name: år
+      :relative: 
+        -1: "sidste år"
+        0: "i år"
+        1: "næste år"
       :relative_time: 
         :future: 
           :one: "om {0} år"
@@ -341,6 +385,10 @@
           :other: "for {0} år siden"
     :year-short: 
       :display_name: år
+      :relative: 
+        -1: "sidste år"
+        0: "i år"
+        1: "næste år"
       :relative_time: 
         :future: 
           :one: "om {0} år"
@@ -349,4 +397,4 @@
           :one: "for {0} år siden"
           :other: "for {0} år siden"
     :zone: 
-      :display_name: Tidszone
+      :display_name: tidszone

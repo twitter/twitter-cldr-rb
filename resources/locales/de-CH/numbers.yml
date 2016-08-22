@@ -6,6 +6,55 @@
         :number_system: latn
         :patterns: 
           :default: "¤ #,##0.00;¤-#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 Tsd'.' ¤
+              :other: 0 Tsd'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 Tsd'.' ¤
+              :other: 00 Tsd'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 Tsd'.' ¤
+              :other: 000 Tsd'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 Mio'.' ¤
+              :other: 0 Mio'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 Mio'.' ¤
+              :other: 00 Mio'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 Mio'.' ¤
+              :other: 000 Mio'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 Mrd'.' ¤
+              :other: 0 Mrd'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 Mrd'.' ¤
+              :other: 00 Mrd'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 Mrd'.' ¤
+              :other: 000 Mrd'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 Bio'.' ¤
+              :other: 0 Bio'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 Bio'.' ¤
+              :other: 00 Bio'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 Bio'.' ¤
+              :other: 000 Bio'.' ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -77,28 +126,28 @@
               :other: 000 Tsd'.'
             ? !ruby/symbol "1000000"
             : 
-              :one: 0 Mio
-              :other: 0 Mio
+              :one: 0 Mio'.'
+              :other: 0 Mio'.'
             ? !ruby/symbol "10000000"
             : 
-              :one: 00 Mio
-              :other: 00 Mio
+              :one: 00 Mio'.'
+              :other: 00 Mio'.'
             ? !ruby/symbol "100000000"
             : 
-              :one: 000 Mio
-              :other: 000 Mio
+              :one: 000 Mio'.'
+              :other: 000 Mio'.'
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0 Mrd
-              :other: 0 Mrd
+              :one: 0 Mrd'.'
+              :other: 0 Mrd'.'
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00 Mrd
-              :other: 00 Mrd
+              :one: 00 Mrd'.'
+              :other: 00 Mrd'.'
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000 Mrd
-              :other: 000 Mrd
+              :one: 000 Mrd'.'
+              :other: 000 Mrd'.'
             ? !ruby/symbol "1000000000000"
             : 
               :one: 0 Bio'.'
@@ -114,7 +163,7 @@
       :percent: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0 %"
+          :default: "#,##0%"
       :scientific: 
         :number_system: latn
         :patterns: 

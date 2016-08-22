@@ -2,7 +2,7 @@
 :uk: 
   :fields: 
     :day: 
-      :display_name: День
+      :display_name: день
       :relative: 
         -1: учора
         -2: позавчора
@@ -22,6 +22,12 @@
           :other: "{0} дня тому"
     :day-narrow: 
       :display_name: д.
+      :relative: 
+        -1: учора
+        -2: позавчора
+        0: сьогодні
+        1: завтра
+        2: післязавтра
       :relative_time: 
         :future: 
           :few: "+{0} дн."
@@ -35,6 +41,12 @@
           :other: "-{0} дн."
     :day-short: 
       :display_name: д.
+      :relative: 
+        -1: учора
+        -2: позавчора
+        0: сьогодні
+        1: завтра
+        2: післязавтра
       :relative_time: 
         :future: 
           :few: "через {0} дн."
@@ -47,9 +59,9 @@
           :one: "{0} д. тому"
           :other: "{0} дн. тому"
     :dayperiod: 
-      :display_name: "Частина доби"
+      :display_name: "частина доби"
     :era: 
-      :display_name: Ера
+      :display_name: ера
     :fri: 
       :relative: 
         -1: "минулої п’ятниці"
@@ -66,7 +78,7 @@
         0: "цієї пт"
         1: "наступної пт"
     :hour: 
-      :display_name: Година
+      :display_name: година
       :relative_time: 
         :future: 
           :few: "через {0} години"
@@ -105,7 +117,7 @@
           :one: "{0} год тому"
           :other: "{0} год тому"
     :minute: 
-      :display_name: Хвилина
+      :display_name: хвилина
       :relative_time: 
         :future: 
           :few: "через {0} хвилини"
@@ -159,7 +171,7 @@
         0: "цього пн"
         1: "наступного пн"
     :month: 
-      :display_name: Місяць
+      :display_name: місяць
       :relative: 
         -1: "минулого місяця"
         0: "цього місяця"
@@ -202,7 +214,11 @@
           :one: "{0} міс. тому"
           :other: "{0} міс. тому"
     :quarter: 
-      :display_name: Квартал
+      :display_name: квартал
+      :relative: 
+        -1: "минулого кварталу"
+        0: "цього кварталу"
+        1: "наступного кварталу"
       :relative_time: 
         :future: 
           :few: "через {0} квартали"
@@ -216,6 +232,10 @@
           :other: "{0} кварталу тому"
     :quarter-narrow: 
       :display_name: кв.
+      :relative: 
+        -1: "минулого кв."
+        0: "цього кв."
+        1: "наступного кв."
       :relative_time: 
         :future: 
           :few: "+{0} кв."
@@ -229,6 +249,10 @@
           :other: "-{0} кв."
     :quarter-short: 
       :display_name: кв.
+      :relative: 
+        -1: "минулого кв."
+        0: "цього кв."
+        1: "наступного кв."
       :relative_time: 
         :future: 
           :few: "через {0} кв."
@@ -256,7 +280,7 @@
         0: "цієї сб"
         1: "наступної сб"
     :second: 
-      :display_name: Секунда
+      :display_name: секунда
       :relative: 
         0: зараз
       :relative_time: 
@@ -357,7 +381,7 @@
         0: "цієї ср"
         1: "наступної ср"
     :week: 
-      :display_name: Тиждень
+      :display_name: тиждень
       :relative: 
         -1: "минулого тижня"
         0: "цього тижня"
@@ -400,9 +424,9 @@
           :one: "{0} тиж. тому"
           :other: "{0} тиж. тому"
     :weekday: 
-      :display_name: "День тижня"
+      :display_name: "день тижня"
     :year: 
-      :display_name: Рік
+      :display_name: рік
       :relative: 
         -1: торік
         0: "цього року"
@@ -420,6 +444,10 @@
           :other: "{0} року тому"
     :year-narrow: 
       :display_name: р.
+      :relative: 
+        -1: торік
+        0: "цього року"
+        1: "наступного року"
       :relative_time: 
         :future: 
           :few: "+{0} р."
@@ -433,6 +461,10 @@
           :other: "-{0} р."
     :year-short: 
       :display_name: р.
+      :relative: 
+        -1: торік
+        0: "цього року"
+        1: "наступного року"
       :relative_time: 
         :future: 
           :few: "через {0} р."
@@ -445,4 +477,4 @@
           :one: "{0} р. тому"
           :other: "{0} р. тому"
     :zone: 
-      :display_name: "Часовий пояс"
+      :display_name: "часовий пояс"

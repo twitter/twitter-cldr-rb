@@ -4,11 +4,11 @@
     :gregorian: 
       :additional_formats: 
         :E: E
-        :EHm: "E, HH:mm"
-        :EHms: "E, HH:mm:ss"
+        :EHm: "E, HH.mm"
+        :EHms: "E, HH.mm.ss"
         :Ed: "E d."
-        :Ehm: "E, h:mm a"
-        :Ehms: "E, h:mm:ss a"
+        :Ehm: "E, h.mm a"
+        :Ehms: "E, h.mm.ss a"
         :Gy: "y. G"
         :GyMMM: "MMM y. G"
         :GyMMMEd: "E, d. MMM y. G"
@@ -16,20 +16,24 @@
         :H: HH
         :Hm: HH.mm
         :Hms: HH.mm.ss
+        :Hmsv: "HH.mm.ss v"
+        :Hmv: "HH.mm v"
         :M: L
-        :MEd: "E, M-d"
+        :MEd: "E, d.M."
         :MMM: LLL
         :MMMEd: "E d. MMM"
-        :MMMMEd: "E d. MMMM"
+        :MMMMEd: "E, d. MMMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :MMMdd: dd.MMM
         :MMdd: MM-dd
         :Md: d/M
         :d: d
-        :h: "hh a"
+        :h: "h a"
         :hm: "hh.mm a"
         :hms: "hh.mm.ss a"
+        :hmsv: "h.mm.ss a v"
+        :hmv: "h.mm a v"
         :ms: mm.ss
         ? !ruby/symbol "y"
         : y.
@@ -137,8 +141,8 @@
         :month-narrow: м.
         :month-short: мес.
         :quarter: квартал
-        :quarter-narrow: квартал
-        :quarter-short: квартал
+        :quarter-narrow: кв.
+        :quarter-short: кв.
         :second: секунд
         :second-narrow: с.
         :second-short: сек.
@@ -261,16 +265,61 @@
             9: септембар
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: "по под."
+            :am: "пре подне"
+            :evening1: вече
+            :midnight: поноћ
+            :morning1: јутро
+            :night1: ноћ
+            :noon: подне
+            :pm: "по подне"
           :narrow: 
+            :afternoon1: "по подне"
             :am: a
-            :noon: "n"
+            :evening1: увече
+            :midnight: "у поноћ"
+            :morning1: ујутру
+            :night1: ноћу
+            :noon: "у подне"
             :pm: p
           :wide: 
+            :afternoon1: поподне
             :am: "пре подне"
-            :noon: "у подне"
+            :evening1: вече
+            :midnight: поноћ
+            :morning1: јутро
+            :night1: ноћ
+            :noon: подне
             :pm: "по подне"
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: поподне
+            :am: "пре подне"
+            :evening1: вече
+            :midnight: поноћ
+            :morning1: јутро
+            :night1: ноћ
+            :noon: подне
+            :pm: "по подне"
+          :narrow: 
+            :afternoon1: поподне
+            :am: "пре подне"
+            :evening1: вече
+            :midnight: поноћ
+            :morning1: јутро
+            :night1: ноћ
+            :noon: подне
+            :pm: "по подне"
+          :wide: 
+            :afternoon1: поподне
+            :am: "пре подне"
+            :evening1: вече
+            :midnight: поноћ
+            :morning1: јутро
+            :night1: ноћ
+            :noon: подне
+            :pm: "по подне"
       :quarters: 
         :format: 
           :abbreviated: 
@@ -284,10 +333,10 @@
             3: "3."
             4: "4."
           :wide: 
-            1: "Прво тромесечје"
-            2: "Друго тромесечје"
-            3: "Треће тромесечје"
-            4: "Четврто тромесечје"
+            1: "први квартал"
+            2: "други квартал"
+            3: "трећи квартал"
+            4: "четврти квартал"
         :stand-alone: 
           :abbreviated: 
             1: К1
@@ -300,7 +349,7 @@
             3: "3."
             4: "4."
           :wide: 
-            1: "Прво тромесечје"
-            2: "Друго тромесечје"
-            3: "Треће тромесечје"
-            4: "Четврто тромесечје"
+            1: "први квартал"
+            2: "други квартал"
+            3: "трећи квартал"
+            4: "четврти квартал"

@@ -45,9 +45,9 @@
         1: "vendredi prochain"
     :fri-narrow: 
       :relative: 
-        -1: "ven dernier"
+        -1: "ven dern"
         0: "ce ven"
-        1: "ven prochain"
+        1: "ven proch"
     :fri-short: 
       :relative: 
         -1: "ven. dernier"
@@ -66,11 +66,11 @@
       :display_name: h
       :relative_time: 
         :future: 
-          :one: "+{0} h"
-          :other: "+{0} h"
+          :one: "+{0}h"
+          :other: "+{0}h"
         :past: 
-          :one: "-{0} h"
-          :other: "-{0} h"
+          :one: "−{0}h"
+          :other: "−{0}h"
     :hour-short: 
       :display_name: h
       :relative_time: 
@@ -114,9 +114,9 @@
         1: "lundi prochain"
     :mon-narrow: 
       :relative: 
-        -1: "lun dernier"
+        -1: "lun dern"
         0: "ce lun"
-        1: "lun prochain"
+        1: "lun proch"
     :mon-short: 
       :relative: 
         -1: "lun. dernier"
@@ -136,7 +136,7 @@
           :one: "il y a {0} mois"
           :other: "il y a {0} mois"
     :month-narrow: 
-      :display_name: m
+      :display_name: m.
       :relative_time: 
         :future: 
           :one: "+{0} m."
@@ -155,6 +155,10 @@
           :other: "il y a {0} m."
     :quarter: 
       :display_name: trimestre
+      :relative: 
+        -1: "le trimestre dernier"
+        0: "ce trimestre-ci"
+        1: "le trimestre prochain"
       :relative_time: 
         :future: 
           :one: "dans {0} trimestre"
@@ -164,6 +168,10 @@
           :other: "il y a {0} trimestres"
     :quarter-narrow: 
       :display_name: trim.
+      :relative: 
+        -1: "tr dern"
+        0: "ce tr"
+        1: "tr proch"
       :relative_time: 
         :future: 
           :one: "+{0} trim."
@@ -173,6 +181,10 @@
           :other: "-{0} trim."
     :quarter-short: 
       :display_name: trim.
+      :relative: 
+        -1: "le trim. dern."
+        0: "ce trim."
+        1: "le trim. proch."
       :relative_time: 
         :future: 
           :one: "dans {0} trim."
@@ -187,9 +199,9 @@
         1: "samedi prochain"
     :sat-narrow: 
       :relative: 
-        -1: "sam dernier"
+        -1: "sam dern"
         0: "ce sam"
-        1: "sam prochain"
+        1: "sam proch"
     :sat-short: 
       :relative: 
         -1: "sam. dernier"
@@ -231,9 +243,9 @@
         1: "dimanche prochain"
     :sun-narrow: 
       :relative: 
-        -1: "dim dernier"
+        -1: "dim dern"
         0: "ce dim"
-        1: "dim prochain"
+        1: "dim proch"
     :sun-short: 
       :relative: 
         -1: "dim. dernier"
@@ -246,9 +258,9 @@
         1: "jeudi prochain"
     :thu-narrow: 
       :relative: 
-        -1: "jeu dernier"
+        -1: "jeu dern"
         0: "ce jeu"
-        1: "jeu prochain"
+        1: "jeu proch"
     :thu-short: 
       :relative: 
         -1: "jeu. dernier"
@@ -261,9 +273,9 @@
         1: "mardi prochain"
     :tue-narrow: 
       :relative: 
-        -1: "mar dernier"
+        -1: "mar dern"
         0: "ce mar"
-        1: "mar prochain"
+        1: "mar proch"
     :tue-short: 
       :relative: 
         -1: "mar. dernier"
@@ -276,9 +288,9 @@
         1: "mercredi prochain"
     :wed-narrow: 
       :relative: 
-        -1: "mer dernier"
+        -1: "mer dern"
         0: "ce mer"
-        1: "mer prochain"
+        1: "mer proch"
     :wed-short: 
       :relative: 
         -1: "mer. dernier"
@@ -340,7 +352,7 @@
           :one: "-{0} a"
           :other: "-{0} a"
     :year-short: 
-      :display_name: a
+      :display_name: ann.
       :relative_time: 
         :future: 
           :one: "dans {0} a"

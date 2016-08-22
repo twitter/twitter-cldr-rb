@@ -18,6 +18,12 @@
           :other: "{0} দিন পূর্বে"
     :day-narrow: 
       :display_name: দিন
+      :relative: 
+        -1: গতকাল
+        -2: "গত পরশু"
+        0: আজ
+        1: আগামীকাল
+        2: "আগামী পরশু"
       :relative_time: 
         :future: 
           :one: "{0} দিনের মধ্যে"
@@ -27,6 +33,12 @@
           :other: "{0} দিন পূর্বে"
     :day-short: 
       :display_name: দিন
+      :relative: 
+        -1: গতকাল
+        -2: "গত পরশু"
+        0: আজ
+        1: আগামীকাল
+        2: "আগামী পরশু"
       :relative_time: 
         :future: 
           :one: "{0} দিনের মধ্যে"
@@ -35,7 +47,7 @@
           :one: "{0} দিন পূর্বে"
           :other: "{0} দিন পূর্বে"
     :dayperiod: 
-      :display_name: পূর্বাহ্ণ/অপরাহ্ণ
+      :display_name: AM/PM
     :era: 
       :display_name: যুগ
     :fri: 
@@ -137,6 +149,10 @@
           :other: "{0} মাস পূর্বে"
     :month-narrow: 
       :display_name: মাস
+      :relative: 
+        -1: "গত মাস"
+        0: "এই মাস"
+        1: "পরের মাস"
       :relative_time: 
         :future: 
           :one: "{0} মাসে"
@@ -146,6 +162,10 @@
           :other: "{0} মাস পূর্বে"
     :month-short: 
       :display_name: মাস
+      :relative: 
+        -1: "গত মাস"
+        0: "এই মাস"
+        1: "পরের মাস"
       :relative_time: 
         :future: 
           :one: "{0} মাসে"
@@ -299,6 +319,10 @@
           :other: "{0} সপ্তাহ পূর্বে"
     :week-narrow: 
       :display_name: সপ্তাহ
+      :relative: 
+        -1: "গত সপ্তাহ"
+        0: "এই সপ্তাহ"
+        1: "পরের সপ্তাহ"
       :relative_time: 
         :future: 
           :one: "{0} সপ্তাহে"
@@ -308,6 +332,10 @@
           :other: "{0} সপ্তাহ পূর্বে"
     :week-short: 
       :display_name: সপ্তাহ
+      :relative: 
+        -1: "গত সপ্তাহ"
+        0: "এই সপ্তাহ"
+        1: "পরের সপ্তাহ"
       :relative_time: 
         :future: 
           :one: "{0} সপ্তাহে"
@@ -332,6 +360,10 @@
           :other: "{0} বছর পূর্বে"
     :year-narrow: 
       :display_name: বছর
+      :relative: 
+        -1: "গত বছর"
+        0: "এই বছর"
+        1: "পরের বছর"
       :relative_time: 
         :future: 
           :one: "{0} বছরে"
@@ -341,6 +373,10 @@
           :other: "{0} বছর পূর্বে"
     :year-short: 
       :display_name: বছর
+      :relative: 
+        -1: "গত বছর"
+        0: "এই বছর"
+        1: "পরের বছর"
       :relative_time: 
         :future: 
           :one: "{0} বছরে"

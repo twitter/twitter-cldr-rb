@@ -179,6 +179,10 @@
           :other: "acum {0} luni"
     :quarter: 
       :display_name: Trimestru
+      :relative: 
+        -1: "trimestrul trecut"
+        0: "trimestrul acesta"
+        1: "trimestrul viitor"
       :relative_time: 
         :future: 
           :few: "peste {0} trimestre"
@@ -190,17 +194,25 @@
           :other: "acum {0} de trimestre"
     :quarter-narrow: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. trecut"
+        0: "trim. acesta"
+        1: "trim. viitor"
       :relative_time: 
         :future: 
           :few: "+{0} trim."
           :one: "+{0} trim."
           :other: "+{0} trim."
         :past: 
-          :few: "+{0} trim."
-          :one: "+{0} trim."
-          :other: "+{0} trim."
+          :few: "-{0} trim."
+          :one: "-{0} trim."
+          :other: "-{0} trim."
     :quarter-short: 
       :display_name: trim.
+      :relative: 
+        -1: "trim. trecut"
+        0: "trim. acesta"
+        1: "trim. viitor"
       :relative_time: 
         :future: 
           :few: "peste {0} trim."

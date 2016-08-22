@@ -18,6 +18,12 @@
           :other: "{0} gün önce"
     :day-narrow: 
       :display_name: gün
+      :relative: 
+        -1: dün
+        -2: "evvelsi gün"
+        0: bugün
+        1: yarın
+        2: "öbür gün"
       :relative_time: 
         :future: 
           :one: "{0} gün sonra"
@@ -27,6 +33,12 @@
           :other: "{0} gün önce"
     :day-short: 
       :display_name: gün
+      :relative: 
+        -1: dün
+        -2: "evvelsi gün"
+        0: bugün
+        1: yarın
+        2: "öbür gün"
       :relative_time: 
         :future: 
           :one: "{0} gün sonra"
@@ -137,6 +149,10 @@
           :other: "{0} ay önce"
     :month-narrow: 
       :display_name: ay
+      :relative: 
+        -1: "geçen ay"
+        0: "bu ay"
+        1: "gelecek ay"
       :relative_time: 
         :future: 
           :one: "{0} ay sonra"
@@ -146,6 +162,10 @@
           :other: "{0} ay önce"
     :month-short: 
       :display_name: ay
+      :relative: 
+        -1: "geçen ay"
+        0: "bu ay"
+        1: "gelecek ay"
       :relative_time: 
         :future: 
           :one: "{0} ay sonra"
@@ -332,6 +352,10 @@
           :other: "{0} yıl önce"
     :year-narrow: 
       :display_name: yıl
+      :relative: 
+        -1: "geçen yıl"
+        0: "bu yıl"
+        1: "gelecek yıl"
       :relative_time: 
         :future: 
           :one: "{0} yıl sonra"
@@ -341,6 +365,10 @@
           :other: "{0} yıl önce"
     :year-short: 
       :display_name: yıl
+      :relative: 
+        -1: "geçen yıl"
+        0: "bu yıl"
+        1: "gelecek yıl"
       :relative_time: 
         :future: 
           :one: "{0} yıl sonra"

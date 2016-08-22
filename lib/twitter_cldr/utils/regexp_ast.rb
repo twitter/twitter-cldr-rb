@@ -106,6 +106,7 @@ module TwitterCldr
       class Digit < Node; end
       class Sequence < Node; end
       class Alternation < Node; end
+      class Alternative < Node; end
       class Capture < Node; end
       class Passive < Node; end
       class Root < Node; end

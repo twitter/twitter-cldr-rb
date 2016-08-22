@@ -7,8 +7,8 @@
         :EHm: "EHH:mm"
         :EHms: "EHH:mm:ss"
         :Ed: d日E
-        :Ehm: "Eah:mm"
-        :Ehms: "Eah:mm:ss"
+        :Ehm: "E ah:mm"
+        :Ehms: "E ah:mm:ss"
         :Gy: Gy年
         :GyMMM: Gy年M月
         :GyMMMEd: Gy年M月d日E
@@ -16,11 +16,13 @@
         :H: H时
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
+        :Hmsv: "v HH:mm:ss"
+        :Hmv: "v HH:mm"
         :M: M月
         :MEd: M/dE
         :MMM: LLL
         :MMMEd: M月d日E
-        :MMMMdd: M月dd日
+        :MMMMd: M月d日
         :MMMd: M月d日
         :MMdd: MM/dd
         :Md: M/d
@@ -28,6 +30,8 @@
         :h: ah时
         :hm: "ah:mm"
         :hms: "ah:mm:ss"
+        :hmsv: "v ah:mm:ss"
+        :hmv: "v ah:mm"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : y年
@@ -110,11 +114,11 @@
             :wed: 星期三
       :eras: 
         :abbr: 
-          0: 公元前
-          1: 公元
+          0: 西元前
+          1: 西元
         :name: 
-          0: 公元前
-          1: 公元
+          0: 西元前
+          1: 西元
         :narrow: 
           0: 公元前
           1: 公元
@@ -156,7 +160,7 @@
           :medium: 
             :pattern: y年M月d日
           :short: 
-            :pattern: yy/M/d
+            :pattern: y/M/d
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -168,9 +172,9 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "zzzzah:mm:ss"
+            :pattern: "zzzz ah:mm:ss"
           :long: 
-            :pattern: "zah:mm:ss"
+            :pattern: "z ah:mm:ss"
           :medium: 
             :pattern: "ah:mm:ss"
           :short: 
@@ -258,28 +262,67 @@
             9: 九月
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
+          :abbreviated: 
+            :afternoon1: 下午
+            :afternoon2: 下午
+            :am: 上午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 清晨
+            :morning2: 上午
+            :night1: 凌晨
+            :pm: 下午
           :narrow: 
-            :afternoon: 下午
+            :afternoon1: 中午
+            :afternoon2: 下午
             :am: 上午
-            :earlyMorning: 清晨
-            :midDay: 中午
-            :morning: 上午
-            :night: 晚上
-            :noon: 中午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 清晨
+            :morning2: 上午
+            :night1: 凌晨
             :pm: 下午
-            :weeHours: 凌晨
           :wide: 
-            :afternoon: 下午
+            :afternoon1: 下午
+            :afternoon2: 下午
             :am: 上午
-            :earlyMorning: 清晨
-            :midDay: 中午
-            :morning: 上午
-            :night: 晚上
-            :noon: 中午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 清晨
+            :morning2: 上午
+            :night1: 凌晨
             :pm: 下午
-            :weeHours: 凌晨
-        :stand-alone: {}
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: 中午
+            :afternoon2: 下午
+            :am: 上午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 早上
+            :morning2: 上午
+            :night1: 凌晨
+            :pm: 下午
+          :narrow: 
+            :afternoon1: 中午
+            :afternoon2: 下午
+            :am: 上午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 早上
+            :morning2: 上午
+            :night1: 凌晨
+            :pm: 下午
+          :wide: 
+            :afternoon1: 中午
+            :afternoon2: 下午
+            :am: 上午
+            :evening1: 晚上
+            :midnight: 午夜
+            :morning1: 早上
+            :morning2: 上午
+            :night1: 凌晨
+            :pm: 下午
       :quarters: 
         :format: 
           :abbreviated: 

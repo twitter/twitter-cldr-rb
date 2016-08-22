@@ -2,22 +2,28 @@
 :es-419: 
   :fields: 
     :day: 
-      :display_name: Día
+      :display_name: día
       :relative: 
         -1: ayer
-        -2: "antes de ayer"
+        -2: anteayer
         0: hoy
         1: mañana
         2: "pasado mañana"
       :relative_time: 
         :future: 
-          :one: "En {0} día"
-          :other: "En {0} días"
+          :one: "dentro de {0} día"
+          :other: "dentro de {0} días"
         :past: 
           :one: "hace {0} día"
           :other: "hace {0} días"
     :day-narrow: 
-      :display_name: D.
+      :display_name: d
+      :relative: 
+        -1: ayer
+        -2: anteayer
+        0: hoy
+        1: mañana
+        2: "pasado mañana"
       :relative_time: 
         :future: 
           :one: "dentro de {0} día"
@@ -26,7 +32,13 @@
           :one: "hace {0} día"
           :other: "hace {0} días"
     :day-short: 
-      :display_name: D.
+      :display_name: d
+      :relative: 
+        -1: ayer
+        -2: anteayer
+        0: hoy
+        1: mañana
+        2: "pasado mañana"
       :relative_time: 
         :future: 
           :one: "dentro de {0} día"
@@ -35,9 +47,9 @@
           :one: "hace {0} día"
           :other: "hace {0} días"
     :dayperiod: 
-      :display_name: "A. M./P. M."
+      :display_name: a.m./p.m.
     :era: 
-      :display_name: Era
+      :display_name: era
     :fri: 
       :relative: 
         -1: "el viernes pasado"
@@ -45,20 +57,20 @@
         1: "el próximo viernes"
     :fri-narrow: 
       :relative: 
-        -1: "el v pasado"
-        0: "este v"
-        1: "el próximo v"
+        -1: "el VI pasado"
+        0: "este VI"
+        1: "el próximo VI"
     :fri-short: 
       :relative: 
         -1: "el vie. pasado"
         0: "este vie."
         1: "el próximo vie."
     :hour: 
-      :display_name: Hora
+      :display_name: hora
       :relative_time: 
         :future: 
-          :one: "En {0} hora"
-          :other: "En {0} horas"
+          :one: "dentro de {0} hora"
+          :other: "dentro de {0} horas"
         :past: 
           :one: "hace {0} hora"
           :other: "hace {0} horas"
@@ -66,26 +78,26 @@
       :display_name: h
       :relative_time: 
         :future: 
-          :one: "dentro de {0} h."
-          :other: "dentro de {0} hh."
+          :one: "dentro de {0} h"
+          :other: "dentro de {0} h"
         :past: 
-          :one: "hace {0} h."
-          :other: "hace {0} hh."
+          :one: "hace {0} h"
+          :other: "hace {0} h"
     :hour-short: 
       :display_name: h
       :relative_time: 
         :future: 
-          :one: "dentro de {0} h."
-          :other: "dentro de {0} hh."
+          :one: "dentro de {0} h"
+          :other: "dentro de {0} h"
         :past: 
-          :one: "hace {0} h."
-          :other: "hace {0} hh."
+          :one: "hace {0} h"
+          :other: "hace {0} h"
     :minute: 
-      :display_name: Minuto
+      :display_name: minuto
       :relative_time: 
         :future: 
-          :one: "En {0} minuto"
-          :other: "En {0} minutos"
+          :one: "dentro de {0} minuto"
+          :other: "dentro de {0} minutos"
         :past: 
           :one: "hace {0} minuto"
           :other: "hace {0} minutos"
@@ -114,47 +126,55 @@
         1: "el próximo lunes"
     :mon-narrow: 
       :relative: 
-        -1: "el l pasado"
-        0: "este l"
-        1: "el próximo l"
+        -1: "el LU pasado"
+        0: "este LU"
+        1: "el próximo LU"
     :mon-short: 
       :relative: 
         -1: "el lun. pasado"
         0: "este lun."
         1: "el próximo lun."
     :month: 
-      :display_name: Mes
+      :display_name: mes
       :relative: 
-        -1: "El mes pasado"
-        0: "Este mes"
-        1: "Mes próximo"
+        -1: "el mes pasado"
+        0: "este mes"
+        1: "el próximo mes"
       :relative_time: 
         :future: 
-          :one: "En {0} mes"
-          :other: "En {0} meses"
+          :one: "dentro de {0} mes"
+          :other: "dentro de {0} meses"
         :past: 
           :one: "hace {0} mes"
           :other: "hace {0} meses"
     :month-narrow: 
-      :display_name: m.
+      :display_name: m
+      :relative: 
+        -1: "el mes pasado"
+        0: "este mes"
+        1: "el próximo mes"
       :relative_time: 
         :future: 
-          :one: "dentro de {0} m."
-          :other: "dentro de {0} mm."
+          :one: "dentro de {0} m"
+          :other: "dentro de {0} m"
         :past: 
-          :one: "hace {0} m."
-          :other: "hace {0} mm."
+          :one: "hace {0} m"
+          :other: "hace {0} m"
     :month-short: 
-      :display_name: m.
+      :display_name: m
+      :relative: 
+        -1: "el mes pasado"
+        0: "este mes"
+        1: "el próximo mes"
       :relative_time: 
         :future: 
-          :one: "dentro de {0} m."
-          :other: "dentro de {0} mm."
+          :one: "dentro de {0} m"
+          :other: "dentro de {0} m"
         :past: 
-          :one: "hace {0} m."
-          :other: "hace {0} mm."
+          :one: "hace {0} m"
+          :other: "hace {0} m"
     :quarter: 
-      :display_name: Trimestre
+      :display_name: trimestre
       :relative_time: 
         :future: 
           :one: "dentro de {0} trimestre"
@@ -167,19 +187,19 @@
       :relative_time: 
         :future: 
           :one: "dentro de {0} trim."
-          :other: "dentro de {0} trims."
+          :other: "dentro de {0} trim."
         :past: 
           :one: "hace {0} trim."
-          :other: "hace {0} trims."
+          :other: "hace {0} trim."
     :quarter-short: 
       :display_name: trim.
       :relative_time: 
         :future: 
           :one: "dentro de {0} trim."
-          :other: "dentro de {0} trims."
+          :other: "dentro de {0} trim."
         :past: 
           :one: "hace {0} trim."
-          :other: "hace {0} trims."
+          :other: "hace {0} trim."
     :sat: 
       :relative: 
         -1: "el sábado pasado"
@@ -187,22 +207,22 @@
         1: "el próximo sábado"
     :sat-narrow: 
       :relative: 
-        -1: "el s pasado"
-        0: "este s"
-        1: "el próximo s"
+        -1: "el SA pasado"
+        0: "este SA"
+        1: "el próximo SA"
     :sat-short: 
       :relative: 
         -1: "el sáb. pasado"
         0: "este sáb."
         1: "el próximo sáb."
     :second: 
-      :display_name: Segundo
+      :display_name: segundo
       :relative: 
         0: ahora
       :relative_time: 
         :future: 
-          :one: "En {0} segundo"
-          :other: "En {0} segundos"
+          :one: "dentro de {0} segundo"
+          :other: "dentro de {0} segundos"
         :past: 
           :one: "hace {0} segundo"
           :other: "hace {0} segundos"
@@ -231,9 +251,9 @@
         1: "el próximo domingo"
     :sun-narrow: 
       :relative: 
-        -1: "el d pasado"
-        0: "este d"
-        1: "el próximo d"
+        -1: "el DO pasado"
+        0: "este DO"
+        1: "el próximo DO"
     :sun-short: 
       :relative: 
         -1: "el dom. pasado"
@@ -246,9 +266,9 @@
         1: "el próximo jueves"
     :thu-narrow: 
       :relative: 
-        -1: "el j pasado"
-        0: "este j"
-        1: "el próximo j"
+        -1: "el JU pasado"
+        0: "este JU"
+        1: "el próximo JU"
     :thu-short: 
       :relative: 
         -1: "el jue. pasado"
@@ -261,9 +281,9 @@
         1: "el próximo martes"
     :tue-narrow: 
       :relative: 
-        -1: "el m pasado"
-        0: "este m"
-        1: "el próximo m"
+        -1: "el MA pasado"
+        0: "este MA"
+        1: "el próximo MA"
     :tue-short: 
       :relative: 
         -1: "el mar. pasado"
@@ -276,24 +296,24 @@
         1: "el próximo miércoles"
     :wed-narrow: 
       :relative: 
-        -1: "el m pasado"
-        0: "este m"
-        1: "el próximo m"
+        -1: "el MI pasado"
+        0: "este MI"
+        1: "el próximo MI"
     :wed-short: 
       :relative: 
         -1: "el mié. pasado"
         0: "este mié."
         1: "el próximo mié."
     :week: 
-      :display_name: Semana
+      :display_name: semana
       :relative: 
-        -1: "Semana pasada"
-        0: "Esta semana"
-        1: "Próxima semana"
+        -1: "la semana pasada"
+        0: "esta semana"
+        1: "la próxima semana"
       :relative_time: 
         :future: 
-          :one: "En {0} semana"
-          :other: "En {0} semanas"
+          :one: "dentro de {0} semana"
+          :other: "dentro de {0} semanas"
         :past: 
           :one: "hace {0} semana"
           :other: "hace {0} semanas"
@@ -302,51 +322,59 @@
       :relative_time: 
         :future: 
           :one: "dentro de {0} sem."
-          :other: "dentro de {0} sems."
+          :other: "dentro de {0} sem."
         :past: 
           :one: "hace {0} sem."
-          :other: "hace {0} sems."
+          :other: "hace {0} sem."
     :week-short: 
       :display_name: sem.
       :relative_time: 
         :future: 
           :one: "dentro de {0} sem."
-          :other: "dentro de {0} sems."
+          :other: "dentro de {0} sem."
         :past: 
           :one: "hace {0} sem."
-          :other: "dentro de {0} sems."
+          :other: "hace {0} sem."
     :weekday: 
-      :display_name: "Día de la semana"
+      :display_name: "día de la semana"
     :year: 
-      :display_name: Año
+      :display_name: año
       :relative: 
-        -1: "Año pasado"
-        0: "Este año"
-        1: "Año próximo"
+        -1: "el año pasado"
+        0: "este año"
+        1: "el próximo año"
       :relative_time: 
         :future: 
-          :one: "En {0} año"
-          :other: "En {0} años"
+          :one: "dentro de {0} año"
+          :other: "dentro de {0} años"
         :past: 
           :one: "hace {0} año"
           :other: "hace {0} años"
     :year-narrow: 
-      :display_name: a.
+      :display_name: a
+      :relative: 
+        -1: "el año pasado"
+        0: "este año"
+        1: "el próximo año"
       :relative_time: 
         :future: 
-          :one: "dentro de {0} a."
-          :other: "dentro de {0} aa."
+          :one: "dentro de {0} a"
+          :other: "dentro de {0} a"
         :past: 
-          :one: "hace {0} a."
-          :other: "hace {0} aa."
+          :one: "hace {0} a"
+          :other: "hace {0} a"
     :year-short: 
-      :display_name: a.
+      :display_name: a
+      :relative: 
+        -1: "el año pasado"
+        0: "este año"
+        1: "el próximo año"
       :relative_time: 
         :future: 
-          :one: "dentro de {0} a."
-          :other: "dentro de {0} aa."
+          :one: "dentro de {0} a"
+          :other: "dentro de {0} a"
         :past: 
-          :one: "hace {0} a."
-          :other: "hace {0} aa."
+          :one: "hace {0} a"
+          :other: "hace {0} a"
     :zone: 
       :display_name: "Zona horaria"

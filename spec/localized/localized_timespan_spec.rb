@@ -48,38 +48,18 @@ describe LocalizedTimespan do
       2700 => "in 45 Minuten",
       64799 => "in 18 Stunden",
       64800 => "in 18 Stunden",
-      453599 => "in 5 Tage",
-      453600 => "in 5 Tage",
+      453599 => "in 5 Tagen",
+      453600 => "in 5 Tagen",
       1972307 => "in 3 Wochen",
       1972308 => "in 3 Wochen",
-      23667694 => "in 9 Monate",
-      23667695 => "in 9 Monate",
+      23667694 => "in 9 Monaten",
+      23667695 => "in 9 Monaten",
       31556926 => "in 1 Jahr"
     }
 
     expected.each_pair do |seconds, text|
       timespan = LocalizedTimespan.new(seconds, locale: :de)
       expect(timespan.to_s).to match_normalized(text)
-    end
-  end
-
-  describe "non-directional" do
-    it "works for a variety of units" do
-      timespan = LocalizedTimespan.new(3273932, locale: :de)
-      options = { direction: :none }
-      expected = {
-        year: '0 Jahre',
-        month: '1 Monat',
-        week: '5 Wochen',
-        day: '38 Tage',
-        hour: '909 Stunden',
-        minute: '54566 Minuten',
-        second: '3273932 Sekunden'
-      }
-
-      expected.each_pair do |unit, text|
-        expect(timespan.to_s(options.merge(unit: unit))).to match_normalized(text)
-      end
     end
   end
 
@@ -117,25 +97,6 @@ describe LocalizedTimespan do
 
       expected.each_pair do |unit, text|
         expect(timespan.to_s(unit: unit)).to match_normalized(text)
-      end
-    end
-  end
-
-  # Note: non-directional timespans are the only ones that support the abbreviated type (i.e. ago and until cannot be abbreviated)
-  describe "non-directional" do
-    it "works for a variety of units" do
-      # year/month/week not supported
-      timespan = LocalizedTimespan.new(3273932)
-      options = { type: :abbreviated, direction: :none }
-      expected = {
-        day: '38d',
-        hour: '909h',
-        minute: '54566m',
-        second: '3273932s'
-      }
-
-      expected.each_pair do |unit, text|
-        expect(timespan.to_s(options.merge(unit: unit))).to match_normalized(text)
       end
     end
   end

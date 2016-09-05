@@ -20,10 +20,10 @@ module TwitterCldr
       TEST_NUMBERS = [
         [-1_141, -1_142, -1_143],
         [-100, -75, -50, -24],
-        (0..100),
+        (0..100).to_a,
         [321, 322, 323, 1_141, 1_142, 1_143, 10_311, 138_400]
         # [41.0, 5.22, 8.90, 555.1212, -14.90, -999.701]  # decimals really aren't supported yet
-      ]
+      ].flatten
 
       def initialize(output_path, icu4j_path)
         @output_path = output_path
@@ -65,7 +65,7 @@ module TwitterCldr
           grouping_ret[grouping_name] = formatter.getRuleSetNames.inject({}) do |ruleset_ret, ruleset_name|
             ruleset_display_name = formatter.getRuleSetDisplayName(ruleset_name, ulocale)
             ruleset_display_name = clean_up_name(ruleset_display_name)
-            ruleset_ret[ruleset_display_name] = import_ruleset(formatter, ruleset_name)
+            ruleset_ret[ruleset_display_name] = import_ruleset(ulocale.toString, formatter, ruleset_name)
             ruleset_ret
           end
           grouping_ret
@@ -78,12 +78,18 @@ module TwitterCldr
           .gsub('GREEKNUMERALMAJUSCULES', 'GreekNumeralMajuscules')
       end
 
-      def import_ruleset(formatter, ruleset_name)
-        TEST_NUMBERS.inject({}) do |ret, num_set|
-          num_set.each do |num|
-            ret[num] = formatter.format(num, ruleset_name)
-          end
-          ret
+      def import_ruleset(locale, formatter, ruleset_name)
+        test_numbers_for(locale).each_with_object({}) do |num, ret|
+          ret[num] = formatter.format(num, ruleset_name)
+        end
+      end
+
+      def test_numbers_for(locale)
+        # for some reason, russian doesn't support large numbers
+        if locale.to_s == 'ru'
+          TEST_NUMBERS - [138_400]
+        else
+          TEST_NUMBERS
         end
       end
 

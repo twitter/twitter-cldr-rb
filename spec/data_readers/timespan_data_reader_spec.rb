@@ -35,9 +35,9 @@ describe TimespanDataReader do
           minute: '−{0} min',
           hour: '−{0} h',
           day: '−{0} d',
-          week: '-{0} v.',
-          month: '-{0} mån.',
-          year: '-{0} år'
+          week: '−{0} v',
+          month: '−{0} mån',
+          year: '−{0} år'
         }
       },
 
@@ -54,7 +54,7 @@ describe TimespanDataReader do
 
         narrow: {
           second: '+{0} s',
-          minute: '+{0} m',
+          minute: '+{0} min',
           hour: '+{0} h',
           day: '+{0} d',
           week: '+{0} v.',

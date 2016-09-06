@@ -219,6 +219,10 @@
   begin: 6688
   end: 6831
   excl: false
+:combining_diacritical_marks_extended: !ruby/range
+  begin: 6832
+  end: 6911
+  excl: false
 :balinese: !ruby/range
   begin: 6912
   end: 7039
@@ -531,6 +535,10 @@
   begin: 43392
   end: 43487
   excl: false
+:myanmar_extended_b: !ruby/range
+  begin: 43488
+  end: 43519
+  excl: false
 :cham: !ruby/range
   begin: 43520
   end: 43615
@@ -550,6 +558,14 @@
 :ethiopic_extended_a: !ruby/range
   begin: 43776
   end: 43823
+  excl: false
+:latin_extended_e: !ruby/range
+  begin: 43824
+  end: 43887
+  excl: false
+:cherokee_supplement: !ruby/range
+  begin: 43888
+  end: 43967
   excl: false
 :meetei_mayek: !ruby/range
   begin: 43968
@@ -655,6 +671,10 @@
   begin: 66208
   end: 66271
   excl: false
+:coptic_epact_numbers: !ruby/range
+  begin: 66272
+  end: 66303
+  excl: false
 :old_italic: !ruby/range
   begin: 66304
   end: 66351
@@ -662,6 +682,10 @@
 :gothic: !ruby/range
   begin: 66352
   end: 66383
+  excl: false
+:old_permic: !ruby/range
+  begin: 66384
+  end: 66431
   excl: false
 :ugaritic: !ruby/range
   begin: 66432
@@ -683,6 +707,18 @@
   begin: 66688
   end: 66735
   excl: false
+:elbasan: !ruby/range
+  begin: 66816
+  end: 66863
+  excl: false
+:caucasian_albanian: !ruby/range
+  begin: 66864
+  end: 66927
+  excl: false
+:linear_a: !ruby/range
+  begin: 67072
+  end: 67455
+  excl: false
 :cypriot_syllabary: !ruby/range
   begin: 67584
   end: 67647
@@ -690,6 +726,18 @@
 :imperial_aramaic: !ruby/range
   begin: 67648
   end: 67679
+  excl: false
+:palmyrene: !ruby/range
+  begin: 67680
+  end: 67711
+  excl: false
+:nabataean: !ruby/range
+  begin: 67712
+  end: 67759
+  excl: false
+:hatran: !ruby/range
+  begin: 67808
+  end: 67839
   excl: false
 :phoenician: !ruby/range
   begin: 67840
@@ -715,6 +763,14 @@
   begin: 68192
   end: 68223
   excl: false
+:old_north_arabian: !ruby/range
+  begin: 68224
+  end: 68255
+  excl: false
+:manichaean: !ruby/range
+  begin: 68288
+  end: 68351
+  excl: false
 :avestan: !ruby/range
   begin: 68352
   end: 68415
@@ -727,9 +783,17 @@
   begin: 68448
   end: 68479
   excl: false
+:psalter_pahlavi: !ruby/range
+  begin: 68480
+  end: 68527
+  excl: false
 :old_turkic: !ruby/range
   begin: 68608
   end: 68687
+  excl: false
+:old_hungarian: !ruby/range
+  begin: 68736
+  end: 68863
   excl: false
 :rumi_numeral_symbols: !ruby/range
   begin: 69216
@@ -751,13 +815,61 @@
   begin: 69888
   end: 69967
   excl: false
+:mahajani: !ruby/range
+  begin: 69968
+  end: 70015
+  excl: false
 :sharada: !ruby/range
   begin: 70016
   end: 70111
   excl: false
+:sinhala_archaic_numbers: !ruby/range
+  begin: 70112
+  end: 70143
+  excl: false
+:khojki: !ruby/range
+  begin: 70144
+  end: 70223
+  excl: false
+:multani: !ruby/range
+  begin: 70272
+  end: 70319
+  excl: false
+:khudawadi: !ruby/range
+  begin: 70320
+  end: 70399
+  excl: false
+:grantha: !ruby/range
+  begin: 70400
+  end: 70527
+  excl: false
+:tirhuta: !ruby/range
+  begin: 70784
+  end: 70879
+  excl: false
+:siddham: !ruby/range
+  begin: 71040
+  end: 71167
+  excl: false
+:modi: !ruby/range
+  begin: 71168
+  end: 71263
+  excl: false
 :takri: !ruby/range
   begin: 71296
   end: 71375
+  excl: false
+:ahom: !ruby/range
+  begin: 71424
+  end: 71487
+  excl: false
+:warang_citi: !ruby/range
+  begin: 71840
+  end: 71935
+  excl: false
+:pau_cin_hau: !ruby/range
+  begin: 72384
+  end: 72447
   excl: false
 :cuneiform: !ruby/range
   begin: 73728
@@ -767,13 +879,33 @@
   begin: 74752
   end: 74879
   excl: false
+:early_dynastic_cuneiform: !ruby/range
+  begin: 74880
+  end: 75087
+  excl: false
 :egyptian_hieroglyphs: !ruby/range
   begin: 77824
   end: 78895
   excl: false
+:anatolian_hieroglyphs: !ruby/range
+  begin: 82944
+  end: 83583
+  excl: false
 :bamum_supplement: !ruby/range
   begin: 92160
   end: 92735
+  excl: false
+:mro: !ruby/range
+  begin: 92736
+  end: 92783
+  excl: false
+:bassa_vah: !ruby/range
+  begin: 92880
+  end: 92927
+  excl: false
+:pahawh_hmong: !ruby/range
+  begin: 92928
+  end: 93071
   excl: false
 :miao: !ruby/range
   begin: 93952
@@ -782,6 +914,14 @@
 :kana_supplement: !ruby/range
   begin: 110592
   end: 110847
+  excl: false
+:duployan: !ruby/range
+  begin: 113664
+  end: 113823
+  excl: false
+:shorthand_format_controls: !ruby/range
+  begin: 113824
+  end: 113839
   excl: false
 :byzantine_musical_symbols: !ruby/range
   begin: 118784
@@ -806,6 +946,14 @@
 :mathematical_alphanumeric_symbols: !ruby/range
   begin: 119808
   end: 120831
+  excl: false
+:sutton_signwriting: !ruby/range
+  begin: 120832
+  end: 121519
+  excl: false
+:mende_kikakui: !ruby/range
+  begin: 124928
+  end: 125151
   excl: false
 :arabic_mathematical_alphabetic_symbols: !ruby/range
   begin: 126464
@@ -839,6 +987,10 @@
   begin: 128512
   end: 128591
   excl: false
+:ornamental_dingbats: !ruby/range
+  begin: 128592
+  end: 128639
+  excl: false
 :transport_and_map_symbols: !ruby/range
   begin: 128640
   end: 128767
@@ -846,6 +998,18 @@
 :alchemical_symbols: !ruby/range
   begin: 128768
   end: 128895
+  excl: false
+:geometric_shapes_extended: !ruby/range
+  begin: 128896
+  end: 129023
+  excl: false
+:supplemental_arrows_c: !ruby/range
+  begin: 129024
+  end: 129279
+  excl: false
+:supplemental_symbols_and_pictographs: !ruby/range
+  begin: 129280
+  end: 129535
   excl: false
 :cjk_unified_ideographs_extension_b: !ruby/range
   begin: 131072
@@ -858,6 +1022,10 @@
 :cjk_unified_ideographs_extension_d: !ruby/range
   begin: 177984
   end: 178207
+  excl: false
+:cjk_unified_ideographs_extension_e: !ruby/range
+  begin: 178208
+  end: 183983
   excl: false
 :cjk_compatibility_ideographs_supplement: !ruby/range
   begin: 194560

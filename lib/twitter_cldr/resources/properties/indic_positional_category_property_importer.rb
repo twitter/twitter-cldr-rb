@@ -8,7 +8,7 @@ module TwitterCldr
     module Properties
 
       class IndicPositionalCategoryPropertyImporter < PropertyImporter
-        DATA_URL = 'ucd/IndicMatraCategory.txt'
+        DATA_URL = 'ucd/IndicPositionalCategory.txt'
         PROPERTY_NAME = 'Indic_Positional_Category'
 
         def initialize(input_path, database)

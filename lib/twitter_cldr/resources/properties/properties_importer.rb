@@ -12,8 +12,8 @@ module TwitterCldr
 
         IMPORTERS = [
           AgePropertyImporter,
-          # ArabicShapingPropertyImporter,  # added in later version of unicode (we're not there yet)
-          # BidiBracketsPropertyImporter,   # added in later version of unicode (we're not there yet)
+          ArabicShapingPropertyImporter,
+          BidiBracketsPropertyImporter,
           BlocksPropertyImporter,
           DerivedCorePropertiesImporter,
           EastAsianWidthPropertyImporter,

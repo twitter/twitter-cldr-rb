@@ -7,7 +7,7 @@ module TwitterCldr
   module Versions
     CLDR_VERSION    = '29'
     ICU_VERSION     = '57.1'
-    UNICODE_VERSION = '6.3.0'
+    UNICODE_VERSION = '8.0.0'
 
     # Use these instead to update collation and tailoring data
     # CLDR_VERSION = '23.1'

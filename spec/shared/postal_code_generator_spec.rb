@@ -41,7 +41,7 @@ describe PostalCodeGenerator do
   describe "#generate" do
     it "should generate correctly and not allow dashes to be followed by spaces" do
       10.times do
-        generator.generate.should match(/\d{3}-\w{3}/)
+        expect(generator.generate).to match(/\d{3}-\w{3}/)
       end
     end
   end
@@ -49,28 +49,27 @@ describe PostalCodeGenerator do
   describe "#sample" do
     it "should generate the given number of unique samples" do
       samples = generator.sample(10)
-      samples.size.should == 10
-      samples.uniq.should == samples
+      expect(samples.size).to eq(10)
+      expect(samples.uniq).to eq(samples)
       samples.each do |sample|
-        sample.should match(/\d{3}-\w{3}/)
+        expect(sample).to match(/\d{3}-\w{3}/)
       end
     end
 
     it "should not return blank samples" do
       10.times do
-        blank_generator.sample(10).all? do |sample|
-          sample.empty?
-        end.should be_false
+        samples = blank_generator.sample(10)
+        expect(samples.all? { |sample| sample.empty? }).to eq(false)
       end
     end
 
     it "shouldn't loop infinitely if the number of possible samples is less than requested" do
-      limited_generator.sample(10).size.should < 10
+      expect(limited_generator.sample(10).size).to be < 10
     end
 
     it "should attempt to generate more samples if the set doesn't contain enough (but shouldn't infinite loop)" do
       mock.proxy(limited_generator).generate.at_least(10)
-      limited_generator.sample(10).size.should < 10
+      expect(limited_generator.sample(10).size).to be < 10
     end
   end
 end

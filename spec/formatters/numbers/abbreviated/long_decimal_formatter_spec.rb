@@ -90,8 +90,8 @@ describe LongDecimalFormatter do
   context 'with Korean locale' do
     let(:locale) { :ko }
 
-    xit 'works for Korean' do
-      expect(format_number(1_000_000)).to match_normalized("100만") # not "1 million"
+    it 'works for Korean' do
+      expect(format_number(1_000_000)).to match_normalized("100만")
     end
   end
 
@@ -99,7 +99,7 @@ describe LongDecimalFormatter do
     let(:locale) { :be }
 
     it 'handles redirects' do
-      expect(format_number(1_000_000)).to match_normalized("1M")
+      expect(format_number(1_000_000)).to match_normalized("1 мільён")
     end
   end
 end

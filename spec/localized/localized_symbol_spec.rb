@@ -30,7 +30,7 @@ describe LocalizedSymbol do
 
   describe "#as_territory" do
     it "calculates the correct localized territory from the symbol" do
-      expect(:gb.localize.as_territory).to eq("U.K.")
+      expect(:gb.localize.as_territory).to eq("UK")
       TwitterCldr.locale = :pt
       expect(:gb.localize.as_territory).to eq("Reino Unido")
     end
@@ -40,10 +40,10 @@ describe LocalizedSymbol do
     end
 
     it "calculates the correct value for mapped as well as CLDR language codes" do
-      expect(:gb.localize(:'en-au').as_territory).to eq("U.K.")
-      expect(:gb.localize(:'en-ca').as_territory).to eq("U.K.")
+      expect(:gb.localize(:'en-au').as_territory).to eq("UK")
+      expect(:gb.localize(:'en-ca').as_territory).to eq("UK")
       expect(:gb.localize(:'en-gb').as_territory).to eq("UK")
-      expect(:gb.localize(:'en').as_territory).to eq("U.K.")
+      expect(:gb.localize(:'en').as_territory).to eq("UK")
     end
   end
 

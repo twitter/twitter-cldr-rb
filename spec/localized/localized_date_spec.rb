@@ -32,8 +32,8 @@ describe LocalizedDate do
       loc_date = date_time.localize(:ar).to_date
       expect(loc_date.ago(base_time: base_time).to_s(unit: :hour)).to match_normalized("قبل 744 ساعة")
       expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("قبل 31 يومًا")
-      expect(loc_date.ago(base_time: base_time).to_s(unit: :month)).to match_normalized("قبل 1 من الشهور")
-      expect(loc_date.ago(base_time: base_time).to_s(unit: :year)).to match_normalized("قبل 0 من السنوات")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :month)).to match_normalized("قبل شهر واحد")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :year)).to match_normalized("قبل 0 سنة")
 
       loc_date = date_time.localize(:fa).to_date
       expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("31 روز پیش")

@@ -504,7 +504,7 @@ TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)       
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
 TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "UK"
-TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # nil
+TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # "Reino Unido"
 ```
 
 ### Postal Codes
@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["88031", "71288-3221", "69935", "76239", "74669"]
+postal_code.sample(5)  # ["95769-2402", "46843-4641", "16769", "50641-1147", "73176"]
 ```
 
 ### Phone Codes

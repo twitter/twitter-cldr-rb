@@ -97,7 +97,7 @@ describe AdditionalDateFormatSelector do
     end
 
     it "returns the next closest match (lowest score) if an exact match can't be found" do
-      expect(selector.find_closest("MMMMd")).to eq(selector.pattern_hash[:MMMd])
+      expect(selector.find_closest("MMMMMd")).to eq(selector.pattern_hash[:MMMMd])
       expect(selector.find_closest("mHs")).to eq(selector.pattern_hash[:Hms])
       expect(selector.find_closest("Med")).to eq(selector.pattern_hash[:MEd])
     end

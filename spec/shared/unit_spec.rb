@@ -263,7 +263,7 @@ describe Unit do
 
       describe '#length_mile' do
         it 'produces the correct results' do
-          expect(Unit.create(1, locale).length_mile(options)).to eq('1mil')
+          expect(Unit.create(1, locale).length_mile(options)).to eq('1mi')
         end
       end
 

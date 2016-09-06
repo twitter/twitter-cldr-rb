@@ -91,7 +91,7 @@ module TwitterCldr
             walk(single_sample(node.expressions))
           end.join
         else
-          walk(single_sample(node.expressions))
+          walk_children(single_sample(node.expressions))
         end
       end
 

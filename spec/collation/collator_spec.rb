@@ -96,6 +96,16 @@ describe Collator do
     it 'returns collation elements for an array of code points (represented as hex strings)' do
       expect(collator.get_collation_elements(code_points)).to eq(collation_elements)
     end
+
+    context('with an invalid string') do
+      let(:string) { "\u0450\u0D80" }
+
+      it 'raises a specific error if passed invalid unicode characters' do
+        expect { collator.get_collation_elements(string) }.to(
+          raise_error(UnexpectedCodePointError)
+        )
+      end
+    end
   end
 
   describe '#get_sort_key' do
@@ -105,51 +115,62 @@ describe Collator do
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
-    before(:each) { mock(TrieLoader).load_default_trie { trie } }
+    context 'with a loaded trie' do
+      before(:each) { mock(TrieLoader).load_default_trie { trie } }
 
-    describe 'calculating sort key' do
-      before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: nil, maximum_level: nil) { sort_key } }
+      describe 'calculating sort key' do
+        before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: nil, maximum_level: nil) { sort_key } }
 
-      it 'calculates sort key for a string' do
-        mock(collator).get_collation_elements(string) { collation_elements }
-        expect(collator.get_sort_key(string)).to eq(sort_key)
+        it 'calculates sort key for a string' do
+          mock(collator).get_collation_elements(string) { collation_elements }
+          expect(collator.get_sort_key(string)).to eq(sort_key)
+        end
+
+        it 'calculates sort key for an array of code points (represented as hex strings)' do
+          mock(collator).get_collation_elements(code_points) { collation_elements }
+          expect(collator.get_sort_key(code_points)).to eq(sort_key)
+        end
       end
 
-      it 'calculates sort key for an array of code points (represented as hex strings)' do
-        mock(collator).get_collation_elements(code_points) { collation_elements }
-        expect(collator.get_sort_key(code_points)).to eq(sort_key)
+      describe 'uses tailoring options' do
+        let(:case_first)    { :upper }
+        let(:locale)        { :uk }
+        let(:maximum_level) { 2 }
+
+        it 'passes case-first sort option to sort key builder' do
+          mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
+          mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
+
+          collator = Collator.new(locale)
+
+          mock(collator).get_collation_elements(code_points) { collation_elements }
+          mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: nil) { sort_key }
+
+          expect(collator.get_sort_key(code_points)).to eq(sort_key)
+        end
+
+        it 'passes maximum_level option to sort key builder' do
+          mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
+          mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
+
+          collator = Collator.new(locale)
+
+          mock(collator).get_collation_elements(code_points) { collation_elements }
+          mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: maximum_level) { sort_key }
+
+          expect(collator.get_sort_key(code_points, maximum_level: maximum_level)).to eq(sort_key)
+        end
       end
     end
 
-    describe 'uses tailoring options' do
-      let(:case_first)    { :upper }
-      let(:locale)        { :uk }
-      let(:maximum_level) { 2 }
-      
-      it 'passes case-first sort option to sort key builder' do
-        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
-        mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
+    context('with an invalid string') do
+      let(:string) { "\u0450\u0D80" }
 
-        collator = Collator.new(locale)
-
-        mock(collator).get_collation_elements(code_points) { collation_elements }
-        mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: nil) { sort_key }
-
-        expect(collator.get_sort_key(code_points)).to eq(sort_key)
+      it 'raises a specific error if passed invalid unicode characters' do
+        expect { collator.get_sort_key(string) }.to(
+          raise_error(UnexpectedCodePointError)
+        )
       end
-
-      it 'passes maximum_level option to sort key builder' do 
-        mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { Trie.new }
-        mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
-
-        collator = Collator.new(locale)
-
-        mock(collator).get_collation_elements(code_points) { collation_elements }
-        mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: maximum_level) { sort_key }
-
-        expect(collator.get_sort_key(code_points, maximum_level: maximum_level)).to eq(sort_key)
-      end
-
     end
   end
 

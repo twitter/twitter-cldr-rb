@@ -6,6 +6,8 @@
 module TwitterCldr
   module Collation
 
+    class UnexpectedCodePointError < StandardError; end
+
     # Collator uses fractional collation elements table form CLDR to generate sort keys for Unicode strings as well as
     # compare and sort such strings by generated sort keys.
     #
@@ -107,8 +109,13 @@ module TwitterCldr
 
         while non_starter_pos < code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
-          non_starter_code_point = code_points[non_starter_pos]
-          combining_class        = TwitterCldr::Shared::CodePoint.get(non_starter_code_point).combining_class.to_i
+          non_starter_code_point = TwitterCldr::Shared::CodePoint.get(code_points[non_starter_pos])
+
+          unless non_starter_code_point
+            raise UnexpectedCodePointError, "'#{code_points[non_starter_pos]}' does not appear to be a valid Unicode code point"
+          end
+
+          combining_class = non_starter_code_point.combining_class.to_i
 
           # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
           break if combining_class == 0 || used_combining_classes[combining_class]

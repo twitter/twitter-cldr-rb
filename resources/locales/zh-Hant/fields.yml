@@ -2,107 +2,303 @@
 :zh-Hant: 
   :fields: 
     :day: 
-      :default: 
-        :one: "{0} day"
-        :other: "{0}日"
-      :short: 
-        :one: "{0} day"
-        :other: "{0}日"
-    :day-future: 
-      :default: 
-        :one: "In {0} day"
-        :other: "{0} 天後"
-    :day-past: 
-      :default: 
-        :one: "{0} day ago"
-        :other: "{0} 天前"
+      :display_name: 日
+      :relative: 
+        -1: 昨天
+        -2: 前天
+        0: 今天
+        1: 明天
+        2: 後天
+      :relative_time: 
+        :future: 
+          :other: "{0} 天後"
+        :past: 
+          :other: "{0} 天前"
+    :day-narrow: 
+      :display_name: 日
+      :relative_time: 
+        :future: 
+          :other: "{0} 天後"
+        :past: 
+          :other: "{0} 天前"
+    :day-short: 
+      :display_name: 日
+      :relative_time: 
+        :future: 
+          :other: "{0} 天後"
+        :past: 
+          :other: "{0} 天前"
+    :dayperiod: 
+      :display_name: 上午/下午
+    :era: 
+      :display_name: 年代
+    :fri: 
+      :relative: 
+        -1: 上週五
+        0: 本週五
+        1: 下週五
+    :fri-narrow: 
+      :relative: 
+        -1: 上週五
+        0: 本週五
+        1: 下週五
+    :fri-short: 
+      :relative: 
+        -1: 上週五
+        0: 本週五
+        1: 下週五
     :hour: 
-      :default: 
-        :one: "{0} hour"
-        :other: "{0}小時"
-      :short: 
-        :one: "{0} hr"
-        :other: "{0}小時"
-    :hour-future: 
-      :default: 
-        :one: "In {0} hour"
-        :other: "{0} 小時後"
-    :hour-past: 
-      :default: 
-        :one: "{0} hour ago"
-        :other: "{0} 小時前"
+      :display_name: 小時
+      :relative_time: 
+        :future: 
+          :other: "{0} 小時後"
+        :past: 
+          :other: "{0} 小時前"
+    :hour-narrow: 
+      :display_name: 小時
+      :relative_time: 
+        :future: 
+          :other: "{0} 小時後"
+        :past: 
+          :other: "{0} 小時前"
+    :hour-short: 
+      :display_name: 小時
+      :relative_time: 
+        :future: 
+          :other: "{0} 小時後"
+        :past: 
+          :other: "{0} 小時前"
     :minute: 
-      :default: 
-        :one: "{0} minute"
-        :other: "{0}分"
-      :short: 
-        :one: "{0} min"
-        :other: "{0}分"
-    :minute-future: 
-      :default: 
-        :one: "In {0} minute"
-        :other: "{0} 分鐘後"
-    :minute-past: 
-      :default: 
-        :one: "{0} minute ago"
-        :other: "{0} 分鐘前"
+      :display_name: 分鐘
+      :relative_time: 
+        :future: 
+          :other: "{0} 分鐘後"
+        :past: 
+          :other: "{0} 分鐘前"
+    :minute-narrow: 
+      :display_name: 分鐘
+      :relative_time: 
+        :future: 
+          :other: "{0} 分鐘後"
+        :past: 
+          :other: "{0} 分鐘前"
+    :minute-short: 
+      :display_name: 分鐘
+      :relative_time: 
+        :future: 
+          :other: "{0} 分鐘後"
+        :past: 
+          :other: "{0} 分鐘前"
+    :mon: 
+      :relative: 
+        -1: 上週一
+        0: 本週一
+        1: 下週一
+    :mon-narrow: 
+      :relative: 
+        -1: 上週一
+        0: 本週一
+        1: 下週一
+    :mon-short: 
+      :relative: 
+        -1: 上週一
+        0: 本週一
+        1: 下週一
     :month: 
-      :default: 
-        :one: "{0} month"
-        :other: "{0}月"
-      :short: 
-        :one: "{0} mth"
-        :other: "{0}月"
-    :month-future: 
-      :default: 
-        :one: "In {0} month"
-        :other: "{0} 個月後"
-    :month-past: 
-      :default: 
-        :one: "{0} month ago"
-        :other: "{0} 個月前"
+      :display_name: 月
+      :relative: 
+        -1: 上個月
+        0: 本月
+        1: 下個月
+      :relative_time: 
+        :future: 
+          :other: "{0} 個月後"
+        :past: 
+          :other: "{0} 個月前"
+    :month-narrow: 
+      :display_name: 月
+      :relative_time: 
+        :future: 
+          :other: "{0} 個月後"
+        :past: 
+          :other: "{0} 個月前"
+    :month-short: 
+      :display_name: 月
+      :relative_time: 
+        :future: 
+          :other: "{0} 個月後"
+        :past: 
+          :other: "{0} 個月前"
+    :quarter: 
+      :display_name: 季
+      :relative_time: 
+        :future: 
+          :other: "{0} 季後"
+        :past: 
+          :other: "{0} 季前"
+    :quarter-narrow: 
+      :display_name: 季
+      :relative_time: 
+        :future: 
+          :other: "{0} 季後"
+        :past: 
+          :other: "{0} 季前"
+    :quarter-short: 
+      :display_name: 季
+      :relative_time: 
+        :future: 
+          :other: "{0} 季後"
+        :past: 
+          :other: "{0} 季前"
+    :sat: 
+      :relative: 
+        -1: 上週六
+        0: 本週六
+        1: 下週六
+    :sat-narrow: 
+      :relative: 
+        -1: 上週六
+        0: 本週六
+        1: 下週六
+    :sat-short: 
+      :relative: 
+        -1: 上週六
+        0: 本週六
+        1: 下週六
     :second: 
-      :default: 
-        :one: "{0} second"
-        :other: "{0}秒"
-      :short: 
-        :one: "{0} sec"
-        :other: "{0}秒"
-    :second-future: 
-      :default: 
-        :one: "In {0} second"
-        :other: "{0} 秒後"
-    :second-past: 
-      :default: 
-        :one: "{0} second ago"
-        :other: "{0} 秒前"
+      :display_name: 秒
+      :relative: 
+        0: 現在
+      :relative_time: 
+        :future: 
+          :other: "{0} 秒後"
+        :past: 
+          :other: "{0} 秒前"
+    :second-narrow: 
+      :display_name: 秒
+      :relative_time: 
+        :future: 
+          :other: "{0} 秒後"
+        :past: 
+          :other: "{0} 秒前"
+    :second-short: 
+      :display_name: 秒
+      :relative_time: 
+        :future: 
+          :other: "{0} 秒後"
+        :past: 
+          :other: "{0} 秒前"
+    :sun: 
+      :relative: 
+        -1: 上週日
+        0: 本週日
+        1: 下週日
+    :sun-narrow: 
+      :relative: 
+        -1: 上週日
+        0: 本週日
+        1: 下週日
+    :sun-short: 
+      :relative: 
+        -1: 上週日
+        0: 本週日
+        1: 下週日
+    :thu: 
+      :relative: 
+        -1: 上週四
+        0: 本週四
+        1: 下週四
+    :thu-narrow: 
+      :relative: 
+        -1: 上週四
+        0: 本週四
+        1: 下週四
+    :thu-short: 
+      :relative: 
+        -1: 上週四
+        0: 本週四
+        1: 下週四
+    :tue: 
+      :relative: 
+        -1: 上週二
+        0: 本週二
+        1: 下週二
+    :tue-narrow: 
+      :relative: 
+        -1: 上週二
+        0: 本週二
+        1: 下週二
+    :tue-short: 
+      :relative: 
+        -1: 上週二
+        0: 本週二
+        1: 下週二
+    :wed: 
+      :relative: 
+        -1: 上週三
+        0: 本週三
+        1: 下週三
+    :wed-narrow: 
+      :relative: 
+        -1: 上週三
+        0: 本週三
+        1: 下週三
+    :wed-short: 
+      :relative: 
+        -1: 上週三
+        0: 本週三
+        1: 下週三
     :week: 
-      :default: 
-        :one: "{0} week"
-        :other: "{0}週"
-      :short: 
-        :one: "{0} wk"
-        :other: "{0}週"
-    :week-future: 
-      :default: 
-        :one: "In {0} week"
-        :other: "{0} 週後"
-    :week-past: 
-      :default: 
-        :one: "{0} week ago"
-        :other: "{0} 週前"
+      :display_name: 週
+      :relative: 
+        -1: 上週
+        0: 本週
+        1: 下週
+      :relative_time: 
+        :future: 
+          :other: "{0} 週後"
+        :past: 
+          :other: "{0} 週前"
+    :week-narrow: 
+      :display_name: 週
+      :relative_time: 
+        :future: 
+          :other: "{0} 週後"
+        :past: 
+          :other: "{0} 週前"
+    :week-short: 
+      :display_name: 週
+      :relative_time: 
+        :future: 
+          :other: "{0} 週後"
+        :past: 
+          :other: "{0} 週前"
+    :weekday: 
+      :display_name: 週天
     :year: 
-      :default: 
-        :one: "{0} year"
-        :other: "{0}年"
-      :short: 
-        :one: "{0} yr"
-        :other: "{0}年"
-    :year-future: 
-      :default: 
-        :one: "In {0} year"
-        :other: "{0} 年後"
-    :year-past: 
-      :default: 
-        :one: "{0} year ago"
-        :other: "{0} 年前"
+      :display_name: 年
+      :relative: 
+        -1: 去年
+        0: 今年
+        1: 明年
+      :relative_time: 
+        :future: 
+          :other: "{0} 年後"
+        :past: 
+          :other: "{0} 年前"
+    :year-narrow: 
+      :display_name: 年
+      :relative_time: 
+        :future: 
+          :other: "{0} 年後"
+        :past: 
+          :other: "{0} 年前"
+    :year-short: 
+      :display_name: 年
+      :relative_time: 
+        :future: 
+          :other: "{0} 年後"
+        :past: 
+          :other: "{0} 年前"
+    :zone: 
+      :display_name: 時區

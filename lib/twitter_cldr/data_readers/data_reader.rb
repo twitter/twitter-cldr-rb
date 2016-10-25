@@ -10,7 +10,7 @@ module TwitterCldr
       attr_reader :locale
 
       def initialize(locale)
-        @locale = locale
+        @locale = TwitterCldr.convert_locale(locale)
       end
 
       def pattern_at_path(path)

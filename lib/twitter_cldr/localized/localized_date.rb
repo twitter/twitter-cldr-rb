@@ -16,20 +16,8 @@ module TwitterCldr
         case @base_obj
           when Time
             LocalizedTime.new(@base_obj, @locale, chain_params)
-          when DateTime
-            utc_dt = @base_obj.new_offset(0)
-
-            time = Time.gm(
-              utc_dt.year,
-              utc_dt.month,
-              utc_dt.day,
-              utc_dt.hour,
-              utc_dt.min,
-              utc_dt.sec,
-              utc_dt.sec_fraction * 1_000_000
-            )
-
-            LocalizedTime.new(time, @locale, chain_params)
+          when Date, DateTime
+            LocalizedTime.new(@base_obj.to_time, @locale, chain_params)
           else
             nil
         end

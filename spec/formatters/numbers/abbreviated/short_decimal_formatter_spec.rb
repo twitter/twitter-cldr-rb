@@ -105,6 +105,4 @@ describe ShortDecimalFormatter do
       expect(format_number(700_000)).to match_normalized("700000")
     end
   end
-
-  xit 'respects pluralization rules'
 end

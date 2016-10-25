@@ -120,6 +120,15 @@ describe LocalizedDate do
     end
   end
 
+  describe "#to_time" do
+    it "should work with a date instance" do
+      date = Date.new(1987, 9, 20)
+      datetime = date.localize.to_time
+      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 00:00:00")
+    end
+  end
+
   describe "#to_additional_s" do
     let(:date_time) { DateTime.new(2010, 7, 6, 12, 12, 30) }
 

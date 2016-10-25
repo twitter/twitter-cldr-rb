@@ -109,13 +109,14 @@ module TwitterCldr
 
         while non_starter_pos < code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
-          non_starter_code_point = TwitterCldr::Shared::CodePoint.get(code_points[non_starter_pos])
+          non_starter_code_point = code_points[non_starter_pos]
+          non_starter_metadata   = TwitterCldr::Shared::CodePoint.get(non_starter_code_point)
 
-          unless non_starter_code_point
-            raise UnexpectedCodePointError, "'#{code_points[non_starter_pos]}' does not appear to be a valid Unicode code point"
+          unless non_starter_metadata
+            raise UnexpectedCodePointError, "'#{non_starter_code_point}' does not appear to be a valid Unicode code point"
           end
 
-          combining_class = non_starter_code_point.combining_class.to_i
+          combining_class = non_starter_metadata.combining_class.to_i
 
           # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
           break if combining_class == 0 || used_combining_classes[combining_class]

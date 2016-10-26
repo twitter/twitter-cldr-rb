@@ -121,7 +121,7 @@ module TwitterCldr
       end
 
       def build_rule_index(rules)
-        TwitterCldr::Collation::Trie.new.tap do |trie|
+        TwitterCldr::Utils::Trie.new.tap do |trie|
           rules.each_with_index do |rule, idx|
             next unless rule.forward?
 

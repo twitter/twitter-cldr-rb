@@ -783,10 +783,11 @@ TwitterCLDR uses data from the LibreOffice project to offer an implementation of
 
 Since the data doesn't come packaged with CLDR, only a certain subset of locales are supported. To get a list of supported locales, use the `supported_locales` method:
 
-```ruby
 <% assert(TwitterCldr::Shared::Hyphenator.supported_locales.include?('af-ZA'), true) %>
 <% assert(TwitterCldr::Shared::Hyphenator.supported_locales.include?('de-CH'), true) %>
 <% assert(TwitterCldr::Shared::Hyphenator.supported_locales.include?('en-US'), true) %>
+
+```ruby
 TwitterCldr::Shared::Hyphenator.supported_locales  # ["af-ZA", "de-CH", "en-US", ...]
 ```
 

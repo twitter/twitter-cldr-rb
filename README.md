@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["63623-8048", "91904-6456", "59844-3528", "68763", "91531"]
+postal_code.sample(5)  # ["57426", "42027-5756", "00451", "94859", "83317-0257"]
 ```
 
 ### Phone Codes
@@ -822,10 +822,11 @@ TwitterCLDR uses data from the LibreOffice project to offer an implementation of
 
 Since the data doesn't come packaged with CLDR, only a certain subset of locales are supported. To get a list of supported locales, use the `supported_locales` method:
 
+
+
+
+
 ```ruby
-
-
-
 TwitterCldr::Shared::Hyphenator.supported_locales  # ["af-ZA", "de-CH", "en-US", ...]
 ```
 

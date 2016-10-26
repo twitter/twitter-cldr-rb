@@ -7,7 +7,6 @@ require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 require 'pry-nav'
-require 'byebug'
 require 'coveralls'
 
 Coveralls.wear!

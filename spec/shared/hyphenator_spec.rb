@@ -33,16 +33,20 @@ describe Hyphenator do
     expect(result).to eq('abcdef')
   end
 
-  it 'passes all hunspell tests' do
-    hyphenations = File.read(File.expand_path('../hunspell/base.hyph', __FILE__)).split("\n")
-    words = File.read(File.expand_path('../hunspell/base.word', __FILE__)).split("\n")
-    rules = File.read(File.expand_path('../hunspell/base.pat', __FILE__)).split("\n")[2..-1]
-    options = { left_hyphen_min: 2, right_hyphen_min: 3 }
-    h = Hyphenator.new(rules, options)
+  context 'hunspell tests' do
+    let(:options) do
+      { left_hyphen_min: 2, right_hyphen_min: 3, no_hyphen: %w(- ' ’) }
+    end
 
-    words.each_with_index do |word, idx|
-      puts word
-      expect(h.hyphenate(word, '=')).to eq(hyphenations[idx])
+    it 'passes all hunspell tests' do
+      hyphenations = File.read(File.expand_path('../hunspell/base.hyph', __FILE__)).split("\n")
+      words = File.read(File.expand_path('../hunspell/base.word', __FILE__)).split("\n")
+      rules = File.read(File.expand_path('../hunspell/base.pat', __FILE__)).split("\n")[2..-1]
+      h = Hyphenator.new(rules, options)
+
+      words.each_with_index do |word, idx|
+        expect(h.hyphenate(word, '=')).to eq(hyphenations[idx])
+      end
     end
   end
 end

@@ -27,6 +27,7 @@ module TwitterCldr
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
   autoload :Utils,         'twitter_cldr/utils'
+  autoload :Transforms,    'twitter_cldr/transforms'
   autoload :Versions,      'twitter_cldr/versions'
 
   extend SingleForwardable
@@ -50,6 +51,7 @@ module TwitterCldr
 
   def_delegator :resources, :get_resource
   def_delegator :resources, :get_locale_resource
+  def_delegator :resources, :resource_exists?
 
   class << self
 

@@ -58,6 +58,7 @@ task :update do
       "update:tailoring_data",  # per locale
       "update:collation_tries", # per locale, must come after update:tailoring_data
       "update:rbnf_tests",      # per locale
+      "update:transform_tests",
       "update:bidi_tests"
     ]
   else
@@ -195,6 +196,14 @@ namespace :update do
       './spec/formatters/numbers/rbnf/locales',
       args[:icu4j_jar_path] || ICU_JAR
     ).import(TwitterCldr.supported_locales)
+  end
+
+  desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :transform_tests, :icu4j_jar_path do |_, args|
+    TwitterCldr::Resources::TransformTestImporter.new(
+      './spec/transforms/test_data.yml',
+      args[:icu4j_jar_path] || ICU_JAR
+    ).import
   end
 
   desc 'Import segment exceptions'

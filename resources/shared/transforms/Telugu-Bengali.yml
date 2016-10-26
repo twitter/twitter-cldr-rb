@@ -1,0 +1,13 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - "::[ఁ-ఃఅ-ఌఎ-ఐఒ-నప-ళవ-హా-ౄె-ైొ-్ౕ-ౖౠ-ౡ౦-౯];"
+      - "::NFD;"
+      - "::Telugu-InterIndic;"
+      - "::InterIndic-Bengali;"
+      - "::NFC;"
+    :source: Telugu
+    :target: Bengali
+    :variant: ~

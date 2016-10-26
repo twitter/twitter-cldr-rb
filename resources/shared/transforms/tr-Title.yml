@@ -1,0 +1,13 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - "[:cased:] [:case-ignorable:]* { İ > i;"
+      - "[:cased:] [:case-ignorable:]* { I > ı;"
+      - "[:cased:] [:case-ignorable:]* { (.) > &Any-Lower($1) ;"
+      - "i>İ ;"
+      - "([:Lowercase:]) > &Any-Upper($1) ;"
+    :source: tr
+    :target: Title
+    :variant: ~

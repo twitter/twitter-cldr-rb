@@ -1,0 +1,13 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - "::NFD();"
+      - "Σ } [:case-ignorable:]* [:cased:] > σ;"
+      - "[:cased:] [:case-ignorable:]* { Σ > ς;"
+      - "::Any-Lower;"
+      - "::NFC();"
+    :source: el
+    :target: Lower
+    :variant: ~

@@ -148,6 +148,19 @@ module TwitterCldr
         TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).best_guess
       end
 
+      def transliterate_into(target_locale)
+        transform_id = TwitterCldr::Transforms::TransformId.find(
+          locale, target_locale
+        )
+
+        if transform_id
+          transformer = TwitterCldr::Transforms::Transformer.get(transform_id)
+          transformer.transform(@base_obj).localize(target_locale)
+        else
+          self
+        end
+      end
+
       protected
 
       def escape_plural_interpolation(string)

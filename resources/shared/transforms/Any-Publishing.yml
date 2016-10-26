@@ -1,0 +1,22 @@
+--- 
+:transforms: 
+  - 
+    :direction: both
+    :rules: 
+      - "$single = \\' ;"
+      - "$space = ' ' ;"
+      - "$double = \\\" ;"
+      - "$back = \\` ;"
+      - "$tab = \\u0008 ;"
+      - "$makeRight = [[:Z:][:Ps:][:Pi:]$] ;"
+      - "$back $back > “ ;"
+      - "$back > ‘ ;"
+      - "$makeRight {$double} <> “ ;"
+      - "$double <> ” ;"
+      - "$makeRight {$single} <> ‘ ;"
+      - "$single <> ’;"
+      - "$space {$space} > ;"
+      - "'--' <> — ;"
+    :source: Any
+    :target: Publishing
+    :variant: ~

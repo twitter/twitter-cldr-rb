@@ -35,6 +35,7 @@ module TwitterCldr
         likely_subtags
         variables
         aliases
+        transforms
       ]
 
       # Arguments:
@@ -93,13 +94,13 @@ module TwitterCldr
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
-          deep_symbolize(component, locale, path)
+          deep_symbolize(path)
         end
 
         move_segments_root_file
       end
 
-      def deep_symbolize(component, locale, path)
+      def deep_symbolize(path)
         return unless File.extname(path) == '.yml'
         data = YAML.load(File.read(path))
 

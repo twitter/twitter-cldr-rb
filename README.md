@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["16960-4424", "84410-1381", "18464-3662", "70821-5203", "42074"]
+postal_code.sample(5)  # ["63623-8048", "91904-6456", "59844-3528", "68763", "91531"]
 ```
 
 ### Phone Codes
@@ -814,7 +814,13 @@ Turkic languages make use of the regular and dotted uppercase i characters "I" a
 
 #### Hyphenation
 
-TwitterCLDR uses data from the LibreOffice project to offer an implementation of [Franklin Liang's hyphenation algorithm](http://www.tug.org/docs/liang/). Since the data doesn't come packaged with CLDR, only a certain subset of locales are supported. To get a list of supported locales, use the `supported_locales` method:
+TwitterCLDR uses data from the LibreOffice project to offer an implementation of [Franklin Liang's hyphenation algorithm](http://www.tug.org/docs/liang/). Try the `#hyphenate` method on instances of `LocalizedString`:
+
+```ruby
+'foolhardy undulate'.localize.hyphenate('-').to_s  # fool-hardy un-du-late
+```
+
+Since the data doesn't come packaged with CLDR, only a certain subset of locales are supported. To get a list of supported locales, use the `supported_locales` method:
 
 ```ruby
 
@@ -822,6 +828,24 @@ TwitterCLDR uses data from the LibreOffice project to offer an implementation of
 
 TwitterCldr::Shared::Hyphenator.supported_locales  # ["af-ZA", "de-CH", "en-US", ...]
 ```
+
+You can also ask the `Hyphenator` class if a locale is supported:
+
+```ruby
+TwitterCldr::Shared::Hyphenator.supported_locale?(:en)  # true
+TwitterCldr::Shared::Hyphenator.supported_locale?(:ja)  # false
+```
+
+Create a new hyphenator instance via the `.get` method. If the locale is not supported, `.get` will raise an error.
+
+```ruby
+hyphenator = TwitterCldr::Shared::Hyphenator.get(:en)
+hyphenator.hyphenate('absolutely', '-')  # ab-so-lutely
+```
+
+The `.get` method will identify the best rule set to use by "maximizing" the given locale, a process that tries different combinations of the locale's language, region, and script based on CLDR's likely subtag data. In practice this means passing in `:en` works even though the hyphenator specifically supports en-US and en-GB.
+
+The second argument to `#hyphenate` is the delimiter to use, i.e. the hyphen text to insert at syllable boundaries. By default, the delimiter is the Unicode soft hyphen character (\u00AD). Depending on the system that's used to display the hyphenated text (word processor, browser, etc), the soft hyphen may render differently. Soft hyphens are supposed to be rendered only when the word needs to be displayed on multiple lines, and should be invisible otherwise.
 
 ### Sorting (Collation)
 

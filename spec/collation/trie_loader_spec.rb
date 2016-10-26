@@ -11,7 +11,7 @@ describe TrieLoader do
 
   describe '.load_default_trie' do
     let(:root)        { 42 }
-    let(:trie)        { Trie.new(root).tap { |t| t.lock } }
+    let(:trie)        { TwitterCldr::Utils::Trie.new(root).tap { |t| t.lock } }
     let(:trie_dump)   { Marshal.dump(trie) }
     let(:loaded_trie) { TrieLoader.load_default_trie }
     let(:locale)      { TrieLoader::DEFAULT_TRIE_LOCALE }
@@ -19,7 +19,7 @@ describe TrieLoader do
     before(:each) { mock_trie_dump }
 
     it 'loads a Trie' do
-      expect(loaded_trie).to be_instance_of(Trie)
+      expect(loaded_trie).to be_instance_of(TwitterCldr::Utils::Trie)
     end
 
     it 'loads trie root' do

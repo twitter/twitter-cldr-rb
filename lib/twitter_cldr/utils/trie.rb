@@ -4,7 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  module Collation
+  module Utils
 
     # This class represents a trie - a tree data structure, also known as a prefix tree.
     #
@@ -15,6 +15,7 @@ module TwitterCldr
     # nil, then the trie doesn't contain a value with the given key (or the value itself is nil).
     #
     class Trie
+      attr_reader :root
 
       # Initializes a new trie. If `trie_hash` value is passed it's used as the initial data for the trie. Usually,
       # `trie_hash` is extracted from other trie and represents its subtrie.
@@ -144,6 +145,10 @@ module TwitterCldr
 
         def has_children?
           !@children.empty?
+        end
+
+        def has_value?
+          !!value
         end
 
         def each_key_and_child(&block)

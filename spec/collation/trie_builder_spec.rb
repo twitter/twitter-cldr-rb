@@ -15,7 +15,7 @@ describe TrieBuilder do
     before(:each) { mock_default_table }
 
     it 'returns a Trie' do
-      expect(trie).to be_instance_of(Trie)
+      expect(trie).to be_instance_of(TwitterCldr::Utils::Trie)
     end
 
     it 'adds every collation element from the fractional collation elements table to the trie' do

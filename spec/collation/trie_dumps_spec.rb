@@ -17,7 +17,7 @@ describe 'trie dumps', slow: true do
 
   TwitterCldr.supported_locales.each do |locale|
     it "has a valid tailored trie dump for #{locale} locale" do
-      loaded_trie = TrieLoader.load_tailored_trie(locale, Trie.new)
+      loaded_trie = TrieLoader.load_tailored_trie(locale, TwitterCldr::Utils::Trie.new)
       fresh_trie  = TrieBuilder.load_tailored_trie(locale, default_trie)
 
       expect(loaded_trie.to_hash).to(eq(fresh_trie.to_hash), error_message)

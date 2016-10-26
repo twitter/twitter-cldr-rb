@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["57426", "42027-5756", "00451", "94859", "83317-0257"]
+postal_code.sample(5)  # ["83528-3959", "79796-2811", "20294", "51995-4013", "71067"]
 ```
 
 ### Phone Codes
@@ -812,7 +812,7 @@ Turkic languages make use of the regular and dotted uppercase i characters "I" a
 "Istanbul".localize(:tr).casefold.to_s         # ıstanbul
 ```
 
-#### Hyphenation
+### Hyphenation
 
 TwitterCLDR uses data from the LibreOffice project to offer an implementation of [Franklin Liang's hyphenation algorithm](http://www.tug.org/docs/liang/). Try the `#hyphenate` method on instances of `LocalizedString`:
 

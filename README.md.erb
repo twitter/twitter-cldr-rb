@@ -773,7 +773,7 @@ Turkic languages make use of the regular and dotted uppercase i characters "I" a
 "Istanbul".localize(:tr).casefold.to_s         # <%= assert("Istanbul".localize(:tr).casefold.to_s, "ıstanbul") %>
 ```
 
-#### Hyphenation
+### Hyphenation
 
 TwitterCLDR uses data from the LibreOffice project to offer an implementation of [Franklin Liang's hyphenation algorithm](http://www.tug.org/docs/liang/). Try the `#hyphenate` method on instances of `LocalizedString`:
 

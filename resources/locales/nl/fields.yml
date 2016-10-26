@@ -1,0 +1,352 @@
+--- 
+:nl: 
+  :fields: 
+    :day: 
+      :display_name: Dag
+      :relative: 
+        -1: gisteren
+        -2: eergisteren
+        0: vandaag
+        1: morgen
+        2: overmorgen
+      :relative_time: 
+        :future: 
+          :one: "over {0} dag"
+          :other: "over {0} dagen"
+        :past: 
+          :one: "{0} dag geleden"
+          :other: "{0} dagen geleden"
+    :day-narrow: 
+      :display_name: dag
+      :relative_time: 
+        :future: 
+          :one: "over {0} dag"
+          :other: "over {0} dgn"
+        :past: 
+          :one: "{0} dag geleden"
+          :other: "{0} dgn geleden"
+    :day-short: 
+      :display_name: dag
+      :relative_time: 
+        :future: 
+          :one: "over {0} dag"
+          :other: "over {0} dgn"
+        :past: 
+          :one: "{0} dag geleden"
+          :other: "{0} dgn geleden"
+    :dayperiod: 
+      :display_name: a.m./p.m.
+    :era: 
+      :display_name: Tijdperk
+    :fri: 
+      :relative: 
+        -1: "afgelopen vrijdag"
+        0: "deze vrijdag"
+        1: "volgende week vrijdag"
+    :fri-narrow: 
+      :relative: 
+        -1: "afgelopen vr"
+        0: "deze vr"
+        1: "volgende week vr"
+    :fri-short: 
+      :relative: 
+        -1: "afgelopen vrij."
+        0: "deze vrij."
+        1: "volgende week vrij."
+    :hour: 
+      :display_name: Uur
+      :relative_time: 
+        :future: 
+          :one: "over {0} uur"
+          :other: "over {0} uur"
+        :past: 
+          :one: "{0} uur geleden"
+          :other: "{0} uur geleden"
+    :hour-narrow: 
+      :display_name: u
+      :relative_time: 
+        :future: 
+          :one: "over {0} uur"
+          :other: "over {0} uur"
+        :past: 
+          :one: "{0} uur geleden"
+          :other: "{0} uur geleden"
+    :hour-short: 
+      :display_name: uur
+      :relative_time: 
+        :future: 
+          :one: "over {0} uur"
+          :other: "over {0} uur"
+        :past: 
+          :one: "{0} uur geleden"
+          :other: "{0} uur geleden"
+    :minute: 
+      :display_name: Minuut
+      :relative_time: 
+        :future: 
+          :one: "over {0} minuut"
+          :other: "over {0} minuten"
+        :past: 
+          :one: "{0} minuut geleden"
+          :other: "{0} minuten geleden"
+    :minute-narrow: 
+      :display_name: m
+      :relative_time: 
+        :future: 
+          :one: "over {0} min."
+          :other: "over {0} min."
+        :past: 
+          :one: "{0} min. geleden"
+          :other: "{0} min. geleden"
+    :minute-short: 
+      :display_name: min.
+      :relative_time: 
+        :future: 
+          :one: "over {0} min."
+          :other: "over {0} min."
+        :past: 
+          :one: "{0} min. geleden"
+          :other: "{0} min. geleden"
+    :mon: 
+      :relative: 
+        -1: "afgelopen maandag"
+        0: "deze maandag"
+        1: "volgende week maandag"
+    :mon-narrow: 
+      :relative: 
+        -1: "afgelopen ma"
+        0: "deze ma"
+        1: "volgende week ma"
+    :mon-short: 
+      :relative: 
+        -1: "afgelopen maan."
+        0: "deze maan."
+        1: "volgende week maan."
+    :month: 
+      :display_name: Maand
+      :relative: 
+        -1: "vorige maand"
+        0: "deze maand"
+        1: "volgende maand"
+      :relative_time: 
+        :future: 
+          :one: "over {0} maand"
+          :other: "over {0} maanden"
+        :past: 
+          :one: "{0} maand geleden"
+          :other: "{0} maanden geleden"
+    :month-narrow: 
+      :display_name: mnd
+      :relative_time: 
+        :future: 
+          :one: "over {0} maand"
+          :other: "over {0} maanden"
+        :past: 
+          :one: "{0} maand geleden"
+          :other: "{0} maanden geleden"
+    :month-short: 
+      :display_name: mnd
+      :relative_time: 
+        :future: 
+          :one: "over {0} maand"
+          :other: "over {0} maanden"
+        :past: 
+          :one: "{0} maand geleden"
+          :other: "{0} maanden geleden"
+    :quarter: 
+      :display_name: Kwartaal
+      :relative_time: 
+        :future: 
+          :one: "over {0} kwartaal"
+          :other: "over {0} kwartalen"
+        :past: 
+          :one: "{0} kwartaal geleden"
+          :other: "{0} kwartalen geleden"
+    :quarter-narrow: 
+      :display_name: kwartaal
+      :relative_time: 
+        :future: 
+          :one: "over {0} kwartaal"
+          :other: "over {0} kwartalen"
+        :past: 
+          :one: "{0} kwartaal geleden"
+          :other: "{0} kwartalen geleden"
+    :quarter-short: 
+      :display_name: kwartaal
+      :relative_time: 
+        :future: 
+          :one: "over {0} kwartaal"
+          :other: "over {0} kwartalen"
+        :past: 
+          :one: "{0} kwartaal geleden"
+          :other: "{0} kwartalen geleden"
+    :sat: 
+      :relative: 
+        -1: "afgelopen zaterdag"
+        0: "deze zaterdag"
+        1: "volgende week zaterdag"
+    :sat-narrow: 
+      :relative: 
+        -1: "afgelopen za"
+        0: "deze za"
+        1: "volgende week za"
+    :sat-short: 
+      :relative: 
+        -1: "afgelopen zater."
+        0: "deze zater."
+        1: "volgende week zater."
+    :second: 
+      :display_name: Seconde
+      :relative: 
+        0: nu
+      :relative_time: 
+        :future: 
+          :one: "over {0} seconde"
+          :other: "over {0} seconden"
+        :past: 
+          :one: "{0} seconde geleden"
+          :other: "{0} seconden geleden"
+    :second-narrow: 
+      :display_name: s
+      :relative_time: 
+        :future: 
+          :one: "over {0} sec."
+          :other: "over {0} sec."
+        :past: 
+          :one: "{0} sec. geleden"
+          :other: "{0} sec. geleden"
+    :second-short: 
+      :display_name: sec.
+      :relative_time: 
+        :future: 
+          :one: "over {0} sec."
+          :other: "over {0} sec."
+        :past: 
+          :one: "{0} sec. geleden"
+          :other: "{0} sec. geleden"
+    :sun: 
+      :relative: 
+        -1: "afgelopen zondag"
+        0: "deze zondag"
+        1: "volgende week zondag"
+    :sun-narrow: 
+      :relative: 
+        -1: "afgelopen zo"
+        0: "deze zo"
+        1: "volgende week zo"
+    :sun-short: 
+      :relative: 
+        -1: "afgelopen zon."
+        0: "deze zon."
+        1: "volgende week zon."
+    :thu: 
+      :relative: 
+        -1: "afgelopen donderdag"
+        0: "deze donderdag"
+        1: "volgende week donderdag"
+    :thu-narrow: 
+      :relative: 
+        -1: "afgelopen do"
+        0: "deze do"
+        1: "volgende week do"
+    :thu-short: 
+      :relative: 
+        -1: "afgelopen donder."
+        0: "deze donder."
+        1: "volgende week donder."
+    :tue: 
+      :relative: 
+        -1: "afgelopen dinsdag"
+        0: "deze dinsdag"
+        1: "volgende week dinsdag"
+    :tue-narrow: 
+      :relative: 
+        -1: "afgelopen di"
+        0: "deze di"
+        1: "volgende week di"
+    :tue-short: 
+      :relative: 
+        -1: "afgelopen dins."
+        0: "deze dins."
+        1: "volgende week dins."
+    :wed: 
+      :relative: 
+        -1: "afgelopen woensdag"
+        0: "deze woensdag"
+        1: "volgende week woensdag"
+    :wed-narrow: 
+      :relative: 
+        -1: "afgelopen wo"
+        0: "deze wo"
+        1: "volgende week wo"
+    :wed-short: 
+      :relative: 
+        -1: "afgelopen woens."
+        0: "deze woens."
+        1: "volgende week woens."
+    :week: 
+      :display_name: Week
+      :relative: 
+        -1: "vorige week"
+        0: "deze week"
+        1: "volgende week"
+      :relative_time: 
+        :future: 
+          :one: "over {0} week"
+          :other: "over {0} weken"
+        :past: 
+          :one: "{0} week geleden"
+          :other: "{0} weken geleden"
+    :week-narrow: 
+      :display_name: wk
+      :relative_time: 
+        :future: 
+          :one: "over {0} week"
+          :other: "over {0} weken"
+        :past: 
+          :one: "{0} week geleden"
+          :other: "{0} weken geleden"
+    :week-short: 
+      :display_name: wk
+      :relative_time: 
+        :future: 
+          :one: "over {0} week"
+          :other: "over {0} weken"
+        :past: 
+          :one: "{0} week geleden"
+          :other: "{0} weken geleden"
+    :weekday: 
+      :display_name: "Dag van de week"
+    :year: 
+      :display_name: Jaar
+      :relative: 
+        -1: "vorig jaar"
+        0: "dit jaar"
+        1: "volgend jaar"
+      :relative_time: 
+        :future: 
+          :one: "over {0} jaar"
+          :other: "over {0} jaar"
+        :past: 
+          :one: "{0} jaar geleden"
+          :other: "{0} jaar geleden"
+    :year-narrow: 
+      :display_name: jr.
+      :relative_time: 
+        :future: 
+          :one: "over {0} jaar"
+          :other: "over {0} jaar"
+        :past: 
+          :one: "{0} jaar geleden"
+          :other: "{0} jaar geleden"
+    :year-short: 
+      :display_name: jr.
+      :relative_time: 
+        :future: 
+          :one: "over {0} jaar"
+          :other: "over {0} jaar"
+        :past: 
+          :one: "{0} jaar geleden"
+          :other: "{0} jaar geleden"
+    :zone: 
+      :display_name: Zone

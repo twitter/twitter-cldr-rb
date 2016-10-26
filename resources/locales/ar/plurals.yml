@@ -2,9 +2,10 @@
 :ar:
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((3..10).include?(n
-      % 100) ? :few : ((11..99).include?(n % 100) ? :many : (n == 1 ? :one : (n ==
-      2 ? :two : (n == 0 ? :zero : :other))))) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n % 100).floor
+      == (n % 100)) && ((n % 100) >= 3) && ((n % 100) <= 10)) ? :few : ((((n % 100).floor
+      == (n % 100)) && ((n % 100) >= 11) && ((n % 100) <= 99)) ? :many : (n == 1 ?
+      :one : (n == 2 ? :two : (n == 0 ? :zero : :other))))) }'
     :names:
     - :few
     - :many

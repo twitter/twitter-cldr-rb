@@ -15,9 +15,6 @@ module TwitterCldr
 
       def tokenizer
         @tokenizer ||= begin
-          # i.e. %spellout-numbering, %%2d-year
-          rule_regex = Regexp.new("%%?[[:word:]\-]+")
-
           recognizers = [
             # special rule descriptors
             TokenRecognizer.new(:negative, /-x/),
@@ -27,7 +24,7 @@ module TwitterCldr
 
             # normal rule descriptors
             TokenRecognizer.new(:equals, /=/),
-            TokenRecognizer.new(:rule, rule_regex),
+            TokenRecognizer.new(:rule, /%%?[[:word:]-]+/),  # i.e. %spellout-numbering, %%2d-year
             TokenRecognizer.new(:right_arrow, />/),
             TokenRecognizer.new(:left_arrow, /</),
             TokenRecognizer.new(:open_bracket, /\[/),

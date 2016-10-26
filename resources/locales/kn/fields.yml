@@ -1,0 +1,352 @@
+--- 
+:kn: 
+  :fields: 
+    :day: 
+      :display_name: ದಿನ
+      :relative: 
+        -1: ನಿನ್ನೆ
+        -2: ಮೊನ್ನೆ
+        0: ಇಂದು
+        1: ನಾಳೆ
+        2: ನಾಡಿದ್ದು
+      :relative_time: 
+        :future: 
+          :one: "{0} ದಿನದಲ್ಲಿ"
+          :other: "{0} ದಿನಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ದಿನದ ಹಿಂದೆ"
+          :other: "{0} ದಿನಗಳ ಹಿಂದೆ"
+    :day-narrow: 
+      :display_name: ದಿ
+      :relative_time: 
+        :future: 
+          :one: "{0} ದಿನದಲ್ಲಿ"
+          :other: "{0} ದಿನಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ದಿನಗಳ ಹಿಂದೆ"
+          :other: "{0} ದಿನಗಳ ಹಿಂದೆ"
+    :day-short: 
+      :display_name: ದಿನ
+      :relative_time: 
+        :future: 
+          :one: "{0} ದಿನದಲ್ಲಿ"
+          :other: "{0} ದಿನಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ದಿನಗಳ ಹಿಂದೆ"
+          :other: "{0} ದಿನಗಳ ಹಿಂದೆ"
+    :dayperiod: 
+      :display_name: ಪೂರ್ವಾಹ್ನ/ಅಪರಾಹ್ನ
+    :era: 
+      :display_name: ಯುಗ
+    :fri: 
+      :relative: 
+        -1: "ಕಳೆದ ಶುಕ್ರವಾರ"
+        0: "ಈ ಶುಕ್ರವಾರ"
+        1: "ಮುಂದಿನ ಶುಕ್ರವಾರ"
+    :fri-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಶುಕ್ರವಾರ"
+        0: "ಈ ಶುಕ್ರವಾರ"
+        1: "ಮುಂದಿನ ಶುಕ್ರವಾರ"
+    :fri-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಶುಕ್ರವಾರ"
+        0: "ಈ ಶುಕ್ರವಾರ"
+        1: "ಮುಂದಿನ ಶುಕ್ರವಾರ"
+    :hour: 
+      :display_name: ಗಂಟೆ
+      :relative_time: 
+        :future: 
+          :one: "{0} ಗಂಟೆಯಲ್ಲಿ"
+          :other: "{0} ಗಂಟೆಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಗಂಟೆ ಹಿಂದೆ"
+          :other: "{0} ಗಂಟೆಗಳ ಹಿಂದೆ"
+    :hour-narrow: 
+      :display_name: ಗಂಟೆ
+      :relative_time: 
+        :future: 
+          :one: "{0} ಗಂಟೆಯಲ್ಲಿ"
+          :other: "{0} ಗಂಟೆಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಗಂಟೆ ಹಿಂದೆ"
+          :other: "{0} ಗಂಟೆಗಳ ಹಿಂದೆ"
+    :hour-short: 
+      :display_name: ಗಂಟೆ
+      :relative_time: 
+        :future: 
+          :one: "{0} ಗಂಟೆಯಲ್ಲಿ"
+          :other: "{0} ಗಂಟೆಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಗಂಟೆ ಹಿಂದೆ"
+          :other: "{0} ಗಂಟೆಗಳ ಹಿಂದೆ"
+    :minute: 
+      :display_name: ನಿಮಿಷ
+      :relative_time: 
+        :future: 
+          :one: "{0} ನಿಮಿಷದಲ್ಲಿ"
+          :other: "{0} ನಿಮಿಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ನಿಮಿಷಗಳ ಹಿಂದೆ"
+          :other: "{0} ನಿಮಿಷಗಳ ಹಿಂದೆ"
+    :minute-narrow: 
+      :display_name: ನಿಮಿಷ
+      :relative_time: 
+        :future: 
+          :one: "{0} ನಿಮಿಷದಲ್ಲಿ"
+          :other: "{0} ನಿಮಿಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ನಿಮಿಷದ ಹಿಂದೆ"
+          :other: "{0} ನಿಮಿಷಗಳ ಹಿಂದೆ"
+    :minute-short: 
+      :display_name: ನಿಮಿಷ
+      :relative_time: 
+        :future: 
+          :one: "{0} ನಿಮಿಷದಲ್ಲಿ"
+          :other: "{0} ನಿಮಿಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ನಿಮಿಷದ ಹಿಂದೆ"
+          :other: "{0} ನಿಮಿಷಗಳ ಹಿಂದೆ"
+    :mon: 
+      :relative: 
+        -1: "ಕಳೆದ ಸೋಮವಾರ"
+        0: "ಈ ಸೋಮವಾರ"
+        1: "ಮುಂದಿನ ಸೋಮವಾರ"
+    :mon-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಸೋಮವಾರ"
+        0: "ಈ ಸೋಮವಾರ"
+        1: "ಮುಂದಿನ ಸೋಮವಾರ"
+    :mon-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಸೋಮವಾರ"
+        0: "ಈ ಸೋಮವಾರ"
+        1: "ಮುಂದಿನ ಸೋಮವಾರ"
+    :month: 
+      :display_name: ತಿಂಗಳು
+      :relative: 
+        -1: "ಕಳೆದ ತಿಂಗಳು"
+        0: "ಈ ತಿಂಗಳು"
+        1: "ಮುಂದಿನ ತಿಂಗಳು"
+      :relative_time: 
+        :future: 
+          :one: "{0} ತಿಂಗಳಲ್ಲಿ"
+          :other: "{0} ತಿಂಗಳುಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
+          :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
+    :month-narrow: 
+      :display_name: ತಿಂಗಳು
+      :relative_time: 
+        :future: 
+          :one: "{0} ತಿಂಗಳಲ್ಲಿ"
+          :other: "{0} ತಿಂಗಳುಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ತಿಂಗಳ ಹಿಂದೆ"
+          :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
+    :month-short: 
+      :display_name: ತಿಂಗಳು
+      :relative_time: 
+        :future: 
+          :one: "{0} ತಿಂಗಳಲ್ಲಿ"
+          :other: "{0} ತಿಂಗಳುಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ತಿಂಗಳು ಹಿಂದೆ"
+          :other: "{0} ತಿಂಗಳುಗಳ ಹಿಂದೆ"
+    :quarter: 
+      :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative_time: 
+        :future: 
+          :one: "{0} ತ್ರೈಮಾಸಿಕದಲ್ಲಿ"
+          :other: "{0} ತ್ರೈಮಾಸಿಕಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ತ್ರೈಮಾಸಿಕದ ಹಿಂದೆ"
+          :other: "{0} ತ್ರೈಮಾಸಿಕಗಳ ಹಿಂದೆ"
+    :quarter-narrow: 
+      :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative_time: 
+        :future: 
+          :one: "+{0} ತ್ರೈ"
+          :other: "+{0} ತ್ರೈ"
+        :past: 
+          :one: "+{0} ತ್ರೈ. ಹಿಂದೆ"
+          :other: "+{0} ತ್ರೈ. ಹಿಂದೆ"
+    :quarter-short: 
+      :display_name: ತ್ರೈಮಾಸಿಕ
+      :relative_time: 
+        :future: 
+          :one: "{0} ತ್ರೈ.ಮಾ.ದಲ್ಲಿ"
+          :other: "{0} ತ್ರೈ.ಮಾ.ಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ತ್ರೈ.ಮಾ. ಹಿಂದೆ"
+          :other: "{0} ತ್ರೈ.ಮಾ. ಗಳ ಹಿಂದೆ"
+    :sat: 
+      :relative: 
+        -1: "ಕಳೆದ ಶನಿವಾರ"
+        0: "ಈ ಶನಿವಾರ"
+        1: "ಮುಂದಿನ ಶನಿವಾರ"
+    :sat-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಶನಿವಾರ"
+        0: "ಈ ಶನಿವಾರ"
+        1: "ಮುಂದಿನ ಶನಿವಾರ"
+    :sat-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಶನಿವಾರ"
+        0: "ಈ ಶನಿವಾರ"
+        1: "ಮುಂದಿನ ಶನಿವಾರ"
+    :second: 
+      :display_name: ಸೆಕೆಂಡ್
+      :relative: 
+        0: ಇದೀಗ
+      :relative_time: 
+        :future: 
+          :one: "{0} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ"
+          :other: "{0} ಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಸೆಕೆಂಡ್ ಹಿಂದೆ"
+          :other: "{0} ಸೆಕೆಂಡುಗಳ ಹಿಂದೆ"
+    :second-narrow: 
+      :display_name: ಸೆಕೆಂಡ್
+      :relative_time: 
+        :future: 
+          :one: "{0} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ"
+          :other: "{0} ಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಸೆಕೆಂಡ್ ಹಿಂದೆ"
+          :other: "{0} ಸೆಕೆಂಡುಗಳ ಹಿಂದೆ"
+    :second-short: 
+      :display_name: ಸೆಕೆಂಡ್
+      :relative_time: 
+        :future: 
+          :one: "{0} ಸೆಕೆಂಡ್‌ನಲ್ಲಿ"
+          :other: "{0} ಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ಸೆಕೆಂಡ್ ಹಿಂದೆ"
+          :other: "{0} ಸೆಕೆಂಡುಗಳ ಹಿಂದೆ"
+    :sun: 
+      :relative: 
+        -1: "ಕಳೆದ ಭಾನುವಾರ"
+        0: "ಈ ಭಾನುವಾರ"
+        1: "ಮುಂದಿನ ಭಾನುವಾರ"
+    :sun-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಭಾನುವಾರ"
+        0: "ಈ ಭಾನುವಾರ"
+        1: "ಮುಂದಿನ ಭಾನುವಾರ"
+    :sun-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಭಾನುವಾರ"
+        0: "ಈ ಭಾನುವಾರ"
+        1: "ಮುಂದಿನ ಭಾನುವಾರ"
+    :thu: 
+      :relative: 
+        -1: "ಕಳೆದ ಗುರುವಾರ"
+        0: "ಈ ಗುರುವಾರ"
+        1: "ಮುಂದಿನ ಗುರುವಾರ"
+    :thu-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಗುರುವಾರ"
+        0: "ಈ ಗುರುವಾರ"
+        1: "ಮುಂದಿನ ಗುರುವಾರ"
+    :thu-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಗುರುವಾರ"
+        0: "ಈ ಗುರುವಾರ"
+        1: "ಮುಂದಿನ ಗುರುವಾರ"
+    :tue: 
+      :relative: 
+        -1: "ಕಳೆದ ಮಂಗಳವಾರ"
+        0: "ಈ ಮಂಗಳವಾರ"
+        1: "ಮುಂದಿನ ಮಂಗಳವಾರ"
+    :tue-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಮಂಗಳವಾರ"
+        0: "ಈ ಮಂಗಳವಾರ"
+        1: "ಮುಂದಿನ ಮಂಗಳವಾರ"
+    :tue-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಮಂಗಳವಾರ"
+        0: "ಈ ಮಂಗಳವಾರ"
+        1: "ಮುಂದಿನ ಮಂಗಳವಾರ"
+    :wed: 
+      :relative: 
+        -1: "ಕಳೆದ ಬುಧವಾರ"
+        0: "ಈ ಬುಧವಾರ"
+        1: "ಮುಂದಿನ ಬುಧವಾರ"
+    :wed-narrow: 
+      :relative: 
+        -1: "ಕಳೆದ ಬುಧವಾರ"
+        0: "ಈ ಬುಧವಾರ"
+        1: "ಮುಂದಿನ ಬುಧವಾರ"
+    :wed-short: 
+      :relative: 
+        -1: "ಕಳೆದ ಬುಧವಾರ"
+        0: "ಈ ಬುಧವಾರ"
+        1: "ಮುಂದಿನ ಬುಧವಾರ"
+    :week: 
+      :display_name: ವಾರ
+      :relative: 
+        -1: "ಕಳೆದ ವಾರ"
+        0: "ಈ ವಾರ"
+        1: "ಮುಂದಿನ ವಾರ"
+      :relative_time: 
+        :future: 
+          :one: "{0} ವಾರದಲ್ಲಿ"
+          :other: "{0} ವಾರಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವಾರದ ಹಿಂದೆ"
+          :other: "{0} ವಾರಗಳ ಹಿಂದೆ"
+    :week-narrow: 
+      :display_name: ವಾರ
+      :relative_time: 
+        :future: 
+          :one: "{0} ವಾರದಲ್ಲಿ"
+          :other: "{0} ವಾರಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವಾರದ ಹಿಂದೆ"
+          :other: "{0} ವಾರಗಳ ಹಿಂದೆ"
+    :week-short: 
+      :display_name: ವಾರ
+      :relative_time: 
+        :future: 
+          :one: "{0} ವಾರದಲ್ಲಿ"
+          :other: "{0} ವಾರಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವಾರದ ಹಿಂದೆ"
+          :other: "{0} ವಾರಗಳ ಹಿಂದೆ"
+    :weekday: 
+      :display_name: "ವಾರದ ದಿನ"
+    :year: 
+      :display_name: ವರ್ಷ
+      :relative: 
+        -1: "ಕಳೆದ ವರ್ಷ"
+        0: "ಈ ವರ್ಷ"
+        1: "ಮುಂದಿನ ವರ್ಷ"
+      :relative_time: 
+        :future: 
+          :one: "{0} ವರ್ಷದಲ್ಲಿ"
+          :other: "{0} ವರ್ಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವರ್ಷದ ಹಿಂದೆ"
+          :other: "{0} ವರ್ಷಗಳ ಹಿಂದೆ"
+    :year-narrow: 
+      :display_name: ವರ್ಷ
+      :relative_time: 
+        :future: 
+          :one: "{0} ವರ್ಷದಲ್ಲಿ"
+          :other: "{0} ವರ್ಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವರ್ಷದ ಹಿಂದೆ"
+          :other: "{0} ವರ್ಷಗಳ ಹಿಂದೆ"
+    :year-short: 
+      :display_name: ವರ್ಷ
+      :relative_time: 
+        :future: 
+          :one: "{0} ವರ್ಷದಲ್ಲಿ"
+          :other: "{0} ವರ್ಷಗಳಲ್ಲಿ"
+        :past: 
+          :one: "{0} ವರ್ಷದ ಹಿಂದೆ"
+          :other: "{0} ವರ್ಷಗಳ ಹಿಂದೆ"
+    :zone: 
+      :display_name: "ಸಮಯ ವಲಯ"

@@ -1,0 +1,448 @@
+--- 
+:uk: 
+  :fields: 
+    :day: 
+      :display_name: День
+      :relative: 
+        -1: учора
+        -2: позавчора
+        0: сьогодні
+        1: завтра
+        2: післязавтра
+      :relative_time: 
+        :future: 
+          :few: "через {0} дні"
+          :many: "через {0} днів"
+          :one: "через {0} день"
+          :other: "через {0} дня"
+        :past: 
+          :few: "{0} дні тому"
+          :many: "{0} днів тому"
+          :one: "{0} день тому"
+          :other: "{0} дня тому"
+    :day-narrow: 
+      :display_name: д.
+      :relative_time: 
+        :future: 
+          :few: "+{0} дн."
+          :many: "+{0} дн."
+          :one: "+{0} день"
+          :other: "+{0} дн."
+        :past: 
+          :few: "-{0} дн."
+          :many: "-{0} дн."
+          :one: "-{0} день"
+          :other: "-{0} дн."
+    :day-short: 
+      :display_name: д.
+      :relative_time: 
+        :future: 
+          :few: "через {0} дн."
+          :many: "через {0} дн."
+          :one: "через {0} д."
+          :other: "через {0} дн."
+        :past: 
+          :few: "{0} дн. тому"
+          :many: "{0} дн. тому"
+          :one: "{0} д. тому"
+          :other: "{0} дн. тому"
+    :dayperiod: 
+      :display_name: "Частина доби"
+    :era: 
+      :display_name: Ера
+    :fri: 
+      :relative: 
+        -1: "минулої п’ятниці"
+        0: "цієї п’ятниці"
+        1: "наступної п’ятниці"
+    :fri-narrow: 
+      :relative: 
+        -1: "мин. пт"
+        0: "цієї пт"
+        1: "наст. пт"
+    :fri-short: 
+      :relative: 
+        -1: "минулої пт"
+        0: "цієї пт"
+        1: "наступної пт"
+    :hour: 
+      :display_name: Година
+      :relative_time: 
+        :future: 
+          :few: "через {0} години"
+          :many: "через {0} годин"
+          :one: "через {0} годину"
+          :other: "через {0} години"
+        :past: 
+          :few: "{0} години тому"
+          :many: "{0} годин тому"
+          :one: "{0} годину тому"
+          :other: "{0} години тому"
+    :hour-narrow: 
+      :display_name: год
+      :relative_time: 
+        :future: 
+          :few: "+{0} год"
+          :many: "+{0} год"
+          :one: "+{0} год"
+          :other: "+{0} год"
+        :past: 
+          :few: "-{0} год"
+          :many: "-{0} год"
+          :one: "-{0} год"
+          :other: "-{0} год"
+    :hour-short: 
+      :display_name: год
+      :relative_time: 
+        :future: 
+          :few: "через {0} год"
+          :many: "через {0} год"
+          :one: "через {0} год"
+          :other: "через {0} год"
+        :past: 
+          :few: "{0} год тому"
+          :many: "{0} год тому"
+          :one: "{0} год тому"
+          :other: "{0} год тому"
+    :minute: 
+      :display_name: Хвилина
+      :relative_time: 
+        :future: 
+          :few: "через {0} хвилини"
+          :many: "через {0} хвилин"
+          :one: "через {0} хвилину"
+          :other: "через {0} хвилини"
+        :past: 
+          :few: "{0} хвилини тому"
+          :many: "{0} хвилин тому"
+          :one: "{0} хвилину тому"
+          :other: "{0} хвилини тому"
+    :minute-narrow: 
+      :display_name: хв
+      :relative_time: 
+        :future: 
+          :few: "+{0} хв"
+          :many: "+{0} хв"
+          :one: "+{0} хв"
+          :other: "+{0} хв"
+        :past: 
+          :few: "-{0} хв"
+          :many: "-{0} хв"
+          :one: "-{0} хв"
+          :other: "-{0} хв"
+    :minute-short: 
+      :display_name: хв
+      :relative_time: 
+        :future: 
+          :few: "через {0} хв"
+          :many: "через {0} хв"
+          :one: "через {0} хв"
+          :other: "через {0} хв"
+        :past: 
+          :few: "{0} хв тому"
+          :many: "{0} хв тому"
+          :one: "{0} хв тому"
+          :other: "{0} хв тому"
+    :mon: 
+      :relative: 
+        -1: "минулого понеділка"
+        0: "цього понеділка"
+        1: "наступного понеділка"
+    :mon-narrow: 
+      :relative: 
+        -1: "мин. пн"
+        0: "цього пн"
+        1: "наст. пн"
+    :mon-short: 
+      :relative: 
+        -1: "минулого пн"
+        0: "цього пн"
+        1: "наступного пн"
+    :month: 
+      :display_name: Місяць
+      :relative: 
+        -1: "минулого місяця"
+        0: "цього місяця"
+        1: "наступного місяця"
+      :relative_time: 
+        :future: 
+          :few: "через {0} місяці"
+          :many: "через {0} місяців"
+          :one: "через {0} місяць"
+          :other: "через {0} місяця"
+        :past: 
+          :few: "{0} місяці тому"
+          :many: "{0} місяців тому"
+          :one: "{0} місяць тому"
+          :other: "{0} місяця тому"
+    :month-narrow: 
+      :display_name: міс.
+      :relative_time: 
+        :future: 
+          :few: "+{0} міс."
+          :many: "+{0} міс."
+          :one: "+{0} міс."
+          :other: "+{0} міс."
+        :past: 
+          :few: "-{0} міс."
+          :many: "-{0} міс."
+          :one: "-{0} міс."
+          :other: "-{0} міс."
+    :month-short: 
+      :display_name: міс.
+      :relative_time: 
+        :future: 
+          :few: "через {0} міс."
+          :many: "через {0} міс."
+          :one: "через {0} міс."
+          :other: "через {0} міс."
+        :past: 
+          :few: "{0} міс. тому"
+          :many: "{0} міс. тому"
+          :one: "{0} міс. тому"
+          :other: "{0} міс. тому"
+    :quarter: 
+      :display_name: Квартал
+      :relative_time: 
+        :future: 
+          :few: "через {0} квартали"
+          :many: "через {0} кварталів"
+          :one: "через {0} квартал"
+          :other: "через {0} кварталу"
+        :past: 
+          :few: "{0} квартали тому"
+          :many: "{0} кварталів тому"
+          :one: "{0} квартал тому"
+          :other: "{0} кварталу тому"
+    :quarter-narrow: 
+      :display_name: кв.
+      :relative_time: 
+        :future: 
+          :few: "+{0} кв."
+          :many: "+{0} кв."
+          :one: "+{0} кв."
+          :other: "+{0} кв."
+        :past: 
+          :few: "-{0} кв."
+          :many: "-{0} кв."
+          :one: "-{0} кв."
+          :other: "-{0} кв."
+    :quarter-short: 
+      :display_name: кв.
+      :relative_time: 
+        :future: 
+          :few: "через {0} кв."
+          :many: "через {0} кв."
+          :one: "через {0} кв."
+          :other: "через {0} кв."
+        :past: 
+          :few: "{0} кв. тому"
+          :many: "{0} кв. тому"
+          :one: "{0} кв. тому"
+          :other: "{0} кв. тому"
+    :sat: 
+      :relative: 
+        -1: "минулої суботи"
+        0: "цієї суботи"
+        1: "наступної суботи"
+    :sat-narrow: 
+      :relative: 
+        -1: "мин. сб"
+        0: "цієї сб"
+        1: "наст. сб"
+    :sat-short: 
+      :relative: 
+        -1: "минулої сб"
+        0: "цієї сб"
+        1: "наступної сб"
+    :second: 
+      :display_name: Секунда
+      :relative: 
+        0: зараз
+      :relative_time: 
+        :future: 
+          :few: "через {0} секунди"
+          :many: "через {0} секунд"
+          :one: "через {0} секунду"
+          :other: "через {0} секунди"
+        :past: 
+          :few: "{0} секунди тому"
+          :many: "{0} секунд тому"
+          :one: "{0} секунду тому"
+          :other: "{0} секунди тому"
+    :second-narrow: 
+      :display_name: с
+      :relative_time: 
+        :future: 
+          :few: "+{0} с"
+          :many: "+{0} с"
+          :one: "+{0} с"
+          :other: "+{0} с"
+        :past: 
+          :few: "-{0} с"
+          :many: "-{0} с"
+          :one: "-{0} с"
+          :other: "-{0} с"
+    :second-short: 
+      :display_name: с
+      :relative_time: 
+        :future: 
+          :few: "через {0} с"
+          :many: "через {0} с"
+          :one: "через {0} с"
+          :other: "через {0} с"
+        :past: 
+          :few: "{0} с тому"
+          :many: "{0} с тому"
+          :one: "{0} с тому"
+          :other: "{0} с тому"
+    :sun: 
+      :relative: 
+        -1: "минулої неділі"
+        0: "цієї неділі"
+        1: "наступної неділі"
+    :sun-narrow: 
+      :relative: 
+        -1: "мин. нд"
+        0: "цієї нд"
+        1: "наст. нд"
+    :sun-short: 
+      :relative: 
+        -1: "минулої нд"
+        0: "цієї нд"
+        1: "наступної нд"
+    :thu: 
+      :relative: 
+        -1: "минулого четверга"
+        0: "цього четверга"
+        1: "наступного четверга"
+    :thu-narrow: 
+      :relative: 
+        -1: "мин. чт"
+        0: "цього чт"
+        1: "наст. чт"
+    :thu-short: 
+      :relative: 
+        -1: "минулого чт"
+        0: "цього чт"
+        1: "наступного чт"
+    :tue: 
+      :relative: 
+        -1: "минулого вівторка"
+        0: "цього вівторка"
+        1: "наступного вівторка"
+    :tue-narrow: 
+      :relative: 
+        -1: "мин. вт"
+        0: "цього вт"
+        1: "наст. вт"
+    :tue-short: 
+      :relative: 
+        -1: "минулого вт"
+        0: "цього вт"
+        1: "наступного вт"
+    :wed: 
+      :relative: 
+        -1: "минулої середи"
+        0: "цієї середи"
+        1: "наступної середи"
+    :wed-narrow: 
+      :relative: 
+        -1: "мин. ср"
+        0: "цієї ср"
+        1: "наст. ср"
+    :wed-short: 
+      :relative: 
+        -1: "минулої ср"
+        0: "цієї ср"
+        1: "наступної ср"
+    :week: 
+      :display_name: Тиждень
+      :relative: 
+        -1: "минулого тижня"
+        0: "цього тижня"
+        1: "наступного тижня"
+      :relative_time: 
+        :future: 
+          :few: "через {0} тижні"
+          :many: "через {0} тижнів"
+          :one: "через {0} тиждень"
+          :other: "через {0} тижня"
+        :past: 
+          :few: "{0} тижні тому"
+          :many: "{0} тижнів тому"
+          :one: "{0} тиждень тому"
+          :other: "{0} тижня тому"
+    :week-narrow: 
+      :display_name: тиж.
+      :relative_time: 
+        :future: 
+          :few: "+{0} тиж."
+          :many: "+{0} тиж."
+          :one: "+{0} тиж."
+          :other: "+{0} тиж."
+        :past: 
+          :few: "-{0} тиж."
+          :many: "-{0} тиж."
+          :one: "-{0} тиж."
+          :other: "-{0} тиж."
+    :week-short: 
+      :display_name: тиж.
+      :relative_time: 
+        :future: 
+          :few: "через {0} тиж."
+          :many: "через {0} тиж."
+          :one: "через {0} тиж."
+          :other: "через {0} тиж."
+        :past: 
+          :few: "{0} тиж. тому"
+          :many: "{0} тиж. тому"
+          :one: "{0} тиж. тому"
+          :other: "{0} тиж. тому"
+    :weekday: 
+      :display_name: "День тижня"
+    :year: 
+      :display_name: Рік
+      :relative: 
+        -1: торік
+        0: "цього року"
+        1: "наступного року"
+      :relative_time: 
+        :future: 
+          :few: "через {0} роки"
+          :many: "через {0} років"
+          :one: "через {0} рік"
+          :other: "через {0} року"
+        :past: 
+          :few: "{0} роки тому"
+          :many: "{0} років тому"
+          :one: "{0} рік тому"
+          :other: "{0} року тому"
+    :year-narrow: 
+      :display_name: р.
+      :relative_time: 
+        :future: 
+          :few: "+{0} р."
+          :many: "+{0} р."
+          :one: "+{0} р."
+          :other: "+{0} р."
+        :past: 
+          :few: "-{0} р."
+          :many: "-{0} р."
+          :one: "-{0} р."
+          :other: "-{0} р."
+    :year-short: 
+      :display_name: р.
+      :relative_time: 
+        :future: 
+          :few: "через {0} р."
+          :many: "через {0} р."
+          :one: "через {0} р."
+          :other: "через {0} р."
+        :past: 
+          :few: "{0} р. тому"
+          :many: "{0} р. тому"
+          :one: "{0} р. тому"
+          :other: "{0} р. тому"
+    :zone: 
+      :display_name: "Часовий пояс"

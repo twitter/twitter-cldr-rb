@@ -1,0 +1,304 @@
+--- 
+:th: 
+  :fields: 
+    :day: 
+      :display_name: วัน
+      :relative: 
+        -1: เมื่อวาน
+        -2: เมื่อวานซืน
+        0: วันนี้
+        1: พรุ่งนี้
+        2: มะรืนนี้
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} วัน"
+        :past: 
+          :other: "{0} วันที่ผ่านมา"
+    :day-narrow: 
+      :display_name: วัน
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} วัน"
+        :past: 
+          :other: "{0} วันที่แล้ว"
+    :day-short: 
+      :display_name: วัน
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} วัน"
+        :past: 
+          :other: "{0} วันที่แล้ว"
+    :dayperiod: 
+      :display_name: ช่วงวัน
+    :era: 
+      :display_name: สมัย
+    :fri: 
+      :relative: 
+        -1: ศุกร์ที่แล้ว
+        0: ศุกร์นี้
+        1: ศุกร์หน้า
+    :fri-narrow: 
+      :relative: 
+        -1: ศุกร์ที่แล้ว
+        0: ศุกร์นี้
+        1: ศุกร์หน้า
+    :fri-short: 
+      :relative: 
+        -1: ศุกร์ที่แล้ว
+        0: ศุกร์นี้
+        1: ศุกร์หน้า
+    :hour: 
+      :display_name: ชั่วโมง
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} ชั่วโมง"
+        :past: 
+          :other: "{0} ชั่วโมงที่ผ่านมา"
+    :hour-narrow: 
+      :display_name: ชม.
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ชม."
+        :past: 
+          :other: "{0} ชม. ที่แล้ว"
+    :hour-short: 
+      :display_name: ชม.
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ชม."
+        :past: 
+          :other: "{0} ชม. ที่แล้ว"
+    :minute: 
+      :display_name: นาที
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} นาที"
+        :past: 
+          :other: "{0} นาทีที่ผ่านมา"
+    :minute-narrow: 
+      :display_name: น.
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} นาที"
+        :past: 
+          :other: "{0} นาทีที่แล้ว"
+    :minute-short: 
+      :display_name: น.
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} นาที"
+        :past: 
+          :other: "{0} นาทีที่แล้ว"
+    :mon: 
+      :relative: 
+        -1: จันทร์ที่แล้ว
+        0: จันทร์นี้
+        1: จันทร์หน้า
+    :mon-narrow: 
+      :relative: 
+        -1: จันทร์ที่แล้ว
+        0: จันทร์นี้
+        1: จันทร์หน้า
+    :mon-short: 
+      :relative: 
+        -1: จันทร์ที่แล้ว
+        0: จันทร์นี้
+        1: จันทร์หน้า
+    :month: 
+      :display_name: เดือน
+      :relative: 
+        -1: เดือนที่แล้ว
+        0: เดือนนี้
+        1: เดือนหน้า
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} เดือน"
+        :past: 
+          :other: "{0} เดือนที่ผ่านมา"
+    :month-narrow: 
+      :display_name: เดือน
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} เดือน"
+        :past: 
+          :other: "{0} เดือนที่แล้ว"
+    :month-short: 
+      :display_name: เดือน
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} เดือน"
+        :past: 
+          :other: "{0} เดือนที่แล้ว"
+    :quarter: 
+      :display_name: ไตรมาส
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} ไตรมาส"
+        :past: 
+          :other: "{0} ไตรมาสที่แล้ว"
+    :quarter-narrow: 
+      :display_name: ไตรมาส
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ไตรมาส"
+        :past: 
+          :other: "{0} ไตรมาสที่แล้ว"
+    :quarter-short: 
+      :display_name: ไตรมาส
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ไตรมาส"
+        :past: 
+          :other: "{0} ไตรมาสที่แล้ว"
+    :sat: 
+      :relative: 
+        -1: เสาร์ที่แล้ว
+        0: เสาร์นี้
+        1: เสาร์หน้า
+    :sat-narrow: 
+      :relative: 
+        -1: เสาร์ที่แล้ว
+        0: เสาร์นี้
+        1: เสาร์หน้า
+    :sat-short: 
+      :relative: 
+        -1: เสาร์ที่แล้ว
+        0: เสาร์นี้
+        1: เสาร์หน้า
+    :second: 
+      :display_name: วินาที
+      :relative: 
+        0: ขณะนี้
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} วินาที"
+        :past: 
+          :other: "{0} วินาทีที่ผ่านมา"
+    :second-narrow: 
+      :display_name: วิ
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} วินาที"
+        :past: 
+          :other: "{0} วินาทีที่แล้ว"
+    :second-short: 
+      :display_name: วิ
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} วินาที"
+        :past: 
+          :other: "{0} วินาทีที่แล้ว"
+    :sun: 
+      :relative: 
+        -1: อาทิตย์ที่แล้ว
+        0: อาทิตย์นี้
+        1: อาทิตย์หน้า
+    :sun-narrow: 
+      :relative: 
+        -1: อาทิตย์ที่แล้ว
+        0: อาทิตย์นี้
+        1: อาทิตย์หน้า
+    :sun-short: 
+      :relative: 
+        -1: อาทิตย์ที่แล้ว
+        0: อาทิตย์นี้
+        1: อาทิตย์หน้า
+    :thu: 
+      :relative: 
+        -1: พฤหัสที่แล้ว
+        0: พฤหัสนี้
+        1: พฤหัสหน้า
+    :thu-narrow: 
+      :relative: 
+        -1: พฤหัสที่แล้ว
+        0: พฤหัสนี้
+        1: พฤหัสหน้า
+    :thu-short: 
+      :relative: 
+        -1: พฤหัสที่แล้ว
+        0: พฤหัสนี้
+        1: พฤหัสหน้า
+    :tue: 
+      :relative: 
+        -1: อังคารที่แล้ว
+        0: อังคารนี้
+        1: อังคารหน้า
+    :tue-narrow: 
+      :relative: 
+        -1: อังคารที่แล้ว
+        0: อังคารนี้
+        1: อังคารหน้า
+    :tue-short: 
+      :relative: 
+        -1: อังคารที่แล้ว
+        0: อังคารนี้
+        1: อังคารหน้า
+    :wed: 
+      :relative: 
+        -1: พุธที่แล้ว
+        0: พุธนี้
+        1: พุธหน้า
+    :wed-narrow: 
+      :relative: 
+        -1: พุธที่แล้ว
+        0: พุธนี้
+        1: พุธหน้า
+    :wed-short: 
+      :relative: 
+        -1: พุธที่แล้ว
+        0: พุธนี้
+        1: พุธหน้า
+    :week: 
+      :display_name: สัปดาห์
+      :relative: 
+        -1: สัปดาห์ที่แล้ว
+        0: สัปดาห์นี้
+        1: สัปดาห์หน้า
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} สัปดาห์"
+        :past: 
+          :other: "{0} สัปดาห์ที่ผ่านมา"
+    :week-narrow: 
+      :display_name: สัปดาห์
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} สัปดาห์"
+        :past: 
+          :other: "{0} สัปดาห์ที่แล้ว"
+    :week-short: 
+      :display_name: สัปดาห์
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} สัปดาห์"
+        :past: 
+          :other: "{0} สัปดาห์ที่แล้ว"
+    :weekday: 
+      :display_name: วันในสัปดาห์
+    :year: 
+      :display_name: ปี
+      :relative: 
+        -1: ปีที่แล้ว
+        0: ปีนี้
+        1: ปีหน้า
+      :relative_time: 
+        :future: 
+          :other: "ในอีก {0} ปี"
+        :past: 
+          :other: "{0} ปีที่แล้ว"
+    :year-narrow: 
+      :display_name: ปี
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ปี"
+        :past: 
+          :other: "{0} ปีที่แล้ว"
+    :year-short: 
+      :display_name: ปี
+      :relative_time: 
+        :future: 
+          :other: "ใน {0} ปี"
+        :past: 
+          :other: "{0} ปีที่แล้ว"
+    :zone: 
+      :display_name: เขตเวลา

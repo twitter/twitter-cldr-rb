@@ -14,8 +14,6 @@ module TwitterCldr
 
     class LocalesResourcesImporter
 
-      # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate.
-      #       Meanwhile, use ruby-cldr v0.0.2 and CLDR 22.1 to update units.yml files.
       LOCALE_COMPONENTS = %w[
         calendars
         languages
@@ -24,7 +22,9 @@ module TwitterCldr
         lists
         territories
         rbnf
-      ]  # units
+        units
+        fields
+      ]
 
       SHARED_COMPONENTS = %w[
         currency_digits_and_rounding

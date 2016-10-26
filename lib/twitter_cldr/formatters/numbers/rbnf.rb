@@ -37,7 +37,7 @@ module TwitterCldr
 
         def format(number, options = {})
           rule_group_name, rule_set_name = *if options[:rule_group].nil? && options[:rule_set].nil?
-            [DEFAULT_CARDINAL_OPTIONS[:rule_group], DEFAULT_CARDINAL_OPTIONS[:rule_set]]
+            [DEFAULT_SPELLOUT_OPTIONS[:rule_group], DEFAULT_SPELLOUT_OPTIONS[:rule_set]]
           else
             [options[:rule_group], options[:rule_set]]
           end

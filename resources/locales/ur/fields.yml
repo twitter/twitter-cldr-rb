@@ -1,0 +1,352 @@
+--- 
+:ur: 
+  :fields: 
+    :day: 
+      :display_name: دن
+      :relative: 
+        -1: "گزشتہ کل"
+        -2: "گزشتہ پرسوں"
+        0: آج
+        1: "آئندہ کل"
+        2: "آنے والا پرسوں"
+      :relative_time: 
+        :future: 
+          :one: "{0} دن میں"
+          :other: "{0} دنوں میں"
+        :past: 
+          :one: "{0} دن پہلے"
+          :other: "{0} دنوں پہلے"
+    :day-narrow: 
+      :display_name: دن
+      :relative_time: 
+        :future: 
+          :one: "{0} دنوں میں"
+          :other: "{0} دنوں میں"
+        :past: 
+          :one: "-{0} دن"
+          :other: "-{0} دن"
+    :day-short: 
+      :display_name: دن
+      :relative_time: 
+        :future: 
+          :one: "{0} دن میں"
+          :other: "{0} دنوں میں"
+        :past: 
+          :one: "{0} دن پہلے"
+          :other: "{0} دنوں پہلے"
+    :dayperiod: 
+      :display_name: "قبل دوپہر/بعد دوپہر"
+    :era: 
+      :display_name: عہد
+    :fri: 
+      :relative: 
+        -1: "گزشتہ جمعہ"
+        0: "اس جمعہ"
+        1: "اگلے جمعہ"
+    :fri-narrow: 
+      :relative: 
+        -1: "گزشتہ جمعہ"
+        0: "اس جمعہ"
+        1: "اگلے جمعہ"
+    :fri-short: 
+      :relative: 
+        -1: "گزشتہ جمعہ"
+        0: "اس جمعہ"
+        1: "اگلے جمعہ"
+    :hour: 
+      :display_name: گھنٹہ
+      :relative_time: 
+        :future: 
+          :one: "{0} گھنٹہ میں"
+          :other: "{0} گھنٹے میں"
+        :past: 
+          :one: "{0} گھنٹہ پہلے"
+          :other: "{0} گھنٹے پہلے"
+    :hour-narrow: 
+      :display_name: گھنٹہ
+      :relative_time: 
+        :future: 
+          :one: "{0} گھنٹہ میں"
+          :other: "{0} گھنٹوں میں"
+        :past: 
+          :one: "-{0} گھنٹہ"
+          :other: "-{0} گھنٹے"
+    :hour-short: 
+      :display_name: گھنٹہ
+      :relative_time: 
+        :future: 
+          :one: "{0} گھنٹے میں"
+          :other: "{0} گھنٹے میں"
+        :past: 
+          :one: "{0} گھنٹے پہلے"
+          :other: "{0} گھنٹے پہلے"
+    :minute: 
+      :display_name: منٹ
+      :relative_time: 
+        :future: 
+          :one: "{0} منٹ میں"
+          :other: "{0} منٹ میں"
+        :past: 
+          :one: "{0} منٹ پہلے"
+          :other: "{0} منٹ پہلے"
+    :minute-narrow: 
+      :display_name: منٹ
+      :relative_time: 
+        :future: 
+          :one: "{0} منٹ میں"
+          :other: "{0} منٹ میں"
+        :past: 
+          :one: "{0} منٹ پہلے"
+          :other: "{0} منٹ پہلے"
+    :minute-short: 
+      :display_name: منٹ
+      :relative_time: 
+        :future: 
+          :one: "{0} منٹ میں"
+          :other: "{0} منٹ میں"
+        :past: 
+          :one: "{0} منٹ پہلے"
+          :other: "{0} منٹ پہلے"
+    :mon: 
+      :relative: 
+        -1: "گزشتہ پیر"
+        0: "یہ پیر"
+        1: "اگلے پیر"
+    :mon-narrow: 
+      :relative: 
+        -1: "گزشتہ سوموار"
+        0: "اس سوموار"
+        1: "اگلے سوموار"
+    :mon-short: 
+      :relative: 
+        -1: "گزشتہ سوموار"
+        0: "اس سوموار"
+        1: "اگلے سوموار"
+    :month: 
+      :display_name: مہینہ
+      :relative: 
+        -1: "پچھلے مہینہ"
+        0: "اس مہینہ"
+        1: "اگلے مہینہ"
+      :relative_time: 
+        :future: 
+          :one: "{0} مہینہ میں"
+          :other: "{0} مہینے میں"
+        :past: 
+          :one: "{0} مہینہ پہلے"
+          :other: "{0} مہینے پہلے"
+    :month-narrow: 
+      :display_name: مہ
+      :relative_time: 
+        :future: 
+          :one: "+{0} ماہ میں"
+          :other: "+{0} ماہ میں"
+        :past: 
+          :one: "-{0} ماہ میں"
+          :other: "-{0} ماہ میں"
+    :month-short: 
+      :display_name: ماہ
+      :relative_time: 
+        :future: 
+          :one: "{0} ماہ میں"
+          :other: "{0} ماہ میں"
+        :past: 
+          :one: "{0} ماہ قبل"
+          :other: "{0} ماہ قبل"
+    :quarter: 
+      :display_name: "سہ ماہی"
+      :relative_time: 
+        :future: 
+          :one: "+{0} سہ ماہی"
+          :other: "+{0} سہ ماہی"
+        :past: 
+          :one: "-{0} سہ ماہی"
+          :other: "-{0} سہ ماہی"
+    :quarter-narrow: 
+      :display_name: "سہ ماہی"
+      :relative_time: 
+        :future: 
+          :one: "{0} سہ ماہی میں"
+          :other: "{0} سہ ماہی میں"
+        :past: 
+          :one: "-{0}سہ ماہی"
+          :other: "-{0}سہ ماہی"
+    :quarter-short: 
+      :display_name: "سہ ماہی"
+      :relative_time: 
+        :future: 
+          :one: "{0} سہ ماہی میں"
+          :other: "{0} سہ ماہی میں"
+        :past: 
+          :one: "{0} سہ ماہی قبل"
+          :other: "{0} سہ ماہی قبل"
+    :sat: 
+      :relative: 
+        -1: "گزشتہ ہفتہ"
+        0: "یہ ہفتہ"
+        1: "اگلے ہفتہ"
+    :sat-narrow: 
+      :relative: 
+        -1: "گزشتہ سنیچر"
+        0: "اس سنیچر"
+        1: "اگلے سنیچر"
+    :sat-short: 
+      :relative: 
+        -1: "گزشتہ سنیچر"
+        0: "اس سنیچر"
+        1: "اگلے سنیچر"
+    :second: 
+      :display_name: سیکنڈ
+      :relative: 
+        0: اب
+      :relative_time: 
+        :future: 
+          :one: "{0} سیکنڈ میں"
+          :other: "{0} سیکنڈ میں"
+        :past: 
+          :one: "{0} سیکنڈ پہلے"
+          :other: "{0} سیکنڈ پہلے"
+    :second-narrow: 
+      :display_name: سیکنڈ
+      :relative_time: 
+        :future: 
+          :one: "{0} سیکنڈ میں"
+          :other: "{0} سیکنڈ میں"
+        :past: 
+          :one: "-{0} سیکنڈ"
+          :other: "-{0} سیکنڈ"
+    :second-short: 
+      :display_name: سیکنڈ
+      :relative_time: 
+        :future: 
+          :one: "{0} سیکنڈ میں"
+          :other: "{0} سیکنڈ میں"
+        :past: 
+          :one: "{0} سیکنڈ پہلے"
+          :other: "{0} سیکنڈ پہلے"
+    :sun: 
+      :relative: 
+        -1: "گزشتہ اتوار"
+        0: "اس اتوار"
+        1: "اگلے اتوار"
+    :sun-narrow: 
+      :relative: 
+        -1: "گزشتہ اتوار"
+        0: "اس اتوار"
+        1: "اگلے اتوار"
+    :sun-short: 
+      :relative: 
+        -1: "گزشتہ اتوار"
+        0: "اس اتوار"
+        1: "اگلے اتوار"
+    :thu: 
+      :relative: 
+        -1: "گزشتہ جمعرات"
+        0: "اس جمعرات"
+        1: "اگلے جمعرات"
+    :thu-narrow: 
+      :relative: 
+        -1: "گزشتہ جمعرات"
+        0: "اس جمعرات"
+        1: "اگلی جمعرات"
+    :thu-short: 
+      :relative: 
+        -1: "گزشتہ جمعرات"
+        0: "اس جمعرات"
+        1: "اگلی جمعرات"
+    :tue: 
+      :relative: 
+        -1: "گزشتہ منگل"
+        0: "اس منگل"
+        1: "اگلے منگل"
+    :tue-narrow: 
+      :relative: 
+        -1: "گزشتہ منگل"
+        0: "اس منگل"
+        1: "اگلے منگل"
+    :tue-short: 
+      :relative: 
+        -1: "گزشتہ منگل"
+        0: "اس منگل"
+        1: "اگلے منگل"
+    :wed: 
+      :relative: 
+        -1: "گزشتہ بدھ"
+        0: "اس بدھ"
+        1: "اگلے بدھ"
+    :wed-narrow: 
+      :relative: 
+        -1: "گزشتہ بدھ"
+        0: "اس بدھ"
+        1: "اگلے بدھ"
+    :wed-short: 
+      :relative: 
+        -1: "گزشتہ بدھ"
+        0: "اس بدھ"
+        1: "اگلے بدھ"
+    :week: 
+      :display_name: ہفتہ
+      :relative: 
+        -1: "پچھلے ہفتہ"
+        0: "اس ہفتہ"
+        1: "اگلے ہفتہ"
+      :relative_time: 
+        :future: 
+          :one: "{0} ہفتہ میں"
+          :other: "{0} ہفتے میں"
+        :past: 
+          :one: "{0} ہفتہ پہلے"
+          :other: "{0} ہفتے پہلے"
+    :week-narrow: 
+      :display_name: ہفتہ
+      :relative_time: 
+        :future: 
+          :one: "{0} ہفتہ میں"
+          :other: "{0} ہفتے میں"
+        :past: 
+          :one: "-{0} ہفتہ"
+          :other: "-{0} ہفتے"
+    :week-short: 
+      :display_name: ہفتہ
+      :relative_time: 
+        :future: 
+          :one: "{0} ہفتے میں"
+          :other: "{0} ہفتے میں"
+        :past: 
+          :one: "{0} ہفتے پہلے"
+          :other: "{0} ہفتے پہلے"
+    :weekday: 
+      :display_name: "ہفتے کا دن"
+    :year: 
+      :display_name: سال
+      :relative: 
+        -1: "گزشتہ سال"
+        0: "اس سال"
+        1: "اگلے سال"
+      :relative_time: 
+        :future: 
+          :one: "{0} سال میں"
+          :other: "{0} سال میں"
+        :past: 
+          :one: "{0} سال پہلے"
+          :other: "{0} سال پہلے"
+    :year-narrow: 
+      :display_name: سال
+      :relative_time: 
+        :future: 
+          :one: "+{0} سال میں"
+          :other: "+{0} سال میں"
+        :past: 
+          :one: "-{0} سال پہلے"
+          :other: "-{0} سال پہلے"
+    :year-short: 
+      :display_name: سال
+      :relative_time: 
+        :future: 
+          :one: "{0} سال میں"
+          :other: "{0} سال میں"
+        :past: 
+          :one: "{0} سال پہلے"
+          :other: "{0} سال پہلے"
+    :zone: 
+      :display_name: "منطقۂ وقت"

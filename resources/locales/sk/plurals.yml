@@ -2,9 +2,9 @@
 :sk:
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((2..4).include?(i)
-      && v == 0) ? :few : (v != 0 ? :many : ((i == 1 && v == 0) ? :one : :other)))
-      }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((((i).floor ==
+      (i)) && ((i) >= 2) && ((i) <= 4))) && (v == 0)) ? :few : (v != 0 ? :many : (((i
+      == 1) && (v == 0)) ? :one : :other))) }'
     :names:
     - :few
     - :many

@@ -39,7 +39,7 @@ module TwitterCldr
       def each_boundary(rule_set, str)
         if block_given?
           rule_set.each_boundary(str).each_cons(2) do |start, stop|
-            yield str[start...stop]
+            yield str[start...stop], start, stop
           end
         else
           to_enum(__method__, rule_set, str)

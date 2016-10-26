@@ -247,6 +247,17 @@ module TwitterCldr
         ([language, script, region] + variants).compact
       end
 
+      def permutations(delimiter = '_')
+        perms = [
+          [language, script, region].compact.join(delimiter),
+          [language, script].compact.join(delimiter),
+          [language, region].compact.join(delimiter),
+          language,
+        ]
+
+        perms.uniq
+      end
+
     end
   end
 end

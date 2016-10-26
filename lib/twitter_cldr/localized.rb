@@ -6,7 +6,7 @@
 module TwitterCldr
   module Localized
     autoload :LocalizedArray,    'twitter_cldr/localized/localized_array'
-    autoload :LocalizedHash,    'twitter_cldr/localized/localized_hash'
+    autoload :LocalizedHash,     'twitter_cldr/localized/localized_hash'
     autoload :LocalizedDate,     'twitter_cldr/localized/localized_date'
     autoload :LocalizedDateTime, 'twitter_cldr/localized/localized_datetime'
     autoload :LocalizedNumber,   'twitter_cldr/localized/localized_number'

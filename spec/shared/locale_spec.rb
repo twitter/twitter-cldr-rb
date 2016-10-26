@@ -197,7 +197,7 @@ describe Locale do
       end
     end
 
-    def to_a
+    describe '#to_a' do
       it 'returns an array with all the subtags' do
         expect(locale.to_a).to eq(%w[ko KR])
       end
@@ -205,6 +205,20 @@ describe Locale do
       it 'includes variants if they are present' do
         locale.variants << 'FONIPA'
         expect(locale.to_a).to eq(%w[ko KR FONIPA])
+      end
+    end
+
+    describe '#permutations' do
+      it 'generates all combinations of the subtags' do
+        expect(locale.permutations).to eq(
+          %w(ko_KR ko)
+        )
+      end
+
+      it 'generates all maximized combinations of the subtags' do
+        expect(locale.maximize.permutations).to eq(
+          %w(ko_Kore_KR ko_Kore ko_KR ko)
+        )
       end
     end
   end

@@ -8,33 +8,69 @@
 module TwitterCldr
   module Shared
     class Hyphenator
+      class UnsupportedLocaleError < StandardError; end
+
+      BASE_RESOURCE_PATH = %w(shared hyphenation)
       DEFAULT_LEFT_HYPHEN_MIN = 2
       DEFAULT_RIGHT_HYPHEN_MIN = 2
       DEFAULT_NO_HYPHEN = %w(- ' ’)
 
       class << self
         def get(locale)
+          locale = find_supported_locale(locale)
+
+          unless locale
+            raise UnsupportedLocaleError,
+              "'#{locale}' is not a supported hyphenation locale"
+          end
+
           cache[locale] ||= begin
             resource = resource_for(locale)
-            new(resource[:rules], resource[:options])
+            new(resource[:rules], locale, resource[:options])
+          end
+        end
+
+        def supported_locale?(locale)
+          !!find_supported_locale(locale)
+        end
+
+        def supported_locales
+          @supported_locales ||= begin
+            absolute_resource_path = TwitterCldr.absolute_resource_path(
+              File.join(BASE_RESOURCE_PATH)
+            )
+
+            files = Dir.glob(File.join(absolute_resource_path, '*.yml'))
+            files.map { |f| File.basename(f).chomp('.yml') }
           end
         end
 
         private
+
+        def find_supported_locale(locale)
+          maximized_locale = Locale.parse(locale.to_s).maximize
+
+          maximized_locale.permutations('-').find do |locale_candidate|
+            TwitterCldr.resource_exists?(
+              *BASE_RESOURCE_PATH, locale_candidate
+            )
+          end
+        end
 
         def cache
           @cache ||= {}
         end
 
         def resource_for(locale)
-          TwitterCldr.get_resource('shared', 'hyphenation', locale)
+          TwitterCldr.get_resource(*BASE_RESOURCE_PATH, locale)
         end
       end
 
-      attr_reader :rules, :options, :trie
+      attr_reader :rules, :locale, :options, :trie
 
-      def initialize(rules, options)
+      def initialize(rules, locale, options)
         @rules = rules
+        @locale = locale
         @options = options
         @trie = build_trie_from(rules)
       end
@@ -52,7 +88,7 @@ module TwitterCldr
             yield text[last_pos...pos].tap { last_pos = pos }
           end
 
-          if last_pos < text.size - 1
+          if last_pos < text.size
             yield text[last_pos..text.size]
           end
         else

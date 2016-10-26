@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["95769-2402", "46843-4641", "16769", "50641-1147", "73176"]
+postal_code.sample(5)  # ["16960-4424", "84410-1381", "18464-3662", "70821-5203", "42074"]
 ```
 
 ### Phone Codes
@@ -810,6 +810,17 @@ Turkic languages make use of the regular and dotted uppercase i characters "I" a
 ```ruby
 "Istanbul".localize.casefold(:t => true).to_s  # ıstanbul
 "Istanbul".localize(:tr).casefold.to_s         # ıstanbul
+```
+
+#### Hyphenation
+
+TwitterCLDR uses data from the LibreOffice project to offer an implementation of [Franklin Liang's hyphenation algorithm](http://www.tug.org/docs/liang/). Since the data doesn't come packaged with CLDR, only a certain subset of locales are supported. To get a list of supported locales, use the `supported_locales` method:
+
+```ruby
+
+
+
+TwitterCldr::Shared::Hyphenator.supported_locales  # ["af-ZA", "de-CH", "en-US", ...]
 ```
 
 ### Sorting (Collation)

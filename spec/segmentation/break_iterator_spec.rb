@@ -17,21 +17,21 @@ describe BreakIterator do
 
     it "splits a simple string into sentences" do
       str = "The. Quick. Brown. Fox."
-      expect(iterator.each_sentence(str).to_a).to eq([
+      expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "The. ", "Quick. ", "Brown. ", "Fox."
       ])
     end
 
     it "does not split on commas, for example" do
       str = "The. Quick, brown. Fox."
-      expect(iterator.each_sentence(str).to_a).to eq([
+      expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "The. ", "Quick, brown. ", "Fox."
       ])
     end
 
     it "does not split periods in the midst of other letters, eg. in a URL" do
       str = "Visit us. Go to http://translate.twitter.com."
-      expect(iterator.each_sentence(str).to_a).to eq([
+      expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "Visit us. ",
         "Go to http://translate.twitter.com."
       ])
@@ -39,7 +39,7 @@ describe BreakIterator do
 
     it "splits on sentences that end with other kinds of punctuation" do
       str = "Help us translate! Speak another language? You really, really rock."
-      expect(iterator.each_sentence(str).to_a).to eq([
+      expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "Help us translate! ",
         "Speak another language? ",
         "You really, really rock."
@@ -49,7 +49,7 @@ describe BreakIterator do
     context "with ULI exceptions" do
       it "does not split on certain abbreviations like Mr. and Mrs." do
         str = "I really like Mrs. Patterson. She's nice."
-        expect(iterator.each_sentence(str).to_a).to eq([
+        expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
           "I really like Mrs. Patterson. ",
           "She's nice."
         ])
@@ -61,7 +61,7 @@ describe BreakIterator do
 
       it "splits on certain abbreviations like Mr. and Mrs. (use ULI rules to avoid this behavior)" do
         str = "I really like Mrs. Patterson. She's nice."
-        expect(iterator.each_sentence(str).to_a).to eq([
+        expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
           "I really like Mrs. ",
           "Patterson. ",
           "She's nice."
@@ -79,21 +79,21 @@ describe BreakIterator do
 
     it "splits a simple string into words" do
       str = "the quick brown fox"
-      expect(iterator.each_word(str).to_a).to eq([
+      expect(iterator.each_word(str).map { |word, _, _| word }).to eq([
         "the", " ", "quick", " ", "brown", " ", "fox"
       ])
     end
 
     it "breaks around periods" do
       str = "The. Quick. Brown. Fox."
-      expect(iterator.each_word(str).to_a).to eq([
+      expect(iterator.each_word(str).map { |word, _, _| word }).to eq([
         "The", ".", " ", "Quick", ".", " ", "Brown", ".", " ", "Fox", "."
       ])
     end
 
     it "does not break at apostrophes" do
       str = "I like cats. They're cute."
-      expect(iterator.each_word(str).to_a).to eq([
+      expect(iterator.each_word(str).map { |word, _, _| word }).to eq([
         "I", " ", "like", " ", "cats", ".", " ", "They're", " ", "cute", "."
       ])
     end

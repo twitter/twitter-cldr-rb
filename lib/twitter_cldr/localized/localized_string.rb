@@ -57,7 +57,7 @@ module TwitterCldr
       def each_sentence
         if block_given?
           break_iterator.each_sentence(@base_obj) do |sentence|
-            yield sentence.localize
+            yield sentence.localize(locale)
           end
         else
           to_enum(__method__)
@@ -67,11 +67,21 @@ module TwitterCldr
       def each_word
         if block_given?
           break_iterator.each_word(@base_obj) do |word|
-            yield word.localize
+            yield word.localize(locale)
           end
         else
           to_enum(__method__)
         end
+      end
+
+      def hyphenate(delimiter = nil)
+        hyphenated_str = @base_obj.dup
+
+        break_iterator.each_word(@base_obj).reverse_each do |word, start, stop|
+          hyphenated_str[start...stop] = hyphenator.hyphenate(word, delimiter)
+        end
+
+        hyphenated_str.localize(locale)
       end
 
       def code_points
@@ -103,8 +113,7 @@ module TwitterCldr
       alias :length :size
 
       def bytesize
-        # bytesize method available in ruby 1.9 only
-        @base_obj.respond_to?(:bytesize) ? @base_obj.bytesize : @base_obj.size
+        @base_obj.bytesize
       end
 
       def [](index)
@@ -179,6 +188,10 @@ module TwitterCldr
 
       def number_parser
         @number_parser ||= TwitterCldr::Parsers::NumberParser.new(locale)
+      end
+
+      def hyphenator
+        @hyphenator ||= TwitterCldr::Shared::Hyphenator.get(locale)
       end
 
     end

@@ -26,7 +26,7 @@ module TwitterCldr
         # 5. Get the components of the cleaned-up tag (language¹, script¹, and
         #    region¹), plus any variants if they exist (including keywords).
         def parse(locale_text)
-          locale_text = locale_text.strip
+          locale_text = locale_text.to_s.strip
           return Locale.new(locale_text) if grandfathered?(locale_text)
 
           normalize(locale_text).tap do |locale|
@@ -123,7 +123,8 @@ module TwitterCldr
 
         def script?(subtag)
           subtag = normalize_subtag(subtag, :script)
-          scripts.include?(subtag)
+          scripts.include?(subtag) ||
+            !!PropertyValueAliases.long_alias_for('sc', subtag)
         end
 
         def region?(subtag)
@@ -168,14 +169,8 @@ module TwitterCldr
         end
 
         def remove_placeholder_tags(locale)
-          if locale.script == 'Zzzz'
-            locale.script = nil
-          end
-
-          if locale.region == 'ZZ'
-            locale.region = nil
-          end
-
+          locale.script = nil if locale.script == 'Zzzz'
+          locale.region = nil if locale.region == 'ZZ'
           locale.language ||= 'und'
         end
 
@@ -222,6 +217,10 @@ module TwitterCldr
       def full_script
         # fall back to abbreviated script if long alias can't be found
         @full_script ||= PropertyValueAliases.long_alias_for('sc', script) || script
+      end
+
+      def abbreviated_script
+        @short_script ||= PropertyValueAliases.abbreviated_alias_for('sc', script) || script
       end
 
       def maximize

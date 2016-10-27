@@ -17,6 +17,8 @@ module TwitterCldr
 
         private
 
+        # http://unicode.org/reports/tr35/#Likely_Subtags
+        #
         # Try each of the following in order (where the fields exist). The
         # notation field³ means field¹ if it exists, otherwise field².
         #
@@ -31,11 +33,15 @@ module TwitterCldr
         #
         # 4. Lookup language¹. If in the table, return language² _ script³ _
         #    region³ + variants.
+        #
+        # 5. Lookup und_script¹ and return if exists
+        #
         def lookup(locale)
           first_lookup(locale) ||
             second_lookup(locale) ||
             third_lookup(locale) ||
             fourth_lookup(locale) ||
+            fifth_lookup(locale) ||
             raise(
               UnrecognizedSubtagsError,
               "couldn't find matching subtags for #{locale}"
@@ -44,7 +50,7 @@ module TwitterCldr
 
         def first_lookup(locale)
           if locale.language && locale.script && locale.region
-            code = [locale.language, locale.script, locale.region].join('_')
+            code = [locale.language, locale.abbreviated_script, locale.region].join('_')
 
             if replacement = subtags_resource[code.to_sym]
               language2, script2, region2 = Locale.split(replacement)
@@ -55,7 +61,7 @@ module TwitterCldr
 
         def second_lookup(locale)
           if locale.language && locale.script
-            code = [locale.language, locale.script].join('_')
+            code = [locale.language, locale.abbreviated_script].join('_')
 
             if replacement = subtags_resource[code.to_sym]
               language2, script2, region2 = Locale.split(replacement)
@@ -89,6 +95,16 @@ module TwitterCldr
                 locale.region || region2,
                 locale.variants
               )
+            end
+          end
+        end
+
+        def fifth_lookup(locale)
+          if locale.script
+            code = ['und', locale.abbreviated_script].join('_')
+
+            if replacement = subtags_resource[code.to_sym]
+              Locale.parse(replacement)
             end
           end
         end

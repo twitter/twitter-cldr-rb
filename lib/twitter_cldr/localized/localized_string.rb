@@ -153,24 +153,19 @@ module TwitterCldr
         TwitterCldr::Shared::Territory.new(@base_obj)
       end
 
+      def scripts
+        TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).scripts
+      end
+
       def script
         TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).best_guess
       end
 
       def transliterate_into(target_locale)
-        transform_id = TwitterCldr::Transforms::TransformId.find(
-          locale, target_locale
-        )
-
-        if transform_id
-          transformer = TwitterCldr::Transforms::Transformer.get(transform_id)
-          transformer.transform(@base_obj).localize(target_locale)
-        else
-          self
-        end
+        TwitterCldr::Transforms::Transliterator.transliterate(@base_obj, locale, target_locale)
       end
 
-      protected
+      private
 
       def escape_plural_interpolation(string)
         # escape plural interpolation patterns (see PluralFormatter)

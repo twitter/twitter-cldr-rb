@@ -22,6 +22,10 @@ module TwitterCldr
         scores[script_name]
       end
 
+      def scripts
+        scores.keys
+      end
+
     end
 
     class ScriptDetector

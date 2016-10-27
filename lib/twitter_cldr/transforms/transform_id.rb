@@ -15,17 +15,17 @@ module TwitterCldr
       ]
 
       class << self
-        def find(source_locale_str, target_locale_str)
-          source_locale = parse_locale(source_locale_str)
-          target_locale = parse_locale(target_locale_str)
+        def find(source_locale_or_str, target_locale_or_str)
+          source_locale = parse_locale(source_locale_or_str)
+          target_locale = parse_locale(target_locale_or_str)
           source_chain = map_chain_for(source_locale)
           target_chain = map_chain_for(target_locale)
           variants = variants_for(source_locale, target_locale)
 
           # add original locale strings to chain in case they aren't actually
           # locales (think 'hiragana', etc)
-          source_chain << [source_locale_str.to_s]
-          target_chain << [target_locale_str.to_s]
+          source_chain << [source_locale_or_str.to_s]
+          target_chain << [target_locale_or_str.to_s]
 
           find_in_chains(
             source_chain, target_chain, variants
@@ -56,8 +56,13 @@ module TwitterCldr
 
         private
 
-        def parse_locale(locale_str)
-          TwitterCldr::Shared::Locale.parse(locale_str.to_s).maximize
+        def parse_locale(locale_or_str)
+          case locale_or_str
+            when TwitterCldr::Shared::Locale
+              locale_or_str
+            else
+              TwitterCldr::Shared::Locale.parse(locale_or_str.to_s).maximize
+          end
         end
 
         def normalize(str)

@@ -13,7 +13,7 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
-require 'pry-byebug'
+require 'pry-nav'
 
 Bundler::GemHelper.install_tasks
 

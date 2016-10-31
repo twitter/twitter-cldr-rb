@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["83528-3959", "79796-2811", "20294", "51995-4013", "71067"]
+postal_code.sample(5)  # ["53124-6960", "82625", "75489", "06129-5295", "28976"]
 ```
 
 ### Phone Codes
@@ -881,6 +881,60 @@ collator.get_sort_key("Älg")             # [39, 61, 51, 1, 134, 157, 6, 1, 143,
 ```
 
 **Note**: The TwitterCLDR collator does not currently pass all the collation tests provided by Unicode, but for some strange reasons.  See the [summary](https://gist.github.com/f4ee3bd280a2257c5641) of these discrepancies if you're curious.
+
+### Transliteration
+
+Transliteration is the process of converting the text in one language or script into another with the goal of preserving the source language's pronunciation as much as possible. It can be useful in making text pronounceable in the target language. For example, most native English speakers would not be able to read or pronounce Japanese characters like these: "くろねこさま". Transliterating these characters into Latin script yields "kuronekosama", which should be pronounceable by most English speakers (in fact, probably speakers of many languages that use Latin characters). Remember, transliteration isn't translation; the actual meaning of the words is not taken into consideration, only the sound patterns.
+
+TwitterCLDR supports transliteration via the `#transliterate_into` method on `LocalizedString`. For example:
+
+```ruby
+"くろねこさま".localize.transliterate_into(:en)  # "kuronekosama"
+```
+
+This simple method hides quite a bit of complexity. First, TwitterCLDR identifies the scripts present in the source text. It then attempts to find any available transliterators to convert between the source language and the target language. If more than one transliterator is found, all of them will be applied to the source text.
+
+You can provide hints to the transliterator by providing additional locale information. For example, you can provide a source and target script:
+
+```ruby
+"くろねこさま".localize(:ja_Hiragana).transliterate_into(:en_Latin)  # "kuronekosama"
+```
+You may supply only the target script, only the source script, neither, or both. TwitterCLDR will try to find the best set of transliterators to get the job done.
+
+Behind the scenes, `LocalizedString#transliterate_into` creates instances of `TwitterCldr::Transforms::Transformer`. You can do this too if you're feeling adventurous. Here's our Japanese example again that uses `Transformer`:
+
+```ruby
+
+rule_set = TwitterCldr::Transforms::Transformer.get('Hiragana-Latin')
+rule_set.transform('くろねこさま')  # "kuronekosama"
+```
+Notice that the `.get` method was called with 'Hiragana-Latin' instead of 'ja-en' or something similar. This is because `.get` must be passed an exact transform id. To get a list of all supported transform ids, use the `Transformer#each_transform` method:
+
+
+
+
+
+```ruby
+TwitterCldr::Transforms::Transformer.each_transform.to_a  # ['Hiragana-Latin', 'Gujarati-Bengali', ...]
+```
+
+You can also search for transform ids using the `TransformId` class, which will attempt to find the closest matching transformer for the given source and target locales. Note that `.find` will return `nil` if no transformer can be found. You can pass instances of `TransformId` instead of a string when calling `Transformer.get`:
+
+
+
+
+
+
+```ruby
+TwitterCldr::Transforms::TransformId.find('ja', 'en')  # nil
+
+id = TwitterCldr::Transforms::TransformId.find('ja_Hiragana', 'en')
+id.source  # Hiragana
+id.target  # Latin
+
+rule_set = TwitterCldr::Transforms::Transformer.get(id)
+rule_set.transform('くろねこさま')  # "kuronekosama"
+```
 
 ### Handling Bidirectional Text
 

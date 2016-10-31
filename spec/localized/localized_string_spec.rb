@@ -274,8 +274,16 @@ describe LocalizedString do
   end
 
   describe '#script' do
-    it 'detects the script the string is written in' do
+    it 'detects the script the majority of the string is written in' do
       expect('Кирилл'.localize.script).to eq('Cyrillic')
+    end
+  end
+
+  describe '#scripts' do
+    it 'detects all the scripts present in the string' do
+      expect('くろねこさまボクシサン'.localize.scripts.sort).to(
+        eq(%w(Hiragana Katakana))
+      )
     end
   end
 end

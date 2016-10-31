@@ -20,6 +20,11 @@ describe LikelySubtags do
       verify_subtags(locale, 'es', 'Latn', 'ES')
     end
 
+    it 'adds subtags when only the script is given' do
+      locale = LikelySubtags.locale_for('Hiragana')
+      verify_subtags(locale, 'ja', 'Hira', 'JP')
+    end
+
     it 'adds region subtag when only the language and script are given' do
       locale = LikelySubtags.locale_for('sd')
       verify_subtags(locale, 'sd', 'Arab', 'PK')

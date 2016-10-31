@@ -51,8 +51,17 @@ describe ScriptDetector do
 end
 
 describe ScriptDetectionResult do
-  it 'returns nil if no scripts were detected' do
-    result = ScriptDetectionResult.new({})
-    expect(result.best_guess).to be_nil
+  describe '#best_guess' do
+    it 'returns nil if no scripts were detected' do
+      result = ScriptDetectionResult.new({})
+      expect(result.best_guess).to be_nil
+    end
+  end
+
+  describe '#scripts' do
+    it 'returns a list of all the scripts present in the string' do
+      result = ScriptDetectionResult.new('Cyrillic' => 1, 'Greek' => 2)
+      expect(result.scripts.sort).to eq(%w(Cyrillic Greek))
+    end
   end
 end

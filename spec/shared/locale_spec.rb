@@ -32,6 +32,16 @@ describe Locale do
       expect(locale.language).to eq('pt')
     end
 
+    it 'correctly identifies full scripts' do
+      locale = Locale.parse('Hiragana')
+      expect(locale.script).to eq('Hiragana')
+    end
+
+    it 'correctly identifies abbreviated scripts' do
+      locale = Locale.parse('Hira')
+      expect(locale.script).to eq('Hira')
+    end
+
     it 'correctly identifies language and region' do
       locale = Locale.parse('pt-br')
       expect(locale.language).to eq('pt')
@@ -153,7 +163,7 @@ describe Locale do
 
     describe '#full_script' do
       it 'calculates the long name of the script using Unicode property data' do
-        locale = Locale.new('ru_RU').maximize
+        locale = Locale.new('ru_Cyrl_RU').maximize
         expect(locale.script).to eq('Cyrl')
         expect(locale.full_script).to eq('Cyrillic')
       end
@@ -162,6 +172,14 @@ describe Locale do
         max_locale = locale.maximize
         expect(max_locale.script).to eq('Kore')
         expect(max_locale.full_script).to eq('Kore')
+      end
+    end
+
+    describe '#abbreviated_script' do
+      it 'calculates the abbreviated name of the script using Unicode property data' do
+        locale = Locale.new('ru_Cyrillic_RU').maximize
+        expect(locale.script).to eq('Cyrillic')
+        expect(locale.abbreviated_script).to eq('Cyrl')
       end
     end
 

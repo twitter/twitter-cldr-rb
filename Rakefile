@@ -13,11 +13,11 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
-require 'pry-nav'
+require 'pry-byebug'
 
 Bundler::GemHelper.install_tasks
 
-task :default => :spec
+task default: :spec
 
 desc 'Run specs'
 RSpec::Core::RakeTask.new do |t|
@@ -26,7 +26,7 @@ end
 
 namespace :spec do
   desc 'Run full specs suit'
-  task :full => [:full_spec_env, :spec]
+  task full: [:full_spec_env, :spec]
 
   task :full_spec_env do
     ENV['FULL_SPEC'] = 'true'
@@ -35,7 +35,7 @@ end
 
 namespace :spec do
   desc 'Run specs with SimpleCov'
-  task :cov => ['spec:simplecov_env', :spec] do
+  task cov: ['spec:simplecov_env', :spec] do
     require 'launchy'
     Launchy.open 'coverage/index.html'
   end

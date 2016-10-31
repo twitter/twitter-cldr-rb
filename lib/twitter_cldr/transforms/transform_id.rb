@@ -80,7 +80,7 @@ module TwitterCldr
               reverse_key = join_file_name([target, source, variant])
               ret[key.downcase] = key
               ret[reverse_key.downcase] = reverse_key
-          end
+            end
         end
 
         def find_in_chains(source_chain, target_chain, variants)
@@ -89,10 +89,10 @@ module TwitterCldr
               source_chain.each do |source|
                 source_str = join_subtags(source, variant)
                 target_str = join_subtags(target, variant)
-                transform_id_str = TransformId.join(source_str, target_str)
+                transform_id_str = join(source_str, target_str)
 
                 if Transformer.exists?(transform_id_str)
-                  return TransformId.parse(transform_id_str)
+                  return parse(transform_id_str)
                 end
               end
             end

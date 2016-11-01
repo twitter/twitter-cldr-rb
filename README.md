@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["53124-6960", "82625", "75489", "06129-5295", "28976"]
+postal_code.sample(5)  # ["49037", "77863", "11631-2555", "09849-9066", "60383"]
 ```
 
 ### Phone Codes
@@ -758,6 +758,37 @@ Convert code points to characters:
 ```ruby
 TwitterCldr::Utils::CodePoints.to_string([0xBF])  # "¿"
 ```
+
+#### Unicode Properties
+
+Each character in the Unicode standard comes with a set of properties. Property data includes what type of script the character is written in, which version of the standard it was first introduced in, whether it represent a digit or an alphabetical symbol, its casing, and much more. Certain properties are boolean true/false values while others contain a set of property values. For example, the Hiragana letter "く" ("ku") has an `"Alphabetic"` property (i.e. Alphabetic = true) but does not have an `"Uppercase"` property (i.e. Uppercase = false). In addition, "く" has a property of `"Script"` with a property value for `"Script"` of `["Hiragana"]` (Note that property values are always arrays, since a single property can contain more than one property value).
+
+TwitterCLDR supports all the various Unicode properties and can look them up by character or retrieve a set of matching characters for the given property and property value. Let's use "く" again as an example. "く"'s Unicode code point is 12367 (i.e. `'く'.unpack("U*").first`):
+
+
+
+```ruby
+properties = TwitterCldr::Shared::CodePoint.get(12367).properties
+
+properties.alphabetic   # true
+properties.uppercase    # false
+properties.script.to_a  # ["Hiragana"]
+```
+
+Use `TwitterCldr::Shared::CodePoint.properties` to look up additional property information:
+
+
+
+
+
+
+```ruby
+properties = TwitterCldr::Shared::CodePoint.properties.code_points_for_property('Script', 'Hiragana')
+
+properties.to_a  # [12353..12438, 12445..12447 ... ]
+```
+
+Behind the scenes, these methods are using instances of `TwitterCldr::Shared::PropertiesDatabase`. Most of the time you probably won't need to use your own instance, but it is worth mentioning that `PropertiesDatabase` supplies methods for retrieving a list of available property names and normalizing property names and values. Finally, `TwitterCldr::Shared::CodePoint.properties` is an instance of `PropertiesDatabase` that you can use in place of creating a separate instance.
 
 #### Normalization
 

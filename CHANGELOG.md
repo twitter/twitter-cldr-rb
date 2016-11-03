@@ -16,7 +16,7 @@
 ### 3.4.0 (July 8, 2016)
 * Add units support, eg. "12 degrees Celsius", etc.
 
-### 3.3.0 (Mars 29, 2016)
+### 3.3.0 (March 29, 2016)
 * Added `#as_territory` convenience method to LocalizedSymbol (@Anthony-Gaudino).
 * Improved documentation for world territories (@Anthony-Gaudino).
 * Fixed issues with Unicode regular expressions
@@ -26,10 +26,10 @@
   - Leading dashes in character classes now treated as literals instead of as
     denoting a range
 
-### 3.2.1 (Jun 24, 2015)
+### 3.2.1 (June 24, 2015)
 * Fix units for Gujarati, Kannada, Marathi
 
-### 3.2.0 (Jun 24, 2015)
+### 3.2.0 (June 24, 2015)
 * Add Gujarati, Kannada, Marathi
 
 ### 3.1.2

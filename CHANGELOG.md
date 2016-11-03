@@ -1,20 +1,22 @@
-== 4.0.0
+# TwitterCldr Changelog
+
+### 4.0.0 (November 1, 2016)
 * Upgrade to Unicode v8.0.0, CLDR v29, and ICU 57.1.
 * Add support for fields.
 * Update plural rules with several bug fixes.
 * Add support for hyphenation (uses LibreOffice/Hunspell data).
 * Add support for transliteration.
 
-== 3.6.0
+### 3.6.0 (October 20, 2016)
 * Override South Korean postal code format, which changed recently.
 
-== 3.5.0
+### 3.5.0 (July 10, 2016)
 * Only add JSON as a dependency if running under Ruby < 2 (#191).
 
-== 3.4.0
+### 3.4.0 (July 8, 2016)
 * Add units support, eg. "12 degrees Celsius", etc.
 
-== 3.3.0
+### 3.3.0 (March 29, 2016)
 * Added `#as_territory` convenience method to LocalizedSymbol (@Anthony-Gaudino).
 * Improved documentation for world territories (@Anthony-Gaudino).
 * Fixed issues with Unicode regular expressions
@@ -24,21 +26,21 @@
   - Leading dashes in character classes now treated as literals instead of as
     denoting a range
 
-== 3.2.1
+### 3.2.1 (June 24, 2015)
 * Fix units for Gujarati, Kannada, Marathi
 
-== 3.2.0
+### 3.2.0 (June 24, 2015)
 * Add Gujarati, Kannada, Marathi
 
-== 3.1.2
+### 3.1.2
 * Add 'short' as a valid weekday names form in Shared::Calendar.
 
-== 3.1.1
+### 3.1.1
 * Fixed an issue with single quotes appearing in dates formatting.
 * Added support for locale codes that have region code in lower case.
 * Fixed time zone formatting for DateTime objects.
 
-== 3.1.0
+### 3.1.0
 
 * Updated resources from CLDR v26 (except the collation data).
 * Added support for ordinal plurals.
@@ -47,50 +49,50 @@
 * Fixed pluralization for abbreviated numbers.
 * Fixed pluralization rules by not merging 'en' rules into every locale.
 
-== 3.0.10
+### 3.0.10
 
 * Adding Date back in as a localizable object.
 
-== 3.0.9
+### 3.0.9
 
 * Fixing date and time formatting issue where calling `to_additional_s` on an instance of `LocalizedDate` could raise an error.
 
-== 3.0.8
+### 3.0.8
 
 * Fixing issue causing extraneous single quotes to appear in formatted dates and times.
 
-== 3.0.7
+### 3.0.7
 
 * Territories containment support.
 
-== 3.0.6
+### 3.0.6
 
 * Add en-150 and es-419 locales.
 
-== 3.0.5
+### 3.0.5
 
 * Fixed short numbers formatting for ru and other locales that use patterns
   with literal periods.
 
-== 3.0.4
+### 3.0.4
 
 * Fixed short numbers formatting for ja, ko, af, and a few other locales.
 * Added more locales: de-CH, en-AU, en-CA, en-GB, en-IE, en-SG, en-ZA,
   es-CO, es-MX, es-US, fr-BE, fr-CA, fr-CH, it-CH.
 
-== 3.0.3
+### 3.0.3
 
 * Rubinius support.
 
-== 3.0.2
+### 3.0.2
 
 * Adding ability to generate sample postal codes from their regexes.
 
-== 3.0.1
+### 3.0.1
 
 * Fixing abbreviated timespan formats for en-GB (backport from 2.4.3).
 
-== 3.0.0
+### 3.0.0
 
 * Adding maximum_level option to SortKeyBuilder to limit the size of collation sort keys (@jrochkind).
 * Significant performance enhancements for normalization via the eprun gem.
@@ -103,40 +105,40 @@
 * Text segmentation by sentence (word and line support coming soon).
 * Executable README.
 
-== 2.4.3
+### 2.4.3
 
 * Fixing abbreviated timespan formats for en-GB.
 
-== 2.4.2
+### 2.4.2
 
 * Fixing non-quoted symbol error in en-GB plural resource file.
 
-== 2.4.1
+### 2.4.1
 
 * Upgrade to CLDR v23.1, ICU4J 51.2.
 * Adding en-GB locale (British English).
 * Partial support for Ruby 2.0 (yaml no longer breaks, may not dump correctly).
 
-== 2.4.0
+### 2.4.0
 
 * Upgrade to CLDR v23.
 * Ability to disable loading of any custom locale resources.
 * Long and short decimal formatters now respect the :precision option.
 
-== 2.3.0
+### 2.3.0
 
 * Adding timezone support to date/time formatting.
 * Removing the localize method from Date objects.  Call to_date on a LocalizedDateTime or LocalizedTime object instead.
 
-== 2.2.0
+### 2.2.0
 
 * Relaxing JSON dependency to give users more version flexibility. JSON gem now has no version number in twitter-cldr-rb.
 
-== 2.1.1
+### 2.1.1
 
 * Modified AdditionalDateFormatSelector to return the correct format on exact format match.
 
-== 2.1.0
+### 2.1.0
 
 * Significant performance improvements (memoization, resource preloading).
 * Number parsing.
@@ -145,15 +147,15 @@
 * Global locale setter and fallbacks.
 * Support for territories from CLDR.
 
-== 2.0.2
+### 2.0.2
 
 * Added support for Vietnamese.
 
-== 2.0.1
+### 2.0.1
 
 * Fixed bug for additional date formats that was causing the wrong format to be returned.
 
-== 2.0.0
+### 2.0.0
 
 * Added locales ga, ta, gl, cy, sr, bg, ku, ro, lv, be, sq, sk, and bn.
 * Added additional date formats.
@@ -164,28 +166,28 @@
 * Added custom Hungarian plurals rule.
 * Added support for approximate timespans (relative times).
 
-=== 1.9.1
+### 1.9.1
 
 * Locale resources now exported without Unicode escape sequences.
 
-=== 1.9.0
+### 1.9.0
 
 * Included Unicode-safe YAML dumping support via an adaptation of the ya2yaml gem.
 * Implemented the Unicode Bidirectional Algorithm to help reorder mixed right-to-left and left-to-right text.
 * Added list formatting support.
 
-=== 1.8.1
+### 1.8.1
 
 * Improved, more accurate Finnish and Chinese collation support.
 * Moved JavaScript build environment to twitter-cldr-js.
 
-=== 1.8.0
+### 1.8.0
 
 * Added support for language code conversion.
 * `#localize` methods (eg. for Hash, String, etc) now dynamically generated, part of the `TwitterCldr::Localized` namespace.
 * New convenience method `TwitterCldr::Normalization#normalize`.
 
-=== 1.7.0
+### 1.7.0
 
 * Wrote rake tasks to update CLDR and ICU resources.
 * All resource files now written with symbolized keys so the gem doesn't have to recursively symbolize them on load.
@@ -193,41 +195,41 @@
 * Added number formatting in JavaScript.
 * Added telephone code lookup functionality (per country) and postal code validation.
 
-=== 1.6.2
+### 1.6.2
 
 * Collation tries now loaded from marshal dumps, collation running time improved by ~80%.
 
-=== 1.6.1
+### 1.6.1
 
 * Added case-first collation element tailoring support for languages like Danish.
 * Included a missing development dependency (ruby_parser).
 
-=== 1.6.0
+### 1.6.0
 
 * Added locale-aware collation via fractional collation element tailoring.
 * Added #sort and #sort! methods to LocalizedArray.
 * Added JavaScript relative time functionality, eg. "2 seconds ago".
 
-=== 1.5.0
+### 1.5.0
 
 * Added collation (sorting) support via the Unicode Collation Algorithm.
 * Added Catalan, Basque, Greek, Afrikaans, Ukrainian, and Czech support along with calendar fixes for existing locales.
 * DateTimeTokenizer now falls back on English if the given locale isn't supported.
 
-=== 1.4.1
+### 1.4.1
 
 * Added ability to use NFC and NFKC in core_ext/string
 
-=== 1.4.0
+### 1.4.0
 
 * Added NFC and NFKC algorithms.
 * Refactored Shared::UnicodeData::Attributes into Shared::CodePoint.
 
-=== 1.3.6
+### 1.3.6
 
 * Added relative time functionality, eg. "2 seconds ago".
 
-=== 1.3.0
+### 1.3.0
 
 * Reorganized locale resources.
 * Added explicit specs for examples in the README.
@@ -236,7 +238,7 @@
 * Updated CLDR data to v21 (http://cldr.unicode.org/index/downloads/cldr-21).
 * Added support for localized arrays (i.e. arrays of Unicode code points).
 
-=== 1.2.0
+### 1.2.0
 
 * Added NFKD normalization algorithm.
 * Formatter tokens now cached for better performance.
@@ -244,39 +246,39 @@
 * Added full normalization test from unicode.org.
 * Autoload classes to improve performance.
 
-=== 1.1.0
+### 1.1.0
 
 * Plural support [@KL-7]
 * Unicode data, decomposition [@timothyandrew]
 
-=== 1.0.1
+### 1.0.1
 
 * Fixed a US-ASCII bug that caused rake errors. This fix applies to both Ruby 1.8 and 1.9.
 * Fixed a regexp error in a test function, as well as a tokenizer bug. All tests now pass.
 * Added support for Travis, a distributed build platform.
 
-=== 1.0.0
+### 1.0.0
 
 * Look ma, I'm open source!
 
-=== 0.1.4
+### 0.1.4
 
 * Added functionality to gracefully fall back on default locale if chosen locale is unsupported.
 
-=== 0.1.3
+### 0.1.3
 
 * Added support for Arabic, Hebrew, Farsi, Thai, and Urdu.
 
-=== 0.1.2
+### 0.1.2
 
 * Added world language support.
 
-=== 0.1.1
+### 0.1.1
 
 * Localized dates, times, and datetimes can now be interchangeably converted to each other.
 * Fixed a bug that would not allow lookup of resource data by string (only symbol).
 * Added really basic plural support.
 
-=== 0.1.0
+### 0.1.0
 
 * Birthday!

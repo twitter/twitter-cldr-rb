@@ -70,7 +70,7 @@ module TwitterCldr
 
       def import_components
         export_args = {
-          locales: %w(bo), # TwitterCldr.supported_locales,
+          locales: TwitterCldr.supported_locales,
           components: LOCALE_COMPONENTS,
           target: File.join(@output_path, 'locales'),
           merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en

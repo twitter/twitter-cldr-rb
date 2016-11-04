@@ -70,7 +70,7 @@ module TwitterCldr
 
       def import_components
         export_args = {
-          locales: TwitterCldr.supported_locales,
+          locales: %w(bo), # TwitterCldr.supported_locales,
           components: LOCALE_COMPONENTS,
           target: File.join(@output_path, 'locales'),
           merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
@@ -82,7 +82,7 @@ module TwitterCldr
           add_buddhist_calendar(component, locale, path)
           process_plurals(component, locale, path)
           downcase_territory_codes(component, locale, path)
-          deep_symbolize(component, locale, path)
+          deep_symbolize(path)
           locales.add(locale)
           STDOUT.write "\r#{locale}, #{locales.size} of #{TwitterCldr.supported_locales.size} total"
         end

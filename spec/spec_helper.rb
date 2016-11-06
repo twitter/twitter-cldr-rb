@@ -31,7 +31,7 @@ class FastGettext
   end
 end
 
-class I18n
+module I18n
   class << self
     @@locale = :en
 

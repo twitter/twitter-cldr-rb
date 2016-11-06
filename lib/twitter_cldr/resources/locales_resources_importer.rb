@@ -7,8 +7,6 @@ require 'fileutils'
 require 'cldr-plurals'
 require 'cldr/export'
 
-require 'twitter_cldr/resources/download'
-
 module TwitterCldr
   module Resources
 

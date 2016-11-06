@@ -5,8 +5,6 @@
 
 require 'nokogiri'
 
-require 'twitter_cldr/resources/download'
-
 module TwitterCldr
   module Resources
 

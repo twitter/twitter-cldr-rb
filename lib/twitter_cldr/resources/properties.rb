@@ -11,7 +11,6 @@ module TwitterCldr
       autoload :AgePropertyImporter,                     'twitter_cldr/resources/properties/age_property_importer'
       autoload :ArabicShapingPropertyImporter,           'twitter_cldr/resources/properties/arabic_shaping_property_importer'
       autoload :BidiBracketsPropertyImporter,            'twitter_cldr/resources/properties/bidi_brackets_property_importer'
-      autoload :BidiMirroringPropertyImporter,           'twitter_cldr/resources/properties/bidi_mirroring_property_importer'
       autoload :BlocksPropertyImporter,                  'twitter_cldr/resources/properties/blocks_property_importer'
       autoload :DerivedCorePropertiesImporter,           'twitter_cldr/resources/properties/derived_core_properties_importer'
       autoload :EastAsianWidthPropertyImporter,          'twitter_cldr/resources/properties/east_asian_width_property_importer'

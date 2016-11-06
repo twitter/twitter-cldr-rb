@@ -110,7 +110,9 @@ namespace :update do
 
   desc 'Import Unicode property resources'
   task :unicode_properties do
-    TwitterCldr::Resources::Properties::PropertiesImporter.new.import
+    TwitterCldr::Resources::PROPERTY_IMPORTER_CLASSES.each do |klass|
+      klass.new.import
+    end
   end
 
   desc 'Import unicode property value aliases'
@@ -119,7 +121,7 @@ namespace :update do
   end
 
   desc 'Generate the casefolder class. Depends on unicode data'
-  task :generate_casefolder do
+  task :casefolder do
     TwitterCldr::Resources::CasefolderClassGenerator.new.import
   end
 

@@ -55,8 +55,6 @@ module TwitterCldr
         language_codes_table = build_table(language_codes)
 
         write('language_codes_table.dump', Marshal.dump(language_codes_table))
-        write('language_codes.yml', YAML.dump(language_codes))
-        write('language_codes_table.yml', YAML.dump(language_codes_table))
       end
 
       def write(file, data)

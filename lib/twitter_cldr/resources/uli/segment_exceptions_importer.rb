@@ -13,7 +13,7 @@ module TwitterCldr
       class SegmentExceptionsImporter < Resources::Importer
 
         URL = "http://unicode.org/uli/trac/export/58/trunk/abbrs/json/%{locale}.json"
-        LOCALES = %i(de en es fr it pt ru)   # these are the only locales ULI supports at the moment
+        LOCALES = [:de, :en, :es, :fr, :it, :pt, :ru]   # these are the only locales ULI supports at the moment
 
         output_path 'uli/segments'
         ruby_engine :mri

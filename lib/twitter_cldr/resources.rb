@@ -29,7 +29,7 @@ module TwitterCldr
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
     autoload :Uli,                            'twitter_cldr/resources/uli'
 
-    IMPORTER_CLASSES = [
+    STANDARD_IMPORTER_CLASSES = [
       BidiTestImporter,
       CasefolderClassGenerator,
       CollationTriesImporter,
@@ -46,9 +46,13 @@ module TwitterCldr
       TransformTestImporter,
       UnicodeDataImporter,
       UnicodePropertyAliasesImporter,
+    ]
 
-      Uli::SegmentExceptionsImporter,
+    ULI_IMPORTER_CLASSES = [
+      Uli::SegmentExceptionsImporter
+    ]
 
+    PROPERTY_IMPORTER_CLASSES = [
       Properties::AgePropertyImporter,
       Properties::ArabicShapingPropertyImporter,
       Properties::BidiBracketsPropertyImporter,
@@ -68,6 +72,11 @@ module TwitterCldr
       Properties::UnicodeDataPropertiesImporter,
       Properties::WordBreakPropertyImporter
     ]
+
+    IMPORTER_CLASSES =
+      STANDARD_IMPORTER_CLASSES +
+      ULI_IMPORTER_CLASSES +
+      PROPERTY_IMPORTER_CLASSES
 
     class << self
       def importer_classes_for_ruby_engine

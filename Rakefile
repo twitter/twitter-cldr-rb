@@ -172,11 +172,7 @@ namespace :update do
 
   desc 'Import hyphenation dictionaries'
   task :hyphenation_dictionaries do
-    TwitterCldr::Resources::HyphenationImporter.new(
-      './vendor/hyphenation/dictionaries',
-      './resources/shared/hyphenation',
-      '0d3b5e5314e68c3cf5d573b2e7bdc11143dcb821'
-    ).import
+    TwitterCldr::Resources::HyphenationImporter.new.import
   end
 
   desc 'Update README'

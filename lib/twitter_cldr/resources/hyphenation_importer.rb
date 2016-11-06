@@ -6,28 +6,19 @@
 module TwitterCldr
   module Resources
 
-    class HyphenationImporter
+    class HyphenationImporter < Importer
+      GIT_SHA = '0d3b5e5314e68c3cf5d573b2e7bdc11143dcb821'
       REPO_URL = 'git@github.com:LibreOffice/dictionaries.git'
       ENCODING_MAP = {
         'microsoft-cp1251' => Encoding::Windows_1251
       }
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory to clone hyphenation data into
-      #   output_path - output directory for generated YAML files
-      #   ref         - git ref to use
-      #
-      def initialize(input_path, output_path, ref)
-        @input_path  = input_path
-        @output_path = output_path
-        @ref = ref
-      end
+      requirement :git, REPO_URL, GIT_SHA
+      output_path 'shared/hyphenation'
+      ruby_engine :mri
 
-      def import
-        FileUtils.mkdir_p(@input_path)
-        FileUtils.mkdir_p(@output_path)
-        clone_or_fetch_if_necessary
+      def execute
+        FileUtils.mkdir_p(output_path)
 
         each_dictionary do |path, locale|
           import_dictionary(path, locale)
@@ -69,7 +60,7 @@ module TwitterCldr
         options.delete(:encoding)
 
         File.write(
-          File.join(@output_path, "#{locale}.yml"),
+          File.join(output_path, "#{locale}.yml"),
           YAML.dump({ options: options, rules: rules })
         )
       end
@@ -78,36 +69,19 @@ module TwitterCldr
         ENCODING_MAP.fetch(encoding.downcase, encoding)
       end
 
+      def source_path
+        requirements[:git].source_path
+      end
+
+      def output_path
+        params.fetch(:output_path)
+      end
+
       def each_dictionary
-        Dir.glob(File.join(@input_path, '**/hyph_*.dic')) do |path|
+        Dir.glob(File.join(source_path, '**/hyph_*.dic')) do |path|
           locale = TwitterCldr::Shared::Locale.parse(File.basename(path)[5..-5])
           yield path, locale.dasherized
         end
-      end
-
-      def dictionary_path
-        File.join(@input_path, 'dictionaries')
-      end
-
-      def clone_or_fetch_if_necessary
-        if File.exist?(@input_path)
-          unless ref_exists?
-            in_repo { `git fetch` }
-          end
-        else
-          `git clone #{REPO_URL} #{@input_path}`
-        end
-      end
-
-      def ref_exists?
-        in_repo do
-          `git rev-parse --verify --quiet #{@ref}`
-          $?.exitstatus == 0
-        end
-      end
-
-      def in_repo(&block)
-        Dir.chdir(@input_path, &block)
       end
     end
 

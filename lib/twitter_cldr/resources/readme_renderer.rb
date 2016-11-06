@@ -11,7 +11,6 @@ module TwitterCldr
     ReadmeAssertionFailure = Struct.new(:message, :line_number)
 
     class ReadmeRenderer
-
       attr_reader :text, :assertion_failures
 
       def initialize(text)
@@ -102,7 +101,7 @@ module TwitterCldr
           ret
         end
       end
-
     end
+
   end
 end

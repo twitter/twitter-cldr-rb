@@ -93,8 +93,6 @@ task :add_locale, :locale do |_, args|
 end
 
 namespace :update do
-  ICU_JAR = './vendor/icu4j.jar'
-
   desc 'Import locales resources'
   task :locales_resources do
     TwitterCldr::Resources::LocalesResourcesImporter.new.import

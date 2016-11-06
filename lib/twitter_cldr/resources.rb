@@ -33,7 +33,7 @@ module TwitterCldr
       BidiTestImporter,
       CasefolderClassGenerator,
       CollationTriesImporter,
-      # HyphenationImporter,
+      HyphenationImporter,
       LanguageCodesImporter,
       LocalesResourcesImporter,
       PhoneCodesImporter,

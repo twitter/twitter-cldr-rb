@@ -29,6 +29,7 @@ group :test do
 
   gem 'simplecov'
   gem 'launchy'
+  gem 'addressable', '~> 2.4.0'           # 2.5 breaks ruby 1.9 support
 end
 
 group :development, :test do

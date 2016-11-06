@@ -12,7 +12,12 @@ require 'twitter_cldr/resources/download'
 module TwitterCldr
   module Resources
 
-    class LocalesResourcesImporter
+    class LocalesResourcesImporter < Importer
+
+      requirement :cldr, Versions.cldr_version
+      output_path './'
+      locales TwitterCldr.supported_locales
+      ruby_engine :mri
 
       LOCALE_COMPONENTS = %w[
         calendars
@@ -38,41 +43,37 @@ module TwitterCldr
         transforms
       ]
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing CLDR data
-      #   output_path - output directory for imported YAML files
-      #
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
+      private
 
-      def import
-        prepare_ruby_cldr
+      def execute
         import_components
       end
 
-      private
+      def after_prepare
+        Cldr::Export::Data.dir = requirements[:cldr].common_path
+      end
 
-      def prepare_ruby_cldr
-        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
-        Cldr::Export::Data.dir = File.join(@input_path, 'common')
+      def output_path
+        params.fetch(:output_path)
       end
 
       def move_segments_root_file
-        file_path = File.join(@output_path, 'shared', 'segments_root.yml')
+        file_path = File.join(output_path, 'shared', 'segments_root.yml')
 
         if File.file?(file_path)
-          FileUtils.move(file_path, File.join(@output_path, 'shared', 'segments', 'segments_root.yml'))
+          FileUtils.move(
+            file_path, File.join(
+              output_path, 'shared', 'segments', 'segments_root.yml'
+            )
+          )
         end
       end
 
       def import_components
         export_args = {
-          locales: TwitterCldr.supported_locales,
+          locales: params[:locales],
           components: LOCALE_COMPONENTS,
-          target: File.join(@output_path, 'locales'),
+          target: File.join(output_path, 'locales'),
           merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
         }
 
@@ -84,12 +85,12 @@ module TwitterCldr
           downcase_territory_codes(component, locale, path)
           deep_symbolize(path)
           locales.add(locale)
-          STDOUT.write "\r#{locale}, #{locales.size} of #{TwitterCldr.supported_locales.size} total"
+          STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
 
         export_args = {
           components: SHARED_COMPONENTS,
-          target: File.join(@output_path, 'shared'),
+          target: File.join(output_path, 'shared'),
           merge: true
         }
 

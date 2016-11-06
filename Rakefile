@@ -86,140 +86,88 @@ task :update do
   end
 end
 
-# TODO: 'add_locale' task that creates a new directory and runs all necessary 'update' tasks (+ suggests to run those that depend on JRuby)
+task :add_locale, :locale do |_, args|
+  klasses = TwitterCldr::Resources.locale_based_importer_classes_for_ruby_engine
+  instances = klasses.map { |klass| klass.new(locales: [args[:locale]]) }
+  TwitterCldr::Resources::ImportResolver.new(instances).import
+end
 
 namespace :update do
   ICU_JAR = './vendor/icu4j.jar'
 
   desc 'Import locales resources'
-  task :locales_resources, :cldr_path do |_, args|
-    TwitterCldr::Resources::LocalesResourcesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources'
-    ).import
-  end
-
-  desc 'Import custom locales resources'
-  task :custom_locales_resources do
-    TwitterCldr::Resources::CustomLocalesResourcesImporter.new(
-      './resources/custom/locales'
-    ).import
+  task :locales_resources do
+    TwitterCldr::Resources::LocalesResourcesImporter.new.import
   end
 
   desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :tailoring_data, :cldr_path, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::TailoringImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources/collation/tailoring',
-      args[:icu4j_jar_path] || ICU_JAR
-    ).import(TwitterCldr.supported_locales)
+  task :tailoring_data do
+    TwitterCldr::Resources::TailoringImporter.new.import
   end
 
   desc 'Import Unicode data resources'
-  task :unicode_data, :unicode_data_path do |_, args|
-    TwitterCldr::Resources::UnicodeDataImporter.new(
-      args[:unicode_data_path] || './vendor/unicode-data',
-      './resources/unicode_data'
-    ).import
+  task :unicode_data do
+    TwitterCldr::Resources::UnicodeDataImporter.new.import
   end
 
   desc 'Import Unicode property resources'
-  task :unicode_properties, :properties_path do |_, args|
-    TwitterCldr::Resources::Properties::PropertiesImporter.new(
-      args[:properties_path] || './vendor/unicode-data/properties',
-      './resources/unicode_data/properties'
-    ).import
+  task :unicode_properties do
+    TwitterCldr::Resources::Properties::PropertiesImporter.new.import
   end
 
   desc 'Import unicode property value aliases'
-  task :unicode_property_aliases, :property_aliases_path do |_, args|
-    TwitterCldr::Resources::UnicodePropertyAliasesImporter.new(
-      args[:property_aliases_path] || './vendor/unicode-data',
-      './resources/unicode_data'
-    ).import
+  task :unicode_property_aliases do
+    TwitterCldr::Resources::UnicodePropertyAliasesImporter.new.import
   end
 
   desc 'Generate the casefolder class. Depends on unicode data'
   task :generate_casefolder do
-    TwitterCldr::Resources::CasefolderClassGenerator.new(
-      './lib/twitter_cldr/resources/casefolder.rb.erb',
-      './lib/twitter_cldr/shared'
-    ).generate
+    TwitterCldr::Resources::CasefolderClassGenerator.new.import
   end
 
   desc 'Import postal codes resource'
   task :postal_codes do
-    TwitterCldr::Resources::PostalCodesImporter.new(
-      './resources/shared'
-    ).import
+    TwitterCldr::Resources::PostalCodesImporter.new.import
   end
 
   desc 'Import phone codes resource'
-  task :phone_codes, :cldr_path do |_, args|
-    TwitterCldr::Resources::PhoneCodesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources/shared'
-    ).import
+  task :phone_codes do
+    TwitterCldr::Resources::PhoneCodesImporter.new.import
   end
 
   desc 'Import language codes'
-  task :language_codes, :language_codes_data do |_, args|
-    TwitterCldr::Resources::LanguageCodesImporter.new(
-      args[:language_codes_data] || './vendor/language-codes',
-      './resources/shared'
-    ).import
+  task :language_codes do
+    TwitterCldr::Resources::LanguageCodesImporter.new.import
   end
 
   desc 'Update default and tailoring tries dumps (should be executed using JRuby 1.7 in 1.9 mode)'
   task :collation_tries do
-    TwitterCldr::Resources::CollationTriesDumper.update_dumps
-  end
-
-  desc 'Import normalization quick check data'
-  task :normalization_quick_check do
-    TwitterCldr::Resources::NormalizationQuickCheckImporter.new(
-      './vendor',
-      './resources/unicode_data'
-    ).import
+    TwitterCldr::Resources::CollationTriesImporter.new.import
   end
 
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :bidi_tests do |_, args|
-    TwitterCldr::Resources::BidiTestImporter.new(
-      './spec/bidi'
-    ).import
+  task :bidi_tests do
+    TwitterCldr::Resources::BidiTestImporter.new.import
   end
 
   desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :rbnf_tests, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::RbnfTestImporter.new(
-      './spec/formatters/numbers/rbnf/locales',
-      args[:icu4j_jar_path] || ICU_JAR
-    ).import(TwitterCldr.supported_locales)
+  task :rbnf_tests do
+    TwitterCldr::Resources::RbnfTestImporter.new.import
   end
 
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :transform_tests, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::TransformTestImporter.new(
-      './spec/transforms/test_data.yml',
-      args[:icu4j_jar_path] || ICU_JAR
-    ).import
+  task :transform_tests do
+    TwitterCldr::Resources::TransformTestImporter.new.import
   end
 
   desc 'Import segment exceptions'
   task :segment_exceptions do
-    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
-      './vendor/uli/segments',
-      './resources/uli/segments'
-    ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
+    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new.import
   end
 
   desc 'Import segment tests'
   task :segment_tests do
-    TwitterCldr::Resources::SegmentTestsImporter.new(
-      './vendor/unicode-data/segments',
-      './resources/shared/segments/tests'
-    ).import
+    TwitterCldr::Resources::SegmentTestsImporter.new.import
   end
 
   desc 'Import hyphenation dictionaries'

@@ -4,16 +4,19 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'nokogiri'
-require 'java'
-
-require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
     # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
     # and CLDR version <= 23 (v24 syntax is not supported yet).
     #
-    class TailoringImporter < IcuBasedImporter
+    class TailoringImporter < Importer
+
+      requirement :icu, '51.2'
+      requirement :cldr, '23.1'
+      output_path 'collation/tailoring'
+      locales TwitterCldr.supported_locales
+      ruby_engine :jruby
 
       SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
       SIMPLE_RULES      = %w[p s t i]
@@ -40,25 +43,11 @@ module TwitterCldr
 
       class ImportError < RuntimeError; end
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing CLDR data
-      #   output_path - output directory for imported YAML files
-      #   icu4j_path  - path to ICU4J jar file
-      #
-      def initialize(input_path, output_path, icu4j_path)
-        require_icu4j(icu4j_path)
-
-        @input_path  = input_path
-        @output_path = output_path
-      end
-
-      def import(locales)
-        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
-        locales.each { |locale| import_locale(locale) }
-      end
-
       private
+
+      def execute
+        params[:locales].each { |locale| import_locale(locale) }
+      end
 
       def import_locale(locale)
         print "Importing %8s\t--\t" % locale
@@ -87,11 +76,13 @@ module TwitterCldr
       end
 
       def locale_file_path(locale)
-        File.join(@input_path, 'common', 'collation', "#{translated_locale(locale)}.xml")
+        File.join(
+          requirements[:cldr].common_path, 'collation', "#{translated_locale(locale)}.xml"
+        )
       end
 
       def resource_file_path(locale)
-        File.join(@output_path, "#{locale}.yml")
+        File.join(params[:output_path], "#{locale}.yml")
       end
 
       def tailoring_data(locale)

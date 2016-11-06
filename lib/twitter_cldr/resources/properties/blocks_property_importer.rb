@@ -8,17 +8,21 @@ module TwitterCldr
     module Properties
 
       class BlocksPropertyImporter < PropertyImporter
-        DATA_URL = 'ucd/Blocks.txt'
+        DATA_FILE = 'ucd/Blocks.txt'
         PROPERTY_NAME = 'Block'
 
-        def initialize(input_path, database)
-          super(
-            input_path: input_path,
-            property_name: PROPERTY_NAME,
-            data_url: DATA_URL,
-            data_path: File.basename(DATA_URL),
-            database: database
-          )
+        requirement :unicode, Versions.unicode_version, [DATA_FILE]
+        output_path 'unicode_data/properties'
+        ruby_engine :mri
+
+        def property_name
+          PROPERTY_NAME
+        end
+
+        private
+
+        def source_path
+          requirements[:unicode].source_path_for(DATA_FILE)
         end
       end
 

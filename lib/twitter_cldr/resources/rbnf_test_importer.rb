@@ -3,18 +3,13 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'java'
 require 'fileutils'
-require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
 
     # This class should be used with JRuby in 1.9 mode
-    class RbnfTestImporter < IcuBasedImporter
-
-      attr_reader :output_path, :icu4j_path
-
+    class RbnfTestImporter < Importer
       # These don't have much of a pattern, just trying to get
       # a wide range of different possibilities.
       TEST_NUMBERS = [
@@ -25,40 +20,36 @@ module TwitterCldr
         # [41.0, 5.22, 8.90, 555.1212, -14.90, -999.701]  # decimals really aren't supported yet
       ].flatten
 
-      def initialize(output_path, icu4j_path)
-        @output_path = output_path
-        @icu4j_path = icu4j_path
-      end
+      requirement :icu, Versions.icu_version
+      output_path File.join(TwitterCldr::SPEC_DIR, 'formatters', 'numbers', 'rbnf', 'locales')
+      locales TwitterCldr.supported_locales
+      ruby_engine :jruby
 
-      def import(locales)
-        require_icu4j(icu4j_path)
-        java_import 'com.ibm.icu.text.RuleBasedNumberFormat'
-        java_import 'com.ibm.icu.util.ULocale'
-
-        groupings = [
-          RuleBasedNumberFormat::SPELLOUT,
-          RuleBasedNumberFormat::ORDINAL,
-          RuleBasedNumberFormat::DURATION
-        ]
-
-        import_locales(locales, groupings)
-      end
-
-      protected
-
-      def import_locales(locales, groupings)
+      def execute
         locales.each do |locale|
           locale = locale.to_s
           ulocale = ULocale.new(locale)
           file = output_file_for(locale)
           FileUtils.mkdir_p(File.dirname(file))
           File.open(file, "w+") do |w|
-            w.write(YAML.dump(import_locale(ulocale, groupings)))
+            w.write(YAML.dump(import_locale(ulocale)))
           end
         end
       end
 
-      def import_locale(ulocale, groupings)
+      private
+
+      def after_prepare
+        require 'java'
+        java_import 'com.ibm.icu.text.RuleBasedNumberFormat'
+        java_import 'com.ibm.icu.util.ULocale'
+      end
+
+      def locales
+        params.fetch(:locales)
+      end
+
+      def import_locale(ulocale)
         groupings.inject({}) do |grouping_ret, grouping|
           formatter = RuleBasedNumberFormat.new(ulocale, grouping)
           grouping_name = get_grouping_display_name(grouping)
@@ -70,6 +61,14 @@ module TwitterCldr
           end
           grouping_ret
         end
+      end
+
+      def groupings
+        @groupings ||= [
+          RuleBasedNumberFormat::SPELLOUT,
+          RuleBasedNumberFormat::ORDINAL,
+          RuleBasedNumberFormat::DURATION
+        ]
       end
 
       def clean_up_name(name)
@@ -94,17 +93,17 @@ module TwitterCldr
       end
 
       def output_file_for(locale)
-        File.join(output_path, locale, "rbnf_test.yml")
+        File.join(params.fetch(:output_path), locale, 'rbnf_test.yml')
       end
 
       def get_grouping_display_name(grouping)
         case grouping
           when RuleBasedNumberFormat::SPELLOUT
-            "SpelloutRules"
+            'SpelloutRules'
           when RuleBasedNumberFormat::ORDINAL
-            "OrdinalRules"
+            'OrdinalRules'
           when RuleBasedNumberFormat::DURATION
-            "DurationRules"
+            'DurationRules'
         end
       end
 

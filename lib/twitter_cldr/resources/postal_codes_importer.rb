@@ -10,25 +10,24 @@ require 'yaml'
 module TwitterCldr
   module Resources
 
-    class PostalCodesImporter
+    class PostalCodesImporter < Importer
 
       BASE_URL = 'http://i18napis.appspot.com/address/data/'
 
-      # Arguments:
-      #
-      #   output_path - output directory for generated YAML file
-      #
-      def initialize(output_path)
-        @output_path = output_path
-      end
+      output_path 'shared'
+      ruby_engine :mri
 
-      def import
-        File.open(File.join(@output_path, 'postal_codes.yml'), 'w') do |output|
+      private
+
+      def execute
+        File.open(File.join(output_path, 'postal_codes.yml'), 'w') do |output|
           output.write(YAML.dump(load))
         end
       end
 
-      private
+      def output_path
+        params.fetch(:output_path)
+      end
 
       def load
         each_territory.each_with_object({}) do |territory, ret|

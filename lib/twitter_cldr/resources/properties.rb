@@ -9,7 +9,6 @@ module TwitterCldr
   module Resources
     module Properties
 
-      autoload :PropertiesImporter,                      'twitter_cldr/resources/properties/properties_importer'
       autoload :PropertyImporter,                        'twitter_cldr/resources/properties/property_importer'
       autoload :AgePropertyImporter,                     'twitter_cldr/resources/properties/age_property_importer'
       autoload :ArabicShapingPropertyImporter,           'twitter_cldr/resources/properties/arabic_shaping_property_importer'

@@ -9,19 +9,10 @@ module TwitterCldr
   module Resources
     module Properties
 
-      class PropertyImporter < UnicodeImporter
-        attr_reader :input_path, :property_name
-        attr_reader :data_url, :data_path, :database
+      class PropertyImporter < Importer
+        private
 
-        def initialize(options)
-          @input_path = options.fetch(:input_path)
-          @property_name = options.fetch(:property_name)
-          @data_url = options.fetch(:data_url)
-          @data_path = options.fetch(:data_path)
-          @database = options.fetch(:database)
-        end
-
-        def import
+        def execute
           load.each_pair do |property_name, property_values|
             property_values.each_pair do |property_value, ranges|
               database.store(property_name, property_value, ranges)
@@ -29,7 +20,15 @@ module TwitterCldr
           end
         end
 
-        private
+        def database
+          @database ||= TwitterCldr::Shared::PropertiesDatabase.new(
+            params.fetch(:output_path)
+          )
+        end
+
+        def parse_file(file, &block)
+          UnicodeFileParser.parse_standard_file(file, &block)
+        end
 
         def load
           results = Hash.new do |h, k|
@@ -37,7 +36,7 @@ module TwitterCldr
           end
 
           rangify_hash(
-            parse_standard_file(data_file).each_with_object(results) do |data, ret|
+            parse_file(source_path).each_with_object(results) do |data, ret|
               next unless data[0].size > 0
 
               if block_given?
@@ -69,12 +68,6 @@ module TwitterCldr
 
         def format_property_value(value)
           value
-        end
-
-        def data_file
-          TwitterCldr::Resources.download_unicode_data_if_necessary(
-            File.join(input_path, data_path), data_url
-          )
         end
       end
 

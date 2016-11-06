@@ -3,17 +3,13 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'java'
 require 'fileutils'
 
 module TwitterCldr
   module Resources
 
     # This class should be used with JRuby in 1.9 mode
-    class TransformTestImporter < IcuBasedImporter
-
-      attr_reader :output_file, :icu4j_path
-
+    class TransformTestImporter < Importer
       # most of these were taken from wikipedia, lol
       TEXT_SAMPLES = {
         latin: ["From today's featured article"],  # @TODO test capital letters,
@@ -23,7 +19,7 @@ module TwitterCldr
         gurmukhi: ["ਅੱਜ ਇਤਿਹਾਸ ਵਿੱਚ"],
         gujarati: ["આ માસનો ઉમદા લેખ"],
         bengali: ["নির্বাচিত নিবন্ধ"],
-        hangul: ["김창옥"],
+        hangul: ["김창옥", '모든 사용자는 위키백과에 직접 참여해 확인 가능'],
         arabic: ["مقالة اليوم المختارة"],
         han: ["因此只有两场风暴因造成"],
         hiragana: ["くろねこさま"],
@@ -37,7 +33,6 @@ module TwitterCldr
         malayalam: ['ഇടുക്കിയിലെ സൂര്യനെല്ലി സ്വദേശിനിയായ'],
         tamil: ['சென்னையில் வாழும் உலோ.செந்தமிழ்க்கோதை'],
         interindic: ['  '],
-        hangul: ['모든 사용자는 위키백과에 직접 참여해 확인 가능'],
         hebrew: ['על שמן של המיילדות במצרים, שפרה ופועה, נקראו'],
         simplified:  ['系统源于墨西哥以西的扰动天气区，并且位于更大规模的天气系统以内'],
         traditional: ['系統源於墨西哥以西的擾動天氣區，並且位於更大規模的天氣系統以內'],
@@ -50,21 +45,24 @@ module TwitterCldr
 
       BGN_SAMPLES = [:armenian, :katakana, :korean]
 
-      def initialize(output_file, icu4j_path)
-        @output_file = output_file
-        @icu4j_path = icu4j_path
-      end
+      requirement :icu, Versions.icu_version
+      output_path File.join(TwitterCldr::SPEC_DIR, 'transforms', 'test_data.yml')
+      ruby_engine :jruby
 
-      def import
-        require_icu4j(icu4j_path)
-
-        File.open(output_file, 'w+') do |f|
+      def execute
+        File.open(params.fetch(:output_path), 'w+') do |f|
           f.write(
             YAML.dump(
               generate_test_data(transformer.each_transform)
             )
           )
         end
+      end
+
+      private
+
+      def before_prepare
+        require 'java'
       end
 
       def generate_test_data(transforms)
@@ -131,7 +129,7 @@ module TwitterCldr
       def transform_id
         TwitterCldr::Transforms::TransformId
       end
-
     end
+
   end
 end

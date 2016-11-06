@@ -3,29 +3,22 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'twitter_cldr/resources/download'
 require 'fileutils'
 
 module TwitterCldr
   module Resources
-    class SegmentTestsImporter < UnicodeImporter
+    class SegmentTestsImporter < Importer
 
-      URL_ROOT = "ucd/auxiliary"
       TEST_FILES = [
-        'WordBreakTest.txt', 'SentenceBreakTest.txt'
+        'ucd/auxiliary/WordBreakTest.txt',
+        'ucd/auxiliary/SentenceBreakTest.txt'
       ]
 
-      attr_reader :input_path, :output_path
+      requirement :unicode, Versions.unicode_version, TEST_FILES
+      output_path 'shared/segments/tests'
+      ruby_engine :mri
 
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
-
-      def import
-        FileUtils.mkdir_p(input_path)
-        FileUtils.mkdir_p(output_path)
-
+      def execute
         TEST_FILES.each do |test_file|
           import_test_file(test_file)
         end
@@ -34,27 +27,19 @@ module TwitterCldr
       private
 
       def import_test_file(test_file)
-        url = "#{URL_ROOT}/#{test_file}"
-        input_file = input_file_for(test_file)
-        output_file = output_path_for(test_file)
-        download(input_file, url)
-        result = parse_standard_file(input_file).map(&:first)
-        File.write(output_file, YAML.dump(result))
+        source_file = source_path_for(test_file)
+        FileUtils.mkdir_p(File.dirname(source_file))
+        result = UnicodeFileParser.parse_standard_file(source_file).map(&:first)
+        File.write(output_path_for(test_file), YAML.dump(result))
       end
 
-      def input_file_for(test_file)
-        File.join(input_path, test_file)
+      def source_path_for(test_file)
+        requirements[:unicode].source_path_for(test_file)
       end
 
       def output_path_for(test_file)
-        base = underscore(test_file.chomp(File.extname(test_file)))
-        File.join(output_path, "#{base}.yml")
-      end
-
-      def download(input_file, url)
-        TwitterCldr::Resources.download_unicode_data_if_necessary(
-          input_file, url
-        )
+        file = underscore(File.basename(test_file).chomp(File.extname(test_file)))
+        File.join(params.fetch(:output_path), "#{file}.yml")
       end
 
       def underscore(str)

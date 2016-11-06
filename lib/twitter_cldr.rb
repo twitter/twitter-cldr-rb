@@ -36,6 +36,9 @@ module TwitterCldr
   DEFAULT_CALENDAR_TYPE = :gregorian
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
+  VENDOR_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'vendor')
+  LIB_DIR = File.dirname(File.expand_path(__FILE__))
+  SPEC_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'spec')
 
   # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales

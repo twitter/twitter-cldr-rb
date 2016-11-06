@@ -3,42 +3,42 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'twitter_cldr/resources/download'
-
 module TwitterCldr
   module Resources
 
-    class UnicodePropertyAliasesImporter < UnicodeImporter
-      PROPERTY_ALIASES_URL = 'ucd/PropertyAliases.txt'
-      PROPERTY_VALUE_ALIASES_URL = 'ucd/PropertyValueAliases.txt'
+    class UnicodePropertyAliasesImporter < Importer
+      PROPERTY_ALIASES_FILE = 'ucd/PropertyAliases.txt'
+      PROPERTY_VALUE_ALIASES_FILE = 'ucd/PropertyValueAliases.txt'
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing Scripts.txt
-      #   output_path - output directory for imported YAML files
-      #
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
+      requirement :unicode, Versions.unicode_version, [PROPERTY_ALIASES_FILE, PROPERTY_VALUE_ALIASES_FILE]
+      output_path 'unicode_data'
+      ruby_engine :mri
 
-      def import
+      private
+
+      def execute
         File.write(
-          File.join(@output_path, 'property_value_aliases.yml'),
+          File.join(output_path, 'property_value_aliases.yml'),
           YAML.dump(parse_property_value_aliases)
         )
 
         File.write(
-          File.join(@output_path, 'property_aliases.yml'),
+          File.join(output_path, 'property_aliases.yml'),
           YAML.dump(parse_property_aliases)
         )
       end
 
-      private
+      def output_path
+        params.fetch(:output_path)
+      end
+
+      def parse_file(file, &block)
+        UnicodeFileParser.parse_standard_file(file, &block)
+      end
 
       def parse_property_aliases
         Hash.new { |h, k| h[k] = [] }.tap do |result|
-          parse_standard_file(property_aliases_data_file) do |data|
+          parse_file(property_aliases_data_file) do |data|
             property = data[0]
             result[property] = parse_alias(data)
           end
@@ -47,7 +47,7 @@ module TwitterCldr
 
       def parse_property_value_aliases
         Hash.new { |h, k| h[k] = [] }.tap do |result|
-          parse_standard_file(property_value_aliases_data_file) do |data|
+          parse_file(property_value_aliases_data_file) do |data|
             property_value = data[0]
             result[property_value] << if property_value == 'ccc'
               parse_ccc_value_alias(data)
@@ -81,15 +81,11 @@ module TwitterCldr
       end
 
       def property_aliases_data_file
-        TwitterCldr::Resources.download_unicode_data_if_necessary(
-          File.join(@input_path, 'PropertyAliases.txt'), PROPERTY_ALIASES_URL
-        )
+        requirements[:unicode].source_path_for(PROPERTY_ALIASES_FILE)
       end
 
       def property_value_aliases_data_file
-        TwitterCldr::Resources.download_unicode_data_if_necessary(
-          File.join(@input_path, 'PropertyValueAliases.txt'), PROPERTY_VALUE_ALIASES_URL
-        )
+        requirements[:unicode].source_path_for(PROPERTY_VALUE_ALIASES_FILE)
       end
     end
 

@@ -23,7 +23,6 @@ group :test do
   gem 'rspec', '~> 2.14.0'
   gem 'rr',    '~> 1.1.2'
 
-  gem 'rubyzip'
   gem 'term-ansicolor', '~> 1.3.0'        # 1.4 breaks ruby 1.9 support
   gem 'coveralls', require: false
   gem 'tins', '~> 1.6.0', require: false  # 1.7 breaks ruby 1.9 support
@@ -33,5 +32,6 @@ group :test do
 end
 
 group :development, :test do
+  gem 'rubyzip', '~> 1.0'
   gem 'benchmark-ips'
 end

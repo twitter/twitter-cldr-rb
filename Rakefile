@@ -52,38 +52,8 @@ namespace :spec do
 end
 
 task :update do
-  tasks = if RUBY_PLATFORM == 'java'
-    # these should be run using JRuby 1.7 in 1.9 mode, ICU4J v51.2, and CLDR v23.1 (v24 collation rules syntax is not supported yet)
-    [
-      "update:tailoring_data",  # per locale
-      "update:collation_tries", # per locale, must come after update:tailoring_data
-      "update:rbnf_tests",      # per locale
-      "update:transform_tests",
-      "update:bidi_tests"
-    ]
-  else
-    puts "You might also want to run this rake task using JRuby 1.7 (in 1.9 mode) to update collation data and RBNF tests."
-
-    [
-      "update:locales_resources",      # per locale (+ units resources using different CLDR and ruby-cldr, see LocalesResourcesImporter)
-      "update:unicode_data",
-      "update:unicode_properties",
-      "update:unicode_property_aliases",
-      "update:generate_casefolder",    # must come after unicode data
-      "update:postal_codes",
-      "update:phone_codes",
-      "update:language_codes",
-      "update:segment_exceptions",     # per locale
-      "update:segment_tests",
-      "update:readme",
-      "update:hyphenation"
-    ]
-  end
-
-  tasks.each do |task|
-    puts "Executing #{task}"
-    Rake::Task[task].invoke
-  end
+  klasses = TwitterCldr::Resources.importer_classes_for_ruby_engine
+  TwitterCldr::Resources::ImportResolver.new(instances).import
 end
 
 task :add_locale, :locale do |_, args|

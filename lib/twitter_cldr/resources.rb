@@ -29,56 +29,65 @@ module TwitterCldr
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
     autoload :Uli,                            'twitter_cldr/resources/uli'
 
-    STANDARD_IMPORTER_CLASSES = [
-      BidiTestImporter,
-      CasefolderClassGenerator,
-      CollationTriesImporter,
-      HyphenationImporter,
-      LanguageCodesImporter,
-      LocalesResourcesImporter,
-      PhoneCodesImporter,
-      PostalCodesImporter,
-      RbnfTestImporter,
-      # ReadmeRenderer,
-      # RegexpAstGenerator,
-      SegmentTestsImporter,
-      TailoringImporter,
-      TransformTestImporter,
-      UnicodeDataImporter,
-      UnicodePropertyAliasesImporter,
-    ]
-
-    ULI_IMPORTER_CLASSES = [
-      Uli::SegmentExceptionsImporter
-    ]
-
-    PROPERTY_IMPORTER_CLASSES = [
-      Properties::AgePropertyImporter,
-      Properties::ArabicShapingPropertyImporter,
-      Properties::BidiBracketsPropertyImporter,
-      Properties::BlocksPropertyImporter,
-      Properties::DerivedCorePropertiesImporter,
-      Properties::EastAsianWidthPropertyImporter,
-      Properties::GraphemeBreakPropertyImporter,
-      Properties::HangulSyllableTypePropertyImporter,
-      Properties::IndicPositionalCategoryPropertyImporter,
-      Properties::IndicSyllabicCategoryPropertyImporter,
-      Properties::JamoPropertyImporter,
-      Properties::LineBreakPropertyImporter,
-      Properties::PropListImporter,
-      Properties::ScriptExtensionsPropertyImporter,
-      Properties::ScriptPropertyImporter,
-      Properties::SentenceBreakPropertyImporter,
-      Properties::UnicodeDataPropertiesImporter,
-      Properties::WordBreakPropertyImporter
-    ]
-
-    IMPORTER_CLASSES =
-      STANDARD_IMPORTER_CLASSES +
-      ULI_IMPORTER_CLASSES +
-      PROPERTY_IMPORTER_CLASSES
-
     class << self
+      # these importer class methods aren't constants in order to avoid loading
+      # all the classes when the library is required
+
+      def standard_importer_classes
+        @standard_importer_classes ||= [
+          BidiTestImporter,
+          CasefolderClassGenerator,
+          CollationTriesImporter,
+          HyphenationImporter,
+          LanguageCodesImporter,
+          LocalesResourcesImporter,
+          PhoneCodesImporter,
+          PostalCodesImporter,
+          RbnfTestImporter,
+          SegmentTestsImporter,
+          TailoringImporter,
+          TransformTestImporter,
+          UnicodeDataImporter,
+          UnicodePropertyAliasesImporter,
+        ]
+      end
+
+      def uli_importer_classes
+        @uli_importer_classes ||= [
+          Uli::SegmentExceptionsImporter
+        ]
+      end
+
+      def property_importer_classes
+        @property_importer_classes ||= [
+          Properties::AgePropertyImporter,
+          Properties::ArabicShapingPropertyImporter,
+          Properties::BidiBracketsPropertyImporter,
+          Properties::BlocksPropertyImporter,
+          Properties::DerivedCorePropertiesImporter,
+          Properties::EastAsianWidthPropertyImporter,
+          Properties::GraphemeBreakPropertyImporter,
+          Properties::HangulSyllableTypePropertyImporter,
+          Properties::IndicPositionalCategoryPropertyImporter,
+          Properties::IndicSyllabicCategoryPropertyImporter,
+          Properties::JamoPropertyImporter,
+          Properties::LineBreakPropertyImporter,
+          Properties::PropListImporter,
+          Properties::ScriptExtensionsPropertyImporter,
+          Properties::ScriptPropertyImporter,
+          Properties::SentenceBreakPropertyImporter,
+          Properties::UnicodeDataPropertiesImporter,
+          Properties::WordBreakPropertyImporter
+        ]
+      end
+
+      def importer_classes
+        @importer_classes ||=
+          standard_importer_classes +
+          uli_importer_classes +
+          property_importer_classes
+      end
+
       def importer_classes_for_ruby_engine
         engine = case RUBY_ENGINE
           when 'ruby' then :mri
@@ -87,7 +96,7 @@ module TwitterCldr
             raise "Unsupported RUBY_ENGINE '#{RUBY_ENGINE}'"
         end
 
-        IMPORTER_CLASSES.select do |klass|
+        importer_classes.select do |klass|
           klass.default_params[:ruby_engine] == engine
         end
       end

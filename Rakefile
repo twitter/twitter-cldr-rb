@@ -80,7 +80,7 @@ namespace :update do
 
   desc 'Import Unicode property resources'
   task :unicode_properties do
-    TwitterCldr::Resources::PROPERTY_IMPORTER_CLASSES.each do |klass|
+    TwitterCldr::Resources::property_importer_classes.each do |klass|
       klass.new.import
     end
   end

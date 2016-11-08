@@ -74,7 +74,7 @@ module TwitterCldr
       #
       def import_iso_639(result = {})
         File.open(source_path_for(ISO_639_FILE)) do |file|
-          lines = file.lines
+          lines = file.each_line
           lines.next # skip header
 
           lines.each do |line|
@@ -118,7 +118,7 @@ module TwitterCldr
       # }
       def import_bcp_47(result = {})
         File.open(source_path_for(BCP_47_FILE)) do |file|
-          lines = file.lines
+          lines = file.each_line
           lines.next # skip header
 
           data  = {}

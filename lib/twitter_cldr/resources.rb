@@ -54,7 +54,9 @@ module TwitterCldr
 
       def uli_importer_classes
         @uli_importer_classes ||= [
-          Uli::SegmentExceptionsImporter
+          # Disabled for now since ULI TRAC has been down for quite a while.
+          # Word is data will eventually be available in a git repo.
+          # Uli::SegmentExceptionsImporter
         ]
       end
 

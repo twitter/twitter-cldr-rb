@@ -127,12 +127,28 @@ module TwitterCldr
         default_type_node && default_type_node.attr('type')
       end
 
+      def get_class(name)
+        requirements[:icu].get_class(name)
+      end
+
+      def collator_class
+        @collator_class ||= get_class('com.ibm.icu.text.Collator')
+      end
+
+      def unicode_set_class
+        @unicode_set_class ||= get_class('com.ibm.icu.text.UnicodeSet')
+      end
+
+      def collation_element_iterator_class
+        @collation_element_iterator_class ||= get_class('com.ibm.icu.text.CollationElementIterator')
+      end
+
       def parse_tailorings(data, locale)
         rules = data && data.at_xpath('rules')
 
         return '' unless rules
 
-        collator = Java::ComIbmIcuText::Collator.get_instance(Java::JavaUtil::Locale.new(locale.to_s))
+        collator = collator_class.get_instance(Java::JavaUtil::Locale.new(locale.to_s))
 
         rules.children.map do |child|
           validate_tailoring_rule(child)
@@ -174,7 +190,7 @@ module TwitterCldr
 
       def parse_suppressed_contractions(data)
         node = data && data.at_xpath('suppress_contractions')
-        node ? Java::ComIbmIcuText::UnicodeSet.to_array(Java::ComIbmIcuText::UnicodeSet.new(node.text)).to_a.join : ''
+        node ? unicode_set_class.to_array(unicode_set_class.new(node.text)).to_a.join : ''
       end
 
       def parse_collator_options(data)
@@ -200,7 +216,7 @@ module TwitterCldr
         collation_elements = []
         ce = iter.next
 
-        while ce != Java::ComIbmIcuText::CollationElementIterator::NULLORDER
+        while ce != collation_element_iterator_class::NULLORDER
           p1 = (ce >> 24) & LAST_BYTE_MASK
           p2 = (ce >> 16) & LAST_BYTE_MASK
 

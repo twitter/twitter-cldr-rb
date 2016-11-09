@@ -28,7 +28,7 @@ module TwitterCldr
       def execute
         locales.each do |locale|
           locale = locale.to_s
-          ulocale = ULocale.new(locale)
+          ulocale = ulocale_class.new(locale)
           file = output_file_for(locale)
           FileUtils.mkdir_p(File.dirname(file))
           File.open(file, "w+") do |w|
@@ -39,19 +39,21 @@ module TwitterCldr
 
       private
 
-      def after_prepare
-        require 'java'
-        java_import 'com.ibm.icu.text.RuleBasedNumberFormat'
-        java_import 'com.ibm.icu.util.ULocale'
-      end
-
       def locales
         params.fetch(:locales)
       end
 
+      def formatter_class
+        @formatter_class ||= requirements[:icu].get_class('com.ibm.icu.text.RuleBasedNumberFormat')
+      end
+
+      def ulocale_class
+        @ulocale_class ||= requirements[:icu].get_class('com.ibm.icu.util.ULocale')
+      end
+
       def import_locale(ulocale)
         groupings.inject({}) do |grouping_ret, grouping|
-          formatter = RuleBasedNumberFormat.new(ulocale, grouping)
+          formatter = formatter_class.new(ulocale, grouping)
           grouping_name = get_grouping_display_name(grouping)
           grouping_ret[grouping_name] = formatter.getRuleSetNames.inject({}) do |ruleset_ret, ruleset_name|
             ruleset_display_name = formatter.getRuleSetDisplayName(ruleset_name, ulocale)
@@ -65,9 +67,9 @@ module TwitterCldr
 
       def groupings
         @groupings ||= [
-          RuleBasedNumberFormat::SPELLOUT,
-          RuleBasedNumberFormat::ORDINAL,
-          RuleBasedNumberFormat::DURATION
+          formatter_class::SPELLOUT,
+          formatter_class::ORDINAL,
+          formatter_class::DURATION
         ]
       end
 
@@ -98,11 +100,11 @@ module TwitterCldr
 
       def get_grouping_display_name(grouping)
         case grouping
-          when RuleBasedNumberFormat::SPELLOUT
+          when formatter_class::SPELLOUT
             'SpelloutRules'
-          when RuleBasedNumberFormat::ORDINAL
+          when formatter_class::ORDINAL
             'OrdinalRules'
-          when RuleBasedNumberFormat::DURATION
+          when formatter_class::DURATION
             'DurationRules'
         end
       end

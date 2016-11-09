@@ -61,10 +61,6 @@ module TwitterCldr
 
       private
 
-      def before_prepare
-        require 'java'
-      end
-
       def generate_test_data(transforms)
         transforms.each_with_object([]) do |transform_id_str, ret|
           forward_id = transform_id.parse(transform_id_str)
@@ -102,8 +98,12 @@ module TwitterCldr
         TwitterCldr::Transforms::Transformer.exists?(id)
       end
 
+      def transliterator_class
+        @transliterator_class ||= requirements[:icu].get_class('com.ibm.icu.text.Transliterator')
+      end
+
       def generate_transform_samples(id, samples)
-        trans = com.ibm.icu.text.Transliterator.getInstance(id.to_s)
+        trans = transliterator_class.getInstance(id.to_s)
         samples.each_with_object({}) do |sample, ret|
           ret[sample] = trans.transliterate(sample)
         end

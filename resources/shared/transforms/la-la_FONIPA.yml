@@ -3,13 +3,10 @@
   - 
     :direction: forward
     :rules: 
-      - ""
       - "::Lower;"
       - "::NFC;"
-      - ""
       - "$vowel = [aáàăāeéèĕēiíìĭīoóòŏōuúùŭūæœ];"
       - "$end_of_word = [$ ];"
-      - ""
       - "ae > aj;"
       - "av > aw;"
       - "æ > aj; # 19th century English orthography"
@@ -56,10 +53,7 @@
       - "x > ks;"
       - "y > y; # Greek loanwords"
       - "z > d͡z; # eg. zerum"
-      - ""
       - "::Null;"
-      - ""
-      - ""
       - "bb > bː;"
       - "dd > dː;"
       - "ɡɡ > ɡː;"
@@ -72,9 +66,7 @@
       - "rr > rː;"
       - "ss > sː;"
       - "tt > tː;"
-      - ""
       - "{l} [^aeɛiouː] > ɫ;"
-      - ""
       - "::NFC;"
     :source: la
     :target: la_FONIPA

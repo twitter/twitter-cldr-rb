@@ -1,0 +1,15 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - "::[[:thai:] ก-ฺเ-๛];"
+      - "::NFD;"
+      - "::Thai-ThaiSemi;"
+      - "::Any-BreakInternal;"
+      - "::Thai-ThaiLogical;"
+      - "::ThaiLogical-Latin;"
+      - "::NFC;"
+    :source: Thai
+    :target: Latn
+    :variant: ~

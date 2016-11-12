@@ -18,7 +18,7 @@ require 'twitter_cldr'
 Get a list of all currently supported locales (these are all supported on twitter.com):
 
 ```ruby
-TwitterCldr.supported_locales             # [:af, :ar, :be, :bg, :bn, :bo, ... ]
+TwitterCldr.supported_locales             # [:af, :ar, :be, :bg, :bn, :ca, ... ]
 ```
 
 Determine if a locale is supported by TwitterCLDR:
@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["87719", "08584", "84791-8841", "28952-3507", "90064"]
+postal_code.sample(5)  # ["56357-7490", "72513-2982", "95628-7691", "65802", "75530"]
 ```
 
 ### Phone Codes

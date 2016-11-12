@@ -29,6 +29,10 @@ module TwitterCldr
           rule_set: "spellout-numbering"
         }
 
+        def self.supported_locale?(locale)
+          TwitterCldr.resource_exists?('locales', locale, 'rbnf')
+        end
+
         attr_reader :locale
 
         def initialize(locale = TwitterCldr.locale)
@@ -118,7 +122,7 @@ module TwitterCldr
         end
 
         def resource
-          @resource ||= TwitterCldr.resources.get_locale_resource(locale, "rbnf")[locale][:rbnf][:grouping]
+          @resource ||= TwitterCldr.get_locale_resource(locale, "rbnf")[locale][:rbnf][:grouping]
         end
 
       end

@@ -40,7 +40,9 @@ module TwitterCldr
       private
 
       def locales
-        params.fetch(:locales)
+        @locales ||= params.fetch(:locales).select do |locale|
+          TwitterCldr::Formatters::Rbnf::RbnfFormatter.supported_locale?(locale)
+        end
       end
 
       def formatter_class

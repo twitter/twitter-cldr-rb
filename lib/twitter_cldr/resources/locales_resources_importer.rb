@@ -70,22 +70,24 @@ module TwitterCldr
       end
 
       def import_components
-        export_args = {
-          locales: params[:locales],
-          components: LOCALE_COMPONENTS,
-          target: File.join(output_path, 'locales'),
-          merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
-        }
-
         locales = Set.new
 
-        Cldr::Export.export(export_args) do |component, locale, path|
-          add_buddhist_calendar(component, locale, path)
-          process_plurals(component, locale, path)
-          downcase_territory_codes(component, locale, path)
-          deep_symbolize(path)
-          locales.add(locale)
-          STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
+        params[:locales].each do |locale|
+          export_args = {
+            locales: [locale],
+            components: components_for(locale),
+            target: File.join(output_path, 'locales'),
+            merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+          }
+
+          Cldr::Export.export(export_args) do |component, locale, path|
+            add_buddhist_calendar(component, locale, path)
+            process_plurals(component, locale, path)
+            downcase_territory_codes(component, locale, path)
+            deep_symbolize(path)
+            locales.add(locale)
+            STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
+          end
         end
 
         puts ''
@@ -101,6 +103,14 @@ module TwitterCldr
         end
 
         move_segments_root_file
+      end
+
+      def components_for(locale)
+        if File.exist?(File.join(requirements[:cldr].source_path, 'common', 'rbnf', "#{locale}.xml"))
+          LOCALE_COMPONENTS
+        else
+          LOCALE_COMPONENTS - ['rbnf']
+        end
       end
 
       def deep_symbolize(path)

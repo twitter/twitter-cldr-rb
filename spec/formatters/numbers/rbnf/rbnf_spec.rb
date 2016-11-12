@@ -42,6 +42,8 @@ describe RbnfFormatter do
   end
 
   TwitterCldr.supported_locales.each do |locale|
+    next unless RbnfFormatter.supported_locale?(locale)
+
     formatter = RbnfFormatter.new(locale)
     test_data = YAML.load_file(test_file_for(locale.to_s))
 

@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["56357-7490", "72513-2982", "95628-7691", "65802", "75530"]
+postal_code.sample(5)  # ["42015-3678", "96521-9068", "09327", "57830-6958", "24681-1945"]
 ```
 
 ### Phone Codes
@@ -1000,6 +1000,22 @@ Behind the scenes, these convenience methods are using the `TwitterCldr::Shared:
 TwitterCldr::Shared::YAML.dump({ :hello => "world" }) 
 TwitterCldr::Shared::YAML.dump(["hello", "world"]) 
 TwitterCldr::Shared::YAML.dump("hello, world") 
+```
+
+## Adding New Locales
+
+TwitterCLDR doesn't support every locale available in the CLDR data set. If the library doesn't support the locale you need, feel free to add it and create a pull request. Adding (or updating) locales is easy. You'll need to run several rake tasks, one with MRI and another with JRuby. You'll also need an internet connection, since most of the tasks require downloading versions of CLDR, ICU, and various Unicode data files.
+
+Under MRI and then JRuby, run the `add_locale` rake task, passing the locale in the square brackets:
+
+```
+bundle exec rake add_locale[bo]
+```
+
+If you're using rbenv or rvm, try using the `add_locale.sh` script, which will install the required Ruby versions and run the rake tasks:
+
+```
+./script/add_locale.sh bo
 ```
 
 ## About Twitter-specific Locales

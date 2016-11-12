@@ -62,6 +62,9 @@ task :add_locale, :locale do |_, args|
   TwitterCldr::Resources::ImportResolver.new(instances).import
 end
 
+# add_locale and update_locale do the same thing
+task :update_locale, [:locale] => :add_locale
+
 namespace :update do
   desc 'Import locales resources'
   task :locales_resources do

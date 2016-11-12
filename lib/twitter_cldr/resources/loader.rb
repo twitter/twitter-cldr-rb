@@ -34,15 +34,15 @@ module TwitterCldr
         resource_loaded?(*locale_resource_path(locale, resource_name))
       end
 
-      def resource_types
-        @resource_types ||= Dir.glob(File.join(RESOURCES_DIR, 'locales/en', '*')).map do |file|
+      def resource_types_for(locale)
+        Dir.glob(File.join(RESOURCES_DIR, 'locales', locale.to_s, '*')).map do |file|
           File.basename(file).chomp(File.extname(file)).to_sym
         end
       end
 
       def preload_resources_for_locale(locale, *resources)
         if resources.size > 0
-          resources = resource_types if resources.first == :all
+          resources = resource_types_for(locale) if resources.first == :all
           resources.each { |res| get_locale_resource(locale, res) }
         end
         nil

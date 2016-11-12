@@ -111,13 +111,20 @@ describe Loader do
     end
   end
 
-  describe '#resource_types' do
-    it 'returns the list of available resource types' do
-      types = loader.resource_types
+  describe '#resource_types_for' do
+    it 'returns the list of available resource types for the given locale' do
+      types = loader.resource_types_for(:en)
       expect(types).to be_a(Array)
       expect(types).to include(:calendars)
       expect(types).to include(:numbers)
       expect(types).to include(:fields)
+      expect(types).to include(:rbnf)
+    end
+
+    it "does not include resources if they aren't supported" do
+      types = loader.resource_types_for(:bo)
+      expect(types).to be_a(Array)
+      expect(types).to_not include(:rbnf)
     end
   end
 
@@ -131,7 +138,7 @@ describe Loader do
 
     it 'loads all resources for the locale if the :all resource type is specified' do
       loader.preload_resources_for_locale(:ar, :all)
-      loader.resource_types.each do |resource_type|
+      loader.resource_types_for(:ar).each do |resource_type|
         expect(loader.locale_resource_loaded?(:ar, resource_type)).to be_true
         expect(loader.locale_resource_loaded?(:en, resource_type)).to be_false
       end
@@ -162,7 +169,7 @@ describe Loader do
     it 'loads all resources for all locales' do
       loader.preload_all_resources
       TwitterCldr.supported_locales.each do |locale|
-        loader.resource_types.each do |resource_type|
+        loader.resource_types_for(locale).each do |resource_type|
           expect(loader.locale_resource_loaded?(locale, resource_type)).to be_true
         end
       end

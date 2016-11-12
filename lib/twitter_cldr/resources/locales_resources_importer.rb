@@ -18,9 +18,11 @@ module TwitterCldr
       ruby_engine :mri
 
       LOCALE_COMPONENTS = %w[
+        layout
         calendars
         languages
         numbers
+        currencies
         plural_rules
         lists
         territories
@@ -85,6 +87,8 @@ module TwitterCldr
           locales.add(locale)
           STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
+
+        puts ''
 
         export_args = {
           components: SHARED_COMPONENTS,

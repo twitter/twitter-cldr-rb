@@ -1,5 +1,10 @@
 # TwitterCldr Changelog
 
+### 4.1.0 (November 17, 2016)
+* Add support for Tibetan (bo).
+* Import a bunch of missing transform rules added in CLDR v27-29.
+* Refactor importers, introduce add_locale rake task.
+
 ### 4.0.0 (November 1, 2016)
 * Upgrade to Unicode v8.0.0, CLDR v29, and ICU 57.1.
 * Add support for fields.

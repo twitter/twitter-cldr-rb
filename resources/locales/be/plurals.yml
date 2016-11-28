@@ -2,10 +2,12 @@
 :be:
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((2..4).include?(n
-      % 10) && !(12..14).include?(n % 100)) ? :few : (((n % 10 == 0 || (5..9).include?(n
-      % 10)) || (11..14).include?(n % 100)) ? :many : ((n % 10 == 1 && n % 100 !=
-      11) ? :one : :other))) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((((n % 10).floor
+      == (n % 10)) && ((n % 10) >= 2) && ((n % 10) <= 4))) && (!(((n % 100).floor
+      == (n % 100)) && ((n % 100) >= 12) && ((n % 100) <= 14)))) ? :few : (((((n %
+      10 == 0) || ((((n % 10).floor == (n % 10)) && ((n % 10) >= 5) && ((n % 10) <=
+      9))))) || ((((n % 100).floor == (n % 100)) && ((n % 100) >= 11) && ((n % 100)
+      <= 14)))) ? :many : (((n % 10 == 1) && (n % 100 != 11)) ? :one : :other))) }'
     :names:
     - :few
     - :many
@@ -13,8 +15,8 @@
     - :other
   :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n % 10 == 2)
-      || (n % 10 == 3)) && ((n % 100 != 12) && (n % 100 != 13))) ? :few : :other)
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((n % 10 == 2)
+      || (n % 10 == 3))) && (((n % 100 != 12) && (n % 100 != 13)))) ? :few : :other)
       }'
     :names:
     - :few

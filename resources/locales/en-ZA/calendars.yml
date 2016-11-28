@@ -6,13 +6,13 @@
         :E: ccc
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
+        :Ed: "E d"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, MMM d, y G"
-        :GyMMMd: "MMM d, y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -22,8 +22,9 @@
         :MEd: "E, MM/dd"
         :MMM: LLL
         :MMMEd: "E, dd MMM"
-        :MMMMd: "MMMM d"
+        :MMMMd: "d MMMM"
         :MMMd: "dd MMM"
+        :MMdd: dd/MM
         :Md: MM/dd
         :d: d
         :h: "h a"
@@ -34,7 +35,7 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: M/y
+        :yM: MM/y
         :yMEd: "E, y/MM/dd"
         :yMMM: "MMM y"
         :yMMMEd: "E, dd MMM y"

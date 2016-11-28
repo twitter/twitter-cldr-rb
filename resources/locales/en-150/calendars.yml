@@ -6,25 +6,26 @@
         :E: ccc
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
+        :Ed: "E d"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, MMM d, y G"
-        :GyMMMd: "MMM d, y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E, M/d"
+        :MEd: "E, dd/MM"
         :MMM: LLL
-        :MMMEd: "E, MMM d"
-        :MMMMd: "MMMM d"
-        :MMMd: "MMM d"
-        :Md: M/d
+        :MMMEd: "E, d MMM"
+        :MMMMd: "d MMMM"
+        :MMMd: "d MMM"
+        :MMdd: dd/MM
+        :Md: dd/MM
         :d: d
         :h: "h a"
         :hm: "h:mm a"
@@ -34,13 +35,13 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: M/y
-        :yMEd: "E, M/d/y"
+        :yM: MM/y
+        :yMEd: "E, dd/MM/y"
         :yMMM: "MMM y"
-        :yMMMEd: "E, MMM d, y"
+        :yMMMEd: "E, d MMM y"
         :yMMMM: "MMMM y"
-        :yMMMd: "MMM d, y"
-        :yMd: M/d/y
+        :yMMMd: "d MMM y"
+        :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
@@ -116,13 +117,13 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, MMMM d, y"
+            :pattern: "EEEE, d MMMM y"
           :long: 
-            :pattern: "MMMM d, y"
+            :pattern: "d MMMM y"
           :medium: 
-            :pattern: "MMM d, y"
+            :pattern: "d MMM y"
           :short: 
-            :pattern: M/d/yy
+            :pattern: dd/MM/y
         :datetime: 
           :full: 
             :pattern: "{{date}} 'at' {{time}}"

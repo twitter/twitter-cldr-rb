@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 4.2.0 (November 30, 2016)
+* Fix parent locale fallbacks (#202).
+* Pass along locale when formatting currencies (#203).
+
 ### 4.1.0 (November 17, 2016)
 * Add support for Tibetan (bo).
 * Import a bunch of missing transform rules added in CLDR v27-29.

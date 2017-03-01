@@ -1,0 +1,258 @@
+--- 
+:sl: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 tis'.' ¤
+              :one: 0 tis'.' ¤
+              :other: 0 tis'.' ¤
+              :two: 0 tis'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 tis'.' ¤
+              :one: 00 tis'.' ¤
+              :other: 00 tis'.' ¤
+              :two: 00 tis'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 tis'.' ¤
+              :one: 000 tis'.' ¤
+              :other: 000 tis'.' ¤
+              :two: 000 tis'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 mio'.' ¤
+              :one: 0 mio'.' ¤
+              :other: 0 mio'.' ¤
+              :two: 0 mio'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 mio'.' ¤
+              :one: 00 mio'.' ¤
+              :other: 00 mio'.' ¤
+              :two: 00 mio'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 mio'.' ¤
+              :one: 000 mio'.' ¤
+              :other: 000 mio'.' ¤
+              :two: 000 mio'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 mrd'.' ¤
+              :one: 0 mrd'.' ¤
+              :other: 0 mrd'.' ¤
+              :two: 0 mrd'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 mrd'.' ¤
+              :one: 00 mrd'.' ¤
+              :other: 00 mrd'.' ¤
+              :two: 00 mrd'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 mrd'.' ¤
+              :one: 000 mrd'.' ¤
+              :other: 000 mrd'.' ¤
+              :two: 000 mrd'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 bil'.' ¤
+              :one: 0 bil'.' ¤
+              :other: 0 bil'.' ¤
+              :two: 0 bil'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 bil'.' ¤
+              :one: 00 bil'.' ¤
+              :other: 00 bil'.' ¤
+              :two: 00 bil'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 bil'.' ¤
+              :one: 000 bil'.' ¤
+              :other: 000 bil'.' ¤
+              :two: 000 bil'.' ¤
+        :unit: 
+          :few: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+          :two: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: "0 tisoč"
+              :one: "0 tisoč"
+              :other: "0 tisoč"
+              :two: "0 tisoč"
+            ? !ruby/symbol "10000"
+            : 
+              :few: "00 tisoč"
+              :one: "00 tisoč"
+              :other: "00 tisoč"
+              :two: "00 tisoč"
+            ? !ruby/symbol "100000"
+            : 
+              :few: "000 tisoč"
+              :one: "000 tisoč"
+              :other: "000 tisoč"
+              :two: "000 tisoč"
+            ? !ruby/symbol "1000000"
+            : 
+              :few: "0 milijone"
+              :one: "0 milijon"
+              :other: "0 milijonov"
+              :two: "0 milijona"
+            ? !ruby/symbol "10000000"
+            : 
+              :few: "00 milijoni"
+              :one: "00 milijon"
+              :other: "00 milijonov"
+              :two: "00 milijona"
+            ? !ruby/symbol "100000000"
+            : 
+              :few: "000 milijoni"
+              :one: "000 milijon"
+              :other: "000 milijonov"
+              :two: "000 milijona"
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: "0 milijarde"
+              :one: "0 milijarda"
+              :other: "0 milijard"
+              :two: "0 milijardi"
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: "00 milijarde"
+              :one: "00 milijarda"
+              :other: "00 milijard"
+              :two: "00 milijardi"
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: "000 milijarde"
+              :one: "000 milijarda"
+              :other: "000 milijard"
+              :two: "000 milijardi"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: "0 bilijoni"
+              :one: "0 bilijon"
+              :other: "0 bilijonov"
+              :two: "0 bilijona"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: "00 bilijoni"
+              :one: "00 bilijon"
+              :other: "00 bilijonov"
+              :two: "00 bilijona"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: "000 bilijoni"
+              :one: "000 bilijon"
+              :other: "000 bilijonov"
+              :two: "000 bilijona"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 tis'.'
+              :one: 0 tis'.'
+              :other: 0 tis'.'
+              :two: 0 tis'.'
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 tis'.'
+              :one: 00 tis'.'
+              :other: 00 tis'.'
+              :two: 00 tis'.'
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 tis'.'
+              :one: 000 tis'.'
+              :other: 000 tis'.'
+              :two: 000 tis'.'
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 mio'.'
+              :one: 0 mio'.'
+              :other: 0 mio'.'
+              :two: 0 mio'.'
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 mio'.'
+              :one: 00 mio'.'
+              :other: 00 mio'.'
+              :two: 00 mio'.'
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 mio'.'
+              :one: 000 mio'.'
+              :other: 000 mio'.'
+              :two: 000 mio'.'
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 mrd'.'
+              :one: 0 mrd'.'
+              :other: 0 mrd'.'
+              :two: 0 mrd'.'
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 mrd'.'
+              :one: 00 mrd'.'
+              :other: 00 mrd'.'
+              :two: 00 mrd'.'
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 mrd'.'
+              :one: 000 mrd'.'
+              :other: 000 mrd'.'
+              :two: 000 mrd'.'
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 bil'.'
+              :one: 0 bil'.'
+              :other: 0 bil'.'
+              :two: 0 bil'.'
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 bil'.'
+              :one: 00 bil'.'
+              :other: 00 bil'.'
+              :two: 00 bil'.'
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 bil'.'
+              :one: 000 bil'.'
+              :other: 000 bil'.'
+              :two: 000 bil'.'
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: e
+      :group: "."
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

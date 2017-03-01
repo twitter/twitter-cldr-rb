@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.3.0 (March 11, 2017)
+* Add support for the Slovenian locale (sl).
+
 ### 4.2.0 (November 30, 2016)
 * Fix parent locale fallbacks (#202).
 * Pass along locale when formatting currencies (#203).

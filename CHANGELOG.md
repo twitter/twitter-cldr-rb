@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.3.1 (March 27, 2017)
+* Add support for Ruby 2.4.
+
 ### 4.3.0 (March 11, 2017)
 * Add support for the Slovenian locale (sl).
 

@@ -158,4 +158,4 @@ end
 
 TwitterCldr.reset_locale_fallbacks
 
-require 'twitter_cldr/core_ext'
+require 'twitter_cldr/core_ext' unless defined?(TwitterCldr::NO_CORE_EXT)

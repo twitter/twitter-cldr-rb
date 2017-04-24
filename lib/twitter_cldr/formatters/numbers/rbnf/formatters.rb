@@ -95,7 +95,6 @@ module TwitterCldr
               locale
             )
           elsif decimal_format = token.decimal_format
-            # binding.pry if locale == :hi && number == 1141
             decimal_tokens = decimal_tokenizer.tokenize(decimal_format)
 
             format_options = {

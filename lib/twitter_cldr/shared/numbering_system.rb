@@ -6,6 +6,8 @@
 module TwitterCldr
   module Shared
 
+    class UnsupportedNumberingSystemError < StandardError; end
+
     class NumberingSystem
       class << self
         def for_name(name)
@@ -16,6 +18,9 @@ module TwitterCldr
               end
 
               system_klass.from_resource(name, system)
+            else
+              raise UnsupportedNumberingSystemError,
+                "'#{name}' is not a supported numbering system"
             end
           end
         end

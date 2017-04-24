@@ -14,8 +14,8 @@ describe NumberingSystem do
       expect(NumberingSystem.for_name("arab").digits).to eq(%w(٠ ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩))
     end
 
-    it "should raise an error if the system is not numeric" do
-      expect { NumberingSystem.for_name("roman") }.to raise_error(UnsupportedNumberingSystemError)
+    it "should raise an error if the system does not exist" do
+      expect { NumberingSystem.for_name("foobar") }.to raise_error(UnsupportedNumberingSystemError)
     end
   end
 

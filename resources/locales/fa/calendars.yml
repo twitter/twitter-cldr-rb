@@ -24,6 +24,7 @@
         :MMM: LLL
         :MMMEd: "E d LLL"
         :MMMMEd: "E d LLLL"
+        :MMMMW: "هفته W از MMM"
         :MMMMd: "d LLLL"
         :MMMd: "d LLL"
         :Md: M/d
@@ -47,6 +48,7 @@
         :yMd: y/M/d
         :yQQQ: "QQQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "هفته w از y"
       :days: 
         :format: 
           :abbreviated: 
@@ -128,6 +130,7 @@
         :day: روز
         :day-narrow: روز
         :day-short: روز
+        :dayOfYear: "Day Of Year"
         :dayperiod: قبل/بعدازظهر
         :era: دوره
         :hour: ساعت
@@ -148,7 +151,9 @@
         :week: هفته
         :week-narrow: هفته
         :week-short: هفته
+        :weekOfMonth: "Week Of Month"
         :weekday: "روز هفته"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: سال
         :year-narrow: سال
         :year-short: سال
@@ -265,7 +270,7 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: عصر
+            :afternoon1: ب.ظ.
             :am: ق.ظ.
             :evening1: عصر
             :midnight: نیمه‌شب
@@ -274,7 +279,7 @@
             :noon: ظهر
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: ب
+            :afternoon1: ب.ظ.
             :am: ق
             :evening1: ع
             :midnight: ن
@@ -293,27 +298,27 @@
             :pm: بعدازظهر
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: عصر
+            :afternoon1: ب.ظ.
             :am: ق.ظ.
-            :evening1: "سر شب"
+            :evening1: عصر
             :midnight: نیمه‌شب
             :morning1: صبح
             :night1: شب
             :noon: ظ
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: عصر
+            :afternoon1: ب.ظ.
             :am: ق.ظ.
-            :evening1: "سر شب"
-            :midnight: نیمه‌شب
-            :morning1: صبح
-            :night1: شب
-            :noon: ظهر
+            :evening1: ع
+            :midnight: ن
+            :morning1: ص
+            :night1: ش
+            :noon: ظ
             :pm: ب.ظ.
           :wide: 
-            :afternoon1: عصر
+            :afternoon1: بعدازظهر
             :am: قبل‌ازظهر
-            :evening1: "سر شب"
+            :evening1: عصر
             :midnight: نیمه‌شب
             :morning1: صبح
             :night1: شب

@@ -12,20 +12,21 @@
         :Gy: "G y"
         :GyMMM: "G MMM y"
         :GyMMMEd: "G d MMM y E"
-        :GyMMMd: "G dd MMM y"
+        :GyMMMd: "G d MMM y"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "dd/MM E"
+        :MEd: "d/MM E"
         :MMM: LLL
         :MMMEd: "d MMMM E"
-        :MMMMEd: "dd MMMM E"
-        :MMMMd: "dd MMMM"
+        :MMMMEd: "d MMMM E"
+        :MMMMW: "MMMM 'ayının' W. 'haftası'"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
-        :Md: dd/MM
+        :Md: d/M
         :d: d
         :h: "a h"
         :hm: "a h:mm"
@@ -37,15 +38,16 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: MM/y
-        :yMEd: "dd.MM.y E"
+        :yMEd: "d.M.y E"
         :yMM: MM.y
         :yMMM: "MMM y"
         :yMMMEd: "d MMM y E"
         :yMMMM: "MMMM y"
-        :yMMMd: "dd MMM y"
+        :yMMMd: "d MMM y"
         :yMd: dd.MM.y
-        :yQQQ: y/QQQ
-        :yQQQQ: y/QQQQ
+        :yQQQ: "y QQQ"
+        :yQQQQ: "y QQQQ"
+        :yw: "y 'yılının' w. 'haftası'"
       :days: 
         :format: 
           :abbreviated: 
@@ -123,34 +125,37 @@
         :narrow: 
           0: ""
       :fields: 
-        :day: Gün
+        :day: gün
         :day-narrow: gün
         :day-short: gün
+        :dayOfYear: "Day Of Year"
         :dayperiod: ÖÖ/ÖS
         :era: "Miladi Dönem"
-        :hour: Saat
+        :hour: saat
         :hour-narrow: sa.
         :hour-short: sa.
-        :minute: Dakika
+        :minute: dakika
         :minute-narrow: dk.
         :minute-short: dk.
-        :month: Ay
+        :month: ay
         :month-narrow: ay
         :month-short: ay
-        :quarter: Çeyrek
+        :quarter: çeyrek
         :quarter-narrow: çyr.
         :quarter-short: çyr.
-        :second: Saniye
+        :second: saniye
         :second-narrow: sn.
         :second-short: sn.
-        :week: Hafta
+        :week: hafta
         :week-narrow: hf.
         :week-short: hf.
-        :weekday: "Haftanın Günü"
-        :year: Yıl
+        :weekOfMonth: "Week Of Month"
+        :weekday: "haftanın günü"
+        :weekdayOfMonth: "Weekday Of Month"
+        :year: yıl
         :year-narrow: yıl
         :year-short: yıl
-        :zone: "Saat Dilimi"
+        :zone: "saat dilimi"
       :formats: 
         :date: 
           :full: 

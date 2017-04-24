@@ -24,20 +24,25 @@ module TwitterCldr
         result =  integer_format.apply(int, options)
         result << fraction_format.apply(fraction, options) if fraction
 
-        numbering_system(options[:type]).transliterate(
-          "#{prefix.to_s}#{result}#{suffix.to_s}"
-        )
+        transliterate = options.fetch(:transliterate, true)
+        result = "#{prefix.to_s}#{result}#{suffix.to_s}"
+
+        if transliterate
+          numbering_system_for(options[:type]).transliterate(result)
+        else
+          result
+        end
       end
 
       def truncate_number(number, decimal_digits)
         number # noop for base class
       end
 
-      protected
+      private
 
       # data readers should encapsulate formatting options, and when they do, this "type"
       # argument will no longer be necessary (accessible via `data_reader.type` instead)
-      def numbering_system(type)
+      def numbering_system_for(type)
         @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
           data_reader.number_system_for(type)
         )

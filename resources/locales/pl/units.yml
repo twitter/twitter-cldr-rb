@@ -18,15 +18,15 @@
           :one: "{0} metr na sekundę do kwadratu"
           :other: "{0} metra na sekundę do kwadratu"
         :angle-arc-minute: 
-          :few: "{0} minuty"
-          :many: "{0} minut"
-          :one: "{0} minuta"
-          :other: "{0} minuty"
+          :few: "{0} minuty kątowe"
+          :many: "{0} minut kątowych"
+          :one: "{0} minuta kątowa"
+          :other: "{0} minuty kątowej"
         :angle-arc-second: 
-          :few: "{0} sekundy"
-          :many: "{0} sekund"
-          :one: "{0} sekunda"
-          :other: "{0} sekundy"
+          :few: "{0} sekundy kątowe"
+          :many: "{0} sekund kątowych"
+          :one: "{0} sekunda kątowa"
+          :other: "{0} sekundy kątowej"
         :angle-degree: 
           :few: "{0} stopnie"
           :many: "{0} stopni"
@@ -92,6 +92,21 @@
           :many: "{0} karatów"
           :one: "{0} karat"
           :other: "{0} karata"
+        :concentr-milligram-per-deciliter: 
+          :few: "{0} miligramy na decylitr"
+          :many: "{0} miligramów na decylitr"
+          :one: "{0} miligram na decylitr"
+          :other: "{0} miligrama na decylitr"
+        :concentr-millimole-per-liter: 
+          :few: "{0} milimole na litr"
+          :many: "{0} milimoli na litr"
+          :one: "{0} milimol na litr"
+          :other: "{0} milimola na litr"
+        :concentr-part-per-million: 
+          :few: "{0} części na milion"
+          :many: "{0} części na milion"
+          :one: "{0} część na milion"
+          :other: "{0} części na milion"
         :consumption-liter-per-100kilometers: 
           :few: "{0} litry na 100 kilometrów"
           :many: "{0} litrów na 100 kilometrów"
@@ -107,6 +122,11 @@
           :many: "{0} mili na galon"
           :one: "{0} mila na galon"
           :other: "{0} mili na galon"
+        :consumption-mile-per-gallon-imperial: 
+          :few: "{0} mile na galon angielski"
+          :many: "{0} mil na galon angielski"
+          :one: "{0} mila na galon angielski"
+          :other: "{0} mili na galon angielski"
         :digital-bit: 
           :few: "{0} bity"
           :many: "{0} bitów"
@@ -587,6 +607,11 @@
           :many: "{0} galonów"
           :one: "{0} galon"
           :other: "{0} galona"
+        :volume-gallon-imperial: 
+          :few: "{0} galony angielskie"
+          :many: "{0} galonów angielskich"
+          :one: "{0} galon angielski"
+          :other: "{0} galona angielskiego"
         :volume-hectoliter: 
           :few: "{0} hektolitry"
           :many: "{0} hektolitrów"
@@ -880,15 +905,15 @@
           :one: "{0} m/s²"
           :other: "{0} m/s²"
         :angle-arc-minute: 
-          :few: "{0} min"
-          :many: "{0} min"
-          :one: "{0} min"
-          :other: "{0} min"
+          :few: "{0}′"
+          :many: "{0}′"
+          :one: "{0}′"
+          :other: "{0}′"
         :angle-arc-second: 
-          :few: "{0} s"
-          :many: "{0} s"
-          :one: "{0} s"
-          :other: "{0} s"
+          :few: "{0}″"
+          :many: "{0}″"
+          :one: "{0}″"
+          :other: "{0}″"
         :angle-degree: 
           :few: "{0}°"
           :many: "{0}°"
@@ -955,10 +980,19 @@
           :one: "{0} kt"
           :other: "{0} kt"
         :concentr-milligram-per-deciliter: 
-          :other: "{0} mg/dL"
+          :few: "{0} mg/dl"
+          :many: "{0} mg/dl"
+          :one: "{0} mg/dl"
+          :other: "{0} mg/dl"
         :concentr-millimole-per-liter: 
-          :other: "{0} mmol/L"
+          :few: "{0} mmol/l"
+          :many: "{0} mmol/l"
+          :one: "{0} mmol/l"
+          :other: "{0} mmol/l"
         :concentr-part-per-million: 
+          :few: "{0} ppm"
+          :many: "{0} ppm"
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :few: "{0} l/100 km"
@@ -976,7 +1010,10 @@
           :one: "{0} mpg"
           :other: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
-          :other: "{0} mpg Imp."
+          :few: "{0} mi/gal ang."
+          :many: "{0} mi/gal ang."
+          :one: "{0} mi/gal ang."
+          :other: "{0} mi/gal ang."
         :digital-bit: 
           :few: "{0} b"
           :many: "{0} b"
@@ -1181,10 +1218,10 @@
         :length-furlong: 
           :other: "{0} fur"
         :length-inch: 
-          :few: "{0}″"
-          :many: "{0}″"
-          :one: "{0}″"
-          :other: "{0}″"
+          :few: "{0} cale"
+          :many: "{0} cali"
+          :one: "{0} cal"
+          :other: "{0} cala"
         :length-kilometer: 
           :few: "{0} km"
           :many: "{0} km"
@@ -1240,6 +1277,8 @@
           :many: "{0} pm"
           :one: "{0} pm"
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
           :few: "{0} yd"
           :many: "{0} yd"
@@ -1470,7 +1509,10 @@
           :one: "{0} gal"
           :other: "{0} gal"
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :few: "{0} gal ang."
+          :many: "{0} gal ang."
+          :one: "{0} gal ang."
+          :other: "{0} gal ang."
         :volume-hectoliter: 
           :few: "{0} hl"
           :many: "{0} hl"

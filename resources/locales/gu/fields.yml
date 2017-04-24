@@ -15,7 +15,7 @@
           :other: "{0} દિવસમાં"
         :past: 
           :one: "{0} દિવસ પહેલાં"
-          :other: "{0} દિવસ પહેલા"
+          :other: "{0} દિવસ પહેલાં"
     :day-narrow: 
       :display_name: દિવસ
       :relative: 
@@ -29,10 +29,10 @@
           :one: "+{0} દિવસ"
           :other: "+{0} દિવસ"
         :past: 
-          :one: "{0} દિવસ પહેલાં"
+          :one: "-{0} દિવસ"
           :other: "-{0} દિવસ"
     :day-short: 
-      :display_name: દિ.
+      :display_name: દિવસ
       :relative: 
         -1: ગઈકાલે
         -2: "ગયા પરમદિવસે"
@@ -45,7 +45,7 @@
           :other: "{0} દિવસમાં"
         :past: 
           :one: "{0} દિવસ પહેલાં"
-          :other: "{0} દિવસ પહેલા"
+          :other: "{0} દિવસ પહેલાં"
     :dayperiod: 
       :display_name: AM/PM
     :era: 
@@ -55,25 +55,48 @@
         -1: "ગયા શુક્રવારે"
         0: "આ શુક્રવારે"
         1: "આવતા શુક્રવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શુક્રવાર"
+          :other: "+{0} શુક્રવાર"
+        :past: 
+          :one: "-{0} શુક્રવાર"
+          :other: "-{0} શુક્રવાર"
     :fri-narrow: 
       :relative: 
         -1: "ગયા શુક્રવારે"
         0: "આ શુક્રવારે"
         1: "આવતા શુક્રવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શુક્રવાર"
+          :other: "+{0} શુક્રવાર"
+        :past: 
+          :one: "-{0} શુક્રવાર"
+          :other: "-{0} શુક્રવાર"
     :fri-short: 
       :relative: 
         -1: "ગયા શુક્રવારે"
         0: "આ શુક્રવારે"
         1: "આવતા શુક્રવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શુક્રવાર"
+          :other: "+{0} શુક્રવાર"
+        :past: 
+          :one: "-{0} શુક્રવાર"
+          :other: "-{0} શુક્રવાર"
     :hour: 
       :display_name: કલાક
+      :relative: 
+        0: "આ કલાક"
       :relative_time: 
         :future: 
           :one: "{0} કલાકમાં"
           :other: "{0} કલાકમાં"
         :past: 
-          :one: "{0} કલાક પહેલા"
-          :other: "{0} કલાક પહેલા"
+          :one: "{0} કલાક પહેલાં"
+          :other: "{0} કલાક પહેલાં"
     :hour-narrow: 
       :display_name: ક.
       :relative_time: 
@@ -81,8 +104,8 @@
           :one: "{0} કલાકમાં"
           :other: "{0} કલાકમાં"
         :past: 
-          :one: "-{0} કલાક"
-          :other: "-{0} કલાક"
+          :one: "{0} કલાક પહેલાં"
+          :other: "{0} કલાક પહેલાં"
     :hour-short: 
       :display_name: ક.
       :relative_time: 
@@ -90,17 +113,19 @@
           :one: "{0} કલાકમાં"
           :other: "{0} કલાકમાં"
         :past: 
-          :one: "{0} કલાક પહેલા"
-          :other: "{0} કલાક પહેલા"
+          :one: "{0} કલાક પહેલાં"
+          :other: "{0} કલાક પહેલાં"
     :minute: 
       :display_name: મિનિટ
+      :relative: 
+        0: "આ મિનિટ"
       :relative_time: 
         :future: 
           :one: "{0} મિનિટમાં"
           :other: "{0} મિનિટમાં"
         :past: 
-          :one: "{0} મિનિટ પહેલા"
-          :other: "{0} મિનિટ પહેલા"
+          :one: "{0} મિનિટ પહેલાં"
+          :other: "{0} મિનિટ પહેલાં"
     :minute-narrow: 
       :display_name: મિ.
       :relative_time: 
@@ -108,8 +133,8 @@
           :one: "{0} મિનિટમાં"
           :other: "{0} મિનિટમાં"
         :past: 
-          :one: "-{0} મિનિટ"
-          :other: "-{0} મિનિટ"
+          :one: "{0} મિનિટ પહેલાં"
+          :other: "{0} મિનિટ પહેલાં"
     :minute-short: 
       :display_name: મિ.
       :relative_time: 
@@ -117,23 +142,44 @@
           :one: "{0} મિનિટમાં"
           :other: "{0} મિનિટમાં"
         :past: 
-          :one: "{0} મિનિટ પહેલા"
-          :other: "{0} મિનિટ પહેલા"
+          :one: "{0} મિનિટ પહેલાં"
+          :other: "{0} મિનિટ પહેલાં"
     :mon: 
       :relative: 
         -1: "ગયા સોમવારે"
         0: "આ સોમવારે"
         1: "આવતા સોમવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} સોમવાર"
+          :other: "+{0} સોમવાર"
+        :past: 
+          :one: "-{0} સોમવાર"
+          :other: "-{0} સોમવાર"
     :mon-narrow: 
       :relative: 
         -1: "ગયા સોમવારે"
         0: "આ સોમવારે"
         1: "આવતા સોમવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} સોમવાર"
+          :other: "+{0} સોમવાર"
+        :past: 
+          :one: "-{0} સોમવાર"
+          :other: "-{0} સોમવાર"
     :mon-short: 
       :relative: 
         -1: "ગયા સોમવારે"
         0: "આ સોમવારે"
         1: "આવતા સોમવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} સોમવાર"
+          :other: "+{0} સોમવાર"
+        :past: 
+          :one: "-{0} સોમવાર"
+          :other: "-{0} સોમવાર"
     :month: 
       :display_name: મહિનો
       :relative: 
@@ -145,8 +191,8 @@
           :one: "{0} મહિનામાં"
           :other: "{0} મહિનામાં"
         :past: 
-          :one: "{0} મહિના પહેલા"
-          :other: "{0} મહિના પહેલા"
+          :one: "{0} મહિના પહેલાં"
+          :other: "{0} મહિના પહેલાં"
     :month-narrow: 
       :display_name: મ.
       :relative: 
@@ -155,11 +201,11 @@
         1: "આવતા મહિને"
       :relative_time: 
         :future: 
-          :one: "+{0} મહિના"
-          :other: "+{0} મહિના"
+          :one: "{0} મહિનામાં"
+          :other: "{0} મહિનામાં"
         :past: 
-          :one: "-{0} મહિના"
-          :other: "-{0} મહિના"
+          :one: "{0} મહિના પહેલાં"
+          :other: "{0} મહિના પહેલાં"
     :month-short: 
       :display_name: મ.
       :relative: 
@@ -171,26 +217,30 @@
           :one: "{0} મહિનામાં"
           :other: "{0} મહિનામાં"
         :past: 
-          :one: "{0} મહિના પહેલા"
-          :other: "{0} મહિના પહેલા"
+          :one: "{0} મહિના પહેલાં"
+          :other: "{0} મહિના પહેલાં"
     :quarter: 
       :display_name: ત્રિમાસિક
+      :relative: 
+        -1: "છેલ્લું ત્રિમાસિક"
+        0: "આ ત્રિમાસિક"
+        1: "પછીનું ત્રિમાસિક"
       :relative_time: 
         :future: 
           :one: "{0} ત્રિમાસિકમાં"
           :other: "{0} ત્રિમાસિકમાં"
         :past: 
-          :one: "{0} ત્રિમાસિક પહેલા"
-          :other: "{0} ત્રિમાસિક પહેલા"
+          :one: "{0} ત્રિમાસિક પહેલાં"
+          :other: "{0} ત્રિમાસિક પહેલાં"
     :quarter-narrow: 
       :display_name: ત્રિમાસ.
       :relative_time: 
         :future: 
-          :one: "+{0} ત્રિમાસ"
-          :other: "+{0} ત્રિમાસ"
+          :one: "{0} ત્રિમાસમાં"
+          :other: "{0} ત્રિમાસમાં"
         :past: 
-          :one: "-{0} ત્રિમાસ"
-          :other: "-{0} ત્રિમાસ"
+          :one: "{0} ત્રિમાસ પહેલાં"
+          :other: "{0} ત્રિમાસ પહેલાં"
     :quarter-short: 
       :display_name: ત્રિમાસ.
       :relative_time: 
@@ -205,16 +255,37 @@
         -1: "ગયા શનિવારે"
         0: "આ શનિવારે"
         1: "આવતા શનિવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શનિવાર"
+          :other: "+{0} શનિવાર"
+        :past: 
+          :one: "-{0} શનિવાર"
+          :other: "-{0} શનિવાર"
     :sat-narrow: 
       :relative: 
         -1: "ગયા શનિવારે"
         0: "આ શનિવારે"
         1: "આવતા શનિવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શનિવાર"
+          :other: "+{0} શનિવાર"
+        :past: 
+          :one: "-{0} શનિવાર"
+          :other: "-{0} શનિવાર"
     :sat-short: 
       :relative: 
         -1: "ગયા શનિવારે"
         0: "આ શનિવારે"
         1: "આવતા શનિવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} શનિવાર"
+          :other: "+{0} શનિવાર"
+        :past: 
+          :one: "-{0} શનિવાર"
+          :other: "-{0} શનિવાર"
     :second: 
       :display_name: સેકન્ડ
       :relative: 
@@ -224,8 +295,8 @@
           :one: "{0} સેકંડમાં"
           :other: "{0} સેકંડમાં"
         :past: 
-          :one: "{0} સેકંડ પહેલા"
-          :other: "{0} સેકંડ પહેલા"
+          :one: "{0} સેકંડ પહેલાં"
+          :other: "{0} સેકંડ પહેલાં"
     :second-narrow: 
       :display_name: સે.
       :relative_time: 
@@ -233,8 +304,8 @@
           :one: "{0} સેકંડમાં"
           :other: "{0} સેકંડમાં"
         :past: 
-          :one: "-{0} સેકંડ પહેલા"
-          :other: "-{0} સેકંડ પહેલા"
+          :one: "{0} સેકંડ પહેલાં"
+          :other: "{0} સેકંડ પહેલાં"
     :second-short: 
       :display_name: સે.
       :relative_time: 
@@ -242,68 +313,152 @@
           :one: "{0} સેકંડમાં"
           :other: "{0} સેકંડમાં"
         :past: 
-          :one: "{0} સેકંડ પહેલા"
-          :other: "{0} સેકંડ પહેલા"
+          :one: "{0} સેકંડ પહેલાં"
+          :other: "{0} સેકંડ પહેલાં"
     :sun: 
       :relative: 
         -1: "ગયા રવિવારે"
         0: "આ રવિવારે"
         1: "આવતા રવિવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} રવિવાર"
+          :other: "+{0} રવિવાર"
+        :past: 
+          :one: "-{0} રવિવાર"
+          :other: "-{0} રવિવાર"
     :sun-narrow: 
       :relative: 
-        -1: "ગયા રવિવારે"
-        0: "આ રવિવારે"
-        1: "આવતા રવિવારે"
+        -1: "ગયા રવિ."
+        0: "આ રવિ"
+        1: "આવતા રવિ"
+      :relative_time: 
+        :future: 
+          :one: "+{0} રવિવાર"
+          :other: "+{0} રવિવાર"
+        :past: 
+          :one: "-{0} રવિવાર"
+          :other: "-{0} રવિવાર"
     :sun-short: 
       :relative: 
         -1: "ગયા રવિવારે"
         0: "આ રવિવારે"
         1: "આવતા રવિવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} રવિવાર"
+          :other: "+{0} રવિવાર"
+        :past: 
+          :one: "-{0} રવિવાર"
+          :other: "-{0} રવિવાર"
     :thu: 
       :relative: 
         -1: "ગયા ગુરુવારે"
         0: "આ ગુરુવારે"
         1: "આવતા ગુરુવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} ગુરુવાર"
+          :other: "+{0} ગુરુવાર"
+        :past: 
+          :one: "-{0} ગુરુવાર"
+          :other: "-{0} ગુરુવાર"
     :thu-narrow: 
       :relative: 
         -1: "ગયા ગુરુવારે"
         0: "આ ગુરુવારે"
         1: "આવતા ગુરુવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} ગુરુવાર"
+          :other: "+{0} ગુરુવાર"
+        :past: 
+          :one: "-{0} ગુરુવાર"
+          :other: "-{0} ગુરુવાર"
     :thu-short: 
       :relative: 
         -1: "ગયા ગુરુવારે"
         0: "આ ગુરુવારે"
         1: "આવતા ગુરુવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} ગુરુવાર"
+          :other: "+{0} ગુરુવાર"
+        :past: 
+          :one: "-{0} ગુરુવાર"
+          :other: "-{0} ગુરુવાર"
     :tue: 
       :relative: 
         -1: "ગયા મંગળવારે"
         0: "આ મંગળવારે"
         1: "આવતા મંગળવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} મંગળવાર"
+          :other: "+{0} મંગળવાર"
+        :past: 
+          :one: "-{0} મંગળવાર"
+          :other: "-{0} મંગળવાર"
     :tue-narrow: 
       :relative: 
         -1: "ગયા મંગળવારે"
         0: "આ મંગળવારે"
         1: "આવતા મંગળવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} મંગળવાર"
+          :other: "+{0} મંગળવાર"
+        :past: 
+          :one: "-{0} મંગળવાર"
+          :other: "-{0} મંગળવાર"
     :tue-short: 
       :relative: 
         -1: "ગયા મંગળવારે"
         0: "આ મંગળવારે"
         1: "આવતા મંગળવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} મંગળવાર"
+          :other: "+{0} મંગળવાર"
+        :past: 
+          :one: "-{0} મંગળવાર"
+          :other: "-{0} મંગળવાર"
     :wed: 
       :relative: 
         -1: "ગયા બુધવારે"
         0: "આ બુધવારે"
         1: "આવતા બુધવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} બુધવાર"
+          :other: "+{0} બુધવાર"
+        :past: 
+          :one: "-{0} બુધવાર"
+          :other: "-{0} બુધવાર"
     :wed-narrow: 
       :relative: 
         -1: "ગયા બુધવારે"
         0: "આ બુધવારે"
         1: "આવતા બુધવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} બુધવાર"
+          :other: "+{0} બુધવાર"
+        :past: 
+          :one: "-{0} બુધવાર"
+          :other: "-{0} બુધવાર"
     :wed-short: 
       :relative: 
         -1: "ગયા બુધવારે"
         0: "આ બુધવારે"
         1: "આવતા બુધવારે"
+      :relative_time: 
+        :future: 
+          :one: "+{0} બુધવાર"
+          :other: "+{0} બુધવાર"
+        :past: 
+          :one: "-{0} બુધવાર"
+          :other: "-{0} બુધવાર"
     :week: 
       :display_name: અઠવાડિયું
       :relative: 
@@ -315,8 +470,8 @@
           :one: "{0} અઠવાડિયામાં"
           :other: "{0} અઠવાડિયામાં"
         :past: 
-          :one: "{0} અઠવાડિયા પહેલા"
-          :other: "{0} અઠવાડિયા પહેલા"
+          :one: "{0} અઠવાડિયા પહેલાં"
+          :other: "{0} અઠવાડિયા પહેલાં"
     :week-narrow: 
       :display_name: અઠ.
       :relative: 
@@ -325,11 +480,11 @@
         1: "આવતા અઠવાડિયે"
       :relative_time: 
         :future: 
-          :one: "+{0} અઠવાડિયા"
-          :other: "+{0} અઠવાડિયા"
+          :one: "{0} અઠ. માં"
+          :other: "{0} અઠ. માં"
         :past: 
-          :one: "-{0} અઠવાડિયા"
-          :other: "-{0} અઠવાડિયા"
+          :one: "{0} અઠ. પહેલાં"
+          :other: "{0} અઠ. પહેલાં"
     :week-short: 
       :display_name: અઠ.
       :relative: 
@@ -338,11 +493,11 @@
         1: "આવતા અઠવાડિયે"
       :relative_time: 
         :future: 
-          :one: "{0} અઠવાડિયામાં"
-          :other: "{0} અઠવાડિયામાં"
+          :one: "{0} અઠ. માં"
+          :other: "{0} અઠ. માં"
         :past: 
-          :one: "{0} અઠવાડિયા પહેલા"
-          :other: "{0} અઠવાડિયા પહેલા"
+          :one: "{0} અઠ. પહેલાં"
+          :other: "{0} અઠ. પહેલાં"
     :weekday: 
       :display_name: "અઠવાડિયાનો દિવસ"
     :year: 
@@ -356,8 +511,8 @@
           :one: "{0} વર્ષમાં"
           :other: "{0} વર્ષમાં"
         :past: 
-          :one: "{0} વર્ષ પહેલા"
-          :other: "{0} વર્ષ પહેલા"
+          :one: "{0} વર્ષ પહેલાં"
+          :other: "{0} વર્ષ પહેલાં"
     :year-narrow: 
       :display_name: વ.
       :relative: 
@@ -382,7 +537,7 @@
           :one: "{0} વર્ષમાં"
           :other: "{0} વર્ષમાં"
         :past: 
-          :one: "{0} વર્ષ પહેલા"
-          :other: "{0} વર્ષ પહેલા"
+          :one: "{0} વર્ષ પહેલાં"
+          :other: "{0} વર્ષ પહેલાં"
     :zone: 
       :display_name: "સમય ઝોન"

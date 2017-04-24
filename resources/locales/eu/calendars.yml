@@ -22,6 +22,7 @@
         :MEd: "M/d, E"
         :MMM: LLL
         :MMMEd: "MMM d, E"
+        :MMMMW: "MMM'ren' 'astea' W"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
@@ -45,6 +46,7 @@
         :yMd: y/M/d
         :yQQQ: "y('e')'ko' QQQ"
         :yQQQQ: "y('e')'ko' QQQQ"
+        :yw: "w/y 'astea'"
       :days: 
         :format: 
           :abbreviated: 
@@ -81,13 +83,13 @@
             :wed: asteazkena
         :stand-alone: 
           :abbreviated: 
-            :fri: Or.
-            :mon: Al.
-            :sat: Lr.
-            :sun: Ig.
-            :thu: Og.
-            :tue: Ar.
-            :wed: Az.
+            :fri: or.
+            :mon: al.
+            :sat: lr.
+            :sun: ig.
+            :thu: og.
+            :tue: ar.
+            :wed: az.
           :narrow: 
             :fri: O
             :mon: A
@@ -114,42 +116,45 @@
             :wed: Asteazkena
       :eras: 
         :abbr: 
-          0: K.a.
-          1: K.o.
+          0: G.a.a
+          1: G.a
         :name: 
-          0: K.a.
-          1: K.o.
+          0: "Gure aro aurretik"
+          1: "Gure aroa"
         :narrow: 
           0: ""
       :fields: 
-        :day: Eguna
+        :day: eguna
         :day-narrow: eg.
         :day-short: eg.
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM//PM
-        :era: Aroa
-        :hour: Ordua
+        :era: aroa
+        :hour: ordua
         :hour-narrow: h
         :hour-short: h
-        :minute: Minutua
+        :minute: minutua
         :minute-narrow: min
         :minute-short: min
-        :month: Hilabetea
+        :month: hilabetea
         :month-narrow: hil.
         :month-short: hil.
-        :quarter: Hiruhilekoa
+        :quarter: hiruhilekoa
         :quarter-narrow: hiruhil.
         :quarter-short: hiruhil.
-        :second: Segundoa
+        :second: segundoa
         :second-narrow: s
         :second-short: s
-        :week: Astea
+        :week: astea
         :week-narrow: ast.
         :week-short: ast.
-        :weekday: Asteguna
-        :year: Urtea
+        :weekOfMonth: "Week Of Month"
+        :weekday: asteguna
+        :weekdayOfMonth: "Weekday Of Month"
+        :year: urtea
         :year-narrow: urtea
         :year-short: urtea
-        :zone: Ordu-zona
+        :zone: ordu-zona
       :formats: 
         :date: 
           :full: 
@@ -159,7 +164,7 @@
           :medium: 
             :pattern: "y MMM d"
           :short: 
-            :pattern: y/MM/dd
+            :pattern: yy/M/d
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -207,32 +212,32 @@
             8: A
             9: I
           :wide: 
-            1: urtarrilak
-            10: urriak
-            11: azaroak
-            12: abenduak
-            2: otsailak
-            3: martxoak
-            4: apirilak
-            5: maiatzak
-            6: ekainak
-            7: uztailak
-            8: abuztuak
-            9: irailak
+            1: urtarrila
+            10: urria
+            11: azaroa
+            12: abendua
+            2: otsaila
+            3: martxoa
+            4: apirila
+            5: maiatza
+            6: ekaina
+            7: uztaila
+            8: abuztua
+            9: iraila
         :stand-alone: 
           :abbreviated: 
-            1: Urt.
-            10: Urr.
-            11: Aza.
-            12: Abe.
-            2: Ots.
-            3: Mar.
-            4: Api.
-            5: Mai.
-            6: Eka.
-            7: Uzt.
-            8: Abu.
-            9: Ira.
+            1: urt.
+            10: urr.
+            11: aza.
+            12: abe.
+            2: ots.
+            3: mar.
+            4: api.
+            5: mai.
+            6: eka.
+            7: uzt.
+            8: abu.
+            9: ira.
           :narrow: 
             1: U
             10: U
@@ -247,7 +252,7 @@
             8: A
             9: I
           :wide: 
-            1: Urtarrila
+            1: urtarrila
             10: Urria
             11: Azaroa
             12: Abendua
@@ -262,16 +267,37 @@
       :periods: 
         :format: 
           :abbreviated: 
+            :afternoon1: eguerd.
+            :afternoon2: arrats.
             :am: AM
+            :evening1: iluntz.
+            :midnight: gauerdia
+            :morning1: goiz.
+            :morning2: goizeko
+            :night1: gau.
             :pm: PM
-          :narrow: 
-            :am: g
-            :pm: a
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
           :wide: 
+            :afternoon1: eguerdiko
+            :afternoon2: arratsaldeko
             :am: AM
+            :evening1: iluntzeko
+            :midnight: gauerdia
+            :morning1: goizaldeko
+            :morning2: goizeko
+            :night1: gaueko
             :pm: PM
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
+          :abbreviated: 
+            :afternoon1: eguerd.
+            :afternoon2: arrats.
+            :am: AM
+            :evening1: iluntz.
+            :midnight: gauerdia
+            :morning1: goiz.
+            :morning2: goiza
+            :night1: gaua
+            :pm: PM
           :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
           :wide: 
             :afternoon1: eguerdia

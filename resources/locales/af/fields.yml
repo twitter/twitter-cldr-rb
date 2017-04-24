@@ -2,7 +2,7 @@
 :af: 
   :fields: 
     :day: 
-      :display_name: Dag
+      :display_name: dag
       :relative: 
         -1: gister
         -2: eergister
@@ -55,18 +55,41 @@
         -1: "verlede Vrydag"
         0: "hierdie Vrydag"
         1: "volgende Vrydag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Vrydag"
+          :other: "oor {0} Vrydae"
+        :past: 
+          :one: "{0} Vrydag gelede"
+          :other: "{0} Vrydae gelede"
     :fri-narrow: 
       :relative: 
         -1: "verlede Vr."
         0: "dié Vr."
         1: "vlg. Vr."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Vrydae"
+          :other: "oor {0} Vrydae"
+        :past: 
+          :one: "{0} Vrydae gelede"
+          :other: "{0} Vrydae gelede"
     :fri-short: 
       :relative: 
         -1: "verlede Vr."
         0: "dié Vr."
         1: "vlg. Vr."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Vrydae"
+          :other: "oor {0} Vrydae"
+        :past: 
+          :one: "{0} Vrydae gelede"
+          :other: "{0} Vrydae gelede"
     :hour: 
       :display_name: uur
+      :relative: 
+        0: "hierdie uur"
       :relative_time: 
         :future: 
           :one: "oor {0} uur"
@@ -94,6 +117,8 @@
           :other: "{0} uur gelede"
     :minute: 
       :display_name: minuut
+      :relative: 
+        0: "hierdie minuut"
       :relative_time: 
         :future: 
           :one: "oor {0} minuut"
@@ -124,18 +149,39 @@
         -1: "verlede Maandag"
         0: "hierdie Maandag"
         1: "volgende Maandag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Maandag"
+          :other: "oor {0} Maandae"
+        :past: 
+          :one: "{0} Maandag gelede"
+          :other: "{0} Maandae gelede"
     :mon-narrow: 
       :relative: 
         -1: "verlede Ma."
         0: "hierdie Ma."
         1: "volgende Ma."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Maandae"
+          :other: "oor {0} Maandae"
+        :past: 
+          :one: "{0} Maandae gelede"
+          :other: "{0} Maandae gelede"
     :mon-short: 
       :relative: 
         -1: "verlede Ma."
         0: "hierdie Ma."
         1: "volgende Ma."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Maandae"
+          :other: "oor {0} Maandae"
+        :past: 
+          :one: "{0} Maandae gelede"
+          :other: "{0} Maandae gelede"
     :month: 
-      :display_name: Maand
+      :display_name: maand
       :relative: 
         -1: "verlede maand"
         0: vandeesmaand
@@ -167,6 +213,10 @@
           :other: "{0} md. gelede"
     :quarter: 
       :display_name: kwartaal
+      :relative: 
+        -1: "vorige kwartaal"
+        0: "hierdie kwartaal"
+        1: "volgende kwartaal"
       :relative_time: 
         :future: 
           :one: "oor {0} kwartaal"
@@ -197,16 +247,37 @@
         -1: "verlede Saterdag"
         0: "hierdie Saterdag"
         1: "volgende Saterdag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Saterdag"
+          :other: "oor {0} Saterdae"
+        :past: 
+          :one: "{0} Saterdag gelede"
+          :other: "{0} Saterdae gelede"
     :sat-narrow: 
       :relative: 
         -1: "verlede Sa."
         0: "dié Sa."
         1: "vlg. Sa."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Saterdae"
+          :other: "oor {0} Saterdae"
+        :past: 
+          :one: "{0} Saterdae gelede"
+          :other: "{0} Saterdae gelede"
     :sat-short: 
       :relative: 
         -1: "verlede Sa."
         0: "dié Sa."
         1: "vlg. Sa."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Saterdae"
+          :other: "oor {0} Saterdae"
+        :past: 
+          :one: "{0} Saterdae gelede"
+          :other: "{0} Saterdae gelede"
     :second: 
       :display_name: sekonde
       :relative: 
@@ -241,63 +312,147 @@
         -1: "verlede Sondag"
         0: "hierdie Sondag"
         1: "volgende Sondag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Sondag"
+          :other: "oor {0} Sondae"
+        :past: 
+          :one: "{0} Sondag gelede"
+          :other: "{0} Sondae gelede"
     :sun-narrow: 
       :relative: 
         -1: "verlede Son."
         0: "hierdie Son."
         1: "volgende Son."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Sondae"
+          :other: "oor {0} Sondae"
+        :past: 
+          :one: "{0} Sondae gelede"
+          :other: "{0} Sondae gelede"
     :sun-short: 
       :relative: 
         -1: "verlede Son."
         0: "hierdie Son."
         1: "volgende Son."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Sondae"
+          :other: "oor {0} Sondae"
+        :past: 
+          :one: "{0} Sondae gelede"
+          :other: "{0} Sondae gelede"
     :thu: 
       :relative: 
         -1: "verlede Donderdag"
         0: "hierdie Donderdag"
         1: "volgende Donderdag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Donderdag"
+          :other: "oor {0} Donderdae"
+        :past: 
+          :one: "{0} Donderdag gelede"
+          :other: "{0} Donderdae gelede"
     :thu-narrow: 
       :relative: 
         -1: "verlede Do."
         0: "hierdie Do."
         1: "volgende Do."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Donderdae"
+          :other: "oor {0} Donderdae"
+        :past: 
+          :one: "{0} Donderdae gelede"
+          :other: "{0} Donderdae gelede"
     :thu-short: 
       :relative: 
         -1: "verlede Do."
         0: "hierdie Do."
         1: "volgende Do."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Donderdae"
+          :other: "oor {0} Donderdae"
+        :past: 
+          :one: "{0} Donderdae gelede"
+          :other: "{0} Donderdae gelede"
     :tue: 
       :relative: 
         -1: "verlede Dinsdag"
         0: "hierdie Dinsdag"
         1: "volgende Dinsdag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Dinsdag"
+          :other: "oor {0} Dinsdae"
+        :past: 
+          :one: "{0} Dinsdag gelede"
+          :other: "{0} Dinsdae gelede"
     :tue-narrow: 
       :relative: 
         -1: "verlede Di."
         0: "hierdie Di."
         1: "volgende Di."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Dinsdae"
+          :other: "oor {0} Dinsdae"
+        :past: 
+          :one: "{0} Dinsdae gelede"
+          :other: "{0} Dinsdae gelede"
     :tue-short: 
       :relative: 
         -1: "verlede Di."
         0: "hierdie Di."
         1: "volgende Di."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Dinsdae"
+          :other: "oor {0} Dinsdae"
+        :past: 
+          :one: "{0} Dinsdae gelede"
+          :other: "{0} Dinsdae gelede"
     :wed: 
       :relative: 
         -1: "verlede Woensdag"
         0: "hierdie Woensdag"
         1: "volgende Woensdag"
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Woensdag"
+          :other: "oor {0} Woensdae"
+        :past: 
+          :one: "{0} Woensdag gelede"
+          :other: "{0} Woensdae gelede"
     :wed-narrow: 
       :relative: 
         -1: "verlede Wo."
         0: "hierdie Wo."
         1: "volgende Wo."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Woensdae"
+          :other: "oor {0} Woensdae"
+        :past: 
+          :one: "{0} Woensdae gelede"
+          :other: "{0} Woensdae gelede"
     :wed-short: 
       :relative: 
         -1: "verlede Wo."
         0: "hierdie Wo."
         1: "volgende Wo."
+      :relative_time: 
+        :future: 
+          :one: "oor {0} Woensdae"
+          :other: "oor {0} Woensdae"
+        :past: 
+          :one: "{0} Woensdae gelede"
+          :other: "{0} Woensdae gelede"
     :week: 
-      :display_name: Week
+      :display_name: week
       :relative: 
         -1: "verlede week"
         0: vandeesweek

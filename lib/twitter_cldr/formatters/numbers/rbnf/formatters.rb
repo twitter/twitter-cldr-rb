@@ -50,6 +50,10 @@ module TwitterCldr
       end
 
       class NormalRuleFormatter
+        # it's totally unclear when to transliterate and when to not, but it
+        # seems as though it's safe to skip these locales wholesale
+        SKIP_TRANSLIT_LOCALES = [:hi, :'zh-Hant', :zh]
+
         attr_reader :rule_set, :rule_group, :omit, :is_fractional, :locale
 
         def initialize(rule_set, rule_group, locale)
@@ -91,11 +95,14 @@ module TwitterCldr
               locale
             )
           elsif decimal_format = token.decimal_format
-            @data_reader ||= TwitterCldr::DataReaders::NumberDataReader.new(locale)
-            @decimal_tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(@data_reader)
-            decimal_tokens = @decimal_tokenizer.tokenize(decimal_format)
-            @decimal_formatter ||= TwitterCldr::Formatters::NumberFormatter.new(@data_reader)
-            @decimal_formatter.format(decimal_tokens, number, type: :decimal)
+            # binding.pry if locale == :hi && number == 1141
+            decimal_tokens = decimal_tokenizer.tokenize(decimal_format)
+
+            format_options = {
+              type: :decimal, transliterate: should_transliterate?
+            }
+
+            decimal_formatter.format(decimal_tokens, number, format_options)
           else
             RuleFormatter.format(number, rule_set, rule_group, locale)
           end
@@ -123,7 +130,27 @@ module TwitterCldr
           token.render(number / rule.divisor)
         end
 
-        protected
+        private
+
+        def should_transliterate?
+          !SKIP_TRANSLIT_LOCALES.include?(locale)
+        end
+
+        def data_reader
+          @data_reader ||= TwitterCldr::DataReaders::NumberDataReader.new(locale)
+        end
+
+        def decimal_tokenizer
+          @decimal_tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(
+            data_reader
+          )
+        end
+
+        def decimal_formatter
+          @decimal_formatter ||= TwitterCldr::Formatters::NumberFormatter.new(
+            data_reader
+          )
+        end
 
         def invalid_token_error(token)
           InvalidRbnfTokenError.new("'#{token.value}' not allowed in negative number rules.")

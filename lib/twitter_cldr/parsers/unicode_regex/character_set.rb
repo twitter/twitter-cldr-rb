@@ -16,7 +16,7 @@ module TwitterCldr
 
         def initialize(text)
           if (name_parts = text.split("=")).size == 2
-            @property_name, @property_value = name_parts
+            @property_name, @property_value = name_parts.map(&:strip)
           else
             @property_value = text
           end

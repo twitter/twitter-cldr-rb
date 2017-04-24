@@ -3,7 +3,7 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
           :default: "¤ #,##0.00"
           :short: 
@@ -114,16 +114,16 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0 K
-              :other: 0 K
+              :one: 0k
+              :other: 0k
             ? !ruby/symbol "10000"
             : 
-              :one: 00 K
-              :other: 00 K
+              :one: 00k
+              :other: 00k
             ? !ruby/symbol "100000"
             : 
-              :one: 000 K
-              :other: 000 K
+              :one: 000k
+              :other: 000k
             ? !ruby/symbol "1000000"
             : 
               :one: 0 mill
@@ -161,7 +161,7 @@
               :one: 000 bill
               :other: 000 bill
       :percent: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
           :default: "#,##0 %"
       :scientific: 
@@ -181,4 +181,4 @@
       :percent_sign: "%"
       :plus_sign: +
       :superscripting_exponent: ×
-      :time_separator: ":"
+      :time_separator: "."

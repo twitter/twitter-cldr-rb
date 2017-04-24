@@ -3,9 +3,9 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
-          :default: "¤ #,##0.00;¤ -#,##0.00"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -161,9 +161,9 @@
               :one: 000 bln'.'
               :other: 000 bln'.'
       :percent: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
-          :default: "#,##0%"
+          :default: "#,##0 %"
       :scientific: 
         :number_system: latn
         :patterns: 

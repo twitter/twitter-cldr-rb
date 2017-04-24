@@ -7,7 +7,14 @@ module TwitterCldr
   module Formatters
     module Rbnf
 
-      RuleGroup = Struct.new(:rule_sets, :name) do
+      class RuleGroup
+        attr_reader :rule_sets, :name
+
+        def initialize(rule_sets, name)
+          @rule_sets = rule_sets
+          @name = name
+        end
+
         def rule_set_for(rule_set_name)
           rule_sets.find do |rule_set|
             rule_set.name == rule_set_name

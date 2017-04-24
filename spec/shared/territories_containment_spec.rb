@@ -10,7 +10,7 @@ include TwitterCldr::Shared
 describe TerritoriesContainment do
   describe '.parents' do
     it 'returns the parent territory' do
-      expect(TerritoriesContainment.parents('RU')).to eq(['151'])
+      expect(TerritoriesContainment.parents('RU')).to eq(['151', 'UN'])
     end
 
     it 'returns multiple parents' do
@@ -22,7 +22,7 @@ describe TerritoriesContainment do
     end
 
     it 'raises an exception when given an invalid territory code' do
-      expect { TerritoriesContainment.parents('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { TerritoriesContainment.parents('XX') }.to raise_exception(ArgumentError, 'unknown territory code "XX"')
     end
   end
 
@@ -40,7 +40,7 @@ describe TerritoriesContainment do
     end
 
     it 'raises an exception when given an invalid territory code' do
-      expect { TerritoriesContainment.children('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { TerritoriesContainment.children('XX') }.to raise_exception(ArgumentError, 'unknown territory code "XX"')
     end
   end
 
@@ -74,12 +74,12 @@ describe TerritoriesContainment do
       expect(TerritoriesContainment.contains?('RU', 'RU')).to be_false
     end
 
-    it 'raises an exception is the first territory is invalid' do
-      expect { TerritoriesContainment.contains?('UN', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+    it 'raises an exception if the first territory is invalid' do
+      expect { TerritoriesContainment.contains?('XX', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "XX"')
     end
 
-    it 'raises an exception is the second territory is invalid' do
-      expect { TerritoriesContainment.contains?('RU', 'UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+    it 'raises an exception if the second territory is invalid' do
+      expect { TerritoriesContainment.contains?('RU', 'XX') }.to raise_exception(ArgumentError, 'unknown territory code "XX"')
     end
   end
 end

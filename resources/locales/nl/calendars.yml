@@ -22,6 +22,7 @@
         :MEd: "E d-M"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'week' W 'van' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d-M
@@ -43,6 +44,7 @@
         :yMd: d-M-y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'in' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,14 +126,15 @@
         :day: dag
         :day-narrow: dag
         :day-short: dag
-        :dayperiod: a.m./p.m.
+        :dayOfYear: "Day Of Year"
+        :dayperiod: dagdeel
         :era: tijdperk
-        :hour: Uur
-        :hour-narrow: u
+        :hour: uur
+        :hour-narrow: uur
         :hour-short: uur
         :minute: minuut
-        :minute-narrow: m
-        :minute-short: min.
+        :minute-narrow: min
+        :minute-short: min
         :month: maand
         :month-narrow: mnd
         :month-short: mnd
@@ -140,14 +143,16 @@
         :quarter-short: kwartaal
         :second: seconde
         :second-narrow: s
-        :second-short: sec.
+        :second-short: sec
         :week: week
         :week-narrow: wk
         :week-short: wk
+        :weekOfMonth: "Week Of Month"
         :weekday: "dag van de week"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: jaar
-        :year-narrow: jr.
-        :year-short: jr.
+        :year-narrow: jr
+        :year-short: jr
         :zone: tijdzone
       :formats: 
         :date: 
@@ -161,9 +166,9 @@
             :pattern: dd-MM-yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'om' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'om' {{time}}"
           :medium: 
             :pattern: "{{date}} {{time}}"
           :short: 
@@ -269,20 +274,20 @@
             :night1: nacht
             :pm: p.m.
           :narrow: 
-            :afternoon1: middag
+            :afternoon1: "‘s middags"
             :am: a.m.
-            :evening1: avond
+            :evening1: "‘s avonds"
             :midnight: middernacht
-            :morning1: ochtend
-            :night1: nacht
+            :morning1: "‘s ochtends"
+            :night1: "‘s nachts"
             :pm: p.m.
           :wide: 
-            :afternoon1: middag
+            :afternoon1: "‘s middags"
             :am: a.m.
-            :evening1: avond
+            :evening1: "‘s avonds"
             :midnight: middernacht
-            :morning1: ochtend
-            :night1: nacht
+            :morning1: "‘s ochtends"
+            :night1: "‘s nachts"
             :pm: p.m.
         :stand-alone: 
           :abbreviated: 

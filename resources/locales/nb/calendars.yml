@@ -4,35 +4,36 @@
     :gregorian: 
       :additional_formats: 
         :E: ccc
-        :EHm: "E HH.mm"
-        :EHms: "E HH.mm.ss"
+        :EHm: "E HH:mm"
+        :EHms: "E HH:mm:ss"
         :Ed: "E d."
-        :Ehm: "E h.mm a"
-        :Ehms: "E h.mm.ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d. MMM y G"
         :GyMMMd: "d. MMM y G"
         :H: HH
-        :Hm: HH.mm
-        :Hms: HH.mm.ss
-        :Hmsv: "HH.mm.ss v"
-        :Hmv: "HH.mm v"
+        :Hm: "HH:mm"
+        :Hms: "HH:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
         :M: L.
         :MEd: "E d.M"
         :MMM: LLL
         :MMMEd: "E d. MMM"
+        :MMMMW: "W. 'uke' 'i' MMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :MMdd: d.M.
         :Md: d.M.
         :d: d.
         :h: "h a"
-        :hm: "h.mm a"
-        :hms: "h.mm.ss a"
-        :hmsv: "h.mm.ss a v"
-        :hmv: "h.mm a v"
-        :ms: mm.ss
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
+        :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: M.y
@@ -45,6 +46,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'uke' w 'i' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,9 +126,10 @@
           1: vt.
       :fields: 
         :day: dag
-        :day-narrow: dag
+        :day-narrow: d.
         :day-short: dag
-        :dayperiod: AM/PM
+        :dayOfYear: "Day Of Year"
+        :dayperiod: a.m./p.m.
         :era: tidsalder
         :hour: time
         :hour-narrow: t
@@ -144,9 +147,11 @@
         :second-narrow: s
         :second-short: sek
         :week: uke
-        :week-narrow: uke
+        :week-narrow: u.
         :week-short: uke
+        :weekOfMonth: "Week Of Month"
         :weekday: ukedag
+        :weekdayOfMonth: "Weekday Of Month"
         :year: år
         :year-narrow: år
         :year-short: år
@@ -172,13 +177,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "HH.mm.ss zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "HH.mm.ss z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: HH.mm.ss
           :short: 
-            :pattern: "HH:mm"
+            :pattern: HH.mm
       :months: 
         :format: 
           :abbreviated: 

@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, d 'de' MMM"
         :MMMMEd: "E, d 'de' MMMM"
+        :MMMMW: "W'ª' 'semana' 'de' MMMM"
         :MMMMd: "d 'de' MMMM"
         :MMMd: "d 'de' MMM"
         :MMdd: dd/MM
@@ -46,8 +47,9 @@
         :yMMMMd: "d 'de' MMMM 'de' y"
         :yMMMd: "d 'de' MMM 'de' y"
         :yMd: dd/MM/y
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yQQQ: "QQQ 'de' y"
+        :yQQQQ: "QQQQ 'de' y"
+        :yw: "w'ª' 'semana' 'de' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -128,6 +130,7 @@
         :day: dia
         :day-narrow: dia
         :day-short: dia
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
         :era: era
         :hour: hora
@@ -148,7 +151,9 @@
         :week: semana
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "Week Of Month"
         :weekday: "dia da semana"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: ano
         :year-narrow: ano
         :year-short: ano
@@ -162,7 +167,7 @@
           :medium: 
             :pattern: "d 'de' MMM 'de' y"
           :short: 
-            :pattern: dd/MM/yy
+            :pattern: dd/MM/y
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -275,13 +280,13 @@
             :pm: PM
           :narrow: 
             :afternoon1: "da tarde"
-            :am: a
+            :am: AM
             :evening1: "da noite"
-            :midnight: m
+            :midnight: meia-noite
             :morning1: "da manhã"
             :night1: "da madrugada"
-            :noon: m
-            :pm: p
+            :noon: meio-dia
+            :pm: PM
           :wide: 
             :afternoon1: "da tarde"
             :am: AM

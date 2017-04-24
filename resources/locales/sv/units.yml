@@ -53,11 +53,20 @@
           :one: "{0} engelsk kvadratmil"
           :other: "{0} engelska kvadratmil"
         :area-square-yard: 
-          :one: "{0} yard²"
+          :one: "{0} engelsk kvadratyard"
           :other: "{0} yard²"
         :concentr-karat: 
           :one: "{0} karat"
           :other: "{0} karat"
+        :concentr-milligram-per-deciliter: 
+          :one: "{0} milligram per deciliter"
+          :other: "{0} milligram per deciliter"
+        :concentr-millimole-per-liter: 
+          :one: "{0} millimol per liter"
+          :other: "{0} millimol per liter"
+        :concentr-part-per-million: 
+          :one: "{0} miljondel"
+          :other: "{0} miljondelar"
         :consumption-liter-per-100kilometers: 
           :one: "{0} liter per 100 kilometer"
           :other: "{0} liter per 100 kilometer"
@@ -67,6 +76,9 @@
         :consumption-mile-per-gallon: 
           :one: "{0} mile per gallon"
           :other: "{0} miles per gallon"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} UK mil/gn"
+          :other: "{0} UK mil/gn"
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -77,20 +89,20 @@
           :one: "{0} gigabit"
           :other: "{0} gigabit"
         :digital-gigabyte: 
-          :one: "{0} GB"
-          :other: "{0} GB"
+          :one: "{0} gigabyte"
+          :other: "{0} gigabyte"
         :digital-kilobit: 
           :one: "{0} kilobit"
           :other: "{0} kilobit"
         :digital-kilobyte: 
-          :one: "{0} kB"
-          :other: "{0} kB"
+          :one: "{0} kilobyte"
+          :other: "{0} kilobyte"
         :digital-megabit: 
           :one: "{0} megabit"
           :other: "{0} megabit"
         :digital-megabyte: 
-          :one: "{0} MB"
-          :other: "{0} MB"
+          :one: "{0} megabyte"
+          :other: "{0} megabyte"
         :digital-terabit: 
           :one: "{0} terabit"
           :other: "{0} terabit"
@@ -170,8 +182,8 @@
           :one: "{0} kilohertz"
           :other: "{0} kilohertz"
         :frequency-megahertz: 
-          :one: "{0} MHz"
-          :other: "{0} MHz"
+          :one: "{0} megahertz"
+          :other: "{0} megahertz"
         :length-astronomical-unit: 
           :one: "{0} astronomisk enhet"
           :other: "{0} astronomiska enheter"
@@ -367,6 +379,9 @@
         :volume-gallon: 
           :one: "{0} gallon"
           :other: "{0} gallon"
+        :volume-gallon-imperial: 
+          :one: "{0} ämbar à 4,6 l"
+          :other: "{0} ämbar à 4,6 l"
         :volume-hectoliter: 
           :one: "{0} hektoliter"
           :other: "{0} hektoliter"
@@ -443,6 +458,15 @@
         :area-square-yard: 
           :one: "{0} en. yrd²"
           :other: "{0} en. yrd²"
+        :concentr-milligram-per-deciliter: 
+          :one: "{0}mg/dL"
+          :other: "{0}mg/dL"
+        :concentr-millimole-per-liter: 
+          :one: "{0}mmol/L"
+          :other: "{0}mmol/L"
+        :concentr-part-per-million: 
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -452,6 +476,9 @@
         :consumption-mile-per-gallon: 
           :one: "{0}e.mil/gn"
           :other: "{0}e.mil/gn"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0}UK mpg"
+          :other: "{0}UK mpg"
         :digital-bit: 
           :one: "{0}b"
           :other: "{0}b"
@@ -740,6 +767,9 @@
         :volume-gallon: 
           :one: "{0} v:egal:n"
           :other: "{0} v:egal:n"
+        :volume-gallon-imperial: 
+          :one: "{0} äb·4,6L"
+          :other: "{0} äb·4,6L"
         :volume-hectoliter: 
           :one: "{0}hL"
           :other: "{0}hL"
@@ -817,13 +847,16 @@
           :one: "{0} yard²"
           :other: "{0} yard²"
         :concentr-karat: 
-          :one: "{0} kt"
-          :other: "{0} kt"
+          :one: "{0} kar"
+          :other: "{0} kar"
         :concentr-milligram-per-deciliter: 
-          :other: "{0} mg/dL"
+          :one: "{0} mg/dl"
+          :other: "{0} mg/dl"
         :concentr-millimole-per-liter: 
-          :other: "{0} mmol/L"
+          :one: "{0} mmol/l"
+          :other: "{0} mmol/l"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :one: "{0} l/100 km"
@@ -835,7 +868,8 @@
           :one: "{0} mpg"
           :other: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
-          :other: "{0} mpg Imp."
+          :one: "{0}mpgUK"
+          :other: "{0}mpgUK"
         :digital-bit: 
           :one: "{0} b"
           :other: "{0} b"
@@ -946,8 +980,8 @@
           :one: "{0} MHz"
           :other: "{0} MHz"
         :length-astronomical-unit: 
-          :one: "{0} AU"
-          :other: "{0} AU"
+          :one: "{0} AE"
+          :other: "{0} AE"
         :length-centimeter: 
           :one: "{0} cm"
           :other: "{0} cm"
@@ -970,8 +1004,8 @@
           :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
-          :one: "{0} ly"
-          :other: "{0} ly"
+          :one: "{0} ljusår"
+          :other: "{0} ljusår"
         :length-meter: 
           :one: "{0} m"
           :other: "{0} m"
@@ -999,6 +1033,8 @@
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
           :one: "{0} eng. yard"
           :other: "{0} eng. yard"
@@ -1141,7 +1177,8 @@
           :one: "{0} gal"
           :other: "{0} gal"
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :one: "{0} ämb à 4,6l"
+          :other: "{0} ämb à 4,6l"
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"

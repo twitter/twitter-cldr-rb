@@ -75,6 +75,18 @@
           :one: "{0} karāts"
           :other: "{0} karāti"
           :zero: "{0} karāti"
+        :concentr-milligram-per-deciliter: 
+          :one: "{0} miligrams uz dekalitru"
+          :other: "{0} miligrami uz dekalitru"
+          :zero: "{0} miligrami uz dekalitru"
+        :concentr-millimole-per-liter: 
+          :one: "{0} milimols uz litru"
+          :other: "{0} milimoli uz litru"
+          :zero: "{0} milimoli uz litru"
+        :concentr-part-per-million: 
+          :one: "{0} miljonā daļa"
+          :other: "{0} miljonās daļas"
+          :zero: "{0} miljonās daļas"
         :consumption-liter-per-100kilometers: 
           :one: "{0} litrs uz 100 kilometriem"
           :other: "{0} litri uz 100 kilometriem"
@@ -87,6 +99,10 @@
           :one: "{0} jūdze ar galonu"
           :other: "{0} jūdzes ar galonu"
           :zero: "{0} jūdzes ar galonu"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} jūdze ar imp. galonu"
+          :other: "{0} jūdzes ar imp. galonu"
+          :zero: "{0} jūdzes ar imp. galonu"
         :digital-bit: 
           :one: "{0} bits"
           :other: "{0} biti"
@@ -455,6 +471,10 @@
           :one: "{0} glāze"
           :other: "{0} glāzes"
           :zero: "{0} glāzes"
+        :volume-cup-metric: 
+          :one: "{0} metriskā glāze"
+          :other: "{0} metriskās glāzes"
+          :zero: "{0} metriskās glāzes"
         :volume-deciliter: 
           :one: "{0} decilitrs"
           :other: "{0} decilitri"
@@ -467,6 +487,10 @@
           :one: "{0} galons"
           :other: "{0} galoni"
           :zero: "{0} galoni"
+        :volume-gallon-imperial: 
+          :one: "{0} imperiālais galons"
+          :other: "{0} imperiālie galoni"
+          :zero: "{0} imperiālie galoni"
         :volume-hectoliter: 
           :one: "{0} hektolitrs"
           :other: "{0} hektolitri"
@@ -762,11 +786,17 @@
           :other: "{0} kt"
           :zero: "{0} kt"
         :concentr-milligram-per-deciliter: 
+          :one: "{0} mg/dL"
           :other: "{0} mg/dL"
+          :zero: "{0} mg/dL"
         :concentr-millimole-per-liter: 
+          :one: "{0} mmol/L"
           :other: "{0} mmol/L"
+          :zero: "{0} mmol/L"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
+          :zero: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -780,7 +810,9 @@
           :other: "{0} mpg"
           :zero: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
+          :one: "{0} mpg Imp."
           :other: "{0} mpg Imp."
+          :zero: "{0} mpg Imp."
         :digital-bit: 
           :one: "{0} b"
           :other: "{0} b"
@@ -940,15 +972,15 @@
         :length-fathom: 
           :other: "{0} fm"
         :length-foot: 
-          :one: "{0} ft"
-          :other: "{0} ft"
-          :zero: "{0} ft"
+          :one: "{0} pēda"
+          :other: "{0} pēdas"
+          :zero: "{0} pēdas"
         :length-furlong: 
           :other: "{0} fur"
         :length-inch: 
-          :one: "{0} c."
-          :other: "{0} c."
-          :zero: "{0} c."
+          :one: "{0} colla"
+          :other: "{0} collas"
+          :zero: "{0} collas"
         :length-kilometer: 
           :one: "{0} km"
           :other: "{0} km"
@@ -966,9 +998,9 @@
           :other: "{0} µm"
           :zero: "{0} µm"
         :length-mile: 
-          :one: "{0} mi"
-          :other: "{0} mi"
-          :zero: "{0} mi"
+          :one: "{0} jūdze"
+          :other: "{0} jūdzes"
+          :zero: "{0} jūdzes"
         :length-mile-scandinavian: 
           :one: "{0} skandināvu jūdze"
           :other: "{0} skandināvu jūdzes"
@@ -982,21 +1014,23 @@
           :other: "{0} nm"
           :zero: "{0} nm"
         :length-nautical-mile: 
-          :one: "{0} nmi"
-          :other: "{0} nmi"
-          :zero: "{0} nmi"
+          :one: "{0} jūras jūdze"
+          :other: "{0} jūras jūdzes"
+          :zero: "{0} jūras jūdzes"
         :length-parsec: 
-          :one: "{0} pc"
-          :other: "{0} pc"
-          :zero: "{0} pc"
+          :one: "{0} parseks"
+          :other: "{0} parseki"
+          :zero: "{0} parseki"
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
           :zero: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
-          :one: "{0} yd"
-          :other: "{0} yd"
-          :zero: "{0} yd"
+          :one: "{0} jards"
+          :other: "{0} jardi"
+          :zero: "{0} jardi"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
@@ -1178,7 +1212,9 @@
           :other: "{0} gal"
           :zero: "{0} gal"
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :one: "{0} imp. gal."
+          :other: "{0} imp. gal."
+          :zero: "{0} imp. gal."
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"

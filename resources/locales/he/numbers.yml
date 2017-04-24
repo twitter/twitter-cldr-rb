@@ -5,7 +5,7 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: "‏#,##0.00 ¤;‏-#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -164,40 +164,40 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :many: ‏0 אלף
-              :one: ‏0 אלף
-              :other: ‏0 אלף
-              :two: ‏0 אלף
+              :many: 0K
+              :one: 0K
+              :other: 0K
+              :two: 0K
             ? !ruby/symbol "10000"
             : 
-              :many: ‏00 אלף
-              :one: ‏00 אלף
-              :other: ‏00 אלף
-              :two: ‏00 אלף
+              :many: 00K
+              :one: 00K
+              :other: 00K
+              :two: 00K
             ? !ruby/symbol "100000"
             : 
-              :many: ‏000 אלף
-              :one: ‏000 אלף
-              :other: ‏000 אלף
-              :two: ‏000 אלף
+              :many: 000K
+              :one: 000K
+              :other: 000K
+              :two: 000K
             ? !ruby/symbol "1000000"
             : 
-              :many: ‏0 מיל׳
-              :one: ‏0 מיל׳
-              :other: ‏0 מיל׳
-              :two: ‏0 מיל׳
+              :many: 0M
+              :one: 0M
+              :other: 0M
+              :two: 0M
             ? !ruby/symbol "10000000"
             : 
-              :many: ‏00 מיל׳
-              :one: ‏00 מיל׳
-              :other: ‏00 מיל׳
-              :two: ‏00 מיל׳
+              :many: 00M
+              :one: 00M
+              :other: 00M
+              :two: 00M
             ? !ruby/symbol "100000000"
             : 
-              :many: ‏000 מיל׳
-              :one: ‏000 מיל׳
-              :other: ‏000 מיל׳
-              :two: ‏000 מיל׳
+              :many: 000M
+              :one: 000M
+              :other: 000M
+              :two: 000M
             ? !ruby/symbol "1000000000"
             : 
               :many: 0B

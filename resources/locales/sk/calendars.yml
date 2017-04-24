@@ -24,6 +24,7 @@
         :MMM: LLL
         :MMMEd: "E d. M."
         :MMMMEd: "E d. MMMM"
+        :MMMMW: "W. 'týždeň' 'v' MMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. M."
         :Md: "d. M."
@@ -47,6 +48,7 @@
         :yMd: "d. M. y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "w. 'týždeň' 'v' 'roku' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,6 +129,7 @@
         :day: deň
         :day-narrow: d.
         :day-short: d.
+        :dayOfYear: "Day Of Year"
         :dayperiod: "časť dňa"
         :era: letopočet
         :hour: hodina
@@ -147,7 +150,9 @@
         :week: týždeň
         :week-narrow: týž.
         :week-short: týž.
-        :weekday: "deň v týždni"
+        :weekOfMonth: "Week Of Month"
+        :weekday: "deň týždňa"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: rok
         :year-narrow: r.
         :year-short: r.
@@ -161,7 +166,7 @@
           :medium: 
             :pattern: "d. M. y"
           :short: 
-            :pattern: d.M.yy
+            :pattern: "d. M. y"
         :datetime: 
           :full: 
             :pattern: "{{date}}, {{time}}"

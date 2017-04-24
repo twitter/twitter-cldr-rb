@@ -6,7 +6,7 @@
         :E: ccc
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
-        :Ed: "E, d"
+        :Ed: "d, E"
         :Ehm: "E, h:mm a"
         :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
@@ -22,6 +22,7 @@
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'wythnos' W 'o' MMM"
         :MMMMd: "MMMM d"
         :MMMd: "d MMM"
         :Md: d/M
@@ -44,6 +45,7 @@
         :yQ: "Q y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'wythnos' w 'of' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -113,8 +115,8 @@
             :wed: "Dydd Mercher"
       :eras: 
         :abbr: 
-          0: BCE
-          1: CE
+          0: CC
+          1: OC
         :name: 
           0: "Cyn Cyfnod Cyffredin"
           1: "Cyfnod Cyffredin"
@@ -125,8 +127,9 @@
         :day: dydd
         :day-narrow: dydd
         :day-short: dydd
-        :dayperiod: AM/PM
-        :era: Oes
+        :dayOfYear: "Day Of Year"
+        :dayperiod: YB/YH
+        :era: oes
         :hour: awr
         :hour-narrow: awr
         :hour-short: awr
@@ -145,11 +148,13 @@
         :week: wythnos
         :week-narrow: wythnos
         :week-short: wythnos
+        :weekOfMonth: "Week Of Month"
         :weekday: "dydd o’r wythnos"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: blwyddyn
         :year-narrow: bl.
         :year-short: bl.
-        :zone: "Cylchfa Amser"
+        :zone: "cylchfa amser"
       :formats: 
         :date: 
           :full: 
@@ -262,18 +267,24 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: AM
-            :pm: PM
+            :am: yb
+            :pm: yh
           :narrow: 
-            :am: AM
-            :pm: PM
+            :am: b
+            :pm: h
           :wide: 
-            :am: AM
-            :pm: PM
+            :am: yb
+            :pm: yh
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
-          :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
-          :wide: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
+          :abbreviated: 
+            :am: yb
+            :pm: yh
+          :narrow: 
+            :am: yb
+            :pm: yh
+          :wide: 
+            :am: yb
+            :pm: yh
       :quarters: 
         :format: 
           :abbreviated: 

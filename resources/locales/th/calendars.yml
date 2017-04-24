@@ -38,6 +38,7 @@
         :MMMEd: "E d MMM"
         :MMMMEEEEd: "EEEEที่ d MMMM"
         :MMMMEd: "E d MMMM"
+        :MMMMW: "สัปดาห์ที่ W ของ MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -64,6 +65,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ G y"
+        :yw: "สัปดาห์ที่ w ของ y"
       :days: 
         :format: 
           :abbreviated: 
@@ -145,6 +147,7 @@
         :day: วัน
         :day-narrow: วัน
         :day-short: วัน
+        :dayOfYear: "Day Of Year"
         :dayperiod: ช่วงวัน
         :era: สมัย
         :hour: ชั่วโมง
@@ -165,7 +168,9 @@
         :week: สัปดาห์
         :week-narrow: สัปดาห์
         :week-short: สัปดาห์
+        :weekOfMonth: "Week Of Month"
         :weekday: วันในสัปดาห์
+        :weekdayOfMonth: "Weekday Of Month"
         :year: ปี
         :year-narrow: ปี
         :year-short: ปี
@@ -316,7 +321,15 @@
             :pm: หลังเที่ยง
         :stand-alone: 
           :abbreviated: 
+            :afternoon1: ในตอนบ่าย
+            :afternoon2: บ่าย
             :am: ก่อนเที่ยง
+            :evening1: ในตอนเย็น
+            :evening2: ค่ำ
+            :midnight: เที่ยงคืน
+            :morning1: ในตอนเช้า
+            :night1: กลางคืน
+            :noon: เที่ยง
             :pm: หลังเที่ยง
           :narrow: 
             :afternoon1: ช่วงเที่ยง
@@ -330,13 +343,13 @@
             :noon: เที่ยง
             :pm: หลังเที่ยง
           :wide: 
-            :afternoon1: ช่วงเที่ยง
+            :afternoon1: ในตอนบ่าย
             :afternoon2: บ่าย
             :am: ก่อนเที่ยง
-            :evening1: เย็น
+            :evening1: ในตอนเย็น
             :evening2: ค่ำ
             :midnight: เที่ยงคืน
-            :morning1: เช้า
+            :morning1: ในตอนเช้า
             :night1: กลางคืน
             :noon: เที่ยง
             :pm: หลังเที่ยง

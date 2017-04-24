@@ -22,6 +22,7 @@
         :MEd: "d/M, E"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "MMM d"
         :MMdd: dd-MM
@@ -45,6 +46,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,6 +127,7 @@
         :day: ದಿನ
         :day-narrow: ದಿನ
         :day-short: ದಿನ
+        :dayOfYear: "Day Of Year"
         :dayperiod: ಪೂರ್ವಾಹ್ನ/ಅಪರಾಹ್ನ
         :era: ಯುಗ
         :hour: ಗಂಟೆ
@@ -145,7 +148,9 @@
         :week: ವಾರ
         :week-narrow: ವಾರ
         :week-short: ವಾರ
+        :weekOfMonth: "Week Of Month"
         :weekday: "ವಾರದ ದಿನ"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: ವರ್ಷ
         :year-narrow: ವರ್ಷ
         :year-short: ವರ್ಷ
@@ -263,12 +268,12 @@
         :format: 
           :abbreviated: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: "ಮಧ್ಯ ರಾತ್ರಿ"
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :narrow: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
             :am: ಪೂ
@@ -288,20 +293,20 @@
         :stand-alone: 
           :abbreviated: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: ಮಧ್ಯರಾತ್ರಿ
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :narrow: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: ಮಧ್ಯರಾತ್ರಿ
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :wide: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
             :am: ಪೂರ್ವಾಹ್ನ

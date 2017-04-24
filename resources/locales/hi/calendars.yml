@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "MMM का सप्ताह W"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -47,6 +48,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "y का सप्ताह w"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,6 +129,7 @@
         :day: दिन
         :day-narrow: दिन
         :day-short: दिन
+        :dayOfYear: "Day Of Year"
         :dayperiod: पूर्वाह्न/अपराह्न
         :era: युग
         :hour: घंटा
@@ -147,7 +150,9 @@
         :week: सप्ताह
         :week-narrow: सप्ताह
         :week-short: सप्ताह
+        :weekOfMonth: "Week Of Month"
         :weekday: "सप्ताह का दिन"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: वर्ष
         :year-narrow: वर्ष
         :year-short: वर्ष
@@ -265,17 +270,17 @@
         :format: 
           :abbreviated: 
             :afternoon1: अपराह्न
-            :am: पूर्व
+            :am: पूर्वाह्न
             :evening1: शाम
             :midnight: मध्यरात्रि
             :morning1: सुबह
             :night1: रात
-            :pm: अपर
+            :pm: अपराह्न
           :narrow: 
             :afternoon1: अपराह्न
             :am: पू
             :evening1: शाम
-            :midnight: "आधी रात"
+            :midnight: मध्यरात्रि
             :morning1: सुबह
             :night1: शाम
             :pm: अ
@@ -289,8 +294,12 @@
             :pm: अपराह्न
         :stand-alone: 
           :abbreviated: 
-            :am: पूर्व
-            :pm: अपर
+            :afternoon1: दोपहर
+            :am: पूर्वाह्न
+            :evening1: शाम
+            :morning1: सुबह
+            :night1: रात
+            :pm: अपराह्न
           :narrow: 
             :afternoon1: अपराह्न
             :am: पू
@@ -303,7 +312,7 @@
             :afternoon1: दोपहर
             :am: पूर्वाह्न
             :evening1: शाम
-            :midnight: "आधी रात"
+            :midnight: मध्यरात्रि
             :morning1: सुबह
             :night1: रात
             :pm: अपराह्न

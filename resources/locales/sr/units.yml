@@ -2,9 +2,9 @@
 :sr: 
   :units: 
     :durationUnit: 
-      :hm: h.mm
-      :hms: h.mm.ss
-      :ms: m.ss
+      :hm: "h:mm"
+      :hms: "h:mm:ss"
+      :ms: "m:ss"
     :unitLength: 
       :long: 
         :acceleration-g-force: 
@@ -75,6 +75,18 @@
           :few: "{0} карата"
           :one: "{0} карат"
           :other: "{0} карата"
+        :concentr-milligram-per-deciliter: 
+          :few: "{0} милиграма по децилитру"
+          :one: "{0} милиграм по децилитру"
+          :other: "{0} милиграма по децилитру"
+        :concentr-millimole-per-liter: 
+          :few: "{0} милимола по литри"
+          :one: "{0} милимол по литри"
+          :other: "{0} милимола по литри"
+        :concentr-part-per-million: 
+          :few: "{0} честица на милион"
+          :one: "{0} честица на милион"
+          :other: "{0} честица на милион"
         :consumption-liter-per-100kilometers: 
           :few: "{0} литра на 100 километара"
           :one: "{0} литар на 100 километара"
@@ -87,6 +99,10 @@
           :few: "{0} миље по галону"
           :one: "{0} миља по галону"
           :other: "{0} миља по галону"
+        :consumption-mile-per-gallon-imperial: 
+          :few: "{0} миље по империјалном галону"
+          :one: "{0} миља по империјалном галону"
+          :other: "{0} миља по империјалном галону"
         :digital-bit: 
           :few: "{0} бита"
           :one: "{0} бит"
@@ -268,9 +284,9 @@
           :one: "{0} миља"
           :other: "{0} миља"
         :length-mile-scandinavian: 
-          :few: "{0} smi"
-          :one: "{0} smi"
-          :other: "{0} smi"
+          :few: "{0} скандинавске миље"
+          :one: "{0} скандинавска миља"
+          :other: "{0} скандинавских миља"
         :length-millimeter: 
           :few: "{0} милиметра"
           :one: "{0} милиметар"
@@ -388,9 +404,9 @@
           :one: "{0} километар на сат"
           :other: "{0} километара на сат"
         :speed-knot: 
-          :few: "{0} kn"
-          :one: "{0} kn"
-          :other: "{0} kn"
+          :few: "{0} чвора"
+          :one: "{0} чвор"
+          :other: "{0} чворова"
         :speed-meter-per-second: 
           :few: "{0} метра у секунди"
           :one: "{0} метар у секунди"
@@ -471,6 +487,10 @@
           :few: "{0} галона"
           :one: "{0} галон"
           :other: "{0} галона"
+        :volume-gallon-imperial: 
+          :few: "{0} имп. галона"
+          :one: "{0} имп. галон"
+          :other: "{0} имп. галона"
         :volume-hectoliter: 
           :few: "{0} хектолитра"
           :one: "{0} хектолитар"
@@ -557,9 +577,9 @@
           :one: "{0} д"
           :other: "{0} д"
         :duration-hour: 
-          :few: "{0} сата"
-          :one: "{0} сат"
-          :other: "{0} сати"
+          :few: "{0} ч"
+          :one: "{0} ч"
+          :other: "{0} ч"
         :duration-millisecond: 
           :few: "{0} ms"
           :one: "{0} ms"
@@ -573,9 +593,9 @@
           :one: "{0} м"
           :other: "{0} м"
         :duration-second: 
-          :few: "{0} сек"
-          :one: "{0} сек"
-          :other: "{0} сек"
+          :few: "{0} с"
+          :one: "{0} с"
+          :other: "{0} с"
         :duration-week: 
           :few: "{0} н"
           :one: "{0} н"
@@ -766,15 +786,21 @@
           :one: "{0} kt"
           :other: "{0} kt"
         :concentr-milligram-per-deciliter: 
+          :few: "{0} mg/dL"
+          :one: "{0} mg/dL"
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
+          :few: "{0} mmol/L"
+          :one: "{0} mmol/L"
           :other: "{0} mmol/L"
         :concentr-part-per-million: 
+          :few: "{0} ppm"
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
-          :few: "{0} L/100km"
-          :one: "{0} L/100km"
-          :other: "{0} L/100km"
+          :few: "{0} L/100 km"
+          :one: "{0} L/100 km"
+          :other: "{0} L/100 km"
         :consumption-liter-per-kilometer: 
           :few: "{0} L/km"
           :one: "{0} L/km"
@@ -784,6 +810,8 @@
           :one: "{0} mpg"
           :other: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
+          :few: "{0} mpg Imp."
+          :one: "{0} mpg Imp."
           :other: "{0} mpg Imp."
         :digital-bit: 
           :few: "{0} b"
@@ -997,6 +1025,8 @@
           :few: "{0} pm"
           :one: "{0} pm"
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
           :few: "{0} јрд"
           :one: "{0} јрд"
@@ -1030,9 +1060,9 @@
           :one: "{0} mg"
           :other: "{0} mg"
         :mass-ounce: 
-          :few: "{0} унце"
-          :one: "{0} унца"
-          :other: "{0} унци"
+          :few: "{0} oz"
+          :one: "{0} oz"
+          :other: "{0} oz"
         :mass-ounce-troy: 
           :few: "{0} oz t"
           :one: "{0} oz t"
@@ -1096,9 +1126,9 @@
           :one: "{0} km/h"
           :other: "{0} km/h"
         :speed-knot: 
-          :few: "{0} kn"
-          :one: "{0} kn"
-          :other: "{0} kn"
+          :few: "{0} чв"
+          :one: "{0} чв"
+          :other: "{0} чв"
         :speed-meter-per-second: 
           :few: "{0} m/s"
           :one: "{0} m/s"
@@ -1182,6 +1212,8 @@
           :one: "{0} gal"
           :other: "{0} gal"
         :volume-gallon-imperial: 
+          :few: "{0} gal Imp."
+          :one: "{0} gal Imp."
           :other: "{0} gal Imp."
         :volume-hectoliter: 
           :few: "{0} hL"

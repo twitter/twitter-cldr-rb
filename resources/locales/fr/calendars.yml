@@ -22,6 +22,7 @@
         :MEd: "E dd/MM"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'semaine' W 'de' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: dd/MM
@@ -43,6 +44,7 @@
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'semaine' w 'de' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,6 +126,7 @@
         :day: jour
         :day-narrow: j
         :day-short: j
+        :dayOfYear: "Day Of Year"
         :dayperiod: cadran
         :era: ère
         :hour: heure
@@ -144,10 +147,12 @@
         :week: semaine
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "Week Of Month"
         :weekday: "jour de la semaine"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: année
         :year-narrow: a
-        :year-short: ann.
+        :year-short: an
         :zone: "fuseau horaire"
       :formats: 
         :date: 
@@ -264,7 +269,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -273,7 +278,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -292,7 +297,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -301,7 +306,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi

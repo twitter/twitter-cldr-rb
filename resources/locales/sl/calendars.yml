@@ -7,14 +7,14 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E, d."
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E, h:mm a"
+        :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
         :GyM: "MMM y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d. MMM y G"
         :GyMMMd: "d. MMM y G"
-        :H: HH
+        :H: HH'h'
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
@@ -23,7 +23,8 @@
         :MEd: "E, d. M."
         :MMM: LLL
         :MMMEd: "E, d. MMM"
-        :MMMMd: "d MMMM"
+        :MMMMW: "W. 'teden' 'v' MMM"
+        :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :Md: "d. M."
         :d: d.
@@ -44,6 +45,7 @@
         :yMd: "d. M. y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "w. 'teden' 'v' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -80,13 +82,13 @@
             :wed: sreda
         :stand-alone: 
           :abbreviated: 
-            :fri: pet
-            :mon: pon
-            :sat: sob
-            :sun: ned
-            :thu: čet
-            :tue: tor
-            :wed: sre
+            :fri: pet.
+            :mon: pon.
+            :sat: sob.
+            :sun: ned.
+            :thu: čet.
+            :tue: tor.
+            :wed: sre.
           :narrow: 
             :fri: p
             :mon: p
@@ -114,17 +116,18 @@
       :eras: 
         :abbr: 
           0: "pr. n. št."
-          1: "n. št."
+          1: "po n. št."
         :name: 
           0: "pred našim štetjem"
-          1: "po n. št."
+          1: "po našem štetju"
         :narrow: 
           0: ""
       :fields: 
-        :day: Dan
+        :day: dan
         :day-narrow: dan
         :day-short: dan
-        :dayperiod: "Čas dneva"
+        :dayOfYear: "Day Of Year"
+        :dayperiod: dop/pop
         :era: doba
         :hour: ura
         :hour-narrow: h
@@ -144,7 +147,9 @@
         :week: teden
         :week-narrow: ted.
         :week-short: ted.
+        :weekOfMonth: "Week Of Month"
         :weekday: "dan v tednu"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: leto
         :year-narrow: leto
         :year-short: leto
@@ -220,18 +225,18 @@
             9: september
         :stand-alone: 
           :abbreviated: 
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mar.
+            4: apr.
             5: maj
-            6: jun
-            7: jul
-            8: avg
-            9: sep
+            6: jun.
+            7: jul.
+            8: avg.
+            9: sep.
           :narrow: 
             1: j
             10: o
@@ -264,11 +269,11 @@
             :afternoon1: pop.
             :am: dop.
             :evening1: zveč.
-            :midnight: poln.
+            :midnight: opoln.
             :morning1: zjut.
             :morning2: dop.
             :night1: noč
-            :noon: pold.
+            :noon: opold.
             :pm: pop.
           :narrow: 
             :afternoon1: p
@@ -283,12 +288,12 @@
           :wide: 
             :afternoon1: popoldan
             :am: dop.
-            :evening1: večer
-            :midnight: polnoč
-            :morning1: jutro
+            :evening1: zvečer
+            :midnight: opolnoči
+            :morning1: zjutraj
             :morning2: dopoldan
-            :night1: noč
-            :noon: poldne
+            :night1: ponoči
+            :noon: opoldne
             :pm: pop.
         :stand-alone: 
           :abbreviated: 
@@ -296,29 +301,29 @@
             :am: dop.
             :evening1: zveč.
             :midnight: poln.
-            :morning1: zjut.
+            :morning1: jut.
             :morning2: dop.
-            :night1: pon.
+            :night1: noč
             :noon: pold.
             :pm: pop.
           :narrow: 
-            :afternoon1: popoldne
-            :am: dop.
-            :evening1: zvečer
-            :midnight: polnoč
-            :morning1: zjutraj
-            :morning2: dopoldne
-            :night1: ponoči
-            :noon: poldne
-            :pm: pop.
+            :afternoon1: p
+            :am: d
+            :evening1: v
+            :midnight: "24.00"
+            :morning1: j
+            :morning2: d
+            :night1: "n"
+            :noon: "12.00"
+            :pm: p
           :wide: 
             :afternoon1: popoldne
             :am: dopoldne
-            :evening1: zvečer
+            :evening1: večer
             :midnight: polnoč
-            :morning1: zjutraj
+            :morning1: jutro
             :morning2: dopoldne
-            :night1: ponoči
+            :night1: noč
             :noon: poldne
             :pm: popoldne
       :quarters: 

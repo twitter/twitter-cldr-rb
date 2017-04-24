@@ -22,6 +22,7 @@
         :MEd: "E, d.M"
         :MMM: LLL
         :MMMEd: "E, d בMMM"
+        :MMMMW: "שבוע W בMMM"
         :MMMMd: "d בMMMM"
         :MMMd: "d בMMM"
         :Md: d.M
@@ -44,6 +45,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "שבוע w בשנת y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,6 +126,7 @@
         :day: יום
         :day-narrow: יום
         :day-short: יום
+        :dayOfYear: "Day Of Year"
         :dayperiod: לפנה״צ/אחה״צ
         :era: תקופה
         :hour: שעה
@@ -144,7 +147,9 @@
         :week: שבוע
         :week-narrow: שב׳
         :week-short: שב׳
+        :weekOfMonth: "Week Of Month"
         :weekday: "יום בשבוע"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: שנה
         :year-narrow: שנ׳
         :year-short: שנ׳
@@ -268,8 +273,16 @@
             :midnight: חצות
             :morning1: בוקר
             :night1: לילה
+            :night2: "לפנות בוקר"
             :pm: אחה״צ
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow: 
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
+            :night2: "לפנות בוקר"
           :wide: 
             :afternoon1: צהריים
             :afternoon2: "אחר הצהריים"
@@ -278,10 +291,25 @@
             :midnight: חצות
             :morning1: בוקר
             :night1: לילה
+            :night2: "לפנות בוקר"
             :pm: אחה״צ
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
-          :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
+          :abbreviated: 
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
+            :night2: "לפנות בוקר"
+          :narrow: 
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
+            :night2: "לפנות בוקר"
           :wide: 
             :afternoon1: צהריים
             :afternoon2: "אחר הצהריים"
@@ -289,13 +317,14 @@
             :midnight: חצות
             :morning1: בוקר
             :night1: לילה
+            :night2: "לפנות בוקר"
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "רבעון 1"
-            2: "רבעון 2"
-            3: "רבעון 3"
-            4: "רבעון 4"
+            1: Q1
+            2: Q2
+            3: Q3
+            4: Q4
           :narrow: 
             1: "1"
             2: "2"
@@ -308,10 +337,10 @@
             4: "רבעון 4"
         :stand-alone: 
           :abbreviated: 
-            1: "רבעון 1"
-            2: "רבעון 2"
-            3: "רבעון 3"
-            4: "רבעון 4"
+            1: Q1
+            2: Q2
+            3: Q3
+            4: Q4
           :narrow: 
             1: "1"
             2: "2"

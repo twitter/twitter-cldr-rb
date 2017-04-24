@@ -37,18 +37,35 @@
         -1: "지난 금요일"
         0: "이번 금요일"
         1: "다음 금요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 금요일"
+        :past: 
+          :other: "{0}주 전 금요일"
     :fri-narrow: 
       :relative: 
         -1: "지난 금요일"
         0: "이번 금요일"
         1: "다음 금요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 금요일"
+        :past: 
+          :other: "{0}주 전 금요일"
     :fri-short: 
       :relative: 
         -1: "지난 금요일"
         0: "이번 금요일"
         1: "다음 금요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 금요일"
+        :past: 
+          :other: "{0}주 전 금요일"
     :hour: 
       :display_name: 시
+      :relative: 
+        0: "현재 시간"
       :relative_time: 
         :future: 
           :other: "{0}시간 후"
@@ -70,6 +87,8 @@
           :other: "{0}시간 전"
     :minute: 
       :display_name: 분
+      :relative: 
+        0: "현재 분"
       :relative_time: 
         :future: 
           :other: "{0}분 후"
@@ -94,16 +113,31 @@
         -1: "지난 월요일"
         0: "이번 월요일"
         1: "다음 월요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 월요일"
+        :past: 
+          :other: "{0}주 전 월요일"
     :mon-narrow: 
       :relative: 
         -1: "지난 월요일"
         0: "이번 월요일"
         1: "다음 월요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 월요일"
+        :past: 
+          :other: "{0}주 전 월요일"
     :mon-short: 
       :relative: 
         -1: "지난 월요일"
         0: "이번 월요일"
         1: "다음 월요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 월요일"
+        :past: 
+          :other: "{0}주 전 월요일"
     :month: 
       :display_name: 월
       :relative: 
@@ -131,6 +165,10 @@
           :other: "{0}개월 전"
     :quarter: 
       :display_name: 분기
+      :relative: 
+        -1: "지난 분기"
+        0: "이번 분기"
+        1: "다음 분기"
       :relative_time: 
         :future: 
           :other: "{0}분기 후"
@@ -155,16 +193,31 @@
         -1: "지난 토요일"
         0: "이번 토요일"
         1: "다음 토요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 토요일"
+        :past: 
+          :other: "{0}주 전 토요일"
     :sat-narrow: 
       :relative: 
         -1: "지난 토요일"
         0: "이번 토요일"
         1: "다음 토요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 토요일"
+        :past: 
+          :other: "{0}주 전 토요일"
     :sat-short: 
       :relative: 
         -1: "지난 토요일"
         0: "이번 토요일"
         1: "다음 토요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 토요일"
+        :past: 
+          :other: "{0}주 전 토요일"
     :second: 
       :display_name: 초
       :relative: 
@@ -193,61 +246,121 @@
         -1: "지난 일요일"
         0: "이번 일요일"
         1: "다음 일요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 일요일"
+        :past: 
+          :other: "{0}주 전 일요일"
     :sun-narrow: 
       :relative: 
         -1: "지난 일요일"
         0: "이번 일요일"
         1: "다음 일요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 일요일"
+        :past: 
+          :other: "{0}주 전 일요일"
     :sun-short: 
       :relative: 
         -1: "지난 일요일"
         0: "이번 일요일"
         1: "다음 일요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 일요일"
+        :past: 
+          :other: "{0}주 전 일요일"
     :thu: 
       :relative: 
         -1: "지난 목요일"
         0: "이번 목요일"
         1: "다음 목요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 목요일"
+        :past: 
+          :other: "{0}주 전 목요일"
     :thu-narrow: 
       :relative: 
         -1: "지난 목요일"
         0: "이번 목요일"
         1: "다음 목요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 목요일"
+        :past: 
+          :other: "{0}주 전 목요일"
     :thu-short: 
       :relative: 
         -1: "지난 목요일"
         0: "이번 목요일"
         1: "다음 목요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 목요일"
+        :past: 
+          :other: "{0}주 전 목요일"
     :tue: 
       :relative: 
         -1: "지난 화요일"
         0: "이번 화요일"
         1: "다음 화요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 화요일"
+        :past: 
+          :other: "{0}주 전 화요일"
     :tue-narrow: 
       :relative: 
         -1: "지난 화요일"
         0: "이번 화요일"
         1: "다음 화요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 화요일"
+        :past: 
+          :other: "{0}주 전 화요일"
     :tue-short: 
       :relative: 
         -1: "지난 화요일"
         0: "이번 화요일"
         1: "다음 화요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 화요일"
+        :past: 
+          :other: "{0}주 전 화요일"
     :wed: 
       :relative: 
         -1: "지난 수요일"
         0: "이번 수요일"
         1: "다음 수요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 수요일"
+        :past: 
+          :other: "{0}주 전 수요일"
     :wed-narrow: 
       :relative: 
         -1: "지난 수요일"
         0: "이번 수요일"
         1: "다음 수요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 수요일"
+        :past: 
+          :other: "{0}주 전 수요일"
     :wed-short: 
       :relative: 
         -1: "지난 수요일"
         0: "이번 수요일"
         1: "다음 수요일"
+      :relative_time: 
+        :future: 
+          :other: "{0}주 후 수요일"
+        :past: 
+          :other: "{0}주 전 수요일"
     :week: 
       :display_name: 주
       :relative: 

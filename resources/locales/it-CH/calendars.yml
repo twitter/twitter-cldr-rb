@@ -24,6 +24,7 @@
         :MEd: "E d/M"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'settimana' W 'di' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd.MM
@@ -49,6 +50,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'settimana' w 'del' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -109,13 +111,13 @@
             :tue: mar
             :wed: mer
           :wide: 
-            :fri: Venerdì
-            :mon: Lunedì
-            :sat: Sabato
-            :sun: Domenica
-            :thu: Giovedì
-            :tue: Martedì
-            :wed: Mercoledì
+            :fri: venerdì
+            :mon: lunedì
+            :sat: sabato
+            :sun: domenica
+            :thu: giovedì
+            :tue: martedì
+            :wed: mercoledì
       :eras: 
         :abbr: 
           0: a.E.V.
@@ -130,6 +132,7 @@
         :day: giorno
         :day-narrow: g
         :day-short: g
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
         :era: era
         :hour: ora
@@ -144,13 +147,15 @@
         :quarter: trimestre
         :quarter-narrow: trim.
         :quarter-short: trim.
-        :second: Secondo
+        :second: secondo
         :second-narrow: s
         :second-short: sec.
         :week: settimana
         :week-narrow: sett.
         :week-short: sett.
+        :weekOfMonth: "Week Of Month"
         :weekday: "giorno della settimana"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: anno
         :year-narrow: anno
         :year-short: anno
@@ -267,12 +272,12 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
           :narrow: 
@@ -285,12 +290,12 @@
             :noon: mezzogiorno
             :pm: p.
           :wide: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
         :stand-alone: 

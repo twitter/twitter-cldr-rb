@@ -5,7 +5,7 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "¤ #,##0.00;¤-#,##0.00"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -170,7 +170,8 @@
           :default: "#E0"
     :symbols: 
       :alias: ""
-      :decimal: "."
+      :currency_decimal: "."
+      :decimal: ","
       :exponential: E
       :group:  
       :infinity: ∞

@@ -55,18 +55,41 @@
         -1: "viime perjantaina"
         0: "tänä perjantaina"
         1: "ensi perjantaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} perjantain päästä"
+          :other: "{0} perjantain päästä"
+        :past: 
+          :one: "{0} perjantai sitten"
+          :other: "{0} perjantaita sitten"
     :fri-narrow: 
       :relative: 
         -1: "viime pe"
         0: "tänä pe"
         1: "ensi pe"
+      :relative_time: 
+        :future: 
+          :one: "{0} pe päästä"
+          :other: "{0} pe päästä"
+        :past: 
+          :one: "{0} pe sitten"
+          :other: "{0} pe sitten"
     :fri-short: 
       :relative: 
         -1: "viime pe"
         0: "tänä pe"
         1: "ensi pe"
+      :relative_time: 
+        :future: 
+          :one: "{0} pe päästä"
+          :other: "{0} pe päästä"
+        :past: 
+          :one: "{0} pe sitten"
+          :other: "{0} pe sitten"
     :hour: 
       :display_name: tunti
+      :relative: 
+        0: "tämän tunnin aikana"
       :relative_time: 
         :future: 
           :one: "{0} tunnin päästä"
@@ -76,6 +99,8 @@
           :other: "{0} tuntia sitten"
     :hour-narrow: 
       :display_name: t
+      :relative: 
+        0: "tunnin sisällä"
       :relative_time: 
         :future: 
           :one: "{0} t päästä"
@@ -85,6 +110,8 @@
           :other: "{0} t sitten"
     :hour-short: 
       :display_name: t
+      :relative: 
+        0: "tunnin sisällä"
       :relative_time: 
         :future: 
           :one: "{0} t päästä"
@@ -94,6 +121,8 @@
           :other: "{0} t sitten"
     :minute: 
       :display_name: minuutti
+      :relative: 
+        0: "tämän minuutin aikana"
       :relative_time: 
         :future: 
           :one: "{0} minuutin päästä"
@@ -103,6 +132,8 @@
           :other: "{0} minuuttia sitten"
     :minute-narrow: 
       :display_name: min
+      :relative: 
+        0: "minuutin sisällä"
       :relative_time: 
         :future: 
           :one: "{0} min päästä"
@@ -112,6 +143,8 @@
           :other: "{0} min sitten"
     :minute-short: 
       :display_name: min
+      :relative: 
+        0: "minuutin sisällä"
       :relative_time: 
         :future: 
           :one: "{0} min päästä"
@@ -124,16 +157,37 @@
         -1: "viime maanantaina"
         0: "tänä maanantaina"
         1: "ensi maanantaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} maanantain päästä"
+          :other: "{0} maanantain päästä"
+        :past: 
+          :one: "{0} maanantai sitten"
+          :other: "{0} maanantaita sitten"
     :mon-narrow: 
       :relative: 
         -1: "viime ma"
         0: "tänä ma"
         1: "ensi ma"
+      :relative_time: 
+        :future: 
+          :one: "{0} ma päästä"
+          :other: "{0} ma päästä"
+        :past: 
+          :one: "{0} ma sitten"
+          :other: "{0} ma sitten"
     :mon-short: 
       :relative: 
         -1: "viime ma"
         0: "tänä ma"
         1: "ensi ma"
+      :relative_time: 
+        :future: 
+          :one: "{0} ma päästä"
+          :other: "{0} ma päästä"
+        :past: 
+          :one: "{0} ma sitten"
+          :other: "{0} ma sitten"
     :month: 
       :display_name: kuukausi
       :relative: 
@@ -211,22 +265,43 @@
           :other: "{0} neljänneksen päästä"
         :past: 
           :one: "{0} neljännes sitten"
-          :other: "{0} neljännes sitten"
+          :other: "{0} neljännestä sitten"
     :sat: 
       :relative: 
         -1: "viime lauantaina"
         0: "tänä lauantaina"
         1: "ensi lauantaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} lauantain päästä"
+          :other: "{0} lauantain päästä"
+        :past: 
+          :one: "{0} lauantai sitten"
+          :other: "{0} lauantaita sitten"
     :sat-narrow: 
       :relative: 
         -1: "viime la"
         0: "tänä la"
         1: "ensi la"
+      :relative_time: 
+        :future: 
+          :one: "{0} la päästä"
+          :other: "{0} la päästä"
+        :past: 
+          :one: "{0} la sitten"
+          :other: "{0} la sitten"
     :sat-short: 
       :relative: 
         -1: "viime la"
         0: "tänä la"
         1: "ensi la"
+      :relative_time: 
+        :future: 
+          :one: "{0} la päästä"
+          :other: "{0} la päästä"
+        :past: 
+          :one: "{0} la sitten"
+          :other: "{0} la sitten"
     :second: 
       :display_name: sekunti
       :relative: 
@@ -265,61 +340,145 @@
         -1: "viime sunnuntaina"
         0: "tänä sunnuntaina"
         1: "ensi sunnuntaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} sunnuntain päästä"
+          :other: "{0} sunnuntain päästä"
+        :past: 
+          :one: "{0} sunnuntai sitten"
+          :other: "{0} sunnuntaita sitten"
     :sun-narrow: 
       :relative: 
         -1: "viime su"
         0: "tänä su"
         1: "ensi su"
+      :relative_time: 
+        :future: 
+          :one: "{0} su päästä"
+          :other: "{0} su päästä"
+        :past: 
+          :one: "{0} su sitten"
+          :other: "{0} su sitten"
     :sun-short: 
       :relative: 
         -1: "viime su"
         0: "tänä su"
         1: "ensi su"
+      :relative_time: 
+        :future: 
+          :one: "{0} su päästä"
+          :other: "{0} su päästä"
+        :past: 
+          :one: "{0} su sitten"
+          :other: "{0} su sitten"
     :thu: 
       :relative: 
         -1: "viime torstaina"
         0: "tänä torstaina"
         1: "ensi torstaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} torstain päästä"
+          :other: "{0} torstain päästä"
+        :past: 
+          :one: "{0} torstai sitten"
+          :other: "{0} torstaita sitten"
     :thu-narrow: 
       :relative: 
         -1: "viime to"
         0: "tänä to"
         1: "ensi to"
+      :relative_time: 
+        :future: 
+          :one: "{0} to päästä"
+          :other: "{0} to päästä"
+        :past: 
+          :one: "{0} to sitten"
+          :other: "{0} to sitten"
     :thu-short: 
       :relative: 
         -1: "viime to"
         0: "tänä to"
         1: "ensi to"
+      :relative_time: 
+        :future: 
+          :one: "{0} to päästä"
+          :other: "{0} to päästä"
+        :past: 
+          :one: "{0} to sitten"
+          :other: "{0} to sitten"
     :tue: 
       :relative: 
         -1: "viime tiistaina"
         0: "tänä tiistaina"
         1: "ensi tiistaina"
+      :relative_time: 
+        :future: 
+          :one: "{0} tiistain päästä"
+          :other: "{0} tiistain päästä"
+        :past: 
+          :one: "{0} tiistai sitten"
+          :other: "{0} tiistaita sitten"
     :tue-narrow: 
       :relative: 
         -1: "viime ti"
         0: "tänä ti"
         1: "ensi ti"
+      :relative_time: 
+        :future: 
+          :one: "{0} ti päästä"
+          :other: "{0} ti päästä"
+        :past: 
+          :one: "{0} ti sitten"
+          :other: "{0} ti sitten"
     :tue-short: 
       :relative: 
         -1: "viime ti"
         0: "tänä ti"
         1: "ensi ti"
+      :relative_time: 
+        :future: 
+          :one: "{0} ti päästä"
+          :other: "{0} ti päästä"
+        :past: 
+          :one: "{0} ti sitten"
+          :other: "{0} ti sitten"
     :wed: 
       :relative: 
         -1: "viime keskiviikkona"
         0: "tänä keskiviikkona"
         1: "ensi keskiviikkona"
+      :relative_time: 
+        :future: 
+          :one: "{0} keskiviikon päästä"
+          :other: "{0} keskiviikon päästä"
+        :past: 
+          :one: "{0} keskiviikko sitten"
+          :other: "{0} keskiviikkoa sitten"
     :wed-narrow: 
       :relative: 
         -1: "viime ke"
         0: "tänä ke"
         1: "ensi ke"
+      :relative_time: 
+        :future: 
+          :one: "{0} ke päästä"
+          :other: "{0} ke päästä"
+        :past: 
+          :one: "{0} ke sitten"
+          :other: "{0} ke sitten"
     :wed-short: 
       :relative: 
         -1: "viime ke"
         0: "tänä ke"
         1: "ensi ke"
+      :relative_time: 
+        :future: 
+          :one: "{0} ke päästä"
+          :other: "{0} ke päästä"
+        :past: 
+          :one: "{0} ke sitten"
+          :other: "{0} ke sitten"
     :week: 
       :display_name: viikko
       :relative: 

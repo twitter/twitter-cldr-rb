@@ -4,7 +4,7 @@
     :gregorian: 
       :additional_formats: 
         :E: E
-        :EHm: "E HH:mm"
+        :EHm: "E HH 'h' mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
         :Ehm: "E h:mm a"
@@ -14,14 +14,15 @@
         :GyMMMEd: "E d MMM y G"
         :GyMMMd: "d MMM y G"
         :H: "HH 'h'"
-        :Hm: "HH:mm"
+        :Hm: "HH 'h' mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :Hmv: "HH 'h' mm v"
         :M: L
         :MEd: "E M-d"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'semaine' W 'de' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMd: MM-d
@@ -46,6 +47,7 @@
         :yMd: y-MM-dd
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'semaine' w 'de' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -118,8 +120,8 @@
           0: AEC
           1: EC
         :name: 
-          0: "avant l’ère commune"
-          1: "de l’ère commune"
+          0: "avant l’ère chrétienne"
+          1: "de l’ère chrétienne"
         :narrow: 
           0: AEC
           1: EC
@@ -127,6 +129,7 @@
         :day: jour
         :day-narrow: j
         :day-short: j
+        :dayOfYear: "Day Of Year"
         :dayperiod: cadran
         :era: ère
         :hour: heure
@@ -147,7 +150,9 @@
         :week: semaine
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "Week Of Month"
         :weekday: "jour de la semaine"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: année
         :year-narrow: a
         :year-short: a
@@ -179,7 +184,7 @@
           :medium: 
             :pattern: "HH:mm:ss"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "HH 'h' mm"
       :months: 
         :format: 
           :abbreviated: 
@@ -192,7 +197,7 @@
             4: avr.
             5: mai
             6: juin
-            7: juil.
+            7: juill.
             8: août
             9: sept.
           :narrow: 
@@ -232,7 +237,7 @@
             4: avr.
             5: mai
             6: juin
-            7: juil.
+            7: juill.
             8: août
             9: sept.
           :narrow: 
@@ -265,13 +270,13 @@
         :format: 
           :abbreviated: 
             :afternoon1: après-midi
-            :am: AM
-            :evening1: soir
-            :midnight: min.
-            :morning1: mat.
+            :am: a.m.
+            :evening1: "du soir"
+            :midnight: minuit
+            :morning1: "du mat."
             :night1: "du matin"
             :noon: midi
-            :pm: PM
+            :pm: p.m.
           :narrow: 
             :afternoon1: après-midi
             :am: a
@@ -283,41 +288,41 @@
             :pm: p
           :wide: 
             :afternoon1: "de l’après-midi"
-            :am: AM
+            :am: a.m.
             :evening1: "du soir"
             :midnight: minuit
             :morning1: "du matin"
             :night1: "du matin"
             :noon: midi
-            :pm: PM
+            :pm: p.m.
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: ap.m.
-            :am: AM
+            :afternoon1: après-midi
+            :am: a.m.
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
-            :pm: PM
+            :pm: p.m.
           :narrow: 
-            :afternoon1: ap.m.
+            :afternoon1: après-midi
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
             :pm: PM
           :wide: 
             :afternoon1: après-midi
-            :am: AM
+            :am: a.m.
             :evening1: soir
             :midnight: minuit
             :morning1: matin
             :night1: nuit
             :noon: midi
-            :pm: PM
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 

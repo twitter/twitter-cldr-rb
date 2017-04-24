@@ -14,8 +14,6 @@ describe Currencies do
   describe "#currency_codes" do
     it "should list all supported country codes" do
       codes = Currencies.currency_codes
-
-      expect(codes.size).to eq(297)
       expect(codes).to include(*TEST_CODES)
     end
   end
@@ -25,7 +23,7 @@ describe Currencies do
       data = Currencies.for_code("PEN")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        name:        "Peruvian nuevo sol",
+        name:        "Peruvian sol",
         currency:    :PEN,
         symbol:      "S/.",
         cldr_symbol: "PEN"

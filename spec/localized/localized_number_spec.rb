@@ -55,13 +55,13 @@ describe LocalizedNumber do
     end
 
     describe "to_short_decimal" do
-      context "when the patter is missing" do
+      context "when the pattern is missing" do
         it "returns the number as is" do
           expect(LocalizedNumber.new(7000, :af, type: :short_decimal).to_s).to eq("7000")
         end
       end
 
-      context "when the patter uses 'ten thousands' abbreviation" do
+      context "when the pattern uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
           expect(LocalizedNumber.new(93_000_000, :ja, type: :short_decimal).to_s).to match_normalized("9300万")
         end
@@ -69,13 +69,13 @@ describe LocalizedNumber do
     end
 
     describe "to_long_decimal" do
-      context "when the patter is missing" do
+      context "when the pattern is missing" do
         it "returns the number as is" do
-          expect(LocalizedNumber.new(7000, :ko, type: :long_decimal).to_s).to eq("7000")
+          expect(LocalizedNumber.new(7000, :eu, type: :long_decimal).to_s).to eq("7000")
         end
       end
 
-      context "when the patter uses 'ten thousands' abbreviation" do
+      context "when the pattern uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
           expect(LocalizedNumber.new(93_000_000, :'zh-Hant', type: :long_decimal).to_s).to match_normalized("9300萬")
         end

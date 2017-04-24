@@ -22,6 +22,7 @@
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "MMM ના W અઠવાડિયા"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd-MM
@@ -45,6 +46,7 @@
         :yMd: d/M/y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
+        :yw: "y ના w અઠવાડિયા"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,7 +127,8 @@
       :fields: 
         :day: દિવસ
         :day-narrow: દિવસ
-        :day-short: દિ.
+        :day-short: દિવસ
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
         :era: યુગ
         :hour: કલાક
@@ -146,7 +149,9 @@
         :week: અઠવાડિયું
         :week-narrow: અઠ.
         :week-short: અઠ.
+        :weekOfMonth: "Week Of Month"
         :weekday: "અઠવાડિયાનો દિવસ"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: વર્ષ
         :year-narrow: વ.
         :year-short: વ.
@@ -263,45 +268,45 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :narrow: 
-            :afternoon1: બ
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાં
+            :evening1: સાંજે
             :midnight: મ.રાત્રિ
-            :morning1: સ
-            :night1: રા
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :wide: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :narrow: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :wide: 
             :afternoon1: બપોર

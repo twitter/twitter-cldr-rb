@@ -5,7 +5,7 @@
       :currency: 
         :number_system: arab
         :patterns: 
-          :default: "¤ #,##0.00"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -311,7 +311,7 @@
       :percent: 
         :number_system: arab
         :patterns: 
-          :default: "#,##0%"
+          :default: "#,##0 %"
       :scientific: 
         :number_system: arab
         :patterns: 
@@ -326,7 +326,7 @@
       :minus_sign: ‎-
       :nan: ليس رقمًا
       :per_mille: ‰
-      :percent_sign: ٪
+      :percent_sign: ‎%‎
       :plus_sign: ‎+
       :superscripting_exponent: ×
       :time_separator: ":"

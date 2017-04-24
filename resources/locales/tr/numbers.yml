@@ -5,7 +5,7 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: "¤#,##0.00"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -114,8 +114,8 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: "0"
-              :other: "0"
+              :one: 0 B
+              :other: 0 B
             ? !ruby/symbol "10000"
             : 
               :one: 00 B

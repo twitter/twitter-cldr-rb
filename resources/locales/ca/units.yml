@@ -14,11 +14,11 @@
           :one: "{0} metre per segon al quadrat"
           :other: "{0} metres per segon al quadrat"
         :angle-arc-minute: 
-          :one: "{0} minut d'arc"
-          :other: "{0} minuts d'arc"
+          :one: "{0} minut d’arc"
+          :other: "{0} minuts d’arc"
         :angle-arc-second: 
-          :one: "{0} segon d'arc"
-          :other: "{0} segons d'arc"
+          :one: "{0} segon d’arc"
+          :other: "{0} segons d’arc"
         :angle-degree: 
           :one: "{0} grau"
           :other: "{0} graus"
@@ -58,8 +58,17 @@
         :concentr-karat: 
           :one: "{0} quirat"
           :other: "{0} quirats"
+        :concentr-milligram-per-deciliter: 
+          :one: "{0} mil·ligram per decilitre"
+          :other: "{0} mil·ligrams per decilitre"
+        :concentr-millimole-per-liter: 
+          :one: "{0} mil·limol per litre"
+          :other: "{0} mil·limols per litre"
+        :concentr-part-per-million: 
+          :one: "{0} part per milió"
+          :other: "{0} parts per milió"
         :consumption-liter-per-100kilometers: 
-          :one: "{0} litres per 100 quilòmetres"
+          :one: "{0} litre per 100 quilòmetres"
           :other: "{0} litres per 100 quilòmetres"
         :consumption-liter-per-kilometer: 
           :one: "{0} litre per quilòmetre"
@@ -67,6 +76,9 @@
         :consumption-mile-per-gallon: 
           :one: "{0} milla per galó"
           :other: "{0} milles per galó"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} milla per galó imperial"
+          :other: "{0} milles per galó imperial"
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bits"
@@ -355,6 +367,9 @@
         :volume-gallon: 
           :one: "{0} galó"
           :other: "{0} galons"
+        :volume-gallon-imperial: 
+          :one: "{0} galons imperials"
+          :other: "{0} galons imperials"
         :volume-hectoliter: 
           :one: "{0} hectolitre"
           :other: "{0} hectolitres"
@@ -422,7 +437,9 @@
         :digital-megabyte: 
           :one: "{0} MB"
           :other: "{0} MB"
-        :duration-century: {}
+        :duration-century: 
+          :one: "{0} s."
+          :other: "{0} s."
         :duration-day: 
           :one: "{0} d"
           :other: "{0} d"
@@ -442,7 +459,7 @@
           :one: "{0} s"
           :other: "{0} s"
         :duration-week: 
-          :one: "{0}s"
+          :one: "{0} s"
           :other: "{0} s"
         :duration-year: 
           :one: "{0} any"
@@ -529,8 +546,8 @@
           :one: "{0}mi/h"
           :other: "{0}mi/h"
         :temperature-celsius: 
-          :one: "{0}°C"
-          :other: "{0}°"
+          :one: "{0} °C"
+          :other: "{0} °C"
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
@@ -603,10 +620,13 @@
           :one: "{0} ct"
           :other: "{0} ct"
         :concentr-milligram-per-deciliter: 
-          :other: "{0} mg/dL"
+          :one: "{0} mg/dl"
+          :other: "{0} mg/dl"
         :concentr-millimole-per-liter: 
-          :other: "{0} mmol/L"
+          :one: "{0} mM/l"
+          :other: "{0} mM/l"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :one: "{0} l/100 km"
@@ -618,7 +638,8 @@
           :one: "{0} mi/gal"
           :other: "{0} mi/gal"
         :consumption-mile-per-gallon-imperial: 
-          :other: "{0} mpg Imp."
+          :one: "{0} mi/gal imp."
+          :other: "{0} mi/gal imp."
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bits"
@@ -780,6 +801,8 @@
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
           :one: "{0} yd"
           :other: "{0} yd"
@@ -920,7 +943,8 @@
           :one: "{0} gal"
           :other: "{0} gal"
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :one: "{0} gal imp."
+          :other: "{0} gal imp."
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"

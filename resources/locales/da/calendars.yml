@@ -23,6 +23,7 @@
         :MMM: MMM
         :MMMEd: "E d. MMM"
         :MMMMEd: "E d. MMMM"
+        :MMMMW: "'uge' W 'i' MMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :MMdd: dd/MM
@@ -46,6 +47,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'uge' w 'i' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,6 +129,7 @@
         :day: dag
         :day-narrow: dag
         :day-short: dag
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
         :era: æra
         :hour: time
@@ -147,7 +150,9 @@
         :week: uge
         :week-narrow: uge
         :week-short: uge
+        :weekOfMonth: "Week Of Month"
         :weekday: ugedag
+        :weekdayOfMonth: "Weekday Of Month"
         :year: år
         :year-narrow: år
         :year-short: år
@@ -223,18 +228,18 @@
             9: september
         :stand-alone: 
           :abbreviated: 
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mar.
+            4: apr.
             5: maj
-            6: jun
-            7: jul
-            8: aug
-            9: sep
+            6: jun.
+            7: jul.
+            8: aug.
+            9: sep.
           :narrow: 
             1: J
             10: O

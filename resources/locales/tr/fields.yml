@@ -2,7 +2,7 @@
 :tr: 
   :fields: 
     :day: 
-      :display_name: Gün
+      :display_name: gün
       :relative: 
         -1: dün
         -2: "evvelsi gün"
@@ -55,18 +55,41 @@
         -1: "geçen cuma"
         0: "bu cuma"
         1: "gelecek cuma"
+      :relative_time: 
+        :future: 
+          :one: "{0} cuma sonra"
+          :other: "{0} cuma sonra"
+        :past: 
+          :one: "{0} cuma önce"
+          :other: "{0} cuma önce"
     :fri-narrow: 
       :relative: 
         -1: "geçen cuma"
         0: "bu cuma"
         1: "gelecek cuma"
+      :relative_time: 
+        :future: 
+          :one: "{0} cuma sonra"
+          :other: "{0} cuma sonra"
+        :past: 
+          :one: "{0} cuma önce"
+          :other: "{0} cuma önce"
     :fri-short: 
       :relative: 
         -1: "geçen cuma"
         0: "bu cuma"
         1: "gelecek cuma"
+      :relative_time: 
+        :future: 
+          :one: "{0} cuma sonra"
+          :other: "{0} cuma sonra"
+        :past: 
+          :one: "{0} cuma önce"
+          :other: "{0} cuma önce"
     :hour: 
-      :display_name: Saat
+      :display_name: saat
+      :relative: 
+        0: "bu saat"
       :relative_time: 
         :future: 
           :one: "{0} saat sonra"
@@ -93,7 +116,9 @@
           :one: "{0} sa. önce"
           :other: "{0} sa. önce"
     :minute: 
-      :display_name: Dakika
+      :display_name: dakika
+      :relative: 
+        0: "bu dakika"
       :relative_time: 
         :future: 
           :one: "{0} dakika sonra"
@@ -124,18 +149,39 @@
         -1: "geçen pazartesi"
         0: "bu pazartesi"
         1: "gelecek pazartesi"
+      :relative_time: 
+        :future: 
+          :one: "{0} pazartesi sonra"
+          :other: "{0} pazartesi sonra"
+        :past: 
+          :one: "{0} pazartesi önce"
+          :other: "{0} pazartesi önce"
     :mon-narrow: 
       :relative: 
         -1: "geçen pzt."
         0: "bu pzt."
         1: "gelecek pzt."
+      :relative_time: 
+        :future: 
+          :one: "{0} pzt. sonra"
+          :other: "{0} pzt. sonra"
+        :past: 
+          :one: "{0} pzt. önce"
+          :other: "{0} pzt. önce"
     :mon-short: 
       :relative: 
         -1: "geçen pzt."
         0: "bu pzt."
         1: "gelecek pzt."
+      :relative_time: 
+        :future: 
+          :one: "{0} pzt. sonra"
+          :other: "{0} pzt. sonra"
+        :past: 
+          :one: "{0} pzt. önce"
+          :other: "{0} pzt. önce"
     :month: 
-      :display_name: Ay
+      :display_name: ay
       :relative: 
         -1: "geçen ay"
         0: "bu ay"
@@ -174,7 +220,11 @@
           :one: "{0} ay önce"
           :other: "{0} ay önce"
     :quarter: 
-      :display_name: Çeyrek
+      :display_name: çeyrek
+      :relative: 
+        -1: "geçen çeyrek"
+        0: "bu çeyrek"
+        1: "gelecek çeyrek"
       :relative_time: 
         :future: 
           :one: "{0} çeyrek sonra"
@@ -205,18 +255,39 @@
         -1: "geçen cumartesi"
         0: "bu cumartesi"
         1: "gelecek cumartesi"
+      :relative_time: 
+        :future: 
+          :one: "{0} cumartesi sonra"
+          :other: "{0} cumartesi sonra"
+        :past: 
+          :one: "{0} cumartesi önce"
+          :other: "{0} cumartesi önce"
     :sat-narrow: 
       :relative: 
         -1: "geçen cmt."
         0: "bu cmt."
         1: "gelecek cmt."
+      :relative_time: 
+        :future: 
+          :one: "{0} cmt. sonra"
+          :other: "{0} cmt. sonra"
+        :past: 
+          :one: "{0} cmt. önce"
+          :other: "{0} cmt. önce"
     :sat-short: 
       :relative: 
         -1: "geçen cmt."
         0: "bu cmt."
         1: "gelecek cmt."
+      :relative_time: 
+        :future: 
+          :one: "{0} cmt. sonra"
+          :other: "{0} cmt. sonra"
+        :past: 
+          :one: "{0} cmt. önce"
+          :other: "{0} cmt. önce"
     :second: 
-      :display_name: Saniye
+      :display_name: saniye
       :relative: 
         0: şimdi
       :relative_time: 
@@ -249,63 +320,147 @@
         -1: "geçen pazar"
         0: "bu pazar"
         1: "gelecek pazar"
+      :relative_time: 
+        :future: 
+          :one: "{0} pazar sonra"
+          :other: "{0} pazar sonra"
+        :past: 
+          :one: "{0} pazar önce"
+          :other: "{0} pazar önce"
     :sun-narrow: 
       :relative: 
         -1: "geçen paz."
         0: "bu paz."
         1: "gelecek paz."
+      :relative_time: 
+        :future: 
+          :one: "{0} paz. sonra"
+          :other: "{0} paz. sonra"
+        :past: 
+          :one: "{0} paz. önce"
+          :other: "{0} paz. önce"
     :sun-short: 
       :relative: 
         -1: "geçen paz."
         0: "bu paz."
         1: "gelecek paz."
+      :relative_time: 
+        :future: 
+          :one: "{0} paz. sonra"
+          :other: "{0} paz. sonra"
+        :past: 
+          :one: "{0} paz. önce"
+          :other: "{0} paz. önce"
     :thu: 
       :relative: 
         -1: "geçen perşembe"
         0: "bu perşembe"
         1: "gelecek perşembe"
+      :relative_time: 
+        :future: 
+          :one: "{0} perşembe sonra"
+          :other: "{0} perşembe sonra"
+        :past: 
+          :one: "{0} perşembe önce"
+          :other: "{0} perşembe önce"
     :thu-narrow: 
       :relative: 
         -1: "geçen per."
         0: "bu per."
         1: "gelecek per."
+      :relative_time: 
+        :future: 
+          :one: "{0} per. sonra"
+          :other: "{0} per. sonra"
+        :past: 
+          :one: "{0} per. önce"
+          :other: "{0} per. önce"
     :thu-short: 
       :relative: 
         -1: "geçen per."
         0: "bu per."
         1: "gelecek per."
+      :relative_time: 
+        :future: 
+          :one: "{0} per. sonra"
+          :other: "{0} per. sonra"
+        :past: 
+          :one: "{0} per. önce"
+          :other: "{0} per. önce"
     :tue: 
       :relative: 
         -1: "geçen salı"
         0: "bu salı"
         1: "gelecek salı"
+      :relative_time: 
+        :future: 
+          :one: "{0} salı sonra"
+          :other: "{0} salı sonra"
+        :past: 
+          :one: "{0} salı önce"
+          :other: "{0} salı önce"
     :tue-narrow: 
       :relative: 
         -1: "geçen salı"
         0: "bu salı"
         1: "gelecek salı"
+      :relative_time: 
+        :future: 
+          :one: "{0} salı sonra"
+          :other: "{0} salı sonra"
+        :past: 
+          :one: "{0} salı önce"
+          :other: "{0} salı önce"
     :tue-short: 
       :relative: 
         -1: "geçen salı"
         0: "bu salı"
         1: "gelecek salı"
+      :relative_time: 
+        :future: 
+          :one: "{0} salı sonra"
+          :other: "{0} salı sonra"
+        :past: 
+          :one: "{0} salı önce"
+          :other: "{0} salı önce"
     :wed: 
       :relative: 
         -1: "geçen çarşamba"
         0: "bu çarşamba"
         1: "gelecek çarşamba"
+      :relative_time: 
+        :future: 
+          :one: "{0} çarşamba sonra"
+          :other: "{0} çarşamba sonra"
+        :past: 
+          :one: "{0} çarşamba önce"
+          :other: "{0} çarşamba önce"
     :wed-narrow: 
       :relative: 
         -1: "geçen çar."
         0: "bu çar."
         1: "gelecek çar."
+      :relative_time: 
+        :future: 
+          :one: "{0} çar. sonra"
+          :other: "{0} çar. sonra"
+        :past: 
+          :one: "{0} çar. önce"
+          :other: "{0} çar. önce"
     :wed-short: 
       :relative: 
         -1: "geçen çar."
         0: "bu çar."
         1: "gelecek çar."
+      :relative_time: 
+        :future: 
+          :one: "{0} çar. sonra"
+          :other: "{0} çar. sonra"
+        :past: 
+          :one: "{0} çar. önce"
+          :other: "{0} çar. önce"
     :week: 
-      :display_name: Hafta
+      :display_name: hafta
       :relative: 
         -1: "geçen hafta"
         0: "bu hafta"
@@ -336,9 +491,9 @@
           :one: "{0} hf. önce"
           :other: "{0} hf. önce"
     :weekday: 
-      :display_name: "Haftanın Günü"
+      :display_name: "haftanın günü"
     :year: 
-      :display_name: Yıl
+      :display_name: yıl
       :relative: 
         -1: "geçen yıl"
         0: "bu yıl"
@@ -377,4 +532,4 @@
           :one: "{0} yıl önce"
           :other: "{0} yıl önce"
     :zone: 
-      :display_name: "Saat Dilimi"
+      :display_name: "saat dilimi"

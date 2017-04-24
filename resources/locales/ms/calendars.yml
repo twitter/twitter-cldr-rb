@@ -22,6 +22,7 @@
         :MEd: "E, d-M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -39,11 +40,12 @@
         :yMEd: "E, d/M/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
-        :yMMMM: "MMMM y"
+        :yMMMM: "y MMMM"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,6 +126,7 @@
         :day: Hari
         :day-narrow: hari
         :day-short: hari
+        :dayOfYear: "Day Of Year"
         :dayperiod: PG/PTG
         :era: Era
         :hour: Jam
@@ -144,7 +147,9 @@
         :week: Minggu
         :week-narrow: mgu
         :week-short: mgu
+        :weekOfMonth: "Week Of Month"
         :weekday: "Hari dalam Minggu"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: Tahun
         :year-narrow: thn
         :year-short: thn
@@ -264,7 +269,7 @@
             :afternoon1: "tengah hari"
             :am: PG
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: PTG
@@ -272,7 +277,7 @@
             :afternoon1: "tengah hari"
             :am: a
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: p
@@ -280,7 +285,7 @@
             :afternoon1: "tengah hari"
             :am: PG
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: PTG
@@ -297,7 +302,7 @@
             :afternoon1: "tengah hari"
             :am: a
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: p

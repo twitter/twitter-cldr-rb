@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, d. MMM"
         :MMMMEd: "E, d. MMMM"
+        :MMMMW: "'viku' W 'í' MMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :Md: d.M.
@@ -44,6 +45,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'viku' w 'af' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,6 +127,7 @@
         :day: dagur
         :day-narrow: d.
         :day-short: dagur
+        :dayOfYear: "Day Of Year"
         :dayperiod: f.h./e.h.
         :era: tímabil
         :hour: klukkustund
@@ -145,7 +148,9 @@
         :week: vika
         :week-narrow: v.
         :week-short: vika
+        :weekOfMonth: "Week Of Month"
         :weekday: vikudagur
+        :weekdayOfMonth: "Weekday Of Month"
         :year: ár
         :year-narrow: ár
         :year-short: ár
@@ -291,18 +296,22 @@
         :stand-alone: 
           :abbreviated: 
             :afternoon1: síðd.
+            :am: f.h.
             :evening1: kv.
             :midnight: miðn.
             :morning1: morg.
             :night1: nótt
             :noon: hád.
+            :pm: e.h.
           :narrow: 
             :afternoon1: sd.
+            :am: f.h.
             :evening1: kv.
             :midnight: mn.
             :morning1: mrg.
             :night1: n.
             :noon: hd.
+            :pm: e.h.
           :wide: 
             :afternoon1: "eftir hádegi"
             :am: f.h.

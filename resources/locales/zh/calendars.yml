@@ -7,8 +7,8 @@
         :EHm: "EHH:mm"
         :EHms: "EHH:mm:ss"
         :Ed: d日E
-        :Ehm: "E ah:mm"
-        :Ehms: "E ah:mm:ss"
+        :Ehm: "Eah:mm"
+        :Ehms: "Eah:mm:ss"
         :Gy: Gy年
         :GyMMM: Gy年M月
         :GyMMMEd: Gy年M月d日E
@@ -22,6 +22,7 @@
         :MEd: M/dE
         :MMM: LLL
         :MMMEd: M月d日E
+        :MMMMW: MMM第W周
         :MMMMd: M月d日
         :MMMd: M月d日
         :MMdd: MM/dd
@@ -45,6 +46,7 @@
         :yMd: y/M/d
         :yQQQ: y年第Q季度
         :yQQQQ: y年第Q季度
+        :yw: y年第w周
       :days: 
         :format: 
           :abbreviated: 
@@ -114,11 +116,11 @@
             :wed: 星期三
       :eras: 
         :abbr: 
-          0: 西元前
-          1: 西元
+          0: 公元前
+          1: 公元
         :name: 
-          0: 西元前
-          1: 西元
+          0: 公元前
+          1: 公元
         :narrow: 
           0: 公元前
           1: 公元
@@ -126,27 +128,30 @@
         :day: 日
         :day-narrow: 日
         :day-short: 日
+        :dayOfYear: "Day Of Year"
         :dayperiod: 上午/下午
         :era: 纪元
         :hour: 小时
         :hour-narrow: 小时
         :hour-short: 小时
         :minute: 分钟
-        :minute-narrow: 分钟
-        :minute-short: 分钟
+        :minute-narrow: 分
+        :minute-short: 分
         :month: 月
         :month-narrow: 月
         :month-short: 月
-        :quarter: 季
+        :quarter: 季度
         :quarter-narrow: 季
         :quarter-short: 季
-        :second: 秒钟
-        :second-narrow: 秒钟
-        :second-short: 秒钟
+        :second: 秒
+        :second-narrow: 秒
+        :second-short: 秒
         :week: 周
         :week-narrow: 周
         :week-short: 周
+        :weekOfMonth: "Week Of Month"
         :weekday: 工作日
+        :weekdayOfMonth: "Weekday Of Month"
         :year: 年
         :year-narrow: 年
         :year-short: 年
@@ -263,7 +268,7 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: 下午
+            :afternoon1: 中午
             :afternoon2: 下午
             :am: 上午
             :evening1: 晚上
@@ -283,7 +288,7 @@
             :night1: 凌晨
             :pm: 下午
           :wide: 
-            :afternoon1: 下午
+            :afternoon1: 中午
             :afternoon2: 下午
             :am: 上午
             :evening1: 晚上
@@ -299,7 +304,7 @@
             :am: 上午
             :evening1: 晚上
             :midnight: 午夜
-            :morning1: 早上
+            :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
             :pm: 下午

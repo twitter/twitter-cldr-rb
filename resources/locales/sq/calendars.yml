@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "'java' W 'e' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: d.M
@@ -45,6 +46,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ, y"
         :yQQQQ: "QQQQ, y"
+        :yw: "'java' w 'e' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -126,6 +128,7 @@
         :day: ditë
         :day-narrow: ditë
         :day-short: ditë
+        :dayOfYear: "Day Of Year"
         :dayperiod: paradite/pasdite
         :era: erë
         :hour: orë
@@ -146,7 +149,9 @@
         :week: javë
         :week-narrow: javë
         :week-short: javë
+        :weekOfMonth: "Week Of Month"
         :weekday: "ditë e javës"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: vit
         :year-narrow: vit
         :year-short: vit
@@ -182,31 +187,31 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: Jan
-            10: Tet
-            11: Nën
-            12: Dhj
-            2: Shk
-            3: Mar
-            4: Pri
-            5: Maj
-            6: Qer
-            7: Kor
-            8: Gsh
-            9: Sht
+            1: jan
+            10: tet
+            11: nën
+            12: dhj
+            2: shk
+            3: mar
+            4: pri
+            5: maj
+            6: qer
+            7: kor
+            8: gsh
+            9: sht
           :narrow: 
-            1: J
-            10: T
-            11: "N"
-            12: D
-            2: S
-            3: M
-            4: P
-            5: M
-            6: Q
-            7: K
-            8: G
-            9: S
+            1: j
+            10: t
+            11: "n"
+            12: d
+            2: s
+            3: m
+            4: p
+            5: m
+            6: q
+            7: k
+            8: g
+            9: s
           :wide: 
             1: janar
             10: tetor
@@ -265,32 +270,32 @@
           :abbreviated: 
             :afternoon1: "e pasdites"
             :am: "e paradites"
-            :evening1: mbrëmje
-            :midnight: mesnatë
-            :morning1: mëngjes
+            :evening1: "e mbrëmjes"
+            :midnight: "e mesnatës"
+            :morning1: "e mëngjesit"
             :morning2: "e paradites"
-            :night1: natë
-            :noon: mesditë
+            :night1: "e natës"
+            :noon: "e mesditës"
             :pm: "e pasdites"
           :narrow: 
             :afternoon1: "e pasdites"
             :am: "e paradites"
-            :evening1: mbrëmje
-            :midnight: mesnatë
-            :morning1: mëngjes
+            :evening1: "e mbrëmjes"
+            :midnight: "e mesnatës"
+            :morning1: "e mëngjesit"
             :morning2: "e paradites"
-            :night1: natë
-            :noon: mesditë
+            :night1: "e natës"
+            :noon: "e mesditës"
             :pm: "e pasdites"
           :wide: 
             :afternoon1: "e pasdites"
             :am: "e paradites"
-            :evening1: mbrëmje
-            :midnight: mesnatë
-            :morning1: mëngjes
+            :evening1: "e mbrëmjes"
+            :midnight: "e mesnatës"
+            :morning1: "e mëngjesit"
             :morning2: "e paradites"
-            :night1: natë
-            :noon: mesditë
+            :night1: "e natës"
+            :noon: "e mesditës"
             :pm: "e pasdites"
         :stand-alone: 
           :abbreviated: 

@@ -18,10 +18,11 @@
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
-        :M: LL
+        :M: L
         :MEd: "E, dd/MM"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -44,6 +45,7 @@
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -54,7 +56,14 @@
             :thu: Thu.
             :tue: Tue.
             :wed: Wed.
-          :narrow: :calendars.gregorian.days.stand-alone.narrow
+          :narrow: 
+            :fri: F.
+            :mon: M.
+            :sat: Sa.
+            :sun: Su.
+            :thu: Th.
+            :tue: Tu.
+            :wed: W.
           :short: 
             :fri: Fri.
             :mon: Mon.
@@ -81,7 +90,14 @@
             :thu: Th.
             :tue: Tu.
             :wed: W.
-          :short: :calendars.gregorian.days.format.short
+          :short: 
+            :fri: Fri.
+            :mon: Mon.
+            :sat: Sat.
+            :sun: Su.
+            :thu: Th.
+            :tue: Tu.
+            :wed: Wed.
           :wide: :calendars.gregorian.days.format.wide
       :eras: 
         :abbr: 
@@ -96,24 +112,38 @@
       :fields: 
         :day: day
         :day-short: day
+        :dayOfYear: "day of year"
+        :dayOfYear-short: "day of yr."
         :dayperiod: am/pm
+        :dayperiod-short: AM/PM
         :era: era
+        :era-short: era
         :hour: hour
         :hour-short: h
         :minute: minute
-        :minute-short: min.
+        :minute-narrow: min
+        :minute-short: min
         :month: month
-        :month-short: mo.
+        :month-narrow: mo
+        :month-short: mo
         :quarter: quarter
-        :quarter-short: qtr.
+        :quarter-narrow: qtr
+        :quarter-short: qtr
         :second: second
-        :second-short: sec.
+        :second-short: sec
         :week: week
-        :week-short: wk.
+        :week-narrow: wk
+        :week-short: wk
+        :weekOfMonth: "week of month"
+        :weekOfMonth-short: "wk. of mo."
         :weekday: "day of the week"
+        :weekday-short: "day of wk."
+        :weekdayOfMonth: "weekday of the month"
+        :weekdayOfMonth-short: "wkday. of mo."
         :year: year
-        :year-short: yr.
+        :year-short: yr
         :zone: "time zone"
+        :zone-short: zone
       :formats: 
         :date: 
           :full: 
@@ -172,8 +202,7 @@
             8: August
             9: September
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
-          :narrow: 
+          :abbreviated: 
             1: Jan.
             10: Oct.
             11: Nov.
@@ -186,6 +215,19 @@
             7: Jul.
             8: Aug.
             9: Sep.
+          :narrow: 
+            1: J
+            10: O
+            11: "N"
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           :wide: :calendars.gregorian.months.format.wide
       :periods: 
         :format: 
@@ -211,12 +253,12 @@
             :noon: midday
             :pm: pm
           :wide: 
-            :afternoon1: afternoon
+            :afternoon1: "in the afternoon"
             :am: am
-            :evening1: evening
+            :evening1: "in the evening"
             :midnight: midnight
-            :morning1: morning
-            :night1: night
+            :morning1: "in the morning"
+            :night1: "at night"
             :noon: midday
             :pm: pm
             :variant: 
@@ -224,9 +266,14 @@
               :pm: pm
         :stand-alone: 
           :abbreviated: 
-            :am: am
+            :afternoon1: afternoon
+            :am: AM
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
             :noon: midday
-            :pm: pm
+            :pm: PM
           :narrow: 
             :am: am
             :noon: midday

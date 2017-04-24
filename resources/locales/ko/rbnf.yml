@@ -7,7 +7,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -100,7 +100,7 @@
                 :rule: "<<경[ >>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-sinokorean
           - 
@@ -199,7 +199,7 @@
                 :rule: "<%spellout-cardinal-sinokorean<경[ >>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-native-attributive
           - 
@@ -331,7 +331,7 @@
                 :rule: "<<경[>>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-financial
           - 
@@ -340,7 +340,7 @@
                 :rule: "마이너스 >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: "=%%spellout-ordinal-native-count-smaller= 번째;"
@@ -486,7 +486,7 @@
                 :rule: "마이너스 >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: "=%%spellout-ordinal-native-count-smaller= 번째;"
@@ -569,7 +569,7 @@
                 :rule: "<%spellout-cardinal-sinokorean<경[ >>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-native-count-larger
           - 
@@ -587,7 +587,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: "마이너스 >>;"
@@ -703,7 +703,7 @@
                 :rule: "<%spellout-cardinal-sinokorean<경[ >%%spellout-ordinal-native-smaller-x02>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-native-smaller
           - 

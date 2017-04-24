@@ -11,7 +11,7 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
-        :GyMMMEd: "E, d MMM, y G"
+        :GyMMMEd: "E, dd/MM/y G"
         :GyMMMd: "dd MMM, y G"
         :H: HH
         :Hm: "H:mm"
@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "'tuần' W 'của' 'tháng' M"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd-MM
@@ -47,6 +48,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ 'năm' y"
+        :yw: "'tuần' w 'của' 'năm' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -116,11 +118,11 @@
             :wed: "Thứ Tư"
       :eras: 
         :abbr: 
-          0: BCE
-          1: CE
+          0: "Trước CN"
+          1: CN
         :name: 
-          0: BCE
-          1: CE
+          0: "Trước CN"
+          1: CN
         :narrow: 
           0: "tr. CN"
           1: "sau CN"
@@ -128,6 +130,7 @@
         :day: Ngày
         :day-narrow: Ngày
         :day-short: Ngày
+        :dayOfYear: "Day Of Year"
         :dayperiod: SA/CH
         :era: "Thời đại"
         :hour: Giờ
@@ -148,7 +151,9 @@
         :week: Tuần
         :week-narrow: Tuần
         :week-short: Tuần
+        :weekOfMonth: "Week Of Month"
         :weekday: "Ngày trong tuần"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: Năm
         :year-narrow: Năm
         :year-short: Năm
@@ -156,9 +161,9 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, 'ngày' dd MMMM 'năm' y"
+            :pattern: "EEEE, d MMMM, y"
           :long: 
-            :pattern: "'Ngày' dd 'tháng' MM 'năm' y"
+            :pattern: "d MMMM, y"
           :medium: 
             :pattern: "d MMM, y"
           :short: 

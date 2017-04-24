@@ -133,9 +133,9 @@ describe Unit do
 
       describe '#temperature_celsius' do
         it 'produces the correct results' do
-          expect(Unit.create(1, locale).temperature_celsius).to eq('1градус Цельсия')
+          expect(Unit.create(1, locale).temperature_celsius).to eq('1 градус Цельсия')
           expect(Unit.create(2, locale).temperature_celsius).to eq('2 градуса Цельсия')
-          expect(Unit.create(7, locale).temperature_celsius).to eq('7градусов Цельсия')
+          expect(Unit.create(7, locale).temperature_celsius).to eq('7 градусов Цельсия')
         end
       end
 

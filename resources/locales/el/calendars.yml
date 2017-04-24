@@ -20,9 +20,10 @@
         :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
-        :MMM: LLL
+        :MMM: MMM
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "εβδομάδα W του MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -39,11 +40,12 @@
         :yMEd: "E, d/M/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
-        :yMMMM: "MMMM y"
+        :yMMMM: "LLLL y"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
+        :yw: "εβδομάδα w του y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,6 +126,7 @@
         :day: ημέρα
         :day-narrow: ημέρα
         :day-short: ημέρα
+        :dayOfYear: "Day Of Year"
         :dayperiod: π.μ./μ.μ.
         :era: περίοδος
         :hour: ώρα
@@ -144,7 +147,9 @@
         :week: εβδομάδα
         :week-narrow: εβδ.
         :week-short: εβδ.
+        :weekOfMonth: "Week Of Month"
         :weekday: καθημερινή
+        :weekdayOfMonth: "Weekday Of Month"
         :year: έτος
         :year-narrow: έτ.
         :year-short: έτ.
@@ -290,9 +295,9 @@
             :night1: βράδυ
             :pm: μ.μ.
           :narrow: 
-            :afternoon1: μεσημέρι
+            :afternoon1: μεσημ.
             :am: π.μ.
-            :evening1: απόγευμα
+            :evening1: απόγ.
             :morning1: πρωί
             :night1: βράδυ
             :pm: μ.μ.

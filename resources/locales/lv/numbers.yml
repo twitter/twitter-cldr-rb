@@ -5,43 +5,43 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#0.00 ¤"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: ¤0 tūkst'.'
-              :other: ¤0 tūkst'.'
-              :zero: ¤0 tūkst'.'
+              :one: 0 tūkst'.' ¤
+              :other: 0 tūkst'.' ¤
+              :zero: 0 tūkst'.' ¤
             ? !ruby/symbol "10000"
             : 
-              :one: ¤00 tūkst'.'
-              :other: ¤00 tūkst'.'
-              :zero: ¤00 tūkst'.'
+              :one: 00 tūkst'.' ¤
+              :other: 00 tūkst'.' ¤
+              :zero: 00 tūkst'.' ¤
             ? !ruby/symbol "100000"
             : 
-              :one: ¤000 tūkst'.'
-              :other: ¤000 tūkst'.'
-              :zero: ¤000 tūkst'.'
+              :one: 000 tūkst'.' ¤
+              :other: 000 tūkst'.' ¤
+              :zero: 000 tūkst'.' ¤
             ? !ruby/symbol "1000000"
             : 
-              :one: ¤0 milj'.'
-              :other: ¤0 milj'.'
-              :zero: ¤0 milj'.'
+              :one: 0 milj'.' ¤
+              :other: 0 milj'.' ¤
+              :zero: 0 milj'.' ¤
             ? !ruby/symbol "10000000"
             : 
-              :one: ¤00 milj'.'
-              :other: ¤00 milj'.'
-              :zero: ¤00 milj'.'
+              :one: 00 milj'.' ¤
+              :other: 00 milj'.' ¤
+              :zero: 00 milj'.' ¤
             ? !ruby/symbol "100000000"
             : 
-              :one: ¤000 milj'.'
-              :other: ¤000 milj'.'
-              :zero: ¤000 milj'.'
+              :one: 000 milj'.' ¤
+              :other: 000 milj'.' ¤
+              :zero: 000 milj'.' ¤
             ? !ruby/symbol "1000000000"
             : 
-              :one: ¤0 mljrd'.'
-              :other: ¤0 mljrd'.'
-              :zero: ¤0 mljrd'.'
+              :one: 0 mljrd'.' ¤
+              :other: 0 mljrd'.' ¤
+              :zero: 0 mljrd'.' ¤
             ? !ruby/symbol "10000000000"
             : 
               :one: ¤00 mljrd'.'
@@ -213,7 +213,7 @@
       :infinity: ∞
       :list: ;
       :minus_sign: "-"
-      :nan: nav skaitlis
+      :nan: NS
       :per_mille: ‰
       :percent_sign: "%"
       :plus_sign: +

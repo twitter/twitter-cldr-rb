@@ -22,6 +22,7 @@
         :MEd: "E d.M."
         :MMM: LLL
         :MMMEd: "ccc d. MMM"
+        :MMMMW: "LLLL'n' W. 'viikko'"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :Md: d.M.
@@ -45,6 +46,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'vuoden' y 'viikko' w"
       :days: 
         :format: 
           :abbreviated: 
@@ -126,6 +128,7 @@
         :day: päivä
         :day-narrow: pv
         :day-short: pv
+        :dayOfYear: "Day Of Year"
         :dayperiod: vuorokaudenaika
         :era: aikakausi
         :hour: tunti
@@ -146,7 +149,9 @@
         :week: viikko
         :week-narrow: vk
         :week-short: vk
+        :weekOfMonth: "Week Of Month"
         :weekday: viikonpäivä
+        :weekdayOfMonth: "Weekday Of Month"
         :year: vuosi
         :year-narrow: v
         :year-short: v
@@ -182,18 +187,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: tammikuuta
-            10: lokakuuta
-            11: marraskuuta
-            12: joulukuuta
-            2: helmikuuta
-            3: maaliskuuta
-            4: huhtikuuta
-            5: toukokuuta
-            6: kesäkuuta
-            7: heinäkuuta
-            8: elokuuta
-            9: syyskuuta
+            1: tammik.
+            10: lokak.
+            11: marrask.
+            12: jouluk.
+            2: helmik.
+            3: maalisk.
+            4: huhtik.
+            5: toukok.
+            6: kesäk.
+            7: heinäk.
+            8: elok.
+            9: syysk.
           :narrow: 
             1: T
             10: L
@@ -265,21 +270,21 @@
           :abbreviated: 
             :afternoon1: iltap.
             :am: ap.
-            :evening1: ilta
-            :midnight: keskiyö
-            :morning1: aamu
+            :evening1: illalla
+            :midnight: keskiyöllä
+            :morning1: aamulla
             :morning2: aamup.
-            :night1: yö
+            :night1: yöllä
             :noon: keskip.
             :pm: ip.
           :narrow: 
             :afternoon1: ip.
             :am: ap.
-            :evening1: ilta
+            :evening1: illalla
             :midnight: ky.
-            :morning1: aamu
+            :morning1: aamulla
             :morning2: ap.
-            :night1: yö
+            :night1: yöllä
             :noon: kp.
             :pm: ip.
           :wide: 

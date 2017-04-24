@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E d MMM"
         :MMMMEd: "E d MMMM"
+        :MMMMW: "'week' W 'van' MMM"
         :MMMMd: "d MMM"
         :MMMd: "d MMM"
         :Md: dd-MM
@@ -44,6 +45,7 @@
         :yMd: y-MM-dd
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'van' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -117,14 +119,15 @@
           1: g.j.
         :name: 
           0: "voor die gewone jaartelling"
-          1: g.j.
+          1: "gewone jaartelling"
         :narrow: 
           0: vgj
-          1: vg
+          1: gj
       :fields: 
-        :day: Dag
+        :day: dag
         :day-narrow: d.
         :day-short: d.
+        :dayOfYear: "Day Of Year"
         :dayperiod: VM/NM
         :era: era
         :hour: uur
@@ -133,7 +136,7 @@
         :minute: minuut
         :minute-narrow: m.
         :minute-short: min.
-        :month: Maand
+        :month: maand
         :month-narrow: md.
         :month-short: md.
         :quarter: kwartaal
@@ -142,10 +145,12 @@
         :second: sekonde
         :second-narrow: s.
         :second-short: sek.
-        :week: Week
+        :week: week
         :week-narrow: wk.
         :week-short: wk.
+        :weekOfMonth: "Week Of Month"
         :weekday: "dag van die week"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: jaar
         :year-narrow: j.
         :year-short: j.
@@ -171,13 +176,13 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "h:mm:ss a zzzz"
+            :pattern: "HH:mm:ss zzzz"
           :long: 
-            :pattern: "h:mm:ss a z"
+            :pattern: "HH:mm:ss z"
           :medium: 
-            :pattern: "h:mm:ss a"
+            :pattern: "HH:mm:ss"
           :short: 
-            :pattern: "h:mm a"
+            :pattern: "HH:mm"
       :months: 
         :format: 
           :abbreviated: 

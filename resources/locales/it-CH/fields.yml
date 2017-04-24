@@ -43,18 +43,41 @@
         -1: "venerdì scorso"
         0: "questo venerdì"
         1: "venerdì prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} venerdì"
+          :other: "tra {0} venerdì"
+        :past: 
+          :one: "{0} venerdì fa"
+          :other: "{0} venerdì fa"
     :fri-narrow: 
       :relative: 
         -1: "ve scorso"
         0: "questo ve"
         1: "ve prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} ve."
+          :other: "tra {0} ve."
+        :past: 
+          :one: "{0} ve. fa"
+          :other: "{0} ve. fa"
     :fri-short: 
       :relative: 
         -1: "ven. scorso"
         0: "questo ven."
         1: "ven. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} ven."
+          :other: "tra {0} ven."
+        :past: 
+          :one: "{0} ven. fa"
+          :other: "{0} ven. fa"
     :hour: 
       :display_name: ora
+      :relative: 
+        0: quest’ora
       :relative_time: 
         :future: 
           :one: "tra {0} ora"
@@ -82,6 +105,8 @@
           :other: "{0} h. fa"
     :minute: 
       :display_name: minuto
+      :relative: 
+        0: "questo minuto"
       :relative_time: 
         :future: 
           :one: "tra {0} minuto"
@@ -112,16 +137,37 @@
         -1: "lunedì scorso"
         0: "questo lunedì"
         1: "lunedì prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} lunedì"
+          :other: "tra {0} lunedì"
+        :past: 
+          :one: "{0} lunedì fa"
+          :other: "{0} lunedì fa"
     :mon-narrow: 
       :relative: 
         -1: "lu scorso"
         0: "questo lu"
         1: "lu prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} lu."
+          :other: "tra {0} lu."
+        :past: 
+          :one: "{0} lu. fa"
+          :other: "{0} lu. fa"
     :mon-short: 
       :relative: 
         -1: "lun. scorso"
         0: "questo lun."
         1: "lun. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} lun."
+          :other: "tra {0} lun."
+        :past: 
+          :one: "{0} lun. fa"
+          :other: "{0} lun. fa"
     :month: 
       :display_name: mese
       :relative: 
@@ -197,18 +243,39 @@
         -1: "sabato scorso"
         0: "questo sabato"
         1: "sabato prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} sabato"
+          :other: "tra {0} sabati"
+        :past: 
+          :one: "{0} sabato fa"
+          :other: "{0} sabati fa"
     :sat-narrow: 
       :relative: 
         -1: "sa scorso"
         0: "questo sa"
         1: "sa prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} sa."
+          :other: "tra {0} sa."
+        :past: 
+          :one: "{0} sa. fa"
+          :other: "{0} sa. fa"
     :sat-short: 
       :relative: 
         -1: "sab. scorso"
         0: "questo sab."
         1: "sab. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} sab."
+          :other: "tra {0} sab."
+        :past: 
+          :one: "{0} sab. fa"
+          :other: "{0} sab. fa"
     :second: 
-      :display_name: Secondo
+      :display_name: secondo
       :relative: 
         0: ora
       :relative_time: 
@@ -241,61 +308,145 @@
         -1: "domenica scorsa"
         0: "questa domenica"
         1: "domenica prossima"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} domenica"
+          :other: "tra {0} domeniche"
+        :past: 
+          :one: "{0} domenica fa"
+          :other: "{0} domeniche fa"
     :sun-narrow: 
       :relative: 
         -1: "do scorsa"
         0: "questa do"
         1: "do prossima"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} do."
+          :other: "tra {0} do."
+        :past: 
+          :one: "{0} do. fa"
+          :other: "{0} do. fa"
     :sun-short: 
       :relative: 
         -1: "dom. scorsa"
         0: "questa dom."
         1: "dom. prossima"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} dom."
+          :other: "tra {0} dom."
+        :past: 
+          :one: "{0} dom. fa"
+          :other: "{0} dom. fa"
     :thu: 
       :relative: 
         -1: "giovedì scorso"
         0: "questo giovedì"
         1: "giovedì prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} giovedì"
+          :other: "tra {0} giovedì"
+        :past: 
+          :one: "{0} giovedì fa"
+          :other: "{0} giovedì fa"
     :thu-narrow: 
       :relative: 
         -1: "gi scorso"
         0: "questo gi"
         1: "gi prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} gi."
+          :other: "tra {0} gi."
+        :past: 
+          :one: "{0} gi. fa"
+          :other: "{0} gi. fa"
     :thu-short: 
       :relative: 
         -1: "gio. scorso"
         0: "questo gio."
         1: "gio. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} gio."
+          :other: "tra {0} gio."
+        :past: 
+          :one: "{0} gio. fa"
+          :other: "{0} gio. fa"
     :tue: 
       :relative: 
         -1: "martedì scorso"
         0: "questo martedì"
         1: "martedì prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} martedì"
+          :other: "tra {0} martedì"
+        :past: 
+          :one: "{0} martedì fa"
+          :other: "{0} martedì fa"
     :tue-narrow: 
       :relative: 
         -1: "ma scorso"
         0: "questo ma"
         1: "ma prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} ma."
+          :other: "tra {0} ma."
+        :past: 
+          :one: "{0} ma. fa"
+          :other: "{0} ma. fa"
     :tue-short: 
       :relative: 
         -1: "mar. scorso"
         0: "questo mar."
         1: "mar. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} mar."
+          :other: "tra {0} mar."
+        :past: 
+          :one: "{0} mar. fa"
+          :other: "{0} mar. fa"
     :wed: 
       :relative: 
         -1: "mercoledì scorso"
         0: "questo mercoledì"
         1: "mercoledì prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} mercoledì"
+          :other: "tra {0} mercoledì"
+        :past: 
+          :one: "{0} mercoledì fa"
+          :other: "{0} mercoledì fa"
     :wed-narrow: 
       :relative: 
         -1: "me scorso"
         0: "questo me"
         1: "me prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} me."
+          :other: "tra {0} me."
+        :past: 
+          :one: "{0} me. fa"
+          :other: "{0} me. fa"
     :wed-short: 
       :relative: 
         -1: "mer. scorso"
         0: "questo mer."
         1: "mer. prossimo"
+      :relative_time: 
+        :future: 
+          :one: "tra {0} mer."
+          :other: "tra {0} mer."
+        :past: 
+          :one: "{0} mer. fa"
+          :other: "{0} mer. fa"
     :week: 
       :display_name: settimana
       :relative: 

@@ -58,6 +58,15 @@
         :concentr-karat: 
           :one: "{0} καράτι"
           :other: "{0} καράτια"
+        :concentr-milligram-per-deciliter: 
+          :one: "{0} χιλιοστόγραμμο ανά δεκατόλιτρο"
+          :other: "{0} χιλιοστόγραμμα ανά δεκατόλιτρο"
+        :concentr-millimole-per-liter: 
+          :one: "{0} χιλιοστογραμμομόριο ανά λίτρο"
+          :other: "{0} χιλιοστογραμμομόρια ανά λίτρο"
+        :concentr-part-per-million: 
+          :one: "{0} μέρος ανά εκατομμύριο"
+          :other: "{0} μέρη ανά εκατομμύριο"
         :consumption-liter-per-100kilometers: 
           :one: "{0} λίτρο ανά 100 χιλιόμετρα"
           :other: "{0} λίτρα ανά 100 χιλιόμετρα"
@@ -67,6 +76,9 @@
         :consumption-mile-per-gallon: 
           :one: "{0} μίλι ανά γαλόνι"
           :other: "{0} μίλια ανά γαλόνι"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} μίλι ανά αγγλοσαξονικό γαλόνι"
+          :other: "{0} μίλια ανά αγγλοσαξονικό γαλόνι"
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -146,8 +158,8 @@
           :one: "{0} θερμίδα"
           :other: "{0} θερμίδες"
         :energy-foodcalorie: 
-          :one: "{0} Θερμίδα"
-          :other: "{0} Θερμίδες"
+          :one: "{0} θερμίδα"
+          :other: "{0} θερμίδες"
         :energy-joule: 
           :one: "{0} τζάουλ"
           :other: "{0} τζάουλ"
@@ -203,8 +215,8 @@
           :one: "{0} μίλι"
           :other: "{0} μίλια"
         :length-mile-scandinavian: 
-          :one: "{0} smi"
-          :other: "{0} smi"
+          :one: "{0} σκανδιναβικό μίλι"
+          :other: "{0} σκανδιναβικά μίλια"
         :length-millimeter: 
           :one: "{0} χιλιοστόμετρο"
           :other: "{0} χιλιοστόμετρα"
@@ -350,11 +362,14 @@
           :one: "{0} δεκατόλιτρο"
           :other: "{0} δεκατόλιτρα"
         :volume-fluid-ounce: 
-          :one: "{0} ουγγιά υγρού"
-          :other: "{0} ουγγιές υγρού"
+          :one: "{0} ουγγιά όγκου"
+          :other: "{0} ουγγιές όγκου"
         :volume-gallon: 
           :one: "{0} γαλόνι"
           :other: "{0} γαλόνια"
+        :volume-gallon-imperial: 
+          :one: "{0} αγγλοσαξονικό γαλόνι"
+          :other: "{0} αγγλοσαξονικά γαλόνια"
         :volume-hectoliter: 
           :one: "{0} εκτόλιτρο"
           :other: "{0} εκτόλιτρα"
@@ -501,8 +516,8 @@
           :one: "{0} mbar"
           :other: "{0} mbar"
         :speed-kilometer-per-hour: 
-          :one: "{0} χλμ./ώρα"
-          :other: "{0} χλμ./ώρα"
+          :one: "{0} χλμ/ώ."
+          :other: "{0} χλμ/ώ."
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -522,8 +537,8 @@
           :one: "{0} mi³"
           :other: "{0} mi³"
         :volume-liter: 
-          :one: "{0} l"
-          :other: "{0} l"
+          :one: "{0} λ."
+          :other: "{0} λ."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -541,46 +556,49 @@
           :one: "{0}°"
           :other: "{0}°"
         :angle-radian: 
-          :one: "{0} rad"
-          :other: "{0} rad"
+          :one: "{0} ακτν"
+          :other: "{0} ακτν"
         :angle-revolution: 
-          :one: "{0} rev"
-          :other: "{0} rev"
+          :one: "{0} στρφ"
+          :other: "{0} στρφ"
         :area-acre: 
-          :one: "{0} ac"
-          :other: "{0} ac"
+          :one: "{0} ακρ"
+          :other: "{0} ακρ"
         :area-hectare: 
-          :one: "{0} ha"
-          :other: "{0} ha"
+          :one: "{0} εκτ."
+          :other: "{0} εκτ."
         :area-square-centimeter: 
-          :one: "{0} τ. εκ."
-          :other: "{0} τ. εκ."
+          :one: "{0} τ.εκ."
+          :other: "{0} τ.εκ."
         :area-square-foot: 
-          :one: "{0} ft²"
-          :other: "{0} ft²"
+          :one: "{0} τ.πδ"
+          :other: "{0} τ.πδ"
         :area-square-inch: 
-          :one: "{0} in²"
-          :other: "{0} in²"
+          :one: "{0} τ. ίντσα"
+          :other: "{0} τ. ίντσες"
         :area-square-kilometer: 
-          :one: "{0} τ. χλμ."
-          :other: "{0} τ. χλμ."
+          :one: "{0} τ.χλμ."
+          :other: "{0} τ.χλμ."
         :area-square-meter: 
           :one: "{0} τ.μ."
           :other: "{0} τ.μ."
         :area-square-mile: 
-          :one: "{0} mi²"
-          :other: "{0} mi²"
+          :one: "{0} τ.μίλι"
+          :other: "{0} τ.μίλια"
         :area-square-yard: 
-          :one: "{0} yd²"
-          :other: "{0} yd²"
+          :one: "{0} τ.γρδ"
+          :other: "{0} τ.γρδ"
         :concentr-karat: 
-          :one: "{0} kt"
-          :other: "{0} kt"
+          :one: "{0} κρτ"
+          :other: "{0} κρτ"
         :concentr-milligram-per-deciliter: 
+          :one: "{0} mg/dL"
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
+          :one: "{0} mmol/L"
           :other: "{0} mmol/L"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :consumption-liter-per-100kilometers: 
           :one: "{0} λ./100 χλμ."
@@ -592,7 +610,8 @@
           :one: "{0} mpg"
           :other: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
-          :other: "{0} mpg Imp."
+          :one: "{0} μίλι/αγγλ. γαλόνι"
+          :other: "{0} μίλια/αγγλ. γαλόνι"
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -673,11 +692,11 @@
           :one: "{0} V"
           :other: "{0} V"
         :energy-calorie: 
-          :one: "{0} cal"
-          :other: "{0} cal"
+          :one: "{0} θερμ."
+          :other: "{0} θερμ."
         :energy-foodcalorie: 
-          :one: "{0} Cal"
-          :other: "{0} Cal"
+          :one: "{0} θερμ."
+          :other: "{0} θερμ."
         :energy-joule: 
           :one: "{0} J"
           :other: "{0} J"
@@ -714,19 +733,19 @@
         :length-fathom: 
           :other: "{0} fm"
         :length-foot: 
-          :one: "{0} ft"
-          :other: "{0} ft"
+          :one: "{0} πδ"
+          :other: "{0} πδ"
         :length-furlong: 
           :other: "{0} fur"
         :length-inch: 
-          :one: "{0} in"
-          :other: "{0} in"
+          :one: "{0} ίν."
+          :other: "{0} ίν."
         :length-kilometer: 
           :one: "{0} χλμ."
           :other: "{0} χλμ."
         :length-light-year: 
-          :one: "{0} ly"
-          :other: "{0} ly"
+          :one: "{0} έ.φ."
+          :other: "{0} έ.φ."
         :length-meter: 
           :one: "{0} μ."
           :other: "{0} μ."
@@ -737,8 +756,8 @@
           :one: "{0} μίλ."
           :other: "{0} μίλ."
         :length-mile-scandinavian: 
-          :one: "{0} smi"
-          :other: "{0} smi"
+          :one: "{0} σκανδ. μίλι"
+          :other: "{0} σκανδ. μίλια"
         :length-millimeter: 
           :one: "{0} χλστ."
           :other: "{0} χλστ."
@@ -754,15 +773,17 @@
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} pt"
         :length-yard: 
-          :one: "{0} yd"
-          :other: "{0} yd"
+          :one: "{0} γρδ"
+          :other: "{0} γρδ"
         :light-lux: 
           :one: "{0} lux"
           :other: "{0} lux"
         :mass-carat: 
-          :one: "{0} ct"
-          :other: "{0} ct"
+          :one: "{0} κρτ"
+          :other: "{0} κρτ"
         :mass-gram: 
           :one: "{0} γρ."
           :other: "{0} γρ."
@@ -785,19 +806,19 @@
           :one: "{0} oz t"
           :other: "{0} oz t"
         :mass-pound: 
-          :one: "{0} lb"
-          :other: "{0} lb"
+          :one: "{0} λβ"
+          :other: "{0} λβ"
         :mass-stone: 
           :other: "{0} st"
         :mass-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
+          :one: "{0} τ."
+          :other: "{0} τ."
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"
         :power-horsepower: 
-          :one: "{0} hp"
-          :other: "{0} hp"
+          :one: "{0} ίπ."
+          :other: "{0} ίπ."
         :power-kilowatt: 
           :one: "{0} kW"
           :other: "{0} kW"
@@ -820,8 +841,8 @@
           :one: "{0} mbar"
           :other: "{0} mbar"
         :pressure-millimeter-of-mercury: 
-          :one: "{0} mm Hg"
-          :other: "{0} mm Hg"
+          :one: "{0} mmHg"
+          :other: "{0} mmHg"
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
@@ -829,8 +850,8 @@
           :one: "{0} χλμ./ώρα"
           :other: "{0} χλμ./ώρα"
         :speed-knot: 
-          :one: "{0} kn"
-          :other: "{0} kn"
+          :one: "{0} κμβ"
+          :other: "{0} κμβ"
         :speed-meter-per-second: 
           :one: "{0} μέτρο/δευτ."
           :other: "{0} μέτρα/δευτ."
@@ -850,8 +871,8 @@
           :one: "{0} K"
           :other: "{0} K"
         :volume-acre-foot: 
-          :one: "{0} ac ft"
-          :other: "{0} ac ft"
+          :one: "{0} ακρ πδ"
+          :other: "{0} ακρ πδ"
         :volume-bushel: 
           :other: "{0} bu"
         :volume-centiliter: 
@@ -879,8 +900,8 @@
           :one: "{0} yd³"
           :other: "{0} yd³"
         :volume-cup: 
-          :one: "{0} c"
-          :other: "{0} c"
+          :one: "{0} κύπ."
+          :other: "{0} κύπ."
         :volume-cup-metric: 
           :one: "{0} μετρ. κύπελλο"
           :other: "{0} μετρ. κύπελλα"
@@ -891,10 +912,11 @@
           :one: "{0} fl oz"
           :other: "{0} fl oz"
         :volume-gallon: 
-          :one: "{0} gal"
-          :other: "{0} gal"
+          :one: "{0} γαλ."
+          :other: "{0} γαλ."
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :one: "{0} αγγλοσαξ. γαλόνι"
+          :other: "{0} αγγλοσαξ. γαλόνια"
         :volume-hectoliter: 
           :one: "{0} hL"
           :other: "{0} hL"
@@ -908,14 +930,14 @@
           :one: "{0} mL"
           :other: "{0} mL"
         :volume-pint: 
-          :one: "{0} pt"
-          :other: "{0} pt"
+          :one: "{0} πντ"
+          :other: "{0} πντ"
         :volume-pint-metric: 
-          :one: "{0} μετρική πίντα"
-          :other: "{0} μετρικές πίντες"
+          :one: "{0} μετρ. πίντα"
+          :other: "{0} μετρ. πίντες"
         :volume-quart: 
-          :one: "{0} qt"
-          :other: "{0} qt"
+          :one: "{0} τέτ. γαλ."
+          :other: "{0} τέτ. γαλ."
         :volume-tablespoon: 
           :one: "{0} κ.σ."
           :other: "{0} κ.σ."

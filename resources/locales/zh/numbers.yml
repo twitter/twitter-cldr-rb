@@ -3,13 +3,13 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
           :default: "¤#,##0.00"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0"
+              :other: ¤0千
             ? !ruby/symbol "10000"
             : 
               :other: ¤0万
@@ -46,13 +46,13 @@
         :unit: 
           :other: "{0}{1}"
       :decimal: 
-        :number_system: latn
+        :number_system: hanidec
         :patterns: 
           :default: "#,##0.###"
           :long: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0"
+              :other: 0千
             ? !ruby/symbol "10000"
             : 
               :other: 0万
@@ -89,7 +89,7 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: "0"
+              :other: 0千
             ? !ruby/symbol "10000"
             : 
               :other: 0万
@@ -124,11 +124,11 @@
             : 
               :other: 000兆
       :percent: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
           :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: hanidec
         :patterns: 
           :default: "#E0"
     :symbols: 

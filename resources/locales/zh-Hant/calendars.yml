@@ -22,6 +22,7 @@
         :MEd: M/d（E）
         :MMM: LLL
         :MMMEd: "M月d日 E"
+        :MMMMW: MMM的第W週
         :MMMMd: M月d日
         :MMMd: M月d日
         :MMdd: MM/dd
@@ -45,6 +46,7 @@
         :yMd: y/M/d
         :yQQQ: y年QQQ
         :yQQQQ: y年QQQQ
+        :yw: y年的第w週
       :days: 
         :format: 
           :abbreviated: 
@@ -126,6 +128,7 @@
         :day: 日
         :day-narrow: 日
         :day-short: 日
+        :dayOfYear: "Day Of Year"
         :dayperiod: 上午/下午
         :era: 年代
         :hour: 小時
@@ -146,7 +149,9 @@
         :week: 週
         :week-narrow: 週
         :week-short: 週
+        :weekOfMonth: "Week Of Month"
         :weekday: 週天
+        :weekdayOfMonth: "Weekday Of Month"
         :year: 年
         :year-narrow: 年
         :year-short: 年
@@ -296,11 +301,13 @@
           :abbreviated: 
             :afternoon1: 中午
             :afternoon2: 下午
+            :am: 上午
             :evening1: 晚上
             :midnight: 午夜
             :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
+            :pm: 下午
           :narrow: 
             :afternoon1: 中午
             :afternoon2: 下午
@@ -314,11 +321,13 @@
           :wide: 
             :afternoon1: 中午
             :afternoon2: 下午
+            :am: 上午
             :evening1: 晚上
             :midnight: 午夜
             :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
+            :pm: 下午
       :quarters: 
         :format: 
           :abbreviated: 

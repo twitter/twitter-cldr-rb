@@ -22,6 +22,7 @@
         :MEd: "E d/M"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'settimana' W 'di' MMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -43,6 +44,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'settimana' w 'del' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -103,13 +105,13 @@
             :tue: mar
             :wed: mer
           :wide: 
-            :fri: Venerdì
-            :mon: Lunedì
-            :sat: Sabato
-            :sun: Domenica
-            :thu: Giovedì
-            :tue: Martedì
-            :wed: Mercoledì
+            :fri: venerdì
+            :mon: lunedì
+            :sat: sabato
+            :sun: domenica
+            :thu: giovedì
+            :tue: martedì
+            :wed: mercoledì
       :eras: 
         :abbr: 
           0: a.E.V.
@@ -124,6 +126,7 @@
         :day: giorno
         :day-narrow: g
         :day-short: g
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
         :era: era
         :hour: ora
@@ -138,13 +141,15 @@
         :quarter: trimestre
         :quarter-narrow: trim.
         :quarter-short: trim.
-        :second: Secondo
+        :second: secondo
         :second-narrow: s
         :second-short: sec.
         :week: settimana
         :week-narrow: sett.
         :week-short: sett.
+        :weekOfMonth: "Week Of Month"
         :weekday: "giorno della settimana"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: anno
         :year-narrow: anno
         :year-short: anno
@@ -246,27 +251,27 @@
             8: A
             9: S
           :wide: 
-            1: Gennaio
-            10: Ottobre
-            11: Novembre
-            12: Dicembre
-            2: Febbraio
-            3: Marzo
-            4: Aprile
-            5: Maggio
-            6: Giugno
-            7: Luglio
-            8: Agosto
-            9: Settembre
+            1: gennaio
+            10: ottobre
+            11: novembre
+            12: dicembre
+            2: febbraio
+            3: marzo
+            4: aprile
+            5: maggio
+            6: giugno
+            7: luglio
+            8: agosto
+            9: settembre
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
           :narrow: 
@@ -279,12 +284,12 @@
             :noon: mezzogiorno
             :pm: p.
           :wide: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
         :stand-alone: 

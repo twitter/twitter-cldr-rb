@@ -23,6 +23,7 @@
         :MMM: LLL
         :MMMEd: "E, MMM d"
         :MMMMEd: "E, MMMM d"
+        :MMMMW: "'linggo' W 'ng' MMM"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
@@ -45,6 +46,7 @@
         :yMd: M/d/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'linggo' w 'ng' y"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,8 +127,9 @@
         :day: araw
         :day-narrow: araw
         :day-short: araw
+        :dayOfYear: "Day Of Year"
         :dayperiod: AM/PM
-        :era: Era
+        :era: panahon
         :hour: oras
         :hour-narrow: oras
         :hour-short: oras
@@ -145,7 +148,9 @@
         :week: linggo
         :week-narrow: linggo
         :week-short: linggo
+        :weekOfMonth: "Week Of Month"
         :weekday: "araw ng linggo"
+        :weekdayOfMonth: "Weekday Of Month"
         :year: taon
         :year-narrow: taon
         :year-short: taon
@@ -268,13 +273,13 @@
             :midnight: hatinggabi
             :morning1: "nang umaga"
             :morning2: madaling-araw
-            :night1: "ng gabi"
+            :night1: gabi
             :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
             :afternoon1: tanghali
             :am: am
-            :evening1: hapon
+            :evening1: "ng hapon"
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw
@@ -282,7 +287,7 @@
             :noon: tanghaling-tapat
             :pm: pm
           :wide: 
-            :afternoon1: "ng tanghali"
+            :afternoon1: tanghali
             :am: AM
             :evening1: "ng hapon"
             :midnight: hatinggabi

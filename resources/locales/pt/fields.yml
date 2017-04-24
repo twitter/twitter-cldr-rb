@@ -43,18 +43,41 @@
         -1: "sexta-feira passada"
         0: "esta sexta-feira"
         1: "próxima sexta-feira"
+      :relative_time: 
+        :future: 
+          :one: "em {0} sextas-feiras"
+          :other: "em {0} sextas-feiras"
+        :past: 
+          :one: "há {0} sextas-feiras"
+          :other: "há {0} sextas-feiras"
     :fri-narrow: 
       :relative: 
         -1: "sex. passada"
         0: "esta sex."
         1: "próxima sex."
+      :relative_time: 
+        :future: 
+          :one: "em {0} sextas-feiras"
+          :other: "em {0} sextas-feiras"
+        :past: 
+          :one: "há {0} sextas-feiras"
+          :other: "há {0} sextas-feiras"
     :fri-short: 
       :relative: 
         -1: "sex. passada"
         0: "esta sex."
         1: "próxima sex."
+      :relative_time: 
+        :future: 
+          :one: "em {0} sextas-feiras"
+          :other: "em {0} sextas-feiras"
+        :past: 
+          :one: "há {0} sextas-feiras"
+          :other: "há {0} sextas-feiras"
     :hour: 
       :display_name: hora
+      :relative: 
+        0: "esta hora"
       :relative_time: 
         :future: 
           :one: "em {0} hora"
@@ -82,6 +105,8 @@
           :other: "há {0} h"
     :minute: 
       :display_name: minuto
+      :relative: 
+        0: "este minuto"
       :relative_time: 
         :future: 
           :one: "em {0} minuto"
@@ -112,16 +137,37 @@
         -1: "segunda-feira passada"
         0: "esta segunda-feira"
         1: "próxima segunda-feira"
+      :relative_time: 
+        :future: 
+          :one: "em {0} segunda-feira"
+          :other: "em {0} segundas-feiras"
+        :past: 
+          :one: "há {0} segunda-feira"
+          :other: "há {0} segundas-feiras"
     :mon-narrow: 
       :relative: 
         -1: "seg. passada"
         0: "esta seg."
         1: "próxima seg."
+      :relative_time: 
+        :future: 
+          :one: "em {0} segundas-feiras"
+          :other: "em {0} segundas-feiras"
+        :past: 
+          :one: "há {0} segundas-feiras"
+          :other: "há {0} segundas-feiras"
     :mon-short: 
       :relative: 
         -1: "seg. passada"
         0: "esta seg."
         1: "próxima seg."
+      :relative_time: 
+        :future: 
+          :one: "em {0} segundas-feiras"
+          :other: "em {0} segundas-feiras"
+        :past: 
+          :one: "há {0} segundas-feiras"
+          :other: "há {0} segundas-feiras"
     :month: 
       :display_name: mês
       :relative: 
@@ -155,6 +201,10 @@
           :other: "há {0} meses"
     :quarter: 
       :display_name: trimestre
+      :relative: 
+        -1: "último trimestre"
+        0: "este trimestre"
+        1: "próximo trimestre"
       :relative_time: 
         :future: 
           :one: "em {0} trimestre"
@@ -185,16 +235,37 @@
         -1: "sábado passado"
         0: "este sábado"
         1: "próximo sábado"
+      :relative_time: 
+        :future: 
+          :one: "em {0} sábado"
+          :other: "em {0} sábados"
+        :past: 
+          :one: "há {0} sábado"
+          :other: "há {0} sábados"
     :sat-narrow: 
       :relative: 
         -1: "sáb. passado"
         0: "este sáb."
         1: "próximo sáb."
+      :relative_time: 
+        :future: 
+          :one: "em {0} sábados"
+          :other: "em {0} sábados"
+        :past: 
+          :one: "há {0} sábados"
+          :other: "há {0} sábados"
     :sat-short: 
       :relative: 
         -1: "sáb. passado"
         0: "este sáb."
         1: "próximo sáb."
+      :relative_time: 
+        :future: 
+          :one: "em {0} sábados"
+          :other: "em {0} sábados"
+        :past: 
+          :one: "há {0} sábados"
+          :other: "há {0} sábados"
     :second: 
       :display_name: segundo
       :relative: 
@@ -229,61 +300,145 @@
         -1: "domingo passado"
         0: "este domingo"
         1: "próximo domingo"
+      :relative_time: 
+        :future: 
+          :one: "em {0} domingo"
+          :other: "em {0} domingos"
+        :past: 
+          :one: "há {0} domingo"
+          :other: "há {0} domingos"
     :sun-narrow: 
       :relative: 
         -1: "dom. passado"
         0: "este dom."
         1: "próximo dom."
+      :relative_time: 
+        :future: 
+          :one: "em {0} domingos"
+          :other: "em {0} domingos"
+        :past: 
+          :one: "há {0} domingos"
+          :other: "há {0} domingos"
     :sun-short: 
       :relative: 
         -1: "dom. passado"
         0: "este dom."
         1: "próximo dom."
+      :relative_time: 
+        :future: 
+          :one: "em {0} domingos"
+          :other: "em {0} domingos"
+        :past: 
+          :one: "há {0} domingos"
+          :other: "há {0} domingos"
     :thu: 
       :relative: 
         -1: "quinta-feira passada"
         0: "esta quinta-feira"
         1: "próxima quinta-feira"
+      :relative_time: 
+        :future: 
+          :one: "em {0} quintas-feiras"
+          :other: "em {0} quintas-feiras"
+        :past: 
+          :one: "há {0} quintas-feiras"
+          :other: "há {0} quintas-feiras"
     :thu-narrow: 
       :relative: 
         -1: "qui. passada"
         0: "esta qui."
         1: "próx. qui"
+      :relative_time: 
+        :future: 
+          :one: "em {0} quintas-feiras"
+          :other: "em {0} quintas-feiras"
+        :past: 
+          :one: "há {0} quintas-feiras"
+          :other: "há {0} quintas-feiras"
     :thu-short: 
       :relative: 
         -1: "qui. passada"
         0: "esta qui."
         1: "próx. qui"
+      :relative_time: 
+        :future: 
+          :one: "em {0} quintas-feiras"
+          :other: "em {0} quintas-feiras"
+        :past: 
+          :one: "há {0} quintas-feiras"
+          :other: "há {0} quintas-feiras"
     :tue: 
       :relative: 
         -1: "terça-feira passada"
         0: "esta terça-feira"
         1: "próxima terça-feira"
+      :relative_time: 
+        :future: 
+          :one: "em {0} terça-feira"
+          :other: "em {0} terças-feiras"
+        :past: 
+          :one: "há {0} terça-feira"
+          :other: "há {0} terças-feiras"
     :tue-narrow: 
       :relative: 
         -1: "ter. passada"
         0: "esta ter."
         1: "próxima ter."
+      :relative_time: 
+        :future: 
+          :one: "em {0} terças-feiras"
+          :other: "em {0} terças-feiras"
+        :past: 
+          :one: "há {0} terças-feiras"
+          :other: "há {0} terças-feiras"
     :tue-short: 
       :relative: 
         -1: "ter. passada"
         0: "esta ter."
         1: "próxima ter."
+      :relative_time: 
+        :future: 
+          :one: "em {0} terças-feiras"
+          :other: "em {0} terças-feiras"
+        :past: 
+          :one: "há {0} terças-feiras"
+          :other: "há {0} terças-feiras"
     :wed: 
       :relative: 
         -1: "quarta-feira passada"
         0: "esta quarta-feira"
         1: "próxima quarta-feira"
+      :relative_time: 
+        :future: 
+          :one: "em {0} quartas-feiras"
+          :other: "em {0} quartas-feiras"
+        :past: 
+          :one: "há {0} quartas-feiras"
+          :other: "há {0} quartas-feiras"
     :wed-narrow: 
       :relative: 
         -1: "qua. passada"
         0: "esta qua."
         1: "próxima qua."
+      :relative_time: 
+        :future: 
+          :one: "em {0} quartas-feiras"
+          :other: "em {0} quartas-feiras"
+        :past: 
+          :one: "há {0} quartas-feiras"
+          :other: "há {0} quartas-feiras"
     :wed-short: 
       :relative: 
         -1: "qua. passada"
         0: "esta qua."
         1: "próxima qua."
+      :relative_time: 
+        :future: 
+          :one: "em {0} quartas-feiras"
+          :other: "em {0} quartas-feiras"
+        :past: 
+          :one: "há {0} quartas-feiras"
+          :other: "há {0} quartas-feiras"
     :week: 
       :display_name: semana
       :relative: 

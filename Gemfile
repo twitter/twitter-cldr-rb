@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem 'rake'
+  gem 'rake', '~> 10.0'
   gem 'pry-nav'
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
   gem 'regexp_parser', '~> 0.1'

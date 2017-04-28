@@ -3,60 +3,145 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: "¤ #,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :other: 0 N ¤
+            ? !ruby/symbol "10000"
+            : 
+              :other: 00 N ¤
+            ? !ruby/symbol "100000"
+            : 
+              :other: 000 N ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :other: 0 Tr ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :other: 00 Tr ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :other: 000 Tr ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: 0 T ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: 00 T ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: 000 T ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: 0 NT ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: 00 NT ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: 000 NT ¤
         :unit: 
-          :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#,##0.###"
           :long: 
-            1000: "0 nghìn"
-            10000: "00 nghìn"
-            100000: "000 nghìn"
-            1000000: "0 triệu"
-            10000000: "00 triệu"
-            100000000: "000 triệu"
-            1000000000: "0 tỷ"
-            10000000000: "00 tỷ"
-            100000000000: "000 tỷ"
-            1000000000000: "0 nghìn tỷ"
-            10000000000000: "00 nghìn tỷ"
-            100000000000000: "000 nghìn tỷ"
+            ? !ruby/symbol "1000"
+            : 
+              :other: "0 nghìn"
+            ? !ruby/symbol "10000"
+            : 
+              :other: "00 nghìn"
+            ? !ruby/symbol "100000"
+            : 
+              :other: "000 nghìn"
+            ? !ruby/symbol "1000000"
+            : 
+              :other: "0 triệu"
+            ? !ruby/symbol "10000000"
+            : 
+              :other: "00 triệu"
+            ? !ruby/symbol "100000000"
+            : 
+              :other: "000 triệu"
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: "0 tỷ"
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: "00 tỷ"
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: "000 tỷ"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: "0 nghìn tỷ"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: "00 nghìn tỷ"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: "000 nghìn tỷ"
           :short: 
-            1000: "0 N"
-            10000: "00 N"
-            100000: "000 N"
-            1000000: "0 Tr"
-            10000000: "00 Tr"
-            100000000: "000 Tr"
-            1000000000: "0 T"
-            10000000000: "00 T"
-            100000000000: "000 T"
-            1000000000000: "0 NT"
-            10000000000000: "00 NT"
-            100000000000000: "000 NT"
+            ? !ruby/symbol "1000"
+            : 
+              :other: 0 N
+            ? !ruby/symbol "10000"
+            : 
+              :other: 00 N
+            ? !ruby/symbol "100000"
+            : 
+              :other: 000 N
+            ? !ruby/symbol "1000000"
+            : 
+              :other: 0 Tr
+            ? !ruby/symbol "10000000"
+            : 
+              :other: 00 Tr
+            ? !ruby/symbol "100000000"
+            : 
+              :other: 000 Tr
+            ? !ruby/symbol "1000000000"
+            : 
+              :other: 0 T
+            ? !ruby/symbol "10000000000"
+            : 
+              :other: 00 T
+            ? !ruby/symbol "100000000000"
+            : 
+              :other: 000 T
+            ? !ruby/symbol "1000000000000"
+            : 
+              :other: 0 NT
+            ? !ruby/symbol "10000000000000"
+            : 
+              :other: 00 NT
+            ? !ruby/symbol "100000000000000"
+            : 
+              :other: 000 NT
       :percent: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#,##0%"
       :scientific: 
-        :number_system: "latn"
+        :number_system: latn
         :patterns: 
           :default: "#E0"
     :symbols: 
       :alias: ""
       :decimal: ","
-      :exponential: "E"
+      :exponential: E
       :group: "."
-      :infinity: "∞"
-      :list: ";"
+      :infinity: ∞
+      :list: ;
       :minus_sign: "-"
-      :nan: "NaN"
-      :per_mille: "‰"
+      :nan: NaN
+      :per_mille: ‰
       :percent_sign: "%"
-      :plus_sign: "+"
-      :superscripting_exponent: "×"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

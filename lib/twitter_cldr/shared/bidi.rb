@@ -5,7 +5,7 @@
 
 # This code was adapted from GNU Classpath, but modified significantly.  Ordinarily, derivatives are
 # treated as falling under the same license as the original source, but classpath comes with the
-# following exception: 
+# following exception:
 #
 # "As a special exception, the copyright holders of this library give you
 # permission to link this library with independent modules to produce an
@@ -35,18 +35,18 @@ module TwitterCldr
       class << self
         def from_string(str, options = {})
           string_arr = str.unpack("U*")
-          Bidi.new(options.merge(:types => compute_types(string_arr), :string_arr => string_arr))
+          Bidi.new(options.merge(types: compute_types(string_arr), string_arr: string_arr))
         end
 
         def from_type_array(types, options = {})
-          Bidi.new(options.merge(:types => types))
+          Bidi.new(options.merge(types: types))
         end
 
         protected
 
         def compute_types(arr)
           arr.map do |code_point|
-            TwitterCldr::Shared::CodePoint.find(code_point).bidi_class.to_sym
+            TwitterCldr::Shared::CodePoint.get(code_point).bidi_class.to_sym
           end
         end
       end

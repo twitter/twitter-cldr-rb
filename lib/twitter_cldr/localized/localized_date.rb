@@ -16,20 +16,8 @@ module TwitterCldr
         case @base_obj
           when Time
             LocalizedTime.new(@base_obj, @locale, chain_params)
-          when DateTime
-            utc_dt = @base_obj.new_offset(0)
-
-            time = Time.gm(
-              utc_dt.year,
-              utc_dt.month,
-              utc_dt.day,
-              utc_dt.hour,
-              utc_dt.min,
-              utc_dt.sec,
-              utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
-            )
-
-            LocalizedTime.new(time, @locale, chain_params)
+          when Date, DateTime
+            LocalizedTime.new(@base_obj.to_time, @locale, chain_params)
           else
             nil
         end
@@ -46,11 +34,13 @@ module TwitterCldr
         timezone_info.utc_to_local(time.is_a?(DateTime) ? time.new_offset(0) : time.utc)
       end
 
-      def data_reader_for(type)
-        TwitterCldr::DataReaders::DateDataReader.new(locale, {
-          :calendar_type => calendar_type,
-          :type => type
-        })
+      def data_reader_for(type, options = {})
+        TwitterCldr::DataReaders::DateDataReader.new(
+          locale, options.merge({
+            calendar_type: calendar_type,
+            type: type
+          })
+        )
       end
 
     end

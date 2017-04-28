@@ -6,6 +6,8 @@
 module TwitterCldr
   module Collation
 
+    class UnexpectedCodePointError < StandardError; end
+
     # Collator uses fractional collation elements table form CLDR to generate sort keys for Unicode strings as well as
     # compare and sort such strings by generated sort keys.
     #
@@ -33,9 +35,9 @@ module TwitterCldr
       end
 
       # Second arg options, supports an option :maximum_level, to
-      # pass on to SortKeyBuilder :maximum_level. 
+      # pass on to SortKeyBuilder :maximum_level.
       def get_sort_key(string_or_code_points, method_options = {})
-        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points), :case_first => @options[:case_first], :maximum_level => method_options[:maximum_level])
+        TwitterCldr::Collation::SortKeyBuilder.build(get_collation_elements(string_or_code_points), case_first: @options[:case_first], maximum_level: method_options[:maximum_level])
       end
 
       def get_collation_elements(string_or_code_points)
@@ -57,12 +59,21 @@ module TwitterCldr
       end
 
       def get_normalized_code_points(str_or_code_points)
-        code_points = str_or_code_points.is_a?(String) ? TwitterCldr::Utils::CodePoints.from_string(str_or_code_points) : str_or_code_points
+        str = if str_or_code_points.is_a?(String)
+          str_or_code_points
+        else
+          TwitterCldr::Utils::CodePoints.to_string(str_or_code_points)
+        end
 
         # Normalization makes the collation process significantly slower (like seven times slower on the UCA
         # non-ignorable test from CollationTest_NON_IGNORABLE.txt). ICU uses some optimizations to apply normalization
         # only in special, rare cases. We need to investigate possible solutions and do normalization cleverly too.
-        TwitterCldr::Normalization::NFD.normalize_code_points(code_points)
+        TwitterCldr::Utils::CodePoints.from_string(
+          TwitterCldr::Normalization.normalize(str)
+        )
+      rescue ArgumentError
+        # Meant to rescue encoding errors. Some tests do not provide valid UTF-8 sequences.
+        TwitterCldr::Utils::CodePoints.from_string(str)
       end
 
       # Returns the first sequence of fractional collation elements for an array of integer code points. Returned value
@@ -99,7 +110,13 @@ module TwitterCldr
         while non_starter_pos < code_points.size && !suffixes.empty?
           # get next code point (possibly non-starter)
           non_starter_code_point = code_points[non_starter_pos]
-          combining_class        = TwitterCldr::Normalization::Base.combining_class_for(non_starter_code_point)
+          non_starter_metadata   = TwitterCldr::Shared::CodePoint.get(non_starter_code_point)
+
+          unless non_starter_metadata
+            raise UnexpectedCodePointError, "'#{non_starter_code_point}' does not appear to be a valid Unicode code point"
+          end
+
+          combining_class = non_starter_metadata.combining_class.to_i
 
           # code point is a starter or combining class has been already used (non-starter is 'blocked' from the prefix)
           break if combining_class == 0 || used_combining_classes[combining_class]

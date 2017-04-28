@@ -8,17 +8,17 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 0
-            :type: "spellout-numbering-year"
+            :type: spellout-numbering-year
           - 
             :rules: 
               - 
-                :rule: "=%spellout-cardinal-masculine=;"
+                :rule: =%spellout-cardinal-masculine=;
                 :value: 0
-            :type: "spellout-numbering"
+            :type: spellout-numbering
           - 
             :rules: 
               - 
@@ -26,42 +26,42 @@
                 :value: "-x"
               - 
                 :rule: "<< virgulă >>;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "zero;"
+                :rule: zero;
                 :value: 0
               - 
-                :rule: "unu;"
+                :rule: unu;
                 :value: 1
               - 
-                :rule: "doi;"
+                :rule: doi;
                 :value: 2
               - 
-                :rule: "trei;"
+                :rule: trei;
                 :value: 3
               - 
-                :rule: "patru;"
+                :rule: patru;
                 :value: 4
               - 
-                :rule: "cinci;"
+                :rule: cinci;
                 :value: 5
               - 
-                :rule: "şase;"
+                :rule: şase;
                 :value: 6
               - 
-                :rule: "şapte;"
+                :rule: şapte;
                 :value: 7
               - 
-                :rule: "opt;"
+                :rule: opt;
                 :value: 8
               - 
-                :rule: "nouă;"
+                :rule: nouă;
                 :value: 9
               - 
-                :rule: "zece;"
+                :rule: zece;
                 :value: 10
               - 
-                :rule: "unsprezece;"
+                :rule: unsprezece;
                 :value: 11
               - 
                 :rule: ">>sprezece;"
@@ -108,7 +108,7 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal-masculine"
+            :type: spellout-cardinal-masculine
           - 
             :rules: 
               - 
@@ -116,18 +116,18 @@
                 :value: "-x"
               - 
                 :rule: "<< virgulă >>;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "zero;"
+                :rule: zero;
                 :value: 0
               - 
-                :rule: "una;"
+                :rule: una;
                 :value: 1
               - 
-                :rule: "două;"
+                :rule: două;
                 :value: 2
               - 
-                :rule: "=%spellout-cardinal-masculine=;"
+                :rule: =%spellout-cardinal-masculine=;
                 :value: 3
               - 
                 :rule: ">>sprezece;"
@@ -174,7 +174,7 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal-feminine"
+            :type: spellout-cardinal-feminine
           - 
             :rules: 
               - 
@@ -182,15 +182,15 @@
                 :value: "-x"
               - 
                 :rule: "<< virgulă >>;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "zero;"
+                :rule: zero;
                 :value: 0
               - 
-                :rule: "unu;"
+                :rule: unu;
                 :value: 1
               - 
-                :rule: "=%spellout-cardinal-feminine=;"
+                :rule: =%spellout-cardinal-feminine=;
                 :value: 2
               - 
                 :rule: "<%spellout-cardinal-feminine<zeci[ şi >>];"
@@ -234,17 +234,17 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal-neuter"
-        :type: "SpelloutRules"
+            :type: spellout-cardinal-neuter
+        :type: SpelloutRules
       - 
         :ruleset: 
           - 
             :rules: 
               - 
-                :rule: "−>>;"
+                :rule: −>>;
                 :value: "-x"
               - 
                 :rule: "=#,##0=a;"
                 :value: 0
-            :type: "digits-ordinal"
-        :type: "OrdinalRules"
+            :type: digits-ordinal
+        :type: OrdinalRules

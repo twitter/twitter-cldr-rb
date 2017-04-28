@@ -1,0 +1,16 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - ":: [ẸỌṢẹọṣ] ;"
+      - ":: NFC ;"
+      - "Ẹ>Ɛ;# LATIN CAPITAL LETTER E WITH DOT BELOW"
+      - "ẹ>ɛ;# LATIN SMALL LETTER E WITH DOT BELOW"
+      - "Ọ>Ɔ ;# LATIN CAPITAL LETTER O WITH DOT BELOW"
+      - "ọ>ɔ;# LATIN SMALL LETTER O WITH DOT BELOW"
+      - "Ṣ>Sh;# LATIN CAPITAL LETTER S WITH DOT BELOW"
+      - "ṣ>sh;# LATIN SMALL LETTER S WITH DOT BELOW"
+    :source: yo
+    :target: yo_BJ
+    :variant: ~

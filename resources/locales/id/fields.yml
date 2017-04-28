@@ -1,0 +1,304 @@
+--- 
+:id: 
+  :fields: 
+    :day: 
+      :display_name: Hari
+      :relative: 
+        -1: kemarin
+        -2: "kemarin lusa"
+        0: "hari ini"
+        1: besok
+        2: lusa
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} hari"
+        :past: 
+          :other: "{0} hari yang lalu"
+    :day-narrow: 
+      :display_name: h
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} hari"
+        :past: 
+          :other: "{0} hari yang lalu"
+    :day-short: 
+      :display_name: h
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} hari"
+        :past: 
+          :other: "{0} hari yang lalu"
+    :dayperiod: 
+      :display_name: AM/PM
+    :era: 
+      :display_name: Era
+    :fri: 
+      :relative: 
+        -1: "Jumat lalu"
+        0: "Jumat ini"
+        1: "Jumat berikutnya"
+    :fri-narrow: 
+      :relative: 
+        -1: "J lalu"
+        0: "J ini"
+        1: "J berikutnya"
+    :fri-short: 
+      :relative: 
+        -1: "Jum. lalu"
+        0: "Jum. ini"
+        1: "Jum. berikutnya"
+    :hour: 
+      :display_name: Jam
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} jam"
+        :past: 
+          :other: "{0} jam yang lalu"
+    :hour-narrow: 
+      :display_name: j
+      :relative_time: 
+        :future: 
+          :other: "+{0} jam"
+        :past: 
+          :other: "-{0} jam"
+    :hour-short: 
+      :display_name: jam
+      :relative_time: 
+        :future: 
+          :other: "dlm {0} jam"
+        :past: 
+          :other: "{0} jam yg lalu"
+    :minute: 
+      :display_name: Menit
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} menit"
+        :past: 
+          :other: "{0} menit yang lalu"
+    :minute-narrow: 
+      :display_name: m
+      :relative_time: 
+        :future: 
+          :other: "+{0} mnt"
+        :past: 
+          :other: "-{0} mnt"
+    :minute-short: 
+      :display_name: mnt.
+      :relative_time: 
+        :future: 
+          :other: "dlm {0} mnt"
+        :past: 
+          :other: "{0} mnt yg lalu"
+    :mon: 
+      :relative: 
+        -1: "Senin lalu"
+        0: "Senin ini"
+        1: "Senin berikutnya"
+    :mon-narrow: 
+      :relative: 
+        -1: "Sen. lalu"
+        0: "Sen. ini"
+        1: "Sen. berikutnya"
+    :mon-short: 
+      :relative: 
+        -1: "Sen. lalu"
+        0: "Sen. ini"
+        1: "Sen. berikutnya"
+    :month: 
+      :display_name: Bulan
+      :relative: 
+        -1: "bulan lalu"
+        0: "bulan ini"
+        1: "Bulan berikutnya"
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} bulan"
+        :past: 
+          :other: "{0} bulan yang lalu"
+    :month-narrow: 
+      :display_name: bln.
+      :relative_time: 
+        :future: 
+          :other: "+{0} bln."
+        :past: 
+          :other: "-{0} bln."
+    :month-short: 
+      :display_name: bln.
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} bulan"
+        :past: 
+          :other: "{0} bulan yang lalu"
+    :quarter: 
+      :display_name: Triwulan
+      :relative_time: 
+        :future: 
+          :other: "dalam {0} triwulan"
+        :past: 
+          :other: "{0} triwulan yang lalu"
+    :quarter-narrow: 
+      :display_name: triwln.
+      :relative_time: 
+        :future: 
+          :other: "+{0} triwln."
+        :past: 
+          :other: "-{0} triwln."
+    :quarter-short: 
+      :display_name: triwln.
+      :relative_time: 
+        :future: 
+          :other: "dalam {0} triwulan"
+        :past: 
+          :other: "{0} triwulan yang lalu"
+    :sat: 
+      :relative: 
+        -1: "Sabtu lalu"
+        0: "Sabtu ini"
+        1: "Sabtu berikutnya"
+    :sat-narrow: 
+      :relative: 
+        -1: "Sab. lalu"
+        0: "Sab. ini"
+        1: "Sab. berikutnya"
+    :sat-short: 
+      :relative: 
+        -1: "Sab. lalu"
+        0: "Sab. ini"
+        1: "Sab. berikutnya"
+    :second: 
+      :display_name: Detik
+      :relative: 
+        0: sekarang
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} detik"
+        :past: 
+          :other: "{0} detik yang lalu"
+    :second-narrow: 
+      :display_name: d
+      :relative_time: 
+        :future: 
+          :other: "+{0} dtk"
+        :past: 
+          :other: "-{0} d yg lalu"
+    :second-short: 
+      :display_name: dtk.
+      :relative_time: 
+        :future: 
+          :other: "dlm {0} dtk"
+        :past: 
+          :other: "{0} dtk yg lalu"
+    :sun: 
+      :relative: 
+        -1: "hari Minggu lalu"
+        0: "hari Minggu ini"
+        1: "hari Minggu berikutnya"
+    :sun-narrow: 
+      :relative: 
+        -1: "M lalu"
+        0: "M ini"
+        1: "M berikutnya"
+    :sun-short: 
+      :relative: 
+        -1: "Min. lalu"
+        0: "Min. ini"
+        1: "Min. berikutnya"
+    :thu: 
+      :relative: 
+        -1: "Kamis lalu"
+        0: "Kamis ini"
+        1: "Kamis berikutnya"
+    :thu-narrow: 
+      :relative: 
+        -1: "K lalu"
+        0: "K ini"
+        1: "K berikutnya"
+    :thu-short: 
+      :relative: 
+        -1: "Kam. lalu"
+        0: "Kam. ini"
+        1: "Kam. berikutnya"
+    :tue: 
+      :relative: 
+        -1: "Selasa lalu"
+        0: "Selasa ini"
+        1: "Selasa berikutnya"
+    :tue-narrow: 
+      :relative: 
+        -1: "Sel. lalu"
+        0: "Sel. ini"
+        1: "Sel. berikutnya"
+    :tue-short: 
+      :relative: 
+        -1: "Sel. lalu"
+        0: "Sel. ini"
+        1: "Sel. berikutnya"
+    :wed: 
+      :relative: 
+        -1: "Rabu lalu"
+        0: "Rabu ini"
+        1: "Rabu berikutnya"
+    :wed-narrow: 
+      :relative: 
+        -1: "R lalu"
+        0: "R ini"
+        1: "R berikutnya"
+    :wed-short: 
+      :relative: 
+        -1: "Rab. lalu"
+        0: "Rab. ini"
+        1: "Rab. berikutnya"
+    :week: 
+      :display_name: Minggu
+      :relative: 
+        -1: "minggu lalu"
+        0: "minggu ini"
+        1: "minggu depan"
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} minggu"
+        :past: 
+          :other: "{0} minggu yang lalu"
+    :week-narrow: 
+      :display_name: mgg.
+      :relative_time: 
+        :future: 
+          :other: "+{0} mgg."
+        :past: 
+          :other: "-{0} mgg."
+    :week-short: 
+      :display_name: mgg.
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} minggu"
+        :past: 
+          :other: "{0} minggu yang lalu"
+    :weekday: 
+      :display_name: "Hari dalam Seminggu"
+    :year: 
+      :display_name: Tahun
+      :relative: 
+        -1: "tahun lalu"
+        0: "tahun ini"
+        1: "tahun depan"
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} tahun"
+        :past: 
+          :other: "{0} tahun yang lalu"
+    :year-narrow: 
+      :display_name: thn.
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} tahun"
+        :past: 
+          :other: "{0} tahun yang lalu"
+    :year-short: 
+      :display_name: thn.
+      :relative_time: 
+        :future: 
+          :other: "Dalam {0} tahun"
+        :past: 
+          :other: "{0} tahun yang lalu"
+    :zone: 
+      :display_name: "Zona Waktu"

@@ -23,26 +23,26 @@ describe LocalizedObject do
     let(:base_object) { 'base-object' }
     let(:locale) { :fr }
     let(:localized_object) { LocalizedClass.new(base_object, locale) }
-    let(:options) { { :foobar => 'value' } }
+    let(:options) { { foobar: 'value' } }
 
     it 'sets base object' do
-      localized_object.base_obj.should == base_object
+      expect(localized_object.base_obj).to eq(base_object)
     end
 
     it 'sets locale' do
-      localized_object.locale.should == locale
+      expect(localized_object.locale).to eq(locale)
     end
 
     it 'converts locale' do
-      LocalizedClass.new(base_object, :msa).locale.should == :ms
+      expect(LocalizedClass.new(base_object, :msa).locale).to eq(:ms)
     end
 
     it 'falls back to default locale if unsupported locale is passed' do
-      LocalizedClass.new(base_object, :foobar).locale.should == TwitterCldr::DEFAULT_LOCALE
+      expect(LocalizedClass.new(base_object, :foobar).locale).to eq(TwitterCldr::DEFAULT_LOCALE)
     end
 
     it "doesn't change original options hash" do
-      lambda { LocalizedClass.new(base_object, locale, options) }.should_not change { options }
+      expect { LocalizedClass.new(base_object, locale, options) }.not_to change { options }
     end
   end
 
@@ -50,15 +50,15 @@ describe LocalizedObject do
     it 'defines #localize method on a class' do
       some_class = Class.new
 
-      some_class.new.should_not respond_to(:localize)
+      expect(some_class.new).not_to respond_to(:localize)
       LocalizedClass.localize(some_class)
-      some_class.new.should respond_to(:localize)
+      expect(some_class.new).to respond_to(:localize)
     end
   end
 
   describe '#localize' do
     let(:locale)  { :ru }
-    let(:options) { { :option => 'value' } }
+    let(:options) { { option: 'value' } }
 
     let(:localizable_object) do
       some_class = Class.new
@@ -67,7 +67,7 @@ describe LocalizedObject do
     end
 
     it 'returns localized object' do
-      localizable_object.localize.should be_a(LocalizedClass)
+      expect(localizable_object.localize).to be_a(LocalizedClass)
     end
 
     it 'accepts locale and options and pass them to the localized class constructor' do

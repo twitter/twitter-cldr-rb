@@ -20,7 +20,7 @@ describe 'Unicode Collation Algorithm' do
     run_test(SHORT_COLLATION_TEST_PATH)
   end
 
-  it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE.txt', :slow => true do
+  it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE.txt', slow: true do
     prepare_full_test
     run_test(FULL_COLLATION_TEST_PATH)
   end
@@ -41,7 +41,7 @@ describe 'Unicode Collation Algorithm' do
 
         if previous_sort_key
           result = (previous_sort_key <=> current_sort_key).nonzero? || (previous_code_points <=> current_code_points)
-          result.should(eq(-1), error_message(previous_str_code_points, previous_sort_key, current_str_code_points, current_sort_key))
+          expect(result).to(eq(-1), error_message(previous_str_code_points, previous_sort_key, current_str_code_points, current_sort_key))
         end
 
         previous_sort_key        = current_sort_key

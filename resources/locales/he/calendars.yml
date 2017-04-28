@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: ccc
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E ה-d"
@@ -12,58 +13,63 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d בMMM y G"
         :GyMMMd: "d בMMM y G"
-        :H: "HH"
-        :Hm: "HH:mm"
-        :Hms: "HH:mm:ss"
-        :M: "L"
-        :MEd: "E, d/M"
-        :MMM: "LLL"
+        :H: H
+        :Hm: "H:mm"
+        :Hms: "H:mm:ss"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
+        :M: L
+        :MEd: "E, d.M"
+        :MMM: LLL
         :MMMEd: "E, d בMMM"
+        :MMMMd: "d בMMMM"
         :MMMd: "d בMMM"
-        :Md: "d/M"
-        :d: "d"
+        :Md: d.M
+        :d: d
         :h: "‏h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "M.y"
-        :yMEd: "E, d/M/y"
-        :yMM: "MM/y"
+        :yM: M.y
+        :yMEd: "E, d.M.y"
+        :yMM: M.y
         :yMMM: "MMM y"
         :yMMMEd: "E, d בMMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d בMMM y"
-        :yMd: "d.M.y"
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yMd: d.M.y
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
             :fri: "יום ו׳"
             :mon: "יום ב׳"
-            :sat: "שבת"
+            :sat: שבת
             :sun: "יום א׳"
             :thu: "יום ה׳"
             :tue: "יום ג׳"
             :wed: "יום ד׳"
           :narrow: 
-            :fri: "ו׳"
-            :mon: "ב׳"
-            :sat: "ש׳"
-            :sun: "א׳"
-            :thu: "ה׳"
-            :tue: "ג׳"
-            :wed: "ד׳"
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :short: 
-            :fri: "ו׳"
-            :mon: "ב׳"
-            :sat: "ש׳"
-            :sun: "א׳"
-            :thu: "ה׳"
-            :tue: "ג׳"
-            :wed: "ד׳"
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :wide: 
             :fri: "יום שישי"
             :mon: "יום שני"
@@ -73,23 +79,30 @@
             :tue: "יום שלישי"
             :wed: "יום רביעי"
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.days.format.abbreviated
+          :abbreviated: 
+            :fri: "יום ו׳"
+            :mon: "יום ב׳"
+            :sat: שבת
+            :sun: "יום א׳"
+            :thu: "יום ה׳"
+            :tue: "יום ג׳"
+            :wed: "יום ד׳"
           :narrow: 
-            :fri: "ו׳"
-            :mon: "ב׳"
-            :sat: "ש׳"
-            :sun: "א׳"
-            :thu: "ה׳"
-            :tue: "ג׳"
-            :wed: "ד׳"
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :short: 
-            :fri: "ו׳"
-            :mon: "ב׳"
-            :sat: "ש׳"
-            :sun: "א׳"
-            :thu: "ה׳"
-            :tue: "ג׳"
-            :wed: "ד׳"
+            :fri: ו׳
+            :mon: ב׳
+            :sat: ש׳
+            :sun: א׳
+            :thu: ה׳
+            :tue: ג׳
+            :wed: ד׳
           :wide: 
             :fri: "יום שישי"
             :mon: "יום שני"
@@ -100,26 +113,42 @@
             :wed: "יום רביעי"
       :eras: 
         :abbr: 
-          0: "BCE"
-          1: "CE"
+          0: BCE
+          1: CE
         :name: 
-          0: "לפני הספירה"
-          1: "לספירה"
+          0: לפנה״ס
+          1: לספירה
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
-        :day: "יום"
-        :dayperiod: "לפנה״צ/אחה״צ"
-        :era: "תקופה"
-        :hour: "שעה"
-        :minute: "דקה"
-        :month: "חודש"
-        :second: "שנייה"
-        :week: "שבוע"
+        :day: יום
+        :day-narrow: יום
+        :day-short: יום
+        :dayperiod: לפנה״צ/אחה״צ
+        :era: תקופה
+        :hour: שעה
+        :hour-narrow: שע׳
+        :hour-short: שעה
+        :minute: דקה
+        :minute-narrow: דק׳
+        :minute-short: דק׳
+        :month: חודש
+        :month-narrow: חו׳
+        :month-short: חו׳
+        :quarter: רבעון
+        :quarter-narrow: רבע׳
+        :quarter-short: רבע׳
+        :second: שנייה
+        :second-narrow: שנ׳
+        :second-short: שנ׳
+        :week: שבוע
+        :week-narrow: שב׳
+        :week-short: שב׳
         :weekday: "יום בשבוע"
-        :year: "שנה"
-        :zone: "אזור"
+        :year: שנה
+        :year-narrow: שנ׳
+        :year-short: שנ׳
+        :zone: אזור
       :formats: 
         :date: 
           :full: 
@@ -129,7 +158,7 @@
           :medium: 
             :pattern: "d בMMM y"
           :short: 
-            :pattern: "dd/MM/yy"
+            :pattern: d.M.y
         :datetime: 
           :full: 
             :pattern: "{{date}} בשעה {{time}}"
@@ -141,109 +170,125 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "H:mm:ss zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "H:mm:ss z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "H:mm:ss"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "H:mm"
       :months: 
         :format: 
           :abbreviated: 
-            1: "ינו"
-            10: "אוק"
-            11: "נוב"
-            12: "דצמ"
-            2: "פבר"
-            3: "מרץ"
-            4: "אפר"
-            5: "מאי"
-            6: "יונ"
-            7: "יול"
-            8: "אוג"
-            9: "ספט"
+            1: ינו׳
+            10: אוק׳
+            11: נוב׳
+            12: דצמ׳
+            2: פבר׳
+            3: מרץ
+            4: אפר׳
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוג׳
+            9: ספט׳
           :narrow: 
-            1: 1
-            10: 10
-            11: 11
-            12: 12
-            2: 2
-            3: 3
-            4: 4
-            5: 5
-            6: 6
-            7: 7
-            8: 8
-            9: 9
+            1: "1"
+            10: "10"
+            11: "11"
+            12: "12"
+            2: "2"
+            3: "3"
+            4: "4"
+            5: "5"
+            6: "6"
+            7: "7"
+            8: "8"
+            9: "9"
           :wide: 
-            1: "ינואר"
-            10: "אוקטובר"
-            11: "נובמבר"
-            12: "דצמבר"
-            2: "פברואר"
-            3: "מרץ"
-            4: "אפריל"
-            5: "מאי"
-            6: "יוני"
-            7: "יולי"
-            8: "אוגוסט"
-            9: "ספטמבר"
+            1: ינואר
+            10: אוקטובר
+            11: נובמבר
+            12: דצמבר
+            2: פברואר
+            3: מרץ
+            4: אפריל
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוגוסט
+            9: ספטמבר
         :stand-alone: 
           :abbreviated: 
-            1: "ינו׳"
-            10: "אוק׳"
-            11: "נוב׳"
-            12: "דצמ׳"
-            2: "פבר׳"
-            3: "מרץ"
-            4: "אפר׳"
-            5: "מאי"
-            6: "יונ׳"
-            7: "יול׳"
-            8: "אוג׳"
-            9: "ספט׳"
+            1: ינו׳
+            10: אוק׳
+            11: נוב׳
+            12: דצמ׳
+            2: פבר׳
+            3: מרץ
+            4: אפר׳
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוג׳
+            9: ספט׳
           :narrow: 
-            1: 1
-            10: 10
-            11: 11
-            12: 12
-            2: 2
-            3: 3
-            4: 4
-            5: 5
-            6: 6
-            7: 7
-            8: 8
-            9: 9
+            1: "1"
+            10: "10"
+            11: "11"
+            12: "12"
+            2: "2"
+            3: "3"
+            4: "4"
+            5: "5"
+            6: "6"
+            7: "7"
+            8: "8"
+            9: "9"
           :wide: 
-            1: "ינואר"
-            10: "אוקטובר"
-            11: "נובמבר"
-            12: "דצמבר"
-            2: "פברואר"
-            3: "מרץ"
-            4: "אפריל"
-            5: "מאי"
-            6: "יוני"
-            7: "יולי"
-            8: "אוגוסט"
-            9: "ספטמבר"
+            1: ינואר
+            10: אוקטובר
+            11: נובמבר
+            12: דצמבר
+            2: פברואר
+            3: מרץ
+            4: אפריל
+            5: מאי
+            6: יוני
+            7: יולי
+            8: אוגוסט
+            9: ספטמבר
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
+          :abbreviated: 
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :am: לפנה״צ
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
+            :pm: אחה״צ
+          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
           :wide: 
-            :am: "לפנה״צ"
-            :noon: "noon"
-            :pm: "אחה״צ"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
-        :stand-alone: {}
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :am: לפנה״צ
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
+            :pm: אחה״צ
+        :stand-alone: 
+          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
+          :wide: 
+            :afternoon1: צהריים
+            :afternoon2: "אחר הצהריים"
+            :evening1: ערב
+            :midnight: חצות
+            :morning1: בוקר
+            :night1: לילה
       :quarters: 
         :format: 
           :abbreviated: 
@@ -252,10 +297,10 @@
             3: "רבעון 3"
             4: "רבעון 4"
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "רבעון 1"
             2: "רבעון 2"
@@ -268,10 +313,10 @@
             3: "רבעון 3"
             4: "רבעון 4"
           :narrow: 
-            1: "ר1"
-            2: "ר2"
-            3: "ר3"
-            4: "ר4"
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "רבעון 1"
             2: "רבעון 2"

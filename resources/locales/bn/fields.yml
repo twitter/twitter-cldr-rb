@@ -1,0 +1,388 @@
+--- 
+:bn: 
+  :fields: 
+    :day: 
+      :display_name: দিন
+      :relative: 
+        -1: গতকাল
+        -2: "গত পরশু"
+        0: আজ
+        1: আগামীকাল
+        2: "আগামী পরশু"
+      :relative_time: 
+        :future: 
+          :one: "{0} দিনের মধ্যে"
+          :other: "{0} দিনের মধ্যে"
+        :past: 
+          :one: "{0} দিন পূর্বে"
+          :other: "{0} দিন পূর্বে"
+    :day-narrow: 
+      :display_name: দিন
+      :relative: 
+        -1: গতকাল
+        -2: "গত পরশু"
+        0: আজ
+        1: আগামীকাল
+        2: "আগামী পরশু"
+      :relative_time: 
+        :future: 
+          :one: "{0} দিনের মধ্যে"
+          :other: "{0} দিনের মধ্যে"
+        :past: 
+          :one: "{0} দিন পূর্বে"
+          :other: "{0} দিন পূর্বে"
+    :day-short: 
+      :display_name: দিন
+      :relative: 
+        -1: গতকাল
+        -2: "গত পরশু"
+        0: আজ
+        1: আগামীকাল
+        2: "আগামী পরশু"
+      :relative_time: 
+        :future: 
+          :one: "{0} দিনের মধ্যে"
+          :other: "{0} দিনের মধ্যে"
+        :past: 
+          :one: "{0} দিন পূর্বে"
+          :other: "{0} দিন পূর্বে"
+    :dayperiod: 
+      :display_name: AM/PM
+    :era: 
+      :display_name: যুগ
+    :fri: 
+      :relative: 
+        -1: "গত শুক্রবার"
+        0: "এই শুক্রবার"
+        1: "পরের শুক্রবার"
+    :fri-narrow: 
+      :relative: 
+        -1: "গত শুক্রবার"
+        0: "এই শুক্রবার"
+        1: "পরের শুক্রবার"
+    :fri-short: 
+      :relative: 
+        -1: "গত শুক্রবার"
+        0: "এই শুক্রবার"
+        1: "পরের শুক্রবার"
+    :hour: 
+      :display_name: ঘন্টা
+      :relative_time: 
+        :future: 
+          :one: "{0} ঘন্টায়"
+          :other: "{0} ঘন্টায়"
+        :past: 
+          :one: "{0} ঘন্টা আগে"
+          :other: "{0} ঘন্টা আগে"
+    :hour-narrow: 
+      :display_name: ঘন্টা
+      :relative_time: 
+        :future: 
+          :one: "{0} ঘন্টায়"
+          :other: "{0} ঘন্টায়"
+        :past: 
+          :one: "{0} ঘন্টা আগে"
+          :other: "{0} ঘন্টা আগে"
+    :hour-short: 
+      :display_name: ঘন্টা
+      :relative_time: 
+        :future: 
+          :one: "{0} ঘন্টায়"
+          :other: "{0} ঘন্টায়"
+        :past: 
+          :one: "{0} ঘন্টা আগে"
+          :other: "{0} ঘন্টা আগে"
+    :minute: 
+      :display_name: মিনিট
+      :relative_time: 
+        :future: 
+          :one: "{0} মিনিটে"
+          :other: "{0} মিনিটে"
+        :past: 
+          :one: "{0} মিনিট পূর্বে"
+          :other: "{0} মিনিট পূর্বে"
+    :minute-narrow: 
+      :display_name: মিনিট
+      :relative_time: 
+        :future: 
+          :one: "{0} মিনিটে"
+          :other: "{0} মিনিটে"
+        :past: 
+          :one: "{0} মিনিট পূর্বে"
+          :other: "{0} মিনিট পূর্বে"
+    :minute-short: 
+      :display_name: মিনিট
+      :relative_time: 
+        :future: 
+          :one: "{0} মিনিটে"
+          :other: "{0} মিনিটে"
+        :past: 
+          :one: "{0} মিনিট পূর্বে"
+          :other: "{0} মিনিট পূর্বে"
+    :mon: 
+      :relative: 
+        -1: "গত সোমবার"
+        0: "এই সোমবার"
+        1: "পরের সোমবার"
+    :mon-narrow: 
+      :relative: 
+        -1: "গত সোমবার"
+        0: "এই সোমবার"
+        1: "পরের সোমবার"
+    :mon-short: 
+      :relative: 
+        -1: "গত সোমবার"
+        0: "এই সোমবার"
+        1: "পরের সোমবার"
+    :month: 
+      :display_name: মাস
+      :relative: 
+        -1: "গত মাস"
+        0: "এই মাস"
+        1: "পরের মাস"
+      :relative_time: 
+        :future: 
+          :one: "{0} মাসে"
+          :other: "{0} মাসে"
+        :past: 
+          :one: "{0} মাস পূর্বে"
+          :other: "{0} মাস পূর্বে"
+    :month-narrow: 
+      :display_name: মাস
+      :relative: 
+        -1: "গত মাস"
+        0: "এই মাস"
+        1: "পরের মাস"
+      :relative_time: 
+        :future: 
+          :one: "{0} মাসে"
+          :other: "{0} মাসে"
+        :past: 
+          :one: "{0} মাস পূর্বে"
+          :other: "{0} মাস পূর্বে"
+    :month-short: 
+      :display_name: মাস
+      :relative: 
+        -1: "গত মাস"
+        0: "এই মাস"
+        1: "পরের মাস"
+      :relative_time: 
+        :future: 
+          :one: "{0} মাসে"
+          :other: "{0} মাসে"
+        :past: 
+          :one: "{0} মাস পূর্বে"
+          :other: "{0} মাস পূর্বে"
+    :quarter: 
+      :display_name: ত্রৈমাসিক
+      :relative_time: 
+        :future: 
+          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+        :past: 
+          :one: "{0} ত্রৈমাসিকের আগে"
+          :other: "{0} ত্রৈমাসিকের আগে"
+    :quarter-narrow: 
+      :display_name: ত্রৈমাসিক
+      :relative_time: 
+        :future: 
+          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+        :past: 
+          :one: "{0} ত্রৈমাসিকের আগে"
+          :other: "{0} ত্রৈমাসিকের আগে"
+    :quarter-short: 
+      :display_name: ত্রৈমাসিক
+      :relative_time: 
+        :future: 
+          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+        :past: 
+          :one: "{0} ত্রৈমাসিকের আগে"
+          :other: "{0} ত্রৈমাসিকের আগে"
+    :sat: 
+      :relative: 
+        -1: "গত শনিবার"
+        0: "এই শনিবার"
+        1: "পরের শনিবার"
+    :sat-narrow: 
+      :relative: 
+        -1: "গত শনিবার"
+        0: "এই শনিবার"
+        1: "পরের শনিবার"
+    :sat-short: 
+      :relative: 
+        -1: "গত শনিবার"
+        0: "এই শনিবার"
+        1: "পরের শনিবার"
+    :second: 
+      :display_name: সেকেন্ড
+      :relative: 
+        0: এখন
+      :relative_time: 
+        :future: 
+          :one: "{0} সেকেন্ডে"
+          :other: "{0} সেকেন্ডে"
+        :past: 
+          :one: "{0} সেকেন্ড পূর্বে"
+          :other: "{0} সেকেন্ড পূর্বে"
+    :second-narrow: 
+      :display_name: সেকেন্ড
+      :relative_time: 
+        :future: 
+          :one: "{0} সেকেন্ডে"
+          :other: "{0} সেকেন্ডে"
+        :past: 
+          :one: "{0} সেকেন্ড পূর্বে"
+          :other: "{0} সেকেন্ড পূর্বে"
+    :second-short: 
+      :display_name: সেকেন্ড
+      :relative_time: 
+        :future: 
+          :one: "{0} সেকেন্ডে"
+          :other: "{0} সেকেন্ডে"
+        :past: 
+          :one: "{0} সেকেন্ড পূর্বে"
+          :other: "{0} সেকেন্ড পূর্বে"
+    :sun: 
+      :relative: 
+        -1: "গত রবিবার"
+        0: "এই রবিবার"
+        1: "পরের রবিবার"
+    :sun-narrow: 
+      :relative: 
+        -1: "গত রবিবার"
+        0: "এই রবিবার"
+        1: "পরের রবিবার"
+    :sun-short: 
+      :relative: 
+        -1: "গত রবিবার"
+        0: "এই রবিবার"
+        1: "পরের রবিবার"
+    :thu: 
+      :relative: 
+        -1: "গত বৃহস্পতিবার"
+        0: "এই বৃহস্পতিবার"
+        1: "পরের বৃহস্পতিবার"
+    :thu-narrow: 
+      :relative: 
+        -1: "গত বৃহস্পতিবার"
+        0: "এই বৃহস্পতিবার"
+        1: "পরের বৃহস্পতিবার"
+    :thu-short: 
+      :relative: 
+        -1: "গত বৃহস্পতিবার"
+        0: "এই বৃহস্পতিবার"
+        1: "পরের বৃহস্পতিবার"
+    :tue: 
+      :relative: 
+        -1: "গত মঙ্গলবার"
+        0: "এই মঙ্গলবার"
+        1: "পরের মঙ্গলবার"
+    :tue-narrow: 
+      :relative: 
+        -1: "গত মঙ্গলবার"
+        0: "এই মঙ্গলবার"
+        1: "পরের মঙ্গলবার"
+    :tue-short: 
+      :relative: 
+        -1: "গত মঙ্গলবার"
+        0: "এই মঙ্গলবার"
+        1: "পরের মঙ্গলবার"
+    :wed: 
+      :relative: 
+        -1: "গত বুধবার"
+        0: "এই বুধবার"
+        1: "পরের বুধবার"
+    :wed-narrow: 
+      :relative: 
+        -1: "গত বুধবার"
+        0: "এই বুধবার"
+        1: "পরের বুধবার"
+    :wed-short: 
+      :relative: 
+        -1: "গত বুধবার"
+        0: "এই বুধবার"
+        1: "পরের বুধবার"
+    :week: 
+      :display_name: সপ্তাহ
+      :relative: 
+        -1: "গত সপ্তাহ"
+        0: "এই সপ্তাহ"
+        1: "পরের সপ্তাহ"
+      :relative_time: 
+        :future: 
+          :one: "{0} সপ্তাহে"
+          :other: "{0} সপ্তাহে"
+        :past: 
+          :one: "{0} সপ্তাহ পূর্বে"
+          :other: "{0} সপ্তাহ পূর্বে"
+    :week-narrow: 
+      :display_name: সপ্তাহ
+      :relative: 
+        -1: "গত সপ্তাহ"
+        0: "এই সপ্তাহ"
+        1: "পরের সপ্তাহ"
+      :relative_time: 
+        :future: 
+          :one: "{0} সপ্তাহে"
+          :other: "{0} সপ্তাহে"
+        :past: 
+          :one: "{0} সপ্তাহ পূর্বে"
+          :other: "{0} সপ্তাহ পূর্বে"
+    :week-short: 
+      :display_name: সপ্তাহ
+      :relative: 
+        -1: "গত সপ্তাহ"
+        0: "এই সপ্তাহ"
+        1: "পরের সপ্তাহ"
+      :relative_time: 
+        :future: 
+          :one: "{0} সপ্তাহে"
+          :other: "{0} সপ্তাহে"
+        :past: 
+          :one: "{0} সপ্তাহ পূর্বে"
+          :other: "{0} সপ্তাহ পূর্বে"
+    :weekday: 
+      :display_name: "সপ্তাহের দিন"
+    :year: 
+      :display_name: বছর
+      :relative: 
+        -1: "গত বছর"
+        0: "এই বছর"
+        1: "পরের বছর"
+      :relative_time: 
+        :future: 
+          :one: "{0} বছরে"
+          :other: "{0} বছরে"
+        :past: 
+          :one: "{0} বছর পূর্বে"
+          :other: "{0} বছর পূর্বে"
+    :year-narrow: 
+      :display_name: বছর
+      :relative: 
+        -1: "গত বছর"
+        0: "এই বছর"
+        1: "পরের বছর"
+      :relative_time: 
+        :future: 
+          :one: "{0} বছরে"
+          :other: "{0} বছরে"
+        :past: 
+          :one: "{0} বছর পূর্বে"
+          :other: "{0} বছর পূর্বে"
+    :year-short: 
+      :display_name: বছর
+      :relative: 
+        -1: "গত বছর"
+        0: "এই বছর"
+        1: "পরের বছর"
+      :relative_time: 
+        :future: 
+          :one: "{0} বছরে"
+          :other: "{0} বছরে"
+        :past: 
+          :one: "{0} বছর পূর্বে"
+          :other: "{0} বছর পূর্বে"
+    :zone: 
+      :display_name: এলাকা

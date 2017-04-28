@@ -17,7 +17,7 @@ module TwitterCldr
 
       class << self
         def types
-          TwitterCldr::DataReaders::NumberDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::NumberDataReader.types
         end
       end
 
@@ -28,13 +28,10 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        data_reader = TwitterCldr::DataReaders::NumberDataReader.new(locale, {
-          :type => @type,
-          :format => @format
-        })
-
-        tokens = data_reader.tokenizer.tokenize(data_reader.pattern(base_obj))
-        data_reader.formatter.format(tokens, base_obj, options.merge(:type => @type))
+        TwitterCldr::DataReaders::NumberDataReader.new(locale, {
+          type: @type,
+          format: @format
+        }).format_number(base_obj, options.merge(type: @type))
       end
 
       def plural_rule
@@ -49,8 +46,8 @@ module TwitterCldr
 
       def to_rbnf_s(group_name, rule_set_name)
         rbnf.format(base_obj, {
-          :rule_group => group_name,
-          :rule_set => rule_set_name
+          rule_group: group_name,
+          rule_set: rule_set_name
         })
       end
 
@@ -58,12 +55,16 @@ module TwitterCldr
         @rbnf ||= TwitterCldr::Formatters::Rbnf::RbnfFormatter.new(locale)
       end
 
-      protected
+      def to_unit
+        TwitterCldr::Shared::Unit.create(base_obj, locale)
+      end
+
+      private
 
       def to_type(target_type)
         self.class.new(base_obj, locale, {
-          :type => target_type,
-          :format => @format
+          type: target_type,
+          format: @format
         })
       end
 

@@ -1,0 +1,17 @@
+--- 
+:transforms: 
+  - 
+    :direction: both
+    :rules: 
+      - ":: [[㆒-㆟㈠-㉇㊀-㊰㋀-㋋㍘-㍰㍻-㍿㏠-㏾ 🈐-🈒🈔-🈺🉀-🉈🉐🉑][:ideographic:][:sc=han:]] nfkc;"
+      - ":: fullwidth-halfwidth;"
+      - "｡ > '.';"
+      - "$terminalPunct = [\\.\\,\\:\\;\\?\\!．，：？！｡、；[:Pe:][:Pf:]];"
+      - "$initialPunct = [:Ps:][:Pi:];"
+      - "[[:Ideographic:] $terminalPunct] {} [:Letter:] > ' ' ;"
+      - "[:Letter:] [:Mark:]* {} [[:Ideographic:] $initialPunct] > ' ' ;"
+      - "< [:Ideographic:] { ' ' } [:Letter:] ;"
+      - "< [:Letter:] [:Mark:]* { ' ' } [:Ideographic:] ;"
+    :source: Han
+    :target: Spacedhan
+    :variant: ~

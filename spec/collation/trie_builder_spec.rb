@@ -15,12 +15,12 @@ describe TrieBuilder do
     before(:each) { mock_default_table }
 
     it 'returns a Trie' do
-      trie.should be_instance_of(Trie)
+      expect(trie).to be_instance_of(TwitterCldr::Utils::Trie)
     end
 
     it 'adds every collation element from the fractional collation elements table to the trie' do
       collation_elements_table.each do |code_points, collation_elements|
-        trie.get(code_points).should == collation_elements
+        expect(trie.get(code_points)).to eq(collation_elements)
       end
     end
 
@@ -124,34 +124,34 @@ END
     end
 
     it 'returns a TrieWithFallback' do
-      tailored_trie.should be_instance_of(TrieWithFallback)
+      expect(tailored_trie).to be_instance_of(TrieWithFallback)
     end
 
     it 'tailors elements in the trie' do
-      fallback.get([0x0491]).should == [[0x5C1A, 5, 9], [0, 0xDBB9, 9]]
-      fallback.get([0x0490]).should == [[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]]
+      expect(fallback.get([0x0491])).to eq([[0x5C1A, 5, 9], [0, 0xDBB9, 9]])
+      expect(fallback.get([0x0490])).to eq([[0x5C1A, 5, 0x93], [0, 0xDBB9, 9]])
 
-      tailored_trie.get([0x0491]).should == [[0x5C1B, 5, 5]]
-      tailored_trie.get([0x0490]).should == [[0x5C1B, 5, 0x86]]
+      expect(tailored_trie.get([0x0491])).to eq([[0x5C1B, 5, 5]])
+      expect(tailored_trie.get([0x0490])).to eq([[0x5C1B, 5, 0x86]])
     end
 
     it 'makes contractions available in the tailored trie' do
-      tailored_trie.get([0x491, 0x306]).should == [[0x5C, 0xDB, 9]]
-      tailored_trie.get([0x415, 0x306]).should == [[0x5C36, 5, 0x8F]]
+      expect(tailored_trie.get([0x491, 0x306])).to eq([[0x5C, 0xDB, 9]])
+      expect(tailored_trie.get([0x415, 0x306])).to eq([[0x5C36, 5, 0x8F]])
     end
 
     it 'suppresses required contractions' do
-      fallback.find_prefix([0x41A, 0x301]).first(2).should == [[[0x5CCC, 5, 0x8F]], 2]
-      fallback.find_prefix([0x413, 0x301]).first(2).should == [[[0x5C30, 5, 0x8F]], 2]
+      expect(fallback.find_prefix([0x41A, 0x301]).first(2)).to eq([[[0x5CCC, 5, 0x8F]], 2])
+      expect(fallback.find_prefix([0x413, 0x301]).first(2)).to eq([[[0x5C30, 5, 0x8F]], 2])
 
-      tailored_trie.find_prefix([0x41A, 0x301]).first(2).should == [[[0x5C6C, 5, 0x8F]], 1]
-      tailored_trie.find_prefix([0x413, 0x301]).first(2).should == [[[0x5C1A, 5, 0x8F]], 1]
+      expect(tailored_trie.find_prefix([0x41A, 0x301]).first(2)).to eq([[[0x5C6C, 5, 0x8F]], 1])
+      expect(tailored_trie.find_prefix([0x413, 0x301]).first(2)).to eq([[[0x5C1A, 5, 0x8F]], 1])
     end
 
     it 'do not copy other collation elements from the fallback' do
       [0x301, 0x306, 0x41A, 0x413, 0x415].each_slice(1) do |code_points|
-        tailored_trie.get(code_points).should_not be_nil
-        tailored_trie.get(code_points).object_id.should == fallback.get(code_points).object_id
+        expect(tailored_trie.get(code_points)).not_to be_nil
+        expect(tailored_trie.get(code_points).object_id).to eq(fallback.get(code_points).object_id)
       end
     end
 
@@ -187,7 +187,7 @@ END
 
     it 'loads tailoring data' do
       mock(TwitterCldr).get_resource(:collation, :tailoring, locale) { tailoring_data }
-      TrieBuilder.tailoring_data(locale).should == tailoring_data
+      expect(TrieBuilder.tailoring_data(locale)).to eq(tailoring_data)
     end
   end
 

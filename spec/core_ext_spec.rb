@@ -6,12 +6,18 @@
 require 'spec_helper'
 
 describe 'Core classes localization' do
+  core_classes = [Array, DateTime, Float, String, Symbol, Time]
 
-  [Array, Bignum, DateTime, Fixnum, Float, String, Symbol, Time].each do |klass|
+  if RUBY_VERSION >= '2.4.0'
+    core_classes.push Integer
+  else
+    core_classes.push Bignum, Fixnum
+  end
+
+  core_classes.each do |klass|
     describe klass do
       it 'has public instance method #localize' do
-        # convert methods names to symbols (they're strings in 1.8)
-        klass.public_instance_methods.map(&:to_sym).should include(:localize)
+        expect(klass.public_instance_methods).to include(:localize)
       end
     end
   end

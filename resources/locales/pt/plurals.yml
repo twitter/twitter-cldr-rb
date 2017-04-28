@@ -1,5 +1,14 @@
 ---
-:pt: ! '{ :''pt'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| ((n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length
-  : 0) == 0) || (n.to_i == 0 && ((t = n.to_s.split(".")[1] || []).count > 1 ? t.last.gsub(/0+$/,
-  "").to_i : 0) == 1)) ? :one : :other } } } } }'
+:pt:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((((n).floor ==
+      (n)) && ((n) >= 0) && ((n) <= 2))) && (n != 2)) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

@@ -7,22 +7,33 @@ require 'erb'
 
 module TwitterCldr
   module Resources
-    class CasefolderClassGenerator
+    class CasefolderClassGenerator < Importer
 
-      attr_reader :template_file, :output_dir
+      requirement :dependency, [UnicodeDataImporter]
+      output_path File.join(TwitterCldr::LIB_DIR, 'twitter_cldr', 'shared')
+      parameter :template_file, File.join(TwitterCldr::LIB_DIR, 'twitter_cldr', 'resources', 'casefolder.rb.erb')
+      ruby_engine :mri
 
-      def initialize(template_file, output_dir)
-        @template_file = template_file
-        @output_dir = output_dir
-      end
+      private
 
-      def generate
-        output_file = File.basename(template_file).chomp(".erb")
-        File.open(File.join(output_dir, output_file), "w+") do |f|
+      def execute
+        File.open(output_path, 'w+') do |f|
           f.write(
             ERB.new(File.read(template_file)).result(binding)
           )
         end
+      end
+
+      def template_file
+        params.fetch(:template_file)
+      end
+
+      def output_path
+        File.join(params.fetch(:output_path), output_file)
+      end
+
+      def output_file
+        File.basename(template_file).chomp('.erb')
       end
 
       def casefolding_char_class_for(status)
@@ -48,8 +59,6 @@ module TwitterCldr
         str << "\n#{"  " * (indent - 1)}}"
       end
 
-      private
-
       def to_regex_char_sequence(casefold_data)
         casefold_data.map { |(source, _)| to_utf8(source) }.join("|")
       end
@@ -67,7 +76,7 @@ module TwitterCldr
       end
 
       def resource
-        @@resource ||= TwitterCldr.get_resource("unicode_data", "casefolding")
+        @resource ||= TwitterCldr.get_resource('unicode_data', 'casefolding')
       end
 
     end

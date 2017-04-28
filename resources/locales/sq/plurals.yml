@@ -1,3 +1,17 @@
 ---
-:sq: ! '{ :''sq'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| n.to_f.abs == 1 ? :one : :other } } } } }'
+:sq:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
+      :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((n % 10 == 4)
+      && (n % 100 != 14)) ? :many : (n == 1 ? :one : :other)) }'
+    :names:
+    - :many
+    - :one
+    - :other

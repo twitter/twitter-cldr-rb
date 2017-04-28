@@ -3,14 +3,11 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-# $KCODE = 'UTF-8' unless RUBY_VERSION >= '1.9.0'
-
 require 'yaml'
 require 'date'
 require 'time'
 require 'fileutils'
 
-# gems
 require 'forwardable'
 
 require 'twitter_cldr/version'
@@ -19,33 +16,37 @@ Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
 
 module TwitterCldr
 
-  autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Collation,     'twitter_cldr/collation'
+  autoload :DataReaders,   'twitter_cldr/data_readers'
+  autoload :Formatters,    'twitter_cldr/formatters'
   autoload :Localized,     'twitter_cldr/localized'
   autoload :Normalization, 'twitter_cldr/normalization'
   autoload :Parsers,       'twitter_cldr/parsers'
   autoload :Resources,     'twitter_cldr/resources'
+  autoload :Segmentation,  'twitter_cldr/segmentation'
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
-  autoload :DataReaders,   'twitter_cldr/data_readers'
   autoload :Utils,         'twitter_cldr/utils'
+  autoload :Transforms,    'twitter_cldr/transforms'
+  autoload :Versions,      'twitter_cldr/versions'
 
   extend SingleForwardable
-
-  # version of CLDR that was used for generating YAML files in the resources/ directory
-  CLDR_VERSION = '21.0' # release date: 2012-02-10
 
   DEFAULT_LOCALE = :en
   DEFAULT_CALENDAR_TYPE = :gregorian
 
   RESOURCES_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'resources')
+  VENDOR_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'vendor')
+  LIB_DIR = File.dirname(File.expand_path(__FILE__))
+  SPEC_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'spec')
 
+  # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
-      :msa     => :ms,
-      :'zh-cn' => :zh,
-      :'zh-tw' => :'zh-Hant',
-      :no      => :nb
+    :msa     => :ms,
+    :'zh-cn' => :zh,
+    :'zh-tw' => :'zh-Hant',
+    :no      => :nb
   }
 
   # maps cldr locales to twitter locales
@@ -53,6 +54,8 @@ module TwitterCldr
 
   def_delegator :resources, :get_resource
   def_delegator :resources, :get_locale_resource
+  def_delegator :resources, :resource_exists?
+  def_delegator :resources, :absolute_resource_path
 
   class << self
 
@@ -64,6 +67,8 @@ module TwitterCldr
     end
 
     def locale
+      # doing all this work in locale getter rather than locale setter makes it possible to use locale fallbacks
+      # even if they were configured (or became available) after @locale was already assigned an unsupported locale
       locale = supported_locale?(@locale) ? @locale : find_fallback
       locale = DEFAULT_LOCALE if locale.to_s.empty?
       (supported_locale?(locale) ? locale : DEFAULT_LOCALE).to_sym
@@ -104,6 +109,7 @@ module TwitterCldr
 
     def convert_locale(locale)
       locale = locale.to_sym if locale.respond_to?(:to_sym)
+      locale = lowercase_locales_map.fetch(locale, locale)
       TWITTER_LOCALE_MAP.fetch(locale, locale)
     end
 
@@ -136,6 +142,14 @@ module TwitterCldr
         return result if result
       end
       nil
+    end
+
+    def lowercase_locales_map
+      @lowercase_locales_map ||= supported_locales.inject({}) do |memo, locale|
+        lowercase = locale.to_s.downcase.to_sym
+        memo[lowercase] = locale unless lowercase == locale
+        memo
+      end
     end
 
   end

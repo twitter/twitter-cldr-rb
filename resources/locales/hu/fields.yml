@@ -1,0 +1,400 @@
+--- 
+:hu: 
+  :fields: 
+    :day: 
+      :display_name: nap
+      :relative: 
+        -1: tegnap
+        -2: tegnapelőtt
+        0: ma
+        1: holnap
+        2: holnapután
+      :relative_time: 
+        :future: 
+          :one: "{0} nap múlva"
+          :other: "{0} nap múlva"
+        :past: 
+          :one: "{0} nappal ezelőtt"
+          :other: "{0} nappal ezelőtt"
+    :day-narrow: 
+      :display_name: nap
+      :relative: 
+        -1: tegnap
+        -2: tegnapelőtt
+        0: ma
+        1: holnap
+        2: holnapután
+      :relative_time: 
+        :future: 
+          :one: "{0} nap múlva"
+          :other: "{0} nap múlva"
+        :past: 
+          :one: "{0} napja"
+          :other: "{0} napja"
+    :day-short: 
+      :display_name: nap
+      :relative: 
+        -1: tegnap
+        -2: tegnapelőtt
+        0: ma
+        1: holnap
+        2: holnapután
+      :relative_time: 
+        :future: 
+          :one: "{0} nap múlva"
+          :other: "{0} nap múlva"
+        :past: 
+          :one: "{0} napja"
+          :other: "{0} napja"
+    :dayperiod: 
+      :display_name: napszak
+    :era: 
+      :display_name: éra
+    :fri: 
+      :relative: 
+        -1: "előző péntek"
+        0: "ez a péntek"
+        1: "következő péntek"
+    :fri-narrow: 
+      :relative: 
+        -1: "előző péntek"
+        0: "ez a péntek"
+        1: "következő péntek"
+    :fri-short: 
+      :relative: 
+        -1: "előző péntek"
+        0: "ez a péntek"
+        1: "következő péntek"
+    :hour: 
+      :display_name: óra
+      :relative_time: 
+        :future: 
+          :one: "{0} óra múlva"
+          :other: "{0} óra múlva"
+        :past: 
+          :one: "{0} órával ezelőtt"
+          :other: "{0} órával ezelőtt"
+    :hour-narrow: 
+      :display_name: óra
+      :relative_time: 
+        :future: 
+          :one: "{0} óra múlva"
+          :other: "{0} óra múlva"
+        :past: 
+          :one: "{0} órával ezelőtt"
+          :other: "{0} órával ezelőtt"
+    :hour-short: 
+      :display_name: óra
+      :relative_time: 
+        :future: 
+          :one: "{0} óra múlva"
+          :other: "{0} óra múlva"
+        :past: 
+          :one: "{0} órával ezelőtt"
+          :other: "{0} órával ezelőtt"
+    :minute: 
+      :display_name: perc
+      :relative_time: 
+        :future: 
+          :one: "{0} perc múlva"
+          :other: "{0} perc múlva"
+        :past: 
+          :one: "{0} perccel ezelőtt"
+          :other: "{0} perccel ezelőtt"
+    :minute-narrow: 
+      :display_name: perc
+      :relative_time: 
+        :future: 
+          :one: "{0} perc múlva"
+          :other: "{0} perc múlva"
+        :past: 
+          :one: "{0} perccel ezelőtt"
+          :other: "{0} perccel ezelőtt"
+    :minute-short: 
+      :display_name: perc
+      :relative_time: 
+        :future: 
+          :one: "{0} perc múlva"
+          :other: "{0} perc múlva"
+        :past: 
+          :one: "{0} perccel ezelőtt"
+          :other: "{0} perccel ezelőtt"
+    :mon: 
+      :relative: 
+        -1: "előző hétfő"
+        0: "ez a hétfő"
+        1: "következő hétfő"
+    :mon-narrow: 
+      :relative: 
+        -1: "előző hétfő"
+        0: "ez a hétfő"
+        1: "következő hétfő"
+    :mon-short: 
+      :relative: 
+        -1: "előző hétfő"
+        0: "ez a hétfő"
+        1: "következő hétfő"
+    :month: 
+      :display_name: hónap
+      :relative: 
+        -1: "előző hónap"
+        0: "ez a hónap"
+        1: "következő hónap"
+      :relative_time: 
+        :future: 
+          :one: "{0} hónap múlva"
+          :other: "{0} hónap múlva"
+        :past: 
+          :one: "{0} hónappal ezelőtt"
+          :other: "{0} hónappal ezelőtt"
+    :month-narrow: 
+      :display_name: hónap
+      :relative: 
+        -1: "előző hónap"
+        0: "ez a hónap"
+        1: "következő hónap"
+      :relative_time: 
+        :future: 
+          :one: "{0} hónap múlva"
+          :other: "{0} hónap múlva"
+        :past: 
+          :one: "{0} hónappal ezelőtt"
+          :other: "{0} hónappal ezelőtt"
+    :month-short: 
+      :display_name: hónap
+      :relative: 
+        -1: "előző hónap"
+        0: "ez a hónap"
+        1: "következő hónap"
+      :relative_time: 
+        :future: 
+          :one: "{0} hónap múlva"
+          :other: "{0} hónap múlva"
+        :past: 
+          :one: "{0} hónappal ezelőtt"
+          :other: "{0} hónappal ezelőtt"
+    :quarter: 
+      :display_name: negyedév
+      :relative: 
+        -1: "előző negyedév"
+        0: "ez a negyedév"
+        1: "következő negyedév"
+      :relative_time: 
+        :future: 
+          :one: "{0} negyedév múlva"
+          :other: "{0} negyedév múlva"
+        :past: 
+          :one: "{0} negyedévvel ezelőtt"
+          :other: "{0} negyedévvel ezelőtt"
+    :quarter-narrow: 
+      :display_name: negyedév
+      :relative: 
+        -1: "előző negyedév"
+        0: "ez a negyedév"
+        1: "következő negyedév"
+      :relative_time: 
+        :future: 
+          :one: "{0} negyedév múlva"
+          :other: "{0} negyedév múlva"
+        :past: 
+          :one: "{0} negyedévvel ezelőtt"
+          :other: "{0} negyedévvel ezelőtt"
+    :quarter-short: 
+      :display_name: negyedév
+      :relative: 
+        -1: "előző negyedév"
+        0: "ez a negyedév"
+        1: "következő negyedév"
+      :relative_time: 
+        :future: 
+          :one: "{0} negyedév múlva"
+          :other: "{0} negyedév múlva"
+        :past: 
+          :one: "{0} negyedévvel ezelőtt"
+          :other: "{0} negyedévvel ezelőtt"
+    :sat: 
+      :relative: 
+        -1: "előző szombat"
+        0: "ez a szombat"
+        1: "következő szombat"
+    :sat-narrow: 
+      :relative: 
+        -1: "előző szombat"
+        0: "ez a szombat"
+        1: "következő szombat"
+    :sat-short: 
+      :relative: 
+        -1: "előző szombat"
+        0: "ez a szombat"
+        1: "következő szombat"
+    :second: 
+      :display_name: másodperc
+      :relative: 
+        0: most
+      :relative_time: 
+        :future: 
+          :one: "{0} másodperc múlva"
+          :other: "{0} másodperc múlva"
+        :past: 
+          :one: "{0} másodperccel ezelőtt"
+          :other: "{0} másodperccel ezelőtt"
+    :second-narrow: 
+      :display_name: másodperc
+      :relative_time: 
+        :future: 
+          :one: "{0} másodperc múlva"
+          :other: "{0} másodperc múlva"
+        :past: 
+          :one: "{0} másodperccel ezelőtt"
+          :other: "{0} másodperccel ezelőtt"
+    :second-short: 
+      :display_name: másodperc
+      :relative_time: 
+        :future: 
+          :one: "{0} másodperc múlva"
+          :other: "{0} másodperc múlva"
+        :past: 
+          :one: "{0} másodperccel ezelőtt"
+          :other: "{0} másodperccel ezelőtt"
+    :sun: 
+      :relative: 
+        -1: "előző vasárnap"
+        0: "ez a vasárnap"
+        1: "következő vasárnap"
+    :sun-narrow: 
+      :relative: 
+        -1: "előző vasárnap"
+        0: "ez a vasárnap"
+        1: "következő vasárnap"
+    :sun-short: 
+      :relative: 
+        -1: "előző vasárnap"
+        0: "ez a vasárnap"
+        1: "következő vasárnap"
+    :thu: 
+      :relative: 
+        -1: "előző csütörtök"
+        0: "ez a csütörtök"
+        1: "következő csütörtök"
+    :thu-narrow: 
+      :relative: 
+        -1: "előző csütörtök"
+        0: "ez a csütörtök"
+        1: "következő csütörtök"
+    :thu-short: 
+      :relative: 
+        -1: "előző csütörtök"
+        0: "ez a csütörtök"
+        1: "következő csütörtök"
+    :tue: 
+      :relative: 
+        -1: "előző kedd"
+        0: "ez a kedd"
+        1: "következő kedd"
+    :tue-narrow: 
+      :relative: 
+        -1: "előző kedd"
+        0: "ez a kedd"
+        1: "következő kedd"
+    :tue-short: 
+      :relative: 
+        -1: "előző kedd"
+        0: "ez a kedd"
+        1: "következő kedd"
+    :wed: 
+      :relative: 
+        -1: "előző szerda"
+        0: "ez a szerda"
+        1: "következő szerda"
+    :wed-narrow: 
+      :relative: 
+        -1: "előző szerda"
+        0: "ez a szerda"
+        1: "következő szerda"
+    :wed-short: 
+      :relative: 
+        -1: "előző szerda"
+        0: "ez a szerda"
+        1: "következő szerda"
+    :week: 
+      :display_name: hét
+      :relative: 
+        -1: "előző hét"
+        0: "ez a hét"
+        1: "következő hét"
+      :relative_time: 
+        :future: 
+          :one: "{0} hét múlva"
+          :other: "{0} hét múlva"
+        :past: 
+          :one: "{0} héttel ezelőtt"
+          :other: "{0} héttel ezelőtt"
+    :week-narrow: 
+      :display_name: hét
+      :relative: 
+        -1: "előző hét"
+        0: "ez a hét"
+        1: "következő hét"
+      :relative_time: 
+        :future: 
+          :one: "{0} hét múlva"
+          :other: "{0} hét múlva"
+        :past: 
+          :one: "{0} héttel ezelőtt"
+          :other: "{0} héttel ezelőtt"
+    :week-short: 
+      :display_name: hét
+      :relative: 
+        -1: "előző hét"
+        0: "ez a hét"
+        1: "következő hét"
+      :relative_time: 
+        :future: 
+          :one: "{0} hét múlva"
+          :other: "{0} hét múlva"
+        :past: 
+          :one: "{0} héttel ezelőtt"
+          :other: "{0} héttel ezelőtt"
+    :weekday: 
+      :display_name: "hét napja"
+    :year: 
+      :display_name: év
+      :relative: 
+        -1: "előző év"
+        0: "ez az év"
+        1: "következő év"
+      :relative_time: 
+        :future: 
+          :one: "{0} év múlva"
+          :other: "{0} év múlva"
+        :past: 
+          :one: "{0} évvel ezelőtt"
+          :other: "{0} évvel ezelőtt"
+    :year-narrow: 
+      :display_name: év
+      :relative: 
+        -1: "előző év"
+        0: "ez az év"
+        1: "következő év"
+      :relative_time: 
+        :future: 
+          :one: "{0} év múlva"
+          :other: "{0} év múlva"
+        :past: 
+          :one: "{0} évvel ezelőtt"
+          :other: "{0} évvel ezelőtt"
+    :year-short: 
+      :display_name: év
+      :relative: 
+        -1: "előző év"
+        0: "ez az év"
+        1: "következő év"
+      :relative_time: 
+        :future: 
+          :one: "{0} év múlva"
+          :other: "{0} év múlva"
+        :past: 
+          :one: "{0} évvel ezelőtt"
+          :other: "{0} évvel ezelőtt"
+    :zone: 
+      :display_name: időzóna

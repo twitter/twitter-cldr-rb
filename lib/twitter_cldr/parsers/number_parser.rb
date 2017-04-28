@@ -81,7 +81,7 @@ module TwitterCldr
       end
 
       def identify(text, group, decimal)
-        result = { :value => text }
+        result = { value: text }
         result[:type] = if self.class.is_numeric?(result[:value], "")
           :numeric
         else

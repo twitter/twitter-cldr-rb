@@ -1,6 +1,20 @@
 ---
-:ar: ! '{ :''ar'' => { :i18n => { :plural => { :keys => [:zero, :one, :two, :few,
-  :many, :other], :rule => lambda { |n| n.to_f.abs == 0 ? :zero : n.to_f.abs == 1
-  ? :one : n.to_f.abs == 2 ? :two : (((n.to_f.abs % 100) % 1).zero? && (3..10).include?(n.to_f.abs
-  % 100)) ? :few : (((n.to_f.abs % 100) % 1).zero? && (11..99).include?(n.to_f.abs
-  % 100)) ? :many : :other } } } } }'
+:ar:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n % 100).floor
+      == (n % 100)) && ((n % 100) >= 3) && ((n % 100) <= 10)) ? :few : ((((n % 100).floor
+      == (n % 100)) && ((n % 100) >= 11) && ((n % 100) <= 99)) ? :many : (n == 1 ?
+      :one : (n == 2 ? :two : (n == 0 ? :zero : :other))))) }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :zero
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

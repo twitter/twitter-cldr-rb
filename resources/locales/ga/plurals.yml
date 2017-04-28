@@ -1,5 +1,20 @@
 ---
-:ga: ! '{ :''ga'' => { :i18n => { :plural => { :keys => [:one, :two, :few, :many,
-  :other], :rule => lambda { |n| n.to_f.abs == 1 ? :one : n.to_f.abs == 2 ? :two :
-  ((n.to_f.abs % 1).zero? && (3..6).include?(n.to_f.abs)) ? :few : ((n.to_f.abs %
-  1).zero? && (7..10).include?(n.to_f.abs)) ? :many : :other } } } } }'
+:ga:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); ((((n).floor ==
+      (n)) && ((n) >= 3) && ((n) <= 6)) ? :few : ((((n).floor == (n)) && ((n) >= 7)
+      && ((n) <= 10)) ? :many : (n == 1 ? :one : (n == 2 ? :two : :other)))) }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :two
+    - :other
+  :ordinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
+      :other) }'
+    :names:
+    - :one
+    - :other

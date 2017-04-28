@@ -33,11 +33,11 @@ module TwitterCldr
         end
 
         def from_language(language, standard)
-          convert(language, :from => NAME_STANDARD, :to => standard)
+          convert(language, from: NAME_STANDARD, to: standard)
         end
 
         def to_language(code, standard)
-          convert(code, :from => standard, :to => NAME_STANDARD).to_s
+          convert(code, from: standard, to: NAME_STANDARD).to_s
         end
 
         def standards_for(code, standard)

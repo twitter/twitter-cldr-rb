@@ -14,12 +14,17 @@ module TwitterCldr
         end
       end
 
+      def to_hash
+        { value: @value, type: @type }
+      end
+
       def to_s
         @value
       end
 
-      def to_hash
-        { :value => @value, :type => @type }
+      # overriding `to_s` also overrides `inspect`, so we have to redefine it manually
+      def inspect
+        "<#{self.class}: #{instance_variables.map {|v| "#{v}=#{instance_variable_get(v).inspect}" }.join(", ")}>"
       end
     end
   end

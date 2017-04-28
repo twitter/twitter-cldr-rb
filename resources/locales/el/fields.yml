@@ -1,0 +1,372 @@
+--- 
+:el: 
+  :fields: 
+    :day: 
+      :display_name: ημέρα
+      :relative: 
+        -1: χθες
+        -2: προχθές
+        0: σήμερα
+        1: αύριο
+        2: μεθαύριο
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ημέρα"
+          :other: "σε {0} ημέρες"
+        :past: 
+          :one: "πριν από {0} ημέρα"
+          :other: "πριν από {0} ημέρες"
+    :day-narrow: 
+      :display_name: ημέρα
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ημ."
+          :other: "σε {0} ημ."
+        :past: 
+          :one: "{0} ημ. πριν"
+          :other: "{0} ημ. πριν"
+    :day-short: 
+      :display_name: ημέρα
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ημέρα"
+          :other: "σε {0} ημέρες"
+        :past: 
+          :one: "πριν από {0} ημέρα"
+          :other: "πριν από {0} ημέρες"
+    :dayperiod: 
+      :display_name: π.μ./μ.μ.
+    :era: 
+      :display_name: περίοδος
+    :fri: 
+      :relative: 
+        -1: "προηγούμενη Παρασκευή"
+        0: "αυτήν την Παρασκευή"
+        1: "επόμενη Παρασκευή"
+    :fri-narrow: 
+      :relative: 
+        -1: "προηγ. Πα"
+        0: "αυτήν την Πα"
+        1: "επόμ. Πα"
+    :fri-short: 
+      :relative: 
+        -1: "προηγ. Παρ."
+        0: "αυτήν την Παρ."
+        1: "επόμ. Παρ."
+    :hour: 
+      :display_name: ώρα
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ώρα"
+          :other: "σε {0} ώρες"
+        :past: 
+          :one: "πριν από {0} ώρα"
+          :other: "πριν από {0} ώρες"
+    :hour-narrow: 
+      :display_name: ώ
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ώ."
+          :other: "σε {0} ώ."
+        :past: 
+          :one: "{0} ώ. πριν"
+          :other: "{0} ώ. πριν"
+    :hour-short: 
+      :display_name: ώρ.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} ώρα"
+          :other: "σε {0} ώρ."
+        :past: 
+          :one: "πριν από {0} ώρα"
+          :other: "πριν από {0} ώρ."
+    :minute: 
+      :display_name: λεπτό
+      :relative_time: 
+        :future: 
+          :one: "σε {0} λεπτό"
+          :other: "σε {0} λεπτά"
+        :past: 
+          :one: "πριν από {0} λεπτό"
+          :other: "πριν από {0} λεπτά"
+    :minute-narrow: 
+      :display_name: λ
+      :relative_time: 
+        :future: 
+          :one: "σε {0} λ."
+          :other: "σε {0} λ."
+        :past: 
+          :one: "{0} λ. πριν"
+          :other: "{0} λ. πριν"
+    :minute-short: 
+      :display_name: λεπ.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} λεπ."
+          :other: "σε {0} λεπ."
+        :past: 
+          :one: "πριν από {0} λεπ."
+          :other: "πριν από {0} λεπ."
+    :mon: 
+      :relative: 
+        -1: "προηγούμενη Δευτέρα"
+        0: "αυτήν τη Δευτέρα"
+        1: "επόμενη Δευτέρα"
+    :mon-narrow: 
+      :relative: 
+        -1: "προηγ. Δε"
+        0: "αυτήν τη Δε"
+        1: "επόμ. Δε"
+    :mon-short: 
+      :relative: 
+        -1: "προηγ. Δευτ."
+        0: "αυτήν τη Δευτ."
+        1: "επόμ. Δευτ."
+    :month: 
+      :display_name: μήνας
+      :relative: 
+        -1: "προηγούμενος μήνας"
+        0: "τρέχων μήνας"
+        1: "επόμενος μήνας"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} μήνα"
+          :other: "σε {0} μήνες"
+        :past: 
+          :one: "πριν από {0} μήνα"
+          :other: "πριν από {0} μήνες"
+    :month-narrow: 
+      :display_name: μήν.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} μ."
+          :other: "σε {0} μ."
+        :past: 
+          :one: "{0} μ. πριν"
+          :other: "{0} μ. πριν"
+    :month-short: 
+      :display_name: μήν.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} μήνα"
+          :other: "σε {0} μήνες"
+        :past: 
+          :one: "πριν από {0} μήνα"
+          :other: "πριν από {0} μήνες"
+    :quarter: 
+      :display_name: τρίμηνο
+      :relative: 
+        -1: "προηγούμενο τρίμηνο"
+        0: "τρέχον τρίμηνο"
+        1: "επόμενο τρίμηνο"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} τρίμηνο"
+          :other: "σε {0} τρίμηνα"
+        :past: 
+          :one: "πριν από {0} τρίμηνο"
+          :other: "πριν από {0} τρίμηνα"
+    :quarter-narrow: 
+      :display_name: τρίμ.
+      :relative: 
+        -1: "προηγ. τρίμ."
+        0: "τρέχον τρίμ."
+        1: "επόμ. τρίμ."
+      :relative_time: 
+        :future: 
+          :one: "σε {0} τρίμ."
+          :other: "σε {0} τρίμ."
+        :past: 
+          :one: "{0} τρίμ. πριν"
+          :other: "{0} τρίμ. πριν"
+    :quarter-short: 
+      :display_name: τρίμ.
+      :relative: 
+        -1: "προηγ. τρίμ."
+        0: "τρέχον τρίμ."
+        1: "επόμ. τρίμ."
+      :relative_time: 
+        :future: 
+          :one: "σε {0} τρίμ."
+          :other: "σε {0} τρίμ."
+        :past: 
+          :one: "πριν από {0} τρίμ."
+          :other: "πριν από {0} τρίμ."
+    :sat: 
+      :relative: 
+        -1: "προηγούμενο Σάββατο"
+        0: "αυτό το Σάββατο"
+        1: "επόμενο Σάββατο"
+    :sat-narrow: 
+      :relative: 
+        -1: "προηγ. Σά"
+        0: "αυτό το Σά"
+        1: "επόμ. Σά"
+    :sat-short: 
+      :relative: 
+        -1: "προηγ. Σάβ."
+        0: "αυτό το Σάβ."
+        1: "επόμ. Σάβ."
+    :second: 
+      :display_name: δευτερόλεπτο
+      :relative: 
+        0: τώρα
+      :relative_time: 
+        :future: 
+          :one: "σε {0} δευτερόλεπτο"
+          :other: "σε {0} δευτερόλεπτα"
+        :past: 
+          :one: "πριν από {0} δευτερόλεπτο"
+          :other: "πριν από {0} δευτερόλεπτα"
+    :second-narrow: 
+      :display_name: δ
+      :relative_time: 
+        :future: 
+          :one: "σε {0} δ."
+          :other: "σε {0} δ."
+        :past: 
+          :one: "{0} δ. πριν"
+          :other: "{0} δ. πριν"
+    :second-short: 
+      :display_name: δευτ.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} δευτ."
+          :other: "σε {0} δευτ."
+        :past: 
+          :one: "πριν από {0} δευτ."
+          :other: "πριν από {0} δευτ."
+    :sun: 
+      :relative: 
+        -1: "προηγούμενη Κυριακή"
+        0: "αυτήν την Κυριακή"
+        1: "επόμενη Κυριακή"
+    :sun-narrow: 
+      :relative: 
+        -1: "προηγ. Κυ"
+        0: "αυτήν την Κυ"
+        1: "επόμ. Κυ"
+    :sun-short: 
+      :relative: 
+        -1: "προηγ. Κυρ."
+        0: "αυτήν την Κυρ."
+        1: "επόμ. Κυρ."
+    :thu: 
+      :relative: 
+        -1: "προηγούμενη Πέμπτη"
+        0: "αυτήν την Πέμπτη"
+        1: "επόμενη Πέμπτη"
+    :thu-narrow: 
+      :relative: 
+        -1: "προηγ. Πέ"
+        0: "αυτήν την Πέ"
+        1: "επόμ. Πέ"
+    :thu-short: 
+      :relative: 
+        -1: "προηγ. Πέμ."
+        0: "αυτήν την Πέμ."
+        1: "επόμ. Πέμ."
+    :tue: 
+      :relative: 
+        -1: "προηγούμενη Τρίτη"
+        0: "αυτήν την Τρίτη"
+        1: "επόμενη Τρίτη"
+    :tue-narrow: 
+      :relative: 
+        -1: "προηγ. Τρ"
+        0: "αυτήν την Τρ"
+        1: "επόμ. Τρ"
+    :tue-short: 
+      :relative: 
+        -1: "προηγ. Τρ."
+        0: "αυτήν την Τρ."
+        1: "επόμ. Τρ."
+    :wed: 
+      :relative: 
+        -1: "προηγούμενη Τετάρτη"
+        0: "αυτήν την Τετάρτη"
+        1: "επόμενη Τετάρτη"
+    :wed-narrow: 
+      :relative: 
+        -1: "προηγ. Τε"
+        0: "αυτήν την Τε"
+        1: "επόμ. Τε"
+    :wed-short: 
+      :relative: 
+        -1: "προηγ. Τετ."
+        0: "αυτήν την Τετ."
+        1: "επόμ. Τετ."
+    :week: 
+      :display_name: εβδομάδα
+      :relative: 
+        -1: "προηγούμενη εβδομάδα"
+        0: "αυτήν την εβδομάδα"
+        1: "επόμενη εβδομάδα"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} εβδομάδα"
+          :other: "σε {0} εβδομάδες"
+        :past: 
+          :one: "πριν από {0} εβδομάδα"
+          :other: "πριν από {0} εβδομάδες"
+    :week-narrow: 
+      :display_name: εβδ.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} εβδ."
+          :other: "σε {0} εβδ."
+        :past: 
+          :one: "{0} εβδ. πριν"
+          :other: "{0} εβδ. πριν"
+    :week-short: 
+      :display_name: εβδ.
+      :relative_time: 
+        :future: 
+          :one: "σε {0} εβδ."
+          :other: "σε {0} εβδ."
+        :past: 
+          :one: "πριν από {0} εβδ."
+          :other: "πριν από {0} εβδ."
+    :weekday: 
+      :display_name: καθημερινή
+    :year: 
+      :display_name: έτος
+      :relative: 
+        -1: πέρσι
+        0: φέτος
+        1: "επόμενο έτος"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} έτος"
+          :other: "σε {0} έτη"
+        :past: 
+          :one: "πριν από {0} έτος"
+          :other: "πριν από {0} έτη"
+    :year-narrow: 
+      :display_name: έτ.
+      :relative: 
+        -1: πέρσι
+        0: φέτος
+        1: "επόμενο έτος"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} έτος"
+          :other: "σε {0} έτη"
+        :past: 
+          :one: "{0} έτος πριν"
+          :other: "{0} έτη πριν"
+    :year-short: 
+      :display_name: έτ.
+      :relative: 
+        -1: πέρσι
+        0: φέτος
+        1: "επόμενο έτος"
+      :relative_time: 
+        :future: 
+          :one: "σε {0} έτος"
+          :other: "σε {0} έτη"
+        :past: 
+          :one: "πριν από {0} έτος"
+          :other: "πριν από {0} έτη"
+    :zone: 
+      :display_name: "ζώνη ώρας"

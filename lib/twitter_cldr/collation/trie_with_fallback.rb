@@ -28,7 +28,7 @@ module TwitterCldr
     # by adding their one element prefixes to the trie itself. This feature is useful for some applications, e.g., for
     # suppressing contractions in a tailored fractional collation elements trie.
     #
-    class TrieWithFallback < TwitterCldr::Collation::Trie
+    class TrieWithFallback < TwitterCldr::Utils::Trie
 
       attr_accessor :fallback
 

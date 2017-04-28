@@ -12,7 +12,7 @@ module TwitterCldr
         def compile(str, modifiers = "", symbol_table = nil)
           new(
             parser.parse(tokenizer.tokenize(str), {
-              :symbol_table => symbol_table
+              symbol_table: symbol_table
             }), modifiers
           )
         end
@@ -57,23 +57,41 @@ module TwitterCldr
 
       def initialize(elements, modifiers = nil)
         @elements = elements
-        @modifiers = nil
+        @modifiers = modifiers
       end
 
       def to_regexp
-        if RUBY_VERSION <= "1.8.7"
-          begin
-            Oniguruma::ORegexp.new(to_regexp_str, modifiers)
-          rescue NameError
-            raise "Unicode regular expressions require the Oniguruma gem when using Ruby 1.8. Please install, require, and retry."
-          end
-        else
-          @regexp ||= Regexp.new(to_regexp_str, modifiers)
-        end
+        @regexp ||= Regexp.new(to_regexp_str, modifier_union)
       end
 
       def to_regexp_str
         @regexp_str ||= elements.map(&:to_regexp_str).join
+      end
+
+      def to_s
+        @elements.inject('') do |ret, element|
+          ret + element.to_s
+        end
+      end
+
+      private
+
+      def modifier_union
+        @modifier_union ||=
+          (modifiers || '').each_char.inject(0) do |ret, modifier_char|
+            ret | case modifier_char
+              when 'm'
+                Regexp::MULTILINE
+              when 'i'
+                Regexp::IGNORECASE
+              when 'x'
+                Regexp::EXTENDED
+              when 'n'
+                Regexp::NOENCODING
+              else
+                0
+            end
+          end
       end
 
     end

@@ -42,6 +42,8 @@ describe RbnfFormatter do
   end
 
   TwitterCldr.supported_locales.each do |locale|
+    next unless RbnfFormatter.supported_locale?(locale)
+
     formatter = RbnfFormatter.new(locale)
     test_data = YAML.load_file(test_file_for(locale.to_s))
 
@@ -54,17 +56,17 @@ describe RbnfFormatter do
             describe rule_set_name.gsub("-", " ") do
 
               # running basic test suite only runs spellout-numbering tests (for speed)
-              it "formats correctly", :slow => rule_set_name != "spellout-numbering" do
+              it "formats correctly", slow: rule_set_name != "spellout-numbering" do
                 test_data[group_name][rule_set_name].each_pair do |number, expected|
                   got = formatter.format(number, {
-                    :rule_group => group_name,
-                    :rule_set => rule_set_name
+                    rule_group: group_name,
+                    rule_set: rule_set_name
                   })
 
                   if got != expected
                     opts = {
-                      :locale => locale, :group => group_name,
-                      :rule_set => rule_set_name, :number => number
+                      locale: locale, group: group_name,
+                      rule_set: rule_set_name, number: number
                     }
 
                     unless allowed_failure?(opts)
@@ -72,10 +74,10 @@ describe RbnfFormatter do
                       failures[locale][group_name] ||= {}
                       failures[locale][group_name][rule_set_name] ||= []
                       failures[locale][group_name][rule_set_name] << number
-                      got.should == expected
+                      expect(got).to eq(expected)
                     end
                   else
-                    got.should == expected
+                    expect(got).to eq(expected)
                   end
 
                 end

@@ -56,6 +56,10 @@ module TwitterCldr
           end
         end
 
+        def to_s
+          text
+        end
+
         private
 
         def set_for_special_char(char)
@@ -65,7 +69,7 @@ module TwitterCldr
             )
 
             if char.upcase == char
-              UnicodeRegex.valid_regexp_chars.subtract(chars)
+              TwitterCldr::Shared::UnicodeRegex.valid_regexp_chars.subtract(chars)
             else
               chars
             end

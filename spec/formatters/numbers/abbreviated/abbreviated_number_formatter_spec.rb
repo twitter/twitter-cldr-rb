@@ -6,32 +6,34 @@
 require 'spec_helper'
 
 include TwitterCldr::Formatters
+include TwitterCldr::Tokenizers
 
 describe AbbreviatedNumberFormatter do
-  let(:formatter) { AbbreviatedNumberFormatter.new(:locale => :en) }
+  let(:formatter) { AbbreviatedNumberFormatter.new(locale: :en) }
+  let(:number) { 123456 }
 
-  describe "#transform_number" do
-    it "chops off the number to the necessary number of sig figs" do
-      formatter.send(:transform_number, 10 ** 3).should == 1
-      formatter.send(:transform_number, 10 ** 4).should == 10
-      formatter.send(:transform_number, 10 ** 5).should == 100
-      formatter.send(:transform_number, 10 ** 6).should == 1
-      formatter.send(:transform_number, 10 ** 7).should == 10
-      formatter.send(:transform_number, 10 ** 8).should == 100
-      formatter.send(:transform_number, 10 ** 9).should == 1
-      formatter.send(:transform_number, 10 ** 10).should == 10
-      formatter.send(:transform_number, 10 ** 11).should == 100
-      formatter.send(:transform_number, 10 ** 12).should == 1
-      formatter.send(:transform_number, 10 ** 13).should == 10
-      formatter.send(:transform_number, 10 ** 14).should == 100
+  describe "#truncate_number" do
+    let(:number) { 1234 }
+
+    def truncate(number, decimal_digits)
+      formatter.send(:truncate_number, number, decimal_digits)
     end
 
-    it "returns the original number if greater than 10^15" do
-      formatter.send(:transform_number, 10 ** 15).should == 10 ** 15
+    it "truncates the number based on number of decimal digits requested" do
+      expect(truncate(number, 1)).to eq(1.234)
+      expect(truncate(number, 2)).to eq(12.34)
+      expect(truncate(number, 3)).to eq(123.4)
+      expect(truncate(number, 4)).to eq(1234)
+      expect(truncate(number, 5)).to eq(1234)
+      expect(truncate(number, 6)).to eq(1234)
     end
 
     it "returns the original number if less than 10^3" do
-      formatter.send(:transform_number, 999).should == 999
+      expect(truncate(999, 3)).to eq(999)
+    end
+
+    it "returns the original number if greater than 10^15" do
+      expect(truncate(10 ** 15, 3)).to eq(10 ** 15)
     end
   end
 end

@@ -35,16 +35,14 @@ module TwitterCldr
         timezone_info.utc_to_local(@base_obj.utc)
       end
 
-      def data_reader_for(type)
-        TwitterCldr::DataReaders::TimeDataReader.new(locale, {
-          :calendar_type => calendar_type,
-          :type => type
-        })
+      def data_reader_for(type, options = {})
+        TwitterCldr::DataReaders::TimeDataReader.new(
+          locale, options.merge({
+            calendar_type: calendar_type,
+            type: type
+          })
+        )
       end
-
-      # def formatter_const
-      #   TwitterCldr::Formatters::TimeFormatter
-      # end
     end
 
   end

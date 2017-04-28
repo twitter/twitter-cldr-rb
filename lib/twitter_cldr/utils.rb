@@ -6,9 +6,15 @@
 module TwitterCldr
   module Utils
 
-    autoload :CodePoints,  'twitter_cldr/utils/code_points'
-    autoload :YAML,        'twitter_cldr/utils/yaml'
-    autoload :RangeSet,    'twitter_cldr/utils/range_set'
+    autoload :CodePoints,            'twitter_cldr/utils/code_points'
+    autoload :FileSystemTrie,        'twitter_cldr/utils/file_system_trie'
+    autoload :RangeSet,              'twitter_cldr/utils/range_set'
+    autoload :RegexpAst,             'twitter_cldr/utils/regexp_ast'
+    autoload :RegexpSampler,         'twitter_cldr/utils/regexp_sampler'
+    autoload :ScriptDetector,        'twitter_cldr/utils/script_detector'
+    autoload :ScriptDetectionResult, 'twitter_cldr/utils/script_detector'
+    autoload :Trie,                  'twitter_cldr/utils/trie'
+    autoload :YAML,                  'twitter_cldr/utils/yaml'
 
     class << self
 
@@ -70,5 +76,3 @@ module TwitterCldr
 
   end
 end
-
-require 'twitter_cldr/utils/interpolation'

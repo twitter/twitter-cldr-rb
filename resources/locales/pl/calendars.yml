@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: ccc
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
@@ -11,123 +12,147 @@
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
-        :GyMMMd: "d MMM y G"
-        :H: "HH"
+        :GyMMMM: "LLLL y G"
+        :GyMMMMEd: "E, d MMMM y G"
+        :GyMMMMd: "d MMMM y G"
+        :GyMMMd: "d.MM.y G"
+        :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :M: "L"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
+        :M: L
         :MEd: "E, d.MM"
-        :MMM: "LLL"
-        :MMMEd: "E, d MMM"
+        :MMM: LLL
+        :MMMEd: "E, d.MM"
+        :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
-        :MMMd: "d MMM"
-        :MMdd: "d.MM"
-        :Md: "d.MM"
-        :d: "d"
+        :MMMd: d.MM
+        :Md: d.MM
+        :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "MM.y"
+        :yM: MM.y
         :yMEd: "E, d.MM.y"
-        :yMM: "MM.y"
-        :yMMM: "LLL y"
-        :yMMMEd: "E, d MMM y"
+        :yMMM: MM.y
+        :yMMMEd: "E, d.MM.y"
         :yMMMM: "LLLL y"
-        :yMMMd: "d MMM y"
-        :yMd: "d.MM.y"
+        :yMMMMEd: "E, d MMMM y"
+        :yMMMMd: "d MMMM y"
+        :yMMMd: d.MM.y
+        :yMd: d.MM.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
-            :fri: "pt."
-            :mon: "pon."
-            :sat: "sob."
-            :sun: "niedz."
-            :thu: "czw."
-            :tue: "wt."
-            :wed: "śr."
+            :fri: pt.
+            :mon: pon.
+            :sat: sob.
+            :sun: niedz.
+            :thu: czw.
+            :tue: wt.
+            :wed: śr.
           :narrow: 
-            :fri: "P"
-            :mon: "P"
-            :sat: "S"
+            :fri: P
+            :mon: P
+            :sat: S
             :sun: "N"
-            :thu: "C"
-            :tue: "W"
-            :wed: "Ś"
+            :thu: C
+            :tue: W
+            :wed: Ś
           :short: 
-            :fri: "pt."
-            :mon: "pon."
-            :sat: "sob."
-            :sun: "niedz."
-            :thu: "czw."
-            :tue: "wt."
-            :wed: "śr."
+            :fri: pią
+            :mon: pon
+            :sat: sob
+            :sun: nie
+            :thu: czw
+            :tue: wto
+            :wed: śro
           :wide: 
-            :fri: "piątek"
-            :mon: "poniedziałek"
-            :sat: "sobota"
-            :sun: "niedziela"
-            :thu: "czwartek"
-            :tue: "wtorek"
-            :wed: "środa"
+            :fri: piątek
+            :mon: poniedziałek
+            :sat: sobota
+            :sun: niedziela
+            :thu: czwartek
+            :tue: wtorek
+            :wed: środa
         :stand-alone: 
           :abbreviated: 
-            :fri: "pt."
-            :mon: "pon."
-            :sat: "sob."
-            :sun: "niedz."
-            :thu: "czw."
-            :tue: "wt."
-            :wed: "śr."
+            :fri: pt.
+            :mon: pon.
+            :sat: sob.
+            :sun: niedz.
+            :thu: czw.
+            :tue: wt.
+            :wed: śr.
           :narrow: 
-            :fri: "P"
-            :mon: "P"
-            :sat: "S"
+            :fri: P
+            :mon: P
+            :sat: S
             :sun: "N"
-            :thu: "C"
-            :tue: "W"
-            :wed: "Ś"
+            :thu: C
+            :tue: W
+            :wed: Ś
           :short: 
-            :fri: "pt."
-            :mon: "pon."
-            :sat: "sob."
-            :sun: "niedz."
-            :thu: "czw."
-            :tue: "wt."
-            :wed: "śr."
+            :fri: pią
+            :mon: pon
+            :sat: sob
+            :sun: nie
+            :thu: czw
+            :tue: wto
+            :wed: śro
           :wide: 
-            :fri: "piątek"
-            :mon: "poniedziałek"
-            :sat: "sobota"
-            :sun: "niedziela"
-            :thu: "czwartek"
-            :tue: "wtorek"
-            :wed: "środa"
+            :fri: piątek
+            :mon: poniedziałek
+            :sat: sobota
+            :sun: niedziela
+            :thu: czwartek
+            :tue: wtorek
+            :wed: środa
       :eras: 
         :abbr: 
-          0: "p.n.e."
-          1: "n.e."
+          0: BCE
+          1: CE
         :name: 
-          0: "p.n.e."
-          1: "n.e."
+          0: BCE
+          1: CE
         :narrow: 
-          0: "B"
-          1: "A"
+          0: ""
       :fields: 
-        :day: "dzień"
+        :day: dzień
+        :day-narrow: dzień
+        :day-short: dzień
         :dayperiod: "rano / po południu / wieczorem"
-        :era: "era"
-        :hour: "godzina"
-        :minute: "minuta"
-        :month: "miesiąc"
-        :second: "sekunda"
-        :week: "tydzień"
+        :era: era
+        :hour: godzina
+        :hour-narrow: g.
+        :hour-short: godz.
+        :minute: minuta
+        :minute-narrow: min
+        :minute-short: min
+        :month: miesiąc
+        :month-narrow: mc
+        :month-short: mies.
+        :quarter: kwartał
+        :quarter-narrow: kw.
+        :quarter-short: kw.
+        :second: sekunda
+        :second-narrow: s
+        :second-short: sek.
+        :week: tydzień
+        :week-narrow: tydz.
+        :week-short: tydz.
         :weekday: "dzień tygodnia"
-        :year: "rok"
+        :year: rok
+        :year-narrow: r.
+        :year-short: r.
         :zone: "strefa czasowa"
       :formats: 
         :date: 
@@ -136,9 +161,9 @@
           :long: 
             :pattern: "d MMMM y"
           :medium: 
-            :pattern: "d MMM y"
+            :pattern: dd.MM.y
           :short: 
-            :pattern: "dd.MM.y"
+            :pattern: dd.MM.y
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -160,117 +185,145 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: "sty"
-            10: "paź"
-            11: "lis"
-            12: "gru"
-            2: "lut"
-            3: "mar"
-            4: "kwi"
-            5: "maj"
-            6: "cze"
-            7: "lip"
-            8: "sie"
-            9: "wrz"
+            1: sty
+            10: paź
+            11: lis
+            12: gru
+            2: lut
+            3: mar
+            4: kwi
+            5: maj
+            6: cze
+            7: lip
+            8: sie
+            9: wrz
           :narrow: 
-            1: "s"
-            10: "p"
-            11: "l"
-            12: "g"
-            2: "l"
-            3: "m"
-            4: "k"
-            5: "m"
-            6: "c"
-            7: "l"
-            8: "s"
-            9: "w"
+            1: s
+            10: p
+            11: l
+            12: g
+            2: l
+            3: m
+            4: k
+            5: m
+            6: c
+            7: l
+            8: s
+            9: w
           :wide: 
-            1: "stycznia"
-            10: "października"
-            11: "listopada"
-            12: "grudnia"
-            2: "lutego"
-            3: "marca"
-            4: "kwietnia"
-            5: "maja"
-            6: "czerwca"
-            7: "lipca"
-            8: "sierpnia"
-            9: "września"
+            1: stycznia
+            10: października
+            11: listopada
+            12: grudnia
+            2: lutego
+            3: marca
+            4: kwietnia
+            5: maja
+            6: czerwca
+            7: lipca
+            8: sierpnia
+            9: września
         :stand-alone: 
           :abbreviated: 
-            1: "sty"
-            10: "paź"
-            11: "lis"
-            12: "gru"
-            2: "lut"
-            3: "mar"
-            4: "kwi"
-            5: "maj"
-            6: "cze"
-            7: "lip"
-            8: "sie"
-            9: "wrz"
+            1: sty
+            10: paź
+            11: lis
+            12: gru
+            2: lut
+            3: mar
+            4: kwi
+            5: maj
+            6: cze
+            7: lip
+            8: sie
+            9: wrz
           :narrow: 
-            1: "s"
-            10: "p"
-            11: "l"
-            12: "g"
-            2: "l"
-            3: "m"
-            4: "k"
-            5: "m"
-            6: "c"
-            7: "l"
-            8: "s"
-            9: "w"
+            1: s
+            10: p
+            11: l
+            12: g
+            2: l
+            3: m
+            4: k
+            5: m
+            6: c
+            7: l
+            8: s
+            9: w
           :wide: 
-            1: "styczeń"
-            10: "październik"
-            11: "listopad"
-            12: "grudzień"
-            2: "luty"
-            3: "marzec"
-            4: "kwiecień"
-            5: "maj"
-            6: "czerwiec"
-            7: "lipiec"
-            8: "sierpień"
-            9: "wrzesień"
+            1: styczeń
+            10: październik
+            11: listopad
+            12: grudzień
+            2: luty
+            3: marzec
+            4: kwiecień
+            5: maj
+            6: czerwiec
+            7: lipiec
+            8: sierpień
+            9: wrzesień
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
-            :am: "a"
-            :noon: "n"
-            :pm: "p"
-          :wide: 
-            :afternoon: "po południu"
-            :am: "AM"
-            :earlyMorning: "nad ranem"
-            :evening: "wieczorem"
-            :lateMorning: "przed południem"
-            :morning: "rano"
-            :night: "w nocy"
+          :abbreviated: 
+            :afternoon1: "po południu"
+            :am: AM
+            :evening1: wieczorem
+            :midnight: "o północy"
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
             :noon: "w południe"
-            :pm: "PM"
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
-        :stand-alone: {}
+            :pm: PM
+          :narrow: 
+            :afternoon1: "po południu"
+            :am: a
+            :evening1: wieczorem
+            :midnight: "o półn."
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
+            :noon: "n"
+            :pm: p
+          :wide: 
+            :afternoon1: "po południu"
+            :am: AM
+            :evening1: wieczorem
+            :midnight: "o północy"
+            :morning1: rano
+            :morning2: "przed południem"
+            :night1: "w nocy"
+            :noon: "w południe"
+            :pm: PM
+        :stand-alone: 
+          :abbreviated: 
+            :am: AM
+            :pm: PM
+          :narrow: 
+            :am: a
+            :pm: p
+          :wide: 
+            :afternoon1: popołudnie
+            :am: AM
+            :evening1: wieczór
+            :midnight: północ
+            :morning1: rano
+            :morning2: przedpołudnie
+            :night1: noc
+            :noon: południe
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "K1"
-            2: "K2"
-            3: "K3"
-            4: "K4"
+            1: K1
+            2: K2
+            3: K3
+            4: K4
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "I kwartał"
             2: "II kwartał"
@@ -283,10 +336,10 @@
             3: "3 kw."
             4: "4 kw."
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "I kwartał"
             2: "II kwartał"

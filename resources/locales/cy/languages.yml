@@ -1,583 +1,489 @@
 --- 
 :cy: 
   :languages: 
-    :aa: "Afar"
-    :ab: "Abchaseg"
-    :ace: "Achinese"
-    :ach: "Acoli"
-    :ada: "Adangme"
-    :ady: "Adyghe"
-    :ae: "Avestan"
-    :af: "Affricâneg"
-    :afa: "Iaith Affro-Asiaidd"
-    :afh: "Afrihili"
-    :agq: "Aghem"
-    :ain: "Ainu"
-    :ak: "Akan"
-    :akk: "Akkadian"
-    :ale: "Aleut"
-    :alg: "Algonquian Language"
-    :alt: "Southern Altai"
-    :am: "Amhareg"
-    :an: "Aragonese"
+    :aa: Affareg
+    :ab: Abchaseg
+    :ace: Acehneg
+    :ach: Acoli
+    :ada: Adangmeg
+    :ady: "Circaseg Gorllewinol"
+    :ae: Afestaneg
+    :aeb: "Arabeg Tunisia"
+    :af: Affricâneg
+    :afh: Affrihili
+    :agq: Aghemeg
+    :ain: Ainŵeg
+    :ak: Acaneg
+    :akk: Acadeg
+    :akz: Alabamäeg
+    :ale: Alewteg
+    :aln: "Ghegeg Albania"
+    :alt: "Altäeg Deheuol"
+    :am: Amhareg
+    :an: Aragoneg
     :ang: "Hen Saesneg"
-    :anp: "Angika"
-    :apa: "Apache Language"
-    :ar: "Arabeg"
+    :anp: Angika
+    :ar: Arabeg
     :ar-001: "Arabeg Modern Safonol"
-    :arc: "Aramaeg"
-    :arn: "Mapuche"
-    :arp: "Arapaho"
-    :art: "Iaith Artiffisial"
-    :arw: "Arawak"
-    :as: "Asameg"
-    :asa: "Asu"
-    :ast: "Asturian"
-    :ath: "Iaith Athabasgaidd"
-    :aus: "Iaith Awstralaidd"
-    :av: "Avaric"
-    :awa: "Awadhi"
-    :ay: "Aymara"
-    :az: "Aserbaijaneg"
-    :ba: "Bashkir"
-    :bad: "Banda"
-    :bai: "Bamileke Language"
-    :bal: "Baluchi"
-    :ban: "Balinese"
-    :bas: "Basaa"
-    :bat: "Baltic Language"
-    :bax: "Bamun"
-    :bbj: "Ghomala"
-    :be: "Belarwseg"
-    :bej: "Beja"
-    :bem: "Bemba"
-    :ber: "Berber"
-    :bez: "Bena"
-    :bfd: "Bafut"
-    :bg: "Bwlgareg"
-    :bh: "Bihari"
-    :bho: "Bhojpuri"
-    :bi: "Bislama"
-    :bik: "Bikol"
-    :bin: "Bini"
-    :bkm: "Kom"
-    :bla: "Siksika"
-    :bm: "Bambara"
-    :bn: "Bengaleg"
-    :bnt: "Bantu"
-    :bo: "Tibeteg"
-    :br: "Llydaweg"
-    :bra: "Braj"
-    :brx: "Bodo"
-    :bs: "Bosnieg"
-    :bss: "Akoose"
-    :btk: "Batak"
-    :bua: "Buriat"
-    :bug: "Buginese"
-    :bum: "Bulu"
-    :byn: "Blin"
-    :byv: "Medumba"
-    :ca: "Catalaneg"
-    :cad: "Caddo"
-    :cai: "Central American Indian Language"
-    :car: "Carib"
-    :cau: "Caucasian Language"
-    :cay: "Cayuga"
-    :cch: "Atsam"
-    :ce: "Chechen"
-    :ceb: "Cebuano"
-    :cel: "Iaith Geltaidd"
-    :cgg: "Chiga"
-    :ch: "Chamorro"
-    :chb: "Chibcha"
-    :chg: "Chagatai"
-    :chk: "Chuukese"
-    :chm: "Mari"
-    :chn: "Chinook Jargon"
-    :cho: "Choctaw"
-    :chp: "Chipewyan"
-    :chr: "Cherokee"
-    :chy: "Cheyenne"
-    :ckb: "Sorani Kurdish"
-    :cmc: "Chamic Language"
-    :co: "Corsican"
-    :cop: "Coptic"
-    :cpe: "English-based Creole or Pidgin"
-    :cpf: "French-based Creole or Pidgin"
-    :cpp: "Portuguese-based Creole or Pidgin"
-    :cr: "Cree"
-    :crh: "Crimean Turkish"
-    :crp: "Creole or Pidgin"
-    :cs: "Tsieceg"
-    :csb: "Kashubian"
-    :cu: "Church Slavic"
-    :cus: "Cushitic Language"
-    :cv: "Chuvash"
-    :cy: "Cymraeg"
-    :da: "Daneg"
-    :dak: "Dakota"
-    :dar: "Dargwa"
-    :dav: "Taita"
-    :day: "Dayak"
-    :de: "Almaeneg"
+    :arc: Aramaeg
+    :arn: Arawcaneg
+    :aro: Araonaeg
+    :arp: Arapaho
+    :arq: "Arabeg Algeria"
+    :arw: Arawaceg
+    :ary: "Arabeg Moroco"
+    :arz: "Arabeg yr Aifft"
+    :as: Asameg
+    :asa: Asw
+    :ase: "Iaith Arwyddion America"
+    :ast: Astwrianeg
+    :av: Afareg
+    :awa: Awadhi
+    :ay: Aymareg
+    :az: Aseri
+    :az-Arab: "Aserbaijaneg Deheuol"
+    :ba: Bashcorteg
+    :bal: Balwtsi
+    :ban: Balïeg
+    :bas: Basâeg
+    :bax: Bamwmeg
+    :be: Belarwseg
+    :bej: Bejäeg
+    :bem: Bembeg
+    :bez: Bena
+    :bfd: Baffwteg
+    :bfq: Badaga
+    :bg: Bwlgareg
+    :bgn: "Balochi Gorllewinol"
+    :bi: Bislama
+    :bkm: Comeg
+    :bla: Siksika
+    :bm: Bambareg
+    :bn: Bengaleg
+    :bo: Tibeteg
+    :br: Llydaweg
+    :brh: Brahui
+    :brx: Bodo
+    :bs: Bosnieg
+    :bss: Acwseg
+    :bua: Bwriateg
+    :bum: Bwlw
+    :ca: Catalaneg
+    :cad: Cado
+    :car: Caribeg
+    :cch: Atsameg
+    :ce: Tsietsieneg
+    :cgg: Tsiga
+    :ch: Tsiamorro
+    :chm: Marieg
+    :cho: Siocto
+    :chr: Tsierocî
+    :chy: Cheyenne
+    :ckb: "Cwrdeg Sorani"
+    :co: Corseg
+    :cop: Copteg
+    :cr: Cri
+    :crh: "Tyrceg y Crimea"
+    :cs: Tsieceg
+    :cu: "Hen Slafoneg"
+    :cv: Tshwfasheg
+    :cy: Cymraeg
+    :da: Daneg
+    :dak: Dacotaeg
+    :dar: Dargwa
+    :dav: Taita
+    :de: Almaeneg
     :de-AT: "Almaeneg Awstria"
     :de-CH: "Almaeneg Safonol y Swistir"
-    :del: "Delaware"
-    :den: "Slave"
-    :dgr: "Dogrib"
-    :din: "Dinka"
-    :dje: "Zarma"
-    :doi: "Dogri"
-    :dra: "Dravidian Language"
-    :dsb: "Lower Sorbian"
-    :dua: "Duala"
+    :din: Dinca
+    :dje: Zarmaeg
+    :doi: Dogri
+    :dsb: "Sorbeg Isaf"
+    :dua: Diwaleg
     :dum: "Iseldireg Canol"
-    :dv: "Divehi"
-    :dyo: "Jola-Fonyi"
-    :dyu: "Dyula"
-    :dz: "Dzongkha"
-    :dzg: "Dazaga"
-    :ebu: "Embu"
-    :ee: "Ewe"
-    :efi: "Efik"
+    :dv: Difehi
+    :dyo: Jola-Fonyi
+    :dz: Dzongkha
+    :ebu: Embw
+    :ee: Ewe
     :egy: "Hen Eiffteg"
-    :eka: "Ekajuk"
-    :el: "Groeg"
-    :elx: "Elamite"
-    :en: "Saesneg"
+    :el: Groeg
+    :elx: Elameg
+    :en: Saesneg
     :en-AU: "Saesneg Awstralia"
     :en-CA: "Saesneg Canada"
     :en-GB: "Saesneg (DU)"
-    :en-US: "Saesneg UDA"
+    :en-US: "Saesneg (UDA)"
     :enm: "Saesneg Canol"
-    :eo: "Esperanto"
-    :es: "Sbaeneg"
+    :eo: Esperanto
+    :es: Sbaeneg
     :es-419: "Sbaeneg America Ladin"
     :es-ES: "Sbaeneg Ewrop"
     :es-MX: "Sbaeneg Mecsico"
-    :et: "Estoneg"
-    :eu: "Basgeg"
-    :ewo: "Ewondo"
-    :fa: "Perseg"
-    :fan: "Fang"
-    :fat: "Fanti"
-    :ff: "Fulah"
-    :fi: "Ffinneg"
-    :fil: "Ffilipineg"
-    :fiu: "Iaith Ffinno-Wgrig"
-    :fj: "Ffijïeg"
-    :fo: "Ffaröeg"
-    :fon: "Fon"
-    :fr: "Ffrangeg"
+    :et: Estoneg
+    :eu: Basgeg
+    :ewo: Ewondo
+    :ext: Extremadureg
+    :fa: Perseg
+    :fat: Ffanti
+    :ff: Ffwla
+    :fi: Ffinneg
+    :fil: Ffilipineg
+    :fit: "Ffinneg Tornedal"
+    :fj: Ffijïeg
+    :fo: Ffaröeg
+    :fr: Ffrangeg
     :fr-CA: "Ffrangeg Canada"
     :fr-CH: "Ffrangeg y Swistir"
+    :frc: "Ffrangeg Cajwn"
     :frm: "Ffrangeg Canol"
     :fro: "Hen Ffrangeg"
-    :frr: "Northern Frisian"
-    :frs: "Eastern Frisian"
-    :fur: "Ffriwleg"
+    :frp: Arpitaneg
+    :frr: "Ffriseg y Gogledd"
+    :frs: "Ffriseg y Dwyrain"
+    :fur: Ffriwleg
     :fy: "Ffriseg y Gorllewin"
-    :ga: "Gwyddeleg"
-    :gaa: "Ga"
-    :gay: "Gayo"
-    :gba: "Gbaya"
+    :ga: Gwyddeleg
+    :gag: Gagauz
+    :gay: Gaio
+    :gba: Gbaia
+    :gbz: "Dareg y Zoroastriaid"
     :gd: "Gaeleg yr Alban"
-    :gem: "Iaith Germanaidd"
-    :gez: "Geez"
-    :gil: "Gilbertese"
-    :gl: "Galisieg"
-    :gmh: "Middle High German"
-    :gn: "Guaraní"
-    :goh: "Old High German"
-    :gon: "Gondi"
-    :gor: "Gorontalo"
-    :got: "Gotheg"
-    :grb: "Grebo"
+    :gil: Gilberteg
+    :gl: Galisieg
+    :gmh: "Uchel Almaeneg Canol"
+    :gn: Guaraní
+    :goh: "Hen Uchel Almaeneg"
+    :got: Gotheg
     :grc: "Hen Roeg"
     :gsw: "Almaeneg y Swistir"
-    :gu: "Gwjarati"
-    :guz: "Gusii"
-    :gv: "Manaweg"
-    :gwi: "Gwichʼin"
-    :ha: "Hawsa"
-    :hai: "Haida"
-    :haw: "Hawäieg"
-    :he: "Hebraeg"
-    :hi: "Hindi"
-    :hil: "Hiligaynon"
-    :him: "Himachali"
-    :hit: "Hittite"
-    :hmn: "Hmong"
-    :ho: "Hiri Motu"
-    :hr: "Croateg"
-    :hsb: "Upper Sorbian"
+    :gu: Gwjarati
+    :guz: Gusii
+    :gv: Manaweg
+    :ha: Hawsa
+    :hai: Haida
+    :haw: Hawäieg
+    :he: Hebraeg
+    :hi: Hindi
+    :hit: Hetheg
+    :hmn: Hmongeg
+    :hr: Croateg
+    :hsb: "Sorbeg Uchaf"
     :ht: "Creol Haiti"
-    :hu: "Hwngareg"
-    :hup: "Hupa"
-    :hy: "Armeneg"
-    :hz: "Herero"
-    :ia: "Interlingua"
-    :iba: "Iban"
-    :ibb: "Ibibio"
-    :id: "Indoneseg"
-    :ie: "Interlingue"
-    :ig: "Igbo"
-    :ii: "Sichuan Yi"
-    :ijo: "Ijo"
-    :ik: "Inupiaq"
-    :ilo: "Iloko"
-    :inc: "Indic Language"
-    :ine: "Iaith Indo-Ewropeaidd"
-    :inh: "Ingush"
-    :io: "Ido"
-    :ira: "Iranian Language"
-    :iro: "Iroquoian Language"
-    :is: "Islandeg"
-    :it: "Eidaleg"
-    :iu: "Inuktitut"
-    :ja: "Japaneeg"
-    :jbo: "Lojban"
-    :jgo: "Ngomba"
-    :jmc: "Machame"
-    :jpr: "Judeo-Persian"
-    :jrb: "Judeo-Arabic"
-    :jv: "Jafanaeg"
-    :ka: "Georgeg"
-    :kaa: "Kara-Kalpak"
-    :kab: "Kabyle"
-    :kac: "Kachin"
-    :kaj: "Jju"
-    :kam: "Kamba"
-    :kar: "Karen"
-    :kaw: "Kawi"
-    :kbd: "Kabardian"
-    :kbl: "Kanembu"
-    :kcg: "Tyap"
-    :kde: "Makonde"
-    :kea: "Kabuverdianu"
-    :kfo: "Koro"
-    :kg: "Kongo"
-    :kha: "Khasi"
-    :khi: "Khoisan Language"
-    :kho: "Khotanese"
+    :hu: Hwngareg
+    :hy: Armeneg
+    :hz: Herero
+    :ia: Interlingua
+    :iba: Ibaneg
+    :ibb: Ibibio
+    :id: Indoneseg
+    :ie: Interlingue
+    :ig: Igbo
+    :ii: Nwosw
+    :ik: Inwpiaceg
+    :ilo: Ilocaneg
+    :inh: Ingwsieg
+    :is: Islandeg
+    :it: Eidaleg
+    :iu: Inwctitwt
+    :ja: Japaneeg
+    :jgo: Ngomba
+    :jmc: Matsiame
+    :jpr: Iddew-Bersieg
+    :jrb: Iddew-Arabeg
+    :jv: Jafanaeg
+    :ka: Georgeg
+    :kaa: Cara-Calpaceg
+    :kab: Cabileg
+    :kam: Camba
+    :kbd: "Circaseg Dwyreiniol"
+    :kcg: Tyapeg
+    :kde: Macondeg
+    :kea: Caboferdianeg
+    :kg: Congo
+    :kha: Càseg
     :khq: "Koyra Chiini"
-    :ki: "Kikuyu"
-    :kj: "Kuanyama"
-    :kk: "Casacheg"
-    :kkj: "Kako"
-    :kl: "Kalaallisut"
-    :kln: "Kalenjin"
-    :km: "Chmereg"
-    :kmb: "Kimbundu"
-    :kn: "Kannada"
-    :ko: "Coreeg"
-    :kok: "Konkani"
-    :kos: "Kosraean"
-    :kpe: "Kpelle"
-    :kr: "Kanuri"
-    :krc: "Karachay-Balkar"
-    :krl: "Karelian"
-    :kro: "Kru"
-    :kru: "Kurukh"
-    :ks: "Cashmireg"
-    :ksb: "Shambala"
-    :ksf: "Bafia"
-    :ksh: "Colognian"
-    :ku: "Cwrdeg"
-    :kum: "Kumyk"
-    :kut: "Kutenai"
-    :kv: "Komi"
-    :kw: "Cernyweg"
-    :ky: "Cirgiseg"
-    :la: "Lladin"
-    :lad: "Ladino"
-    :lag: "Langi"
-    :lah: "Lahnda"
-    :lam: "Lamba"
-    :lb: "Lwcsembwrgeg"
-    :lez: "Lezghian"
-    :lg: "Ganda"
-    :li: "Limburgish"
-    :lkt: "Lakota"
-    :ln: "Lingala"
-    :lo: "Laoeg"
-    :lol: "Mongo"
-    :loz: "Lozi"
-    :lt: "Lithwaneg"
-    :lu: "Luba-Katanga"
-    :lua: "Luba-Lulua"
-    :lui: "Luiseno"
-    :lun: "Lunda"
-    :luo: "Luo"
-    :lus: "Mizo"
-    :luy: "Luyia"
-    :lv: "Latfieg"
-    :mad: "Madurese"
-    :maf: "Mafa"
-    :mag: "Magahi"
-    :mai: "Maithili"
-    :mak: "Makasar"
-    :man: "Mandingo"
-    :map: "Austronesian Language"
-    :mas: "Masai"
-    :mde: "Maba"
-    :mdf: "Moksha"
-    :mdr: "Mandar"
-    :men: "Mende"
-    :mer: "Meru"
-    :mfe: "Morisyen"
-    :mg: "Malagaseg"
+    :khw: Chowareg
+    :ki: Kikuyu
+    :kk: Casacheg
+    :kl: Kalaallisut
+    :kln: Kalenjin
+    :km: Chmereg
+    :kn: Kannada
+    :ko: Coreeg
+    :koi: Komi-Permyak
+    :kok: Concani
+    :kr: Canwri
+    :krl: Careleg
+    :ks: Cashmireg
+    :ksb: Shambala
+    :ksf: Baffia
+    :ksh: Cwleneg
+    :ku: Cwrdeg
+    :kum: Cwmiceg
+    :kv: Comi
+    :kw: Cernyweg
+    :ky: Cirgiseg
+    :la: Lladin
+    :lad: Iddew-Sbaeneg
+    :lag: Langi
+    :lah: Lahnda
+    :lam: Lamba
+    :lb: Lwcsembwrgeg
+    :lez: Lezgheg
+    :lg: Ganda
+    :li: Limbwrgeg
+    :lkt: Lakota
+    :lmo: Lombardeg
+    :ln: Lingala
+    :lo: Laoeg
+    :lol: Mongo
+    :loz: Lozi
+    :lrc: "Luri Gogleddol"
+    :lt: Lithwaneg
+    :ltg: Latgaleg
+    :lu: Luba-Katanga
+    :lun: Lwnda
+    :luo: Lŵo
+    :lus: Lwshaieg
+    :luy: Lwyia
+    :lv: Latfieg
+    :mad: Madwreg
+    :mag: Magahi
+    :mai: Maithili
+    :mak: Macasareg
+    :man: Mandingo
+    :mas: Masai
+    :mdf: Mocsia
+    :mdr: Mandareg
+    :men: Mendeg
+    :mer: Mêrw
+    :mfe: Morisyen
+    :mg: Malagaseg
     :mga: "Gwyddeleg Canol"
-    :mgh: "Makhuwa-Meetto"
-    :mgo: "Meta'"
-    :mh: "Marshallese"
-    :mi: "Maori"
-    :mic: "Micmaceg"
-    :min: "Minangkabau"
-    :mis: "Iaith Amrywiol"
-    :mk: "Macedoneg"
-    :mkh: "Mon-Khmer Language"
-    :ml: "Malayalam"
-    :mn: "Mongoleg"
-    :mnc: "Manchu"
-    :mni: "Manipuri"
-    :mno: "Manobo Language"
-    :mo: "Moldofeg"
-    :moh: "Mohawk"
-    :mos: "Mossi"
-    :mr: "Marathi"
-    :ms: "Maleieg"
-    :mt: "Malteg"
-    :mua: "Mundang"
-    :mul: "Multiple Languages"
-    :mun: "Munda Language"
-    :mus: "Creek"
-    :mwl: "Mirandese"
-    :mwr: "Marwari"
-    :my: "Byrmaneg"
-    :mye: "Myene"
-    :myn: "Mayan Language"
-    :myv: "Erzya"
-    :na: "Nauru"
-    :nah: "Nahuatl"
-    :nai: "North American Indian Language"
-    :nap: "Neapolitan"
-    :naq: "Nama"
+    :mgh: Makhuwa-Meetto
+    :mgo: Meta
+    :mh: Marsialeg
+    :mi: Maori
+    :mic: Micmaceg
+    :mk: Macedoneg
+    :ml: Malayalam
+    :mn: Mongoleg
+    :mnc: Manshw
+    :mni: Manipwri
+    :moh: Mohoceg
+    :mos: Mosi
+    :mr: Marathi
+    :mrj: "Mari Gorllewinol"
+    :ms: Maleieg
+    :mt: Malteg
+    :mua: Mundang
+    :mul: "mwy nag un iaith"
+    :mwl: Mirandeg
+    :mwr: Marwari
+    :my: Byrmaneg
+    :mzn: Masanderani
+    :na: Nawrŵeg
+    :nap: Naplieg
+    :naq: Nama
     :nb: "Norwyeg Bokmål"
-    :nd: "North Ndebele"
-    :nds: "Low German"
-    :ne: "Nepaleg"
-    :new: "Newari"
-    :ng: "Ndonga"
-    :nia: "Nias"
-    :nic: "Niger-Kordofanian Language"
-    :niu: "Niuean"
-    :nl: "Iseldireg"
-    :nl-BE: "Fflemeg"
-    :nmg: "Kwasio"
+    :nd: "Ndebele Gogleddol"
+    :nds: "Isel Almaeneg"
+    :nds-NL: "Sacsoneg Isel"
+    :ne: Nepaleg
+    :new: Newaeg
+    :ng: Ndonga
+    :njo: "Ao Naga"
+    :nl: Iseldireg
+    :nl-BE: Fflemeg
+    :nmg: Kwasio
     :nn: "Norwyeg Nynorsk"
-    :nnh: "Ngiemboon"
     ? !ruby/symbol "no"
-    : "Norwyeg"
-    :nog: "Nogai"
+    : Norwyeg
     :non: "Hen Norseg"
-    :nqo: "N’Ko"
-    :nr: "South Ndebele"
-    :nso: "Northern Sotho"
-    :nub: "Nubian Language"
-    :nus: "Nuer"
-    :nv: "Navajo"
-    :nwc: "Classical Newari"
-    :ny: "Nyanja"
-    :nym: "Nyamwezi"
-    :nyn: "Nyankole"
-    :nyo: "Nyoro"
-    :nzi: "Nzima"
-    :oc: "Ocsitaneg"
-    :oj: "Ojibwa"
-    :om: "Oromo"
-    :or: "Oriya"
-    :os: "Ossetic"
-    :osa: "Osage"
-    :ota: "Ottoman Turkish"
-    :oto: "Otomian Language"
-    :pa: "Pwnjabeg"
-    :paa: "Papuan Language"
-    :pag: "Pangasinan"
-    :pal: "Pahlavi"
-    :pam: "Pampanga"
-    :pap: "Papiamento"
-    :pau: "Palauan"
+    :nqo: N’Ko
+    :nr: "Ndebele Deheuol"
+    :nso: "Sotho Gogleddol"
+    :nus: Nŵereg
+    :nv: Nafaho
+    :nwc: "Hen Newari"
+    :ny: Nianja
+    :nym: Niamwezi
+    :nyn: Niancole
+    :nyo: Nioro
+    :nzi: Nzimeg
+    :oc: Ocsitaneg
+    :oj: Ojibwa
+    :om: Oromo
+    :or: Oriya
+    :os: Oseteg
+    :osa: Osageg
+    :ota: "Tyrceg Otoman"
+    :pa: Pwnjabeg
+    :pag: Pangasineg
+    :pal: Pahlafi
+    :pam: Pampanga
+    :pcd: Picardeg
+    :pdc: "Almaeneg Pensylfania"
     :peo: "Hen Bersieg"
-    :phi: "Philippine Language"
-    :phn: "Phoenician"
-    :pi: "Pali"
-    :pl: "Pwyleg"
-    :pon: "Pohnpeian"
-    :pra: "Prakrit Language"
+    :pfl: "Almaeneg Palatin"
+    :phn: Phoeniceg
+    :pi: Pali
+    :pl: Pwyleg
+    :pms: Piedmonteg
+    :pnt: Ponteg
+    :pon: Pohnpeianeg
+    :prg: Prwseg
     :pro: "Hen Brofensaleg"
-    :ps: "Pashto"
-    :pt: "Portiwgeeg"
+    :ps: Pashto
+    :pt: Portiwgeeg
     :pt-BR: "Portiwgeeg Brasil"
     :pt-PT: "Portiwgeeg Ewrop"
-    :qu: "Quechua"
-    :raj: "Rajasthani"
-    :rap: "Rapanui"
-    :rar: "Rarotongan"
-    :rm: "Romaunsch"
-    :rn: "Rundi"
-    :ro: "Rwmaneg"
-    :roa: "Romance Language"
-    :rof: "Rombo"
-    :rom: "Romany"
-    :root: "Root"
-    :ru: "Rwseg"
-    :rup: "Aromanian"
-    :rw: "Kinyarwanda"
-    :rwk: "Rwa"
-    :sa: "Sansgrit"
-    :sad: "Sandawe"
-    :sah: "Sakha"
-    :sai: "South American Indian Language"
-    :sal: "Salishan Language"
-    :sam: "Samaritan Aramaic"
-    :saq: "Samburu"
-    :sas: "Sasak"
-    :sat: "Santali"
-    :sba: "Ngambay"
-    :sbp: "Sangu"
-    :sc: "Sardinian"
-    :scn: "Sicilian"
-    :sco: "Sgoteg"
-    :sd: "Sindhi"
-    :se: "Northern Sami"
-    :see: "Seneca"
-    :seh: "Sena"
-    :sel: "Selkup"
-    :sem: "Semitic Language"
+    :qu: Quechua
+    :quc: K’iche’
+    :raj: Rajasthaneg
+    :rap: Rapanŵi
+    :rar: Raratongeg
+    :rm: Románsh
+    :rn: Rwndi
+    :ro: Rwmaneg
+    :ro-MD: Moldofeg
+    :rof: Rombo
+    :rom: Romani
+    :root: "y Gwraidd"
+    :rtm: Rotumaneg
+    :ru: Rwseg
+    :rup: Aromaneg
+    :rw: Ciniarŵandeg
+    :rwk: Rwa
+    :sa: Sansgrit
+    :sad: Sandäweg
+    :sam: "Aramaeg Samaria"
+    :saq: Sambŵrw
+    :sas: Sasaceg
+    :sat: Santali
+    :sba: Ngambeieg
+    :sbp: Sangw
+    :sc: Sardeg
+    :scn: Sisileg
+    :sco: Sgoteg
+    :sd: Sindhi
+    :sdc: "Sasareseg Sardinia"
+    :sdh: "Cwrdeg Deheuol"
+    :se: "Sami Gogleddol"
+    :see: Seneca
+    :seh: Sena
+    :sei: Seri
+    :sel: Selcypeg
     :ses: "Koyraboro Senni"
-    :sg: "Sango"
+    :sg: Sango
     :sga: "Hen Wyddeleg"
-    :sgn: "Sign Language"
-    :sh: "Serbo-Croateg"
-    :shi: "Tachelhit"
-    :shn: "Shan"
-    :shu: "Chadian Arabic"
-    :si: "Sinhaleg"
-    :sid: "Sidamo"
-    :sio: "Siouan Language"
-    :sit: "Sino-Tibetan Language"
-    :sk: "Slofaceg"
-    :sl: "Slofeneg"
-    :sla: "Iaith Slafig"
-    :sm: "Samoan"
-    :sma: "Southern Sami"
-    :smi: "Sami Language"
-    :smj: "Lule Sami"
-    :smn: "Inari Sami"
-    :sms: "Skolt Sami"
-    :sn: "Shona"
-    :snk: "Soninke"
-    :so: "Somaleg"
-    :sog: "Sogdien"
-    :son: "Songhai"
-    :sq: "Albaneg"
-    :sr: "Serbeg"
-    :srn: "Sranan Tongo"
-    :srr: "Serer"
-    :ss: "Swati"
-    :ssa: "Nilo-Saharan Language"
-    :ssy: "Saho"
-    :st: "Sesotheg"
-    :su: "Swndaneg"
-    :suk: "Sukuma"
-    :sus: "Susu"
-    :sux: "Sumerian"
-    :sv: "Swedeg"
-    :sw: "Swahili"
-    :swb: "Comorian"
-    :swc: "Swahili'r Congo"
-    :syc: "Classical Syriac"
-    :syr: "Syriac"
-    :ta: "Tamileg"
-    :tai: "Tai Language"
-    :te: "Telugu"
-    :tem: "Timne"
-    :teo: "Teso"
-    :ter: "Tereno"
-    :tet: "Tetum"
-    :tg: "Tajiceg"
-    :th: "Thai"
-    :ti: "Tigrinya"
-    :tig: "Tigre"
-    :tiv: "Tiv"
-    :tk: "Twrcmeneg"
-    :tkl: "Tokelau"
-    :tl: "Tagalog"
-    :tlh: "Klingon"
-    :tli: "Tlingit"
-    :tmh: "Tamashek"
-    :tn: "Tswana"
-    :to: "Tongeg"
-    :tog: "Nyasa Tonga"
+    :sgs: Samogiteg
+    :sh: Serbo-Croateg
+    :shi: Tachelhit
+    :shu: "Arabeg Chad"
+    :si: Sinhaleg
+    :sid: Sidamo
+    :sk: Slofaceg
+    :sl: Slofeneg
+    :sli: Is-silesieg
+    :sm: Samöeg
+    :sma: "Sami Deheuol"
+    :smj: "Sami Lwle"
+    :smn: "Sami Inari"
+    :sms: "Sami Scolt"
+    :sn: Shona
+    :snk: Soninceg
+    :so: Somaleg
+    :sog: Sogdeg
+    :sq: Albaneg
+    :sr: Serbeg
+    :srr: Serereg
+    :ss: Swati
+    :st: Sesotheg
+    :stq: "Ffriseg Saterland"
+    :su: Swndaneg
+    :suk: Swcwma
+    :sus: Swsŵeg
+    :sux: Swmereg
+    :sv: Swedeg
+    :sw: Swahili
+    :sw-CD: "Swahili’r Congo"
+    :swb: Comoreg
+    :syc: "Hen Syrieg"
+    :syr: Syrieg
+    :szl: Silesieg
+    :ta: Tamileg
+    :tcy: Tulu
+    :te: Telugu
+    :tem: Timneg
+    :teo: Teso
+    :ter: Terena
+    :tet: Tetumeg
+    :tg: Tajiceg
+    :th: Thai
+    :ti: Tigrinya
+    :tig: Tigreg
+    :tiv: Tifeg
+    :tk: Twrcmeneg
+    :tkl: Tocelaweg
+    :tkr: Tsakhureg
+    :tl: Tagalog
+    :tlh: Klingon
+    :tli: Llingit
+    :tly: Talysheg
+    :tmh: Tamasheceg
+    :tn: Tswana
+    :to: Tongeg
     :tpi: "Tok Pisin"
-    :tr: "Tyrceg"
-    :trv: "Taroko"
-    :ts: "Tsonga"
-    :tsi: "Tsimshian"
-    :tt: "Tatareg"
-    :tum: "Tumbuka"
-    :tup: "Tupi Language"
-    :tut: "Altaic Language"
-    :tvl: "Tuvalu"
-    :tw: "Twi"
-    :twq: "Tasawaq"
-    :ty: "Tahitian"
-    :tyv: "Tuvinian"
-    :tzm: "Central Atlas Tamazight"
-    :udm: "Udmurt"
-    :ug: "Uighur"
-    :uga: "Ugaritic"
-    :uk: "Wcreineg"
-    :umb: "Umbundu"
+    :tr: Tyrceg
+    :trv: Taroko
+    :ts: Tsongaeg
+    :tsd: Tsaconeg
+    :tt: Tatareg
+    :tum: Twmbwca
+    :tvl: Twfalweg
+    :tw: Twi
+    :twq: Tasawaq
+    :tzm: "Tamaseit Canolbarth Moroco"
+    :udm: Fotiaceg
+    :ug: Uighur
+    :uga: Wgariteg
+    :uk: Wcreineg
+    :umb: Umbundu
     :und: "Iaith Anhysbys"
-    :ur: "Wrdw"
-    :uz: "Wsbeceg"
-    :vai: "Vai"
-    :ve: "Venda"
-    :vi: "Fietnameg"
-    :vo: "Volapük"
-    :vot: "Votic"
-    :vun: "Vunjo"
-    :wa: "Walloon"
-    :wae: "Walser"
-    :wak: "Wakashan Language"
-    :wal: "Wolaytta"
-    :war: "Waray"
-    :was: "Washo"
-    :wen: "Sorbian Language"
-    :wo: "Woloff"
-    :xal: "Kalmyk"
-    :xh: "Xhosa"
-    :xog: "Soga"
-    :yao: "Yao"
-    :yap: "Yapese"
-    :yav: "Yangben"
-    :ybb: "Yemba"
-    :yi: "Yiddish"
-    :yo: "Iorwba"
-    :ypk: "Yupik Language"
-    :yue: "Cantoneeg"
-    :za: "Zhuang"
-    :zap: "Zapotec"
-    :zbl: "Blissymbols"
-    :zen: "Zenaga"
-    :zgh: "Tamazight Safonol Moroco"
-    :zh: "Tsieineeg"
+    :ur: Wrdw
+    :uz: Wsbeceg
+    :vai: Faieg
+    :ve: Fendeg
+    :vec: Feniseg
+    :vep: Feps
+    :vi: Fietnameg
+    :vls: "Fflemeg Gorllewinol"
+    :vot: Foteg
+    :vun: Funjo
+    :wa: Walwneg
+    :wae: Walsereg
+    :wal: Walamo
+    :war: Winarayeg
+    :was: Washo
+    :wbp: Warlpiri
+    :wo: Woloff
+    :xal: Calmyceg
+    :xh: Xhosa
+    :xog: Soga
+    :ybb: Iembaeg
+    :yi: Iddew-Almaeneg
+    :yo: Iorwba
+    :yue: Cantoneeg
+    :zap: Zapoteceg
+    :zbl: Blisssymbols
+    :zea: Zêlandeg
+    :zgh: "Tamaseit Safonol"
+    :zh: Tsieineeg
     :zh-Hans: "Tsieineeg Symledig"
     :zh-Hant: "Tsieineeg Traddodiadol"
-    :znd: "Zande"
-    :zu: "Swlw"
-    :zun: "Zuni"
+    :zu: Swlw
+    :zun: Zuni
     :zxx: "Dim cynnwys ieithyddol"
-    :zza: "Zaza"
+    :zza: Zazäeg

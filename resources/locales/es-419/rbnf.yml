@@ -1,0 +1,65 @@
+--- 
+:es-419: 
+  :rbnf: 
+    :grouping: 
+      - 
+        :ruleset: 
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: º;
+                :value: 0
+              - 
+                :rule: ᵉʳ;
+                :value: 1
+              - 
+                :rule: º;
+                :value: 2
+              - 
+                :rule: ᵉʳ;
+                :value: 3
+              - 
+                :rule: º;
+                :value: 4
+              - 
+                :rule: ">>;"
+                :value: 20
+              - 
+                :rule: ">>;"
+                :value: 100
+            :type: dord-mascabbrev
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0==%%dord-mascabbrev=.;"
+                :value: 0
+            :type: digits-ordinal-masculine-adjective
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=º.;"
+                :value: 0
+            :type: digits-ordinal-masculine
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=ª.;"
+                :value: 0
+            :type: digits-ordinal-feminine
+          - 
+            :rules: 
+              - 
+                :rule: =%digits-ordinal-masculine=;
+                :value: 0
+            :type: digits-ordinal
+        :type: OrdinalRules

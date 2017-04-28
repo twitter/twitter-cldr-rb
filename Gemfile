@@ -4,42 +4,36 @@ gemspec
 
 group :development, :test do
   gem 'rake'
-  gem 'pry'
   gem 'pry-nav'
-  gem 'rbench'
 
-  if RUBY_VERSION >= "1.9" && RUBY_PLATFORM != "java"
+  if RUBY_VERSION >= '1.9' && RUBY_PLATFORM != 'java'
     gem 'ruby-prof'
   end
 
-  if RUBY_VERSION <= "1.8.7"
-    gem 'oniguruma'
-  end
+  gem 'regexp_parser', '~> 0.1'
+  gem 'rubyzip', '~> 1.0'
+  gem 'benchmark-ips'
 end
 
 group :development do
-  gem 'nokogiri', "~> 1.5.9"
+  gem 'nokogiri', '~> 1.5.9'
 
-  # https://github.com/svenfuchs/ruby-cldr/pull/18
-  # gem 'ruby-cldr', :github => 'svenfuchs/ruby-cldr'
-  gem 'ruby-cldr', :github => 'camertron/ruby-cldr', :branch => "segmentation"
+  gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
+  gem 'i18n', '~> 0.6.11'
+  gem 'cldr-plurals', '~> 1.0'
+
+  gem 'rest-client', '~> 1.8'
 end
 
 group :test do
-  gem 'rspec', '~> 2.11.0'
-  gem 'rr',    '~> 1.0.4'
+  gem 'rspec', '~> 2.14.0'
+  gem 'rr',    '~> 1.1.2'
 
-  if RUBY_VERSION >= "1.9"
-    gem 'rubyzip'
-  end
+  gem 'term-ansicolor', '~> 1.3.0'        # 1.4 breaks ruby 1.9 support
+  gem 'coveralls', require: false
+  gem 'tins', '~> 1.6.0', require: false  # 1.7 breaks ruby 1.9 support
 
-  platform :mri_18 do
-    gem 'rcov'
-  end
-
-  platform :mri_19 do
-    gem 'simplecov'
-    gem 'launchy'
-  end
+  gem 'simplecov'
+  gem 'launchy'
+  gem 'addressable', '~> 2.4.0'           # 2.5 breaks ruby 1.9 support
 end
-

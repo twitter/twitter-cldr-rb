@@ -22,23 +22,25 @@ module TwitterCldr
 
         def format_groups(string)
           return string if groups.empty?
+
           tokens = []
+
           tokens << chop_group(string, groups.first)
-          tokens << chop_group(string, groups.last) while string.length > groups.last
-          tokens << string
+          tokens << chop_group(string, groups.last) until string.empty?
+
           tokens.compact.reverse.join(separator)
         end
 
         def parse_groups(format)
           return [] unless index = format.rindex(',')
           rest   = format[0, index]
-          widths = [format.length - index - 1]
-          widths << rest.length - rest.rindex(',') - 1 if rest.rindex(',')
+          widths = [format.size - index - 1]
+          widths << rest.size - rest.rindex(',') - 1 if rest.rindex(',')
           widths.compact.uniq
         end
 
         def chop_group(string, size)
-          string.slice!(-size, size) if string.length > size
+          string.slice!([string.size - size, 0].max, size)
         end
 
         def prepare_format(format, symbols)

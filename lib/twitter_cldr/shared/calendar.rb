@@ -10,24 +10,24 @@ module TwitterCldr
       DEFAULT_FORMAT = :'stand-alone'
       DEFAULT_PERIOD_FORMAT = :format
 
-      NAMES_FORMS = [:wide, :narrow, :abbreviated]
+      NAMES_FORMS = [:wide, :narrow, :short, :abbreviated, :foo]
       ERAS_NAMES_FORMS = [:abbr, :name]
 
       DATETIME_METHOD_MAP = {
-        :year_of_week_of_year => :year,
-        :quarter_stand_alone => :quarter,
-        :month_stand_alone => :month,
-        :day_of_month => :day,
-        :day_of_week_in_month => :day,
-        :weekday_local => :weekday,
-        :weekday_local_stand_alone => :weekday,
-        :second_fraction => :second,
-        :timezone_generic_non_location => :timezone,
-        :timezone_metazone => :timezone
+        year_of_week_of_year: :year,
+        quarter_stand_alone: :quarter,
+        month_stand_alone: :month,
+        day_of_month: :day,
+        day_of_week_in_month: :day,
+        weekday_local: :weekday,
+        weekday_local_stand_alone: :weekday,
+        second_fraction: :second,
+        timezone_generic_non_location: :timezone,
+        timezone_metazone: :timezone
       }
 
       REDIRECT_CONVERSIONS = {
-        :dayPeriods => :periods
+        dayPeriods: :periods
       }
 
       attr_reader :locale, :calendar_type
@@ -84,6 +84,10 @@ module TwitterCldr
 
       def datetime_order(options = {})
         get_order_for(TwitterCldr::DataReaders::DateTimeDataReader, options)
+      end
+
+      def calendar_data
+        @calendar_data ||= TwitterCldr::Utils.traverse_hash(resource, [locale, :calendars, calendar_type])
       end
 
       private
@@ -152,10 +156,6 @@ module TwitterCldr
 
       def redirect_regexp
         Regexp.new("^calendars\.#{calendar_type}\.(.*)$")
-      end
-
-      def calendar_data
-        @calendar_data ||= TwitterCldr::Utils.traverse_hash(resource, [locale, :calendars, calendar_type])
       end
 
       def resource

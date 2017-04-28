@@ -10,7 +10,7 @@ include TwitterCldr::Localized
 describe LocalizedArray do
   describe '#code_points_to_string' do
     it 'transforms an array of code points into a string' do
-      [0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72].localize.code_points_to_string.should == 'twitter'
+      expect([0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72].localize.code_points_to_string).to eq('twitter')
     end
   end
 
@@ -24,25 +24,25 @@ describe LocalizedArray do
 
     describe '#sort' do
       it 'returns a new LocalizedArray' do
-        localized.sort.should be_instance_of(LocalizedArray)
+        expect(localized.sort).to be_instance_of(LocalizedArray)
       end
 
       it 'does not change the original array' do
-        lambda { localized.sort }.should_not change { localized.base_obj }
+        expect { localized.sort }.not_to change { localized.base_obj }
       end
 
       it 'sorts strings in the array with corresponding collator' do
-        localized.sort.base_obj.should == sorted
+        expect(localized.sort.base_obj).to eq(sorted)
       end
     end
 
     describe '#sort!' do
       it 'returns self' do
-        localized.sort!.object_id.should == localized.object_id
+        expect(localized.sort!.object_id).to eq(localized.object_id)
       end
 
       it 'sorts the array in-place' do
-        localized.sort!.base_obj.should == sorted
+        expect(localized.sort!.base_obj).to eq(sorted)
       end
     end
   end
@@ -53,14 +53,14 @@ describe LocalizedArray do
       index = 0
 
       arr.localize.each do |item|
-        arr[index].should == item
+        expect(arr[index]).to eq(item)
         index += 1
       end
     end
 
     it "should support a few of the other methods in Enumerable" do
-      [1, 2, 3].localize.inject(0) { |sum, num| sum += num; sum }.should == 6
-      [1, 2, 3].localize.map { |item| item + 1 }.should == [2, 3, 4]
+      expect([1, 2, 3].localize.inject(0) { |sum, num| sum += num; sum }).to eq(6)
+      expect([1, 2, 3].localize.map { |item| item + 1 }).to eq([2, 3, 4])
     end
   end
 
@@ -69,9 +69,9 @@ describe LocalizedArray do
       arr = [:foo, "bar", Object.new]
       result = YAML.load(arr.localize.to_yaml)
 
-      result[0].should == :foo
-      result[1].should == "bar"
-      result[2].should be_a(Object)
+      expect(result[0]).to eq(:foo)
+      expect(result[1]).to eq("bar")
+      expect(result[2]).to be_a(Object)
     end
   end
 end

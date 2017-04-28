@@ -13,7 +13,7 @@ module TwitterCldr
 
       class << self
         def types
-          TwitterCldr::DataReaders::CalendarDataReader::TYPE_PATHS.keys
+          TwitterCldr::DataReaders::CalendarDataReader.types
         end
       end
 
@@ -28,16 +28,21 @@ module TwitterCldr
           # @ TODO: these need to be cheap to create
           data_reader = data_reader_for(type)
           tokens = data_reader.tokenizer.tokenize(data_reader.pattern)
-          data_reader.formatter.format(tokens, base_in_timezone)
+          data_reader.formatter.format(tokens, base_in_timezone, chain_params)
         end
       end
 
       def to_additional_s(additional_format)
         data_reader = data_reader_for(:additional, {
-          :additional_format => additional_format
+          additional_format: additional_format
         })
 
-        tokens = data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        tokens = if data_reader.tokenizer.respond_to?(:full_tokenize)
+          data_reader.tokenizer.full_tokenize(data_reader.pattern)
+        else
+          data_reader.tokenizer.tokenize(data_reader.pattern)
+        end
+
         data_reader.formatter.format(tokens, base_in_timezone)
       end
 
@@ -46,21 +51,21 @@ module TwitterCldr
       def to_timespan(options = {})
         base_time = options[:base_time] || Time.now
         seconds = (self.to_time.base_obj.to_i - base_time.to_i).abs
-        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale, :direction => :none))
+        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(locale: @locale, direction: :none))
       end
 
       def ago(options = {})
         base_time = (options[:base_time] || Time.now).gmtime
         seconds = self.to_time(base_time).base_obj.gmtime.to_i - base_time.to_i
         raise ArgumentError.new('Start date is after end date. Consider using "until" function.') if seconds > 0
-        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
+        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(locale: @locale))
       end
 
       def until(options = {})
         base_time = (options[:base_time] || Time.now).gmtime
         seconds = self.to_time(base_time).base_obj.gmtime.to_i - base_time.to_i
         raise ArgumentError.new('End date is before start date. Consider using "ago" function.') if seconds < 0
-        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(:locale => @locale))
+        TwitterCldr::Localized::LocalizedTimespan.new(seconds, options.merge(locale: @locale))
       end
 
       def additional_formats
@@ -85,27 +90,29 @@ module TwitterCldr
           utc_dt.hour,
           utc_dt.min,
           utc_dt.sec,
-          utc_dt.sec_fraction * (RUBY_VERSION < '1.9' ? 86400000000 : 1000000)
+          utc_dt.sec_fraction * 1_000_000
         )
 
         LocalizedTime.new(time, @locale, chain_params)
       end
 
       def with_timezone(timezone)
-        self.class.new(@base_obj, @locale, chain_params.merge(:timezone => timezone))
+        self.class.new(@base_obj, @locale, chain_params.merge(timezone: timezone))
       end
 
       protected
 
       def data_reader_for(type, options = {})
-        TwitterCldr::DataReaders::DateTimeDataReader.new(locale, options.merge({
-          :calendar_type => calendar_type,
-          :type => type
-        }))
+        TwitterCldr::DataReaders::DateTimeDataReader.new(
+          locale, options.merge({
+            calendar_type: calendar_type,
+            type: type
+          })
+        )
       end
 
       def chain_params
-        { :calendar_type => @calendar_type, :timezone => @timezone }
+        { calendar_type: @calendar_type, timezone: @timezone }
       end
 
       def base_in_timezone

@@ -1,13 +1,20 @@
 ---
-:sr: ! '{ :''sr'' => { :i18n => { :plural => { :keys => [:one, :few, :other], :rule
-  => lambda { |n| ((((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length :
-  0) == 0 && n.to_i % 10 == 1 && n.to_i % 100 != 11) || (((f = n.to_s.split(".")[1]
-  || []).count > 1 ? f.last.to_i : 0) % 10 == 1 && ((f = n.to_s.split(".")[1] || []).count
-  > 1 ? f.last.to_i : 0) % 100 != 11)) ? :one : ((((v = n.to_s.split(".")[1] || []).count
-  > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (2..4).include?(n.to_i
-  % 10)) && (((n.to_i % 100) % 1).zero? && !(12..14).include?(n.to_i % 100))) || ((((((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10) % 1).zero? && (2..4).include?(((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 10)) && (((((f = n.to_s.split(".")[1]
-  || []).count > 1 ? f.last.to_i : 0) % 100) % 1).zero? && !(12..14).include?(((f
-  = n.to_s.split(".")[1] || []).count > 1 ? f.last.to_i : 0) % 100)))) ? :few : :other
-  } } } } }'
+:sr:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((((v == 0) &&
+      ((((i % 10).floor == (i % 10)) && ((i % 10) >= 2) && ((i % 10) <= 4))))) &&
+      (!(((i % 100).floor == (i % 100)) && ((i % 100) >= 12) && ((i % 100) <= 14)))))
+      || ((((((f % 10).floor == (f % 10)) && ((f % 10) >= 2) && ((f % 10) <= 4)))
+      && (!(((f % 100).floor == (f % 100)) && ((f % 100) >= 12) && ((f % 100) <= 14))))))
+      ? :few : (((((((v == 0) && (i % 10 == 1))) && (i % 100 != 11))) || (((f % 10
+      == 1) && (f % 100 != 11)))) ? :one : :other)) }'
+    :names:
+    - :few
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

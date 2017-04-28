@@ -3,65 +3,62 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'twitter_cldr/resources/download'
+require 'open-uri'
 
 module TwitterCldr
   module Resources
 
-    class LanguageCodesImporter
+    class LanguageCodesImporter < Importer
 
       BCP_47_FILE, ISO_639_FILE = %w[bcp-47.txt iso-639.txt]
 
       INPUT_DATA = {
-        BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry',
+        BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
         ISO_639_FILE => 'http://www-01.sil.org/iso639-3/iso-639-3_20120614.tab'
       }
 
       KEYS_TO_STANDARDS = {
-        :iso_639_1      => :iso_639_1,
-        :iso_639_2      => :iso_639_2,
-        :iso_639_2_term => :iso_639_2,
-        :iso_639_3      => :iso_639_3,
-        :bcp_47         => :bcp_47,
-        :bcp_47_alt     => :bcp_47
+        iso_639_1:      :iso_639_1,
+        iso_639_2:      :iso_639_2,
+        iso_639_2_term: :iso_639_2,
+        iso_639_3:      :iso_639_3,
+        bcp_47:         :bcp_47,
+        bcp_47_alt:     :bcp_47
       }
 
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
-
-      def import(import_yaml = false)
-        prepare_data
-        import_data(import_yaml)
-      end
+      output_path 'shared'
+      ruby_engine :mri
 
       private
 
+      def execute
+        prepare_data
+        import_data
+      end
+
       def prepare_data
         INPUT_DATA.each do |file, url|
-          TwitterCldr::Resources.download_if_necessary(File.join(@input_path, file), url)
+          source_path = source_path_for(file)
+          open(source_path, 'wb') { |file| file << open(url).read }
         end
       end
 
-      def import_data(import_yaml)
+      def source_path_for(file)
+        File.join(TwitterCldr::VENDOR_DIR, file)
+      end
+
+      def import_data
         result = import_iso_639
         result = import_bcp_47(result)
 
         language_codes = Hash[result.inject({}) { |memo, (key, value)| memo[key] = Hash[value.sort]; memo }.sort]
-
         language_codes_table = build_table(language_codes)
 
-        write('language_codes_table.dump', 'wb', Marshal.dump(language_codes_table))
-
-        if import_yaml
-          write('language_codes.yml', 'w:utf-8', YAML.dump(language_codes))
-          write('language_codes_table.yml', 'w:utf-8', YAML.dump(language_codes_table))
-        end
+        write('language_codes_table.dump', Marshal.dump(language_codes_table))
       end
 
-      def write(file, mode, data)
-        File.open(File.join(@output_path, file), mode) { |output| output.write(data) }
+      def write(file, data)
+        File.write(File.join(params.fetch(:output_path), file), data)
       end
 
       # Generates codes in the following format:
@@ -76,8 +73,8 @@ module TwitterCldr
       # }
       #
       def import_iso_639(result = {})
-        File.open(File.join(@input_path, ISO_639_FILE)) do |file|
-          lines = file.lines
+        File.open(source_path_for(ISO_639_FILE)) do |file|
+          lines = file.each_line
           lines.next # skip header
 
           lines.each do |line|
@@ -120,8 +117,8 @@ module TwitterCldr
       #   }
       # }
       def import_bcp_47(result = {})
-        File.open(File.join(@input_path, BCP_47_FILE)) do |file|
-          lines = file.lines
+        File.open(source_path_for(BCP_47_FILE)) do |file|
+          lines = file.each_line
           lines.next # skip header
 
           data  = {}
@@ -197,7 +194,7 @@ module TwitterCldr
         end
 
         language_codes_map.each do |name, codes|
-          table[:name][name] = { :name => name }.merge(codes)
+          table[:name][name] = { name: name }.merge(codes)
         end
 
         table[:name].values.each do |data|
@@ -212,18 +209,18 @@ module TwitterCldr
       end
 
       ISO_639_COLUMNS = [
-          :code,            # Code
-          :status,          # Status
-          :partner_agency,  # Partner Agency
-          :iso_639_3,       # 639_3
-          :iso_639_2,       # 639_2 (alpha-3 bibliographic/terminology code)
-          :b_code,          # alpha-3 bibliographic code if iso_639_2 contains terminology code
-          :bt_equiv,        # bt_equiv (alpha-3 bibliographic/terminology equivalent)
-          :iso_639_1,       # 639_1
-          :name,            # Reference_Name
-          :scope,           # Element_Scope
-          :type,            # Language_Type
-          :docs             # Documentation
+        :code,            # Code
+        :status,          # Status
+        :partner_agency,  # Partner Agency
+        :iso_639_3,       # 639_3
+        :iso_639_2,       # 639_2 (alpha-3 bibliographic/terminology code)
+        :b_code,          # alpha-3 bibliographic code if iso_639_2 contains terminology code
+        :bt_equiv,        # bt_equiv (alpha-3 bibliographic/terminology equivalent)
+        :iso_639_1,       # 639_1
+        :name,            # Reference_Name
+        :scope,           # Element_Scope
+        :type,            # Language_Type
+        :docs             # Documentation
       ]
 
     end

@@ -14,43 +14,20 @@ describe TimespanTokenizer do
       tokenizer = TimespanTokenizer.new(nil)
       tokenizer.tokenize("Hace {0} minutos").tap do |tokens|
         tokens[0].tap do |token|
-          token.value.should == "Hace "
-          token.type.should == :plaintext
+          expect(token.value).to eq("Hace ")
+          expect(token.type).to eq(:plaintext)
         end
 
         tokens[1].tap do |token|
-          token.value.should == "{0}"
-          token.type.should == :pattern
+          expect(token.value).to eq("{0}")
+          expect(token.type).to eq(:pattern)
         end
 
         tokens[2].tap do |token|
-          token.value.should == " minutos"
-          token.type.should == :plaintext
+          expect(token.value).to eq(" minutos")
+          expect(token.type).to eq(:plaintext)
         end
       end
-    end
-
-    it "should read correct tokens from custom locale" do
-		  tokenizer = TimespanTokenizer.new(:locale => :sv)
-      one_day_ago = tokenizer.tokens(:unit => :day, :direction => :ago, :number => 1, :type => :default)
-      one_day_ago[0].should == { :value => "för ", :type => :plaintext }
-      one_day_ago[1].should == { :value => "{0}", :type => :placeholder }
-      one_day_ago[2].should == { :value => " dag sedan", :type => :plaintext }
-
-      two_days_ago = tokenizer.tokens(:unit => :day, :direction => :ago, :number => 2, :type => :default)
-      two_days_ago[0].should == { :value => "för ", :type => :plaintext }
-      two_days_ago[1].should == { :value => "{0}", :type => :placeholder }
-      two_days_ago[2].should == { :value => " dagar sedan", :type => :plaintext }
-
-      one_day_until = tokenizer.tokens(:unit => :day, :direction => :until, :number => 1, :type => :default)
-      one_day_until[0].should == { :value => "om ", :type => :plaintext }
-      one_day_until[1].should == { :value => "{0}", :type => :placeholder }
-      one_day_until[2].should == { :value => " dag", :type => :plaintext }
-
-      two_days_until = tokenizer.tokens(:unit => :day, :direction => :until, :number => 2, :type => :default)
-      two_days_until[0].should == { :value => "om ", :type => :plaintext }
-      two_days_until[1].should == { :value => "{0}", :type => :placeholder }
-      two_days_until[2].should == { :value => " dagar", :type => :plaintext }
     end
   end
 

@@ -23,64 +23,64 @@ describe UnicodeRegexParser do
   describe "#parse" do
     it "identifies ranges" do
       elements = parse(tokenize("[a-z]"))
-      elements.first.should be_a(UnicodeRegexParser::CharacterClass)
+      expect(elements.first).to be_a(UnicodeRegexParser::CharacterClass)
       root = elements.first.send(:root)
-      root.should be_a(UnicodeRegexParser::CharacterRange)
-      root.initial.codepoints.should == "a".unpack("U*")
-      root.final.codepoints.should == "z".unpack("U*")
+      expect(root).to be_a(UnicodeRegexParser::CharacterRange)
+      expect(root.initial.codepoints).to eq("a".unpack("U*"))
+      expect(root.final.codepoints).to eq("z".unpack("U*"))
     end
 
     it "replaces variables" do
       symbol_table = SymbolTable.new("$VAR" => tokenize("\\p{L}"))
-      elements = parse(tokenize("($VAR)?"), :symbol_table => symbol_table)
-      elements[1].should be_a(UnicodeRegexParser::CharacterSet)
-      elements[1].property_value.should == "L"
+      elements = parse(tokenize("($VAR)?"), symbol_table: symbol_table)
+      expect(elements[1]).to be_a(UnicodeRegexParser::CharacterSet)
+      expect(elements[1].property_value).to eq("L")
     end
 
     it "handles character and negated character sets" do
       elements = parse(tokenize("\\p{L}[:^P:]\\P{L}[:P:]"))
 
       element = elements[0]
-      element.should be_a(UnicodeRegexParser::CharacterSet)
-      element.property_value.should == "L"
+      expect(element).to be_a(UnicodeRegexParser::CharacterSet)
+      expect(element.property_value).to eq("L")
 
       element = elements[1]
-      element.should be_a(UnicodeRegexParser::CharacterClass)
-      element.send(:root).child.property_value.should == "P"
-      element.send(:root).operator.should == :negate
+      expect(element).to be_a(UnicodeRegexParser::CharacterClass)
+      expect(element.send(:root).child.property_value).to eq("P")
+      expect(element.send(:root).operator).to eq(:negate)
 
       element = elements[2]
-      element.should be_a(UnicodeRegexParser::CharacterClass)
-      element.send(:root).child.property_value.should == "L"
+      expect(element).to be_a(UnicodeRegexParser::CharacterClass)
+      expect(element.send(:root).child.property_value).to eq("L")
 
       element = elements[3]
-      element.should be_a(UnicodeRegexParser::CharacterSet)
-      element.property_value.should == "P"
+      expect(element).to be_a(UnicodeRegexParser::CharacterSet)
+      expect(element.property_value).to eq("P")
     end
 
     it "handles unicode characters" do
       elements = parse(tokenize("\\u0123"))
-      elements[0].should be_a(UnicodeRegexParser::UnicodeString)
-      elements[0].codepoints.should == [291]
+      expect(elements[0]).to be_a(UnicodeRegexParser::UnicodeString)
+      expect(elements[0].codepoints).to eq([291])
     end
 
     it "handles multichar and escaped unicode strings" do
       elements = parse(tokenize("\\g{abc}"))
-      elements[0].should be_a(UnicodeRegexParser::Literal)
-      elements[0].text.should == "\\g"
-      elements[1].should be_a(UnicodeRegexParser::UnicodeString)
-      elements[1].codepoints.should == [97, 98, 99]
+      expect(elements[0]).to be_a(UnicodeRegexParser::Literal)
+      expect(elements[0].text).to eq("\\g")
+      expect(elements[1]).to be_a(UnicodeRegexParser::UnicodeString)
+      expect(elements[1].codepoints).to eq([97, 98, 99])
     end
 
     it "handles special chars" do
       elements = parse(tokenize("^(?:)$"))
-      elements.each { |elem| elem.should be_a(UnicodeRegexParser::Literal) }
-      elements[0].text.should == "^"
-      elements[1].text.should == "("
-      elements[2].text.should == "?"
-      elements[3].text.should == ":"
-      elements[4].text.should == ")"
-      elements[5].text.should == "$"
+      elements.each { |elem| expect(elem).to be_a(UnicodeRegexParser::Literal) }
+      expect(elements[0].text).to eq("^")
+      expect(elements[1].text).to eq("(")
+      expect(elements[2].text).to eq("?")
+      expect(elements[3].text).to eq(":")
+      expect(elements[4].text).to eq(")")
+      expect(elements[5].text).to eq("$")
     end
   end
 end

@@ -11,7 +11,7 @@ describe TrieLoader do
 
   describe '.load_default_trie' do
     let(:root)        { 42 }
-    let(:trie)        { Trie.new(root).tap { |t| t.lock } }
+    let(:trie)        { TwitterCldr::Utils::Trie.new(root).tap { |t| t.lock } }
     let(:trie_dump)   { Marshal.dump(trie) }
     let(:loaded_trie) { TrieLoader.load_default_trie }
     let(:locale)      { TrieLoader::DEFAULT_TRIE_LOCALE }
@@ -19,15 +19,15 @@ describe TrieLoader do
     before(:each) { mock_trie_dump }
 
     it 'loads a Trie' do
-      loaded_trie.should be_instance_of(Trie)
+      expect(loaded_trie).to be_instance_of(TwitterCldr::Utils::Trie)
     end
 
     it 'loads trie root' do
-      loaded_trie.instance_variable_get(:@root).should == root
+      expect(loaded_trie.instance_variable_get(:@root)).to eq(root)
     end
 
     it 'loads trie as unlocked' do
-      loaded_trie.should_not be_locked
+      expect(loaded_trie).not_to be_locked
     end
   end
 
@@ -43,25 +43,25 @@ describe TrieLoader do
     before(:each) { mock_trie_dump }
 
     it 'loads a TrieWithFallback' do
-      loaded_trie.should be_instance_of(TrieWithFallback)
+      expect(loaded_trie).to be_instance_of(TrieWithFallback)
     end
 
     it 'loads trie root' do
-      loaded_trie.instance_variable_get(:@root).should == root
+      expect(loaded_trie.instance_variable_get(:@root)).to eq(root)
     end
 
     it 'loads trie as unlocked' do
-      loaded_trie.should_not be_locked
+      expect(loaded_trie).not_to be_locked
     end
 
     it 'sets trie fallback' do
-      loaded_trie.fallback.should == new_fallback
+      expect(loaded_trie.fallback).to eq(new_fallback)
     end
   end
 
   describe '.dump_path' do
     it 'returns path to a trie dump for a specific locale' do
-      TrieLoader.dump_path(:foo).should == File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries', 'foo.dump')
+      expect(TrieLoader.dump_path(:foo)).to eq(File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'tries', 'foo.dump'))
     end
   end
 

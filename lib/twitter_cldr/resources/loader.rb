@@ -6,10 +6,20 @@
 module TwitterCldr
   module Resources
 
+    class ResourceLoadError < StandardError; end
+
     class Loader
 
       def get_resource(*path)
         resources_cache[resource_file_path(path)]
+      end
+
+      def resource_exists?(*path)
+        File.exist?(absolute_resource_path(resource_file_path(path)))
+      end
+
+      def absolute_resource_path(path)
+        File.join(TwitterCldr::RESOURCES_DIR, path)
       end
 
       def get_locale_resource(locale, resource_name)
@@ -24,15 +34,15 @@ module TwitterCldr
         resource_loaded?(*locale_resource_path(locale, resource_name))
       end
 
-      def resource_types
-        @resource_types ||= Dir.glob(File.join(RESOURCES_DIR, 'locales/en', '*')).map do |file|
+      def resource_types_for(locale)
+        Dir.glob(File.join(RESOURCES_DIR, 'locales', locale.to_s, '*')).map do |file|
           File.basename(file).chomp(File.extname(file)).to_sym
         end
       end
 
       def preload_resources_for_locale(locale, *resources)
         if resources.size > 0
-          resources = resource_types if resources.first == :all
+          resources = resource_types_for(locale) if resources.first == :all
           resources.each { |res| get_locale_resource(locale, res) }
         end
         nil
@@ -66,7 +76,9 @@ module TwitterCldr
       end
 
       def resources_cache
-        @resources_cache ||= Hash.new { |hash, path| hash[path] = load_resource(path) }
+        @resources_cache ||= Hash.new do |hash, path|
+          hash[path] = load_resource(path)
+        end
       end
 
       def resource_file_path(path)
@@ -77,24 +89,27 @@ module TwitterCldr
         base = YAML.load(read_resource_file(path))
         custom_path = File.join("custom", path)
 
-        if merge_custom && resource_exists?(custom_path) && !TwitterCldr.disable_custom_locale_resources
+        if merge_custom && custom_resource_exists?(custom_path) && !TwitterCldr.disable_custom_locale_resources
           TwitterCldr::Utils.deep_merge!(base, load_resource(custom_path, false))
         end
 
         base
       end
 
-      def resource_exists?(path)
-        File.exist?(File.join(TwitterCldr::RESOURCES_DIR, path))
+      def custom_resource_exists?(custom_path)
+        File.exist?(
+          File.join(TwitterCldr::RESOURCES_DIR, custom_path)
+        )
       end
 
       def read_resource_file(path)
-        file_path = File.join(TwitterCldr::RESOURCES_DIR, path)
+        file_path = absolute_resource_path(path)
 
         if File.file?(file_path)
           File.read(file_path)
         else
-          raise ArgumentError.new("Resource '#{path}' not found.")
+          raise ResourceLoadError,
+            "Resource '#{path}' not found."
         end
       end
 

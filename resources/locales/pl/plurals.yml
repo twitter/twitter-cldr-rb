@@ -1,12 +1,22 @@
 ---
-:pl: ! '{ :''pl'' => { :i18n => { :plural => { :keys => [:one, :few, :many, :other],
-  :rule => lambda { |n| (n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count >
-  1 ? v.last.length : 0) == 0) ? :one : (((v = n.to_s.split(".")[1] || []).count >
-  1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (2..4).include?(n.to_i
-  % 10)) && (((n.to_i % 100) % 1).zero? && !(12..14).include?(n.to_i % 100))) ? :few
-  : ((((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0) == 0 && n.to_i
-  != 1 && (((n.to_i % 10) % 1).zero? && (0..1).include?(n.to_i % 10))) || (((v = n.to_s.split(".")[1]
-  || []).count > 1 ? v.last.length : 0) == 0 && (((n.to_i % 10) % 1).zero? && (5..9).include?(n.to_i
-  % 10))) || (((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length : 0) ==
-  0 && (((n.to_i % 100) % 1).zero? && (12..14).include?(n.to_i % 100)))) ? :many :
-  :other } } } } }'
+:pl:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((v == 0) &&
+      ((((i % 10).floor == (i % 10)) && ((i % 10) >= 2) && ((i % 10) <= 4))))) &&
+      (!(((i % 100).floor == (i % 100)) && ((i % 100) >= 12) && ((i % 100) <= 14))))
+      ? :few : (((((((((v == 0) && (i != 1))) && ((((i % 10).floor == (i % 10)) &&
+      ((i % 10) >= 0) && ((i % 10) <= 1))))) || (((v == 0) && ((((i % 10).floor ==
+      (i % 10)) && ((i % 10) >= 5) && ((i % 10) <= 9))))))) || (((v == 0) && ((((i
+      % 100).floor == (i % 100)) && ((i % 100) >= 12) && ((i % 100) <= 14)))))) ?
+      :many : (((i == 1) && (v == 0)) ? :one : :other))) }'
+    :names:
+    - :few
+    - :many
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

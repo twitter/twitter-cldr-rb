@@ -13,9 +13,11 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
+require 'pry-nav'
+
 Bundler::GemHelper.install_tasks
 
-task :default => :spec
+task default: :spec
 
 desc 'Run specs'
 RSpec::Core::RakeTask.new do |t|
@@ -24,52 +26,40 @@ end
 
 namespace :spec do
   desc 'Run full specs suit'
-  task :full => [:full_spec_env, :spec]
+  task full: [:full_spec_env, :spec]
 
   task :full_spec_env do
     ENV['FULL_SPEC'] = 'true'
   end
 end
 
-if RUBY_VERSION < '1.9.0'
-  desc 'Run specs with RCov'
-  RSpec::Core::RakeTask.new('spec:cov') do |t|
-    t.rcov       = true
-    t.pattern    = './spec/**/*_spec.rb'
-    t.rcov_opts  = '-T --sort coverage --exclude gems/,spec/'
+namespace :spec do
+  desc 'Run specs with SimpleCov'
+  task cov: ['spec:simplecov_env', :spec] do
+    require 'launchy'
+    Launchy.open 'coverage/index.html'
   end
 
-  desc 'Run full specs suit with RCov'
-  task 'spec:cov:full' => %w[spec:full_spec_env spec:cov]
-else
-  namespace :spec do
-    desc 'Run specs with SimpleCov'
-    task :cov => ['spec:simplecov_env', :spec] do
-      require 'launchy'
-      Launchy.open 'coverage/index.html'
-    end
+  desc 'Run full specs suit with SimpleCov'
+  task 'cov:full' => %w[spec:full_spec_env spec:cov]
 
-    desc 'Run full specs suit with SimpleCov'
-    task 'cov:full' => %w[spec:full_spec_env spec:cov]
+  task :simplecov_env do
+    puts 'Cleaning up coverage reports'
+    rm_rf 'coverage'
 
-    task :simplecov_env do
-      puts 'Cleaning up coverage reports'
-      rm_rf 'coverage'
-
-      ENV['SCOV'] = 'true'
-    end
+    ENV['SCOV'] = 'true'
   end
 end
 
-task :benchmark do
-  Dir.glob("./benchmark/**").each do |file|
+task :benchmarks do
+  Dir.glob("./benchmarks/**").each do |file|
     load file
     $stdout.write("\n")
   end
 end
 
-namespace :benchmark do
-  Dir.glob("./benchmark/**").each do |file|
+namespace :benchmarks do
+  Dir.glob("./benchmarks/**").each do |file|
     task File.basename(file).chomp(".rb").to_sym do
       load file
     end
@@ -77,152 +67,103 @@ namespace :benchmark do
 end
 
 task :update do
-  tasks = [
-    "update:locales_resources",
-    "update:tailoring_data",
-    "update:unicode_data",
-    "update:unicode_properties",
-    "update:generate_casefolder",  # must come after unicode data
-    "update:composition_exclusions",
-    "update:postal_codes",
-    "update:phone_codes",
-    "update:language_codes",
-    "update:collation_tries",
-    "update:canonical_compositions",
-    "update:rbnf_tests",
-    "update:segment_exceptions",
-    "update:readme"
-  ]
-
-  tasks.each do |task|
-    puts "Executing #{task}"
-    Rake::Task[task].invoke
-  end
+  klasses = TwitterCldr::Resources.importer_classes_for_ruby_engine
+  TwitterCldr::Resources::ImportResolver.new(klasses).import
 end
 
+task :add_locale, :locale do |_, args|
+  klasses = TwitterCldr::Resources.locale_based_importer_classes_for_ruby_engine
+  instances = klasses.map { |klass| klass.new(locales: [args[:locale]]) }
+  TwitterCldr::Resources::ImportResolver.new(instances).import
+end
+
+# add_locale and update_locale do the same thing
+task :update_locale, [:locale] => :add_locale
+
 namespace :update do
-  ICU_JAR = './vendor/icu4j-51_2.jar'
-
   desc 'Import locales resources'
-  task :locales_resources, :cldr_path do |_, args|
-    TwitterCldr::Resources::LocalesResourcesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources'
-    ).import
-  end
-
-  desc 'Import custom locales resources'
-  task :custom_locales_resources do
-    TwitterCldr::Resources::CustomLocalesResourcesImporter.new(
-      './resources/custom/locales'
-    ).import
+  task :locales_resources do
+    TwitterCldr::Resources::LocalesResourcesImporter.new.import
   end
 
   desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :tailoring_data, :cldr_path, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::TailoringImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources/collation/tailoring',
-      args[:icu4j_jar_path] || ICU_JAR
-    ).import(TwitterCldr.supported_locales)
+  task :tailoring_data do
+    TwitterCldr::Resources::TailoringImporter.new.import
   end
 
   desc 'Import Unicode data resources'
-  task :unicode_data, :unicode_data_path do |_, args|
-    TwitterCldr::Resources::UnicodeDataImporter.new(
-      args[:unicode_data_path] || './vendor/unicode-data',
-      './resources/unicode_data'
-    ).import
+  task :unicode_data do
+    TwitterCldr::Resources::UnicodeDataImporter.new.import
   end
 
   desc 'Import Unicode property resources'
-  task :unicode_properties, :unicode_properties_path do |_, args|
-    TwitterCldr::Resources::UnicodePropertiesImporter.new(
-      args[:unicode_properties_path] || './vendor/unicode-data/properties',
-      './resources/unicode_data/properties'
-    ).import
+  task :unicode_properties do
+    TwitterCldr::Resources::property_importer_classes.each do |klass|
+      klass.new.import
+    end
+  end
+
+  desc 'Import unicode property value aliases'
+  task :unicode_property_aliases do
+    TwitterCldr::Resources::UnicodePropertyAliasesImporter.new.import
   end
 
   desc 'Generate the casefolder class. Depends on unicode data'
-  task :generate_casefolder do
-    TwitterCldr::Resources::CasefolderClassGenerator.new(
-      './lib/twitter_cldr/resources/casefolder.rb.erb',
-      './lib/twitter_cldr/shared'
-    ).generate
-  end
-
-  desc 'Import composition exclusions resource'
-  task :composition_exclusions, :derived_normalization_props_path do |_, args|
-    TwitterCldr::Resources::CompositionExclusionsImporter.new(
-      args[:derived_normalization_props_path] || './vendor/unicode-data/DerivedNormalizationProps.txt',
-      './resources/unicode_data'
-    ).import
+  task :casefolder do
+    TwitterCldr::Resources::CasefolderClassGenerator.new.import
   end
 
   desc 'Import postal codes resource'
-  task :postal_codes, :cldr_path do |_, args|
-    TwitterCldr::Resources::PostalCodesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources/shared'
-    ).import
+  task :postal_codes do
+    TwitterCldr::Resources::PostalCodesImporter.new.import
   end
 
   desc 'Import phone codes resource'
-  task :phone_codes, :cldr_path do |_, args|
-    TwitterCldr::Resources::PhoneCodesImporter.new(
-      args[:cldr_path] || './vendor/cldr',
-      './resources/shared'
-    ).import
+  task :phone_codes do
+    TwitterCldr::Resources::PhoneCodesImporter.new.import
   end
 
   desc 'Import language codes'
-  task :language_codes, :language_codes_data do |_, args|
-    TwitterCldr::Resources::LanguageCodesImporter.new(
-      args[:language_codes_data] || './vendor/language-codes',
-      './resources/shared'
-    ).import
+  task :language_codes do
+    TwitterCldr::Resources::LanguageCodesImporter.new.import
   end
 
   desc 'Update default and tailoring tries dumps (should be executed using JRuby 1.7 in 1.9 mode)'
   task :collation_tries do
-    TwitterCldr::Resources::CollationTriesDumper.update_dumps
-  end
-
-  desc 'Update canonical compositions resource'
-  task :canonical_compositions do
-    TwitterCldr::Resources::CanonicalCompositionsUpdater.new('./resources/unicode_data').update
-  end
-
-  desc 'Import normalization quick check data'
-  task :normalization_quick_check do
-    TwitterCldr::Resources::NormalizationQuickCheckImporter.new(
-      './vendor',
-      './resources/unicode_data'
-    ).import
+    TwitterCldr::Resources::CollationTriesImporter.new.import
   end
 
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :bidi_tests do |_, args|
-    TwitterCldr::Resources::BidiTestImporter.new(
-      './spec/bidi'
-    ).import
+  task :bidi_tests do
+    TwitterCldr::Resources::BidiTestImporter.new.import
   end
 
   desc 'Import (generate) rule-based number format tests (should be executed using JRuby 1.7 in 1.9 mode)'
-  task :rbnf_tests, :icu4j_jar_path do |_, args|
-    TwitterCldr::Resources::RbnfTestImporter.new(
-      './spec/formatters/numbers/rbnf/locales',
-      args[:icu4j_jar_path] || ICU_JAR
-    ).import(TwitterCldr.supported_locales)
+  task :rbnf_tests do
+    TwitterCldr::Resources::RbnfTestImporter.new.import
   end
 
+  desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :transform_tests do
+    TwitterCldr::Resources::TransformTestImporter.new.import
+  end
+
+  desc 'Import segment exceptions'
   task :segment_exceptions do
-    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new(
-      './vendor/uli/segments',
-      './resources/uli/segments'
-    ).import([:de, :en, :es, :fr, :it, :pt, :ru])  # only locales ULI supports at the moment
+    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new.import
   end
 
+  desc 'Import segment tests'
+  task :segment_tests do
+    TwitterCldr::Resources::SegmentTestsImporter.new.import
+  end
+
+  desc 'Import hyphenation dictionaries'
+  task :hyphenation_dictionaries do
+    TwitterCldr::Resources::HyphenationImporter.new.import
+  end
+
+  desc 'Update README'
   task :readme do |_, args|
     renderer = TwitterCldr::Resources::ReadmeRenderer.new(
       File.read("./README.md.erb")

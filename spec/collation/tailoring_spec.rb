@@ -12,7 +12,7 @@ describe 'Unicode collation tailoring' do
   # Test data is taken from http://unicode.org/cldr/trac/browser/tags/release-2-0-1/test/
   # Test files format: # - comments, // - pending tests.
   #
-  it 'passes tailoring test for each supported locale', :slow => true do
+  it 'passes tailoring test for each supported locale', slow: true do
     TwitterCldr.supported_locales.each do |locale|
       tailor_file = File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")
 
@@ -49,7 +49,7 @@ describe 'Unicode collation tailoring' do
         else
           failures_info = "#{failures.size} failures: #{failures.inspect}"
           puts failures_info
-          failures.should(be_empty, "#{locale} - #{failures_info}")
+          expect(failures).to(be_empty, "#{locale} - #{failures_info}")
         end
       end
     end

@@ -13,6 +13,8 @@ module TwitterCldr
     # than as single elements. By definition, RangeSets contain no duplicates.
     class RangeSet
 
+      include Enumerable
+
       attr_reader :ranges
 
       class << self
@@ -93,11 +95,9 @@ module TwitterCldr
       def include?(obj)
         case obj
           when Numeric
-            ranges.any? { |range| range.include?(obj) }
+            includes_numeric?(obj)
           when Range
-            ranges.any? do |range|
-              range.first <= obj.first && range.last >= obj.last
-            end
+            includes_range?(obj)
           else
             false
         end
@@ -105,6 +105,11 @@ module TwitterCldr
 
       def empty?
         ranges.empty?
+      end
+
+      def <<(range)
+        ranges << range
+        flatten
       end
 
       def union(range_set)
@@ -156,7 +161,120 @@ module TwitterCldr
         union(range_set).subtract(intersection(range_set))
       end
 
+      def each_range(&block)
+        ranges.each(&block)
+      end
+
+      def each(&block)
+        if block_given?
+          ranges.each do |range|
+            range.each(&block)
+          end
+        else
+          to_enum(__method__)
+        end
+      end
+
+      def size
+        ranges.inject(0) do |sum, range|
+          sum + range_length(range)
+        end
+      end
+
       private
+
+      def range_length(range)
+        len = (range.last - range.first)
+        range.exclude_end? ? len : len + 1
+      end
+
+      def includes_numeric?(num)
+        result = bsearch do |range|
+          if num >= range.first && num <= range.last
+            0
+          elsif num < range.first
+            -1
+          else
+            1
+          end
+        end
+
+        !!result
+      end
+
+      def includes_range?(range)
+        bsearch do |cur_range|
+          fo = front_overlap?(cur_range, range)
+          ro = rear_overlap?(cur_range, range)
+
+          return false if fo || ro
+
+          if full_overlap?(cur_range, range)
+            0
+          elsif range.first < cur_range.first
+            -1
+          else
+            1
+          end
+        end
+      end
+
+      def bsearch
+        low = 0
+        mid = 0
+        high = ranges.size - 1
+
+        while low <= high
+          mid = (low + high) / 2
+
+          case yield(ranges[mid])
+            when 0
+              return ranges[mid]
+            when -1
+              high = mid - 1
+            else
+              low = mid + 1
+          end
+        end
+
+        nil
+      end
+
+      def overlap?(range1, range2)
+        is_numeric_range?(range1) && is_numeric_range?(range2) && (
+          front_overlap?(range1, range2) ||
+            rear_overlap?(range1, range2) ||
+            full_overlap?(range1, range2)
+        )
+      end
+
+      def front_overlap?(range1, range2)
+        range1.last >= range2.first && range1.last <= range2.last
+      end
+
+      def rear_overlap?(range1, range2)
+        range1.first >= range2.first && range1.first <= range2.last
+      end
+
+      # range1 entirely contains range2
+      def full_overlap?(range1, range2)
+        range1.first <= range2.first && range1.last >= range2.last
+      end
+
+      # range2 entirely contains range1
+      def fully_overlapped_by?(range1, range2)
+        range2.first <= range1.first && range1.last <= range2.last
+      end
+
+      # returns true if range1 and range2 are within 1 of each other
+      def adjacent?(range1, range2)
+        is_numeric_range?(range1) && is_numeric_range?(range2) &&
+          (range1.last == range2.first - 1 || range2.first == range1.last + 1)
+      end
+
+      def is_numeric_range?(range)
+        range.first.is_a?(Numeric) && range.last.is_a?(Numeric)
+      end
 
       def flatten
         return if ranges.size <= 1
@@ -187,29 +305,15 @@ module TwitterCldr
         @ranges = new_ranges
       end
 
-      # returns true if range1 and range2 are within 1 of each other
-      def adjacent?(range1, range2)
-        is_numeric_range?(range1) && is_numeric_range?(range2) &&
-          (range1.last == range2.first - 1 || range2.first == range1.last + 1)
-      end
-
-      def overlap?(range1, range2)
-        is_numeric_range?(range1) && is_numeric_range?(range2) && (
-          (range1.last >= range2.first && range1.last <= range2.last) ||
-          (range1.first >= range2.first && range1.first <= range2.last) ||
-          (range1.first <= range2.first && range1.last >= range2.last)
-        )
-      end
-
       def find_intersection(range1, range2)
         # range2 entirely contains range1
-        if range2.first <= range1.first && range1.last <= range2.last
+        if fully_overlapped_by?(range1, range2)
           range1.dup
-        elsif range1.last >= range2.first && range1.last <= range2.last
+        elsif front_overlap?(range1, range2)
           range2.first..range1.last
-        elsif range1.first >= range2.first && range1.first <= range2.last
+        elsif rear_overlap?(range1, range2)
           range1.first..range2.last
-        elsif range1.first <= range2.first && range1.last >= range2.last
+        elsif full_overlap?(range1, range2)
           [range1.first, range2.first].max..[range1.last, range2.last].min
         end
       end
@@ -217,24 +321,20 @@ module TwitterCldr
       # subtracts range1 from range2 (range2 - range1)
       def find_subtraction(range1, range2)
         # case: range1 contains range2 entirely (also handles equal case)
-        result = if range1.first <= range2.first && range2.last <= range1.last
+        result = if full_overlap?(range1, range2)
           []
         # case: range1 comes in the middle
-        elsif range2.first <= range1.first && range2.last >= range1.last
+        elsif fully_overlapped_by?(range1, range2)
           [range2.first..(range1.first - 1), (range1.last + 1)..range2.last]
         # case: range1 trails
-        elsif range2.last >= range1.first && range1.last >= range2.last
+        elsif rear_overlap?(range1, range2)
           [range2.first..(range1.first - 1)]
         # case: range1 leads
-        elsif range1.last >= range2.first && range1.first <= range2.first
+        elsif front_overlap?(range1, range2)
           [(range1.last + 1)..range2.last]
         end
 
         result.reject { |r| r.first > r.last }
-      end
-
-      def is_numeric_range?(range)
-        range.first.is_a?(Numeric) && range.last.is_a?(Numeric)
       end
 
     end

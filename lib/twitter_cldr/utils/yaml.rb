@@ -128,16 +128,14 @@ module TwitterCldr
       class << self
 
         def dump(obj, opts = {})
-          raise 'set $KCODE to "UTF8".' if (RUBY_VERSION < '1.9.0') && ($KCODE != 'UTF8')
-
           @options = opts.dup
           @options[:indent_size] = 2          if @options[:indent_size].to_i <= 0
           @options[:minimum_block_length] = 0 if @options[:minimum_block_length].to_i <= 0
           @options.update(
             {
-              :printable_with_syck  => true,
-              :escape_b_specific    => true,
-              :escape_as_utf8       => true,
+              printable_with_syck:  true,
+              escape_b_specific:    true,
+              escape_as_utf8:       true,
             }
           ) if @options[:syck_compatible]
 

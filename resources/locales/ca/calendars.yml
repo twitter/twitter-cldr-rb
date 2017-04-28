@@ -3,6 +3,7 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :E: ccc
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d"
@@ -10,125 +11,150 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
-        :GyMMMEd: "E, d MMM, y G"
+        :GyMMMEd: "E, d MMM y G"
         :GyMMMM: "LLLL 'de' y G"
+        :GyMMMMEd: "E, d MMMM 'de' y G"
+        :GyMMMMd: "d MMMM 'de' y G"
         :GyMMMd: "d MMM y G"
-        :H: "H"
+        :H: H
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :M: "L"
+        :Hmsv: "HH:mm:ss v"
+        :Hmv: "HH:mm v"
+        :M: L
         :MEd: "E d/M"
-        :MMM: "LLL"
-        :MMMEd: "E d MMM"
-        :MMMMEd: "E d MMMM"
+        :MMM: LLL
+        :MMMEd: "E, d MMM"
+        :MMMMEd: "E, d MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
-        :Md: "d/M"
-        :d: "d"
+        :Md: d/M
+        :d: d
         :h: "h a"
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: "M/y"
+        :yM: M/y
         :yMEd: "E, d/M/y"
-        :yMMM: "LLL y"
-        :yMMMEd: "E, d MMM, y"
+        :yMMM: "LLL 'de' y"
+        :yMMMEd: "E, d MMM y"
         :yMMMM: "LLLL 'de' y"
+        :yMMMMEd: "E, d MMMM 'de' y"
+        :yMMMMd: "d MMMM 'de' y"
         :yMMMd: "d MMM y"
-        :yMd: "d/M/y"
+        :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
       :days: 
         :format: 
           :abbreviated: 
-            :fri: "dv."
-            :mon: "dl."
-            :sat: "ds."
-            :sun: "dg."
-            :thu: "dj."
-            :tue: "dt."
-            :wed: "dc."
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :narrow: 
-            :fri: "dv"
-            :mon: "dl"
-            :sat: "ds"
-            :sun: "dg"
-            :thu: "dj"
-            :tue: "dt"
-            :wed: "dc"
+            :fri: dv
+            :mon: dl
+            :sat: ds
+            :sun: dg
+            :thu: dj
+            :tue: dt
+            :wed: dc
           :short: 
-            :fri: "dv."
-            :mon: "dl."
-            :sat: "ds."
-            :sun: "dg."
-            :thu: "dj."
-            :tue: "dt."
-            :wed: "dc."
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :wide: 
-            :fri: "divendres"
-            :mon: "dilluns"
-            :sat: "dissabte"
-            :sun: "diumenge"
-            :thu: "dijous"
-            :tue: "dimarts"
-            :wed: "dimecres"
+            :fri: divendres
+            :mon: dilluns
+            :sat: dissabte
+            :sun: diumenge
+            :thu: dijous
+            :tue: dimarts
+            :wed: dimecres
         :stand-alone: 
           :abbreviated: 
-            :fri: "dv."
-            :mon: "dl."
-            :sat: "ds."
-            :sun: "dg."
-            :thu: "dj."
-            :tue: "dt."
-            :wed: "dc."
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :narrow: 
-            :fri: "dv"
-            :mon: "dl"
-            :sat: "ds"
-            :sun: "dg"
-            :thu: "dj"
-            :tue: "dt"
-            :wed: "dc"
+            :fri: dv
+            :mon: dl
+            :sat: ds
+            :sun: dg
+            :thu: dj
+            :tue: dt
+            :wed: dc
           :short: 
-            :fri: "dv."
-            :mon: "dl."
-            :sat: "ds."
-            :sun: "dg."
-            :thu: "dj."
-            :tue: "dm."
-            :wed: "dc."
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :wide: 
-            :fri: "divendres"
-            :mon: "dilluns"
-            :sat: "dissabte"
-            :sun: "diumenge"
-            :thu: "dijous"
-            :tue: "dimarts"
-            :wed: "dimecres"
+            :fri: divendres
+            :mon: dilluns
+            :sat: dissabte
+            :sun: diumenge
+            :thu: dijous
+            :tue: dimarts
+            :wed: dimecres
       :eras: 
         :abbr: 
-          0: "a. de la n. e."
-          1: "de la n.e."
+          0: AEC
+          1: EC
         :name: 
-          0: "a. de la n. e."
-          1: "de la n. e."
+          0: "abans de l’Era Comuna"
+          1: "Era Comuna"
         :narrow: 
-          0: "aC"
-          1: "dC"
+          0: AEC
+          1: EC
       :fields: 
-        :day: "dia"
+        :day: dia
+        :day-narrow: dia
+        :day-short: dia
         :dayperiod: "a. m./p. m."
-        :era: "era"
-        :hour: "hora"
-        :minute: "minut"
-        :month: "mes"
-        :second: "segon"
-        :week: "setmana"
+        :era: era
+        :hour: hora
+        :hour-narrow: h
+        :hour-short: h
+        :minute: minut
+        :minute-narrow: min
+        :minute-short: min
+        :month: mes
+        :month-narrow: mes
+        :month-short: mes
+        :quarter: trimestre
+        :quarter-narrow: trim.
+        :quarter-short: trim.
+        :second: segon
+        :second-narrow: s
+        :second-short: s
+        :week: setmana
+        :week-narrow: setm.
+        :week-short: setm.
         :weekday: "dia de la setmana"
-        :year: "any"
-        :zone: "zona"
+        :year: any
+        :year-narrow: any
+        :year-short: any
+        :zone: "fus horari"
       :formats: 
         :date: 
           :full: 
@@ -136,135 +162,183 @@
           :long: 
             :pattern: "d MMMM 'de' y"
           :medium: 
-            :pattern: "dd/MM/y"
+            :pattern: "d MMM y"
           :short: 
-            :pattern: "d/M/yy"
+            :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'a' 'les' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "H.mm.ss zzzz"
+            :pattern: "H:mm:ss zzzz"
           :long: 
-            :pattern: "H.mm.ss z"
+            :pattern: "H:mm:ss z"
           :medium: 
-            :pattern: "H.mm.ss"
+            :pattern: "H:mm:ss"
           :short: 
-            :pattern: "H.mm"
+            :pattern: "H:mm"
       :months: 
         :format: 
           :abbreviated: 
-            1: "gen."
-            10: "oct."
-            11: "nov."
-            12: "des."
-            2: "feb."
-            3: "març"
-            4: "abr."
-            5: "maig"
-            6: "juny"
-            7: "jul."
-            8: "ag."
-            9: "set."
+            1: gen.
+            10: oct.
+            11: nov.
+            12: des.
+            2: febr.
+            3: març
+            4: abr.
+            5: maig
+            6: juny
+            7: jul.
+            8: ag.
+            9: set.
           :narrow: 
-            1: "GN"
-            10: "OC"
-            11: "NV"
-            12: "DS"
-            2: "FB"
-            3: "MÇ"
-            4: "AB"
-            5: "MG"
-            6: "JN"
-            7: "JL"
-            8: "AG"
-            9: "ST"
+            1: GN
+            10: OC
+            11: NV
+            12: DS
+            2: FB
+            3: MÇ
+            4: AB
+            5: MG
+            6: JN
+            7: JL
+            8: AG
+            9: ST
           :wide: 
-            1: "gener"
-            10: "octubre"
-            11: "novembre"
-            12: "desembre"
-            2: "febrer"
-            3: "març"
-            4: "abril"
-            5: "maig"
-            6: "juny"
-            7: "juliol"
-            8: "agost"
-            9: "setembre"
+            1: "de gener"
+            10: d’octubre
+            11: "de novembre"
+            12: "de desembre"
+            2: "de febrer"
+            3: "de març"
+            4: d’abril
+            5: "de maig"
+            6: "de juny"
+            7: "de juliol"
+            8: d’agost
+            9: "de setembre"
         :stand-alone: 
           :abbreviated: 
-            1: "gen."
-            10: "oct."
-            11: "nov."
-            12: "des."
-            2: "feb."
-            3: "març"
-            4: "abr."
-            5: "maig"
-            6: "juny"
-            7: "jul."
-            8: "ag."
-            9: "set."
+            1: gen.
+            10: oct.
+            11: nov.
+            12: des.
+            2: febr.
+            3: març
+            4: abr.
+            5: maig
+            6: juny
+            7: jul.
+            8: ag.
+            9: set.
           :narrow: 
-            1: "GN"
-            10: "OC"
-            11: "NV"
-            12: "DS"
-            2: "FB"
-            3: "MÇ"
-            4: "AB"
-            5: "MG"
-            6: "JN"
-            7: "JL"
-            8: "AG"
-            9: "ST"
+            1: GN
+            10: OC
+            11: NV
+            12: DS
+            2: FB
+            3: MÇ
+            4: AB
+            5: MG
+            6: JN
+            7: JL
+            8: AG
+            9: ST
           :wide: 
-            1: "gener"
-            10: "octubre"
-            11: "novembre"
-            12: "desembre"
-            2: "febrer"
-            3: "març"
-            4: "abril"
-            5: "maig"
-            6: "juny"
-            7: "juliol"
-            8: "agost"
-            9: "setembre"
+            1: gener
+            10: octubre
+            11: novembre
+            12: desembre
+            2: febrer
+            3: març
+            4: abril
+            5: maig
+            6: juny
+            7: juliol
+            8: agost
+            9: setembre
       :periods: 
         :format: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.wide
-          :narrow: 
-            :am: "a.m."
-            :noon: "n"
-            :pm: "p.m."
-          :wide: 
+          :abbreviated: 
+            :afternoon1: migdia
+            :afternoon2: tarda
             :am: "a. m."
-            :noon: "noon"
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: matinada
+            :morning2: matí
+            :night1: nit
             :pm: "p. m."
-            :variant: 
-              :am: "a.m."
-              :pm: "p.m."
-        :stand-alone: {}
+          :narrow: 
+            :afternoon1: md
+            :afternoon2: tarda
+            :am: "a. m."
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: mat.
+            :morning2: matí
+            :night1: nit
+            :pm: "p. m."
+          :wide: 
+            :afternoon1: migdia
+            :afternoon2: tarda
+            :am: "a. m."
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: matinada
+            :morning2: matí
+            :night1: nit
+            :pm: "p. m."
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: migdia
+            :afternoon2: tarda
+            :am: "a. m."
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: matinada
+            :morning2: matí
+            :night1: nit
+            :pm: "p. m."
+          :narrow: 
+            :afternoon1: migdia
+            :afternoon2: tarda
+            :am: "a. m."
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: matinada
+            :morning2: matí
+            :night1: nit
+            :pm: "p. m."
+          :wide: 
+            :afternoon1: migdia
+            :afternoon2: tarda
+            :am: "a. m."
+            :evening1: vespre
+            :midnight: mitjanit
+            :morning1: matinada
+            :morning2: matí
+            :night1: nit
+            :pm: "p. m."
       :quarters: 
         :format: 
           :abbreviated: 
-            1: "1T"
-            2: "2T"
-            3: "3T"
-            4: "4T"
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "1r trimestre"
             2: "2n trimestre"
@@ -272,15 +346,15 @@
             4: "4t trimestre"
         :stand-alone: 
           :abbreviated: 
-            1: "1T"
-            2: "2T"
-            3: "3T"
-            4: "4T"
+            1: 1T
+            2: 2T
+            3: 3T
+            4: 4T
           :narrow: 
-            1: 1
-            2: 2
-            3: 3
-            4: 4
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
             1: "1r trimestre"
             2: "2n trimestre"

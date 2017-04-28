@@ -10,14 +10,14 @@ module TwitterCldr
       include Enumerable
 
       # Uses wrapped string object as a format specification and returns the result of applying it to +args+ (see
-      # +TwitterCldr::Utils.interpolate+ method for interpolation syntax).
+      # standard String#% method documentation for interpolation syntax).
       #
       # If +args+ is a Hash than pluralization is performed before interpolation (see +PluralFormatter+ class for
       # pluralization specification).
       #
       def %(args)
         pluralized = args.is_a?(Hash) ? formatter.format(@base_obj, args) : @base_obj
-        TwitterCldr::Utils.interpolate(pluralized, args)
+        escape_plural_interpolation(pluralized) % args
       end
 
       def normalize(options = {})
@@ -36,14 +36,52 @@ module TwitterCldr
           localize(locale)
       end
 
+      def downcase
+        self.class.new(
+          TwitterCldr::Shared::Caser.downcase(@base_obj), locale
+        )
+      end
+
+      def upcase
+        self.class.new(
+          TwitterCldr::Shared::Caser.upcase(@base_obj), locale
+        )
+      end
+
+      def titlecase
+        self.class.new(
+          TwitterCldr::Shared::Caser.titlecase(@base_obj), locale
+        )
+      end
+
       def each_sentence
         if block_given?
           break_iterator.each_sentence(@base_obj) do |sentence|
-            yield sentence.localize
+            yield sentence.localize(locale)
           end
         else
           to_enum(__method__)
         end
+      end
+
+      def each_word
+        if block_given?
+          break_iterator.each_word(@base_obj) do |word|
+            yield word.localize(locale)
+          end
+        else
+          to_enum(__method__)
+        end
+      end
+
+      def hyphenate(delimiter = nil)
+        hyphenated_str = @base_obj.dup
+
+        break_iterator.each_word(@base_obj).reverse_each do |word, start, stop|
+          hyphenated_str[start...stop] = hyphenator.hyphenate(word, delimiter)
+        end
+
+        hyphenated_str.localize(locale)
       end
 
       def code_points
@@ -75,8 +113,7 @@ module TwitterCldr
       alias :length :size
 
       def bytesize
-        # bytesize method available in ruby 1.9 only
-        @base_obj.respond_to?(:bytesize) ? @base_obj.bytesize : @base_obj.size
+        @base_obj.bytesize
       end
 
       def [](index)
@@ -112,7 +149,28 @@ module TwitterCldr
         to_bidi(options).reorder_visually!.to_s
       end
 
-      protected
+      def to_territory
+        TwitterCldr::Shared::Territory.new(@base_obj)
+      end
+
+      def scripts
+        TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).scripts
+      end
+
+      def script
+        TwitterCldr::Utils::ScriptDetector.detect_scripts(@base_obj).best_guess
+      end
+
+      def transliterate_into(target_locale)
+        TwitterCldr::Transforms::Transliterator.transliterate(@base_obj, locale, target_locale)
+      end
+
+      private
+
+      def escape_plural_interpolation(string)
+        # escape plural interpolation patterns (see PluralFormatter)
+        string.gsub(TwitterCldr::Formatters::PluralFormatter::PLURALIZATION_REGEXP, '%\0')
+      end
 
       def formatter
         @formatter ||=
@@ -120,11 +178,15 @@ module TwitterCldr
       end
 
       def break_iterator
-        @break_iterator ||= TwitterCldr::Shared::BreakIterator.new(locale)
+        @break_iterator ||= TwitterCldr::Segmentation::BreakIterator.new(locale)
       end
 
       def number_parser
         @number_parser ||= TwitterCldr::Parsers::NumberParser.new(locale)
+      end
+
+      def hyphenator
+        @hyphenator ||= TwitterCldr::Shared::Hyphenator.get(locale)
       end
 
     end

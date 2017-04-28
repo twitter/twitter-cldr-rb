@@ -25,40 +25,52 @@ describe UnicodeRegex do
 
     describe "#compile" do
       it "should return a UnicodeRegex, parsed and ready to go" do
-        regex.should be_a(UnicodeRegex)
+        expect(regex).to be_a(UnicodeRegex)
       end
     end
 
     describe "#to_regexp_str" do
       it "should return the string representation of this regex" do
-        regex.to_regexp_str.should == "(?:[\\141-\\143])"
+        expect(regex.to_regexp_str).to eq("(?:[\\u{0061}-\\u{0063}])")
       end
     end
 
     describe "#to_regexp" do
       it "should return a ruby Regexp" do
-        if RUBY_VERSION <= "1.8.7"
-          regex.to_regexp.should be_a(Oniguruma::ORegexp)
-        else
-          regex.to_regexp.should be_a(Regexp)
-        end
+        expect(regex.to_regexp).to be_a(Regexp)
       end
 
       it "should properly turn various basic regexes into strings" do
-        compile("^abc$").to_regexp_str.should == "^(?:\\141)(?:\\142)(?:\\143)$"
-        compile("a(b)c").to_regexp_str.should == "(?:\\141)((?:\\142))(?:\\143)"
-        compile("a(?:b)c").to_regexp_str.should == "(?:\\141)(?:(?:\\142))(?:\\143)"
-        compile("a{1,3}").to_regexp_str.should == "(?:\\141){1,3}"
-        compile("[abc]").to_regexp_str.should == "(?:[\\141-\\143])"
+        expect(compile("^abc$").to_regexp_str).to eq("^(?:\\u{0061})(?:\\u{0062})(?:\\u{0063})$")
+        expect(compile("a(b)c").to_regexp_str).to eq("(?:\\u{0061})((?:\\u{0062}))(?:\\u{0063})")
+        expect(compile("a(?:b)c").to_regexp_str).to eq("(?:\\u{0061})(?:(?:\\u{0062}))(?:\\u{0063})")
+        expect(compile("a{1,3}").to_regexp_str).to eq("(?:\\u{0061}){1,3}")
+        expect(compile("[abc]").to_regexp_str).to eq("(?:[\\u{0061}-\\u{0063}])")
       end
 
       it "should properly turn various complex regexes into strings" do
-        compile("[a-z0-9]").to_regexp_str.should == "(?:[\\60-\\71]|[\\141-\\172])"
-        compile("[\\u0067-\\u0071]").to_regexp_str.should == "(?:[\\147-\\161])"
+        expect(compile("[a-z0-9]").to_regexp_str).to eq(
+          "(?:[\\u{0030}-\\u{0039}]|[\\u{0061}-\\u{007a}])"
+        )
+        expect(compile("[\\u0067-\\u0071]").to_regexp_str).to eq("(?:[\\u{0067}-\\u{0071}])")
       end
 
       it "should properly substitute variables" do
-        compile("$FOO$BAR", symbol_table).to_regexp_str.should == "(?:[\\147-\\153])(?:[\\160-\\163])"
+        expect(compile("$FOO$BAR", symbol_table).to_regexp_str).to eq(
+          "(?:[\\u{0067}-\\u{006b}])(?:[\\u{0070}-\\u{0073}])"
+        )
+      end
+
+      it "supports modifiers" do
+        regex = UnicodeRegex.compile('abc', 'm').to_regexp
+        expect(regex.options).to eq(Regexp::MULTILINE)
+      end
+
+      it "supports multiple modifiers at once" do
+        regex = UnicodeRegex.compile('abc', 'mi').to_regexp
+        expect(regex.options).to eq(
+          Regexp::MULTILINE | Regexp::IGNORECASE
+        )
       end
     end
   end
@@ -67,10 +79,10 @@ describe UnicodeRegex do
     describe "#match" do
       it "should substitute variables from the symbol table" do
         regex = compile("$FOO $BAR", symbol_table)
-        regex.should exactly_match("h r")
-        regex.should exactly_match("j q")
-        regex.should_not exactly_match("h t")
-        regex.should_not exactly_match("c s")
+        expect(regex).to exactly_match("h r")
+        expect(regex).to exactly_match("j q")
+        expect(regex).not_to exactly_match("h t")
+        expect(regex).not_to exactly_match("c s")
       end
     end
   end
@@ -79,40 +91,40 @@ describe UnicodeRegex do
     describe "#match" do
       it "should match a regex with no char class" do
         regex = compile("^abc$")
-        regex.should exactly_match("abc")
-        regex.should_not exactly_match("cba")
+        expect(regex).to exactly_match("abc")
+        expect(regex).not_to exactly_match("cba")
       end
 
       it "should match a regex with a capturing group" do
         regex = compile("a(b)c")
         match = regex.match("abc")
-        match.should_not be_nil
-        match.captures[0].should == "b"
+        expect(match).not_to be_nil
+        expect(match.captures[0]).to eq("b")
       end
 
       it "should match a regex with a non-capturing group" do
         regex = compile("a(?:b)c")
         match = regex.match("abc")
-        match.should_not be_nil
-        match.captures.should == []
+        expect(match).not_to be_nil
+        expect(match.captures).to eq([])
       end
 
       it "should match a regex with a quantifier" do
         regex = compile("a{1,3}")
-        regex.should exactly_match("a")
-        regex.should exactly_match("aa")
-        regex.should exactly_match("aaa")
-        regex.should_not exactly_match("aaaa")
-        regex.should_not exactly_match("b")
+        expect(regex).to exactly_match("a")
+        expect(regex).to exactly_match("aa")
+        expect(regex).to exactly_match("aaa")
+        expect(regex).not_to exactly_match("aaaa")
+        expect(regex).not_to exactly_match("b")
       end
 
       it "should match a regex with a basic char class" do
         regex = compile("[abc]")
-        regex.should exactly_match("a")
-        regex.should exactly_match("b")
-        regex.should exactly_match("c")
-        regex.should_not exactly_match("ab")
-        regex.should_not exactly_match("d")
+        expect(regex).to exactly_match("a")
+        expect(regex).to exactly_match("b")
+        expect(regex).to exactly_match("c")
+        expect(regex).not_to exactly_match("ab")
+        expect(regex).not_to exactly_match("d")
       end
     end
   end
@@ -121,82 +133,103 @@ describe UnicodeRegex do
     describe "#match" do
       it "should match a regex with a char class containing a range" do
         regex = compile("[a-z0-9]")
-        regex.should exactly_match("a")
-        regex.should exactly_match("m")
-        regex.should exactly_match("z")
-        regex.should exactly_match("0")
-        regex.should exactly_match("3")
-        regex.should exactly_match("9")
-        regex.should_not exactly_match("a0")
-        regex.should_not exactly_match("m4")
+        expect(regex).to exactly_match("a")
+        expect(regex).to exactly_match("m")
+        expect(regex).to exactly_match("z")
+        expect(regex).to exactly_match("0")
+        expect(regex).to exactly_match("3")
+        expect(regex).to exactly_match("9")
+        expect(regex).not_to exactly_match("a0")
+        expect(regex).not_to exactly_match("m4")
       end
 
       it "should match a regex with a char class containing a unicode range" do
         regex = compile("[\\u0067-\\u0071]")  # g-q
-        regex.should exactly_match("g")
-        regex.should exactly_match("q")
-        regex.should exactly_match("h")
-        regex.should_not exactly_match("z")
+        expect(regex).to exactly_match("g")
+        expect(regex).to exactly_match("q")
+        expect(regex).to exactly_match("h")
+        expect(regex).not_to exactly_match("z")
       end
 
       it "should match a regex containing a character set" do
         regex = compile("[\\p{Zs}]")
-        regex.should exactly_match([160].pack("U*"))  # non-breaking space
-        regex.should exactly_match([5760].pack("U*"))  # ogham space mark
-        regex.should_not exactly_match("a")
+        expect(regex).to exactly_match([160].pack("U*"))  # non-breaking space
+        expect(regex).to exactly_match([5760].pack("U*"))  # ogham space mark
+        expect(regex).not_to exactly_match("a")
       end
 
       it "should match a regex containing a negated character set" do
         regex = compile("[\\P{Zs}]")
-        regex.should exactly_match("a")
-        regex.should_not exactly_match([160].pack("U*"))
-        regex.should_not exactly_match([5760].pack("U*"))
+        expect(regex).to exactly_match("a")
+        expect(regex).not_to exactly_match([160].pack("U*"))
+        expect(regex).not_to exactly_match([5760].pack("U*"))
       end
 
       it "should match a regex containing a character set (alternate syntax)" do
         regex = compile("[[:Zs:]]")
-        regex.should exactly_match([160].pack("U*"))  # non-breaking space
-        regex.should exactly_match([5760].pack("U*"))  # ogham space mark
-        regex.should_not exactly_match("a")
+        expect(regex).to exactly_match([160].pack("U*"))  # non-breaking space
+        expect(regex).to exactly_match([5760].pack("U*"))  # ogham space mark
+        expect(regex).not_to exactly_match("a")
+      end
+
+      it "should match a regex containing a unioned character set" do
+        regex = compile("[[:L:][:White_Space:]]*")
+        expect(regex).to exactly_match("abc")
+        expect(regex).to exactly_match("くøß")
+        expect("a b c _ d".gsub(regex.to_regexp, "")).to eq("_")
+      end
+
+      it "should match a regex containing a negated unioned character set" do
+        regex = compile("[^[:L:][:White_Space:]]*")
+        expect(regex).to exactly_match(".,/")
+        expect(regex).to_not exactly_match("a b c")
+        expect("a b c _ d".gsub(regex.to_regexp, "")).to eq("a b c  d")
       end
 
       it "should match a regex containing a negated character set (alternate syntax)" do
         regex = compile("[[:^Zs:]]")
-        regex.should exactly_match("a")
-        regex.should_not exactly_match([160].pack("U*"))
-        regex.should_not exactly_match([5760].pack("U*"))
+        expect(regex).to exactly_match("a")
+        expect(regex).not_to exactly_match([160].pack("U*"))
+        expect(regex).not_to exactly_match([5760].pack("U*"))
       end
 
       it "should match a regex with a character set and some quantifiers" do
         regex = compile("[\\u0067-\\u0071]+")
-        regex.should exactly_match("gg")
-        regex.should exactly_match("gh")
-        regex.should exactly_match("qjk")
-        regex.should_not exactly_match("")
+        expect(regex).to exactly_match("gg")
+        expect(regex).to exactly_match("gh")
+        expect(regex).to exactly_match("qjk")
+        expect(regex).not_to exactly_match("")
       end
 
       it "should match a regex that uses special switches inside the char class" do
         regex = compile("[\\w]+")
-        regex.should exactly_match("a")
-        regex.should exactly_match("abc")
-        regex.should exactly_match("a0b_1c2")
-        regex.should_not exactly_match("$@#")
+        expect(regex).to exactly_match("a")
+        expect(regex).to exactly_match("abc")
+        expect(regex).to exactly_match("a0b_1c2")
+        expect(regex).not_to exactly_match("$@#")
       end
 
       it "should match a regex that uses negated special switches inside the char class" do
         regex = compile("[\\W]+")
-        regex.should_not exactly_match("a")
-        regex.should_not exactly_match("abc")
-        regex.should_not exactly_match("a0b_1c2")
-        regex.should exactly_match("$@#")
+        expect(regex).not_to exactly_match("a")
+        expect(regex).not_to exactly_match("abc")
+        expect(regex).not_to exactly_match("a0b_1c2")
+        expect(regex).to exactly_match("$@#")
       end
 
       it "should match a regex with a complicated expression inside the char class" do
-        # not [separators U space-tilde] diff [letters diff numbers]  (diff is commutative)
-        regex = compile("[^[\\p{Z}\\u0020-\\u007f]-[\\p{L}]-[\\p{N}]]")
-        regex.should exactly_match(" ")
-        regex.should exactly_match(",")
-        regex.should_not exactly_match("a")
+        # [separators U space-tilde] diff [letters diff numbers]  (diff is commutative)
+        regex = compile("[[\\p{Z}\\u0020-\\u007f]-[\\p{L}]-[\\p{N}]]")
+        expect(regex).to exactly_match(" ")
+        expect(regex).to exactly_match(",")
+        expect(regex).not_to exactly_match("a")
+      end
+
+      it "should treat a dash that is the first character of a character class as a literal dash instead of a range" do
+        regex = compile("[-abc]*")
+        expect(regex).to exactly_match("a-b-c")
+        expect(regex).to exactly_match("--a")
+        expect(regex).not_to exactly_match("def")
       end
     end
   end

@@ -1,0 +1,184 @@
+--- 
+:mr: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: deva
+        :patterns: 
+          :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤0 ह
+              :other: ¤0 ह
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤00 ह
+              :other: ¤00 ह
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤0 लाख
+              :other: ¤0 लाख
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤00 लाख
+              :other: ¤00 लाख
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤0 कोटी
+              :other: ¤0 कोटी
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤00 कोटी
+              :other: ¤00 कोटी
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤0 अब्ज
+              :other: ¤0 अब्ज
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤00 अब्ज
+              :other: ¤00 अब्ज
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤0 खर्व
+              :other: ¤0 खर्व
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤00 खर्व
+              :other: ¤00 खर्व
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤0 पद्म
+              :other: ¤0 पद्म
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤00 पद्म
+              :other: ¤00 पद्म
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: deva
+        :patterns: 
+          :default: "#,##,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 हजार"
+              :other: "0 हजार"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 हजार"
+              :other: "00 हजार"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 हजार"
+              :other: "000 हजार"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 दशलक्ष"
+              :other: "0 दशलक्ष"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 दशलक्ष"
+              :other: "00 दशलक्ष"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 दशलक्ष"
+              :other: "000 दशलक्ष"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 महापद्म"
+              :other: "0 महापद्म"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 महापद्म"
+              :other: "00 महापद्म"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 महापद्म"
+              :other: "000 महापद्म"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 खरब"
+              :other: "0 खरब"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 खरब"
+              :other: "00 खरब"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 खरब"
+              :other: "000 खरब"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 ह
+              :other: 0 ह
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 ह
+              :other: 00 ह
+            ? !ruby/symbol "100000"
+            : 
+              :one: 0 लाख
+              :other: 0 लाख
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 00 लाख
+              :other: 00 लाख
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 0 कोटी
+              :other: 0 कोटी
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 00 कोटी
+              :other: 00 कोटी
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 अब्ज
+              :other: 0 अब्ज
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 अब्ज
+              :other: 00 अब्ज
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 0 खर्व
+              :other: 0 खर्व
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 00 खर्व
+              :other: 00 खर्व
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 0 पद्म
+              :other: 0 पद्म
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 00 पद्म
+              :other: 00 पद्म
+      :percent: 
+        :number_system: deva
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: deva
+        :patterns: 
+          :default: "[#E0]"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group: ","
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

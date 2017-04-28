@@ -1,0 +1,184 @@
+--- 
+:fr-CH: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "¤ #,##0.00;¤-#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 k ¤
+              :other: 0 k ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 k ¤
+              :other: 00 k ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 k ¤
+              :other: 000 k ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 M ¤
+              :other: 0 M ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 M ¤
+              :other: 00 M ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 M ¤
+              :other: 000 M ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 Md ¤
+              :other: 0 Md ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 Md ¤
+              :other: 00 Md ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 Md ¤
+              :other: 000 Md ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 Bn ¤
+              :other: 0 Bn ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 Bn ¤
+              :other: 00 Bn ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 Bn ¤
+              :other: 000 Bn ¤
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 millier"
+              :other: "0 mille"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 mille"
+              :other: "00 mille"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 mille"
+              :other: "000 mille"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 million"
+              :other: "0 millions"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 million"
+              :other: "00 millions"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 million"
+              :other: "000 millions"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 milliard"
+              :other: "0 milliards"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 milliard"
+              :other: "00 milliards"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 milliards"
+              :other: "000 milliards"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 billion"
+              :other: "0 billions"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 billions"
+              :other: "00 billions"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 billions"
+              :other: "000 billions"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 k
+              :other: 0 k
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 k
+              :other: 00 k
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 k
+              :other: 000 k
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 M
+              :other: 0 M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 M
+              :other: 00 M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 M
+              :other: 000 M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 Md
+              :other: 0 Md
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 Md
+              :other: 00 Md
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 Md
+              :other: 000 Md
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 Bn
+              :other: 0 Bn
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 Bn
+              :other: 00 Bn
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 Bn
+              :other: 000 Bn
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group:  
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

@@ -18,15 +18,20 @@ module TwitterCldr
       autoload :RuleGroup,    "twitter_cldr/formatters/numbers/rbnf/rule_group"
       autoload :RuleParser,   "twitter_cldr/formatters/numbers/rbnf/rule_parser"
       autoload :Substitution, "twitter_cldr/formatters/numbers/rbnf/substitution"
+      autoload :Plural,       "twitter_cldr/formatters/numbers/rbnf/plural"
 
       class PrivateRuleSetError < StandardError; end
 
       class RbnfFormatter
 
         DEFAULT_SPELLOUT_OPTIONS = {
-          :rule_group => "SpelloutRules",
-          :rule_set => "spellout-numbering"
+          rule_group: "SpelloutRules",
+          rule_set: "spellout-numbering"
         }
+
+        def self.supported_locale?(locale)
+          TwitterCldr.resource_exists?('locales', locale, 'rbnf')
+        end
 
         attr_reader :locale
 
@@ -36,7 +41,7 @@ module TwitterCldr
 
         def format(number, options = {})
           rule_group_name, rule_set_name = *if options[:rule_group].nil? && options[:rule_set].nil?
-            [DEFAULT_CARDINAL_OPTIONS[:rule_group], DEFAULT_CARDINAL_OPTIONS[:rule_set]]
+            [DEFAULT_SPELLOUT_OPTIONS[:rule_group], DEFAULT_SPELLOUT_OPTIONS[:rule_set]]
           else
             [options[:rule_group], options[:rule_set]]
           end
@@ -100,8 +105,7 @@ module TwitterCldr
         def rule_set_from_resource(rule_set_data)
           RuleSet.new(
             rule_set_data[:rules].map do |rule|
-              binding.pry unless rule[:rule].is_a?(String)
-              Rule.new(rule[:value], rule[:rule], rule[:radix])
+              Rule.new(rule[:value], rule[:rule], rule[:radix], locale)
             end,
             rule_set_data[:type],
             rule_set_data[:access] || "public"
@@ -118,7 +122,7 @@ module TwitterCldr
         end
 
         def resource
-          @resource ||= TwitterCldr.resources.get_locale_resource(locale, "rbnf")[locale][:rbnf][:grouping]
+          @resource ||= TwitterCldr.get_locale_resource(locale, "rbnf")[locale][:rbnf][:grouping]
         end
 
       end

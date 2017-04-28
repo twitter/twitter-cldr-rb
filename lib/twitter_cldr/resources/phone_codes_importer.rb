@@ -5,43 +5,44 @@
 
 require 'nokogiri'
 
-require 'twitter_cldr/resources/download'
-
 module TwitterCldr
   module Resources
 
-    class PhoneCodesImporter
-
-      PHONE_CODES_PATH = File.join('common', 'supplemental', 'telephoneCodeData.xml')
-
+    class PhoneCodesImporter < Importer
       TERRITORY_REGEXP = /^[A-Z]{2}$/
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing CLDR data
-      #   output_path - output directory for generated YAML file
-      #
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
+      requirement :cldr, Versions.cldr_version
+      output_path 'shared'
+      ruby_engine :mri
 
-      def import
-        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
+      private
 
-        doc = File.open(File.join(@input_path, PHONE_CODES_PATH)) { |file| Nokogiri::XML(file) }
+      def execute
+        doc = File.open(File.join(source_path)) do |file|
+          Nokogiri::XML(file)
+        end
 
-        phone_codes = doc.xpath('//codesByTerritory').inject({}) do |memo, node|
+        phone_codes = doc.xpath('//codesByTerritory').each_with_object({}) do |node, memo|
           territory = node.attr('territory')
-          memo[territory.downcase.to_sym] = node.at_xpath('telephoneCountryCode').attr('code') if territory =~ TERRITORY_REGEXP
-          memo
+
+          if territory =~ TERRITORY_REGEXP
+            memo[territory.downcase.to_sym] = node.at_xpath('telephoneCountryCode').attr('code')
+          end
         end
 
         phone_codes = Hash[phone_codes.sort_by(&:first)]
-
-        File.open(File.join(@output_path, 'phone_codes.yml'), 'w') { |output| output.write(YAML.dump(phone_codes)) }
+        File.write(output_path, YAML.dump(phone_codes))
       end
 
+      def output_path
+        File.join(params.fetch(:output_path), 'phone_codes.yml')
+      end
+
+      def source_path
+        @source_path ||= File.join(
+          requirements[:cldr].common_path, 'supplemental', 'telephoneCodeData.xml'
+        )
+      end
     end
 
   end

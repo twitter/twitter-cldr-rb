@@ -3,92 +3,126 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'fileutils'
+require 'cldr-plurals'
 require 'cldr/export'
-
-require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
 
-    class LocalesResourcesImporter
+    class LocalesResourcesImporter < Importer
 
-      # NOTE: units.yml was NOT updated to cldr 24 (too many significant changes) - add back in when appropriate
-      LOCALE_COMPONENTS = %w[calendars languages numbers plurals lists layout currencies territories rbnf]  # units
-      SHARED_COMPONENTS = %w[currency_digits_and_rounding rbnf_root numbering_systems segments_root]
+      requirement :cldr, Versions.cldr_version
+      output_path './'
+      locales TwitterCldr.supported_locales
+      ruby_engine :mri
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing CLDR data
-      #   output_path - output directory for imported YAML files
-      #
-      def initialize(input_path, output_path)
-        @input_path  = input_path
-        @output_path = output_path
-      end
+      LOCALE_COMPONENTS = %w[
+        layout
+        calendars
+        languages
+        numbers
+        currencies
+        plural_rules
+        lists
+        territories
+        rbnf
+        units
+        fields
+      ]
 
-      def import
-        prepare_ruby_cldr
-        import_components
-      end
+      SHARED_COMPONENTS = %w[
+        currency_digits_and_rounding
+        rbnf_root
+        numbering_systems
+        segments_root
+        territories_containment
+        likely_subtags
+        variables
+        aliases
+        transforms
+      ]
 
       private
 
-      def prepare_ruby_cldr
-        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
-        Cldr::Export::Data.dir = File.join(@input_path, 'common')
+      def execute
+        import_components
       end
 
-      # Copies zh plurals to zh-Hant (they can share, but locale code needs to be different).
-      #
-      def copy_zh_hant_plurals
-        File.open(File.join(@output_path, 'locales', 'zh-Hant', 'plurals.yml'), 'w:utf-8') do |output|
-          data = YAML.load(File.read(File.join(@output_path, 'locales', 'zh', 'plurals.yml')))
-          output.write(YAML.dump(:'zh-Hant' => data[:zh].gsub(':zh', ":'zh-Hant'")))
+      def after_prepare
+        Cldr::Export::Data.dir = requirements[:cldr].common_path
+      end
+
+      def output_path
+        params.fetch(:output_path)
+      end
+
+      def move_segments_root_file
+        file_path = File.join(output_path, 'shared', 'segments_root.yml')
+
+        if File.file?(file_path)
+          FileUtils.move(
+            file_path, File.join(
+              output_path, 'shared', 'segments', 'segments_root.yml'
+            )
+          )
         end
       end
 
       def import_components
+        locales = Set.new
+
+        params[:locales].each do |locale|
+          export_args = {
+            locales: [locale],
+            components: components_for(locale),
+            target: File.join(output_path, 'locales'),
+            merge: true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+          }
+
+          Cldr::Export.export(export_args) do |component, locale, path|
+            add_buddhist_calendar(component, locale, path)
+            process_plurals(component, locale, path)
+            downcase_territory_codes(component, locale, path)
+            deep_symbolize(path)
+            locales.add(locale)
+            STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
+          end
+        end
+
+        puts ''
+
         export_args = {
-          :locales => TwitterCldr.supported_locales,
-          :components => LOCALE_COMPONENTS,
-          :target => File.join(@output_path, 'locales'),
-          :merge => true  # fill in the gaps, eg fill in sub-locales like en_GB with en
+          components: SHARED_COMPONENTS,
+          target: File.join(output_path, 'shared'),
+          merge: true
         }
 
         Cldr::Export.export(export_args) do |component, locale, path|
-          add_buddhist_calendar(component, locale, path)
-          process_plurals(component, locale, path)
-          downcase_territory_codes(component, locale, path)
-          deep_symbolize(component, locale, path)
+          deep_symbolize(path)
         end
 
-        export_args = {
-          :components => SHARED_COMPONENTS,
-          :target => File.join(@output_path, 'shared'),
-          :merge => true
-        }
-
-        Cldr::Export.export(export_args) do |component, locale, path|
-          deep_symbolize(component, locale, path)
-        end
-
-        copy_zh_hant_plurals
+        move_segments_root_file
       end
 
-      def deep_symbolize(component, locale, path)
+      def components_for(locale)
+        if File.exist?(File.join(requirements[:cldr].source_path, 'common', 'rbnf', "#{locale}.xml"))
+          LOCALE_COMPONENTS
+        else
+          LOCALE_COMPONENTS - ['rbnf']
+        end
+      end
+
+      def deep_symbolize(path)
         return unless File.extname(path) == '.yml'
         data = YAML.load(File.read(path))
 
         File.open(path, 'w:utf-8') do |output|
           output.write(
-            # Quote all strings for compat with 1.8. This is important because
-            # RBNF syntax includes characters that are significant in the Yaml
-            # syntax, like >, <, etc. Psych doesn't have problems parsing them,
-            # but Syck does (ruby 1.8).
-            TwitterCldr::Utils::YAML.dump(TwitterCldr::Utils.deep_symbolize_keys(data), {
-              :quote_all_strings => true,
-              :use_natural_symbols => true
-            })
+            TwitterCldr::Utils::YAML.dump(
+              TwitterCldr::Utils.deep_symbolize_keys(data),
+              use_natural_symbols: true
+            )
           )
         end
       end
@@ -113,15 +147,28 @@ module TwitterCldr
       end
 
       def process_plurals(component, locale, path)
-        return unless component == 'Plurals'
+        return unless component == 'PluralRules'
 
-        plural_rules = File.read(path)
+        output_file = File.join(File.dirname(path), 'plurals.yml')
 
-        File.open(path.gsub(/rb$/, 'yml'), 'w:utf-8') do |output|
-          output.write(YAML.dump({ locale => plural_rules }))
+        plurals = YAML.load(File.read(path))[locale.to_s].inject({}) do |ret, (rule_type, rule_data)|
+          rule_list = CldrPlurals::Compiler::RuleList.new(locale)
+
+          rule_data.each_pair do |name, rule_text|
+            rule_list.add_rule(name.to_sym, rule_text) unless name == 'other'
+          end
+
+          ret[rule_type.to_sym] = {
+            rule: rule_list.to_code(:ruby),
+            names: rule_list.rules.map(&:name) + [:other]
+          }
+
+          ret
         end
 
-        FileUtils.rm(path)
+        File.open(output_file, 'w:utf-8') do |output|
+          output.write(YAML.dump(locale => plurals))
+        end
       end
 
       # TODO: export buddhist calendar from CLDR data instead of using BUDDHIST_CALENDAR constant.

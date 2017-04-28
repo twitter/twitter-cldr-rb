@@ -7,11 +7,9 @@ require 'rspec'
 require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 require 'pry-nav'
+require 'coveralls'
 
-if RUBY_VERSION <= "1.8.7"
-  $KCODE = "UTF-8"
-  require 'oniguruma'
-end
+Coveralls.wear!
 
 if ENV['SCOV']
   require 'simplecov'
@@ -33,7 +31,7 @@ class FastGettext
   end
 end
 
-class I18n
+module I18n
   class << self
     @@locale = :en
 
@@ -50,9 +48,9 @@ end
 RSpec.configure do |config|
   config.mock_with :rr
 
-  config.filter_run(:focus => true)
+  config.filter_run(focus: true)
   config.run_all_when_everything_filtered = true
-  config.filter_run_excluding(:slow => true) unless ENV['FULL_SPEC']
+  config.filter_run_excluding(slow: true) unless ENV['FULL_SPEC']
 
   config.before(:each) do
     TwitterCldr.reset_locale_fallbacks
@@ -64,7 +62,7 @@ end
 
 RSpec::Matchers.define :match_normalized do |expected|
   match do |actual|
-    expected.localize.normalize(:using => :NFKC).to_s == actual.localize.normalize(:using => :NFKC).to_s
+    expected.localize.normalize(using: :NFKC).to_s == actual.localize.normalize(using: :NFKC).to_s
   end
 end
 
@@ -80,10 +78,10 @@ RSpec::Matchers.define :exactly_match do |expected|
 end
 
 def check_token_list(got, expected)
-  got.size.should == expected.size
+  expect(got.size).to eq(expected.size)
   expected.each_with_index do |exp_hash, index|
     exp_hash.each_pair do |exp_key, exp_val|
-      got[index].send(exp_key).should == exp_val
+      expect(got[index].send(exp_key)).to eq(exp_val)
     end
   end
 end

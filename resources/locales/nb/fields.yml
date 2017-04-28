@@ -1,0 +1,386 @@
+--- 
+:nb: 
+  :fields: 
+    :day: 
+      :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i forgårs"
+        0: "i dag"
+        1: "i morgen"
+        2: "i overmorgen"
+      :relative_time: 
+        :future: 
+          :one: "om {0} døgn"
+          :other: "om {0} døgn"
+        :past: 
+          :one: "for {0} døgn siden"
+          :other: "for {0} døgn siden"
+    :day-narrow: 
+      :display_name: dag
+      :relative_time: 
+        :future: 
+          :one: "+{0} d."
+          :other: "+{0} d."
+        :past: 
+          :one: "-{0} d."
+          :other: "-{0} d."
+    :day-short: 
+      :display_name: dag
+      :relative: 
+        -1: "i går"
+        -2: "i forgårs"
+        0: "i dag"
+        1: "i morgen"
+        2: "i overmorgen"
+      :relative_time: 
+        :future: 
+          :one: "om {0} d."
+          :other: "om {0} d."
+        :past: 
+          :one: "for {0} d. siden"
+          :other: "for {0} d. siden"
+    :dayperiod: 
+      :display_name: AM/PM
+    :era: 
+      :display_name: tidsalder
+    :fri: 
+      :relative: 
+        -1: "fredag sist uke"
+        0: "fredag denne uken"
+        1: "fredag neste uke"
+    :fri-narrow: 
+      :relative: 
+        -1: "sist fr."
+        0: "denne fr."
+        1: "neste fr."
+    :fri-short: 
+      :relative: 
+        -1: "sist fre."
+        0: "denne fre."
+        1: "neste fre."
+    :hour: 
+      :display_name: time
+      :relative_time: 
+        :future: 
+          :one: "om {0} time"
+          :other: "om {0} timer"
+        :past: 
+          :one: "for {0} time siden"
+          :other: "for {0} timer siden"
+    :hour-narrow: 
+      :display_name: t
+      :relative_time: 
+        :future: 
+          :one: "+{0} t"
+          :other: "+{0} t"
+        :past: 
+          :one: "-{0} t"
+          :other: "-{0} t"
+    :hour-short: 
+      :display_name: t
+      :relative_time: 
+        :future: 
+          :one: "om {0} t"
+          :other: "om {0} t"
+        :past: 
+          :one: "for {0} t siden"
+          :other: "for {0} t siden"
+    :minute: 
+      :display_name: minutt
+      :relative_time: 
+        :future: 
+          :one: "om {0} minutt"
+          :other: "om {0} minutter"
+        :past: 
+          :one: "for {0} minutt siden"
+          :other: "for {0} minutter siden"
+    :minute-narrow: 
+      :display_name: m
+      :relative_time: 
+        :future: 
+          :one: "+{0} min"
+          :other: "+{0} min"
+        :past: 
+          :one: "-{0} min"
+          :other: "-{0} min"
+    :minute-short: 
+      :display_name: min
+      :relative_time: 
+        :future: 
+          :one: "om {0} min"
+          :other: "om {0} min"
+        :past: 
+          :one: "for {0} min siden"
+          :other: "for {0} min siden"
+    :mon: 
+      :relative: 
+        -1: "mandag sist uke"
+        0: "mandag denne uken"
+        1: "mandag neste uke"
+    :mon-narrow: 
+      :relative: 
+        -1: "sist ma."
+        0: "denne ma."
+        1: "neste ma."
+    :mon-short: 
+      :relative: 
+        -1: "sist man."
+        0: "denne man."
+        1: "neste man."
+    :month: 
+      :display_name: måned
+      :relative: 
+        -1: "forrige måned"
+        0: "denne måneden"
+        1: "neste måned"
+      :relative_time: 
+        :future: 
+          :one: "om {0} måned"
+          :other: "om {0} måneder"
+        :past: 
+          :one: "for {0} måned siden"
+          :other: "for {0} måneder siden"
+    :month-narrow: 
+      :display_name: md.
+      :relative: 
+        -1: "forrige md."
+        0: "denne md."
+        1: "neste md."
+      :relative_time: 
+        :future: 
+          :one: "+{0} md."
+          :other: "+{0} md."
+        :past: 
+          :one: "-{0} md."
+          :other: "-{0} md."
+    :month-short: 
+      :display_name: mnd.
+      :relative: 
+        -1: "forrige md."
+        0: "denne md."
+        1: "neste md."
+      :relative_time: 
+        :future: 
+          :one: "om {0} md."
+          :other: "om {0} md."
+        :past: 
+          :one: "for {0} md. siden"
+          :other: "for {0} md. siden"
+    :quarter: 
+      :display_name: kvartal
+      :relative: 
+        -1: "forrige kvartal"
+        0: "dette kvartal"
+        1: "neste kvartal"
+      :relative_time: 
+        :future: 
+          :one: "om {0} kvartal"
+          :other: "om {0} kvartaler"
+        :past: 
+          :one: "for {0} kvartal siden"
+          :other: "for {0} kvartaler siden"
+    :quarter-narrow: 
+      :display_name: kv.
+      :relative: 
+        -1: "forrige kv."
+        0: "dette kv."
+        1: "neste kv."
+      :relative_time: 
+        :future: 
+          :one: "+{0} kv."
+          :other: "+{0} kv."
+        :past: 
+          :one: "–{0} kv."
+          :other: "–{0} kv."
+    :quarter-short: 
+      :display_name: kv.
+      :relative: 
+        -1: "forrige kv."
+        0: "dette kv."
+        1: "neste kv."
+      :relative_time: 
+        :future: 
+          :one: "om {0} kv."
+          :other: "om {0} kv."
+        :past: 
+          :one: "for {0} kv. siden"
+          :other: "for {0} kv. siden"
+    :sat: 
+      :relative: 
+        -1: "lørdag sist uke"
+        0: "lørdag denne uken"
+        1: "lørdag neste uke"
+    :sat-narrow: 
+      :relative: 
+        -1: "sist lø."
+        0: "denne lø."
+        1: "neste lø."
+    :sat-short: 
+      :relative: 
+        -1: "sist lør."
+        0: "denne lør."
+        1: "neste lør."
+    :second: 
+      :display_name: sekund
+      :relative: 
+        0: nå
+      :relative_time: 
+        :future: 
+          :one: "om {0} sekund"
+          :other: "om {0} sekunder"
+        :past: 
+          :one: "for {0} sekund siden"
+          :other: "for {0} sekunder siden"
+    :second-narrow: 
+      :display_name: s
+      :relative_time: 
+        :future: 
+          :one: "+{0} s"
+          :other: "+{0} s"
+        :past: 
+          :one: "-{0} s"
+          :other: "-{0} s"
+    :second-short: 
+      :display_name: sek
+      :relative_time: 
+        :future: 
+          :one: "om {0} sek"
+          :other: "om {0} sek"
+        :past: 
+          :one: "for {0} sek siden"
+          :other: "for {0} sek siden"
+    :sun: 
+      :relative: 
+        -1: "søndag sist uke"
+        0: "søndag denne uken"
+        1: "søndag neste uke"
+    :sun-narrow: 
+      :relative: 
+        -1: "sist sø."
+        0: "denne sø."
+        1: "neste sø."
+    :sun-short: 
+      :relative: 
+        -1: "sist søn."
+        0: "denne søn."
+        1: "neste søn."
+    :thu: 
+      :relative: 
+        -1: "torsdag sist uke"
+        0: "torsdag denne uken"
+        1: "torsdag neste uke"
+    :thu-narrow: 
+      :relative: 
+        -1: "sist to."
+        0: "denne to."
+        1: "neste to."
+    :thu-short: 
+      :relative: 
+        -1: "sist tor."
+        0: "denne tor."
+        1: "neste tor."
+    :tue: 
+      :relative: 
+        -1: "tirsdag sist uke"
+        0: "tirsdag denne uken"
+        1: "tirsdag neste uke"
+    :tue-narrow: 
+      :relative: 
+        -1: "sist ti."
+        0: "denne ti."
+        1: "neste ti."
+    :tue-short: 
+      :relative: 
+        -1: "sist tir."
+        0: "denne tir."
+        1: "neste tir."
+    :wed: 
+      :relative: 
+        -1: "onsdag sist uke"
+        0: "onsdag denne uken"
+        1: "onsdag neste uke"
+    :wed-narrow: 
+      :relative: 
+        -1: "sist on."
+        0: "denne on."
+        1: "neste on."
+    :wed-short: 
+      :relative: 
+        -1: "sist ons."
+        0: "denne ons."
+        1: "neste ons."
+    :week: 
+      :display_name: uke
+      :relative: 
+        -1: "forrige uke"
+        0: "denne uken"
+        1: "neste uke"
+      :relative_time: 
+        :future: 
+          :one: "om {0} uke"
+          :other: "om {0} uker"
+        :past: 
+          :one: "for {0} uke siden"
+          :other: "for {0} uker siden"
+    :week-narrow: 
+      :display_name: uke
+      :relative: 
+        -1: "forrige uke"
+        0: "denne uken"
+        1: "neste uke"
+      :relative_time: 
+        :future: 
+          :one: "+{0} u."
+          :other: "+{0} u."
+        :past: 
+          :one: "-{0} u."
+          :other: "-{0} u."
+    :week-short: 
+      :display_name: uke
+      :relative: 
+        -1: "forrige uke"
+        0: "denne uken"
+        1: "neste uke"
+      :relative_time: 
+        :future: 
+          :one: "om {0} u."
+          :other: "om {0} u."
+        :past: 
+          :one: "for {0} u. siden"
+          :other: "for {0} u. siden"
+    :weekday: 
+      :display_name: ukedag
+    :year: 
+      :display_name: år
+      :relative: 
+        -1: "i fjor"
+        0: "i år"
+        1: "neste år"
+      :relative_time: 
+        :future: 
+          :one: "om {0} år"
+          :other: "om {0} år"
+        :past: 
+          :one: "for {0} år siden"
+          :other: "for {0} år siden"
+    :year-narrow: 
+      :display_name: år
+      :relative_time: 
+        :future: 
+          :one: "+{0} år"
+          :other: "+{0} år"
+        :past: 
+          :one: "–{0} år"
+          :other: "–{0} år"
+    :year-short: 
+      :display_name: år
+      :relative_time: 
+        :future: 
+          :one: "+{0} år"
+          :other: "+{0} år"
+        :past: 
+          :one: "–{0} år"
+          :other: "–{0} år"
+    :zone: 
+      :display_name: tidssone

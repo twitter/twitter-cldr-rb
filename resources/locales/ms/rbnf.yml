@@ -8,60 +8,60 @@
             :rules: 
               - 
                 :rule: "=#,###0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "=%spellout-numbering=;"
+                :rule: =%spellout-numbering=;
                 :value: 0
-            :type: "spellout-numbering-year"
+            :type: spellout-numbering-year
           - 
             :rules: 
               - 
-                :rule: "=%spellout-cardinal=;"
+                :rule: =%spellout-cardinal=;
                 :value: 0
-            :type: "spellout-numbering"
+            :type: spellout-numbering
           - 
             :rules: 
               - 
-                :rule: "minus >>;"
+                :rule: "negatif >>;"
                 :value: "-x"
               - 
                 :rule: "<< titik >>;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "kosong;"
+                :rule: kosong;
                 :value: 0
               - 
-                :rule: "satu;"
+                :rule: satu;
                 :value: 1
               - 
-                :rule: "dua;"
+                :rule: dua;
                 :value: 2
               - 
-                :rule: "tiga;"
+                :rule: tiga;
                 :value: 3
               - 
-                :rule: "empat;"
+                :rule: empat;
                 :value: 4
               - 
-                :rule: "lima;"
+                :rule: lima;
                 :value: 5
               - 
-                :rule: "enam;"
+                :rule: enam;
                 :value: 6
               - 
-                :rule: "tujuh;"
+                :rule: tujuh;
                 :value: 7
               - 
-                :rule: "lapan;"
+                :rule: lapan;
                 :value: 8
               - 
-                :rule: "sembilan;"
+                :rule: sembilan;
                 :value: 9
               - 
-                :rule: "sepuluh;"
+                :rule: sepuluh;
                 :value: 10
               - 
-                :rule: "sebelas;"
+                :rule: sebelas;
                 :value: 11
               - 
                 :rule: ">> belas;"
@@ -96,26 +96,26 @@
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
-            :type: "spellout-cardinal"
+            :type: spellout-cardinal
           - 
             :rules: 
               - 
-                :rule: "minus >>;"
+                :rule: "negatif >>;"
                 :value: "-x"
               - 
                 :rule: "=#,##0.#=;"
-                :value: "x.x"
+                :value: x.x
               - 
-                :rule: "kekosong;"
+                :rule: kekosong;
                 :value: 0
               - 
-                :rule: "pertama;"
+                :rule: pertama;
                 :value: 1
               - 
-                :rule: "ke=%spellout-cardinal=;"
+                :rule: ke=%spellout-cardinal=;
                 :value: 2
-            :type: "spellout-ordinal"
-        :type: "SpelloutRules"
+            :type: spellout-ordinal
+        :type: SpelloutRules
       - 
         :ruleset: 
           - 
@@ -126,5 +126,5 @@
               - 
                 :rule: "ke=#,##0=;"
                 :value: 0
-            :type: "digits-ordinal"
-        :type: "OrdinalRules"
+            :type: digits-ordinal
+        :type: OrdinalRules

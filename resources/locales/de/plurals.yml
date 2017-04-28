@@ -1,4 +1,14 @@
 ---
-:de: ! '{ :''de'' => { :i18n => { :plural => { :keys => [:one, :other], :rule => lambda
-  { |n| (n.to_i == 1 && ((v = n.to_s.split(".")[1] || []).count > 1 ? v.last.length
-  : 0) == 0) ? :one : :other } } } } }'
+:de:
+  :cardinal:
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((i == 1) && (v
+      == 0)) ? :one : :other) }'
+    :names:
+    - :one
+    - :other
+  :ordinal:
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :names:
+    - :other

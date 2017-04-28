@@ -5,20 +5,12 @@
 
 require 'erb'
 
-# patch to add compare operator to Symbol (for mri 1.8)
-class Symbol
-  def <=>(other)
-    to_s <=> other.to_s
-  end
-end
-
 module TwitterCldr
   module Resources
 
     ReadmeAssertionFailure = Struct.new(:message, :line_number)
 
     class ReadmeRenderer
-
       attr_reader :text, :assertion_failures
 
       def initialize(text)
@@ -42,11 +34,11 @@ module TwitterCldr
 
       def assert(got, expected)
         if got.is_a?(String) && expected.is_a?(String)
-          got = got.localize.normalize(:using => :NFKC).to_s
-          expected = expected.localize.normalize(:using => :NFKC).to_s
+          got = got.localize.normalize(using: :NFKC).to_s
+          expected = expected.localize.normalize(using: :NFKC).to_s
         end
 
-        unless equal?(got, expected)
+        unless objs_equal?(got, expected)
           line_num = line_num_from_stack_trace(Kernel.caller)
           assertion_failures << ReadmeAssertionFailure.new(
             "Expected `#{got.inspect}` to be `#{expected.inspect}` in README on line #{line_num}",
@@ -57,7 +49,7 @@ module TwitterCldr
         got
       end
 
-      def equal?(obj1, obj2)
+      def objs_equal?(obj1, obj2)
         case obj1
           when Array
             obj1 - obj2 == []
@@ -109,7 +101,7 @@ module TwitterCldr
           ret
         end
       end
-
     end
+
   end
 end

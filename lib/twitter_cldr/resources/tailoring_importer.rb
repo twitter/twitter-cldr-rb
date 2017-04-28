@@ -4,15 +4,19 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'nokogiri'
-require 'java'
-
-require 'twitter_cldr/resources/download'
 
 module TwitterCldr
   module Resources
-    # This class should be used with JRuby 1.7 in 1.9 mode and ICU4J version >= 49.1.
+    # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
+    # and CLDR version <= 23 (v24 syntax is not supported yet).
     #
-    class TailoringImporter < IcuBasedImporter
+    class TailoringImporter < Importer
+
+      requirement :icu, '51.2'
+      requirement :cldr, '23.1'
+      output_path 'collation/tailoring'
+      locales TwitterCldr.supported_locales
+      ruby_engine :jruby
 
       SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
       SIMPLE_RULES      = %w[p s t i]
@@ -32,32 +36,18 @@ module TwitterCldr
       }
 
       EMPTY_TAILORING_DATA = {
-        :collator_options => {},
-        :tailored_table => '',
-        :suppressed_contractions => ''
+        collator_options: {},
+        tailored_table: '',
+        suppressed_contractions: ''
       }
 
       class ImportError < RuntimeError; end
 
-      # Arguments:
-      #
-      #   input_path  - path to a directory containing CLDR data
-      #   output_path - output directory for imported YAML files
-      #   icu4j_path  - path to ICU4J jar file
-      #
-      def initialize(input_path, output_path, icu4j_path)
-        require_icu4j(icu4j_path)
-
-        @input_path  = input_path
-        @output_path = output_path
-      end
-
-      def import(locales)
-        TwitterCldr::Resources.download_cldr_if_necessary(@input_path)
-        locales.each { |locale| import_locale(locale) }
-      end
-
       private
+
+      def execute
+        params[:locales].each { |locale| import_locale(locale) }
+      end
 
       def import_locale(locale)
         print "Importing %8s\t--\t" % locale
@@ -86,11 +76,13 @@ module TwitterCldr
       end
 
       def locale_file_path(locale)
-        File.join(@input_path, 'common', 'collation', "#{translated_locale(locale)}.xml")
+        File.join(
+          requirements[:cldr].common_path, 'collation', "#{translated_locale(locale)}.xml"
+        )
       end
 
       def resource_file_path(locale)
-        File.join(@output_path, "#{locale}.yml")
+        File.join(params[:output_path], "#{locale}.yml")
       end
 
       def tailoring_data(locale)
@@ -116,9 +108,9 @@ module TwitterCldr
         end
 
         {
-            :collator_options        => parse_collator_options(collation_rules),
-            :tailored_table          => parse_tailorings(collation_rules, locale),
-            :suppressed_contractions => parse_suppressed_contractions(collation_rules)
+            collator_options:        parse_collator_options(collation_rules),
+            tailored_table:          parse_tailorings(collation_rules, locale),
+            suppressed_contractions: parse_suppressed_contractions(collation_rules)
         }
       end
 
@@ -135,12 +127,28 @@ module TwitterCldr
         default_type_node && default_type_node.attr('type')
       end
 
+      def get_class(name)
+        requirements[:icu].get_class(name)
+      end
+
+      def collator_class
+        @collator_class ||= get_class('com.ibm.icu.text.Collator')
+      end
+
+      def unicode_set_class
+        @unicode_set_class ||= get_class('com.ibm.icu.text.UnicodeSet')
+      end
+
+      def collation_element_iterator_class
+        @collation_element_iterator_class ||= get_class('com.ibm.icu.text.CollationElementIterator')
+      end
+
       def parse_tailorings(data, locale)
         rules = data && data.at_xpath('rules')
 
         return '' unless rules
 
-        collator = Java::ComIbmIcuText::Collator.get_instance(Java::JavaUtil::Locale.new(locale.to_s))
+        collator = collator_class.get_instance(Java::JavaUtil::Locale.new(locale.to_s))
 
         rules.children.map do |child|
           validate_tailoring_rule(child)
@@ -182,7 +190,7 @@ module TwitterCldr
 
       def parse_suppressed_contractions(data)
         node = data && data.at_xpath('suppress_contractions')
-        node ? Java::ComIbmIcuText::UnicodeSet.to_array(Java::ComIbmIcuText::UnicodeSet.new(node.text)).to_a.join : ''
+        node ? unicode_set_class.to_array(unicode_set_class.new(node.text)).to_a.join : ''
       end
 
       def parse_collator_options(data)
@@ -208,7 +216,7 @@ module TwitterCldr
         collation_elements = []
         ce = iter.next
 
-        while ce != Java::ComIbmIcuText::CollationElementIterator::NULLORDER
+        while ce != collation_element_iterator_class::NULLORDER
           p1 = (ce >> 24) & LAST_BYTE_MASK
           p2 = (ce >> 16) & LAST_BYTE_MASK
 
@@ -225,7 +233,7 @@ module TwitterCldr
       end
 
       def get_code_points(string)
-        TwitterCldr::Normalization::NFD.normalize_code_points(TwitterCldr::Utils::CodePoints.from_string(string))
+        TwitterCldr::Utils::CodePoints.from_string(TwitterCldr::Normalization.normalize(string))
       end
 
     end

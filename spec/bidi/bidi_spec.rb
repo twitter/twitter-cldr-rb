@@ -20,7 +20,7 @@ def expand_bitset_str(bitset)
 end
 
 describe Bidi do
-  it "should pass the derived tests in classpath_bidi_test.txt", :slow => true do
+  it "should pass the derived tests in classpath_bidi_test.txt", slow: true do
     expected_level_data = []
     expected_reorder_data = []
     num_failed = 0
@@ -28,7 +28,6 @@ describe Bidi do
     File.open(BIDI_TEST_PATH, 'r').each_line do |s|
       cur_line = s.strip
       first_char = cur_line[0]
-      first_char = first_char.chr if first_char.is_a?(Fixnum)  # conversion for ruby 1.8
 
       case first_char
         when "#"
@@ -48,7 +47,7 @@ describe Bidi do
           expand_bitset_str(bitset).each_with_index do |check, index|
             if check
               types = input.split(" ").map(&:to_sym)
-              bidi = TwitterCldr::Shared::Bidi.from_type_array(types, :direction => DIRECTIONS[index], :default_direction => :LTR)
+              bidi = TwitterCldr::Shared::Bidi.from_type_array(types, direction: DIRECTIONS[index], default_direction: :LTR)
 
               passed = bidi.levels.each_with_index.all? do |level, idx|
                 level == expected_level_data[idx]
@@ -67,6 +66,6 @@ describe Bidi do
       end
     end
 
-    num_failed.should == 0
+    expect(num_failed).to eq(0)
   end
 end

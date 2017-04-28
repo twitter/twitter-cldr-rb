@@ -1,108 +1,924 @@
----
-:fil:
-  :units:
-    :day:
-      :default:
-        :one: ! '{0} araw'
-        :other: ! '{0} araw'
-      :short:
-        :one: ! '{0} arw'
-        :other: ! '{0} arw'
-    :day-future:
-      :default:
-        :one: Sa {0} araw
-        :other: Sa {0} (na) araw
-    :day-past:
-      :default:
-        :one: Nakalipas na {0} araw
-        :other: Nakalipas na {0} (na) araw
-    :hour:
-      :default:
-        :one: ! '{0} oras'
-        :other: ! '{0} oras'
-      :short:
-        :one: ! '{0} or'
-        :other: ! '{0} or'
-    :hour-future:
-      :default:
-        :one: Sa {0} oras
-        :other: Sa {0} (na) oras
-    :hour-past:
-      :default:
-        :one: Nakalipas na {0} oras
-        :other: Nakalipas na {0} (na) oras
-    :minute:
-      :default:
-        :one: ! '{0} minuto'
-        :other: ! '{0} minuto'
-      :short:
-        :one: ! '{0} min'
-        :other: ! '{0} min'
-    :minute-future:
-      :default:
-        :one: Sa {0} minuto
-        :other: Sa {0} (na) minuto
-    :minute-past:
-      :default:
-        :one: Nakalipas na {0} minuto
-        :other: Nakalipas na {0} (na) minuto
-    :month:
-      :default:
-        :one: ! '{0} buwan'
-        :other: ! '{0} buwan'
-      :short:
-        :one: ! '{0} buw'
-        :other: ! '{0} buw'
-    :month-future:
-      :default:
-        :one: Sa {0} buwan
-        :other: Sa {0} (na) buwan
-    :month-past:
-      :default:
-        :one: Nakalipas na {0} buwan
-        :other: Nakalipas na {0} (na) buwan
-    :second:
-      :default:
-        :one: ! '{0} segundo'
-        :other: ! '{0} segundo'
-      :short:
-        :one: ! '{0} seg'
-        :other: ! '{0} seg'
-    :second-future:
-      :default:
-        :one: Sa {0} segundo
-        :other: Sa {0} (na) segundo
-    :second-past:
-      :default:
-        :one: Nakalipas na {0} segundo
-        :other: Nakalipas na {0} (na) segundo
-    :week:
-      :default:
-        :one: ! '{0} linggo'
-        :other: ! '{0} linggo'
-      :short:
-        :one: ! '{0} ling'
-        :other: ! '{0} ling'
-    :week-future:
-      :default:
-        :one: Sa {0} linggo
-        :other: Sa {0} (na) linggo
-    :week-past:
-      :default:
-        :one: Nakalipas na {0} na linggo
-        :other: Nakalipas na {0} (na) linggo
-    :year:
-      :default:
-        :one: ! '{0} taon'
-        :other: ! '{0} taon'
-      :short:
-        :one: ! '{0} ta'
-        :other: ! '{0} ta'
-    :year-future:
-      :default:
-        :one: Sa {0} taon
-        :other: Sa {0} (na) taon
-    :year-past:
-      :default:
-        :one: Nakalipas na {0} taon
-        :other: Nakalipas na {0} (na) taon
+--- 
+:fil: 
+  :units: 
+    :durationUnit: 
+      :hm: "h:mm"
+      :hms: "h:mm:ss"
+      :ms: "m:ss"
+    :unitLength: 
+      :long: 
+        :acceleration-g-force: 
+          :one: "{0} g-force"
+          :other: "{0} g-force"
+        :acceleration-meter-per-second-squared: 
+          :one: "{0} metro kada segundo kwadrado"
+          :other: "{0} na metro kada segundo kwadrado"
+        :angle-arc-minute: 
+          :one: "{0} arcminute"
+          :other: "{0} na arcminute"
+        :angle-arc-second: 
+          :one: "{0} arcsecond"
+          :other: "{0} na arcsecond"
+        :angle-degree: 
+          :one: "{0} degree"
+          :other: "{0} na degree"
+        :angle-radian: 
+          :one: "{0} radian"
+          :other: "{0} na radian"
+        :angle-revolution: 
+          :one: "{0} pag-ikot"
+          :other: "{0} na pag-ikot"
+        :area-acre: 
+          :one: "{0} acre"
+          :other: "{0} acres"
+        :area-hectare: 
+          :one: "{0} hektarya"
+          :other: "{0} na hektarya"
+        :area-square-centimeter: 
+          :one: "{0} sentimetro kwadrado"
+          :other: "{0} na sentimetro kwadrado"
+        :area-square-foot: 
+          :one: "{0} talampakan parisukat"
+          :other: "{0} na talampakan parisukat"
+        :area-square-inch: 
+          :one: "{0} pulgada kwadrado"
+          :other: "{0} na pulgada kwadrado"
+        :area-square-kilometer: 
+          :one: "{0} kilometro kwadrado"
+          :other: "{0} na kilometro kwadrado"
+        :area-square-meter: 
+          :one: "{0} metro kwadrado"
+          :other: "{0} na metro kwadrado"
+        :area-square-mile: 
+          :one: "{0} milya kwadrado"
+          :other: "{0} na milya kwadrado"
+        :area-square-yard: 
+          :one: "{0} yardang parisukat"
+          :other: "{0} na yardang parisukat"
+        :concentr-karat: 
+          :one: "{0} karat"
+          :other: "{0} na karat"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} litro kada 100 kilometro"
+          :other: "{0} na litro kada 100 kilometer"
+        :consumption-liter-per-kilometer: 
+          :one: "{0} litro kada kilometro"
+          :other: "{0} litro kada kilometro"
+        :consumption-mile-per-gallon: 
+          :one: "{0} milya kada galon"
+          :other: "{0} na milya kada galon"
+        :digital-bit: 
+          :one: "{0} bit"
+          :other: "{0} na bit"
+        :digital-byte: 
+          :one: "{0} byte"
+          :other: "{0} na byte"
+        :digital-gigabit: 
+          :one: "{0} gigabit"
+          :other: "{0} na gigabit"
+        :digital-gigabyte: 
+          :one: "{0} gigabyte"
+          :other: "{0} na gigabyte"
+        :digital-kilobit: 
+          :one: "{0} kilobit"
+          :other: "{0} na kilobit"
+        :digital-kilobyte: 
+          :one: "{0} kilobyte"
+          :other: "{0} na kilobyte"
+        :digital-megabit: 
+          :one: "{0} megabit"
+          :other: "{0} na megabit"
+        :digital-megabyte: 
+          :one: "{0} megabyte"
+          :other: "{0} na megabyte"
+        :digital-terabit: 
+          :one: "{0} terabit"
+          :other: "{0} na terabit"
+        :digital-terabyte: 
+          :one: "{0} terabyte"
+          :other: "{0} na terabyte"
+        :duration-century: 
+          :one: "{0} siglo"
+          :other: "{0} siglo"
+        :duration-day: 
+          :one: "{0} araw"
+          :other: "{0} na araw"
+        :duration-hour: 
+          :one: "{0} oras"
+          :other: "{0} na oras"
+        :duration-microsecond: 
+          :one: "{0} mikrosegundo"
+          :other: "{0} mikrosegundo"
+        :duration-millisecond: 
+          :one: "{0} milisegundo"
+          :other: "{0} milisegundo"
+        :duration-minute: 
+          :one: "{0} minuto"
+          :other: "{0} na minuto"
+        :duration-month: 
+          :one: "{0} buwan"
+          :other: "{0} buwan"
+        :duration-nanosecond: 
+          :one: "{0} nanosegundo"
+          :other: "{0} nanosegundo"
+        :duration-second: 
+          :one: "{0} segundo"
+          :other: "{0} na segundo"
+        :duration-week: 
+          :one: "{0} linggo"
+          :other: "{0} na linggo"
+        :duration-year: 
+          :one: "{0} taon"
+          :other: "{0} na taon"
+        :electric-ampere: 
+          :one: "{0} ampere"
+          :other: "{0} na ampere"
+        :electric-milliampere: 
+          :one: "{0} milliampere"
+          :other: "{0} na milliampere"
+        :electric-ohm: 
+          :one: "{0} ohm"
+          :other: "{0} na ohm"
+        :electric-volt: 
+          :one: "{0} volt"
+          :other: "{0} na volt"
+        :energy-calorie: 
+          :one: "{0} calorie"
+          :other: "{0} na calories"
+        :energy-foodcalorie: 
+          :one: "{0} Calorie"
+          :other: "{0} na Calories"
+        :energy-joule: 
+          :one: "{0} joule"
+          :other: "{0} na joules"
+        :energy-kilocalorie: 
+          :one: "{0} kilocalorie"
+          :other: "{0} na kilocalorie"
+        :energy-kilojoule: 
+          :one: "{0} kilojoule"
+          :other: "{0} na kilojoule"
+        :energy-kilowatt-hour: 
+          :one: "{0} kilowatt hour"
+          :other: "{0} na kilowatt-hour"
+        :frequency-gigahertz: 
+          :one: "{0} gigahertz"
+          :other: "{0} na gigahertz"
+        :frequency-hertz: 
+          :one: "{0} hertz"
+          :other: "{0} na hertz"
+        :frequency-kilohertz: 
+          :one: "{0} kilohertz"
+          :other: "{0} na kilohertz"
+        :frequency-megahertz: 
+          :one: "{0} na megahertz"
+          :other: "{0} megahertz"
+        :length-astronomical-unit: 
+          :one: "{0} astronomical unit"
+          :other: "{0} na astronomical units"
+        :length-centimeter: 
+          :one: "{0} sentimetro"
+          :other: "{0} sentimetro"
+        :length-decimeter: 
+          :one: "{0} decimetro"
+          :other: "{0} na decimetro"
+        :length-foot: 
+          :one: "{0} talampakan"
+          :other: "{0} na talampakan"
+        :length-inch: 
+          :one: "{0} pulgada"
+          :other: "{0} na pulgada"
+        :length-kilometer: 
+          :one: "{0} kilometro"
+          :other: "{0} na kilometro"
+        :length-light-year: 
+          :one: "{0} light year"
+          :other: "{0} na light year"
+        :length-meter: 
+          :one: "{0} metro"
+          :other: "{0} na metro"
+        :length-micrometer: 
+          :one: "{0} micrometro"
+          :other: "{0} micrometro"
+        :length-mile: 
+          :one: "{0} milya"
+          :other: "{0} na milya"
+        :length-mile-scandinavian: 
+          :one: "{0} milya-scandinavian"
+          :other: "{0} na milya-scandinavian"
+        :length-millimeter: 
+          :one: "{0} milimetro"
+          :other: "{0} na milimetro"
+        :length-nanometer: 
+          :one: "{0} nanometro"
+          :other: "{0} nanometro"
+        :length-nautical-mile: 
+          :one: "{0} nautical mile"
+          :other: "{0} nautical miles"
+        :length-parsec: 
+          :one: "{0} parsec"
+          :other: "{0} parsecs"
+        :length-picometer: 
+          :one: "{0} picometer"
+          :other: "{0} picometer"
+        :length-yard: 
+          :one: "{0} yarda"
+          :other: "{0} na yarda"
+        :light-lux: 
+          :one: "{0} lux"
+          :other: "{0} na lux"
+        :mass-carat: 
+          :one: "{0} karat"
+          :other: "{0} karat"
+        :mass-gram: 
+          :one: "{0} gramo"
+          :other: "{0} na gramo"
+        :mass-kilogram: 
+          :one: "{0} kilo"
+          :other: "{0} kilo"
+        :mass-metric-ton: 
+          :one: "{0} toneladang metriko"
+          :other: "{0} na toneladang metriko"
+        :mass-microgram: 
+          :one: "{0} microgram"
+          :other: "{0} micrograms"
+        :mass-milligram: 
+          :one: "{0} milligram"
+          :other: "{0} milligrams"
+        :mass-ounce: 
+          :one: "{0} onsa"
+          :other: "{0} na onsa"
+        :mass-ounce-troy: 
+          :one: "{0} troy na onsa"
+          :other: "{0} na troy na onsa"
+        :mass-pound: 
+          :one: "{0} libra"
+          :other: "{0} na libra"
+        :mass-ton: 
+          :one: "{0} tonelada"
+          :other: "{0} tonelada"
+        :power-gigawatt: 
+          :one: "{0} gigawatt"
+          :other: "{0} na gigawatt"
+        :power-horsepower: 
+          :one: "{0} horsepower"
+          :other: "{0} horsepower"
+        :power-kilowatt: 
+          :one: "{0} kilowatt"
+          :other: "{0} kilowatts"
+        :power-megawatt: 
+          :one: "{0} megawatt"
+          :other: "{0} na megawatt"
+        :power-milliwatt: 
+          :one: "{0} milliwatt"
+          :other: "{0} na milliwatt"
+        :power-watt: 
+          :one: "{0} watt"
+          :other: "{0} na watt"
+        :pressure-hectopascal: 
+          :one: "{0} hectopascal"
+          :other: "{0} na hectopascal"
+        :pressure-inch-hg: 
+          :one: "{0} pulgada ng asoge"
+          :other: "{0} na pulgada ng asoge"
+        :pressure-millibar: 
+          :one: "{0} millibar"
+          :other: "{0} na millibar"
+        :pressure-millimeter-of-mercury: 
+          :one: "{0} millimetro ng mercury"
+          :other: "{0} na milimetro ng asoge"
+        :pressure-pound-per-square-inch: 
+          :one: "{0} libra kada pulgadang parisukat"
+          :other: "{0} na libra kada pulgadang parisukat"
+        :speed-kilometer-per-hour: 
+          :one: "{0} kilometro kada oras"
+          :other: "{0} na kilometro kada oras"
+        :speed-knot: 
+          :one: "{0} knot"
+          :other: "{0} na knot"
+        :speed-meter-per-second: 
+          :one: "{0} metro kada segundo"
+          :other: "{0} metro kada segundo"
+        :speed-mile-per-hour: 
+          :one: "{0} milya kada oras"
+          :other: "{0} milya kada oras"
+        :temperature-celsius: 
+          :one: "{0} degree Celsius"
+          :other: "{0} degrees Celsius"
+        :temperature-fahrenheit: 
+          :one: "{0} degree Fahrenheit"
+          :other: "{0} degrees Fahrenheit"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :temperature-kelvin: 
+          :one: "{0} degree kelvin"
+          :other: "{0} degrees kelvin"
+        :volume-acre-foot: 
+          :one: "{0} acre-foot"
+          :other: "{0} acre-feet"
+        :volume-centiliter: 
+          :one: "{0} sentilitro"
+          :other: "{0} sentilitro"
+        :volume-cubic-centimeter: 
+          :one: "{0} kubiko sentimetro"
+          :other: "{0} na sentimetro kubiko"
+        :volume-cubic-foot: 
+          :one: "{0} kubiko talampakan"
+          :other: "{0} kubiko talampakan"
+        :volume-cubic-inch: 
+          :one: "{0} kubiko pulgada"
+          :other: "{0} kubiko pulgada"
+        :volume-cubic-kilometer: 
+          :one: "{0} kubiko kilometro"
+          :other: "{0} kubiko kilometro"
+        :volume-cubic-meter: 
+          :one: "{0} kubiko metro"
+          :other: "{0} na metro kubiko"
+        :volume-cubic-mile: 
+          :one: "{0} kubiko milya"
+          :other: "{0} kubiko milya"
+        :volume-cubic-yard: 
+          :one: "{0} kubiko yarda"
+          :other: "{0} kubiko yarda"
+        :volume-cup: 
+          :one: "{0} tasa"
+          :other: "{0} na tasa"
+        :volume-cup-metric: 
+          :one: "{0} metric cup"
+          :other: "{0} na metric cup"
+        :volume-deciliter: 
+          :one: "{0} decilitro"
+          :other: "{0} na decilitro"
+        :volume-fluid-ounce: 
+          :one: "{0} fluid ounce"
+          :other: "{0} na fluid ounce"
+        :volume-gallon: 
+          :one: "{0} galon"
+          :other: "{0} na galon"
+        :volume-hectoliter: 
+          :one: "{0} hektolitro"
+          :other: "{0} hektolitro"
+        :volume-liter: 
+          :one: "{0} litro"
+          :other: "{0} na litro"
+        :volume-megaliter: 
+          :one: "{0} megalitro"
+          :other: "{0} megalitro"
+        :volume-milliliter: 
+          :one: "{0} mililitro"
+          :other: "{0} mililitro"
+        :volume-pint: 
+          :one: "{0} pint"
+          :other: "{0} pints"
+        :volume-pint-metric: 
+          :one: "{0} metric pint"
+          :other: "{0} na metric pint"
+        :volume-quart: 
+          :one: "{0} quart"
+          :other: "{0} na quarts"
+        :volume-tablespoon: 
+          :one: "{0} kutsara"
+          :other: "{0} na kutsara"
+        :volume-teaspoon: 
+          :one: "{0} kutsarita"
+          :other: "{0} na kutsarita"
+      :narrow: 
+        :acceleration-g-force: 
+          :one: "{0}G"
+          :other: "{0}G"
+        :angle-arc-minute: 
+          :one: "{0}′"
+          :other: "{0}′"
+        :angle-arc-second: 
+          :one: "{0}″"
+          :other: "{0}″"
+        :angle-degree: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :area-acre: 
+          :one: "{0}ac"
+          :other: "{0}ac"
+        :area-hectare: 
+          :one: "{0}ha"
+          :other: "{0}ha"
+        :area-square-foot: 
+          :one: "{0}ft²"
+          :other: "{0}ft²"
+        :area-square-kilometer: 
+          :one: "{0}km²"
+          :other: "{0}km²"
+        :area-square-meter: 
+          :one: "{0} m²"
+          :other: "{0} m²"
+        :area-square-mile: 
+          :one: "{0}mi²"
+          :other: "{0}mi²"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0}L/100km"
+          :other: "{0}L/100km"
+        :duration-day: 
+          :one: "{0} araw"
+          :other: "{0} na araw"
+        :duration-hour: 
+          :one: "{0} oras"
+          :other: "{0} oras"
+        :duration-millisecond: 
+          :one: "{0}ms"
+          :other: "{0}ms"
+        :duration-minute: 
+          :one: "{0}m"
+          :other: "{0}m"
+        :duration-month: 
+          :one: "{0}buwan"
+          :other: "{0} buwan"
+        :duration-second: 
+          :one: "{0}s"
+          :other: "{0}s"
+        :duration-week: 
+          :one: "{0}linggo"
+          :other: "{0}linggo"
+        :duration-year: 
+          :one: "{0}taon"
+          :other: "{0}taon"
+        :length-centimeter: 
+          :one: "{0}cm"
+          :other: "{0}cm"
+        :length-foot: 
+          :one: "{0}′"
+          :other: "{0}′"
+        :length-inch: 
+          :one: "{0}″"
+          :other: "{0}″"
+        :length-kilometer: 
+          :one: "{0}km"
+          :other: "{0}km"
+        :length-light-year: 
+          :one: "{0}ly"
+          :other: "{0}ly"
+        :length-meter: 
+          :one: "{0}m"
+          :other: "{0}m"
+        :length-mile: 
+          :one: "{0}mi"
+          :other: "{0}mi"
+        :length-millimeter: 
+          :one: "{0}mm"
+          :other: "{0}mm"
+        :length-picometer: 
+          :one: "{0}pm"
+          :other: "{0}pm"
+        :length-yard: 
+          :one: "{0}yd"
+          :other: "{0}yd"
+        :mass-gram: 
+          :one: "{0}g"
+          :other: "{0}g"
+        :mass-kilogram: 
+          :one: "{0}kg"
+          :other: "{0}kg"
+        :mass-ounce: 
+          :one: "{0}oz"
+          :other: "{0}oz"
+        :mass-pound: 
+          :one: "{0}#"
+          :other: "{0}#"
+        :power-horsepower: 
+          :one: "{0}hp"
+          :other: "{0}hp"
+        :power-kilowatt: 
+          :one: "{0}kW"
+          :other: "{0}kW"
+        :power-watt: 
+          :one: "{0}W"
+          :other: "{0}W"
+        :pressure-hectopascal: 
+          :one: "{0}hPa"
+          :other: "{0}hPa"
+        :pressure-inch-hg: 
+          :one: "{0}\" Hg"
+          :other: "{0}\" Hg"
+        :pressure-millibar: 
+          :one: "{0}mb"
+          :other: "{0}mb"
+        :speed-kilometer-per-hour: 
+          :one: "{0}kph"
+          :other: "{0}kph"
+        :speed-meter-per-second: 
+          :one: "{0}m/s"
+          :other: "{0}m/s"
+        :speed-mile-per-hour: 
+          :one: "{0}mph"
+          :other: "{0}mph"
+        :temperature-celsius: 
+          :one: "{0}°C"
+          :other: "{0}°C"
+        :temperature-fahrenheit: 
+          :one: "{0}°F"
+          :other: "{0}°F"
+        :volume-cubic-kilometer: 
+          :one: "{0}km³"
+          :other: "{0}km³"
+        :volume-cubic-mile: 
+          :one: "{0}mi³"
+          :other: "{0}mi³"
+        :volume-liter: 
+          :one: "{0}L"
+          :other: "{0}L"
+      :short: 
+        :acceleration-g-force: 
+          :one: "{0} G"
+          :other: "{0} G"
+        :acceleration-meter-per-second-squared: 
+          :one: "{0} m/s²"
+          :other: "{0} m/s²"
+        :angle-arc-minute: 
+          :one: "{0} arcmin"
+          :other: "{0} na arcmin"
+        :angle-arc-second: 
+          :one: "{0} arcsec"
+          :other: "{0} na arcsec"
+        :angle-degree: 
+          :one: "{0} deg"
+          :other: "{0} na deg"
+        :angle-radian: 
+          :one: "{0} rad"
+          :other: "{0} na rad"
+        :angle-revolution: 
+          :one: "{0} rev"
+          :other: "{0} na rev"
+        :area-acre: 
+          :one: "{0} ac"
+          :other: "{0} ac"
+        :area-hectare: 
+          :one: "{0} ha"
+          :other: "{0} ha"
+        :area-square-centimeter: 
+          :one: "{0} cm²"
+          :other: "{0} cm²"
+        :area-square-foot: 
+          :one: "{0} sq ft"
+          :other: "{0} sq ft"
+        :area-square-inch: 
+          :one: "{0} in²"
+          :other: "{0} in²"
+        :area-square-kilometer: 
+          :one: "{0} km²"
+          :other: "{0} km²"
+        :area-square-meter: 
+          :one: "{0} m²"
+          :other: "{0} m²"
+        :area-square-mile: 
+          :one: "{0} sq mi"
+          :other: "{0} sq mi"
+        :area-square-yard: 
+          :one: "{0} yd²"
+          :other: "{0} yd²"
+        :concentr-karat: 
+          :one: "{0} kt"
+          :other: "{0} kt"
+        :concentr-milligram-per-deciliter: 
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :other: "{0} mmol/L"
+        :concentr-part-per-million: 
+          :other: "{0} ppm"
+        :consumption-liter-per-100kilometers: 
+          :one: "{0} na L/100km"
+          :other: "{0} na L/100km"
+        :consumption-liter-per-kilometer: 
+          :one: "{0} L/km"
+          :other: "{0} L/km"
+        :consumption-mile-per-gallon: 
+          :one: "{0} mpg"
+          :other: "{0} na mpg"
+        :consumption-mile-per-gallon-imperial: 
+          :other: "{0} mpg Imp."
+        :digital-bit: 
+          :one: "{0} bit"
+          :other: "{0} bit"
+        :digital-byte: 
+          :one: "{0} byte"
+          :other: "{0} byte"
+        :digital-gigabit: 
+          :one: "{0} Gb"
+          :other: "{0} Gb"
+        :digital-gigabyte: 
+          :one: "{0} GB"
+          :other: "{0} GB"
+        :digital-kilobit: 
+          :one: "{0} kb"
+          :other: "{0} kb"
+        :digital-kilobyte: 
+          :one: "{0} kB"
+          :other: "{0} kB"
+        :digital-megabit: 
+          :one: "{0} Mb"
+          :other: "{0} Mb"
+        :digital-megabyte: 
+          :one: "{0} MB"
+          :other: "{0} MB"
+        :digital-terabit: 
+          :one: "{0} Tb"
+          :other: "{0} Tb"
+        :digital-terabyte: 
+          :one: "{0} TB"
+          :other: "{0} TB"
+        :duration-century: 
+          :one: "{0} siglo"
+          :other: "{0} siglo"
+        :duration-day: 
+          :one: "{0} araw"
+          :other: "{0} araw"
+        :duration-day-person: {}
+        :duration-hour: 
+          :one: "{0} oras"
+          :other: "{0} na oras"
+        :duration-microsecond: 
+          :one: "{0} μs"
+          :other: "{0} μs"
+        :duration-millisecond: 
+          :one: "{0} ms"
+          :other: "{0} ms"
+        :duration-minute: 
+          :one: "{0} min."
+          :other: "{0} min."
+        :duration-month: 
+          :one: "{0} buwan"
+          :other: "{0} buwan"
+        :duration-month-person: {}
+        :duration-nanosecond: 
+          :one: "{0} ns"
+          :other: "{0} ns"
+        :duration-second: 
+          :one: "{0} seg."
+          :other: "{0} seg."
+        :duration-week: 
+          :one: "{0} linggo"
+          :other: "{0} na linggo"
+        :duration-week-person: {}
+        :duration-year: 
+          :one: "{0} taon"
+          :other: "{0} taon"
+        :duration-year-person: {}
+        :electric-ampere: 
+          :one: "{0} A"
+          :other: "{0} A"
+        :electric-milliampere: 
+          :one: "{0} mA"
+          :other: "{0} mA"
+        :electric-ohm: 
+          :one: "{0} Ω"
+          :other: "{0} Ω"
+        :electric-volt: 
+          :one: "{0} V"
+          :other: "{0} V"
+        :energy-calorie: 
+          :one: "{0} cal"
+          :other: "{0} cal"
+        :energy-foodcalorie: 
+          :one: "{0} Cal"
+          :other: "{0} Cal"
+        :energy-joule: 
+          :one: "{0} J"
+          :other: "{0} J"
+        :energy-kilocalorie: 
+          :one: "{0} kcal"
+          :other: "{0} kcal"
+        :energy-kilojoule: 
+          :one: "{0} kJ"
+          :other: "{0} kJ"
+        :energy-kilowatt-hour: 
+          :one: "{0} kWh"
+          :other: "{0} kWh"
+        :frequency-gigahertz: 
+          :one: "{0} GHz"
+          :other: "{0} GHz"
+        :frequency-hertz: 
+          :one: "{0} Hz"
+          :other: "{0} Hz"
+        :frequency-kilohertz: 
+          :one: "{0} kHz"
+          :other: "{0} kHz"
+        :frequency-megahertz: 
+          :one: "{0} MHz"
+          :other: "{0} MHz"
+        :length-astronomical-unit: 
+          :one: "{0} au"
+          :other: "{0} au"
+        :length-centimeter: 
+          :one: "{0} cm"
+          :other: "{0} cm"
+        :length-decimeter: 
+          :one: "{0} dm"
+          :other: "{0} dm"
+        :length-fathom: 
+          :other: "{0} fm"
+        :length-foot: 
+          :one: "{0} ft"
+          :other: "{0} ft"
+        :length-furlong: 
+          :other: "{0} fur"
+        :length-inch: 
+          :one: "{0} in"
+          :other: "{0} in"
+        :length-kilometer: 
+          :one: "{0} km"
+          :other: "{0} km"
+        :length-light-year: 
+          :one: "{0} ly"
+          :other: "{0} na ly"
+        :length-meter: 
+          :one: "{0} m"
+          :other: "{0} m"
+        :length-micrometer: 
+          :one: "{0} µm"
+          :other: "{0} µm"
+        :length-mile: 
+          :one: "{0} mi"
+          :other: "{0} mi"
+        :length-mile-scandinavian: 
+          :one: "{0} smi"
+          :other: "{0} smi"
+        :length-millimeter: 
+          :one: "{0} mm"
+          :other: "{0} mm"
+        :length-nanometer: 
+          :one: "{0} nm"
+          :other: "{0} nm"
+        :length-nautical-mile: 
+          :one: "{0} nmi"
+          :other: "{0} na nmi"
+        :length-parsec: 
+          :one: "{0} pc"
+          :other: "{0} na pc"
+        :length-picometer: 
+          :one: "{0} pm"
+          :other: "{0} na pm"
+        :length-yard: 
+          :one: "{0} yd"
+          :other: "{0} na yd"
+        :light-lux: 
+          :one: "{0} lx"
+          :other: "{0} lx"
+        :mass-carat: 
+          :one: "{0} KD"
+          :other: "{0} KD"
+        :mass-gram: 
+          :one: "{0} g"
+          :other: "{0} g"
+        :mass-kilogram: 
+          :one: "{0} kg"
+          :other: "{0} kg"
+        :mass-metric-ton: 
+          :one: "{0} t"
+          :other: "{0} t"
+        :mass-microgram: 
+          :one: "{0} µg"
+          :other: "{0} µg"
+        :mass-milligram: 
+          :one: "{0} mg"
+          :other: "{0} mg"
+        :mass-ounce: 
+          :one: "{0} oz"
+          :other: "{0} oz"
+        :mass-ounce-troy: 
+          :one: "{0} oz t"
+          :other: "{0} oz t"
+        :mass-pound: 
+          :one: "{0} lb"
+          :other: "{0} lbs"
+        :mass-stone: 
+          :other: "{0} st"
+        :mass-ton: 
+          :one: "{0} tn"
+          :other: "{0} tn"
+        :power-gigawatt: 
+          :one: "{0} GW"
+          :other: "{0} GW"
+        :power-horsepower: 
+          :one: "{0} hp"
+          :other: "{0} hp"
+        :power-kilowatt: 
+          :one: "{0} kW"
+          :other: "{0} kW"
+        :power-megawatt: 
+          :one: "{0} MW"
+          :other: "{0} MW"
+        :power-milliwatt: 
+          :one: "{0} mW"
+          :other: "{0} mW"
+        :power-watt: 
+          :one: "{0} W"
+          :other: "{0} W"
+        :pressure-hectopascal: 
+          :one: "{0} hPa"
+          :other: "{0} hPa"
+        :pressure-inch-hg: 
+          :one: "{0} inHg"
+          :other: "{0} inHg"
+        :pressure-millibar: 
+          :one: "{0} mb"
+          :other: "{0} mb"
+        :pressure-millimeter-of-mercury: 
+          :one: "{0} mm Hg"
+          :other: "{0} mm Hg"
+        :pressure-pound-per-square-inch: 
+          :one: "{0} psi"
+          :other: "{0} psi"
+        :speed-kilometer-per-hour: 
+          :one: "{0} kph"
+          :other: "{0} kph"
+        :speed-knot: 
+          :one: "{0} kn"
+          :other: "{0} kn"
+        :speed-meter-per-second: 
+          :one: "{0} m/s"
+          :other: "{0} m/s"
+        :speed-mile-per-hour: 
+          :one: "{0} mph"
+          :other: "{0} mph"
+        :temperature-celsius: 
+          :one: "{0}°C"
+          :other: "{0}°C"
+        :temperature-fahrenheit: 
+          :one: "{0}°F"
+          :other: "{0}°F"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :temperature-kelvin: 
+          :one: "{0}°K"
+          :other: "{0}°K"
+        :volume-acre-foot: 
+          :one: "{0} ac ft"
+          :other: "{0} ac ft"
+        :volume-bushel: 
+          :other: "{0} bu"
+        :volume-centiliter: 
+          :one: "{0} cL"
+          :other: "{0} cL"
+        :volume-cubic-centimeter: 
+          :one: "{0} cm³"
+          :other: "{0} cm³"
+        :volume-cubic-foot: 
+          :one: "{0} ft³"
+          :other: "{0} ft³"
+        :volume-cubic-inch: 
+          :one: "{0} in³"
+          :other: "{0} in³"
+        :volume-cubic-kilometer: 
+          :one: "{0} km³"
+          :other: "{0} km³"
+        :volume-cubic-meter: 
+          :one: "{0} m³"
+          :other: "{0} m³"
+        :volume-cubic-mile: 
+          :one: "{0} mi³"
+          :other: "{0} mi³"
+        :volume-cubic-yard: 
+          :one: "{0} yd³"
+          :other: "{0} yd³"
+        :volume-cup: 
+          :one: "{0} c"
+          :other: "{0} c"
+        :volume-cup-metric: 
+          :one: "{0} mc"
+          :other: "{0} na mc"
+        :volume-deciliter: 
+          :one: "{0} dL"
+          :other: "{0} dL"
+        :volume-fluid-ounce: 
+          :one: "{0} fl oz"
+          :other: "{0} fl oz"
+        :volume-gallon: 
+          :one: "{0} gal"
+          :other: "{0} na gal"
+        :volume-gallon-imperial: 
+          :other: "{0} gal Imp."
+        :volume-hectoliter: 
+          :one: "{0} hL"
+          :other: "{0} hL"
+        :volume-liter: 
+          :one: "{0} L"
+          :other: "{0} L"
+        :volume-megaliter: 
+          :one: "{0} ML"
+          :other: "{0} ML"
+        :volume-milliliter: 
+          :one: "{0} mL"
+          :other: "{0} mL"
+        :volume-pint: 
+          :one: "{0} pt"
+          :other: "{0} pt"
+        :volume-pint-metric: 
+          :one: "{0} na mpt"
+          :other: "{0} na mpt"
+        :volume-quart: 
+          :one: "{0} qt"
+          :other: "{0} qt"
+        :volume-tablespoon: 
+          :one: "{0} tbsp"
+          :other: "{0} tbsp"
+        :volume-teaspoon: 
+          :one: "{0} tsp"
+          :other: "{0} tsp"

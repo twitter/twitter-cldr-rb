@@ -66,7 +66,11 @@ describe TrieLoader do
   end
 
   def mock_trie_dump
-    mock(File).open(TrieLoader.dump_path(locale), 'r') { |*args| args.last.call(trie_dump) }
+    expect(File).to(
+      receive(:open)
+        .with(TrieLoader.dump_path(locale), 'r')
+        .and_yield(trie_dump)
+    )
   end
 
 end

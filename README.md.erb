@@ -29,11 +29,11 @@ TwitterCldr.supported_locale?(:xx)        # <%= assert_false(TwitterCldr.support
 ```
 
 
-TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localization as straightforward as possible.
+TwitterCldr patches core Ruby objects like `Integer` and `Date` to make localization as straightforward as possible.
 
 ### Numbers
 
-`Fixnum`, `Bignum`, and `Float` objects are supported.  Here are some examples:
+`Integer` and `Float` objects are supported (as well as `Fixnum` and `Bignum` for Ruby versions < 2.4).  Here are some examples:
 
 ```ruby
 # default formatting with to_s
@@ -951,7 +951,7 @@ bidi.to_s
 
 ### Unicode YAML Support
 
-The Psych gem that is the default YAML engine inRuby 1.9 doesn't handle Unicode characters perfectly.  To mitigate this problem, TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
+The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode characters perfectly.  To mitigate this problem, TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
 
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
@@ -1022,7 +1022,7 @@ No external requirements.
 
 `bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
 
-Tests are written in RSpec using RR as the mocking framework.
+Tests are written in RSpec.
 
 ## Test Coverage
 

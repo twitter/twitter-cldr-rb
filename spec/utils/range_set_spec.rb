@@ -161,16 +161,16 @@ describe RangeSet do
     let(:set) { RangeSet.new([1..5, 9..16]) }
 
     it "returns true if the set completely includes the range, false otherwise" do
-      expect(set).to include(10..15)
-      expect(set).not_to include(3..8)
-      expect(set).not_to include(8..14)
+      expect(set.include?(10..15)).to eq(true)
+      expect(set.include?(3..8)).to eq(false)
+      expect(set.include?(8..14)).to eq(false)
     end
 
     it "returns true if the set contains the value, false otherwise" do
-      expect(set).to include(3)
-      expect(set).to include(10)
-      expect(set).not_to include(6)
-      expect(set).not_to include(8)
+      expect(set.include?(3)).to eq(true)
+      expect(set.include?(10)).to eq(true)
+      expect(set.include?(6)).to eq(false)
+      expect(set.include?(8)).to eq(false)
     end
   end
 

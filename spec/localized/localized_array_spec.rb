@@ -20,7 +20,11 @@ describe LocalizedArray do
     let(:sorted)    { %w[aaa abc bca] }
     let(:localized) { array.localize(locale) }
 
-    before(:each) { mock(TwitterCldr::Collation::Collator).new(locale) { FakeCollator.new } }
+    before(:each) do
+      expect(TwitterCldr::Collation::Collator).to(
+        receive(:new).with(locale).and_return(FakeCollator.new)
+      )
+    end
 
     describe '#sort' do
       it 'returns a new LocalizedArray' do

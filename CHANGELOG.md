@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 4.4.0 (April 28, 2017)
+* Address several more Ruby 2.4 deprecation warnings.
+* Upgrade to RSpec 3, drop rr mocking library.
+
 ### 4.3.1 (March 27, 2017)
 * Add support for Ruby 2.4.
 

@@ -117,12 +117,16 @@ describe Territories do
   end
 
   describe "#deep_normalize_territory_code_keys" do
-    Territories.deep_normalize_territory_code_keys(
-      { "is" => [ { "US" => "United States",
-                    5 => "Suður-Ameríka" },
-                  { "009" => "Eyjaálfa" } ] }
-    ).should == { is: [ { us: "United States" }, { } ] }
-  end
+    it 'normalizes correctly' do
+      normalized = Territories.deep_normalize_territory_code_keys({
+        "is" => [
+          { "US" => "United States", 5 => "Suður-Ameríka" },
+          { "009" => "Eyjaálfa" }
+        ]
+      })
 
+      expect(normalized).to eq({ is: [{ us: "United States" }, {}] })
+    end
+  end
 end
 

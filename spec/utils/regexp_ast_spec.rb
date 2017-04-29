@@ -22,10 +22,10 @@ describe RegexpAst do
   end
 
   def check_ast(obj)
-    obj.should be_a(RegexpAst::Root)
+    expect(obj).to be_a(RegexpAst::Root)
     expr = obj.expressions.first
-    expr.should be_a(RegexpAst::Literal)
-    expr.text.should == 'foobar'
+    expect(expr).to be_a(RegexpAst::Literal)
+    expect(expr.text).to eq('foobar')
   end
 
   describe "#dump" do

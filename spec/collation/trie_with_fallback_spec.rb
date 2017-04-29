@@ -16,24 +16,24 @@ describe TrieWithFallback do
 
   describe '#get' do
     it 'returns result if the key is present' do
-      dont_allow(fallback).get
+      expect(fallback).to_not receive(:get)
       expect(trie.get([1, 2, 3])).to eq('value')
     end
 
     it 'resorts to the fallback if the key is not present' do
-      mock(fallback).get([3, 2, 1]) { 'fallback-value' }
+      expect(fallback).to receive(:get).with([3, 2, 1]).and_return('fallback-value')
       expect(trie.get([3, 2, 1])).to eq('fallback-value')
     end
   end
 
   describe '#find_prefix' do
     it 'returns result if the key is present' do
-      dont_allow(fallback).find_prefix
+      expect(fallback).to_not receive(:find_prefix)
       expect(trie.find_prefix([1, 2, 3, 4]).first(2)).to eq(['value', 3])
     end
 
     it 'resorts to the fallback if the key is not present' do
-      mock(fallback).find_prefix([3, 2, 1]) { 'fallback-result' }
+      expect(fallback).to receive(:find_prefix).with([3, 2, 1]).and_return('fallback-result')
       expect(trie.find_prefix([3, 2, 1])).to eq('fallback-result')
     end
   end

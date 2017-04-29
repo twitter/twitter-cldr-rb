@@ -4,7 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'rspec'
-require 'rspec/autorun' # somehow makes rcov work with rspec
 require 'twitter_cldr'
 require 'pry-nav'
 require 'coveralls'
@@ -46,7 +45,7 @@ module I18n
 end
 
 RSpec.configure do |config|
-  config.mock_with :rr
+  # config.mock_with :rr
 
   config.filter_run(focus: true)
   config.run_all_when_everything_filtered = true

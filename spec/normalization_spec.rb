@@ -12,12 +12,12 @@ describe TwitterCldr::Normalization do
     let(:normalized_string) { 'normalized' }
 
     it 'it uses NFD by default' do
-      mock(Eprun).normalize(string, :nfd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfd).and_return(normalized_string)
       expect(TwitterCldr::Normalization.normalize(string)).to eq(normalized_string)
     end
 
     it "uses specified algorithm if there is any" do
-      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfkd).and_return(normalized_string)
       expect(TwitterCldr::Normalization.normalize(string, using: :nfkd)).to eq(normalized_string)
     end
 
@@ -28,12 +28,12 @@ describe TwitterCldr::Normalization do
     end
 
     it 'accepts normalizer name in upper case' do
-      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfkd).and_return(normalized_string)
       expect(TwitterCldr::Normalization.normalize(string, using: :NFKD)).to eq(normalized_string)
     end
 
     it 'accepts a string' do
-      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfkd).and_return(normalized_string)
       expect(TwitterCldr::Normalization.normalize(string, using: 'nfkd')).to eq(normalized_string)
     end
 

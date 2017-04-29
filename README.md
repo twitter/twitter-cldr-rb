@@ -29,11 +29,11 @@ TwitterCldr.supported_locale?(:xx)        # false
 ```
 
 
-TwitterCldr patches core Ruby objects like `Fixnum` and `Date` to make localization as straightforward as possible.
+TwitterCldr patches core Ruby objects like `Integer` and `Date` to make localization as straightforward as possible.
 
 ### Numbers
 
-`Fixnum`, `Bignum`, and `Float` objects are supported.  Here are some examples:
+`Integer` and `Float` objects are supported (as well as `Fixnum` and `Bignum` for Ruby versions < 2.4).  Here are some examples:
 
 ```ruby
 # default formatting with to_s
@@ -554,7 +554,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["88435-2482", "19400", "34845-8011", "73815-5785", "43520-3829"]
+postal_code.sample(5)  # ["10781", "69079-7159", "79836-3996", "79771", "61093"]
 ```
 
 ### Phone Codes
@@ -984,7 +984,7 @@ bidi.to_s
 
 ### Unicode YAML Support
 
-The Psych gem that is the default YAML engine inRuby 1.9 doesn't handle Unicode characters perfectly.  To mitigate this problem, TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
+The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode characters perfectly.  To mitigate this problem, TwitterCLDR contains an adaptation of the [ya2yaml](https://github.com/afunai/ya2yaml) gem by Akira Funai.  Our changes specifically add better dumping of Ruby symbols.  If you can get Mr. Funai's attention, please gently remind him to merge @camertron's pull request so we can use his gem and not have to maintain a separate version :)  Fortunately, YAML parsing can still be done with the usual `YAML.load` or `YAML.load_file`.
 
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
@@ -1078,6 +1078,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2016 Twitter, Inc.
+Copyright 2017 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

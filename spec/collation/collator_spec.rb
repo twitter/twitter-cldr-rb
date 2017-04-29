@@ -17,7 +17,7 @@ describe Collator do
   describe '.default_trie' do
     before(:each) do
       clear_default_trie_cache
-      mock(TrieLoader).load_default_trie { trie }
+      expect(TrieLoader).to receive(:load_default_trie).and_return(trie)
     end
 
     it 'returns default fractional collation elements trie' do
@@ -38,8 +38,12 @@ describe Collator do
 
     before(:each) do
       clear_tailored_tries_cache
-      stub(Collator).default_trie { trie }
-      mock(TrieLoader).load_tailored_trie(locale, Collator.default_trie) { trie }
+      allow(Collator).to receive(:default_trie).and_return(trie)
+      expect(TrieLoader).to(
+        receive(:load_tailored_trie)
+          .with(locale, Collator.default_trie)
+          .and_return(trie)
+      )
     end
 
     it 'returns default fractional collation elements trie' do
@@ -57,7 +61,12 @@ describe Collator do
 
   describe '#initialize' do
     before :each do
-      any_instance_of(Collator) { |c| stub(c).load_trie { trie } }
+      allow(Collator).to receive(:new) do |*args|
+        Collator.allocate.tap do |c|
+          allow(c).to receive(:load_trie).and_return(trie)
+          c.send(:initialize, *args)
+        end
+      end
     end
 
     context 'without locale' do
@@ -84,9 +93,9 @@ describe Collator do
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
 
     before :each do
-      any_instance_of(TwitterCldr::Shared::CodePoint) do |instance|
-        stub(instance).combining_class_for { 0 }
-      end
+      allow_any_instance_of(TwitterCldr::Shared::CodePoint).to(
+        receive(:combining_class_for).and_return(0)
+      )
     end
 
     it 'returns collation elements for a string' do
@@ -116,18 +125,24 @@ describe Collator do
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
     context 'with a loaded trie' do
-      before(:each) { mock(TrieLoader).load_default_trie { trie } }
+      before(:each) { expect(TrieLoader).to receive(:load_default_trie).and_return(trie) }
 
       describe 'calculating sort key' do
-        before(:each) { mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: nil, maximum_level: nil) { sort_key } }
+        before(:each) do
+          expect(TwitterCldr::Collation::SortKeyBuilder).to(
+            receive(:build)
+              .with(collation_elements, case_first: nil, maximum_level: nil)
+              .and_return(sort_key)
+          )
+        end
 
         it 'calculates sort key for a string' do
-          mock(collator).get_collation_elements(string) { collation_elements }
+          expect(collator).to receive(:get_collation_elements).with(string).and_return(collation_elements)
           expect(collator.get_sort_key(string)).to eq(sort_key)
         end
 
         it 'calculates sort key for an array of code points (represented as hex strings)' do
-          mock(collator).get_collation_elements(code_points) { collation_elements }
+          expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
           expect(collator.get_sort_key(code_points)).to eq(sort_key)
         end
       end
@@ -138,25 +153,25 @@ describe Collator do
         let(:maximum_level) { 2 }
 
         it 'passes case-first sort option to sort key builder' do
-          mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { TwitterCldr::Utils::Trie.new }
-          mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
+          expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
+          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
 
           collator = Collator.new(locale)
 
-          mock(collator).get_collation_elements(code_points) { collation_elements }
-          mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: nil) { sort_key }
+          expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
+          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: nil).and_return(sort_key)
 
           expect(collator.get_sort_key(code_points)).to eq(sort_key)
         end
 
         it 'passes maximum_level option to sort key builder' do
-          mock(TwitterCldr::Collation::TrieLoader).load_tailored_trie(locale, trie) { TwitterCldr::Utils::Trie.new }
-          mock(TwitterCldr::Collation::TrieBuilder).tailoring_data(locale) { { collator_options: { case_first: case_first } } }
+          expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
+          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
 
           collator = Collator.new(locale)
 
-          mock(collator).get_collation_elements(code_points) { collation_elements }
-          mock(TwitterCldr::Collation::SortKeyBuilder).build(collation_elements, case_first: case_first, maximum_level: maximum_level) { sort_key }
+          expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
+          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: maximum_level).and_return(sort_key)
 
           expect(collator.get_sort_key(code_points, maximum_level: maximum_level)).to eq(sort_key)
         end
@@ -179,7 +194,7 @@ describe Collator do
     let(:sort_key)         { [1, 3, 8, 9] }
     let(:another_sort_key) { [6, 8, 9, 2] }
 
-    before(:each) { stub(Collator).default_trie { trie } }
+    before(:each) { allow(Collator).to receive(:default_trie).and_return(trie) }
 
     it 'compares strings by sort keys' do
       stub_sort_key(collator, 'foo', sort_key)
@@ -190,7 +205,7 @@ describe Collator do
     end
 
     it 'returns 0 without computing sort keys if the strings are equal' do
-      dont_allow(collator).get_sort_key
+      expect(collator).to_not receive(:get_sort_key)
 
       expect(collator.compare('foo', 'foo')).to eq(0)
     end
@@ -203,7 +218,7 @@ describe Collator do
     let(:sorted)    { %w[aaa abc bca] }
 
     before :each do
-      stub(Collator).default_trie { trie }
+      allow(Collator).to receive(:default_trie).and_return(trie)
       sort_keys.each { |s, key| mock_sort_key(collator, s, key) }
     end
 
@@ -227,16 +242,22 @@ describe Collator do
 
   describe 'tailoring support' do
     before(:each) do
-      stub(TwitterCldr).get_resource(:collation, :tailoring, locale) { YAML.load(tailoring_resource_stub) }
+      allow(TwitterCldr).to(
+        receive(:get_resource)
+          .with(:collation, :tailoring, locale)
+          .and_return(YAML.load(tailoring_resource_stub))
+      )
 
-      mock(File).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
-        args.last.call(fractional_uca_short_stub)
-      end
+      expect(File).to(
+        receive(:open)
+          .with(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
+          .and_yield(fractional_uca_short_stub)
+      )
 
-      mock(TrieLoader).load_default_trie { TrieBuilder.load_default_trie }
-      mock(TrieLoader).load_tailored_trie.with_any_args { |*args| TrieBuilder.load_tailored_trie(*args) }
+      expect(TrieLoader).to receive(:load_default_trie) { TrieBuilder.load_default_trie }
+      expect(TrieLoader).to receive(:load_tailored_trie) { |*args| TrieBuilder.load_tailored_trie(*args) }
 
-      stub(TwitterCldr::Normalization).normalize_code_points { |code_points| code_points }
+      allow(TwitterCldr::Normalization).to receive(:normalize_code_points) { |code_points| code_points }
     end
 
     let(:locale)            { :some_locale }
@@ -309,11 +330,11 @@ END
   end
 
   def mock_sort_key(collator, string, sort_key)
-    mock(collator).get_sort_key(string) { sort_key }
+    expect(collator).to receive(:get_sort_key).with(string).and_return(sort_key)
   end
 
   def stub_sort_key(collator, string, sort_key)
-    stub(collator).get_sort_key(string) { sort_key }
+    allow(collator).to receive(:get_sort_key).with(string).and_return(sort_key)
   end
 
   def clear_tries_cache

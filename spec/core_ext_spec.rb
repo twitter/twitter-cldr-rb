@@ -6,13 +6,7 @@
 require 'spec_helper'
 
 describe 'Core classes localization' do
-  core_classes = [Array, DateTime, Float, String, Symbol, Time]
-
-  if RUBY_VERSION >= '2.4.0'
-    core_classes.push Integer
-  else
-    core_classes.push Bignum, Fixnum
-  end
+  core_classes = [Array, DateTime, Float, String, Symbol, Time, Integer]
 
   core_classes.each do |klass|
     describe klass do

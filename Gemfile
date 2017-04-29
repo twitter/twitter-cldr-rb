@@ -7,6 +7,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
   gem 'regexp_parser', '~> 0.1'
+  gem 'benchmark-ips'
+  gem 'rubyzip', '~> 1.0'
 end
 
 group :development do
@@ -20,8 +22,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '~> 2.14.0'
-  gem 'rr',    '~> 1.1.2'
+  gem 'rspec', '~> 3.0'
 
   gem 'term-ansicolor', '~> 1.3.0'        # 1.4 breaks ruby 1.9 support
   gem 'coveralls', require: false
@@ -30,9 +31,4 @@ group :test do
   gem 'simplecov'
   gem 'launchy'
   gem 'addressable', '~> 2.4.0'           # 2.5 breaks ruby 1.9 support
-end
-
-group :development, :test do
-  gem 'rubyzip', '~> 1.0'
-  gem 'benchmark-ips'
 end

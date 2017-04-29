@@ -33,7 +33,7 @@ describe NumberDataReader do
     let(:symbols) { { nan: 'NaN', minus_sign: '<->' } } # unique locale-specific minus sign
 
     before(:each) do
-      stub(TwitterCldr).get_locale_resource(:en, :numbers) {
+      allow(TwitterCldr).to receive(:get_locale_resource).with(:en, :numbers) {
         {
           en: {
             numbers: {

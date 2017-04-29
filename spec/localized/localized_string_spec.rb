@@ -32,7 +32,9 @@ describe LocalizedString do
       let(:horses) { { one: '1 horse', other: '%{horses_count} horses' } }
 
       before(:each) do
-        stub(TwitterCldr::Formatters::Plurals::Rules).rule_for { |n, _| n == 1 ? :one : :other  }
+        allow(TwitterCldr::Formatters::Plurals::Rules).to receive(:rule_for) do |n, _|
+          n == 1 ? :one : :other
+        end
       end
 
       it 'interpolates named placeholders' do
@@ -87,7 +89,7 @@ describe LocalizedString do
       result = string.localize.to_s
 
       expect(result).to eq(string)
-      expect(result.equal?(string)).not_to be_true
+      expect(result.equal?(string)).not_to eq(true)
     end
   end
 
@@ -134,12 +136,12 @@ describe LocalizedString do
     end
 
     it 'it uses NFD by default' do
-      mock(Eprun).normalize(string, :nfd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfd).and_return(normalized_string)
       expect(localized_string.normalize.base_obj).to eq(normalized_string)
     end
 
     it "uses specified algorithm if there is any" do
-      mock(Eprun).normalize(string, :nfkd) { normalized_string }
+      expect(Eprun).to receive(:normalize).with(string, :nfkd).and_return(normalized_string)
       expect(localized_string.normalize(using: :NFKD).base_obj).to eq(normalized_string)
     end
 

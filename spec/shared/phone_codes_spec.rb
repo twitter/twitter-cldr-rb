@@ -28,7 +28,9 @@ describe PhoneCodes do
     let(:code)      { '123' }
     let(:territory) { :br }
 
-    before(:each) { mock(PhoneCodes).resource { { territory => code } } }
+    before(:each) do
+      expect(PhoneCodes).to receive(:resource).and_return({ territory => code })
+    end
 
     it 'returns phone code for a given territory' do
       expect(PhoneCodes.code_for_territory(territory)).to eq(code)

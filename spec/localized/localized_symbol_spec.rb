@@ -49,8 +49,8 @@ describe LocalizedSymbol do
 
   describe "#is_rtl?" do
     it "returns true or false depending on the locale" do
-      expect(:es.localize.is_rtl?).to be_false
-      expect(:ar.localize.is_rtl?).to be_true
+      expect(:es.localize.is_rtl?).to eq(false)
+      expect(:ar.localize.is_rtl?).to eq(true)
     end
   end
 

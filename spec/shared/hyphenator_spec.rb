@@ -35,11 +35,11 @@ describe Hyphenator do
 
   describe '.supported_locale?' do
     it 'returns true if the locale is supported' do
-      expect(described_class.supported_locale?(:en)).to be_true
+      expect(described_class.supported_locale?(:en)).to eq(true)
     end
 
     it "returns false if the locale isn't supported" do
-      expect(described_class.supported_locale?(:ko)).to be_false
+      expect(described_class.supported_locale?(:ko)).to eq(false)
     end
   end
 

@@ -15,7 +15,7 @@ describe Territory do
     let(:parents) { %w[013 territory parents] }
 
     it 'delegates to TerritoriesContainment.parents' do
-      mock(TerritoriesContainment).parents(code) { parents }
+      expect(TerritoriesContainment).to receive(:parents).with(code).and_return(parents)
       expect(territory.parents).to eq(parents)
     end
   end
@@ -24,18 +24,17 @@ describe Territory do
     let(:children) { %w[013 territory children] }
 
     it 'delegates to TerritoriesContainment.children' do
-      mock(TerritoriesContainment).children(code) { children }
+      expect(TerritoriesContainment).to receive(:children).with(code).and_return(children)
       expect(territory.children).to eq(children)
     end
   end
 
   describe '#contains?' do
     let(:other_code) { 'RU' }
-    let(:result) { 'containment result' }
 
     it 'delegates to TerritoriesContainment.contains?' do
-      mock(TerritoriesContainment).contains?(code, other_code) { result }
-      expect(territory.contains?(other_code)).to be_true
+      expect(TerritoriesContainment).to receive(:contains?).with(code, other_code)
+      territory.contains?(other_code)
     end
   end
 end

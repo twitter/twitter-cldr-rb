@@ -77,51 +77,51 @@ describe NumberParser do
   describe "#punct_valid" do
     it "correctly validates a number with no decimal" do
       tokens = @parser.send(:tokenize, "1.337", *separators).reject { |t| t[:type] == :numeric }
-      expect(@parser.send(:punct_valid?, tokens)).to be_true
+      expect(@parser.send(:punct_valid?, tokens)).to eq(true)
     end
 
     it "correctly validates a number with a decimal" do
       tokens = @parser.send(:tokenize, "1.337,00", *separators).reject { |t| t[:type] == :numeric }
-      expect(@parser.send(:punct_valid?, tokens)).to be_true
+      expect(@parser.send(:punct_valid?, tokens)).to eq(true)
     end
 
     it "reports on an invalid number when it has more than one decimal" do
       tokens = @parser.send(:tokenize, "1,337,00", *separators).reject { |t| t[:type] == :numeric }
-      expect(@parser.send(:punct_valid?, tokens)).to be_false
+      expect(@parser.send(:punct_valid?, tokens)).to eq(false)
     end
   end
 
   describe "#is_numeric?" do
     it "returns true if the text is numeric" do
-      expect(NumberParser.is_numeric?("4839", "")).to be_true
-      expect(NumberParser.is_numeric?("1", "")).to be_true
+      expect(NumberParser.is_numeric?("4839", "")).to eq(true)
+      expect(NumberParser.is_numeric?("1", "")).to eq(true)
     end
 
     it "returns false if the text is not purely numeric" do
-      expect(NumberParser.is_numeric?("abc", "")).to be_false
-      expect(NumberParser.is_numeric?("123abc", "")).to be_false
+      expect(NumberParser.is_numeric?("abc", "")).to eq(false)
+      expect(NumberParser.is_numeric?("123abc", "")).to eq(false)
     end
 
     it "returns false if the text is blank" do
-      expect(NumberParser.is_numeric?("", "")).to be_false
+      expect(NumberParser.is_numeric?("", "")).to eq(false)
     end
 
     it "accepts the given characters as valid numerics" do
-      expect(NumberParser.is_numeric?("a123a", "a")).to be_true
-      expect(NumberParser.is_numeric?("1.234,56")).to be_true  # default separator chars used here
+      expect(NumberParser.is_numeric?("a123a", "a")).to eq(true)
+      expect(NumberParser.is_numeric?("1.234,56")).to eq(true)  # default separator chars used here
     end
   end
 
   describe "#valid?" do
     it "correctly identifies a series of valid cases" do
       ["5", "5,0", "1.337", "1.337,0", "0,05", ",5", "1.337.000,00"].each do |num|
-        expect(@parser.valid?(num)).to be_true
+        expect(@parser.valid?(num)).to eq(true)
       end
     end
 
     it "correctly identifies a series of invalid cases" do
       ["12,0,0", "5,", "5."].each do |num|
-        expect(@parser.valid?(num)).to be_false
+        expect(@parser.valid?(num)).to eq(false)
       end
     end
   end

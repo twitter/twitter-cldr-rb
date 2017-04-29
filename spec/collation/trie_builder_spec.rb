@@ -120,7 +120,7 @@ END
 
     before :each do
       mock_default_table
-      mock(TrieBuilder).tailoring_data(locale) { tailoring_data }
+      expect(TrieBuilder).to receive(:tailoring_data).with(locale).and_return(tailoring_data)
     end
 
     it 'returns a TrieWithFallback' do
@@ -186,15 +186,17 @@ END
     let(:locale) { :fu }
 
     it 'loads tailoring data' do
-      mock(TwitterCldr).get_resource(:collation, :tailoring, locale) { tailoring_data }
+      expect(TwitterCldr).to receive(:get_resource).with(:collation, :tailoring, locale).and_return(tailoring_data)
       expect(TrieBuilder.tailoring_data(locale)).to eq(tailoring_data)
     end
   end
 
   def mock_default_table
-    mock(File).open(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r') do |*args|
-      args.last.call(fractional_uca_short_stub)
-    end
+    expect(File).to(
+      receive(:open)
+        .with(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
+        .and_yield(fractional_uca_short_stub)
+    )
   end
 
 end

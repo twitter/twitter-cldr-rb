@@ -45,7 +45,7 @@ describe Rules do
     end
 
     it "returns :other if there's an error" do
-      stub(Rules).get_resource { lambda { raise "Jelly beans" } }
+      allow(Rules).to receive(:get_resource).and_return(lambda { raise "Jelly beans" })
       expect(Rules.rule_for(1, :en)).to eq(:other)
       expect(Rules.rule_for(1, :ru)).to eq(:other)
     end
@@ -88,7 +88,7 @@ describe Rules do
 
   describe "#all" do
     before(:each) do
-      mock(TwitterCldr).locale { :ru }
+      expect(TwitterCldr).to receive(:locale).and_return(:ru)
     end
 
     it "gets rules for the default locale (usually supplied by FastGettext)" do

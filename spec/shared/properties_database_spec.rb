@@ -69,19 +69,19 @@ describe PropertiesDatabase do
 
     describe '#include?' do
       it 'returns true if the database contains the property name' do
-        expect(database.include?('Age')).to be_true
+        expect(database.include?('Age')).to eq(true)
       end
 
       it 'returns true if the database contains the property name/value pair' do
-        expect(database.include?('Age', '1.1')).to be_true
+        expect(database.include?('Age', '1.1')).to eq(true)
       end
 
       it "returns false if the database doesn't contain the property name" do
-        expect(database.include?('foo')).to be_false
+        expect(database.include?('foo')).to eq(false)
       end
 
       it "returns false if the database doesn't contain the property name/value pair" do
-        expect(database.include?('Age', 'foo')).to be_false
+        expect(database.include?('Age', 'foo')).to eq(false)
       end
     end
 
@@ -148,8 +148,8 @@ describe PropertiesDatabase do
 
       it 'delegates normalization to a normalizer' do
         normalizer = Object.new
-        stub(database).normalizer { normalizer }
-        mock(normalizer).normalize(property_name, property_value)
+        allow(database).to receive(:normalizer).and_return(normalizer)
+        expect(normalizer).to receive(:normalize).with(property_name, property_value)
         database.normalize(property_name, property_value)
       end
     end

@@ -89,13 +89,13 @@ describe Languages do
   describe "#is_rtl?" do
     it "should return true for certain locales" do
       [:ar, :he, :ur, :fa].each do |locale|
-        expect(Languages.is_rtl?(locale)).to be_true
+        expect(Languages.is_rtl?(locale)).to eq(true)
       end
     end
 
     it "should return false for certain locales" do
       [:en, :es, :hu, :ja].each do |locale|
-        expect(Languages.is_rtl?(locale)).to be_false
+        expect(Languages.is_rtl?(locale)).to eq(false)
       end
     end
 

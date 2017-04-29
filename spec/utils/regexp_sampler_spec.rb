@@ -34,97 +34,97 @@ describe RegexpSampler do
   context "digits" do
     it "should return a single digit when no quantifier" do
       spl = make(digit.new([], nil))
-      spl.generate.should match(/\d/)
+      expect(spl.generate).to match(/\d/)
     end
 
     it "should return multiple digits when given a singular quantifier" do
       spl = make(digit.new([], singular_quantifier))
-      spl.generate.should match(/\d{2}/)
+      expect(spl.generate).to match(/\d{2}/)
     end
 
     it "should return the correct number of digits when given a ranged quantifier" do
       spl = make(digit.new([], ranged_quantifier))
-      spl.generate.should match(/\d{2,4}/)
+      expect(spl.generate).to match(/\d{2,4}/)
     end
   end
 
   context "words" do
     it "should return a single word character when no quantifier" do
       spl = make(word.new([], nil))
-      spl.generate.should match(/\w/)
+      expect(spl.generate).to match(/\w/)
     end
 
     it "should return multiple letter characters when given a singular quantifier" do
       spl = make(word.new([], singular_quantifier))
-      spl.generate.should match(/\w{2}/)
+      expect(spl.generate).to match(/\w{2}/)
     end
 
     it "should return the correct number of word characters when given a ranged quantifier" do
       spl = make(word.new([], ranged_quantifier))
-      spl.generate.should match(/\w{2,4}/)
+      expect(spl.generate).to match(/\w{2,4}/)
     end
   end
 
   context "literals" do
     it "should return the literal when no quantifier" do
       spl = make(literal.new([], nil, 'foobar'))
-      spl.generate.should == "foobar"
+      expect(spl.generate).to eq("foobar")
     end
 
     it "should return multiple copies of the literal when given a singular quantifier" do
       spl = make(literal.new([], singular_quantifier, 'foobar'))
-      spl.generate.should == "foobarfoobar"
+      expect(spl.generate).to eq("foobarfoobar")
     end
 
     it "should return the correct number of literal copies when given a ranged quantifier" do
       spl = make(literal.new([], ranged_quantifier, 'foobar'))
-      spl.generate.should match(/(foobar){2,4}/)
+      expect(spl.generate).to match(/(foobar){2,4}/)
     end
   end
 
   context "character sets" do
     it "should handle single characters correctly" do
       spl = make(character_set.new([], nil, ['a', 'b', 'c'], false))
-      spl.generate.should match(/[abc]/)
+      expect(spl.generate).to match(/[abc]/)
     end
 
     it "should repeat characters when given a singular quantifier" do
       spl = make(character_set.new([], singular_quantifier, ['a', 'b', 'c'], false))
-      spl.generate.should match(/[abc]{2}/)
+      expect(spl.generate).to match(/[abc]{2}/)
     end
 
     it "should repeat characters when given a ranged quantifier" do
       spl = make(character_set.new([], ranged_quantifier, ['a', 'b', 'c'], false))
-      spl.generate.should match(/[abc]{2,4}/)
+      expect(spl.generate).to match(/[abc]{2,4}/)
     end
 
     it "should handle character ranges correctly" do
       spl = make(character_set.new([], nil, ['a-z'], false))
-      spl.generate.should match(/[a-z]/)
+      expect(spl.generate).to match(/[a-z]/)
     end
 
     it "should handle character ranges correctly when given a singular quantifier" do
       spl = make(character_set.new([], singular_quantifier, ['a-z'], false))
-      spl.generate.should match(/[a-z]{2}/)
+      expect(spl.generate).to match(/[a-z]{2}/)
     end
 
     it "should handle character ranges correctly when given a ranged quantifier" do
       spl = make(character_set.new([], ranged_quantifier, ['a-z'], false))
-      spl.generate.should match(/[a-z]{2,4}/)
+      expect(spl.generate).to match(/[a-z]{2,4}/)
     end
   end
 
   context "captures" do
     it "should ignore captures" do
       spl = make(capture.new([digit.new([], nil)], nil))
-      spl.generate.should match(/\d/)
+      expect(spl.generate).to match(/\d/)
     end
   end
 
   context "passives (i.e. non-capturing groups)" do
     it "should ignore non-captures" do
       spl = make(passive.new([digit.new([], nil)], nil))
-      spl.generate.should match(/\d/)
+      expect(spl.generate).to match(/\d/)
     end
   end
 
@@ -134,7 +134,7 @@ describe RegexpSampler do
         literal.new([], nil, 'a'), digit.new([], nil)
       ], nil))
 
-      spl.generate.should match(/a|\d/)
+      expect(spl.generate).to match(/a|\d/)
     end
 
     it "should handle alternation when given a singlular quantifier" do
@@ -142,7 +142,7 @@ describe RegexpSampler do
         literal.new([], nil, 'a'), digit.new([], nil)
       ], singular_quantifier))
 
-      spl.generate.should match(/(?:a|\d){2}/)
+      expect(spl.generate).to match(/(?:a|\d){2}/)
     end
 
     it "should handle alternation when given a ranged quantifier" do
@@ -150,7 +150,7 @@ describe RegexpSampler do
         literal.new([], nil, 'a'), digit.new([], nil)
       ], ranged_quantifier))
 
-      spl.generate.should match(/(?:a|\d){2,4}/)
+      expect(spl.generate).to match(/(?:a|\d){2,4}/)
     end
   end
 
@@ -160,7 +160,7 @@ describe RegexpSampler do
         digit.new([], nil), word.new([], nil), literal.new([], nil, 'a')
       ], nil))
 
-      spl.generate.should match(/\d\wa/)
+      expect(spl.generate).to match(/\d\wa/)
     end
 
     it "should process every element the specified number of times with a singular quantifier" do
@@ -168,7 +168,7 @@ describe RegexpSampler do
         digit.new([], nil), word.new([], nil), literal.new([], nil, 'a')
       ], singular_quantifier))
 
-      spl.generate.should match(/(?:\d\wa){2}/)
+      expect(spl.generate).to match(/(?:\d\wa){2}/)
     end
 
     it "should process every element the specified number of times with a ranged quantifier" do
@@ -176,7 +176,7 @@ describe RegexpSampler do
         digit.new([], nil), word.new([], nil), literal.new([], nil, 'a')
       ], ranged_quantifier))
 
-      spl.generate.should match(/(?:\d\wa){2,4}/)
+      expect(spl.generate).to match(/(?:\d\wa){2,4}/)
     end
   end
 end

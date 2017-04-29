@@ -81,7 +81,7 @@ module TwitterCldr
         @last_leading_byte = nil
 
         @collation_elements.each do |collation_element|
-          bytes = fixnum_to_bytes_array(level_weight(collation_element, PRIMARY_LEVEL))
+          bytes = integer_to_bytes_array(level_weight(collation_element, PRIMARY_LEVEL))
 
           unless bytes.empty?
             leading_byte = bytes.shift
@@ -108,7 +108,7 @@ module TwitterCldr
         @common_count = 0
 
         @collation_elements.each do |collation_element|
-          fixnum_to_bytes_array(level_weight(collation_element, SECONDARY_LEVEL)).each do |byte|
+          integer_to_bytes_array(level_weight(collation_element, SECONDARY_LEVEL)).each do |byte|
             append_secondary_byte(byte)
           end
         end
@@ -123,7 +123,7 @@ module TwitterCldr
         @common_count = 0
 
         @collation_elements.each do |collation_element|
-          fixnum_to_bytes_array(tertiary_weight(collation_element)).each do |byte|
+          integer_to_bytes_array(tertiary_weight(collation_element)).each do |byte|
             append_tertiary_byte(byte)
           end
         end
@@ -199,7 +199,7 @@ module TwitterCldr
         collation_element[level] || 0
       end
 
-      def fixnum_to_bytes_array(number)
+      def integer_to_bytes_array(number)
         bytes = []
 
         while number > 0

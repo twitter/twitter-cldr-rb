@@ -203,7 +203,7 @@ module TwitterCldr
       end
 
       def includes_range?(range)
-        bsearch do |cur_range|
+        result = bsearch do |cur_range|
           fo = front_overlap?(cur_range, range)
           ro = rear_overlap?(cur_range, range)
 
@@ -217,6 +217,8 @@ module TwitterCldr
             1
           end
         end
+
+        !!result
       end
 
       def bsearch

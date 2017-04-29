@@ -121,27 +121,27 @@ describe Locale do
 
   describe '.valid?' do
     it 'returns true if all subtags are valid' do
-      expect(Locale.valid?('en')).to be_true
-      expect(Locale.valid?('en-latn')).to be_true
-      expect(Locale.valid?('en-latn-us')).to be_true
-      expect(Locale.valid?('en-latn-us-fonipa')).to be_true
+      expect(Locale.valid?('en')).to eq(true)
+      expect(Locale.valid?('en-latn')).to eq(true)
+      expect(Locale.valid?('en-latn-us')).to eq(true)
+      expect(Locale.valid?('en-latn-us-fonipa')).to eq(true)
     end
 
     it 'returns false if any subtag is invalid' do
-      expect(Locale.valid?('xz')).to be_false
-      expect(Locale.valid?('en-fooo')).to be_false
-      expect(Locale.valid?('en-latn-XZ')).to be_false
-      expect(Locale.valid?('en-latn-us-foooo')).to be_false
+      expect(Locale.valid?('xz')).to eq(false)
+      expect(Locale.valid?('en-fooo')).to eq(false)
+      expect(Locale.valid?('en-latn-XZ')).to eq(false)
+      expect(Locale.valid?('en-latn-us-foooo')).to eq(false)
     end
   end
 
   describe '.grandfathered?' do
     it 'returns true if the given locale is considered "grandfathered"' do
-      expect(Locale.grandfathered?('i-navajo')).to be_true
+      expect(Locale.grandfathered?('i-navajo')).to eq(true)
     end
 
     it 'returns false if the given locale is not considered "grandfathered"' do
-      expect(Locale.grandfathered?('en-latn-us')).to be_false
+      expect(Locale.grandfathered?('en-latn-us')).to eq(false)
     end
   end
 

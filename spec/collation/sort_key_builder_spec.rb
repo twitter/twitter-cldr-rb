@@ -17,8 +17,8 @@ describe SortKeyBuilder do
     it 'returns a sort key for a given array of collation elements' do
       sort_key = SortKeyBuilder.new(collation_elements)
 
-      mock(SortKeyBuilder).new(collation_elements, nil) { sort_key }
-      mock(sort_key).bytes_array { sort_key_bytes }
+      expect(SortKeyBuilder).to receive(:new).with(collation_elements, nil).and_return(sort_key)
+      expect(sort_key).to receive(:bytes_array).and_return(sort_key_bytes)
 
       expect(SortKeyBuilder.build(collation_elements)).to eq(sort_key_bytes)
     end
@@ -54,7 +54,7 @@ describe SortKeyBuilder do
     end
 
     it 'builds bytes array only once' do
-      mock(sort_key).build_bytes_array { sort_key_bytes }
+      expect(sort_key).to receive(:build_bytes_array).and_return(sort_key_bytes)
       sort_key.bytes_array.object_id == sort_key.bytes_array.object_id
     end
 

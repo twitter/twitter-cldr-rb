@@ -62,7 +62,7 @@ describe CodePoint do
     it 'identifies all properties belonging to the code point' do
       code_point = CodePoint.get(65)
       properties = code_point.properties
-      expect(properties.alphabetic).to be_true
+      expect(properties.alphabetic).to eq(true)
       expect(properties.script).to eq(Set.new(%w(Latin)))
       expect(properties.general_category).to eq(Set.new(%w(L Lu)))
     end
@@ -80,8 +80,8 @@ describe CodePoint do
       database = Object.new
       property_name = 'foo'
       property_value = 'bar'
-      stub(CodePoint).properties { database }
-      mock(database).code_points_for_property(property_name, property_value)
+      allow(CodePoint).to receive(:properties).and_return(database)
+      expect(database).to receive(:code_points_for_property).with(property_name, property_value)
       CodePoint.code_points_for_property(property_name, property_value)
     end
   end
@@ -90,8 +90,8 @@ describe CodePoint do
     it 'delegates to the properties database' do
       database = Object.new
       code_point = 65
-      stub(CodePoint).properties { database }
-      mock(database).properties_for_code_point(code_point)
+      allow(CodePoint).to receive(:properties).and_return(database)
+      expect(database).to receive(:properties_for_code_point).with(code_point)
       CodePoint.properties_for_code_point(code_point)
     end
   end

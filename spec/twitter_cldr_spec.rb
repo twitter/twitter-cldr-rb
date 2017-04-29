@@ -8,29 +8,29 @@ require 'spec_helper'
 describe TwitterCldr do
   describe "#supported_locale?" do
     it "should return true if the locale is supported" do
-      expect(TwitterCldr.supported_locale?(:es)).to be_true
-      expect(TwitterCldr.supported_locale?("es")).to be_true
+      expect(TwitterCldr.supported_locale?(:es)).to eq(true)
+      expect(TwitterCldr.supported_locale?("es")).to eq(true)
     end
 
     it "should return false if the locale isn't supported" do
-      expect(TwitterCldr.supported_locale?(:bogus)).to be_false
-      expect(TwitterCldr.supported_locale?("bogus")).to be_false
+      expect(TwitterCldr.supported_locale?(:bogus)).to eq(false)
+      expect(TwitterCldr.supported_locale?("bogus")).to eq(false)
     end
 
     it "should return true if the given locale code is twitter-specific" do
-      expect(TwitterCldr.supported_locale?(:'zh-cn')).to be_true
-      expect(TwitterCldr.supported_locale?(:'zh-tw')).to be_true
-      expect(TwitterCldr.supported_locale?(:msa)).to be_true
+      expect(TwitterCldr.supported_locale?(:'zh-cn')).to eq(true)
+      expect(TwitterCldr.supported_locale?(:'zh-tw')).to eq(true)
+      expect(TwitterCldr.supported_locale?(:msa)).to eq(true)
     end
 
     it "should work with lowercase region codes" do
-      expect(TwitterCldr.supported_locale?('en-gb')).to be_true
-      expect(TwitterCldr.supported_locale?('zh-hant')).to be_true
+      expect(TwitterCldr.supported_locale?('en-gb')).to eq(true)
+      expect(TwitterCldr.supported_locale?('zh-hant')).to eq(true)
     end
 
     it "should work with upper case region codes" do
-      expect(TwitterCldr.supported_locale?('en-GB')).to be_true
-      expect(TwitterCldr.supported_locale?('zh-Hant')).to be_true
+      expect(TwitterCldr.supported_locale?('en-GB')).to eq(true)
+      expect(TwitterCldr.supported_locale?('zh-Hant')).to eq(true)
     end
   end
 
@@ -272,9 +272,9 @@ describe TwitterCldr do
       expect do
         TwitterCldr.with_locale(:es) do
           locale_inside_block = TwitterCldr.locale
-          raise "Error!"
+          raise RuntimeError, "Error!"
         end
-      end.to raise_error
+      end.to raise_error(RuntimeError, "Error!")
 
       expect(locale_inside_block).to eq(:es)
       expect(TwitterCldr.locale).to eq(:en)
@@ -291,7 +291,7 @@ describe TwitterCldr do
     it "doesn't mess up if the given locale isn't supported" do
       TwitterCldr.locale = :pt
       expect(TwitterCldr.locale).to eq(:pt)
-      expect { TwitterCldr.with_locale(:xx) {} }.to raise_error
+      expect { TwitterCldr.with_locale(:xx) {} }.to raise_error(RuntimeError, 'Unsupported locale')
       expect(TwitterCldr.locale).to eq(:pt)
     end
 
@@ -302,9 +302,9 @@ describe TwitterCldr do
       expect do
         TwitterCldr.with_locale(:es) do
           locale_inside_block = TwitterCldr.locale
-          raise "Error!"
+          raise RuntimeError, "Error!"
         end
-      end.to raise_error
+      end.to raise_error(RuntimeError, "Error!")
 
       expect(locale_inside_block).to eq(:es)
       expect(TwitterCldr.locale).to eq(:en)
@@ -324,8 +324,8 @@ describe TwitterCldr do
 
   describe '#get_resource' do
     it 'delegates to resources' do
-      stub(resources).get_resource(:shared, :currencies) { 'result' }
-      stub(TwitterCldr).resources { resources }
+      allow(resources).to receive(:get_resource).with(:shared, :currencies).and_return('result')
+      allow(TwitterCldr).to receive(:resources).and_return(resources)
 
       expect(TwitterCldr.get_resource(:shared, :currencies)).to eq('result')
     end
@@ -333,8 +333,8 @@ describe TwitterCldr do
 
   describe '#get_locale_resource' do
     it 'delegates to resources' do
-      stub(resources).get_locale_resource(:de, :numbers) { 'result' }
-      stub(TwitterCldr).resources { resources }
+      allow(resources).to receive(:get_locale_resource).with(:de, :numbers).and_return('result')
+      allow(TwitterCldr).to receive(:resources).and_return(resources)
 
       expect(TwitterCldr.get_locale_resource(:de, :numbers)).to eq('result')
     end

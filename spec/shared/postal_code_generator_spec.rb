@@ -68,7 +68,7 @@ describe PostalCodeGenerator do
     end
 
     it "should attempt to generate more samples if the set doesn't contain enough (but shouldn't infinite loop)" do
-      mock.proxy(limited_generator).generate.at_least(10)
+      expect(limited_generator).to receive(:generate).at_least(10).times.and_call_original
       expect(limited_generator.sample(10).size).to be < 10
     end
   end

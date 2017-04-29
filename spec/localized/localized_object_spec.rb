@@ -71,12 +71,12 @@ describe LocalizedObject do
     end
 
     it 'accepts locale and options and pass them to the localized class constructor' do
-      mock(LocalizedClass).new(localizable_object, locale, options)
+      expect(LocalizedClass).to receive(:new).with(localizable_object, locale, options)
       localizable_object.localize(locale, options)
     end
 
     it 'uses default locale and empty options hash by default' do
-      mock(LocalizedClass).new(localizable_object, TwitterCldr.locale, {})
+      expect(LocalizedClass).to receive(:new).with(localizable_object, TwitterCldr.locale, {})
       localizable_object.localize
     end
   end

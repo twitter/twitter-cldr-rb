@@ -19,7 +19,7 @@ describe DateTimeDataReader do
 
   describe "#pattern" do
     it "as of CLDR 23, should choose the medium date time path if no other type is specified" do
-      mock.proxy(data_reader).path_for(:medium, anything)
+      expect(data_reader).to receive(:path_for).with(:medium, anything).and_call_original
       data_reader.pattern
     end
   end

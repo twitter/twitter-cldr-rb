@@ -26,25 +26,25 @@ describe LanguageCodes do
 
   describe '#valid_standard?' do
     it 'returns true if the standard is valid' do
-      expect(LanguageCodes.valid_standard?(:iso_639_2)).to be_true
+      expect(LanguageCodes.valid_standard?(:iso_639_2)).to eq(true)
     end
 
     it 'returns false if the standard is invalid' do
-      expect(LanguageCodes.valid_standard?(:iso_639)).to be_false
+      expect(LanguageCodes.valid_standard?(:iso_639)).to eq(false)
     end
 
     it 'accepts a string' do
-      expect(LanguageCodes.valid_standard?('iso_639_2')).to be_true
+      expect(LanguageCodes.valid_standard?('iso_639_2')).to eq(true)
     end
   end
 
   describe '#valid_code?' do
     it 'returns true if the code is present in the given standard' do
-      expect(LanguageCodes.valid_code?(:spa, :iso_639_2)).to be_true
+      expect(LanguageCodes.valid_code?(:spa, :iso_639_2)).to eq(true)
     end
 
     it 'returns false if the code is not present in the given standard' do
-      expect(LanguageCodes.valid_code?(:foo, :iso_639_2)).to be_false
+      expect(LanguageCodes.valid_code?(:foo, :iso_639_2)).to eq(false)
     end
 
     it 'raises exception if the standard is invalid' do
@@ -52,7 +52,7 @@ describe LanguageCodes do
     end
 
     it 'accepts strings' do
-      expect(LanguageCodes.valid_code?('spa', 'iso_639_2')).to be_true
+      expect(LanguageCodes.valid_code?('spa', 'iso_639_2')).to eq(true)
     end
   end
 

@@ -21,6 +21,10 @@ module TwitterCldr
         @token_index = 0
       end
 
+      def eof?
+        @token_index >= @tokens.size
+      end
+
       private
 
       def next_token(type)
@@ -43,10 +47,6 @@ module TwitterCldr
 
       def current_token
         @tokens[@token_index]
-      end
-
-      def eof?
-        @token_index >= @tokens.size
       end
     end
 

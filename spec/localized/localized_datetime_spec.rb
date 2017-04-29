@@ -90,9 +90,7 @@ describe LocalizedDateTime do
       TwitterCldr.supported_locales.each do |locale|
         data_reader = TwitterCldr::DataReaders::CalendarDataReader.new(locale)
         data_reader.additional_format_selector.patterns.each do |pattern|
-          # puts "#{locale}: #{pattern}"
-          # lambda { date_time.localize(locale).to_additional_s(pattern.to_s) }.should_not raise_error
-          date_time.localize(locale).to_additional_s(pattern.to_s)
+          expect { date_time.localize(locale).to_additional_s(pattern.to_s) }.to_not raise_error
         end
       end
     end
@@ -115,7 +113,7 @@ describe LocalizedDateTime do
   describe "#to_s" do
     it "uses the default format if no :format is given" do
       loc_date = date_time.localize
-      mock.proxy(loc_date).to_default_s
+      expect(loc_date).to receive(:to_default_s).and_call_original
       expect(loc_date.to_s).to eq("Sep 20, 1987, 10:05:00 PM")
     end
   end

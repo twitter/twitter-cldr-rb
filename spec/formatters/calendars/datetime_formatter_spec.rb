@@ -429,17 +429,17 @@ describe DateTimeFormatter do
     end
 
     it "should fall back if the calendar doesn't contain the appropriate era data" do
-      stub(@formatter.data_reader.calendar).eras(:abbr) do
+      allow(@formatter.data_reader.calendar).to receive(:eras).with(:abbr) do
         { 0 => "abbr0", 1 => "abbr1" }
       end
 
-      stub(@formatter.data_reader.calendar).eras(:name) do
+      allow(@formatter.data_reader.calendar).to receive(:eras).with(:name) do
         { 0 => "name0" }
       end
 
       date = Date.new(2012, 1, 1)
-      mock.proxy(@formatter).era(date, "GGGG", 4)  # first attempts to find full name era
-      mock.proxy(@formatter).era(date, "GGG", 3)   # falls back to abbreviated era
+      expect(@formatter).to receive(:era).with(date, "GGGG", 4).and_call_original  # first attempts to find full name era
+      expect(@formatter).to receive(:era).with(date, "GGG", 3).and_call_original   # falls back to abbreviated era
       expect(@formatter.send(:era, date, 'GGGG', 4)).to eq("abbr1")
     end
   end

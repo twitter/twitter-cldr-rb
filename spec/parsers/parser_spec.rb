@@ -24,7 +24,7 @@ describe Parser do
 
   describe "#parse" do
     it "should call do_parse" do
-      mock(parser).do_parse({})
+      expect(parser).to receive(:do_parse).and_return({})
       parser.parse(tokens)
     end
   end

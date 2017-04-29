@@ -22,7 +22,7 @@ describe Calendar do
 
   describe '#initialize' do
     it 'returns calendar for default locale and type' do
-      stub(TwitterCldr).locale { :fr }
+      allow(TwitterCldr).to receive(:locale).and_return(:fr)
       cal = Calendar.new
 
       expect(cal.locale).to eq(:fr)
@@ -68,12 +68,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_locale_resource { { de: { calendars: { gregorian: { months: { :'stand-alone' => {} } } } } } }
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { months: { :'stand-alone' => {} } } } })
         expect(calendar.months(:wide)).to eq(nil)
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_locale_resource { { de: {} } }
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: {})
         expect(calendar.months(:wide)).to eq(nil)
       end
     end
@@ -128,12 +128,12 @@ describe Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        stub(TwitterCldr).get_locale_resource { { de: { calendars: { gregorian: { days: { :'stand-alone' => {} } } } } } }
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { days: { :'stand-alone' => {} } } } })
         expect(calendar.weekdays(:wide)).to eq(nil)
       end
 
       it 'returns nil if calendars data is missing' do
-        stub(TwitterCldr).get_locale_resource { { de: {} } }
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: {})
         expect(calendar.weekdays(:wide)).to eq(nil)
       end
     end

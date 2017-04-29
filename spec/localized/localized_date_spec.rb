@@ -16,7 +16,7 @@ describe LocalizedDate do
     let(:base_time) { Time.gm(2010, 8, 6, 12, 12, 30) }
 
     it "should ago-ify from now when no base_time given" do
-      stub(Time).now { Time.gm(2010, 8, 6, 12, 12, 30) }
+      allow(Time).to receive(:now).and_return(Time.gm(2010, 8, 6, 12, 12, 30))
       loc_date = date_time.localize(:ko).to_date
       expect(loc_date.ago.to_s(unit: :hour)).to match_normalized("744시간 전")
     end

@@ -23,7 +23,7 @@ describe PluralFormatter do
     subject { PluralFormatter.new }
 
     before(:each) do
-      stub(subject).pluralization_rule { |n| n == 1 ? :one : :other  }
+      allow(subject).to receive(:pluralization_rule) { |n| n == 1 ? :one : :other  }
     end
 
     let(:horses)        { { one: 'is 1 horse', other: 'are %{horses_count} horses' } }
@@ -197,7 +197,7 @@ describe PluralFormatter do
 
   describe '#pluralization_rule' do
     it 'delegates pluralization rule fetching to Rules.rule_for method' do
-      mock(Plurals::Rules).rule_for(42, :jp) { 'result' }
+      expect(Plurals::Rules).to receive(:rule_for).with(42, :jp).and_return('result')
       expect(PluralFormatter.new(:jp).send(:pluralization_rule, 42)).to eq('result')
     end
   end

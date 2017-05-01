@@ -9,10 +9,15 @@ module TwitterCldr
 
       class ScriptExtensionsPropertyImporter < PropertyImporter
         DATA_FILE = 'ucd/ScriptExtensions.txt'
+        PROPERTY_NAME = 'Script_Extensions'
 
         requirement :unicode, Versions.unicode_version, [DATA_FILE]
         output_path 'unicode_data/properties'
         ruby_engine :mri
+
+        def property_name
+          PROPERTY_NAME
+        end
 
         private
 

@@ -1,0 +1,116 @@
+--- 
+:segments: 
+  :SentenceBreak: 
+    :rules: 
+      - 
+        :id: 3
+        :value: " $CR × $LF "
+      - 
+        :id: 4
+        :value: " ($Sep | $CR | $LF) ÷ "
+      - 
+        :id: 5
+        :value: " × [$Format $Extend] "
+      - 
+        :id: 6
+        :value: " $ATerm × $Numeric "
+      - 
+        :id: 7
+        :value: " ($Upper | $Lower) $ATerm × $Upper "
+      - 
+        :id: 8
+        :value: " $ATerm $Close* $Sp* × $NotPreLower_* $Lower "
+      - 
+        :id: 8.1
+        :value: " ($STerm | $ATerm) $Close* $Sp* × ($SContinue | $STerm | $ATerm) "
+      - 
+        :id: 9
+        :value: " ( $STerm | $ATerm ) $Close* × ( $Close | $Sp | $Sep | $CR | $LF ) "
+      - 
+        :id: 10
+        :value: " ( $STerm | $ATerm ) $Close* $Sp* × ( $Sp | $Sep | $CR | $LF ) "
+      - 
+        :id: 11
+        :value: " ( $STerm | $ATerm ) $Close* $Sp* ($Sep | $CR | $LF)? ÷ "
+      - 
+        :id: 12
+        :value: " × $Any "
+    :variables: 
+      - 
+        :id: $CR
+        :value: "\\p{Sentence_Break=CR}"
+      - 
+        :id: $LF
+        :value: "\\p{Sentence_Break=LF}"
+      - 
+        :id: $Extend
+        :value: "\\p{Sentence_Break=Extend}"
+      - 
+        :id: $Format
+        :value: "\\p{Sentence_Break=Format}"
+      - 
+        :id: $Sep
+        :value: "\\p{Sentence_Break=Sep}"
+      - 
+        :id: $Sp
+        :value: "\\p{Sentence_Break=Sp}"
+      - 
+        :id: $Lower
+        :value: "\\p{Sentence_Break=Lower}"
+      - 
+        :id: $Upper
+        :value: "\\p{Sentence_Break=Upper}"
+      - 
+        :id: $OLetter
+        :value: "\\p{Sentence_Break=OLetter}"
+      - 
+        :id: $Numeric
+        :value: "\\p{Sentence_Break=Numeric}"
+      - 
+        :id: $ATerm
+        :value: "\\p{Sentence_Break=ATerm}"
+      - 
+        :id: $STerm
+        :value: "\\p{Sentence_Break=STerm}"
+      - 
+        :id: $Close
+        :value: "\\p{Sentence_Break=Close}"
+      - 
+        :id: $SContinue
+        :value: "\\p{Sentence_Break=SContinue}"
+      - 
+        :id: $Any
+        :value: "."
+      - 
+        :id: $FE
+        :value: "[$Format $Extend]"
+      - 
+        :id: $NotPreLower_
+        :value: "[^ $OLetter $Upper $Lower $Sep $CR $LF $STerm $ATerm]"
+      - 
+        :id: $Sp
+        :value: "($Sp $FE*)"
+      - 
+        :id: $Lower
+        :value: "($Lower $FE*)"
+      - 
+        :id: $Upper
+        :value: "($Upper $FE*)"
+      - 
+        :id: $OLetter
+        :value: "($OLetter $FE*)"
+      - 
+        :id: $Numeric
+        :value: "($Numeric $FE*)"
+      - 
+        :id: $ATerm
+        :value: "($ATerm $FE*)"
+      - 
+        :id: $STerm
+        :value: "($STerm $FE*)"
+      - 
+        :id: $Close
+        :value: "($Close $FE*)"
+      - 
+        :id: $SContinue
+        :value: "($SContinue $FE*)"

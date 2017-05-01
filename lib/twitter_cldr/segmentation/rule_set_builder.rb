@@ -110,18 +110,20 @@ module TwitterCldr
           )
         end
 
-        def resource_for(boundary_name)
-          root_resource[:segments][boundary_name.to_sym]
-        end
-
         def segmentation_parser
           @segmentation_parser ||= Segmentation::Parser.new
         end
 
-        def root_resource
-          @root_resource ||= TwitterCldr.get_resource(
-            'shared', 'segments', 'segments_root'
+        def resource_for(boundary_name)
+          resources[boundary_name] ||= TwitterCldr.get_resource(
+            'shared', 'segments', TwitterCldr::Utils.underscore(boundary_name)
           )
+
+          resources[boundary_name][:segments][boundary_name.to_sym]
+        end
+
+        def resources
+          @resources ||= {}
         end
 
         def rule_cache

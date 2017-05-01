@@ -13,6 +13,9 @@ module TwitterCldr
         end
       end
 
+      # for debugging
+      attr_reader :rule_ids
+
       attr_reader :locale, :rules, :boundary_type
       attr_accessor :use_uli_exceptions
 
@@ -27,10 +30,12 @@ module TwitterCldr
         )
       end
 
-      def each_boundary(str)
+      def each_boundary(str, options = {})
         if block_given?
+          debug = options.fetch(:debug, false)
           cursor = Cursor.new(str)
           last_boundary = 0
+          @rule_ids = [] if debug
 
           # implicit start of text boundary
           yield 0
@@ -38,6 +43,7 @@ module TwitterCldr
           until cursor.eof?
             match = find_match(cursor)
             rule = match.rule
+            @rule_ids << rule.id if debug
 
             if rule.break?
               yield match.boundary_position
@@ -56,7 +62,7 @@ module TwitterCldr
           # implicit end of text boundary
           yield str.size unless last_boundary == str.size
         else
-          to_enum(__method__, str)
+          to_enum(__method__, str, options)
         end
       end
 

@@ -23,7 +23,7 @@ module TwitterCldr
             TokenRecognizer.new(:variable, /\$\w[\w\d]*/),
             TokenRecognizer.new(:character_set, /\[:[\w\s=]+:\]|\\p\{[\w\s=]+\}/),  # [:Lu:] or \p{Lu} or \p{Sentence_Break=CF}
             TokenRecognizer.new(:negated_character_set, /\[:\^[\w\s=]+:\]|\\P\{[\w\s=]+\}/),  #[:^Lu:] or \P{Lu}
-            TokenRecognizer.new(:unicode_char, /\\u\{?[a-fA-F0-9]{1,6}\}?/),
+            TokenRecognizer.new(:unicode_char, /\\[Uu]\{?[a-fA-F0-9]{1,8}\}?/),
             TokenRecognizer.new(:multichar_string, /\{\w+\}/u),
 
             TokenRecognizer.new(:escaped_character, /\\./),

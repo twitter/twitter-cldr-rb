@@ -48,13 +48,14 @@ describe Segmentation::RuleSet do
     end.join
   end
 
-  def error_message(test, test_case_boundaries, result_boundaries)
+  def error_message(test, test_case_boundaries, result_boundaries, rule_ids)
 <<END
 Expected boundaries to match test case
 
             test case: #{test}
   expected boundaries: #{test_case_boundaries.inspect}
     actual boundaries: #{result_boundaries.inspect}
+    matching rule ids: #{rule_ids.inspect}
 END
   end
 
@@ -65,10 +66,11 @@ END
         test_parts = parse(test)
         test_case_boundaries = boundaries(test_parts)
         test_case_string = string(test_parts)
-        result_boundaries = rule_set.each_boundary(test_case_string).to_a
+        result_boundaries = rule_set.each_boundary(test_case_string, debug: true).to_a
+
         expect(result_boundaries).to(
           eq(test_case_boundaries), error_message(
-            test, test_case_boundaries, result_boundaries
+            test, test_case_boundaries, result_boundaries, rule_set.rule_ids
           )
         )
       end

@@ -43,7 +43,7 @@ module TwitterCldr
       end
 
       def underscore(str)
-        str.gsub(/(.)([A-Z])/, '\1_\2').downcase
+        TwitterCldr::Utils.underscore(str)
       end
 
     end

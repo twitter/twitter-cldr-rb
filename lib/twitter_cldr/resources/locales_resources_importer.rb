@@ -14,7 +14,7 @@ module TwitterCldr
 
       requirement :cldr, Versions.cldr_version
       output_path './'
-      locales TwitterCldr.supported_locales
+      locales [] # TwitterCldr.supported_locales
       ruby_engine :mri
 
       LOCALE_COMPONENTS = %w[
@@ -31,17 +31,19 @@ module TwitterCldr
         fields
       ]
 
-      SHARED_COMPONENTS = %w[
-        currency_digits_and_rounding
-        rbnf_root
-        numbering_systems
-        segments_root
-        territories_containment
-        likely_subtags
-        variables
-        aliases
-        transforms
-      ]
+      # SHARED_COMPONENTS = %w[
+      #   currency_digits_and_rounding
+      #   rbnf_root
+      #   numbering_systems
+      #   segments_root
+      #   territories_containment
+      #   likely_subtags
+      #   variables
+      #   aliases
+      #   transforms
+      # ]
+
+      SHARED_COMPONENTS = %w[segments_root]
 
       private
 
@@ -57,16 +59,26 @@ module TwitterCldr
         params.fetch(:output_path)
       end
 
-      def move_segments_root_file
+      def split_segments_root_file
         file_path = File.join(output_path, 'shared', 'segments_root.yml')
 
         if File.file?(file_path)
-          FileUtils.move(
-            file_path, File.join(
-              output_path, 'shared', 'segments', 'segments_root.yml'
+          segments_data = YAML.load_file(file_path)
+
+          segments_data[:segments].each_pair do |name, data|
+            output_file = File.join(
+              output_path, 'shared', 'segments', "#{underscore(name.to_s)}.yml"
             )
-          )
+
+            write_yaml(output_file, { segments: { name => data } })
+          end
+
+          File.unlink(file_path)
         end
+      end
+
+      def underscore(str)
+        TwitterCldr::Utils.underscore(str)
       end
 
       def import_components
@@ -102,7 +114,7 @@ module TwitterCldr
           deep_symbolize(path)
         end
 
-        move_segments_root_file
+        split_segments_root_file
       end
 
       def components_for(locale)
@@ -116,7 +128,10 @@ module TwitterCldr
       def deep_symbolize(path)
         return unless File.extname(path) == '.yml'
         data = YAML.load(File.read(path))
+        write_yaml(path, data)
+      end
 
+      def write_yaml(path, data)
         File.open(path, 'w:utf-8') do |output|
           output.write(
             TwitterCldr::Utils::YAML.dump(

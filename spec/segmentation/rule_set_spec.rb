@@ -92,7 +92,7 @@ END
     # Since there's no such thing as a partial regex match in Ruby,
     # we have to ignore these cases. Hopefully they happen infrequently
     # in practice.
-    let(:skip_cases) { ['÷ 05D0 × 0027 ÷', '÷ 05D0 × 0308 × 0027 ÷'] }
+    let(:skip_cases) { [] } # { ['÷ 05D0 × 0027 ÷', '÷ 05D0 × 0308 × 0027 ÷'] }
 
     it_behaves_like 'a conformant implementation'
   end

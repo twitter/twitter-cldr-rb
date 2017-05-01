@@ -14,6 +14,16 @@ module TwitterCldr
 
         attr_reader :property_name, :property_value
 
+        # for some reason the emoji property contains too many code points,
+        # stuff like #, *, and numbers
+        EMOJI_CODE_POINTS =
+          CodePoint.code_points_for_property('Emoji', nil)
+            .subtract(
+              TwitterCldr::Utils::RangeSet.from_array(
+                [0x23, 0x2A, 0xA9, 0xAE] + (0x30..0x39).to_a
+              )
+            )
+
         def initialize(text)
           if (name_parts = text.split("=")).size == 2
             @property_name, @property_value = name_parts.map(&:strip)
@@ -43,9 +53,15 @@ module TwitterCldr
         private
 
         def codepoints
-          code_points = CodePoint.code_points_for_property(
-            *normalized_property
-          )
+          property_name, property_value = normalized_property
+
+          code_points = if property_name.downcase == 'emoji'
+            EMOJI_CODE_POINTS
+          else
+            CodePoint.code_points_for_property(
+              property_name, property_value
+            )
+          end
 
           if code_points.empty?
             raise UnicodeRegexParserError,

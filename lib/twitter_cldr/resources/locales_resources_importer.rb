@@ -31,19 +31,17 @@ module TwitterCldr
         fields
       ]
 
-      # SHARED_COMPONENTS = %w[
-      #   currency_digits_and_rounding
-      #   rbnf_root
-      #   numbering_systems
-      #   segments_root
-      #   territories_containment
-      #   likely_subtags
-      #   variables
-      #   aliases
-      #   transforms
-      # ]
-
-      SHARED_COMPONENTS = %w[segments_root]
+      SHARED_COMPONENTS = %w[
+        currency_digits_and_rounding
+        rbnf_root
+        numbering_systems
+        segments_root
+        territories_containment
+        likely_subtags
+        variables
+        aliases
+        transforms
+      ]
 
       private
 

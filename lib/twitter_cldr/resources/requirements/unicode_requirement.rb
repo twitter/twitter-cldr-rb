@@ -11,7 +11,7 @@ module TwitterCldr
     module Requirements
 
       class UnicodeRequirement
-        UNICODE_URL = "ftp://ftp.unicode.org/Public/%{version}"
+        BASE_URL = "ftp://ftp.unicode.org/Public/%{version}"
 
         attr_reader :version, :files
 
@@ -23,25 +23,33 @@ module TwitterCldr
         def prepare
           files.each do |file|
             unless File.file?(source_path_for(file))
-              STDOUT.write("Downloading #{file} from unicode v#{version}... ")
+              STDOUT.write("Downloading #{file} from #{product} v#{version}... ")
               download(file)
               puts 'done'
             end
 
-            puts "Using #{file} from unicode v#{version}"
+            puts "Using #{file} from #{product} v#{version}"
           end
         end
 
         def source_path_for(file)
-          File.join(TwitterCldr::VENDOR_DIR, "unicode_v#{version}", file)
+          File.join(TwitterCldr::VENDOR_DIR, "#{product}_v#{version}", file)
         end
 
         private
 
+        def product
+          'unicode'
+        end
+
+        def base_url
+          BASE_URL
+        end
+
         def download(file)
           source_path = source_path_for(file)
           FileUtils.mkdir_p(File.dirname(source_path))
-          remote_url = File.join(UNICODE_URL % { version: version}, file)
+          remote_url = File.join(base_url % { version: version}, file)
           open(source_path, 'wb') { |file| file << open(remote_url).read }
         end
       end

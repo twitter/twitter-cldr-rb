@@ -14,6 +14,7 @@ module TwitterCldr
       autoload :BlocksPropertyImporter,                  'twitter_cldr/resources/properties/blocks_property_importer'
       autoload :DerivedCorePropertiesImporter,           'twitter_cldr/resources/properties/derived_core_properties_importer'
       autoload :EastAsianWidthPropertyImporter,          'twitter_cldr/resources/properties/east_asian_width_property_importer'
+      autoload :EmojiDataPropertyImporter,               'twitter_cldr/resources/properties/emoji_data_property_importer'
       autoload :GraphemeBreakPropertyImporter,           'twitter_cldr/resources/properties/grapheme_break_property_importer'
       autoload :HangulSyllableTypePropertyImporter,      'twitter_cldr/resources/properties/hangul_syllable_type_property_importer'
       autoload :IndicPositionalCategoryPropertyImporter, 'twitter_cldr/resources/properties/indic_positional_category_property_importer'

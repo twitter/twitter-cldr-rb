@@ -12,6 +12,7 @@ module TwitterCldr
       autoload :DependencyRequirement, 'twitter_cldr/resources/requirements/dependency_requirement'
       autoload :GitRequirement,        'twitter_cldr/resources/requirements/git_requirement'
       autoload :UnicodeRequirement,    'twitter_cldr/resources/requirements/unicode_requirement'
+      autoload :EmojiRequirement,      'twitter_cldr/resources/requirements/emoji_requirement'
     end
 
   end

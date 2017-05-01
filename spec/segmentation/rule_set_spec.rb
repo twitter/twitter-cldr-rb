@@ -68,6 +68,10 @@ END
         test_case_string = string(test_parts)
         result_boundaries = rule_set.each_boundary(test_case_string, debug: true).to_a
 
+        # if result_boundaries != test_case_boundaries
+        #   puts test
+        # end
+
         expect(result_boundaries).to(
           eq(test_case_boundaries), error_message(
             test, test_case_boundaries, result_boundaries, rule_set.rule_ids

@@ -40,6 +40,8 @@ module TwitterCldr
         private
 
         def first_cased(string, start_pos, end_pos)
+          end_pos = string.length - 1 if end_pos >= string.length
+
           start_pos.upto(end_pos) do |pos|
             return pos if cased?(string[pos])
           end

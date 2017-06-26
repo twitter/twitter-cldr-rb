@@ -62,17 +62,24 @@ describe Caser do
       )
     end
 
-    it 'lowercases a Cyrillic sample' do
+    it 'titlecases a Cyrillic sample' do
       str = 'ВЛАДИ́МИР ВЛАДИ́МИРОВИЧ ПУ́ТИН'
       expect(Caser.titlecase(str)).to eq(
         'Влади́мир Влади́мирович Пу́тин'
       )
     end
 
-    it 'lowercases a Greek sample' do
+    it 'titlecases a Greek sample' do
       str = 'ΑΛΦΑΒΗΤΙΚΌΣ ΚΑΤΆΛΟΓΟΣ'
       expect(Caser.titlecase(str)).to eq(
         'Αλφαβητικόσ Κατάλογοσ'
+      )
+    end
+
+    it 'titlecases a Japanese example' do
+      str = '日本語'
+      expect(Caser.titlecase(str)).to eq(
+        '日本語'
       )
     end
   end

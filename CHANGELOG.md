@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.4.1 (June 26, 2017)
+* Fix bug in Shared::Caser raising error when titlecasing Japanese text.
+
 ### 4.4.0 (April 28, 2017)
 * Address several more Ruby 2.4 deprecation warnings.
 * Upgrade to RSpec 3, drop rr mocking library.

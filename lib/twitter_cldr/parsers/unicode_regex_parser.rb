@@ -160,7 +160,7 @@ module TwitterCldr
 
       def unicode_char(token)
         UnicodeString.new(
-          [token.value.gsub(/^\\u/, "").gsub(/[\{\}]/, "").to_i(16)]
+          [token.value.gsub(/^\\[Uu]/, "").gsub(/[\{\}]/, "").to_i(16)]
         )
       end
 

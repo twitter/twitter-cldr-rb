@@ -20,7 +20,7 @@ module TwitterCldr
           CodePoint.code_points_for_property('Emoji', nil)
             .subtract(
               TwitterCldr::Utils::RangeSet.from_array(
-                [0x23, 0x2A, 0xA9, 0xAE] + (0x30..0x39).to_a
+                [0x23, 0x2A, 0xA9, 0xAE, 0x1F3FB] + (0x30..0x39).to_a
               )
             )
 

@@ -6,6 +6,8 @@
 require 'fileutils'
 require 'cldr-plurals'
 require 'cldr/export'
+require 'parallel'
+require 'etc'
 
 module TwitterCldr
   module Resources
@@ -29,6 +31,7 @@ module TwitterCldr
         rbnf
         units
         fields
+        timezones
       ]
 
       SHARED_COMPONENTS = %w[
@@ -70,9 +73,25 @@ module TwitterCldr
       end
 
       def import_components
-        locales = Set.new
+        import_locale_components
+        import_shared_components
+        post_process
+      end
 
-        params[:locales].each do |locale|
+      def import_locale_components
+        finished = 0
+
+        puts "Importing data for #{params[:locales].size} locales using #{Etc.nprocessors} processes"
+
+        parallel_options = {
+          in_processes: Etc.nprocessors,
+          finish: -> (locale, *) {
+            finished += 1
+            puts "Imported #{locale}, #{finished} of #{params[:locales].size} total"
+          }
+        }
+
+        Parallel.each(params[:locales], parallel_options) do |locale|
           export_args = {
             locales: [locale],
             components: components_for(locale),
@@ -85,24 +104,40 @@ module TwitterCldr
             process_plurals(component, locale, path)
             downcase_territory_codes(component, locale, path)
             deep_symbolize(path)
-            locales.add(locale)
-            STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
           end
         end
+      end
 
-        puts ''
+      def import_shared_components
+        finished = 0
 
-        export_args = {
-          components: SHARED_COMPONENTS,
-          target: File.join(output_path, 'shared'),
-          merge: true
+        puts "Importing #{SHARED_COMPONENTS.size} shared components"
+
+        parallel_options = {
+          in_processes: Etc.nprocessors,
+          finish: -> (component, *) {
+            finished += 1
+            puts "Imported #{component}, #{finished} of #{SHARED_COMPONENTS.size}"
+          }
         }
 
-        Cldr::Export.export(export_args) do |component, locale, path|
-          deep_symbolize(path)
-        end
+        Parallel.each(SHARED_COMPONENTS, parallel_options) do |component|
+          export_args = {
+            components: [component],
+            target: File.join(output_path, 'shared'),
+            merge: true
+          }
 
+          Cldr::Export.export(export_args) do |component, locale, path|
+            deep_symbolize(path)
+          end
+        end
+      end
+
+      def post_process
+        STDOUT.write('Performing post-processing steps... ')
         move_segments_root_file
+        puts 'done'
       end
 
       def components_for(locale)

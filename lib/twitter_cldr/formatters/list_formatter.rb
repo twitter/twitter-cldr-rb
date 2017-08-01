@@ -15,8 +15,8 @@ module TwitterCldr
 
       def format(list, type = :default)
         if res = resource_for_type(type)
-          if res.include?(list.size)
-            compose(res[list.size], list)
+          if res.include?(:"#{list.size}")
+            compose(res[:"#{list.size}"], list)
           else
             compose_list(list, res)
           end

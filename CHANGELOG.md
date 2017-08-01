@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.4.2 (August 1, 2017)
+* Fix list formatter.
+
 ### 4.4.1 (June 26, 2017)
 * Fix bug in Shared::Caser raising error when titlecasing Japanese text.
 

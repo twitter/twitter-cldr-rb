@@ -44,6 +44,7 @@ module TwitterCldr
         variables
         aliases
         transforms
+        metazones
       ]
 
       private

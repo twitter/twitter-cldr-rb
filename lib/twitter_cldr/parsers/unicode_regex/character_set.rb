@@ -55,7 +55,7 @@ module TwitterCldr
         def codepoints
           property_name, property_value = normalized_property
 
-          code_points = if property_name.downcase == 'emoji'
+          code_points = if (property_name || '').downcase == 'emoji'
             EMOJI_CODE_POINTS
           else
             CodePoint.code_points_for_property(

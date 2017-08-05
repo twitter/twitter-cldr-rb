@@ -9,11 +9,11 @@ module TwitterCldr
   module Timezones
     class Timezone
       class << self
-        def from_id(tz_id)
+        def from_id(tz_id, locale = TwitterCldr.locale)
           new(tz_id)
         end
 
-        def from_offset(offset)
+        def from_offset(offset, locale = TwitterCldr.locale)
         end
       end
 
@@ -27,22 +27,8 @@ module TwitterCldr
         @locale = locale
       end
 
-      def generic_non_location(format = :short)
-      end
-
-      def generic_partial_location(format = :short)
-      end
-
-      def generic_location
-      end
-
-      def specific_non_location(format = :short)
-      end
-
-      def gmt
-      end
-
-      def iso_8601
+      def tzinfo
+        @tzinfo ||= TZInfo::Timezone.get(tz_id)
       end
 
       private

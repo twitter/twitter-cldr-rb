@@ -27,6 +27,7 @@ module TwitterCldr
   autoload :Shared,        'twitter_cldr/shared'
   autoload :Tokenizers,    'twitter_cldr/tokenizers'
   autoload :Utils,         'twitter_cldr/utils'
+  autoload :Timezones,     'twitter_cldr/timezones'
   autoload :Transforms,    'twitter_cldr/transforms'
   autoload :Versions,      'twitter_cldr/versions'
 

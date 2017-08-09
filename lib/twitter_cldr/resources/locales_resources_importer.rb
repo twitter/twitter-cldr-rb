@@ -14,7 +14,7 @@ module TwitterCldr
 
       requirement :cldr, Versions.cldr_version
       output_path './'
-      locales [] # TwitterCldr.supported_locales
+      locales TwitterCldr.supported_locales
       ruby_engine :mri
 
       LOCALE_COMPONENTS = %w[

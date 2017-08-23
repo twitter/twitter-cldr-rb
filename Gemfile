@@ -14,7 +14,7 @@ end
 group :development do
   gem 'nokogiri', "~> 1.5.9"
 
-  gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'timezone_formats'
+  gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'mapzones'
   gem 'i18n', '~> 0.6.11'
   gem 'cldr-plurals', '~> 1.0'
 

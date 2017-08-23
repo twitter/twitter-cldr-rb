@@ -1,4 +1,5 @@
 require 'twitter_cldr'
 require 'pry-nav'
 
-puts TwitterCldr::Timezones::GmtTimezone.new('Asia/Tokyo').to_s
+tz = TwitterCldr::Timezones::LocationTimezone.new('America/Havana', :es)
+puts tz.to_s

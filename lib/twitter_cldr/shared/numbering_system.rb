@@ -12,7 +12,7 @@ module TwitterCldr
 
       class << self
         def for_name(name)
-          system_cache[name] ||= begin
+          name_cache[name] ||= begin
             if system = resource[name.to_sym]
               if system[:type] != "numeric"
                 raise UnsupportedNumberingSystemError.new("#{system[:type]} numbering systems not supported.")
@@ -23,10 +23,24 @@ module TwitterCldr
           end
         end
 
-        protected
+        def for_locale(locale, format = :decimal)
+          locale_cache[locale] ||= begin
+            num_resource = TwitterCldr.get_locale_resource(locale, :numbers)
+            system_name = TwitterCldr::Utils.traverse_hash(
+              num_resource[locale], [:numbers, :formats, format, :number_system]
+            )
+            for_name(system_name) if system_name
+          end
+        end
 
-        def system_cache
-          @system_cache ||= {}
+        private
+
+        def locale_cache
+          @locale_cache ||= {}
+        end
+
+        def name_cache
+          @name_cache ||= {}
         end
 
         def resource
@@ -47,7 +61,7 @@ module TwitterCldr
         end
       end
 
-      protected
+      private
 
       def split_digits(str)
         str.unpack("U*").map { |digit| [digit].pack("U*") }

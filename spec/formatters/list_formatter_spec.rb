@@ -19,29 +19,51 @@ describe ListFormatter do
   end
 
   describe "#format" do
-    let(:list) { ["larry", "curly", "moe"] }
+    context 'with two elements' do
+      let(:list) { ["larry", "curly"] }
 
-    context "with an English list formatter" do
-      before(:each) do
-        @formatter = ListFormatter.new(:en)
+      context 'with an English list formatter' do
+        let(:formatter) { ListFormatter.new(:en) }
+
+        it 'formats English lists correctly using various types' do
+          expect(formatter.format(list)).to eq("larry and curly")
+          expect(formatter.format(list, :unit)).to eq("larry, curly")
+          expect(formatter.format(list, :"unit-narrow")).to eq("larry curly")
+        end
       end
 
-      it "formats English lists correctly using various types" do
-        expect(@formatter.format(list)).to eq("larry, curly, and moe")
-        expect(@formatter.format(list, :unit)).to eq("larry, curly, moe")
-        expect(@formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
+      context 'with a Spanish list formatter' do
+        let(:formatter) { ListFormatter.new(:es) }
+
+        it 'formats correctly' do
+          expect(formatter.format(list)).to eq("larry y curly")
+          expect(formatter.format(list, :unit)).to eq("larry y curly")
+          expect(formatter.format(list, :"unit-narrow")).to eq("larry curly")
+        end
       end
     end
 
-    context "with a Spanish list formatter" do
-      before(:each) do
-        @formatter = ListFormatter.new(:es)
+    context 'with three elements' do
+      let(:list) { ["larry", "curly", "moe"] }
+
+      context "with an English list formatter" do
+        let(:formatter) { ListFormatter.new(:en) }
+
+        it "formats English lists correctly using various types" do
+          expect(formatter.format(list)).to eq("larry, curly, and moe")
+          expect(formatter.format(list, :unit)).to eq("larry, curly, moe")
+          expect(formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
+        end
       end
 
-      it "formats Spanish lists correctly using various types" do
-        expect(@formatter.format(list)).to eq("larry, curly y moe")
-        expect(@formatter.format(list, :unit)).to eq("larry, curly y moe")
-        expect(@formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
+      context "with a Spanish list formatter" do
+        let(:formatter) { ListFormatter.new(:es) }
+
+        it "formats Spanish lists correctly using various types" do
+          expect(formatter.format(list)).to eq("larry, curly y moe")
+          expect(formatter.format(list, :unit)).to eq("larry, curly y moe")
+          expect(formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
+        end
       end
     end
   end

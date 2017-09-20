@@ -29,7 +29,9 @@ module TwitterCldr
         # codes" (UN M.49; for example, 014 for Eastern Africa and 419 for Latin
         # America).
         def from_territory_code_for_locale(territory_code, locale = TwitterCldr.locale)
-          get_resource(locale)[:territories][normalize_territory_code(territory_code)]
+          find_non_variant(
+            get_resource(locale)[:territories][normalize_territory_code(territory_code)]
+          )
         rescue
           nil
         end
@@ -43,7 +45,12 @@ module TwitterCldr
           territory_code, _ = get_resource(source_locale)[:territories].find do |_, other_territory_name|
             other_territory_name.downcase == territory_name.downcase
           end
-          get_resource(dest_locale)[:territories][territory_code] if territory_code
+
+          if territory_code
+            find_non_variant(
+              get_resource(dest_locale)[:territories][territory_code]
+            )
+          end
         rescue
           nil
         end
@@ -90,11 +97,15 @@ module TwitterCldr
           end
         end
 
-        protected
+        private
 
         def get_resource(locale)
           locale = TwitterCldr.convert_locale(locale)
           TwitterCldr.get_locale_resource(locale, :territories)[locale]
+        end
+
+        def find_non_variant(territories)
+          territories.find { |t| t[:alt] != 'variant' }[:value]
         end
 
       end

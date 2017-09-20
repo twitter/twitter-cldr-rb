@@ -1,263 +1,811 @@
 --- 
 :lv: 
   :territories: 
-    :ac: "Debesbraukšanas sala"
-    :ad: Andora
-    :ae: "Apvienotie Arābu Emirāti"
-    :af: Afganistāna
-    :ag: "Antigva un Barbuda"
-    :ai: Angilja
-    :al: Albānija
-    :am: Armēnija
-    :ao: Angola
-    :aq: Antarktika
-    :ar: Argentīna
-    :as: "Amerikāņu Samoa"
-    :at: Austrija
-    :au: Austrālija
-    :aw: Aruba
-    :ax: "Olandes salas"
-    :az: Azerbaidžāna
-    :ba: "Bosnija un Hercegovina"
-    :bb: Barbadosa
-    :bd: Bangladeša
-    :be: Beļģija
-    :bf: Burkinafaso
-    :bg: Bulgārija
-    :bh: Bahreina
-    :bi: Burundi
-    :bj: Benina
-    :bl: Senbartelmī
-    :bm: "Bermudu salas"
-    :bn: Bruneja
-    :bo: Bolīvija
-    :bq: "Nīderlandes Karību salas"
-    :br: Brazīlija
-    :bs: "Bahamu salas"
-    :bt: Butāna
-    :bv: "Buvē sala"
-    :bw: Botsvāna
-    :by: Baltkrievija
-    :bz: Beliza
-    :ca: Kanāda
-    :cc: "Kokosu jeb Kīlinga salas"
-    :cd: "Kongo Demokrātiskā Republika"
-    :cf: "Centrālāfrikas Republika"
-    :cg: "Kongo (Republika)"
-    :ch: Šveice
-    :ci: "Ziloņkaula krasts"
-    :ck: "Kuka salas"
-    :cl: Čīle
-    :cm: Kamerūna
-    :cn: Ķīna
-    :co: Kolumbija
-    :cp: "Klipertona sala"
-    :cr: Kostarika
-    :cu: Kuba
-    :cv: Kaboverde
-    :cw: Kirasao
-    :cx: "Ziemsvētku sala"
-    :cy: Kipra
-    :cz: Čehija
-    :de: Vācija
-    :dg: "Djego Garsijas atols"
-    :dj: Džibutija
-    :dk: Dānija
-    :dm: Dominika
-    :do: Dominikāna
-    :dz: Alžīrija
-    :ea: "Seūta un Melilja"
-    :ec: Ekvadora
-    :ee: Igaunija
-    :eg: Ēģipte
-    :eh: Rietumsahāra
-    :er: Eritreja
-    :es: Spānija
-    :et: Etiopija
-    :eu: "Eiropas Savienība"
-    :fi: Somija
-    :fj: Fidži
-    :fk: "Folklenda (Malvinu) salas"
-    :fm: Mikronēzija
-    :fo: "Fēru Salas"
-    :fr: Francija
-    :ga: Gabona
-    :gb: Lielbritānija
-    :gd: Grenāda
-    :ge: Gruzija
-    :gf: "Franču Gviāna"
-    :gg: Gērnsija
-    :gh: Gana
-    :gi: Gibraltārs
-    :gl: Grenlande
-    :gm: Gambija
-    :gn: Gvineja
-    :gp: Gvadelupa
-    :gq: "Ekvatoriālā Gvineja"
-    :gr: Grieķija
-    :gs: "Dienviddžordžija un Dienvidsendviču salas"
-    :gt: Gvatemala
-    :gu: Guama
-    :gw: Gvineja-Bisava
-    :gy: Gajāna
-    :hk: Honkonga
-    :hm: "Hērda un Makdonalda salas"
-    :hn: Hondurasa
-    :hr: Horvātija
-    :ht: Haiti
-    :hu: Ungārija
-    :ic: "Kanāriju salas"
-    :id: Indonēzija
-    :ie: Īrija
-    :il: Izraēla
-    :im: Mena
-    :in: Indija
-    :io: "Indijas okeāna Britu teritorija"
-    :iq: Irāka
-    :ir: Irāna
-    :is: Īslande
-    :it: Itālija
-    :je: Džērsija
-    :jm: Jamaika
-    :jo: Jordānija
-    :jp: Japāna
-    :ke: Kenija
-    :kg: Kirgizstāna
-    :kh: Kambodža
-    :ki: Kiribati
-    :km: "Komoru salas"
-    :kn: "Sentkitsa un Nevisa"
-    :kp: Ziemeļkoreja
-    :kr: Dienvidkoreja
-    :kw: Kuveita
-    :ky: "Kaimanu salas"
-    :kz: Kazahstāna
-    :la: Laosa
-    :lb: Libāna
-    :lc: Sentlūsija
-    :li: Lihtenšteina
-    :lk: Šrilanka
-    :lr: Libērija
-    :ls: Lesoto
-    :lt: Lietuva
-    :lu: Luksemburga
-    :lv: Latvija
-    :ly: Lībija
-    :ma: Maroka
-    :mc: Monako
-    :md: Moldova
-    :me: Melnkalne
-    :mf: Senmartēna
-    :mg: Madagaskara
-    :mh: "Māršala salas"
-    :mk: "Maķedonija (BDRM)"
-    :ml: Mali
-    :mm: "Mjanma (Birma)"
-    :mn: Mongolija
-    :mo: Makao
-    :mp: "Ziemeļu Marianas salas"
-    :mq: Martinika
-    :mr: Mauritānija
-    :ms: Montserrata
-    :mt: Malta
-    :mu: Maurīcija
-    :mv: Maldīvija
-    :mw: Malāvija
-    :mx: Meksika
-    :my: Malaizija
-    :mz: Mozambika
-    :na: Namībija
-    :nc: Jaunkaledonija
-    :ne: Nigēra
-    :nf: "Norfolkas sala"
-    :ng: Nigērija
-    :ni: Nikaragva
-    :nl: Nīderlande
+    :ac: 
+      - 
+        :value: "Debesbraukšanas sala"
+    :ad: 
+      - 
+        :value: Andora
+    :ae: 
+      - 
+        :value: "Apvienotie Arābu Emirāti"
+    :af: 
+      - 
+        :value: Afganistāna
+    :ag: 
+      - 
+        :value: "Antigva un Barbuda"
+    :ai: 
+      - 
+        :value: Angilja
+    :al: 
+      - 
+        :value: Albānija
+    :am: 
+      - 
+        :value: Armēnija
+    :ao: 
+      - 
+        :value: Angola
+    :aq: 
+      - 
+        :value: Antarktika
+    :ar: 
+      - 
+        :value: Argentīna
+    :as: 
+      - 
+        :value: "Amerikāņu Samoa"
+    :at: 
+      - 
+        :value: Austrija
+    :au: 
+      - 
+        :value: Austrālija
+    :aw: 
+      - 
+        :value: Aruba
+    :ax: 
+      - 
+        :value: "Olandes salas"
+    :az: 
+      - 
+        :value: Azerbaidžāna
+    :ba: 
+      - 
+        :value: "Bosnija un Hercegovina"
+    :bb: 
+      - 
+        :value: Barbadosa
+    :bd: 
+      - 
+        :value: Bangladeša
+    :be: 
+      - 
+        :value: Beļģija
+    :bf: 
+      - 
+        :value: Burkinafaso
+    :bg: 
+      - 
+        :value: Bulgārija
+    :bh: 
+      - 
+        :value: Bahreina
+    :bi: 
+      - 
+        :value: Burundi
+    :bj: 
+      - 
+        :value: Benina
+    :bl: 
+      - 
+        :value: Senbartelmī
+    :bm: 
+      - 
+        :value: "Bermudu salas"
+    :bn: 
+      - 
+        :value: Bruneja
+    :bo: 
+      - 
+        :value: Bolīvija
+    :bq: 
+      - 
+        :value: "Nīderlandes Karību salas"
+    :br: 
+      - 
+        :value: Brazīlija
+    :bs: 
+      - 
+        :value: "Bahamu salas"
+    :bt: 
+      - 
+        :value: Butāna
+    :bv: 
+      - 
+        :value: "Buvē sala"
+    :bw: 
+      - 
+        :value: Botsvāna
+    :by: 
+      - 
+        :value: Baltkrievija
+    :bz: 
+      - 
+        :value: Beliza
+    :ca: 
+      - 
+        :value: Kanāda
+    :cc: 
+      - 
+        :value: "Kokosu jeb Kīlinga salas"
+    :cd: 
+      - 
+        :value: Kongo-Kinšasa
+      - 
+        :alt: variant
+        :value: "Kongo Demokrātiskā Republika"
+    :cf: 
+      - 
+        :value: "Centrālāfrikas Republika"
+    :cg: 
+      - 
+        :value: "Kongo - Brazavila"
+      - 
+        :alt: variant
+        :value: "Kongo (Republika)"
+    :ch: 
+      - 
+        :value: Šveice
+    :ci: 
+      - 
+        :value: Kotdivuāra
+      - 
+        :alt: variant
+        :value: "Ziloņkaula krasts"
+    :ck: 
+      - 
+        :value: "Kuka salas"
+    :cl: 
+      - 
+        :value: Čīle
+    :cm: 
+      - 
+        :value: Kamerūna
+    :cn: 
+      - 
+        :value: Ķīna
+    :co: 
+      - 
+        :value: Kolumbija
+    :cp: 
+      - 
+        :value: "Klipertona sala"
+    :cr: 
+      - 
+        :value: Kostarika
+    :cu: 
+      - 
+        :value: Kuba
+    :cv: 
+      - 
+        :value: Kaboverde
+    :cw: 
+      - 
+        :value: Kirasao
+    :cx: 
+      - 
+        :value: "Ziemsvētku sala"
+    :cy: 
+      - 
+        :value: Kipra
+    :cz: 
+      - 
+        :value: Čehija
+    :de: 
+      - 
+        :value: Vācija
+    :dg: 
+      - 
+        :value: "Djego Garsijas atols"
+    :dj: 
+      - 
+        :value: Džibutija
+    :dk: 
+      - 
+        :value: Dānija
+    :dm: 
+      - 
+        :value: Dominika
+    :do: 
+      - 
+        :value: Dominikāna
+    :dz: 
+      - 
+        :value: Alžīrija
+    :ea: 
+      - 
+        :value: "Seūta un Melilja"
+    :ec: 
+      - 
+        :value: Ekvadora
+    :ee: 
+      - 
+        :value: Igaunija
+    :eg: 
+      - 
+        :value: Ēģipte
+    :eh: 
+      - 
+        :value: Rietumsahāra
+    :er: 
+      - 
+        :value: Eritreja
+    :es: 
+      - 
+        :value: Spānija
+    :et: 
+      - 
+        :value: Etiopija
+    :eu: 
+      - 
+        :value: "Eiropas Savienība"
+    :fi: 
+      - 
+        :value: Somija
+    :fj: 
+      - 
+        :value: Fidži
+    :fk: 
+      - 
+        :value: "Folklenda salas"
+      - 
+        :alt: variant
+        :value: "Folklenda (Malvinu) salas"
+    :fm: 
+      - 
+        :value: Mikronēzija
+    :fo: 
+      - 
+        :value: "Fēru Salas"
+    :fr: 
+      - 
+        :value: Francija
+    :ga: 
+      - 
+        :value: Gabona
+    :gb: 
+      - 
+        :value: Lielbritānija
+      - 
+        :alt: short
+        :value: Lielbritānija
+    :gd: 
+      - 
+        :value: Grenāda
+    :ge: 
+      - 
+        :value: Gruzija
+    :gf: 
+      - 
+        :value: "Franču Gviāna"
+    :gg: 
+      - 
+        :value: Gērnsija
+    :gh: 
+      - 
+        :value: Gana
+    :gi: 
+      - 
+        :value: Gibraltārs
+    :gl: 
+      - 
+        :value: Grenlande
+    :gm: 
+      - 
+        :value: Gambija
+    :gn: 
+      - 
+        :value: Gvineja
+    :gp: 
+      - 
+        :value: Gvadelupa
+    :gq: 
+      - 
+        :value: "Ekvatoriālā Gvineja"
+    :gr: 
+      - 
+        :value: Grieķija
+    :gs: 
+      - 
+        :value: "Dienviddžordžija un Dienvidsendviču salas"
+    :gt: 
+      - 
+        :value: Gvatemala
+    :gu: 
+      - 
+        :value: Guama
+    :gw: 
+      - 
+        :value: Gvineja-Bisava
+    :gy: 
+      - 
+        :value: Gajāna
+    :hk: 
+      - 
+        :value: "Ķīnas īpašās pārvaldes apgabals Honkonga"
+      - 
+        :alt: short
+        :value: Honkonga
+    :hm: 
+      - 
+        :value: "Hērda un Makdonalda salas"
+    :hn: 
+      - 
+        :value: Hondurasa
+    :hr: 
+      - 
+        :value: Horvātija
+    :ht: 
+      - 
+        :value: Haiti
+    :hu: 
+      - 
+        :value: Ungārija
+    :ic: 
+      - 
+        :value: "Kanāriju salas"
+    :id: 
+      - 
+        :value: Indonēzija
+    :ie: 
+      - 
+        :value: Īrija
+    :il: 
+      - 
+        :value: Izraēla
+    :im: 
+      - 
+        :value: Mena
+    :in: 
+      - 
+        :value: Indija
+    :io: 
+      - 
+        :value: "Indijas okeāna Britu teritorija"
+    :iq: 
+      - 
+        :value: Irāka
+    :ir: 
+      - 
+        :value: Irāna
+    :is: 
+      - 
+        :value: Īslande
+    :it: 
+      - 
+        :value: Itālija
+    :je: 
+      - 
+        :value: Džērsija
+    :jm: 
+      - 
+        :value: Jamaika
+    :jo: 
+      - 
+        :value: Jordānija
+    :jp: 
+      - 
+        :value: Japāna
+    :ke: 
+      - 
+        :value: Kenija
+    :kg: 
+      - 
+        :value: Kirgizstāna
+    :kh: 
+      - 
+        :value: Kambodža
+    :ki: 
+      - 
+        :value: Kiribati
+    :km: 
+      - 
+        :value: "Komoru salas"
+    :kn: 
+      - 
+        :value: "Sentkitsa un Nevisa"
+    :kp: 
+      - 
+        :value: Ziemeļkoreja
+    :kr: 
+      - 
+        :value: Dienvidkoreja
+    :kw: 
+      - 
+        :value: Kuveita
+    :ky: 
+      - 
+        :value: "Kaimanu salas"
+    :kz: 
+      - 
+        :value: Kazahstāna
+    :la: 
+      - 
+        :value: Laosa
+    :lb: 
+      - 
+        :value: Libāna
+    :lc: 
+      - 
+        :value: Sentlūsija
+    :li: 
+      - 
+        :value: Lihtenšteina
+    :lk: 
+      - 
+        :value: Šrilanka
+    :lr: 
+      - 
+        :value: Libērija
+    :ls: 
+      - 
+        :value: Lesoto
+    :lt: 
+      - 
+        :value: Lietuva
+    :lu: 
+      - 
+        :value: Luksemburga
+    :lv: 
+      - 
+        :value: Latvija
+    :ly: 
+      - 
+        :value: Lībija
+    :ma: 
+      - 
+        :value: Maroka
+    :mc: 
+      - 
+        :value: Monako
+    :md: 
+      - 
+        :value: Moldova
+    :me: 
+      - 
+        :value: Melnkalne
+    :mf: 
+      - 
+        :value: Senmartēna
+    :mg: 
+      - 
+        :value: Madagaskara
+    :mh: 
+      - 
+        :value: "Māršala salas"
+    :mk: 
+      - 
+        :value: Maķedonija
+      - 
+        :alt: variant
+        :value: "Maķedonija (BDRM)"
+    :ml: 
+      - 
+        :value: Mali
+    :mm: 
+      - 
+        :value: "Mjanma (Birma)"
+    :mn: 
+      - 
+        :value: Mongolija
+    :mo: 
+      - 
+        :value: "Ķīnas īpašās pārvaldes apgabals Makao"
+      - 
+        :alt: short
+        :value: Makao
+    :mp: 
+      - 
+        :value: "Ziemeļu Marianas salas"
+    :mq: 
+      - 
+        :value: Martinika
+    :mr: 
+      - 
+        :value: Mauritānija
+    :ms: 
+      - 
+        :value: Montserrata
+    :mt: 
+      - 
+        :value: Malta
+    :mu: 
+      - 
+        :value: Maurīcija
+    :mv: 
+      - 
+        :value: Maldīvija
+    :mw: 
+      - 
+        :value: Malāvija
+    :mx: 
+      - 
+        :value: Meksika
+    :my: 
+      - 
+        :value: Malaizija
+    :mz: 
+      - 
+        :value: Mozambika
+    :na: 
+      - 
+        :value: Namībija
+    :nc: 
+      - 
+        :value: Jaunkaledonija
+    :ne: 
+      - 
+        :value: Nigēra
+    :nf: 
+      - 
+        :value: "Norfolkas sala"
+    :ng: 
+      - 
+        :value: Nigērija
+    :ni: 
+      - 
+        :value: Nikaragva
+    :nl: 
+      - 
+        :value: Nīderlande
     ? !ruby/symbol "no"
-    : Norvēģija
-    :np: Nepāla
-    :nr: Nauru
-    :nu: Niue
-    :nz: Jaunzēlande
-    :om: Omāna
-    :pa: Panama
-    :pe: Peru
-    :pf: "Franču Polinēzija"
-    :pg: Papua-Jaungvineja
-    :ph: Filipīnas
-    :pk: Pakistāna
-    :pl: Polija
-    :pm: "Senpjēra un Mikelona"
-    :pn: Pitkērna
-    :pr: Puertoriko
-    :ps: Palestīna
-    :pt: Portugāle
-    :pw: Palau
-    :py: Paragvaja
-    :qa: Katara
-    :qo: "Okeānijas attālās salas"
-    :re: Reinjona
-    :ro: Rumānija
-    :rs: Serbija
-    :ru: Krievija
-    :rw: Ruanda
-    :sa: "Saūda Arābija"
-    :sb: "Zālamana salas"
-    :sc: "Šeišelu salas"
-    :sd: Sudāna
-    :se: Zviedrija
-    :sg: Singapūra
-    :sh: "Sv.Helēnas sala"
-    :si: Slovēnija
-    :sj: "Svalbāra un Jana Majena sala"
-    :sk: Slovākija
-    :sl: Sjerraleone
-    :sm: Sanmarīno
-    :sn: Senegāla
-    :so: Somālija
-    :sr: Surinama
-    :ss: Dienvidsudāna
-    :st: "Santome un Prinsipi"
-    :sv: Salvadora
-    :sx: Sintmārtena
-    :sy: Sīrija
-    :sz: Svazilenda
-    :ta: "Tristana da Kuņas salas"
-    :tc: "Tērksas un Kaikosas salas"
-    :td: Čada
-    :tf: "Francijas Dienvidjūru Zemes"
-    :tg: Togo
-    :th: Taizeme
-    :tj: Tadžikistāna
-    :tk: Tokelau
-    :tl: Austrumtimora
-    :tm: Turkmenistāna
-    :tn: Tunisija
-    :to: Tonga
-    :tr: Turcija
-    :tt: "Trinidāda un Tobāgo"
-    :tv: Tuvalu
-    :tw: Taivāna
-    :tz: Tanzānija
-    :ua: Ukraina
-    :ug: Uganda
-    :um: "ASV Aizjūras salas"
-    :us: ASV
-    :uy: Urugvaja
-    :uz: Uzbekistāna
-    :va: Vatikāns
-    :vc: "Sentvinsenta un Grenadīnas"
-    :ve: Venecuēla
-    :vg: "Britu Virdžīnas"
-    :vi: "ASV Virdžīnas"
-    :vn: Vjetnama
-    :vu: Vanuatu
-    :wf: "Volisa un Futuna"
-    :ws: Samoa
-    :xk: Kosova
-    :ye: Jemena
-    :yt: Majota
-    :za: "Dienvidāfrikas Republika"
-    :zm: Zambija
-    :zw: Zimbabve
-    :zz: "nezināms reģions"
+    : 
+      - 
+        :value: Norvēģija
+    :np: 
+      - 
+        :value: Nepāla
+    :nr: 
+      - 
+        :value: Nauru
+    :nu: 
+      - 
+        :value: Niue
+    :nz: 
+      - 
+        :value: Jaunzēlande
+    :om: 
+      - 
+        :value: Omāna
+    :pa: 
+      - 
+        :value: Panama
+    :pe: 
+      - 
+        :value: Peru
+    :pf: 
+      - 
+        :value: "Franču Polinēzija"
+    :pg: 
+      - 
+        :value: Papua-Jaungvineja
+    :ph: 
+      - 
+        :value: Filipīnas
+    :pk: 
+      - 
+        :value: Pakistāna
+    :pl: 
+      - 
+        :value: Polija
+    :pm: 
+      - 
+        :value: "Senpjēra un Mikelona"
+    :pn: 
+      - 
+        :value: Pitkērna
+    :pr: 
+      - 
+        :value: Puertoriko
+    :ps: 
+      - 
+        :value: Palestīna
+      - 
+        :alt: short
+        :value: Palestīna
+    :pt: 
+      - 
+        :value: Portugāle
+    :pw: 
+      - 
+        :value: Palau
+    :py: 
+      - 
+        :value: Paragvaja
+    :qa: 
+      - 
+        :value: Katara
+    :qo: 
+      - 
+        :value: "Okeānijas attālās salas"
+    :re: 
+      - 
+        :value: Reinjona
+    :ro: 
+      - 
+        :value: Rumānija
+    :rs: 
+      - 
+        :value: Serbija
+    :ru: 
+      - 
+        :value: Krievija
+    :rw: 
+      - 
+        :value: Ruanda
+    :sa: 
+      - 
+        :value: "Saūda Arābija"
+    :sb: 
+      - 
+        :value: "Zālamana salas"
+    :sc: 
+      - 
+        :value: "Šeišelu salas"
+    :sd: 
+      - 
+        :value: Sudāna
+    :se: 
+      - 
+        :value: Zviedrija
+    :sg: 
+      - 
+        :value: Singapūra
+    :sh: 
+      - 
+        :value: "Sv.Helēnas sala"
+    :si: 
+      - 
+        :value: Slovēnija
+    :sj: 
+      - 
+        :value: "Svalbāra un Jana Majena sala"
+    :sk: 
+      - 
+        :value: Slovākija
+    :sl: 
+      - 
+        :value: Sjerraleone
+    :sm: 
+      - 
+        :value: Sanmarīno
+    :sn: 
+      - 
+        :value: Senegāla
+    :so: 
+      - 
+        :value: Somālija
+    :sr: 
+      - 
+        :value: Surinama
+    :ss: 
+      - 
+        :value: Dienvidsudāna
+    :st: 
+      - 
+        :value: "Santome un Prinsipi"
+    :sv: 
+      - 
+        :value: Salvadora
+    :sx: 
+      - 
+        :value: Sintmārtena
+    :sy: 
+      - 
+        :value: Sīrija
+    :sz: 
+      - 
+        :value: Svazilenda
+    :ta: 
+      - 
+        :value: "Tristana da Kuņas salas"
+    :tc: 
+      - 
+        :value: "Tērksas un Kaikosas salas"
+    :td: 
+      - 
+        :value: Čada
+    :tf: 
+      - 
+        :value: "Francijas Dienvidjūru Zemes"
+    :tg: 
+      - 
+        :value: Togo
+    :th: 
+      - 
+        :value: Taizeme
+    :tj: 
+      - 
+        :value: Tadžikistāna
+    :tk: 
+      - 
+        :value: Tokelau
+    :tl: 
+      - 
+        :value: Austrumtimora
+    :tm: 
+      - 
+        :value: Turkmenistāna
+    :tn: 
+      - 
+        :value: Tunisija
+    :to: 
+      - 
+        :value: Tonga
+    :tr: 
+      - 
+        :value: Turcija
+    :tt: 
+      - 
+        :value: "Trinidāda un Tobāgo"
+    :tv: 
+      - 
+        :value: Tuvalu
+    :tw: 
+      - 
+        :value: Taivāna
+    :tz: 
+      - 
+        :value: Tanzānija
+    :ua: 
+      - 
+        :value: Ukraina
+    :ug: 
+      - 
+        :value: Uganda
+    :um: 
+      - 
+        :value: "ASV Aizjūras salas"
+    :us: 
+      - 
+        :value: "Amerikas Savienotās Valstis"
+      - 
+        :alt: short
+        :value: ASV
+    :uy: 
+      - 
+        :value: Urugvaja
+    :uz: 
+      - 
+        :value: Uzbekistāna
+    :va: 
+      - 
+        :value: Vatikāns
+    :vc: 
+      - 
+        :value: "Sentvinsenta un Grenadīnas"
+    :ve: 
+      - 
+        :value: Venecuēla
+    :vg: 
+      - 
+        :value: "Britu Virdžīnas"
+    :vi: 
+      - 
+        :value: "ASV Virdžīnas"
+    :vn: 
+      - 
+        :value: Vjetnama
+    :vu: 
+      - 
+        :value: Vanuatu
+    :wf: 
+      - 
+        :value: "Volisa un Futuna"
+    :ws: 
+      - 
+        :value: Samoa
+    :xk: 
+      - 
+        :value: Kosova
+    :ye: 
+      - 
+        :value: Jemena
+    :yt: 
+      - 
+        :value: Majota
+    :za: 
+      - 
+        :value: "Dienvidāfrikas Republika"
+    :zm: 
+      - 
+        :value: Zambija
+    :zw: 
+      - 
+        :value: Zimbabve
+    :zz: 
+      - 
+        :value: "nezināms reģions"

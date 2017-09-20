@@ -1,11 +1,18 @@
 --- 
 :sq: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "Ora e Grenuiçit: {0}"
-    :gmt_zero_format: "Ora e Grenuiçit"
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "Ora standarde: {0}"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "Ora e Grenuiçit: {0}"
+    :gmt_zero_format: 
+      :generic: "Ora e Grenuiçit"
+    :hour_format: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_format: 
+      :daylight: "Ora verore: {0}"
+      :generic: "Ora: {0}"
+      :standard: "Ora standarde: {0}"
   :metazones: 
     :Acre: 
       :long: 

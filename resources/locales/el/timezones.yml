@@ -1,11 +1,18 @@
 --- 
 :el: 
   :formats: 
-    :fallback_format: "[{1} ({0})]"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "Χειμερινή ώρα ({0})"
+    :fallback_format: 
+      :generic: "[{1} ({0})]"
+    :gmt_format: 
+      :generic: "GMT{0}"
+    :gmt_zero_format: 
+      :generic: GMT
+    :hour_format: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_format: 
+      :daylight: "Θερινή ώρα ({0})"
+      :generic: "Ώρα ({0})"
+      :standard: "Χειμερινή ώρα ({0})"
   :metazones: 
     :Afghanistan: 
       :long: 

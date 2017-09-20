@@ -1,11 +1,18 @@
 --- 
 :mr: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "[GMT]{0}"
-    :gmt_zero_format: "[GMT]"
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "{0} प्रमाण वेळ"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "[GMT]{0}"
+    :gmt_zero_format: 
+      :generic: "[GMT]"
+    :hour_format: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_format: 
+      :daylight: "{0} सूर्यप्रकाश वेळ"
+      :generic: "{0} वेळ"
+      :standard: "{0} प्रमाण वेळ"
   :metazones: 
     :Acre: 
       :long: 

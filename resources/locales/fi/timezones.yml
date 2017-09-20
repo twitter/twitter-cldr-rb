@@ -1,11 +1,18 @@
 --- 
 :fi: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "UTC{0}"
-    :gmt_zero_format: UTC
-    :hour_format: +H.mm;-H.mm
-    :region_format: "{0} (normaaliaika)"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "UTC{0}"
+    :gmt_zero_format: 
+      :generic: UTC
+    :hour_format: 
+      :generic: +H.mm;-H.mm
+    :region_format: 
+      :daylight: "{0} (kesäaika)"
+      :generic: "aikavyöhyke: {0}"
+      :standard: "{0} (normaaliaika)"
   :metazones: 
     :Acre: 
       :long: 

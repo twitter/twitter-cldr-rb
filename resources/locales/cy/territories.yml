@@ -1,263 +1,814 @@
 --- 
 :cy: 
   :territories: 
-    :ac: "Ynys Ascension"
-    :ad: Andorra
-    :ae: "Emiradau Arabaidd Unedig"
-    :af: Afghanistan
-    :ag: "Antigua a Barbuda"
-    :ai: Anguilla
-    :al: Albania
-    :am: Armenia
-    :ao: Angola
-    :aq: Antarctica
-    :ar: "Yr Ariannin"
-    :as: "Samoa America"
-    :at: Awstria
-    :au: Awstralia
-    :aw: Aruba
-    :ax: "Ynysoedd Åland"
-    :az: Azerbaijan
-    :ba: "Bosnia a Hercegovina"
-    :bb: Barbados
-    :bd: Bangladesh
-    :be: "Gwlad Belg"
-    :bf: "Burkina Faso"
-    :bg: Bwlgaria
-    :bh: Bahrain
-    :bi: Burundi
-    :bj: Benin
-    :bl: "Saint Barthélemy"
-    :bm: Bermuda
-    :bn: Brunei
-    :bo: Bolifia
-    :bq: "Antilles yr Iseldiroedd"
-    :br: Brasil
-    :bs: "Y Bahamas"
-    :bt: Bhutan
-    :bv: "Ynys Bouvet"
-    :bw: Botswana
-    :by: Belarws
-    :bz: Belize
-    :ca: Canada
-    :cc: "Ynysoedd Cocos (Keeling)"
-    :cd: "y Congo (G.Dd.C.)"
-    :cf: "Gweriniaeth Canolbarth Affrica"
-    :cg: "Y Congo (Gweriniaeth)"
-    :ch: "Y Swistir"
-    :ci: "Arfordir Ifori"
-    :ck: "Ynysoedd Cook"
-    :cl: Chile
-    :cm: Camerŵn
-    :cn: Tsieina
-    :co: Colombia
-    :cp: "Ynys Clipperton"
-    :cr: "Costa Rica"
-    :cu: Ciwba
-    :cv: "Cabo Verde"
-    :cw: Curaçao
-    :cx: "Ynys y Nadolig"
-    :cy: Cyprus
-    :cz: "Gweriniaeth Tsiec"
-    :de: "Yr Almaen"
-    :dg: "Diego Garcia"
-    :dj: Djibouti
-    :dk: Denmarc
-    :dm: Dominica
-    :do: "Gweriniaeth Dominica"
-    :dz: Algeria
-    :ea: "Ceuta a Melilla"
-    :ec: Ecuador
-    :ee: Estonia
-    :eg: "Yr Aifft"
-    :eh: "Gorllewin Sahara"
-    :er: Eritrea
-    :es: Sbaen
-    :et: Ethiopia
-    :eu: "Yr Undeb Ewropeaidd"
-    :fi: "Y Ffindir"
-    :fj: Fiji
-    :fk: "Ynysoedd y Falkland (Ynysoedd y Malfinas)"
-    :fm: Micronesia
-    :fo: "Ynysoedd Ffaro"
-    :fr: Ffrainc
-    :ga: Gabon
-    :gb: DU
-    :gd: Grenada
-    :ge: Georgia
-    :gf: "Guyane Ffrengig"
-    :gg: "Ynys y Garn"
-    :gh: Ghana
-    :gi: Gibraltar
-    :gl: "Yr Ynys Las"
-    :gm: Gambia
-    :gn: Guinée
-    :gp: Guadeloupe
-    :gq: "Guinea Gyhydeddol"
-    :gr: "Gwlad Groeg"
-    :gs: "De Georgia ac Ynysoedd Sandwich y De"
-    :gt: Guatemala
-    :gu: Guam
-    :gw: Guiné-Bissau
-    :gy: Guyana
-    :hk: "Hong Kong"
-    :hm: "Ynys Heard ac Ynysoedd McDonald"
-    :hn: Honduras
-    :hr: Croatia
-    :ht: Haiti
-    :hu: Hwngari
-    :ic: "Yr Ynysoedd Dedwydd"
-    :id: Indonesia
-    :ie: Iwerddon
-    :il: Israel
-    :im: "Ynys Manaw"
-    :in: India
-    :io: "Tiriogaeth Brydeinig Cefnfor India"
-    :iq: Irac
-    :ir: Iran
-    :is: "Gwlad yr Iâ"
-    :it: "Yr Eidal"
-    :je: Jersey
-    :jm: Jamaica
-    :jo: "Gwlad Iorddonen"
-    :jp: Japan
-    :ke: Kenya
-    :kg: Kyrgyzstan
-    :kh: Cambodia
-    :ki: Kiribati
-    :km: Comoros
-    :kn: "Saint Kitts a Nevis"
-    :kp: "Gogledd Korea"
-    :kr: "De Korea"
-    :kw: Kuwait
-    :ky: "Ynysoedd Cayman"
-    :kz: Kazakstan
-    :la: Laos
-    :lb: Libanus
-    :lc: "Saint Lucia"
-    :li: Liechtenstein
-    :lk: "Sri Lanka"
-    :lr: Liberia
-    :ls: Lesotho
-    :lt: Lithuania
-    :lu: Lwcsembwrg
-    :lv: Latfia
-    :ly: Libya
-    :ma: Moroco
-    :mc: Monaco
-    :md: Moldofa
-    :me: Montenegro
-    :mf: "Saint Martin"
-    :mg: Madagascar
-    :mh: "Ynysoedd Marshall"
-    :mk: "Macedonia (CWIM)"
-    :ml: Mali
-    :mm: "Myanmar (Burma)"
-    :mn: Mongolia
-    :mo: Macau
-    :mp: "Ynysoedd Gogledd Mariana"
-    :mq: Martinique
-    :mr: Mauritania
-    :ms: Montserrat
-    :mt: Malta
-    :mu: Mauritius
-    :mv: "Y Maldives"
-    :mw: Malawi
-    :mx: Mecsico
-    :my: Malaysia
-    :mz: Mozambique
-    :na: Namibia
-    :nc: "Caledonia Newydd"
-    :ne: Niger
-    :nf: "Ynys Norfolk"
-    :ng: Nigeria
-    :ni: Nicaragua
-    :nl: "Yr Iseldiroedd"
+    :ac: 
+      - 
+        :value: "Ynys Ascension"
+    :ad: 
+      - 
+        :value: Andorra
+    :ae: 
+      - 
+        :value: "Emiradau Arabaidd Unedig"
+    :af: 
+      - 
+        :value: Afghanistan
+    :ag: 
+      - 
+        :value: "Antigua a Barbuda"
+    :ai: 
+      - 
+        :value: Anguilla
+    :al: 
+      - 
+        :value: Albania
+    :am: 
+      - 
+        :value: Armenia
+    :ao: 
+      - 
+        :value: Angola
+    :aq: 
+      - 
+        :value: Antarctica
+    :ar: 
+      - 
+        :value: "Yr Ariannin"
+    :as: 
+      - 
+        :value: "Samoa America"
+    :at: 
+      - 
+        :value: Awstria
+    :au: 
+      - 
+        :value: Awstralia
+    :aw: 
+      - 
+        :value: Aruba
+    :ax: 
+      - 
+        :value: "Ynysoedd Åland"
+    :az: 
+      - 
+        :value: Azerbaijan
+    :ba: 
+      - 
+        :value: "Bosnia a Hercegovina"
+    :bb: 
+      - 
+        :value: Barbados
+    :bd: 
+      - 
+        :value: Bangladesh
+    :be: 
+      - 
+        :value: "Gwlad Belg"
+    :bf: 
+      - 
+        :value: "Burkina Faso"
+    :bg: 
+      - 
+        :value: Bwlgaria
+    :bh: 
+      - 
+        :value: Bahrain
+    :bi: 
+      - 
+        :value: Burundi
+    :bj: 
+      - 
+        :value: Benin
+    :bl: 
+      - 
+        :value: "Saint Barthélemy"
+    :bm: 
+      - 
+        :value: Bermuda
+    :bn: 
+      - 
+        :value: Brunei
+    :bo: 
+      - 
+        :value: Bolifia
+    :bq: 
+      - 
+        :value: "Antilles yr Iseldiroedd"
+    :br: 
+      - 
+        :value: Brasil
+    :bs: 
+      - 
+        :value: "Y Bahamas"
+    :bt: 
+      - 
+        :value: Bhutan
+    :bv: 
+      - 
+        :value: "Ynys Bouvet"
+    :bw: 
+      - 
+        :value: Botswana
+    :by: 
+      - 
+        :value: Belarws
+    :bz: 
+      - 
+        :value: Belize
+    :ca: 
+      - 
+        :value: Canada
+    :cc: 
+      - 
+        :value: "Ynysoedd Cocos (Keeling)"
+    :cd: 
+      - 
+        :value: "Y Congo - Kinshasa"
+      - 
+        :alt: variant
+        :value: "y Congo (G.Dd.C.)"
+    :cf: 
+      - 
+        :value: "Gweriniaeth Canolbarth Affrica"
+    :cg: 
+      - 
+        :value: "Y Congo - Brazzaville"
+      - 
+        :alt: variant
+        :value: "Y Congo (Gweriniaeth)"
+    :ch: 
+      - 
+        :value: "Y Swistir"
+    :ci: 
+      - 
+        :value: "Côte d’Ivoire"
+      - 
+        :alt: variant
+        :value: "Arfordir Ifori"
+    :ck: 
+      - 
+        :value: "Ynysoedd Cook"
+    :cl: 
+      - 
+        :value: Chile
+    :cm: 
+      - 
+        :value: Camerŵn
+    :cn: 
+      - 
+        :value: Tsieina
+    :co: 
+      - 
+        :value: Colombia
+    :cp: 
+      - 
+        :value: "Ynys Clipperton"
+    :cr: 
+      - 
+        :value: "Costa Rica"
+    :cu: 
+      - 
+        :value: Ciwba
+    :cv: 
+      - 
+        :value: "Cabo Verde"
+    :cw: 
+      - 
+        :value: Curaçao
+    :cx: 
+      - 
+        :value: "Ynys y Nadolig"
+    :cy: 
+      - 
+        :value: Cyprus
+    :cz: 
+      - 
+        :value: "Gweriniaeth Tsiec"
+    :de: 
+      - 
+        :value: "Yr Almaen"
+    :dg: 
+      - 
+        :value: "Diego Garcia"
+    :dj: 
+      - 
+        :value: Djibouti
+    :dk: 
+      - 
+        :value: Denmarc
+    :dm: 
+      - 
+        :value: Dominica
+    :do: 
+      - 
+        :value: "Gweriniaeth Dominica"
+    :dz: 
+      - 
+        :value: Algeria
+    :ea: 
+      - 
+        :value: "Ceuta a Melilla"
+    :ec: 
+      - 
+        :value: Ecuador
+    :ee: 
+      - 
+        :value: Estonia
+    :eg: 
+      - 
+        :value: "Yr Aifft"
+    :eh: 
+      - 
+        :value: "Gorllewin Sahara"
+    :er: 
+      - 
+        :value: Eritrea
+    :es: 
+      - 
+        :value: Sbaen
+    :et: 
+      - 
+        :value: Ethiopia
+    :eu: 
+      - 
+        :value: "Yr Undeb Ewropeaidd"
+    :fi: 
+      - 
+        :value: "Y Ffindir"
+    :fj: 
+      - 
+        :value: Fiji
+    :fk: 
+      - 
+        :value: "Ynysoedd y Falkland/Malvinas"
+      - 
+        :alt: variant
+        :value: "Ynysoedd y Falkland (Ynysoedd y Malfinas)"
+    :fm: 
+      - 
+        :value: Micronesia
+    :fo: 
+      - 
+        :value: "Ynysoedd Ffaro"
+    :fr: 
+      - 
+        :value: Ffrainc
+    :ga: 
+      - 
+        :value: Gabon
+    :gb: 
+      - 
+        :value: "Y Deyrnas Unedig"
+      - 
+        :alt: short
+        :value: DU
+    :gd: 
+      - 
+        :value: Grenada
+    :ge: 
+      - 
+        :value: Georgia
+    :gf: 
+      - 
+        :value: "Guyane Ffrengig"
+    :gg: 
+      - 
+        :value: "Ynys y Garn"
+    :gh: 
+      - 
+        :value: Ghana
+    :gi: 
+      - 
+        :value: Gibraltar
+    :gl: 
+      - 
+        :value: "Yr Ynys Las"
+    :gm: 
+      - 
+        :value: Gambia
+    :gn: 
+      - 
+        :value: Guinée
+    :gp: 
+      - 
+        :value: Guadeloupe
+    :gq: 
+      - 
+        :value: "Guinea Gyhydeddol"
+    :gr: 
+      - 
+        :value: "Gwlad Groeg"
+    :gs: 
+      - 
+        :value: "De Georgia ac Ynysoedd Sandwich y De"
+    :gt: 
+      - 
+        :value: Guatemala
+    :gu: 
+      - 
+        :value: Guam
+    :gw: 
+      - 
+        :value: Guiné-Bissau
+    :gy: 
+      - 
+        :value: Guyana
+    :hk: 
+      - 
+        :value: "Hong Kong RhGA Tsieina"
+      - 
+        :alt: short
+        :value: "Hong Kong"
+    :hm: 
+      - 
+        :value: "Ynys Heard ac Ynysoedd McDonald"
+    :hn: 
+      - 
+        :value: Honduras
+    :hr: 
+      - 
+        :value: Croatia
+    :ht: 
+      - 
+        :value: Haiti
+    :hu: 
+      - 
+        :value: Hwngari
+    :ic: 
+      - 
+        :value: "Yr Ynysoedd Dedwydd"
+    :id: 
+      - 
+        :value: Indonesia
+    :ie: 
+      - 
+        :value: Iwerddon
+    :il: 
+      - 
+        :value: Israel
+    :im: 
+      - 
+        :value: "Ynys Manaw"
+    :in: 
+      - 
+        :value: India
+    :io: 
+      - 
+        :value: "Tiriogaeth Brydeinig Cefnfor India"
+    :iq: 
+      - 
+        :value: Irac
+    :ir: 
+      - 
+        :value: Iran
+    :is: 
+      - 
+        :value: "Gwlad yr Iâ"
+    :it: 
+      - 
+        :value: "Yr Eidal"
+    :je: 
+      - 
+        :value: Jersey
+    :jm: 
+      - 
+        :value: Jamaica
+    :jo: 
+      - 
+        :value: "Gwlad Iorddonen"
+    :jp: 
+      - 
+        :value: Japan
+    :ke: 
+      - 
+        :value: Kenya
+    :kg: 
+      - 
+        :value: Kyrgyzstan
+    :kh: 
+      - 
+        :value: Cambodia
+    :ki: 
+      - 
+        :value: Kiribati
+    :km: 
+      - 
+        :value: Comoros
+    :kn: 
+      - 
+        :value: "Saint Kitts a Nevis"
+    :kp: 
+      - 
+        :value: "Gogledd Korea"
+    :kr: 
+      - 
+        :value: "De Korea"
+    :kw: 
+      - 
+        :value: Kuwait
+    :ky: 
+      - 
+        :value: "Ynysoedd Cayman"
+    :kz: 
+      - 
+        :value: Kazakstan
+    :la: 
+      - 
+        :value: Laos
+    :lb: 
+      - 
+        :value: Libanus
+    :lc: 
+      - 
+        :value: "Saint Lucia"
+    :li: 
+      - 
+        :value: Liechtenstein
+    :lk: 
+      - 
+        :value: "Sri Lanka"
+    :lr: 
+      - 
+        :value: Liberia
+    :ls: 
+      - 
+        :value: Lesotho
+    :lt: 
+      - 
+        :value: Lithuania
+    :lu: 
+      - 
+        :value: Lwcsembwrg
+    :lv: 
+      - 
+        :value: Latfia
+    :ly: 
+      - 
+        :value: Libya
+    :ma: 
+      - 
+        :value: Moroco
+    :mc: 
+      - 
+        :value: Monaco
+    :md: 
+      - 
+        :value: Moldofa
+    :me: 
+      - 
+        :value: Montenegro
+    :mf: 
+      - 
+        :value: "Saint Martin"
+    :mg: 
+      - 
+        :value: Madagascar
+    :mh: 
+      - 
+        :value: "Ynysoedd Marshall"
+    :mk: 
+      - 
+        :value: Macedonia
+      - 
+        :alt: variant
+        :value: "Macedonia (CWIM)"
+    :ml: 
+      - 
+        :value: Mali
+    :mm: 
+      - 
+        :value: "Myanmar (Burma)"
+    :mn: 
+      - 
+        :value: Mongolia
+    :mo: 
+      - 
+        :value: "Macau RhGA Tsieina"
+      - 
+        :alt: short
+        :value: Macau
+    :mp: 
+      - 
+        :value: "Ynysoedd Gogledd Mariana"
+    :mq: 
+      - 
+        :value: Martinique
+    :mr: 
+      - 
+        :value: Mauritania
+    :ms: 
+      - 
+        :value: Montserrat
+    :mt: 
+      - 
+        :value: Malta
+    :mu: 
+      - 
+        :value: Mauritius
+    :mv: 
+      - 
+        :value: "Y Maldives"
+    :mw: 
+      - 
+        :value: Malawi
+    :mx: 
+      - 
+        :value: Mecsico
+    :my: 
+      - 
+        :value: Malaysia
+    :mz: 
+      - 
+        :value: Mozambique
+    :na: 
+      - 
+        :value: Namibia
+    :nc: 
+      - 
+        :value: "Caledonia Newydd"
+    :ne: 
+      - 
+        :value: Niger
+    :nf: 
+      - 
+        :value: "Ynys Norfolk"
+    :ng: 
+      - 
+        :value: Nigeria
+    :ni: 
+      - 
+        :value: Nicaragua
+    :nl: 
+      - 
+        :value: "Yr Iseldiroedd"
     ? !ruby/symbol "no"
-    : Norwy
-    :np: Nepal
-    :nr: Nauru
-    :nu: Niue
-    :nz: "Seland Newydd"
-    :om: Oman
-    :pa: Panama
-    :pe: Periw
-    :pf: "Polynesia Ffrengig"
-    :pg: "Papua Guinea Newydd"
-    :ph: "Y Philipinau"
-    :pk: Pakistan
-    :pl: "Gwlad Pwyl"
-    :pm: Saint-Pierre-et-Miquelon
-    :pn: "Ynysoedd Pitcairn"
-    :pr: "Puerto Rico"
-    :ps: Palesteina
-    :pt: Portiwgal
-    :pw: Palau
-    :py: Paraguay
-    :qa: Qatar
-    :qo: "Oceania Bellennig"
-    :re: Réunion
-    :ro: Rwmania
-    :rs: Serbia
-    :ru: Rwsia
-    :rw: Rwanda
-    :sa: "Saudi Arabia"
-    :sb: "Ynysoedd Solomon"
-    :sc: Seychelles
-    :sd: Swdan
-    :se: Sweden
-    :sg: Singapore
-    :sh: "Saint Helena"
-    :si: Slofenia
-    :sj: "Svalbard a Jan Mayen"
-    :sk: Slofacia
-    :sl: "Sierra Leone"
-    :sm: "San Marino"
-    :sn: Senegal
-    :so: Somalia
-    :sr: Suriname
-    :ss: "De Swdan"
-    :st: "São Tomé a Príncipe"
-    :sv: "El Salvador"
-    :sx: "Sint Maarten"
-    :sy: Syria
-    :sz: "Gwlad Swazi"
-    :ta: "Tristan da Cunha"
-    :tc: "Ynysoedd Turks a Caicos"
-    :td: Tchad
-    :tf: "Tiroedd Deheuol ac Antarctig Ffrainc"
-    :tg: Togo
-    :th: "Gwlad Thai"
-    :tj: Tajikistan
-    :tk: Tokelau
-    :tl: "Dwyrain Timor"
-    :tm: Turkmenistan
-    :tn: Tunisia
-    :to: Tonga
-    :tr: Twrci
-    :tt: "Trinidad a Tobago"
-    :tv: Tuvalu
-    :tw: Taiwan
-    :tz: Tanzania
-    :ua: Wcráin
-    :ug: Uganda
-    :um: "Ynysoedd Pellennig UDA"
-    :us: UDA
-    :uy: Uruguay
-    :uz: Uzbekistan
-    :va: "Y Fatican"
-    :vc: "Saint Vincent a’r Grenadines"
-    :ve: Venezuela
-    :vg: "Ynysoedd Gwyryf Prydain"
-    :vi: "Ynysoedd Gwyryf yr Unol Daleithiau"
-    :vn: Fietnam
-    :vu: Vanuatu
-    :wf: "Wallis a Futuna"
-    :ws: Samoa
-    :xk: Kosovo
-    :ye: Yemen
-    :yt: Mayotte
-    :za: "De Affrica"
-    :zm: Zambia
-    :zw: Zimbabwe
-    :zz: "Rhanbarth Anhysbys"
+    : 
+      - 
+        :value: Norwy
+    :np: 
+      - 
+        :value: Nepal
+    :nr: 
+      - 
+        :value: Nauru
+    :nu: 
+      - 
+        :value: Niue
+    :nz: 
+      - 
+        :value: "Seland Newydd"
+    :om: 
+      - 
+        :value: Oman
+    :pa: 
+      - 
+        :value: Panama
+    :pe: 
+      - 
+        :value: Periw
+    :pf: 
+      - 
+        :value: "Polynesia Ffrengig"
+    :pg: 
+      - 
+        :value: "Papua Guinea Newydd"
+    :ph: 
+      - 
+        :value: "Y Philipinau"
+    :pk: 
+      - 
+        :value: Pakistan
+    :pl: 
+      - 
+        :value: "Gwlad Pwyl"
+    :pm: 
+      - 
+        :value: Saint-Pierre-et-Miquelon
+    :pn: 
+      - 
+        :value: "Ynysoedd Pitcairn"
+    :pr: 
+      - 
+        :value: "Puerto Rico"
+    :ps: 
+      - 
+        :value: "Tiriogaethau Palesteinaidd"
+      - 
+        :alt: short
+        :value: Palesteina
+    :pt: 
+      - 
+        :value: Portiwgal
+    :pw: 
+      - 
+        :value: Palau
+    :py: 
+      - 
+        :value: Paraguay
+    :qa: 
+      - 
+        :value: Qatar
+    :qo: 
+      - 
+        :value: "Oceania Bellennig"
+    :re: 
+      - 
+        :value: Réunion
+    :ro: 
+      - 
+        :value: Rwmania
+    :rs: 
+      - 
+        :value: Serbia
+    :ru: 
+      - 
+        :value: Rwsia
+    :rw: 
+      - 
+        :value: Rwanda
+    :sa: 
+      - 
+        :value: "Saudi Arabia"
+    :sb: 
+      - 
+        :value: "Ynysoedd Solomon"
+    :sc: 
+      - 
+        :value: Seychelles
+    :sd: 
+      - 
+        :value: Swdan
+    :se: 
+      - 
+        :value: Sweden
+    :sg: 
+      - 
+        :value: Singapore
+    :sh: 
+      - 
+        :value: "Saint Helena"
+    :si: 
+      - 
+        :value: Slofenia
+    :sj: 
+      - 
+        :value: "Svalbard a Jan Mayen"
+    :sk: 
+      - 
+        :value: Slofacia
+    :sl: 
+      - 
+        :value: "Sierra Leone"
+    :sm: 
+      - 
+        :value: "San Marino"
+    :sn: 
+      - 
+        :value: Senegal
+    :so: 
+      - 
+        :value: Somalia
+    :sr: 
+      - 
+        :value: Suriname
+    :ss: 
+      - 
+        :value: "De Swdan"
+    :st: 
+      - 
+        :value: "São Tomé a Príncipe"
+    :sv: 
+      - 
+        :value: "El Salvador"
+    :sx: 
+      - 
+        :value: "Sint Maarten"
+    :sy: 
+      - 
+        :value: Syria
+    :sz: 
+      - 
+        :value: "Gwlad Swazi"
+    :ta: 
+      - 
+        :value: "Tristan da Cunha"
+    :tc: 
+      - 
+        :value: "Ynysoedd Turks a Caicos"
+    :td: 
+      - 
+        :value: Tchad
+    :tf: 
+      - 
+        :value: "Tiroedd Deheuol ac Antarctig Ffrainc"
+    :tg: 
+      - 
+        :value: Togo
+    :th: 
+      - 
+        :value: "Gwlad Thai"
+    :tj: 
+      - 
+        :value: Tajikistan
+    :tk: 
+      - 
+        :value: Tokelau
+    :tl: 
+      - 
+        :value: Timor-Leste
+      - 
+        :alt: variant
+        :value: "Dwyrain Timor"
+    :tm: 
+      - 
+        :value: Turkmenistan
+    :tn: 
+      - 
+        :value: Tunisia
+    :to: 
+      - 
+        :value: Tonga
+    :tr: 
+      - 
+        :value: Twrci
+    :tt: 
+      - 
+        :value: "Trinidad a Tobago"
+    :tv: 
+      - 
+        :value: Tuvalu
+    :tw: 
+      - 
+        :value: Taiwan
+    :tz: 
+      - 
+        :value: Tanzania
+    :ua: 
+      - 
+        :value: Wcráin
+    :ug: 
+      - 
+        :value: Uganda
+    :um: 
+      - 
+        :value: "Ynysoedd Pellennig UDA"
+    :us: 
+      - 
+        :value: "Yr Unol Daleithiau"
+      - 
+        :alt: short
+        :value: UDA
+    :uy: 
+      - 
+        :value: Uruguay
+    :uz: 
+      - 
+        :value: Uzbekistan
+    :va: 
+      - 
+        :value: "Y Fatican"
+    :vc: 
+      - 
+        :value: "Saint Vincent a’r Grenadines"
+    :ve: 
+      - 
+        :value: Venezuela
+    :vg: 
+      - 
+        :value: "Ynysoedd Gwyryf Prydain"
+    :vi: 
+      - 
+        :value: "Ynysoedd Gwyryf yr Unol Daleithiau"
+    :vn: 
+      - 
+        :value: Fietnam
+    :vu: 
+      - 
+        :value: Vanuatu
+    :wf: 
+      - 
+        :value: "Wallis a Futuna"
+    :ws: 
+      - 
+        :value: Samoa
+    :xk: 
+      - 
+        :value: Kosovo
+    :ye: 
+      - 
+        :value: Yemen
+    :yt: 
+      - 
+        :value: Mayotte
+    :za: 
+      - 
+        :value: "De Affrica"
+    :zm: 
+      - 
+        :value: Zambia
+    :zw: 
+      - 
+        :value: Zimbabwe
+    :zz: 
+      - 
+        :value: "Rhanbarth Anhysbys"

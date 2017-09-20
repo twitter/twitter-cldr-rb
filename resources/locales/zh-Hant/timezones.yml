@@ -1,11 +1,18 @@
 --- 
 :zh-Hant: 
   :formats: 
-    :fallback_format: "{1}（{0}）"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "{0} (+0)"
+    :fallback_format: 
+      :generic: "{1}（{0}）"
+    :gmt_format: 
+      :generic: "GMT{0}"
+    :gmt_zero_format: 
+      :generic: GMT
+    :hour_format: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_format: 
+      :daylight: "{0} (+1)"
+      :generic: "{0}時間"
+      :standard: "{0} (+0)"
   :metazones: 
     :Acre: 
       :long: 

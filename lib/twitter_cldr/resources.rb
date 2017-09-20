@@ -23,7 +23,8 @@ module TwitterCldr
     autoload :Requirements,                   'twitter_cldr/resources/requirements'
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
-    autoload :TransformTestImporter,          'twitter_cldr/resources/transform_test_importer'
+    autoload :TimezoneTestsImporter,          'twitter_cldr/resources/timezone_tests_importer'
+    autoload :TransformTestsImporter,         'twitter_cldr/resources/transform_tests_importer'
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
@@ -46,7 +47,8 @@ module TwitterCldr
           RbnfTestImporter,
           SegmentTestsImporter,
           TailoringImporter,
-          TransformTestImporter,
+          TimezoneTestsImporter,
+          TransformTestsImporter,
           UnicodeDataImporter,
           UnicodePropertyAliasesImporter,
         ]

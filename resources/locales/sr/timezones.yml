@@ -1,11 +1,18 @@
 --- 
 :sr: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: +HHmm;-HHmm
-    :region_format: "{0}, стандардно време"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "GMT{0}"
+    :gmt_zero_format: 
+      :generic: GMT
+    :hour_format: 
+      :generic: +HHmm;-HHmm
+    :region_format: 
+      :daylight: "{0}, летње време"
+      :generic: "Време у земљи: {0}"
+      :standard: "{0}, стандардно време"
   :metazones: 
     :Acre: 
       :long: 

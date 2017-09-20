@@ -1,263 +1,811 @@
 --- 
 :hr: 
   :territories: 
-    :ac: "Otok Ascension"
-    :ad: Andora
-    :ae: "Ujedinjeni Arapski Emirati"
-    :af: Afganistan
-    :ag: "Antigua i Barbuda"
-    :ai: Angvila
-    :al: Albanija
-    :am: Armenija
-    :ao: Angola
-    :aq: Antarktika
-    :ar: Argentina
-    :as: "Američka Samoa"
-    :at: Austrija
-    :au: Australija
-    :aw: Aruba
-    :ax: "Otoci Aland"
-    :az: Azerbajdžan
-    :ba: "Bosna i Hercegovina"
-    :bb: Barbados
-    :bd: Bangladeš
-    :be: Belgija
-    :bf: "Burkina Faso"
-    :bg: Bugarska
-    :bh: Bahrein
-    :bi: Burundi
-    :bj: Benin
-    :bl: "Sveti Bartolomej"
-    :bm: Bermuda
-    :bn: Brunej
-    :bo: Bolivija
-    :bq: "Karipski otoci Nizozemske"
-    :br: Brazil
-    :bs: Bahami
-    :bt: Butan
-    :bv: "Otok Bouvet"
-    :bw: Bocvana
-    :by: Bjelorusija
-    :bz: Belize
-    :ca: Kanada
-    :cc: "Kokosovi (Keeling) Otoci"
-    :cd: "Kongo (DRK)"
-    :cf: "Srednjoafrička Republika"
-    :cg: "Kongo (RK)"
-    :ch: Švicarska
-    :ci: "Bjelokosna Obala"
-    :ck: "Cookovi Otoci"
-    :cl: Čile
-    :cm: Kamerun
-    :cn: Kina
-    :co: Kolumbija
-    :cp: "Otok Clipperton"
-    :cr: Kostarika
-    :cu: Kuba
-    :cv: "Zelenortska Republika"
-    :cw: Curaçao
-    :cx: "Božićni Otok"
-    :cy: Cipar
-    :cz: "Češka Republika"
-    :de: Njemačka
-    :dg: "Diego Garcia"
-    :dj: Džibuti
-    :dk: Danska
-    :dm: Dominika
-    :do: "Dominikanska Republika"
-    :dz: Alžir
-    :ea: "Ceuta i Melilla"
-    :ec: Ekvador
-    :ee: Estonija
-    :eg: Egipat
-    :eh: "Zapadna Sahara"
-    :er: Eritreja
-    :es: Španjolska
-    :et: Etiopija
-    :eu: "Europska unija"
-    :fi: Finska
-    :fj: Fidži
-    :fk: "Falklandski Otoci (Malvini)"
-    :fm: Mikronezija
-    :fo: "Farski Otoci"
-    :fr: Francuska
-    :ga: Gabon
-    :gb: UK
-    :gd: Grenada
-    :ge: Gruzija
-    :gf: "Francuska Gvajana"
-    :gg: Guernsey
-    :gh: Gana
-    :gi: Gibraltar
-    :gl: Grenland
-    :gm: Gambija
-    :gn: Gvineja
-    :gp: Guadalupa
-    :gq: "Ekvatorska Gvineja"
-    :gr: Grčka
-    :gs: "Južna Georgija i Južni Sendvički Otoci"
-    :gt: Gvatemala
-    :gu: Guam
-    :gw: "Gvineja Bisau"
-    :gy: Gvajana
-    :hk: "Hong Kong"
-    :hm: "Otoci Heard i McDonald"
-    :hn: Honduras
-    :hr: Hrvatska
-    :ht: Haiti
-    :hu: Mađarska
-    :ic: "Kanarski Otoci"
-    :id: Indonezija
-    :ie: Irska
-    :il: Izrael
-    :im: "Otok Man"
-    :in: Indija
-    :io: "Britanski Indijskooceanski Teritorij"
-    :iq: Irak
-    :ir: Iran
-    :is: Island
-    :it: Italija
-    :je: Jersey
-    :jm: Jamajka
-    :jo: Jordan
-    :jp: Japan
-    :ke: Kenija
-    :kg: Kirgistan
-    :kh: Kambodža
-    :ki: Kiribati
-    :km: Komori
-    :kn: "Sveti Kristofor i Nevis"
-    :kp: "Sjeverna Koreja"
-    :kr: "Južna Koreja"
-    :kw: Kuvajt
-    :ky: "Kajmanski Otoci"
-    :kz: Kazahstan
-    :la: Laos
-    :lb: Libanon
-    :lc: "Sveta Lucija"
-    :li: Lihtenštajn
-    :lk: "Šri Lanka"
-    :lr: Liberija
-    :ls: Lesoto
-    :lt: Litva
-    :lu: Luksemburg
-    :lv: Latvija
-    :ly: Libija
-    :ma: Maroko
-    :mc: Monako
-    :md: Moldavija
-    :me: "Crna Gora"
-    :mf: "Sveti Martin"
-    :mg: Madagaskar
-    :mh: "Maršalovi Otoci"
-    :mk: "Makedonija (BJRM)"
-    :ml: Mali
-    :mm: "Mijanmar (Burma)"
-    :mn: Mongolija
-    :mo: Makao
-    :mp: "Sjeverni Marijanski Otoci"
-    :mq: Martinique
-    :mr: Mauritanija
-    :ms: Montserrat
-    :mt: Malta
-    :mu: Mauricijus
-    :mv: Maldivi
-    :mw: Malavi
-    :mx: Meksiko
-    :my: Malezija
-    :mz: Mozambik
-    :na: Namibija
-    :nc: "Nova Kaledonija"
-    :ne: Niger
-    :nf: "Otok Norfolk"
-    :ng: Nigerija
-    :ni: Nikaragva
-    :nl: Nizozemska
+    :ac: 
+      - 
+        :value: "Otok Ascension"
+    :ad: 
+      - 
+        :value: Andora
+    :ae: 
+      - 
+        :value: "Ujedinjeni Arapski Emirati"
+    :af: 
+      - 
+        :value: Afganistan
+    :ag: 
+      - 
+        :value: "Antigua i Barbuda"
+    :ai: 
+      - 
+        :value: Angvila
+    :al: 
+      - 
+        :value: Albanija
+    :am: 
+      - 
+        :value: Armenija
+    :ao: 
+      - 
+        :value: Angola
+    :aq: 
+      - 
+        :value: Antarktika
+    :ar: 
+      - 
+        :value: Argentina
+    :as: 
+      - 
+        :value: "Američka Samoa"
+    :at: 
+      - 
+        :value: Austrija
+    :au: 
+      - 
+        :value: Australija
+    :aw: 
+      - 
+        :value: Aruba
+    :ax: 
+      - 
+        :value: "Otoci Aland"
+    :az: 
+      - 
+        :value: Azerbajdžan
+    :ba: 
+      - 
+        :value: "Bosna i Hercegovina"
+    :bb: 
+      - 
+        :value: Barbados
+    :bd: 
+      - 
+        :value: Bangladeš
+    :be: 
+      - 
+        :value: Belgija
+    :bf: 
+      - 
+        :value: "Burkina Faso"
+    :bg: 
+      - 
+        :value: Bugarska
+    :bh: 
+      - 
+        :value: Bahrein
+    :bi: 
+      - 
+        :value: Burundi
+    :bj: 
+      - 
+        :value: Benin
+    :bl: 
+      - 
+        :value: "Sveti Bartolomej"
+    :bm: 
+      - 
+        :value: Bermuda
+    :bn: 
+      - 
+        :value: Brunej
+    :bo: 
+      - 
+        :value: Bolivija
+    :bq: 
+      - 
+        :value: "Karipski otoci Nizozemske"
+    :br: 
+      - 
+        :value: Brazil
+    :bs: 
+      - 
+        :value: Bahami
+    :bt: 
+      - 
+        :value: Butan
+    :bv: 
+      - 
+        :value: "Otok Bouvet"
+    :bw: 
+      - 
+        :value: Bocvana
+    :by: 
+      - 
+        :value: Bjelorusija
+    :bz: 
+      - 
+        :value: Belize
+    :ca: 
+      - 
+        :value: Kanada
+    :cc: 
+      - 
+        :value: "Kokosovi (Keeling) Otoci"
+    :cd: 
+      - 
+        :value: "Kongo - Kinshasa"
+      - 
+        :alt: variant
+        :value: "Kongo (DRK)"
+    :cf: 
+      - 
+        :value: "Srednjoafrička Republika"
+    :cg: 
+      - 
+        :value: "Kongo - Brazzaville"
+      - 
+        :alt: variant
+        :value: "Kongo (RK)"
+    :ch: 
+      - 
+        :value: Švicarska
+    :ci: 
+      - 
+        :value: "Obala Bjelokosti"
+      - 
+        :alt: variant
+        :value: "Bjelokosna Obala"
+    :ck: 
+      - 
+        :value: "Cookovi Otoci"
+    :cl: 
+      - 
+        :value: Čile
+    :cm: 
+      - 
+        :value: Kamerun
+    :cn: 
+      - 
+        :value: Kina
+    :co: 
+      - 
+        :value: Kolumbija
+    :cp: 
+      - 
+        :value: "Otok Clipperton"
+    :cr: 
+      - 
+        :value: Kostarika
+    :cu: 
+      - 
+        :value: Kuba
+    :cv: 
+      - 
+        :value: "Zelenortska Republika"
+    :cw: 
+      - 
+        :value: Curaçao
+    :cx: 
+      - 
+        :value: "Božićni Otok"
+    :cy: 
+      - 
+        :value: Cipar
+    :cz: 
+      - 
+        :value: "Češka Republika"
+    :de: 
+      - 
+        :value: Njemačka
+    :dg: 
+      - 
+        :value: "Diego Garcia"
+    :dj: 
+      - 
+        :value: Džibuti
+    :dk: 
+      - 
+        :value: Danska
+    :dm: 
+      - 
+        :value: Dominika
+    :do: 
+      - 
+        :value: "Dominikanska Republika"
+    :dz: 
+      - 
+        :value: Alžir
+    :ea: 
+      - 
+        :value: "Ceuta i Melilla"
+    :ec: 
+      - 
+        :value: Ekvador
+    :ee: 
+      - 
+        :value: Estonija
+    :eg: 
+      - 
+        :value: Egipat
+    :eh: 
+      - 
+        :value: "Zapadna Sahara"
+    :er: 
+      - 
+        :value: Eritreja
+    :es: 
+      - 
+        :value: Španjolska
+    :et: 
+      - 
+        :value: Etiopija
+    :eu: 
+      - 
+        :value: "Europska unija"
+    :fi: 
+      - 
+        :value: Finska
+    :fj: 
+      - 
+        :value: Fidži
+    :fk: 
+      - 
+        :value: "Falklandski Otoci"
+      - 
+        :alt: variant
+        :value: "Falklandski Otoci (Malvini)"
+    :fm: 
+      - 
+        :value: Mikronezija
+    :fo: 
+      - 
+        :value: "Farski Otoci"
+    :fr: 
+      - 
+        :value: Francuska
+    :ga: 
+      - 
+        :value: Gabon
+    :gb: 
+      - 
+        :value: "Velika Britanija"
+      - 
+        :alt: short
+        :value: UK
+    :gd: 
+      - 
+        :value: Grenada
+    :ge: 
+      - 
+        :value: Gruzija
+    :gf: 
+      - 
+        :value: "Francuska Gvajana"
+    :gg: 
+      - 
+        :value: Guernsey
+    :gh: 
+      - 
+        :value: Gana
+    :gi: 
+      - 
+        :value: Gibraltar
+    :gl: 
+      - 
+        :value: Grenland
+    :gm: 
+      - 
+        :value: Gambija
+    :gn: 
+      - 
+        :value: Gvineja
+    :gp: 
+      - 
+        :value: Guadalupa
+    :gq: 
+      - 
+        :value: "Ekvatorska Gvineja"
+    :gr: 
+      - 
+        :value: Grčka
+    :gs: 
+      - 
+        :value: "Južna Georgija i Južni Sendvički Otoci"
+    :gt: 
+      - 
+        :value: Gvatemala
+    :gu: 
+      - 
+        :value: Guam
+    :gw: 
+      - 
+        :value: "Gvineja Bisau"
+    :gy: 
+      - 
+        :value: Gvajana
+    :hk: 
+      - 
+        :value: "Hong Kong PUP Kina"
+      - 
+        :alt: short
+        :value: "Hong Kong"
+    :hm: 
+      - 
+        :value: "Otoci Heard i McDonald"
+    :hn: 
+      - 
+        :value: Honduras
+    :hr: 
+      - 
+        :value: Hrvatska
+    :ht: 
+      - 
+        :value: Haiti
+    :hu: 
+      - 
+        :value: Mađarska
+    :ic: 
+      - 
+        :value: "Kanarski Otoci"
+    :id: 
+      - 
+        :value: Indonezija
+    :ie: 
+      - 
+        :value: Irska
+    :il: 
+      - 
+        :value: Izrael
+    :im: 
+      - 
+        :value: "Otok Man"
+    :in: 
+      - 
+        :value: Indija
+    :io: 
+      - 
+        :value: "Britanski Indijskooceanski Teritorij"
+    :iq: 
+      - 
+        :value: Irak
+    :ir: 
+      - 
+        :value: Iran
+    :is: 
+      - 
+        :value: Island
+    :it: 
+      - 
+        :value: Italija
+    :je: 
+      - 
+        :value: Jersey
+    :jm: 
+      - 
+        :value: Jamajka
+    :jo: 
+      - 
+        :value: Jordan
+    :jp: 
+      - 
+        :value: Japan
+    :ke: 
+      - 
+        :value: Kenija
+    :kg: 
+      - 
+        :value: Kirgistan
+    :kh: 
+      - 
+        :value: Kambodža
+    :ki: 
+      - 
+        :value: Kiribati
+    :km: 
+      - 
+        :value: Komori
+    :kn: 
+      - 
+        :value: "Sveti Kristofor i Nevis"
+    :kp: 
+      - 
+        :value: "Sjeverna Koreja"
+    :kr: 
+      - 
+        :value: "Južna Koreja"
+    :kw: 
+      - 
+        :value: Kuvajt
+    :ky: 
+      - 
+        :value: "Kajmanski Otoci"
+    :kz: 
+      - 
+        :value: Kazahstan
+    :la: 
+      - 
+        :value: Laos
+    :lb: 
+      - 
+        :value: Libanon
+    :lc: 
+      - 
+        :value: "Sveta Lucija"
+    :li: 
+      - 
+        :value: Lihtenštajn
+    :lk: 
+      - 
+        :value: "Šri Lanka"
+    :lr: 
+      - 
+        :value: Liberija
+    :ls: 
+      - 
+        :value: Lesoto
+    :lt: 
+      - 
+        :value: Litva
+    :lu: 
+      - 
+        :value: Luksemburg
+    :lv: 
+      - 
+        :value: Latvija
+    :ly: 
+      - 
+        :value: Libija
+    :ma: 
+      - 
+        :value: Maroko
+    :mc: 
+      - 
+        :value: Monako
+    :md: 
+      - 
+        :value: Moldavija
+    :me: 
+      - 
+        :value: "Crna Gora"
+    :mf: 
+      - 
+        :value: "Sveti Martin"
+    :mg: 
+      - 
+        :value: Madagaskar
+    :mh: 
+      - 
+        :value: "Maršalovi Otoci"
+    :mk: 
+      - 
+        :value: Makedonija
+      - 
+        :alt: variant
+        :value: "Makedonija (BJRM)"
+    :ml: 
+      - 
+        :value: Mali
+    :mm: 
+      - 
+        :value: "Mijanmar (Burma)"
+    :mn: 
+      - 
+        :value: Mongolija
+    :mo: 
+      - 
+        :value: "Makao PUP Kina"
+      - 
+        :alt: short
+        :value: Makao
+    :mp: 
+      - 
+        :value: "Sjeverni Marijanski Otoci"
+    :mq: 
+      - 
+        :value: Martinique
+    :mr: 
+      - 
+        :value: Mauritanija
+    :ms: 
+      - 
+        :value: Montserrat
+    :mt: 
+      - 
+        :value: Malta
+    :mu: 
+      - 
+        :value: Mauricijus
+    :mv: 
+      - 
+        :value: Maldivi
+    :mw: 
+      - 
+        :value: Malavi
+    :mx: 
+      - 
+        :value: Meksiko
+    :my: 
+      - 
+        :value: Malezija
+    :mz: 
+      - 
+        :value: Mozambik
+    :na: 
+      - 
+        :value: Namibija
+    :nc: 
+      - 
+        :value: "Nova Kaledonija"
+    :ne: 
+      - 
+        :value: Niger
+    :nf: 
+      - 
+        :value: "Otok Norfolk"
+    :ng: 
+      - 
+        :value: Nigerija
+    :ni: 
+      - 
+        :value: Nikaragva
+    :nl: 
+      - 
+        :value: Nizozemska
     ? !ruby/symbol "no"
-    : Norveška
-    :np: Nepal
-    :nr: Nauru
-    :nu: Niue
-    :nz: "Novi Zeland"
-    :om: Oman
-    :pa: Panama
-    :pe: Peru
-    :pf: "Francuska Polinezija"
-    :pg: "Papua Nova Gvineja"
-    :ph: Filipini
-    :pk: Pakistan
-    :pl: Poljska
-    :pm: "Sveti Petar i Mikelon"
-    :pn: "Otoci Pitcairn"
-    :pr: Portoriko
-    :ps: Palestina
-    :pt: Portugal
-    :pw: Palau
-    :py: Paragvaj
-    :qa: Katar
-    :qo: "Ostala oceanija"
-    :re: Reunion
-    :ro: Rumunjska
-    :rs: Srbija
-    :ru: Rusija
-    :rw: Ruanda
-    :sa: "Saudijska Arabija"
-    :sb: "Salomonski Otoci"
-    :sc: Sejšeli
-    :sd: Sudan
-    :se: Švedska
-    :sg: Singapur
-    :sh: "Sveta Helena"
-    :si: Slovenija
-    :sj: "Svalbard i Jan Mayen"
-    :sk: Slovačka
-    :sl: "Sijera Leone"
-    :sm: "San Marino"
-    :sn: Senegal
-    :so: Somalija
-    :sr: Surinam
-    :ss: "Južni Sudan"
-    :st: "Sveti Toma i Princip"
-    :sv: Salvador
-    :sx: "Sint Maarten"
-    :sy: Sirija
-    :sz: Svazi
-    :ta: "Tristan da Cunha"
-    :tc: "Otoci Turks i Caicos"
-    :td: Čad
-    :tf: "Francuske Južne i Antarktičke Zemlje"
-    :tg: Togo
-    :th: Tajland
-    :tj: Tadžikistan
-    :tk: Tokelau
-    :tl: "Istočni Timor"
-    :tm: Turkmenistan
-    :tn: Tunis
-    :to: Tonga
-    :tr: Turska
-    :tt: "Trinidad i Tobago"
-    :tv: Tuvalu
-    :tw: Tajvan
-    :tz: Tanzanija
-    :ua: Ukrajina
-    :ug: Uganda
-    :um: "Mali udaljeni otoci SAD-a"
-    :us: SAD
-    :uy: Urugvaj
-    :uz: Uzbekistan
-    :va: "Sveta Stolica"
-    :vc: "Sveti Vincent i Grenadini"
-    :ve: Venezuela
-    :vg: "Britanski Djevičanski Otoci"
-    :vi: "Američki Djevičanski Otoci"
-    :vn: Vijetnam
-    :vu: Vanuatu
-    :wf: "Wallis i Futuna"
-    :ws: Samoa
-    :xk: Kosovo
-    :ye: Jemen
-    :yt: Mayotte
-    :za: "Južnoafrička Republika"
-    :zm: Zambija
-    :zw: Zimbabve
-    :zz: "nepoznato područje"
+    : 
+      - 
+        :value: Norveška
+    :np: 
+      - 
+        :value: Nepal
+    :nr: 
+      - 
+        :value: Nauru
+    :nu: 
+      - 
+        :value: Niue
+    :nz: 
+      - 
+        :value: "Novi Zeland"
+    :om: 
+      - 
+        :value: Oman
+    :pa: 
+      - 
+        :value: Panama
+    :pe: 
+      - 
+        :value: Peru
+    :pf: 
+      - 
+        :value: "Francuska Polinezija"
+    :pg: 
+      - 
+        :value: "Papua Nova Gvineja"
+    :ph: 
+      - 
+        :value: Filipini
+    :pk: 
+      - 
+        :value: Pakistan
+    :pl: 
+      - 
+        :value: Poljska
+    :pm: 
+      - 
+        :value: "Sveti Petar i Mikelon"
+    :pn: 
+      - 
+        :value: "Otoci Pitcairn"
+    :pr: 
+      - 
+        :value: Portoriko
+    :ps: 
+      - 
+        :value: "Palestinsko Područje"
+      - 
+        :alt: short
+        :value: Palestina
+    :pt: 
+      - 
+        :value: Portugal
+    :pw: 
+      - 
+        :value: Palau
+    :py: 
+      - 
+        :value: Paragvaj
+    :qa: 
+      - 
+        :value: Katar
+    :qo: 
+      - 
+        :value: "Ostala oceanija"
+    :re: 
+      - 
+        :value: Reunion
+    :ro: 
+      - 
+        :value: Rumunjska
+    :rs: 
+      - 
+        :value: Srbija
+    :ru: 
+      - 
+        :value: Rusija
+    :rw: 
+      - 
+        :value: Ruanda
+    :sa: 
+      - 
+        :value: "Saudijska Arabija"
+    :sb: 
+      - 
+        :value: "Salomonski Otoci"
+    :sc: 
+      - 
+        :value: Sejšeli
+    :sd: 
+      - 
+        :value: Sudan
+    :se: 
+      - 
+        :value: Švedska
+    :sg: 
+      - 
+        :value: Singapur
+    :sh: 
+      - 
+        :value: "Sveta Helena"
+    :si: 
+      - 
+        :value: Slovenija
+    :sj: 
+      - 
+        :value: "Svalbard i Jan Mayen"
+    :sk: 
+      - 
+        :value: Slovačka
+    :sl: 
+      - 
+        :value: "Sijera Leone"
+    :sm: 
+      - 
+        :value: "San Marino"
+    :sn: 
+      - 
+        :value: Senegal
+    :so: 
+      - 
+        :value: Somalija
+    :sr: 
+      - 
+        :value: Surinam
+    :ss: 
+      - 
+        :value: "Južni Sudan"
+    :st: 
+      - 
+        :value: "Sveti Toma i Princip"
+    :sv: 
+      - 
+        :value: Salvador
+    :sx: 
+      - 
+        :value: "Sint Maarten"
+    :sy: 
+      - 
+        :value: Sirija
+    :sz: 
+      - 
+        :value: Svazi
+    :ta: 
+      - 
+        :value: "Tristan da Cunha"
+    :tc: 
+      - 
+        :value: "Otoci Turks i Caicos"
+    :td: 
+      - 
+        :value: Čad
+    :tf: 
+      - 
+        :value: "Francuske Južne i Antarktičke Zemlje"
+    :tg: 
+      - 
+        :value: Togo
+    :th: 
+      - 
+        :value: Tajland
+    :tj: 
+      - 
+        :value: Tadžikistan
+    :tk: 
+      - 
+        :value: Tokelau
+    :tl: 
+      - 
+        :value: "Istočni Timor"
+    :tm: 
+      - 
+        :value: Turkmenistan
+    :tn: 
+      - 
+        :value: Tunis
+    :to: 
+      - 
+        :value: Tonga
+    :tr: 
+      - 
+        :value: Turska
+    :tt: 
+      - 
+        :value: "Trinidad i Tobago"
+    :tv: 
+      - 
+        :value: Tuvalu
+    :tw: 
+      - 
+        :value: Tajvan
+    :tz: 
+      - 
+        :value: Tanzanija
+    :ua: 
+      - 
+        :value: Ukrajina
+    :ug: 
+      - 
+        :value: Uganda
+    :um: 
+      - 
+        :value: "Mali udaljeni otoci SAD-a"
+    :us: 
+      - 
+        :value: "Sjedinjene Američke Države"
+      - 
+        :alt: short
+        :value: SAD
+    :uy: 
+      - 
+        :value: Urugvaj
+    :uz: 
+      - 
+        :value: Uzbekistan
+    :va: 
+      - 
+        :value: "Sveta Stolica"
+    :vc: 
+      - 
+        :value: "Sveti Vincent i Grenadini"
+    :ve: 
+      - 
+        :value: Venezuela
+    :vg: 
+      - 
+        :value: "Britanski Djevičanski Otoci"
+    :vi: 
+      - 
+        :value: "Američki Djevičanski Otoci"
+    :vn: 
+      - 
+        :value: Vijetnam
+    :vu: 
+      - 
+        :value: Vanuatu
+    :wf: 
+      - 
+        :value: "Wallis i Futuna"
+    :ws: 
+      - 
+        :value: Samoa
+    :xk: 
+      - 
+        :value: Kosovo
+    :ye: 
+      - 
+        :value: Jemen
+    :yt: 
+      - 
+        :value: Mayotte
+    :za: 
+      - 
+        :value: "Južnoafrička Republika"
+    :zm: 
+      - 
+        :value: Zambija
+    :zw: 
+      - 
+        :value: Zimbabve
+    :zz: 
+      - 
+        :value: "nepoznato područje"

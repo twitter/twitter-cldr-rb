@@ -1,11 +1,18 @@
 --- 
 :fr-CA: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "UTC{0}"
-    :gmt_zero_format: UTC
-    :hour_format: "+HH:mm;−HH:mm"
-    :region_format: "{0} (heure normale)"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "UTC{0}"
+    :gmt_zero_format: 
+      :generic: UTC
+    :hour_format: 
+      :generic: "+HH:mm;−HH:mm"
+    :region_format: 
+      :daylight: "{0} (heure avancée)"
+      :generic: "heure : {0}"
+      :standard: "{0} (heure normale)"
   :metazones: 
     :Acre: 
       :long: 

@@ -9,7 +9,7 @@ module TwitterCldr
   module Resources
 
     # This class should be used with JRuby in 1.9 mode
-    class TransformTestImporter < Importer
+    class TransformTestsImporter < Importer
       # most of these were taken from wikipedia, lol
       TEXT_SAMPLES = {
         latin: ["From today's featured article"],  # @TODO test capital letters,

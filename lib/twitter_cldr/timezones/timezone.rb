@@ -81,7 +81,9 @@ module TwitterCldr
       end
 
       def country
-        TwitterCldr::Shared::Territories.from_territory_code(country_code)
+        @country ||= TwitterCldr::Shared::Territories.from_territory_code_for_locale(
+          country_code, locale
+        )
       end
 
       private
@@ -91,11 +93,11 @@ module TwitterCldr
       end
 
       def offset_minute
-        offset.abs % 3600
+        (offset.utc_offset.abs % 3600) / 60
       end
 
       def offset_hour
-        offset.abs / 3600
+        offset.utc_offset.abs / 3600
       end
 
       def offset

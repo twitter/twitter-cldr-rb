@@ -12,27 +12,28 @@ module TwitterCldr
     autoload :Timezone,            'twitter_cldr/timezones/timezone'
 
     class << self
-      def generic_non_location(tz_id, locale, options = {})
-        NonLocationTimezone.new(tz_id, locale, options)
+      def generic_non_location(tz_id, locale = TwitterCldr.locale)
+        NonLocationTimezone.new(tz_id, locale)
       end
 
-      def specific_non_location(tz_id, locale, options = {})
-        NonLocationTimezone.new(tz_id, locale, options)
+      def specific_non_location(tz_id, locale = TwitterCldr.locale)
+        NonLocationTimezone.new(tz_id, locale)
       end
 
-      def generic_partial_location(tz_id, locale, options = {})
+      def generic_partial_location(tz_id, locale = TwitterCldr.locale)
         # @TODO: what is this?
       end
 
-      def generic_location(tz_id, locale, options = {})
+      def generic_location(tz_id, locale = TwitterCldr.locale)
+        LocationTimezone.new(tz_id, locale)
       end
 
-      def gmt(tz_id, locale, options = {})
-        GmtTimezone.new(tz_id, locale, options)
+      def gmt(tz_id, locale = TwitterCldr.locale)
+        GmtTimezone.new(tz_id, locale)
       end
 
-      def iso_8601(tz_id, locale, options = {})
-        Iso8601Timezone.new(tz_id, locale, options)
+      def iso_8601(tz_id, locale = TwitterCldr.locale)
+        Iso8601Timezone.new(tz_id, locale)
       end
     end
   end

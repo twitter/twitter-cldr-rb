@@ -1,263 +1,811 @@
 --- 
 :ro: 
   :territories: 
-    :ac: "Insula Ascension"
-    :ad: Andorra
-    :ae: "Emiratele Arabe Unite"
-    :af: Afganistan
-    :ag: "Antigua și Barbuda"
-    :ai: Anguilla
-    :al: Albania
-    :am: Armenia
-    :ao: Angola
-    :aq: Antarctica
-    :ar: Argentina
-    :as: "Samoa Americană"
-    :at: Austria
-    :au: Australia
-    :aw: Aruba
-    :ax: "Insulele Åland"
-    :az: Azerbaidjan
-    :ba: "Bosnia și Herțegovina"
-    :bb: Barbados
-    :bd: Bangladesh
-    :be: Belgia
-    :bf: "Burkina Faso"
-    :bg: Bulgaria
-    :bh: Bahrain
-    :bi: Burundi
-    :bj: Benin
-    :bl: "Sfântul Bartolomeu"
-    :bm: Bermuda
-    :bn: Brunei
-    :bo: Bolivia
-    :bq: "Insulele Caraibe Olandeze"
-    :br: Brazilia
-    :bs: Bahamas
-    :bt: Bhutan
-    :bv: "Insula Bouvet"
-    :bw: Botswana
-    :by: Belarus
-    :bz: Belize
-    :ca: Canada
-    :cc: "Insulele Cocos (Keeling)"
-    :cd: "Congo (Republica Democrată Congo)"
-    :cf: "Republica Centrafricană"
-    :cg: "Congo (Republica)"
-    :ch: Elveția
-    :ci: "Coasta de Fildeș"
-    :ck: "Insulele Cook"
-    :cl: Chile
-    :cm: Camerun
-    :cn: China
-    :co: Columbia
-    :cp: "Insula Clipperton"
-    :cr: "Costa Rica"
-    :cu: Cuba
-    :cv: "Capul Verde"
-    :cw: Curaçao
-    :cx: "Insula Christmas"
-    :cy: Cipru
-    :cz: "Republica Cehă"
-    :de: Germania
-    :dg: "Diego Garcia"
-    :dj: Djibouti
-    :dk: Danemarca
-    :dm: Dominica
-    :do: "Republica Dominicană"
-    :dz: Algeria
-    :ea: "Ceuta și Melilla"
-    :ec: Ecuador
-    :ee: Estonia
-    :eg: Egipt
-    :eh: "Sahara Occidentală"
-    :er: Eritreea
-    :es: Spania
-    :et: Etiopia
-    :eu: "Uniunea Europeană"
-    :fi: Finlanda
-    :fj: Fiji
-    :fk: "Insulele Falkland (Insulele Malvine)"
-    :fm: Micronezia
-    :fo: "Insulele Feroe"
-    :fr: Franța
-    :ga: Gabon
-    :gb: "Regatul Unit"
-    :gd: Grenada
-    :ge: Georgia
-    :gf: "Guyana Franceză"
-    :gg: Guernsey
-    :gh: Ghana
-    :gi: Gibraltar
-    :gl: Groenlanda
-    :gm: Gambia
-    :gn: Guineea
-    :gp: Guadelupa
-    :gq: "Guineea Ecuatorială"
-    :gr: Grecia
-    :gs: "Georgia de Sud și Insulele Sandwich de Sud"
-    :gt: Guatemala
-    :gu: Guam
-    :gw: Guineea-Bissau
-    :gy: Guyana
-    :hk: "Hong Kong"
-    :hm: "Insula Heard și Insulele McDonald"
-    :hn: Honduras
-    :hr: Croația
-    :ht: Haiti
-    :hu: Ungaria
-    :ic: "Insulele Canare"
-    :id: Indonezia
-    :ie: Irlanda
-    :il: Israel
-    :im: "Insula Man"
-    :in: India
-    :io: "Teritoriul Britanic din Oceanul Indian"
-    :iq: Irak
-    :ir: Iran
-    :is: Islanda
-    :it: Italia
-    :je: Jersey
-    :jm: Jamaica
-    :jo: Iordania
-    :jp: Japonia
-    :ke: Kenya
-    :kg: Kârgâzstan
-    :kh: Cambodgia
-    :ki: Kiribati
-    :km: Comore
-    :kn: "Saint Kitts și Nevis"
-    :kp: "Coreea de Nord"
-    :kr: "Coreea de Sud"
-    :kw: Kuweit
-    :ky: "Insulele Cayman"
-    :kz: Kazahstan
-    :la: Laos
-    :lb: Liban
-    :lc: "Sfânta Lucia"
-    :li: Liechtenstein
-    :lk: "Sri Lanka"
-    :lr: Liberia
-    :ls: Lesotho
-    :lt: Lituania
-    :lu: Luxemburg
-    :lv: Letonia
-    :ly: Libia
-    :ma: Maroc
-    :mc: Monaco
-    :md: "Republica Moldova"
-    :me: Muntenegru
-    :mf: "Sfântul Martin"
-    :mg: Madagascar
-    :mh: "Insulele Marshall"
-    :mk: "Macedonia (FRIM)"
-    :ml: Mali
-    :mm: "Myanmar (Birmania)"
-    :mn: Mongolia
-    :mo: Macao
-    :mp: "Insulele Mariane de Nord"
-    :mq: Martinica
-    :mr: Mauritania
-    :ms: Montserrat
-    :mt: Malta
-    :mu: Mauritius
-    :mv: Maldive
-    :mw: Malawi
-    :mx: Mexic
-    :my: Malaysia
-    :mz: Mozambic
-    :na: Namibia
-    :nc: "Noua Caledonie"
-    :ne: Niger
-    :nf: "Insula Norfolk"
-    :ng: Nigeria
-    :ni: Nicaragua
-    :nl: "Țările de Jos"
+    :ac: 
+      - 
+        :value: "Insula Ascension"
+    :ad: 
+      - 
+        :value: Andorra
+    :ae: 
+      - 
+        :value: "Emiratele Arabe Unite"
+    :af: 
+      - 
+        :value: Afganistan
+    :ag: 
+      - 
+        :value: "Antigua și Barbuda"
+    :ai: 
+      - 
+        :value: Anguilla
+    :al: 
+      - 
+        :value: Albania
+    :am: 
+      - 
+        :value: Armenia
+    :ao: 
+      - 
+        :value: Angola
+    :aq: 
+      - 
+        :value: Antarctica
+    :ar: 
+      - 
+        :value: Argentina
+    :as: 
+      - 
+        :value: "Samoa Americană"
+    :at: 
+      - 
+        :value: Austria
+    :au: 
+      - 
+        :value: Australia
+    :aw: 
+      - 
+        :value: Aruba
+    :ax: 
+      - 
+        :value: "Insulele Åland"
+    :az: 
+      - 
+        :value: Azerbaidjan
+    :ba: 
+      - 
+        :value: "Bosnia și Herțegovina"
+    :bb: 
+      - 
+        :value: Barbados
+    :bd: 
+      - 
+        :value: Bangladesh
+    :be: 
+      - 
+        :value: Belgia
+    :bf: 
+      - 
+        :value: "Burkina Faso"
+    :bg: 
+      - 
+        :value: Bulgaria
+    :bh: 
+      - 
+        :value: Bahrain
+    :bi: 
+      - 
+        :value: Burundi
+    :bj: 
+      - 
+        :value: Benin
+    :bl: 
+      - 
+        :value: "Sfântul Bartolomeu"
+    :bm: 
+      - 
+        :value: Bermuda
+    :bn: 
+      - 
+        :value: Brunei
+    :bo: 
+      - 
+        :value: Bolivia
+    :bq: 
+      - 
+        :value: "Insulele Caraibe Olandeze"
+    :br: 
+      - 
+        :value: Brazilia
+    :bs: 
+      - 
+        :value: Bahamas
+    :bt: 
+      - 
+        :value: Bhutan
+    :bv: 
+      - 
+        :value: "Insula Bouvet"
+    :bw: 
+      - 
+        :value: Botswana
+    :by: 
+      - 
+        :value: Belarus
+    :bz: 
+      - 
+        :value: Belize
+    :ca: 
+      - 
+        :value: Canada
+    :cc: 
+      - 
+        :value: "Insulele Cocos (Keeling)"
+    :cd: 
+      - 
+        :value: "Congo - Kinshasa"
+      - 
+        :alt: variant
+        :value: "Congo (Republica Democrată Congo)"
+    :cf: 
+      - 
+        :value: "Republica Centrafricană"
+    :cg: 
+      - 
+        :value: "Congo - Brazzaville"
+      - 
+        :alt: variant
+        :value: "Congo (Republica)"
+    :ch: 
+      - 
+        :value: Elveția
+    :ci: 
+      - 
+        :value: "Côte d’Ivoire"
+      - 
+        :alt: variant
+        :value: "Coasta de Fildeș"
+    :ck: 
+      - 
+        :value: "Insulele Cook"
+    :cl: 
+      - 
+        :value: Chile
+    :cm: 
+      - 
+        :value: Camerun
+    :cn: 
+      - 
+        :value: China
+    :co: 
+      - 
+        :value: Columbia
+    :cp: 
+      - 
+        :value: "Insula Clipperton"
+    :cr: 
+      - 
+        :value: "Costa Rica"
+    :cu: 
+      - 
+        :value: Cuba
+    :cv: 
+      - 
+        :value: "Capul Verde"
+    :cw: 
+      - 
+        :value: Curaçao
+    :cx: 
+      - 
+        :value: "Insula Christmas"
+    :cy: 
+      - 
+        :value: Cipru
+    :cz: 
+      - 
+        :value: "Republica Cehă"
+    :de: 
+      - 
+        :value: Germania
+    :dg: 
+      - 
+        :value: "Diego Garcia"
+    :dj: 
+      - 
+        :value: Djibouti
+    :dk: 
+      - 
+        :value: Danemarca
+    :dm: 
+      - 
+        :value: Dominica
+    :do: 
+      - 
+        :value: "Republica Dominicană"
+    :dz: 
+      - 
+        :value: Algeria
+    :ea: 
+      - 
+        :value: "Ceuta și Melilla"
+    :ec: 
+      - 
+        :value: Ecuador
+    :ee: 
+      - 
+        :value: Estonia
+    :eg: 
+      - 
+        :value: Egipt
+    :eh: 
+      - 
+        :value: "Sahara Occidentală"
+    :er: 
+      - 
+        :value: Eritreea
+    :es: 
+      - 
+        :value: Spania
+    :et: 
+      - 
+        :value: Etiopia
+    :eu: 
+      - 
+        :value: "Uniunea Europeană"
+    :fi: 
+      - 
+        :value: Finlanda
+    :fj: 
+      - 
+        :value: Fiji
+    :fk: 
+      - 
+        :value: "Insulele Falkland"
+      - 
+        :alt: variant
+        :value: "Insulele Falkland (Insulele Malvine)"
+    :fm: 
+      - 
+        :value: Micronezia
+    :fo: 
+      - 
+        :value: "Insulele Feroe"
+    :fr: 
+      - 
+        :value: Franța
+    :ga: 
+      - 
+        :value: Gabon
+    :gb: 
+      - 
+        :value: "Regatul Unit"
+      - 
+        :alt: short
+        :value: "Regatul Unit"
+    :gd: 
+      - 
+        :value: Grenada
+    :ge: 
+      - 
+        :value: Georgia
+    :gf: 
+      - 
+        :value: "Guyana Franceză"
+    :gg: 
+      - 
+        :value: Guernsey
+    :gh: 
+      - 
+        :value: Ghana
+    :gi: 
+      - 
+        :value: Gibraltar
+    :gl: 
+      - 
+        :value: Groenlanda
+    :gm: 
+      - 
+        :value: Gambia
+    :gn: 
+      - 
+        :value: Guineea
+    :gp: 
+      - 
+        :value: Guadelupa
+    :gq: 
+      - 
+        :value: "Guineea Ecuatorială"
+    :gr: 
+      - 
+        :value: Grecia
+    :gs: 
+      - 
+        :value: "Georgia de Sud și Insulele Sandwich de Sud"
+    :gt: 
+      - 
+        :value: Guatemala
+    :gu: 
+      - 
+        :value: Guam
+    :gw: 
+      - 
+        :value: Guineea-Bissau
+    :gy: 
+      - 
+        :value: Guyana
+    :hk: 
+      - 
+        :value: "R.A.S. Hong Kong a Chinei"
+      - 
+        :alt: short
+        :value: "Hong Kong"
+    :hm: 
+      - 
+        :value: "Insula Heard și Insulele McDonald"
+    :hn: 
+      - 
+        :value: Honduras
+    :hr: 
+      - 
+        :value: Croația
+    :ht: 
+      - 
+        :value: Haiti
+    :hu: 
+      - 
+        :value: Ungaria
+    :ic: 
+      - 
+        :value: "Insulele Canare"
+    :id: 
+      - 
+        :value: Indonezia
+    :ie: 
+      - 
+        :value: Irlanda
+    :il: 
+      - 
+        :value: Israel
+    :im: 
+      - 
+        :value: "Insula Man"
+    :in: 
+      - 
+        :value: India
+    :io: 
+      - 
+        :value: "Teritoriul Britanic din Oceanul Indian"
+    :iq: 
+      - 
+        :value: Irak
+    :ir: 
+      - 
+        :value: Iran
+    :is: 
+      - 
+        :value: Islanda
+    :it: 
+      - 
+        :value: Italia
+    :je: 
+      - 
+        :value: Jersey
+    :jm: 
+      - 
+        :value: Jamaica
+    :jo: 
+      - 
+        :value: Iordania
+    :jp: 
+      - 
+        :value: Japonia
+    :ke: 
+      - 
+        :value: Kenya
+    :kg: 
+      - 
+        :value: Kârgâzstan
+    :kh: 
+      - 
+        :value: Cambodgia
+    :ki: 
+      - 
+        :value: Kiribati
+    :km: 
+      - 
+        :value: Comore
+    :kn: 
+      - 
+        :value: "Saint Kitts și Nevis"
+    :kp: 
+      - 
+        :value: "Coreea de Nord"
+    :kr: 
+      - 
+        :value: "Coreea de Sud"
+    :kw: 
+      - 
+        :value: Kuweit
+    :ky: 
+      - 
+        :value: "Insulele Cayman"
+    :kz: 
+      - 
+        :value: Kazahstan
+    :la: 
+      - 
+        :value: Laos
+    :lb: 
+      - 
+        :value: Liban
+    :lc: 
+      - 
+        :value: "Sfânta Lucia"
+    :li: 
+      - 
+        :value: Liechtenstein
+    :lk: 
+      - 
+        :value: "Sri Lanka"
+    :lr: 
+      - 
+        :value: Liberia
+    :ls: 
+      - 
+        :value: Lesotho
+    :lt: 
+      - 
+        :value: Lituania
+    :lu: 
+      - 
+        :value: Luxemburg
+    :lv: 
+      - 
+        :value: Letonia
+    :ly: 
+      - 
+        :value: Libia
+    :ma: 
+      - 
+        :value: Maroc
+    :mc: 
+      - 
+        :value: Monaco
+    :md: 
+      - 
+        :value: "Republica Moldova"
+    :me: 
+      - 
+        :value: Muntenegru
+    :mf: 
+      - 
+        :value: "Sfântul Martin"
+    :mg: 
+      - 
+        :value: Madagascar
+    :mh: 
+      - 
+        :value: "Insulele Marshall"
+    :mk: 
+      - 
+        :value: Macedonia
+      - 
+        :alt: variant
+        :value: "Macedonia (FRIM)"
+    :ml: 
+      - 
+        :value: Mali
+    :mm: 
+      - 
+        :value: "Myanmar (Birmania)"
+    :mn: 
+      - 
+        :value: Mongolia
+    :mo: 
+      - 
+        :value: "R.A.S. Macao a Chinei"
+      - 
+        :alt: short
+        :value: Macao
+    :mp: 
+      - 
+        :value: "Insulele Mariane de Nord"
+    :mq: 
+      - 
+        :value: Martinica
+    :mr: 
+      - 
+        :value: Mauritania
+    :ms: 
+      - 
+        :value: Montserrat
+    :mt: 
+      - 
+        :value: Malta
+    :mu: 
+      - 
+        :value: Mauritius
+    :mv: 
+      - 
+        :value: Maldive
+    :mw: 
+      - 
+        :value: Malawi
+    :mx: 
+      - 
+        :value: Mexic
+    :my: 
+      - 
+        :value: Malaysia
+    :mz: 
+      - 
+        :value: Mozambic
+    :na: 
+      - 
+        :value: Namibia
+    :nc: 
+      - 
+        :value: "Noua Caledonie"
+    :ne: 
+      - 
+        :value: Niger
+    :nf: 
+      - 
+        :value: "Insula Norfolk"
+    :ng: 
+      - 
+        :value: Nigeria
+    :ni: 
+      - 
+        :value: Nicaragua
+    :nl: 
+      - 
+        :value: "Țările de Jos"
     ? !ruby/symbol "no"
-    : Norvegia
-    :np: Nepal
-    :nr: Nauru
-    :nu: Niue
-    :nz: "Noua Zeelandă"
-    :om: Oman
-    :pa: Panama
-    :pe: Peru
-    :pf: "Polinezia Franceză"
-    :pg: "Papua-Noua Guinee"
-    :ph: Filipine
-    :pk: Pakistan
-    :pl: Polonia
-    :pm: "Saint-Pierre și Miquelon"
-    :pn: "Insulele Pitcairn"
-    :pr: "Puerto Rico"
-    :ps: Palestina
-    :pt: Portugalia
-    :pw: Palau
-    :py: Paraguay
-    :qa: Qatar
-    :qo: "Oceania Periferică"
-    :re: Réunion
-    :ro: România
-    :rs: Serbia
-    :ru: Rusia
-    :rw: Rwanda
-    :sa: "Arabia Saudită"
-    :sb: "Insulele Solomon"
-    :sc: Seychelles
-    :sd: Sudan
-    :se: Suedia
-    :sg: Singapore
-    :sh: "Sfânta Elena"
-    :si: Slovenia
-    :sj: "Svalbard și Jan Mayen"
-    :sk: Slovacia
-    :sl: "Sierra Leone"
-    :sm: "San Marino"
-    :sn: Senegal
-    :so: Somalia
-    :sr: Suriname
-    :ss: "Sudanul de Sud"
-    :st: "Sao Tome și Principe"
-    :sv: "El Salvador"
-    :sx: Sint-Maarten
-    :sy: Siria
-    :sz: Swaziland
-    :ta: "Tristan da Cunha"
-    :tc: "Insulele Turks și Caicos"
-    :td: Ciad
-    :tf: "Teritoriile Australe și Antarctice Franceze"
-    :tg: Togo
-    :th: Thailanda
-    :tj: Tadjikistan
-    :tk: Tokelau
-    :tl: "Timorul de Est"
-    :tm: Turkmenistan
-    :tn: Tunisia
-    :to: Tonga
-    :tr: Turcia
-    :tt: "Trinidad și Tobago"
-    :tv: Tuvalu
-    :tw: Taiwan
-    :tz: Tanzania
-    :ua: Ucraina
-    :ug: Uganda
-    :um: "Insulele Îndepărtate ale S.U.A."
-    :us: S.U.A.
-    :uy: Uruguay
-    :uz: Uzbekistan
-    :va: "Statul Cetății Vaticanului"
-    :vc: "Saint Vincent și Grenadinele"
-    :ve: Venezuela
-    :vg: "Insulele Virgine Britanice"
-    :vi: "Insulele Virgine S.U.A."
-    :vn: Vietnam
-    :vu: Vanuatu
-    :wf: "Wallis și Futuna"
-    :ws: Samoa
-    :xk: Kosovo
-    :ye: Yemen
-    :yt: Mayotte
-    :za: "Africa de Sud"
-    :zm: Zambia
-    :zw: Zimbabwe
-    :zz: "Regiune necunoscută"
+    : 
+      - 
+        :value: Norvegia
+    :np: 
+      - 
+        :value: Nepal
+    :nr: 
+      - 
+        :value: Nauru
+    :nu: 
+      - 
+        :value: Niue
+    :nz: 
+      - 
+        :value: "Noua Zeelandă"
+    :om: 
+      - 
+        :value: Oman
+    :pa: 
+      - 
+        :value: Panama
+    :pe: 
+      - 
+        :value: Peru
+    :pf: 
+      - 
+        :value: "Polinezia Franceză"
+    :pg: 
+      - 
+        :value: "Papua-Noua Guinee"
+    :ph: 
+      - 
+        :value: Filipine
+    :pk: 
+      - 
+        :value: Pakistan
+    :pl: 
+      - 
+        :value: Polonia
+    :pm: 
+      - 
+        :value: "Saint-Pierre și Miquelon"
+    :pn: 
+      - 
+        :value: "Insulele Pitcairn"
+    :pr: 
+      - 
+        :value: "Puerto Rico"
+    :ps: 
+      - 
+        :value: "Teritoriile Palestiniene"
+      - 
+        :alt: short
+        :value: Palestina
+    :pt: 
+      - 
+        :value: Portugalia
+    :pw: 
+      - 
+        :value: Palau
+    :py: 
+      - 
+        :value: Paraguay
+    :qa: 
+      - 
+        :value: Qatar
+    :qo: 
+      - 
+        :value: "Oceania Periferică"
+    :re: 
+      - 
+        :value: Réunion
+    :ro: 
+      - 
+        :value: România
+    :rs: 
+      - 
+        :value: Serbia
+    :ru: 
+      - 
+        :value: Rusia
+    :rw: 
+      - 
+        :value: Rwanda
+    :sa: 
+      - 
+        :value: "Arabia Saudită"
+    :sb: 
+      - 
+        :value: "Insulele Solomon"
+    :sc: 
+      - 
+        :value: Seychelles
+    :sd: 
+      - 
+        :value: Sudan
+    :se: 
+      - 
+        :value: Suedia
+    :sg: 
+      - 
+        :value: Singapore
+    :sh: 
+      - 
+        :value: "Sfânta Elena"
+    :si: 
+      - 
+        :value: Slovenia
+    :sj: 
+      - 
+        :value: "Svalbard și Jan Mayen"
+    :sk: 
+      - 
+        :value: Slovacia
+    :sl: 
+      - 
+        :value: "Sierra Leone"
+    :sm: 
+      - 
+        :value: "San Marino"
+    :sn: 
+      - 
+        :value: Senegal
+    :so: 
+      - 
+        :value: Somalia
+    :sr: 
+      - 
+        :value: Suriname
+    :ss: 
+      - 
+        :value: "Sudanul de Sud"
+    :st: 
+      - 
+        :value: "Sao Tome și Principe"
+    :sv: 
+      - 
+        :value: "El Salvador"
+    :sx: 
+      - 
+        :value: Sint-Maarten
+    :sy: 
+      - 
+        :value: Siria
+    :sz: 
+      - 
+        :value: Swaziland
+    :ta: 
+      - 
+        :value: "Tristan da Cunha"
+    :tc: 
+      - 
+        :value: "Insulele Turks și Caicos"
+    :td: 
+      - 
+        :value: Ciad
+    :tf: 
+      - 
+        :value: "Teritoriile Australe și Antarctice Franceze"
+    :tg: 
+      - 
+        :value: Togo
+    :th: 
+      - 
+        :value: Thailanda
+    :tj: 
+      - 
+        :value: Tadjikistan
+    :tk: 
+      - 
+        :value: Tokelau
+    :tl: 
+      - 
+        :value: "Timorul de Est"
+    :tm: 
+      - 
+        :value: Turkmenistan
+    :tn: 
+      - 
+        :value: Tunisia
+    :to: 
+      - 
+        :value: Tonga
+    :tr: 
+      - 
+        :value: Turcia
+    :tt: 
+      - 
+        :value: "Trinidad și Tobago"
+    :tv: 
+      - 
+        :value: Tuvalu
+    :tw: 
+      - 
+        :value: Taiwan
+    :tz: 
+      - 
+        :value: Tanzania
+    :ua: 
+      - 
+        :value: Ucraina
+    :ug: 
+      - 
+        :value: Uganda
+    :um: 
+      - 
+        :value: "Insulele Îndepărtate ale S.U.A."
+    :us: 
+      - 
+        :value: "Statele Unite ale Americii"
+      - 
+        :alt: short
+        :value: S.U.A.
+    :uy: 
+      - 
+        :value: Uruguay
+    :uz: 
+      - 
+        :value: Uzbekistan
+    :va: 
+      - 
+        :value: "Statul Cetății Vaticanului"
+    :vc: 
+      - 
+        :value: "Saint Vincent și Grenadinele"
+    :ve: 
+      - 
+        :value: Venezuela
+    :vg: 
+      - 
+        :value: "Insulele Virgine Britanice"
+    :vi: 
+      - 
+        :value: "Insulele Virgine S.U.A."
+    :vn: 
+      - 
+        :value: Vietnam
+    :vu: 
+      - 
+        :value: Vanuatu
+    :wf: 
+      - 
+        :value: "Wallis și Futuna"
+    :ws: 
+      - 
+        :value: Samoa
+    :xk: 
+      - 
+        :value: Kosovo
+    :ye: 
+      - 
+        :value: Yemen
+    :yt: 
+      - 
+        :value: Mayotte
+    :za: 
+      - 
+        :value: "Africa de Sud"
+    :zm: 
+      - 
+        :value: Zambia
+    :zw: 
+      - 
+        :value: Zimbabwe
+    :zz: 
+      - 
+        :value: "Regiune necunoscută"

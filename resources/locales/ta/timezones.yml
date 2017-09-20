@@ -1,11 +1,18 @@
 --- 
 :ta: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "{0} நிலையான நேரம்"
+    :fallback_format: 
+      :generic: "{1} ({0})"
+    :gmt_format: 
+      :generic: "GMT{0}"
+    :gmt_zero_format: 
+      :generic: GMT
+    :hour_format: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_format: 
+      :daylight: "{0} பகலொளி நேரம்"
+      :generic: "{0} நேரம்"
+      :standard: "{0} நிலையான நேரம்"
   :metazones: 
     :Acre: 
       :long: 

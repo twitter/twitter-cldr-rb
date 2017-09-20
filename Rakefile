@@ -128,9 +128,14 @@ namespace :update do
     TwitterCldr::Resources::RbnfTestImporter.new.import
   end
 
+  desc 'Import (generate) timezone tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :timezone_tests do
+    TwitterCldr::Resources::TimezoneTestsImporter.new.import
+  end
+
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :transform_tests do
-    TwitterCldr::Resources::TransformTestImporter.new.import
+    TwitterCldr::Resources::TransformTestsImporter.new.import
   end
 
   desc 'Import segment exceptions'

@@ -78,7 +78,7 @@ module TwitterCldr
           if region == territory
             # Otherwise, use the metazone format + city in the fallbackFormat.
             fallback_format
-              .sub('{0}', city || inferred_city)
+              .sub('{0}', city)
               .sub('{1}', metazone_fmt)
           else
             # Otherwise, if the zone is the preferred zone for its country but not
@@ -89,10 +89,6 @@ module TwitterCldr
               .sub('{1}', metazone_fmt)
           end
         end
-      end
-
-      def inferred_city
-        tz_id.split('/').last.gsub('_', ' ')
       end
 
       def timezone_exists?(type, format)

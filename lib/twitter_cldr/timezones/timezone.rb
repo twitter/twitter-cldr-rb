@@ -9,8 +9,10 @@ module TwitterCldr
   module Timezones
     class Timezone
       class << self
+        private :new
+
         def from_id(tz_id, locale = TwitterCldr.locale)
-          new(tz_id, locale)
+          new(canonicalize_tz_id(tz_id), locale)
         end
 
         def from_territory(territory, locale = TwitterCldr.locale, metazone = '001')
@@ -18,7 +20,7 @@ module TwitterCldr
             zone[:territory] == territory && zone[:other] == metazone
           end
 
-          new(zone[:type], locale) if zone
+          from_id(zone[:type], locale) if zone
         end
 
         def from_metazone(locale = TwitterCldr.locale, metazone = '001')
@@ -26,13 +28,31 @@ module TwitterCldr
             zone[:other] == metazone
           end
 
-          new(zone[:type], locale) if zone
+          from_id(zone[:type], locale) if zone
         end
 
         private
 
+        def zone_country_code_map
+          @zone_country_code_map ||= TZInfo::Country.all_codes.each_with_object({}) do |country_code, ret|
+            TZInfo::Country.get(country_code).zone_identifiers.each do |zone_id|
+              # should only be one country code per zone (empirically true although
+              # maybe not theoretically true)
+              ret[zone_id] = country_code
+            end
+          end
+        end
+
+        def canonicalize_tz_id(tz_id)
+          aliases_resource.fetch(tz_id.to_sym, tz_id)
+        end
+
         def resource
           @resource ||= TwitterCldr.get_resource(:shared, :metazones)
+        end
+
+        def aliases_resource
+          @aliases_resource ||= TwitterCldr.get_resource(:shared, :timezone_aliases)
         end
       end
 
@@ -73,10 +93,10 @@ module TwitterCldr
       end
 
       def country_code
-        # no direct way to get country from zone id, so we have to do this
-        # (fortunately it's pretty fast)
-        TZInfo::Country.all_codes.find do |code|
-          TZInfo::Country.get(code).zone_identifiers.include?(tz_id)
+        zone_country_code_map[tz_id] || aliases.each do |alias_tz_id|
+          if code = zone_country_code_map[alias_tz_id]
+            break code
+          end
         end
       end
 
@@ -86,7 +106,19 @@ module TwitterCldr
         )
       end
 
+      def aliases
+        self.class.send(:aliases_resource).each_with_object([]) do |(alias_tz_id, canonical_tz_id), ret|
+          if canonical_tz_id == tz_id
+            ret << alias_tz_id.to_s
+          end
+        end
+      end
+
       private
+
+      def zone_country_code_map
+        self.class.send(:zone_country_code_map)
+      end
 
       def tzinfo
         @tzinfo ||= TZInfo::Timezone.get(tz_id)

@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.4.3 (Feburary 2, 2018)
+* Fix warning caused by using the 'u' regex modifier, which is no longer supported.
+
 ### 4.4.2 (August 1, 2017)
 * Fix list formatter.
 

@@ -106,13 +106,12 @@ module TwitterCldr
         file_path = absolute_resource_path(path)
 
         if File.file?(file_path)
-          File.read(file_path)
+          File.open(file_path, "r:UTF-8", &:read)
         else
           raise ResourceLoadError,
             "Resource '#{path}' not found."
         end
       end
-
     end
 
   end

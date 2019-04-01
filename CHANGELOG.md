@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 4.4.4 (April 1, 2019)
+* Explicitly set encoding in resource loader to fix encoding bug on Windows.
+
 ### 4.4.3 (Feburary 2, 2018)
 * Fix warning caused by using the 'u' regex modifier, which is no longer supported.
 

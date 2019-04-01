@@ -178,7 +178,7 @@ describe Loader do
 
   def stub_resource_file(resource_path, content)
     file_path = File.join(TwitterCldr::RESOURCES_DIR, resource_path)
-    allow(File).to receive(:read).with(file_path).and_return(content)
+    allow(File).to receive(:open).with(file_path, "r:UTF-8").and_return(content)
     allow(File).to receive(:file?).with(file_path).and_return(true)
   end
 

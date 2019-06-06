@@ -14,7 +14,7 @@ describe 'Unicode Collation Algorithm' do
   SHORT_COLLATION_TEST_PATH = File.join(File.dirname(__FILE__), 'CollationTest_CLDR_NON_IGNORABLE_Short.txt')
   FULL_COLLATION_TEST_PATH  = File.join(File.dirname(__FILE__), 'CollationTest_CLDR_NON_IGNORABLE.txt')
 
-  FULL_COLLATION_TEST_URL = 'http://unicode.org/Public/UCA/latest/CollationAuxiliary.zip'
+  FULL_COLLATION_TEST_URL = 'https://unicode.org/Public/UCA/latest/CollationAuxiliary.zip'
 
   it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE_Short.txt' do
     run_test(SHORT_COLLATION_TEST_PATH)

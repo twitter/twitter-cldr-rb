@@ -12,7 +12,7 @@ module TwitterCldr
 
     class PostalCodesImporter < Importer
 
-      BASE_URL = 'http://i18napis.appspot.com/address/data/'
+      BASE_URL = 'https://i18napis.appspot.com/address/data/'
 
       output_path 'shared'
       ruby_engine :mri

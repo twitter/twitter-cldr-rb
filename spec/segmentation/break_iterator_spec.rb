@@ -30,10 +30,10 @@ describe BreakIterator do
     end
 
     it "does not split periods in the midst of other letters, eg. in a URL" do
-      str = "Visit us. Go to http://translate.twitter.com."
+      str = "Visit us. Go to https://translate.twitter.com."
       expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "Visit us. ",
-        "Go to http://translate.twitter.com."
+        "Go to https://translate.twitter.com."
       ])
     end
 

@@ -15,7 +15,7 @@ module TwitterCldr
       # first on the classpath wins, which can be surprising if you're not
       # expecting it. Oh, and it can break all the tests.
       class IcuRequirement
-        ICU_URL = "http://download.icu-project.org/files/icu4j/%{version}/icu4j-%{underscored_version}.jar"
+        ICU_URL = "https://download.icu-project.org/files/icu4j/%{version}/icu4j-%{underscored_version}.jar"
 
         # first entry is JCL itself, other two are JCL dependencies
         JCL_JARS = [

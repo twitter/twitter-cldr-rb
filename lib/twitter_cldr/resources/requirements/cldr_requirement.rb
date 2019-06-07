@@ -12,7 +12,7 @@ module TwitterCldr
     module Requirements
 
       class CldrRequirement
-        CLDR_URL = "http://unicode.org/Public/cldr/%{version}/core.zip"
+        CLDR_URL = "https://unicode.org/Public/cldr/%{version}/core.zip"
 
         attr_reader :version
 

@@ -13,8 +13,8 @@ module TwitterCldr
       BCP_47_FILE, ISO_639_FILE = %w[bcp-47.txt iso-639.txt]
 
       INPUT_DATA = {
-        BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
-        ISO_639_FILE => 'http://www-01.sil.org/iso639-3/iso-639-3_20120614.tab'
+        BCP_47_FILE  => 'https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
+        ISO_639_FILE => 'https://www-01.sil.org/iso639-3/iso-639-3_20120614.tab'
       }
 
       KEYS_TO_STANDARDS = {

@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 4.4.5 (August 11, 2019)
+* Fix infinite recursion bug affecting certain Russian RBNF rule sets (and
+  possibly other locales).
+
 ### 4.4.4 (April 1, 2019)
 * Explicitly set encoding in resource loader to fix encoding bug on Windows.
 

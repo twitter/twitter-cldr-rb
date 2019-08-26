@@ -115,6 +115,11 @@ module TwitterCldr
           token.value
         end
 
+        # if a decimal token occurs here, it's actually plaintext
+        def decimal(number, rule, token)
+          token.value
+        end
+
         def semicolon(number, rule, token)
           ""
         end

@@ -94,7 +94,7 @@ module TwitterCldr
 
               STANDARDS_TO_KEYS.each do |standard_key, data_key|
                 value = data[data_key]
-                h[standard_key] = value if value && !value.empty?
+                h[standard_key] = value.to_sym if value && !value.empty?
               end
             end
           end

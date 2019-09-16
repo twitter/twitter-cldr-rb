@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::DataReaders
-
-describe TimespanDataReader do
+describe TwitterCldr::DataReaders::TimespanDataReader do
   it 'sets default options and identifies plural rule' do
-    data_reader = TimespanDataReader.new(:sv, 2)
+    data_reader = described_class.new(:sv, 2)
     expect(data_reader.locale).to eq(:sv)
     expect(data_reader.type).to eq(:default)
     expect(data_reader.direction).to eq(:ago)
@@ -68,7 +66,7 @@ describe TimespanDataReader do
       dir_hash.each_pair do |type, type_hash|
         type_hash.each_pair do |unit, expected_value|
           it "finds the correct pattern with direction '#{direction}', type '#{type}', and unit '#{unit}'" do
-            data_reader = TimespanDataReader.new(:sv, 2, {
+            data_reader = described_class.new(:sv, 2, {
               direction: direction, type: type, unit: unit
             })
 

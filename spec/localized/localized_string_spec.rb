@@ -6,9 +6,7 @@
 require 'spec_helper'
 require 'eprun'
 
-include TwitterCldr::Localized
-
-describe LocalizedString do
+describe TwitterCldr::Localized::LocalizedString do
   describe '#%' do
     context 'when argument is not a Hash' do
       it 'performs regular formatting of values' do
@@ -132,7 +130,7 @@ describe LocalizedString do
     let(:localized_string) { string.localize }
 
     it 'returns a LocalizedString' do
-      expect(localized_string.normalize).to be_an_instance_of(LocalizedString)
+      expect(localized_string.normalize).to be_an_instance_of(described_class)
     end
 
     it 'it uses NFD by default' do
@@ -153,7 +151,7 @@ describe LocalizedString do
   describe "#casefold" do
     it 'returns a LocalizedString' do
       str = "Weißrussland".localize.casefold
-      expect(str).to be_an_instance_of(LocalizedString)
+      expect(str).to be_an_instance_of(described_class)
       expect(str.to_s).to eq("weissrussland")
     end
 
@@ -199,7 +197,7 @@ describe LocalizedString do
       str = "Quick. Brown. Fox.".localize
 
       str.each_sentence do |sentence|
-        expect(sentence).to be_a(LocalizedString)
+        expect(sentence).to be_a(described_class)
       end
 
       expect(str.each_sentence.to_a.map(&:to_s)).to eq([

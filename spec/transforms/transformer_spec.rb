@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Transforms
-
-describe Transformer do
+describe TwitterCldr::Transforms::Transformer do
   describe '.exists?' do
     it 'returns true if the transform exists' do
       expect(described_class.exists?('Cyrillic-Latin')).to eq(true)
@@ -18,7 +16,7 @@ describe Transformer do
     end
 
     it 'accepts a TransformId' do
-      transform_id = TransformId.find('Cyrillic', 'Latin')
+      transform_id = TwitterCldr::Transforms::TransformId.find('Cyrillic', 'Latin')
       expect(described_class.exists?(transform_id)).to eq(true)
     end
   end
@@ -28,19 +26,19 @@ describe Transformer do
       rule_set = described_class.get('Cyrillic-Latin')
       expect(rule_set.transform_id.source).to eq('Cyrillic')
       expect(rule_set.transform_id.target).to eq('Latin')
-      expect(rule_set).to be_a(RuleSet)
+      expect(rule_set).to be_a(TwitterCldr::Transforms::RuleSet)
     end
 
     it "retrieves the reverse rule set if the forward one doesn't exist" do
       rule_set = described_class.get('Latin-Cyrillic')
       expect(rule_set.transform_id.source).to eq('Cyrillic')
       expect(rule_set.transform_id.target).to eq('Latin')
-      expect(rule_set).to be_a(RuleSet)
+      expect(rule_set).to be_a(TwitterCldr::Transforms::RuleSet)
     end
 
     it 'raises an error if no rule set can be found' do
       expect { described_class.get('Foo-Bar') }.to(
-        raise_error(InvalidTransformIdError)
+        raise_error(TwitterCldr::Transforms::InvalidTransformIdError)
       )
     end
   end
@@ -55,7 +53,7 @@ describe Transformer do
   end
 
   context 'with a uni-directional transformer' do
-    let(:transform_id) { TransformId.find('Latin', 'Kannada') }
+    let(:transform_id) { TwitterCldr::Transforms::TransformId.find('Latin', 'Kannada') }
     let(:transformer) { described_class.send(:load, transform_id) }
 
     describe '#bidirectional?' do
@@ -69,21 +67,21 @@ describe Transformer do
         rule_set = transformer.forward_rule_set
         expect(rule_set.transform_id.source).to eq('Latin')
         expect(rule_set.transform_id.target).to eq('Kannada')
-        expect(rule_set).to be_a(RuleSet)
+        expect(rule_set).to be_a(TwitterCldr::Transforms::RuleSet)
       end
     end
 
     describe '#backward_rule_set' do
       it 'raises an error' do
         expect { transformer.backward_rule_set }.to(
-          raise_error(NotInvertibleError)
+          raise_error(TwitterCldr::Transforms::NotInvertibleError)
         )
       end
     end
   end
 
   context 'with a bidirectional transformer' do
-    let(:transform_id) { TransformId.find('Cyrillic', 'Latin') }
+    let(:transform_id) { TwitterCldr::Transforms::TransformId.find('Cyrillic', 'Latin') }
     let(:transformer) { described_class.send(:load, transform_id) }
 
     describe '#bidirectional?' do
@@ -97,7 +95,7 @@ describe Transformer do
         rule_set = transformer.forward_rule_set
         expect(rule_set.transform_id.source).to eq('Cyrillic')
         expect(rule_set.transform_id.target).to eq('Latin')
-        expect(rule_set).to be_a(RuleSet)
+        expect(rule_set).to be_a(TwitterCldr::Transforms::RuleSet)
       end
     end
 
@@ -106,7 +104,7 @@ describe Transformer do
         rule_set = transformer.backward_rule_set
         expect(rule_set.transform_id.source).to eq('Cyrillic')
         expect(rule_set.transform_id.target).to eq('Latin')
-        expect(rule_set).to be_a(RuleSet)
+        expect(rule_set).to be_a(TwitterCldr::Transforms::RuleSet)
       end
     end
   end

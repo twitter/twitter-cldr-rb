@@ -4,10 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
-
 require 'open-uri'
-
-include TwitterCldr::Collation
 
 describe 'Unicode Collation Algorithm' do
 
@@ -26,7 +23,7 @@ describe 'Unicode Collation Algorithm' do
   end
 
   def run_test(file_path)
-    collator = Collator.new
+    collator = TwitterCldr::Collation::Collator.new
 
     previous_sort_key = previous_code_points = previous_str_code_points = nil
 

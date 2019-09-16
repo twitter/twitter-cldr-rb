@@ -5,8 +5,6 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Collation
-
 describe 'Unicode collation tailoring' do
 
   # Test data is taken from http://unicode.org/cldr/trac/browser/tags/release-2-0-1/test/
@@ -17,7 +15,7 @@ describe 'Unicode collation tailoring' do
       tailor_file = File.join(File.dirname(__FILE__), 'tailoring_tests', "#{locale}.txt")
 
       if File.exist?(tailor_file)
-        collator = Collator.new(locale)
+        collator = TwitterCldr::Collation::Collator.new(locale)
 
         print "#{locale}\t-\t"
 

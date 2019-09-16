@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe Hyphenator do
+describe TwitterCldr::Shared::Hyphenator do
   describe '.get' do
     it 'retrieves the hyphenator for the given locale' do
       hyphenator = described_class.get('en-US')
@@ -28,7 +26,7 @@ describe Hyphenator do
 
     it "raises an error if the locale isn't supported" do
       expect { described_class.get('ja') }.to(
-        raise_error(Hyphenator::UnsupportedLocaleError)
+        raise_error(described_class::UnsupportedLocaleError)
       )
     end
   end

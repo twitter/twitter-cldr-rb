@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe UnicodeRegex do
+describe TwitterCldr::Shared::UnicodeRegex do
   def compile(str, symbol_table = nil)
-    UnicodeRegex.compile(str, "", symbol_table)
+    described_class.compile(str, "", symbol_table)
   end
 
   let(:symbol_table) do
@@ -25,7 +23,7 @@ describe UnicodeRegex do
 
     describe "#compile" do
       it "should return a UnicodeRegex, parsed and ready to go" do
-        expect(regex).to be_a(UnicodeRegex)
+        expect(regex).to be_a(described_class)
       end
     end
 
@@ -62,12 +60,12 @@ describe UnicodeRegex do
       end
 
       it "supports modifiers" do
-        regex = UnicodeRegex.compile('abc', 'm').to_regexp
+        regex = described_class.compile('abc', 'm').to_regexp
         expect(regex.options).to eq(Regexp::MULTILINE)
       end
 
       it "supports multiple modifiers at once" do
-        regex = UnicodeRegex.compile('abc', 'mi').to_regexp
+        regex = described_class.compile('abc', 'mi').to_regexp
         expect(regex.options).to eq(
           Regexp::MULTILINE | Regexp::IGNORECASE
         )

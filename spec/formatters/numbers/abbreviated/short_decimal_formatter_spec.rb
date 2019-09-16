@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe ShortDecimalFormatter do
+describe TwitterCldr::Formatters::ShortDecimalFormatter do
   let(:data_reader) do
     TwitterCldr::DataReaders::NumberDataReader.new(locale, type: :short_decimal)
   end

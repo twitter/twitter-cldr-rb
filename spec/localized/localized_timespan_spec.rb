@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedTimespan do
+describe TwitterCldr::Localized::LocalizedTimespan do
   it "should format a numer of seconds in different units" do
-    timespan = LocalizedTimespan.new(-172800, locale: :de)
+    timespan = described_class.new(-172800, locale: :de)
     expect(timespan.to_s(unit: :hour)).to match_normalized("vor 48 Stunden")
     expect(timespan.to_s(unit: :day)).to match_normalized("vor 2 Tagen")
   end
@@ -35,7 +33,7 @@ describe LocalizedTimespan do
     }
 
     expected.each_pair do |seconds, text|
-      timespan = LocalizedTimespan.new(seconds, locale: :de)
+      timespan = described_class.new(seconds, locale: :de)
       expect(timespan.to_s(options)).to match_normalized(text)
     end
   end
@@ -58,14 +56,14 @@ describe LocalizedTimespan do
     }
 
     expected.each_pair do |seconds, text|
-      timespan = LocalizedTimespan.new(seconds, locale: :de)
+      timespan = described_class.new(seconds, locale: :de)
       expect(timespan.to_s).to match_normalized(text)
     end
   end
 
   describe "ago" do
     it "works for a variety of units" do
-      timespan = LocalizedTimespan.new(-3273932, locale: :de)
+      timespan = described_class.new(-3273932, locale: :de)
       expected = {
         year: 'vor 0 Jahren',
         month: 'vor 1 Monat',
@@ -84,7 +82,7 @@ describe LocalizedTimespan do
 
   describe "#until" do
     it "works for a variety of units" do
-      timespan = LocalizedTimespan.new(3273932, locale: :de)
+      timespan = described_class.new(3273932, locale: :de)
       expected = {
         year: 'in 0 Jahren',
         month: 'in 1 Monat',

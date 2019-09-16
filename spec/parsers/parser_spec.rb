@@ -5,20 +5,17 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Parsers
-include TwitterCldr::Tokenizers
-
-class FakeParser < Parser
+class FakeParser < TwitterCldr::Parsers::Parser
   def do_parse(options); end
 end
 
-describe Parser do
+describe TwitterCldr::Parsers::Parser do
   let(:parser) { FakeParser.new }
   let(:tokens) do
     [
-      Token.new(type: :a, value: "a"),
-      Token.new(type: :b, value: "b"),
-      Token.new(type: :c, value: "c")
+      TwitterCldr::Tokenizers::Token.new(type: :a, value: "a"),
+      TwitterCldr::Tokenizers::Token.new(type: :b, value: "b"),
+      TwitterCldr::Tokenizers::Token.new(type: :c, value: "c")
     ]
   end
 
@@ -48,7 +45,7 @@ describe Parser do
 
     it "should raise an error after encountering an unexpected token" do
       parser.parse(tokens)
-      expect { parser.send(:next_token, :z) }.to raise_error(UnexpectedTokenError)
+      expect { parser.send(:next_token, :z) }.to raise_error(TwitterCldr::Parsers::UnexpectedTokenError)
     end
   end
 

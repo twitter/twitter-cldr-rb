@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::DataReaders
-
-describe AdditionalDateFormatSelector do
+describe TwitterCldr::DataReaders::AdditionalDateFormatSelector do
   let(:selector) do
-    AdditionalDateFormatSelector.new(
+    described_class.new(
       TwitterCldr.get_locale_resource(:en, :calendars)[:en][:calendars][:gregorian][:additional_formats]
     )
   end

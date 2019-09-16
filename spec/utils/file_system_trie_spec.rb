@@ -9,14 +9,12 @@ require 'fileutils'
 require 'securerandom'
 require 'tmpdir'
 
-include TwitterCldr::Utils
-
-describe FileSystemTrie do
+describe TwitterCldr::Utils::FileSystemTrie do
   let(:tmp_dir) do
     File.join(Dir.tmpdir, SecureRandom.hex)
   end
 
-  let(:trie) { FileSystemTrie.new(tmp_dir) }
+  let(:trie) { described_class.new(tmp_dir) }
 
   before(:each) do
     FileUtils.mkdir_p(tmp_dir)
@@ -42,7 +40,7 @@ describe FileSystemTrie do
       trie.add(%w(foo bar baz), 'boo')
       path = Pathname(tmp_dir)
         .join('foo/bar/baz')
-        .join(FileSystemTrie::VALUE_FILE)
+        .join(described_class::VALUE_FILE)
 
       expect(path).to exist
     end
@@ -91,7 +89,7 @@ describe FileSystemTrie do
 
     it 'retrieves the trie node at the given path' do
       node = trie.get_node(key)
-      expect(node).to be_a(FileSystemTrie::Node)
+      expect(node).to be_a(described_class::Node)
       expect(node.value).to eq('boo')
     end
   end

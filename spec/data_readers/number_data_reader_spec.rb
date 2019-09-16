@@ -5,10 +5,8 @@
 
 require 'spec_helper'
 
-include TwitterCldr::DataReaders
-
-describe NumberDataReader do
-  let(:data_reader) { NumberDataReader.new(:en) }
+describe TwitterCldr::DataReaders::NumberDataReader do
+  let(:data_reader) { described_class.new(:en) }
 
   describe "#get_key_for" do
     it "builds a power-of-ten key based on the number of digits in the input" do

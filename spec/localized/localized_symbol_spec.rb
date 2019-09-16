@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedSymbol do
+describe TwitterCldr::Localized::LocalizedSymbol do
 
   describe "#as_language_code" do
     it "calculates the correct localized language from the symbol" do

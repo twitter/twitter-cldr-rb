@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe DecimalFormatter do
+describe TwitterCldr::Formatters::DecimalFormatter do
   let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:nl, type: :decimal) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }

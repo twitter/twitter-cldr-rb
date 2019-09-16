@@ -5,24 +5,21 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters::Numbers
-include TwitterCldr::Tokenizers
-
-describe Fraction do
+describe TwitterCldr::Formatters::Numbers::Fraction do
   describe "#apply" do
     it "test: formats a fraction" do
-      token = Token.new(value: '###.##', type: :pattern)
-      expect(Fraction.new(token).apply('45')).to eq('.45')
+      token = TwitterCldr::Tokenizers::Token.new(value: '###.##', type: :pattern)
+      expect(described_class.new(token).apply('45')).to eq('.45')
     end
 
     it "test: pads zero digits on the right side" do
-      token = Token.new(value: '###.0000#', type: :pattern)
-      expect(Fraction.new(token).apply('45')).to eq('.45000')
+      token = TwitterCldr::Tokenizers::Token.new(value: '###.0000#', type: :pattern)
+      expect(described_class.new(token).apply('45')).to eq('.45000')
     end
 
     it "test: :precision option overrides format precision" do
-      token = Token.new(value: '###.##', type: :pattern)
-      expect(Fraction.new(token).apply('78901', precision: 5)).to eq('.78901')
+      token = TwitterCldr::Tokenizers::Token.new(value: '###.##', type: :pattern)
+      expect(described_class.new(token).apply('78901', precision: 5)).to eq('.78901')
     end
   end
 end

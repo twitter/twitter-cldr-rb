@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedDateTime do
+describe TwitterCldr::Localized::LocalizedDateTime do
 
   let(:date_time) { DateTime.new(1987, 9, 20, 22, 5) }
 
@@ -73,7 +71,7 @@ describe LocalizedDateTime do
 
   describe "#to_timespan" do
     it "should return a localized timespan" do
-      expect(date_time.localize.to_timespan).to be_a(LocalizedTimespan)
+      expect(date_time.localize.to_timespan).to be_a(TwitterCldr::Localized::LocalizedTimespan)
     end
   end
 

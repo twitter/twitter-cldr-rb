@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedHash do
+describe TwitterCldr::Localized::LocalizedHash do
   describe "#to_yaml" do
     it "should be able to successfully roundtrip the hash" do
       hash = { foo: "bar", "string_key" => Object.new }

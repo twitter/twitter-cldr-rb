@@ -192,11 +192,15 @@ module TwitterCldr
           table[:name][name] = { name: name }.merge(codes)
         end
 
-        table[:name].values.each do |data|
-          KEYS_TO_STANDARDS.each do |key, standard|
-            table[standard][data[key].to_sym] = data if data[key]
+        table[:name].each_pair do |name, standards|
+          STANDARDS_TO_KEYS.each do |standard, _|
+            if standards[standard]
+              table[standard.to_sym][name.to_sym] = standards[standard]
+            end
           end
         end
+
+        binding.pry
 
         table.each do |key, codes|
           table[key] = Hash[codes.sort]

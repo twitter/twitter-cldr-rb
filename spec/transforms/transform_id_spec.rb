@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Transforms
-
-describe TransformId do
+describe TwitterCldr::Transforms::TransformId do
   describe '.find' do
     it 'finds a transformer when given two locales' do
       id = described_class.find('cs', 'ja')
@@ -56,7 +54,7 @@ describe TransformId do
 
   describe '.parse' do
     it 'normalizes and parses the given id string' do
-      id = TransformId.parse('Bengali-Telugu')
+      id = described_class.parse('Bengali-Telugu')
       expect(id.source).to eq('Bengali')
       expect(id.target).to eq('Telugu')
       expect(id.variant).to be_nil
@@ -64,7 +62,7 @@ describe TransformId do
     end
 
     it 'works with variants' do
-      id = TransformId.parse('Bulgarian-Latin/BGN')
+      id = described_class.parse('Bulgarian-Latin/BGN')
       expect(id.source).to eq('Bulgarian')
       expect(id.target).to eq('Latin')
       expect(id.variant).to eq('BGN')
@@ -73,7 +71,7 @@ describe TransformId do
 
     it 'raises an error if no transformer can be found' do
       expect { described_class.parse('foo-bar') }.to(
-        raise_error(InvalidTransformIdError)
+        raise_error(TwitterCldr::Transforms::InvalidTransformIdError)
       )
     end
   end
@@ -94,26 +92,26 @@ describe TransformId do
 
   describe '#has_variant?' do
     it 'returns true if the transform id contains a variant' do
-      id = TransformId.new('source', 'target', 'variant')
+      id = described_class.new('source', 'target', 'variant')
       expect(id.variant).to eq('variant')
       expect(id).to have_variant
     end
 
     it 'returns false if the transform id does not contain a variant' do
-      id = TransformId.new('source', 'target')
+      id = described_class.new('source', 'target')
       expect(id).to_not have_variant
     end
   end
 
   describe '#reverse' do
     it 'reverses the transform id' do
-      id = TransformId.new('source', 'target').reverse
+      id = described_class.new('source', 'target').reverse
       expect(id.source).to eq('target')
       expect(id.target).to eq('source')
     end
 
     it 'keeps the variant' do
-      id = TransformId.new('source', 'target', 'variant').reverse
+      id = described_class.new('source', 'target', 'variant').reverse
       expect(id.source).to eq('target')
       expect(id.target).to eq('source')
       expect(id.variant).to eq('variant')
@@ -122,24 +120,24 @@ describe TransformId do
 
   describe '#file_name' do
     it 'joins variants with dashes' do
-      id = TransformId.new('source', 'target', 'variant')
+      id = described_class.new('source', 'target', 'variant')
       expect(id.file_name).to eq('source-target-variant')
     end
 
     it 'excludes the variant if none is given' do
-      id = TransformId.new('source', 'target')
+      id = described_class.new('source', 'target')
       expect(id.file_name).to eq('source-target')
     end
   end
 
   describe '#to_s' do
     it 'stringifies the source and target' do
-      id = TransformId.new('source', 'target')
+      id = described_class.new('source', 'target')
       expect(id.to_s).to eq('source-target')
     end
 
     it 'stringifies the source, target, and variant' do
-      id = TransformId.new('source', 'target', 'variant')
+      id = described_class.new('source', 'target', 'variant')
       expect(id.to_s).to eq('source-target/variant')
     end
   end

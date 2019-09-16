@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Tokenizers
-
-describe DateTokenizer do
+describe TwitterCldr::Tokenizers::DateTokenizer do
   describe "#tokens" do
     it "should tokenize plaintext segments correctly (i.e. Spanish)" do
       data_reader = TwitterCldr::DataReaders::DateDataReader.new(:es, type: :full)

@@ -13,7 +13,7 @@ MARKERS = [
   # need markers for time?
 ]
 
-def process(str, rule_set) {
+def process(str, rule_set)
   # markers depend on what rule set we are using
   buf = str.unpack("U*")
 
@@ -40,7 +40,7 @@ def process(str, rule_set) {
     # state, situation
     #     state         none       opt.          req.
     #     -----         ----       ----          ----
-    # none to right     none       opt.          req.  
+    # none to right     none       opt.          req.
     # opt. to right     none   clear, none  clear right, req.
     # req. to right     none   clear, none       req.
 
@@ -73,7 +73,7 @@ def process(str, rule_set) {
 
       # actually much simpler, but leave this verbose for now so it's easier to follow
       case s * 3 + ns
-        when 0: # none, none
+        when 0 # none, none
           s = ns # redundant
           n = -1
         when 1 # none, opt.
@@ -103,7 +103,7 @@ def process(str, rule_set) {
           buf.delete((nn - 1)...(nn + 1)) # delete current optional ling
           s = 0
           n = -1
-        case 8 # req., req.
+        when 8 # req., req.
           s = ns
           n = -1
         else

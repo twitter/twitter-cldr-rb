@@ -5,12 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Collation
-
-describe TrieBuilder do
+describe TwitterCldr::Collation::TrieBuilder do
 
   describe '.load_default_trie' do
-    let(:trie)  { TrieBuilder.load_default_trie }
+    let(:trie)  { described_class.load_default_trie }
 
     before(:each) { mock_default_table }
 
@@ -115,16 +113,16 @@ END
 
   describe '.load_tailored_trie' do
     let(:locale)        { :xxx }
-    let(:fallback)      { TrieBuilder.load_default_trie }
-    let(:tailored_trie) { TrieBuilder.load_tailored_trie(locale, fallback) }
+    let(:fallback)      { TwitterCldr::Collation::TrieBuilder.load_default_trie }
+    let(:tailored_trie) { TwitterCldr::Collation::TrieBuilder.load_tailored_trie(locale, fallback) }
 
     before :each do
       mock_default_table
-      expect(TrieBuilder).to receive(:tailoring_data).with(locale).and_return(tailoring_data)
+      expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(tailoring_data)
     end
 
     it 'returns a TrieWithFallback' do
-      expect(tailored_trie).to be_instance_of(TrieWithFallback)
+      expect(tailored_trie).to be_instance_of(TwitterCldr::Collation::TrieWithFallback)
     end
 
     it 'tailors elements in the trie' do
@@ -187,14 +185,14 @@ END
 
     it 'loads tailoring data' do
       expect(TwitterCldr).to receive(:get_resource).with(:collation, :tailoring, locale).and_return(tailoring_data)
-      expect(TrieBuilder.tailoring_data(locale)).to eq(tailoring_data)
+      expect(TwitterCldr::Collation::TrieBuilder.tailoring_data(locale)).to eq(tailoring_data)
     end
   end
 
   def mock_default_table
     expect(File).to(
       receive(:open)
-        .with(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
+        .with(TwitterCldr::Collation::TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
         .and_yield(fractional_uca_short_stub)
     )
   end

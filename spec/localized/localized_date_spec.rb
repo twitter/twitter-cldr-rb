@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedDate do
+describe TwitterCldr::Localized::LocalizedDate do
 
   let(:date_time) { DateTime.now }
 
@@ -107,7 +105,7 @@ describe LocalizedDate do
       date_time = DateTime.new(1987, 9, 20, 0, 0, 0)
       time = Time.local(2000, 5, 12, 22, 5)
       datetime = date_time.localize.to_date.to_datetime(time)
-      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime).to be_a(TwitterCldr::Localized::LocalizedDateTime)
       expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 22:05:00")
     end
 
@@ -115,7 +113,7 @@ describe LocalizedDate do
       date_time = DateTime.new(1987, 9, 20, 0, 0, 0)
       time = Time.local(2000, 5, 12, 22, 5).localize
       datetime = date_time.localize.to_date.to_datetime(time)
-      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime).to be_a(TwitterCldr::Localized::LocalizedDateTime)
       expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 22:05:00")
     end
   end
@@ -124,7 +122,7 @@ describe LocalizedDate do
     it "should work with a date instance" do
       date = Date.new(1987, 9, 20)
       datetime = date.localize.to_time
-      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime).to be_a(TwitterCldr::Localized::LocalizedDateTime)
       expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 00:00:00")
     end
   end
@@ -141,7 +139,7 @@ describe LocalizedDate do
   describe "formatters" do
     it "don't raise errors for any locale" do
       TwitterCldr.supported_locales.each do |locale|
-        (LocalizedDate.types - [:additional]).each do |type|
+        (described_class.types - [:additional]).each do |type|
           expect { DateTime.now.localize(locale).to_date.send(:"to_#{type}_s") }.not_to raise_error
         end
       end

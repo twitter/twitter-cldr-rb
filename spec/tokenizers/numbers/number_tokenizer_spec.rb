@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Tokenizers
-
-describe NumberTokenizer do
+describe TwitterCldr::Tokenizers::NumberTokenizer do
   describe "#tokenize" do
     let(:number) { 10 }
 

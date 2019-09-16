@@ -5,12 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters::Plurals
-
-describe Rules do
+describe TwitterCldr::Formatters::Plurals::Rules do
   describe "#get_resource" do
     it "calls eval on the hash that gets returned, lambdas and all" do
-      result = Rules.send(:get_resource, :ru)
+      result = described_class.send(:get_resource, :ru)
 
       [:cardinal, :ordinal].each do |type|
         expect(result).to include(type)
@@ -25,9 +23,9 @@ describe Rules do
 
   describe "#rule_for" do
     it "returns :one for English 1, :other for everything else" do
-      expect(Rules.rule_for(1, :en)).to eq(:one)
+      expect(described_class.rule_for(1, :en)).to eq(:one)
       [5, 9, 10, 20, 60, 99, 100, 103, 141].each do |num|
-        expect(Rules.rule_for(num, :en)).to eq(:other)
+        expect(described_class.rule_for(num, :en)).to eq(:other)
       end
     end
 
@@ -40,49 +38,49 @@ describe Rules do
       }
 
       rules.each do |rule, examples|
-        examples.each { |n| expect(Rules.rule_for(n, :ru)).to eq(rule) }
+        examples.each { |n| expect(described_class.rule_for(n, :ru)).to eq(rule) }
       end
     end
 
     it "returns :other if there's an error" do
-      allow(Rules).to receive(:get_resource).and_return(lambda { raise "Jelly beans" })
-      expect(Rules.rule_for(1, :en)).to eq(:other)
-      expect(Rules.rule_for(1, :ru)).to eq(:other)
+      allow(described_class).to receive(:get_resource).and_return(lambda { raise "Jelly beans" })
+      expect(described_class.rule_for(1, :en)).to eq(:other)
+      expect(described_class.rule_for(1, :ru)).to eq(:other)
     end
 
     it "supports ordinal plurals" do
-      expect(Rules.rule_for(1, :en, :ordinal)).to eq(:one)
-      expect(Rules.rule_for(2, :en, :ordinal)).to eq(:two)
-      expect(Rules.rule_for(3, :en, :ordinal)).to eq(:few)
-      expect(Rules.rule_for(4, :en, :ordinal)).to eq(:other)
-      expect(Rules.rule_for(11, :en, :ordinal)).to eq(:other)
-      expect(Rules.rule_for(13, :en, :ordinal)).to eq(:other)
-      expect(Rules.rule_for(22, :en, :ordinal)).to eq(:two)
+      expect(described_class.rule_for(1, :en, :ordinal)).to eq(:one)
+      expect(described_class.rule_for(2, :en, :ordinal)).to eq(:two)
+      expect(described_class.rule_for(3, :en, :ordinal)).to eq(:few)
+      expect(described_class.rule_for(4, :en, :ordinal)).to eq(:other)
+      expect(described_class.rule_for(11, :en, :ordinal)).to eq(:other)
+      expect(described_class.rule_for(13, :en, :ordinal)).to eq(:other)
+      expect(described_class.rule_for(22, :en, :ordinal)).to eq(:two)
     end
   end
 
   describe "#all_for" do
     it "returns a list of all applicable rules for the given locale" do
-      expect(Rules.all_for(:en)).to match_array([:one, :other])
-      expect(Rules.all_for(:ru)).to match_array([:one, :few, :many, :other])
+      expect(described_class.all_for(:en)).to match_array([:one, :other])
+      expect(described_class.all_for(:ru)).to match_array([:one, :few, :many, :other])
     end
 
     it "returns data for zh-Hant" do
-      expect(Rules.all_for(:'zh-Hant')).to match_array([:other])
+      expect(described_class.all_for(:'zh-Hant')).to match_array([:other])
     end
 
     it "returns ordinal plurals if asked" do
-      expect(Rules.all_for(:en, :ordinal)).to match_array([
+      expect(described_class.all_for(:en, :ordinal)).to match_array([
         :one, :two, :few, :other
       ])
     end
 
     it "works with upercase region code" do
-      expect(TwitterCldr::Formatters::Plurals::Rules.all_for('en-gb')).to match_array([:one, :other])
+      expect(described_class.all_for('en-gb')).to match_array([:one, :other])
     end
 
     it "works with lowercase region code" do
-      expect(TwitterCldr::Formatters::Plurals::Rules.all_for('en-gb')).to match_array([:one, :other])
+      expect(described_class.all_for('en-gb')).to match_array([:one, :other])
     end
   end
 
@@ -92,11 +90,11 @@ describe Rules do
     end
 
     it "gets rules for the default locale (usually supplied by FastGettext)" do
-      expect(Rules.all).to match_array([:one, :few, :many, :other])
+      expect(described_class.all).to match_array([:one, :few, :many, :other])
     end
 
     it "returns ordinal rules for the default locale if asked" do
-      expect(Rules.all(:ordinal)).to match_array([:other])
+      expect(described_class.all(:ordinal)).to match_array([:other])
     end
   end
 end

@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe CurrencyFormatter do
+describe TwitterCldr::Formatters::CurrencyFormatter do
   describe "#format" do
     let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:msa, type: :currency) }
     let(:tokenizer) { data_reader.tokenizer }

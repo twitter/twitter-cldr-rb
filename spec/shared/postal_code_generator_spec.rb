@@ -5,35 +5,34 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-include TwitterCldr::Utils
+describe TwitterCldr::Shared::PostalCodeGenerator do
+  let(:regexp_ast) { TwitterCldr::Utils::RegexpAst }
 
-describe PostalCodeGenerator do
   let(:generator) do
-    PostalCodeGenerator.new(
-      RegexpAst::Root.new([
-        RegexpAst::Digit.new([], RegexpAst::Quantifier.new(3, 3)),
-        RegexpAst::Literal.new([], nil, '- '),
-        RegexpAst::Word.new([], RegexpAst::Quantifier.new(3, 3))
+    described_class.new(
+      regexp_ast::Root.new([
+        regexp_ast::Digit.new([], regexp_ast::Quantifier.new(3, 3)),
+        regexp_ast::Literal.new([], nil, '- '),
+        regexp_ast::Word.new([], regexp_ast::Quantifier.new(3, 3))
       ], nil)
     )
   end
 
   let(:blank_generator) do
-    PostalCodeGenerator.new(
-      RegexpAst::Root.new([
-        RegexpAst::Alternation.new([
-          RegexpAst::Literal.new([], nil, ''),
-          RegexpAst::Word.new([], nil)
+    described_class.new(
+      regexp_ast::Root.new([
+        regexp_ast::Alternation.new([
+          regexp_ast::Literal.new([], nil, ''),
+          regexp_ast::Word.new([], nil)
         ], nil)
       ], nil)
     )
   end
 
   let(:limited_generator) do
-    PostalCodeGenerator.new(
-      RegexpAst::Root.new([
-        RegexpAst::CharacterSet.new([], nil, ['A-C'], false),
+    described_class.new(
+      regexp_ast::Root.new([
+        regexp_ast::CharacterSet.new([], nil, ['A-C'], false),
       ], nil)
     )
   end

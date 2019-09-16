@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe PhoneCodes do
+describe TwitterCldr::Shared::PhoneCodes do
   describe "#territories" do
-    let(:territories) { PhoneCodes.territories }
+    let(:territories) { described_class.territories }
 
     it 'returns an array' do
       expect(territories).to be_instance_of(Array)
@@ -29,23 +27,23 @@ describe PhoneCodes do
     let(:territory) { :br }
 
     before(:each) do
-      expect(PhoneCodes).to receive(:resource).and_return({ territory => code })
+      expect(described_class).to receive(:resource).and_return({ territory => code })
     end
 
     it 'returns phone code for a given territory' do
-      expect(PhoneCodes.code_for_territory(territory)).to eq(code)
+      expect(described_class.code_for_territory(territory)).to eq(code)
     end
 
     it 'returns nil if the regex is missing' do
-      expect(PhoneCodes.code_for_territory(:foo)).to be_nil
+      expect(described_class.code_for_territory(:foo)).to be_nil
     end
 
     it 'accepts strings' do
-      expect(PhoneCodes.code_for_territory(territory.to_s)).to eq(code)
+      expect(described_class.code_for_territory(territory.to_s)).to eq(code)
     end
 
     it 'accepts upper-case strings' do
-      expect(PhoneCodes.code_for_territory(territory.to_s.upcase)).to eq(code)
+      expect(described_class.code_for_territory(territory.to_s.upcase)).to eq(code)
     end
   end
 end

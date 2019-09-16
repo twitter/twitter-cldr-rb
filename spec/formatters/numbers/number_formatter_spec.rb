@@ -5,23 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe NumberFormatter do
+describe TwitterCldr::Formatters::NumberFormatter do
   let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:sv, type: :decimal) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }
-
-  # before(:each) do
-  #   @tokenizer = TwitterCldr::Tokenizers::NumberTokenizer.new(:locale => :sv, :type => :decimal)
-  # 
-  #   any_instance_of(DecimalFormatter) do |formatter|
-  #     mock(formatter).tokenizer { @tokenizer }
-  #   end
-  # 
-  #   @formatter = DecimalFormatter.new(:locale => :sv)
-  #   @formatter.instance_variable_set("@tokenizer", @tokenizer)
-  # end
 
   describe "#precision_from" do
     it "should return the correct precision" do

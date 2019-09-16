@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedTime do
+describe TwitterCldr::Localized::LocalizedTime do
   let(:time) { Time.now }
 
   describe "stringify" do
@@ -33,7 +31,7 @@ describe LocalizedTime do
 
   describe "#ago" do
     it "should return a localized timespan" do
-      expect(time.localize(:de).ago).to be_a(LocalizedTimespan)
+      expect(time.localize(:de).ago).to be_a(TwitterCldr::Localized::LocalizedTimespan)
     end
   end
 
@@ -42,7 +40,7 @@ describe LocalizedTime do
       date = Date.new(1987, 9, 20)
       time = Time.local(2000, 5, 12, 22, 5)
       datetime = time.localize.to_datetime(date)
-      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime).to be_a(TwitterCldr::Localized::LocalizedDateTime)
       expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 22:05:00")
     end
 
@@ -50,7 +48,7 @@ describe LocalizedTime do
       date = DateTime.new(1987, 9, 20, 0, 0, 0).localize.to_date
       time = Time.local(2000, 5, 12, 22, 5)
       datetime = time.localize.to_datetime(date)
-      expect(datetime).to be_a(LocalizedDateTime)
+      expect(datetime).to be_a(TwitterCldr::Localized::LocalizedDateTime)
       expect(datetime.base_obj.strftime("%Y-%m-%d %H:%M:%S")).to eq("1987-09-20 22:05:00")
     end
   end

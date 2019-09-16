@@ -5,18 +5,15 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-include TwitterCldr::Tokenizers
-
-describe DateTimeFormatter do
+describe TwitterCldr::Formatters::DateTimeFormatter do
   before(:each) do
     data_reader = TwitterCldr::DataReaders::DateTimeDataReader.new(:de)
-    @formatter = DateTimeFormatter.new(data_reader)
+    @formatter = described_class.new(data_reader)
   end
 
   describe 'plaintext' do
     it "removes single quotes around plaintext tokens" do
-      tokens = [Token.new(value: "'at'", type: 'plaintext')]
+      tokens = [TwitterCldr::Tokenizers::Token.new(value: "'at'", type: 'plaintext')]
       date = Date.new(2010, 1, 10)
       expect(@formatter.format(tokens, date, {})).to eq("at")
     end
@@ -405,7 +402,7 @@ describe DateTimeFormatter do
   describe "#era" do
     before(:each) do
       data_reader = TwitterCldr::DataReaders::DateTimeDataReader.new(:en)
-      @formatter = DateTimeFormatter.new(data_reader)
+      @formatter = described_class.new(data_reader)
     end
 
     it "test: pattern G" do

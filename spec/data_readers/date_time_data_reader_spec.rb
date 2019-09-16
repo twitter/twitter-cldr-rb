@@ -5,15 +5,13 @@
 
 require 'spec_helper'
 
-include TwitterCldr::DataReaders
-
-describe DateTimeDataReader do
-  let(:data_reader) { DateTimeDataReader.new(:es) }
+describe TwitterCldr::DataReaders::DateTimeDataReader do
+  let(:data_reader) { described_class.new(:es) }
 
   describe "#initialize" do
     it "chooses gregorian as the calendar type if none is specified" do
-      expect(DateTimeDataReader.new(:es).calendar_type).to eq(:gregorian)
-      expect(DateTimeDataReader.new(:es, calendar_type: :julian).calendar_type).to eq(:julian)
+      expect(described_class.new(:es).calendar_type).to eq(:gregorian)
+      expect(described_class.new(:es, calendar_type: :julian).calendar_type).to eq(:julian)
     end
   end
 

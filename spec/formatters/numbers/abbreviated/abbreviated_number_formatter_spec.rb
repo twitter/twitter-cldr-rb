@@ -5,11 +5,8 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-include TwitterCldr::Tokenizers
-
-describe AbbreviatedNumberFormatter do
-  let(:formatter) { AbbreviatedNumberFormatter.new(locale: :en) }
+describe TwitterCldr::Formatters::AbbreviatedNumberFormatter do
+  let(:formatter) { described_class.new(locale: :en) }
   let(:number) { 123456 }
 
   describe "#truncate_number" do

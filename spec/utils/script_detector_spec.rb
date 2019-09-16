@@ -5,13 +5,11 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Utils
-
-describe ScriptDetector do
+describe TwitterCldr::Utils::ScriptDetector do
   describe '#detect_scripts' do
     it 'should return an instance of ScriptDetectionResult' do
-      result = ScriptDetector.detect_scripts('foo bar')
-      expect(result).to be_a(ScriptDetectionResult)
+      result = described_class.detect_scripts('foo bar')
+      expect(result).to be_a(TwitterCldr::Utils::ScriptDetectionResult)
     end
 
     samples = {
@@ -36,12 +34,12 @@ describe ScriptDetector do
 
     samples.each_pair do |script_name, text|
       it "detects #{script_name} text" do
-        expect(ScriptDetector.detect_scripts(text).best_guess).to eq(script_name)
+        expect(described_class.detect_scripts(text).best_guess).to eq(script_name)
       end
     end
 
     it 'provides scores for all the different characters in the text' do
-      result = ScriptDetector.detect_scripts('hello 1234 world')
+      result = described_class.detect_scripts('hello 1234 world')
       expect(result.scores.keys.sort).to eq(%w(Common Latin))
       expect(result.scores['Latin']).to eq(0.625)
       expect(result.scores['Common']).to eq(0.375)
@@ -50,17 +48,17 @@ describe ScriptDetector do
   end
 end
 
-describe ScriptDetectionResult do
+describe TwitterCldr::Utils::ScriptDetectionResult do
   describe '#best_guess' do
     it 'returns nil if no scripts were detected' do
-      result = ScriptDetectionResult.new({})
+      result = described_class.new({})
       expect(result.best_guess).to be_nil
     end
   end
 
   describe '#scripts' do
     it 'returns a list of all the scripts present in the string' do
-      result = ScriptDetectionResult.new('Cyrillic' => 1, 'Greek' => 2)
+      result = described_class.new('Cyrillic' => 1, 'Greek' => 2)
       expect(result.scripts.sort).to eq(%w(Cyrillic Greek))
     end
   end

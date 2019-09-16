@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe LongDecimalFormatter do
+describe TwitterCldr::Formatters::LongDecimalFormatter do
   let(:data_reader) do
     TwitterCldr::DataReaders::NumberDataReader.new(locale, type: :long_decimal)
   end

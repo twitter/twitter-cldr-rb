@@ -5,12 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Collation
-
-describe TrieWithFallback do
+describe TwitterCldr::Collation::TrieWithFallback do
 
   let(:fallback) { TwitterCldr::Utils::Trie.new }
-  let(:trie)     { TrieWithFallback.new(fallback) }
+  let(:trie)     { described_class.new(fallback) }
 
   before(:each) { trie.add([1, 2, 3], 'value') }
 
@@ -40,7 +38,7 @@ describe TrieWithFallback do
 
   describe 'marshaling' do
     it 'does not dump fallback' do
-      expect(Marshal.load(Marshal.dump(TrieWithFallback.new(Trie.new))).fallback).to be_nil
+      expect(Marshal.load(Marshal.dump(described_class.new(TwitterCldr::Utils::Trie.new))).fallback).to be_nil
     end
   end
 

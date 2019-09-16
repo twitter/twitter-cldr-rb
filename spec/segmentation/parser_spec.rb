@@ -5,19 +5,16 @@
 
 require 'spec_helper'
 
-include TwitterCldr
-include TwitterCldr::Parsers
-
 describe 'Segmentation' do
-  let(:parser) { Segmentation::Parser.new }
+  let(:parser) { TwitterCldr::Segmentation::Parser.new }
 
   def parse(tokens, options = {})
     parser.parse(tokens, options)
   end
 
-  describe Segmentation::Parser do
+  describe TwitterCldr::Segmentation::Parser do
     let(:symbol_table) do
-      SymbolTable.new({
+      TwitterCldr::Parsers::SymbolTable.new({
         "$FOO" => parser.tokenize_regex("[abc]")
       })
     end
@@ -60,47 +57,47 @@ describe 'Segmentation' do
     end
   end
 
-  describe Segmentation::BreakRule do
+  describe TwitterCldr::Segmentation::BreakRule do
     describe "#match" do
       let(:rule) { parse("[a-z] ÷ [0-9]") }
 
       it "rule should be the right type" do
-        expect(rule).to be_a(Segmentation::BreakRule)
+        expect(rule).to be_a(TwitterCldr::Segmentation::BreakRule)
       end
 
       it "should match and return the right offset and text" do
-        cursor = Segmentation::Cursor.new("c7")
+        cursor = TwitterCldr::Segmentation::Cursor.new("c7")
         match = rule.match(cursor)
         expect(match.boundary_offset).to eq([0, 2])
         expect(match.boundary_position).to eq(1)
       end
 
       it "should not match if the input string doesn't contain a matching right- and/or left-hand side" do
-        expect(rule.match(Segmentation::Cursor.new("C7"))).to be_nil
-        expect(rule.match(Segmentation::Cursor.new("cc"))).to be_nil
-        expect(rule.match(Segmentation::Cursor.new("CC"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("C7"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("cc"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("CC"))).to be_nil
       end
     end
   end
 
-  describe Segmentation::NoBreakRule do
+  describe TwitterCldr::Segmentation::NoBreakRule do
     describe "#match" do
       let(:rule) { parse("[a-z] × [0-9]") }
 
       it "rule should be the right type" do
-        expect(rule).to be_a(Segmentation::NoBreakRule)
+        expect(rule).to be_a(TwitterCldr::Segmentation::NoBreakRule)
       end
 
       it "should match and return the right offset and text" do
-        match = rule.match(Segmentation::Cursor.new("c7"))
+        match = rule.match(TwitterCldr::Segmentation::Cursor.new("c7"))
         expect(match.boundary_offset).to eq([0, 2])
         expect(match.boundary_position).to eq(1)
       end
 
       it "should not match if the input string doesn't contain matching text" do
-        expect(rule.match(Segmentation::Cursor.new("C7"))).to be_nil
-        expect(rule.match(Segmentation::Cursor.new("cc"))).to be_nil
-        expect(rule.match(Segmentation::Cursor.new("CC"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("C7"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("cc"))).to be_nil
+        expect(rule.match(TwitterCldr::Segmentation::Cursor.new("CC"))).to be_nil
       end
     end
   end

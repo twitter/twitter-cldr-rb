@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe PostalCodes do
+describe TwitterCldr::Shared::PostalCodes do
   describe "#territories" do
-    let(:territories) { PostalCodes.territories }
+    let(:territories) { described_class.territories }
 
     it 'returns an array' do
       expect(territories).to be_instance_of(Array)
@@ -26,20 +24,22 @@ describe PostalCodes do
 
   describe "#new" do
     it "should raise an error if the territory isn't supported" do
-      expect { PostalCodes.for_territory(:xx) }.to raise_error(InvalidTerritoryError)
+      expect { described_class.for_territory(:xx) }.to(
+        raise_error(TwitterCldr::Shared::InvalidTerritoryError)
+      )
     end
 
     it 'accepts strings' do
-      expect(PostalCodes.for_territory("us")).to be_a(PostalCodes)
+      expect(described_class.for_territory("us")).to be_a(described_class)
     end
 
     it 'accepts upper-case strings' do
-      expect(PostalCodes.for_territory("US")).to be_a(PostalCodes)
+      expect(described_class.for_territory("US")).to be_a(described_class)
     end
   end
 
   context "with a PostalCodes instance" do
-    let(:postal_code) { PostalCodes.for_territory(:us) }
+    let(:postal_code) { described_class.for_territory(:us) }
 
     describe '#regexp' do
       it 'returns postal code regex for a given territory' do
@@ -74,9 +74,9 @@ describe PostalCodes do
     end
 
     describe "#sample" do
-      PostalCodes.territories.each do |territory|
+      described_class.territories.each do |territory|
         next unless territory == :sh
-        postal_code = PostalCodes.for_territory(territory)
+        postal_code = described_class.for_territory(territory)
 
         it "returns samples that match #{territory}" do
           if postal_code.has_generator?
@@ -92,12 +92,12 @@ describe PostalCodes do
   end
 
   context 'with a postal code that has no AST' do
-    let(:postal_code) { PostalCodes.new(:xx, /\d{5}/, nil) }
+    let(:postal_code) { described_class.new(:xx, /\d{5}/, nil) }
 
     describe '#sample' do
       it 'raises an exception' do
         expect { postal_code.sample }.to raise_error(
-          MissingPostcodeGeneratorError
+          TwitterCldr::Shared::MissingPostcodeGeneratorError
         )
       end
     end

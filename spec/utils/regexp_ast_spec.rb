@@ -5,12 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Utils
-
-describe RegexpAst do
+describe TwitterCldr::Utils::RegexpAst do
   let(:ast) do
-    RegexpAst::Root.new(
-      [RegexpAst::Literal.new([], nil, 'foobar')], nil
+    described_class::Root.new(
+      [described_class::Literal.new([], nil, 'foobar')], nil
     )
   end
 
@@ -22,22 +20,22 @@ describe RegexpAst do
   end
 
   def check_ast(obj)
-    expect(obj).to be_a(RegexpAst::Root)
+    expect(obj).to be_a(described_class::Root)
     expr = obj.expressions.first
-    expect(expr).to be_a(RegexpAst::Literal)
+    expect(expr).to be_a(described_class::Literal)
     expect(expr.text).to eq('foobar')
   end
 
   describe "#dump" do
     it "should correctly serialize the ast" do
-      obj = Marshal.load(Base64.decode64(RegexpAst.dump(ast)))
+      obj = Marshal.load(Base64.decode64(described_class.dump(ast)))
       check_ast(obj)
     end
   end
 
   describe "#load" do
     it "should load the dumped ast and construct a valid object" do
-      obj = RegexpAst.load(ast_dump)
+      obj = described_class.load(ast_dump)
       check_ast(obj)
     end
   end

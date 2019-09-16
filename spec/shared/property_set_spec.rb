@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe PropertySet do
+describe TwitterCldr::Shared::PropertySet do
   let(:properties_hash) { {} }
-  let(:property_set) { PropertySet.new(properties_hash) }
+  let(:property_set) { described_class.new(properties_hash) }
 
   describe '#age' do
     it 'defaults to "Unassigned"' do
@@ -193,10 +191,10 @@ describe PropertySet do
   end
 
   describe 'properties without defaults' do
-    CodePoint.properties.property_names.each do |property_name|
+    TwitterCldr::Shared::CodePoint.properties.property_names.each do |property_name|
       method_name = property_name.downcase
 
-      if PropertySet::AdditionalPropertyMethods.method_defined?(method_name)
+      if described_class::AdditionalPropertyMethods.method_defined?(method_name)
         describe "##{method_name}" do
           it 'returns true if the property has been set but has no value' do
             properties_hash.merge!(property_name => nil)

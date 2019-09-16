@@ -5,12 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Parsers
-include TwitterCldr::Tokenizers
-
-describe UnicodeRegexParser::CharacterClass do
-  let(:tokenizer) { UnicodeRegexTokenizer.new }
-  let(:parser) { UnicodeRegexParser.new }
+describe TwitterCldr::Parsers::UnicodeRegexParser::CharacterClass do
+  let(:tokenizer) { TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new }
+  let(:parser) { TwitterCldr::Parsers::UnicodeRegexParser.new }
 
   def tokenize(str)
     tokenizer.tokenize(str)

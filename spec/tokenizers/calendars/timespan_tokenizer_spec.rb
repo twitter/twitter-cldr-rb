@@ -5,13 +5,11 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Tokenizers
-
-describe TimespanTokenizer do
+describe TwitterCldr::Tokenizers::TimespanTokenizer do
 
   describe "#tokens" do
     it "should return the correct list of tokens" do
-      tokenizer = TimespanTokenizer.new(nil)
+      tokenizer = described_class.new(nil)
       tokenizer.tokenize("Hace {0} minutos").tap do |tokens|
         tokens[0].tap do |token|
           expect(token.value).to eq("Hace ")

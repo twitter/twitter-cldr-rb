@@ -10,8 +10,6 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
 BIDI_TEST_PATH = File.join(File.dirname(__FILE__), 'classpath_bidi_test.txt')
 DIRECTIONS = [nil, :LTR, :RTL]
 
@@ -19,7 +17,7 @@ def expand_bitset_str(bitset)
   bitset.to_i.to_s(2).rjust(3, "0").chars.to_a.map { |i| i == "1" }.reverse
 end
 
-describe Bidi do
+describe TwitterCldr::Shared::Bidi do
   it "should pass the derived tests in classpath_bidi_test.txt", slow: true do
     expected_level_data = []
     expected_reorder_data = []
@@ -47,7 +45,7 @@ describe Bidi do
           expand_bitset_str(bitset).each_with_index do |check, index|
             if check
               types = input.split(" ").map(&:to_sym)
-              bidi = TwitterCldr::Shared::Bidi.from_type_array(types, direction: DIRECTIONS[index], default_direction: :LTR)
+              bidi = described_class.from_type_array(types, direction: DIRECTIONS[index], default_direction: :LTR)
 
               passed = bidi.levels.each_with_index.all? do |level, idx|
                 level == expected_level_data[idx]

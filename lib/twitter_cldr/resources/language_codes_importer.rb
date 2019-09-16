@@ -195,7 +195,7 @@ module TwitterCldr
         table[:name].each_pair do |name, standards|
           STANDARDS_TO_KEYS.each do |standard, _|
             if standards[standard]
-              table[standard.to_sym][name.to_sym] = standards[standard]
+              table[standard.to_sym][standards[standard].to_sym] = table[:name][name]
             end
           end
         end

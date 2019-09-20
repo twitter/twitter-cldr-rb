@@ -3,7 +3,7 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: deva
         :patterns: 
           :default: "¤#,##,##0.00"
           :short: 
@@ -25,28 +25,28 @@
               :other: ¤00 लाख
             ? !ruby/symbol "10000000"
             : 
-              :one: ¤0 क'.'
-              :other: ¤0 क'.'
+              :one: ¤0 क॰
+              :other: ¤0 क॰
             ? !ruby/symbol "100000000"
             : 
-              :one: ¤00 क'.'
-              :other: ¤00 क'.'
+              :one: ¤00 क॰
+              :other: ¤00 क॰
             ? !ruby/symbol "1000000000"
             : 
-              :one: ¤0 अ'.'
-              :other: ¤0 अ'.'
+              :one: ¤0 अ॰
+              :other: ¤0 अ॰
             ? !ruby/symbol "10000000000"
             : 
-              :one: ¤00 अ'.'
-              :other: ¤00 अ'.'
+              :one: ¤00 अ॰
+              :other: ¤00 अ॰
             ? !ruby/symbol "100000000000"
             : 
-              :one: ¤0 ख'.'
-              :other: ¤0 ख'.'
+              :one: ¤0 ख॰
+              :other: ¤0 ख॰
             ? !ruby/symbol "1000000000000"
             : 
-              :one: ¤00 ख'.'
-              :other: ¤00 ख'.'
+              :one: ¤00 ख॰
+              :other: ¤00 ख॰
             ? !ruby/symbol "10000000000000"
             : 
               :one: ¤0 नील
@@ -59,7 +59,7 @@
           :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: latn
+        :number_system: deva
         :patterns: 
           :default: "#,##,##0.###"
           :long: 
@@ -130,28 +130,28 @@
               :other: 00 लाख
             ? !ruby/symbol "10000000"
             : 
-              :one: 0 क'.'
-              :other: 0 क'.'
+              :one: 0 क॰
+              :other: 0 क॰
             ? !ruby/symbol "100000000"
             : 
-              :one: 00 क'.'
-              :other: 00 क'.'
+              :one: 00 क॰
+              :other: 00 क॰
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0 अ'.'
-              :other: 0 अ'.'
+              :one: 0 अ॰
+              :other: 0 अ॰
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00 अ'.'
-              :other: 00 अ'.'
+              :one: 00 अ॰
+              :other: 00 अ॰
             ? !ruby/symbol "100000000000"
             : 
-              :one: 0 ख'.'
-              :other: 0 ख'.'
+              :one: 0 ख॰
+              :other: 0 ख॰
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 00 ख'.'
-              :other: 00 ख'.'
+              :one: 00 ख॰
+              :other: 00 ख॰
             ? !ruby/symbol "10000000000000"
             : 
               :one: 0 नील
@@ -161,11 +161,11 @@
               :one: 00 नील
               :other: 00 नील
       :percent: 
-        :number_system: latn
+        :number_system: deva
         :patterns: 
           :default: "#,##,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: deva
         :patterns: 
           :default: "[#E0]"
     :symbols: 

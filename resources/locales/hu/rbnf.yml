@@ -10,18 +10,11 @@
                 :rule: "mínusz >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
                 :value: 0
-              - 
-                :radix: 100
-                :rule: "<<­száz[­>>];"
-                :value: 1100
-              - 
-                :rule: =%spellout-numbering=;
-                :value: 10000
             :type: spellout-numbering-year
           - 
             :rules: 
@@ -107,22 +100,22 @@
                 :rule: "<%%spellout-cardinal-initial<­száz[­>>];"
                 :value: 200
               - 
-                :rule: "ezer[ >>];"
+                :rule: "ezer[­>>];"
                 :value: 1000
               - 
-                :rule: "<%%spellout-cardinal-initial<­ezer[ >>];"
+                :rule: "<%%spellout-cardinal-initial<­ezer[­>>];"
                 :value: 2000
               - 
-                :rule: "<%%spellout-cardinal-initial< millió[ >>];"
+                :rule: "<%%spellout-cardinal-initial<­millió[­>>];"
                 :value: 1000000
               - 
-                :rule: "<%%spellout-cardinal-initial< milliárd[ >>];"
+                :rule: "<%%spellout-cardinal-initial<­milliárd[­>>];"
                 :value: 1000000000
               - 
-                :rule: "<%%spellout-cardinal-initial< billió[ >>];"
+                :rule: "<%%spellout-cardinal-initial<­billió[­>>];"
                 :value: 1000000000000
               - 
-                :rule: "<%%spellout-cardinal-initial< billiárd[ >>];"
+                :rule: "<%%spellout-cardinal-initial<­billiárd[­>>];"
                 :value: 1000000000000000
               - 
                 :rule: "=#,##0=;"
@@ -143,19 +136,19 @@
                 :rule: "<<­száz[­>>];"
                 :value: 100
               - 
-                :rule: "<<­ezer[ >>];"
+                :rule: "<<­ezer[­>>];"
                 :value: 1000
               - 
-                :rule: "<< millió[ >>];"
+                :rule: "<<­millió[­>>];"
                 :value: 1000000
               - 
-                :rule: "<< milliárd[ >>];"
+                :rule: "<<­milliárd[­>>];"
                 :value: 1000000000
               - 
-                :rule: "<< billió[ >>];"
+                :rule: "<<­billió[­>>];"
                 :value: 1000000000000
               - 
-                :rule: "<< billiárd[ >>];"
+                :rule: "<<­billiárd[­>>];"
                 :value: 1000000000000000
               - 
                 :rule: "=#,##0=;"
@@ -291,10 +284,16 @@
                 :rule: ezr>>;
                 :value: 1000
               - 
-                :rule: <%%spellout-cardinal-initial<ezr>>;
+                :rule: ezer­>>;
+                :value: 1001
+              - 
+                :rule: <%%spellout-cardinal-initial<­ezr>>;
                 :value: 2000
               - 
-                :rule: "<%%spellout-cardinal-initial< milliom>%%spellout-ordinal-odik>;"
+                :rule: <%%spellout-cardinal-initial<­ezer­>>;
+                :value: 2001
+              - 
+                :rule: <%%spellout-cardinal-initial<­milliom­>%%spellout-ordinal-odik>;
                 :value: 1000000
               - 
                 :rule: "=#,##0=.;"
@@ -309,7 +308,7 @@
                 :rule: "=#,##0.#=;"
                 :value: x.x
               - 
-                :rule: nulla;
+                :rule: nulladik;
                 :value: 0
               - 
                 :rule: első;
@@ -351,10 +350,13 @@
                 :rule: <%spellout-cardinal-verbose<száz>%%spellout-ordinal-verbose-adik>;
                 :value: 100
               - 
-                :rule: <%spellout-cardinal-verbose<ezr>>;
+                :rule: <%spellout-cardinal-verbose<­ezr>>;
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-verbose< milliom>%%spellout-ordinal-verbose-odik>;"
+                :rule: <%spellout-cardinal-verbose<­ezer­>>;
+                :value: 1001
+              - 
+                :rule: <%spellout-cardinal-verbose<­milliom­>%%spellout-ordinal-verbose-odik>;
                 :value: 1000000
               - 
                 :rule: "=#,##0=.;"

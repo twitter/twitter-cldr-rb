@@ -8,9 +8,8 @@ module TwitterCldr
     class Calendar
 
       DEFAULT_FORMAT = :'stand-alone'
-      DEFAULT_PERIOD_FORMAT = :format
 
-      NAMES_FORMS = [:wide, :narrow, :short, :abbreviated, :foo]
+      NAMES_FORMS = [:wide, :narrow, :short, :abbreviated]
       ERAS_NAMES_FORMS = [:abbr, :name]
 
       DATETIME_METHOD_MAP = {
@@ -62,7 +61,7 @@ module TwitterCldr
         end
       end
 
-      def periods(names_form = :wide, format = DEFAULT_PERIOD_FORMAT)
+      def periods(names_form = :wide, format = DEFAULT_FORMAT)
         cache_field_data(:periods, names_form, format) do
           get_with_names_form(:periods, names_form, format)
         end

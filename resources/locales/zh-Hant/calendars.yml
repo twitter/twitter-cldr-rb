@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: Bh時
+        :Bhm: "Bh:mm"
+        :Bhms: "Bh:mm:ss"
         :E: ccc
+        :EBhm: "E Bh:mm"
+        :EBhms: "E Bh:mm:ss"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -22,6 +27,7 @@
         :MEd: M/d（E）
         :MMM: LLL
         :MMMEd: "M月d日 E"
+        :MMMMW: MMMM的第W週
         :MMMMd: M月d日
         :MMMd: M月d日
         :MMdd: MM/dd
@@ -45,6 +51,7 @@
         :yMd: y/M/d
         :yQQQ: y年QQQ
         :yQQQQ: y年QQQQ
+        :yw: Y年的第w週
       :days: 
         :format: 
           :abbreviated: 
@@ -126,8 +133,15 @@
         :day: 日
         :day-narrow: 日
         :day-short: 日
+        :dayOfYear: 年天
+        :dayOfYear-narrow: 年天
+        :dayOfYear-short: 年天
         :dayperiod: 上午/下午
+        :dayperiod-narrow: 上午/下午
+        :dayperiod-short: 上午/下午
         :era: 年代
+        :era-narrow: 年代
+        :era-short: 年代
         :hour: 小時
         :hour-narrow: 小時
         :hour-short: 小時
@@ -146,11 +160,21 @@
         :week: 週
         :week-narrow: 週
         :week-short: 週
+        :weekOfMonth: 週
+        :weekOfMonth-narrow: 週
+        :weekOfMonth-short: 週
         :weekday: 週天
+        :weekday-narrow: 週天
+        :weekday-short: 週天
+        :weekdayOfMonth: 每月平日
+        :weekdayOfMonth-narrow: 每月平日
+        :weekdayOfMonth-short: 每月平日
         :year: 年
         :year-narrow: 年
         :year-short: 年
         :zone: 時區
+        :zone-narrow: 時區
+        :zone-short: 時區
       :formats: 
         :date: 
           :full: 
@@ -194,19 +218,7 @@
             7: 7月
             8: 8月
             9: 9月
-          :narrow: 
-            1: "1"
-            10: "10"
-            11: "11"
-            12: "12"
-            2: "2"
-            3: "3"
-            4: "4"
-            5: "5"
-            6: "6"
-            7: "7"
-            8: "8"
-            9: "9"
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide: 
             1: 1月
             10: 10月
@@ -296,11 +308,13 @@
           :abbreviated: 
             :afternoon1: 中午
             :afternoon2: 下午
+            :am: 上午
             :evening1: 晚上
             :midnight: 午夜
             :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
+            :pm: 下午
           :narrow: 
             :afternoon1: 中午
             :afternoon2: 下午
@@ -314,18 +328,20 @@
           :wide: 
             :afternoon1: 中午
             :afternoon2: 下午
+            :am: 上午
             :evening1: 晚上
             :midnight: 午夜
             :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
+            :pm: 下午
       :quarters: 
         :format: 
           :abbreviated: 
-            1: 1季
-            2: 2季
-            3: 3季
-            4: 4季
+            1: 第1季
+            2: 第2季
+            3: 第3季
+            4: 第4季
           :narrow: 
             1: "1"
             2: "2"
@@ -338,10 +354,10 @@
             4: 第4季
         :stand-alone: 
           :abbreviated: 
-            1: 1季
-            2: 2季
-            3: 3季
-            4: 4季
+            1: 第1季
+            2: 第2季
+            3: 第3季
+            4: 第4季
           :narrow: 
             1: "1"
             2: "2"

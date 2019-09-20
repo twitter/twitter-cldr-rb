@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h.mm B"
+        :Bhms: "h.mm.ss B"
         :E: ccc
+        :EBhm: "E h.mm B"
+        :EBhms: "E h.mm.ss B"
         :EHm: "E H.mm"
         :EHms: "E H.mm.ss"
         :Ed: "E d."
@@ -12,6 +17,8 @@
         :Gy: "y G"
         :GyMMM: "LLL y G"
         :GyMMMEd: "E d. MMM y G"
+        :GyMMMMEd: "E d. MMMM y G"
+        :GyMMMMd: "d. MMMM y G"
         :GyMMMd: "d. MMM y G"
         :H: H
         :Hm: H.mm
@@ -22,6 +29,8 @@
         :MEd: "E d.M."
         :MMM: LLL
         :MMMEd: "ccc d. MMM"
+        :MMMMEd: "ccc d. MMMM"
+        :MMMMW: "LLLL'n' W. 'viikko'"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :Md: d.M.
@@ -40,11 +49,14 @@
         :yMMM: "LLL y"
         :yMMMEd: "E d. MMM y"
         :yMMMM: "LLLL y"
+        :yMMMMEd: "E d. MMMM y"
         :yMMMMccccd: "cccc d. MMMM y"
+        :yMMMMd: "d. MMMM y"
         :yMMMd: "d. MMM y"
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'vuoden' Y 'viikko' w"
       :days: 
         :format: 
           :abbreviated: 
@@ -126,8 +138,15 @@
         :day: päivä
         :day-narrow: pv
         :day-short: pv
+        :dayOfYear: vuodenpäivä
+        :dayOfYear-narrow: vuodenpv
+        :dayOfYear-short: vuodenpv
         :dayperiod: vuorokaudenaika
+        :dayperiod-narrow: vuorokaudenaika
+        :dayperiod-short: vuorokaudenaika
         :era: aikakausi
+        :era-narrow: aikakausi
+        :era-short: aikakausi
         :hour: tunti
         :hour-narrow: t
         :hour-short: t
@@ -146,11 +165,21 @@
         :week: viikko
         :week-narrow: vk
         :week-short: vk
+        :weekOfMonth: "kuukauden viikko"
+        :weekOfMonth-narrow: "kuukauden vk"
+        :weekOfMonth-short: "kuukauden vk"
         :weekday: viikonpäivä
+        :weekday-narrow: viikonpäivä
+        :weekday-short: viikonpäivä
+        :weekdayOfMonth: "kuukauden viikonpäivä"
+        :weekdayOfMonth-narrow: "kuukauden vk päivä"
+        :weekdayOfMonth-short: "kuukauden vk päivä"
         :year: vuosi
         :year-narrow: v
         :year-short: v
         :zone: aikavyöhyke
+        :zone-narrow: aikavyöhyke
+        :zone-short: aikavyöhyke
       :formats: 
         :date: 
           :full: 
@@ -182,18 +211,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: tammikuuta
-            10: lokakuuta
-            11: marraskuuta
-            12: joulukuuta
-            2: helmikuuta
-            3: maaliskuuta
-            4: huhtikuuta
-            5: toukokuuta
-            6: kesäkuuta
-            7: heinäkuuta
-            8: elokuuta
-            9: syyskuuta
+            1: tammik.
+            10: lokak.
+            11: marrask.
+            12: jouluk.
+            2: helmik.
+            3: maalisk.
+            4: huhtik.
+            5: toukok.
+            6: kesäk.
+            7: heinäk.
+            8: elok.
+            9: syysk.
           :narrow: 
             1: T
             10: L
@@ -265,21 +294,21 @@
           :abbreviated: 
             :afternoon1: iltap.
             :am: ap.
-            :evening1: ilta
-            :midnight: keskiyö
-            :morning1: aamu
+            :evening1: illalla
+            :midnight: keskiyöllä
+            :morning1: aamulla
             :morning2: aamup.
-            :night1: yö
+            :night1: yöllä
             :noon: keskip.
             :pm: ip.
           :narrow: 
             :afternoon1: ip.
             :am: ap.
-            :evening1: ilta
+            :evening1: illalla
             :midnight: ky.
-            :morning1: aamu
+            :morning1: aamulla
             :morning2: ap.
-            :night1: yö
+            :night1: yöllä
             :noon: kp.
             :pm: ip.
           :wide: 

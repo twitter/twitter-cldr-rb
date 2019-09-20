@@ -3,10 +3,15 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
-        :Ed: "E, d"
+        :Ed: "d, E"
         :Ehm: "E, h:mm a"
         :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
@@ -22,6 +27,7 @@
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'wythnos' W 'o' MMMM"
         :MMMMd: "MMMM d"
         :MMMd: "d MMM"
         :Md: d/M
@@ -44,6 +50,7 @@
         :yQ: "Q y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'wythnos' w 'o' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -113,8 +120,8 @@
             :wed: "Dydd Mercher"
       :eras: 
         :abbr: 
-          0: BCE
-          1: CE
+          0: CCC
+          1: CYCY
         :name: 
           0: "Cyn Cyfnod Cyffredin"
           1: "Cyfnod Cyffredin"
@@ -122,11 +129,18 @@
           0: C
           1: O
       :fields: 
-        :day: dydd
-        :day-narrow: dydd
-        :day-short: dydd
+        :day: diwrnod
+        :day-narrow: diwrnod
+        :day-short: diwrnod
+        :dayOfYear: "rhif y dydd yn y flwyddyn"
+        :dayOfYear-narrow: "dydd y fl."
+        :dayOfYear-short: "rhif y dydd yn y fl."
         :dayperiod: AM/PM
-        :era: Oes
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
+        :era: oes
+        :era-narrow: oes
+        :era-short: oes
         :hour: awr
         :hour-narrow: awr
         :hour-short: awr
@@ -137,7 +151,7 @@
         :month-narrow: mis
         :month-short: mis
         :quarter: chwarter
-        :quarter-narrow: chwarter
+        :quarter-narrow: chw.
         :quarter-short: chwarter
         :second: eiliad
         :second-narrow: eiliad
@@ -145,11 +159,21 @@
         :week: wythnos
         :week-narrow: wythnos
         :week-short: wythnos
-        :weekday: "dydd o’r wythnos"
+        :weekOfMonth: "rhif wythnos yn y mis"
+        :weekOfMonth-narrow: "wythnos y mis"
+        :weekOfMonth-short: "wythnos y mis"
+        :weekday: "diwrnod o’r wythnos"
+        :weekday-narrow: "diwrnod o’r wythnos"
+        :weekday-short: "diwrnod o’r wythnos"
+        :weekdayOfMonth: "diwrnod yn y mis"
+        :weekdayOfMonth-narrow: "diwrnod yn y mis"
+        :weekdayOfMonth-short: "diwrnod yn y mis"
         :year: blwyddyn
         :year-narrow: bl.
         :year-short: bl.
-        :zone: "Cylchfa Amser"
+        :zone: "cylchfa amser"
+        :zone-narrow: cylchfa
+        :zone-short: "cylchfa amser"
       :formats: 
         :date: 
           :full: 
@@ -262,18 +286,54 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: AM
-            :pm: PM
+            :afternoon1: "y prynhawn"
+            :am: yb
+            :evening1: "yr hwyr"
+            :midnight: "canol nos"
+            :morning1: "y bore"
+            :noon: "canol dydd"
+            :pm: yh
           :narrow: 
-            :am: AM
-            :pm: PM
+            :afternoon1: "yn y prynhawn"
+            :am: b
+            :evening1: "min nos"
+            :midnight: "canol nos"
+            :morning1: "yn y bore"
+            :noon: "canol dydd"
+            :pm: h
           :wide: 
-            :am: AM
-            :pm: PM
+            :afternoon1: "y prynhawn"
+            :am: yb
+            :evening1: "yr hwyr"
+            :midnight: "canol nos"
+            :morning1: "y bore"
+            :noon: "canol dydd"
+            :pm: yh
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
-          :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
-          :wide: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
+          :abbreviated: 
+            :afternoon1: prynhawn
+            :am: yb
+            :evening1: "yr hwyr"
+            :midnight: "canol nos"
+            :morning1: bore
+            :noon: "canol dydd"
+            :pm: yh
+          :narrow: 
+            :afternoon1: prynhawn
+            :am: yb
+            :evening1: "min nos"
+            :midnight: "canol nos"
+            :morning1: bore
+            :noon: "canol dydd"
+            :pm: yh
+          :wide: 
+            :afternoon1: "y prynhawn"
+            :am: yb
+            :evening1: "yr hwyr"
+            :midnight: "canol nos"
+            :morning1: "y bore"
+            :noon: "canol dydd"
+            :pm: yh
       :quarters: 
         :format: 
           :abbreviated: 

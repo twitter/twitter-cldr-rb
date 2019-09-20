@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: E
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -22,6 +27,7 @@
         :MEd: "E dd/MM"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'semaine' W (MMMM)"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: dd/MM
@@ -43,6 +49,7 @@
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'semaine' w 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,8 +131,15 @@
         :day: jour
         :day-narrow: j
         :day-short: j
+        :dayOfYear: "jour (année)"
+        :dayOfYear-narrow: "j (an)"
+        :dayOfYear-short: "j (an)"
         :dayperiod: cadran
+        :dayperiod-narrow: cadran
+        :dayperiod-short: cadran
         :era: ère
+        :era-narrow: ère
+        :era-short: ère
         :hour: heure
         :hour-narrow: h
         :hour-short: h
@@ -144,11 +158,21 @@
         :week: semaine
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "semaine (mois)"
+        :weekOfMonth-narrow: "sem. (m.)"
+        :weekOfMonth-short: "sem. (m.)"
         :weekday: "jour de la semaine"
+        :weekday-narrow: "j (sem.)"
+        :weekday-short: "j (sem.)"
+        :weekdayOfMonth: "jour (mois)"
+        :weekdayOfMonth-narrow: "jour (mois)"
+        :weekdayOfMonth-short: "jour (mois)"
         :year: année
         :year-narrow: a
-        :year-short: ann.
+        :year-short: an
         :zone: "fuseau horaire"
+        :zone-narrow: "fuseau horaire"
+        :zone-short: "fuseau horaire"
       :formats: 
         :date: 
           :full: 
@@ -264,7 +288,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -273,7 +297,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -284,7 +308,7 @@
             :evening1: "du soir"
             :midnight: minuit
             :morning1: "du matin"
-            :night1: "de nuit"
+            :night1: "du matin"
             :noon: midi
             :pm: PM
         :stand-alone: 
@@ -292,7 +316,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
@@ -301,7 +325,7 @@
             :afternoon1: ap.m.
             :am: AM
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi

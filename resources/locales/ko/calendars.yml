@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "B h시"
+        :Bhm: "B h:mm"
+        :Bhms: "B h:mm:ss"
         :E: ccc
+        :EBhm: "(E) B h:mm"
+        :EBhms: "(E) B h:mm:ss"
         :EEEEd: "d일 EEEE"
         :EHm: "(E) HH:mm"
         :EHms: "(E) HH:mm:ss"
@@ -27,6 +32,7 @@
         :MMM: LLL
         :MMMEEEEd: "MMM d일 EEEE"
         :MMMEd: "MMM d일 (E)"
+        :MMMMW: "MMMM W번째 주"
         :MMMMd: "MMMM d일"
         :MMMd: "MMM d일"
         :Md: "M. d."
@@ -52,6 +58,7 @@
         :yMd: "y. M. d."
         :yQQQ: "y년 QQQ"
         :yQQQQ: "y년 QQQQ"
+        :yw: "Y년 w번째 주"
       :days: 
         :format: 
           :abbreviated: 
@@ -132,8 +139,15 @@
         :day: 일
         :day-narrow: 일
         :day-short: 일
+        :dayOfYear: "년의 일"
+        :dayOfYear-narrow: "년의 일"
+        :dayOfYear-short: "년의 일"
         :dayperiod: 오전/오후
+        :dayperiod-narrow: 오전/오후
+        :dayperiod-short: 오전/오후
         :era: 연호
+        :era-narrow: 연호
+        :era-short: 연호
         :hour: 시
         :hour-narrow: 시
         :hour-short: 시
@@ -152,11 +166,21 @@
         :week: 주
         :week-narrow: 주
         :week-short: 주
+        :weekOfMonth: "월의 주"
+        :weekOfMonth-narrow: "월의 주"
+        :weekOfMonth-short: "월의 주"
         :weekday: 요일
+        :weekday-narrow: 요일
+        :weekday-short: 요일
+        :weekdayOfMonth: "월의 평일"
+        :weekdayOfMonth-narrow: "월의 평일"
+        :weekdayOfMonth-short: "월의 평일"
         :year: 년
         :year-narrow: 년
         :year-short: 년
         :zone: 시간대
+        :zone-narrow: 시간대
+        :zone-short: 시간대
       :formats: 
         :date: 
           :full: 
@@ -301,14 +325,14 @@
         :stand-alone: 
           :abbreviated: 
             :afternoon1: 오후
-            :am: 오전
+            :am: AM
             :evening1: 저녁
             :midnight: 자정
             :morning1: 새벽
             :morning2: 오전
             :night1: 밤
             :noon: 정오
-            :pm: 오후
+            :pm: PM
           :narrow: 
             :afternoon1: 오후
             :am: AM

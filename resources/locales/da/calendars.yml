@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h.mm B"
+        :Bhms: "h.mm.ss B"
         :E: ccc
+        :EBhm: "E h.mm B"
+        :EBhms: "E h.mm.ss B"
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E 'den' d."
@@ -19,14 +24,15 @@
         :Hmsv: "HH.mm.ss v"
         :Hmv: "HH.mm v"
         :M: M
-        :MEd: "E d/M"
+        :MEd: "E d.M"
         :MMM: MMM
         :MMMEd: "E d. MMM"
         :MMMMEd: "E d. MMMM"
+        :MMMMW: "'uge' W 'i' MMMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
-        :MMdd: dd/MM
-        :Md: d/M
+        :MMdd: dd.MM
+        :Md: d.M
         :d: d.
         :h: "h a"
         :hm: "h.mm a"
@@ -36,16 +42,17 @@
         :ms: mm.ss
         ? !ruby/symbol "y"
         : "y"
-        :yM: M/y
-        :yMEd: "E d/M/y"
-        :yMM: MM/y
+        :yM: M.y
+        :yMEd: "E d.M.y"
+        :yMM: MM.y
         :yMMM: "MMM y"
         :yMMMEd: "E d. MMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d. MMM y"
-        :yMd: d/M/y
+        :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'uge' w 'i' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,13 +134,20 @@
         :day: dag
         :day-narrow: dag
         :day-short: dag
+        :dayOfYear: "dag i året"
+        :dayOfYear-narrow: "dag i året"
+        :dayOfYear-short: "dag i året"
         :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: æra
+        :era-narrow: æra
+        :era-short: æra
         :hour: time
-        :hour-narrow: t
+        :hour-narrow: t.
         :hour-short: t.
         :minute: minut
-        :minute-narrow: min
+        :minute-narrow: min.
         :minute-short: min.
         :month: måned
         :month-narrow: md.
@@ -147,11 +161,21 @@
         :week: uge
         :week-narrow: uge
         :week-short: uge
+        :weekOfMonth: "uge i måneden"
+        :weekOfMonth-narrow: "uge i md."
+        :weekOfMonth-short: "uge i md."
         :weekday: ugedag
+        :weekday-narrow: ugedag
+        :weekday-short: ugedag
+        :weekdayOfMonth: "ugedag i måneden"
+        :weekdayOfMonth-narrow: "ugedag i md."
+        :weekdayOfMonth-short: "ugedag i md."
         :year: år
         :year-narrow: år
         :year-short: år
         :zone: tidszone
+        :zone-narrow: zone
+        :zone-short: zone
       :formats: 
         :date: 
           :full: 
@@ -161,7 +185,7 @@
           :medium: 
             :pattern: "d. MMM y"
           :short: 
-            :pattern: dd/MM/y
+            :pattern: dd.MM.y
         :datetime: 
           :full: 
             :pattern: "{{date}} 'kl'. {{time}}"
@@ -223,18 +247,18 @@
             9: september
         :stand-alone: 
           :abbreviated: 
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
+            1: jan.
+            10: okt.
+            11: nov.
+            12: dec.
+            2: feb.
+            3: mar.
+            4: apr.
             5: maj
-            6: jun
-            7: jul
-            8: aug
-            9: sep
+            6: jun.
+            7: jul.
+            8: aug.
+            9: sep.
           :narrow: 
             1: J
             10: O

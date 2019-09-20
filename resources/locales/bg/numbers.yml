@@ -5,7 +5,7 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#,##0.00 ¤"
+          :default: 0.00 ¤
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -65,7 +65,7 @@
           :long: 
             ? !ruby/symbol "1000"
             : 
-              :one: "0 хиляда"
+              :one: "0 хил'.'"
               :other: "0 хиляди"
             ? !ruby/symbol "10000"
             : 
@@ -134,8 +134,8 @@
               :other: 00 млн'.'
             ? !ruby/symbol "100000000"
             : 
-              :one: 000 млн
-              :other: 000 млн
+              :one: 000 млн'.'
+              :other: 000 млн'.'
             ? !ruby/symbol "1000000000"
             : 
               :one: 0 млрд'.'
@@ -180,5 +180,5 @@
       :per_mille: ‰
       :percent_sign: "%"
       :plus_sign: +
-      :superscripting_exponent: "."
+      :superscripting_exponent: ×
       :time_separator: ":"

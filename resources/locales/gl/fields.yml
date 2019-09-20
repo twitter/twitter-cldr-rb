@@ -2,7 +2,7 @@
 :gl: 
   :fields: 
     :day: 
-      :display_name: Día
+      :display_name: día
       :relative: 
         -1: onte
         -2: antonte
@@ -11,144 +11,225 @@
         2: pasadomañá
       :relative_time: 
         :future: 
-          :one: "En {0} día"
-          :other: "En {0} días"
+          :one: "en {0} día"
+          :other: "en {0} días"
         :past: 
-          :one: "Hai {0} día"
-          :other: "Hai {0} días"
+          :one: "hai {0} día"
+          :other: "hai {0} días"
     :day-narrow: 
-      :display_name: Día
+      :display_name: día
       :relative_time: 
         :future: 
-          :one: "En {0} d."
-          :other: "En {0} d."
+          :one: "en {0} día"
+          :other: "en {0} días"
         :past: 
-          :one: "Hai {0} d."
-          :other: "Hai {0} d."
+          :one: "hai {0} día"
+          :other: "hai {0} días"
     :day-short: 
-      :display_name: Día
+      :display_name: día
+      :relative_time: 
+        :future: 
+          :one: "en {0} día"
+          :other: "en {0} días"
+        :past: 
+          :one: "hai {0} día"
+          :other: "hai {0} días"
+    :dayOfYear: 
+      :display_name: "día do ano"
+    :dayOfYear-narrow: 
+      :display_name: "día do ano"
+    :dayOfYear-short: 
+      :display_name: "día do ano"
     :dayperiod: 
       :display_name: a.m./p.m.
+    :dayperiod-narrow: 
+      :display_name: a.m./p.m.
+    :dayperiod-short: 
+      :display_name: a.m./p.m.
     :era: 
-      :display_name: Era
+      :display_name: era
+    :era-narrow: 
+      :display_name: era
+    :era-short: 
+      :display_name: era
     :fri: 
       :relative: 
-        -1: "venres pasado"
+        -1: "o venres pasado"
         0: "este venres"
-        1: "próximo venres"
-    :fri-narrow: 
-      :relative: 
-        -1: "v. pasado"
-        0: "este v."
-        1: "próximo v."
-    :fri-short: 
-      :relative: 
-        -1: "ven. pasado"
-        0: "este ven."
-        1: "próximo ven."
-    :hour: 
-      :display_name: Hora
+        1: "o próximo venres"
       :relative_time: 
         :future: 
-          :one: "En {0} hora"
-          :other: "En {0} horas"
+          :one: "en {0} venres"
+          :other: "en {0} venres"
         :past: 
-          :one: "Hai {0} hora"
-          :other: "Hai {0} horas"
+          :one: "hai {0} venres"
+          :other: "hai {0} venres"
+    :fri-narrow: 
+      :relative: 
+        -1: "o ven. pas."
+        0: "este ven."
+        1: "o próx. ven."
+      :relative_time: 
+        :future: 
+          :one: "en {0} ven."
+          :other: "en {0} ven."
+        :past: 
+          :one: "hai {0} ven."
+          :other: "hai {0} ven."
+    :fri-short: 
+      :relative: 
+        -1: "o ven. pasado"
+        0: "este ven."
+        1: "o próximo ven."
+      :relative_time: 
+        :future: 
+          :one: "en {0} ven."
+          :other: "en {0} ven."
+        :past: 
+          :one: "hai {0} ven."
+          :other: "hai {0} ven."
+    :hour: 
+      :display_name: hora
+      :relative: 
+        0: "esta hora"
+      :relative_time: 
+        :future: 
+          :one: "en {0} hora"
+          :other: "en {0} horas"
+        :past: 
+          :one: "hai {0} hora"
+          :other: "hai {0} horas"
     :hour-narrow: 
       :display_name: h
       :relative_time: 
         :future: 
-          :one: "En {0} h."
-          :other: "en {0} hr."
+          :one: "en {0} h"
+          :other: "en {0} h"
         :past: 
-          :one: "Hai {0} hr."
-          :other: "Hai {0} hr."
+          :one: "hai {0} h"
+          :other: "hai {0} h"
     :hour-short: 
       :display_name: h
       :relative_time: 
         :future: 
-          :one: "En {0} hr."
-          :other: "En {0} hr."
+          :one: "en {0} h"
+          :other: "en {0} h"
         :past: 
-          :one: "Hai {0} hr."
-          :other: "Hai {0} hr."
+          :one: "hai {0} h"
+          :other: "hai {0} h"
     :minute: 
-      :display_name: Minuto
+      :display_name: minuto
+      :relative: 
+        0: "este minuto"
       :relative_time: 
         :future: 
-          :one: "En {0} minuto"
-          :other: "En {0} minutos"
+          :one: "en {0} minuto"
+          :other: "en {0} minutos"
         :past: 
-          :one: "Hai {0} minuto"
-          :other: "Hai {0} minutos"
+          :one: "hai {0} minuto"
+          :other: "hai {0} minutos"
     :minute-narrow: 
       :display_name: min
+      :relative_time: 
+        :future: 
+          :one: "en {0} min"
+          :other: "en {0} min"
+        :past: 
+          :one: "hai {0} min"
+          :other: "hai {0} min"
     :minute-short: 
       :display_name: min
       :relative_time: 
         :future: 
-          :one: "En {0} min."
-          :other: "En {0} min."
+          :one: "en {0} min"
+          :other: "en {0} min"
         :past: 
-          :one: "Hai {0} min."
-          :other: "Hai {0} min."
+          :one: "hai {0} min"
+          :other: "hai {0} min"
     :mon: 
       :relative: 
-        -1: "luns pasado"
+        -1: "o luns pasado"
         0: "este luns"
-        1: "próximo luns"
-    :mon-narrow: 
-      :relative: 
-        -1: "l. pasado"
-        0: "este l."
-        1: "próximo luns"
-    :mon-short: 
-      :relative: 
-        -1: "l. pasado"
-        0: "este l."
-        1: "próximo l."
-    :month: 
-      :display_name: Mes
-      :relative: 
-        -1: "mes pasado"
-        0: "este mes"
-        1: "mes seguinte"
+        1: "o próximo luns"
       :relative_time: 
         :future: 
-          :one: "En {0} mes"
-          :other: "En {0} meses"
+          :one: "en {0} luns"
+          :other: "en {0} luns"
         :past: 
-          :one: "Hai {0} mes"
-          :other: "Hai {0} meses"
+          :one: "hai {0} luns"
+          :other: "hai {0} luns"
+    :mon-narrow: 
+      :relative: 
+        -1: "o luns pas."
+        0: "este luns"
+        1: "o próx. luns"
+      :relative_time: 
+        :future: 
+          :one: "en {0} luns"
+          :other: "en {0} luns"
+        :past: 
+          :one: "hai {0} luns"
+          :other: "hai {0} luns"
+    :mon-short: 
+      :relative: 
+        -1: "o luns pas."
+        0: "este luns"
+        1: "o próx. luns"
+      :relative_time: 
+        :future: 
+          :one: "en {0} luns"
+          :other: "en {0} luns"
+        :past: 
+          :one: "hai {0} luns"
+          :other: "hai {0} luns"
+    :month: 
+      :display_name: mes
+      :relative: 
+        -1: "o mes pasado"
+        0: "este mes"
+        1: "o próximo mes"
+      :relative_time: 
+        :future: 
+          :one: "en {0} mes"
+          :other: "en {0} meses"
+        :past: 
+          :one: "hai {0} mes"
+          :other: "hai {0} meses"
     :month-narrow: 
-      :display_name: Mes
+      :display_name: mes
+      :relative_time: 
+        :future: 
+          :one: "en {0} mes"
+          :other: "en {0} meses"
+        :past: 
+          :one: "hai {0} mes"
+          :other: "hai {0} meses"
     :month-short: 
-      :display_name: Mes
+      :display_name: mes
       :relative: 
         -1: "m. pasado"
         0: "este m."
         1: "m. seguinte"
       :relative_time: 
         :future: 
-          :one: "En {0} m."
-          :other: "En {0} m."
+          :one: "en {0} mes"
+          :other: "en {0} meses"
         :past: 
-          :one: "Hai {0} m."
-          :other: "Hai {0} m."
+          :one: "hai {0} mes"
+          :other: "hai {0} meses"
     :quarter: 
-      :display_name: Trimestre
+      :display_name: trimestre
       :relative: 
-        -1: "trimestre pasado"
+        -1: "o trimestre pasado"
         0: "este trimestre"
-        1: "seguinte trimestre"
+        1: "o próximo trimestre"
       :relative_time: 
         :future: 
-          :one: "En {0} trimestre"
-          :other: "En {0} trimestres"
+          :one: "en {0} trimestre"
+          :other: "en {0} trimestres"
         :past: 
-          :one: "Hai {0} trimestre"
-          :other: "Hai {0} trimestres"
+          :one: "hai {0} trimestre"
+          :other: "hai {0} trimestres"
     :quarter-narrow: 
       :display_name: trim.
       :relative: 
@@ -157,11 +238,11 @@
         1: "trim. seguinte"
       :relative_time: 
         :future: 
-          :one: "En {0} trim."
-          :other: "En {0} trim."
+          :one: "en {0} trim."
+          :other: "en {0} trim."
         :past: 
-          :one: "Hai {0} trim."
-          :other: "Hai {0} trim."
+          :one: "hai {0} trim."
+          :other: "hai {0} trim."
     :quarter-short: 
       :display_name: trim.
       :relative: 
@@ -170,130 +251,242 @@
         1: "trim. seguinte"
       :relative_time: 
         :future: 
-          :one: "En {0} trim."
-          :other: "En {0} trim."
+          :one: "en {0} trim."
+          :other: "en {0} trim."
         :past: 
-          :one: "Hai {0} trim."
-          :other: "Hai {0} trim."
+          :one: "hai {0} trim."
+          :other: "hai {0} trim."
     :sat: 
       :relative: 
-        -1: "sábado pasado"
+        -1: "o sábado pasado"
         0: "este sábado"
-        1: "próximo sábado"
+        1: "o próximo sábado"
+      :relative_time: 
+        :future: 
+          :one: "en {0} sábado"
+          :other: "en {0} sábados"
+        :past: 
+          :one: "hai {0} sábado"
+          :other: "hai {0} sábados"
     :sat-narrow: 
       :relative: 
-        -1: "s. pasado"
-        0: "este s."
-        1: "próximo s."
+        -1: "o sáb. pas."
+        0: "este sáb."
+        1: "o próx. sáb."
+      :relative_time: 
+        :future: 
+          :one: "en {0} sáb."
+          :other: "en {0} sáb."
+        :past: 
+          :one: "hai {0} sáb."
+          :other: "hai {0} sáb."
     :sat-short: 
       :relative: 
-        -1: "sáb. pasado"
+        -1: "o sáb. pasado"
         0: "este sáb."
-        1: "próximo sáb."
+        1: "o próximo sáb."
+      :relative_time: 
+        :future: 
+          :one: "en {0} sáb."
+          :other: "en {0} sáb."
+        :past: 
+          :one: "hai {0} sáb."
+          :other: "hai {0} sáb."
     :second: 
-      :display_name: Segundo
+      :display_name: segundo
       :relative: 
         0: agora
       :relative_time: 
         :future: 
-          :one: "En {0} segundo"
-          :other: "En {0} segundos"
+          :one: "en {0} segundo"
+          :other: "en {0} segundos"
         :past: 
-          :one: "Hai {0} segundo"
-          :other: "Hai {0} segundos"
+          :one: "hai {0} segundo"
+          :other: "hai {0} segundos"
     :second-narrow: 
       :display_name: s
       :relative_time: 
         :future: 
-          :one: "En {0} s."
-          :other: "En {0} s."
+          :one: "en {0} s"
+          :other: "en {0} s"
         :past: 
-          :one: "Hai {0} s."
-          :other: "Hai {0} s."
+          :one: "hai {0} s"
+          :other: "hai {0} s"
     :second-short: 
       :display_name: s
       :relative_time: 
         :future: 
-          :one: "En {0} seg."
-          :other: "En {0} seg."
+          :one: "en {0} s"
+          :other: "en {0} s"
         :past: 
-          :one: "Hai {0} seg."
-          :other: "Hai {0} seg."
+          :one: "hai {0} s"
+          :other: "hai {0} s"
     :sun: 
       :relative: 
-        -1: "domingo pasado"
+        -1: "o domingo pasado"
         0: "este domingo"
-        1: "próximo domingo"
-    :sun-narrow: 
-      :relative: 
-        -1: "d. pasado"
-        0: "este d."
-        1: "próximo d."
-    :sun-short: 
-      :relative: 
-        -1: "dom. pasado"
-        0: "este dom."
-        1: "próximo dom."
-    :thu: 
-      :relative: 
-        -1: "xoves pasado"
-        0: "este xoves"
-        1: "próximo xoves"
-    :thu-narrow: 
-      :relative: 
-        -1: "xov. pasado"
-        0: "este x."
-        1: "próximo xov."
-    :thu-short: 
-      :relative: 
-        -1: "xov. pasado"
-        0: "este xov."
-        1: "próximo xov."
-    :tue: 
-      :relative: 
-        -1: "martes pasado"
-        0: "este martes"
-        1: "próximo martes"
-    :tue-narrow: 
-      :relative: 
-        -1: "mar. pasado"
-        0: "este mar."
-        1: "próximo mar."
-    :tue-short: 
-      :relative: 
-        -1: "mart. pasado"
-        0: "este mart."
-        1: "próximo mart."
-    :wed: 
-      :relative: 
-        -1: "mércores pasado"
-        0: "este mércores"
-        1: "próximo mércores"
-    :wed-narrow: 
-      :relative: 
-        -1: "mér. pasado"
-        0: "este mér."
-        1: "próximo mér."
-    :wed-short: 
-      :relative: 
-        -1: "mérc. pasado"
-        0: "este mérc."
-        1: "próximo mérc."
-    :week: 
-      :display_name: Semana
-      :relative: 
-        -1: "semana pasada"
-        0: "esta semana"
-        1: "semana seguinte"
+        1: "o próximo domingo"
       :relative_time: 
         :future: 
-          :one: "En {0} semana"
-          :other: "En {0} semanas"
+          :one: "en {0} domingo"
+          :other: "en {0} domingos"
         :past: 
-          :one: "Hai {0} semana"
-          :other: "Hai {0} semanas"
+          :one: "hai {0} domingo"
+          :other: "hai {0} domingos"
+    :sun-narrow: 
+      :relative: 
+        -1: "o dom. pas."
+        0: "este dom."
+        1: "o próx. dom."
+      :relative_time: 
+        :future: 
+          :one: "en {0} dom."
+          :other: "en {0} dom."
+        :past: 
+          :one: "hai {0} dom."
+          :other: "hai {0} dom."
+    :sun-short: 
+      :relative: 
+        -1: "o dom. pasado"
+        0: "este dom."
+        1: "o próximo dom."
+      :relative_time: 
+        :future: 
+          :one: "en {0} dom."
+          :other: "en {0} dom."
+        :past: 
+          :one: "hai {0} dom."
+          :other: "hai {0} dom."
+    :thu: 
+      :relative: 
+        -1: "o xoves pasado"
+        0: "este xoves"
+        1: "o próximo xoves"
+      :relative_time: 
+        :future: 
+          :one: "en {0} xoves"
+          :other: "en {0} xoves"
+        :past: 
+          :one: "hai {0} xoves"
+          :other: "hai {0} xoves"
+    :thu-narrow: 
+      :relative: 
+        -1: "o xov. pas."
+        0: "este xov."
+        1: "o próx. xov."
+      :relative_time: 
+        :future: 
+          :one: "en {0} xov."
+          :other: "en {0} xov."
+        :past: 
+          :one: "hai {0} xov."
+          :other: "hai {0} xov."
+    :thu-short: 
+      :relative: 
+        -1: "o xov. pasado"
+        0: "este xov."
+        1: "o próximo xov."
+      :relative_time: 
+        :future: 
+          :one: "en {0} xov."
+          :other: "en {0} xov."
+        :past: 
+          :one: "hai {0} xov."
+          :other: "hai {0} xov."
+    :tue: 
+      :relative: 
+        -1: "o martes pasado"
+        0: "este martes"
+        1: "o próximo martes"
+      :relative_time: 
+        :future: 
+          :one: "en {0} martes"
+          :other: "en {0} martes"
+        :past: 
+          :one: "hai {0} martes"
+          :other: "hai {0} martes"
+    :tue-narrow: 
+      :relative: 
+        -1: "o mar. pas."
+        0: "este mar."
+        1: "o próx. mar."
+      :relative_time: 
+        :future: 
+          :one: "en {0} mar."
+          :other: "en {0} mar."
+        :past: 
+          :one: "hai {0} mar."
+          :other: "hai {0} mar."
+    :tue-short: 
+      :relative: 
+        -1: "o mar. pasado"
+        0: "este mar."
+        1: "o próximo mar."
+      :relative_time: 
+        :future: 
+          :one: "en {0} mar."
+          :other: "en {0} mar."
+        :past: 
+          :one: "hai {0} mar."
+          :other: "hai {0} mar."
+    :wed: 
+      :relative: 
+        -1: "o mércores pasado"
+        0: "este mércores"
+        1: "o próximo mércores"
+      :relative_time: 
+        :future: 
+          :one: "en {0} mércores"
+          :other: "en {0} mércores"
+        :past: 
+          :one: "hai {0} mércores"
+          :other: "hai {0} mércores"
+    :wed-narrow: 
+      :relative: 
+        -1: "o mér. pas."
+        0: "este mér."
+        1: "o próx. mér."
+      :relative_time: 
+        :future: 
+          :one: "en {0} mér."
+          :other: "en {0} mér."
+        :past: 
+          :one: "hai {0} mér."
+          :other: "hai {0} mér."
+    :wed-short: 
+      :relative: 
+        -1: "o mér. pasado"
+        0: "este mér."
+        1: "o próximo mér."
+      :relative_time: 
+        :future: 
+          :one: "en {0} mér."
+          :other: "en {0} mér."
+        :past: 
+          :one: "hai {0} mér."
+          :other: "hai {0} mér."
+    :week: 
+      :display_name: semana
+      :relative: 
+        -1: "a semana pasada"
+        0: "esta semana"
+        1: "a próxima semana"
+      :relative_time: 
+        :future: 
+          :one: "en {0} semana"
+          :other: "en {0} semanas"
+        :past: 
+          :one: "hai {0} semana"
+          :other: "hai {0} semanas"
     :week-narrow: 
       :display_name: sem.
+      :relative_time: 
+        :future: 
+          :one: "en {0} sem."
+          :other: "en {0} sem."
+        :past: 
+          :one: "hai {0} sem."
+          :other: "hai {0} sem."
     :week-short: 
       :display_name: sem.
       :relative: 
@@ -302,51 +495,71 @@
         1: "sem. seguinte"
       :relative_time: 
         :future: 
-          :one: "En {0} sem."
-          :other: "En {0} sem."
+          :one: "en {0} sem."
+          :other: "en {0} sem."
         :past: 
-          :one: "Hai {0} sem."
-          :other: "Hai {0} sem."
+          :one: "hai {0} sem."
+          :other: "hai {0} sem."
+    :weekOfMonth: 
+      :display_name: "semana do mes"
+    :weekOfMonth-narrow: 
+      :display_name: "sem. do mes"
+    :weekOfMonth-short: 
+      :display_name: "sem. do mes"
     :weekday: 
-      :display_name: "Día da semana"
+      :display_name: "día da semana"
+    :weekday-narrow: 
+      :display_name: "día da sem."
+    :weekday-short: 
+      :display_name: "día da sem."
+    :weekdayOfMonth: 
+      :display_name: "semana do mes"
+    :weekdayOfMonth-narrow: 
+      :display_name: "sem. do mes"
+    :weekdayOfMonth-short: 
+      :display_name: "sem. do mes"
     :year: 
-      :display_name: Ano
+      :display_name: ano
       :relative: 
-        -1: "ano pasado"
+        -1: "o ano pasado"
         0: "este ano"
-        1: "seguinte ano"
+        1: "o próximo ano"
       :relative_time: 
         :future: 
-          :one: "En {0} ano"
-          :other: "En {0} anos"
+          :one: "en {0} ano"
+          :other: "en {0} anos"
         :past: 
-          :one: "Hai {0} ano"
-          :other: "Hai {0} anos"
+          :one: "hai {0} ano"
+          :other: "hai {0} anos"
     :year-narrow: 
-      :display_name: Ano
+      :display_name: ano
       :relative: 
         -1: "ano pasado"
         0: "este ano"
         1: "seguinte ano"
       :relative_time: 
         :future: 
-          :one: "En {0} anos"
-          :other: "En {0} anos"
+          :one: "en {0} ano"
+          :other: "en {0} anos"
         :past: 
-          :one: "Hai {0} anos"
-          :other: "Hai {0} anos"
+          :one: "hai {0} ano"
+          :other: "hai {0} anos"
     :year-short: 
-      :display_name: Ano
+      :display_name: ano
       :relative: 
         -1: "ano pasado"
         0: "este ano"
         1: "seguinte ano"
       :relative_time: 
         :future: 
-          :one: "En {0} anos"
-          :other: "En {0} anos"
+          :one: "en {0} ano"
+          :other: "en {0} anos"
         :past: 
-          :one: "Hai {0} anos"
-          :other: "Hai {0} anos"
+          :one: "hai {0} ano"
+          :other: "hai {0} anos"
     :zone: 
-      :display_name: "Fuso horario"
+      :display_name: "fuso horario"
+    :zone-narrow: 
+      :display_name: fuso
+    :zone-short: 
+      :display_name: fuso

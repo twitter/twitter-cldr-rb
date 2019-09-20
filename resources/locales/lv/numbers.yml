@@ -5,68 +5,68 @@
       :currency: 
         :number_system: latn
         :patterns: 
-          :default: "#0.00 ¤"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: ¤0 tūkst'.'
-              :other: ¤0 tūkst'.'
-              :zero: ¤0 tūkst'.'
+              :one: 0 tūkst'.' ¤
+              :other: 0 tūkst'.' ¤
+              :zero: 0 tūkst'.' ¤
             ? !ruby/symbol "10000"
             : 
-              :one: ¤00 tūkst'.'
-              :other: ¤00 tūkst'.'
-              :zero: ¤00 tūkst'.'
+              :one: 00 tūkst'.' ¤
+              :other: 00 tūkst'.' ¤
+              :zero: 00 tūkst'.' ¤
             ? !ruby/symbol "100000"
             : 
-              :one: ¤000 tūkst'.'
-              :other: ¤000 tūkst'.'
-              :zero: ¤000 tūkst'.'
+              :one: 000 tūkst'.' ¤
+              :other: 000 tūkst'.' ¤
+              :zero: 000 tūkst'.' ¤
             ? !ruby/symbol "1000000"
             : 
-              :one: ¤0 milj'.'
-              :other: ¤0 milj'.'
-              :zero: ¤0 milj'.'
+              :one: 0 milj'.' ¤
+              :other: 0 milj'.' ¤
+              :zero: 0 milj'.' ¤
             ? !ruby/symbol "10000000"
             : 
-              :one: ¤00 milj'.'
-              :other: ¤00 milj'.'
-              :zero: ¤00 milj'.'
+              :one: 00 milj'.' ¤
+              :other: 00 milj'.' ¤
+              :zero: 00 milj'.' ¤
             ? !ruby/symbol "100000000"
             : 
-              :one: ¤000 milj'.'
-              :other: ¤000 milj'.'
-              :zero: ¤000 milj'.'
+              :one: 000 milj'.' ¤
+              :other: 000 milj'.' ¤
+              :zero: 000 milj'.' ¤
             ? !ruby/symbol "1000000000"
             : 
-              :one: ¤0 mljrd'.'
-              :other: ¤0 mljrd'.'
-              :zero: ¤0 mljrd'.'
+              :one: 0 mljrd'.' ¤
+              :other: 0 mljrd'.' ¤
+              :zero: 0 mljrd'.' ¤
             ? !ruby/symbol "10000000000"
             : 
-              :one: ¤00 mljrd'.'
-              :other: ¤00 mljrd'.'
-              :zero: ¤00 mljrd'.'
+              :one: 00 mljrd'.' ¤
+              :other: 00 mljrd'.' ¤
+              :zero: 00 mljrd'.' ¤
             ? !ruby/symbol "100000000000"
             : 
-              :one: ¤000 mljrd'.'
-              :other: ¤000 mljrd'.'
-              :zero: ¤000 mljrd'.'
+              :one: 000 mljrd'.' ¤
+              :other: 000 mljrd'.' ¤
+              :zero: 000 mljrd'.' ¤
             ? !ruby/symbol "1000000000000"
             : 
-              :one: ¤0 trilj'.'
-              :other: ¤0 trilj'.'
-              :zero: ¤0 trilj'.'
+              :one: 0 trilj'.' ¤
+              :other: 0 trilj'.' ¤
+              :zero: 0 trilj'.' ¤
             ? !ruby/symbol "10000000000000"
             : 
-              :one: ¤00 trilj'.'
-              :other: ¤00 trilj'.'
-              :zero: ¤00 trilj'.'
+              :one: 00 trilj'.' ¤
+              :other: 00 trilj'.' ¤
+              :zero: 00 trilj'.' ¤
             ? !ruby/symbol "100000000000000"
             : 
-              :one: ¤000 trilj'.'
-              :other: ¤000 trilj'.'
-              :zero: ¤000 trilj'.'
+              :one: 000 trilj'.' ¤
+              :other: 000 trilj'.' ¤
+              :zero: 000 trilj'.' ¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -80,7 +80,7 @@
             : 
               :one: "0 tūkstotis"
               :other: "0 tūkstoši"
-              :zero: "0 tūkstoši"
+              :zero: "0 tūkstošu"
             ? !ruby/symbol "10000"
             : 
               :one: "00 tūkstotis"
@@ -95,7 +95,7 @@
             : 
               :one: "0 miljons"
               :other: "0 miljoni"
-              :zero: "0 miljoni"
+              :zero: "0 miljonu"
             ? !ruby/symbol "10000000"
             : 
               :one: "00 miljons"
@@ -110,7 +110,7 @@
             : 
               :one: "0 miljards"
               :other: "0 miljardi"
-              :zero: "0 miljardi"
+              :zero: "0 miljardu"
             ? !ruby/symbol "10000000000"
             : 
               :one: "00 miljards"
@@ -125,7 +125,7 @@
             : 
               :one: "0 triljons"
               :other: "0 triljoni"
-              :zero: "0 triljoni"
+              :zero: "0 triljonu"
             ? !ruby/symbol "10000000000000"
             : 
               :one: "00 triljons"
@@ -213,7 +213,7 @@
       :infinity: ∞
       :list: ;
       :minus_sign: "-"
-      :nan: nav skaitlis
+      :nan: NS
       :per_mille: ‰
       :percent_sign: "%"
       :plus_sign: +

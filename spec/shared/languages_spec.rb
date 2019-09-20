@@ -31,8 +31,8 @@ describe TwitterCldr::Shared::Languages do
     end
 
     it "successfully translates locale codes that are and are not in the CLDR using the locale map" do
-      expect(described_class.translate_language("Russian", :en, :'zh-cn')).to match_normalized("俄文")
-      expect(described_class.translate_language("Russian", :en, :'zh')).to match_normalized("俄文")
+      expect(described_class.translate_language("Russian", :en, :'zh-cn')).to match_normalized("俄语")
+      expect(described_class.translate_language("Russian", :en, :'zh')).to match_normalized("俄语")
     end
 
     it "should return nil if no translation was found" do

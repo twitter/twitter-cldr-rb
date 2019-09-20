@@ -207,7 +207,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd"])) %>
+# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["Bh", "Bhm", "Bhms", "E", "EBhm", "EBhms", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms"])) %>
 DateTime.now.localize(:ja).additional_formats
 ```
 

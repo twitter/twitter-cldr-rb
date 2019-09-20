@@ -7,7 +7,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -139,50 +139,20 @@
                 :rule: "девʼятсот[ >>];"
                 :value: 900
               - 
-                :rule: "<%spellout-cardinal-feminine< тисяча[ >>];"
+                :rule: "<%spellout-cardinal-feminine< $(cardinal,one{тисяча}few{тисячі}other{тисяч})$[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-feminine< тисячі[ >>];"
-                :value: 2000
-              - 
-                :rule: "<%spellout-cardinal-feminine< тисяч[ >>];"
-                :value: 5000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільйон}few{мільйони}other{мільйонів})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільйони[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйонів[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільярд}few{мільярди}other{мільярдів})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільярди[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярдів[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більйон}few{більйони}other{більйонів})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< більйони[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйонів[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більярд}few{більярди}other{більярдів})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярди[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярдів[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
@@ -259,50 +229,20 @@
                 :rule: "девʼятсот[ >>];"
                 :value: 900
               - 
-                :rule: "<%spellout-cardinal-feminine< тисяча[ >>];"
+                :rule: "<%spellout-cardinal-feminine< $(cardinal,one{тисяча}few{тисячі}other{тисяч})$[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-feminine< тисячі[ >>];"
-                :value: 2000
-              - 
-                :rule: "<%spellout-cardinal-feminine< тисяч[ >>];"
-                :value: 5000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільйон}few{мільйони}other{мільйонів})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільйони[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйонів[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільярд}few{мільярди}other{мільярдів})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільярди[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярдів[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більйон}few{більйони}other{більйонів})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< більйони[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйонів[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більярд}few{більярди}other{більярдів})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярди[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярдів[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
@@ -379,50 +319,20 @@
                 :rule: "девʼятсот[ >>];"
                 :value: 900
               - 
-                :rule: "<%spellout-cardinal-feminine< тисяча[ >>];"
+                :rule: "<%spellout-cardinal-feminine< $(cardinal,one{тисяча}few{тисячі}other{тисяч})$[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-feminine< тисячі[ >>];"
-                :value: 2000
-              - 
-                :rule: "<%spellout-cardinal-feminine< тисяч[ >>];"
-                :value: 5000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільйон}few{мільйони}other{мільйонів})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільйони[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільйонів[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{мільярд}few{мільярди}other{мільярдів})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< мільярди[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< мільярдів[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйон[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більйон}few{більйони}other{більйонів})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< більйони[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більйонів[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярд[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{більярд}few{більярди}other{більярдів})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярди[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< більярдів[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000

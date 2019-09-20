@@ -7,7 +7,22 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
+                :value: x.x
+              - 
+                :rule: =0=;
+                :value: 0
+              - 
+                :rule: 元;
+                :value: 1
+              - 
+                :rule: =0=;
+                :value: 2
+            :type: spellout-numbering-year-latn
+          - 
+            :rules: 
+              - 
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -110,7 +125,7 @@
                 :rule: "<<京[>>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-financial
           - 
@@ -182,13 +197,13 @@
                 :rule: "<<京[>>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: 第=%spellout-numbering=;
@@ -200,10 +215,10 @@
           - 
             :rules: 
               - 
-                :rule: "第−>#,###0>;"
+                :rule: "第−>#,##0>;"
                 :value: "-x"
               - 
-                :rule: "第=#,###0=;"
+                :rule: "第=#,##0=;"
                 :value: 0
             :type: digits-ordinal
         :type: OrdinalRules

@@ -3,63 +3,63 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: beng
         :patterns: 
           :default: "#,##,##0.00¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0 হাজার¤
-              :other: 0 হাজার¤
+              :one: 0 হা¤
+              :other: 0 হা¤
             ? !ruby/symbol "10000"
             : 
-              :one: 00 হাজার¤
-              :other: 00 হাজার¤
+              :one: 00 হা¤
+              :other: 00 হা¤
             ? !ruby/symbol "100000"
             : 
-              :one: 0 লাখ¤
-              :other: 0 লাখ¤
+              :one: 0 লা¤
+              :other: 0 লা¤
             ? !ruby/symbol "1000000"
             : 
-              :one: 0 লাখ¤
-              :other: 0 লাখ¤
+              :one: 00 লা¤
+              :other: 00 লা¤
             ? !ruby/symbol "10000000"
             : 
-              :one: 00 কোটি¤
-              :other: 00 কোটি¤
+              :one: 0 কো¤
+              :other: 0 কো¤
             ? !ruby/symbol "100000000"
             : 
-              :one: 000 কোটি¤
-              :other: 000 কোটি¤
+              :one: 00 কো¤
+              :other: 00 কো¤
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0 একশো কোটি¤
-              :other: 0 একশো কোটি¤
+              :one: 000 কো¤
+              :other: 000 কো¤
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00 হাজার কোটি¤
-              :other: 00 হাজার কোটি¤
+              :one: 0000 কো¤
+              :other: 0000 কো¤
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000 সহস্র কোটি¤
-              :other: 000 সহস্র কোটি¤
+              :one: 00000 কো¤
+              :other: 00000 কো¤
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 0 দশ সহস্রের ত্রিঘাত¤
-              :other: 0 দশ সহস্রের ত্রিঘাত¤
+              :one: 0 লা'.'কো'.'¤
+              :other: 0 লা'.'কো'.'¤
             ? !ruby/symbol "10000000000000"
             : 
-              :one: 00 একশো সহস্রের ত্রিঘাত¤
-              :other: 00 একশো সহস্রের ত্রিঘাত¤
+              :one: 00 লা'.'কো'.'¤
+              :other: 00 লা'.'কো'.'¤
             ? !ruby/symbol "100000000000000"
             : 
-              :one: 000 সহস্র সহস্রের ত্রিঘাত¤
-              :other: 000 সহস্র সহস্রের ত্রিঘাত¤
+              :one: 000 লা'.'কো'.'¤
+              :other: 000 লা'.'কো'.'¤
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
       :decimal: 
-        :number_system: latn
+        :number_system: beng
         :patterns: 
           :default: "#,##,##0.###"
           :long: 
@@ -77,95 +77,95 @@
               :other: "0 লাখ"
             ? !ruby/symbol "1000000"
             : 
-              :one: "0 মিলিয়ন"
-              :other: "0 মিলিয়ন"
+              :one: "00 লাখ"
+              :other: "00 লাখ"
             ? !ruby/symbol "10000000"
             : 
-              :one: "00 মিলিয়ন"
-              :other: "00 মিলিয়ন"
+              :one: "0 কোটি"
+              :other: "0 কোটি"
             ? !ruby/symbol "100000000"
             : 
-              :one: "000 মিলিয়ন"
-              :other: "000 মিলিয়ন"
+              :one: "00 কোটি"
+              :other: "00 কোটি"
             ? !ruby/symbol "1000000000"
             : 
-              :one: "0 বিলিয়ন"
-              :other: "0 বিলিয়ন"
+              :one: "000 কোটি"
+              :other: "000 কোটি"
             ? !ruby/symbol "10000000000"
             : 
-              :one: "00 বিলিয়ন"
-              :other: "00 বিলিয়ন"
+              :one: "0000 কোটি"
+              :other: "0000 কোটি"
             ? !ruby/symbol "100000000000"
             : 
-              :one: "000 বিলিয়ন"
-              :other: "000 বিলিয়ন"
+              :one: "00000 কোটি"
+              :other: "00000 কোটি"
             ? !ruby/symbol "1000000000000"
             : 
-              :one: "0 ট্রিলিয়ন"
-              :other: "0 ট্রিলিয়ন"
+              :one: "0 লাখ কোটি"
+              :other: "0 লাখ কোটি"
             ? !ruby/symbol "10000000000000"
             : 
-              :one: "00 ট্রিলিয়ন"
-              :other: "00 ট্রিলিয়ন"
+              :one: "00 লাখ কোটি"
+              :other: "00 লাখ কোটি"
             ? !ruby/symbol "100000000000000"
             : 
-              :one: "000 ট্রিলিয়ন"
-              :other: "000 ট্রিলিয়ন"
+              :one: "000 লাখ কোটি"
+              :other: "000 লাখ কোটি"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0 হাজার
-              :other: 0 হাজার
+              :one: 0 হা
+              :other: 0 হা
             ? !ruby/symbol "10000"
             : 
-              :one: 00 হাজার
-              :other: 00 হাজার
+              :one: 00 হা
+              :other: 00 হা
             ? !ruby/symbol "100000"
             : 
-              :one: 0 লাখ
-              :other: 0 লাখ
+              :one: 0 লা
+              :other: 0 লা
             ? !ruby/symbol "1000000"
             : 
-              :one: 0M
-              :other: 0M
+              :one: 00 লা
+              :other: 00 লা
             ? !ruby/symbol "10000000"
             : 
-              :one: 00M
-              :other: 00M
+              :one: 0 কো
+              :other: 0 কো
             ? !ruby/symbol "100000000"
             : 
-              :one: 000M
-              :other: 000M
+              :one: 00 কো
+              :other: 00 কো
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0B
-              :other: 0B
+              :one: 000 কো
+              :other: 000 কো
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00B
-              :other: 00B
+              :one: 0000 কো
+              :other: 0000 কো
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000B
-              :other: 000B
+              :one: 00000 কো
+              :other: 00000 কো
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 0T
-              :other: 0T
+              :one: 0 লা'.'কো'.'
+              :other: 0 লা'.'কো'.'
             ? !ruby/symbol "10000000000000"
             : 
-              :one: 00T
-              :other: 00T
+              :one: 00 লা'.'কো'.'
+              :other: 00 লা'.'কো'.'
             ? !ruby/symbol "100000000000000"
             : 
-              :one: 000T
-              :other: 000T
+              :one: 000 লা'.'কো'.'
+              :other: 000 লা'.'কো'.'
       :percent: 
-        :number_system: latn
+        :number_system: beng
         :patterns: 
-          :default: "#,##,##0%"
+          :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: beng
         :patterns: 
           :default: "#E0"
     :symbols: 

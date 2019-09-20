@@ -14,8 +14,8 @@
           :one: "{0} দিনের মধ্যে"
           :other: "{0} দিনের মধ্যে"
         :past: 
-          :one: "{0} দিন পূর্বে"
-          :other: "{0} দিন পূর্বে"
+          :one: "{0} দিন আগে"
+          :other: "{0} দিন আগে"
     :day-narrow: 
       :display_name: দিন
       :relative: 
@@ -29,8 +29,8 @@
           :one: "{0} দিনের মধ্যে"
           :other: "{0} দিনের মধ্যে"
         :past: 
-          :one: "{0} দিন পূর্বে"
-          :other: "{0} দিন পূর্বে"
+          :one: "{0} দিন আগে"
+          :other: "{0} দিন আগে"
     :day-short: 
       :display_name: দিন
       :relative: 
@@ -44,29 +44,66 @@
           :one: "{0} দিনের মধ্যে"
           :other: "{0} দিনের মধ্যে"
         :past: 
-          :one: "{0} দিন পূর্বে"
-          :other: "{0} দিন পূর্বে"
+          :one: "{0} দিন আগে"
+          :other: "{0} দিন আগে"
+    :dayOfYear: 
+      :display_name: "বছরের দিন"
+    :dayOfYear-narrow: 
+      :display_name: "বছরের দিন"
+    :dayOfYear-short: 
+      :display_name: "বছরের দিন"
     :dayperiod: 
       :display_name: AM/PM
+    :dayperiod-narrow: 
+      :display_name: AM/PM
+    :dayperiod-short: 
+      :display_name: AM/PM
     :era: 
+      :display_name: যুগ
+    :era-narrow: 
+      :display_name: যুগ
+    :era-short: 
       :display_name: যুগ
     :fri: 
       :relative: 
         -1: "গত শুক্রবার"
         0: "এই শুক্রবার"
         1: "পরের শুক্রবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শুক্রবারে"
+          :other: "{0} শুক্রবারে"
+        :past: 
+          :one: "{0} শুক্রবার আগে"
+          :other: "{0} শুক্রবার আগে"
     :fri-narrow: 
       :relative: 
         -1: "গত শুক্রবার"
         0: "এই শুক্রবার"
         1: "পরের শুক্রবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শুক্রবারে"
+          :other: "{0} শুক্রবারে"
+        :past: 
+          :one: "{0} শুক্রবার আগে"
+          :other: "{0} শুক্রবার আগে"
     :fri-short: 
       :relative: 
         -1: "গত শুক্রবার"
         0: "এই শুক্রবার"
         1: "পরের শুক্রবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শুক্রবারে"
+          :other: "{0} শুক্রবারে"
+        :past: 
+          :one: "{0} শুক্রবার আগে"
+          :other: "{0} শুক্রবার আগে"
     :hour: 
-      :display_name: ঘন্টা
+      :display_name: ঘণ্টা
+      :relative: 
+        0: "এই ঘণ্টায়"
       :relative_time: 
         :future: 
           :one: "{0} ঘন্টায়"
@@ -75,7 +112,7 @@
           :one: "{0} ঘন্টা আগে"
           :other: "{0} ঘন্টা আগে"
     :hour-narrow: 
-      :display_name: ঘন্টা
+      :display_name: ঘণ্টা
       :relative_time: 
         :future: 
           :one: "{0} ঘন্টায়"
@@ -84,7 +121,7 @@
           :one: "{0} ঘন্টা আগে"
           :other: "{0} ঘন্টা আগে"
     :hour-short: 
-      :display_name: ঘন্টা
+      :display_name: ঘণ্টা
       :relative_time: 
         :future: 
           :one: "{0} ঘন্টায়"
@@ -94,13 +131,15 @@
           :other: "{0} ঘন্টা আগে"
     :minute: 
       :display_name: মিনিট
+      :relative: 
+        0: "এই মিনিট"
       :relative_time: 
         :future: 
           :one: "{0} মিনিটে"
           :other: "{0} মিনিটে"
         :past: 
-          :one: "{0} মিনিট পূর্বে"
-          :other: "{0} মিনিট পূর্বে"
+          :one: "{0} মিনিট আগে"
+          :other: "{0} মিনিট আগে"
     :minute-narrow: 
       :display_name: মিনিট
       :relative_time: 
@@ -108,8 +147,8 @@
           :one: "{0} মিনিটে"
           :other: "{0} মিনিটে"
         :past: 
-          :one: "{0} মিনিট পূর্বে"
-          :other: "{0} মিনিট পূর্বে"
+          :one: "{0} মিনিট আগে"
+          :other: "{0} মিনিট আগে"
     :minute-short: 
       :display_name: মিনিট
       :relative_time: 
@@ -117,23 +156,44 @@
           :one: "{0} মিনিটে"
           :other: "{0} মিনিটে"
         :past: 
-          :one: "{0} মিনিট পূর্বে"
-          :other: "{0} মিনিট পূর্বে"
+          :one: "{0} মিনিট আগে"
+          :other: "{0} মিনিট আগে"
     :mon: 
       :relative: 
         -1: "গত সোমবার"
         0: "এই সোমবার"
         1: "পরের সোমবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} সোমবারেতে"
+          :other: "{0} সোমবারেতে"
+        :past: 
+          :one: "{0} সোমবারেতে"
+          :other: "{0} সোমবার আগে"
     :mon-narrow: 
       :relative: 
         -1: "গত সোমবার"
         0: "এই সোমবার"
         1: "পরের সোমবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} সোমবারেতে"
+          :other: "{0} সোমবারেতে"
+        :past: 
+          :one: "{0} সোমবার আগে"
+          :other: "{0} সোমবার আগে"
     :mon-short: 
       :relative: 
         -1: "গত সোমবার"
         0: "এই সোমবার"
         1: "পরের সোমবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} সোমবারেতে"
+          :other: "{0} সোমবারেতে"
+        :past: 
+          :one: "{0} সোমবার আগে"
+          :other: "{0} সোমবার আগে"
     :month: 
       :display_name: মাস
       :relative: 
@@ -145,8 +205,8 @@
           :one: "{0} মাসে"
           :other: "{0} মাসে"
         :past: 
-          :one: "{0} মাস পূর্বে"
-          :other: "{0} মাস পূর্বে"
+          :one: "{0} মাস আগে"
+          :other: "{0} মাস আগে"
     :month-narrow: 
       :display_name: মাস
       :relative: 
@@ -158,8 +218,8 @@
           :one: "{0} মাসে"
           :other: "{0} মাসে"
         :past: 
-          :one: "{0} মাস পূর্বে"
-          :other: "{0} মাস পূর্বে"
+          :one: "{0} মাস আগে"
+          :other: "{0} মাস আগে"
     :month-short: 
       :display_name: মাস
       :relative: 
@@ -171,50 +231,75 @@
           :one: "{0} মাসে"
           :other: "{0} মাসে"
         :past: 
-          :one: "{0} মাস পূর্বে"
-          :other: "{0} মাস পূর্বে"
+          :one: "{0} মাস আগে"
+          :other: "{0} মাস আগে"
     :quarter: 
       :display_name: ত্রৈমাসিক
+      :relative: 
+        -1: "গত ত্রৈমাসিক"
+        0: "এই ত্রৈমাসিক"
+        1: "পরের ত্রৈমাসিক"
       :relative_time: 
         :future: 
-          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
-          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :one: "{0} ত্রৈমাসিকে"
+          :other: "{0} ত্রৈমাসিকে"
         :past: 
-          :one: "{0} ত্রৈমাসিকের আগে"
-          :other: "{0} ত্রৈমাসিকের আগে"
+          :one: "{0} ত্রৈমাসিক আগে"
+          :other: "{0} ত্রৈমাসিক আগে"
     :quarter-narrow: 
       :display_name: ত্রৈমাসিক
       :relative_time: 
         :future: 
-          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
-          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :one: "{0} ত্রৈমাসিকে"
+          :other: "{0} ত্রৈমাসিকে"
         :past: 
-          :one: "{0} ত্রৈমাসিকের আগে"
-          :other: "{0} ত্রৈমাসিকের আগে"
+          :one: "{0} ত্রৈমাসিক আগে"
+          :other: "{0} ত্রৈমাসিক আগে"
     :quarter-short: 
       :display_name: ত্রৈমাসিক
       :relative_time: 
         :future: 
-          :one: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
-          :other: "{0} ত্রৈমাসিকের এক চতুর্থাংশ"
+          :one: "{0} ত্রৈমাসিকে"
+          :other: "{0} ত্রৈমাসিকে"
         :past: 
-          :one: "{0} ত্রৈমাসিকের আগে"
-          :other: "{0} ত্রৈমাসিকের আগে"
+          :one: "{0} ত্রৈমাসিক আগে"
+          :other: "{0} ত্রৈমাসিক আগে"
     :sat: 
       :relative: 
         -1: "গত শনিবার"
         0: "এই শনিবার"
         1: "পরের শনিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শনিবারে"
+          :other: "{0} শনিবারে"
+        :past: 
+          :one: "{0} শনিবার আগে"
+          :other: "{0} শনিবার আগে"
     :sat-narrow: 
       :relative: 
         -1: "গত শনিবার"
         0: "এই শনিবার"
         1: "পরের শনিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শনিবারে"
+          :other: "{0} শনিবারে"
+        :past: 
+          :one: "{0} শনিবার আগে"
+          :other: "{0} শনিবার আগে"
     :sat-short: 
       :relative: 
         -1: "গত শনিবার"
         0: "এই শনিবার"
         1: "পরের শনিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} শনিবারে"
+          :other: "{0} শনিবারে"
+        :past: 
+          :one: "{0} শনিবার আগে"
+          :other: "{0} শনিবার আগে"
     :second: 
       :display_name: সেকেন্ড
       :relative: 
@@ -233,8 +318,8 @@
           :one: "{0} সেকেন্ডে"
           :other: "{0} সেকেন্ডে"
         :past: 
-          :one: "{0} সেকেন্ড পূর্বে"
-          :other: "{0} সেকেন্ড পূর্বে"
+          :one: "{0} সেকেন্ড আগে"
+          :other: "{0} সেকেন্ড আগে"
     :second-short: 
       :display_name: সেকেন্ড
       :relative_time: 
@@ -249,61 +334,145 @@
         -1: "গত রবিবার"
         0: "এই রবিবার"
         1: "পরের রবিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} রবিবারেতে"
+          :other: "{0} রবিবারেতে"
+        :past: 
+          :one: "{0} রবিবার আগে"
+          :other: "{0} রবিবার আগে"
     :sun-narrow: 
       :relative: 
         -1: "গত রবিবার"
         0: "এই রবিবার"
         1: "পরের রবিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} রবিবারেতে"
+          :other: "{0} রবিবারেতে"
+        :past: 
+          :one: "{0} রবিবার আগে"
+          :other: "{0} রবিবার আগে"
     :sun-short: 
       :relative: 
         -1: "গত রবিবার"
         0: "এই রবিবার"
         1: "পরের রবিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} রবিবারেতে"
+          :other: "{0} রবিবারেতে"
+        :past: 
+          :one: "{0} রবিবার আগে"
+          :other: "{0} রবিবার আগে"
     :thu: 
       :relative: 
         -1: "গত বৃহস্পতিবার"
         0: "এই বৃহস্পতিবার"
         1: "পরের বৃহস্পতিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বৃহস্পতিবারে"
+          :other: "{0} বৃহস্পতিবারে"
+        :past: 
+          :one: "{0} বৃহস্পতিবার আগে"
+          :other: "{0} বৃহস্পতিবার আগে"
     :thu-narrow: 
       :relative: 
         -1: "গত বৃহস্পতিবার"
         0: "এই বৃহস্পতিবার"
         1: "পরের বৃহস্পতিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বৃহস্পতিবারে"
+          :other: "{0} বৃহস্পতিবারে"
+        :past: 
+          :one: "{0} বৃহস্পতিবার আগে"
+          :other: "{0} বৃহস্পতিবার আগে"
     :thu-short: 
       :relative: 
         -1: "গত বৃহস্পতিবার"
         0: "এই বৃহস্পতিবার"
         1: "পরের বৃহস্পতিবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বৃহস্পতিবারে"
+          :other: "{0} বৃহস্পতিবারে"
+        :past: 
+          :one: "{0} বৃহস্পতিবার আগে"
+          :other: "{0} বৃহস্পতিবার আগে"
     :tue: 
       :relative: 
         -1: "গত মঙ্গলবার"
         0: "এই মঙ্গলবার"
         1: "পরের মঙ্গলবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} মঙ্গলবারে"
+          :other: "{0} মঙ্গলবারে"
+        :past: 
+          :one: "{0} মঙ্গলবার আগে"
+          :other: "{0} মঙ্গলবার আগে"
     :tue-narrow: 
       :relative: 
         -1: "গত মঙ্গলবার"
         0: "এই মঙ্গলবার"
         1: "পরের মঙ্গলবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} মঙ্গলবারে"
+          :other: "{0} মঙ্গলবারে"
+        :past: 
+          :one: "{0} মঙ্গলবার আগে"
+          :other: "{0} মঙ্গলবার আগে"
     :tue-short: 
       :relative: 
         -1: "গত মঙ্গলবার"
         0: "এই মঙ্গলবার"
         1: "পরের মঙ্গলবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} মঙ্গলবারে"
+          :other: "{0} মঙ্গলবারে"
+        :past: 
+          :one: "{0} মঙ্গলবার আগে"
+          :other: "{0} মঙ্গলবার আগে"
     :wed: 
       :relative: 
         -1: "গত বুধবার"
         0: "এই বুধবার"
         1: "পরের বুধবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বুধবারে"
+          :other: "{0} বুধবারে"
+        :past: 
+          :one: "{0} বুধবার আগে"
+          :other: "{0} বুধবার আগে"
     :wed-narrow: 
       :relative: 
         -1: "গত বুধবার"
         0: "এই বুধবার"
         1: "পরের বুধবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বুধবারে"
+          :other: "{0} বুধবারে"
+        :past: 
+          :one: "{0} বুধবার আগে"
+          :other: "{0} বুধবার আগে"
     :wed-short: 
       :relative: 
         -1: "গত বুধবার"
         0: "এই বুধবার"
         1: "পরের বুধবার"
+      :relative_time: 
+        :future: 
+          :one: "{0} বুধবারে"
+          :other: "{0} বুধবারে"
+        :past: 
+          :one: "{0} বুধবার আগে"
+          :other: "{0} বুধবার আগে"
     :week: 
       :display_name: সপ্তাহ
       :relative: 
@@ -315,8 +484,8 @@
           :one: "{0} সপ্তাহে"
           :other: "{0} সপ্তাহে"
         :past: 
-          :one: "{0} সপ্তাহ পূর্বে"
-          :other: "{0} সপ্তাহ পূর্বে"
+          :one: "{0} সপ্তাহ আগে"
+          :other: "{0} সপ্তাহ আগে"
     :week-narrow: 
       :display_name: সপ্তাহ
       :relative: 
@@ -328,8 +497,8 @@
           :one: "{0} সপ্তাহে"
           :other: "{0} সপ্তাহে"
         :past: 
-          :one: "{0} সপ্তাহ পূর্বে"
-          :other: "{0} সপ্তাহ পূর্বে"
+          :one: "{0} সপ্তাহ আগে"
+          :other: "{0} সপ্তাহ আগে"
     :week-short: 
       :display_name: সপ্তাহ
       :relative: 
@@ -341,10 +510,26 @@
           :one: "{0} সপ্তাহে"
           :other: "{0} সপ্তাহে"
         :past: 
-          :one: "{0} সপ্তাহ পূর্বে"
-          :other: "{0} সপ্তাহ পূর্বে"
+          :one: "{0} সপ্তাহ আগে"
+          :other: "{0} সপ্তাহ আগে"
+    :weekOfMonth: 
+      :display_name: "মাসের সপ্তাহ"
+    :weekOfMonth-narrow: 
+      :display_name: "মাসের সপ্তাহ"
+    :weekOfMonth-short: 
+      :display_name: "মাসের সপ্তাহ"
     :weekday: 
       :display_name: "সপ্তাহের দিন"
+    :weekday-narrow: 
+      :display_name: "সপ্তাহের দিন"
+    :weekday-short: 
+      :display_name: "সপ্তাহের দিন"
+    :weekdayOfMonth: 
+      :display_name: "মাসের কার্য দিবস"
+    :weekdayOfMonth-narrow: 
+      :display_name: "মাসের কার্য দিবস"
+    :weekdayOfMonth-short: 
+      :display_name: "মাসের কার্য দিবস"
     :year: 
       :display_name: বছর
       :relative: 
@@ -385,4 +570,8 @@
           :one: "{0} বছর পূর্বে"
           :other: "{0} বছর পূর্বে"
     :zone: 
-      :display_name: এলাকা
+      :display_name: "সময় অঞ্চল"
+    :zone-narrow: 
+      :display_name: অঞ্চল
+    :zone-short: 
+      :display_name: অঞ্চল

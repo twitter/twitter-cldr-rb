@@ -3,9 +3,9 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
-          :default: "¤#,##0.00"
+          :default: "#,##0.00 ¤"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -124,11 +124,11 @@
             : 
               :other: 000兆
       :percent: 
-        :number_system: latn
+        :number_system: arab
         :patterns: 
           :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: hanidec
         :patterns: 
           :default: "#E0"
     :symbols: 
@@ -142,6 +142,6 @@
       :nan: 非數值
       :per_mille: ‰
       :percent_sign: "%"
-      :plus_sign: +
+      :plus_sign: +‎
       :superscripting_exponent: ×
       :time_separator: ":"

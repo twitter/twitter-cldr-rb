@@ -19,7 +19,7 @@
       :other: lekes
       :symbol: ALL
     :AMD: 
-      :one: "dram armenio"
+      :one: dram
       :other: drams
       :symbol: AMD
     :ANG: 
@@ -60,15 +60,15 @@
     :AZM: 
       :one: "manat azerí (1993–2006)"
     :AZN: 
-      :one: "manat azerí"
-      :other: "manat azeríes"
+      :one: "manat azerbaiyano"
+      :other: "manat azerbaiyanos"
       :symbol: AZN
     :BAD: 
       :one: "dinar bosnio"
       :other: "dinares bosnios"
     :BAM: 
-      :one: "marco convertible de Bosnia-Herzegovina"
-      :other: "marcos convertibles de Bosnia-Herzegovina"
+      :one: "marco convertible de Bosnia y Herzegovina"
+      :other: "marcos convertibles de Bosnia y Herzegovina"
       :symbol: BAM
     :BBD: 
       :one: "dólar barbadense"
@@ -157,9 +157,13 @@
     :BYB: 
       :one: "nuevo rublo bielorruso"
       :other: "nuevos rublos bielorrusos"
-    :BYR: 
+    :BYN: 
       :one: "rublo bielorruso"
       :other: "rublos bielorrusos"
+      :symbol: р.
+    :BYR: 
+      :one: "rublo bielorruso (2000–2016)"
+      :other: "rublos bielorrusos (2000–2016)"
       :symbol: BYR
     :BZD: 
       :one: "dólar beliceño"
@@ -179,7 +183,6 @@
     :CHF: 
       :one: "franco suizo"
       :other: "francos suizos"
-      :symbol: CHF
     :CHW: 
       :one: "franco WIR"
       :other: "francos WIR"
@@ -190,6 +193,10 @@
       :one: "peso chileno"
       :other: "pesos chilenos"
       :symbol: CLP
+    :CNH: 
+      :one: "yuan chino (extracontinental)"
+      :other: "yuan chino (extracontinental)"
+      :symbol: CNH
     :CNY: 
       :one: yuan
       :other: yuanes
@@ -264,7 +271,7 @@
     :EGP: 
       :one: "libra egipcia"
       :other: "libras egipcias"
-      :symbol: E£
+      :symbol: EGP
     :ERN: 
       :one: nafka
       :other: nakfas
@@ -297,13 +304,13 @@
     :FKP: 
       :one: "libra malvinense"
       :other: "libras malvinenses"
-      :symbol: FKP
+      :symbol: £
     :FRF: 
       :one: "franco francés"
       :other: "francos franceses"
     :GBP: 
-      :one: "libra británica"
-      :other: "libras británicas"
+      :one: "libra esterlina"
+      :other: "libras esterlinas"
       :symbol: GBP
     :GEK: 
       :one: "kupon larit georgiano"
@@ -348,7 +355,7 @@
     :GYD: 
       :one: "dólar guyanés"
       :other: "dólares guyaneses"
-      :symbol: GYD
+      :symbol: $
     :HKD: 
       :one: "dólar hongkonés"
       :other: "dólares hongkoneses"
@@ -371,7 +378,7 @@
     :HUF: 
       :one: "forinto húngaro"
       :other: "forintos húngaros"
-      :symbol: HUF
+      :symbol: Ft
     :IDR: 
       :one: "rupia indonesia"
       :other: "rupias indonesias"
@@ -474,7 +481,7 @@
     :LTL: 
       :one: "litas lituana"
       :other: "litas lituanas"
-      :symbol: LTL
+      :symbol: Lt
     :LTT: 
       :one: "talonas lituana"
       :other: "talonas lituanas"
@@ -490,25 +497,22 @@
     :LVL: 
       :one: "lats letón"
       :other: "lats letónes"
-      :symbol: LVL
+      :symbol: Ls
     :LVR: 
       :one: "rublo letón"
       :other: "rublos letones"
     :LYD: 
       :one: "dinar libio"
       :other: "dinares libios"
-      :symbol: LYD
     :MAD: 
       :one: "dírham marroquí"
       :other: "dírhams marroquíes"
-      :symbol: MAD
     :MAF: 
       :one: "franco marroquí"
       :other: "francos marroquíes"
     :MDL: 
       :one: "leu moldavo"
-      :other: "leus moldavos"
-      :symbol: MDL
+      :other: "lei moldavos"
     :MGA: 
       :one: ariari
       :other: ariaris
@@ -534,9 +538,12 @@
       :other: "patacas de Macao"
       :symbol: MOP
     :MRO: 
+      :one: "uguiya (1973–2017)"
+      :other: "uguiyas (1973–2017)"
+      :symbol: MRO
+    :MRU: 
       :one: uguiya
       :other: uguiyas
-      :symbol: MRO
     :MTL: 
       :one: "lira maltesa"
       :other: "liras maltesas"
@@ -620,12 +627,11 @@
       :one: "inti peruano"
       :other: "intis peruanos"
     :PEN: 
-      :one: "nuevo sol peruano"
-      :other: "nuevos soles peruanos"
-      :symbol: PEN
-    :PES: 
       :one: "sol peruano"
       :other: "soles peruanos"
+    :PES: 
+      :one: "sol peruano (1863–1965)"
+      :other: "soles peruanos (1863–1965)"
     :PGK: 
       :one: kina
       :other: kinas
@@ -641,7 +647,7 @@
     :PLN: 
       :one: esloti
       :other: eslotis
-      :symbol: PLN
+      :symbol: zł
     :PLZ: 
       :one: "zloty polaco (PLZ)"
       :other: "zlotys polacos (PLZ)"
@@ -663,8 +669,8 @@
       :other: "antiguos lei rumanos"
     :RON: 
       :one: "leu rumano"
-      :other: "leus rumanos"
-      :symbol: RON
+      :other: "lei rumanos"
+      :symbol: lei
     :RSD: 
       :one: "dinar serbio"
       :other: "dinares serbios"
@@ -699,7 +705,6 @@
     :SDG: 
       :one: "libra sudanesa"
       :other: "libras sudanesas"
-      :symbol: SDG
     :SDP: 
       :one: "libra sudanesa antigua"
       :other: "libras sudanesas antiguas"
@@ -738,11 +743,15 @@
     :SSP: 
       :one: "libra sursudanesa"
       :other: "libras sursudanesas"
-      :symbol: SSP
+      :symbol: £
     :STD: 
-      :one: dobra
-      :other: dobras
+      :one: "dobra (1977–2017)"
+      :other: "dobras (1977–2017)"
       :symbol: STD
+    :STN: 
+      :one: "dobra santotomense"
+      :other: "dobra santotomense"
+      :symbol: STN
     :SUR: 
       :one: "rublo soviético"
       :other: "rublos soviéticos"
@@ -752,7 +761,7 @@
     :SYP: 
       :one: "libra siria"
       :other: "libras sirias"
-      :symbol: SYP
+      :symbol: £
     :SZL: 
       :one: lilangeni
       :other: lilangenis
@@ -772,7 +781,7 @@
       :other: "manats turcomanos (1993–2009)"
     :TMT: 
       :one: "manat turcomano"
-      :other: "manats turcomanos"
+      :other: "manat turcomanos"
       :symbol: TMT
     :TND: 
       :one: "dinar tunecino"
@@ -836,6 +845,10 @@
       :one: "peso uruguayo"
       :other: "pesos uruguayos"
       :symbol: UYU
+    :UYW: 
+      :one: "unidad previsional uruguayo"
+      :other: "unidades previsionales uruguayos"
+      :symbol: UYW
     :UZS: 
       :one: sum
       :other: sums
@@ -846,7 +859,11 @@
     :VEF: 
       :one: "bolívar venezolano"
       :other: "bolívares venezolanos"
-      :symbol: BsF
+      :symbol: Bs
+    :VES: 
+      :one: VES
+      :other: VES
+      :symbol: VES
     :VND: 
       :one: dong
       :other: dongs
@@ -860,8 +877,8 @@
       :other: talas
       :symbol: WST
     :XAF: 
-      :one: "franco CFA BEAC"
-      :other: "francos CFA BEAC"
+      :one: "franco CFA de África central"
+      :other: "francos CFA de África central"
       :symbol: XAF
     :XAG: 
       :one: plata
@@ -897,8 +914,8 @@
       :one: "franco UIC francés"
       :other: "francos UIC franceses"
     :XOF: 
-      :one: "franco CFA BCEAO"
-      :other: "francos CFA BCEAO"
+      :one: "franco CFA de África Occidental"
+      :other: "francos CFA de África Occidental"
       :symbol: XOF
     :XPD: 
       :one: paladio
@@ -917,6 +934,7 @@
     :XXX: 
       :one: "(unidad de moneda desconocida)"
       :other: "(moneda desconocida)"
+      :symbol: ¤
     :YDD: 
       :one: "dinar yemení"
     :YER: 

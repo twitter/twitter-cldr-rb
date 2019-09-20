@@ -17,7 +17,7 @@
                 :rule: "moins >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -569,49 +569,41 @@
       - 
         :ruleset: 
           - 
-            :access: private
-            :rules: 
-              - 
-                :rule: e;
-                :value: 0
-              - 
-                :rule: er;
-                :value: 1
-              - 
-                :rule: e;
-                :value: 2
-            :type: dord-mascabbrev
-          - 
             :rules: 
               - 
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-mascabbrev=;"
+                :rule: "=#,##0=$(ordinal,one{er}other{e})$;"
                 :value: 0
             :type: digits-ordinal-masculine
           - 
-            :access: private
             :rules: 
               - 
-                :rule: e;
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=$(ordinal,one{re}other{e})$;"
                 :value: 0
-              - 
-                :rule: re;
-                :value: 1
-              - 
-                :rule: e;
-                :value: 2
-            :type: dord-femabbrev
+            :type: digits-ordinal-feminine
           - 
             :rules: 
               - 
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-femabbrev=;"
+                :rule: "=#,##0=$(ordinal,one{ers}other{es})$;"
                 :value: 0
-            :type: digits-ordinal-feminine
+            :type: digits-ordinal-masculine-plural
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=$(ordinal,one{res}other{es})$;"
+                :value: 0
+            :type: digits-ordinal-feminine-plural
           - 
             :rules: 
               - 

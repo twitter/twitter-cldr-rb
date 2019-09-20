@@ -51,6 +51,7 @@ module TwitterCldr
               start = rule_match.start
               stop = rule_match.stop
               replacement = rule_match.replacement
+              binding.pry # if replacement == 'to'
               cursor.text[start...stop] = replacement
 
               cursor.advance(

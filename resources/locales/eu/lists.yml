@@ -7,6 +7,16 @@
       :end: "{0} eta {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
+    :or: 
+      ? !ruby/symbol "2"
+      : "{0} edo {1}"
+      :end: "{0} edo {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :or-narrow: {}
+    :or-short: {}
+    :standard-narrow: {}
+    :standard-short: {}
     :unit: 
       ? !ruby/symbol "2"
       : "{0} eta {1}"

@@ -7,7 +7,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -144,7 +144,7 @@
                 :rule: "<<京[>%%number13>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-numbering
           - 
@@ -303,7 +303,7 @@
                 :rule: "<<京[>%%financialnumber13>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-financial
           - 
@@ -459,7 +459,7 @@
                 :rule: "<<京[>%%cardinal13>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal
           - 
@@ -615,7 +615,7 @@
                 :rule: "<<京[>%%cardinal-alternate2-13>];"
                 :value: 10000000000000000
               - 
-                :rule: "=#,###0=;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-cardinal-alternate2
           - 
@@ -714,7 +714,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: "=#,##0.#=;"
                 :value: x.x
               - 
                 :rule: 第=%spellout-numbering=;
@@ -726,10 +726,10 @@
           - 
             :rules: 
               - 
-                :rule: "第−>#,###0>;"
+                :rule: "第−>#,##0>;"
                 :value: "-x"
               - 
-                :rule: "第=#,###0=;"
+                :rule: "第=#,##0=;"
                 :value: 0
             :type: digits-ordinal
         :type: OrdinalRules

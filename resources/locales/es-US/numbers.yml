@@ -37,24 +37,24 @@
               :other: 0000 M ¤
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00 MRD ¤
-              :other: 00 MRD ¤
+              :one: ¤00 B
+              :other: ¤00 B
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000 MRD ¤
-              :other: 000 MRD ¤
+              :one: ¤000 B
+              :other: ¤000 B
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 0 B ¤
-              :other: 0 B ¤
+              :one: ¤0 T
+              :other: ¤0 T
             ? !ruby/symbol "10000000000000"
             : 
-              :one: 00 B ¤
-              :other: 00 B ¤
+              :one: ¤00 T
+              :other: ¤00 T
             ? !ruby/symbol "100000000000000"
             : 
-              :one: 000 B ¤
-              :other: 000 B ¤
+              :one: ¤000 T
+              :other: ¤000 T
         :unit: 
           :one: "{0} {1}"
           :other: "{0} {1}"
@@ -89,41 +89,41 @@
               :other: "000 millones"
             ? !ruby/symbol "1000000000"
             : 
-              :one: "0 mil millones"
-              :other: "0 mil millones"
-            ? !ruby/symbol "10000000000"
-            : 
-              :one: "00 mil millones"
-              :other: "00 mil millones"
-            ? !ruby/symbol "100000000000"
-            : 
-              :one: "000 mil millones"
-              :other: "000 mil millones"
-            ? !ruby/symbol "1000000000000"
-            : 
               :one: "0 billón"
               :other: "0 billones"
-            ? !ruby/symbol "10000000000000"
+            ? !ruby/symbol "10000000000"
             : 
               :one: "00 billones"
               :other: "00 billones"
-            ? !ruby/symbol "100000000000000"
+            ? !ruby/symbol "100000000000"
             : 
               :one: "000 billones"
               :other: "000 billones"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 trillón"
+              :other: "0 trillones"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 trillones"
+              :other: "00 trillones"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 trillones"
+              :other: "000 trillones"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: "0"
-              :other: "0"
+              :one: 0 K
+              :other: 0 K
             ? !ruby/symbol "10000"
             : 
-              :one: 00k
-              :other: 00k
+              :one: 00 K
+              :other: 00 K
             ? !ruby/symbol "100000"
             : 
-              :one: 000k
-              :other: 000k
+              :one: 000 K
+              :other: 000 K
             ? !ruby/symbol "1000000"
             : 
               :one: 0 M
@@ -138,28 +138,28 @@
               :other: 000 M
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0k M
-              :other: 0k M
-            ? !ruby/symbol "10000000000"
-            : 
-              :one: 00k M
-              :other: 00k M
-            ? !ruby/symbol "100000000000"
-            : 
-              :one: 000k M
-              :other: 000k M
-            ? !ruby/symbol "1000000000000"
-            : 
               :one: 0 B
               :other: 0 B
-            ? !ruby/symbol "10000000000000"
+            ? !ruby/symbol "10000000000"
             : 
               :one: 00 B
               :other: 00 B
-            ? !ruby/symbol "100000000000000"
+            ? !ruby/symbol "100000000000"
             : 
               :one: 000 B
               :other: 000 B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 T
+              :other: 0 T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 T
+              :other: 00 T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 T
+              :other: 000 T
       :percent: 
         :number_system: latn
         :patterns: 

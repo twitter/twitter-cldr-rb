@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E d MMM"
         :MMMMEd: "E d MMMM"
+        :MMMMW: "MMMM এর Wয় সপ্তাহ"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd-MM
@@ -46,6 +52,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "Y এর wতম সপ্তাহ"
       :days: 
         :format: 
           :abbreviated: 
@@ -67,7 +74,7 @@
           :short: 
             :fri: শুঃ
             :mon: সোঃ
-            :sat: শোঃ
+            :sat: শনি
             :sun: রঃ
             :thu: বৃঃ
             :tue: মঃ
@@ -110,7 +117,7 @@
             :mon: সোমবার
             :sat: শনিবার
             :sun: রবিবার
-            :thu: বৃহষ্পতিবার
+            :thu: বৃহস্পতিবার
             :tue: মঙ্গলবার
             :wed: বুধবার
       :eras: 
@@ -126,11 +133,18 @@
         :day: দিন
         :day-narrow: দিন
         :day-short: দিন
+        :dayOfYear: "বছরের দিন"
+        :dayOfYear-narrow: "বছরের দিন"
+        :dayOfYear-short: "বছরের দিন"
         :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: যুগ
-        :hour: ঘন্টা
-        :hour-narrow: ঘন্টা
-        :hour-short: ঘন্টা
+        :era-narrow: যুগ
+        :era-short: যুগ
+        :hour: ঘণ্টা
+        :hour-narrow: ঘণ্টা
+        :hour-short: ঘণ্টা
         :minute: মিনিট
         :minute-narrow: মিনিট
         :minute-short: মিনিট
@@ -146,11 +160,21 @@
         :week: সপ্তাহ
         :week-narrow: সপ্তাহ
         :week-short: সপ্তাহ
+        :weekOfMonth: "মাসের সপ্তাহ"
+        :weekOfMonth-narrow: "মাসের সপ্তাহ"
+        :weekOfMonth-short: "মাসের সপ্তাহ"
         :weekday: "সপ্তাহের দিন"
+        :weekday-narrow: "সপ্তাহের দিন"
+        :weekday-short: "সপ্তাহের দিন"
+        :weekdayOfMonth: "মাসের কার্য দিবস"
+        :weekdayOfMonth-narrow: "মাসের কার্য দিবস"
+        :weekdayOfMonth-short: "মাসের কার্য দিবস"
         :year: বছর
         :year-narrow: বছর
         :year-short: বছর
-        :zone: এলাকা
+        :zone: "সময় অঞ্চল"
+        :zone-narrow: অঞ্চল
+        :zone-short: অঞ্চল
       :formats: 
         :date: 
           :full: 
@@ -182,11 +206,11 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: জানুয়ারী
+            1: জানু
             10: অক্টোবর
             11: নভেম্বর
             12: ডিসেম্বর
-            2: ফেব্রুয়ারী
+            2: ফেব
             3: মার্চ
             4: এপ্রিল
             5: মে
@@ -283,12 +307,12 @@
           :wide: 
             :afternoon1: দুপুর
             :afternoon2: বিকাল
-            :am: পূর্বাহ্ণ
+            :am: AM
             :evening1: সন্ধ্যা
             :morning1: ভোর
             :morning2: সকাল
-            :night1: রাত্রি
-            :pm: অপরাহ্ণ
+            :night1: রাত্রিতে
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: দুপুর
@@ -320,10 +344,10 @@
       :quarters: 
         :format: 
           :abbreviated: 
-            1: Q1
-            2: Q2
-            3: Q3
-            4: Q4
+            1: ত্রৈমাসিক
+            2: "দ্বিতীয় ত্রৈমাসিক"
+            3: "তৃতীয় ত্রৈমাসিক"
+            4: "চতুর্থ ত্রৈমাসিক"
           :narrow: 
             1: ১
             2: ২

@@ -1,0 +1,13 @@
+--- 
+:transforms: 
+  - 
+    :direction: forward
+    :rules: 
+      - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
+      - "::NFD;"
+      - "::Devanagari-InterIndic;"
+      - "::InterIndic-Arabic;"
+      - "::NFC;"
+    :source: Deva
+    :target: Arab
+    :variant: ~

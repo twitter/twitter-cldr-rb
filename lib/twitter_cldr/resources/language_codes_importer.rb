@@ -25,7 +25,7 @@ module TwitterCldr
         Part2T:     :iso_639_2_term,
         Id:         :iso_639_3,
         bcp_47:     :bcp_47,
-        bcp_47_alt: :bcp_47
+        bcp_47_alt: :bcp_47_alt
       }.freeze
 
       STANDARDS_TO_KEYS = KEYS_TO_STANDARDS.invert.freeze
@@ -87,15 +87,11 @@ module TwitterCldr
           lines.each do |line|
             entry = line.chomp.gsub(/"(.*)"/) { $1.gsub("\t", '') }
             data = Hash[ISO_639_COLUMNS.zip(entry.split("\t"))]
+            h = result[data[:Ref_Name].to_sym] ||= {}
 
-            # skip 'Macrolanguage' scope
-            if data[:Scope] != 'M'
-              h = result[data[:Ref_Name].to_sym] ||= {}
-
-              STANDARDS_TO_KEYS.each do |standard_key, data_key|
-                value = data[data_key]
-                h[standard_key] = value.to_sym if value && !value.empty?
-              end
+            STANDARDS_TO_KEYS.each do |standard_key, data_key|
+              value = data[data_key]
+              h[standard_key] = value.to_sym if value && !value.empty?
             end
           end
         end
@@ -199,8 +195,6 @@ module TwitterCldr
             end
           end
         end
-
-        binding.pry
 
         table.each do |key, codes|
           table[key] = Hash[codes.sort]

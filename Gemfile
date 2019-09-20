@@ -6,7 +6,7 @@ group :development, :test do
   gem 'rake'
   gem 'pry-nav'
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
-  gem 'regexp_parser', '~> 0.1'
+  gem 'regexp_parser', '~> 0.5'
   gem 'benchmark-ips'
   gem 'rubyzip', '~> 1.0'
 end

@@ -177,14 +177,14 @@ describe TwitterCldr::Shared::Calendar do
   describe '#periods' do
     it 'returns default periods' do
       periods = calendar.periods
-      expect(periods[:am]).to eq("vorm.")
-      expect(periods[:pm]).to eq("nachm.")
+      expect(periods[:am]).to eq("AM")
+      expect(periods[:pm]).to eq("PM")
     end
 
-    it 'returns quarters with other name forms' do
+    it 'returns periods with other name forms' do
       periods = calendar.periods(:abbreviated)
-      expect(periods[:am]).to eq("vorm.")
-      expect(periods[:pm]).to eq("nachm.")
+      expect(periods[:am]).to eq("AM")
+      expect(periods[:pm]).to eq("PM")
     end
   end
 

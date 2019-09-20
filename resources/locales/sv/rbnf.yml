@@ -17,7 +17,7 @@
                 :rule: "minus >>;"
                 :value: "-x"
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -636,47 +636,18 @@
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-mascabbrev=;"
+                :rule: "=#,##0=:e;"
                 :value: 0
             :type: digits-ordinal-masculine
-          - 
-            :access: private
-            :rules: 
-              - 
-                :rule: ":e;"
-                :value: 0
-            :type: dord-mascabbrev
           - 
             :rules: 
               - 
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-femabbrev=;"
+                :rule: "=#,##0=$(ordinal,one{:a}other{:e})$;"
                 :value: 0
             :type: digits-ordinal-feminine
-          - 
-            :access: private
-            :rules: 
-              - 
-                :rule: ":e;"
-                :value: 0
-              - 
-                :rule: ":a;"
-                :value: 1
-              - 
-                :rule: ":a;"
-                :value: 2
-              - 
-                :rule: ":e;"
-                :value: 3
-              - 
-                :rule: ">>;"
-                :value: 20
-              - 
-                :rule: ">>;"
-                :value: 100
-            :type: dord-femabbrev
           - 
             :rules: 
               - 

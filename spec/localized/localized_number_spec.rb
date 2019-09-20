@@ -55,7 +55,7 @@ describe TwitterCldr::Localized::LocalizedNumber do
     describe "to_short_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(described_class.new(7000, :af, type: :short_decimal).to_s).to eq("7000")
+          expect(described_class.new(7000, :af, type: :short_decimal).to_s).to match_normalized("7 k")
         end
       end
 
@@ -69,7 +69,7 @@ describe TwitterCldr::Localized::LocalizedNumber do
     describe "to_long_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(described_class.new(7000, :ko, type: :long_decimal).to_s).to eq("7000")
+          expect(described_class.new(7000, :ko, type: :long_decimal).to_s).to match_normalized("7천")
         end
       end
 

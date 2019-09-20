@@ -3,8 +3,8 @@
   - 
     :direction: forward
     :rules: 
-      - "::[[:block=thaana:]\\uFDF2] ;"
-      - ":: NFD (NFC) ;"
+      - "::[[:block=thaana:][،؛؟٪٫٬]\\uFDF2] ;"
+      - "::NFD;"
       - "$wordBoundary = [^[:L:][:M:][:N:]] ;"
       - "$vowel = [\\u07A6-\\u07AF] ;"
       - "$sukun = \\u07B0 ;"
@@ -107,6 +107,12 @@
       - "ޯ > oa; # OABOAFILI"
       - "ު > u; # UBUFILI"
       - "ޫ > oo; # OOBOOFILI"
+      - "، > ',';  # U+060C ARABIC COMMA"
+      - "؛ > ';';  # U+061B ARABIC SEMICOLON"
+      - "؟ > '?';  # U+061F ARABIC QUESTION MARK"
+      - "٪ > '%';  # U+066A ARABIC PERCENT SIGN"
+      - "٫ > '.';  # U+066B ARABIC DECIMAL SEPARATOR"
+      - "٬ > ',';  # U+066C ARABIC THOUSANDS SEPARATOR"
     :source: dv
     :target: dv_Latn
     :variant: BGN

@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d"
@@ -24,6 +29,7 @@
         :MMM: LLL
         :MMMEd: "E d LLL"
         :MMMMEd: "E d LLLL"
+        :MMMMW: "هفتۀ W از LLLL"
         :MMMMd: "d LLLL"
         :MMMd: "d LLL"
         :Md: M/d
@@ -47,6 +53,7 @@
         :yMd: y/M/d
         :yQQQ: "QQQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "هفته w از Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -128,8 +135,15 @@
         :day: روز
         :day-narrow: روز
         :day-short: روز
+        :dayOfYear: "روز سال"
+        :dayOfYear-narrow: "روز سال"
+        :dayOfYear-short: "روز سال"
         :dayperiod: قبل/بعدازظهر
+        :dayperiod-narrow: قبل/بعدازظهر
+        :dayperiod-short: قبل/بعدازظهر
         :era: دوره
+        :era-narrow: دوره
+        :era-short: دوره
         :hour: ساعت
         :hour-narrow: ساعت
         :hour-short: ساعت
@@ -148,11 +162,21 @@
         :week: هفته
         :week-narrow: هفته
         :week-short: هفته
+        :weekOfMonth: "هفتهٔ ماه"
+        :weekOfMonth-narrow: "هفتهٔ ماه"
+        :weekOfMonth-short: "هفتهٔ ماه"
         :weekday: "روز هفته"
+        :weekday-narrow: "روز هفته"
+        :weekday-short: "روز هفته"
+        :weekdayOfMonth: "روز کاری ماه"
+        :weekdayOfMonth-narrow: "روز کاری ماه"
+        :weekdayOfMonth-short: "روز کاری ماه"
         :year: سال
         :year-narrow: سال
         :year-short: سال
         :zone: "منطقهٔ زمانی"
+        :zone-narrow: "منطقهٔ زمانی"
+        :zone-short: "منطقهٔ زمانی"
       :formats: 
         :date: 
           :full: 
@@ -265,59 +289,59 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: عصر
+            :afternoon1: ظهر
+            :afternoon2: عصر
             :am: ق.ظ.
-            :evening1: عصر
-            :midnight: نیمه‌شب
-            :morning1: صبح
+            :morning1: بامداد
+            :morning2: صبح
             :night1: شب
-            :noon: ظهر
+            :night2: نیمه‌شب
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: ب
+            :afternoon1: ظ
+            :afternoon2: ع
             :am: ق
-            :evening1: ع
-            :midnight: ن
-            :morning1: ص
+            :morning1: ب
+            :morning2: ص
             :night1: ش
-            :noon: ظ
+            :night2: ن
             :pm: ب
           :wide: 
-            :afternoon1: عصر
+            :afternoon1: ظهر
+            :afternoon2: عصر
             :am: قبل‌ازظهر
-            :evening1: عصر
-            :midnight: نیمه‌شب
-            :morning1: صبح
+            :morning1: بامداد
+            :morning2: صبح
             :night1: شب
-            :noon: ظهر
+            :night2: نیمه‌شب
             :pm: بعدازظهر
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: عصر
+            :afternoon1: ظهر
+            :afternoon2: عصر
             :am: ق.ظ.
-            :evening1: "سر شب"
-            :midnight: نیمه‌شب
-            :morning1: صبح
+            :morning1: بامداد
+            :morning2: صبح
             :night1: شب
-            :noon: ظ
+            :night2: نیمه‌شب
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: عصر
-            :am: ق.ظ.
-            :evening1: "سر شب"
-            :midnight: نیمه‌شب
-            :morning1: صبح
-            :night1: شب
-            :noon: ظهر
-            :pm: ب.ظ.
+            :afternoon1: ظ
+            :afternoon2: ع
+            :am: ق
+            :morning1: ب
+            :morning2: ص
+            :night1: ش
+            :night2: ن
+            :pm: ب
           :wide: 
-            :afternoon1: عصر
+            :afternoon1: ظهر
+            :afternoon2: عصر
             :am: قبل‌ازظهر
-            :evening1: "سر شب"
-            :midnight: نیمه‌شب
-            :morning1: صبح
+            :morning1: بامداد
+            :morning2: صبح
             :night1: شب
-            :noon: ظهر
+            :night2: نیمه‌شب
             :pm: بعدازظهر
       :quarters: 
         :format: 

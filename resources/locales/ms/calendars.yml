@@ -3,16 +3,21 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
-        :Gy: "G y"
-        :GyMMM: "G y MMM"
-        :GyMMMEd: "G y MMM d, E"
-        :GyMMMd: "G y MMM d"
+        :Gy: "y G"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -22,6 +27,7 @@
         :MEd: "E, d-M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -44,6 +50,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -113,42 +120,60 @@
             :wed: Rabu
       :eras: 
         :abbr: 
-          0: S.M.
-          1: TM
+          0: BCE
+          1: CE
         :name: 
+          0: BCE
+          1: CE
+        :narrow: 
           0: S.M.
           1: TM
-        :narrow: 
-          0: ""
       :fields: 
-        :day: Hari
+        :day: hari
         :day-narrow: hari
         :day-short: hari
+        :dayOfYear: "Day Of Year"
+        :dayOfYear-narrow: "Day Of Year"
+        :dayOfYear-short: "Day Of Year"
         :dayperiod: PG/PTG
-        :era: Era
-        :hour: Jam
+        :dayperiod-narrow: PG/PTG
+        :dayperiod-short: PG/PTG
+        :era: era
+        :era-narrow: era
+        :era-short: era
+        :hour: jam
         :hour-narrow: jam
         :hour-short: jam
-        :minute: Minit
+        :minute: minit
         :minute-narrow: min
         :minute-short: min
-        :month: Bulan
+        :month: bulan
         :month-narrow: bln
         :month-short: bln
-        :quarter: "Suku Tahun"
+        :quarter: "suku tahun"
         :quarter-narrow: suku
         :quarter-short: suku
-        :second: Saat
+        :second: saat
         :second-narrow: saat
         :second-short: saat
-        :week: Minggu
+        :week: minggu
         :week-narrow: mgu
         :week-short: mgu
+        :weekOfMonth: "Week Of Month"
+        :weekOfMonth-narrow: "Week Of Month"
+        :weekOfMonth-short: "Week Of Month"
         :weekday: "Hari dalam Minggu"
-        :year: Tahun
+        :weekday-narrow: "Hari dalam Minggu"
+        :weekday-short: "Hari dalam Minggu"
+        :weekdayOfMonth: "Weekday Of Month"
+        :weekdayOfMonth-narrow: "Weekday Of Month"
+        :weekdayOfMonth-short: "Weekday Of Month"
+        :year: tahun
         :year-narrow: thn
         :year-short: thn
-        :zone: "Zon Waktu"
+        :zone: "zon waktu"
+        :zone-narrow: zon
+        :zone-short: zon
       :formats: 
         :date: 
           :full: 
@@ -165,9 +190,9 @@
           :long: 
             :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -264,7 +289,7 @@
             :afternoon1: "tengah hari"
             :am: PG
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: PTG
@@ -272,7 +297,7 @@
             :afternoon1: "tengah hari"
             :am: a
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: p
@@ -297,7 +322,7 @@
             :afternoon1: "tengah hari"
             :am: a
             :evening1: petang
-            :morning1: "tengah malam"
+            :morning1: pagi
             :morning2: pagi
             :night1: malam
             :pm: p

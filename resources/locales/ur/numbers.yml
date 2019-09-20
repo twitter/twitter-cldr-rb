@@ -3,9 +3,9 @@
   :numbers: 
     :formats: 
       :currency: 
-        :number_system: latn
+        :number_system: arabext
         :patterns: 
-          :default: "¤ #,##,##0.00"
+          :default: "¤#,##0.00"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -161,11 +161,11 @@
               :one: 000 ٹریلین
               :other: 000 ٹریلین
       :percent: 
-        :number_system: latn
+        :number_system: arabext
         :patterns: 
-          :default: "#,##,##0%"
+          :default: "#,##0%"
       :scientific: 
-        :number_system: latn
+        :number_system: arabext
         :patterns: 
           :default: "#E0"
     :symbols: 

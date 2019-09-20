@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: E
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -19,13 +24,14 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E dd/MM"
+        :MEd: "E, dd.MM."
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'semaine' W (MMMM)"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd.MM
-        :Md: dd/MM
+        :Md: dd.MM.
         :d: d
         :h: "h a"
         :hm: "h:mm a"
@@ -35,16 +41,16 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: MM/y
-        :yMEd: "E dd/MM/y"
-        :yMM: MM.y
+        :yM: MM.y
+        :yMEd: "E, dd.MM.y"
         :yMMM: "MMM y"
         :yMMMEd: "E d MMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
-        :yMd: dd/MM/y
+        :yMd: dd.MM.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'semaine' w 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -126,8 +132,15 @@
         :day: jour
         :day-narrow: j
         :day-short: j
+        :dayOfYear: "jour (année)"
+        :dayOfYear-narrow: "j (an)"
+        :dayOfYear-short: "j (an)"
         :dayperiod: cadran
+        :dayperiod-narrow: cadran
+        :dayperiod-short: cadran
         :era: ère
+        :era-narrow: ère
+        :era-short: ère
         :hour: heure
         :hour-narrow: h
         :hour-short: h
@@ -146,11 +159,21 @@
         :week: semaine
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "semaine (mois)"
+        :weekOfMonth-narrow: "sem. (m.)"
+        :weekOfMonth-short: "sem. (m.)"
         :weekday: "jour de la semaine"
+        :weekday-narrow: "j (sem.)"
+        :weekday-short: "j (sem.)"
+        :weekdayOfMonth: "jour (mois)"
+        :weekdayOfMonth-narrow: "jour (mois)"
+        :weekdayOfMonth-short: "jour (mois)"
         :year: année
         :year-narrow: a
-        :year-short: ann.
+        :year-short: an
         :zone: "fuseau horaire"
+        :zone-narrow: "fuseau horaire"
+        :zone-short: "fuseau horaire"
       :formats: 
         :date: 
           :full: 
@@ -263,21 +286,21 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: ap.m.
+            :afternoon1: "de l’ap.m."
             :am: AM
-            :evening1: soir
+            :evening1: "du soir"
             :midnight: min.
-            :morning1: mat.
-            :night1: nuit
+            :morning1: "du mat."
+            :night1: "du mat."
             :noon: midi
             :pm: PM
           :narrow: 
-            :afternoon1: ap.m.
+            :afternoon1: "de l’ap.m."
             :am: AM
-            :evening1: soir
+            :evening1: "du soir"
             :midnight: min.
-            :morning1: mat.
-            :night1: nuit
+            :morning1: "du mat."
+            :night1: "du mat."
             :noon: midi
             :pm: PM
           :wide: 
@@ -286,7 +309,7 @@
             :evening1: "du soir"
             :midnight: minuit
             :morning1: "du matin"
-            :night1: "de nuit"
+            :night1: "du matin"
             :noon: midi
             :pm: PM
         :stand-alone: 

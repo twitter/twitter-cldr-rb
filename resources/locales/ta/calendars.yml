@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "B h"
+        :Bhm: "B h:mm"
+        :Bhms: "B h:mm:ss"
         :E: ccc
+        :EBhm: "E B h:mm"
+        :EBhms: "E B h:mm:ss"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -19,9 +24,10 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "MM-dd, E"
+        :MEd: "dd-MM, E"
         :MMM: LLL
         :MMMEd: "MMM d, E"
+        :MMMMW: "MMMM W -ஆம் வாரம்"
         :MMMMd: "d MMMM"
         :MMMd: "MMM d"
         :MMdd: dd-MM
@@ -45,6 +51,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "Y ஆம் ஆண்டின் w -ஆம் வாரம்"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,8 +132,15 @@
         :day: நாள்
         :day-narrow: நா.
         :day-short: நாள்
+        :dayOfYear: "வருடத்தின் நாள்"
+        :dayOfYear-narrow: "வருட. நாள்"
+        :dayOfYear-short: "வருட. நாள்"
         :dayperiod: முற்பகல்/பிற்பகல்
+        :dayperiod-narrow: முற்./பிற்.
+        :dayperiod-short: முற்./பிற்.
         :era: காலம்
+        :era-narrow: காலம்
+        :era-short: காலம்
         :hour: மணி
         :hour-narrow: ம.
         :hour-short: மணி.
@@ -135,21 +149,31 @@
         :minute-short: நிமி.
         :month: மாதம்
         :month-narrow: மா.
-        :month-short: மாதம்
+        :month-short: மாத.
         :quarter: காலாண்டு
-        :quarter-narrow: காலாண்டு
-        :quarter-short: காலாண்டு
+        :quarter-narrow: கா.
+        :quarter-short: காலா.
         :second: விநாடி
         :second-narrow: வி.
         :second-short: விநா.
         :week: வாரம்
         :week-narrow: வா.
         :week-short: வாரம்
+        :weekOfMonth: "மாதத்தின் வாரம்"
+        :weekOfMonth-narrow: "மாத. வாரம்"
+        :weekOfMonth-short: "மாத. வாரம்"
         :weekday: "வாரத்தின் நாள்"
+        :weekday-narrow: "வார. நாள்"
+        :weekday-short: "வார. நாள்"
+        :weekdayOfMonth: "மாதத்தின் வாரநாள்"
+        :weekdayOfMonth-narrow: "மாத. வாரநாள்"
+        :weekdayOfMonth-short: "மாத. வாரநாள்"
         :year: ஆண்டு
         :year-narrow: ஆ.
         :year-short: ஆண்டு
         :zone: "நேர மண்டலம்"
+        :zone-narrow: மண்டலம்
+        :zone-short: மண்டலம்
       :formats: 
         :date: 
           :full: 
@@ -257,7 +281,7 @@
             5: மே
             6: ஜூன்
             7: ஜூலை
-            8: ஆகஸ்டு
+            8: ஆகஸ்ட்
             9: செப்டம்பர்
       :periods: 
         :format: 
@@ -347,10 +371,10 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1ஆம் காலாண்டு"
-            2: "2ஆம் காலாண்டு"
-            3: "3ஆம் காலாண்டு"
-            4: "4ஆம் காலாண்டு"
+            1: "ஒன்றாம் காலாண்டு"
+            2: "இரண்டாம் காலாண்டு"
+            3: "மூன்றாம் காலாண்டு"
+            4: "நான்காம் காலாண்டு"
         :stand-alone: 
           :abbreviated: 
             1: காலா.1
@@ -363,7 +387,7 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1ஆம் காலாண்டு"
-            2: "2ஆம் காலாண்டு"
-            3: "3ஆம் காலாண்டு"
-            4: "4ஆம் காலாண்டு"
+            1: "ஒன்றாம் காலாண்டு"
+            2: "இரண்டாம் காலாண்டு"
+            3: "மூன்றாம் காலாண்டு"
+            4: "நான்காம் காலாண்டு"

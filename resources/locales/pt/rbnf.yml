@@ -14,7 +14,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -546,35 +546,21 @@
       - 
         :ruleset: 
           - 
-            :access: private
-            :rules: 
-              - 
-                :rule: º;
-                :value: 0
-            :type: dord-mascabbrev
-          - 
             :rules: 
               - 
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-mascabbrev=;"
+                :rule: "=#,##0=º;"
                 :value: 0
             :type: digits-ordinal-masculine
           - 
-            :access: private
-            :rules: 
-              - 
-                :rule: ª;
-                :value: 0
-            :type: dord-femabbrev
-          - 
             :rules: 
               - 
                 :rule: −>>;
                 :value: "-x"
               - 
-                :rule: "=#,##0==%%dord-femabbrev=;"
+                :rule: "=#,##0=ª;"
                 :value: 0
             :type: digits-ordinal-feminine
           - 

@@ -46,27 +46,64 @@
         :past: 
           :one: "fa {0} dia"
           :other: "fa {0} dies"
+    :dayOfYear: 
+      :display_name: "dia de l’any"
+    :dayOfYear-narrow: 
+      :display_name: "dia de l’any"
+    :dayOfYear-short: 
+      :display_name: "dia de l’any"
     :dayperiod: 
-      :display_name: "a. m./p. m."
+      :display_name: a. m./p. m.
+    :dayperiod-narrow: 
+      :display_name: a. m./p. m.
+    :dayperiod-short: 
+      :display_name: a. m./p. m.
     :era: 
+      :display_name: era
+    :era-narrow: 
+      :display_name: era
+    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
         -1: "divendres passat"
         0: "aquest divendres"
         1: "divendres que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} divendres"
+          :other: "d’aquí a {0} divendres"
+        :past: 
+          :one: "fa {0} divendres"
+          :other: "fa {0} divendres"
     :fri-narrow: 
       :relative: 
         -1: "dv. passat"
         0: "aquest dv."
         1: "dv. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dv."
+          :other: "d’aquí a {0} dv."
+        :past: 
+          :one: "fa {0} dv."
+          :other: "fa {0} dv."
     :fri-short: 
       :relative: 
         -1: "dv. passat"
         0: "aquest dv."
         1: "dv. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dv."
+          :other: "d’aquí a {0} dv."
+        :past: 
+          :one: "fa {0} dv."
+          :other: "fa {0} dv."
     :hour: 
       :display_name: hora
+      :relative: 
+        0: "aquesta hora"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} hora"
@@ -76,6 +113,8 @@
           :other: "fa {0} hores"
     :hour-narrow: 
       :display_name: h
+      :relative: 
+        0: "aquesta hora"
       :relative_time: 
         :future: 
           :one: "d‘aquí a {0} h"
@@ -85,6 +124,8 @@
           :other: "fa {0} h"
     :hour-short: 
       :display_name: h
+      :relative: 
+        0: "aquesta hora"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} h"
@@ -94,6 +135,8 @@
           :other: "fa {0} h"
     :minute: 
       :display_name: minut
+      :relative: 
+        0: "aquest minut"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} minut"
@@ -103,6 +146,8 @@
           :other: "fa {0} minuts"
     :minute-narrow: 
       :display_name: min
+      :relative: 
+        0: "aquest minut"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} min"
@@ -112,6 +157,8 @@
           :other: "fa {0} min"
     :minute-short: 
       :display_name: min
+      :relative: 
+        0: "aquest minut"
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} min"
@@ -124,16 +171,37 @@
         -1: "dilluns passat"
         0: "aquest dilluns"
         1: "dilluns que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dilluns"
+          :other: "d’aquí a {0} dilluns"
+        :past: 
+          :one: "fa {0} dilluns"
+          :other: "fa {0} dilluns"
     :mon-narrow: 
       :relative: 
         -1: "dl. passat"
         0: "aquest dl."
         1: "dl. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dl."
+          :other: "d’aquí a {0} dl."
+        :past: 
+          :one: "fa {0} dl."
+          :other: "fa {0} dl."
     :mon-short: 
       :relative: 
         -1: "dl. passat"
         0: "aquest dl."
         1: "dl. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dl."
+          :other: "d’aquí a {0} dl."
+        :past: 
+          :one: "fa {0} dl."
+          :other: "fa {0} dl."
     :month: 
       :display_name: mes
       :relative: 
@@ -155,8 +223,8 @@
         1: "mes vinent"
       :relative_time: 
         :future: 
-          :one: "en {0} mes"
-          :other: "en {0} mesos"
+          :one: "d’aquí a {0} mes"
+          :other: "d’aquí a {0} mesos"
         :past: 
           :one: "fa {0} mes"
           :other: "fa {0} mesos"
@@ -194,8 +262,8 @@
         1: "trim. vinent"
       :relative_time: 
         :future: 
-          :one: "en {0} trim."
-          :other: "en {0} trim."
+          :one: "d’aquí a {0} trim."
+          :other: "d’aquí a {0} trim."
         :past: 
           :one: "fa {0} trim."
           :other: "fa {0} trim."
@@ -217,16 +285,37 @@
         -1: "dissabte passat"
         0: "aquest dissabte"
         1: "dissabte que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dissabte"
+          :other: "d’aquí a {0} dissabtes"
+        :past: 
+          :one: "fa {0} dissabte"
+          :other: "fa {0} dissabtes"
     :sat-narrow: 
       :relative: 
         -1: "ds. passat"
         0: "aquest ds."
         1: "ds. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} ds."
+          :other: "d’aquí a {0} ds."
+        :past: 
+          :one: "fa {0} ds."
+          :other: "fa {0} ds."
     :sat-short: 
       :relative: 
         -1: "ds. passat"
         0: "aquest ds."
         1: "ds. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} ds."
+          :other: "d’aquí a {0} ds."
+        :past: 
+          :one: "fa {0} ds."
+          :other: "fa {0} ds."
     :second: 
       :display_name: segon
       :relative: 
@@ -240,6 +329,8 @@
           :other: "fa {0} segons"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: ara
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} s"
@@ -249,6 +340,8 @@
           :other: "fa {0} s"
     :second-short: 
       :display_name: s
+      :relative: 
+        0: ara
       :relative_time: 
         :future: 
           :one: "d’aquí a {0} s"
@@ -261,61 +354,145 @@
         -1: "diumenge passat"
         0: "aquest diumenge"
         1: "diumenge que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} diumenge"
+          :other: "d’aquí a {0} diumenges"
+        :past: 
+          :one: "fa {0} diumenge"
+          :other: "fa {0} diumenges"
     :sun-narrow: 
       :relative: 
         -1: "dg. passat"
         0: "aquest dg."
         1: "dg. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dg."
+          :other: "d’aquí a {0} dg."
+        :past: 
+          :one: "fa {0} dg."
+          :other: "fa {0} dg."
     :sun-short: 
       :relative: 
         -1: "dg. passat"
         0: "aquest dg."
         1: "dg. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dg."
+          :other: "d’aquí a {0} dg."
+        :past: 
+          :one: "fa {0} dg."
+          :other: "fa {0} dg."
     :thu: 
       :relative: 
         -1: "dijous passat"
         0: "aquest dijous"
         1: "dijous que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dijous"
+          :other: "d’aquí a {0} dijous"
+        :past: 
+          :one: "fa {0} dijous"
+          :other: "fa {0} dijous"
     :thu-narrow: 
       :relative: 
         -1: "dj. passat"
         0: "aquest dj."
         1: "dj. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dj."
+          :other: "d’aquí a {0} dj."
+        :past: 
+          :one: "fa {0} dj."
+          :other: "fa {0} dj."
     :thu-short: 
       :relative: 
         -1: "dj. passat"
         0: "aquest dj."
         1: "dj. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dj."
+          :other: "d’aquí a {0} dj."
+        :past: 
+          :one: "fa {0} dj."
+          :other: "fa {0} dj."
     :tue: 
       :relative: 
         -1: "dimarts passat"
         0: "aquest dimarts"
         1: "dimarts que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dimarts"
+          :other: "d’aquí a {0} dimarts"
+        :past: 
+          :one: "fa {0} dimarts"
+          :other: "fa {0} dimarts"
     :tue-narrow: 
       :relative: 
         -1: "dt. passat"
         0: "aquest dt."
         1: "dt. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dt."
+          :other: "d’aquí a {0} dt."
+        :past: 
+          :one: "fa {0} dt."
+          :other: "fa {0} dt."
     :tue-short: 
       :relative: 
         -1: "dt. passat"
         0: "aquest dt."
         1: "dt. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dt."
+          :other: "d’aquí a {0} dt."
+        :past: 
+          :one: "fa {0} dt."
+          :other: "fa {0} dt."
     :wed: 
       :relative: 
         -1: "dimecres passat"
         0: "aquest dimecres"
         1: "dimecres que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dimecres"
+          :other: "d’aquí a {0} dimecres"
+        :past: 
+          :one: "fa {0} dimecres"
+          :other: "fa {0} dimecres"
     :wed-narrow: 
       :relative: 
         -1: "dc. passat"
         0: "aquest dc."
         1: "dc. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dc."
+          :other: "d’aquí a {0} dc."
+        :past: 
+          :one: "fa {0} dc."
+          :other: "fa {0} dc."
     :wed-short: 
       :relative: 
         -1: "dc. passat"
         0: "aquest dc."
         1: "dc. que ve"
+      :relative_time: 
+        :future: 
+          :one: "d’aquí a {0} dc."
+          :other: "d’aquí a {0} dc."
+        :past: 
+          :one: "fa {0} dc."
+          :other: "fa {0} dc."
     :week: 
       :display_name: setmana
       :relative: 
@@ -337,8 +514,8 @@
         1: "setm. vinent"
       :relative_time: 
         :future: 
-          :one: "en {0} setm."
-          :other: "en {0} setm."
+          :one: "d’aquí a {0} setm."
+          :other: "d’aquí a {0} setm."
         :past: 
           :one: "fa {0} setm."
           :other: "fa {0} setm."
@@ -355,8 +532,24 @@
         :past: 
           :one: "fa {0} setm."
           :other: "fa {0} setm."
+    :weekOfMonth: 
+      :display_name: "setmana del mes"
+    :weekOfMonth-narrow: 
+      :display_name: "setm. del mes"
+    :weekOfMonth-short: 
+      :display_name: "setm. del mes"
     :weekday: 
       :display_name: "dia de la setmana"
+    :weekday-narrow: 
+      :display_name: "dia de la setm."
+    :weekday-short: 
+      :display_name: "dia de la setm."
+    :weekdayOfMonth: 
+      :display_name: "dia de la setmana del mes"
+    :weekdayOfMonth-narrow: 
+      :display_name: "dia de la setm. del mes"
+    :weekdayOfMonth-short: 
+      :display_name: "dia de la setm. del mes"
     :year: 
       :display_name: any
       :relative: 
@@ -378,8 +571,8 @@
         1: "l’any que ve"
       :relative_time: 
         :future: 
-          :one: "en {0} any"
-          :other: "en {0} anys"
+          :one: "d’aquí a {0} any"
+          :other: "d’aquí a {0} anys"
         :past: 
           :one: "fa {0} any"
           :other: "fa {0} anys"
@@ -397,4 +590,8 @@
           :one: "fa {0} any"
           :other: "fa {0} anys"
     :zone: 
+      :display_name: "fus horari"
+    :zone-narrow: 
+      :display_name: "fus horari"
+    :zone-short: 
       :display_name: "fus horari"

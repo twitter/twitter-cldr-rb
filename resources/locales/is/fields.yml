@@ -17,7 +17,7 @@
           :one: "fyrir {0} degi"
           :other: "fyrir {0} dögum"
     :day-narrow: 
-      :display_name: d.
+      :display_name: dagur
       :relative: 
         -1: "í gær"
         -2: "í fyrradag"
@@ -44,29 +44,66 @@
           :one: "eftir {0} dag"
           :other: "eftir {0} daga"
         :past: 
-          :one: "fyrir {0} dögum"
+          :one: "fyrir {0} degi"
           :other: "fyrir {0} dögum"
+    :dayOfYear: 
+      :display_name: "dagur í ári"
+    :dayOfYear-narrow: 
+      :display_name: "dagur í ári"
+    :dayOfYear-short: 
+      :display_name: "dagur í ári"
     :dayperiod: 
+      :display_name: f.h./e.h.
+    :dayperiod-narrow: 
+      :display_name: f.h./e.h.
+    :dayperiod-short: 
       :display_name: f.h./e.h.
     :era: 
       :display_name: tímabil
+    :era-narrow: 
+      :display_name: tímabil
+    :era-short: 
+      :display_name: tímabil
     :fri: 
       :relative: 
-        -1: "föstudagur í síðustu viku"
-        0: "föstudagur í þessari viku"
-        1: "föstudagur í næstu viku"
+        -1: "síðasta föstudag"
+        0: "núna á föstudaginn"
+        1: "næsta föstudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} föstudag"
+          :other: "eftir {0} föstudaga"
+        :past: 
+          :one: "fyrir {0} föstudegi"
+          :other: "fyrir {0} föstudögum"
     :fri-narrow: 
       :relative: 
-        -1: "síðasti fös."
-        0: "þessi fös."
-        1: "nk. fös."
+        -1: "síðasta fös."
+        0: "á fös."
+        1: "næsta fös."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} fös."
+          :other: "eftir {0} fös."
+        :past: 
+          :one: "fyrir {0} fös."
+          :other: "fyrir {0} fös."
     :fri-short: 
       :relative: 
-        -1: "síðasti fös."
-        0: "þessi fös."
-        1: "næstkomandi fös."
+        -1: "síðasta fös."
+        0: "á fös."
+        1: "næsta fös."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} fös."
+          :other: "eftir {0} fös."
+        :past: 
+          :one: "fyrir {0} fös."
+          :other: "fyrir {0} fös."
     :hour: 
       :display_name: klukkustund
+      :relative: 
+        0: "þessa stundina"
       :relative_time: 
         :future: 
           :one: "eftir {0} klukkustund"
@@ -76,6 +113,8 @@
           :other: "fyrir {0} klukkustundum"
     :hour-narrow: 
       :display_name: klst.
+      :relative: 
+        0: "þessa stundina"
       :relative_time: 
         :future: 
           :one: "+{0} klst."
@@ -85,6 +124,8 @@
           :other: "-{0} klst."
     :hour-short: 
       :display_name: klst.
+      :relative: 
+        0: "þessa stundina"
       :relative_time: 
         :future: 
           :one: "eftir {0} klst."
@@ -94,6 +135,8 @@
           :other: "fyrir {0} klst."
     :minute: 
       :display_name: mínúta
+      :relative: 
+        0: "á þessari mínútu"
       :relative_time: 
         :future: 
           :one: "eftir {0} mínútu"
@@ -103,6 +146,8 @@
           :other: "fyrir {0} mínútum"
     :minute-narrow: 
       :display_name: mín.
+      :relative: 
+        0: "á þessari mínútu"
       :relative_time: 
         :future: 
           :one: "+{0} mín."
@@ -112,6 +157,8 @@
           :other: "-{0} mín."
     :minute-short: 
       :display_name: mín.
+      :relative: 
+        0: "á þessari mínútu"
       :relative_time: 
         :future: 
           :one: "eftir {0} mín."
@@ -122,18 +169,39 @@
     :mon: 
       :relative: 
         -1: "síðasta mánudag"
-        0: "mánudagur í þessari viku"
+        0: "núna á mánudag"
         1: "næsta mánudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} mánudag"
+          :other: "eftir {0} mánudaga"
+        :past: 
+          :one: "fyrir {0} mánudegi"
+          :other: "fyrir {0} mánudögum"
     :mon-narrow: 
       :relative: 
         -1: "síðasti mán."
         0: "þessi mán."
         1: "nk. mán."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} mán."
+          :other: "eftir {0} mán."
+        :past: 
+          :one: "fyrir {0} mán."
+          :other: "fyrir {0} mán."
     :mon-short: 
       :relative: 
         -1: "síðasta mán."
-        0: "þessi mán."
+        0: "núna á mán."
         1: "næsta mán."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} mán."
+          :other: "eftir {0} mán."
+        :past: 
+          :one: "fyrir {0} mán."
+          :other: "fyrir {0} mán."
     :month: 
       :display_name: mánuður
       :relative: 
@@ -214,19 +282,40 @@
           :other: "fyrir {0} ársfj."
     :sat: 
       :relative: 
-        -1: "laugardagur í síðustu viku"
-        0: "laugardagur í þessari viku"
-        1: "laugardagur í næstu viku"
+        -1: "síðasta laugardag"
+        0: "núna á laugardaginn"
+        1: "næsta laugardag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} laugardag"
+          :other: "eftir {0} laugardaga"
+        :past: 
+          :one: "fyrir {0} laugardegi"
+          :other: "fyrir {0} laugardögum"
     :sat-narrow: 
       :relative: 
-        -1: "síðasti lau."
-        0: "þessi lau."
-        1: "nk. lau."
+        -1: "síðasta lau."
+        0: "á lau."
+        1: "næsta lau."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} lau."
+          :other: "eftir {0} lau."
+        :past: 
+          :one: "fyrir {0} lau."
+          :other: "fyrir {0} lau."
     :sat-short: 
       :relative: 
-        -1: "síðasti lau."
-        0: "þessi lau."
-        1: "næstkomandi lau."
+        -1: "síðasta lau."
+        0: "á lau."
+        1: "næsta lau."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} lau."
+          :other: "eftir {0} lau."
+        :past: 
+          :one: "fyrir {0} lau."
+          :other: "fyrir {0} lau."
     :second: 
       :display_name: sekúnda
       :relative: 
@@ -240,6 +329,8 @@
           :other: "fyrir {0} sekúndum"
     :second-narrow: 
       :display_name: sek.
+      :relative: 
+        0: núna
       :relative_time: 
         :future: 
           :one: "+{0} sek."
@@ -249,6 +340,8 @@
           :other: "-{0} sek."
     :second-short: 
       :display_name: sek.
+      :relative: 
+        0: núna
       :relative_time: 
         :future: 
           :one: "eftir {0} sek."
@@ -259,63 +352,147 @@
     :sun: 
       :relative: 
         -1: "síðasta sunnudag"
-        0: "sunnudagur í þessari viku"
+        0: "núna á sunnudag"
         1: "næsta sunnudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} sunnudag"
+          :other: "eftir {0} sunnudaga"
+        :past: 
+          :one: "fyrir {0} sunnudegi"
+          :other: "fyrir {0} sunnudögum"
     :sun-narrow: 
       :relative: 
         -1: "síðasti sun."
         0: "þessi sun."
         1: "nk. sun."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} sun."
+          :other: "eftir {0} sun."
+        :past: 
+          :one: "fyrir {0} sun."
+          :other: "fyrir {0} sun."
     :sun-short: 
       :relative: 
-        -1: "síðasti sun."
+        -1: "síðasta sun."
         0: "þessi sun."
         1: "næsta sun."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} sun."
+          :other: "eftir {0} sun."
+        :past: 
+          :one: "fyrir {0} sun."
+          :other: "fyrir {0} sun."
     :thu: 
       :relative: 
-        -1: "fimmtudagur í síðustu viku"
-        0: "fimmtudagur í þessari viku"
-        1: "fimmtudagur í næstu viku"
+        -1: "síðasta fimmtudag"
+        0: "núna á fimmtudaginn"
+        1: "næsta fimmtudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} fimmtudag"
+          :other: "eftir {0} fimmtudaga"
+        :past: 
+          :one: "fyrir {0} fimmtudegi"
+          :other: "fyrir {0} fimmtudögum"
     :thu-narrow: 
       :relative: 
         -1: "síðasti fim."
         0: "þessi fim."
         1: "nk. fim."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} fim."
+          :other: "eftir {0} fim."
+        :past: 
+          :one: "fyrir {0} fim."
+          :other: "fyrir {0} fim."
     :thu-short: 
       :relative: 
         -1: "síðasti fim."
         0: "þessi fim."
         1: "næstkomandi fim."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} fim."
+          :other: "eftir {0} fim."
+        :past: 
+          :one: "fyrir {0} fim."
+          :other: "fyrir {0} fim."
     :tue: 
       :relative: 
         -1: "síðasta þriðjudag"
-        0: "þriðjudagur í þessari viku"
+        0: "núna á þriðjudaginn"
         1: "næsta þriðjudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} þriðjudag"
+          :other: "eftir {0} þriðjudaga"
+        :past: 
+          :one: "fyrir {0} þriðjudegi"
+          :other: "fyrir {0} þriðjudögum"
     :tue-narrow: 
       :relative: 
         -1: "síðasti þri."
         0: "þessi þri."
         1: "nk. þri."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} þri."
+          :other: "eftir {0} þri."
+        :past: 
+          :one: "fyrir {0} þri."
+          :other: "fyrir {0} þri."
     :tue-short: 
       :relative: 
         -1: "síðasti þri."
         0: "þessi þri."
         1: "næstkomandi þri."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} þri."
+          :other: "eftir {0} þri."
+        :past: 
+          :one: "fyrir {0} þri."
+          :other: "fyrir {0} þri."
     :wed: 
       :relative: 
-        -1: "miðvikudagur í síðustu viku"
-        0: "miðvikudagur í þessari viku"
-        1: "miðvikudagur í næstu viku"
+        -1: "síðasta miðvikudag"
+        0: "núna á miðvikudaginn"
+        1: "næsta miðvikudag"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} miðvikudag"
+          :other: "eftir {0} miðvikudaga"
+        :past: 
+          :one: "fyrir {0} miðvikudegi"
+          :other: "fyrir {0} miðvikudögum"
     :wed-narrow: 
       :relative: 
         -1: "síðasti mið."
         0: "þessi mið."
         1: "nk. mið."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} mið."
+          :other: "eftir {0} mið."
+        :past: 
+          :one: "fyrir {0} mið."
+          :other: "fyrir {0} mið."
     :wed-short: 
       :relative: 
         -1: "síðasti mið."
         0: "þessi mið."
         1: "næstkomandi mið."
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} mið."
+          :other: "eftir {0} mið."
+        :past: 
+          :one: "fyrir {0} mið."
+          :other: "fyrir {0} mið."
     :week: 
       :display_name: vika
       :relative: 
@@ -350,13 +527,29 @@
         1: "í næstu viku"
       :relative_time: 
         :future: 
-          :one: "eftir {0} vikur"
+          :one: "eftir {0} viku"
           :other: "eftir {0} vikur"
         :past: 
           :one: "fyrir {0} viku"
           :other: "fyrir {0} vikum"
+    :weekOfMonth: 
+      :display_name: "vika í mánuði"
+    :weekOfMonth-narrow: 
+      :display_name: "vika í mánuði"
+    :weekOfMonth-short: 
+      :display_name: "vika í mánuði"
     :weekday: 
       :display_name: vikudagur
+    :weekday-narrow: 
+      :display_name: vikud.
+    :weekday-short: 
+      :display_name: vikud.
+    :weekdayOfMonth: 
+      :display_name: "vikudagur í mánuði"
+    :weekdayOfMonth-narrow: 
+      :display_name: "vikud. í mán."
+    :weekdayOfMonth-short: 
+      :display_name: "vikud. í mán."
     :year: 
       :display_name: ár
       :relative: 
@@ -398,3 +591,7 @@
           :other: "fyrir {0} árum"
     :zone: 
       :display_name: tímabelti
+    :zone-narrow: 
+      :display_name: tímab.
+    :zone-short: 
+      :display_name: tímab.

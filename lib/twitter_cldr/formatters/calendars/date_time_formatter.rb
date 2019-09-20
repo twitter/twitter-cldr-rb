@@ -80,11 +80,11 @@ module TwitterCldr
       end
 
       def year_of_week_of_year(date, pattern, length, options = {})
-        raise NotImplementedError
+        week_fields_for(date)[:year_woy]
       end
 
       def day_of_week_in_month(date, pattern, length, options = {}) # e.g. 2nd Wed in July
-        raise NotImplementedError
+        week_fields_for(date)[:day_of_week_in_month]
       end
 
       def quarter(date, pattern, length, options = {})
@@ -248,6 +248,114 @@ module TwitterCldr
 
       def timezone_generic_non_location(time, pattern, length, options = {})
         raise NotImplementedError, 'requires timezone translation data'
+      end
+
+      # ported from icu4j 64.2
+      def week_fields_for(date)
+        week_data_cache[date] ||= begin
+          eyear = date.year
+          day_of_week = date.wday + 1
+          day_of_year = date.yday
+
+          # this should come from the CLDR's supplemental data set, but we
+          # don't have access to it right now
+          first_day_of_week = 1  # assume sunday
+          minimal_days_in_first_week = 1  # assume US
+
+          # WEEK_OF_YEAR start
+          # Compute the week of the year.  For the Gregorian calendar, valid week
+          # numbers run from 1 to 52 or 53, depending on the year, the first day
+          # of the week, and the minimal days in the first week.  For other
+          # calendars, the valid range may be different -- it depends on the year
+          # length.  Days at the start of the year may fall into the last week of
+          # the previous year; days at the end of the year may fall into the
+          # first week of the next year.  ASSUME that the year length is less than
+          # 7000 days.
+          year_of_week_of_year = eyear
+          rel_dow = (day_of_week + 7 - first_day_of_week) % 7 # 0..6
+          rel_dow_jan1 = (day_of_week - day_of_year + 7001 - first_day_of_week) % 7 # 0..6
+          woy = (day_of_year - 1 + rel_dow_jan1) / 7 # 0..53
+
+          if (7 - rel_dow_jan1) >= minimal_days_in_first_week
+            woy += 1
+          end
+
+          # Adjust for weeks at the year end that overlap into the previous or
+          # next calendar year.
+          if woy == 0
+            # We are the last week of the previous year.
+            # Check to see if we are in the last week; if so, we need
+            # to handle the case in which we are the first week of the
+            # next year.
+
+            year_length = (Date.new(eyear, 1, 1) - Date.new(eyear - 1, 1, 1)).to_i
+
+            prev_doy = day_of_year + year_length
+            woy = week_number(prev_doy, day_of_week)
+            year_of_week_of_year -= 1
+          else
+            last_doy = (Date.new(eyear + 1, 1, 1) - Date.new(eyear, 1, 1)).to_i
+            # Fast check: For it to be week 1 of the next year, the DOY
+            # must be on or after L-5, where L is yearLength(), then it
+            # cannot possibly be week 1 of the next year:
+            #          L-5                  L
+            # doy: 359 360 361 362 363 364 365 001
+            # dow:      1   2   3   4   5   6   7
+            if day_of_year >= (last_doy - 5)
+              last_rel_dow = (rel_dow + last_doy - day_of_year) % 7
+
+              if (last_rel_dow < 0)
+                last_rel_dow += 7
+              end
+
+              if ((6 - last_rel_dow) >= minimal_days_in_first_week) && ((day_of_year + 7 - rel_dow) > last_doy)
+                woy = 1;
+                year_of_week_of_year += 1
+              end
+            end
+          end
+
+          {
+            week_of_year: woy,
+            year_woy: year_of_week_of_year,
+            week_of_month: week_number(date.mday, day_of_week),
+            day_of_week_in_month: (date.mday - 1) / 7 + 1
+          }
+        end
+      end
+
+      def week_number(day_of_period, day_of_week)
+        # this should come from the CLDR's supplemental data set, but we
+        # don't have access to it right now
+        first_day_of_week = 1  # assume sunday
+        minimal_days_in_first_week = 1  # assume US
+
+        # Determine the day of the week of the first day of the period
+        # in question (either a year or a month).  Zero represents the
+        # first day of the week on this calendar.
+        period_start_day_of_week = (day_of_week - first_day_of_week - day_of_period + 1) % 7
+
+        if (period_start_day_of_week < 0)
+          period_start_day_of_week += 7
+        end
+
+        # Compute the week number.  Initially, ignore the first week, which
+        # may be fractional (or may not be).  We add period_start_day_of_week in
+        # order to fill out the first week, if it is fractional.
+        week_no = (day_of_period + period_start_day_of_week - 1) / 7
+
+        # If the first week is long enough, then count it.  If
+        # the minimal days in the first week is one, or if the period start
+        # is zero, we always increment weekNo.
+        if (7 - period_start_day_of_week) >= minimal_days_in_first_week
+          week_no += 1
+        end
+
+        week_no
+      end
+
+      def week_data_cache
+        @@week_data_cache ||= {}
       end
 
     end

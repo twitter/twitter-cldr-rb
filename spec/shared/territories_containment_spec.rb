@@ -8,7 +8,7 @@ require 'spec_helper'
 describe TwitterCldr::Shared::TerritoriesContainment do
   describe '.parents' do
     it 'returns the parent territory' do
-      expect(described_class.parents('RU')).to eq(['151'])
+      expect(described_class.parents('RU')).to eq(['151', 'UN'])
     end
 
     it 'returns multiple parents' do
@@ -20,7 +20,7 @@ describe TwitterCldr::Shared::TerritoriesContainment do
     end
 
     it 'raises an exception when given an invalid territory code' do
-      expect { described_class.parents('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { described_class.parents('FOO') }.to raise_exception(ArgumentError, 'unknown territory code "FOO"')
     end
   end
 
@@ -38,7 +38,7 @@ describe TwitterCldr::Shared::TerritoriesContainment do
     end
 
     it 'raises an exception when given an invalid territory code' do
-      expect { described_class.children('UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { described_class.children('FOO') }.to raise_exception(ArgumentError, 'unknown territory code "FOO"')
     end
   end
 
@@ -73,11 +73,11 @@ describe TwitterCldr::Shared::TerritoriesContainment do
     end
 
     it 'raises an exception is the first territory is invalid' do
-      expect { described_class.contains?('UN', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { described_class.contains?('FOO', 'RU') }.to raise_exception(ArgumentError, 'unknown territory code "FOO"')
     end
 
     it 'raises an exception is the second territory is invalid' do
-      expect { described_class.contains?('RU', 'UN') }.to raise_exception(ArgumentError, 'unknown territory code "UN"')
+      expect { described_class.contains?('RU', 'FOO') }.to raise_exception(ArgumentError, 'unknown territory code "FOO"')
     end
   end
 end

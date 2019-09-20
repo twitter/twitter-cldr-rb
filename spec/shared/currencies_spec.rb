@@ -13,7 +13,7 @@ describe TwitterCldr::Shared::Currencies do
     it "should list all supported country codes" do
       codes = described_class.currency_codes
 
-      expect(codes.size).to eq(297)
+      expect(codes.size).to eq(303)
       expect(codes).to include(*TEST_CODES)
     end
   end
@@ -23,7 +23,7 @@ describe TwitterCldr::Shared::Currencies do
       data = described_class.for_code("PEN")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        name:        "Peruvian nuevo sol",
+        name:        "Peruvian sol",
         currency:    :PEN,
         symbol:      "S/.",
         cldr_symbol: "PEN"

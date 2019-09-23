@@ -3,8 +3,8 @@
   - 
     :direction: forward
     :rules: 
-      - ":: [АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯҐабвгдеёжзійклмнопрстуўфхцчшщъыьэюя’ґ] ;"
-      - ":: NFD (NFC) ;"
+      - "::[АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯҐабвгдеёжзійклмнопрстуўфхцчшщъыьэюя’ґ] ;"
+      - "::NFC;"
       - "$prime  = ʹ ;"
       - "$doublePrime = ʺ ;"
       - "$upperConsonants = [БВГДЖЗЙКЛМНПРСТЎФХЦЧШЬҐ] ;"
@@ -34,6 +34,9 @@
       - "Ж} $lower > Zh ; # CYRILLIC CAPITAL LETTER ZHE"
       - "Ж > ZH ; # CYRILLIC CAPITAL LETTER ZHE"
       - "ж > zh ; # CYRILLIC SMALL LETTER ZHE"
+      - "Ш} $lower > Sh;"
+      - "Ш > SH;"
+      - "ш > sh;"
       - "ЗГ > Z·H ; # CYRILLIC CAPITAL LETTER ZE"
       - "Зг > Z·h ; # CYRILLIC CAPITAL LETTER ZE"
       - "зг > z·h ; # CYRILLIC SMALL LETTER ZE"

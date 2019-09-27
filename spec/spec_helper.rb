@@ -7,6 +7,7 @@ require 'rspec'
 require 'twitter_cldr'
 require 'pry-nav'
 require 'coveralls'
+require 'eprun'
 
 Coveralls.wear!
 
@@ -61,7 +62,7 @@ end
 
 RSpec::Matchers.define :match_normalized do |expected|
   match do |actual|
-    Eprun.normalize(expected, :nfc) == Eprun.normalize(actual, :nfc)
+    Eprun.normalize(expected, :nfkc) == Eprun.normalize(actual, :nfkc)
   end
 end
 

@@ -69,6 +69,12 @@ describe TwitterCldr::Transforms::TransformId do
       expect(id.to_s).to eq('Bulgarian-Latin/BGN')
     end
 
+    it 'allows looking up IDs by their aliases' do
+      id = described_class.parse('Bulgarian-Latin/BGN')
+      aliass = described_class.parse('bg-bg_Latn-bgn')
+      expect(aliass.file_name).to eq(id.file_name)
+    end
+
     it 'raises an error if no transformer can be found' do
       expect { described_class.parse('foo-bar') }.to(
         raise_error(TwitterCldr::Transforms::InvalidTransformIdError)
@@ -119,14 +125,14 @@ describe TwitterCldr::Transforms::TransformId do
   end
 
   describe '#file_name' do
-    it 'joins variants with dashes' do
-      id = described_class.new('source', 'target', 'variant')
-      expect(id.file_name).to eq('source-target-variant')
+    it 'finds the resource file name' do
+      id = described_class.new('Katakana', 'Latin', 'BGN')
+      expect(id.file_name).to eq('Katakana-Latin-BGN')
     end
 
-    it 'excludes the variant if none is given' do
+    it 'finds no file name if no resource exists' do
       id = described_class.new('source', 'target')
-      expect(id.file_name).to eq('source-target')
+      expect(id.file_name).to eq(nil)
     end
   end
 

@@ -52,8 +52,6 @@ module TwitterCldr
 
       def apply_to(cursor)
         until cursor.eos?
-          # binding.pry if cursor.text.start_with?('f') && cursor.position == 18
-
           if filter_rule.matches?(cursor)
             rule_match = find_matching_rule_at(cursor)
 

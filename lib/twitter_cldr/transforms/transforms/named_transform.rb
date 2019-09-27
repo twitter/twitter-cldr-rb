@@ -29,6 +29,16 @@ module TwitterCldr
             cursor.reset_position
           end
         end
+
+        private
+
+        def after_initialize
+          if forward_form
+            @backward_form ||= TransformPair.new(
+              nil, TransformId.parse(forward_form.transform).reverse.to_s
+            )
+          end
+        end
       end
     end
   end

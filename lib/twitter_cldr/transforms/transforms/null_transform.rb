@@ -16,7 +16,7 @@ module TwitterCldr
           private
 
           def valid_form?(form)
-            form && form.transform == 'Null'
+            form && form.transform.downcase == 'null'
           end
         end
 

@@ -11,8 +11,8 @@ module TwitterCldr
       class TransformRule < Rule
         class << self
           def parse(rule_text, symbol_table, index)
-            rule_text = Rule.remove_comment(rule_text)
-            rule_text = rule_text[2..-2].strip
+            rule_text = Rule.remove_comment(rule_text).strip
+            rule_text = rule_text[2..-2].strip if rule_text.start_with?('::')
             tokens = tokenizer.tokenize(rule_text)
             forward_form, backward_form = parser.parse(tokens)
 

@@ -10,15 +10,15 @@ module TwitterCldr
       class RegexFilter < FilterRule
         class << self
           def parse(rule_text, symbol_table)
-            rule_text = Rule.remove_comment(rule_text)
-            rule_text = rule_text[2..-2].strip
+            rule_text = Rule.remove_comment(rule_text).strip
+            rule_text = rule_text[2..-2].strip if rule_text.start_with?('::')
             direction = direction_for(rule_text)
 
-            str = TwitterCldr::Shared::UnicodeRegex.compile(
+            re = TwitterCldr::Shared::UnicodeRegex.compile(
               clean_rule(rule_text, direction)
-            ).to_regexp_str
+            )
 
-            new(/#{str}/, direction)
+            new(/#{re.to_regexp_str}/, direction)
           end
 
           def accepts?(rule_text)

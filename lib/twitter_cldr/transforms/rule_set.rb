@@ -10,20 +10,11 @@ module TwitterCldr
   module Transforms
 
     class RuleSet
-      attr_reader :filter_rule, :inverse_filter_rule
       attr_reader :rules, :transform_id
 
-      def initialize(filter_rule, inverse_filter_rule, ct_rules, transform_id)
-        @filter_rule = filter_rule
-        @inverse_filter_rule = inverse_filter_rule
-        @rules = partition(ct_rules)
+      def initialize(rules, transform_id)
+        @rules = partition(rules)
         @transform_id = transform_id
-      end
-
-      def clone_with_replacement_filter(replacement_filter)
-        self.class.new(
-          replacement_filter, nil, rules, transform_id
-        )
       end
 
       def transform(text)
@@ -34,22 +25,36 @@ module TwitterCldr
 
       def invert
         self.class.new(
-          inverse_filter_rule, filter_rule,
           rules.reverse.map(&:invert), transform_id
         )
       end
 
       private
 
-      def partition(ct_rules)
+      def partition(rules)
         [].tap do |result|
-          until ct_rules.empty?
-            trans_rules = take_transforms(ct_rules)
-            conv_rules = take_conversions(ct_rules)
+          until rules.empty?
+            filter_rule = nil
+            inverse_filter_rule = nil
+
+            if is_forward_filter?(rules[0])
+              filter_rule = rules[0]
+              rules.shift
+            end
+
+            trans_rules = take_transforms(rules)
+            conv_rules = take_conversions(rules)
             result.concat(trans_rules)
 
+            if !rules.empty? && is_backward_filter?(rules[0])
+              inverse_filter_rule = rules[0]
+              rules.shift
+            end
+
             unless conv_rules.empty?
-              result << make_conversion_rule_set(conv_rules)
+              result << make_conversion_rule_set(
+                conv_rules, filter_rule, inverse_filter_rule
+              )
             end
 
             # Handles the ConversionRuleSet case, which is neither
@@ -58,7 +63,7 @@ module TwitterCldr
             # of rules if, say, the rule set is being inverted and
             # therefore already contains a list of partitioned rules.
             if trans_rules.empty? && conv_rules.empty?
-              result << ct_rules.delete_at(0)
+              result << rules.delete_at(0)
             end
           end
         end
@@ -84,10 +89,20 @@ module TwitterCldr
         end
       end
 
-      def make_conversion_rule_set(rules)
+      def make_conversion_rule_set(rules, filter_rule, inverse_filter_rule)
         TwitterCldr::Transforms::ConversionRuleSet.new(
-          filter_rule, inverse_filter_rule, rules
+          filter_rule || Filters::NullFilter.new,
+          inverse_filter_rule || Filters::NullFilter.new,
+          rules
         )
+      end
+
+      def is_forward_filter?(rule)
+        rule.is_filter_rule? && !rule.backward?
+      end
+
+      def is_backward_filter?(rule)
+        rule.is_filter_rule? && rule.backward?
       end
     end
 

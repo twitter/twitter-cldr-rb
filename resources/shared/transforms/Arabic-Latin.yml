@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Arabic-Latin
+      - und-Latn-t-und-arab
     :direction: both
     :rules: 
       - ":: [[:Arabic:][:block=ARABIC:][‎ⁿ،؛؟ـً-ٕ٠-٬۰-۹﷼ښ]] ;"
@@ -9,7 +12,7 @@
       - "$disambig2 =  ̰ ;"
       - "$under =  ̣ ;"
       - "$descender = ˌ;"
-      - "$notAbove = [[:^ccc=0:]&[:^ccc=230:]];"
+      - "$notAbove = [[:^ccc=0:] & [:^ccc=230:]];"
       - "[:Nd:]{٫}[:Nd:] <> [:Nd:]{','}[:Nd:] ; # ARABIC DECIMAL SEPARATOR"
       - "[:Nd:]{٬}[:Nd:] <> [:Nd:]{'.'}[:Nd:] ; # ARABIC THOUSANDS SEPARATOR"
       - "٫ <> ',' $disambig ; # ARABIC DECIMAL SEPARATOR"
@@ -104,6 +107,6 @@
       - ":: (lower) ;"
       - "::NFC (NFD);"
       - ":: ( [[:Latin:] [%,.0-9;?ʾ-ʿ̂-̄̈-̣̰̊-̱̹;ˌ]] );"
-    :source: Arabic
-    :target: Latin
+    :source: Arab
+    :target: Latn
     :variant: ~

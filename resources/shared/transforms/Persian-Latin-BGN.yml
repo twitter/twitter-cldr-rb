@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Persian-Latin/BGN
+      - fa-Latn-t-fa-m0-bgn
     :direction: forward
     :rules: 
       - ":: [[:arabic:][:block=ARABIC:][ءآابةتثجحخدذرزسشصضطظعغفقكلمنهویيَُِّْ٠١٢٣٤٥٦٧٨٩پچژگی]] ;"
@@ -118,6 +121,6 @@
       - "ُ > o ; # ARABIC DAMMA"
       - "ْ >  ; # ARABIC SUKUN"
       - "::NFC (NFD) ;"
-    :source: Persian
-    :target: Latin
+    :source: fa
+    :target: fa_Latn
     :variant: BGN

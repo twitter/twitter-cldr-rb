@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Korean-Latin/BGN
+      - ko-Latn-t-ko-m0-bgn
     :direction: forward
     :rules: 
       - ":: [ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒᄭᄯᄲᄶᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵᆨᆫᆮᆯᆰᆱᆲᆷᆸᆺᆼᆽᆾᆿᇀᇁ] ;"
@@ -277,6 +280,6 @@
       - "ᇁ}$wordBoundary > p ; # HANGUL JONGSEONG PHIEUPH"
       - "ᆰ}$wordBoundary > k ; # HANGUL JONGSEONG RIEUL-KIYEOK"
       - "ᆲ}$wordBoundary > p ; # HANGUL JONGSEONG RIEUL-PIEUP"
-    :source: Korean
-    :target: Latin
+    :source: ko
+    :target: ko_Latn
     :variant: BGN

@@ -1,20 +1,29 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Russian-Latin/BGN
+      - ru-Latn-t-ru-m0-bgn
     :direction: forward
     :rules: 
       - "::[АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя];"
+      - "::NFC;"
       - "$prime = ʹ ;"
       - "$doublePrime = ʺ ;"
       - "$wordBoundary = [^[:L:][:M:][:N:]] ;"
-      - "$upperConsonants = [БВГДЖЙКЛМНПРСТФХЦЧШЩЭ] ;"
-      - "$lowerConsonants = [бвгджйклмнпрстфхцчшщэ] ;"
-      - "$consonants = [$upperConsonants $lowerConsonants] ;"
       - "$upperVowels = [АЕЁЭИОУЫЮЯ] ;"
       - "$lowerVowels = [аеёэиоуыюя] ;"
       - "$vowels = [$upperVowels $lowerVowels] ;"
-      - "$lower = [$lowerConsonants $lowerVowels] ;"
-      - "$upper = [$upperConsonants $upperVowels] ;"
+      - "$upperConsonants = [[:Uppercase:]-$vowels] ;"
+      - "$lowerConsonants = [[:Lowercase:]-$vowels] ;"
+      - "$consonants = [$upperConsonants $lowerConsonants] ;"
+      - "$upper = [:Uppercase:];"
+      - "$lower = [:Lowercase:];"
+      - "$lowerVowels { ы > ·y ;"
+      - "$upperVowels { [Ыы] } $lower > ·y ;"
+      - "$upperVowels { [Ыы] } > ·Y ;"
+      - "[$consonants - [Йй]]{Э > ·E ;"
+      - "[$consonants - [Йй]]{э > ·e ;"
       - "[$upperVowels [ЙЪЬ]] { Е } $upper > YE ; # CYRILLIC CAPITAL LETTER IE"
       - "[$upperVowels [ЙЪЬ]] { Е > Ye ; # CYRILLIC CAPITAL LETTER IE"
       - "[$upperVowels $lowerVowels [ЙйЪъЬь]] { е > ye ; # CYRILLIC SMALL LETTER IE"
@@ -37,8 +46,8 @@
       - "Е > E ; # CYRILLIC CAPITAL LETTER IE"
       - "$wordBoundary{е > ye ; # CYRILLIC SMALL LETTER IE"
       - "е > e ; # CYRILLIC SMALL LETTER IE"
-      - "$wordBoundary {Ё} $upper > YË ; # CYRILLIC CAPITAL LETTER IO"
-      - "$wordBoundary {Ё} $lower > Yë ; # CYRILLIC CAPITAL LETTER IO"
+      - "$wordBoundary {Ё} [·]? $upper > YË ; # CYRILLIC CAPITAL LETTER IO"
+      - "$wordBoundary {Ё} [·]? $lower > Yë ; # CYRILLIC CAPITAL LETTER IO"
       - "Ё > Ë ; # CYRILLIC CAPITAL LETTER IO"
       - "$wordBoundary{ё > yë ; # CYRILLIC SMALL LETTER IO"
       - "ё > ë ; # CYRILLIC SMALL LETTER IO"
@@ -49,6 +58,8 @@
       - "з > z ; # CYRILLIC SMALL LETTER ZE"
       - "И > I ; # CYRILLIC CAPITAL LETTER I"
       - "и > i ; # CYRILLIC SMALL LETTER I"
+      - "Й}[АаУуЫыЭэ] > Y· ; # CYRILLIC CAPITAL LETTER I"
+      - "й}[АаУуЫыЭэ] > y· ; # CYRILLIC SMALL LETTER I"
       - "Й > Y ; # CYRILLIC CAPITAL LETTER I"
       - "й > y ; # CYRILLIC SMALL LETTER I"
       - "К > K ; # CYRILLIC CAPITAL LETTER KA"
@@ -67,9 +78,9 @@
       - "р > r ; # CYRILLIC SMALL LETTER ER"
       - "С > S ; # CYRILLIC CAPITAL LETTER ES"
       - "с > s ; # CYRILLIC SMALL LETTER ES"
-      - "ТС > TS ; # CYRILLIC CAPITAL LETTER TE"
-      - "Тс > Ts ; # CYRILLIC CAPITAL LETTER TE"
-      - "тс > ts ; # CYRILLIC SMALL LETTER TE"
+      - "ТС > T·S ; # CYRILLIC CAPITAL LETTER TE"
+      - "Тс > T·s ; # CYRILLIC CAPITAL LETTER TE"
+      - "тс > t·s ; # CYRILLIC SMALL LETTER TE"
       - "Т > T ; # CYRILLIC CAPITAL LETTER TE"
       - "т > t ; # CYRILLIC SMALL LETTER TE"
       - "У > U ; # CYRILLIC CAPITAL LETTER U"
@@ -85,9 +96,9 @@
       - "Ч} $lower > Ch ; # CYRILLIC CAPITAL LETTER CHE"
       - "Ч > CH ; # CYRILLIC CAPITAL LETTER CHE"
       - "ч > ch ; # CYRILLIC SMALL LETTER CHE"
-      - "ШЧ > SHCH ; # CYRILLIC CAPITAL LETTER SHA"
-      - "Шч > Shch ; # CYRILLIC CAPITAL LETTER SHA"
-      - "шч > shch ; # CYRILLIC SMALL LETTER SHA"
+      - "ШЧ > SH·CH ; # CYRILLIC CAPITAL LETTER SHA"
+      - "Шч > Sh·ch ; # CYRILLIC CAPITAL LETTER SHA"
+      - "шч > sh·ch ; # CYRILLIC SMALL LETTER SHA"
       - "Ш} $lower > Sh ; # CYRILLIC CAPITAL LETTER SHA"
       - "Ш > SH ; # CYRILLIC CAPITAL LETTER SHA"
       - "ш > sh ; # CYRILLIC SMALL LETTER SHA"
@@ -96,6 +107,8 @@
       - "щ > shch ; # CYRILLIC SMALL LETTER SHCHA"
       - "Ъ > $doublePrime ; # CYRILLIC CAPITAL LETTER HARD SIGN"
       - "ъ > $doublePrime ; # CYRILLIC SMALL LETTER HARD SIGN"
+      - "Ы}[АаУуЫыЭэ] > Y· ; # CYRILLIC CAPITAL LETTER YERU"
+      - "ы}[ауыэ] > y· ; # CYRILLIC SMALL LETTER YERU"
       - "Ы > Y ; # CYRILLIC CAPITAL LETTER YERU"
       - "ы > y ; # CYRILLIC SMALL LETTER YERU"
       - "Ь > $prime ; # CYRILLIC CAPITAL LETTER SOFT SIGN"
@@ -108,6 +121,6 @@
       - "Я} $lower > Ya ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YA ; # CYRILLIC CAPITAL LETTER YA"
       - "я > ya ; # CYRILLIC SMALL LETTER YA"
-    :source: Russian
-    :target: Latin
+    :source: ru
+    :target: ru_Latn
     :variant: BGN

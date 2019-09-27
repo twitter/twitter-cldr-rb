@@ -54,6 +54,12 @@ module TwitterCldr
           parts.compact.join('-')
         end
 
+        def transform_id_map
+          @transform_id_map ||= TwitterCldr.get_resource(
+            *%w(shared transforms transform_id_map)
+          )
+        end
+
         private
 
         def parse_locale(locale_or_str)
@@ -68,16 +74,16 @@ module TwitterCldr
         def normalize(str)
           source, target, variant = split(str)
           normalization_index[
-            join_file_name([source, target, variant]).downcase
+            join(source, target, variant).downcase
           ]
         end
 
         def normalization_index
           @index ||=
-            Transformer.each_transform.each_with_object({}) do |key, ret|
+            transform_id_map.each_with_object({}) do |(key, file), ret|
               source, target, variant = split(key)
-              key = join_file_name([source, target, variant])
-              reverse_key = join_file_name([target, source, variant])
+              key = join(source, target, variant)
+              reverse_key = join(target, source, variant)
               ret[key.downcase] = key
               ret[reverse_key.downcase] = reverse_key
             end
@@ -152,7 +158,7 @@ module TwitterCldr
       end
 
       def file_name
-        self.class.join_file_name([source, target, variant])
+        self.class.transform_id_map[to_s]
       end
 
       def to_s

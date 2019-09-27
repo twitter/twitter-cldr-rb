@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Kirghiz-Latin/BGN
+      - ky-Latn-t-ky-m0-bgn
     :direction: forward
     :rules: 
       - ":: [АБВГДЕЁЖЗИЙКЛМНҢОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнңоөпрстуүфхцчшщъыьэюя] ;"
@@ -102,6 +105,6 @@
       - "Я} $lower > Ya ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YA ; # CYRILLIC CAPITAL LETTER YA"
       - "я > ya ; # CYRILLIC SMALL LETTER YA"
-    :source: Kirghiz
-    :target: Latin
+    :source: ky
+    :target: ky_Latn
     :variant: BGN

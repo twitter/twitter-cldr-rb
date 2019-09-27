@@ -31,6 +31,7 @@ module TwitterCldr
         fields
       ]
 
+      # transforms are done by the TransformsImporter
       SHARED_COMPONENTS = %w[
         currency_digits_and_rounding
         rbnf_root
@@ -40,7 +41,6 @@ module TwitterCldr
         likely_subtags
         variables
         aliases
-        transforms
       ]
 
       private

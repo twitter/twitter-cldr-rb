@@ -61,7 +61,7 @@ end
 
 RSpec::Matchers.define :match_normalized do |expected|
   match do |actual|
-    expected.localize.normalize(using: :NFKC).to_s == actual.localize.normalize(using: :NFKC).to_s
+    Eprun.normalize(expected, :nfc) == Eprun.normalize(actual, :nfc)
   end
 end
 

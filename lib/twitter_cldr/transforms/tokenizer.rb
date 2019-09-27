@@ -21,11 +21,11 @@ module TwitterCldr
         @recognizers ||= [
           TwitterCldr::Tokenizers::TokenRecognizer.new(:capture, /\$[\d]+/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:variable, /\$[\w]+/),
+          TwitterCldr::Tokenizers::TokenRecognizer.new(:doubled_quote, /''/),
+          TwitterCldr::Tokenizers::TokenRecognizer.new(:quoted_string, /'[^']*'/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:direction, /[<>]{1,2}/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:before_context, /[{]/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:after_context, /[}]/),
-          TwitterCldr::Tokenizers::TokenRecognizer.new(:doubled_quote, /''/),
-          TwitterCldr::Tokenizers::TokenRecognizer.new(:quoted_string, /'[^']*'/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:cursor, /\|/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:unicode_char, /\\u\{?[a-fA-F0-9]{1,6}\}?/),
           TwitterCldr::Tokenizers::TokenRecognizer.new(:escaped_char, /\\./),

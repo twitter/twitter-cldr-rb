@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Malayalam-Gurmukhi
+      - und-Guru-t-und-mlym
     :direction: forward
     :rules: 
       - "::[ം-ഃഅ-ഌഎ-ഐഒ-നപ-ഹാ-ൃെ-ൈൊ-്ൗൠ-ൡ൦-൯];"
@@ -8,6 +11,6 @@
       - "::Malayalam-InterIndic;"
       - "::InterIndic-Gurmukhi;"
       - "::NFC;"
-    :source: Malayalam
-    :target: Gurmukhi
+    :source: Mlym
+    :target: Guru
     :variant: ~

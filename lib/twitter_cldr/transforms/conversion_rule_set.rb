@@ -20,11 +20,15 @@ module TwitterCldr
         @rule_index = build_rule_index(rules)
       end
 
-      def foward?
+      def forward?
         true
       end
 
       def backward?
+        false
+      end
+
+      def is_filter_rule?
         false
       end
 
@@ -36,6 +40,10 @@ module TwitterCldr
         false
       end
 
+      def is_conversion_rule_set?
+        true
+      end
+
       def invert
         ConversionRuleSet.new(
           inverse_filter_rule, filter_rule, inverted_rules
@@ -44,6 +52,8 @@ module TwitterCldr
 
       def apply_to(cursor)
         until cursor.eos?
+          # binding.pry if cursor.text.start_with?('f') && cursor.position == 18
+
           if filter_rule.matches?(cursor)
             rule_match = find_matching_rule_at(cursor)
 
@@ -51,7 +61,6 @@ module TwitterCldr
               start = rule_match.start
               stop = rule_match.stop
               replacement = rule_match.replacement
-              binding.pry # if replacement == 'to'
               cursor.text[start...stop] = replacement
 
               cursor.advance(

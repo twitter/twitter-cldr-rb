@@ -12,6 +12,7 @@ module TwitterCldr
       autoload :DependencyRequirement, 'twitter_cldr/resources/requirements/dependency_requirement'
       autoload :GitRequirement,        'twitter_cldr/resources/requirements/git_requirement'
       autoload :PomManager,            'twitter_cldr/resources/requirements/pom_manager'
+      autoload :UcaRequirement,        'twitter_cldr/resources/requirements/uca_requirement'
       autoload :UnicodeRequirement,    'twitter_cldr/resources/requirements/unicode_requirement'
     end
 

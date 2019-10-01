@@ -96,11 +96,6 @@ describe TwitterCldr::Shared::Locale do
       expect(locale.region).to eq('BR')
     end
 
-    it 'does not modify grandfathered locales' do
-      locale = described_class.parse('i-navajo')
-      expect(locale.language).to eq('i-navajo')
-    end
-
     it 'removes script placeholder subtags' do
       locale = described_class.parse('zh-zzzz-sg')
       expect(locale.script).to be_nil
@@ -133,26 +128,11 @@ describe TwitterCldr::Shared::Locale do
     end
   end
 
-  describe '.grandfathered?' do
-    it 'returns true if the given locale is considered "grandfathered"' do
-      expect(described_class.grandfathered?('i-navajo')).to eq(true)
-    end
-
-    it 'returns false if the given locale is not considered "grandfathered"' do
-      expect(described_class.grandfathered?('en-latn-us')).to eq(false)
-    end
-  end
-
   # see likely_subtags_spec.rb for the complete likely subtags test suite
   describe '.parse_likely' do
     it 'returns a Locale instance' do
       locale = described_class.parse_likely('zh')
       expect(locale).to be_a(described_class)
-    end
-
-    it 'does not find subtags for grandfathered locales' do
-      locale = described_class.parse_likely('i-navajo')
-      expect(locale.language).to eq('i-navajo')
     end
   end
 
@@ -185,11 +165,6 @@ describe TwitterCldr::Shared::Locale do
     describe '#maximize' do
       it 'returns a Locale instance' do
         expect(locale.maximize).to be_a(described_class)
-      end
-
-      it 'does not modify grandfathered locales' do
-        locale = described_class.new('i-navajo').maximize
-        expect(locale.language).to eq('i-navajo')
       end
     end
 

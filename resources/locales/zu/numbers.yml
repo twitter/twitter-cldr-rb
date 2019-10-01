@@ -1,0 +1,184 @@
+--- 
+:zu: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "¤#,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤0K
+              :other: ¤0K
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤00K
+              :other: ¤00K
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤000K
+              :other: ¤000K
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤0M
+              :other: ¤ 0M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤00M
+              :other: ¤ 00M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤000M
+              :other: ¤000M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤0B
+              :other: ¤0B
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤00B
+              :other: ¤00B
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤000B
+              :other: ¤000B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤0T
+              :other: ¤0T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤00T
+              :other: ¤00T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤000T
+              :other: ¤000T
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 inkulungwane"
+              :other: "0 inkulungwane"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 inkulungwane"
+              :other: "00 inkulungwane"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 inkulungwane"
+              :other: "000 inkulungwane"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 isigidi"
+              :other: "0 isigidi"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 isigidi"
+              :other: "00 isigidi"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 isigidi"
+              :other: "000 isigidi"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 isigidi sezigidi"
+              :other: "0 isigidi sezigidi"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 isigidi sezigidi"
+              :other: "00 isigidi sezigidi"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 isigidi sezigidi"
+              :other: "000 isigidi sezigidi"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 isigidintathu"
+              :other: "0 isigidintathu"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 isigidintathu"
+              :other: "00 isigidintathu"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 isigidintathu"
+              :other: "000 isigidintathu"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0K
+              :other: 0K
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00K
+              :other: 00K
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000K
+              :other: 000K
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0M
+              :other: 0M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00M
+              :other: 00M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000M
+              :other: 000M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0B
+              :other: 0B
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00B
+              :other: 00B
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000B
+              :other: 000B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0T
+              :other: 0T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00T
+              :other: 00T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000T
+              :other: 000T
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group: ","
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

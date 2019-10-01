@@ -1,0 +1,184 @@
+--- 
+:sw: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "¤ #,##0.00"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: ¤ elfu0
+              :other: ¤ elfu0
+            ? !ruby/symbol "10000"
+            : 
+              :one: ¤ elfu00;¤elfu -00
+              :other: ¤ elfu00;¤elfu -00
+            ? !ruby/symbol "100000"
+            : 
+              :one: ¤ laki000;¤laki -000
+              :other: ¤ laki000;¤laki -000
+            ? !ruby/symbol "1000000"
+            : 
+              :one: ¤ 0M;¤-0M
+              :other: ¤ 0M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: ¤ 00M;¤M-00M
+              :other: ¤ 00M;¤-00M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: ¤ 000M;¤Milioni-000
+              :other: ¤ 000M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: ¤ 0B;¤-0B
+              :other: ¤ 0B;¤-0B
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: ¤ 00B;¤-00B
+              :other: ¤ 00B;¤-00B
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: ¤ 000B;¤-000B
+              :other: ¤ 000B;¤-000B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: ¤ 0T;¤-0T
+              :other: ¤ 0T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: ¤ 00T;¤-00T
+              :other: ¤ 00T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: ¤ 000T;¤-000T
+              :other: ¤ 000T;¤-000T
+        :unit: 
+          :one: "{1} {0}"
+          :other: "{1} {0}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "elfu 0;elfu -0"
+              :other: "elfu 0;elfu -0"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "elfu 00;elfu -00"
+              :other: "elfu 00;elfu -00"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "elfu 000;elfu -000"
+              :other: "elfu 000;elfu -000"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "milioni 0;milioni -0"
+              :other: "milioni 0;milioni -0"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "milioni 00;milioni -00"
+              :other: "milioni 00;milioni -00"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "milioni 000;milioni -000"
+              :other: "milioni 000;milioni -000"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "bilioni 0;bilioni -0"
+              :other: "bilioni 0;bilioni -0"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "bilioni 00;bilioni -00"
+              :other: "bilioni 00;bilioni -00"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "bilioni 000;bilioni -000"
+              :other: "bilioni 000;bilioni -000"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "trilioni 0;trilioni -0"
+              :other: "trilioni 0;trilioni -0"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "trilioni 00;trilioni -00"
+              :other: "trilioni 00;trilioni -00"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "trilioni 000;trilioni -000"
+              :other: "trilioni 000;trilioni -000"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: elfu 0;elfu -0
+              :other: elfu 0;elfu -0
+            ? !ruby/symbol "10000"
+            : 
+              :one: elfu 00;elfu -00
+              :other: elfu 00;elfu -00
+            ? !ruby/symbol "100000"
+            : 
+              :one: elfu 000;elfu -000
+              :other: elfu 000;elfu -000
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0M;-0M
+              :other: 0M
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00M;-00M
+              :other: 00M
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000M;-000M
+              :other: 000M
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0B;-0B
+              :other: 0B;-0B
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00B;-00B
+              :other: 00B;-00B
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000B;-000B
+              :other: 000B;-000B
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0T;-0T
+              :other: 0T
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00T;-00T
+              :other: 00T
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000T;-000T
+              :other: 000T
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: "."
+      :exponential: E
+      :group: ","
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

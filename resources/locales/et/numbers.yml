@@ -1,0 +1,184 @@
+--- 
+:et: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 tuh ¤
+              :other: 0 tuh ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 tuh ¤
+              :other: 00 tuh ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 tuh ¤
+              :other: 000 tuh ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 mln ¤
+              :other: 0 mln ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 mln ¤
+              :other: 00 mln ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 mln ¤
+              :other: 000 mln ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 mld ¤
+              :other: 0 mld ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 mld ¤
+              :other: 00 mld ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 mld ¤
+              :other: 000 mld ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 trl ¤
+              :other: 0 trl ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 trl ¤
+              :other: 00 trl ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 trl ¤
+              :other: 000 trl ¤
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 tuhat"
+              :other: "0 tuhat"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 tuhat"
+              :other: "00 tuhat"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 tuhat"
+              :other: "000 tuhat"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 miljon"
+              :other: "0 miljonit"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 miljonit"
+              :other: "00 miljonit"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 miljonit"
+              :other: "000 miljonit"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 miljard"
+              :other: "0 miljardit"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 miljardit"
+              :other: "00 miljardit"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 miljardit"
+              :other: "000 miljardit"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 triljon"
+              :other: "0 triljonit"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 triljonit"
+              :other: "00 triljonit"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 triljonit"
+              :other: "000 triljonit"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 tuh
+              :other: 0 tuh
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 tuh
+              :other: 00 tuh
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 tuh
+              :other: 000 tuh
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 mln
+              :other: 0 mln
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 mln
+              :other: 00 mln
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 mln
+              :other: 000 mln
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 mld
+              :other: 0 mld
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 mld
+              :other: 00 mld
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 mld
+              :other: 000 mld
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 trl
+              :other: 0 trl
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 trl
+              :other: 00 trl
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 trl
+              :other: 000 trl
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: ×10^
+      :group:  
+      :infinity: ∞
+      :list: ;
+      :minus_sign: −
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

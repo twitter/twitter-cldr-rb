@@ -1,0 +1,184 @@
+--- 
+:ka: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 ათ'.' ¤
+              :other: 0 ათ'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 ათ'.' ¤
+              :other: 00 ათ'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 ათ'.' ¤
+              :other: 000 ათ'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 მლნ'.' ¤
+              :other: 0 მლნ'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 მლნ'.' ¤
+              :other: 00 მლნ'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 მლნ'.' ¤
+              :other: 000 მლნ'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 მლრდ'.' ¤
+              :other: 0 მლრდ'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 მლრდ'.' ¤
+              :other: 00 მლრდ'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 მლრ'.' ¤
+              :other: 000 მლრ'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 ტრლ'.' ¤
+              :other: 0 ტრლ'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 ტრლ'.' ¤
+              :other: 00 ტრლ'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 ტრლ'.' ¤
+              :other: 000 ტრლ'.' ¤
+        :unit: 
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 ათასი"
+              :other: "0 ათასი"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 ათასი"
+              :other: "00 ათასი"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 ათასი"
+              :other: "000 ათასი"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 მილიონი"
+              :other: "0 მილიონი"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 მილიონი"
+              :other: "00 მილიონი"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 მილიონი"
+              :other: "000 მილიონი"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 მილიარდი"
+              :other: "0 მილიარდი"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 მილიარდი"
+              :other: "00 მილიარდი"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 მილიარდი"
+              :other: "000 მილიარდი"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 ტრილიონი"
+              :other: "0 ტრილიონი"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 ტრილიონი"
+              :other: "00 ტრილიონი"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 ტრილიონი"
+              :other: "000 ტრილიონი"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: 0 ათ'.'
+              :other: 0 ათ'.'
+            ? !ruby/symbol "10000"
+            : 
+              :one: 00 ათ'.'
+              :other: 00 ათ'.'
+            ? !ruby/symbol "100000"
+            : 
+              :one: 000 ათ'.'
+              :other: 000 ათ'.'
+            ? !ruby/symbol "1000000"
+            : 
+              :one: 0 მლნ'.'
+              :other: 0 მლნ'.'
+            ? !ruby/symbol "10000000"
+            : 
+              :one: 00 მლნ'.'
+              :other: 00 მლნ'.'
+            ? !ruby/symbol "100000000"
+            : 
+              :one: 000 მლნ'.'
+              :other: 000 მლნ'.'
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: 0 მლრდ'.'
+              :other: 0 მლრდ'.'
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 მლრდ'.'
+              :other: 00 მლრდ'.'
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 მლრ'.'
+              :other: 000 მლრ'.'
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: 0 ტრლ'.'
+              :other: 0 ტრლ'.'
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: 00 ტრლ'.'
+              :other: 00 ტრლ'.'
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: 000 ტრლ'.'
+              :other: 000 ტრლ'.'
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: E
+      :group:  
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: არ არის რიცხვი
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

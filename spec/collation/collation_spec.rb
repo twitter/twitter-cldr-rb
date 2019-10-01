@@ -4,21 +4,17 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'spec_helper'
-require 'open-uri'
 
 describe 'Unicode Collation Algorithm' do
 
-  SHORT_COLLATION_TEST_PATH = File.join(File.dirname(__FILE__), 'CollationTest_CLDR_NON_IGNORABLE_Short.txt')
-  FULL_COLLATION_TEST_PATH  = File.join(File.dirname(__FILE__), 'CollationTest_CLDR_NON_IGNORABLE.txt')
-
-  FULL_COLLATION_TEST_URL = 'https://unicode.org/Public/UCA/latest/CollationAuxiliary.zip'
+  SHORT_COLLATION_TEST_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'spec', 'CollationTest_CLDR_NON_IGNORABLE_Short.txt')
+  FULL_COLLATION_TEST_PATH  = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'spec', 'CollationTest_CLDR_NON_IGNORABLE.txt')
 
   it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE_Short.txt' do
     run_test(SHORT_COLLATION_TEST_PATH)
   end
 
   it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE.txt', slow: true do
-    prepare_full_test
     run_test(FULL_COLLATION_TEST_PATH)
   end
 
@@ -61,29 +57,6 @@ Expected previous code points sequence to sort before the current one.
     code points - #{current_code_points.join(' ')}
     sort key    - #{pretty_sort_key(current_sort_key)}
 END
-  end
-
-  # Downloads full version of the test if necessary.
-  #
-  def prepare_full_test
-    return if File.file?(FULL_COLLATION_TEST_PATH)
-
-    require 'zip'
-
-    print '  Downloading CollationAuxillary.zip ... '
-    zip_file = Tempfile.new('CollationAuxillary.zip')
-    zip_file.write(open(FULL_COLLATION_TEST_URL).read)
-    zip_file.close
-
-    print 'extracting CollationTest_CLDR_NON_IGNORABLE.txt ... '
-    Zip::ZipFile.open(zip_file.path) do |zip|
-      File.open(FULL_COLLATION_TEST_PATH, 'w') do |file|
-        file.write(zip.read('CollationAuxiliary/CollationTest_CLDR_NON_IGNORABLE.txt'))
-      end
-    end
-    zip_file.unlink
-
-    puts 'done.'
   end
 
   def pretty_sort_key(current_sort_key)

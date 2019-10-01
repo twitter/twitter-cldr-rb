@@ -10,14 +10,14 @@ describe TwitterCldr::Parsers::UnicodeRegexParser::CharacterSet do
     it "should return a set containing codepoints for the given general property" do
       char_set = described_class.new("Zs")
       expect(char_set.to_set.to_a(true)).to eq([
-        32, 160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        32, 160, 5760, 8192..8202, 8239, 8287, 12288
       ])
     end
 
     it "should return a set containing codepoints for the given named property" do
       char_set = described_class.new("Sentence_Break=Sp")
       expect(char_set.to_set.to_a(true)).to eq([
-        9, 11..12, 32, 160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        9, 11..12, 32, 160, 5760, 8192..8202, 8239, 8287, 12288
       ])
     end
 

@@ -1,0 +1,221 @@
+--- 
+:sr-Cyrl-ME: 
+  :numbers: 
+    :formats: 
+      :currency: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.00 ¤"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 хиљ'.' ¤
+              :one: 0 хиљ'.' ¤
+              :other: 0 хиљ'.' ¤
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 хиљ'.' ¤
+              :one: 00 хиљ'.' ¤
+              :other: 00 хиљ'.' ¤
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 хиљ'.' ¤
+              :one: 000 хиљ'.' ¤
+              :other: 000 хиљ'.' ¤
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 мил'.' ¤
+              :one: 0 мил'.' ¤
+              :other: 0 мил'.' ¤
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 мил'.' ¤
+              :one: 00 мил'.' ¤
+              :other: 00 мил'.' ¤
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 мил'.' ¤
+              :one: 000 мил'.' ¤
+              :other: 000 мил'.' ¤
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 млрд'.' ¤
+              :one: 0 млрд'.' ¤
+              :other: 0 млрд'.' ¤
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 млрд'.' ¤
+              :one: 00 млрд'.' ¤
+              :other: 00 млрд'.' ¤
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 млрд'.' ¤
+              :one: 000 млрд'.' ¤
+              :other: 000 млрд'.' ¤
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 бил'.' ¤
+              :one: 0 бил'.' ¤
+              :other: 0 бил'.' ¤
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 бил'.' ¤
+              :one: 00 бил'.' ¤
+              :other: 00 бил'.' ¤
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 бил'.' ¤
+              :one: 000 бил'.' ¤
+              :other: 000 бил'.' ¤
+        :unit: 
+          :few: "{0} {1}"
+          :one: "{0} {1}"
+          :other: "{0} {1}"
+      :decimal: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0.###"
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: "0 хиљаде"
+              :one: "0 хиљада"
+              :other: "0 хиљада"
+            ? !ruby/symbol "10000"
+            : 
+              :few: "00 хиљаде"
+              :one: "00 хиљада"
+              :other: "00 хиљада"
+            ? !ruby/symbol "100000"
+            : 
+              :few: "000 хиљаде"
+              :one: "000 хиљада"
+              :other: "000 хиљада"
+            ? !ruby/symbol "1000000"
+            : 
+              :few: "0 милиона"
+              :one: "0 милион"
+              :other: "0 милиона"
+            ? !ruby/symbol "10000000"
+            : 
+              :few: "00 милиона"
+              :one: "00 милион"
+              :other: "00 милиона"
+            ? !ruby/symbol "100000000"
+            : 
+              :few: "000 милиона"
+              :one: "000 милион"
+              :other: "000 милиона"
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: "0 милијарде"
+              :one: "0 милијарда"
+              :other: "0 милијарди"
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: "00 милијарде"
+              :one: "00 милијарда"
+              :other: "00 милијарди"
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: "000 милијарде"
+              :one: "000 милијарда"
+              :other: "000 милијарди"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: "0 билиона"
+              :one: "0 билион"
+              :other: "0 билиона"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: "00 билиона"
+              :one: "00 билион"
+              :other: "00 билиона"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: "000 билиона"
+              :one: "000 билион"
+              :other: "000 билиона"
+          :short: 
+            ? !ruby/symbol "1000"
+            : 
+              :few: 0 хиљ'.'
+              :one: 0 хиљ'.'
+              :other: 0 хиљ'.'
+            ? !ruby/symbol "10000"
+            : 
+              :few: 00 хиљ'.'
+              :one: 00 хиљ'.'
+              :other: 00 хиљ'.'
+            ? !ruby/symbol "100000"
+            : 
+              :few: 000 хиљ'.'
+              :one: 000 хиљ'.'
+              :other: 000 хиљ'.'
+            ? !ruby/symbol "1000000"
+            : 
+              :few: 0 мил'.'
+              :one: 0 мил'.'
+              :other: 0 мил'.'
+            ? !ruby/symbol "10000000"
+            : 
+              :few: 00 мил'.'
+              :one: 00 мил'.'
+              :other: 00 мил'.'
+            ? !ruby/symbol "100000000"
+            : 
+              :few: 000 мил'.'
+              :one: 000 мил'.'
+              :other: 000 мил'.'
+            ? !ruby/symbol "1000000000"
+            : 
+              :few: 0 млрд'.'
+              :one: 0 млрд'.'
+              :other: 0 млрд'.'
+            ? !ruby/symbol "10000000000"
+            : 
+              :few: 00 млрд'.'
+              :one: 00 млрд'.'
+              :other: 00 млрд'.'
+            ? !ruby/symbol "100000000000"
+            : 
+              :few: 000 млрд'.'
+              :one: 000 млрд'.'
+              :other: 000 млрд'.'
+            ? !ruby/symbol "1000000000000"
+            : 
+              :few: 0 бил'.'
+              :one: 0 бил'.'
+              :other: 0 бил'.'
+            ? !ruby/symbol "10000000000000"
+            : 
+              :few: 00 бил'.'
+              :one: 00 бил'.'
+              :other: 00 бил'.'
+            ? !ruby/symbol "100000000000000"
+            : 
+              :few: 000 бил'.'
+              :one: 000 бил'.'
+              :other: 000 бил'.'
+      :percent: 
+        :number_system: latn
+        :patterns: 
+          :default: "#,##0%"
+      :scientific: 
+        :number_system: latn
+        :patterns: 
+          :default: "#E0"
+    :symbols: 
+      :alias: ""
+      :decimal: ","
+      :exponential: E
+      :group: "."
+      :infinity: ∞
+      :list: ;
+      :minus_sign: "-"
+      :nan: NaN
+      :per_mille: ‰
+      :percent_sign: "%"
+      :plus_sign: +
+      :superscripting_exponent: ×
+      :time_separator: ":"

@@ -23,6 +23,8 @@ module TwitterCldr
 
         STDOUT.write('Writing data to disk... ')
 
+        FileUtils.mkdir_p(output_path)
+
         File.open(File.join(output_path, 'blocks.yml'), 'w') do |output|
           YAML.dump(blocks, output)
         end

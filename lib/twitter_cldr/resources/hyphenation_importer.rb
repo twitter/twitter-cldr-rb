@@ -14,6 +14,7 @@ module TwitterCldr
       }
 
       requirement :git, REPO_URL, GIT_SHA
+      requirement :dependency, [LocalesResourcesImporter, ValidityDataImporter, UnicodePropertyAliasesImporter]
       output_path 'shared/hyphenation'
       ruby_engine :mri
 

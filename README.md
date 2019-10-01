@@ -513,20 +513,20 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
 postal_code.valid?("94103")     # true
 postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb)
 postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se)
 postal_code.valid?("280 12")    # true
 
 # Canada
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca)
 postal_code.valid?("V3H 1Z7")   # true
 ```
 
@@ -534,7 +534,7 @@ Match all valid postal codes in a string with the `#find_all` method:
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
 postal_code.find_all("12345 23456")    # ["12345", "23456"]
 ```
 
@@ -547,7 +547,7 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ac, :ad, :af, :ai, :al, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
 postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 ```
 
@@ -559,27 +559,7 @@ postal_code.sample(5)  # ["10781", "69079-7159", "79836-3996", "79771", "61093"]
 
 ### Phone Codes
 
-Look up phone codes by territory:
-
-```ruby
-# United States
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # "1"
-
-# Perú
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # "51"
-
-# Egypt
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # "20"
-
-# Denmark
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # "45"
-```
-
-Get a list of supported territories by using the `#territories` method:
-
-```ruby
-TwitterCldr::Shared::PhoneCodes.territories  # [:ac, :ad, :ae, :af, :ag, ... ]
-```
+Telephone codes were deprecated and have now been removed from the CLDR data set. They have been removed from TwitterCLDR as of v5.0.0.
 
 ### Language Codes
 
@@ -989,17 +969,17 @@ The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
 ```ruby
-{ :hello => "world" }.localize.to_yaml 
-["hello", "world"].localize.to_yaml 
-"hello, world".localize.to_yaml 
+{ :hello => "world" }.localize.to_yaml
+["hello", "world"].localize.to_yaml
+"hello, world".localize.to_yaml
 ```
 
 Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-TwitterCldr::Shared::YAML.dump({ :hello => "world" }) 
-TwitterCldr::Shared::YAML.dump(["hello", "world"]) 
-TwitterCldr::Shared::YAML.dump("hello, world") 
+TwitterCldr::Shared::YAML.dump({ :hello => "world" })
+TwitterCldr::Shared::YAML.dump(["hello", "world"])
+TwitterCldr::Shared::YAML.dump("hello, world")
 ```
 
 ## Adding New Locales

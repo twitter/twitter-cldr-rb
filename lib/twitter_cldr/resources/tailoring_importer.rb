@@ -7,22 +7,19 @@ require 'nokogiri'
 
 module TwitterCldr
   module Resources
-    # This class should be used with JRuby 1.7 in 1.9 mode, ICU4J version >= 49.1,
-    # and CLDR version <= 23 (v24 syntax is not supported yet).
-    #
     class TailoringImporter < Importer
 
-      requirement :icu, '51.2'
-      requirement :cldr, '23.1'
+      requirement :icu, '49.1'
+      requirement :cldr, '21'
       output_path 'collation/tailoring'
       locales TwitterCldr.supported_locales
       ruby_engine :jruby
 
-      SUPPORTED_RULES   = %w[p s t i pc sc tc ic x]
+      SUPPORTED_RULES   = %w[p s t i pc sc tc ic x comment]
       SIMPLE_RULES      = %w[p s t i]
       LEVEL_RULE_REGEXP = /^(p|s|t|i)(c?)$/
 
-      IGNORED_TAGS = %w[reset text #comment]
+      IGNORED_TAGS = %w[reset text #comment comment]
 
       LAST_BYTE_MASK = 0xFF
 
@@ -46,6 +43,7 @@ module TwitterCldr
       private
 
       def execute
+        FileUtils.mkdir_p(params[:output_path])
         params[:locales].each { |locale| import_locale(locale) }
       end
 
@@ -166,6 +164,7 @@ module TwitterCldr
                 memo << table_entry_for_rule(collator, context + c.text)
               elsif c.name == 'context'
                 context = c.text
+              elsif c.name == 'comment'
               elsif c.name != 'extend'
                 raise ImportError, "Rule '#{c.name}' inside <x></x> is not supported."
               end

@@ -6,6 +6,8 @@
 require 'fileutils'
 require 'cldr-plurals'
 require 'cldr/export'
+require 'parallel'
+require 'etc'
 
 module TwitterCldr
   module Resources
@@ -39,8 +41,6 @@ module TwitterCldr
         segments_root
         territories_containment
         likely_subtags
-        variables
-        aliases
       ]
 
       private
@@ -58,21 +58,21 @@ module TwitterCldr
       end
 
       def move_segments_root_file
-        file_path = File.join(output_path, 'shared', 'segments_root.yml')
-
-        if File.file?(file_path)
-          FileUtils.move(
-            file_path, File.join(
-              output_path, 'shared', 'segments', 'segments_root.yml'
-            )
-          )
-        end
+        old_file_path = File.join(output_path, *%w(shared segments_root.yml))
+        new_file_path = File.join(output_path, *%w(shared segments segments_root.yml))
+        FileUtils.mkdir_p(File.dirname(new_file_path))
+        FileUtils.move(old_file_path, new_file_path)
       end
 
       def import_components
         locales = Set.new
 
-        params[:locales].each do |locale|
+        finish = -> (locale, *) do
+          locales.add(locale)
+          STDOUT.write "\rImported #{locale}, #{locales.size} of #{params[:locales].size} total"
+        end
+
+        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish: finish) do |locale|
           export_args = {
             locales: [locale],
             components: components_for(locale),
@@ -85,16 +85,17 @@ module TwitterCldr
             process_plurals(component, locale, path)
             downcase_territory_codes(component, locale, path)
             deep_symbolize(path)
-            locales.add(locale)
-            STDOUT.write "\rImporting #{locale}, #{locales.size} of #{params[:locales].size} total"
           end
         end
 
         puts ''
 
+        shared_output_path = File.join(output_path, 'shared')
+        FileUtils.mkdir_p(shared_output_path)
+
         export_args = {
           components: SHARED_COMPONENTS,
-          target: File.join(output_path, 'shared'),
+          target: shared_output_path,
           merge: true
         }
 

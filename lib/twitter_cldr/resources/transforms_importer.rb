@@ -3,6 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'fileutils'
 require 'nokogiri'
 
 module TwitterCldr
@@ -19,6 +20,8 @@ module TwitterCldr
       def execute
         transform_id_map = {}
 
+        FileUtils.mkdir_p(output_path)
+
         each_transform_file do |transform_file|
           transform_data = parse_transform_data(File.read(transform_file))
           output_file = File.join(output_path, "#{File.basename(transform_file).chomp('.xml')}.yml")
@@ -33,9 +36,7 @@ module TwitterCldr
         filename = File.basename(path).chomp('.yml')
 
         aliases = transform_data.flat_map do |transform_datum|
-          (transform_datum[:aliases] || begin
-            [normalize_transform_id(filename)]
-          end) + [
+          (transform_datum[:aliases] || []) + [
             join_transform_id(
               transform_datum[:source],
               transform_datum[:target],

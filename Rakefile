@@ -57,6 +57,13 @@ task :update do
 end
 
 task :add_locale, :locale do |_, args|
+  File.write(
+    TwitterCldr::SUPPORTED_LOCALES_FILE,
+    YAML.dump(
+      (TwitterCldr::SUPPORTED_LOCALES + [args[:locale]]).map(&:to_sym).uniq.sort
+    )
+  )
+
   klasses = TwitterCldr::Resources.locale_based_importer_classes_for_ruby_engine
   instances = klasses.map { |klass| klass.new(locales: [args[:locale]]) }
   TwitterCldr::Resources::ImportResolver.new(instances).import
@@ -69,6 +76,21 @@ namespace :update do
   desc 'Import locales resources'
   task :locales_resources do
     TwitterCldr::Resources::LocalesResourcesImporter.new.import
+  end
+
+  desc 'Import currency symbols'
+  task :currency_symbols do
+    TwitterCldr::Resources::CurrencySymbolsImporter.new.import
+  end
+
+  desc 'Import validity data'
+  task :validity_data do
+    TwitterCldr::Resources::ValidityDataImporter.new.import
+  end
+
+  desc 'Import aliases'
+  task :aliases do
+    TwitterCldr::Resources::AliasesImporter.new.import
   end
 
   desc 'Import tailoring resources from CLDR data (should be executed using JRuby 1.7 in 1.9 mode)'
@@ -103,11 +125,6 @@ namespace :update do
     TwitterCldr::Resources::PostalCodesImporter.new.import
   end
 
-  desc 'Import phone codes resource'
-  task :phone_codes do
-    TwitterCldr::Resources::PhoneCodesImporter.new.import
-  end
-
   desc 'Import language codes'
   task :language_codes do
     TwitterCldr::Resources::LanguageCodesImporter.new.import
@@ -116,6 +133,11 @@ namespace :update do
   desc 'Update default and tailoring tries dumps (should be executed using JRuby 1.7 in 1.9 mode)'
   task :collation_tries do
     TwitterCldr::Resources::CollationTriesImporter.new.import
+  end
+
+  desc 'Import collation tests'
+  task :collation_tests do
+    TwitterCldr::Resources::CollationTestsImporter.new.import
   end
 
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'

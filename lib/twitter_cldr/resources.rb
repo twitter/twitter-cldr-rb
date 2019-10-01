@@ -5,16 +5,18 @@
 
 module TwitterCldr
   module Resources
+    autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
+    autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
     autoload :CollationTriesImporter,         'twitter_cldr/resources/collation_tries_importer'
+    autoload :CurrencySymbolsImporter,        'twitter_cldr/resources/currency_symbols_importer'
     autoload :HyphenationImporter,            'twitter_cldr/resources/hyphenation_importer'
     autoload :Importer,                       'twitter_cldr/resources/importer'
     autoload :ImportResolver,                 'twitter_cldr/resources/import_resolver'
     autoload :LanguageCodesImporter,          'twitter_cldr/resources/language_codes_importer'
     autoload :Loader,                         'twitter_cldr/resources/loader'
     autoload :LocalesResourcesImporter,       'twitter_cldr/resources/locales_resources_importer'
-    autoload :PhoneCodesImporter,             'twitter_cldr/resources/phone_codes_importer'
     autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :Properties,                     'twitter_cldr/resources/properties'
     autoload :RbnfTestImporter,               'twitter_cldr/resources/rbnf_test_importer'
@@ -29,36 +31,44 @@ module TwitterCldr
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
     autoload :Uli,                            'twitter_cldr/resources/uli'
+    autoload :ValidityDataImporter,           'twitter_cldr/resources/validity_data_importer'
 
     class << self
       # these importer class methods aren't constants in order to avoid loading
       # all the classes when the library is required
 
       def standard_importer_classes
+        # Collation importers work, but collation tests fail after import.
+        # It's not clear what versions of Unicode, CLDR, and ICU, were used
+        # to build the tailoring tries, or if they were modified by hand
+        # after that initial import in 2012. We could really benefit from
+        # the help of someone who understands how collation works (i.e. not
+        # Cameron) so we can modernize the collation stuff.
         @standard_importer_classes ||= [
+          AliasesImporter,
           BidiTestImporter,
           CasefolderClassGenerator,
-          CollationTriesImporter,
+          # CollationTestsImporter,
+          # CollationTriesImporter,
+          CurrencySymbolsImporter,
           HyphenationImporter,
           LanguageCodesImporter,
           LocalesResourcesImporter,
-          PhoneCodesImporter,
           PostalCodesImporter,
           RbnfTestImporter,
           SegmentTestsImporter,
-          TailoringImporter,
+          # TailoringImporter,
           TransformsImporter,
           TransformTestImporter,
           UnicodeDataImporter,
           UnicodePropertyAliasesImporter,
+          ValidityDataImporter,
         ]
       end
 
       def uli_importer_classes
         @uli_importer_classes ||= [
-          # Disabled for now since ULI TRAC has been down for quite a while.
-          # Word is data will eventually be available in a git repo.
-          # Uli::SegmentExceptionsImporter
+          Uli::SegmentExceptionsImporter
         ]
       end
 

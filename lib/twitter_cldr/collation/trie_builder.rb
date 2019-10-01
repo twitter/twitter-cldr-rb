@@ -12,7 +12,7 @@ module TwitterCldr
 
       COLLATION_ELEMENT_REGEXP = /^((?:[0-9A-F]+)(?:\s[0-9A-F]+)*);\s((?:\[.*?\])(?:\[.*?\])*)/
 
-      FRACTIONAL_UCA_SHORT_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'FractionalUCA_SHORT.txt')
+      FRACTIONAL_UCA_SHORT_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'FractionalUCA.txt')
 
       class << self
 

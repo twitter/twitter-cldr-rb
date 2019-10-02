@@ -38,7 +38,7 @@ module TwitterCldr
         def default_params
           parameters.merge(
             output_path: @output_path,
-            locales: @locales,
+            locales: get_locales,
             ruby_engine: @ruby_engine || DEFAULT_ENGINE
           )
         end
@@ -49,6 +49,16 @@ module TwitterCldr
 
         def parameters
           @parameters ||= {}
+        end
+
+        private
+
+        def get_locales
+          if ENV.include?('LOCALES')
+            ENV['LOCALES'].split(',').map { |loc| loc.strip.to_sym }
+          else
+            @locales
+          end
         end
       end
 

@@ -20,7 +20,7 @@ module TwitterCldr
       private
 
       def execute
-        copy_fractional_uca
+        # copy_fractional_uca
         update_default_trie_dump
 
         params.fetch(:locales).each do |locale|

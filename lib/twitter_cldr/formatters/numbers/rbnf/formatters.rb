@@ -50,6 +50,13 @@ module TwitterCldr
       end
 
       class NormalRuleFormatter
+        # ICU does not transliterate decimal digits using the default numbering
+        # systems for a few locales. I have no idea why.
+        NUMBERING_SYSTEM_OVERRIDES = {
+          hi: 'latn',  # default is deva (Devanagari)
+          ar: 'arab'   # default is latn
+        }.freeze
+
         attr_reader :rule_set, :rule_group, :omit, :is_fractional, :locale
 
         def initialize(rule_set, rule_group, locale)
@@ -67,14 +74,13 @@ module TwitterCldr
         end
 
         def right_arrow(number, rule, token)
-          # this seems to break things even though the docs require it:
-          # rule = rule_set.previous_rule_for(rule) if token.length == 3
-          remainder = number.abs % rule.divisor
-          generate_replacement(remainder, rule, token)
+          prev_rule = rule_set.previous_rule_for(rule) if token.length == 3
+          remainder = (number.abs % rule.divisor) * (number < 0 ? -1 : 1)
+          generate_replacement(remainder, prev_rule, token)
         end
 
         def left_arrow(number, rule, token)
-          quotient = number.abs / rule.divisor
+          quotient = (number.abs / rule.divisor) * (number < 0 ? -1 : 1)
           generate_replacement(quotient, rule, token)
         end
 
@@ -95,7 +101,11 @@ module TwitterCldr
             @decimal_tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(@data_reader)
             decimal_tokens = @decimal_tokenizer.tokenize(decimal_format)
             @decimal_formatter ||= TwitterCldr::Formatters::NumberFormatter.new(@data_reader)
-            @decimal_formatter.format(decimal_tokens, number, type: :decimal)
+            @decimal_formatter.format(
+              decimal_tokens, number,
+              type: :decimal,
+              numbering_system: NUMBERING_SYSTEM_OVERRIDES[locale]
+            )
           else
             RuleFormatter.format(number, rule_set, rule_group, locale)
           end
@@ -140,6 +150,10 @@ module TwitterCldr
 
         def integral_part(number)
           number.to_s.split(".").first.to_i
+        end
+
+        def transliterate?
+          !SKIP_DECIMAL_TRANSLITERATION.include?(locale)
         end
       end
 

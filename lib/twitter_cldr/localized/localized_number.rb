@@ -7,11 +7,10 @@ module TwitterCldr
   module Localized
     class LocalizedNumber < LocalizedObject
 
-      attr_reader :type, :format
+      attr_reader :type
 
       def initialize(obj, locale, options = {})
         @type = options[:type]
-        @format = options[:format]
         super
       end
 
@@ -28,10 +27,11 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        TwitterCldr::DataReaders::NumberDataReader.new(locale, {
-          type: @type,
-          format: @format
-        }).format_number(base_obj, options.merge(type: @type))
+        opts = options.merge(type: @type)
+
+        TwitterCldr::DataReaders::NumberDataReader
+          .new(locale, opts)
+          .format_number(base_obj, opts)
       end
 
       def plural_rule

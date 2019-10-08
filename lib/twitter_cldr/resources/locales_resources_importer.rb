@@ -8,6 +8,7 @@ require 'cldr-plurals'
 require 'cldr/export'
 require 'parallel'
 require 'etc'
+require 'set'
 
 module TwitterCldr
   module Resources
@@ -23,7 +24,6 @@ module TwitterCldr
         layout
         calendars
         languages
-        numbers
         currencies
         plural_rules
         lists

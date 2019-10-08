@@ -7,48 +7,41 @@ module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
 
-      DEFAULT_NUMBER_SYSTEM = "latn"
+      DEFAULT_NUMBER_SYSTEM = :default
       ABBREVIATED_MIN_POWER = 3
       ABBREVIATED_MAX_POWER = 14
 
       NUMBER_MIN = 10 ** ABBREVIATED_MIN_POWER
       NUMBER_MAX = 10 ** (ABBREVIATED_MAX_POWER + 1)
 
-      BASE_PATH   = [:numbers, :formats]
-      SYMBOL_PATH = [:numbers, :symbols]
+      PATTERN_PATH = [:numbers, :formats]
+      SYMBOL_PATH  = [:numbers, :symbols]
 
-      TYPE_PATHS = {
-        default:       [:decimal, :patterns],
-        decimal:       [:decimal, :patterns],
-        long_decimal:  [:decimal, :patterns, :long],
-        short_decimal: [:decimal, :patterns, :short],
-        currency:      [:currency, :patterns],
-        percent:       [:percent, :patterns]
-      }
-
-      ABBREVIATED_TYPES = [:long_decimal, :short_decimal]
+      TYPES = [:default, :decimal, :currency, :percent]
+      FORMATS = [:long, :short, :default]
 
       DEFAULT_TYPE = :decimal
+      DEFAULT_LENGTH = :long
       DEFAULT_FORMAT = :default
       DEFAULT_SIGN = :positive
 
-      REDIRECT_REGEX = /\Anumbers\.formats\.\w+\.patterns\.\w+\z/
-
-      attr_reader :type, :format
+      attr_reader :type, :format, :length, :number_system
 
       def self.types
-        TYPE_PATHS.keys
+        TYPES
       end
 
       def initialize(locale, options = {})
         super(locale)
         @type = options[:type] || DEFAULT_TYPE
+        @length = options[:length] || DEFAULT_LENGTH
 
-        unless type && TYPE_PATHS.include?(type.to_sym)
+        unless type && TYPES.include?(type.to_sym)
           raise ArgumentError.new("Type #{type} is not supported")
         end
 
         @format = options[:format] || DEFAULT_FORMAT
+        @number_system = options[:number_system] || default_number_system
       end
 
       def format_number(number, options = {})
@@ -68,16 +61,20 @@ module TwitterCldr
 
       def pattern(number = nil, decimal = true)
         sign = number < 0 ? :negative : :positive
-        path = BASE_PATH + if valid_type_for?(number, type)
-          TYPE_PATHS[type]
-        else
-          TYPE_PATHS[:default]
-        end
-
+        path = PATTERN_PATH + [type, number_system]
         pattern = get_pattern_data(path)
 
-        if pattern[format]
-          pattern = pattern[format]
+        if pattern.is_a?(Hash)
+          if pattern.include?(format)
+            pattern = pattern[format]
+          else
+            FORMATS.each do |fmt|
+              if pattern.include?(fmt)
+                pattern = pattern[fmt]
+                break
+              end
+            end
+          end
         end
 
         if number
@@ -91,12 +88,8 @@ module TwitterCldr
         end
       end
 
-      def number_system_for(type)
-        (traverse(BASE_PATH + [type]) || {}).fetch(:number_system, DEFAULT_NUMBER_SYSTEM)
-      end
-
       def symbols
-        @symbols ||= traverse(SYMBOL_PATH)
+        @symbols ||= traverse_following_aliases(SYMBOL_PATH + [number_system])
       end
 
       def tokenizer
@@ -114,25 +107,11 @@ module TwitterCldr
       private
 
       def get_pattern_data(path)
-        data = traverse(path)
-
-        if data.is_a?(Symbol) && data.to_s =~ REDIRECT_REGEX
-          get_pattern_data(data.to_s.split('.').map(&:to_sym))
-        else
-          data
-        end
-      end
-
-      def abbreviated?(type)
-        ABBREVIATED_TYPES.include?(type)
+        traverse_following_aliases(path)
       end
 
       def valid_type_for?(number, type)
-        if abbreviated?(type)
-          self.class.within_abbreviation_range?(number)
-        else
-          TYPE_PATHS.include?(type)
-        end
+        TYPES.include?(type)
       end
 
       def get_key_for(number)
@@ -185,6 +164,20 @@ module TwitterCldr
               pattern
           end
         end
+      end
+
+      def traverse_following_aliases(path, hash = resource, &block)
+        traverse(path, hash) do |_leg, leg_data|
+          if leg_data.is_a?(Symbol) && leg_data.to_s.start_with?('numbers.')
+            break traverse_following_aliases(leg_data.to_s.split('.').map(&:to_sym))
+          else
+            leg_data
+          end
+        end
+      end
+
+      def default_number_system
+        @default_number_system ||= resource[:numbers][:default_number_systems][:default].to_sym
       end
 
       def resource

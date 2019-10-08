@@ -78,6 +78,11 @@ namespace :update do
     TwitterCldr::Resources::LocalesResourcesImporter.new.import
   end
 
+  desc 'Import number formats'
+  task :number_formats do
+    TwitterCldr::Resources::NumberFormatsImporter.new.import
+  end
+
   desc 'Import currency symbols'
   task :currency_symbols do
     TwitterCldr::Resources::CurrencySymbolsImporter.new.import

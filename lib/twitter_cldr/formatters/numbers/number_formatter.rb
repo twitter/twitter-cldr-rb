@@ -24,7 +24,7 @@ module TwitterCldr
         result =  integer_format.apply(int, options)
         result << fraction_format.apply(fraction, options) if fraction
 
-        numbering_system(options[:type]).transliterate(
+        number_system.transliterate(
           "#{prefix.to_s}#{result}#{suffix.to_s}"
         )
       end
@@ -35,11 +35,9 @@ module TwitterCldr
 
       protected
 
-      # data readers should encapsulate formatting options, and when they do, this "type"
-      # argument will no longer be necessary (accessible via `data_reader.type` instead)
-      def numbering_system(type)
-        @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
-          data_reader.number_system_for(type)
+      def number_system
+        @number_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
+          data_reader.number_system
         )
       end
 

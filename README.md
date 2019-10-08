@@ -18,7 +18,7 @@ require 'twitter_cldr'
 Get a list of all currently supported locales (these are all supported on twitter.com):
 
 ```ruby
-TwitterCldr.supported_locales             # [:af, :ar, :be, :bg, :bn, :bo, ... ]
+TwitterCldr.supported_locales             # [:af, :ar, :az, :be, :bg, :bn, ... ]
 ```
 
 Determine if a locale is supported by TwitterCLDR:
@@ -79,11 +79,11 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :
 In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
 
 ```ruby
-2337.localize.to_short_decimal.to_s     # "2K"
-1337123.localize.to_short_decimal.to_s  # "1M"
+2337.localize.to_decimal.to_s(length: :short)     # "2,337"
+1337123.localize.to_decimal.to_s(length: :short)  # "1,337,123"
 
-2337.localize.to_long_decimal.to_s      # "2 thousand"
-1337123.localize.to_long_decimal.to_s   # "1 million"
+2337.localize.to_decimal.to_s(length: :long)      # "2,337"
+1337123.localize.to_decimal.to_s(length: :long)   # "1,337,123"
 ```
 
 ### Units
@@ -207,7 +207,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", ... ]
+# ["Bh", "Bhm", "Bhms", "E", "EBhm", "EBhms", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", ... ]
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -224,7 +224,12 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
+| Bh         | 12 B                   |
+| Bhm        | 12:20 B                |
+| Bhms       | 12:20:05 B             |
 | E          | Fri                    |
+| EBhm       | Fri 12:20 B            |
+| EBhms      | Fri 12:20:05 B         |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -243,6 +248,7 @@ It's important to know that, even though any given format may not be available a
 | MEd        | Fri, 2/14              |
 | MMM        | Feb                    |
 | MMMEd      | Fri, Feb 14            |
+| MMMMW      | week W of February     |
 | MMMMd      | February 14            |
 | MMMd       | Feb 14                 |
 | Md         | 2/14                   |
@@ -263,6 +269,7 @@ It's important to know that, even though any given format may not be available a
 | yMd        | 2/14/2014              |
 | yQQQ       | Q1 2014                |
 | yQQQQ      | 1st quarter 2014       |
+| yw         | week w of ߞ            |
 
 
 
@@ -372,7 +379,7 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
@@ -476,7 +483,7 @@ You can use the localize convenience method on territory code symbols to get the
 
 ```ruby
 :gb.localize(:pt).as_territory                         # "Reino Unido"
-:cz.localize(:pt).as_territory                         # "República Tcheca"
+:cz.localize(:pt).as_territory                         # "Tchéquia"
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
@@ -490,20 +497,20 @@ In addition to translating territory codes, TwitterCLDR provides access to the f
 
 ```ruby
 # get all territories for the default locale
-TwitterCldr::Shared::Territories.all                                                 # { ... :tl => "East Timor", :tm => "Turkmenistan" ... }
+TwitterCldr::Shared::Territories.all                                                 # { ... :tl => "Timor-Leste", :tm => "Turkmenistan" ... }
 
 # get all territories for a specific locale
-TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "República Democrática de Timor-Leste", :tm => "Turcomenistão" ... }
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "Timor-Leste", :tm => "Turcomenistão" ... }
 
 # get a territory by its code for the default locale
-TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "UK"
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "United Kingdom"
 
 # get a territory from its code for a specific locale
 TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # "Reino Unido"
 
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
-TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "UK"
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "United Kingdom"
 TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # "Reino Unido"
 ```
 
@@ -513,20 +520,20 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.valid?("94103")     # true
 postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
 postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
 postal_code.valid?("280 12")    # true
 
 # Canada
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
 postal_code.valid?("V3H 1Z7")   # true
 ```
 
@@ -534,7 +541,7 @@ Match all valid postal codes in a string with the `#find_all` method:
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.find_all("12345 23456")    # ["12345", "23456"]
 ```
 
@@ -547,14 +554,14 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ac, :ad, :af, :ai, :al, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 ```
 
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["10781", "69079-7159", "79836-3996", "79771", "61093"]
+postal_code.sample(5)  # ["90870-9680", "58315", "49528", "27853-7923", "62326-1414"]
 ```
 
 ### Phone Codes
@@ -917,7 +924,7 @@ Behind the scenes, `LocalizedString#transliterate_into` creates instances of `Tw
 ```ruby
 
 rule_set = TwitterCldr::Transforms::Transformer.get('Hiragana-Latin')
-rule_set.transform('くろねこさま')  # "kuronekosama"
+rule_set.transform('くろねこさま')  # "ｋｕｒｏｎｅｋｏｓａｍａ"
 ```
 Notice that the `.get` method was called with 'Hiragana-Latin' instead of 'ja-en' or something similar. This is because `.get` must be passed an exact transform id. To get a list of all supported transform ids, use the `Transformer#each_transform` method:
 
@@ -944,7 +951,7 @@ id.source  # Hiragana
 id.target  # Latin
 
 rule_set = TwitterCldr::Transforms::Transformer.get(id)
-rule_set.transform('くろねこさま')  # "kuronekosama"
+rule_set.transform('くろねこさま')  # "ｋｕｒｏｎｅｋｏｓａｍａ"
 ```
 
 ### Handling Bidirectional Text
@@ -969,17 +976,17 @@ The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
 ```ruby
-{ :hello => "world" }.localize.to_yaml
-["hello", "world"].localize.to_yaml
-"hello, world".localize.to_yaml
+{ :hello => "world" }.localize.to_yaml 
+["hello", "world"].localize.to_yaml 
+"hello, world".localize.to_yaml 
 ```
 
 Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-TwitterCldr::Shared::YAML.dump({ :hello => "world" })
-TwitterCldr::Shared::YAML.dump(["hello", "world"])
-TwitterCldr::Shared::YAML.dump("hello, world")
+TwitterCldr::Shared::YAML.dump({ :hello => "world" }) 
+TwitterCldr::Shared::YAML.dump(["hello", "world"]) 
+TwitterCldr::Shared::YAML.dump("hello, world") 
 ```
 
 ## Adding New Locales
@@ -1035,7 +1042,7 @@ No external requirements.
 
 `bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
 
-Tests are written in RSpec using RR as the mocking framework.
+Tests are written in RSpec.
 
 ## Test Coverage
 
@@ -1058,6 +1065,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2017 Twitter, Inc.
+Copyright 2019 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

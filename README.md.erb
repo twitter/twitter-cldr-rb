@@ -76,7 +76,7 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterC
 
 #### Short / Long Decimals
 
-In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `format` option:
 
 ```ruby
 2337.localize.to_decimal.to_s(format: :short)     # <%= assert(2337.localize.to_decimal.to_s(format: :short), "2K").inspect %>

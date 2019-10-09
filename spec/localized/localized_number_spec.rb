@@ -55,13 +55,13 @@ describe TwitterCldr::Localized::LocalizedNumber do
     describe "to_short_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(described_class.new(7000, :af, type: :short_decimal).to_s).to match_normalized("7 k")
+          expect(described_class.new(7000, :af, type: :decimal, format: :short).to_s).to match_normalized("7 k")
         end
       end
 
       context "when the patter uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
-          expect(described_class.new(93_000_000, :ja, type: :short_decimal).to_s).to match_normalized("9300万")
+          expect(described_class.new(93_000_000, :ja, type: :decimal, format: :short).to_s).to match_normalized("9300万")
         end
       end
     end
@@ -69,13 +69,13 @@ describe TwitterCldr::Localized::LocalizedNumber do
     describe "to_long_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(described_class.new(7000, :ko, type: :long_decimal).to_s).to match_normalized("7천")
+          expect(described_class.new(7000, :ko, type: :decimal, format: :long).to_s).to match_normalized("7천")
         end
       end
 
       context "when the patter uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
-          expect(described_class.new(93_000_000, :'zh-Hant', type: :long_decimal).to_s).to match_normalized("9300萬")
+          expect(described_class.new(93_000_000, :'zh-Hant', type: :decimal, format: :long).to_s).to match_normalized("9300萬")
         end
       end
     end
@@ -131,7 +131,7 @@ describe TwitterCldr::Localized::LocalizedNumber do
     end
 
     context 'short decimals' do
-      let(:number) { described_class.new(1000, :en, type: :short_decimal) }
+      let(:number) { described_class.new(1000, :en, type: :decimal, format: :short) }
 
       it "should default to a precision of 0" do
         expect(number.to_s).to eq("1K")
@@ -143,7 +143,7 @@ describe TwitterCldr::Localized::LocalizedNumber do
     end
 
     context 'long decimals' do
-      let(:number) { described_class.new(1000, :en, type: :long_decimal) }
+      let(:number) { described_class.new(1000, :en, type: :decimal, format: :long) }
 
       it "should default to a precision of 0" do
         expect(number.to_s).to eq("1 thousand")

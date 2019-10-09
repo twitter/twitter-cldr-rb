@@ -7,10 +7,11 @@ module TwitterCldr
   module Localized
     class LocalizedNumber < LocalizedObject
 
-      attr_reader :type
+      attr_reader :type, :format
 
       def initialize(obj, locale, options = {})
         @type = options[:type]
+        @format = options[:format]
         super
       end
 
@@ -27,7 +28,7 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        opts = options.merge(type: @type)
+        opts = { type: @type, format: @format }.merge(options)
 
         TwitterCldr::DataReaders::NumberDataReader
           .new(locale, opts)

@@ -30,7 +30,12 @@ module TwitterCldr
       end
 
       def truncate_number(number, decimal_digits)
-        number # noop for base class
+        if abbreviate?(number)
+          factor = [0, number.to_i.abs.to_s.length - decimal_digits].max
+          number / (10.0 ** factor)
+        else
+          number
+        end
       end
 
       protected
@@ -82,6 +87,13 @@ module TwitterCldr
       def precision_from(num)
         parts = num.to_s.split(".")
         parts.size == 2 ? parts[1].size : 0
+      end
+
+      def abbreviate?(number)
+        TwitterCldr::DataReaders::NumberDataReader.within_abbreviation_range?(number) && (
+          data_reader.format == :short ||
+          data_reader.format == :long
+        )
       end
 
     end

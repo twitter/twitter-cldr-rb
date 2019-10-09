@@ -68,10 +68,12 @@ module TwitterCldr
         return if path.empty?
 
         path.inject(hash) do |current, key|
+          return unless current.is_a?(Hash)
+
           if block
             yield key, current[key]
           else
-            current.is_a?(Hash) ? current[key] : return
+            current[key]
           end
         end
       end

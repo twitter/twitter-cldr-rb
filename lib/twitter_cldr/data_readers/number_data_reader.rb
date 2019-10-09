@@ -7,6 +7,8 @@ module TwitterCldr
   module DataReaders
     class NumberDataReader < DataReader
 
+      PluralRules = TwitterCldr::Formatters::Plurals::Rules
+
       DEFAULT_NUMBER_SYSTEM = :default
       ABBREVIATED_MIN_POWER = 3
       ABBREVIATED_MAX_POWER = 14
@@ -21,11 +23,16 @@ module TwitterCldr
       FORMATS = [:long, :short, :default]
 
       DEFAULT_TYPE = :decimal
-      DEFAULT_LENGTH = :long
       DEFAULT_FORMAT = :default
       DEFAULT_SIGN = :positive
 
-      attr_reader :type, :format, :length, :number_system
+      FORMATTERS = {
+        decimal: TwitterCldr::Formatters::DecimalFormatter,
+        currency: TwitterCldr::Formatters::CurrencyFormatter,
+        percent: TwitterCldr::Formatters::PercentFormatter
+      }
+
+      attr_reader :type, :format, :number_system
 
       def self.types
         TYPES
@@ -34,7 +41,6 @@ module TwitterCldr
       def initialize(locale, options = {})
         super(locale)
         @type = options[:type] || DEFAULT_TYPE
-        @length = options[:length] || DEFAULT_LENGTH
 
         unless type && TYPES.include?(type.to_sym)
           raise ArgumentError.new("Type #{type} is not supported")
@@ -47,45 +53,31 @@ module TwitterCldr
       def format_number(number, options = {})
         precision = options[:precision] || 0
         pattern_for_number = pattern(number, precision == 0)
-
         options[:locale] = self.locale
-
-        if pattern_for_number == '0'
-          # there's no specific formatting for the number in the current locale
-          number.to_s
-        else
-          tokens = tokenizer.tokenize(pattern_for_number)
-          formatter.format(tokens, number, options)
-        end
+        tokens = tokenizer.tokenize(pattern_for_number)
+        formatter.format(tokens, number, options)
       end
 
-      def pattern(number = nil, decimal = true)
+      def pattern(number, decimal = true)
+        zeroes = number.to_i.abs.to_s.size - 1
+        magnitude = "1#{'0' * zeroes}"
+        truncated_num = formatter.truncate_number(number, zeroes % 3 + 1)
+        truncated_num = truncated_num.to_i if decimal
+        plural_rule = PluralRules.rule_for(truncated_num, locale)
+
+        path = PATTERN_PATH + [
+          type,
+          number_system,
+          [format, :default],
+          magnitude.to_sym,
+          [plural_rule, :other]
+        ]
+
         sign = number < 0 ? :negative : :positive
-        path = PATTERN_PATH + [type, number_system]
-        pattern = get_pattern_data(path)
 
-        if pattern.is_a?(Hash)
-          if pattern.include?(format)
-            pattern = pattern[format]
-          else
-            FORMATS.each do |fmt|
-              if pattern.include?(fmt)
-                pattern = pattern[fmt]
-                break
-              end
-            end
-          end
-        end
-
-        if number
-          pattern = pattern_for_number(pattern, number, decimal)
-        end
-
-        if pattern.is_a?(String)
-          pattern_for_sign(pattern, sign)
-        else
-          pattern
-        end
+        pattern_for_sign(
+          traverse_finding_best_fit(path, []), sign
+        )
       end
 
       def symbols
@@ -97,60 +89,14 @@ module TwitterCldr
       end
 
       def formatter
-        @formatter ||= begin
-          klass_name = type.to_s.split("_").map(&:capitalize).join
-          klass = TwitterCldr::Formatters.const_get(:"#{klass_name}Formatter")
-          klass.new(self)
-        end
+        @formatter ||= FORMATTERS[type].new(self)
+      end
+
+      def default_number_system
+        @default_number_system ||= resource[:numbers][:default_number_systems][:default].to_sym
       end
 
       private
-
-      def get_pattern_data(path)
-        traverse_following_aliases(path)
-      end
-
-      def valid_type_for?(number, type)
-        TYPES.include?(type)
-      end
-
-      def get_key_for(number)
-        "1#{"0" * (number.to_i.abs.to_s.size - 1)}".to_s.to_sym
-      end
-
-      def pattern_for_number(pattern, number, decimal)
-        if pattern.is_a?(Hash)
-          range_pattern = pattern[get_key_for(number)]
-
-          if range_pattern
-            pattern_sample = range_pattern.values.first
-
-            if pattern_sample != 0
-              rule = pluralization_rule(number, pattern_sample, decimal)
-              # fall back to :other and raise an exception if it's missing as well
-              range_pattern.fetch(rule, range_pattern.fetch(:other))
-            else
-              0
-            end
-          else
-            pattern
-          end
-        else
-          pattern
-        end
-      end
-
-      def truncate_number(number, pattern)
-        formatter.truncate_number(number, tokenizer.tokenize(pattern)[1].value.size)
-      end
-
-      def pluralization_rule(number, pattern, decimal)
-        truncated_number = truncate_number(number, pattern)
-        # decimal and fractional numbers might have different pluralization,
-        # so it's important to convert to integer if we want a decimal result
-        truncated_number = truncated_number.to_i if decimal
-        TwitterCldr::Formatters::Plurals::Rules.rule_for(truncated_number, locale)
-      end
 
       def pattern_for_sign(pattern, sign)
         if pattern.include?(";")
@@ -166,18 +112,29 @@ module TwitterCldr
         end
       end
 
-      def traverse_following_aliases(path, hash = resource, &block)
+      def traverse_finding_best_fit(path_pattern, path, hash = resource)
+        if path_pattern.empty?
+          result = traverse_following_aliases(path, hash)
+          return result if result.is_a?(String)
+        else
+          Array(path_pattern.first).each do |leg|
+            result = traverse_finding_best_fit(path_pattern[1..-1], path + [leg], hash)
+            return result if result
+          end
+
+          result = traverse_following_aliases(path, hash)
+          return result if result.is_a?(String)
+        end
+      end
+
+      def traverse_following_aliases(path, hash = resource)
         traverse(path, hash) do |_leg, leg_data|
           if leg_data.is_a?(Symbol) && leg_data.to_s.start_with?('numbers.')
-            break traverse_following_aliases(leg_data.to_s.split('.').map(&:to_sym))
+            traverse_following_aliases(leg_data.to_s.split('.').map(&:to_sym))
           else
             leg_data
           end
         end
-      end
-
-      def default_number_system
-        @default_number_system ||= resource[:numbers][:default_number_systems][:default].to_sym
       end
 
       def resource

@@ -14,8 +14,11 @@ module TwitterCldr
         char == ' ' ? '\s' : Regexp.escape(char)
       end.join
 
-      def initialize(locale = TwitterCldr.locale)
+      def initialize(locale = TwitterCldr.locale, number_system = nil)
         @locale = locale
+        @data_reader = TwitterCldr::DataReaders::NumberDataReader.new(
+          locale, number_system: number_system
+        )
       end
 
       def parse(number_text, options = {})
@@ -97,15 +100,11 @@ module TwitterCldr
       end
 
       def decimal_separator
-        @decimal_separator ||= Regexp.escape(resource[:symbols][:decimal])
+        @decimal_separator ||= Regexp.escape(@data_reader.symbols[:decimal])
       end
 
       def group_separator
-        @group_separator ||= Regexp.escape(resource[:symbols][:group])
-      end
-
-      def resource
-        @resource ||= TwitterCldr.get_locale_resource(@locale, "numbers")[@locale][:numbers]
+        @group_separator ||= Regexp.escape(@data_reader.symbols[:group])
       end
 
     end

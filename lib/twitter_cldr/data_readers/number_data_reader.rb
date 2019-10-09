@@ -96,8 +96,6 @@ module TwitterCldr
         @default_number_system ||= resource[:numbers][:default_number_systems][:default].to_sym
       end
 
-      private
-
       def pattern_for_sign(pattern, sign)
         if pattern.include?(";")
           positive, negative = pattern.split(";")
@@ -111,6 +109,8 @@ module TwitterCldr
           end
         end
       end
+
+      private
 
       def traverse_finding_best_fit(path_pattern, path, hash = resource)
         if path_pattern.empty?

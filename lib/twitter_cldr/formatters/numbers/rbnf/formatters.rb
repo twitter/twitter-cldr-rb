@@ -97,14 +97,14 @@ module TwitterCldr
               locale
             )
           elsif decimal_format = token.decimal_format
+            sign = number < 0 ? :negative : :positive
             @data_reader ||= TwitterCldr::DataReaders::NumberDataReader.new(locale)
+            decimal_format = @data_reader.pattern_for_sign(decimal_format, sign)
             @decimal_tokenizer ||= TwitterCldr::Tokenizers::NumberTokenizer.new(@data_reader)
             decimal_tokens = @decimal_tokenizer.tokenize(decimal_format)
             @decimal_formatter ||= TwitterCldr::Formatters::NumberFormatter.new(@data_reader)
             @decimal_formatter.format(
-              decimal_tokens, number,
-              type: :decimal,
-              numbering_system: NUMBERING_SYSTEM_OVERRIDES[locale]
+              decimal_tokens, number, type: :decimal
             )
           else
             RuleFormatter.format(number, rule_set, rule_group, locale)

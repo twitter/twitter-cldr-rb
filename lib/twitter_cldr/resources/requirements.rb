@@ -10,6 +10,7 @@ module TwitterCldr
       autoload :CldrRequirement,       'twitter_cldr/resources/requirements/cldr_requirement'
       autoload :IcuRequirement,        'twitter_cldr/resources/requirements/icu_requirement'
       autoload :DependencyRequirement, 'twitter_cldr/resources/requirements/dependency_requirement'
+      autoload :EmojiRequirement,      'twitter_cldr/resources/requirements/emoji_requirement'
       autoload :GitRequirement,        'twitter_cldr/resources/requirements/git_requirement'
       autoload :PomManager,            'twitter_cldr/resources/requirements/pom_manager'
       autoload :UcaRequirement,        'twitter_cldr/resources/requirements/uca_requirement'

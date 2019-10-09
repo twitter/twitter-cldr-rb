@@ -76,6 +76,7 @@ module TwitterCldr
       def round_to(number, precision, rounding = 0)
         factor = 10 ** precision
         result = (number * factor).round.to_f / factor
+
         if rounding > 0
           rounding = rounding.to_f / factor
           result = (result *  (1.0 / rounding)).round.to_f / (1.0 / rounding)

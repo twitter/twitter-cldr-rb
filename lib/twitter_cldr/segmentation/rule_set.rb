@@ -44,13 +44,7 @@ module TwitterCldr
               last_boundary = match.boundary_position
             end
 
-            if match.boundary_position == cursor.position
-              cursor.advance
-            else
-              cursor.advance(
-                match.boundary_position - cursor.position
-              )
-            end
+            cursor.advance
           end
 
           # implicit end of text boundary
@@ -98,9 +92,9 @@ module TwitterCldr
         cursor.match_cache.fetch(cursor.position) do
           matches = match_all(cursor)
           matches.each do |m|
-            cursor.match_cache[m.boundary_position - 1] = m
+            cursor.match_cache[m.boundary_position - 1] ||= m
           end
-          matches.first
+          cursor.match_cache[cursor.position]
         end
       end
 

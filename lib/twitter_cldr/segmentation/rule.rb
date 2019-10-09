@@ -22,16 +22,40 @@ module TwitterCldr
       def match(cursor)
         left_match = match_side(left, cursor.text, cursor.position)
         return nil unless left_match
-        left_match_offset = offset(left_match, cursor.position)
 
-        right_match = match_side(right, cursor.text, left_match_offset.last)
-        return nil unless right_match
-        right_match_offset = offset(right_match, left_match_offset.last)
+        if left_match.size > 1
+          left_match_offsets = 1.upto(left_match.size - 1).map do |n|
+            left_match.offset(n)
+          end
+          .select { |o| o.all? }
+          .sort_by { |a, b| b - a }
 
-        offset = [left_match_offset.first, right_match_offset.last]
-        position = left_match_offset.last
+          left_match_offsets.each do |left_match_offset|
+            next unless left_match_offset.all?
 
-        RuleMatchData.new(self, offset, position)
+            right_match = match_side(right, cursor.text, left_match_offset.last)
+            next unless right_match
+            right_match_offset = offset(right_match, left_match_offset.last)
+
+            offset = [left_match_offset.first, right_match_offset.last]
+            position = left_match_offset.last
+
+            return RuleMatchData.new(self, offset, position)
+          end
+
+          nil
+        else
+          left_match_offset = offset(left_match, cursor.position)
+
+          right_match = match_side(right, cursor.text, left_match_offset.last)
+          return nil unless right_match
+          right_match_offset = offset(right_match, left_match_offset.last)
+
+          offset = [left_match_offset.first, right_match_offset.last]
+          position = left_match_offset.last
+
+          RuleMatchData.new(self, offset, position)
+        end
       end
 
       private

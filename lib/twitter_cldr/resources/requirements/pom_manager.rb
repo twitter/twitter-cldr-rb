@@ -5,6 +5,7 @@
 
 require 'nokogiri'
 require 'rexml/document'
+require 'fileutils'
 
 module TwitterCldr
   module Resources
@@ -125,6 +126,8 @@ module TwitterCldr
         end
 
         def save
+          FileUtils.mkdir_p(File.dirname(pom_file))
+
           File.open(pom_file, 'w+') do |f|
             formatter.write(REXML::Document.new(contents.to_xml), f)
           end

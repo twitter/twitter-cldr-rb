@@ -43,7 +43,6 @@ describe TwitterCldr::Formatters::Rbnf::RbnfFormatter do
     end
   end
 
-  # [:ar].each do |locale|
   TwitterCldr.supported_locales.each do |locale|
     next unless described_class.supported_locale?(locale)
 
@@ -51,11 +50,9 @@ describe TwitterCldr::Formatters::Rbnf::RbnfFormatter do
     test_data = YAML.load_file(RbnfTestHelpers.test_file_for(locale.to_s))
 
     describe locale.localize.as_language_code do
-      # ['OrdinalRules'].each do |group_name|
       formatter.group_names.each do |group_name|
 
         describe group_name do
-          # ['digits-ordinal'].each do |rule_set_name|
           formatter.rule_set_names_for_group(group_name).each do |rule_set_name|
 
             describe rule_set_name.gsub("-", " ") do

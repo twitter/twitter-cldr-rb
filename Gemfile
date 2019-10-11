@@ -12,7 +12,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'nokogiri', "~> 1.10"
+  gem 'nokogiri', "~> 1.0"
   gem 'parallel'
 
   gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'

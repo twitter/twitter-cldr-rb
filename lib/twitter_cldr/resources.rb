@@ -83,8 +83,6 @@ module TwitterCldr
           Properties::DerivedCorePropertiesImporter,
           Properties::EastAsianWidthPropertyImporter,
           Properties::EmojiImporter,
-          Properties::EmojiSequencesImporter,
-          Properties::EmojiZwjSequencesImporter,
           Properties::GraphemeBreakPropertyImporter,
           Properties::HangulSyllableTypePropertyImporter,
           Properties::IndicPositionalCategoryPropertyImporter,

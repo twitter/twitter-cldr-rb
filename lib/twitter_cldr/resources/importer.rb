@@ -75,10 +75,11 @@ module TwitterCldr
 
       def import
         if can_import?
+          puts "Importing #{name}..."
           prepare
           execute
         else
-          raise "Can't import #{self.class.name}: #{importability_errors.first}"
+          raise "Can't import #{name}: #{importability_errors.first}"
         end
       end
 
@@ -89,6 +90,15 @@ module TwitterCldr
       end
 
       private
+
+      def name
+        @name ||= self.class.name
+          .split('::').last
+          .chomp('Importer')
+          .gsub(/([A-Z])([a-z])/) { " #{$1.downcase}#{$2}" }
+          .strip
+          .tap { |n| n << 's' unless n.end_with?('s') }
+      end
 
       def importability_errors
         @importability_errors ||= [].tap do |errors|

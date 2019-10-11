@@ -76,7 +76,7 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :
 
 #### Short / Long Decimals
 
-In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `format` option:
 
 ```ruby
 2337.localize.to_decimal.to_s(format: :short)     # "2K"
@@ -561,7 +561,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["43382", "29685", "10925", "30631-0059", "38425"]
+postal_code.sample(5)  # ["93409", "94483-9372", "29225-2876", "63380-5976", "61846-6982"]
 ```
 
 ### Phone Codes

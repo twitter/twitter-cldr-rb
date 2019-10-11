@@ -7,7 +7,7 @@ require 'spec_helper'
 
 describe 'Unicode Collation Algorithm' do
 
-  SHORT_COLLATION_TEST_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'spec', 'CollationTest_CLDR_NON_IGNORABLE_Short.txt')
+  SHORT_COLLATION_TEST_PATH = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'spec', 'CollationTest_CLDR_NON_IGNORABLE_SHORT.txt')
   FULL_COLLATION_TEST_PATH  = File.join(TwitterCldr::RESOURCES_DIR, 'collation', 'spec', 'CollationTest_CLDR_NON_IGNORABLE.txt')
 
   it 'passes all the tests in CollationTest_CLDR_NON_IGNORABLE_Short.txt' do

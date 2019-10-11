@@ -39,12 +39,6 @@ module TwitterCldr
       # all the classes when the library is required
 
       def standard_importer_classes
-        # Collation importers work, but collation tests fail after import.
-        # It's not clear what versions of Unicode, CLDR, and ICU, were used
-        # to build the tailoring tries, or if they were modified by hand
-        # after that initial import in 2012. We could really benefit from
-        # the help of someone who understands how collation works (i.e. not
-        # Cameron) so we can modernize the collation stuff.
         @standard_importer_classes ||= [
           AliasesImporter,
           BidiTestImporter,

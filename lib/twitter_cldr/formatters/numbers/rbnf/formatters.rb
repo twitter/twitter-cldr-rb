@@ -50,13 +50,6 @@ module TwitterCldr
       end
 
       class NormalRuleFormatter
-        # ICU does not transliterate decimal digits using the default numbering
-        # systems for a few locales. I have no idea why.
-        NUMBERING_SYSTEM_OVERRIDES = {
-          hi: 'latn',  # default is deva (Devanagari)
-          ar: 'arab'   # default is latn
-        }.freeze
-
         attr_reader :rule_set, :rule_group, :omit, :is_fractional, :locale
 
         def initialize(rule_set, rule_group, locale)

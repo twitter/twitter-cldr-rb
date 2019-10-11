@@ -25,11 +25,11 @@ end
 group :test do
   gem 'rspec', '~> 3.0'
 
-  gem 'term-ansicolor', '~> 1.3.0'        # 1.4 breaks ruby 1.9 support
+  gem 'term-ansicolor', '~> 1.3'
   gem 'coveralls', require: false
-  gem 'tins', '~> 1.6.0', require: false  # 1.7 breaks ruby 1.9 support
+  gem 'tins', '~> 1.6', require: false
 
   gem 'simplecov'
   gem 'launchy'
-  gem 'addressable', '~> 2.4.0'           # 2.5 breaks ruby 1.9 support
+  gem 'addressable', '~> 2.4'
 end

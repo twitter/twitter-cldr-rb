@@ -224,12 +224,12 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
-| Bh         | 12 B                   |
-| Bhm        | 12:20 B                |
-| Bhms       | 12:20:05 B             |
+| Bh         | 12 PM                  |
+| Bhm        | 12:20 PM               |
+| Bhms       | 12:20:05 PM            |
 | E          | Fri                    |
-| EBhm       | Fri 12:20 B            |
-| EBhms      | Fri 12:20:05 B         |
+| EBhm       | Fri 12:20 PM           |
+| EBhms      | Fri 12:20:05 PM        |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -242,13 +242,13 @@ It's important to know that, even though any given format may not be available a
 | H          | 12                     |
 | Hm         | 12:20                  |
 | Hms        | 12:20:05               |
-| Hmsv       | 12:20:05 v             |
-| Hmv        | 12:20 v                |
+| Hmsv       | 12:20:05 UTC           |
+| Hmv        | 12:20 UTC              |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
 | MMM        | Feb                    |
 | MMMEd      | Fri, Feb 14            |
-| MMMMW      | week W of February     |
+| MMMMW      | week 3 of February     |
 | MMMMd      | February 14            |
 | MMMd       | Feb 14                 |
 | Md         | 2/14                   |
@@ -256,8 +256,8 @@ It's important to know that, even though any given format may not be available a
 | h          | 12 PM                  |
 | hm         | 12:20 PM               |
 | hms        | 12:20:05 PM            |
-| hmsv       | 12:20:05 PM v          |
-| hmv        | 12:20 PM v             |
+| hmsv       | 12:20:05 PM UTC        |
+| hmv        | 12:20 PM UTC           |
 | ms         | 20:05                  |
 | y          | 2014                   |
 | yM         | 2/2014                 |
@@ -269,7 +269,7 @@ It's important to know that, even though any given format may not be available a
 | yMd        | 2/14/2014              |
 | yQQQ       | Q1 2014                |
 | yQQQQ      | 1st quarter 2014       |
-| yw         | week w of ߞ            |
+| yw         | week 7 of 2014         |
 
 
 
@@ -561,7 +561,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["93409", "94483-9372", "29225-2876", "63380-5976", "61846-6982"]
+postal_code.sample(5)  # ["22446-5624", "55533", "04873-4651", "66578", "41649-8209"]
 ```
 
 ### Phone Codes

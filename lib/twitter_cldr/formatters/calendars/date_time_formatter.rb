@@ -30,6 +30,7 @@ module TwitterCldr
         'e' => :weekday_local,
         'c' => :weekday_local_stand_alone,
         'a' => :period,
+        'B' => :period,
         'h' => :hour,
         'H' => :hour,
         'K' => :hour,
@@ -39,8 +40,8 @@ module TwitterCldr
         'S' => :second_fraction,
         'z' => :timezone,
         'Z' => :timezone,
-        'v' => :timezone_generic_non_location,
-        'V' => :timezone_metazone
+        'v' => :timezone, # should eventually be :timezone_generic_non_location
+        'V' => :timezone  # should eventually be :timezone_metazone
       }
 
       protected
@@ -80,11 +81,19 @@ module TwitterCldr
       end
 
       def year_of_week_of_year(date, pattern, length, options = {})
-        week_fields_for(date)[:year_woy]
+        week_fields_for(date)[:year_woy].to_s
       end
 
       def day_of_week_in_month(date, pattern, length, options = {}) # e.g. 2nd Wed in July
-        week_fields_for(date)[:day_of_week_in_month]
+        week_fields_for(date)[:day_of_week_in_month].to_s
+      end
+
+      def week_of_month(date, pattern, length, options = {})
+        week_fields_for(date)[:week_of_month].to_s
+      end
+
+      def week_of_year(date, pattern, length, options = {})
+        week_fields_for(date)[:week_of_year].to_s
       end
 
       def quarter(date, pattern, length, options = {})

@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d, E"
@@ -22,6 +27,7 @@
         :MEd: "MM-dd, E"
         :MMM: LLL
         :MMMEd: "MMMཚེས་d, E"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: MMMMའི་ཚེས་d
         :MMMd: MMMཚེས་d
         :Md: MM-dd
@@ -44,6 +50,7 @@
         :yMd: y-MM-dd
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
+        :yw: "'week' w 'of' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -107,6 +114,7 @@
           0: ""
       :fields: 
         :day: ཉིན།
+        :dayOfYear: "Day Of Year"
         :dayperiod: "སྔ་དྲོ། ཕྱི་དྲོ།"
         :era: ལོ་རིམ།
         :hour: ཆུ་ཚོད་
@@ -115,7 +123,9 @@
         :quarter: Quarter
         :second: སྐར་ཆ།
         :week: གཟའ་འཁོར།
+        :weekOfMonth: "Week Of Month"
         :weekday: གཟའ་འཁོར་གཅིག
+        :weekdayOfMonth: "Weekday Of Month"
         :year: ལོ།
         :zone: དུས་ཚོད།
       :formats: 

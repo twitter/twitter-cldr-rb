@@ -10,7 +10,7 @@ module TwitterCldr
       class BreakInternalTransform < NullTransform
         class << self
           def accepts?(forward_form, backward_form)
-            forward_form.transform.downcase == 'any-breakinternal'
+            forward_form && forward_form.transform.downcase == 'any-breakinternal'
           end
         end
       end

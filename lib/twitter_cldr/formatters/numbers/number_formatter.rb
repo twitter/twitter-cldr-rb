@@ -24,22 +24,25 @@ module TwitterCldr
         result =  integer_format.apply(int, options)
         result << fraction_format.apply(fraction, options) if fraction
 
-        numbering_system(options[:type]).transliterate(
+        number_system.transliterate(
           "#{prefix.to_s}#{result}#{suffix.to_s}"
         )
       end
 
       def truncate_number(number, decimal_digits)
-        number # noop for base class
+        if abbreviate?(number)
+          factor = [0, number.to_i.abs.to_s.length - decimal_digits].max
+          number / (10.0 ** factor)
+        else
+          number
+        end
       end
 
       protected
 
-      # data readers should encapsulate formatting options, and when they do, this "type"
-      # argument will no longer be necessary (accessible via `data_reader.type` instead)
-      def numbering_system(type)
-        @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
-          data_reader.number_system_for(type)
+      def number_system
+        @number_system ||= TwitterCldr::Shared::NumberingSystem.for_name(
+          data_reader.number_system
         )
       end
 
@@ -73,6 +76,7 @@ module TwitterCldr
       def round_to(number, precision, rounding = 0)
         factor = 10 ** precision
         result = (number * factor).round.to_f / factor
+
         if rounding > 0
           rounding = rounding.to_f / factor
           result = (result *  (1.0 / rounding)).round.to_f / (1.0 / rounding)
@@ -84,6 +88,13 @@ module TwitterCldr
       def precision_from(num)
         parts = num.to_s.split(".")
         parts.size == 2 ? parts[1].size : 0
+      end
+
+      def abbreviate?(number)
+        TwitterCldr::DataReaders::NumberDataReader.within_abbreviation_range?(number) && (
+          data_reader.format == :short ||
+          data_reader.format == :long
+        )
       end
 
     end

@@ -30,7 +30,7 @@ describe TwitterCldr::Tokenizers::NumberTokenizer do
     end
 
     it "gets tokens for an abbreviated number pattern with a literal period (e.g., for Russian)" do
-      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:ru, type: :short_decimal)
+      data_reader = TwitterCldr::DataReaders::NumberDataReader.new(:ru, type: :decimal, format: :short)
       pattern = data_reader.pattern(1_000)
 
       expect(pattern).to include("тыс'.'") # ensure that we test with the data we expect

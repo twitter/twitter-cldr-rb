@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E, h:mm B"
+        :EBhms: "E, h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -22,6 +27,7 @@
         :MEd: "E, dd/MM"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -44,6 +50,7 @@
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -96,11 +103,18 @@
       :fields: 
         :day: day
         :day-short: day
+        :dayOfYear: "day of year"
+        :dayOfYear-narrow: "day of yr"
+        :dayOfYear-short: "day of yr"
         :dayperiod: am/pm
+        :dayperiod-narrow: am/pm
+        :dayperiod-short: am/pm
         :era: era
+        :era-short: era
         :hour: hour
         :hour-short: hr
         :minute: minute
+        :minute-narrow: min
         :minute-short: min
         :month: month
         :month-narrow: mo
@@ -113,10 +127,19 @@
         :week: week
         :week-narrow: wk
         :week-short: wk
+        :weekOfMonth: "week of month"
+        :weekOfMonth-narrow: "wk of mo"
+        :weekOfMonth-short: "wk of mo"
         :weekday: "day of the week"
+        :weekday-narrow: "day of wk"
+        :weekday-short: "day of wk"
+        :weekdayOfMonth: "weekday of the month"
+        :weekdayOfMonth-narrow: "wkday of mo"
+        :weekdayOfMonth-short: "wkday of mo"
         :year: year
         :year-short: yr
         :zone: "time zone"
+        :zone-short: zone
       :formats: 
         :date: 
           :full: 
@@ -226,10 +249,17 @@
               :am: am
               :pm: pm
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
+          :abbreviated: 
+            :afternoon1: afternoon
+            :am: am
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: noon
+            :pm: pm
           :narrow: 
-            :am: a
-            :pm: p
+            :pm: pm
           :wide: 
             :afternoon1: afternoon
             :am: am

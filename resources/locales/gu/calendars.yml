@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -22,6 +27,7 @@
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "MMMM ના W અઠવાડિયા"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd-MM
@@ -45,6 +51,7 @@
         :yMd: d/M/y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
+        :yw: "Y ના w અઠવાડિયા"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,9 +132,16 @@
       :fields: 
         :day: દિવસ
         :day-narrow: દિવસ
-        :day-short: દિ.
+        :day-short: દિવસ
+        :dayOfYear: "વર્ષનો દિવસ"
+        :dayOfYear-narrow: "વર્ષનો દિવસ"
+        :dayOfYear-short: "વર્ષનો દિવસ"
         :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: યુગ
+        :era-narrow: યુગ
+        :era-short: યુગ
         :hour: કલાક
         :hour-narrow: ક.
         :hour-short: ક.
@@ -146,11 +160,21 @@
         :week: અઠવાડિયું
         :week-narrow: અઠ.
         :week-short: અઠ.
+        :weekOfMonth: "મહિનાનું અઠવાડિયું"
+        :weekOfMonth-narrow: "મહિનાનું અઠવાડિયું"
+        :weekOfMonth-short: "મહિનાનું અઠવાડિયું"
         :weekday: "અઠવાડિયાનો દિવસ"
+        :weekday-narrow: "અઠવાડિયાનો દિવસ"
+        :weekday-short: "અઠવાડિયાનો દિવસ"
+        :weekdayOfMonth: "મહિનાના અઠવાડિયાનો દિવસ"
+        :weekdayOfMonth-narrow: "મહિનાના અઠવાડિયાનો દિવસ"
+        :weekdayOfMonth-short: "મહિનાના અઠવાડિયાનો દિવસ"
         :year: વર્ષ
         :year-narrow: વ.
         :year-short: વ.
         :zone: "સમય ઝોન"
+        :zone-narrow: "સમય ઝોન"
+        :zone-short: "સમય ઝોન"
       :formats: 
         :date: 
           :full: 
@@ -163,9 +187,9 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} એ {{time}} વાગ્યે"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} એ {{time}} વાગ્યે"
           :medium: 
             :pattern: "{{date}} {{time}}"
           :short: 
@@ -263,45 +287,45 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :narrow: 
-            :afternoon1: બ
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાં
+            :evening1: સાંજે
             :midnight: મ.રાત્રિ
-            :morning1: સ
-            :night1: રા
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :wide: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :narrow: 
-            :afternoon1: બપોર
+            :afternoon1: બપોરે
             :am: AM
-            :evening1: સાંજ
+            :evening1: સાંજે
             :midnight: મધ્યરાત્રિ
-            :morning1: સવાર
-            :night1: રાત્રિ
+            :morning1: સવારે
+            :night1: રાત્રે
             :pm: PM
           :wide: 
             :afternoon1: બપોર
@@ -324,10 +348,10 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "પહેલો ત્રિમાસ"
-            2: "બીજો ત્રિમાસ"
-            3: "ત્રીજો ત્રિમાસ"
-            4: "ચોથો ત્રિમાસ"
+            1: "1લો ત્રિમાસ"
+            2: "2જો ત્રિમાસ"
+            3: "3જો ત્રિમાસ"
+            4: "4થો ત્રિમાસ"
         :stand-alone: 
           :abbreviated: 
             1: Q1
@@ -340,7 +364,7 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "પહેલો ત્રિમાસ"
-            2: "બીજો ત્રિમાસ"
-            3: "ત્રીજો ત્રિમાસ"
-            4: "ચોથો ત્રિમાસ"
+            1: "1લો ત્રિમાસ"
+            2: "2જો ત્રિમાસ"
+            3: "3જો ત્રિમાસ"
+            4: "4થો ત્રિમાસ"

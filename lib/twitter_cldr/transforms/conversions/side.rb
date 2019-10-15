@@ -87,17 +87,11 @@ module TwitterCldr
         private
 
         def before_context_regexp
-          @before_context_regexp ||=
-            TwitterCldr::Shared::UnicodeRegex.compile(
-              before_context
-            ).to_regexp
+          @before_context_regexp ||= compile_regexp(before_context).to_regexp
         end
 
         def key_u_regexp
-          @key_u_regexp ||=
-            TwitterCldr::Shared::UnicodeRegex.compile(
-              Rule.regexp_token_string(key)
-            )
+          @key_u_regexp ||= compile_regexp(Rule.regexp_token_string(key))
         end
 
         def key_regexp
@@ -105,10 +99,29 @@ module TwitterCldr
         end
 
         def after_context_regexp
-          @after_context_regexp ||=
-            TwitterCldr::Shared::UnicodeRegex.compile(
-              after_context
-            ).to_regexp
+          @after_context_regexp ||= compile_regexp(after_context).to_regexp
+        end
+
+        # This is a pretty big hack. The problem we're trying to solve here
+        # is that regular negated character classes don't match the ends of
+        # strings. CLDR's transform rules expect the after context to match
+        # the end of a string, since, in a sense, "nothing" is always part
+        # of a negated character class. "I want to match on anything but
+        # these specific characters" should also include no characters.
+        # Accordingly, this function adds "\z" to the ends of negated
+        # character classes. Hopefully this works for all cases.
+        def compile_regexp(regexp_str)
+          TwitterCldr::Shared::UnicodeRegex.compile(regexp_str).tap do |re|
+            re.elements.each_with_index do |element, idx|
+              if element.type == :character_class && element.negated?
+                repl = TwitterCldr::Shared::UnicodeRegex.compile(
+                  "(?:#{element.to_regexp_str[3..-2]}|\\z)"
+                )
+
+                re.elements[idx..idx] = repl.elements
+              end
+            end
+          end
         end
       end
 

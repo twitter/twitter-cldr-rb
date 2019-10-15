@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E H:mm"
         :EHms: "E H:mm:ss"
         :Ed: "E d"
@@ -11,21 +16,22 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
-        :GyMMMEd: "E, d MMM y G"
+        :GyMMMEd: "E, d MMM 'de' y G"
         :GyMMMM: "LLLL 'de' y G"
         :GyMMMMEd: "E, d MMMM 'de' y G"
         :GyMMMMd: "d MMMM 'de' y G"
-        :GyMMMd: "d MMM y G"
+        :GyMMMd: "d MMM 'de' y G"
         :H: H
-        :Hm: "HH:mm"
-        :Hms: "HH:mm:ss"
-        :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :Hm: "H:mm"
+        :Hms: "H:mm:ss"
+        :Hmsv: "H:mm:ss v"
+        :Hmv: "H:mm v"
         :M: L
         :MEd: "E d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "'setmana' W MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -45,10 +51,11 @@
         :yMMMM: "LLLL 'de' y"
         :yMMMMEd: "E, d MMMM 'de' y"
         :yMMMMd: "d MMMM 'de' y"
-        :yMMMd: "d MMM y"
+        :yMMMd: "d MMM 'de' y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'setmana' w 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -121,8 +128,8 @@
           0: AEC
           1: EC
         :name: 
-          0: "abans de l’Era Comuna"
-          1: "Era Comuna"
+          0: "abans de l’era cristiana"
+          1: "era cristiana"
         :narrow: 
           0: AEC
           1: EC
@@ -130,8 +137,15 @@
         :day: dia
         :day-narrow: dia
         :day-short: dia
-        :dayperiod: "a. m./p. m."
+        :dayOfYear: "dia de l’any"
+        :dayOfYear-narrow: "dia de l’any"
+        :dayOfYear-short: "dia de l’any"
+        :dayperiod: a. m./p. m.
+        :dayperiod-narrow: a. m./p. m.
+        :dayperiod-short: a. m./p. m.
         :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: hora
         :hour-narrow: h
         :hour-short: h
@@ -150,11 +164,21 @@
         :week: setmana
         :week-narrow: setm.
         :week-short: setm.
+        :weekOfMonth: "setmana del mes"
+        :weekOfMonth-narrow: "setm. del mes"
+        :weekOfMonth-short: "setm. del mes"
         :weekday: "dia de la setmana"
+        :weekday-narrow: "dia de la setm."
+        :weekday-short: "dia de la setm."
+        :weekdayOfMonth: "dia de la setmana del mes"
+        :weekdayOfMonth-narrow: "dia de la setm. del mes"
+        :weekdayOfMonth-short: "dia de la setm. del mes"
         :year: any
         :year-narrow: any
         :year-short: any
         :zone: "fus horari"
+        :zone-narrow: "fus horari"
+        :zone-short: "fus horari"
       :formats: 
         :date: 
           :full: 
@@ -169,7 +193,7 @@
           :full: 
             :pattern: "{{date}} 'a' 'les' {{time}}"
           :long: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} 'a' 'les' {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
@@ -186,18 +210,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: gen.
-            10: oct.
-            11: nov.
-            12: des.
-            2: febr.
-            3: març
-            4: abr.
-            5: maig
-            6: juny
-            7: jul.
-            8: ag.
-            9: set.
+            1: "de gen."
+            10: d’oct.
+            11: "de nov."
+            12: "de des."
+            2: "de febr."
+            3: "de març"
+            4: d’abr.
+            5: "de maig"
+            6: "de juny"
+            7: "de jul."
+            8: d’ag.
+            9: "de set."
           :narrow: 
             1: GN
             10: OC
@@ -269,64 +293,64 @@
           :abbreviated: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
           :narrow: 
             :afternoon1: md
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: mat.
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
           :wide: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
         :stand-alone: 
           :abbreviated: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
           :narrow: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
           :wide: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: "a. m."
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
-            :pm: "p. m."
+            :pm: p. m.
       :quarters: 
         :format: 
           :abbreviated: 

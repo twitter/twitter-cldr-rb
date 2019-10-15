@@ -11,11 +11,11 @@ module TwitterCldr
       class FilterRule < Rule
         class << self
           def parse(rule_text, symbol_table, index)
-            Filters::RegexFilter.parse(rule_text, symbol_table)
+            Filters::UnicodeFilter.parse(rule_text, symbol_table)
           end
 
           def accepts?(rule_text)
-            Filters::RegexFilter.accepts?(rule_text)
+            Filters::UnicodeFilter.accepts?(rule_text)
           end
         end
 

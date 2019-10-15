@@ -15,8 +15,17 @@ module TwitterCldr
         }
 
         # Character classes can include set operations (eg. union, intersection, etc).
-        BinaryOperator = Struct.new(:operator, :left, :right)
-        UnaryOperator = Struct.new(:operator, :child)
+        BinaryOperator = Struct.new(:operator, :left, :right) do
+          def type
+            :binary_operator
+          end
+        end
+
+        UnaryOperator = Struct.new(:operator, :child) do
+          def type
+            :unary_operator
+          end
+        end
 
         class << self
 
@@ -56,6 +65,10 @@ module TwitterCldr
 
         def to_s
           stringify(root)
+        end
+
+        def negated?
+          root.type == :unary_operator && root.operator == :negate
         end
 
         private

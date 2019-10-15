@@ -75,6 +75,10 @@
   begin: 2112
   end: 2143
   excl: false
+:syriac_supplement: !ruby/range
+  begin: 2144
+  end: 2159
+  excl: false
 :arabic_extended_a: !ruby/range
   begin: 2208
   end: 2303
@@ -242,6 +246,14 @@
 :ol_chiki: !ruby/range
   begin: 7248
   end: 7295
+  excl: false
+:cyrillic_extended_c: !ruby/range
+  begin: 7296
+  end: 7311
+  excl: false
+:georgian_extended: !ruby/range
+  begin: 7312
+  end: 7359
   excl: false
 :sundanese_supplement: !ruby/range
   begin: 7360
@@ -707,6 +719,10 @@
   begin: 66688
   end: 66735
   excl: false
+:osage: !ruby/range
+  begin: 66736
+  end: 66815
+  excl: false
 :elbasan: !ruby/range
   begin: 66816
   end: 66863
@@ -795,9 +811,25 @@
   begin: 68736
   end: 68863
   excl: false
+:hanifi_rohingya: !ruby/range
+  begin: 68864
+  end: 68927
+  excl: false
 :rumi_numeral_symbols: !ruby/range
   begin: 69216
   end: 69247
+  excl: false
+:old_sogdian: !ruby/range
+  begin: 69376
+  end: 69423
+  excl: false
+:sogdian: !ruby/range
+  begin: 69424
+  end: 69487
+  excl: false
+:elymaic: !ruby/range
+  begin: 69600
+  end: 69631
   excl: false
 :brahmi: !ruby/range
   begin: 69632
@@ -843,6 +875,10 @@
   begin: 70400
   end: 70527
   excl: false
+:newa: !ruby/range
+  begin: 70656
+  end: 70783
+  excl: false
 :tirhuta: !ruby/range
   begin: 70784
   end: 70879
@@ -855,6 +891,10 @@
   begin: 71168
   end: 71263
   excl: false
+:mongolian_supplement: !ruby/range
+  begin: 71264
+  end: 71295
+  excl: false
 :takri: !ruby/range
   begin: 71296
   end: 71375
@@ -863,13 +903,53 @@
   begin: 71424
   end: 71487
   excl: false
+:dogra: !ruby/range
+  begin: 71680
+  end: 71759
+  excl: false
 :warang_citi: !ruby/range
   begin: 71840
   end: 71935
   excl: false
+:nandinagari: !ruby/range
+  begin: 72096
+  end: 72191
+  excl: false
+:zanabazar_square: !ruby/range
+  begin: 72192
+  end: 72271
+  excl: false
+:soyombo: !ruby/range
+  begin: 72272
+  end: 72367
+  excl: false
 :pau_cin_hau: !ruby/range
   begin: 72384
   end: 72447
+  excl: false
+:bhaiksuki: !ruby/range
+  begin: 72704
+  end: 72815
+  excl: false
+:marchen: !ruby/range
+  begin: 72816
+  end: 72895
+  excl: false
+:masaram_gondi: !ruby/range
+  begin: 72960
+  end: 73055
+  excl: false
+:gunjala_gondi: !ruby/range
+  begin: 73056
+  end: 73135
+  excl: false
+:makasar: !ruby/range
+  begin: 73440
+  end: 73471
+  excl: false
+:tamil_supplement: !ruby/range
+  begin: 73664
+  end: 73727
   excl: false
 :cuneiform: !ruby/range
   begin: 73728
@@ -886,6 +966,10 @@
 :egyptian_hieroglyphs: !ruby/range
   begin: 77824
   end: 78895
+  excl: false
+:egyptian_hieroglyph_format_controls: !ruby/range
+  begin: 78896
+  end: 78911
   excl: false
 :anatolian_hieroglyphs: !ruby/range
   begin: 82944
@@ -907,13 +991,41 @@
   begin: 92928
   end: 93071
   excl: false
+:medefaidrin: !ruby/range
+  begin: 93760
+  end: 93855
+  excl: false
 :miao: !ruby/range
   begin: 93952
   end: 94111
   excl: false
+:ideographic_symbols_and_punctuation: !ruby/range
+  begin: 94176
+  end: 94207
+  excl: false
+:tangut: !ruby/range
+  begin: 94208
+  end: 100351
+  excl: false
+:tangut_components: !ruby/range
+  begin: 100352
+  end: 101119
+  excl: false
 :kana_supplement: !ruby/range
   begin: 110592
   end: 110847
+  excl: false
+:kana_extended_a: !ruby/range
+  begin: 110848
+  end: 110895
+  excl: false
+:small_kana_extension: !ruby/range
+  begin: 110896
+  end: 110959
+  excl: false
+:nushu: !ruby/range
+  begin: 110960
+  end: 111359
   excl: false
 :duployan: !ruby/range
   begin: 113664
@@ -935,6 +1047,10 @@
   begin: 119296
   end: 119375
   excl: false
+:mayan_numerals: !ruby/range
+  begin: 119520
+  end: 119551
+  excl: false
 :tai_xuan_jing_symbols: !ruby/range
   begin: 119552
   end: 119647
@@ -951,9 +1067,33 @@
   begin: 120832
   end: 121519
   excl: false
+:glagolitic_supplement: !ruby/range
+  begin: 122880
+  end: 122927
+  excl: false
+:nyiakeng_puachue_hmong: !ruby/range
+  begin: 123136
+  end: 123215
+  excl: false
+:wancho: !ruby/range
+  begin: 123584
+  end: 123647
+  excl: false
 :mende_kikakui: !ruby/range
   begin: 124928
   end: 125151
+  excl: false
+:adlam: !ruby/range
+  begin: 125184
+  end: 125279
+  excl: false
+:indic_siyaq_numbers: !ruby/range
+  begin: 126064
+  end: 126143
+  excl: false
+:ottoman_siyaq_numbers: !ruby/range
+  begin: 126208
+  end: 126287
   excl: false
 :arabic_mathematical_alphabetic_symbols: !ruby/range
   begin: 126464
@@ -1011,6 +1151,14 @@
   begin: 129280
   end: 129535
   excl: false
+:chess_symbols: !ruby/range
+  begin: 129536
+  end: 129647
+  excl: false
+:symbols_and_pictographs_extended_a: !ruby/range
+  begin: 129648
+  end: 129791
+  excl: false
 :cjk_unified_ideographs_extension_b: !ruby/range
   begin: 131072
   end: 173791
@@ -1026,6 +1174,10 @@
 :cjk_unified_ideographs_extension_e: !ruby/range
   begin: 178208
   end: 183983
+  excl: false
+:cjk_unified_ideographs_extension_f: !ruby/range
+  begin: 183984
+  end: 191471
   excl: false
 :cjk_compatibility_ideographs_supplement: !ruby/range
   begin: 194560

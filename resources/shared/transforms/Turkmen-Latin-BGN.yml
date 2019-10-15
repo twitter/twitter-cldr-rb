@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Turkmen-Latin/BGN
+      - tk-t-tk-cyrl-m0-bgn
     :direction: forward
     :rules: 
       - ":: NFD (NFC) ;"
@@ -117,6 +120,6 @@
       - "Я} $lower > Ya ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YA ; # CYRILLIC CAPITAL LETTER YA"
       - "я > ya ; # CYRILLIC SMALL LETTER YA"
-    :source: Turkmen
-    :target: Latin
+    :source: tk_Cyrl
+    :target: tk
     :variant: BGN

@@ -1,10 +1,13 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Belarusian-Latin/BGN
+      - be-Latn-t-be-m0-bgn
     :direction: forward
     :rules: 
-      - ":: [АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯҐабвгдеёжзійклмнопрстуўфхцчшщъыьэюя’ґ] ;"
-      - ":: NFD (NFC) ;"
+      - "::[АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯҐабвгдеёжзійклмнопрстуўфхцчшщъыьэюя’ґ] ;"
+      - "::NFC;"
       - "$prime  = ʹ ;"
       - "$doublePrime = ʺ ;"
       - "$upperConsonants = [БВГДЖЗЙКЛМНПРСТЎФХЦЧШЬҐ] ;"
@@ -34,6 +37,9 @@
       - "Ж} $lower > Zh ; # CYRILLIC CAPITAL LETTER ZHE"
       - "Ж > ZH ; # CYRILLIC CAPITAL LETTER ZHE"
       - "ж > zh ; # CYRILLIC SMALL LETTER ZHE"
+      - "Ш} $lower > Sh;"
+      - "Ш > SH;"
+      - "ш > sh;"
       - "ЗГ > Z·H ; # CYRILLIC CAPITAL LETTER ZE"
       - "Зг > Z·h ; # CYRILLIC CAPITAL LETTER ZE"
       - "зг > z·h ; # CYRILLIC SMALL LETTER ZE"
@@ -103,6 +109,6 @@
       - "’ > $doublePrime ; # LEFT SINGLE QUOTATION MARK"
       - "Ґ > G ; # CYRILLIC CAPITAL LETTER GHE WITH UPTURN"
       - "ґ > g ; # CYRILLIC SMALL LETTER GHE WITH UPTURN"
-    :source: Belarusian
-    :target: Latin
+    :source: be
+    :target: be_Latn
     :variant: BGN

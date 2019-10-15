@@ -131,9 +131,9 @@ describe TwitterCldr::Shared::Unit do
 
       describe '#temperature_celsius' do
         it 'produces the correct results' do
-          expect(described_class.create(1, locale).temperature_celsius).to eq('1градус Цельсия')
+          expect(described_class.create(1, locale).temperature_celsius).to eq('1 градус Цельсия')
           expect(described_class.create(2, locale).temperature_celsius).to eq('2 градуса Цельсия')
-          expect(described_class.create(7, locale).temperature_celsius).to eq('7градусов Цельсия')
+          expect(described_class.create(7, locale).temperature_celsius).to eq('7 градусов Цельсия')
         end
       end
 
@@ -240,12 +240,6 @@ describe TwitterCldr::Shared::Unit do
       describe '#length_mile' do
         it 'produces the correct results' do
           expect(described_class.create(1, locale).length_mile(options)).to eq('1mi')
-        end
-      end
-
-      describe '#temperature_celsius' do
-        it 'produces the correct results' do
-          expect(described_class.create(1, locale).temperature_celsius(options)).to eq('1°C')
         end
       end
 

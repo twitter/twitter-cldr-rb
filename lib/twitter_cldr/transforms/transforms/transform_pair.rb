@@ -23,22 +23,37 @@ module TwitterCldr
           filter && !filter.empty?
         end
 
-        def to_rule_set
-          @rule_set ||= begin
-            rule_set = Transformer.get(transform)
+        def apply_to(cursor)
+          cursor.set_text(rule_set.transform(cursor.text))
+          cursor.reset_position
+        end
 
-            if has_filter?
-              rule_set.clone_with_replacement_filter(filter_rule)
-            else
-              rule_set
-            end
-          end
+        def null?
+          false
+        end
+
+        def blank?
+          false
         end
 
         private
 
+        def rule_set
+          @rule_set ||= if has_filter? && has_transform?
+            FilteredRuleSet.new(filter_rule, transform)
+          elsif has_transform?
+            Transformer.get(transform)
+          else
+            raise NotImplementedError,
+              'attempted to create a rule set with only a filter, which '\
+              'has undefined behavior'
+          end
+        end
+
         def filter_rule
-          @filter_rule ||= Filters::FilterRule.parse(filter, nil, nil)
+          @filter_rule ||= if has_filter?
+            Filters::FilterRule.parse(filter, nil, nil)
+          end
         end
       end
 

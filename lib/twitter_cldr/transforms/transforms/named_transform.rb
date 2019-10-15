@@ -18,15 +18,14 @@ module TwitterCldr
           private
 
           def exists?(form)
-            !form || Transformer.exists?(form.transform)
+            !form || form.null? || form.blank? || Transformer.exists?(form.transform)
           end
         end
 
         def apply_to(cursor)
           if forward_form
-            rule_set = forward_form.to_rule_set
-            cursor.set_text(rule_set.transform(cursor.text))
-            cursor.reset_position
+            puts forward_form.transform if $debug
+            forward_form.apply_to(cursor)
           end
         end
 
@@ -34,7 +33,7 @@ module TwitterCldr
 
         def after_initialize
           if forward_form
-            @backward_form = TransformPair.new(
+            @backward_form ||= TransformPair.new(
               nil, TransformId.parse(forward_form.transform).reverse.to_s
             )
           end

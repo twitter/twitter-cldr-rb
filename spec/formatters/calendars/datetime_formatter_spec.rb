@@ -223,8 +223,8 @@ describe TwitterCldr::Formatters::DateTimeFormatter do
 
   describe "#period" do
     it "test: a" do
-      expect(@formatter.send(:period, Time.local(2000, 1, 1, 1, 1, 1), 'a', 1)).to eq('vorm.')
-      expect(@formatter.send(:period, Time.local(2000, 1, 1, 15, 1, 1), 'a', 1)).to eq('nachm.')
+      expect(@formatter.send(:period, Time.local(2000, 1, 1, 1, 1, 1), 'a', 1)).to eq('AM')
+      expect(@formatter.send(:period, Time.local(2000, 1, 1, 15, 1, 1), 'a', 1)).to eq('PM')
     end
   end
 

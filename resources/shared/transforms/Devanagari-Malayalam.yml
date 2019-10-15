@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Devanagari-Malayalam
+      - und-Mlym-t-und-deva
     :direction: forward
     :rules: 
       - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
@@ -8,6 +11,6 @@
       - "::Devanagari-InterIndic;"
       - "::InterIndic-Malayalam;"
       - "::NFC;"
-    :source: Devanagari
-    :target: Malayalam
+    :source: Deva
+    :target: Mlym
     :variant: ~

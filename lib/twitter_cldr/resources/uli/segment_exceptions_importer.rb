@@ -12,16 +12,16 @@ module TwitterCldr
     module Uli
       class SegmentExceptionsImporter < Resources::Importer
 
-        URL = "https://unicode.org/uli/trac/export/58/trunk/abbrs/json/%{locale}.json"
-        LOCALES = [:de, :en, :es, :fr, :it, :pt, :ru]   # these are the only locales ULI supports at the moment
+        REPO_URL = 'https://github.com/unicode-org/uli.git'.freeze
+        GIT_SHA = '6acce954b913b121b6ab4bd4f8395e74dce2ae7c'.freeze
 
+        requirement :git, REPO_URL, GIT_SHA
         output_path 'uli/segments'
         ruby_engine :mri
 
         def execute
-          FileUtils.mkdir_p(input_path)
           FileUtils.mkdir_p(output_path)
-          LOCALES.each { |locale| import_locale(locale) }
+          each_file { |file| import_file(file) }
         end
 
         private
@@ -30,42 +30,27 @@ module TwitterCldr
           params.fetch(:output_path)
         end
 
-        def import_locale(locale)
-          if input_file = download_resource_for(locale)
-            output_file = File.join(output_path, "#{locale}.yml")
-            exceptions = JSON.parse(File.read(input_file))
+        def import_file(file)
+          locale = File.basename(file).chomp('.json')
+          output_file = File.join(output_path, "#{locale}.yml")
+          exceptions = JSON.parse(File.read(file))
 
-            File.open(output_file, 'w+') do |f|
-              YAML.dump({
-                locale => {
-                  exceptions: exceptions['data']['abbrs']
-                }
-              }, f)
-            end
+          File.open(output_file, 'w:utf-8') do |output|
+            output.write(
+              TwitterCldr::Utils::YAML.dump(
+                TwitterCldr::Utils.deep_symbolize_keys(locale => { exceptions: exceptions['data']['abbrs'] }),
+                use_natural_symbols: true
+              )
+            )
           end
         end
 
-        def download_resource_for(locale)
-          input_file = input_file_for(locale)
-          url = URL % { locale: locale }
-
-          unless File.file?(input_file)
-            STDOUT.write("Downloading #{url}... ")
-            open(input_file, 'wb') { |file| file << open(url).read }
-            puts 'done'
-          end
-
-          input_file
+        def each_file(&block)
+          Dir.glob(File.join(input_path, 'abbrs', 'json', '*.json')).each(&block)
         end
 
         def input_path
-          @input_path ||= File.join(
-            TwitterCldr::VENDOR_DIR, 'uli', 'segments'
-          )
-        end
-
-        def input_file_for(locale)
-          File.join(input_path, "#{locale}.json")
+          requirements[:git].source_path
         end
 
       end

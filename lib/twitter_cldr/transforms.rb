@@ -10,6 +10,7 @@ module TwitterCldr
     autoload :ConversionRuleSet, 'twitter_cldr/transforms/conversion_rule_set'
     autoload :Cursor,            'twitter_cldr/transforms/cursor'
     autoload :Filters,           'twitter_cldr/transforms/filters'
+    autoload :FilteredRuleSet,   'twitter_cldr/transforms/filtered_rule_set'
     autoload :Locale,            'twitter_cldr/transforms/transformer'
     autoload :Rule,              'twitter_cldr/transforms/rule'
     autoload :RuleMatch,         'twitter_cldr/transforms/rule_match'

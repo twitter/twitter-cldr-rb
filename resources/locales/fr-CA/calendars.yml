@@ -3,37 +3,43 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h 'h' B"
+        :Bhm: "h 'h' mm B"
+        :Bhms: "h 'h' mm 'min' ss 's' B"
         :E: E
-        :EHm: "E HH:mm"
-        :EHms: "E HH:mm:ss"
+        :EBhm: "E h 'h' mm B"
+        :EBhms: "E h 'h' mm 'min' ss 's' B"
+        :EHm: "E HH 'h' mm"
+        :EHms: "E HH 'h' mm 'min' ss 's'"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h 'h' mm a"
+        :Ehms: "E h 'h' mm 'min' ss 's' a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d MMM y G"
         :GyMMMd: "d MMM y G"
         :H: "HH 'h'"
-        :Hm: "HH:mm"
-        :Hms: "HH:mm:ss"
-        :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :Hm: "HH 'h' mm"
+        :Hms: "HH 'h' mm 'min' ss 's'"
+        :Hmsv: "HH 'h' mm 'min' ss 's' v"
+        :Hmv: "HH 'h' mm v"
         :M: L
         :MEd: "E M-d"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'semaine' W (MMMM)"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMd: MM-d
         :MMdd: MM-dd
         :Md: M-d
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
-        :ms: "mm:ss"
+        :h: "h 'h' a"
+        :hm: "h 'h' mm a"
+        :hms: "h 'h' mm 'min' ss 's' a"
+        :hmsv: "h 'h' mm 'min' ss 's' a v"
+        :hmv: "h 'h' mm a v"
+        :ms: "mm 'min' ss 's'"
         ? !ruby/symbol "y"
         : "y"
         :yM: y-MM
@@ -46,6 +52,7 @@
         :yMd: y-MM-dd
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'semaine' w 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -118,8 +125,8 @@
           0: AEC
           1: EC
         :name: 
-          0: "avant l’ère commune"
-          1: "de l’ère commune"
+          0: "avant l’ère chrétienne"
+          1: "de l’ère chrétienne"
         :narrow: 
           0: AEC
           1: EC
@@ -127,8 +134,15 @@
         :day: jour
         :day-narrow: j
         :day-short: j
+        :dayOfYear: "jour de l’année"
+        :dayOfYear-narrow: "j (an)"
+        :dayOfYear-short: "j de l’année"
         :dayperiod: cadran
+        :dayperiod-narrow: cadran
+        :dayperiod-short: cadran
         :era: ère
+        :era-narrow: ère
+        :era-short: ère
         :hour: heure
         :hour-narrow: h
         :hour-short: h
@@ -147,11 +161,21 @@
         :week: semaine
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "semaine du mois"
+        :weekOfMonth-narrow: "sem. (mois)"
+        :weekOfMonth-short: "sem. (mois)"
         :weekday: "jour de la semaine"
+        :weekday-narrow: "j (sem.)"
+        :weekday-short: "j de la semaine"
+        :weekdayOfMonth: "jour du mois"
+        :weekdayOfMonth-narrow: "j (mois)"
+        :weekdayOfMonth-short: "j du mois"
         :year: année
         :year-narrow: a
         :year-short: a
         :zone: "fuseau horaire"
+        :zone-narrow: "fuseau horaire"
+        :zone-short: "fuseau horaire"
       :formats: 
         :date: 
           :full: 
@@ -173,13 +197,13 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "HH 'h' mm 'min' ss 's' zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "HH 'h' mm 'min' ss 's' z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "HH 'h' mm 'min' ss 's'"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "HH 'h' mm"
       :months: 
         :format: 
           :abbreviated: 
@@ -192,7 +216,7 @@
             4: avr.
             5: mai
             6: juin
-            7: juil.
+            7: juill.
             8: août
             9: sept.
           :narrow: 
@@ -232,7 +256,7 @@
             4: avr.
             5: mai
             6: juin
-            7: juil.
+            7: juill.
             8: août
             9: sept.
           :narrow: 
@@ -265,59 +289,59 @@
         :format: 
           :abbreviated: 
             :afternoon1: après-midi
-            :am: AM
-            :evening1: soir
-            :midnight: min.
-            :morning1: mat.
-            :night1: "du matin"
+            :am: a.m.
+            :evening1: "du soir"
+            :midnight: minuit
+            :morning1: "du mat."
+            :night1: "du mat."
             :noon: midi
-            :pm: PM
+            :pm: p.m.
           :narrow: 
             :afternoon1: après-midi
             :am: a
             :evening1: soir
             :midnight: minuit
             :morning1: mat.
-            :night1: nuit
+            :night1: mat.
             :noon: midi
             :pm: p
           :wide: 
             :afternoon1: "de l’après-midi"
-            :am: AM
+            :am: a.m.
             :evening1: "du soir"
             :midnight: minuit
             :morning1: "du matin"
             :night1: "du matin"
             :noon: midi
-            :pm: PM
+            :pm: p.m.
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: ap.m.
-            :am: AM
+            :afternoon1: après-midi
+            :am: a.m.
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
             :night1: nuit
             :noon: midi
-            :pm: PM
+            :pm: p.m.
           :narrow: 
-            :afternoon1: ap.m.
-            :am: AM
+            :afternoon1: après-midi
+            :am: a.m.
             :evening1: soir
-            :midnight: min.
+            :midnight: minuit
             :morning1: mat.
-            :night1: nuit
+            :night1: mat.
             :noon: midi
-            :pm: PM
+            :pm: p.m.
           :wide: 
             :afternoon1: après-midi
-            :am: AM
+            :am: a.m.
             :evening1: soir
             :midnight: minuit
             :morning1: matin
             :night1: nuit
             :noon: midi
-            :pm: PM
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 

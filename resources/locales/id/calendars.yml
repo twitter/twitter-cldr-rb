@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h.mm B"
+        :Bhms: "h.mm.ss B"
         :E: ccc
+        :EBhm: "E h.mm B"
+        :EBhms: "E h.mm.ss B"
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E, d"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "'minggu' 'ke'-W MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -44,6 +50,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'minggu' 'ke'-w Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -122,34 +129,51 @@
           0: SM
           1: M
       :fields: 
-        :day: Hari
+        :day: hari
         :day-narrow: h
         :day-short: h
+        :dayOfYear: "Hari dalam Setahun"
+        :dayOfYear-narrow: "Hari dalam Setahun"
+        :dayOfYear-short: "Hari dalam Setahun"
         :dayperiod: AM/PM
-        :era: Era
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
+        :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: Jam
         :hour-narrow: j
         :hour-short: jam
-        :minute: Menit
+        :minute: menit
         :minute-narrow: m
         :minute-short: mnt.
-        :month: Bulan
+        :month: bulan
         :month-narrow: bln.
         :month-short: bln.
-        :quarter: Triwulan
-        :quarter-narrow: triwln.
-        :quarter-short: triwln.
-        :second: Detik
+        :quarter: kuartal
+        :quarter-narrow: krtl.
+        :quarter-short: krtl.
+        :second: detik
         :second-narrow: d
         :second-short: dtk.
-        :week: Minggu
+        :week: minggu
         :week-narrow: mgg.
         :week-short: mgg.
-        :weekday: "Hari dalam Seminggu"
-        :year: Tahun
+        :weekOfMonth: minggu
+        :weekOfMonth-narrow: mgg.
+        :weekOfMonth-short: mgg.
+        :weekday: "hari dalam seminggu"
+        :weekday-narrow: "hari dlm seminggu"
+        :weekday-short: "hari dlm seminggu"
+        :weekdayOfMonth: "hari kerja"
+        :weekdayOfMonth-narrow: "hr kerja"
+        :weekdayOfMonth-short: "hr kerja"
+        :year: tahun
         :year-narrow: thn.
         :year-short: thn.
-        :zone: "Zona Waktu"
+        :zone: "zona waktu"
+        :zone-narrow: "zona wkt"
+        :zone-short: "zona wkt"
       :formats: 
         :date: 
           :full: 
@@ -191,7 +215,7 @@
             5: Mei
             6: Jun
             7: Jul
-            8: Agt
+            8: Agu
             9: Sep
           :narrow: 
             1: J
@@ -231,7 +255,7 @@
             5: Mei
             6: Jun
             7: Jul
-            8: Agt
+            8: Agu
             9: Sep
           :narrow: 
             1: J

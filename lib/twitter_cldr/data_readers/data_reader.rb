@@ -19,8 +19,8 @@ module TwitterCldr
 
       private
 
-      def traverse(path, hash = resource)
-        TwitterCldr::Utils.traverse_hash(hash, path)
+      def traverse(path, hash = resource, &block)
+        TwitterCldr::Utils.traverse_hash(hash, path, &block)
       end
 
       def resource

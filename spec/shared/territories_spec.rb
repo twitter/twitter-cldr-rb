@@ -15,14 +15,9 @@ describe TwitterCldr::Shared::Territories do
     end
 
     it "should use alternate/short names" do
-      expect(described_class.translate_territory("Congo (DRC)", :en, :es)).to match_normalized("Congo (República Democrática del Congo)")
-      expect(described_class.translate_territory("Congo (Republic)", :en, :es)).to match_normalized("Congo (República)")
-      expect(described_class.translate_territory("East Timor", :en, :es)).to match_normalized("Timor Oriental")
-      expect(described_class.translate_territory("Falkland Islands (Islas Malvinas)", :en, :es)).to match_normalized("Islas Malvinas (Islas Falkland)")
-      expect(described_class.translate_territory("Hong Kong", :en, :es)).to match_normalized("Hong Kong")
-      expect(described_class.translate_territory("Ivory Coast", :en, :es)).to match_normalized("Costa de Marfil")
-      expect(described_class.translate_territory("Macau", :en, :es)).to match_normalized("Macao")
-      expect(described_class.translate_territory("Macedonia (FYROM)", :en, :es)).to match_normalized("Macedonia (ERYM)")
+      expect(described_class.translate_territory("Switzerland", :en, :es)).to match_normalized("Suiza")
+      expect(described_class.translate_territory("Hong Kong SAR China", :en, :es)).to match_normalized("RAE de Hong Kong (China)")
+      expect(described_class.translate_territory("North Macedonia", :en, :es)).to match_normalized("Macedonia del Norte")
     end
 
     it "should be capitalization agnostic" do
@@ -54,12 +49,12 @@ describe TwitterCldr::Shared::Territories do
   describe "#from_territory_code_for_locale" do
     it "should return the territory in the correct locale for the given locale code (i.e. RU in English should be Russia)" do
       expect(described_class.from_territory_code_for_locale(:ES, :en)).to match_normalized("Spain")
-      expect(described_class.from_territory_code_for_locale(:GB, :es)).to match_normalized("RU") # reino unido
+      expect(described_class.from_territory_code_for_locale(:GB, :es)).to match_normalized("Reino Unido")
     end
 
     it "should work with lower-case country codes as well" do
       expect(described_class.from_territory_code_for_locale(:es, :en)).to match_normalized("Spain")
-      expect(described_class.from_territory_code_for_locale(:gb, :es)).to match_normalized("RU") # reino unido
+      expect(described_class.from_territory_code_for_locale(:gb, :es)).to match_normalized("Reino Unido")
     end
 
     it "should work with Traditional Chinese" do

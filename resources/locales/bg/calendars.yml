@@ -3,12 +3,17 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h 'ч'. B"
+        :Bhm: "h:mm 'ч'. B"
+        :Bhms: "h:mm:ss 'ч'. B"
         :E: ccc
-        :EHm: "E, HH:mm"
-        :EHms: "E, H:mm:ss"
+        :EBhm: "E, h:mm 'ч'. B"
+        :EBhms: "E, h:mm:ss 'ч'. B"
+        :EHm: "E, HH:mm 'ч'."
+        :EHms: "E, H:mm:ss 'ч'."
         :Ed: "E, d"
-        :Ehm: "E, h:mm a"
-        :Ehms: "E, h:mm:ss a"
+        :Ehm: "E, h:mm 'ч'. a"
+        :Ehms: "E, h:mm:ss 'ч'. a"
         :Gy: "y 'г'. G"
         :GyMMM: "MM.y 'г'. G"
         :GyMMMEd: "E, d.MM.y 'г'. G"
@@ -16,31 +21,32 @@
         :GyMMMMEd: "E, d MMMM y 'г'. G"
         :GyMMMMd: "d MMMM y 'г'. G"
         :GyMMMd: "d.MM.y 'г'. G"
-        :H: H
-        :Hm: "H:mm"
-        :Hms: "H:mm:ss"
-        :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :H: "H 'ч'."
+        :Hm: "H:mm 'ч'."
+        :Hms: "H:mm:ss 'ч'."
+        :Hmsv: "HH:mm:ss 'ч'. v"
+        :Hmv: "HH:mm 'ч'. v"
         :M: L
         :MEd: "E, d.MM"
         :MMM: MM
         :MMMEd: "E, d.MM"
         :MMMM: LLLL
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "'седмица' W 'от' MMMM"
         :MMMMd: "d MMMM"
         :MMMMdd: "d MMMM"
         :MMMd: d.MM
         :Md: d.MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: "h 'ч'. a"
+        :hm: "h:mm 'ч'. a"
+        :hms: "h:mm:ss 'ч'. a"
+        :hmsv: "h:mm:ss 'ч'. a v"
+        :hmv: "h:mm 'ч'. a v"
         :ms: "m:ss"
         ? !ruby/symbol "y"
         : "y 'г'."
-        :yM: "M.y 'г'."
+        :yM: "MM.y 'г'."
         :yMEd: "E, d.MM.y 'г'."
         :yMMM: "MM.y 'г'."
         :yMMMEd: "E, d.MM.y 'г'."
@@ -51,6 +57,7 @@
         :yMd: "d.MM.y 'г'."
         :yQQQ: "QQQ y 'г'."
         :yQQQQ: "QQQQ y 'г'."
+        :yw: "'седмица' w 'от' Y 'г'."
       :days: 
         :format: 
           :abbreviated: 
@@ -131,8 +138,15 @@
         :day: ден
         :day-narrow: д
         :day-short: д
+        :dayOfYear: "ден от годината"
+        :dayOfYear-narrow: "ден от г."
+        :dayOfYear-short: "ден от г."
         :dayperiod: пр.об./сл.об.
+        :dayperiod-narrow: пр.об./сл.об.
+        :dayperiod-short: пр.об./сл.об.
         :era: ера
+        :era-narrow: ера
+        :era-short: ера
         :hour: час
         :hour-narrow: ч
         :hour-short: ч
@@ -140,22 +154,32 @@
         :minute-narrow: мин
         :minute-short: мин
         :month: месец
-        :month-narrow: м
-        :month-short: м
+        :month-narrow: мес.
+        :month-short: мес.
         :quarter: тримесечие
         :quarter-narrow: трим.
         :quarter-short: трим.
         :second: секунда
         :second-narrow: с
-        :second-short: с
+        :second-short: сек
         :week: седмица
         :week-narrow: седм.
         :week-short: седм.
+        :weekOfMonth: "седмица от месеца"
+        :weekOfMonth-narrow: "седмица от месеца"
+        :weekOfMonth-short: "седмица от месеца"
         :weekday: "ден от седмицата"
+        :weekday-narrow: "ден от седм."
+        :weekday-short: "ден от седм."
+        :weekdayOfMonth: "работен ден от месеца"
+        :weekdayOfMonth-narrow: "раб. ден от мес."
+        :weekdayOfMonth-short: "раб. ден от мес."
         :year: година
         :year-narrow: г.
         :year-short: г.
         :zone: "часова зона"
+        :zone-narrow: "час. зона"
+        :zone-short: "час. зона"
       :formats: 
         :date: 
           :full: 
@@ -177,13 +201,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "H:mm:ss zzzz"
+            :pattern: "H:mm:ss 'ч'. zzzz"
           :long: 
-            :pattern: "H:mm:ss z"
+            :pattern: "H:mm:ss 'ч'. z"
           :medium: 
-            :pattern: "H:mm:ss"
+            :pattern: "H:mm:ss 'ч'."
           :short: 
-            :pattern: "H:mm"
+            :pattern: "H:mm 'ч'."
       :months: 
         :format: 
           :abbreviated: 
@@ -269,16 +293,22 @@
         :format: 
           :abbreviated: 
             :afternoon1: следобед
-            :am: пр.об.
+            :am: am
             :evening1: вечерта
             :midnight: полунощ
             :morning1: сутринта
-            :morning2: "на обед"
+            :morning2: "на обяд"
             :night1: "през нощта"
-            :pm: сл.об.
+            :pm: pm
           :narrow: 
-            :am: пр.об.
-            :pm: сл.об.
+            :afternoon1: следобед
+            :am: am
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обяд"
+            :night1: "през нощта"
+            :pm: pm
           :wide: 
             :afternoon1: следобед
             :am: пр.об.
@@ -291,31 +321,31 @@
         :stand-alone: 
           :abbreviated: 
             :afternoon1: следобед
-            :am: пр.об.
-            :evening1: вечер
-            :midnight: полунощ
-            :morning1: сутрин
-            :morning2: "на обед"
-            :night1: нощ
-            :pm: сл.об.
-          :narrow: 
-            :afternoon1: следобед
-            :am: пр.об.
-            :evening1: вечер
-            :midnight: полунощ
-            :morning1: сутрин
-            :morning2: "на обед"
-            :night1: нощ
-            :pm: сл.об.
-          :wide: 
-            :afternoon1: следобед
-            :am: пр.об.
+            :am: am
             :evening1: вечерта
             :midnight: полунощ
             :morning1: сутринта
-            :morning2: "на обед"
-            :night1: нощ
-            :pm: сл.об.
+            :morning2: "на обяд"
+            :night1: "през нощта"
+            :pm: pm
+          :narrow: 
+            :afternoon1: следобед
+            :am: am
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обяд"
+            :night1: "през нощта"
+            :pm: pm
+          :wide: 
+            :afternoon1: следобед
+            :am: am
+            :evening1: вечерта
+            :midnight: полунощ
+            :morning1: сутринта
+            :morning2: "на обяд"
+            :night1: "през нощта"
+            :pm: pm
       :quarters: 
         :format: 
           :abbreviated: 

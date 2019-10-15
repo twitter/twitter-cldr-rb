@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: BK時
+        :Bhm: "BK:mm"
+        :Bhms: "BK:mm:ss"
         :E: ccc
+        :EBhm: "BK:mm (E)"
+        :EBhms: "BK:mm:ss (E)"
         :EEEEd: d日EEEE
         :EHm: "H:mm (E)"
         :EHms: "H:mm:ss (E)"
@@ -26,6 +31,7 @@
         :MMM: M月
         :MMMEEEEd: M月d日EEEE
         :MMMEd: M月d日(E)
+        :MMMMW: M月第W週
         :MMMMd: M月d日
         :MMMd: M月d日
         :Md: M/d
@@ -49,7 +55,8 @@
         :yMMMd: y年M月d日
         :yMd: y/M/d
         :yQQQ: y/QQQ
-        :yQQQQ: yQQQQ
+        :yQQQQ: y年QQQQ
+        :yw: Y年第w週
       :days: 
         :format: 
           :abbreviated: 
@@ -125,14 +132,21 @@
           0: 西暦紀元前
           1: 西暦紀元
         :narrow: 
-          0: BCE
-          1: CE
+          0: BC
+          1: AD
       :fields: 
         :day: 日
         :day-narrow: 日
         :day-short: 日
+        :dayOfYear: 年の通日
+        :dayOfYear-narrow: 通日
+        :dayOfYear-short: 年の通日
         :dayperiod: 午前/午後
+        :dayperiod-narrow: 午前/午後
+        :dayperiod-short: 午前/午後
         :era: 時代
+        :era-narrow: 時代
+        :era-short: 時代
         :hour: 時
         :hour-narrow: 時
         :hour-short: 時
@@ -151,11 +165,21 @@
         :week: 週
         :week-narrow: 週
         :week-short: 週
+        :weekOfMonth: 月の週番号
+        :weekOfMonth-narrow: 月の週番号
+        :weekOfMonth-short: 月の週番号
         :weekday: 曜日
+        :weekday-narrow: 曜日
+        :weekday-short: 曜日
+        :weekdayOfMonth: 月の曜日番号
+        :weekdayOfMonth-narrow: 月の曜日番号
+        :weekdayOfMonth-short: 月の曜日番号
         :year: 年
         :year-narrow: 年
         :year-short: 年
         :zone: タイムゾーン
+        :zone-narrow: タイムゾーン
+        :zone-short: タイムゾーン
       :formats: 
         :date: 
           :full: 
@@ -199,19 +223,7 @@
             7: 7月
             8: 8月
             9: 9月
-          :narrow: 
-            1: "1"
-            10: "10"
-            11: "11"
-            12: "12"
-            2: "2"
-            3: "3"
-            4: "4"
-            5: "5"
-            6: "6"
-            7: "7"
-            8: "8"
-            9: "9"
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide: 
             1: 1月
             10: 10月

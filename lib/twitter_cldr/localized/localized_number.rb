@@ -28,10 +28,11 @@ module TwitterCldr
       end
 
       def to_s(options = {})
-        TwitterCldr::DataReaders::NumberDataReader.new(locale, {
-          type: @type,
-          format: @format
-        }).format_number(base_obj, options.merge(type: @type))
+        opts = { type: @type, format: @format }.merge(options)
+
+        TwitterCldr::DataReaders::NumberDataReader
+          .new(locale, opts)
+          .format_number(base_obj, opts)
       end
 
       def plural_rule

@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Latin-Armenian
+      - und-Armn-t-und-latn
     :direction: both
     :rules: 
       - "::NFD(NFC);"
@@ -85,6 +88,6 @@
       - "Ō <> Օ ;"
       - "F <> Ֆ ;"
       - "::NFC(NFD);"
-    :source: Latin
-    :target: Armenian
+    :source: Latn
+    :target: Armn
     :variant: ~

@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Ukrainian-Latin/BGN
+      - uk-Latn-t-uk-m0-bgn
     :direction: forward
     :rules: 
       - ":: [АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЮЯЬабвгґдеєжзиіїйклмнопрстуфхцчшщюяь’] ;"
@@ -110,6 +113,6 @@
       - "Ь > $prime ; # CYRILLIC CAPITAL LETTER SOFT SIGN"
       - "ь > $prime ; # CYRILLIC SMALL LETTER SOFT SIGN"
       - "’ > $doublePrime ; # LEFT SINGLE QUOTATION MARK"
-    :source: Ukrainian
-    :target: Latin
+    :source: uk
+    :target: uk_Latn
     :variant: BGN

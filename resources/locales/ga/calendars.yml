@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -22,6 +27,7 @@
         :MEd: "E dd/MM"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'seachtain' 'a' W 'i' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: dd/MM
@@ -43,6 +49,7 @@
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'seachtain' 'a' w 'i' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,8 +131,15 @@
         :day: Lá
         :day-narrow: Lá
         :day-short: Lá
+        :dayOfYear: "Lá den bhliain"
+        :dayOfYear-narrow: "lá den bhl."
+        :dayOfYear-short: "lá den bhl."
         :dayperiod: a.m./p.m.
+        :dayperiod-narrow: a.m./p.m.
+        :dayperiod-short: a.m./p.m.
         :era: Ré
+        :era-narrow: ré
+        :era-short: ré
         :hour: Uair
         :hour-narrow: u
         :hour-short: uair
@@ -144,11 +158,21 @@
         :week: Seachtain
         :week-narrow: scht.
         :week-short: scht.
+        :weekOfMonth: "Seachtain den mhí"
+        :weekOfMonth-narrow: "7n den mhí"
+        :weekOfMonth-short: "7n den mhí"
         :weekday: "Lá na seachtaine"
+        :weekday-narrow: "lá den t7n"
+        :weekday-short: "lá den t7n"
+        :weekdayOfMonth: "Lá oibre den mhí"
+        :weekdayOfMonth-narrow: "lá oib. den mhí"
+        :weekdayOfMonth-short: "lá oib. den mhí"
         :year: Bliain
         :year-narrow: bl.
         :year-short: bl.
         :zone: "Crios Ama"
+        :zone-narrow: crios
+        :zone-short: crios
       :formats: 
         :date: 
           :full: 
@@ -261,14 +285,14 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: a.m.
-            :pm: p.m.
+            :am: r.n.
+            :pm: i.n.
           :narrow: 
             :am: a
             :pm: p
           :wide: 
-            :am: a.m.
-            :pm: p.m.
+            :am: r.n.
+            :pm: i.n.
         :stand-alone: 
           :abbreviated: 
             :am: a.m.

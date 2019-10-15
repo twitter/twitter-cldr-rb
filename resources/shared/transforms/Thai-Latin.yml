@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Thai-Latin
+      - und-Latn-t-und-thai
     :direction: forward
     :rules: 
       - "::[[:thai:] ก-ฺเ-๛];"
@@ -11,5 +14,5 @@
       - "::ThaiLogical-Latin;"
       - "::NFC;"
     :source: Thai
-    :target: Latin
+    :target: Latn
     :variant: ~

@@ -102,7 +102,7 @@ module TwitterCldr
       end
 
       def mkdir(path)
-        FileUtils.mkdir(path) unless File.exist?(path)
+        FileUtils.mkdir_p(path) unless File.exist?(path)
       end
 
       class Node

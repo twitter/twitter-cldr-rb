@@ -40,14 +40,8 @@ module TwitterCldr
 
         def each_transform
           if block_given?
-            path = TwitterCldr.resources.absolute_resource_path(
-              File.join('shared', 'transforms')
-            )
-
-            Dir.glob(File.join(path, '*.*')).each do |file|
-              file = File.basename(file.chomp(File.extname(file)))
-              source, target, variant = TransformId.split(file)
-              yield TransformId.join(source, target, variant)
+            TransformId.transform_id_map.each do |aliass, _|
+              yield aliass
             end
           else
             to_enum(__method__)
@@ -166,12 +160,7 @@ module TwitterCldr
       end
 
       def forward_rule_set
-        @forward_rule_set ||= begin
-          RuleSet.new(
-            filter_rule, inverse_filter_rule,
-            ct_rules, transform_id
-          )
-        end
+        @forward_rule_set ||= RuleSet.new(rules, transform_id)
       end
 
       def backward_rule_set
@@ -181,38 +170,6 @@ module TwitterCldr
           raise NotInvertibleError,
             "cannot invert this #{self.class.name}"
         end
-      end
-
-      private
-
-      def ct_rules
-        @ct_rules ||= rules.select do |rule|
-          rule.is_transform_rule? || rule.is_conversion_rule?
-        end
-      end
-
-      def filter_rule
-        @filter_rule ||= if is_forward_filter?(rules.first)
-          rules.first
-        else
-          Filters::NullFilter.new
-        end
-      end
-
-      def inverse_filter_rule
-        @inverse_filter_rule ||= if is_backward_filter?(rules.last)
-          rules.last
-        else
-          Filters::NullFilter.new
-        end
-      end
-
-      def is_forward_filter?(rule)
-        rule.is_filter_rule? && !rule.backward?
-      end
-
-      def is_backward_filter?(rule)
-        rule.is_filter_rule? && rule.backward?
       end
     end
 

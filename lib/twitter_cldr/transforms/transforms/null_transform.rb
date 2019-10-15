@@ -16,12 +16,17 @@ module TwitterCldr
           private
 
           def valid_form?(form)
-            form && form.transform == 'Null'
+            form && (form.null? || form.transform.downcase == 'null')
           end
         end
 
         def apply_to(cursor)
+          puts 'NULL' if $debug
           cursor.reset_position
+        end
+
+        def null?
+          true
         end
       end
 

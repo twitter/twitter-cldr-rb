@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Bulgarian-Latin/BGN
+      - bg-Latn-t-bg-m0-bgn
     :direction: forward
     :rules: 
       - ":: [АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯѪѢабвгдежзийклмнопрстуфхцчшщъьюяѫѣ] ;"
@@ -94,6 +97,6 @@
       - "Ѣ} $lower > Ye ; # CYRILLIC CAPITAL LETTER YAT"
       - "Ѣ > YE ; # CYRILLIC CAPITAL LETTER YAT"
       - "ѣ > ye ; # CYRILLIC SMALL LETTER YAT"
-    :source: Bulgarian
-    :target: Latin
+    :source: bg
+    :target: bg_Latn
     :variant: BGN

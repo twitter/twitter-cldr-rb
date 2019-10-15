@@ -11,6 +11,7 @@ require 'fileutils'
 require 'forwardable'
 
 require 'twitter_cldr/version'
+require 'twitter_cldr/supported_locales'
 
 Enumerator = Enumerable::Enumerator unless defined?(Enumerator)
 
@@ -119,7 +120,7 @@ module TwitterCldr
     end
 
     def supported_locales
-      @supported_locales ||= Dir.glob(File.join(RESOURCES_DIR, 'locales', '*')).map { |f| File.basename(f).to_sym }
+      TwitterCldr::SUPPORTED_LOCALES
     end
 
     def supported_locale?(locale)

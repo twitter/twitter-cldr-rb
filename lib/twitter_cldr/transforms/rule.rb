@@ -93,6 +93,10 @@ module TwitterCldr
         false
       end
 
+      def is_conversion_rule_set?
+        false
+      end
+
       def is_variable?
         false
       end

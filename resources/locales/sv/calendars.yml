@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E d MMM"
         :MMMMEd: "E d MMMM"
+        :MMMMW: "'vecka' W 'i' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMd: d/M
@@ -47,6 +53,7 @@
         :yMd: y-MM-dd
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'vecka' w, Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -122,14 +129,21 @@
           0: "före västerländsk tideräkning"
           1: "västerländsk tideräkning"
         :narrow: 
-          0: fvt
-          1: vt
+          0: f.v.t.
+          1: v.t.
       :fields: 
         :day: dag
         :day-narrow: dag
         :day-short: dag
+        :dayOfYear: "dag under året"
+        :dayOfYear-narrow: "dag under året"
+        :dayOfYear-short: "dag under året"
         :dayperiod: fm/em
+        :dayperiod-narrow: fm/em
+        :dayperiod-short: fm/em
         :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: timme
         :hour-narrow: h
         :hour-short: tim
@@ -137,7 +151,7 @@
         :minute-narrow: m
         :minute-short: min
         :month: månad
-        :month-narrow: m
+        :month-narrow: mån
         :month-short: m
         :quarter: kvartal
         :quarter-narrow: kv.
@@ -148,11 +162,21 @@
         :week: vecka
         :week-narrow: v
         :week-short: v
+        :weekOfMonth: "vecka i månaden"
+        :weekOfMonth-narrow: "vk.i mån."
+        :weekOfMonth-short: "vk. i mån."
         :weekday: veckodag
+        :weekday-narrow: veckodag
+        :weekday-short: veckodag
+        :weekdayOfMonth: "veckodag i månad"
+        :weekdayOfMonth-narrow: "veckodag i mån."
+        :weekdayOfMonth-short: "veckodag i mån."
         :year: år
         :year-narrow: år
         :year-short: år
         :zone: tidszon
+        :zone-narrow: tidszon
+        :zone-short: tidszon
       :formats: 
         :date: 
           :full: 

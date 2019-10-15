@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -24,6 +29,7 @@
         :MEd: "E d/M"
         :MMM: LLL
         :MMMEd: "E d MMM"
+        :MMMMW: "'settimana' W 'di' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd.MM
@@ -49,6 +55,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'settimana' w 'del' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -109,13 +116,13 @@
             :tue: mar
             :wed: mer
           :wide: 
-            :fri: Venerdì
-            :mon: Lunedì
-            :sat: Sabato
-            :sun: Domenica
-            :thu: Giovedì
-            :tue: Martedì
-            :wed: Mercoledì
+            :fri: venerdì
+            :mon: lunedì
+            :sat: sabato
+            :sun: domenica
+            :thu: giovedì
+            :tue: martedì
+            :wed: mercoledì
       :eras: 
         :abbr: 
           0: a.E.V.
@@ -124,37 +131,54 @@
           0: "avanti Era Volgare"
           1: "Era Volgare"
         :narrow: 
-          0: BCE
-          1: CE
+          0: aC
+          1: dC
       :fields: 
         :day: giorno
         :day-narrow: g
         :day-short: g
+        :dayOfYear: "giorno dell’anno"
+        :dayOfYear-narrow: "giorno anno"
+        :dayOfYear-short: "giorno anno"
         :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: ora
         :hour-narrow: h
         :hour-short: h.
         :minute: minuto
-        :minute-narrow: m
-        :minute-short: min.
+        :minute-narrow: min
+        :minute-short: min
         :month: mese
         :month-narrow: mese
         :month-short: mese
         :quarter: trimestre
         :quarter-narrow: trim.
         :quarter-short: trim.
-        :second: Secondo
+        :second: secondo
         :second-narrow: s
-        :second-short: sec.
+        :second-short: s
         :week: settimana
         :week-narrow: sett.
         :week-short: sett.
+        :weekOfMonth: "settimana del mese"
+        :weekOfMonth-narrow: "sett. mese"
+        :weekOfMonth-short: "sett. mese"
         :weekday: "giorno della settimana"
+        :weekday-narrow: "giorno sett."
+        :weekday-short: "giorno settimana"
+        :weekdayOfMonth: "giorno del mese"
+        :weekdayOfMonth-narrow: "giorno mese"
+        :weekdayOfMonth-short: "giorno mese"
         :year: anno
         :year-narrow: anno
         :year-short: anno
         :zone: "fuso orario"
+        :zone-narrow: fuso
+        :zone-short: fuso
       :formats: 
         :date: 
           :full: 
@@ -267,30 +291,30 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
           :narrow: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: m.
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: p.
           :wide: 
-            :afternoon1: pomeriggio
+            :afternoon1: "del pomeriggio"
             :am: AM
-            :evening1: sera
+            :evening1: "di sera"
             :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
+            :morning1: "di mattina"
+            :night1: "di notte"
             :noon: mezzogiorno
             :pm: PM
         :stand-alone: 

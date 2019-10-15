@@ -7,7 +7,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -44,6 +44,12 @@
               - 
                 :rule: =%%teen=;
                 :value: 2
+              - 
+                :rule: tư;
+                :value: 4
+              - 
+                :rule: =%%teen=;
+                :value: 5
             :type: x-ty
           - 
             :access: private
@@ -116,10 +122,10 @@
                 :rule: "<< nghìn[ >%%after-thousand-or-more>];"
                 :value: 1000
               - 
-                :rule: "<< triệu[ >%%after-thousand-or-more>];"
+                :rule: "<< triệu[ >%%after-hundred>];"
                 :value: 1000000
               - 
-                :rule: "<< tỷ[ >%%after-thousand-or-more>];"
+                :rule: "<< tỷ[ >%%after-hundred>];"
                 :value: 1000000000
               - 
                 :rule: "=#,##0=;"

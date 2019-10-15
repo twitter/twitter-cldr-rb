@@ -22,6 +22,12 @@
           :other: "pred {0} dňami"
     :day-narrow: 
       :display_name: d.
+      :relative: 
+        -1: včera
+        -2: predvčerom
+        0: dnes
+        1: zajtra
+        2: pozajtra
       :relative_time: 
         :future: 
           :few: "o {0} d."
@@ -35,6 +41,12 @@
           :other: "pred {0} d."
     :day-short: 
       :display_name: d.
+      :relative: 
+        -1: včera
+        -2: predvčerom
+        0: dnes
+        1: zajtra
+        2: pozajtra
       :relative_time: 
         :future: 
           :few: "o {0} d."
@@ -46,27 +58,76 @@
           :many: "pred {0} d."
           :one: "pred {0} d."
           :other: "pred {0} d."
+    :dayOfYear: 
+      :display_name: "deň roka"
+    :dayOfYear-narrow: 
+      :display_name: "deň r."
+    :dayOfYear-short: 
+      :display_name: "deň r."
     :dayperiod: 
-      :display_name: "časť dňa"
+      :display_name: AM/PM
+    :dayperiod-narrow: 
+      :display_name: AM/PM
+    :dayperiod-short: 
+      :display_name: AM/PM
     :era: 
       :display_name: letopočet
+    :era-narrow: 
+      :display_name: letop.
+    :era-short: 
+      :display_name: letop.
     :fri: 
       :relative: 
         -1: "minulý piatok"
         0: "tento piatok"
         1: "budúci piatok"
+      :relative_time: 
+        :future: 
+          :few: "o {0} piatky"
+          :many: "o {0} piatka"
+          :one: "o {0} piatok"
+          :other: "o {0} piatkov"
+        :past: 
+          :few: "pred {0} piatkami"
+          :many: "pred {0} piatka"
+          :one: "pred {0} piatkom"
+          :other: "pred {0} piatkami"
     :fri-narrow: 
       :relative: 
         -1: "minulý pi."
         0: "tento pi."
         1: "budúci pi."
+      :relative_time: 
+        :future: 
+          :few: "o {0} pi."
+          :many: "o {0} pi."
+          :one: "o {0} pi."
+          :other: "o {0} pi."
+        :past: 
+          :few: "pred {0} pi."
+          :many: "pred {0} pi."
+          :one: "pred {0} pi."
+          :other: "pred {0} pi."
     :fri-short: 
       :relative: 
         -1: "minulý pi."
         0: "tento pi."
         1: "budúci pi."
+      :relative_time: 
+        :future: 
+          :few: "o {0} pi."
+          :many: "o {0} pi."
+          :one: "o {0} pi."
+          :other: "o {0} pi."
+        :past: 
+          :few: "pred {0} pi."
+          :many: "pred {0} pi."
+          :one: "pred {0} pi."
+          :other: "pred {0} pi."
     :hour: 
       :display_name: hodina
+      :relative: 
+        0: "v tejto hodine"
       :relative_time: 
         :future: 
           :few: "o {0} hodiny"
@@ -106,6 +167,8 @@
           :other: "pred {0} h"
     :minute: 
       :display_name: minúta
+      :relative: 
+        0: "v tejto minúte"
       :relative_time: 
         :future: 
           :few: "o {0} minúty"
@@ -148,16 +211,49 @@
         -1: "minulý pondelok"
         0: "tento pondelok"
         1: "budúci pondelok"
+      :relative_time: 
+        :future: 
+          :few: "o {0} pondelky"
+          :many: "o {0} pondelka"
+          :one: "o {0} pondelok"
+          :other: "o {0} pondelkov"
+        :past: 
+          :few: "pred {0} pondelkami"
+          :many: "pred {0} pondelka"
+          :one: "pred {0} pondelkom"
+          :other: "pred {0} pondelkami"
     :mon-narrow: 
       :relative: 
         -1: "minulý po."
         0: "tento po."
         1: "budúci po."
+      :relative_time: 
+        :future: 
+          :few: "o {0} po."
+          :many: "o {0} po."
+          :one: "o {0} po."
+          :other: "o {0} po."
+        :past: 
+          :few: "pred {0} po."
+          :many: "pred {0} po."
+          :one: "pred {0} po."
+          :other: "pred {0} po."
     :mon-short: 
       :relative: 
         -1: "minulý pond."
         0: "tento pond."
         1: "budúci pond."
+      :relative_time: 
+        :future: 
+          :few: "o {0} pond."
+          :many: "o {0} pond."
+          :one: "o {0} pond."
+          :other: "o {0} pond."
+        :past: 
+          :few: "pred {0} pond."
+          :many: "pred {0} pond."
+          :one: "pred {0} pond."
+          :other: "pred {0} pond."
     :month: 
       :display_name: mesiac
       :relative: 
@@ -190,6 +286,10 @@
           :other: "pred {0} mes."
     :month-short: 
       :display_name: mes.
+      :relative: 
+        -1: "minulý mes."
+        0: "tento mes."
+        1: "budúci mes."
       :relative_time: 
         :future: 
           :few: "o {0} mes."
@@ -257,16 +357,49 @@
         -1: "minulú sobotu"
         0: "túto sobotu"
         1: "budúcu sobotu"
+      :relative_time: 
+        :future: 
+          :few: "o {0} soboty"
+          :many: "o {0} soboty"
+          :one: "o {0} sobotu"
+          :other: "o {0} sobôt"
+        :past: 
+          :few: "pred {0} sobotami"
+          :many: "pred {0} soboty"
+          :one: "pred {0} sobotou"
+          :other: "pred {0} sobotami"
     :sat-narrow: 
       :relative: 
         -1: "minulú so."
         0: "túto so."
         1: "budúcu so."
+      :relative_time: 
+        :future: 
+          :few: "o {0} so."
+          :many: "o {0} so."
+          :one: "o {0} so."
+          :other: "o {0} so."
+        :past: 
+          :few: "pred {0} so."
+          :many: "pred {0} so."
+          :one: "pred {0} so."
+          :other: "pred {0} so."
     :sat-short: 
       :relative: 
         -1: "minulú so."
         0: "túto so."
         1: "budúcu so."
+      :relative_time: 
+        :future: 
+          :few: "o {0} so."
+          :many: "o {0} so."
+          :one: "o {0} so."
+          :other: "o {0} so."
+        :past: 
+          :few: "pred {0} so."
+          :many: "pred {0} so."
+          :one: "pred {0} so."
+          :other: "pred {0} so."
     :second: 
       :display_name: sekunda
       :relative: 
@@ -313,61 +446,193 @@
         -1: "minulú nedeľu"
         0: "túto nedeľu"
         1: "budúcu nedeľu"
+      :relative_time: 
+        :future: 
+          :few: "o {0} nedele"
+          :many: "o {0} nedele"
+          :one: "o {0} nedeľu"
+          :other: "o {0} nedieľ"
+        :past: 
+          :few: "pred {0} nedeľami"
+          :many: "pred {0} nedele"
+          :one: "pred {0} nedeľou"
+          :other: "pred {0} nedeľami"
     :sun-narrow: 
       :relative: 
         -1: "minulú ne."
         0: "túto ne."
         1: "budúcu ne."
+      :relative_time: 
+        :future: 
+          :few: "o {0} ne."
+          :many: "o {0} ne."
+          :one: "o {0} ne."
+          :other: "o {0} ne."
+        :past: 
+          :few: "pred {0} ne."
+          :many: "pred {0} ne."
+          :one: "pred {0} ne."
+          :other: "pred {0} ne."
     :sun-short: 
       :relative: 
         -1: "minulú ned."
         0: "túto ned."
         1: "budúcu ned."
+      :relative_time: 
+        :future: 
+          :few: "o {0} ned."
+          :many: "o {0} ned."
+          :one: "o {0} ned."
+          :other: "o {0} ned."
+        :past: 
+          :few: "pred {0} ned."
+          :many: "pred {0} ned."
+          :one: "pred {0} ned."
+          :other: "pred {0} ned."
     :thu: 
       :relative: 
         -1: "minulý štvrtok"
         0: "tento štvrtok"
         1: "budúci štvrtok"
+      :relative_time: 
+        :future: 
+          :few: "o {0} štvrtky"
+          :many: "o {0} štvrtka"
+          :one: "o {0} štvrtok"
+          :other: "o {0} štvrtkov"
+        :past: 
+          :few: "pred {0} štvrtkami"
+          :many: "pred {0} štvrtka"
+          :one: "pred {0} štvrtkom"
+          :other: "pred {0} štvrtkami"
     :thu-narrow: 
       :relative: 
         -1: "minulý št."
         0: "tento št."
         1: "budúci št."
+      :relative_time: 
+        :future: 
+          :few: "o {0} št."
+          :many: "o {0} št."
+          :one: "o {0} št."
+          :other: "o {0} št."
+        :past: 
+          :few: "pred {0} št."
+          :many: "pred {0} št."
+          :one: "pred {0} št."
+          :other: "pred {0} št."
     :thu-short: 
       :relative: 
         -1: "minulý št."
         0: "tento št."
         1: "budúci št."
+      :relative_time: 
+        :future: 
+          :few: "o {0} št."
+          :many: "o {0} št."
+          :one: "o {0} št."
+          :other: "o {0} št."
+        :past: 
+          :few: "pred {0} št."
+          :many: "pred {0} št."
+          :one: "pred {0} št."
+          :other: "pred {0} št."
     :tue: 
       :relative: 
         -1: "minulý utorok"
         0: "tento utorok"
         1: "budúci utorok"
+      :relative_time: 
+        :future: 
+          :few: "o {0} utorky"
+          :many: "o {0} utorka"
+          :one: "o {0} utorok"
+          :other: "o {0} utorkov"
+        :past: 
+          :few: "pred {0} utorkami"
+          :many: "pred {0} utorka"
+          :one: "pred {0} utorkom"
+          :other: "pred {0} utorkami"
     :tue-narrow: 
       :relative: 
         -1: "minulý ut."
         0: "tento ut."
         1: "budúci ut."
+      :relative_time: 
+        :future: 
+          :few: "o {0} ut."
+          :many: "o {0} ut."
+          :one: "o {0} ut."
+          :other: "o {0} ut."
+        :past: 
+          :few: "pred {0} ut."
+          :many: "pred {0} ut."
+          :one: "pred {0} ut."
+          :other: "pred {0} ut."
     :tue-short: 
       :relative: 
         -1: "minulý utor."
         0: "tento utor."
         1: "budúci utor."
+      :relative_time: 
+        :future: 
+          :few: "o {0} utor."
+          :many: "o {0} utor."
+          :one: "o {0} utor."
+          :other: "o {0} utor."
+        :past: 
+          :few: "pred {0} utor."
+          :many: "pred {0} utor."
+          :one: "pred {0} utor."
+          :other: "pred {0} utor."
     :wed: 
       :relative: 
         -1: "minulú stredu"
         0: "túto stredu"
         1: "budúcu stredu"
+      :relative_time: 
+        :future: 
+          :few: "o {0} stredy"
+          :many: "o {0} stredy"
+          :one: "o {0} stredu"
+          :other: "o {0} stried"
+        :past: 
+          :few: "pred {0} stredami"
+          :many: "pred {0} stredy"
+          :one: "pred {0} stredou"
+          :other: "pred {0} stredami"
     :wed-narrow: 
       :relative: 
         -1: "minulú st."
         0: "túto st."
         1: "budúcu st."
+      :relative_time: 
+        :future: 
+          :few: "o {0} st."
+          :many: "o {0} st."
+          :one: "o {0} st."
+          :other: "o {0} st."
+        :past: 
+          :few: "pred {0} st."
+          :many: "pred {0} st."
+          :one: "pred {0} st."
+          :other: "pred {0} st."
     :wed-short: 
       :relative: 
         -1: "minulú str."
         0: "túto str."
         1: "budúcu str."
+      :relative_time: 
+        :future: 
+          :few: "o {0} str."
+          :many: "o {0} str."
+          :one: "o {0} str."
+          :other: "o {0} str."
+        :past: 
+          :few: "pred {0} str."
+          :many: "pred {0} str."
+          :one: "pred {0} str."
+          :other: "pred {0} str."
     :week: 
       :display_name: týždeň
       :relative: 
@@ -400,6 +665,10 @@
           :other: "pred {0} týž."
     :week-short: 
       :display_name: týž.
+      :relative: 
+        -1: "minulý týž."
+        0: "tento týž."
+        1: "budúci týž."
       :relative_time: 
         :future: 
           :few: "o {0} týž."
@@ -411,8 +680,24 @@
           :many: "pred {0} týž."
           :one: "pred {0} týž."
           :other: "pred {0} týž."
+    :weekOfMonth: 
+      :display_name: "týždeň mesiaca"
+    :weekOfMonth-narrow: 
+      :display_name: "týž. mes."
+    :weekOfMonth-short: 
+      :display_name: "týž. mes."
     :weekday: 
-      :display_name: "deň v týždni"
+      :display_name: "deň týždňa"
+    :weekday-narrow: 
+      :display_name: "deň týž."
+    :weekday-short: 
+      :display_name: "deň týž."
+    :weekdayOfMonth: 
+      :display_name: "deň týždňa v mesiaci"
+    :weekdayOfMonth-narrow: 
+      :display_name: "d.  týž. v mes."
+    :weekdayOfMonth-short: 
+      :display_name: "d.  týž. v mes."
     :year: 
       :display_name: rok
       :relative: 
@@ -432,6 +717,10 @@
           :other: "pred {0} rokmi"
     :year-narrow: 
       :display_name: r.
+      :relative: 
+        -1: "minulý rok"
+        0: "tento rok"
+        1: "budúci rok"
       :relative_time: 
         :future: 
           :few: "o {0} r."
@@ -445,6 +734,10 @@
           :other: "pred {0} r."
     :year-short: 
       :display_name: r.
+      :relative: 
+        -1: "minulý rok"
+        0: "tento rok"
+        1: "budúci rok"
       :relative_time: 
         :future: 
           :few: "o {0} r."
@@ -458,3 +751,7 @@
           :other: "pred {0} r."
     :zone: 
       :display_name: "časové pásmo"
+    :zone-narrow: 
+      :display_name: pásmo
+    :zone-short: 
+      :display_name: pásmo

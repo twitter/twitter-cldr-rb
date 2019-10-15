@@ -14,7 +14,7 @@ describe TwitterCldr::Transforms::Transliterator do
 
     it 'identifies and transliterates all the scripts in the string' do
       expect(transliterator.transliterate).to(
-        match_normalized('kuronekosamaho゙kushisan')
+        match_normalized('kuronekosamabokushisan')
       )
     end
 

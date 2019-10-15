@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Latin-Jamo
+      - und-Jamo-t-und-latn
     :direction: forward
     :rules: 
       - "::[[:script=Latin:][:M:]-];"
@@ -8,6 +11,6 @@
       - "::Lower;"
       - "::Latin-ConjoiningJamo;"
       - "::[[:script=Latin:][:M:]] NFC;"
-    :source: Latin
+    :source: Latn
     :target: Jamo
     :variant: ~

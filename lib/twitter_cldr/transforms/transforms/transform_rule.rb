@@ -32,7 +32,20 @@ module TwitterCldr
             transforms.any? do |transform|
               transform.accepts?(forward_form, backward_form)
             end
-          rescue
+          rescue => e
+            if $debug
+              puts e.message
+              puts e.backtrace.join("\n")
+            end
+
+            false
+          end
+
+          def null?
+            false
+          end
+
+          def blank?
             false
           end
 
@@ -70,7 +83,7 @@ module TwitterCldr
         end
 
         def forward?
-          !!forward_form
+          !forward_form.null?
         end
 
         def backward?

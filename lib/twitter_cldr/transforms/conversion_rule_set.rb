@@ -59,6 +59,7 @@ module TwitterCldr
               start = rule_match.start
               stop = rule_match.stop
               replacement = rule_match.replacement
+              puts "#{cursor.text[start...stop]} -> #{replacement}" if $debug
               cursor.text[start...stop] = replacement
 
               cursor.advance(

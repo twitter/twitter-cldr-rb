@@ -18,8 +18,8 @@ module TwitterCldr
           private
 
           def valid_form?(form)
-            !form || (
-              form && VALID_FORMS.include?(form.transform.downcase)
+            !form || form.null? || form.blank? || (
+              VALID_FORMS.include?(form.transform.downcase)
             )
           end
         end

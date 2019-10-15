@@ -23,7 +23,22 @@ module TwitterCldr
           filter && !filter.empty?
         end
 
-        def to_rule_set
+        def apply_to(cursor)
+          cursor.set_text(rule_set.transform(cursor.text))
+          cursor.reset_position
+        end
+
+        def null?
+          false
+        end
+
+        def blank?
+          false
+        end
+
+        private
+
+        def rule_set
           @rule_set ||= if has_filter? && has_transform?
             FilteredRuleSet.new(filter_rule, transform)
           elsif has_transform?
@@ -34,8 +49,6 @@ module TwitterCldr
               'has undefined behavior'
           end
         end
-
-        private
 
         def filter_rule
           @filter_rule ||= if has_filter?

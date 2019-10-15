@@ -561,7 +561,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["22446-5624", "55533", "04873-4651", "66578", "41649-8209"]
+postal_code.sample(5)  # ["66877", "52179", "39565", "39335", "83881"]
 ```
 
 ### Phone Codes
@@ -924,7 +924,7 @@ Behind the scenes, `LocalizedString#transliterate_into` creates instances of `Tw
 ```ruby
 
 rule_set = TwitterCldr::Transforms::Transformer.get('Hiragana-Latin')
-rule_set.transform('くろねこさま')  # "ｋｕｒｏｎｅｋｏｓａｍａ"
+rule_set.transform('くろねこさま')  # "kuronekosama"
 ```
 Notice that the `.get` method was called with 'Hiragana-Latin' instead of 'ja-en' or something similar. This is because `.get` must be passed an exact transform id. To get a list of all supported transform ids, use the `Transformer#each_transform` method:
 
@@ -951,7 +951,7 @@ id.source  # Hiragana
 id.target  # Latin
 
 rule_set = TwitterCldr::Transforms::Transformer.get(id)
-rule_set.transform('くろねこさま')  # "ｋｕｒｏｎｅｋｏｓａｍａ"
+rule_set.transform('くろねこさま')  # "kuronekosama"
 ```
 
 ### Handling Bidirectional Text

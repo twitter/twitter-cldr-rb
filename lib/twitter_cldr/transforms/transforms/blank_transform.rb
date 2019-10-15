@@ -8,6 +8,8 @@ module TwitterCldr
     module Transforms
 
       class BlankTransform < TransformRule
+        TRANSFORM = 'blank'.freeze
+
         def self.instance
           @instance ||= new
         end
@@ -33,7 +35,7 @@ module TwitterCldr
         end
 
         def transform
-          'blank'
+          TRANSFORM
         end
 
         def has_transform?(*args)

@@ -7,7 +7,7 @@ module TwitterCldr
   module Transforms
     module Filters
 
-      class RegexFilter < FilterRule
+      class UnicodeFilter < FilterRule
         class << self
           def parse(rule_text, symbol_table)
             rule_text = Rule.remove_comment(rule_text).strip
@@ -18,7 +18,8 @@ module TwitterCldr
               clean_rule(rule_text, direction)
             )
 
-            new(/#{re.to_regexp_str}/, direction)
+            # filters are always just a unicode set
+            new(re.elements.first.to_set.to_set, direction)
           end
 
           def accepts?(rule_text)
@@ -44,10 +45,10 @@ module TwitterCldr
           end
         end
 
-        attr_reader :regexp, :direction
+        attr_reader :charset, :direction
 
-        def initialize(regexp, direction)
-          @regexp = regexp
+        def initialize(charset, direction)
+          @charset = charset
           @direction = direction
         end
 
@@ -56,8 +57,7 @@ module TwitterCldr
         end
 
         def matches?(cursor)
-          idx = cursor.text.index(regexp, cursor.position)
-          idx == cursor.position
+          charset.include?(cursor.text[cursor.position].ord)
         end
 
         def forward?

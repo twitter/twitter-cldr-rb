@@ -7,9 +7,9 @@ module TwitterCldr
   module Transforms
 
     module Filters
-      autoload :FilterRule,  'twitter_cldr/transforms/filters/filter_rule'
-      autoload :NullFilter,  'twitter_cldr/transforms/filters/null_filter'
-      autoload :RegexFilter, 'twitter_cldr/transforms/filters/regex_filter'
+      autoload :FilterRule,    'twitter_cldr/transforms/filters/filter_rule'
+      autoload :NullFilter,    'twitter_cldr/transforms/filters/null_filter'
+      autoload :UnicodeFilter, 'twitter_cldr/transforms/filters/unicode_filter'
     end
 
   end

@@ -34,7 +34,7 @@ module TwitterCldr
         '004C | 0387; [, DB A9, 05]' => '004C 0387; [3D, 05, 8F][, DB A9, 05]',
       }
 
-      requirement :cldr, '21'
+      requirement :cldr, '35'
       requirement :uca, '6.1.0', [AUXILIARY_ZIP_FILE]
       requirement :dependency, [TailoringImporter]
       locales TwitterCldr.supported_locales

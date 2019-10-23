@@ -19,8 +19,6 @@
       ? !ruby/symbol "2"
       : "{0}, {1}"
       :end: "{0}, {1}"
-      :middle: "{0}, {1}"
-      :start: "{0}, {1}"
     :standard-short: 
       ? !ruby/symbol "2"
       : "{0} і {1}"
@@ -31,5 +29,11 @@
       ? !ruby/symbol "2"
       : "{0} і {1}"
       :end: "{0} і {1}"
-    :unit-narrow: {}
-    :unit-short: {}
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :unit-narrow: 
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :unit-short: 
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"

@@ -18,6 +18,10 @@
           :other: "{0} दिन पहले"
     :day-narrow: 
       :display_name: दिन
+      :relative: 
+        -1: "बीता कल"
+        0: आज
+        1: "आने वाला कल"
       :relative_time: 
         :future: 
           :one: "{0} दिन में"
@@ -27,6 +31,10 @@
           :other: "{0} दिन पहले"
     :day-short: 
       :display_name: दिन
+      :relative: 
+        -1: "बीता कल"
+        0: आज
+        1: "आने वाला कल"
       :relative_time: 
         :future: 
           :one: "{0} दिन में"
@@ -525,6 +533,10 @@
           :other: "{0} वर्ष पहले"
     :year-narrow: 
       :display_name: वर्ष
+      :relative: 
+        -1: "पिछले साल"
+        0: "इस साल"
+        1: "अगले साल"
       :relative_time: 
         :future: 
           :one: "{0} वर्ष में"

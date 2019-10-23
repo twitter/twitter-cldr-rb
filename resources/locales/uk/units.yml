@@ -196,7 +196,7 @@
           :few: "{0} петабайти"
           :many: "{0} петабайтів"
           :one: "{0} петабайт"
-          :other: "{0} петабайту"
+          :other: "{0} петабайта"
         :digital-terabit: 
           :few: "{0} терабіти"
           :many: "{0} терабітів"
@@ -217,6 +217,11 @@
           :many: "{0} днів"
           :one: "{0} день"
           :other: "{0} дня"
+        :duration-decade: 
+          :few: "{0} декади"
+          :many: "{0} декад"
+          :one: "{0} декада"
+          :other: "{0} декади"
         :duration-hour: 
           :few: "{0} години"
           :many: "{0} годин"
@@ -322,6 +327,11 @@
           :many: "{0} кіловат-годин"
           :one: "{0} кіловат-година"
           :other: "{0} кіловат-години"
+        :energy-therm-us: 
+          :few: "{0} американських терми"
+          :many: "{0} американських термів"
+          :one: "{0} американський терм"
+          :other: "{0} американського терма"
         :force-newton: 
           :few: "{0} ньютони"
           :many: "{0} ньютонів"
@@ -352,6 +362,11 @@
           :many: "{0} мегагерців"
           :one: "{0} мегагерц"
           :other: "{0} мегагерца"
+        :graphics-megapixel: 
+          :few: "{0} Мп"
+          :many: "{0} Мп"
+          :one: "{0} мегапіксель"
+          :other: "{0} мегапікселя"
         :length-astronomical-unit: 
           :few: "{0} астрономічні одиниці"
           :many: "{0} астрономічних одиниць"
@@ -562,6 +577,11 @@
           :many: "{0} атмосфер"
           :one: "{0} атмосфера"
           :other: "{0} атмосфери"
+        :pressure-bar: 
+          :few: "{0} бари"
+          :many: "{0} барів"
+          :one: "{0} бар"
+          :other: "{0} бара"
         :pressure-hectopascal: 
           :few: "{0} гектопаскалі"
           :many: "{0} гектопаскалів"
@@ -592,6 +612,11 @@
           :many: "{0} міліметрів ртутного стовпа"
           :one: "{0} міліметр ртутного стовпа"
           :other: "{0} міліметра ртутного стовпа"
+        :pressure-pascal: 
+          :few: "{0} паскалі"
+          :many: "{0} паскалів"
+          :one: "{0} паскаль"
+          :other: "{0} паскаля"
         :pressure-pound-per-square-inch: 
           :few: "{0} фунти на квадратний дюйм"
           :many: "{0} фунтів на квадратний дюйм"
@@ -627,6 +652,11 @@
           :many: "{0} градусів Фаренгейта"
           :one: "{0} градус Фаренгейта"
           :other: "{0} градуса Фаренгейта"
+        :temperature-generic: 
+          :few: "{0}°"
+          :many: "{0}°"
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :few: "{0} кельвіни"
           :many: "{0} кельвінів"
@@ -848,11 +878,7 @@
           :many: "{0}%"
           :one: "{0}%"
           :other: "{0}%"
-        :concentr-permyriad: 
-          :few: "{0}‱"
-          :many: "{0}‱"
-          :one: "{0}‱"
-          :other: "{0}‱"
+        :concentr-permyriad: {}
         :consumption-liter-per-100kilometers: 
           :few: "{0} л/100 км"
           :many: "{0} л/100 км"
@@ -1138,6 +1164,21 @@
           :many: "{0} миль/год"
           :one: "{0} миля/год"
           :other: "{0} милі/год"
+        :temperature-celsius: 
+          :few: "{0}°C"
+          :many: "{0}°C"
+          :one: "{0}°C"
+          :other: "{0}°C"
+        :temperature-fahrenheit: 
+          :few: "{0}°F"
+          :many: "{0}°F"
+          :one: "{0}°F"
+          :other: "{0}°F"
+        :temperature-generic: 
+          :few: "{0}°"
+          :many: "{0}°"
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :few: "{0} К"
           :many: "{0} К"
@@ -1185,7 +1226,10 @@
           :other: "{0} л"
       :short: 
         :acceleration-g-force: 
-          :other: "{0} G"
+          :few: "{0} g"
+          :many: "{0} g"
+          :one: "{0} g"
+          :other: "{0} g"
         :acceleration-meter-per-second-squared: 
           :few: "{0} м/с²"
           :many: "{0} м/с²"
@@ -1202,6 +1246,9 @@
           :one: "{0} кут. сек."
           :other: "{0} кут. сек."
         :angle-degree: 
+          :few: "{0}°"
+          :many: "{0}°"
+          :one: "{0}°"
           :other: "{0}°"
         :angle-radian: 
           :few: "{0} рад."
@@ -1284,6 +1331,9 @@
           :one: "{0} моль"
           :other: "{0} моль"
         :concentr-part-per-million: 
+          :few: "{0} ppm"
+          :many: "{0} ppm"
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0}%"
@@ -1296,9 +1346,6 @@
           :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :few: "{0}‱"
-          :many: "{0}‱"
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :few: "{0} л/100 км"
@@ -1386,6 +1433,11 @@
           :one: "{0} д."
           :other: "{0} дн."
         :duration-day-person: {}
+        :duration-decade: 
+          :few: "{0} 10-річчя"
+          :many: "{0} 10-річ"
+          :one: "{0} 10-річчя"
+          :other: "{0} 10-річчя"
         :duration-hour: 
           :few: "{0} год"
           :many: "{0} год"
@@ -1494,6 +1546,11 @@
           :many: "{0} кВт год"
           :one: "{0} кВт год"
           :other: "{0} кВт год"
+        :energy-therm-us: 
+          :few: "{0} ам. терми"
+          :many: "{0} ам. термів"
+          :one: "{0} ам. терм"
+          :other: "{0} ам. терма"
         :force-newton: 
           :few: "{0} Н"
           :many: "{0} Н"
@@ -1524,6 +1581,41 @@
           :many: "{0} МГц"
           :one: "{0} МГц"
           :other: "{0} МГц"
+        :graphics-dot-per-centimeter: 
+          :few: "{0} dpcm"
+          :many: "{0} dpcm"
+          :one: "{0} dpcm"
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :few: "{0} dpi"
+          :many: "{0} dpi"
+          :one: "{0} dpi"
+          :other: "{0} dpi"
+        :graphics-em: 
+          :few: "{0} em"
+          :many: "{0} em"
+          :one: "{0} em"
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :few: "{0} Мп"
+          :many: "{0} Мп"
+          :one: "{0} Мп"
+          :other: "{0} Мп"
+        :graphics-pixel: 
+          :few: "{0} px"
+          :many: "{0} px"
+          :one: "{0} px"
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :few: "{0} ppcm"
+          :many: "{0} ppcm"
+          :one: "{0} ppcm"
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :few: "{0} ppi"
+          :many: "{0} ppi"
+          :one: "{0} ppi"
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :few: "{0} а. о."
           :many: "{0} а. о."
@@ -1614,9 +1706,6 @@
           :one: "{0} пт"
           :other: "{0} пт"
         :length-solar-radius: 
-          :few: "{0} R☉"
-          :many: "{0} R☉"
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :few: "{0} ярди"
@@ -1629,9 +1718,6 @@
           :one: "{0} лк"
           :other: "{0} лк"
         :light-solar-luminosity: 
-          :few: "{0} L☉"
-          :many: "{0} L☉"
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :few: "{0} кар"
@@ -1644,9 +1730,6 @@
           :one: "{0} Да"
           :other: "{0} Да"
         :mass-earth-mass: 
-          :few: "{0} M⊕"
-          :many: "{0} M⊕"
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :few: "{0} г"
@@ -1689,9 +1772,6 @@
           :one: "{0} фунт"
           :other: "{0} фунта"
         :mass-solar-mass: 
-          :few: "{0} M☉"
-          :many: "{0} M☉"
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -1735,6 +1815,11 @@
           :many: "{0} атм"
           :one: "{0} атм"
           :other: "{0} атм"
+        :pressure-bar: 
+          :few: "{0} бар"
+          :many: "{0} бар"
+          :one: "{0} бар"
+          :other: "{0} бар"
         :pressure-hectopascal: 
           :few: "{0} гПа"
           :many: "{0} гПа"
@@ -1765,6 +1850,11 @@
           :many: "{0} мм рт. ст."
           :one: "{0} мм рт. ст."
           :other: "{0} мм рт. ст."
+        :pressure-pascal: 
+          :few: "{0} Па"
+          :many: "{0} Па"
+          :one: "{0} Па"
+          :other: "{0} Па"
         :pressure-pound-per-square-inch: 
           :few: "{0} фунти/дюйм²"
           :many: "{0} фунтів/дюйм²"
@@ -1776,6 +1866,9 @@
           :one: "{0} км/год"
           :other: "{0} км/год"
         :speed-knot: 
+          :few: "{0} kn"
+          :many: "{0} kn"
+          :one: "{0} kn"
           :other: "{0} kn"
         :speed-meter-per-second: 
           :few: "{0} м/с"
@@ -1788,10 +1881,19 @@
           :one: "{0} миля/год"
           :other: "{0} милі/год"
         :temperature-celsius: 
+          :few: "{0}°C"
+          :many: "{0}°C"
+          :one: "{0}°C"
           :other: "{0}°C"
         :temperature-fahrenheit: 
+          :few: "{0}°F"
+          :many: "{0}°F"
+          :one: "{0}°F"
           :other: "{0}°F"
         :temperature-generic: 
+          :few: "{0}°"
+          :many: "{0}°"
+          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :few: "{0} К"
@@ -1814,10 +1916,10 @@
           :one: "{0} акр-фут"
           :other: "{0} акр-фута"
         :volume-barrel: 
-          :few: "{0} бар."
-          :many: "{0} бар."
-          :one: "{0} бар."
-          :other: "{0} бар."
+          :few: "{0} бр."
+          :many: "{0} бр."
+          :one: "{0} бр."
+          :other: "{0} бр."
         :volume-bushel: 
           :few: "{0} буш"
           :many: "{0} буш"

@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "siku {0}"
           :other: "siku {0}"
+        :duration-decade: 
+          :one: "mwongo {0}"
+          :other: "miongo {0}"
         :duration-hour: 
           :one: "saa {0}"
           :other: "saa {0}"
@@ -172,9 +175,6 @@
         :electric-volt: 
           :one: "volti {0}"
           :other: "volti {0}"
-        :energy-british-thermal-unit: 
-          :one: "{0} Btu"
-          :other: "{0} Btu"
         :energy-calorie: 
           :one: "kalori {0}"
           :other: "kalori {0}"
@@ -196,6 +196,9 @@
         :energy-kilowatt-hour: 
           :one: "kilowati {0} kwa saa"
           :other: "kilowati {0} kwa saa"
+        :energy-therm-us: 
+          :one: "kipimo {0} cha gesi, Marekani"
+          :other: "vipimo {0} vya gesi, Marekani"
         :force-newton: 
           :one: "newtoni {0}"
           :other: "newtoni {0}"
@@ -214,6 +217,27 @@
         :frequency-megahertz: 
           :one: "megahezi {0}"
           :other: "megahezi {0}"
+        :graphics-dot-per-centimeter: 
+          :one: "kitone {0} kwa kila sentimita"
+          :other: "vitone {0} kwa kila sentimita"
+        :graphics-dot-per-inch: 
+          :one: "kitone {0} kwa kila inchi"
+          :other: "vitone {0} kwa kila inchi"
+        :graphics-em: 
+          :one: "em {0}"
+          :other: "em {0}"
+        :graphics-megapixel: 
+          :one: "megapikseli {0}"
+          :other: "megapikseli {0}"
+        :graphics-pixel: 
+          :one: "pikseli {0}"
+          :other: "pikseli {0}"
+        :graphics-pixel-per-centimeter: 
+          :one: "pikseli {0} kwa kila sentimita"
+          :other: "pikseli {0} kwa kila sentimita"
+        :graphics-pixel-per-inch: 
+          :one: "pikseli {0} kwa kila inchi"
+          :other: "pikseli {0} kwa kila inchi"
         :length-astronomical-unit: 
           :one: "kipimo {0} cha astronomia"
           :other: "vipimo {0} vya astronomia"
@@ -265,27 +289,15 @@
         :length-point: 
           :one: "pointi {0}"
           :other: "pointi {0}"
-        :length-solar-radius: 
-          :one: "{0} R☉"
-          :other: "{0} R☉"
         :length-yard: 
           :one: "yadi {0}"
           :other: "yadi {0}"
         :light-lux: 
           :one: "lux {0}"
           :other: "lux {0}"
-        :light-solar-luminosity: 
-          :one: "{0} L☉"
-          :other: "{0} L☉"
         :mass-carat: 
           :one: "karati {0}"
           :other: "karati {0}"
-        :mass-dalton: 
-          :one: "{0} Da"
-          :other: "{0} Da"
-        :mass-earth-mass: 
-          :one: "{0} M⊕"
-          :other: "{0} M⊕"
         :mass-gram: 
           :one: "gramu {0}"
           :other: "gramu {0}"
@@ -310,9 +322,6 @@
         :mass-pound: 
           :one: "ratili {0}"
           :other: "ratili {0}"
-        :mass-solar-mass: 
-          :one: "{0} M☉"
-          :other: "{0} M☉"
         :mass-ton: 
           :one: "tani {0}"
           :other: "tani {0}"
@@ -337,6 +346,9 @@
         :pressure-atmosphere: 
           :one: "kanieneo {0}"
           :other: "kanieneo {0}"
+        :pressure-bar: 
+          :one: "bari {0}"
+          :other: "bari {0}"
         :pressure-hectopascal: 
           :one: "hektopaskali {0}"
           :other: "hektopaskali {0}"
@@ -355,6 +367,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "milimita {0} ya zebaki"
           :other: "milimita {0} za zebaki"
+        :pressure-pascal: 
+          :one: "paskali {0}"
+          :other: "paskali {0}"
         :pressure-pound-per-square-inch: 
           :one: "pauni {0} kwa kila inchi mraba"
           :other: "pauni {0} kwa kila inchi mraba"
@@ -430,9 +445,6 @@
         :volume-fluid-ounce: 
           :one: "aunsi {0} ya ujazo"
           :other: "aunsi {0} za ujazo"
-        :volume-fluid-ounce-imperial: 
-          :one: "{0} fl oz Imp."
-          :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "galoni {0}"
           :other: "galoni {0}"
@@ -686,7 +698,6 @@
           :one: "{0} kwa elfu"
           :other: "{0} kwa elfu"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "lita {0} kwa kilomita 100"
@@ -740,6 +751,9 @@
           :one: "siku {0}"
           :other: "siku {0}"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "mwongo {0}"
+          :other: "miongo {0}"
         :duration-hour: 
           :one: "saa {0}"
           :other: "saa {0}"
@@ -783,13 +797,11 @@
           :one: "volti {0}"
           :other: "volti {0}"
         :energy-british-thermal-unit: 
-          :one: "{0} Btu"
           :other: "{0} Btu"
         :energy-calorie: 
           :one: "kalori {0}"
           :other: "kalori {0}"
         :energy-electronvolt: 
-          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "kalori {0}"
@@ -806,11 +818,12 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "kipimo {0} cha gesi, US"
+          :other: "vipimo {0} vya gesi, US"
         :force-newton: 
-          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
-          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "gigahezi {0}"
@@ -824,6 +837,27 @@
         :frequency-megahertz: 
           :one: "megahezi {0}"
           :other: "megahezi {0}"
+        :graphics-dot-per-centimeter: 
+          :one: "dpcm {0}"
+          :other: "dpcm {0}"
+        :graphics-dot-per-inch: 
+          :one: "dpi {0}"
+          :other: "dpi {0}"
+        :graphics-em: 
+          :one: "em {0}"
+          :other: "em {0}"
+        :graphics-megapixel: 
+          :one: "MP {0}"
+          :other: "MP {0}"
+        :graphics-pixel: 
+          :one: "px {0}"
+          :other: "px {0}"
+        :graphics-pixel-per-centimeter: 
+          :one: "ppcm {0}"
+          :other: "ppcm {0}"
+        :graphics-pixel-per-inch: 
+          :one: "ppi {0}"
+          :other: "ppi {0}"
         :length-astronomical-unit: 
           :one: "au {0}"
           :other: "au {0}"
@@ -880,7 +914,6 @@
           :one: "pointi {0}"
           :other: "pointi {0}"
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "yadi {0}"
@@ -889,16 +922,13 @@
           :one: "lx {0}"
           :other: "lx {0}"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "karati {0}"
           :other: "karati {0}"
         :mass-dalton: 
-          :one: "{0} Da"
           :other: "{0} Da"
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "gramu {0}"
@@ -925,7 +955,6 @@
           :one: "ratili {0}"
           :other: "ratili {0}"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -953,6 +982,9 @@
         :pressure-atmosphere: 
           :one: "atm {0}"
           :other: "atm {0}"
+        :pressure-bar: 
+          :one: "bari {0}"
+          :other: "bari {0}"
         :pressure-hectopascal: 
           :one: "hPa {0}"
           :other: "hPa {0}"
@@ -970,7 +1002,10 @@
           :other: "mbar {0}"
         :pressure-millimeter-of-mercury: 
           :one: "milimita {0} ya zebaki"
-          :other: "{0} mm Hg"
+          :other: "mm Hg {0}"
+        :pressure-pascal: 
+          :one: "Pa {0}"
+          :other: "Pa {0}"
         :pressure-pound-per-square-inch: 
           :one: "psi {0}"
           :other: "psi {0}"
@@ -999,10 +1034,8 @@
           :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
-          :one: "{0} N⋅m"
           :other: "{0} N⋅m"
         :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "ekari futi {0}"
@@ -1049,7 +1082,6 @@
           :one: "fl oz {0}"
           :other: "fl oz {0}"
         :volume-fluid-ounce-imperial: 
-          :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "galoni {0}"

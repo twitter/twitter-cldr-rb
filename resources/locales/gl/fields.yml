@@ -197,6 +197,10 @@
           :other: "hai {0} meses"
     :month-narrow: 
       :display_name: mes
+      :relative: 
+        -1: "o mes pas."
+        0: "este mes"
+        1: "o próx. mes"
       :relative_time: 
         :future: 
           :one: "en {0} mes"
@@ -206,10 +210,6 @@
           :other: "hai {0} meses"
     :month-short: 
       :display_name: mes
-      :relative: 
-        -1: "m. pasado"
-        0: "este m."
-        1: "m. seguinte"
       :relative_time: 
         :future: 
           :one: "en {0} mes"
@@ -480,6 +480,10 @@
           :other: "hai {0} semanas"
     :week-narrow: 
       :display_name: sem.
+      :relative: 
+        -1: "a sem. pas."
+        0: "esta sem."
+        1: "a próx. sem."
       :relative_time: 
         :future: 
           :one: "en {0} sem."
@@ -490,9 +494,9 @@
     :week-short: 
       :display_name: sem.
       :relative: 
-        -1: "sem. pasada"
+        -1: "a sem. pasada"
         0: "esta sem."
-        1: "sem. seguinte"
+        1: "a próxima sem."
       :relative_time: 
         :future: 
           :one: "en {0} sem."
@@ -534,9 +538,9 @@
     :year-narrow: 
       :display_name: ano
       :relative: 
-        -1: "ano pasado"
+        -1: "o ano pas."
         0: "este ano"
-        1: "seguinte ano"
+        1: "o próx. ano"
       :relative_time: 
         :future: 
           :one: "en {0} ano"
@@ -547,9 +551,9 @@
     :year-short: 
       :display_name: ano
       :relative: 
-        -1: "ano pasado"
+        -1: "o ano pasado"
         0: "este ano"
-        1: "seguinte ano"
+        1: "o próximo ano"
       :relative_time: 
         :future: 
           :one: "en {0} ano"

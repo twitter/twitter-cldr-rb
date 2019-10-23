@@ -67,9 +67,6 @@
         :concentr-millimole-per-liter: 
           :one: "{0} მილიმოლი ლიტრზე"
           :other: "{0} მილიმოლი ლიტრზე"
-        :concentr-mole: 
-          :one: "{0} mol"
-          :other: "{0} mol"
         :concentr-part-per-million: 
           :one: "{0} ნაწილი მილიონზე"
           :other: "{0} ნაწილი მილიონზე"
@@ -79,9 +76,6 @@
         :concentr-permille: 
           :one: "{0} პრომილე"
           :other: "{0} პრომილე"
-        :concentr-permyriad: 
-          :one: "{0}‱"
-          :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} ლიტრი 100 კილომეტრში"
           :other: "{0} ლიტრი 100 კილომეტრში"
@@ -133,6 +127,9 @@
         :duration-day: 
           :one: "{0} დღე"
           :other: "{0} დღე"
+        :duration-decade: 
+          :one: "{0} დეკადა"
+          :other: "{0} დეკადა"
         :duration-hour: 
           :one: "{0} საათი"
           :other: "{0} საათი"
@@ -196,12 +193,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} კილოვატ-საათი"
           :other: "{0} კილოვატ-საათი"
-        :force-newton: 
-          :one: "{0} N"
-          :other: "{0} N"
-        :force-pound-force: 
-          :one: "{0} lbf"
-          :other: "{0} lbf"
+        :energy-therm-us: 
+          :one: "{0} აშშ თერმი"
+          :other: "{0} აშშ თერმი"
         :frequency-gigahertz: 
           :one: "{0} გიგაჰერცი"
           :other: "{0} გიგაჰერცი"
@@ -214,6 +208,27 @@
         :frequency-megahertz: 
           :one: "{0} მეგაჰერცი"
           :other: "{0} მეგაჰერცი"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} წერტილი სანტიმეტრზე"
+          :other: "{0} წერტილი სანტიმეტრზე"
+        :graphics-dot-per-inch: 
+          :one: "{0} წერტილი დუიმზე"
+          :other: "{0} წერტილი დუიმზე"
+        :graphics-em: 
+          :one: "{0} ემი"
+          :other: "{0} ემი"
+        :graphics-megapixel: 
+          :one: "{0} მეგაპიქსელი"
+          :other: "{0} მეგაპიქსელი"
+        :graphics-pixel: 
+          :one: "{0} პიქსელი"
+          :other: "{0} პიქსელი"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} პიქსელი სანტიმეტრზე"
+          :other: "{0} პიქსელი სანტიმეტრზე"
+        :graphics-pixel-per-inch: 
+          :one: "{0} პიქსელი დუიმზე"
+          :other: "{0} პიქსელი დუიმზე"
         :length-astronomical-unit: 
           :one: "{0} ასტრონომიული ერთეული"
           :other: "{0} ასტრონომიული ერთეული"
@@ -265,18 +280,12 @@
         :length-point: 
           :one: "{0} პუნქტი"
           :other: "{0} პუნქტი"
-        :length-solar-radius: 
-          :one: "{0} R☉"
-          :other: "{0} R☉"
         :length-yard: 
           :one: "{0} იარდი"
           :other: "{0} იარდი"
         :light-lux: 
           :one: "{0} ლუქსი"
           :other: "{0} ლუქსი"
-        :light-solar-luminosity: 
-          :one: "{0} L☉"
-          :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} კარატი"
           :other: "{0} კარატი"
@@ -337,6 +346,9 @@
         :pressure-atmosphere: 
           :one: "{0} ატმოსფერო"
           :other: "{0} ატმოსფერო"
+        :pressure-bar: 
+          :one: "{0} ბარი"
+          :other: "{0} ბარი"
         :pressure-hectopascal: 
           :one: "{0} ჰექტოპასკალი"
           :other: "{0} ჰექტოპასკალი"
@@ -355,6 +367,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} მილიმეტრი ვერცხლისწყლის სვეტისა"
           :other: "{0} მილიმეტრი ვერცხლისწყლის სვეტისა"
+        :pressure-pascal: 
+          :one: "{0} პასკალი"
+          :other: "{0} პასკალი"
         :pressure-pound-per-square-inch: 
           :one: "{0} ფუნტი კვადრატულ დუიმზე"
           :other: "{0} ფუნტი კვადრატულ დუიმზე"
@@ -382,12 +397,6 @@
         :temperature-kelvin: 
           :one: "{0} კელვინი"
           :other: "{0} კელვინის გრადუსი"
-        :torque-newton-meter: 
-          :one: "{0} N⋅m"
-          :other: "{0} N⋅m"
-        :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
-          :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} აკრი-ფუტი"
           :other: "{0} აკრი-ფუტი"
@@ -673,7 +682,6 @@
           :one: "{0} მმოლ/ლ"
           :other: "{0} მმოლ/ლ"
         :concentr-mole: 
-          :one: "{0} mol"
           :other: "{0} mol"
         :concentr-part-per-million: 
           :one: "{0} ppm"
@@ -685,7 +693,6 @@
           :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} ლ/100კმ"
@@ -739,6 +746,9 @@
           :one: "{0} დღე"
           :other: "{0} დღე"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} დეკადა"
+          :other: "{0} დეკადა"
         :duration-hour: 
           :one: "{0} სთ"
           :other: "{0} სთ"
@@ -805,11 +815,12 @@
         :energy-kilowatt-hour: 
           :one: "{0} კვტსთ"
           :other: "{0} კვტსთ"
+        :energy-therm-us: 
+          :one: "{0} აშშ თერმი"
+          :other: "{0} აშშ თერმი"
         :force-newton: 
-          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
-          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} გჰც."
@@ -823,6 +834,27 @@
         :frequency-megahertz: 
           :one: "{0} მჰც"
           :other: "{0} მჰც"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} წერტ/სმ-ზე"
+          :other: "{0} წერტ/სმ-ზე"
+        :graphics-dot-per-inch: 
+          :one: "{0} წერტ/დუიმზე"
+          :other: "{0} წერტ/დუიმზე"
+        :graphics-em: 
+          :one: "{0} ემი"
+          :other: "{0} ემი"
+        :graphics-megapixel: 
+          :one: "{0} მპქს"
+          :other: "{0} მპქს"
+        :graphics-pixel: 
+          :one: "{0} პქს"
+          :other: "{0} პქს"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} პქს/სმ-ზე"
+          :other: "{0} პქს/სმ-ზე"
+        :graphics-pixel-per-inch: 
+          :one: "{0} პიქს/დუიმზე"
+          :other: "{0} პიქს/დუიმზე"
         :length-astronomical-unit: 
           :one: "{0} ა.ე."
           :other: "{0} ა.ე."
@@ -879,7 +911,6 @@
           :one: "{0} პნქტ."
           :other: "{0} პქნტ."
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} იარდი"
@@ -888,7 +919,6 @@
           :one: "{0} ლუქსი"
           :other: "{0} ლუქსი"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} კარ."
@@ -897,7 +927,6 @@
           :one: "{0} დალტ."
           :other: "{0} დალტ."
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "{0} გ"
@@ -924,7 +953,6 @@
           :one: "{0} ფნტ"
           :other: "{0} ფნტ"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -952,6 +980,9 @@
         :pressure-atmosphere: 
           :one: "{0} ატმ."
           :other: "{0} ატმ."
+        :pressure-bar: 
+          :one: "{0} ბარი"
+          :other: "{0} ბარი"
         :pressure-hectopascal: 
           :one: "{0} ჰპა"
           :other: "{0} ჰპა"
@@ -970,6 +1001,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} მმ ვწყ. სვ."
           :other: "{0} მმ ვწყ. სვ."
+        :pressure-pascal: 
+          :one: "{0} პა"
+          :other: "{0} პა"
         :pressure-pound-per-square-inch: 
           :one: "{0} ფნტ. კვ. დმ."
           :other: "{0} ფნტ. კვ. დმ."
@@ -998,10 +1032,8 @@
           :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
-          :one: "{0} N⋅m"
           :other: "{0} N⋅m"
         :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} აკრ.ფტ."

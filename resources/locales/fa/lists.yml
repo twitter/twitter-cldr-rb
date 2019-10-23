@@ -11,14 +11,18 @@
       ? !ruby/symbol "2"
       : "{0} یا {1}"
       :end: "{0}، یا {1}"
-      :middle: "{0}، {1}"
-      :start: "{0}، {1}"
-    :or-narrow: {}
-    :or-short: {}
+      :middle: "{0}،‏ {1}"
+      :start: "{0}،‏ {1}"
+    :or-narrow: 
+      :middle: "{0}،‏ {1}"
+      :start: "{0}،‏ {1}"
+    :or-short: 
+      :middle: "{0}،‏ {1}"
+      :start: "{0}،‏ {1}"
     :standard-narrow: 
       ? !ruby/symbol "2"
-      : "{0}، {1}"
-      :end: "{0}، و {1}"
+      : "{0}،‏ {1}"
+      :end: "{0}،‏ {1}"
       :middle: "{0}،‏ {1}"
       :start: "{0}،‏ {1}"
     :standard-short: 

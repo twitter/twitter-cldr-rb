@@ -79,19 +79,16 @@
     :fri-narrow: 
       :relative: 
         -1: "verlede Vr."
-        0: "dié Vr."
-        1: "vlg. Vr."
+        0: "hierdie Vr."
+        1: "volgende Vr."
       :relative_time: 
         :future: 
           :one: "oor {0} Vr."
           :other: "oor {0} Vr."
-        :past: 
-          :one: "{0} Vrydae gelede"
-          :other: "{0} Vrydae gelede"
     :fri-short: 
       :relative: 
         -1: "verlede Vr."
-        0: "dié Vr."
+        0: "hierdie Vr."
         1: "vlg. Vr."
       :relative_time: 
         :future: 
@@ -179,9 +176,6 @@
         :future: 
           :one: "oor {0} Ma."
           :other: "oor {0} Ma."
-        :past: 
-          :one: "{0} Maandae gelede"
-          :other: "{0} Maandae gelede"
     :mon-short: 
       :relative: 
         -1: "verlede Ma."
@@ -209,6 +203,10 @@
           :other: "{0} maande gelede"
     :month-narrow: 
       :display_name: md.
+      :relative: 
+        -1: "verlede md."
+        0: "hierdie md."
+        1: "volgende md."
       :relative_time: 
         :future: 
           :one: "oor {0} md."
@@ -218,6 +216,10 @@
           :other: "{0} md. gelede"
     :month-short: 
       :display_name: md.
+      :relative: 
+        -1: "verlede md."
+        0: "hierdie md."
+        1: "volgende md."
       :relative_time: 
         :future: 
           :one: "oor {0} md."
@@ -271,20 +273,17 @@
     :sat-narrow: 
       :relative: 
         -1: "verlede Sa."
-        0: "dié Sa."
-        1: "vlg. Sa."
+        0: "hierdie Sa."
+        1: "volgende Sa."
       :relative_time: 
         :future: 
           :one: "oor {0} Sa."
           :other: "oor {0} Sa."
-        :past: 
-          :one: "{0} Saterdae gelede"
-          :other: "{0} Saterdae gelede"
     :sat-short: 
       :relative: 
         -1: "verlede Sa."
         0: "dié Sa."
-        1: "vlg. Sa."
+        1: "volgende Sa."
       :relative_time: 
         :future: 
           :one: "oor {0} Sa."
@@ -334,17 +333,10 @@
           :one: "{0} Sondag gelede"
           :other: "{0} Sondae gelede"
     :sun-narrow: 
-      :relative: 
-        -1: "verlede Son."
-        0: "dié So."
-        1: "vlg. So."
       :relative_time: 
         :future: 
           :one: "oor {0} So."
           :other: "oor {0} So."
-        :past: 
-          :one: "{0} Sondae gelede"
-          :other: "{0} Sondae gelede"
     :sun-short: 
       :relative: 
         -1: "verlede So."
@@ -378,9 +370,6 @@
         :future: 
           :one: "oor {0} Do."
           :other: "oor {0} Do."
-        :past: 
-          :one: "{0} Donderdae gelede"
-          :other: "{0} Donderdae gelede"
     :thu-short: 
       :relative: 
         -1: "verlede Do."
@@ -414,9 +403,6 @@
         :future: 
           :one: "oor {0} Di."
           :other: "oor {0} Di."
-        :past: 
-          :one: "{0} Dinsdae gelede"
-          :other: "{0} Dinsdae gelede"
     :tue-short: 
       :relative: 
         -1: "verlede Di."
@@ -450,9 +436,6 @@
         :future: 
           :one: "oor {0} Wo."
           :other: "oor {0} Wo."
-        :past: 
-          :one: "{0} Woensdae gelede"
-          :other: "{0} Woensdae gelede"
     :wed-short: 
       :relative: 
         -1: "verlede Wo."
@@ -480,6 +463,10 @@
           :other: "{0} weke gelede"
     :week-narrow: 
       :display_name: wk.
+      :relative: 
+        -1: "verlede w."
+        0: "hierdie w."
+        1: "volgende w."
       :relative_time: 
         :future: 
           :one: "oor {0} w."
@@ -489,6 +476,10 @@
           :other: "{0} w. gelede"
     :week-short: 
       :display_name: wk.
+      :relative: 
+        -1: "verlede w."
+        0: "hierdie w."
+        1: "volgende w."
       :relative_time: 
         :future: 
           :one: "oor {0} w."
@@ -529,6 +520,10 @@
           :other: "{0} jaar gelede"
     :year-narrow: 
       :display_name: j.
+      :relative: 
+        -1: "verlede j."
+        0: "hierdie j."
+        1: "volgende j."
       :relative_time: 
         :future: 
           :one: "oor {0} j."
@@ -538,6 +533,10 @@
           :other: "{0} j. gelede"
     :year-short: 
       :display_name: j.
+      :relative: 
+        -1: "verlede j."
+        0: "hierdie j."
+        1: "volgende j."
       :relative_time: 
         :future: 
           :one: "oor {0} j."

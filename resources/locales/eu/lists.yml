@@ -15,7 +15,10 @@
       :start: "{0}, {1}"
     :or-narrow: {}
     :or-short: {}
-    :standard-narrow: {}
+    :standard-narrow: 
+      ? !ruby/symbol "2"
+      : "{0}, {1}"
+      :end: "{0}, {1}"
     :standard-short: {}
     :unit: 
       ? !ruby/symbol "2"

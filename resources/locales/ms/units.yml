@@ -23,8 +23,6 @@
           :other: "{0} revolusi"
         :area-acre: 
           :other: "{0} ekar"
-        :area-dunam: 
-          :other: "{0} dunam"
         :area-hectare: 
           :other: "{0} hektar"
         :area-square-centimeter: 
@@ -47,8 +45,6 @@
           :other: "{0} miligram setiap desiliter"
         :concentr-millimole-per-liter: 
           :other: "{0} milimol setiap liter"
-        :concentr-mole: 
-          :other: "{0} mol"
         :concentr-part-per-million: 
           :other: "{0} bahagian setiap juta"
         :concentr-percent: 
@@ -91,6 +87,8 @@
           :other: "{0} abad"
         :duration-day: 
           :other: "{0} hari"
+        :duration-decade: 
+          :other: "{0} dekad"
         :duration-hour: 
           :other: "{0} jam"
         :duration-microsecond: 
@@ -133,6 +131,8 @@
           :other: "{0} kilojoule"
         :energy-kilowatt-hour: 
           :other: "{0} kilowatt jam"
+        :energy-therm-us: 
+          :other: "{0} terma US"
         :force-newton: 
           :other: "{0} newton"
         :force-pound-force: 
@@ -145,6 +145,20 @@
           :other: "{0} kilohertz"
         :frequency-megahertz: 
           :other: "{0} megahertz"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} bintik sesentimeter"
+        :graphics-dot-per-inch: 
+          :other: "{0} bintik seinci"
+        :graphics-em: 
+          :other: "{0} ems"
+        :graphics-megapixel: 
+          :other: "{0} megapiksel"
+        :graphics-pixel: 
+          :other: "{0} piksel"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} piksel sesentimeter"
+        :graphics-pixel-per-inch: 
+          :other: "{0} piksel seinci"
         :length-astronomical-unit: 
           :other: "{0} unit astronomi"
         :length-centimeter: 
@@ -215,7 +229,8 @@
           :other: "{0} paun"
         :mass-solar-mass: 
           :other: "{0} jisim suria"
-        :mass-stone: {}
+        :mass-stone: 
+          :other: "{0} st"
         :mass-ton: 
           :other: "{0} tan"
         :power-gigawatt: 
@@ -244,6 +259,8 @@
           :other: "{0} milibar"
         :pressure-millimeter-of-mercury: 
           :other: "{0} milimeter raksa"
+        :pressure-pascal: 
+          :other: "{0} Pascal"
         :pressure-pound-per-square-inch: 
           :other: "{0} paun seinci persegi"
         :speed-kilometer-per-hour: 
@@ -294,8 +311,6 @@
           :other: "{0} desiliter"
         :volume-fluid-ounce: 
           :other: "{0} auns cecair"
-        :volume-fluid-ounce-imperial: 
-          :other: "{0} fl oz Imp."
         :volume-gallon: 
           :other: "{0} gelen"
         :volume-gallon-imperial: 
@@ -329,10 +344,14 @@
           :other: "{0}″"
         :area-acre: 
           :other: "{0} ekar"
-        :area-dunam: 
-          :other: "{0} dunam"
+        :area-hectare: 
+          :other: "{0} ha"
         :area-square-foot: 
           :other: "{0} ka²"
+        :area-square-kilometer: 
+          :other: "{0} km²"
+        :area-square-meter: 
+          :other: "{0} m²"
         :area-square-mile: 
           :other: "{0} bt²"
         :concentr-percent: 
@@ -345,26 +364,34 @@
           :other: "{0} h"
         :duration-hour: 
           :other: "{0} j"
-        :duration-microsecond: {}
+        :duration-microsecond: 
+          :other: "{0} μs"
         :duration-millisecond: 
           :other: "{0} ms"
         :duration-minute: 
           :other: "{0} min"
         :duration-month: 
           :other: "{0} bln"
+        :duration-nanosecond: 
+          :other: "{0} ns"
         :duration-second: 
           :other: "{0} s"
         :duration-week: 
           :other: "{0} mgu"
         :duration-year: 
           :other: "{0} thn"
+        :length-astronomical-unit: 
+          :other: "{0} au"
         :length-centimeter: 
           :other: "{0} cm"
+        :length-decimeter: 
+          :other: "{0} dm"
         :length-fathom: 
           :other: "{0} fth"
         :length-foot: 
           :other: "{0}'"
-        :length-furlong: {}
+        :length-furlong: 
+          :other: "{0} fur"
         :length-inch: 
           :other: "{0}\""
         :length-kilometer: 
@@ -373,38 +400,68 @@
           :other: "{0} t. chya"
         :length-meter: 
           :other: "{0} m"
+        :length-micrometer: 
+          :other: "{0} µm"
         :length-mile: 
           :other: "{0} bt"
+        :length-mile-scandinavian: 
+          :other: "{0} smi"
         :length-millimeter: 
           :other: "{0} mm"
+        :length-nanometer: 
+          :other: "{0} nm"
         :length-nautical-mile: 
           :other: "{0} btn"
-        :length-parsec: {}
+        :length-parsec: 
+          :other: "{0} pc"
         :length-picometer: 
           :other: "{0} pm"
         :length-point: 
           :other: "{0} mt"
         :length-yard: 
           :other: "{0} ela"
-        :mass-carat: {}
+        :mass-carat: 
+          :other: "{0} CD"
         :mass-gram: 
           :other: "{0} g"
         :mass-kilogram: 
           :other: "{0} kg"
+        :mass-metric-ton: 
+          :other: "{0} t"
+        :mass-microgram: 
+          :other: "{0} µg"
+        :mass-milligram: 
+          :other: "{0} mg"
         :mass-ounce: 
           :other: "{0} auns"
+        :mass-ounce-troy: 
+          :other: "{0} oz t"
         :mass-pound: 
           :other: "{0} paun"
-        :mass-stone: {}
-        :mass-ton: {}
+        :mass-stone: 
+          :other: "{0} st"
+        :mass-ton: 
+          :other: "{0} tn"
+        :power-horsepower: 
+          :other: "{0} hp"
+        :power-kilowatt: 
+          :other: "{0} kW"
+        :power-watt: 
+          :other: "{0} W"
         :pressure-hectopascal: 
           :other: "{0} hPa"
         :pressure-inch-hg: 
           :other: "{0} inHg"
         :pressure-millibar: 
           :other: "{0} mb"
+        :pressure-millimeter-of-mercury: 
+          :other: "{0} mm Hg"
+        :pressure-pound-per-square-inch: 
+          :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :other: "{0} kmj"
+        :speed-knot: 
+          :other: "{0} kn"
         :speed-meter-per-second: 
           :other: "{0} m/s"
         :speed-mile-per-hour: 
@@ -413,6 +470,12 @@
           :other: "{0}°C"
         :temperature-fahrenheit: 
           :other: "{0}°F"
+        :temperature-generic: 
+          :other: "{0}°"
+        :temperature-kelvin: 
+          :other: "{0} K"
+        :volume-cubic-kilometer: 
+          :other: "{0} km³"
         :volume-cubic-mile: 
           :other: "{0} bt³"
         :volume-liter: 
@@ -503,6 +566,8 @@
         :duration-day: 
           :other: "{0} hari"
         :duration-day-person: {}
+        :duration-decade: 
+          :other: "{0} dkd"
         :duration-hour: 
           :other: "{0} j"
         :duration-microsecond: 
@@ -548,6 +613,8 @@
           :other: "{0} kJ"
         :energy-kilowatt-hour: 
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :other: "{0} terma US"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -560,6 +627,20 @@
           :other: "{0} kHz"
         :frequency-megahertz: 
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :other: "{0} dpi"
+        :graphics-em: 
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :other: "{0} MP"
+        :graphics-pixel: 
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :other: "{0} au"
         :length-centimeter: 
@@ -648,6 +729,8 @@
           :other: "{0} W"
         :pressure-atmosphere: 
           :other: "{0} atm"
+        :pressure-bar: 
+          :other: "{0} bar"
         :pressure-hectopascal: 
           :other: "{0} hPa"
         :pressure-inch-hg: 
@@ -660,6 +743,8 @@
           :other: "{0} mbar"
         :pressure-millimeter-of-mercury: 
           :other: "{0} mm Hg"
+        :pressure-pascal: 
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :other: "{0} psi"
         :speed-kilometer-per-hour: 

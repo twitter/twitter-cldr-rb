@@ -6,8 +6,8 @@
       - und-Kana-t-und-hira
     :direction: both
     :rules: 
-      - ":: [\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]] ;"
-      - ":: NFKC ();"
+      - ":: [[\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]]-[\\u309B \\u309C]];"
+      - ":: NFKC (NFC);"
       - "わ゙ <> ヷ;"
       - "ゐ゙ <> ヸ;"
       - "ゑ゙ <> ヹ;"
@@ -110,8 +110,8 @@
       - "う < $xu {ー};"
       - "え < $xe {ー};"
       - "お < $xo {ー};"
-      - ":: (NFKC) ;"
-      - ":: ([\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]]);"
+      - ":: NFC (NFKC) ;"
+      - ":: ([[\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]]-[\\u309B \\u309C]]);"
     :source: Hira
     :target: Kana
     :variant: ~

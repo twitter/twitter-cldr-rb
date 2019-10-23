@@ -139,42 +139,31 @@
               :other: "0 mille"
             ? !ruby/symbol "10000"
             : 
+              :one: "00 mille"
               :other: "00 mille"
             ? !ruby/symbol "100000"
             : 
+              :one: "000 mille"
               :other: "000 mille"
-            ? !ruby/symbol "1000000"
-            : 
-              :one: "0 million"
-              :other: "0 millions"
-            ? !ruby/symbol "10000000"
-            : 
-              :one: "00 million"
-              :other: "00 millions"
-            ? !ruby/symbol "100000000"
-            : 
-              :other: "000 millions"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0 k
-              :other: 0 k
+              :other: 0K
             ? !ruby/symbol "10000"
             : 
-              :other: 00 k
+              :other: 00K
             ? !ruby/symbol "100000"
             : 
-              :other: 000 k
+              :other: 000K
             ? !ruby/symbol "1000000"
             : 
-              :one: 0 M
-              :other: 0 M
+              :other: 0M
             ? !ruby/symbol "10000000"
             : 
-              :other: 00 M
+              :other: 00M
             ? !ruby/symbol "100000000"
             : 
-              :other: 000 M
+              :other: 000M
             ? !ruby/symbol "1000000000"
             : 
               :one: 0 G

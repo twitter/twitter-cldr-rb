@@ -8,8 +8,8 @@
     :unitLength: 
       :long: 
         :acceleration-g-force: 
-          :one: "{0} गु–बल"
-          :other: "{0} गु–बल"
+          :one: "{0} गुरुत्व–बल"
+          :other: "{0} गुरुत्व–बल"
         :acceleration-meter-per-second-squared: 
           :one: "{0} मीटर प्रति सेकंड वर्ग"
           :other: "{0} मीटर प्रति सेकंड वर्ग"
@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} दिन"
           :other: "{0} दिन"
+        :duration-decade: 
+          :one: "{0} दशक"
+          :other: "{0} दशकों"
         :duration-hour: 
           :one: "{0} घंटा"
           :other: "{0} घंटे"
@@ -196,6 +199,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} किलोवॉट घंटा"
           :other: "{0} किलोवॉट घंटे"
+        :energy-therm-us: 
+          :one: "{0} यूएस थेर्म"
+          :other: "{0} यूएस थेर्म"
         :force-newton: 
           :one: "{0} न्यूटन"
           :other: "{0} न्यूटन"
@@ -214,6 +220,25 @@
         :frequency-megahertz: 
           :one: "{0} मेगाहर्ट्ज़"
           :other: "{0} मेगाहर्ट्ज़"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} बिंदु प्रति सेंटीमीटर"
+          :other: "{0} बिंदु प्रति सेंटीमीटर"
+        :graphics-dot-per-inch: 
+          :one: "{0} बिंदु प्रति इंच"
+          :other: "{0} बिंदु प्रति इंच"
+        :graphics-em: {}
+        :graphics-megapixel: 
+          :one: "{0} मेगापिक्सेल"
+          :other: "{0} मेगापिक्सेल"
+        :graphics-pixel: 
+          :one: "{0} पिक्सेल"
+          :other: "{0} पिक्सेल"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} पिक्सेल प्रति सेंटीमीटर"
+          :other: "{0} पिक्सेल प्रति सेंटीमीटर"
+        :graphics-pixel-per-inch: 
+          :one: "{0} पिक्सेल प्रति इंच"
+          :other: "{0} पिक्सेल प्रति इंच"
         :length-astronomical-unit: 
           :one: "{0} खगोलीय इकाई"
           :other: "{0} खगोलीय इकाईयां"
@@ -337,6 +362,9 @@
         :pressure-atmosphere: 
           :one: "{0} वायुमंडलीय दबाव"
           :other: "{0} वायुमंडलीय दबाव"
+        :pressure-bar: 
+          :one: "{0} बार"
+          :other: "{0} बार"
         :pressure-hectopascal: 
           :one: "{0} हैक्टोपास्कल"
           :other: "{0} हैक्टोपास्कल"
@@ -355,6 +383,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} मर्क्यूरी मिलीमीटर"
           :other: "{0} मर्क्यूरी मिलीमीटर"
+        :pressure-pascal: 
+          :one: "{0} पास्कल"
+          :other: "{0} पास्कल"
         :pressure-pound-per-square-inch: 
           :one: "{0} पाउंड प्रति वर्ग इंच"
           :other: "{0} पाउंड प्रति वर्ग इंच"
@@ -376,6 +407,9 @@
         :temperature-fahrenheit: 
           :one: "{0} डिग्री फ़ेरनहाइट"
           :other: "{0} डिग्री फ़ेरनहाइट"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} केल्विन"
           :other: "{0} केल्विन"
@@ -494,6 +528,9 @@
         :area-square-mile: 
           :one: "{0}वर्ग मील"
           :other: "{0}वर्ग मील"
+        :concentr-percent: 
+          :one: "{0}%"
+          :other: "{0}%"
         :consumption-liter-per-100kilometers: 
           :one: "{0}ली/100कि"
           :other: "{0}ली/100कि"
@@ -658,6 +695,7 @@
           :one: "{0} व॰ ग॰"
           :other: "{0} व॰ ग॰"
         :concentr-karat: 
+          :one: "{0} kt"
           :other: "{0} kt"
         :concentr-milligram-per-deciliter: 
           :one: "{0} मि॰ग्रा॰/डे॰ली॰"
@@ -669,13 +707,15 @@
           :one: "{0} मोल"
           :other: "{0} मोल"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :concentr-percent: 
+          :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
+          :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} ली॰/100 कि॰मी॰"
@@ -696,22 +736,31 @@
           :one: "{0} बाइट"
           :other: "{0} बाइट"
         :digital-gigabit: 
+          :one: "{0} Gb"
           :other: "{0} Gb"
         :digital-gigabyte: 
+          :one: "{0} GB"
           :other: "{0} GB"
         :digital-kilobit: 
+          :one: "{0} kb"
           :other: "{0} kb"
         :digital-kilobyte: 
+          :one: "{0} kB"
           :other: "{0} kB"
         :digital-megabit: 
+          :one: "{0} Mb"
           :other: "{0} Mb"
         :digital-megabyte: 
+          :one: "{0} MB"
           :other: "{0} MB"
         :digital-petabyte: 
+          :one: "{0} PB"
           :other: "{0} PB"
         :digital-terabit: 
+          :one: "{0} Tb"
           :other: "{0} Tb"
         :digital-terabyte: 
+          :one: "{0} TB"
           :other: "{0} TB"
         :duration-century: 
           :one: "{0} शता"
@@ -720,6 +769,9 @@
           :one: "{0} दिन"
           :other: "{0} दिन"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} दश."
+          :other: "{0} दश."
         :duration-hour: 
           :one: "{0} घं॰"
           :other: "{0} घं॰"
@@ -757,41 +809,67 @@
           :one: "{0} मि॰ ए॰"
           :other: "{0} मि॰ ए॰"
         :electric-ohm: 
+          :one: "{0} Ω"
           :other: "{0} Ω"
         :electric-volt: 
+          :one: "{0} V"
           :other: "{0} V"
         :energy-british-thermal-unit: 
-          :one: "{0} Btu"
           :other: "{0} Btu"
         :energy-calorie: 
+          :one: "{0} cal"
           :other: "{0} cal"
         :energy-electronvolt: 
-          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
+          :one: "{0} Cal"
           :other: "{0} Cal"
         :energy-joule: 
+          :one: "{0} J"
           :other: "{0} J"
         :energy-kilocalorie: 
+          :one: "{0} kcal"
           :other: "{0} kcal"
         :energy-kilojoule: 
+          :one: "{0} kJ"
           :other: "{0} kJ"
         :energy-kilowatt-hour: 
+          :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "{0} यूएस थेर्म"
+          :other: "{0} यूएस थेर्म"
         :force-newton: 
           :one: "{0} न्यू॰"
           :other: "{0} न्यू॰"
         :force-pound-force: 
-          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
+          :one: "{0} GHz"
           :other: "{0} GHz"
         :frequency-hertz: 
+          :one: "{0} Hz"
           :other: "{0} Hz"
         :frequency-kilohertz: 
+          :one: "{0} kHz"
           :other: "{0} kHz"
         :frequency-megahertz: 
+          :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :other: "{0} dpi"
+        :graphics-em: 
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :other: "{0} MP"
+        :graphics-pixel: 
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :one: "{0} खगो॰ इका॰"
           :other: "{0} खगो॰ इका॰"
@@ -827,6 +905,7 @@
           :one: "{0} मील"
           :other: "{0} मील"
         :length-mile-scandinavian: 
+          :one: "{0} smi"
           :other: "{0} smi"
         :length-millimeter: 
           :one: "{0} मि॰मी॰"
@@ -847,15 +926,14 @@
           :one: "{0} pt"
           :other: "{0} pt"
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} यार्ड"
           :other: "{0} यार्ड"
         :light-lux: 
+          :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} कै॰"
@@ -864,7 +942,6 @@
           :one: "{0} डाल्टन"
           :other: "{0} डाल्टन"
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "{0} ग्रा॰"
@@ -891,7 +968,6 @@
           :one: "{0} पौंड"
           :other: "{0} पौंड"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -899,22 +975,34 @@
           :one: "{0} टन"
           :other: "{0} टन"
         :power-gigawatt: 
+          :one: "{0} GW"
           :other: "{0} GW"
         :power-horsepower: 
+          :one: "{0} hp"
           :other: "{0} hp"
         :power-kilowatt: 
+          :one: "{0} kW"
           :other: "{0} kW"
         :power-megawatt: 
+          :one: "{0} MW"
           :other: "{0} MW"
         :power-milliwatt: 
+          :one: "{0} mW"
           :other: "{0} mW"
         :power-watt: 
+          :one: "{0} W"
           :other: "{0} W"
         :pressure-atmosphere: 
+          :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} बार"
+          :other: "{0} बार"
         :pressure-hectopascal: 
+          :one: "{0} hPa"
           :other: "{0} hPa"
         :pressure-inch-hg: 
+          :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
           :one: "{0} किपा॰"
@@ -923,10 +1011,16 @@
           :one: "{0} मेपा॰"
           :other: "{0} मेपा॰"
         :pressure-millibar: 
+          :one: "{0} mbar"
           :other: "{0} mbar"
         :pressure-millimeter-of-mercury: 
+          :one: "{0} mm Hg"
           :other: "{0} mm Hg"
+        :pressure-pascal: 
+          :one: "{0} पा॰"
+          :other: "{0} पा॰"
         :pressure-pound-per-square-inch: 
+          :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :one: "{0} कि॰मी॰/घं॰"
@@ -947,14 +1041,15 @@
           :one: "{0}°फ़ेरन"
           :other: "{0}°फ़ेरन"
         :temperature-generic: 
+          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
+          :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
           :one: "{0} न्यू॰मी॰"
           :other: "{0} न्यू॰मी॰"
         :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} ए॰फ़ी॰"
@@ -1001,7 +1096,6 @@
           :one: "{0} फ़्लूइड आउंस"
           :other: "{0} फ़्लूइड आउंस"
         :volume-fluid-ounce-imperial: 
-          :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "{0} गैलन"

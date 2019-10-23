@@ -27,7 +27,7 @@
       :relative_time: 
         :future: 
           :one: "+{0} día"
-          :other: "+{0} días"
+          :other: "en {0} días"
         :past: 
           :one: "hace {0} día"
           :other: "hace {0} días"
@@ -144,11 +144,11 @@
       :display_name: min
       :relative_time: 
         :future: 
-          :one: "+{0} min"
-          :other: "+{0} min"
+          :one: "en {0} min"
+          :other: "en {0} min"
         :past: 
-          :one: "-{0} min"
-          :other: "-{0} min"
+          :one: "hace {0} min"
+          :other: "hace {0} min"
     :minute-short: 
       :display_name: min
       :relative_time: 
@@ -241,7 +241,7 @@
         1: "el próximo trimestre"
       :relative_time: 
         :future: 
-          :one: "dentro de {0} trimetre"
+          :one: "en {0} trimestre"
           :other: "dentro de {0} trimetres"
         :past: 
           :one: "hace {0} trimestre"
@@ -250,8 +250,8 @@
       :display_name: trim.
       :relative_time: 
         :future: 
-          :one: "+{0} T"
-          :other: "+{0} T"
+          :one: "en {0} trim."
+          :other: "en {0} trim."
         :past: 
           :one: "-{0} T"
           :other: "-{0} T"
@@ -488,6 +488,10 @@
           :other: "hace {0} semanas"
     :week-narrow: 
       :display_name: sem.
+      :relative: 
+        -1: "sem. pas."
+        0: "esta sem."
+        1: "próx. sem."
       :relative_time: 
         :future: 
           :one: "dentro de {0} sem."
@@ -497,6 +501,10 @@
           :other: "hace {0} sem."
     :week-short: 
       :display_name: sem.
+      :relative: 
+        -1: "sem. pas."
+        0: "esta sem."
+        1: "próx. sem."
       :relative_time: 
         :future: 
           :one: "en {0} sem."

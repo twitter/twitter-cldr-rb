@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} दिवस"
           :other: "{0} दिवस"
+        :duration-decade: 
+          :one: "{0} दशक"
+          :other: "{0} दशके"
         :duration-hour: 
           :one: "{0} तास"
           :other: "{0} तास"
@@ -214,6 +217,27 @@
         :frequency-megahertz: 
           :one: "{0} मेगाहर्ट्झ"
           :other: "{0} मेगाहर्ट्झ"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} प्रति सेंटीमीटर बिंदू"
+          :other: "{0} प्रति सेंटीमीटर बिंदू"
+        :graphics-dot-per-inch: 
+          :one: "{0} प्रति इंच बिंदू"
+          :other: "{0} प्रति इंच बिंदू"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} ems"
+        :graphics-megapixel: 
+          :one: "{0} मेगापिक्सेल"
+          :other: "{0} मेगापिक्सेल्स"
+        :graphics-pixel: 
+          :one: "{0} पिक्सेल"
+          :other: "{0} पिक्सेल्स"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} पिक्सेल प्रति सेंटीमीटर"
+          :other: "{0} पिक्सेल्स प्रति सेंटीमीटर"
+        :graphics-pixel-per-inch: 
+          :one: "{0} पिक्सेल प्रति इंच"
+          :other: "{0} पिक्सेल्स प्रति इंच"
         :length-astronomical-unit: 
           :one: "{0} खगोलीय एकक"
           :other: "{0} खगोलीय एकके"
@@ -518,6 +542,9 @@
         :duration-hour: 
           :one: "{0}ता"
           :other: "{0}ता"
+        :duration-microsecond: 
+          :one: "{0} μs"
+          :other: "{0} μs"
         :duration-millisecond: 
           :one: "{0} मिलिसे"
           :other: "{0} मिलिसे"
@@ -542,7 +569,9 @@
         :length-centimeter: 
           :one: "{0}सेंमी"
           :other: "{0}सेंमी"
-        :length-decimeter: {}
+        :length-decimeter: 
+          :one: "{0} dm"
+          :other: "{0} dm"
         :length-foot: 
           :one: "{0}'"
           :other: "{0}'"
@@ -558,17 +587,24 @@
         :length-meter: 
           :one: "{0}मी"
           :other: "{0}मी"
-        :length-micrometer: {}
+        :length-micrometer: 
+          :one: "{0} µm"
+          :other: "{0} µm"
         :length-mile: 
           :one: "{0}मैल"
           :other: "{0}मैल"
+        :length-mile-scandinavian: 
+          :one: "{0} smi"
+          :other: "{0} smi"
         :length-millimeter: 
           :one: "{0}मिमी"
           :other: "{0}मिमी"
         :length-nanometer: 
           :one: "{0} नॅमी"
           :other: "{0} नॅमी"
-        :length-parsec: {}
+        :length-parsec: 
+          :one: "{0} pc"
+          :other: "{0} pc"
         :length-picometer: 
           :one: "{0}पिमी"
           :other: "{0}पिमी"
@@ -635,7 +671,12 @@
         :temperature-fahrenheit: 
           :one: "{0}°फॅ"
           :other: "{0}°फॅ"
-        :temperature-kelvin: {}
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :temperature-kelvin: 
+          :one: "{0} K"
+          :other: "{0} K"
         :volume-cubic-kilometer: 
           :one: "{0}किमी³"
           :other: "{0}किमी³"
@@ -719,7 +760,6 @@
           :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} ली/100किमी"
@@ -773,6 +813,9 @@
           :one: "{0} दिवस"
           :other: "{0} दिवस"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} द"
+          :other: "{0} द"
         :duration-hour: 
           :one: "{0} ता"
           :other: "{0} ता"
@@ -822,7 +865,6 @@
           :one: "{0} cal"
           :other: "{0} cal"
         :energy-electronvolt: 
-          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} Cal"
@@ -839,11 +881,11 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :other: "{0} US therm"
         :force-newton: 
-          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
-          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} GHz"
@@ -857,6 +899,26 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} प्र सें बिं"
+          :other: "{0} प्र सें बिं"
+        :graphics-dot-per-inch: 
+          :one: "{0} प्र इं बिं"
+          :other: "{0} प्र इं बिं"
+        :graphics-em: 
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :one: "{0} मे पि"
+          :other: "{0} मे पि"
+        :graphics-pixel: 
+          :one: "{0} पि"
+          :other: "{0} पि"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} पि प्र सेंमी"
+          :other: "{0} पि प्र सेंमी"
+        :graphics-pixel-per-inch: 
+          :one: "{0} पि प्र इं"
+          :other: "{0} पि प्र इं"
         :length-astronomical-unit: 
           :one: "{0} au"
           :other: "{0} au"
@@ -913,7 +975,6 @@
           :one: "{0} बिंदु"
           :other: "{0} बिंदु"
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} यार्ड"
@@ -922,7 +983,6 @@
           :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} CD"
@@ -931,7 +991,6 @@
           :one: "{0} डाल्टन"
           :other: "{0} डाल्टन"
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "{0} ग्रॅ"
@@ -958,7 +1017,6 @@
           :one: "{0} पाउंड"
           :other: "{0} पाउंड"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :one: "{0} स्टोन"
@@ -987,6 +1045,8 @@
         :pressure-atmosphere: 
           :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :other: "{0} bar"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -994,10 +1054,8 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
-          :one: "{0} kPa"
           :other: "{0} kPa"
         :pressure-megapascal: 
-          :one: "{0} MPa"
           :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
@@ -1005,6 +1063,8 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
+        :pressure-pascal: 
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1033,16 +1093,13 @@
           :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
-          :one: "{0} N⋅m"
           :other: "{0} N⋅m"
         :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} ac ft"
           :other: "{0} ac ft"
         :volume-barrel: 
-          :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
           :other: "{0} bu"
@@ -1083,7 +1140,6 @@
           :one: "{0} fl oz"
           :other: "{0} fl oz"
         :volume-fluid-ounce-imperial: 
-          :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "{0} gal"

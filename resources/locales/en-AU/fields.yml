@@ -17,7 +17,11 @@
     :day-narrow: 
       :relative_time: 
         :future: 
+          :one: "in {0} day"
           :other: "in {0} days"
+        :past: 
+          :one: "{0} day ago"
+          :other: "{0} days ago"
     :day-short: 
       :display_name: day
       :relative_time: 
@@ -188,6 +192,10 @@
           :other: "{0} months ago"
     :month-narrow: 
       :display_name: mo.
+      :relative: 
+        -1: "last mo"
+        0: "this mo"
+        1: "next mo"
       :relative_time: 
         :future: 
           :one: "in {0} mo."
@@ -198,9 +206,9 @@
     :month-short: 
       :display_name: mo.
       :relative: 
-        -1: "last mo."
-        0: "this mo."
-        1: "next mo."
+        -1: "last mo"
+        0: "this mo"
+        1: "next mo"
       :relative_time: 
         :future: 
           :one: "in {0} mo."
@@ -469,6 +477,10 @@
           :other: "{0} weeks ago"
     :week-narrow: 
       :display_name: wk
+      :relative: 
+        -1: "last wk"
+        0: "this wk"
+        1: "next wk"
       :relative_time: 
         :future: 
           :one: "in {0} wk"
@@ -479,9 +491,9 @@
     :week-short: 
       :display_name: wk
       :relative: 
-        -1: "last wk."
-        0: "this wk."
-        1: "next wk."
+        -1: "last wk"
+        0: "this wk"
+        1: "next wk"
       :relative_time: 
         :future: 
           :one: "in {0} wk"
@@ -521,6 +533,10 @@
           :one: "{0} year ago"
           :other: "{0} years ago"
     :year-narrow: 
+      :relative: 
+        -1: "last yr"
+        0: "this yr"
+        1: "next yr"
       :relative_time: 
         :future: 
           :one: "in {0} yr"
@@ -531,9 +547,9 @@
     :year-short: 
       :display_name: yr
       :relative: 
-        -1: "last yr."
-        0: "this yr."
-        1: "next yr."
+        -1: "last yr"
+        0: "this yr"
+        1: "next yr"
       :relative_time: 
         :future: 
           :one: "in {0} yr"

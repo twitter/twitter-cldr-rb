@@ -45,7 +45,7 @@
           :other: "{0} دنوں میں"
         :past: 
           :one: "{0} دن پہلے"
-          :other: "{0} دنوں پہلے"
+          :other: "{0} دن پہلے"
     :dayOfYear: 
       :display_name: "یوم سال"
     :dayOfYear-narrow: 
@@ -197,8 +197,8 @@
     :month: 
       :display_name: مہینہ
       :relative: 
-        -1: "پچھلا مہینہ"
-        0: "اس مہینہ"
+        -1: "گزشتہ ماہ"
+        0: "اس ماہ"
         1: "اگلا مہینہ"
       :relative_time: 
         :future: 
@@ -209,6 +209,10 @@
           :other: "{0} مہینے پہلے"
     :month-narrow: 
       :display_name: ماہ
+      :relative: 
+        -1: "گزشتہ ماہ"
+        0: "اس ماہ"
+        1: "اگلے ماہ"
       :relative_time: 
         :future: 
           :one: "{0} ماہ میں"
@@ -472,9 +476,9 @@
     :week: 
       :display_name: ہفتہ
       :relative: 
-        -1: "پچھلے ہفتہ"
+        -1: "گزشتہ ہفتے"
         0: "اس ہفتہ"
-        1: "اگلے ہفتہ"
+        1: "اگلے ہفتے"
       :relative_time: 
         :future: 
           :one: "{0} ہفتہ میں"

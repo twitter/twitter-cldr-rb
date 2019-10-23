@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} நாள்"
           :other: "{0} நாட்கள்"
+        :duration-decade: 
+          :one: "{0} தசாப்தம்"
+          :other: "{0} தசாப்தங்கள்"
         :duration-hour: 
           :one: "{0} மணிநேரம்"
           :other: "{0} மணிநேரங்கள்"
@@ -196,6 +199,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} கிலோவாட் மணிநேரம்"
           :other: "{0} கிலோவாட் மணிநேரம்"
+        :energy-therm-us: 
+          :one: "{0} அமெரிக்க வெப்ப அலகு"
+          :other: "{0} அமெரிக்க வெப்ப அலகுகள்"
         :force-newton: 
           :one: "{0} நியூட்டன்"
           :other: "{0} நியூட்டன்ஸ்"
@@ -214,6 +220,27 @@
         :frequency-megahertz: 
           :one: "{0} மெகாஹெர்ட்ஸ்"
           :other: "{0} மெகாஹெர்ட்ஸ்"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} புள்ளி / சென்டிமீட்டர்"
+          :other: "{0} புள்ளிகள் / சென்டிமீட்டர்"
+        :graphics-dot-per-inch: 
+          :one: "{0} புள்ளி / அங்குலம்"
+          :other: "{0} புள்ளிகள் / அங்குலம்"
+        :graphics-em: 
+          :one: "{0} எம்"
+          :other: "{0} எம்கள்"
+        :graphics-megapixel: 
+          :one: "{0} மெகாபிக்சல்"
+          :other: "{0} மெகாபிக்சல்கள்"
+        :graphics-pixel: 
+          :one: "{0} பிக்சல்"
+          :other: "{0} பிக்சல்கள்"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} பிக்சல்/ சென்டிமீட்டர்"
+          :other: "{0} பிக்சல்கள்/ சென்டிமீட்டர்"
+        :graphics-pixel-per-inch: 
+          :one: "{0} பிக்சல்/ அங்குலம்"
+          :other: "{0} பிக்சல்கள்/ அங்குலம்"
         :length-astronomical-unit: 
           :one: "{0} வானியல் அலகு"
           :other: "{0} வானியல் அலகுகள்"
@@ -340,6 +367,9 @@
         :pressure-atmosphere: 
           :one: "{0} வளிஅழுத்தம்"
           :other: "{0} வளிஅழுத்தங்கள்"
+        :pressure-bar: 
+          :one: "{0} பார்"
+          :other: "{0} பார்கள்"
         :pressure-hectopascal: 
           :one: "{0} ஹெக்டோபாஸ்கல்"
           :other: "{0} ஹெக்டோபாஸ்கல்"
@@ -358,6 +388,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} பாதரச மில்லிமீட்டர்"
           :other: "{0} பாதரச மில்லிமீட்டர்கள்"
+        :pressure-pascal: 
+          :one: "{0} பாஸ்கல்"
+          :other: "{0} பாஸ்கல்கள்"
         :pressure-pound-per-square-inch: 
           :one: "{0} பவுண்டு/சதுர அங்குலம்"
           :other: "{0} பவுண்டுகள்/சதுர அங்குலம்"
@@ -379,6 +412,9 @@
         :temperature-fahrenheit: 
           :one: "{0} டிகிரி ஃபாரன்ஹீட்"
           :other: "{0} டிகிரி ஃபாரன்ஹீட்"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} கெல்வின்"
           :other: "{0} கெல்வின்"
@@ -497,6 +533,9 @@
         :area-square-mile: 
           :one: "{0} ச. மை."
           :other: "{0} ச. மை."
+        :concentr-percent: 
+          :one: "{0}%"
+          :other: "{0}%"
         :consumption-liter-per-100kilometers: 
           :one: "{0}லி./100கி.மீ"
           :other: "{0}லி./100கி.மீ"
@@ -596,6 +635,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} பாத. மி.மீ."
           :other: "{0} பாத. மி.மீ."
+        :pressure-pound-per-square-inch: 
+          :one: "{0} psi"
+          :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :one: "{0}கி.மீ./ம."
           :other: "{0}கி.மீ./ம."
@@ -611,6 +653,9 @@
         :temperature-fahrenheit: 
           :one: "{0}°ஃபா."
           :other: "{0}°ஃபா."
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} கெல்."
           :other: "{0} கெல்."
@@ -685,17 +730,18 @@
           :one: "{0} மி.மோ./லி."
           :other: "{0} மி.மோ./லி."
         :concentr-mole: 
-          :one: "{0} mol"
-          :other: "{0} mol"
+          :one: "{0} மோல்"
+          :other: "{0} மோல்"
         :concentr-part-per-million: 
           :one: "{0} ப./மி."
           :other: "{0} ப./மி."
         :concentr-percent: 
+          :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
+          :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} லி./100கி.மீ"
@@ -716,22 +762,31 @@
           :one: "{0} பை."
           :other: "{0} பை."
         :digital-gigabit: 
+          :one: "{0} Gb"
           :other: "{0} Gb"
         :digital-gigabyte: 
+          :one: "{0} GB"
           :other: "{0} GB"
         :digital-kilobit: 
+          :one: "{0} kb"
           :other: "{0} kb"
         :digital-kilobyte: 
+          :one: "{0} kB"
           :other: "{0} kB"
         :digital-megabit: 
+          :one: "{0} Mb"
           :other: "{0} Mb"
         :digital-megabyte: 
+          :one: "{0} MB"
           :other: "{0} MB"
         :digital-petabyte: 
+          :one: "{0} PB"
           :other: "{0} PB"
         :digital-terabit: 
+          :one: "{0} Tb"
           :other: "{0} Tb"
         :digital-terabyte: 
+          :one: "{0} TB"
           :other: "{0} TB"
         :duration-century: 
           :one: "{0} நூ."
@@ -740,6 +795,9 @@
           :one: "{0} நாள்"
           :other: "{0} நாட்கள்"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} தசாப்தம்"
+          :other: "{0} தசாப்தம்"
         :duration-hour: 
           :one: "{0} மணிநேரம்"
           :other: "{0} மணிநேரம்"
@@ -777,6 +835,7 @@
           :one: "{0} மி.ஆ."
           :other: "{0} மி.ஆ."
         :electric-ohm: 
+          :one: "{0} Ω"
           :other: "{0} Ω"
         :electric-volt: 
           :one: "{0} வோ."
@@ -788,7 +847,6 @@
           :one: "{0} கலோ."
           :other: "{0} கலோ."
         :energy-electronvolt: 
-          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} கலோ."
@@ -805,12 +863,15 @@
         :energy-kilowatt-hour: 
           :one: "{0} கி.வா.ம.நே."
           :other: "{0} கி.வா.ம.நே."
+        :energy-therm-us: 
+          :one: "{0} யூஎஸ் தெர்ம்"
+          :other: "{0} யூஎஸ் தெர்ம்"
         :force-newton: 
-          :one: "{0} N"
-          :other: "{0} N"
+          :one: "{0} நியூ"
+          :other: "{0} நியூ"
         :force-pound-force: 
-          :one: "{0} lbf"
-          :other: "{0} lbf"
+          :one: "{0} ப.வி"
+          :other: "{0} ப.வி"
         :frequency-gigahertz: 
           :one: "{0} ஜி.ஹெஸ்."
           :other: "{0} ஜி.ஹெஸ்."
@@ -823,6 +884,27 @@
         :frequency-megahertz: 
           :one: "{0} மெ.ஹெஸ்."
           :other: "{0} மெ.ஹெஸ்."
+        :graphics-dot-per-centimeter: 
+          :one: "{0} பு / செ.மீ"
+          :other: "{0} பு / செ.மீ"
+        :graphics-dot-per-inch: 
+          :one: "{0} பு / அங்."
+          :other: "{0} பு / அங்."
+        :graphics-em: 
+          :one: "{0} எம்"
+          :other: "{0} எம்"
+        :graphics-megapixel: 
+          :one: "{0} எம்.பி"
+          :other: "{0} எம்.பி"
+        :graphics-pixel: 
+          :one: "{0} பிக்"
+          :other: "{0} பிக்"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} பிக். / செ.மீ"
+          :other: "{0} பிக். / செ.மீ"
+        :graphics-pixel-per-inch: 
+          :one: "{0} பிக். / அங்."
+          :other: "{0} பிக். / அங்."
         :length-astronomical-unit: 
           :one: "{0} வா.அ."
           :other: "{0} வா.அ."
@@ -879,7 +961,6 @@
           :one: "{0} அ.பு."
           :other: "{0} அ.பு."
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} கெஜ."
@@ -888,16 +969,13 @@
           :one: "{0} லக்."
           :other: "{0} லக்."
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} கேர."
           :other: "{0} கேர."
         :mass-dalton: 
-          :one: "{0} Da"
           :other: "{0} Da"
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "{0} கி."
@@ -924,7 +1002,6 @@
           :one: "{0} பவு."
           :other: "{0} பவு."
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :one: "{0} ஸ்டோ."
@@ -951,7 +1028,11 @@
           :one: "{0} வா."
           :other: "{0} வா."
         :pressure-atmosphere: 
+          :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} பார்"
+          :other: "{0} பார்கள்"
         :pressure-hectopascal: 
           :one: "{0} ஹெ.பாஸ்."
           :other: "{0} ஹெ.பாஸ்."
@@ -970,7 +1051,11 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} பாத. மி.மீ."
           :other: "{0} பாத. மி.மீ."
+        :pressure-pascal: 
+          :one: "{0} பா."
+          :other: "{0} பா."
         :pressure-pound-per-square-inch: 
+          :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :one: "{0} கி.மீ./ம.நே."
@@ -991,21 +1076,21 @@
           :one: "{0}°ஃபா."
           :other: "{0}°ஃபா."
         :temperature-generic: 
+          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} கெல்."
           :other: "{0} கெல்."
         :torque-newton-meter: 
-          :one: "{0} N⋅m"
-          :other: "{0} N⋅m"
+          :one: "{0} நியூ.மீ"
+          :other: "{0} நியூ.மீ"
         :torque-pound-foot: 
-          :one: "{0} lbf⋅ft"
-          :other: "{0} lbf⋅ft"
+          :one: "{0} ப.அடி"
+          :other: "{0} ப.அடி"
         :volume-acre-foot: 
           :one: "{0} ஏக். அடி"
           :other: "{0} ஏக். அடி"
         :volume-barrel: 
-          :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
           :other: "{0} bu"
@@ -1046,7 +1131,6 @@
           :one: "{0} தி. அவு."
           :other: "{0} தி. அவு."
         :volume-fluid-ounce-imperial: 
-          :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "{0} கேல."

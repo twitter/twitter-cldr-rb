@@ -21,9 +21,12 @@
           :one: "{0} dzień temu"
           :other: "{0} dnia temu"
     :day-narrow: 
-      :display_name: dzień
+      :display_name: d.
       :relative: 
+        -1: wcz.
         -2: przedwczoraj
+        0: dziś
+        1: jutro
         2: pojutrze
       :relative_time: 
         :future: 
@@ -37,7 +40,7 @@
           :one: "{0} dzień temu"
           :other: "{0} dnia temu"
     :day-short: 
-      :display_name: dzień
+      :display_name: dz.
       :relative: 
         -2: przedwczoraj
         2: pojutrze
@@ -268,9 +271,9 @@
     :month-narrow: 
       :display_name: mc
       :relative: 
-        -1: "w zeszłym miesiącu"
-        0: "w tym miesiącu"
-        1: "w przyszłym miesiącu"
+        -1: "w zeszłym mies."
+        0: "w tym mies."
+        1: "w przyszłym mies."
       :relative_time: 
         :future: 
           :few: "za {0} mies."
@@ -285,9 +288,9 @@
     :month-short: 
       :display_name: mies.
       :relative: 
-        -1: "w zeszłym miesiącu"
-        0: "w tym miesiącu"
-        1: "w przyszłym miesiącu"
+        -1: "w zeszłym mies."
+        0: "w tym mies."
+        1: "w przyszłym mies."
       :relative_time: 
         :future: 
           :few: "za {0} mies."
@@ -651,9 +654,9 @@
     :week-narrow: 
       :display_name: tydz.
       :relative: 
-        -1: "w zeszłym tygodniu"
-        0: "w tym tygodniu"
-        1: "w przyszłym tygodniu"
+        -1: "w zeszłym tyg."
+        0: "w tym tyg."
+        1: "w przyszłym tyg."
       :relative_time: 
         :future: 
           :few: "za {0} tyg."
@@ -668,9 +671,9 @@
     :week-short: 
       :display_name: tydz.
       :relative: 
-        -1: "w zeszłym tygodniu"
-        0: "w tym tygodniu"
-        1: "w przyszłym tygodniu"
+        -1: "w zeszłym tyg."
+        0: "w tym tyg."
+        1: "w przyszłym tyg."
       :relative_time: 
         :future: 
           :few: "za {0} tyg."
@@ -691,13 +694,13 @@
     :weekday: 
       :display_name: "dzień tygodnia"
     :weekday-narrow: 
-      :display_name: "dzień tyg."
+      :display_name: "dz. tyg."
     :weekday-short: 
       :display_name: "dzień tyg."
     :weekdayOfMonth: 
       :display_name: "dzień miesiąca"
     :weekdayOfMonth-narrow: 
-      :display_name: "dzień mies."
+      :display_name: "dz. mies."
     :weekdayOfMonth-short: 
       :display_name: "dzień mies."
     :year: 

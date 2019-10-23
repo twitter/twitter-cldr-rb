@@ -488,6 +488,10 @@
           :other: "hace {0} semanas"
     :week-narrow: 
       :display_name: sem.
+      :relative: 
+        -1: "sem. ant."
+        0: "esta sem."
+        1: "próx. sem."
       :relative_time: 
         :future: 
           :one: "dentro de {0} sem."
@@ -497,6 +501,10 @@
           :other: "hace {0} sem."
     :week-short: 
       :display_name: sem.
+      :relative: 
+        -1: "sem. ant."
+        0: "esta sem."
+        1: "próx. sem."
       :relative_time: 
         :future: 
           :one: "dentro de {0} sem."

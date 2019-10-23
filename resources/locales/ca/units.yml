@@ -32,8 +32,8 @@
           :one: "{0} acre"
           :other: "{0} acres"
         :area-dunam: 
-          :one: "{0} dúnam"
-          :other: "{0} dúnams"
+          :one: "{0} dunam"
+          :other: "{0} dunams"
         :area-hectare: 
           :one: "{0} hectàrea"
           :other: "{0} hectàrees"
@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} dia"
           :other: "{0} dies"
+        :duration-decade: 
+          :one: "{0} dècada"
+          :other: "{0} dècades"
         :duration-hour: 
           :one: "{0} hora"
           :other: "{0} hores"
@@ -196,6 +199,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} quilowatt hora"
           :other: "{0} quilowatts hora"
+        :energy-therm-us: 
+          :one: "{0} unitat tèrmica americana"
+          :other: "{0} unitats tèrmiques americanes"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -214,6 +220,25 @@
         :frequency-megahertz: 
           :one: "{0} megahertz"
           :other: "{0} megahertzs"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} punt per centímetre"
+          :other: "{0} punts per centímetre"
+        :graphics-dot-per-inch: 
+          :one: "{0} punt per polzada"
+          :other: "{0} punts per polzada"
+        :graphics-em: {}
+        :graphics-megapixel: 
+          :one: "{0} megapíxel"
+          :other: "{0} megapíxels"
+        :graphics-pixel: 
+          :one: "{0} píxel"
+          :other: "{0} píxels"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} píxel per centímetre"
+          :other: "{0} píxels per centímetre"
+        :graphics-pixel-per-inch: 
+          :one: "{0} píxel per polzada"
+          :other: "{0} píxels per polzada"
         :length-astronomical-unit: 
           :one: "{0} unitat astronòmica"
           :other: "{0} unitats astronòmiques"
@@ -221,7 +246,7 @@
           :one: "{0} centímetre"
           :other: "{0} centímetres"
         :length-decimeter: 
-          :one: "{0} decímetres"
+          :one: "{0} decímetre"
           :other: "{0} decímetres"
         :length-foot: 
           :one: "{0} peu"
@@ -337,6 +362,9 @@
         :pressure-atmosphere: 
           :one: "{0} atmosfera"
           :other: "{0} atmosferes"
+        :pressure-bar: 
+          :one: "{0} bar"
+          :other: "{0} bars"
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascals"
@@ -355,6 +383,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "mil·límetre de mercuri"
           :other: "{0} mil·límetres de mercuri"
+        :pressure-pascal: 
+          :one: "{0} pascal"
+          :other: "{0} pascals"
         :pressure-pound-per-square-inch: 
           :one: "{0} lliura per polzada quadrada"
           :other: "{0} lliures per polzada quadrada"
@@ -639,8 +670,8 @@
           :one: "{0} ac"
           :other: "{0} ac"
         :area-dunam: 
-          :one: "{0} dúnam"
-          :other: "{0} dúnams"
+          :one: "{0} dunam"
+          :other: "{0} dunams"
         :area-hectare: 
           :one: "{0} ha"
           :other: "{0} ha"
@@ -675,7 +706,6 @@
           :one: "{0} mM/l"
           :other: "{0} mM/l"
         :concentr-mole: 
-          :one: "{0} mol"
           :other: "{0} mol"
         :concentr-part-per-million: 
           :one: "{0} ppm"
@@ -687,7 +717,6 @@
           :one: "{0} ‰"
           :other: "{0} ‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} l/100 km"
@@ -741,6 +770,9 @@
           :one: "{0} dia"
           :other: "{0} dies"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} dèc."
+          :other: "{0} dèc."
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -784,7 +816,6 @@
           :one: "{0} V"
           :other: "{0} V"
         :energy-british-thermal-unit: 
-          :one: "{0} Btu"
           :other: "{0} Btu"
         :energy-calorie: 
           :one: "{0} cal"
@@ -807,8 +838,10 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "{0} thm"
+          :other: "{0} thm"
         :force-newton: 
-          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
           :one: "{0} lbf"
@@ -825,6 +858,27 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} ppcm"
+          :other: "{0} ppcm"
+        :graphics-dot-per-inch: 
+          :one: "{0} ppp"
+          :other: "{0} ppp"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :one: "{0} Mpx"
+          :other: "{0} Mpx"
+        :graphics-pixel: 
+          :one: "{0} px"
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} píxels per cm"
+          :other: "{0} píxels per cm"
+        :graphics-pixel-per-inch: 
+          :one: "{0} PPI"
+          :other: "{0} PPI"
         :length-astronomical-unit: 
           :one: "{0} ua"
           :other: "{0} ua"
@@ -881,7 +935,6 @@
           :one: "{0} pt"
           :other: "{0} pt"
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} yd"
@@ -890,7 +943,6 @@
           :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} ct"
@@ -926,7 +978,6 @@
           :one: "{0} lb"
           :other: "{0} lb"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -954,6 +1005,9 @@
         :pressure-atmosphere: 
           :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} bar"
+          :other: "{0} bars"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -961,10 +1015,8 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
-          :one: "{0} kPa"
           :other: "{0} kPa"
         :pressure-megapascal: 
-          :one: "{0} MPa"
           :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
@@ -972,6 +1024,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} mmHg"
           :other: "{0} mmHg"
+        :pressure-pascal: 
+          :one: "{0} Pa"
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"

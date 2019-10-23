@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} jour"
           :other: "{0} jours"
+        :duration-decade: 
+          :one: "{0} décennie"
+          :other: "{0} décennies"
         :duration-hour: 
           :one: "{0} heure"
           :other: "{0} heures"
@@ -196,6 +199,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} kilowattheure"
           :other: "{0} kilowattheures"
+        :energy-therm-us: 
+          :one: "{0} therm US"
+          :other: "{0} therms US"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -214,6 +220,27 @@
         :frequency-megahertz: 
           :one: "{0} mégahertz"
           :other: "{0} mégahertz"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} point par centimètre"
+          :other: "{0} points par centimètre"
+        :graphics-dot-per-inch: 
+          :one: "{0} point par pouce"
+          :other: "{0} points par pouce"
+        :graphics-em: 
+          :one: "{0} cadratin"
+          :other: "{0} cadratins"
+        :graphics-megapixel: 
+          :one: "{0} mégapixel"
+          :other: "{0} mégapixels"
+        :graphics-pixel: 
+          :one: "{0} pixel"
+          :other: "{0} pixels"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} pixel par centimètre"
+          :other: "{0} pixels par centimètre"
+        :graphics-pixel-per-inch: 
+          :one: "{0} pixel par pouce"
+          :other: "{0} pixels par pouce"
         :length-astronomical-unit: 
           :one: "{0} unité astronomique"
           :other: "{0} unités astronomiques"
@@ -346,6 +373,9 @@
         :pressure-atmosphere: 
           :one: "{0} atmosphère"
           :other: "{0} atmosphères"
+        :pressure-bar: 
+          :one: "{0} bar"
+          :other: "{0} bars"
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascals"
@@ -364,6 +394,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} millimètre de mercure"
           :other: "{0} millimètres de mercure"
+        :pressure-pascal: 
+          :one: "{0} pascal"
+          :other: "{0} pascals"
         :pressure-pound-per-square-inch: 
           :one: "{0} livre par pouce carré"
           :other: "{0} livres par pouce carré"
@@ -480,6 +513,7 @@
         :acceleration-g-force: 
           :one: "{0}G"
           :other: "{0}G"
+        :acceleration-meter-per-second-squared: {}
         :angle-arc-minute: 
           :one: "{0}′"
           :other: "{0}′"
@@ -520,7 +554,9 @@
         :concentr-millimole-per-liter: {}
         :concentr-mole: {}
         :concentr-part-per-million: {}
-        :concentr-percent: {}
+        :concentr-percent: 
+          :one: "{0} %"
+          :other: "{0} %"
         :concentr-permille: {}
         :concentr-permyriad: {}
         :consumption-liter-per-100kilometers: 
@@ -549,6 +585,7 @@
         :duration-hour: 
           :one: "{0}h"
           :other: "{0}h"
+        :duration-microsecond: {}
         :duration-millisecond: 
           :one: "{0}ms"
           :other: "{0}ms"
@@ -558,6 +595,7 @@
         :duration-month: 
           :one: "{0}m."
           :other: "{0}m."
+        :duration-nanosecond: {}
         :duration-second: 
           :one: "{0}s"
           :other: "{0}s"
@@ -591,12 +629,16 @@
         :length-centimeter: 
           :one: "{0}cm"
           :other: "{0}cm"
+        :length-decimeter: {}
         :length-fathom: 
           :one: "{0} fth"
           :other: "{0} fth"
         :length-foot: 
           :one: "{0}′"
           :other: "{0}′"
+        :length-furlong: 
+          :one: "{0} fur"
+          :other: "{0} fur"
         :length-inch: 
           :one: "{0}″"
           :other: "{0}″"
@@ -609,12 +651,17 @@
         :length-meter: 
           :one: "{0}m"
           :other: "{0}m"
+        :length-micrometer: {}
         :length-mile: 
           :one: "{0}mi"
           :other: "{0}mi"
+        :length-mile-scandinavian: {}
         :length-millimeter: 
           :one: "{0}mm"
           :other: "{0}mm"
+        :length-nanometer: {}
+        :length-nautical-mile: {}
+        :length-parsec: {}
         :length-picometer: 
           :one: "{0}pm"
           :other: "{0}pm"
@@ -633,6 +680,9 @@
         :mass-kilogram: 
           :one: "{0}kg"
           :other: "{0}kg"
+        :mass-metric-ton: {}
+        :mass-microgram: {}
+        :mass-milligram: {}
         :mass-ounce: 
           :one: "{0}oz"
           :other: "{0}oz"
@@ -641,6 +691,9 @@
           :one: "{0}lb"
           :other: "{0}lb"
         :mass-solar-mass: {}
+        :mass-stone: 
+          :one: "{0} st"
+          :other: "{0} st"
         :mass-ton: 
           :one: "{0} sh tn"
           :other: "{0} sh tn"
@@ -689,6 +742,11 @@
         :temperature-celsius: 
           :one: "{0}°C"
           :other: "{0}°C"
+        :temperature-fahrenheit: {}
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :temperature-kelvin: {}
         :torque-newton-meter: {}
         :torque-pound-foot: {}
         :volume-acre-foot: {}
@@ -876,6 +934,9 @@
           :one: "{0} j"
           :other: "{0} j"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} décennie"
+          :other: "{0} décennies"
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -942,6 +1003,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "{0} therm US"
+          :other: "{0} therms US"
         :force-newton: 
           :one: "{0} N"
           :other: "{0} N"
@@ -960,6 +1024,27 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} pt/cm"
+          :other: "{0} pt/cm"
+        :graphics-dot-per-inch: 
+          :one: "{0} pt/po"
+          :other: "{0} pt/po"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :one: "{0} Mpx"
+          :other: "{0} Mpx"
+        :graphics-pixel: 
+          :one: "{0} px"
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} px/cm"
+          :other: "{0} px/cm"
+        :graphics-pixel-per-inch: 
+          :one: "{0} px/po"
+          :other: "{0} px/po"
         :length-astronomical-unit: 
           :one: "{0} ua"
           :other: "{0} ua"
@@ -976,6 +1061,7 @@
           :one: "{0} pi"
           :other: "{0} pi"
         :length-furlong: 
+          :one: "{0} fur"
           :other: "{0} fur"
         :length-inch: 
           :one: "{0} po"
@@ -1065,6 +1151,7 @@
           :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
+          :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} sh tn"
@@ -1090,6 +1177,9 @@
         :pressure-atmosphere: 
           :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} bar"
+          :other: "{0} bars"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -1108,6 +1198,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} mmHg"
           :other: "{0} mmHg"
+        :pressure-pascal: 
+          :one: "{0} Pa"
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :one: "{0} lb/po²"
           :other: "{0} lb/po²"

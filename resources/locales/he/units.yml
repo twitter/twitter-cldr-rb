@@ -163,10 +163,10 @@
           :other: "{0} בייט"
           :two: "{0} בייט"
         :digital-gigabit: 
-          :many: "{0} גיגהביט"
-          :one: "{0} גיגהביט"
-          :other: "{0} גיגהביט"
-          :two: "{0} גיגהביט"
+          :many: "{0} ג'יגה-ביט"
+          :one: "{0} ג'יגה-ביט"
+          :other: "{0} ג'יגה-ביט"
+          :two: "{0} ג'יגה-ביט"
         :digital-gigabyte: 
           :many: "{0} ג׳יגה-בייט"
           :one: "{0} ג׳יגה-בייט"
@@ -217,6 +217,11 @@
           :one: "יום {0}"
           :other: "{0} ימים"
           :two: יומיים
+        :duration-decade: 
+          :many: "{0} עשורים"
+          :one: "עשור {0}"
+          :other: "{0} עשורים"
+          :two: "{0} עשורים"
         :duration-hour: 
           :many: "{0} שעות"
           :one: שעה
@@ -322,6 +327,7 @@
           :one: "קילוואט־שעה {0}"
           :other: "{0} קילוואט-שעה"
           :two: "{0} קילוואט-שעה"
+        :energy-therm-us: {}
         :force-newton: 
           :many: "{0} ניוטון"
           :one: "{0} ניוטון"
@@ -352,6 +358,41 @@
           :one: "מגה-הרץ {0}"
           :other: "{0} מגה-הרץ"
           :two: "{0} מגה-הרץ"
+        :graphics-dot-per-centimeter: 
+          :many: "‎{0} dpcm"
+          :one: "נקודה {0} לסנטימטר"
+          :other: "{0} נקודות לסנטימטר"
+          :two: "‎{0} dpcm‎"
+        :graphics-dot-per-inch: 
+          :many: "‎{0} dpi‎"
+          :one: "‎{0} dpi‎"
+          :other: "‎{0} dots per inch‎"
+          :two: "‎{0} dpi‎"
+        :graphics-em: 
+          :many: "‎{0} em ‎"
+          :one: "‎{0} em ‎"
+          :other: "‎{0} ems ‎"
+          :two: "‎{0} em ‎"
+        :graphics-megapixel: 
+          :many: "‎{0} MP ‎"
+          :one: "‎{0} MP ‎"
+          :other: "‎{0} MP ‎"
+          :two: "‎{0} MP ‎"
+        :graphics-pixel: 
+          :many: "‎{0} px ‎"
+          :one: "‎{0} px ‎"
+          :other: "‎{0} px ‎"
+          :two: "‎{0} px ‎"
+        :graphics-pixel-per-centimeter: 
+          :many: "‎{0} ppcm‎"
+          :one: "‎{0} ppcm‎"
+          :other: "‎{0} ppcm‎"
+          :two: "‎{0} ppcm‎"
+        :graphics-pixel-per-inch: 
+          :many: "‎{0} ppi‎"
+          :one: "{0} פיקסל לאינץ'"
+          :other: "{0} פיקסלים לאינץ'"
+          :two: "‎{0} ppi‎"
         :length-astronomical-unit: 
           :many: "{0} יחידות אסטרונומיות"
           :one: "יחידה אסטרונומית {0}"
@@ -438,10 +479,10 @@
           :other: "{0} נקודות"
           :two: "{0} נק'"
         :length-solar-radius: 
-          :many: "{0} R☉"
+          :many: "{0} רדיוס סולרי"
           :one: "{0} רדיוס סולרי"
-          :other: "{0} R☉"
-          :two: "{0} R☉"
+          :other: "{0} רדיוס סולרי"
+          :two: "{0} רדיוס סולרי"
         :length-yard: 
           :many: "{0} יארד"
           :one: "יארד {0}"
@@ -452,11 +493,7 @@
           :one: "לוקס אחד"
           :other: "{0} לוקס"
           :two: "{0} לוקס"
-        :light-solar-luminosity: 
-          :many: "{0} L☉"
-          :one: "{0} L☉"
-          :other: "{0} L☉"
-          :two: "{0} L☉"
+        :light-solar-luminosity: {}
         :mass-carat: 
           :many: "{0} קרט"
           :one: "קרט אחד"
@@ -562,6 +599,11 @@
           :one: "{0} אטמוספרה"
           :other: "{0} אטמוספרות"
           :two: "{0} אטמוספרה"
+        :pressure-bar: 
+          :many: "{0} בר"
+          :one: "{0} בר"
+          :other: "{0} בר"
+          :two: "{0} בר"
         :pressure-hectopascal: 
           :many: "{0} הקטופסקל"
           :one: "הקטופסקל {0}"
@@ -592,6 +634,11 @@
           :one: "מילימטר כספית אחד"
           :other: "{0} מילימטר כספית"
           :two: "שני מילימטר כספית"
+        :pressure-pascal: 
+          :many: "{0} פסקל"
+          :one: "{0} פסקל"
+          :other: "{0} פסקל"
+          :two: "{0} פסקל"
         :pressure-pound-per-square-inch: 
           :many: "{0} פאונד לאינץ׳ רבוע"
           :one: "פאונד אחד לאינץ׳ רבוע"
@@ -778,7 +825,16 @@
           :other: "{0} כפיות"
           :two: "{0} כפיות"
       :narrow: 
-        :acceleration-g-force: {}
+        :acceleration-g-force: 
+          :many: "{0} G"
+          :one: "{0} G"
+          :other: "{0} G"
+          :two: "{0} G"
+        :acceleration-meter-per-second-squared: 
+          :many: "{0} m/s²"
+          :one: "{0} m/s²"
+          :other: "{0} m/s²"
+          :two: "{0} m/s²"
         :angle-arc-minute: 
           :many: "{0} דקות"
           :one: "דקה {0}"
@@ -789,6 +845,11 @@
           :one: "שנ׳ {0}"
           :other: "{0} שנ׳"
           :two: "{0} שנ׳"
+        :angle-degree: 
+          :many: "{0}°"
+          :one: "{0}°"
+          :other: "{0}°"
+          :two: "{0}°"
         :area-acre: 
           :many: "{0} אקר"
           :one: "אקר {0}"
@@ -866,7 +927,11 @@
           :one: "שעה {0}"
           :other: "{0} שע׳"
           :two: "{0} שע׳"
-        :duration-microsecond: {}
+        :duration-microsecond: 
+          :many: "{0} μs"
+          :one: "{0} μs"
+          :other: "{0} μs"
+          :two: "{0} μs"
         :duration-millisecond: 
           :many: "{0} ms"
           :one: "{0} ms"
@@ -882,6 +947,11 @@
           :one: "ח׳ {0}"
           :other: "{0} ח׳"
           :two: "{0} ח׳"
+        :duration-nanosecond: 
+          :many: "{0} ns"
+          :one: "{0} ns"
+          :other: "{0} ns"
+          :two: "{0} ns"
         :duration-second: 
           :many: "{0} שנ׳"
           :one: שניה
@@ -897,6 +967,11 @@
           :one: "ש′ {0}"
           :other: "{0} ש′"
           :two: "{0} ש′"
+        :length-astronomical-unit: 
+          :many: "{0} au"
+          :one: "{0} au"
+          :other: "{0} au"
+          :two: "{0} au"
         :length-centimeter: 
           :many: "{0} ס״מ"
           :one: "ס\"מ {0}"
@@ -929,24 +1004,44 @@
           :two: "{0} שנות אור"
         :length-meter: 
           :many: "{0} מ׳"
-          :one: "מ' {0}"
+          :one: "{0} מ׳"
           :other: "{0} מ׳"
           :two: "{0} מ′"
+        :length-micrometer: 
+          :many: "{0} µm"
+          :one: "{0} µm"
+          :other: "{0} µm"
+          :two: "{0} µm"
         :length-mile: 
           :many: "{0} מייל"
           :one: "מייל {0}"
           :other: "{0} מייל"
           :two: "{0} מייל"
+        :length-mile-scandinavian: 
+          :many: "{0} smi"
+          :one: "{0} smi"
+          :other: "{0} smi"
+          :two: "{0} smi"
         :length-millimeter: 
           :many: "{0} מ״מ"
           :one: "מ״מ {0}"
           :other: "{0} מ״מ"
           :two: "{0} מ״מ"
+        :length-nanometer: 
+          :many: "{0} nm"
+          :one: "{0} nm"
+          :other: "{0} nm"
+          :two: "{0} nm"
         :length-nautical-mile: 
           :many: "{0} מ״י"
           :one: "מ״י אחד"
           :other: "{0} מ״י"
           :two: "שני מ״י"
+        :length-parsec: 
+          :many: "{0} pc"
+          :one: "{0} pc"
+          :other: "{0} pc"
+          :two: "{0} pc"
         :length-picometer: 
           :many: "{0} פיקומטר"
           :one: "פיקומטר {0}"
@@ -962,7 +1057,11 @@
           :one: "יארד {0}"
           :other: "{0} יארד"
           :two: "{0} יארד"
-        :mass-carat: {}
+        :mass-carat: 
+          :many: "{0} CD"
+          :one: "{0} CD"
+          :other: "{0} CD"
+          :two: "{0} CD"
         :mass-gram: 
           :many: "{0}g"
           :one: "{0}g"
@@ -973,6 +1072,11 @@
           :one: "{0}kg"
           :other: "{0}kg"
           :two: "{0}kg"
+        :mass-metric-ton: 
+          :many: "{0} t"
+          :one: "{0} t"
+          :other: "{0} t"
+          :two: "{0} t"
         :mass-microgram: 
           :many: "{0} מק״ג"
           :one: "מק״ג {0}"
@@ -988,6 +1092,11 @@
           :one: "אונקיה {0}"
           :other: "{0} אונקיות"
           :two: "{0} אונקיות"
+        :mass-ounce-troy: 
+          :many: "{0} oz t"
+          :one: "{0} oz t"
+          :other: "{0} oz t"
+          :two: "{0} oz t"
         :mass-pound: 
           :many: "{0} ליבראות"
           :one: "ליברה {0}"
@@ -1003,6 +1112,16 @@
           :one: "כ״ס {0}"
           :other: "{0} כ״ס"
           :two: "{0} כ״ס"
+        :power-kilowatt: 
+          :many: "{0} kW"
+          :one: "{0} kW"
+          :other: "{0} kW"
+          :two: "{0} kW"
+        :power-watt: 
+          :many: "{0} W"
+          :one: "{0} W"
+          :other: "{0} W"
+          :two: "{0} W"
         :pressure-hectopascal: 
           :many: "{0} hPa"
           :one: "{0} hPa"
@@ -1018,11 +1137,26 @@
           :one: "מיליבר {0}"
           :other: "{0} מיליבר"
           :two: "{0} מיליבר"
+        :pressure-millimeter-of-mercury: 
+          :many: "{0} mm Hg"
+          :one: "{0} mm Hg"
+          :other: "{0} mm Hg"
+          :two: "{0} mm Hg"
+        :pressure-pound-per-square-inch: 
+          :many: "{0} psi"
+          :one: "{0} psi"
+          :other: "{0} psi"
+          :two: "{0} psi"
         :speed-kilometer-per-hour: 
           :many: "{0} קמ״ש"
           :one: "{0} קמ״ש"
           :other: "{0} קמ״ש"
           :two: "{0} קמ״ש"
+        :speed-knot: 
+          :many: "{0} kn"
+          :one: "{0} kn"
+          :other: "{0} kn"
+          :two: "{0} kn"
         :speed-meter-per-second: 
           :many: "{0} מ/ש"
           :one: "{0} מ/ש"
@@ -1038,11 +1172,31 @@
           :one: "{0}°C"
           :other: "{0}°C"
           :two: "{0}°C"
+        :temperature-fahrenheit: 
+          :many: "{0}°F"
+          :one: "{0}°F"
+          :other: "{0}°F"
+          :two: "{0}°F"
+        :temperature-generic: 
+          :many: "{0}°"
+          :one: "{0}°"
+          :other: "{0}°"
+          :two: "{0}°"
+        :temperature-kelvin: 
+          :many: "{0} K"
+          :one: "{0} K"
+          :other: "{0} K"
+          :two: "{0} K"
         :volume-cubic-kilometer: 
           :many: "{0} קמ״ק"
           :one: "{0} קמ״ק"
           :other: "{0} קמ״ק"
           :two: "{0} קמ״ק"
+        :volume-cubic-mile: 
+          :many: "{0} mi³"
+          :one: "{0} mi³"
+          :other: "{0} mi³"
+          :two: "{0} mi³"
         :volume-liter: 
           :many: "{0} ל׳"
           :one: "{0} ל׳"
@@ -1085,9 +1239,9 @@
           :other: "{0} ס׳"
           :two: "{0} ס׳"
         :area-acre: 
-          :many: "{0} ac"
-          :one: "{0} ac"
-          :other: "{0} ac"
+          :many: "‎{0} ac"
+          :one: "‎{0} ac"
+          :other: "‎{0} ac"
           :two: "{0} ac"
         :area-dunam: 
           :many: "{0} דונם"
@@ -1095,25 +1249,25 @@
           :other: "{0} דונם"
           :two: "{0} דונם"
         :area-hectare: 
-          :many: "{0} ha"
-          :one: "{0} ha"
-          :other: "{0} ha"
-          :two: "{0} ha"
+          :many: "‎{0} ha"
+          :one: "‎{0} ha"
+          :other: "‎{0} ha"
+          :two: "‎{0} ha"
         :area-square-centimeter: 
           :many: "{0} סמ״ר"
           :one: "{0} סמ״ר"
           :other: "{0} סמ״ר"
           :two: "{0} סמ״ר"
         :area-square-foot: 
-          :many: "{0} sq ft"
-          :one: "{0} sq ft"
-          :other: "{0} sq ft"
-          :two: "{0} sq ft"
+          :many: "‎{0} sq ft"
+          :one: "‎{0} sq ft"
+          :other: "‎{0} sq ft"
+          :two: "‎{0} sq ft"
         :area-square-inch: 
-          :many: "{0} in²"
-          :one: "{0} in²"
-          :other: "{0} in²"
-          :two: "{0} in²"
+          :many: "‎{0} in²"
+          :one: "‎{0} in²"
+          :other: "‎{0} in²"
+          :two: "‎{0} in²"
         :area-square-kilometer: 
           :many: "{0} קמ״ר"
           :one: "{0} קמ״ר"
@@ -1125,15 +1279,15 @@
           :other: "{0} מ״ר"
           :two: "{0} מ״ר"
         :area-square-mile: 
-          :many: "{0} sq mi"
-          :one: "{0} sq mi"
-          :other: "{0} sq mi"
-          :two: "{0} sq mi"
+          :many: "‎{0} sq mi"
+          :one: "‎{0} sq mi"
+          :other: "‎{0} sq mi"
+          :two: "‎{0} sq mi"
         :area-square-yard: 
-          :many: "{0} yd²"
-          :one: "{0} yd²"
-          :other: "{0} yd²"
-          :two: "{0} yd²"
+          :many: "‎{0} yd²"
+          :one: "‎{0} yd²"
+          :other: "‎{0} yd²"
+          :two: "‎{0} yd²"
         :concentr-karat: 
           :many: "{0} kt"
           :one: "{0} kt"
@@ -1150,10 +1304,7 @@
           :other: "{0} mmol/L"
           :two: "{0} mmol/L"
         :concentr-mole: 
-          :many: "{0} mol"
-          :one: "{0} mol"
           :other: "{0} mol"
-          :two: "{0} mol"
         :concentr-part-per-million: 
           :many: "{0} ppm"
           :one: "{0} ppm"
@@ -1170,10 +1321,7 @@
           :other: "{0}‰"
           :two: "{0}‰"
         :concentr-permyriad: 
-          :many: "{0}‱"
-          :one: "{0}‱"
           :other: "{0}‱"
-          :two: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :many: "{0} ל׳/100 ק״מ"
           :one: "ל׳ {0}/100 ק״מ"
@@ -1260,6 +1408,11 @@
           :other: "{0} ימ׳"
           :two: יומיים
         :duration-day-person: {}
+        :duration-decade: 
+          :many: "{0} עשורים"
+          :one: "עשור {0}"
+          :other: "{0} עשורים"
+          :two: "{0} עשורים"
         :duration-hour: 
           :many: "{0} שע׳"
           :one: שעה
@@ -1329,20 +1482,14 @@
           :other: "{0} V"
           :two: "{0} V"
         :energy-british-thermal-unit: 
-          :many: "{0} Btu"
-          :one: "{0} Btu"
           :other: "{0} Btu"
-          :two: "{0} Btu"
         :energy-calorie: 
           :many: "{0} cal"
           :one: "{0} cal"
           :other: "{0} cal"
           :two: "{0} cal"
         :energy-electronvolt: 
-          :many: "{0} eV"
-          :one: "{0} eV"
           :other: "{0} eV"
-          :two: "{0} eV"
         :energy-foodcalorie: 
           :many: "{0} Cal"
           :one: "{0} Cal"
@@ -1368,16 +1515,12 @@
           :one: "{0} קוט״ש"
           :other: "{0} קוט״ש"
           :two: "{0} קוט״ש"
+        :energy-therm-us: 
+          :other: "{0} US therm"
         :force-newton: 
-          :many: "{0} N"
-          :one: "{0} N"
           :other: "{0} N"
-          :two: "{0} N"
         :force-pound-force: 
-          :many: "{0} lbf"
-          :one: "{0} lbf"
           :other: "{0} lbf"
-          :two: "{0} lbf"
         :frequency-gigahertz: 
           :many: "{0} GHz"
           :one: "{0} GHz"
@@ -1398,14 +1541,49 @@
           :one: "{0} MHz"
           :other: "{0} MHz"
           :two: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :many: "‎{0} dpcm"
+          :one: "‎{0} dpcm"
+          :other: "‎{0} dpcm"
+          :two: "‎{0} dpcm"
+        :graphics-dot-per-inch: 
+          :many: "‎{0} dpi‎"
+          :one: "‎{0} dpi‎"
+          :other: "‎{0} dpi‎"
+          :two: "‎{0} dpi‎"
+        :graphics-em: 
+          :many: "‎{0} em ‎"
+          :one: "‎{0} em ‎"
+          :other: "‎{0} em ‎"
+          :two: "‎{0} em ‎"
+        :graphics-megapixel: 
+          :many: "‎{0} MP ‎"
+          :one: "‎{0} MP ‎"
+          :other: "‎{0} MP ‎"
+          :two: "‎{0} MP ‎"
+        :graphics-pixel: 
+          :many: "‎{0} px ‎"
+          :one: "‎{0} px ‎"
+          :other: "‎{0} px ‎"
+          :two: "‎{0} px ‎"
+        :graphics-pixel-per-centimeter: 
+          :many: "‎{0} ppcm‎"
+          :one: "‎{0} ppcm‎"
+          :other: "‎{0} ppcm‎"
+          :two: "‎{0} ppcm‎"
+        :graphics-pixel-per-inch: 
+          :many: "‎{0} ppi‎"
+          :one: "‎{0} ppi‎"
+          :other: "‎{0} ppi‎"
+          :two: "‎{0} ppi‎"
         :length-astronomical-unit: 
-          :many: "{0} au"
-          :one: "{0} au"
-          :other: "{0} au"
-          :two: "{0} au"
+          :many: "‎{0} au"
+          :one: "‎{0} au"
+          :other: "‎{0} au"
+          :two: "‎{0} au"
         :length-centimeter: 
           :many: "{0} ס״מ"
-          :one: "ס\"מ {0}"
+          :one: "{0} ס״מ"
           :other: "{0} ס״מ"
           :two: "{0} ס״מ"
         :length-decimeter: 
@@ -1416,17 +1594,17 @@
         :length-fathom: 
           :other: "{0} fth"
         :length-foot: 
-          :many: "{0} ft"
-          :one: "{0} ft"
-          :other: "{0} ft"
-          :two: "{0} ft"
+          :many: "‎{0} ft"
+          :one: "‎{0} ft"
+          :other: "‎{0} ft"
+          :two: "‎{0} ft"
         :length-furlong: 
           :other: "{0} fur"
         :length-inch: 
-          :many: "{0} in"
-          :one: "{0} in"
-          :other: "{0} in"
-          :two: "{0} in"
+          :many: "‎{0} in"
+          :one: "‎{0} in"
+          :other: "‎{0} in"
+          :two: "‎{0} in"
         :length-kilometer: 
           :many: "{0} ק״מ"
           :one: "{0} ק״מ"
@@ -1439,17 +1617,17 @@
           :two: "{0} שנות אור"
         :length-meter: 
           :many: "{0} מ׳"
-          :one: מ׳
+          :one: "{0} מ׳"
           :other: "{0} מ׳"
-          :two: "שני מ׳"
+          :two: "{0} מ׳"
         :length-micrometer: 
-          :many: "{0} µm"
-          :one: "{0} µm"
-          :other: "{0} µm"
-          :two: "{0} µm"
+          :many: "‎{0} µm‎"
+          :one: "‎{0} µm‎"
+          :other: "‎{0} µm‎"
+          :two: "‎{0} µm‎"
         :length-mile: 
           :many: "{0} מייל"
-          :one: "מייל {0}"
+          :one: "{0} מייל"
           :other: "{0} מייל"
           :two: "{0} מייל"
         :length-mile-scandinavian: 
@@ -1463,35 +1641,35 @@
           :other: "{0} מ״מ"
           :two: "{0} מ״מ"
         :length-nanometer: 
-          :many: "{0} nm"
-          :one: "{0} nm"
-          :other: "{0} nm"
-          :two: "{0} nm"
+          :many: "‎{0} nm"
+          :one: "‎{0} nm"
+          :other: "‎{0} nm"
+          :two: "‎{0} nm"
         :length-nautical-mile: 
           :many: "{0} מ״י"
           :one: "מ״י אחד"
           :other: "{0} מ״י"
           :two: "שני מ״י"
         :length-parsec: 
-          :many: "{0} pc"
-          :one: "{0} pc"
-          :other: "{0} pc"
-          :two: "{0} pc"
+          :many: "‎{0} pc"
+          :one: "‎{0} pc"
+          :other: "‎{0} pc"
+          :two: "‎{0} pc"
         :length-picometer: 
-          :many: "פ“מ {0}"
+          :many: "{0} פ\"מ"
           :one: "פ“מ {0}"
-          :other: "פ“מ {0}"
-          :two: "פ“מ {0}"
+          :other: "{0} פ\"מ"
+          :two: "{0} פ\"מ"
         :length-point: 
           :many: "{0} נק'"
           :one: "{0} נק'"
           :other: "{0} נק'"
           :two: "{0} נק'"
         :length-solar-radius: 
-          :many: "{0} R☉"
-          :one: "{0} R☉"
-          :other: "{0} R☉"
-          :two: "{0} R☉"
+          :many: "‎{0} R☉‎"
+          :one: "‎{0} R☉‎"
+          :other: "‎{0} R☉‎"
+          :two: "‎{0} R☉‎"
         :length-yard: 
           :many: "{0} יארד"
           :one: "יארד {0}"
@@ -1503,25 +1681,16 @@
           :other: "{0} lx"
           :two: "{0} lx"
         :light-solar-luminosity: 
-          :many: "{0} L☉"
-          :one: "{0} L☉"
           :other: "{0} L☉"
-          :two: "{0} L☉"
         :mass-carat: 
           :many: "{0} CD"
           :one: "{0} CD"
           :other: "{0} CD"
           :two: "{0} CD"
         :mass-dalton: 
-          :many: "{0} Da"
-          :one: "{0} Da"
           :other: "{0} Da"
-          :two: "{0} Da"
         :mass-earth-mass: 
-          :many: "{0} M⊕"
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
-          :two: "{0} M⊕"
         :mass-gram: 
           :many: "{0} גר׳"
           :one: "גר׳ {0}"
@@ -1563,10 +1732,7 @@
           :other: "{0} lbs"
           :two: "{0} lbs"
         :mass-solar-mass: 
-          :many: "{0} M☉"
-          :one: "{0} M☉"
           :other: "{0} M☉"
-          :two: "{0} M☉"
         :mass-stone: 
           :many: "{0} סטון"
           :one: "סטון {0}"
@@ -1612,6 +1778,11 @@
           :one: "{0} atm"
           :other: "{0} atm"
           :two: "{0} atm"
+        :pressure-bar: 
+          :many: "{0} בר"
+          :one: "{0} בר"
+          :other: "{0} בר"
+          :two: "{0} בר"
         :pressure-hectopascal: 
           :many: "{0} hPa"
           :one: "{0} hPa"
@@ -1623,15 +1794,9 @@
           :other: "{0} inHg"
           :two: "{0} inHg"
         :pressure-kilopascal: 
-          :many: "{0} kPa"
-          :one: "{0} kPa"
           :other: "{0} kPa"
-          :two: "{0} kPa"
         :pressure-megapascal: 
-          :many: "{0} MPa"
-          :one: "{0} MPa"
           :other: "{0} MPa"
-          :two: "{0} MPa"
         :pressure-millibar: 
           :many: "{0} mbar"
           :one: "{0} mbar"
@@ -1642,6 +1807,8 @@
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
           :two: "{0} mm Hg"
+        :pressure-pascal: 
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :many: "{0} psi"
           :one: "{0} psi"
@@ -1688,92 +1855,86 @@
           :other: "{0} K"
           :two: "{0} K"
         :torque-newton-meter: 
-          :many: "{0} N⋅m"
-          :one: "{0} N⋅m"
           :other: "{0} N⋅m"
-          :two: "{0} N⋅m"
         :torque-pound-foot: 
-          :many: "{0} lbf⋅ft"
-          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
-          :two: "{0} lbf⋅ft"
         :volume-acre-foot: 
-          :many: "{0} ac ft"
-          :one: "{0} ac ft"
-          :other: "{0} ac ft"
-          :two: "{0} ac ft"
+          :many: "‎{0} ac ft"
+          :one: "‎{0} ac ft"
+          :other: "‎{0} ac ft"
+          :two: "‎{0} ac ft"
         :volume-barrel: 
-          :many: "{0} bbl"
-          :one: "{0} bbl"
-          :other: "{0} bbl"
-          :two: "{0} bbl"
+          :many: "‎{0} bbl"
+          :one: "‎{0} bbl"
+          :other: "‎{0} bbl"
+          :two: "‎{0} bbl"
         :volume-bushel: 
           :other: "{0} bu"
         :volume-centiliter: 
-          :many: "{0} cL"
-          :one: "{0} cL"
-          :other: "{0} cL"
-          :two: "{0} cL"
+          :many: "‎{0} cL"
+          :one: "‎{0} cL"
+          :other: "‎{0} cL"
+          :two: "‎{0} cL"
         :volume-cubic-centimeter: 
           :many: "{0} סמ״ק"
           :one: "{0} סמ״ק"
           :other: "{0} סמ״ק"
           :two: "{0} סמ״ק"
         :volume-cubic-foot: 
-          :many: "{0} ft³"
-          :one: "{0} ft³"
-          :other: "{0} ft³"
-          :two: "{0} ft³"
+          :many: "‎{0} ft³"
+          :one: "‎{0} ft³"
+          :other: "‎{0} ft³"
+          :two: "‎{0} ft³"
         :volume-cubic-inch: 
-          :many: "{0} in³"
-          :one: "{0} in³"
-          :other: "{0} in³"
-          :two: "{0} in³"
+          :many: "‎{0} in³"
+          :one: "‎{0} in³"
+          :other: "‎{0} in³"
+          :two: "‎{0} in³"
         :volume-cubic-kilometer: 
           :many: "{0} קמ״ק"
           :one: "קמ״ק {0}"
           :other: "{0} קמ״ק"
           :two: "{0} קמ״ק"
         :volume-cubic-meter: 
-          :many: "{0} m³"
-          :one: "{0} m³"
-          :other: "{0} m³"
-          :two: "{0} m³"
+          :many: "‎{0} m³"
+          :one: "‎{0} m³"
+          :other: "‎{0} m³"
+          :two: "‎{0} m³"
         :volume-cubic-mile: 
-          :many: "{0} mi³"
-          :one: "{0} mi³"
-          :other: "{0} mi³"
-          :two: "{0} mi³"
+          :many: "‎{0} mi³"
+          :one: "‎{0} mi³"
+          :other: "‎{0} mi³"
+          :two: "‎{0} mi³"
         :volume-cubic-yard: 
-          :many: "{0} yd³"
-          :one: "{0} yd³"
-          :other: "{0} yd³"
-          :two: "{0} yd³"
+          :many: "‎{0} yd³"
+          :one: "‎{0} yd³"
+          :other: "‎{0} yd³"
+          :two: "‎{0} yd³"
         :volume-cup: 
           :many: "{0} כ׳"
           :one: "כ׳ {0}"
           :other: "{0} כ׳"
           :two: "{0} כ׳"
         :volume-cup-metric: 
-          :many: "{0} mc"
-          :one: "{0} mc"
-          :other: "{0} mc"
-          :two: "{0} mc"
+          :many: "‎{0} mc"
+          :one: "‎{0} mc"
+          :other: "‎{0} mc"
+          :two: "‎{0} mc"
         :volume-deciliter: 
           :many: "{0} דצ״ל"
           :one: "{0} דצ״ל"
           :other: "{0} דצ״ל"
           :two: "{0} דצ״ל"
         :volume-fluid-ounce: 
-          :many: "{0} fl oz"
-          :one: "{0} fl oz"
-          :other: "{0} fl oz"
-          :two: "{0} fl oz"
+          :many: "‎{0} fl oz"
+          :one: "‎{0} fl oz"
+          :other: "‎{0} fl oz"
+          :two: "‎{0} fl oz"
         :volume-fluid-ounce-imperial: 
-          :many: "{0} fl oz Imp."
-          :one: "{0} fl oz Imp."
-          :other: "{0} fl oz Imp."
-          :two: "{0} fl oz Imp."
+          :many: "‎{0} fl oz Imp.‎"
+          :one: "‎{0} fl oz Imp.‎"
+          :other: "‎{0} fl oz Imp.‎"
+          :two: "‎{0} fl oz Imp.‎"
         :volume-gallon: 
           :many: "{0} גל׳"
           :one: "{0} גל׳"
@@ -1785,40 +1946,40 @@
           :other: "{0} גלון בריטי"
           :two: "{0} גלון בריטי"
         :volume-hectoliter: 
-          :many: "{0} hL"
-          :one: "{0} hL"
-          :other: "{0} hL"
-          :two: "{0} hL"
+          :many: "‎{0} hL"
+          :one: "‎{0} hL"
+          :other: "‎{0} hL"
+          :two: "‎{0} hL"
         :volume-liter: 
           :many: "{0} ל׳"
           :one: "ל׳ {0}"
           :other: "{0} ל׳"
           :two: "{0} ל׳"
         :volume-megaliter: 
-          :many: "{0} ML"
-          :one: "{0} ML"
-          :other: "{0} ML"
-          :two: "{0} ML"
+          :many: "‎{0} ML"
+          :one: "‎{0} ML"
+          :other: "‎{0} ML"
+          :two: "‎{0} ML"
         :volume-milliliter: 
           :many: "{0} מ״ל"
           :one: "מ״ל {0}"
           :other: "{0} מ״ל"
           :two: "{0} מ״ל"
         :volume-pint: 
-          :many: "{0} pt"
-          :one: "{0} pt"
-          :other: "{0} pt"
-          :two: "{0} pt"
+          :many: "‎{0} pt"
+          :one: "‎{0} pt"
+          :other: "‎{0} pt"
+          :two: "‎{0} pt"
         :volume-pint-metric: 
-          :many: "{0} mpt"
-          :one: "{0} mpt"
-          :other: "{0} mpt"
-          :two: "{0} mpt"
+          :many: "‎{0} mpt"
+          :one: "‎{0} mpt"
+          :other: "‎{0} mpt"
+          :two: "‎{0} mpt"
         :volume-quart: 
-          :many: "{0} qt"
-          :one: "{0} qt"
-          :other: "{0} qt"
-          :two: "{0} qt"
+          :many: "‎{0} qt"
+          :one: "‎{0} qt"
+          :other: "‎{0} qt"
+          :two: "‎{0} qt"
         :volume-tablespoon: 
           :many: "{0} כפ׳"
           :one: "{0} כפ׳"

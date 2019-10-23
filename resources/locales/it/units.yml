@@ -133,6 +133,9 @@
         :duration-day: 
           :one: "{0} giorno"
           :other: "{0} giorni"
+        :duration-decade: 
+          :one: "{0} decade"
+          :other: "{0} decadi"
         :duration-hour: 
           :one: "{0} ora"
           :other: "{0} ore"
@@ -196,6 +199,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} chilowattora"
           :other: "{0} chilowattora"
+        :energy-therm-us: 
+          :one: "{0} therm US"
+          :other: "{0} therm US"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newton"
@@ -214,6 +220,12 @@
         :frequency-megahertz: 
           :one: "{0} megahertz"
           :other: "{0} megahertz"
+        :graphics-pixel: 
+          :one: "{0} pixel"
+          :other: "{0} pixel"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} pixel per centimetro"
+          :other: "{0} pixel per centimetro"
         :length-astronomical-unit: 
           :one: "{0} unità astronomica"
           :other: "{0} unità astronomiche"
@@ -392,8 +404,8 @@
           :one: "{0} acre-foot"
           :other: "{0} acre-feet"
         :volume-barrel: 
-          :one: "{0} barrel"
-          :other: "{0} barrel"
+          :one: "{0} barile"
+          :other: "{0} barili"
         :volume-bushel: 
           :one: "{0} staio"
           :other: "{0} staia"
@@ -670,7 +682,6 @@
           :one: "{0} mmol/l"
           :other: "{0} mmol/l"
         :concentr-mole: 
-          :one: "{0} mol"
           :other: "{0} mol"
         :concentr-part-per-million: 
           :one: "{0} ppm"
@@ -682,7 +693,6 @@
           :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
-          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :one: "{0} L/100km"
@@ -736,6 +746,9 @@
           :one: "{0} giorno"
           :other: "{0} giorni"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} dec."
+          :other: "{0} dec."
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -785,7 +798,6 @@
           :one: "{0} cal"
           :other: "{0} cal"
         :energy-electronvolt: 
-          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} Cal"
@@ -802,11 +814,12 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "{0} therm US"
+          :other: "{0} therm US"
         :force-newton: 
-          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
-          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} GHz"
@@ -820,6 +833,20 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :other: "{0} dpi"
+        :graphics-em: 
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :other: "{0} MP"
+        :graphics-pixel: 
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :one: "{0} au"
           :other: "{0} au"
@@ -876,7 +903,6 @@
           :one: "{0} pt"
           :other: "{0} pt"
         :length-solar-radius: 
-          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} yd"
@@ -885,7 +911,6 @@
           :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
-          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} kt"
@@ -894,7 +919,6 @@
           :one: "{0} Da"
           :other: "{0} Da"
         :mass-earth-mass: 
-          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-gram: 
           :one: "{0} g"
@@ -921,7 +945,6 @@
           :one: "{0} lb"
           :other: "{0} lb"
         :mass-solar-mass: 
-          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
@@ -949,6 +972,8 @@
         :pressure-atmosphere: 
           :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :other: "{0} bar"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -956,10 +981,8 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
-          :one: "{0} kPa"
           :other: "{0} kPa"
         :pressure-megapascal: 
-          :one: "{0} MPa"
           :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
@@ -967,6 +990,8 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
+        :pressure-pascal: 
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1004,8 +1029,8 @@
           :one: "{0} ac ft"
           :other: "{0} ac ft"
         :volume-barrel: 
-          :one: "{0} barrel"
-          :other: "{0} barrel"
+          :one: "{0} bbl"
+          :other: "{0} bbl"
         :volume-bushel: 
           :other: "{0} bu"
         :volume-centiliter: 

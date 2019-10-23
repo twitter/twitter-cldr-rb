@@ -119,13 +119,13 @@
               :other: ¤0000亿
             ? !ruby/symbol "1000000000000"
             : 
-              :other: ¤0兆
+              :other: ¤0万亿
             ? !ruby/symbol "10000000000000"
             : 
-              :other: ¤00兆
+              :other: ¤00万亿
             ? !ruby/symbol "100000000000000"
             : 
-              :other: ¤000兆
+              :other: ¤000万亿
           :unit: 
             :other: "{0}{1}"
         :lepc: 
@@ -233,7 +233,8 @@
         :gonm: :numbers.formats.decimal.latn
         :gujr: :numbers.formats.decimal.latn
         :guru: :numbers.formats.decimal.latn
-        :hanidec: :numbers.formats.decimal.latn
+        :hanidec: 
+          :default: "#,##0.###"
         :java: :numbers.formats.decimal.latn
         :kali: :numbers.formats.decimal.latn
         :khmr: :numbers.formats.decimal.latn
@@ -273,13 +274,13 @@
               :other: 0000亿
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0兆
+              :other: 0万亿
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00兆
+              :other: 00万亿
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000兆
+              :other: 000万亿
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -310,13 +311,13 @@
               :other: 0000亿
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0兆
+              :other: 0万亿
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00兆
+              :other: 00万亿
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000兆
+              :other: 000万亿
         :lepc: :numbers.formats.decimal.latn
         :limb: :numbers.formats.decimal.latn
         :mlym: :numbers.formats.decimal.latn
@@ -482,11 +483,15 @@
       :gujr: :numbers.symbols.latn
       :guru: :numbers.symbols.latn
       :hanidec: 
+        :decimal: "."
         :exponential: E
+        :group: ","
         :infinity: ∞
+        :minus_sign: "-"
         :nan: NaN
         :per_mille: ‰
         :percent_sign: "%"
+        :plus_sign: +
         :superscripting_exponent: ×
       :java: :numbers.symbols.latn
       :kali: :numbers.symbols.latn

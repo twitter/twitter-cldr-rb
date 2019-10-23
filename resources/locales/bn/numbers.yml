@@ -215,8 +215,8 @@
               :other: 000 কো
             ? !ruby/symbol "10000000000"
             : 
-              :one: 0000 কো
-              :other: 0000 কো
+              :one: 00 শত কো
+              :other: 00শত কো
             ? !ruby/symbol "100000000000"
             : 
               :one: 00000 কো
@@ -387,6 +387,7 @@
         :time_separator: ٫
       :bali: :numbers.symbols.latn
       :beng: 
+        :decimal: "."
         :exponential: E
         :group: ","
         :infinity: ∞
@@ -396,6 +397,7 @@
         :percent_sign: "%"
         :plus_sign: +
         :superscripting_exponent: ×
+        :time_separator: ":"
       :brah: :numbers.symbols.latn
       :cakm: :numbers.symbols.latn
       :cham: :numbers.symbols.latn

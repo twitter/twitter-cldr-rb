@@ -31,9 +31,7 @@
         :area-acre: 
           :one: "{0} جریب"
           :other: "{0} جریب"
-        :area-dunam: 
-          :one: "{0} دونوم"
-          :other: "{0} دونوم"
+        :area-dunam: {}
         :area-hectare: 
           :one: "{0} هکتار"
           :other: "{0} هکتار"
@@ -133,6 +131,9 @@
         :duration-day: 
           :one: "{0} روز"
           :other: "{0} روز"
+        :duration-decade: 
+          :one: "{0} دهه"
+          :other: "{0} دهه"
         :duration-hour: 
           :one: "{0} ساعت"
           :other: "{0} ساعت"
@@ -179,7 +180,7 @@
           :one: "{0} کالری"
           :other: "{0} کالری"
         :energy-electronvolt: 
-          :one: "{0} الکترون ولت"
+          :one: "{0} الکترون‌ولت"
           :other: "{0} الکترون‌ولت"
         :energy-foodcalorie: 
           :one: "{0} کالری"
@@ -196,6 +197,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} کیلووات‌ساعت"
           :other: "{0} کیلووات‌ساعت"
+        :energy-therm-us: 
+          :one: "{0} ترم آمریکایی"
+          :other: "{0} ترم آمریکایی"
         :force-newton: 
           :one: "{0} نیوتن"
           :other: "{0} نیوتن"
@@ -214,6 +218,24 @@
         :frequency-megahertz: 
           :one: "{0} مگاهرتز"
           :other: "{0} مگاهرتز"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} نقطه در سانتی‌متر"
+          :other: "{0} نقطه در سانتی‌متر"
+        :graphics-dot-per-inch: 
+          :one: "{0} نقطه در اینچ"
+          :other: "{0} نقطه در اینچ"
+        :graphics-megapixel: 
+          :one: "{0} مگاپیکسل"
+          :other: "{0} مگاپیکسل"
+        :graphics-pixel: 
+          :one: "{0} پیکسل"
+          :other: "{0} پیکسل"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} پیکسل در سانتی‌متر"
+          :other: "{0} پیکسل در سانتی‌متر"
+        :graphics-pixel-per-inch: 
+          :one: "{0} پیکسل در اینچ"
+          :other: "{0} پیکسل در اینچ"
         :length-astronomical-unit: 
           :one: "{0} واحد نجومی"
           :other: "{0} واحد نجومی"
@@ -263,8 +285,8 @@
           :one: "{0} پیکومتر"
           :other: "{0} پیکومتر"
         :length-point: 
-          :one: "{0} امتیاز"
-          :other: "{0} امتیاز"
+          :one: "{0} پونت"
+          :other: "{0} پونت"
         :length-solar-radius: 
           :one: "{0} شعاع خورشید"
           :other: "{0} شعاع خورشید"
@@ -337,6 +359,9 @@
         :pressure-atmosphere: 
           :one: "{0} اتمسفر"
           :other: "{0} اتمسفر"
+        :pressure-bar: 
+          :one: "{0} بار"
+          :other: "{0} بار"
         :pressure-hectopascal: 
           :one: "{0} هکتوپاسکال"
           :other: "{0} هکتوپاسکال"
@@ -355,6 +380,9 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} میلی‌متر جیوه"
           :other: "{0} میلی‌متر جیوه"
+        :pressure-pascal: 
+          :one: "{0} پاسکال"
+          :other: "{0} پاسکال"
         :pressure-pound-per-square-inch: 
           :one: "{0} پوند در اینچ مربع"
           :other: "{0} پوند در اینچ مربع"
@@ -376,6 +404,9 @@
         :temperature-fahrenheit: 
           :one: "{0} درجهٔ فارنهایت"
           :other: "{0} درجهٔ فارنهایت"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} درجهٔ کلوین"
           :other: "{0} درجهٔ کلوین"
@@ -649,8 +680,15 @@
         :speed-mile-per-hour: 
           :one: "{0}mph"
           :other: "{0}mph"
-        :temperature-celsius: {}
-        :temperature-fahrenheit: {}
+        :temperature-celsius: 
+          :one: "{0}°C"
+          :other: "{0}°C"
+        :temperature-fahrenheit: 
+          :one: "{0}°F"
+          :other: "{0}°F"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0}K"
           :other: "{0}K"
@@ -719,18 +757,22 @@
           :one: "{0} عیار"
           :other: "{0} عیار"
         :concentr-milligram-per-deciliter: 
+          :one: "{0} mg/dL"
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
+          :one: "{0} mmol/L"
           :other: "{0} mmol/L"
         :concentr-mole: 
           :one: "{0} مول"
           :other: "{0} مول"
         :concentr-part-per-million: 
+          :one: "{0} ppm"
           :other: "{0} ppm"
         :concentr-percent: 
           :one: "{0}٪"
           :other: "{0}٪"
         :concentr-permille: 
+          :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permyriad: 
           :one: "{0}‱"
@@ -745,6 +787,7 @@
           :one: "{0} مایل در گالن"
           :other: "{0} مایل در گالن"
         :consumption-mile-per-gallon-imperial: 
+          :one: "{0} mpg Imp."
           :other: "{0} mpg Imp."
         :digital-bit: 
           :one: "{0} بیت"
@@ -786,6 +829,9 @@
           :one: "{0} روز"
           :other: "{0} روز"
         :duration-day-person: {}
+        :duration-decade: 
+          :one: "{0} دهه"
+          :other: "{0} دهه"
         :duration-hour: 
           :one: "{0} ساعت"
           :other: "{0} ساعت"
@@ -850,8 +896,11 @@
           :one: "{0} ک.ژول"
           :other: "{0} ک.ژول"
         :energy-kilowatt-hour: 
-          :one: "{0} ک.وات‌ساعت"
-          :other: "{0} ک.وات‌ساعت"
+          :one: "{0} ک.و.ساعت"
+          :other: "{0} ک.و.ساعت"
+        :energy-therm-us: 
+          :one: "{0} ترم آمریکایی"
+          :other: "{0} ترم آمریکایی"
         :force-newton: 
           :one: "{0} نیوتن"
           :other: "{0} نیوتن"
@@ -870,6 +919,20 @@
         :frequency-megahertz: 
           :one: "{0} مگاهرتز"
           :other: "{0} مگاهرتز"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :other: "{0} dpi"
+        :graphics-em: 
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :other: "{0} MP"
+        :graphics-pixel: 
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :one: "{0} واحد نجومی"
           :other: "{0} واحد نجومی"
@@ -997,7 +1060,11 @@
           :one: "{0} وات"
           :other: "{0} وات"
         :pressure-atmosphere: 
+          :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} بار"
+          :other: "{0} بار"
         :pressure-hectopascal: 
           :one: "{0}‎ hPa"
           :other: "{0}‎ hPa"
@@ -1016,6 +1083,8 @@
         :pressure-millimeter-of-mercury: 
           :one: "{0} م‌م جیوه"
           :other: "{0} م‌م جیوه"
+        :pressure-pascal: 
+          :other: "{0} Pa"
         :pressure-pound-per-square-inch: 
           :one: "{0}‎ psi"
           :other: "{0}‎ psi"
@@ -1032,10 +1101,13 @@
           :one: "{0}‎ mph"
           :other: "{0}‎ mph"
         :temperature-celsius: 
+          :one: "{0}°C"
           :other: "{0}°C"
         :temperature-fahrenheit: 
+          :one: "{0}°F"
           :other: "{0}°F"
         :temperature-generic: 
+          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :one: "‎{0} K"

@@ -23,7 +23,10 @@
     :day-narrow: 
       :display_name: дн.
       :relative: 
+        -1: вчера
         -2: позавчера
+        0: сегодня
+        1: завтра
         2: послезавтра
       :relative_time: 
         :future: 
@@ -39,7 +42,10 @@
     :day-short: 
       :display_name: дн.
       :relative: 
+        -1: вчера
         -2: позавчера
+        0: сегодня
+        1: завтра
         2: послезавтра
       :relative_time: 
         :future: 
@@ -139,30 +145,30 @@
         0: "в этот час"
       :relative_time: 
         :future: 
-          :few: "+{0} ч."
-          :many: "+{0} ч."
-          :one: "+{0} ч."
-          :other: "+{0} ч."
+          :few: "+{0} ч"
+          :many: "+{0} ч"
+          :one: "+{0} ч"
+          :other: "+{0} ч"
         :past: 
-          :few: "-{0} ч."
-          :many: "-{0} ч."
-          :one: "-{0} ч."
-          :other: "-{0} ч."
+          :few: "-{0} ч"
+          :many: "-{0} ч"
+          :one: "-{0} ч"
+          :other: "-{0} ч"
     :hour-short: 
       :display_name: ч
       :relative: 
         0: "в этот час"
       :relative_time: 
         :future: 
-          :few: "через {0} ч."
-          :many: "через {0} ч."
-          :one: "через {0} ч."
-          :other: "через {0} ч."
+          :few: "через {0} ч"
+          :many: "через {0} ч"
+          :one: "через {0} ч"
+          :other: "через {0} ч"
         :past: 
-          :few: "{0} ч. назад"
-          :many: "{0} ч. назад"
-          :one: "{0} ч. назад"
-          :other: "{0} ч. назад"
+          :few: "{0} ч назад"
+          :many: "{0} ч назад"
+          :one: "{0} ч назад"
+          :other: "{0} ч назад"
     :minute: 
       :display_name: минута
       :relative: 
@@ -182,15 +188,15 @@
       :display_name: мин
       :relative_time: 
         :future: 
-          :few: "+{0} мин."
-          :many: "+{0} мин."
-          :one: "+{0} мин."
-          :other: "+{0} мин."
+          :few: "+{0} мин"
+          :many: "+{0} мин"
+          :one: "+{0} мин"
+          :other: "+{0} мин"
         :past: 
-          :few: "-{0} мин."
-          :many: "-{0} мин."
-          :one: "-{0} мин."
-          :other: "-{0} мин."
+          :few: "-{0} мин"
+          :many: "-{0} мин"
+          :one: "-{0} мин"
+          :other: "-{0} мин"
     :minute-short: 
       :display_name: мин.
       :relative_time: 
@@ -657,7 +663,7 @@
       :relative: 
         -1: "на пр. нед."
         0: "на эт. нед."
-        1: "на след. неделе"
+        1: "на след. нед."
       :relative_time: 
         :future: 
           :few: "+{0} нед."

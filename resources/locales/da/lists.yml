@@ -13,14 +13,15 @@
       :end: "{0} eller {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
-    :or-narrow: {}
-    :or-short: {}
-    :standard-narrow: 
+    :or-narrow: 
       ? !ruby/symbol "2"
-      : "{0} og {1}"
-      :end: "{0} og {1}"
-      :middle: "{0}, {1}"
-      :start: "{0}, {1}"
+      : "{0} el. {1}"
+      :end: "{0} el. {1}"
+    :or-short: 
+      ? !ruby/symbol "2"
+      : "{0} el. {1}"
+      :end: "{0} el. {1}"
+    :standard-narrow: {}
     :standard-short: 
       ? !ruby/symbol "2"
       : "{0} og {1}"

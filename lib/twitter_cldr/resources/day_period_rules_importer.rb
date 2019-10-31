@@ -55,43 +55,6 @@ module TwitterCldr
         end
       end
 
-      # def merged_rule_sets
-      #   {}.tap do |results|
-      #     raw_rule_sets.each do |rule_set_name, locale_data|
-      #       locale_data.each do |locale_sym, rules|
-      #         locale = normalize_locale(locale_sym.to_s)
-      #         next unless locale
-
-      #         results[locale.to_s('-')] ||= {}
-
-      #         locale.permutations.each do |parent_locale|
-      #           # skip self
-      #           next if parent_locale == locale.to_s
-
-      #           if parent_rules = locale_data[parent_locale]
-      #             rules.merge!(parent_rules)
-      #           end
-      #         end
-
-      #         rules.merge!(locale_data[:root])
-      #         results[locale.to_s('-')][rule_set_name] = rules
-      #       end
-      #     end
-      #   end
-      # end
-
-      # def normalize_locale(locale_str)
-      #   locale = TwitterCldr::Shared::Locale.parse(locale_str)
-
-      #   supported_locale = locale.permutations('-').find do |loc|
-      #     TwitterCldr.supported_locale?(loc)
-      #   end
-
-      #   if supported_locale
-      #     TwitterCldr::Shared::Locale.parse(supported_locale)
-      #   end
-      # end
-
       def raw_rule_sets
         {}.tap do |resulting_rule_sets|
           doc.xpath('//supplementalData/dayPeriodRuleSet').each do |rule_set_node|
@@ -120,13 +83,20 @@ module TwitterCldr
           type = rule.attribute('type').value
 
           if at = rule.attribute('at')&.value
-            rules[type] = { at: at }
+            rules[type] = { at: parse_time(at) }
           else
             from = rule.attribute('from').value
             before = rule.attribute('before').value
-            rules[type] = { from: from, before: before }
+            rules[type] = {
+              from: parse_time(from), before: parse_time(before)
+            }
           end
         end
+      end
+
+      def parse_time(time_str)
+        hour, min = time_str.split(':')
+        { hour: hour.to_i, min: min.to_i }
       end
 
       def input_file

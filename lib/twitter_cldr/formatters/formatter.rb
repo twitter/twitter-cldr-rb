@@ -16,7 +16,14 @@ module TwitterCldr
       def format(tokens, obj, options = {})
         tokens.each_with_index.inject("") do |ret, (token, index)|
           method_sym = :"format_#{token.type}"
-          ret << send(method_sym, token, index, obj, options)
+
+          begin
+            ret << send(method_sym, token, index, obj, options)
+          rescue => e
+            binding.pry
+            send(method_sym, token, index, obj, options)
+            raise
+          end
         end
       end
 

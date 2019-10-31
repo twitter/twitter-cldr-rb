@@ -88,6 +88,11 @@ namespace :update do
     TwitterCldr::Resources::CurrencySymbolsImporter.new.import
   end
 
+  desc 'Import day period rules'
+  task :day_period_rules do
+    TwitterCldr::Resources::DayPeriodRulesImporter.new.import
+  end
+
   desc 'Import validity data'
   task :validity_data do
     TwitterCldr::Resources::ValidityDataImporter.new.import

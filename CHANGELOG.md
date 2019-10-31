@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 5.1.0 (October 30th, 2019)
+* Upgrade to CLDR v36 and ICU 65.1.
+
 ### 5.0.0 (October 15, 2019)
 * Upgrade to Unicode v12.0.0, CLDR v35.1, and ICU 64.2.
 * Fixes several transliteration bugs causing incorrect transform rules to be applied.

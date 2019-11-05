@@ -1,7 +1,8 @@
 # TwitterCldr Changelog
 
-### 5.1.0 (October 30th, 2019)
+### 5.1.0 (November 5th, 2019)
 * Upgrade to CLDR v36 and ICU 65.1.
+* Fix issue causing formatted dates to contain the current timezone instead of the timezone at the given time.
 
 ### 5.0.0 (October 15, 2019)
 * Upgrade to Unicode v12.0.0, CLDR v35.1, and ICU 64.2.

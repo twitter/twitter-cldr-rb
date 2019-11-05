@@ -254,15 +254,16 @@ module TwitterCldr
       def timezone(time, pattern, length, options = {})
         # ruby is dumb and doesn't let you set non-UTC timezones in dates/times, so we have to pass it as an option instead
         timezone_info = TZInfo::Timezone.get(options[:timezone] || "UTC")
+        tz_period = timezone_info.periods_for_local(time).first || timezone_info.current_period
 
         case length
           when 1..3
-            timezone_info.current_period.abbreviation.to_s
+            tz_period.abbreviation.to_s
           else
-            hours = (timezone_info.current_period.utc_offset.to_f / 60 ** 2).abs
+            hours = (tz_period.utc_offset.to_f / 60 ** 2).abs
             divisor = hours.to_i
             minutes = (hours % (divisor == 0 ? 1 : divisor)) * 60
-            sign = timezone_info.current_period.utc_offset < 0 ? "-" : "+"
+            sign = tz_period.utc_offset < 0 ? "-" : "+"
             "UTC #{sign}#{divisor.to_s.rjust(2, "0")}:#{minutes.floor.to_s.rjust(2, "0")}"
         end
       end

@@ -125,6 +125,16 @@ describe TwitterCldr::Localized::LocalizedDateTime do
       expect(loc_date.with_timezone("America/Los_Angeles").to_s).to eq("Sep 20, 1987, 3:05:00 PM")
       expect(loc_date.with_timezone("America/New_York").to_s).to eq("Sep 20, 1987, 6:05:00 PM")
     end
+
+    it 'uses the timezone of the given time (i.e. respects DST)' do
+      time = Time.new(2016, 8, 29, 13, 57, 49)
+      loc_time = time.to_datetime.localize.with_timezone('America/Los_Angeles').to_long_s
+      expect(loc_time).to eq('August 29, 2016 at 1:57:49 PM PDT')
+
+      time = Time.new(2016, 11, 29, 12, 32, 52)
+      loc_time = time.to_datetime.localize.with_timezone('America/Los_Angeles').to_long_s
+      expect(loc_time).to eq('November 29, 2016 at 12:32:52 PM PST')
+    end
   end
 
 end

@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E, d"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "W-'й' 'тиж'. MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: dd.MM
@@ -44,16 +50,17 @@
         :yMd: dd.MM.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y 'р'."
+        :yw: "w-'й' 'тиж'. Y 'р'."
       :days: 
         :format: 
           :abbreviated: 
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: нд
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :narrow: 
             :fri: П
             :mon: П
@@ -63,13 +70,13 @@
             :tue: В
             :wed: С
           :short: 
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: нд
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide: 
             :fri: пʼятниця
             :mon: понеділок
@@ -80,13 +87,13 @@
             :wed: середа
         :stand-alone: 
           :abbreviated: 
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: нд
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :narrow: 
             :fri: П
             :mon: П
@@ -96,13 +103,13 @@
             :tue: В
             :wed: С
           :short: 
-            :fri: Пт
-            :mon: Пн
-            :sat: Сб
-            :sun: Нд
-            :thu: Чт
-            :tue: Вт
-            :wed: Ср
+            :fri: пт
+            :mon: пн
+            :sat: сб
+            :sun: нд
+            :thu: чт
+            :tue: вт
+            :wed: ср
           :wide: 
             :fri: пʼятниця
             :mon: понеділок
@@ -123,18 +130,25 @@
           1: н.е.
       :fields: 
         :day: день
-        :day-narrow: д.
+        :day-narrow: д
         :day-short: д.
-        :dayperiod: "частина доби"
+        :dayOfYear: "день року"
+        :dayOfYear-narrow: "день року"
+        :dayOfYear-short: "д. року"
+        :dayperiod: дп/пп
+        :dayperiod-narrow: дп/пп
+        :dayperiod-short: дп/пп
         :era: ера
+        :era-narrow: е
+        :era-short: е.
         :hour: година
         :hour-narrow: год
-        :hour-short: год
+        :hour-short: год.
         :minute: хвилина
         :minute-narrow: хв
-        :minute-short: хв
+        :minute-short: хв.
         :month: місяць
-        :month-narrow: міс.
+        :month-narrow: м
         :month-short: міс.
         :quarter: квартал
         :quarter-narrow: кв.
@@ -143,13 +157,23 @@
         :second-narrow: с
         :second-short: с
         :week: тиждень
-        :week-narrow: тиж.
+        :week-narrow: т
         :week-short: тиж.
+        :weekOfMonth: "тиждень місяця"
+        :weekOfMonth-narrow: "тиж. міс."
+        :weekOfMonth-short: "тиж. місяця"
         :weekday: "день тижня"
+        :weekday-narrow: "д тижня"
+        :weekday-short: "д. тижня"
+        :weekdayOfMonth: "день місяця"
+        :weekdayOfMonth-narrow: "д місяця"
+        :weekdayOfMonth-short: "д. місяця"
         :year: рік
-        :year-narrow: р.
+        :year-narrow: р
         :year-short: р.
         :zone: "часовий пояс"
+        :zone-narrow: "час. п."
+        :zone-short: "час. пояс"
       :formats: 
         :date: 
           :full: 
@@ -194,18 +218,18 @@
             8: серп.
             9: вер.
           :narrow: 
-            1: С
-            10: Ж
-            11: Л
-            12: Г
-            2: Л
-            3: Б
-            4: К
-            5: Т
-            6: Ч
-            7: Л
-            8: С
-            9: В
+            1: с
+            10: ж
+            11: л
+            12: г
+            2: л
+            3: б
+            4: к
+            5: т
+            6: ч
+            7: л
+            8: с
+            9: в
           :wide: 
             1: січня
             10: жовтня
@@ -221,18 +245,18 @@
             9: вересня
         :stand-alone: 
           :abbreviated: 
-            1: Січ
-            10: Жов
-            11: Лис
-            12: Гру
-            2: Лют
-            3: Бер
-            4: Кві
-            5: Тра
-            6: Чер
-            7: Лип
-            8: Сер
-            9: Вер
+            1: січ
+            10: жов
+            11: лис
+            12: гру
+            2: лют
+            3: бер
+            4: кві
+            5: тра
+            6: чер
+            7: лип
+            8: сер
+            9: вер
           :narrow: 
             1: С
             10: Ж
@@ -265,7 +289,7 @@
             :afternoon1: дня
             :am: дп
             :evening1: вечора
-            :midnight: північ
+            :midnight: опівночі
             :morning1: ранку
             :night1: ночі
             :noon: пополудні
@@ -283,7 +307,7 @@
             :afternoon1: дня
             :am: дп
             :evening1: вечора
-            :midnight: північ
+            :midnight: опівночі
             :morning1: ранку
             :night1: ночі
             :noon: пополудні
@@ -293,17 +317,25 @@
             :afternoon1: день
             :am: дп
             :evening1: вечір
+            :midnight: північ
             :morning1: ранок
             :night1: ніч
             :noon: полудень
             :pm: пп
           :narrow: 
+            :afternoon1: день
             :am: дп
+            :evening1: вечір
+            :midnight: північ
+            :morning1: ранок
+            :night1: ніч
+            :noon: полудень
             :pm: пп
           :wide: 
             :afternoon1: день
             :am: дп
             :evening1: вечір
+            :midnight: опівніч
             :morning1: ранок
             :night1: ніч
             :noon: полудень

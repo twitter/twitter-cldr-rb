@@ -1,18 +1,11 @@
 --- 
 :de-CH: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} Sommerzeit"
-      :generic: "{0} Zeit"
-      :standard: "{0} Normalzeit"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} Normalzeit"
   :metazones: 
     :Acre: 
       :long: 
@@ -167,9 +160,9 @@
         :standard: Brunei-Zeit
     :Cape_Verde: 
       :long: 
-        :daylight: Kap-Verde-Sommerzeit
-        :generic: Kap-Verde-Zeit
-        :standard: Kap-Verde-Normalzeit
+        :daylight: Cabo-Verde-Sommerzeit
+        :generic: Cabo-Verde-Zeit
+        :standard: Cabo-Verde-Normalzeit
     :Casey: 
       :long: 
         :standard: Casey-Zeit
@@ -539,15 +532,18 @@
         :standard: Phoenixinseln-Zeit
     :Pierre_Miquelon: 
       :long: 
-        :daylight: Saint-Pierre-und-Miquelon-Sommerzeit
-        :generic: Saint-Pierre-und-Miquelon-Zeit
-        :standard: Saint-Pierre-und-Miquelon-Normalzeit
+        :daylight: St.-Pierre-und-Miquelon-Sommerzeit
+        :generic: St.-Pierre-und-Miquelon-Zeit
+        :standard: St.-Pierre-und-Miquelon-Normalzeit
     :Pitcairn: 
       :long: 
         :standard: Pitcairninseln-Zeit
     :Ponape: 
       :long: 
         :standard: Ponape-Zeit
+    :Pyongyang: 
+      :long: 
+        :standard: Pjöngjang-Zeit
     :Qyzylorda: 
       :long: 
         :daylight: Qysylorda-Sommerzeit
@@ -870,6 +866,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -1004,6 +1002,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1104,6 +1104,8 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Aşgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1112,6 +1114,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1136,6 +1140,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Duschanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1230,6 +1236,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1249,11 +1257,11 @@
     :Atlantic/Azores: 
       :city: Azoren
     :Atlantic/Bermuda: 
-      :city: Bermudas
+      :city: Bermuda
     :Atlantic/Canary: 
       :city: Kanaren
     :Atlantic/Cape_Verde: 
-      :city: "Kap Verde"
+      :city: "Cabo Verde"
     :Atlantic/Faeroe: 
       :city: Färöer
     :Atlantic/Madeira: 
@@ -1290,12 +1298,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Koordinierte Weltzeit"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: Unbekannt
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrachan
     :Europe/Athens: 
       :city: Athen
     :Europe/Belgrade: 
@@ -1336,6 +1351,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiew
+    :Europe/Kirov: 
+      :city: Kirow
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1376,6 +1393,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1388,6 +1407,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanowsk
     :Europe/Uzhgorod: 
       :city: Uschgorod
     :Europe/Vaduz: 

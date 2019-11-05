@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E, d 'de' MMM"
         :MMMMEd: "E, d 'de' MMMM"
+        :MMMMW: "W'ª' 'semana' 'de' MMMM"
         :MMMMd: "d 'de' MMMM"
         :MMMd: "d 'de' MMM"
         :MMdd: dd/MM
@@ -46,8 +52,9 @@
         :yMMMMd: "d 'de' MMMM 'de' y"
         :yMMMd: "d 'de' MMM 'de' y"
         :yMd: dd/MM/y
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yQQQ: "QQQ 'de' y"
+        :yQQQQ: "QQQQ 'de' y"
+        :yw: "w'ª' 'semana' 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -128,13 +135,20 @@
         :day: dia
         :day-narrow: dia
         :day-short: dia
+        :dayOfYear: "dia do ano"
+        :dayOfYear-narrow: "dia do ano"
+        :dayOfYear-short: "dia do ano"
         :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: hora
         :hour-narrow: h
         :hour-short: h
         :minute: minuto
-        :minute-narrow: m
+        :minute-narrow: min.
         :minute-short: min.
         :month: mês
         :month-narrow: mês
@@ -143,16 +157,26 @@
         :quarter-narrow: trim.
         :quarter-short: trim.
         :second: segundo
-        :second-narrow: s
+        :second-narrow: seg.
         :second-short: seg.
         :week: semana
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "semana do mês"
+        :weekOfMonth-narrow: "sem. do mês"
+        :weekOfMonth-short: "sem. do mês"
         :weekday: "dia da semana"
+        :weekday-narrow: "dia da sem."
+        :weekday-short: "dia da sem."
+        :weekdayOfMonth: "dia da semana do mês"
+        :weekdayOfMonth-narrow: "dia da sem. do mês"
+        :weekdayOfMonth-short: "dia da sem. do mês"
         :year: ano
         :year-narrow: ano
         :year-short: ano
         :zone: "fuso horário"
+        :zone-narrow: fuso
+        :zone-short: fuso
       :formats: 
         :date: 
           :full: 
@@ -162,7 +186,7 @@
           :medium: 
             :pattern: "d 'de' MMM 'de' y"
           :short: 
-            :pattern: dd/MM/yy
+            :pattern: dd/MM/y
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -275,13 +299,13 @@
             :pm: PM
           :narrow: 
             :afternoon1: "da tarde"
-            :am: a
+            :am: AM
             :evening1: "da noite"
-            :midnight: m
+            :midnight: meia-noite
             :morning1: "da manhã"
             :night1: "da madrugada"
-            :noon: m
-            :pm: p
+            :noon: meio-dia
+            :pm: PM
           :wide: 
             :afternoon1: "da tarde"
             :am: AM

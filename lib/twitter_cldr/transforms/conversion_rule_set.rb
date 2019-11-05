@@ -20,11 +20,15 @@ module TwitterCldr
         @rule_index = build_rule_index(rules)
       end
 
-      def foward?
+      def forward?
         true
       end
 
       def backward?
+        false
+      end
+
+      def is_filter_rule?
         false
       end
 
@@ -34,6 +38,10 @@ module TwitterCldr
 
       def is_conversion_rule?
         false
+      end
+
+      def is_conversion_rule_set?
+        true
       end
 
       def invert
@@ -51,6 +59,7 @@ module TwitterCldr
               start = rule_match.start
               stop = rule_match.stop
               replacement = rule_match.replacement
+              puts "#{cursor.text[start...stop]} -> #{replacement}" if $debug
               cursor.text[start...stop] = replacement
 
               cursor.advance(

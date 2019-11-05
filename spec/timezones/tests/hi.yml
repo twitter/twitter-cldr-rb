@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: मोरक्को समय
   :LONG:
-    :standard: पश्चिमी यूरोपीय मानक समय
-    :daylight: पश्चिमी यूरोपीय ग्रीष्‍मकालीन समय
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: पश्चिमी यूरोपीय समय
+    :generic: मोरक्को समय
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: पश्चिमी सहारा समय
   :LONG:
-    :standard: पश्चिमी यूरोपीय मानक समय
-    :daylight: पश्चिमी यूरोपीय ग्रीष्‍मकालीन समय
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: पश्चिमी यूरोपीय समय
+    :generic: पश्चिमी सहारा समय
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -458,10 +458,10 @@ Africa/Johannesburg:
   :GENERIC_LOCATION:
     :generic: दक्षिण अफ़्रीका समय
   :LONG:
-    :standard: दक्षिण अफ़्रीका समय
+    :standard: दक्षिण अफ़्रीका मानक समय
     :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: दक्षिण अफ़्रीका समय
+    :generic: दक्षिण अफ़्रीका मानक समय
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: युगांडा समय
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: सूडान समय
   :LONG:
-    :standard: पूर्वी अफ़्रीका समय
-    :daylight: GMT+03:00
+    :standard: मध्य अफ़्रीका समय
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: पूर्वी अफ़्रीका समय
+    :generic: मध्य अफ़्रीका समय
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: सूडान समय
 Africa/Kigali:
@@ -710,10 +710,10 @@ Africa/Maseru:
   :GENERIC_LOCATION:
     :generic: लेसोथो समय
   :LONG:
-    :standard: दक्षिण अफ़्रीका समय
+    :standard: दक्षिण अफ़्रीका मानक समय
     :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: दक्षिण अफ़्रीका समय
+    :generic: दक्षिण अफ़्रीका मानक समय
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -728,10 +728,10 @@ Africa/Mbabane:
   :GENERIC_LOCATION:
     :generic: स्वाज़ीलैंड समय
   :LONG:
-    :standard: दक्षिण अफ़्रीका समय
+    :standard: दक्षिण अफ़्रीका मानक समय
     :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: दक्षिण अफ़्रीका समय
+    :generic: दक्षिण अफ़्रीका मानक समय
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: ट्यूनीशिया समय
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: नामीबिया समय
   :LONG:
-    :standard: पश्चिम अफ़्रीका मानक समय
-    :daylight: पश्चिम अफ़्रीका ग्रीष्मकालीन समय
+    :standard: मध्य अफ़्रीका समय
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: पश्चिम अफ़्रीका समय (विंडहोक)
+    :generic: मध्य अफ़्रीका समय
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: नामीबिया समय
@@ -983,7 +983,7 @@ America/Adak:
     :standard: हवाई–आल्यूशन मानक समय
     :daylight: हवाई–आल्यूशन डेलाइट समय
   :LONG_GENERIC:
-    :generic: हवाई–आल्यूशन समय (अडक)
+    :generic: हवाई–आल्यूशन समय
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1052,10 +1052,10 @@ America/Araguaina:
   :GENERIC_LOCATION:
     :generic: आराग्वेना समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1230,7 +1230,7 @@ America/Argentina/San_Juan:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: सान जुआन समय
+    :generic: सैन ह्वान समय
   :LONG:
     :standard: अर्जेंटीना मानक समय
     :daylight: अर्जेंटीना ग्रीष्मकालीन समय
@@ -1240,7 +1240,7 @@ America/Argentina/San_Juan:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: सान जुआन समय
+    :generic: सैन ह्वान समय
 America/Argentina/San_Luis:
   :offset: -10800000
   :LONG_GMT:
@@ -1248,7 +1248,7 @@ America/Argentina/San_Luis:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: सान लुईस समय
+    :generic: सैन लूई समय
   :LONG:
     :standard: पश्चिमी अर्जेंटीना मानक समय
     :daylight: पश्चिमी अर्जेंटीना ग्रीष्मकालीन समय
@@ -1258,7 +1258,7 @@ America/Argentina/San_Luis:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: सान लुईस समय
+    :generic: सैन लूई समय
 America/Argentina/Tucuman:
   :offset: -10800000
   :LONG_GMT:
@@ -1320,7 +1320,7 @@ America/Asuncion:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: पेराग्वे समय
+    :generic: पराग्वे समय
   :LONG:
     :standard: पैराग्वे मानक समय
     :daylight: पैराग्वे ग्रीष्मकालीन समय
@@ -1330,7 +1330,7 @@ America/Asuncion:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: पेराग्वे समय
+    :generic: पराग्वे समय
 America/Atikokan:
   :offset: -18000000
   :LONG_GMT:
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: हवाई–आल्यूशन मानक समय
     :daylight: हवाई–आल्यूशन डेलाइट समय
   :LONG_GENERIC:
-    :generic: हवाई–आल्यूशन समय (अडक)
+    :generic: हवाई–आल्यूशन समय
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1376,10 +1376,10 @@ America/Bahia:
   :GENERIC_LOCATION:
     :generic: बहिया समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1430,10 +1430,10 @@ America/Belem:
   :GENERIC_LOCATION:
     :generic: बेलेम समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1518,7 +1518,7 @@ America/Boise:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: बॉइस समय
+    :generic: बॉइसी समय
   :LONG:
     :standard: उत्तरी अमेरिकी माउंटेन मानक समय
     :daylight: उत्तरी अमेरिकी माउंटेन डेलाइट समय
@@ -1528,7 +1528,7 @@ America/Boise:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: बॉइस समय
+    :generic: बॉइसी समय
 America/Buenos_Aires:
   :offset: -10800000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: अमेज़न मानक समय
     :daylight: अमेज़न ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: अमेज़न समय
+    :generic: अमेज़न समय (कैंपो ग्रांडे)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: कैनकुन समय
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: वेनेज़ुएला समय
   :LONG:
     :standard: वेनेज़ुएला समय
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: वेनेज़ुएला समय
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: वेनेज़ुएला समय
 America/Catamarca:
@@ -1644,7 +1644,7 @@ America/Cayenne:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: फ़्रेंच गयाना समय
+    :generic: फ़्रेंच गुयाना समय
   :LONG:
     :standard: फ़्रेंच गुयाना समय
     :daylight: GMT-03:00
@@ -1654,7 +1654,7 @@ America/Cayenne:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: फ़्रेंच गयाना समय
+    :generic: फ़्रेंच गुयाना समय
 America/Cayman:
   :offset: -18000000
   :LONG_GMT:
@@ -1662,7 +1662,7 @@ America/Cayman:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: केमैन द्वीपसमूह समय
+    :generic: कैमेन द्वीपसमूह समय
   :LONG:
     :standard: उत्तरी अमेरिकी पूर्वी मानक समय
     :daylight: उत्तरी अमेरिकी पूर्वी डेलाइट समय
@@ -1672,7 +1672,7 @@ America/Cayman:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: केमैन द्वीपसमूह समय
+    :generic: कैमेन द्वीपसमूह समय
 America/Chicago:
   :offset: -21600000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: अमेज़न मानक समय
     :daylight: अमेज़न ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: अमेज़न समय
+    :generic: अमेज़न समय (क्यूआबा)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Fort Nelson समय
+    :generic: फ़ोर्ट नेल्सन समय
   :LONG:
     :standard: उत्तरी अमेरिकी माउंटेन मानक समय
     :daylight: उत्तरी अमेरिकी माउंटेन डेलाइट समय
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT-7
     :daylight: GMT-7
   :SHORT_GENERIC:
-    :generic: Fort Nelson समय
+    :generic: फ़ोर्ट नेल्सन समय
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2042,10 +2042,10 @@ America/Fortaleza:
   :GENERIC_LOCATION:
     :generic: फ़ोर्टालेज़ा समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -2058,7 +2058,7 @@ America/Glace_Bay:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: ग्लेस खा़ड़ी समय
+    :generic: ग्लेस खाड़ी समय
   :LONG:
     :standard: अटलांटिक मानक समय
     :daylight: अटलांटिक डेलाइट समय
@@ -2068,7 +2068,7 @@ America/Glace_Bay:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: ग्लेस खा़ड़ी समय
+    :generic: ग्लेस खाड़ी समय
 America/Godthab:
   :offset: -10800000
   :LONG_GMT:
@@ -2094,7 +2094,7 @@ America/Goose_Bay:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: गूस खा़ड़ी समय
+    :generic: गूस खाड़ी समय
   :LONG:
     :standard: अटलांटिक मानक समय
     :daylight: अटलांटिक डेलाइट समय
@@ -2104,22 +2104,22 @@ America/Goose_Bay:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: गूस खा़ड़ी समय
+    :generic: गूस खाड़ी समय
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: तुर्क और कैकोज़ द्वीपसमूह समय
   :LONG:
-    :standard: अटलांटिक मानक समय
-    :daylight: अटलांटिक डेलाइट समय
+    :standard: उत्तरी अमेरिकी पूर्वी मानक समय
+    :daylight: उत्तरी अमेरिकी पूर्वी डेलाइट समय
   :LONG_GENERIC:
-    :generic: अटलांटिक मानक समय
+    :generic: उत्तरी अमेरिकी पूर्वी समय
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: तुर्क और कैकोज़ द्वीपसमूह समय
@@ -2202,7 +2202,7 @@ America/Guyana:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: गयाना समय
+    :generic: गुयाना समय
   :LONG:
     :standard: गुयाना समय
     :daylight: GMT-04:00
@@ -2212,7 +2212,7 @@ America/Guyana:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: गयाना समय
+    :generic: गुयाना समय
 America/Halifax:
   :offset: -14400000
   :LONG_GMT:
@@ -2690,10 +2690,10 @@ America/Maceio:
   :GENERIC_LOCATION:
     :generic: मेसीओ समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -2906,10 +2906,10 @@ America/Miquelon:
   :GENERIC_LOCATION:
     :generic: सेंट पिएरे और मिक्वेलान समय
   :LONG:
-    :standard: सेंट पियरे और मिकेलान मानक समय
-    :daylight: सेंट पियरे और मिकेलान डेलाइट समय
+    :standard: सेंट पिएरे और मिक्वेलान मानक समय
+    :daylight: सेंट पिएरे और मिक्वेलान डेलाइट समय
   :LONG_GENERIC:
-    :generic: सेंट पियरे और मिकेलान समय
+    :generic: सेंट पिएरे और मिक्वेलान समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: उत्तरी अमेरिकी पूर्वी मानक समय
     :daylight: उत्तरी अमेरिकी पूर्वी डेलाइट समय
   :LONG_GENERIC:
-    :generic: उत्तरी अमेरिकी पूर्वी मानक समय
+    :generic: उत्तरी अमेरिकी पूर्वी समय
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: हैती समय
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: पोर्टो रिको समय
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: पुंटा एरिनास समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: पुंटा एरिनास समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: पुंटा एरिनास समय
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3392,10 +3392,10 @@ America/Recife:
   :GENERIC_LOCATION:
     :generic: रेसाइफ़ समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -3500,30 +3500,30 @@ America/Santarem:
   :GENERIC_LOCATION:
     :generic: सैंटारेम समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया मानक समय
+    :generic: ब्राज़ीलिया मानक समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: सैंटारेम समय
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: चिली समय
   :LONG:
     :standard: चिली मानक समय
     :daylight: चिली ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: चिली मानक समय
+    :generic: चिली समय
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: चिली समय
@@ -3554,10 +3554,10 @@ America/Sao_Paulo:
   :GENERIC_LOCATION:
     :generic: साओ पाउलो समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया समय
+    :generic: ब्राज़ीलिया समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -3570,7 +3570,7 @@ America/Scoresbysund:
   :SHORT_GMT:
     :generic: "-0100"
   :GENERIC_LOCATION:
-    :generic: इटोकोर्टोरमियाट समय
+    :generic: इटोकोर्टोरमिट समय
   :LONG:
     :standard: पूर्वी ग्रीनलैंड मानक समय
     :daylight: पूर्वी ग्रीनलैंड ग्रीष्मकालीन समय
@@ -3580,7 +3580,7 @@ America/Scoresbysund:
     :standard: GMT-1
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: इटोकोर्टोरमियाट समय
+    :generic: इटोकोर्टोरमिट समय
 America/Shiprock:
   :offset: -25200000
   :LONG_GMT:
@@ -3696,7 +3696,7 @@ America/St_Thomas:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: यू.एस. वर्जिन द्वीपसमूह समय
+    :generic: यू॰एस॰ वर्जिन द्वीपसमूह समय
   :LONG:
     :standard: अटलांटिक मानक समय
     :daylight: अटलांटिक डेलाइट समय
@@ -3706,7 +3706,7 @@ America/St_Thomas:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: यू.एस. वर्जिन द्वीपसमूह समय
+    :generic: यू॰एस॰ वर्जिन द्वीपसमूह समय
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3876,7 +3876,7 @@ America/Virgin:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: यू.एस. वर्जिन द्वीपसमूह समय
+    :generic: यू॰एस॰ वर्जिन द्वीपसमूह समय
   :LONG:
     :standard: अटलांटिक मानक समय
     :daylight: अटलांटिक डेलाइट समय
@@ -3886,7 +3886,7 @@ America/Virgin:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: यू.एस. वर्जिन द्वीपसमूह समय
+    :generic: यू॰एस॰ वर्जिन द्वीपसमूह समय
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -4004,10 +4004,10 @@ Antarctica/DumontDUrville:
   :GENERIC_LOCATION:
     :generic: ड्यूमोंट डी अर्विले समय
   :LONG:
-    :standard: ड्यूमोंट डर्विल समय
+    :standard: ड्यूमोंट डी अर्विले समय
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: ड्यूमोंट डर्विल समय
+    :generic: ड्यूमोंट डी अर्विले समय
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: पॉमर समय
   :LONG:
-    :standard: चिली मानक समय
-    :daylight: चिली ग्रीष्मकालीन समय
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: चिली मानक समय
+    :generic: पॉमर समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: तुर्कमेनिस्तान समय
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: एतराउ समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: पश्चिम कज़ाखस्तान समय
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: पश्चिम कज़ाखस्तान समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: एतराउ समय
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: अज़रबैजान मानक समय
     :daylight: अज़रबैजान ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: अज़रबैजान समय
+    :generic: अज़रबैजान मानक समय
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: अज़रबैजान समय
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Barnaul समय
+    :generic: बर्नोल समय
   :LONG:
     :standard: GMT+07:00
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: Barnaul समय
+    :generic: बर्नोल समय
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: Barnaul समय
+    :generic: बर्नोल समय
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4490,10 +4490,10 @@ Asia/Brunei:
   :GENERIC_LOCATION:
     :generic: ब्रूनेई समय
   :LONG:
-    :standard: ब्रूनेई दारूस्सलाम समय
+    :standard: ब्रूनेई दारूस्सलम समय
     :daylight: GMT+08:00
   :LONG_GENERIC:
-    :generic: ब्रूनेई दारूस्सलाम समय
+    :generic: ब्रूनेई दारूस्सलम समय
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: कॉइबाल्सन मानक समय
     :daylight: कॉइबाल्सन ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: कॉइबाल्सन समय
+    :generic: कॉइबाल्सन मानक समय
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: चोइबालसन समय
 Asia/Chongqing:
@@ -4704,7 +4704,7 @@ Asia/Dushanbe:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: ताजिकिस्तान समय
+    :generic: ताज़िकिस्तान समय
   :LONG:
     :standard: ताजिकिस्तान समय
     :daylight: GMT+05:00
@@ -4714,25 +4714,25 @@ Asia/Dushanbe:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: ताजिकिस्तान समय
+    :generic: ताज़िकिस्तान समय
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: फ़ामागुस्ता समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: फ़ामागुस्ता समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: फ़ामागुस्ता समय
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: होव्ड मानक समय
     :daylight: होव्ड ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: होव्ड समय
+    :generic: होव्ड मानक समय
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: होव्ड समय
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: इर्कुत्स्क समय
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की समय
   :LONG:
-    :standard: पूर्वी यूरोपीय मानक समय
-    :daylight: पूर्वी यूरोपीय ग्रीष्मकालीन समय
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: पूर्वी यूरोपीय समय
+    :generic: तुर्की समय
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: तुर्की समय
@@ -4920,7 +4920,7 @@ Asia/Jerusalem:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
   :LONG:
     :standard: इज़राइल मानक समय
     :daylight: इज़राइल डेलाइट समय
@@ -4930,7 +4930,7 @@ Asia/Jerusalem:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
 Asia/Kabul:
   :offset: 16200000
   :LONG_GMT:
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: मकाऊ (विशेष प्रशासनिक क्षेत्र चीन) समय
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: मागादान समय
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: मागादान मानक समय
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: मागादान समय
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: साइप्रस समय
+    :generic: निकोसिया समय
   :LONG:
     :standard: पूर्वी यूरोपीय मानक समय
     :daylight: पूर्वी यूरोपीय ग्रीष्मकालीन समय
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: साइप्रस समय
+    :generic: निकोसिया समय
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: नोवोकुज़्नेत्स्क समय
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: नोवोसिबिर्स्क समय
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: नोवोसिबिर्स्क मानक समय
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: नोवोसिबिर्स्क समय
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: पोंटीयांक समय
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: उत्तर कोरिया समय
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: कोरियाई मानक समय
+    :daylight: कोरियाई डेलाइट समय
   :LONG_GENERIC:
-    :generic: उत्तर कोरिया समय
+    :generic: कोरियाई मानक समय
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: उत्तर कोरिया समय
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: क़तर समय
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: केज़ेलोर्डा समय
+    :generic: कोस्टाने समय
   :LONG:
     :standard: पूर्व कज़ाखस्तान समय
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: कोस्टाने समय
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: केज़ेलोर्डा समय
+  :LONG:
+    :standard: पश्चिम कज़ाखस्तान समय
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: पश्चिम कज़ाखस्तान समय
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: केज़ेलोर्डा समय
 Asia/Rangoon:
@@ -5676,7 +5694,7 @@ Asia/Tel_Aviv:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
   :LONG:
     :standard: इज़राइल मानक समय
     :daylight: इज़राइल डेलाइट समय
@@ -5686,7 +5704,7 @@ Asia/Tel_Aviv:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
 Asia/Thimbu:
   :offset: 21600000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: जापान समय
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: तोम्स्क समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: तोम्स्क समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: तोम्स्क समय
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: उलान बटोर मानक समय
     :daylight: उलान बटोर ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: उलान बटोर समय
+    :generic: उलान बटोर मानक समय
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: उलानबातर समय
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: उलान बटोर मानक समय
     :daylight: उलान बटोर ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: उलान बटोर समय
+    :generic: उलान बटोर मानक समय
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: उलानबातर समय
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: याकूत्स्क समय
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: म्यांमार (बर्मा) समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: म्यांमार समय
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: म्यांमार समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: म्यांमार (बर्मा) समय
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6632,10 +6650,10 @@ Brazil/East:
   :GENERIC_LOCATION:
     :generic: साओ पाउलो समय
   :LONG:
-    :standard: ब्राजीलिया मानक समय
-    :daylight: ब्राजीलिया ग्रीष्मकालीन समय
+    :standard: ब्राज़ीलिया मानक समय
+    :daylight: ब्राज़ीलिया ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ब्राजीलिया समय
+    :generic: ब्राज़ीलिया समय
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: विनीपेग समय
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: रेजिना समय
-  :LONG:
-    :standard: उत्तरी अमेरिकी केंद्रीय मानक समय
-    :daylight: उत्तरी अमेरिकी केंद्रीय डेलाइट समय
-  :LONG_GENERIC:
-    :generic: उत्तरी अमेरिकी केंद्रीय मानक समय
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: रेजिना समय
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: व्हाइटहोर्स समय
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: चिली समय
   :LONG:
     :standard: चिली मानक समय
     :daylight: चिली ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: चिली मानक समय
+    :generic: चिली समय
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: चिली समय
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ईस्टर समय
   :LONG:
     :standard: ईस्टर द्वीप मानक समय
     :daylight: ईस्टर द्वीप ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ईस्टर द्वीप मानक समय
+    :generic: ईस्टर द्वीप समय
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: ईस्टर समय
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan समय
+    :generic: आस्ट्राखान समय
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Astrakhan समय
+    :generic: आस्ट्राखान समय
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Astrakhan समय
+    :generic: आस्ट्राखान समय
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: आइल ऑफ़ मैन समय
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की समय
   :LONG:
-    :standard: पूर्वी यूरोपीय मानक समय
-    :daylight: पूर्वी यूरोपीय ग्रीष्मकालीन समय
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: पूर्वी यूरोपीय समय
+    :generic: तुर्की समय
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: तुर्की समय
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: यूक्रेन समय
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: किरोव समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: किरोव समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: किरोव समय
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: बेलारूस समय
   :LONG:
-    :standard: अग्र पूर्वी यूरोपीय समय
-    :daylight: GMT+03:00
+    :standard: मॉस्को मानक समय
+    :daylight: मॉस्को ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: अग्र पूर्वी यूरोपीय समय
+    :generic: मॉस्को मानक समय
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: साइप्रस समय
+    :generic: निकोसिया समय
   :LONG:
     :standard: पूर्वी यूरोपीय मानक समय
     :daylight: पूर्वी यूरोपीय ग्रीष्मकालीन समय
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: साइप्रस समय
+    :generic: निकोसिया समय
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: चेक गणराज्य समय
+    :generic: चेकिया समय
   :LONG:
     :standard: मध्य यूरोपीय मानक समय
     :daylight: मध्‍य यूरोपीय ग्रीष्‍मकालीन समय
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: चेक गणराज्य समय
+    :generic: चेकिया समय
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: बोस्निया और हर्ज़ेगोविना समय
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: सारातोव समय
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: सारातोव समय
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: सारातोव समय
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: मैसिडोनिया समय
+    :generic: मकदूनिया समय
   :LONG:
     :standard: मध्य यूरोपीय मानक समय
     :daylight: मध्‍य यूरोपीय ग्रीष्‍मकालीन समय
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: मैसिडोनिया समय
+    :generic: मकदूनिया समय
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk समय
+    :generic: उल्यानोव्स्क समय
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsk समय
+    :generic: उल्यानोव्स्क समय
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ulyanovsk समय
+    :generic: उल्यानोव्स्क समय
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: लिथुआनिया समय
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: वोल्गोग्राड समय
   :LONG:
-    :standard: मॉस्को मानक समय
-    :daylight: मॉस्को ग्रीष्मकालीन समय
+    :standard: वोल्गोग्राड मानक समय
+    :daylight: वोल्गोग्राड ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: मॉस्को मानक समय
+    :generic: वोल्गोग्राड मानक समय
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: वोल्गोग्राड समय
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: ग्रीनविच मीन टाइम
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ग्रीनविच मीन टाइम
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9080,10 +9080,10 @@ Indian/Mahe:
   :GENERIC_LOCATION:
     :generic: सेशेल्स समय
   :LONG:
-    :standard: सेशल्स समय
+    :standard: सेशेल्स समय
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: सेशल्स समय
+    :generic: सेशेल्स समय
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
@@ -9114,7 +9114,7 @@ Indian/Mauritius:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: मॉरिशस समय
+    :generic: मॉरीशस समय
   :LONG:
     :standard: मॉरीशस मानक समय
     :daylight: मॉरीशस ग्रीष्मकालीन समय
@@ -9124,7 +9124,7 @@ Indian/Mauritius:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: मॉरिशस समय
+    :generic: मॉरीशस समय
 Indian/Mayotte:
   :offset: 10800000
   :LONG_GMT:
@@ -9186,7 +9186,7 @@ Israel:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
   :LONG:
     :standard: इज़राइल मानक समय
     :daylight: इज़राइल डेलाइट समय
@@ -9196,7 +9196,7 @@ Israel:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: इसराइल समय
+    :generic: इज़राइल समय
 Jamaica:
   :offset: -18000000
   :LONG_GMT:
@@ -9402,7 +9402,7 @@ NZ-CHAT:
   :SHORT_GMT:
     :generic: "+1245"
   :GENERIC_LOCATION:
-    :generic: चाथम समय
+    :generic: चैथम समय
   :LONG:
     :standard: चैथम मानक समय
     :daylight: चैथम डेलाइट समय
@@ -9412,7 +9412,7 @@ NZ-CHAT:
     :standard: GMT+12:45
     :daylight: GMT+13:45
   :SHORT_GENERIC:
-    :generic: चाथम समय
+    :generic: चैथम समय
 Navajo:
   :offset: -25200000
   :LONG_GMT:
@@ -9510,17 +9510,17 @@ Pacific/Bougainville:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: बोगनविल समय
+    :generic: बोगनविले समय
   :LONG:
     :standard: GMT+11:00
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: बोगनविल समय
+    :generic: बोगनविले समय
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: बोगनविल समय
+    :generic: बोगनविले समय
 Pacific/Chatham:
   :offset: 45900000
   :LONG_GMT:
@@ -9528,7 +9528,7 @@ Pacific/Chatham:
   :SHORT_GMT:
     :generic: "+1245"
   :GENERIC_LOCATION:
-    :generic: चाथम समय
+    :generic: चैथम समय
   :LONG:
     :standard: चैथम मानक समय
     :daylight: चैथम डेलाइट समय
@@ -9538,7 +9538,7 @@ Pacific/Chatham:
     :standard: GMT+12:45
     :daylight: GMT+13:45
   :SHORT_GENERIC:
-    :generic: चाथम समय
+    :generic: चैथम समय
 Pacific/Chuuk:
   :offset: 36000000
   :LONG_GMT:
@@ -9548,30 +9548,30 @@ Pacific/Chuuk:
   :GENERIC_LOCATION:
     :generic: चक समय
   :LONG:
-    :standard: चूक समय
+    :standard: चुक समय
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: चूक समय
+    :generic: चुक समय
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
     :generic: चक समय
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ईस्टर समय
   :LONG:
     :standard: ईस्टर द्वीप मानक समय
     :daylight: ईस्टर द्वीप ग्रीष्मकालीन समय
   :LONG_GENERIC:
-    :generic: ईस्टर द्वीप मानक समय
+    :generic: ईस्टर द्वीप समय
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: ईस्टर समय
@@ -10178,10 +10178,10 @@ Pacific/Truk:
   :GENERIC_LOCATION:
     :generic: चक समय
   :LONG:
-    :standard: चूक समय
+    :standard: चुक समय
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: चूक समय
+    :generic: चुक समय
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -10232,10 +10232,10 @@ Pacific/Yap:
   :GENERIC_LOCATION:
     :generic: चक समय
   :LONG:
-    :standard: चूक समय
+    :standard: चुक समय
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: चूक समय
+    :generic: चुक समय
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: सिंगापुर समय
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की समय
   :LONG:
-    :standard: पूर्वी यूरोपीय मानक समय
-    :daylight: पूर्वी यूरोपीय ग्रीष्मकालीन समय
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: पूर्वी यूरोपीय समय
+    :generic: तुर्की समय
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: तुर्की समय
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: हवाई–आल्यूशन मानक समय
     :daylight: हवाई–आल्यूशन डेलाइट समय
   :LONG_GENERIC:
-    :generic: हवाई–आल्यूशन समय (अडक)
+    :generic: हवाई–आल्यूशन समय
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: समन्वित वैश्विक समय
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

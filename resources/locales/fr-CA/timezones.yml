@@ -1,18 +1,11 @@
 --- 
 :fr-CA: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "UTC{0}"
-    :gmt_zero_format: 
-      :generic: UTC
-    :hour_format: 
-      :generic: "+HH:mm;−HH:mm"
-    :region_format: 
-      :daylight: "{0} (heure avancée)"
-      :generic: "heure : {0}"
-      :standard: "{0} (heure normale)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "UTC{0}"
+    :gmt_zero_format: UTC
+    :hour_format: "+HH:mm;−HH:mm"
+    :region_format: "{0} (heure normale)"
   :metazones: 
     :Acre: 
       :long: 
@@ -27,7 +20,7 @@
         :standard: "heure d’Afrique centrale"
     :Africa_Eastern: 
       :long: 
-        :standard: "Heure d’Afrique orientale"
+        :standard: "heure d’Afrique orientale"
     :Africa_Southern: 
       :long: 
         :standard: "heure normale d’Afrique du Sud"
@@ -41,6 +34,10 @@
         :daylight: "heure avancée de l’Alaska"
         :generic: "heure de l’Alaska"
         :standard: "heure normale de l’Alaska"
+      :short: 
+        :daylight: HEAK
+        :generic: HAK
+        :standard: HNAK
     :Almaty: 
       :long: 
         :daylight: "heure avancée d’Alma Ata"
@@ -132,6 +129,10 @@
         :daylight: "heure avancée de l’Atlantique"
         :generic: "heure de l’Atlantique"
         :standard: "heure normale de l’Atlantique"
+      :short: 
+        :daylight: HEA
+        :generic: HA
+        :standard: HNA
     :Australia_Central: 
       :long: 
         :daylight: "heure avancée du centre de l’Australie"
@@ -186,6 +187,9 @@
         :daylight: "heure avancée du Cap-Vert"
         :generic: "heure du Cap-Vert"
         :standard: "heure normale du Cap-Vert"
+    :Casey: 
+      :long: 
+        :standard: "heure de Casey"
     :Chamorro: 
       :long: 
         :standard: "heure des Chamorro"
@@ -230,6 +234,10 @@
         :daylight: "heure avancée de Cuba"
         :generic: "heure de Cuba"
         :standard: "heure normale de Cuba"
+      :short: 
+        :daylight: HECU
+        :generic: HCU
+        :standard: HNCU
     :Davis: 
       :long: 
         :standard: "heure de Davis"
@@ -257,6 +265,10 @@
         :daylight: "heure avancée d’Europe de l’Est"
         :generic: "heure d’Europe de l’Est"
         :standard: "heure normale d’Europe de l’Est"
+      :short: 
+        :daylight: EEDT
+        :generic: EET
+        :standard: EEST
     :Europe_Further_Eastern: 
       :long: 
         :standard: "heure de Kaliningrad"
@@ -265,6 +277,10 @@
         :daylight: "heure avancée d’Europe de l’Ouest"
         :generic: "heure d’Europe de l’Ouest"
         :standard: "heure normale d’Europe de l’Ouest"
+      :short: 
+        :daylight: WEDT
+        :generic: WET
+        :standard: WEST
     :Falkland: 
       :long: 
         :daylight: "heure avancée des îles Malouines"
@@ -284,6 +300,8 @@
     :GMT: 
       :long: 
         :standard: "heure moyenne de Greenwich"
+      :short: 
+        :standard: GMT
     :Galapagos: 
       :long: 
         :standard: "heure des îles Galápagos"
@@ -303,11 +321,19 @@
         :daylight: "heure avancée de l’Est du Groenland"
         :generic: "heure de l’Est du Groenland"
         :standard: "heure normale de l’Est du Groenland"
+      :short: 
+        :daylight: HEEG
+        :generic: HEG
+        :standard: HNEG
     :Greenland_Western: 
       :long: 
         :daylight: "heure avancée de l’Ouest du Groenland"
         :generic: "heure de l’Ouest du Groenland"
         :standard: "heure normale de l’Ouest du Groenland"
+      :short: 
+        :daylight: HEOG
+        :generic: HOG
+        :standard: HNOG
     :Guam: 
       :long: 
         :standard: "heure de Guam"
@@ -322,6 +348,10 @@
         :daylight: "heure avancée d’Hawaï-Aléoutiennes"
         :generic: "heure d’Hawaï-Aléoutiennes"
         :standard: "heure normale d’Hawaï-Aléoutiennes"
+      :short: 
+        :daylight: HEHA
+        :generic: HHA
+        :standard: HNHA
     :Hong_Kong: 
       :long: 
         :daylight: "heure avancée de Hong Kong"
@@ -446,11 +476,19 @@
         :daylight: "heure avancée du Nord-Ouest du Mexique"
         :generic: "heure du Nord-Ouest du Mexique"
         :standard: "heure normale du Nord-Ouest du Mexique"
+      :short: 
+        :daylight: HENOMX
+        :generic: HNOMX
+        :standard: HNNOMX
     :Mexico_Pacific: 
       :long: 
         :daylight: "heure avancée du Pacifique mexicain"
         :generic: "heure du Pacifique mexicain"
         :standard: "heure normale du Pacifique mexicain"
+      :short: 
+        :daylight: HEPMX
+        :generic: HPMX
+        :standard: HNPMX
     :Mongolia: 
       :long: 
         :daylight: "heure avancée d’Oulan-Bator"
@@ -510,9 +548,9 @@
         :standard: "heure normale de Novossibirsk"
     :Omsk: 
       :long: 
-        :daylight: "heure avancée de Omsk"
-        :generic: "heure de Omsk"
-        :standard: "heure normale de Omsk"
+        :daylight: "heure avancée d’Omsk"
+        :generic: "heure d’Omsk"
+        :standard: "heure normale d’Omsk"
     :Pakistan: 
       :long: 
         :daylight: "heure avancée du Pakistan"
@@ -547,12 +585,24 @@
         :daylight: "heure avancée de Saint-Pierre-et-Miquelon"
         :generic: "heure de Saint-Pierre-et-Miquelon"
         :standard: "heure normale de Saint-Pierre-et-Miquelon"
+      :short: 
+        :daylight: HEPM
+        :generic: HPM
+        :standard: HNPM
     :Pitcairn: 
       :long: 
         :standard: "heure des îles Pitcairn"
     :Ponape: 
       :long: 
         :standard: "heure de l’île de Pohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "heure de Pyongyang"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "heure d’été de Kyzylorda"
+        :generic: "heure de Kyzylorda"
+        :standard: "heure normale de Kyzylorda"
     :Reunion: 
       :long: 
         :standard: "heure de la Réunion"
@@ -835,7 +885,7 @@
     :America/Cayenne: 
       :city: Cayenne
     :America/Cayman: 
-      :city: "Îles Caïmans"
+      :city: "îles Caïmans"
     :America/Chicago: 
       :city: Chicago
     :America/Chihuahua: 
@@ -870,6 +920,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -1004,6 +1056,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Porto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1033,7 +1087,7 @@
     :America/St_Barthelemy: 
       :city: Saint-Barthélemy
     :America/St_Johns: 
-      :city: "Saint-Jean de Terre-Neuve"
+      :city: "St. John’s"
     :America/St_Kitts: 
       :city: Saint-Christophe-et-Niévès
     :America/St_Lucia: 
@@ -1104,6 +1158,8 @@
       :city: Aktioubinsk
     :Asia/Ashgabat: 
       :city: Achgabat
+    :Asia/Atyrau: 
+      :city: Atyraou
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1112,6 +1168,8 @@
       :city: Bakou
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beyrouth
     :Asia/Bishkek: 
@@ -1129,13 +1187,15 @@
     :Asia/Damascus: 
       :city: Damas
     :Asia/Dhaka: 
-      :city: Dhaka
+      :city: Dacca
     :Asia/Dili: 
       :city: Dili
     :Asia/Dubai: 
       :city: Dubaï
     :Asia/Dushanbe: 
       :city: Douchanbé
+    :Asia/Famagusta: 
+      :city: Famagouste
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1198,6 +1258,8 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanaï
     :Asia/Qyzylorda: 
       :city: "Kzyl Orda"
     :Asia/Rangoon: 
@@ -1227,9 +1289,11 @@
     :Asia/Tehran: 
       :city: Téhéran
     :Asia/Thimphu: 
-      :city: Thimphu
+      :city: Thimphou
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Oulan-Bator
     :Asia/Urumqi: 
@@ -1251,11 +1315,11 @@
     :Atlantic/Bermuda: 
       :city: Bermudes
     :Atlantic/Canary: 
-      :city: "Îles Canaries"
+      :city: "îles Canaries"
     :Atlantic/Cape_Verde: 
       :city: Cap-Vert
     :Atlantic/Faeroe: 
-      :city: "Îles Féroé"
+      :city: "îles Féroé"
     :Atlantic/Madeira: 
       :city: Madère
     :Atlantic/Reykjavik: 
@@ -1290,12 +1354,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "temps universel coordonné"
+      :short: 
+        :standard: TU
     :Etc/Unknown: 
       :city: "ville inconnue"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorre
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athènes
     :Europe/Belgrade: 
@@ -1327,7 +1398,7 @@
     :Europe/Helsinki: 
       :city: Helsinki
     :Europe/Isle_of_Man: 
-      :city: "Île de Man"
+      :city: "île de Man"
     :Europe/Istanbul: 
       :city: Istanbul
     :Europe/Jersey: 
@@ -1336,6 +1407,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbonne
     :Europe/Ljubljana: 
@@ -1376,6 +1449,8 @@
       :city: Saint-Marin
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1388,6 +1463,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Oulianovsk
     :Europe/Uzhgorod: 
       :city: Oujgorod
     :Europe/Vaduz: 
@@ -1439,7 +1516,7 @@
     :Pacific/Chatham: 
       :city: Chatham
     :Pacific/Easter: 
-      :city: "Île de Pâques"
+      :city: "île de Pâques"
     :Pacific/Efate: 
       :city: Éfaté
     :Pacific/Enderbury: 
@@ -1460,6 +1537,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HT
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

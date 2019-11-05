@@ -7,6 +7,7 @@ module TwitterCldr
   module Transforms
 
     module Transforms
+      autoload :BlankTransform,         'twitter_cldr/transforms/transforms/blank_transform'
       autoload :BreakInternalTransform, 'twitter_cldr/transforms/transforms/break_internal_transform'
       autoload :CasingTransform,        'twitter_cldr/transforms/transforms/casing_transform'
       autoload :NamedTransform,         'twitter_cldr/transforms/transforms/named_transform'

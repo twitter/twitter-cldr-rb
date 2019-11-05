@@ -5,13 +5,11 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedNumber do
+describe TwitterCldr::Localized::LocalizedNumber do
 
   describe '#initialize' do
-    let(:decimal)  { LocalizedNumber.new(10, :en) }
-    let(:currency) { LocalizedNumber.new(10, :en, type: :currency) }
+    let(:decimal)  { described_class.new(10, :en) }
+    let(:currency) { described_class.new(10, :en, type: :currency) }
 
     it 'uses nil type by default (defers decision to data reader)' do
       expect(decimal.type).to eq(nil)
@@ -22,16 +20,16 @@ describe LocalizedNumber do
     end
 
     it 'sets up object with correct locale, falls back to default locale' do
-      expect(LocalizedNumber.new(10, :es).locale).to eq(:es)
-      expect(LocalizedNumber.new(10, :blarg).locale).to eq(TwitterCldr::DEFAULT_LOCALE)
+      expect(described_class.new(10, :es).locale).to eq(:es)
+      expect(described_class.new(10, :blarg).locale).to eq(TwitterCldr::DEFAULT_LOCALE)
     end
   end
 
   describe 'type conversion methods' do
-    let(:number)   { LocalizedNumber.new(10, :en) }
-    let(:currency) { LocalizedNumber.new(10, :en, type: :currency) }
+    let(:number)   { described_class.new(10, :en) }
+    let(:currency) { described_class.new(10, :en, type: :currency) }
 
-    LocalizedNumber.types.each do |type|
+    described_class.types.each do |type|
       describe "#to_#{type}" do
         let(:method) { "to_#{type}" }
 
@@ -46,7 +44,7 @@ describe LocalizedNumber do
         end
 
         it 'creates a new object with the same base object and locale' do
-          percent = LocalizedNumber.new(42, :fr, type: :percent)
+          percent = described_class.new(42, :fr, type: :percent)
           new_percent = percent.send(method)
           expect(new_percent.locale).to eq(:fr)
           expect(new_percent.base_obj).to eq(42)
@@ -57,13 +55,13 @@ describe LocalizedNumber do
     describe "to_short_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(LocalizedNumber.new(7000, :af, type: :short_decimal).to_s).to eq("7000")
+          expect(described_class.new(7000, :af, type: :decimal, format: :short).to_s).to match_normalized("7 k")
         end
       end
 
       context "when the patter uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
-          expect(LocalizedNumber.new(93_000_000, :ja, type: :short_decimal).to_s).to match_normalized("9300万")
+          expect(described_class.new(93_000_000, :ja, type: :decimal, format: :short).to_s).to match_normalized("9300万")
         end
       end
     end
@@ -71,27 +69,27 @@ describe LocalizedNumber do
     describe "to_long_decimal" do
       context "when the patter is missing" do
         it "returns the number as is" do
-          expect(LocalizedNumber.new(7000, :ko, type: :long_decimal).to_s).to eq("7000")
+          expect(described_class.new(7000, :ko, type: :decimal, format: :long).to_s).to match_normalized("7천")
         end
       end
 
       context "when the patter uses 'ten thousands' abbreviation" do
         it "formats the number properly" do
-          expect(LocalizedNumber.new(93_000_000, :'zh-Hant', type: :long_decimal).to_s).to match_normalized("9300萬")
+          expect(described_class.new(93_000_000, :'zh-Hant', type: :decimal, format: :long).to_s).to match_normalized("9300萬")
         end
       end
     end
   end
 
   describe '#to_s' do
-    it 'raises ArguemntError if unsupported type is passed' do
+    it 'raises ArgumentError if unsupported type is passed' do
       expect do
-        LocalizedNumber.new(10, :en, type: :foo).to_s
+        described_class.new(10, :en, type: :foo).to_s
       end.to raise_error(ArgumentError, 'Type foo is not supported')
     end
 
     context 'decimals' do
-      let(:number) { LocalizedNumber.new(10, :en) }
+      let(:number) { described_class.new(10, :en) }
 
       it 'should default precision to zero' do
         expect(number.to_s).to eq("10")
@@ -103,7 +101,7 @@ describe LocalizedNumber do
     end
 
     context 'currencies' do
-      let(:number) { LocalizedNumber.new(10, :en, type: :currency) }
+      let(:number) { described_class.new(10, :en, type: :currency) }
 
       it "should default to a precision of 2" do
         expect(number.to_s(precision: 2)).to eq("$10.00")
@@ -113,7 +111,7 @@ describe LocalizedNumber do
         expect(number.to_s(precision: 1)).to eq("$10.0")
       end
 
-      let(:number) { LocalizedNumber.new(10, :"en-AU", type: :currency) }
+      let(:number) { described_class.new(10, :"en-AU", type: :currency) }
 
       it "it should respect number's locale when picking currency symbol" do
         expect(number.to_s(currency: "USD", use_cldr_symbol: true)).to eq("USD10.00")
@@ -121,7 +119,7 @@ describe LocalizedNumber do
     end
 
     context 'percentages' do
-      let(:number) { LocalizedNumber.new(10, :en, type: :percent) }
+      let(:number) { described_class.new(10, :en, type: :percent) }
 
       it "should default to a precision of 0" do
         expect(number.to_s).to eq("10%")
@@ -133,7 +131,7 @@ describe LocalizedNumber do
     end
 
     context 'short decimals' do
-      let(:number) { LocalizedNumber.new(1000, :en, type: :short_decimal) }
+      let(:number) { described_class.new(1000, :en, type: :decimal, format: :short) }
 
       it "should default to a precision of 0" do
         expect(number.to_s).to eq("1K")
@@ -145,7 +143,7 @@ describe LocalizedNumber do
     end
 
     context 'long decimals' do
-      let(:number) { LocalizedNumber.new(1000, :en, type: :long_decimal) }
+      let(:number) { described_class.new(1000, :en, type: :decimal, format: :long) }
 
       it "should default to a precision of 0" do
         expect(number.to_s).to eq("1 thousand")

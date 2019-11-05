@@ -9,8 +9,6 @@
       :long: 
         :acceleration-g-force: 
           :other: "{0} lực g"
-        :acceleration-meter-per-second-squared: 
-          :other: "{0} m/s²"
         :angle-arc-minute: 
           :other: "{0} phút"
         :angle-arc-second: 
@@ -23,6 +21,8 @@
           :other: "{0} vòng"
         :area-acre: 
           :other: "{0} mẫu"
+        :area-dunam: 
+          :other: "{0} dunam"
         :area-hectare: 
           :other: "{0} héc-ta"
         :area-square-centimeter: 
@@ -41,16 +41,20 @@
           :other: "{0} yard vuông"
         :concentr-karat: 
           :other: "{0} karat"
+        :concentr-mole: 
+          :other: "{0} mol"
+        :concentr-percent: 
+          :other: "{0}%"
+        :concentr-permille: 
+          :other: "{0}‰"
+        :concentr-permyriad: 
+          :other: "{0} phần chục nghìn"
         :consumption-liter-per-100kilometers: 
           :other: "{0} l/100km"
         :consumption-liter-per-kilometer: 
           :other: "{0} lít/km"
         :consumption-mile-per-gallon: 
           :other: "{0} dặm/gallon"
-        :digital-bit: 
-          :other: "{0} bit"
-        :digital-byte: 
-          :other: "{0} byte"
         :digital-gigabit: 
           :other: "{0} gigabit"
         :digital-gigabyte: 
@@ -63,6 +67,7 @@
           :other: "{0} megabit"
         :digital-megabyte: 
           :other: "{0} megabyte"
+        :digital-petabyte: {}
         :digital-terabit: 
           :other: "{0} terabit"
         :digital-terabyte: 
@@ -97,8 +102,12 @@
           :other: "{0} ohm"
         :electric-volt: 
           :other: "{0} vôn"
+        :energy-british-thermal-unit: 
+          :other: "{0} đơn vị nhiệt Anh"
         :energy-calorie: 
           :other: "{0} calo"
+        :energy-electronvolt: 
+          :other: "{0} electronvôn"
         :energy-foodcalorie: 
           :other: "{0} Calo"
         :energy-joule: 
@@ -109,22 +118,20 @@
           :other: "{0} kilô jun"
         :energy-kilowatt-hour: 
           :other: "{0} kilôoát giờ"
-        :frequency-gigahertz: 
-          :other: "{0} GHz"
-        :frequency-hertz: 
-          :other: "{0} Hz"
-        :frequency-kilohertz: 
-          :other: "{0} kHz"
-        :frequency-megahertz: 
-          :other: "{0} MHz"
-        :length-astronomical-unit: 
-          :other: "{0} au"
+        :force-newton: 
+          :other: "{0} newton"
+        :force-pound-force: 
+          :other: "{0} pound lực"
         :length-centimeter: 
           :other: "{0} xentimét"
         :length-decimeter: 
           :other: "{0} đềximét"
+        :length-fathom: 
+          :other: "{0} fth"
         :length-foot: 
           :other: "{0} feet"
+        :length-furlong: 
+          :other: "{0} fur"
         :length-inch: 
           :other: "{0} inch"
         :length-kilometer: 
@@ -149,12 +156,22 @@
           :other: "{0} parsec"
         :length-picometer: 
           :other: "{0} picômét"
+        :length-point: 
+          :other: "{0} đ"
+        :length-solar-radius: 
+          :other: "{0} bán kính mặt trời"
         :length-yard: 
           :other: "{0} yard"
         :light-lux: 
           :other: "{0} lux"
+        :light-solar-luminosity: 
+          :other: "{0} độ sáng của mặt trời"
         :mass-carat: 
           :other: "{0} carat"
+        :mass-dalton: 
+          :other: "{0} dalton"
+        :mass-earth-mass: 
+          :other: "{0} trọng lượng trái đất"
         :mass-gram: 
           :other: "{0} gam"
         :mass-kilogram: 
@@ -165,12 +182,12 @@
           :other: "{0} micrô gam"
         :mass-milligram: 
           :other: "{0} miligam"
-        :mass-ounce: 
-          :other: "{0} ao-xơ"
-        :mass-ounce-troy: 
-          :other: "{0} oz t"
         :mass-pound: 
           :other: "{0} pao"
+        :mass-solar-mass: 
+          :other: "{0} trọng lượng mặt trời"
+        :mass-stone: 
+          :other: "{0} st"
         :mass-ton: 
           :other: "{0} tấn"
         :power-gigawatt: 
@@ -185,16 +202,18 @@
           :other: "{0} milioát"
         :power-watt: 
           :other: "{0} oát"
+        :pressure-atmosphere: 
+          :other: "{0} átmốtphe"
         :pressure-hectopascal: 
           :other: "{0} héctô pascal"
         :pressure-inch-hg: 
           :other: "{0} inch thủy ngân"
+        :pressure-kilopascal: 
+          :other: "{0} kPa"
+        :pressure-megapascal: 
+          :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} millibar"
-        :pressure-millimeter-of-mercury: 
-          :other: "{0} mm Hg"
-        :pressure-pound-per-square-inch: 
-          :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :other: "{0} kilômét/giờ"
         :speed-knot: 
@@ -207,12 +226,16 @@
           :other: "{0} độ C"
         :temperature-fahrenheit: 
           :other: "{0} độ F"
-        :temperature-generic: 
-          :other: "{0}°"
         :temperature-kelvin: 
           :other: "{0} độ K"
-        :volume-acre-foot: 
-          :other: "{0} ac ft"
+        :torque-newton-meter: 
+          :other: "{0} newton-mét"
+        :torque-pound-foot: 
+          :other: "{0} pound-feet"
+        :volume-barrel: 
+          :other: "{0} thùng"
+        :volume-bushel: 
+          :other: "{0} bu"
         :volume-centiliter: 
           :other: "{0} xentilít"
         :volume-cubic-centimeter: 
@@ -237,8 +260,12 @@
           :other: "{0} đềxilít"
         :volume-fluid-ounce: 
           :other: "{0} fl oz"
+        :volume-fluid-ounce-imperial: 
+          :other: "{0} Aoxơ chất lỏng theo hệ đo lường Anh"
         :volume-gallon: 
           :other: "{0} gallon"
+        :volume-gallon-imperial: 
+          :other: "{0} gallon Anh"
         :volume-hectoliter: 
           :other: "{0} hectolit"
         :volume-liter: 
@@ -264,20 +291,16 @@
           :other: "{0}′"
         :angle-arc-second: 
           :other: "{0}″"
-        :angle-degree: 
-          :other: "{0}°"
         :area-acre: 
           :other: "{0} mẫu"
+        :area-dunam: 
+          :other: "{0} dunam"
         :area-hectare: 
           :other: "{0}ha"
-        :area-square-foot: 
-          :other: "{0} ft²"
-        :area-square-kilometer: 
-          :other: "{0} km²"
-        :area-square-meter: 
-          :other: "{0} m²"
-        :area-square-mile: 
-          :other: "{0} mi²"
+        :concentr-mole: 
+          :other: "{0} mol"
+        :concentr-permyriad: 
+          :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :other: "{0}L/100km"
         :duration-day: 
@@ -285,7 +308,7 @@
         :duration-hour: 
           :other: "{0} giờ"
         :duration-millisecond: 
-          :other: "{0}ms"
+          :other: "{0}miligiây"
         :duration-minute: 
           :other: "{0} phút"
         :duration-month: 
@@ -296,10 +319,22 @@
           :other: "{0} tuần"
         :duration-year: 
           :other: "{0} năm"
+        :energy-british-thermal-unit: 
+          :other: "{0} Btu"
+        :energy-electronvolt: 
+          :other: "{0} eV"
+        :force-newton: 
+          :other: "{0} N"
+        :force-pound-force: 
+          :other: "{0} lbf"
         :length-centimeter: 
           :other: "{0}cm"
+        :length-fathom: 
+          :other: "{0} fth"
         :length-foot: 
           :other: "{0}'"
+        :length-furlong: 
+          :other: "{0} fur"
         :length-inch: 
           :other: "{0}\""
         :length-kilometer: 
@@ -314,8 +349,16 @@
           :other: "{0}mm"
         :length-picometer: 
           :other: "{0}pm"
+        :length-solar-radius: 
+          :other: "{0} R☉"
         :length-yard: 
           :other: "{0}yd"
+        :light-solar-luminosity: 
+          :other: "{0} L☉"
+        :mass-dalton: 
+          :other: "{0} Da"
+        :mass-earth-mass: 
+          :other: "{0} M⊕"
         :mass-gram: 
           :other: "{0}g"
         :mass-kilogram: 
@@ -324,6 +367,10 @@
           :other: "{0}oz"
         :mass-pound: 
           :other: "{0}lb"
+        :mass-solar-mass: 
+          :other: "{0} M☉"
+        :mass-stone: 
+          :other: "{0} st"
         :power-horsepower: 
           :other: "{0}hp"
         :power-kilowatt: 
@@ -334,6 +381,10 @@
           :other: "{0}hPa"
         :pressure-inch-hg: 
           :other: "{0}\" Hg"
+        :pressure-kilopascal: 
+          :other: "{0} kPa"
+        :pressure-megapascal: 
+          :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0}mb"
         :speed-kilometer-per-hour: 
@@ -342,14 +393,21 @@
           :other: "{0}m/s"
         :speed-mile-per-hour: 
           :other: "{0}mph"
-        :temperature-celsius: 
-          :other: "{0}°C"
-        :temperature-fahrenheit: 
-          :other: "{0}°F"
+        :temperature-celsius: {}
+        :torque-newton-meter: 
+          :other: "{0} N⋅m"
+        :torque-pound-foot: 
+          :other: "{0} lbf⋅ft"
+        :volume-barrel: 
+          :other: "{0} thùng"
+        :volume-bushel: 
+          :other: "{0} bu"
         :volume-cubic-kilometer: 
           :other: "{0}km³"
         :volume-cubic-mile: 
           :other: "{0}mi³"
+        :volume-fluid-ounce-imperial: 
+          :other: "{0} fl ozIm"
         :volume-liter: 
           :other: "{0}L"
       :short: 
@@ -369,6 +427,8 @@
           :other: "{0} rev"
         :area-acre: 
           :other: "{0} mẫu"
+        :area-dunam: 
+          :other: "{0} dunam"
         :area-hectare: 
           :other: "{0} ha"
         :area-square-centimeter: 
@@ -391,8 +451,16 @@
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
           :other: "{0} mmol/L"
+        :concentr-mole: 
+          :other: "{0} mol"
         :concentr-part-per-million: 
           :other: "{0} ppm"
+        :concentr-percent: 
+          :other: "{0}%"
+        :concentr-permille: 
+          :other: "{0}‰"
+        :concentr-permyriad: 
+          :other: "{0}‱"
         :consumption-liter-per-100kilometers: 
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
@@ -417,12 +485,14 @@
           :other: "{0} Mb"
         :digital-megabyte: 
           :other: "{0} MB"
+        :digital-petabyte: 
+          :other: "{0} PB"
         :digital-terabit: 
           :other: "{0} Tb"
         :digital-terabyte: 
           :other: "{0} TB"
         :duration-century: 
-          :other: "{0} c"
+          :other: "{0} thế kỷ"
         :duration-day: 
           :other: "{0} ngày"
         :duration-day-person: {}
@@ -431,14 +501,14 @@
         :duration-microsecond: 
           :other: "{0} μs"
         :duration-millisecond: 
-          :other: "{0} ms"
+          :other: "{0} mili giây"
         :duration-minute: 
           :other: "{0} phút"
         :duration-month: 
           :other: "{0} tháng"
         :duration-month-person: {}
         :duration-nanosecond: 
-          :other: "{0} ns"
+          :other: "{0} nano giây"
         :duration-second: 
           :other: "{0} giây"
         :duration-week: 
@@ -455,8 +525,12 @@
           :other: "{0} Ω"
         :electric-volt: 
           :other: "{0} V"
+        :energy-british-thermal-unit: 
+          :other: "{0} Btu"
         :energy-calorie: 
           :other: "{0} cal"
+        :energy-electronvolt: 
+          :other: "{0} eV"
         :energy-foodcalorie: 
           :other: "{0} Cal"
         :energy-joule: 
@@ -467,6 +541,10 @@
           :other: "{0} kJ"
         :energy-kilowatt-hour: 
           :other: "{0} kWh"
+        :force-newton: 
+          :other: "{0} N"
+        :force-pound-force: 
+          :other: "{0} lbf"
         :frequency-gigahertz: 
           :other: "{0} GHz"
         :frequency-hertz: 
@@ -482,7 +560,7 @@
         :length-decimeter: 
           :other: "{0} dm"
         :length-fathom: 
-          :other: "{0} fm"
+          :other: "{0} fth"
         :length-foot: 
           :other: "{0} ft"
         :length-furlong: 
@@ -511,12 +589,22 @@
           :other: "{0} pc"
         :length-picometer: 
           :other: "{0} pm"
+        :length-point: 
+          :other: "{0} đ"
+        :length-solar-radius: 
+          :other: "{0} R☉"
         :length-yard: 
           :other: "{0} yd"
         :light-lux: 
           :other: "{0} lx"
+        :light-solar-luminosity: 
+          :other: "{0} L☉"
         :mass-carat: 
           :other: "{0} CD"
+        :mass-dalton: 
+          :other: "{0} Da"
+        :mass-earth-mass: 
+          :other: "{0} M⊕"
         :mass-gram: 
           :other: "{0} g"
         :mass-kilogram: 
@@ -533,6 +621,8 @@
           :other: "{0} oz t"
         :mass-pound: 
           :other: "{0} lb"
+        :mass-solar-mass: 
+          :other: "{0} M☉"
         :mass-stone: 
           :other: "{0} st"
         :mass-ton: 
@@ -549,10 +639,16 @@
           :other: "{0} mW"
         :power-watt: 
           :other: "{0} W"
+        :pressure-atmosphere: 
+          :other: "{0} atm"
         :pressure-hectopascal: 
           :other: "{0} hPa"
         :pressure-inch-hg: 
           :other: "{0} inHg"
+        :pressure-kilopascal: 
+          :other: "{0} kPa"
+        :pressure-megapascal: 
+          :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} mbar"
         :pressure-millimeter-of-mercury: 
@@ -575,8 +671,14 @@
           :other: "{0}°"
         :temperature-kelvin: 
           :other: "{0} K"
+        :torque-newton-meter: 
+          :other: "{0} N⋅m"
+        :torque-pound-foot: 
+          :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :other: "{0} ac ft"
+        :volume-barrel: 
+          :other: "{0} thùng"
         :volume-bushel: 
           :other: "{0} bu"
         :volume-centiliter: 
@@ -603,10 +705,12 @@
           :other: "{0} dL"
         :volume-fluid-ounce: 
           :other: "{0} fl oz"
+        :volume-fluid-ounce-imperial: 
+          :other: "{0} fl oz Imp."
         :volume-gallon: 
           :other: "{0} gal"
         :volume-gallon-imperial: 
-          :other: "{0} gal Imp."
+          :other: "{0} gal Anh"
         :volume-hectoliter: 
           :other: "{0} hL"
         :volume-liter: 

@@ -1,18 +1,11 @@
 --- 
 :ca: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Horari d’estiu, {0}"
-      :generic: "Hora de: {0}"
-      :standard: "Hora estàndard, {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Hora estàndard, {0}"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -58,9 +51,9 @@
         :standard: "Hora estàndard de muntanya d’Amèrica del Nord"
     :America_Pacific: 
       :long: 
-        :daylight: "Hora d’estiu del Pacífic"
-        :generic: "Hora del Pacífic"
-        :standard: "Hora estàndard del Pacífic"
+        :daylight: "Hora d’estiu del Pacífic d’Amèrica del Nord"
+        :generic: "Hora del Pacífic d’Amèrica del Nord"
+        :standard: "Hora estàndard del Pacífic d’Amèrica del Nord"
     :Anadyr: 
       :long: 
         :daylight: "Horari d’estiu d’Anadyr"
@@ -199,7 +192,7 @@
         :standard: "Hora de Davis"
     :DumontDUrville: 
       :long: 
-        :standard: "Hora de Dumont-d’Urville"
+        :standard: "Hora de Dumont d’Urville"
     :East_Timor: 
       :long: 
         :standard: "Hora de Timor Oriental"
@@ -309,7 +302,7 @@
         :standard: "Hora estàndard de Hovd"
     :India: 
       :long: 
-        :standard: "Hora estàndard de l’Índia"
+        :standard: "Hora de l’Índia"
     :Indian_Ocean: 
       :long: 
         :standard: "Hora de l’oceà Índic"
@@ -509,15 +502,18 @@
         :standard: "Hora de les illes Phoenix"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "Hora d’estiu de Saint-Pierre i Miquelon"
-        :generic: "Hora de Saint-Pierre i Miquelon"
-        :standard: "Hora estàndard de Saint-Pierre i Miquelon"
+        :daylight: "Hora d’estiu de Saint-Pierre-et-Miquelon"
+        :generic: "Hora de Saint-Pierre-et-Miquelon"
+        :standard: "Hora estàndard de Saint-Pierre-et-Miquelon"
     :Pitcairn: 
       :long: 
         :standard: "Hora de Pitcairn"
     :Ponape: 
       :long: 
         :standard: "Hora de Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Hora de Pyongyang"
     :Reunion: 
       :long: 
         :standard: "Hora de Reunió"
@@ -770,7 +766,7 @@
     :America/Bahia: 
       :city: Bahia
     :America/Bahia_Banderas: 
-      :city: "bahía de Banderas"
+      :city: "Bahía de Banderas"
     :America/Barbados: 
       :city: Barbados
     :America/Belem: 
@@ -802,7 +798,7 @@
     :America/Cayman: 
       :city: Caiman
     :America/Chicago: 
-      :city: Xicago
+      :city: Chicago
     :America/Chihuahua: 
       :city: Chihuahua
     :America/Coral_Harbour: 
@@ -835,6 +831,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -969,6 +967,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1069,6 +1069,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atirau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1077,6 +1079,8 @@
       :city: Bakú
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1101,6 +1105,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1163,10 +1169,12 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanai
     :Asia/Qyzylorda: 
-      :city: Kizilordà
+      :city: Kizil-Orda
     :Asia/Rangoon: 
-      :city: Rangoon
+      :city: Yangôn
     :Asia/Riyadh: 
       :city: Al-Riyād
     :Asia/Saigon: 
@@ -1195,8 +1203,10 @@
       :city: Thimbu
     :Asia/Tokyo: 
       :city: Tòquio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
-      :city: Ulaanbaatar
+      :city: "Ulan Bator"
     :Asia/Urumqi: 
       :city: Urumchi
     :Asia/Ust-Nera: 
@@ -1255,12 +1265,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Temps universal coordinat"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Ciutat desconeguda"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Atenes
     :Europe/Belgrade: 
@@ -1301,6 +1318,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kíev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisboa
     :Europe/Ljubljana: 
@@ -1341,6 +1360,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saràtov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1353,6 +1374,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uliànovsk
     :Europe/Uzhgorod: 
       :city: Uzhgorod
     :Europe/Vaduz: 

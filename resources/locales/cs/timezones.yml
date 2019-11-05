@@ -1,18 +1,11 @@
 --- 
 :cs: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+H:mm;-H:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "Časové pásmo {0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+H:mm;-H:mm"
+    :region_format: "{0} (+0)"
   :metazones: 
     :Acre: 
       :long: 
@@ -41,6 +34,10 @@
         :daylight: "Aljašský letní čas"
         :generic: "Aljašský čas"
         :standard: "Aljašský standardní čas"
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
     :Almaty: 
       :long: 
         :daylight: "Almatský letní čas"
@@ -56,21 +53,37 @@
         :daylight: "Severoamerický centrální letní čas"
         :generic: "Severoamerický centrální čas"
         :standard: "Severoamerický centrální standardní čas"
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
     :America_Eastern: 
       :long: 
         :daylight: "Severoamerický východní letní čas"
         :generic: "Severoamerický východní čas"
         :standard: "Severoamerický východní standardní čas"
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
     :America_Mountain: 
       :long: 
         :daylight: "Severoamerický horský letní čas"
         :generic: "Severoamerický horský čas"
         :standard: "Severoamerický horský standardní čas"
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
     :America_Pacific: 
       :long: 
         :daylight: "Severoamerický pacifický letní čas"
         :generic: "Severoamerický pacifický čas"
         :standard: "Severoamerický pacifický standardní čas"
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
     :Anadyr: 
       :long: 
         :daylight: "Anadyrský letní čas"
@@ -116,6 +129,10 @@
         :daylight: "Atlantický letní čas"
         :generic: "Atlantický čas"
         :standard: "Atlantický standardní čas"
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
     :Australia_Central: 
       :long: 
         :daylight: "Středoaustralský letní čas"
@@ -540,6 +557,9 @@
     :Ponape: 
       :long: 
         :standard: "Ponapský čas"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pchjongjangský čas"
     :Qyzylorda: 
       :long: 
         :daylight: "Kyzylordský letní čas"
@@ -862,6 +882,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: Salvador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -951,7 +973,7 @@
     :America/Metlakatla: 
       :city: Metlakatla
     :America/Mexico_City: 
-      :city: México
+      :city: "Ciudad de México"
     :America/Miquelon: 
       :city: Miquelon
     :America/Moncton: 
@@ -996,6 +1018,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: Portoriko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1096,6 +1120,8 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Ašchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdád
     :Asia/Bahrain: 
@@ -1104,6 +1130,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Bejrút
     :Asia/Bishkek: 
@@ -1128,6 +1156,8 @@
       :city: Dubaj
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1190,6 +1220,8 @@
       :city: Pchjongjang
     :Asia/Qatar: 
       :city: Katar
+    :Asia/Qostanay: 
+      :city: Kostanaj
     :Asia/Qyzylorda: 
       :city: Kyzylorda
     :Asia/Rangoon: 
@@ -1222,6 +1254,8 @@
       :city: Thimbú
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulánbátar
     :Asia/Urumqi: 
@@ -1282,12 +1316,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Koordinovaný světový čas"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
-      :city: "Neznámé město"
+      :city: "neznámé město"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrachaň
     :Europe/Athens: 
       :city: Athény
     :Europe/Belgrade: 
@@ -1328,6 +1369,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kyjev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisabon
     :Europe/Ljubljana: 
@@ -1368,6 +1411,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1380,6 +1425,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Užhorod
     :Europe/Vaduz: 
@@ -1452,6 +1499,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HST
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

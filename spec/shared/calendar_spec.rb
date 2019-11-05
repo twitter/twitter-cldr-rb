@@ -5,16 +5,14 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
+describe TwitterCldr::Shared::Calendar do
 
-describe Calendar do
-
-  let(:calendar) { Calendar.new(:de) }
+  let(:calendar) { described_class.new(:de) }
 
   def clear_cache
     # clear cache for each test
-    Calendar.send(:class_variable_set, :@@calendar_cache, {})
-    Calendar.send(:class_variable_set, :@@field_cache, {})
+    described_class.send(:class_variable_set, :@@calendar_cache, {})
+    described_class.send(:class_variable_set, :@@field_cache, {})
   end
 
   before(:each) { clear_cache }
@@ -23,22 +21,22 @@ describe Calendar do
   describe '#initialize' do
     it 'returns calendar for default locale and type' do
       allow(TwitterCldr).to receive(:locale).and_return(:fr)
-      cal = Calendar.new
+      cal = described_class.new
 
       expect(cal.locale).to eq(:fr)
       expect(cal.calendar_type).to eq(TwitterCldr::DEFAULT_CALENDAR_TYPE)
     end
 
     it 'returns calendar for a specific locale' do
-      expect(Calendar.new(:jp).locale).to eq(:jp)
+      expect(described_class.new(:jp).locale).to eq(:jp)
     end
 
     it 'uses TwitterCldr.convert_locale' do
-      expect(Calendar.new(:'zh-cn').locale).to eq(:zh)
+      expect(described_class.new(:'zh-cn').locale).to eq(:zh)
     end
 
     it 'returns calendar of a specific type' do
-      expect(Calendar.new(:th, :buddhist).calendar_type).to eq(:buddhist)
+      expect(described_class.new(:th, :buddhist).calendar_type).to eq(:buddhist)
     end
 
   end
@@ -146,7 +144,7 @@ describe Calendar do
       expect(fields[:dayperiod]).to match_normalized("Tageshälfte")
       expect(fields[:weekday]).to match_normalized("Wochentag")
 
-      fields = Calendar.new(:ja).fields
+      fields = described_class.new(:ja).fields
       expect(fields[:hour]).to match_normalized("時")
       expect(fields[:dayperiod]).to match_normalized("午前/午後")
       expect(fields[:weekday]).to match_normalized("曜日")
@@ -179,14 +177,14 @@ describe Calendar do
   describe '#periods' do
     it 'returns default periods' do
       periods = calendar.periods
-      expect(periods[:am]).to eq("vorm.")
-      expect(periods[:pm]).to eq("nachm.")
+      expect(periods[:am]).to eq("AM")
+      expect(periods[:pm]).to eq("PM")
     end
 
-    it 'returns quarters with other name forms' do
+    it 'returns periods with other name forms' do
       periods = calendar.periods(:abbreviated)
-      expect(periods[:am]).to eq("vorm.")
-      expect(periods[:pm]).to eq("nachm.")
+      expect(periods[:am]).to eq("AM")
+      expect(periods[:pm]).to eq("PM")
     end
   end
 
@@ -208,25 +206,25 @@ describe Calendar do
 
   describe '#date_order' do
     it 'should return the correct date order for a few different locales' do
-      expect(Calendar.new(:en).date_order).to eq([:month, :day, :year])
-      expect(Calendar.new(:ja).date_order).to eq([:year, :month, :day])
-      expect(Calendar.new(:ar).date_order).to eq([:day, :month, :year])
+      expect(described_class.new(:en).date_order).to eq([:month, :day, :year])
+      expect(described_class.new(:ja).date_order).to eq([:year, :month, :day])
+      expect(described_class.new(:ar).date_order).to eq([:day, :month, :year])
     end
   end
 
   describe '#time_order' do
     it 'should return the correct time order for a few different locales' do
-      expect(Calendar.new(:en).time_order).to eq([:hour, :minute, :second, :period])
-      expect(Calendar.new(:ja).time_order).to eq([:hour, :minute, :second])
-      expect(Calendar.new(:ar).time_order).to eq([:hour, :minute, :second, :period])
+      expect(described_class.new(:en).time_order).to eq([:hour, :minute, :second, :period])
+      expect(described_class.new(:ja).time_order).to eq([:hour, :minute, :second])
+      expect(described_class.new(:ar).time_order).to eq([:hour, :minute, :second, :period])
     end
   end
 
   describe '#datetime_order' do
     it 'should return the correct date and time order for a few different locales' do
-      expect(Calendar.new(:en).datetime_order).to eq([:month, :day, :year, :hour, :minute, :second, :period])
-      expect(Calendar.new(:ja).datetime_order).to eq([:year, :month, :day, :hour, :minute, :second])
-      expect(Calendar.new(:ar).datetime_order).to eq([:day, :month, :year, :hour, :minute, :second, :period])
+      expect(described_class.new(:en).datetime_order).to eq([:month, :day, :year, :hour, :minute, :second, :period])
+      expect(described_class.new(:ja).datetime_order).to eq([:year, :month, :day, :hour, :minute, :second])
+      expect(described_class.new(:ar).datetime_order).to eq([:day, :month, :year, :hour, :minute, :second, :period])
     end
   end
 

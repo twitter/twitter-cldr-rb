@@ -1,18 +1,11 @@
 --- 
 :id: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: +HH.mm;-HH.mm
-    :region_format: 
-      :daylight: "Waktu Terang {0}"
-      :generic: "Waktu {0}"
-      :standard: "Waktu Standar {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: +HH.mm;-HH.mm
+    :region_format: "Waktu Standar {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -175,7 +168,7 @@
         :standard: "Waktu Casey"
     :Chamorro: 
       :long: 
-        :standard: "Waktu Chamorro"
+        :standard: "Waktu Standar Chamorro"
     :Chatham: 
       :long: 
         :daylight: "Waktu Musim Panas Chatham"
@@ -188,7 +181,7 @@
         :standard: "Waktu Standar Cile"
     :China: 
       :long: 
-        :daylight: "Waktu Terang Tiongkok"
+        :daylight: "Waktu Musim Panas Tiongkok"
         :generic: "Waktu Tiongkok"
         :standard: "Waktu Standar Tiongkok"
     :Choibalsan: 
@@ -270,7 +263,7 @@
         :standard: "Waktu Wilayah Selatan dan Antarktika Prancis"
     :GMT: 
       :long: 
-        :standard: "Waktu Rata-rata Greenwich"
+        :standard: "Greenwich Mean Time"
     :Galapagos: 
       :long: 
         :standard: "Waktu Galapagos"
@@ -300,7 +293,7 @@
         :standard: "Waktu Guam"
     :Gulf: 
       :long: 
-        :standard: "Waktu Gulf"
+        :standard: "Waktu Standar Teluk"
     :Guyana: 
       :long: 
         :standard: "Waktu Guyana"
@@ -542,6 +535,9 @@
     :Ponape: 
       :long: 
         :standard: "Waktu Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Waktu Pyongyang"
     :Qyzylorda: 
       :long: 
         :daylight: "Waktu Musim Panas Qyzylorda"
@@ -667,7 +663,7 @@
     :Africa/Abidjan: 
       :city: Abidjan
     :Africa/Accra: 
-      :city: Akra
+      :city: Accra
     :Africa/Addis_Ababa: 
       :city: "Addis Ababa"
     :Africa/Algiers: 
@@ -695,13 +691,13 @@
     :Africa/Ceuta: 
       :city: Ceuta
     :Africa/Conakry: 
-      :city: Konakri
+      :city: Conakry
     :Africa/Dakar: 
       :city: Dakar
     :Africa/Dar_es_Salaam: 
       :city: "Dar es Salaam"
     :Africa/Djibouti: 
-      :city: Jibouti
+      :city: Djibouti
     :Africa/Douala: 
       :city: Douala
     :Africa/El_Aaiun: 
@@ -719,7 +715,7 @@
     :Africa/Kampala: 
       :city: Kampala
     :Africa/Khartoum: 
-      :city: Khartum
+      :city: Khartoum
     :Africa/Kigali: 
       :city: Kigali
     :Africa/Kinshasa: 
@@ -823,7 +819,7 @@
     :America/Cancun: 
       :city: Cancun
     :America/Caracas: 
-      :city: Karakas
+      :city: Caracas
     :America/Catamarca: 
       :city: Catamarca
     :America/Cayenne: 
@@ -837,7 +833,7 @@
     :America/Coral_Harbour: 
       :city: Atikokan
     :America/Cordoba: 
-      :city: Kordoba
+      :city: Cordoba
     :America/Costa_Rica: 
       :city: "Kosta Rika"
     :America/Creston: 
@@ -864,6 +860,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -911,7 +909,7 @@
     :America/Iqaluit: 
       :city: Iqaluit
     :America/Jamaica: 
-      :city: Jamaika
+      :city: Jamaica
     :America/Jujuy: 
       :city: Jujuy
     :America/Juneau: 
@@ -997,7 +995,9 @@
     :America/Porto_Velho: 
       :city: "Porto Velho"
     :America/Puerto_Rico: 
-      :city: "Puerto Riko"
+      :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1098,14 +1098,18 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
-      :city: Bagdad
+      :city: Baghdad
     :Asia/Bahrain: 
       :city: Bahrain
     :Asia/Baku: 
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1130,6 +1134,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1197,9 +1203,9 @@
     :Asia/Rangoon: 
       :city: Rangoon
     :Asia/Riyadh: 
-      :city: Riyad
+      :city: Riyadh
     :Asia/Saigon: 
-      :city: "Kota Ho Chi Minh"
+      :city: "Ho Chi Minh"
     :Asia/Sakhalin: 
       :city: Sakhalin
     :Asia/Samarkand: 
@@ -1224,6 +1230,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1284,12 +1292,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Waktu Universal Terkoordinasi"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Tidak Dikenal"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athena
     :Europe/Belgrade: 
@@ -1299,9 +1314,9 @@
     :Europe/Bratislava: 
       :city: Bratislava
     :Europe/Brussels: 
-      :city: Brussel
+      :city: Brussels
     :Europe/Bucharest: 
-      :city: Bukares
+      :city: Bucharest
     :Europe/Budapest: 
       :city: Budapest
     :Europe/Busingen: 
@@ -1330,8 +1345,10 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
-      :city: Lisboa
+      :city: Lisbon
     :Europe/Ljubljana: 
       :city: Ljubljana
     :Europe/London: 
@@ -1382,6 +1399,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Uzhhorod
     :Europe/Vaduz: 

@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "B h"
+        :Bhm: "B h:mm"
+        :Bhms: "B h:mm:ss"
         :E: ccc
+        :EBhm: "E B h:mm"
+        :EBhms: "E B h:mm:ss"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "MMMM का सप्ताह W"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -47,6 +53,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "Y का सप्ताह w"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,14 +134,21 @@
         :day: दिन
         :day-narrow: दिन
         :day-short: दिन
+        :dayOfYear: "वर्ष का दिन"
+        :dayOfYear-narrow: "वर्ष का दिन"
+        :dayOfYear-short: "वर्ष का दिन"
         :dayperiod: पूर्वाह्न/अपराह्न
+        :dayperiod-narrow: पू/अ
+        :dayperiod-short: पू/अ
         :era: युग
+        :era-narrow: युग
+        :era-short: युग
         :hour: घंटा
-        :hour-narrow: घं.
-        :hour-short: घं.
+        :hour-narrow: घं॰
+        :hour-short: घं॰
         :minute: मिनट
-        :minute-narrow: मि.
-        :minute-short: मि.
+        :minute-narrow: मि॰
+        :minute-short: मि॰
         :month: माह
         :month-narrow: माह
         :month-short: माह
@@ -142,16 +156,26 @@
         :quarter-narrow: तिमाही
         :quarter-short: तिमाही
         :second: सेकंड
-        :second-narrow: से.
-        :second-short: से.
+        :second-narrow: से॰
+        :second-short: से॰
         :week: सप्ताह
         :week-narrow: सप्ताह
         :week-short: सप्ताह
+        :weekOfMonth: "माह का सप्ताह"
+        :weekOfMonth-narrow: "माह का सप्ताह"
+        :weekOfMonth-short: "माह का सप्ताह"
         :weekday: "सप्ताह का दिन"
+        :weekday-narrow: "सप्ताह का दिन"
+        :weekday-short: "सप्ताह का दिन"
+        :weekdayOfMonth: "माह के कार्यदिवस"
+        :weekdayOfMonth-narrow: "माह के कार्यदिवस"
+        :weekdayOfMonth-short: "माह के कार्यदिवस"
         :year: वर्ष
         :year-narrow: वर्ष
         :year-short: वर्ष
         :zone: "समय क्षेत्र"
+        :zone-narrow: क्षेत्र
+        :zone-short: क्षेत्र
       :formats: 
         :date: 
           :full: 
@@ -159,7 +183,7 @@
           :long: 
             :pattern: "d MMMM y"
           :medium: 
-            :pattern: dd/MM/y
+            :pattern: "d MMM y"
           :short: 
             :pattern: d/M/yy
         :datetime: 
@@ -264,49 +288,54 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: अपराह्न
-            :am: पूर्व
+            :afternoon1: दोपहर
+            :am: am
             :evening1: शाम
             :midnight: मध्यरात्रि
             :morning1: सुबह
             :night1: रात
-            :pm: अपर
+            :pm: pm
           :narrow: 
-            :afternoon1: अपराह्न
-            :am: पू
-            :evening1: शाम
-            :midnight: "आधी रात"
-            :morning1: सुबह
-            :night1: शाम
-            :pm: अ
-          :wide: 
-            :afternoon1: अपराह्न
-            :am: पूर्वाह्न
+            :afternoon1: दोपहर
+            :am: am
             :evening1: शाम
             :midnight: मध्यरात्रि
             :morning1: सुबह
             :night1: रात
-            :pm: अपराह्न
-        :stand-alone: 
-          :abbreviated: 
-            :am: पूर्व
-            :pm: अपर
-          :narrow: 
-            :afternoon1: अपराह्न
-            :am: पू
-            :evening1: शाम
-            :midnight: "आधी रात"
-            :morning1: सुबह
-            :night1: रात
-            :pm: अ
+            :pm: pm
           :wide: 
             :afternoon1: दोपहर
-            :am: पूर्वाह्न
+            :am: am
+            :evening1: शाम
+            :midnight: मध्यरात्रि
+            :morning1: सुबह
+            :night1: रात
+            :pm: pm
+        :stand-alone: 
+          :abbreviated: 
+            :afternoon1: दोपहर
+            :am: am
+            :evening1: शाम
+            :midnight: मध्यरात्रि
+            :morning1: सुबह
+            :night1: रात
+            :pm: pm
+          :narrow: 
+            :afternoon1: दोपहर
+            :am: am
             :evening1: शाम
             :midnight: "आधी रात"
             :morning1: सुबह
             :night1: रात
-            :pm: अपराह्न
+            :pm: pm
+          :wide: 
+            :afternoon1: दोपहर
+            :am: am
+            :evening1: शाम
+            :midnight: मध्यरात्रि
+            :morning1: सुबह
+            :night1: रात
+            :pm: pm
       :quarters: 
         :format: 
           :abbreviated: 

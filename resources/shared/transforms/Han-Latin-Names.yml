@@ -1,6 +1,8 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - und-Latn-t-und-hani-m0-prprname
     :direction: forward
     :rules: 
       - "$startOfHanMarker = \\uFDD1;"
@@ -23,7 +25,9 @@
       - "$startOfHanMarker{ 华>huà;"
       - "$startOfHanMarker{ 纪>jǐ;"
       - 筠>jūn;
+      - 靓>liàng;
       - "$startOfHanMarker{ 牟>mù;"
+      - "$startOfHanMarker{ 粘>nián;"
       - "$startOfHanMarker{ 区>ōu;"
       - "$startOfHanMarker{ 繁>pó;"
       - 仇>qiú;

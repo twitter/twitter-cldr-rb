@@ -1,18 +1,11 @@
 --- 
 :nb: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: +HH.mm;-HH.mm
-    :region_format: 
-      :daylight: "sommertid – {0}"
-      :generic: "tidssone for {0}"
-      :standard: "normaltid – {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "normaltid – {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -133,9 +126,9 @@
         :standard: "armensk normaltid"
     :Atlantic: 
       :long: 
-        :daylight: "atlanterhavskystlig sommertid"
-        :generic: "atlanterhavskystlig tid"
-        :standard: "atlanterhavskystlig standardtid"
+        :daylight: "sommertid for den nordamerikanske atlanterhavskysten"
+        :generic: "tidssone for den nordamerikanske atlanterhavskysten"
+        :standard: "normaltid for den nordamerikanske atlanterhavskysten"
       :short: 
         :daylight: ADT
         :generic: AT
@@ -191,9 +184,9 @@
         :standard: "tidssone for Brunei Darussalam"
     :Cape_Verde: 
       :long: 
-        :daylight: "sommertid for Kapp Verde"
-        :generic: "tidssone for Kapp Verde"
-        :standard: "normaltid for Kapp Verde"
+        :daylight: "kappverdisk sommertid"
+        :generic: "kappverdisk tid"
+        :standard: "kappverdisk normaltid"
     :Casey: 
       :long: 
         :standard: Casey-tid
@@ -461,7 +454,7 @@
         :standard: "tidssone for Marquesasøyene"
     :Marshall_Islands: 
       :long: 
-        :standard: "tidssone for Marshalløyene"
+        :standard: "marshallesisk tid"
     :Mauritius: 
       :long: 
         :daylight: "mauritisk sommertid"
@@ -578,6 +571,9 @@
     :Ponape: 
       :long: 
         :standard: "tidssone for Pohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "tidssone for Pyongyang"
     :Qyzylorda: 
       :long: 
         :daylight: "Qyzylorda, sommertid"
@@ -612,7 +608,7 @@
         :standard: "singaporsk tid"
     :Solomon: 
       :long: 
-        :standard: "tidssone for Salomonøyene"
+        :standard: "salomonsk tid"
     :South_Georgia: 
       :long: 
         :standard: "tidssone for Sør-Georgia"
@@ -787,7 +783,7 @@
     :Africa/Nairobi: 
       :city: Nairobi
     :Africa/Ndjamena: 
-      :city: N’Djamena
+      :city: Ndjamena
     :Africa/Niamey: 
       :city: Niamey
     :Africa/Nouakchott: 
@@ -900,12 +896,14 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
       :city: "Glace Bay"
     :America/Godthab: 
-      :city: Godthåb
+      :city: Nuuk
     :America/Goose_Bay: 
       :city: "Goose Bay"
     :America/Grand_Turk: 
@@ -1034,6 +1032,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1134,6 +1134,8 @@
       :city: Aqtöbe
     :Asia/Ashgabat: 
       :city: Asjkhabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1142,6 +1144,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1151,7 +1155,7 @@
     :Asia/Calcutta: 
       :city: Kolkata
     :Asia/Chita: 
-      :city: Chita
+      :city: Tsjita
     :Asia/Choibalsan: 
       :city: Choybalsan
     :Asia/Colombo: 
@@ -1166,6 +1170,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dusjanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1219,7 +1225,7 @@
     :Asia/Omsk: 
       :city: Omsk
     :Asia/Oral: 
-      :city: Uralsk
+      :city: Oral
     :Asia/Phnom_Penh: 
       :city: "Phnom Penh"
     :Asia/Pontianak: 
@@ -1228,6 +1234,8 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanay
     :Asia/Qyzylorda: 
       :city: Kyzylorda
     :Asia/Rangoon: 
@@ -1260,6 +1268,8 @@
       :city: Thimpu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1277,7 +1287,7 @@
     :Asia/Yerevan: 
       :city: Jerevan
     :Atlantic/Azores: 
-      :city: Azorene
+      :city: Asorene
     :Atlantic/Bermuda: 
       :city: Bermuda
     :Atlantic/Canary: 
@@ -1289,7 +1299,7 @@
     :Atlantic/Madeira: 
       :city: Madeira
     :Atlantic/Reykjavik: 
-      :city: Reykjavik
+      :city: Reykjavík
     :Atlantic/South_Georgia: 
       :city: Sør-Georgia
     :Atlantic/St_Helena: 
@@ -1320,12 +1330,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "koordinert universaltid"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "ukjent by"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athen
     :Europe/Belgrade: 
@@ -1337,7 +1354,7 @@
     :Europe/Brussels: 
       :city: Brussel
     :Europe/Bucharest: 
-      :city: Bucuresti
+      :city: București
     :Europe/Budapest: 
       :city: Budapest
     :Europe/Busingen: 
@@ -1366,6 +1383,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisboa
     :Europe/Ljubljana: 
@@ -1406,6 +1425,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1418,6 +1439,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Uzjhorod
     :Europe/Vaduz: 
@@ -1435,7 +1458,7 @@
     :Europe/Zagreb: 
       :city: Zagreb
     :Europe/Zaporozhye: 
-      :city: Zaporozje
+      :city: Zaporizjzja
     :Europe/Zurich: 
       :city: Zürich
     :Indian/Antananarivo: 
@@ -1451,7 +1474,7 @@
     :Indian/Kerguelen: 
       :city: Kerguelen
     :Indian/Mahe: 
-      :city: Mahe
+      :city: Mahé
     :Indian/Maldives: 
       :city: Maldivene
     :Indian/Mauritius: 
@@ -1509,7 +1532,7 @@
     :Pacific/Niue: 
       :city: Niue
     :Pacific/Norfolk: 
-      :city: Norfolk
+      :city: Norfolkøya
     :Pacific/Noumea: 
       :city: Nouméa
     :Pacific/Pago_Pago: 

@@ -1,18 +1,11 @@
 --- 
 :ur: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT {0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0} وقت"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT {0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} اسٹینڈرڈ ٹائم"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -499,6 +492,9 @@
     :Ponape: 
       :long: 
         :standard: "پوناپے ٹائم"
+    :Pyongyang: 
+      :long: 
+        :standard: "پیانگ یانگ وقت"
     :Reunion: 
       :long: 
         :standard: "ری یونین ٹائم"
@@ -816,6 +812,8 @@
       :city: ایرونیپ
     :America/El_Salvador: 
       :city: "ال سلواڈور"
+    :America/Fort_Nelson: 
+      :city: "فورٹ نیلسن"
     :America/Fortaleza: 
       :city: فورٹالیزا
     :America/Glace_Bay: 
@@ -950,6 +948,8 @@
       :city: "پورٹو ویلہو"
     :America/Puerto_Rico: 
       :city: "پیورٹو ریکو"
+    :America/Punta_Arenas: 
+      :city: "پنٹا یریناس"
     :America/Rainy_River: 
       :city: "رینی ریور"
     :America/Rankin_Inlet: 
@@ -1050,6 +1050,8 @@
       :city: اکٹوب
     :Asia/Ashgabat: 
       :city: اشغبت
+    :Asia/Atyrau: 
+      :city: آتیراؤ
     :Asia/Baghdad: 
       :city: بغداد
     :Asia/Bahrain: 
@@ -1058,6 +1060,8 @@
       :city: باکو
     :Asia/Bangkok: 
       :city: بنکاک
+    :Asia/Barnaul: 
+      :city: برنال
     :Asia/Beirut: 
       :city: بیروت
     :Asia/Bishkek: 
@@ -1079,9 +1083,11 @@
     :Asia/Dili: 
       :city: ڈلی
     :Asia/Dubai: 
-      :city: دوبئی
+      :city: دبئی
     :Asia/Dushanbe: 
       :city: دوشانبے
+    :Asia/Famagusta: 
+      :city: فاماگوسٹا
     :Asia/Gaza: 
       :city: غزہ
     :Asia/Hebron: 
@@ -1144,6 +1150,8 @@
       :city: "پیونگ یانگ"
     :Asia/Qatar: 
       :city: قطر
+    :Asia/Qostanay: 
+      :city: کوستانے
     :Asia/Qyzylorda: 
       :city: کیزیلورڈا
     :Asia/Rangoon: 
@@ -1176,12 +1184,14 @@
       :city: تھمپو
     :Asia/Tokyo: 
       :city: ٹوکیو
+    :Asia/Tomsk: 
+      :city: ٹامسک
     :Asia/Ulaanbaatar: 
       :city: "اولان باتار"
     :Asia/Urumqi: 
       :city: یورومکی
     :Asia/Ust-Nera: 
-      :city: Ust-Nera
+      :city: اوست-نیرا
     :Asia/Vientiane: 
       :city: وینٹیانا
     :Asia/Vladivostok: 
@@ -1236,12 +1246,19 @@
       :city: پرتھ
     :Australia/Sydney: 
       :city: سڈنی
+    :Etc/UTC: 
+      :long: 
+        :standard: "کوآرڈینیٹڈ یونیورسل ٹائم"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "نامعلوم شہر"
     :Europe/Amsterdam: 
       :city: ایمسٹرڈم
     :Europe/Andorra: 
       :city: انڈورا
+    :Europe/Astrakhan: 
+      :city: استراخان
     :Europe/Athens: 
       :city: ایتھنز
     :Europe/Belgrade: 
@@ -1279,9 +1296,11 @@
     :Europe/Jersey: 
       :city: جرسی
     :Europe/Kaliningrad: 
-      :city: كالينينغراد
+      :city: کالينينغراد
     :Europe/Kiev: 
       :city: کیوو
+    :Europe/Kirov: 
+      :city: کیروف
     :Europe/Lisbon: 
       :city: لسبن
     :Europe/Ljubljana: 
@@ -1322,6 +1341,8 @@
       :city: "سان ماریانو"
     :Europe/Sarajevo: 
       :city: سراجیوو
+    :Europe/Saratov: 
+      :city: سیراٹو
     :Europe/Simferopol: 
       :city: سمفروپول
     :Europe/Skopje: 
@@ -1334,6 +1355,8 @@
       :city: ٹالن
     :Europe/Tirane: 
       :city: ٹیرانی
+    :Europe/Ulyanovsk: 
+      :city: الیانوسک
     :Europe/Uzhgorod: 
       :city: ازگوروڈ
     :Europe/Vaduz: 

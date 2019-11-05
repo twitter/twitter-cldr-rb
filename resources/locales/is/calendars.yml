@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E d."
@@ -16,13 +21,14 @@
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
-        :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :Hmsv: "v – HH:mm:ss"
+        :Hmv: "v – HH:mm"
         :M: L
         :MEd: "E, d.M."
         :MMM: LLL
         :MMMEd: "E, d. MMM"
         :MMMMEd: "E, d. MMMM"
+        :MMMMW: "'viku' W 'í' MMMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :Md: d.M.
@@ -44,6 +50,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'viku' w 'af' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -123,10 +130,17 @@
           1: v.t.
       :fields: 
         :day: dagur
-        :day-narrow: d.
+        :day-narrow: dagur
         :day-short: dagur
+        :dayOfYear: "dagur í ári"
+        :dayOfYear-narrow: "dagur í ári"
+        :dayOfYear-short: "dagur í ári"
         :dayperiod: f.h./e.h.
+        :dayperiod-narrow: f.h./e.h.
+        :dayperiod-short: f.h./e.h.
         :era: tímabil
+        :era-narrow: tímabil
+        :era-short: tímabil
         :hour: klukkustund
         :hour-narrow: klst.
         :hour-short: klst.
@@ -145,11 +159,21 @@
         :week: vika
         :week-narrow: v.
         :week-short: vika
+        :weekOfMonth: "vika í mánuði"
+        :weekOfMonth-narrow: "vika í mánuði"
+        :weekOfMonth-short: "vika í mánuði"
         :weekday: vikudagur
+        :weekday-narrow: vikud.
+        :weekday-short: vikud.
+        :weekdayOfMonth: "vikudagur í mánuði"
+        :weekdayOfMonth-narrow: "vikud. í mán."
+        :weekdayOfMonth-short: "vikud. í mán."
         :year: ár
         :year-narrow: ár
         :year-short: ár
         :zone: tímabelti
+        :zone-narrow: tímab.
+        :zone-short: tímab.
       :formats: 
         :date: 
           :full: 
@@ -262,13 +286,13 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: síðd.
+            :afternoon1: síðdegis
             :am: f.h.
-            :evening1: "að kv."
-            :midnight: miðn.
+            :evening1: "að kvöldi"
+            :midnight: miðnætti
             :morning1: "að morgni"
             :night1: "að nóttu"
-            :noon: hád.
+            :noon: hádegi
             :pm: e.h.
           :narrow: 
             :afternoon1: sd.
@@ -290,19 +314,23 @@
             :pm: e.h.
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: síðd.
-            :evening1: kv.
-            :midnight: miðn.
-            :morning1: morg.
+            :afternoon1: síðdegis
+            :am: f.h.
+            :evening1: kvöld
+            :midnight: miðnætti
+            :morning1: morgunn
             :night1: nótt
-            :noon: hád.
+            :noon: hádegi
+            :pm: e.h.
           :narrow: 
             :afternoon1: sd.
+            :am: f.h.
             :evening1: kv.
             :midnight: mn.
             :morning1: mrg.
             :night1: n.
             :noon: hd.
+            :pm: e.h.
           :wide: 
             :afternoon1: "eftir hádegi"
             :am: f.h.

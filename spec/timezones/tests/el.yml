@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: "[CET (Αλγέρι)]"
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: "[EET (Αίγυπτος)]"
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Ώρα (Μαρόκο)
   :LONG:
-    :standard: Χειμερινή ώρα Δυτικής Ευρώπης
-    :daylight: Θερινή ώρα Δυτικής Ευρώπης
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Ώρα Δυτικής Ευρώπης
+    :generic: Ώρα (Μαρόκο)
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Ώρα (Μαρόκο)
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -276,7 +276,7 @@ Africa/Ceuta:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κέουτα)
+    :generic: Ώρα (Θέουτα)
   :LONG:
     :standard: Χειμερινή ώρα Κεντρικής Ευρώπης
     :daylight: Θερινή ώρα Κεντρικής Ευρώπης
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Ώρα (Δυτική Σαχάρα)
   :LONG:
-    :standard: Χειμερινή ώρα Δυτικής Ευρώπης
-    :daylight: Θερινή ώρα Δυτικής Ευρώπης
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Ώρα Δυτικής Ευρώπης
+    :generic: Ώρα (Δυτική Σαχάρα)
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Ώρα (Δυτική Σαχάρα)
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Ώρα (Ουγκάντα)
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Ώρα (Σουδάν)
   :LONG:
-    :standard: Ώρα Ανατολικής Αφρικής
-    :daylight: GMT+03:00
+    :standard: Ώρα Κεντρικής Αφρικής
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Ώρα Ανατολικής Αφρικής
+    :generic: Ώρα Κεντρικής Αφρικής
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Ώρα (Σουδάν)
 Africa/Kigali:
@@ -618,7 +618,7 @@ Africa/Luanda:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ανγκόλα)
+    :generic: Ώρα (Αγκόλα)
   :LONG:
     :standard: Χειμερινή ώρα Δυτικής Αφρικής
     :daylight: Θερινή ώρα Δυτικής Αφρικής
@@ -628,7 +628,7 @@ Africa/Luanda:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Ώρα (Ανγκόλα)
+    :generic: Ώρα (Αγκόλα)
 Africa/Lubumbashi:
   :offset: 7200000
   :LONG_GMT:
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: "[EET (Τρίπολη)]"
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: "[CET (Τυνησία)]"
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Ώρα (Ναμίμπια)
   :LONG:
-    :standard: Χειμερινή ώρα Δυτικής Αφρικής
-    :daylight: Θερινή ώρα Δυτικής Αφρικής
+    :standard: Ώρα Κεντρικής Αφρικής
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: "[Ώρα Δυτικής Αφρικής (Βίντχουκ)]"
+    :generic: Ώρα Κεντρικής Αφρικής
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Ώρα (Ναμίμπια)
@@ -980,10 +980,10 @@ America/Adak:
   :GENERIC_LOCATION:
     :generic: Ώρα (Άντακ)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: "[Ώρα Χαβάης-Αλεούτιων νήσων (Άντακ)]"
+    :generic: Ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1052,10 +1052,10 @@ America/Araguaina:
   :GENERIC_LOCATION:
     :generic: Ώρα (Αραγκουάινα)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1338,7 +1338,7 @@ America/Atikokan:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κόραλ Χάρμπουρ)
+    :generic: Ώρα (Ατικόκαν)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -1348,7 +1348,7 @@ America/Atikokan:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Κόραλ Χάρμπουρ)
+    :generic: Ώρα (Ατικόκαν)
 America/Atka:
   :offset: -36000000
   :LONG_GMT:
@@ -1358,10 +1358,10 @@ America/Atka:
   :GENERIC_LOCATION:
     :generic: Ώρα (Άντακ)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: "[Ώρα Χαβάης-Αλεούτιων νήσων (Άντακ)]"
+    :generic: Ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1374,17 +1374,17 @@ America/Bahia:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπάχια)
+    :generic: Ώρα (Μπαΐα)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπάχια)
+    :generic: Ώρα (Μπαΐα)
 America/Bahia_Banderas:
   :offset: -21600000
   :LONG_GMT:
@@ -1392,7 +1392,7 @@ America/Bahia_Banderas:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπαχία Ντε Μπαντέρας)
+    :generic: Ώρα (Μπαΐα ντε Μπαντέρας)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -1402,7 +1402,7 @@ America/Bahia_Banderas:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπαχία Ντε Μπαντέρας)
+    :generic: Ώρα (Μπαΐα ντε Μπαντέρας)
 America/Barbados:
   :offset: -14400000
   :LONG_GMT:
@@ -1410,7 +1410,7 @@ America/Barbados:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπαρμπάντος)
+    :generic: Ώρα (Μπαρμπέιντος)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -1420,7 +1420,7 @@ America/Barbados:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπαρμπάντος)
+    :generic: Ώρα (Μπαρμπέιντος)
 America/Belem:
   :offset: -10800000
   :LONG_GMT:
@@ -1428,17 +1428,17 @@ America/Belem:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπέλεμ)
+    :generic: Ώρα (Μπελέμ)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπέλεμ)
+    :generic: Ώρα (Μπελέμ)
 America/Belize:
   :offset: -21600000
   :LONG_GMT:
@@ -1518,7 +1518,7 @@ America/Boise:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπόιζ)
+    :generic: Ώρα (Μπόιζι)
   :LONG:
     :standard: Ορεινή χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ορεινή θερινή ώρα Βόρειας Αμερικής
@@ -1528,7 +1528,7 @@ America/Boise:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπόιζ)
+    :generic: Ώρα (Μπόιζι)
 America/Buenos_Aires:
   :offset: -10800000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Χειμερινή ώρα Αμαζονίου
     :daylight: Θερινή ώρα Αμαζονίου
   :LONG_GENERIC:
-    :generic: Ώρα Αμαζονίου
+    :generic: "[Ώρα Αμαζονίου (Κάμπο Γκράντε)]"
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Ώρα (Κανκούν)
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Ώρα (Βενεζουέλα)
   :LONG:
     :standard: Ώρα Βενεζουέλας
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Ώρα Βενεζουέλας
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Ώρα (Βενεζουέλα)
 America/Catamarca:
@@ -1662,7 +1662,7 @@ America/Cayman:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νήσοι Κάιμαν)
+    :generic: Ώρα (Νήσοι Κέιμαν)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -1672,7 +1672,7 @@ America/Cayman:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Νήσοι Κάιμαν)
+    :generic: Ώρα (Νήσοι Κέιμαν)
 America/Chicago:
   :offset: -21600000
   :LONG_GMT:
@@ -1716,7 +1716,7 @@ America/Coral_Harbour:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κόραλ Χάρμπουρ)
+    :generic: Ώρα (Ατικόκαν)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -1726,7 +1726,7 @@ America/Coral_Harbour:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Κόραλ Χάρμπουρ)
+    :generic: Ώρα (Ατικόκαν)
 America/Cordoba:
   :offset: -10800000
   :LONG_GMT:
@@ -1788,17 +1788,17 @@ America/Cuiaba:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κουϊάμπα)
+    :generic: Ώρα (Κουιαμπά)
   :LONG:
     :standard: Χειμερινή ώρα Αμαζονίου
     :daylight: Θερινή ώρα Αμαζονίου
   :LONG_GENERIC:
-    :generic: Ώρα Αμαζονίου
+    :generic: "[Ώρα Αμαζονίου (Κουιαμπά)]"
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Κουϊάμπα)
+    :generic: Ώρα (Κουιαμπά)
 America/Curacao:
   :offset: -14400000
   :LONG_GMT:
@@ -1844,10 +1844,10 @@ America/Dawson:
   :GENERIC_LOCATION:
     :generic: Ώρα (Ντόσον)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -1950,17 +1950,17 @@ America/Eirunepe:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Εϊρουνέπε)
+    :generic: Ώρα (Εϊρουνεπέ)
   :LONG:
     :standard: GMT-05:00
     :daylight: GMT-05:00
   :LONG_GENERIC:
-    :generic: Ώρα (Εϊρουνέπε)
+    :generic: Ώρα (Εϊρουνεπέ)
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Εϊρουνέπε)
+    :generic: Ώρα (Εϊρουνεπέ)
 America/El_Salvador:
   :offset: -21600000
   :LONG_GMT:
@@ -1988,10 +1988,10 @@ America/Ensenada:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τιχουάνα)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Fort Nelson)
+    :generic: Ώρα (Φορτ Νέλσον)
   :LONG:
     :standard: Ορεινή χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ορεινή θερινή ώρα Βόρειας Αμερικής
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT-7
     :daylight: GMT-7
   :SHORT_GENERIC:
-    :generic: Ώρα (Fort Nelson)
+    :generic: Ώρα (Φορτ Νέλσον)
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2042,10 +2042,10 @@ America/Fortaleza:
   :GENERIC_LOCATION:
     :generic: Ώρα (Φορταλέζα)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -2076,7 +2076,7 @@ America/Godthab:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Γκόνθαμπ)
+    :generic: Ώρα (Νουούκ)
   :LONG:
     :standard: Χειμερινή ώρα Δυτικής Γροιλανδίας
     :daylight: Θερινή ώρα Δυτικής Γροιλανδίας
@@ -2086,7 +2086,7 @@ America/Godthab:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Ώρα (Γκόνθαμπ)
+    :generic: Ώρα (Νουούκ)
 America/Goose_Bay:
   :offset: -14400000
   :LONG_GMT:
@@ -2106,23 +2106,23 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Ώρα (Γκους Μπέι)
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νήσοι Τερκ και Κάικος)
+    :generic: Ώρα (Νήσοι Τερκς και Κάικος)
   :LONG:
-    :standard: Χειμερινή ώρα Ατλαντικού
-    :daylight: Θερινή ώρα Ατλαντικού
+    :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
+    :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Ατλαντικού
+    :generic: Ανατολική ώρα Βόρειας Αμερικής
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Νήσοι Τερκ και Κάικος)
+    :generic: Ώρα (Νήσοι Τερκς και Κάικος)
 America/Grenada:
   :offset: -14400000
   :LONG_GMT:
@@ -2184,17 +2184,17 @@ America/Guayaquil:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Εκουαδόρ)
+    :generic: Ώρα (Ισημερινός)
   :LONG:
-    :standard: Ώρα Εκουαδόρ
+    :standard: Ώρα Ισημερινού
     :daylight: GMT-05:00
   :LONG_GENERIC:
-    :generic: Ώρα Εκουαδόρ
+    :generic: Ώρα Ισημερινού
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Εκουαδόρ)
+    :generic: Ώρα (Ισημερινός)
 America/Guyana:
   :offset: -14400000
   :LONG_GMT:
@@ -2346,7 +2346,7 @@ America/Indiana/Tell_City:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Τελ Σίτυ, Ιντιάνα)
+    :generic: Ώρα (Τελ Σίτι, Ιντιάνα)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -2356,7 +2356,7 @@ America/Indiana/Tell_City:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Τελ Σίτυ, Ιντιάνα)
+    :generic: Ώρα (Τελ Σίτι, Ιντιάνα)
 America/Indiana/Vevay:
   :offset: -18000000
   :LONG_GMT:
@@ -2364,7 +2364,7 @@ America/Indiana/Vevay:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Βεβάι, Ιντιάνα)
+    :generic: Ώρα (Βιβέι, Ιντιάνα)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -2374,7 +2374,7 @@ America/Indiana/Vevay:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Βεβάι, Ιντιάνα)
+    :generic: Ώρα (Βιβέι, Ιντιάνα)
 America/Indiana/Vincennes:
   :offset: -18000000
   :LONG_GMT:
@@ -2382,7 +2382,7 @@ America/Indiana/Vincennes:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Βίνκενες, Ιντιάνα)
+    :generic: Ώρα (Βανσέν, Ιντιάνα)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -2392,7 +2392,7 @@ America/Indiana/Vincennes:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Βίνκενες, Ιντιάνα)
+    :generic: Ώρα (Βανσέν, Ιντιάνα)
 America/Indiana/Winamac:
   :offset: -18000000
   :LONG_GMT:
@@ -2454,7 +2454,7 @@ America/Iqaluit:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ικαλούτ)
+    :generic: Ώρα (Ικαλούιτ)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -2464,7 +2464,7 @@ America/Iqaluit:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Ικαλούτ)
+    :generic: Ώρα (Ικαλούιτ)
 America/Jamaica:
   :offset: -18000000
   :LONG_GMT:
@@ -2526,7 +2526,7 @@ America/Kentucky/Louisville:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Λούισβιλ)
+    :generic: Ώρα (Λούιβιλ)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -2536,7 +2536,7 @@ America/Kentucky/Louisville:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Λούισβιλ)
+    :generic: Ώρα (Λούιβιλ)
 America/Kentucky/Monticello:
   :offset: -18000000
   :LONG_GMT:
@@ -2636,10 +2636,10 @@ America/Los_Angeles:
   :GENERIC_LOCATION:
     :generic: Ώρα (Λος Άντζελες)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -2652,7 +2652,7 @@ America/Louisville:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Λούισβιλ)
+    :generic: Ώρα (Λούιβιλ)
   :LONG:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
@@ -2662,7 +2662,7 @@ America/Louisville:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Λούισβιλ)
+    :generic: Ώρα (Λούιβιλ)
 America/Lower_Princes:
   :offset: -14400000
   :LONG_GMT:
@@ -2688,17 +2688,17 @@ America/Maceio:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μασέιο)
+    :generic: Ώρα (Μασεϊό)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Μασέιο)
+    :generic: Ώρα (Μασεϊό)
 America/Managua:
   :offset: -21600000
   :LONG_GMT:
@@ -2724,7 +2724,7 @@ America/Manaus:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μανάος)
+    :generic: Ώρα (Μανάους)
   :LONG:
     :standard: Χειμερινή ώρα Αμαζονίου
     :daylight: Θερινή ώρα Αμαζονίου
@@ -2734,7 +2734,7 @@ America/Manaus:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Μανάος)
+    :generic: Ώρα (Μανάους)
 America/Marigot:
   :offset: -14400000
   :LONG_GMT:
@@ -2850,7 +2850,7 @@ America/Merida:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μέριντα)
+    :generic: Ώρα (Μέριδα)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -2860,7 +2860,7 @@ America/Merida:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Μέριντα)
+    :generic: Ώρα (Μέριδα)
 America/Metlakatla:
   :offset: -32400000
   :LONG_GMT:
@@ -2906,10 +2906,10 @@ America/Miquelon:
   :GENERIC_LOCATION:
     :generic: Ώρα (Σεν Πιερ και Μικελόν)
   :LONG:
-    :standard: Χειμερινή ώρα Σαιντ Πιερ και Μικελόν
-    :daylight: Θερινή ώρα Σαιντ Πιερ και Μικελόν
+    :standard: Χειμερινή ώρα Σεν Πιερ και Μικελόν
+    :daylight: Θερινή ώρα Σεν Πιερ και Μικελόν
   :LONG_GENERIC:
-    :generic: Ώρα Σαιντ Πιερ και Μικελόν
+    :generic: Ώρα Σεν Πιερ και Μικελόν
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -2922,7 +2922,7 @@ America/Moncton:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μονκτόν)
+    :generic: Ώρα (Μόνκτον)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -2932,7 +2932,7 @@ America/Moncton:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Μονκτόν)
+    :generic: Ώρα (Μόνκτον)
 America/Monterrey:
   :offset: -21600000
   :LONG_GMT:
@@ -3084,7 +3084,7 @@ America/Noronha:
   :SHORT_GMT:
     :generic: "-0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νορόνχα)
+    :generic: Ώρα (Νορόνια)
   :LONG:
     :standard: Χειμερινή ώρα Φερνάρντο ντε Νορόνια
     :daylight: Θερινή ώρα Φερνάρντο ντε Νορόνια
@@ -3094,7 +3094,7 @@ America/Noronha:
     :standard: GMT-2
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Ώρα (Νορόνχα)
+    :generic: Ώρα (Νορόνια)
 America/North_Dakota/Beulah:
   :offset: -21600000
   :LONG_GMT:
@@ -3102,7 +3102,7 @@ America/North_Dakota/Beulah:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μπέουλαχ, Βόρεια Ντακότα)
+    :generic: Ώρα (Μπέουλα, Βόρεια Ντακότα)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3112,7 +3112,7 @@ America/North_Dakota/Beulah:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Μπέουλαχ, Βόρεια Ντακότα)
+    :generic: Ώρα (Μπέουλα, Βόρεια Ντακότα)
 America/North_Dakota/Center:
   :offset: -21600000
   :LONG_GMT:
@@ -3120,7 +3120,7 @@ America/North_Dakota/Center:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κέντρο, Βόρεια Ντακότα)
+    :generic: Ώρα (Σέντερ, Βόρεια Ντακότα)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3130,7 +3130,7 @@ America/North_Dakota/Center:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Κέντρο, Βόρεια Ντακότα)
+    :generic: Ώρα (Σέντερ, Βόρεια Ντακότα)
 America/North_Dakota/New_Salem:
   :offset: -21600000
   :LONG_GMT:
@@ -3138,7 +3138,7 @@ America/North_Dakota/New_Salem:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νιου Σάλεμ, Βόρεια Ντακότα)
+    :generic: Ώρα (Νιου Σέιλεμ, Βόρεια Ντακότα)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3148,7 +3148,7 @@ America/North_Dakota/New_Salem:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Νιου Σάλεμ, Βόρεια Ντακότα)
+    :generic: Ώρα (Νιου Σέιλεμ, Βόρεια Ντακότα)
 America/Ojinaga:
   :offset: -25200000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Ανατολική θερινή ώρα Βόρειας Αμερικής
   :LONG_GENERIC:
-    :generic: Ανατολική χειμερινή ώρα Βόρειας Αμερικής
+    :generic: Ανατολική ώρα Βόρειας Αμερικής
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Ώρα (Αϊτή)
 America/Port_of_Spain:
@@ -3300,7 +3300,7 @@ America/Porto_Velho:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Πόρτο Βέλο)
+    :generic: Ώρα (Πόρτο Βέλιο)
   :LONG:
     :standard: Χειμερινή ώρα Αμαζονίου
     :daylight: Θερινή ώρα Αμαζονίου
@@ -3310,7 +3310,7 @@ America/Porto_Velho:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Πόρτο Βέλο)
+    :generic: Ώρα (Πόρτο Βέλιο)
 America/Puerto_Rico:
   :offset: -14400000
   :LONG_GMT:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Ώρα (Πουέρτο Ρίκο)
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Πούντα Αρένας)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Πούντα Αρένας)
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Πούντα Αρένας)
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3372,7 +3372,7 @@ America/Rankin_Inlet:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ρέινκιν Ίνλετ)
+    :generic: Ώρα (Ράνκιν Ίνλετ)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3382,7 +3382,7 @@ America/Rankin_Inlet:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Ρέινκιν Ίνλετ)
+    :generic: Ώρα (Ράνκιν Ίνλετ)
 America/Recife:
   :offset: -10800000
   :LONG_GMT:
@@ -3392,10 +3392,10 @@ America/Recife:
   :GENERIC_LOCATION:
     :generic: Ώρα (Ρεσίφε)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -3426,7 +3426,7 @@ America/Resolute:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ρέσολουτ)
+    :generic: Ώρα (Ρέζολουτ)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3436,7 +3436,7 @@ America/Resolute:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Ώρα (Ρέσολουτ)
+    :generic: Ώρα (Ρέζολουτ)
 America/Rio_Branco:
   :offset: -18000000
   :LONG_GMT:
@@ -3500,30 +3500,30 @@ America/Santarem:
   :GENERIC_LOCATION:
     :generic: Ώρα (Σανταρέμ)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μπραζίλια
+    :generic: Χειμερινή ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Ώρα (Σανταρέμ)
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Ώρα (Χιλή)
   :LONG:
     :standard: Χειμερινή ώρα Χιλής
     :daylight: Θερινή ώρα Χιλής
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χιλής
+    :generic: Ώρα Χιλής
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Ώρα (Χιλή)
@@ -3554,10 +3554,10 @@ America/Sao_Paulo:
   :GENERIC_LOCATION:
     :generic: Ώρα (Σάο Πάολο)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Ώρα Μπραζίλια
+    :generic: Ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -3642,7 +3642,7 @@ America/St_Johns:
   :SHORT_GMT:
     :generic: "-0330"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Σεντ Τζονς)
+    :generic: Ώρα (Σεν Τζονς)
   :LONG:
     :standard: Χειμερινή ώρα Νέας Γης
     :daylight: Θερινή ώρα Νέας Γης
@@ -3652,7 +3652,7 @@ America/St_Johns:
     :standard: GMT-3:30
     :daylight: GMT-2:30
   :SHORT_GENERIC:
-    :generic: Ώρα (Σεντ Τζονς)
+    :generic: Ώρα (Σεν Τζονς)
 America/St_Kitts:
   :offset: -14400000
   :LONG_GMT:
@@ -3660,7 +3660,7 @@ America/St_Kitts:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Άγιος Χριστόφορος και Νέβις)
+    :generic: Ώρα (Σεν Κιτς και Νέβις)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -3670,7 +3670,7 @@ America/St_Kitts:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Άγιος Χριστόφορος και Νέβις)
+    :generic: Ώρα (Σεν Κιτς και Νέβις)
 America/St_Lucia:
   :offset: -14400000
   :LONG_GMT:
@@ -3696,7 +3696,7 @@ America/St_Thomas:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Αμερικανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Αμερικανικές Παρθένες Νήσοι)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -3706,7 +3706,7 @@ America/St_Thomas:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Αμερικανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Αμερικανικές Παρθένες Νήσοι)
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3732,7 +3732,7 @@ America/Swift_Current:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Σουίφτ Κάρρεντ)
+    :generic: Ώρα (Σουίφτ Κάρεντ)
   :LONG:
     :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
     :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
@@ -3742,7 +3742,7 @@ America/Swift_Current:
     :standard: GMT-6
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Ώρα (Σουίφτ Κάρρεντ)
+    :generic: Ώρα (Σουίφτ Κάρεντ)
 America/Tegucigalpa:
   :offset: -21600000
   :LONG_GMT:
@@ -3768,7 +3768,7 @@ America/Thule:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Τούλε)
+    :generic: Ώρα (Θούλη)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -3778,7 +3778,7 @@ America/Thule:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Τούλε)
+    :generic: Ώρα (Θούλη)
 America/Thunder_Bay:
   :offset: -18000000
   :LONG_GMT:
@@ -3806,10 +3806,10 @@ America/Tijuana:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τιχουάνα)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -3840,7 +3840,7 @@ America/Tortola:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Βρετανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Βρετανικές Παρθένες Νήσοι)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -3850,7 +3850,7 @@ America/Tortola:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Βρετανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Βρετανικές Παρθένες Νήσοι)
 America/Vancouver:
   :offset: -28800000
   :LONG_GMT:
@@ -3860,10 +3860,10 @@ America/Vancouver:
   :GENERIC_LOCATION:
     :generic: Ώρα (Βανκούβερ)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -3876,7 +3876,7 @@ America/Virgin:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Αμερικανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Αμερικανικές Παρθένες Νήσοι)
   :LONG:
     :standard: Χειμερινή ώρα Ατλαντικού
     :daylight: Θερινή ώρα Ατλαντικού
@@ -3886,7 +3886,7 @@ America/Virgin:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Αμερικανικές Παρθένοι Νήσοι)
+    :generic: Ώρα (Αμερικανικές Παρθένες Νήσοι)
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -3896,10 +3896,10 @@ America/Whitehorse:
   :GENERIC_LOCATION:
     :generic: Ώρα (Γουάιτχορς)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -4002,17 +4002,17 @@ Antarctica/DumontDUrville:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ντιμόντ Ντερβίλ)
+    :generic: Ώρα (Ντιμόν ντ’ Ουρβίλ)
   :LONG:
-    :standard: Ώρα Ντιμόντ Ντερβίλ
+    :standard: Ώρα Ντιμόν ντ’ Ουρβίλ
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: Ώρα Ντιμόντ Ντερβίλ
+    :generic: Ώρα Ντιμόν ντ’ Ουρβίλ
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Ώρα (Ντιμόντ Ντερβίλ)
+    :generic: Ώρα (Ντιμόν ντ’ Ουρβίλ)
 Antarctica/Macquarie:
   :offset: 39600000
   :LONG_GMT:
@@ -4038,7 +4038,7 @@ Antarctica/Mawson:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μόουσον)
+    :generic: Ώρα (Μόσον)
   :LONG:
     :standard: Ώρα Μόσον
     :daylight: GMT+05:00
@@ -4048,7 +4048,7 @@ Antarctica/Mawson:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Ώρα (Μόουσον)
+    :generic: Ώρα (Μόσον)
 Antarctica/McMurdo:
   :offset: 43200000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Ώρα (Πάλμερ)
   :LONG:
-    :standard: Χειμερινή ώρα Χιλής
-    :daylight: Θερινή ώρα Χιλής
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χιλής
+    :generic: Ώρα (Πάλμερ)
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4092,17 +4092,17 @@ Antarctica/Rothera:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ροθέρα)
+    :generic: Ώρα (Ρόθερα)
   :LONG:
-    :standard: Ώρα Ροθέρα
+    :standard: Ώρα Ρόθερα
     :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Ώρα Ροθέρα
+    :generic: Ώρα Ρόθερα
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Ώρα (Ροθέρα)
+    :generic: Ώρα (Ρόθερα)
 Antarctica/South_Pole:
   :offset: 43200000
   :LONG_GMT:
@@ -4218,7 +4218,7 @@ Asia/Almaty:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Αλμάτυ)
+    :generic: Ώρα (Αλμάτι)
   :LONG:
     :standard: Ώρα Ανατολικού Καζακστάν
     :daylight: GMT+06:00
@@ -4228,7 +4228,7 @@ Asia/Almaty:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Ώρα (Αλμάτυ)
+    :generic: Ώρα (Αλμάτι)
 Asia/Amman:
   :offset: 7200000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Ώρα (Τουρκμενιστάν)
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Aτιράου)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Ώρα Δυτικού Καζακστάν
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα Δυτικού Καζακστάν
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Aτιράου)
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Χειμερινή ώρα Αζερμπαϊτζάν
     :daylight: Θερινή ώρα Αζερμπαϊτζάν
   :LONG_GENERIC:
-    :generic: Ώρα Αζερμπαϊτζάν
+    :generic: Χειμερινή ώρα Αζερμπαϊτζάν
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Ώρα (Αζερμπαϊτζάν)
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Barnaul)
+    :generic: Ώρα (Μπαρναούλ)
   :LONG:
     :standard: GMT+07:00
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: Ώρα (Barnaul)
+    :generic: Ώρα (Μπαρναούλ)
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: Ώρα (Barnaul)
+    :generic: Ώρα (Μπαρναούλ)
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4524,7 +4524,7 @@ Asia/Chita:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Τσίτα)
+    :generic: Ώρα (Τσιτά)
   :LONG:
     :standard: Χειμερινή ώρα Γιακούτσκ
     :daylight: Θερινή ώρα Γιακούτσκ
@@ -4534,7 +4534,7 @@ Asia/Chita:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Ώρα (Τσίτα)
+    :generic: Ώρα (Τσιτά)
 Asia/Choibalsan:
   :offset: 28800000
   :LONG_GMT:
@@ -4542,17 +4542,17 @@ Asia/Choibalsan:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Χόιμπαλσαν)
+    :generic: Ώρα (Τσοϊμπαλσάν)
   :LONG:
     :standard: Χειμερινή ώρα Τσοϊμπαλσάν
     :daylight: Θερινή ώρα Τσοϊμπαλσάν
   :LONG_GENERIC:
-    :generic: Ώρα Τσοϊμπαλσάν
+    :generic: Χειμερινή ώρα Τσοϊμπαλσάν
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Ώρα (Χόιμπαλσαν)
+    :generic: Ώρα (Τσοϊμπαλσάν)
 Asia/Chongqing:
   :offset: 28800000
   :LONG_GMT:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Ώρα (Τατζικιστάν)
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Αμμόχωστος)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Αμμόχωστος)
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Αμμόχωστος)
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4776,7 +4776,7 @@ Asia/Hebron:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Χεμπρόν)
+    :generic: Ώρα (Χεβρώνα)
   :LONG:
     :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
     :daylight: Θερινή ώρα Ανατολικής Ευρώπης
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Χειμερινή ώρα Χοβντ
     :daylight: Θερινή ώρα Χοβντ
   :LONG_GENERIC:
-    :generic: Ώρα Χοβντ
+    :generic: Χειμερινή ώρα Χοβντ
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Ώρα (Χοβντ)
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Ώρα (Ιρκούτσκ)
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Ώρα (Τουρκία)
   :LONG:
-    :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
-    :daylight: Θερινή ώρα Ανατολικής Ευρώπης
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Ώρα Ανατολικής Ευρώπης
+    :generic: Ώρα (Τουρκία)
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Ώρα (Τουρκία)
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -4886,10 +4886,10 @@ Asia/Jakarta:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τζακάρτα)
   :LONG:
-    :standard: 'Ώρα: Δυτική Ινδονησία'
+    :standard: Ώρα Δυτικής Ινδονησίας
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: 'Ώρα: Δυτική Ινδονησία'
+    :generic: Ώρα Δυτικής Ινδονησίας
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
@@ -4902,17 +4902,17 @@ Asia/Jayapura:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Χαγιαπούρα)
+    :generic: Ώρα (Τζαγιαπούρα)
   :LONG:
-    :standard: 'Ώρα: Ανατολική Ινδονησία'
+    :standard: Ώρα Ανατολικής Ινδονησίας
     :daylight: GMT+09:00
   :LONG_GENERIC:
-    :generic: 'Ώρα: Ανατολική Ινδονησία'
+    :generic: Ώρα Ανατολικής Ινδονησίας
   :SHORT:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Ώρα (Χαγιαπούρα)
+    :generic: Ώρα (Τζαγιαπούρα)
 Asia/Jerusalem:
   :offset: 7200000
   :LONG_GMT:
@@ -4992,17 +4992,17 @@ Asia/Kashgar:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
   :LONG:
     :standard: GMT+06:00
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
 Asia/Kathmandu:
   :offset: 20700000
   :LONG_GMT:
@@ -5084,10 +5084,10 @@ Asia/Krasnoyarsk:
   :GENERIC_LOCATION:
     :generic: Ώρα (Κρασνογιάρσκ)
   :LONG:
-    :standard: Χειμερινή ώρα Κρασνόγιαρσκ
-    :daylight: Θερινή ώρα Κρασνόγιαρσκ
+    :standard: Χειμερινή ώρα Κρασνογιάρσκ
+    :daylight: Θερινή ώρα Κρασνογιάρσκ
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Κρασνόγιαρσκ
+    :generic: Χειμερινή ώρα Κρασνογιάρσκ
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
@@ -5184,21 +5184,21 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: Ώρα (Μακάο ΕΔΠ Κίνας)
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Ώρα (Μαγκαντάν)
   :LONG:
-    :standard: Χειμερινή ώρα Μάγκανταν
-    :daylight: Θερινή ώρα Μάγκανταν
+    :standard: Χειμερινή ώρα Μαγκαντάν
+    :daylight: Θερινή ώρα Μαγκαντάν
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μάγκανταν
+    :generic: Χειμερινή ώρα Μαγκαντάν
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Ώρα (Μαγκαντάν)
 Asia/Makassar:
@@ -5210,10 +5210,10 @@ Asia/Makassar:
   :GENERIC_LOCATION:
     :generic: Ώρα (Μακασάρ)
   :LONG:
-    :standard: 'Ώρα: Κεντρική Ινδονησία'
+    :standard: Ώρα Κεντρικής Ινδονησίας
     :daylight: GMT+08:00
   :LONG_GENERIC:
-    :generic: 'Ώρα: Κεντρική Ινδονησία'
+    :generic: Ώρα Κεντρικής Ινδονησίας
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κύπρος)
+    :generic: Ώρα (Λευκωσία)
   :LONG:
     :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
     :daylight: Θερινή ώρα Ανατολικής Ευρώπης
@@ -5282,21 +5282,21 @@ Asia/Novokuznetsk:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νοβοκουζνέτσκ)
   :LONG:
-    :standard: Χειμερινή ώρα Κρασνόγιαρσκ
-    :daylight: Θερινή ώρα Κρασνόγιαρσκ
+    :standard: Χειμερινή ώρα Κρασνογιάρσκ
+    :daylight: Θερινή ώρα Κρασνογιάρσκ
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Κρασνόγιαρσκ
+    :generic: Χειμερινή ώρα Κρασνογιάρσκ
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Ώρα (Νοβοκουζνέτσκ)
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Ώρα (Νοβοσιμπίρσκ)
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Χειμερινή ώρα Νοβοσιμπίρσκ
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Ώρα (Νοβοσιμπίρσκ)
 Asia/Omsk:
@@ -5334,7 +5334,7 @@ Asia/Oral:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Όραλ)
+    :generic: Ώρα (Οράλ)
   :LONG:
     :standard: Ώρα Δυτικού Καζακστάν
     :daylight: GMT+05:00
@@ -5344,7 +5344,7 @@ Asia/Oral:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Ώρα (Όραλ)
+    :generic: Ώρα (Οράλ)
 Asia/Phnom_Penh:
   :offset: 25200000
   :LONG_GMT:
@@ -5372,31 +5372,31 @@ Asia/Pontianak:
   :GENERIC_LOCATION:
     :generic: Ώρα (Πόντιανακ)
   :LONG:
-    :standard: 'Ώρα: Δυτική Ινδονησία'
+    :standard: Ώρα Δυτικής Ινδονησίας
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: 'Ώρα: Δυτική Ινδονησία'
+    :generic: Ώρα Δυτικής Ινδονησίας
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Ώρα (Πόντιανακ)
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Ώρα (Βόρεια Κορέα)
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: Χειμερινή ώρα Κορέας
+    :daylight: Θερινή ώρα Κορέας
   :LONG_GENERIC:
-    :generic: Ώρα (Βόρεια Κορέα)
+    :generic: Χειμερινή ώρα Κορέας
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Ώρα (Βόρεια Κορέα)
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Ώρα (Κατάρ)
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κτζιλ-Ορντά)
+    :generic: Ώρα (Κοστανάι)
   :LONG:
     :standard: Ώρα Ανατολικού Καζακστάν
     :daylight: GMT+06:00
@@ -5434,7 +5434,25 @@ Asia/Qyzylorda:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Ώρα (Κτζιλ-Ορντά)
+    :generic: Ώρα (Κοστανάι)
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Ώρα (Κιζιλορντά)
+  :LONG:
+    :standard: Ώρα Δυτικού Καζακστάν
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: Ώρα Δυτικού Καζακστάν
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
+  :SHORT_GENERIC:
+    :generic: Ώρα (Κιζιλορντά)
 Asia/Rangoon:
   :offset: 23400000
   :LONG_GMT:
@@ -5442,7 +5460,7 @@ Asia/Rangoon:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μιανμάρ/Βιρμανία)
+    :generic: Ώρα (Μιανμάρ (Βιρμανία))
   :LONG:
     :standard: Ώρα Μιανμάρ
     :daylight: GMT+06:30
@@ -5452,7 +5470,7 @@ Asia/Rangoon:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: Ώρα (Μιανμάρ/Βιρμανία)
+    :generic: Ώρα (Μιανμάρ (Βιρμανία))
 Asia/Riyadh:
   :offset: 10800000
   :LONG_GMT:
@@ -5496,7 +5514,7 @@ Asia/Sakhalin:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Σακαλίνσκ)
+    :generic: Ώρα (Σαχαλίνη)
   :LONG:
     :standard: Χειμερινή ώρα Σαχαλίνης
     :daylight: Θερινή ώρα Σαχαλίνης
@@ -5506,7 +5524,7 @@ Asia/Sakhalin:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Σακαλίνσκ)
+    :generic: Ώρα (Σαχαλίνη)
 Asia/Samarkand:
   :offset: 18000000
   :LONG_GMT:
@@ -5586,17 +5604,17 @@ Asia/Srednekolymsk:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Σρεντνεκόλιμσκ)
+    :generic: Ώρα (Σρεντνεκολίμσκ)
   :LONG:
     :standard: GMT+11:00
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: Ώρα (Σρεντνεκόλιμσκ)
+    :generic: Ώρα (Σρεντνεκολίμσκ)
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Σρεντνεκόλιμσκ)
+    :generic: Ώρα (Σρεντνεκολίμσκ)
 Asia/Taipei:
   :offset: 28800000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Ώρα (Ιαπωνία)
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Τομσκ)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Τομσκ)
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Τομσκ)
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5768,10 +5786,10 @@ Asia/Ujung_Pandang:
   :GENERIC_LOCATION:
     :generic: Ώρα (Μακασάρ)
   :LONG:
-    :standard: 'Ώρα: Κεντρική Ινδονησία'
+    :standard: Ώρα Κεντρικής Ινδονησίας
     :daylight: GMT+08:00
   :LONG_GENERIC:
-    :generic: 'Ώρα: Κεντρική Ινδονησία'
+    :generic: Ώρα Κεντρικής Ινδονησίας
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Χειμερινή ώρα Ουλάν Μπατόρ
     :daylight: Θερινή ώρα Ουλάν Μπατόρ
   :LONG_GENERIC:
-    :generic: Ώρα Ουλάν Μπατόρ
+    :generic: Χειμερινή ώρα Ουλάν Μπατόρ
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ώρα (Ουλάν Μπατόρ)
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Χειμερινή ώρα Ουλάν Μπατόρ
     :daylight: Θερινή ώρα Ουλάν Μπατόρ
   :LONG_GENERIC:
-    :generic: Ώρα Ουλάν Μπατόρ
+    :generic: Χειμερινή ώρα Ουλάν Μπατόρ
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ώρα (Ουλάν Μπατόρ)
 Asia/Urumqi:
@@ -5820,17 +5838,17 @@ Asia/Urumqi:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
   :LONG:
     :standard: GMT+06:00
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Ώρα (Ουρουμκί)
+    :generic: Ώρα (Ουρούμτσι)
 Asia/Ust-Nera:
   :offset: 36000000
   :LONG_GMT:
@@ -5892,7 +5910,7 @@ Asia/Yakutsk:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Γιάκουτσκ)
+    :generic: Ώρα (Γιακούτσκ)
   :LONG:
     :standard: Χειμερινή ώρα Γιακούτσκ
     :daylight: Θερινή ώρα Γιακούτσκ
@@ -5902,25 +5920,25 @@ Asia/Yakutsk:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Ώρα (Γιάκουτσκ)
+    :generic: Ώρα (Γιακούτσκ)
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Μιανμάρ (Βιρμανία))
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Ώρα Μιανμάρ
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα Μιανμάρ
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Μιανμάρ (Βιρμανία))
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -5928,7 +5946,7 @@ Asia/Yekaterinburg:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Αικατερίνμπουργκ)
+    :generic: Ώρα (Αικατερινούπολη)
   :LONG:
     :standard: Χειμερινή ώρα Αικατερίνμπουργκ
     :daylight: Θερινή ώρα Αικατερίνμπουργκ
@@ -5938,7 +5956,7 @@ Asia/Yekaterinburg:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Ώρα (Αικατερίνμπουργκ)
+    :generic: Ώρα (Αικατερινούπολη)
 Asia/Yerevan:
   :offset: 14400000
   :LONG_GMT:
@@ -6164,10 +6182,10 @@ Atlantic/Stanley:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσοι Φόκλαντ)
   :LONG:
-    :standard: Χειμερινή ώρα Νησιών Φώκλαντ
-    :daylight: Θερινή ώρα Νησιών Φώκλαντ
+    :standard: Χειμερινή ώρα Νήσων Φόκλαντ
+    :daylight: Θερινή ώρα Νήσων Φόκλαντ
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Νησιών Φώκλαντ
+    :generic: Χειμερινή ώρα Νήσων Φόκλαντ
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -6270,7 +6288,7 @@ Australia/Currie:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κιουρί)
+    :generic: Ώρα (Κάρι)
   :LONG:
     :standard: Χειμερινή ώρα Ανατολικής Αυστραλίας
     :daylight: Θερινή ώρα Ανατολικής Αυστραλίας
@@ -6280,7 +6298,7 @@ Australia/Currie:
     :standard: GMT+10
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Κιουρί)
+    :generic: Ώρα (Κάρι)
 Australia/Darwin:
   :offset: 34200000
   :LONG_GMT:
@@ -6306,7 +6324,7 @@ Australia/Eucla:
   :SHORT_GMT:
     :generic: "+0845"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Εούκλα)
+    :generic: Ώρα (Γιούκλα)
   :LONG:
     :standard: Χειμερινή ώρα Κεντροδυτικής Αυστραλίας
     :daylight: Θερινή ώρα Κεντροδυτικής Αυστραλίας
@@ -6316,7 +6334,7 @@ Australia/Eucla:
     :standard: GMT+8:45
     :daylight: GMT+8:45
   :SHORT_GENERIC:
-    :generic: Ώρα (Εούκλα)
+    :generic: Ώρα (Γιούκλα)
 Australia/Hobart:
   :offset: 36000000
   :LONG_GMT:
@@ -6342,7 +6360,7 @@ Australia/LHI:
   :SHORT_GMT:
     :generic: "+1030"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Λορντ Χάουι)
+    :generic: Ώρα (Λορντ Χάου)
   :LONG:
     :standard: Χειμερινή ώρα Λορντ Χάου
     :daylight: Θερινή ώρα Λορντ Χάου
@@ -6352,7 +6370,7 @@ Australia/LHI:
     :standard: GMT+10:30
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Λορντ Χάουι)
+    :generic: Ώρα (Λορντ Χάου)
 Australia/Lindeman:
   :offset: 36000000
   :LONG_GMT:
@@ -6378,7 +6396,7 @@ Australia/Lord_Howe:
   :SHORT_GMT:
     :generic: "+1030"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Λορντ Χάουι)
+    :generic: Ώρα (Λορντ Χάου)
   :LONG:
     :standard: Χειμερινή ώρα Λορντ Χάου
     :daylight: Θερινή ώρα Λορντ Χάου
@@ -6388,7 +6406,7 @@ Australia/Lord_Howe:
     :standard: GMT+10:30
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Λορντ Χάουι)
+    :generic: Ώρα (Λορντ Χάου)
 Australia/Melbourne:
   :offset: 36000000
   :LONG_GMT:
@@ -6612,7 +6630,7 @@ Brazil/DeNoronha:
   :SHORT_GMT:
     :generic: "-0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νορόνχα)
+    :generic: Ώρα (Νορόνια)
   :LONG:
     :standard: Χειμερινή ώρα Φερνάρντο ντε Νορόνια
     :daylight: Θερινή ώρα Φερνάρντο ντε Νορόνια
@@ -6622,7 +6640,7 @@ Brazil/DeNoronha:
     :standard: GMT-2
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Ώρα (Νορόνχα)
+    :generic: Ώρα (Νορόνια)
 Brazil/East:
   :offset: -10800000
   :LONG_GMT:
@@ -6632,10 +6650,10 @@ Brazil/East:
   :GENERIC_LOCATION:
     :generic: Ώρα (Σάο Πάολο)
   :LONG:
-    :standard: Χειμερινή ώρα Μπραζίλια
-    :daylight: Θερινή ώρα Μπραζίλια
+    :standard: Χειμερινή ώρα Μπραζίλιας
+    :daylight: Θερινή ώρα Μπραζίλιας
   :LONG_GENERIC:
-    :generic: Ώρα Μπραζίλια
+    :generic: Ώρα Μπραζίλιας
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
@@ -6648,7 +6666,7 @@ Brazil/West:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μανάος)
+    :generic: Ώρα (Μανάους)
   :LONG:
     :standard: Χειμερινή ώρα Αμαζονίου
     :daylight: Θερινή ώρα Αμαζονίου
@@ -6658,7 +6676,7 @@ Brazil/West:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Ώρα (Μανάος)
+    :generic: Ώρα (Μανάους)
 CET:
   :offset: 3600000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Ώρα (Γουίνιπεγκ)
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Ώρα (Ρετζίνα)
-  :LONG:
-    :standard: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Κεντρική θερινή ώρα Βόρειας Αμερικής
-  :LONG_GENERIC:
-    :generic: Κεντρική χειμερινή ώρα Βόρειας Αμερικής
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Ώρα (Ρετζίνα)
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6792,7 +6792,7 @@ Canada/Newfoundland:
   :SHORT_GMT:
     :generic: "-0330"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Σεντ Τζονς)
+    :generic: Ώρα (Σεν Τζονς)
   :LONG:
     :standard: Χειμερινή ώρα Νέας Γης
     :daylight: Θερινή ώρα Νέας Γης
@@ -6802,7 +6802,7 @@ Canada/Newfoundland:
     :standard: GMT-3:30
     :daylight: GMT-2:30
   :SHORT_GENERIC:
-    :generic: Ώρα (Σεντ Τζονς)
+    :generic: Ώρα (Σεν Τζονς)
 Canada/Pacific:
   :offset: -28800000
   :LONG_GMT:
@@ -6812,10 +6812,10 @@ Canada/Pacific:
   :GENERIC_LOCATION:
     :generic: Ώρα (Βανκούβερ)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -6848,48 +6848,48 @@ Canada/Yukon:
   :GENERIC_LOCATION:
     :generic: Ώρα (Γουάιτχορς)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
   :SHORT_GENERIC:
     :generic: Ώρα (Γουάιτχορς)
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Ώρα (Χιλή)
   :LONG:
     :standard: Χειμερινή ώρα Χιλής
     :daylight: Θερινή ώρα Χιλής
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χιλής
+    :generic: Ώρα Χιλής
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Ώρα (Χιλή)
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσος Πάσχα)
   :LONG:
-    :standard: Χειμερινή ώρα Νησιού Πάσχα
-    :daylight: Θερινή ώρα Νησιού Πάσχα
+    :standard: Χειμερινή ώρα Νήσου Πάσχα
+    :daylight: Θερινή ώρα Νήσου Πάσχα
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Νησιού Πάσχα
+    :generic: Ώρα Νήσου Πάσχα
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Ώρα (Νήσος Πάσχα)
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: "[EET (Αίγυπτος)]"
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -6993,7 +6993,7 @@ Eire:
     :generic: Ώρα (Ιρλανδία)
   :LONG:
     :standard: Μέση ώρα Γκρίνουιτς
-    :daylight: Θερινή ώρα Ιρλανδίας
+    :daylight: Χειμερινή ώρα Ιρλανδίας
   :LONG_GENERIC:
     :generic: Ώρα (Ιρλανδία)
   :SHORT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Astrakhan)
+    :generic: Ώρα (Αστραχάν)
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ώρα (Astrakhan)
+    :generic: Ώρα (Αστραχάν)
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ώρα (Astrakhan)
+    :generic: Ώρα (Αστραχάν)
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7893,7 +7893,7 @@ Europe/Dublin:
     :generic: Ώρα (Ιρλανδία)
   :LONG:
     :standard: Μέση ώρα Γκρίνουιτς
-    :daylight: Θερινή ώρα Ιρλανδίας
+    :daylight: Χειμερινή ώρα Ιρλανδίας
   :LONG_GENERIC:
     :generic: Ώρα (Ιρλανδία)
   :SHORT:
@@ -7962,35 +7962,35 @@ Europe/Isle_of_Man:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Νήσος Μαν)
+    :generic: Ώρα (Νήσος του Μαν)
   :LONG:
     :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Ώρα (Νήσος Μαν)
+    :generic: Ώρα (Νήσος του Μαν)
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Ώρα (Νήσος Μαν)
+    :generic: Ώρα (Νήσος του Μαν)
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Ώρα (Τουρκία)
   :LONG:
-    :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
-    :daylight: Θερινή ώρα Ανατολικής Ευρώπης
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Ώρα Ανατολικής Ευρώπης
+    :generic: Ώρα (Τουρκία)
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Ώρα (Τουρκία)
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: "[EET (Καλίνινγκραντ)]"
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Κίροφ)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Κίροφ)
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Κίροφ)
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Ώρα (Λευκορωσία)
   :LONG:
-    :standard: Ώρα περαιτέρω Ανατολικής Ευρώπης
-    :daylight: GMT+03:00
+    :standard: Χειμερινή ώρα Μόσχας
+    :daylight: Θερινή ώρα Μόσχας
   :LONG_GENERIC:
-    :generic: Ώρα περαιτέρω Ανατολικής Ευρώπης
+    :generic: Χειμερινή ώρα Μόσχας
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κύπρος)
+    :generic: Ώρα (Λευκωσία)
   :LONG:
     :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
     :daylight: Θερινή ώρα Ανατολικής Ευρώπης
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Τσεχική Δημοκρατία)
+    :generic: Ώρα (Τσεχία)
   :LONG:
     :standard: Χειμερινή ώρα Κεντρικής Ευρώπης
     :daylight: Θερινή ώρα Κεντρικής Ευρώπης
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Ώρα (Σαράτοφ)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Σαράτοφ)
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Ώρα (Σαράτοφ)
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Πρώην Γιουγκοσλαβική Δημοκρατία της Μακεδονίας)
+    :generic: Ώρα (Βόρεια Μακεδονία)
   :LONG:
     :standard: Χειμερινή ώρα Κεντρικής Ευρώπης
     :daylight: Θερινή ώρα Κεντρικής Ευρώπης
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ulyanovsk)
+    :generic: Ώρα (Ουλιάνοφσκ)
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ώρα (Ulyanovsk)
+    :generic: Ώρα (Ουλιάνοφσκ)
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ώρα (Ulyanovsk)
+    :generic: Ώρα (Ουλιάνοφσκ)
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8592,7 +8592,7 @@ Europe/Uzhgorod:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ουζκόροντ)
+    :generic: Ώρα (Ούζχοροντ)
   :LONG:
     :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
     :daylight: Θερινή ώρα Ανατολικής Ευρώπης
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Ώρα (Βόλγκοκραντ)
   :LONG:
-    :standard: Χειμερινή ώρα Μόσχας
-    :daylight: Θερινή ώρα Μόσχας
+    :standard: Χειμερινή ώρα Βόλγκογκραντ
+    :daylight: Θερινή ώρα Βόλγκογκραντ
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Μόσχας
+    :generic: Χειμερινή ώρα Βόλγκογκραντ
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Ώρα (Βόλγκοκραντ)
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Μέση ώρα Γκρίνουιτς
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Μέση ώρα Γκρίνουιτς
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9008,10 +9008,10 @@ Indian/Christmas:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσος των Χριστουγέννων)
   :LONG:
-    :standard: Ώρα Νησιού Χριστουγέννων
+    :standard: Ώρα Νήσου Χριστουγέννων
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιού Χριστουγέννων
+    :generic: Ώρα Νήσου Χριστουγέννων
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
@@ -9026,10 +9026,10 @@ Indian/Cocos:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσοι Κόκος (Κίλινγκ))
   :LONG:
-    :standard: Ώρα Νησιών Κόκος
+    :standard: Ώρα Νήσων Κόκος
     :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Κόκος
+    :generic: Ώρα Νήσων Κόκος
   :SHORT:
     :standard: GMT+6:30
     :daylight: GMT+6:30
@@ -9060,7 +9060,7 @@ Indian/Kerguelen:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Γαλλικές περιοχές του νοτίου ημισφαιρίου)
+    :generic: Ώρα (Γαλλικά Νότια Εδάφη)
   :LONG:
     :standard: Ώρα Γαλλικού Νότου και Ανταρκτικής
     :daylight: GMT+05:00
@@ -9070,7 +9070,7 @@ Indian/Kerguelen:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Ώρα (Γαλλικές περιοχές του νοτίου ημισφαιρίου)
+    :generic: Ώρα (Γαλλικά Νότια Εδάφη)
 Indian/Mahe:
   :offset: 14400000
   :LONG_GMT:
@@ -9240,17 +9240,17 @@ Kwajalein:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κουαχαλέιν)
+    :generic: Ώρα (Κουατζαλέιν)
   :LONG:
-    :standard: Ώρα Νησιών Μάρσαλ
+    :standard: Ώρα Νήσων Μάρσαλ
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Μάρσαλ
+    :generic: Ώρα Νήσων Μάρσαλ
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: Ώρα (Κουαχαλέιν)
+    :generic: Ώρα (Κουατζαλέιν)
 Libya:
   :offset: 7200000
   :LONG_GMT:
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: "[EET (Τρίπολη)]"
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9332,10 +9332,10 @@ Mexico/BajaNorte:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τιχουάνα)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -9404,10 +9404,10 @@ NZ-CHAT:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τσάταμ)
   :LONG:
-    :standard: Χειμερινή ώρα Τσάθαμ
-    :daylight: Θερινή ώρα Τσάθαμ
+    :standard: Χειμερινή ώρα Τσάταμ
+    :daylight: Θερινή ώρα Τσάταμ
   :LONG_GENERIC:
-    :generic: Ώρα Τσάθαμ
+    :generic: Ώρα Τσάταμ
   :SHORT:
     :standard: GMT+12:45
     :daylight: GMT+13:45
@@ -9458,10 +9458,10 @@ PST8PDT:
   :GENERIC_LOCATION:
     :generic: GMT-08:00
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -9530,10 +9530,10 @@ Pacific/Chatham:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τσάταμ)
   :LONG:
-    :standard: Χειμερινή ώρα Τσάθαμ
-    :daylight: Θερινή ώρα Τσάθαμ
+    :standard: Χειμερινή ώρα Τσάταμ
+    :daylight: Θερινή ώρα Τσάταμ
   :LONG_GENERIC:
-    :generic: Ώρα Τσάθαμ
+    :generic: Ώρα Τσάταμ
   :SHORT:
     :standard: GMT+12:45
     :daylight: GMT+13:45
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Ώρα (Τσουκ)
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσος Πάσχα)
   :LONG:
-    :standard: Χειμερινή ώρα Νησιού Πάσχα
-    :daylight: Θερινή ώρα Νησιού Πάσχα
+    :standard: Χειμερινή ώρα Νήσου Πάσχα
+    :daylight: Θερινή ώρα Νήσου Πάσχα
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Νησιού Πάσχα
+    :generic: Ώρα Νήσου Πάσχα
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Ώρα (Νήσος Πάσχα)
@@ -9600,17 +9600,17 @@ Pacific/Enderbury:
   :SHORT_GMT:
     :generic: "+1300"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Εντερμπέρυ)
+    :generic: Ώρα (Έντερμπερι)
   :LONG:
-    :standard: Ώρα Νησιών Φίνιξ
+    :standard: Ώρα Νήσων Φoίνιξ
     :daylight: GMT+13:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Φίνιξ
+    :generic: Ώρα Νήσων Φoίνιξ
   :SHORT:
     :standard: GMT+13
     :daylight: GMT+13
   :SHORT_GENERIC:
-    :generic: Ώρα (Εντερμπέρυ)
+    :generic: Ώρα (Έντερμπερι)
 Pacific/Fakaofo:
   :offset: 46800000
   :LONG_GMT:
@@ -9672,7 +9672,7 @@ Pacific/Galapagos:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Γκαλαπάγκος)
+    :generic: Ώρα (Γκαλάπαγκος)
   :LONG:
     :standard: Ώρα Γκαλάπαγκος
     :daylight: GMT-06:00
@@ -9682,7 +9682,7 @@ Pacific/Galapagos:
     :standard: GMT-6
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Ώρα (Γκαλαπάγκος)
+    :generic: Ώρα (Γκαλάπαγκος)
 Pacific/Gambier:
   :offset: -32400000
   :LONG_GMT:
@@ -9710,10 +9710,10 @@ Pacific/Guadalcanal:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσοι Σολομώντος)
   :LONG:
-    :standard: Ώρα Νησιών Σολομώντα
+    :standard: Ώρα Νήσων Σολομώντος
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Σολομώντα
+    :generic: Ώρα Νήσων Σολομώντος
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
@@ -9746,10 +9746,10 @@ Pacific/Honolulu:
   :GENERIC_LOCATION:
     :generic: Ώρα (Χονολουλού)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-10
@@ -9764,10 +9764,10 @@ Pacific/Johnston:
   :GENERIC_LOCATION:
     :generic: Ώρα (Τζόνστον)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-10
@@ -9782,10 +9782,10 @@ Pacific/Kiritimati:
   :GENERIC_LOCATION:
     :generic: Ώρα (Κιριτιμάτι)
   :LONG:
-    :standard: Ώρα Νησιών Λάιν
+    :standard: Ώρα Νήσων Λάιν
     :daylight: GMT+14:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Λάιν
+    :generic: Ώρα Νήσων Λάιν
   :SHORT:
     :standard: GMT+14
     :daylight: GMT+14
@@ -9798,17 +9798,17 @@ Pacific/Kosrae:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κοσράη)
+    :generic: Ώρα (Κόσραϊ)
   :LONG:
-    :standard: Ώρα Κοσράης
+    :standard: Ώρα Κόσραϊ
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: Ώρα Κοσράης
+    :generic: Ώρα Κόσραϊ
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: Ώρα (Κοσράη)
+    :generic: Ώρα (Κόσραϊ)
 Pacific/Kwajalein:
   :offset: 43200000
   :LONG_GMT:
@@ -9816,17 +9816,17 @@ Pacific/Kwajalein:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Κουαχαλέιν)
+    :generic: Ώρα (Κουατζαλέιν)
   :LONG:
-    :standard: Ώρα Νησιών Μάρσαλ
+    :standard: Ώρα Νήσων Μάρσαλ
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Μάρσαλ
+    :generic: Ώρα Νήσων Μάρσαλ
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: Ώρα (Κουαχαλέιν)
+    :generic: Ώρα (Κουατζαλέιν)
 Pacific/Majuro:
   :offset: 43200000
   :LONG_GMT:
@@ -9836,10 +9836,10 @@ Pacific/Majuro:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσοι Μάρσαλ)
   :LONG:
-    :standard: Ώρα Νησιών Μάρσαλ
+    :standard: Ώρα Νήσων Μάρσαλ
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Μάρσαλ
+    :generic: Ώρα Νήσων Μάρσαλ
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -9852,17 +9852,17 @@ Pacific/Marquesas:
   :SHORT_GMT:
     :generic: "-0930"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Μαρκέσας)
+    :generic: Ώρα (Μαρκέζας)
   :LONG:
-    :standard: Ώρα Μαρκέσας
+    :standard: Ώρα Μαρκέζας
     :daylight: GMT-09:30
   :LONG_GENERIC:
-    :generic: Ώρα Μαρκέσας
+    :generic: Ώρα Μαρκέζας
   :SHORT:
     :standard: GMT-9:30
     :daylight: GMT-9:30
   :SHORT_GENERIC:
-    :generic: Ώρα (Μαρκέσας)
+    :generic: Ώρα (Μαρκέζας)
 Pacific/Midway:
   :offset: -39600000
   :LONG_GMT:
@@ -9926,10 +9926,10 @@ Pacific/Norfolk:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσος Νόρφολκ)
   :LONG:
-    :standard: Ώρα Νησιών Νόρφολκ
+    :standard: Ώρα Νήσου Νόρφολκ
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Νόρφολκ
+    :generic: Ώρα Νήσου Νόρφολκ
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
@@ -10050,17 +10050,17 @@ Pacific/Port_Moresby:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Πορτ Μόρεσμπυ)
+    :generic: Ώρα (Πορτ Μόρεσμπι)
   :LONG:
-    :standard: Ώρα Παπουά Νέα Γουινέα
+    :standard: Ώρα Παπούας Νέας Γουινέας
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: Ώρα Παπουά Νέα Γουινέα
+    :generic: Ώρα Παπούας Νέας Γουινέας
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Ώρα (Πορτ Μόρεσμπυ)
+    :generic: Ώρα (Πορτ Μόρεσμπι)
 Pacific/Rarotonga:
   :offset: -36000000
   :LONG_GMT:
@@ -10070,10 +10070,10 @@ Pacific/Rarotonga:
   :GENERIC_LOCATION:
     :generic: Ώρα (Νήσοι Κουκ)
   :LONG:
-    :standard: Χειμερινή ώρα Νησιών Κουκ
-    :daylight: Θερινή ώρα Νησιών Κουκ
+    :standard: Χειμερινή ώρα Νήσων Κουκ
+    :daylight: Θερινή ώρα Νήσων Κουκ
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Νησιών Κουκ
+    :generic: Χειμερινή ώρα Νήσων Κουκ
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-10
@@ -10124,10 +10124,10 @@ Pacific/Tahiti:
   :GENERIC_LOCATION:
     :generic: Ώρα (Ταϊτή)
   :LONG:
-    :standard: Ώρα Αϊτής
+    :standard: Ώρα Ταϊτής
     :daylight: GMT-10:00
   :LONG_GENERIC:
-    :generic: Ώρα Αϊτής
+    :generic: Ώρα Ταϊτής
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-10
@@ -10142,10 +10142,10 @@ Pacific/Tarawa:
   :GENERIC_LOCATION:
     :generic: Ώρα (Ταράουα)
   :LONG:
-    :standard: Ώρα Νησιών Γκίλμπερτ
+    :standard: Ώρα Νήσων Γκίλμπερτ
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιών Γκίλμπερτ
+    :generic: Ώρα Νήσων Γκίλμπερτ
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -10196,10 +10196,10 @@ Pacific/Wake:
   :GENERIC_LOCATION:
     :generic: Ώρα (Γουέικ)
   :LONG:
-    :standard: Ώρα Νησιού Γουέικ
+    :standard: Ώρα Νήσου Γουέικ
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Νησιού Γουέικ
+    :generic: Ώρα Νήσου Γουέικ
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -10212,17 +10212,17 @@ Pacific/Wallis:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: Ώρα (Ουάλις και Φουτούνα)
+    :generic: Ώρα (Γουάλις και Φουτούνα)
   :LONG:
-    :standard: Ώρα Ουόλις και Φουτούνα
+    :standard: Ώρα Ουάλις και Φουτούνα
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: Ώρα Ουόλις και Φουτούνα
+    :generic: Ώρα Ουάλις και Φουτούνα
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: Ώρα (Ουάλις και Φουτούνα)
+    :generic: Ώρα (Γουάλις και Φουτούνα)
 Pacific/Yap:
   :offset: 36000000
   :LONG_GMT:
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Ώρα (Σιγκαπούρη)
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Ώρα (Τουρκία)
   :LONG:
-    :standard: Χειμερινή ώρα Ανατολικής Ευρώπης
-    :daylight: Θερινή ώρα Ανατολικής Ευρώπης
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Ώρα Ανατολικής Ευρώπης
+    :generic: Ώρα (Τουρκία)
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Ώρα (Τουρκία)
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10394,10 +10394,10 @@ US/Aleutian:
   :GENERIC_LOCATION:
     :generic: Ώρα (Άντακ)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: "[Ώρα Χαβάης-Αλεούτιων νήσων (Άντακ)]"
+    :generic: Ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10484,10 +10484,10 @@ US/Hawaii:
   :GENERIC_LOCATION:
     :generic: Ώρα (Χονολουλού)
   :LONG:
-    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
-    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :standard: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
+    :daylight: Θερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :LONG_GENERIC:
-    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων
+    :generic: Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-10
@@ -10556,10 +10556,10 @@ US/Pacific:
   :GENERIC_LOCATION:
     :generic: Ώρα (Λος Άντζελες)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -10574,10 +10574,10 @@ US/Pacific-New:
   :GENERIC_LOCATION:
     :generic: Ώρα (Λος Άντζελες)
   :LONG:
-    :standard: Χειμερινή ώρα Βόρειας Αμερικής
-    :daylight: Θερινή ώρα Βόρειας Αμερικής
+    :standard: Χειμερινή ώρα Ειρηνικού
+    :daylight: Θερινή ώρα Ειρηνικού
   :LONG_GENERIC:
-    :generic: Ώρα Βόρειας Αμερικής
+    :generic: Ώρα Ειρηνικού
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Συντονισμένη Παγκόσμια Ώρα
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

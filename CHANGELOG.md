@@ -1,5 +1,22 @@
 # TwitterCldr Changelog
 
+### 5.0.0 (October 15, 2019)
+* Upgrade to Unicode v12.0.0, CLDR v35.1, and ICU 64.2.
+* Fixes several transliteration bugs causing incorrect transform rules to be applied.
+* BREAKING: `LocalizedNumber#to_short_decimal` and `LocalizedNumber#to_long_decimal` have been replaced with `LocalizedNumber#to_decimal#to_s(format: :short)` and `LocalizedNumber#to_decimal#to_s(format: :long)` respectively.
+* BREAKING: Telephone code support has been removed since the data are no longer published in the CLDR data set.
+* BREAKING: Dropped support for Ruby 1.9.
+
+### 4.4.5 (August 11, 2019)
+* Fix infinite recursion bug affecting certain Russian RBNF rule sets (and
+  possibly other locales).
+
+### 4.4.4 (April 1, 2019)
+* Explicitly set encoding in resource loader to fix encoding bug on Windows.
+
+### 4.4.3 (Feburary 2, 2018)
+* Fix warning caused by using the 'u' regex modifier, which is no longer supported.
+
 ### 4.4.2 (August 1, 2017)
 * Fix list formatter.
 
@@ -222,7 +239,7 @@
 
 ### 1.6.2
 
-* Collation tries now loaded from marshal dumps, collation running time improved by ~80%.
+* Collation tries now loaded from marshal dumps, collation running time improved by \~80%.
 
 ### 1.6.1
 

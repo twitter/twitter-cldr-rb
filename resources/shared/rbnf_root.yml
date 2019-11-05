@@ -769,7 +769,7 @@
               :rule: <<፼>%%ethiopic-p3>;
               :value: 20000000000000000
             - 
-              :rule: "=#,###0=;"
+              :rule: "=#,##0=;"
               :value: 1000000000000000000
           :type: ethiopic
         - 
@@ -1929,7 +1929,10 @@
               :rule: −>>;
               :value: "-x"
             - 
-              :rule: "=#,###0.#=;"
+              :rule: =0.0=;
+              :value: x.x
+            - 
+              :rule: =0=;
               :value: 0
           :type: spellout-numbering-year
         - 

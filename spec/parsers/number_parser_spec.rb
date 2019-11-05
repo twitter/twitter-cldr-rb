@@ -5,13 +5,11 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Parsers
-
-describe NumberParser do
+describe TwitterCldr::Parsers::NumberParser do
   let(:separators) { ["\\.", ","] }
 
   before(:each) do
-    @parser = NumberParser.new(:es)
+    @parser = described_class.new(:es)
   end
 
   describe "#group_separator" do
@@ -93,22 +91,22 @@ describe NumberParser do
 
   describe "#is_numeric?" do
     it "returns true if the text is numeric" do
-      expect(NumberParser.is_numeric?("4839", "")).to eq(true)
-      expect(NumberParser.is_numeric?("1", "")).to eq(true)
+      expect(described_class.is_numeric?("4839", "")).to eq(true)
+      expect(described_class.is_numeric?("1", "")).to eq(true)
     end
 
     it "returns false if the text is not purely numeric" do
-      expect(NumberParser.is_numeric?("abc", "")).to eq(false)
-      expect(NumberParser.is_numeric?("123abc", "")).to eq(false)
+      expect(described_class.is_numeric?("abc", "")).to eq(false)
+      expect(described_class.is_numeric?("123abc", "")).to eq(false)
     end
 
     it "returns false if the text is blank" do
-      expect(NumberParser.is_numeric?("", "")).to eq(false)
+      expect(described_class.is_numeric?("", "")).to eq(false)
     end
 
     it "accepts the given characters as valid numerics" do
-      expect(NumberParser.is_numeric?("a123a", "a")).to eq(true)
-      expect(NumberParser.is_numeric?("1.234,56")).to eq(true)  # default separator chars used here
+      expect(described_class.is_numeric?("a123a", "a")).to eq(true)
+      expect(described_class.is_numeric?("1.234,56")).to eq(true)  # default separator chars used here
     end
   end
 
@@ -146,7 +144,7 @@ describe NumberParser do
     it "correctly raises an error when asked to parse invalid numbers" do
       cases = ["12,0,0", "5,", "5."]
       cases.each do |text|
-        expect { @parser.parse(text) }.to raise_error(InvalidNumberError)
+        expect { @parser.parse(text) }.to raise_error(TwitterCldr::Parsers::InvalidNumberError)
       end
     end
 

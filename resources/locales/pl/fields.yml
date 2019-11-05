@@ -22,6 +22,9 @@
           :other: "{0} dnia temu"
     :day-narrow: 
       :display_name: dzień
+      :relative: 
+        -2: przedwczoraj
+        2: pojutrze
       :relative_time: 
         :future: 
           :few: "za {0} dni"
@@ -35,6 +38,9 @@
           :other: "{0} dnia temu"
     :day-short: 
       :display_name: dzień
+      :relative: 
+        -2: przedwczoraj
+        2: pojutrze
       :relative_time: 
         :future: 
           :few: "za {0} dni"
@@ -46,27 +52,76 @@
           :many: "{0} dni temu"
           :one: "{0} dzień temu"
           :other: "{0} dnia temu"
+    :dayOfYear: 
+      :display_name: "dzień roku"
+    :dayOfYear-narrow: 
+      :display_name: "dz. r."
+    :dayOfYear-short: 
+      :display_name: "dz. roku"
     :dayperiod: 
       :display_name: "rano / po południu / wieczorem"
+    :dayperiod-narrow: 
+      :display_name: "rano / po poł. / wiecz."
+    :dayperiod-short: 
+      :display_name: "rano / po południu / wieczorem"
     :era: 
+      :display_name: era
+    :era-narrow: 
+      :display_name: era
+    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
         -1: "w zeszły piątek"
         0: "w ten piątek"
         1: "w przyszły piątek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} piątki"
+          :many: "za {0} piątków"
+          :one: "za {0} piątek"
+          :other: "za {0} piątku"
+        :past: 
+          :few: "{0} piątki temu"
+          :many: "{0} piątków temu"
+          :one: "{0} piątek temu"
+          :other: "{0} piątku temu"
     :fri-narrow: 
       :relative: 
         -1: "w zeszły piątek"
         0: "w ten piątek"
         1: "w przyszły piątek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} piątki"
+          :many: "za {0} piątków"
+          :one: "za {0} piątek"
+          :other: "za {0} piątku"
+        :past: 
+          :few: "{0} piątki temu"
+          :many: "{0} piątków temu"
+          :one: "{0} piątek temu"
+          :other: "{0} piątku temu"
     :fri-short: 
       :relative: 
         -1: "w zeszły piątek"
         0: "w ten piątek"
         1: "w przyszły piątek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} piątki"
+          :many: "za {0} piątków"
+          :one: "za {0} piątek"
+          :other: "za {0} piątku"
+        :past: 
+          :few: "{0} piątki temu"
+          :many: "{0} piątków temu"
+          :one: "{0} piątek temu"
+          :other: "{0} piątku temu"
     :hour: 
       :display_name: godzina
+      :relative: 
+        0: "ta godzina"
       :relative_time: 
         :future: 
           :few: "za {0} godziny"
@@ -106,6 +161,8 @@
           :other: "{0} godz. temu"
     :minute: 
       :display_name: minuta
+      :relative: 
+        0: "ta minuta"
       :relative_time: 
         :future: 
           :few: "za {0} minuty"
@@ -148,16 +205,49 @@
         -1: "w zeszły poniedziałek"
         0: "w ten poniedziałek"
         1: "w przyszły poniedziałek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} poniedziałki"
+          :many: "za {0} poniedziałków"
+          :one: "za {0} poniedziałek"
+          :other: "za {0} poniedziałku"
+        :past: 
+          :few: "{0} poniedziałki temu"
+          :many: "{0} poniedziałków temu"
+          :one: "{0} poniedziałek temu"
+          :other: "{0} poniedziałku temu"
     :mon-narrow: 
       :relative: 
         -1: "w zeszły poniedziałek"
         0: "w ten poniedziałek"
         1: "w przyszły poniedziałek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} poniedziałki"
+          :many: "za {0} poniedziałków"
+          :one: "za {0} poniedziałek"
+          :other: "za {0} poniedziałku"
+        :past: 
+          :few: "{0} poniedziałki temu"
+          :many: "{0} poniedziałków temu"
+          :one: "{0} poniedziałek temu"
+          :other: "{0} poniedziałku temu"
     :mon-short: 
       :relative: 
         -1: "w zeszły poniedziałek"
         0: "w ten poniedziałek"
         1: "w przyszły poniedziałek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} poniedziałki"
+          :many: "za {0} poniedziałków"
+          :one: "za {0} poniedziałek"
+          :other: "za {0} poniedziałku"
+        :past: 
+          :few: "{0} poniedziałki temu"
+          :many: "{0} poniedziałków temu"
+          :one: "{0} poniedziałek temu"
+          :other: "{0} poniedziałku temu"
     :month: 
       :display_name: miesiąc
       :relative: 
@@ -177,19 +267,27 @@
           :other: "{0} miesiąca temu"
     :month-narrow: 
       :display_name: mc
+      :relative: 
+        -1: "w zeszłym miesiącu"
+        0: "w tym miesiącu"
+        1: "w przyszłym miesiącu"
       :relative_time: 
         :future: 
-          :few: "+{0} mies."
-          :many: "+{0} mies."
-          :one: "+{0} mies."
-          :other: "+{0} mies."
+          :few: "za {0} mies."
+          :many: "za {0} mies."
+          :one: "za {0} mies."
+          :other: "za {0} mies."
         :past: 
-          :few: "–{0} mies."
-          :many: "–{0} mies."
-          :one: "–{0} mies."
-          :other: "–{0} mies."
+          :few: "{0} mies. temu"
+          :many: "{0} mies. temu"
+          :one: "{0} mies. temu"
+          :other: "{0} mies. temu"
     :month-short: 
       :display_name: mies.
+      :relative: 
+        -1: "w zeszłym miesiącu"
+        0: "w tym miesiącu"
+        1: "w przyszłym miesiącu"
       :relative_time: 
         :future: 
           :few: "za {0} mies."
@@ -226,15 +324,15 @@
         1: "w przyszłym kwartale"
       :relative_time: 
         :future: 
-          :few: "+{0} kw."
-          :many: "+{0} kw."
-          :one: "+{0} kw."
-          :other: "+{0} kw."
+          :few: "za {0} kw."
+          :many: "za {0} kw."
+          :one: "za {0} kw."
+          :other: "za {0} kw."
         :past: 
-          :few: "–{0} kw."
-          :many: "–{0} kw."
-          :one: "–{0} kw."
-          :other: "–{0} kw."
+          :few: "{0} kw. temu"
+          :many: "{0} kw. temu"
+          :one: "{0} kw. temu"
+          :other: "{0} kw. temu"
     :quarter-short: 
       :display_name: kw.
       :relative: 
@@ -257,16 +355,49 @@
         -1: "w zeszłą sobotę"
         0: "w tę sobotę"
         1: "w przyszłą sobotę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} soboty"
+          :many: "za {0} sobót"
+          :one: "za {0} sobotę"
+          :other: "za {0} soboty"
+        :past: 
+          :few: "{0} soboty temu"
+          :many: "{0} sobót temu"
+          :one: "{0} sobotę temu"
+          :other: "{0} soboty temu"
     :sat-narrow: 
       :relative: 
         -1: "w zeszłą sobotę"
         0: "w tę sobotę"
         1: "w przyszłą sobotę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} soboty"
+          :many: "za {0} sobót"
+          :one: "za {0} sobotę"
+          :other: "za {0} soboty"
+        :past: 
+          :few: "{0} soboty temu"
+          :many: "{0} sobót temu"
+          :one: "{0} sobotę temu"
+          :other: "{0} soboty temu"
     :sat-short: 
       :relative: 
         -1: "w zeszłą sobotę"
         0: "w tę sobotę"
         1: "w przyszłą sobotę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} soboty"
+          :many: "za {0} sobót"
+          :one: "za {0} sobotę"
+          :other: "za {0} soboty"
+        :past: 
+          :few: "{0} soboty temu"
+          :many: "{0} sobót temu"
+          :one: "{0} sobotę temu"
+          :other: "{0} soboty temu"
     :second: 
       :display_name: sekunda
       :relative: 
@@ -313,61 +444,193 @@
         -1: "w zeszłą niedzielę"
         0: "w tę niedzielę"
         1: "w przyszłą niedzielę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} niedziele"
+          :many: "za {0} niedziel"
+          :one: "za {0} niedzielę"
+          :other: "za {0} niedzieli"
+        :past: 
+          :few: "{0} niedziele temu"
+          :many: "{0} niedziel temu"
+          :one: "{0} niedzielę temu"
+          :other: "{0} niedzieli temu"
     :sun-narrow: 
       :relative: 
         -1: "w zeszłą niedzielę"
         0: "w tę niedzielę"
         1: "w przyszłą niedzielę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} niedziele"
+          :many: "za {0} niedziel"
+          :one: "za {0} niedzielę"
+          :other: "za {0} niedzieli"
+        :past: 
+          :few: "{0} niedziele temu"
+          :many: "{0} niedziel temu"
+          :one: "{0} niedzielę temu"
+          :other: "{0} niedzieli temu"
     :sun-short: 
       :relative: 
         -1: "w zeszłą niedzielę"
         0: "w tę niedzielę"
         1: "w przyszłą niedzielę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} niedziele"
+          :many: "za {0} niedziel"
+          :one: "za {0} niedzielę"
+          :other: "za {0} niedzieli"
+        :past: 
+          :few: "{0} niedziele temu"
+          :many: "{0} niedziel temu"
+          :one: "{0} niedzielę temu"
+          :other: "{0} niedzieli temu"
     :thu: 
       :relative: 
         -1: "w zeszły czwartek"
         0: "w ten czwartek"
         1: "w przyszły czwartek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} czwartki"
+          :many: "za {0} czwartków"
+          :one: "za {0} czwartek"
+          :other: "za {0} czwartku"
+        :past: 
+          :few: "{0} czwartki temu"
+          :many: "{0} czwartków temu"
+          :one: "{0} czwartek temu"
+          :other: "{0} czwartku temu"
     :thu-narrow: 
       :relative: 
         -1: "w zeszły czwartek"
         0: "w ten czwartek"
         1: "w przyszły czwartek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} czwartki"
+          :many: "za {0} czwartków"
+          :one: "za {0} czwartek"
+          :other: "za {0} czwartku"
+        :past: 
+          :few: "{0} czwartki temu"
+          :many: "{0} czwartków temu"
+          :one: "{0} czwartek temu"
+          :other: "{0} czwartku temu"
     :thu-short: 
       :relative: 
         -1: "w zeszły czwartek"
         0: "w ten czwartek"
         1: "w przyszły czwartek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} czwartki"
+          :many: "za {0} czwartków"
+          :one: "za {0} czwartek"
+          :other: "za {0} czwartku"
+        :past: 
+          :few: "{0} czwartki temu"
+          :many: "{0} czwartków temu"
+          :one: "{0} czwartek temu"
+          :other: "{0} czwartku temu"
     :tue: 
       :relative: 
         -1: "w zeszły wtorek"
         0: "w ten wtorek"
         1: "w przyszły wtorek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} wtorki"
+          :many: "za {0} wtorków"
+          :one: "za {0} wtorek"
+          :other: "za {0} wtorku"
+        :past: 
+          :few: "{0} wtorki temu"
+          :many: "{0} wtorków temu"
+          :one: "{0} wtorek temu"
+          :other: "{0} wtorku temu"
     :tue-narrow: 
       :relative: 
         -1: "w zeszły wtorek"
         0: "w ten wtorek"
         1: "w przyszły wtorek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} wtorki"
+          :many: "za {0} wtorków"
+          :one: "za {0} wtorek"
+          :other: "za {0} wtorku"
+        :past: 
+          :few: "{0} wtorki temu"
+          :many: "{0} wtorków temu"
+          :one: "{0} wtorek temu"
+          :other: "{0} wtorku temu"
     :tue-short: 
       :relative: 
         -1: "w zeszły wtorek"
         0: "w ten wtorek"
         1: "w przyszły wtorek"
+      :relative_time: 
+        :future: 
+          :few: "za {0} wtorki"
+          :many: "za {0} wtorków"
+          :one: "za {0} wtorek"
+          :other: "za {0} wtorku"
+        :past: 
+          :few: "{0} wtorki temu"
+          :many: "{0} wtorków temu"
+          :one: "{0} wtorek temu"
+          :other: "{0} wtorku temu"
     :wed: 
       :relative: 
         -1: "w zeszłą środę"
         0: "w tę środę"
         1: "w przyszłą środę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} środy"
+          :many: "za {0} śród"
+          :one: "za {0} środę"
+          :other: "za {0} środy"
+        :past: 
+          :few: "{0} środy temu"
+          :many: "{0} śród temu"
+          :one: "{0} środę temu"
+          :other: "{0} środy temu"
     :wed-narrow: 
       :relative: 
         -1: "w zeszłą środę"
         0: "w tę środę"
         1: "w przyszłą środę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} środy"
+          :many: "za {0} śród"
+          :one: "za {0} środę"
+          :other: "za {0} środy"
+        :past: 
+          :few: "{0} środy temu"
+          :many: "{0} śród temu"
+          :one: "{0} środę temu"
+          :other: "{0} środy temu"
     :wed-short: 
       :relative: 
         -1: "w zeszłą środę"
         0: "w tę środę"
         1: "w przyszłą środę"
+      :relative_time: 
+        :future: 
+          :few: "za {0} środy"
+          :many: "za {0} śród"
+          :one: "za {0} środę"
+          :other: "za {0} środy"
+        :past: 
+          :few: "{0} środy temu"
+          :many: "{0} śród temu"
+          :one: "{0} środę temu"
+          :other: "{0} środy temu"
     :week: 
       :display_name: tydzień
       :relative: 
@@ -387,6 +650,10 @@
           :other: "{0} tygodnia temu"
     :week-narrow: 
       :display_name: tydz.
+      :relative: 
+        -1: "w zeszłym tygodniu"
+        0: "w tym tygodniu"
+        1: "w przyszłym tygodniu"
       :relative_time: 
         :future: 
           :few: "za {0} tyg."
@@ -400,6 +667,10 @@
           :other: "{0} tyg. temu"
     :week-short: 
       :display_name: tydz.
+      :relative: 
+        -1: "w zeszłym tygodniu"
+        0: "w tym tygodniu"
+        1: "w przyszłym tygodniu"
       :relative_time: 
         :future: 
           :few: "za {0} tyg."
@@ -411,8 +682,24 @@
           :many: "{0} tyg. temu"
           :one: "{0} tydz. temu"
           :other: "{0} tyg. temu"
+    :weekOfMonth: 
+      :display_name: "tydzień miesiąca"
+    :weekOfMonth-narrow: 
+      :display_name: "tydz. mies."
+    :weekOfMonth-short: 
+      :display_name: "tydz. mies."
     :weekday: 
       :display_name: "dzień tygodnia"
+    :weekday-narrow: 
+      :display_name: "dzień tyg."
+    :weekday-short: 
+      :display_name: "dzień tyg."
+    :weekdayOfMonth: 
+      :display_name: "dzień miesiąca"
+    :weekdayOfMonth-narrow: 
+      :display_name: "dzień mies."
+    :weekdayOfMonth-short: 
+      :display_name: "dzień mies."
     :year: 
       :display_name: rok
       :relative: 
@@ -432,6 +719,10 @@
           :other: "{0} roku temu"
     :year-narrow: 
       :display_name: r.
+      :relative: 
+        -1: "w zeszłym roku"
+        0: "w tym roku"
+        1: "w przyszłym roku"
       :relative_time: 
         :future: 
           :few: "za {0} lata"
@@ -445,6 +736,10 @@
           :other: "{0} roku temu"
     :year-short: 
       :display_name: r.
+      :relative: 
+        -1: "w zeszłym roku"
+        0: "w tym roku"
+        1: "w przyszłym roku"
       :relative_time: 
         :future: 
           :few: "za {0} lata"
@@ -458,3 +753,7 @@
           :other: "{0} roku temu"
     :zone: 
       :display_name: "strefa czasowa"
+    :zone-narrow: 
+      :display_name: "str. czas."
+    :zone-short: 
+      :display_name: "str. czasowa"

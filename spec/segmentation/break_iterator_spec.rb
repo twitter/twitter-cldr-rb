@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Segmentation
-
-describe BreakIterator do
+describe TwitterCldr::Segmentation::BreakIterator do
   describe "#each_sentence" do
-    let(:iterator) { BreakIterator.new(:en, use_uli_exceptions: true) }
+    let(:iterator) { described_class.new(:en, use_uli_exceptions: true) }
 
     it "should return an enumerator if called without a block" do
       expect(iterator.each_sentence("foo bar")).to be_a(Enumerator)
@@ -30,10 +28,10 @@ describe BreakIterator do
     end
 
     it "does not split periods in the midst of other letters, eg. in a URL" do
-      str = "Visit us. Go to http://translate.twitter.com."
+      str = "Visit us. Go to https://translate.twitter.com."
       expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
         "Visit us. ",
-        "Go to http://translate.twitter.com."
+        "Go to https://translate.twitter.com."
       ])
     end
 
@@ -57,7 +55,7 @@ describe BreakIterator do
     end
 
     context "without ULI exceptions" do
-      let(:iterator) { BreakIterator.new(:en, use_uli_exceptions: false) }
+      let(:iterator) { described_class.new(:en, use_uli_exceptions: false) }
 
       it "splits on certain abbreviations like Mr. and Mrs. (use ULI rules to avoid this behavior)" do
         str = "I really like Mrs. Patterson. She's nice."
@@ -71,7 +69,7 @@ describe BreakIterator do
   end
 
   describe "#each_word" do
-    let(:iterator) { BreakIterator.new(:en) }
+    let(:iterator) { described_class.new(:en) }
 
     it "should return an enumerator if called without a block" do
       expect(iterator.each_word("foo bar")).to be_a(Enumerator)

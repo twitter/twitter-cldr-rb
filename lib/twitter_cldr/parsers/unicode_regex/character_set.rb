@@ -40,6 +40,10 @@ module TwitterCldr
           end
         end
 
+        def type
+          :character_set
+        end
+
         private
 
         def codepoints

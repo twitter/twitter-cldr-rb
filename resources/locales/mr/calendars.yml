@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "B h"
+        :Bhm: "B h:mm"
+        :Bhms: "B h:mm:ss"
         :E: ccc
+        :EBhm: "E B h:mm"
+        :EBhms: "E B h:mm:ss"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -22,6 +27,7 @@
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "MMMM चा W रा आठवडा"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd-MM
@@ -45,6 +51,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "Y चा w रा आठवडा"
       :days: 
         :format: 
           :abbreviated: 
@@ -114,7 +121,7 @@
             :wed: बुधवार
       :eras: 
         :abbr: 
-          0: "ईसापूर्व युग"
+          0: "इ. स. पू. युग"
           1: "ख्रि. यु."
         :name: 
           0: "ईसापूर्व युग"
@@ -125,8 +132,15 @@
         :day: दिवस
         :day-narrow: दिवस
         :day-short: दिवस
+        :dayOfYear: "वर्षातील दिवस"
+        :dayOfYear-narrow: "वर्षातील दिवस"
+        :dayOfYear-short: "वर्षातील दिवस"
         :dayperiod: "[म.पू./म.उ.]"
+        :dayperiod-narrow: "[म.पू./म.उ.]"
+        :dayperiod-short: "[म.पू./म.उ.]"
         :era: युग
+        :era-narrow: युग
+        :era-short: युग
         :hour: तास
         :hour-narrow: तास
         :hour-short: तास
@@ -145,11 +159,21 @@
         :week: आठवडा
         :week-narrow: आठवडा
         :week-short: आठवडा
+        :weekOfMonth: "महिन्याचा आठवडा"
+        :weekOfMonth-narrow: "महिन्याचा आठ."
+        :weekOfMonth-short: "महिन्याचा आठ."
         :weekday: "आठवड्याचा दिवस"
+        :weekday-narrow: "आठवड्याचा दिवस"
+        :weekday-short: "आठवड्याचा दिवस"
+        :weekdayOfMonth: "महिन्यातील साप्ताहिक दिवस"
+        :weekdayOfMonth-narrow: "महिन्यातील साप्ता. दिवस"
+        :weekdayOfMonth-short: "महिन्यातील साप्ता. दिवस"
         :year: वर्ष
         :year-narrow: वर्ष
         :year-short: वर्ष
         :zone: "वेळ क्षेत्र"
+        :zone-narrow: क्षेत्र
+        :zone-short: क्षेत्र
       :formats: 
         :date: 
           :full: 
@@ -281,7 +305,7 @@
             :morning1: प
             :morning2: स
             :night1: रा
-            :noon: म
+            :noon: दु
             :pm: सं
           :wide: 
             :afternoon1: दुपार
@@ -314,7 +338,7 @@
             :midnight: म.रा.
             :morning1: प
             :morning2: स
-            :night1: रा
+            :night1: रात्र
             :noon: म
             :pm: म.उ.
           :wide: 

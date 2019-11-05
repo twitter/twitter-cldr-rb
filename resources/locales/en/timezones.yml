@@ -1,18 +1,11 @@
 --- 
 :en: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} Daylight Time"
-      :generic: "{0} Time"
-      :standard: "{0} Standard Time"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} Standard Time"
   :metazones: 
     :Acre: 
       :long: 
@@ -413,7 +406,7 @@
         :standard: "Krasnoyarsk Standard Time"
     :Kyrgystan: 
       :long: 
-        :standard: "Kyrgystan Time"
+        :standard: "Kyrgyzstan Time"
     :Lanka: 
       :long: 
         :standard: "Lanka Time"
@@ -427,9 +420,9 @@
         :standard: "Lord Howe Standard Time"
     :Macau: 
       :long: 
-        :daylight: "Macau Summer Time"
-        :generic: "Macau Time"
-        :standard: "Macau Standard Time"
+        :daylight: "Macao Summer Time"
+        :generic: "Macao Time"
+        :standard: "Macao Standard Time"
     :Macquarie: 
       :long: 
         :standard: "Macquarie Island Time"
@@ -470,9 +463,9 @@
         :standard: "Mexican Pacific Standard Time"
     :Mongolia: 
       :long: 
-        :daylight: "Ulan Bator Summer Time"
-        :generic: "Ulan Bator Time"
-        :standard: "Ulan Bator Standard Time"
+        :daylight: "Ulaanbaatar Summer Time"
+        :generic: "Ulaanbaatar Time"
+        :standard: "Ulaanbaatar Standard Time"
     :Moscow: 
       :long: 
         :daylight: "Moscow Summer Time"
@@ -576,7 +569,7 @@
         :standard: "Qyzylorda Standard Time"
     :Reunion: 
       :long: 
-        :standard: "Reunion Time"
+        :standard: "Réunion Time"
     :Rothera: 
       :long: 
         :standard: "Rothera Time"
@@ -747,17 +740,30 @@
       :city: Kolkata
     :Asia/Katmandu: 
       :city: Kathmandu
+    :Asia/Macau: 
+      :city: Macao
+    :Asia/Qostanay: 
+      :city: Kostanay
+    :Asia/Rangoon: 
+      :city: Yangon
     :Asia/Saigon: 
       :city: "Ho Chi Minh City"
     :Atlantic/Faeroe: 
       :city: Faroe
     :Atlantic/St_Helena: 
       :city: "St. Helena"
+    :Etc/UTC: 
+      :long: 
+        :standard: "Coordinated Universal Time"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Unknown City"
     :Europe/Dublin: 
       :long: 
         :daylight: "Irish Standard Time"
+    :Europe/Kiev: 
+      :city: Kiev
     :Europe/London: 
       :long: 
         :daylight: "British Summer Time"

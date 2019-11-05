@@ -1,18 +1,11 @@
 --- 
 :he: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}‎"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "‎+HH:mm;-HH:mm‎"
-    :region_format: 
-      :daylight: "שעון {0} (קיץ)"
-      :generic: "שעון {0}"
-      :standard: "שעון {0} (חורף)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}‎"
+    :gmt_zero_format: GMT
+    :hour_format: "‎+HH:mm;-HH:mm‎"
+    :region_format: "שעון {0} (חורף)"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -36,6 +29,11 @@
         :daylight: "שעון אלסקה (קיץ)"
         :generic: "שעון אלסקה"
         :standard: "שעון אלסקה (חורף)"
+    :Almaty: 
+      :long: 
+        :daylight: "שעון אלמטי (קיץ)"
+        :generic: "שעון אלמטי"
+        :standard: "שעון אלמטי (חורף)"
     :Amazon: 
       :long: 
         :daylight: "שעון אמזונס (קיץ)"
@@ -58,9 +56,9 @@
         :standard: "שעון אזור ההרים בארה״ב (חורף)"
     :America_Pacific: 
       :long: 
-        :daylight: "שעון קיץ, מערב ארה״ב (לוס אנג׳לס)"
+        :daylight: "שעון מערב ארה״ב (קיץ)"
         :generic: "שעון מערב ארה״ב"
-        :standard: "שעון רגיל האוקיינוס השקט"
+        :standard: "שעון מערב ארה״ב (חורף)"
     :Anadyr: 
       :long: 
         :daylight: "שעון קיץ אנדיר"
@@ -71,6 +69,16 @@
         :daylight: "שעון אפיה (קיץ)"
         :generic: "שעון אפיה"
         :standard: "שעון אפיה (חורף)"
+    :Aqtau: 
+      :long: 
+        :daylight: "שעון אקטאו (קיץ)"
+        :generic: "שעון אקטאו"
+        :standard: "שעון אקטאו (חורף)"
+    :Aqtobe: 
+      :long: 
+        :daylight: "שעון אוקטובה (קיץ)"
+        :generic: "שעון אקטובה"
+        :standard: "שעון אוקטובה (חורף)"
     :Arabian: 
       :long: 
         :daylight: "שעון חצי האי ערב (קיץ)"
@@ -125,12 +133,12 @@
       :long: 
         :daylight: "שעון האיים האזוריים (קיץ)"
         :generic: "שעון האיים האזוריים"
-        :standard: "האיים האזוריים (חורף)"
+        :standard: "שעון האיים האזוריים (חורף)"
     :Bangladesh: 
       :long: 
-        :daylight: "שעון קיץ בנגלדש"
+        :daylight: "שעון בנגלדש (קיץ)"
         :generic: "שעון בנגלדש"
-        :standard: "שעון רגיל בנגלדש"
+        :standard: "שעון בנגלדש (חורף)"
     :Bhutan: 
       :long: 
         :standard: "שעון בהוטן"
@@ -175,7 +183,7 @@
         :standard: "שעון צ׳ויבלסן (חורף)"
     :Christmas: 
       :long: 
-        :standard: "שעון אי חג המולד"
+        :standard: "שעון האי כריסטמס"
     :Cocos: 
       :long: 
         :standard: "שעון איי קוקוס"
@@ -244,7 +252,7 @@
         :standard: "שעון גיאנה הצרפתית"
     :French_Southern: 
       :long: 
-        :standard: "שעון דרום צרפת ואנטארקטיקה"
+        :standard: "שעון הארצות הדרומיות והאנטארקטיות של צרפת"
     :GMT: 
       :long: 
         :standard: "שעון גריניץ׳‏"
@@ -253,7 +261,7 @@
         :standard: "שעון איי גלאפגוס"
     :Gambier: 
       :long: 
-        :standard: "שעון גאמבייר"
+        :standard: "שעון איי גמבייה"
     :Georgia: 
       :long: 
         :daylight: "שעון גאורגיה (קיץ)"
@@ -272,17 +280,20 @@
         :daylight: "שעון מערב גרינלנד (קיץ)"
         :generic: "שעון מערב גרינלנד"
         :standard: "שעון מערב גרינלנד (חורף)"
+    :Guam: 
+      :long: 
+        :standard: "שעון גואם"
     :Gulf: 
       :long: 
         :standard: "שעון מדינות המפרץ"
     :Guyana: 
       :long: 
-        :standard: "שעון גויאנה"
+        :standard: "שעון גיאנה"
     :Hawaii_Aleutian: 
       :long: 
-        :daylight: "שעון קיץ האיים האלאוטיים הוואי"
+        :daylight: "שעון האיים האלאוטיים הוואי (קיץ)"
         :generic: "שעון האיים האלאוטיים הוואי"
-        :standard: "שעון רגיל האיים האלאוטיים הוואי"
+        :standard: "שעון האיים האלאוטיים הוואי (חורף)"
     :Hong_Kong: 
       :long: 
         :daylight: "שעון הונג קונג (קיץ)"
@@ -421,7 +432,7 @@
         :standard: "שעון מוסקבה (חורף)"
     :Myanmar: 
       :long: 
-        :standard: "שעון בורמה"
+        :standard: "שעון מיאנמר"
     :Nauru: 
       :long: 
         :standard: "שעון נאורו"
@@ -448,12 +459,15 @@
         :standard: "שעון ניואה"
     :Norfolk: 
       :long: 
-        :standard: "שעון איי נורפולק"
+        :standard: "שעון האי נורפוק"
     :Noronha: 
       :long: 
         :daylight: "שעון פרננדו די נורוניה (קיץ)"
         :generic: "שעון פרננדו די נורוניה"
-        :standard: "פרננדו די נורוניה (חורף)"
+        :standard: "שעון פרננדו די נורוניה (חורף)"
+    :North_Mariana: 
+      :long: 
+        :standard: "שעון איי מריאנה הצפוניים"
     :Novosibirsk: 
       :long: 
         :daylight: "שעון נובוסיבירסק (קיץ)"
@@ -504,6 +518,14 @@
     :Ponape: 
       :long: 
         :standard: "שעון פונאפי"
+    :Pyongyang: 
+      :long: 
+        :standard: "שעון פיונגיאנג"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "שעון קיזילורדה (קיץ)"
+        :generic: "שעון קיזילורדה"
+        :standard: "שעון קיזילורדה (חורף)"
     :Reunion: 
       :long: 
         :standard: "שעון ראוניון"
@@ -585,7 +607,7 @@
         :standard: "שעון אוזבקיסטן (חורף)"
     :Vanuatu: 
       :long: 
-        :daylight: "שעון קיץ ונואטו"
+        :daylight: "שעון ונואטו (קיץ)"
         :generic: "שעון ונואטו"
         :standard: "שעון ונואטו (חורף)"
     :Venezuela: 
@@ -700,7 +722,7 @@
     :Africa/Maseru: 
       :city: מסרו
     :Africa/Mbabane: 
-      :city: אמבאבאנה
+      :city: מבבנה
     :Africa/Mogadishu: 
       :city: מוגדישו
     :Africa/Monrovia: 
@@ -754,7 +776,7 @@
     :America/Asuncion: 
       :city: אסונסיון
     :America/Bahia: 
-      :city: בהיאה
+      :city: באהיה
     :America/Bahia_Banderas: 
       :city: "באהיה בנדרס"
     :America/Barbados: 
@@ -821,6 +843,8 @@
       :city: אירונפי
     :America/El_Salvador: 
       :city: "אל סלבדור"
+    :America/Fort_Nelson: 
+      :city: "פורט נלסון"
     :America/Fortaleza: 
       :city: פורטאלזה
     :America/Glace_Bay: 
@@ -888,7 +912,7 @@
     :America/Lower_Princes: 
       :city: "לואוור פרינסס קוורטר"
     :America/Maceio: 
-      :city: מאסיו
+      :city: מסייאו
     :America/Managua: 
       :city: מנגואה
     :America/Manaus: 
@@ -930,7 +954,7 @@
     :America/Nome: 
       :city: נום
     :America/Noronha: 
-      :city: נורונהה
+      :city: נורוניה
     :America/North_Dakota/Beulah: 
       :city: "ביולה, צפון דקוטה"
     :America/North_Dakota/Center: 
@@ -952,9 +976,11 @@
     :America/Port_of_Spain: 
       :city: "פורט אוף ספיין"
     :America/Porto_Velho: 
-      :city: "פורטו וולהו"
+      :city: "פורטו וליו"
     :America/Puerto_Rico: 
       :city: "פוארטו ריקו"
+    :America/Punta_Arenas: 
+      :city: "פונטה ארנס"
     :America/Rainy_River: 
       :city: "רייני ריבר"
     :America/Rankin_Inlet: 
@@ -968,7 +994,7 @@
     :America/Rio_Branco: 
       :city: "ריו ברנקו"
     :America/Santa_Isabel: 
-      :city: "סנטה איסבל"
+      :city: "סנטה איזבל"
     :America/Santarem: 
       :city: סנטרם
     :America/Santiago: 
@@ -998,7 +1024,7 @@
     :America/Tegucigalpa: 
       :city: טגוסיגלפה
     :America/Thule: 
-      :city: טולה
+      :city: תולה
     :America/Thunder_Bay: 
       :city: "ת׳אנדר ביי"
     :America/Tijuana: 
@@ -1020,27 +1046,27 @@
     :Antarctica/Casey: 
       :city: קאסיי
     :Antarctica/Davis: 
-      :city: דייויס
+      :city: דיוויס
     :Antarctica/DumontDUrville: 
-      :city: "דומון ד׳אורווי"
+      :city: "דומון ד׳אורוויל"
     :Antarctica/Macquarie: 
       :city: מקרי
     :Antarctica/Mawson: 
-      :city: מאוסון
+      :city: מוסון
     :Antarctica/McMurdo: 
-      :city: מקמרדו
+      :city: מק-מרדו
     :Antarctica/Palmer: 
       :city: פאלמר
     :Antarctica/Rothera: 
       :city: רות׳רה
     :Antarctica/Syowa: 
-      :city: שויה
+      :city: סיוואה
     :Antarctica/Troll: 
       :city: טרול
     :Antarctica/Vostok: 
       :city: ווסטוק
     :Arctic/Longyearbyen: 
-      :city: לונגיירביאן
+      :city: לונגיירבין
     :Asia/Aden: 
       :city: עדן
     :Asia/Almaty: 
@@ -1055,6 +1081,8 @@
       :city: אקטובה
     :Asia/Ashgabat: 
       :city: אשגבט
+    :Asia/Atyrau: 
+      :city: אטיראו
     :Asia/Baghdad: 
       :city: בגדד
     :Asia/Bahrain: 
@@ -1063,6 +1091,8 @@
       :city: באקו
     :Asia/Bangkok: 
       :city: בנגקוק
+    :Asia/Barnaul: 
+      :city: ברנאול
     :Asia/Beirut: 
       :city: ביירות
     :Asia/Bishkek: 
@@ -1074,7 +1104,7 @@
     :Asia/Chita: 
       :city: צ׳יטה
     :Asia/Choibalsan: 
-      :city: צ׳ואיבלסאן
+      :city: צ׳ויבלסן
     :Asia/Colombo: 
       :city: קולומבו
     :Asia/Damascus: 
@@ -1087,6 +1117,8 @@
       :city: דובאי
     :Asia/Dushanbe: 
       :city: דושנבה
+    :Asia/Famagusta: 
+      :city: פמגוסטה
     :Asia/Gaza: 
       :city: עזה
     :Asia/Hebron: 
@@ -1108,7 +1140,7 @@
     :Asia/Kamchatka: 
       :city: קמצ׳טקה
     :Asia/Karachi: 
-      :city: קרצ׳י
+      :city: קראצ׳י
     :Asia/Katmandu: 
       :city: קטמנדו
     :Asia/Khandyga: 
@@ -1149,6 +1181,8 @@
       :city: פיונגיאנג
     :Asia/Qatar: 
       :city: קטאר
+    :Asia/Qostanay: 
+      :city: קוסטנאי
     :Asia/Qyzylorda: 
       :city: קיזילורדה
     :Asia/Rangoon: 
@@ -1178,9 +1212,11 @@
     :Asia/Tehran: 
       :city: טהרן
     :Asia/Thimphu: 
-      :city: ת׳ימפו
+      :city: טהימפהו
     :Asia/Tokyo: 
       :city: טוקיו
+    :Asia/Tomsk: 
+      :city: טומסק
     :Asia/Ulaanbaatar: 
       :city: אולאאנבטאר
     :Asia/Urumqi: 
@@ -1212,7 +1248,7 @@
     :Atlantic/Reykjavik: 
       :city: רייקיאוויק
     :Atlantic/South_Georgia: 
-      :city: "דרום גיאורגיה"
+      :city: "דרום ג׳ורג׳יה"
     :Atlantic/St_Helena: 
       :city: "סנט הלנה"
     :Atlantic/Stanley: 
@@ -1234,19 +1270,26 @@
     :Australia/Lindeman: 
       :city: לינדמן
     :Australia/Lord_Howe: 
-      :city: "לורד האו"
+      :city: "אי הלורד האו"
     :Australia/Melbourne: 
       :city: מלבורן
     :Australia/Perth: 
       :city: פרת׳
     :Australia/Sydney: 
       :city: סידני
+    :Etc/UTC: 
+      :long: 
+        :standard: "זמן אוניברסלי מתואם"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "עיר לא ידועה"
     :Europe/Amsterdam: 
       :city: אמסטרדם
     :Europe/Andorra: 
       :city: אנדורה
+    :Europe/Astrakhan: 
+      :city: אסטרחן
     :Europe/Athens: 
       :city: אתונה
     :Europe/Belgrade: 
@@ -1262,7 +1305,7 @@
     :Europe/Budapest: 
       :city: בודפשט
     :Europe/Busingen: 
-      :city: בוזינגן
+      :city: ביזינגן
     :Europe/Chisinau: 
       :city: קישינב
     :Europe/Copenhagen: 
@@ -1270,7 +1313,7 @@
     :Europe/Dublin: 
       :city: דבלין
       :long: 
-        :daylight: "שעון קיץ אירי"
+        :daylight: "שעון קיץ אירלנד"
     :Europe/Gibraltar: 
       :city: גיברלטר
     :Europe/Guernsey: 
@@ -1282,11 +1325,13 @@
     :Europe/Istanbul: 
       :city: איסטנבול
     :Europe/Jersey: 
-      :city: ג׳רסי
+      :city: ג׳רזי
     :Europe/Kaliningrad: 
       :city: קלינינגרד
     :Europe/Kiev: 
       :city: קייב
+    :Europe/Kirov: 
+      :city: קירוב
     :Europe/Lisbon: 
       :city: ליסבון
     :Europe/Ljubljana: 
@@ -1294,7 +1339,7 @@
     :Europe/London: 
       :city: לונדון
       :long: 
-        :daylight: "שעון קיץ בריטי"
+        :daylight: "שעון קיץ בריטניה"
     :Europe/Luxembourg: 
       :city: לוקסמבורג
     :Europe/Madrid: 
@@ -1302,7 +1347,7 @@
     :Europe/Malta: 
       :city: מלטה
     :Europe/Mariehamn: 
-      :city: מריהמן
+      :city: מרייהאמן
     :Europe/Minsk: 
       :city: מינסק
     :Europe/Monaco: 
@@ -1314,7 +1359,7 @@
     :Europe/Paris: 
       :city: פריז
     :Europe/Podgorica: 
-      :city: פודגוריקה
+      :city: פודגוריצה
     :Europe/Prague: 
       :city: פראג
     :Europe/Riga: 
@@ -1327,6 +1372,8 @@
       :city: "סן מרינו"
     :Europe/Sarajevo: 
       :city: סרייבו
+    :Europe/Saratov: 
+      :city: סראטוב
     :Europe/Simferopol: 
       :city: סימפרופול
     :Europe/Skopje: 
@@ -1336,13 +1383,15 @@
     :Europe/Stockholm: 
       :city: שטוקהולם
     :Europe/Tallinn: 
-      :city: טלין
+      :city: טאלין
     :Europe/Tirane: 
-      :city: טיראנה
+      :city: טירנה
+    :Europe/Ulyanovsk: 
+      :city: אוליאנובסק
     :Europe/Uzhgorod: 
       :city: אוז׳הורוד
     :Europe/Vaduz: 
-      :city: ואדוז
+      :city: ואדוץ
     :Europe/Vatican: 
       :city: הוותיקן
     :Europe/Vienna: 
@@ -1356,7 +1405,7 @@
     :Europe/Zagreb: 
       :city: זאגרב
     :Europe/Zaporozhye: 
-      :city: זפוריז׳יה
+      :city: זפורוז׳יה
     :Europe/Zurich: 
       :city: ציריך
     :Indian/Antananarivo: 
@@ -1364,7 +1413,7 @@
     :Indian/Chagos: 
       :city: צ׳אגוס
     :Indian/Christmas: 
-      :city: "אי חג המולד"
+      :city: "האי כריסטמס"
     :Indian/Cocos: 
       :city: קוקוס
     :Indian/Comoro: 
@@ -1404,7 +1453,7 @@
     :Pacific/Galapagos: 
       :city: גלפאגוס
     :Pacific/Gambier: 
-      :city: "איי גמביר"
+      :city: "איי גמבייה"
     :Pacific/Guadalcanal: 
       :city: גוודלקנאל
     :Pacific/Guam: 
@@ -1428,7 +1477,7 @@
     :Pacific/Nauru: 
       :city: נאורו
     :Pacific/Niue: 
-      :city: ניווה
+      :city: ניואה
     :Pacific/Norfolk: 
       :city: נורפוק
     :Pacific/Noumea: 
@@ -1440,22 +1489,22 @@
     :Pacific/Pitcairn: 
       :city: פיטקרן
     :Pacific/Ponape: 
-      :city: פונפה
+      :city: פונפיי
     :Pacific/Port_Moresby: 
       :city: "פורט מורסבי"
     :Pacific/Rarotonga: 
       :city: רארוטונגה
     :Pacific/Saipan: 
-      :city: סייפן
+      :city: סאיפאן
     :Pacific/Tahiti: 
       :city: טהיטי
     :Pacific/Tarawa: 
       :city: טאראווה
     :Pacific/Tongatapu: 
-      :city: טונגטפו
+      :city: טונגטאפו
     :Pacific/Truk: 
-      :city: טרוק
+      :city: צ׳וק
     :Pacific/Wake: 
-      :city: וואק
+      :city: וייק
     :Pacific/Wallis: 
       :city: ווליס

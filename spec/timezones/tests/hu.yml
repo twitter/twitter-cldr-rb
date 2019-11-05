@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Algír)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egyiptom)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Marokkó idő
   :LONG:
-    :standard: nyugat-európai téli idő
-    :daylight: nyugat-európai nyári idő
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: nyugat-európai időzóna
+    :generic: Marokkó idő
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Marokkó idő
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Nyugat-Szahara idő
   :LONG:
-    :standard: nyugat-európai téli idő
-    :daylight: nyugat-európai nyári idő
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: nyugat-európai időzóna
+    :generic: Nyugat-Szahara idő
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Nyugat-Szahara idő
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Uganda idő
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Szudán idő
   :LONG:
-    :standard: kelet-afrikai téli idő
-    :daylight: GMT+03:00
+    :standard: közép-afrikai téli idő
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: kelet-afrikai téli idő
+    :generic: közép-afrikai téli idő
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Szudán idő
 Africa/Kigali:
@@ -888,7 +888,7 @@ Africa/Sao_Tome:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Sao Tomé és Príncipe idő
+    :generic: São Tomé és Príncipe idő
   :LONG:
     :standard: greenwichi középidő, téli idő
     :daylight: GMT
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Tunézia)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Namíbia idő
   :LONG:
-    :standard: nyugat-afrikai téli idő
-    :daylight: nyugat-afrikai nyári idő
+    :standard: közép-afrikai téli idő
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: nyugat-afrikai időzóna (Windhoek)
+    :generic: közép-afrikai téli idő
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Namíbia idő
@@ -983,7 +983,7 @@ America/Adak:
     :standard: hawaii-aleuti téli idő
     :daylight: hawaii-aleuti nyári idő
   :LONG_GENERIC:
-    :generic: hawaii-aleut időzóna (Adak)
+    :generic: hawaii-aleuti időzóna
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1071,7 +1071,7 @@ America/Argentina/Buenos_Aires:
     :generic: Buenos Aires idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1089,7 +1089,7 @@ America/Argentina/Catamarca:
     :generic: Catamarca idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1107,7 +1107,7 @@ America/Argentina/ComodRivadavia:
     :generic: Catamarca idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1125,7 +1125,7 @@ America/Argentina/Cordoba:
     :generic: Córdoba idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1143,7 +1143,7 @@ America/Argentina/Jujuy:
     :generic: Jujuy idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1161,7 +1161,7 @@ America/Argentina/La_Rioja:
     :generic: La Rioja idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1179,7 +1179,7 @@ America/Argentina/Mendoza:
     :generic: Mendoza idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1197,7 +1197,7 @@ America/Argentina/Rio_Gallegos:
     :generic: Río Gallegos idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1215,7 +1215,7 @@ America/Argentina/Salta:
     :generic: Salta idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1233,7 +1233,7 @@ America/Argentina/San_Juan:
     :generic: San Juan idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1269,7 +1269,7 @@ America/Argentina/Tucuman:
     :generic: Tucumán idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1287,7 +1287,7 @@ America/Argentina/Ushuaia:
     :generic: Ushuaia idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: hawaii-aleuti téli idő
     :daylight: hawaii-aleuti nyári idő
   :LONG_GENERIC:
-    :generic: hawaii-aleut időzóna (Adak)
+    :generic: hawaii-aleuti időzóna
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1539,7 +1539,7 @@ America/Buenos_Aires:
     :generic: Buenos Aires idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: amazóniai téli idő
     :daylight: amazóniai nyári idő
   :LONG_GENERIC:
-    :generic: amazóniai idő
+    :generic: amazóniai idő (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Cancún idő
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Venezuela idő
   :LONG:
     :standard: venezuelai idő
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: venezuelai idő
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Venezuela idő
 America/Catamarca:
@@ -1629,7 +1629,7 @@ America/Catamarca:
     :generic: Catamarca idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1646,10 +1646,10 @@ America/Cayenne:
   :GENERIC_LOCATION:
     :generic: Francia Guyana idő
   :LONG:
-    :standard: francia-guianai idő
+    :standard: francia-guyanai idő
     :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: francia-guianai idő
+    :generic: francia-guyanai idő
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1737,7 +1737,7 @@ America/Cordoba:
     :generic: Córdoba idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: amazóniai téli idő
     :daylight: amazóniai nyári idő
   :LONG_GENERIC:
-    :generic: amazóniai idő
+    :generic: amazóniai idő (Cuiabá)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Goose Bay idő
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Turks- és Caicos-szigetek idő
   :LONG:
-    :standard: atlanti-óceáni zónaidő
-    :daylight: atlanti-óceáni nyári idő
+    :standard: keleti államokbeli zónaidő
+    :daylight: keleti államokbeli nyári idő
   :LONG_GENERIC:
-    :generic: atlanti-óceáni zónaidő
+    :generic: keleti államokbeli idő
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Turks- és Caicos-szigetek idő
@@ -2493,7 +2493,7 @@ America/Jujuy:
     :generic: Jujuy idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -2817,7 +2817,7 @@ America/Mendoza:
     :generic: Mendoza idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -2904,17 +2904,17 @@ America/Miquelon:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Saint Pierre és Miquelon idő
+    :generic: Saint-Pierre és Miquelon idő
   :LONG:
-    :standard: Saint Pierre és Miquelon-i zónaidő
-    :daylight: Saint Pierre és Miquelon-i nyári idő
+    :standard: Saint-Pierre és Miquelon-i zónaidő
+    :daylight: Saint-Pierre és Miquelon-i nyári idő
   :LONG_GENERIC:
-    :generic: Saint Pierre és Miquelon-i idő
+    :generic: Saint-Pierre és Miquelon-i idő
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Saint Pierre és Miquelon idő
+    :generic: Saint-Pierre és Miquelon idő
 America/Moncton:
   :offset: -14400000
   :LONG_GMT:
@@ -3120,7 +3120,7 @@ America/North_Dakota/Center:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Középső, Észak-Dakota idő
+    :generic: Center, Észak-Dakota idő
   :LONG:
     :standard: középső államokbeli zónaidő
     :daylight: középső államokbeli nyári idő
@@ -3130,7 +3130,7 @@ America/North_Dakota/Center:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Középső, Észak-Dakota idő
+    :generic: Center, Észak-Dakota idő
 America/North_Dakota/New_Salem:
   :offset: -21600000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: keleti államokbeli zónaidő
     :daylight: keleti államokbeli nyári idő
   :LONG_GENERIC:
-    :generic: keleti államokbeli zónaidő
+    :generic: keleti államokbeli idő
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Haiti idő
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Puerto Rico idő
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Punta Arenas idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas idő
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3465,7 +3465,7 @@ America/Rosario:
     :generic: Córdoba idő
   :LONG:
     :standard: argentínai téli idő
-    :daylight: Argentínai nyári idő
+    :daylight: argentínai nyári idő
   :LONG_GENERIC:
     :generic: argentínai téli idő
   :SHORT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Santarem idő
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chile idő
   :LONG:
     :standard: chilei téli idő
     :daylight: chilei nyári idő
   :LONG_GENERIC:
-    :generic: chilei téli idő
+    :generic: chilei időzóna
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Chile idő
@@ -3678,7 +3678,7 @@ America/St_Lucia:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Santa Lucia idő
+    :generic: Saint Lucia idő
   :LONG:
     :standard: atlanti-óceáni zónaidő
     :daylight: atlanti-óceáni nyári idő
@@ -3688,7 +3688,7 @@ America/St_Lucia:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Santa Lucia idő
+    :generic: Saint Lucia idő
 America/St_Thomas:
   :offset: -14400000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Palmer idő
   :LONG:
-    :standard: chilei téli idő
-    :daylight: chilei nyári idő
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: chilei téli idő
+    :generic: Palmer idő
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4182,7 +4182,7 @@ Arctic/Longyearbyen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Spitzbergák és Jan Mayen-szigetek idő
+    :generic: Svalbard és Jan Mayen idő
   :LONG:
     :standard: közép-európai téli idő
     :daylight: közép-európai nyári idő
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Türkmenisztán idő
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Atyrau idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: nyugat-kazahsztáni idő
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: nyugat-kazahsztáni idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Atyrau idő
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: azerbajdzsáni téli idő
     :daylight: azerbajdzsáni nyári idő
   :LONG_GENERIC:
-    :generic: Azerbajdzsáni idő
+    :generic: azerbajdzsáni téli idő
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Azerbajdzsán idő
 Asia/Bangkok:
@@ -4527,7 +4527,7 @@ Asia/Chita:
     :generic: Csita idő
   :LONG:
     :standard: jakutszki téli idő
-    :daylight: Jakutszki nyári idő
+    :daylight: jakutszki nyári idő
   :LONG_GENERIC:
     :generic: jakutszki téli idő
   :SHORT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: csojbalszani téli idő
     :daylight: csojbalszani nyári idő
   :LONG_GENERIC:
-    :generic: csojbalszani idő
+    :generic: csojbalszani téli idő
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Csojbalszan idő
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Tádzsikisztán idő
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Famagusta idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Famagusta idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Famagusta idő
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4794,7 +4794,7 @@ Asia/Ho_Chi_Minh:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Vietnam idő
+    :generic: Vietnám idő
   :LONG:
     :standard: indokínai idő
     :daylight: GMT+07:00
@@ -4804,7 +4804,7 @@ Asia/Ho_Chi_Minh:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: Vietnam idő
+    :generic: Vietnám idő
 Asia/Hong_Kong:
   :offset: 28800000
   :LONG_GMT:
@@ -4812,7 +4812,7 @@ Asia/Hong_Kong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hongkong SAR Kína idő
+    :generic: Hongkong KKT idő
   :LONG:
     :standard: hongkongi téli idő
     :daylight: hongkongi nyári idő
@@ -4822,7 +4822,7 @@ Asia/Hong_Kong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hongkong SAR Kína idő
+    :generic: Hongkong KKT idő
 Asia/Hovd:
   :offset: 25200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: hovdi téli idő
     :daylight: hovdi nyári idő
   :LONG_GENERIC:
-    :generic: hovdi idő
+    :generic: hovdi téli idő
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Hovd idő
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Irkutszk idő
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Törökország idő
   :LONG:
-    :standard: kelet-európai téli idő
-    :daylight: kelet-európai nyári idő
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: kelet-európai időzóna
+    :generic: Törökország idő
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Törökország idő
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5049,7 +5049,7 @@ Asia/Khandyga:
     :generic: Handiga idő
   :LONG:
     :standard: jakutszki téli idő
-    :daylight: Jakutszki nyári idő
+    :daylight: jakutszki nyári idő
   :LONG_GENERIC:
     :generic: jakutszki téli idő
   :SHORT:
@@ -5154,7 +5154,7 @@ Asia/Macao:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Makaó SAR Kína idő
+    :generic: Makaó KKT idő
   :LONG:
     :standard: kínai téli idő
     :daylight: kínai nyári idő
@@ -5164,7 +5164,7 @@ Asia/Macao:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Makaó SAR Kína idő
+    :generic: Makaó KKT idő
 Asia/Macau:
   :offset: 28800000
   :LONG_GMT:
@@ -5172,7 +5172,7 @@ Asia/Macau:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Makaó SAR Kína idő
+    :generic: Makaó KKT idő
   :LONG:
     :standard: kínai téli idő
     :daylight: kínai nyári idő
@@ -5182,13 +5182,13 @@ Asia/Macau:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Makaó SAR Kína idő
+    :generic: Makaó KKT idő
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Magadán idő
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: magadani téli idő
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Magadán idő
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ciprus idő
+    :generic: Nicosia idő
   :LONG:
     :standard: kelet-európai téli idő
     :daylight: kelet-európai nyári idő
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Novokuznyeck idő
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Novoszibirszk idő
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: novoszibirszki téli idő
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Novoszibirszk idő
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Pontianak idő
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Észak-Korea idő
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: koreai téli idő
+    :daylight: koreai nyári idő
   :LONG_GENERIC:
-    :generic: Észak-Korea idő
+    :generic: koreai téli idő
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Észak-Korea idő
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Katar idő
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Kizilorda idő
+    :generic: Kosztanaj idő
   :LONG:
     :standard: kelet-kazahsztáni idő
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Kosztanaj idő
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Kizilorda idő
+  :LONG:
+    :standard: nyugat-kazahsztáni idő
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: nyugat-kazahsztáni idő
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Kizilorda idő
 Asia/Rangoon:
@@ -5478,7 +5496,7 @@ Asia/Saigon:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Vietnam idő
+    :generic: Vietnám idő
   :LONG:
     :standard: indokínai idő
     :daylight: GMT+07:00
@@ -5488,7 +5506,7 @@ Asia/Saigon:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: Vietnam idő
+    :generic: Vietnám idő
 Asia/Sakhalin:
   :offset: 39600000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Japán idő
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Tomszk idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Tomszk idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Tomszk idő
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: ulánbátori téli idő
     :daylight: ulánbátori nyári idő
   :LONG_GENERIC:
-    :generic: ulánbátori idő
+    :generic: ulánbátori téli idő
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulánbátor idő
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: ulánbátori téli idő
     :daylight: ulánbátori nyári idő
   :LONG_GENERIC:
-    :generic: ulánbátori idő
+    :generic: ulánbátori téli idő
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulánbátor idő
 Asia/Urumqi:
@@ -5895,7 +5913,7 @@ Asia/Yakutsk:
     :generic: Jakutszk idő
   :LONG:
     :standard: jakutszki téli idő
-    :daylight: Jakutszki nyári idő
+    :daylight: jakutszki nyári idő
   :LONG_GENERIC:
     :generic: jakutszki téli idő
   :SHORT:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Jakutszk idő
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Mianmar (Burma) idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: mianmari idő
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: mianmari idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Mianmar (Burma) idő
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -5931,7 +5949,7 @@ Asia/Yekaterinburg:
     :generic: Jekatyerinburg idő
   :LONG:
     :standard: jekatyerinburgi téli idő
-    :daylight: Jekatyerinburgi nyári idő
+    :daylight: jekatyerinburgi nyári idő
   :LONG_GENERIC:
     :generic: jekatyerinburgi téli idő
   :SHORT:
@@ -6036,7 +6054,7 @@ Atlantic/Faeroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Feröer-szigetek idő
+    :generic: Feröer szigetek idő
   :LONG:
     :standard: nyugat-európai téli idő
     :daylight: nyugat-európai nyári idő
@@ -6054,7 +6072,7 @@ Atlantic/Faroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Feröer-szigetek idő
+    :generic: Feröer szigetek idő
   :LONG:
     :standard: nyugat-európai téli idő
     :daylight: nyugat-európai nyári idő
@@ -6072,7 +6090,7 @@ Atlantic/Jan_Mayen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Spitzbergák és Jan Mayen-szigetek idő
+    :generic: Svalbard és Jan Mayen idő
   :LONG:
     :standard: közép-európai téli idő
     :daylight: közép-európai nyári idő
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Winnipeg idő
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Regina idő
-  :LONG:
-    :standard: középső államokbeli zónaidő
-    :daylight: középső államokbeli nyári idő
-  :LONG_GENERIC:
-    :generic: középső államokbeli zónaidő
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Regina idő
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Whitehorse idő
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chile idő
   :LONG:
     :standard: chilei téli idő
     :daylight: chilei nyári idő
   :LONG_GENERIC:
-    :generic: chilei téli idő
+    :generic: chilei időzóna
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Chile idő
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Húsvét-szigetek idő
   :LONG:
     :standard: húsvét-szigeti téli idő
     :daylight: húsvét-szigeti nyári idő
   :LONG_GENERIC:
-    :generic: húsvét-szigeti téli idő
+    :generic: húsvét-szigeti időzóna
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Húsvét-szigetek idő
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egyiptom)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan idő
+    :generic: Asztrahán idő
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Astrakhan idő
+    :generic: Asztrahán idő
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Astrakhan idő
+    :generic: Asztrahán idő
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Man-sziget idő
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Törökország idő
   :LONG:
-    :standard: kelet-európai téli idő
-    :daylight: kelet-európai nyári idő
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: kelet-európai időzóna
+    :generic: Törökország idő
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Törökország idő
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Kalinyingrád)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Kirov idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Kirov idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Kirov idő
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8196,17 +8196,17 @@ Europe/Minsk:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Fehéroroszország idő
+    :generic: Belarusz idő
   :LONG:
-    :standard: minszki idő
-    :daylight: GMT+03:00
+    :standard: moszkvai téli idő
+    :daylight: moszkvai nyári idő
   :LONG_GENERIC:
-    :generic: minszki idő
+    :generic: moszkvai téli idő
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Fehéroroszország idő
+    :generic: Belarusz idő
 Europe/Monaco:
   :offset: 3600000
   :LONG_GMT:
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Ciprus idő
+    :generic: Nicosia idő
   :LONG:
     :standard: kelet-európai téli idő
     :daylight: kelet-európai nyári idő
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Szaratov idő
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Szaratov idő
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Szaratov idő
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Macedónia idő
+    :generic: Észak-Macedónia idő
   :LONG:
     :standard: közép-európai téli idő
     :daylight: közép-európai nyári idő
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk idő
+    :generic: Uljanovszk idő
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsk idő
+    :generic: Uljanovszk idő
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ulyanovsk idő
+    :generic: Uljanovszk idő
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Volgográd idő
   :LONG:
-    :standard: moszkvai téli idő
-    :daylight: moszkvai nyári idő
+    :standard: volgográdi téli idő
+    :daylight: volgográdi nyári idő
   :LONG_GENERIC:
-    :generic: moszkvai téli idő
+    :generic: volgográdi téli idő
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Volgográd idő
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichi középidő, téli idő
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichi középidő, téli idő
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8934,7 +8934,7 @@ Hongkong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hongkong SAR Kína idő
+    :generic: Hongkong KKT idő
   :LONG:
     :standard: hongkongi téli idő
     :daylight: hongkongi nyári idő
@@ -8944,7 +8944,7 @@ Hongkong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hongkong SAR Kína idő
+    :generic: Hongkong KKT idő
 Iceland:
   :offset: 0
   :LONG_GMT:
@@ -9024,7 +9024,7 @@ Indian/Cocos:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: Kókusz-szigetek idő
+    :generic: Kókusz (Keeling)-szigetek idő
   :LONG:
     :standard: kókusz-szigeteki téli idő
     :daylight: GMT+06:30
@@ -9034,7 +9034,7 @@ Indian/Cocos:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: Kókusz-szigetek idő
+    :generic: Kókusz (Keeling)-szigetek idő
 Indian/Comoro:
   :offset: 10800000
   :LONG_GMT:
@@ -9150,7 +9150,7 @@ Indian/Reunion:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Reunion idő
+    :generic: Réunion idő
   :LONG:
     :standard: réunioni idő
     :daylight: GMT+04:00
@@ -9160,7 +9160,7 @@ Indian/Reunion:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Reunion idő
+    :generic: Réunion idő
 Iran:
   :offset: 12600000
   :LONG_GMT:
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9546,7 +9546,7 @@ Pacific/Chuuk:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Chuuk idő
+    :generic: Truk idő
   :LONG:
     :standard: truki idő
     :daylight: GMT+10:00
@@ -9556,22 +9556,22 @@ Pacific/Chuuk:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Chuuk idő
+    :generic: Truk idő
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Húsvét-szigetek idő
   :LONG:
     :standard: húsvét-szigeti téli idő
     :daylight: húsvét-szigeti nyári idő
   :LONG_GENERIC:
-    :generic: húsvét-szigeti téli idő
+    :generic: húsvét-szigeti időzóna
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Húsvét-szigetek idő
@@ -10176,7 +10176,7 @@ Pacific/Truk:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Chuuk idő
+    :generic: Truk idő
   :LONG:
     :standard: truki idő
     :daylight: GMT+10:00
@@ -10186,7 +10186,7 @@ Pacific/Truk:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Chuuk idő
+    :generic: Truk idő
 Pacific/Wake:
   :offset: 43200000
   :LONG_GMT:
@@ -10212,7 +10212,7 @@ Pacific/Wallis:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: Wallis- és Futuna-szigetek idő
+    :generic: Wallis és Futuna idő
   :LONG:
     :standard: Wallis és Futuna-i idő
     :daylight: GMT+12:00
@@ -10222,7 +10222,7 @@ Pacific/Wallis:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: Wallis- és Futuna-szigetek idő
+    :generic: Wallis és Futuna idő
 Pacific/Yap:
   :offset: 36000000
   :LONG_GMT:
@@ -10230,7 +10230,7 @@ Pacific/Yap:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Chuuk idő
+    :generic: Truk idő
   :LONG:
     :standard: truki idő
     :daylight: GMT+10:00
@@ -10240,7 +10240,7 @@ Pacific/Yap:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Chuuk idő
+    :generic: Truk idő
 Poland:
   :offset: 3600000
   :LONG_GMT:
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Szingapúr idő
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Törökország idő
   :LONG:
-    :standard: kelet-európai téli idő
-    :daylight: kelet-európai nyári idő
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: kelet-európai időzóna
+    :generic: Törökország idő
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Törökország idő
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: hawaii-aleuti téli idő
     :daylight: hawaii-aleuti nyári idő
   :LONG_GENERIC:
-    :generic: hawaii-aleut időzóna (Adak)
+    :generic: hawaii-aleuti időzóna
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: egyezményes koordinált világidő
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

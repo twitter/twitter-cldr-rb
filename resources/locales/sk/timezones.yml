@@ -1,19 +1,17 @@
 --- 
 :sk: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "časové pásmo {0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} (+0)"
   :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "acrejský letný čas"
+        :generic: "acrejský čas"
+        :standard: "acrejský štandardný čas"
     :Afghanistan: 
       :long: 
         :standard: "afganský čas"
@@ -36,6 +34,11 @@
         :daylight: "aljašský letný čas"
         :generic: "aljašský čas"
         :standard: "aljašský štandardný čas"
+    :Almaty: 
+      :long: 
+        :daylight: "almaatský letný čas"
+        :generic: "almaatský čas"
+        :standard: "almaatský štandardný čas"
     :Amazon: 
       :long: 
         :daylight: "amazonský letný čas"
@@ -71,6 +74,16 @@
         :daylight: "apijský letný čas"
         :generic: "apijský čas"
         :standard: "apijský štandardný čas"
+    :Aqtau: 
+      :long: 
+        :daylight: "aktauský letný čas"
+        :generic: "aktauský čas"
+        :standard: "aktauský štandardný čas"
+    :Aqtobe: 
+      :long: 
+        :daylight: "aktobský letný čas"
+        :generic: "aktobský čas"
+        :standard: "aktobský štandardný čas"
     :Arabian: 
       :long: 
         :daylight: "arabský letný čas"
@@ -150,9 +163,12 @@
         :daylight: "kapverdský letný čas"
         :generic: "kapverdský čas"
         :standard: "kapverdský štandardný čas"
+    :Casey: 
+      :long: 
+        :standard: "čas Caseyho stanice"
     :Chamorro: 
       :long: 
-        :standard: "chamorrský štandardný čas"
+        :standard: "chamorrský čas"
     :Chatham: 
       :long: 
         :daylight: "chathamský letný čas"
@@ -276,6 +292,9 @@
         :daylight: "západogrónsky letný čas"
         :generic: "západogrónsky čas"
         :standard: "západogrónsky štandardný čas"
+    :Guam: 
+      :long: 
+        :standard: "guamský čas"
     :Gulf: 
       :long: 
         :standard: "štandardný čas Perzského zálivu"
@@ -362,6 +381,9 @@
     :Kyrgystan: 
       :long: 
         :standard: "kirgizský čas"
+    :Lanka: 
+      :long: 
+        :standard: "srílanský čas"
     :Line_Islands: 
       :long: 
         :standard: "čas Rovníkových ostrovov"
@@ -370,6 +392,11 @@
         :daylight: "letný čas ostrova lorda Howa"
         :generic: "čas ostrova lorda Howa"
         :standard: "štandardný čas ostrova lorda Howa"
+    :Macau: 
+      :long: 
+        :daylight: "macajský letný čas"
+        :generic: "macajský čas"
+        :standard: "macajský štandardný čas"
     :Macquarie: 
       :long: 
         :standard: "čas ostrova Macquarie"
@@ -453,6 +480,9 @@
         :daylight: "letný čas súostrovia Fernando de Noronha"
         :generic: "čas súostrovia Fernando de Noronha"
         :standard: "štandardný čas súostrovia Fernando de Noronha"
+    :North_Mariana: 
+      :long: 
+        :standard: "severomariánsky čas"
     :Novosibirsk: 
       :long: 
         :daylight: "novosibirský letný čas"
@@ -503,6 +533,14 @@
     :Ponape: 
       :long: 
         :standard: "ponapský čas"
+    :Pyongyang: 
+      :long: 
+        :standard: "pchjongjanský čas"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "kyzylordský letný čas"
+        :generic: "kyzylordský čas"
+        :standard: "kyzylordský štandardný čas"
     :Reunion: 
       :long: 
         :standard: "réunionský čas"
@@ -820,6 +858,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: Salvádor
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -954,6 +994,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: Portoriko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1021,7 +1063,7 @@
     :Antarctica/Davis: 
       :city: Davis
     :Antarctica/DumontDUrville: 
-      :city: "Dumont D’Urville"
+      :city: "Dumont d’Urville"
     :Antarctica/Macquarie: 
       :city: Macquarie
     :Antarctica/Mawson: 
@@ -1054,6 +1096,8 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Ašchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1062,6 +1106,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Bejrút
     :Asia/Bishkek: 
@@ -1086,6 +1132,8 @@
       :city: Dubaj
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1148,6 +1196,8 @@
       :city: Pchjongjang
     :Asia/Qatar: 
       :city: Katar
+    :Asia/Qostanay: 
+      :city: Kostanaj
     :Asia/Qyzylorda: 
       :city: Kyzylorda
     :Asia/Rangoon: 
@@ -1180,6 +1230,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulanbátar
     :Asia/Urumqi: 
@@ -1240,12 +1292,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "koordinovaný svetový čas"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "neznáme mesto"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrachán
     :Europe/Athens: 
       :city: Atény
     :Europe/Belgrade: 
@@ -1286,6 +1345,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kyjev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisabon
     :Europe/Ljubljana: 
@@ -1326,6 +1387,8 @@
       :city: "San Maríno"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1338,6 +1401,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uľjanovsk
     :Europe/Uzhgorod: 
       :city: Užhorod
     :Europe/Vaduz: 
@@ -1410,6 +1475,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HST
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

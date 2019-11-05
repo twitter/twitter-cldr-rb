@@ -1,18 +1,11 @@
 --- 
 :mr: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "[GMT]{0}"
-    :gmt_zero_format: 
-      :generic: "[GMT]"
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} सूर्यप्रकाश वेळ"
-      :generic: "{0} वेळ"
-      :standard: "{0} प्रमाण वेळ"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "[GMT]{0}"
+    :gmt_zero_format: "[GMT]"
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} प्रमाण वेळ"
   :metazones: 
     :Acre: 
       :long: 
@@ -243,7 +236,7 @@
         :standard: "पूर्व युरोपियन प्रमाण वेळ"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "अग्र पुर्व यूरोपीयन वेळ"
+        :standard: "अग्र-पौर्वात्य यूरोपीयन वेळ"
     :Europe_Western: 
       :long: 
         :daylight: "पश्चिम युरोपियन उन्हाळी वेळ"
@@ -526,15 +519,18 @@
         :standard: "‍फोनिक्स बेटे वेळ"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "सेंट पियर आणि मिक्वेलोन सूर्यप्रकाश वेळ"
+        :daylight: "सेंट पियरे आणि मिक्वेलोन सूर्यप्रकाश वेळ"
         :generic: "सेंट पियर आणि मिक्वेलोन वेळ"
-        :standard: "सेंट पियर आणि मिक्वेलोन प्रमाण वेळ"
+        :standard: "सेंट पियरे आणि मिक्वेलोन प्रमाण वेळ"
     :Pitcairn: 
       :long: 
         :standard: "पिटकैर्न वेळ"
     :Ponape: 
       :long: 
         :standard: "पोनॅपे वेळ"
+    :Pyongyang: 
+      :long: 
+        :standard: "प्योंगयांग वेळ"
     :Qyzylorda: 
       :long: 
         :daylight: "क़िझीलोर्डा ग्रीष्मकालीन वेळ"
@@ -780,7 +776,7 @@
     :America/Argentina/San_Juan: 
       :city: "सान जुआन"
     :America/Argentina/San_Luis: 
-      :city: "सॅन लुईस"
+      :city: "सान ल्युइस"
     :America/Argentina/Tucuman: 
       :city: टुकुमान
     :America/Argentina/Ushuaia: 
@@ -836,7 +832,7 @@
     :America/Creston: 
       :city: क्रेस्टन
     :America/Cuiaba: 
-      :city: कुइबा
+      :city: कुयाबा
     :America/Curacao: 
       :city: क्युरासाओ
     :America/Danmarkshavn: 
@@ -857,6 +853,8 @@
       :city: यूरुनीपे
     :America/El_Salvador: 
       :city: "एल साल्वाडोर"
+    :America/Fort_Nelson: 
+      :city: "फोर्ट नेल्सन"
     :America/Fortaleza: 
       :city: फोर्टालेझा
     :America/Glace_Bay: 
@@ -874,7 +872,7 @@
     :America/Guatemala: 
       :city: ग्वाटेमाला
     :America/Guayaquil: 
-      :city: गुआयाक्विल
+      :city: गयाक्विल
     :America/Guyana: 
       :city: गयाना
     :America/Halifax: 
@@ -991,6 +989,8 @@
       :city: "पोर्टो वेल्हो"
     :America/Puerto_Rico: 
       :city: "प्युएर्तो रिको"
+    :America/Punta_Arenas: 
+      :city: "पुंता अरीनास"
     :America/Rainy_River: 
       :city: "रेनी नदी"
     :America/Rankin_Inlet: 
@@ -1091,6 +1091,8 @@
       :city: अ‍ॅक्टोबे
     :Asia/Ashgabat: 
       :city: अश्गाबात
+    :Asia/Atyrau: 
+      :city: अतिरॉ
     :Asia/Baghdad: 
       :city: बगदाद
     :Asia/Bahrain: 
@@ -1099,6 +1101,8 @@
       :city: बाकु
     :Asia/Bangkok: 
       :city: बँकॉक
+    :Asia/Barnaul: 
+      :city: बर्नौल
     :Asia/Beirut: 
       :city: बैरुत
     :Asia/Bishkek: 
@@ -1123,6 +1127,8 @@
       :city: दुबई
     :Asia/Dushanbe: 
       :city: दुशान्बे
+    :Asia/Famagusta: 
+      :city: फॅमगुस्ता
     :Asia/Gaza: 
       :city: गाझा
     :Asia/Hebron: 
@@ -1185,6 +1191,8 @@
       :city: प्योंगयांग
     :Asia/Qatar: 
       :city: कतार
+    :Asia/Qostanay: 
+      :city: कोस्टाने
     :Asia/Qyzylorda: 
       :city: किझीलोर्डा
     :Asia/Rangoon: 
@@ -1217,6 +1225,8 @@
       :city: थिंफू
     :Asia/Tokyo: 
       :city: टोकियो
+    :Asia/Tomsk: 
+      :city: तोमसक
     :Asia/Ulaanbaatar: 
       :city: उलानबातर
     :Asia/Urumqi: 
@@ -1277,12 +1287,19 @@
       :city: पर्थ
     :Australia/Sydney: 
       :city: सिडनी
+    :Etc/UTC: 
+      :long: 
+        :standard: "समन्वित वैश्विक वेळ"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "अज्ञात शहर"
     :Europe/Amsterdam: 
       :city: अ‍ॅमस्टरडॅम
     :Europe/Andorra: 
       :city: अँडोरा
+    :Europe/Astrakhan: 
+      :city: आस्त्राखान
     :Europe/Athens: 
       :city: अथेन्स
     :Europe/Belgrade: 
@@ -1323,6 +1340,8 @@
       :city: कलिनिनग्राड
     :Europe/Kiev: 
       :city: कीव
+    :Europe/Kirov: 
+      :city: किरोव
     :Europe/Lisbon: 
       :city: लिस्बन
     :Europe/Ljubljana: 
@@ -1363,6 +1382,8 @@
       :city: "सॅन मरिनो"
     :Europe/Sarajevo: 
       :city: साराजेव्हो
+    :Europe/Saratov: 
+      :city: सारातोव
     :Europe/Simferopol: 
       :city: सिम्फरोपोल
     :Europe/Skopje: 
@@ -1375,6 +1396,8 @@
       :city: तालिन
     :Europe/Tirane: 
       :city: टिराने
+    :Europe/Ulyanovsk: 
+      :city: उल्यानोव्स्क
     :Europe/Uzhgorod: 
       :city: उझहोरोड
     :Europe/Vaduz: 

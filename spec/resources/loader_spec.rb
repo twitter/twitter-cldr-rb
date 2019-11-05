@@ -5,10 +5,8 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Resources
-
-describe Loader do
-  let(:loader) { Loader.new }
+describe TwitterCldr::Resources::Loader do
+  let(:loader) { described_class.new }
 
   describe '#get_resource' do
     let(:resource_path) { 'random/resource.yml' }
@@ -40,7 +38,7 @@ describe Loader do
 
     it 'raises an exception if resource file is missing' do
       expect(File).to receive(:file?).with(File.join(TwitterCldr::RESOURCES_DIR, 'foo/bar.yml')).and_return(false)
-      expect { loader.get_resource(:foo, :bar) }.to raise_error(ResourceLoadError, "Resource 'foo/bar.yml' not found.")
+      expect { loader.get_resource(:foo, :bar) }.to raise_error(TwitterCldr::Resources::ResourceLoadError, "Resource 'foo/bar.yml' not found.")
     end
 
     context 'custom resources' do
@@ -178,7 +176,7 @@ describe Loader do
 
   def stub_resource_file(resource_path, content)
     file_path = File.join(TwitterCldr::RESOURCES_DIR, resource_path)
-    allow(File).to receive(:read).with(file_path).and_return(content)
+    allow(File).to receive(:open).with(file_path, "r:UTF-8").and_return(content)
     allow(File).to receive(:file?).with(file_path).and_return(true)
   end
 

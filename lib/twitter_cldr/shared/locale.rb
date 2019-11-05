@@ -19,6 +19,7 @@ module TwitterCldr
         #
         # 3. If the tag is grandfathered (see <variable id="$grandfathered"
         #    type="choice"> in the supplemental data), then return it.
+        #    (NOTE: grandfathered subtags are no longer part of CLDR)
         #
         # 4. Remove the script code 'Zzzz' and the region code 'ZZ' if they
         #    occur; change an empty language subtag to 'und'.
@@ -27,10 +28,9 @@ module TwitterCldr
         #    region¹), plus any variants if they exist (including keywords).
         def parse(locale_text)
           locale_text = locale_text.to_s.strip
-          return Locale.new(locale_text) if grandfathered?(locale_text)
 
           normalize(locale_text).tap do |locale|
-            replace_deprecated_subtags(locale)
+            replace_aliased_subtags(locale)
             remove_placeholder_tags(locale)
           end
         end
@@ -44,19 +44,11 @@ module TwitterCldr
         end
 
         def parse_likely(locale_text)
-          if grandfathered?(locale_text)
-            new(locale_text.strip)
-          else
-            LikelySubtags.locale_for(locale_text)
-          end
+          LikelySubtags.locale_for(locale_text)
         end
 
         def split(locale_text)
           locale_text.strip.split(/[-_ ]/)
-        end
-
-        def grandfathered?(locale_text)
-          grandfathered.include?(locale_text)
         end
 
         private
@@ -117,8 +109,7 @@ module TwitterCldr
 
         def language?(subtag)
           subtag = normalize_subtag(subtag, :language)
-          languages.include?(subtag) ||
-            aliases_resource[:language].include?(subtag.to_sym)
+          languages.include?(subtag) || language_aliases.include?(subtag.to_sym)
         end
 
         def script?(subtag)
@@ -129,13 +120,24 @@ module TwitterCldr
 
         def region?(subtag)
           subtag = normalize_subtag(subtag, :region)
-          territories.include?(subtag) ||
-            aliases_resource[:territory].include?(subtag.to_sym)
+          territories.include?(subtag) || region_aliases.include?(subtag.to_sym)
         end
 
         def variant?(subtag)
           subtag = normalize_subtag(subtag, :variant)
           variants.include?(subtag)
+        end
+
+        def region_aliases
+          @region_aliases ||= aliases_resource[:territory].each_with_object({}) do |(_, aliases), ret|
+            ret.merge!(aliases)
+          end
+        end
+
+        def language_aliases
+          @language_aliases ||= aliases_resource[:language].each_with_object({}) do |(_, aliases), ret|
+            ret.merge!(aliases)
+          end
         end
 
         def normalize_subtag(subtag, identity)
@@ -149,21 +151,21 @@ module TwitterCldr
           end
         end
 
-        def replace_deprecated_subtags(locale)
-          replace_deprecated_language_subtags(locale)
-          replace_deprecated_territory_subtags(locale)
+        def replace_aliased_subtags(locale)
+          replace_aliased_language_subtags(locale)
+          replace_aliased_region_subtags(locale)
         end
 
-        def replace_deprecated_language_subtags(locale)
+        def replace_aliased_language_subtags(locale)
           language = locale.language ? locale.language.to_sym : nil
-          if found_alias = aliases_resource[:language][language]
+          if found_alias = language_aliases[language]
             locale.language = found_alias
           end
         end
 
-        def replace_deprecated_territory_subtags(locale)
+        def replace_aliased_region_subtags(locale)
           region = locale.region ? locale.region.to_sym : nil
-          if found_alias = aliases_resource[:territory][region]
+          if found_alias = region_aliases[region]
             locale.region = found_alias
           end
         end
@@ -175,23 +177,25 @@ module TwitterCldr
         end
 
         def languages
-          variables_resource[:language]
+          @languages ||= [:regular, :special].flat_map do |type|
+            validity_resource[:languages][type]
+          end
         end
 
         def scripts
-          variables_resource[:script]
+          @scripts ||= [:regular, :special].flat_map do |type|
+            validity_resource[:scripts][type]
+          end
         end
 
         def territories
-          variables_resource[:territory]
+          @territories ||= [:regular, :special, :macroregion].flat_map do |type|
+            validity_resource[:regions][type]
+          end
         end
 
         def variants
-          variables_resource[:variant]
-        end
-
-        def grandfathered
-          variables_resource[:grandfathered]
+          validity_resource[:variants][:regular]
         end
 
         def aliases_resource
@@ -199,9 +203,9 @@ module TwitterCldr
             TwitterCldr.get_resource('shared', 'aliases')[:aliases]
         end
 
-        def variables_resource
-          @variables_resource ||=
-            TwitterCldr.get_resource('shared', 'variables')[:variables]
+        def validity_resource
+          @validity_resource ||=
+            TwitterCldr.get_resource('shared', 'validity_data')[:validity_data]
         end
       end
 
@@ -224,11 +228,7 @@ module TwitterCldr
       end
 
       def maximize
-        if Locale.grandfathered?(to_s)
-          self
-        else
-          LikelySubtags.locale_for(to_s)
-        end
+        LikelySubtags.locale_for(to_s)
       end
 
       def dasherized

@@ -1,18 +1,11 @@
 --- 
 :hr: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm; -HH:mm"
-    :region_format: 
-      :daylight: "{0}, ljetno vrijeme"
-      :generic: "{0}"
-      :standard: "{0}, standardno vrijeme"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm; -HH:mm"
+    :region_format: "{0}, standardno vrijeme"
   :metazones: 
     :Acre: 
       :long: 
@@ -103,9 +96,9 @@
         :standard: "argentinsko standardno vrijeme"
     :Argentina_Western: 
       :long: 
-        :daylight: "zapadno-argentinsko ljetno vrijeme"
-        :generic: "zapadno-argentinsko vrijeme"
-        :standard: "zapadno-argentinsko standardno vrijeme"
+        :daylight: "zapadnoargentinsko ljetno vrijeme"
+        :generic: "zapadnoargentinsko vrijeme"
+        :standard: "zapadnoargentinsko standardno vrijeme"
     :Armenia: 
       :long: 
         :daylight: "armensko ljetno vrijeme"
@@ -201,7 +194,7 @@
         :standard: "vrijeme Božićnog otoka"
     :Cocos: 
       :long: 
-        :standard: "vrijeme Kokosovih Otoka"
+        :standard: "vrijeme Kokosovih otoka"
     :Colombia: 
       :long: 
         :daylight: "kolumbijsko ljetno vrijeme"
@@ -209,9 +202,9 @@
         :standard: "kolumbijsko standardno vrijeme"
     :Cook: 
       :long: 
-        :daylight: "Cookovo otočje, polusatni pomak, ljetno vrijeme"
-        :generic: "vrijeme Cookovih Otoka"
-        :standard: "standardno vrijeme Cookovih Otoka"
+        :daylight: "Cookovi otoci, polusatni pomak, ljetno vrijeme"
+        :generic: "vrijeme Cookovih otoka"
+        :standard: "standardno vrijeme Cookovih otoka"
     :Cuba: 
       :long: 
         :daylight: "kubansko ljetno vrijeme"
@@ -254,7 +247,7 @@
         :standard: EET
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "daljeistočno europsko vrijeme"
+        :standard: "dalekoistočno europsko vrijeme"
     :Europe_Western: 
       :long: 
         :daylight: "zapadnoeuropsko ljetno vrijeme"
@@ -298,7 +291,7 @@
         :standard: "gruzijsko standardno vrijeme"
     :Gilbert_Islands: 
       :long: 
-        :standard: "vrijeme Gilbertovih Otoka"
+        :standard: "vrijeme Gilbertovih otoka"
     :Greenland_Eastern: 
       :long: 
         :daylight: "istočnogrenlandsko ljetno vrijeme"
@@ -454,9 +447,9 @@
         :standard: "meksičko pacifičko standardno vrijeme"
     :Mongolia: 
       :long: 
-        :daylight: "ulan-batorsko ljetno vrijeme"
-        :generic: "ulan-batorsko vrijeme"
-        :standard: "ulan-batorsko standardno vrijeme"
+        :daylight: "ulanbatorsko ljetno vrijeme"
+        :generic: "ulanbatorsko vrijeme"
+        :standard: "ulanbatorsko standardno vrijeme"
     :Moscow: 
       :long: 
         :daylight: "moskovsko ljetno vrijeme"
@@ -464,7 +457,7 @@
         :standard: "moskovsko standardno vrijeme"
     :Myanmar: 
       :long: 
-        :standard: "mianmarsko vrijeme"
+        :standard: "mjanmarsko vrijeme"
     :Nauru: 
       :long: 
         :standard: "vrijeme Naurua"
@@ -550,6 +543,9 @@
     :Ponape: 
       :long: 
         :standard: "vrijeme Ponapea"
+    :Pyongyang: 
+      :long: 
+        :standard: "pjongjanško vrijeme"
     :Qyzylorda: 
       :long: 
         :daylight: "ljetno vrijeme grada Kizilorde"
@@ -727,21 +723,21 @@
     :Africa/Kampala: 
       :city: Kampala
     :Africa/Khartoum: 
-      :city: Kartum
+      :city: Khartoum
     :Africa/Kigali: 
       :city: Kigali
     :Africa/Kinshasa: 
-      :city: Kinšasa
+      :city: Kinshasa
     :Africa/Lagos: 
       :city: Lagos
     :Africa/Libreville: 
       :city: Libreville
     :Africa/Lome: 
-      :city: Lome
+      :city: Lomé
     :Africa/Luanda: 
       :city: Luanda
     :Africa/Lubumbashi: 
-      :city: Lubumbaši
+      :city: Lubumbashi
     :Africa/Lusaka: 
       :city: Lusaka
     :Africa/Malabo: 
@@ -782,8 +778,6 @@
       :city: Anchorage
     :America/Anguilla: 
       :city: Angvila
-    :America/Antigua: 
-      :city: Antigua
     :America/Araguaina: 
       :city: Araguaina
     :America/Argentina/La_Rioja: 
@@ -871,7 +865,9 @@
     :America/Eirunepe: 
       :city: Eirunepe
     :America/El_Salvador: 
-      :city: "El Salvador"
+      :city: Salvador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -885,7 +881,7 @@
     :America/Grenada: 
       :city: Grenada
     :America/Guadeloupe: 
-      :city: Guadalupa
+      :city: Guadalupe
     :America/Guatemala: 
       :city: Gvatemala
     :America/Guayaquil: 
@@ -947,7 +943,7 @@
     :America/Marigot: 
       :city: Marigot
     :America/Martinique: 
-      :city: Martinik
+      :city: Martinique
     :America/Matamoros: 
       :city: Matamoros
     :America/Mazatlan: 
@@ -1006,6 +1002,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: Portoriko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1106,6 +1104,8 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1114,6 +1114,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1138,6 +1140,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1200,6 +1204,8 @@
       :city: Pjongjang
     :Asia/Qatar: 
       :city: Katar
+    :Asia/Qostanay: 
+      :city: Kostanay
     :Asia/Qyzylorda: 
       :city: Kizilorda
     :Asia/Rangoon: 
@@ -1231,7 +1237,9 @@
     :Asia/Thimphu: 
       :city: Thimphu
     :Asia/Tokyo: 
-      :city: Tokio
+      :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1250,8 +1258,6 @@
       :city: Erevan
     :Atlantic/Azores: 
       :city: "Azorski otoci"
-    :Atlantic/Bermuda: 
-      :city: Bermuda
     :Atlantic/Canary: 
       :city: Kanari
     :Atlantic/Cape_Verde: 
@@ -1292,12 +1298,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "koordinirano svjetsko vrijeme"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Nepoznati grad"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andora
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Atena
     :Europe/Belgrade: 
@@ -1315,7 +1328,7 @@
     :Europe/Busingen: 
       :city: Busingen
     :Europe/Chisinau: 
-      :city: Chisinau
+      :city: Kišinjev
     :Europe/Copenhagen: 
       :city: Kopenhagen
     :Europe/Dublin: 
@@ -1338,6 +1351,8 @@
       :city: Kalinjingrad
     :Europe/Kiev: 
       :city: Kijev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisabon
     :Europe/Ljubljana: 
@@ -1378,10 +1393,12 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
-      :city: Skopje
+      :city: Skoplje
     :Europe/Sofia: 
       :city: Sofija
     :Europe/Stockholm: 
@@ -1390,8 +1407,10 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
-      :city: Uzgorod
+      :city: Užgorod
     :Europe/Vaduz: 
       :city: Vaduz
     :Europe/Vatican: 
@@ -1441,7 +1460,7 @@
     :Pacific/Chatham: 
       :city: Chatham
     :Pacific/Easter: 
-      :city: "Uskrsni Otok"
+      :city: "Uskršnji otok"
     :Pacific/Efate: 
       :city: Efate
     :Pacific/Enderbury: 

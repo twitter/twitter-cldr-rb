@@ -7,6 +7,21 @@
       :end: "{0} e {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
+    :or: 
+      ? !ruby/symbol "2"
+      : "{0} ou {1}"
+      :end: "{0} ou {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :or-narrow: {}
+    :or-short: {}
+    :standard-narrow: {}
+    :standard-short: 
+      ? !ruby/symbol "2"
+      : "{0} e {1}"
+      :end: "{0} e {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
     :unit: 
       ? !ruby/symbol "2"
       : "{0} e {1}"
@@ -15,13 +30,13 @@
       :start: "{0}, {1}"
     :unit-narrow: 
       ? !ruby/symbol "2"
-      : "{0} e {1}"
-      :end: "{0} e {1}"
+      : "{0}, {1}"
+      :end: "{0}, {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
     :unit-short: 
       ? !ruby/symbol "2"
-      : "{0} e {1}"
-      :end: "{0} e {1}"
+      : "{0}, {1}"
+      :end: "{0}, {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"

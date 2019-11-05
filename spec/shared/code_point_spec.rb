@@ -5,13 +5,11 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe CodePoint do
+describe TwitterCldr::Shared::CodePoint do
   def clear
-    CodePoint.instance_variable_set(:@canonical_compositions, nil)
-    CodePoint.instance_variable_set(:@block_cache, nil)
-    CodePoint.instance_variable_set(:@blocks, nil)
+    described_class.instance_variable_set(:@canonical_compositions, nil)
+    described_class.instance_variable_set(:@block_cache, nil)
+    described_class.instance_variable_set(:@blocks, nil)
   end
 
   after(:each) { clear }
@@ -19,7 +17,7 @@ describe CodePoint do
 
   describe "#initialize" do
     let(:unicode_data) { ['17D1', 'KHMER SIGN VIRIAM', 'Mn', '0', 'NSM', decomposition, "", "", "", 'N', "", "", "", "", ""] }
-    let(:code_point)   { CodePoint.new(unicode_data) }
+    let(:code_point)   { described_class.new(unicode_data) }
 
     context 'when decomposition is canonical' do
       let(:decomposition) { '0028 007A 0029' }
@@ -60,7 +58,7 @@ describe CodePoint do
 
   describe '#properties' do
     it 'identifies all properties belonging to the code point' do
-      code_point = CodePoint.get(65)
+      code_point = described_class.get(65)
       properties = code_point.properties
       expect(properties.alphabetic).to eq(true)
       expect(properties.script).to eq(Set.new(%w(Latin)))
@@ -70,8 +68,8 @@ describe CodePoint do
 
   describe '.properties' do
     it 'provides an instance of PropertiesDatabase' do
-      expect(CodePoint.properties).to be_a(PropertiesDatabase)
-      expect(CodePoint.properties.property_names.size).to be > 60
+      expect(described_class.properties).to be_a(TwitterCldr::Shared::PropertiesDatabase)
+      expect(described_class.properties.property_names.size).to be > 60
     end
   end
 
@@ -80,9 +78,9 @@ describe CodePoint do
       database = Object.new
       property_name = 'foo'
       property_value = 'bar'
-      allow(CodePoint).to receive(:properties).and_return(database)
+      allow(described_class).to receive(:properties).and_return(database)
       expect(database).to receive(:code_points_for_property).with(property_name, property_value)
-      CodePoint.code_points_for_property(property_name, property_value)
+      described_class.code_points_for_property(property_name, property_value)
     end
   end
 
@@ -90,21 +88,21 @@ describe CodePoint do
     it 'delegates to the properties database' do
       database = Object.new
       code_point = 65
-      allow(CodePoint).to receive(:properties).and_return(database)
+      allow(described_class).to receive(:properties).and_return(database)
       expect(database).to receive(:properties_for_code_point).with(code_point)
-      CodePoint.properties_for_code_point(code_point)
+      described_class.properties_for_code_point(code_point)
     end
   end
 
   describe ".get" do
     it "retrieves information for any valid code point" do
-      data = CodePoint.get(0x301)
-      expect(data).to be_a(CodePoint)
+      data = described_class.get(0x301)
+      expect(data).to be_a(described_class)
       expect(data.fields.length).to eq(15)
     end
 
     it "returns nil if the information is not found" do
-      expect(CodePoint.get(0xFFFFFFF)).to be_nil
+      expect(described_class.get(0xFFFFFFF)).to be_nil
     end
 
     it "fetches valid information for the specified code point" do
@@ -129,7 +127,7 @@ describe CodePoint do
 
     def test_code_points_data(test_data)
       test_data.each do |code_point, data|
-        cp_data = CodePoint.get(code_point)
+        cp_data = described_class.get(code_point)
 
         expect(cp_data).not_to be_nil
 

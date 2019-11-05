@@ -64,11 +64,17 @@ module TwitterCldr
         end
       end
 
-      def traverse_hash(hash, path)
+      def traverse_hash(hash, path, &block)
         return if path.empty?
 
         path.inject(hash) do |current, key|
-          current.is_a?(Hash) ? current[key] : return
+          return unless current.is_a?(Hash)
+
+          if block
+            yield key, current[key]
+          else
+            current[key]
+          end
         end
       end
 

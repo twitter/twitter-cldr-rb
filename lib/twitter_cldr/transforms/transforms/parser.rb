@@ -30,7 +30,7 @@ module TwitterCldr
             spaces
 
             frm = if close_paren?(current_token)
-              nil
+              BlankTransform.instance
             else
               form
             end

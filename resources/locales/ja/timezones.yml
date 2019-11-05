@@ -1,18 +1,11 @@
 --- 
 :ja: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1}（{0}）"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0}夏時間"
-      :generic: "{0}時間"
-      :standard: "{0}標準時"
+    :fallback_format: "{1}（{0}）"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0}標準時"
   :metazones: 
     :Acre: 
       :long: 
@@ -387,7 +380,7 @@
         :standard: クラスノヤルスク標準時
     :Kyrgystan: 
       :long: 
-        :standard: キルギスタン時間
+        :standard: キルギス時間
     :Lanka: 
       :long: 
         :standard: ランカ時間
@@ -531,15 +524,18 @@
         :standard: フェニックス諸島時間
     :Pierre_Miquelon: 
       :long: 
-        :daylight: サンピエール・ミクロン夏時間
-        :generic: サンピエール・ミクロン時間
-        :standard: サンピエール・ミクロン標準時
+        :daylight: サンピエール島・ミクロン島夏時間
+        :generic: サンピエール島・ミクロン島時間
+        :standard: サンピエール島・ミクロン島標準時
     :Pitcairn: 
       :long: 
         :standard: ピトケアン時間
     :Ponape: 
       :long: 
         :standard: ポナペ時間
+    :Pyongyang: 
+      :long: 
+        :standard: 平壌時間
     :Qyzylorda: 
       :long: 
         :daylight: クズロルダ夏時間
@@ -862,6 +858,8 @@
       :city: エイルネペ
     :America/El_Salvador: 
       :city: エルサルバドル
+    :America/Fort_Nelson: 
+      :city: フォートネルソン
     :America/Fortaleza: 
       :city: フォルタレザ
     :America/Glace_Bay: 
@@ -875,7 +873,7 @@
     :America/Grenada: 
       :city: グレナダ
     :America/Guadeloupe: 
-      :city: グアダループ
+      :city: グアドループ
     :America/Guatemala: 
       :city: グアテマラ
     :America/Guayaquil: 
@@ -996,6 +994,8 @@
       :city: ポルトベーリョ
     :America/Puerto_Rico: 
       :city: プエルトリコ
+    :America/Punta_Arenas: 
+      :city: プンタアレナス
     :America/Rainy_River: 
       :city: レイニーリバー
     :America/Rankin_Inlet: 
@@ -1027,7 +1027,7 @@
     :America/St_Johns: 
       :city: セントジョンズ
     :America/St_Kitts: 
-      :city: セントキッツ
+      :city: セントクリストファー
     :America/St_Lucia: 
       :city: セントルシア
     :America/St_Thomas: 
@@ -1096,6 +1096,8 @@
       :city: アクトベ
     :Asia/Ashgabat: 
       :city: アシガバード
+    :Asia/Atyrau: 
+      :city: アティラウ
     :Asia/Baghdad: 
       :city: バグダッド
     :Asia/Bahrain: 
@@ -1104,6 +1106,8 @@
       :city: バクー
     :Asia/Bangkok: 
       :city: バンコク
+    :Asia/Barnaul: 
+      :city: バルナウル
     :Asia/Beirut: 
       :city: ベイルート
     :Asia/Bishkek: 
@@ -1128,6 +1132,8 @@
       :city: ドバイ
     :Asia/Dushanbe: 
       :city: ドゥシャンベ
+    :Asia/Famagusta: 
+      :city: ファマグスタ
     :Asia/Gaza: 
       :city: ガザ
     :Asia/Hebron: 
@@ -1193,7 +1199,7 @@
     :Asia/Qyzylorda: 
       :city: クズロルダ
     :Asia/Rangoon: 
-      :city: ラングーン
+      :city: ヤンゴン
     :Asia/Riyadh: 
       :city: リヤド
     :Asia/Saigon: 
@@ -1222,6 +1228,8 @@
       :city: ティンプー
     :Asia/Tokyo: 
       :city: 東京
+    :Asia/Tomsk: 
+      :city: トムスク
     :Asia/Ulaanbaatar: 
       :city: ウランバートル
     :Asia/Urumqi: 
@@ -1282,12 +1290,19 @@
       :city: パース
     :Australia/Sydney: 
       :city: シドニー
+    :Etc/UTC: 
+      :long: 
+        :standard: 協定世界時
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: 地域不明
     :Europe/Amsterdam: 
       :city: アムステルダム
     :Europe/Andorra: 
       :city: アンドラ
+    :Europe/Astrakhan: 
+      :city: アストラハン
     :Europe/Athens: 
       :city: アテネ
     :Europe/Belgrade: 
@@ -1328,6 +1343,8 @@
       :city: カリーニングラード
     :Europe/Kiev: 
       :city: キエフ
+    :Europe/Kirov: 
+      :city: キーロフ
     :Europe/Lisbon: 
       :city: リスボン
     :Europe/Ljubljana: 
@@ -1368,6 +1385,8 @@
       :city: サンマリノ
     :Europe/Sarajevo: 
       :city: サラエボ
+    :Europe/Saratov: 
+      :city: サラトフ
     :Europe/Simferopol: 
       :city: シンフェロポリ
     :Europe/Skopje: 
@@ -1380,6 +1399,8 @@
       :city: タリン
     :Europe/Tirane: 
       :city: ティラナ
+    :Europe/Ulyanovsk: 
+      :city: ウリヤノフスク
     :Europe/Uzhgorod: 
       :city: ウージュホロド
     :Europe/Vaduz: 

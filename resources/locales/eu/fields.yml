@@ -2,7 +2,7 @@
 :eu: 
   :fields: 
     :day: 
-      :display_name: Eguna
+      :display_name: eguna
       :relative: 
         -1: atzo
         -2: herenegun
@@ -34,27 +34,64 @@
         :past: 
           :one: "Duela {0} egun"
           :other: "Duela {0} egun"
+    :dayOfYear: 
+      :display_name: "urteko #. eguna"
+    :dayOfYear-narrow: 
+      :display_name: "urteko #. eguna"
+    :dayOfYear-short: 
+      :display_name: "urteko #. eguna"
     :dayperiod: 
-      :display_name: AM//PM
+      :display_name: AM/PM
+    :dayperiod-narrow: 
+      :display_name: AM/PM
+    :dayperiod-short: 
+      :display_name: AM/PM
     :era: 
-      :display_name: Aroa
+      :display_name: aroa
+    :era-narrow: 
+      :display_name: aroa
+    :era-short: 
+      :display_name: aroa
     :fri: 
       :relative: 
-        -1: "aurreko ostirala"
-        0: "ostiral hau"
-        1: "hurrengo ostirala"
+        -1: "aurreko ostiralean"
+        0: "ostiral honetan"
+        1: "hurrengo ostiralean"
+      :relative_time: 
+        :future: 
+          :one: "{0} ostiral barru"
+          :other: "{0} ostiral barru"
+        :past: 
+          :one: "Duela {0} ostiral"
+          :other: "Duela {0} ostiral"
     :fri-narrow: 
       :relative: 
-        -1: "aurreko ostirala"
-        0: "ostiral hau"
-        1: "hurrengo ostirala"
+        -1: "aurreko or."
+        0: "or. honetan"
+        1: "hurrengo or."
+      :relative_time: 
+        :future: 
+          :one: "{0} or. barru"
+          :other: "{0} or. barru"
+        :past: 
+          :one: "Duela {0} or."
+          :other: "Duela {0} or."
     :fri-short: 
       :relative: 
-        -1: "aurreko ostirala"
-        0: "ostiral hau"
-        1: "hurrengo ostirala"
+        -1: "aurreko or."
+        0: "or. honetan"
+        1: "hurrengo or."
+      :relative_time: 
+        :future: 
+          :one: "{0} or. barru"
+          :other: "{0} or. barru"
+        :past: 
+          :one: "Duela {0} or."
+          :other: "Duela {0} or."
     :hour: 
-      :display_name: Ordua
+      :display_name: ordua
+      :relative: 
+        0: "ordu honetan"
       :relative_time: 
         :future: 
           :one: "{0} ordu barru"
@@ -81,7 +118,9 @@
           :one: "Duela {0} ordu"
           :other: "Duela {0} ordu"
     :minute: 
-      :display_name: Minutua
+      :display_name: minutua
+      :relative: 
+        0: "minutu honetan"
       :relative_time: 
         :future: 
           :one: "{0} minutu barru"
@@ -109,25 +148,46 @@
           :other: "Duela {0} minutu"
     :mon: 
       :relative: 
-        -1: "aurreko astelehena"
-        0: "astelehen hau"
-        1: "hurrengo astelehena"
+        -1: "aurreko astelehenean"
+        0: "astelehen honetan"
+        1: "hurrengo astelehenean"
+      :relative_time: 
+        :future: 
+          :one: "{0} astelehen barru"
+          :other: "{0} astelehen barru"
+        :past: 
+          :one: "Duela {0} astelehen"
+          :other: "Duela {0} astelehen"
     :mon-narrow: 
       :relative: 
-        -1: "aurreko astelehena"
-        0: "astelehen hau"
-        1: "hurrengo astelehena"
+        -1: "aurreko al."
+        0: "al. honetan"
+        1: "hurrengo al."
+      :relative_time: 
+        :future: 
+          :one: "{0} al. barru"
+          :other: "{0} al. barru"
+        :past: 
+          :one: "Duela {0} al."
+          :other: "Duela {0} al."
     :mon-short: 
       :relative: 
-        -1: "aurreko astelehena"
-        0: "astelehen hau"
-        1: "hurrengo astelehena"
+        -1: "aurreko al."
+        0: "al. honetan"
+        1: "hurrengo al."
+      :relative_time: 
+        :future: 
+          :one: "{0} al. barru"
+          :other: "{0} al. barru"
+        :past: 
+          :one: "Duela {0} al."
+          :other: "Duela {0} al."
     :month: 
-      :display_name: Hilabetea
+      :display_name: hilabetea
       :relative: 
-        -1: "aurreko hilabetea"
-        0: "hilabete hau"
-        1: "hurrengo hilabetea"
+        -1: "aurreko hilabetean"
+        0: "hilabete honetan"
+        1: "hurrengo hilabetean"
       :relative_time: 
         :future: 
           :one: "{0} hilabete barru"
@@ -154,7 +214,11 @@
           :one: "Duela {0} hilabete"
           :other: "Duela {0} hilabete"
     :quarter: 
-      :display_name: Hiruhilekoa
+      :display_name: hiruhilekoa
+      :relative: 
+        -1: "aurreko hiruhilekoa"
+        0: "hiruhileko hau"
+        1: "hurrengo hiruhilekoa"
       :relative_time: 
         :future: 
           :one: "{0} hiruhileko barru"
@@ -182,21 +246,42 @@
           :other: "Duela {0} hiruhileko"
     :sat: 
       :relative: 
-        -1: "aurreko larunbata"
-        0: "larunbat hau"
-        1: "hurrengo larunbata"
+        -1: "aurreko larunbatean"
+        0: "larunbat honetan"
+        1: "hurrengo larunbatean"
+      :relative_time: 
+        :future: 
+          :one: "{0} larunbat barru"
+          :other: "{0} larunbat barru"
+        :past: 
+          :one: "Duela {0} larunbat"
+          :other: "Duela {0} larunbat"
     :sat-narrow: 
       :relative: 
-        -1: "aurreko larunbata"
-        0: "larunbat hau"
-        1: "hurrengo larunbata"
+        -1: "aurreko lr."
+        0: "lr. honetan"
+        1: "hurrengo lr."
+      :relative_time: 
+        :future: 
+          :one: "{0} lr. barru"
+          :other: "{0} lr. barru"
+        :past: 
+          :one: "Duela {0} lr."
+          :other: "Duela {0} lr."
     :sat-short: 
       :relative: 
-        -1: "aurreko larunbata"
-        0: "larunbat hau"
-        1: "hurrengo larunbata"
+        -1: "aurreko lr."
+        0: "lr. honetan"
+        1: "hurrengo lr."
+      :relative_time: 
+        :future: 
+          :one: "{0} lr. barru"
+          :other: "{0} lr. barru"
+        :past: 
+          :one: "Duela {0} lr."
+          :other: "Duela {0} lr."
     :second: 
-      :display_name: Segundoa
+      :display_name: segundoa
       :relative: 
         0: orain
       :relative_time: 
@@ -226,70 +311,154 @@
           :other: "Duela {0} segundo"
     :sun: 
       :relative: 
-        -1: "aurreko igandea"
-        0: "igande hau"
-        1: "hurrengo igandea"
+        -1: "aurreko igandean"
+        0: "igande honetan"
+        1: "hurrengo igandean"
+      :relative_time: 
+        :future: 
+          :one: "{0} igande barru"
+          :other: "{0} igande barru"
+        :past: 
+          :one: "Duela {0} igande"
+          :other: "Duela {0} igande"
     :sun-narrow: 
       :relative: 
-        -1: "aurreko igandea"
-        0: "igande hau"
-        1: "hurrengo igandea"
+        -1: "aurreko ig."
+        0: "ig. honetan"
+        1: "hurrengo ig."
+      :relative_time: 
+        :future: 
+          :one: "{0} ig. barru"
+          :other: "{0} ig. barru"
+        :past: 
+          :one: "Duela {0} ig."
+          :other: "Duela {0} ig."
     :sun-short: 
       :relative: 
-        -1: "aurreko igandea"
-        0: "igande hau"
-        1: "hurrengo igandea"
+        -1: "aurreko ig."
+        0: "ig. honetan"
+        1: "hurrengo ig."
+      :relative_time: 
+        :future: 
+          :one: "{0} ig. barru"
+          :other: "{0} ig. barru"
+        :past: 
+          :one: "Duela {0} ig."
+          :other: "Duela {0} ig."
     :thu: 
       :relative: 
-        -1: "aurreko osteguna"
-        0: "ostegun hau"
-        1: "hurrengo osteguna"
+        -1: "aurreko ostegunean"
+        0: "ostegun honetan"
+        1: "hurrengo ostegunean"
+      :relative_time: 
+        :future: 
+          :one: "{0} og. barru"
+          :other: "{0} og. barru"
+        :past: 
+          :one: "Duela {0} og."
+          :other: "Duela {0} og."
     :thu-narrow: 
       :relative: 
-        -1: "aurreko osteguna"
-        0: "ostegun hau"
-        1: "hurrengo osteguna"
+        -1: "aurreko og."
+        0: "og. honetan"
+        1: "hurrengo og."
+      :relative_time: 
+        :future: 
+          :one: "{0} og. barru"
+          :other: "{0} og. barru"
+        :past: 
+          :one: "Duela {0} og."
+          :other: "Duela {0} og."
     :thu-short: 
       :relative: 
-        -1: "aurreko osteguna"
-        0: "ostegun hau"
-        1: "hurrengo osteguna"
+        -1: "aurreko og."
+        0: "og. honetan"
+        1: "hurrengo og."
+      :relative_time: 
+        :future: 
+          :one: "{0} og. barru"
+          :other: "{0} og. barru"
+        :past: 
+          :one: "Duela {0} og."
+          :other: "Duela {0} og."
     :tue: 
       :relative: 
-        -1: "aurreko asteartea"
-        0: "astearte hau"
-        1: "hurrengo asteartea"
+        -1: "aurreko asteartean"
+        0: "astearte honetan"
+        1: "hurrengo asteartean"
+      :relative_time: 
+        :future: 
+          :one: "{0} astearte barru"
+          :other: "{0} astearte barru"
+        :past: 
+          :one: "Duela {0} astearte"
+          :other: "Duela {0} astearte"
     :tue-narrow: 
       :relative: 
-        -1: "aurreko asteartea"
-        0: "astearte hau"
-        1: "hurrengo asteartea"
+        -1: "aurreko ar."
+        0: "ar. honetan"
+        1: "hurrengo ar."
+      :relative_time: 
+        :future: 
+          :one: "{0} ar. barru"
+          :other: "{0} ar. barru"
+        :past: 
+          :one: "Duela {0} ar."
+          :other: "Duela {0} ar."
     :tue-short: 
       :relative: 
-        -1: "aurreko asteartea"
-        0: "astearte hau"
-        1: "hurrengo asteartea"
+        -1: "aurreko ar."
+        0: "ar. honetan"
+        1: "hurrengo ar."
+      :relative_time: 
+        :future: 
+          :one: "{0} ar. barru"
+          :other: "{0} ar. barru"
+        :past: 
+          :one: "Duela {0} ar."
+          :other: "Duela {0} ar."
     :wed: 
       :relative: 
-        -1: "aurreko asteazkena"
-        0: "asteazken hau"
-        1: "hurrengo asteazkena"
+        -1: "aurreko asteazkenean"
+        0: "asteazken honetan"
+        1: "hurrengo asteazkenean"
+      :relative_time: 
+        :future: 
+          :one: "{0} asteazken barru"
+          :other: "{0} asteazken barru"
+        :past: 
+          :one: "Duela {0} asteazken"
+          :other: "Duela {0} asteazken"
     :wed-narrow: 
       :relative: 
-        -1: "aurreko asteazkena"
-        0: "asteazken hau"
-        1: "hurrengo asteazkena"
+        -1: "aurreko az."
+        0: "az. honetan"
+        1: "hurrengo az."
+      :relative_time: 
+        :future: 
+          :one: "{0} az. barru"
+          :other: "{0} az. barru"
+        :past: 
+          :one: "Duela {0} az."
+          :other: "Duela {0} az."
     :wed-short: 
       :relative: 
-        -1: "aurreko asteazkena"
-        0: "asteazken hau"
-        1: "hurrengo asteazkena"
+        -1: "aurreko az."
+        0: "az. honetan"
+        1: "hurrengo az."
+      :relative_time: 
+        :future: 
+          :one: "{0} az. barru"
+          :other: "{0} az. barru"
+        :past: 
+          :one: "Duela {0} az."
+          :other: "Duela {0} az."
     :week: 
-      :display_name: Astea
+      :display_name: astea
       :relative: 
-        -1: "aurreko astea"
-        0: "aste hau"
-        1: "hurrengo astea"
+        -1: "aurreko astean"
+        0: "aste honetan"
+        1: "hurrengo astean"
       :relative_time: 
         :future: 
           :one: "{0} aste barru"
@@ -315,14 +484,30 @@
         :past: 
           :one: "Duela {0} aste"
           :other: "Duela {0} aste"
+    :weekOfMonth: 
+      :display_name: "hileko #. astea"
+    :weekOfMonth-narrow: 
+      :display_name: "hileko #. astea"
+    :weekOfMonth-short: 
+      :display_name: "hileko #. astea"
     :weekday: 
-      :display_name: Asteguna
+      :display_name: asteguna
+    :weekday-narrow: 
+      :display_name: asteguna
+    :weekday-short: 
+      :display_name: asteguna
+    :weekdayOfMonth: 
+      :display_name: "hileko #. asteguna"
+    :weekdayOfMonth-narrow: 
+      :display_name: "hileko #. asteguna"
+    :weekdayOfMonth-short: 
+      :display_name: "hileko #. asteguna"
     :year: 
-      :display_name: Urtea
+      :display_name: urtea
       :relative: 
-        -1: "aurreko urtea"
+        -1: iaz
         0: aurten
-        1: "hurrengo urtea"
+        1: "hurrengo urtean"
       :relative_time: 
         :future: 
           :one: "{0} urte barru"
@@ -357,4 +542,8 @@
           :one: "Duela {0} urte"
           :other: "Duela {0} urte"
     :zone: 
-      :display_name: Ordu-zona
+      :display_name: ordu-zona
+    :zone-narrow: 
+      :display_name: ordu-zona
+    :zone-short: 
+      :display_name: ordu-zona

@@ -18,7 +18,7 @@ require 'twitter_cldr'
 Get a list of all currently supported locales (these are all supported on twitter.com):
 
 ```ruby
-TwitterCldr.supported_locales             # [:af, :ar, :be, :bg, :bn, :bo, ... ]
+TwitterCldr.supported_locales             # [:af, :ar, :az, :be, :bg, :bn, ... ]
 ```
 
 Determine if a locale is supported by TwitterCLDR:
@@ -76,14 +76,14 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :
 
 #### Short / Long Decimals
 
-In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `format` option:
 
 ```ruby
-2337.localize.to_short_decimal.to_s     # "2K"
-1337123.localize.to_short_decimal.to_s  # "1M"
+2337.localize.to_decimal.to_s(format: :short)     # "2K"
+1337123.localize.to_decimal.to_s(format: :short)  # "1M"
 
-2337.localize.to_long_decimal.to_s      # "2 thousand"
-1337123.localize.to_long_decimal.to_s   # "1 million"
+2337.localize.to_decimal.to_s(format: :long)      # "2 thousand"
+1337123.localize.to_decimal.to_s(format: :long)   # "1 million"
 ```
 
 ### Units
@@ -207,7 +207,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd", ... ]
+# ["Bh", "Bhm", "Bhms", "E", "EBhm", "EBhms", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", ... ]
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -224,7 +224,12 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
+| Bh         | 12 PM                  |
+| Bhm        | 12:20 PM               |
+| Bhms       | 12:20:05 PM            |
 | E          | Fri                    |
+| EBhm       | Fri 12:20 PM           |
+| EBhms      | Fri 12:20:05 PM        |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -237,12 +242,13 @@ It's important to know that, even though any given format may not be available a
 | H          | 12                     |
 | Hm         | 12:20                  |
 | Hms        | 12:20:05               |
-| Hmsv       | 12:20:05 v             |
-| Hmv        | 12:20 v                |
+| Hmsv       | 12:20:05 UTC           |
+| Hmv        | 12:20 UTC              |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
 | MMM        | Feb                    |
 | MMMEd      | Fri, Feb 14            |
+| MMMMW      | week 3 of February     |
 | MMMMd      | February 14            |
 | MMMd       | Feb 14                 |
 | Md         | 2/14                   |
@@ -250,8 +256,8 @@ It's important to know that, even though any given format may not be available a
 | h          | 12 PM                  |
 | hm         | 12:20 PM               |
 | hms        | 12:20:05 PM            |
-| hmsv       | 12:20:05 PM v          |
-| hmv        | 12:20 PM v             |
+| hmsv       | 12:20:05 PM UTC        |
+| hmv        | 12:20 PM UTC           |
 | ms         | 20:05                  |
 | y          | 2014                   |
 | yM         | 2/2014                 |
@@ -263,6 +269,7 @@ It's important to know that, even though any given format may not be available a
 | yMd        | 2/14/2014              |
 | yQQQ       | Q1 2014                |
 | yQQQQ      | 1st quarter 2014       |
+| yw         | week 7 of 2014         |
 
 
 
@@ -372,7 +379,7 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
@@ -476,7 +483,7 @@ You can use the localize convenience method on territory code symbols to get the
 
 ```ruby
 :gb.localize(:pt).as_territory                         # "Reino Unido"
-:cz.localize(:pt).as_territory                         # "República Tcheca"
+:cz.localize(:pt).as_territory                         # "Tchéquia"
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
@@ -490,20 +497,20 @@ In addition to translating territory codes, TwitterCLDR provides access to the f
 
 ```ruby
 # get all territories for the default locale
-TwitterCldr::Shared::Territories.all                                                 # { ... :tl => "East Timor", :tm => "Turkmenistan" ... }
+TwitterCldr::Shared::Territories.all                                                 # { ... :tl => "Timor-Leste", :tm => "Turkmenistan" ... }
 
 # get all territories for a specific locale
-TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "República Democrática de Timor-Leste", :tm => "Turcomenistão" ... }
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # { ... :tl => "Timor-Leste", :tm => "Turcomenistão" ... }
 
 # get a territory by its code for the default locale
-TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "UK"
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # "United Kingdom"
 
 # get a territory from its code for a specific locale
 TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # "Reino Unido"
 
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
-TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "UK"
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # "United Kingdom"
 TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # "Reino Unido"
 ```
 
@@ -554,32 +561,12 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["10781", "69079-7159", "79836-3996", "79771", "61093"]
+postal_code.sample(5)  # ["66877", "52179", "39565", "39335", "83881"]
 ```
 
 ### Phone Codes
 
-Look up phone codes by territory:
-
-```ruby
-# United States
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # "1"
-
-# Perú
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # "51"
-
-# Egypt
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # "20"
-
-# Denmark
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # "45"
-```
-
-Get a list of supported territories by using the `#territories` method:
-
-```ruby
-TwitterCldr::Shared::PhoneCodes.territories  # [:ac, :ad, :ae, :af, :ag, ... ]
-```
+Telephone codes were deprecated and have now been removed from the CLDR data set. They have been removed from TwitterCLDR as of v5.0.0.
 
 ### Language Codes
 
@@ -1055,7 +1042,7 @@ No external requirements.
 
 `bundle exec rake` will run our basic test suite suitable for development.  To run the full test suite, use `bundle exec rake spec:full`.  The full test suite takes considerably longer to run because it runs against the complete normalization and collation test files from the Unicode Consortium.  The basic test suite only runs normalization and collation tests against a small subset of the complete test file.
 
-Tests are written in RSpec using RR as the mocking framework.
+Tests are written in RSpec.
 
 ## Test Coverage
 
@@ -1078,6 +1065,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2017 Twitter, Inc.
+Copyright 2019 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

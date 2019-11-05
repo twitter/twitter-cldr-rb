@@ -1,18 +1,11 @@
 --- 
 :bg: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "Гринуич{0}"
-    :gmt_zero_format: 
-      :generic: Гринуич
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0}, лятно часово време"
-      :generic: "{0}"
-      :standard: "{0} – стандартно време"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "Гринуич{0}"
+    :gmt_zero_format: Гринуич
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} – стандартно време"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -98,9 +91,9 @@
         :standard: "Северноамериканско атлантическо стандартно време"
     :Australia_Central: 
       :long: 
-        :daylight: "Австралия – централно лятно часово време"
-        :generic: "Австралия – централно време"
-        :standard: "Австралия – централно стандартно време"
+        :daylight: "Централноавстралийско лятно часово време"
+        :generic: "Централноавстралийско време"
+        :standard: "Централноавстралийско стандартно време"
     :Australia_CentralWestern: 
       :long: 
         :daylight: "Австралия – западно централно лятно часово време"
@@ -108,14 +101,14 @@
         :standard: "Австралия – западно централно стандартно време"
     :Australia_Eastern: 
       :long: 
-        :daylight: "Австралия – източно лятно часово време"
-        :generic: "Австралия – източно време"
-        :standard: "Австралия – източно стандартно време"
+        :daylight: "Източноавстралийско лятно часово време"
+        :generic: "Източноавстралийско време"
+        :standard: "Източноавстралийско стандартно време"
     :Australia_Western: 
       :long: 
-        :daylight: "Австралия – западно лятно часово време"
-        :generic: "Австралия – западно време"
-        :standard: "Австралия – западно стандартно време"
+        :daylight: "Западноавстралийско лятно часово време"
+        :generic: "Западноавстралийско време"
+        :standard: "Западноавстралийско стандартно време"
     :Azerbaijan: 
       :long: 
         :daylight: "Азербайджанско лятно часово време"
@@ -152,12 +145,12 @@
         :standard: "Кабо Верде – стандартно време"
     :Chamorro: 
       :long: 
-        :standard: "Чаморо – стандартно време"
+        :standard: "Чаморско време"
     :Chatham: 
       :long: 
-        :daylight: "Чатъм – лятно часово време"
-        :generic: Чатъм
-        :standard: "Чатъм – стандартно време"
+        :daylight: "Чатъмско лятно часово време"
+        :generic: "Чатъмско време"
+        :standard: "Чатъмско стандартно време"
     :Chile: 
       :long: 
         :daylight: "Чилийско лятно часово време"
@@ -236,9 +229,9 @@
         :standard: "Фолклендски острови – стандартно време"
     :Fiji: 
       :long: 
-        :daylight: "Фиджи – лятно часово време"
-        :generic: Фиджи
-        :standard: "Фиджи – стандартно време"
+        :daylight: "Фиджийско лятно часово време"
+        :generic: "Фиджийско време"
+        :standard: "Фиджийско стандартно време"
     :French_Guiana: 
       :long: 
         :standard: "Френска Гвиана"
@@ -295,7 +288,7 @@
         :standard: "Ховдско стандартно време"
     :India: 
       :long: 
-        :standard: "Индийско стандартно време"
+        :standard: "Индийско време"
     :Indian_Ocean: 
       :long: 
         :standard: "Индийски океан"
@@ -379,7 +372,7 @@
         :standard: "Малайзийско време"
     :Maldives: 
       :long: 
-        :standard: "Малдивски острови"
+        :standard: "Малдивско време"
     :Marquesas: 
       :long: 
         :standard: "Маркизки острови"
@@ -396,9 +389,9 @@
         :standard: Моусън
     :Mexico_Northwest: 
       :long: 
-        :daylight: "Мексико – северозападно лятно часово време"
-        :generic: "Мексико – северозападно време"
-        :standard: "Мексико – северозападно стандартно време"
+        :daylight: "Северозападно лятно часово мексиканско време"
+        :generic: "Северозападно мексиканско време"
+        :standard: "Северозападно стандартно мексиканско време"
     :Mexico_Pacific: 
       :long: 
         :daylight: "Мексиканско тихоокеанско лятно часово време"
@@ -443,7 +436,7 @@
         :standard: Ниуе
     :Norfolk: 
       :long: 
-        :standard: Норфолк
+        :standard: "Норфолкско време"
     :Noronha: 
       :long: 
         :daylight: "Фернандо де Нороня – лятно часово време"
@@ -499,6 +492,9 @@
     :Ponape: 
       :long: 
         :standard: Понапе
+    :Pyongyang: 
+      :long: 
+        :standard: "Пхенянско време"
     :Reunion: 
       :long: 
         :standard: Реюнион
@@ -522,7 +518,7 @@
         :standard: "Самоанско стандартно време"
     :Seychelles: 
       :long: 
-        :standard: "Сейшелски острови"
+        :standard: Сейшели
     :Singapore: 
       :long: 
         :standard: "Сингапурско време"
@@ -816,6 +812,8 @@
       :city: Ейрунепе
     :America/El_Salvador: 
       :city: Салвадор
+    :America/Fort_Nelson: 
+      :city: "Форт Нелсън"
     :America/Fortaleza: 
       :city: Форталеза
     :America/Glace_Bay: 
@@ -950,6 +948,8 @@
       :city: "Порто Вельо"
     :America/Puerto_Rico: 
       :city: "Пуерто Рико"
+    :America/Punta_Arenas: 
+      :city: "Пунта Аренас"
     :America/Rainy_River: 
       :city: "Рейни Ривър"
     :America/Rankin_Inlet: 
@@ -1050,6 +1050,8 @@
       :city: Актобе
     :Asia/Ashgabat: 
       :city: Ашхабад
+    :Asia/Atyrau: 
+      :city: Атърау
     :Asia/Baghdad: 
       :city: Багдад
     :Asia/Bahrain: 
@@ -1058,6 +1060,8 @@
       :city: Баку
     :Asia/Bangkok: 
       :city: Банкок
+    :Asia/Barnaul: 
+      :city: Барнаул
     :Asia/Beirut: 
       :city: Бейрут
     :Asia/Bishkek: 
@@ -1082,6 +1086,8 @@
       :city: Дубай
     :Asia/Dushanbe: 
       :city: Душанбе
+    :Asia/Famagusta: 
+      :city: Фамагуста
     :Asia/Gaza: 
       :city: Газа
     :Asia/Hebron: 
@@ -1176,6 +1182,8 @@
       :city: Тхимпху
     :Asia/Tokyo: 
       :city: Токио
+    :Asia/Tomsk: 
+      :city: Томск
     :Asia/Ulaanbaatar: 
       :city: "Улан Батор"
     :Asia/Urumqi: 
@@ -1193,11 +1201,11 @@
     :Asia/Yerevan: 
       :city: Ереван
     :Atlantic/Azores: 
-      :city: "Азорски о-ви"
+      :city: "Азорски острови"
     :Atlantic/Bermuda: 
       :city: "Бермудски острови"
     :Atlantic/Canary: 
-      :city: "Канарски о-ви"
+      :city: "Канарски острови"
     :Atlantic/Cape_Verde: 
       :city: "Кабо Верде"
     :Atlantic/Faeroe: 
@@ -1236,12 +1244,19 @@
       :city: Пърт
     :Australia/Sydney: 
       :city: Сидни
+    :Etc/UTC: 
+      :long: 
+        :standard: "Координирано универсално време"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: неизвестен
     :Europe/Amsterdam: 
       :city: Амстердам
     :Europe/Andorra: 
       :city: Андора
+    :Europe/Astrakhan: 
+      :city: Астрахан
     :Europe/Athens: 
       :city: Атина
     :Europe/Belgrade: 
@@ -1269,11 +1284,11 @@
     :Europe/Gibraltar: 
       :city: Гибралтар
     :Europe/Guernsey: 
-      :city: Гърнси
+      :city: Гърнзи
     :Europe/Helsinki: 
       :city: Хелзинки
     :Europe/Isle_of_Man: 
-      :city: "о-в Ман"
+      :city: "остров Ман"
     :Europe/Istanbul: 
       :city: Истанбул
     :Europe/Jersey: 
@@ -1282,6 +1297,8 @@
       :city: Калининград
     :Europe/Kiev: 
       :city: Киев
+    :Europe/Kirov: 
+      :city: Киров
     :Europe/Lisbon: 
       :city: Лисабон
     :Europe/Ljubljana: 
@@ -1322,8 +1339,10 @@
       :city: "Сан Марино"
     :Europe/Sarajevo: 
       :city: Сараево
+    :Europe/Saratov: 
+      :city: Саратов
     :Europe/Simferopol: 
-      :city: Севастопол
+      :city: Симферопол
     :Europe/Skopje: 
       :city: Скопие
     :Europe/Sofia: 
@@ -1334,6 +1353,8 @@
       :city: Талин
     :Europe/Tirane: 
       :city: Тирана
+    :Europe/Ulyanovsk: 
+      :city: Уляновск
     :Europe/Uzhgorod: 
       :city: Ужгород
     :Europe/Vaduz: 
@@ -1385,7 +1406,7 @@
     :Pacific/Chatham: 
       :city: Чатам
     :Pacific/Easter: 
-      :city: "Великденски о-в"
+      :city: "Великденски остров"
     :Pacific/Efate: 
       :city: Ефате
     :Pacific/Enderbury: 
@@ -1397,7 +1418,7 @@
     :Pacific/Funafuti: 
       :city: Фунафути
     :Pacific/Galapagos: 
-      :city: "Галапагоски о-ви"
+      :city: Галапагос
     :Pacific/Gambier: 
       :city: Гамбие
     :Pacific/Guadalcanal: 
@@ -1417,7 +1438,7 @@
     :Pacific/Majuro: 
       :city: Маджуро
     :Pacific/Marquesas: 
-      :city: "Маркизки о-ви"
+      :city: "Маркизки острови"
     :Pacific/Midway: 
       :city: Мидуей
     :Pacific/Nauru: 

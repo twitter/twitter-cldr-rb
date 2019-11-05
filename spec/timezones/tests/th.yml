@@ -6,7 +6,7 @@ Africa/Abidjan:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: เวลาไอวอรี่โคสต์
+    :generic: เวลาโกตดิวัวร์
   :LONG:
     :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
@@ -16,7 +16,7 @@ Africa/Abidjan:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: เวลาไอวอรี่โคสต์
+    :generic: เวลาโกตดิวัวร์
 Africa/Accra:
   :offset: 0
   :LONG_GMT:
@@ -204,7 +204,7 @@ Africa/Brazzaville:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: เวลาคองโก-บราซซาวิล
+    :generic: เวลาคองโก - บราซซาวิล
   :LONG:
     :standard: เวลามาตรฐานแอฟริกาตะวันตก
     :daylight: เวลาฤดูร้อนแอฟริกาตะวันตก
@@ -214,7 +214,7 @@ Africa/Brazzaville:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: เวลาคองโก-บราซซาวิล
+    :generic: เวลาคองโก - บราซซาวิล
 Africa/Bujumbura:
   :offset: 7200000
   :LONG_GMT:
@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: เวลาโมร็อกโก
   :LONG:
-    :standard: เวลามาตรฐานยุโรปตะวันตก
-    :daylight: เวลาฤดูร้อนยุโรปตะวันตก
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันตก
+    :generic: เวลาโมร็อกโก
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: เวลาซาฮาราตะวันตก
   :LONG:
-    :standard: เวลามาตรฐานยุโรปตะวันตก
-    :daylight: เวลาฤดูร้อนยุโรปตะวันตก
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันตก
+    :generic: เวลาซาฮาราตะวันตก
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: เวลายูกันดา
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: เวลาซูดาน
   :LONG:
-    :standard: เวลาแอฟริกาตะวันออก
-    :daylight: GMT+03:00
+    :standard: เวลาแอฟริกากลาง
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: เวลาแอฟริกาตะวันออก
+    :generic: เวลาแอฟริกากลาง
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: เวลาซูดาน
 Africa/Kigali:
@@ -726,7 +726,7 @@ Africa/Mbabane:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: เวลาสวาซิแลนด์
+    :generic: เวลาเอสวาตีนี
   :LONG:
     :standard: เวลาแอฟริกาใต้
     :daylight: GMT+02:00
@@ -736,7 +736,7 @@ Africa/Mbabane:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: เวลาสวาซิแลนด์
+    :generic: เวลาเอสวาตีนี
 Africa/Mogadishu:
   :offset: 10800000
   :LONG_GMT:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: เวลาตูนิเซีย
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: เวลานามิเบีย
   :LONG:
-    :standard: เวลามาตรฐานแอฟริกาตะวันตก
-    :daylight: เวลาฤดูร้อนแอฟริกาตะวันตก
+    :standard: เวลาแอฟริกากลาง
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: เวลาแอฟริกาตะวันตก (วินด์ฮุก)
+    :generic: เวลาแอฟริกากลาง
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: เวลานามิเบีย
@@ -983,7 +983,7 @@ America/Adak:
     :standard: เวลามาตรฐานฮาวาย-อะลูเชียน
     :daylight: เวลาออมแสงฮาวาย-อะลูเชียน
   :LONG_GENERIC:
-    :generic: เวลาฮาวาย-อะลูเชียน (เอดัก)
+    :generic: เวลาฮาวาย-อะลูเชียน
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: เวลามาตรฐานฮาวาย-อะลูเชียน
     :daylight: เวลาออมแสงฮาวาย-อะลูเชียน
   :LONG_GENERIC:
-    :generic: เวลาฮาวาย-อะลูเชียน (เอดัก)
+    :generic: เวลาฮาวาย-อะลูเชียน
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1484,10 +1484,10 @@ America/Boa_Vista:
   :GENERIC_LOCATION:
     :generic: เวลาบัววีชตา
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานอะเมซอน
+    :generic: เวลามาตรฐานแอมะซอน
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-4
@@ -1574,10 +1574,10 @@ America/Campo_Grande:
   :GENERIC_LOCATION:
     :generic: เวลากัมปูกรันดี
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลาอะเมซอน
+    :generic: เวลาแอมะซอน (กัมปูกรันดี)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: เวลาแคนคุน
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: เวลาเวเนซุเอลา
   :LONG:
     :standard: เวลาเวเนซุเอลา
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: เวลาเวเนซุเอลา
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: เวลาเวเนซุเอลา
 America/Catamarca:
@@ -1790,10 +1790,10 @@ America/Cuiaba:
   :GENERIC_LOCATION:
     :generic: เวลากุยาบา
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลาอะเมซอน
+    :generic: เวลาแอมะซอน (กุยาบา)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: เวลาFort Nelson
+    :generic: เวลาฟอร์ตเนลสัน
   :LONG:
     :standard: เวลามาตรฐานแถบภูเขาในอเมริกาเหนือ
     :daylight: เวลาออมแสงแถบภูเขาในอเมริกาเหนือ
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT-7
     :daylight: GMT-7
   :SHORT_GENERIC:
-    :generic: เวลาFort Nelson
+    :generic: เวลาฟอร์ตเนลสัน
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2058,7 +2058,7 @@ America/Glace_Bay:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: เวลาแกลซเบย์
+    :generic: เวลาเกลซเบย์
   :LONG:
     :standard: เวลามาตรฐานแอตแลนติก
     :daylight: เวลาออมแสงของแอตแลนติก
@@ -2068,7 +2068,7 @@ America/Glace_Bay:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: เวลาแกลซเบย์
+    :generic: เวลาเกลซเบย์
 America/Godthab:
   :offset: -10800000
   :LONG_GMT:
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: เวลากูสเบย์
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: เวลาหมู่เกาะเติกส์และหมู่เกาะเคคอส
   :LONG:
-    :standard: เวลามาตรฐานแอตแลนติก
-    :daylight: เวลาออมแสงของแอตแลนติก
+    :standard: เวลามาตรฐานทางตะวันออกในอเมริกาเหนือ
+    :daylight: เวลาออมแสงทางตะวันออกในอเมริกาเหนือ
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานแอตแลนติก
+    :generic: เวลาทางตะวันออกในอเมริกาเหนือ
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: เวลาหมู่เกาะเติกส์และหมู่เกาะเคคอส
@@ -2670,7 +2670,7 @@ America/Lower_Princes:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: เวลาเซนต์มาร์ติน
+    :generic: เวลาซินต์มาร์เทน
   :LONG:
     :standard: เวลามาตรฐานแอตแลนติก
     :daylight: เวลาออมแสงของแอตแลนติก
@@ -2680,7 +2680,7 @@ America/Lower_Princes:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: เวลาเซนต์มาร์ติน
+    :generic: เวลาซินต์มาร์เทน
 America/Maceio:
   :offset: -10800000
   :LONG_GMT:
@@ -2726,10 +2726,10 @@ America/Manaus:
   :GENERIC_LOCATION:
     :generic: เวลามาเนาส์
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานอะเมซอน
+    :generic: เวลามาตรฐานแอมะซอน
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-4
@@ -2742,7 +2742,7 @@ America/Marigot:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: เวลาเซนต์มาติน
+    :generic: เวลาเซนต์มาร์ติน
   :LONG:
     :standard: เวลามาตรฐานแอตแลนติก
     :daylight: เวลาออมแสงของแอตแลนติก
@@ -2752,7 +2752,7 @@ America/Marigot:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: เวลาเซนต์มาติน
+    :generic: เวลาเซนต์มาร์ติน
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: เวลามาตรฐานทางตะวันออกในอเมริกาเหนือ
     :daylight: เวลาออมแสงทางตะวันออกในอเมริกาเหนือ
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานทางตะวันออกในอเมริกาเหนือ
+    :generic: เวลาทางตะวันออกในอเมริกาเหนือ
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: เวลาเฮติ
 America/Port_of_Spain:
@@ -3302,10 +3302,10 @@ America/Porto_Velho:
   :GENERIC_LOCATION:
     :generic: เวลาปอร์ตูเวลโย
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานอะเมซอน
+    :generic: เวลามาตรฐานแอมะซอน
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-4
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: เวลาเปอร์โตริโก
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาปุนตาอาเรนัส
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาปุนตาอาเรนัส
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาปุนตาอาเรนัส
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: เวลาซันตาเรม
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: เวลาชิลี
   :LONG:
     :standard: เวลามาตรฐานชิลี
     :daylight: เวลาฤดูร้อนชิลี
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานชิลี
+    :generic: เวลาชิลี
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: เวลาชิลี
@@ -3696,7 +3696,7 @@ America/St_Thomas:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: เวลาหมู่เกาะยูเอสเวอร์จิน
+    :generic: เวลาหมู่เกาะเวอร์จินของสหรัฐอเมริกา
   :LONG:
     :standard: เวลามาตรฐานแอตแลนติก
     :daylight: เวลาออมแสงของแอตแลนติก
@@ -3706,7 +3706,7 @@ America/St_Thomas:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: เวลาหมู่เกาะยูเอสเวอร์จิน
+    :generic: เวลาหมู่เกาะเวอร์จินของสหรัฐอเมริกา
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3876,7 +3876,7 @@ America/Virgin:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: เวลาหมู่เกาะยูเอสเวอร์จิน
+    :generic: เวลาหมู่เกาะเวอร์จินของสหรัฐอเมริกา
   :LONG:
     :standard: เวลามาตรฐานแอตแลนติก
     :daylight: เวลาออมแสงของแอตแลนติก
@@ -3886,7 +3886,7 @@ America/Virgin:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: เวลาหมู่เกาะยูเอสเวอร์จิน
+    :generic: เวลาหมู่เกาะเวอร์จินของสหรัฐอเมริกา
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -3984,7 +3984,7 @@ Antarctica/Davis:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: เวลาดาวีส์
+    :generic: เวลาเดวิส
   :LONG:
     :standard: เวลาเดวิส
     :daylight: GMT+07:00
@@ -3994,7 +3994,7 @@ Antarctica/Davis:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: เวลาดาวีส์
+    :generic: เวลาเดวิส
 Antarctica/DumontDUrville:
   :offset: 36000000
   :LONG_GMT:
@@ -4038,7 +4038,7 @@ Antarctica/Mawson:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: เวลามาว์ซัน
+    :generic: เวลามอว์สัน
   :LONG:
     :standard: เวลามอว์สัน
     :daylight: GMT+05:00
@@ -4048,7 +4048,7 @@ Antarctica/Mawson:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: เวลามาว์ซัน
+    :generic: เวลามอว์สัน
 Antarctica/McMurdo:
   :offset: 43200000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: เวลาพาล์เมอร์
   :LONG:
-    :standard: เวลามาตรฐานชิลี
-    :daylight: เวลาฤดูร้อนชิลี
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานชิลี
+    :generic: เวลาพาล์เมอร์
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4092,7 +4092,7 @@ Antarctica/Rothera:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: เวลาโรเทรา
+    :generic: เวลาโรธีรา
   :LONG:
     :standard: เวลาโรธีรา
     :daylight: GMT-03:00
@@ -4102,7 +4102,7 @@ Antarctica/Rothera:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: เวลาโรเทรา
+    :generic: เวลาโรธีรา
 Antarctica/South_Pole:
   :offset: 43200000
   :LONG_GMT:
@@ -4128,17 +4128,17 @@ Antarctica/Syowa:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: เวลาเซียวา
+    :generic: เวลาไซโยวา
   :LONG:
-    :standard: เวลาโซวา
+    :standard: เวลาไซโยวา
     :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: เวลาโซวา
+    :generic: เวลาไซโยวา
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: เวลาเซียวา
+    :generic: เวลาไซโยวา
 Antarctica/Troll:
   :offset: 0
   :LONG_GMT:
@@ -4164,7 +4164,7 @@ Antarctica/Vostok:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: เวลาวอสต็อค
+    :generic: เวลาวอสตอค
   :LONG:
     :standard: เวลาวอสตอค
     :daylight: GMT+06:00
@@ -4174,7 +4174,7 @@ Antarctica/Vostok:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: เวลาวอสต็อค
+    :generic: เวลาวอสตอค
 Arctic/Longyearbyen:
   :offset: 3600000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: เวลาเติร์กเมนิสถาน
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาอทีราว
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: เวลาคาซัคสถานตะวันตก
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาคาซัคสถานตะวันตก
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาอทีราว
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: เวลามาตรฐานอาเซอร์ไบจาน
     :daylight: เวลาฤดูร้อนอาเซอร์ไบจาน
   :LONG_GENERIC:
-    :generic: เวลาอาเซอร์ไบจาน
+    :generic: เวลามาตรฐานอาเซอร์ไบจาน
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: เวลาอาเซอร์ไบจาน
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: เวลาBarnaul
+    :generic: เวลาบาร์เนาว์
   :LONG:
     :standard: GMT+07:00
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: เวลาBarnaul
+    :generic: เวลาบาร์เนาว์
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: เวลาBarnaul
+    :generic: เวลาบาร์เนาว์
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: เวลามาตรฐานชอยปาลชาน
     :daylight: เวลาฤดูร้อนชอยปาลชาน
   :LONG_GENERIC:
-    :generic: เวลาชอยปาลชาน
+    :generic: เวลามาตรฐานชอยปาลชาน
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: เวลาชอยบาลซาน
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: เวลาทาจิกิสถาน
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาแฟมากุสตา
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาแฟมากุสตา
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาแฟมากุสตา
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: เวลามาตรฐานฮอฟด์
     :daylight: เวลาฤดูร้อนฮอฟด์
   :LONG_GENERIC:
-    :generic: เวลาฮอฟด์
+    :generic: เวลามาตรฐานฮอฟด์
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: เวลาฮอฟด์
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: เวลาอีร์คุตสค์
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: เวลาตุรกี
   :LONG:
-    :standard: เวลามาตรฐานยุโรปตะวันออก
-    :daylight: เวลาฤดูร้อนยุโรปตะวันออก
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันออก
+    :generic: เวลาตุรกี
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: เวลาตุรกี
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: เวลาเขตปกครองพิเศษมาเก๊าแห่งสาธารณรัฐประชาชนจีน
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: เวลามากาดาน
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: เวลามาตรฐานมากาดาน
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: เวลามากาดาน
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: เวลาไซปรัส
+    :generic: เวลานิโคเซีย
   :LONG:
     :standard: เวลามาตรฐานยุโรปตะวันออก
     :daylight: เวลาฤดูร้อนยุโรปตะวันออก
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: เวลาไซปรัส
+    :generic: เวลานิโคเซีย
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: เวลาโนโวคุซเนตสค์
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: เวลาโนโวซิบิร์สก์
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: เวลามาตรฐานโนโวซีบีสค์
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: เวลาโนโวซิบิร์สก์
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: เวลาพอนเทียนัก
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: เวลาเกาหลีเหนือ
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: เวลามาตรฐานเกาหลี
+    :daylight: เวลาออมแสงเกาหลี
   :LONG_GENERIC:
-    :generic: เวลาเกาหลีเหนือ
+    :generic: เวลามาตรฐานเกาหลี
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: เวลาเกาหลีเหนือ
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: เวลากาตาร์
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: เวลาไคซีลอร์ดา
+    :generic: เวลาคอสตาเนย์
   :LONG:
     :standard: เวลาคาซัคสถานตะวันออก
     :daylight: GMT+06:00
@@ -5434,6 +5434,24 @@ Asia/Qyzylorda:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
+    :generic: เวลาคอสตาเนย์
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: เวลาไคซีลอร์ดา
+  :LONG:
+    :standard: เวลาคาซัคสถานตะวันตก
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: เวลาคาซัคสถานตะวันตก
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
+  :SHORT_GENERIC:
     :generic: เวลาไคซีลอร์ดา
 Asia/Rangoon:
   :offset: 23400000
@@ -5442,7 +5460,7 @@ Asia/Rangoon:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: เวลาเมียนม่าร์ (พม่า)
+    :generic: เวลาเมียนมาร์ (พม่า)
   :LONG:
     :standard: เวลาพม่า
     :daylight: GMT+06:30
@@ -5452,7 +5470,7 @@ Asia/Rangoon:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: เวลาเมียนม่าร์ (พม่า)
+    :generic: เวลาเมียนมาร์ (พม่า)
 Asia/Riyadh:
   :offset: 10800000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: เวลาญี่ปุ่น
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาตอมสค์
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาตอมสค์
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาตอมสค์
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: เวลามาตรฐานอูลานบาตอร์
     :daylight: เวลาฤดูร้อนอูลานบาตอร์
   :LONG_GENERIC:
-    :generic: เวลาอูลานบาตอร์
+    :generic: เวลามาตรฐานอูลานบาตอร์
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: เวลาอูลานบาตอร์
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: เวลามาตรฐานอูลานบาตอร์
     :daylight: เวลาฤดูร้อนอูลานบาตอร์
   :LONG_GENERIC:
-    :generic: เวลาอูลานบาตอร์
+    :generic: เวลามาตรฐานอูลานบาตอร์
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: เวลาอูลานบาตอร์
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: เวลายาคุตสค์
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาเมียนมาร์ (พม่า)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: เวลาพม่า
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาพม่า
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาเมียนมาร์ (พม่า)
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6342,17 +6360,17 @@ Australia/LHI:
   :SHORT_GMT:
     :generic: "+1030"
   :GENERIC_LOCATION:
-    :generic: เวลาลอร์ดโฮวี
+    :generic: เวลาลอร์ดโฮว์
   :LONG:
     :standard: เวลามาตรฐานลอร์ดโฮว์
-    :daylight: เวลาออมแสงของลอร์ดโฮว์
+    :daylight: เวลาออมแสงลอร์ดโฮว์
   :LONG_GENERIC:
-    :generic: เวลาลอร์ดโฮว
+    :generic: เวลาลอร์ดโฮว์
   :SHORT:
     :standard: GMT+10:30
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: เวลาลอร์ดโฮวี
+    :generic: เวลาลอร์ดโฮว์
 Australia/Lindeman:
   :offset: 36000000
   :LONG_GMT:
@@ -6378,17 +6396,17 @@ Australia/Lord_Howe:
   :SHORT_GMT:
     :generic: "+1030"
   :GENERIC_LOCATION:
-    :generic: เวลาลอร์ดโฮวี
+    :generic: เวลาลอร์ดโฮว์
   :LONG:
     :standard: เวลามาตรฐานลอร์ดโฮว์
-    :daylight: เวลาออมแสงของลอร์ดโฮว์
+    :daylight: เวลาออมแสงลอร์ดโฮว์
   :LONG_GENERIC:
-    :generic: เวลาลอร์ดโฮว
+    :generic: เวลาลอร์ดโฮว์
   :SHORT:
     :standard: GMT+10:30
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: เวลาลอร์ดโฮวี
+    :generic: เวลาลอร์ดโฮว์
 Australia/Melbourne:
   :offset: 36000000
   :LONG_GMT:
@@ -6650,10 +6668,10 @@ Brazil/West:
   :GENERIC_LOCATION:
     :generic: เวลามาเนาส์
   :LONG:
-    :standard: เวลามาตรฐานอะเมซอน
-    :daylight: เวลาฤดูร้อนอะเมซอน
+    :standard: เวลามาตรฐานแอมะซอน
+    :daylight: เวลาฤดูร้อนแอมะซอน
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานอะเมซอน
+    :generic: เวลามาตรฐานแอมะซอน
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-4
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: เวลาวินนิเพก
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: เวลาริไจนา
-  :LONG:
-    :standard: เวลามาตรฐานตอนกลางในอเมริกาเหนือ
-    :daylight: เวลาออมแสงตอนกลางในอเมริกาเหนือ
-  :LONG_GENERIC:
-    :generic: เวลามาตรฐานตอนกลางในอเมริกาเหนือ
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: เวลาริไจนา
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: เวลาไวต์ฮอร์ส
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: เวลาชิลี
   :LONG:
     :standard: เวลามาตรฐานชิลี
     :daylight: เวลาฤดูร้อนชิลี
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานชิลี
+    :generic: เวลาชิลี
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: เวลาชิลี
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: เวลาอีสเตอร์
   :LONG:
     :standard: เวลามาตรฐานเกาะอีสเตอร์
     :daylight: เวลาฤดูร้อนเกาะอีสเตอร์
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานเกาะอีสเตอร์
+    :generic: เวลาเกาะอีสเตอร์
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: เวลาอีสเตอร์
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: เวลาAstrakhan
+    :generic: เวลาแอสตราคาน
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: เวลาAstrakhan
+    :generic: เวลาแอสตราคาน
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: เวลาAstrakhan
+    :generic: เวลาแอสตราคาน
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: เวลาเกาะแมน
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: เวลาตุรกี
   :LONG:
-    :standard: เวลามาตรฐานยุโรปตะวันออก
-    :daylight: เวลาฤดูร้อนยุโรปตะวันออก
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันออก
+    :generic: เวลาตุรกี
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: เวลาตุรกี
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: เวลายูเครน
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาคิรอฟ
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาคิรอฟ
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาคิรอฟ
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: เวลาเบลารุส
   :LONG:
-    :standard: เวลายุโรปตะวันออกไกล
-    :daylight: GMT+03:00
+    :standard: เวลามาตรฐานมอสโก
+    :daylight: เวลาฤดูร้อนมอสโก
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันออกไกล
+    :generic: เวลามาตรฐานมอสโก
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: เวลาไซปรัส
+    :generic: เวลานิโคเซีย
   :LONG:
     :standard: เวลามาตรฐานยุโรปตะวันออก
     :daylight: เวลาฤดูร้อนยุโรปตะวันออก
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: เวลาไซปรัส
+    :generic: เวลานิโคเซีย
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: เวลาสาธารณรัฐเช็ก
+    :generic: เวลาเช็ก
   :LONG:
     :standard: เวลามาตรฐานยุโรปกลาง
     :daylight: เวลาฤดูร้อนยุโรปกลาง
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: เวลาสาธารณรัฐเช็ก
+    :generic: เวลาเช็ก
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8394,7 +8394,7 @@ Europe/San_Marino:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: เวลาซานมารีโน
+    :generic: เวลาซานมาริโน
   :LONG:
     :standard: เวลามาตรฐานยุโรปกลาง
     :daylight: เวลาฤดูร้อนยุโรปกลาง
@@ -8404,7 +8404,7 @@ Europe/San_Marino:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: เวลาซานมารีโน
+    :generic: เวลาซานมาริโน
 Europe/Sarajevo:
   :offset: 3600000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: เวลาบอสเนียและเฮอร์เซโกวีนา
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: เวลาซาราทอฟ
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลาซาราทอฟ
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: เวลาซาราทอฟ
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: เวลามาซิโดเนีย
+    :generic: เวลามาซิโดเนียเหนือ
   :LONG:
     :standard: เวลามาตรฐานยุโรปกลาง
     :daylight: เวลาฤดูร้อนยุโรปกลาง
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: เวลามาซิโดเนีย
+    :generic: เวลามาซิโดเนียเหนือ
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: เวลาUlyanovsk
+    :generic: เวลาอะลิยานอฟ
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: เวลาUlyanovsk
+    :generic: เวลาอะลิยานอฟ
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: เวลาUlyanovsk
+    :generic: เวลาอะลิยานอฟ
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: เวลาลิทัวเนีย
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: เวลาวอลโกกราด
   :LONG:
-    :standard: เวลามาตรฐานมอสโก
-    :daylight: เวลาฤดูร้อนมอสโก
+    :standard: เวลามาตรฐานวอลโกกราด
+    :daylight: เวลาฤดูร้อนวอลโกกราด
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานมอสโก
+    :generic: เวลามาตรฐานวอลโกกราด
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: เวลาวอลโกกราด
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลามาตรฐานกรีนิช
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: เวลามาตรฐานกรีนิช
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9402,7 +9402,7 @@ NZ-CHAT:
   :SHORT_GMT:
     :generic: "+1245"
   :GENERIC_LOCATION:
-    :generic: เวลาแชแทม
+    :generic: เวลาแชทัม
   :LONG:
     :standard: เวลามาตรฐานแชทัม
     :daylight: เวลาออมแสงแชทัม
@@ -9412,7 +9412,7 @@ NZ-CHAT:
     :standard: GMT+12:45
     :daylight: GMT+13:45
   :SHORT_GENERIC:
-    :generic: เวลาแชแทม
+    :generic: เวลาแชทัม
 Navajo:
   :offset: -25200000
   :LONG_GMT:
@@ -9528,7 +9528,7 @@ Pacific/Chatham:
   :SHORT_GMT:
     :generic: "+1245"
   :GENERIC_LOCATION:
-    :generic: เวลาแชแทม
+    :generic: เวลาแชทัม
   :LONG:
     :standard: เวลามาตรฐานแชทัม
     :daylight: เวลาออมแสงแชทัม
@@ -9538,7 +9538,7 @@ Pacific/Chatham:
     :standard: GMT+12:45
     :daylight: GMT+13:45
   :SHORT_GENERIC:
-    :generic: เวลาแชแทม
+    :generic: เวลาแชทัม
 Pacific/Chuuk:
   :offset: 36000000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: เวลาทรัก
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: เวลาอีสเตอร์
   :LONG:
     :standard: เวลามาตรฐานเกาะอีสเตอร์
     :daylight: เวลาฤดูร้อนเกาะอีสเตอร์
   :LONG_GENERIC:
-    :generic: เวลามาตรฐานเกาะอีสเตอร์
+    :generic: เวลาเกาะอีสเตอร์
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: เวลาอีสเตอร์
@@ -9600,7 +9600,7 @@ Pacific/Enderbury:
   :SHORT_GMT:
     :generic: "+1300"
   :GENERIC_LOCATION:
-    :generic: เวลาเอนเดอร์เบอร์รี
+    :generic: เวลาเอนเดอร์เบอรี
   :LONG:
     :standard: เวลาหมู่เกาะฟินิกซ์
     :daylight: GMT+13:00
@@ -9610,7 +9610,7 @@ Pacific/Enderbury:
     :standard: GMT+13
     :daylight: GMT+13
   :SHORT_GENERIC:
-    :generic: เวลาเอนเดอร์เบอร์รี
+    :generic: เวลาเอนเดอร์เบอรี
 Pacific/Fakaofo:
   :offset: 46800000
   :LONG_GMT:
@@ -9798,7 +9798,7 @@ Pacific/Kosrae:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: เวลาคอสแร
+    :generic: เวลาคอสไร
   :LONG:
     :standard: เวลาคอสไร
     :daylight: GMT+11:00
@@ -9808,7 +9808,7 @@ Pacific/Kosrae:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: เวลาคอสแร
+    :generic: เวลาคอสไร
 Pacific/Kwajalein:
   :offset: 43200000
   :LONG_GMT:
@@ -9852,7 +9852,7 @@ Pacific/Marquesas:
   :SHORT_GMT:
     :generic: "-0930"
   :GENERIC_LOCATION:
-    :generic: เวลามาร์เควซัส
+    :generic: เวลามาร์เคซัส
   :LONG:
     :standard: เวลามาร์เคซัส
     :daylight: GMT-09:30
@@ -9862,7 +9862,7 @@ Pacific/Marquesas:
     :standard: GMT-9:30
     :daylight: GMT-9:30
   :SHORT_GENERIC:
-    :generic: เวลามาร์เควซัส
+    :generic: เวลามาร์เคซัส
 Pacific/Midway:
   :offset: -39600000
   :LONG_GMT:
@@ -10016,10 +10016,10 @@ Pacific/Pohnpei:
   :GENERIC_LOCATION:
     :generic: เวลาโปนาเป
   :LONG:
-    :standard: เวลาโปเนป
+    :standard: เวลาโปนาเป
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: เวลาโปเนป
+    :generic: เวลาโปนาเป
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
@@ -10034,10 +10034,10 @@ Pacific/Ponape:
   :GENERIC_LOCATION:
     :generic: เวลาโปนาเป
   :LONG:
-    :standard: เวลาโปเนป
+    :standard: เวลาโปนาเป
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: เวลาโปเนป
+    :generic: เวลาโปนาเป
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
@@ -10122,7 +10122,7 @@ Pacific/Tahiti:
   :SHORT_GMT:
     :generic: "-1000"
   :GENERIC_LOCATION:
-    :generic: เวลาทาฮิติ
+    :generic: เวลาตาฮีตี
   :LONG:
     :standard: เวลาตาฮีตี
     :daylight: GMT-10:00
@@ -10132,7 +10132,7 @@ Pacific/Tahiti:
     :standard: GMT-10
     :daylight: GMT-10
   :SHORT_GENERIC:
-    :generic: เวลาทาฮิติ
+    :generic: เวลาตาฮีตี
 Pacific/Tarawa:
   :offset: 43200000
   :LONG_GMT:
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: เวลาสิงคโปร์
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: เวลาตุรกี
   :LONG:
-    :standard: เวลามาตรฐานยุโรปตะวันออก
-    :daylight: เวลาฤดูร้อนยุโรปตะวันออก
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: เวลายุโรปตะวันออก
+    :generic: เวลาตุรกี
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: เวลาตุรกี
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: เวลามาตรฐานฮาวาย-อะลูเชียน
     :daylight: เวลาออมแสงฮาวาย-อะลูเชียน
   :LONG_GENERIC:
-    :generic: เวลาฮาวาย-อะลูเชียน (เอดัก)
+    :generic: เวลาฮาวาย-อะลูเชียน
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: เวลาสากลเชิงพิกัด
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

@@ -1,18 +1,11 @@
 --- 
 :da: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: +HH.mm;-HH.mm
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: +HH.mm;-HH.mm
+    :region_format: "{0} (+0)"
   :metazones: 
     :Acre: 
       :long: 
@@ -148,12 +141,12 @@
         :standard: Azorerne-normaltid
     :Bangladesh: 
       :long: 
-        :daylight: "Bangladeshisk sommertid"
-        :generic: "Bangladeshisk tid"
-        :standard: "Bangladeshisk normaltid"
+        :daylight: Bangladesh-sommertid
+        :generic: Bangladesh-tid
+        :standard: Bangladesh-normaltid
     :Bhutan: 
       :long: 
-        :standard: "Bhutanesisk tid"
+        :standard: Bhutan-tid
     :Bolivia: 
       :long: 
         :standard: "Boliviansk tid"
@@ -167,9 +160,9 @@
         :standard: "Brunei Darussalam-tid"
     :Cape_Verde: 
       :long: 
-        :daylight: "Kapverdisk sommertid"
-        :generic: "Kapverdisk tid"
-        :standard: "Kapverdisk normaltid"
+        :daylight: "Kap Verde-sommertid"
+        :generic: "Kap Verde-tid"
+        :standard: "Kap Verde-normaltid"
     :Chamorro: 
       :long: 
         :standard: Chamorro-tid
@@ -190,12 +183,12 @@
         :standard: "Kinesisk normaltid"
     :Choibalsan: 
       :long: 
-        :daylight: Choibalsan-sommertid
-        :generic: Choibalsan-tid
-        :standard: Choibalsan-normaltid
+        :daylight: Tsjojbalsan-sommertid
+        :generic: Tsjojbalsan-tid
+        :standard: Tsjojbalsan-normaltid
     :Christmas: 
       :long: 
-        :standard: "Christmas Island-normaltid"
+        :standard: Juleøen-normaltid
     :Cocos: 
       :long: 
         :standard: Cocosøerne-normaltid
@@ -288,9 +281,9 @@
         :standard: Gambier-tid
     :Georgia: 
       :long: 
-        :daylight: "Georgiansk sommertid"
-        :generic: "Georgiansk tid"
-        :standard: "Georgiansk normaltid"
+        :daylight: "Georgisk sommertid"
+        :generic: "Georgisk tid"
+        :standard: "Georgisk normaltid"
     :Gilbert_Islands: 
       :long: 
         :standard: Gilbertøerne-tid
@@ -387,9 +380,9 @@
         :standard: Kosrae-tid
     :Krasnoyarsk: 
       :long: 
-        :daylight: Krasnoyarsk-sommertid
-        :generic: Krasnoyarsk-tid
-        :standard: Krasnoyarsk-normaltid
+        :daylight: Krasnojarsk-sommertid
+        :generic: Krasnojarsk-tid
+        :standard: Krasnojarsk-normaltid
     :Kyrgystan: 
       :long: 
         :standard: "Kirgisisk tid"
@@ -419,10 +412,10 @@
         :standard: Magadan-normaltid
     :Malaysia: 
       :long: 
-        :standard: "Malaysisk tid"
+        :standard: Malaysia-tid
     :Maldives: 
       :long: 
-        :standard: "Maldivisk tid"
+        :standard: Maldiverne-tid
     :Marquesas: 
       :long: 
         :standard: Marquesas-tid
@@ -454,12 +447,12 @@
         :standard: "Ulan Bator-normaltid"
     :Moscow: 
       :long: 
-        :daylight: "Moskovitisk sommertid"
-        :generic: "Moskovitisk tid"
-        :standard: "Moskovitisk normaltid"
+        :daylight: Moskva-sommertid
+        :generic: Moskva-tid
+        :standard: Moskva-normaltid
     :Myanmar: 
       :long: 
-        :standard: "Myanmarsk tid"
+        :standard: Myanmar-tid
     :Nauru: 
       :long: 
         :standard: Nauru-tid
@@ -468,9 +461,9 @@
         :standard: "Nepalesisk tid"
     :New_Caledonia: 
       :long: 
-        :daylight: "Nykaledonsk sommertid"
-        :generic: "Nykaledonsk tid"
-        :standard: "Nykaledonsk normaltid"
+        :daylight: "Ny Kaledonien-sommertid"
+        :generic: "Ny Kaledonien-tid"
+        :standard: "Ny Kaledonien-normaltid"
     :New_Zealand: 
       :long: 
         :daylight: "Newzealandsk sommertid"
@@ -497,9 +490,9 @@
         :standard: Nordmarianerne-tid
     :Novosibirsk: 
       :long: 
-        :daylight: "Novosibirsk sommertid"
-        :generic: "Novosibirsk tid"
-        :standard: "Novosibirsk normaltid"
+        :daylight: Novosibirsk-sommertid
+        :generic: Novosibirsk-tid
+        :standard: Novosibirsk-normaltid
     :Omsk: 
       :long: 
         :daylight: Omsk-sommertid
@@ -545,6 +538,9 @@
     :Ponape: 
       :long: 
         :standard: Ponape-tid
+    :Pyongyang: 
+      :long: 
+        :standard: Pyongyang-tid
     :Qyzylorda: 
       :long: 
         :daylight: Qyzylorda-sommertid
@@ -568,15 +564,15 @@
         :standard: Samara-normaltid
     :Samoa: 
       :long: 
-        :daylight: Samoa-sommertid
-        :generic: Samoa-tid
-        :standard: Samoa-normaltid
+        :daylight: "Samoansk sommertid"
+        :generic: "Samoansk tid"
+        :standard: "Samoansk normaltid"
     :Seychelles: 
       :long: 
         :standard: "Seychellisk tid"
     :Singapore: 
       :long: 
-        :standard: "Singaporeansk normaltid"
+        :standard: Singapore-tid
     :Solomon: 
       :long: 
         :standard: Salomonøerne-tid
@@ -591,7 +587,7 @@
         :standard: Syowa-tid
     :Tahiti: 
       :long: 
-        :standard: "Tahitisk tid"
+        :standard: Tahiti-tid
     :Taipei: 
       :long: 
         :daylight: Taipei-sommertid
@@ -652,20 +648,20 @@
         :standard: Vostok-tid
     :Wake: 
       :long: 
-        :standard: Wakeøen-tid
+        :standard: "Wake Island-tid"
     :Wallis: 
       :long: 
         :standard: "Wallis og Futuna-tid"
     :Yakutsk: 
       :long: 
-        :daylight: Yakutsk-sommertid
-        :generic: Yakutsk-tid
-        :standard: Yakutsk-normaltid
+        :daylight: Jakutsk-sommertid
+        :generic: Jakutsk-tid
+        :standard: Jakutsk-normaltid
     :Yekaterinburg: 
       :long: 
-        :daylight: "Yekaterinburgsk sommertid"
-        :generic: "Yekaterinburgsk tid"
-        :standard: "Yekaterinburgsk normaltid"
+        :daylight: Jekaterinburg-sommertid
+        :generic: Jekaterinburg-tid
+        :standard: Jekaterinburg-normaltid
   :timezones: 
     :Africa/Abidjan: 
       :city: Abidjan
@@ -832,7 +828,7 @@
     :America/Cayenne: 
       :city: Cayenne
     :America/Cayman: 
-      :city: Cayman
+      :city: Caymanøerne
     :America/Chicago: 
       :city: Chicago
     :America/Chihuahua: 
@@ -867,6 +863,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -1001,6 +999,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1096,23 +1096,27 @@
     :Asia/Anadyr: 
       :city: Anadyr
     :Asia/Aqtau: 
-      :city: Aqtau
+      :city: Aktau
     :Asia/Aqtobe: 
-      :city: Aqtobe
+      :city: Aktobe
     :Asia/Ashgabat: 
-      :city: Ashgabat
+      :city: Asjkhabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
-      :city: Baghdad
+      :city: Bagdad
     :Asia/Bahrain: 
       :city: Bahrain
     :Asia/Baku: 
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
-      :city: Bishkek
+      :city: Bisjkek
     :Asia/Brunei: 
       :city: Brunei
     :Asia/Calcutta: 
@@ -1120,7 +1124,7 @@
     :Asia/Chita: 
       :city: Chita
     :Asia/Choibalsan: 
-      :city: Choibalsan
+      :city: Tsjojbalsan
     :Asia/Colombo: 
       :city: Colombo
     :Asia/Damascus: 
@@ -1132,7 +1136,9 @@
     :Asia/Dubai: 
       :city: Dubai
     :Asia/Dushanbe: 
-      :city: Dushanbe
+      :city: Dusjanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1152,7 +1158,7 @@
     :Asia/Kabul: 
       :city: Kabul
     :Asia/Kamchatka: 
-      :city: Kamchatka
+      :city: Kamtjatka
     :Asia/Karachi: 
       :city: Karachi
     :Asia/Katmandu: 
@@ -1160,7 +1166,7 @@
     :Asia/Khandyga: 
       :city: Khandyga
     :Asia/Krasnoyarsk: 
-      :city: Krasnoyarsk
+      :city: Krasnojarsk
     :Asia/Kuala_Lumpur: 
       :city: "Kuala Lumpur"
     :Asia/Kuching: 
@@ -1180,7 +1186,7 @@
     :Asia/Nicosia: 
       :city: Nicosia
     :Asia/Novokuznetsk: 
-      :city: Novokuznetsk
+      :city: Novokusnetsk
     :Asia/Novosibirsk: 
       :city: Novosibirsk
     :Asia/Omsk: 
@@ -1196,7 +1202,7 @@
     :Asia/Qatar: 
       :city: Qatar
     :Asia/Qyzylorda: 
-      :city: Qyzylorda
+      :city: Kyzylorda
     :Asia/Rangoon: 
       :city: Rangoon
     :Asia/Riyadh: 
@@ -1227,10 +1233,12 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
-      :city: Ulaanbaatar
+      :city: "Ulan Bator"
     :Asia/Urumqi: 
-      :city: Urumqi
+      :city: Ürümqi
     :Asia/Ust-Nera: 
       :city: Ust-Nera
     :Asia/Vientiane: 
@@ -1242,7 +1250,7 @@
     :Asia/Yekaterinburg: 
       :city: Jekaterinburg
     :Asia/Yerevan: 
-      :city: Yerevan
+      :city: Jerevan
     :Atlantic/Azores: 
       :city: Azorerne
     :Atlantic/Bermuda: 
@@ -1287,12 +1295,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Koordineret universaltid"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Ukendt by"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athen
     :Europe/Belgrade: 
@@ -1333,6 +1348,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1373,6 +1390,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1384,9 +1403,11 @@
     :Europe/Tallinn: 
       :city: Tallinn
     :Europe/Tirane: 
-      :city: Tirane
+      :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
-      :city: Uzhgorod
+      :city: Uzjhorod
     :Europe/Vaduz: 
       :city: Vaduz
     :Europe/Vatican: 
@@ -1410,11 +1431,11 @@
     :Indian/Chagos: 
       :city: Chagos
     :Indian/Christmas: 
-      :city: Christmas
+      :city: Juleøerne
     :Indian/Cocos: 
       :city: Cocos
     :Indian/Comoro: 
-      :city: Comoro
+      :city: Comorerne
     :Indian/Kerguelen: 
       :city: Kerguelen
     :Indian/Mahe: 

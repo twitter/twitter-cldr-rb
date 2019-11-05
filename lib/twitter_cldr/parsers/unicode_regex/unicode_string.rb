@@ -38,6 +38,10 @@ module TwitterCldr
           to_regexp_str
         end
 
+        def type
+          :unicode_string
+        end
+
       end
     end
   end

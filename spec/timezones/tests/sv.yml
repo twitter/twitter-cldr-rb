@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Alger)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egypten)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Marockotid
   :LONG:
-    :standard: västeuropeisk normaltid
-    :daylight: västeuropeisk sommartid
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: västeuropeisk tid
+    :generic: Marockotid
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Marockotid
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Västsaharatid
   :LONG:
-    :standard: västeuropeisk normaltid
-    :daylight: västeuropeisk sommartid
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: västeuropeisk tid
+    :generic: Västsaharatid
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Västsaharatid
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Ugandatid
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Sudantid
   :LONG:
-    :standard: östafrikansk tid
-    :daylight: GMT+03:00
+    :standard: centralafrikansk tid
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: östafrikansk tid
+    :generic: centralafrikansk tid
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Sudantid
 Africa/Kigali:
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Tunisien)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Namibiatid
   :LONG:
-    :standard: västafrikansk normaltid
-    :daylight: västafrikansk sommartid
+    :standard: centralafrikansk tid
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: västafrikansk tid (Windhoek)
+    :generic: centralafrikansk tid
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Namibiatid
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Honolulu, normaltid
     :daylight: Honolulu, sommartid
   :LONG_GENERIC:
-    :generic: Honolulutid (Adak)
+    :generic: Honolulutid
   :SHORT:
     :standard: GMT−10
     :daylight: GMT−9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Honolulu, normaltid
     :daylight: Honolulu, sommartid
   :LONG_GENERIC:
-    :generic: Honolulutid (Adak)
+    :generic: Honolulutid
   :SHORT:
     :standard: GMT−10
     :daylight: GMT−9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amazonas, normaltid
     :daylight: Amazonas, sommartid
   :LONG_GENERIC:
-    :generic: Amazonastid
+    :generic: Amazonastid (Campo Grande)
   :SHORT:
     :standard: GMT−4
     :daylight: GMT−3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Cancúntid
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT−04:30
+    :generic: GMT−04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Venezuelatid
   :LONG:
     :standard: venezuelansk tid
-    :daylight: GMT−04:30
+    :daylight: GMT−04:00
   :LONG_GENERIC:
     :generic: venezuelansk tid
   :SHORT:
-    :standard: GMT−4:30
-    :daylight: GMT−4:30
+    :standard: GMT−4
+    :daylight: GMT−4
   :SHORT_GENERIC:
     :generic: Venezuelatid
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amazonas, normaltid
     :daylight: Amazonas, sommartid
   :LONG_GENERIC:
-    :generic: Amazonastid
+    :generic: Amazonastid (Cuiabá)
   :SHORT:
     :standard: GMT−4
     :daylight: GMT−3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Goose Baytid
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT−04:00
+    :generic: GMT−05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Turks- och Caicosöarnatid
   :LONG:
-    :standard: nordamerikansk atlantnormaltid
-    :daylight: nordamerikansk atlantsommartid
+    :standard: östnordamerikansk normaltid
+    :daylight: östnordamerikansk sommartid
   :LONG_GENERIC:
-    :generic: nordamerikansk atlantnormaltid
+    :generic: östnordamerikansk tid
   :SHORT:
-    :standard: GMT−4
+    :standard: GMT−5
     :daylight: GMT−4
   :SHORT_GENERIC:
     :generic: Turks- och Caicosöarnatid
@@ -2742,7 +2742,7 @@ America/Marigot:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: S:t Martintid
+    :generic: Saint-Martintid
   :LONG:
     :standard: nordamerikansk atlantnormaltid
     :daylight: nordamerikansk atlantsommartid
@@ -2752,7 +2752,7 @@ America/Marigot:
     :standard: GMT−4
     :daylight: GMT−4
   :SHORT_GENERIC:
-    :generic: S:t Martintid
+    :generic: Saint-Martintid
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -2886,7 +2886,7 @@ America/Mexico_City:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Mexico Citytid
+    :generic: Mexiko Citytid
   :LONG:
     :standard: centralnordamerikansk normaltid
     :daylight: centralnordamerikansk sommartid
@@ -2896,7 +2896,7 @@ America/Mexico_City:
     :standard: GMT−6
     :daylight: GMT−5
   :SHORT_GENERIC:
-    :generic: Mexico Citytid
+    :generic: Mexiko Citytid
 America/Miquelon:
   :offset: -10800000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: östnordamerikansk normaltid
     :daylight: östnordamerikansk sommartid
   :LONG_GENERIC:
-    :generic: östnordamerikansk normaltid
+    :generic: östnordamerikansk tid
   :SHORT:
     :standard: GMT−5
-    :daylight: GMT−5
+    :daylight: GMT−4
   :SHORT_GENERIC:
     :generic: Haititid
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Puerto Ricotid
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT−03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Punta Arenastid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT−03:00
+    :daylight: GMT−03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenastid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT−3
+    :daylight: GMT−3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenastid
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Santarémtid
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT−03:00
+    :generic: GMT−04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chiletid
   :LONG:
     :standard: chilensk normaltid
     :daylight: chilensk sommartid
   :LONG_GENERIC:
-    :generic: chilensk normaltid
+    :generic: chilensk tid
   :SHORT:
-    :standard: GMT−3
+    :standard: GMT−4
     :daylight: GMT−3
   :SHORT_GENERIC:
     :generic: Chiletid
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Palmertid
   :LONG:
-    :standard: chilensk normaltid
-    :daylight: chilensk sommartid
+    :standard: GMT−03:00
+    :daylight: GMT−03:00
   :LONG_GENERIC:
-    :generic: chilensk normaltid
+    :generic: Palmertid
   :SHORT:
     :standard: GMT−3
     :daylight: GMT−3
@@ -4218,7 +4218,7 @@ Asia/Almaty:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Alma-Atatid
+    :generic: Almatytid
   :LONG:
     :standard: östkazakstansk tid
     :daylight: GMT+06:00
@@ -4228,7 +4228,7 @@ Asia/Almaty:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Alma-Atatid
+    :generic: Almatytid
 Asia/Amman:
   :offset: 7200000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Turkmenistantid
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Atyrautid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: västkazakstansk tid
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: västkazakstansk tid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Atyrautid
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: azerbajdzjansk normaltid
     :daylight: azerbajdzjansk sommartid
   :LONG_GENERIC:
-    :generic: azerbajdzjansk tid
+    :generic: azerbajdzjansk normaltid
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Azerbajdzjantid
 Asia/Bangkok:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Tjojbalsan, normaltid
     :daylight: Tjojbalsan, sommartid
   :LONG_GENERIC:
-    :generic: Tjojbalsantid
+    :generic: Tjojbalsan, normaltid
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Tjojbalsantid
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Tadzjikistantid
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Famagustatid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Famagustatid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Famagustatid
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4812,7 +4812,7 @@ Asia/Hong_Kong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hongkong, S.A.R. Kinatid
+    :generic: Hongkongtid
   :LONG:
     :standard: Hongkong, normaltid
     :daylight: Hongkong, sommartid
@@ -4822,7 +4822,7 @@ Asia/Hong_Kong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hongkong, S.A.R. Kinatid
+    :generic: Hongkongtid
 Asia/Hovd:
   :offset: 25200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Chovd, normaltid
     :daylight: Chovd, sommartid
   :LONG_GENERIC:
-    :generic: Chovdtid
+    :generic: Chovd, normaltid
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Chovdtid
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Irkutsktid
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkiettid
   :LONG:
-    :standard: östeuropeisk normaltid
-    :daylight: östeuropeisk sommartid
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: östeuropeisk tid
+    :generic: Turkiettid
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkiettid
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5154,7 +5154,7 @@ Asia/Macao:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Macao, S.A.R. Kinatid
+    :generic: Macaotid
   :LONG:
     :standard: kinesisk normaltid
     :daylight: kinesisk sommartid
@@ -5164,7 +5164,7 @@ Asia/Macao:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Macao, S.A.R. Kinatid
+    :generic: Macaotid
 Asia/Macau:
   :offset: 28800000
   :LONG_GMT:
@@ -5172,7 +5172,7 @@ Asia/Macau:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Macao, S.A.R. Kinatid
+    :generic: Macaotid
   :LONG:
     :standard: kinesisk normaltid
     :daylight: kinesisk sommartid
@@ -5182,13 +5182,13 @@ Asia/Macau:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Macao, S.A.R. Kinatid
+    :generic: Macaotid
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Magadantid
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Magadan, normaltid
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Magadantid
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cyperntid
+    :generic: Nicosiatid
   :LONG:
     :standard: östeuropeisk normaltid
     :daylight: östeuropeisk sommartid
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Novokuznetsktid
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Novosibirsktid
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Novosibirsk, normaltid
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Novosibirsktid
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Pontianaktid
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Nordkoreatid
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: koreansk normaltid
+    :daylight: koreansk sommartid
   :LONG_GENERIC:
-    :generic: Nordkoreatid
+    :generic: koreansk normaltid
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Nordkoreatid
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Qatartid
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Qyzylordatid
+    :generic: Kostanajtid
   :LONG:
     :standard: östkazakstansk tid
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Kostanajtid
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Qyzylordatid
+  :LONG:
+    :standard: västkazakstansk tid
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: västkazakstansk tid
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Qyzylordatid
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Japantid
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Tomsktid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Tomsktid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Tomsktid
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Ulaanbaatar, normaltid
     :daylight: Ulaanbaatar, sommartid
   :LONG_GENERIC:
-    :generic: Ulaanbaatartid
+    :generic: Ulaanbaatar, normaltid
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulaanbaatartid
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Ulaanbaatar, normaltid
     :daylight: Ulaanbaatar, sommartid
   :LONG_GENERIC:
-    :generic: Ulaanbaatartid
+    :generic: Ulaanbaatar, normaltid
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulaanbaatartid
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Jakutsktid
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Myanmar (Burma)tid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: burmesisk tid
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: burmesisk tid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Myanmar (Burma)tid
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT−5
   :SHORT_GENERIC:
     :generic: Winnipegtid
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT−06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Reginatid
-  :LONG:
-    :standard: centralnordamerikansk normaltid
-    :daylight: centralnordamerikansk sommartid
-  :LONG_GENERIC:
-    :generic: centralnordamerikansk normaltid
-  :SHORT:
-    :standard: GMT−6
-    :daylight: GMT−6
-  :SHORT_GENERIC:
-    :generic: Reginatid
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Whitehorsetid
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT−03:00
+    :generic: GMT−04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chiletid
   :LONG:
     :standard: chilensk normaltid
     :daylight: chilensk sommartid
   :LONG_GENERIC:
-    :generic: chilensk normaltid
+    :generic: chilensk tid
   :SHORT:
-    :standard: GMT−3
+    :standard: GMT−4
     :daylight: GMT−3
   :SHORT_GENERIC:
     :generic: Chiletid
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT−05:00
+    :generic: GMT−06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Påsköntid
   :LONG:
     :standard: Påskön, normaltid
     :daylight: Påskön, sommartid
   :LONG_GENERIC:
-    :generic: Påskön, normaltid
+    :generic: Påskötid
   :SHORT:
-    :standard: GMT−5
+    :standard: GMT−6
     :daylight: GMT−5
   :SHORT_GENERIC:
     :generic: Påsköntid
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egypten)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Isle of Mantid
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkiettid
   :LONG:
-    :standard: östeuropeisk normaltid
-    :daylight: östeuropeisk sommartid
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: östeuropeisk tid
+    :generic: Turkiettid
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkiettid
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Kaliningrad)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Kirovtid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Kirovtid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Kirovtid
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Vitrysslandtid
   :LONG:
-    :standard: Kaliningradtid
-    :daylight: GMT+03:00
+    :standard: Moskva, normaltid
+    :daylight: Moskva, sommartid
   :LONG_GENERIC:
-    :generic: Kaliningradtid
+    :generic: Moskva, normaltid
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cyperntid
+    :generic: Nicosiatid
   :LONG:
     :standard: östeuropeisk normaltid
     :daylight: östeuropeisk sommartid
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Saratovtid
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Saratovtid
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Saratovtid
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Makedonientid
+    :generic: Nordmakedonientid
   :LONG:
     :standard: centraleuropeisk normaltid
     :daylight: centraleuropeisk sommartid
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsktid
+    :generic: Uljanovsktid
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsktid
+    :generic: Uljanovsktid
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ulyanovsktid
+    :generic: Uljanovsktid
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Volgogradtid
   :LONG:
-    :standard: Moskva, normaltid
-    :daylight: Moskva, sommartid
+    :standard: Volgograd, normaltid
+    :daylight: Volgograd, sommartid
   :LONG_GENERIC:
-    :generic: Moskva, normaltid
+    :generic: Volgograd, normaltid
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Volgogradtid
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwichtid
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwichtid
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8934,7 +8934,7 @@ Hongkong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hongkong, S.A.R. Kinatid
+    :generic: Hongkongtid
   :LONG:
     :standard: Hongkong, normaltid
     :daylight: Hongkong, sommartid
@@ -8944,7 +8944,7 @@ Hongkong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hongkong, S.A.R. Kinatid
+    :generic: Hongkongtid
 Iceland:
   :offset: 0
   :LONG_GMT:
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9366,7 +9366,7 @@ Mexico/General:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Mexico Citytid
+    :generic: Mexiko Citytid
   :LONG:
     :standard: centralnordamerikansk normaltid
     :daylight: centralnordamerikansk sommartid
@@ -9376,7 +9376,7 @@ Mexico/General:
     :standard: GMT−6
     :daylight: GMT−5
   :SHORT_GENERIC:
-    :generic: Mexico Citytid
+    :generic: Mexiko Citytid
 NZ:
   :offset: 43200000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Chuuktid
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT−05:00
+    :generic: GMT−06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Påsköntid
   :LONG:
     :standard: Påskön, normaltid
     :daylight: Påskön, sommartid
   :LONG_GENERIC:
-    :generic: Påskön, normaltid
+    :generic: Påskötid
   :SHORT:
-    :standard: GMT−5
+    :standard: GMT−6
     :daylight: GMT−5
   :SHORT_GENERIC:
     :generic: Påsköntid
@@ -9751,8 +9751,8 @@ Pacific/Honolulu:
   :LONG_GENERIC:
     :generic: Honolulu, normaltid
   :SHORT:
-    :standard: GMT−10
-    :daylight: GMT−10
+    :standard: Honolulunormaltid
+    :daylight: Honolulusommartid
   :SHORT_GENERIC:
     :generic: Honolulutid
 Pacific/Johnston:
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Singaporetid
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkiettid
   :LONG:
-    :standard: östeuropeisk normaltid
-    :daylight: östeuropeisk sommartid
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: östeuropeisk tid
+    :generic: Turkiettid
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkiettid
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Honolulu, normaltid
     :daylight: Honolulu, sommartid
   :LONG_GENERIC:
-    :generic: Honolulutid (Adak)
+    :generic: Honolulutid
   :SHORT:
     :standard: GMT−10
     :daylight: GMT−9
@@ -10489,8 +10489,8 @@ US/Hawaii:
   :LONG_GENERIC:
     :generic: Honolulu, normaltid
   :SHORT:
-    :standard: GMT−10
-    :daylight: GMT−10
+    :standard: Honolulunormaltid
+    :daylight: Honolulusommartid
   :SHORT_GENERIC:
     :generic: Honolulutid
 US/Indiana-Starke:
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Koordinerad universell tid
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

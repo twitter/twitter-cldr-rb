@@ -1,20 +1,19 @@
+# Three custom changes are made in this file:
+#
+#   * Lines like '006C | 00B7; [, DB A9, 05]' are unfolded into the full
+#     form - '006C 00B7; [3D, 05, 05][, DB A9, 05]' (in this example,
+#     [3D, 05, 05] is a collation element for 0x006C). Note: This might
+#     break if tailoring is applied to 0x006C because with this rule
+#     unfolded collation element for '006C 00B7' won't be automatically
+#     updated when a collation element for 0x006C is changed.
+#
+#   * SPECIAL FINAL VALUES are commented, because they are unnecessary for
+#     the current implementation and are breaking some UCA tests.
+
 # Fractional UCA Table, generated from standard UCA
 # 2012-01-03, 21:52:55 GMT [MD]
 # VERSION: UCA=6.1.0, UCD=6.1.0
 # For a description of the format and usage, see CollationAuxiliary.html
-#
-# Three custom changes are made in this file:
-#
-#   * Lines like '006C | 00B7; [, DB A9, 05]' are unfolded into the full form - '006C 00B7; [3D, 05, 05][, DB A9, 05]'
-#     (in this example [3D, 05, 05] is a collation element for 0x006C).
-#     Note:This might break if tailoring is applied to 0x006C because with this rule unfolded collation element for
-#     '006C 00B7' won't be automatically updated when a collation element for 0x006C is changed.
-#
-#   * SPECIAL FINAL VALUES are commented, because there unnecessary for the current implementation and are breaking some
-#     UCA tests.
-#
-#   * HOMELESS COLLATION ELEMENTS are commented because they don't seem necessary - tests are passing without them.
-#
 
 [UCA version = 6.1.0]
 
@@ -13729,11 +13728,11 @@ FF2C; [3D, 05, 91]
 1E3A; [3D, 05, 8F][, D0 1D, 05]
 0142; [3D, 05, 05][, D0 3D, 05]
 0141; [3D, 05, 8F][, D0 3D, 05]
-006C 00B7; [3D, 05, 05][, DB A9, 05] # unfolded from '006C | 00B7; [, DB A9, 05]'
-006C 0387; [3D, 05, 05][, DB A9, 05] # unfolded from '006C | 0387; [, DB A9, 05]'
+006C 00B7; [3D, 05, 05][, DB A9, 05]
+006C 0387; [3D, 05, 05][, DB A9, 05]
 0140; [3D, 05, 05][, DB A9, 05]
-004C 00B7; [3D, 05, 8F][, DB A9, 05] # unfolded from '004C | 00B7; [, DB A9, 05]'
-004C 0387; [3D, 05, 8F][, DB A9, 05] # unfolded from '004C | 0387; [, DB A9, 05]'
+004C 00B7; [3D, 05, 8F][, DB A9, 05]
+004C 0387; [3D, 05, 8F][, DB A9, 05]
 013F; [3D, 05, 8F][, DB A9, 05]
 01C9; [3D, 05, 09][39, 05, 09]
 01C8; [3D, 05, 93][39, 05, 09]
@@ -41080,90 +41079,90 @@ FFFF;	[EF FE, 05, 05]	# Special HIGHEST primary, for ranges
 #FDD0 0062;	[7A FE, 05, 05]	# Special final value for reordering token
 
 # HOMELESS COLLATION ELEMENTS
-#FDD0 0063;	[, 97, 3D]
-#FDD0 0064;	[, A7, 09]
-#FDD0 0065;	[, B1, 09]
-#FDD0 0066;	[, D0 3D, 27]
-#FDD0 0067;	[, D2 75, 31]
-#FDD0 0068;	[, D3 D9, 31]
-#FDD0 0069;	[, D3 D9, 33]
-#FDD0 006A;	[, D5 11, 2D]
-#FDD0 006B;	[, D5 11, 31]
-#FDD0 006C;	[, D5 11, 33]
-#FDD0 006D;	[, D7 39, 3D]
-#FDD0 006E;	[, DA 95, 37]
-#FDD0 006F;	[, DA 95, 3D]
-#FDD0 0070;	[, DA A5, 37]
-#FDD0 0071;	[, DA A5, 3D]
-#FDD0 0072;	[, DB A9, 05]
-#FDD0 0073;	[, DB A9, 09]
-#FDD0 0074;	[, DB A9, 27]
-#FDD0 0075;	[, DB A9, 3D]
-#FDD0 0076;	[, DB B9, 09]
-#FDD0 0077;	[, DB B9, 2B]
-#FDD0 0078;	[, DB B9, 3D]
-#FDD0 0079;	[, DB C9, 09]
-#FDD0 007A;	[, DB D9, 09]
-#FDD0 007B;	[, DB E9, 09]
-#FDD0 007C;	[, DB F9, 05]
-#FDD0 007D;	[, DC 0D, 05]
-#FDD0 007E;	[, DC 1D, 05]
-#FDD0 007F;	[, DC 2D, 05]
-#FDD0 0080;	[, DC 3D, 05]
-#FDD0 0081;	[, DC 4D, 05]
-#FDD0 0082;	[, DC 5D, 05]
-#FDD0 0083;	[, DC 6D, 05]
-#FDD0 0084;	[, DC 7D, 05]
-#FDD0 0085;	[, DC 8D, 05]
-#FDD0 0086;	[, DC 9D, 05]
-#FDD0 0087;	[, DC AD, 05]
-#FDD0 0088;	[, DC BD, 05]
-#FDD0 0089;	[, DC CD, 05]
-#FDD0 008A;	[, DC DD, 05]
-#FDD0 008B;	[, DC ED, 05]
-#FDD0 008C;	[, DC FD, 05]
-#FDD0 008D;	[, DD 11, 05]
-#FDD0 008E;	[, DD 21, 05]
-#FDD0 008F;	[, DD 31, 05]
-#FDD0 0090;	[, DD 41, 05]
-#FDD0 0091;	[, DF 59, 05]
-#FDD0 0092;	[, DF 69, 05]
-#FDD0 0093;	[, DF 79, 05]
-#FDD0 0094;	[, DF 79, 09]
-#FDD0 0095;	[, DF 89, 05]
-#FDD0 0096;	[, E0 1D, 05]
-#FDD0 0097;	[, E0 2D, 05]
-#FDD0 0098;	[, E0 3D, 05]
-#FDD0 0099;	[, E0 4D, 05]
-#FDD0 009A;	[, E0 5D, 05]
-#FDD0 009B;	[, E0 6D, 05]
-#FDD0 009C;	[, E0 7D, 05]
-#FDD0 009D;	[, E0 8D, 05]
-#FDD0 009E;	[, E0 9D, 05]
-#FDD0 009F;	[, E0 AD, 05]
-#FDD0 00A0;	[, E0 BD, 05]
-#FDD0 00A1;	[, E0 CD, 05]
-#FDD0 00A2;	[, E0 DD, 05]
-#FDD0 00A3;	[, E0 ED, 05]
-#FDD0 00A4;	[, E0 FD, 05]
-#FDD0 00A5;	[, E1 11, 05]
-#FDD0 00A6;	[, E1 21, 05]
-#FDD0 00A7;	[, E1 31, 05]
-#FDD0 00A8;	[, E1 41, 05]
-#FDD0 00A9;	[, E1 51, 05]
-#FDD0 00AA;	[, E1 61, 05]
-#FDD0 00AB;	[, E1 71, 05]
-#FDD0 00AC;	[, E1 81, 05]
-#FDD0 00AD;	[, E1 91, 05]
-#FDD0 00AE;	[, E1 A1, 05]
-#FDD0 00AF;	[, E1 B1, 05]
-#FDD0 00B0;	[, E1 C1, 05]
-#FDD0 00B1;	[, E1 D1, 05]
-#FDD0 00B2;	[, E1 E1, 05]
-#FDD0 00B3;	[, E1 F1, 05]
-#FDD0 00B4;	[, E2 05, 05]
-#FDD0 00B5;	[, E2 15, 05]
-#FDD0 00B6;	[, , 3F 03]	# CONSTRUCTED FAKE SECONDARY-IGNORABLE
+FDD0 0063;	[, 97, 3D]
+FDD0 0064;	[, A7, 09]
+FDD0 0065;	[, B1, 09]
+FDD0 0066;	[, D0 3D, 27]
+FDD0 0067;	[, D2 75, 31]
+FDD0 0068;	[, D3 D9, 31]
+FDD0 0069;	[, D3 D9, 33]
+FDD0 006A;	[, D5 11, 2D]
+FDD0 006B;	[, D5 11, 31]
+FDD0 006C;	[, D5 11, 33]
+FDD0 006D;	[, D7 39, 3D]
+FDD0 006E;	[, DA 95, 37]
+FDD0 006F;	[, DA 95, 3D]
+FDD0 0070;	[, DA A5, 37]
+FDD0 0071;	[, DA A5, 3D]
+FDD0 0072;	[, DB A9, 05]
+FDD0 0073;	[, DB A9, 09]
+FDD0 0074;	[, DB A9, 27]
+FDD0 0075;	[, DB A9, 3D]
+FDD0 0076;	[, DB B9, 09]
+FDD0 0077;	[, DB B9, 2B]
+FDD0 0078;	[, DB B9, 3D]
+FDD0 0079;	[, DB C9, 09]
+FDD0 007A;	[, DB D9, 09]
+FDD0 007B;	[, DB E9, 09]
+FDD0 007C;	[, DB F9, 05]
+FDD0 007D;	[, DC 0D, 05]
+FDD0 007E;	[, DC 1D, 05]
+FDD0 007F;	[, DC 2D, 05]
+FDD0 0080;	[, DC 3D, 05]
+FDD0 0081;	[, DC 4D, 05]
+FDD0 0082;	[, DC 5D, 05]
+FDD0 0083;	[, DC 6D, 05]
+FDD0 0084;	[, DC 7D, 05]
+FDD0 0085;	[, DC 8D, 05]
+FDD0 0086;	[, DC 9D, 05]
+FDD0 0087;	[, DC AD, 05]
+FDD0 0088;	[, DC BD, 05]
+FDD0 0089;	[, DC CD, 05]
+FDD0 008A;	[, DC DD, 05]
+FDD0 008B;	[, DC ED, 05]
+FDD0 008C;	[, DC FD, 05]
+FDD0 008D;	[, DD 11, 05]
+FDD0 008E;	[, DD 21, 05]
+FDD0 008F;	[, DD 31, 05]
+FDD0 0090;	[, DD 41, 05]
+FDD0 0091;	[, DF 59, 05]
+FDD0 0092;	[, DF 69, 05]
+FDD0 0093;	[, DF 79, 05]
+FDD0 0094;	[, DF 79, 09]
+FDD0 0095;	[, DF 89, 05]
+FDD0 0096;	[, E0 1D, 05]
+FDD0 0097;	[, E0 2D, 05]
+FDD0 0098;	[, E0 3D, 05]
+FDD0 0099;	[, E0 4D, 05]
+FDD0 009A;	[, E0 5D, 05]
+FDD0 009B;	[, E0 6D, 05]
+FDD0 009C;	[, E0 7D, 05]
+FDD0 009D;	[, E0 8D, 05]
+FDD0 009E;	[, E0 9D, 05]
+FDD0 009F;	[, E0 AD, 05]
+FDD0 00A0;	[, E0 BD, 05]
+FDD0 00A1;	[, E0 CD, 05]
+FDD0 00A2;	[, E0 DD, 05]
+FDD0 00A3;	[, E0 ED, 05]
+FDD0 00A4;	[, E0 FD, 05]
+FDD0 00A5;	[, E1 11, 05]
+FDD0 00A6;	[, E1 21, 05]
+FDD0 00A7;	[, E1 31, 05]
+FDD0 00A8;	[, E1 41, 05]
+FDD0 00A9;	[, E1 51, 05]
+FDD0 00AA;	[, E1 61, 05]
+FDD0 00AB;	[, E1 71, 05]
+FDD0 00AC;	[, E1 81, 05]
+FDD0 00AD;	[, E1 91, 05]
+FDD0 00AE;	[, E1 A1, 05]
+FDD0 00AF;	[, E1 B1, 05]
+FDD0 00B0;	[, E1 C1, 05]
+FDD0 00B1;	[, E1 D1, 05]
+FDD0 00B2;	[, E1 E1, 05]
+FDD0 00B3;	[, E1 F1, 05]
+FDD0 00B4;	[, E2 05, 05]
+FDD0 00B5;	[, E2 15, 05]
+FDD0 00B6;	[, , 3F 03]	# CONSTRUCTED FAKE SECONDARY-IGNORABLE
 
 # VALUES BASED ON UCA
 [first tertiary ignorable [,,]] # CONSTRUCTED

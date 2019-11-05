@@ -5,11 +5,10 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Utils
+describe TwitterCldr::Utils::Trie do
 
-describe Trie do
-
-  let(:trie) { Trie.new }
+  let(:trie_class) { TwitterCldr::Utils::Trie }
+  let(:trie) { trie_class.new }
 
   let(:values) do
     [
@@ -28,11 +27,11 @@ describe Trie do
 
   describe '#initialize' do
     it 'initializes an empty trie by default' do
-      expect(Trie.new).to be_empty
+      expect(trie_class.new).to be_empty
     end
 
     it 'initializes with a root node' do
-      trie = Trie.new(Trie::Node.new(nil, 1 => Trie::Node.new(nil, { 2 => Trie::Node.new('12')}), 2 => Trie::Node.new('2')))
+      trie = trie_class.new(trie_class::Node.new(nil, 1 => trie_class::Node.new(nil, { 2 => trie_class::Node.new('12')}), 2 => trie_class::Node.new('2')))
 
       expect(trie.to_hash).to eq({
           1 => [nil, { 2 => ['12', {}] }],
@@ -227,7 +226,7 @@ describe Trie do
 
   describe 'marshaling' do
     it 'dumps trie structure' do
-      trie = Trie.new
+      trie = TwitterCldr::Utils::Trie.new
       trie.add([13, 37], 1337)
       trie.add([42], 42)
 
@@ -235,29 +234,29 @@ describe Trie do
     end
 
     it 'does not dump locked state' do
-      expect(Marshal.load(Marshal.dump(Trie.new.lock))).not_to be_locked
+      expect(Marshal.load(Marshal.dump(TwitterCldr::Utils::Trie.new.lock))).not_to be_locked
     end
   end
 
-  describe Trie::Node do
+  describe TwitterCldr::Utils::Trie::Node do
 
-    let(:node)          { Trie::Node.new }
-    let(:child)         { Trie::Node.new('child') }
-    let(:another_child) { Trie::Node.new('another-child') }
+    let(:node)          { trie_class::Node.new }
+    let(:child)         { trie_class::Node.new('child') }
+    let(:another_child) { trie_class::Node.new('another-child') }
 
     let(:root_node) do
-      Trie::Node.new(
+      trie_class::Node.new(
           'node-0',
-          1 => Trie::Node.new(
+          1 => trie_class::Node.new(
               'node-1',
-              1 => Trie::Node.new('node-11'),
-              2 => Trie::Node.new('node-12')
+              1 => trie_class::Node.new('node-11'),
+              2 => trie_class::Node.new('node-12')
           ),
-          2 => Trie::Node.new(
+          2 => trie_class::Node.new(
               'node-2',
-              1 => Trie::Node.new(
+              1 => trie_class::Node.new(
                   'node-21',
-                  1 => Trie::Node.new('node-211')
+                  1 => trie_class::Node.new('node-211')
               )
           )
       )
@@ -354,7 +353,7 @@ describe Trie do
 
     describe '#to_trie' do
       it 'returns a trie' do
-        expect(node.to_trie).to be_instance_of(Trie)
+        expect(node.to_trie).to be_instance_of(trie_class)
       end
 
       it 'returns a locked trie' do

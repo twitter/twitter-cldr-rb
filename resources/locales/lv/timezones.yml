@@ -1,18 +1,11 @@
 --- 
 :lv: 
   :formats: 
-    :fallback_format: 
-      :generic: "{0} ({1})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0}: vasaras laiks"
-      :generic: "Laika josla: {0}"
-      :standard: "{0}: standarta laiks"
+    :fallback_format: "{0} ({1})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0}: standarta laiks"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -152,7 +145,7 @@
         :standard: "Kaboverdes ziemas laiks"
     :Chamorro: 
       :long: 
-        :standard: "Čamoro standarta laiks"
+        :standard: "Čamorra ziemas laiks"
     :Chatham: 
       :long: 
         :daylight: "Četemas vasaras laiks"
@@ -178,7 +171,7 @@
         :standard: "Ziemsvētku salas laiks"
     :Cocos: 
       :long: 
-        :standard: "Kokosa salu laiks"
+        :standard: "Kokosu (Kīlinga) salu laiks"
     :Colombia: 
       :long: 
         :daylight: "Kolumbijas vasaras laiks"
@@ -243,9 +236,9 @@
         :standard: WET
     :Falkland: 
       :long: 
-        :daylight: "Folklenda salu vasaras laiks"
-        :generic: "Folklenda salu laiks"
-        :standard: "Folklenda salu ziemas laiks"
+        :daylight: "Folklenda (Malvinu) salu vasaras laiks"
+        :generic: "Folklenda (Malvinu) salu laiks"
+        :standard: "Folklenda (Malvinu) salu ziemas laiks"
     :Fiji: 
       :long: 
         :daylight: "Fidži vasaras laiks"
@@ -253,10 +246,10 @@
         :standard: "Fidži ziemas laiks"
     :French_Guiana: 
       :long: 
-        :standard: "Franču Gviānas laiks"
+        :standard: "Francijas Gviānas laiks"
     :French_Southern: 
       :long: 
-        :standard: "Francijas Dienidjūru un Antarktikas teritorijas laiks"
+        :standard: "Francijas Dienvidjūru un Antarktikas teritorijas laiks"
     :GMT: 
       :long: 
         :standard: "Griničas laiks"
@@ -391,7 +384,7 @@
         :standard: "Malaizijas laiks"
     :Maldives: 
       :long: 
-        :standard: "Maldīvu salu laiks"
+        :standard: "Maldīvijas laiks"
     :Marquesas: 
       :long: 
         :standard: "Marķīza salu laiks"
@@ -452,7 +445,7 @@
         :standard: "Ņūfaundlendas ziemas laiks"
     :Niue: 
       :long: 
-        :standard: "Niue laiks"
+        :standard: "Niues laiks"
     :Norfolk: 
       :long: 
         :standard: "Norfolkas salas laiks"
@@ -511,6 +504,9 @@
     :Ponape: 
       :long: 
         :standard: "Ponapē laiks"
+    :Pyongyang: 
+      :long: 
+        :standard: "Phenjanas laiks"
     :Reunion: 
       :long: 
         :standard: "Reinjonas laiks"
@@ -781,7 +777,7 @@
     :America/Buenos_Aires: 
       :city: Buenosairesa
     :America/Cambridge_Bay: 
-      :city: Keimbridžbeja
+      :city: Kembridžbeja
     :America/Campo_Grande: 
       :city: Kampugrandi
     :America/Cancun: 
@@ -828,6 +824,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: Salvadora
+    :America/Fort_Nelson: 
+      :city: Fortnelsona
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -962,6 +960,8 @@
       :city: Portuveļu
     :America/Puerto_Rico: 
       :city: Puertoriko
+    :America/Punta_Arenas: 
+      :city: Puntaarenasa
     :America/Rainy_River: 
       :city: Reinirivera
     :America/Rankin_Inlet: 
@@ -1062,6 +1062,8 @@
       :city: Aktebe
     :Asia/Ashgabat: 
       :city: Ašgabata
+    :Asia/Atyrau: 
+      :city: Atirau
     :Asia/Baghdad: 
       :city: Bagdāde
     :Asia/Bahrain: 
@@ -1070,6 +1072,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkoka
+    :Asia/Barnaul: 
+      :city: Barnaula
     :Asia/Beirut: 
       :city: Beirūta
     :Asia/Bishkek: 
@@ -1094,6 +1098,8 @@
       :city: Dubaija
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1188,6 +1194,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokija
+    :Asia/Tomsk: 
+      :city: Tomska
     :Asia/Ulaanbaatar: 
       :city: Ulanbatora
     :Asia/Urumqi: 
@@ -1248,12 +1256,19 @@
       :city: Pērta
     :Australia/Sydney: 
       :city: Sidneja
+    :Etc/UTC: 
+      :long: 
+        :standard: "Universālais koordinētais laiks"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "nezināma pilsēta"
     :Europe/Amsterdam: 
       :city: Amsterdama
     :Europe/Andorra: 
       :city: Andora
+    :Europe/Astrakhan: 
+      :city: Astrahaņa
     :Europe/Athens: 
       :city: Atēnas
     :Europe/Belgrade: 
@@ -1294,6 +1309,8 @@
       :city: Kaļiņingrada
     :Europe/Kiev: 
       :city: Kijeva
+    :Europe/Kirov: 
+      :city: Kirova
     :Europe/Lisbon: 
       :city: Lisabona
     :Europe/Ljubljana: 
@@ -1334,6 +1351,8 @@
       :city: Sanmarīno
     :Europe/Sarajevo: 
       :city: Sarajeva
+    :Europe/Saratov: 
+      :city: Saratova
     :Europe/Simferopol: 
       :city: Simferopole
     :Europe/Skopje: 
@@ -1346,6 +1365,8 @@
       :city: Tallina
     :Europe/Tirane: 
       :city: Tirāna
+    :Europe/Ulyanovsk: 
+      :city: Uļjanovska
     :Europe/Uzhgorod: 
       :city: Užhoroda
     :Europe/Vaduz: 
@@ -1373,7 +1394,7 @@
     :Indian/Christmas: 
       :city: "Ziemsvētku sala"
     :Indian/Cocos: 
-      :city: "Kokosa sala"
+      :city: "Kokosu (Kīlinga) sala"
     :Indian/Comoro: 
       :city: Komoras
     :Indian/Kerguelen: 
@@ -1393,7 +1414,7 @@
     :Pacific/Auckland: 
       :city: Oklenda
     :Pacific/Bougainville: 
-      :city: Bugeinvile
+      :city: "Bugenvila sala"
     :Pacific/Chatham: 
       :city: Četema
     :Pacific/Easter: 

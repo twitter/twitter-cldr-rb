@@ -1,18 +1,11 @@
 --- 
 :cy: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Amser Haf {0}"
-      :generic: "Amser {0}"
-      :standard: "Amser Safonol {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Amser Safonol {0}"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -251,7 +244,7 @@
         :standard: "Amser Guyane Ffrengig"
     :French_Southern: 
       :long: 
-        :standard: "Amser Deheuol ac Antarctig Frengig"
+        :standard: "Amser Tiroedd Ffrainc yn y De a’r Antarctig"
     :GMT: 
       :long: 
         :standard: "Amser Safonol Greenwich"
@@ -342,7 +335,7 @@
         :standard: "Amser Safonol Siapan"
     :Kazakhstan_Eastern: 
       :long: 
-        :standard: "Amser Dwyrain Casachstan"
+        :standard: "Amser Dwyrain Kazakhstan"
     :Kazakhstan_Western: 
       :long: 
         :standard: "Amser Gorllewin Casachstan"
@@ -361,7 +354,7 @@
         :standard: "Amser Safonol Krasnoyarsk"
     :Kyrgystan: 
       :long: 
-        :standard: "Amser Casachstan"
+        :standard: "Amser Kyrgyzstan"
     :Line_Islands: 
       :long: 
         :standard: "Amser Ynysoedd Line"
@@ -503,6 +496,9 @@
     :Ponape: 
       :long: 
         :standard: "Amser Pohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "Amser Pyongyang"
     :Reunion: 
       :long: 
         :standard: "Amser Réunion"
@@ -514,6 +510,11 @@
         :daylight: "Amser Haf Sakhalin"
         :generic: "Amser Sakhalin"
         :standard: "Amser Safonol Sakhalin"
+    :Samara: 
+      :long: 
+        :daylight: "Amser Haf Samara"
+        :generic: "Amser Samara"
+        :standard: "Amser Safonol Samara"
     :Samoa: 
       :long: 
         :daylight: "Amser Haf Samoa"
@@ -656,7 +657,7 @@
     :Africa/Douala: 
       :city: Douala
     :Africa/El_Aaiun: 
-      :city: "El Aaiún"
+      :city: "El Aaiun"
     :Africa/Freetown: 
       :city: Freetown
     :Africa/Gaborone: 
@@ -680,7 +681,7 @@
     :Africa/Libreville: 
       :city: Libreville
     :Africa/Lome: 
-      :city: Lomé
+      :city: Lome
     :Africa/Luanda: 
       :city: Luanda
     :Africa/Lubumbashi: 
@@ -702,7 +703,7 @@
     :Africa/Nairobi: 
       :city: Nairobi
     :Africa/Ndjamena: 
-      :city: N’Djamena
+      :city: Ndjamena
     :Africa/Niamey: 
       :city: Niamey
     :Africa/Nouakchott: 
@@ -768,7 +769,7 @@
     :America/Buenos_Aires: 
       :city: "Buenos Aires"
     :America/Cambridge_Bay: 
-      :city: "Cambridge Bay"
+      :city: "Bae Cambridge"
     :America/Campo_Grande: 
       :city: "Campo Grande"
     :America/Cancun: 
@@ -815,6 +816,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -882,7 +885,7 @@
     :America/Lower_Princes: 
       :city: "Lower Prince’s Quarter"
     :America/Maceio: 
-      :city: Maceió
+      :city: Maceio
     :America/Managua: 
       :city: Managua
     :America/Manaus: 
@@ -894,7 +897,7 @@
     :America/Matamoros: 
       :city: Matamoros
     :America/Mazatlan: 
-      :city: Mazatlán
+      :city: Mazatlan
     :America/Mendoza: 
       :city: Mendoza
     :America/Menominee: 
@@ -934,7 +937,7 @@
     :America/Ojinaga: 
       :city: Ojinaga
     :America/Panama: 
-      :city: Panamá
+      :city: Panama
     :America/Pangnirtung: 
       :city: Pangnirtung
     :America/Paramaribo: 
@@ -949,6 +952,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -970,7 +975,7 @@
     :America/Santo_Domingo: 
       :city: "Santo Domingo"
     :America/Sao_Paulo: 
-      :city: "São Paulo"
+      :city: "Sao Paulo"
     :America/Scoresbysund: 
       :city: Ittoqqortoormiit
     :America/Sitka: 
@@ -980,13 +985,13 @@
     :America/St_Johns: 
       :city: "St. John’s"
     :America/St_Kitts: 
-      :city: "Saint Kitts"
+      :city: "St. Kitts"
     :America/St_Lucia: 
-      :city: "Saint Lucia"
+      :city: "St. Lucia"
     :America/St_Thomas: 
-      :city: "Saint Thomas"
+      :city: "St. Thomas"
     :America/St_Vincent: 
-      :city: "Saint Vincent"
+      :city: "St. Vincent"
     :America/Swift_Current: 
       :city: "Swift Current"
     :America/Tegucigalpa: 
@@ -1049,6 +1054,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Baghdad
     :Asia/Bahrain: 
@@ -1057,6 +1064,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1081,6 +1090,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gasa
     :Asia/Hebron: 
@@ -1175,6 +1186,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1196,7 +1209,7 @@
     :Atlantic/Bermuda: 
       :city: Bermuda
     :Atlantic/Canary: 
-      :city: "yr Ynysoedd Dedwydd"
+      :city: "Yr Ynysoedd Dedwydd"
     :Atlantic/Cape_Verde: 
       :city: "Cabo Verde"
     :Atlantic/Faeroe: 
@@ -1208,7 +1221,7 @@
     :Atlantic/South_Georgia: 
       :city: "De Georgia"
     :Atlantic/St_Helena: 
-      :city: "Saint Helena"
+      :city: "St. Helena"
     :Atlantic/Stanley: 
       :city: Stanley
     :Australia/Adelaide: 
@@ -1235,16 +1248,23 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Amser Cyffredniol Cydlynol"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Dinas Anhysbys"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
-      :city: Athen
+      :city: Athens
     :Europe/Belgrade: 
-      :city: Beograd
+      :city: Belgrade
     :Europe/Berlin: 
       :city: Berlin
     :Europe/Bratislava: 
@@ -1264,7 +1284,7 @@
     :Europe/Dublin: 
       :city: Dulyn
       :long: 
-        :daylight: "Amser Haf Iwerddon"
+        :daylight: "Amser Safonol Iwerddon"
     :Europe/Gibraltar: 
       :city: Gibraltar
     :Europe/Guernsey: 
@@ -1281,6 +1301,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbon
     :Europe/Ljubljana: 
@@ -1321,6 +1343,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1333,12 +1357,14 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Uzhhorod
     :Europe/Vaduz: 
       :city: Vaduz
     :Europe/Vatican: 
-      :city: "y Fatican"
+      :city: "Y Fatican"
     :Europe/Vienna: 
       :city: Fienna
     :Europe/Vilnius: 
@@ -1366,7 +1392,7 @@
     :Indian/Kerguelen: 
       :city: Kerguelen
     :Indian/Mahe: 
-      :city: Mahé
+      :city: Mahe
     :Indian/Maldives: 
       :city: Maldives
     :Indian/Mauritius: 

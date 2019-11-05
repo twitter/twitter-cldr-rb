@@ -21,14 +21,26 @@
         :id: 8
         :value: " ( $LVT | $T) × $T "
       - 
-        :id: 8.1
-        :value: " $Regional_Indicator × $Regional_Indicator "
-      - 
         :id: 9
-        :value: " × $Extend "
+        :value: " × ($Extend | $ZWJ) "
       - 
         :id: 9.1
         :value: " × $SpacingMark "
+      - 
+        :id: 9.2
+        :value: " $Prepend × "
+      - 
+        :id: 9.3
+        :value: " $LinkingConsonant $ExtCccZwj* $Virama $ExtCccZwj* × $LinkingConsonant "
+      - 
+        :id: 11
+        :value: " $ExtPict $Extend* $ZWJ × $ExtPict "
+      - 
+        :id: 12
+        :value: " ^ ($RI $RI)* $RI × $RI "
+      - 
+        :id: 13
+        :value: " [^$RI] ($RI $RI)* $RI × $RI "
     :variables: 
       - 
         :id: $CR
@@ -42,6 +54,15 @@
       - 
         :id: $Extend
         :value: "\\p{Grapheme_Cluster_Break=Extend}"
+      - 
+        :id: $ZWJ
+        :value: "\\p{Grapheme_Cluster_Break=ZWJ}"
+      - 
+        :id: $RI
+        :value: "\\p{Grapheme_Cluster_Break=Regional_Indicator}"
+      - 
+        :id: $Prepend
+        :value: "\\p{Grapheme_Cluster_Break=Prepend}"
       - 
         :id: $SpacingMark
         :value: "\\p{Grapheme_Cluster_Break=SpacingMark}"
@@ -61,8 +82,17 @@
         :id: $LVT
         :value: "\\p{Grapheme_Cluster_Break=LVT}"
       - 
-        :id: $Regional_Indicator
-        :value: "\\p{Grapheme_Cluster_Break=Regional_Indicator}"
+        :id: $Virama
+        :value: "[\\p{Gujr}\\p{sc=Telu}\\p{sc=Mlym}\\p{sc=Orya}\\p{sc=Beng}\\p{sc=Deva}&\\p{Indic_Syllabic_Category=Virama}]"
+      - 
+        :id: $LinkingConsonant
+        :value: "[\\p{Gujr}\\p{sc=Telu}\\p{sc=Mlym}\\p{sc=Orya}\\p{sc=Beng}\\p{sc=Deva}&\\p{Indic_Syllabic_Category=Consonant}]"
+      - 
+        :id: $ExtPict
+        :value: "\\p{Extended_Pictographic}"
+      - 
+        :id: $ExtCccZwj
+        :value: "[[$Extend-\\p{ccc=0}] $ZWJ]"
   :LineBreak: 
     :rules: 
       - 
@@ -92,6 +122,9 @@
       - 
         :id: 8
         :value: " $ZW $SP* ÷ "
+      - 
+        :id: 8.1
+        :value: " $ZWJ_O × "
       - 
         :id: 9
         :value: " $Spec2_ × $CM "
@@ -153,6 +186,9 @@
         :id: 20.02
         :value: " $CB ÷ "
       - 
+        :id: 20.09
+        :value: " $Spec5_ $HY × $AL "
+      - 
         :id: 21.01
         :value: " × $BA "
       - 
@@ -175,19 +211,16 @@
         :value: " ($AL | $HL) × $IN "
       - 
         :id: 22.02
-        :value: " $ID × $IN "
-      - 
-        :id: 22.03
-        :value: " $IN × $IN "
-      - 
-        :id: 22.04
-        :value: " $NU × $IN "
-      - 
-        :id: 22.05
         :value: " $EX × $IN "
       - 
-        :id: 23.01
-        :value: " $ID × $PO "
+        :id: 22.03
+        :value: " ($ID | $EB | $EM) × $IN "
+      - 
+        :id: 22.04
+        :value: " $IN × $IN "
+      - 
+        :id: 22.05
+        :value: " $NU × $IN "
       - 
         :id: 23.02
         :value: " ($AL | $HL) × $NU "
@@ -195,14 +228,17 @@
         :id: 23.03
         :value: " $NU × ($AL | $HL) "
       - 
-        :id: 24.01
-        :value: " $PR × $ID "
+        :id: 23.12
+        :value: " $PR × ($ID | $EB | $EM) "
+      - 
+        :id: 23.13
+        :value: " ($ID | $EB | $EM) × $PO "
       - 
         :id: 24.02
-        :value: " $PR × ($AL | $HL) "
+        :value: " ($PR | $PO) × ($AL | $HL) "
       - 
         :id: 24.03
-        :value: " $PO × ($AL | $HL) "
+        :value: " ($AL | $HL) × ($PR | $PO) "
       - 
         :id: 25.01
         :value: " ($PR | $PO) × ( $OP | $HY )? $NU "
@@ -250,7 +286,16 @@
         :value: " $CP × ($AL | $HL | $NU) "
       - 
         :id: 30.11
-        :value: " $RI × $RI "
+        :value: " ^ ($RI $RI)* $RI × $RI "
+      - 
+        :id: 30.12
+        :value: " [^$RI] ($RI $RI)* $RI × $RI "
+      - 
+        :id: 30.13
+        :value: " $RI ÷ $RI "
+      - 
+        :id: 30.2
+        :value: " $EB × $EM "
     :variables: 
       - 
         :id: $AI
@@ -280,7 +325,7 @@
         :id: $CP
         :value: "\\p{Line_Break=CP}"
       - 
-        :id: $CM
+        :id: $CM1
         :value: "\\p{Line_Break=Combining_Mark}"
       - 
         :id: $CR
@@ -373,8 +418,23 @@
         :id: $RI
         :value: "\\p{Line_Break=Regional_Indicator}"
       - 
+        :id: $EB
+        :value: "\\p{Line_Break=E_Base}"
+      - 
+        :id: $EM
+        :value: "\\p{Line_Break=E_Modifier}"
+      - 
+        :id: $ZWJ_O
+        :value: "\\p{Line_Break=ZWJ}"
+      - 
+        :id: $ZWJ
+        :value: "\\p{Line_Break=ZWJ}"
+      - 
+        :id: $CM
+        :value: "[$CM1 $ZWJ]"
+      - 
         :id: $AL
-        :value: "[$AI $AL $XX $SA $SG]"
+        :value: "[$AI $AL $SG $XX $SA]"
       - 
         :id: $NS
         :value: "[$NS $CJ]"
@@ -396,6 +456,9 @@
       - 
         :id: $Spec4_
         :value: "[^ $NU $CM]"
+      - 
+        :id: $Spec5_
+        :value: "[$BK $CB $CR $LF $NL $SP $ZW]"
       - 
         :id: $AI
         :value: "($AI $X)"
@@ -424,8 +487,8 @@
         :id: $CM
         :value: "($CM $X)"
       - 
-        :id: $CM
-        :value: "($CM $X)"
+        :id: $EX
+        :value: "($EX $X)"
       - 
         :id: $GL
         :value: "($GL $X)"
@@ -496,6 +559,15 @@
         :id: $RI
         :value: "($RI $X)"
       - 
+        :id: $EB
+        :value: "($EB $X)"
+      - 
+        :id: $EM
+        :value: "($EM $X)"
+      - 
+        :id: $ZWJ
+        :value: "($ZWJ $X)"
+      - 
         :id: $AL
         :value: "($AL | ^ $CM | (?<=$Spec1_) $CM)"
   :SentenceBreak: 
@@ -505,7 +577,7 @@
         :value: " $CR × $LF "
       - 
         :id: 4
-        :value: " ($Sep | $CR | $LF) ÷ "
+        :value: " $ParaSep ÷ "
       - 
         :id: 5
         :value: " × [$Format $Extend] "
@@ -520,18 +592,18 @@
         :value: " $ATerm $Close* $Sp* × $NotPreLower_* $Lower "
       - 
         :id: 8.1
-        :value: " ($STerm | $ATerm) $Close* $Sp* × ($SContinue | $STerm | $ATerm) "
+        :value: " $SATerm $Close* $Sp* × ($SContinue | $SATerm) "
       - 
         :id: 9
-        :value: " ( $STerm | $ATerm ) $Close* × ( $Close | $Sp | $Sep | $CR | $LF ) "
+        :value: " $SATerm $Close* × ( $Close | $Sp | $ParaSep ) "
       - 
         :id: 10
-        :value: " ( $STerm | $ATerm ) $Close* $Sp* × ( $Sp | $Sep | $CR | $LF ) "
+        :value: " $SATerm $Close* $Sp* × ( $Sp | $ParaSep ) "
       - 
         :id: 11
-        :value: " ( $STerm | $ATerm ) $Close* $Sp* ($Sep | $CR | $LF)? ÷ "
+        :value: " $SATerm $Close* $Sp* $ParaSep? ÷ "
       - 
-        :id: 12
+        :id: 998
         :value: " × $Any "
     :variables: 
       - 
@@ -612,6 +684,12 @@
       - 
         :id: $SContinue
         :value: "($SContinue $FE*)"
+      - 
+        :id: $ParaSep
+        :value: "($Sep | $CR | $LF)"
+      - 
+        :id: $SATerm
+        :value: "($STerm | $ATerm)"
   :WordBreak: 
     :rules: 
       - 
@@ -624,44 +702,62 @@
         :id: 3.2
         :value: " ÷ ($Newline | $CR | $LF) "
       - 
+        :id: 3.3
+        :value: " $ZWJ × $ExtPict "
+      - 
+        :id: 3.4
+        :value: " $WSegSpace × $WSegSpace "
+      - 
         :id: 4
-        :value: " $NotBreak_ × [$Format $Extend] "
+        :value: " $NotBreak_ × [$Format $Extend $ZWJ] "
       - 
         :id: 5
-        :value: " $ALetter × $ALetter "
+        :value: " $AHLetter × $AHLetter "
       - 
         :id: 6
-        :value: " $ALetter × ($MidLetter | $MidNumLet) $ALetter "
+        :value: " $AHLetter × ($MidLetter | $MidNumLetQ) $AHLetter "
       - 
         :id: 7
-        :value: " $ALetter ($MidLetter | $MidNumLet) × $ALetter "
+        :value: " $AHLetter ($MidLetter | $MidNumLetQ) × $AHLetter "
+      - 
+        :id: 7.1
+        :value: " $Hebrew_Letter × $Single_Quote "
+      - 
+        :id: 7.2
+        :value: " $Hebrew_Letter × $Double_Quote $Hebrew_Letter "
+      - 
+        :id: 7.3
+        :value: " $Hebrew_Letter $Double_Quote × $Hebrew_Letter "
       - 
         :id: 8
         :value: " $Numeric × $Numeric "
       - 
         :id: 9
-        :value: " $ALetter × $Numeric "
+        :value: " $AHLetter × $Numeric "
       - 
         :id: 10
-        :value: " $Numeric × $ALetter "
+        :value: " $Numeric × $AHLetter "
       - 
         :id: 11
-        :value: " $Numeric ($MidNum | $MidNumLet) × $Numeric "
+        :value: " $Numeric ($MidNum | $MidNumLetQ) × $Numeric "
       - 
         :id: 12
-        :value: " $Numeric × ($MidNum | $MidNumLet) $Numeric "
+        :value: " $Numeric × ($MidNum | $MidNumLetQ) $Numeric "
       - 
         :id: 13
         :value: " $Katakana × $Katakana "
       - 
         :id: 13.1
-        :value: " ($ALetter | $Numeric | $Katakana | $ExtendNumLet) × $ExtendNumLet "
+        :value: " ($AHLetter | $Numeric | $Katakana | $ExtendNumLet) × $ExtendNumLet "
       - 
         :id: 13.2
-        :value: " $ExtendNumLet × ($ALetter | $Numeric | $Katakana) "
+        :value: " $ExtendNumLet × ($AHLetter | $Numeric | $Katakana) "
       - 
-        :id: 13.3
-        :value: " $Regional_Indicator × $Regional_Indicator "
+        :id: 15
+        :value: " ^ ($RI $RI)* $RI × $RI "
+      - 
+        :id: 16
+        :value: " [^$RI] ($RI $RI)* $RI × $RI "
     :variables: 
       - 
         :id: $CR
@@ -700,11 +796,35 @@
         :id: $ExtendNumLet
         :value: "\\p{Word_Break=ExtendNumLet}"
       - 
-        :id: $Regional_Indicator
+        :id: $RI
         :value: "\\p{Word_Break=Regional_Indicator}"
       - 
+        :id: $Hebrew_Letter
+        :value: "\\p{Word_Break=Hebrew_Letter}"
+      - 
+        :id: $Double_Quote
+        :value: "\\p{Word_Break=Double_Quote}"
+      - 
+        :id: $Single_Quote
+        :value: "\\p{Word_Break=Single_Quote}"
+      - 
+        :id: $ZWJ
+        :value: "\\p{Word_Break=ZWJ}"
+      - 
+        :id: $ExtPict
+        :value: "\\p{Extended_Pictographic}"
+      - 
+        :id: $WSegSpace
+        :value: "\\p{Word_Break=WSegSpace}"
+      - 
+        :id: $AHLetter
+        :value: "($ALetter | $Hebrew_Letter)"
+      - 
+        :id: $MidNumLetQ
+        :value: "($MidNumLet | $Single_Quote)"
+      - 
         :id: $FE
-        :value: "[$Format $Extend]"
+        :value: "[$Format $Extend $ZWJ]"
       - 
         :id: $NotBreak_
         :value: "[^ $Newline $CR $LF ]"
@@ -730,5 +850,20 @@
         :id: $ExtendNumLet
         :value: "($ExtendNumLet $FE*)"
       - 
-        :id: $Regional_Indicator
-        :value: "($Regional_Indicator $FE*)"
+        :id: $RI
+        :value: "($RI $FE*)"
+      - 
+        :id: $Hebrew_Letter
+        :value: "($Hebrew_Letter $FE*)"
+      - 
+        :id: $Double_Quote
+        :value: "($Double_Quote $FE*)"
+      - 
+        :id: $Single_Quote
+        :value: "($Single_Quote $FE*)"
+      - 
+        :id: $AHLetter
+        :value: "($AHLetter $FE*)"
+      - 
+        :id: $MidNumLetQ
+        :value: "($MidNumLetQ $FE*)"

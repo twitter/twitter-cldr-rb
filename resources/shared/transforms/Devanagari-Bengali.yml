@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Devanagari-Bengali
+      - und-Beng-t-und-deva
     :direction: forward
     :rules: 
       - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
@@ -8,6 +11,6 @@
       - "::Devanagari-InterIndic;"
       - "::InterIndic-Bengali;"
       - "::NFC;"
-    :source: Devanagari
-    :target: Bengali
+    :source: Deva
+    :target: Beng
     :variant: ~

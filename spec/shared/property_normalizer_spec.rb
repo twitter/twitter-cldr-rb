@@ -5,11 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe PropertyNormalizer do
-  let(:database) { PropertiesDatabase.new }
-  let(:normalizer) { PropertyNormalizer.new(database) }
+describe TwitterCldr::Shared::PropertyNormalizer do
+  let(:database) { TwitterCldr::Shared::PropertiesDatabase.new }
+  let(:normalizer) { described_class.new(database) }
 
   describe '#normalize' do
     it 'correctly normalizes just property names' do

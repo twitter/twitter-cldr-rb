@@ -1,18 +1,11 @@
 --- 
 :ro: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Ora de vară din {0}"
-      :generic: "Ora din {0}"
-      :standard: "Ora standard din {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Ora standard din {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -273,7 +266,7 @@
         :standard: "Ora standard din Fiji"
     :French_Guiana: 
       :long: 
-        :standard: "Ora Guianei Franceze"
+        :standard: "Ora din Guyana Franceză"
     :French_Southern: 
       :long: 
         :standard: "Ora din Teritoriile Australe și Antarctice Franceze"
@@ -533,6 +526,9 @@
     :Ponape: 
       :long: 
         :standard: "Ora din Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Ora din Pyongyang"
     :Reunion: 
       :long: 
         :standard: "Ora din Reunion"
@@ -641,9 +637,9 @@
         :standard: "Ora din Wallis și Futuna"
     :Yakutsk: 
       :long: 
-        :daylight: "Ora de vară din Yakuțk"
-        :generic: "Ora din Yakuțk"
-        :standard: "Ora standard din Yakuțk"
+        :daylight: "Ora de vară din Iakuțk"
+        :generic: "Ora din Iakuțk"
+        :standard: "Ora standard din Iakuțk"
     :Yekaterinburg: 
       :long: 
         :daylight: "Ora de vară din Ekaterinburg"
@@ -731,7 +727,7 @@
     :Africa/Mbabane: 
       :city: Mbabane
     :Africa/Mogadishu: 
-      :city: Mogadishu
+      :city: Mogadiscio
     :Africa/Monrovia: 
       :city: Monrovia
     :Africa/Nairobi: 
@@ -747,7 +743,7 @@
     :Africa/Porto-Novo: 
       :city: Porto-Novo
     :Africa/Sao_Tome: 
-      :city: "São Tomé"
+      :city: "Sao Tomé"
     :Africa/Tripoli: 
       :city: Tripoli
     :Africa/Tunis: 
@@ -850,6 +846,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -963,7 +961,7 @@
     :America/North_Dakota/Beulah: 
       :city: "Beulah, Dakota de Nord"
     :America/North_Dakota/Center: 
-      :city: "Centru, Dakota de Nord"
+      :city: "Center, Dakota de Nord"
     :America/North_Dakota/New_Salem: 
       :city: "New Salem, Dakota de Nord"
     :America/Ojinaga: 
@@ -984,6 +982,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1084,6 +1084,8 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Așgabat
+    :Asia/Atyrau: 
+      :city: Atîrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1092,6 +1094,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1116,6 +1120,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dușanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1178,6 +1184,8 @@
       :city: Phenian
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanay
     :Asia/Qyzylorda: 
       :city: Kyzylorda
     :Asia/Rangoon: 
@@ -1191,7 +1199,7 @@
     :Asia/Samarkand: 
       :city: Samarkand
     :Asia/Seoul: 
-      :city: Seul
+      :city: Seoul
     :Asia/Shanghai: 
       :city: Shanghai
     :Asia/Singapore: 
@@ -1210,6 +1218,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1221,7 +1231,7 @@
     :Asia/Vladivostok: 
       :city: Vladivostok
     :Asia/Yakutsk: 
-      :city: Yakuțk
+      :city: Iakuțk
     :Asia/Yekaterinburg: 
       :city: Ekaterinburg
     :Asia/Yerevan: 
@@ -1270,12 +1280,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Timpul universal coordonat"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Oraș necunoscut"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrahan
     :Europe/Athens: 
       :city: Atena
     :Europe/Belgrade: 
@@ -1316,6 +1333,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisabona
     :Europe/Ljubljana: 
@@ -1356,6 +1375,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1368,6 +1389,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Ulianovsk
     :Europe/Uzhgorod: 
       :city: Ujhorod
     :Europe/Vaduz: 
@@ -1393,7 +1416,7 @@
     :Indian/Chagos: 
       :city: Chagos
     :Indian/Christmas: 
-      :city: "Insula Crăciunului"
+      :city: Christmas
     :Indian/Cocos: 
       :city: Cocos
     :Indian/Comoro: 

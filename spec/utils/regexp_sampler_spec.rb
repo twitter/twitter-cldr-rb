@@ -5,20 +5,20 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Utils
+describe TwitterCldr::Utils::RegexpSampler do
+  let(:regexp_ast) { TwitterCldr::Utils::RegexpAst }
 
-describe RegexpSampler do
-  let(:root) { RegexpAst::Root }
-  let(:digit) { RegexpAst::Digit }
-  let(:word) { RegexpAst::Word }
-  let(:literal) { RegexpAst::Literal }
-  let(:character_set) { RegexpAst::CharacterSet }
-  let(:capture) { RegexpAst::Capture }
-  let(:passive) { RegexpAst::Passive }
-  let(:sequence) { RegexpAst::Sequence }
-  let(:alternation) { RegexpAst::Alternation }
-  let(:quantifier) { RegexpAst::Quantifier }
-  let(:sampler) { RegexpSampler }
+  let(:root) { regexp_ast::Root }
+  let(:digit) { regexp_ast::Digit }
+  let(:word) { regexp_ast::Word }
+  let(:literal) { regexp_ast::Literal }
+  let(:character_set) { regexp_ast::CharacterSet }
+  let(:capture) { regexp_ast::Capture }
+  let(:passive) { regexp_ast::Passive }
+  let(:sequence) { regexp_ast::Sequence }
+  let(:alternation) { regexp_ast::Alternation }
+  let(:quantifier) { regexp_ast::Quantifier }
+  let(:sampler) { described_class }
 
   let(:singular_quantifier) { quantifier.new(2, 2) }
   let(:ranged_quantifier) { quantifier.new(2, 4) }

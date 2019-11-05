@@ -5,19 +5,8 @@
 
 require 'spec_helper'
 
-include TwitterCldr::DataReaders
-
-describe NumberDataReader do
-  let(:data_reader) { NumberDataReader.new(:en) }
-
-  describe "#get_key_for" do
-    it "builds a power-of-ten key based on the number of digits in the input" do
-      (3..15).each do |i|
-        value = data_reader.send(:get_key_for, "1337#{"0" * (i - 3)}")
-        expect(value).to eq((10 ** i).to_s.to_sym)
-      end
-    end
-  end
+describe TwitterCldr::DataReaders::NumberDataReader do
+  let(:data_reader) { described_class.new(:en) }
 
   describe '#format_number' do
     it 'works with options' do
@@ -37,8 +26,13 @@ describe NumberDataReader do
         {
           en: {
             numbers: {
-              formats: { decimal: { patterns: { default: "#,##0.###" } } },
-              symbols: symbols
+              default_number_systems: {
+                default: 'latn'
+              },
+              formats: { decimal: { latn: { default: "#,##0.###" } } },
+              symbols: {
+                latn: symbols
+              }
             }
           }
         }

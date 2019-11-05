@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d."
@@ -11,7 +16,7 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLLL y G"
-        :GyMMMEd: "E, d. M. y G"
+        :GyMMMEd: "E d. M. y G"
         :GyMMMMd: "d. M. y G"
         :GyMMMd: "d. M. y G"
         :H: H
@@ -24,6 +29,7 @@
         :MMM: LLL
         :MMMEd: "E d. M."
         :MMMMEd: "E d. MMMM"
+        :MMMMW: "W. 'týždeň' 'v' MMMM"
         :MMMMd: "d. MMMM"
         :MMMd: "d. M."
         :Md: "d. M."
@@ -47,6 +53,7 @@
         :yMd: "d. M. y"
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "w. 'týždeň' 'roka' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,8 +134,15 @@
         :day: deň
         :day-narrow: d.
         :day-short: d.
-        :dayperiod: "časť dňa"
+        :dayOfYear: "deň roka"
+        :dayOfYear-narrow: "deň r."
+        :dayOfYear-short: "deň r."
+        :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
         :era: letopočet
+        :era-narrow: letop.
+        :era-short: letop.
         :hour: hodina
         :hour-narrow: h
         :hour-short: h
@@ -147,21 +161,31 @@
         :week: týždeň
         :week-narrow: týž.
         :week-short: týž.
-        :weekday: "deň v týždni"
+        :weekOfMonth: "týždeň mesiaca"
+        :weekOfMonth-narrow: "týž. mes."
+        :weekOfMonth-short: "týž. mes."
+        :weekday: "deň týždňa"
+        :weekday-narrow: "deň týž."
+        :weekday-short: "deň týž."
+        :weekdayOfMonth: "deň týždňa v mesiaci"
+        :weekdayOfMonth-narrow: "d.  týž. v mes."
+        :weekdayOfMonth-short: "d.  týž. v mes."
         :year: rok
         :year-narrow: r.
         :year-short: r.
         :zone: "časové pásmo"
+        :zone-narrow: pásmo
+        :zone-short: pásmo
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d. MMMM y"
+            :pattern: "EEEE d. MMMM y"
           :long: 
             :pattern: "d. MMMM y"
           :medium: 
             :pattern: "d. M. y"
           :short: 
-            :pattern: d.M.yy
+            :pattern: "d. M. y"
         :datetime: 
           :full: 
             :pattern: "{{date}}, {{time}}"
@@ -275,24 +299,20 @@
             :pm: PM
           :narrow: 
             :afternoon1: pop.
-            :am: AM
             :evening1: več.
             :midnight: "o poln."
             :morning1: ráno
             :morning2: dop.
             :night1: "v n."
             :noon: nap.
-            :pm: PM
           :wide: 
             :afternoon1: popoludní
-            :am: AM
             :evening1: večer
             :midnight: "o polnoci"
             :morning1: ráno
             :morning2: dopoludnia
             :night1: "v noci"
             :noon: napoludnie
-            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: popol.

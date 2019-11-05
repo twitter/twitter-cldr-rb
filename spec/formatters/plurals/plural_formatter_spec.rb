@@ -5,22 +5,20 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe PluralFormatter do
+describe TwitterCldr::Formatters::PluralFormatter do
 
   describe '#initialize' do
     it 'fetches locale from options hash' do
-      expect(PluralFormatter.new(:ru).locale).to eq(:ru)
+      expect(described_class.new(:ru).locale).to eq(:ru)
     end
 
     it "uses current locale if it's not passed in options hash" do
-      expect(PluralFormatter.new.locale).to eq(TwitterCldr.locale)
+      expect(described_class.new.locale).to eq(TwitterCldr.locale)
     end
   end
 
   describe '#format' do
-    subject { PluralFormatter.new }
+    subject { described_class.new }
 
     before(:each) do
       allow(subject).to receive(:pluralization_rule) { |n| n == 1 ? :one : :other  }
@@ -197,8 +195,8 @@ describe PluralFormatter do
 
   describe '#pluralization_rule' do
     it 'delegates pluralization rule fetching to Rules.rule_for method' do
-      expect(Plurals::Rules).to receive(:rule_for).with(42, :jp).and_return('result')
-      expect(PluralFormatter.new(:jp).send(:pluralization_rule, 42)).to eq('result')
+      expect(TwitterCldr::Formatters::Plurals::Rules).to receive(:rule_for).with(42, :jp).and_return('result')
+      expect(described_class.new(:jp).send(:pluralization_rule, 42)).to eq('result')
     end
   end
 

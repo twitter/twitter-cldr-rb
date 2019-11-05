@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Devanagari-Gujarati
+      - und-Gujr-t-und-deva
     :direction: forward
     :rules: 
       - "::[ँ-ःऄअ-ह़-्ॐ-॔क़-९ॽ];"
@@ -8,6 +11,6 @@
       - "::Devanagari-InterIndic;"
       - "::InterIndic-Gujarati;"
       - "::NFC;"
-    :source: Devanagari
-    :target: Gujarati
+    :source: Deva
+    :target: Gujr
     :variant: ~

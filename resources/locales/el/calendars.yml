@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
@@ -20,9 +25,10 @@
         :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
-        :MMM: LLL
+        :MMM: MMM
         :MMMEd: "E, d MMM"
         :MMMMEd: "E, d MMMM"
+        :MMMMW: "εβδομάδα W του MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: d/M
@@ -39,11 +45,12 @@
         :yMEd: "E, d/M/y"
         :yMMM: "MMM y"
         :yMMMEd: "E, d MMM y"
-        :yMMMM: "MMMM y"
+        :yMMMM: "LLLL y"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
+        :yw: "εβδομάδα w του Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -122,15 +129,22 @@
           0: ""
       :fields: 
         :day: ημέρα
-        :day-narrow: ημέρα
-        :day-short: ημέρα
+        :day-narrow: ημ.
+        :day-short: ημ.
+        :dayOfYear: "ημέρα έτους"
+        :dayOfYear-narrow: "ημ. έτους"
+        :dayOfYear-short: "ημ. έτους"
         :dayperiod: π.μ./μ.μ.
+        :dayperiod-narrow: πμ/μμ
+        :dayperiod-short: πμ/μμ
         :era: περίοδος
+        :era-narrow: περ.
+        :era-short: περ.
         :hour: ώρα
-        :hour-narrow: ώ
-        :hour-short: ώρ.
+        :hour-narrow: ώ.
+        :hour-short: ώ.
         :minute: λεπτό
-        :minute-narrow: λ
+        :minute-narrow: λ.
         :minute-short: λεπ.
         :month: μήνας
         :month-narrow: μήν.
@@ -139,16 +153,26 @@
         :quarter-narrow: τρίμ.
         :quarter-short: τρίμ.
         :second: δευτερόλεπτο
-        :second-narrow: δ
+        :second-narrow: δ.
         :second-short: δευτ.
         :week: εβδομάδα
         :week-narrow: εβδ.
         :week-short: εβδ.
+        :weekOfMonth: "εβδομάδα μήνα"
+        :weekOfMonth-narrow: "εβδ. μήνα"
+        :weekOfMonth-short: "εβδ. μήνα"
         :weekday: καθημερινή
+        :weekday-narrow: καθημερ.
+        :weekday-short: καθημερ.
+        :weekdayOfMonth: "καθημερινή μήνα"
+        :weekdayOfMonth-narrow: "καθημερ. μήνα"
+        :weekdayOfMonth-short: "καθημερ. μήνα"
         :year: έτος
         :year-narrow: έτ.
         :year-short: έτ.
         :zone: "ζώνη ώρας"
+        :zone-narrow: ζώνη
+        :zone-short: ζώνη
       :formats: 
         :date: 
           :full: 
@@ -290,12 +314,12 @@
             :night1: βράδυ
             :pm: μ.μ.
           :narrow: 
-            :afternoon1: μεσημέρι
-            :am: π.μ.
-            :evening1: απόγευμα
+            :afternoon1: μεσημ.
+            :am: πμ
+            :evening1: απόγ.
             :morning1: πρωί
             :night1: βράδυ
-            :pm: μ.μ.
+            :pm: μμ
           :wide: 
             :afternoon1: μεσημέρι
             :am: π.μ.

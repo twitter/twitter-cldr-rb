@@ -1,18 +1,11 @@
 --- 
 :vi: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Giờ ban ngày {0}"
-      :generic: "Giờ {0}"
-      :standard: "Giờ chuẩn {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Giờ chuẩn {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -41,6 +34,10 @@
         :daylight: "Giờ Mùa Hè Alaska"
         :generic: "Giờ Alaska"
         :standard: "Giờ Chuẩn Alaska"
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
     :Almaty: 
       :long: 
         :daylight: "Giờ Mùa Hè Almaty"
@@ -53,24 +50,40 @@
         :standard: "Giờ Chuẩn Amazon"
     :America_Central: 
       :long: 
-        :daylight: "Giờ ban ngày miền trung"
-        :generic: "Giờ miền trung"
-        :standard: "Giờ chuẩn miền trung"
+        :daylight: "Giờ mùa hè miền Trung"
+        :generic: "Giờ miền Trung"
+        :standard: "Giờ chuẩn miền Trung"
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
     :America_Eastern: 
       :long: 
-        :daylight: "Giờ ban ngày miền đông"
-        :generic: "Giờ miền đông"
-        :standard: "Giờ chuẩn miền đông"
+        :daylight: "Giờ mùa hè miền Đông"
+        :generic: "Giờ miền Đông"
+        :standard: "Giờ chuẩn miền Đông"
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
     :America_Mountain: 
       :long: 
-        :daylight: "Giờ ban ngày miền núi"
+        :daylight: "Giờ mùa hè miền núi"
         :generic: "Giờ miền núi"
         :standard: "Giờ chuẩn miền núi"
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
     :America_Pacific: 
       :long: 
-        :daylight: "Giờ ban ngày Thái Bình Dương"
+        :daylight: "Giờ mùa hè Thái Bình Dương"
         :generic: "Giờ Thái Bình Dương"
         :standard: "Giờ chuẩn Thái Bình Dương"
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
     :Anadyr: 
       :long: 
         :daylight: "Giờ mùa hè Anadyr"
@@ -78,7 +91,7 @@
         :standard: "Giờ Chuẩn Anadyr"
     :Apia: 
       :long: 
-        :daylight: "Giờ Ban ngày Apia"
+        :daylight: "Giờ Mùa Hè Apia"
         :generic: "Giờ Apia"
         :standard: "Giờ Chuẩn Apia"
     :Aqtau: 
@@ -105,7 +118,7 @@
       :long: 
         :daylight: "Giờ mùa hè miền tây Argentina"
         :generic: "Giờ miền tây Argentina"
-        :standard: "Giờ chuẩn miền mây Argentina"
+        :standard: "Giờ chuẩn miền tây Argentina"
     :Armenia: 
       :long: 
         :daylight: "Giờ Mùa Hè Armenia"
@@ -113,29 +126,33 @@
         :standard: "Giờ Chuẩn Armenia"
     :Atlantic: 
       :long: 
-        :daylight: "Giờ Mùa hè Đại Tây Dương"
+        :daylight: "Giờ mùa hè Đại Tây Dương"
         :generic: "Giờ Đại Tây Dương"
         :standard: "Giờ Chuẩn Đại Tây Dương"
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
     :Australia_Central: 
       :long: 
-        :daylight: "Giờ Mùa Hè Miền Trung Nước Úc"
-        :generic: "Giờ Miền Trung Nước Úc"
-        :standard: "Giờ Chuẩn Miền Trung Nước Úc"
+        :daylight: "Giờ Mùa Hè Miền Trung Australia"
+        :generic: "Giờ Miền Trung Australia"
+        :standard: "Giờ Chuẩn Miền Trung Australia"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Giờ Mùa Hè Miền Trung Tây Nước Úc"
-        :generic: "Giờ Miền Trung Tây Nước Úc"
-        :standard: "Giờ Chuẩn Miền Trung Tây Nước Úc"
+        :daylight: "Giờ Mùa Hè Miền Trung Tây Australia"
+        :generic: "Giờ Miền Trung Tây Australia"
+        :standard: "Giờ Chuẩn Miền Trung Tây Australia"
     :Australia_Eastern: 
       :long: 
-        :daylight: "Giờ Mùa Hè Miền Đông Nước Úc"
-        :generic: "Giờ Miền Đông Nước Úc"
-        :standard: "Giờ Chuẩn Miền Đông Nước Úc"
+        :daylight: "Giờ Mùa Hè Miền Đông Australia"
+        :generic: "Giờ Miền Đông Australia"
+        :standard: "Giờ Chuẩn Miền Đông Australia"
     :Australia_Western: 
       :long: 
-        :daylight: "Giờ Mùa Hè Miền Tây Nước Úc"
-        :generic: "Giờ Miền Tây Nước Úc"
-        :standard: "Giờ Chuẩn Miền Tây Nước Úc"
+        :daylight: "Giờ Mùa Hè Miền Tây Australia"
+        :generic: "Giờ Miền Tây Australia"
+        :standard: "Giờ Chuẩn Miền Tây Australia"
     :Azerbaijan: 
       :long: 
         :daylight: "Giờ Mùa Hè Azerbaijan"
@@ -170,6 +187,9 @@
         :daylight: "Giờ Mùa Hè Cape Verde"
         :generic: "Giờ Cape Verde"
         :standard: "Giờ Chuẩn Cape Verde"
+    :Casey: 
+      :long: 
+        :standard: "Giờ Casey"
     :Chamorro: 
       :long: 
         :standard: "Giờ Chamorro"
@@ -233,20 +253,20 @@
         :standard: "Giờ Ecuador"
     :Europe_Central: 
       :long: 
-        :daylight: "Giờ Mùa Hè Trung Âu"
+        :daylight: "Giờ mùa hè Trung Âu"
         :generic: "Giờ Trung Âu"
-        :standard: "Giờ Chuẩn Trung Âu"
+        :standard: "Giờ chuẩn Trung Âu"
     :Europe_Eastern: 
       :long: 
-        :daylight: "Giờ Mùa Hè Đông Âu"
+        :daylight: "Giờ mùa hè Đông Âu"
         :generic: "Giờ Đông Âu"
-        :standard: "Giờ Chuẩn Đông Âu"
+        :standard: "Giờ chuẩn Đông Âu"
     :Europe_Further_Eastern: 
       :long: 
         :standard: "Giờ Châu Âu Viễn Đông"
     :Europe_Western: 
       :long: 
-        :daylight: "Giờ Mùa hè Tây Âu"
+        :daylight: "Giờ mùa hè Tây Âu"
         :generic: "Giờ Tây Âu"
         :standard: "Giờ Chuẩn Tây Âu"
     :Falkland: 
@@ -276,9 +296,9 @@
         :standard: "Giờ Gambier"
     :Georgia: 
       :long: 
-        :daylight: "Giờ Mùa Hè Georgia"
-        :generic: "Giờ Georgia"
-        :standard: "Giờ Chuẩn Georgia"
+        :daylight: "Giờ Mùa Hè Gruzia"
+        :generic: "Giờ Gruzia"
+        :standard: "Giờ Chuẩn Gruzia"
     :Gilbert_Islands: 
       :long: 
         :standard: "Giờ Quần Đảo Gilbert"
@@ -303,9 +323,13 @@
         :standard: "Giờ Guyana"
     :Hawaii_Aleutian: 
       :long: 
-        :daylight: "Giờ Mùa Hè Hawaii-Aleutian"
-        :generic: "Giờ Hawaii-Aleutian"
-        :standard: "Giờ Chuẩn Hawaii-Aleutian"
+        :daylight: "Giờ Mùa Hè Hawaii-Aleut"
+        :generic: "Giờ Hawaii-Aleut"
+        :standard: "Giờ Chuẩn Hawaii-Aleut"
+      :short: 
+        :daylight: HADT
+        :generic: HAT
+        :standard: HAST
     :Hong_Kong: 
       :long: 
         :daylight: "Giờ Mùa Hè Hồng Kông"
@@ -533,6 +557,9 @@
     :Ponape: 
       :long: 
         :standard: "Giờ Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Giờ Bình Nhưỡng"
     :Qyzylorda: 
       :long: 
         :daylight: "Giờ Mùa Hè Qyzylorda"
@@ -855,6 +882,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -989,6 +1018,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1016,7 +1047,7 @@
     :America/Sitka: 
       :city: Sitka
     :America/St_Barthelemy: 
-      :city: "Saint Barthélemy"
+      :city: "St. Barthélemy"
     :America/St_Johns: 
       :city: "St. John’s"
     :America/St_Kitts: 
@@ -1089,6 +1120,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Baghdad
     :Asia/Bahrain: 
@@ -1097,6 +1130,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1121,6 +1156,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1183,6 +1220,8 @@
       :city: "Bình Nhưỡng"
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Qostanay
     :Asia/Qyzylorda: 
       :city: Qyzylorda
     :Asia/Rangoon: 
@@ -1215,6 +1254,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1275,12 +1316,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Giờ Phối hợp Quốc tế"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Thành phố Không xác định"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athens
     :Europe/Belgrade: 
@@ -1321,6 +1369,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbon
     :Europe/Ljubljana: 
@@ -1361,6 +1411,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1373,14 +1425,16 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
-      :city: Uzhgorod
+      :city: Uzhhorod
     :Europe/Vaduz: 
       :city: Vaduz
     :Europe/Vatican: 
       :city: Vatican
     :Europe/Vienna: 
-      :city: Viên
+      :city: Vienna
     :Europe/Vilnius: 
       :city: Vilnius
     :Europe/Volgograd: 
@@ -1414,7 +1468,7 @@
     :Indian/Mayotte: 
       :city: Mayotte
     :Indian/Reunion: 
-      :city: Reunion
+      :city: Réunion
     :Pacific/Apia: 
       :city: Apia
     :Pacific/Auckland: 
@@ -1445,6 +1499,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: "Giờ HST"
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

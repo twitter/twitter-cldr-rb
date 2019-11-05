@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -23,6 +28,7 @@
         :MMM: LLL
         :MMMEd: "E, MMM d"
         :MMMMEd: "E, MMMM d"
+        :MMMMW: "'linggo' W 'ng' MMMM"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
@@ -45,6 +51,7 @@
         :yMd: M/d/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'linggo' w 'ng' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -117,16 +124,23 @@
           0: BCE
           1: CE
         :name: 
-          0: BCE
-          1: CE
+          0: "Before Common Era"
+          1: "Common Era"
         :narrow: 
           0: ""
       :fields: 
         :day: araw
         :day-narrow: araw
         :day-short: araw
+        :dayOfYear: "araw ng taon"
+        :dayOfYear-narrow: "araw ng taon"
+        :dayOfYear-short: "araw ng taon"
         :dayperiod: AM/PM
-        :era: Era
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: AM/PM
+        :era: panahon
+        :era-narrow: panahon
+        :era-short: panahon
         :hour: oras
         :hour-narrow: oras
         :hour-short: oras
@@ -145,11 +159,21 @@
         :week: linggo
         :week-narrow: linggo
         :week-short: linggo
+        :weekOfMonth: "linggo ng buwan"
+        :weekOfMonth-narrow: "linggo ng buwan"
+        :weekOfMonth-short: "linggo ng buwan"
         :weekday: "araw ng linggo"
+        :weekday-narrow: "araw ng linggo"
+        :weekday-short: "araw ng linggo"
+        :weekdayOfMonth: "karaniwang araw ng buwan"
+        :weekdayOfMonth-narrow: "karaniwang araw ng buwan"
+        :weekdayOfMonth-short: "karaniwang araw ng buwan"
         :year: taon
         :year-narrow: taon
         :year-short: taon
         :zone: "time zone"
+        :zone-narrow: zone
+        :zone-short: zone
       :formats: 
         :date: 
           :full: 
@@ -268,13 +292,13 @@
             :midnight: hatinggabi
             :morning1: "nang umaga"
             :morning2: madaling-araw
-            :night1: "ng gabi"
+            :night1: gabi
             :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
-            :afternoon1: tanghali
+            :afternoon1: "sa hapon"
             :am: am
-            :evening1: hapon
+            :evening1: "sa gabi"
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw
@@ -282,7 +306,7 @@
             :noon: tanghaling-tapat
             :pm: pm
           :wide: 
-            :afternoon1: "ng tanghali"
+            :afternoon1: tanghali
             :am: AM
             :evening1: "ng hapon"
             :midnight: hatinggabi
@@ -305,7 +329,7 @@
           :narrow: 
             :afternoon1: tanghali
             :am: AM
-            :evening1: hapon
+            :evening1: gabi
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw

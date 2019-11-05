@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Мароко
   :LONG:
-    :standard: Западноевропейско стандартно време
-    :daylight: Западноевропейско лятно време
+    :standard: Гринуич
+    :daylight: Гринуич+01:00
   :LONG_GENERIC:
-    :generic: Западноевропейско време
+    :generic: Мароко
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Западна Сахара
   :LONG:
-    :standard: Западноевропейско стандартно време
-    :daylight: Западноевропейско лятно време
+    :standard: Гринуич
+    :daylight: Гринуич+01:00
   :LONG_GENERIC:
-    :generic: Западноевропейско време
+    :generic: Западна Сахара
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Уганда
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: Гринуич+03:00
+    :generic: Гринуич+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Судан
   :LONG:
-    :standard: Източноафриканско време
-    :daylight: Гринуич+03:00
+    :standard: Централноафриканско време
+    :daylight: Гринуич+02:00
   :LONG_GENERIC:
-    :generic: Източноафриканско време
+    :generic: Централноафриканско време
   :SHORT:
-    :standard: Гринуич+3
-    :daylight: Гринуич+3
+    :standard: Гринуич+2
+    :daylight: Гринуич+2
   :SHORT_GENERIC:
     :generic: Судан
 Africa/Kigali:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: Тунис
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: Гринуич+01:00
+    :generic: Гринуич+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Намибия
   :LONG:
-    :standard: Западноафриканско стандартно време
-    :daylight: Западноафриканско лятно часово време
+    :standard: Централноафриканско време
+    :daylight: Гринуич+02:00
   :LONG_GENERIC:
-    :generic: Западноафриканско време (Виндхук)
+    :generic: Централноафриканско време
   :SHORT:
-    :standard: Гринуич+1
+    :standard: Гринуич+2
     :daylight: Гринуич+2
   :SHORT_GENERIC:
     :generic: Намибия
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Хавайско-алеутско стандартно време
     :daylight: Хавайско-алеутско лятно часово време
   :LONG_GENERIC:
-    :generic: Хавайско-алеутско време (Адак)
+    :generic: Хавайско-алеутско време
   :SHORT:
     :standard: Гринуич-10
     :daylight: Гринуич-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Хавайско-алеутско стандартно време
     :daylight: Хавайско-алеутско лятно часово време
   :LONG_GENERIC:
-    :generic: Хавайско-алеутско време (Адак)
+    :generic: Хавайско-алеутско време
   :SHORT:
     :standard: Гринуич-10
     :daylight: Гринуич-9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Амазонско стандартно време
     :daylight: Амазонско лятно часово време
   :LONG_GENERIC:
-    :generic: Амазонско време
+    :generic: Амазонско време (Кампо Гранде)
   :SHORT:
     :standard: Гринуич-4
     :daylight: Гринуич-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Канкун
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: Гринуич-04:30
+    :generic: Гринуич-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Венецуела
   :LONG:
     :standard: Венецуелско време
-    :daylight: Гринуич-04:30
+    :daylight: Гринуич-04:00
   :LONG_GENERIC:
     :generic: Венецуелско време
   :SHORT:
-    :standard: Гринуич-4:30
-    :daylight: Гринуич-4:30
+    :standard: Гринуич-4
+    :daylight: Гринуич-4
   :SHORT_GENERIC:
     :generic: Венецуела
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Амазонско стандартно време
     :daylight: Амазонско лятно часово време
   :LONG_GENERIC:
-    :generic: Амазонско време
+    :generic: Амазонско време (Чуяба)
   :SHORT:
     :standard: Гринуич-4
     :daylight: Гринуич-3
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Fort Nelson
+    :generic: Форт Нелсън
   :LONG:
     :standard: Северноамериканско планинско стандартно време
     :daylight: Северноамериканско планинско лятно часово време
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: Гринуич-7
     :daylight: Гринуич-7
   :SHORT_GENERIC:
-    :generic: Fort Nelson
+    :generic: Форт Нелсън
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Гус Бей
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: Гринуич-04:00
+    :generic: Гринуич-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: острови Търкс и Кайкос
   :LONG:
-    :standard: Северноамериканско атлантическо стандартно време
-    :daylight: Северноамериканско атлантическо лятно часово време
+    :standard: Северноамериканско източно стандартно време
+    :daylight: Северноамериканско източно лятно часово време
   :LONG_GENERIC:
-    :generic: Северноамериканско атлантическо стандартно време
+    :generic: Северноамериканско източно време
   :SHORT:
-    :standard: Гринуич-4
+    :standard: Гринуич-5
     :daylight: Гринуич-4
   :SHORT_GENERIC:
     :generic: острови Търкс и Кайкос
@@ -3012,7 +3012,7 @@ America/Nassau:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Бахами
+    :generic: Бахамски острови
   :LONG:
     :standard: Северноамериканско източно стандартно време
     :daylight: Северноамериканско източно лятно часово време
@@ -3022,7 +3022,7 @@ America/Nassau:
     :standard: Гринуич-5
     :daylight: Гринуич-4
   :SHORT_GENERIC:
-    :generic: Бахами
+    :generic: Бахамски острови
 America/New_York:
   :offset: -18000000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Северноамериканско източно стандартно време
     :daylight: Северноамериканско източно лятно часово време
   :LONG_GENERIC:
-    :generic: Северноамериканско източно стандартно време
+    :generic: Северноамериканско източно време
   :SHORT:
     :standard: Гринуич-5
-    :daylight: Гринуич-5
+    :daylight: Гринуич-4
   :SHORT_GENERIC:
     :generic: Хаити
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Пуерто Рико
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Пунта Аренас
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич-03:00
+    :daylight: Гринуич-03:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Пунта Аренас
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич-3
+    :daylight: Гринуич-3
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Пунта Аренас
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3482,10 +3482,10 @@ America/Santa_Isabel:
   :GENERIC_LOCATION:
     :generic: Санта Исабел
   :LONG:
-    :standard: Мексико – северозападно стандартно време
-    :daylight: Мексико – северозападно лятно часово време
+    :standard: Северозападно стандартно мексиканско време
+    :daylight: Северозападно лятно часово мексиканско време
   :LONG_GENERIC:
-    :generic: Мексико – северозападно време
+    :generic: Северозападно мексиканско време
   :SHORT:
     :standard: Гринуич-8
     :daylight: Гринуич-7
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Сантарем
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: Гринуич-03:00
+    :generic: Гринуич-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Чили
   :LONG:
     :standard: Чилийско стандартно време
     :daylight: Чилийско лятно часово време
   :LONG_GENERIC:
-    :generic: Чилийско стандартно време
+    :generic: Чилийско време
   :SHORT:
-    :standard: Гринуич-3
+    :standard: Гринуич-4
     :daylight: Гринуич-3
   :SHORT_GENERIC:
     :generic: Чили
@@ -3968,10 +3968,10 @@ Antarctica/Casey:
   :GENERIC_LOCATION:
     :generic: Кейси
   :LONG:
-    :standard: Австралия – западно стандартно време
-    :daylight: Австралия – западно лятно часово време
+    :standard: Западноавстралийско стандартно време
+    :daylight: Западноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – западно стандартно време
+    :generic: Западноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+8
     :daylight: Гринуич+8
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Палмър
   :LONG:
-    :standard: Чилийско стандартно време
-    :daylight: Чилийско лятно часово време
+    :standard: Гринуич-03:00
+    :daylight: Гринуич-03:00
   :LONG_GENERIC:
-    :generic: Чилийско стандартно време
+    :generic: Палмър
   :SHORT:
     :standard: Гринуич-3
     :daylight: Гринуич-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Туркменистан
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Атърау
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Западноказахстанско време
+    :daylight: Гринуич+05:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Западноказахстанско време
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+5
+    :daylight: Гринуич+5
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Атърау
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Азербайджанско стандартно време
     :daylight: Азербайджанско лятно часово време
   :LONG_GENERIC:
-    :generic: Азербайджанско време
+    :generic: Азербайджанско стандартно време
   :SHORT:
     :standard: Гринуич+4
-    :daylight: Гринуич+5
+    :daylight: Гринуич+4
   :SHORT_GENERIC:
     :generic: Азербайджан
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Barnaul
+    :generic: Барнаул
   :LONG:
     :standard: Гринуич+07:00
     :daylight: Гринуич+07:00
   :LONG_GENERIC:
-    :generic: Barnaul
+    :generic: Барнаул
   :SHORT:
     :standard: Гринуич+7
     :daylight: Гринуич+7
   :SHORT_GENERIC:
-    :generic: Barnaul
+    :generic: Барнаул
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4508,10 +4508,10 @@ Asia/Calcutta:
   :GENERIC_LOCATION:
     :generic: Индия
   :LONG:
-    :standard: Индийско стандартно време
+    :standard: Индийско време
     :daylight: Гринуич+05:30
   :LONG_GENERIC:
-    :generic: Индийско стандартно време
+    :generic: Индийско време
   :SHORT:
     :standard: Гринуич+5:30
     :daylight: Гринуич+5:30
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Чойбалсанско стандартно време
     :daylight: Чойбалсанско лятно часово време
   :LONG_GENERIC:
-    :generic: Чойбалсанско време
+    :generic: Чойбалсанско стандартно време
   :SHORT:
     :standard: Гринуич+8
-    :daylight: Гринуич+9
+    :daylight: Гринуич+8
   :SHORT_GENERIC:
     :generic: Чойбалсан
 Asia/Chongqing:
@@ -4598,10 +4598,10 @@ Asia/Colombo:
   :GENERIC_LOCATION:
     :generic: Шри Ланка
   :LONG:
-    :standard: Индийско стандартно време
+    :standard: Индийско време
     :daylight: Гринуич+05:30
   :LONG_GENERIC:
-    :generic: Индийско стандартно време
+    :generic: Индийско време
   :SHORT:
     :standard: Гринуич+5:30
     :daylight: Гринуич+5:30
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Таджикистан
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Фамагуста
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+02:00
+    :daylight: Гринуич+03:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Фамагуста
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+2
+    :daylight: Гринуич+3
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Фамагуста
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Ховдско стандартно време
     :daylight: Ховдско лятно часово време
   :LONG_GENERIC:
-    :generic: Ховдско време
+    :generic: Ховдско стандартно време
   :SHORT:
     :standard: Гринуич+7
-    :daylight: Гринуич+8
+    :daylight: Гринуич+7
   :SHORT_GENERIC:
     :generic: Ховд
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Иркутск
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: Гринуич+02:00
+    :generic: Гринуич+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Турция
   :LONG:
-    :standard: Източноевропейско стандартно време
-    :daylight: Източноевропейско лятно часово време
+    :standard: Гринуич+03:00
+    :daylight: Гринуич+03:00
   :LONG_GENERIC:
-    :generic: Източноевропейско време
+    :generic: Турция
   :SHORT:
-    :standard: Гринуич+2
+    :standard: Гринуич+3
     :daylight: Гринуич+3
   :SHORT_GENERIC:
     :generic: Турция
@@ -5066,10 +5066,10 @@ Asia/Kolkata:
   :GENERIC_LOCATION:
     :generic: Индия
   :LONG:
-    :standard: Индийско стандартно време
+    :standard: Индийско време
     :daylight: Гринуич+05:30
   :LONG_GENERIC:
-    :generic: Индийско стандартно време
+    :generic: Индийско време
   :SHORT:
     :standard: Гринуич+5:30
     :daylight: Гринуич+5:30
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: Макао, САР на Китай
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: Гринуич+10:00
+    :generic: Гринуич+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Магадан
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Магаданско стандартно време
   :SHORT:
-    :standard: Гринуич+10
-    :daylight: Гринуич+10
+    :standard: Гринуич+11
+    :daylight: Гринуич+11
   :SHORT_GENERIC:
     :generic: Магадан
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Кипър
+    :generic: Никозия
   :LONG:
     :standard: Източноевропейско стандартно време
     :daylight: Източноевропейско лятно часово време
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: Гринуич+2
     :daylight: Гринуич+3
   :SHORT_GENERIC:
-    :generic: Кипър
+    :generic: Никозия
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Новокузнецк
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: Гринуич+06:00
+    :generic: Гринуич+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Новосибирск
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Новосибирско стандартно време
   :SHORT:
-    :standard: Гринуич+6
-    :daylight: Гринуич+6
+    :standard: Гринуич+7
+    :daylight: Гринуич+7
   :SHORT_GENERIC:
     :generic: Новосибирск
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Понтианак
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: Гринуич+08:30
+    :generic: Гринуич+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Северна Корея
   :LONG:
-    :standard: Гринуич+08:30
-    :daylight: Гринуич+08:30
+    :standard: Корейско стандартно време
+    :daylight: Корейско лятно часово време
   :LONG_GENERIC:
-    :generic: Северна Корея
+    :generic: Корейско стандартно време
   :SHORT:
-    :standard: Гринуич+8:30
-    :daylight: Гринуич+8:30
+    :standard: Гринуич+9
+    :daylight: Гринуич+9
   :SHORT_GENERIC:
     :generic: Северна Корея
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: Гринуич+3
   :SHORT_GENERIC:
     :generic: Катар
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: Гринуич+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Къзълорда
+    :generic: Qostanay
   :LONG:
     :standard: Източноказахстанско време
     :daylight: Гринуич+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: Гринуич+6
     :daylight: Гринуич+6
+  :SHORT_GENERIC:
+    :generic: Qostanay
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: Гринуич+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Къзълорда
+  :LONG:
+    :standard: Западноказахстанско време
+    :daylight: Гринуич+05:00
+  :LONG_GENERIC:
+    :generic: Западноказахстанско време
+  :SHORT:
+    :standard: Гринуич+5
+    :daylight: Гринуич+5
   :SHORT_GENERIC:
     :generic: Къзълорда
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Япония
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Томск
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+07:00
+    :daylight: Гринуич+07:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Томск
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+7
+    :daylight: Гринуич+7
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Томск
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Уланбаторско стандартно време
     :daylight: Уланбаторско лятно часово време
   :LONG_GENERIC:
-    :generic: Уланбаторско време
+    :generic: Уланбаторско стандартно време
   :SHORT:
     :standard: Гринуич+8
-    :daylight: Гринуич+9
+    :daylight: Гринуич+8
   :SHORT_GENERIC:
     :generic: Улан Батор
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Уланбаторско стандартно време
     :daylight: Уланбаторско лятно часово време
   :LONG_GENERIC:
-    :generic: Уланбаторско време
+    :generic: Уланбаторско стандартно време
   :SHORT:
     :standard: Гринуич+8
-    :daylight: Гринуич+9
+    :daylight: Гринуич+8
   :SHORT_GENERIC:
     :generic: Улан Батор
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Якутск
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Мианмар (Бирма)
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Мианмарско време
+    :daylight: Гринуич+06:30
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Мианмарско време
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+6:30
+    :daylight: Гринуич+6:30
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Мианмар (Бирма)
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -5964,7 +5982,7 @@ Atlantic/Azores:
   :SHORT_GMT:
     :generic: "-0100"
   :GENERIC_LOCATION:
-    :generic: Азорски о-ви
+    :generic: Азорски острови
   :LONG:
     :standard: Азорски острови – стандартно време
     :daylight: Азорски острови – лятно часово време
@@ -5974,7 +5992,7 @@ Atlantic/Azores:
     :standard: Гринуич-1
     :daylight: Гринуич
   :SHORT_GENERIC:
-    :generic: Азорски о-ви
+    :generic: Азорски острови
 Atlantic/Bermuda:
   :offset: -14400000
   :LONG_GMT:
@@ -5982,7 +6000,7 @@ Atlantic/Bermuda:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Бермуда
+    :generic: Бермудски острови
   :LONG:
     :standard: Северноамериканско атлантическо стандартно време
     :daylight: Северноамериканско атлантическо лятно часово време
@@ -5992,7 +6010,7 @@ Atlantic/Bermuda:
     :standard: Гринуич-4
     :daylight: Гринуич-3
   :SHORT_GENERIC:
-    :generic: Бермуда
+    :generic: Бермудски острови
 Atlantic/Canary:
   :offset: 0
   :LONG_GMT:
@@ -6000,7 +6018,7 @@ Atlantic/Canary:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Канарски о-ви
+    :generic: Канарски острови
   :LONG:
     :standard: Западноевропейско стандартно време
     :daylight: Западноевропейско лятно време
@@ -6010,7 +6028,7 @@ Atlantic/Canary:
     :standard: Гринуич
     :daylight: Гринуич+1
   :SHORT_GENERIC:
-    :generic: Канарски о-ви
+    :generic: Канарски острови
 Atlantic/Cape_Verde:
   :offset: -3600000
   :LONG_GMT:
@@ -6162,7 +6180,7 @@ Atlantic/Stanley:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Фолклендски острови
+    :generic: Фолкландски острови
   :LONG:
     :standard: Фолклендски острови – стандартно време
     :daylight: Фолклендски острови – лятно часово време
@@ -6172,7 +6190,7 @@ Atlantic/Stanley:
     :standard: Гринуич-3
     :daylight: Гринуич-3
   :SHORT_GENERIC:
-    :generic: Фолклендски острови
+    :generic: Фолкландски острови
 Australia/ACT:
   :offset: 36000000
   :LONG_GMT:
@@ -6182,10 +6200,10 @@ Australia/ACT:
   :GENERIC_LOCATION:
     :generic: Сидни
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6200,10 +6218,10 @@ Australia/Adelaide:
   :GENERIC_LOCATION:
     :generic: Аделаида
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно време
+    :generic: Централноавстралийско време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+10:30
@@ -6218,10 +6236,10 @@ Australia/Brisbane:
   :GENERIC_LOCATION:
     :generic: Бризбейн
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно стандартно време
+    :generic: Източноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+10
@@ -6236,10 +6254,10 @@ Australia/Broken_Hill:
   :GENERIC_LOCATION:
     :generic: Броукън Хил
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно време
+    :generic: Централноавстралийско време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+10:30
@@ -6254,10 +6272,10 @@ Australia/Canberra:
   :GENERIC_LOCATION:
     :generic: Сидни
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6272,10 +6290,10 @@ Australia/Currie:
   :GENERIC_LOCATION:
     :generic: Къри
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6290,10 +6308,10 @@ Australia/Darwin:
   :GENERIC_LOCATION:
     :generic: Дарвин
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно стандартно време
+    :generic: Централноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+9:30
@@ -6326,10 +6344,10 @@ Australia/Hobart:
   :GENERIC_LOCATION:
     :generic: Хобарт
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6362,10 +6380,10 @@ Australia/Lindeman:
   :GENERIC_LOCATION:
     :generic: Линдеман
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно стандартно време
+    :generic: Източноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+10
@@ -6398,10 +6416,10 @@ Australia/Melbourne:
   :GENERIC_LOCATION:
     :generic: Мелбърн
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6416,10 +6434,10 @@ Australia/NSW:
   :GENERIC_LOCATION:
     :generic: Сидни
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6434,10 +6452,10 @@ Australia/North:
   :GENERIC_LOCATION:
     :generic: Дарвин
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно стандартно време
+    :generic: Централноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+9:30
@@ -6452,10 +6470,10 @@ Australia/Perth:
   :GENERIC_LOCATION:
     :generic: Пърт
   :LONG:
-    :standard: Австралия – западно стандартно време
-    :daylight: Австралия – западно лятно часово време
+    :standard: Западноавстралийско стандартно време
+    :daylight: Западноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – западно стандартно време
+    :generic: Западноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+8
     :daylight: Гринуич+8
@@ -6470,10 +6488,10 @@ Australia/Queensland:
   :GENERIC_LOCATION:
     :generic: Бризбейн
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно стандартно време
+    :generic: Източноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+10
@@ -6488,10 +6506,10 @@ Australia/South:
   :GENERIC_LOCATION:
     :generic: Аделаида
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно време
+    :generic: Централноавстралийско време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+10:30
@@ -6506,10 +6524,10 @@ Australia/Sydney:
   :GENERIC_LOCATION:
     :generic: Сидни
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6524,10 +6542,10 @@ Australia/Tasmania:
   :GENERIC_LOCATION:
     :generic: Хобарт
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6542,10 +6560,10 @@ Australia/Victoria:
   :GENERIC_LOCATION:
     :generic: Мелбърн
   :LONG:
-    :standard: Австралия – източно стандартно време
-    :daylight: Австралия – източно лятно часово време
+    :standard: Източноавстралийско стандартно време
+    :daylight: Източноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – източно време
+    :generic: Източноавстралийско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+11
@@ -6560,10 +6578,10 @@ Australia/West:
   :GENERIC_LOCATION:
     :generic: Пърт
   :LONG:
-    :standard: Австралия – западно стандартно време
-    :daylight: Австралия – западно лятно часово време
+    :standard: Западноавстралийско стандартно време
+    :daylight: Западноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – западно стандартно време
+    :generic: Западноавстралийско стандартно време
   :SHORT:
     :standard: Гринуич+8
     :daylight: Гринуич+8
@@ -6578,10 +6596,10 @@ Australia/Yancowinna:
   :GENERIC_LOCATION:
     :generic: Броукън Хил
   :LONG:
-    :standard: Австралия – централно стандартно време
-    :daylight: Австралия – централно лятно часово време
+    :standard: Централноавстралийско стандартно време
+    :daylight: Централноавстралийско лятно часово време
   :LONG_GENERIC:
-    :generic: Австралия – централно време
+    :generic: Централноавстралийско време
   :SHORT:
     :standard: Гринуич+9:30
     :daylight: Гринуич+10:30
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: Гринуич-5
   :SHORT_GENERIC:
     :generic: Уинипег
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: Гринуич-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Риджайна
-  :LONG:
-    :standard: Северноамериканско централно стандартно време
-    :daylight: Северноамериканско централно лятно часово време
-  :LONG_GENERIC:
-    :generic: Северноамериканско централно стандартно време
-  :SHORT:
-    :standard: Гринуич-6
-    :daylight: Гринуич-6
-  :SHORT_GENERIC:
-    :generic: Риджайна
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,41 +6858,41 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Уайтхорс
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: Гринуич-03:00
+    :generic: Гринуич-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Чили
   :LONG:
     :standard: Чилийско стандартно време
     :daylight: Чилийско лятно часово време
   :LONG_GENERIC:
-    :generic: Чилийско стандартно време
+    :generic: Чилийско време
   :SHORT:
-    :standard: Гринуич-3
+    :standard: Гринуич-4
     :daylight: Гринуич-3
   :SHORT_GENERIC:
     :generic: Чили
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: Гринуич-05:00
+    :generic: Гринуич-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Великденски о-в
+    :generic: Великденски остров
   :LONG:
     :standard: Великденски остров – стандартно време
     :daylight: Великденски остров – лятно часово време
   :LONG_GENERIC:
-    :generic: Великденски остров – стандартно време
+    :generic: Великденски остров
   :SHORT:
-    :standard: Гринуич-5
+    :standard: Гринуич-6
     :daylight: Гринуич-5
   :SHORT_GENERIC:
-    :generic: Великденски о-в
+    :generic: Великденски остров
 Cuba:
   :offset: -18000000
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan
+    :generic: Астрахан
   :LONG:
     :standard: Гринуич+04:00
     :daylight: Гринуич+04:00
   :LONG_GENERIC:
-    :generic: Astrakhan
+    :generic: Астрахан
   :SHORT:
     :standard: Гринуич+4
     :daylight: Гринуич+4
   :SHORT_GENERIC:
-    :generic: Astrakhan
+    :generic: Астрахан
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: остров Ман
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: Гринуич+02:00
+    :generic: Гринуич+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Турция
   :LONG:
-    :standard: Източноевропейско стандартно време
-    :daylight: Източноевропейско лятно часово време
+    :standard: Гринуич+03:00
+    :daylight: Гринуич+03:00
   :LONG_GENERIC:
-    :generic: Източноевропейско време
+    :generic: Турция
   :SHORT:
-    :standard: Гринуич+2
+    :standard: Гринуич+3
     :daylight: Гринуич+3
   :SHORT_GENERIC:
     :generic: Турция
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: Украйна
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Киров
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+03:00
+    :daylight: Гринуич+03:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Киров
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+3
+    :daylight: Гринуич+3
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Киров
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Беларус
   :LONG:
-    :standard: Далечно източноевропейско време
-    :daylight: Гринуич+03:00
+    :standard: Московско стандартно време
+    :daylight: Московско лятно часово време
   :LONG_GENERIC:
-    :generic: Далечно източноевропейско време
+    :generic: Московско стандартно време
   :SHORT:
     :standard: Гринуич+3
     :daylight: Гринуич+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Кипър
+    :generic: Никозия
   :LONG:
     :standard: Източноевропейско стандартно време
     :daylight: Източноевропейско лятно часово време
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: Гринуич+2
     :daylight: Гринуич+3
   :SHORT_GENERIC:
-    :generic: Кипър
+    :generic: Никозия
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Чешка република
+    :generic: Чехия
   :LONG:
     :standard: Централноевропейско стандартно време
     :daylight: Централноевропейско лятно часово време
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: Гринуич+1
     :daylight: Гринуич+2
   :SHORT_GENERIC:
-    :generic: Чешка република
+    :generic: Чехия
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: Босна и Херцеговина
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: Гринуич
+    :generic: Гринуич+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Гринуич
+    :generic: Саратов
   :LONG:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+04:00
+    :daylight: Гринуич+04:00
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Саратов
   :SHORT:
-    :standard: Гринуич
-    :daylight: Гринуич
+    :standard: Гринуич+4
+    :daylight: Гринуич+4
   :SHORT_GENERIC:
-    :generic: Гринуич
+    :generic: Саратов
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8448,7 +8448,7 @@ Europe/Simferopol:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Севастопол
+    :generic: Симферопол
   :LONG:
     :standard: Московско стандартно време
     :daylight: Московско лятно часово време
@@ -8458,7 +8458,7 @@ Europe/Simferopol:
     :standard: Гринуич+3
     :daylight: Гринуич+3
   :SHORT_GENERIC:
-    :generic: Севастопол
+    :generic: Симферопол
 Europe/Skopje:
   :offset: 3600000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Македония
+    :generic: Северна Македония
   :LONG:
     :standard: Централноевропейско стандартно време
     :daylight: Централноевропейско лятно часово време
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: Гринуич+1
     :daylight: Гринуич+2
   :SHORT_GENERIC:
-    :generic: Македония
+    :generic: Северна Македония
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk
+    :generic: Уляновск
   :LONG:
     :standard: Гринуич+04:00
     :daylight: Гринуич+04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsk
+    :generic: Уляновск
   :SHORT:
     :standard: Гринуич+4
     :daylight: Гринуич+4
   :SHORT_GENERIC:
-    :generic: Ulyanovsk
+    :generic: Уляновск
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: Литва
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: Гринуич+03:00
+    :generic: Гринуич+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Волгоград
   :LONG:
-    :standard: Московско стандартно време
-    :daylight: Московско лятно часово време
+    :standard: Волгоградско стандартно време
+    :daylight: Волгоградско лятно часово време
   :LONG_GENERIC:
-    :generic: Московско стандартно време
+    :generic: Волгоградско стандартно време
   :SHORT:
-    :standard: Гринуич+3
-    :daylight: Гринуич+3
+    :standard: Гринуич+4
+    :daylight: Гринуич+4
   :SHORT_GENERIC:
     :generic: Волгоград
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Средно гринуичко време
     :daylight: Гринуич
   :LONG_GENERIC:
-    :generic: Гринуич
+    :generic: Средно гринуичко време
   :SHORT:
     :standard: Гринуич
     :daylight: Гринуич
@@ -9080,10 +9080,10 @@ Indian/Mahe:
   :GENERIC_LOCATION:
     :generic: Сейшели
   :LONG:
-    :standard: Сейшелски острови
+    :standard: Сейшели
     :daylight: Гринуич+04:00
   :LONG_GENERIC:
-    :generic: Сейшелски острови
+    :generic: Сейшели
   :SHORT:
     :standard: Гринуич+4
     :daylight: Гринуич+4
@@ -9098,10 +9098,10 @@ Indian/Maldives:
   :GENERIC_LOCATION:
     :generic: Малдиви
   :LONG:
-    :standard: Малдивски острови
+    :standard: Малдивско време
     :daylight: Гринуич+05:00
   :LONG_GENERIC:
-    :generic: Малдивски острови
+    :generic: Малдивско време
   :SHORT:
     :standard: Гринуич+5
     :daylight: Гринуич+5
@@ -9404,10 +9404,10 @@ NZ-CHAT:
   :GENERIC_LOCATION:
     :generic: Чатам
   :LONG:
-    :standard: Чатъм – стандартно време
-    :daylight: Чатъм – лятно часово време
+    :standard: Чатъмско стандартно време
+    :daylight: Чатъмско лятно часово време
   :LONG_GENERIC:
-    :generic: Чатъм
+    :generic: Чатъмско време
   :SHORT:
     :standard: Гринуич+12:45
     :daylight: Гринуич+13:45
@@ -9530,10 +9530,10 @@ Pacific/Chatham:
   :GENERIC_LOCATION:
     :generic: Чатам
   :LONG:
-    :standard: Чатъм – стандартно време
-    :daylight: Чатъм – лятно часово време
+    :standard: Чатъмско стандартно време
+    :daylight: Чатъмско лятно часово време
   :LONG_GENERIC:
-    :generic: Чатъм
+    :generic: Чатъмско време
   :SHORT:
     :standard: Гринуич+12:45
     :daylight: Гринуич+13:45
@@ -9558,23 +9558,23 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Чуюк
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: Гринуич-05:00
+    :generic: Гринуич-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Великденски о-в
+    :generic: Великденски остров
   :LONG:
     :standard: Великденски остров – стандартно време
     :daylight: Великденски остров – лятно часово време
   :LONG_GENERIC:
-    :generic: Великденски остров – стандартно време
+    :generic: Великденски остров
   :SHORT:
-    :standard: Гринуич-5
+    :standard: Гринуич-6
     :daylight: Гринуич-5
   :SHORT_GENERIC:
-    :generic: Великденски о-в
+    :generic: Великденски остров
 Pacific/Efate:
   :offset: 39600000
   :LONG_GMT:
@@ -9638,10 +9638,10 @@ Pacific/Fiji:
   :GENERIC_LOCATION:
     :generic: Фиджи
   :LONG:
-    :standard: Фиджи – стандартно време
-    :daylight: Фиджи – лятно часово време
+    :standard: Фиджийско стандартно време
+    :daylight: Фиджийско лятно часово време
   :LONG_GENERIC:
-    :generic: Фиджи
+    :generic: Фиджийско време
   :SHORT:
     :standard: Гринуич+12
     :daylight: Гринуич+13
@@ -9672,7 +9672,7 @@ Pacific/Galapagos:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Галапагоски о-ви
+    :generic: Галапагос
   :LONG:
     :standard: Галапагоско време
     :daylight: Гринуич-06:00
@@ -9682,7 +9682,7 @@ Pacific/Galapagos:
     :standard: Гринуич-6
     :daylight: Гринуич-6
   :SHORT_GENERIC:
-    :generic: Галапагоски о-ви
+    :generic: Галапагос
 Pacific/Gambier:
   :offset: -32400000
   :LONG_GMT:
@@ -9728,10 +9728,10 @@ Pacific/Guam:
   :GENERIC_LOCATION:
     :generic: Гуам
   :LONG:
-    :standard: Чаморо – стандартно време
+    :standard: Чаморско време
     :daylight: Гринуич+10:00
   :LONG_GENERIC:
-    :generic: Чаморо – стандартно време
+    :generic: Чаморско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+10
@@ -9852,7 +9852,7 @@ Pacific/Marquesas:
   :SHORT_GMT:
     :generic: "-0930"
   :GENERIC_LOCATION:
-    :generic: Маркизки о-ви
+    :generic: Маркизки острови
   :LONG:
     :standard: Маркизки острови
     :daylight: Гринуич-09:30
@@ -9862,7 +9862,7 @@ Pacific/Marquesas:
     :standard: Гринуич-9:30
     :daylight: Гринуич-9:30
   :SHORT_GENERIC:
-    :generic: Маркизки о-ви
+    :generic: Маркизки острови
 Pacific/Midway:
   :offset: -39600000
   :LONG_GMT:
@@ -9926,10 +9926,10 @@ Pacific/Norfolk:
   :GENERIC_LOCATION:
     :generic: остров Норфолк
   :LONG:
-    :standard: Норфолк
+    :standard: Норфолкско време
     :daylight: Гринуич+11:00
   :LONG_GENERIC:
-    :generic: Норфолк
+    :generic: Норфолкско време
   :SHORT:
     :standard: Гринуич+11
     :daylight: Гринуич+11
@@ -10088,10 +10088,10 @@ Pacific/Saipan:
   :GENERIC_LOCATION:
     :generic: Северни Мариански острови
   :LONG:
-    :standard: Чаморо – стандартно време
+    :standard: Чаморско време
     :daylight: Гринуич+10:00
   :LONG_GENERIC:
-    :generic: Чаморо – стандартно време
+    :generic: Чаморско време
   :SHORT:
     :standard: Гринуич+10
     :daylight: Гринуич+10
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Сингапур
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: Гринуич+02:00
+    :generic: Гринуич+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Турция
   :LONG:
-    :standard: Източноевропейско стандартно време
-    :daylight: Източноевропейско лятно часово време
+    :standard: Гринуич+03:00
+    :daylight: Гринуич+03:00
   :LONG_GENERIC:
-    :generic: Източноевропейско време
+    :generic: Турция
   :SHORT:
-    :standard: Гринуич+2
+    :standard: Гринуич+3
     :daylight: Гринуич+3
   :SHORT_GENERIC:
     :generic: Турция
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Хавайско-алеутско стандартно време
     :daylight: Хавайско-алеутско лятно часово време
   :LONG_GENERIC:
-    :generic: Хавайско-алеутско време (Адак)
+    :generic: Хавайско-алеутско време
   :SHORT:
     :standard: Гринуич-10
     :daylight: Гринуич-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: Гринуич
   :LONG:
-    :standard: Гринуич
+    :standard: Координирано универсално време
     :daylight: Гринуич
   :LONG_GENERIC:
     :generic: Гринуич
   :SHORT:
-    :standard: Гринуич
+    :standard: UTC
     :daylight: Гринуич
   :SHORT_GENERIC:
     :generic: Гринуич

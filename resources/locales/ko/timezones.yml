@@ -1,18 +1,11 @@
 --- 
 :ko: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1}({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} 하계 표준시"
-      :generic: "{0} 시간"
-      :standard: "{0} 표준시"
+    :fallback_format: "{1}({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} 표준시"
   :metazones: 
     :Acre: 
       :long: 
@@ -113,7 +106,7 @@
         :standard: "아르메니아 표준시"
     :Atlantic: 
       :long: 
-        :daylight: "미 대서양 하계 표준시"
+        :daylight: "대서양 하계 표준시"
         :generic: "대서양 시간"
         :standard: "대서양 표준시"
     :Australia_Central: 
@@ -279,9 +272,9 @@
         :standard: "감비에 시간"
     :Georgia: 
       :long: 
-        :daylight: "그루지아 하계 표준시"
-        :generic: "그루지아 시간"
-        :standard: "그루지아 표준시"
+        :daylight: "조지아 하계 표준시"
+        :generic: "조지아 시간"
+        :standard: "조지아 표준시"
     :Gilbert_Islands: 
       :long: 
         :standard: "길버트 제도 시간"
@@ -536,6 +529,9 @@
     :Ponape: 
       :long: 
         :standard: "포나페 시간"
+    :Pyongyang: 
+      :long: 
+        :standard: "평양 시간"
     :Qyzylorda: 
       :long: 
         :daylight: "키질로르다 하계 표준시"
@@ -783,7 +779,7 @@
     :America/Argentina/San_Luis: 
       :city: 산루이스
     :America/Argentina/Tucuman: 
-      :city: 뚜꾸만
+      :city: 투쿠만
     :America/Argentina/Ushuaia: 
       :city: 우수아이아
     :America/Aruba: 
@@ -858,6 +854,8 @@
       :city: 아이루네페
     :America/El_Salvador: 
       :city: 엘살바도르
+    :America/Fort_Nelson: 
+      :city: "포트 넬슨"
     :America/Fortaleza: 
       :city: 포르탈레자
     :America/Glace_Bay: 
@@ -989,9 +987,11 @@
     :America/Port_of_Spain: 
       :city: 포트오브스페인
     :America/Porto_Velho: 
-      :city: 포르투벨류
+      :city: 포르토벨료
     :America/Puerto_Rico: 
       :city: 푸에르토리코
+    :America/Punta_Arenas: 
+      :city: 푼타아레나스
     :America/Rainy_River: 
       :city: 레이니강
     :America/Rankin_Inlet: 
@@ -1013,7 +1013,7 @@
     :America/Santo_Domingo: 
       :city: 산토도밍고
     :America/Sao_Paulo: 
-      :city: 상파울로
+      :city: 상파울루
     :America/Scoresbysund: 
       :city: 스코레스바이선드
     :America/Sitka: 
@@ -1092,6 +1092,8 @@
       :city: 악토브
     :Asia/Ashgabat: 
       :city: 아슈하바트
+    :Asia/Atyrau: 
+      :city: 아티라우
     :Asia/Baghdad: 
       :city: 바그다드
     :Asia/Bahrain: 
@@ -1100,6 +1102,8 @@
       :city: 바쿠
     :Asia/Bangkok: 
       :city: 방콕
+    :Asia/Barnaul: 
+      :city: 바르나울
     :Asia/Beirut: 
       :city: 베이루트
     :Asia/Bishkek: 
@@ -1124,6 +1128,8 @@
       :city: 두바이
     :Asia/Dushanbe: 
       :city: 두샨베
+    :Asia/Famagusta: 
+      :city: 파마구스타
     :Asia/Gaza: 
       :city: 가자
     :Asia/Hebron: 
@@ -1186,6 +1192,8 @@
       :city: 평양
     :Asia/Qatar: 
       :city: 카타르
+    :Asia/Qostanay: 
+      :city: 코스타나이
     :Asia/Qyzylorda: 
       :city: 키질로르다
     :Asia/Rangoon: 
@@ -1218,6 +1226,8 @@
       :city: 팀부
     :Asia/Tokyo: 
       :city: 도쿄
+    :Asia/Tomsk: 
+      :city: 톰스크
     :Asia/Ulaanbaatar: 
       :city: 울란바토르
     :Asia/Urumqi: 
@@ -1278,12 +1288,19 @@
       :city: 퍼스
     :Australia/Sydney: 
       :city: 시드니
+    :Etc/UTC: 
+      :long: 
+        :standard: "협정 세계시"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "알 수 없는 장소"
     :Europe/Amsterdam: 
       :city: 암스테르담
     :Europe/Andorra: 
       :city: 안도라
+    :Europe/Astrakhan: 
+      :city: 아스트라한
     :Europe/Athens: 
       :city: 아테네
     :Europe/Belgrade: 
@@ -1307,7 +1324,7 @@
     :Europe/Dublin: 
       :city: 더블린
       :long: 
-        :daylight: "아일랜드 시간"
+        :daylight: "아일랜드 표준시"
     :Europe/Gibraltar: 
       :city: 지브롤터
     :Europe/Guernsey: 
@@ -1324,6 +1341,8 @@
       :city: 칼리닌그라드
     :Europe/Kiev: 
       :city: 키예프
+    :Europe/Kirov: 
+      :city: 키로프
     :Europe/Lisbon: 
       :city: 리스본
     :Europe/Ljubljana: 
@@ -1364,6 +1383,8 @@
       :city: 산마리노
     :Europe/Sarajevo: 
       :city: 사라예보
+    :Europe/Saratov: 
+      :city: 사라토프
     :Europe/Simferopol: 
       :city: 심페로폴
     :Europe/Skopje: 
@@ -1376,6 +1397,8 @@
       :city: 탈린
     :Europe/Tirane: 
       :city: 티라나
+    :Europe/Ulyanovsk: 
+      :city: 울리야노프스크
     :Europe/Uzhgorod: 
       :city: 우주고로트
     :Europe/Vaduz: 

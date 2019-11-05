@@ -1,18 +1,11 @@
 --- 
 :sl: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: +HH.mm;-HH.mm
-    :region_format: 
-      :daylight: "{0} poletni čas"
-      :generic: "{0} čas"
-      :standard: "{0} standardni čas"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: +HH.mm;-HH.mm
+    :region_format: "{0} standardni čas"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -318,9 +311,9 @@
         :standard: "Iranski standardni čas"
     :Irkutsk: 
       :long: 
-        :daylight: "Irkutški poletni čas"
-        :generic: "Irkutški čas"
-        :standard: "Irkutški standardni čas"
+        :daylight: "Irkutski poletni čas"
+        :generic: "Irkutski čas"
+        :standard: "Irkutski standardni čas"
     :Israel: 
       :long: 
         :daylight: "Izraelski poletni čas"
@@ -352,9 +345,9 @@
         :standard: "Kosrajški čas"
     :Krasnoyarsk: 
       :long: 
-        :daylight: "Krasnojarški poletni čas"
-        :generic: "Krasnojarški čas"
-        :standard: "Krasnojarški standardni čas"
+        :daylight: "Krasnojarski poletni čas"
+        :generic: "Krasnojarski čas"
+        :standard: "Krasnojarski standardni čas"
     :Kyrgystan: 
       :long: 
         :standard: "Kirgizistanski čas"
@@ -396,14 +389,14 @@
         :standard: "Mawsonski čas"
     :Mexico_Northwest: 
       :long: 
-        :daylight: "Poletni čas: severozahod Mehike"
-        :generic: "Čas: severozahod Mehike"
-        :standard: "Standardni čas: severozahod Mehike"
+        :daylight: "Mehiški severozahodni poletni čas"
+        :generic: "Mehiški severozahodni čas"
+        :standard: "Mehiški severozahodni standardni čas"
     :Mexico_Pacific: 
       :long: 
-        :daylight: "Poletni čas: pacifiška obala Mehike"
-        :generic: "Čas: pacifiška obala Mehike"
-        :standard: "Standardni čas: pacifiška obala Mehike"
+        :daylight: "Mehiški pacifiški poletni čas"
+        :generic: "Mehiški pacifiški čas"
+        :standard: "Mehiški pacifiški standardni čas"
     :Mongolia: 
       :long: 
         :daylight: "Ulanbatorski poletni čas"
@@ -451,14 +444,14 @@
         :standard: "Fernando de Noronški standardni čas"
     :Novosibirsk: 
       :long: 
-        :daylight: "Novosibirški poletni čas"
-        :generic: "Novosibirški čas"
-        :standard: "Novosibirški standardni čas"
+        :daylight: "Novosibirski poletni čas"
+        :generic: "Novosibirski čas"
+        :standard: "Novosibirski standardni čas"
     :Omsk: 
       :long: 
-        :daylight: "Omški poletni čas"
-        :generic: "Omški čas"
-        :standard: "Omški standardni čas"
+        :daylight: "Omski poletni čas"
+        :generic: "Omski čas"
+        :standard: "Omski standardni čas"
     :Pakistan: 
       :long: 
         :daylight: "Pakistanski poletni čas"
@@ -499,6 +492,9 @@
     :Ponape: 
       :long: 
         :standard: "Ponapski čas"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pjongjanški čas"
     :Reunion: 
       :long: 
         :standard: "Reunionski čas"
@@ -598,7 +594,7 @@
         :standard: "Volgograjski standardni čas"
     :Vostok: 
       :long: 
-        :standard: "Čas: Vostok"
+        :standard: "Vostoški čas"
     :Wake: 
       :long: 
         :standard: "Čas: Otok Wake"
@@ -725,7 +721,7 @@
     :America/Anchorage: 
       :city: Anchorage
     :America/Anguilla: 
-      :city: Anguilla
+      :city: Angvila
     :America/Antigua: 
       :city: Antigua
     :America/Araguaina: 
@@ -789,7 +785,7 @@
     :America/Coral_Harbour: 
       :city: Atikokan
     :America/Cordoba: 
-      :city: Kordova
+      :city: Cordoba
     :America/Costa_Rica: 
       :city: Kostarika
     :America/Creston: 
@@ -816,6 +812,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: Salvador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -829,7 +827,7 @@
     :America/Grenada: 
       :city: Grenada
     :America/Guadeloupe: 
-      :city: Gvadelup
+      :city: Guadeloupe
     :America/Guatemala: 
       :city: Gvatemala
     :America/Guayaquil: 
@@ -905,7 +903,7 @@
     :America/Metlakatla: 
       :city: Metlakatla
     :America/Mexico_City: 
-      :city: "Ciudad Mexico"
+      :city: "Ciudad de Mexico"
     :America/Miquelon: 
       :city: Miquelon
     :America/Moncton: 
@@ -950,6 +948,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: Portoriko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1049,7 +1049,9 @@
     :Asia/Aqtobe: 
       :city: Aktobe
     :Asia/Ashgabat: 
-      :city: Ašgabat
+      :city: Ašhabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1058,6 +1060,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Bejrut
     :Asia/Bishkek: 
@@ -1067,7 +1071,7 @@
     :Asia/Calcutta: 
       :city: Kolkata
     :Asia/Chita: 
-      :city: Chita
+      :city: Čita
     :Asia/Choibalsan: 
       :city: Čojbalsan
     :Asia/Colombo: 
@@ -1082,6 +1086,8 @@
       :city: Dubaj
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1159,11 +1165,11 @@
     :Asia/Seoul: 
       :city: Seul
     :Asia/Shanghai: 
-      :city: Šangaj
+      :city: Šanghaj
     :Asia/Singapore: 
       :city: Singapur
     :Asia/Srednekolymsk: 
-      :city: Srednekolymsk
+      :city: Srednekolimsk
     :Asia/Taipei: 
       :city: Tajpej
     :Asia/Tashkent: 
@@ -1173,9 +1179,11 @@
     :Asia/Tehran: 
       :city: Teheran
     :Asia/Thimphu: 
-      :city: Thimphu
+      :city: Timpu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1236,12 +1244,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "univerzalni koordinirani čas"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "neznano mesto"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andora
+    :Europe/Astrakhan: 
+      :city: Astrahan
     :Europe/Athens: 
       :city: Atene
     :Europe/Belgrade: 
@@ -1282,6 +1297,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kijev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lizbona
     :Europe/Ljubljana: 
@@ -1322,6 +1339,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1334,6 +1353,8 @@
       :city: Talin
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Užgorod
     :Europe/Vaduz: 

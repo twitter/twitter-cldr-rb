@@ -204,7 +204,7 @@ Africa/Brazzaville:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Конга (Бразавіль)'
+    :generic: 'Час: Конга - Бразавіль'
   :LONG:
     :standard: Заходнеафрыканскі стандартны час
     :daylight: Заходнеафрыканскі летні час
@@ -214,7 +214,7 @@ Africa/Brazzaville:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Час: Конга (Бразавіль)'
+    :generic: 'Час: Конга - Бразавіль'
 Africa/Bujumbura:
   :offset: 7200000
   :LONG_GMT:
@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: 'Час: Марока'
   :LONG:
-    :standard: Заходнееўрапейскі стандартны час
-    :daylight: Заходнееўрапейскі летні час
+    :standard: GMT
+    :daylight: GMT+01.00
   :LONG_GENERIC:
-    :generic: Заходнееўрапейскі час
+    :generic: 'Час: Марока'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: 'Час: Заходняя Сахара'
   :LONG:
-    :standard: Заходнееўрапейскі стандартны час
-    :daylight: Заходнееўрапейскі летні час
+    :standard: GMT
+    :daylight: GMT+01.00
   :LONG_GENERIC:
-    :generic: Заходнееўрапейскі час
+    :generic: 'Час: Заходняя Сахара'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: 'Час: Уганда'
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03.00
+    :generic: GMT+02.00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'Час: Судан'
   :LONG:
-    :standard: Усходнеафрыканскі час
-    :daylight: GMT+03.00
+    :standard: Цэнтральнаафрыканскі час
+    :daylight: GMT+02.00
   :LONG_GENERIC:
-    :generic: Усходнеафрыканскі час
+    :generic: Цэнтральнаафрыканскі час
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: 'Час: Судан'
 Africa/Kigali:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: 'Час: Туніс'
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01.00
+    :generic: GMT+02.00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'Час: Намібія'
   :LONG:
-    :standard: Заходнеафрыканскі стандартны час
-    :daylight: Заходнеафрыканскі летні час
+    :standard: Цэнтральнаафрыканскі час
+    :daylight: GMT+02.00
   :LONG_GENERIC:
-    :generic: Заходнеафрыканскі час (Віндхук)
+    :generic: Цэнтральнаафрыканскі час
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: 'Час: Намібія'
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Гавайска-Алеуцкі стандартны час
     :daylight: Гавайска-Алеуцкі летні час
   :LONG_GENERIC:
-    :generic: Гавайска-Алеуцкі час (Адак)
+    :generic: Гавайска-Алеуцкі час
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -996,7 +996,7 @@ America/Anchorage:
   :SHORT_GMT:
     :generic: "-0900"
   :GENERIC_LOCATION:
-    :generic: 'Час: Анкорыдж'
+    :generic: 'Час: Анкарыдж'
   :LONG:
     :standard: Стандартны час Аляскі
     :daylight: Летні час Аляскі
@@ -1006,7 +1006,7 @@ America/Anchorage:
     :standard: GMT-9
     :daylight: GMT-8
   :SHORT_GENERIC:
-    :generic: 'Час: Анкорыдж'
+    :generic: 'Час: Анкарыдж'
 America/Anguilla:
   :offset: -14400000
   :LONG_GMT:
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Гавайска-Алеуцкі стандартны час
     :daylight: Гавайска-Алеуцкі летні час
   :LONG_GENERIC:
-    :generic: Гавайска-Алеуцкі час (Адак)
+    :generic: Гавайска-Алеуцкі час
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1554,7 +1554,7 @@ America/Cambridge_Bay:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Кеймбрыдж-Бэй'
+    :generic: 'Час: Кембрыдж-Бей'
   :LONG:
     :standard: Паўночнаамерыканскі горны стандартны час
     :daylight: Паўночнаамерыканскі горны летні час
@@ -1564,7 +1564,7 @@ America/Cambridge_Bay:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: 'Час: Кеймбрыдж-Бэй'
+    :generic: 'Час: Кембрыдж-Бей'
 America/Campo_Grande:
   :offset: -14400000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Амазонскі стандартны час
     :daylight: Амазонскі летні час
   :LONG_GENERIC:
-    :generic: Амазонскі час
+    :generic: Амазонскі час (Кампу-Гранды)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: 'Час: Канкун'
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04.30
+    :generic: GMT-04.00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Час: Венесуэла'
   :LONG:
     :standard: Венесуэльскі час
-    :daylight: GMT-04.30
+    :daylight: GMT-04.00
   :LONG_GENERIC:
     :generic: Венесуэльскі час
   :SHORT:
-    :standard: GMT-4.30
-    :daylight: GMT-4.30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: 'Час: Венесуэла'
 America/Catamarca:
@@ -1698,7 +1698,7 @@ America/Chihuahua:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Чыуауа'
+    :generic: 'Час: Чыўаўа'
   :LONG:
     :standard: Мексіканскі ціхаакіянскі стандатны час
     :daylight: Мексіканскі ціхаакіянскі летні час
@@ -1708,7 +1708,7 @@ America/Chihuahua:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: 'Час: Чыуауа'
+    :generic: 'Час: Чыўаўа'
 America/Coral_Harbour:
   :offset: -18000000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Амазонскі стандартны час
     :daylight: Амазонскі летні час
   :LONG_GENERIC:
-    :generic: Амазонскі час
+    :generic: Амазонскі час (Куяба)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1806,7 +1806,7 @@ America/Curacao:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Востраў Кюрасаа'
+    :generic: 'Час: Кюрасаа'
   :LONG:
     :standard: Атлантычны стандартны час
     :daylight: Атлантычны летні час
@@ -1816,7 +1816,7 @@ America/Curacao:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Востраў Кюрасаа'
+    :generic: 'Час: Кюрасаа'
 America/Danmarkshavn:
   :offset: 0
   :LONG_GMT:
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Fort Nelson'
+    :generic: 'Час: Форт-Нельсан'
   :LONG:
     :standard: Паўночнаамерыканскі горны стандартны час
     :daylight: Паўночнаамерыканскі горны летні час
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT-7
     :daylight: GMT-7
   :SHORT_GENERIC:
-    :generic: 'Час: Fort Nelson'
+    :generic: 'Час: Форт-Нельсан'
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2076,7 +2076,7 @@ America/Godthab:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: 'Час: Нуўк'
+    :generic: 'Час: Нук'
   :LONG:
     :standard: Стандартны час Заходняй Грэнландыі
     :daylight: Летні час Заходняй Грэнландыі
@@ -2086,7 +2086,7 @@ America/Godthab:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: 'Час: Нуўк'
+    :generic: 'Час: Нук'
 America/Goose_Bay:
   :offset: -14400000
   :LONG_GMT:
@@ -2106,23 +2106,23 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: 'Час: Гус-Бэй'
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04.00
+    :generic: GMT-05.00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: 'Час: Цёркс і Кайкас'
+    :generic: 'Час: Астравы Цёркс і Кайкас'
   :LONG:
-    :standard: Атлантычны стандартны час
-    :daylight: Атлантычны летні час
+    :standard: Паўночнаамерыканскі ўсходні стандартны час
+    :daylight: Паўночнаамерыканскі ўсходні летні час
   :LONG_GENERIC:
-    :generic: Атлантычны стандартны час
+    :generic: Паўночнаамерыканскі ўсходні час
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Цёркс і Кайкас'
+    :generic: 'Час: Астравы Цёркс і Кайкас'
 America/Grenada:
   :offset: -14400000
   :LONG_GMT:
@@ -2328,7 +2328,7 @@ America/Indiana/Petersburg:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: 'Час: Пецярсбург, Індыяна'
+    :generic: 'Час: Пітэрсберг, Індыяна'
   :LONG:
     :standard: Паўночнаамерыканскі ўсходні стандартны час
     :daylight: Паўночнаамерыканскі ўсходні летні час
@@ -2338,7 +2338,7 @@ America/Indiana/Petersburg:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Пецярсбург, Індыяна'
+    :generic: 'Час: Пітэрсберг, Індыяна'
 America/Indiana/Tell_City:
   :offset: -21600000
   :LONG_GMT:
@@ -2724,7 +2724,7 @@ America/Manaus:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Манаус'
+    :generic: 'Час: Манаўс'
   :LONG:
     :standard: Амазонскі стандартны час
     :daylight: Амазонскі летні час
@@ -2734,7 +2734,7 @@ America/Manaus:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Манаус'
+    :generic: 'Час: Манаўс'
 America/Marigot:
   :offset: -14400000
   :LONG_GMT:
@@ -2832,7 +2832,7 @@ America/Menominee:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Мяноміні'
+    :generic: 'Час: Меноміні'
   :LONG:
     :standard: Паўночнаамерыканскі цэнтральны стандартны час
     :daylight: Паўночнаамерыканскі цэнтральны летні час
@@ -2842,7 +2842,7 @@ America/Menominee:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: 'Час: Мяноміні'
+    :generic: 'Час: Меноміні'
 America/Merida:
   :offset: -21600000
   :LONG_GMT:
@@ -2922,7 +2922,7 @@ America/Moncton:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Манктон'
+    :generic: 'Час: Манктан'
   :LONG:
     :standard: Атлантычны стандартны час
     :daylight: Атлантычны летні час
@@ -2932,7 +2932,7 @@ America/Moncton:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: 'Час: Манктон'
+    :generic: 'Час: Манктан'
 America/Monterrey:
   :offset: -21600000
   :LONG_GMT:
@@ -3012,7 +3012,7 @@ America/Nassau:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: 'Час: Багамы'
+    :generic: 'Час: Багамскія астравы'
   :LONG:
     :standard: Паўночнаамерыканскі ўсходні стандартны час
     :daylight: Паўночнаамерыканскі ўсходні летні час
@@ -3022,7 +3022,7 @@ America/Nassau:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Багамы'
+    :generic: 'Час: Багамскія астравы'
 America/New_York:
   :offset: -18000000
   :LONG_GMT:
@@ -3048,7 +3048,7 @@ America/Nipigon:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: 'Час: Ніпігон'
+    :generic: 'Час: Ніпіган'
   :LONG:
     :standard: Паўночнаамерыканскі ўсходні стандартны час
     :daylight: Паўночнаамерыканскі ўсходні летні час
@@ -3058,7 +3058,7 @@ America/Nipigon:
     :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Ніпігон'
+    :generic: 'Час: Ніпіган'
 America/Nome:
   :offset: -32400000
   :LONG_GMT:
@@ -3102,7 +3102,7 @@ America/North_Dakota/Beulah:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Бойла, Паўночная Дакота'
+    :generic: 'Час: Б’юла, Паўночная Дакота'
   :LONG:
     :standard: Паўночнаамерыканскі цэнтральны стандартны час
     :daylight: Паўночнаамерыканскі цэнтральны летні час
@@ -3112,7 +3112,7 @@ America/North_Dakota/Beulah:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: 'Час: Бойла, Паўночная Дакота'
+    :generic: 'Час: Б’юла, Паўночная Дакота'
 America/North_Dakota/Center:
   :offset: -21600000
   :LONG_GMT:
@@ -3120,7 +3120,7 @@ America/North_Dakota/Center:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Сентар, Паўночная Дакота'
+    :generic: 'Час: Сентэр, Паўночная Дакота'
   :LONG:
     :standard: Паўночнаамерыканскі цэнтральны стандартны час
     :daylight: Паўночнаамерыканскі цэнтральны летні час
@@ -3130,7 +3130,7 @@ America/North_Dakota/Center:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: 'Час: Сентар, Паўночная Дакота'
+    :generic: 'Час: Сентэр, Паўночная Дакота'
 America/North_Dakota/New_Salem:
   :offset: -21600000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Паўночнаамерыканскі ўсходні стандартны час
     :daylight: Паўночнаамерыканскі ўсходні летні час
   :LONG_GENERIC:
-    :generic: Паўночнаамерыканскі ўсходні стандартны час
+    :generic: Паўночнаамерыканскі ўсходні час
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: 'Час: Гаіці'
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: 'Час: Пуэрта-Рыка'
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Пунта Арэнас'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03.00
+    :daylight: GMT-03.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Пунта Арэнас'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Пунта Арэнас'
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3482,10 +3482,10 @@ America/Santa_Isabel:
   :GENERIC_LOCATION:
     :generic: 'Час: Санта-Ісабель'
   :LONG:
-    :standard: Паўночнаамерыканскі мексіканскі стандартны час
-    :daylight: Паўночнаамерыканскі летні час
+    :standard: Паўночна-заходні мексіканскі стандартны час
+    :daylight: Паўночна-заходні мексіканскі летні час
   :LONG_GENERIC:
-    :generic: Паўночнаамерыканскі мексіканскі час
+    :generic: Паўночна-заходні мексіканскі час
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-7
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: 'Час: Сантарэн'
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03.00
+    :generic: GMT-04.00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Час: Чылі'
   :LONG:
     :standard: Чылійскі стандартны час
     :daylight: Чылійскі летні час
   :LONG_GENERIC:
-    :generic: Чылійскі стандартны час
+    :generic: Чылійскі час
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: 'Час: Чылі'
@@ -3570,7 +3570,7 @@ America/Scoresbysund:
   :SHORT_GMT:
     :generic: "-0100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Ілакортаарміут'
+    :generic: 'Час: Ітакортаарміут'
   :LONG:
     :standard: Стандартны час Усходняй Грэнландыі
     :daylight: Летні час Усходняй Грэнландыі
@@ -3580,7 +3580,7 @@ America/Scoresbysund:
     :standard: GMT-1
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: 'Час: Ілакортаарміут'
+    :generic: 'Час: Ітакортаарміут'
 America/Shiprock:
   :offset: -25200000
   :LONG_GMT:
@@ -3732,7 +3732,7 @@ America/Swift_Current:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Свіфт Керэнт'
+    :generic: 'Час: Свіфт-Керэнт'
   :LONG:
     :standard: Паўночнаамерыканскі цэнтральны стандартны час
     :daylight: Паўночнаамерыканскі цэнтральны летні час
@@ -3742,7 +3742,7 @@ America/Swift_Current:
     :standard: GMT-6
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: 'Час: Свіфт Керэнт'
+    :generic: 'Час: Свіфт-Керэнт'
 America/Tegucigalpa:
   :offset: -21600000
   :LONG_GMT:
@@ -3768,7 +3768,7 @@ America/Thule:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Туле'
+    :generic: 'Час: Каанаак'
   :LONG:
     :standard: Атлантычны стандартны час
     :daylight: Атлантычны летні час
@@ -3778,7 +3778,7 @@ America/Thule:
     :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: 'Час: Туле'
+    :generic: 'Час: Каанаак'
 America/Thunder_Bay:
   :offset: -18000000
   :LONG_GMT:
@@ -3948,7 +3948,7 @@ America/Yellowknife:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Елаўнайф'
+    :generic: 'Час: Йелаўнайф'
   :LONG:
     :standard: Паўночнаамерыканскі горны стандартны час
     :daylight: Паўночнаамерыканскі горны летні час
@@ -3958,7 +3958,7 @@ America/Yellowknife:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: 'Час: Елаўнайф'
+    :generic: 'Час: Йелаўнайф'
 Antarctica/Casey:
   :offset: 28800000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: 'Час: Палмер'
   :LONG:
-    :standard: Чылійскі стандартны час
-    :daylight: Чылійскі летні час
+    :standard: GMT-03.00
+    :daylight: GMT-03.00
   :LONG_GENERIC:
-    :generic: Чылійскі стандартны час
+    :generic: 'Час: Палмер'
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4092,7 +4092,7 @@ Antarctica/Rothera:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: 'Час: Ратэра'
+    :generic: 'Час: Ротэра'
   :LONG:
     :standard: Час станцыі Ратэра
     :daylight: GMT-03.00
@@ -4102,7 +4102,7 @@ Antarctica/Rothera:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: 'Час: Ратэра'
+    :generic: 'Час: Ротэра'
 Antarctica/South_Pole:
   :offset: 43200000
   :LONG_GMT:
@@ -4164,17 +4164,17 @@ Antarctica/Vostok:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Усход'
+    :generic: 'Час: Васток'
   :LONG:
-    :standard: Час станцыі Усход
+    :standard: Час станцыі Васток
     :daylight: GMT+06.00
   :LONG_GENERIC:
-    :generic: Час станцыі Усход
+    :generic: Час станцыі Васток
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: 'Час: Усход'
+    :generic: 'Час: Васток'
 Arctic/Longyearbyen:
   :offset: 3600000
   :LONG_GMT:
@@ -4182,7 +4182,7 @@ Arctic/Longyearbyen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Свальбард (Паўночна-Усходняя Зямля) і Ян-Маен'
+    :generic: 'Час: Шпіцберген і Ян-Маен'
   :LONG:
     :standard: Цэнтральнаеўрапейскі стандартны час
     :daylight: Цэнтральнаеўрапейскі летні час
@@ -4192,7 +4192,7 @@ Arctic/Longyearbyen:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: 'Час: Свальбард (Паўночна-Усходняя Зямля) і Ян-Маен'
+    :generic: 'Час: Шпіцберген і Ян-Маен'
 Asia/Aden:
   :offset: 10800000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: 'Час: Туркменістан'
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Атырау'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Заходнеказахстанскі час
+    :daylight: GMT+05.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Заходнеказахстанскі час
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Атырау'
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Стандартны час Азербайджана
     :daylight: Летні час Азербайджана
   :LONG_GENERIC:
-    :generic: Час Азербайджана
+    :generic: Стандартны час Азербайджана
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: 'Час: Азербайджан'
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Barnaul'
+    :generic: 'Час: Барнаул'
   :LONG:
     :standard: GMT+07.00
     :daylight: GMT+07.00
   :LONG_GENERIC:
-    :generic: 'Час: Barnaul'
+    :generic: 'Час: Барнаул'
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: 'Час: Barnaul'
+    :generic: 'Час: Барнаул'
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Стандартны час Чайбалсана
     :daylight: Летні час Чайбалсана
   :LONG_GENERIC:
-    :generic: Час Чайбалсана
+    :generic: Стандартны час Чайбалсана
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Час: Чайбалсан'
 Asia/Chongqing:
@@ -4616,10 +4616,10 @@ Asia/Dacca:
   :GENERIC_LOCATION:
     :generic: 'Час: Бангладэш'
   :LONG:
-    :standard: Стандартны час Бангладэша
-    :daylight: Летні час Бангладэша
+    :standard: Стандартны час Бангладэш
+    :daylight: Летні час Бангладэш
   :LONG_GENERIC:
-    :generic: Стандартны час Бангладэша
+    :generic: Стандартны час Бангладэш
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -4652,10 +4652,10 @@ Asia/Dhaka:
   :GENERIC_LOCATION:
     :generic: 'Час: Бангладэш'
   :LONG:
-    :standard: Стандартны час Бангладэша
-    :daylight: Летні час Бангладэша
+    :standard: Стандартны час Бангладэш
+    :daylight: Летні час Бангладэш
   :LONG_GENERIC:
-    :generic: Стандартны час Бангладэша
+    :generic: Стандартны час Бангладэш
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -4668,7 +4668,7 @@ Asia/Dili:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: 'Час: Усходні Тымор'
+    :generic: 'Час: Тымор-Лешці'
   :LONG:
     :standard: Час Усходняга Тымора
     :daylight: GMT+09.00
@@ -4678,7 +4678,7 @@ Asia/Dili:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: 'Час: Усходні Тымор'
+    :generic: 'Час: Тымор-Лешці'
 Asia/Dubai:
   :offset: 14400000
   :LONG_GMT:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: 'Час: Таджыкістан'
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Фамагуста'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02.00
+    :daylight: GMT+03.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Фамагуста'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Фамагуста'
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Стандартны час Хоўда
     :daylight: Летні час Хоўда
   :LONG_GENERIC:
-    :generic: Час Хоўда
+    :generic: Стандартны час Хоўда
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: 'Час: Хоўд'
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: 'Час: Іркуцк'
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02.00
+    :generic: GMT+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Час: Турцыя'
   :LONG:
-    :standard: Усходнееўрапейскі стандартны час
-    :daylight: Усходнееўрапейскі летні час
+    :standard: GMT+03.00
+    :daylight: GMT+03.00
   :LONG_GENERIC:
-    :generic: Усходнееўрапейскі час
+    :generic: 'Час: Турцыя'
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: 'Час: Турцыя'
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: 'Час: Макаа, САР (Кітай)'
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10.00
+    :generic: GMT+11.00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: 'Час: Магадан'
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Магаданскі стандартны час
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: 'Час: Магадан'
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'Час: Кіпр'
+    :generic: 'Час: Нікасія'
   :LONG:
     :standard: Усходнееўрапейскі стандартны час
     :daylight: Усходнееўрапейскі летні час
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: 'Час: Кіпр'
+    :generic: 'Час: Нікасія'
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5280,7 +5280,7 @@ Asia/Novokuznetsk:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Навакузнецк'
+    :generic: 'Час: Новакузнецк'
   :LONG:
     :standard: Краснаярскі стандартны час
     :daylight: Краснаярскі летні час
@@ -5290,13 +5290,13 @@ Asia/Novokuznetsk:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: 'Час: Навакузнецк'
+    :generic: 'Час: Новакузнецк'
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06.00
+    :generic: GMT+07.00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: 'Час: Новасібірск'
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Новасібірскі стандартны час
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: 'Час: Новасібірск'
 Asia/Omsk:
@@ -5370,7 +5370,7 @@ Asia/Pontianak:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Панціянак'
+    :generic: 'Час: Пантыянак'
   :LONG:
     :standard: Заходнеінданезійскі час
     :daylight: GMT+07.00
@@ -5380,23 +5380,23 @@ Asia/Pontianak:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: 'Час: Панціянак'
+    :generic: 'Час: Пантыянак'
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08.30
+    :generic: GMT+09.00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: 'Час: Паўночная Карэя'
   :LONG:
-    :standard: GMT+08.30
-    :daylight: GMT+08.30
+    :standard: Стандартны час Карэі
+    :daylight: Летні час Карэі
   :LONG_GENERIC:
-    :generic: 'Час: Паўночная Карэя'
+    :generic: Стандартны час Карэі
   :SHORT:
-    :standard: GMT+8.30
-    :daylight: GMT+8.30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: 'Час: Паўночная Карэя'
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: 'Час: Катар'
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06.00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: 'Час: Кызыларда'
+    :generic: 'Час: Qostanay'
   :LONG:
     :standard: Усходнеказахстанскі час
     :daylight: GMT+06.00
@@ -5434,7 +5434,25 @@ Asia/Qyzylorda:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: 'Час: Кызыларда'
+    :generic: 'Час: Qostanay'
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05.00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: 'Час: Кзыларда'
+  :LONG:
+    :standard: Заходнеказахстанскі час
+    :daylight: GMT+05.00
+  :LONG_GENERIC:
+    :generic: Заходнеказахстанскі час
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
+  :SHORT_GENERIC:
+    :generic: 'Час: Кзыларда'
 Asia/Rangoon:
   :offset: 23400000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: 'Час: Японія'
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Томск'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07.00
+    :daylight: GMT+07.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Томск'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Томск'
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Стандартны час Улан-Батара
     :daylight: Летні час Улан-Батара
   :LONG_GENERIC:
-    :generic: Час Улан-Батара
+    :generic: Стандартны час Улан-Батара
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Час: Улан-Батар'
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Стандартны час Улан-Батара
     :daylight: Летні час Улан-Батара
   :LONG_GENERIC:
-    :generic: Час Улан-Батара
+    :generic: Стандартны час Улан-Батара
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Час: Улан-Батар'
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: 'Час: Якуцк'
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06.30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: М’янма (Бірма)'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Час М’янмы
+    :daylight: GMT+06.30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час М’янмы
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6.30
+    :daylight: GMT+6.30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: М’янма (Бірма)'
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6072,7 +6090,7 @@ Atlantic/Jan_Mayen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Свальбард (Паўночна-Усходняя Зямля) і Ян-Маен'
+    :generic: 'Час: Шпіцберген і Ян-Маен'
   :LONG:
     :standard: Цэнтральнаеўрапейскі стандартны час
     :daylight: Цэнтральнаеўрапейскі летні час
@@ -6082,7 +6100,7 @@ Atlantic/Jan_Mayen:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: 'Час: Свальбард (Паўночна-Усходняя Зямля) і Ян-Маен'
+    :generic: 'Час: Шпіцберген і Ян-Маен'
 Atlantic/Madeira:
   :offset: 0
   :LONG_GMT:
@@ -6308,10 +6326,10 @@ Australia/Eucla:
   :GENERIC_LOCATION:
     :generic: 'Час: Юкла'
   :LONG:
-    :standard: Заходні стандартны час Цэнтральнай Аўстраліі
-    :daylight: Заходні летні час Цэнтральнай Аўстраліі
+    :standard: Стандартны цэнтральна-заходні час Аўстраліі
+    :daylight: Летні цэнтральна-заходні час Аўстраліі
   :LONG_GENERIC:
-    :generic: Заходні стандартны час Цэнтральнай Аўстраліі
+    :generic: Стандартны цэнтральна-заходні час Аўстраліі
   :SHORT:
     :standard: GMT+8.45
     :daylight: GMT+8.45
@@ -6648,7 +6666,7 @@ Brazil/West:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Манаус'
+    :generic: 'Час: Манаўс'
   :LONG:
     :standard: Амазонскі стандартны час
     :daylight: Амазонскі летні час
@@ -6658,7 +6676,7 @@ Brazil/West:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: 'Час: Манаус'
+    :generic: 'Час: Манаўс'
 CET:
   :offset: 3600000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Час: Вініпег'
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06.00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: 'Час: Рэджайна'
-  :LONG:
-    :standard: Паўночнаамерыканскі цэнтральны стандартны час
-    :daylight: Паўночнаамерыканскі цэнтральны летні час
-  :LONG_GENERIC:
-    :generic: Паўночнаамерыканскі цэнтральны стандартны час
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: 'Час: Рэджайна'
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: 'Час: Уайтхорс'
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03.00
+    :generic: GMT-04.00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Час: Чылі'
   :LONG:
     :standard: Чылійскі стандартны час
     :daylight: Чылійскі летні час
   :LONG_GENERIC:
-    :generic: Чылійскі стандартны час
+    :generic: Чылійскі час
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: 'Час: Чылі'
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05.00
+    :generic: GMT-06.00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'Час: Пасхі востраў'
   :LONG:
     :standard: Стандартны час вострава Пасхі
     :daylight: Летні час вострава Пасхі
   :LONG_GENERIC:
-    :generic: Стандартны час вострава Пасхі
+    :generic: Час вострава Пасхі
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Час: Пасхі востраў'
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Astrakhan'
+    :generic: 'Час: Астрахань'
   :LONG:
     :standard: GMT+04.00
     :daylight: GMT+04.00
   :LONG_GENERIC:
-    :generic: 'Час: Astrakhan'
+    :generic: 'Час: Астрахань'
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Час: Astrakhan'
+    :generic: 'Час: Астрахань'
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7926,17 +7926,17 @@ Europe/Guernsey:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Час: Востраў Гернсі'
+    :generic: 'Час: Гернсі'
   :LONG:
     :standard: Час па Грынвічы
     :daylight: GMT+01.00
   :LONG_GENERIC:
-    :generic: 'Час: Востраў Гернсі'
+    :generic: 'Час: Гернсі'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Час: Востраў Гернсі'
+    :generic: 'Час: Гернсі'
 Europe/Helsinki:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: 'Час: Востраў Мэн'
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02.00
+    :generic: GMT+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Час: Турцыя'
   :LONG:
-    :standard: Усходнееўрапейскі стандартны час
-    :daylight: Усходнееўрапейскі летні час
+    :standard: GMT+03.00
+    :daylight: GMT+03.00
   :LONG_GENERIC:
-    :generic: Усходнееўрапейскі час
+    :generic: 'Час: Турцыя'
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: 'Час: Турцыя'
@@ -7998,17 +7998,17 @@ Europe/Jersey:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Час: Востраў Джэрсі'
+    :generic: 'Час: Джэрсі'
   :LONG:
     :standard: Час па Грынвічы
     :daylight: GMT+01.00
   :LONG_GENERIC:
-    :generic: 'Час: Востраў Джэрсі'
+    :generic: 'Час: Джэрсі'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Час: Востраў Джэрсі'
+    :generic: 'Час: Джэрсі'
 Europe/Kaliningrad:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: 'Час: Украіна'
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Кіраў'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03.00
+    :daylight: GMT+03.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Кіраў'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Кіраў'
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: 'Час: Беларусь'
   :LONG:
-    :standard: Беларускі час
-    :daylight: GMT+03.00
+    :standard: Маскоўскі стандартны час
+    :daylight: Маскоўскі летні час
   :LONG_GENERIC:
-    :generic: Беларускі час
+    :generic: Маскоўскі стандартны час
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'Час: Кіпр'
+    :generic: 'Час: Нікасія'
   :LONG:
     :standard: Усходнееўрапейскі стандартны час
     :daylight: Усходнееўрапейскі летні час
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: 'Час: Кіпр'
+    :generic: 'Час: Нікасія'
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: 'Час: Боснія і Герцагавіна'
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Час: Саратаў'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04.00
+    :daylight: GMT+04.00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Саратаў'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Час: Саратаў'
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Македонія'
+    :generic: 'Час: Паўночная Македонія'
   :LONG:
     :standard: Цэнтральнаеўрапейскі стандартны час
     :daylight: Цэнтральнаеўрапейскі летні час
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: 'Час: Македонія'
+    :generic: 'Час: Паўночная Македонія'
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Ulyanovsk'
+    :generic: 'Час: Ульянаўск'
   :LONG:
     :standard: GMT+04.00
     :daylight: GMT+04.00
   :LONG_GENERIC:
-    :generic: 'Час: Ulyanovsk'
+    :generic: 'Час: Ульянаўск'
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Час: Ulyanovsk'
+    :generic: 'Час: Ульянаўск'
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: 'Час: Літва'
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03.00
+    :generic: GMT+04.00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: 'Час: Валгаград'
   :LONG:
-    :standard: Маскоўскі стандартны час
-    :daylight: Маскоўскі летні час
+    :standard: Валгаградскі стандартны час
+    :daylight: Валгаградскі летні час
   :LONG_GENERIC:
-    :generic: Маскоўскі стандартны час
+    :generic: Валгаградскі стандартны час
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: 'Час: Валгаград'
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Час па Грынвічы
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Час па Грынвічы
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9006,17 +9006,17 @@ Indian/Christmas:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: 'Час: Востраў Раства'
+    :generic: 'Час: Востраў Каляд'
   :LONG:
-    :standard: Час вострава Раства
+    :standard: Час вострава Каляд
     :daylight: GMT+07.00
   :LONG_GENERIC:
-    :generic: Час вострава Раства
+    :generic: Час вострава Каляд
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: 'Час: Востраў Раства'
+    :generic: 'Час: Востраў Каляд'
 Indian/Cocos:
   :offset: 23400000
   :LONG_GMT:
@@ -9024,7 +9024,7 @@ Indian/Cocos:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: 'Час: Какосавыя астравы'
+    :generic: 'Час: Какосавыя (Кілінг) астравы'
   :LONG:
     :standard: Час Какосавых астравоў
     :daylight: GMT+06.30
@@ -9034,7 +9034,7 @@ Indian/Cocos:
     :standard: GMT+6.30
     :daylight: GMT+6.30
   :SHORT_GENERIC:
-    :generic: 'Час: Какосавыя астравы'
+    :generic: 'Час: Какосавыя (Кілінг) астравы'
 Indian/Comoro:
   :offset: 10800000
   :LONG_GMT:
@@ -9042,7 +9042,7 @@ Indian/Comoro:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: 'Час: Каморскія Астравы'
+    :generic: 'Час: Каморскія астравы'
   :LONG:
     :standard: Усходнеафрыканскі час
     :daylight: GMT+03.00
@@ -9052,7 +9052,7 @@ Indian/Comoro:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: 'Час: Каморскія Астравы'
+    :generic: 'Час: Каморскія астравы'
 Indian/Kerguelen:
   :offset: 18000000
   :LONG_GMT:
@@ -9060,17 +9060,17 @@ Indian/Kerguelen:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: 'Час: Французскія Паўднёвыя тэрыторыі'
+    :generic: 'Час: Французскія паўднёвыя тэрыторыі'
   :LONG:
-    :standard: Час Французскіх Паўднёвых і Антарктычных терыторый
+    :standard: Час Французскай паўднёва-антарктычнай тэрыторыі
     :daylight: GMT+05.00
   :LONG_GENERIC:
-    :generic: Час Французскіх Паўднёвых і Антарктычных терыторый
+    :generic: Час Французскай паўднёва-антарктычнай тэрыторыі
   :SHORT:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: 'Час: Французскія Паўднёвыя тэрыторыі'
+    :generic: 'Час: Французскія паўднёвыя тэрыторыі'
 Indian/Mahe:
   :offset: 14400000
   :LONG_GMT:
@@ -9078,7 +9078,7 @@ Indian/Mahe:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Час: Сейшэльскія Астравы'
+    :generic: 'Час: Сейшэльскія астравы'
   :LONG:
     :standard: Час Сейшэльскіх астравоў
     :daylight: GMT+04.00
@@ -9088,7 +9088,7 @@ Indian/Mahe:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Час: Сейшэльскія Астравы'
+    :generic: 'Час: Сейшэльскія астравы'
 Indian/Maldives:
   :offset: 18000000
   :LONG_GMT:
@@ -9098,10 +9098,10 @@ Indian/Maldives:
   :GENERIC_LOCATION:
     :generic: 'Час: Мальдывы'
   :LONG:
-    :standard: Час Мальдыў
+    :standard: Час Мальдываў
     :daylight: GMT+05.00
   :LONG_GENERIC:
-    :generic: Час Мальдыў
+    :generic: Час Мальдываў
   :SHORT:
     :standard: GMT+5
     :daylight: GMT+5
@@ -9132,7 +9132,7 @@ Indian/Mayotte:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: 'Час: Востраў Маёта'
+    :generic: 'Час: Маёта'
   :LONG:
     :standard: Усходнеафрыканскі час
     :daylight: GMT+03.00
@@ -9142,7 +9142,7 @@ Indian/Mayotte:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: 'Час: Востраў Маёта'
+    :generic: 'Час: Маёта'
 Indian/Reunion:
   :offset: 14400000
   :LONG_GMT:
@@ -9242,10 +9242,10 @@ Kwajalein:
   :GENERIC_LOCATION:
     :generic: 'Час: Кваджалейн'
   :LONG:
-    :standard: Час Маршалавых Астравоў
+    :standard: Час Маршалавых астравоў
     :daylight: GMT+12.00
   :LONG_GENERIC:
-    :generic: Час Маршалавых Астравоў
+    :generic: Час Маршалавых астравоў
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -9546,32 +9546,32 @@ Pacific/Chuuk:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
   :LONG:
-    :standard: Час Чуўк
+    :standard: Час Чуук
     :daylight: GMT+10.00
   :LONG_GENERIC:
-    :generic: Час Чуўк
+    :generic: Час Чуук
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05.00
+    :generic: GMT-06.00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'Час: Пасхі востраў'
   :LONG:
     :standard: Стандартны час вострава Пасхі
     :daylight: Летні час вострава Пасхі
   :LONG_GENERIC:
-    :generic: Стандартны час вострава Пасхі
+    :generic: Час вострава Пасхі
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Час: Пасхі востраў'
@@ -9692,10 +9692,10 @@ Pacific/Gambier:
   :GENERIC_LOCATION:
     :generic: 'Час: Астравы Гамб’е'
   :LONG:
-    :standard: Час атравоў Гамб’е
+    :standard: Час астравоў Гамб’е
     :daylight: GMT-09.00
   :LONG_GENERIC:
-    :generic: Час атравоў Гамб’е
+    :generic: Час астравоў Гамб’е
   :SHORT:
     :standard: GMT-9
     :daylight: GMT-9
@@ -9708,17 +9708,17 @@ Pacific/Guadalcanal:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Саламонавы Астравы'
+    :generic: 'Час: Саламонавы астравы'
   :LONG:
-    :standard: Час Саламонавых Астравоў
+    :standard: Час Саламонавых астравоў
     :daylight: GMT+11.00
   :LONG_GENERIC:
-    :generic: Час Саламонавых Астравоў
+    :generic: Час Саламонавых астравоў
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: 'Час: Саламонавы Астравы'
+    :generic: 'Час: Саламонавы астравы'
 Pacific/Guam:
   :offset: 36000000
   :LONG_GMT:
@@ -9818,10 +9818,10 @@ Pacific/Kwajalein:
   :GENERIC_LOCATION:
     :generic: 'Час: Кваджалейн'
   :LONG:
-    :standard: Час Маршалавых Астравоў
+    :standard: Час Маршалавых астравоў
     :daylight: GMT+12.00
   :LONG_GENERIC:
-    :generic: Час Маршалавых Астравоў
+    :generic: Час Маршалавых астравоў
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -9834,17 +9834,17 @@ Pacific/Majuro:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: 'Час: Маршалавы Астравы'
+    :generic: 'Час: Маршалавы астравы'
   :LONG:
-    :standard: Час Маршалавых Астравоў
+    :standard: Час Маршалавых астравоў
     :daylight: GMT+12.00
   :LONG_GENERIC:
-    :generic: Час Маршалавых Астравоў
+    :generic: Час Маршалавых астравоў
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: 'Час: Маршалавы Астравы'
+    :generic: 'Час: Маршалавы астравы'
 Pacific/Marquesas:
   :offset: -34200000
   :LONG_GMT:
@@ -9998,10 +9998,10 @@ Pacific/Pitcairn:
   :GENERIC_LOCATION:
     :generic: 'Час: Астравы Піткэрн'
   :LONG:
-    :standard: Час астравоў Піткэрн
+    :standard: Час вострава Піткэрн
     :daylight: GMT-08.00
   :LONG_GENERIC:
-    :generic: Час астравоў Піткэрн
+    :generic: Час вострава Піткэрн
   :SHORT:
     :standard: GMT-8
     :daylight: GMT-8
@@ -10014,17 +10014,17 @@ Pacific/Pohnpei:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Панпеі'
+    :generic: 'Час: Понпеі'
   :LONG:
-    :standard: Час Панапэ
+    :standard: Час вострава Понпеі
     :daylight: GMT+11.00
   :LONG_GENERIC:
-    :generic: Час Панапэ
+    :generic: Час вострава Понпеі
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: 'Час: Панпеі'
+    :generic: 'Час: Понпеі'
 Pacific/Ponape:
   :offset: 39600000
   :LONG_GMT:
@@ -10032,17 +10032,17 @@ Pacific/Ponape:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: 'Час: Панпеі'
+    :generic: 'Час: Понпеі'
   :LONG:
-    :standard: Час Панапэ
+    :standard: Час вострава Понпеі
     :daylight: GMT+11.00
   :LONG_GENERIC:
-    :generic: Час Панапэ
+    :generic: Час вострава Понпеі
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: 'Час: Панпеі'
+    :generic: 'Час: Понпеі'
 Pacific/Port_Moresby:
   :offset: 36000000
   :LONG_GMT:
@@ -10052,10 +10052,10 @@ Pacific/Port_Moresby:
   :GENERIC_LOCATION:
     :generic: 'Час: Порт-Морсбі'
   :LONG:
-    :standard: Час Папуа — Новай Гвінеі
+    :standard: Час Папуа-Новай Гвінеі
     :daylight: GMT+10.00
   :LONG_GENERIC:
-    :generic: Час Папуа — Новай Гвінеі
+    :generic: Час Папуа-Новай Гвінеі
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -10176,17 +10176,17 @@ Pacific/Truk:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
   :LONG:
-    :standard: Час Чуўк
+    :standard: Час Чуук
     :daylight: GMT+10.00
   :LONG_GENERIC:
-    :generic: Час Чуўк
+    :generic: Час Чуук
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
 Pacific/Wake:
   :offset: 43200000
   :LONG_GMT:
@@ -10230,17 +10230,17 @@ Pacific/Yap:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
   :LONG:
-    :standard: Час Чуўк
+    :standard: Час Чуук
     :daylight: GMT+10.00
   :LONG_GENERIC:
-    :generic: Час Чуўк
+    :generic: Час Чуук
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: 'Час: Чуўк'
+    :generic: 'Час: Чуук'
 Poland:
   :offset: 3600000
   :LONG_GMT:
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: 'Час: Сінгапур'
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02.00
+    :generic: GMT+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Час: Турцыя'
   :LONG:
-    :standard: Усходнееўрапейскі стандартны час
-    :daylight: Усходнееўрапейскі летні час
+    :standard: GMT+03.00
+    :daylight: GMT+03.00
   :LONG_GENERIC:
-    :generic: Усходнееўрапейскі час
+    :generic: 'Час: Турцыя'
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: 'Час: Турцыя'
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10374,7 +10374,7 @@ US/Alaska:
   :SHORT_GMT:
     :generic: "-0900"
   :GENERIC_LOCATION:
-    :generic: 'Час: Анкорыдж'
+    :generic: 'Час: Анкарыдж'
   :LONG:
     :standard: Стандартны час Аляскі
     :daylight: Летні час Аляскі
@@ -10384,7 +10384,7 @@ US/Alaska:
     :standard: GMT-9
     :daylight: GMT-8
   :SHORT_GENERIC:
-    :generic: 'Час: Анкорыдж'
+    :generic: 'Час: Анкарыдж'
 US/Aleutian:
   :offset: -36000000
   :LONG_GMT:
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Гавайска-Алеуцкі стандартны час
     :daylight: Гавайска-Алеуцкі летні час
   :LONG_GENERIC:
-    :generic: Гавайска-Алеуцкі час (Адак)
+    :generic: Гавайска-Алеуцкі час
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Універсальны каардынаваны час
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

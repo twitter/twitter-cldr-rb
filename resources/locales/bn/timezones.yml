@@ -1,18 +1,11 @@
 --- 
 :bn: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT {0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} দিবালোক সময়"
-      :generic: "{0} সময়"
-      :standard: "{0} প্রমাণ সময়"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT {0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} মানক সময়"
   :metazones: 
     :Acre: 
       :long: 
@@ -70,7 +63,7 @@
       :long: 
         :daylight: "প্রশান্ত মহাসাগরীয় অঞ্চলের দিনের সময়"
         :generic: "প্রশান্ত মহাসাগরীয় অঞ্চলের সময়"
-        :standard: "প্রশান্ত মহাসাগরীয় অঞ্চলের প্রমাণ সময়"
+        :standard: "প্রশান্ত মহাসাগরীয় অঞ্চলের মানক সময়"
     :Anadyr: 
       :long: 
         :daylight: "অনদ্য্র্ গ্রীষ্মকালীন সময়"
@@ -98,12 +91,12 @@
         :standard: "আরবি মানক সময়"
     :Argentina: 
       :long: 
-        :daylight: "আর্জেনটিনা গৃষ্মকালীন সময়"
-        :generic: "আর্জেনটিনা সময়"
-        :standard: "আর্জেনটিনা মানক সময়"
+        :daylight: "আর্জেন্টিনা গ্রীষ্মকালীন সময়"
+        :generic: "আর্জেন্টিনা সময়"
+        :standard: "আর্জেন্টিনা মানক সময়"
     :Argentina_Western: 
       :long: 
-        :daylight: "পশ্চিমি আর্জেনটিনা গৃষ্মকালীন সময়"
+        :daylight: "পশ্চিমি আর্জেনটিনা গ্রীষ্মকালীন সময়"
         :generic: "পশ্চিমি আর্জেন্টিনা সময়"
         :standard: "পশ্চিমি আর্জেনটিনার প্রমাণ সময়"
     :Armenia: 
@@ -135,7 +128,7 @@
       :long: 
         :daylight: "অস্ট্রেলীয় পশ্চিমি দিবালোক সময়"
         :generic: "পশ্চিমি অস্ট্রেলীয় সময়"
-        :standard: "অস্ট্রেলিয়ান পশ্চিমি মানক সময়"
+        :standard: "অস্ট্রেলীয় পশ্চিমি মানক সময়"
     :Azerbaijan: 
       :long: 
         :daylight: "আজারবাইজান গ্রীষ্মকালীন সময়"
@@ -159,7 +152,7 @@
         :standard: "বোলিভিয়া সময়"
     :Brasilia: 
       :long: 
-        :daylight: "ব্রাসিলিয়া গৃষ্মকালীন সময়"
+        :daylight: "ব্রাসিলিয়া গ্রীষ্মকালীন সময়"
         :generic: "ব্রাসিলিয়া সময়"
         :standard: "ব্রাসিলিয়া মানক সময়"
     :Brunei: 
@@ -180,7 +173,7 @@
         :standard: "চ্যাথাম মানক সময়"
     :Chile: 
       :long: 
-        :daylight: "চিলি গ্রীষ্মকাল সময়"
+        :daylight: "চিলি গ্রীষ্মকালীন সময়"
         :generic: "চিলি সময়"
         :standard: "চিলি মানক সময়"
     :China: 
@@ -233,22 +226,22 @@
         :standard: "ইকুয়েডর সময়"
     :Europe_Central: 
       :long: 
-        :daylight: "মধ্য ইউরোপের গ্রীষ্মকালীন সময়"
-        :generic: "মধ্য ইউরোপের সময়"
-        :standard: "মধ্য ইউরোপের প্রমাণ সময়"
+        :daylight: "মধ্য ইউরোপীয় গ্রীষ্মকালীন সময়"
+        :generic: "মধ্য ইউরোপীয় সময়"
+        :standard: "মধ্য ইউরোপীয় মানক সময়"
     :Europe_Eastern: 
       :long: 
-        :daylight: "পূর্ব ইউরোপের গ্রীষ্মকালীন সময়"
-        :generic: "পূর্ব ইউরোপের সময়"
-        :standard: "পূর্ব ইউরোপের প্রমাণ সময়"
+        :daylight: "পূর্ব ইউরোপীয় গ্রীষ্মকালীন সময়"
+        :generic: "পূর্ব ইউরোপীয় সময়"
+        :standard: "পূর্ব ইউরোপীয় মানক সময়"
     :Europe_Further_Eastern: 
       :long: 
         :standard: "অতিরিক্ত-পূর্ব ইউরোপীয় সময়"
     :Europe_Western: 
       :long: 
-        :daylight: "পশ্চিম ইউরোপের গ্রীষ্মকালীন সময়"
-        :generic: "পশ্চিম ইউরোপের সময়"
-        :standard: "পশ্চিম ইউরোপের প্রমাণ সময়"
+        :daylight: "পশ্চিম ইউরোপীয় গ্রীষ্মকালীন সময়"
+        :generic: "পশ্চিম ইউরোপীয় সময়"
+        :standard: "পশ্চিম ইউরোপীয় মানক সময়"
     :Falkland: 
       :long: 
         :daylight: "ফকল্যান্ড দ্বীপপুঞ্জ গ্রীষ্মকালীন সময়"
@@ -343,9 +336,9 @@
         :standard: "ইরান মানক সময়"
     :Irkutsk: 
       :long: 
-        :daylight: "য়াকুটস্ক গ্রীষ্মকালীন সময়"
-        :generic: "য়াকুটস্ক সময়"
-        :standard: "য়াকুটস্ক মানক সময়"
+        :daylight: "ইরকুটস্ক গ্রীষ্মকালীন সময়"
+        :generic: "ইরকুটস্ক সময়"
+        :standard: "ইরকুটস্ক মানক সময়"
     :Israel: 
       :long: 
         :daylight: "ইজরায়েল দিবালোক সময়"
@@ -363,10 +356,10 @@
         :standard: "পিত্রেপ্যাভলস্ক- ক্যামচ্যাটস্কি মান সময়"
     :Kazakhstan_Eastern: 
       :long: 
-        :standard: "পূর্ব কজাকস্তান মানক সময়"
+        :standard: "পূর্ব কাজাখাস্তান সময়"
     :Kazakhstan_Western: 
       :long: 
-        :standard: "পশ্চিম কজাকস্তান মানক সময়"
+        :standard: "পশ্চিম কাজাখাস্তান সময়"
     :Korea: 
       :long: 
         :daylight: "কোরিয়ান দিবালোক সময়"
@@ -434,7 +427,7 @@
         :standard: "উত্তরপশ্চিম মেক্সিকোর মানক সময়"
     :Mexico_Pacific: 
       :long: 
-        :daylight: "মেক্সিকান প্রশান্ত মহাসাগরীয় দিনের সময়"
+        :daylight: "মেক্সিকান প্রশান্ত মহাসাগরীয় দিবালোক সময়"
         :generic: "মেক্সিকান প্রশান্ত মহাসাগরীয় সময়"
         :standard: "মেক্সিকান প্রশান্ত মহসাগরীয় মানক সময়"
     :Mongolia: 
@@ -476,12 +469,12 @@
         :standard: "নিউই সময়"
     :Norfolk: 
       :long: 
-        :standard: "নরফোক দ্বীপপুঞ্জ সময়"
+        :standard: "নরফোক দ্বীপ সময়"
     :Noronha: 
       :long: 
-        :daylight: "ফারন্যান্ডো ডে নোরোনহা গৃষ্মকালীন সময়"
-        :generic: "নোরোনহা সময়"
-        :standard: "ফারন্যান্ডো ডে নোরোনহা সময়"
+        :daylight: "ফার্নান্দো ডি নোরোনহা গ্রীষ্মকালীন সময়"
+        :generic: "ফার্নান্দো ডি নোরোনহা সময়"
+        :standard: "ফার্নান্দো ডি নোরোনহা মানক সময়"
     :North_Mariana: 
       :long: 
         :standard: "উত্তর মেরিন দ্বীপপুঞ্জ সময়"
@@ -535,6 +528,9 @@
     :Ponape: 
       :long: 
         :standard: "পোনাপে সময়"
+    :Pyongyang: 
+      :long: 
+        :standard: "পিয়ংইয়াং সময়"
     :Qyzylorda: 
       :long: 
         :daylight: "কিজিলোর্ডা গ্রীষ্মকাল সময়"
@@ -558,7 +554,7 @@
         :standard: "সামারা মান সময়"
     :Samoa: 
       :long: 
-        :daylight: "সামোয়া গৃষ্মকালীন সময়"
+        :daylight: "সামোয়া দিবালোক সময়"
         :generic: "সামোয়া সময়"
         :standard: "সামোয়া মানক সময়"
     :Seychelles: 
@@ -629,9 +625,9 @@
         :standard: "ভেনেজুয়েলা সময়"
     :Vladivostok: 
       :long: 
-        :daylight: "ব্লাদিবোস্তোক গ্রীষ্মকালীন সময়"
-        :generic: "ব্লাদিবোস্তোক সময়"
-        :standard: "ব্লাদিবোস্তোক মানক সময়"
+        :daylight: "ভ্লাদিভস্তক গ্রীষ্মকালীন সময়"
+        :generic: "ভ্লাদিভস্তক সময়"
+        :standard: "ভ্লাদিভস্তক মানক সময়"
     :Volgograd: 
       :long: 
         :daylight: "ভলগোগ্রাড গ্রীষ্মকালীন সময়"
@@ -648,9 +644,9 @@
         :standard: "ওয়ালিস এবং ফুটুনা সময়"
     :Yakutsk: 
       :long: 
-        :daylight: "য়াকুতস্ক গ্রীষ্মকালীন সময়"
-        :generic: "য়াকুতস্ক সময়"
-        :standard: "য়াকুতস্ক মানক সময়"
+        :daylight: "ইয়াকুটাস্ক গ্রীষ্মকালীন সময়"
+        :generic: "ইয়াকুটাস্ক সময়"
+        :standard: "ইয়াকুটাস্ক মানক সময়"
     :Yekaterinburg: 
       :long: 
         :daylight: "ইয়েকাতেরিনবুর্গ গ্রীষ্মকালীন সময়"
@@ -678,7 +674,7 @@
     :Africa/Blantyre: 
       :city: ব্ল্যানটায়ের
     :Africa/Brazzaville: 
-      :city: ব্রাজউহভিল
+      :city: ব্রাজাভিলি
     :Africa/Bujumbura: 
       :city: বুজুমবুরহু
     :Africa/Cairo: 
@@ -768,7 +764,7 @@
     :America/Anguilla: 
       :city: অ্যাঙ্গুইলা
     :America/Antigua: 
-      :city: অ্যান্টিগুয়াগা
+      :city: অ্যান্টিগুয়া
     :America/Araguaina: 
       :city: আরাগুয়াইনা
     :America/Argentina/La_Rioja: 
@@ -778,7 +774,7 @@
     :America/Argentina/Salta: 
       :city: স্যালটা
     :America/Argentina/San_Juan: 
-      :city: "সান হুয়ান"
+      :city: "সান জুয়ান"
     :America/Argentina/San_Luis: 
       :city: "সান লুইস"
     :America/Argentina/Tucuman: 
@@ -828,7 +824,7 @@
     :America/Chihuahua: 
       :city: চিহুয়াহুয়া
     :America/Coral_Harbour: 
-      :city: "কোরাল হার্বার"
+      :city: আটিকোকান
     :America/Cordoba: 
       :city: কর্ডোবা
     :America/Costa_Rica: 
@@ -857,6 +853,8 @@
       :city: আইরুনেপে
     :America/El_Salvador: 
       :city: "এল সালভাদোর"
+    :America/Fort_Nelson: 
+      :city: "ফোর্ট নেলসন"
     :America/Fortaleza: 
       :city: ফোর্টালেজা
     :America/Glace_Bay: 
@@ -906,7 +904,7 @@
     :America/Jamaica: 
       :city: জামাইকা
     :America/Jujuy: 
-      :city: হুহুই
+      :city: জুজুই
     :America/Juneau: 
       :city: জুনো
     :America/Kentucky/Monticello: 
@@ -918,7 +916,7 @@
     :America/Lima: 
       :city: লিমা
     :America/Los_Angeles: 
-      :city: "লস এ্যাঞ্জেলেস"
+      :city: "লস অ্যাঞ্জেলেস"
     :America/Louisville: 
       :city: লুইসভিল
     :America/Lower_Princes: 
@@ -944,7 +942,7 @@
     :America/Merida: 
       :city: মেরিডা
     :America/Metlakatla: 
-      :city: ম্যাকওয়ারি
+      :city: মেটলাকাটলা
     :America/Mexico_City: 
       :city: "মেক্সিকো সিটি"
     :America/Miquelon: 
@@ -974,7 +972,7 @@
     :America/North_Dakota/New_Salem: 
       :city: "নিউ সালেম, উত্তর ডাকোটা"
     :America/Ojinaga: 
-      :city: ওজিঙ্গা
+      :city: ওজিনাগা
     :America/Panama: 
       :city: পানামা
     :America/Pangnirtung: 
@@ -991,6 +989,8 @@
       :city: "পোর্তো ভেল্‌হো"
     :America/Puerto_Rico: 
       :city: "পুয়েরতো রিকো"
+    :America/Punta_Arenas: 
+      :city: "পুন্টা আরেনাস"
     :America/Rainy_River: 
       :city: "রেইনি রিভার"
     :America/Rankin_Inlet: 
@@ -1090,15 +1090,19 @@
     :Asia/Aqtobe: 
       :city: আকটোবে
     :Asia/Ashgabat: 
-      :city: আশগুবাদ
+      :city: আশগাবাত
+    :Asia/Atyrau: 
+      :city: অতিরাউ
     :Asia/Baghdad: 
       :city: বাগদাদ
     :Asia/Bahrain: 
-      :city: বাহরিন
+      :city: বাহারিন
     :Asia/Baku: 
       :city: বাকু
     :Asia/Bangkok: 
       :city: ব্যাংকক
+    :Asia/Barnaul: 
+      :city: বার্নৌল
     :Asia/Beirut: 
       :city: বেইরুট
     :Asia/Bishkek: 
@@ -1106,7 +1110,7 @@
     :Asia/Brunei: 
       :city: ব্রুনেই
     :Asia/Calcutta: 
-      :city: কলকাতা
+      :city: কোলকাতা
     :Asia/Chita: 
       :city: চিতা
     :Asia/Choibalsan: 
@@ -1123,6 +1127,8 @@
       :city: দুবাই
     :Asia/Dushanbe: 
       :city: দুশানবে
+    :Asia/Famagusta: 
+      :city: ফামাগাস্তা
     :Asia/Gaza: 
       :city: গাজা
     :Asia/Hebron: 
@@ -1132,7 +1138,7 @@
     :Asia/Hovd: 
       :city: হোভ্ড
     :Asia/Irkutsk: 
-      :city: ইর্কুট্স্ক
+      :city: ইরকুটস্ক
     :Asia/Jakarta: 
       :city: জাকার্তা
     :Asia/Jayapura: 
@@ -1166,7 +1172,7 @@
     :Asia/Manila: 
       :city: ম্যানিলা
     :Asia/Muscat: 
-      :city: মাসকাট
+      :city: মাসকট
     :Asia/Nicosia: 
       :city: নিকোসিয়া
     :Asia/Novokuznetsk: 
@@ -1185,6 +1191,8 @@
       :city: পিয়ংইয়ং
     :Asia/Qatar: 
       :city: কাতার
+    :Asia/Qostanay: 
+      :city: কোস্টানয়
     :Asia/Qyzylorda: 
       :city: কিজিলর্ডা
     :Asia/Rangoon: 
@@ -1198,9 +1206,9 @@
     :Asia/Samarkand: 
       :city: সমরখন্দ
     :Asia/Seoul: 
-      :city: সোল
+      :city: সিওল
     :Asia/Shanghai: 
-      :city: সাংঘাই
+      :city: সাংহাই
     :Asia/Singapore: 
       :city: সিঙ্গাপুর
     :Asia/Srednekolymsk: 
@@ -1210,13 +1218,15 @@
     :Asia/Tashkent: 
       :city: তাসখন্দ
     :Asia/Tbilisi: 
-      :city: তুবুলিসি
+      :city: সিবিলিশি
     :Asia/Tehran: 
       :city: তেহেরান
     :Asia/Thimphu: 
       :city: থিম্ফু
     :Asia/Tokyo: 
       :city: টোকিও
+    :Asia/Tomsk: 
+      :city: তোমস্ক
     :Asia/Ulaanbaatar: 
       :city: উলানবাতার
     :Asia/Urumqi: 
@@ -1228,7 +1238,7 @@
     :Asia/Vladivostok: 
       :city: ভ্লাদিভস্তোক
     :Asia/Yakutsk: 
-      :city: ইয়াকুট্স্ক
+      :city: ইয়াকুটস্ক
     :Asia/Yekaterinburg: 
       :city: ইয়েকাটেরিনবার্গ
     :Asia/Yerevan: 
@@ -1272,17 +1282,24 @@
     :Australia/Lord_Howe: 
       :city: "লর্ড হাও"
     :Australia/Melbourne: 
-      :city: মেলবার্ন
+      :city: মেলবোর্ন
     :Australia/Perth: 
       :city: পার্থ
     :Australia/Sydney: 
       :city: সিডনি
+    :Etc/UTC: 
+      :long: 
+        :standard: "স্থানাংকিত আন্তর্জাতিক সময়"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "অজানা শহর"
     :Europe/Amsterdam: 
       :city: আমস্টারডাম
     :Europe/Andorra: 
       :city: অ্যান্ডোরা
+    :Europe/Astrakhan: 
+      :city: আসট্রাখান
     :Europe/Athens: 
       :city: এথেন্স
     :Europe/Belgrade: 
@@ -1306,11 +1323,11 @@
     :Europe/Dublin: 
       :city: ডাবলিন
       :long: 
-        :daylight: "আইরিশ গ্রীষ্মকালীন সময়"
+        :daylight: "আইরিশ মানক সময়"
     :Europe/Gibraltar: 
       :city: জিব্রাল্টার
     :Europe/Guernsey: 
-      :city: গেরেনজি
+      :city: গুয়ার্নসি
     :Europe/Helsinki: 
       :city: হেলসিঙ্কি
     :Europe/Isle_of_Man: 
@@ -1323,6 +1340,8 @@
       :city: কালিনিঙগ্রাড
     :Europe/Kiev: 
       :city: কিয়েভ
+    :Europe/Kirov: 
+      :city: কিরোভ
     :Europe/Lisbon: 
       :city: লিসবন
     :Europe/Ljubljana: 
@@ -1336,7 +1355,7 @@
     :Europe/Madrid: 
       :city: মাদ্রিদ
     :Europe/Malta: 
-      :city: মল্টা
+      :city: মাল্টা
     :Europe/Mariehamn: 
       :city: মরিয়েহামেন
     :Europe/Minsk: 
@@ -1363,6 +1382,8 @@
       :city: "সান মেরিনো"
     :Europe/Sarajevo: 
       :city: সারাজিভো
+    :Europe/Saratov: 
+      :city: সারাটোভ
     :Europe/Simferopol: 
       :city: সিমফেরোপোল
     :Europe/Skopje: 
@@ -1375,6 +1396,8 @@
       :city: তাহলিন
     :Europe/Tirane: 
       :city: তিরানা
+    :Europe/Ulyanovsk: 
+      :city: উলিয়ানোভস্ক
     :Europe/Uzhgorod: 
       :city: উঝগোরোড
     :Europe/Vaduz: 
@@ -1392,7 +1415,7 @@
     :Europe/Zagreb: 
       :city: জাগ্রেব
     :Europe/Zaporozhye: 
-      :city: জাপোরোঝা
+      :city: জেপোরোজাইয়াই
     :Europe/Zurich: 
       :city: জুরিখ
     :Indian/Antananarivo: 
@@ -1400,7 +1423,7 @@
     :Indian/Chagos: 
       :city: ছাগোস
     :Indian/Christmas: 
-      :city: বড়দিন
+      :city: ক্রিসমাস
     :Indian/Cocos: 
       :city: কোকোস
     :Indian/Comoro: 
@@ -1490,7 +1513,7 @@
     :Pacific/Tongatapu: 
       :city: টোঙ্গাটাপু
     :Pacific/Truk: 
-      :city: ট্রুক
+      :city: চুক
     :Pacific/Wake: 
       :city: ওয়েক
     :Pacific/Wallis: 

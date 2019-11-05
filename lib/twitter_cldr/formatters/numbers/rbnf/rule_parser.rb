@@ -59,6 +59,10 @@ module TwitterCldr
           switch(list)
         end
 
+        def decimal(list)
+          add_and_advance(list)
+        end
+
         def plaintext(list)
           add_and_advance(list)
         end

@@ -1,18 +1,11 @@
 --- 
 :tr: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} Yaz Saati"
-      :generic: "{0} Saati"
-      :standard: "{0} Standart Saati"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} Standart Saati"
   :metazones: 
     :Acre: 
       :long: 
@@ -123,9 +116,9 @@
         :standard: "Orta Avustralya Standart Saati"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "İçbatı Avustralya Yaz Saati"
-        :generic: "İçbatı Avustralya Saati"
-        :standard: "İçbatı Avustralya Standart Saati"
+        :daylight: "İç Batı Avustralya Yaz Saati"
+        :generic: "İç Batı Avustralya Saati"
+        :standard: "İç Batı Avustralya Standart Saati"
     :Australia_Eastern: 
       :long: 
         :daylight: "Doğu Avustralya Yaz Saati"
@@ -153,7 +146,7 @@
         :standard: "Bangladeş Standart Saati"
     :Bhutan: 
       :long: 
-        :standard: "Bhutan Saati"
+        :standard: "Butan Saati"
     :Bolivia: 
       :long: 
         :standard: "Bolivya Saati"
@@ -246,7 +239,7 @@
         :standard: "Doğu Avrupa Standart Saati"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "Daha Doğu Avrupa Saati"
+        :standard: "İleri Doğu Avrupa Saati"
     :Europe_Western: 
       :long: 
         :daylight: "Batı Avrupa Yaz Saati"
@@ -536,6 +529,9 @@
     :Ponape: 
       :long: 
         :standard: "Ponape Saati"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pyongyang Saati"
     :Qyzylorda: 
       :long: 
         :daylight: "Kızılorda Yaz Saati"
@@ -659,7 +655,7 @@
         :standard: "Yekaterinburg Standart Saati"
   :timezones: 
     :Africa/Abidjan: 
-      :city: Abican
+      :city: Abidjan
     :Africa/Accra: 
       :city: Akra
     :Africa/Addis_Ababa: 
@@ -755,7 +751,7 @@
     :Africa/Porto-Novo: 
       :city: Porto-Novo
     :Africa/Sao_Tome: 
-      :city: "São Tomé"
+      :city: "Sao Tome"
     :Africa/Tripoli: 
       :city: Trablus
     :Africa/Tunis: 
@@ -817,7 +813,7 @@
     :America/Cancun: 
       :city: Cancun
     :America/Caracas: 
-      :city: Karakas
+      :city: Caracas
     :America/Catamarca: 
       :city: Catamarca
     :America/Cayenne: 
@@ -858,6 +854,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -947,7 +945,7 @@
     :America/Metlakatla: 
       :city: Metlakatla
     :America/Mexico_City: 
-      :city: "Meksiko City"
+      :city: "Mexico City"
     :America/Miquelon: 
       :city: Miquelon
     :America/Moncton: 
@@ -992,6 +990,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Porto Riko"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1092,6 +1092,8 @@
       :city: Aktöbe
     :Asia/Ashgabat: 
       :city: Aşkabat
+    :Asia/Atyrau: 
+      :city: Atırav
     :Asia/Baghdad: 
       :city: Bağdat
     :Asia/Bahrain: 
@@ -1100,6 +1102,8 @@
       :city: Bakü
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beyrut
     :Asia/Bishkek: 
@@ -1109,7 +1113,7 @@
     :Asia/Calcutta: 
       :city: Kalküta
     :Asia/Chita: 
-      :city: Chita
+      :city: Çita
     :Asia/Choibalsan: 
       :city: Çoybalsan
     :Asia/Colombo: 
@@ -1124,6 +1128,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Duşanbe
+    :Asia/Famagusta: 
+      :city: Gazimağusa
     :Asia/Gaza: 
       :city: Gazze
     :Asia/Hebron: 
@@ -1218,6 +1224,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Batur"
     :Asia/Urumqi: 
@@ -1278,12 +1286,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sidney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Eş Güdümlü Evrensel Zaman"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Bilinmeyen Şehir"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrahan
     :Europe/Athens: 
       :city: Atina
     :Europe/Belgrade: 
@@ -1324,6 +1339,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lizbon
     :Europe/Ljubljana: 
@@ -1364,8 +1381,10 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Saraybosna
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
-      :city: Akmescit
+      :city: Simferopol
     :Europe/Skopje: 
       :city: Üsküp
     :Europe/Sofia: 
@@ -1376,6 +1395,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tiran
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Ujgorod
     :Europe/Vaduz: 
@@ -1417,7 +1438,7 @@
     :Indian/Mayotte: 
       :city: Mayotte
     :Indian/Reunion: 
-      :city: Réunion
+      :city: Reunion
     :Pacific/Apia: 
       :city: Apia
     :Pacific/Auckland: 

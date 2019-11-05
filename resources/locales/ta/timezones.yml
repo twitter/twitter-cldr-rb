@@ -1,18 +1,11 @@
 --- 
 :ta: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} பகலொளி நேரம்"
-      :generic: "{0} நேரம்"
-      :standard: "{0} நிலையான நேரம்"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} நிலையான நேரம்"
   :metazones: 
     :Acre: 
       :long: 
@@ -33,7 +26,7 @@
         :standard: "தென் ஆப்பிரிக்க நிலையான நேரம்"
     :Africa_Western: 
       :long: 
-        :daylight: "மேற்கு ஆப்பிரிக்கா கோடை நேரம்"
+        :daylight: "மேற்கு ஆப்பிரிக்க கோடை நேரம்"
         :generic: "மேற்கு ஆப்பிரிக்க நேரம்"
         :standard: "மேற்கு ஆப்பிரிக்க நிலையான நேரம்"
     :Alaska: 
@@ -264,7 +257,7 @@
         :standard: "ஃபிரஞ்சு கயானா நேரம்"
     :French_Southern: 
       :long: 
-        :standard: "ஃபிரஞ்சு தெற்கத்திய & அண்டார்டிக் நேரம்"
+        :standard: "பிரெஞ்சு தெற்கத்திய & அண்டார்டிக் நேரம்"
     :GMT: 
       :long: 
         :standard: "கிரீன்விச் சராசரி நேரம்"
@@ -329,13 +322,13 @@
         :standard: "இந்தோசீன நேரம்"
     :Indonesia_Central: 
       :long: 
-        :standard: "மத்திய இந்தோனேசியா நேரம்"
+        :standard: "மத்திய இந்தோனேசிய நேரம்"
     :Indonesia_Eastern: 
       :long: 
-        :standard: "கிழக்கத்திய இந்தோனேசியா நேரம்"
+        :standard: "கிழக்கத்திய இந்தோனேசிய நேரம்"
     :Indonesia_Western: 
       :long: 
-        :standard: "மேற்கத்திய இந்தோனேசியா நேரம்"
+        :standard: "மேற்கத்திய இந்தோனேசிய நேரம்"
     :Iran: 
       :long: 
         :daylight: "ஈரான் பகலொளி நேரம்"
@@ -455,7 +448,7 @@
         :standard: "நவ்ரூ நேரம்"
     :Nepal: 
       :long: 
-        :standard: "நேபாள் நேரம்"
+        :standard: "நேபாள நேரம்"
     :New_Caledonia: 
       :long: 
         :daylight: "நியூ கலிடோனியா கோடை நேரம்"
@@ -476,7 +469,7 @@
         :standard: "நியு நேரம்"
     :Norfolk: 
       :long: 
-        :standard: "நோர்ஃபோக் தீவுகள் நேரம்"
+        :standard: "நார்ஃபோக் தீவு நேரம்"
     :Noronha: 
       :long: 
         :daylight: "பெர்னான்டோ டி நோரோன்ஹா கோடை நேரம்"
@@ -535,6 +528,9 @@
     :Ponape: 
       :long: 
         :standard: "போனாபே நேரம்"
+    :Pyongyang: 
+      :long: 
+        :standard: "பியாங்யாங் நேரம்"
     :Qyzylorda: 
       :long: 
         :daylight: "கைஜைலோர்டா கோடை நேரம்"
@@ -584,9 +580,9 @@
         :standard: "தஹிதி நேரம்"
     :Taipei: 
       :long: 
-        :daylight: "தைபே பகலொளி நேரம்"
-        :generic: "தைபே நேரம்"
-        :standard: "தைபே நிலையான நேரம்"
+        :daylight: "தாய்பே பகலொளி நேரம்"
+        :generic: "தாய்பே நேரம்"
+        :standard: "தாய்பே நிலையான நேரம்"
     :Tajikistan: 
       :long: 
         :standard: "தஜிகிஸ்தான் நேரம்"
@@ -694,7 +690,7 @@
     :Africa/Dar_es_Salaam: 
       :city: "தார் எஸ் சலாம்"
     :Africa/Djibouti: 
-      :city: டிஜிபவ்டி
+      :city: ஜிபௌட்டி
     :Africa/Douala: 
       :city: தவுலா
     :Africa/El_Aaiun: 
@@ -774,7 +770,7 @@
     :America/Argentina/La_Rioja: 
       :city: "லா ரியோஜா"
     :America/Argentina/Rio_Gallegos: 
-      :city: "ரியோ கேலிகாஸ்"
+      :city: "ரியோ கேலெகோஸ்"
     :America/Argentina/Salta: 
       :city: சால்டா
     :America/Argentina/San_Juan: 
@@ -816,7 +812,7 @@
     :America/Cancun: 
       :city: கன்குன்
     :America/Caracas: 
-      :city: கேராகஸ்
+      :city: கரகாஸ்
     :America/Catamarca: 
       :city: கடமார்கா
     :America/Cayenne: 
@@ -857,6 +853,8 @@
       :city: ஈருனெபே
     :America/El_Salvador: 
       :city: "எல் சால்வடோர்"
+    :America/Fort_Nelson: 
+      :city: "ஃபோர்ட் நெல்சன்"
     :America/Fortaleza: 
       :city: ஃபோர்டாலெசா
     :America/Glace_Bay: 
@@ -866,7 +864,7 @@
     :America/Goose_Bay: 
       :city: "கூஸ் பே"
     :America/Grand_Turk: 
-      :city: "கிராண்ட் துர்க்"
+      :city: "கிராண்ட் டர்க்"
     :America/Grenada: 
       :city: கிரனடா
     :America/Guadeloupe: 
@@ -910,7 +908,7 @@
     :America/Juneau: 
       :city: ஜுனியூ
     :America/Kentucky/Monticello: 
-      :city: "மான்டிசெல்லோ, கென்டக்கி"
+      :city: "மான்டிசெல்லோ, கென்டகி"
     :America/Kralendijk: 
       :city: கிரெலன்டிஜ்
     :America/La_Paz: 
@@ -984,13 +982,15 @@
     :America/Phoenix: 
       :city: ஃபோனிக்ஸ்
     :America/Port-au-Prince: 
-      :city: போர்ட்-வ்-பிரின்ஸ்
+      :city: போர்ட்-அவ்-பிரின்ஸ்
     :America/Port_of_Spain: 
       :city: "போர்ட் ஆஃப் ஸ்பெயின்"
     :America/Porto_Velho: 
       :city: "போர்ட்டோ வெல்ஹோ"
     :America/Puerto_Rico: 
       :city: "பியூர்டோ ரிகோ"
+    :America/Punta_Arenas: 
+      :city: "புன்டா அரீனாஸ்"
     :America/Rainy_River: 
       :city: "ரெய்னி ரிவர்"
     :America/Rankin_Inlet: 
@@ -1024,11 +1024,11 @@
     :America/St_Kitts: 
       :city: "செயின்ட் கீட்ஸ்"
     :America/St_Lucia: 
-      :city: "செயிண்ட் லூசியா"
+      :city: "செயின்ட் லூசியா"
     :America/St_Thomas: 
       :city: "செயின்ட் தாமஸ்"
     :America/St_Vincent: 
-      :city: "செயிண்ட் வின்சென்ட்"
+      :city: "செயின்ட் வின்சென்ட்"
     :America/Swift_Current: 
       :city: "ஸ்விஃப்ட் கரண்ட்"
     :America/Tegucigalpa: 
@@ -1091,6 +1091,8 @@
       :city: அக்டோப்
     :Asia/Ashgabat: 
       :city: அஷ்காபாத்
+    :Asia/Atyrau: 
+      :city: அடிரா
     :Asia/Baghdad: 
       :city: பாக்தாத்
     :Asia/Bahrain: 
@@ -1099,6 +1101,8 @@
       :city: பாக்கூ
     :Asia/Bangkok: 
       :city: பாங்காக்
+    :Asia/Barnaul: 
+      :city: பார்னால்
     :Asia/Beirut: 
       :city: பெய்ரூட்
     :Asia/Bishkek: 
@@ -1123,6 +1127,8 @@
       :city: துபாய்
     :Asia/Dushanbe: 
       :city: துஷன்பே
+    :Asia/Famagusta: 
+      :city: ஃபாமகுஸ்டா
     :Asia/Gaza: 
       :city: காஸா
     :Asia/Hebron: 
@@ -1158,7 +1164,7 @@
     :Asia/Kuwait: 
       :city: குவைத்
     :Asia/Macau: 
-      :city: மகவ்
+      :city: மகாவு
     :Asia/Magadan: 
       :city: மகதன்
     :Asia/Makassar: 
@@ -1182,9 +1188,11 @@
     :Asia/Pontianak: 
       :city: போன்டியானாக்
     :Asia/Pyongyang: 
-      :city: பியோங்கியாங்
+      :city: பியாங்யாங்
     :Asia/Qatar: 
       :city: கத்தார்
+    :Asia/Qostanay: 
+      :city: கோஸ்டானே
     :Asia/Qyzylorda: 
       :city: கிஸிலோர்டா
     :Asia/Rangoon: 
@@ -1206,7 +1214,7 @@
     :Asia/Srednekolymsk: 
       :city: ஸ்ரெட்நிகோலிம்ஸ்க்
     :Asia/Taipei: 
-      :city: தைபே
+      :city: தாய்பே
     :Asia/Tashkent: 
       :city: தாஷ்கண்ட்
     :Asia/Tbilisi: 
@@ -1217,6 +1225,8 @@
       :city: திம்பு
     :Asia/Tokyo: 
       :city: டோக்கியோ
+    :Asia/Tomsk: 
+      :city: டாம்ஸ்க்
     :Asia/Ulaanbaatar: 
       :city: உலான்பாட்டர்
     :Asia/Urumqi: 
@@ -1270,29 +1280,36 @@
     :Australia/Lindeman: 
       :city: லின்டெமன்
     :Australia/Lord_Howe: 
-      :city: "லார்டு ஹோவே"
+      :city: "லார்ட் ஹோவே"
     :Australia/Melbourne: 
       :city: மெல்போர்ன்
     :Australia/Perth: 
       :city: பெர்த்
     :Australia/Sydney: 
       :city: சிட்னி
+    :Etc/UTC: 
+      :long: 
+        :standard: "ஒருங்கிணைந்த சர்வதேச நேரம்"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "தெரியாத நகரம்"
     :Europe/Amsterdam: 
-      :city: ஆம்ஸ்டர்டம்
+      :city: ஆம்ஸ்ட்ரடாம்
     :Europe/Andorra: 
       :city: அண்டோரா
+    :Europe/Astrakhan: 
+      :city: அஸ்ட்ராகான்
     :Europe/Athens: 
-      :city: ஏதேன்ஸ்
+      :city: ஏதன்ஸ்
     :Europe/Belgrade: 
-      :city: பெல்க்ரேடு
+      :city: பெல்கிரேட்
     :Europe/Berlin: 
       :city: பெர்லின்
     :Europe/Bratislava: 
       :city: பிரடிஸ்லாவா
     :Europe/Brussels: 
-      :city: புருசேல்ஸ்
+      :city: புரூசல்ஸ்
     :Europe/Bucharest: 
       :city: புசாரெஸ்ட்
     :Europe/Budapest: 
@@ -1320,9 +1337,11 @@
     :Europe/Jersey: 
       :city: ஜெர்சி
     :Europe/Kaliningrad: 
-      :city: கலினின்கிராடு
+      :city: கலினின்கிராட்
     :Europe/Kiev: 
       :city: கீவ்
+    :Europe/Kirov: 
+      :city: கிரோவ்
     :Europe/Lisbon: 
       :city: லிஸ்பன்
     :Europe/Ljubljana: 
@@ -1334,11 +1353,11 @@
     :Europe/Luxembourg: 
       :city: லக்சம்பர்க்
     :Europe/Madrid: 
-      :city: மாட்ரிட்
+      :city: மேட்ரிட்
     :Europe/Malta: 
       :city: மால்டா
     :Europe/Mariehamn: 
-      :city: மரிஹமன்
+      :city: மரிஹம்
     :Europe/Minsk: 
       :city: மின்ஸ்க்
     :Europe/Monaco: 
@@ -1360,9 +1379,11 @@
     :Europe/Samara: 
       :city: சமாரா
     :Europe/San_Marino: 
-      :city: "சான் மாரினோ"
+      :city: "சான் மரினோ"
     :Europe/Sarajevo: 
-      :city: சராஜேவோ
+      :city: சரயேவோ
+    :Europe/Saratov: 
+      :city: சரடோவ்
     :Europe/Simferopol: 
       :city: சிம்ஃபெரோபோல்
     :Europe/Skopje: 
@@ -1375,8 +1396,10 @@
       :city: டலின்
     :Europe/Tirane: 
       :city: திரானே
+    :Europe/Ulyanovsk: 
+      :city: உல்யானோஸ்க்
     :Europe/Uzhgorod: 
-      :city: உஜ்கோரோட்
+      :city: உஷோரோட்
     :Europe/Vaduz: 
       :city: வதுஸ்
     :Europe/Vatican: 
@@ -1442,7 +1465,7 @@
     :Pacific/Gambier: 
       :city: கேம்பியர்
     :Pacific/Guadalcanal: 
-      :city: கவுடால்கேனல்
+      :city: க்வாடால்கேனல்
     :Pacific/Guam: 
       :city: குவாம்
     :Pacific/Honolulu: 
@@ -1450,7 +1473,7 @@
     :Pacific/Johnston: 
       :city: ஜோன்ஸ்டன்
     :Pacific/Kiritimati: 
-      :city: கிரிடிமடி
+      :city: கிரிடிமாட்டி
     :Pacific/Kosrae: 
       :city: கோஸ்ரே
     :Pacific/Kwajalein: 
@@ -1468,7 +1491,7 @@
     :Pacific/Norfolk: 
       :city: நார்ஃபோக்
     :Pacific/Noumea: 
-      :city: நவுமியா
+      :city: நோவுமியா
     :Pacific/Pago_Pago: 
       :city: "பேகோ பேகோ"
     :Pacific/Palau: 

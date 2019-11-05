@@ -25,8 +25,8 @@ else
 fi
 
 if [[ $manager == "rbenv" ]]; then
-  jruby_version="jruby-9.1.5.0"
-  mri_version="2.1.9"
+  jruby_version="jruby-9.2.8.0"
+  mri_version="2.6.2"
 
   if [[ $(rbenv versions | grep $mri_version) == "" ]]; then
     echo "Installing $mri_version"
@@ -36,8 +36,8 @@ if [[ $manager == "rbenv" ]]; then
   rbenv local $mri_version
   ruby -v
 else
-  jruby_version="jruby-9.1.5.0"
-  mri_version="ruby-2.1.9"
+  jruby_version="jruby-9.2.8.0"
+  mri_version="ruby-2.6.2"
 
   if [[ $(rvm list | grep $mri_version) == "" ]]; then
     echo "Installing $mri_version"
@@ -68,6 +68,9 @@ else
   rvm use $jruby_version
   ruby -v
 fi
+
+# increase heap size to avoid out of memory errors
+export JAVA_OPTS="-Xmx1G"
 
 bundle install
 bundle exec rake add_locale[$locale]

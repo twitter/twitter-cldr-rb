@@ -1,18 +1,11 @@
 --- 
 :hi: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} डेलाइट समय"
-      :generic: "{0} समय"
-      :standard: "{0} मानक समय"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} मानक समय"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -25,7 +18,7 @@
         :standard: "पूर्वी अफ़्रीका समय"
     :Africa_Southern: 
       :long: 
-        :standard: "दक्षिण अफ़्रीका समय"
+        :standard: "दक्षिण अफ़्रीका मानक समय"
     :Africa_Western: 
       :long: 
         :daylight: "पश्चिम अफ़्रीका ग्रीष्मकालीन समय"
@@ -139,12 +132,12 @@
         :standard: "बोलीविया समय"
     :Brasilia: 
       :long: 
-        :daylight: "ब्राजीलिया ग्रीष्मकालीन समय"
-        :generic: "ब्राजीलिया समय"
-        :standard: "ब्राजीलिया मानक समय"
+        :daylight: "ब्राज़ीलिया ग्रीष्मकालीन समय"
+        :generic: "ब्राज़ीलिया समय"
+        :standard: "ब्राज़ीलिया मानक समय"
     :Brunei: 
       :long: 
-        :standard: "ब्रूनेई दारूस्सलाम समय"
+        :standard: "ब्रूनेई दारूस्सलम समय"
     :Cape_Verde: 
       :long: 
         :daylight: "केप वर्ड ग्रीष्मकालीन समय"
@@ -199,7 +192,7 @@
         :standard: "डेविस समय"
     :DumontDUrville: 
       :long: 
-        :standard: "ड्यूमोंट डर्विल समय"
+        :standard: "ड्यूमोंट डी अर्विले समय"
     :East_Timor: 
       :long: 
         :standard: "पूर्वी तिमोर समय"
@@ -492,15 +485,18 @@
         :standard: "फ़ीनिक्स द्वीपसमूह समय"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "सेंट पियरे और मिकेलान डेलाइट समय"
-        :generic: "सेंट पियरे और मिकेलान समय"
-        :standard: "सेंट पियरे और मिकेलान मानक समय"
+        :daylight: "सेंट पिएरे और मिक्वेलान डेलाइट समय"
+        :generic: "सेंट पिएरे और मिक्वेलान समय"
+        :standard: "सेंट पिएरे और मिक्वेलान मानक समय"
     :Pitcairn: 
       :long: 
         :standard: "पिटकैर्न समय"
     :Ponape: 
       :long: 
         :standard: "पोनापे समय"
+    :Pyongyang: 
+      :long: 
+        :standard: "प्योंगयांग समय"
     :Reunion: 
       :long: 
         :standard: "रीयूनियन समय"
@@ -524,7 +520,7 @@
         :standard: "समोआ मानक समय"
     :Seychelles: 
       :long: 
-        :standard: "सेशल्स समय"
+        :standard: "सेशेल्स समय"
     :Singapore: 
       :long: 
         :standard: "सिंगापुर समय"
@@ -561,7 +557,7 @@
         :standard: "टोंगा मानक समय"
     :Truk: 
       :long: 
-        :standard: "चूक समय"
+        :standard: "चुक समय"
     :Turkmenistan: 
       :long: 
         :daylight: "तुर्कमेनिस्तान ग्रीष्मकालीन समय"
@@ -739,15 +735,15 @@
     :America/Argentina/Salta: 
       :city: साल्टा
     :America/Argentina/San_Juan: 
-      :city: "सान जुआन"
+      :city: "सैन ह्वान"
     :America/Argentina/San_Luis: 
-      :city: "सान लुईस"
+      :city: "सैन लूई"
     :America/Argentina/Tucuman: 
       :city: टोकूमन
     :America/Argentina/Ushuaia: 
       :city: उशुआइया
     :America/Aruba: 
-      :city: अरुबा
+      :city: अरूबा
     :America/Asuncion: 
       :city: एसनशियॉन
     :America/Bahia: 
@@ -767,7 +763,7 @@
     :America/Bogota: 
       :city: बोगोटा
     :America/Boise: 
-      :city: बॉइस
+      :city: बॉइसी
     :America/Buenos_Aires: 
       :city: "ब्यूनस आयरस"
     :America/Cambridge_Bay: 
@@ -818,14 +814,16 @@
       :city: ईरुनेपे
     :America/El_Salvador: 
       :city: "अल सल्वाडोर"
+    :America/Fort_Nelson: 
+      :city: "फ़ोर्ट नेल्सन"
     :America/Fortaleza: 
       :city: फ़ोर्टालेज़ा
     :America/Glace_Bay: 
-      :city: "ग्लेस खा़ड़ी"
+      :city: "ग्लेस खाड़ी"
     :America/Godthab: 
       :city: नुक
     :America/Goose_Bay: 
-      :city: "गूस खा़ड़ी"
+      :city: "गूस खाड़ी"
     :America/Grand_Turk: 
       :city: "ग्रांड टर्क"
     :America/Grenada: 
@@ -952,6 +950,8 @@
       :city: "पोर्टो वेल्हो"
     :America/Puerto_Rico: 
       :city: "पोर्टो रिको"
+    :America/Punta_Arenas: 
+      :city: "पुंटा एरिनास"
     :America/Rainy_River: 
       :city: "रेनी नदी"
     :America/Rankin_Inlet: 
@@ -975,7 +975,7 @@
     :America/Sao_Paulo: 
       :city: "साओ पाउलो"
     :America/Scoresbysund: 
-      :city: इटोकोर्टोरमियाट
+      :city: इटोकोर्टोरमिट
     :America/Sitka: 
       :city: सिट्का
     :America/St_Barthelemy: 
@@ -1052,6 +1052,8 @@
       :city: अक्तोब
     :Asia/Ashgabat: 
       :city: अश्गाबात
+    :Asia/Atyrau: 
+      :city: एतराउ
     :Asia/Baghdad: 
       :city: बगदाद
     :Asia/Bahrain: 
@@ -1060,6 +1062,8 @@
       :city: बाकु
     :Asia/Bangkok: 
       :city: बैंकॉक
+    :Asia/Barnaul: 
+      :city: बर्नोल
     :Asia/Beirut: 
       :city: बेरुत
     :Asia/Bishkek: 
@@ -1084,6 +1088,8 @@
       :city: दुबई
     :Asia/Dushanbe: 
       :city: दुशांबे
+    :Asia/Famagusta: 
+      :city: फ़ामागुस्ता
     :Asia/Gaza: 
       :city: गाज़ा
     :Asia/Hebron: 
@@ -1146,6 +1152,8 @@
       :city: प्योंगयांग
     :Asia/Qatar: 
       :city: कतर
+    :Asia/Qostanay: 
+      :city: कोस्टाने
     :Asia/Qyzylorda: 
       :city: केज़ेलोर्डा
     :Asia/Rangoon: 
@@ -1178,6 +1186,8 @@
       :city: थिंपू
     :Asia/Tokyo: 
       :city: टोक्यो
+    :Asia/Tomsk: 
+      :city: तोम्स्क
     :Asia/Ulaanbaatar: 
       :city: उलानबातर
     :Asia/Urumqi: 
@@ -1238,12 +1248,19 @@
       :city: पर्थ
     :Australia/Sydney: 
       :city: सिडनी
+    :Etc/UTC: 
+      :long: 
+        :standard: "समन्वित वैश्विक समय"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "अज्ञात शहर"
     :Europe/Amsterdam: 
       :city: एम्स्टर्डम
     :Europe/Andorra: 
       :city: अंडोरा
+    :Europe/Astrakhan: 
+      :city: आस्ट्राखान
     :Europe/Athens: 
       :city: एथेंस
     :Europe/Belgrade: 
@@ -1284,6 +1301,8 @@
       :city: कालीनिनग्राड
     :Europe/Kiev: 
       :city: कीव
+    :Europe/Kirov: 
+      :city: किरोव
     :Europe/Lisbon: 
       :city: लिस्बन
     :Europe/Ljubljana: 
@@ -1324,6 +1343,8 @@
       :city: "सैन मारीनो"
     :Europe/Sarajevo: 
       :city: साराजेवो
+    :Europe/Saratov: 
+      :city: सारातोव
     :Europe/Simferopol: 
       :city: सिम्फ़ेरोपोल
     :Europe/Skopje: 
@@ -1336,6 +1357,8 @@
       :city: तेलिन
     :Europe/Tirane: 
       :city: टाइरेन
+    :Europe/Ulyanovsk: 
+      :city: उल्यानोव्स्क
     :Europe/Uzhgorod: 
       :city: अज़्गोरोद
     :Europe/Vaduz: 
@@ -1383,9 +1406,9 @@
     :Pacific/Auckland: 
       :city: ऑकलैंड
     :Pacific/Bougainville: 
-      :city: बोगनविल
+      :city: बोगनविले
     :Pacific/Chatham: 
-      :city: चाथम
+      :city: चैथम
     :Pacific/Easter: 
       :city: ईस्टर
     :Pacific/Efate: 
@@ -1433,7 +1456,7 @@
     :Pacific/Pago_Pago: 
       :city: "पागो पागो"
     :Pacific/Palau: 
-      :city: पालाऊ
+      :city: पलाऊ
     :Pacific/Pitcairn: 
       :city: पिटकैर्न
     :Pacific/Ponape: 

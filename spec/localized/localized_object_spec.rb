@@ -5,15 +5,13 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedObject do
+describe TwitterCldr::Localized::LocalizedObject do
 
   class LocalizedFormatter
     def initialize(options); end
   end
 
-  class LocalizedClass < LocalizedObject
+  class LocalizedClass < described_class
     def formatter_const
       LocalizedFormatter
     end

@@ -7,7 +7,7 @@
           - 
             :rules: 
               - 
-                :rule: "=#,###0.#=;"
+                :rule: =0.0=;
                 :value: x.x
               - 
                 :rule: =%spellout-numbering=;
@@ -22,7 +22,7 @@
           - 
             :rules: 
               - 
-                :rule: "minus >>;"
+                :rule: "mínus >>;"
                 :value: "-x"
               - 
                 :rule: "<< čiarka >>;"
@@ -64,7 +64,7 @@
                 :rule: jedenásť;
                 :value: 11
               - 
-                :rule: dvaásť;
+                :rule: dvanásť;
                 :value: 12
               - 
                 :rule: trinásť;
@@ -88,10 +88,10 @@
                 :rule: devätnásť;
                 :value: 19
               - 
-                :rule: "dvasať[­>>];"
+                :rule: "dvadsať[­>>];"
                 :value: 20
               - 
-                :rule: "trisať[­>>];"
+                :rule: "tridsať[­>>];"
                 :value: 30
               - 
                 :rule: "štyridsať[­>>];"
@@ -106,41 +106,17 @@
                 :rule: "<%spellout-cardinal-feminine< tisíc[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-masculine< milión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{milión}few{milióny}other{miliónov})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< milióny[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliónov[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{miliarda}few{miliardy}other{miliardov})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliardov[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< bilión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{bilión}few{bilióny}other{biliónov})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< bilióny[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliónov[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{biliarda}few{biliardy}other{biliardov})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardov[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
@@ -148,7 +124,7 @@
           - 
             :rules: 
               - 
-                :rule: "minus >>;"
+                :rule: "mínus >>;"
                 :value: "-x"
               - 
                 :rule: "<< čiarka >>;"
@@ -166,10 +142,10 @@
                 :rule: =%spellout-cardinal-masculine=;
                 :value: 3
               - 
-                :rule: "dvasať[­>>];"
+                :rule: "dvadsať[­>>];"
                 :value: 20
               - 
-                :rule: "trisať[­>>];"
+                :rule: "tridsať[­>>];"
                 :value: 30
               - 
                 :rule: "štyridsať[­>>];"
@@ -184,41 +160,17 @@
                 :rule: "<%spellout-cardinal-feminine< tisíc[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-masculine< milión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{milión}few{milióny}other{miliónov})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< milióny[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliónov[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{miliarda}few{miliardy}other{miliardov})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliardov[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< bilión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{bilión}few{bilióny}other{biliónov})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< bilióny[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliónov[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{biliarda}few{biliardy}other{biliardov})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardov[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
@@ -226,7 +178,7 @@
           - 
             :rules: 
               - 
-                :rule: "minus >>;"
+                :rule: "mínus >>;"
                 :value: "-x"
               - 
                 :rule: "<< čiarka >>;"
@@ -244,10 +196,10 @@
                 :rule: =%spellout-cardinal-masculine=;
                 :value: 3
               - 
-                :rule: "dvasať[­>>];"
+                :rule: "dvadsať[­>>];"
                 :value: 20
               - 
-                :rule: "trisať[­>>];"
+                :rule: "tridsať[­>>];"
                 :value: 30
               - 
                 :rule: "štyridsať[­>>];"
@@ -262,41 +214,17 @@
                 :rule: "<%spellout-cardinal-feminine< tisíc[ >>];"
                 :value: 1000
               - 
-                :rule: "<%spellout-cardinal-masculine< milión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{milión}few{milióny}other{miliónov})$[ >>];"
                 :value: 1000000
               - 
-                :rule: "<%spellout-cardinal-masculine< milióny[ >>];"
-                :value: 2000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliónov[ >>];"
-                :value: 5000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{miliarda}few{miliardy}other{miliardov})$[ >>];"
                 :value: 1000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< miliardy[ >>];"
-                :value: 2000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< miliardov[ >>];"
-                :value: 5000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< bilión[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{bilión}few{bilióny}other{biliónov})$[ >>];"
                 :value: 1000000000000
               - 
-                :rule: "<%spellout-cardinal-masculine< bilióny[ >>];"
-                :value: 2000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliónov[ >>];"
-                :value: 5000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliarda[ >>];"
+                :rule: "<%spellout-cardinal-masculine< $(cardinal,one{biliarda}few{biliardy}other{biliardov})$[ >>];"
                 :value: 1000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardy[ >>];"
-                :value: 2000000000000000
-              - 
-                :rule: "<%spellout-cardinal-masculine< biliardov[ >>];"
-                :value: 5000000000000000
               - 
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000

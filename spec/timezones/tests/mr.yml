@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: मोरोक्को वेळ
   :LONG:
-    :standard: पश्चिम युरोपियन प्रमाण वेळ
-    :daylight: पश्चिम युरोपियन उन्हाळी वेळ
+    :standard: "[GMT]"
+    :daylight: "[GMT]+०१:००"
   :LONG_GENERIC:
-    :generic: पश्चिम युरोपियन वेळ
+    :generic: मोरोक्को वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]+१"
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: पश्चिम सहारा वेळ
   :LONG:
-    :standard: पश्चिम युरोपियन प्रमाण वेळ
-    :daylight: पश्चिम युरोपियन उन्हाळी वेळ
+    :standard: "[GMT]"
+    :daylight: "[GMT]+०१:००"
   :LONG_GENERIC:
-    :generic: पश्चिम युरोपियन वेळ
+    :generic: पश्चिम सहारा वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]+१"
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: युगांडा वेळ
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: "[GMT]+०३:००"
+    :generic: "[GMT]+०२:००"
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: सुदान वेळ
   :LONG:
-    :standard: पूर्व आफ्रिका वेळ
-    :daylight: "[GMT]+०३:००"
+    :standard: मध्‍य आफ्रिका वेळ
+    :daylight: "[GMT]+०२:००"
   :LONG_GENERIC:
-    :generic: पूर्व आफ्रिका वेळ
+    :generic: मध्‍य आफ्रिका वेळ
   :SHORT:
-    :standard: "[GMT]+३"
-    :daylight: "[GMT]+३"
+    :standard: "[GMT]+२"
+    :daylight: "[GMT]+२"
   :SHORT_GENERIC:
     :generic: सुदान वेळ
 Africa/Kigali:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: ट्यूनिशिया वेळ
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: "[GMT]+०१:००"
+    :generic: "[GMT]+०२:००"
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: नामिबिया वेळ
   :LONG:
-    :standard: पश्चिम आफ्रिका प्रमाण वेळ
-    :daylight: पश्चिम आफ्रिका उन्हाळी वेळ
+    :standard: मध्‍य आफ्रिका वेळ
+    :daylight: "[GMT]+०२:००"
   :LONG_GENERIC:
-    :generic: पश्चिम आफ्रिका वेळ (विंडहोएक)
+    :generic: मध्‍य आफ्रिका वेळ
   :SHORT:
-    :standard: "[GMT]+१"
+    :standard: "[GMT]+२"
     :daylight: "[GMT]+२"
   :SHORT_GENERIC:
     :generic: नामिबिया वेळ
@@ -983,7 +983,7 @@ America/Adak:
     :standard: हवाई-अलूशन प्रमाण वेळ
     :daylight: हवाई-अलूशन सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: हवाई-अलूशन वेळ (अडॅक)
+    :generic: हवाई-अलूशन वेळ
   :SHORT:
     :standard: "[GMT]-१०"
     :daylight: "[GMT]-९"
@@ -1248,7 +1248,7 @@ America/Argentina/San_Luis:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: सॅन लुईस वेळ
+    :generic: सान ल्युइस वेळ
   :LONG:
     :standard: पश्चिमी अर्जेंटिना प्रमाण वेळ
     :daylight: पश्चिमी अर्जेंटिना उन्हाळी वेळ
@@ -1258,7 +1258,7 @@ America/Argentina/San_Luis:
     :standard: "[GMT]-३"
     :daylight: "[GMT]-३"
   :SHORT_GENERIC:
-    :generic: सॅन लुईस वेळ
+    :generic: सान ल्युइस वेळ
 America/Argentina/Tucuman:
   :offset: -10800000
   :LONG_GMT:
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: हवाई-अलूशन प्रमाण वेळ
     :daylight: हवाई-अलूशन सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: हवाई-अलूशन वेळ (अडॅक)
+    :generic: हवाई-अलूशन वेळ
   :SHORT:
     :standard: "[GMT]-१०"
     :daylight: "[GMT]-९"
@@ -1446,7 +1446,7 @@ America/Belize:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: बलिझ वेळ
+    :generic: बेलिझे वेळ
   :LONG:
     :standard: केंद्रीय प्रमाण वेळ
     :daylight: केंद्रीय सूर्यप्रकाश वेळ
@@ -1456,7 +1456,7 @@ America/Belize:
     :standard: "[GMT]-६"
     :daylight: "[GMT]-६"
   :SHORT_GENERIC:
-    :generic: बलिझ वेळ
+    :generic: बेलिझे वेळ
 America/Blanc-Sablon:
   :offset: -14400000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: अ‍ॅमेझॉन प्रमाण वेळ
     :daylight: अ‍ॅमेझॉन उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: अॅमेझॉन वेळ
+    :generic: अॅमेझॉन वेळ (कॅम्पो ग्रँडे)
   :SHORT:
     :standard: "[GMT]-४"
     :daylight: "[GMT]-३"
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: कानकुन वेळ
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: "[GMT]-०४:३०"
+    :generic: "[GMT]-०४:००"
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: व्हेनेझुएला वेळ
   :LONG:
     :standard: व्हेनेझुएला वेळ
-    :daylight: "[GMT]-०४:३०"
+    :daylight: "[GMT]-०४:००"
   :LONG_GENERIC:
     :generic: व्हेनेझुएला वेळ
   :SHORT:
-    :standard: "[GMT]-४:३०"
-    :daylight: "[GMT]-४:३०"
+    :standard: "[GMT]-४"
+    :daylight: "[GMT]-४"
   :SHORT_GENERIC:
     :generic: व्हेनेझुएला वेळ
 America/Catamarca:
@@ -1788,17 +1788,17 @@ America/Cuiaba:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: कुइबा वेळ
+    :generic: कुयाबा वेळ
   :LONG:
     :standard: अ‍ॅमेझॉन प्रमाण वेळ
     :daylight: अ‍ॅमेझॉन उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: अॅमेझॉन वेळ
+    :generic: अॅमेझॉन वेळ (कुयाबा)
   :SHORT:
     :standard: "[GMT]-४"
     :daylight: "[GMT]-३"
   :SHORT_GENERIC:
-    :generic: कुइबा वेळ
+    :generic: कुयाबा वेळ
 America/Curacao:
   :offset: -14400000
   :LONG_GMT:
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Fort Nelson वेळ
+    :generic: फोर्ट नेल्सन वेळ
   :LONG:
     :standard: पर्वतीय प्रमाण वेळ
     :daylight: पर्वतीय सूर्यप्रकाश वेळ
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: "[GMT]-७"
     :daylight: "[GMT]-७"
   :SHORT_GENERIC:
-    :generic: Fort Nelson वेळ
+    :generic: फोर्ट नेल्सन वेळ
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: गूस उपसागर वेळ
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: "[GMT]-०४:००"
+    :generic: "[GMT]-०५:००"
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: टर्क्स आणि कैकोस बेटे वेळ
   :LONG:
-    :standard: अटलांटिक प्रमाण वेळ
-    :daylight: अटलांटिक सूर्यप्रकाश वेळ
+    :standard: पौर्वात्य प्रमाण वेळ
+    :daylight: पौर्वात्य सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: अटलांटिक प्रमाण वेळ
+    :generic: पौर्वात्य वेळ
   :SHORT:
-    :standard: "[GMT]-४"
+    :standard: "[GMT]-५"
     :daylight: "[GMT]-४"
   :SHORT_GENERIC:
     :generic: टर्क्स आणि कैकोस बेटे वेळ
@@ -2906,8 +2906,8 @@ America/Miquelon:
   :GENERIC_LOCATION:
     :generic: सेंट पियरे आणि मिक्वेलोन वेळ
   :LONG:
-    :standard: सेंट पियर आणि मिक्वेलोन प्रमाण वेळ
-    :daylight: सेंट पियर आणि मिक्वेलोन सूर्यप्रकाश वेळ
+    :standard: सेंट पियरे आणि मिक्वेलोन प्रमाण वेळ
+    :daylight: सेंट पियरे आणि मिक्वेलोन सूर्यप्रकाश वेळ
   :LONG_GENERIC:
     :generic: सेंट पियर आणि मिक्वेलोन वेळ
   :SHORT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: पौर्वात्य प्रमाण वेळ
     :daylight: पौर्वात्य सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: पौर्वात्य प्रमाण वेळ
+    :generic: पौर्वात्य वेळ
   :SHORT:
     :standard: "[GMT]-५"
-    :daylight: "[GMT]-५"
+    :daylight: "[GMT]-४"
   :SHORT_GENERIC:
     :generic: हैती वेळ
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: प्युएर्तो रिको वेळ
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]-०३:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: पुंता अरीनास वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]-०३:००"
+    :daylight: "[GMT]-०३:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: पुंता अरीनास वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]-३"
+    :daylight: "[GMT]-३"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: पुंता अरीनास वेळ
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: सँटारेम वेळ
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: "[GMT]-०३:००"
+    :generic: "[GMT]-०४:००"
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: चिली वेळ
   :LONG:
     :standard: चिली प्रमाण वेळ
     :daylight: चिली उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: चिली प्रमाण वेळ
+    :generic: चिली वेळ
   :SHORT:
-    :standard: "[GMT]-३"
+    :standard: "[GMT]-४"
     :daylight: "[GMT]-३"
   :SHORT_GENERIC:
     :generic: चिली वेळ
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: पामेर वेळ
   :LONG:
-    :standard: चिली प्रमाण वेळ
-    :daylight: चिली उन्हाळी वेळ
+    :standard: "[GMT]-०३:००"
+    :daylight: "[GMT]-०३:००"
   :LONG_GENERIC:
-    :generic: चिली प्रमाण वेळ
+    :generic: पामेर वेळ
   :SHORT:
     :standard: "[GMT]-३"
     :daylight: "[GMT]-३"
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: तुर्कमेनिस्तान वेळ
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०५:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: अतिरॉ वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: पश्चिम कझाकस्तान वेळ
+    :daylight: "[GMT]+०५:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: पश्चिम कझाकस्तान वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+५"
+    :daylight: "[GMT]+५"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: अतिरॉ वेळ
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: अझरबैजान प्रमाण वेळ
     :daylight: अझरबैजान उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: अझरबैजान वेळ
+    :generic: अझरबैजान प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+४"
-    :daylight: "[GMT]+५"
+    :daylight: "[GMT]+४"
   :SHORT_GENERIC:
     :generic: अझरबैजान वेळ
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Barnaul वेळ
+    :generic: बर्नौल वेळ
   :LONG:
     :standard: "[GMT]+०७:००"
     :daylight: "[GMT]+०७:००"
   :LONG_GENERIC:
-    :generic: Barnaul वेळ
+    :generic: बर्नौल वेळ
   :SHORT:
     :standard: "[GMT]+७"
     :daylight: "[GMT]+७"
   :SHORT_GENERIC:
-    :generic: Barnaul वेळ
+    :generic: बर्नौल वेळ
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: चोईबाल्सन प्रमाण वेळ
     :daylight: चोईबाल्सन उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: चोईबाल्सन वेळ
+    :generic: चोईबाल्सन प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+८"
-    :daylight: "[GMT]+९"
+    :daylight: "[GMT]+८"
   :SHORT_GENERIC:
     :generic: चोईबाल्सन वेळ
 Asia/Chongqing:
@@ -4668,7 +4668,7 @@ Asia/Dili:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: पूर्व तिमोर वेळ
+    :generic: तिमोर-लेस्ते वेळ
   :LONG:
     :standard: पूर्व तिमोर वेळ
     :daylight: "[GMT]+०९:००"
@@ -4678,7 +4678,7 @@ Asia/Dili:
     :standard: "[GMT]+९"
     :daylight: "[GMT]+९"
   :SHORT_GENERIC:
-    :generic: पूर्व तिमोर वेळ
+    :generic: तिमोर-लेस्ते वेळ
 Asia/Dubai:
   :offset: 14400000
   :LONG_GMT:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: ताजिकिस्तान वेळ
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०२:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: फॅमगुस्ता वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+०२:००"
+    :daylight: "[GMT]+०३:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: फॅमगुस्ता वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+२"
+    :daylight: "[GMT]+३"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: फॅमगुस्ता वेळ
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: होव्ह्ड प्रमाण वेळ
     :daylight: होव्ह्ड उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: होव्ह्ड वेळ
+    :generic: होव्ह्ड प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+७"
-    :daylight: "[GMT]+८"
+    :daylight: "[GMT]+७"
   :SHORT_GENERIC:
     :generic: होव्ड वेळ
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: ईर्कुत्स्क वेळ
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: "[GMT]+०२:००"
+    :generic: "[GMT]+०३:००"
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की वेळ
   :LONG:
-    :standard: पूर्व युरोपियन प्रमाण वेळ
-    :daylight: पूर्व युरोपियन उन्हाळी वेळ
+    :standard: "[GMT]+०३:००"
+    :daylight: "[GMT]+०३:००"
   :LONG_GENERIC:
-    :generic: पूर्व युरोपियन वेळ
+    :generic: तुर्की वेळ
   :SHORT:
-    :standard: "[GMT]+२"
+    :standard: "[GMT]+३"
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
     :generic: तुर्की वेळ
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: मकाओ एसएआर चीन वेळ
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: "[GMT]+१०:००"
+    :generic: "[GMT]+११:००"
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: मेगाडन वेळ
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: मॅगाडन प्रमाण वेळ
   :SHORT:
-    :standard: "[GMT]+१०"
-    :daylight: "[GMT]+१०"
+    :standard: "[GMT]+११"
+    :daylight: "[GMT]+११"
   :SHORT_GENERIC:
     :generic: मेगाडन वेळ
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: सायप्रस वेळ
+    :generic: निकोसिया वेळ
   :LONG:
     :standard: पूर्व युरोपियन प्रमाण वेळ
     :daylight: पूर्व युरोपियन उन्हाळी वेळ
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: "[GMT]+२"
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
-    :generic: सायप्रस वेळ
+    :generic: निकोसिया वेळ
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: नोवोकुझ्नेत्स्क वेळ
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: "[GMT]+०६:००"
+    :generic: "[GMT]+०७:००"
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: नोवोसिबिर्स्क वेळ
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: नोवोसिबिर्स्क प्रमाण वेळ
   :SHORT:
-    :standard: "[GMT]+६"
-    :daylight: "[GMT]+६"
+    :standard: "[GMT]+७"
+    :daylight: "[GMT]+७"
   :SHORT_GENERIC:
     :generic: नोवोसिबिर्स्क वेळ
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: पाँटियानाक वेळ
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: "[GMT]+०८:३०"
+    :generic: "[GMT]+०९:००"
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: उत्तर कोरिया वेळ
   :LONG:
-    :standard: "[GMT]+०८:३०"
-    :daylight: "[GMT]+०८:३०"
+    :standard: कोरियन प्रमाण वेळ
+    :daylight: कोरियन सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: उत्तर कोरिया वेळ
+    :generic: कोरियन प्रमाण वेळ
   :SHORT:
-    :standard: "[GMT]+८:३०"
-    :daylight: "[GMT]+८:३०"
+    :standard: "[GMT]+९"
+    :daylight: "[GMT]+९"
   :SHORT_GENERIC:
     :generic: उत्तर कोरिया वेळ
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
     :generic: कतार वेळ
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: "[GMT]+०६:००"
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: किझीलोर्डा वेळ
+    :generic: कोस्टाने वेळ
   :LONG:
     :standard: पूर्व कझाकस्तान वेळ
     :daylight: "[GMT]+०६:००"
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: "[GMT]+६"
     :daylight: "[GMT]+६"
+  :SHORT_GENERIC:
+    :generic: कोस्टाने वेळ
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: "[GMT]+०५:००"
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: किझीलोर्डा वेळ
+  :LONG:
+    :standard: पश्चिम कझाकस्तान वेळ
+    :daylight: "[GMT]+०५:००"
+  :LONG_GENERIC:
+    :generic: पश्चिम कझाकस्तान वेळ
+  :SHORT:
+    :standard: "[GMT]+५"
+    :daylight: "[GMT]+५"
   :SHORT_GENERIC:
     :generic: किझीलोर्डा वेळ
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: जपान वेळ
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०७:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: तोमसक वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+०७:००"
+    :daylight: "[GMT]+०७:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: तोमसक वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+७"
+    :daylight: "[GMT]+७"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: तोमसक वेळ
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: उलान बाटोर प्रमाण वेळ
     :daylight: उलान बाटोर उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: उलान बाटोर वेळ
+    :generic: उलान बाटोर प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+८"
-    :daylight: "[GMT]+९"
+    :daylight: "[GMT]+८"
   :SHORT_GENERIC:
     :generic: उलानबातर वेळ
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: उलान बाटोर प्रमाण वेळ
     :daylight: उलान बाटोर उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: उलान बाटोर वेळ
+    :generic: उलान बाटोर प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+८"
-    :daylight: "[GMT]+९"
+    :daylight: "[GMT]+८"
   :SHORT_GENERIC:
     :generic: उलानबातर वेळ
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: यकुत्स्क वेळ
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०६:३०"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: म्यानमार (बर्मा) वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: म्यानमार वेळ
+    :daylight: "[GMT]+०६:३०"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: म्यानमार वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+६:३०"
+    :daylight: "[GMT]+६:३०"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: म्यानमार (बर्मा) वेळ
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: "[GMT]-५"
   :SHORT_GENERIC:
     :generic: विनीपेग वेळ
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: "[GMT]-०६:००"
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: रेजिना वेळ
-  :LONG:
-    :standard: केंद्रीय प्रमाण वेळ
-    :daylight: केंद्रीय सूर्यप्रकाश वेळ
-  :LONG_GENERIC:
-    :generic: केंद्रीय प्रमाण वेळ
-  :SHORT:
-    :standard: "[GMT]-६"
-    :daylight: "[GMT]-६"
-  :SHORT_GENERIC:
-    :generic: रेजिना वेळ
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: व्हाइटहॉर्स वेळ
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: "[GMT]-०३:००"
+    :generic: "[GMT]-०४:००"
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: चिली वेळ
   :LONG:
     :standard: चिली प्रमाण वेळ
     :daylight: चिली उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: चिली प्रमाण वेळ
+    :generic: चिली वेळ
   :SHORT:
-    :standard: "[GMT]-३"
+    :standard: "[GMT]-४"
     :daylight: "[GMT]-३"
   :SHORT_GENERIC:
     :generic: चिली वेळ
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: "[GMT]-०५:००"
+    :generic: "[GMT]-०६:००"
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ईस्टर वेळ
   :LONG:
     :standard: इस्टर बेट प्रमाण वेळ
     :daylight: इस्टर बेट उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: इस्टर बेट प्रमाण वेळ
+    :generic: इस्टर बेट वेळ
   :SHORT:
-    :standard: "[GMT]-५"
+    :standard: "[GMT]-६"
     :daylight: "[GMT]-५"
   :SHORT_GENERIC:
     :generic: ईस्टर वेळ
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan वेळ
+    :generic: आस्त्राखान वेळ
   :LONG:
     :standard: "[GMT]+०४:००"
     :daylight: "[GMT]+०४:००"
   :LONG_GENERIC:
-    :generic: Astrakhan वेळ
+    :generic: आस्त्राखान वेळ
   :SHORT:
     :standard: "[GMT]+४"
     :daylight: "[GMT]+४"
   :SHORT_GENERIC:
-    :generic: Astrakhan वेळ
+    :generic: आस्त्राखान वेळ
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7962,32 +7962,32 @@ Europe/Isle_of_Man:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: इस्ले ऑफ मॅन वेळ
+    :generic: आयल ऑफ मॅन वेळ
   :LONG:
     :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]+०१:००"
   :LONG_GENERIC:
-    :generic: इस्ले ऑफ मॅन वेळ
+    :generic: आयल ऑफ मॅन वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]+१"
   :SHORT_GENERIC:
-    :generic: इस्ले ऑफ मॅन वेळ
+    :generic: आयल ऑफ मॅन वेळ
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: "[GMT]+०२:००"
+    :generic: "[GMT]+०३:००"
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की वेळ
   :LONG:
-    :standard: पूर्व युरोपियन प्रमाण वेळ
-    :daylight: पूर्व युरोपियन उन्हाळी वेळ
+    :standard: "[GMT]+०३:००"
+    :daylight: "[GMT]+०३:००"
   :LONG_GENERIC:
-    :generic: पूर्व युरोपियन वेळ
+    :generic: तुर्की वेळ
   :SHORT:
-    :standard: "[GMT]+२"
+    :standard: "[GMT]+३"
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
     :generic: तुर्की वेळ
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: युक्रेन वेळ
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०३:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: किरोव वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+०३:००"
+    :daylight: "[GMT]+०३:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: किरोव वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+३"
+    :daylight: "[GMT]+३"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: किरोव वेळ
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: बेलारूस वेळ
   :LONG:
-    :standard: अग्र पुर्व यूरोपीयन वेळ
-    :daylight: "[GMT]+०३:००"
+    :standard: मॉस्को प्रमाण वेळ
+    :daylight: मॉस्को उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: अग्र पुर्व यूरोपीयन वेळ
+    :generic: मॉस्को प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]+३"
     :daylight: "[GMT]+३"
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: सायप्रस वेळ
+    :generic: निकोसिया वेळ
   :LONG:
     :standard: पूर्व युरोपियन प्रमाण वेळ
     :daylight: पूर्व युरोपियन उन्हाळी वेळ
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: "[GMT]+२"
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
-    :generic: सायप्रस वेळ
+    :generic: निकोसिया वेळ
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: झेक प्रजासत्ताक वेळ
+    :generic: झेकिया वेळ
   :LONG:
     :standard: मध्‍य युरोपियन प्रमाण वेळ
     :daylight: मध्‍य युरोपियन उन्हाळी वेळ
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: "[GMT]+१"
     :daylight: "[GMT]+२"
   :SHORT_GENERIC:
-    :generic: झेक प्रजासत्ताक वेळ
+    :generic: झेकिया वेळ
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: बोस्निया अणि हर्जेगोविना वेळ
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: "[GMT]"
+    :generic: "[GMT]+०४:००"
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: "[GMT]"
+    :generic: सारातोव वेळ
   :LONG:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+०४:००"
+    :daylight: "[GMT]+०४:००"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: सारातोव वेळ
   :SHORT:
-    :standard: "[GMT]"
-    :daylight: "[GMT]"
+    :standard: "[GMT]+४"
+    :daylight: "[GMT]+४"
   :SHORT_GENERIC:
-    :generic: "[GMT]"
+    :generic: सारातोव वेळ
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: मॅसेडोनिया वेळ
+    :generic: उत्तर मॅसेडोनिया वेळ
   :LONG:
     :standard: मध्‍य युरोपियन प्रमाण वेळ
     :daylight: मध्‍य युरोपियन उन्हाळी वेळ
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: "[GMT]+१"
     :daylight: "[GMT]+२"
   :SHORT_GENERIC:
-    :generic: मॅसेडोनिया वेळ
+    :generic: उत्तर मॅसेडोनिया वेळ
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk वेळ
+    :generic: उल्यानोव्स्क वेळ
   :LONG:
     :standard: "[GMT]+०४:००"
     :daylight: "[GMT]+०४:००"
   :LONG_GENERIC:
-    :generic: Ulyanovsk वेळ
+    :generic: उल्यानोव्स्क वेळ
   :SHORT:
     :standard: "[GMT]+४"
     :daylight: "[GMT]+४"
   :SHORT_GENERIC:
-    :generic: Ulyanovsk वेळ
+    :generic: उल्यानोव्स्क वेळ
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: लिथुआनिया वेळ
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: "[GMT]+०३:००"
+    :generic: "[GMT]+०४:००"
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: व्होल्गोग्राड वेळ
   :LONG:
-    :standard: मॉस्को प्रमाण वेळ
-    :daylight: मॉस्को उन्हाळी वेळ
+    :standard: व्होल्गोग्राड प्रमाण वेळ
+    :daylight: व्होल्गोग्राड उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: मॉस्को प्रमाण वेळ
+    :generic: व्होल्गोग्राड प्रमाण वेळ
   :SHORT:
-    :standard: "[GMT]+३"
-    :daylight: "[GMT]+३"
+    :standard: "[GMT]+४"
+    :daylight: "[GMT]+४"
   :SHORT_GENERIC:
     :generic: व्होल्गोग्राड वेळ
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: ग्रीनिच प्रमाण वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
-    :generic: "[GMT]"
+    :generic: ग्रीनिच प्रमाण वेळ
   :SHORT:
     :standard: "[GMT]"
     :daylight: "[GMT]"
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: चूक वेळ
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: "[GMT]-०५:००"
+    :generic: "[GMT]-०६:००"
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ईस्टर वेळ
   :LONG:
     :standard: इस्टर बेट प्रमाण वेळ
     :daylight: इस्टर बेट उन्हाळी वेळ
   :LONG_GENERIC:
-    :generic: इस्टर बेट प्रमाण वेळ
+    :generic: इस्टर बेट वेळ
   :SHORT:
-    :standard: "[GMT]-५"
+    :standard: "[GMT]-६"
     :daylight: "[GMT]-५"
   :SHORT_GENERIC:
     :generic: ईस्टर वेळ
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: सिंगापूर वेळ
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: "[GMT]+०२:००"
+    :generic: "[GMT]+०३:००"
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: तुर्की वेळ
   :LONG:
-    :standard: पूर्व युरोपियन प्रमाण वेळ
-    :daylight: पूर्व युरोपियन उन्हाळी वेळ
+    :standard: "[GMT]+०३:००"
+    :daylight: "[GMT]+०३:००"
   :LONG_GENERIC:
-    :generic: पूर्व युरोपियन वेळ
+    :generic: तुर्की वेळ
   :SHORT:
-    :standard: "[GMT]+२"
+    :standard: "[GMT]+३"
     :daylight: "[GMT]+३"
   :SHORT_GENERIC:
     :generic: तुर्की वेळ
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: हवाई-अलूशन प्रमाण वेळ
     :daylight: हवाई-अलूशन सूर्यप्रकाश वेळ
   :LONG_GENERIC:
-    :generic: हवाई-अलूशन वेळ (अडॅक)
+    :generic: हवाई-अलूशन वेळ
   :SHORT:
     :standard: "[GMT]-१०"
     :daylight: "[GMT]-९"
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: "[GMT]"
   :LONG:
-    :standard: "[GMT]"
+    :standard: समन्वित वैश्विक वेळ
     :daylight: "[GMT]"
   :LONG_GENERIC:
     :generic: "[GMT]"
   :SHORT:
-    :standard: "[GMT]"
+    :standard: UTC
     :daylight: "[GMT]"
   :SHORT_GENERIC:
     :generic: "[GMT]"

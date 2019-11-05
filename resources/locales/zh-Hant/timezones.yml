@@ -1,18 +1,11 @@
 --- 
 :zh-Hant: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1}（{0}）"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0}時間"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1}（{0}）"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} (+0)"
   :metazones: 
     :Acre: 
       :long: 
@@ -41,6 +34,10 @@
         :daylight: 阿拉斯加夏令時間
         :generic: 阿拉斯加時間
         :standard: 阿拉斯加標準時間
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
     :Almaty: 
       :long: 
         :daylight: 阿拉木圖夏令時間
@@ -56,21 +53,37 @@
         :daylight: 中部夏令時間
         :generic: 中部時間
         :standard: 中部標準時間
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
     :America_Eastern: 
       :long: 
         :daylight: 東部夏令時間
         :generic: 東部時間
         :standard: 東部標準時間
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
     :America_Mountain: 
       :long: 
         :daylight: 山區夏令時間
         :generic: 山區時間
         :standard: 山區標準時間
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
     :America_Pacific: 
       :long: 
         :daylight: 太平洋夏令時間
         :generic: 太平洋時間
         :standard: 太平洋標準時間
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
     :Anadyr: 
       :long: 
         :daylight: 阿那底河夏令時間
@@ -116,6 +129,10 @@
         :daylight: 大西洋夏令時間
         :generic: 大西洋時間
         :standard: 大西洋標準時間
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
     :Australia_Central: 
       :long: 
         :daylight: 澳洲中部夏令時間
@@ -271,6 +288,8 @@
     :GMT: 
       :long: 
         :standard: 格林威治標準時間
+      :short: 
+        :standard: GMT
     :Galapagos: 
       :long: 
         :standard: 加拉巴哥群島時間
@@ -309,6 +328,10 @@
         :daylight: 夏威夷-阿留申夏令時間
         :generic: 夏威夷-阿留申時間
         :standard: 夏威夷-阿留申標準時間
+      :short: 
+        :daylight: HADT
+        :generic: HAT
+        :standard: HAST
     :Hong_Kong: 
       :long: 
         :daylight: 香港夏令時間
@@ -527,15 +550,18 @@
         :standard: 鳳凰群島時間
     :Pierre_Miquelon: 
       :long: 
-        :daylight: 聖皮埃爾和密克隆群島夏令時間
-        :generic: 聖皮埃爾和密克隆群島時間
-        :standard: 聖皮埃爾和密克隆群島標準時間
+        :daylight: 聖皮埃與密克隆群島夏令時間
+        :generic: 聖皮埃與密克隆群島時間
+        :standard: 聖皮埃與密克隆群島標準時間
     :Pitcairn: 
       :long: 
         :standard: 皮特肯時間
     :Ponape: 
       :long: 
         :standard: 波納佩時間
+    :Pyongyang: 
+      :long: 
+        :standard: 平壤時間
     :Qyzylorda: 
       :long: 
         :daylight: 克孜勒奧爾達夏令時間
@@ -767,7 +793,7 @@
     :America/Anchorage: 
       :city: 安克拉治
     :America/Anguilla: 
-      :city: 安吉拉
+      :city: 安奎拉
     :America/Antigua: 
       :city: 安地卡
     :America/Araguaina: 
@@ -787,7 +813,7 @@
     :America/Argentina/Ushuaia: 
       :city: 烏斯懷亞
     :America/Aruba: 
-      :city: 阿路巴
+      :city: 荷屬阿魯巴
     :America/Asuncion: 
       :city: 亞松森
     :America/Bahia: 
@@ -851,13 +877,15 @@
     :America/Detroit: 
       :city: 底特律
     :America/Dominica: 
-      :city: 多明尼加
+      :city: 多米尼克
     :America/Edmonton: 
       :city: 艾德蒙吞
     :America/Eirunepe: 
       :city: 艾魯內佩
     :America/El_Salvador: 
       :city: 薩爾瓦多
+    :America/Fort_Nelson: 
+      :city: 納爾遜堡
     :America/Fortaleza: 
       :city: 福塔力莎
     :America/Glace_Bay: 
@@ -992,6 +1020,8 @@
       :city: 維留港
     :America/Puerto_Rico: 
       :city: 波多黎各
+    :America/Punta_Arenas: 
+      :city: 蓬塔阿雷納斯
     :America/Rainy_River: 
       :city: 雨河鎮
     :America/Rankin_Inlet: 
@@ -1092,6 +1122,8 @@
       :city: 阿克托比
     :Asia/Ashgabat: 
       :city: 阿什哈巴特
+    :Asia/Atyrau: 
+      :city: 阿特勞
     :Asia/Baghdad: 
       :city: 巴格達
     :Asia/Bahrain: 
@@ -1100,6 +1132,8 @@
       :city: 巴庫
     :Asia/Bangkok: 
       :city: 曼谷
+    :Asia/Barnaul: 
+      :city: 巴爾瑙爾
     :Asia/Beirut: 
       :city: 貝魯特
     :Asia/Bishkek: 
@@ -1124,12 +1158,14 @@
       :city: 杜拜
     :Asia/Dushanbe: 
       :city: 杜桑貝
+    :Asia/Famagusta: 
+      :city: 法馬古斯塔
     :Asia/Gaza: 
       :city: 加薩
     :Asia/Hebron: 
       :city: 赫布隆
     :Asia/Hong_Kong: 
-      :city: 中華人民共和國香港特別行政區
+      :city: 香港
     :Asia/Hovd: 
       :city: 科布多
     :Asia/Irkutsk: 
@@ -1159,7 +1195,7 @@
     :Asia/Kuwait: 
       :city: 科威特
     :Asia/Macau: 
-      :city: 中華人民共和國澳門特別行政區
+      :city: 澳門
     :Asia/Magadan: 
       :city: 馬加丹
     :Asia/Makassar: 
@@ -1186,6 +1222,8 @@
       :city: 平壤
     :Asia/Qatar: 
       :city: 卡達
+    :Asia/Qostanay: 
+      :city: 庫斯塔奈
     :Asia/Qyzylorda: 
       :city: 克孜勒奧爾達
     :Asia/Rangoon: 
@@ -1218,6 +1256,8 @@
       :city: 廷布
     :Asia/Tokyo: 
       :city: 東京
+    :Asia/Tomsk: 
+      :city: 托木斯克
     :Asia/Ulaanbaatar: 
       :city: 烏蘭巴托
     :Asia/Urumqi: 
@@ -1278,12 +1318,19 @@
       :city: 伯斯
     :Australia/Sydney: 
       :city: 雪梨
+    :Etc/UTC: 
+      :long: 
+        :standard: 世界標準時間
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: 未知城市
     :Europe/Amsterdam: 
       :city: 阿姆斯特丹
     :Europe/Andorra: 
       :city: 安道爾
+    :Europe/Astrakhan: 
+      :city: 阿斯特拉罕
     :Europe/Athens: 
       :city: 雅典
     :Europe/Belgrade: 
@@ -1301,7 +1348,7 @@
     :Europe/Busingen: 
       :city: 布辛根
     :Europe/Chisinau: 
-      :city: 奇西瑙
+      :city: 基西紐
     :Europe/Copenhagen: 
       :city: 哥本哈根
     :Europe/Dublin: 
@@ -1324,6 +1371,8 @@
       :city: 加里寧格勒
     :Europe/Kiev: 
       :city: 基輔
+    :Europe/Kirov: 
+      :city: 基洛夫
     :Europe/Lisbon: 
       :city: 里斯本
     :Europe/Ljubljana: 
@@ -1364,6 +1413,8 @@
       :city: 聖馬利諾
     :Europe/Sarajevo: 
       :city: 塞拉耶佛
+    :Europe/Saratov: 
+      :city: 薩拉托夫
     :Europe/Simferopol: 
       :city: 辛非洛浦
     :Europe/Skopje: 
@@ -1376,6 +1427,8 @@
       :city: 塔林
     :Europe/Tirane: 
       :city: 地拉那
+    :Europe/Ulyanovsk: 
+      :city: 烏里揚諾夫斯克
     :Europe/Uzhgorod: 
       :city: 烏茲哥洛
     :Europe/Vaduz: 
@@ -1397,7 +1450,7 @@
     :Europe/Zurich: 
       :city: 蘇黎世
     :Indian/Antananarivo: 
-      :city: 安塔那那利佛
+      :city: 安塔那那利弗
     :Indian/Chagos: 
       :city: 查戈斯
     :Indian/Christmas: 

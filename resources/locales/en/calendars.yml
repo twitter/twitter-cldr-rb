@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -22,6 +27,7 @@
         :MEd: "E, M/d"
         :MMM: LLL
         :MMMEd: "E, MMM d"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
@@ -43,6 +49,7 @@
         :yMd: M/d/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -95,8 +102,12 @@
       :fields: 
         :day: day
         :day-short: day
+        :dayOfYear: "day of year"
+        :dayOfYear-short: "day of yr."
         :dayperiod: AM/PM
+        :dayperiod-short: AM/PM
         :era: era
+        :era-short: era
         :hour: hour
         :hour-short: hr.
         :minute: minute
@@ -109,10 +120,16 @@
         :second-short: sec.
         :week: week
         :week-short: wk.
+        :weekOfMonth: "week of month"
+        :weekOfMonth-short: "wk. of mo."
         :weekday: "day of the week"
+        :weekday-short: "day of wk."
+        :weekdayOfMonth: "weekday of the month"
+        :weekdayOfMonth-short: "wkday. of mo."
         :year: year
         :year-short: yr.
         :zone: "time zone"
+        :zone-short: zone
       :formats: 
         :date: 
           :full: 
@@ -222,7 +239,15 @@
               :am: am
               :pm: pm
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
+          :abbreviated: 
+            :afternoon1: afternoon
+            :am: AM
+            :evening1: evening
+            :midnight: midnight
+            :morning1: morning
+            :night1: night
+            :noon: noon
+            :pm: PM
           :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
           :wide: 
             :afternoon1: afternoon

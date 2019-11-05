@@ -1,18 +1,11 @@
 --- 
 :nl: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "zomertijd {0}"
-      :generic: "{0}-tijd"
-      :standard: "standaardtijd {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "standaardtijd {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -41,6 +34,10 @@
         :daylight: Alaska-zomertijd
         :generic: Alaska-tijd
         :standard: Alaska-standaardtijd
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
     :Almaty: 
       :long: 
         :daylight: Alma-Ata-zomertijd
@@ -56,21 +53,37 @@
         :daylight: Central-zomertijd
         :generic: Central-tijd
         :standard: Central-standaardtijd
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
     :America_Eastern: 
       :long: 
         :daylight: Eastern-zomertijd
         :generic: Eastern-tijd
         :standard: Eastern-standaardtijd
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
     :America_Mountain: 
       :long: 
         :daylight: Mountain-zomertijd
         :generic: Mountain-tijd
         :standard: Mountain-standaardtijd
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
     :America_Pacific: 
       :long: 
         :daylight: Pacific-zomertijd
         :generic: Pacific-tijd
         :standard: Pacific-standaardtijd
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
     :Anadyr: 
       :long: 
         :daylight: Anadyr-zomertijd
@@ -116,6 +129,10 @@
         :daylight: Atlantic-zomertijd
         :generic: Atlantic-tijd
         :standard: Atlantic-standaardtijd
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
     :Australia_Central: 
       :long: 
         :daylight: "Midden-Australische zomertijd"
@@ -283,9 +300,11 @@
     :GMT: 
       :long: 
         :standard: "Greenwich Mean Time"
+      :short: 
+        :standard: GMT
     :Galapagos: 
       :long: 
-        :standard: "Galapagoseilandse tijd"
+        :standard: "Galapagoseilandse standaardtijd"
     :Gambier: 
       :long: 
         :standard: "Gambiereilandse tijd"
@@ -321,6 +340,10 @@
         :daylight: "Hawaii-Aleoetische zomertijd"
         :generic: "Hawaii-Aleoetische tijd"
         :standard: "Hawaii-Aleoetische standaardtijd"
+      :short: 
+        :daylight: HADT
+        :generic: HAT
+        :standard: HAST
     :Hong_Kong: 
       :long: 
         :daylight: "Hongkongse zomertijd"
@@ -548,6 +571,9 @@
     :Ponape: 
       :long: 
         :standard: Pohnpei-tijd
+    :Pyongyang: 
+      :long: 
+        :standard: Pyongyang-tijd
     :Qyzylorda: 
       :long: 
         :daylight: Qyzylorda-zomertijd
@@ -870,6 +896,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -1004,6 +1032,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1104,6 +1134,8 @@
       :city: Aqtöbe
     :Asia/Ashgabat: 
       :city: Asjchabad
+    :Asia/Atyrau: 
+      :city: Atıraw
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1112,6 +1144,8 @@
       :city: Bakoe
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beiroet
     :Asia/Bishkek: 
@@ -1123,7 +1157,7 @@
     :Asia/Chita: 
       :city: Chita
     :Asia/Choibalsan: 
-      :city: Choibalsan
+      :city: Tsjojbalsan
     :Asia/Colombo: 
       :city: Colombo
     :Asia/Damascus: 
@@ -1136,6 +1170,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Doesjanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1230,6 +1266,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1290,12 +1328,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Gecoördineerde wereldtijd"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "onbekende stad"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athene
     :Europe/Belgrade: 
@@ -1319,7 +1364,7 @@
     :Europe/Dublin: 
       :city: Dublin
       :long: 
-        :daylight: "Ierse zomertijd"
+        :daylight: "Ierse standaardtijd"
     :Europe/Gibraltar: 
       :city: Gibraltar
     :Europe/Guernsey: 
@@ -1336,6 +1381,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1376,6 +1423,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1388,6 +1437,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Oezjhorod
     :Europe/Vaduz: 
@@ -1460,6 +1511,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HST
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

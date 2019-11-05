@@ -97,9 +97,11 @@ module TwitterCldr
       def find_cached_match(cursor)
         cursor.match_cache.fetch(cursor.position) do
           matches = match_all(cursor)
+
           matches.each do |m|
-            cursor.match_cache[m.boundary_position - 1] = m
+            cursor.match_cache[m.boundary_position - 1] ||= m
           end
+
           matches.first
         end
       end

@@ -1,10 +1,36 @@
 --- 
 :nb: 
   :numbers: 
+    :default_number_systems: 
+      :alternatives: {}
+      :default: latn
     :formats: 
       :currency: 
-        :number_system: latn
-        :patterns: 
+        :adlm: :numbers.formats.currency.latn
+        :arab: 
+          :default: "¤ #,##0.00"
+        :arabext: :numbers.formats.currency.latn
+        :bali: :numbers.formats.currency.latn
+        :beng: :numbers.formats.currency.latn
+        :brah: :numbers.formats.currency.latn
+        :cakm: :numbers.formats.currency.latn
+        :cham: :numbers.formats.currency.latn
+        :default: :numbers.formats.currency.latn
+        :deva: :numbers.formats.currency.latn
+        :fullwide: :numbers.formats.currency.latn
+        :gong: :numbers.formats.currency.latn
+        :gonm: :numbers.formats.currency.latn
+        :gujr: :numbers.formats.currency.latn
+        :guru: :numbers.formats.currency.latn
+        :hanidec: :numbers.formats.currency.latn
+        :java: :numbers.formats.currency.latn
+        :kali: :numbers.formats.currency.latn
+        :khmr: :numbers.formats.currency.latn
+        :knda: :numbers.formats.currency.latn
+        :lana: :numbers.formats.currency.latn
+        :lanatham: :numbers.formats.currency.latn
+        :laoo: :numbers.formats.currency.latn
+        :latn: 
           :default: "¤ #,##0.00"
           :short: 
             ? !ruby/symbol "1000"
@@ -21,46 +47,91 @@
               :other: ¤ 000k
             ? !ruby/symbol "1000000"
             : 
-              :one: ¤ 0 mill
-              :other: ¤ 0 mill
+              :one: ¤ 0 mill'.'
+              :other: ¤ 0 mill'.'
             ? !ruby/symbol "10000000"
             : 
-              :one: ¤ 00 mill
-              :other: ¤ 00 mill
+              :one: ¤ 00 mill'.'
+              :other: ¤ 00 mill'.'
             ? !ruby/symbol "100000000"
             : 
-              :one: ¤ 000 mill
-              :other: ¤ 000 mill
+              :one: ¤ 000 mill'.'
+              :other: ¤ 000 mill'.'
             ? !ruby/symbol "1000000000"
             : 
-              :one: ¤ 0 mrd
-              :other: ¤ 0 mrd
+              :one: ¤ 0 mrd'.'
+              :other: ¤ 0 mrd'.'
             ? !ruby/symbol "10000000000"
             : 
-              :one: ¤ 00 mrd
-              :other: ¤ 00 mrd
+              :one: ¤ 00 mrd'.'
+              :other: ¤ 00 mrd'.'
             ? !ruby/symbol "100000000000"
             : 
-              :one: ¤ 000 mrd
-              :other: ¤ 000 mrd
+              :one: ¤ 000 mrd'.'
+              :other: ¤ 000 mrd'.'
             ? !ruby/symbol "1000000000000"
             : 
-              :one: ¤ 0 bill
-              :other: ¤ 0 bill
+              :one: ¤ 0 bill'.'
+              :other: ¤ 0 bill'.'
             ? !ruby/symbol "10000000000000"
             : 
-              :one: ¤ 00 bill
-              :other: ¤ 00 bill
+              :one: ¤ 00 bill'.'
+              :other: ¤ 00 bill'.'
             ? !ruby/symbol "100000000000000"
             : 
-              :one: ¤ 000 bill
-              :other: ¤ 000 bill
-        :unit: 
-          :one: "{0} {1}"
-          :other: "{0} {1}"
+              :one: ¤ 000 bill'.'
+              :other: ¤ 000 bill'.'
+          :unit: 
+            :one: "{0} {1}"
+            :other: "{0} {1}"
+        :lepc: :numbers.formats.currency.latn
+        :limb: :numbers.formats.currency.latn
+        :mlym: :numbers.formats.currency.latn
+        :mong: :numbers.formats.currency.latn
+        :mtei: :numbers.formats.currency.latn
+        :mymr: :numbers.formats.currency.latn
+        :mymrshan: :numbers.formats.currency.latn
+        :nkoo: :numbers.formats.currency.latn
+        :olck: :numbers.formats.currency.latn
+        :orya: :numbers.formats.currency.latn
+        :osma: :numbers.formats.currency.latn
+        :rohg: :numbers.formats.currency.latn
+        :saur: :numbers.formats.currency.latn
+        :shrd: :numbers.formats.currency.latn
+        :sora: :numbers.formats.currency.latn
+        :sund: :numbers.formats.currency.latn
+        :takr: :numbers.formats.currency.latn
+        :talu: :numbers.formats.currency.latn
+        :tamldec: :numbers.formats.currency.latn
+        :telu: :numbers.formats.currency.latn
+        :thai: :numbers.formats.currency.latn
+        :tibt: :numbers.formats.currency.latn
+        :vaii: :numbers.formats.currency.latn
       :decimal: 
-        :number_system: latn
-        :patterns: 
+        :adlm: :numbers.formats.decimal.latn
+        :arab: :numbers.formats.decimal.latn
+        :arabext: :numbers.formats.decimal.latn
+        :bali: :numbers.formats.decimal.latn
+        :beng: :numbers.formats.decimal.latn
+        :brah: :numbers.formats.decimal.latn
+        :cakm: :numbers.formats.decimal.latn
+        :cham: :numbers.formats.decimal.latn
+        :default: :numbers.formats.decimal.latn
+        :deva: :numbers.formats.decimal.latn
+        :fullwide: :numbers.formats.decimal.latn
+        :gong: :numbers.formats.decimal.latn
+        :gonm: :numbers.formats.decimal.latn
+        :gujr: :numbers.formats.decimal.latn
+        :guru: :numbers.formats.decimal.latn
+        :hanidec: :numbers.formats.decimal.latn
+        :java: :numbers.formats.decimal.latn
+        :kali: :numbers.formats.decimal.latn
+        :khmr: :numbers.formats.decimal.latn
+        :knda: :numbers.formats.decimal.latn
+        :lana: :numbers.formats.decimal.latn
+        :lanatham: :numbers.formats.decimal.latn
+        :laoo: :numbers.formats.decimal.latn
+        :latn: 
           :default: "#,##0.###"
           :long: 
             ? !ruby/symbol "1000"
@@ -114,71 +185,412 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :one: 0 K
-              :other: 0 K
+              :one: 0k
+              :other: 0k
             ? !ruby/symbol "10000"
             : 
-              :one: 00 K
-              :other: 00 K
+              :one: 00k
+              :other: 00k
             ? !ruby/symbol "100000"
             : 
-              :one: 000 K
-              :other: 000 K
+              :one: 000k
+              :other: 000k
             ? !ruby/symbol "1000000"
             : 
-              :one: 0 mill
-              :other: 0 mill
+              :one: 0 mill'.'
+              :other: 0 mill'.'
             ? !ruby/symbol "10000000"
             : 
-              :one: 00 mill
-              :other: 00 mill
+              :one: 00 mill'.'
+              :other: 00 mill'.'
             ? !ruby/symbol "100000000"
             : 
-              :one: 000 mill
-              :other: 000 mill
+              :one: 000 mill'.'
+              :other: 000 mill'.'
             ? !ruby/symbol "1000000000"
             : 
-              :one: 0 mrd
-              :other: 0 mrd
+              :one: 0 mrd'.'
+              :other: 0 mrd'.'
             ? !ruby/symbol "10000000000"
             : 
-              :one: 00 mrd
-              :other: 00 mrd
+              :one: 00 mrd'.'
+              :other: 00 mrd'.'
             ? !ruby/symbol "100000000000"
             : 
-              :one: 000 mrd
-              :other: 000 mrd
+              :one: 000 mrd'.'
+              :other: 000 mrd'.'
             ? !ruby/symbol "1000000000000"
             : 
-              :one: 0 bill
-              :other: 0 bill
+              :one: 0 bill'.'
+              :other: 0 bill'.'
             ? !ruby/symbol "10000000000000"
             : 
-              :one: 00 bill
-              :other: 00 bill
+              :one: 00 bill'.'
+              :other: 00 bill'.'
             ? !ruby/symbol "100000000000000"
             : 
-              :one: 000 bill
-              :other: 000 bill
+              :one: 000 bill'.'
+              :other: 000 bill'.'
+        :lepc: :numbers.formats.decimal.latn
+        :limb: :numbers.formats.decimal.latn
+        :mlym: :numbers.formats.decimal.latn
+        :mong: :numbers.formats.decimal.latn
+        :mtei: :numbers.formats.decimal.latn
+        :mymr: :numbers.formats.decimal.latn
+        :mymrshan: :numbers.formats.decimal.latn
+        :nkoo: :numbers.formats.decimal.latn
+        :olck: :numbers.formats.decimal.latn
+        :orya: :numbers.formats.decimal.latn
+        :osma: :numbers.formats.decimal.latn
+        :rohg: :numbers.formats.decimal.latn
+        :saur: :numbers.formats.decimal.latn
+        :shrd: :numbers.formats.decimal.latn
+        :sora: :numbers.formats.decimal.latn
+        :sund: :numbers.formats.decimal.latn
+        :takr: :numbers.formats.decimal.latn
+        :talu: :numbers.formats.decimal.latn
+        :tamldec: :numbers.formats.decimal.latn
+        :telu: :numbers.formats.decimal.latn
+        :thai: :numbers.formats.decimal.latn
+        :tibt: :numbers.formats.decimal.latn
+        :vaii: :numbers.formats.decimal.latn
       :percent: 
-        :number_system: latn
-        :patterns: 
+        :adlm: :numbers.formats.percent.latn
+        :arab: 
+          :default: "#,##0 %"
+        :arabext: 
+          :default: "#,##0 %"
+        :bali: 
+          :default: "#,##0 %"
+        :beng: 
+          :default: "#,##0 %"
+        :brah: 
+          :default: "#,##0 %"
+        :cakm: 
+          :default: "#,##0 %"
+        :cham: 
+          :default: "#,##0 %"
+        :default: :numbers.formats.percent.latn
+        :deva: 
+          :default: "#,##0 %"
+        :fullwide: 
+          :default: "#,##0 %"
+        :gong: :numbers.formats.percent.latn
+        :gonm: :numbers.formats.percent.latn
+        :gujr: 
+          :default: "#,##0 %"
+        :guru: 
+          :default: "#,##0 %"
+        :hanidec: 
+          :default: "#,##0 %"
+        :java: 
+          :default: "#,##0 %"
+        :kali: 
+          :default: "#,##0 %"
+        :khmr: 
+          :default: "#,##0 %"
+        :knda: 
+          :default: "#,##0 %"
+        :lana: 
+          :default: "#,##0 %"
+        :lanatham: 
+          :default: "#,##0 %"
+        :laoo: 
+          :default: "#,##0 %"
+        :latn: 
+          :default: "#,##0 %"
+        :lepc: 
+          :default: "#,##0 %"
+        :limb: 
+          :default: "#,##0 %"
+        :mlym: 
+          :default: "#,##0 %"
+        :mong: 
+          :default: "#,##0 %"
+        :mtei: 
+          :default: "#,##0 %"
+        :mymr: 
+          :default: "#,##0 %"
+        :mymrshan: 
+          :default: "#,##0 %"
+        :nkoo: 
+          :default: "#,##0 %"
+        :olck: 
+          :default: "#,##0 %"
+        :orya: 
+          :default: "#,##0 %"
+        :osma: 
+          :default: "#,##0 %"
+        :rohg: :numbers.formats.percent.latn
+        :saur: 
+          :default: "#,##0 %"
+        :shrd: 
+          :default: "#,##0 %"
+        :sora: 
+          :default: "#,##0 %"
+        :sund: 
+          :default: "#,##0 %"
+        :takr: 
+          :default: "#,##0 %"
+        :talu: 
+          :default: "#,##0 %"
+        :tamldec: 
+          :default: "#,##0 %"
+        :telu: 
+          :default: "#,##0 %"
+        :thai: 
+          :default: "#,##0 %"
+        :tibt: 
+          :default: "#,##0 %"
+        :vaii: 
           :default: "#,##0 %"
       :scientific: 
-        :number_system: latn
-        :patterns: 
+        :adlm: :numbers.formats.scientific.latn
+        :arab: :numbers.formats.scientific.latn
+        :arabext: :numbers.formats.scientific.latn
+        :bali: :numbers.formats.scientific.latn
+        :beng: :numbers.formats.scientific.latn
+        :brah: :numbers.formats.scientific.latn
+        :cakm: :numbers.formats.scientific.latn
+        :cham: :numbers.formats.scientific.latn
+        :default: :numbers.formats.scientific.latn
+        :deva: :numbers.formats.scientific.latn
+        :fullwide: :numbers.formats.scientific.latn
+        :gong: :numbers.formats.scientific.latn
+        :gonm: :numbers.formats.scientific.latn
+        :gujr: :numbers.formats.scientific.latn
+        :guru: :numbers.formats.scientific.latn
+        :hanidec: :numbers.formats.scientific.latn
+        :java: :numbers.formats.scientific.latn
+        :kali: :numbers.formats.scientific.latn
+        :khmr: :numbers.formats.scientific.latn
+        :knda: :numbers.formats.scientific.latn
+        :lana: :numbers.formats.scientific.latn
+        :lanatham: :numbers.formats.scientific.latn
+        :laoo: :numbers.formats.scientific.latn
+        :latn: 
           :default: "#E0"
+        :lepc: :numbers.formats.scientific.latn
+        :limb: :numbers.formats.scientific.latn
+        :mlym: :numbers.formats.scientific.latn
+        :mong: :numbers.formats.scientific.latn
+        :mtei: :numbers.formats.scientific.latn
+        :mymr: :numbers.formats.scientific.latn
+        :mymrshan: :numbers.formats.scientific.latn
+        :nkoo: :numbers.formats.scientific.latn
+        :olck: :numbers.formats.scientific.latn
+        :orya: :numbers.formats.scientific.latn
+        :osma: :numbers.formats.scientific.latn
+        :rohg: :numbers.formats.scientific.latn
+        :saur: :numbers.formats.scientific.latn
+        :shrd: :numbers.formats.scientific.latn
+        :sora: :numbers.formats.scientific.latn
+        :sund: :numbers.formats.scientific.latn
+        :takr: :numbers.formats.scientific.latn
+        :talu: :numbers.formats.scientific.latn
+        :tamldec: :numbers.formats.scientific.latn
+        :telu: :numbers.formats.scientific.latn
+        :thai: :numbers.formats.scientific.latn
+        :tibt: :numbers.formats.scientific.latn
+        :vaii: :numbers.formats.scientific.latn
     :symbols: 
-      :alias: ""
-      :decimal: ","
-      :exponential: E
-      :group:  
-      :infinity: ∞
-      :list: ;
-      :minus_sign: −
-      :nan: NaN
-      :per_mille: ‰
-      :percent_sign: "%"
-      :plus_sign: +
-      :superscripting_exponent: ×
-      :time_separator: ":"
+      :adlm: :numbers.symbols.latn
+      :arab: 
+        :decimal: ٫
+        :exponential: اس
+        :group:  
+        :infinity: ∞
+        :list: ؛
+        :minus_sign: ؜−
+        :nan: NaN
+        :per_mille: ؉
+        :percent_sign: ٪؜
+        :plus_sign: ؜+
+        :superscripting_exponent: ×
+        :time_separator: "."
+      :arabext: 
+        :decimal: ","
+        :exponential: ×۱۰^
+        :group:  
+        :infinity: ∞
+        :list: ؛
+        :minus_sign: ‎−‎
+        :nan: NaN
+        :per_mille: ؉
+        :percent_sign: ٪
+        :plus_sign: ‎+‎
+        :superscripting_exponent: ×
+        :time_separator: "."
+      :bali: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :beng: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :brah: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :cakm: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :cham: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :default: :numbers.symbols.latn
+      :deva: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :fullwide: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :gong: :numbers.symbols.latn
+      :gonm: :numbers.symbols.latn
+      :gujr: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :guru: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :hanidec: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :java: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :kali: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :khmr: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :knda: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :lana: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :lanatham: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :laoo: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :latn: 
+        :decimal: ","
+        :exponential: E
+        :group:  
+        :infinity: ∞
+        :list: ;
+        :minus_sign: −
+        :nan: NaN
+        :per_mille: ‰
+        :percent_sign: "%"
+        :plus_sign: +
+        :superscripting_exponent: ×
+        :time_separator: "."
+      :lepc: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :limb: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :mlym: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :mong: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :mtei: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :mymr: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :mymrshan: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :nkoo: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :olck: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :orya: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :osma: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :rohg: :numbers.symbols.latn
+      :saur: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :shrd: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :sora: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :sund: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :takr: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :talu: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :tamldec: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :telu: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :thai: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :tibt: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −
+      :vaii: 
+        :decimal: ","
+        :group:  
+        :minus_sign: −

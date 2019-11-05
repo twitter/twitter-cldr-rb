@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Hiragana-Katakana
+      - und-Kana-t-und-hira
     :direction: both
     :rules: 
       - ":: [\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]] ;"
@@ -109,6 +112,6 @@
       - "お < $xo {ー};"
       - ":: (NFKC) ;"
       - ":: ([\\u0000-\\u007E 、。 ゙-゜ ァ-ー ｡-ﾟー[:Hiragana:] [:Katakana:] [:nonspacing mark:]]);"
-    :source: Hiragana
-    :target: Katakana
+    :source: Hira
+    :target: Kana
     :variant: ~

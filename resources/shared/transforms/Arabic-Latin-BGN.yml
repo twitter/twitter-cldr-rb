@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Arabic-Latin/BGN
+      - ar-Latn-t-ar-m0-bgn
     :direction: forward
     :rules: 
       - ":: [[:arabic:][:block=ARABIC:][ءآابةتثجحخدذرزسشصضطظعغفقكلمنهوىيًٌٍَُِّْ٠١٢٣٤٥٦٧٨٩ٱ]] ;"
@@ -117,6 +120,6 @@
       - "ٍ > iⁿ ; # ARABIC KASRATAN"
       - "ٌ > uⁿ ; # ARABIC DAMMATAN"
       - "::NFC (NFD) ;"
-    :source: Arabic
-    :target: Latin
+    :source: ar
+    :target: ar_Latn
     :variant: BGN

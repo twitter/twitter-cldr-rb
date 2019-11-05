@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Fas Saati
   :LONG:
-    :standard: Batı Avrupa Standart Saati
-    :daylight: Batı Avrupa Yaz Saati
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Batı Avrupa Saati
+    :generic: Fas Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -384,17 +384,17 @@ Africa/El_Aaiun:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Batı Sahara Saati
+    :generic: Batı Sahra Saati
   :LONG:
-    :standard: Batı Avrupa Standart Saati
-    :daylight: Batı Avrupa Yaz Saati
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Batı Avrupa Saati
+    :generic: Batı Sahra Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Batı Sahara Saati
+    :generic: Batı Sahra Saati
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Uganda Saati
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Sudan Saati
   :LONG:
-    :standard: Doğu Afrika Saati
-    :daylight: GMT+03:00
+    :standard: Orta Afrika Saati
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Doğu Afrika Saati
+    :generic: Orta Afrika Saati
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Sudan Saati
 Africa/Kigali:
@@ -708,7 +708,7 @@ Africa/Maseru:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Lesoto Saati
+    :generic: Lesotho Saati
   :LONG:
     :standard: Güney Afrika Standart Saati
     :daylight: GMT+02:00
@@ -718,7 +718,7 @@ Africa/Maseru:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Lesoto Saati
+    :generic: Lesotho Saati
 Africa/Mbabane:
   :offset: 7200000
   :LONG_GMT:
@@ -726,7 +726,7 @@ Africa/Mbabane:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Svaziland Saati
+    :generic: Esvatini Saati
   :LONG:
     :standard: Güney Afrika Standart Saati
     :daylight: GMT+02:00
@@ -736,7 +736,7 @@ Africa/Mbabane:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Svaziland Saati
+    :generic: Esvatini Saati
 Africa/Mogadishu:
   :offset: 10800000
   :LONG_GMT:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: Tunus Saati
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Namibya Saati
   :LONG:
-    :standard: Batı Afrika Standart Saati
-    :daylight: Batı Afrika Yaz Saati
+    :standard: Orta Afrika Saati
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Batı Afrika Saati (Windhoek)
+    :generic: Orta Afrika Saati
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Namibya Saati
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Hawaii-Aleut Standart Saati
     :daylight: Hawaii-Aleut Yaz Saati
   :LONG_GENERIC:
-    :generic: Hawaii-Aleut Saati (Adak)
+    :generic: Hawaii-Aleut Saati
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Hawaii-Aleut Standart Saati
     :daylight: Hawaii-Aleut Yaz Saati
   :LONG_GENERIC:
-    :generic: Hawaii-Aleut Saati (Adak)
+    :generic: Hawaii-Aleut Saati
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amazon Standart Saati
     :daylight: Amazon Yaz Saati
   :LONG_GENERIC:
-    :generic: Amazon Saati
+    :generic: Amazon Saati (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Cancun Saati
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Venezuela Saati
   :LONG:
     :standard: Venezuela Saati
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Venezuela Saati
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Venezuela Saati
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amazon Standart Saati
     :daylight: Amazon Yaz Saati
   :LONG_GENERIC:
-    :generic: Amazon Saati
+    :generic: Amazon Saati (Cuiaba)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Goose Bay Saati
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Turks ve Caicos Adaları Saati
   :LONG:
-    :standard: Atlantik Standart Saati
-    :daylight: Atlantik Yaz Saati
+    :standard: Kuzey Amerika Doğu Standart Saati
+    :daylight: Kuzey Amerika Doğu Yaz Saati
   :LONG_GENERIC:
-    :generic: Atlantik Standart Saati
+    :generic: Kuzey Amerika Doğu Saati
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Turks ve Caicos Adaları Saati
@@ -2148,7 +2148,7 @@ America/Guadeloupe:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Guadalupe Saati
+    :generic: Guadeloupe Saati
   :LONG:
     :standard: Atlantik Standart Saati
     :daylight: Atlantik Yaz Saati
@@ -2158,7 +2158,7 @@ America/Guadeloupe:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Guadalupe Saati
+    :generic: Guadeloupe Saati
 America/Guatemala:
   :offset: -21600000
   :LONG_GMT:
@@ -2580,7 +2580,7 @@ America/Kralendijk:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Karayip Hollanda Saati
+    :generic: Karayip Hollandası Saati
   :LONG:
     :standard: Atlantik Standart Saati
     :daylight: Atlantik Yaz Saati
@@ -2590,7 +2590,7 @@ America/Kralendijk:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: Karayip Hollanda Saati
+    :generic: Karayip Hollandası Saati
 America/La_Paz:
   :offset: -14400000
   :LONG_GMT:
@@ -2886,7 +2886,7 @@ America/Mexico_City:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Meksiko City Saati
+    :generic: Mexico City Saati
   :LONG:
     :standard: Kuzey Amerika Merkezi Standart Saati
     :daylight: Kuzey Amerika Merkezi Yaz Saati
@@ -2896,7 +2896,7 @@ America/Mexico_City:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Meksiko City Saati
+    :generic: Mexico City Saati
 America/Miquelon:
   :offset: -10800000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Kuzey Amerika Doğu Standart Saati
     :daylight: Kuzey Amerika Doğu Yaz Saati
   :LONG_GENERIC:
-    :generic: Kuzey Amerika Doğu Standart Saati
+    :generic: Kuzey Amerika Doğu Saati
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Haiti Saati
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Porto Riko Saati
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Punta Arenas Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas Saati
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Santarem Saati
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Şili Saati
   :LONG:
     :standard: Şili Standart Saati
     :daylight: Şili Yaz Saati
   :LONG_GENERIC:
-    :generic: Şili Standart Saati
+    :generic: Şili Saati
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Şili Saati
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Palmer Saati
   :LONG:
-    :standard: Şili Standart Saati
-    :daylight: Şili Yaz Saati
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Şili Standart Saati
+    :generic: Palmer Saati
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4182,7 +4182,7 @@ Arctic/Longyearbyen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Svalbard ve Jan Mayen Adaları Saati
+    :generic: Svalbard ve Jan Mayen Saati
   :LONG:
     :standard: Orta Avrupa Standart Saati
     :daylight: Orta Avrupa Yaz Saati
@@ -4192,7 +4192,7 @@ Arctic/Longyearbyen:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Svalbard ve Jan Mayen Adaları Saati
+    :generic: Svalbard ve Jan Mayen Saati
 Asia/Aden:
   :offset: 10800000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Türkmenistan Saati
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Atırav Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Batı Kazakistan Saati
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Batı Kazakistan Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Atırav Saati
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Azerbaycan Standart Saati
     :daylight: Azerbaycan Yaz Saati
   :LONG_GENERIC:
-    :generic: Azerbaycan Saati
+    :generic: Azerbaycan Standart Saati
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Azerbaycan Saati
 Asia/Bangkok:
@@ -4524,7 +4524,7 @@ Asia/Chita:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Chita Saati
+    :generic: Çita Saati
   :LONG:
     :standard: Yakutsk Standart Saati
     :daylight: Yakutsk Yaz Saati
@@ -4534,7 +4534,7 @@ Asia/Chita:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Chita Saati
+    :generic: Çita Saati
 Asia/Choibalsan:
   :offset: 28800000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Çoybalsan Standart Saati
     :daylight: Çoybalsan Yaz Saati
   :LONG_GENERIC:
-    :generic: Çoybalsan Saati
+    :generic: Çoybalsan Standart Saati
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Çoybalsan Saati
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Tacikistan Saati
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Gazimağusa Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Gazimağusa Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Gazimağusa Saati
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4812,7 +4812,7 @@ Asia/Hong_Kong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Çin Hong Kong ÖYB Saati
+    :generic: Çin Hong Kong ÖİB Saati
   :LONG:
     :standard: Hong Kong Standart Saati
     :daylight: Hong Kong Yaz Saati
@@ -4822,7 +4822,7 @@ Asia/Hong_Kong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Çin Hong Kong ÖYB Saati
+    :generic: Çin Hong Kong ÖİB Saati
 Asia/Hovd:
   :offset: 25200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Hovd Standart Saati
     :daylight: Hovd Yaz Saati
   :LONG_GENERIC:
-    :generic: Hovd Saati
+    :generic: Hovd Standart Saati
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Hovd Saati
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: İrkutsk Saati
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Türkiye Saati
   :LONG:
-    :standard: Doğu Avrupa Standart Saati
-    :daylight: Doğu Avrupa Yaz Saati
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Doğu Avrupa Saati
+    :generic: Türkiye Saati
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Türkiye Saati
@@ -5154,7 +5154,7 @@ Asia/Macao:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Çin Makao ÖYB Saati
+    :generic: Çin Makao ÖİB Saati
   :LONG:
     :standard: Çin Standart Saati
     :daylight: Çin Yaz Saati
@@ -5164,7 +5164,7 @@ Asia/Macao:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Çin Makao ÖYB Saati
+    :generic: Çin Makao ÖİB Saati
 Asia/Macau:
   :offset: 28800000
   :LONG_GMT:
@@ -5172,7 +5172,7 @@ Asia/Macau:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Çin Makao ÖYB Saati
+    :generic: Çin Makao ÖİB Saati
   :LONG:
     :standard: Çin Standart Saati
     :daylight: Çin Yaz Saati
@@ -5182,13 +5182,13 @@ Asia/Macau:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Çin Makao ÖYB Saati
+    :generic: Çin Makao ÖİB Saati
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Magadan Saati
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Magadan Standart Saati
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Magadan Saati
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Kıbrıs Saati
+    :generic: Lefkoşa Saati
   :LONG:
     :standard: Doğu Avrupa Standart Saati
     :daylight: Doğu Avrupa Yaz Saati
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Kıbrıs Saati
+    :generic: Lefkoşa Saati
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Novokuznetsk Saati
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Novosibirsk Saati
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Novosibirsk Standart Saati
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Novosibirsk Saati
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Pontianak Saati
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Kuzey Kore Saati
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: Kore Standart Saati
+    :daylight: Kore Yaz Saati
   :LONG_GENERIC:
-    :generic: Kuzey Kore Saati
+    :generic: Kore Standart Saati
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Kuzey Kore Saati
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Katar Saati
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Kızılorda Saati
+    :generic: Qostanay Saati
   :LONG:
     :standard: Doğu Kazakistan Saati
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Qostanay Saati
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Kızılorda Saati
+  :LONG:
+    :standard: Batı Kazakistan Saati
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: Batı Kazakistan Saati
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Kızılorda Saati
 Asia/Rangoon:
@@ -5696,10 +5714,10 @@ Asia/Thimbu:
   :GENERIC_LOCATION:
     :generic: Butan Saati
   :LONG:
-    :standard: Bhutan Saati
+    :standard: Butan Saati
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Bhutan Saati
+    :generic: Butan Saati
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -5714,10 +5732,10 @@ Asia/Thimphu:
   :GENERIC_LOCATION:
     :generic: Butan Saati
   :LONG:
-    :standard: Bhutan Saati
+    :standard: Butan Saati
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Bhutan Saati
+    :generic: Butan Saati
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Japonya Saati
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Tomsk Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Tomsk Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Tomsk Saati
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Ulan Batur Standart Saati
     :daylight: Ulan Batur Yaz Saati
   :LONG_GENERIC:
-    :generic: Ulan Batur Saati
+    :generic: Ulan Batur Standart Saati
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulan Batur Saati
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Ulan Batur Standart Saati
     :daylight: Ulan Batur Yaz Saati
   :LONG_GENERIC:
-    :generic: Ulan Batur Saati
+    :generic: Ulan Batur Standart Saati
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulan Batur Saati
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Yakutsk Saati
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Myanmar (Burma) Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Myanmar Saati
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Myanmar Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Myanmar (Burma) Saati
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6072,7 +6090,7 @@ Atlantic/Jan_Mayen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Svalbard ve Jan Mayen Adaları Saati
+    :generic: Svalbard ve Jan Mayen Saati
   :LONG:
     :standard: Orta Avrupa Standart Saati
     :daylight: Orta Avrupa Yaz Saati
@@ -6082,7 +6100,7 @@ Atlantic/Jan_Mayen:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Svalbard ve Jan Mayen Adaları Saati
+    :generic: Svalbard ve Jan Mayen Saati
 Atlantic/Madeira:
   :offset: 0
   :LONG_GMT:
@@ -6308,10 +6326,10 @@ Australia/Eucla:
   :GENERIC_LOCATION:
     :generic: Eucla Saati
   :LONG:
-    :standard: İçbatı Avustralya Standart Saati
-    :daylight: İçbatı Avustralya Yaz Saati
+    :standard: İç Batı Avustralya Standart Saati
+    :daylight: İç Batı Avustralya Yaz Saati
   :LONG_GENERIC:
-    :generic: İçbatı Avustralya Standart Saati
+    :generic: İç Batı Avustralya Standart Saati
   :SHORT:
     :standard: GMT+8:45
     :daylight: GMT+8:45
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Winnipeg Saati
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Regina Saati
-  :LONG:
-    :standard: Kuzey Amerika Merkezi Standart Saati
-    :daylight: Kuzey Amerika Merkezi Yaz Saati
-  :LONG_GENERIC:
-    :generic: Kuzey Amerika Merkezi Standart Saati
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Regina Saati
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Whitehorse Saati
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Şili Saati
   :LONG:
     :standard: Şili Standart Saati
     :daylight: Şili Yaz Saati
   :LONG_GENERIC:
-    :generic: Şili Standart Saati
+    :generic: Şili Saati
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Şili Saati
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Paskalya Adası Saati
   :LONG:
     :standard: Paskalya Adası Standart Saati
     :daylight: Paskalya Adası Yaz Saati
   :LONG_GENERIC:
-    :generic: Paskalya Adası Standart Saati
+    :generic: Paskalya Adası Saati
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Paskalya Adası Saati
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan Saati
+    :generic: Astrahan Saati
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Astrakhan Saati
+    :generic: Astrahan Saati
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Astrakhan Saati
+    :generic: Astrahan Saati
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Man Adası Saati
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Türkiye Saati
   :LONG:
-    :standard: Doğu Avrupa Standart Saati
-    :daylight: Doğu Avrupa Yaz Saati
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Doğu Avrupa Saati
+    :generic: Türkiye Saati
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Türkiye Saati
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: Ukrayna Saati
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Kirov Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Kirov Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Kirov Saati
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8196,17 +8196,17 @@ Europe/Minsk:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Beyaz Rusya Saati
+    :generic: Belarus Saati
   :LONG:
-    :standard: Daha Doğu Avrupa Saati
-    :daylight: GMT+03:00
+    :standard: Moskova Standart Saati
+    :daylight: Moskova Yaz Saati
   :LONG_GENERIC:
-    :generic: Daha Doğu Avrupa Saati
+    :generic: Moskova Standart Saati
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Beyaz Rusya Saati
+    :generic: Belarus Saati
 Europe/Monaco:
   :offset: 3600000
   :LONG_GMT:
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Kıbrıs Saati
+    :generic: Lefkoşa Saati
   :LONG:
     :standard: Doğu Avrupa Standart Saati
     :daylight: Doğu Avrupa Yaz Saati
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Kıbrıs Saati
+    :generic: Lefkoşa Saati
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Çek Cumhuriyeti Saati
+    :generic: Çekya Saati
   :LONG:
     :standard: Orta Avrupa Standart Saati
     :daylight: Orta Avrupa Yaz Saati
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Çek Cumhuriyeti Saati
+    :generic: Çekya Saati
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8412,7 +8412,7 @@ Europe/Sarajevo:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Bosna Hersek Saati
+    :generic: Bosna-Hersek Saati
   :LONG:
     :standard: Orta Avrupa Standart Saati
     :daylight: Orta Avrupa Yaz Saati
@@ -8422,25 +8422,25 @@ Europe/Sarajevo:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Bosna Hersek Saati
+    :generic: Bosna-Hersek Saati
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Saratov Saati
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Saratov Saati
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Saratov Saati
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8448,7 +8448,7 @@ Europe/Simferopol:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Akmescit Saati
+    :generic: Simferopol Saati
   :LONG:
     :standard: Moskova Standart Saati
     :daylight: Moskova Yaz Saati
@@ -8458,7 +8458,7 @@ Europe/Simferopol:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Akmescit Saati
+    :generic: Simferopol Saati
 Europe/Skopje:
   :offset: 3600000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Makedonya Saati
+    :generic: Kuzey Makedonya Saati
   :LONG:
     :standard: Orta Avrupa Standart Saati
     :daylight: Orta Avrupa Yaz Saati
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Makedonya Saati
+    :generic: Kuzey Makedonya Saati
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: Litvanya Saati
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Volgograd Saati
   :LONG:
-    :standard: Moskova Standart Saati
-    :daylight: Moskova Yaz Saati
+    :standard: Volgograd Standart Saati
+    :daylight: Volgograd Yaz Saati
   :LONG_GENERIC:
-    :generic: Moskova Standart Saati
+    :generic: Volgograd Standart Saati
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Volgograd Saati
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Ortalama Saati
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Ortalama Saati
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8934,7 +8934,7 @@ Hongkong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Çin Hong Kong ÖYB Saati
+    :generic: Çin Hong Kong ÖİB Saati
   :LONG:
     :standard: Hong Kong Standart Saati
     :daylight: Hong Kong Yaz Saati
@@ -8944,7 +8944,7 @@ Hongkong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Çin Hong Kong ÖYB Saati
+    :generic: Çin Hong Kong ÖİB Saati
 Iceland:
   :offset: 0
   :LONG_GMT:
@@ -9366,7 +9366,7 @@ Mexico/General:
   :SHORT_GMT:
     :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Meksiko City Saati
+    :generic: Mexico City Saati
   :LONG:
     :standard: Kuzey Amerika Merkezi Standart Saati
     :daylight: Kuzey Amerika Merkezi Yaz Saati
@@ -9376,7 +9376,7 @@ Mexico/General:
     :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
-    :generic: Meksiko City Saati
+    :generic: Mexico City Saati
 NZ:
   :offset: 43200000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Chuuk Saati
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Paskalya Adası Saati
   :LONG:
     :standard: Paskalya Adası Standart Saati
     :daylight: Paskalya Adası Yaz Saati
   :LONG_GENERIC:
-    :generic: Paskalya Adası Standart Saati
+    :generic: Paskalya Adası Saati
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Paskalya Adası Saati
@@ -10212,7 +10212,7 @@ Pacific/Wallis:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: Wallis ve Futuna Adaları Saati
+    :generic: Wallis ve Futuna Saati
   :LONG:
     :standard: Wallis ve Futuna Saati
     :daylight: GMT+12:00
@@ -10222,7 +10222,7 @@ Pacific/Wallis:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: Wallis ve Futuna Adaları Saati
+    :generic: Wallis ve Futuna Saati
 Pacific/Yap:
   :offset: 36000000
   :LONG_GMT:
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Singapur Saati
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Türkiye Saati
   :LONG:
-    :standard: Doğu Avrupa Standart Saati
-    :daylight: Doğu Avrupa Yaz Saati
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Doğu Avrupa Saati
+    :generic: Türkiye Saati
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Türkiye Saati
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Hawaii-Aleut Standart Saati
     :daylight: Hawaii-Aleut Yaz Saati
   :LONG_GENERIC:
-    :generic: Hawaii-Aleut Saati (Adak)
+    :generic: Hawaii-Aleut Saati
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Eş Güdümlü Evrensel Zaman
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

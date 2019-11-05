@@ -16,7 +16,7 @@ module TwitterCldr
           private
 
           def valid_form?(form)
-            !form || (
+            !form || form.null? || form.blank? || (
               form && TwitterCldr::Normalization::VALID_NORMALIZERS.include?(
                 form.transform.downcase.to_sym
               )
@@ -28,6 +28,8 @@ module TwitterCldr
 
         def apply_to(cursor)
           if forward_transform
+            puts forward_transform if $debug
+
             cursor.set_text(
               TwitterCldr::Normalization.normalize(
                 cursor.text, using: forward_transform

@@ -1,76 +1,84 @@
 --- 
 :pl: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (czas letni)"
-      :generic: "Czas: {0}"
-      :standard: "{0} (czas standardowy)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} (czas standardowy)"
   :metazones: 
     :Afghanistan: 
       :long: 
         :standard: Afganistan
     :Africa_Central: 
       :long: 
-        :standard: "Czas środkowoafrykański"
+        :standard: "czas środkowoafrykański"
     :Africa_Eastern: 
       :long: 
-        :standard: "Czas wschodnioafrykański"
+        :standard: "czas wschodnioafrykański"
     :Africa_Southern: 
       :long: 
-        :standard: "Czas południowoafrykański"
+        :standard: "czas południowoafrykański"
     :Africa_Western: 
       :long: 
-        :daylight: "Czas zachodnioafrykański letni"
-        :generic: "Czas zachodnioafrykański"
-        :standard: "Czas zachodnioafrykański standardowy"
+        :daylight: "czas zachodnioafrykański letni"
+        :generic: "czas zachodnioafrykański"
+        :standard: "czas zachodnioafrykański standardowy"
     :Alaska: 
       :long: 
         :daylight: "Alaska (czas letni)"
-        :generic: "Czas Alaska"
+        :generic: Alaska
         :standard: "Alaska (czas standardowy)"
+    :Almaty: 
+      :long: 
+        :daylight: "czas ałmacki letni"
+        :generic: "czas ałmacki"
+        :standard: "czas ałmacki standardowy"
     :Amazon: 
       :long: 
-        :daylight: "Czas amazoński letni"
-        :generic: "Czas amazoński"
-        :standard: "Czas amazoński standardowy"
+        :daylight: "czas amazoński letni"
+        :generic: "czas amazoński"
+        :standard: "czas amazoński standardowy"
     :America_Central: 
       :long: 
-        :daylight: "Czas środkowoamerykański letni"
-        :generic: "Czas środkowoamerykański"
-        :standard: "Czas środkowoamerykański standardowy"
+        :daylight: "czas środkowoamerykański letni"
+        :generic: "czas środkowoamerykański"
+        :standard: "czas środkowoamerykański standardowy"
     :America_Eastern: 
       :long: 
-        :daylight: "Czas wschodnioamerykański letni"
-        :generic: "Czas wschodnioamerykański"
-        :standard: "Czas wschodnioamerykański standardowy"
+        :daylight: "czas wschodnioamerykański letni"
+        :generic: "czas wschodnioamerykański"
+        :standard: "czas wschodnioamerykański standardowy"
     :America_Mountain: 
       :long: 
-        :daylight: "Czas górski letni"
-        :generic: "Czas górski"
-        :standard: "Czas górski standardowy"
+        :daylight: "czas górski letni"
+        :generic: "czas górski"
+        :standard: "czas górski standardowy"
     :America_Pacific: 
       :long: 
-        :daylight: "Czas pacyficzny letni"
-        :generic: "Czas pacyficzny"
-        :standard: "Czas pacyficzny standardowy"
+        :daylight: "czas pacyficzny letni"
+        :generic: "czas pacyficzny"
+        :standard: "czas pacyficzny standardowy"
     :Anadyr: 
       :long: 
-        :daylight: "Czas Anadyr letni"
-        :generic: "Czas Anadyr"
-        :standard: "Czas standardowy Anadyr"
+        :daylight: "czas Anadyr letni"
+        :generic: "czas Anadyr"
+        :standard: "czas standardowy Anadyr"
     :Apia: 
       :long: 
         :daylight: "Apia (czas letni)"
         :generic: Apia
         :standard: "Apia (czas standardowy)"
+    :Aqtau: 
+      :long: 
+        :daylight: "czas auktaucki letni"
+        :generic: "czas auktaucki"
+        :standard: "czas auktaucki standardowy"
+    :Aqtobe: 
+      :long: 
+        :daylight: "czas aktiubiński letni"
+        :generic: "czas aktiubiński"
+        :standard: "czas aktiubiński standardowy"
     :Arabian: 
       :long: 
         :daylight: "Półwysep Arabski (czas letni)"
@@ -79,7 +87,7 @@
     :Argentina: 
       :long: 
         :daylight: "Argentyna (czas letni)"
-        :generic: "Czas argentyński"
+        :generic: Argentyna
         :standard: "Argentyna (czas standardowy)"
     :Argentina_Western: 
       :long: 
@@ -93,29 +101,29 @@
         :standard: "Armenia (czas standardowy)"
     :Atlantic: 
       :long: 
-        :daylight: "Czas atlantycki letni"
-        :generic: "Czas atlantycki"
-        :standard: "Czas standardowy atlantycki"
+        :daylight: "czas atlantycki letni"
+        :generic: "czas atlantycki"
+        :standard: "czas atlantycki standardowy"
     :Australia_Central: 
       :long: 
-        :daylight: "Czas środkowoaustralijski letni"
-        :generic: "Czas środkowoaustralijski"
-        :standard: "Czas środkowoaustralijski standardowy"
+        :daylight: "czas środkowoaustralijski letni"
+        :generic: "czas środkowoaustralijski"
+        :standard: "czas środkowoaustralijski standardowy"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Czas środkowo-zachodnioaustralijski letni"
-        :generic: "Czas środkowo-zachodnioaustralijski"
-        :standard: "Czas środkowo-zachodnioaustralijski standardowy"
+        :daylight: "czas środkowo-zachodnioaustralijski letni"
+        :generic: "czas środkowo-zachodnioaustralijski"
+        :standard: "czas środkowo-zachodnioaustralijski standardowy"
     :Australia_Eastern: 
       :long: 
-        :daylight: "Czas wschodnioaustraliski letni"
-        :generic: "Czas wschodnioaustraliski"
-        :standard: "Czas standardowy wschodnioaustraliski"
+        :daylight: "czas wschodnioaustralijski letni"
+        :generic: "czas wschodnioaustralijski"
+        :standard: "czas wschodnioaustralijski standardowy"
     :Australia_Western: 
       :long: 
-        :daylight: "Czas zachodnioaustralijski letni"
-        :generic: "Czas zachodnioaustralijski"
-        :standard: "Czas zachodnioaustralijski standardowy"
+        :daylight: "czas zachodnioaustralijski letni"
+        :generic: "czas zachodnioaustralijski"
+        :standard: "czas zachodnioaustralijski standardowy"
     :Azerbaijan: 
       :long: 
         :daylight: "Azerbejdżan (czas letni)"
@@ -144,12 +152,12 @@
         :standard: "Brasília (czas standardowy)"
     :Brunei: 
       :long: 
-        :standard: "Brunei Darussalam"
+        :standard: Brunei
     :Cape_Verde: 
       :long: 
-        :daylight: "Republika Zielonego Przylądka (czas letni)"
-        :generic: "Republika Zielonego Przylądka"
-        :standard: "Republika Zielonego Przylądka (czas standardowy)"
+        :daylight: "Wyspy Zielonego Przylądka (czas letni)"
+        :generic: "Wyspy Zielonego Przylądka"
+        :standard: "Wyspy Zielonego Przylądka (czas standardowy)"
     :Chamorro: 
       :long: 
         :standard: Czamorro
@@ -213,30 +221,30 @@
         :standard: Ekwador
     :Europe_Central: 
       :long: 
-        :daylight: "Czas środkowoeuropejski letni"
-        :generic: "Czas środkowoeuropejski"
-        :standard: "Czas środkowoeuropejski standardowy"
+        :daylight: "czas środkowoeuropejski letni"
+        :generic: "czas środkowoeuropejski"
+        :standard: "czas środkowoeuropejski standardowy"
       :short: 
         :daylight: CEST
         :generic: CET
         :standard: CET
     :Europe_Eastern: 
       :long: 
-        :daylight: "Czas wschodnioeuropejski letni"
-        :generic: "Czas wschodnioeuropejski"
-        :standard: "Czas wschodnioeuropejski standardowy"
+        :daylight: "czas wschodnioeuropejski letni"
+        :generic: "czas wschodnioeuropejski"
+        :standard: "czas wschodnioeuropejski standardowy"
       :short: 
         :daylight: EEST
         :generic: EET
         :standard: EET
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "Czas wschodnioeuropejski dalszy"
+        :standard: "czas wschodnioeuropejski dalszy"
     :Europe_Western: 
       :long: 
-        :daylight: "Czas zachodnioeuropejski letni"
-        :generic: "Czas zachodnioeuropejski"
-        :standard: "Czas zachodnioeuropejski standardowy"
+        :daylight: "czas zachodnioeuropejski letni"
+        :generic: "czas zachodnioeuropejski"
+        :standard: "czas zachodnioeuropejski standardowy"
       :short: 
         :daylight: WEST
         :generic: WET
@@ -259,13 +267,13 @@
         :standard: "Francuskie Terytoria Południowe i Antarktyczne"
     :GMT: 
       :long: 
-        :standard: "Czas uniwersalny"
+        :standard: "czas uniwersalny"
     :Galapagos: 
       :long: 
         :standard: Galapagos
     :Gambier: 
       :long: 
-        :standard: Gambier
+        :standard: "Wyspy Gambiera"
     :Georgia: 
       :long: 
         :daylight: "Gruzja (czas letni)"
@@ -307,13 +315,13 @@
         :standard: "Kobdo (czas standardowy)"
     :India: 
       :long: 
-        :standard: "Czas indyjski"
+        :standard: "czas indyjski standardowy"
     :Indian_Ocean: 
       :long: 
         :standard: "Ocean Indyjski"
     :Indochina: 
       :long: 
-        :standard: "Czas indochiński"
+        :standard: "czas indochiński"
     :Indonesia_Central: 
       :long: 
         :standard: "Indonezja Środkowa"
@@ -345,9 +353,9 @@
         :standard: "Japonia (czas standardowy)"
     :Kamchatka: 
       :long: 
-        :daylight: "Czas Pietropawłowsk Kamczacki letni"
-        :generic: "Czas Pietropawłowsk Kamczacki"
-        :standard: "Czas standardowy Pietropawłowsk Kamczacki"
+        :daylight: "czas Pietropawłowsk Kamczacki letni"
+        :generic: "czas Pietropawłowsk Kamczacki"
+        :standard: "czas standardowy Pietropawłowsk Kamczacki"
     :Kazakhstan_Eastern: 
       :long: 
         :standard: "Kazachstan Wschodni"
@@ -372,7 +380,7 @@
         :standard: Kirgistan
     :Line_Islands: 
       :long: 
-        :standard: "Sporady Środkowopolinezyjskie"
+        :standard: "Line Islands"
     :Lord_Howe: 
       :long: 
         :daylight: "Lord Howe (czas letni)"
@@ -423,9 +431,9 @@
         :standard: "Ułan Bator (czas standardowy)"
     :Moscow: 
       :long: 
-        :daylight: "Czas moskiewski letni"
-        :generic: "Czas moskiewski"
-        :standard: "Czas moskiewski standardowy"
+        :daylight: "Moskwa (letni)"
+        :generic: Moskwa
+        :standard: "Moskwa (standardowy)"
     :Myanmar: 
       :long: 
         :standard: Mjanma
@@ -448,7 +456,7 @@
     :Newfoundland: 
       :long: 
         :daylight: "Nowa Fundlandia (czas letni)"
-        :generic: "Czas nowofunlandzki"
+        :generic: "Nowa Fundlandia"
         :standard: "Nowa Fundlandia (czas standardowy)"
     :Niue: 
       :long: 
@@ -511,6 +519,14 @@
     :Ponape: 
       :long: 
         :standard: Pohnpei
+    :Pyongyang: 
+      :long: 
+        :standard: Pjongjang
+    :Qyzylorda: 
+      :long: 
+        :daylight: "czas kyzyłordzki letni"
+        :generic: "czas kyzyłordzki"
+        :standard: "czas kyzyłordzki standardowy"
     :Reunion: 
       :long: 
         :standard: Reunion
@@ -524,9 +540,9 @@
         :standard: "Sachalin (czas standardowy)"
     :Samara: 
       :long: 
-        :daylight: "Czas Samara letni"
-        :generic: "Czas Samara"
-        :standard: "Czas standardowy Samara"
+        :daylight: "czas Samara letni"
+        :generic: "czas Samara"
+        :standard: "czas standardowy Samara"
     :Samoa: 
       :long: 
         :daylight: "Samoa (czas letni)"
@@ -659,17 +675,17 @@
     :Africa/Ceuta: 
       :city: Ceuta
     :Africa/Conakry: 
-      :city: Konakri
+      :city: Konakry
     :Africa/Dakar: 
       :city: Dakar
     :Africa/Dar_es_Salaam: 
-      :city: "Dar es-Salaam"
+      :city: "Dar es Salaam"
     :Africa/Djibouti: 
       :city: Dżibuti
     :Africa/Douala: 
       :city: Duala
     :Africa/El_Aaiun: 
-      :city: Ujun
+      :city: Al-Ujun
     :Africa/Freetown: 
       :city: Freetown
     :Africa/Gaborone: 
@@ -679,7 +695,7 @@
     :Africa/Johannesburg: 
       :city: Johannesburg
     :Africa/Juba: 
-      :city: Juba
+      :city: Dżuba
     :Africa/Kampala: 
       :city: Kampala
     :Africa/Khartoum: 
@@ -717,7 +733,7 @@
     :Africa/Ndjamena: 
       :city: Ndżamena
     :Africa/Niamey: 
-      :city: Niamej
+      :city: Niamey
     :Africa/Nouakchott: 
       :city: Nawakszut
     :Africa/Ouagadougou: 
@@ -801,7 +817,7 @@
     :America/Coral_Harbour: 
       :city: Atikokan
     :America/Cordoba: 
-      :city: Kordoba
+      :city: Córdoba
     :America/Costa_Rica: 
       :city: Kostaryka
     :America/Creston: 
@@ -828,6 +844,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: Salwador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -855,19 +873,19 @@
     :America/Hermosillo: 
       :city: Hermosillo
     :America/Indiana/Knox: 
-      :city: Knox
+      :city: "Knox, Indiana"
     :America/Indiana/Marengo: 
-      :city: Marengo
+      :city: "Marengo, Indiana"
     :America/Indiana/Petersburg: 
-      :city: Petersburg
+      :city: "Petersburg, Indiana"
     :America/Indiana/Tell_City: 
       :city: "Tell City, Indiana"
     :America/Indiana/Vevay: 
-      :city: Vevay
+      :city: "Vevay, Indiana"
     :America/Indiana/Vincennes: 
-      :city: Vincennes
+      :city: "Vincennes, Indiana"
     :America/Indiana/Winamac: 
-      :city: Winamac
+      :city: "Winamac, Indiana"
     :America/Indianapolis: 
       :city: Indianapolis
     :America/Inuvik: 
@@ -962,6 +980,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: Portoryko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1025,33 +1045,33 @@
     :America/Yellowknife: 
       :city: Yellowknife
     :Antarctica/Casey: 
-      :city: "Stacja Casey"
+      :city: Casey
     :Antarctica/Davis: 
-      :city: "Stacja Davis"
+      :city: Davis
     :Antarctica/DumontDUrville: 
       :city: "Dumont d’Urville"
     :Antarctica/Macquarie: 
       :city: Macquarie
     :Antarctica/Mawson: 
-      :city: "Wybrzeże Mawsona"
+      :city: Mawson
     :Antarctica/McMurdo: 
-      :city: "Mc Murdo"
+      :city: McMurdo
     :Antarctica/Palmer: 
-      :city: "Archipelag Palmera"
+      :city: Palmer
     :Antarctica/Rothera: 
-      :city: "Stacja Naukowa Rothera"
+      :city: Rothera
     :Antarctica/Syowa: 
-      :city: "Stacja Syowa"
+      :city: Syowa
     :Antarctica/Troll: 
       :city: Troll
     :Antarctica/Vostok: 
-      :city: "Stacja Wostok"
+      :city: Wostok
     :Arctic/Longyearbyen: 
       :city: Longyearbyen
     :Asia/Aden: 
       :city: Aden
     :Asia/Almaty: 
-      :city: "Ałma Ata"
+      :city: Ałmaty
     :Asia/Amman: 
       :city: Amman
     :Asia/Anadyr: 
@@ -1062,6 +1082,8 @@
       :city: Aktiubińsk
     :Asia/Ashgabat: 
       :city: Aszchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1070,6 +1092,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnauł
     :Asia/Beirut: 
       :city: Bejrut
     :Asia/Bishkek: 
@@ -1079,7 +1103,7 @@
     :Asia/Calcutta: 
       :city: Kalkuta
     :Asia/Chita: 
-      :city: Chita
+      :city: Czyta
     :Asia/Choibalsan: 
       :city: Czojbalsan
     :Asia/Colombo: 
@@ -1087,13 +1111,15 @@
     :Asia/Damascus: 
       :city: Damaszek
     :Asia/Dhaka: 
-      :city: Dakka
+      :city: Dhaka
     :Asia/Dili: 
       :city: Dili
     :Asia/Dubai: 
       :city: Dubaj
     :Asia/Dushanbe: 
       :city: Duszanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1101,7 +1127,7 @@
     :Asia/Hong_Kong: 
       :city: Hongkong
     :Asia/Hovd: 
-      :city: Howd
+      :city: Kobdo
     :Asia/Irkutsk: 
       :city: Irkuck
     :Asia/Jakarta: 
@@ -1125,7 +1151,7 @@
     :Asia/Kuala_Lumpur: 
       :city: "Kuala Lumpur"
     :Asia/Kuching: 
-      :city: Kuczing
+      :city: Kuching
     :Asia/Kuwait: 
       :city: Kuwejt
     :Asia/Macau: 
@@ -1156,14 +1182,16 @@
       :city: Pjongjang
     :Asia/Qatar: 
       :city: Katar
+    :Asia/Qostanay: 
+      :city: Kustanaj
     :Asia/Qyzylorda: 
-      :city: "Kyzył Orda"
+      :city: Kyzyłorda
     :Asia/Rangoon: 
       :city: Rangun
     :Asia/Riyadh: 
       :city: Rijad
     :Asia/Saigon: 
-      :city: "Ho Chi Minh (miasto)"
+      :city: "Ho Chi Minh"
     :Asia/Sakhalin: 
       :city: Sachalin
     :Asia/Samarkand: 
@@ -1188,12 +1216,14 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ułan Bator"
     :Asia/Urumqi: 
       :city: Urumczi
     :Asia/Ust-Nera: 
-      :city: Ust-Nera
+      :city: Ust-Niera
     :Asia/Vientiane: 
       :city: Wientian
     :Asia/Vladivostok: 
@@ -1211,13 +1241,13 @@
     :Atlantic/Canary: 
       :city: "Wyspy Kanaryjskie"
     :Atlantic/Cape_Verde: 
-      :city: "Zielony Przylądek"
+      :city: "Republika Zielonego Przylądka"
     :Atlantic/Faeroe: 
       :city: "Wyspy Owcze"
     :Atlantic/Madeira: 
       :city: Madera
     :Atlantic/Reykjavik: 
-      :city: Rejkiawik
+      :city: Reykjavik
     :Atlantic/South_Georgia: 
       :city: "Georgia Południowa"
     :Atlantic/St_Helena: 
@@ -1225,7 +1255,7 @@
     :Atlantic/Stanley: 
       :city: Stanley
     :Australia/Adelaide: 
-      :city: Adelajda
+      :city: Adelaide
     :Australia/Brisbane: 
       :city: Brisbane
     :Australia/Broken_Hill: 
@@ -1241,19 +1271,26 @@
     :Australia/Lindeman: 
       :city: Lindeman
     :Australia/Lord_Howe: 
-      :city: "Wyspa Lord Howe"
+      :city: "Lord Howe"
     :Australia/Melbourne: 
       :city: Melbourne
     :Australia/Perth: 
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "uniwersalny czas koordynowany"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
-      :city: Nieznane
+      :city: "Nieznane miasto"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andora
+    :Europe/Astrakhan: 
+      :city: Astrachań
     :Europe/Athens: 
       :city: Ateny
     :Europe/Belgrade: 
@@ -1269,7 +1306,7 @@
     :Europe/Budapest: 
       :city: Budapeszt
     :Europe/Busingen: 
-      :city: Busingen
+      :city: "Büsingen am Hochrhein"
     :Europe/Chisinau: 
       :city: Kiszyniów
     :Europe/Copenhagen: 
@@ -1294,6 +1331,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kijów
+    :Europe/Kirov: 
+      :city: Kirow
     :Europe/Lisbon: 
       :city: Lizbona
     :Europe/Ljubljana: 
@@ -1334,6 +1373,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajewo
+    :Europe/Saratov: 
+      :city: Saratów
     :Europe/Simferopol: 
       :city: Symferopol
     :Europe/Skopje: 
@@ -1346,6 +1387,8 @@
       :city: Tallin
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanowsk
     :Europe/Uzhgorod: 
       :city: Użgorod
     :Europe/Vaduz: 
@@ -1393,7 +1436,7 @@
     :Pacific/Auckland: 
       :city: Auckland
     :Pacific/Bougainville: 
-      :city: Bougainville
+      :city: "Wyspa Bougainville’a"
     :Pacific/Chatham: 
       :city: Chatham
     :Pacific/Easter: 
@@ -1411,7 +1454,7 @@
     :Pacific/Galapagos: 
       :city: Galapagos
     :Pacific/Gambier: 
-      :city: Gambier
+      :city: "Wyspy Gambiera"
     :Pacific/Guadalcanal: 
       :city: Guadalcanal
     :Pacific/Guam: 
@@ -1445,7 +1488,7 @@
     :Pacific/Palau: 
       :city: Palau
     :Pacific/Pitcairn: 
-      :city: "Wyspy Pitcairn"
+      :city: Pitcairn
     :Pacific/Ponape: 
       :city: Pohnpei
     :Pacific/Port_Moresby: 

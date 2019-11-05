@@ -1,6 +1,9 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Hebrew-Latin
+      - und-Latn-t-und-hebr
     :direction: both
     :rules: 
       - ":: [[:Hebrew:] [:^ccc=0:] [ְ-ֹֻ-ּׁ-ׂℵ-ℸֿ̄] - [ֽ]] ;"
@@ -67,6 +70,6 @@
       - ":: (lower);"
       - ":: nfc (nfd) ;"
       - ":: ([[:Latin:] [:^ccc=0:] [ʻ-ʼ̀-̧̱̂̇̌̀-́    ̄ ]]);"
-    :source: Hebrew
-    :target: Latin
+    :source: Hebr
+    :target: Latn
     :variant: ~

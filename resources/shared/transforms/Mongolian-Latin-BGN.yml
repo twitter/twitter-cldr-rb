@@ -1,10 +1,13 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Mongolian-Latin/BGN
+      - mn-Latn-t-mn-m0-bgn
     :direction: forward
     :rules: 
-      - ":: [АБВГДЕЁЖЗИЙКЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмноөпрстуүфхцчшщъыьэюя] ;"
-      - ":: NFD (NFC) ;"
+      - "::[АБВГДЕЁЖЗИЙКЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмноөпрстуүфхцчшщъыьэюя\\u0308];"
+      - "::NFC;"
       - "$prime  = ʹ ;"
       - "$upperConsonants = [БВГДЖЙКЛМНПРСТФХЦЧШЩЭ] ;"
       - "$lowerConsonants = [бвгджйклмнпрстфхцчшщэ] ;"
@@ -96,6 +99,6 @@
       - "Я} $lower > Ya ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YA ; # CYRILLIC CAPITAL LETTER YA"
       - "я > ya ; # CYRILLIC SMALL LETTER YA"
-    :source: Mongolian
-    :target: Latin
+    :source: mn
+    :target: mn_Latn
     :variant: BGN

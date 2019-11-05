@@ -30,7 +30,9 @@ module TwitterCldr
         source_file = source_path_for(test_file)
         FileUtils.mkdir_p(File.dirname(source_file))
         result = UnicodeFileParser.parse_standard_file(source_file).map(&:first)
-        File.write(output_path_for(test_file), YAML.dump(result))
+        output_file = output_path_for(test_file)
+        FileUtils.mkdir_p(File.dirname(output_file))
+        File.write(output_file, YAML.dump(result))
       end
 
       def source_path_for(test_file)

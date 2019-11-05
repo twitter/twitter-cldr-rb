@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Algiers)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egypt)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Morocco Time
   :LONG:
-    :standard: Western European Standard Time
-    :daylight: Western European Summer Time
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Western European Time
+    :generic: Morocco Time
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Morocco Time
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Western Sahara Time
   :LONG:
-    :standard: Western European Standard Time
-    :daylight: Western European Summer Time
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Western European Time
+    :generic: Western Sahara Time
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Western Sahara Time
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Uganda Time
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Sudan Time
   :LONG:
-    :standard: East Africa Time
-    :daylight: GMT+03:00
+    :standard: Central Africa Time
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: East Africa Time
+    :generic: Central Africa Time
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Sudan Time
 Africa/Kigali:
@@ -726,7 +726,7 @@ Africa/Mbabane:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Swaziland Time
+    :generic: Eswatini Time
   :LONG:
     :standard: South Africa Standard Time
     :daylight: GMT+02:00
@@ -736,7 +736,7 @@ Africa/Mbabane:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Swaziland Time
+    :generic: Eswatini Time
 Africa/Mogadishu:
   :offset: 10800000
   :LONG_GMT:
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Tunisia)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Namibia Time
   :LONG:
-    :standard: West Africa Standard Time
-    :daylight: West Africa Summer Time
+    :standard: Central Africa Time
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: West Africa Time (Windhoek)
+    :generic: Central Africa Time
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Namibia Time
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Hawaii-Aleutian Standard Time
     :daylight: Hawaii-Aleutian Daylight Time
   :LONG_GENERIC:
-    :generic: Hawaii-Aleutian Time (Adak)
+    :generic: Hawaii-Aleutian Time
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Hawaii-Aleutian Standard Time
     :daylight: Hawaii-Aleutian Daylight Time
   :LONG_GENERIC:
-    :generic: Hawaii-Aleutian Time (Adak)
+    :generic: Hawaii-Aleutian Time
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amazon Standard Time
     :daylight: Amazon Summer Time
   :LONG_GENERIC:
-    :generic: Amazon Time
+    :generic: Amazon Time (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Cancun Time
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Venezuela Time
   :LONG:
     :standard: Venezuela Time
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Venezuela Time
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Venezuela Time
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amazon Standard Time
     :daylight: Amazon Summer Time
   :LONG_GENERIC:
-    :generic: Amazon Time
+    :generic: Amazon Time (Cuiaba)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Goose Bay Time
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Turks & Caicos Islands Time
   :LONG:
-    :standard: Atlantic Standard Time
-    :daylight: Atlantic Daylight Time
+    :standard: Eastern Standard Time
+    :daylight: Eastern Daylight Time
   :LONG_GENERIC:
-    :generic: Atlantic Standard Time
+    :generic: Eastern Time
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Turks & Caicos Islands Time
@@ -2742,7 +2742,7 @@ America/Marigot:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: St. Martin Time
+    :generic: St Martin Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -2752,7 +2752,7 @@ America/Marigot:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: St. Martin Time
+    :generic: St Martin Time
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -2904,17 +2904,17 @@ America/Miquelon:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: St. Pierre & Miquelon Time
+    :generic: St Pierre & Miquelon Time
   :LONG:
-    :standard: St. Pierre & Miquelon Standard Time
-    :daylight: St. Pierre & Miquelon Daylight Time
+    :standard: St Pierre & Miquelon Standard Time
+    :daylight: St Pierre & Miquelon Daylight Time
   :LONG_GENERIC:
-    :generic: St. Pierre & Miquelon Time
+    :generic: St Pierre & Miquelon Time
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: St. Pierre & Miquelon Time
+    :generic: St Pierre & Miquelon Time
 America/Moncton:
   :offset: -14400000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Eastern Standard Time
     :daylight: Eastern Daylight Time
   :LONG_GENERIC:
-    :generic: Eastern Standard Time
+    :generic: Eastern Time
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Haiti Time
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Puerto Rico Time
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Punta Arenas Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas Time
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Santarem Time
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chile Time
   :LONG:
     :standard: Chile Standard Time
     :daylight: Chile Summer Time
   :LONG_GENERIC:
-    :generic: Chile Standard Time
+    :generic: Chile Time
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Chile Time
@@ -3624,7 +3624,7 @@ America/St_Barthelemy:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: St. Barthélemy Time
+    :generic: St Barthélemy Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3634,7 +3634,7 @@ America/St_Barthelemy:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: St. Barthélemy Time
+    :generic: St Barthélemy Time
 America/St_Johns:
   :offset: -12600000
   :LONG_GMT:
@@ -3642,7 +3642,7 @@ America/St_Johns:
   :SHORT_GMT:
     :generic: "-0330"
   :GENERIC_LOCATION:
-    :generic: St. John’s Time
+    :generic: St John’s Time
   :LONG:
     :standard: Newfoundland Standard Time
     :daylight: Newfoundland Daylight Time
@@ -3652,7 +3652,7 @@ America/St_Johns:
     :standard: GMT-3:30
     :daylight: GMT-2:30
   :SHORT_GENERIC:
-    :generic: St. John’s Time
+    :generic: St John’s Time
 America/St_Kitts:
   :offset: -14400000
   :LONG_GMT:
@@ -3660,7 +3660,7 @@ America/St_Kitts:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: St. Kitts & Nevis Time
+    :generic: St Kitts & Nevis Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3670,7 +3670,7 @@ America/St_Kitts:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: St. Kitts & Nevis Time
+    :generic: St Kitts & Nevis Time
 America/St_Lucia:
   :offset: -14400000
   :LONG_GMT:
@@ -3678,7 +3678,7 @@ America/St_Lucia:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: St. Lucia Time
+    :generic: St Lucia Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3688,7 +3688,7 @@ America/St_Lucia:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: St. Lucia Time
+    :generic: St Lucia Time
 America/St_Thomas:
   :offset: -14400000
   :LONG_GMT:
@@ -3696,7 +3696,7 @@ America/St_Thomas:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: U.S. Virgin Islands Time
+    :generic: US Virgin Islands Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3706,7 +3706,7 @@ America/St_Thomas:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: U.S. Virgin Islands Time
+    :generic: US Virgin Islands Time
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3714,7 +3714,7 @@ America/St_Vincent:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: St. Vincent & Grenadines Time
+    :generic: St Vincent & Grenadines Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3724,7 +3724,7 @@ America/St_Vincent:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: St. Vincent & Grenadines Time
+    :generic: St Vincent & Grenadines Time
 America/Swift_Current:
   :offset: -21600000
   :LONG_GMT:
@@ -3876,7 +3876,7 @@ America/Virgin:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: U.S. Virgin Islands Time
+    :generic: US Virgin Islands Time
   :LONG:
     :standard: Atlantic Standard Time
     :daylight: Atlantic Daylight Time
@@ -3886,7 +3886,7 @@ America/Virgin:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: U.S. Virgin Islands Time
+    :generic: US Virgin Islands Time
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Palmer Time
   :LONG:
-    :standard: Chile Standard Time
-    :daylight: Chile Summer Time
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Chile Standard Time
+    :generic: Palmer Time
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Turkmenistan Time
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Atyrau Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: West Kazakhstan Time
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: West Kazakhstan Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Atyrau Time
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Azerbaijan Standard Time
     :daylight: Azerbaijan Summer Time
   :LONG_GENERIC:
-    :generic: Azerbaijan Time
+    :generic: Azerbaijan Standard Time
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Azerbaijan Time
 Asia/Bangkok:
@@ -4472,10 +4472,10 @@ Asia/Bishkek:
   :GENERIC_LOCATION:
     :generic: Kyrgyzstan Time
   :LONG:
-    :standard: Kyrgystan Time
+    :standard: Kyrgyzstan Time
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Kyrgystan Time
+    :generic: Kyrgyzstan Time
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Choibalsan Standard Time
     :daylight: Choibalsan Summer Time
   :LONG_GENERIC:
-    :generic: Choibalsan Time
+    :generic: Choibalsan Standard Time
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Choibalsan Time
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Tajikistan Time
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Famagusta Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Famagusta Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Famagusta Time
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Hovd Standard Time
     :daylight: Hovd Summer Time
   :LONG_GENERIC:
-    :generic: Hovd Time
+    :generic: Hovd Standard Time
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Hovd Time
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Irkutsk Time
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkey Time
   :LONG:
-    :standard: Eastern European Standard Time
-    :daylight: Eastern European Summer Time
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Eastern European Time
+    :generic: Turkey Time
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkey Time
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5154,7 +5154,7 @@ Asia/Macao:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Macau SAR China Time
+    :generic: Macao SAR China Time
   :LONG:
     :standard: China Standard Time
     :daylight: China Daylight Time
@@ -5164,7 +5164,7 @@ Asia/Macao:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Macau SAR China Time
+    :generic: Macao SAR China Time
 Asia/Macau:
   :offset: 28800000
   :LONG_GMT:
@@ -5172,7 +5172,7 @@ Asia/Macau:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Macau SAR China Time
+    :generic: Macao SAR China Time
   :LONG:
     :standard: China Standard Time
     :daylight: China Daylight Time
@@ -5182,13 +5182,13 @@ Asia/Macau:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Macau SAR China Time
+    :generic: Macao SAR China Time
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Magadan Time
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Magadan Standard Time
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Magadan Time
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cyprus Time
+    :generic: Nicosia Time
   :LONG:
     :standard: Eastern European Standard Time
     :daylight: Eastern European Summer Time
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Novokuznetsk Time
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Novosibirsk Time
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Novosibirsk Standard Time
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Novosibirsk Time
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Pontianak Time
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: North Korea Time
   :LONG:
-    :standard: Pyongyang Time
-    :daylight: GMT+08:30
+    :standard: Korean Standard Time
+    :daylight: Korean Daylight Time
   :LONG_GENERIC:
-    :generic: Pyongyang Time
+    :generic: Korean Standard Time
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: North Korea Time
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Qatar Time
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Qyzylorda Time
+    :generic: Kostanay Time
   :LONG:
     :standard: East Kazakhstan Time
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Kostanay Time
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Qyzylorda Time
+  :LONG:
+    :standard: West Kazakhstan Time
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: West Kazakhstan Time
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Qyzylorda Time
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Japan Time
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Tomsk Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Tomsk Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Tomsk Time
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5786,13 +5804,13 @@ Asia/Ulaanbaatar:
   :GENERIC_LOCATION:
     :generic: Ulaanbaatar Time
   :LONG:
-    :standard: Ulan Bator Standard Time
-    :daylight: Ulan Bator Summer Time
+    :standard: Ulaanbaatar Standard Time
+    :daylight: Ulaanbaatar Summer Time
   :LONG_GENERIC:
-    :generic: Ulan Bator Time
+    :generic: Ulaanbaatar Standard Time
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulaanbaatar Time
 Asia/Ulan_Bator:
@@ -5804,13 +5822,13 @@ Asia/Ulan_Bator:
   :GENERIC_LOCATION:
     :generic: Ulaanbaatar Time
   :LONG:
-    :standard: Ulan Bator Standard Time
-    :daylight: Ulan Bator Summer Time
+    :standard: Ulaanbaatar Standard Time
+    :daylight: Ulaanbaatar Summer Time
   :LONG_GENERIC:
-    :generic: Ulan Bator Time
+    :generic: Ulaanbaatar Standard Time
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulaanbaatar Time
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Yakutsk Time
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Myanmar (Burma) Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Myanmar Time
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Myanmar Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Myanmar (Burma) Time
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6144,7 +6162,7 @@ Atlantic/St_Helena:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: St. Helena Time
+    :generic: St Helena Time
   :LONG:
     :standard: Greenwich Mean Time
     :daylight: GMT
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Winnipeg Time
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Regina Time
-  :LONG:
-    :standard: Central Standard Time
-    :daylight: Central Daylight Time
-  :LONG_GENERIC:
-    :generic: Central Standard Time
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Regina Time
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6792,7 +6792,7 @@ Canada/Newfoundland:
   :SHORT_GMT:
     :generic: "-0330"
   :GENERIC_LOCATION:
-    :generic: St. John’s Time
+    :generic: St John’s Time
   :LONG:
     :standard: Newfoundland Standard Time
     :daylight: Newfoundland Daylight Time
@@ -6802,7 +6802,7 @@ Canada/Newfoundland:
     :standard: GMT-3:30
     :daylight: GMT-2:30
   :SHORT_GENERIC:
-    :generic: St. John’s Time
+    :generic: St John’s Time
 Canada/Pacific:
   :offset: -28800000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Whitehorse Time
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Chile Time
   :LONG:
     :standard: Chile Standard Time
     :daylight: Chile Summer Time
   :LONG_GENERIC:
-    :generic: Chile Standard Time
+    :generic: Chile Time
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Chile Time
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Easter Time
   :LONG:
     :standard: Easter Island Standard Time
     :daylight: Easter Island Summer Time
   :LONG_GENERIC:
-    :generic: Easter Island Standard Time
+    :generic: Easter Island Time
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Easter Time
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egypt)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Isle of Man Time
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkey Time
   :LONG:
-    :standard: Eastern European Standard Time
-    :daylight: Eastern European Summer Time
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Eastern European Time
+    :generic: Turkey Time
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkey Time
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Kaliningrad)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Kirov Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Kirov Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Kirov Time
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Belarus Time
   :LONG:
-    :standard: Further-eastern European Time
-    :daylight: GMT+03:00
+    :standard: Moscow Standard Time
+    :daylight: Moscow Summer Time
   :LONG_GENERIC:
-    :generic: Further-eastern European Time
+    :generic: Moscow Standard Time
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cyprus Time
+    :generic: Nicosia Time
   :LONG:
     :standard: Eastern European Standard Time
     :daylight: Eastern European Summer Time
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Czech Republic Time
+    :generic: Czechia Time
   :LONG:
     :standard: Central European Standard Time
     :daylight: Central European Summer Time
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Saratov Time
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Saratov Time
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Saratov Time
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Macedonia Time
+    :generic: North Macedonia Time
   :LONG:
     :standard: Central European Standard Time
     :daylight: Central European Summer Time
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Volgograd Time
   :LONG:
-    :standard: Moscow Standard Time
-    :daylight: Moscow Summer Time
+    :standard: Volgograd Standard Time
+    :daylight: Volgograd Summer Time
   :LONG_GENERIC:
-    :generic: Moscow Standard Time
+    :generic: Volgograd Standard Time
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Volgograd Time
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Greenwich Mean Time
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Greenwich Mean Time
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9152,10 +9152,10 @@ Indian/Reunion:
   :GENERIC_LOCATION:
     :generic: Réunion Time
   :LONG:
-    :standard: Reunion Time
+    :standard: Réunion Time
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Reunion Time
+    :generic: Réunion Time
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Chuuk Time
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Easter Time
   :LONG:
     :standard: Easter Island Standard Time
     :daylight: Easter Island Summer Time
   :LONG_GENERIC:
-    :generic: Easter Island Standard Time
+    :generic: Easter Island Time
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Easter Time
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Singapore Time
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turkey Time
   :LONG:
-    :standard: Eastern European Standard Time
-    :daylight: Eastern European Summer Time
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Eastern European Time
+    :generic: Turkey Time
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turkey Time
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Hawaii-Aleutian Standard Time
     :daylight: Hawaii-Aleutian Daylight Time
   :LONG_GENERIC:
-    :generic: Hawaii-Aleutian Time (Adak)
+    :generic: Hawaii-Aleutian Time
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Coordinated Universal Time
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

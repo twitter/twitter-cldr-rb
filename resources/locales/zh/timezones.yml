@@ -1,18 +1,11 @@
 --- 
 :zh: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1}（{0}）"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0}夏令时间"
-      :generic: "{0}时间"
-      :standard: "{0}标准时间"
+    :fallback_format: "{1}（{0}）"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0}标准时间"
   :metazones: 
     :Acre: 
       :long: 
@@ -30,7 +23,7 @@
         :standard: 东部非洲时间
     :Africa_Southern: 
       :long: 
-        :standard: 南部非洲时间
+        :standard: 南非标准时间
     :Africa_Western: 
       :long: 
         :daylight: 西部非洲夏令时间
@@ -156,7 +149,7 @@
         :standard: 不丹时间
     :Bolivia: 
       :long: 
-        :standard: 玻利维亚时间
+        :standard: 玻利维亚标准时间
     :Brasilia: 
       :long: 
         :daylight: 巴西利亚夏令时间
@@ -233,7 +226,7 @@
         :standard: 复活节岛标准时间
     :Ecuador: 
       :long: 
-        :standard: 厄瓜多尔时间
+        :standard: 厄瓜多尔标准时间
     :Europe_Central: 
       :long: 
         :daylight: 中欧夏令时间
@@ -264,7 +257,7 @@
         :standard: 斐济标准时间
     :French_Guiana: 
       :long: 
-        :standard: 法属圭亚那时间
+        :standard: 法属圭亚那标准时间
     :French_Southern: 
       :long: 
         :standard: 法属南方和南极领地时间
@@ -536,6 +529,9 @@
     :Ponape: 
       :long: 
         :standard: 波纳佩时间
+    :Pyongyang: 
+      :long: 
+        :standard: 平壤时间
     :Qyzylorda: 
       :long: 
         :daylight: 克孜洛尔达夏令时间
@@ -858,12 +854,14 @@
       :city: 依伦尼贝
     :America/El_Salvador: 
       :city: 萨尔瓦多
+    :America/Fort_Nelson: 
+      :city: 纳尔逊堡
     :America/Fortaleza: 
       :city: 福塔雷萨
     :America/Glace_Bay: 
       :city: 格莱斯贝
     :America/Godthab: 
-      :city: 戈特霍布
+      :city: 努克
     :America/Goose_Bay: 
       :city: 古斯湾
     :America/Grand_Turk: 
@@ -992,6 +990,8 @@
       :city: 波多韦柳
     :America/Puerto_Rico: 
       :city: 波多黎各
+    :America/Punta_Arenas: 
+      :city: 蓬塔阿雷纳斯
     :America/Rainy_River: 
       :city: 雷尼河
     :America/Rankin_Inlet: 
@@ -1092,6 +1092,8 @@
       :city: 阿克托别
     :Asia/Ashgabat: 
       :city: 阿什哈巴德
+    :Asia/Atyrau: 
+      :city: 阿特劳
     :Asia/Baghdad: 
       :city: 巴格达
     :Asia/Bahrain: 
@@ -1100,6 +1102,8 @@
       :city: 巴库
     :Asia/Bangkok: 
       :city: 曼谷
+    :Asia/Barnaul: 
+      :city: 巴尔瑙尔
     :Asia/Beirut: 
       :city: 贝鲁特
     :Asia/Bishkek: 
@@ -1124,6 +1128,8 @@
       :city: 迪拜
     :Asia/Dushanbe: 
       :city: 杜尚别
+    :Asia/Famagusta: 
+      :city: 法马古斯塔
     :Asia/Gaza: 
       :city: 加沙
     :Asia/Hebron: 
@@ -1186,6 +1192,8 @@
       :city: 平壤
     :Asia/Qatar: 
       :city: 卡塔尔
+    :Asia/Qostanay: 
+      :city: 库斯塔奈
     :Asia/Qyzylorda: 
       :city: 克孜洛尔达
     :Asia/Rangoon: 
@@ -1218,6 +1226,8 @@
       :city: 廷布
     :Asia/Tokyo: 
       :city: 东京
+    :Asia/Tomsk: 
+      :city: 托木斯克
     :Asia/Ulaanbaatar: 
       :city: 乌兰巴托
     :Asia/Urumqi: 
@@ -1278,12 +1288,19 @@
       :city: 珀斯
     :Australia/Sydney: 
       :city: 悉尼
+    :Etc/UTC: 
+      :long: 
+        :standard: 协调世界时
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: 未知城市
     :Europe/Amsterdam: 
       :city: 阿姆斯特丹
     :Europe/Andorra: 
       :city: 安道尔
+    :Europe/Astrakhan: 
+      :city: 阿斯特拉罕
     :Europe/Athens: 
       :city: 雅典
     :Europe/Belgrade: 
@@ -1324,6 +1341,8 @@
       :city: 加里宁格勒
     :Europe/Kiev: 
       :city: 基辅
+    :Europe/Kirov: 
+      :city: 基洛夫
     :Europe/Lisbon: 
       :city: 里斯本
     :Europe/Ljubljana: 
@@ -1364,6 +1383,8 @@
       :city: 圣马力诺
     :Europe/Sarajevo: 
       :city: 萨拉热窝
+    :Europe/Saratov: 
+      :city: 萨拉托夫
     :Europe/Simferopol: 
       :city: 辛菲罗波尔
     :Europe/Skopje: 
@@ -1376,6 +1397,8 @@
       :city: 塔林
     :Europe/Tirane: 
       :city: 地拉那
+    :Europe/Ulyanovsk: 
+      :city: 乌里扬诺夫斯克
     :Europe/Uzhgorod: 
       :city: 乌日哥罗德
     :Europe/Vaduz: 

@@ -150,7 +150,7 @@ Africa/Banjul:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: گامبیا وقت
+    :generic: گیمبیا وقت
   :LONG:
     :standard: گرین وچ کا اصل وقت
     :daylight: GMT
@@ -160,7 +160,7 @@ Africa/Banjul:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: گامبیا وقت
+    :generic: گیمبیا وقت
 Africa/Bissau:
   :offset: 0
   :LONG_GMT:
@@ -258,17 +258,17 @@ Africa/Casablanca:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: مراقش وقت
+    :generic: مراکش وقت
   :LONG:
-    :standard: مغربی یورپ کا معیاری وقت
-    :daylight: مغربی یورپ کا موسم گرما کا وقت
+    :standard: GMT
+    :daylight: GMT +01:00
   :LONG_GENERIC:
-    :generic: مغربی یورپ کا وقت
+    :generic: مراکش وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT +1
   :SHORT_GENERIC:
-    :generic: مراقش وقت
+    :generic: مراکش وقت
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: مغربی صحارا وقت
   :LONG:
-    :standard: مغربی یورپ کا معیاری وقت
-    :daylight: مغربی یورپ کا موسم گرما کا وقت
+    :standard: GMT
+    :daylight: GMT +01:00
   :LONG_GENERIC:
-    :generic: مغربی یورپ کا وقت
+    :generic: مغربی صحارا وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT +1
@@ -402,7 +402,7 @@ Africa/Freetown:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: سیئر لیون وقت
+    :generic: سیرالیون وقت
   :LONG:
     :standard: گرین وچ کا اصل وقت
     :daylight: GMT
@@ -412,7 +412,7 @@ Africa/Freetown:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: سیئر لیون وقت
+    :generic: سیرالیون وقت
 Africa/Gaborone:
   :offset: 7200000
   :LONG_GMT:
@@ -492,7 +492,7 @@ Africa/Kampala:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: یوگانڈا وقت
+    :generic: یوگنڈا وقت
   :LONG:
     :standard: مشرقی افریقہ ٹائم
     :daylight: GMT +03:00
@@ -502,23 +502,23 @@ Africa/Kampala:
     :standard: GMT +3
     :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: یوگانڈا وقت
+    :generic: یوگنڈا وقت
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT +03:00
+    :generic: GMT +02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: سوڈان وقت
   :LONG:
-    :standard: مشرقی افریقہ ٹائم
-    :daylight: GMT +03:00
+    :standard: وسطی افریقہ ٹائم
+    :daylight: GMT +02:00
   :LONG_GENERIC:
-    :generic: مشرقی افریقہ ٹائم
+    :generic: وسطی افریقہ ٹائم
   :SHORT:
-    :standard: GMT +3
-    :daylight: GMT +3
+    :standard: GMT +2
+    :daylight: GMT +2
   :SHORT_GENERIC:
     :generic: سوڈان وقت
 Africa/Kigali:
@@ -726,7 +726,7 @@ Africa/Mbabane:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: سوازی لینڈ وقت
+    :generic: سواتنی وقت
   :LONG:
     :standard: جنوبی افریقہ سٹینڈرڈ ٹائم
     :daylight: GMT +02:00
@@ -736,7 +736,7 @@ Africa/Mbabane:
     :standard: GMT +2
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: سوازی لینڈ وقت
+    :generic: سواتنی وقت
 Africa/Mogadishu:
   :offset: 10800000
   :LONG_GMT:
@@ -942,7 +942,7 @@ Africa/Tunis:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: تیونیسیا وقت
+    :generic: تونس وقت
   :LONG:
     :standard: وسطی یورپ کا معیاری وقت
     :daylight: وسطی یورپ کا موسم گرما کا وقت
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: GMT +1
     :daylight: GMT +1
   :SHORT_GENERIC:
-    :generic: تیونیسیا وقت
+    :generic: تونس وقت
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT +01:00
+    :generic: GMT +02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: نامیبیا وقت
   :LONG:
-    :standard: مغربی افریقہ سٹینڈرڈ ٹائم
-    :daylight: مغربی افریقہ سمر ٹائم
+    :standard: وسطی افریقہ ٹائم
+    :daylight: GMT +02:00
   :LONG_GENERIC:
-    :generic: مغربی افریقہ ٹائم (ونڈہوک)
+    :generic: وسطی افریقہ ٹائم
   :SHORT:
-    :standard: GMT +1
+    :standard: GMT +2
     :daylight: GMT +2
   :SHORT_GENERIC:
     :generic: نامیبیا وقت
@@ -983,7 +983,7 @@ America/Adak:
     :standard: ہوائی الیوٹیئن اسٹینڈرڈ ٹائم
     :daylight: ہوائی الیوٹیئن ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: ہوائی الیوٹیئن ٹائم (اداک)
+    :generic: ہوائی الیوٹیئن ٹائم
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: ہوائی الیوٹیئن اسٹینڈرڈ ٹائم
     :daylight: ہوائی الیوٹیئن ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: ہوائی الیوٹیئن ٹائم (اداک)
+    :generic: ہوائی الیوٹیئن ٹائم
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: ایمیزون سٹینڈرڈ ٹائم
     :daylight: امیزون کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: امیزون ٹائم
+    :generic: امیزون ٹائم (کیمپو گرینڈ)
   :SHORT:
     :standard: GMT -4
     :daylight: GMT -3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: کنکیون وقت
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -04:30
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: وینزوئیلا وقت
   :LONG:
     :standard: وینزوئیلا کا وقت
-    :daylight: GMT -04:30
+    :daylight: GMT -04:00
   :LONG_GENERIC:
     :generic: وینزوئیلا کا وقت
   :SHORT:
-    :standard: GMT -4:30
-    :daylight: GMT -4:30
+    :standard: GMT -4
+    :daylight: GMT -4
   :SHORT_GENERIC:
     :generic: وینزوئیلا وقت
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: ایمیزون سٹینڈرڈ ٹائم
     :daylight: امیزون کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: امیزون ٹائم
+    :generic: امیزون ٹائم (کوئیابا)
   :SHORT:
     :standard: GMT -4
     :daylight: GMT -3
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Fort Nelson وقت
+    :generic: فورٹ نیلسن وقت
   :LONG:
     :standard: ماؤنٹین اسٹینڈرڈ ٹائم
     :daylight: ماؤنٹین ڈے لائٹ ٹائم
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT -7
     :daylight: GMT -7
   :SHORT_GENERIC:
-    :generic: Fort Nelson وقت
+    :generic: فورٹ نیلسن وقت
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: گوس کی کھاڑی وقت
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT -04:00
+    :generic: GMT -05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: ترکس اور کیکاؤس جزائر وقت
   :LONG:
-    :standard: اٹلانٹک اسٹینڈرڈ ٹائم
-    :daylight: اٹلانٹک ڈے لائٹ ٹائم
+    :standard: ایسٹرن اسٹینڈرڈ ٹائم
+    :daylight: ایسٹرن ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: اٹلانٹک اسٹینڈرڈ ٹائم
+    :generic: ایسٹرن ٹائم
   :SHORT:
-    :standard: GMT -4
+    :standard: GMT -5
     :daylight: GMT -4
   :SHORT_GENERIC:
     :generic: ترکس اور کیکاؤس جزائر وقت
@@ -3174,7 +3174,7 @@ America/Panama:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: پنامہ وقت
+    :generic: پانامہ وقت
   :LONG:
     :standard: ایسٹرن اسٹینڈرڈ ٹائم
     :daylight: ایسٹرن ڈے لائٹ ٹائم
@@ -3184,7 +3184,7 @@ America/Panama:
     :standard: GMT -5
     :daylight: GMT -5
   :SHORT_GENERIC:
-    :generic: پنامہ وقت
+    :generic: پانامہ وقت
 America/Pangnirtung:
   :offset: -18000000
   :LONG_GMT:
@@ -3246,17 +3246,17 @@ America/Port-au-Prince:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: ہیتی وقت
+    :generic: ہیٹی وقت
   :LONG:
     :standard: ایسٹرن اسٹینڈرڈ ٹائم
     :daylight: ایسٹرن ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: ایسٹرن اسٹینڈرڈ ٹائم
+    :generic: ایسٹرن ٹائم
   :SHORT:
     :standard: GMT -5
-    :daylight: GMT -5
+    :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: ہیتی وقت
+    :generic: ہیٹی وقت
 America/Port_of_Spain:
   :offset: -14400000
   :LONG_GMT:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: پیورٹو ریکو وقت
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT -03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: پنٹا یریناس وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT -03:00
+    :daylight: GMT -03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: پنٹا یریناس وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT -3
+    :daylight: GMT -3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: پنٹا یریناس وقت
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: سنٹارین وقت
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -03:00
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: چلی وقت
   :LONG:
     :standard: چلی کا معیاری وقت
     :daylight: چلی کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: چلی کا معیاری وقت
+    :generic: چلی کا وقت
   :SHORT:
-    :standard: GMT -3
+    :standard: GMT -4
     :daylight: GMT -3
   :SHORT_GENERIC:
     :generic: چلی وقت
@@ -3534,7 +3534,7 @@ America/Santo_Domingo:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: ڈومنیکن جمہوریہ وقت
+    :generic: جمہوریہ ڈومينيکن وقت
   :LONG:
     :standard: اٹلانٹک اسٹینڈرڈ ٹائم
     :daylight: اٹلانٹک ڈے لائٹ ٹائم
@@ -3544,7 +3544,7 @@ America/Santo_Domingo:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: ڈومنیکن جمہوریہ وقت
+    :generic: جمہوریہ ڈومينيکن وقت
 America/Sao_Paulo:
   :offset: -10800000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: پلمیر وقت
   :LONG:
-    :standard: چلی کا معیاری وقت
-    :daylight: چلی کا موسم گرما کا وقت
+    :standard: GMT -03:00
+    :daylight: GMT -03:00
   :LONG_GENERIC:
-    :generic: چلی کا معیاری وقت
+    :generic: پلمیر وقت
   :SHORT:
     :standard: GMT -3
     :daylight: GMT -3
@@ -4110,7 +4110,7 @@ Antarctica/South_Pole:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
   :LONG:
     :standard: نیوزی لینڈ کا معیاری وقت
     :daylight: نیوزی لینڈ ڈے لائٹ ٹائم
@@ -4120,7 +4120,7 @@ Antarctica/South_Pole:
     :standard: GMT +12
     :daylight: GMT +13
   :SHORT_GENERIC:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
 Antarctica/Syowa:
   :offset: 10800000
   :LONG_GMT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: ترکمانستان وقت
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: آتیراؤ وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: مغربی قزاخستان کا وقت
+    :daylight: GMT +05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: مغربی قزاخستان کا وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +5
+    :daylight: GMT +5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: آتیراؤ وقت
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4398,17 +4398,17 @@ Asia/Baku:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: آذربائجان وقت
+    :generic: آذربائیجان وقت
   :LONG:
     :standard: آذربائیجان کا معیاری وقت
     :daylight: آذربائیجان کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: آذربائیجان کا وقت
+    :generic: آذربائیجان کا معیاری وقت
   :SHORT:
     :standard: GMT +4
-    :daylight: GMT +5
+    :daylight: GMT +4
   :SHORT_GENERIC:
-    :generic: آذربائجان وقت
+    :generic: آذربائیجان وقت
 Asia/Bangkok:
   :offset: 25200000
   :LONG_GMT:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Barnaul وقت
+    :generic: برنال وقت
   :LONG:
     :standard: GMT +07:00
     :daylight: GMT +07:00
   :LONG_GENERIC:
-    :generic: Barnaul وقت
+    :generic: برنال وقت
   :SHORT:
     :standard: GMT +7
     :daylight: GMT +7
   :SHORT_GENERIC:
-    :generic: Barnaul وقت
+    :generic: برنال وقت
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4488,7 +4488,7 @@ Asia/Brunei:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: برونئی وقت
+    :generic: برونائی وقت
   :LONG:
     :standard: برونئی دارالسلام ٹائم
     :daylight: GMT +08:00
@@ -4498,7 +4498,7 @@ Asia/Brunei:
     :standard: GMT +8
     :daylight: GMT +8
   :SHORT_GENERIC:
-    :generic: برونئی وقت
+    :generic: برونائی وقت
 Asia/Calcutta:
   :offset: 19800000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: کوئبلسان سٹینڈرڈ ٹائم
     :daylight: کوائبلسان سمر ٹائم
   :LONG_GENERIC:
-    :generic: کوئبلسان ٹائم
+    :generic: کوئبلسان سٹینڈرڈ ٹائم
   :SHORT:
     :standard: GMT +8
-    :daylight: GMT +9
+    :daylight: GMT +8
   :SHORT_GENERIC:
     :generic: چوئبالسان وقت
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: تاجکستان وقت
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: فاماگوسٹا وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +02:00
+    :daylight: GMT +03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: فاماگوسٹا وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +2
+    :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: فاماگوسٹا وقت
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: ہووڈ سٹینڈرڈ ٹائم
     :daylight: ہووڈ سمر ٹائم
   :LONG_GENERIC:
-    :generic: ہووڈ ٹائم
+    :generic: ہووڈ سٹینڈرڈ ٹائم
   :SHORT:
     :standard: GMT +7
-    :daylight: GMT +8
+    :daylight: GMT +7
   :SHORT_GENERIC:
     :generic: ہووارڈ وقت
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: ارکتسک وقت
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT +02:00
+    :generic: GMT +03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: ترکی وقت
   :LONG:
-    :standard: مشرقی یورپ کا معیاری وقت
-    :daylight: مشرقی یورپ کا موسم گرما کا وقت
+    :standard: GMT +03:00
+    :daylight: GMT +03:00
   :LONG_GENERIC:
-    :generic: مشرقی یورپ کا وقت
+    :generic: ترکی وقت
   :SHORT:
-    :standard: GMT +2
+    :standard: GMT +3
     :daylight: GMT +3
   :SHORT_GENERIC:
     :generic: ترکی وقت
@@ -5100,7 +5100,7 @@ Asia/Kuala_Lumpur:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: ملیشیا وقت
+    :generic: ملائشیا وقت
   :LONG:
     :standard: ملیشیا ٹائم
     :daylight: GMT +08:00
@@ -5110,7 +5110,7 @@ Asia/Kuala_Lumpur:
     :standard: GMT +8
     :daylight: GMT +8
   :SHORT_GENERIC:
-    :generic: ملیشیا وقت
+    :generic: ملائشیا وقت
 Asia/Kuching:
   :offset: 28800000
   :LONG_GMT:
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: مکاؤ SAR چین وقت
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT +10:00
+    :generic: GMT +11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: میگیدن وقت
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: مگادان اسٹینڈرڈ ٹائم
   :SHORT:
-    :standard: GMT +10
-    :daylight: GMT +10
+    :standard: GMT +11
+    :daylight: GMT +11
   :SHORT_GENERIC:
     :generic: میگیدن وقت
 Asia/Makassar:
@@ -5226,7 +5226,7 @@ Asia/Manila:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: فلپائنی وقت
+    :generic: فلپائن وقت
   :LONG:
     :standard: فلپائن سٹینڈرڈ ٹائم
     :daylight: فلپائن سمر ٹائم
@@ -5236,7 +5236,7 @@ Asia/Manila:
     :standard: GMT +8
     :daylight: GMT +8
   :SHORT_GENERIC:
-    :generic: فلپائنی وقت
+    :generic: فلپائن وقت
 Asia/Muscat:
   :offset: 14400000
   :LONG_GMT:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: قبرص وقت
+    :generic: نکوسیا وقت
   :LONG:
     :standard: مشرقی یورپ کا معیاری وقت
     :daylight: مشرقی یورپ کا موسم گرما کا وقت
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT +2
     :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: قبرص وقت
+    :generic: نکوسیا وقت
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: نوووکیوزنیسک وقت
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT +06:00
+    :generic: GMT +07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: نوووسِبِرسک وقت
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: نوووسیبرسک سٹینڈرڈ ٹائم
   :SHORT:
-    :standard: GMT +6
-    :daylight: GMT +6
+    :standard: GMT +7
+    :daylight: GMT +7
   :SHORT_GENERIC:
     :generic: نوووسِبِرسک وقت
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: پونٹیانک وقت
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT +08:30
+    :generic: GMT +09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: شمالی کوریا وقت
   :LONG:
-    :standard: GMT +08:30
-    :daylight: GMT +08:30
+    :standard: کوریا سٹینڈرڈ ٹائم
+    :daylight: کوریا ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: شمالی کوریا وقت
+    :generic: کوریا سٹینڈرڈ ٹائم
   :SHORT:
-    :standard: GMT +8:30
-    :daylight: GMT +8:30
+    :standard: GMT +9
+    :daylight: GMT +9
   :SHORT_GENERIC:
     :generic: شمالی کوریا وقت
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT +3
   :SHORT_GENERIC:
     :generic: قطر وقت
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT +06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: کیزیلورڈا وقت
+    :generic: کوستانے وقت
   :LONG:
     :standard: مشرقی قزاخستان کا وقت
     :daylight: GMT +06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT +6
     :daylight: GMT +6
+  :SHORT_GENERIC:
+    :generic: کوستانے وقت
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT +05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: کیزیلورڈا وقت
+  :LONG:
+    :standard: مغربی قزاخستان کا وقت
+    :daylight: GMT +05:00
+  :LONG_GENERIC:
+    :generic: مغربی قزاخستان کا وقت
+  :SHORT:
+    :standard: GMT +5
+    :daylight: GMT +5
   :SHORT_GENERIC:
     :generic: کیزیلورڈا وقت
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: جاپان وقت
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: ٹامسک وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +07:00
+    :daylight: GMT +07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: ٹامسک وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +7
+    :daylight: GMT +7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: ٹامسک وقت
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: یولان بیتور سٹینڈرڈ ٹائم
     :daylight: یولان بیتور سمر ٹائم
   :LONG_GENERIC:
-    :generic: یولان بیتور ٹائم
+    :generic: یولان بیتور سٹینڈرڈ ٹائم
   :SHORT:
     :standard: GMT +8
-    :daylight: GMT +9
+    :daylight: GMT +8
   :SHORT_GENERIC:
     :generic: اولان باتار وقت
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: یولان بیتور سٹینڈرڈ ٹائم
     :daylight: یولان بیتور سمر ٹائم
   :LONG_GENERIC:
-    :generic: یولان بیتور ٹائم
+    :generic: یولان بیتور سٹینڈرڈ ٹائم
   :SHORT:
     :standard: GMT +8
-    :daylight: GMT +9
+    :daylight: GMT +8
   :SHORT_GENERIC:
     :generic: اولان باتار وقت
 Asia/Urumqi:
@@ -5838,7 +5856,7 @@ Asia/Ust-Nera:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Ust-Nera وقت
+    :generic: اوست-نیرا وقت
   :LONG:
     :standard: ولادی ووستک سٹینڈرڈ ٹائم
     :daylight: ولادی ووستک سمر ٹائم
@@ -5848,7 +5866,7 @@ Asia/Ust-Nera:
     :standard: GMT +10
     :daylight: GMT +10
   :SHORT_GENERIC:
-    :generic: Ust-Nera وقت
+    :generic: اوست-نیرا وقت
 Asia/Vientiane:
   :offset: 25200000
   :LONG_GMT:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: یکوتسک وقت
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: میانمار (برما) وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: میانمار ٹائم
+    :daylight: GMT +06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: میانمار ٹائم
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +6:30
+    :daylight: GMT +6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: میانمار (برما) وقت
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT -5
   :SHORT_GENERIC:
     :generic: ونّیپیگ وقت
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT -06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: ریجینا وقت
-  :LONG:
-    :standard: سنٹرل اسٹینڈرڈ ٹائم
-    :daylight: سنٹرل ڈے لائٹ ٹائم
-  :LONG_GENERIC:
-    :generic: سنٹرل اسٹینڈرڈ ٹائم
-  :SHORT:
-    :standard: GMT -6
-    :daylight: GMT -6
-  :SHORT_GENERIC:
-    :generic: ریجینا وقت
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: وہائٹ ہارس وقت
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -03:00
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: چلی وقت
   :LONG:
     :standard: چلی کا معیاری وقت
     :daylight: چلی کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: چلی کا معیاری وقت
+    :generic: چلی کا وقت
   :SHORT:
-    :standard: GMT -3
+    :standard: GMT -4
     :daylight: GMT -3
   :SHORT_GENERIC:
     :generic: چلی وقت
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT -05:00
+    :generic: GMT -06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ایسٹر وقت
   :LONG:
     :standard: ایسٹر آئلینڈ کا معیاری وقت
     :daylight: ایسٹر آئلینڈ کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: ایسٹر آئلینڈ کا معیاری وقت
+    :generic: ایسٹر آئلینڈ کا وقت
   :SHORT:
-    :standard: GMT -5
+    :standard: GMT -6
     :daylight: GMT -5
   :SHORT_GENERIC:
     :generic: ایسٹر وقت
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Astrakhan وقت
+    :generic: استراخان وقت
   :LONG:
     :standard: GMT +04:00
     :daylight: GMT +04:00
   :LONG_GENERIC:
-    :generic: Astrakhan وقت
+    :generic: استراخان وقت
   :SHORT:
     :standard: GMT +4
     :daylight: GMT +4
   :SHORT_GENERIC:
-    :generic: Astrakhan وقت
+    :generic: استراخان وقت
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7800,7 +7800,7 @@ Europe/Bucharest:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: رومانیا وقت
+    :generic: رومانیہ وقت
   :LONG:
     :standard: مشرقی یورپ کا معیاری وقت
     :daylight: مشرقی یورپ کا موسم گرما کا وقت
@@ -7810,7 +7810,7 @@ Europe/Bucharest:
     :standard: GMT +2
     :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: رومانیا وقت
+    :generic: رومانیہ وقت
 Europe/Budapest:
   :offset: 3600000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: آئل آف مین وقت
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT +02:00
+    :generic: GMT +03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: ترکی وقت
   :LONG:
-    :standard: مشرقی یورپ کا معیاری وقت
-    :daylight: مشرقی یورپ کا موسم گرما کا وقت
+    :standard: GMT +03:00
+    :daylight: GMT +03:00
   :LONG_GENERIC:
-    :generic: مشرقی یورپ کا وقت
+    :generic: ترکی وقت
   :SHORT:
-    :standard: GMT +2
+    :standard: GMT +3
     :daylight: GMT +3
   :SHORT_GENERIC:
     :generic: ترکی وقت
@@ -8016,7 +8016,7 @@ Europe/Kaliningrad:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: كالينينغراد وقت
+    :generic: کالينينغراد وقت
   :LONG:
     :standard: مشرقی یورپ کا معیاری وقت
     :daylight: مشرقی یورپ کا موسم گرما کا وقت
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: GMT +2
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: كالينينغراد وقت
+    :generic: کالينينغراد وقت
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: یوکرین وقت
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: کیروف وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +03:00
+    :daylight: GMT +03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: کیروف وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +3
+    :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: کیروف وقت
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8124,7 +8124,7 @@ Europe/Luxembourg:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: لگژمبرگ وقت
+    :generic: لکسمبرگ وقت
   :LONG:
     :standard: وسطی یورپ کا معیاری وقت
     :daylight: وسطی یورپ کا موسم گرما کا وقت
@@ -8134,7 +8134,7 @@ Europe/Luxembourg:
     :standard: GMT +1
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: لگژمبرگ وقت
+    :generic: لکسمبرگ وقت
 Europe/Madrid:
   :offset: 3600000
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: بیلاروس وقت
   :LONG:
-    :standard: بعید مشرقی یورپی وقت
-    :daylight: GMT +03:00
+    :standard: ماسکو اسٹینڈرڈ ٹائم
+    :daylight: ماسکو سمر ٹائم
   :LONG_GENERIC:
-    :generic: بعید مشرقی یورپی وقت
+    :generic: ماسکو اسٹینڈرڈ ٹائم
   :SHORT:
     :standard: GMT +3
     :daylight: GMT +3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: قبرص وقت
+    :generic: نکوسیا وقت
   :LONG:
     :standard: مشرقی یورپ کا معیاری وقت
     :daylight: مشرقی یورپ کا موسم گرما کا وقت
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT +2
     :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: قبرص وقت
+    :generic: نکوسیا وقت
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: چیک جمہوریہ وقت
+    :generic: چیکیا وقت
   :LONG:
     :standard: وسطی یورپ کا معیاری وقت
     :daylight: وسطی یورپ کا موسم گرما کا وقت
@@ -8332,7 +8332,7 @@ Europe/Prague:
     :standard: GMT +1
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: چیک جمہوریہ وقت
+    :generic: چیکیا وقت
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: بوسنیا اور ہرزیگووینا وقت
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT +04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: سیراٹو وقت
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +04:00
+    :daylight: GMT +04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: سیراٹو وقت
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT +4
+    :daylight: GMT +4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: سیراٹو وقت
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: مقدونیہ وقت
+    :generic: شمالی مقدونیہ وقت
   :LONG:
     :standard: وسطی یورپ کا معیاری وقت
     :daylight: وسطی یورپ کا موسم گرما کا وقت
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: GMT +1
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: مقدونیہ وقت
+    :generic: شمالی مقدونیہ وقت
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk وقت
+    :generic: الیانوسک وقت
   :LONG:
     :standard: GMT +04:00
     :daylight: GMT +04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsk وقت
+    :generic: الیانوسک وقت
   :SHORT:
     :standard: GMT +4
     :daylight: GMT +4
   :SHORT_GENERIC:
-    :generic: Ulyanovsk وقت
+    :generic: الیانوسک وقت
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8628,7 +8628,7 @@ Europe/Vatican:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: واٹیکن سٹی وقت
+    :generic: ویٹیکن سٹی وقت
   :LONG:
     :standard: وسطی یورپ کا معیاری وقت
     :daylight: وسطی یورپ کا موسم گرما کا وقت
@@ -8638,7 +8638,7 @@ Europe/Vatican:
     :standard: GMT +1
     :daylight: GMT +2
   :SHORT_GENERIC:
-    :generic: واٹیکن سٹی وقت
+    :generic: ویٹیکن سٹی وقت
 Europe/Vienna:
   :offset: 3600000
   :LONG_GMT:
@@ -8664,7 +8664,7 @@ Europe/Vilnius:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: لتھوانیا وقت
+    :generic: لیتھونیا وقت
   :LONG:
     :standard: مشرقی یورپ کا معیاری وقت
     :daylight: مشرقی یورپ کا موسم گرما کا وقت
@@ -8674,23 +8674,23 @@ Europe/Vilnius:
     :standard: GMT +2
     :daylight: GMT +3
   :SHORT_GENERIC:
-    :generic: لتھوانیا وقت
+    :generic: لیتھونیا وقت
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT +03:00
+    :generic: GMT +04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: وولگوگراد وقت
   :LONG:
-    :standard: ماسکو اسٹینڈرڈ ٹائم
-    :daylight: ماسکو سمر ٹائم
+    :standard: وولگوگراد اسٹینڈرڈ ٹائم
+    :daylight: وولگوگراد سمر ٹائم
   :LONG_GENERIC:
-    :generic: ماسکو اسٹینڈرڈ ٹائم
+    :generic: وولگوگراد اسٹینڈرڈ ٹائم
   :SHORT:
-    :standard: GMT +3
-    :daylight: GMT +3
+    :standard: GMT +4
+    :daylight: GMT +4
   :SHORT_GENERIC:
     :generic: وولگوگراد وقت
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: گرین وچ کا اصل وقت
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: گرین وچ کا اصل وقت
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8988,7 +8988,7 @@ Indian/Chagos:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: برطانوی ہندوستانی سمندری خطہ وقت
+    :generic: برطانوی بحر ہند کا علاقہ وقت
   :LONG:
     :standard: بحر ہند ٹائم
     :daylight: GMT +06:00
@@ -8998,7 +8998,7 @@ Indian/Chagos:
     :standard: GMT +6
     :daylight: GMT +6
   :SHORT_GENERIC:
-    :generic: برطانوی ہندوستانی سمندری خطہ وقت
+    :generic: برطانوی بحر ہند کا علاقہ وقت
 Indian/Christmas:
   :offset: 25200000
   :LONG_GMT:
@@ -9006,7 +9006,7 @@ Indian/Christmas:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: کرسمس آئلینڈ وقت
+    :generic: جزیرہ کرسمس وقت
   :LONG:
     :standard: کرسمس آئلینڈ ٹائم
     :daylight: GMT +07:00
@@ -9016,7 +9016,7 @@ Indian/Christmas:
     :standard: GMT +7
     :daylight: GMT +7
   :SHORT_GENERIC:
-    :generic: کرسمس آئلینڈ وقت
+    :generic: جزیرہ کرسمس وقت
 Indian/Cocos:
   :offset: 23400000
   :LONG_GMT:
@@ -9384,7 +9384,7 @@ NZ:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
   :LONG:
     :standard: نیوزی لینڈ کا معیاری وقت
     :daylight: نیوزی لینڈ ڈے لائٹ ٹائم
@@ -9394,7 +9394,7 @@ NZ:
     :standard: GMT +12
     :daylight: GMT +13
   :SHORT_GENERIC:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
 NZ-CHAT:
   :offset: 45900000
   :LONG_GMT:
@@ -9492,7 +9492,7 @@ Pacific/Auckland:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
   :LONG:
     :standard: نیوزی لینڈ کا معیاری وقت
     :daylight: نیوزی لینڈ ڈے لائٹ ٹائم
@@ -9502,7 +9502,7 @@ Pacific/Auckland:
     :standard: GMT +12
     :daylight: GMT +13
   :SHORT_GENERIC:
-    :generic: نیوزی ینڈ وقت
+    :generic: نیوزی لینڈ وقت
 Pacific/Bougainville:
   :offset: 39600000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: چیوک وقت
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT -05:00
+    :generic: GMT -06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: ایسٹر وقت
   :LONG:
     :standard: ایسٹر آئلینڈ کا معیاری وقت
     :daylight: ایسٹر آئلینڈ کا موسم گرما کا وقت
   :LONG_GENERIC:
-    :generic: ایسٹر آئلینڈ کا معیاری وقت
+    :generic: ایسٹر آئلینڈ کا وقت
   :SHORT:
-    :standard: GMT -5
+    :standard: GMT -6
     :daylight: GMT -5
   :SHORT_GENERIC:
     :generic: ایسٹر وقت
@@ -9726,7 +9726,7 @@ Pacific/Guam:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: گوآم وقت
+    :generic: گوام وقت
   :LONG:
     :standard: چامورو سٹینڈرڈ ٹائم
     :daylight: GMT +10:00
@@ -9736,7 +9736,7 @@ Pacific/Guam:
     :standard: GMT +10
     :daylight: GMT +10
   :SHORT_GENERIC:
-    :generic: گوآم وقت
+    :generic: گوام وقت
 Pacific/Honolulu:
   :offset: -36000000
   :LONG_GMT:
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: سنگاپور وقت
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT +02:00
+    :generic: GMT +03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: ترکی وقت
   :LONG:
-    :standard: مشرقی یورپ کا معیاری وقت
-    :daylight: مشرقی یورپ کا موسم گرما کا وقت
+    :standard: GMT +03:00
+    :daylight: GMT +03:00
   :LONG_GENERIC:
-    :generic: مشرقی یورپ کا وقت
+    :generic: ترکی وقت
   :SHORT:
-    :standard: GMT +2
+    :standard: GMT +3
     :daylight: GMT +3
   :SHORT_GENERIC:
     :generic: ترکی وقت
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: ہوائی الیوٹیئن اسٹینڈرڈ ٹائم
     :daylight: ہوائی الیوٹیئن ڈے لائٹ ٹائم
   :LONG_GENERIC:
-    :generic: ہوائی الیوٹیئن ٹائم (اداک)
+    :generic: ہوائی الیوٹیئن ٹائم
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: کوآرڈینیٹڈ یونیورسل ٹائم
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

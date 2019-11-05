@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Collation
-
-describe Collator do
+describe TwitterCldr::Collation::Collator do
 
   let(:trie) { TwitterCldr::Utils::Trie.new }
 
@@ -17,19 +15,19 @@ describe Collator do
   describe '.default_trie' do
     before(:each) do
       clear_default_trie_cache
-      expect(TrieLoader).to receive(:load_default_trie).and_return(trie)
+      expect(TwitterCldr::Collation::TrieLoader).to receive(:load_default_trie).and_return(trie)
     end
 
     it 'returns default fractional collation elements trie' do
-      expect(Collator.default_trie).to eq(trie)
+      expect(described_class.default_trie).to eq(trie)
     end
 
     it 'loads the trie only once' do
-      expect(Collator.default_trie.object_id).to eq(Collator.default_trie.object_id)
+      expect(described_class.default_trie.object_id).to eq(described_class.default_trie.object_id)
     end
 
     it 'locks the trie' do
-      expect(Collator.default_trie).to be_locked
+      expect(described_class.default_trie).to be_locked
     end
   end
 
@@ -38,31 +36,31 @@ describe Collator do
 
     before(:each) do
       clear_tailored_tries_cache
-      allow(Collator).to receive(:default_trie).and_return(trie)
-      expect(TrieLoader).to(
+      allow(described_class).to receive(:default_trie).and_return(trie)
+      expect(TwitterCldr::Collation::TrieLoader).to(
         receive(:load_tailored_trie)
-          .with(locale, Collator.default_trie)
+          .with(locale, described_class.default_trie)
           .and_return(trie)
       )
     end
 
     it 'returns default fractional collation elements trie' do
-      expect(Collator.tailored_trie(locale)).to eq(trie)
+      expect(described_class.tailored_trie(locale)).to eq(trie)
     end
 
     it 'loads the trie only once' do
-      expect(Collator.tailored_trie(locale).object_id).to eq(Collator.tailored_trie(locale).object_id)
+      expect(described_class.tailored_trie(locale).object_id).to eq(described_class.tailored_trie(locale).object_id)
     end
 
     it 'locks the trie' do
-      expect(Collator.tailored_trie(locale)).to be_locked
+      expect(described_class.tailored_trie(locale)).to be_locked
     end
   end
 
   describe '#initialize' do
     before :each do
-      allow(Collator).to receive(:new) do |*args|
-        Collator.allocate.tap do |c|
+      allow(described_class).to receive(:new) do |*args|
+        described_class.allocate.tap do |c|
           allow(c).to receive(:load_trie).and_return(trie)
           c.send(:initialize, *args)
         end
@@ -71,23 +69,23 @@ describe Collator do
 
     context 'without locale' do
       it 'initializes default collator' do
-        expect(Collator.new.locale).to be_nil
+        expect(described_class.new.locale).to be_nil
       end
     end
 
     context 'with locale' do
       it 'initialized tailored collator with provided locale' do
-        expect(Collator.new(:ru).locale).to eq(:ru)
+        expect(described_class.new(:ru).locale).to eq(:ru)
       end
 
       it 'converts locale' do
-        expect(Collator.new(:no).locale).to eq(:nb)
+        expect(described_class.new(:no).locale).to eq(:nb)
       end
     end
   end
 
   describe '#get_collation_elements' do
-    let(:collator)           { Collator.new }
+    let(:collator)           { described_class.new }
     let(:string)             { 'abc' }
     let(:code_points)        { [0x61, 0x62, 0x63] }
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
@@ -111,21 +109,21 @@ describe Collator do
 
       it 'raises a specific error if passed invalid unicode characters' do
         expect { collator.get_collation_elements(string) }.to(
-          raise_error(UnexpectedCodePointError)
+          raise_error(TwitterCldr::Collation::UnexpectedCodePointError)
         )
       end
     end
   end
 
   describe '#get_sort_key' do
-    let(:collator)           { Collator.new }
+    let(:collator)           { described_class.new }
     let(:string)             { 'abc' }
     let(:code_points)        { [0x61, 0x62, 0x63] }
     let(:collation_elements) { [[39, 5, 5], [41, 5, 5], [43, 5, 5]] }
     let(:sort_key)           { [39, 41, 43, 1, 7, 1, 7] }
 
     context 'with a loaded trie' do
-      before(:each) { expect(TrieLoader).to receive(:load_default_trie).and_return(trie) }
+      before(:each) { expect(TwitterCldr::Collation::TrieLoader).to receive(:load_default_trie).and_return(trie) }
 
       describe 'calculating sort key' do
         before(:each) do
@@ -156,7 +154,7 @@ describe Collator do
           expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
           expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
 
-          collator = Collator.new(locale)
+          collator = described_class.new(locale)
 
           expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
           expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: nil).and_return(sort_key)
@@ -168,7 +166,7 @@ describe Collator do
           expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
           expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
 
-          collator = Collator.new(locale)
+          collator = described_class.new(locale)
 
           expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
           expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: maximum_level).and_return(sort_key)
@@ -183,18 +181,18 @@ describe Collator do
 
       it 'raises a specific error if passed invalid unicode characters' do
         expect { collator.get_sort_key(string) }.to(
-          raise_error(UnexpectedCodePointError)
+          raise_error(TwitterCldr::Collation::UnexpectedCodePointError)
         )
       end
     end
   end
 
   describe '#compare' do
-    let(:collator)         { Collator.new }
+    let(:collator)         { described_class.new }
     let(:sort_key)         { [1, 3, 8, 9] }
     let(:another_sort_key) { [6, 8, 9, 2] }
 
-    before(:each) { allow(Collator).to receive(:default_trie).and_return(trie) }
+    before(:each) { allow(described_class).to receive(:default_trie).and_return(trie) }
 
     it 'compares strings by sort keys' do
       stub_sort_key(collator, 'foo', sort_key)
@@ -212,13 +210,13 @@ describe Collator do
   end
 
   describe 'sorting' do
-    let(:collator)  { Collator.new }
+    let(:collator)  { described_class.new }
     let(:sort_keys) { [['aaa', [1, 2, 3]], ['abc', [1, 3, 4]], ['bca', [2, 5, 9]]] }
     let(:array)     { %w[bca aaa abc] }
     let(:sorted)    { %w[aaa abc bca] }
 
     before :each do
-      allow(Collator).to receive(:default_trie).and_return(trie)
+      allow(described_class).to receive(:default_trie).and_return(trie)
       sort_keys.each { |s, key| mock_sort_key(collator, s, key) }
     end
 
@@ -250,19 +248,19 @@ describe Collator do
 
       expect(File).to(
         receive(:open)
-          .with(TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
+          .with(TwitterCldr::Collation::TrieBuilder::FRACTIONAL_UCA_SHORT_PATH, 'r')
           .and_yield(fractional_uca_short_stub)
       )
 
-      expect(TrieLoader).to receive(:load_default_trie) { TrieBuilder.load_default_trie }
-      expect(TrieLoader).to receive(:load_tailored_trie) { |*args| TrieBuilder.load_tailored_trie(*args) }
+      expect(TwitterCldr::Collation::TrieLoader).to receive(:load_default_trie) { TwitterCldr::Collation::TrieBuilder.load_default_trie }
+      expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie) { |*args| TwitterCldr::Collation::TrieBuilder.load_tailored_trie(*args) }
 
       allow(TwitterCldr::Normalization).to receive(:normalize_code_points) { |code_points| code_points }
     end
 
     let(:locale)            { :some_locale }
-    let(:default_collator)  { Collator.new }
-    let(:tailored_collator) { Collator.new(locale) }
+    let(:default_collator)  { described_class.new }
+    let(:tailored_collator) { described_class.new(locale) }
 
     describe 'tailoring rules support' do
       it 'tailored collation elements are used' do
@@ -343,11 +341,11 @@ END
   end
 
   def clear_default_trie_cache
-    Collator.instance_variable_set(:@default_trie, nil)
+    described_class.instance_variable_set(:@default_trie, nil)
   end
 
   def clear_tailored_tries_cache
-    Collator.instance_variable_set(:@tailored_tries_cache, nil)
+    described_class.instance_variable_set(:@tailored_tries_cache, nil)
   end
 
 end

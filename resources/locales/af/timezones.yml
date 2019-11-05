@@ -1,22 +1,15 @@
 --- 
 :af: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0}-dagligtyd"
-      :generic: "{0}-tyd"
-      :standard: "{0}-standaardtyd"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0}-standaardtyd"
   :metazones: 
     :Afghanistan: 
       :long: 
-        :standard: Afghanistan-tyd
+        :standard: Afganistan-tyd
     :Africa_Central: 
       :long: 
         :standard: Sentraal-Afrika-tyd
@@ -53,19 +46,19 @@
         :standard: Amasone-standaardtyd
     :America_Central: 
       :long: 
-        :daylight: "Sentrale dagligtyd"
-        :generic: "Sentrale tyd"
-        :standard: "Sentrale standaardtyd"
+        :daylight: "Noord-Amerikaanse sentrale dagligtyd"
+        :generic: "Noord-Amerikaanse sentrale tyd"
+        :standard: "Noord-Amerikaanse sentrale standaardtyd"
     :America_Eastern: 
       :long: 
-        :daylight: "Oostelike dagligtyd"
-        :generic: "Oostelike tyd"
-        :standard: "Oostelike standaardtyd"
+        :daylight: "Noord-Amerikaanse oostelike dagligtyd"
+        :generic: "Noord-Amerikaanse oostelike tyd"
+        :standard: "Noord-Amerikaanse oostelike standaardtyd"
     :America_Mountain: 
       :long: 
-        :daylight: Berg-dagligtyd
-        :generic: Bergtyd
-        :standard: Berg-standaardtyd
+        :daylight: "Noord-Amerikaanse berg-dagligtyd"
+        :generic: "Noord-Amerikaanse bergtyd"
+        :standard: "Noord-Amerikaanse berg-standaardtyd"
     :America_Pacific: 
       :long: 
         :daylight: "Pasifiese dagligtyd"
@@ -108,24 +101,24 @@
         :standard: "Atlantiese standaardtyd"
     :Australia_Central: 
       :long: 
-        :daylight: "Australiese sentrale dagligtyd"
-        :generic: Sentraal-Australië-tyd
-        :standard: "Australiese sentraal-standaardtyd"
+        :daylight: "Sentraal-Australiese dagligtyd"
+        :generic: "Sentraal-Australiese tyd"
+        :standard: "Sentraal-Australiese standaardtyd"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Australiese sentraal-Westelike dagligtyd"
-        :generic: "Australiese sentraal-Westelike tyd"
-        :standard: "Australiese sentraal-Westelike standaard-tyd"
+        :daylight: "Sentraal-westelike Australiese dagligtyd"
+        :generic: "Sentraal-westelike Australiese tyd"
+        :standard: "Sentraal-westelike Australiese standaard-tyd"
     :Australia_Eastern: 
       :long: 
-        :daylight: "Australiese Oostelike dagligtyd"
+        :daylight: "Oostelike Australiese dagligtyd"
         :generic: "Oostelike Australiese tyd"
-        :standard: "Australiese Oostelike standaardtyd"
+        :standard: "Oostelike Australiese standaardtyd"
     :Australia_Western: 
       :long: 
-        :daylight: "Australiese Westelike dagligtyd"
-        :generic: "Westelike Australië-tyd"
-        :standard: "Australiese Westelike standaardtyd"
+        :daylight: "Westelike Australiese dagligtyd"
+        :generic: "Westelike Australiese tyd"
+        :standard: "Westelike Australiese standaardtyd"
     :Azerbaijan: 
       :long: 
         :daylight: Aserbeidjan-somertyd
@@ -149,9 +142,9 @@
         :standard: Bolivia-tyd
     :Brasilia: 
       :long: 
-        :daylight: "Brasilië somertyd"
-        :generic: Brasilië-tyd
-        :standard: Brasilië-standaardtyd
+        :daylight: Brasilia-somertyd
+        :generic: Brasilia-tyd
+        :standard: Brasilia-standaardtyd
     :Brunei: 
       :long: 
         :standard: "Broenei Darussalam-tyd"
@@ -185,10 +178,10 @@
         :standard: Choibalsan-standaardtyd
     :Christmas: 
       :long: 
-        :standard: Kersfeeseiland-tyd
+        :standard: Christmaseiland-tyd
     :Cocos: 
       :long: 
-        :standard: Cocoseilande-tyd
+        :standard: Kokoseilande-tyd
     :Colombia: 
       :long: 
         :daylight: Colombië-somertyd
@@ -233,7 +226,7 @@
         :standard: "Oos-Europese standaardtyd"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "Verder-oosterse Europese Tyd"
+        :standard: "Verder-oos-Europese tyd"
     :Europe_Western: 
       :long: 
         :daylight: "Wes-Europese somertyd"
@@ -257,7 +250,7 @@
         :standard: "Franse Suider- en Antarktiese tyd"
     :GMT: 
       :long: 
-        :standard: Greenwich-mediaantyd
+        :standard: Greenwich-tyd
     :Galapagos: 
       :long: 
         :standard: Galapagos-tyd
@@ -284,15 +277,15 @@
         :standard: Wes-Groenland-standaardtyd
     :Gulf: 
       :long: 
-        :standard: Golf-standaardtyd
+        :standard: "Persiese Golf-standaardtyd"
     :Guyana: 
       :long: 
         :standard: Guyana-tyd
     :Hawaii_Aleutian: 
       :long: 
-        :daylight: Hawaii-Aleusiër-dagligtyd
-        :generic: Hawaii-Aleusiër-tyd
-        :standard: Hawaii-Aleusiër-standaardtyd
+        :daylight: Hawaii-Aleoete-dagligtyd
+        :generic: Hawaii-Aleoete-tyd
+        :standard: Hawaii-Aleoete-standaardtyd
     :Hong_Kong: 
       :long: 
         :daylight: Hongkong-somertyd
@@ -314,7 +307,7 @@
         :standard: Indosjina-tyd
     :Indonesia_Central: 
       :long: 
-        :standard: "Sentraal Indonesië-tyd"
+        :standard: "Sentraal-Indonesiese tyd"
     :Indonesia_Eastern: 
       :long: 
         :standard: Oos-Indonesië-tyd
@@ -416,9 +409,9 @@
         :standard: "Meksikaanse Pasifiese standaardtyd"
     :Mongolia: 
       :long: 
-        :daylight: Ulaanbatar-somertyd
-        :generic: Ulaanbatar-tyd
-        :standard: Ulaanbatar-standaardtyd
+        :daylight: Ulaanbaatar-somertyd
+        :generic: Ulaanbaatar-tyd
+        :standard: Ulaanbaatar-standaardtyd
     :Moscow: 
       :long: 
         :daylight: Moskou-somertyd
@@ -453,7 +446,7 @@
         :standard: Niue-tyd
     :Norfolk: 
       :long: 
-        :standard: Norfolkeilande-tyd
+        :standard: Norfolkeiland-tyd
     :Noronha: 
       :long: 
         :daylight: "Fernando de Noronha-somertyd"
@@ -509,9 +502,12 @@
     :Ponape: 
       :long: 
         :standard: Ponape-tyd
+    :Pyongyang: 
+      :long: 
+        :standard: Pyongyang-tyd
     :Reunion: 
       :long: 
-        :standard: Reunion-tyd
+        :standard: Réunion-tyd
     :Rothera: 
       :long: 
         :standard: Rothera-tyd
@@ -538,7 +534,7 @@
         :standard: Singapoer-standaardtyd
     :Solomon: 
       :long: 
-        :standard: Solomoneilande-tyd
+        :standard: Salomonseilande-tyd
     :South_Georgia: 
       :long: 
         :standard: Suid-Georgië-tyd
@@ -598,17 +594,17 @@
         :standard: Venezuela-tyd
     :Vladivostok: 
       :long: 
-        :daylight: Vladivostok-somertyd
-        :generic: Vladivostok-tyd
-        :standard: Vladivostok-standaardtyd
+        :daylight: Wladiwostok-somertyd
+        :generic: Wladiwostok-tyd
+        :standard: Wladiwostok-standaardtyd
     :Volgograd: 
       :long: 
-        :daylight: Volgograd-somertyd
-        :generic: Volgograd-tyd
-        :standard: Volgograd-standaardtyd
+        :daylight: Wolgograd-somertyd
+        :generic: Wolgograd-tyd
+        :standard: Wolgograd-standaardtyd
     :Vostok: 
       :long: 
-        :standard: Vostok-tyd
+        :standard: Wostok-tyd
     :Wake: 
       :long: 
         :standard: Wake-eiland-tyd
@@ -826,6 +822,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -937,11 +935,11 @@
     :America/Noronha: 
       :city: Noronha
     :America/North_Dakota/Beulah: 
-      :city: "Beulah, North Dakota"
+      :city: "Beulah, Noord-Dakota"
     :America/North_Dakota/Center: 
-      :city: "Center, North Dakota"
+      :city: "Center, Noord-Dakota"
     :America/North_Dakota/New_Salem: 
-      :city: "New Salem, North Dakota"
+      :city: "New Salem, Noord-Dakota"
     :America/Ojinaga: 
       :city: Ojinaga
     :America/Panama: 
@@ -960,8 +958,10 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
-      :city: "Rainy River"
+      :city: Rainyrivier
     :America/Rankin_Inlet: 
       :city: "Rankin Inlet"
     :America/Recife: 
@@ -1043,7 +1043,7 @@
     :Antarctica/Troll: 
       :city: Troll
     :Antarctica/Vostok: 
-      :city: Vostok
+      :city: Wostok
     :Arctic/Longyearbyen: 
       :city: Longyearbyen
     :Asia/Aden: 
@@ -1060,6 +1060,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Asjchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1068,6 +1070,8 @@
       :city: Bakoe
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beiroet
     :Asia/Bishkek: 
@@ -1089,9 +1093,11 @@
     :Asia/Dili: 
       :city: Dili
     :Asia/Dubai: 
-      :city: Dubai
+      :city: Doebai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1103,15 +1109,15 @@
     :Asia/Irkutsk: 
       :city: Irkutsk
     :Asia/Jakarta: 
-      :city: Jakarta
+      :city: Djakarta
     :Asia/Jayapura: 
       :city: Jayapura
     :Asia/Jerusalem: 
       :city: Jerusalem
     :Asia/Kabul: 
-      :city: Kabul
+      :city: Kaboel
     :Asia/Kamchatka: 
-      :city: Kamchatka
+      :city: Kamtsjatka
     :Asia/Karachi: 
       :city: Karatsji
     :Asia/Katmandu: 
@@ -1119,9 +1125,9 @@
     :Asia/Khandyga: 
       :city: Khandyga
     :Asia/Krasnoyarsk: 
-      :city: Krasnoyarsk
+      :city: Krasnojarsk
     :Asia/Kuala_Lumpur: 
-      :city: "Kuala Lumpur"
+      :city: Koeala-Loempoer
     :Asia/Kuching: 
       :city: Kuching
     :Asia/Kuwait: 
@@ -1145,7 +1151,7 @@
     :Asia/Omsk: 
       :city: Omsk
     :Asia/Oral: 
-      :city: Oeral
+      :city: Oral
     :Asia/Phnom_Penh: 
       :city: "Phnom Penh"
     :Asia/Pontianak: 
@@ -1157,7 +1163,7 @@
     :Asia/Qyzylorda: 
       :city: Qyzylorda
     :Asia/Rangoon: 
-      :city: Rangoen
+      :city: Yangon
     :Asia/Riyadh: 
       :city: Riaad
     :Asia/Saigon: 
@@ -1185,9 +1191,11 @@
     :Asia/Thimphu: 
       :city: Thimphu
     :Asia/Tokyo: 
-      :city: Tokyo
+      :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
-      :city: Ulaanbatar
+      :city: Ulaanbaatar
     :Asia/Urumqi: 
       :city: Urumqi
     :Asia/Ust-Nera: 
@@ -1195,7 +1203,7 @@
     :Asia/Vientiane: 
       :city: Vientiane
     :Asia/Vladivostok: 
-      :city: Vladivostok
+      :city: Wladiwostok
     :Asia/Yakutsk: 
       :city: Jakoetsk
     :Asia/Yekaterinburg: 
@@ -1219,7 +1227,7 @@
     :Atlantic/South_Georgia: 
       :city: Suid-Georgië
     :Atlantic/St_Helena: 
-      :city: "St. Helena"
+      :city: "Sint Helena"
     :Atlantic/Stanley: 
       :city: Stanley
     :Australia/Adelaide: 
@@ -1246,12 +1254,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Gekoördineerde universele tyd"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Onbekende stad"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athene
     :Europe/Belgrade: 
@@ -1292,6 +1307,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiëf
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1332,6 +1349,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratof
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1344,6 +1363,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Uzhgorod
     :Europe/Vaduz: 
@@ -1355,7 +1376,7 @@
     :Europe/Vilnius: 
       :city: Vilnius
     :Europe/Volgograd: 
-      :city: Volgograd
+      :city: Wolgograd
     :Europe/Warsaw: 
       :city: Warskou
     :Europe/Zagreb: 
@@ -1369,7 +1390,7 @@
     :Indian/Chagos: 
       :city: Chagos
     :Indian/Christmas: 
-      :city: Kers
+      :city: Christmas
     :Indian/Cocos: 
       :city: Kokos
     :Indian/Comoro: 
@@ -1463,4 +1484,4 @@
     :Pacific/Wake: 
       :city: Wake
     :Pacific/Wallis: 
-      :city: Wallis
+      :city: Mata-Utu

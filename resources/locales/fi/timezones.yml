@@ -1,18 +1,11 @@
 --- 
 :fi: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "UTC{0}"
-    :gmt_zero_format: 
-      :generic: UTC
-    :hour_format: 
-      :generic: +H.mm;-H.mm
-    :region_format: 
-      :daylight: "{0} (kesäaika)"
-      :generic: "aikavyöhyke: {0}"
-      :standard: "{0} (normaaliaika)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "UTC{0}"
+    :gmt_zero_format: UTC
+    :hour_format: +H.mm;-H.mm
+    :region_format: "{0} (normaaliaika)"
   :metazones: 
     :Acre: 
       :long: 
@@ -222,7 +215,7 @@
         :standard: "Davisin aika"
     :DumontDUrville: 
       :long: 
-        :standard: "Dumont-d’Urvillen aika"
+        :standard: "Dumont d’Urvillen aika"
     :East_Timor: 
       :long: 
         :standard: "Itä-Timorin aika"
@@ -276,7 +269,7 @@
         :standard: "Galápagossaarten aika"
     :Gambier: 
       :long: 
-        :standard: "Gambierin aika"
+        :standard: "Gambiersaarten aika"
     :Georgia: 
       :long: 
         :daylight: "Georgian kesäaika"
@@ -416,7 +409,7 @@
         :standard: "Malediivien aika"
     :Marquesas: 
       :long: 
-        :standard: "Marquesasin aika"
+        :standard: "Marquesassaarten aika"
     :Marshall_Islands: 
       :long: 
         :standard: "Marshallinsaarten aika"
@@ -477,7 +470,7 @@
         :standard: "Niuen aika"
     :Norfolk: 
       :long: 
-        :standard: "Norfolkinsaarten aika"
+        :standard: "Norfolkinsaaren aika"
     :Noronha: 
       :long: 
         :daylight: "Fernando de Noronhan kesäaika"
@@ -536,6 +529,9 @@
     :Ponape: 
       :long: 
         :standard: "Pohnpein aika"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pjongjangin aika"
     :Qyzylorda: 
       :long: 
         :daylight: "Qızılordan kesäaika"
@@ -576,7 +572,7 @@
         :standard: "Etelä-Georgian aika"
     :Suriname: 
       :long: 
-        :standard: "Surinamin aika"
+        :standard: "Surinamen aika"
     :Syowa: 
       :long: 
         :standard: "Syowan aika"
@@ -858,6 +854,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -992,6 +990,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1092,6 +1092,8 @@
       :city: Aqtöbe
     :Asia/Ashgabat: 
       :city: Ašgabat
+    :Asia/Atyrau: 
+      :city: Atıraw
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1100,6 +1102,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1124,6 +1128,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1167,7 +1173,7 @@
     :Asia/Manila: 
       :city: Manila
     :Asia/Muscat: 
-      :city: Muscat
+      :city: Masqat
     :Asia/Nicosia: 
       :city: Nikosia
     :Asia/Novokuznetsk: 
@@ -1218,6 +1224,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: "Ulan Bator"
     :Asia/Urumqi: 
@@ -1278,12 +1286,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: UTC-yleisaika
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: tuntematon
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrahan
     :Europe/Athens: 
       :city: Ateena
     :Europe/Belgrade: 
@@ -1299,7 +1314,7 @@
     :Europe/Budapest: 
       :city: Budapest
     :Europe/Busingen: 
-      :city: Busingen
+      :city: Büsingen
     :Europe/Chisinau: 
       :city: Chişinău
     :Europe/Copenhagen: 
@@ -1324,6 +1339,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiova
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1364,6 +1381,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1376,6 +1395,8 @@
       :city: Tallinna
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Užgorod
     :Europe/Vaduz: 
@@ -1461,7 +1482,7 @@
     :Pacific/Marquesas: 
       :city: Marquesassaaret
     :Pacific/Midway: 
-      :city: Midway
+      :city: Midwaysaaret
     :Pacific/Nauru: 
       :city: Nauru
     :Pacific/Niue: 

@@ -3,9 +3,14 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
-        :EHm: "E H:mm"
-        :EHms: "E H:mm:ss"
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
+        :EHm: "E HH:mm"
+        :EHms: "E HH:mm:ss"
         :Ed: "E d"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
@@ -19,14 +24,15 @@
         :H: HH
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
-        :Hmsv: "H:mm:ss v"
-        :Hmsvvvv: "H:mm:ss (vvvv)"
-        :Hmv: "H:mm v"
+        :Hmsv: "HH:mm:ss v"
+        :Hmsvvvv: "HH:mm:ss (vvvv)"
+        :Hmv: "HH:mm v"
         :M: L
         :MEd: "E, d/M"
         :MMM: LLL
         :MMMEd: "E d 'de' MMM"
         :MMMMEd: "E, d 'de' MMMM"
+        :MMMMW: "'semana' W 'de' MMMM"
         :MMMMd: "d 'de' MMMM"
         :MMMd: "d MMM"
         :MMMdd: dd-MMM
@@ -44,7 +50,7 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M/y
-        :yMEd: "E d/M/y"
+        :yMEd: "E, d/M/y"
         :yMM: MM/y
         :yMMM: "MMMM 'de' y"
         :yMMMEd: "EEE, d 'de' MMMM 'de' y"
@@ -55,6 +61,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ 'de' y"
+        :yw: "'semana' w 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -74,13 +81,13 @@
             :tue: M
             :wed: M
           :short: 
-            :fri: vi
-            :mon: lu
-            :sat: sá
-            :sun: do
-            :thu: ju
-            :tue: ma
-            :wed: mi
+            :fri: VI
+            :mon: LU
+            :sat: SA
+            :sun: DO
+            :thu: JU
+            :tue: MA
+            :wed: MI
           :wide: 
             :fri: viernes
             :mon: lunes
@@ -135,8 +142,15 @@
         :day: día
         :day-narrow: d
         :day-short: d
-        :dayperiod: a.m./p.m.
+        :dayOfYear: "día del año"
+        :dayOfYear-narrow: "día del a"
+        :dayOfYear-short: "día del a"
+        :dayperiod: a. m./p. m.
+        :dayperiod-narrow: a. m./p. m.
+        :dayperiod-short: a. m./p. m.
         :era: era
+        :era-narrow: era
+        :era-short: era
         :hour: hora
         :hour-narrow: h
         :hour-short: h
@@ -155,11 +169,21 @@
         :week: semana
         :week-narrow: sem.
         :week-short: sem.
+        :weekOfMonth: "semana del mes"
+        :weekOfMonth-narrow: "sem. de m"
+        :weekOfMonth-short: "sem. de m"
         :weekday: "día de la semana"
+        :weekday-narrow: "día de sem."
+        :weekday-short: "día de sem."
+        :weekdayOfMonth: "día hábil del mes"
+        :weekdayOfMonth-narrow: "día hábil del mes"
+        :weekdayOfMonth-short: "día hábil del mes"
         :year: año
         :year-narrow: a
         :year-short: a
-        :zone: "Zona horaria"
+        :zone: "zona horaria"
+        :zone-narrow: zona
+        :zone-short: zona
       :formats: 
         :date: 
           :full: 
@@ -167,7 +191,7 @@
           :long: 
             :pattern: "d 'de' MMMM 'de' y"
           :medium: 
-            :pattern: dd/MM/y
+            :pattern: "d MMM y"
           :short: 
             :pattern: dd/MM/yy
         :datetime: 
@@ -181,41 +205,41 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "H:mm:ss zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "H:mm:ss z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "H:mm:ss"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "H:mm"
       :months: 
         :format: 
           :abbreviated: 
-            1: ene
-            10: oct
-            11: nov
-            12: dic
-            2: feb
-            3: mar
-            4: abr
-            5: may
-            6: jun
-            7: jul
-            8: ago
-            9: sep
+            1: ene.
+            10: oct.
+            11: nov.
+            12: dic.
+            2: feb.
+            3: mar.
+            4: abr.
+            5: may.
+            6: jun.
+            7: jul.
+            8: ago.
+            9: sep.
           :narrow: 
-            1: e
-            10: o
-            11: "n"
-            12: d
-            2: f
-            3: m
-            4: a
-            5: m
-            6: j
-            7: j
-            8: a
-            9: s
+            1: E
+            10: O
+            11: "N"
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           :wide: 
             1: enero
             10: octubre
@@ -244,18 +268,18 @@
             8: ago.
             9: sep.
           :narrow: 
-            1: e
-            10: o
-            11: "n"
-            12: d
-            2: f
-            3: m
-            4: a
-            5: m
-            6: j
-            7: j
-            8: a
-            9: s
+            1: E
+            10: O
+            11: "N"
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           :wide: 
             1: enero
             10: octubre
@@ -272,54 +296,54 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: a.m.
+            :am: a. m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p.m.
+            :pm: p. m.
           :narrow: 
-            :am: "a. m."
-            :evening1: tarde
-            :morning1: madrugada
+            :am: a. m.
+            :evening1: "de la tarde"
+            :morning1: "de la madrugada"
             :morning2: mañana
-            :night1: noche
-            :noon: m.
-            :pm: "p. m."
+            :night1: "de la noche"
+            :noon: "del mediodía"
+            :pm: p. m.
           :wide: 
-            :am: a.m.
+            :am: a. m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p.m.
+            :pm: p. m.
         :stand-alone: 
           :abbreviated: 
-            :am: a.m.
+            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p.m.
+            :pm: p. m.
           :narrow: 
-            :am: a.m.
+            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p.m.
+            :pm: p. m.
           :wide: 
-            :am: a.m.
+            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p.m.
+            :pm: p. m.
       :quarters: 
         :format: 
           :abbreviated: 
@@ -333,10 +357,10 @@
             3: 3T
             4: 4T
           :wide: 
-            1: "1er. trimestre"
+            1: "1.er trimestre"
             2: "2º. trimestre"
-            3: "3er. trimestre"
-            4: "4º trimestre"
+            3: "3.er trimestre"
+            4: "4o. trimestre"
         :stand-alone: 
           :abbreviated: 
             1: "1er. trim."
@@ -349,7 +373,7 @@
             3: 3T
             4: 4T
           :wide: 
-            1: "1er. trimestre"
+            1: "1.er trimestre"
             2: "2º. trimestre"
-            3: "3er. trimestre"
+            3: "3.er trimestre"
             4: "4º trimestre"

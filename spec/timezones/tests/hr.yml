@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Alžir)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egipat)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Maroko
   :LONG:
-    :standard: zapadnoeuropsko standardno vrijeme
-    :daylight: zapadnoeuropsko ljetno vrijeme
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: zapadnoeuropsko vrijeme
+    :generic: Maroko
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Maroko
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Zapadna Sahara
   :LONG:
-    :standard: zapadnoeuropsko standardno vrijeme
-    :daylight: zapadnoeuropsko ljetno vrijeme
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: zapadnoeuropsko vrijeme
+    :generic: Zapadna Sahara
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Zapadna Sahara
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Uganda
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Sudan
   :LONG:
-    :standard: istočnoafričko vrijeme
-    :daylight: GMT+03:00
+    :standard: srednjoafričko vrijeme
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: istočnoafričko vrijeme
+    :generic: srednjoafričko vrijeme
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Sudan
 Africa/Kigali:
@@ -546,7 +546,7 @@ Africa/Kinshasa:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Kinšasa
+    :generic: Kinshasa
   :LONG:
     :standard: zapadnoafričko standardno vrijeme
     :daylight: zapadnoafričko ljetno vrijeme
@@ -556,7 +556,7 @@ Africa/Kinshasa:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Kinšasa
+    :generic: Kinshasa
 Africa/Lagos:
   :offset: 3600000
   :LONG_GMT:
@@ -636,7 +636,7 @@ Africa/Lubumbashi:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Lubumbaši
+    :generic: Lubumbashi
   :LONG:
     :standard: srednjoafričko vrijeme
     :daylight: GMT+02:00
@@ -646,7 +646,7 @@ Africa/Lubumbashi:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Lubumbaši
+    :generic: Lubumbashi
 Africa/Lusaka:
   :offset: 7200000
   :LONG_GMT:
@@ -834,7 +834,7 @@ Africa/Nouakchott:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Mauritanija
+    :generic: Mauretanija
   :LONG:
     :standard: univerzalno vrijeme
     :daylight: GMT
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Tunis)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Namibija
   :LONG:
-    :standard: zapadnoafričko standardno vrijeme
-    :daylight: zapadnoafričko ljetno vrijeme
+    :standard: srednjoafričko vrijeme
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: zapadnoafričko vrijeme (Windhoek)
+    :generic: srednjoafričko vrijeme
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Namibija
@@ -983,7 +983,7 @@ America/Adak:
     :standard: havajsko-aleutsko standardno vrijeme
     :daylight: havajsko-aleutsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: havajsko-aleutsko vrijeme (Adak)
+    :generic: havajsko-aleutsko vrijeme
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -1032,7 +1032,7 @@ America/Antigua:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Antigua i Barbuda
+    :generic: Antigva i Barbuda
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -1042,7 +1042,7 @@ America/Antigua:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Antigua i Barbuda
+    :generic: Antigva i Barbuda
 America/Araguaina:
   :offset: -10800000
   :LONG_GMT:
@@ -1250,10 +1250,10 @@ America/Argentina/San_Luis:
   :GENERIC_LOCATION:
     :generic: San Luis
   :LONG:
-    :standard: zapadno-argentinsko standardno vrijeme
-    :daylight: zapadno-argentinsko ljetno vrijeme
+    :standard: zapadnoargentinsko standardno vrijeme
+    :daylight: zapadnoargentinsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: zapadno-argentinsko standardno vrijeme
+    :generic: zapadnoargentinsko standardno vrijeme
   :SHORT:
     :standard: GMT -3
     :daylight: GMT -3
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: havajsko-aleutsko standardno vrijeme
     :daylight: havajsko-aleutsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: havajsko-aleutsko vrijeme (Adak)
+    :generic: havajsko-aleutsko vrijeme
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: amazonsko standardno vrijeme
     :daylight: amazonsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: amazonsko vrijeme
+    :generic: amazonsko vrijeme (Campo Grande)
   :SHORT:
     :standard: GMT -4
     :daylight: GMT -3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Cancun
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -04:30
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Venezuela
   :LONG:
     :standard: venezuelsko vrijeme
-    :daylight: GMT -04:30
+    :daylight: GMT -04:00
   :LONG_GENERIC:
     :generic: venezuelsko vrijeme
   :SHORT:
-    :standard: GMT -4:30
-    :daylight: GMT -4:30
+    :standard: GMT -4
+    :daylight: GMT -4
   :SHORT_GENERIC:
     :generic: Venezuela
 America/Catamarca:
@@ -1644,7 +1644,7 @@ America/Cayenne:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Francuska Gvajana
+    :generic: Francuska Gijana
   :LONG:
     :standard: vrijeme Francuske Gvajane
     :daylight: GMT -03:00
@@ -1654,7 +1654,7 @@ America/Cayenne:
     :standard: GMT -3
     :daylight: GMT -3
   :SHORT_GENERIC:
-    :generic: Francuska Gvajana
+    :generic: Francuska Gijana
 America/Cayman:
   :offset: -18000000
   :LONG_GMT:
@@ -1662,7 +1662,7 @@ America/Cayman:
   :SHORT_GMT:
     :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Kajmanski Otoci
+    :generic: Kajmanski otoci
   :LONG:
     :standard: istočno standardno vrijeme
     :daylight: istočno ljetno vrijeme
@@ -1672,7 +1672,7 @@ America/Cayman:
     :standard: GMT -5
     :daylight: GMT -5
   :SHORT_GENERIC:
-    :generic: Kajmanski Otoci
+    :generic: Kajmanski otoci
 America/Chicago:
   :offset: -21600000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: amazonsko standardno vrijeme
     :daylight: amazonsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: amazonsko vrijeme
+    :generic: amazonsko vrijeme (Cuiaba)
   :SHORT:
     :standard: GMT -4
     :daylight: GMT -3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Goose Bay
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT -04:00
+    :generic: GMT -05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Otoci Turks i Caicos
   :LONG:
-    :standard: atlantsko standardno vrijeme
-    :daylight: atlantsko ljetno vrijeme
+    :standard: istočno standardno vrijeme
+    :daylight: istočno ljetno vrijeme
   :LONG_GENERIC:
-    :generic: atlantsko standardno vrijeme
+    :generic: istočno vrijeme
   :SHORT:
-    :standard: GMT -4
+    :standard: GMT -5
     :daylight: GMT -4
   :SHORT_GENERIC:
     :generic: Otoci Turks i Caicos
@@ -2148,7 +2148,7 @@ America/Guadeloupe:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Guadalupa
+    :generic: Guadalupe
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -2158,7 +2158,7 @@ America/Guadeloupe:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Guadalupa
+    :generic: Guadalupe
 America/Guatemala:
   :offset: -21600000
   :LONG_GMT:
@@ -2742,7 +2742,7 @@ America/Marigot:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Sveti Martin
+    :generic: Saint Martin
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -2752,7 +2752,7 @@ America/Marigot:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Sveti Martin
+    :generic: Saint Martin
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: istočno standardno vrijeme
     :daylight: istočno ljetno vrijeme
   :LONG_GENERIC:
-    :generic: istočno standardno vrijeme
+    :generic: istočno vrijeme
   :SHORT:
     :standard: GMT -5
-    :daylight: GMT -5
+    :daylight: GMT -4
   :SHORT_GENERIC:
     :generic: Haiti
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Portoriko
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT -03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Punta Arenas
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT -03:00
+    :daylight: GMT -03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT -3
+    :daylight: GMT -3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Punta Arenas
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Santarem
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -03:00
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Čile
   :LONG:
     :standard: čileansko standardno vrijeme
     :daylight: čileansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: čileansko standardno vrijeme
+    :generic: čileansko vrijeme
   :SHORT:
-    :standard: GMT -3
+    :standard: GMT -4
     :daylight: GMT -3
   :SHORT_GENERIC:
     :generic: Čile
@@ -3624,7 +3624,7 @@ America/St_Barthelemy:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Sveti Bartolomej
+    :generic: Saint Barthélemy
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -3634,7 +3634,7 @@ America/St_Barthelemy:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Sveti Bartolomej
+    :generic: Saint Barthélemy
 America/St_Johns:
   :offset: -12600000
   :LONG_GMT:
@@ -3696,7 +3696,7 @@ America/St_Thomas:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Američki Djevičanski Otoci
+    :generic: Američki Djevičanski otoci
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -3706,7 +3706,7 @@ America/St_Thomas:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Američki Djevičanski Otoci
+    :generic: Američki Djevičanski otoci
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3840,7 +3840,7 @@ America/Tortola:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Britanski Djevičanski Otoci
+    :generic: Britanski Djevičanski otoci
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -3850,7 +3850,7 @@ America/Tortola:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Britanski Djevičanski Otoci
+    :generic: Britanski Djevičanski otoci
 America/Vancouver:
   :offset: -28800000
   :LONG_GMT:
@@ -3876,7 +3876,7 @@ America/Virgin:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Američki Djevičanski Otoci
+    :generic: Američki Djevičanski otoci
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -3886,7 +3886,7 @@ America/Virgin:
     :standard: GMT -4
     :daylight: GMT -4
   :SHORT_GENERIC:
-    :generic: Američki Djevičanski Otoci
+    :generic: Američki Djevičanski otoci
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Palmer
   :LONG:
-    :standard: čileansko standardno vrijeme
-    :daylight: čileansko ljetno vrijeme
+    :standard: GMT -03:00
+    :daylight: GMT -03:00
   :LONG_GENERIC:
-    :generic: čileansko standardno vrijeme
+    :generic: Palmer
   :SHORT:
     :standard: GMT -3
     :daylight: GMT -3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Turkmenistan
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Atyrau
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: zapadnokazahstansko vrijeme
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: zapadnokazahstansko vrijeme
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Atyrau
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: azerbajdžansko standardno vrijeme
     :daylight: azerbajdžansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: azerbajdžansko vrijeme
+    :generic: azerbajdžansko standardno vrijeme
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Azerbajdžan
 Asia/Bangkok:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: choibalsansko standardno vrijeme
     :daylight: choibalsansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: choibalsansko vrijeme
+    :generic: choibalsansko standardno vrijeme
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Choibalsan
 Asia/Chongqing:
@@ -4668,7 +4668,7 @@ Asia/Dili:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Istočni Timor
+    :generic: Timor-Leste
   :LONG:
     :standard: istočnotimorsko vrijeme
     :daylight: GMT+09:00
@@ -4678,7 +4678,7 @@ Asia/Dili:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Istočni Timor
+    :generic: Timor-Leste
 Asia/Dubai:
   :offset: 14400000
   :LONG_GMT:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Tadžikistan
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Famagusta
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Famagusta
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Famagusta
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4812,7 +4812,7 @@ Asia/Hong_Kong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hong Kong PUP Kina
+    :generic: PUP Hong Kong Kina
   :LONG:
     :standard: hongkonško standardno vrijeme
     :daylight: hongkonško ljetno vrijeme
@@ -4822,7 +4822,7 @@ Asia/Hong_Kong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hong Kong PUP Kina
+    :generic: PUP Hong Kong Kina
 Asia/Hovd:
   :offset: 25200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: hovdsko standardno vrijeme
     :daylight: hovdsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: hovdsko vrijeme
+    :generic: hovdsko standardno vrijeme
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Hovd
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Irkutsk
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turska
   :LONG:
-    :standard: istočnoeuropsko standardno vrijeme
-    :daylight: istočnoeuropsko ljetno vrijeme
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: istočnoeuropsko vrijeme
+    :generic: Turska
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turska
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5154,7 +5154,7 @@ Asia/Macao:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Makao PUP Kina
+    :generic: PUP Makao Kina
   :LONG:
     :standard: kinesko standardno vrijeme
     :daylight: kinesko ljetno vrijeme
@@ -5164,7 +5164,7 @@ Asia/Macao:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Makao PUP Kina
+    :generic: PUP Makao Kina
 Asia/Macau:
   :offset: 28800000
   :LONG_GMT:
@@ -5172,7 +5172,7 @@ Asia/Macau:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Makao PUP Kina
+    :generic: PUP Makao Kina
   :LONG:
     :standard: kinesko standardno vrijeme
     :daylight: kinesko ljetno vrijeme
@@ -5182,13 +5182,13 @@ Asia/Macau:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Makao PUP Kina
+    :generic: PUP Makao Kina
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Magadan
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: magadansko standardno vrijeme
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Magadan
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cipar
+    :generic: Nikozija
   :LONG:
     :standard: istočnoeuropsko standardno vrijeme
     :daylight: istočnoeuropsko ljetno vrijeme
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Novokuznjeck
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Novosibirsk
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: novosibirsko standardno vrijeme
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Novosibirsk
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Pontianak
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Sjeverna Koreja
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: korejsko standardno vrijeme
+    :daylight: korejsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: Sjeverna Koreja
+    :generic: korejsko standardno vrijeme
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Sjeverna Koreja
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Katar
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Kizilorda
+    :generic: Kostanay
   :LONG:
     :standard: istočnokazahstansko vrijeme
     :daylight: GMT+06:00
@@ -5434,6 +5434,24 @@ Asia/Qyzylorda:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
+    :generic: Kostanay
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Kizilorda
+  :LONG:
+    :standard: zapadnokazahstansko vrijeme
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: zapadnokazahstansko vrijeme
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
+  :SHORT_GENERIC:
     :generic: Kizilorda
 Asia/Rangoon:
   :offset: 23400000
@@ -5442,17 +5460,17 @@ Asia/Rangoon:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: Mijanmar (Burma)
+    :generic: Mjanmar (Burma)
   :LONG:
-    :standard: mianmarsko vrijeme
+    :standard: mjanmarsko vrijeme
     :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: mianmarsko vrijeme
+    :generic: mjanmarsko vrijeme
   :SHORT:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: Mijanmar (Burma)
+    :generic: Mjanmar (Burma)
 Asia/Riyadh:
   :offset: 10800000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Japan
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Tomsk
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Tomsk
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Tomsk
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5786,13 +5804,13 @@ Asia/Ulaanbaatar:
   :GENERIC_LOCATION:
     :generic: Ulan Bator
   :LONG:
-    :standard: ulan-batorsko standardno vrijeme
-    :daylight: ulan-batorsko ljetno vrijeme
+    :standard: ulanbatorsko standardno vrijeme
+    :daylight: ulanbatorsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: ulan-batorsko vrijeme
+    :generic: ulanbatorsko standardno vrijeme
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulan Bator
 Asia/Ulan_Bator:
@@ -5804,13 +5822,13 @@ Asia/Ulan_Bator:
   :GENERIC_LOCATION:
     :generic: Ulan Bator
   :LONG:
-    :standard: ulan-batorsko standardno vrijeme
-    :daylight: ulan-batorsko ljetno vrijeme
+    :standard: ulanbatorsko standardno vrijeme
+    :daylight: ulanbatorsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: ulan-batorsko vrijeme
+    :generic: ulanbatorsko standardno vrijeme
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Ulan Bator
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Jakutsk
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Mjanmar (Burma)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: mjanmarsko vrijeme
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: mjanmarsko vrijeme
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Mjanmar (Burma)
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -5982,7 +6000,7 @@ Atlantic/Bermuda:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: Bermuda
+    :generic: Bermudi
   :LONG:
     :standard: atlantsko standardno vrijeme
     :daylight: atlantsko ljetno vrijeme
@@ -5992,7 +6010,7 @@ Atlantic/Bermuda:
     :standard: GMT -4
     :daylight: GMT -3
   :SHORT_GENERIC:
-    :generic: Bermuda
+    :generic: Bermudi
 Atlantic/Canary:
   :offset: 0
   :LONG_GMT:
@@ -6036,7 +6054,7 @@ Atlantic/Faeroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Farski Otoci
+    :generic: Farski otoci
   :LONG:
     :standard: zapadnoeuropsko standardno vrijeme
     :daylight: zapadnoeuropsko ljetno vrijeme
@@ -6054,7 +6072,7 @@ Atlantic/Faroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Farski Otoci
+    :generic: Farski otoci
   :LONG:
     :standard: zapadnoeuropsko standardno vrijeme
     :daylight: zapadnoeuropsko ljetno vrijeme
@@ -6162,7 +6180,7 @@ Atlantic/Stanley:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Falklandski Otoci
+    :generic: Falklandski otoci
   :LONG:
     :standard: falklandsko standardno vrijeme
     :daylight: falklandsko ljetno vrijeme
@@ -6172,7 +6190,7 @@ Atlantic/Stanley:
     :standard: GMT -3
     :daylight: GMT -3
   :SHORT_GENERIC:
-    :generic: Falklandski Otoci
+    :generic: Falklandski otoci
 Australia/ACT:
   :offset: 36000000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT -5
   :SHORT_GENERIC:
     :generic: Winnipeg
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT -06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Regina
-  :LONG:
-    :standard: središnje standardno vrijeme
-    :daylight: središnje ljetno vrijeme
-  :LONG_GENERIC:
-    :generic: središnje standardno vrijeme
-  :SHORT:
-    :standard: GMT -6
-    :daylight: GMT -6
-  :SHORT_GENERIC:
-    :generic: Regina
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,41 +6858,41 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Whitehorse
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT -03:00
+    :generic: GMT -04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Čile
   :LONG:
     :standard: čileansko standardno vrijeme
     :daylight: čileansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: čileansko standardno vrijeme
+    :generic: čileansko vrijeme
   :SHORT:
-    :standard: GMT -3
+    :standard: GMT -4
     :daylight: GMT -3
   :SHORT_GENERIC:
     :generic: Čile
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT -05:00
+    :generic: GMT -06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Uskrsni Otok
+    :generic: Uskršnji otok
   :LONG:
     :standard: standardno vrijeme Uskršnjeg otoka
     :daylight: ljetno vrijeme Uskršnjeg otoka
   :LONG_GENERIC:
-    :generic: standardno vrijeme Uskršnjeg otoka
+    :generic: vrijeme Uskršnjeg otoka
   :SHORT:
-    :standard: GMT -5
+    :standard: GMT -6
     :daylight: GMT -5
   :SHORT_GENERIC:
-    :generic: Uskrsni Otok
+    :generic: Uskršnji otok
 Cuba:
   :offset: -18000000
   :LONG_GMT:
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Egipat)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7710,17 +7710,17 @@ Europe/Belfast:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :LONG:
     :standard: univerzalno vrijeme
     :daylight: britansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
 Europe/Belgrade:
   :offset: 3600000
   :LONG_GMT:
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Otok Man
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turska
   :LONG:
-    :standard: istočnoeuropsko standardno vrijeme
-    :daylight: istočnoeuropsko ljetno vrijeme
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: istočnoeuropsko vrijeme
+    :generic: Turska
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turska
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Kalinjingrad)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Kirov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Kirov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Kirov
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8106,17 +8106,17 @@ Europe/London:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :LONG:
     :standard: univerzalno vrijeme
     :daylight: britansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
 Europe/Luxembourg:
   :offset: 3600000
   :LONG_GMT:
@@ -8178,7 +8178,7 @@ Europe/Mariehamn:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Otoci Aland
+    :generic: Ålandski otoci
   :LONG:
     :standard: istočnoeuropsko standardno vrijeme
     :daylight: istočnoeuropsko ljetno vrijeme
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Bjelorusija
   :LONG:
-    :standard: daljeistočno europsko vrijeme
-    :daylight: GMT+03:00
+    :standard: moskovsko standardno vrijeme
+    :daylight: moskovsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: daljeistočno europsko vrijeme
+    :generic: moskovsko standardno vrijeme
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Cipar
+    :generic: Nikozija
   :LONG:
     :standard: istočnoeuropsko standardno vrijeme
     :daylight: istočnoeuropsko ljetno vrijeme
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Češka Republika
+    :generic: Češka
   :LONG:
     :standard: srednjoeuropsko standardno vrijeme
     :daylight: srednjoeuropsko ljetno vrijeme
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Saratov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Saratov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Saratov
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Makedonija
+    :generic: Sjeverna Makedonija
   :LONG:
     :standard: srednjoeuropsko standardno vrijeme
     :daylight: srednjoeuropsko ljetno vrijeme
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Ulyanovsk
+    :generic: Uljanovsk
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: Ulyanovsk
+    :generic: Uljanovsk
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Ulyanovsk
+    :generic: Uljanovsk
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8592,7 +8592,7 @@ Europe/Uzhgorod:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Uzgorod
+    :generic: Užgorod
   :LONG:
     :standard: istočnoeuropsko standardno vrijeme
     :daylight: istočnoeuropsko ljetno vrijeme
@@ -8628,7 +8628,7 @@ Europe/Vatican:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Sveta Stolica
+    :generic: Vatikanski Grad
   :LONG:
     :standard: srednjoeuropsko standardno vrijeme
     :daylight: srednjoeuropsko ljetno vrijeme
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Volgograd
   :LONG:
-    :standard: moskovsko standardno vrijeme
-    :daylight: moskovsko ljetno vrijeme
+    :standard: volgogradsko standardno vrijeme
+    :daylight: volgogradsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: moskovsko standardno vrijeme
+    :generic: volgogradsko standardno vrijeme
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Volgograd
 Europe/Warsaw:
@@ -8790,17 +8790,17 @@ GB:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :LONG:
     :standard: univerzalno vrijeme
     :daylight: britansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
 GB-Eire:
   :offset: 0
   :LONG_GMT:
@@ -8808,17 +8808,17 @@ GB-Eire:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :LONG:
     :standard: univerzalno vrijeme
     :daylight: britansko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Velika Britanija
+    :generic: Ujedinjeno Kraljevstvo
 GMT:
   :offset: 0
   :LONG_GMT:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: univerzalno vrijeme
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: univerzalno vrijeme
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8934,7 +8934,7 @@ Hongkong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Hong Kong PUP Kina
+    :generic: PUP Hong Kong Kina
   :LONG:
     :standard: hongkonško standardno vrijeme
     :daylight: hongkonško ljetno vrijeme
@@ -8944,7 +8944,7 @@ Hongkong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Hong Kong PUP Kina
+    :generic: PUP Hong Kong Kina
 Iceland:
   :offset: 0
   :LONG_GMT:
@@ -8988,7 +8988,7 @@ Indian/Chagos:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Britanski Indijskooceanski Teritorij
+    :generic: Britanski Indijskooceanski teritorij
   :LONG:
     :standard: vrijeme Indijskog oceana
     :daylight: GMT+06:00
@@ -8998,7 +8998,7 @@ Indian/Chagos:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Britanski Indijskooceanski Teritorij
+    :generic: Britanski Indijskooceanski teritorij
 Indian/Christmas:
   :offset: 25200000
   :LONG_GMT:
@@ -9006,7 +9006,7 @@ Indian/Christmas:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: Božićni Otok
+    :generic: Božićni otok
   :LONG:
     :standard: vrijeme Božićnog otoka
     :daylight: GMT+07:00
@@ -9016,7 +9016,7 @@ Indian/Christmas:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: Božićni Otok
+    :generic: Božićni otok
 Indian/Cocos:
   :offset: 23400000
   :LONG_GMT:
@@ -9024,17 +9024,17 @@ Indian/Cocos:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: Kokosovi (Keeling) Otoci
+    :generic: Kokosovi (Keelingovi) otoci
   :LONG:
-    :standard: vrijeme Kokosovih Otoka
+    :standard: vrijeme Kokosovih otoka
     :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: vrijeme Kokosovih Otoka
+    :generic: vrijeme Kokosovih otoka
   :SHORT:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: Kokosovi (Keeling) Otoci
+    :generic: Kokosovi (Keelingovi) otoci
 Indian/Comoro:
   :offset: 10800000
   :LONG_GMT:
@@ -9060,7 +9060,7 @@ Indian/Kerguelen:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Francuske Južne i Antarktičke Zemlje
+    :generic: Francuski južni i antarktički teritoriji
   :LONG:
     :standard: južnofrancusko i antarktičko vrijeme
     :daylight: GMT+05:00
@@ -9070,7 +9070,7 @@ Indian/Kerguelen:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Francuske Južne i Antarktičke Zemlje
+    :generic: Francuski južni i antarktički teritoriji
 Indian/Mahe:
   :offset: 14400000
   :LONG_GMT:
@@ -9150,7 +9150,7 @@ Indian/Reunion:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Reunion
+    :generic: Réunion
   :LONG:
     :standard: vrijeme Reuniona
     :daylight: GMT+04:00
@@ -9160,7 +9160,7 @@ Indian/Reunion:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Reunion
+    :generic: Réunion
 Iran:
   :offset: 12600000
   :LONG_GMT:
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9558,23 +9558,23 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Chuuk
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT -05:00
+    :generic: GMT -06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
-    :generic: Uskrsni Otok
+    :generic: Uskršnji otok
   :LONG:
     :standard: standardno vrijeme Uskršnjeg otoka
     :daylight: ljetno vrijeme Uskršnjeg otoka
   :LONG_GENERIC:
-    :generic: standardno vrijeme Uskršnjeg otoka
+    :generic: vrijeme Uskršnjeg otoka
   :SHORT:
-    :standard: GMT -5
+    :standard: GMT -6
     :daylight: GMT -5
   :SHORT_GENERIC:
-    :generic: Uskrsni Otok
+    :generic: Uskršnji otok
 Pacific/Efate:
   :offset: 39600000
   :LONG_GMT:
@@ -10070,10 +10070,10 @@ Pacific/Rarotonga:
   :GENERIC_LOCATION:
     :generic: Cookovi Otoci
   :LONG:
-    :standard: standardno vrijeme Cookovih Otoka
-    :daylight: Cookovo otočje, polusatni pomak, ljetno vrijeme
+    :standard: standardno vrijeme Cookovih otoka
+    :daylight: Cookovi otoci, polusatni pomak, ljetno vrijeme
   :LONG_GENERIC:
-    :generic: standardno vrijeme Cookovih Otoka
+    :generic: standardno vrijeme Cookovih otoka
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -10
@@ -10086,7 +10086,7 @@ Pacific/Saipan:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: Sjeverni Marijanski Otoci
+    :generic: Sjevernomarijanski otoci
   :LONG:
     :standard: standardno vrijeme Chamorra
     :daylight: GMT+10:00
@@ -10096,7 +10096,7 @@ Pacific/Saipan:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: Sjeverni Marijanski Otoci
+    :generic: Sjevernomarijanski otoci
 Pacific/Samoa:
   :offset: -39600000
   :LONG_GMT:
@@ -10142,10 +10142,10 @@ Pacific/Tarawa:
   :GENERIC_LOCATION:
     :generic: Tarawa
   :LONG:
-    :standard: vrijeme Gilbertovih Otoka
+    :standard: vrijeme Gilbertovih otoka
     :daylight: GMT+12:00
   :LONG_GENERIC:
-    :generic: vrijeme Gilbertovih Otoka
+    :generic: vrijeme Gilbertovih otoka
   :SHORT:
     :standard: GMT+12
     :daylight: GMT+12
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Singapur
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Turska
   :LONG:
-    :standard: istočnoeuropsko standardno vrijeme
-    :daylight: istočnoeuropsko ljetno vrijeme
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: istočnoeuropsko vrijeme
+    :generic: Turska
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Turska
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: havajsko-aleutsko standardno vrijeme
     :daylight: havajsko-aleutsko ljetno vrijeme
   :LONG_GENERIC:
-    :generic: havajsko-aleutsko vrijeme (Adak)
+    :generic: havajsko-aleutsko vrijeme
   :SHORT:
     :standard: GMT -10
     :daylight: GMT -9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinirano svjetsko vrijeme
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

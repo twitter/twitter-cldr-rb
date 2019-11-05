@@ -5,47 +5,49 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters::Rbnf
+describe TwitterCldr::Formatters::Rbnf::RbnfFormatter do
+  failures = {}
 
-TEST_FILE_DIR = File.join(File.dirname(__FILE__), "locales")
+  TEST_FILE_DIR = File.join(File.dirname(__FILE__), "locales")
 
-def test_file_for(locale)
-  File.join(TEST_FILE_DIR, locale, "rbnf_test.yml")
-end
-
-failures = {}
-
-describe RbnfFormatter do
-  def allowed_failures
-    @allowed_failures ||= begin
-      YAML.load_file(
-        File.join(File.dirname(__FILE__), "allowed_failures.yml")
-      )
-    end
-  end
-
-  def allowed_failure?(options = {})
-    trail = [:locale, :group, :rule_set]
-    dest = trail.inject(allowed_failures) do |ret, leg|
-      if ret && ret[options[leg]]
-        ret[options[leg]]
-      else
-        ret
+  module RbnfTestHelpers
+    class << self
+      def test_file_for(locale)
+        File.join(TEST_FILE_DIR, locale, "rbnf_test.yml")
       end
-    end
 
-    if dest
-      dest.include?(options[:number])
-    else
-      false
+      def allowed_failures
+        @allowed_failures ||= begin
+          YAML.load_file(
+            File.join(File.dirname(__FILE__), "allowed_failures.yml")
+          )
+        end
+      end
+
+      def allowed_failure?(options = {})
+        trail = [:locale, :group, :rule_set]
+        dest = trail.inject(allowed_failures) do |ret, leg|
+          if ret && ret[options[leg]]
+            ret[options[leg]]
+          else
+            ret
+          end
+        end
+
+        if dest
+          dest.include?(options[:number])
+        else
+          false
+        end
+      end
     end
   end
 
   TwitterCldr.supported_locales.each do |locale|
-    next unless RbnfFormatter.supported_locale?(locale)
+    next unless described_class.supported_locale?(locale)
 
-    formatter = RbnfFormatter.new(locale)
-    test_data = YAML.load_file(test_file_for(locale.to_s))
+    formatter = described_class.new(locale)
+    test_data = YAML.load_file(RbnfTestHelpers.test_file_for(locale.to_s))
 
     describe locale.localize.as_language_code do
       formatter.group_names.each do |group_name|
@@ -69,7 +71,7 @@ describe RbnfFormatter do
                       rule_set: rule_set_name, number: number
                     }
 
-                    unless allowed_failure?(opts)
+                    unless RbnfTestHelpers.allowed_failure?(opts)
                       failures[locale] ||= {}
                       failures[locale][group_name] ||= {}
                       failures[locale][group_name][rule_set_name] ||= []

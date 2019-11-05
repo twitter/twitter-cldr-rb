@@ -60,6 +60,10 @@ module TwitterCldr
           text
         end
 
+        def type
+          :literal
+        end
+
         private
 
         def set_for_special_char(char)

@@ -1,18 +1,11 @@
 --- 
 :sq: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "Ora e Grenuiçit: {0}"
-    :gmt_zero_format: 
-      :generic: "Ora e Grenuiçit"
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Ora verore: {0}"
-      :generic: "Ora: {0}"
-      :standard: "Ora standarde: {0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Ora standarde: {0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -38,7 +31,7 @@
         :standard: "Ora standarde e Afrikës Perëndimore"
     :Alaska: 
       :long: 
-        :daylight: "Ora verore e Alsaskës"
+        :daylight: "Ora verore e Alaskës"
         :generic: "Ora e Alaskës"
         :standard: "Ora standarde e Alaskës"
     :Almaty: 
@@ -63,14 +56,14 @@
         :standard: "Ora standarde e SHBA-së Lindore"
     :America_Mountain: 
       :long: 
-        :daylight: "Ora verore amerikane e Brezit Malor"
-        :generic: "Ora amerikane e Brezit Malor"
-        :standard: "Ora standarde amerikane e Brezit Malor"
+        :daylight: "Ora verore e Territoreve Amerikane të Brezit Malor"
+        :generic: "Ora e Territoreve Amerikane të Brezit Malor"
+        :standard: "Ora standarde e Territoreve Amerikane të Brezit Malor"
     :America_Pacific: 
       :long: 
-        :daylight: "Ora verore amerikane e Bregut të Paqësorit"
-        :generic: "Ora amerikane e Bregut të Paqësorit"
-        :standard: "Ora standarde amerikane e Bregut të Paqësorit"
+        :daylight: "Ora verore e Territoreve Amerikane të Bregut të Paqësorit"
+        :generic: "Ora e Territoreve Amerikane të Bregut të Paqësorit"
+        :standard: "Ora standarde e Territoreve Amerikane të Bregut të Paqësorit"
     :Anadyr: 
       :long: 
         :daylight: "Ora verore e Anadirit"
@@ -159,9 +152,9 @@
         :standard: "Ora e Bolivisë"
     :Brasilia: 
       :long: 
-        :daylight: "Ora verore e Brasilës"
-        :generic: "Ora e Brasilës"
-        :standard: "Ora standarde e Brasilës"
+        :daylight: "Ora verore e Brazilisë"
+        :generic: "Ora e Brazilisë"
+        :standard: "Ora standarde e Brazilisë"
     :Brunei: 
       :long: 
         :standard: "Ora e Brunei-Durasalamit"
@@ -236,27 +229,27 @@
         :standard: "Ora e Ekuadorit"
     :Europe_Central: 
       :long: 
-        :daylight: "Ora verore e Europës Qendrore"
-        :generic: "Ora e Europës Qendrore"
-        :standard: "Ora standarde e Europës Qendrore"
+        :daylight: "Ora verore e Evropës Qendrore"
+        :generic: "Ora e Evropës Qendrore"
+        :standard: "Ora standarde e Evropës Qendrore"
     :Europe_Eastern: 
       :long: 
-        :daylight: "Ora verore e Europës Lindore"
-        :generic: "Ora e Europës Lindore"
-        :standard: "Ora standarde e Europës Lindore"
+        :daylight: "Ora verore e Evropës Lindore"
+        :generic: "Ora e Evropës Lindore"
+        :standard: "Ora standarde e Evropës Lindore"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "Ora e Lindjes së Largët Europiane"
+        :standard: "Ora e Evropës së Largët Lindore"
     :Europe_Western: 
       :long: 
-        :daylight: "Ora verore e Europës Perëndimore"
-        :generic: "Ora e Europës Perëndimore"
-        :standard: "Ora standarde e Europës Perëndimore"
+        :daylight: "Ora verore e Evropës Perëndimore"
+        :generic: "Ora e Evropës Perëndimore"
+        :standard: "Ora standarde e Evropës Perëndimore"
     :Falkland: 
       :long: 
-        :daylight: "Ora verore e Ishujve Folkland"
-        :generic: "Ora e Ishujve Folkland"
-        :standard: "Ora standarde e Ishujve Folkland"
+        :daylight: "Ora verore e Ishujve Falkland"
+        :generic: "Ora e Ishujve Falkland"
+        :standard: "Ora standarde e Ishujve Falkland"
     :Fiji: 
       :long: 
         :daylight: "Ora verore e Fixhit"
@@ -267,10 +260,10 @@
         :standard: "Ora e Guajanës Franceze"
     :French_Southern: 
       :long: 
-        :standard: "Ora e Rajoneve Australiane dhe Antraktike Franceze"
+        :standard: "Ora e Territoreve Jugore dhe Antarktike Franceze"
     :GMT: 
       :long: 
-        :standard: "Ora e Meridianit të Grinuiçit"
+        :standard: "Ora e Grinuiçit"
     :Galapagos: 
       :long: 
         :standard: "Ora e Galapagosit"
@@ -292,9 +285,9 @@
         :standard: "Ora standarde e Grenlandës Lindore"
     :Greenland_Western: 
       :long: 
-        :daylight: "Ora verore e Grenlandës Perëndimore"
-        :generic: "Ora e Grenlandës Perëndimore"
-        :standard: "Ora standarde e Grenlandës Perëndimore"
+        :daylight: "Ora verore e Grënlandës Perëndimore"
+        :generic: "Ora e Grënlandës Perëndimore"
+        :standard: "Ora standarde e Grënlandës Perëndimore"
     :Guam: 
       :long: 
         :standard: "Ora e Guamit"
@@ -383,7 +376,7 @@
         :standard: "Ora standarde e Krasnojarskut"
     :Kyrgystan: 
       :long: 
-        :standard: "Ora e Kirgistanit"
+        :standard: "Ora e Kirgizisë"
     :Lanka: 
       :long: 
         :standard: "Ora e Lankasë"
@@ -413,13 +406,13 @@
         :standard: "Ora e Malajzisë"
     :Maldives: 
       :long: 
-        :standard: "Ora e Maldivit"
+        :standard: "Ora e Maldiveve"
     :Marquesas: 
       :long: 
         :standard: "Ora e Ishujve Markezë"
     :Marshall_Islands: 
       :long: 
-        :standard: "Ora e Ishujve Marshallë"
+        :standard: "Ora e Ishujve Marshall"
     :Mauritius: 
       :long: 
         :daylight: "Ora verore e Mauritiusit"
@@ -435,9 +428,9 @@
         :standard: "Ora standarde e Meksikës Veriperëndimore"
     :Mexico_Pacific: 
       :long: 
-        :daylight: "Ora verore meksikane e Bregut të Paqësorit"
-        :generic: "Ora meksikane e Bregut të Paqësorit"
-        :standard: "Ora standarde meksikane e Bregut të Paqësorit"
+        :daylight: "Ora verore e Territoreve Meksikane të Bregut të Paqësorit"
+        :generic: "Ora e Territoreve Meksikane të Bregut të Paqësorit"
+        :standard: "Ora standarde e Territoreve Meksikane të Bregut të Paqësorit"
     :Mongolia: 
       :long: 
         :daylight: "Ora verore e Ulan-Batorit"
@@ -506,7 +499,7 @@
         :standard: "Ora e Palaut"
     :Papua_New_Guinea: 
       :long: 
-        :standard: "Ora e Papua-Guinesë së Re"
+        :standard: "Ora e Guinesë së Re-Papua"
     :Paraguay: 
       :long: 
         :daylight: "Ora Verore e Paraguait"
@@ -527,15 +520,18 @@
         :standard: "Ora e Ishujve Feniks"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "Ora verore e Shën-Pier dhe Mikuelon"
-        :generic: "Ora e Shën-Pier dhe Mikuelon"
-        :standard: "Ora standarde e Shën-Pier dhe Mikuelon"
+        :daylight: "Ora verore e Shën-Pier dhe Mikelon"
+        :generic: "Ora e Shën-Pier dhe Mikelon"
+        :standard: "Ora standarde e Shën-Pier dhe Mikelon"
     :Pitcairn: 
       :long: 
         :standard: "Ora e Pitkernit"
     :Ponape: 
       :long: 
         :standard: "Ora e Ponapeit"
+    :Pyongyang: 
+      :long: 
+        :standard: "Ora e Penianit"
     :Qyzylorda: 
       :long: 
         :daylight: "Ora verore e Kizilordit"
@@ -564,16 +560,16 @@
         :standard: "Ora standarde e Samoas"
     :Seychelles: 
       :long: 
-        :standard: "Ora e Sishelës"
+        :standard: "Ora e Sejshelleve"
     :Singapore: 
       :long: 
         :standard: "Ora e Singaporit"
     :Solomon: 
       :long: 
-        :standard: "Ora e Ishujve Solomonë"
+        :standard: "Ora e Ishujve Solomon"
     :South_Georgia: 
       :long: 
-        :standard: "Ora e Gjeorgjisë së Jugut"
+        :standard: "Ora e Xhorxhas të Jugut"
     :Suriname: 
       :long: 
         :standard: "Ora e Surinamit"
@@ -745,7 +741,7 @@
     :Africa/Nairobi: 
       :city: Nairobi
     :Africa/Ndjamena: 
-      :city: Nxhamenë
+      :city: Ndjamena
     :Africa/Niamey: 
       :city: Niamej
     :Africa/Nouakchott: 
@@ -787,7 +783,7 @@
     :America/Argentina/Ushuaia: 
       :city: Ushuaja
     :America/Aruba: 
-      :city: Aruba
+      :city: Arubë
     :America/Asuncion: 
       :city: Asunsion
     :America/Bahia: 
@@ -839,7 +835,7 @@
     :America/Cuiaba: 
       :city: Kujaba
     :America/Curacao: 
-      :city: Kuraçao
+      :city: Kurasao
     :America/Danmarkshavn: 
       :city: Denmarkshavën
     :America/Dawson: 
@@ -857,7 +853,9 @@
     :America/Eirunepe: 
       :city: Ejrunep
     :America/El_Salvador: 
-      :city: "El Salvador"
+      :city: Salvador
+    :America/Fort_Nelson: 
+      :city: Fort-Nelson
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -869,15 +867,15 @@
     :America/Grand_Turk: 
       :city: "Turku i Madh"
     :America/Grenada: 
-      :city: Grenadë
+      :city: Granadë
     :America/Guadeloupe: 
-      :city: Guadelupe
+      :city: Guadelupë
     :America/Guatemala: 
       :city: Guatemalë
     :America/Guayaquil: 
       :city: Guajakuil
     :America/Guyana: 
-      :city: Gujanë
+      :city: Guajanë
     :America/Halifax: 
       :city: Halifaks
     :America/Havana: 
@@ -885,7 +883,7 @@
     :America/Hermosillo: 
       :city: Hermosijo
     :America/Indiana/Knox: 
-      :city: "Noks, Indiana"
+      :city: "Knoks, Indiana"
     :America/Indiana/Marengo: 
       :city: "Marengo, Indiana"
     :America/Indiana/Petersburg: 
@@ -949,7 +947,7 @@
     :America/Mexico_City: 
       :city: "Qyteti i Meksikës"
     :America/Miquelon: 
-      :city: Mikuelon
+      :city: Mikelon
     :America/Moncton: 
       :city: Monkton
     :America/Monterrey: 
@@ -957,7 +955,7 @@
     :America/Montevideo: 
       :city: Montevideo
     :America/Montserrat: 
-      :city: Monteserat
+      :city: Montserat
     :America/Nassau: 
       :city: Nasao
     :America/New_York: 
@@ -987,11 +985,13 @@
     :America/Port-au-Prince: 
       :city: Port-o-Prins
     :America/Port_of_Spain: 
-      :city: "Porti i Spanjës"
+      :city: "Port of Spain"
     :America/Porto_Velho: 
       :city: Porto-Velho
     :America/Puerto_Rico: 
       :city: Porto-Riko
+    :America/Punta_Arenas: 
+      :city: Punta-Arenas
     :America/Rainy_River: 
       :city: "Lumi i Shirave"
     :America/Rankin_Inlet: 
@@ -1001,7 +1001,7 @@
     :America/Regina: 
       :city: Rexhina
     :America/Resolute: 
-      :city: Rezolutë
+      :city: Resolute
     :America/Rio_Branco: 
       :city: Rio-Branko
     :America/Santa_Isabel: 
@@ -1019,7 +1019,7 @@
     :America/Sitka: 
       :city: Sitka
     :America/St_Barthelemy: 
-      :city: Shën-Bartolemeo
+      :city: Sen-Bartelemi
     :America/St_Johns: 
       :city: Shën-Gjon
     :America/St_Kitts: 
@@ -1029,7 +1029,7 @@
     :America/St_Thomas: 
       :city: Shën-Tomas
     :America/St_Vincent: 
-      :city: Shën-Vinsent
+      :city: Shën-Vincent
     :America/Swift_Current: 
       :city: "Rryma e Shpejtë"
     :America/Tegucigalpa: 
@@ -1092,14 +1092,18 @@
       :city: Aktobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atirau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
-      :city: Bahrein
+      :city: Bahrejn
     :Asia/Baku: 
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Bejrut
     :Asia/Bishkek: 
@@ -1124,6 +1128,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagustë
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1139,7 +1145,7 @@
     :Asia/Jayapura: 
       :city: Xhajapurë
     :Asia/Jerusalem: 
-      :city: Jeruzalem
+      :city: Jerusalem
     :Asia/Kabul: 
       :city: Kabul
     :Asia/Kamchatka: 
@@ -1165,11 +1171,11 @@
     :Asia/Makassar: 
       :city: Makasar
     :Asia/Manila: 
-      :city: Manila
+      :city: Manilë
     :Asia/Muscat: 
       :city: Muskat
     :Asia/Nicosia: 
-      :city: Nikozi
+      :city: Nikozia
     :Asia/Novokuznetsk: 
       :city: Novokuznetsk
     :Asia/Novosibirsk: 
@@ -1218,6 +1224,8 @@
       :city: Thimpu
     :Asia/Tokyo: 
       :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulanbatar
     :Asia/Urumqi: 
@@ -1237,21 +1245,21 @@
     :Atlantic/Azores: 
       :city: Azore
     :Atlantic/Bermuda: 
-      :city: Bermudë
+      :city: Bermude
     :Atlantic/Canary: 
       :city: Kanari
     :Atlantic/Cape_Verde: 
-      :city: "Kepi Verde"
+      :city: "Kepi i Gjelbër"
     :Atlantic/Faeroe: 
       :city: Faroe
     :Atlantic/Madeira: 
       :city: Madeira
     :Atlantic/Reykjavik: 
-      :city: Rejkjavik
+      :city: Reikjavik
     :Atlantic/South_Georgia: 
-      :city: "Gjeorgjia e Jugut"
+      :city: "Xhorxha e Jugut"
     :Atlantic/St_Helena: 
-      :city: Shën-Helenë
+      :city: Shën-Elenë
     :Atlantic/Stanley: 
       :city: Stenli
     :Australia/Adelaide: 
@@ -1271,19 +1279,26 @@
     :Australia/Lindeman: 
       :city: Lindëmen
     :Australia/Lord_Howe: 
-      :city: "Lord Houi"
+      :city: Lord-Houi
     :Australia/Melbourne: 
       :city: Melburn
     :Australia/Perth: 
       :city: Përth
     :Australia/Sydney: 
       :city: Sidnej
+    :Etc/UTC: 
+      :long: 
+        :standard: "Ora universale e koordinuar"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Qytet i panjohur"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorrë
+    :Europe/Astrakhan: 
+      :city: Astrakan
     :Europe/Athens: 
       :city: Athinë
     :Europe/Belgrade: 
@@ -1291,7 +1306,7 @@
     :Europe/Berlin: 
       :city: Berlin
     :Europe/Bratislava: 
-      :city: Bratisllavë
+      :city: Bratislavë
     :Europe/Brussels: 
       :city: Bruksel
     :Europe/Bucharest: 
@@ -1307,11 +1322,11 @@
     :Europe/Dublin: 
       :city: Dublin
       :long: 
-        :daylight: "Ora verore e Irlandës"
+        :daylight: "Ora strandarde e Irlandës"
     :Europe/Gibraltar: 
       :city: Gjibraltar
     :Europe/Guernsey: 
-      :city: Guernsej
+      :city: Gernsej
     :Europe/Helsinki: 
       :city: Helsinki
     :Europe/Isle_of_Man: 
@@ -1324,6 +1339,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbonë
     :Europe/Ljubljana: 
@@ -1364,6 +1381,8 @@
       :city: San-Marino
     :Europe/Sarajevo: 
       :city: Sarajevë
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1376,6 +1395,8 @@
       :city: Talin
     :Europe/Tirane: 
       :city: Tiranë
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Uzhgorod
     :Europe/Vaduz: 
@@ -1395,7 +1416,7 @@
     :Europe/Zaporozhye: 
       :city: Zaporozhje
     :Europe/Zurich: 
-      :city: Cyrih
+      :city: Zyrih
     :Indian/Antananarivo: 
       :city: Antananarivo
     :Indian/Chagos: 
@@ -1449,7 +1470,7 @@
     :Pacific/Honolulu: 
       :city: Honolulu
     :Pacific/Johnston: 
-      :city: Xhonson
+      :city: Xhonston
     :Pacific/Kiritimati: 
       :city: Kiritimat
     :Pacific/Kosrae: 

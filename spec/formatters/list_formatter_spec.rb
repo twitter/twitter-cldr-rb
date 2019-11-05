@@ -5,16 +5,14 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe ListFormatter do
+describe TwitterCldr::Formatters::ListFormatter do
   describe '#initialize' do
     it 'fetches locale from options hash' do
-      expect(ListFormatter.new(:pt).locale).to eq(:pt)
+      expect(described_class.new(:pt).locale).to eq(:pt)
     end
 
     it "uses default locale if it's not passed in options hash" do
-      expect(ListFormatter.new.locale).to eq(TwitterCldr.locale)
+      expect(described_class.new.locale).to eq(TwitterCldr.locale)
     end
   end
 
@@ -23,7 +21,7 @@ describe ListFormatter do
       let(:list) { ["larry", "curly"] }
 
       context 'with an English list formatter' do
-        let(:formatter) { ListFormatter.new(:en) }
+        let(:formatter) { described_class.new(:en) }
 
         it 'formats English lists correctly using various types' do
           expect(formatter.format(list)).to eq("larry and curly")
@@ -33,7 +31,7 @@ describe ListFormatter do
       end
 
       context 'with a Spanish list formatter' do
-        let(:formatter) { ListFormatter.new(:es) }
+        let(:formatter) { described_class.new(:es) }
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq("larry y curly")
@@ -47,7 +45,7 @@ describe ListFormatter do
       let(:list) { ["larry", "curly", "moe"] }
 
       context "with an English list formatter" do
-        let(:formatter) { ListFormatter.new(:en) }
+        let(:formatter) { described_class.new(:en) }
 
         it "formats English lists correctly using various types" do
           expect(formatter.format(list)).to eq("larry, curly, and moe")
@@ -57,7 +55,7 @@ describe ListFormatter do
       end
 
       context "with a Spanish list formatter" do
-        let(:formatter) { ListFormatter.new(:es) }
+        let(:formatter) { described_class.new(:es) }
 
         it "formats Spanish lists correctly using various types" do
           expect(formatter.format(list)).to eq("larry, curly y moe")

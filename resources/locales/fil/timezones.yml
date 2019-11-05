@@ -1,18 +1,11 @@
 --- 
 :fil: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Daylight Time ng {0}"
-      :generic: "{0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Standard na Oras sa {0}"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -45,7 +38,7 @@
       :long: 
         :daylight: "Sentral na Daylight Time"
         :generic: "Sentral na Oras"
-        :standard: "Sentral na Standard na Oras"
+        :standard: "Sentral na Karaniwang Oras"
     :America_Eastern: 
       :long: 
         :daylight: "Eastern Daylight Time"
@@ -68,9 +61,9 @@
         :standard: "Standard Time sa Anadyr"
     :Apia: 
       :long: 
-        :daylight: "Apia Daylight Time"
+        :daylight: "Daylight Time sa Apia"
         :generic: "Oras sa Apia"
-        :standard: "Apia Standard Time"
+        :standard: "Standard na Oras sa Apia"
     :Arabian: 
       :long: 
         :daylight: "Daylight Time sa Arabia"
@@ -98,24 +91,24 @@
         :standard: "Standard na Oras sa Atlantiko"
     :Australia_Central: 
       :long: 
-        :daylight: "Daylight Time ng Gitnang Australya"
-        :generic: "Oras ng Gitnang Australya"
-        :standard: "Standard Time ng Gitnang Australya"
+        :daylight: "Daylight Time sa Gitnang Australya"
+        :generic: "Oras sa Gitnang Australya"
+        :standard: "Standard na Oras sa Gitnang Australya"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Daylight Time ng Gitnang Kanluran ng Australya"
+        :daylight: "Daylight Time sa Gitnang Kanlurang Australya"
         :generic: "Oras ng Gitnang Kanluran ng Australya"
         :standard: "Standard Time ng Gitnang Kanluran ng Australya"
     :Australia_Eastern: 
       :long: 
-        :daylight: "Daylight Time ng Silangang Australya"
-        :generic: "Oras ng Silangang Australya"
-        :standard: "Standard Time ng Silangang Australya"
+        :daylight: "Daylight Time sa Silangang Australya"
+        :generic: "Oras sa Silangang Australya"
+        :standard: "Standard na Oras sa Silangang Australya"
     :Australia_Western: 
       :long: 
         :daylight: "Daylight Time sa Kanlurang Australya"
-        :generic: "Oras ng Kanlurang Australya"
-        :standard: "Standard Time ng Kanlurang Australya"
+        :generic: "Oras sa Kanlurang Australya"
+        :standard: "Standard na Oras sa Kanlurang Australya"
     :Azerbaijan: 
       :long: 
         :daylight: "Oras sa Tag-init ng Azerbaijan"
@@ -144,7 +137,7 @@
         :standard: "Standard na Oras sa Brasilia"
     :Brunei: 
       :long: 
-        :standard: "Oras ng Brunei Darussalam"
+        :standard: "Oras sa Brunei Darussalam"
     :Cape_Verde: 
       :long: 
         :daylight: "Oras sa Tag-init ng Cape Verde"
@@ -202,7 +195,7 @@
         :standard: "Oras sa Dumont-d’Urville"
     :East_Timor: 
       :long: 
-        :standard: "Oras ng East Timor"
+        :standard: "Oras sa East Timor"
     :Easter: 
       :long: 
         :daylight: "Oras sa Tag-init ng Easter Island"
@@ -301,16 +294,16 @@
         :standard: "Oras sa Indian Ocean"
     :Indochina: 
       :long: 
-        :standard: "Oras ng Indochina"
+        :standard: "Oras sa Indochina"
     :Indonesia_Central: 
       :long: 
-        :standard: "Oras ng Gitnang Indonesiya"
+        :standard: "Oras sa Gitnang Indonesia"
     :Indonesia_Eastern: 
       :long: 
-        :standard: "Oras ng Silangang Indonesiya"
+        :standard: "Oras sa Silangang Indonesia"
     :Indonesia_Western: 
       :long: 
-        :standard: "Oras ng Kanlurang Indonesiya"
+        :standard: "Oras sa Kanlurang Indonesia"
     :Iran: 
       :long: 
         :daylight: "Daylight Time sa Iran"
@@ -376,7 +369,7 @@
         :standard: "Standard na Oras sa Magadan"
     :Malaysia: 
       :long: 
-        :standard: "Oras ng Malaysia"
+        :standard: "Oras sa Malaysia"
     :Maldives: 
       :long: 
         :standard: "Oras sa Maldives"
@@ -416,7 +409,7 @@
         :standard: "Standard na Oras sa Moscow"
     :Myanmar: 
       :long: 
-        :standard: "Oras ng Myanmar"
+        :standard: "Oras sa Myanmar"
     :Nauru: 
       :long: 
         :standard: "Oras sa Nauru"
@@ -490,15 +483,18 @@
         :standard: "Oras sa Phoenix Islands"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "Daylight Time sa Saint Pierre and Miquelon"
-        :generic: "Oras sa Saint Pierre and Miquelon"
-        :standard: "Standard na Oras sa Saint Pierre and Miquelon"
+        :daylight: "Daylight Time sa Saint Pierre & Miquelon"
+        :generic: "Oras sa Saint Pierre & Miquelon"
+        :standard: "Standard na Oras sa Saint Pierre & Miquelon"
     :Pitcairn: 
       :long: 
         :standard: "Oras sa Pitcairn"
     :Ponape: 
       :long: 
         :standard: "Oras sa Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Oras sa Pyongyang"
     :Reunion: 
       :long: 
         :standard: "Oras sa Reunion"
@@ -604,7 +600,7 @@
         :standard: "Oras sa Wake Island"
     :Wallis: 
       :long: 
-        :standard: "Oras sa Wallis and Futuna"
+        :standard: "Oras sa Wallis & Futuna"
     :Yakutsk: 
       :long: 
         :daylight: "Oras sa Tag-init ng Yakutsk"
@@ -816,6 +812,8 @@
       :city: Eirunepe
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -950,6 +948,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -977,7 +977,7 @@
     :America/Sitka: 
       :city: Sitka
     :America/St_Barthelemy: 
-      :city: "Saint Barthélemy"
+      :city: "St. Barthélemy"
     :America/St_Johns: 
       :city: "St. John’s"
     :America/St_Kitts: 
@@ -1050,6 +1050,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Baghdad
     :Asia/Bahrain: 
@@ -1058,6 +1060,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1082,6 +1086,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1123,7 +1129,7 @@
     :Asia/Makassar: 
       :city: Makassar
     :Asia/Manila: 
-      :city: Maynila
+      :city: Manila
     :Asia/Muscat: 
       :city: Muscat
     :Asia/Nicosia: 
@@ -1144,6 +1150,8 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanay
     :Asia/Qyzylorda: 
       :city: Qyzylorda
     :Asia/Rangoon: 
@@ -1176,6 +1184,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1207,7 +1217,7 @@
     :Atlantic/Reykjavik: 
       :city: Reykjavik
     :Atlantic/South_Georgia: 
-      :city: "Timog Georgia"
+      :city: "South Georgia"
     :Atlantic/St_Helena: 
       :city: "St. Helena"
     :Atlantic/Stanley: 
@@ -1236,12 +1246,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Coordinated Universal Time"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Di-kilalang Lungsod"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athens
     :Europe/Belgrade: 
@@ -1282,6 +1299,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbon
     :Europe/Ljubljana: 
@@ -1322,6 +1341,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1334,6 +1355,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Uzhgorod
     :Europe/Vaduz: 

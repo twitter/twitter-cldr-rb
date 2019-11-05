@@ -3,12 +3,17 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: Bh时
+        :Bhm: "Bh:mm"
+        :Bhms: "Bh:mm:ss"
         :E: ccc
+        :EBhm: "EBh:mm"
+        :EBhms: "EBh:mm:ss"
         :EHm: "EHH:mm"
         :EHms: "EHH:mm:ss"
         :Ed: d日E
-        :Ehm: "E ah:mm"
-        :Ehms: "E ah:mm:ss"
+        :Ehm: "Eah:mm"
+        :Ehms: "Eah:mm:ss"
         :Gy: Gy年
         :GyMMM: Gy年M月
         :GyMMMEd: Gy年M月d日E
@@ -22,6 +27,7 @@
         :MEd: M/dE
         :MMM: LLL
         :MMMEd: M月d日E
+        :MMMMW: MMMM第W周
         :MMMMd: M月d日
         :MMMd: M月d日
         :MMdd: MM/dd
@@ -45,6 +51,7 @@
         :yMd: y/M/d
         :yQQQ: y年第Q季度
         :yQQQQ: y年第Q季度
+        :yw: Y年第w周
       :days: 
         :format: 
           :abbreviated: 
@@ -114,43 +121,60 @@
             :wed: 星期三
       :eras: 
         :abbr: 
-          0: 西元前
-          1: 西元
+          0: BCE
+          1: CE
         :name: 
-          0: 西元前
-          1: 西元
+          0: BCE
+          1: CE
         :narrow: 
-          0: 公元前
-          1: 公元
+          0: BCE
+          1: CE
       :fields: 
         :day: 日
         :day-narrow: 日
         :day-short: 日
+        :dayOfYear: 年中日
+        :dayOfYear-narrow: 年中日
+        :dayOfYear-short: 年中日
         :dayperiod: 上午/下午
+        :dayperiod-narrow: 上午/下午
+        :dayperiod-short: 上午/下午
         :era: 纪元
+        :era-narrow: 纪元
+        :era-short: 纪元
         :hour: 小时
         :hour-narrow: 小时
         :hour-short: 小时
         :minute: 分钟
-        :minute-narrow: 分钟
-        :minute-short: 分钟
+        :minute-narrow: 分
+        :minute-short: 分
         :month: 月
         :month-narrow: 月
         :month-short: 月
-        :quarter: 季
+        :quarter: 季度
         :quarter-narrow: 季
         :quarter-short: 季
-        :second: 秒钟
-        :second-narrow: 秒钟
-        :second-short: 秒钟
+        :second: 秒
+        :second-narrow: 秒
+        :second-short: 秒
         :week: 周
         :week-narrow: 周
         :week-short: 周
+        :weekOfMonth: 月中周
+        :weekOfMonth-narrow: 月中周
+        :weekOfMonth-short: 月中周
         :weekday: 工作日
+        :weekday-narrow: 工作日
+        :weekday-short: 工作日
+        :weekdayOfMonth: 月中日
+        :weekdayOfMonth-narrow: 月中日
+        :weekdayOfMonth-short: 月中日
         :year: 年
         :year-narrow: 年
         :year-short: 年
         :zone: 时区
+        :zone-narrow: 时区
+        :zone-short: 时区
       :formats: 
         :date: 
           :full: 
@@ -194,19 +218,7 @@
             7: 7月
             8: 8月
             9: 9月
-          :narrow: 
-            1: "1"
-            10: "10"
-            11: "11"
-            12: "12"
-            2: "2"
-            3: "3"
-            4: "4"
-            5: "5"
-            6: "6"
-            7: "7"
-            8: "8"
-            9: "9"
+          :narrow: :calendars.gregorian.months.stand-alone.narrow
           :wide: 
             1: 一月
             10: 十月
@@ -263,12 +275,12 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: 下午
+            :afternoon1: 中午
             :afternoon2: 下午
             :am: 上午
             :evening1: 晚上
             :midnight: 午夜
-            :morning1: 清晨
+            :morning1: 早上
             :morning2: 上午
             :night1: 凌晨
             :pm: 下午
@@ -278,12 +290,12 @@
             :am: 上午
             :evening1: 晚上
             :midnight: 午夜
-            :morning1: 清晨
+            :morning1: 早上
             :morning2: 上午
             :night1: 凌晨
             :pm: 下午
           :wide: 
-            :afternoon1: 下午
+            :afternoon1: 中午
             :afternoon2: 下午
             :am: 上午
             :evening1: 晚上

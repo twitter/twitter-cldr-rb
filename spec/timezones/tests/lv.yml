@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: Alžīra (CET)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -204,7 +204,7 @@ Africa/Brazzaville:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Kongo - Brazavila'
+    :generic: 'Laika josla: Kongo (Brazavila)'
   :LONG:
     :standard: Rietumāfrikas ziemas laiks
     :daylight: Rietumāfrikas vasaras laiks
@@ -214,7 +214,7 @@ Africa/Brazzaville:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Kongo - Brazavila'
+    :generic: 'Laika josla: Kongo (Brazavila)'
 Africa/Bujumbura:
   :offset: 7200000
   :LONG_GMT:
@@ -222,7 +222,7 @@ Africa/Bujumbura:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Burundi'
+    :generic: 'Laika josla: Burundija'
   :LONG:
     :standard: Centrālāfrikas laiks
     :daylight: GMT+02:00
@@ -232,7 +232,7 @@ Africa/Bujumbura:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Burundi'
+    :generic: 'Laika josla: Burundija'
 Africa/Cairo:
   :offset: 7200000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: Ēģipte (EET)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Maroka'
   :LONG:
-    :standard: Rietumeiropas ziemas laiks
-    :daylight: Rietumeiropas vasaras laiks
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Rietumeiropas laiks
+    :generic: 'Laika josla: Maroka'
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: 'Laika josla: Maroka'
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Rietumsahāra'
   :LONG:
-    :standard: Rietumeiropas ziemas laiks
-    :daylight: Rietumeiropas vasaras laiks
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Rietumeiropas laiks
+    :generic: 'Laika josla: Rietumsahāra'
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: 'Laika josla: Rietumsahāra'
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Uganda'
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Sudāna'
   :LONG:
-    :standard: Austrumāfrikas laiks
-    :daylight: GMT+03:00
+    :standard: Centrālāfrikas laiks
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Austrumāfrikas laiks
+    :generic: Centrālāfrikas laiks
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: 'Laika josla: Sudāna'
 Africa/Kigali:
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: Tripole (EET)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: Tunisija (CET)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Namībija'
   :LONG:
-    :standard: Rietumāfrikas ziemas laiks
-    :daylight: Rietumāfrikas vasaras laiks
+    :standard: Centrālāfrikas laiks
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Vindhuka (Rietumāfrikas laiks)
+    :generic: Centrālāfrikas laiks
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: 'Laika josla: Namībija'
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Havaju–Aleutu ziemas laiks
     :daylight: Havaju–Aleutu vasaras laiks
   :LONG_GENERIC:
-    :generic: Adaka (Havaju–Aleutu laiks)
+    :generic: Havaju–Aleutu laiks
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Havaju–Aleutu ziemas laiks
     :daylight: Havaju–Aleutu vasaras laiks
   :LONG_GENERIC:
-    :generic: Adaka (Havaju–Aleutu laiks)
+    :generic: Havaju–Aleutu laiks
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1554,7 +1554,7 @@ America/Cambridge_Bay:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Keimbridžbeja'
+    :generic: 'Laika josla: Kembridžbeja'
   :LONG:
     :standard: Kalnu ziemas laiks
     :daylight: Kalnu vasaras laiks
@@ -1564,7 +1564,7 @@ America/Cambridge_Bay:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Keimbridžbeja'
+    :generic: 'Laika josla: Kembridžbeja'
 America/Campo_Grande:
   :offset: -14400000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amazones ziemas laiks
     :daylight: Amazones vasaras laiks
   :LONG_GENERIC:
-    :generic: Amazones laiks
+    :generic: Kampugrandi (Amazones laiks)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Kankuna'
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Venecuēla'
   :LONG:
     :standard: Venecuēlas laiks
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Venecuēlas laiks
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: 'Laika josla: Venecuēla'
 America/Catamarca:
@@ -1644,17 +1644,17 @@ America/Cayenne:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Franču Gviāna'
+    :generic: 'Laika josla: Francijas Gviāna'
   :LONG:
-    :standard: Franču Gviānas laiks
+    :standard: Francijas Gviānas laiks
     :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Franču Gviānas laiks
+    :generic: Francijas Gviānas laiks
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Franču Gviāna'
+    :generic: 'Laika josla: Francijas Gviāna'
 America/Cayman:
   :offset: -18000000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amazones ziemas laiks
     :daylight: Amazones vasaras laiks
   :LONG_GENERIC:
-    :generic: Amazones laiks
+    :generic: Kujaba (Amazones laiks)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2004,7 +2004,7 @@ America/Fort_Nelson:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Fort Nelson'
+    :generic: 'Laika josla: Fortnelsona'
   :LONG:
     :standard: Kalnu ziemas laiks
     :daylight: Kalnu vasaras laiks
@@ -2014,7 +2014,7 @@ America/Fort_Nelson:
     :standard: GMT-7
     :daylight: GMT-7
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Fort Nelson'
+    :generic: 'Laika josla: Fortnelsona'
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Gūsbeja'
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Tērksas un Kaikosas salas'
   :LONG:
-    :standard: Atlantijas ziemas laiks
-    :daylight: Atlantijas vasaras laiks
+    :standard: Austrumu ziemas laiks
+    :daylight: Austrumu vasaras laiks
   :LONG_GENERIC:
-    :generic: Atlantijas ziemas laiks
+    :generic: Austrumu laiks
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: 'Laika josla: Tērksas un Kaikosas salas'
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Austrumu ziemas laiks
     :daylight: Austrumu vasaras laiks
   :LONG_GENERIC:
-    :generic: Austrumu ziemas laiks
+    :generic: Austrumu laiks
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: 'Laika josla: Haiti'
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Puertoriko'
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Puntaarenasa'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Puntaarenasa'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Puntaarenasa'
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Santarena'
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Čīle'
   :LONG:
     :standard: Čīles ziemas laiks
     :daylight: Čīles vasaras laiks
   :LONG_GENERIC:
-    :generic: Čīles ziemas laiks
+    :generic: Čīles laiks
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: 'Laika josla: Čīle'
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Pālmera'
   :LONG:
-    :standard: Čīles ziemas laiks
-    :daylight: Čīles vasaras laiks
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Čīles ziemas laiks
+    :generic: 'Laika josla: Pālmera'
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Turkmenistāna'
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Atirau'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Rietumkazahstānas laiks
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Rietumkazahstānas laiks
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Atirau'
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Azerbaidžānas ziemas laiks
     :daylight: Azerbaidžānas vasaras laiks
   :LONG_GENERIC:
-    :generic: Azerbaidžānas laiks
+    :generic: Azerbaidžānas ziemas laiks
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: 'Laika josla: Azerbaidžāna'
 Asia/Bangkok:
@@ -4434,17 +4434,17 @@ Asia/Barnaul:
   :SHORT_GMT:
     :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Barnaul'
+    :generic: 'Laika josla: Barnaula'
   :LONG:
     :standard: GMT+07:00
     :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: 'Laika josla: Barnaul'
+    :generic: 'Laika josla: Barnaula'
   :SHORT:
     :standard: GMT+7
     :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Barnaul'
+    :generic: 'Laika josla: Barnaula'
 Asia/Beirut:
   :offset: 7200000
   :LONG_GMT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Čoibalsanas ziemas laiks
     :daylight: Čoibalsanas vasaras laiks
   :LONG_GENERIC:
-    :generic: Čoibalsanas laiks
+    :generic: Čoibalsanas ziemas laiks
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Laika josla: Čoibalsana'
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Tadžikistāna'
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Famagusta'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Famagusta'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Famagusta'
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Hovdas ziemas laiks
     :daylight: Hovdas vasaras laiks
   :LONG_GENERIC:
-    :generic: Hovdas laiks
+    :generic: Hovdas ziemas laiks
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: 'Laika josla: Hovda'
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Irkutska'
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Turcija'
   :LONG:
-    :standard: Austrumeiropas ziemas laiks
-    :daylight: Austrumeiropas vasaras laiks
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Austrumeiropas laiks
+    :generic: 'Laika josla: Turcija'
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: 'Laika josla: Turcija'
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Ķīnas īpašās pārvaldes apgabals Makao'
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Magadana'
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Magadanas ziemas laiks
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: 'Laika josla: Magadana'
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Kipra'
+    :generic: 'Laika josla: Nikosija'
   :LONG:
     :standard: Austrumeiropas ziemas laiks
     :daylight: Austrumeiropas vasaras laiks
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Novokuzņecka'
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Novosibirska'
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Novosibirskas ziemas laiks
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: 'Laika josla: Novosibirska'
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Pontianaka'
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Ziemeļkoreja'
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: Korejas ziemas laiks
+    :daylight: Korejas vasaras laiks
   :LONG_GENERIC:
-    :generic: 'Laika josla: Ziemeļkoreja'
+    :generic: Korejas ziemas laiks
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: 'Laika josla: Ziemeļkoreja'
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: 'Laika josla: Katara'
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Kizilorda'
+    :generic: 'Laika josla: Qostanay'
   :LONG:
     :standard: Austrumkazahstānas laiks
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: 'Laika josla: Qostanay'
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: 'Laika josla: Kizilorda'
+  :LONG:
+    :standard: Rietumkazahstānas laiks
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: Rietumkazahstānas laiks
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: 'Laika josla: Kizilorda'
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Japāna'
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Tomska'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Tomska'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Tomska'
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Ulanbatoras ziemas laiks
     :daylight: Ulanbatoras vasaras laiks
   :LONG_GENERIC:
-    :generic: Ulanbatoras laiks
+    :generic: Ulanbatoras ziemas laiks
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Laika josla: Ulanbatora'
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Ulanbatoras ziemas laiks
     :daylight: Ulanbatoras vasaras laiks
   :LONG_GENERIC:
-    :generic: Ulanbatoras laiks
+    :generic: Ulanbatoras ziemas laiks
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: 'Laika josla: Ulanbatora'
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Jakutska'
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Mjanma (Birma)'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Mjanmas laiks
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Mjanmas laiks
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Mjanma (Birma)'
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6036,7 +6054,7 @@ Atlantic/Faeroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Fēru Salas'
+    :generic: 'Laika josla: Fēru salas'
   :LONG:
     :standard: Rietumeiropas ziemas laiks
     :daylight: Rietumeiropas vasaras laiks
@@ -6054,7 +6072,7 @@ Atlantic/Faroe:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Fēru Salas'
+    :generic: 'Laika josla: Fēru salas'
   :LONG:
     :standard: Rietumeiropas ziemas laiks
     :daylight: Rietumeiropas vasaras laiks
@@ -6108,7 +6126,7 @@ Atlantic/Reykjavik:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Īslande'
+    :generic: 'Laika josla: Islande'
   :LONG:
     :standard: Griničas laiks
     :daylight: GMT
@@ -6118,7 +6136,7 @@ Atlantic/Reykjavik:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Īslande'
+    :generic: 'Laika josla: Islande'
 Atlantic/South_Georgia:
   :offset: -7200000
   :LONG_GMT:
@@ -6164,10 +6182,10 @@ Atlantic/Stanley:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Folklenda salas'
   :LONG:
-    :standard: Folklenda salu ziemas laiks
-    :daylight: Folklenda salu vasaras laiks
+    :standard: Folklenda (Malvinu) salu ziemas laiks
+    :daylight: Folklenda (Malvinu) salu vasaras laiks
   :LONG_GENERIC:
-    :generic: Folklenda salu ziemas laiks
+    :generic: Folklenda (Malvinu) salu ziemas laiks
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Laika josla: Vinipega'
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: 'Laika josla: Ridžaina'
-  :LONG:
-    :standard: Centrālais ziemas laiks
-    :daylight: Centrālais vasaras laiks
-  :LONG_GENERIC:
-    :generic: Centrālais ziemas laiks
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: 'Laika josla: Ridžaina'
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Vaithorsa'
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Čīle'
   :LONG:
     :standard: Čīles ziemas laiks
     :daylight: Čīles vasaras laiks
   :LONG_GENERIC:
-    :generic: Čīles ziemas laiks
+    :generic: Čīles laiks
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: 'Laika josla: Čīle'
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Lieldienu sala'
   :LONG:
     :standard: Lieldienu salas ziemas laiks
     :daylight: Lieldienu salas vasaras laiks
   :LONG_GENERIC:
-    :generic: Lieldienu salas ziemas laiks
+    :generic: Lieldienu salas laiks
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Laika josla: Lieldienu sala'
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: Ēģipte (EET)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Astrakhan'
+    :generic: 'Laika josla: Astrahaņa'
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: 'Laika josla: Astrakhan'
+    :generic: 'Laika josla: Astrahaņa'
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Astrakhan'
+    :generic: 'Laika josla: Astrahaņa'
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7710,17 +7710,17 @@ Europe/Belfast:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :LONG:
     :standard: Griničas laiks
     :daylight: Lielbritānijas vasaras laiks
   :LONG_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
 Europe/Belgrade:
   :offset: 3600000
   :LONG_GMT:
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Mena'
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Turcija'
   :LONG:
-    :standard: Austrumeiropas ziemas laiks
-    :daylight: Austrumeiropas vasaras laiks
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Austrumeiropas laiks
+    :generic: 'Laika josla: Turcija'
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: 'Laika josla: Turcija'
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: Kaļiņingrada (EET)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Kirova'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Kirova'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Kirova'
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8106,17 +8106,17 @@ Europe/London:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :LONG:
     :standard: Griničas laiks
     :daylight: Lielbritānijas vasaras laiks
   :LONG_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
 Europe/Luxembourg:
   :offset: 3600000
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Baltkrievija'
   :LONG:
-    :standard: Austrumeiropas laika josla (FET)
-    :daylight: GMT+03:00
+    :standard: Maskavas ziemas laiks
+    :daylight: Maskavas vasaras laiks
   :LONG_GENERIC:
-    :generic: Austrumeiropas laika josla (FET)
+    :generic: Maskavas ziemas laiks
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Kipra'
+    :generic: 'Laika josla: Nikosija'
   :LONG:
     :standard: Austrumeiropas ziemas laiks
     :daylight: Austrumeiropas vasaras laiks
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: 'Laika josla: Saratova'
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Saratova'
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: 'Laika josla: Saratova'
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Maķedonija'
+    :generic: 'Laika josla: Ziemeļmaķedonija'
   :LONG:
     :standard: Centrāleiropas ziemas laiks
     :daylight: Centrāleiropas vasaras laiks
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Ulyanovsk'
+    :generic: 'Laika josla: Uļjanovska'
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: 'Laika josla: Ulyanovsk'
+    :generic: 'Laika josla: Uļjanovska'
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Ulyanovsk'
+    :generic: 'Laika josla: Uļjanovska'
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Volgograda'
   :LONG:
-    :standard: Maskavas ziemas laiks
-    :daylight: Maskavas vasaras laiks
+    :standard: Volgogradas ziemas laiks
+    :daylight: Volgogradas vasaras laiks
   :LONG_GENERIC:
-    :generic: Maskavas ziemas laiks
+    :generic: Volgogradas ziemas laiks
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: 'Laika josla: Volgograda'
 Europe/Warsaw:
@@ -8790,17 +8790,17 @@ GB:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :LONG:
     :standard: Griničas laiks
     :daylight: Lielbritānijas vasaras laiks
   :LONG_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
 GB-Eire:
   :offset: 0
   :LONG_GMT:
@@ -8808,17 +8808,17 @@ GB-Eire:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :LONG:
     :standard: Griničas laiks
     :daylight: Lielbritānijas vasaras laiks
   :LONG_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Lielbritānija'
+    :generic: 'Laika josla: Apvienotā Karaliste'
 GMT:
   :offset: 0
   :LONG_GMT:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Griničas laiks
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Griničas laiks
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8952,7 +8952,7 @@ Iceland:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Īslande'
+    :generic: 'Laika josla: Islande'
   :LONG:
     :standard: Griničas laiks
     :daylight: GMT
@@ -8962,7 +8962,7 @@ Iceland:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Īslande'
+    :generic: 'Laika josla: Islande'
 Indian/Antananarivo:
   :offset: 10800000
   :LONG_GMT:
@@ -9024,17 +9024,17 @@ Indian/Cocos:
   :SHORT_GMT:
     :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Kokosu jeb Kīlinga salas'
+    :generic: 'Laika josla: Kokosu (Kīlinga) salas'
   :LONG:
-    :standard: Kokosa salu laiks
+    :standard: Kokosu (Kīlinga) salu laiks
     :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: Kokosa salu laiks
+    :generic: Kokosu (Kīlinga) salu laiks
   :SHORT:
     :standard: GMT+6:30
     :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Kokosu jeb Kīlinga salas'
+    :generic: 'Laika josla: Kokosu (Kīlinga) salas'
 Indian/Comoro:
   :offset: 10800000
   :LONG_GMT:
@@ -9060,17 +9060,17 @@ Indian/Kerguelen:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Francijas Dienvidjūru Zemes'
+    :generic: 'Laika josla: Francijas Dienvidjūru teritorija'
   :LONG:
-    :standard: Francijas Dienidjūru un Antarktikas teritorijas laiks
+    :standard: Francijas Dienvidjūru un Antarktikas teritorijas laiks
     :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: Francijas Dienidjūru un Antarktikas teritorijas laiks
+    :generic: Francijas Dienvidjūru un Antarktikas teritorijas laiks
   :SHORT:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Francijas Dienvidjūru Zemes'
+    :generic: 'Laika josla: Francijas Dienvidjūru teritorija'
 Indian/Mahe:
   :offset: 14400000
   :LONG_GMT:
@@ -9078,7 +9078,7 @@ Indian/Mahe:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Šeišelu salas'
+    :generic: 'Laika josla: Seišelu salas'
   :LONG:
     :standard: Seišeļu salu laiks
     :daylight: GMT+04:00
@@ -9088,7 +9088,7 @@ Indian/Mahe:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Šeišelu salas'
+    :generic: 'Laika josla: Seišelu salas'
 Indian/Maldives:
   :offset: 18000000
   :LONG_GMT:
@@ -9098,10 +9098,10 @@ Indian/Maldives:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Maldīvija'
   :LONG:
-    :standard: Maldīvu salu laiks
+    :standard: Maldīvijas laiks
     :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: Maldīvu salu laiks
+    :generic: Maldīvijas laiks
   :SHORT:
     :standard: GMT+5
     :daylight: GMT+5
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: Tripole (EET)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9510,17 +9510,17 @@ Pacific/Bougainville:
   :SHORT_GMT:
     :generic: "+1100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Bugeinvile'
+    :generic: 'Laika josla: Bugenvila sala'
   :LONG:
     :standard: GMT+11:00
     :daylight: GMT+11:00
   :LONG_GENERIC:
-    :generic: 'Laika josla: Bugeinvile'
+    :generic: 'Laika josla: Bugenvila sala'
   :SHORT:
     :standard: GMT+11
     :daylight: GMT+11
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Bugeinvile'
+    :generic: 'Laika josla: Bugenvila sala'
 Pacific/Chatham:
   :offset: 45900000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Čūka'
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Lieldienu sala'
   :LONG:
     :standard: Lieldienu salas ziemas laiks
     :daylight: Lieldienu salas vasaras laiks
   :LONG_GENERIC:
-    :generic: Lieldienu salas ziemas laiks
+    :generic: Lieldienu salas laiks
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: 'Laika josla: Lieldienu sala'
@@ -9728,10 +9728,10 @@ Pacific/Guam:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Guama'
   :LONG:
-    :standard: Čamoro standarta laiks
+    :standard: Čamorra ziemas laiks
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: Čamoro standarta laiks
+    :generic: Čamorra ziemas laiks
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -9908,10 +9908,10 @@ Pacific/Niue:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Niue'
   :LONG:
-    :standard: Niue laiks
+    :standard: Niues laiks
     :daylight: GMT-11:00
   :LONG_GENERIC:
-    :generic: Niue laiks
+    :generic: Niues laiks
   :SHORT:
     :standard: GMT-11
     :daylight: GMT-11
@@ -9960,7 +9960,7 @@ Pacific/Pago_Pago:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
   :LONG:
     :standard: Samoa ziemas laiks
     :daylight: Samoa vasaras laiks
@@ -9970,7 +9970,7 @@ Pacific/Pago_Pago:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
 Pacific/Palau:
   :offset: 32400000
   :LONG_GMT:
@@ -9996,7 +9996,7 @@ Pacific/Pitcairn:
   :SHORT_GMT:
     :generic: "-0800"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Pitkērna'
+    :generic: 'Laika josla: Pitkērnas salas'
   :LONG:
     :standard: Pitkērnas laiks
     :daylight: GMT-08:00
@@ -10006,7 +10006,7 @@ Pacific/Pitcairn:
     :standard: GMT-8
     :daylight: GMT-8
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Pitkērna'
+    :generic: 'Laika josla: Pitkērnas salas'
 Pacific/Pohnpei:
   :offset: 39600000
   :LONG_GMT:
@@ -10088,10 +10088,10 @@ Pacific/Saipan:
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Ziemeļu Marianas salas'
   :LONG:
-    :standard: Čamoro standarta laiks
+    :standard: Čamorra ziemas laiks
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: Čamoro standarta laiks
+    :generic: Čamorra ziemas laiks
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -10104,7 +10104,7 @@ Pacific/Samoa:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
   :LONG:
     :standard: Samoa ziemas laiks
     :daylight: Samoa vasaras laiks
@@ -10114,7 +10114,7 @@ Pacific/Samoa:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
 Pacific/Tahiti:
   :offset: -36000000
   :LONG_GMT:
@@ -10212,7 +10212,7 @@ Pacific/Wallis:
   :SHORT_GMT:
     :generic: "+1200"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Volisa un Futuna'
+    :generic: 'Laika josla: Volisa un Futunas salas'
   :LONG:
     :standard: Volisas un Futunas laiks
     :daylight: GMT+12:00
@@ -10222,7 +10222,7 @@ Pacific/Wallis:
     :standard: GMT+12
     :daylight: GMT+12
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Volisa un Futuna'
+    :generic: 'Laika josla: Volisa un Futunas salas'
 Pacific/Yap:
   :offset: 36000000
   :LONG_GMT:
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: 'Laika josla: Singapūra'
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'Laika josla: Turcija'
   :LONG:
-    :standard: Austrumeiropas ziemas laiks
-    :daylight: Austrumeiropas vasaras laiks
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Austrumeiropas laiks
+    :generic: 'Laika josla: Turcija'
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: 'Laika josla: Turcija'
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Havaju–Aleutu ziemas laiks
     :daylight: Havaju–Aleutu vasaras laiks
   :LONG_GENERIC:
-    :generic: Adaka (Havaju–Aleutu laiks)
+    :generic: Havaju–Aleutu laiks
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10590,7 +10590,7 @@ US/Samoa:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
   :LONG:
     :standard: Samoa ziemas laiks
     :daylight: Samoa vasaras laiks
@@ -10600,7 +10600,7 @@ US/Samoa:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: 'Laika josla: Amerikāņu Samoa'
+    :generic: 'Laika josla: ASV Samoa'
 UTC:
   :offset: 0
   :LONG_GMT:
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Universālais koordinētais laiks
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

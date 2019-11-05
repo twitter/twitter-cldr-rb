@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedArray do
+describe TwitterCldr::Localized::LocalizedArray do
   describe '#code_points_to_string' do
     it 'transforms an array of code points into a string' do
       expect([0x74, 0x77, 0x69, 0x74, 0x74, 0x65, 0x72].localize.code_points_to_string).to eq('twitter')
@@ -28,7 +26,7 @@ describe LocalizedArray do
 
     describe '#sort' do
       it 'returns a new LocalizedArray' do
-        expect(localized.sort).to be_instance_of(LocalizedArray)
+        expect(localized.sort).to be_instance_of(TwitterCldr::Localized::LocalizedArray)
       end
 
       it 'does not change the original array' do

@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: SEČ
     :daylight: SELČ
   :SHORT_GENERIC:
-    :generic: SEČ (Alžír)
+    :generic: SEČ
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -204,7 +204,7 @@ Africa/Brazzaville:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Kongo - Brazzaville
+    :generic: časové pásmo Konžská republika
   :LONG:
     :standard: západoafrický štandardný čas
     :daylight: západoafrický letný čas
@@ -214,7 +214,7 @@ Africa/Brazzaville:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: časové pásmo Kongo - Brazzaville
+    :generic: časové pásmo Konžská republika
 Africa/Bujumbura:
   :offset: 7200000
   :LONG_GMT:
@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: časové pásmo Maroko
   :LONG:
-    :standard: západoeurópsky štandardný čas
-    :daylight: západoeurópsky letný čas
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: západoeurópsky čas
+    :generic: časové pásmo Maroko
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: časové pásmo Západná Sahara
   :LONG:
-    :standard: západoeurópsky štandardný čas
-    :daylight: západoeurópsky letný čas
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: západoeurópsky čas
+    :generic: časové pásmo Západná Sahara
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: časové pásmo Uganda
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: časové pásmo Sudán
   :LONG:
-    :standard: východoafrický čas
-    :daylight: GMT+03:00
+    :standard: stredoafrický čas
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: východoafrický čas
+    :generic: stredoafrický čas
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: časové pásmo Sudán
 Africa/Kigali:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: SEČ
     :daylight: SELČ
   :SHORT_GENERIC:
-    :generic: SEČ (Tunisko)
+    :generic: SEČ
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: časové pásmo Namíbia
   :LONG:
-    :standard: západoafrický štandardný čas
-    :daylight: západoafrický letný čas
+    :standard: stredoafrický čas
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: západoafrický čas (Windhoek)
+    :generic: stredoafrický čas
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: časové pásmo Namíbia
@@ -983,7 +983,7 @@ America/Adak:
     :standard: havajsko-aleutský štandardný čas
     :daylight: havajsko-aleutský letný čas
   :LONG_GENERIC:
-    :generic: havajsko-aleutský čas (Adak)
+    :generic: havajsko-aleutský čas
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: havajsko-aleutský štandardný čas
     :daylight: havajsko-aleutský letný čas
   :LONG_GENERIC:
-    :generic: havajsko-aleutský čas (Adak)
+    :generic: havajsko-aleutský čas
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: amazonský štandardný čas
     :daylight: amazonský letný čas
   :LONG_GENERIC:
-    :generic: amazonský čas
+    :generic: amazonský čas (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: časové pásmo Cancún
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: časové pásmo Venezuela
   :LONG:
     :standard: venezuelský čas
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: venezuelský čas
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: časové pásmo Venezuela
 America/Catamarca:
@@ -1644,7 +1644,7 @@ America/Cayenne:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Francúzska Guayana
+    :generic: časové pásmo Francúzska Guyana
   :LONG:
     :standard: francúzskoguyanský čas
     :daylight: GMT-03:00
@@ -1654,7 +1654,7 @@ America/Cayenne:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: časové pásmo Francúzska Guayana
+    :generic: časové pásmo Francúzska Guyana
 America/Cayman:
   :offset: -18000000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: amazonský štandardný čas
     :daylight: amazonský letný čas
   :LONG_GENERIC:
-    :generic: amazonský čas
+    :generic: amazonský čas (Cuiabá)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1952,10 +1952,10 @@ America/Eirunepe:
   :GENERIC_LOCATION:
     :generic: časové pásmo Eirunepé
   :LONG:
-    :standard: GMT-05:00
-    :daylight: GMT-05:00
+    :standard: acrejský štandardný čas
+    :daylight: acrejský letný čas
   :LONG_GENERIC:
-    :generic: časové pásmo Eirunepé
+    :generic: acrejský štandardný čas
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: časové pásmo Goose Bay
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: časové pásmo Turks a Caicos
   :LONG:
-    :standard: atlantický štandardný čas
-    :daylight: atlantický letný čas
+    :standard: severoamerický východný štandardný čas
+    :daylight: severoamerický východný letný čas
   :LONG_GENERIC:
-    :generic: atlantický štandardný čas
+    :generic: severoamerický východný čas
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: časové pásmo Turks a Caicos
@@ -2202,7 +2202,7 @@ America/Guyana:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Guayana
+    :generic: časové pásmo Guyana
   :LONG:
     :standard: guyanský čas
     :daylight: GMT-04:00
@@ -2212,7 +2212,7 @@ America/Guyana:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: časové pásmo Guayana
+    :generic: časové pásmo Guyana
 America/Halifax:
   :offset: -14400000
   :LONG_GMT:
@@ -2670,7 +2670,7 @@ America/Lower_Princes:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Sint Maarten
+    :generic: časové pásmo Svätý Martin (hol.)
   :LONG:
     :standard: atlantický štandardný čas
     :daylight: atlantický letný čas
@@ -2680,7 +2680,7 @@ America/Lower_Princes:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: časové pásmo Sint Maarten
+    :generic: časové pásmo Svätý Martin (hol.)
 America/Maceio:
   :offset: -10800000
   :LONG_GMT:
@@ -2742,7 +2742,7 @@ America/Marigot:
   :SHORT_GMT:
     :generic: "-0400"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Svätý Martin
+    :generic: časové pásmo Svätý Martin (fr.)
   :LONG:
     :standard: atlantický štandardný čas
     :daylight: atlantický letný čas
@@ -2752,7 +2752,7 @@ America/Marigot:
     :standard: GMT-4
     :daylight: GMT-4
   :SHORT_GENERIC:
-    :generic: časové pásmo Svätý Martin
+    :generic: časové pásmo Svätý Martin (fr.)
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: severoamerický východný štandardný čas
     :daylight: severoamerický východný letný čas
   :LONG_GENERIC:
-    :generic: severoamerický východný štandardný čas
+    :generic: severoamerický východný čas
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: časové pásmo Haiti
 America/Port_of_Spain:
@@ -3284,10 +3284,10 @@ America/Porto_Acre:
   :GENERIC_LOCATION:
     :generic: časové pásmo Rio Branco
   :LONG:
-    :standard: GMT-05:00
-    :daylight: GMT-05:00
+    :standard: acrejský štandardný čas
+    :daylight: acrejský letný čas
   :LONG_GENERIC:
-    :generic: časové pásmo Rio Branco
+    :generic: acrejský štandardný čas
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: časové pásmo Portoriko
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Punta Arenas
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Punta Arenas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Punta Arenas
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3446,10 +3446,10 @@ America/Rio_Branco:
   :GENERIC_LOCATION:
     :generic: časové pásmo Rio Branco
   :LONG:
-    :standard: GMT-05:00
-    :daylight: GMT-05:00
+    :standard: acrejský štandardný čas
+    :daylight: acrejský letný čas
   :LONG_GENERIC:
-    :generic: časové pásmo Rio Branco
+    :generic: acrejský štandardný čas
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: časové pásmo Santarém
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: časové pásmo Čile
   :LONG:
     :standard: čilský štandardný čas
     :daylight: čilský letný čas
   :LONG_GENERIC:
-    :generic: čilský štandardný čas
+    :generic: čilský čas
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: časové pásmo Čile
@@ -4002,7 +4002,7 @@ Antarctica/DumontDUrville:
   :SHORT_GMT:
     :generic: "+1000"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Dumont D’Urville
+    :generic: časové pásmo Dumont d’Urville
   :LONG:
     :standard: čas stanice Dumonta d’Urvillea
     :daylight: GMT+10:00
@@ -4012,7 +4012,7 @@ Antarctica/DumontDUrville:
     :standard: GMT+10
     :daylight: GMT+10
   :SHORT_GENERIC:
-    :generic: časové pásmo Dumont D’Urville
+    :generic: časové pásmo Dumont d’Urville
 Antarctica/Macquarie:
   :offset: 39600000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: časové pásmo Palmer
   :LONG:
-    :standard: čilský štandardný čas
-    :daylight: čilský letný čas
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: čilský štandardný čas
+    :generic: časové pásmo Palmer
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: časové pásmo Turkménsko
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Atyrau
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: západokazachstanský čas
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: západokazachstanský čas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Atyrau
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: azerbajdžanský štandardný čas
     :daylight: azerbajdžanský letný čas
   :LONG_GENERIC:
-    :generic: azerbajdžanský čas
+    :generic: azerbajdžanský štandardný čas
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: časové pásmo Azerbajdžan
 Asia/Bangkok:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: čojbalsanský štandardný čas
     :daylight: čojbalsanský letný čas
   :LONG_GENERIC:
-    :generic: čojbalsanský čas
+    :generic: čojbalsanský štandardný čas
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: časové pásmo Čojbalsan
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: časové pásmo Tadžikistan
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Famagusta
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Famagusta
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Famagusta
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: chovdský štandardný čas
     :daylight: chovdský letný čas
   :LONG_GENERIC:
-    :generic: chovdský čas
+    :generic: chovdský štandardný čas
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: časové pásmo Chovd
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: časové pásmo Irkutsk
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: časové pásmo Turecko
   :LONG:
-    :standard: východoeurópsky štandardný čas
-    :daylight: východoeurópsky letný čas
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: východoeurópsky čas
+    :generic: časové pásmo Turecko
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: časové pásmo Turecko
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: časové pásmo Macao – OAO Číny
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: časové pásmo Magadan
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: magadanský štandardný čas
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: časové pásmo Magadan
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Cyprus
+    :generic: časové pásmo Nikózia
   :LONG:
     :standard: východoeurópsky štandardný čas
     :daylight: východoeurópsky letný čas
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: časové pásmo Cyprus
+    :generic: časové pásmo Nikózia
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: časové pásmo Novokuzneck
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: časové pásmo Novosibirsk
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: novosibirský štandardný čas
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: časové pásmo Novosibirsk
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: časové pásmo Pontianak
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: časové pásmo Severná Kórea
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: kórejský štandardný čas
+    :daylight: kórejský letný čas
   :LONG_GENERIC:
-    :generic: časové pásmo Severná Kórea
+    :generic: kórejský štandardný čas
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: časové pásmo Severná Kórea
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: časové pásmo Katar
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Kyzylorda
+    :generic: časové pásmo Kostanaj
   :LONG:
     :standard: východokazachstanský čas
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: časové pásmo Kostanaj
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: časové pásmo Kyzylorda
+  :LONG:
+    :standard: západokazachstanský čas
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: západokazachstanský čas
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: časové pásmo Kyzylorda
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: časové pásmo Japonsko
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Tomsk
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Tomsk
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Tomsk
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: ulanbátarský štandardný čas
     :daylight: ulanbátarský letný čas
   :LONG_GENERIC:
-    :generic: ulanbátarský čas
+    :generic: ulanbátarský štandardný čas
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: časové pásmo Ulanbátar
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: ulanbátarský štandardný čas
     :daylight: ulanbátarský letný čas
   :LONG_GENERIC:
-    :generic: ulanbátarský čas
+    :generic: ulanbátarský štandardný čas
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: časové pásmo Ulanbátar
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: časové pásmo Jakutsk
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Mjanmarsko
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: mjanmarský čas
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: mjanmarský čas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Mjanmarsko
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6596,10 +6614,10 @@ Brazil/Acre:
   :GENERIC_LOCATION:
     :generic: časové pásmo Rio Branco
   :LONG:
-    :standard: GMT-05:00
-    :daylight: GMT-05:00
+    :standard: acrejský štandardný čas
+    :daylight: acrejský letný čas
   :LONG_GENERIC:
-    :generic: časové pásmo Rio Branco
+    :generic: acrejský štandardný čas
   :SHORT:
     :standard: GMT-5
     :daylight: GMT-5
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: časové pásmo Winnipeg
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: časové pásmo Regina
-  :LONG:
-    :standard: severoamerický centrálny štandardný čas
-    :daylight: severoamerický centrálny letný čas
-  :LONG_GENERIC:
-    :generic: severoamerický centrálny štandardný čas
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: časové pásmo Regina
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: časové pásmo Whitehorse
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: časové pásmo Čile
   :LONG:
     :standard: čilský štandardný čas
     :daylight: čilský letný čas
   :LONG_GENERIC:
-    :generic: čilský štandardný čas
+    :generic: čilský čas
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: časové pásmo Čile
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: časové pásmo Veľkonočný ostrov
   :LONG:
     :standard: štandardný čas Veľkonočného ostrova
     :daylight: letný čas Veľkonočného ostrova
   :LONG_GENERIC:
-    :generic: štandardný čas Veľkonočného ostrova
+    :generic: čas Veľkonočného ostrova
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: časové pásmo Veľkonočný ostrov
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Astrakhan
+    :generic: časové pásmo Astrachán
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: časové pásmo Astrakhan
+    :generic: časové pásmo Astrachán
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: časové pásmo Astrakhan
+    :generic: časové pásmo Astrachán
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: časové pásmo Ostrov Man
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: časové pásmo Turecko
   :LONG:
-    :standard: východoeurópsky štandardný čas
-    :daylight: východoeurópsky letný čas
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: východoeurópsky čas
+    :generic: časové pásmo Turecko
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: časové pásmo Turecko
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: časové pásmo Ukrajina
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Kirov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Kirov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Kirov
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8178,7 +8178,7 @@ Europe/Mariehamn:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Ålandy
+    :generic: časové pásmo Alandy
   :LONG:
     :standard: východoeurópsky štandardný čas
     :daylight: východoeurópsky letný čas
@@ -8188,7 +8188,7 @@ Europe/Mariehamn:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: časové pásmo Ålandy
+    :generic: časové pásmo Alandy
 Europe/Minsk:
   :offset: 10800000
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: časové pásmo Bielorusko
   :LONG:
-    :standard: minský čas
-    :daylight: GMT+03:00
+    :standard: moskovský štandardný čas
+    :daylight: moskovský letný čas
   :LONG_GENERIC:
-    :generic: minský čas
+    :generic: moskovský štandardný čas
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Cyprus
+    :generic: časové pásmo Nikózia
   :LONG:
     :standard: východoeurópsky štandardný čas
     :daylight: východoeurópsky letný čas
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: časové pásmo Cyprus
+    :generic: časové pásmo Nikózia
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Česká republika
+    :generic: časové pásmo Česko
   :LONG:
     :standard: stredoeurópsky štandardný čas
     :daylight: stredoeurópsky letný čas
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: SEČ
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: časové pásmo Saratov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Saratov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: časové pásmo Saratov
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Macedónsko
+    :generic: časové pásmo Severné Macedónsko
   :LONG:
     :standard: stredoeurópsky štandardný čas
     :daylight: stredoeurópsky letný čas
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: časové pásmo Ulyanovsk
+    :generic: časové pásmo Uľjanovsk
   :LONG:
     :standard: GMT+04:00
     :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: časové pásmo Ulyanovsk
+    :generic: časové pásmo Uľjanovsk
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: časové pásmo Ulyanovsk
+    :generic: časové pásmo Uľjanovsk
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: časové pásmo Litva
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: časové pásmo Volgograd
   :LONG:
-    :standard: moskovský štandardný čas
-    :daylight: moskovský letný čas
+    :standard: volgogradský štandardný čas
+    :daylight: volgogradský letný čas
   :LONG_GENERIC:
-    :generic: moskovský štandardný čas
+    :generic: volgogradský štandardný čas
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: časové pásmo Volgograd
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: greenwichský čas
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: greenwichský čas
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: časové pásmo Chuuk
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: časové pásmo Veľkonočný ostrov
   :LONG:
     :standard: štandardný čas Veľkonočného ostrova
     :daylight: letný čas Veľkonočného ostrova
   :LONG_GENERIC:
-    :generic: štandardný čas Veľkonočného ostrova
+    :generic: čas Veľkonočného ostrova
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: časové pásmo Veľkonočný ostrov
@@ -9728,10 +9728,10 @@ Pacific/Guam:
   :GENERIC_LOCATION:
     :generic: časové pásmo Guam
   :LONG:
-    :standard: chamorrský štandardný čas
+    :standard: chamorrský čas
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: chamorrský štandardný čas
+    :generic: chamorrský čas
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -9751,10 +9751,10 @@ Pacific/Honolulu:
   :LONG_GENERIC:
     :generic: havajsko-aleutský štandardný čas
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-10
+    :standard: HST
+    :daylight: HDT
   :SHORT_GENERIC:
-    :generic: časové pásmo Honolulu
+    :generic: HST
 Pacific/Johnston:
   :offset: -36000000
   :LONG_GMT:
@@ -10088,10 +10088,10 @@ Pacific/Saipan:
   :GENERIC_LOCATION:
     :generic: časové pásmo Severné Mariány
   :LONG:
-    :standard: chamorrský štandardný čas
+    :standard: chamorrský čas
     :daylight: GMT+10:00
   :LONG_GENERIC:
-    :generic: chamorrský štandardný čas
+    :generic: chamorrský čas
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: časové pásmo Singapur
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: časové pásmo Turecko
   :LONG:
-    :standard: východoeurópsky štandardný čas
-    :daylight: východoeurópsky letný čas
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: východoeurópsky čas
+    :generic: časové pásmo Turecko
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: časové pásmo Turecko
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: havajsko-aleutský štandardný čas
     :daylight: havajsko-aleutský letný čas
   :LONG_GENERIC:
-    :generic: havajsko-aleutský čas (Adak)
+    :generic: havajsko-aleutský čas
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10489,10 +10489,10 @@ US/Hawaii:
   :LONG_GENERIC:
     :generic: havajsko-aleutský štandardný čas
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-10
+    :standard: HST
+    :daylight: HDT
   :SHORT_GENERIC:
-    :generic: časové pásmo Honolulu
+    :generic: HST
 US/Indiana-Starke:
   :offset: -21600000
   :LONG_GMT:
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: koordinovaný svetový čas
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

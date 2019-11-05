@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
   s.version  = ::TwitterCldr::VERSION
   s.authors  = ["Cameron Dutro"]
   s.email    = ["cdutro@twitter.com"]
-  s.homepage = "http://twitter.com"
+  s.homepage = "https://twitter.com"
+  s.license  = "Apache-2.0"
 
   s.description = s.summary = "Ruby implementation of the ICU (International Components for Unicode) that uses the Common Locale Data Repository to format dates, plurals, and more."
 
   s.platform = Gem::Platform::RUBY
-  s.has_rdoc = true
   s.summary  = "Ruby implementation of the ICU (International Components for Unicode) that uses the Common Locale Data Repository to format dates, plurals, and more."
 
   # json gem since v2.0 requries Ruby ~> 2.0

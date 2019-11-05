@@ -1,18 +1,11 @@
 --- 
 :el: 
   :formats: 
-    :fallback_format: 
-      :generic: "[{1} ({0})]"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "Θερινή ώρα ({0})"
-      :generic: "Ώρα ({0})"
-      :standard: "Χειμερινή ώρα ({0})"
+    :fallback_format: "[{1} ({0})]"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "Χειμερινή ώρα ({0})"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -58,9 +51,9 @@
         :standard: "Ορεινή χειμερινή ώρα Βόρειας Αμερικής"
     :America_Pacific: 
       :long: 
-        :daylight: "Θερινή ώρα Βόρειας Αμερικής"
-        :generic: "Ώρα Βόρειας Αμερικής"
-        :standard: "Χειμερινή ώρα Βόρειας Αμερικής"
+        :daylight: "Θερινή ώρα Ειρηνικού"
+        :generic: "Ώρα Ειρηνικού"
+        :standard: "Χειμερινή ώρα Ειρηνικού"
     :Anadyr: 
       :long: 
         :daylight: "Θερινή ώρα Αναντίρ"
@@ -139,9 +132,9 @@
         :standard: "Ώρα Βολιβίας"
     :Brasilia: 
       :long: 
-        :daylight: "Θερινή ώρα Μπραζίλια"
-        :generic: "Ώρα Μπραζίλια"
-        :standard: "Χειμερινή ώρα Μπραζίλια"
+        :daylight: "Θερινή ώρα Μπραζίλιας"
+        :generic: "Ώρα Μπραζίλιας"
+        :standard: "Χειμερινή ώρα Μπραζίλιας"
     :Brunei: 
       :long: 
         :standard: "Ώρα Μπρουνέι Νταρουσαλάμ"
@@ -155,9 +148,9 @@
         :standard: "Ώρα Τσαμόρο"
     :Chatham: 
       :long: 
-        :daylight: "Θερινή ώρα Τσάθαμ"
-        :generic: "Ώρα Τσάθαμ"
-        :standard: "Χειμερινή ώρα Τσάθαμ"
+        :daylight: "Θερινή ώρα Τσάταμ"
+        :generic: "Ώρα Τσάταμ"
+        :standard: "Χειμερινή ώρα Τσάταμ"
     :Chile: 
       :long: 
         :daylight: "Θερινή ώρα Χιλής"
@@ -175,10 +168,10 @@
         :standard: "Χειμερινή ώρα Τσοϊμπαλσάν"
     :Christmas: 
       :long: 
-        :standard: "Ώρα Νησιού Χριστουγέννων"
+        :standard: "Ώρα Νήσου Χριστουγέννων"
     :Cocos: 
       :long: 
-        :standard: "Ώρα Νησιών Κόκος"
+        :standard: "Ώρα Νήσων Κόκος"
     :Colombia: 
       :long: 
         :daylight: "Θερινή ώρα Κολομβίας"
@@ -186,9 +179,9 @@
         :standard: "Χειμερινή ώρα Κολομβίας"
     :Cook: 
       :long: 
-        :daylight: "Θερινή ώρα Νησιών Κουκ"
-        :generic: "Ώρα Νησιών Κουκ"
-        :standard: "Χειμερινή ώρα Νησιών Κουκ"
+        :daylight: "Θερινή ώρα Νήσων Κουκ"
+        :generic: "Ώρα Νήσων Κουκ"
+        :standard: "Χειμερινή ώρα Νήσων Κουκ"
     :Cuba: 
       :long: 
         :daylight: "Θερινή ώρα Κούβας"
@@ -199,18 +192,18 @@
         :standard: "Ώρα Ντέιβις"
     :DumontDUrville: 
       :long: 
-        :standard: "Ώρα Ντιμόντ Ντερβίλ"
+        :standard: "Ώρα Ντιμόν ντ’ Ουρβίλ"
     :East_Timor: 
       :long: 
         :standard: "Ώρα Ανατολικού Τιμόρ"
     :Easter: 
       :long: 
-        :daylight: "Θερινή ώρα Νησιού Πάσχα"
-        :generic: "Ώρα Νησιού Πάσχα"
-        :standard: "Χειμερινή ώρα Νησιού Πάσχα"
+        :daylight: "Θερινή ώρα Νήσου Πάσχα"
+        :generic: "Ώρα Νήσου Πάσχα"
+        :standard: "Χειμερινή ώρα Νήσου Πάσχα"
     :Ecuador: 
       :long: 
-        :standard: "Ώρα Εκουαδόρ"
+        :standard: "Ώρα Ισημερινού"
     :Europe_Central: 
       :long: 
         :daylight: "Θερινή ώρα Κεντρικής Ευρώπης"
@@ -243,9 +236,9 @@
         :standard: WET
     :Falkland: 
       :long: 
-        :daylight: "Θερινή ώρα Νησιών Φώκλαντ"
-        :generic: "Ώρα Νησιών Φώκλαντ"
-        :standard: "Χειμερινή ώρα Νησιών Φώκλαντ"
+        :daylight: "Θερινή ώρα Νήσων Φόκλαντ"
+        :generic: "Ώρα Νήσων Φόκλαντ"
+        :standard: "Χειμερινή ώρα Νήσων Φόκλαντ"
     :Fiji: 
       :long: 
         :daylight: "Θερινή ώρα Φίτζι"
@@ -273,7 +266,7 @@
         :standard: "Χειμερινή ώρα Γεωργίας"
     :Gilbert_Islands: 
       :long: 
-        :standard: "Ώρα Νησιών Γκίλμπερτ"
+        :standard: "Ώρα Νήσων Γκίλμπερτ"
     :Greenland_Eastern: 
       :long: 
         :daylight: "Θερινή ώρα Ανατολικής Γροιλανδίας"
@@ -295,9 +288,9 @@
         :standard: "Ώρα Γουιάνας"
     :Hawaii_Aleutian: 
       :long: 
-        :daylight: "Θερινή ώρα Χαβάης-Αλεούτιων νήσων"
-        :generic: "Ώρα Χαβάης-Αλεούτιων νήσων"
-        :standard: "Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων"
+        :daylight: "Θερινή ώρα Χαβάης-Αλεούτιων Νήσων"
+        :generic: "Ώρα Χαβάης-Αλεούτιων Νήσων"
+        :standard: "Χειμερινή ώρα Χαβάης-Αλεούτιων Νήσων"
     :Hong_Kong: 
       :long: 
         :daylight: "Θερινή ώρα Χονγκ Κονγκ"
@@ -319,13 +312,13 @@
         :standard: "Ώρα Ινδοκίνας"
     :Indonesia_Central: 
       :long: 
-        :standard: "Ώρα: Κεντρική Ινδονησία"
+        :standard: "Ώρα Κεντρικής Ινδονησίας"
     :Indonesia_Eastern: 
       :long: 
-        :standard: "Ώρα: Ανατολική Ινδονησία"
+        :standard: "Ώρα Ανατολικής Ινδονησίας"
     :Indonesia_Western: 
       :long: 
-        :standard: "Ώρα: Δυτική Ινδονησία"
+        :standard: "Ώρα Δυτικής Ινδονησίας"
     :Iran: 
       :long: 
         :daylight: "Θερινή ώρα Ιράν"
@@ -364,18 +357,18 @@
         :standard: "Χειμερινή ώρα Κορέας"
     :Kosrae: 
       :long: 
-        :standard: "Ώρα Κοσράης"
+        :standard: "Ώρα Κόσραϊ"
     :Krasnoyarsk: 
       :long: 
-        :daylight: "Θερινή ώρα Κρασνόγιαρσκ"
-        :generic: "Ώρα Κρασνόγιαρσκ"
-        :standard: "Χειμερινή ώρα Κρασνόγιαρσκ"
+        :daylight: "Θερινή ώρα Κρασνογιάρσκ"
+        :generic: "Ώρα Κρασνογιάρσκ"
+        :standard: "Χειμερινή ώρα Κρασνογιάρσκ"
     :Kyrgystan: 
       :long: 
         :standard: "Ώρα Κιργιστάν"
     :Line_Islands: 
       :long: 
-        :standard: "Ώρα Νησιών Λάιν"
+        :standard: "Ώρα Νήσων Λάιν"
     :Lord_Howe: 
       :long: 
         :daylight: "Θερινή ώρα Λορντ Χάου"
@@ -391,9 +384,9 @@
         :standard: "Ώρα Νησιού Μακουάρι"
     :Magadan: 
       :long: 
-        :daylight: "Θερινή ώρα Μάγκανταν"
-        :generic: "Ώρα Μάγκανταν"
-        :standard: "Χειμερινή ώρα Μάγκανταν"
+        :daylight: "Θερινή ώρα Μαγκαντάν"
+        :generic: "Ώρα Μαγκαντάν"
+        :standard: "Χειμερινή ώρα Μαγκαντάν"
     :Malaysia: 
       :long: 
         :standard: "Ώρα Μαλαισίας"
@@ -402,10 +395,10 @@
         :standard: "Ώρα Μαλδίβων"
     :Marquesas: 
       :long: 
-        :standard: "Ώρα Μαρκέσας"
+        :standard: "Ώρα Μαρκέζας"
     :Marshall_Islands: 
       :long: 
-        :standard: "Ώρα Νησιών Μάρσαλ"
+        :standard: "Ώρα Νήσων Μάρσαλ"
     :Mauritius: 
       :long: 
         :daylight: "Θερινή ώρα Μαυρίκιου"
@@ -463,7 +456,7 @@
         :standard: "Ώρα Νιούε"
     :Norfolk: 
       :long: 
-        :standard: "Ώρα Νησιών Νόρφολκ"
+        :standard: "Ώρα Νήσου Νόρφολκ"
     :Noronha: 
       :long: 
         :daylight: "Θερινή ώρα Φερνάρντο ντε Νορόνια"
@@ -492,7 +485,7 @@
         :standard: "Ώρα Παλάου"
     :Papua_New_Guinea: 
       :long: 
-        :standard: "Ώρα Παπουά Νέα Γουινέα"
+        :standard: "Ώρα Παπούας Νέας Γουινέας"
     :Paraguay: 
       :long: 
         :daylight: "Θερινή ώρα Παραγουάης"
@@ -510,24 +503,27 @@
         :standard: "Χειμερινή ώρα Φιλιππινών"
     :Phoenix_Islands: 
       :long: 
-        :standard: "Ώρα Νησιών Φίνιξ"
+        :standard: "Ώρα Νήσων Φoίνιξ"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "Θερινή ώρα Σαιντ Πιερ και Μικελόν"
-        :generic: "Ώρα Σαιντ Πιερ και Μικελόν"
-        :standard: "Χειμερινή ώρα Σαιντ Πιερ και Μικελόν"
+        :daylight: "Θερινή ώρα Σεν Πιερ και Μικελόν"
+        :generic: "Ώρα Σεν Πιερ και Μικελόν"
+        :standard: "Χειμερινή ώρα Σεν Πιερ και Μικελόν"
     :Pitcairn: 
       :long: 
         :standard: "Ώρα Πίτκερν"
     :Ponape: 
       :long: 
         :standard: "Ώρα Πονάπε"
+    :Pyongyang: 
+      :long: 
+        :standard: "Ώρα Πιονγιάνγκ"
     :Reunion: 
       :long: 
         :standard: "Ώρα Ρεϊνιόν"
     :Rothera: 
       :long: 
-        :standard: "Ώρα Ροθέρα"
+        :standard: "Ώρα Ρόθερα"
     :Sakhalin: 
       :long: 
         :daylight: "Θερινή ώρα Σαχαλίνης"
@@ -551,7 +547,7 @@
         :standard: "Ώρα Σιγκαπούρης"
     :Solomon: 
       :long: 
-        :standard: "Ώρα Νησιών Σολομώντα"
+        :standard: "Ώρα Νήσων Σολομώντος"
     :South_Georgia: 
       :long: 
         :standard: "Ώρα Νότιας Γεωργίας"
@@ -563,7 +559,7 @@
         :standard: "Ώρα Σίοβα"
     :Tahiti: 
       :long: 
-        :standard: "Ώρα Αϊτής"
+        :standard: "Ώρα Ταϊτής"
     :Taipei: 
       :long: 
         :daylight: "Θερινή ώρα Ταϊπέι"
@@ -624,10 +620,10 @@
         :standard: "Ώρα Βόστοκ"
     :Wake: 
       :long: 
-        :standard: "Ώρα Νησιού Γουέικ"
+        :standard: "Ώρα Νήσου Γουέικ"
     :Wallis: 
       :long: 
-        :standard: "Ώρα Ουόλις και Φουτούνα"
+        :standard: "Ώρα Ουάλις και Φουτούνα"
     :Yakutsk: 
       :long: 
         :daylight: "Θερινή ώρα Γιακούτσκ"
@@ -654,13 +650,13 @@
     :Africa/Bangui: 
       :city: Μπανγκί
     :Africa/Banjul: 
-      :city: Μπάνζουλ
+      :city: Μπανζούλ
     :Africa/Bissau: 
       :city: Μπισάου
     :Africa/Blantyre: 
       :city: Μπλαντάιρ
     :Africa/Brazzaville: 
-      :city: Μπράζαβιλ
+      :city: Μπραζαβίλ
     :Africa/Bujumbura: 
       :city: Μπουζουμπούρα
     :Africa/Cairo: 
@@ -668,7 +664,7 @@
     :Africa/Casablanca: 
       :city: Καζαμπλάνκα
     :Africa/Ceuta: 
-      :city: Κέουτα
+      :city: Θέουτα
     :Africa/Conakry: 
       :city: Κόνακρι
     :Africa/Dakar: 
@@ -690,7 +686,7 @@
     :Africa/Johannesburg: 
       :city: Γιοχάνεσμπουργκ
     :Africa/Juba: 
-      :city: Γιούμπα
+      :city: Τζούμπα
     :Africa/Kampala: 
       :city: Καμπάλα
     :Africa/Khartoum: 
@@ -772,13 +768,13 @@
     :America/Asuncion: 
       :city: Ασουνσιόν
     :America/Bahia: 
-      :city: Μπάχια
+      :city: Μπαΐα
     :America/Bahia_Banderas: 
-      :city: "Μπαχία Ντε Μπαντέρας"
+      :city: "Μπαΐα ντε Μπαντέρας"
     :America/Barbados: 
-      :city: Μπαρμπάντος
+      :city: Μπαρμπέιντος
     :America/Belem: 
-      :city: Μπέλεμ
+      :city: Μπελέμ
     :America/Belize: 
       :city: Μπελίζ
     :America/Blanc-Sablon: 
@@ -788,7 +784,7 @@
     :America/Bogota: 
       :city: Μπογκοτά
     :America/Boise: 
-      :city: Μπόιζ
+      :city: Μπόιζι
     :America/Buenos_Aires: 
       :city: "Μπουένος Άιρες"
     :America/Cambridge_Bay: 
@@ -802,7 +798,7 @@
     :America/Catamarca: 
       :city: Καταμάρκα
     :America/Cayenne: 
-      :city: Καγιένε
+      :city: Καγιέν
     :America/Cayman: 
       :city: Κέιμαν
     :America/Chicago: 
@@ -810,7 +806,7 @@
     :America/Chihuahua: 
       :city: Τσιουάουα
     :America/Coral_Harbour: 
-      :city: "Κόραλ Χάρμπουρ"
+      :city: Ατικόκαν
     :America/Cordoba: 
       :city: Κόρδοβα
     :America/Costa_Rica: 
@@ -818,7 +814,7 @@
     :America/Creston: 
       :city: Κρέστον
     :America/Cuiaba: 
-      :city: Κουϊάμπα
+      :city: Κουιαμπά
     :America/Curacao: 
       :city: Κουρασάο
     :America/Danmarkshavn: 
@@ -832,19 +828,21 @@
     :America/Detroit: 
       :city: Ντιτρόιτ
     :America/Dominica: 
-      :city: Δομινίκα
+      :city: Ντομίνικα
     :America/Edmonton: 
       :city: Έντμοντον
     :America/Eirunepe: 
-      :city: Εϊρουνέπε
+      :city: Εϊρουνεπέ
     :America/El_Salvador: 
       :city: "Ελ Σαλβαδόρ"
+    :America/Fort_Nelson: 
+      :city: "Φορτ Νέλσον"
     :America/Fortaleza: 
       :city: Φορταλέζα
     :America/Glace_Bay: 
       :city: "Γκλέις Μπέι"
     :America/Godthab: 
-      :city: Γκόνθαμπ
+      :city: Νουούκ
     :America/Goose_Bay: 
       :city: "Γκους Μπέι"
     :America/Grand_Turk: 
@@ -856,7 +854,7 @@
     :America/Guatemala: 
       :city: Γουατεμάλα
     :America/Guayaquil: 
-      :city: Γκουαγιακύλ
+      :city: Γκουαγιακίλ
     :America/Guyana: 
       :city: Γουιάνα
     :America/Halifax: 
@@ -872,11 +870,11 @@
     :America/Indiana/Petersburg: 
       :city: "Πίτερσμπεργκ, Ιντιάνα"
     :America/Indiana/Tell_City: 
-      :city: "Τελ Σίτυ, Ιντιάνα"
+      :city: "Τελ Σίτι, Ιντιάνα"
     :America/Indiana/Vevay: 
-      :city: "Βεβάι, Ιντιάνα"
+      :city: "Βιβέι, Ιντιάνα"
     :America/Indiana/Vincennes: 
-      :city: "Βίνκενες, Ιντιάνα"
+      :city: "Βανσέν, Ιντιάνα"
     :America/Indiana/Winamac: 
       :city: "Γουίναμακ, Ιντιάνα"
     :America/Indianapolis: 
@@ -884,7 +882,7 @@
     :America/Inuvik: 
       :city: Ινούβικ
     :America/Iqaluit: 
-      :city: Ικαλούτ
+      :city: Ικαλούιτ
     :America/Jamaica: 
       :city: Τζαμάικα
     :America/Jujuy: 
@@ -894,7 +892,7 @@
     :America/Kentucky/Monticello: 
       :city: "Μοντιτσέλο, Κεντάκι"
     :America/Kralendijk: 
-      :city: Κραλέντικ
+      :city: Κράλεντικ
     :America/La_Paz: 
       :city: "Λα Παζ"
     :America/Lima: 
@@ -902,17 +900,17 @@
     :America/Los_Angeles: 
       :city: "Λος Άντζελες"
     :America/Louisville: 
-      :city: Λούισβιλ
+      :city: Λούιβιλ
     :America/Lower_Princes: 
-      :city: "Άγιος Μαρτίνος Ολλανδίας"
+      :city: "Lower Prince’s Quarter"
     :America/Maceio: 
-      :city: Μασέιο
+      :city: Μασεϊό
     :America/Managua: 
       :city: Μανάγκουα
     :America/Manaus: 
-      :city: Μανάος
+      :city: Μανάους
     :America/Marigot: 
-      :city: Μάριγκοτ
+      :city: Μαριγκό
     :America/Martinique: 
       :city: Μαρτινίκα
     :America/Matamoros: 
@@ -924,7 +922,7 @@
     :America/Menominee: 
       :city: Μενομίνε
     :America/Merida: 
-      :city: Μέριντα
+      :city: Μέριδα
     :America/Metlakatla: 
       :city: Μετλακάτλα
     :America/Mexico_City: 
@@ -932,7 +930,7 @@
     :America/Miquelon: 
       :city: Μικελόν
     :America/Moncton: 
-      :city: Μονκτόν
+      :city: Μόνκτον
     :America/Monterrey: 
       :city: Μοντερέι
     :America/Montevideo: 
@@ -948,13 +946,13 @@
     :America/Nome: 
       :city: Νόμε
     :America/Noronha: 
-      :city: Νορόνχα
+      :city: Νορόνια
     :America/North_Dakota/Beulah: 
-      :city: "Μπέουλαχ, Βόρεια Ντακότα"
+      :city: "Μπέουλα, Βόρεια Ντακότα"
     :America/North_Dakota/Center: 
-      :city: "Κέντρο, Βόρεια Ντακότα"
+      :city: "Σέντερ, Βόρεια Ντακότα"
     :America/North_Dakota/New_Salem: 
-      :city: "Νιου Σάλεμ, Βόρεια Ντακότα"
+      :city: "Νιου Σέιλεμ, Βόρεια Ντακότα"
     :America/Ojinaga: 
       :city: Οχινάγκα
     :America/Panama: 
@@ -970,19 +968,21 @@
     :America/Port_of_Spain: 
       :city: "Πορτ οφ Σπέιν"
     :America/Porto_Velho: 
-      :city: "Πόρτο Βέλο"
+      :city: "Πόρτο Βέλιο"
     :America/Puerto_Rico: 
       :city: "Πουέρτο Ρίκο"
+    :America/Punta_Arenas: 
+      :city: "Πούντα Αρένας"
     :America/Rainy_River: 
       :city: "Ρέινι Ρίβερ"
     :America/Rankin_Inlet: 
-      :city: "Ρέινκιν Ίνλετ"
+      :city: "Ράνκιν Ίνλετ"
     :America/Recife: 
       :city: Ρεσίφε
     :America/Regina: 
       :city: Ρετζίνα
     :America/Resolute: 
-      :city: Ρέσολουτ
+      :city: Ρέζολουτ
     :America/Rio_Branco: 
       :city: "Ρίο Μπράνκο"
     :America/Santa_Isabel: 
@@ -1002,9 +1002,9 @@
     :America/St_Barthelemy: 
       :city: "Άγιος Βαρθολομαίος"
     :America/St_Johns: 
-      :city: "Σεντ Τζονς"
+      :city: "Σεν Τζονς"
     :America/St_Kitts: 
-      :city: "Άγιος Χριστόφορος (Σαιντ Κιτς)"
+      :city: "Σεν Κιτς"
     :America/St_Lucia: 
       :city: "Αγία Λουκία"
     :America/St_Thomas: 
@@ -1012,11 +1012,11 @@
     :America/St_Vincent: 
       :city: "Άγιος Βικέντιος"
     :America/Swift_Current: 
-      :city: "Σουίφτ Κάρρεντ"
+      :city: "Σουίφτ Κάρεντ"
     :America/Tegucigalpa: 
       :city: Τεγκουσιγκάλπα
     :America/Thule: 
-      :city: Τούλε
+      :city: Θούλη
     :America/Thunder_Bay: 
       :city: "Θάντερ Μπέι"
     :America/Tijuana: 
@@ -1040,17 +1040,17 @@
     :Antarctica/Davis: 
       :city: Ντέιβις
     :Antarctica/DumontDUrville: 
-      :city: "Ντιμόντ Ντερβίλ"
+      :city: "Ντιμόν ντ’ Ουρβίλ"
     :Antarctica/Macquarie: 
       :city: Μακουάρι
     :Antarctica/Mawson: 
-      :city: Μόουσον
+      :city: Μόσον
     :Antarctica/McMurdo: 
       :city: Μακμέρντο
     :Antarctica/Palmer: 
       :city: Πάλμερ
     :Antarctica/Rothera: 
-      :city: Ροθέρα
+      :city: Ρόθερα
     :Antarctica/Syowa: 
       :city: Σίοβα
     :Antarctica/Troll: 
@@ -1062,7 +1062,7 @@
     :Asia/Aden: 
       :city: Άντεν
     :Asia/Almaty: 
-      :city: Αλμάτυ
+      :city: Αλμάτι
     :Asia/Amman: 
       :city: Αμμάν
     :Asia/Anadyr: 
@@ -1073,6 +1073,8 @@
       :city: Ακτόμπε
     :Asia/Ashgabat: 
       :city: Ασχαμπάτ
+    :Asia/Atyrau: 
+      :city: Aτιράου
     :Asia/Baghdad: 
       :city: Βαγδάτη
     :Asia/Bahrain: 
@@ -1081,6 +1083,8 @@
       :city: Μπακού
     :Asia/Bangkok: 
       :city: Μπανγκόκ
+    :Asia/Barnaul: 
+      :city: Μπαρναούλ
     :Asia/Beirut: 
       :city: Βυρητός
     :Asia/Bishkek: 
@@ -1090,9 +1094,9 @@
     :Asia/Calcutta: 
       :city: Καλκούτα
     :Asia/Chita: 
-      :city: Τσίτα
+      :city: Τσιτά
     :Asia/Choibalsan: 
-      :city: Χόιμπαλσαν
+      :city: Τσοϊμπαλσάν
     :Asia/Colombo: 
       :city: Κολόμπο
     :Asia/Damascus: 
@@ -1104,11 +1108,13 @@
     :Asia/Dubai: 
       :city: Ντουμπάι
     :Asia/Dushanbe: 
-      :city: Ντουσάμπε
+      :city: Ντουσάνμπε
+    :Asia/Famagusta: 
+      :city: Αμμόχωστος
     :Asia/Gaza: 
       :city: Γάζα
     :Asia/Hebron: 
-      :city: Χεμπρόν
+      :city: Χεβρώνα
     :Asia/Hong_Kong: 
       :city: "Χονγκ Κονγκ"
     :Asia/Hovd: 
@@ -1118,7 +1124,7 @@
     :Asia/Jakarta: 
       :city: Τζακάρτα
     :Asia/Jayapura: 
-      :city: Χαγιαπούρα
+      :city: Τζαγιαπούρα
     :Asia/Jerusalem: 
       :city: Ιερουσαλήμ
     :Asia/Kabul: 
@@ -1158,7 +1164,7 @@
     :Asia/Omsk: 
       :city: Ομσκ
     :Asia/Oral: 
-      :city: Όραλ
+      :city: Οράλ
     :Asia/Phnom_Penh: 
       :city: "Πνομ Πενχ"
     :Asia/Pontianak: 
@@ -1167,8 +1173,10 @@
       :city: Πιονγκγιάνγκ
     :Asia/Qatar: 
       :city: Κατάρ
+    :Asia/Qostanay: 
+      :city: Κοστανάι
     :Asia/Qyzylorda: 
-      :city: Κτζιλ-Ορντά
+      :city: Κιζιλορντά
     :Asia/Rangoon: 
       :city: Ρανγκούν
     :Asia/Riyadh: 
@@ -1176,7 +1184,7 @@
     :Asia/Saigon: 
       :city: "Πόλη Χο Τσι Μινχ"
     :Asia/Sakhalin: 
-      :city: Σακαλίνσκ
+      :city: Σαχαλίνη
     :Asia/Samarkand: 
       :city: Σαμαρκάνδη
     :Asia/Seoul: 
@@ -1186,7 +1194,7 @@
     :Asia/Singapore: 
       :city: Σιγκαπούρη
     :Asia/Srednekolymsk: 
-      :city: Σρεντνεκόλιμσκ
+      :city: Σρεντνεκολίμσκ
     :Asia/Taipei: 
       :city: Ταϊπέι
     :Asia/Tashkent: 
@@ -1196,29 +1204,31 @@
     :Asia/Tehran: 
       :city: Τεχεράνη
     :Asia/Thimphu: 
-      :city: Τρίμφου
+      :city: Θίμφου
     :Asia/Tokyo: 
-      :city: Τόκυο
+      :city: Τόκιο
+    :Asia/Tomsk: 
+      :city: Τομσκ
     :Asia/Ulaanbaatar: 
       :city: "Ουλάν Μπατόρ"
     :Asia/Urumqi: 
-      :city: Ουρουμκί
+      :city: Ουρούμτσι
     :Asia/Ust-Nera: 
       :city: Ουστ-Νερά
     :Asia/Vientiane: 
-      :city: Βιεντιάνε
+      :city: Βιεντιάν
     :Asia/Vladivostok: 
       :city: Βλαδιβοστόκ
     :Asia/Yakutsk: 
-      :city: Γιάκουτσκ
+      :city: Γιακούτσκ
     :Asia/Yekaterinburg: 
-      :city: Αικατερίνμπουργκ
+      :city: Αικατερινούπολη
     :Asia/Yerevan: 
-      :city: Γερεβάν
+      :city: Ερεβάν
     :Atlantic/Azores: 
       :city: Αζόρες
     :Atlantic/Bermuda: 
-      :city: Βερμούδα
+      :city: Βερμούδες
     :Atlantic/Canary: 
       :city: Κανάρια
     :Atlantic/Cape_Verde: 
@@ -1234,7 +1244,7 @@
     :Atlantic/St_Helena: 
       :city: "Αγ. Ελένη"
     :Atlantic/Stanley: 
-      :city: Στάνλεϋ
+      :city: Στάνλεϊ
     :Australia/Adelaide: 
       :city: Αδελαΐδα
     :Australia/Brisbane: 
@@ -1242,29 +1252,36 @@
     :Australia/Broken_Hill: 
       :city: "Μπρόκεν Χιλ"
     :Australia/Currie: 
-      :city: Κιουρί
+      :city: Κάρι
     :Australia/Darwin: 
       :city: Ντάργουιν
     :Australia/Eucla: 
-      :city: Εούκλα
+      :city: Γιούκλα
     :Australia/Hobart: 
       :city: Χόμπαρτ
     :Australia/Lindeman: 
       :city: Λίντεμαν
     :Australia/Lord_Howe: 
-      :city: "Λορντ Χάουι"
+      :city: "Λορντ Χάου"
     :Australia/Melbourne: 
       :city: Μελβούρνη
     :Australia/Perth: 
       :city: Περθ
     :Australia/Sydney: 
       :city: Σίδνεϊ
+    :Etc/UTC: 
+      :long: 
+        :standard: "Συντονισμένη Παγκόσμια Ώρα"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Άγνωστη πόλη"
     :Europe/Amsterdam: 
       :city: Άμστερνταμ
     :Europe/Andorra: 
       :city: Ανδόρα
+    :Europe/Astrakhan: 
+      :city: Αστραχάν
     :Europe/Athens: 
       :city: Αθήνα
     :Europe/Belgrade: 
@@ -1288,11 +1305,11 @@
     :Europe/Dublin: 
       :city: Δουβλίνο
       :long: 
-        :daylight: "Θερινή ώρα Ιρλανδίας"
+        :daylight: "Χειμερινή ώρα Ιρλανδίας"
     :Europe/Gibraltar: 
       :city: Γιβραλτάρ
     :Europe/Guernsey: 
-      :city: Γκέρνσεϊ
+      :city: Γκέρνζι
     :Europe/Helsinki: 
       :city: Ελσίνκι
     :Europe/Isle_of_Man: 
@@ -1305,6 +1322,8 @@
       :city: Καλίνινγκραντ
     :Europe/Kiev: 
       :city: Κίεβο
+    :Europe/Kirov: 
+      :city: Κίροφ
     :Europe/Lisbon: 
       :city: Λισαβόνα
     :Europe/Ljubljana: 
@@ -1320,7 +1339,7 @@
     :Europe/Malta: 
       :city: Μάλτα
     :Europe/Mariehamn: 
-      :city: Μαριέχαμν
+      :city: Μάριεχαμν
     :Europe/Minsk: 
       :city: Μινσκ
     :Europe/Monaco: 
@@ -1345,6 +1364,8 @@
       :city: "Άγιος Μαρίνος"
     :Europe/Sarajevo: 
       :city: Σαράγεβο
+    :Europe/Saratov: 
+      :city: Σαράτοφ
     :Europe/Simferopol: 
       :city: Συμφερόπολη
     :Europe/Skopje: 
@@ -1357,8 +1378,10 @@
       :city: Ταλίν
     :Europe/Tirane: 
       :city: Τίρανα
+    :Europe/Ulyanovsk: 
+      :city: Ουλιάνοφσκ
     :Europe/Uzhgorod: 
-      :city: Ουζκόροντ
+      :city: Ούζχοροντ
     :Europe/Vaduz: 
       :city: Βαντούζ
     :Europe/Vatican: 
@@ -1382,13 +1405,13 @@
     :Indian/Chagos: 
       :city: Τσάγκος
     :Indian/Christmas: 
-      :city: Χριστούγεννα
+      :city: "Νήσος Χριστουγέννων"
     :Indian/Cocos: 
       :city: Κόκος
     :Indian/Comoro: 
       :city: Κομόρο
     :Indian/Kerguelen: 
-      :city: Κέργκουελεν
+      :city: Κεργκελέν
     :Indian/Mahe: 
       :city: Μάχε
     :Indian/Maldives: 
@@ -1396,11 +1419,11 @@
     :Indian/Mauritius: 
       :city: Μαυρίκιος
     :Indian/Mayotte: 
-      :city: Μαγιότε
+      :city: Μαγιότ
     :Indian/Reunion: 
       :city: Ρεϊνιόν
     :Pacific/Apia: 
-      :city: Άπια
+      :city: Απία
     :Pacific/Auckland: 
       :city: Όκλαντ
     :Pacific/Bougainville: 
@@ -1412,7 +1435,7 @@
     :Pacific/Efate: 
       :city: Εφάτε
     :Pacific/Enderbury: 
-      :city: Εντερμπέρυ
+      :city: Έντερμπερι
     :Pacific/Fakaofo: 
       :city: Φακαόφο
     :Pacific/Fiji: 
@@ -1420,7 +1443,7 @@
     :Pacific/Funafuti: 
       :city: Φουναφούτι
     :Pacific/Galapagos: 
-      :city: Γκαλαπάγκος
+      :city: Γκαλάπαγκος
     :Pacific/Gambier: 
       :city: Γκάμπιερ
     :Pacific/Guadalcanal: 
@@ -1434,13 +1457,13 @@
     :Pacific/Kiritimati: 
       :city: Κιριτιμάτι
     :Pacific/Kosrae: 
-      :city: Κοσράη
+      :city: Κόσραϊ
     :Pacific/Kwajalein: 
-      :city: Κουαχαλέιν
+      :city: Κουατζαλέιν
     :Pacific/Majuro: 
-      :city: Μαχούρο
+      :city: Ματζούρο
     :Pacific/Marquesas: 
-      :city: Μαρκέσας
+      :city: Μαρκέζας
     :Pacific/Midway: 
       :city: Μίντγουεϊ
     :Pacific/Nauru: 
@@ -1460,11 +1483,11 @@
     :Pacific/Ponape: 
       :city: Πονάπε
     :Pacific/Port_Moresby: 
-      :city: "Πορτ Μόρεσμπυ"
+      :city: "Πορτ Μόρεσμπι"
     :Pacific/Rarotonga: 
       :city: Ραροτόνγκα
     :Pacific/Saipan: 
-      :city: Σάιπαν
+      :city: Σαϊπάν
     :Pacific/Tahiti: 
       :city: Ταϊτή
     :Pacific/Tarawa: 
@@ -1476,4 +1499,4 @@
     :Pacific/Wake: 
       :city: Γουέικ
     :Pacific/Wallis: 
-      :city: Γουόλις
+      :city: Γουάλις

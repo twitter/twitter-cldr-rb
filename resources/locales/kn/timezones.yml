@@ -1,18 +1,11 @@
 --- 
 :kn: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1) ದಿನದ ಸಮಯ"
-      :generic: "{0} ಸಮಯ"
-      :standard: "{0} (+0) ಪ್ರಮಾಣಿತ ಸಮಯ"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} ಪ್ರಮಾಣಿತ ಸಮಯ"
   :metazones: 
     :Acre: 
       :long: 
@@ -285,7 +278,7 @@
     :Greenland_Eastern: 
       :long: 
         :daylight: "ಪೂರ್ವ ಗ್ರೀನ್‌ಲ್ಯಾಂಡ್ ಬೇಸಿಗೆ ಸಮಯ"
-        :generic: "*ಪೂರ್ವ ಗ್ರೀನ್‌ಲ್ಯಾಂಡ್ ಸಮಯ"
+        :generic: "ಪೂರ್ವ ಗ್ರೀನ್‌ಲ್ಯಾಂಡ್ ಸಮಯ"
         :standard: "ಪೂರ್ವ ಗ್ರೀನ್‌ಲ್ಯಾಂಡ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
     :Greenland_Western: 
       :long: 
@@ -315,7 +308,7 @@
       :long: 
         :daylight: "ಹವ್ಡ್ ಬೇಸಿಗೆ ಸಮಯ"
         :generic: "ಹವ್ಡ್ ಸಮಯ"
-        :standard: "ಹವ್ಡ್ ಸ್ಟ್ಯಾಂಡರ್ಡ್ ಸಮಯ"
+        :standard: "ಹವ್ಡ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
     :India: 
       :long: 
         :standard: "ಭಾರತೀಯ ಪ್ರಮಾಣಿತ ಸಮಯ"
@@ -489,7 +482,7 @@
       :long: 
         :daylight: "ನೊವೊಸಿಬಿರ್‌ಸ್ಕ್ ಬೇಸಿಗೆ ಸಮಯ"
         :generic: "ನೊವೊಸಿಬಿರ್‌ಸ್ಕ್ ಸಮಯ"
-        :standard: "ನೊವೊಸಿಬಿಸ್ಕ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
+        :standard: "ನೊವೊಸಿಬಿರ್‌ಸ್ಕ್ ಪ್ರಮಾಣಿತ ಸಮಯ"
     :Omsk: 
       :long: 
         :daylight: "ಒಮಾಸ್ಕ್ ಬೇಸಿಗೆ ಸಮಯ"
@@ -535,6 +528,9 @@
     :Ponape: 
       :long: 
         :standard: "ಪೊನಾಪೆ ಸಮಯ"
+    :Pyongyang: 
+      :long: 
+        :standard: "ಪ್ಯೊಂಗ್ಯಾಂಗ್ ಸಮಯ"
     :Qyzylorda: 
       :long: 
         :daylight: "ಕೋಜಿಲೋರ್ಡಾ ಬೇಸಿಗೆ ಸಮಯ"
@@ -664,7 +660,7 @@
     :Africa/Addis_Ababa: 
       :city: "ಆಡಿಸ್ ಅಬಾಬಾ"
     :Africa/Algiers: 
-      :city: ಅಲ್ಗೀರ್ಸ್
+      :city: ಅಲ್ಜೀರ್ಸ್
     :Africa/Asmera: 
       :city: ಅಸ್ಮಾರಾ
     :Africa/Bamako: 
@@ -694,7 +690,7 @@
     :Africa/Dar_es_Salaam: 
       :city: "ಡಾರ್ ಎಸ್ ಸಲಾಮ್"
     :Africa/Djibouti: 
-      :city: ಡಿಬೌಟಿ
+      :city: ಜಿಬೂಟಿ
     :Africa/Douala: 
       :city: ದೌಲಾ
     :Africa/El_Aaiun: 
@@ -706,7 +702,7 @@
     :Africa/Harare: 
       :city: ಹರಾರೆ
     :Africa/Johannesburg: 
-      :city: ಜೋಹನ್ಸ್‌ಬರ್ಗ್
+      :city: ಜೋಹಾನ್ಸ್‌ಬರ್ಗ್
     :Africa/Juba: 
       :city: ಜುಬಾ
     :Africa/Kampala: 
@@ -766,7 +762,7 @@
     :America/Anchorage: 
       :city: ಆಂಕರೋಜ್
     :America/Anguilla: 
-      :city: ಅಂಗುಲ್ಲಾ
+      :city: ಆಂಗ್ವಿಲ್ಲಾ
     :America/Antigua: 
       :city: ಆಂಟಿಗುವಾ
     :America/Araguaina: 
@@ -824,7 +820,7 @@
     :America/Cayman: 
       :city: ಕೇಮನ್
     :America/Chicago: 
-      :city: ಶಿಕಾಗೋ
+      :city: ಚಿಕಾಗೋ
     :America/Chihuahua: 
       :city: ಚಿವಾವ
     :America/Coral_Harbour: 
@@ -857,6 +853,8 @@
       :city: ಇರುನಿಪೆ
     :America/El_Salvador: 
       :city: "ಎಲ್ ಸಾಲ್ವಡೋರ್"
+    :America/Fort_Nelson: 
+      :city: "ಫೋರ್ಟ್ ನೆಲ್ಸನ್"
     :America/Fortaleza: 
       :city: ಫೊರ್ಟಲೆಜಾ
     :America/Glace_Bay: 
@@ -991,6 +989,8 @@
       :city: "ಪೋರ್ಟೊ ವೆಲ್ಹೋ"
     :America/Puerto_Rico: 
       :city: "ಪ್ಯುರ್ಟೋ ರಿಕೊ"
+    :America/Punta_Arenas: 
+      :city: "ಪುಂತಾ ಅರೇನಾಸ್"
     :America/Rainy_River: 
       :city: "ರೈನಿ ರಿವರ್"
     :America/Rankin_Inlet: 
@@ -1048,7 +1048,7 @@
     :America/Whitehorse: 
       :city: ವೈಟ್‌ಹಾರ್ಸ್
     :America/Winnipeg: 
-      :city: ವಿನ್ನಿಪೇಗ್
+      :city: ವಿನ್ನಿಪೆಗ್
     :America/Yakutat: 
       :city: ಯಾಕುಟಾಟ್
     :America/Yellowknife: 
@@ -1076,7 +1076,7 @@
     :Antarctica/Vostok: 
       :city: ವೋಸ್ಟೋಕ್
     :Arctic/Longyearbyen: 
-      :city: ಲಾಂಗ್‌ಇಯರ್‌ಬೇನ್
+      :city: ಲಾಂಗ್ಯೀರ್ಬೆನ್
     :Asia/Aden: 
       :city: ಏಡನ್
     :Asia/Almaty: 
@@ -1091,6 +1091,8 @@
       :city: ಅಕ್ಟೋಬೆ
     :Asia/Ashgabat: 
       :city: ಅಶ್ಗಬಾತ್
+    :Asia/Atyrau: 
+      :city: ಅಟ್ರಾವ್
     :Asia/Baghdad: 
       :city: ಬಾಗ್ದಾದ್
     :Asia/Bahrain: 
@@ -1099,6 +1101,8 @@
       :city: ಬಕು
     :Asia/Bangkok: 
       :city: ಬ್ಯಾಂಕಾಕ್
+    :Asia/Barnaul: 
+      :city: ಬಾರ್ನೌಲ್
     :Asia/Beirut: 
       :city: ಬೀರಟ್
     :Asia/Bishkek: 
@@ -1123,6 +1127,8 @@
       :city: ದುಬೈ
     :Asia/Dushanbe: 
       :city: ದುಶಾಂಬೆ
+    :Asia/Famagusta: 
+      :city: ಫಮಾಗುಸ್ತಾ
     :Asia/Gaza: 
       :city: ಗಾಜಾ
     :Asia/Hebron: 
@@ -1132,7 +1138,7 @@
     :Asia/Hovd: 
       :city: ಹೋವ್ಡ್
     :Asia/Irkutsk: 
-      :city: ಇರ್‌ಕುಟ್ಸ್
+      :city: ಇರಕುಟ್ಸ್ಕ್
     :Asia/Jakarta: 
       :city: ಜಕಾರ್ತಾ
     :Asia/Jayapura: 
@@ -1142,7 +1148,7 @@
     :Asia/Kabul: 
       :city: ಕಾಬೂಲ್
     :Asia/Kamchatka: 
-      :city: ಕಮ್ಚತ್ಕ
+      :city: ಕಂಚಟ್ಕ್
     :Asia/Karachi: 
       :city: ಕರಾಚಿ
     :Asia/Katmandu: 
@@ -1158,7 +1164,7 @@
     :Asia/Kuwait: 
       :city: ಕುವೈತ್
     :Asia/Macau: 
-      :city: ಮಖಾವ್
+      :city: ಮಕಾವು
     :Asia/Magadan: 
       :city: ಮಗದನ್‌
     :Asia/Makassar: 
@@ -1166,7 +1172,7 @@
     :Asia/Manila: 
       :city: ಮನಿಲಾ
     :Asia/Muscat: 
-      :city: ಮಸ್ಕತ್
+      :city: ಮಸ್ಕಟ್
     :Asia/Nicosia: 
       :city: ನಿಕೋಸಿಯಾ
     :Asia/Novokuznetsk: 
@@ -1185,10 +1191,12 @@
       :city: ಪ್ಯೊಂಗ್‍ಯಾಂಗ್
     :Asia/Qatar: 
       :city: ಖತಾರ್
+    :Asia/Qostanay: 
+      :city: ಕೊಸ್ಟನಯ್
     :Asia/Qyzylorda: 
       :city: ಕಿಜೈಲೋರ್ದ
     :Asia/Rangoon: 
-      :city: ರಂಗೂನ್
+      :city: ಯಾಂಗೊನ್
     :Asia/Riyadh: 
       :city: ರಿಯಾದ್
     :Asia/Saigon: 
@@ -1217,6 +1225,8 @@
       :city: ಥಿಂಪು
     :Asia/Tokyo: 
       :city: ಟೋಕಿಯೊ
+    :Asia/Tomsk: 
+      :city: ಟೋಮ್‌ಸ್ಕ್
     :Asia/Ulaanbaatar: 
       :city: ಉಲಾನ್‍ಬಾತರ್
     :Asia/Urumqi: 
@@ -1252,7 +1262,7 @@
     :Atlantic/St_Helena: 
       :city: "ಸೇಂಟ್ ಹೆಲೆನಾ"
     :Atlantic/Stanley: 
-      :city: ಸ್ಟಾನ್ಲಿ
+      :city: ಸ್ಟ್ಯಾನ್ಲಿ
     :Australia/Adelaide: 
       :city: ಅಡಿಲೇಡ್
     :Australia/Brisbane: 
@@ -1270,19 +1280,26 @@
     :Australia/Lindeman: 
       :city: ಲಿಂಡಿಮಾನ್
     :Australia/Lord_Howe: 
-      :city: "ಲಾರ್ಡ್ ಹೋ"
+      :city: "ಲಾರ್ಡ್ ಹೋವ್"
     :Australia/Melbourne: 
       :city: ಮೆಲ್ಬರ್ನ್
     :Australia/Perth: 
       :city: ಪರ್ಥ್
     :Australia/Sydney: 
       :city: ಸಿಡ್ನಿ
+    :Etc/UTC: 
+      :long: 
+        :standard: "ಸಂಘಟಿತ ಸಾರ್ವತ್ರಿಕ ಸಮಯ"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
-      :city: "ಅಜ್ಞಾತ ನಗರ"
+      :city: "ಅಪರಿಚಿತ ನಗರ"
     :Europe/Amsterdam: 
       :city: ಆಮ್‌ಸ್ಟೆರ್‌ಡ್ಯಾಂ
     :Europe/Andorra: 
       :city: ಅಂಡೋರಾ
+    :Europe/Astrakhan: 
+      :city: ಆಸ್ಟ್ರಾಖಾನ್
     :Europe/Athens: 
       :city: ಅಥೆನ್ಸ್
     :Europe/Belgrade: 
@@ -1323,6 +1340,8 @@
       :city: ಕಲಿನಿನ್‌ಗ್ರಾಡ್
     :Europe/Kiev: 
       :city: ಕಿವ್
+    :Europe/Kirov: 
+      :city: ಕಿರಾವ್
     :Europe/Lisbon: 
       :city: ಲಿಸ್ಬನ್
     :Europe/Ljubljana: 
@@ -1363,6 +1382,8 @@
       :city: "ಸ್ಯಾನ್ ಮರೀನೊ"
     :Europe/Sarajevo: 
       :city: ಸರಜೆವೊ
+    :Europe/Saratov: 
+      :city: ಸರಾಟೋವ್
     :Europe/Simferopol: 
       :city: ಸಿಮ್ಫೆರೋಪೋಲ್
     :Europe/Skopje: 
@@ -1375,6 +1396,8 @@
       :city: ಟ್ಯಾಲಿನ್
     :Europe/Tirane: 
       :city: ಟಿರಾನೆ
+    :Europe/Ulyanovsk: 
+      :city: ಉಲ್ಯಾನೊವಸ್ಕ್
     :Europe/Uzhgorod: 
       :city: ಉಜ್‌ಗೊರೊದ್
     :Europe/Vaduz: 
@@ -1424,7 +1447,7 @@
     :Pacific/Bougainville: 
       :city: ಬೌಗೆನ್‍ವಿಲ್ಲೆ
     :Pacific/Chatham: 
-      :city: ಚತಮ್
+      :city: ಚಥಾಮ್
     :Pacific/Easter: 
       :city: ಈಸ್ಟರ್
     :Pacific/Efate: 

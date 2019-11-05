@@ -5,12 +5,9 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Parsers
-include TwitterCldr::Tokenizers
-
-describe UnicodeRegexParser::CharacterClass do
-  let(:tokenizer) { UnicodeRegexTokenizer.new }
-  let(:parser) { UnicodeRegexParser.new }
+describe TwitterCldr::Parsers::UnicodeRegexParser::CharacterClass do
+  let(:tokenizer) { TwitterCldr::Tokenizers::UnicodeRegexTokenizer.new }
+  let(:parser) { TwitterCldr::Parsers::UnicodeRegexParser.new }
 
   def tokenize(str)
     tokenizer.tokenize(str)
@@ -58,14 +55,14 @@ describe UnicodeRegexParser::CharacterClass do
     it "pulls in ranges for unicode character sets" do
       char_class = char_class_from(parse(tokenize("[\\p{Zs}]")))
       expect(char_class.to_set.to_a(true)).to eq([
-        32, 160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        32, 160, 5760, 8192..8202, 8239, 8287, 12288
       ])
     end
 
     it "computes unions between unicode character sets" do
       char_class = char_class_from(parse(tokenize("[[\\p{Zs}][\\p{Cc}]]")))
       expect(char_class.to_set.to_a(true)).to eq([
-        0..1, 8..32, 127..160, 5760, 6158, 8192..8202, 8239, 8287, 12288
+        0..1, 8..32, 127..160, 5760, 8192..8202, 8239, 8287, 12288
       ])
     end
 

@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Formatters
-
-describe PercentFormatter do
+describe TwitterCldr::Formatters::PercentFormatter do
   let(:data_reader) { TwitterCldr::DataReaders::NumberDataReader.new(:da, type: :percent) }
   let(:formatter) { data_reader.formatter }
   let(:tokenizer) { data_reader.tokenizer }

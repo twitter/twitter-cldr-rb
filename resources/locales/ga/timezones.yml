@@ -1,18 +1,11 @@
 --- 
 :ga: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "MAG{0}"
-    :gmt_zero_format: 
-      :generic: MAG
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "MAG{0}"
+    :gmt_zero_format: MAG
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} (+0)"
   :metazones: 
     :Acre: 
       :long: 
@@ -71,6 +64,10 @@
         :daylight: "Am Samhraidh an Aigéin Chiúin"
         :generic: "Am an Aigéin Chiúin"
         :standard: "Am Caighdeánach an Aigéin Chiúin"
+      :short: 
+        :daylight: ASAC
+        :generic: AAC
+        :standard: ACAC
     :Anadyr: 
       :long: 
         :daylight: "Am Samhraidh Anadyr"
@@ -550,6 +547,9 @@
     :Ponape: 
       :long: 
         :standard: "Am Phohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "Am Pyongyang"
     :Qyzylorda: 
       :long: 
         :daylight: "Am Samhraidh Qyzylorda"
@@ -813,7 +813,7 @@
     :America/Belem: 
       :city: Belém
     :America/Belize: 
-      :city: "An Bheilís"
+      :city: "an Bheilís"
     :America/Blanc-Sablon: 
       :city: Blanc-Sablon
     :America/Boa_Vista: 
@@ -871,7 +871,9 @@
     :America/Eirunepe: 
       :city: Eirunepé
     :America/El_Salvador: 
-      :city: "An tSalvadóir"
+      :city: "an tSalvadóir"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -891,7 +893,7 @@
     :America/Guayaquil: 
       :city: Guayaquil
     :America/Guyana: 
-      :city: "An Ghuáin"
+      :city: "an Ghuáin"
     :America/Halifax: 
       :city: Halifax
     :America/Havana: 
@@ -1006,6 +1008,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Portó Ríce"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1043,7 +1047,7 @@
     :America/St_Thomas: 
       :city: "St. Thomas"
     :America/St_Vincent: 
-      :city: "St. Vincent"
+      :city: "San Uinseann"
     :America/Swift_Current: 
       :city: "Swift Current"
     :America/Tegucigalpa: 
@@ -1106,6 +1110,8 @@
       :city: Aqtobe
     :Asia/Ashgabat: 
       :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1114,6 +1120,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Béiriút
     :Asia/Bishkek: 
@@ -1129,7 +1137,7 @@
     :Asia/Colombo: 
       :city: Colombo
     :Asia/Damascus: 
-      :city: "An Damaisc"
+      :city: "an Damaisc"
     :Asia/Dhaka: 
       :city: Dhaka
     :Asia/Dili: 
@@ -1138,6 +1146,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1183,7 +1193,7 @@
     :Asia/Muscat: 
       :city: Muscat
     :Asia/Nicosia: 
-      :city: "An Niocóis"
+      :city: "an Niocóis"
     :Asia/Novokuznetsk: 
       :city: Novokuznetsk
     :Asia/Novosibirsk: 
@@ -1232,6 +1242,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tóiceo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1249,11 +1261,11 @@
     :Asia/Yerevan: 
       :city: Eireaván
     :Atlantic/Azores: 
-      :city: "Na hAsóir"
+      :city: "na hAsóir"
     :Atlantic/Bermuda: 
       :city: Beirmiúda
     :Atlantic/Canary: 
-      :city: "Na hOileáin Chanáracha"
+      :city: "na hOileáin Chanáracha"
     :Atlantic/Cape_Verde: 
       :city: "Rinn Verde"
     :Atlantic/Faeroe: 
@@ -1263,7 +1275,7 @@
     :Atlantic/Reykjavik: 
       :city: Réicivíc
     :Atlantic/South_Georgia: 
-      :city: "An tSeoirsia Theas"
+      :city: "an tSeoirsia Theas"
     :Atlantic/St_Helena: 
       :city: "San Héilin"
     :Atlantic/Stanley: 
@@ -1292,22 +1304,29 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Am Uilíoch Lárnach"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Cathair Anaithnid"
     :Europe/Amsterdam: 
       :city: Amstardam
     :Europe/Andorra: 
       :city: Andóra
+    :Europe/Astrakhan: 
+      :city: "an Astracáin"
     :Europe/Athens: 
-      :city: "An Aithin"
+      :city: "an Aithin"
     :Europe/Belgrade: 
       :city: Béalgrád
     :Europe/Berlin: 
       :city: Beirlín
     :Europe/Bratislava: 
-      :city: "An Bhratasláiv"
+      :city: "an Bhratasláiv"
     :Europe/Brussels: 
-      :city: "An Bhruiséil"
+      :city: "an Bhruiséil"
     :Europe/Bucharest: 
       :city: Búcairist
     :Europe/Budapest: 
@@ -1340,6 +1359,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Cív
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Liospóin
     :Europe/Ljubljana: 
@@ -1375,13 +1396,15 @@
     :Europe/Riga: 
       :city: Ríge
     :Europe/Rome: 
-      :city: "An Róimh"
+      :city: "an Róimh"
     :Europe/Samara: 
       :city: Samara
     :Europe/San_Marino: 
       :city: "San Mairíne"
     :Europe/Sarajevo: 
       :city: Sairéavó
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1394,6 +1417,8 @@
       :city: Taillinn
     :Europe/Tirane: 
       :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
     :Europe/Uzhgorod: 
       :city: Uzhgorod
     :Europe/Vaduz: 
@@ -1477,7 +1502,7 @@
     :Pacific/Majuro: 
       :city: Majuro
     :Pacific/Marquesas: 
-      :city: "Na hOileáin Mharcasacha"
+      :city: "na hOileáin Mharcasacha"
     :Pacific/Midway: 
       :city: "Oileáin Midway"
     :Pacific/Nauru: 

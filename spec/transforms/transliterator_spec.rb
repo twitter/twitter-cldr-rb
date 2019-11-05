@@ -5,18 +5,16 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Transforms
-
-describe Transliterator do
+describe TwitterCldr::Transforms::Transliterator do
   describe '#transliterate' do
     let(:source_locale) { 'ja' }
     let(:target_locale) { 'en' }
     let(:string) { 'くろねこさまボクシサン' }
-    let(:transliterator) { Transliterator.new(string, source_locale, target_locale) }
+    let(:transliterator) { described_class.new(string, source_locale, target_locale) }
 
     it 'identifies and transliterates all the scripts in the string' do
       expect(transliterator.transliterate).to(
-        match_normalized('kuronekosamaho゙kushisan')
+        match_normalized('kuronekosamabokushisan')
       )
     end
 

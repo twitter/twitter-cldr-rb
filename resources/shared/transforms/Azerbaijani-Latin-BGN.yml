@@ -1,9 +1,12 @@
 --- 
 :transforms: 
   - 
+    :aliases: 
+      - Azerbaijani-Latin/BGN
+      - az-t-az-cyrl-m0-bgn
     :direction: forward
     :rules: 
-      - ":: [АБВГҒДЕӘЖЗИЫКҜЛМНОӨПРСТУҮФХҺЧҸШЙЭЮЯабвгғдеәжзиыкҝлмноөпрстуүфхһчҹш’йэюя] ;"
+      - ":: [АБВГҒДЕӘЖЗИЫЈКҜЛМНОӨПРСТУҮФХҺЧҸШЙЭЮЯабвгғдеәжзиыјкҝлмноөпрстуүфхһчҹш’йэюя] ;"
       - ":: NFD (NFC) ;"
       - "$prime  = ’ ;"
       - "$wordBoundary =  [^[:L:][:M:][:N:]] ;"
@@ -88,6 +91,6 @@
       - "Я} $lower > Yȧ ; # CYRILLIC CAPITAL LETTER YA"
       - "Я > YȦ ; # CYRILLIC CAPITAL LETTER YA"
       - "я > yȧ ; # CYRILLIC SMALL LETTER YA"
-    :source: Azerbaijani
-    :target: Latin
+    :source: az_Cyrl
+    :target: az
     :variant: BGN

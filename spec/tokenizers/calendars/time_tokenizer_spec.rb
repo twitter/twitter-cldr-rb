@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Tokenizers
-
-describe TimeTokenizer do
+describe TwitterCldr::Tokenizers::TimeTokenizer do
   describe "#tokens" do
     it "should tokenize a time string correctly (i.e. German)" do
       data_reader = TwitterCldr::DataReaders::TimeDataReader.new(:de, type: :full)

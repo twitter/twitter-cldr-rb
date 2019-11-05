@@ -11,8 +11,8 @@ module TwitterCldr
       class TransformRule < Rule
         class << self
           def parse(rule_text, symbol_table, index)
-            rule_text = Rule.remove_comment(rule_text)
-            rule_text = rule_text[2..-2].strip
+            rule_text = Rule.remove_comment(rule_text).strip
+            rule_text = rule_text[2..-2].strip if rule_text.start_with?('::')
             tokens = tokenizer.tokenize(rule_text)
             forward_form, backward_form = parser.parse(tokens)
 
@@ -32,7 +32,20 @@ module TwitterCldr
             transforms.any? do |transform|
               transform.accepts?(forward_form, backward_form)
             end
-          rescue
+          rescue => e
+            if $debug
+              puts e.message
+              puts e.backtrace.join("\n")
+            end
+
+            false
+          end
+
+          def null?
+            false
+          end
+
+          def blank?
             false
           end
 
@@ -70,7 +83,7 @@ module TwitterCldr
         end
 
         def forward?
-          !!forward_form
+          !forward_form.null?
         end
 
         def backward?

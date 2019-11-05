@@ -5,70 +5,68 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Shared
-
-describe Locale do
+describe TwitterCldr::Shared::Locale do
   describe '.split' do
     it 'splits by dashes' do
-      expect(Locale.split('pt-BR')).to eq(%w[pt BR])
+      expect(described_class.split('pt-BR')).to eq(%w[pt BR])
     end
 
     it 'splits by underscores' do
-      expect(Locale.split('pt_BR')).to eq(%w[pt BR])
+      expect(described_class.split('pt_BR')).to eq(%w[pt BR])
     end
 
     it 'splits by spaces' do
-      expect(Locale.split('pt BR')).to eq(%w[pt BR])
+      expect(described_class.split('pt BR')).to eq(%w[pt BR])
     end
 
     it 'splits by a combination of dashes, underscores, and spaces' do
-      expect(Locale.split('pt-Latn_BR FOO')).to eq(%w[pt Latn BR FOO])
+      expect(described_class.split('pt-Latn_BR FOO')).to eq(%w[pt Latn BR FOO])
     end
   end
 
   describe '.parse' do
     it 'correctly identifies language only' do
-      locale = Locale.parse('pt')
+      locale = described_class.parse('pt')
       expect(locale.language).to eq('pt')
     end
 
     it 'correctly identifies full scripts' do
-      locale = Locale.parse('Hiragana')
+      locale = described_class.parse('Hiragana')
       expect(locale.script).to eq('Hiragana')
     end
 
     it 'correctly identifies abbreviated scripts' do
-      locale = Locale.parse('Hira')
+      locale = described_class.parse('Hira')
       expect(locale.script).to eq('Hira')
     end
 
     it 'correctly identifies language and region' do
-      locale = Locale.parse('pt-br')
+      locale = described_class.parse('pt-br')
       expect(locale.language).to eq('pt')
       expect(locale.region).to eq('BR')
     end
 
     it 'correctly identifies language and script' do
-      locale = Locale.parse('pt-latn')
+      locale = described_class.parse('pt-latn')
       expect(locale.language).to eq('pt')
       expect(locale.script).to eq('Latn')
     end
 
     it 'correctly identifies language, script, and region' do
-      locale = Locale.parse('pt-latn-br')
+      locale = described_class.parse('pt-latn-br')
       expect(locale.language).to eq('pt')
       expect(locale.script).to eq('Latn')
       expect(locale.region).to eq('BR')
     end
 
     it 'correctly identifies variants' do
-      locale = Locale.parse('pt-fonipa')
+      locale = described_class.parse('pt-fonipa')
       expect(locale.language).to eq('pt')
       expect(locale.variants).to eq(%w[FONIPA])
     end
 
     it 'correctly identifies language, script, region, and variants' do
-      locale = Locale.parse('pt-latn-br-fonipa')
+      locale = described_class.parse('pt-latn-br-fonipa')
       expect(locale.language).to eq('pt')
       expect(locale.script).to eq('Latn')
       expect(locale.region).to eq('BR')
@@ -76,94 +74,74 @@ describe Locale do
     end
 
     it "sets the region to nil if it can't be identified" do
-      locale = Locale.parse('pt-$@')
+      locale = described_class.parse('pt-$@')
       expect(locale.language).to eq('pt')
       expect(locale.region).to be_nil
     end
 
     it "sets the script to nil if it can't be identified" do
-      locale = Locale.parse('pt-$@-br')
+      locale = described_class.parse('pt-$@-br')
       expect(locale.language).to eq('pt')
       expect(locale.region).to eq('BR')
       expect(locale.script).to be_nil
     end
 
     it 'replaces deprecated language subtags' do
-      locale = Locale.parse('por')
+      locale = described_class.parse('por')
       expect(locale.language).to eq('pt')
     end
 
     it 'replaces deprecated region/territory subtags' do
-      locale = Locale.parse('pt-bra')
+      locale = described_class.parse('pt-bra')
       expect(locale.region).to eq('BR')
     end
 
-    it 'does not modify grandfathered locales' do
-      locale = Locale.parse('i-navajo')
-      expect(locale.language).to eq('i-navajo')
-    end
-
     it 'removes script placeholder subtags' do
-      locale = Locale.parse('zh-zzzz-sg')
+      locale = described_class.parse('zh-zzzz-sg')
       expect(locale.script).to be_nil
     end
 
     it 'removes region placeholder subtags' do
-      locale = Locale.parse('zh-hans-zz')
+      locale = described_class.parse('zh-hans-zz')
       expect(locale.region).to be_nil
     end
 
     it "sets language to 'und' if it can't be identified" do
-      locale = Locale.parse('$@')
+      locale = described_class.parse('$@')
       expect(locale.language).to eq('und')
     end
   end
 
   describe '.valid?' do
     it 'returns true if all subtags are valid' do
-      expect(Locale.valid?('en')).to eq(true)
-      expect(Locale.valid?('en-latn')).to eq(true)
-      expect(Locale.valid?('en-latn-us')).to eq(true)
-      expect(Locale.valid?('en-latn-us-fonipa')).to eq(true)
+      expect(described_class.valid?('en')).to eq(true)
+      expect(described_class.valid?('en-latn')).to eq(true)
+      expect(described_class.valid?('en-latn-us')).to eq(true)
+      expect(described_class.valid?('en-latn-us-fonipa')).to eq(true)
     end
 
     it 'returns false if any subtag is invalid' do
-      expect(Locale.valid?('xz')).to eq(false)
-      expect(Locale.valid?('en-fooo')).to eq(false)
-      expect(Locale.valid?('en-latn-XZ')).to eq(false)
-      expect(Locale.valid?('en-latn-us-foooo')).to eq(false)
-    end
-  end
-
-  describe '.grandfathered?' do
-    it 'returns true if the given locale is considered "grandfathered"' do
-      expect(Locale.grandfathered?('i-navajo')).to eq(true)
-    end
-
-    it 'returns false if the given locale is not considered "grandfathered"' do
-      expect(Locale.grandfathered?('en-latn-us')).to eq(false)
+      expect(described_class.valid?('xz')).to eq(false)
+      expect(described_class.valid?('en-fooo')).to eq(false)
+      expect(described_class.valid?('en-latn-XZ')).to eq(false)
+      expect(described_class.valid?('en-latn-us-foooo')).to eq(false)
     end
   end
 
   # see likely_subtags_spec.rb for the complete likely subtags test suite
   describe '.parse_likely' do
     it 'returns a Locale instance' do
-      locale = Locale.parse_likely('zh')
-      expect(locale).to be_a(Locale)
-    end
-
-    it 'does not find subtags for grandfathered locales' do
-      locale = Locale.parse_likely('i-navajo')
-      expect(locale.language).to eq('i-navajo')
+      locale = described_class.parse_likely('zh')
+      expect(locale).to be_a(described_class)
     end
   end
 
   context 'with a locale instance' do
-    let(:locale) { Locale.new('ko', nil, 'KR') }
+    let(:locale) { described_class.new('ko', nil, 'KR') }
 
     describe '#full_script' do
       it 'calculates the long name of the script using Unicode property data' do
-        locale = Locale.new('ru_Cyrl_RU').maximize
+        locale = described_class.new('ru_Cyrl_RU').maximize
         expect(locale.script).to eq('Cyrl')
         expect(locale.full_script).to eq('Cyrillic')
       end
@@ -177,7 +155,7 @@ describe Locale do
 
     describe '#abbreviated_script' do
       it 'calculates the abbreviated name of the script using Unicode property data' do
-        locale = Locale.new('ru_Cyrillic_RU').maximize
+        locale = described_class.new('ru_Cyrillic_RU').maximize
         expect(locale.script).to eq('Cyrillic')
         expect(locale.abbreviated_script).to eq('Cyrl')
       end
@@ -186,12 +164,7 @@ describe Locale do
     # see likely_subtags_spec.rb for the complete likely subtags test suite
     describe '#maximize' do
       it 'returns a Locale instance' do
-        expect(locale.maximize).to be_a(Locale)
-      end
-
-      it 'does not modify grandfathered locales' do
-        locale = Locale.new('i-navajo').maximize
-        expect(locale.language).to eq('i-navajo')
+        expect(locale.maximize).to be_a(described_class)
       end
     end
 

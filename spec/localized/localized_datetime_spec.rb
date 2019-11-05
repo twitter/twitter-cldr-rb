@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr::Localized
-
-describe LocalizedDateTime do
+describe TwitterCldr::Localized::LocalizedDateTime do
 
   let(:date_time) { DateTime.new(1987, 9, 20, 22, 5) }
 
@@ -73,7 +71,7 @@ describe LocalizedDateTime do
 
   describe "#to_timespan" do
     it "should return a localized timespan" do
-      expect(date_time.localize.to_timespan).to be_a(LocalizedTimespan)
+      expect(date_time.localize.to_timespan).to be_a(TwitterCldr::Localized::LocalizedTimespan)
     end
   end
 
@@ -102,7 +100,7 @@ describe LocalizedDateTime do
     end
 
     it "should properly handle single quotes escaping" do
-      expect(date_time.localize(:ru).to_additional_s("GyMMMd")).to eq("20 сент. 1987 г. н. э.")
+      expect(date_time.localize(:ru).to_additional_s("GyMMMd")).to eq("20 сент. 1987 г. н. э.")
     end
 
     it "should unescape multiple groups" do

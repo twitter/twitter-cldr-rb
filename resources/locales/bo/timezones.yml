@@ -1,18 +1,11 @@
 --- 
 :bo: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} (+0)"
   :timezones: 
     :Africa/Asmera: 
       :city: Asmara
@@ -64,12 +57,19 @@
       :city: Kolkata
     :Asia/Katmandu: 
       :city: Kathmandu
+    :Asia/Macau: 
+      :city: Macao
+    :Asia/Rangoon: 
+      :city: Yangon
     :Asia/Saigon: 
       :city: "Ho Chi Minh"
     :Atlantic/Faeroe: 
       :city: Faroe
     :Atlantic/St_Helena: 
       :city: "St. Helena"
+    :Etc/UTC: 
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: མ་རྟོགས་པ
     :Pacific/Ponape: 

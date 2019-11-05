@@ -1,18 +1,11 @@
 --- 
 :hu: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} nyári idő"
-      :generic: "{0} idő"
-      :standard: "{0} zónaidő"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} zónaidő"
   :metazones: 
     :Acre: 
       :long: 
@@ -98,7 +91,7 @@
         :standard: "arab téli idő"
     :Argentina: 
       :long: 
-        :daylight: "Argentínai nyári idő"
+        :daylight: "argentínai nyári idő"
         :generic: "argentínai idő"
         :standard: "argentínai téli idő"
     :Argentina_Western: 
@@ -139,7 +132,7 @@
     :Azerbaijan: 
       :long: 
         :daylight: "azerbajdzsáni nyári idő"
-        :generic: "Azerbajdzsáni idő"
+        :generic: "azerbajdzsáni idő"
         :standard: "azerbajdzsáni téli idő"
     :Azores: 
       :long: 
@@ -273,7 +266,7 @@
         :standard: "fidzsi téli idő"
     :French_Guiana: 
       :long: 
-        :standard: "francia-guianai idő"
+        :standard: "francia-guyanai idő"
     :French_Southern: 
       :long: 
         :standard: "francia déli és antarktiszi idő"
@@ -318,7 +311,7 @@
     :Hawaii_Aleutian: 
       :long: 
         :daylight: "hawaii-aleuti nyári idő"
-        :generic: "hawaii-aleut időzóna"
+        :generic: "hawaii-aleuti időzóna"
         :standard: "hawaii-aleuti téli idő"
     :Hong_Kong: 
       :long: 
@@ -538,15 +531,18 @@
         :standard: "phoenix-szigeteki téli idő"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "Saint Pierre és Miquelon-i nyári idő"
-        :generic: "Saint Pierre és Miquelon-i idő"
-        :standard: "Saint Pierre és Miquelon-i zónaidő"
+        :daylight: "Saint-Pierre és Miquelon-i nyári idő"
+        :generic: "Saint-Pierre és Miquelon-i idő"
+        :standard: "Saint-Pierre és Miquelon-i zónaidő"
     :Pitcairn: 
       :long: 
         :standard: "pitcairn-szigeteki idő"
     :Ponape: 
       :long: 
         :standard: "ponape-szigeti idő"
+    :Pyongyang: 
+      :long: 
+        :standard: "phenjani idő"
     :Qyzylorda: 
       :long: 
         :daylight: "Qyzylordai nyári idő"
@@ -660,13 +656,13 @@
         :standard: "Wallis és Futuna-i idő"
     :Yakutsk: 
       :long: 
-        :daylight: "Jakutszki nyári idő"
+        :daylight: "jakutszki nyári idő"
         :generic: "jakutszki idő"
         :standard: "jakutszki téli idő"
     :Yekaterinburg: 
       :long: 
-        :daylight: "Jekatyerinburgi nyári idő"
-        :generic: "Jekatyerinburgi idő"
+        :daylight: "jekatyerinburgi nyári idő"
+        :generic: "jekatyerinburgi idő"
         :standard: "jekatyerinburgi téli idő"
   :timezones: 
     :Africa/Abidjan: 
@@ -850,7 +846,7 @@
     :America/Cuiaba: 
       :city: Cuiabá
     :America/Curacao: 
-      :city: Curacao
+      :city: Curaçao
     :America/Danmarkshavn: 
       :city: Danmarkshavn
     :America/Dawson: 
@@ -869,6 +865,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: Salvador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -982,7 +980,7 @@
     :America/North_Dakota/Beulah: 
       :city: "Beulah, Észak-Dakota"
     :America/North_Dakota/Center: 
-      :city: "Középső, Észak-Dakota"
+      :city: "Center, Észak-Dakota"
     :America/North_Dakota/New_Salem: 
       :city: "New Salem, Észak-Dakota"
     :America/Ojinaga: 
@@ -1003,6 +1001,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1103,6 +1103,8 @@
       :city: Aktöbe
     :Asia/Ashgabat: 
       :city: Asgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1111,6 +1113,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Bejrút
     :Asia/Bishkek: 
@@ -1128,13 +1132,15 @@
     :Asia/Damascus: 
       :city: Damaszkusz
     :Asia/Dhaka: 
-      :city: Dháka
+      :city: Dakka
     :Asia/Dili: 
       :city: Dili
     :Asia/Dubai: 
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gáza
     :Asia/Hebron: 
@@ -1197,10 +1203,12 @@
       :city: Phenjan
     :Asia/Qatar: 
       :city: Katar
+    :Asia/Qostanay: 
+      :city: Kosztanaj
     :Asia/Qyzylorda: 
       :city: Kizilorda
     :Asia/Rangoon: 
-      :city: Rangoon
+      :city: Yangon
     :Asia/Riyadh: 
       :city: Rijád
     :Asia/Saigon: 
@@ -1229,6 +1237,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokió
+    :Asia/Tomsk: 
+      :city: Tomszk
     :Asia/Ulaanbaatar: 
       :city: Ulánbátor
     :Asia/Urumqi: 
@@ -1252,9 +1262,9 @@
     :Atlantic/Canary: 
       :city: Kanári-szigetek
     :Atlantic/Cape_Verde: 
-      :city: "Zöld-Foki Szigetek"
+      :city: "Zöld-foki szigetek"
     :Atlantic/Faeroe: 
-      :city: Faroe
+      :city: Feröer
     :Atlantic/Madeira: 
       :city: Madeira
     :Atlantic/Reykjavik: 
@@ -1289,12 +1299,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "egyezményes koordinált világidő"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Ismeretlen város"
     :Europe/Amsterdam: 
       :city: Amszterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Asztrahán
     :Europe/Athens: 
       :city: Athén
     :Europe/Belgrade: 
@@ -1335,6 +1352,8 @@
       :city: Kalinyingrád
     :Europe/Kiev: 
       :city: Kijev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisszabon
     :Europe/Ljubljana: 
@@ -1375,6 +1394,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Szarajevó
+    :Europe/Saratov: 
+      :city: Szaratov
     :Europe/Simferopol: 
       :city: Szimferopol
     :Europe/Skopje: 
@@ -1387,6 +1408,8 @@
       :city: Tallin
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovszk
     :Europe/Uzhgorod: 
       :city: Ungvár
     :Europe/Vaduz: 
@@ -1502,7 +1525,7 @@
     :Pacific/Tongatapu: 
       :city: Tongatapu
     :Pacific/Truk: 
-      :city: Chuuk
+      :city: Truk
     :Pacific/Wake: 
       :city: Wake-sziget
     :Pacific/Wallis: 

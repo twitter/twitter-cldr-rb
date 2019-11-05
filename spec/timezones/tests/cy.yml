@@ -70,7 +70,7 @@ Africa/Algiers:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Alger)
+    :generic: CET
 Africa/Asmara:
   :offset: 10800000
   :LONG_GMT:
@@ -250,7 +250,7 @@ Africa/Cairo:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Yr Aifft)
+    :generic: EET
 Africa/Casablanca:
   :offset: 0
   :LONG_GMT:
@@ -260,15 +260,15 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Amser Moroco
   :LONG:
-    :standard: Amser Safonol Gorllewin Ewrop
-    :daylight: Amser Haf Gorllewin Ewrop
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Amser Gorllewin Ewrop
+    :generic: Amser Moroco
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Amser Moroco
 Africa/Ceuta:
   :offset: 3600000
   :LONG_GMT:
@@ -386,15 +386,15 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Amser Gorllewin Sahara
   :LONG:
-    :standard: Amser Safonol Gorllewin Ewrop
-    :daylight: Amser Haf Gorllewin Ewrop
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Amser Gorllewin Ewrop
+    :generic: Amser Gorllewin Sahara
   :SHORT:
-    :standard: WET
-    :daylight: WEST
+    :standard: GMT
+    :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: WET
+    :generic: Amser Gorllewin Sahara
 Africa/Freetown:
   :offset: 0
   :LONG_GMT:
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Amser Uganda
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Amser Swdan
   :LONG:
-    :standard: Amser Dwyrain Affrica
-    :daylight: GMT+03:00
+    :standard: Amser Canolbarth Affrica
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Affrica
+    :generic: Amser Canolbarth Affrica
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Amser Swdan
 Africa/Kigali:
@@ -726,7 +726,7 @@ Africa/Mbabane:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Amser Gwlad Swazi
+    :generic: Amser Eswatini
   :LONG:
     :standard: Amser Safonol De Affrica
     :daylight: GMT+02:00
@@ -736,7 +736,7 @@ Africa/Mbabane:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Amser Gwlad Swazi
+    :generic: Amser Eswatini
 Africa/Mogadishu:
   :offset: 10800000
   :LONG_GMT:
@@ -934,7 +934,7 @@ Africa/Tripoli:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -952,22 +952,22 @@ Africa/Tunis:
     :standard: CET
     :daylight: CEST
   :SHORT_GENERIC:
-    :generic: CET (Tunisia)
+    :generic: CET
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Amser Namibia
   :LONG:
-    :standard: Amser Safonol Gorllewin Affrica
-    :daylight: Amser Haf Gorllewin Affrica
+    :standard: Amser Canolbarth Affrica
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Amser Gorllewin Affrica (Windhoek)
+    :generic: Amser Canolbarth Affrica
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Amser Namibia
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Amser Safonol Hawaii-Aleutian
     :daylight: Amser Haf Hawaii-Aleutian
   :LONG_GENERIC:
-    :generic: Amser Hawaii-Aleutian (Adak)
+    :generic: Amser Hawaii-Aleutian
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Amser Safonol Hawaii-Aleutian
     :daylight: Amser Haf Hawaii-Aleutian
   :LONG_GENERIC:
-    :generic: Amser Hawaii-Aleutian (Adak)
+    :generic: Amser Hawaii-Aleutian
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -1554,7 +1554,7 @@ America/Cambridge_Bay:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Amser Cambridge Bay
+    :generic: Amser Bae Cambridge
   :LONG:
     :standard: Amser Safonol Mynyddoedd Gogledd America
     :daylight: Amser Haf Mynyddoedd Gogledd America
@@ -1564,7 +1564,7 @@ America/Cambridge_Bay:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Amser Cambridge Bay
+    :generic: Amser Bae Cambridge
 America/Campo_Grande:
   :offset: -14400000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amser Safonol Amazonas
     :daylight: Amser Haf Amazonas
   :LONG_GENERIC:
-    :generic: Amser Amazonas
+    :generic: Amser Amazonas (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: Amser Cancún
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Amser Venezuela
   :LONG:
     :standard: Amser Venezuela
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Amser Venezuela
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Amser Venezuela
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amser Safonol Amazonas
     :daylight: Amser Haf Amazonas
   :LONG_GENERIC:
-    :generic: Amser Amazonas
+    :generic: Amser Amazonas (Cuiabá)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: Amser Goose Bay
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: Amser Ynysoedd Turks a Caicos
   :LONG:
-    :standard: Amser Safonol Cefnfor yr Iwerydd
-    :daylight: Amser Haf Cefnfor yr Iwerydd
+    :standard: Amser Safonol Dwyrain Gogledd America
+    :daylight: Amser Haf Dwyrain Gogledd America
   :LONG_GENERIC:
-    :generic: Amser Safonol Cefnfor yr Iwerydd
+    :generic: Amser Dwyrain Gogledd America
   :SHORT:
-    :standard: GMT-4
+    :standard: GMT-5
     :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Amser Ynysoedd Turks a Caicos
@@ -2688,7 +2688,7 @@ America/Maceio:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Amser Maceió
+    :generic: Amser Maceio
   :LONG:
     :standard: Amser Safonol Brasília
     :daylight: Amser Haf Brasília
@@ -2698,7 +2698,7 @@ America/Maceio:
     :standard: GMT-3
     :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: Amser Maceió
+    :generic: Amser Maceio
 America/Managua:
   :offset: -21600000
   :LONG_GMT:
@@ -2796,7 +2796,7 @@ America/Mazatlan:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Amser Mazatlán
+    :generic: Amser Mazatlan
   :LONG:
     :standard: Amser Safonol Pasiffig Mecsico
     :daylight: Amser Haf Pasiffig Mecsico
@@ -2806,7 +2806,7 @@ America/Mazatlan:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Amser Mazatlán
+    :generic: Amser Mazatlan
 America/Mendoza:
   :offset: -10800000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Amser Safonol Dwyrain Gogledd America
     :daylight: Amser Haf Dwyrain Gogledd America
   :LONG_GENERIC:
-    :generic: Amser Safonol Dwyrain Gogledd America
+    :generic: Amser Dwyrain Gogledd America
   :SHORT:
     :standard: GMT-5
-    :daylight: GMT-5
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Amser Haiti
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: Amser Puerto Rico
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Punta Arenas
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Punta Arenas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Punta Arenas
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Amser Santarem
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Amser Chile
   :LONG:
     :standard: Amser Safonol Chile
     :daylight: Amser Haf Chile
   :LONG_GENERIC:
-    :generic: Amser Safonol Chile
+    :generic: Amser Chile
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Amser Chile
@@ -3552,7 +3552,7 @@ America/Sao_Paulo:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Amser São Paulo
+    :generic: Amser Sao Paulo
   :LONG:
     :standard: Amser Safonol Brasília
     :daylight: Amser Haf Brasília
@@ -3562,7 +3562,7 @@ America/Sao_Paulo:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Amser São Paulo
+    :generic: Amser Sao Paulo
 America/Scoresbysund:
   :offset: -3600000
   :LONG_GMT:
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Amser Palmer
   :LONG:
-    :standard: Amser Safonol Chile
-    :daylight: Amser Haf Chile
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Amser Safonol Chile
+    :generic: Amser Palmer
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4220,10 +4220,10 @@ Asia/Almaty:
   :GENERIC_LOCATION:
     :generic: Amser Almaty
   :LONG:
-    :standard: Amser Dwyrain Casachstan
+    :standard: Amser Dwyrain Kazakhstan
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Casachstan
+    :generic: Amser Dwyrain Kazakhstan
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Amser Turkmenistan
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Atyrau
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Amser Gorllewin Casachstan
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Gorllewin Casachstan
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Atyrau
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Amser Safonol Aserbaijan
     :daylight: Amser Haf Aserbaijan
   :LONG_GENERIC:
-    :generic: Amser Aserbaijan
+    :generic: Amser Safonol Aserbaijan
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Amser Azerbaijan
 Asia/Bangkok:
@@ -4472,10 +4472,10 @@ Asia/Bishkek:
   :GENERIC_LOCATION:
     :generic: Amser Kyrgyzstan
   :LONG:
-    :standard: Amser Casachstan
+    :standard: Amser Kyrgyzstan
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Amser Casachstan
+    :generic: Amser Kyrgyzstan
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Amser Safonol Choibalsan
     :daylight: Amser Haf Choibalsan
   :LONG_GENERIC:
-    :generic: Amser Choibalsan
+    :generic: Amser Safonol Choibalsan
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Amser Choibalsan
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Amser Tajikistan
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Famagusta
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Famagusta
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Famagusta
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4812,7 +4812,7 @@ Asia/Hong_Kong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Amser Hong Kong RhGA Tsieina
+    :generic: Amser Hong Kong SAR Tseina
   :LONG:
     :standard: Amser Safonol Hong Kong
     :daylight: Amser Haf Hong Kong
@@ -4822,7 +4822,7 @@ Asia/Hong_Kong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Amser Hong Kong RhGA Tsieina
+    :generic: Amser Hong Kong SAR Tseina
 Asia/Hovd:
   :offset: 25200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Amser Safonol Hovd
     :daylight: Amser Haf Hovd
   :LONG_GENERIC:
-    :generic: Amser Hovd
+    :generic: Amser Safonol Hovd
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Amser Hovd
 Asia/Irkutsk:
@@ -4860,23 +4860,23 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Amser Irkutsk
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Amser Twrci
   :LONG:
-    :standard: Amser Safonol Dwyrain Ewrop
-    :daylight: Amser Haf Dwyrain Ewrop
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Ewrop
+    :generic: Amser Twrci
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Amser Twrci
 Asia/Jakarta:
   :offset: 25200000
   :LONG_GMT:
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: Amser Macau RhGA Tsieina
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Amser Magadan
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Amser Safonol Magadan
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Amser Magadan
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Amser Cyprus
+    :generic: Amser Nicosia
   :LONG:
     :standard: Amser Safonol Dwyrain Ewrop
     :daylight: Amser Haf Dwyrain Ewrop
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Amser Novokuznetsk
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Amser Novosibirsk
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Amser Safonol Novosibirsk
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Amser Novosibirsk
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Amser Pontianak
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Amser Gogledd Korea
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: Amser Safonol Corea
+    :daylight: Amser Haf Corea
   :LONG_GENERIC:
-    :generic: Amser Gogledd Korea
+    :generic: Amser Safonol Corea
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Amser Gogledd Korea
 Asia/Qatar:
@@ -5417,22 +5417,40 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Amser Qatar
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Amser Qyzylorda
+    :generic: Amser Qostanay
   :LONG:
-    :standard: Amser Dwyrain Casachstan
+    :standard: Amser Dwyrain Kazakhstan
     :daylight: GMT+06:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Casachstan
+    :generic: Amser Dwyrain Kazakhstan
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Amser Qostanay
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Amser Qyzylorda
+  :LONG:
+    :standard: Amser Gorllewin Casachstan
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: Amser Gorllewin Casachstan
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Amser Qyzylorda
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Amser Japan
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Tomsk
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Tomsk
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Tomsk
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Amser Safonol Ulan Bator
     :daylight: Amser Haf Ulan Bator
   :LONG_GENERIC:
-    :generic: Amser Ulan Bator
+    :generic: Amser Safonol Ulan Bator
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Amser Ulan Bator
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Amser Safonol Ulan Bator
     :daylight: Amser Haf Ulan Bator
   :LONG_GENERIC:
-    :generic: Amser Ulan Bator
+    :generic: Amser Safonol Ulan Bator
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Amser Ulan Bator
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Amser Yakutsk
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Myanmar (Burma)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Amser Myanmar
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Myanmar
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Myanmar (Burma)
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6000,7 +6018,7 @@ Atlantic/Canary:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Amser yr Ynysoedd Dedwydd
+    :generic: Amser Yr Ynysoedd Dedwydd
   :LONG:
     :standard: Amser Safonol Gorllewin Ewrop
     :daylight: Amser Haf Gorllewin Ewrop
@@ -6630,7 +6648,7 @@ Brazil/East:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: Amser São Paulo
+    :generic: Amser Sao Paulo
   :LONG:
     :standard: Amser Safonol Brasília
     :daylight: Amser Haf Brasília
@@ -6640,7 +6658,7 @@ Brazil/East:
     :standard: GMT-3
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Amser São Paulo
+    :generic: Amser Sao Paulo
 Brazil/West:
   :offset: -14400000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Amser Winnipeg
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Amser Regina
-  :LONG:
-    :standard: Amser Safonol Canolbarth Gogledd America
-    :daylight: Amser Haf Canolbarth Gogledd America
-  :LONG_GENERIC:
-    :generic: Amser Safonol Canolbarth Gogledd America
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Amser Regina
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: Amser Whitehorse
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Amser Chile
   :LONG:
     :standard: Amser Safonol Chile
     :daylight: Amser Haf Chile
   :LONG_GENERIC:
-    :generic: Amser Safonol Chile
+    :generic: Amser Chile
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Amser Chile
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Amser Ynys y Pasg
   :LONG:
     :standard: Amser Safonol Ynys y Pasg
     :daylight: Amser Haf Ynys y Pasg
   :LONG_GENERIC:
-    :generic: Amser Safonol Ynys y Pasg
+    :generic: Amser Ynys y Pasg
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Amser Ynys y Pasg
@@ -6982,7 +6982,7 @@ Egypt:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Yr Aifft)
+    :generic: EET
 Eire:
   :offset: 0
   :LONG_GMT:
@@ -6993,7 +6993,7 @@ Eire:
     :generic: Amser Iwerddon
   :LONG:
     :standard: Amser Safonol Greenwich
-    :daylight: Amser Haf Iwerddon
+    :daylight: Amser Safonol Iwerddon
   :LONG_GENERIC:
     :generic: Amser Iwerddon
   :SHORT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7893,7 +7893,7 @@ Europe/Dublin:
     :generic: Amser Iwerddon
   :LONG:
     :standard: Amser Safonol Greenwich
-    :daylight: Amser Haf Iwerddon
+    :daylight: Amser Safonol Iwerddon
   :LONG_GENERIC:
     :generic: Amser Iwerddon
   :SHORT:
@@ -7974,23 +7974,23 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Amser Ynys Manaw
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Amser Twrci
   :LONG:
-    :standard: Amser Safonol Dwyrain Ewrop
-    :daylight: Amser Haf Dwyrain Ewrop
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Ewrop
+    :generic: Amser Twrci
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Amser Twrci
 Europe/Jersey:
   :offset: 0
   :LONG_GMT:
@@ -8026,7 +8026,7 @@ Europe/Kaliningrad:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Kaliningrad)
+    :generic: EET
 Europe/Kiev:
   :offset: 7200000
   :LONG_GMT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Kirov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Kirov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Kirov
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Amser Belarws
   :LONG:
-    :standard: Amser Dwyrain Pell Ewrop
-    :daylight: GMT+03:00
+    :standard: Amser Safonol Moscfa
+    :daylight: Amser Haf Moscfa
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Pell Ewrop
+    :generic: Amser Safonol Moscfa
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Amser Cyprus
+    :generic: Amser Nicosia
   :LONG:
     :standard: Amser Safonol Dwyrain Ewrop
     :daylight: Amser Haf Dwyrain Ewrop
@@ -8322,7 +8322,7 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Amser Gweriniaeth Tsiec
+    :generic: Amser Tsiecia
   :LONG:
     :standard: Amser Safonol Canolbarth Ewrop
     :daylight: Amser Haf Canolbarth Ewrop
@@ -8378,10 +8378,10 @@ Europe/Samara:
   :GENERIC_LOCATION:
     :generic: Amser Samara
   :LONG:
-    :standard: GMT+04:00
-    :daylight: GMT+04:00
+    :standard: Amser Safonol Samara
+    :daylight: Amser Haf Samara
   :LONG_GENERIC:
-    :generic: Amser Samara
+    :generic: Amser Safonol Samara
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
@@ -8412,7 +8412,7 @@ Europe/Sarajevo:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Amser Bosnia a Hercegovina
+    :generic: Amser Bosnia & Herzegovina
   :LONG:
     :standard: Amser Safonol Canolbarth Ewrop
     :daylight: Amser Haf Canolbarth Ewrop
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: CET
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Amser Saratov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Saratov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Amser Saratov
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Amser Macedonia
+    :generic: Amser Gogledd Macedonia
   :LONG:
     :standard: Amser Safonol Canolbarth Ewrop
     :daylight: Amser Haf Canolbarth Ewrop
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: EET
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Amser Volgograd
   :LONG:
-    :standard: Amser Safonol Moscfa
-    :daylight: Amser Haf Moscfa
+    :standard: Amser Safonol Volgograd
+    :daylight: Amser Haf Volgograd
   :LONG_GENERIC:
-    :generic: Amser Safonol Moscfa
+    :generic: Amser Safonol Volgograd
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Amser Volgograd
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Safonol Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Amser Safonol Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8934,7 +8934,7 @@ Hongkong:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Amser Hong Kong RhGA Tsieina
+    :generic: Amser Hong Kong SAR Tseina
   :LONG:
     :standard: Amser Safonol Hong Kong
     :daylight: Amser Haf Hong Kong
@@ -8944,7 +8944,7 @@ Hongkong:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Amser Hong Kong RhGA Tsieina
+    :generic: Amser Hong Kong SAR Tseina
 Iceland:
   :offset: 0
   :LONG_GMT:
@@ -9062,10 +9062,10 @@ Indian/Kerguelen:
   :GENERIC_LOCATION:
     :generic: Amser Tiroedd Deheuol ac Antarctig Ffrainc
   :LONG:
-    :standard: Amser Deheuol ac Antarctig Frengig
+    :standard: Amser Tiroedd Ffrainc yn y De a’r Antarctig
     :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: Amser Deheuol ac Antarctig Frengig
+    :generic: Amser Tiroedd Ffrainc yn y De a’r Antarctig
   :SHORT:
     :standard: GMT+5
     :daylight: GMT+5
@@ -9268,7 +9268,7 @@ Libya:
     :standard: EET
     :daylight: EEST
   :SHORT_GENERIC:
-    :generic: EET (Tripoli)
+    :generic: EET
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9348,7 +9348,7 @@ Mexico/BajaSur:
   :SHORT_GMT:
     :generic: "-0700"
   :GENERIC_LOCATION:
-    :generic: Amser Mazatlán
+    :generic: Amser Mazatlan
   :LONG:
     :standard: Amser Safonol Pasiffig Mecsico
     :daylight: Amser Haf Pasiffig Mecsico
@@ -9358,7 +9358,7 @@ Mexico/BajaSur:
     :standard: GMT-7
     :daylight: GMT-6
   :SHORT_GENERIC:
-    :generic: Amser Mazatlán
+    :generic: Amser Mazatlan
 Mexico/General:
   :offset: -21600000
   :LONG_GMT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Amser Chuuk
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Amser Ynys y Pasg
   :LONG:
     :standard: Amser Safonol Ynys y Pasg
     :daylight: Amser Haf Ynys y Pasg
   :LONG_GENERIC:
-    :generic: Amser Safonol Ynys y Pasg
+    :generic: Amser Ynys y Pasg
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Amser Ynys y Pasg
@@ -10332,23 +10332,23 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Amser Singapore
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Amser Twrci
   :LONG:
-    :standard: Amser Safonol Dwyrain Ewrop
-    :daylight: Amser Haf Dwyrain Ewrop
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Amser Dwyrain Ewrop
+    :generic: Amser Twrci
   :SHORT:
-    :standard: EET
-    :daylight: EEST
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: EET
+    :generic: Amser Twrci
 UCT:
   :offset: 0
   :LONG_GMT:
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Amser Safonol Hawaii-Aleutian
     :daylight: Amser Haf Hawaii-Aleutian
   :LONG_GENERIC:
-    :generic: Amser Hawaii-Aleutian (Adak)
+    :generic: Amser Hawaii-Aleutian
   :SHORT:
     :standard: GMT-10
     :daylight: GMT-9
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Amser Cyffredniol Cydlynol
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

@@ -13,18 +13,22 @@ module TwitterCldr
       BCP_47_FILE, ISO_639_FILE = %w[bcp-47.txt iso-639.txt]
 
       INPUT_DATA = {
-        BCP_47_FILE  => 'http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
-        ISO_639_FILE => 'http://www-01.sil.org/iso639-3/iso-639-3_20120614.tab'
+        BCP_47_FILE  => 'https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry',
+
+        # docs: https://iso639-3.sil.org/code_tables/download_tables#639-3%20Code%20Set
+        ISO_639_FILE => 'https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab'
       }
 
       KEYS_TO_STANDARDS = {
-        iso_639_1:      :iso_639_1,
-        iso_639_2:      :iso_639_2,
-        iso_639_2_term: :iso_639_2,
-        iso_639_3:      :iso_639_3,
-        bcp_47:         :bcp_47,
-        bcp_47_alt:     :bcp_47
-      }
+        Part1:      :iso_639_1,
+        Part2B:     :iso_639_2,
+        Part2T:     :iso_639_2_term,
+        Id:         :iso_639_3,
+        bcp_47:     :bcp_47,
+        bcp_47_alt: :bcp_47_alt
+      }.freeze
+
+      STANDARDS_TO_KEYS = KEYS_TO_STANDARDS.invert.freeze
 
       output_path 'shared'
       ruby_engine :mri
@@ -39,7 +43,10 @@ module TwitterCldr
       def prepare_data
         INPUT_DATA.each do |file, url|
           source_path = source_path_for(file)
-          open(source_path, 'wb') { |file| file << open(url).read }
+
+          unless File.exist?(source_path)
+            open(source_path, 'wb') { |file| file << open(url).read }
+          end
         end
       end
 
@@ -80,32 +87,16 @@ module TwitterCldr
           lines.each do |line|
             entry = line.chomp.gsub(/"(.*)"/) { $1.gsub("\t", '') }
             data = Hash[ISO_639_COLUMNS.zip(entry.split("\t"))]
+            h = result[data[:Ref_Name].to_sym] ||= {}
 
-            # either bibliographic and terminology codes are the same (:bt_equiv is empty)
-            # or :iso_639_2 contains terminology code and :bt_equiv contains bibliographic code
-            # skip 'collection' scope
-            if (data[:bt_equiv].empty? || !data[:b_code].empty?) && data[:name] != 'Reserved for local use' && data[:scope] != 'C'
-              h = result[data[:name].to_sym] ||= {}
-
-              set_iso_639_data(h, :iso_639_1, data[:iso_639_1])
-
-              if data[:bt_equiv].empty?
-                set_iso_639_data(h, :iso_639_2, data[:iso_639_2])
-              else
-                set_iso_639_data(h, :iso_639_2, data[:bt_equiv])
-                set_iso_639_data(h, :iso_639_2_term, data[:iso_639_2])
-              end
-
-              set_iso_639_data(h, :iso_639_3, data[:iso_639_3])
+            STANDARDS_TO_KEYS.each do |standard_key, data_key|
+              value = data[data_key]
+              h[standard_key] = value.to_sym if value && !value.empty?
             end
           end
         end
 
         result
-      end
-
-      def set_iso_639_data(data, key, value)
-        data[key] = value.to_sym unless value.nil? || value.empty?
       end
 
       # Generates codes in the following format:
@@ -197,9 +188,11 @@ module TwitterCldr
           table[:name][name] = { name: name }.merge(codes)
         end
 
-        table[:name].values.each do |data|
-          KEYS_TO_STANDARDS.each do |key, standard|
-            table[standard][data[key].to_sym] = data if data[key]
+        table[:name].each_pair do |name, standards|
+          STANDARDS_TO_KEYS.each do |standard, _|
+            if standards[standard]
+              table[standard.to_sym][standards[standard].to_sym] = table[:name][name]
+            end
           end
         end
 
@@ -209,19 +202,18 @@ module TwitterCldr
       end
 
       ISO_639_COLUMNS = [
-        :code,            # Code
-        :status,          # Status
-        :partner_agency,  # Partner Agency
-        :iso_639_3,       # 639_3
-        :iso_639_2,       # 639_2 (alpha-3 bibliographic/terminology code)
-        :b_code,          # alpha-3 bibliographic code if iso_639_2 contains terminology code
-        :bt_equiv,        # bt_equiv (alpha-3 bibliographic/terminology equivalent)
-        :iso_639_1,       # 639_1
-        :name,            # Reference_Name
-        :scope,           # Element_Scope
-        :type,            # Language_Type
-        :docs             # Documentation
-      ]
+        :Id,       # The three-letter 639-3 identifier
+        :Part2B,   # Equivalent 639-2 identifier of the bibliographic applications
+                   # code set, if there is one
+        :Part2T,   # Equivalent 639-2 identifier of the terminology applications code
+                   # set, if there is one
+        :Part1,    # Equivalent 639-1 identifier, if there is one
+        :Scope,    # I(ndividual), M(acrolanguage), S(pecial)
+        :Type,     # A(ncient), C(onstructed),
+                   # E(xtinct), H(istorical), L(iving), S(pecial)
+        :Ref_Name, # Reference language name
+        :Comment   # Comment relating to one or more of the columns
+      ].freeze
 
     end
 

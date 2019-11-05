@@ -1,18 +1,11 @@
 --- 
 :be: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: +HH.mm;-HH.mm
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "Час: {0}"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: +HH.mm;-HH.mm
+    :region_format: "Стандартны час: {0}"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -98,9 +91,9 @@
         :standard: "Стандартны час цэнтральнай Аўстраліі"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Заходні летні час Цэнтральнай Аўстраліі"
-        :generic: "Заходні час Цэнтральнай Аўстраліі"
-        :standard: "Заходні стандартны час Цэнтральнай Аўстраліі"
+        :daylight: "Летні цэнтральна-заходні час Аўстраліі"
+        :generic: "Цэнтральна-заходні час Аўстраліі"
+        :standard: "Стандартны цэнтральна-заходні час Аўстраліі"
     :Australia_Eastern: 
       :long: 
         :daylight: "Летні час усходняй Аўстраліі"
@@ -123,9 +116,9 @@
         :standard: "Стандартны час Азорскіх астравоў"
     :Bangladesh: 
       :long: 
-        :daylight: "Летні час Бангладэша"
-        :generic: "Час Бангладэша"
-        :standard: "Стандартны час Бангладэша"
+        :daylight: "Летні час Бангладэш"
+        :generic: "Час Бангладэш"
+        :standard: "Стандартны час Бангладэш"
     :Bhutan: 
       :long: 
         :standard: "Час Бутана"
@@ -170,7 +163,7 @@
         :standard: "Стандартны час Чайбалсана"
     :Christmas: 
       :long: 
-        :standard: "Час вострава Раства"
+        :standard: "Час вострава Каляд"
     :Cocos: 
       :long: 
         :standard: "Час Какосавых астравоў"
@@ -218,7 +211,7 @@
         :standard: "Усходнееўрапейскі стандартны час"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "Беларускі час"
+        :standard: "Далёкаўсходнееўрапейскі час"
     :Europe_Western: 
       :long: 
         :daylight: "Заходнееўрапейскі летні час"
@@ -239,7 +232,7 @@
         :standard: "Час Французскай Гвіяны"
     :French_Southern: 
       :long: 
-        :standard: "Час Французскіх Паўднёвых і Антарктычных терыторый"
+        :standard: "Час Французскай паўднёва-антарктычнай тэрыторыі"
     :GMT: 
       :long: 
         :standard: "Час па Грынвічы"
@@ -248,7 +241,7 @@
         :standard: "Стандартны час Галапагоскіх астравоў"
     :Gambier: 
       :long: 
-        :standard: "Час атравоў Гамб’е"
+        :standard: "Час астравоў Гамб’е"
     :Georgia: 
       :long: 
         :daylight: "Грузінскі летні час"
@@ -369,13 +362,13 @@
         :standard: "Час Малайзіі"
     :Maldives: 
       :long: 
-        :standard: "Час Мальдыў"
+        :standard: "Час Мальдываў"
     :Marquesas: 
       :long: 
         :standard: "Час Маркізскіх астравоў"
     :Marshall_Islands: 
       :long: 
-        :standard: "Час Маршалавых Астравоў"
+        :standard: "Час Маршалавых астравоў"
     :Mauritius: 
       :long: 
         :daylight: "Летні час Маўрыкія"
@@ -386,9 +379,9 @@
         :standard: "Час станцыі Моўсан"
     :Mexico_Northwest: 
       :long: 
-        :daylight: "Паўночнаамерыканскі летні час"
-        :generic: "Паўночнаамерыканскі мексіканскі час"
-        :standard: "Паўночнаамерыканскі мексіканскі стандартны час"
+        :daylight: "Паўночна-заходні мексіканскі летні час"
+        :generic: "Паўночна-заходні мексіканскі час"
+        :standard: "Паўночна-заходні мексіканскі стандартны час"
     :Mexico_Pacific: 
       :long: 
         :daylight: "Мексіканскі ціхаакіянскі летні час"
@@ -459,7 +452,7 @@
         :standard: "Час Палау"
     :Papua_New_Guinea: 
       :long: 
-        :standard: "Час Папуа — Новай Гвінеі"
+        :standard: "Час Папуа-Новай Гвінеі"
     :Paraguay: 
       :long: 
         :daylight: "Летні час Парагвая"
@@ -485,10 +478,13 @@
         :standard: "Стандартны час Сен-П’ер і Мікелон"
     :Pitcairn: 
       :long: 
-        :standard: "Час астравоў Піткэрн"
+        :standard: "Час вострава Піткэрн"
     :Ponape: 
       :long: 
-        :standard: "Час Панапэ"
+        :standard: "Час вострава Понпеі"
+    :Pyongyang: 
+      :long: 
+        :standard: "Пхеньянскі час"
     :Reunion: 
       :long: 
         :standard: "Час Рэюньёна"
@@ -513,7 +509,7 @@
         :standard: "Сінгапурскі час"
     :Solomon: 
       :long: 
-        :standard: "Час Саламонавых Астравоў"
+        :standard: "Час Саламонавых астравоў"
     :South_Georgia: 
       :long: 
         :standard: "Час Паўднёвай Джорджыі"
@@ -544,7 +540,7 @@
         :standard: "Стандартны час Тонга"
     :Truk: 
       :long: 
-        :standard: "Час Чуўк"
+        :standard: "Час Чуук"
     :Turkmenistan: 
       :long: 
         :daylight: "Летні час Туркменістана"
@@ -583,7 +579,7 @@
         :standard: "Валгаградскі стандартны час"
     :Vostok: 
       :long: 
-        :standard: "Час станцыі Усход"
+        :standard: "Час станцыі Васток"
     :Wake: 
       :long: 
         :standard: "Час вострава Уэйк"
@@ -650,7 +646,7 @@
     :Africa/Harare: 
       :city: Харарэ
     :Africa/Johannesburg: 
-      :city: Іаганэсбург
+      :city: Яганэсбург
     :Africa/Juba: 
       :city: Джуба
     :Africa/Kampala: 
@@ -708,7 +704,7 @@
     :America/Adak: 
       :city: Адак
     :America/Anchorage: 
-      :city: Анкорыдж
+      :city: Анкарыдж
     :America/Anguilla: 
       :city: Ангілья
     :America/Antigua: 
@@ -754,7 +750,7 @@
     :America/Buenos_Aires: 
       :city: Буэнас-Айрэс
     :America/Cambridge_Bay: 
-      :city: Кеймбрыдж-Бэй
+      :city: Кембрыдж-Бей
     :America/Campo_Grande: 
       :city: Кампу-Гранды
     :America/Cancun: 
@@ -766,11 +762,11 @@
     :America/Cayenne: 
       :city: Каена
     :America/Cayman: 
-      :city: Кайман
+      :city: "Кайманавы астравы"
     :America/Chicago: 
       :city: Чыкага
     :America/Chihuahua: 
-      :city: Чыуауа
+      :city: Чыўаўа
     :America/Coral_Harbour: 
       :city: Атыкокан
     :America/Cordoba: 
@@ -800,13 +796,15 @@
     :America/Eirunepe: 
       :city: Эйрунэпе
     :America/El_Salvador: 
-      :city: Эль-Сальвадор
+      :city: Сальвадор
+    :America/Fort_Nelson: 
+      :city: Форт-Нельсан
     :America/Fortaleza: 
       :city: Фарталеза
     :America/Glace_Bay: 
       :city: Глэйс-Бэй
     :America/Godthab: 
-      :city: Нуўк
+      :city: Нук
     :America/Goose_Bay: 
       :city: Гус-Бэй
     :America/Grand_Turk: 
@@ -832,7 +830,7 @@
     :America/Indiana/Marengo: 
       :city: "Марэнга, Індыяна"
     :America/Indiana/Petersburg: 
-      :city: "Пецярсбург, Індыяна"
+      :city: "Пітэрсберг, Індыяна"
     :America/Indiana/Tell_City: 
       :city: "Тэл Сіці, Індыяна"
     :America/Indiana/Vevay: 
@@ -866,13 +864,13 @@
     :America/Louisville: 
       :city: Луісвіл
     :America/Lower_Princes: 
-      :city: "Лоуэр Прынсіз Квортар"
+      :city: "Лоўэр Прынсіз Квортэр"
     :America/Maceio: 
       :city: Масеё
     :America/Managua: 
       :city: Манагуа
     :America/Manaus: 
-      :city: Манаус
+      :city: Манаўс
     :America/Marigot: 
       :city: Марыго
     :America/Martinique: 
@@ -884,7 +882,7 @@
     :America/Mendoza: 
       :city: Мендоса
     :America/Menominee: 
-      :city: Мяноміні
+      :city: Меноміні
     :America/Merida: 
       :city: Мерыда
     :America/Metlakatla: 
@@ -894,7 +892,7 @@
     :America/Miquelon: 
       :city: Мікелон
     :America/Moncton: 
-      :city: Манктон
+      :city: Манктан
     :America/Monterrey: 
       :city: Мантэрэй
     :America/Montevideo: 
@@ -902,19 +900,19 @@
     :America/Montserrat: 
       :city: Мантсерат
     :America/Nassau: 
-      :city: Насау
+      :city: Насаў
     :America/New_York: 
       :city: Нью-Ёрк
     :America/Nipigon: 
-      :city: Ніпігон
+      :city: Ніпіган
     :America/Nome: 
       :city: Ном
     :America/Noronha: 
       :city: Наронья
     :America/North_Dakota/Beulah: 
-      :city: "Бойла, Паўночная Дакота"
+      :city: "Б’юла, Паўночная Дакота"
     :America/North_Dakota/Center: 
-      :city: "Сентар, Паўночная Дакота"
+      :city: "Сентэр, Паўночная Дакота"
     :America/North_Dakota/New_Salem: 
       :city: "Нью-Сейлем, Паўночная Дакота"
     :America/Ojinaga: 
@@ -935,6 +933,8 @@
       :city: Порту-Велью
     :America/Puerto_Rico: 
       :city: Пуэрта-Рыка
+    :America/Punta_Arenas: 
+      :city: "Пунта Арэнас"
     :America/Rainy_River: 
       :city: Рэйні-Рывер
     :America/Rankin_Inlet: 
@@ -958,7 +958,7 @@
     :America/Sao_Paulo: 
       :city: Сан-Паўлу
     :America/Scoresbysund: 
-      :city: Ілакортаарміут
+      :city: Ітакортаарміут
     :America/Sitka: 
       :city: Сітка
     :America/St_Barthelemy: 
@@ -974,11 +974,11 @@
     :America/St_Vincent: 
       :city: Сент-Вінсент
     :America/Swift_Current: 
-      :city: "Свіфт Керэнт"
+      :city: Свіфт-Керэнт
     :America/Tegucigalpa: 
       :city: Тэгусігальпа
     :America/Thule: 
-      :city: Туле
+      :city: Каанаак
     :America/Thunder_Bay: 
       :city: Тандэр-Бэй
     :America/Tijuana: 
@@ -996,7 +996,7 @@
     :America/Yakutat: 
       :city: Якутат
     :America/Yellowknife: 
-      :city: Елаўнайф
+      :city: Йелаўнайф
     :Antarctica/Casey: 
       :city: Кэйсі
     :Antarctica/Davis: 
@@ -1012,13 +1012,13 @@
     :Antarctica/Palmer: 
       :city: Палмер
     :Antarctica/Rothera: 
-      :city: Ратэра
+      :city: Ротэра
     :Antarctica/Syowa: 
       :city: Сёва
     :Antarctica/Troll: 
       :city: Трол
     :Antarctica/Vostok: 
-      :city: Усход
+      :city: Васток
     :Arctic/Longyearbyen: 
       :city: Лонгйір
     :Asia/Aden: 
@@ -1035,6 +1035,8 @@
       :city: Актабэ
     :Asia/Ashgabat: 
       :city: Ашгабад
+    :Asia/Atyrau: 
+      :city: Атырау
     :Asia/Baghdad: 
       :city: Багдад
     :Asia/Bahrain: 
@@ -1043,6 +1045,8 @@
       :city: Баку
     :Asia/Bangkok: 
       :city: Бангкок
+    :Asia/Barnaul: 
+      :city: Барнаул
     :Asia/Beirut: 
       :city: Бейрут
     :Asia/Bishkek: 
@@ -1067,6 +1071,8 @@
       :city: Дубай
     :Asia/Dushanbe: 
       :city: Душанбэ
+    :Asia/Famagusta: 
+      :city: Фамагуста
     :Asia/Gaza: 
       :city: Газа
     :Asia/Hebron: 
@@ -1114,7 +1120,7 @@
     :Asia/Nicosia: 
       :city: Нікасія
     :Asia/Novokuznetsk: 
-      :city: Навакузнецк
+      :city: Новакузнецк
     :Asia/Novosibirsk: 
       :city: Новасібірск
     :Asia/Omsk: 
@@ -1124,13 +1130,13 @@
     :Asia/Phnom_Penh: 
       :city: Пнампень
     :Asia/Pontianak: 
-      :city: Панціянак
+      :city: Пантыянак
     :Asia/Pyongyang: 
       :city: Пхеньян
     :Asia/Qatar: 
       :city: Катар
     :Asia/Qyzylorda: 
-      :city: Кызыларда
+      :city: Кзыларда
     :Asia/Rangoon: 
       :city: Рангун
     :Asia/Riyadh: 
@@ -1161,6 +1167,8 @@
       :city: Тхімпху
     :Asia/Tokyo: 
       :city: Токіа
+    :Asia/Tomsk: 
+      :city: Томск
     :Asia/Ulaanbaatar: 
       :city: Улан-Батар
     :Asia/Urumqi: 
@@ -1221,12 +1229,19 @@
       :city: Перт
     :Australia/Sydney: 
       :city: Сідней
+    :Etc/UTC: 
+      :long: 
+        :standard: "Універсальны каардынаваны час"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "Невядомы горад"
     :Europe/Amsterdam: 
       :city: Амстэрдам
     :Europe/Andorra: 
       :city: Андора
+    :Europe/Astrakhan: 
+      :city: Астрахань
     :Europe/Athens: 
       :city: Афіны
     :Europe/Belgrade: 
@@ -1267,6 +1282,8 @@
       :city: Калінінград
     :Europe/Kiev: 
       :city: Кіеў
+    :Europe/Kirov: 
+      :city: Кіраў
     :Europe/Lisbon: 
       :city: Лісабон
     :Europe/Ljubljana: 
@@ -1307,6 +1324,8 @@
       :city: Сан-Марына
     :Europe/Sarajevo: 
       :city: Сараева
+    :Europe/Saratov: 
+      :city: Саратаў
     :Europe/Simferopol: 
       :city: Сімферопаль
     :Europe/Skopje: 
@@ -1319,6 +1338,8 @@
       :city: Талін
     :Europe/Tirane: 
       :city: Тырана
+    :Europe/Ulyanovsk: 
+      :city: Ульянаўск
     :Europe/Uzhgorod: 
       :city: Ужгарад
     :Europe/Vaduz: 
@@ -1344,7 +1365,7 @@
     :Indian/Chagos: 
       :city: Чагас
     :Indian/Christmas: 
-      :city: "Востраў Раства"
+      :city: "Востраў Каляд"
     :Indian/Cocos: 
       :city: "Какосавыя астравы"
     :Indian/Comoro: 
@@ -1420,7 +1441,7 @@
     :Pacific/Pitcairn: 
       :city: Піткэрн
     :Pacific/Ponape: 
-      :city: Панпеі
+      :city: Понпеі
     :Pacific/Port_Moresby: 
       :city: Порт-Морсбі
     :Pacific/Rarotonga: 
@@ -1434,7 +1455,7 @@
     :Pacific/Tongatapu: 
       :city: Тангатапу
     :Pacific/Truk: 
-      :city: Чуўк
+      :city: Чуук
     :Pacific/Wake: 
       :city: Уэйк
     :Pacific/Wallis: 

@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Marokko'
   :LONG:
-    :standard: Länsi-Euroopan normaaliaika
-    :daylight: Länsi-Euroopan kesäaika
+    :standard: UTC
+    :daylight: UTC+01.00
   :LONG_GENERIC:
-    :generic: Länsi-Euroopan aika
+    :generic: 'aikavyöhyke: Marokko'
   :SHORT:
     :standard: UTC
     :daylight: UTC+1
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Länsi-Sahara'
   :LONG:
-    :standard: Länsi-Euroopan normaaliaika
-    :daylight: Länsi-Euroopan kesäaika
+    :standard: UTC
+    :daylight: UTC+01.00
   :LONG_GENERIC:
-    :generic: Länsi-Euroopan aika
+    :generic: 'aikavyöhyke: Länsi-Sahara'
   :SHORT:
     :standard: UTC
     :daylight: UTC+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Uganda'
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: UTC+03.00
+    :generic: UTC+02.00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Sudan'
   :LONG:
-    :standard: Itä-Afrikan aika
-    :daylight: UTC+03.00
+    :standard: Keski-Afrikan aika
+    :daylight: UTC+02.00
   :LONG_GENERIC:
-    :generic: Itä-Afrikan aika
+    :generic: Keski-Afrikan aika
   :SHORT:
-    :standard: UTC+3
-    :daylight: UTC+3
+    :standard: UTC+2
+    :daylight: UTC+2
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Sudan'
 Africa/Kigali:
@@ -954,20 +954,20 @@ Africa/Tunis:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Tunisia'
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: UTC+01.00
+    :generic: UTC+02.00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Namibia'
   :LONG:
-    :standard: Länsi-Afrikan normaaliaika
-    :daylight: Länsi-Afrikan kesäaika
+    :standard: Keski-Afrikan aika
+    :daylight: UTC+02.00
   :LONG_GENERIC:
-    :generic: Länsi-Afrikan aika (Windhoek)
+    :generic: Keski-Afrikan aika
   :SHORT:
-    :standard: UTC+1
+    :standard: UTC+2
     :daylight: UTC+2
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Namibia'
@@ -983,7 +983,7 @@ America/Adak:
     :standard: Havaijin-Aleuttien normaaliaika
     :daylight: Havaijin-Aleuttien kesäaika
   :LONG_GENERIC:
-    :generic: Havaijin-Aleuttien aika (Adak)
+    :generic: Havaijin-Aleuttien aika
   :SHORT:
     :standard: UTC-10
     :daylight: UTC-9
@@ -1361,7 +1361,7 @@ America/Atka:
     :standard: Havaijin-Aleuttien normaaliaika
     :daylight: Havaijin-Aleuttien kesäaika
   :LONG_GENERIC:
-    :generic: Havaijin-Aleuttien aika (Adak)
+    :generic: Havaijin-Aleuttien aika
   :SHORT:
     :standard: UTC-10
     :daylight: UTC-9
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Amazonin normaaliaika
     :daylight: Amazonin kesäaika
   :LONG_GENERIC:
-    :generic: Amazonin aika
+    :generic: Amazonin aika (Campo Grande)
   :SHORT:
     :standard: UTC-4
     :daylight: UTC-3
@@ -1602,21 +1602,21 @@ America/Cancun:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Cancún'
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: UTC-04.30
+    :generic: UTC-04.00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Venezuela'
   :LONG:
     :standard: Venezuelan aika
-    :daylight: UTC-04.30
+    :daylight: UTC-04.00
   :LONG_GENERIC:
     :generic: Venezuelan aika
   :SHORT:
-    :standard: UTC-4.30
-    :daylight: UTC-4.30
+    :standard: UTC-4
+    :daylight: UTC-4
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Venezuela'
 America/Catamarca:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Amazonin normaaliaika
     :daylight: Amazonin kesäaika
   :LONG_GENERIC:
-    :generic: Amazonin aika
+    :generic: Amazonin aika (Cuiabá)
   :SHORT:
     :standard: UTC-4
     :daylight: UTC-3
@@ -2106,20 +2106,20 @@ America/Goose_Bay:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Goose Bay'
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: UTC-04.00
+    :generic: UTC-05.00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Turks- ja Caicossaaret'
   :LONG:
-    :standard: Kanadan Atlantin normaaliaika
-    :daylight: Kanadan Atlantin kesäaika
+    :standard: Yhdysvaltain itäinen normaaliaika
+    :daylight: Yhdysvaltain itäinen kesäaika
   :LONG_GENERIC:
-    :generic: Kanadan Atlantin normaaliaika
+    :generic: Yhdysvaltain itäinen aika
   :SHORT:
-    :standard: UTC-4
+    :standard: UTC-5
     :daylight: UTC-4
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Turks- ja Caicossaaret'
@@ -3210,17 +3210,17 @@ America/Paramaribo:
   :SHORT_GMT:
     :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Surinam'
+    :generic: 'aikavyöhyke: Suriname'
   :LONG:
-    :standard: Surinamin aika
+    :standard: Surinamen aika
     :daylight: UTC-03.00
   :LONG_GENERIC:
-    :generic: Surinamin aika
+    :generic: Surinamen aika
   :SHORT:
     :standard: UTC-3
     :daylight: UTC-3
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Surinam'
+    :generic: 'aikavyöhyke: Suriname'
 America/Phoenix:
   :offset: -25200000
   :LONG_GMT:
@@ -3251,10 +3251,10 @@ America/Port-au-Prince:
     :standard: Yhdysvaltain itäinen normaaliaika
     :daylight: Yhdysvaltain itäinen kesäaika
   :LONG_GENERIC:
-    :generic: Yhdysvaltain itäinen normaaliaika
+    :generic: Yhdysvaltain itäinen aika
   :SHORT:
     :standard: UTC-5
-    :daylight: UTC-5
+    :daylight: UTC-4
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Haiti'
 America/Port_of_Spain:
@@ -3330,23 +3330,23 @@ America/Puerto_Rico:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Puerto Rico'
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC-03.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Punta Arenas'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC-03.00
+    :daylight: UTC-03.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Punta Arenas'
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC-3
+    :daylight: UTC-3
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Punta Arenas'
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Santarém'
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: UTC-03.00
+    :generic: UTC-04.00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Chile'
   :LONG:
     :standard: Chilen normaaliaika
     :daylight: Chilen kesäaika
   :LONG_GENERIC:
-    :generic: Chilen normaaliaika
+    :generic: Chilen aika
   :SHORT:
-    :standard: UTC-3
+    :standard: UTC-4
     :daylight: UTC-3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Chile'
@@ -4004,10 +4004,10 @@ Antarctica/DumontDUrville:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Dumont d’Urville'
   :LONG:
-    :standard: Dumont-d’Urvillen aika
+    :standard: Dumont d’Urvillen aika
     :daylight: UTC+10.00
   :LONG_GENERIC:
-    :generic: Dumont-d’Urvillen aika
+    :generic: Dumont d’Urvillen aika
   :SHORT:
     :standard: UTC+10
     :daylight: UTC+10
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Palmer'
   :LONG:
-    :standard: Chilen normaaliaika
-    :daylight: Chilen kesäaika
+    :standard: UTC-03.00
+    :daylight: UTC-03.00
   :LONG_GENERIC:
-    :generic: Chilen normaaliaika
+    :generic: 'aikavyöhyke: Palmer'
   :SHORT:
     :standard: UTC-3
     :daylight: UTC-3
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Turkmenistan'
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+05.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Atıraw'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: Länsi-Kazakstanin aika
+    :daylight: UTC+05.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Länsi-Kazakstanin aika
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+5
+    :daylight: UTC+5
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Atıraw'
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Azerbaidžanin normaaliaika
     :daylight: Azerbaidžanin kesäaika
   :LONG_GENERIC:
-    :generic: Azerbaidžanin aika
+    :generic: Azerbaidžanin normaaliaika
   :SHORT:
     :standard: UTC+4
-    :daylight: UTC+5
+    :daylight: UTC+4
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Azerbaidžan'
 Asia/Bangkok:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Tšoibalsan normaaliaika
     :daylight: Tšoibalsan kesäaika
   :LONG_GENERIC:
-    :generic: Tšoibalsan aika
+    :generic: Tšoibalsan normaaliaika
   :SHORT:
     :standard: UTC+8
-    :daylight: UTC+9
+    :daylight: UTC+8
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Tšoibalsa'
 Asia/Chongqing:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Tadžikistan'
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+02.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Famagusta'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+02.00
+    :daylight: UTC+03.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Famagusta'
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+2
+    :daylight: UTC+3
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Famagusta'
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Hovdin normaaliaika
     :daylight: Hovdin kesäaika
   :LONG_GENERIC:
-    :generic: Hovdin aika
+    :generic: Hovdin normaaliaika
   :SHORT:
     :standard: UTC+7
-    :daylight: UTC+8
+    :daylight: UTC+7
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Hovd'
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Irkutsk'
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: UTC+02.00
+    :generic: UTC+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Turkki'
   :LONG:
-    :standard: Itä-Euroopan normaaliaika
-    :daylight: Itä-Euroopan kesäaika
+    :standard: UTC+03.00
+    :daylight: UTC+03.00
   :LONG_GENERIC:
-    :generic: Itä-Euroopan aika
+    :generic: 'aikavyöhyke: Turkki'
   :SHORT:
-    :standard: UTC+2
+    :standard: UTC+3
     :daylight: UTC+3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Turkki'
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Macao – Kiinan e.h.a.'
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: UTC+10.00
+    :generic: UTC+11.00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Magadan'
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Magadanin normaaliaika
   :SHORT:
-    :standard: UTC+10
-    :daylight: UTC+10
+    :standard: UTC+11
+    :daylight: UTC+11
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Magadan'
 Asia/Makassar:
@@ -5262,7 +5262,7 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Kypros'
+    :generic: 'aikavyöhyke: Nikosia'
   :LONG:
     :standard: Itä-Euroopan normaaliaika
     :daylight: Itä-Euroopan kesäaika
@@ -5272,7 +5272,7 @@ Asia/Nicosia:
     :standard: UTC+2
     :daylight: UTC+3
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Kypros'
+    :generic: 'aikavyöhyke: Nikosia'
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Novokuznetsk'
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: UTC+06.00
+    :generic: UTC+07.00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Novosibirsk'
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Novosibirskin normaaliaika
   :SHORT:
-    :standard: UTC+6
-    :daylight: UTC+6
+    :standard: UTC+7
+    :daylight: UTC+7
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Novosibirsk'
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Pontianak'
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: UTC+08.30
+    :generic: UTC+09.00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Pohjois-Korea'
   :LONG:
-    :standard: UTC+08.30
-    :daylight: UTC+08.30
+    :standard: Korean normaaliaika
+    :daylight: Korean kesäaika
   :LONG_GENERIC:
-    :generic: 'aikavyöhyke: Pohjois-Korea'
+    :generic: Korean normaaliaika
   :SHORT:
-    :standard: UTC+8.30
-    :daylight: UTC+8.30
+    :standard: UTC+9
+    :daylight: UTC+9
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Pohjois-Korea'
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: UTC+3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Qatar'
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: UTC+06.00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Qızılorda'
+    :generic: 'aikavyöhyke: Qostanay'
   :LONG:
     :standard: Itä-Kazakstanin aika
     :daylight: UTC+06.00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: UTC+6
     :daylight: UTC+6
+  :SHORT_GENERIC:
+    :generic: 'aikavyöhyke: Qostanay'
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: UTC+05.00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: 'aikavyöhyke: Qızılorda'
+  :LONG:
+    :standard: Länsi-Kazakstanin aika
+    :daylight: UTC+05.00
+  :LONG_GENERIC:
+    :generic: Länsi-Kazakstanin aika
+  :SHORT:
+    :standard: UTC+5
+    :daylight: UTC+5
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Qızılorda'
 Asia/Rangoon:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Japani'
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+07.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Tomsk'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+07.00
+    :daylight: UTC+07.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Tomsk'
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+7
+    :daylight: UTC+7
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Tomsk'
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Ulan Batorin normaaliaika
     :daylight: Ulan Batorin kesäaika
   :LONG_GENERIC:
-    :generic: Ulan Batorin aika
+    :generic: Ulan Batorin normaaliaika
   :SHORT:
     :standard: UTC+8
-    :daylight: UTC+9
+    :daylight: UTC+8
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Ulan Bator'
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Ulan Batorin normaaliaika
     :daylight: Ulan Batorin kesäaika
   :LONG_GENERIC:
-    :generic: Ulan Batorin aika
+    :generic: Ulan Batorin normaaliaika
   :SHORT:
     :standard: UTC+8
-    :daylight: UTC+9
+    :daylight: UTC+8
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Ulan Bator'
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Jakutsk'
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+06.30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Myanmar (Burma)'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: Myanmarin aika
+    :daylight: UTC+06.30
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Myanmarin aika
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+6.30
+    :daylight: UTC+6.30
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Myanmar (Burma)'
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -6731,24 +6749,6 @@ Canada/Central:
     :daylight: UTC-5
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Winnipeg'
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: UTC-06.00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Regina'
-  :LONG:
-    :standard: Yhdysvaltain keskinen normaaliaika
-    :daylight: Yhdysvaltain keskinen kesäaika
-  :LONG_GENERIC:
-    :generic: Yhdysvaltain keskinen normaaliaika
-  :SHORT:
-    :standard: UTC-6
-    :daylight: UTC-6
-  :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Regina'
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6858,38 +6858,38 @@ Canada/Yukon:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Whitehorse'
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: UTC-03.00
+    :generic: UTC-04.00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Chile'
   :LONG:
     :standard: Chilen normaaliaika
     :daylight: Chilen kesäaika
   :LONG_GENERIC:
-    :generic: Chilen normaaliaika
+    :generic: Chilen aika
   :SHORT:
-    :standard: UTC-3
+    :standard: UTC-4
     :daylight: UTC-3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Chile'
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: UTC-05.00
+    :generic: UTC-06.00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Pääsiäissaari'
   :LONG:
     :standard: Pääsiäissaaren normaaliaika
     :daylight: Pääsiäissaaren kesäaika
   :LONG_GENERIC:
-    :generic: Pääsiäissaaren normaaliaika
+    :generic: Pääsiäissaaren aika
   :SHORT:
-    :standard: UTC-5
+    :standard: UTC-6
     :daylight: UTC-5
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Pääsiäissaari'
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -7568,7 +7568,7 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -7586,7 +7586,7 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -7604,7 +7604,7 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -7622,7 +7622,7 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -7674,17 +7674,17 @@ Europe/Astrakhan:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Astrakhan'
+    :generic: 'aikavyöhyke: Astrahan'
   :LONG:
     :standard: UTC+04.00
     :daylight: UTC+04.00
   :LONG_GENERIC:
-    :generic: 'aikavyöhyke: Astrakhan'
+    :generic: 'aikavyöhyke: Astrahan'
   :SHORT:
     :standard: UTC+4
     :daylight: UTC+4
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Astrakhan'
+    :generic: 'aikavyöhyke: Astrahan'
 Europe/Athens:
   :offset: 7200000
   :LONG_GMT:
@@ -7836,7 +7836,7 @@ Europe/Busingen:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Busingen'
+    :generic: 'aikavyöhyke: Büsingen'
   :LONG:
     :standard: Keski-Euroopan normaaliaika
     :daylight: Keski-Euroopan kesäaika
@@ -7846,7 +7846,7 @@ Europe/Busingen:
     :standard: UTC+1
     :daylight: UTC+2
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Busingen'
+    :generic: 'aikavyöhyke: Büsingen'
 Europe/Chisinau:
   :offset: 7200000
   :LONG_GMT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Mansaari'
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: UTC+02.00
+    :generic: UTC+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Turkki'
   :LONG:
-    :standard: Itä-Euroopan normaaliaika
-    :daylight: Itä-Euroopan kesäaika
+    :standard: UTC+03.00
+    :daylight: UTC+03.00
   :LONG_GENERIC:
-    :generic: Itä-Euroopan aika
+    :generic: 'aikavyöhyke: Turkki'
   :SHORT:
-    :standard: UTC+2
+    :standard: UTC+3
     :daylight: UTC+3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Turkki'
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Ukraina'
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+03.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Kirov'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+03.00
+    :daylight: UTC+03.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Kirov'
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+3
+    :daylight: UTC+3
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Kirov'
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Valko-Venäjä'
   :LONG:
-    :standard: Itäisemmän Euroopan aika
-    :daylight: UTC+03.00
+    :standard: Moskovan normaaliaika
+    :daylight: Moskovan kesäaika
   :LONG_GENERIC:
-    :generic: Itäisemmän Euroopan aika
+    :generic: Moskovan normaaliaika
   :SHORT:
     :standard: UTC+3
     :daylight: UTC+3
@@ -8250,7 +8250,7 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Kypros'
+    :generic: 'aikavyöhyke: Nikosia'
   :LONG:
     :standard: Itä-Euroopan normaaliaika
     :daylight: Itä-Euroopan kesäaika
@@ -8260,7 +8260,7 @@ Europe/Nicosia:
     :standard: UTC+2
     :daylight: UTC+3
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Kypros'
+    :generic: 'aikavyöhyke: Nikosia'
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Bosnia ja Hertsegovina'
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: UTC
+    :generic: UTC+04.00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Saratov'
   :LONG:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+04.00
+    :daylight: UTC+04.00
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Saratov'
   :SHORT:
-    :standard: UTC
-    :daylight: UTC
+    :standard: UTC+4
+    :daylight: UTC+4
   :SHORT_GENERIC:
-    :generic: UTC
+    :generic: 'aikavyöhyke: Saratov'
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,7 +8466,7 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Makedonia'
+    :generic: 'aikavyöhyke: Pohjois-Makedonia'
   :LONG:
     :standard: Keski-Euroopan normaaliaika
     :daylight: Keski-Euroopan kesäaika
@@ -8476,7 +8476,7 @@ Europe/Skopje:
     :standard: UTC+1
     :daylight: UTC+2
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Makedonia'
+    :generic: 'aikavyöhyke: Pohjois-Makedonia'
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8574,17 +8574,17 @@ Europe/Ulyanovsk:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Ulyanovsk'
+    :generic: 'aikavyöhyke: Uljanovsk'
   :LONG:
     :standard: UTC+04.00
     :daylight: UTC+04.00
   :LONG_GENERIC:
-    :generic: 'aikavyöhyke: Ulyanovsk'
+    :generic: 'aikavyöhyke: Uljanovsk'
   :SHORT:
     :standard: UTC+4
     :daylight: UTC+4
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Ulyanovsk'
+    :generic: 'aikavyöhyke: Uljanovsk'
 Europe/Uzhgorod:
   :offset: 7200000
   :LONG_GMT:
@@ -8676,21 +8676,21 @@ Europe/Vilnius:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Liettua'
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: UTC+03.00
+    :generic: UTC+04.00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Volgograd'
   :LONG:
-    :standard: Moskovan normaaliaika
-    :daylight: Moskovan kesäaika
+    :standard: Volgogradin normaaliaika
+    :daylight: Volgogradin kesäaika
   :LONG_GENERIC:
-    :generic: Moskovan normaaliaika
+    :generic: Volgogradin normaaliaika
   :SHORT:
-    :standard: UTC+3
-    :daylight: UTC+3
+    :standard: UTC+4
+    :daylight: UTC+4
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Volgograd'
 Europe/Warsaw:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: Greenwichin normaaliaika
     :daylight: UTC
   :LONG_GENERIC:
-    :generic: UTC
+    :generic: Greenwichin normaaliaika
   :SHORT:
     :standard: UTC
     :daylight: UTC
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Chuuk'
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: UTC-05.00
+    :generic: UTC-06.00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Pääsiäissaari'
   :LONG:
     :standard: Pääsiäissaaren normaaliaika
     :daylight: Pääsiäissaaren kesäaika
   :LONG_GENERIC:
-    :generic: Pääsiäissaaren normaaliaika
+    :generic: Pääsiäissaaren aika
   :SHORT:
-    :standard: UTC-5
+    :standard: UTC-6
     :daylight: UTC-5
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Pääsiäissaari'
@@ -9692,10 +9692,10 @@ Pacific/Gambier:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Gambiersaaret'
   :LONG:
-    :standard: Gambierin aika
+    :standard: Gambiersaarten aika
     :daylight: UTC-09.00
   :LONG_GENERIC:
-    :generic: Gambierin aika
+    :generic: Gambiersaarten aika
   :SHORT:
     :standard: UTC-9
     :daylight: UTC-9
@@ -9854,10 +9854,10 @@ Pacific/Marquesas:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Marquesassaaret'
   :LONG:
-    :standard: Marquesasin aika
+    :standard: Marquesassaarten aika
     :daylight: UTC-09.30
   :LONG_GENERIC:
-    :generic: Marquesasin aika
+    :generic: Marquesassaarten aika
   :SHORT:
     :standard: UTC-9.30
     :daylight: UTC-9.30
@@ -9870,7 +9870,7 @@ Pacific/Midway:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: 'aikavyöhyke: Midway'
+    :generic: 'aikavyöhyke: Midwaysaaret'
   :LONG:
     :standard: Samoan normaaliaika
     :daylight: Samoan kesäaika
@@ -9880,7 +9880,7 @@ Pacific/Midway:
     :standard: UTC-11
     :daylight: UTC-11
   :SHORT_GENERIC:
-    :generic: 'aikavyöhyke: Midway'
+    :generic: 'aikavyöhyke: Midwaysaaret'
 Pacific/Nauru:
   :offset: 43200000
   :LONG_GMT:
@@ -9926,10 +9926,10 @@ Pacific/Norfolk:
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Norfolkinsaari'
   :LONG:
-    :standard: Norfolkinsaarten aika
+    :standard: Norfolkinsaaren aika
     :daylight: UTC+11.00
   :LONG_GENERIC:
-    :generic: Norfolkinsaarten aika
+    :generic: Norfolkinsaaren aika
   :SHORT:
     :standard: UTC+11
     :daylight: UTC+11
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Singapore'
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: UTC+02.00
+    :generic: UTC+03.00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: 'aikavyöhyke: Turkki'
   :LONG:
-    :standard: Itä-Euroopan normaaliaika
-    :daylight: Itä-Euroopan kesäaika
+    :standard: UTC+03.00
+    :daylight: UTC+03.00
   :LONG_GENERIC:
-    :generic: Itä-Euroopan aika
+    :generic: 'aikavyöhyke: Turkki'
   :SHORT:
-    :standard: UTC+2
+    :standard: UTC+3
     :daylight: UTC+3
   :SHORT_GENERIC:
     :generic: 'aikavyöhyke: Turkki'
@@ -10358,7 +10358,7 @@ UCT:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -10397,7 +10397,7 @@ US/Aleutian:
     :standard: Havaijin-Aleuttien normaaliaika
     :daylight: Havaijin-Aleuttien kesäaika
   :LONG_GENERIC:
-    :generic: Havaijin-Aleuttien aika (Adak)
+    :generic: Havaijin-Aleuttien aika
   :SHORT:
     :standard: UTC-10
     :daylight: UTC-9
@@ -10610,7 +10610,7 @@ UTC:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -10628,7 +10628,7 @@ Universal:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC
@@ -10682,7 +10682,7 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: UTC
   :LONG:
-    :standard: UTC
+    :standard: UTC-yleisaika
     :daylight: UTC
   :LONG_GENERIC:
     :generic: UTC

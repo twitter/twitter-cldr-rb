@@ -18,7 +18,7 @@ require 'twitter_cldr'
 Get a list of all currently supported locales (these are all supported on twitter.com):
 
 ```ruby
-TwitterCldr.supported_locales             # <%= ellipsize(assert(TwitterCldr.supported_locales.sort[0..5], [:af, :ar, :be, :bg, :bn, :bo])) %>
+TwitterCldr.supported_locales             # <%= ellipsize(assert(TwitterCldr.supported_locales.sort[0..5], [:af, :ar, :az, :be, :bg, :bn, :bo])) %>
 ```
 
 Determine if a locale is supported by TwitterCLDR:
@@ -76,14 +76,14 @@ TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterC
 
 #### Short / Long Decimals
 
-In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `to_` method:
+In addition to formatting regular decimals, TwitterCLDR supports short and long decimals.  Short decimals abbreviate the notation for the appropriate power of ten, for example "1M" for 1,000,000 or "2K" for 2,000.  Long decimals include the full notation, for example "1 million" or "2 thousand".  Long and short decimals can be generated using the appropriate `format` option:
 
 ```ruby
-2337.localize.to_short_decimal.to_s     # <%= assert(2337.localize.to_short_decimal.to_s, "2K").inspect %>
-1337123.localize.to_short_decimal.to_s  # <%= assert(1337123.localize.to_short_decimal.to_s, "1M").inspect %>
+2337.localize.to_decimal.to_s(format: :short)     # <%= assert(2337.localize.to_decimal.to_s(format: :short), "2K").inspect %>
+1337123.localize.to_decimal.to_s(format: :short)  # <%= assert(1337123.localize.to_decimal.to_s(format: :short), "1M").inspect %>
 
-2337.localize.to_long_decimal.to_s      # <%= assert(2337.localize.to_long_decimal.to_s, "2 thousand").inspect %>
-1337123.localize.to_long_decimal.to_s   # <%= assert(1337123.localize.to_long_decimal.to_s, "1 million").inspect %>
+2337.localize.to_decimal.to_s(format: :long)      # <%= assert(2337.localize.to_decimal.to_s(format: :long), "2 thousand").inspect %>
+1337123.localize.to_decimal.to_s(format: :long)   # <%= assert(1337123.localize.to_decimal.to_s(format: :long), "1 million").inspect %>
 ```
 
 ### Units
@@ -207,7 +207,7 @@ dt.to_short_s  # ...etc
 Besides the default date formats, CLDR supports a number of additional ones.  The list of available formats varies for each locale.  To get a full list, use the `additional_formats` method:
 
 ```ruby
-# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["E", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms", "Gy", "GyMMM", "GyMMMEEEEd", "GyMMMEd", "GyMMMd"])) %>
+# <%= ellipsize(assert(datetime.localize(:ja).additional_formats.sort[0..11], ["Bh", "Bhm", "Bhms", "E", "EBhm", "EBhms", "EEEEd", "EHm", "EHms", "Ed", "Ehm", "Ehms"])) %>
 DateTime.now.localize(:ja).additional_formats
 ```
 
@@ -437,7 +437,7 @@ You can use the localize convenience method on territory code symbols to get the
 
 ```ruby
 :gb.localize(:pt).as_territory                         # <%= assert(:gb.localize(:pt).as_territory, "Reino Unido").inspect %>
-:cz.localize(:pt).as_territory                         # <%= assert(:cz.localize(:pt).as_territory, "República Tcheca").inspect %>
+:cz.localize(:pt).as_territory                         # <%= assert(:cz.localize(:pt).as_territory, "Tchéquia").inspect %>
 ```
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedSymbol`.  You can do the same thing if you're feeling adventurous:
@@ -451,21 +451,21 @@ In addition to translating territory codes, TwitterCLDR provides access to the f
 
 ```ruby
 # get all territories for the default locale
-TwitterCldr::Shared::Territories.all                                                 # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all, [:tl, :tm]), { :tl=>"East Timor", :tm=>"Turkmenistan" })) %>
+TwitterCldr::Shared::Territories.all                                                 # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all, [:tl, :tm]), { :tl=>"Timor-Leste", :tm=>"Turkmenistan" })) %>
 
 # get all territories for a specific locale
-TwitterCldr::Shared::Territories.all_for(:pt)                                        # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all_for(:pt), [:tl, :tm]), { :tl=>"República Democrática de Timor-Leste", :tm=>"Turcomenistão" })) %>
+TwitterCldr::Shared::Territories.all_for(:pt)                                        # <%= ellipsize(assert(slice_hash(TwitterCldr::Shared::Territories.all_for(:pt), [:tl, :tm]), { :tl=>"Timor-Leste", :tm=>"Turcomenistão" })) %>
 
 # get a territory by its code for the default locale
-TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # <%= assert(TwitterCldr::Shared::Territories.from_territory_code(:'gb'), "UK").inspect %>
+TwitterCldr::Shared::Territories.from_territory_code(:'gb')                          # <%= assert(TwitterCldr::Shared::Territories.from_territory_code(:'gb'), "United Kingdom").inspect %>
 
 # get a territory from its code for a specific locale
 TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt)            # <%= assert(TwitterCldr::Shared::Territories.from_territory_code_for_locale(:gb, :pt), "Reino Unido").inspect %>
 
 # translate a territory from one locale to another
 # signature: translate_territory(territory_name, source_locale, destination_locale)
-TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # <%= assert(TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en), "UK").inspect %>
-TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # <%= assert(TwitterCldr::Shared::Territories.translate_territory("UK", :en, :pt), "Reino Unido").inspect %>
+TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en)        # <%= assert(TwitterCldr::Shared::Territories.translate_territory("Reino Unido", :pt, :en), "United Kingdom").inspect %>
+TwitterCldr::Shared::Territories.translate_territory("U.K.", :en, :pt)               # <%= assert(TwitterCldr::Shared::Territories.translate_territory("United Kingdom", :en, :pt), "Reino Unido").inspect %>
 ```
 
 ### Postal Codes
@@ -520,27 +520,7 @@ postal_code.sample(5)  # <%= postal_code.sample(5).to_s %>
 
 ### Phone Codes
 
-Look up phone codes by territory:
-
-```ruby
-# United States
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:us)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:us), "1").inspect %>
-
-# Perú
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:pe), "51").inspect %>
-
-# Egypt
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:eg), "20").inspect %>
-
-# Denmark
-TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk)  # <%= assert(TwitterCldr::Shared::PhoneCodes.code_for_territory(:dk), "45").inspect %>
-```
-
-Get a list of supported territories by using the `#territories` method:
-
-```ruby
-TwitterCldr::Shared::PhoneCodes.territories  # <%= ellipsize(assert(TwitterCldr::Shared::PhoneCodes.territories.sort[0..4], [:ac, :ad, :ae, :af, :ag])) %>
-```
+Telephone codes were deprecated and have now been removed from the CLDR data set. They have been removed from TwitterCLDR as of v5.0.0.
 
 ### Language Codes
 

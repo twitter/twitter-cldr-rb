@@ -1,18 +1,11 @@
 --- 
 :ar: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "جرينتش{0}"
-    :gmt_zero_format: 
-      :generic: جرينتش
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "توقيت {0} الصيفي"
-      :generic: "توقيت {0}"
-      :standard: "توقيت {0} الرسمي"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "غرينتش{0}"
+    :gmt_zero_format: غرينتش
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "توقيت {0} الرسمي"
   :metazones: 
     :Afghanistan: 
       :long: 
@@ -128,9 +121,9 @@
         :standard: "توقيت أزورس الرسمي"
     :Bangladesh: 
       :long: 
-        :daylight: "توقيت بنجلاديش الصيفي"
-        :generic: "توقيت بنجلاديش"
-        :standard: "توقيت بنجلاديش الرسمي"
+        :daylight: "توقيت بنغلاديش الصيفي"
+        :generic: "توقيت بنغلاديش"
+        :standard: "توقيت بنغلاديش الرسمي"
     :Bhutan: 
       :long: 
         :standard: "توقيت بوتان"
@@ -160,9 +153,9 @@
         :standard: "توقيت تشاتام الرسمي"
     :Chile: 
       :long: 
-        :daylight: "توقيت شيلي الصيفي"
-        :generic: "توقيت شيلي"
-        :standard: "توقيت شيلي الرسمي"
+        :daylight: "توقيت تشيلي الصيفي"
+        :generic: "توقيت تشيلي"
+        :standard: "توقيت تشيلي الرسمي"
     :China: 
       :long: 
         :daylight: "توقيت الصين الصيفي"
@@ -186,9 +179,9 @@
         :standard: "توقيت كولومبيا الرسمي"
     :Cook: 
       :long: 
-        :daylight: "توقيت جزر كووك الصيفي"
+        :daylight: "توقيت جزر كوك الصيفي"
         :generic: "توقيت جزر كووك"
-        :standard: "توقيت جزر كووك الرسمي"
+        :standard: "توقيت جزر كوك الرسمي"
     :Cuba: 
       :long: 
         :daylight: "توقيت كوبا الصيفي"
@@ -241,7 +234,7 @@
         :standard: "توقيت فيجي الرسمي"
     :French_Guiana: 
       :long: 
-        :standard: "توقيت غايانا الفرنسية"
+        :standard: "توقيت غويانا الفرنسية"
     :French_Southern: 
       :long: 
         :standard: "توقيت المقاطعات الفرنسية الجنوبية والأنتارتيكية"
@@ -278,6 +271,8 @@
     :Gulf: 
       :long: 
         :standard: "توقيت الخليج"
+      :short: 
+        :standard: GST
     :Guyana: 
       :long: 
         :standard: "توقيت غيانا"
@@ -360,7 +355,7 @@
         :standard: "توقيت كراسنويارسك الرسمي"
     :Kyrgystan: 
       :long: 
-        :standard: "توقيت قرغيزستان"
+        :standard: "توقيت قيرغيزستان"
     :Line_Islands: 
       :long: 
         :standard: "توقيت جزر لاين"
@@ -382,7 +377,7 @@
         :standard: "توقيت ماليزيا"
     :Maldives: 
       :long: 
-        :standard: "توقيت الـمالديف"
+        :standard: "توقيت جزر المالديف"
     :Marquesas: 
       :long: 
         :standard: "توقيت ماركيساس"
@@ -505,9 +500,12 @@
     :Ponape: 
       :long: 
         :standard: "توقيت بونابي"
+    :Pyongyang: 
+      :long: 
+        :standard: "توقيت بيونغ يانغ"
     :Reunion: 
       :long: 
-        :standard: "توقيت ريونيون"
+        :standard: "توقيت روينيون"
     :Rothera: 
       :long: 
         :standard: "توقيت روثيرا"
@@ -576,9 +574,9 @@
         :standard: "توقيت توفالو"
     :Uruguay: 
       :long: 
-        :daylight: "توقيت أورغواي الصيفي"
-        :generic: "توقيت أورغواي"
-        :standard: "توقيت أورغواي الرسمي"
+        :daylight: "توقيت أوروغواي الصيفي"
+        :generic: "توقيت أوروغواي"
+        :standard: "توقيت أوروغواي الرسمي"
     :Uzbekistan: 
       :long: 
         :daylight: "توقيت أوزبكستان الصيفي"
@@ -731,7 +729,7 @@
     :America/Anchorage: 
       :city: أنشوراج
     :America/Anguilla: 
-      :city: أنغيلا
+      :city: أنغويلا
     :America/Antigua: 
       :city: أنتيغوا
     :America/Araguaina: 
@@ -787,7 +785,7 @@
     :America/Cayenne: 
       :city: كايين
     :America/Cayman: 
-      :city: كيمان
+      :city: كايمان
     :America/Chicago: 
       :city: شيكاغو
     :America/Chihuahua: 
@@ -803,7 +801,7 @@
     :America/Cuiaba: 
       :city: كيابا
     :America/Curacao: 
-      :city: كوراكاو
+      :city: كوراساو
     :America/Danmarkshavn: 
       :city: "دانمرك شافن"
     :America/Dawson: 
@@ -822,6 +820,8 @@
       :city: ايرونبي
     :America/El_Salvador: 
       :city: السلفادور
+    :America/Fort_Nelson: 
+      :city: "فورت نيلسون"
     :America/Fortaleza: 
       :city: فورتاليزا
     :America/Glace_Bay: 
@@ -911,9 +911,9 @@
     :America/Metlakatla: 
       :city: ميتلاكاتلا
     :America/Mexico_City: 
-      :city: "مدينة المكسيك"
+      :city: "مكسيكو سيتي"
     :America/Miquelon: 
-      :city: ميكولن
+      :city: مكويلون
     :America/Moncton: 
       :city: وينكتون
     :America/Monterrey: 
@@ -956,6 +956,8 @@
       :city: "بورتو فيلو"
     :America/Puerto_Rico: 
       :city: بورتوريكو
+    :America/Punta_Arenas: 
+      :city: "بونتا أريناز"
     :America/Rainy_River: 
       :city: "راني ريفر"
     :America/Rankin_Inlet: 
@@ -1056,6 +1058,8 @@
       :city: أكتوب
     :Asia/Ashgabat: 
       :city: "عشق آباد"
+    :Asia/Atyrau: 
+      :city: أتيراو
     :Asia/Baghdad: 
       :city: بغداد
     :Asia/Bahrain: 
@@ -1064,6 +1068,8 @@
       :city: باكو
     :Asia/Bangkok: 
       :city: بانكوك
+    :Asia/Barnaul: 
+      :city: بارناول
     :Asia/Beirut: 
       :city: بيروت
     :Asia/Bishkek: 
@@ -1088,6 +1094,8 @@
       :city: دبي
     :Asia/Dushanbe: 
       :city: دوشانبي
+    :Asia/Famagusta: 
+      :city: فاماغوستا
     :Asia/Gaza: 
       :city: غزة
     :Asia/Hebron: 
@@ -1150,6 +1158,8 @@
       :city: "بيونغ يانغ"
     :Asia/Qatar: 
       :city: قطر
+    :Asia/Qostanay: 
+      :city: قوستاناي
     :Asia/Qyzylorda: 
       :city: كيزيلوردا
     :Asia/Rangoon: 
@@ -1182,6 +1192,8 @@
       :city: تيمفو
     :Asia/Tokyo: 
       :city: طوكيو
+    :Asia/Tomsk: 
+      :city: تومسك
     :Asia/Ulaanbaatar: 
       :city: آلانباتار
     :Asia/Urumqi: 
@@ -1242,12 +1254,19 @@
       :city: برثا
     :Australia/Sydney: 
       :city: سيدني
+    :Etc/UTC: 
+      :long: 
+        :standard: "التوقيت العالمي المنسق"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "مدينة غير معروفة"
     :Europe/Amsterdam: 
       :city: أمستردام
     :Europe/Andorra: 
       :city: أندورا
+    :Europe/Astrakhan: 
+      :city: أستراخان
     :Europe/Athens: 
       :city: أثينا
     :Europe/Belgrade: 
@@ -1275,7 +1294,7 @@
     :Europe/Gibraltar: 
       :city: "جبل طارق"
     :Europe/Guernsey: 
-      :city: غيرنسي
+      :city: غيرنزي
     :Europe/Helsinki: 
       :city: هلسنكي
     :Europe/Isle_of_Man: 
@@ -1288,6 +1307,8 @@
       :city: كالينجراد
     :Europe/Kiev: 
       :city: كييف
+    :Europe/Kirov: 
+      :city: كيروف
     :Europe/Lisbon: 
       :city: لشبونة
     :Europe/Ljubljana: 
@@ -1328,6 +1349,8 @@
       :city: "سان مارينو"
     :Europe/Sarajevo: 
       :city: سراييفو
+    :Europe/Saratov: 
+      :city: ساراتوف
     :Europe/Simferopol: 
       :city: سيمفروبول
     :Europe/Skopje: 
@@ -1340,6 +1363,8 @@
       :city: تالين
     :Europe/Tirane: 
       :city: تيرانا
+    :Europe/Ulyanovsk: 
+      :city: أوليانوفسك
     :Europe/Uzhgorod: 
       :city: أوزجرود
     :Europe/Vaduz: 

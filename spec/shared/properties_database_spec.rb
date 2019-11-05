@@ -9,16 +9,13 @@ require 'fileutils'
 require 'securerandom'
 require 'tmpdir'
 
-include TwitterCldr::Shared
-include TwitterCldr::Utils
-
-describe PropertiesDatabase do
+describe TwitterCldr::Shared::PropertiesDatabase do
   context 'with an empty database' do
     let(:tmp_dir) do
       File.join(Dir.tmpdir, SecureRandom.hex)
     end
 
-    let(:database) { PropertiesDatabase.new(tmp_dir) }
+    let(:database) { described_class.new(tmp_dir) }
 
     before(:each) do
       FileUtils.mkdir_p(tmp_dir)
@@ -30,16 +27,16 @@ describe PropertiesDatabase do
 
     describe '#store' do
       it 'associates the code points with the property name/value' do
-        database.store('foo', 'bar', RangeSet.new([1..4]))
+        database.store('foo', 'bar', TwitterCldr::Utils::RangeSet.new([1..4]))
         result = database.code_points_for_property('foo', 'bar')
-        expect(result).to be_a(RangeSet)
+        expect(result).to be_a(TwitterCldr::Utils::RangeSet)
         expect(result.to_a).to eq([1..4])
       end
     end
   end
 
   context 'with a full database of properties' do
-    let(:database) { PropertiesDatabase.new }
+    let(:database) { described_class.new }
 
     describe '#code_points_for_property' do
       it 'retrieves code points for the property name' do
@@ -88,7 +85,7 @@ describe PropertiesDatabase do
     describe '#properties_for_code_point' do
       it 'returns a property set for the given code point' do
         property_set = database.properties_for_code_point(65)
-        expect(property_set).to be_a(PropertySet)
+        expect(property_set).to be_a(TwitterCldr::Shared::PropertySet)
         expect(property_set.general_category).to eq(Set.new(%w(L Lu)))
         expect(property_set.word_break).to eq(Set.new(%w(ALetter)))
       end

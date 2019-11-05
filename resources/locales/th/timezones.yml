@@ -1,18 +1,11 @@
 --- 
 :th: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "เวลาออมแสง{0}"
-      :generic: "เวลา{0}"
-      :standard: "เวลามาตรฐาน{0}"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "เวลามาตรฐาน{0}"
   :metazones: 
     :Acre: 
       :long: 
@@ -48,9 +41,9 @@
         :standard: เวลามาตรฐานอัลมาตี
     :Amazon: 
       :long: 
-        :daylight: เวลาฤดูร้อนอะเมซอน
-        :generic: เวลาอะเมซอน
-        :standard: เวลามาตรฐานอะเมซอน
+        :daylight: เวลาฤดูร้อนแอมะซอน
+        :generic: เวลาแอมะซอน
+        :standard: เวลามาตรฐานแอมะซอน
     :America_Central: 
       :long: 
         :daylight: เวลาออมแสงตอนกลางในอเมริกาเหนือ
@@ -392,8 +385,8 @@
         :standard: เวลาหมู่เกาะไลน์
     :Lord_Howe: 
       :long: 
-        :daylight: เวลาออมแสงของลอร์ดโฮว์
-        :generic: เวลาลอร์ดโฮว
+        :daylight: เวลาออมแสงลอร์ดโฮว์
+        :generic: เวลาลอร์ดโฮว์
         :standard: เวลามาตรฐานลอร์ดโฮว์
     :Macau: 
       :long: 
@@ -535,7 +528,10 @@
         :standard: เวลาพิตแคร์น
     :Ponape: 
       :long: 
-        :standard: เวลาโปเนป
+        :standard: เวลาโปนาเป
+    :Pyongyang: 
+      :long: 
+        :standard: เวลาเปียงยาง
     :Qyzylorda: 
       :long: 
         :daylight: เวลาฤดูร้อนคืยซิลออร์ดา
@@ -579,7 +575,7 @@
         :standard: เวลาซูรินาเม
     :Syowa: 
       :long: 
-        :standard: เวลาโซวา
+        :standard: เวลาไซโยวา
     :Tahiti: 
       :long: 
         :standard: เวลาตาฮีตี
@@ -858,10 +854,12 @@
       :city: เอรูเนเป
     :America/El_Salvador: 
       :city: เอลซัลวาดอร์
+    :America/Fort_Nelson: 
+      :city: ฟอร์ตเนลสัน
     :America/Fortaleza: 
       :city: ฟอร์ตาเลซา
     :America/Glace_Bay: 
-      :city: แกลซเบย์
+      :city: เกลซเบย์
     :America/Godthab: 
       :city: กอดแธบ
     :America/Goose_Bay: 
@@ -992,6 +990,8 @@
       :city: ปอร์ตูเวลโย
     :America/Puerto_Rico: 
       :city: เปอโตริโก
+    :America/Punta_Arenas: 
+      :city: ปุนตาอาเรนัส
     :America/Rainy_River: 
       :city: เรนนี่ริเวอร์
     :America/Rankin_Inlet: 
@@ -1057,25 +1057,25 @@
     :Antarctica/Casey: 
       :city: เคซีย์
     :Antarctica/Davis: 
-      :city: ดาวีส์
+      :city: เดวิส
     :Antarctica/DumontDUrville: 
       :city: ดูมองต์ดูร์วิลล์
     :Antarctica/Macquarie: 
       :city: แมคควอรี
     :Antarctica/Mawson: 
-      :city: มาว์ซัน
+      :city: มอว์สัน
     :Antarctica/McMurdo: 
       :city: แมคมัวโด
     :Antarctica/Palmer: 
       :city: พาล์เมอร์
     :Antarctica/Rothera: 
-      :city: โรเทรา
+      :city: โรธีรา
     :Antarctica/Syowa: 
-      :city: เซียวา
+      :city: ไซโยวา
     :Antarctica/Troll: 
       :city: โทรล
     :Antarctica/Vostok: 
-      :city: วอสต็อค
+      :city: วอสตอค
     :Arctic/Longyearbyen: 
       :city: ลองเยียร์เบียน
     :Asia/Aden: 
@@ -1092,6 +1092,8 @@
       :city: อัคโทบี
     :Asia/Ashgabat: 
       :city: อาชกาบัต
+    :Asia/Atyrau: 
+      :city: อทีราว
     :Asia/Baghdad: 
       :city: แบกแดด
     :Asia/Bahrain: 
@@ -1100,6 +1102,8 @@
       :city: บากู
     :Asia/Bangkok: 
       :city: กรุงเทพ
+    :Asia/Barnaul: 
+      :city: บาร์เนาว์
     :Asia/Beirut: 
       :city: เบรุต
     :Asia/Bishkek: 
@@ -1124,6 +1128,8 @@
       :city: ดูไบ
     :Asia/Dushanbe: 
       :city: ดูชานเบ
+    :Asia/Famagusta: 
+      :city: แฟมากุสตา
     :Asia/Gaza: 
       :city: กาซา
     :Asia/Hebron: 
@@ -1186,6 +1192,8 @@
       :city: เปียงยาง
     :Asia/Qatar: 
       :city: กาตาร์
+    :Asia/Qostanay: 
+      :city: คอสตาเนย์
     :Asia/Qyzylorda: 
       :city: ไคซีลอร์ดา
     :Asia/Rangoon: 
@@ -1218,6 +1226,8 @@
       :city: ทิมพู
     :Asia/Tokyo: 
       :city: โตเกียว
+    :Asia/Tomsk: 
+      :city: ตอมสค์
     :Asia/Ulaanbaatar: 
       :city: อูลานบาตอร์
     :Asia/Urumqi: 
@@ -1271,19 +1281,26 @@
     :Australia/Lindeman: 
       :city: ลินดีแมน
     :Australia/Lord_Howe: 
-      :city: ลอร์ดโฮวี
+      :city: ลอร์ดโฮว์
     :Australia/Melbourne: 
       :city: เมลเบิร์น
     :Australia/Perth: 
       :city: เพิร์ท
     :Australia/Sydney: 
       :city: ซิดนีย์
+    :Etc/UTC: 
+      :long: 
+        :standard: เวลาสากลเชิงพิกัด
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
-      :city: เมืองที่ไม่รู้จัก
+      :city: ไม่ทราบชื่อเมือง
     :Europe/Amsterdam: 
       :city: อัมสเตอดัม
     :Europe/Andorra: 
       :city: อันดอร์รา
+    :Europe/Astrakhan: 
+      :city: แอสตราคาน
     :Europe/Athens: 
       :city: เอเธนส์
     :Europe/Belgrade: 
@@ -1324,6 +1341,8 @@
       :city: คาลินิงกราด
     :Europe/Kiev: 
       :city: เคียฟ
+    :Europe/Kirov: 
+      :city: คิรอฟ
     :Europe/Lisbon: 
       :city: ลิสบอน
     :Europe/Ljubljana: 
@@ -1364,6 +1383,8 @@
       :city: ซานมารีโน
     :Europe/Sarajevo: 
       :city: ซาราเยโว
+    :Europe/Saratov: 
+      :city: ซาราทอฟ
     :Europe/Simferopol: 
       :city: ซิมเฟอโรโปล
     :Europe/Skopje: 
@@ -1376,6 +1397,8 @@
       :city: ทาลลินน์
     :Europe/Tirane: 
       :city: ติรานา
+    :Europe/Ulyanovsk: 
+      :city: อะลิยานอฟ
     :Europe/Uzhgorod: 
       :city: อัซโกร็อด
     :Europe/Vaduz: 
@@ -1425,13 +1448,13 @@
     :Pacific/Bougainville: 
       :city: บูเกนวิลล์
     :Pacific/Chatham: 
-      :city: แชแทม
+      :city: แชทัม
     :Pacific/Easter: 
       :city: อีสเตอร์
     :Pacific/Efate: 
       :city: เอฟาเต
     :Pacific/Enderbury: 
-      :city: เอนเดอร์เบอร์รี
+      :city: เอนเดอร์เบอรี
     :Pacific/Fakaofo: 
       :city: ฟาเคาโฟ
     :Pacific/Fiji: 
@@ -1453,13 +1476,13 @@
     :Pacific/Kiritimati: 
       :city: คิริทิมาตี
     :Pacific/Kosrae: 
-      :city: คอสแร
+      :city: คอสไร
     :Pacific/Kwajalein: 
       :city: ควาจาเลน
     :Pacific/Majuro: 
       :city: มาจูโร
     :Pacific/Marquesas: 
-      :city: มาร์เควซัส
+      :city: มาร์เคซัส
     :Pacific/Midway: 
       :city: มิดเวย์
     :Pacific/Nauru: 
@@ -1485,7 +1508,7 @@
     :Pacific/Saipan: 
       :city: ไซปัน
     :Pacific/Tahiti: 
-      :city: ทาฮิติ
+      :city: ตาฮีตี
     :Pacific/Tarawa: 
       :city: ตาระวา
     :Pacific/Tongatapu: 

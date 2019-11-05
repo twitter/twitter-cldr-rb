@@ -1,18 +1,11 @@
 --- 
 :sv: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;−HH:mm"
-    :region_format: 
-      :daylight: "{0} (sommartid)"
-      :generic: "{0}tid"
-      :standard: "{0} (normaltid)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;−HH:mm"
+    :region_format: "{0} (normaltid)"
   :metazones: 
     :Acre: 
       :long: 
@@ -411,9 +404,9 @@
         :standard: "Lord Howe, normaltid"
     :Macau: 
       :long: 
-        :daylight: Macausommartid
-        :generic: Macautid
-        :standard: Macaunormaltid
+        :daylight: Macaosommartid
+        :generic: Macaotid
+        :standard: Macaonormaltid
     :Macquarie: 
       :long: 
         :standard: Macquarietid
@@ -550,6 +543,9 @@
     :Ponape: 
       :long: 
         :standard: Ponapetid
+    :Pyongyang: 
+      :long: 
+        :standard: Pyongyangtid
     :Qyzylorda: 
       :long: 
         :daylight: Qyzylordasommartid
@@ -872,6 +868,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -961,7 +959,7 @@
     :America/Metlakatla: 
       :city: Metlakatla
     :America/Mexico_City: 
-      :city: "Mexico City"
+      :city: "Mexiko City"
     :America/Miquelon: 
       :city: Miquelon
     :America/Moncton: 
@@ -1006,6 +1004,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1095,7 +1095,7 @@
     :Asia/Aden: 
       :city: Aden
     :Asia/Almaty: 
-      :city: Alma-Ata
+      :city: Almaty
     :Asia/Amman: 
       :city: Amman
     :Asia/Anadyr: 
@@ -1106,6 +1106,8 @@
       :city: Aqtöbe
     :Asia/Ashgabat: 
       :city: Asjchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1114,6 +1116,8 @@
       :city: Baku
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beirut
     :Asia/Bishkek: 
@@ -1138,6 +1142,8 @@
       :city: Dubai
     :Asia/Dushanbe: 
       :city: Dusjanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1200,6 +1206,8 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanaj
     :Asia/Qyzylorda: 
       :city: Qyzylorda
     :Asia/Rangoon: 
@@ -1232,6 +1240,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Ulaanbaatar
     :Asia/Urumqi: 
@@ -1292,12 +1302,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Koordinerad universell tid"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "okänd stad"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Aten
     :Europe/Belgrade: 
@@ -1338,6 +1355,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lissabon
     :Europe/Ljubljana: 
@@ -1378,6 +1397,8 @@
       :city: "San Marino"
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1390,6 +1411,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
     :Europe/Uzhgorod: 
       :city: Uzjhorod
     :Europe/Vaduz: 
@@ -1462,6 +1485,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: Honolulusommartid
+        :generic: Honolulutid
+        :standard: Honolulunormaltid
     :Pacific/Johnston: 
       :city: Johnstonatollen
     :Pacific/Kiritimati: 

@@ -3,7 +3,12 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
+        :Bh: "h B"
+        :Bhm: "h:mm B"
+        :Bhms: "h:mm:ss B"
         :E: ccc
+        :EBhm: "E h:mm B"
+        :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
@@ -22,6 +27,7 @@
         :MEd: "d/M, E"
         :MMM: LLL
         :MMMEd: "E, d MMM"
+        :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "MMM d"
         :MMdd: dd-MM
@@ -45,6 +51,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
+        :yw: "'week' w 'of' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -125,8 +132,15 @@
         :day: ದಿನ
         :day-narrow: ದಿನ
         :day-short: ದಿನ
-        :dayperiod: ಪೂರ್ವಾಹ್ನ/ಅಪರಾಹ್ನ
+        :dayOfYear: "ವರ್ಷದ ದಿನ"
+        :dayOfYear-narrow: "ವರ್ಷದ ದಿನ"
+        :dayOfYear-short: "ವರ್ಷದ ದಿನ"
+        :dayperiod: AM/PM
+        :dayperiod-narrow: AM/PM
+        :dayperiod-short: ಪೂರ್ವಾಹ್ನ/ಅಪರಾಹ್ನ
         :era: ಯುಗ
+        :era-narrow: ಯುಗ
+        :era-short: ಯುಗ
         :hour: ಗಂಟೆ
         :hour-narrow: ಗಂಟೆ
         :hour-short: ಗಂಟೆ
@@ -145,11 +159,21 @@
         :week: ವಾರ
         :week-narrow: ವಾರ
         :week-short: ವಾರ
+        :weekOfMonth: "ತಿಂಗಳ ವಾರ"
+        :weekOfMonth-narrow: "ತಿಂಗಳ ವಾರ"
+        :weekOfMonth-short: "ತಿಂಗಳ ವಾರ"
         :weekday: "ವಾರದ ದಿನ"
+        :weekday-narrow: "ವಾರದ ದಿನ"
+        :weekday-short: "ವಾರದ ದಿನ"
+        :weekdayOfMonth: "ತಿಂಗಳ ವಾರದ ದಿನ"
+        :weekdayOfMonth-narrow: "ತಿಂಗಳ ವಾರದ ದಿನ"
+        :weekdayOfMonth-short: "ತಿಂಗಳ ವಾರದ ದಿನ"
         :year: ವರ್ಷ
         :year-narrow: ವರ್ಷ
         :year-short: ವರ್ಷ
         :zone: "ಸಮಯ ವಲಯ"
+        :zone-narrow: ವಲಯ
+        :zone-short: ವಲಯ
       :formats: 
         :date: 
           :full: 
@@ -181,11 +205,11 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: ಜನ
+            1: ಜನವರಿ
             10: ಅಕ್ಟೋ
             11: ನವೆಂ
             12: ಡಿಸೆಂ
-            2: ಫೆಬ್ರ
+            2: ಫೆಬ್ರವರಿ
             3: ಮಾರ್ಚ್
             4: ಏಪ್ರಿ
             5: ಮೇ
@@ -263,12 +287,12 @@
         :format: 
           :abbreviated: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: "ಮಧ್ಯ ರಾತ್ರಿ"
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :narrow: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
             :am: ಪೂ
@@ -288,20 +312,20 @@
         :stand-alone: 
           :abbreviated: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: ಮಧ್ಯರಾತ್ರಿ
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :narrow: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: AM
+            :am: ಪೂರ್ವಾಹ್ನ
             :evening1: ಸಂಜೆ
             :midnight: ಮಧ್ಯರಾತ್ರಿ
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: PM
+            :pm: ಅಪರಾಹ್ನ
           :wide: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
             :am: ಪೂರ್ವಾಹ್ನ

@@ -1,18 +1,11 @@
 --- 
 :fr-BE: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "UTC{0}"
-    :gmt_zero_format: 
-      :generic: UTC
-    :hour_format: 
-      :generic: "+HH:mm;−HH:mm"
-    :region_format: 
-      :daylight: "{0} (heure d’été)"
-      :generic: "heure : {0}"
-      :standard: "{0} (heure standard)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "UTC{0}"
+    :gmt_zero_format: UTC
+    :hour_format: "+HH:mm;−HH:mm"
+    :region_format: "{0} (heure standard)"
   :metazones: 
     :Acre: 
       :long: 
@@ -41,6 +34,10 @@
         :daylight: "heure d’été de l’Alaska"
         :generic: "heure de l’Alaska"
         :standard: "heure normale de l’Alaska"
+      :short: 
+        :daylight: HEAK
+        :generic: HAK
+        :standard: HNAK
     :Almaty: 
       :long: 
         :daylight: "heure d’été d’Alma Ata"
@@ -56,21 +53,37 @@
         :daylight: "heure d’été du Centre"
         :generic: "heure du centre nord-américain"
         :standard: "heure normale du centre nord-américain"
+      :short: 
+        :daylight: HEC
+        :generic: HC
+        :standard: HNC
     :America_Eastern: 
       :long: 
         :daylight: "heure d’été de l’Est"
         :generic: "heure de l’Est nord-américain"
         :standard: "heure normale de l’Est nord-américain"
+      :short: 
+        :daylight: HEE
+        :generic: HE
+        :standard: HNE
     :America_Mountain: 
       :long: 
         :daylight: "heure d’été des Rocheuses"
         :generic: "heure des Rocheuses"
         :standard: "heure normale des Rocheuses"
+      :short: 
+        :daylight: HER
+        :generic: HR
+        :standard: HNR
     :America_Pacific: 
       :long: 
         :daylight: "heure d’été du Pacifique"
         :generic: "heure du Pacifique nord-américain"
         :standard: "heure normale du Pacifique nord-américain"
+      :short: 
+        :daylight: HEP
+        :generic: HP
+        :standard: HNP
     :Anadyr: 
       :long: 
         :daylight: "heure d’été d’Anadyr"
@@ -116,6 +129,10 @@
         :daylight: "heure d’été de l’Atlantique"
         :generic: "heure de l’Atlantique"
         :standard: "heure normale de l’Atlantique"
+      :short: 
+        :daylight: HEA
+        :generic: HA
+        :standard: HNA
     :Australia_Central: 
       :long: 
         :daylight: "heure d’été du centre de l’Australie"
@@ -170,6 +187,9 @@
         :daylight: "heure d’été du Cap-Vert"
         :generic: "heure du Cap-Vert"
         :standard: "heure normale du Cap-Vert"
+    :Casey: 
+      :long: 
+        :standard: "heure de Casey"
     :Chamorro: 
       :long: 
         :standard: "heure des Chamorro"
@@ -214,6 +234,10 @@
         :daylight: "heure d’été de Cuba"
         :generic: "heure de Cuba"
         :standard: "heure normale de Cuba"
+      :short: 
+        :daylight: HECU
+        :generic: HCU
+        :standard: HNCU
     :Davis: 
       :long: 
         :standard: "heure de Davis"
@@ -241,6 +265,10 @@
         :daylight: "heure d’été d’Europe de l’Est"
         :generic: "heure d’Europe de l’Est"
         :standard: "heure normale d’Europe de l’Est"
+      :short: 
+        :daylight: EEDT
+        :generic: EET
+        :standard: EEST
     :Europe_Further_Eastern: 
       :long: 
         :standard: "heure de Kaliningrad"
@@ -249,6 +277,10 @@
         :daylight: "heure d’été d’Europe de l’Ouest"
         :generic: "heure d’Europe de l’Ouest"
         :standard: "heure normale d’Europe de l’Ouest"
+      :short: 
+        :daylight: WEDT
+        :generic: WET
+        :standard: WEST
     :Falkland: 
       :long: 
         :daylight: "heure d’été des îles Malouines"
@@ -268,6 +300,8 @@
     :GMT: 
       :long: 
         :standard: "heure moyenne de Greenwich"
+      :short: 
+        :standard: GMT
     :Galapagos: 
       :long: 
         :standard: "heure des îles Galápagos"
@@ -287,11 +321,19 @@
         :daylight: "heure d’été de l’Est du Groenland"
         :generic: "heure de l’Est du Groenland"
         :standard: "heure normale de l’Est du Groenland"
+      :short: 
+        :daylight: HEEG
+        :generic: HEG
+        :standard: HNEG
     :Greenland_Western: 
       :long: 
         :daylight: "heure d’été de l’Ouest du Groenland"
         :generic: "heure de l’Ouest du Groenland"
         :standard: "heure normale de l’Ouest du Groenland"
+      :short: 
+        :daylight: HEOG
+        :generic: HOG
+        :standard: HNOG
     :Guam: 
       :long: 
         :standard: "heure de Guam"
@@ -306,6 +348,10 @@
         :daylight: "heure d’été d’Hawaii - Aléoutiennes"
         :generic: "heure d’Hawaii - Aléoutiennes"
         :standard: "heure normale d’Hawaii - Aléoutiennes"
+      :short: 
+        :daylight: HEHA
+        :generic: HHA
+        :standard: HNHA
     :Hong_Kong: 
       :long: 
         :daylight: "heure d’été de Hong Kong"
@@ -430,11 +476,19 @@
         :daylight: "heure d’été du Nord-Ouest du Mexique"
         :generic: "heure du Nord-Ouest du Mexique"
         :standard: "heure normale du Nord-Ouest du Mexique"
+      :short: 
+        :daylight: HENOMX
+        :generic: HNOMX
+        :standard: HNNOMX
     :Mexico_Pacific: 
       :long: 
         :daylight: "heure d’été du Pacifique mexicain"
         :generic: "heure du Pacifique mexicain"
         :standard: "heure normale du Pacifique mexicain"
+      :short: 
+        :daylight: HEPMX
+        :generic: HPMX
+        :standard: HNPMX
     :Mongolia: 
       :long: 
         :daylight: "heure d’été d’Oulan-Bator"
@@ -469,6 +523,10 @@
         :daylight: "heure d’été de Terre-Neuve"
         :generic: "heure de Terre-Neuve"
         :standard: "heure normale de Terre-Neuve"
+      :short: 
+        :daylight: HETN
+        :generic: HTN
+        :standard: HNTN
     :Niue: 
       :long: 
         :standard: "heure de Nioué"
@@ -527,15 +585,27 @@
         :daylight: "heure d’été de Saint-Pierre-et-Miquelon"
         :generic: "heure de Saint-Pierre-et-Miquelon"
         :standard: "heure normale de Saint-Pierre-et-Miquelon"
+      :short: 
+        :daylight: HEPM
+        :generic: HPM
+        :standard: HNPM
     :Pitcairn: 
       :long: 
         :standard: "heure des îles Pitcairn"
     :Ponape: 
       :long: 
         :standard: "heure de l’île de Pohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "heure de Pyongyang"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "heure d’été de Kyzylorda"
+        :generic: "heure de Kyzylorda"
+        :standard: "heure normale de Kyzylorda"
     :Reunion: 
       :long: 
-        :standard: "heure de la Réunion"
+        :standard: "heure de La Réunion"
     :Rothera: 
       :long: 
         :standard: "heure de Rothera"
@@ -850,6 +920,8 @@
       :city: Eirunepé
     :America/El_Salvador: 
       :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
     :America/Fortaleza: 
       :city: Fortaleza
     :America/Glace_Bay: 
@@ -984,6 +1056,8 @@
       :city: "Porto Velho"
     :America/Puerto_Rico: 
       :city: "Porto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
     :America/Rainy_River: 
       :city: "Rainy River"
     :America/Rankin_Inlet: 
@@ -1015,7 +1089,7 @@
     :America/St_Johns: 
       :city: "Saint-Jean de Terre-Neuve"
     :America/St_Kitts: 
-      :city: Saint-Kitts
+      :city: Saint-Christophe
     :America/St_Lucia: 
       :city: Sainte-Lucie
     :America/St_Thomas: 
@@ -1084,6 +1158,8 @@
       :city: Aktioubinsk
     :Asia/Ashgabat: 
       :city: Achgabat
+    :Asia/Atyrau: 
+      :city: Atyraou
     :Asia/Baghdad: 
       :city: Bagdad
     :Asia/Bahrain: 
@@ -1092,6 +1168,8 @@
       :city: Bakou
     :Asia/Bangkok: 
       :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
     :Asia/Beirut: 
       :city: Beyrouth
     :Asia/Bishkek: 
@@ -1116,6 +1194,8 @@
       :city: Dubaï
     :Asia/Dushanbe: 
       :city: Douchanbé
+    :Asia/Famagusta: 
+      :city: Famagouste
     :Asia/Gaza: 
       :city: Gaza
     :Asia/Hebron: 
@@ -1178,6 +1258,8 @@
       :city: Pyongyang
     :Asia/Qatar: 
       :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanaï
     :Asia/Qyzylorda: 
       :city: "Kzyl Orda"
     :Asia/Rangoon: 
@@ -1210,6 +1292,8 @@
       :city: Thimphu
     :Asia/Tokyo: 
       :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
     :Asia/Ulaanbaatar: 
       :city: Oulan-Bator
     :Asia/Urumqi: 
@@ -1270,12 +1354,19 @@
       :city: Perth
     :Australia/Sydney: 
       :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Temps universel coordonné"
+      :short: 
+        :standard: TU
     :Etc/Unknown: 
       :city: "ville inconnue"
     :Europe/Amsterdam: 
       :city: Amsterdam
     :Europe/Andorra: 
       :city: Andorre
+    :Europe/Astrakhan: 
+      :city: Astrakhan
     :Europe/Athens: 
       :city: Athènes
     :Europe/Belgrade: 
@@ -1316,6 +1407,8 @@
       :city: Kaliningrad
     :Europe/Kiev: 
       :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
     :Europe/Lisbon: 
       :city: Lisbonne
     :Europe/Ljubljana: 
@@ -1356,6 +1449,8 @@
       :city: Saint-Marin
     :Europe/Sarajevo: 
       :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
     :Europe/Simferopol: 
       :city: Simferopol
     :Europe/Skopje: 
@@ -1368,6 +1463,8 @@
       :city: Tallinn
     :Europe/Tirane: 
       :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Oulianovsk
     :Europe/Uzhgorod: 
       :city: Oujgorod
     :Europe/Vaduz: 
@@ -1440,6 +1537,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HT
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

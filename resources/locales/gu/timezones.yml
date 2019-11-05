@@ -1,18 +1,11 @@
 --- 
 :gu: 
   :formats: 
-    :fallback_format: 
-      :generic: "{1} ({0})"
-    :gmt_format: 
-      :generic: "GMT{0}"
-    :gmt_zero_format: 
-      :generic: GMT
-    :hour_format: 
-      :generic: "+HH:mm;-HH:mm"
-    :region_format: 
-      :daylight: "{0} (+1)"
-      :generic: "{0} સમય"
-      :standard: "{0} (+0)"
+    :fallback_format: "{1} ({0})"
+    :gmt_format: "GMT{0}"
+    :gmt_zero_format: GMT
+    :hour_format: "+HH:mm;-HH:mm"
+    :region_format: "{0} માનક સમય"
   :metazones: 
     :Acre: 
       :long: 
@@ -40,7 +33,7 @@
       :long: 
         :daylight: "અલાસ્કા દિવસ સમય"
         :generic: "અલાસ્કા સમય"
-        :standard: "અલાસ્કા પ્રમાણભૂત સમય"
+        :standard: "અલાસ્કા માનક સમય"
     :Almaty: 
       :long: 
         :daylight: "અલ્માટી ગ્રીષ્મ સમય"
@@ -53,24 +46,24 @@
         :standard: "એમેઝોન માનક સમય"
     :America_Central: 
       :long: 
-        :daylight: "ઉત્તર અમેરિકન મધ્ય દિવસ સમય"
-        :generic: "ઉત્તર અમેરિકન મધ્ય સમય"
-        :standard: "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય"
+        :daylight: "ઉત્તર અમેરિકન કેન્દ્રીય દિવસ સમય"
+        :generic: "ઉત્તર અમેરિકન કેન્દ્રીય સમય"
+        :standard: "ઉત્તર અમેરિકન કેન્દ્રીય માનક સમય"
     :America_Eastern: 
       :long: 
         :daylight: "ઉત્તર અમેરિકન પૂર્વી દિવસ સમય"
         :generic: "ઉત્તર અમેરિકન પૂર્વી સમય"
-        :standard: "ઉત્તર અમેરિકન પૂર્વી પ્રમાણભૂત સમય"
+        :standard: "ઉત્તર અમેરિકન પૂર્વી માનક સમય"
     :America_Mountain: 
       :long: 
         :daylight: "ઉત્તર અમેરિકન માઉન્ટન દિવસ સમય"
         :generic: "ઉત્તર અમેરિકન માઉન્ટન સમય"
-        :standard: "ઉત્તર અમેરિકન માઉન્ટન પ્રમાણભૂત સમય"
+        :standard: "ઉત્તર અમેરિકન માઉન્ટન માનક સમય"
     :America_Pacific: 
       :long: 
         :daylight: "ઉત્તર અમેરિકન પેસિફિક દિવસ સમય"
         :generic: "ઉત્તર અમેરિકન પેસિફિક સમય"
-        :standard: "ઉત્તર અમેરિકન પેસિફિક પ્રમાણભૂત સમય"
+        :standard: "ઉત્તર અમેરિકન પેસિફિક માનક સમય"
     :Anadyr: 
       :long: 
         :daylight: "અનાડિર ગ્રીષ્મ સમય"
@@ -78,9 +71,9 @@
         :standard: "અનાડિર પ્રમાણભૂત સમય"
     :Apia: 
       :long: 
-        :daylight: "અપિયા દિવસ સમય"
+        :daylight: "એપિયા દિવસ સમય"
         :generic: "એપિયા સમય"
-        :standard: "એપિયા પ્રમાણભૂત સમય"
+        :standard: "એપિયા માનક સમય"
     :Aqtau: 
       :long: 
         :daylight: "અક્તાઉ ગ્રીષ્મ સમય"
@@ -99,13 +92,13 @@
     :Argentina: 
       :long: 
         :daylight: "આર્જેન્ટીના ગ્રીષ્મ સમય"
-        :generic: "અર્જેન્ટીના સમય"
-        :standard: "અર્જેન્ટીના માનક સમય"
+        :generic: "આર્જેન્ટીના સમય"
+        :standard: "આર્જેન્ટીના માનક સમય"
     :Argentina_Western: 
       :long: 
-        :daylight: "પશ્ચિમી અર્જેન્ટીના ગ્રીષ્મ સમય"
-        :generic: "પશ્ચિમી અર્જેન્ટીના સમય"
-        :standard: "પશ્ચિમી અર્જેન્ટીના માનક સમય"
+        :daylight: "પશ્ચિમી આર્જેન્ટીના ગ્રીષ્મ સમય"
+        :generic: "પશ્ચિમી આર્જેન્ટીના સમય"
+        :standard: "પશ્ચિમી આર્જેન્ટીના માનક સમય"
     :Armenia: 
       :long: 
         :daylight: "આર્મેનિયા ગ્રીષ્મ સમય"
@@ -113,29 +106,29 @@
         :standard: "આર્મેનિયા માનક સમય"
     :Atlantic: 
       :long: 
-        :daylight: "અટલાન્ટિક દિવસ સમય"
-        :generic: "અટલાન્ટિક સમય"
-        :standard: "અટલાન્ટિક પ્રમાણભૂત સમય"
+        :daylight: "એટલાન્ટિક દિવસ સમય"
+        :generic: "એટલાન્ટિક સમય"
+        :standard: "એટલાન્ટિક માનક સમય"
     :Australia_Central: 
       :long: 
-        :daylight: "ઓસ્ટ્રેલિયન મધ્ય દિવસ સમય"
-        :generic: "મધ્ય ઓસ્ટ્રેલિયન સમય"
-        :standard: "ઓસ્ટ્રેલિયન મધ્ય પ્રમાણભૂત સમય"
+        :daylight: "ઓસ્ટ્રેલિયન કેન્દ્રીય દિવસ સમય"
+        :generic: "કેન્દ્રીય ઓસ્ટ્રેલિયન સમય"
+        :standard: "ઓસ્ટ્રેલિયન કેન્દ્રીય માનક સમય"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી દિવસ સમય"
-        :generic: "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી સમય"
-        :standard: "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી પ્રમાણભૂત સમય"
+        :daylight: "ઓસ્ટ્રેલિયન કેન્દ્રીય પશ્ચિમી દિવસ સમય"
+        :generic: "ઓસ્ટ્રેલિયન કેન્દ્રીય પશ્ચિમી સમય"
+        :standard: "ઓસ્ટ્રેલિયન કેન્દ્રીય પશ્ચિમી માનક સમય"
     :Australia_Eastern: 
       :long: 
         :daylight: "ઓસ્ટ્રેલિયન પૂર્વીય દિવસ સમય"
         :generic: "પૂર્વીય ઓસ્ટ્રેલિયા સમય"
-        :standard: "ઓસ્ટ્રેલિયન પૂર્વીય પ્રમાણભૂત સમય"
+        :standard: "ઓસ્ટ્રેલિયન પૂર્વીય માનક સમય"
     :Australia_Western: 
       :long: 
         :daylight: "ઓસ્ટ્રેલિયન પશ્ચિમી દિવસ સમય"
         :generic: "પશ્ચિમી ઓસ્ટ્રેલિયા સમય"
-        :standard: "ઓસ્ટ્રેલિયન પશ્ચિમી પ્રમાણભૂત સમય"
+        :standard: "ઓસ્ટ્રેલિયન પશ્ચિમી માનક સમય"
     :Azerbaijan: 
       :long: 
         :daylight: "અઝરબૈજાન ગ્રીષ્મ સમય"
@@ -198,7 +191,7 @@
         :standard: "ક્રિસમસ આઇલેન્ડ સમય"
     :Cocos: 
       :long: 
-        :standard: "કોકોઝ આઇલેન્ડ સમય"
+        :standard: "કોકોઝ આઇલેન્ડ્સ સમય"
     :Colombia: 
       :long: 
         :daylight: "કોલંબિયા ગ્રીષ્મ સમય"
@@ -211,9 +204,9 @@
         :standard: "કુક આઇલેન્ડ્સ માનક સમય"
     :Cuba: 
       :long: 
-        :daylight: "ક્યૂબા દિવસ સમય"
-        :generic: "ક્યૂબા સમય"
-        :standard: "ક્યૂબા માનક સમય"
+        :daylight: "ક્યુબા દિવસ સમય"
+        :generic: "ક્યુબા સમય"
+        :standard: "ક્યુબા માનક સમય"
     :Davis: 
       :long: 
         :standard: "ડેવિસ સમય"
@@ -238,12 +231,12 @@
         :standard: "મધ્ય યુરોપિયન માનક સમય"
     :Europe_Eastern: 
       :long: 
-        :daylight: "પૂર્વી યુરોપીયન ગ્રીષ્મ સમય"
+        :daylight: "પૂર્વી યુરોપિયન ગ્રીષ્મ સમય"
         :generic: "પૂર્વી યુરોપિયન સમય"
         :standard: "પૂર્વી યુરોપિયન માનક સમય"
     :Europe_Further_Eastern: 
       :long: 
-        :standard: "આગળનું-પૂર્વીય યુરોપીયન સમય"
+        :standard: "સુદૂર-પૂર્વી યુરોપિયન સમય"
     :Europe_Western: 
       :long: 
         :daylight: "પશ્ચિમી યુરોપિયન ગ્રીષ્મ સમય"
@@ -253,18 +246,18 @@
       :long: 
         :daylight: "ફોકલૅંડ આઇલેન્ડ્સ ગ્રીષ્મ સમય"
         :generic: "ફોકલૅંડ આઇલેન્ડ્સ સમય"
-        :standard: "ફૉકલૅંડ આઇલેન્ડ્સ માનક સમય"
+        :standard: "ફોકલૅંડ આઇલેન્ડ્સ માનક સમય"
     :Fiji: 
       :long: 
-        :daylight: "ફિજી ગ્રીષ્મ સમય"
-        :generic: "ફિજી સમય"
-        :standard: "ફિજી માનક સમય"
+        :daylight: "ફીજી ગ્રીષ્મ સમય"
+        :generic: "ફીજી સમય"
+        :standard: "ફીજી માનક સમય"
     :French_Guiana: 
       :long: 
-        :standard: "ફ્રેન્ચ ગયાના સમય"
+        :standard: "ફ્રેંચ ગયાના સમય"
     :French_Southern: 
       :long: 
-        :standard: "ફ્રેન્ચ સાઉધર્ન અને એન્ટાર્કટિક સમય"
+        :standard: "ફ્રેંચ સધર્ન અને એન્ટાર્કટિક સમય"
     :GMT: 
       :long: 
         :standard: "ગ્રીનવિચ મધ્યમ સમય"
@@ -281,7 +274,7 @@
         :standard: "જ્યોર્જિયા માનક સમય"
     :Gilbert_Islands: 
       :long: 
-        :standard: "ગિલબર્ટ આઇલેન્ડ સમય"
+        :standard: "ગિલબર્ટ આઇલેન્ડ્સ સમય"
     :Greenland_Eastern: 
       :long: 
         :daylight: "પૂર્વ ગ્રીનલેન્ડ ગ્રીષ્મ સમય"
@@ -377,9 +370,9 @@
         :standard: "કોસરે સમય"
     :Krasnoyarsk: 
       :long: 
-        :daylight: "ક્રેસનોયાર્સ્ક ગ્રીષ્મ સમય"
-        :generic: "ક્રેસ્નોયાર્સ્કી સમય"
-        :standard: "ક્રસ્નોયાર્સ્ક માનક સમય"
+        :daylight: "ક્રેસ્નોયાર્સ્ક ગ્રીષ્મ સમય"
+        :generic: "ક્રેસ્નોયાર્સ્ક સમય"
+        :standard: "ક્રેસ્નોયાર્સ્ક માનક સમય"
     :Kyrgystan: 
       :long: 
         :standard: "કિર્ગિઝતાન સમય"
@@ -393,7 +386,7 @@
       :long: 
         :daylight: "લોર્ડ હોવ દિવસ સમય"
         :generic: "લોર્ડ હોવ સમય"
-        :standard: "લોર્ડ હોવ પ્રમાણભૂત સમય"
+        :standard: "લોર્ડ હોવ માનક સમય"
     :Macau: 
       :long: 
         :daylight: "મકાઉ ગ્રીષ્મ સમય"
@@ -434,9 +427,9 @@
         :standard: "ઉત્તરપશ્ચિમ મેક્સિકો માનક સમય"
     :Mexico_Pacific: 
       :long: 
-        :daylight: "મેક્સીકન પેસિફિક દિવસ સમય"
-        :generic: "મેક્સીકન પેસિફિક સમય"
-        :standard: "મેક્સીકન પેસિફિક માનક સમય"
+        :daylight: "મેક્સિકન પેસિફિક દિવસ સમય"
+        :generic: "મેક્સિકન પેસિફિક સમય"
+        :standard: "મેક્સિકન પેસિફિક માનક સમય"
     :Mongolia: 
       :long: 
         :daylight: "ઉલાન બટોર ગ્રીષ્મ સમય"
@@ -446,7 +439,7 @@
       :long: 
         :daylight: "મોસ્કો ગ્રીષ્મ સમય"
         :generic: "મોસ્કો સમય"
-        :standard: "મોસ્કો પ્રમાણભૂત સમય"
+        :standard: "મોસ્કો માનક સમય"
     :Myanmar: 
       :long: 
         :standard: "મ્યાનમાર સમય"
@@ -470,7 +463,7 @@
       :long: 
         :daylight: "ન્યૂફાઉન્ડલેન્ડ દિવસ સમય"
         :generic: "ન્યૂફાઉન્ડલેન્ડ સમય"
-        :standard: "ન્યૂફાઉન્ડલેન્ડ પ્રમાણભૂત સમય"
+        :standard: "ન્યૂફાઉન્ડલેન્ડ માનક સમય"
     :Niue: 
       :long: 
         :standard: "નીયુ સમય"
@@ -479,7 +472,7 @@
         :standard: "નોરફૉક આઇલેન્ડ સમય"
     :Noronha: 
       :long: 
-        :daylight: "ફરનેન્ડો દે નોરોહા ગ્રીષ્મ સમય"
+        :daylight: "ફર્નાન્ડો દે નોરોહા ગ્રીષ્મ સમય"
         :generic: "ફર્નાન્ડો ડી નોરોન્હા સમય"
         :standard: "ફર્નાન્ડો ડી નોરોન્હા માનક સમય"
     :North_Mariana: 
@@ -494,7 +487,7 @@
       :long: 
         :daylight: "ઓમ્સ્ક ગ્રીષ્મ સમય"
         :generic: "ઓમ્સ્ક સમય"
-        :standard: "ઓમસ્ક માનક સમય"
+        :standard: "ઓમ્સ્ક માનક સમય"
     :Pakistan: 
       :long: 
         :daylight: "પાકિસ્તાન ગ્રીષ્મ સમય"
@@ -526,15 +519,18 @@
         :standard: "ફોનિક્સ આઇલેન્ડ્સ સમય"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "સેંટ પીએરે એન્ડ મિકીલોન દિવસ સમય"
-        :generic: "સેંટ પીએરે એન્ડ મિકીલોન સમય"
-        :standard: "સેંટ પીએરે એન્ડ મિકીલોન માનક સમય"
+        :daylight: "સેંટ પીએરી અને મિક્યુલોન દિવસ સમય"
+        :generic: "સેંટ પીએરી અને મિક્યુલોન સમય"
+        :standard: "સેંટ પીએરી અને મિક્યુલોન માનક સમય"
     :Pitcairn: 
       :long: 
         :standard: "પિટકેયર્ન સમય"
     :Ponape: 
       :long: 
         :standard: "પોનપે સમય"
+    :Pyongyang: 
+      :long: 
+        :standard: "પ્યોંગયાંગ સમય"
     :Qyzylorda: 
       :long: 
         :daylight: "કિઝિલોર્ડા ગ્રીષ્મ સમય"
@@ -542,7 +538,7 @@
         :standard: "કિઝિલોર્ડા પ્રમાણભૂત સમય"
     :Reunion: 
       :long: 
-        :standard: "રીયૂનિયન સમય"
+        :standard: "રીયુનિયન સમય"
     :Rothera: 
       :long: 
         :standard: "રોથેરા સમય"
@@ -572,10 +568,10 @@
         :standard: "સોલોમન આઇલેન્ડ્સ સમય"
     :South_Georgia: 
       :long: 
-        :standard: "દક્ષિણ જ્યોર્જીયા સમય"
+        :standard: "સાઉથ જ્યોર્જિયા સમય"
     :Suriname: 
       :long: 
-        :standard: "સૂરીનામ સમય"
+        :standard: "સુરીનામ સમય"
     :Syowa: 
       :long: 
         :standard: "સ્યોવા સમય"
@@ -611,9 +607,9 @@
         :standard: "ટવાલૂ સમય"
     :Uruguay: 
       :long: 
-        :daylight: "ઉરૂગ્વે ગ્રીષ્મ સમય"
-        :generic: "ઉરૂગ્વે સમય"
-        :standard: "ઉરૂગ્વે માનક સમય"
+        :daylight: "ઉરુગ્વે ગ્રીષ્મ સમય"
+        :generic: "ઉરુગ્વે સમય"
+        :standard: "ઉરુગ્વે માનક સમય"
     :Uzbekistan: 
       :long: 
         :daylight: "ઉઝ્બેકિસ્તાન ગ્રીષ્મ સમય"
@@ -746,7 +742,7 @@
     :Africa/Ndjamena: 
       :city: અન્જમેન
     :Africa/Niamey: 
-      :city: યામેય
+      :city: નિયામી
     :Africa/Nouakchott: 
       :city: નૌકચોટ
     :Africa/Ouagadougou: 
@@ -857,6 +853,8 @@
       :city: ઇરુનેપ
     :America/El_Salvador: 
       :city: "એલ સેલ્વાડોર"
+    :America/Fort_Nelson: 
+      :city: "ફોર્ટ નેલ્સન"
     :America/Fortaleza: 
       :city: ફોર્ટાલેઝા
     :America/Glace_Bay: 
@@ -884,19 +882,19 @@
     :America/Hermosillo: 
       :city: એરમોસિયો
     :America/Indiana/Knox: 
-      :city: "નોક્સ,ઇન્ડિયાના"
+      :city: "નોક્સ, ઇન્ડિયાના"
     :America/Indiana/Marengo: 
       :city: "મેરેંગો, ઇન્ડિયાના"
     :America/Indiana/Petersburg: 
-      :city: "પિટર્સબર્ગ,ઇન્ડિયાના"
+      :city: "પિટર્સબર્ગ, ઇન્ડિયાના"
     :America/Indiana/Tell_City: 
-      :city: "ટેલ સિટી,ઇન્ડિયાના"
+      :city: "ટેલ સિટી, ઇન્ડિયાના"
     :America/Indiana/Vevay: 
       :city: "વેવૈ, ઇન્ડિયાના"
     :America/Indiana/Vincennes: 
-      :city: "વેસેંન, ઇન્ડિયાના"
+      :city: "વિન્સેન્સ, ઇન્ડિયાના"
     :America/Indiana/Winamac: 
-      :city: "વિનામેક,ઇન્ડિયાના"
+      :city: "વિનામેક, ઇન્ડિયાના"
     :America/Indianapolis: 
       :city: ઇન્ડિયાનાપોલિસ
     :America/Inuvik: 
@@ -948,7 +946,7 @@
     :America/Mexico_City: 
       :city: "મેક્સિકો સિટી"
     :America/Miquelon: 
-      :city: માઇક્યુલોન
+      :city: મિક્યુલોન
     :America/Moncton: 
       :city: મોન્કટન
     :America/Monterrey: 
@@ -991,8 +989,10 @@
       :city: "પોર્ટો વેલ્હો"
     :America/Puerto_Rico: 
       :city: "પ્યુઅર્ટો રિકો"
+    :America/Punta_Arenas: 
+      :city: "પુન્ટા એરીનાઝ"
     :America/Rainy_River: 
-      :city: "બરસાતી નદી"
+      :city: "રેઇની નદી"
     :America/Rankin_Inlet: 
       :city: "રેંકિન ઇન્લેટ"
     :America/Recife: 
@@ -1014,21 +1014,21 @@
     :America/Sao_Paulo: 
       :city: "સાઓ પાઉલો"
     :America/Scoresbysund: 
-      :city: સ્કોર્સબાયસન્દ
+      :city: ઇતોકોર્ટોરોમિટ
     :America/Sitka: 
       :city: સિટ્કા
     :America/St_Barthelemy: 
       :city: "સેંટ બાર્થેલેમી"
     :America/St_Johns: 
-      :city: "સેન્ટ જ્હોન્સ"
+      :city: "સેંટ જ્હોન્સ"
     :America/St_Kitts: 
-      :city: "સેન્ટ કીટ્સ"
+      :city: "સેંટ કીટ્સ"
     :America/St_Lucia: 
       :city: "સેંટ લુસિયા"
     :America/St_Thomas: 
       :city: "સેંટ થોમસ"
     :America/St_Vincent: 
-      :city: "સેન્ટ વિંસેંટ"
+      :city: "સેંટ વિન્સેન્ટ"
     :America/Swift_Current: 
       :city: "સ્વિફ્ટ કરંટ"
     :America/Tegucigalpa: 
@@ -1091,6 +1091,8 @@
       :city: ઍક્ટોબ
     :Asia/Ashgabat: 
       :city: અશગાબટ
+    :Asia/Atyrau: 
+      :city: અત્યારુ
     :Asia/Baghdad: 
       :city: બગદાદ
     :Asia/Bahrain: 
@@ -1099,6 +1101,8 @@
       :city: બાકુ
     :Asia/Bangkok: 
       :city: બેંગકોક
+    :Asia/Barnaul: 
+      :city: બારનૌલ
     :Asia/Beirut: 
       :city: બૈરુત
     :Asia/Bishkek: 
@@ -1123,6 +1127,8 @@
       :city: દુબઈ
     :Asia/Dushanbe: 
       :city: દુશામ્બે
+    :Asia/Famagusta: 
+      :city: ફામાગુસ્તા
     :Asia/Gaza: 
       :city: ગાઝા
     :Asia/Hebron: 
@@ -1134,7 +1140,7 @@
     :Asia/Irkutsk: 
       :city: ઇર્કુત્સ્ક
     :Asia/Jakarta: 
-      :city: જાકાર્તા
+      :city: જકાર્તા
     :Asia/Jayapura: 
       :city: જયાપુરા
     :Asia/Jerusalem: 
@@ -1185,6 +1191,8 @@
       :city: પ્યોંગયાંગ
     :Asia/Qatar: 
       :city: કતાર
+    :Asia/Qostanay: 
+      :city: કોસ્ટાને
     :Asia/Qyzylorda: 
       :city: કિઝિલોર્ડા
     :Asia/Rangoon: 
@@ -1200,7 +1208,7 @@
     :Asia/Seoul: 
       :city: સીઓલ
     :Asia/Shanghai: 
-      :city: શેંઘાઇ
+      :city: શાંઘાઈ
     :Asia/Singapore: 
       :city: સિંગાપુર
     :Asia/Srednekolymsk: 
@@ -1217,6 +1225,8 @@
       :city: થીમ્ફુ
     :Asia/Tokyo: 
       :city: ટોક્યો
+    :Asia/Tomsk: 
+      :city: તોમસ્ક
     :Asia/Ulaanbaatar: 
       :city: ઉલાંબાતર
     :Asia/Urumqi: 
@@ -1240,7 +1250,7 @@
     :Atlantic/Canary: 
       :city: કૅનેરી
     :Atlantic/Cape_Verde: 
-      :city: "કૅપ વેર્ડે"
+      :city: "કૅપ વર્ડે"
     :Atlantic/Faeroe: 
       :city: ફેરો
     :Atlantic/Madeira: 
@@ -1250,7 +1260,7 @@
     :Atlantic/South_Georgia: 
       :city: "સાઉથ જ્યોર્જિયા"
     :Atlantic/St_Helena: 
-      :city: "સેન્ટ હેલેના"
+      :city: "સેંટ હેલેના"
     :Atlantic/Stanley: 
       :city: સ્ટેનલી
     :Australia/Adelaide: 
@@ -1276,13 +1286,20 @@
     :Australia/Perth: 
       :city: પર્થ
     :Australia/Sydney: 
-      :city: સિડ્ની
+      :city: સિડની
+    :Etc/UTC: 
+      :long: 
+        :standard: "સંકલિત યુનિવર્સલ સમય"
+      :short: 
+        :standard: UTC
     :Etc/Unknown: 
       :city: "અજ્ઞાત શહેર"
     :Europe/Amsterdam: 
       :city: ઍમ્સ્ટરડૅમ
     :Europe/Andorra: 
       :city: ઍંડોરા
+    :Europe/Astrakhan: 
+      :city: આસ્ટ્રખન
     :Europe/Athens: 
       :city: એથેંસ
     :Europe/Belgrade: 
@@ -1302,19 +1319,19 @@
     :Europe/Chisinau: 
       :city: ચિસીનાઉ
     :Europe/Copenhagen: 
-      :city: કૉપેનહૅજેન
+      :city: કોપનહેગન
     :Europe/Dublin: 
       :city: ડબલિન
       :long: 
         :daylight: "આઈરિશ માનક સમય"
     :Europe/Gibraltar: 
-      :city: જીબ્રાલ્ટર
+      :city: જિબ્રાલ્ટર
     :Europe/Guernsey: 
       :city: ગર્નઝી
     :Europe/Helsinki: 
       :city: હેલસિંકી
     :Europe/Isle_of_Man: 
-      :city: "આય્લ ઓફ મૅન"
+      :city: "આઇલ ઑફ મેન"
     :Europe/Istanbul: 
       :city: ઇસ્તાંબુલ
     :Europe/Jersey: 
@@ -1323,6 +1340,8 @@
       :city: કલિનિન્ગ્રેડ
     :Europe/Kiev: 
       :city: કૈવ
+    :Europe/Kirov: 
+      :city: કીરોવ
     :Europe/Lisbon: 
       :city: લિસ્બન
     :Europe/Ljubljana: 
@@ -1334,7 +1353,7 @@
     :Europe/Luxembourg: 
       :city: લક્ઝમબર્ગ
     :Europe/Madrid: 
-      :city: મૅડ્રીડ
+      :city: મેડ્રિડ
     :Europe/Malta: 
       :city: માલ્ટા
     :Europe/Mariehamn: 
@@ -1363,6 +1382,8 @@
       :city: "સૅન મેરિનો"
     :Europe/Sarajevo: 
       :city: સારાજેવો
+    :Europe/Saratov: 
+      :city: સારાટોવ
     :Europe/Simferopol: 
       :city: સિમ્ફેરોપોલ
     :Europe/Skopje: 
@@ -1375,6 +1396,8 @@
       :city: તલ્લીન
     :Europe/Tirane: 
       :city: તિરાને
+    :Europe/Ulyanovsk: 
+      :city: ઉલેનોવ્સ્ક
     :Europe/Uzhgorod: 
       :city: ઉઝ્ગોરોદ
     :Europe/Vaduz: 

@@ -37,6 +37,10 @@ module TwitterCldr
           to_set.to_full_a
         end
 
+        def to_regexp_str
+          set_to_regex(to_set)
+        end
+
         def to_s
           "#{initial.to_s}-#{final.to_s}"
         end

@@ -5,9 +5,7 @@
 
 require 'spec_helper'
 
-include TwitterCldr
-
-describe Segmentation::RuleSet do
+describe TwitterCldr::Segmentation::RuleSet do
   let(:test_path) do
     File.join(
       TwitterCldr::RESOURCES_DIR, 'shared', 'segments', 'tests'
@@ -66,6 +64,7 @@ END
         test_case_boundaries = boundaries(test_parts)
         test_case_string = string(test_parts)
         result_boundaries = rule_set.each_boundary(test_case_string).to_a
+
         expect(result_boundaries).to(
           eq(test_case_boundaries), error_message(
             test, test_case_boundaries, result_boundaries
@@ -78,15 +77,31 @@ END
   describe 'word boundaries' do
     let(:test_file) { File.join(test_path, 'word_break_test.yml') }
     let(:test_data) { YAML.load_file(test_file) }
-    let(:rule_set) { Segmentation::RuleSet.load(:en, 'word') }
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.load(:en, 'word') }
 
-    # These cases don't work because they end in single quotes (0027).
-    # Conformant implementations (eg ICU) seem to allow partial regex
-    # matching, or allow matches to run off the end of the string.
-    # Since there's no such thing as a partial regex match in Ruby,
-    # we have to ignore these cases. Hopefully they happen infrequently
-    # in practice.
-    let(:skip_cases) { ['÷ 05D0 × 0027 ÷', '÷ 05D0 × 0308 × 0027 ÷'] }
+    # These cases don't work because the regex-based approach we're using
+    # just isn't powerful enough to handle the ambiguous matching inherent
+    # in rules 15 and 16 of the word break rule set.
+    #
+    # Rule 15: ^ ($RI $RI)* $RI × $RI
+    # Rule 16: [^$RI] ($RI $RI)* $RI × $RI
+    #
+    # I mean, give me a break (ha! see what I did there??)
+    #
+    # This means our implementation will break in the middle of emoji
+    # regional indicators like [F][R], the French flag. Fixing the problem
+    # is going to require the state machine-driven approach that ICU uses,
+    # a significant amount of work. See the dictionary_segmentation branch
+    # for a (not working) attempt.
+    let(:skip_cases) do
+      [
+        '÷ 1F1E6 × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
+        '÷ 0061 ÷ 1F1E6 × 200D × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
+        '÷ 0061 ÷ 1F1E6 × 1F1E7 ÷ 1F1E8 × 1F1E9 ÷ 0062 ÷',
+        '÷ 0061 ÷ 1F1E6 × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
+        '÷ 0061 ÷ 1F1E6 × 1F1E7 × 200D ÷ 1F1E8 ÷ 0062 ÷'
+      ]
+    end
 
     it_behaves_like 'a conformant implementation'
   end
@@ -94,7 +109,7 @@ END
   describe 'sentence boundaries' do
     let(:test_file) { File.join(test_path, 'sentence_break_test.yml') }
     let(:test_data) { YAML.load_file(test_file) }
-    let(:rule_set) { Segmentation::RuleSet.load(:en, 'sentence') }
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.load(:en, 'sentence') }
     let(:skip_cases) { [] }
 
     it_behaves_like 'a conformant implementation'

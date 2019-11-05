@@ -6,7 +6,7 @@ Africa/Abidjan:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Giờ Bờ Biển Ngà
+    :generic: Giờ Côte d’Ivoire
   :LONG:
     :standard: Giờ Trung bình Greenwich
     :daylight: GMT
@@ -16,7 +16,7 @@ Africa/Abidjan:
     :standard: GMT
     :daylight: GMT
   :SHORT_GENERIC:
-    :generic: Giờ Bờ Biển Ngà
+    :generic: Giờ Côte d’Ivoire
 Africa/Accra:
   :offset: 0
   :LONG_GMT:
@@ -62,10 +62,10 @@ Africa/Algiers:
   :GENERIC_LOCATION:
     :generic: Giờ Algeria
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Trung Âu
+    :generic: Giờ chuẩn Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+1
@@ -242,10 +242,10 @@ Africa/Cairo:
   :GENERIC_LOCATION:
     :generic: Giờ Ai Cập
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đông Âu
+    :generic: Giờ chuẩn Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -260,10 +260,10 @@ Africa/Casablanca:
   :GENERIC_LOCATION:
     :generic: Giờ Ma-rốc
   :LONG:
-    :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Giờ Tây Âu
+    :generic: Giờ Ma-rốc
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -278,8 +278,8 @@ Africa/Ceuta:
   :GENERIC_LOCATION:
     :generic: Giờ Ceuta
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -386,10 +386,10 @@ Africa/El_Aaiun:
   :GENERIC_LOCATION:
     :generic: Giờ Tây Sahara
   :LONG:
-    :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :standard: GMT
+    :daylight: GMT+01:00
   :LONG_GENERIC:
-    :generic: Giờ Tây Âu
+    :generic: Giờ Tây Sahara
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
@@ -504,21 +504,21 @@ Africa/Kampala:
   :SHORT_GENERIC:
     :generic: Giờ Uganda
 Africa/Khartoum:
-  :offset: 10800000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Giờ Sudan
   :LONG:
-    :standard: Giờ Đông Phi
-    :daylight: GMT+03:00
+    :standard: Giờ Trung Phi
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Giờ Đông Phi
+    :generic: Giờ Trung Phi
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+2
+    :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Giờ Sudan
 Africa/Kigali:
@@ -744,7 +744,7 @@ Africa/Mogadishu:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Giờ Somali
+    :generic: Giờ Somalia
   :LONG:
     :standard: Giờ Đông Phi
     :daylight: GMT+03:00
@@ -754,7 +754,7 @@ Africa/Mogadishu:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Somali
+    :generic: Giờ Somalia
 Africa/Monrovia:
   :offset: 0
   :LONG_GMT:
@@ -924,17 +924,17 @@ Africa/Tripoli:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Li-bi
+    :generic: Giờ Libya
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đông Âu
+    :generic: Giờ chuẩn Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Li-bi
+    :generic: Giờ Libya
 Africa/Tunis:
   :offset: 3600000
   :LONG_GMT:
@@ -944,30 +944,30 @@ Africa/Tunis:
   :GENERIC_LOCATION:
     :generic: Giờ Tunisia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Trung Âu
+    :generic: Giờ chuẩn Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+1
   :SHORT_GENERIC:
     :generic: Giờ Tunisia
 Africa/Windhoek:
-  :offset: 3600000
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT+01:00
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0100"
+    :generic: "+0200"
   :GENERIC_LOCATION:
     :generic: Giờ Namibia
   :LONG:
-    :standard: Giờ Chuẩn Tây Phi
-    :daylight: Giờ Mùa Hè Tây Phi
+    :standard: Giờ Trung Phi
+    :daylight: GMT+02:00
   :LONG_GENERIC:
-    :generic: Giờ Tây Phi (Windhoek)
+    :generic: Giờ Trung Phi
   :SHORT:
-    :standard: GMT+1
+    :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
     :generic: Giờ Namibia
@@ -980,15 +980,15 @@ America/Adak:
   :GENERIC_LOCATION:
     :generic: Giờ Adak
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Hawaii-Aleutian (Adak)
+    :generic: Giờ Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-9
+    :standard: HAST
+    :daylight: HADT
   :SHORT_GENERIC:
-    :generic: Giờ Adak
+    :generic: HAT
 America/Anchorage:
   :offset: -32400000
   :LONG_GMT:
@@ -1003,10 +1003,10 @@ America/Anchorage:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Anchorage
+    :generic: AKT
 America/Anguilla:
   :offset: -14400000
   :LONG_GMT:
@@ -1017,14 +1017,14 @@ America/Anguilla:
     :generic: Giờ Anguilla
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Anguilla
+    :generic: AST
 America/Antigua:
   :offset: -14400000
   :LONG_GMT:
@@ -1035,14 +1035,14 @@ America/Antigua:
     :generic: Giờ Antigua và Barbuda
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Antigua và Barbuda
+    :generic: AST
 America/Araguaina:
   :offset: -10800000
   :LONG_GMT:
@@ -1250,10 +1250,10 @@ America/Argentina/San_Luis:
   :GENERIC_LOCATION:
     :generic: Giờ San Luis
   :LONG:
-    :standard: Giờ chuẩn miền mây Argentina
+    :standard: Giờ chuẩn miền tây Argentina
     :daylight: Giờ mùa hè miền tây Argentina
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền mây Argentina
+    :generic: Giờ chuẩn miền tây Argentina
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -1305,14 +1305,14 @@ America/Aruba:
     :generic: Giờ Aruba
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Aruba
+    :generic: AST
 America/Asuncion:
   :offset: -14400000
   :LONG_GMT:
@@ -1340,15 +1340,15 @@ America/Atikokan:
   :GENERIC_LOCATION:
     :generic: Giờ Atikokan
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Atikokan
+    :generic: EST
 America/Atka:
   :offset: -36000000
   :LONG_GMT:
@@ -1358,15 +1358,15 @@ America/Atka:
   :GENERIC_LOCATION:
     :generic: Giờ Adak
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Hawaii-Aleutian (Adak)
+    :generic: Giờ Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-9
+    :standard: HAST
+    :daylight: HADT
   :SHORT_GENERIC:
-    :generic: Giờ Adak
+    :generic: HAT
 America/Bahia:
   :offset: -10800000
   :LONG_GMT:
@@ -1394,15 +1394,15 @@ America/Bahia_Banderas:
   :GENERIC_LOCATION:
     :generic: Giờ Bahia Banderas
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Bahia Banderas
+    :generic: CT
 America/Barbados:
   :offset: -14400000
   :LONG_GMT:
@@ -1413,14 +1413,14 @@ America/Barbados:
     :generic: Giờ Barbados
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Barbados
+    :generic: AST
 America/Belem:
   :offset: -10800000
   :LONG_GMT:
@@ -1448,15 +1448,15 @@ America/Belize:
   :GENERIC_LOCATION:
     :generic: Giờ Belize
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Belize
+    :generic: CST
 America/Blanc-Sablon:
   :offset: -14400000
   :LONG_GMT:
@@ -1467,14 +1467,14 @@ America/Blanc-Sablon:
     :generic: Giờ Blanc-Sablon
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Blanc-Sablon
+    :generic: AST
 America/Boa_Vista:
   :offset: -14400000
   :LONG_GMT:
@@ -1521,14 +1521,14 @@ America/Boise:
     :generic: Giờ Boise
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Boise
+    :generic: MT
 America/Buenos_Aires:
   :offset: -10800000
   :LONG_GMT:
@@ -1557,14 +1557,14 @@ America/Cambridge_Bay:
     :generic: Giờ Cambridge Bay
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Cambridge Bay
+    :generic: MT
 America/Campo_Grande:
   :offset: -14400000
   :LONG_GMT:
@@ -1577,7 +1577,7 @@ America/Campo_Grande:
     :standard: Giờ Chuẩn Amazon
     :daylight: Giờ Mùa Hè Amazon
   :LONG_GENERIC:
-    :generic: Giờ Amazon
+    :generic: Giờ Amazon (Campo Grande)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1592,31 +1592,31 @@ America/Cancun:
   :GENERIC_LOCATION:
     :generic: Giờ Cancun
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Cancun
+    :generic: EST
 America/Caracas:
-  :offset: -16200000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-04:30
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0430"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Giờ Venezuela
   :LONG:
     :standard: Giờ Venezuela
-    :daylight: GMT-04:30
+    :daylight: GMT-04:00
   :LONG_GENERIC:
     :generic: Giờ Venezuela
   :SHORT:
-    :standard: GMT-4:30
-    :daylight: GMT-4:30
+    :standard: GMT-4
+    :daylight: GMT-4
   :SHORT_GENERIC:
     :generic: Giờ Venezuela
 America/Catamarca:
@@ -1664,15 +1664,15 @@ America/Cayman:
   :GENERIC_LOCATION:
     :generic: Giờ Quần đảo Cayman
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Cayman
+    :generic: EST
 America/Chicago:
   :offset: -21600000
   :LONG_GMT:
@@ -1682,15 +1682,15 @@ America/Chicago:
   :GENERIC_LOCATION:
     :generic: Giờ Chicago
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Chicago
+    :generic: CT
 America/Chihuahua:
   :offset: -25200000
   :LONG_GMT:
@@ -1718,15 +1718,15 @@ America/Coral_Harbour:
   :GENERIC_LOCATION:
     :generic: Giờ Atikokan
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Atikokan
+    :generic: EST
 America/Cordoba:
   :offset: -10800000
   :LONG_GMT:
@@ -1754,15 +1754,15 @@ America/Costa_Rica:
   :GENERIC_LOCATION:
     :generic: Giờ Costa Rica
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Costa Rica
+    :generic: CST
 America/Creston:
   :offset: -25200000
   :LONG_GMT:
@@ -1773,14 +1773,14 @@ America/Creston:
     :generic: Giờ Creston
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ chuẩn miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-7
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Creston
+    :generic: MST
 America/Cuiaba:
   :offset: -14400000
   :LONG_GMT:
@@ -1793,7 +1793,7 @@ America/Cuiaba:
     :standard: Giờ Chuẩn Amazon
     :daylight: Giờ Mùa Hè Amazon
   :LONG_GENERIC:
-    :generic: Giờ Amazon
+    :generic: Giờ Amazon (Cuiaba)
   :SHORT:
     :standard: GMT-4
     :daylight: GMT-3
@@ -1809,14 +1809,14 @@ America/Curacao:
     :generic: Giờ Curaçao
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Curaçao
+    :generic: AST
 America/Danmarkshavn:
   :offset: 0
   :LONG_GMT:
@@ -1845,14 +1845,14 @@ America/Dawson:
     :generic: Giờ Dawson
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Dawson
+    :generic: PT
 America/Dawson_Creek:
   :offset: -25200000
   :LONG_GMT:
@@ -1863,14 +1863,14 @@ America/Dawson_Creek:
     :generic: Giờ Dawson Creek
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ chuẩn miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-7
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Dawson Creek
+    :generic: MST
 America/Denver:
   :offset: -25200000
   :LONG_GMT:
@@ -1881,14 +1881,14 @@ America/Denver:
     :generic: Giờ Denver
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Denver
+    :generic: MT
 America/Detroit:
   :offset: -18000000
   :LONG_GMT:
@@ -1898,15 +1898,15 @@ America/Detroit:
   :GENERIC_LOCATION:
     :generic: Giờ Detroit
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Detroit
+    :generic: ET
 America/Dominica:
   :offset: -14400000
   :LONG_GMT:
@@ -1917,14 +1917,14 @@ America/Dominica:
     :generic: Giờ Dominica
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Dominica
+    :generic: AST
 America/Edmonton:
   :offset: -25200000
   :LONG_GMT:
@@ -1935,14 +1935,14 @@ America/Edmonton:
     :generic: Giờ Edmonton
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Edmonton
+    :generic: MT
 America/Eirunepe:
   :offset: -18000000
   :LONG_GMT:
@@ -1970,15 +1970,15 @@ America/El_Salvador:
   :GENERIC_LOCATION:
     :generic: Giờ El Salvador
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ El Salvador
+    :generic: CST
 America/Ensenada:
   :offset: -28800000
   :LONG_GMT:
@@ -1989,14 +1989,14 @@ America/Ensenada:
     :generic: Giờ Tijuana
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Tijuana
+    :generic: PT
 America/Fort_Nelson:
   :offset: -25200000
   :LONG_GMT:
@@ -2007,14 +2007,14 @@ America/Fort_Nelson:
     :generic: Giờ Fort Nelson
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ chuẩn miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-7
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Fort Nelson
+    :generic: MST
 America/Fort_Wayne:
   :offset: -18000000
   :LONG_GMT:
@@ -2024,15 +2024,15 @@ America/Fort_Wayne:
   :GENERIC_LOCATION:
     :generic: Giờ Indianapolis
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Indianapolis
+    :generic: ET
 America/Fortaleza:
   :offset: -10800000
   :LONG_GMT:
@@ -2061,14 +2061,14 @@ America/Glace_Bay:
     :generic: Giờ Glace Bay
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Glace Bay
+    :generic: AT
 America/Godthab:
   :offset: -10800000
   :LONG_GMT:
@@ -2097,32 +2097,32 @@ America/Goose_Bay:
     :generic: Giờ Goose Bay
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Goose Bay
+    :generic: AT
 America/Grand_Turk:
-  :offset: -14400000
+  :offset: -18000000
   :LONG_GMT:
-    :generic: GMT-04:00
+    :generic: GMT-05:00
   :SHORT_GMT:
-    :generic: "-0400"
+    :generic: "-0500"
   :GENERIC_LOCATION:
-    :generic: Giờ Quần đảo Turk và Caicos
+    :generic: Giờ Quần đảo Turks và Caicos
   :LONG:
-    :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đại Tây Dương
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Turk và Caicos
+    :generic: ET
 America/Grenada:
   :offset: -14400000
   :LONG_GMT:
@@ -2133,14 +2133,14 @@ America/Grenada:
     :generic: Giờ Grenada
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Grenada
+    :generic: AST
 America/Guadeloupe:
   :offset: -14400000
   :LONG_GMT:
@@ -2151,14 +2151,14 @@ America/Guadeloupe:
     :generic: Giờ Guadeloupe
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Guadeloupe
+    :generic: AST
 America/Guatemala:
   :offset: -21600000
   :LONG_GMT:
@@ -2168,15 +2168,15 @@ America/Guatemala:
   :GENERIC_LOCATION:
     :generic: Giờ Guatemala
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Guatemala
+    :generic: CST
 America/Guayaquil:
   :offset: -18000000
   :LONG_GMT:
@@ -2223,14 +2223,14 @@ America/Halifax:
     :generic: Giờ Halifax
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Halifax
+    :generic: AT
 America/Havana:
   :offset: -18000000
   :LONG_GMT:
@@ -2276,15 +2276,15 @@ America/Indiana/Indianapolis:
   :GENERIC_LOCATION:
     :generic: Giờ Indianapolis
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Indianapolis
+    :generic: ET
 America/Indiana/Knox:
   :offset: -21600000
   :LONG_GMT:
@@ -2294,15 +2294,15 @@ America/Indiana/Knox:
   :GENERIC_LOCATION:
     :generic: Giờ Knox, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Knox, Indiana
+    :generic: CT
 America/Indiana/Marengo:
   :offset: -18000000
   :LONG_GMT:
@@ -2312,15 +2312,15 @@ America/Indiana/Marengo:
   :GENERIC_LOCATION:
     :generic: Giờ Marengo, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Marengo, Indiana
+    :generic: ET
 America/Indiana/Petersburg:
   :offset: -18000000
   :LONG_GMT:
@@ -2330,15 +2330,15 @@ America/Indiana/Petersburg:
   :GENERIC_LOCATION:
     :generic: Giờ Petersburg, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Petersburg, Indiana
+    :generic: ET
 America/Indiana/Tell_City:
   :offset: -21600000
   :LONG_GMT:
@@ -2348,15 +2348,15 @@ America/Indiana/Tell_City:
   :GENERIC_LOCATION:
     :generic: Giờ Tell City, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Tell City, Indiana
+    :generic: CT
 America/Indiana/Vevay:
   :offset: -18000000
   :LONG_GMT:
@@ -2366,15 +2366,15 @@ America/Indiana/Vevay:
   :GENERIC_LOCATION:
     :generic: Giờ Vevay, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Vevay, Indiana
+    :generic: ET
 America/Indiana/Vincennes:
   :offset: -18000000
   :LONG_GMT:
@@ -2384,15 +2384,15 @@ America/Indiana/Vincennes:
   :GENERIC_LOCATION:
     :generic: Giờ Vincennes, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Vincennes, Indiana
+    :generic: ET
 America/Indiana/Winamac:
   :offset: -18000000
   :LONG_GMT:
@@ -2402,15 +2402,15 @@ America/Indiana/Winamac:
   :GENERIC_LOCATION:
     :generic: Giờ Winamac, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Winamac, Indiana
+    :generic: ET
 America/Indianapolis:
   :offset: -18000000
   :LONG_GMT:
@@ -2420,15 +2420,15 @@ America/Indianapolis:
   :GENERIC_LOCATION:
     :generic: Giờ Indianapolis
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Indianapolis
+    :generic: ET
 America/Inuvik:
   :offset: -25200000
   :LONG_GMT:
@@ -2439,14 +2439,14 @@ America/Inuvik:
     :generic: Giờ Inuvik
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Inuvik
+    :generic: MT
 America/Iqaluit:
   :offset: -18000000
   :LONG_GMT:
@@ -2456,15 +2456,15 @@ America/Iqaluit:
   :GENERIC_LOCATION:
     :generic: Giờ Iqaluit
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Iqaluit
+    :generic: ET
 America/Jamaica:
   :offset: -18000000
   :LONG_GMT:
@@ -2474,15 +2474,15 @@ America/Jamaica:
   :GENERIC_LOCATION:
     :generic: Giờ Jamaica
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Jamaica
+    :generic: EST
 America/Jujuy:
   :offset: -10800000
   :LONG_GMT:
@@ -2515,10 +2515,10 @@ America/Juneau:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Juneau
+    :generic: AKT
 America/Kentucky/Louisville:
   :offset: -18000000
   :LONG_GMT:
@@ -2528,15 +2528,15 @@ America/Kentucky/Louisville:
   :GENERIC_LOCATION:
     :generic: Giờ Louisville
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Louisville
+    :generic: ET
 America/Kentucky/Monticello:
   :offset: -18000000
   :LONG_GMT:
@@ -2546,15 +2546,15 @@ America/Kentucky/Monticello:
   :GENERIC_LOCATION:
     :generic: Giờ Monticello, Kentucky
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Monticello, Kentucky
+    :generic: ET
 America/Knox_IN:
   :offset: -21600000
   :LONG_GMT:
@@ -2564,15 +2564,15 @@ America/Knox_IN:
   :GENERIC_LOCATION:
     :generic: Giờ Knox, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Knox, Indiana
+    :generic: CT
 America/Kralendijk:
   :offset: -14400000
   :LONG_GMT:
@@ -2583,14 +2583,14 @@ America/Kralendijk:
     :generic: Giờ Ca-ri-bê Hà Lan
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Ca-ri-bê Hà Lan
+    :generic: AST
 America/La_Paz:
   :offset: -14400000
   :LONG_GMT:
@@ -2637,14 +2637,14 @@ America/Los_Angeles:
     :generic: Giờ Los Angeles
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Los Angeles
+    :generic: PT
 America/Louisville:
   :offset: -18000000
   :LONG_GMT:
@@ -2654,15 +2654,15 @@ America/Louisville:
   :GENERIC_LOCATION:
     :generic: Giờ Louisville
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Louisville
+    :generic: ET
 America/Lower_Princes:
   :offset: -14400000
   :LONG_GMT:
@@ -2673,14 +2673,14 @@ America/Lower_Princes:
     :generic: Giờ Sint Maarten
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Sint Maarten
+    :generic: AST
 America/Maceio:
   :offset: -10800000
   :LONG_GMT:
@@ -2708,15 +2708,15 @@ America/Managua:
   :GENERIC_LOCATION:
     :generic: Giờ Nicaragua
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Nicaragua
+    :generic: CST
 America/Manaus:
   :offset: -14400000
   :LONG_GMT:
@@ -2745,14 +2745,14 @@ America/Marigot:
     :generic: Giờ St. Martin
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ St. Martin
+    :generic: AST
 America/Martinique:
   :offset: -14400000
   :LONG_GMT:
@@ -2763,14 +2763,14 @@ America/Martinique:
     :generic: Giờ Martinique
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Martinique
+    :generic: AST
 America/Matamoros:
   :offset: -21600000
   :LONG_GMT:
@@ -2780,15 +2780,15 @@ America/Matamoros:
   :GENERIC_LOCATION:
     :generic: Giờ Matamoros
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Matamoros
+    :generic: CT
 America/Mazatlan:
   :offset: -25200000
   :LONG_GMT:
@@ -2834,15 +2834,15 @@ America/Menominee:
   :GENERIC_LOCATION:
     :generic: Giờ Menominee
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Menominee
+    :generic: CT
 America/Merida:
   :offset: -21600000
   :LONG_GMT:
@@ -2852,15 +2852,15 @@ America/Merida:
   :GENERIC_LOCATION:
     :generic: Giờ Merida
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Merida
+    :generic: CT
 America/Metlakatla:
   :offset: -32400000
   :LONG_GMT:
@@ -2875,10 +2875,10 @@ America/Metlakatla:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Metlakatla
+    :generic: AKT
 America/Mexico_City:
   :offset: -21600000
   :LONG_GMT:
@@ -2888,15 +2888,15 @@ America/Mexico_City:
   :GENERIC_LOCATION:
     :generic: Giờ Mexico City
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Mexico City
+    :generic: CT
 America/Miquelon:
   :offset: -10800000
   :LONG_GMT:
@@ -2925,14 +2925,14 @@ America/Moncton:
     :generic: Giờ Moncton
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Moncton
+    :generic: AT
 America/Monterrey:
   :offset: -21600000
   :LONG_GMT:
@@ -2942,15 +2942,15 @@ America/Monterrey:
   :GENERIC_LOCATION:
     :generic: Giờ Monterrey
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Monterrey
+    :generic: CT
 America/Montevideo:
   :offset: -10800000
   :LONG_GMT:
@@ -2997,14 +2997,14 @@ America/Montserrat:
     :generic: Giờ Montserrat
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Montserrat
+    :generic: AST
 America/Nassau:
   :offset: -18000000
   :LONG_GMT:
@@ -3014,15 +3014,15 @@ America/Nassau:
   :GENERIC_LOCATION:
     :generic: Giờ Bahamas
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Bahamas
+    :generic: ET
 America/New_York:
   :offset: -18000000
   :LONG_GMT:
@@ -3032,15 +3032,15 @@ America/New_York:
   :GENERIC_LOCATION:
     :generic: Giờ New York
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ New York
+    :generic: ET
 America/Nipigon:
   :offset: -18000000
   :LONG_GMT:
@@ -3050,15 +3050,15 @@ America/Nipigon:
   :GENERIC_LOCATION:
     :generic: Giờ Nipigon
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Nipigon
+    :generic: ET
 America/Nome:
   :offset: -32400000
   :LONG_GMT:
@@ -3073,10 +3073,10 @@ America/Nome:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Nome
+    :generic: AKT
 America/Noronha:
   :offset: -7200000
   :LONG_GMT:
@@ -3104,15 +3104,15 @@ America/North_Dakota/Beulah:
   :GENERIC_LOCATION:
     :generic: Giờ Beulah, Bắc Dakota
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Beulah, Bắc Dakota
+    :generic: CT
 America/North_Dakota/Center:
   :offset: -21600000
   :LONG_GMT:
@@ -3122,15 +3122,15 @@ America/North_Dakota/Center:
   :GENERIC_LOCATION:
     :generic: Giờ Center, Bắc Dakota
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Center, Bắc Dakota
+    :generic: CT
 America/North_Dakota/New_Salem:
   :offset: -21600000
   :LONG_GMT:
@@ -3140,15 +3140,15 @@ America/North_Dakota/New_Salem:
   :GENERIC_LOCATION:
     :generic: Giờ New Salem, Bắc Dakota
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ New Salem, Bắc Dakota
+    :generic: CT
 America/Ojinaga:
   :offset: -25200000
   :LONG_GMT:
@@ -3159,14 +3159,14 @@ America/Ojinaga:
     :generic: Giờ Ojinaga
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Ojinaga
+    :generic: MT
 America/Panama:
   :offset: -18000000
   :LONG_GMT:
@@ -3176,15 +3176,15 @@ America/Panama:
   :GENERIC_LOCATION:
     :generic: Giờ Panama
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Panama
+    :generic: EST
 America/Pangnirtung:
   :offset: -18000000
   :LONG_GMT:
@@ -3194,15 +3194,15 @@ America/Pangnirtung:
   :GENERIC_LOCATION:
     :generic: Giờ Pangnirtung
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Pangnirtung
+    :generic: ET
 America/Paramaribo:
   :offset: -10800000
   :LONG_GMT:
@@ -3231,14 +3231,14 @@ America/Phoenix:
     :generic: Giờ Phoenix
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ chuẩn miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-7
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Phoenix
+    :generic: MST
 America/Port-au-Prince:
   :offset: -18000000
   :LONG_GMT:
@@ -3248,15 +3248,15 @@ America/Port-au-Prince:
   :GENERIC_LOCATION:
     :generic: Giờ Haiti
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Haiti
+    :generic: ET
 America/Port_of_Spain:
   :offset: -14400000
   :LONG_GMT:
@@ -3267,14 +3267,14 @@ America/Port_of_Spain:
     :generic: Giờ Trinidad và Tobago
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Trinidad và Tobago
+    :generic: AST
 America/Porto_Acre:
   :offset: -18000000
   :LONG_GMT:
@@ -3321,32 +3321,32 @@ America/Puerto_Rico:
     :generic: Giờ Puerto Rico
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Puerto Rico
+    :generic: AST
 America/Punta_Arenas:
-  :offset: 0
+  :offset: -10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT-03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "-0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Punta Arenas
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Punta Arenas
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT-3
+    :daylight: GMT-3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Punta Arenas
 America/Rainy_River:
   :offset: -21600000
   :LONG_GMT:
@@ -3356,15 +3356,15 @@ America/Rainy_River:
   :GENERIC_LOCATION:
     :generic: Giờ Rainy River
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Rainy River
+    :generic: CT
 America/Rankin_Inlet:
   :offset: -21600000
   :LONG_GMT:
@@ -3374,15 +3374,15 @@ America/Rankin_Inlet:
   :GENERIC_LOCATION:
     :generic: Giờ Rankin Inlet
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Rankin Inlet
+    :generic: CT
 America/Recife:
   :offset: -10800000
   :LONG_GMT:
@@ -3410,15 +3410,15 @@ America/Regina:
   :GENERIC_LOCATION:
     :generic: Giờ Regina
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Regina
+    :generic: CST
 America/Resolute:
   :offset: -21600000
   :LONG_GMT:
@@ -3428,15 +3428,15 @@ America/Resolute:
   :GENERIC_LOCATION:
     :generic: Giờ Resolute
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Resolute
+    :generic: CT
 America/Rio_Branco:
   :offset: -18000000
   :LONG_GMT:
@@ -3510,20 +3510,20 @@ America/Santarem:
   :SHORT_GENERIC:
     :generic: Giờ Santarem
 America/Santiago:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Giờ Chile
   :LONG:
     :standard: Giờ Chuẩn Chile
     :daylight: Giờ Mùa Hè Chile
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Chile
+    :generic: Giờ Chile
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Giờ Chile
@@ -3537,14 +3537,14 @@ America/Santo_Domingo:
     :generic: Giờ Cộng hòa Dominica
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Cộng hòa Dominica
+    :generic: AST
 America/Sao_Paulo:
   :offset: -10800000
   :LONG_GMT:
@@ -3591,14 +3591,14 @@ America/Shiprock:
     :generic: Giờ Denver
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Denver
+    :generic: MT
 America/Sitka:
   :offset: -32400000
   :LONG_GMT:
@@ -3613,10 +3613,10 @@ America/Sitka:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Sitka
+    :generic: AKT
 America/St_Barthelemy:
   :offset: -14400000
   :LONG_GMT:
@@ -3627,14 +3627,14 @@ America/St_Barthelemy:
     :generic: Giờ St. Barthélemy
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ St. Barthélemy
+    :generic: AST
 America/St_Johns:
   :offset: -12600000
   :LONG_GMT:
@@ -3663,14 +3663,14 @@ America/St_Kitts:
     :generic: Giờ St. Kitts và Nevis
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ St. Kitts và Nevis
+    :generic: AST
 America/St_Lucia:
   :offset: -14400000
   :LONG_GMT:
@@ -3681,14 +3681,14 @@ America/St_Lucia:
     :generic: Giờ St. Lucia
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ St. Lucia
+    :generic: AST
 America/St_Thomas:
   :offset: -14400000
   :LONG_GMT:
@@ -3699,14 +3699,14 @@ America/St_Thomas:
     :generic: Giờ Quần đảo Virgin thuộc Mỹ
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Virgin thuộc Mỹ
+    :generic: AST
 America/St_Vincent:
   :offset: -14400000
   :LONG_GMT:
@@ -3717,14 +3717,14 @@ America/St_Vincent:
     :generic: Giờ St. Vincent và Grenadines
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ St. Vincent và Grenadines
+    :generic: AST
 America/Swift_Current:
   :offset: -21600000
   :LONG_GMT:
@@ -3734,15 +3734,15 @@ America/Swift_Current:
   :GENERIC_LOCATION:
     :generic: Giờ Swift Current
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Swift Current
+    :generic: CST
 America/Tegucigalpa:
   :offset: -21600000
   :LONG_GMT:
@@ -3752,15 +3752,15 @@ America/Tegucigalpa:
   :GENERIC_LOCATION:
     :generic: Giờ Honduras
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Honduras
+    :generic: CST
 America/Thule:
   :offset: -14400000
   :LONG_GMT:
@@ -3771,14 +3771,14 @@ America/Thule:
     :generic: Giờ Thule
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Thule
+    :generic: AT
 America/Thunder_Bay:
   :offset: -18000000
   :LONG_GMT:
@@ -3788,15 +3788,15 @@ America/Thunder_Bay:
   :GENERIC_LOCATION:
     :generic: Giờ Thunder Bay
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Thunder Bay
+    :generic: ET
 America/Tijuana:
   :offset: -28800000
   :LONG_GMT:
@@ -3807,14 +3807,14 @@ America/Tijuana:
     :generic: Giờ Tijuana
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Tijuana
+    :generic: PT
 America/Toronto:
   :offset: -18000000
   :LONG_GMT:
@@ -3824,15 +3824,15 @@ America/Toronto:
   :GENERIC_LOCATION:
     :generic: Giờ Toronto
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Toronto
+    :generic: ET
 America/Tortola:
   :offset: -14400000
   :LONG_GMT:
@@ -3843,14 +3843,14 @@ America/Tortola:
     :generic: Giờ Quần đảo Virgin thuộc Anh
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Virgin thuộc Anh
+    :generic: AST
 America/Vancouver:
   :offset: -28800000
   :LONG_GMT:
@@ -3861,14 +3861,14 @@ America/Vancouver:
     :generic: Giờ Vancouver
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Vancouver
+    :generic: PT
 America/Virgin:
   :offset: -14400000
   :LONG_GMT:
@@ -3879,14 +3879,14 @@ America/Virgin:
     :generic: Giờ Quần đảo Virgin thuộc Mỹ
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-4
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Virgin thuộc Mỹ
+    :generic: AST
 America/Whitehorse:
   :offset: -28800000
   :LONG_GMT:
@@ -3897,14 +3897,14 @@ America/Whitehorse:
     :generic: Giờ Whitehorse
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Whitehorse
+    :generic: PT
 America/Winnipeg:
   :offset: -21600000
   :LONG_GMT:
@@ -3914,15 +3914,15 @@ America/Winnipeg:
   :GENERIC_LOCATION:
     :generic: Giờ Winnipeg
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Winnipeg
+    :generic: CT
 America/Yakutat:
   :offset: -32400000
   :LONG_GMT:
@@ -3937,10 +3937,10 @@ America/Yakutat:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Yakutat
+    :generic: AKT
 America/Yellowknife:
   :offset: -25200000
   :LONG_GMT:
@@ -3951,14 +3951,14 @@ America/Yellowknife:
     :generic: Giờ Yellowknife
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Yellowknife
+    :generic: MT
 Antarctica/Casey:
   :offset: 28800000
   :LONG_GMT:
@@ -3968,10 +3968,10 @@ Antarctica/Casey:
   :GENERIC_LOCATION:
     :generic: Giờ Casey
   :LONG:
-    :standard: Giờ Chuẩn Miền Tây Nước Úc
-    :daylight: Giờ Mùa Hè Miền Tây Nước Úc
+    :standard: Giờ Chuẩn Miền Tây Australia
+    :daylight: Giờ Mùa Hè Miền Tây Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Tây Nước Úc
+    :generic: Giờ Chuẩn Miền Tây Australia
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -4076,10 +4076,10 @@ Antarctica/Palmer:
   :GENERIC_LOCATION:
     :generic: Giờ Palmer
   :LONG:
-    :standard: Giờ Chuẩn Chile
-    :daylight: Giờ Mùa Hè Chile
+    :standard: GMT-03:00
+    :daylight: GMT-03:00
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Chile
+    :generic: Giờ Palmer
   :SHORT:
     :standard: GMT-3
     :daylight: GMT-3
@@ -4184,8 +4184,8 @@ Arctic/Longyearbyen:
   :GENERIC_LOCATION:
     :generic: Giờ Svalbard và Jan Mayen
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -4238,8 +4238,8 @@ Asia/Amman:
   :GENERIC_LOCATION:
     :generic: Giờ Jordan
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -4338,23 +4338,23 @@ Asia/Ashkhabad:
   :SHORT_GENERIC:
     :generic: Giờ Turkmenistan
 Asia/Atyrau:
-  :offset: 0
+  :offset: 18000000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+05:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Atyrau
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Giờ Miền Tây Kazakhstan
+    :daylight: GMT+05:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Miền Tây Kazakhstan
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Atyrau
 Asia/Baghdad:
   :offset: 10800000
   :LONG_GMT:
@@ -4362,7 +4362,7 @@ Asia/Baghdad:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Giờ I-rắc
+    :generic: Giờ Iraq
   :LONG:
     :standard: Giờ chuẩn Ả Rập
     :daylight: Giờ Mùa Hè Ả Rập
@@ -4372,7 +4372,7 @@ Asia/Baghdad:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ I-rắc
+    :generic: Giờ Iraq
 Asia/Bahrain:
   :offset: 10800000
   :LONG_GMT:
@@ -4403,10 +4403,10 @@ Asia/Baku:
     :standard: Giờ Chuẩn Azerbaijan
     :daylight: Giờ Mùa Hè Azerbaijan
   :LONG_GENERIC:
-    :generic: Giờ Azerbaijan
+    :generic: Giờ Chuẩn Azerbaijan
   :SHORT:
     :standard: GMT+4
-    :daylight: GMT+5
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Giờ Azerbaijan
 Asia/Bangkok:
@@ -4454,8 +4454,8 @@ Asia/Beirut:
   :GENERIC_LOCATION:
     :generic: Giờ Li-băng
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -4547,10 +4547,10 @@ Asia/Choibalsan:
     :standard: Giờ Chuẩn Choibalsan
     :daylight: Giờ Mùa Hè Choibalsan
   :LONG_GENERIC:
-    :generic: Giờ Choibalsan
+    :generic: Giờ Chuẩn Choibalsan
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Giờ Choibalsan
 Asia/Chongqing:
@@ -4634,8 +4634,8 @@ Asia/Damascus:
   :GENERIC_LOCATION:
     :generic: Giờ Syria
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -4668,7 +4668,7 @@ Asia/Dili:
   :SHORT_GMT:
     :generic: "+0900"
   :GENERIC_LOCATION:
-    :generic: Giờ Đông Timor
+    :generic: Giờ Timor-Leste
   :LONG:
     :standard: Giờ Đông Timor
     :daylight: GMT+09:00
@@ -4678,7 +4678,7 @@ Asia/Dili:
     :standard: GMT+9
     :daylight: GMT+9
   :SHORT_GENERIC:
-    :generic: Giờ Đông Timor
+    :generic: Giờ Timor-Leste
 Asia/Dubai:
   :offset: 14400000
   :LONG_GMT:
@@ -4686,7 +4686,7 @@ Asia/Dubai:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Giờ Các Tiểu V.quốc Ả Rập T.nhất
+    :generic: Giờ Các Tiểu Vương quốc Ả Rập Thống nhất
   :LONG:
     :standard: Giờ Chuẩn Vùng Vịnh
     :daylight: GMT+04:00
@@ -4696,7 +4696,7 @@ Asia/Dubai:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Giờ Các Tiểu V.quốc Ả Rập T.nhất
+    :generic: Giờ Các Tiểu Vương quốc Ả Rập Thống nhất
 Asia/Dushanbe:
   :offset: 18000000
   :LONG_GMT:
@@ -4716,23 +4716,23 @@ Asia/Dushanbe:
   :SHORT_GENERIC:
     :generic: Giờ Tajikistan
 Asia/Famagusta:
-  :offset: 0
+  :offset: 7200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+02:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Famagusta
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+02:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Famagusta
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+2
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Famagusta
 Asia/Gaza:
   :offset: 7200000
   :LONG_GMT:
@@ -4742,8 +4742,8 @@ Asia/Gaza:
   :GENERIC_LOCATION:
     :generic: Giờ Gaza
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -4778,8 +4778,8 @@ Asia/Hebron:
   :GENERIC_LOCATION:
     :generic: Giờ Hebron
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -4835,10 +4835,10 @@ Asia/Hovd:
     :standard: Giờ Chuẩn Hovd
     :daylight: Giờ Mùa Hè Hovd
   :LONG_GENERIC:
-    :generic: Giờ Hovd
+    :generic: Giờ Chuẩn Hovd
   :SHORT:
     :standard: GMT+7
-    :daylight: GMT+8
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Giờ Hovd
 Asia/Irkutsk:
@@ -4860,20 +4860,20 @@ Asia/Irkutsk:
   :SHORT_GENERIC:
     :generic: Giờ Irkutsk
 Asia/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Giờ Thổ Nhĩ Kỳ
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Giờ Đông Âu
+    :generic: Giờ Thổ Nhĩ Kỳ
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Giờ Thổ Nhĩ Kỳ
@@ -5136,7 +5136,7 @@ Asia/Kuwait:
   :SHORT_GMT:
     :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: Giờ Cô-oét
+    :generic: Giờ Kuwait
   :LONG:
     :standard: Giờ chuẩn Ả Rập
     :daylight: Giờ Mùa Hè Ả Rập
@@ -5146,7 +5146,7 @@ Asia/Kuwait:
     :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Cô-oét
+    :generic: Giờ Kuwait
 Asia/Macao:
   :offset: 28800000
   :LONG_GMT:
@@ -5184,11 +5184,11 @@ Asia/Macau:
   :SHORT_GENERIC:
     :generic: Giờ Macao, Trung Quốc
 Asia/Magadan:
-  :offset: 36000000
+  :offset: 39600000
   :LONG_GMT:
-    :generic: GMT+10:00
+    :generic: GMT+11:00
   :SHORT_GMT:
-    :generic: "+1000"
+    :generic: "+1100"
   :GENERIC_LOCATION:
     :generic: Giờ Magadan
   :LONG:
@@ -5197,8 +5197,8 @@ Asia/Magadan:
   :LONG_GENERIC:
     :generic: Giờ Chuẩn Magadan
   :SHORT:
-    :standard: GMT+10
-    :daylight: GMT+10
+    :standard: GMT+11
+    :daylight: GMT+11
   :SHORT_GENERIC:
     :generic: Giờ Magadan
 Asia/Makassar:
@@ -5226,7 +5226,7 @@ Asia/Manila:
   :SHORT_GMT:
     :generic: "+0800"
   :GENERIC_LOCATION:
-    :generic: Giờ Philippin
+    :generic: Giờ Philippines
   :LONG:
     :standard: Giờ Chuẩn Philippin
     :daylight: Giờ Mùa Hè Philippin
@@ -5236,7 +5236,7 @@ Asia/Manila:
     :standard: GMT+8
     :daylight: GMT+8
   :SHORT_GENERIC:
-    :generic: Giờ Philippin
+    :generic: Giờ Philippines
 Asia/Muscat:
   :offset: 14400000
   :LONG_GMT:
@@ -5262,17 +5262,17 @@ Asia/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Síp
+    :generic: Giờ Nicosia
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Síp
+    :generic: Giờ Nicosia
 Asia/Novokuznetsk:
   :offset: 25200000
   :LONG_GMT:
@@ -5292,11 +5292,11 @@ Asia/Novokuznetsk:
   :SHORT_GENERIC:
     :generic: Giờ Novokuznetsk
 Asia/Novosibirsk:
-  :offset: 21600000
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT+06:00
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0600"
+    :generic: "+0700"
   :GENERIC_LOCATION:
     :generic: Giờ Novosibirsk
   :LONG:
@@ -5305,8 +5305,8 @@ Asia/Novosibirsk:
   :LONG_GENERIC:
     :generic: Giờ chuẩn Novosibirsk
   :SHORT:
-    :standard: GMT+6
-    :daylight: GMT+6
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
     :generic: Giờ Novosibirsk
 Asia/Omsk:
@@ -5382,21 +5382,21 @@ Asia/Pontianak:
   :SHORT_GENERIC:
     :generic: Giờ Pontianak
 Asia/Pyongyang:
-  :offset: 30600000
+  :offset: 32400000
   :LONG_GMT:
-    :generic: GMT+08:30
+    :generic: GMT+09:00
   :SHORT_GMT:
-    :generic: "+0830"
+    :generic: "+0900"
   :GENERIC_LOCATION:
     :generic: Giờ Triều Tiên
   :LONG:
-    :standard: GMT+08:30
-    :daylight: GMT+08:30
+    :standard: Giờ Chuẩn Hàn Quốc
+    :daylight: Giờ Mùa Hè Hàn Quốc
   :LONG_GENERIC:
-    :generic: Giờ Triều Tiên
+    :generic: Giờ Chuẩn Hàn Quốc
   :SHORT:
-    :standard: GMT+8:30
-    :daylight: GMT+8:30
+    :standard: GMT+9
+    :daylight: GMT+9
   :SHORT_GENERIC:
     :generic: Giờ Triều Tiên
 Asia/Qatar:
@@ -5417,14 +5417,14 @@ Asia/Qatar:
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Giờ Qatar
-Asia/Qyzylorda:
+Asia/Qostanay:
   :offset: 21600000
   :LONG_GMT:
     :generic: GMT+06:00
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Giờ Qyzylorda
+    :generic: Giờ Qostanay
   :LONG:
     :standard: Giờ Miền Đông Kazakhstan
     :daylight: GMT+06:00
@@ -5433,6 +5433,24 @@ Asia/Qyzylorda:
   :SHORT:
     :standard: GMT+6
     :daylight: GMT+6
+  :SHORT_GENERIC:
+    :generic: Giờ Qostanay
+Asia/Qyzylorda:
+  :offset: 18000000
+  :LONG_GMT:
+    :generic: GMT+05:00
+  :SHORT_GMT:
+    :generic: "+0500"
+  :GENERIC_LOCATION:
+    :generic: Giờ Qyzylorda
+  :LONG:
+    :standard: Giờ Miền Tây Kazakhstan
+    :daylight: GMT+05:00
+  :LONG_GENERIC:
+    :generic: Giờ Miền Tây Kazakhstan
+  :SHORT:
+    :standard: GMT+5
+    :daylight: GMT+5
   :SHORT_GENERIC:
     :generic: Giờ Qyzylorda
 Asia/Rangoon:
@@ -5640,17 +5658,17 @@ Asia/Tbilisi:
   :SHORT_GMT:
     :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: Giờ Georgia
+    :generic: Giờ Gruzia
   :LONG:
-    :standard: Giờ Chuẩn Georgia
-    :daylight: Giờ Mùa Hè Georgia
+    :standard: Giờ Chuẩn Gruzia
+    :daylight: Giờ Mùa Hè Gruzia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Georgia
+    :generic: Giờ Chuẩn Gruzia
   :SHORT:
     :standard: GMT+4
     :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: Giờ Georgia
+    :generic: Giờ Gruzia
 Asia/Tehran:
   :offset: 12600000
   :LONG_GMT:
@@ -5742,23 +5760,23 @@ Asia/Tokyo:
   :SHORT_GENERIC:
     :generic: Giờ Nhật Bản
 Asia/Tomsk:
-  :offset: 0
+  :offset: 25200000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+07:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0700"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Tomsk
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+07:00
+    :daylight: GMT+07:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Tomsk
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+7
+    :daylight: GMT+7
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Tomsk
 Asia/Ujung_Pandang:
   :offset: 28800000
   :LONG_GMT:
@@ -5789,10 +5807,10 @@ Asia/Ulaanbaatar:
     :standard: Giờ chuẩn Ulan Bator
     :daylight: Giờ mùa hè Ulan Bator
   :LONG_GENERIC:
-    :generic: Giờ Ulan Bator
+    :generic: Giờ chuẩn Ulan Bator
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Giờ Ulaanbaatar
 Asia/Ulan_Bator:
@@ -5807,10 +5825,10 @@ Asia/Ulan_Bator:
     :standard: Giờ chuẩn Ulan Bator
     :daylight: Giờ mùa hè Ulan Bator
   :LONG_GENERIC:
-    :generic: Giờ Ulan Bator
+    :generic: Giờ chuẩn Ulan Bator
   :SHORT:
     :standard: GMT+8
-    :daylight: GMT+9
+    :daylight: GMT+8
   :SHORT_GENERIC:
     :generic: Giờ Ulaanbaatar
 Asia/Urumqi:
@@ -5904,23 +5922,23 @@ Asia/Yakutsk:
   :SHORT_GENERIC:
     :generic: Giờ Yakutsk
 Asia/Yangon:
-  :offset: 0
+  :offset: 23400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+06:30
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0630"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Myanmar (Miến Điện)
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: Giờ Myanmar
+    :daylight: GMT+06:30
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Myanmar
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+6:30
+    :daylight: GMT+6:30
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Myanmar (Miến Điện)
 Asia/Yekaterinburg:
   :offset: 18000000
   :LONG_GMT:
@@ -5985,14 +6003,14 @@ Atlantic/Bermuda:
     :generic: Giờ Bermuda
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Bermuda
+    :generic: AT
 Atlantic/Canary:
   :offset: 0
   :LONG_GMT:
@@ -6003,7 +6021,7 @@ Atlantic/Canary:
     :generic: Giờ Canary
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -6039,7 +6057,7 @@ Atlantic/Faeroe:
     :generic: Giờ Quần đảo Faroe
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -6057,7 +6075,7 @@ Atlantic/Faroe:
     :generic: Giờ Quần đảo Faroe
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -6074,8 +6092,8 @@ Atlantic/Jan_Mayen:
   :GENERIC_LOCATION:
     :generic: Giờ Svalbard và Jan Mayen
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -6093,7 +6111,7 @@ Atlantic/Madeira:
     :generic: Giờ Madeira
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -6126,7 +6144,7 @@ Atlantic/South_Georgia:
   :SHORT_GMT:
     :generic: "-0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Quần đảo Nam Georgia và Nam Sandwich
+    :generic: Giờ Nam Georgia & Quần đảo Nam Sandwich
   :LONG:
     :standard: Giờ Nam Georgia
     :daylight: GMT-02:00
@@ -6136,7 +6154,7 @@ Atlantic/South_Georgia:
     :standard: GMT-2
     :daylight: GMT-2
   :SHORT_GENERIC:
-    :generic: Giờ Quần đảo Nam Georgia và Nam Sandwich
+    :generic: Giờ Nam Georgia & Quần đảo Nam Sandwich
 Atlantic/St_Helena:
   :offset: 0
   :LONG_GMT:
@@ -6182,10 +6200,10 @@ Australia/ACT:
   :GENERIC_LOCATION:
     :generic: Giờ Sydney
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6200,10 +6218,10 @@ Australia/Adelaide:
   :GENERIC_LOCATION:
     :generic: Giờ Adelaide
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Trung Nước Úc
+    :generic: Giờ Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+10:30
@@ -6218,10 +6236,10 @@ Australia/Brisbane:
   :GENERIC_LOCATION:
     :generic: Giờ Brisbane
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Đông Nước Úc
+    :generic: Giờ Chuẩn Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -6236,10 +6254,10 @@ Australia/Broken_Hill:
   :GENERIC_LOCATION:
     :generic: Giờ Broken Hill
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Trung Nước Úc
+    :generic: Giờ Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+10:30
@@ -6254,10 +6272,10 @@ Australia/Canberra:
   :GENERIC_LOCATION:
     :generic: Giờ Sydney
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6272,10 +6290,10 @@ Australia/Currie:
   :GENERIC_LOCATION:
     :generic: Giờ Currie
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6290,10 +6308,10 @@ Australia/Darwin:
   :GENERIC_LOCATION:
     :generic: Giờ Darwin
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Trung Nước Úc
+    :generic: Giờ Chuẩn Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+9:30
@@ -6308,10 +6326,10 @@ Australia/Eucla:
   :GENERIC_LOCATION:
     :generic: Giờ Eucla
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Tây Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Tây Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Tây Australia
+    :daylight: Giờ Mùa Hè Miền Trung Tây Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Trung Tây Nước Úc
+    :generic: Giờ Chuẩn Miền Trung Tây Australia
   :SHORT:
     :standard: GMT+8:45
     :daylight: GMT+8:45
@@ -6326,10 +6344,10 @@ Australia/Hobart:
   :GENERIC_LOCATION:
     :generic: Giờ Hobart
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6362,10 +6380,10 @@ Australia/Lindeman:
   :GENERIC_LOCATION:
     :generic: Giờ Lindeman
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Đông Nước Úc
+    :generic: Giờ Chuẩn Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -6398,10 +6416,10 @@ Australia/Melbourne:
   :GENERIC_LOCATION:
     :generic: Giờ Melbourne
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6416,10 +6434,10 @@ Australia/NSW:
   :GENERIC_LOCATION:
     :generic: Giờ Sydney
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6434,10 +6452,10 @@ Australia/North:
   :GENERIC_LOCATION:
     :generic: Giờ Darwin
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Trung Nước Úc
+    :generic: Giờ Chuẩn Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+9:30
@@ -6452,10 +6470,10 @@ Australia/Perth:
   :GENERIC_LOCATION:
     :generic: Giờ Perth
   :LONG:
-    :standard: Giờ Chuẩn Miền Tây Nước Úc
-    :daylight: Giờ Mùa Hè Miền Tây Nước Úc
+    :standard: Giờ Chuẩn Miền Tây Australia
+    :daylight: Giờ Mùa Hè Miền Tây Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Tây Nước Úc
+    :generic: Giờ Chuẩn Miền Tây Australia
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -6470,10 +6488,10 @@ Australia/Queensland:
   :GENERIC_LOCATION:
     :generic: Giờ Brisbane
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Đông Nước Úc
+    :generic: Giờ Chuẩn Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+10
@@ -6488,10 +6506,10 @@ Australia/South:
   :GENERIC_LOCATION:
     :generic: Giờ Adelaide
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Trung Nước Úc
+    :generic: Giờ Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+10:30
@@ -6506,10 +6524,10 @@ Australia/Sydney:
   :GENERIC_LOCATION:
     :generic: Giờ Sydney
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6524,10 +6542,10 @@ Australia/Tasmania:
   :GENERIC_LOCATION:
     :generic: Giờ Hobart
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6542,10 +6560,10 @@ Australia/Victoria:
   :GENERIC_LOCATION:
     :generic: Giờ Melbourne
   :LONG:
-    :standard: Giờ Chuẩn Miền Đông Nước Úc
-    :daylight: Giờ Mùa Hè Miền Đông Nước Úc
+    :standard: Giờ Chuẩn Miền Đông Australia
+    :daylight: Giờ Mùa Hè Miền Đông Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Đông Nước Úc
+    :generic: Giờ Miền Đông Australia
   :SHORT:
     :standard: GMT+10
     :daylight: GMT+11
@@ -6560,10 +6578,10 @@ Australia/West:
   :GENERIC_LOCATION:
     :generic: Giờ Perth
   :LONG:
-    :standard: Giờ Chuẩn Miền Tây Nước Úc
-    :daylight: Giờ Mùa Hè Miền Tây Nước Úc
+    :standard: Giờ Chuẩn Miền Tây Australia
+    :daylight: Giờ Mùa Hè Miền Tây Australia
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Miền Tây Nước Úc
+    :generic: Giờ Chuẩn Miền Tây Australia
   :SHORT:
     :standard: GMT+8
     :daylight: GMT+8
@@ -6578,10 +6596,10 @@ Australia/Yancowinna:
   :GENERIC_LOCATION:
     :generic: Giờ Broken Hill
   :LONG:
-    :standard: Giờ Chuẩn Miền Trung Nước Úc
-    :daylight: Giờ Mùa Hè Miền Trung Nước Úc
+    :standard: Giờ Chuẩn Miền Trung Australia
+    :daylight: Giờ Mùa Hè Miền Trung Australia
   :LONG_GENERIC:
-    :generic: Giờ Miền Trung Nước Úc
+    :generic: Giờ Miền Trung Australia
   :SHORT:
     :standard: GMT+9:30
     :daylight: GMT+10:30
@@ -6686,15 +6704,15 @@ CST6CDT:
   :GENERIC_LOCATION:
     :generic: GMT-06:00
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: GMT-6
+    :generic: CT
 Canada/Atlantic:
   :offset: -14400000
   :LONG_GMT:
@@ -6705,14 +6723,14 @@ Canada/Atlantic:
     :generic: Giờ Halifax
   :LONG:
     :standard: Giờ Chuẩn Đại Tây Dương
-    :daylight: Giờ Mùa hè Đại Tây Dương
+    :daylight: Giờ mùa hè Đại Tây Dương
   :LONG_GENERIC:
     :generic: Giờ Đại Tây Dương
   :SHORT:
-    :standard: GMT-4
-    :daylight: GMT-3
+    :standard: AST
+    :daylight: ADT
   :SHORT_GENERIC:
-    :generic: Giờ Halifax
+    :generic: AT
 Canada/Central:
   :offset: -21600000
   :LONG_GMT:
@@ -6722,33 +6740,15 @@ Canada/Central:
   :GENERIC_LOCATION:
     :generic: Giờ Winnipeg
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Winnipeg
-Canada/East-Saskatchewan:
-  :offset: -21600000
-  :LONG_GMT:
-    :generic: GMT-06:00
-  :SHORT_GMT:
-    :generic: "-0600"
-  :GENERIC_LOCATION:
-    :generic: Giờ Regina
-  :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
-  :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
-  :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
-  :SHORT_GENERIC:
-    :generic: Giờ Regina
+    :generic: CT
 Canada/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -6758,15 +6758,15 @@ Canada/Eastern:
   :GENERIC_LOCATION:
     :generic: Giờ Toronto
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Toronto
+    :generic: ET
 Canada/Mountain:
   :offset: -25200000
   :LONG_GMT:
@@ -6777,14 +6777,14 @@ Canada/Mountain:
     :generic: Giờ Edmonton
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Edmonton
+    :generic: MT
 Canada/Newfoundland:
   :offset: -12600000
   :LONG_GMT:
@@ -6813,14 +6813,14 @@ Canada/Pacific:
     :generic: Giờ Vancouver
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Vancouver
+    :generic: PT
 Canada/Saskatchewan:
   :offset: -21600000
   :LONG_GMT:
@@ -6830,15 +6830,15 @@ Canada/Saskatchewan:
   :GENERIC_LOCATION:
     :generic: Giờ Regina
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền trung
+    :generic: Giờ chuẩn miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-6
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Regina
+    :generic: CST
 Canada/Yukon:
   :offset: -28800000
   :LONG_GMT:
@@ -6849,47 +6849,47 @@ Canada/Yukon:
     :generic: Giờ Whitehorse
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Whitehorse
+    :generic: PT
 Chile/Continental:
-  :offset: -10800000
+  :offset: -14400000
   :LONG_GMT:
-    :generic: GMT-03:00
+    :generic: GMT-04:00
   :SHORT_GMT:
-    :generic: "-0300"
+    :generic: "-0400"
   :GENERIC_LOCATION:
     :generic: Giờ Chile
   :LONG:
     :standard: Giờ Chuẩn Chile
     :daylight: Giờ Mùa Hè Chile
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Chile
+    :generic: Giờ Chile
   :SHORT:
-    :standard: GMT-3
+    :standard: GMT-4
     :daylight: GMT-3
   :SHORT_GENERIC:
     :generic: Giờ Chile
 Chile/EasterIsland:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Giờ Easter
   :LONG:
     :standard: Giờ Chuẩn Đảo Phục Sinh
     :daylight: Giờ Mùa Hè Đảo Phục Sinh
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đảo Phục Sinh
+    :generic: Giờ Đảo Phục Sinh
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Giờ Easter
@@ -6956,15 +6956,15 @@ EST5EDT:
   :GENERIC_LOCATION:
     :generic: GMT-05:00
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: GMT-5
+    :generic: ET
 Egypt:
   :offset: 7200000
   :LONG_GMT:
@@ -6974,10 +6974,10 @@ Egypt:
   :GENERIC_LOCATION:
     :generic: Giờ Ai Cập
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đông Âu
+    :generic: Giờ chuẩn Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -6990,17 +6990,17 @@ Eire:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
   :LONG:
     :standard: Giờ Trung bình Greenwich
     :daylight: Giờ chuẩn Ai-len
   :LONG_GENERIC:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
 Etc/GMT:
   :offset: 0
   :LONG_GMT:
@@ -7010,10 +7010,10 @@ Etc/GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7028,10 +7028,10 @@ Etc/GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7262,10 +7262,10 @@ Etc/GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7532,10 +7532,10 @@ Etc/GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7550,10 +7550,10 @@ Etc/Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -7568,12 +7568,12 @@ Etc/UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7586,12 +7586,12 @@ Etc/UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7604,12 +7604,12 @@ Etc/Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7622,12 +7622,12 @@ Etc/Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -7640,8 +7640,8 @@ Europe/Amsterdam:
   :GENERIC_LOCATION:
     :generic: Giờ Hà Lan
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7658,8 +7658,8 @@ Europe/Andorra:
   :GENERIC_LOCATION:
     :generic: Giờ Andorra
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7694,8 +7694,8 @@ Europe/Athens:
   :GENERIC_LOCATION:
     :generic: Giờ Hy Lạp
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -7730,8 +7730,8 @@ Europe/Belgrade:
   :GENERIC_LOCATION:
     :generic: Giờ Serbia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7748,8 +7748,8 @@ Europe/Berlin:
   :GENERIC_LOCATION:
     :generic: Giờ Đức
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7766,8 +7766,8 @@ Europe/Bratislava:
   :GENERIC_LOCATION:
     :generic: Giờ Slovakia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7784,8 +7784,8 @@ Europe/Brussels:
   :GENERIC_LOCATION:
     :generic: Giờ Bỉ
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7802,8 +7802,8 @@ Europe/Bucharest:
   :GENERIC_LOCATION:
     :generic: Giờ Romania
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -7818,17 +7818,17 @@ Europe/Budapest:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Giờ Hungari
+    :generic: Giờ Hungary
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Hungari
+    :generic: Giờ Hungary
 Europe/Busingen:
   :offset: 3600000
   :LONG_GMT:
@@ -7838,8 +7838,8 @@ Europe/Busingen:
   :GENERIC_LOCATION:
     :generic: Giờ Busingen
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7856,8 +7856,8 @@ Europe/Chisinau:
   :GENERIC_LOCATION:
     :generic: Giờ Moldova
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -7874,8 +7874,8 @@ Europe/Copenhagen:
   :GENERIC_LOCATION:
     :generic: Giờ Đan Mạch
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7890,17 +7890,17 @@ Europe/Dublin:
   :SHORT_GMT:
     :generic: "+0000"
   :GENERIC_LOCATION:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
   :LONG:
     :standard: Giờ Trung bình Greenwich
     :daylight: Giờ chuẩn Ai-len
   :LONG_GENERIC:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
   :SHORT:
     :standard: GMT
     :daylight: GMT+1
   :SHORT_GENERIC:
-    :generic: Giờ Ai-len
+    :generic: Giờ Ireland
 Europe/Gibraltar:
   :offset: 3600000
   :LONG_GMT:
@@ -7910,8 +7910,8 @@ Europe/Gibraltar:
   :GENERIC_LOCATION:
     :generic: Giờ Gibraltar
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -7946,8 +7946,8 @@ Europe/Helsinki:
   :GENERIC_LOCATION:
     :generic: Giờ Phần Lan
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -7974,20 +7974,20 @@ Europe/Isle_of_Man:
   :SHORT_GENERIC:
     :generic: Giờ Đảo Man
 Europe/Istanbul:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Giờ Thổ Nhĩ Kỳ
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Giờ Đông Âu
+    :generic: Giờ Thổ Nhĩ Kỳ
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Giờ Thổ Nhĩ Kỳ
@@ -8018,10 +8018,10 @@ Europe/Kaliningrad:
   :GENERIC_LOCATION:
     :generic: Giờ Kaliningrad
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đông Âu
+    :generic: Giờ chuẩn Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
@@ -8036,8 +8036,8 @@ Europe/Kiev:
   :GENERIC_LOCATION:
     :generic: Giờ Ukraina
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8046,23 +8046,23 @@ Europe/Kiev:
   :SHORT_GENERIC:
     :generic: Giờ Ukraina
 Europe/Kirov:
-  :offset: 0
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0300"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Kirov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Kirov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+3
+    :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Kirov
 Europe/Lisbon:
   :offset: 0
   :LONG_GMT:
@@ -8073,7 +8073,7 @@ Europe/Lisbon:
     :generic: Giờ Bồ Đào Nha
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -8090,8 +8090,8 @@ Europe/Ljubljana:
   :GENERIC_LOCATION:
     :generic: Giờ Slovenia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8126,8 +8126,8 @@ Europe/Luxembourg:
   :GENERIC_LOCATION:
     :generic: Giờ Luxembourg
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8144,8 +8144,8 @@ Europe/Madrid:
   :GENERIC_LOCATION:
     :generic: Giờ Tây Ban Nha
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8162,8 +8162,8 @@ Europe/Malta:
   :GENERIC_LOCATION:
     :generic: Giờ Malta
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8180,8 +8180,8 @@ Europe/Mariehamn:
   :GENERIC_LOCATION:
     :generic: Giờ Quần đảo Åland
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8198,10 +8198,10 @@ Europe/Minsk:
   :GENERIC_LOCATION:
     :generic: Giờ Belarus
   :LONG:
-    :standard: Giờ Châu Âu Viễn Đông
-    :daylight: GMT+03:00
+    :standard: Giờ Chuẩn Matxcơva
+    :daylight: Giờ Mùa Hè Matxcơva
   :LONG_GENERIC:
-    :generic: Giờ Châu Âu Viễn Đông
+    :generic: Giờ Chuẩn Matxcơva
   :SHORT:
     :standard: GMT+3
     :daylight: GMT+3
@@ -8216,8 +8216,8 @@ Europe/Monaco:
   :GENERIC_LOCATION:
     :generic: Giờ Monaco
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8250,17 +8250,17 @@ Europe/Nicosia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Síp
+    :generic: Giờ Nicosia
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Síp
+    :generic: Giờ Nicosia
 Europe/Oslo:
   :offset: 3600000
   :LONG_GMT:
@@ -8270,8 +8270,8 @@ Europe/Oslo:
   :GENERIC_LOCATION:
     :generic: Giờ Na Uy
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8288,8 +8288,8 @@ Europe/Paris:
   :GENERIC_LOCATION:
     :generic: Giờ Pháp
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8306,8 +8306,8 @@ Europe/Podgorica:
   :GENERIC_LOCATION:
     :generic: Giờ Montenegro
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8322,17 +8322,17 @@ Europe/Prague:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Giờ Cộng hòa Séc
+    :generic: Giờ Séc
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Cộng hòa Séc
+    :generic: Giờ Séc
 Europe/Riga:
   :offset: 7200000
   :LONG_GMT:
@@ -8342,8 +8342,8 @@ Europe/Riga:
   :GENERIC_LOCATION:
     :generic: Giờ Latvia
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8358,17 +8358,17 @@ Europe/Rome:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Giờ Ý
+    :generic: Giờ Italy
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Ý
+    :generic: Giờ Italy
 Europe/Samara:
   :offset: 14400000
   :LONG_GMT:
@@ -8396,8 +8396,8 @@ Europe/San_Marino:
   :GENERIC_LOCATION:
     :generic: Giờ San Marino
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8414,8 +8414,8 @@ Europe/Sarajevo:
   :GENERIC_LOCATION:
     :generic: Giờ Bosnia và Herzegovina
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8424,23 +8424,23 @@ Europe/Sarajevo:
   :SHORT_GENERIC:
     :generic: Giờ Bosnia và Herzegovina
 Europe/Saratov:
-  :offset: 0
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0000"
+    :generic: "+0400"
   :GENERIC_LOCATION:
-    :generic: GMT
+    :generic: Giờ Saratov
   :LONG:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+04:00
+    :daylight: GMT+04:00
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Saratov
   :SHORT:
-    :standard: GMT
-    :daylight: GMT
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
-    :generic: GMT
+    :generic: Giờ Saratov
 Europe/Simferopol:
   :offset: 10800000
   :LONG_GMT:
@@ -8466,17 +8466,17 @@ Europe/Skopje:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Giờ Macedonia
+    :generic: Giờ Bắc Macedonia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Macedonia
+    :generic: Giờ Bắc Macedonia
 Europe/Sofia:
   :offset: 7200000
   :LONG_GMT:
@@ -8484,17 +8484,17 @@ Europe/Sofia:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Bungari
+    :generic: Giờ Bulgaria
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Bungari
+    :generic: Giờ Bulgaria
 Europe/Stockholm:
   :offset: 3600000
   :LONG_GMT:
@@ -8504,8 +8504,8 @@ Europe/Stockholm:
   :GENERIC_LOCATION:
     :generic: Giờ Thụy Điển
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8522,8 +8522,8 @@ Europe/Tallinn:
   :GENERIC_LOCATION:
     :generic: Giờ Estonia
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8538,17 +8538,17 @@ Europe/Tirane:
   :SHORT_GMT:
     :generic: "+0100"
   :GENERIC_LOCATION:
-    :generic: Giờ Albani
+    :generic: Giờ Albania
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
     :standard: GMT+1
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Albani
+    :generic: Giờ Albania
 Europe/Tiraspol:
   :offset: 7200000
   :LONG_GMT:
@@ -8558,8 +8558,8 @@ Europe/Tiraspol:
   :GENERIC_LOCATION:
     :generic: Giờ Moldova
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8592,17 +8592,17 @@ Europe/Uzhgorod:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Uzhgorod
+    :generic: Giờ Uzhhorod
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Uzhgorod
+    :generic: Giờ Uzhhorod
 Europe/Vaduz:
   :offset: 3600000
   :LONG_GMT:
@@ -8612,8 +8612,8 @@ Europe/Vaduz:
   :GENERIC_LOCATION:
     :generic: Giờ Liechtenstein
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8630,8 +8630,8 @@ Europe/Vatican:
   :GENERIC_LOCATION:
     :generic: Giờ Thành Vatican
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8648,8 +8648,8 @@ Europe/Vienna:
   :GENERIC_LOCATION:
     :generic: Giờ Áo
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8664,33 +8664,33 @@ Europe/Vilnius:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Lít-va
+    :generic: Giờ Litva
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+3
   :SHORT_GENERIC:
-    :generic: Giờ Lít-va
+    :generic: Giờ Litva
 Europe/Volgograd:
-  :offset: 10800000
+  :offset: 14400000
   :LONG_GMT:
-    :generic: GMT+03:00
+    :generic: GMT+04:00
   :SHORT_GMT:
-    :generic: "+0300"
+    :generic: "+0400"
   :GENERIC_LOCATION:
     :generic: Giờ Volgograd
   :LONG:
-    :standard: Giờ Chuẩn Matxcơva
-    :daylight: Giờ Mùa Hè Matxcơva
+    :standard: Giờ Chuẩn Volgograd
+    :daylight: Giờ Mùa Hè Volgograd
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Matxcơva
+    :generic: Giờ Chuẩn Volgograd
   :SHORT:
-    :standard: GMT+3
-    :daylight: GMT+3
+    :standard: GMT+4
+    :daylight: GMT+4
   :SHORT_GENERIC:
     :generic: Giờ Volgograd
 Europe/Warsaw:
@@ -8702,8 +8702,8 @@ Europe/Warsaw:
   :GENERIC_LOCATION:
     :generic: Giờ Ba Lan
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8720,8 +8720,8 @@ Europe/Zagreb:
   :GENERIC_LOCATION:
     :generic: Giờ Croatia
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8738,8 +8738,8 @@ Europe/Zaporozhye:
   :GENERIC_LOCATION:
     :generic: Giờ Zaporozhye
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
     :generic: Giờ Đông Âu
   :SHORT:
@@ -8756,8 +8756,8 @@ Europe/Zurich:
   :GENERIC_LOCATION:
     :generic: Giờ Thụy Sĩ
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -8828,10 +8828,10 @@ GMT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8846,10 +8846,10 @@ GMT+0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8864,10 +8864,10 @@ GMT-0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8882,10 +8882,10 @@ GMT0:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8900,10 +8900,10 @@ Greenwich:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Trung bình Greenwich
     :daylight: GMT
   :LONG_GENERIC:
-    :generic: GMT
+    :generic: Giờ Trung bình Greenwich
   :SHORT:
     :standard: GMT
     :daylight: GMT
@@ -8988,7 +8988,7 @@ Indian/Chagos:
   :SHORT_GMT:
     :generic: "+0600"
   :GENERIC_LOCATION:
-    :generic: Giờ Thuộc địa Anh tại Ấn Độ Dương
+    :generic: Giờ Lãnh thổ Ấn Độ Dương thuộc Anh
   :LONG:
     :standard: Giờ Ấn Độ Dương
     :daylight: GMT+06:00
@@ -8998,7 +8998,7 @@ Indian/Chagos:
     :standard: GMT+6
     :daylight: GMT+6
   :SHORT_GENERIC:
-    :generic: Giờ Thuộc địa Anh tại Ấn Độ Dương
+    :generic: Giờ Lãnh thổ Ấn Độ Dương thuộc Anh
 Indian/Christmas:
   :offset: 25200000
   :LONG_GMT:
@@ -9060,7 +9060,7 @@ Indian/Kerguelen:
   :SHORT_GMT:
     :generic: "+0500"
   :GENERIC_LOCATION:
-    :generic: Giờ Lãnh thổ miền nam nước Pháp
+    :generic: Giờ Lãnh thổ phía Nam Thuộc Pháp
   :LONG:
     :standard: Giờ Nam Cực và Nam Nước Pháp
     :daylight: GMT+05:00
@@ -9070,7 +9070,7 @@ Indian/Kerguelen:
     :standard: GMT+5
     :daylight: GMT+5
   :SHORT_GENERIC:
-    :generic: Giờ Lãnh thổ miền nam nước Pháp
+    :generic: Giờ Lãnh thổ phía Nam Thuộc Pháp
 Indian/Mahe:
   :offset: 14400000
   :LONG_GMT:
@@ -9206,15 +9206,15 @@ Jamaica:
   :GENERIC_LOCATION:
     :generic: Giờ Jamaica
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ chuẩn miền đông
+    :generic: Giờ chuẩn miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-5
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Jamaica
+    :generic: EST
 Japan:
   :offset: 32400000
   :LONG_GMT:
@@ -9258,17 +9258,17 @@ Libya:
   :SHORT_GMT:
     :generic: "+0200"
   :GENERIC_LOCATION:
-    :generic: Giờ Li-bi
+    :generic: Giờ Libya
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: Giờ chuẩn Đông Âu
+    :daylight: Giờ mùa hè Đông Âu
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đông Âu
+    :generic: Giờ chuẩn Đông Âu
   :SHORT:
     :standard: GMT+2
     :daylight: GMT+2
   :SHORT_GENERIC:
-    :generic: Giờ Li-bi
+    :generic: Giờ Libya
 MET:
   :offset: 3600000
   :LONG_GMT:
@@ -9315,14 +9315,14 @@ MST7MDT:
     :generic: GMT-07:00
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: GMT-7
+    :generic: MT
 Mexico/BajaNorte:
   :offset: -28800000
   :LONG_GMT:
@@ -9333,14 +9333,14 @@ Mexico/BajaNorte:
     :generic: Giờ Tijuana
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Tijuana
+    :generic: PT
 Mexico/BajaSur:
   :offset: -25200000
   :LONG_GMT:
@@ -9368,15 +9368,15 @@ Mexico/General:
   :GENERIC_LOCATION:
     :generic: Giờ Mexico City
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Mexico City
+    :generic: CT
 NZ:
   :offset: 43200000
   :LONG_GMT:
@@ -9423,14 +9423,14 @@ Navajo:
     :generic: Giờ Denver
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Denver
+    :generic: MT
 PRC:
   :offset: 28800000
   :LONG_GMT:
@@ -9459,14 +9459,14 @@ PST8PDT:
     :generic: GMT-08:00
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: GMT-8
+    :generic: PT
 Pacific/Apia:
   :offset: 46800000
   :LONG_GMT:
@@ -9477,7 +9477,7 @@ Pacific/Apia:
     :generic: Giờ Samoa
   :LONG:
     :standard: Giờ Chuẩn Apia
-    :daylight: Giờ Ban ngày Apia
+    :daylight: Giờ Mùa Hè Apia
   :LONG_GENERIC:
     :generic: Giờ Apia
   :SHORT:
@@ -9558,20 +9558,20 @@ Pacific/Chuuk:
   :SHORT_GENERIC:
     :generic: Giờ Chuuk
 Pacific/Easter:
-  :offset: -18000000
+  :offset: -21600000
   :LONG_GMT:
-    :generic: GMT-05:00
+    :generic: GMT-06:00
   :SHORT_GMT:
-    :generic: "-0500"
+    :generic: "-0600"
   :GENERIC_LOCATION:
     :generic: Giờ Easter
   :LONG:
     :standard: Giờ Chuẩn Đảo Phục Sinh
     :daylight: Giờ Mùa Hè Đảo Phục Sinh
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Đảo Phục Sinh
+    :generic: Giờ Đảo Phục Sinh
   :SHORT:
-    :standard: GMT-5
+    :standard: GMT-6
     :daylight: GMT-5
   :SHORT_GENERIC:
     :generic: Giờ Easter
@@ -9746,15 +9746,15 @@ Pacific/Honolulu:
   :GENERIC_LOCATION:
     :generic: Giờ Honolulu
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Hawaii-Aleutian
+    :generic: Giờ Chuẩn Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-10
+    :standard: HST
+    :daylight: HDT
   :SHORT_GENERIC:
-    :generic: Giờ Honolulu
+    :generic: Giờ HST
 Pacific/Johnston:
   :offset: -36000000
   :LONG_GMT:
@@ -9764,15 +9764,15 @@ Pacific/Johnston:
   :GENERIC_LOCATION:
     :generic: Giờ Johnston
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Hawaii-Aleutian
+    :generic: Giờ Chuẩn Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-10
+    :standard: HAST
+    :daylight: HADT
   :SHORT_GENERIC:
-    :generic: Giờ Johnston
+    :generic: HAST
 Pacific/Kiritimati:
   :offset: 50400000
   :LONG_GMT:
@@ -9960,7 +9960,7 @@ Pacific/Pago_Pago:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
   :LONG:
     :standard: Giờ Chuẩn Samoa
     :daylight: Giờ ban ngày Samoa
@@ -9970,7 +9970,7 @@ Pacific/Pago_Pago:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
 Pacific/Palau:
   :offset: 32400000
   :LONG_GMT:
@@ -10104,7 +10104,7 @@ Pacific/Samoa:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
   :LONG:
     :standard: Giờ Chuẩn Samoa
     :daylight: Giờ ban ngày Samoa
@@ -10114,7 +10114,7 @@ Pacific/Samoa:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
 Pacific/Tahiti:
   :offset: -36000000
   :LONG_GMT:
@@ -10250,8 +10250,8 @@ Poland:
   :GENERIC_LOCATION:
     :generic: Giờ Ba Lan
   :LONG:
-    :standard: Giờ Chuẩn Trung Âu
-    :daylight: Giờ Mùa Hè Trung Âu
+    :standard: Giờ chuẩn Trung Âu
+    :daylight: Giờ mùa hè Trung Âu
   :LONG_GENERIC:
     :generic: Giờ Trung Âu
   :SHORT:
@@ -10269,7 +10269,7 @@ Portugal:
     :generic: Giờ Bồ Đào Nha
   :LONG:
     :standard: Giờ Chuẩn Tây Âu
-    :daylight: Giờ Mùa hè Tây Âu
+    :daylight: Giờ mùa hè Tây Âu
   :LONG_GENERIC:
     :generic: Giờ Tây Âu
   :SHORT:
@@ -10332,20 +10332,20 @@ Singapore:
   :SHORT_GENERIC:
     :generic: Giờ Singapore
 Turkey:
-  :offset: 7200000
+  :offset: 10800000
   :LONG_GMT:
-    :generic: GMT+02:00
+    :generic: GMT+03:00
   :SHORT_GMT:
-    :generic: "+0200"
+    :generic: "+0300"
   :GENERIC_LOCATION:
     :generic: Giờ Thổ Nhĩ Kỳ
   :LONG:
-    :standard: Giờ Chuẩn Đông Âu
-    :daylight: Giờ Mùa Hè Đông Âu
+    :standard: GMT+03:00
+    :daylight: GMT+03:00
   :LONG_GENERIC:
-    :generic: Giờ Đông Âu
+    :generic: Giờ Thổ Nhĩ Kỳ
   :SHORT:
-    :standard: GMT+2
+    :standard: GMT+3
     :daylight: GMT+3
   :SHORT_GENERIC:
     :generic: Giờ Thổ Nhĩ Kỳ
@@ -10358,12 +10358,12 @@ UCT:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10381,10 +10381,10 @@ US/Alaska:
   :LONG_GENERIC:
     :generic: Giờ Alaska
   :SHORT:
-    :standard: GMT-9
-    :daylight: GMT-8
+    :standard: AKST
+    :daylight: AKDT
   :SHORT_GENERIC:
-    :generic: Giờ Anchorage
+    :generic: AKT
 US/Aleutian:
   :offset: -36000000
   :LONG_GMT:
@@ -10394,15 +10394,15 @@ US/Aleutian:
   :GENERIC_LOCATION:
     :generic: Giờ Adak
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Hawaii-Aleutian (Adak)
+    :generic: Giờ Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-9
+    :standard: HAST
+    :daylight: HADT
   :SHORT_GENERIC:
-    :generic: Giờ Adak
+    :generic: HAT
 US/Arizona:
   :offset: -25200000
   :LONG_GMT:
@@ -10413,14 +10413,14 @@ US/Arizona:
     :generic: Giờ Phoenix
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ chuẩn miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-7
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Phoenix
+    :generic: MST
 US/Central:
   :offset: -21600000
   :LONG_GMT:
@@ -10430,15 +10430,15 @@ US/Central:
   :GENERIC_LOCATION:
     :generic: Giờ Chicago
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Chicago
+    :generic: CT
 US/East-Indiana:
   :offset: -18000000
   :LONG_GMT:
@@ -10448,15 +10448,15 @@ US/East-Indiana:
   :GENERIC_LOCATION:
     :generic: Giờ Indianapolis
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Indianapolis
+    :generic: ET
 US/Eastern:
   :offset: -18000000
   :LONG_GMT:
@@ -10466,15 +10466,15 @@ US/Eastern:
   :GENERIC_LOCATION:
     :generic: Giờ New York
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ New York
+    :generic: ET
 US/Hawaii:
   :offset: -36000000
   :LONG_GMT:
@@ -10484,15 +10484,15 @@ US/Hawaii:
   :GENERIC_LOCATION:
     :generic: Giờ Honolulu
   :LONG:
-    :standard: Giờ Chuẩn Hawaii-Aleutian
-    :daylight: Giờ Mùa Hè Hawaii-Aleutian
+    :standard: Giờ Chuẩn Hawaii-Aleut
+    :daylight: Giờ Mùa Hè Hawaii-Aleut
   :LONG_GENERIC:
-    :generic: Giờ Chuẩn Hawaii-Aleutian
+    :generic: Giờ Chuẩn Hawaii-Aleut
   :SHORT:
-    :standard: GMT-10
-    :daylight: GMT-10
+    :standard: HST
+    :daylight: HDT
   :SHORT_GENERIC:
-    :generic: Giờ Honolulu
+    :generic: Giờ HST
 US/Indiana-Starke:
   :offset: -21600000
   :LONG_GMT:
@@ -10502,15 +10502,15 @@ US/Indiana-Starke:
   :GENERIC_LOCATION:
     :generic: Giờ Knox, Indiana
   :LONG:
-    :standard: Giờ chuẩn miền trung
-    :daylight: Giờ ban ngày miền trung
+    :standard: Giờ chuẩn miền Trung
+    :daylight: Giờ mùa hè miền Trung
   :LONG_GENERIC:
-    :generic: Giờ miền trung
+    :generic: Giờ miền Trung
   :SHORT:
-    :standard: GMT-6
-    :daylight: GMT-5
+    :standard: CST
+    :daylight: CDT
   :SHORT_GENERIC:
-    :generic: Giờ Knox, Indiana
+    :generic: CT
 US/Michigan:
   :offset: -18000000
   :LONG_GMT:
@@ -10520,15 +10520,15 @@ US/Michigan:
   :GENERIC_LOCATION:
     :generic: Giờ Detroit
   :LONG:
-    :standard: Giờ chuẩn miền đông
-    :daylight: Giờ ban ngày miền đông
+    :standard: Giờ chuẩn miền Đông
+    :daylight: Giờ mùa hè miền Đông
   :LONG_GENERIC:
-    :generic: Giờ miền đông
+    :generic: Giờ miền Đông
   :SHORT:
-    :standard: GMT-5
-    :daylight: GMT-4
+    :standard: EST
+    :daylight: EDT
   :SHORT_GENERIC:
-    :generic: Giờ Detroit
+    :generic: ET
 US/Mountain:
   :offset: -25200000
   :LONG_GMT:
@@ -10539,14 +10539,14 @@ US/Mountain:
     :generic: Giờ Denver
   :LONG:
     :standard: Giờ chuẩn miền núi
-    :daylight: Giờ ban ngày miền núi
+    :daylight: Giờ mùa hè miền núi
   :LONG_GENERIC:
     :generic: Giờ miền núi
   :SHORT:
-    :standard: GMT-7
-    :daylight: GMT-6
+    :standard: MST
+    :daylight: MDT
   :SHORT_GENERIC:
-    :generic: Giờ Denver
+    :generic: MT
 US/Pacific:
   :offset: -28800000
   :LONG_GMT:
@@ -10557,14 +10557,14 @@ US/Pacific:
     :generic: Giờ Los Angeles
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Los Angeles
+    :generic: PT
 US/Pacific-New:
   :offset: -28800000
   :LONG_GMT:
@@ -10575,14 +10575,14 @@ US/Pacific-New:
     :generic: Giờ Los Angeles
   :LONG:
     :standard: Giờ chuẩn Thái Bình Dương
-    :daylight: Giờ ban ngày Thái Bình Dương
+    :daylight: Giờ mùa hè Thái Bình Dương
   :LONG_GENERIC:
     :generic: Giờ Thái Bình Dương
   :SHORT:
-    :standard: GMT-8
-    :daylight: GMT-7
+    :standard: PST
+    :daylight: PDT
   :SHORT_GENERIC:
-    :generic: Giờ Los Angeles
+    :generic: PT
 US/Samoa:
   :offset: -39600000
   :LONG_GMT:
@@ -10590,7 +10590,7 @@ US/Samoa:
   :SHORT_GMT:
     :generic: "-1100"
   :GENERIC_LOCATION:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
   :LONG:
     :standard: Giờ Chuẩn Samoa
     :daylight: Giờ ban ngày Samoa
@@ -10600,7 +10600,7 @@ US/Samoa:
     :standard: GMT-11
     :daylight: GMT-11
   :SHORT_GENERIC:
-    :generic: Giờ Đảo Somoa thuộc Mỹ
+    :generic: Giờ Samoa thuộc Mỹ
 UTC:
   :offset: 0
   :LONG_GMT:
@@ -10610,12 +10610,12 @@ UTC:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10628,12 +10628,12 @@ Universal:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT
@@ -10682,12 +10682,12 @@ Zulu:
   :GENERIC_LOCATION:
     :generic: GMT
   :LONG:
-    :standard: GMT
+    :standard: Giờ Phối hợp Quốc tế
     :daylight: GMT
   :LONG_GENERIC:
     :generic: GMT
   :SHORT:
-    :standard: GMT
+    :standard: UTC
     :daylight: GMT
   :SHORT_GENERIC:
     :generic: GMT

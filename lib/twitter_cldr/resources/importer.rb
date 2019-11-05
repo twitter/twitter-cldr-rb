@@ -38,7 +38,7 @@ module TwitterCldr
         def default_params
           parameters.merge(
             output_path: @output_path,
-            locales: @locales,
+            locales: get_locales,
             ruby_engine: @ruby_engine || DEFAULT_ENGINE
           )
         end
@@ -49,6 +49,16 @@ module TwitterCldr
 
         def parameters
           @parameters ||= {}
+        end
+
+        private
+
+        def get_locales
+          if ENV.include?('LOCALES')
+            ENV['LOCALES'].split(',').map { |loc| loc.strip.to_sym }
+          else
+            @locales
+          end
         end
       end
 
@@ -65,10 +75,11 @@ module TwitterCldr
 
       def import
         if can_import?
+          puts "Importing #{name}..."
           prepare
           execute
         else
-          raise "Can't import #{self.class.name}: #{importability_errors.first}"
+          raise "Can't import #{name}: #{importability_errors.first}"
         end
       end
 
@@ -79,6 +90,15 @@ module TwitterCldr
       end
 
       private
+
+      def name
+        @name ||= self.class.name
+          .split('::').last
+          .chomp('Importer')
+          .gsub(/([A-Z])([a-z])/) { " #{$1.downcase}#{$2}" }
+          .strip
+          .tap { |n| n << 's' unless n.end_with?('s') }
+      end
 
       def importability_errors
         @importability_errors ||= [].tap do |errors|

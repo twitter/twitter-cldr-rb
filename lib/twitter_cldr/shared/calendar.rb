@@ -106,6 +106,10 @@ module TwitterCldr
         @@calendar_cache ||= {}
       end
 
+      def day_periods_cache
+        @@day_periods_cache ||= {}
+      end
+
       def get_order_for(data_reader_const, options)
         key_array = [data_reader_const.to_s, @locale] + options.keys.sort + options.values.sort
         cache_key = TwitterCldr::Utils.compute_cache_key(key_array)

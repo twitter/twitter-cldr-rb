@@ -89,12 +89,7 @@ describe TwitterCldr::Localized::LocalizedDateTime do
         data_reader = TwitterCldr::DataReaders::CalendarDataReader.new(locale)
         data_reader.additional_format_selector.patterns.each do |pattern|
           expect do
-            begin
-              date_time.localize(locale).to_additional_s(pattern.to_s)
-            rescue => e
-              # binding.pry
-              raise
-            end
+            date_time.localize(locale).to_additional_s(pattern.to_s)
           end.to_not raise_error
         end
       end

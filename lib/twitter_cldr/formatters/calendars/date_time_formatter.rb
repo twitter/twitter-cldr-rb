@@ -205,10 +205,22 @@ module TwitterCldr
       end
 
       def period(time, pattern, length, options = {})
-        # Always use :wide form. Day-period design was changed in CLDR -
-        # http://cldr.unicode.org/development/development-process/design-proposals/day-period-design that means some
-        # major changes are required for a full support of day periods.
-        calendar.periods(:wide)[time.strftime('%p').downcase.to_sym]
+        if pattern[0] == 'a'
+          return calendar.periods(:wide, :format)[time.strftime('%p').downcase.to_sym]
+        end
+
+        period_type = TwitterCldr::Shared::DayPeriods
+          .instance(data_reader.locale)
+          .period_type_for(time)
+
+        if length <= 3
+          calendar.periods(:abbreviated, :format)[period_type]
+        elsif length == 4 || length > 5
+          calendar.periods(:wide, :format)[period_type]
+        else
+          # length == 5
+          calendar.periods(:narrow, :format)[period_type]
+        end
       end
 
       def hour(time, pattern, length, options = {})

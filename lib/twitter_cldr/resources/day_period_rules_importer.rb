@@ -5,9 +5,6 @@
 
 require 'nokogiri'
 require 'fileutils'
-require 'parallel'
-require 'etc'
-require 'set'
 
 module TwitterCldr
   module Resources
@@ -39,7 +36,7 @@ module TwitterCldr
 
       def merged_rule_sets
         {}.tap do |results|
-          TwitterCldr.supported_locales.each do |locale_sym|
+          params[:locales].each do |locale_sym|
             locale = TwitterCldr::Shared::Locale.parse(locale_sym.to_s)
             results[locale.to_s('-')] ||= {}
 

@@ -15,7 +15,7 @@ group :development do
   gem 'nokogiri', "~> 1.0"
   gem 'parallel'
 
-  gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'mapzones' # 'svenfuchs/ruby-cldr'
   gem 'i18n'
   gem 'cldr-plurals', '~> 1.0'
 

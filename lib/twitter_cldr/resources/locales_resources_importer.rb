@@ -42,6 +42,7 @@ module TwitterCldr
         segments_root
         territories_containment
         likely_subtags
+        metazones
       ]
 
       private

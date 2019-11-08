@@ -26,6 +26,7 @@ module TwitterCldr
       }
 
       def execute
+        binding.pry
         output_path = params.fetch(:output_path)
         FileUtils.mkdir_p(output_path)
 

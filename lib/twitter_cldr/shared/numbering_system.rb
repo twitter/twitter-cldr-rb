@@ -26,9 +26,15 @@ module TwitterCldr
         def for_locale(locale, format = :decimal)
           locale_cache[locale] ||= begin
             num_resource = TwitterCldr.get_locale_resource(locale, :numbers)
+
             system_name = TwitterCldr::Utils.traverse_hash(
               num_resource[locale], [:numbers, :formats, format, :number_system]
             )
+
+            system_name ||= TwitterCldr::Utils.traverse_hash(
+              num_resource[locale], [:numbers, :default_number_systems, :default]
+            )
+
             for_name(system_name) if system_name
           end
         end

@@ -56,11 +56,11 @@ module TwitterCldr
       end
 
       def gmt_format
-        resource[:formats][:gmt_format][:generic]
+        resource[:formats][:gmt_format]
       end
 
       def gmt_zero_format
-        resource[:formats][:gmt_zero_format][:generic]
+        resource[:formats][:gmt_zero_format]
       end
 
       def hour_format(type)
@@ -73,7 +73,7 @@ module TwitterCldr
       end
 
       def hour_formats
-        @hour_formats ||= resource[:formats][:hour_format][:generic].split(';')
+        @hour_formats ||= resource[:formats][:hour_format].split(';')
       end
     end
   end

@@ -8,9 +8,9 @@ module TwitterCldr
     class LocationTimezone < Timezone
       def to_s(type = DEFAULT_TYPE)
         if country && is_primary?
-          region_format(type).sub('{0}', country)
+          region_format.sub('{0}', country)
         else
-          region_format(type).sub('{0}', city)
+          region_format.sub('{0}', city)
         end
       end
 
@@ -24,14 +24,7 @@ module TwitterCldr
         @tz_country ||= TZInfo::Country.get(country_code)
       end
 
-      # @TODO do that crazy 184 day thing, bring over from NonLocationTimezone
-      def region_format(type)
-        region_formats[type] ||
-          region_formats[:generic] ||
-          region_formats[:standard]
-      end
-
-      def region_formats
+      def region_format
         resource[:formats][:region_format]
       end
 

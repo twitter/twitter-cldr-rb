@@ -1,11 +1,18 @@
 --- 
 :fil: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "Standard na Oras sa {0}"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT{0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "Daylight Time ng {0}"
+      :generic: "Oras sa {0}"
+      :standard: "Standard na Oras sa {0}"
   :metazones: 
     :Afghanistan: 
       :long: 

@@ -5,6 +5,7 @@
 
 require 'fileutils'
 require 'time'
+require 'tzinfo/data'
 
 module TwitterCldr
   module Resources
@@ -27,6 +28,8 @@ module TwitterCldr
 
       def execute
         binding.pry
+        check_tzdata_versions
+
         output_path = params.fetch(:output_path)
         FileUtils.mkdir_p(output_path)
 
@@ -41,12 +44,35 @@ module TwitterCldr
 
       private
 
+      def check_tzdata_versions
+        resource_bundle = requirements[:icu].get_class('com.ibm.icu.util.UResourceBundle')
+        icu_data = requirements[:icu].get_class('com.ibm.icu.impl.ICUData')
+        zone_info_res_field = requirements[:icu]
+          .get_class('com.ibm.icu.impl.OlsonTimeZone')
+          .java_class
+          .declared_field(:ZONEINFORES)
+
+        zone_info_res_field.accessible = true
+        zone_info_res = zone_info_res_field.value(nil)
+
+        bundle = resource_bundle.getBundleInstance(
+          icu_data.const_get(:ICU_BASE_NAME), zone_info_res
+        )
+
+        icu_tz_version = bundle.get('TZVersion').getString
+        tzinfo_version = TZInfo::Data::Version::TZDATA
+
+        if icu_tz_version != tzinfo_version
+          raise RuntimeError, 'Timezone database versions do not match. ICU is using '\
+            "#{icu_tz_version} and the tzinfo-data gem is using #{tzinfo_version}."
+        end
+      end
+
       def generate_test_cases_for_locale(locale)
         ulocale = locale_class.new(locale.to_s)
 
         TZInfo::Timezone.all_identifiers.each_with_object({}) do |tz_id, ret|
           tz = tz_class.getTimeZone(tz_id)
-          # offset = tz.getOffset(Time.now.to_i)
           offset = tz.getRawOffset
 
           ret[tz_id] = {

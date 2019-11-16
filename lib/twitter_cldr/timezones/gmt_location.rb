@@ -5,16 +5,25 @@
 
 module TwitterCldr
   module Timezones
-    class GmtTimezone < Timezone
-      def to_s(format = DEFAULT_FORMAT)
-        case format.to_s
-          when 'short'
-            hour_fmt = offset_hour.to_s.rjust(2, '0')
-            minute_fmt = offset_minute.to_s.rjust(2, '0')
-            sign = sign_for(offset.utc_offset) == :positive ? '+' : '-'
+    class GmtLocation < Location
+      FORMATS = [:long, :short].freeze
+      DEFAULT_FORMAT = :short
+
+      def display_name_for(date, format = DEFAULT_FORMAT)
+        offset = tz.period_for_local(date).offset
+        offset_sec = offset.base_utc_offset + offset.std_offset
+        offset_hour ||= offset_sec / 60 / 60
+        offset_min ||= (offset_sec / 60) % 60
+
+        case format
+          when :short
+            hour_fmt = offset_hour.abs.to_s.rjust(2, '0')
+            minute_fmt = offset_min.abs.to_s.rjust(2, '0')
+            sign = sign_for(offset_sec) == :positive ? '+' : '-'
             "#{sign}#{hour_fmt}#{minute_fmt}"
 
-          when 'long'
+          when :long
+            # TODO: this is broken, need special formatting rules
             if offset_hour == 0 && offset_minute == 0
               gmt_zero_format
             else
@@ -32,27 +41,8 @@ module TwitterCldr
         number.positive? || number.zero? ? :positive : :negative
       end
 
-      def hour
-        type = sign_for(offset.utc_offset)
-        time = Time.new(1970, 1, 1, offset_hour, offset_minute)
-        formatted_hour = hour_formatter.format(hour_tokens(type), time)
-        numbering_system.transliterate(formatted_hour)
-      end
-
       def numbering_system
         @numbering_system ||= TwitterCldr::Shared::NumberingSystem.for_locale(locale)
-      end
-
-      def hour_formatter
-        @hour_formatter = TwitterCldr::Formatters::DateTimeFormatter.new(nil)
-      end
-
-      def hour_tokens(type)
-        (@hour_tokens ||= {})[type] ||= hour_tokenizer.tokenize(hour_format(type))
-      end
-
-      def hour_tokenizer
-        @hour_tokenizer ||= TwitterCldr::Tokenizers::TimeTokenizer.new(nil)
       end
 
       def gmt_format

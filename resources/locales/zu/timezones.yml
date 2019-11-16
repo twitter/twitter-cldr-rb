@@ -1,11 +1,18 @@
 --- 
 :zu: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT{0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "{0} isikhathi esivamile"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT{0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "{0} Isikhathi sasemini"
+      :generic: "Isikhathi sase-{0}"
+      :standard: "{0} isikhathi esivamile"
   :metazones: 
     :Afghanistan: 
       :long: 

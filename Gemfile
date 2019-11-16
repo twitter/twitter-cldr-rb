@@ -9,6 +9,7 @@ group :development, :test do
   gem 'regexp_parser', '~> 0.5'
   gem 'benchmark-ips'
   gem 'rubyzip', '~> 1.0'
+  gem 'tzinfo-data', '= 1.2019.1'  # keep in sync with ICU
 end
 
 group :development do

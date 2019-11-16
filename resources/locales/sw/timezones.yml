@@ -1,11 +1,18 @@
 --- 
 :sw: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT {0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "Saa za wastani za {0}"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT {0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "Saa za Mchana za {0}"
+      :generic: "Saa za {0}"
+      :standard: "Saa za wastani za {0}"
   :metazones: 
     :Afghanistan: 
       :long: 

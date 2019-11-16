@@ -31,7 +31,6 @@ module TwitterCldr
         rbnf
         units
         fields
-        timezones
       ]
 
       # transforms are done by the TransformsImporter

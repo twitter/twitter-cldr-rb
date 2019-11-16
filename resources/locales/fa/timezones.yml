@@ -1,11 +1,18 @@
 --- 
 :fa: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "{0} گرینویچ"
-    :gmt_zero_format: گرینویچ
-    :hour_format: "‎+HH:mm;‎−HH:mm"
-    :region_format: "وقت عادی {0}"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "{0} گرینویچ"
+    :gmt_zero_formats: 
+      :generic: گرینویچ
+    :hour_formats: 
+      :generic: "‎+HH:mm;‎−HH:mm"
+    :region_formats: 
+      :daylight: "وقت تابستانی {0}"
+      :generic: "وقت {0}"
+      :standard: "وقت عادی {0}"
   :metazones: 
     :Afghanistan: 
       :long: 

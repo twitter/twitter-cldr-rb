@@ -5,10 +5,11 @@
 
 module TwitterCldr
   module Timezones
-    autoload :GmtTimezone,             'twitter_cldr/timezones/gmt_timezone'
-    autoload :Iso8601Timezone,         'twitter_cldr/timezones/iso8601_timezone'
-    autoload :GenericLocationTimezone, 'twitter_cldr/timezones/generic_location_timezone'
+    autoload :GmtLocation,             'twitter_cldr/timezones/gmt_location'
+    # autoload :Iso8601Timezone,         'twitter_cldr/timezones/iso8601_timezone'
+    autoload :GenericLocation,         'twitter_cldr/timezones/generic_location'
     # autoload :NonLocationTimezone, 'twitter_cldr/timezones/non_location_timezone'
+    autoload :Location,                'twitter_cldr/timezones/location'
     autoload :Timezone,                'twitter_cldr/timezones/timezone'
     autoload :ZoneMeta,                'twitter_cldr/timezones/zone_meta'
 

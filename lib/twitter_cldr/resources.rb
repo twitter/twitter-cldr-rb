@@ -6,6 +6,7 @@
 module TwitterCldr
   module Resources
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
+    autoload :Bcp47TimezoneAliasesImporter,   'twitter_cldr/resources/bcp47_timezone_aliases_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
@@ -26,6 +27,7 @@ module TwitterCldr
     autoload :Requirements,                   'twitter_cldr/resources/requirements'
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
+    autoload :TimezonesImporter,              'twitter_cldr/resources/timezones_importer'
     autoload :TimezoneTestsImporter,          'twitter_cldr/resources/timezone_tests_importer'
     autoload :TransformTestsImporter,         'twitter_cldr/resources/transform_tests_importer'
     autoload :TransformsImporter,             'twitter_cldr/resources/transforms_importer'
@@ -42,6 +44,7 @@ module TwitterCldr
       def standard_importer_classes
         @standard_importer_classes ||= [
           AliasesImporter,
+          Bcp47TimezoneAliasesImporter,
           BidiTestImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
@@ -55,6 +58,7 @@ module TwitterCldr
           RbnfTestImporter,
           SegmentTestsImporter,
           TailoringImporter,
+          TimezonesImporter,
           TimezoneTestsImporter,
           TransformTestsImporter,
           TransformsImporter,

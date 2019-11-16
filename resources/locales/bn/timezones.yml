@@ -1,11 +1,18 @@
 --- 
 :bn: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT {0}"
-    :gmt_zero_format: GMT
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "{0} মানক সময়"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT {0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "{0} দিবালোক সময়"
+      :generic: "{0} সময়"
+      :standard: "{0} মানক সময়"
   :metazones: 
     :Acre: 
       :long: 

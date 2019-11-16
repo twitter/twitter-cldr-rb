@@ -1,11 +1,18 @@
 --- 
 :he: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "GMT{0}‎"
-    :gmt_zero_format: GMT
-    :hour_format: "‎+HH:mm;-HH:mm‎"
-    :region_format: "שעון {0} (חורף)"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT{0}‎"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "‎+HH:mm;-HH:mm‎"
+    :region_formats: 
+      :daylight: "שעון {0} (קיץ)"
+      :generic: "שעון {0}"
+      :standard: "שעון {0} (חורף)"
   :metazones: 
     :Afghanistan: 
       :long: 

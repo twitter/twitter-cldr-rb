@@ -1,11 +1,18 @@
 --- 
 :ar: 
   :formats: 
-    :fallback_format: "{1} ({0})"
-    :gmt_format: "غرينتش{0}"
-    :gmt_zero_format: غرينتش
-    :hour_format: "+HH:mm;-HH:mm"
-    :region_format: "توقيت {0} الرسمي"
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "غرينتش{0}"
+    :gmt_zero_formats: 
+      :generic: غرينتش
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "توقيت {0} الصيفي"
+      :generic: "توقيت {0}"
+      :standard: "توقيت {0} الرسمي"
   :metazones: 
     :Afghanistan: 
       :long: 

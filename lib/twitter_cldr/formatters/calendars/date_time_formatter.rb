@@ -260,10 +260,10 @@ module TwitterCldr
           when 1..3
             tz_period.abbreviation.to_s
           else
-            hours = (tz_period.utc_offset.to_f / 60 ** 2).abs
+            hours = (tz_period.utc_total_offset.to_f / 60 ** 2).abs
             divisor = hours.to_i
             minutes = (hours % (divisor == 0 ? 1 : divisor)) * 60
-            sign = tz_period.utc_offset < 0 ? "-" : "+"
+            sign = tz_period.utc_total_offset < 0 ? "-" : "+"
             "UTC #{sign}#{divisor.to_s.rjust(2, "0")}:#{minutes.floor.to_s.rjust(2, "0")}"
         end
       end

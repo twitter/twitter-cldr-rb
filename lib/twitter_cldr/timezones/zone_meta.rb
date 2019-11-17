@@ -71,15 +71,7 @@ module TwitterCldr
       class << self
         def normalize(tz_id)
           tz_id = tz_id.to_s.strip
-
-          if found = aliases[tz_id.to_sym]
-            found
-          elsif found = bcp47_aliases[tz_id.to_sym]
-            found
-          else
-            tz_id
-            # TZInfo::Timezone.get(tz_id).canonical_identifier
-          end
+          bcp47_aliases[tz_id.to_sym] || tz_id
         end
 
         def canonical_country_for(tz_id)
@@ -89,11 +81,11 @@ module TwitterCldr
         end
 
         def region_for_tz(tz_id)
-          region_map[tz_id]
+          regions_resource[tz_id.to_sym]
         end
 
-        def is_primary_region?(region_code)
-          primary_zones.include?(region_code) ||
+        def is_primary_region?(region_code, tz_id)
+          primary_zones[region_code.to_sym] == tz_id ||
             TZInfo::Country.get(region_code).zone_identifiers.size <= 1
         end
 
@@ -106,26 +98,6 @@ module TwitterCldr
         end
 
         private
-
-        def zone_country_code_map
-          @zone_country_code_map ||= TZInfo::Country.all_codes.each_with_object({}) do |country_code, ret|
-            TZInfo::Country.get(country_code).zone_identifiers.each do |zone_id|
-              # should only be one country code per zone (empirically true although
-              # maybe not theoretically true)
-              ret[zone_id] = country_code
-            end
-          end
-        end
-
-        def region_map
-          @region_map ||= TZInfo::Country.all_codes.each_with_object({}) do |region_code, ret|
-            TZInfo::Country.get(region_code).zone_identifiers.each do |zone_id|
-              # should only be one country code per zone (empirically true although
-              # maybe not theoretically true)
-              ret[zone_id] = region_code
-            end
-          end
-        end
 
         def aliases
           @aliases ||= aliases_resource[:zone].each_with_object({}) do |(_, zones), ret|
@@ -155,6 +127,10 @@ module TwitterCldr
 
         def aliases_resource
           @aliases_resource ||= TwitterCldr.get_resource(:shared, :aliases)[:aliases]
+        end
+
+        def regions_resource
+          @regions_resource ||= TwitterCldr.get_resource(:shared, :timezone_regions)
         end
       end
     end

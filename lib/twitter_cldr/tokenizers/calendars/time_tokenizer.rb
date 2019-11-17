@@ -7,6 +7,15 @@ module TwitterCldr
   module Tokenizers
     class TimeTokenizer
 
+      class << self
+        def tokenizer
+          @tokenizer ||= Tokenizer.new([
+            TokenRecognizer.new(:pattern, /^(a{1}|B{1,5}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}V{1,4}|v{1,4})/),
+            TokenRecognizer.new(:plaintext, //)
+          ], /(\'[\w\s-]+\'|a{1}|B{1,5}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}|V{1,4}|v{1,4})/)
+        end
+      end
+
       attr_reader :data_reader
 
       def initialize(data_reader)
@@ -14,14 +23,13 @@ module TwitterCldr
       end
 
       def tokenize(pattern)
-        PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
+        tokenizer.tokenize(pattern)
       end
 
+      private
+
       def tokenizer
-        @tokenizer ||= Tokenizer.new([
-          TokenRecognizer.new(:pattern, /^(a{1}|B{1,5}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}V{1,4}|v{1,4})/),
-          TokenRecognizer.new(:plaintext, //)
-        ], /(\'[\w\s-]+\'|a{1}|B{1,5}|h{1,2}|H{1,2}|K{1,2}|k{1,2}|m{1,2}|s{1,2}|S+|z{1,4}|Z{1,4}|V{1,4}|v{1,4})/)
+        @tokenizer ||= PatternTokenizer.new(data_reader, self.class.tokenizer)
       end
 
     end

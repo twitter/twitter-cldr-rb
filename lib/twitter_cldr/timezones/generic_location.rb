@@ -30,8 +30,8 @@ module TwitterCldr
       private
 
       def generic_location_display_name
-        if region_code = ZoneMeta.canonical_country_for(tz_id)
-          if ZoneMeta.is_primary_region?(region_code)
+        if region_code = ZoneMeta.canonical_country_for(tz.identifier)
+          if ZoneMeta.is_primary_region?(region_code, tz_id)
             region_name = Territories.from_territory_code_for_locale(region_code, tz.locale)
             return region_formats[:generic].sub('{0}', region_name || region_code)
           else
@@ -88,6 +88,7 @@ module TwitterCldr
             golden_period = golden_zone.period_for_local(golden_date)
 
             if period.base_utc_offset != golden_period.base_utc_offset || period.std_offset != golden_period.std_offset
+              return nil unless mz_name
               return partial_location_name_for(tz_metazone.metazone, mz_name)
             else
               return mz_name

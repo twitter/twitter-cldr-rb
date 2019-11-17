@@ -14,6 +14,7 @@ module TwitterCldr
     class TimezoneTestsImporter < Importer
       requirement :icu, Versions.icu_version
       output_path File.join(TwitterCldr::SPEC_DIR, 'timezones', 'tests')
+      locales TwitterCldr.supported_locales
       ruby_engine :jruby
 
       TYPE_MAP = {
@@ -27,13 +28,12 @@ module TwitterCldr
       }
 
       def execute
-        binding.pry
         check_tzdata_versions
 
         output_path = params.fetch(:output_path)
         FileUtils.mkdir_p(output_path)
 
-        TwitterCldr.supported_locales.each do |locale|
+        params[:locales].each do |locale|
           output_file = File.join(output_path, "#{locale}.yml")
 
           File.write(

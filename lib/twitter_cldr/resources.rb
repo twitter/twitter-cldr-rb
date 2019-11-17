@@ -28,6 +28,7 @@ module TwitterCldr
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
     autoload :TimezonesImporter,              'twitter_cldr/resources/timezones_importer'
+    autoload :TimezoneRegionsImporter,        'twitter_cldr/resources/timezone_regions_importer'
     autoload :TimezoneTestsImporter,          'twitter_cldr/resources/timezone_tests_importer'
     autoload :TransformTestsImporter,         'twitter_cldr/resources/transform_tests_importer'
     autoload :TransformsImporter,             'twitter_cldr/resources/transforms_importer'
@@ -59,6 +60,7 @@ module TwitterCldr
           SegmentTestsImporter,
           TailoringImporter,
           TimezonesImporter,
+          TimezoneRegionsImporter,
           TimezoneTestsImporter,
           TransformTestsImporter,
           TransformsImporter,

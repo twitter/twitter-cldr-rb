@@ -28,10 +28,11 @@ module TwitterCldr
         short_generic:    :short,
       }
 
-      attr_reader :orig_tz, :tz, :locale
+      attr_reader :orig_tz, :canon_tz, :tz, :locale
 
       def initialize(tz_id, locale = TwitterCldr.locale)
         @orig_tz = TZInfo::Timezone.get(tz_id)
+        @canon_tz = @orig_tz.canonical_zone
         @tz = TZInfo::Timezone.get(ZoneMeta.normalize(tz_id))
         @locale = locale
       end

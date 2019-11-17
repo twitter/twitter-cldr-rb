@@ -160,6 +160,11 @@ namespace :update do
     TwitterCldr::Resources::TimezonesImporter.new.import
   end
 
+  desc 'Import timezone region data'
+  task :timezone_regions do
+    TwitterCldr::Resources::TimezoneRegionsImporter.new.import
+  end
+
   desc 'Import timezone data'
   task :bcp47_timezone_aliases do
     TwitterCldr::Resources::Bcp47TimezoneAliasesImporter.new.import

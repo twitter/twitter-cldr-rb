@@ -81,12 +81,17 @@ module TwitterCldr
         end
 
         def region_for_tz(tz_id)
-          regions_resource[tz_id.to_sym]
+          if region = regions_resource[tz_id.to_sym]
+            region[:region]
+          end
         end
 
         def is_primary_region?(region_code, tz_id)
-          primary_zones[region_code.to_sym] == tz_id ||
-            TZInfo::Country.get(region_code).zone_identifiers.size <= 1
+          if region = regions_resource[tz_id.to_sym]
+            return region[:primary] && region[:region] == region_code
+          end
+
+          false
         end
 
         def tz_metazones_for(tz_id)

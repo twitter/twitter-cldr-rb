@@ -41,6 +41,7 @@ module TwitterCldr
                 case token.value[0]
                   when 'H'
                     result << offset_digits(hour, format == :short ? 1 : 2)
+                    break if format == :short
                   when 'm'
                     result << offset_digits(min, 2)
                   when 's'

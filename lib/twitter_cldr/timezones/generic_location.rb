@@ -73,19 +73,24 @@ module TwitterCldr
         period = tz.period_for_local(date)
 
         if tz_metazone = ZoneMeta.tz_metazone_for(tz_id, date)
-          use_standard = use_standard?(date_int, period)
+          if use_standard?(date_int, period)
+            std_name = std_name_for(fmt) || mz_std_name_for(fmt, tz_metazone.mz_id)
+            mz_generic_name = mz_name_for(fmt, tz_metazone.mz_id)
 
-          if use_standard && std_name = std_name_for(fmt)
-            return std_name
+            # From ICU source, TimeZoneGenericNames.java, formatGenericNonLocationName():
+            #
+            # In CLDR, the same display name is used for both generic and standard
+            # for some meta zones in some locales. This looks like data bugs. For
+            # now, we check if the standard name is different from its generic name.
+            return std_name if std_name && std_name != mz_generic_name
           end
 
-          mz_name = mz_name_for(fmt, tz_metazone.mz_id, use_standard)
+          mz_name = mz_name_for(fmt, tz_metazone.mz_id)
           golden_zone_id = tz_metazone.metazone.reference_tz_id
 
           if golden_zone_id != tz_id
             golden_zone = TZInfo::Timezone.get(golden_zone_id)
-            golden_date = Time.at(date_int + period.base_utc_offset + period.std_offset)
-            golden_period = golden_zone.period_for_local(golden_date)
+            golden_period = golden_zone.period_for_local(date)
 
             if period.base_utc_offset != golden_period.base_utc_offset || period.std_offset != golden_period.std_offset
               return nil unless mz_name
@@ -129,14 +134,12 @@ module TwitterCldr
         Utils.traverse_hash(timezone_data[:timezones], [tz_id.to_sym, fmt, :standard])
       end
 
-      def mz_name_for(fmt, mz_id, use_standard)
-        if use_standard
-          if std = Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, :standard])
-            return std
-          end
-        end
-
+      def mz_name_for(fmt, mz_id)
         Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, :generic])
+      end
+
+      def mz_std_name_for(fmt, mz_id)
+        Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, :standard])
       end
 
       def use_standard?(date_int, transition_offset)

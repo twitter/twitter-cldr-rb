@@ -26,9 +26,20 @@ module TwitterCldr
 
       def regions
         TZInfo::Timezone.all_identifiers.each_with_object({}) do |id, ret|
-          region = zone_meta.getCanonicalCountry(id)
-          ret[id.to_sym] = region if region
+          is_primary = output.new
+          region = zone_meta.getCanonicalCountry(id, is_primary)
+
+          if region
+            ret[id.to_sym] = {
+              region: region,
+              primary: is_primary.value
+            }
+          end
         end
+      end
+
+      def output
+        @output ||= requirements[:icu].get_class('com.ibm.icu.util.Output')
       end
 
       def zone_meta

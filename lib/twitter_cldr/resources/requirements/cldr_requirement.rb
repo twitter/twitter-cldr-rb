@@ -50,6 +50,17 @@ module TwitterCldr
           end
         end
 
+        def alt?(node)
+          !node.attribute('alt').nil?
+        end
+
+        def draft?(node)
+          draft = node.attribute('draft')
+          draft && (
+            draft.value == 'unconfirmed' || draft.value == 'provisional'
+          )
+        end
+
         private
 
         def locale_chain(locale)

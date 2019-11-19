@@ -34,8 +34,10 @@ describe 'Timezones' do
     'Australia/Queensland'
   ]
 
+  SKIP_TZ_IDS.clear
+
   TwitterCldr.supported_locales.each do |locale|
-  # [:xh].each do |locale|
+  # [:pt].each do |locale|
     it "formats timezones in #{locale}" do
       tests = YAML.load_file(File.expand_path("../tests/#{locale}.yml", __FILE__))
 
@@ -62,12 +64,16 @@ describe 'Timezones' do
         # compare(gmt_tz.to_s(:short), tz_tests[:SHORT_GMT][:generic], locale, tz_id, :SHORT_GMT)
 
         # binding.pry
-        date = Time.now
+        date = Time.utc(2019, 11, 17, 0, 0, 0) #Time.now
         long_tz_str = tz.display_name_for(date, :long_generic)
-        # short_tz_str = location_tz.display_name_for(date, :short)
+        short_tz_str = tz.display_name_for(date, :short_generic)
 
         if (long_tz_str != tz_tests[:LONG_GENERIC][:generic])
           puts "[long, #{locale}] Expected: #{tz_tests[:LONG_GENERIC][:generic]}, got: #{long_tz_str} (#{tz_id})"
+        end
+
+        if (short_tz_str != tz_tests[:SHORT_GENERIC][:generic])
+          puts "[short, #{locale}] Expected: #{tz_tests[:SHORT_GENERIC][:generic]}, got: #{short_tz_str} (#{tz_id})"
         end
 
         # if (short_tz_str != tz_tests[:SHORT_GENERIC][:generic])

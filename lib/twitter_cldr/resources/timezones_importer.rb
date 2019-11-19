@@ -42,6 +42,7 @@ module TwitterCldr
           TimezoneData.new(ancestor_locale, requirements[:cldr]).to_h
         end
 
+        data = remove_empties(data)
         output_file = File.join(output_path, locale.to_s, 'timezones.yml')
 
         File.open(output_file, 'w:utf-8') do |output|
@@ -51,6 +52,28 @@ module TwitterCldr
               use_natural_symbols: true
             )
           )
+        end
+      end
+
+      # "If a given short metazone form is known NOT to be understood in a
+      # given locale and the parent locale has this value such that it would
+      # normally be inherited, the inheritance of this value can be explicitly
+      # disabled by use of the 'no inheritance marker' as the value, which is
+      # 3 simultaneous empty set characters ( U+2205 )."
+      #
+      # http://www.unicode.org/reports/tr35/tr35-dates.html#Metazone_Names
+      #
+      def remove_empties(h)
+        h.delete_if do |_k, v|
+          v == '∅∅∅'
+        end
+
+        h.each_pair do |_k, v|
+          remove_empties(v) if v.is_a?(Hash)
+        end
+
+        h.delete_if do |_k, v|
+          v.is_a?(Hash) && v.empty?
         end
       end
 
@@ -124,7 +147,10 @@ module TwitterCldr
 
         def nodes_to_hash(nodes)
           nodes.inject({}) do |result, node|
-            result[node.name.to_sym] = node.content
+            unless cldr_req.draft?(node)
+              result[node.name.to_sym] = node.content
+            end
+
             result
           end
         end

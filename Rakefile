@@ -103,6 +103,11 @@ namespace :update do
     TwitterCldr::Resources::TailoringImporter.new.import
   end
 
+  desc 'Import territory data'
+  task :territories do
+    TwitterCldr::Resources::TerritoriesImporter.new.import
+  end
+
   desc 'Import Unicode data resources'
   task :unicode_data do
     TwitterCldr::Resources::UnicodeDataImporter.new.import

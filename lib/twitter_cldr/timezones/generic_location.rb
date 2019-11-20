@@ -8,19 +8,29 @@ module TwitterCldr
     class GenericLocation < Location
       DEFAULT_CITY_EXCLUSION_PATTERN = /Etc\/.*|SystemV\/.*|.*\/Riyadh8[7-9]/
       DST_CHECK_RANGE = 184 * 24 * 60 * 60
-      FORMATS = [:location, :short, :long].freeze
+      FORMATS = [
+        :location,
+        :generic_short,
+        :generic_long,
+        :specific_short,
+        :specific_long
+      ].freeze
 
       Territories = TwitterCldr::Shared::Territories
       Utils = TwitterCldr::Utils
 
-      def display_name_for(date, fmt = :location)
+      def display_name_for(date, fmt = :generic_location)
         case fmt
-          when :location
+          when :generic_location
             generic_location_display_name
-          when :short
+          when :generic_short
             generic_short_display_name(date) || generic_location_display_name
-          when :long
+          when :generic_long
             generic_long_display_name(date) || generic_location_display_name
+          when :specific_short
+            specific_short_display_name(date)
+          when :specific_long
+            specific_long_display_name(date)
           else
             raise ArgumentError, "'#{fmt}' is not a valid generic timezone format, "\
               "must be one of #{FORMATS.join(', ')}"
@@ -45,11 +55,19 @@ module TwitterCldr
       end
 
       def generic_short_display_name(date)
-        generic_display_name(date, :short)
+        format_display_name(date, :generic, :short)
       end
 
       def generic_long_display_name(date)
-        generic_display_name(date, :long)
+        format_display_name(date, :generic, :long)
+      end
+
+      def specific_short_display_name(date)
+        format_display_name(date, :specific, :short)
+      end
+
+      def specific_long_display_name(date)
+        format_display_name(date, :specific, :long)
       end
 
       # From ICU source, TimeZoneGenericNames.java, formatGenericNonLocationName():
@@ -64,18 +82,24 @@ module TwitterCldr
       # 4. If a generic non-location string is not available, use generic location
       #    string.
       #
-      def generic_display_name(date, fmt)
-        if generic = (timezone_data[fmt] || {})[:generic]
-          return generic
-        end
-
+      def format_display_name(date, type, fmt)
         date_int = date.strftime('%s').to_i
         period = tz.period_for_local(date)
 
+        flavor = if type == :generic
+          :generic
+        elsif type == :specific
+          period.std_offset > 0 ? :daylight : :standard
+        end
+
+        if explicit = (timezone_data[fmt] || {})[flavor]
+          return explicit
+        end
+
         if tz_metazone = ZoneMeta.tz_metazone_for(tz_id, date)
           if use_standard?(date_int, period)
-            std_name = std_name_for(fmt) || mz_std_name_for(fmt, tz_metazone.mz_id)
-            mz_generic_name = mz_name_for(fmt, tz_metazone.mz_id)
+            std_name = tz_name_for(fmt, :standard) || mz_name_for(fmt, :standard, tz_metazone.mz_id)
+            mz_generic_name = mz_name_for(fmt, :generic, tz_metazone.mz_id)
 
             # From ICU source, TimeZoneGenericNames.java, formatGenericNonLocationName():
             #
@@ -85,7 +109,12 @@ module TwitterCldr
             return std_name if std_name && std_name != mz_generic_name
           end
 
-          mz_name = mz_name_for(fmt, tz_metazone.mz_id)
+          mz_name = mz_name_for(fmt, flavor, tz_metazone.mz_id)
+
+          # don't go through all the golden zone logic if we're not computing the
+          # generic format
+          return mz_name if type == :specific
+
           golden_zone_id = tz_metazone.metazone.reference_tz_id
 
           if golden_zone_id != tz_id
@@ -130,16 +159,12 @@ module TwitterCldr
         @exemplar_city ||= timezone_data[:city] || default_exemplar_city
       end
 
-      def std_name_for(fmt)
-        Utils.traverse_hash(timezone_data[:timezones], [tz_id.to_sym, fmt, :standard])
+      def tz_name_for(fmt, flavor)
+        Utils.traverse_hash(timezone_data[:timezones], [tz_id.to_sym, fmt, flavor])
       end
 
-      def mz_name_for(fmt, mz_id)
-        Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, :generic])
-      end
-
-      def mz_std_name_for(fmt, mz_id)
-        Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, :standard])
+      def mz_name_for(fmt, flavor, mz_id)
+        Utils.traverse_hash(metazone_data, [mz_id.to_sym, fmt, flavor])
       end
 
       def use_standard?(date_int, transition_offset)

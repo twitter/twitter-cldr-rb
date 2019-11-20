@@ -11,25 +11,21 @@ module TwitterCldr
       include Singleton
 
       FORMATS = [
-        :long,
-        :short,
         :long_gmt,
         :short_gmt,
         :generic_location,
-        :long_generic,
-        :short_generic
+        :generic_long,
+        :generic_short,
+        :specific_long,
+        :specific_short
       ].freeze
-
-      GENERIC_LOCATION_MAP = {
-        generic_location: :location,
-        long_generic:     :long,
-        short_generic:    :short
-      }
 
       GMT_GENERIC_LOCATION_MAP = {
         generic_location: :long,
-        long_generic:     :long,
-        short_generic:    :short,
+        generic_long:     :long,
+        generic_short:    :short,
+        specific_long:    :long,
+        specific_short:   :short
       }
 
       GMT_LOCATION_MAP = {
@@ -58,10 +54,10 @@ module TwitterCldr
         @locale = locale
       end
 
-      def display_name_for(date, format = :long_generic_location)
+      def display_name_for(date, format = :generic_location)
         case format
-          when :generic_location, :long_generic, :short_generic
-            generic_location.display_name_for(date, GENERIC_LOCATION_MAP[format]) ||
+          when :generic_location, :generic_long, :generic_short, :specific_long, :specific_short
+            generic_location.display_name_for(date, format) ||
               gmt_location.display_name_for(date, GMT_GENERIC_LOCATION_MAP[format])
 
           when :long_gmt, :short_gmt

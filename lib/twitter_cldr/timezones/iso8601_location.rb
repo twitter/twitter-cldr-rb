@@ -5,7 +5,7 @@
 
 module TwitterCldr
   module Timezones
-    class Iso8601Timezone < Timezone
+    class Iso8601Location < Location
       def to_short_s
         "#{sign(offset)}#{offset_hour.to_s.rjust(2, '0')}"
       end

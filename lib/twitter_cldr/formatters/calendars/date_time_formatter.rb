@@ -40,8 +40,11 @@ module TwitterCldr
         'S' => :second_fraction,
         'z' => :timezone,
         'Z' => :timezone,
-        'v' => :timezone, # should eventually be :timezone_generic_non_location
-        'V' => :timezone  # should eventually be :timezone_metazone
+        'O' => :timezone,
+        'v' => :timezone,
+        'V' => :timezone,
+        'x' => :timezone,
+        'X' => :timezone
       }
 
       protected
@@ -241,22 +244,46 @@ module TwitterCldr
 
       def timezone(time, pattern, length, options = {})
         # ruby is dumb and doesn't let you set non-UTC timezones in dates/times, so we have to pass it as an option instead
-        timezone_info = TZInfo::Timezone.get(options[:timezone] || "UTC")
+        tz = TwitterCldr::Timezones::Timezone.instance(
+          options[:timezone] || 'Etc/Unknown', data_reader.locale
+        )
 
-        case length
-          when 1..3
-            timezone_info.current_period.abbreviation.to_s
-          else
-            hours = (timezone_info.current_period.utc_offset.to_f / 60 ** 2).abs
-            divisor = hours.to_i
-            minutes = (hours % (divisor == 0 ? 1 : divisor)) * 60
-            sign = timezone_info.current_period.utc_offset < 0 ? "-" : "+"
-            "UTC #{sign}#{divisor.to_s.rjust(2, "0")}:#{minutes.floor.to_s.rjust(2, "0")}"
+        case pattern
+          when 'z', 'zz', 'zzz'
+            # short specific non-location format
+          when 'zzzz'
+            # long specific non-location format
+          when 'Z', 'ZZ', 'ZZZ'
+            # ISO8601 basic format with hour, min, sec (equiv RFC 822)
+          when 'ZZZZ', 'OOOO'
+            # long localized GMT format
+          when 'ZZZZZ', 'XXXXX'
+            # ISO8601 extended format: hours, minutes, seconds
+          when 'O'
+            # short localized GMT format
+          when 'v'
+            # short generic non-location format
+          when 'vvvv'
+            # long generic non-location format
+          when 'V'
+            # short timezone ID
+          when 'VV'
+            # long timezone ID
+          when 'VVV'
+            # exemplar city
+          when 'VVVV'
+            # generic location format
+          when 'X'
+            # ISO8601 format: hours and optional minutes
+          when 'XX'
+            # ISO8601 format: hours and minutes
+          when 'XXX'
+            # ISO8601 extended format: hours and minutes
+          when 'XXXX'
+            # ISO8601 basic format: hours, minutes, optional seconds
+          when 'x', 'xx', 'xxx', 'xxxx', 'xxxxx'
+            # same as uppercase, but without the 'Z' character
         end
-      end
-
-      def timezone_generic_non_location(time, pattern, length, options = {})
-        raise NotImplementedError, 'requires timezone translation data'
       end
 
       # ported from icu4j 64.2

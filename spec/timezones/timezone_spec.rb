@@ -45,7 +45,7 @@ describe 'Timezones' do
           tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
 
           compare(
-            tz.display_name_for(date, :long_generic),
+            tz.display_name_for(date, :generic_long),
             tz_tests[:GENERIC_LONG],
             locale, tz_id, :GENERIC_LONG
           )
@@ -57,9 +57,33 @@ describe 'Timezones' do
           tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
 
           compare(
-            tz.display_name_for(date, :short_generic),
+            tz.display_name_for(date, :generic_short),
             tz_tests[:GENERIC_SHORT],
             locale, tz_id, :GENERIC_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs in long specific format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :specific_long),
+            tz_tests[:SPECIFIC_LONG],
+            locale, tz_id, :SPECIFIC_LONG
+          )
+        end
+      end
+
+      it 'correctly outputs in short specific format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :specific_short),
+            tz_tests[:SPECIFIC_SHORT],
+            locale, tz_id, :SPECIFIC_SHORT
           )
         end
       end

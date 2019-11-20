@@ -23,7 +23,9 @@ module TwitterCldr
         :LOCALIZED_GMT_SHORT,
         :GENERIC_LOCATION,
         :GENERIC_LONG,
-        :GENERIC_SHORT
+        :GENERIC_SHORT,
+        :SPECIFIC_LONG,
+        :SPECIFIC_SHORT
       ]
 
       def execute

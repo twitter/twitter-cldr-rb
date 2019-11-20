@@ -16,71 +16,79 @@ describe 'Timezones' do
   end
 
   def compare(got, expected, locale, tz_id, format)
-    expect(got).to eq(expected), failure_msg(got, expected, locale, tz_id, format)
+    # Remove trailing LTR marks because ICU adds two of them to the
+    # ends of certain formatted timezones in Hebrew when the format
+    # string only contains one.
+    expect(got.tr("\u{200e}", '')).to(
+      eq(expected.tr("\u{200e}", '')),
+      failure_msg(got, expected, locale, tz_id, format)
+    )
   end
 
-  SKIP_TZ_IDS = [
-    'America/Araguaina',
-    'America/Bahia',
-    'America/Belem',
-    'America/Fortaleza',
-    'America/Maceio',
-    'America/Recife',
-    'America/Santarem',
-    'Australia/Brisbane',
-    'Australia/Darwin',
-    'Australia/Lindeman',
-    'Australia/North',
-    'Australia/Queensland'
-  ]
-
-  SKIP_TZ_IDS.clear
-
   TwitterCldr.supported_locales.each do |locale|
-  # [:pt].each do |locale|
-    it "formats timezones in #{locale}" do
+  # [:en].each do |locale|
+    context "timezones in #{locale}" do
       tests = YAML.load_file(File.expand_path("../tests/#{locale}.yml", __FILE__))
+      date = TwitterCldr::Resources::TimezoneTestsImporter::TEST_TIME
 
-      tests.each do |tz_id, tz_tests|
-        next if SKIP_TZ_IDS.include?(tz_id)
-      # { 'Africa/Addis_Ababa' => tests['Africa/Addis_Ababa'] }.each do |tz_id, tz_tests|
-        # next unless tz_id == 'America/Lima'
-        # next unless tz_id == 'Africa/Asmera'
-        # next unless tz_id == 'America/Argentina/Buenos_Aires'
-        # next unless tz_id == 'America/Indianapolis'
-        # next unless tz_id == 'America/Campo_Grande'
-        # next unless tz_id == 'America/Araguaina'
-        # next unless tz_id == 'America/Campo_Grande'
+      it 'correctly outputs in generic location format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
 
-        # gmt_tz = TwitterCldr::Timezones::GmtTimezone.from_id(tz_id, locale)
-        tz = TwitterCldr::Timezones::Timezone.new(tz_id, locale)
-
-        # binding.pry
-
-        # allow(gmt_tz.send(:offset)).to receive(:utc_offset).and_return(tz_tests[:offset] / 1000)
-        # allow(location_tz.send(:offset)).to receive(:utc_offset).and_return(tz_tests[:offset] / 1000)
-
-        # compare(gmt_tz.to_s(:long), tz_tests[:LONG_GMT][:generic], locale, tz_id, :LONG_GMT)
-        # compare(gmt_tz.to_s(:short), tz_tests[:SHORT_GMT][:generic], locale, tz_id, :SHORT_GMT)
-
-        # binding.pry
-        date = Time.utc(2019, 11, 17, 0, 0, 0) #Time.now
-        long_tz_str = tz.display_name_for(date, :long_generic)
-        short_tz_str = tz.display_name_for(date, :short_generic)
-
-        if (long_tz_str != tz_tests[:LONG_GENERIC][:generic])
-          puts "[long, #{locale}] Expected: #{tz_tests[:LONG_GENERIC][:generic]}, got: #{long_tz_str} (#{tz_id})"
+          compare(
+            tz.display_name_for(date, :generic_location),
+            tz_tests[:GENERIC_LOCATION],
+            locale, tz_id, :GENERIC_LOCATION
+          )
         end
+      end
 
-        if (short_tz_str != tz_tests[:SHORT_GENERIC][:generic])
-          puts "[short, #{locale}] Expected: #{tz_tests[:SHORT_GENERIC][:generic]}, got: #{short_tz_str} (#{tz_id})"
+      it 'correctly outputs in long generic format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :long_generic),
+            tz_tests[:GENERIC_LONG],
+            locale, tz_id, :GENERIC_LONG
+          )
         end
+      end
 
-        # if (short_tz_str != tz_tests[:SHORT_GENERIC][:generic])
-        #   puts "Expected: #{tz_tests[:SHORT_GENERIC][:generic]}, got: #{short_tz_str} (#{tz_id})"
-        # end
+      it 'correctly outputs in short generic format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
 
-        # expect(location_tz.to_s).to eq(tz_tests[:GENERIC_LOCATION][:generic])
+          compare(
+            tz.display_name_for(date, :short_generic),
+            tz_tests[:GENERIC_SHORT],
+            locale, tz_id, :GENERIC_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs in long GMT format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :long_gmt),
+            tz_tests[:LOCALIZED_GMT],
+            locale, tz_id, :LOCALIZED_GMT
+          )
+        end
+      end
+
+      it 'correctly outputs in short GMT format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :short_gmt),
+            tz_tests[:LOCALIZED_GMT_SHORT],
+            locale, tz_id, :LOCALIZED_GMT_SHORT
+          )
+        end
       end
     end
   end

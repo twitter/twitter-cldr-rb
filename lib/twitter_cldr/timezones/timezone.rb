@@ -3,9 +3,13 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'singleton'
+
 module TwitterCldr
   module Timezones
     class Timezone
+      include Singleton
+
       FORMATS = [
         :long,
         :short,
@@ -22,15 +26,32 @@ module TwitterCldr
         short_generic:    :short
       }
 
-      GMT_LOCATION_MAP = {
+      GMT_GENERIC_LOCATION_MAP = {
         generic_location: :long,
         long_generic:     :long,
         short_generic:    :short,
       }
 
+      GMT_LOCATION_MAP = {
+        long_gmt:  :long,
+        short_gmt: :short
+      }
+
+      class << self
+        def instance(tz_id, locale = TwitterCldr.locale)
+          cache["#{tz_id}:#{locale}"] ||= new(tz_id, locale)
+        end
+
+        private
+
+        def cache
+          @cache ||= {}
+        end
+      end
+
       attr_reader :orig_tz, :canon_tz, :tz, :locale
 
-      def initialize(tz_id, locale = TwitterCldr.locale)
+      def initialize(tz_id, locale)
         @orig_tz = TZInfo::Timezone.get(tz_id)
         @canon_tz = @orig_tz.canonical_zone
         @tz = TZInfo::Timezone.get(ZoneMeta.normalize(tz_id))
@@ -41,7 +62,10 @@ module TwitterCldr
         case format
           when :generic_location, :long_generic, :short_generic
             generic_location.display_name_for(date, GENERIC_LOCATION_MAP[format]) ||
-              gmt_location.display_name_for(date, GMT_LOCATION_MAP[format])
+              gmt_location.display_name_for(date, GMT_GENERIC_LOCATION_MAP[format])
+
+          when :long_gmt, :short_gmt
+            gmt_location.display_name_for(date, GMT_LOCATION_MAP[format])
         end
       end
 

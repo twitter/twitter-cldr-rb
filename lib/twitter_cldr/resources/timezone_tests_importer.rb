@@ -12,20 +12,20 @@ module TwitterCldr
 
     # This class should be used with JRuby in 1.9 mode
     class TimezoneTestsImporter < Importer
+      TEST_TIME = Time.utc(2019, 11, 17, 0, 0, 0)
+
       requirement :icu, Versions.icu_version
       output_path File.join(TwitterCldr::SPEC_DIR, 'timezones', 'tests')
       locales TwitterCldr.supported_locales
       ruby_engine :jruby
 
-      TYPE_MAP = {
-        LONG_GMT: false,
-        SHORT_GMT: false,
-        GENERIC_LOCATION: false,
-        LONG: true,
-        LONG_GENERIC: false,
-        SHORT: true,
-        SHORT_GENERIC: false
-      }
+      TYPES = [
+        :LOCALIZED_GMT,
+        :LOCALIZED_GMT_SHORT,
+        :GENERIC_LOCATION,
+        :GENERIC_LONG,
+        :GENERIC_SHORT
+      ]
 
       def execute
         check_tzdata_versions
@@ -69,7 +69,7 @@ module TwitterCldr
       end
 
       def generate_test_cases_for_locale(locale)
-        ulocale = locale_class.new(locale.to_s)
+        ulocale = ulocale_class.new(locale.to_s)
 
         TZInfo::Timezone.all_identifiers.each_with_object({}) do |tz_id, ret|
           tz = tz_class.getTimeZone(tz_id)
@@ -83,19 +83,12 @@ module TwitterCldr
       end
 
       def test_cases_for_zone_and_locale(tz, locale)
-        TYPE_MAP.each_with_object({}) do |(const_name, consider_daylight), ret|
-          type_const = tz_class.const_get(const_name)
+        tz_format = timezone_format_class.getInstance(locale)
+        date = TEST_TIME.to_i * 1000
 
-          if consider_daylight
-            ret[const_name] = {
-              standard: tz.getDisplayName(false, type_const, locale),
-              daylight: tz.getDisplayName(true, type_const, locale)
-            }
-          else
-            ret[const_name] = {
-              generic: tz.getDisplayName(false, type_const, locale)
-            }
-          end
+        TYPES.each_with_object({}) do |style_sym, ret|
+          style_const = style.const_get(style_sym)
+          ret[style_sym] = tz_format.format(style_const, tz, date)
         end
       end
 
@@ -103,8 +96,16 @@ module TwitterCldr
         @tz_class ||= requirements[:icu].get_class('com.ibm.icu.util.TimeZone')
       end
 
-      def locale_class
-        @locale_class ||= requirements[:icu].get_class('com.ibm.icu.util.ULocale')
+      def ulocale_class
+        @ulocale_class ||= requirements[:icu].get_class('com.ibm.icu.util.ULocale')
+      end
+
+      def timezone_format_class
+        @timezone_format ||= requirements[:icu].get_class('com.ibm.icu.text.TimeZoneFormat')
+      end
+
+      def style
+        @style ||= timezone_format_class.const_get(:Style)
       end
     end
 

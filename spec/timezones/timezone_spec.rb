@@ -7,12 +7,9 @@ require 'spec_helper'
 
 describe 'Timezones' do
   def failure_msg(got, expected, locale, tz_id, format)
-    <<~MSG
-      Tried formatting #{tz_id} in #{locale}, #{format}
-
-      Expected: #{expected}
-      Got:      #{got}
-    MSG
+    "Tried formatting #{tz_id} in #{locale}, #{format}\n\n"\
+      "Expected: #{expected}\n" \
+      "Got:      #{got}"
   end
 
   def compare(got, expected, locale, tz_id, format)

@@ -16,20 +16,6 @@ module TwitterCldr
             TokenRecognizer.new(:plaintext, //)
           ])
         end
-
-        def full_tokenizer
-          @full_tokenizer ||= begin
-            new_tok = Tokenizer.union(
-              data_reader.date_reader.tokenizer.tokenizer,
-              data_reader.time_reader.tokenizer.tokenizer
-            ) do |recognizer|
-              recognizer.token_type != :plaintext
-            end
-
-            new_tok.recognizers << TokenRecognizer.new(:plaintext, //)
-            new_tok
-          end
-        end
       end
 
       attr_reader :data_reader
@@ -39,24 +25,18 @@ module TwitterCldr
       end
 
       def tokenize(pattern)
-        expand_tokens(tokenizer.tokenize(pattern))
+        expand_tokens(
+          PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
+        )
       end
 
       # Tokenizes mixed date and time pattern strings,
       # used to tokenize the additional date format patterns.
       def full_tokenize(pattern)
-        full_tokenizer.tokenize(pattern)
+        PatternTokenizer.new(data_reader, full_tokenizer).tokenize(pattern)
       end
 
       protected
-
-      def tokenizer
-        @tokenizer ||= PatternTokenizer.new(data_reader, self.class.tokenizer)
-      end
-
-      def full_tokenizer
-        @full_tokenizer ||= PatternTokenizer.new(data_reader, self.class.full_tokenizer)
-      end
 
       def expand_tokens(tokens)
         tokens.inject([]) do |ret, token|
@@ -79,6 +59,24 @@ module TwitterCldr
       def expand_time(token)
         time_reader = data_reader.time_reader
         time_reader.tokenizer.tokenize(time_reader.pattern)
+      end
+
+      def full_tokenizer
+        @@full_tokenizer ||= begin
+          new_tok = Tokenizer.union(
+            data_reader.date_reader.tokenizer.tokenizer,
+            data_reader.time_reader.tokenizer.tokenizer
+          ) do |recognizer|
+            recognizer.token_type != :plaintext
+          end
+
+          new_tok.recognizers << TokenRecognizer.new(:plaintext, //)
+          new_tok
+        end
+      end
+
+      def tokenizer
+        self.class.tokenizer
       end
 
     end

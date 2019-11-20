@@ -24,13 +24,11 @@ module TwitterCldr
       end
 
       def tokenize(pattern)
-        tokenizer.tokenize(pattern)
+        PatternTokenizer.new(data_reader, tokenizer).tokenize(pattern)
       end
 
-      private
-
       def tokenizer
-        @tokenizer ||= PatternTokenizer.new(data_reader, self.class.tokenizer)
+        self.class.tokenizer
       end
 
     end

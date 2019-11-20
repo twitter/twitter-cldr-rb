@@ -10,7 +10,6 @@ require 'tzinfo/data'
 module TwitterCldr
   module Resources
 
-    # This class should be used with JRuby in 1.9 mode
     class TimezoneTestsImporter < Importer
       TEST_TIME = Time.utc(2019, 11, 17, 0, 0, 0)
 

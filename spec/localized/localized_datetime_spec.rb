@@ -45,7 +45,9 @@ describe TwitterCldr::Localized::LocalizedDateTime do
     end
 
     it 'should stringify with proper time zone' do
-      expect(date_time.localize(:en).with_timezone('Asia/Tokyo').to_long_s).to eq("September 21, 1987 at 7:05:00 AM JST")
+      expect(date_time.localize(:en).with_timezone('Asia/Tokyo').to_full_s).to(
+        eq('Monday, September 21, 1987 at 7:05:00 AM Japan Standard Time')
+      )
     end
   end
 

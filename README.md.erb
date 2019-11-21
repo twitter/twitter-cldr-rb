@@ -175,12 +175,12 @@ For English (and other languages), you can also specify an ordinal spellout:
 `Time`, and `DateTime` objects are supported.  `Date` objects are supported transiently:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)").inspect %>
+DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (tiempo universal coordinado)").inspect %>
 DateTime.now.localize(:es).to_long_s               # <%= assert(datetime.localize(:es).to_long_s, "14 de febrero de 2014, 12:20:05 UTC").inspect %>
 DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 feb. 2014 12:20:05").inspect %>
 DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14 12:20").inspect %>
 
-Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (UTC +00:00)").inspect %>
+Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (tiempo universal coordinado)").inspect %>
 Time.now.localize(:es).to_long_s                   # <%= assert(time.localize(:es).to_long_s, "12:20:05 UTC").inspect %>
 Time.now.localize(:es).to_medium_s                 # <%= assert(time.localize(:es).to_medium_s, "12:20:05").inspect %>
 Time.now.localize(:es).to_short_s                  # <%= assert(time.localize(:es).to_short_s, "12:20").inspect %>

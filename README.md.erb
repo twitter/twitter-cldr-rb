@@ -300,8 +300,8 @@ In addition to including timezones in formatted dates and times, TwitterCLDR pro
 Timezone objects are specified via a combination of timezone ID and locale:
 
 ```ruby
-<% tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en) %>
-tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en)
+<% tz = TwitterCldr::Timezones::Timezone.instance('Australia/Brisbane', :en) %>
+tz = TwitterCldr::Timezones::Timezone.instance('Australia/Brisbane', :en)
 ```
 
 A list of available timezone formats can be retrieved like so:
@@ -313,8 +313,11 @@ TwitterCldr::Timezones::Timezone::ALL_FORMATS
 Format a timezone by calling the `#display_name_for` method:
 
 ```ruby
-# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location), 'Morocco Time').inspect %>
+# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location), 'Brisbane Time').inspect %>
 tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
+
+# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_long), 'Australian Eastern Standard Time').inspect %>
+tz.display_name_for(DateTime.new(2019, 11, 5), :generic_long)
 ```
 
 ### Calendar Data

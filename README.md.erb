@@ -282,6 +282,41 @@ TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # 
 TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # <%= assert(TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true), "in 1 minute").inspect %>
 ```
 
+### Timezones
+
+Timezones can be specified for any instance of `LocalizedTime`, `LocalizedDate`, or `LocalizedDateTime` via the `with_timezone` function:
+
+```ruby
+# <%= assert(DateTime.new(2019, 11, 5).localize(:es).with_timezone('America/Los_Angeles').to_full_s, 'lunes, 4 de noviembre de 2019, 16:00:00 (hora estándar del Pacífico)').inspect %>
+DateTime.new(2019, 11, 5).localize(:es).with_timezone('America/Los_Angeles').to_full_s
+```
+
+Any IANA timezone can be used provided it is available via the [tzinfo](https://github.com/tzinfo/tzinfo) gem. TZInfo references any timezone data available on your system, but will use the data encapsulated in the [tzinfo-data](https://github.com/tzinfo/tzinfo-data) gem if it is bundled with your application. If you're seeing discrepancies between, for example, production and development environments, consider bundling tzinfo-data.
+
+#### Timezone Formats
+
+In addition to including timezones in formatted dates and times, TwitterCLDR provides access to timezone formats via the `TwitterCldr::Timezones::Timezone` object.
+
+Timezone objects are specified via a combination of timezone ID and locale:
+
+```ruby
+<% tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en) %>
+tz = TwitterCldr::Timezones::Timezone.new('Africa/Casablanca', :en)
+```
+
+A list of available timezone formats can be retrieved like so:
+
+```ruby
+TwitterCldr::Timezones::Timezone::ALL_FORMATS
+```
+
+Format a timezone by calling the `#display_name_for` method:
+
+```ruby
+# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location), 'Morocco Time') %>
+tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
+```
+
 ### Calendar Data
 
 CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.

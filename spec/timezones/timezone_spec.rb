@@ -22,9 +22,12 @@ describe 'Timezones' do
     )
   end
 
+  fast_locales = [:en, :es, :de, :ja, :ko, :fr, :ru, :ar, :he, :fi]
+
   TwitterCldr.supported_locales.each do |locale|
-  # [:en].each do |locale|
-    context "timezones in #{locale}" do
+    locale_name = locale.localize.as_language_code || locale.to_s
+
+    context "timezones in #{locale_name}", slow: !fast_locales.include?(locale) do
       tests = YAML.load_file(File.expand_path("../tests/#{locale}.yml", __FILE__))
       date = TwitterCldr::Resources::TimezoneTestsImporter::TEST_TIME
 
@@ -108,6 +111,150 @@ describe 'Timezones' do
             tz.display_name_for(date, :short_gmt),
             tz_tests[:LOCALIZED_GMT_SHORT],
             locale, tz_id, :LOCALIZED_GMT_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic short format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_short),
+            tz_tests[:ISO_BASIC_SHORT],
+            locale, tz_id, :ISO_BASIC_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic local short format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_local_short),
+            tz_tests[:ISO_BASIC_LOCAL_SHORT],
+            locale, tz_id, :ISO_BASIC_LOCAL_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic fixed format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_fixed),
+            tz_tests[:ISO_BASIC_FIXED],
+            locale, tz_id, :ISO_BASIC_FIXED
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic local fixed format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_local_fixed),
+            tz_tests[:ISO_BASIC_LOCAL_FIXED],
+            locale, tz_id, :ISO_BASIC_LOCAL_FIXED
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic full format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_full),
+            tz_tests[:ISO_BASIC_FULL],
+            locale, tz_id, :ISO_BASIC_FULL
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO basic local full format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_basic_local_full),
+            tz_tests[:ISO_BASIC_LOCAL_FULL],
+            locale, tz_id, :ISO_BASIC_LOCAL_FULL
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO extended fixed format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_extended_fixed),
+            tz_tests[:ISO_EXTENDED_FIXED],
+            locale, tz_id, :ISO_EXTENDED_FIXED
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO extended local fixed format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_extended_local_fixed),
+            tz_tests[:ISO_EXTENDED_LOCAL_FIXED],
+            locale, tz_id, :ISO_EXTENDED_LOCAL_FIXED
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO extended full format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_extended_full),
+            tz_tests[:ISO_EXTENDED_FULL],
+            locale, tz_id, :ISO_EXTENDED_FULL
+          )
+        end
+      end
+
+      it 'correctly outputs in ISO extended local full format', slow: true do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :iso_extended_local_full),
+            tz_tests[:ISO_EXTENDED_LOCAL_FULL],
+            locale, tz_id, :ISO_EXTENDED_LOCAL_FULL
+          )
+        end
+      end
+
+      it 'correctly outputs in short timezone ID format' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :zone_id_short),
+            tz_tests[:ZONE_ID_SHORT],
+            locale, tz_id, :ZONE_ID_SHORT
+          )
+        end
+      end
+
+      it 'correctly outputs the exemplar location' do
+        tests.each do |tz_id, tz_tests|
+          tz = TwitterCldr::Timezones::Timezone.instance(tz_id, locale)
+
+          compare(
+            tz.display_name_for(date, :exemplar_location),
+            tz_tests[:EXEMPLAR_LOCATION],
+            locale, tz_id, :EXEMPLAR_LOCATION
           )
         end
       end

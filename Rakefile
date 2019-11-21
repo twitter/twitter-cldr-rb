@@ -171,8 +171,8 @@ namespace :update do
   end
 
   desc 'Import timezone data'
-  task :bcp47_timezone_aliases do
-    TwitterCldr::Resources::Bcp47TimezoneAliasesImporter.new.import
+  task :bcp47_timezone_metadata do
+    TwitterCldr::Resources::Bcp47TimezoneMetadataImporter.new.import
   end
 
   desc 'Import (generate) timezone tests (should be executed using JRuby 1.7 in 1.9 mode)'

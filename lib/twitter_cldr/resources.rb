@@ -6,7 +6,7 @@
 module TwitterCldr
   module Resources
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
-    autoload :Bcp47TimezoneAliasesImporter,   'twitter_cldr/resources/bcp47_timezone_aliases_importer'
+    autoload :Bcp47TimezoneMetadataImporter,  'twitter_cldr/resources/bcp47_timezone_metadata_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
@@ -46,7 +46,7 @@ module TwitterCldr
       def standard_importer_classes
         @standard_importer_classes ||= [
           AliasesImporter,
-          Bcp47TimezoneAliasesImporter,
+          Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,

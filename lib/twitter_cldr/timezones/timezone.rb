@@ -10,28 +10,22 @@ module TwitterCldr
     class Timezone
       include Singleton
 
-      FORMATS = [
-        :long_gmt,
-        :short_gmt,
-        :generic_location,
-        :generic_long,
-        :generic_short,
-        :specific_long,
-        :specific_short
-      ].freeze
+      ALL_FORMATS = (
+        GenericLocation::FORMATS +
+        GmtLocation::FORMATS +
+        Iso8601Location::FORMATS +
+        [:zone_id, :zone_id_short]
+      ).freeze
 
-      GMT_GENERIC_LOCATION_MAP = {
-        generic_location: :long,
-        generic_long:     :long,
-        generic_short:    :short,
-        specific_long:    :long,
-        specific_short:   :short
-      }
+      GENERIC_TO_GMT_MAP = {
+        generic_location: :long_gmt,
+        generic_short:    :short_gmt,
+        generic_long:     :long_gmt,
+        specific_short:   :short_gmt,
+        specific_long:    :long_gmt
+      }.freeze
 
-      GMT_LOCATION_MAP = {
-        long_gmt:  :long,
-        short_gmt: :short
-      }
+      UNKNOWN = 'unk'.freeze
 
       class << self
         def instance(tz_id, locale = TwitterCldr.locale)
@@ -45,23 +39,35 @@ module TwitterCldr
         end
       end
 
-      attr_reader :orig_tz, :canon_tz, :tz, :locale
+      attr_reader :orig_tz, :tz, :locale
 
       def initialize(tz_id, locale)
         @orig_tz = TZInfo::Timezone.get(tz_id)
-        @canon_tz = @orig_tz.canonical_zone
         @tz = TZInfo::Timezone.get(ZoneMeta.normalize(tz_id))
         @locale = locale
       end
 
       def display_name_for(date, format = :generic_location)
         case format
-          when :generic_location, :generic_long, :generic_short, :specific_long, :specific_short
+          when *GenericLocation::FORMATS
             generic_location.display_name_for(date, format) ||
-              gmt_location.display_name_for(date, GMT_GENERIC_LOCATION_MAP[format])
+              gmt_location.display_name_for(date, GENERIC_TO_GMT_MAP[format])
 
-          when :long_gmt, :short_gmt
-            gmt_location.display_name_for(date, GMT_LOCATION_MAP[format])
+          when *GmtLocation::FORMATS
+            gmt_location.display_name_for(date, format)
+
+          when *Iso8601Location::FORMATS
+            iso_location.display_name_for(date, format)
+
+          when :zone_id
+            identifier
+
+          when :zone_id_short
+            ZoneMeta.short_name_for(identifier) || UNKNOWN
+
+          else
+            raise ArgumentError, "'#{format}' is not a valid timezone format, "\
+              "must be one of #{ALL_FORMATS.join(', ')}"
         end
       end
 
@@ -90,7 +96,11 @@ module TwitterCldr
       end
 
       def gmt_location
-        @gmt_location = GmtLocation.new(self)
+        @gmt_location ||= GmtLocation.new(self)
+      end
+
+      def iso_location
+        @iso_location ||= Iso8601Location.new(self)
       end
     end
   end

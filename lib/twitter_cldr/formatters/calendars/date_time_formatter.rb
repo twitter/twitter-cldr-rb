@@ -12,7 +12,8 @@ module TwitterCldr
   module Formatters
     class DateTimeFormatter < Formatter
 
-      WEEKDAY_KEYS = [:sun, :mon, :tue, :wed, :thu, :fri, :sat]
+      WEEKDAY_KEYS = [:sun, :mon, :tue, :wed, :thu, :fri, :sat].freeze
+
       METHODS = { # ignoring u, l, g, j, A
         'G' => :era,
         'y' => :year,
@@ -45,7 +46,37 @@ module TwitterCldr
         'V' => :timezone,
         'x' => :timezone,
         'X' => :timezone
-      }
+      }.freeze
+
+      TZ_PATTERNS = {
+        'z'     => :specific_short,
+        'zz'    => :specific_short,
+        'zzz'   => :specific_short,
+        'zzzz'  => :specific_long,
+        'Z'     => :iso_basic_local_full,
+        'ZZ'    => :iso_basic_local_full,
+        'ZZZ'   => :iso_basic_local_full,
+        'ZZZZ'  => :long_gmt,
+        'ZZZZZ' => :iso_extended_local_fixed,
+        'OOOO'  => :long_gmt,
+        'O'     => :short_gmt,
+        'v'     => :generic_short,
+        'vvvv'  => :generic_long,
+        'V'     => :zone_id_short,
+        'VV'    => :zone_id,
+        'VVV'   => :exemplar_location,
+        'VVVV'  => :generic_location,
+        'X'     => :iso_basic_short,
+        'XX'    => :iso_basic_fixed,
+        'XXX'   => :iso_extended_fixed,
+        'XXXX'  => :iso_basic_full,
+        'XXXXX' => :iso_extended_full,
+        'x'     => :iso_basic_local_short,
+        'xx'    => :iso_basic_local_fixed,
+        'xxx'   => :iso_extended_local_fixed,
+        'xxxx'  => :iso_basic_local_full,
+        'xxxxx' => :iso_extended_local_full
+      }.freeze
 
       protected
 
@@ -245,45 +276,10 @@ module TwitterCldr
       def timezone(time, pattern, length, options = {})
         # ruby is dumb and doesn't let you set non-UTC timezones in dates/times, so we have to pass it as an option instead
         tz = TwitterCldr::Timezones::Timezone.instance(
-          options[:timezone] || 'Etc/Unknown', data_reader.locale
+          options[:timezone] || 'UTC', data_reader.locale
         )
 
-        case pattern
-          when 'z', 'zz', 'zzz'
-            # short specific non-location format
-          when 'zzzz'
-            # long specific non-location format
-          when 'Z', 'ZZ', 'ZZZ'
-            # ISO8601 basic format with hour, min, sec (equiv RFC 822)
-          when 'ZZZZ', 'OOOO'
-            # long localized GMT format
-          when 'ZZZZZ', 'XXXXX'
-            # ISO8601 extended format: hours, minutes, seconds
-          when 'O'
-            # short localized GMT format
-          when 'v'
-            # short generic non-location format
-          when 'vvvv'
-            # long generic non-location format
-          when 'V'
-            # short timezone ID
-          when 'VV'
-            # long timezone ID
-          when 'VVV'
-            # exemplar city
-          when 'VVVV'
-            # generic location format
-          when 'X'
-            # ISO8601 format: hours and optional minutes
-          when 'XX'
-            # ISO8601 format: hours and minutes
-          when 'XXX'
-            # ISO8601 extended format: hours and minutes
-          when 'XXXX'
-            # ISO8601 basic format: hours, minutes, optional seconds
-          when 'x', 'xx', 'xxx', 'xxxx', 'xxxxx'
-            # same as uppercase, but without the 'Z' character
-        end
+        tz.display_name_for(time, TZ_PATTERNS[pattern])
       end
 
       # ported from icu4j 64.2

@@ -25,7 +25,19 @@ module TwitterCldr
         :GENERIC_LONG,
         :GENERIC_SHORT,
         :SPECIFIC_LONG,
-        :SPECIFIC_SHORT
+        :SPECIFIC_SHORT,
+        :ISO_BASIC_SHORT,
+        :ISO_BASIC_LOCAL_SHORT,
+        :ISO_BASIC_FIXED,
+        :ISO_BASIC_LOCAL_FIXED,
+        :ISO_BASIC_FULL,
+        :ISO_BASIC_LOCAL_FULL,
+        :ISO_EXTENDED_FIXED,
+        :ISO_EXTENDED_LOCAL_FIXED,
+        :ISO_EXTENDED_FULL,
+        :ISO_EXTENDED_LOCAL_FULL,
+        :ZONE_ID_SHORT,
+        :EXEMPLAR_LOCATION
       ]
 
       def execute

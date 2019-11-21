@@ -231,6 +231,16 @@ module TwitterCldr
         LikelySubtags.locale_for(to_s)
       end
 
+      def max_supported
+        @max_supported ||= begin
+          found = maximize.permutations('-').find do |perm|
+            TwitterCldr.supported_locale?(perm)
+          end
+
+          self.class.new(found) if found
+        end
+      end
+
       def dasherized
         join('-')
       end

@@ -6,8 +6,8 @@
 module TwitterCldr
   module Timezones
     class GmtLocation < Location
-      FORMATS = [:long, :short].freeze
-      DEFAULT_FORMAT = :short
+      FORMATS = [:long_gmt, :short_gmt].freeze
+      DEFAULT_FORMAT = :long_gmt
       DEFAULT_GMT_ZERO_FORMAT = 'GMT'.freeze
 
       def display_name_for(date, format = DEFAULT_FORMAT)
@@ -40,11 +40,11 @@ module TwitterCldr
               when :pattern
                 case token.value[0]
                   when 'H'
-                    result << offset_digits(hour, format == :short ? 1 : 2)
-                    break if min == 0 && sec == 0 && format == :short
+                    result << offset_digits(hour, format == :short_gmt ? 1 : 2)
+                    break if min == 0 && sec == 0 && format == :short_gmt
                   when 'm'
                     result << offset_digits(min, 2)
-                    break if sec == 0 && format == :short
+                    break if sec == 0 && format == :short_gmt
                   when 's'
                     result << offset_digits(sec, 2)
                 end

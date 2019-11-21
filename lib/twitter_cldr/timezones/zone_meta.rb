@@ -74,6 +74,10 @@ module TwitterCldr
           bcp47_aliases[tz_id.to_sym] || tz_id
         end
 
+        def short_name_for(tz_id)
+          bcp47_short_names[tz_id.to_sym]
+        end
+
         def canonical_country_for(tz_id)
           region = region_for_tz(tz_id)
           return nil if region == WORLD
@@ -111,7 +115,15 @@ module TwitterCldr
         end
 
         def bcp47_aliases
-          @bcp47_aliases ||= TwitterCldr.get_resource(:shared, :bcp47_timezone_aliases)
+          @bcp47_aliases ||= bcp47_metadata[:aliases]
+        end
+
+        def bcp47_short_names
+          @bcp47_short_names ||= bcp47_metadata[:short_names]
+        end
+
+        def bcp47_metadata
+          @bcp47_metadata ||= TwitterCldr.get_resource(:shared, :bcp47_timezone_metadata)
         end
 
         def primary_zones

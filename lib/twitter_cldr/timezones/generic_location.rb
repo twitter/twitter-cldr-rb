@@ -9,11 +9,12 @@ module TwitterCldr
       DEFAULT_CITY_EXCLUSION_PATTERN = /Etc\/.*|SystemV\/.*|.*\/Riyadh8[7-9]/
       DST_CHECK_RANGE = 184 * 24 * 60 * 60
       FORMATS = [
-        :location,
+        :generic_location,
         :generic_short,
         :generic_long,
         :specific_short,
-        :specific_long
+        :specific_long,
+        :exemplar_location
       ].freeze
 
       Territories = TwitterCldr::Shared::Territories
@@ -31,6 +32,8 @@ module TwitterCldr
             specific_short_display_name(date)
           when :specific_long
             specific_long_display_name(date)
+          when :exemplar_location
+            exemplar_city
           else
             raise ArgumentError, "'#{fmt}' is not a valid generic timezone format, "\
               "must be one of #{FORMATS.join(', ')}"
@@ -156,7 +159,7 @@ module TwitterCldr
       end
 
       def exemplar_city
-        @exemplar_city ||= timezone_data[:city] || default_exemplar_city
+        @exemplar_city ||= timezone_data[:city] || default_exemplar_city || unknown_city
       end
 
       def tz_name_for(fmt, flavor)
@@ -184,12 +187,16 @@ module TwitterCldr
 
           sep = tz_id.rindex('/')
 
-          if sep > 0 && sep + 1 < tz_id.length
+          if sep && sep + 1 < tz_id.length
             return tz_id[(sep + 1)..-1].gsub('_', ' ')
           end
 
           nil
         end
+      end
+
+      def unknown_city
+        @unknown_city ||= resource[:timezones][:'Etc/Unknown'][:city]
       end
 
       def timezone_data

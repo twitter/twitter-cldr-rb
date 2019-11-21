@@ -347,7 +347,7 @@ Timezone objects are specified via a combination of timezone ID and locale:
 
 ```ruby
 
-tz = TwitterCldr::Timezones::Timezone.new('Africa/Casablanca', :en)
+tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en)
 ```
 
 A list of available timezone formats can be retrieved like so:
@@ -359,7 +359,7 @@ TwitterCldr::Timezones::Timezone::ALL_FORMATS
 Format a timezone by calling the `#display_name_for` method:
 
 ```ruby
-# Morocco Time
+# "Morocco Time"
 tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
 ```
 
@@ -596,7 +596,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["56829", "65510", "87234-9375", "28528-7267", "39124"]
+postal_code.sample(5)  # ["78938", "41265", "44459-7792", "42311-9234", "23627"]
 ```
 
 ### Phone Codes

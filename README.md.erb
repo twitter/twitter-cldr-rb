@@ -301,7 +301,7 @@ Timezone objects are specified via a combination of timezone ID and locale:
 
 ```ruby
 <% tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en) %>
-tz = TwitterCldr::Timezones::Timezone.new('Africa/Casablanca', :en)
+tz = TwitterCldr::Timezones::Timezone.instance('Africa/Casablanca', :en)
 ```
 
 A list of available timezone formats can be retrieved like so:
@@ -313,7 +313,7 @@ TwitterCldr::Timezones::Timezone::ALL_FORMATS
 Format a timezone by calling the `#display_name_for` method:
 
 ```ruby
-# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location), 'Morocco Time') %>
+# <%= assert(tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location), 'Morocco Time').inspect %>
 tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
 ```
 

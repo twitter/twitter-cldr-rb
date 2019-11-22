@@ -124,7 +124,7 @@ module TwitterCldr
             golden_zone = TZInfo::Timezone.get(golden_zone_id)
             golden_period = golden_zone.period_for_local(date)
 
-            if period.base_utc_offset != golden_period.base_utc_offset || period.std_offset != golden_period.std_offset
+            if period.utc_offset != golden_period.utc_offset || period.std_offset != golden_period.std_offset
               return nil unless mz_name
               return partial_location_name_for(tz_metazone.metazone, mz_name)
             else

@@ -29,7 +29,7 @@ module TwitterCldr
 
       def display_name_for(date, fmt)
         offset = tz.period_for_local(date).offset
-        offset_secs = offset.base_utc_offset + offset.std_offset
+        offset_secs = offset.utc_offset + offset.std_offset
 
         case fmt
           when :iso_basic_short

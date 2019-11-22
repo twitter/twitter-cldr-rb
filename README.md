@@ -224,12 +224,12 @@ It's important to know that, even though any given format may not be available a
 
 | Format     | Output                 |
 |:-----------|------------------------|
-| Bh         | 12 PM                  |
-| Bhm        | 12:20 PM               |
-| Bhms       | 12:20:05 PM            |
+| Bh         | 12 in the afternoon    |
+| Bhm        | 12:20 in the afternoon |
+| Bhms       | 12:20:05 in the afternoon |
 | E          | Fri                    |
-| EBhm       | Fri 12:20 PM           |
-| EBhms      | Fri 12:20:05 PM        |
+| EBhm       | Fri 12:20 in the afternoon |
+| EBhms      | Fri 12:20:05 in the afternoon |
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
@@ -417,7 +417,7 @@ TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
 TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
@@ -498,21 +498,21 @@ In addition to translating language codes, TwitterCLDR provides access to the fu
 
 ```ruby
 # get all languages for the default locale
-TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Chinese" ... }
+TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Mandarin Chinese" ... }
 
 # get all languages for a specific locale
-TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino tradicional" ... }
+TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino mandarín tradicional" ... }
 
 # get a language by its code for the default locale
-TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Chinese"
+TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Mandarin Chinese"
 
 # get a language from its code for a specific locale
-TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # "chino tradicional"
+TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # "chino mandarín tradicional"
 
 # translate a language from one locale to another
 # signature: translate_language(lang, source_locale, destination_locale)
-TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Chinese"
-TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
+TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Mandarin Chinese"
+TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino mandarín tradicional"
 ```
 
 ### World Territories
@@ -599,7 +599,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["55547", "12212", "21198", "18081-4229", "15465"]
+postal_code.sample(5)  # ["29294", "22486-2369", "76632", "40800-9860", "06727-6194"]
 ```
 
 ### Phone Codes

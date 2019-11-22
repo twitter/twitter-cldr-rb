@@ -82,6 +82,7 @@
               :one: 000 B ¤
               :other: 000 B ¤
           :unit: 
+            :one: "{0} {1}"
             :other: "{0} {1}"
         :lepc: :numbers.formats.currency.latn
         :limb: :numbers.formats.currency.latn
@@ -133,6 +134,18 @@
         :latn: 
           :default: "#,##0.###"
           :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 mil"
+              :other: "0 mil"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 mil"
+              :other: "00 mil"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 mil"
+              :other: "000 mil"
             ? !ruby/symbol "1000000"
             : 
               :one: "0 milhão"
@@ -172,13 +185,16 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: 0K
+              :one: 0 mil
+              :other: 0 mil
             ? !ruby/symbol "10000"
             : 
-              :other: 00K
+              :one: 00 mil
+              :other: 00 mil
             ? !ruby/symbol "100000"
             : 
-              :other: 000K
+              :one: 000 mil
+              :other: 000 mil
             ? !ruby/symbol "1000000"
             : 
               :one: 0 M
@@ -386,7 +402,7 @@
       :lanatham: :numbers.symbols.latn
       :laoo: :numbers.symbols.latn
       :latn: 
-        :decimal: "."
+        :decimal: ","
         :exponential: E
         :group:  
         :infinity: ∞

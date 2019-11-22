@@ -97,7 +97,7 @@ module TwitterCldr
           end
 
           symbols_result[number_system] = symbols_node.elements.each_with_object({}) do |symbol, symbol_result|
-            unless draft?(symbol)
+            unless cldr_req.draft?(symbol)
               symbol_name = symbol.name.gsub(/([a-z])([A-Z])/) { "#{$1}_#{$2.downcase}"}
               symbol_result[symbol_name] = symbol.content
             end
@@ -170,7 +170,7 @@ module TwitterCldr
 
           pattern_count_node = pattern_node.attribute('count')
 
-          unless draft?(pattern_node)
+          unless cldr_req.draft?(pattern_node)
             pattern_key = pattern_key_node ? pattern_key_node.value : :default
 
             if pattern_count_node
@@ -202,11 +202,6 @@ module TwitterCldr
           count = unit_node.attribute('count').value rescue 'one'
           result[count] = unit_node.content
         end
-      end
-
-      def draft?(node)
-        draft = node.attribute('draft')
-        draft && draft.value == 'unconfirmed'
       end
 
       def doc

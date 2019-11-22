@@ -69,5 +69,8 @@ else
   ruby -v
 fi
 
+# increase heap size to avoid out of memory errors
+export JAVA_OPTS="-Xmx1G"
+
 bundle install
 bundle exec rake add_locale[$locale]

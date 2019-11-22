@@ -348,15 +348,6 @@ describe TwitterCldr::Formatters::DateTimeFormatter do
     end
   end
 
-  describe "#timezone" do
-    it "test: z, zz, zzz" do # TODO is this what's meant by the spec?
-      expect(@formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'z', 1)).to eq('UTC')
-      expect(@formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zz', 2)).to eq('UTC')
-      expect(@formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zzz', 3)).to eq('UTC')
-      expect(@formatter.send(:timezone, Time.gm(2000, 1, 1, 1, 1, 1), 'zzzz', 4)).to match(/^UTC (-|\+)\d{2}:\d{2}$/)
-    end
-  end
-
   describe "#year" do
     it "test: pattern y" do
       expect(@formatter.send(:year, Date.new(    5, 1, 1), 'y', 1)).to eq('5')

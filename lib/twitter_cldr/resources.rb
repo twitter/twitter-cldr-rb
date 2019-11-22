@@ -6,6 +6,7 @@
 module TwitterCldr
   module Resources
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
+    autoload :Bcp47TimezoneMetadataImporter,  'twitter_cldr/resources/bcp47_timezone_metadata_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
@@ -27,8 +28,12 @@ module TwitterCldr
     autoload :Requirements,                   'twitter_cldr/resources/requirements'
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
     autoload :TailoringImporter,              'twitter_cldr/resources/tailoring_importer'
+    autoload :TerritoriesImporter,            'twitter_cldr/resources/territories_importer'
+    autoload :TimezonesImporter,              'twitter_cldr/resources/timezones_importer'
+    autoload :TimezoneRegionsImporter,        'twitter_cldr/resources/timezone_regions_importer'
+    autoload :TimezoneTestsImporter,          'twitter_cldr/resources/timezone_tests_importer'
+    autoload :TransformTestsImporter,         'twitter_cldr/resources/transform_tests_importer'
     autoload :TransformsImporter,             'twitter_cldr/resources/transforms_importer'
-    autoload :TransformTestImporter,          'twitter_cldr/resources/transform_test_importer'
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
@@ -42,6 +47,7 @@ module TwitterCldr
       def standard_importer_classes
         @standard_importer_classes ||= [
           AliasesImporter,
+          Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
@@ -56,8 +62,12 @@ module TwitterCldr
           RbnfTestImporter,
           SegmentTestsImporter,
           TailoringImporter,
+          TerritoriesImporter,
+          TimezonesImporter,
+          TimezoneRegionsImporter,
+          TimezoneTestsImporter,
+          TransformTestsImporter,
           TransformsImporter,
-          TransformTestImporter,
           UnicodeDataImporter,
           UnicodePropertyAliasesImporter,
           ValidityDataImporter,

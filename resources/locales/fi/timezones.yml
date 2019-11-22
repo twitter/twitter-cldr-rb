@@ -1,0 +1,1526 @@
+--- 
+:fi: 
+  :formats: 
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "UTC{0}"
+    :gmt_zero_formats: 
+      :generic: UTC
+    :hour_formats: 
+      :generic: +H.mm;-H.mm
+    :region_formats: 
+      :daylight: "{0} (kesäaika)"
+      :generic: "aikavyöhyke: {0}"
+      :standard: "{0} (normaaliaika)"
+  :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "Acren kesäaika"
+        :generic: "Acren aika"
+        :standard: "Acren normaaliaika"
+    :Afghanistan: 
+      :long: 
+        :standard: "Afganistanin aika"
+    :Africa_Central: 
+      :long: 
+        :standard: "Keski-Afrikan aika"
+    :Africa_Eastern: 
+      :long: 
+        :standard: "Itä-Afrikan aika"
+    :Africa_Southern: 
+      :long: 
+        :standard: "Etelä-Afrikan aika"
+    :Africa_Western: 
+      :long: 
+        :daylight: "Länsi-Afrikan kesäaika"
+        :generic: "Länsi-Afrikan aika"
+        :standard: "Länsi-Afrikan normaaliaika"
+    :Alaska: 
+      :long: 
+        :daylight: "Alaskan kesäaika"
+        :generic: "Alaskan aika"
+        :standard: "Alaskan normaaliaika"
+    :Almaty: 
+      :long: 
+        :daylight: "Almatyn kesäaika"
+        :generic: "Almatyn aika"
+        :standard: "Almatyn normaaliaika"
+    :Amazon: 
+      :long: 
+        :daylight: "Amazonin kesäaika"
+        :generic: "Amazonin aika"
+        :standard: "Amazonin normaaliaika"
+    :America_Central: 
+      :long: 
+        :daylight: "Yhdysvaltain keskinen kesäaika"
+        :generic: "Yhdysvaltain keskinen aika"
+        :standard: "Yhdysvaltain keskinen normaaliaika"
+    :America_Eastern: 
+      :long: 
+        :daylight: "Yhdysvaltain itäinen kesäaika"
+        :generic: "Yhdysvaltain itäinen aika"
+        :standard: "Yhdysvaltain itäinen normaaliaika"
+    :America_Mountain: 
+      :long: 
+        :daylight: "Kalliovuorten kesäaika"
+        :generic: "Kalliovuorten aika"
+        :standard: "Kalliovuorten normaaliaika"
+    :America_Pacific: 
+      :long: 
+        :daylight: "Yhdysvaltain Tyynenmeren kesäaika"
+        :generic: "Yhdysvaltain Tyynenmeren aika"
+        :standard: "Yhdysvaltain Tyynenmeren normaaliaika"
+    :Anadyr: 
+      :long: 
+        :daylight: "Anadyrin kesäaika"
+        :generic: "Anadyrin aika"
+        :standard: "Anadyrin normaaliaika"
+    :Apia: 
+      :long: 
+        :daylight: "Apian kesäaika"
+        :generic: "Apian aika"
+        :standard: "Apian normaaliaika"
+    :Aqtau: 
+      :long: 
+        :daylight: "Aqtaw’n kesäaika"
+        :generic: "Aqtaw’n aika"
+        :standard: "Aqtaw’n normaaliaika"
+    :Aqtobe: 
+      :long: 
+        :daylight: "Aqtöben kesäaika"
+        :generic: "Aqtöben aika"
+        :standard: "Aqtöben normaaliaika"
+    :Arabian: 
+      :long: 
+        :daylight: "Saudi-Arabian kesäaika"
+        :generic: "Saudi-Arabian aika"
+        :standard: "Saudi-Arabian normaaliaika"
+    :Argentina: 
+      :long: 
+        :daylight: "Argentiinan kesäaika"
+        :generic: "Argentiinan aika"
+        :standard: "Argentiinan normaaliaika"
+    :Argentina_Western: 
+      :long: 
+        :daylight: "Länsi-Argentiinan kesäaika"
+        :generic: "Länsi-Argentiinan aika"
+        :standard: "Länsi-Argentiinan normaaliaika"
+    :Armenia: 
+      :long: 
+        :daylight: "Armenian kesäaika"
+        :generic: "Armenian aika"
+        :standard: "Armenian normaaliaika"
+    :Atlantic: 
+      :long: 
+        :daylight: "Kanadan Atlantin kesäaika"
+        :generic: "Kanadan Atlantin aika"
+        :standard: "Kanadan Atlantin normaaliaika"
+    :Australia_Central: 
+      :long: 
+        :daylight: "Keski-Australian kesäaika"
+        :generic: "Keski-Australian aika"
+        :standard: "Keski-Australian normaaliaika"
+    :Australia_CentralWestern: 
+      :long: 
+        :daylight: "Läntisen Keski-Australian kesäaika"
+        :generic: "Läntisen Keski-Australian aika"
+        :standard: "Läntisen Keski-Australian normaaliaika"
+    :Australia_Eastern: 
+      :long: 
+        :daylight: "Itä-Australian kesäaika"
+        :generic: "Itä-Australian aika"
+        :standard: "Itä-Australian normaaliaika"
+    :Australia_Western: 
+      :long: 
+        :daylight: "Länsi-Australian kesäaika"
+        :generic: "Länsi-Australian aika"
+        :standard: "Länsi-Australian normaaliaika"
+    :Azerbaijan: 
+      :long: 
+        :daylight: "Azerbaidžanin kesäaika"
+        :generic: "Azerbaidžanin aika"
+        :standard: "Azerbaidžanin normaaliaika"
+    :Azores: 
+      :long: 
+        :daylight: "Azorien kesäaika"
+        :generic: "Azorien aika"
+        :standard: "Azorien normaaliaika"
+    :Bangladesh: 
+      :long: 
+        :daylight: "Bangladeshin kesäaika"
+        :generic: "Bangladeshin aika"
+        :standard: "Bangladeshin normaaliaika"
+    :Bhutan: 
+      :long: 
+        :standard: "Bhutanin aika"
+    :Bolivia: 
+      :long: 
+        :standard: "Bolivian aika"
+    :Brasilia: 
+      :long: 
+        :daylight: "Brasilian kesäaika"
+        :generic: "Brasilian aika"
+        :standard: "Brasilian normaaliaika"
+    :Brunei: 
+      :long: 
+        :standard: "Brunein aika"
+    :Cape_Verde: 
+      :long: 
+        :daylight: "Kap Verden kesäaika"
+        :generic: "Kap Verden aika"
+        :standard: "Kap Verden normaaliaika"
+    :Casey: 
+      :long: 
+        :standard: "Caseyn aika"
+    :Chamorro: 
+      :long: 
+        :standard: "Tšamorron aika"
+    :Chatham: 
+      :long: 
+        :daylight: "Chathamin kesäaika"
+        :generic: "Chathamin aika"
+        :standard: "Chathamin normaaliaika"
+    :Chile: 
+      :long: 
+        :daylight: "Chilen kesäaika"
+        :generic: "Chilen aika"
+        :standard: "Chilen normaaliaika"
+    :China: 
+      :long: 
+        :daylight: "Kiinan kesäaika"
+        :generic: "Kiinan aika"
+        :standard: "Kiinan normaaliaika"
+    :Choibalsan: 
+      :long: 
+        :daylight: "Tšoibalsan kesäaika"
+        :generic: "Tšoibalsan aika"
+        :standard: "Tšoibalsan normaaliaika"
+    :Christmas: 
+      :long: 
+        :standard: "Joulusaaren aika"
+    :Cocos: 
+      :long: 
+        :standard: "Kookossaarten aika"
+    :Colombia: 
+      :long: 
+        :daylight: "Kolumbian kesäaika"
+        :generic: "Kolumbian aika"
+        :standard: "Kolumbian normaaliaika"
+    :Cook: 
+      :long: 
+        :daylight: "Cookinsaarten kesäaika"
+        :generic: "Cookinsaarten aika"
+        :standard: "Cookinsaarten normaaliaika"
+    :Cuba: 
+      :long: 
+        :daylight: "Kuuban kesäaika"
+        :generic: "Kuuban aika"
+        :standard: "Kuuban normaaliaika"
+    :Davis: 
+      :long: 
+        :standard: "Davisin aika"
+    :DumontDUrville: 
+      :long: 
+        :standard: "Dumont d’Urvillen aika"
+    :East_Timor: 
+      :long: 
+        :standard: "Itä-Timorin aika"
+    :Easter: 
+      :long: 
+        :daylight: "Pääsiäissaaren kesäaika"
+        :generic: "Pääsiäissaaren aika"
+        :standard: "Pääsiäissaaren normaaliaika"
+    :Ecuador: 
+      :long: 
+        :standard: "Ecuadorin aika"
+    :Europe_Central: 
+      :long: 
+        :daylight: "Keski-Euroopan kesäaika"
+        :generic: "Keski-Euroopan aika"
+        :standard: "Keski-Euroopan normaaliaika"
+    :Europe_Eastern: 
+      :long: 
+        :daylight: "Itä-Euroopan kesäaika"
+        :generic: "Itä-Euroopan aika"
+        :standard: "Itä-Euroopan normaaliaika"
+    :Europe_Further_Eastern: 
+      :long: 
+        :standard: "Itäisemmän Euroopan aika"
+    :Europe_Western: 
+      :long: 
+        :daylight: "Länsi-Euroopan kesäaika"
+        :generic: "Länsi-Euroopan aika"
+        :standard: "Länsi-Euroopan normaaliaika"
+    :Falkland: 
+      :long: 
+        :daylight: "Falklandinsaarten kesäaika"
+        :generic: "Falklandinsaarten aika"
+        :standard: "Falklandinsaarten normaaliaika"
+    :Fiji: 
+      :long: 
+        :daylight: "Fidžin kesäaika"
+        :generic: "Fidžin aika"
+        :standard: "Fidžin normaaliaika"
+    :French_Guiana: 
+      :long: 
+        :standard: "Ranskan Guayanan aika"
+    :French_Southern: 
+      :long: 
+        :standard: "Ranskan eteläisten ja antarktisten alueiden aika"
+    :GMT: 
+      :long: 
+        :standard: "Greenwichin normaaliaika"
+    :Galapagos: 
+      :long: 
+        :standard: "Galápagossaarten aika"
+    :Gambier: 
+      :long: 
+        :standard: "Gambiersaarten aika"
+    :Georgia: 
+      :long: 
+        :daylight: "Georgian kesäaika"
+        :generic: "Georgian aika"
+        :standard: "Georgian normaaliaika"
+    :Gilbert_Islands: 
+      :long: 
+        :standard: "Gilbertsaarten aika"
+    :Greenland_Eastern: 
+      :long: 
+        :daylight: "Itä-Grönlannin kesäaika"
+        :generic: "Itä-Grönlannin aika"
+        :standard: "Itä-Grönlannin normaaliaika"
+    :Greenland_Western: 
+      :long: 
+        :daylight: "Länsi-Grönlannin kesäaika"
+        :generic: "Länsi-Grönlannin aika"
+        :standard: "Länsi-Grönlannin normaaliaika"
+    :Guam: 
+      :long: 
+        :standard: "Guamin aika"
+    :Gulf: 
+      :long: 
+        :standard: "Arabiemiirikuntien normaaliaika"
+    :Guyana: 
+      :long: 
+        :standard: "Guyanan aika"
+    :Hawaii_Aleutian: 
+      :long: 
+        :daylight: "Havaijin-Aleuttien kesäaika"
+        :generic: "Havaijin-Aleuttien aika"
+        :standard: "Havaijin-Aleuttien normaaliaika"
+    :Hong_Kong: 
+      :long: 
+        :daylight: "Hongkongin kesäaika"
+        :generic: "Hongkongin aika"
+        :standard: "Hongkongin normaaliaika"
+    :Hovd: 
+      :long: 
+        :daylight: "Hovdin kesäaika"
+        :generic: "Hovdin aika"
+        :standard: "Hovdin normaaliaika"
+    :India: 
+      :long: 
+        :standard: "Intian aika"
+    :Indian_Ocean: 
+      :long: 
+        :standard: "Intian valtameren aika"
+    :Indochina: 
+      :long: 
+        :standard: "Indokiinan aika"
+    :Indonesia_Central: 
+      :long: 
+        :standard: "Keski-Indonesian aika"
+    :Indonesia_Eastern: 
+      :long: 
+        :standard: "Itä-Indonesian aika"
+    :Indonesia_Western: 
+      :long: 
+        :standard: "Länsi-Indonesian aika"
+    :Iran: 
+      :long: 
+        :daylight: "Iranin kesäaika"
+        :generic: "Iranin aika"
+        :standard: "Iranin normaaliaika"
+    :Irkutsk: 
+      :long: 
+        :daylight: "Irkutskin kesäaika"
+        :generic: "Irkutskin aika"
+        :standard: "Irkutskin normaaliaika"
+    :Israel: 
+      :long: 
+        :daylight: "Israelin kesäaika"
+        :generic: "Israelin aika"
+        :standard: "Israelin normaaliaika"
+    :Japan: 
+      :long: 
+        :daylight: "Japanin kesäaika"
+        :generic: "Japanin aika"
+        :standard: "Japanin normaaliaika"
+    :Kamchatka: 
+      :long: 
+        :daylight: "Kamtšatkan kesäaika"
+        :generic: "Kamtšatkan aika"
+        :standard: "Kamtšatkan normaaliaika"
+    :Kazakhstan_Eastern: 
+      :long: 
+        :standard: "Itä-Kazakstanin aika"
+    :Kazakhstan_Western: 
+      :long: 
+        :standard: "Länsi-Kazakstanin aika"
+    :Korea: 
+      :long: 
+        :daylight: "Korean kesäaika"
+        :generic: "Korean aika"
+        :standard: "Korean normaaliaika"
+    :Kosrae: 
+      :long: 
+        :standard: "Kosraen aika"
+    :Krasnoyarsk: 
+      :long: 
+        :daylight: "Krasnojarskin kesäaika"
+        :generic: "Krasnojarskin aika"
+        :standard: "Krasnojarskin normaaliaika"
+    :Kyrgystan: 
+      :long: 
+        :standard: "Kirgisian aika"
+    :Lanka: 
+      :long: 
+        :standard: "Sri Lankan aika"
+    :Line_Islands: 
+      :long: 
+        :standard: "Linesaarten aika"
+    :Lord_Howe: 
+      :long: 
+        :daylight: "Lord Howen kesäaika"
+        :generic: "Lord Howen aika"
+        :standard: "Lord Howen normaaliaika"
+    :Macau: 
+      :long: 
+        :daylight: "Macaon kesäaika"
+        :generic: "Macaon aika"
+        :standard: "Macaon normaaliaika"
+    :Macquarie: 
+      :long: 
+        :standard: "Macquariensaaren aika"
+    :Magadan: 
+      :long: 
+        :daylight: "Magadanin kesäaika"
+        :generic: "Magadanin aika"
+        :standard: "Magadanin normaaliaika"
+    :Malaysia: 
+      :long: 
+        :standard: "Malesian aika"
+    :Maldives: 
+      :long: 
+        :standard: "Malediivien aika"
+    :Marquesas: 
+      :long: 
+        :standard: "Marquesassaarten aika"
+    :Marshall_Islands: 
+      :long: 
+        :standard: "Marshallinsaarten aika"
+    :Mauritius: 
+      :long: 
+        :daylight: "Mauritiuksen kesäaika"
+        :generic: "Mauritiuksen aika"
+        :standard: "Mauritiuksen normaaliaika"
+    :Mawson: 
+      :long: 
+        :standard: "Mawsonin aika"
+    :Mexico_Northwest: 
+      :long: 
+        :daylight: "Luoteis-Meksikon kesäaika"
+        :generic: "Luoteis-Meksikon aika"
+        :standard: "Luoteis-Meksikon normaaliaika"
+    :Mexico_Pacific: 
+      :long: 
+        :daylight: "Meksikon Tyynenmeren kesäaika"
+        :generic: "Meksikon Tyynenmeren aika"
+        :standard: "Meksikon Tyynenmeren normaaliaika"
+    :Mongolia: 
+      :long: 
+        :daylight: "Ulan Batorin kesäaika"
+        :generic: "Ulan Batorin aika"
+        :standard: "Ulan Batorin normaaliaika"
+    :Moscow: 
+      :long: 
+        :daylight: "Moskovan kesäaika"
+        :generic: "Moskovan aika"
+        :standard: "Moskovan normaaliaika"
+    :Myanmar: 
+      :long: 
+        :standard: "Myanmarin aika"
+    :Nauru: 
+      :long: 
+        :standard: "Naurun aika"
+    :Nepal: 
+      :long: 
+        :standard: "Nepalin aika"
+    :New_Caledonia: 
+      :long: 
+        :daylight: "Uuden-Kaledonian kesäaika"
+        :generic: "Uuden-Kaledonian aika"
+        :standard: "Uuden-Kaledonian normaaliaika"
+    :New_Zealand: 
+      :long: 
+        :daylight: "Uuden-Seelannin kesäaika"
+        :generic: "Uuden-Seelannin aika"
+        :standard: "Uuden-Seelannin normaaliaika"
+    :Newfoundland: 
+      :long: 
+        :daylight: "Newfoundlandin kesäaika"
+        :generic: "Newfoundlandin aika"
+        :standard: "Newfoundlandin normaaliaika"
+    :Niue: 
+      :long: 
+        :standard: "Niuen aika"
+    :Norfolk: 
+      :long: 
+        :standard: "Norfolkinsaaren aika"
+    :Noronha: 
+      :long: 
+        :daylight: "Fernando de Noronhan kesäaika"
+        :generic: "Fernando de Noronhan aika"
+        :standard: "Fernando de Noronhan normaaliaika"
+    :North_Mariana: 
+      :long: 
+        :standard: "Pohjois-Mariaanien aika"
+    :Novosibirsk: 
+      :long: 
+        :daylight: "Novosibirskin kesäaika"
+        :generic: "Novosibirskin aika"
+        :standard: "Novosibirskin normaaliaika"
+    :Omsk: 
+      :long: 
+        :daylight: "Omskin kesäaika"
+        :generic: "Omskin aika"
+        :standard: "Omskin normaaliaika"
+    :Pakistan: 
+      :long: 
+        :daylight: "Pakistanin kesäaika"
+        :generic: "Pakistanin aika"
+        :standard: "Pakistanin normaaliaika"
+    :Palau: 
+      :long: 
+        :standard: "Palaun aika"
+    :Papua_New_Guinea: 
+      :long: 
+        :standard: "Papua-Uuden-Guinean aika"
+    :Paraguay: 
+      :long: 
+        :daylight: "Paraguayn kesäaika"
+        :generic: "Paraguayn aika"
+        :standard: "Paraguayn normaaliaika"
+    :Peru: 
+      :long: 
+        :daylight: "Perun kesäaika"
+        :generic: "Perun aika"
+        :standard: "Perun normaaliaika"
+    :Philippines: 
+      :long: 
+        :daylight: "Filippiinien kesäaika"
+        :generic: "Filippiinien aika"
+        :standard: "Filippiinien normaaliaika"
+    :Phoenix_Islands: 
+      :long: 
+        :standard: "Phoenixsaarten aika"
+    :Pierre_Miquelon: 
+      :long: 
+        :daylight: "Saint-Pierren ja Miquelonin kesäaika"
+        :generic: "Saint-Pierren ja Miquelonin aika"
+        :standard: "Saint-Pierren ja Miquelonin normaaliaika"
+    :Pitcairn: 
+      :long: 
+        :standard: "Pitcairnin aika"
+    :Ponape: 
+      :long: 
+        :standard: "Pohnpein aika"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pjongjangin aika"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "Qızılordan kesäaika"
+        :generic: "Qızılordan aika"
+        :standard: "Qızılordan normaaliaika"
+    :Reunion: 
+      :long: 
+        :standard: "Réunionin aika"
+    :Rothera: 
+      :long: 
+        :standard: "Rotheran aika"
+    :Sakhalin: 
+      :long: 
+        :daylight: "Sahalinin kesäaika"
+        :generic: "Sahalinin aika"
+        :standard: "Sahalinin normaaliaika"
+    :Samara: 
+      :long: 
+        :daylight: "Samaran kesäaika"
+        :generic: "Samaran aika"
+        :standard: "Samaran normaaliaika"
+    :Samoa: 
+      :long: 
+        :daylight: "Samoan kesäaika"
+        :generic: "Samoan aika"
+        :standard: "Samoan normaaliaika"
+    :Seychelles: 
+      :long: 
+        :standard: "Seychellien aika"
+    :Singapore: 
+      :long: 
+        :standard: "Singaporen aika"
+    :Solomon: 
+      :long: 
+        :standard: "Salomonsaarten aika"
+    :South_Georgia: 
+      :long: 
+        :standard: "Etelä-Georgian aika"
+    :Suriname: 
+      :long: 
+        :standard: "Surinamen aika"
+    :Syowa: 
+      :long: 
+        :standard: "Syowan aika"
+    :Tahiti: 
+      :long: 
+        :standard: "Tahitin aika"
+    :Taipei: 
+      :long: 
+        :daylight: "Taipein kesäaika"
+        :generic: "Taipein aika"
+        :standard: "Taipein normaaliaika"
+    :Tajikistan: 
+      :long: 
+        :standard: "Tadžikistanin aika"
+    :Tokelau: 
+      :long: 
+        :standard: "Tokelaun aika"
+    :Tonga: 
+      :long: 
+        :daylight: "Tongan kesäaika"
+        :generic: "Tongan aika"
+        :standard: "Tongan normaaliaika"
+    :Truk: 
+      :long: 
+        :standard: "Chuukin aika"
+    :Turkmenistan: 
+      :long: 
+        :daylight: "Turkmenistanin kesäaika"
+        :generic: "Turkmenistanin aika"
+        :standard: "Turkmenistanin normaaliaika"
+    :Tuvalu: 
+      :long: 
+        :standard: "Tuvalun aika"
+    :Uruguay: 
+      :long: 
+        :daylight: "Uruguayn kesäaika"
+        :generic: "Uruguayn aika"
+        :standard: "Uruguayn normaaliaika"
+    :Uzbekistan: 
+      :long: 
+        :daylight: "Uzbekistanin kesäaika"
+        :generic: "Uzbekistanin aika"
+        :standard: "Uzbekistanin normaaliaika"
+    :Vanuatu: 
+      :long: 
+        :daylight: "Vanuatun kesäaika"
+        :generic: "Vanuatun aika"
+        :standard: "Vanuatun normaaliaika"
+    :Venezuela: 
+      :long: 
+        :standard: "Venezuelan aika"
+    :Vladivostok: 
+      :long: 
+        :daylight: "Vladivostokin kesäaika"
+        :generic: "Vladivostokin aika"
+        :standard: "Vladivostokin normaaliaika"
+    :Volgograd: 
+      :long: 
+        :daylight: "Volgogradin kesäaika"
+        :generic: "Volgogradin aika"
+        :standard: "Volgogradin normaaliaika"
+    :Vostok: 
+      :long: 
+        :standard: "Vostokin aika"
+    :Wake: 
+      :long: 
+        :standard: "Waken aika"
+    :Wallis: 
+      :long: 
+        :standard: "Wallisin ja Futunan aika"
+    :Yakutsk: 
+      :long: 
+        :daylight: "Jakutskin kesäaika"
+        :generic: "Jakutskin aika"
+        :standard: "Jakutskin normaaliaika"
+    :Yekaterinburg: 
+      :long: 
+        :daylight: "Jekaterinburgin kesäaika"
+        :generic: "Jekaterinburgin aika"
+        :standard: "Jekaterinburgin normaaliaika"
+  :timezones: 
+    :Africa/Abidjan: 
+      :city: Abidjan
+    :Africa/Accra: 
+      :city: Accra
+    :Africa/Addis_Ababa: 
+      :city: "Addis Abeba"
+    :Africa/Algiers: 
+      :city: Alger
+    :Africa/Asmera: 
+      :city: Asmara
+    :Africa/Bamako: 
+      :city: Bamako
+    :Africa/Bangui: 
+      :city: Bangui
+    :Africa/Banjul: 
+      :city: Banjul
+    :Africa/Bissau: 
+      :city: Bissau
+    :Africa/Blantyre: 
+      :city: Blantyre
+    :Africa/Brazzaville: 
+      :city: Brazzaville
+    :Africa/Bujumbura: 
+      :city: Bujumbura
+    :Africa/Cairo: 
+      :city: Kairo
+    :Africa/Casablanca: 
+      :city: Casablanca
+    :Africa/Ceuta: 
+      :city: Ceuta
+    :Africa/Conakry: 
+      :city: Conakry
+    :Africa/Dakar: 
+      :city: Dakar
+    :Africa/Dar_es_Salaam: 
+      :city: "Dar es Salaam"
+    :Africa/Djibouti: 
+      :city: Djibouti
+    :Africa/Douala: 
+      :city: Douala
+    :Africa/El_Aaiun: 
+      :city: "El Aaiún"
+    :Africa/Freetown: 
+      :city: Freetown
+    :Africa/Gaborone: 
+      :city: Gaborone
+    :Africa/Harare: 
+      :city: Harare
+    :Africa/Johannesburg: 
+      :city: Johannesburg
+    :Africa/Juba: 
+      :city: Juba
+    :Africa/Kampala: 
+      :city: Kampala
+    :Africa/Khartoum: 
+      :city: Khartum
+    :Africa/Kigali: 
+      :city: Kigali
+    :Africa/Kinshasa: 
+      :city: Kinshasa
+    :Africa/Lagos: 
+      :city: Lagos
+    :Africa/Libreville: 
+      :city: Libreville
+    :Africa/Lome: 
+      :city: Lomé
+    :Africa/Luanda: 
+      :city: Luanda
+    :Africa/Lubumbashi: 
+      :city: Lubumbashi
+    :Africa/Lusaka: 
+      :city: Lusaka
+    :Africa/Malabo: 
+      :city: Malabo
+    :Africa/Maputo: 
+      :city: Maputo
+    :Africa/Maseru: 
+      :city: Maseru
+    :Africa/Mbabane: 
+      :city: Mbabane
+    :Africa/Mogadishu: 
+      :city: Mogadishu
+    :Africa/Monrovia: 
+      :city: Monrovia
+    :Africa/Nairobi: 
+      :city: Nairobi
+    :Africa/Ndjamena: 
+      :city: N’Djamena
+    :Africa/Niamey: 
+      :city: Niamey
+    :Africa/Nouakchott: 
+      :city: Nouakchott
+    :Africa/Ouagadougou: 
+      :city: Ouagadougou
+    :Africa/Porto-Novo: 
+      :city: Porto-Novo
+    :Africa/Sao_Tome: 
+      :city: "São Tomé"
+    :Africa/Tripoli: 
+      :city: Tripoli
+    :Africa/Tunis: 
+      :city: Tunis
+    :Africa/Windhoek: 
+      :city: Windhoek
+    :America/Adak: 
+      :city: Adak
+    :America/Anchorage: 
+      :city: Anchorage
+    :America/Anguilla: 
+      :city: Anguilla
+    :America/Antigua: 
+      :city: Antigua
+    :America/Araguaina: 
+      :city: Araguaína
+    :America/Argentina/La_Rioja: 
+      :city: "La Rioja"
+    :America/Argentina/Rio_Gallegos: 
+      :city: "Rio Gallegos"
+    :America/Argentina/Salta: 
+      :city: Salta
+    :America/Argentina/San_Juan: 
+      :city: "San Juan"
+    :America/Argentina/San_Luis: 
+      :city: "San Luis"
+    :America/Argentina/Tucuman: 
+      :city: Tucumán
+    :America/Argentina/Ushuaia: 
+      :city: Ushuaia
+    :America/Aruba: 
+      :city: Aruba
+    :America/Asuncion: 
+      :city: Asunción
+    :America/Bahia: 
+      :city: Bahia
+    :America/Bahia_Banderas: 
+      :city: "Bahía de Banderas"
+    :America/Barbados: 
+      :city: Barbados
+    :America/Belem: 
+      :city: Belem
+    :America/Belize: 
+      :city: Belize
+    :America/Blanc-Sablon: 
+      :city: Blanc-Sablon
+    :America/Boa_Vista: 
+      :city: "Boa Vista"
+    :America/Bogota: 
+      :city: Bogotá
+    :America/Boise: 
+      :city: Boise
+    :America/Buenos_Aires: 
+      :city: "Buenos Aires"
+    :America/Cambridge_Bay: 
+      :city: "Cambridge Bay"
+    :America/Campo_Grande: 
+      :city: "Campo Grande"
+    :America/Cancun: 
+      :city: Cancún
+    :America/Caracas: 
+      :city: Caracas
+    :America/Catamarca: 
+      :city: Catamarca
+    :America/Cayenne: 
+      :city: Cayenne
+    :America/Cayman: 
+      :city: Cayman
+    :America/Chicago: 
+      :city: Chicago
+    :America/Chihuahua: 
+      :city: Chihuahua
+    :America/Coral_Harbour: 
+      :city: Atikokan
+    :America/Cordoba: 
+      :city: Córdoba
+    :America/Costa_Rica: 
+      :city: "Costa Rica"
+    :America/Creston: 
+      :city: Creston
+    :America/Cuiaba: 
+      :city: Cuiabá
+    :America/Curacao: 
+      :city: Curaçao
+    :America/Danmarkshavn: 
+      :city: Danmarkshavn
+    :America/Dawson: 
+      :city: Dawson
+    :America/Dawson_Creek: 
+      :city: "Dawson Creek"
+    :America/Denver: 
+      :city: Denver
+    :America/Detroit: 
+      :city: Detroit
+    :America/Dominica: 
+      :city: Dominica
+    :America/Edmonton: 
+      :city: Edmonton
+    :America/Eirunepe: 
+      :city: Eirunepé
+    :America/El_Salvador: 
+      :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
+    :America/Fortaleza: 
+      :city: Fortaleza
+    :America/Glace_Bay: 
+      :city: "Glace Bay"
+    :America/Godthab: 
+      :city: Nuuk
+    :America/Goose_Bay: 
+      :city: "Goose Bay"
+    :America/Grand_Turk: 
+      :city: "Grand Turk"
+    :America/Grenada: 
+      :city: Grenada
+    :America/Guadeloupe: 
+      :city: Guadeloupe
+    :America/Guatemala: 
+      :city: Guatemala
+    :America/Guayaquil: 
+      :city: Guayaquil
+    :America/Guyana: 
+      :city: Guyana
+    :America/Halifax: 
+      :city: Halifax
+    :America/Havana: 
+      :city: Havanna
+    :America/Hermosillo: 
+      :city: Hermosillo
+    :America/Indiana/Knox: 
+      :city: "Knox, Indiana"
+    :America/Indiana/Marengo: 
+      :city: "Marengo, Indiana"
+    :America/Indiana/Petersburg: 
+      :city: "Petersburg, Indiana"
+    :America/Indiana/Tell_City: 
+      :city: "Tell City, Indiana"
+    :America/Indiana/Vevay: 
+      :city: "Vevay, Indiana"
+    :America/Indiana/Vincennes: 
+      :city: "Vincennes, Indiana"
+    :America/Indiana/Winamac: 
+      :city: "Winamac, Indiana"
+    :America/Indianapolis: 
+      :city: Indianapolis
+    :America/Inuvik: 
+      :city: Inuvik
+    :America/Iqaluit: 
+      :city: Iqaluit
+    :America/Jamaica: 
+      :city: Jamaika
+    :America/Jujuy: 
+      :city: Jujuy
+    :America/Juneau: 
+      :city: Juneau
+    :America/Kentucky/Monticello: 
+      :city: "Monticello, Kentucky"
+    :America/Kralendijk: 
+      :city: Kralendijk
+    :America/La_Paz: 
+      :city: "La Paz"
+    :America/Lima: 
+      :city: Lima
+    :America/Los_Angeles: 
+      :city: "Los Angeles"
+    :America/Louisville: 
+      :city: Louisville
+    :America/Lower_Princes: 
+      :city: "Lower Prince’s Quarter"
+    :America/Maceio: 
+      :city: Maceió
+    :America/Managua: 
+      :city: Managua
+    :America/Manaus: 
+      :city: Manaus
+    :America/Marigot: 
+      :city: Marigot
+    :America/Martinique: 
+      :city: Martinique
+    :America/Matamoros: 
+      :city: Matamoros
+    :America/Mazatlan: 
+      :city: Mazatlán
+    :America/Mendoza: 
+      :city: Mendoza
+    :America/Menominee: 
+      :city: Menominee
+    :America/Merida: 
+      :city: Mérida
+    :America/Metlakatla: 
+      :city: Metlakatla
+    :America/Mexico_City: 
+      :city: "Ciudad de México"
+    :America/Miquelon: 
+      :city: Miquelon
+    :America/Moncton: 
+      :city: Moncton
+    :America/Monterrey: 
+      :city: Monterrey
+    :America/Montevideo: 
+      :city: Montevideo
+    :America/Montserrat: 
+      :city: Montserrat
+    :America/Nassau: 
+      :city: Nassau
+    :America/New_York: 
+      :city: "New York"
+    :America/Nipigon: 
+      :city: Nipigon
+    :America/Nome: 
+      :city: Nome
+    :America/Noronha: 
+      :city: Noronha
+    :America/North_Dakota/Beulah: 
+      :city: "Beulah, Pohjois-Dakota"
+    :America/North_Dakota/Center: 
+      :city: "Center, Pohjois-Dakota"
+    :America/North_Dakota/New_Salem: 
+      :city: "New Salem, Pohjois-Dakota"
+    :America/Ojinaga: 
+      :city: Ojinaga
+    :America/Panama: 
+      :city: Panama
+    :America/Pangnirtung: 
+      :city: Pangnirtung
+    :America/Paramaribo: 
+      :city: Paramaribo
+    :America/Phoenix: 
+      :city: Phoenix
+    :America/Port-au-Prince: 
+      :city: Port-au-Prince
+    :America/Port_of_Spain: 
+      :city: "Port of Spain"
+    :America/Porto_Velho: 
+      :city: "Porto Velho"
+    :America/Puerto_Rico: 
+      :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
+    :America/Rainy_River: 
+      :city: "Rainy River"
+    :America/Rankin_Inlet: 
+      :city: "Rankin Inlet"
+    :America/Recife: 
+      :city: Recife
+    :America/Regina: 
+      :city: Regina
+    :America/Resolute: 
+      :city: Resolute
+    :America/Rio_Branco: 
+      :city: "Rio Branco"
+    :America/Santa_Isabel: 
+      :city: "Santa Isabel"
+    :America/Santarem: 
+      :city: Santarém
+    :America/Santiago: 
+      :city: "Santiago de Chile"
+    :America/Santo_Domingo: 
+      :city: "Santo Domingo"
+    :America/Sao_Paulo: 
+      :city: "São Paulo"
+    :America/Scoresbysund: 
+      :city: Ittoqqortoormiit
+    :America/Sitka: 
+      :city: Sitka
+    :America/St_Barthelemy: 
+      :city: Saint-Barthélemy
+    :America/St_Johns: 
+      :city: "St. John’s"
+    :America/St_Kitts: 
+      :city: "Saint Kitts"
+    :America/St_Lucia: 
+      :city: "Saint Lucia"
+    :America/St_Thomas: 
+      :city: "Saint Thomas"
+    :America/St_Vincent: 
+      :city: "Saint Vincent"
+    :America/Swift_Current: 
+      :city: "Swift Current"
+    :America/Tegucigalpa: 
+      :city: Tegucigalpa
+    :America/Thule: 
+      :city: Thule
+    :America/Thunder_Bay: 
+      :city: "Thunder Bay"
+    :America/Tijuana: 
+      :city: Tijuana
+    :America/Toronto: 
+      :city: Toronto
+    :America/Tortola: 
+      :city: Tortola
+    :America/Vancouver: 
+      :city: Vancouver
+    :America/Whitehorse: 
+      :city: Whitehorse
+    :America/Winnipeg: 
+      :city: Winnipeg
+    :America/Yakutat: 
+      :city: Yakutat
+    :America/Yellowknife: 
+      :city: Yellowknife
+    :Antarctica/Casey: 
+      :city: Casey
+    :Antarctica/Davis: 
+      :city: Davis
+    :Antarctica/DumontDUrville: 
+      :city: "Dumont d’Urville"
+    :Antarctica/Macquarie: 
+      :city: Macquariensaari
+    :Antarctica/Mawson: 
+      :city: Mawson
+    :Antarctica/McMurdo: 
+      :city: McMurdo
+    :Antarctica/Palmer: 
+      :city: Palmer
+    :Antarctica/Rothera: 
+      :city: Rothera
+    :Antarctica/Syowa: 
+      :city: Syowa
+    :Antarctica/Troll: 
+      :city: Troll
+    :Antarctica/Vostok: 
+      :city: Vostok
+    :Arctic/Longyearbyen: 
+      :city: Longyearbyen
+    :Asia/Aden: 
+      :city: Aden
+    :Asia/Almaty: 
+      :city: Almaty
+    :Asia/Amman: 
+      :city: Amman
+    :Asia/Anadyr: 
+      :city: Anadyr
+    :Asia/Aqtau: 
+      :city: Aqtaw
+    :Asia/Aqtobe: 
+      :city: Aqtöbe
+    :Asia/Ashgabat: 
+      :city: Ašgabat
+    :Asia/Atyrau: 
+      :city: Atıraw
+    :Asia/Baghdad: 
+      :city: Bagdad
+    :Asia/Bahrain: 
+      :city: Bahrain
+    :Asia/Baku: 
+      :city: Baku
+    :Asia/Bangkok: 
+      :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
+    :Asia/Beirut: 
+      :city: Beirut
+    :Asia/Bishkek: 
+      :city: Biškek
+    :Asia/Brunei: 
+      :city: Brunei
+    :Asia/Calcutta: 
+      :city: Kalkutta
+    :Asia/Chita: 
+      :city: Tšita
+    :Asia/Choibalsan: 
+      :city: Tšoibalsa
+    :Asia/Colombo: 
+      :city: Colombo
+    :Asia/Damascus: 
+      :city: Damaskos
+    :Asia/Dhaka: 
+      :city: Dhaka
+    :Asia/Dili: 
+      :city: Dili
+    :Asia/Dubai: 
+      :city: Dubai
+    :Asia/Dushanbe: 
+      :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
+    :Asia/Gaza: 
+      :city: Gaza
+    :Asia/Hebron: 
+      :city: Hebron
+    :Asia/Hong_Kong: 
+      :city: Hongkong
+    :Asia/Hovd: 
+      :city: Hovd
+    :Asia/Irkutsk: 
+      :city: Irkutsk
+    :Asia/Jakarta: 
+      :city: Jakarta
+    :Asia/Jayapura: 
+      :city: Jayapura
+    :Asia/Jerusalem: 
+      :city: Jerusalem
+    :Asia/Kabul: 
+      :city: Kabul
+    :Asia/Kamchatka: 
+      :city: Kamtšatka
+    :Asia/Karachi: 
+      :city: Karachi
+    :Asia/Katmandu: 
+      :city: Kathmandu
+    :Asia/Khandyga: 
+      :city: Handyga
+    :Asia/Krasnoyarsk: 
+      :city: Krasnojarsk
+    :Asia/Kuala_Lumpur: 
+      :city: "Kuala Lumpur"
+    :Asia/Kuching: 
+      :city: Kuching
+    :Asia/Kuwait: 
+      :city: Kuwait
+    :Asia/Macau: 
+      :city: Macao
+    :Asia/Magadan: 
+      :city: Magadan
+    :Asia/Makassar: 
+      :city: Makassar
+    :Asia/Manila: 
+      :city: Manila
+    :Asia/Muscat: 
+      :city: Masqat
+    :Asia/Nicosia: 
+      :city: Nikosia
+    :Asia/Novokuznetsk: 
+      :city: Novokuznetsk
+    :Asia/Novosibirsk: 
+      :city: Novosibirsk
+    :Asia/Omsk: 
+      :city: Omsk
+    :Asia/Oral: 
+      :city: Uralsk
+    :Asia/Phnom_Penh: 
+      :city: "Phnom Penh"
+    :Asia/Pontianak: 
+      :city: Pontianak
+    :Asia/Pyongyang: 
+      :city: Pjongjang
+    :Asia/Qatar: 
+      :city: Qatar
+    :Asia/Qyzylorda: 
+      :city: Qızılorda
+    :Asia/Rangoon: 
+      :city: Yangon
+    :Asia/Riyadh: 
+      :city: Riad
+    :Asia/Saigon: 
+      :city: "Hồ Chí Minhin kaupunki"
+    :Asia/Sakhalin: 
+      :city: Sahalin
+    :Asia/Samarkand: 
+      :city: Samarkand
+    :Asia/Seoul: 
+      :city: Soul
+    :Asia/Shanghai: 
+      :city: Shanghai
+    :Asia/Singapore: 
+      :city: Singapore
+    :Asia/Srednekolymsk: 
+      :city: Srednekolymsk
+    :Asia/Taipei: 
+      :city: Taipei
+    :Asia/Tashkent: 
+      :city: Taškent
+    :Asia/Tbilisi: 
+      :city: Tbilisi
+    :Asia/Tehran: 
+      :city: Teheran
+    :Asia/Thimphu: 
+      :city: Thimphu
+    :Asia/Tokyo: 
+      :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
+    :Asia/Ulaanbaatar: 
+      :city: "Ulan Bator"
+    :Asia/Urumqi: 
+      :city: Ürümqi
+    :Asia/Ust-Nera: 
+      :city: Ust-Nera
+    :Asia/Vientiane: 
+      :city: Vientiane
+    :Asia/Vladivostok: 
+      :city: Vladivostok
+    :Asia/Yakutsk: 
+      :city: Jakutsk
+    :Asia/Yekaterinburg: 
+      :city: Jekaterinburg
+    :Asia/Yerevan: 
+      :city: Jerevan
+    :Atlantic/Azores: 
+      :city: Azorit
+    :Atlantic/Bermuda: 
+      :city: Bermuda
+    :Atlantic/Canary: 
+      :city: Kanariansaaret
+    :Atlantic/Cape_Verde: 
+      :city: "Kap Verde"
+    :Atlantic/Faeroe: 
+      :city: Färsaaret
+    :Atlantic/Madeira: 
+      :city: Madeira
+    :Atlantic/Reykjavik: 
+      :city: Reykjavík
+    :Atlantic/South_Georgia: 
+      :city: Etelä-Georgia
+    :Atlantic/St_Helena: 
+      :city: "Saint Helena"
+    :Atlantic/Stanley: 
+      :city: Stanley
+    :Australia/Adelaide: 
+      :city: Adelaide
+    :Australia/Brisbane: 
+      :city: Brisbane
+    :Australia/Broken_Hill: 
+      :city: "Broken Hill"
+    :Australia/Currie: 
+      :city: Currie
+    :Australia/Darwin: 
+      :city: Darwin
+    :Australia/Eucla: 
+      :city: Eucla
+    :Australia/Hobart: 
+      :city: Hobart
+    :Australia/Lindeman: 
+      :city: Lindeman
+    :Australia/Lord_Howe: 
+      :city: "Lord Howe"
+    :Australia/Melbourne: 
+      :city: Melbourne
+    :Australia/Perth: 
+      :city: Perth
+    :Australia/Sydney: 
+      :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: UTC-yleisaika
+      :short: 
+        :standard: UTC
+    :Etc/Unknown: 
+      :city: tuntematon
+    :Europe/Amsterdam: 
+      :city: Amsterdam
+    :Europe/Andorra: 
+      :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrahan
+    :Europe/Athens: 
+      :city: Ateena
+    :Europe/Belgrade: 
+      :city: Belgrad
+    :Europe/Berlin: 
+      :city: Berliini
+    :Europe/Bratislava: 
+      :city: Bratislava
+    :Europe/Brussels: 
+      :city: Bryssel
+    :Europe/Bucharest: 
+      :city: Bukarest
+    :Europe/Budapest: 
+      :city: Budapest
+    :Europe/Busingen: 
+      :city: Büsingen
+    :Europe/Chisinau: 
+      :city: Chişinău
+    :Europe/Copenhagen: 
+      :city: Kööpenhamina
+    :Europe/Dublin: 
+      :city: Dublin
+      :long: 
+        :daylight: "Irlannin kesäaika"
+    :Europe/Gibraltar: 
+      :city: Gibraltar
+    :Europe/Guernsey: 
+      :city: Guernsey
+    :Europe/Helsinki: 
+      :city: Helsinki
+    :Europe/Isle_of_Man: 
+      :city: Mansaari
+    :Europe/Istanbul: 
+      :city: Istanbul
+    :Europe/Jersey: 
+      :city: Jersey
+    :Europe/Kaliningrad: 
+      :city: Kaliningrad
+    :Europe/Kiev: 
+      :city: Kiova
+    :Europe/Kirov: 
+      :city: Kirov
+    :Europe/Lisbon: 
+      :city: Lissabon
+    :Europe/Ljubljana: 
+      :city: Ljubljana
+    :Europe/London: 
+      :city: Lontoo
+      :long: 
+        :daylight: "Britannian kesäaika"
+    :Europe/Luxembourg: 
+      :city: Luxemburg
+    :Europe/Madrid: 
+      :city: Madrid
+    :Europe/Malta: 
+      :city: Malta
+    :Europe/Mariehamn: 
+      :city: Maarianhamina
+    :Europe/Minsk: 
+      :city: Minsk
+    :Europe/Monaco: 
+      :city: Monaco
+    :Europe/Moscow: 
+      :city: Moskova
+    :Europe/Oslo: 
+      :city: Oslo
+    :Europe/Paris: 
+      :city: Pariisi
+    :Europe/Podgorica: 
+      :city: Podgorica
+    :Europe/Prague: 
+      :city: Praha
+    :Europe/Riga: 
+      :city: Riika
+    :Europe/Rome: 
+      :city: Rooma
+    :Europe/Samara: 
+      :city: Samara
+    :Europe/San_Marino: 
+      :city: "San Marino"
+    :Europe/Sarajevo: 
+      :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
+    :Europe/Simferopol: 
+      :city: Simferopol
+    :Europe/Skopje: 
+      :city: Skopje
+    :Europe/Sofia: 
+      :city: Sofia
+    :Europe/Stockholm: 
+      :city: Tukholma
+    :Europe/Tallinn: 
+      :city: Tallinna
+    :Europe/Tirane: 
+      :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
+    :Europe/Uzhgorod: 
+      :city: Užgorod
+    :Europe/Vaduz: 
+      :city: Vaduz
+    :Europe/Vatican: 
+      :city: Vatikaani
+    :Europe/Vienna: 
+      :city: Wien
+    :Europe/Vilnius: 
+      :city: Vilna
+    :Europe/Volgograd: 
+      :city: Volgograd
+    :Europe/Warsaw: 
+      :city: Varsova
+    :Europe/Zagreb: 
+      :city: Zagreb
+    :Europe/Zaporozhye: 
+      :city: Zaporižžja
+    :Europe/Zurich: 
+      :city: Zürich
+    :Indian/Antananarivo: 
+      :city: Antananarivo
+    :Indian/Chagos: 
+      :city: Chagos
+    :Indian/Christmas: 
+      :city: Joulusaari
+    :Indian/Cocos: 
+      :city: Kookossaaret
+    :Indian/Comoro: 
+      :city: Komorit
+    :Indian/Kerguelen: 
+      :city: Kerguelensaaret
+    :Indian/Mahe: 
+      :city: Mahé
+    :Indian/Maldives: 
+      :city: Malediivit
+    :Indian/Mauritius: 
+      :city: Mauritius
+    :Indian/Mayotte: 
+      :city: Mayotte
+    :Indian/Reunion: 
+      :city: Réunion
+    :Pacific/Apia: 
+      :city: Apia
+    :Pacific/Auckland: 
+      :city: Auckland
+    :Pacific/Bougainville: 
+      :city: Bougainville
+    :Pacific/Chatham: 
+      :city: Chathamsaaret
+    :Pacific/Easter: 
+      :city: Pääsiäissaari
+    :Pacific/Efate: 
+      :city: Efate
+    :Pacific/Enderbury: 
+      :city: Enderbury
+    :Pacific/Fakaofo: 
+      :city: Fakaofo
+    :Pacific/Fiji: 
+      :city: Fidži
+    :Pacific/Funafuti: 
+      :city: Funafuti
+    :Pacific/Galapagos: 
+      :city: Galapagos
+    :Pacific/Gambier: 
+      :city: Gambiersaaret
+    :Pacific/Guadalcanal: 
+      :city: Guadalcanal
+    :Pacific/Guam: 
+      :city: Guam
+    :Pacific/Honolulu: 
+      :city: Honolulu
+    :Pacific/Johnston: 
+      :city: Johnston
+    :Pacific/Kiritimati: 
+      :city: Kiritimati
+    :Pacific/Kosrae: 
+      :city: Kosrae
+    :Pacific/Kwajalein: 
+      :city: Kwajalein
+    :Pacific/Majuro: 
+      :city: Majuro
+    :Pacific/Marquesas: 
+      :city: Marquesassaaret
+    :Pacific/Midway: 
+      :city: Midwaysaaret
+    :Pacific/Nauru: 
+      :city: Nauru
+    :Pacific/Niue: 
+      :city: Niue
+    :Pacific/Norfolk: 
+      :city: Norfolk
+    :Pacific/Noumea: 
+      :city: Nouméa
+    :Pacific/Pago_Pago: 
+      :city: "Pago Pago"
+    :Pacific/Palau: 
+      :city: Palau
+    :Pacific/Pitcairn: 
+      :city: Pitcairn
+    :Pacific/Ponape: 
+      :city: Pohnpei
+    :Pacific/Port_Moresby: 
+      :city: "Port Moresby"
+    :Pacific/Rarotonga: 
+      :city: Rarotonga
+    :Pacific/Saipan: 
+      :city: Saipan
+    :Pacific/Tahiti: 
+      :city: Tahiti
+    :Pacific/Tarawa: 
+      :city: Tarawa
+    :Pacific/Tongatapu: 
+      :city: Tongatapu
+    :Pacific/Truk: 
+      :city: Chuuk
+    :Pacific/Wake: 
+      :city: Wake
+    :Pacific/Wallis: 
+      :city: Wallis

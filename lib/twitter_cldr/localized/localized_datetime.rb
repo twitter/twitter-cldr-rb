@@ -43,7 +43,7 @@ module TwitterCldr
           data_reader.tokenizer.tokenize(data_reader.pattern)
         end
 
-        data_reader.formatter.format(tokens, base_in_timezone)
+        data_reader.formatter.format(tokens, base_in_timezone, chain_params)
       end
 
       alias :to_default_s :to_medium_s

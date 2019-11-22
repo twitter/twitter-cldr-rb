@@ -27,7 +27,6 @@ module TwitterCldr
         currencies
         plural_rules
         lists
-        territories
         rbnf
         units
         fields
@@ -41,6 +40,7 @@ module TwitterCldr
         segments_root
         territories_containment
         likely_subtags
+        metazones
       ]
 
       private
@@ -83,7 +83,6 @@ module TwitterCldr
           Cldr::Export.export(export_args) do |component, locale, path|
             add_buddhist_calendar(component, locale, path)
             process_plurals(component, locale, path)
-            downcase_territory_codes(component, locale, path)
             deep_symbolize(path)
           end
         end
@@ -125,25 +124,6 @@ module TwitterCldr
               use_natural_symbols: true
             )
           )
-        end
-      end
-
-      # CLDR stores territory codes uppercase. For consistency with how we
-      # handle territory codes in methods relating to phone and postal codes,
-      # we downcase them here.
-      #
-      # (There is also some trickery relating to three-digit UN "area codes"
-      # used by CLDR; see comment of Utils::Territories::deep_normalize_territory_code_keys.)
-      def downcase_territory_codes(component, locale, path)
-        return unless component == 'Territories'
-
-        data = YAML.load(File.read(path))
-        data.keys.each do |l|
-          data[l] = TwitterCldr::Shared::Territories.deep_normalize_territory_code_keys(data[l])
-        end
-
-        File.open(path, 'w:utf-8') do |output|
-          output.write(YAML.dump(data))
         end
       end
 

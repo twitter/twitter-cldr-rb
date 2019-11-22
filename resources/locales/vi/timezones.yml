@@ -1,0 +1,1560 @@
+--- 
+:vi: 
+  :formats: 
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT{0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "Giờ mùa hè {0}"
+      :generic: "Giờ {0}"
+      :standard: "Giờ chuẩn {0}"
+  :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Acre"
+        :generic: "Giờ Acre"
+        :standard: "Giờ Chuẩn Acre"
+    :Afghanistan: 
+      :long: 
+        :standard: "Giờ Afghanistan"
+    :Africa_Central: 
+      :long: 
+        :standard: "Giờ Trung Phi"
+    :Africa_Eastern: 
+      :long: 
+        :standard: "Giờ Đông Phi"
+    :Africa_Southern: 
+      :long: 
+        :standard: "Giờ Chuẩn Nam Phi"
+    :Africa_Western: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Tây Phi"
+        :generic: "Giờ Tây Phi"
+        :standard: "Giờ Chuẩn Tây Phi"
+    :Alaska: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Alaska"
+        :generic: "Giờ Alaska"
+        :standard: "Giờ Chuẩn Alaska"
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
+    :Almaty: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Almaty"
+        :generic: "Giờ Almaty"
+        :standard: "Giờ Chuẩn Almaty"
+    :Amazon: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Amazon"
+        :generic: "Giờ Amazon"
+        :standard: "Giờ Chuẩn Amazon"
+    :America_Central: 
+      :long: 
+        :daylight: "Giờ mùa hè miền Trung"
+        :generic: "Giờ miền Trung"
+        :standard: "Giờ chuẩn miền Trung"
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
+    :America_Eastern: 
+      :long: 
+        :daylight: "Giờ mùa hè miền Đông"
+        :generic: "Giờ miền Đông"
+        :standard: "Giờ chuẩn miền Đông"
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
+    :America_Mountain: 
+      :long: 
+        :daylight: "Giờ mùa hè miền núi"
+        :generic: "Giờ miền núi"
+        :standard: "Giờ chuẩn miền núi"
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
+    :America_Pacific: 
+      :long: 
+        :daylight: "Giờ mùa hè Thái Bình Dương"
+        :generic: "Giờ Thái Bình Dương"
+        :standard: "Giờ chuẩn Thái Bình Dương"
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
+    :Anadyr: 
+      :long: 
+        :daylight: "Giờ mùa hè Anadyr"
+        :generic: "Giờ Anadyr"
+        :standard: "Giờ Chuẩn Anadyr"
+    :Apia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Apia"
+        :generic: "Giờ Apia"
+        :standard: "Giờ Chuẩn Apia"
+    :Aqtau: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Aqtau"
+        :generic: "Giờ Aqtau"
+        :standard: "Giờ Chuẩn Aqtau"
+    :Aqtobe: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Aqtobe"
+        :generic: "Giờ Aqtobe"
+        :standard: "Giờ Chuẩn Aqtobe"
+    :Arabian: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Ả Rập"
+        :generic: "Giờ Ả Rập"
+        :standard: "Giờ chuẩn Ả Rập"
+    :Argentina: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Argentina"
+        :generic: "Giờ Argentina"
+        :standard: "Giờ Chuẩn Argentina"
+    :Argentina_Western: 
+      :long: 
+        :daylight: "Giờ mùa hè miền tây Argentina"
+        :generic: "Giờ miền tây Argentina"
+        :standard: "Giờ chuẩn miền tây Argentina"
+    :Armenia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Armenia"
+        :generic: "Giờ Armenia"
+        :standard: "Giờ Chuẩn Armenia"
+    :Atlantic: 
+      :long: 
+        :daylight: "Giờ mùa hè Đại Tây Dương"
+        :generic: "Giờ Đại Tây Dương"
+        :standard: "Giờ Chuẩn Đại Tây Dương"
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
+    :Australia_Central: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Trung Australia"
+        :generic: "Giờ Miền Trung Australia"
+        :standard: "Giờ Chuẩn Miền Trung Australia"
+    :Australia_CentralWestern: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Trung Tây Australia"
+        :generic: "Giờ Miền Trung Tây Australia"
+        :standard: "Giờ Chuẩn Miền Trung Tây Australia"
+    :Australia_Eastern: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Đông Australia"
+        :generic: "Giờ Miền Đông Australia"
+        :standard: "Giờ Chuẩn Miền Đông Australia"
+    :Australia_Western: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Tây Australia"
+        :generic: "Giờ Miền Tây Australia"
+        :standard: "Giờ Chuẩn Miền Tây Australia"
+    :Azerbaijan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Azerbaijan"
+        :generic: "Giờ Azerbaijan"
+        :standard: "Giờ Chuẩn Azerbaijan"
+    :Azores: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Azores"
+        :generic: "Giờ Azores"
+        :standard: "Giờ Chuẩn Azores"
+    :Bangladesh: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Bangladesh"
+        :generic: "Giờ Bangladesh"
+        :standard: "Giờ Chuẩn Bangladesh"
+    :Bhutan: 
+      :long: 
+        :standard: "Giờ Bhutan"
+    :Bolivia: 
+      :long: 
+        :standard: "Giờ Bolivia"
+    :Brasilia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Brasilia"
+        :generic: "Giờ Brasilia"
+        :standard: "Giờ Chuẩn Brasilia"
+    :Brunei: 
+      :long: 
+        :standard: "Giờ Brunei Darussalam"
+    :Cape_Verde: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Cape Verde"
+        :generic: "Giờ Cape Verde"
+        :standard: "Giờ Chuẩn Cape Verde"
+    :Casey: 
+      :long: 
+        :standard: "Giờ Casey"
+    :Chamorro: 
+      :long: 
+        :standard: "Giờ Chamorro"
+    :Chatham: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Chatham"
+        :generic: "Giờ Chatham"
+        :standard: "Giờ Chuẩn Chatham"
+    :Chile: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Chile"
+        :generic: "Giờ Chile"
+        :standard: "Giờ Chuẩn Chile"
+    :China: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Trung Quốc"
+        :generic: "Giờ Trung Quốc"
+        :standard: "Giờ Chuẩn Trung Quốc"
+    :Choibalsan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Choibalsan"
+        :generic: "Giờ Choibalsan"
+        :standard: "Giờ Chuẩn Choibalsan"
+    :Christmas: 
+      :long: 
+        :standard: "Giờ Đảo Christmas"
+    :Cocos: 
+      :long: 
+        :standard: "Giờ Quần Đảo Cocos"
+    :Colombia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Colombia"
+        :generic: "Giờ Colombia"
+        :standard: "Giờ Chuẩn Colombia"
+    :Cook: 
+      :long: 
+        :daylight: "Giờ Nửa Mùa Hè Quần Đảo Cook"
+        :generic: "Giờ Quần Đảo Cook"
+        :standard: "Giờ Chuẩn Quần Đảo Cook"
+    :Cuba: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Cuba"
+        :generic: "Giờ Cuba"
+        :standard: "Giờ Chuẩn Cuba"
+    :Davis: 
+      :long: 
+        :standard: "Giờ Davis"
+    :DumontDUrville: 
+      :long: 
+        :standard: "Giờ Dumont-d’Urville"
+    :East_Timor: 
+      :long: 
+        :standard: "Giờ Đông Timor"
+    :Easter: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Đảo Phục Sinh"
+        :generic: "Giờ Đảo Phục Sinh"
+        :standard: "Giờ Chuẩn Đảo Phục Sinh"
+    :Ecuador: 
+      :long: 
+        :standard: "Giờ Ecuador"
+    :Europe_Central: 
+      :long: 
+        :daylight: "Giờ mùa hè Trung Âu"
+        :generic: "Giờ Trung Âu"
+        :standard: "Giờ chuẩn Trung Âu"
+    :Europe_Eastern: 
+      :long: 
+        :daylight: "Giờ mùa hè Đông Âu"
+        :generic: "Giờ Đông Âu"
+        :standard: "Giờ chuẩn Đông Âu"
+    :Europe_Further_Eastern: 
+      :long: 
+        :standard: "Giờ Châu Âu Viễn Đông"
+    :Europe_Western: 
+      :long: 
+        :daylight: "Giờ mùa hè Tây Âu"
+        :generic: "Giờ Tây Âu"
+        :standard: "Giờ Chuẩn Tây Âu"
+    :Falkland: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Quần Đảo Falkland"
+        :generic: "Giờ Quần Đảo Falkland"
+        :standard: "Giờ Chuẩn Quần Đảo Falkland"
+    :Fiji: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Fiji"
+        :generic: "Giờ Fiji"
+        :standard: "Giờ Chuẩn Fiji"
+    :French_Guiana: 
+      :long: 
+        :standard: "Giờ Guiana thuộc Pháp"
+    :French_Southern: 
+      :long: 
+        :standard: "Giờ Nam Cực và Nam Nước Pháp"
+    :GMT: 
+      :long: 
+        :standard: "Giờ Trung bình Greenwich"
+    :Galapagos: 
+      :long: 
+        :standard: "Giờ Galapagos"
+    :Gambier: 
+      :long: 
+        :standard: "Giờ Gambier"
+    :Georgia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Georgia"
+        :generic: "Giờ Georgia"
+        :standard: "Giờ Chuẩn Georgia"
+    :Gilbert_Islands: 
+      :long: 
+        :standard: "Giờ Quần Đảo Gilbert"
+    :Greenland_Eastern: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Đông Greenland"
+        :generic: "Giờ Miền Đông Greenland"
+        :standard: "Giờ Chuẩn Miền Đông Greenland"
+    :Greenland_Western: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Miền Tây Greenland"
+        :generic: "Giờ Miền Tây Greenland"
+        :standard: "Giờ Chuẩn Miền Tây Greenland"
+    :Guam: 
+      :long: 
+        :standard: "Giờ Chuẩn Guam"
+    :Gulf: 
+      :long: 
+        :standard: "Giờ Chuẩn Vùng Vịnh"
+    :Guyana: 
+      :long: 
+        :standard: "Giờ Guyana"
+    :Hawaii_Aleutian: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Hawaii-Aleut"
+        :generic: "Giờ Hawaii-Aleut"
+        :standard: "Giờ Chuẩn Hawaii-Aleut"
+      :short: 
+        :daylight: HADT
+        :generic: HAT
+        :standard: HAST
+    :Hong_Kong: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Hồng Kông"
+        :generic: "Giờ Hồng Kông"
+        :standard: "Giờ Chuẩn Hồng Kông"
+    :Hovd: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Hovd"
+        :generic: "Giờ Hovd"
+        :standard: "Giờ Chuẩn Hovd"
+    :India: 
+      :long: 
+        :standard: "Giờ Chuẩn Ấn Độ"
+    :Indian_Ocean: 
+      :long: 
+        :standard: "Giờ Ấn Độ Dương"
+    :Indochina: 
+      :long: 
+        :standard: "Giờ Đông Dương"
+    :Indonesia_Central: 
+      :long: 
+        :standard: "Giờ Miền Trung Indonesia"
+    :Indonesia_Eastern: 
+      :long: 
+        :standard: "Giờ Miền Đông Indonesia"
+    :Indonesia_Western: 
+      :long: 
+        :standard: "Giờ Miền Tây Indonesia"
+    :Iran: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Iran"
+        :generic: "Giờ Iran"
+        :standard: "Giờ Chuẩn Iran"
+    :Irkutsk: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Irkutsk"
+        :generic: "Giờ Irkutsk"
+        :standard: "Giờ Chuẩn Irkutsk"
+    :Israel: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Israel"
+        :generic: "Giờ Israel"
+        :standard: "Giờ Chuẩn Israel"
+    :Japan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Nhật Bản"
+        :generic: "Giờ Nhật Bản"
+        :standard: "Giờ Chuẩn Nhật Bản"
+    :Kamchatka: 
+      :long: 
+        :daylight: "Giờ mùa hè Petropavlovsk-Kamchatski"
+        :generic: "Giờ Petropavlovsk-Kamchatski"
+        :standard: "Giờ chuẩn Petropavlovsk-Kamchatski"
+    :Kazakhstan_Eastern: 
+      :long: 
+        :standard: "Giờ Miền Đông Kazakhstan"
+    :Kazakhstan_Western: 
+      :long: 
+        :standard: "Giờ Miền Tây Kazakhstan"
+    :Korea: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Hàn Quốc"
+        :generic: "Giờ Hàn Quốc"
+        :standard: "Giờ Chuẩn Hàn Quốc"
+    :Kosrae: 
+      :long: 
+        :standard: "Giờ Kosrae"
+    :Krasnoyarsk: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Krasnoyarsk"
+        :generic: "Giờ Krasnoyarsk"
+        :standard: "Giờ Chuẩn Krasnoyarsk"
+    :Kyrgystan: 
+      :long: 
+        :standard: "Giờ Kyrgystan"
+    :Lanka: 
+      :long: 
+        :standard: "Giờ Lanka"
+    :Line_Islands: 
+      :long: 
+        :standard: "Giờ Quần Đảo Line"
+    :Lord_Howe: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Lord Howe"
+        :generic: "Giờ Lord Howe"
+        :standard: "Giờ Chuẩn Lord Howe"
+    :Macau: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Ma Cao"
+        :generic: "Giờ Ma Cao"
+        :standard: "Giờ Chuẩn Ma Cao"
+    :Macquarie: 
+      :long: 
+        :standard: "Giờ đảo Macquarie"
+    :Magadan: 
+      :long: 
+        :daylight: "Giờ mùa hè Magadan"
+        :generic: "Giờ Magadan"
+        :standard: "Giờ Chuẩn Magadan"
+    :Malaysia: 
+      :long: 
+        :standard: "Giờ Malaysia"
+    :Maldives: 
+      :long: 
+        :standard: "Giờ Maldives"
+    :Marquesas: 
+      :long: 
+        :standard: "Giờ Marquesas"
+    :Marshall_Islands: 
+      :long: 
+        :standard: "Giờ Quần Đảo Marshall"
+    :Mauritius: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Mauritius"
+        :generic: "Giờ Mauritius"
+        :standard: "Giờ Chuẩn Mauritius"
+    :Mawson: 
+      :long: 
+        :standard: "Giờ Mawson"
+    :Mexico_Northwest: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Tây Bắc Mexico"
+        :generic: "Giờ Tây Bắc Mexico"
+        :standard: "Giờ Chuẩn Tây Bắc Mexico"
+    :Mexico_Pacific: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Thái Bình Dương Mexico"
+        :generic: "Giờ Thái Bình Dương Mexico"
+        :standard: "Giờ Chuẩn Thái Bình Dương Mexico"
+    :Mongolia: 
+      :long: 
+        :daylight: "Giờ mùa hè Ulan Bator"
+        :generic: "Giờ Ulan Bator"
+        :standard: "Giờ chuẩn Ulan Bator"
+    :Moscow: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Matxcơva"
+        :generic: "Giờ Matxcơva"
+        :standard: "Giờ Chuẩn Matxcơva"
+    :Myanmar: 
+      :long: 
+        :standard: "Giờ Myanmar"
+    :Nauru: 
+      :long: 
+        :standard: "Giờ Nauru"
+    :Nepal: 
+      :long: 
+        :standard: "Giờ Nepal"
+    :New_Caledonia: 
+      :long: 
+        :daylight: "Giờ Mùa Hè New Caledonia"
+        :generic: "Giờ New Caledonia"
+        :standard: "Giờ Chuẩn New Caledonia"
+    :New_Zealand: 
+      :long: 
+        :daylight: "Giờ Mùa Hè New Zealand"
+        :generic: "Giờ New Zealand"
+        :standard: "Giờ Chuẩn New Zealand"
+    :Newfoundland: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Newfoundland"
+        :generic: "Giờ Newfoundland"
+        :standard: "Giờ Chuẩn Newfoundland"
+    :Niue: 
+      :long: 
+        :standard: "Giờ Niue"
+    :Norfolk: 
+      :long: 
+        :standard: "Giờ đảo Norfolk"
+    :Noronha: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Fernando de Noronha"
+        :generic: "Giờ Fernando de Noronha"
+        :standard: "Giờ Chuẩn Fernando de Noronha"
+    :North_Mariana: 
+      :long: 
+        :standard: "Giờ Quần Đảo Bắc Mariana"
+    :Novosibirsk: 
+      :long: 
+        :daylight: "Giờ mùa hè Novosibirsk"
+        :generic: "Giờ Novosibirsk"
+        :standard: "Giờ chuẩn Novosibirsk"
+    :Omsk: 
+      :long: 
+        :daylight: "Giờ mùa hè Omsk"
+        :generic: "Giờ Omsk"
+        :standard: "Giờ chuẩn Omsk"
+    :Pakistan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Pakistan"
+        :generic: "Giờ Pakistan"
+        :standard: "Giờ Chuẩn Pakistan"
+    :Palau: 
+      :long: 
+        :standard: "Giờ Palau"
+    :Papua_New_Guinea: 
+      :long: 
+        :standard: "Giờ Papua New Guinea"
+    :Paraguay: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Paraguay"
+        :generic: "Giờ Paraguay"
+        :standard: "Giờ Chuẩn Paraguay"
+    :Peru: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Peru"
+        :generic: "Giờ Peru"
+        :standard: "Giờ Chuẩn Peru"
+    :Philippines: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Philippin"
+        :generic: "Giờ Philippin"
+        :standard: "Giờ Chuẩn Philippin"
+    :Phoenix_Islands: 
+      :long: 
+        :standard: "Giờ Quần Đảo Phoenix"
+    :Pierre_Miquelon: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Saint Pierre và Miquelon"
+        :generic: "Giờ St. Pierre và Miquelon"
+        :standard: "Giờ Chuẩn St. Pierre và Miquelon"
+    :Pitcairn: 
+      :long: 
+        :standard: "Giờ Pitcairn"
+    :Ponape: 
+      :long: 
+        :standard: "Giờ Ponape"
+    :Pyongyang: 
+      :long: 
+        :standard: "Giờ Bình Nhưỡng"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Qyzylorda"
+        :generic: "Giờ Qyzylorda"
+        :standard: "Giờ Chuẩn Qyzylorda"
+    :Reunion: 
+      :long: 
+        :standard: "Giờ Reunion"
+    :Rothera: 
+      :long: 
+        :standard: "Giờ Rothera"
+    :Sakhalin: 
+      :long: 
+        :daylight: "Giờ mùa hè Sakhalin"
+        :generic: "Giờ Sakhalin"
+        :standard: "Giờ Chuẩn Sakhalin"
+    :Samara: 
+      :long: 
+        :daylight: "Giờ mùa hè Samara"
+        :generic: "Giờ Samara"
+        :standard: "Giờ Chuẩn Samara"
+    :Samoa: 
+      :long: 
+        :daylight: "Giờ ban ngày Samoa"
+        :generic: "Giờ Samoa"
+        :standard: "Giờ Chuẩn Samoa"
+    :Seychelles: 
+      :long: 
+        :standard: "Giờ Seychelles"
+    :Singapore: 
+      :long: 
+        :standard: "Giờ Singapore"
+    :Solomon: 
+      :long: 
+        :standard: "Giờ Quần Đảo Solomon"
+    :South_Georgia: 
+      :long: 
+        :standard: "Giờ Nam Georgia"
+    :Suriname: 
+      :long: 
+        :standard: "Giờ Suriname"
+    :Syowa: 
+      :long: 
+        :standard: "Giờ Syowa"
+    :Tahiti: 
+      :long: 
+        :standard: "Giờ Tahiti"
+    :Taipei: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Đài Bắc"
+        :generic: "Giờ Đài Bắc"
+        :standard: "Giờ Chuẩn Đài Bắc"
+    :Tajikistan: 
+      :long: 
+        :standard: "Giờ Tajikistan"
+    :Tokelau: 
+      :long: 
+        :standard: "Giờ Tokelau"
+    :Tonga: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Tonga"
+        :generic: "Giờ Tonga"
+        :standard: "Giờ Chuẩn Tonga"
+    :Truk: 
+      :long: 
+        :standard: "Giờ Chuuk"
+    :Turkmenistan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Turkmenistan"
+        :generic: "Giờ Turkmenistan"
+        :standard: "Giờ Chuẩn Turkmenistan"
+    :Tuvalu: 
+      :long: 
+        :standard: "Giờ Tuvalu"
+    :Uruguay: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Uruguay"
+        :generic: "Giờ Uruguay"
+        :standard: "Giờ Chuẩn Uruguay"
+    :Uzbekistan: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Uzbekistan"
+        :generic: "Giờ Uzbekistan"
+        :standard: "Giờ Chuẩn Uzbekistan"
+    :Vanuatu: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Vanuatu"
+        :generic: "Giờ Vanuatu"
+        :standard: "Giờ Chuẩn Vanuatu"
+    :Venezuela: 
+      :long: 
+        :standard: "Giờ Venezuela"
+    :Vladivostok: 
+      :long: 
+        :daylight: "Giờ mùa hè Vladivostok"
+        :generic: "Giờ Vladivostok"
+        :standard: "Giờ Chuẩn Vladivostok"
+    :Volgograd: 
+      :long: 
+        :daylight: "Giờ Mùa Hè Volgograd"
+        :generic: "Giờ Volgograd"
+        :standard: "Giờ Chuẩn Volgograd"
+    :Vostok: 
+      :long: 
+        :standard: "Giờ Vostok"
+    :Wake: 
+      :long: 
+        :standard: "Giờ Đảo Wake"
+    :Wallis: 
+      :long: 
+        :standard: "Giờ Wallis và Futuna"
+    :Yakutsk: 
+      :long: 
+        :daylight: "Giờ mùa hè Yakutsk"
+        :generic: "Giờ Yakutsk"
+        :standard: "Giờ Chuẩn Yakutsk"
+    :Yekaterinburg: 
+      :long: 
+        :daylight: "Giờ mùa hè Yekaterinburg"
+        :generic: "Giờ Yekaterinburg"
+        :standard: "Giờ Chuẩn Yekaterinburg"
+  :timezones: 
+    :Africa/Abidjan: 
+      :city: Abidjan
+    :Africa/Accra: 
+      :city: Accra
+    :Africa/Addis_Ababa: 
+      :city: "Addis Ababa"
+    :Africa/Algiers: 
+      :city: Algiers
+    :Africa/Asmera: 
+      :city: Asmara
+    :Africa/Bamako: 
+      :city: Bamako
+    :Africa/Bangui: 
+      :city: Bangui
+    :Africa/Banjul: 
+      :city: Banjul
+    :Africa/Bissau: 
+      :city: Bissau
+    :Africa/Blantyre: 
+      :city: Blantyre
+    :Africa/Brazzaville: 
+      :city: Brazzaville
+    :Africa/Bujumbura: 
+      :city: Bujumbura
+    :Africa/Cairo: 
+      :city: Cairo
+    :Africa/Casablanca: 
+      :city: Casablanca
+    :Africa/Ceuta: 
+      :city: Ceuta
+    :Africa/Conakry: 
+      :city: Conakry
+    :Africa/Dakar: 
+      :city: Dakar
+    :Africa/Dar_es_Salaam: 
+      :city: "Dar es Salaam"
+    :Africa/Djibouti: 
+      :city: Djibouti
+    :Africa/Douala: 
+      :city: Douala
+    :Africa/El_Aaiun: 
+      :city: "El Aaiun"
+    :Africa/Freetown: 
+      :city: Freetown
+    :Africa/Gaborone: 
+      :city: Gaborone
+    :Africa/Harare: 
+      :city: Harare
+    :Africa/Johannesburg: 
+      :city: Johannesburg
+    :Africa/Juba: 
+      :city: Juba
+    :Africa/Kampala: 
+      :city: Kampala
+    :Africa/Khartoum: 
+      :city: Khartoum
+    :Africa/Kigali: 
+      :city: Kigali
+    :Africa/Kinshasa: 
+      :city: Kinshasa
+    :Africa/Lagos: 
+      :city: Lagos
+    :Africa/Libreville: 
+      :city: Libreville
+    :Africa/Lome: 
+      :city: Lome
+    :Africa/Luanda: 
+      :city: Luanda
+    :Africa/Lubumbashi: 
+      :city: Lubumbashi
+    :Africa/Lusaka: 
+      :city: Lusaka
+    :Africa/Malabo: 
+      :city: Malabo
+    :Africa/Maputo: 
+      :city: Maputo
+    :Africa/Maseru: 
+      :city: Maseru
+    :Africa/Mbabane: 
+      :city: Mbabane
+    :Africa/Mogadishu: 
+      :city: Mogadishu
+    :Africa/Monrovia: 
+      :city: Monrovia
+    :Africa/Nairobi: 
+      :city: Nairobi
+    :Africa/Ndjamena: 
+      :city: Ndjamena
+    :Africa/Niamey: 
+      :city: Niamey
+    :Africa/Nouakchott: 
+      :city: Nouakchott
+    :Africa/Ouagadougou: 
+      :city: Ouagadougou
+    :Africa/Porto-Novo: 
+      :city: Porto-Novo
+    :Africa/Sao_Tome: 
+      :city: "São Tomé"
+    :Africa/Tripoli: 
+      :city: Tripoli
+    :Africa/Tunis: 
+      :city: Tunis
+    :Africa/Windhoek: 
+      :city: Windhoek
+    :America/Adak: 
+      :city: Adak
+    :America/Anchorage: 
+      :city: Anchorage
+    :America/Anguilla: 
+      :city: Anguilla
+    :America/Antigua: 
+      :city: Antigua
+    :America/Araguaina: 
+      :city: Araguaina
+    :America/Argentina/La_Rioja: 
+      :city: "La Rioja"
+    :America/Argentina/Rio_Gallegos: 
+      :city: "Rio Gallegos"
+    :America/Argentina/Salta: 
+      :city: Salta
+    :America/Argentina/San_Juan: 
+      :city: "San Juan"
+    :America/Argentina/San_Luis: 
+      :city: "San Luis"
+    :America/Argentina/Tucuman: 
+      :city: Tucuman
+    :America/Argentina/Ushuaia: 
+      :city: Ushuaia
+    :America/Aruba: 
+      :city: Aruba
+    :America/Asuncion: 
+      :city: Asunción
+    :America/Bahia: 
+      :city: Bahia
+    :America/Bahia_Banderas: 
+      :city: "Bahia Banderas"
+    :America/Barbados: 
+      :city: Barbados
+    :America/Belem: 
+      :city: Belem
+    :America/Belize: 
+      :city: Belize
+    :America/Blanc-Sablon: 
+      :city: Blanc-Sablon
+    :America/Boa_Vista: 
+      :city: "Boa Vista"
+    :America/Bogota: 
+      :city: Bogota
+    :America/Boise: 
+      :city: Boise
+    :America/Buenos_Aires: 
+      :city: "Buenos Aires"
+    :America/Cambridge_Bay: 
+      :city: "Cambridge Bay"
+    :America/Campo_Grande: 
+      :city: "Campo Grande"
+    :America/Cancun: 
+      :city: Cancun
+    :America/Caracas: 
+      :city: Caracas
+    :America/Catamarca: 
+      :city: Catamarca
+    :America/Cayenne: 
+      :city: Cayenne
+    :America/Cayman: 
+      :city: Cayman
+    :America/Chicago: 
+      :city: Chicago
+    :America/Chihuahua: 
+      :city: Chihuahua
+    :America/Coral_Harbour: 
+      :city: Atikokan
+    :America/Cordoba: 
+      :city: Cordoba
+    :America/Costa_Rica: 
+      :city: "Costa Rica"
+    :America/Creston: 
+      :city: Creston
+    :America/Cuiaba: 
+      :city: Cuiaba
+    :America/Curacao: 
+      :city: Curaçao
+    :America/Danmarkshavn: 
+      :city: Danmarkshavn
+    :America/Dawson: 
+      :city: Dawson
+    :America/Dawson_Creek: 
+      :city: "Dawson Creek"
+    :America/Denver: 
+      :city: Denver
+    :America/Detroit: 
+      :city: Detroit
+    :America/Dominica: 
+      :city: Dominica
+    :America/Edmonton: 
+      :city: Edmonton
+    :America/Eirunepe: 
+      :city: Eirunepe
+    :America/El_Salvador: 
+      :city: "El Salvador"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
+    :America/Fortaleza: 
+      :city: Fortaleza
+    :America/Glace_Bay: 
+      :city: "Glace Bay"
+    :America/Godthab: 
+      :city: Nuuk
+    :America/Goose_Bay: 
+      :city: "Goose Bay"
+    :America/Grand_Turk: 
+      :city: "Grand Turk"
+    :America/Grenada: 
+      :city: Grenada
+    :America/Guadeloupe: 
+      :city: Guadeloupe
+    :America/Guatemala: 
+      :city: Guatemala
+    :America/Guayaquil: 
+      :city: Guayaquil
+    :America/Guyana: 
+      :city: Guyana
+    :America/Halifax: 
+      :city: Halifax
+    :America/Havana: 
+      :city: Havana
+    :America/Hermosillo: 
+      :city: Hermosillo
+    :America/Indiana/Knox: 
+      :city: "Knox, Indiana"
+    :America/Indiana/Marengo: 
+      :city: "Marengo, Indiana"
+    :America/Indiana/Petersburg: 
+      :city: "Petersburg, Indiana"
+    :America/Indiana/Tell_City: 
+      :city: "Tell City, Indiana"
+    :America/Indiana/Vevay: 
+      :city: "Vevay, Indiana"
+    :America/Indiana/Vincennes: 
+      :city: "Vincennes, Indiana"
+    :America/Indiana/Winamac: 
+      :city: "Winamac, Indiana"
+    :America/Indianapolis: 
+      :city: Indianapolis
+    :America/Inuvik: 
+      :city: Inuvik
+    :America/Iqaluit: 
+      :city: Iqaluit
+    :America/Jamaica: 
+      :city: Jamaica
+    :America/Jujuy: 
+      :city: Jujuy
+    :America/Juneau: 
+      :city: Juneau
+    :America/Kentucky/Monticello: 
+      :city: "Monticello, Kentucky"
+    :America/Kralendijk: 
+      :city: Kralendijk
+    :America/La_Paz: 
+      :city: "La Paz"
+    :America/Lima: 
+      :city: Lima
+    :America/Los_Angeles: 
+      :city: "Los Angeles"
+    :America/Louisville: 
+      :city: Louisville
+    :America/Lower_Princes: 
+      :city: "Lower Prince’s Quarter"
+    :America/Maceio: 
+      :city: Maceio
+    :America/Managua: 
+      :city: Managua
+    :America/Manaus: 
+      :city: Manaus
+    :America/Marigot: 
+      :city: Marigot
+    :America/Martinique: 
+      :city: Martinique
+    :America/Matamoros: 
+      :city: Matamoros
+    :America/Mazatlan: 
+      :city: Mazatlan
+    :America/Mendoza: 
+      :city: Mendoza
+    :America/Menominee: 
+      :city: Menominee
+    :America/Merida: 
+      :city: Merida
+    :America/Metlakatla: 
+      :city: Metlakatla
+    :America/Mexico_City: 
+      :city: "Mexico City"
+    :America/Miquelon: 
+      :city: Miquelon
+    :America/Moncton: 
+      :city: Moncton
+    :America/Monterrey: 
+      :city: Monterrey
+    :America/Montevideo: 
+      :city: Montevideo
+    :America/Montserrat: 
+      :city: Montserrat
+    :America/Nassau: 
+      :city: Nassau
+    :America/New_York: 
+      :city: "New York"
+    :America/Nipigon: 
+      :city: Nipigon
+    :America/Nome: 
+      :city: Nome
+    :America/Noronha: 
+      :city: Noronha
+    :America/North_Dakota/Beulah: 
+      :city: "Beulah, Bắc Dakota"
+    :America/North_Dakota/Center: 
+      :city: "Center, Bắc Dakota"
+    :America/North_Dakota/New_Salem: 
+      :city: "New Salem, Bắc Dakota"
+    :America/Ojinaga: 
+      :city: Ojinaga
+    :America/Panama: 
+      :city: Panama
+    :America/Pangnirtung: 
+      :city: Pangnirtung
+    :America/Paramaribo: 
+      :city: Paramaribo
+    :America/Phoenix: 
+      :city: Phoenix
+    :America/Port-au-Prince: 
+      :city: Port-au-Prince
+    :America/Port_of_Spain: 
+      :city: "Port of Spain"
+    :America/Porto_Velho: 
+      :city: "Porto Velho"
+    :America/Puerto_Rico: 
+      :city: "Puerto Rico"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
+    :America/Rainy_River: 
+      :city: "Rainy River"
+    :America/Rankin_Inlet: 
+      :city: "Rankin Inlet"
+    :America/Recife: 
+      :city: Recife
+    :America/Regina: 
+      :city: Regina
+    :America/Resolute: 
+      :city: Resolute
+    :America/Rio_Branco: 
+      :city: "Rio Branco"
+    :America/Santa_Isabel: 
+      :city: "Santa Isabel"
+    :America/Santarem: 
+      :city: Santarem
+    :America/Santiago: 
+      :city: Santiago
+    :America/Santo_Domingo: 
+      :city: "Santo Domingo"
+    :America/Sao_Paulo: 
+      :city: "Sao Paulo"
+    :America/Scoresbysund: 
+      :city: Ittoqqortoormiit
+    :America/Sitka: 
+      :city: Sitka
+    :America/St_Barthelemy: 
+      :city: "St. Barthélemy"
+    :America/St_Johns: 
+      :city: "St. John’s"
+    :America/St_Kitts: 
+      :city: "St. Kitts"
+    :America/St_Lucia: 
+      :city: "St. Lucia"
+    :America/St_Thomas: 
+      :city: "St. Thomas"
+    :America/St_Vincent: 
+      :city: "St. Vincent"
+    :America/Swift_Current: 
+      :city: "Swift Current"
+    :America/Tegucigalpa: 
+      :city: Tegucigalpa
+    :America/Thule: 
+      :city: Thule
+    :America/Thunder_Bay: 
+      :city: "Thunder Bay"
+    :America/Tijuana: 
+      :city: Tijuana
+    :America/Toronto: 
+      :city: Toronto
+    :America/Tortola: 
+      :city: Tortola
+    :America/Vancouver: 
+      :city: Vancouver
+    :America/Whitehorse: 
+      :city: Whitehorse
+    :America/Winnipeg: 
+      :city: Winnipeg
+    :America/Yakutat: 
+      :city: Yakutat
+    :America/Yellowknife: 
+      :city: Yellowknife
+    :Antarctica/Casey: 
+      :city: Casey
+    :Antarctica/Davis: 
+      :city: Davis
+    :Antarctica/DumontDUrville: 
+      :city: "Dumont d’Urville"
+    :Antarctica/Macquarie: 
+      :city: Macquarie
+    :Antarctica/Mawson: 
+      :city: Mawson
+    :Antarctica/McMurdo: 
+      :city: McMurdo
+    :Antarctica/Palmer: 
+      :city: Palmer
+    :Antarctica/Rothera: 
+      :city: Rothera
+    :Antarctica/Syowa: 
+      :city: Syowa
+    :Antarctica/Troll: 
+      :city: Troll
+    :Antarctica/Vostok: 
+      :city: Vostok
+    :Arctic/Longyearbyen: 
+      :city: Longyearbyen
+    :Asia/Aden: 
+      :city: Aden
+    :Asia/Almaty: 
+      :city: Almaty
+    :Asia/Amman: 
+      :city: Amman
+    :Asia/Anadyr: 
+      :city: Anadyr
+    :Asia/Aqtau: 
+      :city: Aqtau
+    :Asia/Aqtobe: 
+      :city: Aqtobe
+    :Asia/Ashgabat: 
+      :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
+    :Asia/Baghdad: 
+      :city: Baghdad
+    :Asia/Bahrain: 
+      :city: Bahrain
+    :Asia/Baku: 
+      :city: Baku
+    :Asia/Bangkok: 
+      :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
+    :Asia/Beirut: 
+      :city: Beirut
+    :Asia/Bishkek: 
+      :city: Bishkek
+    :Asia/Brunei: 
+      :city: Brunei
+    :Asia/Calcutta: 
+      :city: Kolkata
+    :Asia/Chita: 
+      :city: Chita
+    :Asia/Choibalsan: 
+      :city: Choibalsan
+    :Asia/Colombo: 
+      :city: Colombo
+    :Asia/Damascus: 
+      :city: Damascus
+    :Asia/Dhaka: 
+      :city: Dhaka
+    :Asia/Dili: 
+      :city: Dili
+    :Asia/Dubai: 
+      :city: Dubai
+    :Asia/Dushanbe: 
+      :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
+    :Asia/Gaza: 
+      :city: Gaza
+    :Asia/Hebron: 
+      :city: Hebron
+    :Asia/Hong_Kong: 
+      :city: "Hồng Kông"
+    :Asia/Hovd: 
+      :city: Hovd
+    :Asia/Irkutsk: 
+      :city: Irkutsk
+    :Asia/Jakarta: 
+      :city: Jakarta
+    :Asia/Jayapura: 
+      :city: Jayapura
+    :Asia/Jerusalem: 
+      :city: Jerusalem
+    :Asia/Kabul: 
+      :city: Kabul
+    :Asia/Kamchatka: 
+      :city: Kamchatka
+    :Asia/Karachi: 
+      :city: Karachi
+    :Asia/Katmandu: 
+      :city: Kathmandu
+    :Asia/Khandyga: 
+      :city: Khandyga
+    :Asia/Krasnoyarsk: 
+      :city: Krasnoyarsk
+    :Asia/Kuala_Lumpur: 
+      :city: "Kuala Lumpur"
+    :Asia/Kuching: 
+      :city: Kuching
+    :Asia/Kuwait: 
+      :city: Kuwait
+    :Asia/Macau: 
+      :city: "Ma Cao"
+    :Asia/Magadan: 
+      :city: Magadan
+    :Asia/Makassar: 
+      :city: Makassar
+    :Asia/Manila: 
+      :city: Manila
+    :Asia/Muscat: 
+      :city: Muscat
+    :Asia/Nicosia: 
+      :city: Nicosia
+    :Asia/Novokuznetsk: 
+      :city: Novokuznetsk
+    :Asia/Novosibirsk: 
+      :city: Novosibirsk
+    :Asia/Omsk: 
+      :city: Omsk
+    :Asia/Oral: 
+      :city: Oral
+    :Asia/Phnom_Penh: 
+      :city: "Phnom Penh"
+    :Asia/Pontianak: 
+      :city: Pontianak
+    :Asia/Pyongyang: 
+      :city: "Bình Nhưỡng"
+    :Asia/Qatar: 
+      :city: Qatar
+    :Asia/Qostanay: 
+      :city: Kostanay
+    :Asia/Qyzylorda: 
+      :city: Qyzylorda
+    :Asia/Rangoon: 
+      :city: Rangoon
+    :Asia/Riyadh: 
+      :city: Riyadh
+    :Asia/Saigon: 
+      :city: "TP Hồ Chí Minh"
+    :Asia/Sakhalin: 
+      :city: Sakhalin
+    :Asia/Samarkand: 
+      :city: Samarkand
+    :Asia/Seoul: 
+      :city: Seoul
+    :Asia/Shanghai: 
+      :city: "Thượng Hải"
+    :Asia/Singapore: 
+      :city: Singapore
+    :Asia/Srednekolymsk: 
+      :city: Srednekolymsk
+    :Asia/Taipei: 
+      :city: "Đài Bắc"
+    :Asia/Tashkent: 
+      :city: Tashkent
+    :Asia/Tbilisi: 
+      :city: Tbilisi
+    :Asia/Tehran: 
+      :city: Tehran
+    :Asia/Thimphu: 
+      :city: Thimphu
+    :Asia/Tokyo: 
+      :city: Tokyo
+    :Asia/Tomsk: 
+      :city: Tomsk
+    :Asia/Ulaanbaatar: 
+      :city: Ulaanbaatar
+    :Asia/Urumqi: 
+      :city: Urumqi
+    :Asia/Ust-Nera: 
+      :city: Ust-Nera
+    :Asia/Vientiane: 
+      :city: "Viêng Chăn"
+    :Asia/Vladivostok: 
+      :city: Vladivostok
+    :Asia/Yakutsk: 
+      :city: Yakutsk
+    :Asia/Yekaterinburg: 
+      :city: Yekaterinburg
+    :Asia/Yerevan: 
+      :city: Yerevan
+    :Atlantic/Azores: 
+      :city: Azores
+    :Atlantic/Bermuda: 
+      :city: Bermuda
+    :Atlantic/Canary: 
+      :city: Canary
+    :Atlantic/Cape_Verde: 
+      :city: "Cape Verde"
+    :Atlantic/Faeroe: 
+      :city: Faroe
+    :Atlantic/Madeira: 
+      :city: Madeira
+    :Atlantic/Reykjavik: 
+      :city: Reykjavik
+    :Atlantic/South_Georgia: 
+      :city: "Nam Georgia"
+    :Atlantic/St_Helena: 
+      :city: "St. Helena"
+    :Atlantic/Stanley: 
+      :city: Stanley
+    :Australia/Adelaide: 
+      :city: Adelaide
+    :Australia/Brisbane: 
+      :city: Brisbane
+    :Australia/Broken_Hill: 
+      :city: "Broken Hill"
+    :Australia/Currie: 
+      :city: Currie
+    :Australia/Darwin: 
+      :city: Darwin
+    :Australia/Eucla: 
+      :city: Eucla
+    :Australia/Hobart: 
+      :city: Hobart
+    :Australia/Lindeman: 
+      :city: Lindeman
+    :Australia/Lord_Howe: 
+      :city: "Lord Howe"
+    :Australia/Melbourne: 
+      :city: Melbourne
+    :Australia/Perth: 
+      :city: Perth
+    :Australia/Sydney: 
+      :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Giờ Phối hợp Quốc tế"
+      :short: 
+        :standard: UTC
+    :Etc/Unknown: 
+      :city: "Thành phố Không xác định"
+    :Europe/Amsterdam: 
+      :city: Amsterdam
+    :Europe/Andorra: 
+      :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrakhan
+    :Europe/Athens: 
+      :city: Athens
+    :Europe/Belgrade: 
+      :city: Belgrade
+    :Europe/Berlin: 
+      :city: Berlin
+    :Europe/Bratislava: 
+      :city: Bratislava
+    :Europe/Brussels: 
+      :city: Brussels
+    :Europe/Bucharest: 
+      :city: Bucharest
+    :Europe/Budapest: 
+      :city: Budapest
+    :Europe/Busingen: 
+      :city: Busingen
+    :Europe/Chisinau: 
+      :city: Chisinau
+    :Europe/Copenhagen: 
+      :city: Copenhagen
+    :Europe/Dublin: 
+      :city: Dublin
+      :long: 
+        :daylight: "Giờ chuẩn Ai-len"
+    :Europe/Gibraltar: 
+      :city: Gibraltar
+    :Europe/Guernsey: 
+      :city: Guernsey
+    :Europe/Helsinki: 
+      :city: Helsinki
+    :Europe/Isle_of_Man: 
+      :city: "Đảo Man"
+    :Europe/Istanbul: 
+      :city: Istanbul
+    :Europe/Jersey: 
+      :city: Jersey
+    :Europe/Kaliningrad: 
+      :city: Kaliningrad
+    :Europe/Kiev: 
+      :city: Kiev
+    :Europe/Kirov: 
+      :city: Kirov
+    :Europe/Lisbon: 
+      :city: Lisbon
+    :Europe/Ljubljana: 
+      :city: Ljubljana
+    :Europe/London: 
+      :city: London
+      :long: 
+        :daylight: "Giờ Mùa Hè Anh"
+    :Europe/Luxembourg: 
+      :city: Luxembourg
+    :Europe/Madrid: 
+      :city: Madrid
+    :Europe/Malta: 
+      :city: Malta
+    :Europe/Mariehamn: 
+      :city: Mariehamn
+    :Europe/Minsk: 
+      :city: Minsk
+    :Europe/Monaco: 
+      :city: Monaco
+    :Europe/Moscow: 
+      :city: Mát-xcơ-va
+    :Europe/Oslo: 
+      :city: Oslo
+    :Europe/Paris: 
+      :city: Paris
+    :Europe/Podgorica: 
+      :city: Podgorica
+    :Europe/Prague: 
+      :city: Praha
+    :Europe/Riga: 
+      :city: Riga
+    :Europe/Rome: 
+      :city: Rome
+    :Europe/Samara: 
+      :city: Samara
+    :Europe/San_Marino: 
+      :city: "San Marino"
+    :Europe/Sarajevo: 
+      :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
+    :Europe/Simferopol: 
+      :city: Simferopol
+    :Europe/Skopje: 
+      :city: Skopje
+    :Europe/Sofia: 
+      :city: Sofia
+    :Europe/Stockholm: 
+      :city: Stockholm
+    :Europe/Tallinn: 
+      :city: Tallinn
+    :Europe/Tirane: 
+      :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
+    :Europe/Uzhgorod: 
+      :city: Uzhhorod
+    :Europe/Vaduz: 
+      :city: Vaduz
+    :Europe/Vatican: 
+      :city: Vatican
+    :Europe/Vienna: 
+      :city: Vienna
+    :Europe/Vilnius: 
+      :city: Vilnius
+    :Europe/Volgograd: 
+      :city: Volgograd
+    :Europe/Warsaw: 
+      :city: Warsaw
+    :Europe/Zagreb: 
+      :city: Zagreb
+    :Europe/Zaporozhye: 
+      :city: Zaporozhye
+    :Europe/Zurich: 
+      :city: Zurich
+    :Indian/Antananarivo: 
+      :city: Antananarivo
+    :Indian/Chagos: 
+      :city: Chagos
+    :Indian/Christmas: 
+      :city: Christmas
+    :Indian/Cocos: 
+      :city: Cocos
+    :Indian/Comoro: 
+      :city: Comoro
+    :Indian/Kerguelen: 
+      :city: Kerguelen
+    :Indian/Mahe: 
+      :city: Mahe
+    :Indian/Maldives: 
+      :city: Maldives
+    :Indian/Mauritius: 
+      :city: Mauritius
+    :Indian/Mayotte: 
+      :city: Mayotte
+    :Indian/Reunion: 
+      :city: Réunion
+    :Pacific/Apia: 
+      :city: Apia
+    :Pacific/Auckland: 
+      :city: Auckland
+    :Pacific/Bougainville: 
+      :city: Bougainville
+    :Pacific/Chatham: 
+      :city: Chatham
+    :Pacific/Easter: 
+      :city: Easter
+    :Pacific/Efate: 
+      :city: Efate
+    :Pacific/Enderbury: 
+      :city: Enderbury
+    :Pacific/Fakaofo: 
+      :city: Fakaofo
+    :Pacific/Fiji: 
+      :city: Fiji
+    :Pacific/Funafuti: 
+      :city: Funafuti
+    :Pacific/Galapagos: 
+      :city: Galapagos
+    :Pacific/Gambier: 
+      :city: Gambier
+    :Pacific/Guadalcanal: 
+      :city: Guadalcanal
+    :Pacific/Guam: 
+      :city: Guam
+    :Pacific/Honolulu: 
+      :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: "Giờ HST"
+        :standard: HST
+    :Pacific/Johnston: 
+      :city: Johnston
+    :Pacific/Kiritimati: 
+      :city: Kiritimati
+    :Pacific/Kosrae: 
+      :city: Kosrae
+    :Pacific/Kwajalein: 
+      :city: Kwajalein
+    :Pacific/Majuro: 
+      :city: Majuro
+    :Pacific/Marquesas: 
+      :city: Marquesas
+    :Pacific/Midway: 
+      :city: Midway
+    :Pacific/Nauru: 
+      :city: Nauru
+    :Pacific/Niue: 
+      :city: Niue
+    :Pacific/Norfolk: 
+      :city: Norfolk
+    :Pacific/Noumea: 
+      :city: Noumea
+    :Pacific/Pago_Pago: 
+      :city: "Pago Pago"
+    :Pacific/Palau: 
+      :city: Palau
+    :Pacific/Pitcairn: 
+      :city: Pitcairn
+    :Pacific/Ponape: 
+      :city: Pohnpei
+    :Pacific/Port_Moresby: 
+      :city: "Port Moresby"
+    :Pacific/Rarotonga: 
+      :city: Rarotonga
+    :Pacific/Saipan: 
+      :city: Saipan
+    :Pacific/Tahiti: 
+      :city: Tahiti
+    :Pacific/Tarawa: 
+      :city: Tarawa
+    :Pacific/Tongatapu: 
+      :city: Tongatapu
+    :Pacific/Truk: 
+      :city: Chuuk
+    :Pacific/Wake: 
+      :city: Wake
+    :Pacific/Wallis: 
+      :city: Wallis

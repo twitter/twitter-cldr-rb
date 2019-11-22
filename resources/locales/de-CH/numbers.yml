@@ -35,41 +35,54 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: ¤ 0K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
-              :other: ¤ 00K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "100000"
             : 
-              :other: ¤ 000K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "1000000"
             : 
-              :other: ¤ 0M
+              :one: 0 Mio'.' ¤
+              :other: 0 Mio'.' ¤
             ? !ruby/symbol "10000000"
             : 
-              :other: ¤ 00M
+              :one: 00 Mio'.' ¤
+              :other: 00 Mio'.' ¤
             ? !ruby/symbol "100000000"
             : 
-              :other: ¤ 000M
+              :one: 000 Mio'.' ¤
+              :other: 000 Mio'.' ¤
             ? !ruby/symbol "1000000000"
             : 
-              :other: ¤ 0G
+              :one: 0 Mrd'.' ¤
+              :other: 0 Mrd'.' ¤
             ? !ruby/symbol "10000000000"
             : 
-              :other: ¤ 00G
+              :one: 00 Mrd'.' ¤
+              :other: 00 Mrd'.' ¤
             ? !ruby/symbol "100000000000"
             : 
-              :other: ¤ 000G
+              :one: 000 Mrd'.' ¤
+              :other: 000 Mrd'.' ¤
             ? !ruby/symbol "1000000000000"
             : 
-              :other: ¤ 0T
+              :one: 0 Bio'.' ¤
+              :other: 0 Bio'.' ¤
             ? !ruby/symbol "10000000000000"
             : 
-              :other: ¤ 00T
+              :one: 00 Bio'.' ¤
+              :other: 00 Bio'.' ¤
             ? !ruby/symbol "100000000000000"
             : 
-              :other: ¤ 000T
+              :one: 000 Bio'.' ¤
+              :other: 000 Bio'.' ¤
           :unit: 
+            :one: "{0} {1}"
             :other: "{0} {1}"
         :lepc: :numbers.formats.currency.latn
         :limb: :numbers.formats.currency.latn
@@ -120,44 +133,104 @@
         :laoo: :numbers.formats.decimal.latn
         :latn: 
           :default: "#,##0.###"
-          :long: :numbers.formats.decimal.latn.short
+          :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 Tausend"
+              :other: "0 Tausend"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 Tausend"
+              :other: "00 Tausend"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 Tausend"
+              :other: "000 Tausend"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 Million"
+              :other: "0 Millionen"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 Millionen"
+              :other: "00 Millionen"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 Millionen"
+              :other: "000 Millionen"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 Milliarde"
+              :other: "0 Milliarden"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 Milliarden"
+              :other: "00 Milliarden"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 Milliarden"
+              :other: "000 Milliarden"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 Billion"
+              :other: "0 Billionen"
+            ? !ruby/symbol "10000000000000"
+            : 
+              :one: "00 Billionen"
+              :other: "00 Billionen"
+            ? !ruby/symbol "100000000000000"
+            : 
+              :one: "000 Billionen"
+              :other: "000 Billionen"
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :other: 0K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
-              :other: 00K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "100000"
             : 
-              :other: 000K
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "1000000"
             : 
-              :other: 0M
+              :one: 0 Mio'.'
+              :other: 0 Mio'.'
             ? !ruby/symbol "10000000"
             : 
-              :other: 00M
+              :one: 00 Mio'.'
+              :other: 00 Mio'.'
             ? !ruby/symbol "100000000"
             : 
-              :other: 000M
+              :one: 000 Mio'.'
+              :other: 000 Mio'.'
             ? !ruby/symbol "1000000000"
             : 
-              :other: 0G
+              :one: 0 Mrd'.'
+              :other: 0 Mrd'.'
             ? !ruby/symbol "10000000000"
             : 
-              :other: 00G
+              :one: 00 Mrd'.'
+              :other: 00 Mrd'.'
             ? !ruby/symbol "100000000000"
             : 
-              :other: 000G
+              :one: 000 Mrd'.'
+              :other: 000 Mrd'.'
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0T
+              :one: 0 Bio'.'
+              :other: 0 Bio'.'
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00T
+              :one: 00 Bio'.'
+              :other: 00 Bio'.'
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000T
+              :one: 000 Bio'.'
+              :other: 000 Bio'.'
         :lepc: :numbers.formats.decimal.latn
         :limb: :numbers.formats.decimal.latn
         :mlym: :numbers.formats.decimal.latn
@@ -339,7 +412,7 @@
         :per_mille: ‰
         :percent_sign: "%"
         :plus_sign: +
-        :superscripting_exponent: ×
+        :superscripting_exponent: ·
         :time_separator: ":"
       :lepc: :numbers.symbols.latn
       :limb: :numbers.symbols.latn

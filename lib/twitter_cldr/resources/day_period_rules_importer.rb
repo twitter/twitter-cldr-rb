@@ -12,6 +12,10 @@ module TwitterCldr
     class DayPeriodRulesImporter < Importer
 
       requirement :cldr, Versions.cldr_version
+      requirement :dependency, [
+        ValidityDataImporter, UnicodePropertyAliasesImporter, LocalesResourcesImporter
+      ]
+
       output_path 'locales'
       locales TwitterCldr.supported_locales
       ruby_engine :mri

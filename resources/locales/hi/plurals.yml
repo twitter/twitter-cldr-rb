@@ -9,12 +9,12 @@
     - :other
   :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
-      (((n == 2) || (n == 3)) ? :two : (n == 4 ? :few : (n == 6 ? :many : :other))))
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 4 ? :few :
+      (n == 6 ? :many : (n == 1 ? :one : (((n == 2) || (n == 3)) ? :two : :other))))
       }'
     :names:
-    - :one
-    - :two
     - :few
     - :many
+    - :one
+    - :two
     - :other

@@ -13,17 +13,20 @@ group :development, :test do
   # gemspec allows any version, but most people are probably using 1.x, so
   # let's test and develop against that
   gem 'tzinfo', '< 2'
+  gem 'tzinfo-data', '= 1.2019.3'  # keep in sync with ICU
 end
 
 group :development do
   gem 'nokogiri', "~> 1.0"
   gem 'parallel'
 
-  gem 'ruby-cldr', github: 'svenfuchs/ruby-cldr'
+  gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'mapzones' # 'svenfuchs/ruby-cldr'
   gem 'i18n'
   gem 'cldr-plurals', '~> 1.0'
 
   gem 'rest-client', '~> 1.8'
+
+  gem 'parallel'
 end
 
 group :test do

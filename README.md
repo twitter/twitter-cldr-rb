@@ -175,12 +175,12 @@ For English (and other languages), you can also specify an ordinal spellout:
 `Time`, and `DateTime` objects are supported.  `Date` objects are supported transiently:
 
 ```ruby
-DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (UTC +00:00)"
+DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (tiempo universal coordinado)"
 DateTime.now.localize(:es).to_long_s               # "14 de febrero de 2014, 12:20:05 UTC"
 DateTime.now.localize(:es).to_medium_s             # "14 feb. 2014 12:20:05"
 DateTime.now.localize(:es).to_short_s              # "14/2/14 12:20"
 
-Time.now.localize(:es).to_full_s                   # "12:20:05 (UTC +00:00)"
+Time.now.localize(:es).to_full_s                   # "12:20:05 (tiempo universal coordinado)"
 Time.now.localize(:es).to_long_s                   # "12:20:05 UTC"
 Time.now.localize(:es).to_medium_s                 # "12:20:05"
 Time.now.localize(:es).to_short_s                  # "12:20"
@@ -242,8 +242,8 @@ It's important to know that, even though any given format may not be available a
 | H          | 12                     |
 | Hm         | 12:20                  |
 | Hms        | 12:20:05               |
-| Hmsv       | 12:20:05 UTC           |
-| Hmv        | 12:20 UTC              |
+| Hmsv       | 12:20:05 GMT           |
+| Hmv        | 12:20 GMT              |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
 | MMM        | Feb                    |
@@ -256,8 +256,8 @@ It's important to know that, even though any given format may not be available a
 | h          | 12 PM                  |
 | hm         | 12:20 PM               |
 | hms        | 12:20:05 PM            |
-| hmsv       | 12:20:05 PM UTC        |
-| hmv        | 12:20 PM UTC           |
+| hmsv       | 12:20:05 PM GMT        |
+| hmv        | 12:20 PM GMT           |
 | ms         | 20:05                  |
 | y          | 2014                   |
 | yM         | 2/2014                 |
@@ -326,6 +326,44 @@ By default, timespans are exact representations of a given unit of elapsed time.
 TwitterCldr::Localized::LocalizedTimespan.new(44).to_s(:approximate => true)  # "in 44 seconds"
 TwitterCldr::Localized::LocalizedTimespan.new(45).to_s(:approximate => true)  # "in 1 minute"
 TwitterCldr::Localized::LocalizedTimespan.new(52).to_s(:approximate => true)  # "in 1 minute"
+```
+
+### Timezones
+
+Timezones can be specified for any instance of `LocalizedTime`, `LocalizedDate`, or `LocalizedDateTime` via the `with_timezone` function:
+
+```ruby
+# "lunes, 4 de noviembre de 2019, 16:00:00 (hora estándar del Pacífico)"
+DateTime.new(2019, 11, 5).localize(:es).with_timezone('America/Los_Angeles').to_full_s
+```
+
+Any IANA timezone can be used provided it is available via the [tzinfo](https://github.com/tzinfo/tzinfo) gem. TZInfo references any timezone data available on your system, but will use the data encapsulated in the [tzinfo-data](https://github.com/tzinfo/tzinfo-data) gem if it is bundled with your application. If you're seeing discrepancies between, for example, production and development environments, consider bundling tzinfo-data.
+
+#### Timezone Formats
+
+In addition to including timezones in formatted dates and times, TwitterCLDR provides access to timezone formats via the `TwitterCldr::Timezones::Timezone` object.
+
+Timezone objects are specified via a combination of timezone ID and locale:
+
+```ruby
+
+tz = TwitterCldr::Timezones::Timezone.instance('Australia/Brisbane', :en)
+```
+
+A list of available timezone formats can be retrieved like so:
+
+```ruby
+TwitterCldr::Timezones::Timezone::ALL_FORMATS
+```
+
+Format a timezone by calling the `#display_name_for` method:
+
+```ruby
+# "Brisbane Time"
+tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
+
+# "Australian Eastern Standard Time"
+tz.display_name_for(DateTime.new(2019, 11, 5), :generic_long)
 ```
 
 ### Calendar Data
@@ -561,7 +599,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["66877", "52179", "39565", "39335", "83881"]
+postal_code.sample(5)  # ["55547", "12212", "21198", "18081-4229", "15465"]
 ```
 
 ### Phone Codes

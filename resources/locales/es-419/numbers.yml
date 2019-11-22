@@ -82,6 +82,7 @@
               :one: ¤000 B
               :other: ¤000 B
           :unit: 
+            :one: "{0} {1}"
             :other: "{0} {1}"
         :lepc: :numbers.formats.currency.latn
         :limb: :numbers.formats.currency.latn
@@ -133,6 +134,42 @@
         :latn: 
           :default: "#,##0.###"
           :long: 
+            ? !ruby/symbol "1000"
+            : 
+              :one: "0 mil"
+              :other: "0 mil"
+            ? !ruby/symbol "10000"
+            : 
+              :one: "00 mil"
+              :other: "00 mil"
+            ? !ruby/symbol "100000"
+            : 
+              :one: "000 mil"
+              :other: "000 mil"
+            ? !ruby/symbol "1000000"
+            : 
+              :one: "0 millón"
+              :other: "0 millones"
+            ? !ruby/symbol "10000000"
+            : 
+              :one: "00 millones"
+              :other: "00 millones"
+            ? !ruby/symbol "100000000"
+            : 
+              :one: "000 millones"
+              :other: "000 millones"
+            ? !ruby/symbol "1000000000"
+            : 
+              :one: "0 mil millones"
+              :other: "0 mil millones"
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 mil millones"
+              :other: "00 mil millones"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 mil millones"
+              :other: "000 mil millones"
             ? !ruby/symbol "1000000000000"
             : 
               :one: "0 billón"
@@ -160,31 +197,40 @@
               :other: 000 k
             ? !ruby/symbol "1000000"
             : 
-              :other: 0M
+              :one: 0 M
+              :other: 0 M
             ? !ruby/symbol "10000000"
             : 
-              :other: 00M
+              :one: 00 M
+              :other: 00 M
             ? !ruby/symbol "100000000"
             : 
-              :other: 000M
+              :one: 000 M
+              :other: 000 M
             ? !ruby/symbol "1000000000"
             : 
-              :other: 0G
+              :one: 0000 M
+              :other: 0000 M
             ? !ruby/symbol "10000000000"
             : 
-              :other: 00G
+              :one: 00 mil M
+              :other: 00 mil M
             ? !ruby/symbol "100000000000"
             : 
-              :other: 000G
+              :one: 000 mil M
+              :other: 000 mil M
             ? !ruby/symbol "1000000000000"
             : 
-              :other: 0T
+              :one: 0 B
+              :other: 0 B
             ? !ruby/symbol "10000000000000"
             : 
-              :other: 00T
+              :one: 00 B
+              :other: 00 B
             ? !ruby/symbol "100000000000000"
             : 
-              :other: 000T
+              :one: 000 B
+              :other: 000 B
         :lepc: :numbers.formats.decimal.latn
         :limb: :numbers.formats.decimal.latn
         :mlym: :numbers.formats.decimal.latn
@@ -234,7 +280,7 @@
         :lanatham: :numbers.formats.percent.latn
         :laoo: :numbers.formats.percent.latn
         :latn: 
-          :default: "#,##0%"
+          :default: "#,##0 %"
         :lepc: :numbers.formats.percent.latn
         :limb: :numbers.formats.percent.latn
         :mlym: :numbers.formats.percent.latn

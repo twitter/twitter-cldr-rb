@@ -1,0 +1,1560 @@
+--- 
+:cs: 
+  :formats: 
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "GMT{0}"
+    :gmt_zero_formats: 
+      :generic: GMT
+    :hour_formats: 
+      :generic: "+H:mm;-H:mm"
+    :region_formats: 
+      :daylight: "{0} (+1)"
+      :generic: "Časové pásmo {0}"
+      :standard: "{0} (+0)"
+  :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "Acrejský letní čas"
+        :generic: "Acrejský čas"
+        :standard: "Acrejský standardní čas"
+    :Afghanistan: 
+      :long: 
+        :standard: "Afghánský čas"
+    :Africa_Central: 
+      :long: 
+        :standard: "Středoafrický čas"
+    :Africa_Eastern: 
+      :long: 
+        :standard: "Východoafrický čas"
+    :Africa_Southern: 
+      :long: 
+        :standard: "Jihoafrický čas"
+    :Africa_Western: 
+      :long: 
+        :daylight: "Západoafrický letní čas"
+        :generic: "Západoafrický čas"
+        :standard: "Západoafrický standardní čas"
+    :Alaska: 
+      :long: 
+        :daylight: "Aljašský letní čas"
+        :generic: "Aljašský čas"
+        :standard: "Aljašský standardní čas"
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
+    :Almaty: 
+      :long: 
+        :daylight: "Almatský letní čas"
+        :generic: "Almatský čas"
+        :standard: "Almatský standardní čas"
+    :Amazon: 
+      :long: 
+        :daylight: "Amazonský letní čas"
+        :generic: "Amazonský čas"
+        :standard: "Amazonský standardní čas"
+    :America_Central: 
+      :long: 
+        :daylight: "Severoamerický centrální letní čas"
+        :generic: "Severoamerický centrální čas"
+        :standard: "Severoamerický centrální standardní čas"
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
+    :America_Eastern: 
+      :long: 
+        :daylight: "Severoamerický východní letní čas"
+        :generic: "Severoamerický východní čas"
+        :standard: "Severoamerický východní standardní čas"
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
+    :America_Mountain: 
+      :long: 
+        :daylight: "Severoamerický horský letní čas"
+        :generic: "Severoamerický horský čas"
+        :standard: "Severoamerický horský standardní čas"
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
+    :America_Pacific: 
+      :long: 
+        :daylight: "Severoamerický pacifický letní čas"
+        :generic: "Severoamerický pacifický čas"
+        :standard: "Severoamerický pacifický standardní čas"
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
+    :Anadyr: 
+      :long: 
+        :daylight: "Anadyrský letní čas"
+        :generic: "Anadyrský čas"
+        :standard: "Anadyrský standardní čas"
+    :Apia: 
+      :long: 
+        :daylight: "Apijský letní čas"
+        :generic: "Apijský čas"
+        :standard: "Apijský standardní čas"
+    :Aqtau: 
+      :long: 
+        :daylight: "Aktauský letní čas"
+        :generic: "Aktauský čas"
+        :standard: "Aktauský standardní čas"
+    :Aqtobe: 
+      :long: 
+        :daylight: "Aktobský letní čas"
+        :generic: "Aktobský čas"
+        :standard: "Aktobský standardní čas"
+    :Arabian: 
+      :long: 
+        :daylight: "Arabský letní čas"
+        :generic: "Arabský čas"
+        :standard: "Arabský standardní čas"
+    :Argentina: 
+      :long: 
+        :daylight: "Argentinský letní čas"
+        :generic: "Argentinský čas"
+        :standard: "Argentinský standardní čas"
+    :Argentina_Western: 
+      :long: 
+        :daylight: "Západoargentinský letní čas"
+        :generic: "Západoargentinský čas"
+        :standard: "Západoargentinský standardní čas"
+    :Armenia: 
+      :long: 
+        :daylight: "Arménský letní čas"
+        :generic: "Arménský čas"
+        :standard: "Arménský standardní čas"
+    :Atlantic: 
+      :long: 
+        :daylight: "Atlantický letní čas"
+        :generic: "Atlantický čas"
+        :standard: "Atlantický standardní čas"
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
+    :Australia_Central: 
+      :long: 
+        :daylight: "Středoaustralský letní čas"
+        :generic: "Středoaustralský čas"
+        :standard: "Středoaustralský standardní čas"
+    :Australia_CentralWestern: 
+      :long: 
+        :daylight: "Středozápadní australský letní čas"
+        :generic: "Středozápadní australský čas"
+        :standard: "Středozápadní australský standardní čas"
+    :Australia_Eastern: 
+      :long: 
+        :daylight: "Východoaustralský letní čas"
+        :generic: "Východoaustralský čas"
+        :standard: "Východoaustralský standardní čas"
+    :Australia_Western: 
+      :long: 
+        :daylight: "Západoaustralský letní čas"
+        :generic: "Západoaustralský čas"
+        :standard: "Západoaustralský standardní čas"
+    :Azerbaijan: 
+      :long: 
+        :daylight: "Ázerbájdžánský letní čas"
+        :generic: "Ázerbájdžánský čas"
+        :standard: "Ázerbájdžánský standardní čas"
+    :Azores: 
+      :long: 
+        :daylight: "Azorský letní čas"
+        :generic: "Azorský čas"
+        :standard: "Azorský standardní čas"
+    :Bangladesh: 
+      :long: 
+        :daylight: "Bangladéšský letní čas"
+        :generic: "Bangladéšský čas"
+        :standard: "Bangladéšský standardní čas"
+    :Bhutan: 
+      :long: 
+        :standard: "Bhútánský čas"
+    :Bolivia: 
+      :long: 
+        :standard: "Bolivijský čas"
+    :Brasilia: 
+      :long: 
+        :daylight: "Brasilijský letní čas"
+        :generic: "Brasilijský čas"
+        :standard: "Brasilijský standardní čas"
+    :Brunei: 
+      :long: 
+        :standard: "Brunejský čas"
+    :Cape_Verde: 
+      :long: 
+        :daylight: "Kapverdský letní čas"
+        :generic: "Kapverdský čas"
+        :standard: "Kapverdský standardní čas"
+    :Casey: 
+      :long: 
+        :standard: "Čas Caseyho stanice"
+    :Chamorro: 
+      :long: 
+        :standard: "Chamorrský čas"
+    :Chatham: 
+      :long: 
+        :daylight: "Chathamský letní čas"
+        :generic: "Chathamský čas"
+        :standard: "Chathamský standardní čas"
+    :Chile: 
+      :long: 
+        :daylight: "Chilský letní čas"
+        :generic: "Chilský čas"
+        :standard: "Chilský standardní čas"
+    :China: 
+      :long: 
+        :daylight: "Čínský letní čas"
+        :generic: "Čínský čas"
+        :standard: "Čínský standardní čas"
+    :Choibalsan: 
+      :long: 
+        :daylight: "Čojbalsanský letní čas"
+        :generic: "Čojbalsanský čas"
+        :standard: "Čojbalsanský standardní čas"
+    :Christmas: 
+      :long: 
+        :standard: "Čas Vánočního ostrova"
+    :Cocos: 
+      :long: 
+        :standard: "Čas Kokosových ostrovů"
+    :Colombia: 
+      :long: 
+        :daylight: "Kolumbijský letní čas"
+        :generic: "Kolumbijský čas"
+        :standard: "Kolumbijský standardní čas"
+    :Cook: 
+      :long: 
+        :daylight: "Letní čas Cookových ostrovů"
+        :generic: "Čas Cookových ostrovů"
+        :standard: "Standardní čas Cookových ostrovů"
+    :Cuba: 
+      :long: 
+        :daylight: "Kubánský letní čas"
+        :generic: "Kubánský čas"
+        :standard: "Kubánský standardní čas"
+    :Davis: 
+      :long: 
+        :standard: "Čas Davisovy stanice"
+    :DumontDUrville: 
+      :long: 
+        :standard: "Čas stanice Dumonta d’Urvilla"
+    :East_Timor: 
+      :long: 
+        :standard: "Východotimorský čas"
+    :Easter: 
+      :long: 
+        :daylight: "Letní čas Velikonočního ostrova"
+        :generic: "Čas Velikonočního ostrova"
+        :standard: "Standardní čas Velikonočního ostrova"
+    :Ecuador: 
+      :long: 
+        :standard: "Ekvádorský čas"
+    :Europe_Central: 
+      :long: 
+        :daylight: "Středoevropský letní čas"
+        :generic: "Středoevropský čas"
+        :standard: "Středoevropský standardní čas"
+      :short: 
+        :daylight: SELČ
+        :generic: SEČ
+        :standard: SEČ
+    :Europe_Eastern: 
+      :long: 
+        :daylight: "Východoevropský letní čas"
+        :generic: "Východoevropský čas"
+        :standard: "Východoevropský standardní čas"
+    :Europe_Further_Eastern: 
+      :long: 
+        :standard: "Dálněvýchodoevropský čas"
+    :Europe_Western: 
+      :long: 
+        :daylight: "Západoevropský letní čas"
+        :generic: "Západoevropský čas"
+        :standard: "Západoevropský standardní čas"
+    :Falkland: 
+      :long: 
+        :daylight: "Falklandský letní čas"
+        :generic: "Falklandský čas"
+        :standard: "Falklandský standardní čas"
+    :Fiji: 
+      :long: 
+        :daylight: "Fidžijský letní čas"
+        :generic: "Fidžijský čas"
+        :standard: "Fidžijský standardní čas"
+    :French_Guiana: 
+      :long: 
+        :standard: "Francouzskoguyanský čas"
+    :French_Southern: 
+      :long: 
+        :standard: "Čas Francouzských jižních a antarktických území"
+    :GMT: 
+      :long: 
+        :standard: "Greenwichský střední čas"
+    :Galapagos: 
+      :long: 
+        :standard: "Galapážský čas"
+    :Gambier: 
+      :long: 
+        :standard: "Gambierský čas"
+    :Georgia: 
+      :long: 
+        :daylight: "Gruzínský letní čas"
+        :generic: "Gruzínský čas"
+        :standard: "Gruzínský standardní čas"
+    :Gilbert_Islands: 
+      :long: 
+        :standard: "Čas Gilbertových ostrovů"
+    :Greenland_Eastern: 
+      :long: 
+        :daylight: "Východogrónský letní čas"
+        :generic: "Východogrónský čas"
+        :standard: "Východogrónský standardní čas"
+    :Greenland_Western: 
+      :long: 
+        :daylight: "Západogrónský letní čas"
+        :generic: "Západogrónský čas"
+        :standard: "Západogrónský standardní čas"
+    :Guam: 
+      :long: 
+        :standard: "Guamský čas"
+    :Gulf: 
+      :long: 
+        :standard: "Standardní čas Perského zálivu"
+    :Guyana: 
+      :long: 
+        :standard: "Guyanský čas"
+    :Hawaii_Aleutian: 
+      :long: 
+        :daylight: "Havajsko-aleutský letní čas"
+        :generic: "Havajsko-aleutský čas"
+        :standard: "Havajsko-aleutský standardní čas"
+    :Hong_Kong: 
+      :long: 
+        :daylight: "Hongkongský letní čas"
+        :generic: "Hongkongský čas"
+        :standard: "Hongkongský standardní čas"
+    :Hovd: 
+      :long: 
+        :daylight: "Hovdský letní čas"
+        :generic: "Hovdský čas"
+        :standard: "Hovdský standardní čas"
+    :India: 
+      :long: 
+        :standard: "Indický čas"
+    :Indian_Ocean: 
+      :long: 
+        :standard: "Indickooceánský čas"
+    :Indochina: 
+      :long: 
+        :standard: "Indočínský čas"
+    :Indonesia_Central: 
+      :long: 
+        :standard: "Středoindonéský čas"
+    :Indonesia_Eastern: 
+      :long: 
+        :standard: "Východoindonéský čas"
+    :Indonesia_Western: 
+      :long: 
+        :standard: "Západoindonéský čas"
+    :Iran: 
+      :long: 
+        :daylight: "Íránský letní čas"
+        :generic: "Íránský čas"
+        :standard: "Íránský standardní čas"
+    :Irkutsk: 
+      :long: 
+        :daylight: "Irkutský letní čas"
+        :generic: "Irkutský čas"
+        :standard: "Irkutský standardní čas"
+    :Israel: 
+      :long: 
+        :daylight: "Izraelský letní čas"
+        :generic: "Izraelský čas"
+        :standard: "Izraelský standardní čas"
+    :Japan: 
+      :long: 
+        :daylight: "Japonský letní čas"
+        :generic: "Japonský čas"
+        :standard: "Japonský standardní čas"
+    :Kamchatka: 
+      :long: 
+        :daylight: "Petropavlovsko-kamčatský letní čas"
+        :generic: "Petropavlovsko-kamčatský čas"
+        :standard: "Petropavlovsko-kamčatský standardní čas"
+    :Kazakhstan_Eastern: 
+      :long: 
+        :standard: "Východokazachstánský čas"
+    :Kazakhstan_Western: 
+      :long: 
+        :standard: "Západokazachstánský čas"
+    :Korea: 
+      :long: 
+        :daylight: "Korejský letní čas"
+        :generic: "Korejský čas"
+        :standard: "Korejský standardní čas"
+    :Kosrae: 
+      :long: 
+        :standard: "Kosrajský čas"
+    :Krasnoyarsk: 
+      :long: 
+        :daylight: "Krasnojarský letní čas"
+        :generic: "Krasnojarský čas"
+        :standard: "Krasnojarský standardní čas"
+    :Kyrgystan: 
+      :long: 
+        :standard: "Kyrgyzský čas"
+    :Lanka: 
+      :long: 
+        :standard: "Srílanský čas"
+    :Line_Islands: 
+      :long: 
+        :standard: "Čas Rovníkových ostrovů"
+    :Lord_Howe: 
+      :long: 
+        :daylight: "Letní čas ostrova lorda Howa"
+        :generic: "Čas ostrova lorda Howa"
+        :standard: "Standardní čas ostrova lorda Howa"
+    :Macau: 
+      :long: 
+        :daylight: "Macajský letní čas"
+        :generic: "Macajský čas"
+        :standard: "Macajský standardní čas"
+    :Macquarie: 
+      :long: 
+        :standard: "Čas ostrova Macquarie"
+    :Magadan: 
+      :long: 
+        :daylight: "Magadanský letní čas"
+        :generic: "Magadanský čas"
+        :standard: "Magadanský standardní čas"
+    :Malaysia: 
+      :long: 
+        :standard: "Malajský čas"
+    :Maldives: 
+      :long: 
+        :standard: "Maledivský čas"
+    :Marquesas: 
+      :long: 
+        :standard: "Markézský čas"
+    :Marshall_Islands: 
+      :long: 
+        :standard: "Čas Marshallových ostrovů"
+    :Mauritius: 
+      :long: 
+        :daylight: "Mauricijský letní čas"
+        :generic: "Mauricijský čas"
+        :standard: "Mauricijský standardní čas"
+    :Mawson: 
+      :long: 
+        :standard: "Čas Mawsonovy stanice"
+    :Mexico_Northwest: 
+      :long: 
+        :daylight: "Severozápadní mexický letní čas"
+        :generic: "Severozápadní mexický čas"
+        :standard: "Severozápadní mexický standardní čas"
+    :Mexico_Pacific: 
+      :long: 
+        :daylight: "Mexický pacifický letní čas"
+        :generic: "Mexický pacifický čas"
+        :standard: "Mexický pacifický standardní čas"
+    :Mongolia: 
+      :long: 
+        :daylight: "Ulánbátarský letní čas"
+        :generic: "Ulánbátarský čas"
+        :standard: "Ulánbátarský standardní čas"
+    :Moscow: 
+      :long: 
+        :daylight: "Moskevský letní čas"
+        :generic: "Moskevský čas"
+        :standard: "Moskevský standardní čas"
+    :Myanmar: 
+      :long: 
+        :standard: "Myanmarský čas"
+    :Nauru: 
+      :long: 
+        :standard: "Naurský čas"
+    :Nepal: 
+      :long: 
+        :standard: "Nepálský čas"
+    :New_Caledonia: 
+      :long: 
+        :daylight: "Novokaledonský letní čas"
+        :generic: "Novokaledonský čas"
+        :standard: "Novokaledonský standardní čas"
+    :New_Zealand: 
+      :long: 
+        :daylight: "Novozélandský letní čas"
+        :generic: "Novozélandský čas"
+        :standard: "Novozélandský standardní čas"
+    :Newfoundland: 
+      :long: 
+        :daylight: "Newfoundlandský letní čas"
+        :generic: "Newfoundlandský čas"
+        :standard: "Newfoundlandský standardní čas"
+    :Niue: 
+      :long: 
+        :standard: "Niuejský čas"
+    :Norfolk: 
+      :long: 
+        :standard: "Norfolkský čas"
+    :Noronha: 
+      :long: 
+        :daylight: "Letní čas souostroví Fernando de Noronha"
+        :generic: "Čas souostroví Fernando de Noronha"
+        :standard: "Standardní čas souostroví Fernando de Noronha"
+    :North_Mariana: 
+      :long: 
+        :standard: "Severomariánský čas"
+    :Novosibirsk: 
+      :long: 
+        :daylight: "Novosibirský letní čas"
+        :generic: "Novosibirský čas"
+        :standard: "Novosibirský standardní čas"
+    :Omsk: 
+      :long: 
+        :daylight: "Omský letní čas"
+        :generic: "Omský čas"
+        :standard: "Omský standardní čas"
+    :Pakistan: 
+      :long: 
+        :daylight: "Pákistánský letní čas"
+        :generic: "Pákistánský čas"
+        :standard: "Pákistánský standardní čas"
+    :Palau: 
+      :long: 
+        :standard: "Palauský čas"
+    :Papua_New_Guinea: 
+      :long: 
+        :standard: "Čas Papuy-Nové Guiney"
+    :Paraguay: 
+      :long: 
+        :daylight: "Paraguayský letní čas"
+        :generic: "Paraguayský čas"
+        :standard: "Paraguayský standardní čas"
+    :Peru: 
+      :long: 
+        :daylight: "Peruánský letní čas"
+        :generic: "Peruánský čas"
+        :standard: "Peruánský standardní čas"
+    :Philippines: 
+      :long: 
+        :daylight: "Filipínský letní čas"
+        :generic: "Filipínský čas"
+        :standard: "Filipínský standardní čas"
+    :Phoenix_Islands: 
+      :long: 
+        :standard: "Čas Fénixových ostrovů"
+    :Pierre_Miquelon: 
+      :long: 
+        :daylight: "Pierre-miquelonský letní čas"
+        :generic: "Pierre-miquelonský čas"
+        :standard: "Pierre-miquelonský standardní čas"
+    :Pitcairn: 
+      :long: 
+        :standard: "Čas Pitcairnových ostrovů"
+    :Ponape: 
+      :long: 
+        :standard: "Ponapský čas"
+    :Pyongyang: 
+      :long: 
+        :standard: "Pchjongjangský čas"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "Kyzylordský letní čas"
+        :generic: "Kyzylordský čas"
+        :standard: "Kyzylordský standardní čas"
+    :Reunion: 
+      :long: 
+        :standard: "Réunionský čas"
+    :Rothera: 
+      :long: 
+        :standard: "Čas Rotherovy stanice"
+    :Sakhalin: 
+      :long: 
+        :daylight: "Sachalinský letní čas"
+        :generic: "Sachalinský čas"
+        :standard: "Sachalinský standardní čas"
+    :Samara: 
+      :long: 
+        :daylight: "Samarský letní čas"
+        :generic: "Samarský čas"
+        :standard: "Samarský standardní čas"
+    :Samoa: 
+      :long: 
+        :daylight: "Samojský letní čas"
+        :generic: "Samojský čas"
+        :standard: "Samojský standardní čas"
+    :Seychelles: 
+      :long: 
+        :standard: "Seychelský čas"
+    :Singapore: 
+      :long: 
+        :standard: "Singapurský čas"
+    :Solomon: 
+      :long: 
+        :standard: "Čas Šalamounových ostrovů"
+    :South_Georgia: 
+      :long: 
+        :standard: "Čas Jižní Georgie"
+    :Suriname: 
+      :long: 
+        :standard: "Surinamský čas"
+    :Syowa: 
+      :long: 
+        :standard: "Čas stanice Šówa"
+    :Tahiti: 
+      :long: 
+        :standard: "Tahitský čas"
+    :Taipei: 
+      :long: 
+        :daylight: "Tchajpejský letní čas"
+        :generic: "Tchajpejský čas"
+        :standard: "Tchajpejský standardní čas"
+    :Tajikistan: 
+      :long: 
+        :standard: "Tádžický čas"
+    :Tokelau: 
+      :long: 
+        :standard: "Tokelauský čas"
+    :Tonga: 
+      :long: 
+        :daylight: "Tonžský letní čas"
+        :generic: "Tonžský čas"
+        :standard: "Tonžský standardní čas"
+    :Truk: 
+      :long: 
+        :standard: "Chuukský čas"
+    :Turkmenistan: 
+      :long: 
+        :daylight: "Turkmenský letní čas"
+        :generic: "Turkmenský čas"
+        :standard: "Turkmenský standardní čas"
+    :Tuvalu: 
+      :long: 
+        :standard: "Tuvalský čas"
+    :Uruguay: 
+      :long: 
+        :daylight: "Uruguayský letní čas"
+        :generic: "Uruguayský čas"
+        :standard: "Uruguayský standardní čas"
+    :Uzbekistan: 
+      :long: 
+        :daylight: "Uzbecký letní čas"
+        :generic: "Uzbecký čas"
+        :standard: "Uzbecký standardní čas"
+    :Vanuatu: 
+      :long: 
+        :daylight: "Vanuatský letní čas"
+        :generic: "Vanuatský čas"
+        :standard: "Vanuatský standardní čas"
+    :Venezuela: 
+      :long: 
+        :standard: "Venezuelský čas"
+    :Vladivostok: 
+      :long: 
+        :daylight: "Vladivostocký letní čas"
+        :generic: "Vladivostocký čas"
+        :standard: "Vladivostocký standardní čas"
+    :Volgograd: 
+      :long: 
+        :daylight: "Volgogradský letní čas"
+        :generic: "Volgogradský čas"
+        :standard: "Volgogradský standardní čas"
+    :Vostok: 
+      :long: 
+        :standard: "Čas stanice Vostok"
+    :Wake: 
+      :long: 
+        :standard: "Čas ostrova Wake"
+    :Wallis: 
+      :long: 
+        :standard: "Čas ostrovů Wallis a Futuna"
+    :Yakutsk: 
+      :long: 
+        :daylight: "Jakutský letní čas"
+        :generic: "Jakutský čas"
+        :standard: "Jakutský standardní čas"
+    :Yekaterinburg: 
+      :long: 
+        :daylight: "Jekatěrinburský letní čas"
+        :generic: "Jekatěrinburský čas"
+        :standard: "Jekatěrinburský standardní čas"
+  :timezones: 
+    :Africa/Abidjan: 
+      :city: Abidžan
+    :Africa/Accra: 
+      :city: Accra
+    :Africa/Addis_Ababa: 
+      :city: "Addis Abeba"
+    :Africa/Algiers: 
+      :city: Alžír
+    :Africa/Asmera: 
+      :city: Asmara
+    :Africa/Bamako: 
+      :city: Bamako
+    :Africa/Bangui: 
+      :city: Bangui
+    :Africa/Banjul: 
+      :city: Banjul
+    :Africa/Bissau: 
+      :city: Bissau
+    :Africa/Blantyre: 
+      :city: Blantyre
+    :Africa/Brazzaville: 
+      :city: Brazzaville
+    :Africa/Bujumbura: 
+      :city: Bujumbura
+    :Africa/Cairo: 
+      :city: Káhira
+    :Africa/Casablanca: 
+      :city: Casablanca
+    :Africa/Ceuta: 
+      :city: Ceuta
+    :Africa/Conakry: 
+      :city: Conakry
+    :Africa/Dakar: 
+      :city: Dakar
+    :Africa/Dar_es_Salaam: 
+      :city: "Dar es Salaam"
+    :Africa/Djibouti: 
+      :city: Džibuti
+    :Africa/Douala: 
+      :city: Douala
+    :Africa/El_Aaiun: 
+      :city: "El Aaiun"
+    :Africa/Freetown: 
+      :city: Freetown
+    :Africa/Gaborone: 
+      :city: Gaborone
+    :Africa/Harare: 
+      :city: Harare
+    :Africa/Johannesburg: 
+      :city: Johannesburg
+    :Africa/Juba: 
+      :city: Juba
+    :Africa/Kampala: 
+      :city: Kampala
+    :Africa/Khartoum: 
+      :city: Chartúm
+    :Africa/Kigali: 
+      :city: Kigali
+    :Africa/Kinshasa: 
+      :city: Kinshasa
+    :Africa/Lagos: 
+      :city: Lagos
+    :Africa/Libreville: 
+      :city: Libreville
+    :Africa/Lome: 
+      :city: Lomé
+    :Africa/Luanda: 
+      :city: Luanda
+    :Africa/Lubumbashi: 
+      :city: Lubumbashi
+    :Africa/Lusaka: 
+      :city: Lusaka
+    :Africa/Malabo: 
+      :city: Malabo
+    :Africa/Maputo: 
+      :city: Maputo
+    :Africa/Maseru: 
+      :city: Maseru
+    :Africa/Mbabane: 
+      :city: Mbabane
+    :Africa/Mogadishu: 
+      :city: Mogadišu
+    :Africa/Monrovia: 
+      :city: Monrovia
+    :Africa/Nairobi: 
+      :city: Nairobi
+    :Africa/Ndjamena: 
+      :city: Ndžamena
+    :Africa/Niamey: 
+      :city: Niamey
+    :Africa/Nouakchott: 
+      :city: Nuakšott
+    :Africa/Ouagadougou: 
+      :city: Ouagadougou
+    :Africa/Porto-Novo: 
+      :city: Porto-Novo
+    :Africa/Sao_Tome: 
+      :city: "Svatý Tomáš"
+    :Africa/Tripoli: 
+      :city: Tripolis
+    :Africa/Tunis: 
+      :city: Tunis
+    :Africa/Windhoek: 
+      :city: Windhoek
+    :America/Adak: 
+      :city: Adak
+    :America/Anchorage: 
+      :city: Anchorage
+    :America/Anguilla: 
+      :city: Anguilla
+    :America/Antigua: 
+      :city: Antigua
+    :America/Araguaina: 
+      :city: Araguaina
+    :America/Argentina/La_Rioja: 
+      :city: "La Rioja"
+    :America/Argentina/Rio_Gallegos: 
+      :city: "Rio Gallegos"
+    :America/Argentina/Salta: 
+      :city: Salta
+    :America/Argentina/San_Juan: 
+      :city: "San Juan"
+    :America/Argentina/San_Luis: 
+      :city: "San Luis"
+    :America/Argentina/Tucuman: 
+      :city: Tucuman
+    :America/Argentina/Ushuaia: 
+      :city: Ushuaia
+    :America/Aruba: 
+      :city: Aruba
+    :America/Asuncion: 
+      :city: Asunción
+    :America/Bahia: 
+      :city: Bahía
+    :America/Bahia_Banderas: 
+      :city: "Bahia Banderas"
+    :America/Barbados: 
+      :city: Barbados
+    :America/Belem: 
+      :city: Belém
+    :America/Belize: 
+      :city: Belize
+    :America/Blanc-Sablon: 
+      :city: Blanc-Sablon
+    :America/Boa_Vista: 
+      :city: "Boa Vista"
+    :America/Bogota: 
+      :city: Bogotá
+    :America/Boise: 
+      :city: Boise
+    :America/Buenos_Aires: 
+      :city: "Buenos Aires"
+    :America/Cambridge_Bay: 
+      :city: "Cambridge Bay"
+    :America/Campo_Grande: 
+      :city: "Campo Grande"
+    :America/Cancun: 
+      :city: Cancún
+    :America/Caracas: 
+      :city: Caracas
+    :America/Catamarca: 
+      :city: Catamarca
+    :America/Cayenne: 
+      :city: Cayenne
+    :America/Cayman: 
+      :city: "Kajmanské ostrovy"
+    :America/Chicago: 
+      :city: Chicago
+    :America/Chihuahua: 
+      :city: Chihuahua
+    :America/Coral_Harbour: 
+      :city: Atikokan
+    :America/Cordoba: 
+      :city: Córdoba
+    :America/Costa_Rica: 
+      :city: Kostarika
+    :America/Creston: 
+      :city: Creston
+    :America/Cuiaba: 
+      :city: Cuiaba
+    :America/Curacao: 
+      :city: Curaçao
+    :America/Danmarkshavn: 
+      :city: Danmarkshavn
+    :America/Dawson: 
+      :city: Dawson
+    :America/Dawson_Creek: 
+      :city: "Dawson Creek"
+    :America/Denver: 
+      :city: Denver
+    :America/Detroit: 
+      :city: Detroit
+    :America/Dominica: 
+      :city: Dominika
+    :America/Edmonton: 
+      :city: Edmonton
+    :America/Eirunepe: 
+      :city: Eirunepe
+    :America/El_Salvador: 
+      :city: Salvador
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
+    :America/Fortaleza: 
+      :city: Fortaleza
+    :America/Glace_Bay: 
+      :city: "Glace Bay"
+    :America/Godthab: 
+      :city: Nuuk
+    :America/Goose_Bay: 
+      :city: "Goose Bay"
+    :America/Grand_Turk: 
+      :city: "Grand Turk"
+    :America/Grenada: 
+      :city: Grenada
+    :America/Guadeloupe: 
+      :city: Guadeloupe
+    :America/Guatemala: 
+      :city: Guatemala
+    :America/Guayaquil: 
+      :city: Guayaquil
+    :America/Guyana: 
+      :city: Guyana
+    :America/Halifax: 
+      :city: Halifax
+    :America/Havana: 
+      :city: Havana
+    :America/Hermosillo: 
+      :city: Hermosillo
+    :America/Indiana/Knox: 
+      :city: "Knox, Indiana"
+    :America/Indiana/Marengo: 
+      :city: "Marengo, Indiana"
+    :America/Indiana/Petersburg: 
+      :city: "Petersburg, Indiana"
+    :America/Indiana/Tell_City: 
+      :city: "Tell City, Indiana"
+    :America/Indiana/Vevay: 
+      :city: "Vevay, Indiana"
+    :America/Indiana/Vincennes: 
+      :city: "Vincennes, Indiana"
+    :America/Indiana/Winamac: 
+      :city: "Winamac, Indiana"
+    :America/Indianapolis: 
+      :city: Indianapolis
+    :America/Inuvik: 
+      :city: Inuvik
+    :America/Iqaluit: 
+      :city: Iqaluit
+    :America/Jamaica: 
+      :city: Jamajka
+    :America/Jujuy: 
+      :city: Jujuy
+    :America/Juneau: 
+      :city: Juneau
+    :America/Kentucky/Monticello: 
+      :city: "Monticello, Kentucky"
+    :America/Kralendijk: 
+      :city: Kralendijk
+    :America/La_Paz: 
+      :city: "La Paz"
+    :America/Lima: 
+      :city: Lima
+    :America/Los_Angeles: 
+      :city: "Los Angeles"
+    :America/Louisville: 
+      :city: Louisville
+    :America/Lower_Princes: 
+      :city: "Lower Prince’s Quarter"
+    :America/Maceio: 
+      :city: Maceio
+    :America/Managua: 
+      :city: Managua
+    :America/Manaus: 
+      :city: Manaus
+    :America/Marigot: 
+      :city: Marigot
+    :America/Martinique: 
+      :city: Martinik
+    :America/Matamoros: 
+      :city: Matamoros
+    :America/Mazatlan: 
+      :city: Mazatlán
+    :America/Mendoza: 
+      :city: Mendoza
+    :America/Menominee: 
+      :city: Menominee
+    :America/Merida: 
+      :city: Merida
+    :America/Metlakatla: 
+      :city: Metlakatla
+    :America/Mexico_City: 
+      :city: "Ciudad de México"
+    :America/Miquelon: 
+      :city: Miquelon
+    :America/Moncton: 
+      :city: Moncton
+    :America/Monterrey: 
+      :city: Monterrey
+    :America/Montevideo: 
+      :city: Montevideo
+    :America/Montserrat: 
+      :city: Montserrat
+    :America/Nassau: 
+      :city: Nassau
+    :America/New_York: 
+      :city: "New York"
+    :America/Nipigon: 
+      :city: Nipigon
+    :America/Nome: 
+      :city: Nome
+    :America/Noronha: 
+      :city: Noronha
+    :America/North_Dakota/Beulah: 
+      :city: "Beulah, Severní Dakota"
+    :America/North_Dakota/Center: 
+      :city: "Center, Severní Dakota"
+    :America/North_Dakota/New_Salem: 
+      :city: "New Salem, Severní Dakota"
+    :America/Ojinaga: 
+      :city: Ojinaga
+    :America/Panama: 
+      :city: Panama
+    :America/Pangnirtung: 
+      :city: Pangnirtung
+    :America/Paramaribo: 
+      :city: Paramaribo
+    :America/Phoenix: 
+      :city: Phoenix
+    :America/Port-au-Prince: 
+      :city: Port-au-Prince
+    :America/Port_of_Spain: 
+      :city: "Port of Spain"
+    :America/Porto_Velho: 
+      :city: "Porto Velho"
+    :America/Puerto_Rico: 
+      :city: Portoriko
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
+    :America/Rainy_River: 
+      :city: "Rainy River"
+    :America/Rankin_Inlet: 
+      :city: "Rankin Inlet"
+    :America/Recife: 
+      :city: Recife
+    :America/Regina: 
+      :city: Regina
+    :America/Resolute: 
+      :city: Resolute
+    :America/Rio_Branco: 
+      :city: "Rio Branco"
+    :America/Santa_Isabel: 
+      :city: "Santa Isabel"
+    :America/Santarem: 
+      :city: Santarém
+    :America/Santiago: 
+      :city: Santiago
+    :America/Santo_Domingo: 
+      :city: "Santo Domingo"
+    :America/Sao_Paulo: 
+      :city: "São Paulo"
+    :America/Scoresbysund: 
+      :city: Ittoqqortoormiit
+    :America/Sitka: 
+      :city: Sitka
+    :America/St_Barthelemy: 
+      :city: "Svatý Bartoloměj"
+    :America/St_Johns: 
+      :city: "St. John’s"
+    :America/St_Kitts: 
+      :city: "Svatý Kryštof"
+    :America/St_Lucia: 
+      :city: "Svatá Lucie"
+    :America/St_Thomas: 
+      :city: "Svatý Tomáš (Karibik)"
+    :America/St_Vincent: 
+      :city: "Svatý Vincenc"
+    :America/Swift_Current: 
+      :city: "Swift Current"
+    :America/Tegucigalpa: 
+      :city: Tegucigalpa
+    :America/Thule: 
+      :city: Thule
+    :America/Thunder_Bay: 
+      :city: "Thunder Bay"
+    :America/Tijuana: 
+      :city: Tijuana
+    :America/Toronto: 
+      :city: Toronto
+    :America/Tortola: 
+      :city: Tortola
+    :America/Vancouver: 
+      :city: Vancouver
+    :America/Whitehorse: 
+      :city: Whitehorse
+    :America/Winnipeg: 
+      :city: Winnipeg
+    :America/Yakutat: 
+      :city: Yakutat
+    :America/Yellowknife: 
+      :city: Yellowknife
+    :Antarctica/Casey: 
+      :city: Casey
+    :Antarctica/Davis: 
+      :city: Davis
+    :Antarctica/DumontDUrville: 
+      :city: "Dumont d’Urville"
+    :Antarctica/Macquarie: 
+      :city: Macquarie
+    :Antarctica/Mawson: 
+      :city: Mawson
+    :Antarctica/McMurdo: 
+      :city: McMurdo
+    :Antarctica/Palmer: 
+      :city: Palmer
+    :Antarctica/Rothera: 
+      :city: Rothera
+    :Antarctica/Syowa: 
+      :city: Syowa
+    :Antarctica/Troll: 
+      :city: Troll
+    :Antarctica/Vostok: 
+      :city: Vostok
+    :Arctic/Longyearbyen: 
+      :city: Longyearbyen
+    :Asia/Aden: 
+      :city: Aden
+    :Asia/Almaty: 
+      :city: Almaty
+    :Asia/Amman: 
+      :city: Ammán
+    :Asia/Anadyr: 
+      :city: Anadyr
+    :Asia/Aqtau: 
+      :city: Aktau
+    :Asia/Aqtobe: 
+      :city: Aktobe
+    :Asia/Ashgabat: 
+      :city: Ašchabad
+    :Asia/Atyrau: 
+      :city: Atyrau
+    :Asia/Baghdad: 
+      :city: Bagdád
+    :Asia/Bahrain: 
+      :city: Bahrajn
+    :Asia/Baku: 
+      :city: Baku
+    :Asia/Bangkok: 
+      :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
+    :Asia/Beirut: 
+      :city: Bejrút
+    :Asia/Bishkek: 
+      :city: Biškek
+    :Asia/Brunei: 
+      :city: Brunej
+    :Asia/Calcutta: 
+      :city: Kalkata
+    :Asia/Chita: 
+      :city: Čita
+    :Asia/Choibalsan: 
+      :city: Čojbalsan
+    :Asia/Colombo: 
+      :city: Kolombo
+    :Asia/Damascus: 
+      :city: Damašek
+    :Asia/Dhaka: 
+      :city: Dháka
+    :Asia/Dili: 
+      :city: Dili
+    :Asia/Dubai: 
+      :city: Dubaj
+    :Asia/Dushanbe: 
+      :city: Dušanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
+    :Asia/Gaza: 
+      :city: Gaza
+    :Asia/Hebron: 
+      :city: Hebron
+    :Asia/Hong_Kong: 
+      :city: Hongkong
+    :Asia/Hovd: 
+      :city: Hovd
+    :Asia/Irkutsk: 
+      :city: Irkutsk
+    :Asia/Jakarta: 
+      :city: Jakarta
+    :Asia/Jayapura: 
+      :city: Jayapura
+    :Asia/Jerusalem: 
+      :city: Jeruzalém
+    :Asia/Kabul: 
+      :city: Kábul
+    :Asia/Kamchatka: 
+      :city: Kamčatka
+    :Asia/Karachi: 
+      :city: Karáčí
+    :Asia/Katmandu: 
+      :city: Káthmándú
+    :Asia/Khandyga: 
+      :city: Chandyga
+    :Asia/Krasnoyarsk: 
+      :city: Krasnojarsk
+    :Asia/Kuala_Lumpur: 
+      :city: "Kuala Lumpur"
+    :Asia/Kuching: 
+      :city: Kučing
+    :Asia/Kuwait: 
+      :city: Kuvajt
+    :Asia/Macau: 
+      :city: Macao
+    :Asia/Magadan: 
+      :city: Magadan
+    :Asia/Makassar: 
+      :city: Makassar
+    :Asia/Manila: 
+      :city: Manila
+    :Asia/Muscat: 
+      :city: Maskat
+    :Asia/Nicosia: 
+      :city: Nikósie
+    :Asia/Novokuznetsk: 
+      :city: Novokuzněck
+    :Asia/Novosibirsk: 
+      :city: Novosibirsk
+    :Asia/Omsk: 
+      :city: Omsk
+    :Asia/Oral: 
+      :city: Uralsk
+    :Asia/Phnom_Penh: 
+      :city: Phnompenh
+    :Asia/Pontianak: 
+      :city: Pontianak
+    :Asia/Pyongyang: 
+      :city: Pchjongjang
+    :Asia/Qatar: 
+      :city: Katar
+    :Asia/Qostanay: 
+      :city: Kostanaj
+    :Asia/Qyzylorda: 
+      :city: Kyzylorda
+    :Asia/Rangoon: 
+      :city: Rangún
+    :Asia/Riyadh: 
+      :city: Rijád
+    :Asia/Saigon: 
+      :city: "Ho Či Minovo město"
+    :Asia/Sakhalin: 
+      :city: Sachalin
+    :Asia/Samarkand: 
+      :city: Samarkand
+    :Asia/Seoul: 
+      :city: Soul
+    :Asia/Shanghai: 
+      :city: Šanghaj
+    :Asia/Singapore: 
+      :city: Singapur
+    :Asia/Srednekolymsk: 
+      :city: Sredněkolymsk
+    :Asia/Taipei: 
+      :city: Tchaj-pej
+    :Asia/Tashkent: 
+      :city: Taškent
+    :Asia/Tbilisi: 
+      :city: Tbilisi
+    :Asia/Tehran: 
+      :city: Teherán
+    :Asia/Thimphu: 
+      :city: Thimbú
+    :Asia/Tokyo: 
+      :city: Tokio
+    :Asia/Tomsk: 
+      :city: Tomsk
+    :Asia/Ulaanbaatar: 
+      :city: Ulánbátar
+    :Asia/Urumqi: 
+      :city: Urumči
+    :Asia/Ust-Nera: 
+      :city: Ust-Nera
+    :Asia/Vientiane: 
+      :city: Vientiane
+    :Asia/Vladivostok: 
+      :city: Vladivostok
+    :Asia/Yakutsk: 
+      :city: Jakutsk
+    :Asia/Yekaterinburg: 
+      :city: Jekatěrinburg
+    :Asia/Yerevan: 
+      :city: Jerevan
+    :Atlantic/Azores: 
+      :city: "Azorské ostrovy"
+    :Atlantic/Bermuda: 
+      :city: Bermudy
+    :Atlantic/Canary: 
+      :city: "Kanárské ostrovy"
+    :Atlantic/Cape_Verde: 
+      :city: Kapverdy
+    :Atlantic/Faeroe: 
+      :city: "Faerské ostrovy"
+    :Atlantic/Madeira: 
+      :city: Madeira
+    :Atlantic/Reykjavik: 
+      :city: Reykjavík
+    :Atlantic/South_Georgia: 
+      :city: "Jižní Georgie"
+    :Atlantic/St_Helena: 
+      :city: "Svatá Helena"
+    :Atlantic/Stanley: 
+      :city: Stanley
+    :Australia/Adelaide: 
+      :city: Adelaide
+    :Australia/Brisbane: 
+      :city: Brisbane
+    :Australia/Broken_Hill: 
+      :city: "Broken Hill"
+    :Australia/Currie: 
+      :city: Currie
+    :Australia/Darwin: 
+      :city: Darwin
+    :Australia/Eucla: 
+      :city: Eucla
+    :Australia/Hobart: 
+      :city: Hobart
+    :Australia/Lindeman: 
+      :city: Lindeman
+    :Australia/Lord_Howe: 
+      :city: "Lord Howe"
+    :Australia/Melbourne: 
+      :city: Melbourne
+    :Australia/Perth: 
+      :city: Perth
+    :Australia/Sydney: 
+      :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Koordinovaný světový čas"
+      :short: 
+        :standard: UTC
+    :Etc/Unknown: 
+      :city: "neznámé město"
+    :Europe/Amsterdam: 
+      :city: Amsterdam
+    :Europe/Andorra: 
+      :city: Andorra
+    :Europe/Astrakhan: 
+      :city: Astrachaň
+    :Europe/Athens: 
+      :city: Athény
+    :Europe/Belgrade: 
+      :city: Bělehrad
+    :Europe/Berlin: 
+      :city: Berlín
+    :Europe/Bratislava: 
+      :city: Bratislava
+    :Europe/Brussels: 
+      :city: Brusel
+    :Europe/Bucharest: 
+      :city: Bukurešť
+    :Europe/Budapest: 
+      :city: Budapešť
+    :Europe/Busingen: 
+      :city: Busingen
+    :Europe/Chisinau: 
+      :city: Kišiněv
+    :Europe/Copenhagen: 
+      :city: Kodaň
+    :Europe/Dublin: 
+      :city: Dublin
+      :long: 
+        :daylight: "Irský letní čas"
+    :Europe/Gibraltar: 
+      :city: Gibraltar
+    :Europe/Guernsey: 
+      :city: Guernsey
+    :Europe/Helsinki: 
+      :city: Helsinky
+    :Europe/Isle_of_Man: 
+      :city: "Ostrov Man"
+    :Europe/Istanbul: 
+      :city: Istanbul
+    :Europe/Jersey: 
+      :city: Jersey
+    :Europe/Kaliningrad: 
+      :city: Kaliningrad
+    :Europe/Kiev: 
+      :city: Kyjev
+    :Europe/Kirov: 
+      :city: Kirov
+    :Europe/Lisbon: 
+      :city: Lisabon
+    :Europe/Ljubljana: 
+      :city: Lublaň
+    :Europe/London: 
+      :city: Londýn
+      :long: 
+        :daylight: "Britský letní čas"
+    :Europe/Luxembourg: 
+      :city: Lucemburk
+    :Europe/Madrid: 
+      :city: Madrid
+    :Europe/Malta: 
+      :city: Malta
+    :Europe/Mariehamn: 
+      :city: Mariehamn
+    :Europe/Minsk: 
+      :city: Minsk
+    :Europe/Monaco: 
+      :city: Monako
+    :Europe/Moscow: 
+      :city: Moskva
+    :Europe/Oslo: 
+      :city: Oslo
+    :Europe/Paris: 
+      :city: Paříž
+    :Europe/Podgorica: 
+      :city: Podgorica
+    :Europe/Prague: 
+      :city: Praha
+    :Europe/Riga: 
+      :city: Riga
+    :Europe/Rome: 
+      :city: Řím
+    :Europe/Samara: 
+      :city: Samara
+    :Europe/San_Marino: 
+      :city: "San Marino"
+    :Europe/Sarajevo: 
+      :city: Sarajevo
+    :Europe/Saratov: 
+      :city: Saratov
+    :Europe/Simferopol: 
+      :city: Simferopol
+    :Europe/Skopje: 
+      :city: Skopje
+    :Europe/Sofia: 
+      :city: Sofie
+    :Europe/Stockholm: 
+      :city: Stockholm
+    :Europe/Tallinn: 
+      :city: Tallinn
+    :Europe/Tirane: 
+      :city: Tirana
+    :Europe/Ulyanovsk: 
+      :city: Uljanovsk
+    :Europe/Uzhgorod: 
+      :city: Užhorod
+    :Europe/Vaduz: 
+      :city: Vaduz
+    :Europe/Vatican: 
+      :city: Vatikán
+    :Europe/Vienna: 
+      :city: Vídeň
+    :Europe/Vilnius: 
+      :city: Vilnius
+    :Europe/Volgograd: 
+      :city: Volgograd
+    :Europe/Warsaw: 
+      :city: Varšava
+    :Europe/Zagreb: 
+      :city: Záhřeb
+    :Europe/Zaporozhye: 
+      :city: Záporoží
+    :Europe/Zurich: 
+      :city: Curych
+    :Indian/Antananarivo: 
+      :city: Antananarivo
+    :Indian/Chagos: 
+      :city: Chagos
+    :Indian/Christmas: 
+      :city: "Vánoční ostrov"
+    :Indian/Cocos: 
+      :city: "Kokosové ostrovy"
+    :Indian/Comoro: 
+      :city: Komory
+    :Indian/Kerguelen: 
+      :city: "Kerguelenovy ostrovy"
+    :Indian/Mahe: 
+      :city: Mahé
+    :Indian/Maldives: 
+      :city: Maledivy
+    :Indian/Mauritius: 
+      :city: Mauricius
+    :Indian/Mayotte: 
+      :city: Mayotte
+    :Indian/Reunion: 
+      :city: Réunion
+    :Pacific/Apia: 
+      :city: Apia
+    :Pacific/Auckland: 
+      :city: Auckland
+    :Pacific/Bougainville: 
+      :city: Bougainville
+    :Pacific/Chatham: 
+      :city: "Chathamské ostrovy"
+    :Pacific/Easter: 
+      :city: "Velikonoční ostrov"
+    :Pacific/Efate: 
+      :city: Éfaté
+    :Pacific/Enderbury: 
+      :city: Enderbury
+    :Pacific/Fakaofo: 
+      :city: Fakaofo
+    :Pacific/Fiji: 
+      :city: Fidži
+    :Pacific/Funafuti: 
+      :city: Funafuti
+    :Pacific/Galapagos: 
+      :city: Galapágy
+    :Pacific/Gambier: 
+      :city: "Gambierovy ostrovy"
+    :Pacific/Guadalcanal: 
+      :city: Guadalcanal
+    :Pacific/Guam: 
+      :city: Guam
+    :Pacific/Honolulu: 
+      :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HST
+        :standard: HST
+    :Pacific/Johnston: 
+      :city: Johnston
+    :Pacific/Kiritimati: 
+      :city: Kiritimati
+    :Pacific/Kosrae: 
+      :city: Kosrae
+    :Pacific/Kwajalein: 
+      :city: Kwajalein
+    :Pacific/Majuro: 
+      :city: Majuro
+    :Pacific/Marquesas: 
+      :city: Markézy
+    :Pacific/Midway: 
+      :city: Midway
+    :Pacific/Nauru: 
+      :city: Nauru
+    :Pacific/Niue: 
+      :city: Niue
+    :Pacific/Norfolk: 
+      :city: Norfolk
+    :Pacific/Noumea: 
+      :city: Nouméa
+    :Pacific/Pago_Pago: 
+      :city: "Pago Pago"
+    :Pacific/Palau: 
+      :city: Palau
+    :Pacific/Pitcairn: 
+      :city: "Pitcairnovy ostrovy"
+    :Pacific/Ponape: 
+      :city: Pohnpei
+    :Pacific/Port_Moresby: 
+      :city: "Port Moresby"
+    :Pacific/Rarotonga: 
+      :city: Rarotonga
+    :Pacific/Saipan: 
+      :city: Saipan
+    :Pacific/Tahiti: 
+      :city: Tahiti
+    :Pacific/Tarawa: 
+      :city: Tarawa
+    :Pacific/Tongatapu: 
+      :city: Tongatapu
+    :Pacific/Truk: 
+      :city: "Chuukské ostrovy"
+    :Pacific/Wake: 
+      :city: Wake
+    :Pacific/Wallis: 
+      :city: Wallis

@@ -108,6 +108,11 @@ namespace :update do
     TwitterCldr::Resources::TailoringImporter.new.import
   end
 
+  desc 'Import territory data'
+  task :territories do
+    TwitterCldr::Resources::TerritoriesImporter.new.import
+  end
+
   desc 'Import Unicode data resources'
   task :unicode_data do
     TwitterCldr::Resources::UnicodeDataImporter.new.import
@@ -160,6 +165,26 @@ namespace :update do
     TwitterCldr::Resources::RbnfTestImporter.new.import
   end
 
+  desc 'Import timezone data'
+  task :timezones do
+    TwitterCldr::Resources::TimezonesImporter.new.import
+  end
+
+  desc 'Import timezone region data'
+  task :timezone_regions do
+    TwitterCldr::Resources::TimezoneRegionsImporter.new.import
+  end
+
+  desc 'Import timezone data'
+  task :bcp47_timezone_metadata do
+    TwitterCldr::Resources::Bcp47TimezoneMetadataImporter.new.import
+  end
+
+  desc 'Import (generate) timezone tests (should be executed using JRuby 1.7 in 1.9 mode)'
+  task :timezone_tests do
+    TwitterCldr::Resources::TimezoneTestsImporter.new.import
+  end
+
   desc 'Import transform rules'
   task :transforms do
     TwitterCldr::Resources::TransformsImporter.new.import
@@ -167,7 +192,7 @@ namespace :update do
 
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :transform_tests do
-    TwitterCldr::Resources::TransformTestImporter.new.import
+    TwitterCldr::Resources::TransformTestsImporter.new.import
   end
 
   desc 'Import segment exceptions'

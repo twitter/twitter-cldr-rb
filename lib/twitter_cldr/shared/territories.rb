@@ -102,4 +102,3 @@ module TwitterCldr
     end
   end
 end
-

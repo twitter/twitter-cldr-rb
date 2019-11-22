@@ -1,0 +1,1548 @@
+--- 
+:ga: 
+  :formats: 
+    :fallback_formats: 
+      :generic: "{1} ({0})"
+    :gmt_formats: 
+      :generic: "MAG{0}"
+    :gmt_zero_formats: 
+      :generic: MAG
+    :hour_formats: 
+      :generic: "+HH:mm;-HH:mm"
+    :region_formats: 
+      :daylight: "{0} (+1)"
+      :generic: "{0}"
+      :standard: "{0} (+0)"
+  :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "Am Samhraidh Acre"
+        :generic: "Am Acre"
+        :standard: "Am Caighdeánach Acre"
+    :Afghanistan: 
+      :long: 
+        :standard: "Am na hAfganastáine"
+    :Africa_Central: 
+      :long: 
+        :standard: "Am Lár na hAfraice"
+    :Africa_Eastern: 
+      :long: 
+        :standard: "Am Oirthear na hAfraice"
+    :Africa_Southern: 
+      :long: 
+        :standard: "Am Caighdeánach na hAfraice Theas"
+    :Africa_Western: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthar na hAfraice"
+        :generic: "Am Iarthar na hAfraice"
+        :standard: "Am Caighdeánach Iarthar na hAfraice"
+    :Alaska: 
+      :long: 
+        :daylight: "Am Samhraidh Alasca"
+        :generic: "Am Alasca"
+        :standard: "Am Caighdeánach Alasca"
+    :Almaty: 
+      :long: 
+        :daylight: "Am Samhraidh Almaty"
+        :generic: "Am Almaty"
+        :standard: "Am Caighdeánach Almaty"
+    :Amazon: 
+      :long: 
+        :daylight: "Am Samhraidh na hAmasóine"
+        :generic: "Am na hAmasóine"
+        :standard: "Am Caighdeánach na hAmasóine"
+    :America_Central: 
+      :long: 
+        :daylight: "Am Samhraidh Lárnach"
+        :generic: "Am Lárnach"
+        :standard: "Am Caighdeánach Lárnach"
+    :America_Eastern: 
+      :long: 
+        :daylight: "Am Samhraidh an Oirthir"
+        :generic: "Am an Oirthir"
+        :standard: "Am Caighdeánach an Oirthir"
+    :America_Mountain: 
+      :long: 
+        :daylight: "Am Samhraidh na Sléibhte"
+        :generic: "Am na Sléibhte"
+        :standard: "Am Caighdeánach na Sléibhte"
+    :America_Pacific: 
+      :long: 
+        :daylight: "Am Samhraidh an Aigéin Chiúin"
+        :generic: "Am an Aigéin Chiúin"
+        :standard: "Am Caighdeánach an Aigéin Chiúin"
+      :short: 
+        :daylight: ASAC
+        :generic: AAC
+        :standard: ACAC
+    :Anadyr: 
+      :long: 
+        :daylight: "Am Samhraidh Anadyr"
+        :generic: "Am Anadyr"
+        :standard: "Am Caighdeánach Anadyr"
+    :Apia: 
+      :long: 
+        :daylight: "Am Samhraidh Apia"
+        :generic: "Am Apia"
+        :standard: "Am Caighdeánach Apia"
+    :Aqtau: 
+      :long: 
+        :daylight: "Am Samhraidh Aqtau"
+        :generic: "Am Aqtau"
+        :standard: "Am Caighdeánach Aqtau"
+    :Aqtobe: 
+      :long: 
+        :daylight: "Am Samhraidh Aqtobe"
+        :generic: "Am Aqtobe"
+        :standard: "Am Caighdeánach Aqtobe"
+    :Arabian: 
+      :long: 
+        :daylight: "Am Samhraidh na hAraibe"
+        :generic: "Am na hAraibe"
+        :standard: "Am Caighdeánach na hAraibe"
+    :Argentina: 
+      :long: 
+        :daylight: "Am Samhraidh na hAirgintíne"
+        :generic: "Am na hAirgintíne"
+        :standard: "Am Caighdeánach na hAirgintíne"
+    :Argentina_Western: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthar na hAirgintíne"
+        :generic: "Am Iarthar na hAirgintíne"
+        :standard: "Am Caighdeánach Iarthar na hAirgintíne"
+    :Armenia: 
+      :long: 
+        :daylight: "Am Samhraidh na hAirméine"
+        :generic: "Am na hAirméine"
+        :standard: "Am Caighdeánach na hAirméine"
+    :Atlantic: 
+      :long: 
+        :daylight: "Am Samhraidh an Atlantaigh"
+        :generic: "Am an Atlantaigh"
+        :standard: "Am Caighdeánach an Atlantaigh"
+    :Australia_Central: 
+      :long: 
+        :daylight: "Am Samhraidh Lár na hAstráile"
+        :generic: "Am Lár na hAstráile"
+        :standard: "Am Caighdeánach Lár na hAstráile"
+    :Australia_CentralWestern: 
+      :long: 
+        :daylight: "Am Samhraidh Mheániarthar na hAstráile"
+        :generic: "Am Mheániarthar na hAstráile"
+        :standard: "Am Caighdeánach Mheániarthar na hAstráile"
+    :Australia_Eastern: 
+      :long: 
+        :daylight: "Am Samhraidh Oirthear na hAstráile"
+        :generic: "Am Oirthear na hAstráile"
+        :standard: "Am Caighdeánach Oirthear na hAstráile"
+    :Australia_Western: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthar na hAstráile"
+        :generic: "Am Iarthar na hAstráile"
+        :standard: "Am Caighdeánach Iarthar na hAstráile"
+    :Azerbaijan: 
+      :long: 
+        :daylight: "Am Samhraidh na hAsarbaiseáine"
+        :generic: "Am na hAsarbaiseáine"
+        :standard: "Am Caighdeánach na hAsarbaiseáine"
+    :Azores: 
+      :long: 
+        :daylight: "Am Samhraidh na nAsór"
+        :generic: "Am na nAsór"
+        :standard: "Am Caighdeánach na nAsór"
+    :Bangladesh: 
+      :long: 
+        :daylight: "Am Samhraidh na Banglaidéise"
+        :generic: "Am na Banglaidéise"
+        :standard: "Am Caighdeánach na Banglaidéise"
+    :Bhutan: 
+      :long: 
+        :standard: "Am na Bútáine"
+    :Bolivia: 
+      :long: 
+        :standard: "Am na Bolaive"
+    :Brasilia: 
+      :long: 
+        :daylight: "Am Samhraidh Bhrasília"
+        :generic: "Am Bhrasília"
+        :standard: "Am Caighdeánach Bhrasília"
+    :Brunei: 
+      :long: 
+        :standard: "Am Brúiné Darasalám"
+    :Cape_Verde: 
+      :long: 
+        :daylight: "Am Samhraidh Rinn Verde"
+        :generic: "Am Rinn Verde"
+        :standard: "Am Caighdeánach Rinn Verde"
+    :Casey: 
+      :long: 
+        :standard: "Am Stáisiún Casey"
+    :Chamorro: 
+      :long: 
+        :standard: "Am Caighdeánach Seamórach"
+    :Chatham: 
+      :long: 
+        :daylight: "Am Samhraidh Chatham"
+        :generic: "Am Chatham"
+        :standard: "Am Caighdeánach Chatham"
+    :Chile: 
+      :long: 
+        :daylight: "Am Samhraidh na Sile"
+        :generic: "Am na Sile"
+        :standard: "Am Caighdeánach na Sile"
+    :China: 
+      :long: 
+        :daylight: "Am Samhraidh na Síne"
+        :generic: "Am na Síne"
+        :standard: "Am Caighdeánach na Síne"
+    :Choibalsan: 
+      :long: 
+        :daylight: "Am Samhraidh Choibalsan"
+        :generic: "Am Choibalsan"
+        :standard: "Am Caighdeánach Choibalsan"
+    :Christmas: 
+      :long: 
+        :standard: "Am Oileán na Nollag"
+    :Cocos: 
+      :long: 
+        :standard: "Am Oileáin Cocos"
+    :Colombia: 
+      :long: 
+        :daylight: "Am Samhraidh na Colóime"
+        :generic: "Am na Colóime"
+        :standard: "Am Caighdeánach na Colóime"
+    :Cook: 
+      :long: 
+        :daylight: "Am Leathshamhraidh Oileáin Cook"
+        :generic: "Am Oileáin Cook"
+        :standard: "Am Caighdeánach Oileáin Cook"
+    :Cuba: 
+      :long: 
+        :daylight: "Am Samhraidh Chúba"
+        :generic: "Am Chúba"
+        :standard: "Am Caighdeánach Chúba"
+    :Davis: 
+      :long: 
+        :standard: "Am Stáisiún Davis"
+    :DumontDUrville: 
+      :long: 
+        :standard: "Am Stáisiún Dumont-d’Urville"
+    :East_Timor: 
+      :long: 
+        :standard: "Am Thíomór Thoir"
+    :Easter: 
+      :long: 
+        :daylight: "Am Samhraidh Oileán na Cásca"
+        :generic: "Am Oileán na Cásca"
+        :standard: "Am Caighdeánach Oileán na Cásca"
+    :Ecuador: 
+      :long: 
+        :standard: "Am Eacuadór"
+    :Europe_Central: 
+      :long: 
+        :daylight: "Am Samhraidh Lár na hEorpa"
+        :generic: "Am Lár na hEorpa"
+        :standard: "Am Caighdeánach Lár na hEorpa"
+      :short: 
+        :daylight: CEST
+        :generic: CET
+        :standard: CET
+    :Europe_Eastern: 
+      :long: 
+        :daylight: "Am Samhraidh Oirthear na hEorpa"
+        :generic: "Am Oirthear na hEorpa"
+        :standard: "Am Caighdeánach Oirthear na hEorpa"
+      :short: 
+        :daylight: EEST
+        :generic: EET
+        :standard: EET
+    :Europe_Further_Eastern: 
+      :long: 
+        :standard: "Am Chianoirthear na hEorpa"
+    :Europe_Western: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthar na hEorpa"
+        :generic: "Am Iarthar na hEorpa"
+        :standard: "Am Caighdeánach Iarthar na hEorpa"
+      :short: 
+        :daylight: WEST
+        :generic: WET
+        :standard: WET
+    :Falkland: 
+      :long: 
+        :daylight: "Am Samhraidh Oileáin Fháclainne"
+        :generic: "Am Oileáin Fháclainne"
+        :standard: "Am Caighdeánach Oileáin Fháclainne"
+    :Fiji: 
+      :long: 
+        :daylight: "Am Samhraidh Fhidsí"
+        :generic: "Am Fhidsí"
+        :standard: "Am Caighdeánach Fhidsí"
+    :French_Guiana: 
+      :long: 
+        :standard: "Am Ghuáin na Fraince"
+    :French_Southern: 
+      :long: 
+        :standard: "Am Chríocha Francacha Deisceart an Domhain"
+    :GMT: 
+      :long: 
+        :standard: "Meán-Am Greenwich"
+      :short: 
+        :standard: MAG
+    :Galapagos: 
+      :long: 
+        :standard: "Am Oileáin Galápagos"
+    :Gambier: 
+      :long: 
+        :standard: "Am Ghambier"
+    :Georgia: 
+      :long: 
+        :daylight: "Am Samhraidh na Seoirsia"
+        :generic: "Am na Seoirsia"
+        :standard: "Am Caighdeánach na Seoirsia"
+    :Gilbert_Islands: 
+      :long: 
+        :standard: "Am Chireabaití"
+    :Greenland_Eastern: 
+      :long: 
+        :daylight: "Am Samhraidh Oirthear na Graonlainne"
+        :generic: "Am Oirthear na Graonlainne"
+        :standard: "Am Caighdeánach Oirthear na Graonlainne"
+    :Greenland_Western: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthar na Graonlainne"
+        :generic: "Am Iarthar na Graonlainne"
+        :standard: "Am Caighdeánach Iarthar na Graonlainne"
+    :Guam: 
+      :long: 
+        :standard: "Am Caighdeánach Ghuam"
+    :Gulf: 
+      :long: 
+        :standard: "Am Caighdeánach na Murascaille"
+    :Guyana: 
+      :long: 
+        :standard: "Am na Guáine"
+    :Hawaii_Aleutian: 
+      :long: 
+        :daylight: "Am Samhraidh Haváí-Ailiúit"
+        :generic: "Am Haváí-Ailiúit"
+        :standard: "Am Caighdeánach Haváí-Ailiúit"
+    :Hong_Kong: 
+      :long: 
+        :daylight: "Am Samhraidh Hong Cong"
+        :generic: "Am Hong Cong"
+        :standard: "Am Caighdeánach Hong Cong"
+    :Hovd: 
+      :long: 
+        :daylight: "Am Samhraidh Hovd"
+        :generic: "Am Hovd"
+        :standard: "Am Caighdeánach Hovd"
+    :India: 
+      :long: 
+        :standard: "Am Caighdeánach na hIndia"
+    :Indian_Ocean: 
+      :long: 
+        :standard: "Am an Aigéin Indiaigh"
+    :Indochina: 
+      :long: 
+        :standard: "Am na hInd-Síne"
+    :Indonesia_Central: 
+      :long: 
+        :standard: "Am Lár na hIndinéise"
+    :Indonesia_Eastern: 
+      :long: 
+        :standard: "Am Oirthear na hIndinéise"
+    :Indonesia_Western: 
+      :long: 
+        :standard: "Am Iarthar na hIndinéise"
+    :Iran: 
+      :long: 
+        :daylight: "Am Samhraidh na hIaráine"
+        :generic: "Am na hIaráine"
+        :standard: "Am Caighdeánach na hIaráine"
+    :Irkutsk: 
+      :long: 
+        :daylight: "Am Samhraidh Irkutsk"
+        :generic: "Am Irkutsk"
+        :standard: "Am Caighdeánach Irkutsk"
+    :Israel: 
+      :long: 
+        :daylight: "Am Samhraidh Iosrael"
+        :generic: "Am Iosrael"
+        :standard: "Am Caighdeánach Iosrael"
+    :Japan: 
+      :long: 
+        :daylight: "Am Samhraidh na Seapáine"
+        :generic: "Am na Seapáine"
+        :standard: "Am Caighdeánach na Seapáine"
+    :Kamchatka: 
+      :long: 
+        :daylight: "Am Samhraidh Phetropavlovsk-Kamchatski"
+        :generic: "Am Phetropavlovsk-Kamchatski"
+        :standard: "Am Caighdeánach Phetropavlovsk-Kamchatski"
+    :Kazakhstan_Eastern: 
+      :long: 
+        :standard: "Am Oirthear na Casacstáine"
+    :Kazakhstan_Western: 
+      :long: 
+        :standard: "Am Iarthar na Casacstáine"
+    :Korea: 
+      :long: 
+        :daylight: "Am Samhraidh na Cóiré"
+        :generic: "Am na Cóiré"
+        :standard: "Am Caighdeánach na Cóiré"
+    :Kosrae: 
+      :long: 
+        :standard: "Am Kosrae"
+    :Krasnoyarsk: 
+      :long: 
+        :daylight: "Am Samhraidh Krasnoyarsk"
+        :generic: "Am Krasnoyarsk"
+        :standard: "Am Caighdeánach Krasnoyarsk"
+    :Kyrgystan: 
+      :long: 
+        :standard: "Am na Cirgeastáine"
+    :Lanka: 
+      :long: 
+        :standard: "Am Shrí Lanca"
+    :Line_Islands: 
+      :long: 
+        :standard: "Am Oileáin na Líne"
+    :Lord_Howe: 
+      :long: 
+        :daylight: "Am Samhraidh Lord Howe"
+        :generic: "Am Lord Howe"
+        :standard: "Am Caighdeánach Lord Howe"
+    :Macau: 
+      :long: 
+        :daylight: "Am Samhraidh Mhacao"
+        :generic: "Am Mhacao"
+        :standard: "Am Caighdeánach Mhacao"
+    :Macquarie: 
+      :long: 
+        :standard: "Am Oileán Mhic Guaire"
+    :Magadan: 
+      :long: 
+        :daylight: "Am Samhraidh Mhagadan"
+        :generic: "Am Mhagadan"
+        :standard: "Am Caighdeánach Mhagadan"
+    :Malaysia: 
+      :long: 
+        :standard: "Am na Malaeisia"
+    :Maldives: 
+      :long: 
+        :standard: "Am Oileáin Mhaildíve"
+    :Marquesas: 
+      :long: 
+        :standard: "Am na nOileán Marcasach"
+    :Marshall_Islands: 
+      :long: 
+        :standard: "Am Oileáin Marshall"
+    :Mauritius: 
+      :long: 
+        :daylight: "Am Samhraidh Oileán Mhuirís"
+        :generic: "Am Oileán Mhuirís"
+        :standard: "Am Caighdeánach Oileán Mhuirís"
+    :Mawson: 
+      :long: 
+        :standard: "Am Stáisiún Mawson"
+    :Mexico_Northwest: 
+      :long: 
+        :daylight: "Am Samhraidh Iarthuaisceart Mheicsiceo"
+        :generic: "Am Iarthuaisceart Mheicsiceo"
+        :standard: "Am Caighdeánach Iarthuaisceart Mheicsiceo"
+    :Mexico_Pacific: 
+      :long: 
+        :daylight: "Am Samhraidh Meicsiceach an Aigéin Chiúin"
+        :generic: "Am Meicsiceach an Aigéin Chiúin"
+        :standard: "Am Caighdeánach Meicsiceach an Aigéin Chiúin"
+    :Mongolia: 
+      :long: 
+        :daylight: "Am Samhraidh Ulánbátar"
+        :generic: "Am Ulánbátar"
+        :standard: "Am Caighdeánach Ulánbátar"
+    :Moscow: 
+      :long: 
+        :daylight: "Am Samhraidh Mhoscó"
+        :generic: "Am Mhoscó"
+        :standard: "Am Caighdeánach Mhoscó"
+    :Myanmar: 
+      :long: 
+        :standard: "Am Mhaenmar"
+    :Nauru: 
+      :long: 
+        :standard: "Am Nárú"
+    :Nepal: 
+      :long: 
+        :standard: "Am Neipeal"
+    :New_Caledonia: 
+      :long: 
+        :daylight: "Am Samhraidh na Nua-Chaladóine"
+        :generic: "Am na Nua-Chaladóine"
+        :standard: "Am Caighdeánach na Nua-Chaladóine"
+    :New_Zealand: 
+      :long: 
+        :daylight: "Am Samhraidh na Nua-Shéalainne"
+        :generic: "Am na Nua-Shéalainne"
+        :standard: "Am Caighdeánach na Nua-Shéalainne"
+    :Newfoundland: 
+      :long: 
+        :daylight: "Am Samhraidh Thalamh an Éisc"
+        :generic: "Am Thalamh an Éisc"
+        :standard: "Am Caighdeánach Thalamh an Éisc"
+    :Niue: 
+      :long: 
+        :standard: "Am Niue"
+    :Norfolk: 
+      :long: 
+        :standard: "Am Oileán Norfolk"
+    :Noronha: 
+      :long: 
+        :daylight: "Am Samhraidh Fhernando de Noronha"
+        :generic: "Am Fhernando de Noronha"
+        :standard: "Am Caighdeánach Fhernando de Noronha"
+    :North_Mariana: 
+      :long: 
+        :standard: "Am na nOileán Máirianach Thuaidh"
+    :Novosibirsk: 
+      :long: 
+        :daylight: "Am Samhraidh Novosibirsk"
+        :generic: "Am Novosibirsk"
+        :standard: "Am Caighdeánach Novosibirsk"
+    :Omsk: 
+      :long: 
+        :daylight: "Am Samhraidh Omsk"
+        :generic: "Am Omsk"
+        :standard: "Am Caighdeánach Omsk"
+    :Pakistan: 
+      :long: 
+        :daylight: "Am Samhraidh na Pacastáine"
+        :generic: "Am na Pacastáine"
+        :standard: "Am Caighdeánach na Pacastáine"
+    :Palau: 
+      :long: 
+        :standard: "Am Oileáin Palau"
+    :Papua_New_Guinea: 
+      :long: 
+        :standard: "Am Nua-Ghuine Phapua"
+    :Paraguay: 
+      :long: 
+        :daylight: "Am Samhraidh Pharagua"
+        :generic: "Am Pharagua"
+        :standard: "Am Caighdeánach Pharagua"
+    :Peru: 
+      :long: 
+        :daylight: "Am Samhraidh Pheiriú"
+        :generic: "Am Pheiriú"
+        :standard: "Am Caighdeánach Pheiriú"
+    :Philippines: 
+      :long: 
+        :daylight: "Am Samhraidh na nOileán Filipíneach"
+        :generic: "Am na nOileán Filipíneach"
+        :standard: "Am Caighdeánach na nOileán Filipíneach"
+    :Phoenix_Islands: 
+      :long: 
+        :standard: "Am Oileáin an Fhéinics"
+    :Pierre_Miquelon: 
+      :long: 
+        :daylight: "Am Samhraidh Saint-Pierre-et-Miquelon"
+        :generic: "Am Saint-Pierre-et-Miquelon"
+        :standard: "Am Caighdeánach Saint-Pierre-et-Miquelon"
+    :Pitcairn: 
+      :long: 
+        :standard: "Am Oileán Pitcairn"
+    :Ponape: 
+      :long: 
+        :standard: "Am Phohnpei"
+    :Pyongyang: 
+      :long: 
+        :standard: "Am Pyongyang"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "Am Samhraidh Qyzylorda"
+        :generic: "Am Qyzylorda"
+        :standard: "Am Caighdeánach Qyzylorda"
+    :Reunion: 
+      :long: 
+        :standard: "Am Réunion"
+    :Rothera: 
+      :long: 
+        :standard: "Am Stáisiún Rothera"
+    :Sakhalin: 
+      :long: 
+        :daylight: "Am Samhraidh Shakhalin"
+        :generic: "Am Shakhalin"
+        :standard: "Am Caighdeánach Shakhalin"
+    :Samara: 
+      :long: 
+        :daylight: "Am Samhraidh Shamara"
+        :generic: "Am Shamara"
+        :standard: "Am Caighdeánach Shamara"
+    :Samoa: 
+      :long: 
+        :daylight: "Am Samhraidh Shamó"
+        :generic: "Am Shamó"
+        :standard: "Am Caighdeánach Shamó"
+    :Seychelles: 
+      :long: 
+        :standard: "Am na Séiséal"
+    :Singapore: 
+      :long: 
+        :standard: "Am Caighdeánach Shingeapór"
+    :Solomon: 
+      :long: 
+        :standard: "Am Oileáin Sholomón"
+    :South_Georgia: 
+      :long: 
+        :standard: "Am na Seoirsia Theas"
+    :Suriname: 
+      :long: 
+        :standard: "Am Shuranam"
+    :Syowa: 
+      :long: 
+        :standard: "Am Stáisiún Syowa"
+    :Tahiti: 
+      :long: 
+        :standard: "Am Thaihítí"
+    :Taipei: 
+      :long: 
+        :daylight: "Am Samhraidh Thaipei"
+        :generic: "Am Thaipei"
+        :standard: "Am Caighdeánach Thaipei"
+    :Tajikistan: 
+      :long: 
+        :standard: "Am na Táidsíceastáine"
+    :Tokelau: 
+      :long: 
+        :standard: "Am Oileáin Tócalá"
+    :Tonga: 
+      :long: 
+        :daylight: "Am Samhraidh Thonga"
+        :generic: "Am Thonga"
+        :standard: "Am Caighdeánach Thonga"
+    :Truk: 
+      :long: 
+        :standard: "Am Chuuk"
+    :Turkmenistan: 
+      :long: 
+        :daylight: "Am Samhraidh na Tuircméanastáine"
+        :generic: "Am na Tuircméanastáine"
+        :standard: "Am Caighdeánach na Tuircméanastáine"
+    :Tuvalu: 
+      :long: 
+        :standard: "Am Thuvalu"
+    :Uruguay: 
+      :long: 
+        :daylight: "Am Samhraidh Uragua"
+        :generic: "Am Uragua"
+        :standard: "Am Caighdeánach Uragua"
+    :Uzbekistan: 
+      :long: 
+        :daylight: "Am Samhraidh na hÚisbéiceastáine"
+        :generic: "Am na hÚisbéiceastáine"
+        :standard: "Am Caighdeánach na hÚisbéiceastáine"
+    :Vanuatu: 
+      :long: 
+        :daylight: "Am Samhraidh Vanuatú"
+        :generic: "Am Vanuatú"
+        :standard: "Am Caighdeánach Vanuatú"
+    :Venezuela: 
+      :long: 
+        :standard: "Am Veiniséala"
+    :Vladivostok: 
+      :long: 
+        :daylight: "Am Samhraidh Vladivostok"
+        :generic: "Am Vladivostok"
+        :standard: "Am Caighdeánach Vladivostok"
+    :Volgograd: 
+      :long: 
+        :daylight: "Am Samhraidh Volgograd"
+        :generic: "Am Volgograd"
+        :standard: "Am Caighdeánach Volgograd"
+    :Vostok: 
+      :long: 
+        :standard: "Am Stáisiún Vostok"
+    :Wake: 
+      :long: 
+        :standard: "Am Oileán Wake"
+    :Wallis: 
+      :long: 
+        :standard: "Am Vailís agus Futúna"
+    :Yakutsk: 
+      :long: 
+        :daylight: "Am Samhraidh Iacútsc"
+        :generic: "Am Iacútsc"
+        :standard: "Am Caighdeánach Iacútsc"
+    :Yekaterinburg: 
+      :long: 
+        :daylight: "Am Samhraidh Yekaterinburg"
+        :generic: "Am Yekaterinburg"
+        :standard: "Am Caighdeánach Yekaterinburg"
+  :timezones: 
+    :Africa/Abidjan: 
+      :city: Abidjan
+    :Africa/Accra: 
+      :city: Accra
+    :Africa/Addis_Ababa: 
+      :city: "Adas Ababa"
+    :Africa/Algiers: 
+      :city: "Cathair na hAilgéire"
+    :Africa/Asmera: 
+      :city: Asmara
+    :Africa/Bamako: 
+      :city: Bamako
+    :Africa/Bangui: 
+      :city: Bangui
+    :Africa/Banjul: 
+      :city: Banjul
+    :Africa/Bissau: 
+      :city: Bissau
+    :Africa/Blantyre: 
+      :city: "Baile an tSaoir"
+    :Africa/Brazzaville: 
+      :city: Brazzaville
+    :Africa/Bujumbura: 
+      :city: Bujumbura
+    :Africa/Cairo: 
+      :city: Caireo
+    :Africa/Casablanca: 
+      :city: Casablanca
+    :Africa/Ceuta: 
+      :city: Ceuta
+    :Africa/Conakry: 
+      :city: Conacraí
+    :Africa/Dakar: 
+      :city: Dacár
+    :Africa/Dar_es_Salaam: 
+      :city: Dárasalám
+    :Africa/Djibouti: 
+      :city: Djibouti
+    :Africa/Douala: 
+      :city: Douala
+    :Africa/El_Aaiun: 
+      :city: "El Aaiun"
+    :Africa/Freetown: 
+      :city: Freetown
+    :Africa/Gaborone: 
+      :city: Gaborone
+    :Africa/Harare: 
+      :city: Harare
+    :Africa/Johannesburg: 
+      :city: Johannesburg
+    :Africa/Juba: 
+      :city: Juba
+    :Africa/Kampala: 
+      :city: Kampala
+    :Africa/Khartoum: 
+      :city: Cartúm
+    :Africa/Kigali: 
+      :city: Kigali
+    :Africa/Kinshasa: 
+      :city: Cinseasa
+    :Africa/Lagos: 
+      :city: Lagos
+    :Africa/Libreville: 
+      :city: Libreville
+    :Africa/Lome: 
+      :city: Lome
+    :Africa/Luanda: 
+      :city: Luanda
+    :Africa/Lubumbashi: 
+      :city: Lubumbashi
+    :Africa/Lusaka: 
+      :city: Lusaka
+    :Africa/Malabo: 
+      :city: Malabo
+    :Africa/Maputo: 
+      :city: Mapútó
+    :Africa/Maseru: 
+      :city: Maseru
+    :Africa/Mbabane: 
+      :city: Mbabane
+    :Africa/Mogadishu: 
+      :city: Mogaidisiú
+    :Africa/Monrovia: 
+      :city: Monrovia
+    :Africa/Nairobi: 
+      :city: Nairobi
+    :Africa/Ndjamena: 
+      :city: Ndjamena
+    :Africa/Niamey: 
+      :city: Niamey
+    :Africa/Nouakchott: 
+      :city: Nuacsat
+    :Africa/Ouagadougou: 
+      :city: Ouagadougou
+    :Africa/Porto-Novo: 
+      :city: Porto-Novo
+    :Africa/Sao_Tome: 
+      :city: "São Tomé"
+    :Africa/Tripoli: 
+      :city: Tripilí
+    :Africa/Tunis: 
+      :city: Túinis
+    :Africa/Windhoek: 
+      :city: Windhoek
+    :America/Adak: 
+      :city: Adak
+    :America/Anchorage: 
+      :city: Anchorage
+    :America/Anguilla: 
+      :city: Angaíle
+    :America/Antigua: 
+      :city: Antigua
+    :America/Araguaina: 
+      :city: Araguaina
+    :America/Argentina/La_Rioja: 
+      :city: "La Rioja"
+    :America/Argentina/Rio_Gallegos: 
+      :city: "Rio Gallegos"
+    :America/Argentina/Salta: 
+      :city: Salta
+    :America/Argentina/San_Juan: 
+      :city: "San Juan"
+    :America/Argentina/San_Luis: 
+      :city: "San Luis"
+    :America/Argentina/Tucuman: 
+      :city: Tucuman
+    :America/Argentina/Ushuaia: 
+      :city: Ushuaia
+    :America/Aruba: 
+      :city: Arúba
+    :America/Asuncion: 
+      :city: Asúinseon
+    :America/Bahia: 
+      :city: Bahia
+    :America/Bahia_Banderas: 
+      :city: "Bahia Banderas"
+    :America/Barbados: 
+      :city: Barbadós
+    :America/Belem: 
+      :city: Belém
+    :America/Belize: 
+      :city: "an Bheilís"
+    :America/Blanc-Sablon: 
+      :city: Blanc-Sablon
+    :America/Boa_Vista: 
+      :city: "Boa Vista"
+    :America/Bogota: 
+      :city: Bogatá
+    :America/Boise: 
+      :city: Boise
+    :America/Buenos_Aires: 
+      :city: "Buenos Aires"
+    :America/Cambridge_Bay: 
+      :city: "Cambridge Bay"
+    :America/Campo_Grande: 
+      :city: "Campo Grande"
+    :America/Cancun: 
+      :city: Cancún
+    :America/Caracas: 
+      :city: Caracas
+    :America/Catamarca: 
+      :city: Catamarca
+    :America/Cayenne: 
+      :city: Cayenne
+    :America/Cayman: 
+      :city: Cayman
+    :America/Chicago: 
+      :city: Chicago
+    :America/Chihuahua: 
+      :city: Chihuahua
+    :America/Coral_Harbour: 
+      :city: Atikokan
+    :America/Cordoba: 
+      :city: Córdoba
+    :America/Costa_Rica: 
+      :city: "Cósta Ríce"
+    :America/Creston: 
+      :city: Creston
+    :America/Cuiaba: 
+      :city: Cuiabá
+    :America/Curacao: 
+      :city: Curaçao
+    :America/Danmarkshavn: 
+      :city: Danmarkshavn
+    :America/Dawson: 
+      :city: Dawson
+    :America/Dawson_Creek: 
+      :city: "Dawson Creek"
+    :America/Denver: 
+      :city: Denver
+    :America/Detroit: 
+      :city: Detroit
+    :America/Dominica: 
+      :city: Doiminice
+    :America/Edmonton: 
+      :city: Edmonton
+    :America/Eirunepe: 
+      :city: Eirunepé
+    :America/El_Salvador: 
+      :city: "an tSalvadóir"
+    :America/Fort_Nelson: 
+      :city: "Fort Nelson"
+    :America/Fortaleza: 
+      :city: Fortaleza
+    :America/Glace_Bay: 
+      :city: "Glace Bay"
+    :America/Godthab: 
+      :city: Nuuk
+    :America/Goose_Bay: 
+      :city: "Goose Bay"
+    :America/Grand_Turk: 
+      :city: "Grand Turk"
+    :America/Grenada: 
+      :city: Greanáda
+    :America/Guadeloupe: 
+      :city: Guadalúip
+    :America/Guatemala: 
+      :city: Guatamala
+    :America/Guayaquil: 
+      :city: Guayaquil
+    :America/Guyana: 
+      :city: "an Ghuáin"
+    :America/Halifax: 
+      :city: Halifax
+    :America/Havana: 
+      :city: Havána
+    :America/Hermosillo: 
+      :city: Hermosillo
+    :America/Indiana/Knox: 
+      :city: "Knox, Indiana"
+    :America/Indiana/Marengo: 
+      :city: "Marengo, Indiana"
+    :America/Indiana/Petersburg: 
+      :city: "Petersburg, Indiana"
+    :America/Indiana/Tell_City: 
+      :city: "Tell City, Indiana"
+    :America/Indiana/Vevay: 
+      :city: "Vevay, Indiana"
+    :America/Indiana/Vincennes: 
+      :city: "Vincennes, Indiana"
+    :America/Indiana/Winamac: 
+      :city: "Winamac, Indiana"
+    :America/Indianapolis: 
+      :city: Indianapolis
+    :America/Inuvik: 
+      :city: Inuvik
+    :America/Iqaluit: 
+      :city: Iqaluit
+    :America/Jamaica: 
+      :city: Iamáice
+    :America/Jujuy: 
+      :city: Jujuy
+    :America/Juneau: 
+      :city: Juneau
+    :America/Kentucky/Monticello: 
+      :city: "Monticello, Kentucky"
+    :America/Kralendijk: 
+      :city: Kralendijk
+    :America/La_Paz: 
+      :city: "La Paz"
+    :America/Lima: 
+      :city: Líoma
+    :America/Los_Angeles: 
+      :city: "Los Angeles"
+    :America/Louisville: 
+      :city: Louisville
+    :America/Lower_Princes: 
+      :city: "Lower Prince’s Quarter"
+    :America/Maceio: 
+      :city: Maceió
+    :America/Managua: 
+      :city: Managua
+    :America/Manaus: 
+      :city: Manaus
+    :America/Marigot: 
+      :city: Marigot
+    :America/Martinique: 
+      :city: Martinique
+    :America/Matamoros: 
+      :city: Matamoros
+    :America/Mazatlan: 
+      :city: Mazatlan
+    :America/Mendoza: 
+      :city: Mendoza
+    :America/Menominee: 
+      :city: Menominee
+    :America/Merida: 
+      :city: Merida
+    :America/Metlakatla: 
+      :city: Metlakatla
+    :America/Mexico_City: 
+      :city: "Cathair Mheicsiceo"
+    :America/Miquelon: 
+      :city: Miquelon
+    :America/Moncton: 
+      :city: Moncton
+    :America/Monterrey: 
+      :city: Monterrey
+    :America/Montevideo: 
+      :city: Montevideo
+    :America/Montserrat: 
+      :city: Montsarat
+    :America/Nassau: 
+      :city: Nassau
+    :America/New_York: 
+      :city: Nua-Eabhrac
+    :America/Nipigon: 
+      :city: Nipigon
+    :America/Nome: 
+      :city: Nome
+    :America/Noronha: 
+      :city: Noronha
+    :America/North_Dakota/Beulah: 
+      :city: "Beulah, North Dakota"
+    :America/North_Dakota/Center: 
+      :city: "Center, North Dakota"
+    :America/North_Dakota/New_Salem: 
+      :city: "New Salem, North Dakota"
+    :America/Ojinaga: 
+      :city: Ojinaga
+    :America/Panama: 
+      :city: Panama
+    :America/Pangnirtung: 
+      :city: Pangnirtung
+    :America/Paramaribo: 
+      :city: Paramaribo
+    :America/Phoenix: 
+      :city: Phoenix
+    :America/Port-au-Prince: 
+      :city: Port-au-Prince
+    :America/Port_of_Spain: 
+      :city: "Port of Spain"
+    :America/Porto_Velho: 
+      :city: "Porto Velho"
+    :America/Puerto_Rico: 
+      :city: "Portó Ríce"
+    :America/Punta_Arenas: 
+      :city: "Punta Arenas"
+    :America/Rainy_River: 
+      :city: "Rainy River"
+    :America/Rankin_Inlet: 
+      :city: "Rankin Inlet"
+    :America/Recife: 
+      :city: Recife
+    :America/Regina: 
+      :city: Regina
+    :America/Resolute: 
+      :city: Resolute
+    :America/Rio_Branco: 
+      :city: "Rio Branco"
+    :America/Santa_Isabel: 
+      :city: "Santa Isabel"
+    :America/Santarem: 
+      :city: Santarém
+    :America/Santiago: 
+      :city: Saintiagó
+    :America/Santo_Domingo: 
+      :city: "Santo Domingo"
+    :America/Sao_Paulo: 
+      :city: "São Paulo"
+    :America/Scoresbysund: 
+      :city: Ittoqqortoormiit
+    :America/Sitka: 
+      :city: Sitka
+    :America/St_Barthelemy: 
+      :city: "Saint Barthélemy"
+    :America/St_Johns: 
+      :city: "St. John’s"
+    :America/St_Kitts: 
+      :city: "San Críostóir"
+    :America/St_Lucia: 
+      :city: "St. Lucia"
+    :America/St_Thomas: 
+      :city: "St. Thomas"
+    :America/St_Vincent: 
+      :city: "San Uinseann"
+    :America/Swift_Current: 
+      :city: "Swift Current"
+    :America/Tegucigalpa: 
+      :city: Tegucigalpa
+    :America/Thule: 
+      :city: Thule
+    :America/Thunder_Bay: 
+      :city: "Thunder Bay"
+    :America/Tijuana: 
+      :city: Tijuana
+    :America/Toronto: 
+      :city: Toronto
+    :America/Tortola: 
+      :city: Tortola
+    :America/Vancouver: 
+      :city: Vancouver
+    :America/Whitehorse: 
+      :city: Whitehorse
+    :America/Winnipeg: 
+      :city: Winnipeg
+    :America/Yakutat: 
+      :city: Yakutat
+    :America/Yellowknife: 
+      :city: Yellowknife
+    :Antarctica/Casey: 
+      :city: Casey
+    :Antarctica/Davis: 
+      :city: Davis
+    :Antarctica/DumontDUrville: 
+      :city: "Dumont d’Urville"
+    :Antarctica/Macquarie: 
+      :city: "Mac Guaire"
+    :Antarctica/Mawson: 
+      :city: Mawson
+    :Antarctica/McMurdo: 
+      :city: McMurdo
+    :Antarctica/Palmer: 
+      :city: Palmer
+    :Antarctica/Rothera: 
+      :city: Rothera
+    :Antarctica/Syowa: 
+      :city: Syowa
+    :Antarctica/Troll: 
+      :city: Troll
+    :Antarctica/Vostok: 
+      :city: Vostok
+    :Arctic/Longyearbyen: 
+      :city: Longyearbyen
+    :Asia/Aden: 
+      :city: Áidin
+    :Asia/Almaty: 
+      :city: Almaty
+    :Asia/Amman: 
+      :city: Amman
+    :Asia/Anadyr: 
+      :city: Anadyr
+    :Asia/Aqtau: 
+      :city: Aqtau
+    :Asia/Aqtobe: 
+      :city: Aqtobe
+    :Asia/Ashgabat: 
+      :city: Ashgabat
+    :Asia/Atyrau: 
+      :city: Atyrau
+    :Asia/Baghdad: 
+      :city: Bagdad
+    :Asia/Bahrain: 
+      :city: Bairéin
+    :Asia/Baku: 
+      :city: Baku
+    :Asia/Bangkok: 
+      :city: Bangkok
+    :Asia/Barnaul: 
+      :city: Barnaul
+    :Asia/Beirut: 
+      :city: Béiriút
+    :Asia/Bishkek: 
+      :city: Bishkek
+    :Asia/Brunei: 
+      :city: Brúiné
+    :Asia/Calcutta: 
+      :city: Calcúta
+    :Asia/Chita: 
+      :city: Chita
+    :Asia/Choibalsan: 
+      :city: Choibalsan
+    :Asia/Colombo: 
+      :city: Colombo
+    :Asia/Damascus: 
+      :city: "an Damaisc"
+    :Asia/Dhaka: 
+      :city: Dhaka
+    :Asia/Dili: 
+      :city: Dili
+    :Asia/Dubai: 
+      :city: Dubai
+    :Asia/Dushanbe: 
+      :city: Dushanbe
+    :Asia/Famagusta: 
+      :city: Famagusta
+    :Asia/Gaza: 
+      :city: Gaza
+    :Asia/Hebron: 
+      :city: Heabrón
+    :Asia/Hong_Kong: 
+      :city: "Hong Cong"
+    :Asia/Hovd: 
+      :city: Hovd
+    :Asia/Irkutsk: 
+      :city: Irkutsk
+    :Asia/Jakarta: 
+      :city: Iacárta
+    :Asia/Jayapura: 
+      :city: Jayapura
+    :Asia/Jerusalem: 
+      :city: Iarúsailéim
+    :Asia/Kabul: 
+      :city: Cabúl
+    :Asia/Kamchatka: 
+      :city: Kamchatka
+    :Asia/Karachi: 
+      :city: Karachi
+    :Asia/Katmandu: 
+      :city: Kathmandu
+    :Asia/Khandyga: 
+      :city: Khandyga
+    :Asia/Krasnoyarsk: 
+      :city: Krasnoyarsk
+    :Asia/Kuala_Lumpur: 
+      :city: "Kuala Lumpur"
+    :Asia/Kuching: 
+      :city: Kuching
+    :Asia/Kuwait: 
+      :city: Cuáit
+    :Asia/Macau: 
+      :city: Macao
+    :Asia/Magadan: 
+      :city: Magadan
+    :Asia/Makassar: 
+      :city: Makassar
+    :Asia/Manila: 
+      :city: Mainile
+    :Asia/Muscat: 
+      :city: Muscat
+    :Asia/Nicosia: 
+      :city: "an Niocóis"
+    :Asia/Novokuznetsk: 
+      :city: Novokuznetsk
+    :Asia/Novosibirsk: 
+      :city: Novosibirsk
+    :Asia/Omsk: 
+      :city: Omsk
+    :Asia/Oral: 
+      :city: Oral
+    :Asia/Phnom_Penh: 
+      :city: "Phnom Penh"
+    :Asia/Pontianak: 
+      :city: Pontianak
+    :Asia/Pyongyang: 
+      :city: Pyongyang
+    :Asia/Qatar: 
+      :city: Catar
+    :Asia/Qyzylorda: 
+      :city: Qyzylorda
+    :Asia/Rangoon: 
+      :city: Rangún
+    :Asia/Riyadh: 
+      :city: Riyadh
+    :Asia/Saigon: 
+      :city: "Cathair Ho Chi Minh"
+    :Asia/Sakhalin: 
+      :city: Sakhalin
+    :Asia/Samarkand: 
+      :city: Samarkand
+    :Asia/Seoul: 
+      :city: Súl
+    :Asia/Shanghai: 
+      :city: Shang-hai
+    :Asia/Singapore: 
+      :city: Singeapór
+    :Asia/Srednekolymsk: 
+      :city: Srednekolymsk
+    :Asia/Taipei: 
+      :city: Taipei
+    :Asia/Tashkent: 
+      :city: Tashkent
+    :Asia/Tbilisi: 
+      :city: Tbilisi
+    :Asia/Tehran: 
+      :city: Tehran
+    :Asia/Thimphu: 
+      :city: Thimphu
+    :Asia/Tokyo: 
+      :city: Tóiceo
+    :Asia/Tomsk: 
+      :city: Tomsk
+    :Asia/Ulaanbaatar: 
+      :city: Ulaanbaatar
+    :Asia/Urumqi: 
+      :city: Urumqi
+    :Asia/Ust-Nera: 
+      :city: Ust-Nera
+    :Asia/Vientiane: 
+      :city: Vientiane
+    :Asia/Vladivostok: 
+      :city: Vladivostok
+    :Asia/Yakutsk: 
+      :city: Iacútsc
+    :Asia/Yekaterinburg: 
+      :city: Yekaterinburg
+    :Asia/Yerevan: 
+      :city: Eireaván
+    :Atlantic/Azores: 
+      :city: "na hAsóir"
+    :Atlantic/Bermuda: 
+      :city: Beirmiúda
+    :Atlantic/Canary: 
+      :city: "na hOileáin Chanáracha"
+    :Atlantic/Cape_Verde: 
+      :city: "Rinn Verde"
+    :Atlantic/Faeroe: 
+      :city: "Oileáin Fharó"
+    :Atlantic/Madeira: 
+      :city: Maidéara
+    :Atlantic/Reykjavik: 
+      :city: Réicivíc
+    :Atlantic/South_Georgia: 
+      :city: "an tSeoirsia Theas"
+    :Atlantic/St_Helena: 
+      :city: "San Héilin"
+    :Atlantic/Stanley: 
+      :city: Stanley
+    :Australia/Adelaide: 
+      :city: Adelaide
+    :Australia/Brisbane: 
+      :city: Brisbane
+    :Australia/Broken_Hill: 
+      :city: "Broken Hill"
+    :Australia/Currie: 
+      :city: Currie
+    :Australia/Darwin: 
+      :city: Darwin
+    :Australia/Eucla: 
+      :city: Eucla
+    :Australia/Hobart: 
+      :city: Hobart
+    :Australia/Lindeman: 
+      :city: Lindeman
+    :Australia/Lord_Howe: 
+      :city: "Lord Howe"
+    :Australia/Melbourne: 
+      :city: Melbourne
+    :Australia/Perth: 
+      :city: Perth
+    :Australia/Sydney: 
+      :city: Sydney
+    :Etc/UTC: 
+      :long: 
+        :standard: "Am Uilíoch Lárnach"
+      :short: 
+        :standard: UTC
+    :Etc/Unknown: 
+      :city: "Cathair Anaithnid"
+    :Europe/Amsterdam: 
+      :city: Amstardam
+    :Europe/Andorra: 
+      :city: Andóra
+    :Europe/Astrakhan: 
+      :city: "an Astracáin"
+    :Europe/Athens: 
+      :city: "an Aithin"
+    :Europe/Belgrade: 
+      :city: Béalgrád
+    :Europe/Berlin: 
+      :city: Beirlín
+    :Europe/Bratislava: 
+      :city: "an Bhratasláiv"
+    :Europe/Brussels: 
+      :city: "an Bhruiséil"
+    :Europe/Bucharest: 
+      :city: Búcairist
+    :Europe/Budapest: 
+      :city: Búdaipeist
+    :Europe/Busingen: 
+      :city: Busingen
+    :Europe/Chisinau: 
+      :city: Císineá
+    :Europe/Copenhagen: 
+      :city: Cóbanhávan
+    :Europe/Dublin: 
+      :city: "Baile Átha Cliath"
+      :long: 
+        :daylight: "Am Caighdéanach na hÉireann"
+      :short: 
+        :daylight: ACÉ
+    :Europe/Gibraltar: 
+      :city: Giobráltar
+    :Europe/Guernsey: 
+      :city: Geansaí
+    :Europe/Helsinki: 
+      :city: Heilsincí
+    :Europe/Isle_of_Man: 
+      :city: "Oileán Mhanann"
+    :Europe/Istanbul: 
+      :city: Iostanbúl
+    :Europe/Jersey: 
+      :city: Geirsí
+    :Europe/Kaliningrad: 
+      :city: Kaliningrad
+    :Europe/Kiev: 
+      :city: Cív
+    :Europe/Kirov: 
+      :city: Kirov
+    :Europe/Lisbon: 
+      :city: Liospóin
+    :Europe/Ljubljana: 
+      :city: Liúibleána
+    :Europe/London: 
+      :city: Londain
+      :long: 
+        :daylight: "Am Samhraidh na Breataine"
+      :short: 
+        :daylight: ASB
+    :Europe/Luxembourg: 
+      :city: Lucsamburg
+    :Europe/Madrid: 
+      :city: Maidrid
+    :Europe/Malta: 
+      :city: Málta
+    :Europe/Mariehamn: 
+      :city: Mariehamn
+    :Europe/Minsk: 
+      :city: Mionsc
+    :Europe/Monaco: 
+      :city: Monacó
+    :Europe/Moscow: 
+      :city: Moscó
+    :Europe/Oslo: 
+      :city: Osló
+    :Europe/Paris: 
+      :city: Páras
+    :Europe/Podgorica: 
+      :city: Podgairítse
+    :Europe/Prague: 
+      :city: Prág
+    :Europe/Riga: 
+      :city: Ríge
+    :Europe/Rome: 
+      :city: "an Róimh"
+    :Europe/Samara: 
+      :city: Samara
+    :Europe/San_Marino: 
+      :city: "San Mairíne"
+    :Europe/Sarajevo: 
+      :city: Sairéavó
+    :Europe/Saratov: 
+      :city: Saratov
+    :Europe/Simferopol: 
+      :city: Simferopol
+    :Europe/Skopje: 
+      :city: Scóipé
+    :Europe/Sofia: 
+      :city: Sóifia
+    :Europe/Stockholm: 
+      :city: Stócólm
+    :Europe/Tallinn: 
+      :city: Taillinn
+    :Europe/Tirane: 
+      :city: Tirane
+    :Europe/Ulyanovsk: 
+      :city: Ulyanovsk
+    :Europe/Uzhgorod: 
+      :city: Uzhgorod
+    :Europe/Vaduz: 
+      :city: Vadús
+    :Europe/Vatican: 
+      :city: "Cathair na Vatacáine"
+    :Europe/Vienna: 
+      :city: Vín
+    :Europe/Vilnius: 
+      :city: Vilnias
+    :Europe/Volgograd: 
+      :city: Volgograd
+    :Europe/Warsaw: 
+      :city: Vársá
+    :Europe/Zagreb: 
+      :city: Ságrab
+    :Europe/Zaporozhye: 
+      :city: Zaporozhye
+    :Europe/Zurich: 
+      :city: Zürich
+    :Indian/Antananarivo: 
+      :city: Antananairíveo
+    :Indian/Chagos: 
+      :city: Chagos
+    :Indian/Christmas: 
+      :city: "Oileán na Nollag"
+    :Indian/Cocos: 
+      :city: "Oileán Cocos"
+    :Indian/Comoro: 
+      :city: "Oileáin Chomóra"
+    :Indian/Kerguelen: 
+      :city: Kerguelen
+    :Indian/Mahe: 
+      :city: Mahe
+    :Indian/Maldives: 
+      :city: "Oileáin Mhaildíve"
+    :Indian/Mauritius: 
+      :city: "Oileán Mhuirís"
+    :Indian/Mayotte: 
+      :city: Mayotte
+    :Indian/Reunion: 
+      :city: "La Réunion"
+    :Pacific/Apia: 
+      :city: Apia
+    :Pacific/Auckland: 
+      :city: Auckland
+    :Pacific/Bougainville: 
+      :city: Bougainville
+    :Pacific/Chatham: 
+      :city: Chatham
+    :Pacific/Easter: 
+      :city: "Oileán na Cásca"
+    :Pacific/Efate: 
+      :city: Efate
+    :Pacific/Enderbury: 
+      :city: Enderbury
+    :Pacific/Fakaofo: 
+      :city: Fakaofo
+    :Pacific/Fiji: 
+      :city: Fidsí
+    :Pacific/Funafuti: 
+      :city: Funafuti
+    :Pacific/Galapagos: 
+      :city: Galápagos
+    :Pacific/Gambier: 
+      :city: Gambier
+    :Pacific/Guadalcanal: 
+      :city: Guadalcanal
+    :Pacific/Guam: 
+      :city: Guam
+    :Pacific/Honolulu: 
+      :city: Honolulu
+    :Pacific/Johnston: 
+      :city: Johnston
+    :Pacific/Kiritimati: 
+      :city: Kiritimati
+    :Pacific/Kosrae: 
+      :city: Kosrae
+    :Pacific/Kwajalein: 
+      :city: Kwajalein
+    :Pacific/Majuro: 
+      :city: Majuro
+    :Pacific/Marquesas: 
+      :city: "na hOileáin Mharcasacha"
+    :Pacific/Midway: 
+      :city: "Oileáin Midway"
+    :Pacific/Nauru: 
+      :city: Nárú
+    :Pacific/Niue: 
+      :city: Niue
+    :Pacific/Norfolk: 
+      :city: Norfolk
+    :Pacific/Noumea: 
+      :city: Noumea
+    :Pacific/Pago_Pago: 
+      :city: "Pago Pago"
+    :Pacific/Palau: 
+      :city: Palau
+    :Pacific/Pitcairn: 
+      :city: Pitcairn
+    :Pacific/Ponape: 
+      :city: Pohnpei
+    :Pacific/Port_Moresby: 
+      :city: "Port Moresby"
+    :Pacific/Rarotonga: 
+      :city: Rarotonga
+    :Pacific/Saipan: 
+      :city: Saipan
+    :Pacific/Tahiti: 
+      :city: Taihítí
+    :Pacific/Tarawa: 
+      :city: Tarawa
+    :Pacific/Tongatapu: 
+      :city: Tongatapu
+    :Pacific/Truk: 
+      :city: Chuuk
+    :Pacific/Wake: 
+      :city: "Oileán Wake"
+    :Pacific/Wallis: 
+      :city: Vailís

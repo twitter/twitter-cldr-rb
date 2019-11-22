@@ -4,8 +4,9 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'i18n'
-require 'uri'
+require 'nokogiri'
 require 'open-uri'
+require 'uri'
 require 'zip'
 
 module TwitterCldr
@@ -49,6 +50,17 @@ module TwitterCldr
           end
         end
 
+        def alt?(node)
+          !node.attribute('alt').nil?
+        end
+
+        def draft?(node)
+          draft = node.attribute('draft')
+          draft && (
+            draft.value == 'unconfirmed' || draft.value == 'provisional'
+          )
+        end
+
         private
 
         def locale_chain(locale)
@@ -56,11 +68,21 @@ module TwitterCldr
           ancestry = [locale]
 
           loop do
-            if parent_locales[from_fs(ancestry.last)]
-              ancestry << to_fs(parent_locales[from_fs(ancestry.last)])
-            elsif I18n::Locale::Tag.tag(ancestry.last).self_and_parents.count > 1
-              ancestry << I18n::Locale::Tag.tag(ancestry.last).self_and_parents.last.to_sym
+            cur = from_fs(ancestry.last)
+
+            if parents = parent_locales[cur]
+              ancestry << to_fs(parents)
+            elsif I18n::Locale::Tag.tag(cur).self_and_parents.count > 1
+              ancestry << I18n::Locale::Tag.tag(cur).self_and_parents.last.to_sym
             else
+              parents = TwitterCldr::Shared::Locale
+                .parse(cur)
+                .permutations
+                .select do |loc|
+                  File.exist?(File.join(common_path, 'main', "#{loc}.xml"))
+                end
+
+              ancestry += parents - [cur]
               break
             end
           end

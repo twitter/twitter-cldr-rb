@@ -2,14 +2,14 @@
 :mt:
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (n == 1 ? :one :
-      (((n == 0) || ((((n % 100).floor == (n % 100)) && ((n % 100) >= 2) && ((n %
-      100) <= 10)))) ? :few : ((((n % 100).floor == (n % 100)) && ((n % 100) >= 11)
-      && ((n % 100) <= 19)) ? :many : :other))) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((n == 0) || ((((n
+      % 100).floor == (n % 100)) && ((n % 100) >= 2) && ((n % 100) <= 10)))) ? :few
+      : ((((n % 100).floor == (n % 100)) && ((n % 100) >= 11) && ((n % 100) <= 19))
+      ? :many : (n == 1 ? :one : :other))) }'
     :names:
-    - :one
     - :few
     - :many
+    - :one
     - :other
   :ordinal:
     :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);

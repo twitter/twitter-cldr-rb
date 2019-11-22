@@ -18,6 +18,10 @@ module TwitterCldr
         File.exist?(absolute_resource_path(resource_file_path(path)))
       end
 
+      def locale_resource_exists?(locale, resource_name)
+        resource_exists?(*locale_resource_path(locale, resource_name))
+      end
+
       def absolute_resource_path(path)
         File.join(TwitterCldr::RESOURCES_DIR, path)
       end

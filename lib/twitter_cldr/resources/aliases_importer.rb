@@ -11,7 +11,7 @@ module TwitterCldr
 
     class AliasesImporter < Importer
       # only these aliases will be imported
-      ALIAS_TAGS = %w(languageAlias territoryAlias)
+      ALIAS_TAGS = %w(languageAlias territoryAlias zoneAlias)
 
       requirement :cldr, Versions.cldr_version
       output_path 'shared/'

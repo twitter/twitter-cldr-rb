@@ -7,6 +7,17 @@ module TwitterCldr
   module Tokenizers
     class DateTimeTokenizer
 
+      class << self
+        def tokenizer
+          @tokenizer ||= Tokenizer.new([
+            TokenRecognizer.new(:date, /\{\{date\}\}/),
+            TokenRecognizer.new(:time, /\{\{time\}\}/),
+            TokenRecognizer.new(:plaintext, /'.*'/),
+            TokenRecognizer.new(:plaintext, //)
+          ])
+        end
+      end
+
       attr_reader :data_reader
 
       def initialize(data_reader)
@@ -65,12 +76,7 @@ module TwitterCldr
       end
 
       def tokenizer
-        @tokenizer ||= Tokenizer.new([
-          TokenRecognizer.new(:date, /\{\{date\}\}/),
-          TokenRecognizer.new(:time, /\{\{time\}\}/),
-          TokenRecognizer.new(:plaintext, /'.*'/),
-          TokenRecognizer.new(:plaintext, //)
-        ])
+        self.class.tokenizer
       end
 
     end

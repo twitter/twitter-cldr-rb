@@ -12,7 +12,8 @@ module TwitterCldr
   module Formatters
     class DateTimeFormatter < Formatter
 
-      WEEKDAY_KEYS = [:sun, :mon, :tue, :wed, :thu, :fri, :sat]
+      WEEKDAY_KEYS = [:sun, :mon, :tue, :wed, :thu, :fri, :sat].freeze
+
       METHODS = { # ignoring u, l, g, j, A
         'G' => :era,
         'y' => :year,
@@ -40,9 +41,42 @@ module TwitterCldr
         'S' => :second_fraction,
         'z' => :timezone,
         'Z' => :timezone,
-        'v' => :timezone, # should eventually be :timezone_generic_non_location
-        'V' => :timezone  # should eventually be :timezone_metazone
-      }
+        'O' => :timezone,
+        'v' => :timezone,
+        'V' => :timezone,
+        'x' => :timezone,
+        'X' => :timezone
+      }.freeze
+
+      TZ_PATTERNS = {
+        'z'     => :specific_short,
+        'zz'    => :specific_short,
+        'zzz'   => :specific_short,
+        'zzzz'  => :specific_long,
+        'Z'     => :iso_basic_local_full,
+        'ZZ'    => :iso_basic_local_full,
+        'ZZZ'   => :iso_basic_local_full,
+        'ZZZZ'  => :long_gmt,
+        'ZZZZZ' => :iso_extended_local_fixed,
+        'OOOO'  => :long_gmt,
+        'O'     => :short_gmt,
+        'v'     => :generic_short,
+        'vvvv'  => :generic_long,
+        'V'     => :zone_id_short,
+        'VV'    => :zone_id,
+        'VVV'   => :exemplar_location,
+        'VVVV'  => :generic_location,
+        'X'     => :iso_basic_short,
+        'XX'    => :iso_basic_fixed,
+        'XXX'   => :iso_extended_fixed,
+        'XXXX'  => :iso_basic_full,
+        'XXXXX' => :iso_extended_full,
+        'x'     => :iso_basic_local_short,
+        'xx'    => :iso_basic_local_fixed,
+        'xxx'   => :iso_extended_local_fixed,
+        'xxxx'  => :iso_basic_local_full,
+        'xxxxx' => :iso_extended_local_full
+      }.freeze
 
       protected
 
@@ -252,24 +286,11 @@ module TwitterCldr
       end
 
       def timezone(time, pattern, length, options = {})
-        # ruby is dumb and doesn't let you set non-UTC timezones in dates/times, so we have to pass it as an option instead
-        timezone_info = TZInfo::Timezone.get(options[:timezone] || "UTC")
-        tz_period = timezone_info.periods_for_local(time).first || timezone_info.current_period
+        tz = TwitterCldr::Timezones::Timezone.instance(
+          options[:timezone] || 'UTC', data_reader.locale
+        )
 
-        case length
-          when 1..3
-            tz_period.abbreviation.to_s
-          else
-            hours = (tz_period.utc_total_offset.to_f / 60 ** 2).abs
-            divisor = hours.to_i
-            minutes = (hours % (divisor == 0 ? 1 : divisor)) * 60
-            sign = tz_period.utc_total_offset < 0 ? "-" : "+"
-            "UTC #{sign}#{divisor.to_s.rjust(2, "0")}:#{minutes.floor.to_s.rjust(2, "0")}"
-        end
-      end
-
-      def timezone_generic_non_location(time, pattern, length, options = {})
-        raise NotImplementedError, 'requires timezone translation data'
+        tz.display_name_for(time, TZ_PATTERNS[pattern])
       end
 
       # ported from icu4j 64.2

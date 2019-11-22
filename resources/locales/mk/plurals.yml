@@ -10,12 +10,12 @@
     - :other
   :ordinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((i % 10 == 1)
-      && (i % 100 != 11)) ? :one : (((i % 10 == 2) && (i % 100 != 12)) ? :two : (((((i
-      % 10 == 7) || (i % 10 == 8))) && (((i % 100 != 17) && (i % 100 != 18)))) ? :many
-      : :other))) }'
+      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((i % 10 == 7)
+      || (i % 10 == 8))) && (((i % 100 != 17) && (i % 100 != 18)))) ? :many : (((i
+      % 10 == 1) && (i % 100 != 11)) ? :one : (((i % 10 == 2) && (i % 100 != 12))
+      ? :two : :other))) }'
     :names:
+    - :many
     - :one
     - :two
-    - :many
     - :other

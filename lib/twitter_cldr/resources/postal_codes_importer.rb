@@ -5,6 +5,7 @@
 
 require 'rest-client'
 require 'json'
+require 'set'
 require 'yaml'
 
 module TwitterCldr
@@ -30,6 +31,8 @@ module TwitterCldr
       end
 
       def load
+        territories = Set.new
+
         each_territory.each_with_object({}) do |territory, ret|
           next unless regex = get_regex_for(territory)
 
@@ -39,13 +42,22 @@ module TwitterCldr
               RegexpAstGenerator.generate(regex)
             )
           }
+
+          territories.add(territory)
+          STDOUT.write("\rImported postal codes for #{territory}, #{territories.size} of #{territory_count} total")
         end
+
+        puts
       end
 
       def get_regex_for(territory)
         result = RestClient.get("#{BASE_URL}#{territory.to_s.upcase}")
         data = JSON.parse(result.body)
         data['zip']
+      end
+
+      def territory_count
+        TwitterCldr::Shared::Territories.all.size
       end
 
       def each_territory

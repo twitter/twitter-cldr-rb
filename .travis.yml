@@ -17,5 +17,5 @@ env:
   - 'RSPEC_OPTIONS="--tag ~slow spec"'
   - 'RSPEC_OPTIONS="--tag slow spec/bidi/bidi_spec.rb spec/collation/collation_spec.rb"'
   - 'RSPEC_OPTIONS="--tag slow spec/collation/tailoring_spec.rb spec/collation/trie_dumps_spec.rb"'
-  - 'RSPEC_OPTIONS="--tag slow spec/formatters/numbers/rbnf/rbnf_spec.rb"'
+  - 'RSPEC_OPTIONS="--tag slow spec/formatters/numbers/rbnf/rbnf_spec.rb spec/timezones/timezone_spec.rb"'
 script: 'bundle exec rspec $RSPEC_OPTIONS'

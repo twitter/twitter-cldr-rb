@@ -1,8 +1,13 @@
 # TwitterCldr Changelog
 
 ### 5.1.0 (November 5th, 2019)
-* Upgrade to CLDR v36 and ICU 65.1.
-* Fix issue causing formatted dates to contain the current timezone instead of the timezone at the given time.
+* Upgrade to CLDR v36, ICU 65.1, and Emoji 12.1.
+* Full timezone support in formatted dates and times (eg. "Eastern Standard Time" instead of simply "UTC").
+* Full day period support (eg. AM, PM, etc).
+* Fix bug causing timezone option to not be passed to the underlying datetime formatter.
+* Compose locale data from more accurate ancestor list.
+* Moved date, time, and datetime tokenizers to static methods so they don't have to be re-created for every formatting operation.
+* Added support for en-US.
 
 ### 5.0.0 (October 15, 2019)
 * Upgrade to Unicode v12.0.0, CLDR v35.1, and ICU 64.2.

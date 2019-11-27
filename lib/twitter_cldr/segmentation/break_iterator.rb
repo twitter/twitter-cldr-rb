@@ -47,7 +47,7 @@ module TwitterCldr
       end
 
       def rule_set_for(boundary_type)
-        RuleSet.load(locale, boundary_type, options)
+        RuleSet.create(locale, boundary_type, options)
       end
     end
   end

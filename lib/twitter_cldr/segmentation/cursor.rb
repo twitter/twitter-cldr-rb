@@ -1,4 +1,4 @@
-# encoding: UTF-8
+ # encoding: UTF-8
 
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -6,7 +6,8 @@
 module TwitterCldr
   module Segmentation
     class Cursor
-      attr_reader :text, :position, :match_cache
+      attr_reader :text, :match_cache
+      attr_accessor :position
 
       def initialize(text)
         @text = text
@@ -22,12 +23,12 @@ module TwitterCldr
         @match_cache = {}
       end
 
-      def eof?
+      def eos?
         position >= text.size
       end
 
-      def eos?
-        position >= text.size - 1
+      def codepoint
+        text[position].codepoints.first
       end
     end
   end

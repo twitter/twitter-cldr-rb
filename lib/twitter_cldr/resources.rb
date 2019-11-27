@@ -8,6 +8,7 @@ module TwitterCldr
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
     autoload :Bcp47TimezoneMetadataImporter,  'twitter_cldr/resources/bcp47_timezone_metadata_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
+    autoload :BoundaryRulesImporter,          'twitter_cldr/resources/boundary_rules_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
     autoload :CollationTriesImporter,         'twitter_cldr/resources/collation_tries_importer'
@@ -49,6 +50,7 @@ module TwitterCldr
           AliasesImporter,
           Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
+          BoundaryRulesImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
           CollationTriesImporter,

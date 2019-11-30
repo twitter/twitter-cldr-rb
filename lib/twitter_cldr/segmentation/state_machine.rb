@@ -15,8 +15,6 @@ module TwitterCldr
       STOP_STATE = 0
       NEXT_STATES = 4
       ACCEPTING = 0
-      TAG_IDX = 2
-      LOOKAHEAD = 1
 
       class << self
         def instance(boundary_type)
@@ -29,7 +27,7 @@ module TwitterCldr
               StateTable.load16(rsrc[:forward_table]),
               StateTable.load16(rsrc[:backward_table]),
               StatusTable.load(rsrc[:status_table]),
-              Trie.load16(rsrc[:trie])
+              CategoryTable.load16(rsrc[:category_table])
             )
           end
         end
@@ -45,37 +43,44 @@ module TwitterCldr
         end
       end
 
-      attr_reader :boundary_type, :metadata, :ftable, :rtable, :status_table, :trie
+      attr_reader :boundary_type, :metadata, :ftable, :rtable, :status_table, :category_table
 
-      def initialize(boundary_type, metadata, ftable, rtable, status_table, trie)
+      def initialize(boundary_type, metadata, ftable, rtable, status_table, category_table)
         @boundary_type = boundary_type
         @metadata = metadata
         @ftable = ftable
         @rtable = rtable
         @status_table = status_table
-        @trie = trie
+        @category_table = category_table
       end
 
       def handle_next(cursor)
         result = initial_position = cursor.position
         state = START_STATE
         row = row_index_for(state)
-        category = 2
+        category = 3
         mode = :run
+
+        if ftable.bof_required?
+          category = 2
+          mode = :start
+        end
 
         until state == STOP_STATE
           if cursor.eos?
             break if mode == :stop
             mode = :stop
             category = 1
-          else
-            category = trie.get(cursor.codepoint)
+          elsif mode == :run
+            category = category_table.get(cursor.codepoint)
 
             if (category & 0x4000) != 0
               category &= ~0x4000
             end
 
             cursor.advance
+          else
+            mode = :run
           end
 
           state = ftable[row + NEXT_STATES + category]
@@ -84,14 +89,7 @@ module TwitterCldr
           if ftable[row + ACCEPTING] == -1
             # match found
             result = cursor.position
-            @rule_status_idx = ftable[row + TAG_IDX]
           end
-
-          # completed_rule = ftable[row + LOOKAHEAD]
-
-          # if completed_rule > 0
-          #   puts "GOT HERE"
-          # end
         end
 
         cursor.position = result

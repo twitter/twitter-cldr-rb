@@ -13,11 +13,11 @@ module TwitterCldr
     class BoundaryRulesImporter < Importer
 
       # @TODO: moar boundary types
-      BOUNDARY_TYPES = ['word'].freeze
+      BOUNDARY_TYPES = ['word', 'sentence', 'grapheme', 'title', 'line'].freeze
 
-      StateTable  = TwitterCldr::Segmentation::StateTable
-      StatusTable = TwitterCldr::Segmentation::StatusTable
-      Trie        = TwitterCldr::Segmentation::Trie
+      StateTable    = TwitterCldr::Segmentation::StateTable
+      StatusTable   = TwitterCldr::Segmentation::StatusTable
+      CategoryTable = TwitterCldr::Segmentation::CategoryTable
 
       requirement :icu, Versions.icu_version
       output_path File.join('shared', 'segments')
@@ -39,10 +39,10 @@ module TwitterCldr
 
         {
           metadata: metadata_from(data.fHeader),
-          forward_table: StateTable.new(data.fFTable.fTable.to_a).dump16.strip,
-          backward_table: StateTable.new(data.fRTable.fTable.to_a).dump16.strip,
-          status_table: StatusTable.new(data.fStatusTable.to_a).dump.strip,
-          trie: encode_trie(data.fTrie)
+          forward_table: StateTable.new(data.fFTable.fTable.to_a, data.fFTable.fFlags).dump16,
+          backward_table: StateTable.new(data.fRTable.fTable.to_a, data.fRTable.fFlags).dump16,
+          status_table: StatusTable.new(data.fStatusTable.to_a).dump,
+          category_table: encode_trie(data.fTrie)  # this really isn't a trie
         }
       end
 
@@ -65,7 +65,7 @@ module TwitterCldr
         end
 
         # @TODO: Distinguish between the 16- and 32-bit flavors
-        Trie.new(arr).dump16.strip
+        CategoryTable.new(arr).dump16.strip
       end
 
       def range_to_a(range)

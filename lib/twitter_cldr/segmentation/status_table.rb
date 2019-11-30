@@ -11,8 +11,8 @@ module TwitterCldr
       PACK_FMT = 'I!*'.freeze
 
       class << self
-        def load(data)
-          new(Base64.decode64(data).unpack(PACK_FMT))
+        def load(hash)
+          new(Base64.decode64(hash[:table]).unpack(PACK_FMT))
         end
       end
 
@@ -23,7 +23,7 @@ module TwitterCldr
       end
 
       def dump
-        Base64.encode64(values.pack(PACK_FMT))
+        { table: Base64.encode64(values.pack(PACK_FMT)).strip }
       end
     end
   end

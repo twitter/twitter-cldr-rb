@@ -7,7 +7,7 @@ require 'base64'
 
 module TwitterCldr
   module Segmentation
-    class Trie
+    class CategoryTable
       PACK_FMT_16 = 'NNn'.freeze
 
       class << self

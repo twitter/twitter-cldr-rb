@@ -11,7 +11,9 @@ module TwitterCldr
 
       TEST_FILES = [
         'ucd/auxiliary/WordBreakTest.txt',
-        'ucd/auxiliary/SentenceBreakTest.txt'
+        'ucd/auxiliary/SentenceBreakTest.txt',
+        'ucd/auxiliary/GraphemeBreakTest.txt',
+        'ucd/auxiliary/LineBreakTest.txt'
       ]
 
       requirement :unicode, Versions.unicode_version, TEST_FILES

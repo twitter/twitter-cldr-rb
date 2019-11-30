@@ -35,13 +35,34 @@ module TwitterCldr
           output_file = File.join(output_path, "#{locale}.yml")
           exceptions = JSON.parse(File.read(file))
 
-          File.open(output_file, 'w:utf-8') do |output|
-            output.write(
-              TwitterCldr::Utils::YAML.dump(
-                TwitterCldr::Utils.deep_symbolize_keys(locale => { exceptions: exceptions['data']['abbrs'] }),
-                use_natural_symbols: true
+          File.write(
+            output_file,
+
+            YAML.dump(
+              forwards_trie: serialize(
+                forwards_trie_for(exceptions['data']['abbrs'])
+              ),
+
+              backwards_trie: serialize(
+                backwards_trie_for(exceptions['data']['abbrs'])
               )
             )
+          )
+        end
+
+        def serialize(trie)
+          Marshal.dump(trie)
+        end
+
+        def forwards_trie_for(exceptions)
+          TwitterCldr::Utils::Trie.new.tap do |trie|
+            exceptions.each { |ex| trie.add(ex.codepoints, true) }
+          end
+        end
+
+        def backwards_trie_for(exceptions)
+          TwitterCldr::Utils::Trie.new.tap do |trie|
+            exceptions.each { |ex| trie.add(ex.reverse.codepoints, true) }
           end
         end
 

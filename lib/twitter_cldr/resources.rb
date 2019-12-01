@@ -8,7 +8,6 @@ module TwitterCldr
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
     autoload :Bcp47TimezoneMetadataImporter,  'twitter_cldr/resources/bcp47_timezone_metadata_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
-    autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
     autoload :CollationTriesImporter,         'twitter_cldr/resources/collation_tries_importer'
@@ -23,6 +22,7 @@ module TwitterCldr
     autoload :NumberFormatsImporter,          'twitter_cldr/resources/number_formats_importer'
     autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :Properties,                     'twitter_cldr/resources/properties'
+    autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :RbnfTestImporter,               'twitter_cldr/resources/rbnf_test_importer'
     autoload :ReadmeRenderer,                 'twitter_cldr/resources/readme_renderer'
     autoload :RegexpAstGenerator,             'twitter_cldr/resources/regexp_ast_generator'
@@ -49,7 +49,6 @@ module TwitterCldr
           AliasesImporter,
           Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
-          BoundaryRulesImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
           CollationTriesImporter,
@@ -61,6 +60,7 @@ module TwitterCldr
           NumberFormatsImporter,
           PostalCodesImporter,
           RbnfTestImporter,
+          SegmentRulesImporter
           SegmentTestsImporter,
           TailoringImporter,
           TerritoriesImporter,

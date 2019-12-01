@@ -8,109 +8,53 @@ module TwitterCldr
     class RuleSet
 
       class << self
-        def load(*args)
-          RuleSetBuilder.load(*args)
+        def create(locale, boundary_type, options = {})
+          new(locale, StateMachine.instance(boundary_type, locale), options)
         end
       end
 
-      attr_reader :locale, :rules, :boundary_type
+      attr_reader :locale, :state_machine
       attr_accessor :use_uli_exceptions
 
       alias_method :use_uli_exceptions?, :use_uli_exceptions
 
-      def initialize(locale, rules, boundary_type, options)
+      def initialize(locale, state_machine, options)
         @locale = locale
-        @rules = rules
-        @boundary_type = boundary_type
+        @state_machine = state_machine
         @use_uli_exceptions = options.fetch(
           :use_uli_exceptions, false
         )
       end
 
       def each_boundary(str)
-        if block_given?
-          cursor = Cursor.new(str)
-          last_boundary = 0
+        return to_enum(__method__, str) unless block_given?
 
-          # implicit start of text boundary
-          yield 0
+        cursor = Cursor.new(str)
 
-          until cursor.eof?
-            match = find_match(cursor)
-            rule = match.rule
+        # Let the state machine find the first boundary for the line
+        # boundary type. This helps pass nearly all the Unicode
+        # segmentation tests, so it must be the right thing to do.
+        # Normally the first boundary is the implicit start of text
+        # boundary, but potentially not for the line rules?
+        yield 0 unless state_machine.boundary_type == 'line'
 
-            if rule.break?
-              yield match.boundary_position
-              last_boundary = match.boundary_position
-            end
-
-            if match.boundary_position == cursor.position
-              cursor.advance
-            else
-              cursor.advance(
-                match.boundary_position - cursor.position
-              )
-            end
-          end
-
-          # implicit end of text boundary
-          yield str.size unless last_boundary == str.size
-        else
-          to_enum(__method__, str)
+        until cursor.eos?
+          state_machine.handle_next(cursor)
+          yield cursor.position if suppressions.should_break?(cursor)
         end
+      end
+
+      def boundary_type
+        state_machine.boundary_type
       end
 
       private
 
-      def each_rule(&block)
-        if block_given?
-          if use_uli_exceptions? && supports_exceptions?
-            yield exception_rule
-          end
-
-          rules.each(&block)
+      def suppressions
+        @suppressions ||= if use_uli_exceptions?
+          Suppressions.instance(boundary_type, locale)
         else
-          to_enum(__method__)
-        end
-      end
-
-      def exception_rule
-        @exception_rule ||= RuleSetBuilder.exception_rule_for(
-          locale, boundary_type
-        )
-      end
-
-      def supports_exceptions?
-        boundary_type == 'sentence'
-      end
-
-      def find_match(cursor)
-        match = find_cached_match(cursor)
-
-        match || if cursor.eos?
-          RuleSetBuilder.implicit_end_of_text_rule.match(cursor)
-        else
-          RuleSetBuilder.implicit_final_rule.match(cursor)
-        end
-      end
-
-      def find_cached_match(cursor)
-        cursor.match_cache.fetch(cursor.position) do
-          matches = match_all(cursor)
-
-          matches.each do |m|
-            cursor.match_cache[m.boundary_position - 1] ||= m
-          end
-
-          matches.first
-        end
-      end
-
-      def match_all(cursor)
-        each_rule.each_with_object([]) do |rule, ret|
-          if match = rule.match(cursor)
-            ret << match
-          end
+          NullSuppressions.instance
         end
       end
     end

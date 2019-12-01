@@ -232,8 +232,12 @@ module TwitterCldr
       end
 
       def max_supported
-        @max_supported ||= begin
-          found = maximize.permutations('-').find do |perm|
+        @max_supported ||= maximize.supported
+      end
+
+      def supported
+        @supported ||= begin
+          found = permutations('-').find do |perm|
             TwitterCldr.supported_locale?(perm)
           end
 

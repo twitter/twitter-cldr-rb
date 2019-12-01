@@ -1,5 +1,11 @@
 # TwitterCldr Changelog
 
+### 5.2.0 (December 1st, 2019)
+* Improve performance of the text segmentation algorithm.
+  - Break engine now uses state tables from ICU instead of regular expressions.
+  - It was... embarassing how slow it was before.
+* Added support for line and grapheme cluster segmentation.
+
 ### 5.1.0 (November 21st, 2019)
 * Upgrade to CLDR v36, ICU 65.1, and Emoji 12.1.
 * Full timezone support in formatted dates and times (eg. "Eastern Standard Time" instead of simply "UTC").

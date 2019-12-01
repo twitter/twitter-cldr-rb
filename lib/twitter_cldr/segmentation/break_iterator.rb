@@ -25,29 +25,33 @@ module TwitterCldr
       end
 
       def each_grapheme_cluster(str, &block)
-        raise NotImplementedError,
-          "Grapheme segmentation is not currently supported."
+        rule_set = rule_set_for('grapheme')
+        each_boundary(rule_set, str, &block)
       end
 
       def each_line(str, &block)
-        raise NotImplementedError,
-          "Line segmentation is not currently supported."
+        rule_set = rule_set_for('line')
+        each_boundary(rule_set, str, &block)
       end
 
       private
 
       def each_boundary(rule_set, str)
-        if block_given?
-          rule_set.each_boundary(str).each_cons(2) do |start, stop|
-            yield str[start...stop], start, stop
-          end
-        else
-          to_enum(__method__, rule_set, str)
+        return to_enum(__method__, rule_set, str) unless block_given?
+
+        rule_set.each_boundary(str).each_cons(2) do |start, stop|
+          yield str[start...stop], start, stop
         end
       end
 
       def rule_set_for(boundary_type)
-        RuleSet.load(locale, boundary_type, options)
+        rule_set_cache[boundary_type] ||= RuleSet.create(
+          locale, boundary_type, options
+        )
+      end
+
+      def rule_set_cache
+        @rule_set_cache ||= {}
       end
     end
   end

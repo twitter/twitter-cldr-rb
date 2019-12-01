@@ -73,6 +73,12 @@ module TwitterCldr
         nil
       end
 
+      def resource_file_path(path)
+        file = File.join(*path.map(&:to_s))
+        file << '.yml' unless file.end_with?('.yml')
+        file
+      end
+
       private
 
       def locale_resource_path(locale, resource_name)
@@ -83,10 +89,6 @@ module TwitterCldr
         @resources_cache ||= Hash.new do |hash, path|
           hash[path] = load_resource(path)
         end
-      end
-
-      def resource_file_path(path)
-        "#{File.join(*path.map(&:to_s))}.yml"
       end
 
       def load_resource(path, merge_custom = true)

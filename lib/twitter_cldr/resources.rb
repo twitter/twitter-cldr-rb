@@ -22,6 +22,7 @@ module TwitterCldr
     autoload :NumberFormatsImporter,          'twitter_cldr/resources/number_formats_importer'
     autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :Properties,                     'twitter_cldr/resources/properties'
+    autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :RbnfTestImporter,               'twitter_cldr/resources/rbnf_test_importer'
     autoload :ReadmeRenderer,                 'twitter_cldr/resources/readme_renderer'
     autoload :RegexpAstGenerator,             'twitter_cldr/resources/regexp_ast_generator'
@@ -37,7 +38,6 @@ module TwitterCldr
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
-    autoload :Uli,                            'twitter_cldr/resources/uli'
     autoload :ValidityDataImporter,           'twitter_cldr/resources/validity_data_importer'
 
     class << self
@@ -60,6 +60,7 @@ module TwitterCldr
           NumberFormatsImporter,
           PostalCodesImporter,
           RbnfTestImporter,
+          SegmentRulesImporter,
           SegmentTestsImporter,
           TailoringImporter,
           TerritoriesImporter,
@@ -71,12 +72,6 @@ module TwitterCldr
           UnicodeDataImporter,
           UnicodePropertyAliasesImporter,
           ValidityDataImporter,
-        ]
-      end
-
-      def uli_importer_classes
-        @uli_importer_classes ||= [
-          Uli::SegmentExceptionsImporter
         ]
       end
 
@@ -107,7 +102,6 @@ module TwitterCldr
       def importer_classes
         @importer_classes ||=
           standard_importer_classes +
-          uli_importer_classes +
           property_importer_classes
       end
 

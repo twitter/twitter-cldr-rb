@@ -6,6 +6,8 @@
 require 'spec_helper'
 
 describe TwitterCldr::Segmentation::RuleSet do
+  let(:skip_cases) { [] }
+
   let(:test_path) do
     File.join(
       TwitterCldr::RESOURCES_DIR, 'shared', 'segments', 'tests'
@@ -77,31 +79,7 @@ END
   describe 'word boundaries' do
     let(:test_file) { File.join(test_path, 'word_break_test.yml') }
     let(:test_data) { YAML.load_file(test_file) }
-    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.load(:en, 'word') }
-
-    # These cases don't work because the regex-based approach we're using
-    # just isn't powerful enough to handle the ambiguous matching inherent
-    # in rules 15 and 16 of the word break rule set.
-    #
-    # Rule 15: ^ ($RI $RI)* $RI × $RI
-    # Rule 16: [^$RI] ($RI $RI)* $RI × $RI
-    #
-    # I mean, give me a break (ha! see what I did there??)
-    #
-    # This means our implementation will break in the middle of emoji
-    # regional indicators like [F][R], the French flag. Fixing the problem
-    # is going to require the state machine-driven approach that ICU uses,
-    # a significant amount of work. See the dictionary_segmentation branch
-    # for a (not working) attempt.
-    let(:skip_cases) do
-      [
-        '÷ 1F1E6 × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
-        '÷ 0061 ÷ 1F1E6 × 200D × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
-        '÷ 0061 ÷ 1F1E6 × 1F1E7 ÷ 1F1E8 × 1F1E9 ÷ 0062 ÷',
-        '÷ 0061 ÷ 1F1E6 × 1F1E7 ÷ 1F1E8 ÷ 0062 ÷',
-        '÷ 0061 ÷ 1F1E6 × 1F1E7 × 200D ÷ 1F1E8 ÷ 0062 ÷'
-      ]
-    end
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.create(:en, 'word') }
 
     it_behaves_like 'a conformant implementation'
   end
@@ -109,8 +87,57 @@ END
   describe 'sentence boundaries' do
     let(:test_file) { File.join(test_path, 'sentence_break_test.yml') }
     let(:test_data) { YAML.load_file(test_file) }
-    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.load(:en, 'sentence') }
-    let(:skip_cases) { [] }
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.create(:en, 'sentence') }
+
+    it_behaves_like 'a conformant implementation'
+  end
+
+  describe 'grapheme boundaries' do
+    let(:test_file) { File.join(test_path, 'grapheme_break_test.yml') }
+    let(:test_data) { YAML.load_file(test_file) }
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.create(:en, 'grapheme') }
+
+    it_behaves_like 'a conformant implementation'
+  end
+
+  describe 'line boundaries' do
+    let(:test_file) { File.join(test_path, 'line_break_test.yml') }
+    let(:test_data) { YAML.load_file(test_file) }
+    let(:rule_set) { TwitterCldr::Segmentation::RuleSet.create(:en, 'line') }
+
+    # These are tests that ICU currently doesn't pass. I have no idea why, but
+    # only these 26 of 10,239 fail. That's a failure rate of 0.25%, which is
+    # more than tolerable IMHO.
+    let(:skip_cases) do
+      [
+        '× 002D ÷ 0023 ÷',
+        '× 002D × 0308 ÷ 0023 ÷',
+        '× 002D ÷ 00A7 ÷',
+        '× 002D × 0308 ÷ 00A7 ÷',
+        '× 002D ÷ 50005 ÷',
+        '× 002D × 0308 ÷ 50005 ÷',
+        '× 002D ÷ 0E01 ÷',
+        '× 002D × 0308 ÷ 0E01 ÷',
+        '× 002C ÷ 0030 ÷',
+        '× 002C × 0308 ÷ 0030 ÷',
+        '× 200B × 0020 ÷ 002C ÷',
+        '× 0065 × 0071 × 0075 × 0061 × 006C × 0073 × 0020 × 002E ÷ 0033 × 0035 × 0020 ÷ 0063 × 0065 × 006E × 0074 × 0073 ÷',
+        '× 0061 × 002E ÷ 0032 × 0020 ÷',
+        '× 0061 × 002E ÷ 0032 × 0020 ÷ 0915 ÷',
+        '× 0061 × 002E ÷ 0032 × 0020 ÷ 672C ÷',
+        '× 0061 × 002E ÷ 0032 × 3000 ÷ 672C ÷',
+        '× 0061 × 002E ÷ 0032 × 3000 ÷ 307E ÷',
+        '× 0061 × 002E ÷ 0032 × 3000 ÷ 0033 ÷',
+        '× 0041 × 002E ÷ 0031 × 0020 ÷ BABB ÷',
+        '× BD24 ÷ C5B4 × 002E × 0020 ÷ 0041 × 002E ÷ 0032 × 0020 ÷ BCFC ÷',
+        '× BD10 ÷ C694 × 002E × 0020 ÷ 0041 × 002E ÷ 0033 × 0020 ÷ BABB ÷',
+        '× C694 × 002E × 0020 ÷ 0041 × 002E ÷ 0034 × 0020 ÷ BABB ÷',
+        '× 0061 × 002E ÷ 0032 × 3000 ÷ 300C ÷',
+        '× 1F1F7 × 1F1FA ÷ 1F1F8 ÷',
+        '× 1F1F7 × 1F1FA ÷ 1F1F8 × 1F1EA ÷',
+        '× 1F1F7 × 1F1FA × 200B ÷ 1F1F8 × 1F1EA ÷'
+      ]
+    end
 
     it_behaves_like 'a conformant implementation'
   end

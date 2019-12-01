@@ -9,7 +9,7 @@ module TwitterCldr
 
       class << self
         def create(locale, boundary_type, options = {})
-          new(locale, StateMachine.instance(boundary_type), options)
+          new(locale, StateMachine.instance(boundary_type, locale), options)
         end
       end
 
@@ -35,22 +35,26 @@ module TwitterCldr
         # boundary type. This helps pass nearly all the Unicode
         # segmentation tests, so it must be the right thing to do.
         # Normally the first boundary is the implicit start of text
-        # boundary, but potentially not for line segmentation?
+        # boundary, but potentially not for the line rules?
         yield 0 unless state_machine.boundary_type == 'line'
 
         until cursor.eos?
           state_machine.handle_next(cursor)
-          yield cursor.position if exceptions.should_break?(cursor)
+          yield cursor.position if suppressions.should_break?(cursor)
         end
+      end
+
+      def boundary_type
+        state_machine.boundary_type
       end
 
       private
 
-      def exceptions
-        @exceptions ||= if use_uli_exceptions?
-          Exceptions.instance(locale)
+      def suppressions
+        @suppressions ||= if use_uli_exceptions?
+          Suppressions.instance(boundary_type, locale)
         else
-          NullExceptions.instance
+          NullSuppressions.instance
         end
       end
     end

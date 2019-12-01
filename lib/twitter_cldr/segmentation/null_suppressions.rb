@@ -7,7 +7,7 @@ require 'singleton'
 
 module TwitterCldr
   module Segmentation
-    class NullExceptions
+    class NullSuppressions
       include Singleton
 
       def should_break?(_cursor)

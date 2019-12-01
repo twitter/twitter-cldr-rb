@@ -59,6 +59,7 @@ module TwitterCldr
   def_delegator :resources, :resource_exists?
   def_delegator :resources, :locale_resource_exists?
   def_delegator :resources, :absolute_resource_path
+  def_delegator :resources, :resource_file_path
 
   class << self
 

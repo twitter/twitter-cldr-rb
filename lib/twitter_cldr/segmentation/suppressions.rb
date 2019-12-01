@@ -7,15 +7,16 @@ require 'singleton'
 
 module TwitterCldr
   module Segmentation
-    class Exceptions
+    class Suppressions
       include Singleton
 
       class << self
-        def instance(locale)
-          return NullExceptions.instance unless exists?(locale)
+        def instance(boundary_type, locale)
+          resource_path = find_resource(boundary_type, locale)
+          return NullSuppressions.instance unless resource_path
 
-          cache[locale] ||= begin
-            rsrc = TwitterCldr.get_resource('uli', 'segments', locale)
+          cache[resource_path] ||= begin
+            rsrc = TwitterCldr.get_resource(resource_path)
 
             new(
               Marshal.load(rsrc[:forwards_trie]),
@@ -26,8 +27,12 @@ module TwitterCldr
 
         private
 
-        def exists?(locale)
-          TwitterCldr.resource_exists?('uli', 'segments', locale)
+        def find_resource(boundary_type, locale)
+          path = TwitterCldr.resource_file_path(
+            ['shared', 'segments', 'suppressions', locale, boundary_type]
+          )
+
+          path if TwitterCldr.resource_exists?(path)
         end
 
         def cache
@@ -51,7 +56,7 @@ module TwitterCldr
 
         found = loop do
           break false if idx < 0 || idx >= cursor.length
-          node = node.child(cursor.codepoint(idx)) rescue binding.pry
+          node = node.child(cursor.codepoint(idx))
           break false unless node
           break true if node.value
           idx -= 1

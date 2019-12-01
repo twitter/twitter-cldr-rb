@@ -155,9 +155,9 @@ namespace :update do
     TwitterCldr::Resources::CollationTestsImporter.new.import
   end
 
-  desc 'Import boundary rules (for text segmentation)'
-  task :boundary_rules do
-    TwitterCldr::Resources::BoundaryRulesImporter.new.import
+  desc 'Import text segmentation rules'
+  task :segment_rules do
+    TwitterCldr::Resources::SegmentRulesImporter.new.import
   end
 
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
@@ -198,11 +198,6 @@ namespace :update do
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :transform_tests do
     TwitterCldr::Resources::TransformTestsImporter.new.import
-  end
-
-  desc 'Import segment exceptions'
-  task :segment_exceptions do
-    TwitterCldr::Resources::Uli::SegmentExceptionsImporter.new.import
   end
 
   desc 'Import segment tests'

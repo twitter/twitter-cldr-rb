@@ -8,7 +8,7 @@ module TwitterCldr
     autoload :AliasesImporter,                'twitter_cldr/resources/aliases_importer'
     autoload :Bcp47TimezoneMetadataImporter,  'twitter_cldr/resources/bcp47_timezone_metadata_importer'
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
-    autoload :BoundaryRulesImporter,          'twitter_cldr/resources/boundary_rules_importer'
+    autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
     autoload :CollationTriesImporter,         'twitter_cldr/resources/collation_tries_importer'
@@ -38,7 +38,6 @@ module TwitterCldr
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
-    autoload :Uli,                            'twitter_cldr/resources/uli'
     autoload :ValidityDataImporter,           'twitter_cldr/resources/validity_data_importer'
 
     class << self
@@ -76,12 +75,6 @@ module TwitterCldr
         ]
       end
 
-      def uli_importer_classes
-        @uli_importer_classes ||= [
-          Uli::SegmentExceptionsImporter
-        ]
-      end
-
       def property_importer_classes
         @property_importer_classes ||= [
           Properties::AgePropertyImporter,
@@ -109,7 +102,6 @@ module TwitterCldr
       def importer_classes
         @importer_classes ||=
           standard_importer_classes +
-          uli_importer_classes +
           property_importer_classes
       end
 

@@ -6,11 +6,12 @@
 module TwitterCldr
   module Segmentation
     class Cursor
-      attr_reader :text, :match_cache
+      attr_reader :text, :codepoints
       attr_accessor :position
 
       def initialize(text)
         @text = text
+        @codepoints = text.codepoints
         reset
       end
 
@@ -20,7 +21,6 @@ module TwitterCldr
 
       def reset
         @position = 0
-        @match_cache = {}
       end
 
       def eos?
@@ -28,7 +28,7 @@ module TwitterCldr
       end
 
       def codepoint(pos = position)
-        text[pos].codepoints.first
+        codepoints[pos]
       end
 
       def length

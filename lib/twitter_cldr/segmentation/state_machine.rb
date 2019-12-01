@@ -17,12 +17,15 @@ module TwitterCldr
       ACCEPTING = 0
 
       class << self
-        def instance(boundary_type)
-          cache[boundary_type] ||= begin
-            rsrc = resource_for(boundary_type)
+        def instance(boundary_type, locale)
+          resource_path = find_resource(boundary_type, locale)
+
+          cache[resource_path] ||= begin
+            rsrc = TwitterCldr.get_resource(resource_path)
 
             new(
               boundary_type,
+              locale,
               Metadata.new(rsrc[:metadata]),
               StateTable.load16(rsrc[:forward_table]),
               StateTable.load16(rsrc[:backward_table]),
@@ -34,8 +37,16 @@ module TwitterCldr
 
         private
 
-        def resource_for(boundary_type)
-          TwitterCldr.get_resource('shared', 'segments', boundary_type)
+        def find_resource(boundary_type, locale)
+          path = TwitterCldr.resource_file_path(
+            ['shared', 'segments', 'rules', locale, boundary_type]
+          )
+
+          return path if TwitterCldr.resource_exists?(path)
+
+          TwitterCldr.resource_file_path(
+            ['shared', 'segments', 'rules', 'root', boundary_type]
+          )
         end
 
         def cache
@@ -43,10 +54,12 @@ module TwitterCldr
         end
       end
 
-      attr_reader :boundary_type, :metadata, :ftable, :rtable, :status_table, :category_table
+      attr_reader :boundary_type, :locale
+      attr_reader :metadata, :ftable, :rtable, :status_table, :category_table
 
-      def initialize(boundary_type, metadata, ftable, rtable, status_table, category_table)
+      def initialize(boundary_type, locale, metadata, ftable, rtable, status_table, category_table)
         @boundary_type = boundary_type
+        @locale = locale
         @metadata = metadata
         @ftable = ftable
         @rtable = rtable

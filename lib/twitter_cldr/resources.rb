@@ -60,7 +60,7 @@ module TwitterCldr
           NumberFormatsImporter,
           PostalCodesImporter,
           RbnfTestImporter,
-          SegmentRulesImporter
+          SegmentRulesImporter,
           SegmentTestsImporter,
           TailoringImporter,
           TerritoriesImporter,

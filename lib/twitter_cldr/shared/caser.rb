@@ -48,7 +48,7 @@ module TwitterCldr
         end
 
         def boundary_rule_set
-          @boundary_rule_set ||= Segmentation::RuleSet.load(:en, 'word')
+          @boundary_rule_set ||= Segmentation::RuleSet.create(:en, 'word')
         end
 
         def cased?(char)

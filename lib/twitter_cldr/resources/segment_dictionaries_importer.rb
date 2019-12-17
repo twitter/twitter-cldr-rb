@@ -20,10 +20,12 @@ module TwitterCldr
         'icu4c/source/data/brkitr/dictionaries/thaidict.txt'
       ]
 
-      output_path 'segmentation/dictionaries'
+      output_path File.join(*%w(shared segments dictionaries))
       ruby_engine :mri
 
       def execute
+        FileUtils.mkdir_p(output_path)
+
         DICTIONARY_FILES.each do |test_file|
           import_dictionary_file(test_file)
         end
@@ -61,7 +63,11 @@ module TwitterCldr
 
       def output_path_for(dictionary_file)
         file = File.basename(dictionary_file).chomp(File.extname(dictionary_file))
-        File.join(params.fetch(:output_path), "#{file}.dump")
+        File.join(output_path, "#{file}.dump")
+      end
+
+      def output_path
+        params.fetch(:output_path)
       end
 
     end

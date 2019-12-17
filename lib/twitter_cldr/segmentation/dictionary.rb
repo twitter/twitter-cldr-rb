@@ -31,7 +31,7 @@ module TwitterCldr
         def get(name)
           dictionary_cache[name] ||= begin
             resource = TwitterCldr.get_resource(
-              'segmentation', 'dictionaries', "#{name}dict.dump"
+              'shared', 'segments', 'dictionaries', "#{name}dict.dump"
             )
 
             new(resource)
@@ -70,7 +70,7 @@ module TwitterCldr
           break if num_chars >= max_search_length
 
           current = current.child(
-            cursor.codepoints[cursor.position + num_chars]
+            cursor.codepoint(cursor.position + num_chars)
           )
 
           num_chars += 1

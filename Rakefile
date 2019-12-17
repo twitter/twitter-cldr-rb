@@ -160,6 +160,16 @@ namespace :update do
     TwitterCldr::Resources::SegmentRulesImporter.new.import
   end
 
+  desc 'Import segmentation dictionaries'
+  task :segment_dictionaries do
+    TwitterCldr::Resources::SegmentDictionariesImporter.new.import
+  end
+
+  desc 'Import segment tests'
+  task :segment_tests do
+    TwitterCldr::Resources::SegmentTestsImporter.new.import
+  end
+
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :bidi_tests do
     TwitterCldr::Resources::BidiTestImporter.new.import
@@ -198,11 +208,6 @@ namespace :update do
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :transform_tests do
     TwitterCldr::Resources::TransformTestsImporter.new.import
-  end
-
-  desc 'Import segment tests'
-  task :segment_tests do
-    TwitterCldr::Resources::SegmentTestsImporter.new.import
   end
 
   desc 'Import hyphenation dictionaries'

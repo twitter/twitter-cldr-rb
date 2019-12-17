@@ -61,6 +61,7 @@ module TwitterCldr
           NumberFormatsImporter,
           PostalCodesImporter,
           RbnfTestImporter,
+          SegmentDictionariesImporter,
           SegmentRulesImporter,
           SegmentTestsImporter,
           TailoringImporter,

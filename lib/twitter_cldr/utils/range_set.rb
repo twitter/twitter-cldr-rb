@@ -116,6 +116,11 @@ module TwitterCldr
         self.class.new(range_set.ranges + ranges)
       end
 
+      def union!(range_set)
+        ranges.concat(range_set.ranges)
+        flatten
+      end
+
       def intersection(range_set)
         new_ranges = []
 
@@ -153,6 +158,10 @@ module TwitterCldr
         end
 
         self.class.new(new_ranges)
+      end
+
+      def subtract!(range_set)
+        @ranges = subtract(range_set).ranges
       end
 
       # symmetric difference (the union without the intersection)

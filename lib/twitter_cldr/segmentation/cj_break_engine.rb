@@ -26,12 +26,14 @@ module TwitterCldr
       KATAKANA_COSTS = [8192, 984, 408, 240, 204, 252, 300, 372, 480]
 
       def self.word_set
-        @word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.apply_pattern('[:Han:]')
-          set.apply_pattern('[[:Katakana:]\uff9e\uff9f]')
-          set.apply_pattern('[:Hiragana:]')
-          set.add(0xFF70)  # HALFWIDTH KATAKANA-HIRAGANA PROLONGED SOUND MARK
-          set.add(0x30FC)  # KATAKANA-HIRAGANA PROLONGED SOUND MARK
+        @word_set ||= begin
+          uset = TwitterCldr::Shared::UnicodeSet.new
+          uset.apply_pattern('[:Han:]')
+          uset.apply_pattern('[[:Katakana:]\uff9e\uff9f]')
+          uset.apply_pattern('[:Hiragana:]')
+          uset.add(0xFF70)  # HALFWIDTH KATAKANA-HIRAGANA PROLONGED SOUND MARK
+          uset.add(0x30FC)  # KATAKANA-HIRAGANA PROLONGED SOUND MARK
+          uset.to_set
         end
       end
 

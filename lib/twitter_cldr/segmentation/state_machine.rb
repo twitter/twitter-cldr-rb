@@ -70,7 +70,7 @@ module TwitterCldr
       def handle_next(cursor)
         result = initial_position = cursor.position
         state = START_STATE
-        row = row_index_for(state)
+        row = state * (metadata.category_count + 4)
         category = 3
         mode = :run
 
@@ -97,7 +97,7 @@ module TwitterCldr
           end
 
           state = ftable[row + NEXT_STATES + category]
-          row = row_index_for(state)
+          row = state * (metadata.category_count + 4)
 
           if ftable[row + ACCEPTING] == -1
             # match found
@@ -113,12 +113,6 @@ module TwitterCldr
         end
 
         result
-      end
-
-      private
-
-      def row_index_for(state)
-        state * (metadata.category_count + 4)
       end
     end
   end

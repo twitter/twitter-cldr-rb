@@ -16,8 +16,10 @@ module TwitterCldr
       def_delegators :engine, :each_boundary
 
       def self.word_set
-        @word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.apply_pattern('[[:Mymr:]&[:Line_Break=SA:]]')
+        @word_set ||= begin
+          uset = TwitterCldr::Shared::UnicodeSet.new
+          uset.apply_pattern('[[:Mymr:]&[:Line_Break=SA:]]')
+          uset.to_set
         end
       end
 

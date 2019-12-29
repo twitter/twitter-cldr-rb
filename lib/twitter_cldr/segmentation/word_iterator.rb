@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'set'
+
 module TwitterCldr
   module Segmentation
     class DeormalizedStringError < StandardError; end
@@ -20,9 +22,9 @@ module TwitterCldr
         # all dictionary characters, i.e. characters that must be handled
         # by one of the dictionary-based break engines
         def dictionary_set
-          @dictionary_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
+          @dictionary_set ||= Set.new.tap do |set|
             DICTIONARY_BREAK_ENGINES.each do |break_engine|
-              set.add_set(break_engine.word_set)
+              set.merge(break_engine.word_set)
             end
           end
         end

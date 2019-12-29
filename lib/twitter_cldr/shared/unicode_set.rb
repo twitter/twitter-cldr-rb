@@ -64,6 +64,10 @@ module TwitterCldr
         set.include?(codepoint)
       end
 
+      def to_set
+        set.to_set
+      end
+
     end
   end
 end

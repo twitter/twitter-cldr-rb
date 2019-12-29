@@ -10,6 +10,8 @@ module TwitterCldr
 
     class Loader
 
+      VALID_EXTS = %w(.yml .dump).freeze
+
       def get_resource(*path)
         resources_cache[resource_file_path(path)]
       end
@@ -75,7 +77,7 @@ module TwitterCldr
 
       def resource_file_path(path)
         file = File.join(*path.map(&:to_s))
-        file << '.yml' unless file.end_with?('.yml')
+        file << '.yml' unless VALID_EXTS.include?(File.extname(file))
         file
       end
 

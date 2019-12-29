@@ -41,7 +41,9 @@ module TwitterCldr
         self.class.word_set
       end
 
-      def divide_up_dictionary_range(cursor, end_pos)
+      def divide_up_dictionary_range(cursor, end_pos, &block)
+        return to_enum(__method__, cursor, end_pos) unless block_given?
+
         input_length = end_pos - cursor.position
         best_snlp = Array.new(input_length + 1) { LARGE_NUMBER }
         prev = Array.new(input_length + 1) { -1 }
@@ -83,8 +85,6 @@ module TwitterCldr
             end
           end
 
-          cursor.advance
-
           # In Japanese, single-character Katakana words are pretty rare.
           # Accordingly, we apply the following heuristic: any continuous
           # run of Katakana characters is considered a candidate word with
@@ -112,6 +112,8 @@ module TwitterCldr
           end
 
           is_prev_katakana = is_katakana
+
+          cursor.advance
         end
 
         t_boundary = []
@@ -127,7 +129,7 @@ module TwitterCldr
           end
         end
 
-        t_boundary.reverse
+        t_boundary.reverse_each(&block)
       end
 
       private

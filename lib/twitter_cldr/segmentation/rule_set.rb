@@ -26,19 +26,10 @@ module TwitterCldr
         )
       end
 
-      def each_boundary(str)
-        return to_enum(__method__, str) unless block_given?
+      def each_boundary(cursor, stop = cursor.length)
+        return to_enum(__method__, cursor, stop) unless block_given?
 
-        cursor = Cursor.new(str)
-
-        # Let the state machine find the first boundary for the line
-        # boundary type. This helps pass nearly all the Unicode
-        # segmentation tests, so it must be the right thing to do.
-        # Normally the first boundary is the implicit start of text
-        # boundary, but potentially not for the line rules?
-        yield 0 unless state_machine.boundary_type == 'line'
-
-        until cursor.eos?
+        until cursor.position >= stop || cursor.eos?
           state_machine.handle_next(cursor)
           yield cursor.position if suppressions.should_break?(cursor)
         end

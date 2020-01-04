@@ -23,8 +23,6 @@ group :development do
   gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'mapzones' # 'svenfuchs/ruby-cldr'
   gem 'i18n'
   gem 'cldr-plurals', '~> 1.0'
-
-  gem 'rest-client', '~> 1.8'
 end
 
 group :test do

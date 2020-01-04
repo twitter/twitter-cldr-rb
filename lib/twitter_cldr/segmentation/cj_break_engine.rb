@@ -23,7 +23,8 @@ module TwitterCldr
 
       MAX_KATAKANA_LENGTH = 8
       MAX_KATAKANA_GROUP_LENGTH = 20
-      KATAKANA_COSTS = [8192, 984, 408, 240, 204, 252, 300, 372, 480]
+      KATAKANA_COSTS = [8192, 984, 408, 240, 204, 252, 300, 372, 480].freeze
+      MAX_KATAKANA_COST = 8192
 
       def self.word_set
         @word_set ||= begin
@@ -146,7 +147,11 @@ module TwitterCldr
       end
 
       def get_katakana_cost(word_length)
-        word_length > MAX_KATAKANA_LENGTH ? 8192 : KATAKANA_COSTS[word_length]
+        if word_length > MAX_KATAKANA_LENGTH
+          MAX_KATAKANA_COST
+        else
+          KATAKANA_COSTS[word_length]
+        end
       end
 
       def dictionary

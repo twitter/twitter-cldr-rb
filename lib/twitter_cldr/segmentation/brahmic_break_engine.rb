@@ -6,9 +6,16 @@
 module TwitterCldr
   module Segmentation
     # Base class break engine for languages derived from the Brahmic script,
-    # i.e. Lao, Thai, Khmer, and Burmese
+    # i.e. Lao, Thai, Khmer, and Burmese.
+    #
+    # This class is based on duplicated code found in ICU's BurmeseBreakEngine
+    # and friends, which all make use of the same break logic.
     class BrahmicBreakEngine < DictionaryBreakEngine
 
+      # ICU keeps track of all these variables inline, but since we've done a
+      # bit of method separating (see below), it's too ugly to pass all of
+      # them around as arguments. Instead we encapsulate them all in this
+      # handy state object.
       class EngineState
         attr_accessor :current
         attr_reader :words
@@ -23,7 +30,7 @@ module TwitterCldr
       end
 
       attr_reader :lookahead, :root_combine_threshold
-      attr_reader :prefix_combine_threshold, :min_word
+      attr_reader :prefix_combine_threshold, :min_word, :min_word_span
       attr_reader :word_set, :mark_set, :end_word_set, :begin_word_set
       attr_reader :dictionary, :advance_past_suffix
 
@@ -32,6 +39,7 @@ module TwitterCldr
         @root_combine_threshold = options.fetch(:root_combine_threshold)
         @prefix_combine_threshold = options.fetch(:prefix_combine_threshold)
         @min_word = options.fetch(:min_word)
+        @min_word_span = options.fetch(:min_word_span)
 
         @word_set = options.fetch(:word_set)
         @mark_set = options.fetch(:mark_set)
@@ -44,9 +52,10 @@ module TwitterCldr
 
       private
 
+      # See: https://github.com/unicode-org/icu/blob/release-65-1/icu4j/main/classes/core/src/com/ibm/icu/text/BurmeseBreakEngine.java#L88
       def divide_up_dictionary_range(cursor, end_pos)
         return to_enum(__method__, cursor, end_pos) unless block_given?
-        return if (end_pos - cursor.position) < min_word
+        return if (end_pos - cursor.position) < min_word_span
 
         state = EngineState.new(
           cursor: cursor,
@@ -117,6 +126,8 @@ module TwitterCldr
 
       private
 
+      # In ICU, this method is part of divide_up_dictionary_range. Extracted here
+      # for readability.
       def advance_to_plausible_word_boundary(cursor, end_pos, state)
         remaining = end_pos - (state.current + state.word_length)
         pc = cursor.codepoint

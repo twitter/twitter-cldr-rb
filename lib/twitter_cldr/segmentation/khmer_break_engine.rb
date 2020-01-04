@@ -8,6 +8,8 @@ require 'forwardable'
 
 module TwitterCldr
   module Segmentation
+
+    # https://github.com/unicode-org/icu/blob/release-65-1/icu4j/main/classes/core/src/com/ibm/icu/text/KhmerBreakEngine.java
     class KhmerBreakEngine
 
       include Singleton
@@ -25,12 +27,26 @@ module TwitterCldr
 
       private
 
+      # All Brahmic scripts (including Khmer) can make use of the same break
+      # logic, so we use composition here and defer to the Brahmic break engine.
       def engine
         @engine ||= BrahmicBreakEngine.new(
+          # How many words in a row are "good enough"?
           lookahead: 3,
+
+          # Will not combine a non-word with a preceding dictionary word longer than this
           root_combine_threshold: 3,
+
+          # Will not combine a non-word that shares at least this much prefix with a
+          # dictionary word with a preceding word
           prefix_combine_threshold: 3,
+
+          # Minimum word size
           min_word: 4,
+
+          # Minimum number of characters for two words (same as min_word for Khmer)
+          min_word_span: 4,
+
           word_set: self.class.word_set,
           mark_set: mark_set,
           end_word_set: end_word_set,

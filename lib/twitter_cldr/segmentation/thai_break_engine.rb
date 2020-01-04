@@ -8,6 +8,8 @@ require 'forwardable'
 
 module TwitterCldr
   module Segmentation
+
+    # See: https://github.com/unicode-org/icu/blob/release-65-1/icu4j/main/classes/core/src/com/ibm/icu/text/ThaiBreakEngine.java
     class ThaiBreakEngine
 
       include Singleton
@@ -37,10 +39,22 @@ module TwitterCldr
 
       def engine
         @engine ||= BrahmicBreakEngine.new(
+          # How many words in a row are "good enough"?
           lookahead: 3,
+
+          # Will not combine a non-word with a preceding dictionary word longer than this
           root_combine_threshold: 3,
+
+          # Will not combine a non-word that shares at least this much prefix with a
+          # dictionary word with a preceding word
           prefix_combine_threshold: 3,
-          min_word: 4,
+
+          # Minimum word size
+          min_word: 2,
+
+          # Minimum number of characters for two words (min_word * 2)
+          min_word_span: 4,
+
           word_set: self.class.word_set,
           mark_set: mark_set,
           end_word_set: end_word_set,

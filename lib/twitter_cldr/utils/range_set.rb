@@ -24,7 +24,7 @@ module TwitterCldr
         end
 
         # Turns an array of integers into ranges. The "compress" option indicates
-        # wether or not to turn isolated elements into zero-length ranges or leave
+        # whether or not to turn isolated elements into zero-length ranges or leave
         # them as single elements.
         #
         # For example:

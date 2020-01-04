@@ -56,13 +56,6 @@ module TwitterCldr
         params.fetch(:output_path)
       end
 
-      def move_segments_root_file
-        old_file_path = File.join(output_path, *%w(shared segments_root.yml))
-        new_file_path = File.join(output_path, *%w(shared segments segments_root.yml))
-        FileUtils.mkdir_p(File.dirname(new_file_path))
-        FileUtils.move(old_file_path, new_file_path)
-      end
-
       def import_components
         locales = Set.new
 
@@ -100,8 +93,6 @@ module TwitterCldr
         Cldr::Export.export(export_args) do |component, locale, path|
           deep_symbolize(path)
         end
-
-        move_segments_root_file
       end
 
       def components_for(locale)

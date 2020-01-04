@@ -51,7 +51,7 @@ module TwitterCldr
 
       def end_word_set
         @end_word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.add_set(self.class.word_set)
+          set.add_list(self.class.word_set)
           set.subtract_range(0x0EC0..0x0EC4) # prefix vowels
         end
       end

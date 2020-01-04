@@ -13,14 +13,12 @@ module TwitterCldr
         attr_accessor :current
         attr_reader :words
         attr_accessor :words_found, :word_length
-        attr_reader :boundaries
 
         def initialize(options = {})
           @current = options.fetch(:current, 0)
           @words = options.fetch(:words)
           @words_found = options.fetch(:words_found, 0)
           @word_length = options.fetch(:word_length, 0)
-          @boundaries = options.fetch(:boundaries, [])
         end
       end
 
@@ -47,7 +45,8 @@ module TwitterCldr
       private
 
       def divide_up_dictionary_range(cursor, end_pos)
-        return [] if (end_pos - cursor.position) < min_word
+        return to_enum(__method__, cursor, end_pos) unless block_given?
+        return if (end_pos - cursor.position) < min_word
 
         state = EngineState.new(
           cursor: cursor,
@@ -109,13 +108,11 @@ module TwitterCldr
             cursor, end_pos, state
           )
 
-          # Did we find a word on this iteration? If so, add it to the list of boundaries.
+          # Did we find a word on this iteration? If so, yield it as a boundary.
           if state.word_length > 0
-            state.boundaries << state.current + state.word_length
+            yield state.current + state.word_length
           end
         end
-
-        state.boundaries
       end
 
       private

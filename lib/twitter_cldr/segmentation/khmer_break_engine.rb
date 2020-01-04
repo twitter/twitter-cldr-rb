@@ -51,7 +51,7 @@ module TwitterCldr
 
       def end_word_set
         @end_word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.add_set(self.class.word_set)
+          set.add_list(self.class.word_set)
           set.subtract(0x17D2) # KHMER SIGN COENG that combines some characters
         end
       end

@@ -10,7 +10,7 @@ module TwitterCldr
       attr_reader :set
 
       def initialize(initial = [])
-        @set = TwitterCldr::Utils::RangeSet.new(initial)
+        @set = TwitterCldr::Utils::RangeSet.from_array(initial)
       end
 
       def apply_pattern(pattern)
@@ -45,6 +45,10 @@ module TwitterCldr
       def add_set(unicode_set)
         set.union!(unicode_set.set)
         self
+      end
+
+      def add_list(list)
+        set.union!(self.class.new(list).set)
       end
 
       def subtract(codepoint)

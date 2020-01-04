@@ -58,7 +58,11 @@ module TwitterCldr
         if cursor.position < end_pos && state.word_length > 0
           uc = cursor.codepoint
 
-          if state.words[state.words_found].candidates(cursor, engine.dictionary, end_pos) <= 0 && suffix_set.include?(uc)
+          candidates = state.words[state.words_found].candidates(
+            cursor, engine.dictionary, end_pos
+          )
+
+          if candidates <= 0 && suffix_set.include?(uc)
             if uc == THAI_PAIYANNOI
               unless suffix_set.include?(cursor.previous)
                 # skip over previous end and PAIYANNOI
@@ -98,7 +102,7 @@ module TwitterCldr
 
       def end_word_set
         @end_word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.add_set(self.class.word_set)
+          set.add_list(self.class.word_set)
           set.subtract(0x0E31)  # MAI HAN-AKAT
           set.subtract_range(0x0E40..0x0E44)  # SARA E through SARA AI MAIMALAI
         end

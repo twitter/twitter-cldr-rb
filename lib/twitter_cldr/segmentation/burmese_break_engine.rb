@@ -51,15 +51,14 @@ module TwitterCldr
 
       def end_word_set
         @end_word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
-          set.add_set(self.class.word_set)
+          set.add_list(self.class.word_set)
         end
       end
 
       def begin_word_set
         @begin_word_set ||= TwitterCldr::Shared::UnicodeSet.new.tap do |set|
           # basic consonants and independent vowels
-          set.add(0x1000)
-          set.add(0x102A)
+          set.add_range(0x1000..0x102A)
         end
       end
 

@@ -10,17 +10,13 @@ module TwitterCldr
       def each_boundary(cursor, &block)
         return to_enum(__method__, cursor) unless block_given?
 
-        last_boundary = cursor.position
         stop = cursor.position
 
         while !cursor.eos? && word_set.include?(cursor.codepoints[stop])
           stop += 1
         end
 
-        divide_up_dictionary_range(cursor, stop).each do |boundary|
-          last_boundary = boundary
-          yield boundary
-        end
+        divide_up_dictionary_range(cursor, stop, &block)
       end
 
       def word_set(*args)

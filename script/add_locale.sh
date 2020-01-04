@@ -36,7 +36,7 @@ if [[ $manager == "rbenv" ]]; then
   rbenv local $mri_version
   ruby -v
 else
-  jruby_version="jruby-9.2.8.0"
+  jruby_version="jruby-9.2.9.0"
   mri_version="ruby-2.6.2"
 
   if [[ $(rvm list | grep $mri_version) == "" ]]; then

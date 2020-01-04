@@ -1,10 +1,17 @@
 # TwitterCldr Changelog
 
+### 5.3.0 (January 4th, 2020)
+* Adds support for Lao, Khmer, and Burmese.
+* Adds support for dictionary-based word segmentation.
+  - Scripts that don't use spaces as word delimiters have to be segmented using a dictionary.
+  - Supported scripts now include Chinese, Japanese, Korean, Lao, Thai, Khmer, and Burmese.
+* Adds Ruby 2.7 to the build matrix.
+
 ### 5.2.0 (December 1st, 2019)
 * Improve performance of the text segmentation algorithm.
   - Break engine now uses state tables from ICU instead of regular expressions.
   - It was... embarassing how slow it was before.
-* Added support for line and grapheme cluster segmentation.
+* Adds support for line and grapheme cluster segmentation.
 
 ### 5.1.0 (November 21st, 2019)
 * Upgrade to CLDR v36, ICU 65.1, and Emoji 12.1.

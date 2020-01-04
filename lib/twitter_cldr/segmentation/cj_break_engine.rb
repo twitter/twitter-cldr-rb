@@ -72,7 +72,7 @@ module TwitterCldr
             cursor, max_search_length, max_search_length
           )
 
-          if count == 0 || lengths[0] != 1
+          if (count == 0 || lengths[0] != 1) && !hangul_word_set.include?(cursor.codepoint)
             values[count] = MAX_SNLP
             lengths[count] = 1
             count += 1
@@ -135,6 +135,10 @@ module TwitterCldr
       end
 
       private
+
+      def hangul_word_set
+        @@hangul_word_set ||= KoreanBreakEngine.word_set
+      end
 
       def is_katakana?(codepoint)
         (codepoint >= 0x30A1 && codepoint <= 0x30FE && codepoint != 0x30FB) ||

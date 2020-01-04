@@ -14,6 +14,7 @@ module TwitterCldr
     autoload :Dictionary,            'twitter_cldr/segmentation/dictionary'
     autoload :DictionaryBreakEngine, 'twitter_cldr/segmentation/dictionary_break_engine'
     autoload :KhmerBreakEngine,      'twitter_cldr/segmentation/khmer_break_engine'
+    autoload :KoreanBreakEngine,     'twitter_cldr/segmentation/korean_break_engine'
     autoload :LaoBreakEngine,        'twitter_cldr/segmentation/lao_break_engine'
     autoload :LineIterator,          'twitter_cldr/segmentation/line_iterator'
     autoload :Metadata,              'twitter_cldr/segmentation/metadata'

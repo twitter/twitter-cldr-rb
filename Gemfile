@@ -25,8 +25,6 @@ group :development do
   gem 'cldr-plurals', '~> 1.0'
 
   gem 'rest-client', '~> 1.8'
-
-  gem 'parallel'
 end
 
 group :test do

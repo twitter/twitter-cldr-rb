@@ -27,6 +27,13 @@ module TwitterCldr
             '參與越戰。無畏號在1974年退役，並一度預備出售拆解；但在民間組織努力下，'\
             '海軍在1981年將無畏號捐贈到紐約作博物館艦。1986年，無畏號獲評為美國國家歷史地標。',
 
+        ko: '파일은 이용자가 공용 또는 위키백과 한국어판에 업로드하여 라이선스에 따라 사용 가능한 형태로 제공됩니다. '\
+            '업로드된 파일은 간단한 조작으로 페이지에 삽입할 수 있습니다. 업로드는 신규 이용자를 제외한 등록 이용자라면 '\
+            '가능합니다. 파일을 업로드하기 전에 다음 문단의 업로드를 할 수 없는 파일을 반드시 읽어 보시기 바랍니다. '\
+            '공용 이용 방법 및 업로드에 대해서는 Commons:초보자 길라잡이/업로드를 읽어 보시기 바랍니다. 업로드하는 '\
+            '페이지는 위키백과:파일 올리기를 참조하십시오. 파일의 라이선스가 삽입되는 위키백과의 문서와는 별도로 '\
+            '개별적으로 설정해야 합니다. 파일을 업로드할 때 적절한 라이선스를 선택하고 반드시 표시하십시오.',
+
         # Thai
         th: 'ธงไชย แมคอินไตย์ ชื่อเล่น เบิร์ด (เกิด 8 ธันวาคม พ.ศ. 2501) เป็นนักร้อง นักแสดงชาวไทย '\
             'ได้รับขนานนามว่าเป็น "ซูเปอร์สตาร์เมืองไทย" โดยคนไทยรู้จักกันดี เรียกกันว่า : พี่เบิร์ด '\
@@ -77,6 +84,7 @@ module TwitterCldr
       def execute
         import_conformance_files
         import_dictionary_break_tests
+        import_combined_dictionary_break_test
       end
 
       private
@@ -98,11 +106,18 @@ module TwitterCldr
 
       def import_dictionary_break_tests
         DICTIONARY_BREAK_SAMPLES.each do |locale, text_sample|
-          import_dictionary_break_test(locale.to_s, text_sample)
+          data = create_dictionary_break_test(locale.to_s, text_sample)
+          dump_dictionary_break_test(locale, data)
         end
       end
 
-      def import_dictionary_break_test(locale, text_sample)
+      def import_combined_dictionary_break_test
+        text_sample = DICTIONARY_BREAK_SAMPLES.values.join(' ')
+        data = create_dictionary_break_test('en', text_sample)
+        dump_dictionary_break_test('combined', data)
+      end
+
+      def create_dictionary_break_test(locale, text_sample)
         done = break_iterator.const_get(:DONE)
         iter = break_iterator.get_word_instance(ulocale_class.new(locale))
         iter.set_text(text_sample)
@@ -114,17 +129,17 @@ module TwitterCldr
           start = stop
         end
 
-        output_file = dictionary_test_output_path_for(locale)
-        FileUtils.mkdir_p(File.dirname(output_file))
+        {
+          locale: locale,
+          text: text_sample,
+          segments: segments
+        }
+      end
 
-        File.write(
-          output_file,
-          YAML.dump(
-            locale: locale,
-            text: text_sample,
-            segments: segments
-          )
-        )
+      def dump_dictionary_break_test(name, data)
+        output_file = dictionary_test_output_path_for(name)
+        FileUtils.mkdir_p(File.dirname(output_file))
+        File.write(output_file, YAML.dump(data))
       end
 
       def conformance_source_path_for(conformance_file)

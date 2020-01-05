@@ -25,7 +25,7 @@ module TwitterCldr
         # and the following word boundary to Lowercase_Mapping(C).
         def titlecase(string)
           string.dup.tap do |result|
-            boundary_rule_set.each_boundary(result).each_cons(2) do |boundary_pair|
+            word_iterator.each_word(result) do |_, *boundary_pair|
               if cased_pos = first_cased(string, *boundary_pair)
                 result[cased_pos] = titlecasing_hash[result[cased_pos]]
 
@@ -47,8 +47,8 @@ module TwitterCldr
           end
         end
 
-        def boundary_rule_set
-          @boundary_rule_set ||= Segmentation::RuleSet.create(:en, 'word')
+        def word_iterator
+          @word_iterator ||= Segmentation::BreakIterator.new(:en)
         end
 
         def cased?(char)

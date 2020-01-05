@@ -10,6 +10,8 @@ module TwitterCldr
 
     class Loader
 
+      VALID_EXTS = %w(.yml .dump).freeze
+
       def get_resource(*path)
         resources_cache[resource_file_path(path)]
       end
@@ -75,7 +77,7 @@ module TwitterCldr
 
       def resource_file_path(path)
         file = File.join(*path.map(&:to_s))
-        file << '.yml' unless file.end_with?('.yml')
+        file << '.yml' unless VALID_EXTS.include?(File.extname(file))
         file
       end
 
@@ -92,6 +94,17 @@ module TwitterCldr
       end
 
       def load_resource(path, merge_custom = true)
+        case File.extname(path)
+          when '.yml'
+            load_yaml_resource(path, merge_custom)
+          when '.dump'
+            load_marshalled_resource(path, merge_custom)
+          else
+            load_raw_resource(path, merge_custom)
+        end
+      end
+
+      def load_yaml_resource(path, merge_custom = true)
         base = YAML.load(read_resource_file(path))
         custom_path = File.join("custom", path)
 
@@ -100,6 +113,14 @@ module TwitterCldr
         end
 
         base
+      end
+
+      def load_marshalled_resource(path, _merge_custom = :unused)
+        Marshal.load(read_resource_file(path))
+      end
+
+      def load_raw_resource(path, _merge_custom = :unused)
+        read_resource_file(path)
       end
 
       def custom_resource_exists?(custom_path)

@@ -5,10 +5,11 @@ module TwitterCldr
     class ImportResolver
       include TSort
 
-      attr_reader :importers
+      attr_reader :importers, :options
 
-      def initialize(importers = Resources.importer_classes_for_ruby_engine)
+      def initialize(importers = Resources.importer_classes_for_ruby_engine, options = {})
         @importers = importers
+        @options = options
       end
 
       def import
@@ -28,7 +29,12 @@ module TwitterCldr
 
       def tsort_each_child(instance, &block)
         deps_for(instance).map do |dep_class|
-          yield instances.find { |ins| ins.class == dep_class }
+          dep = instances.find { |ins| ins.class == dep_class }
+          yield dep if dep
+
+          unless options[:allow_missing_dependencies]
+            raise "Could not find dependency #{dep_class.name}"
+          end
         end
       end
 
@@ -39,6 +45,8 @@ module TwitterCldr
       end
 
       def check_unmet_instance_deps(instance)
+        return if options[:allow_missing_dependencies]
+
         unmet_deps = unmet_deps_for(instance)
 
         unless unmet_deps.empty?

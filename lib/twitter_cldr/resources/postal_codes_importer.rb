@@ -3,8 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'rest-client'
 require 'json'
+require 'open-uri'
 require 'set'
 require 'yaml'
 
@@ -21,38 +21,36 @@ module TwitterCldr
       private
 
       def execute
-        File.open(File.join(output_path, 'postal_codes.yml'), 'w') do |output|
-          output.write(YAML.dump(load))
-        end
+        data = YAML.dump(fetch_data)
+        File.write(File.join(output_path, 'postal_codes.yml'), data)
+        puts
       end
 
       def output_path
         params.fetch(:output_path)
       end
 
-      def load
+      def fetch_data
         territories = Set.new
 
         each_territory.each_with_object({}) do |territory, ret|
-          next unless regex = get_regex_for(territory)
-
-          ret[territory] = {
-            regex: Regexp.compile(regex),
-            ast: TwitterCldr::Utils::RegexpAst.dump(
-              RegexpAstGenerator.generate(regex)
-            )
-          }
+          if regex = get_regex_for(territory)
+            ret[territory] = {
+              regex: Regexp.compile(regex),
+              ast: TwitterCldr::Utils::RegexpAst.dump(
+                RegexpAstGenerator.generate(regex)
+              )
+            }
+          end
 
           territories.add(territory)
           STDOUT.write("\rImported postal codes for #{territory}, #{territories.size} of #{territory_count} total")
         end
-
-        puts
       end
 
       def get_regex_for(territory)
-        result = RestClient.get("#{BASE_URL}#{territory.to_s.upcase}")
-        data = JSON.parse(result.body)
+        result = URI.open("#{BASE_URL}#{territory.to_s.upcase}").read
+        data = JSON.parse(result)
         data['zip']
       end
 
@@ -61,12 +59,10 @@ module TwitterCldr
       end
 
       def each_territory
-        if block_given?
-          TwitterCldr::Shared::Territories.all.each_pair do |territory, _|
-            yield territory
-          end
-        else
-          to_enum(__method__)
+        return to_enum(__method__) unless block_given?
+
+        TwitterCldr::Shared::Territories.all.each_pair do |territory, _|
+          yield territory
         end
       end
 

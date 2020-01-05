@@ -57,16 +57,22 @@ task :update do
 end
 
 task :add_locale, :locale do |_, args|
+  locales = [args[:locale]] + args.extras
+
   File.write(
     TwitterCldr::SUPPORTED_LOCALES_FILE,
     YAML.dump(
-      (TwitterCldr::SUPPORTED_LOCALES + [args[:locale]]).map(&:to_sym).uniq.sort
+      (TwitterCldr::SUPPORTED_LOCALES + locales).map(&:to_sym).uniq.sort
     )
   )
 
   klasses = TwitterCldr::Resources.locale_based_importer_classes_for_ruby_engine
-  instances = klasses.map { |klass| klass.new(locales: [args[:locale]]) }
-  TwitterCldr::Resources::ImportResolver.new(instances).import
+  instances = klasses.map { |klass| klass.new(locales: locales) }
+  resolver = TwitterCldr::Resources::ImportResolver.new(
+    instances, allow_missing_dependencies: true
+  )
+
+  resolver.import
 end
 
 # add_locale and update_locale do the same thing
@@ -160,6 +166,16 @@ namespace :update do
     TwitterCldr::Resources::SegmentRulesImporter.new.import
   end
 
+  desc 'Import segmentation dictionaries'
+  task :segment_dictionaries do
+    TwitterCldr::Resources::SegmentDictionariesImporter.new.import
+  end
+
+  desc 'Import segment tests'
+  task :segment_tests do
+    TwitterCldr::Resources::SegmentTestsImporter.new.import
+  end
+
   desc 'Import (generate) bidi tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :bidi_tests do
     TwitterCldr::Resources::BidiTestImporter.new.import
@@ -198,11 +214,6 @@ namespace :update do
   desc 'Import (generate) transformation tests (should be executed using JRuby 1.7 in 1.9 mode)'
   task :transform_tests do
     TwitterCldr::Resources::TransformTestsImporter.new.import
-  end
-
-  desc 'Import segment tests'
-  task :segment_tests do
-    TwitterCldr::Resources::SegmentTestsImporter.new.import
   end
 
   desc 'Import hyphenation dictionaries'

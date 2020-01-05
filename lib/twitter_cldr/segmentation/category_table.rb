@@ -45,11 +45,15 @@ module TwitterCldr
       private
 
       def find(codepoint)
-        values.bsearch do |entry|
+        cache[codepoint] ||= values.bsearch do |entry|
           next -1 if codepoint < entry[0]
           next 1 if codepoint > entry[1]
           0
         end
+      end
+
+      def cache
+        @cache ||= {}
       end
     end
   end

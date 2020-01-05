@@ -6,6 +6,7 @@
 require 'spec_helper'
 
 describe TwitterCldr::Segmentation::RuleSet do
+  let(:cursor) { TwitterCldr::Segmentation::Cursor }
   let(:skip_cases) { [] }
 
   let(:test_path) do
@@ -65,7 +66,8 @@ END
         test_parts = parse(test)
         test_case_boundaries = boundaries(test_parts)
         test_case_string = string(test_parts)
-        result_boundaries = rule_set.each_boundary(test_case_string).to_a
+        result_boundaries = rule_set.each_boundary(cursor.new(test_case_string)).to_a
+        result_boundaries.unshift(0) if rule_set.boundary_type != 'line'
 
         expect(result_boundaries).to(
           eq(test_case_boundaries), error_message(

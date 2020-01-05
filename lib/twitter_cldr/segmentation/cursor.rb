@@ -27,7 +27,7 @@ module TwitterCldr
         position >= text.size
       end
 
-      def codepoint(pos = position)
+      def codepoint(pos = @position)
         codepoints[pos]
       end
 

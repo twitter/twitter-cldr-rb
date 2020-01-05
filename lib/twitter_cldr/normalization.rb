@@ -14,12 +14,25 @@ module TwitterCldr
     class << self
 
       def normalize(string, options = {})
-        form = options.fetch(:using, DEFAULT_NORMALIZER).to_s.downcase.to_sym
+        validate_form(form = extract_form_from(options))
+        Eprun.normalize(string, form)
+      end
 
-        if VALID_NORMALIZERS.include?(form)
-          Eprun.normalize(string, form)
-        else
-          raise ArgumentError.new("#{form.inspect} is not a valid normalizer (valid normalizers are #{VALID_NORMALIZERS.join(', ')})")
+      def normalized?(string, options = {})
+        validate_form(form = extract_form_from(options))
+        Eprun.normalized?(string, form)
+      end
+
+      private
+
+      def extract_form_from(options)
+        options.fetch(:using, DEFAULT_NORMALIZER).to_s.downcase.to_sym
+      end
+
+      def validate_form(form)
+        unless VALID_NORMALIZERS.include?(form)
+          raise ArgumentError.new("#{form.inspect} is not a valid normalizer "\
+            "(valid normalizers are #{VALID_NORMALIZERS.join(', ')})")
         end
       end
 

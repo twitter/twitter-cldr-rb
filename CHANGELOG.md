@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 5.4.0 (February 26th, 2020)
+* Adds support for the en-001 locale (@SlexAxton).
+
 ### 5.3.0 (January 4th, 2020)
 * Adds support for Lao, Khmer, and Burmese.
 * Adds support for dictionary-based word segmentation.

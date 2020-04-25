@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.0.0 (April 25th, 2020)
+* Upgrade to CLDR v37, ICU 67.1, and Unicode 13.0.
+
 ### 5.4.0 (February 26th, 2020)
 * Adds support for the en-001 locale (@SlexAxton).
 

@@ -13,7 +13,7 @@
           :one: "{0} g-fhórsa"
           :other: "{0} g-fhórsa"
           :two: "{0} g-fhórsa"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} mhéadar sa soicind cearnaithe"
           :many: "{0} méadar sa soicind cearnaithe"
           :one: "{0} mhéadar sa soicind cearnaithe"
@@ -133,12 +133,6 @@
           :one: "{0} mhól"
           :other: "{0} mól"
           :two: "{0} mhól"
-        :concentr-part-per-million: 
-          :few: "{0} sa mhilliún"
-          :many: "{0} sa mhilliún"
-          :one: "{0} sa mhilliún"
-          :other: "{0} sa mhilliún"
-          :two: "{0} sa mhilliún"
         :concentr-percent: 
           :few: "{0}%"
           :many: "{0}%"
@@ -151,13 +145,19 @@
           :one: "{0} faoin míle"
           :other: "{0} faoin míle"
           :two: "{0}‰"
+        :concentr-permillion: 
+          :few: "{0} sa mhilliún"
+          :many: "{0} sa mhilliún"
+          :one: "{0} sa mhilliún"
+          :other: "{0} sa mhilliún"
+          :two: "{0} sa mhilliún"
         :concentr-permyriad: 
           :few: "{0}‱"
           :many: "{0}‱"
           :one: "{0} permeiriad"
           :other: "{0}‱"
           :two: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} lítear sa 100 ciliméadar"
           :many: "{0} lítear sa 100 ciliméadar"
           :one: "{0} lítear sa 100 ciliméadar"
@@ -746,7 +746,7 @@
           :one: "{0} heicteapascal"
           :other: "{0} heicteapascal"
           :two: "{0} heicteapascal"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} orlach mearcair"
           :many: "{0} n-orlach mearcair"
           :one: "{0} orlach mearcair"
@@ -770,13 +770,13 @@
           :one: "{0} mhilleabar"
           :other: "{0} milleabar"
           :two: "{0} mhilleabar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mhilliméadar mearcair"
           :many: "{0} milliméadar mearcair"
           :one: "{0} mhilliméadar mearcair"
           :other: "{0} milliméadar mearcair"
           :two: "{0} mhilliméadar mearcair"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} phunt san orlach cearnach"
           :many: "{0} bpunt san orlach cearnach"
           :one: "{0} phunt san orlach cearnach"
@@ -836,7 +836,7 @@
           :one: "{0} méadar niútain"
           :other: "{0} méadar niútain"
           :two: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} lbf⋅ft"
           :many: "{0} lbf⋅ft"
           :one: "{0} punt-troigh"
@@ -1011,7 +1011,7 @@
           :one: "{0}G"
           :other: "{0}G"
           :two: "{0}G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0}m/s²"
           :many: "{0}m/s²"
           :one: "{0}m/s²"
@@ -1119,19 +1119,19 @@
           :one: "{0} mmol/L"
           :other: "{0} mmol/L"
           :two: "{0} mmol/L"
-        :concentr-part-per-million: 
-          :few: "{0}/milliún"
-          :many: "{0}/milliún"
-          :one: "{0}/milliún"
-          :other: "{0}/milliún"
-          :two: "{0}/milliún"
         :concentr-percent: 
           :few: "{0}%"
           :many: "{0}%"
           :one: "{0}%"
           :other: "{0}%"
           :two: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :few: "{0}/milliún"
+          :many: "{0}/milliún"
+          :one: "{0}/milliún"
+          :other: "{0}/milliún"
+          :two: "{0}/milliún"
+        :consumption-liter-per-100-kilometer: 
           :few: "{0}l/100km"
           :many: "{0}l/100km"
           :one: "{0}l/100km"
@@ -1599,7 +1599,7 @@
           :one: "{0}hPa"
           :other: "{0}hPa"
           :two: "{0}hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0}\" Hg"
           :many: "{0}\" Hg"
           :one: "{0}\" Hg"
@@ -1611,13 +1611,13 @@
           :one: "{0}mb"
           :other: "{0}mb"
           :two: "{0}mb"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0}mmHg"
           :many: "{0}mmHg"
           :one: "{0}mmHg"
           :other: "{0}mmHg"
           :two: "{0}mmHg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0}psoc"
           :many: "{0}psoc"
           :one: "{0}psoc"
@@ -1828,7 +1828,7 @@
           :one: "{0} G"
           :other: "{0} G"
           :two: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :many: "{0} m/s²"
           :one: "{0} m/s²"
@@ -1948,12 +1948,6 @@
           :one: "{0} mhól"
           :other: "{0} mól"
           :two: "{0} mhól"
-        :concentr-part-per-million: 
-          :few: "{0}/milliún"
-          :many: "{0}/milliún"
-          :one: "{0}/milliún"
-          :other: "{0}/milliún"
-          :two: "{0}/milliún"
         :concentr-percent: 
           :few: "{0}%"
           :many: "{0}%"
@@ -1966,13 +1960,19 @@
           :one: "{0}‰"
           :other: "{0}‰"
           :two: "{0}‰"
+        :concentr-permillion: 
+          :few: "{0}/milliún"
+          :many: "{0}/milliún"
+          :one: "{0}/milliún"
+          :other: "{0}/milliún"
+          :two: "{0}/milliún"
         :concentr-permyriad: 
           :few: "{0}‱"
           :many: "{0}‱"
           :one: "{0}‱"
           :other: "{0}‱"
           :two: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100km"
           :many: "{0} l/100km"
           :one: "{0} l/100km"
@@ -2538,7 +2538,7 @@
           :one: "{0} hPa"
           :other: "{0} hPa"
           :two: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} or. Hg"
           :many: "{0} n-or. Hg"
           :one: "{0} or. Hg"
@@ -2562,7 +2562,7 @@
           :one: "{0} mbar"
           :other: "{0} mbar"
           :two: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :many: "{0} mm Hg"
           :one: "{0} mm Hg"
@@ -2570,7 +2570,7 @@
           :two: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} psoc"
           :many: "{0} psoc"
           :one: "{0} psoc"
@@ -2630,7 +2630,7 @@
           :one: "{0} N⋅m"
           :other: "{0} N⋅m"
           :two: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} lbf⋅ft"
           :many: "{0} lbf⋅ft"
           :one: "{0} lbf⋅ft"

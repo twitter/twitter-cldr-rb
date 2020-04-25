@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :one: "{0} força g"
           :other: "{0} força g"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} metro por segundo ao quadrado"
           :other: "{0} metros por segundo ao quadrado"
         :angle-arc-minute: 
@@ -70,19 +70,19 @@
         :concentr-mole: 
           :one: "{0} mol"
           :other: "{0} mols"
-        :concentr-part-per-million: 
-          :one: "{0} parte por milhão"
-          :other: "{0} partes por milhão"
         :concentr-percent: 
           :one: "{0} por cento"
           :other: "{0} por cento"
         :concentr-permille: 
           :one: "{0} por mil"
           :other: "{0} por mil"
+        :concentr-permillion: 
+          :one: "{0} parte por milhão"
+          :other: "{0} partes por milhão"
         :concentr-permyriad: 
           :one: "{0} ponto base"
           :other: "{0} pontos base"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} litro por 100 quilômetros"
           :other: "{0} litros por 100 quilômetros"
         :consumption-liter-per-kilometer: 
@@ -377,7 +377,7 @@
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascais"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} polegada de mercúrio"
           :other: "{0} polegadas de mercúrio"
         :pressure-kilopascal: 
@@ -389,13 +389,13 @@
         :pressure-millibar: 
           :one: "{0} milibar"
           :other: "{0} milibares"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} milímetro de mercúrio"
           :other: "{0} milímetros de mercúrio"
         :pressure-pascal: 
           :one: "{0} pascal"
           :other: "{0} pascais"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} libra por polegada quadrada"
           :other: "{0} libras por polegada quadrada"
         :speed-kilometer-per-hour: 
@@ -422,7 +422,7 @@
         :torque-newton-meter: 
           :one: "{0} newton-metro"
           :other: "{0} newton-metros"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} pé-libra"
           :other: "{0} pés-libra"
         :volume-acre-foot: 
@@ -517,7 +517,7 @@
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
         :duration-century: 
@@ -578,13 +578,13 @@
         :power-horsepower: 
           :one: "{0} cv"
           :other: "{0} cv"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0}\" Hg"
           :other: "{0}\" Hg"
         :pressure-millibar: 
           :one: "{0} mb"
           :other: "{0} mb"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} mmHg"
           :other: "{0} mmHg"
         :speed-kilometer-per-hour: 
@@ -609,7 +609,7 @@
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0} m/s²"
         :angle-arc-minute: 
           :one: "{0} arcmin"
@@ -656,17 +656,17 @@
           :other: "{0} mmol/l"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :other: "{0} ppm"
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
         :consumption-liter-per-kilometer: 
@@ -716,7 +716,7 @@
         :duration-hour: 
           :other: "{0} h"
         :duration-microsecond: 
-          :other: "{0} μs"
+          :other: "{0} µs"
         :duration-millisecond: 
           :other: "{0} ms"
         :duration-minute: 
@@ -897,7 +897,7 @@
           :other: "{0} bars"
         :pressure-hectopascal: 
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} inHg"
         :pressure-kilopascal: 
           :other: "{0} kPa"
@@ -905,12 +905,12 @@
           :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} mmHg"
           :other: "{0} mmHg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :other: "{0} km/h"
@@ -934,7 +934,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} acre-pé"

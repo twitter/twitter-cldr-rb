@@ -12,7 +12,7 @@
           :many: "{0} сил тяжіння"
           :one: "{0} сила тяжіння"
           :other: "{0} сили тяжіння"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} метри на секунду в квадраті"
           :many: "{0} метрів на секунду в квадраті"
           :one: "{0} метр на секунду в квадраті"
@@ -112,11 +112,6 @@
           :many: "{0} молів"
           :one: "{0} моль"
           :other: "{0} моля"
-        :concentr-part-per-million: 
-          :few: "{0} мільйонні долі"
-          :many: "{0} мільйонних доль"
-          :one: "{0} мільйонна доля"
-          :other: "{0} мільйонної долі"
         :concentr-percent: 
           :few: "{0} відсотки"
           :many: "{0} відсотків"
@@ -127,12 +122,17 @@
           :many: "{0} проміле"
           :one: "{0} проміле"
           :other: "{0} проміле"
+        :concentr-permillion: 
+          :few: "{0} мільйонні долі"
+          :many: "{0} мільйонних доль"
+          :one: "{0} мільйонна доля"
+          :other: "{0} мільйонної долі"
         :concentr-permyriad: 
           :few: "{0} проміріади"
           :many: "{0} проміріад"
           :one: "{0} проміріада"
           :other: "{0} проміріади"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} літри на 100 кілометрів"
           :many: "{0} літрів на 100 кілометрів"
           :one: "{0} літр на 100 кілометрів"
@@ -587,7 +587,7 @@
           :many: "{0} гектопаскалів"
           :one: "{0} гектопаскаль"
           :other: "{0} гектопаскаля"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} дюйми ртутного стовпа"
           :many: "{0} дюймів ртутного стовпа"
           :one: "{0} дюйм ртутного стовпа"
@@ -607,7 +607,7 @@
           :many: "{0} мілібарів"
           :one: "{0} мілібар"
           :other: "{0} мілібара"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} міліметри ртутного стовпа"
           :many: "{0} міліметрів ртутного стовпа"
           :one: "{0} міліметр ртутного стовпа"
@@ -617,7 +617,7 @@
           :many: "{0} паскалів"
           :one: "{0} паскаль"
           :other: "{0} паскаля"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} фунти на квадратний дюйм"
           :many: "{0} фунтів на квадратний дюйм"
           :one: "{0} фунт на квадратний дюйм"
@@ -667,7 +667,7 @@
           :many: "{0} ньютон-метрів"
           :one: "{0} ньютон-метр"
           :other: "{0} ньютон-метра"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} фунт-фути"
           :many: "{0} фунт-футів"
           :one: "{0} фунт-фут"
@@ -813,7 +813,7 @@
           :many: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0}м/с²"
           :many: "{0}м/с²"
           :one: "{0}м/с²"
@@ -879,7 +879,7 @@
           :one: "{0}%"
           :other: "{0}%"
         :concentr-permyriad: {}
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} л/100 км"
           :many: "{0} л/100 км"
           :one: "{0} л/100 км"
@@ -1134,12 +1134,12 @@
           :many: "{0} мбарів"
           :one: "{0} мбар"
           :other: "{0} мбара"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0}ммрс"
           :many: "{0}ммрс"
           :one: "{0}ммрс"
           :other: "{0}ммрс"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0}psi"
           :many: "{0}psi"
           :one: "{0}psi"
@@ -1189,7 +1189,7 @@
           :many: "{0}Н·м"
           :one: "{0}Н·м"
           :other: "{0}Н·м"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0}фн-фт"
           :many: "{0}фн-фт"
           :one: "{0}фн-фт"
@@ -1230,7 +1230,7 @@
           :many: "{0} g"
           :one: "{0} g"
           :other: "{0} g"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} м/с²"
           :many: "{0} м/с²"
           :one: "{0} м/с²"
@@ -1330,11 +1330,6 @@
           :many: "{0} моль"
           :one: "{0} моль"
           :other: "{0} моль"
-        :concentr-part-per-million: 
-          :few: "{0} ppm"
-          :many: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0}%"
           :many: "{0}%"
@@ -1345,9 +1340,14 @@
           :many: "{0}‰"
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :few: "{0} ppm"
+          :many: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} л/100 км"
           :many: "{0} л/100 км"
           :one: "{0} л/100 км"
@@ -1825,7 +1825,7 @@
           :many: "{0} гПа"
           :one: "{0} гПа"
           :other: "{0} гПа"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} дюйми рт. ст."
           :many: "{0} дюймів рт. ст."
           :one: "{0} дюйм рт. ст."
@@ -1845,7 +1845,7 @@
           :many: "{0} мбарів"
           :one: "{0} мбар"
           :other: "{0} мбара"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} мм рт. ст."
           :many: "{0} мм рт. ст."
           :one: "{0} мм рт. ст."
@@ -1855,7 +1855,7 @@
           :many: "{0} Па"
           :one: "{0} Па"
           :other: "{0} Па"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} фунти/дюйм²"
           :many: "{0} фунтів/дюйм²"
           :one: "{0} фунт/дюйм²"
@@ -1905,7 +1905,7 @@
           :many: "{0} Н·м"
           :one: "{0} Н·м"
           :other: "{0} Н·м"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} фнт-фт"
           :many: "{0} фнт-фт"
           :one: "{0} фнт-фт"

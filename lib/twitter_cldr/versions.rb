@@ -5,10 +5,9 @@
 
 module TwitterCldr
   module Versions
-    CLDR_VERSION    = '36'
-    ICU_VERSION     = '65.1'
-    UNICODE_VERSION = '12.0.0'
-    EMOJI_VERSION   = '12.1'
+    CLDR_VERSION    = '37'
+    ICU_VERSION     = '67.1'
+    UNICODE_VERSION = '13.0.0'
 
     class << self
       def cldr_version
@@ -21,10 +20,6 @@ module TwitterCldr
 
       def unicode_version
         UNICODE_VERSION
-      end
-
-      def emoji_version
-        EMOJI_VERSION
       end
     end
   end

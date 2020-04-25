@@ -11,7 +11,7 @@
           :few: "{0} ге сила"
           :one: "{0} ге сила"
           :other: "{0} ге сила"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} метра у секунди на квадрат"
           :one: "{0} метар у секунди на квадрат"
           :other: "{0} метара у секунди на квадрат"
@@ -91,10 +91,6 @@
           :few: "{0} мола"
           :one: "{0} мол"
           :other: "{0} мола"
-        :concentr-part-per-million: 
-          :few: "{0} честице на милион"
-          :one: "{0} честица на милион"
-          :other: "{0} честица на милион"
         :concentr-percent: 
           :few: "{0} процената"
           :one: "{0} проценат"
@@ -103,7 +99,11 @@
           :few: "{0} промила"
           :one: "{0} промил"
           :other: "{0} промила"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :few: "{0} честице на милион"
+          :one: "{0} честица на милион"
+          :other: "{0} честица на милион"
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} литра на 100 километара"
           :one: "{0} литар на 100 километара"
           :other: "{0} литара на 100 километара"
@@ -452,7 +452,7 @@
           :few: "{0} хектопаскала"
           :one: "{0} хектопаскал"
           :other: "{0} хектопаскала"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} инча живиног стуба"
           :one: "{0} инч живиног стуба"
           :other: "{0} инча живиног стуба"
@@ -468,7 +468,7 @@
           :few: "{0} милибара"
           :one: "{0} милибар"
           :other: "{0} милибара"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} милиметра живиног стуба"
           :one: "{0} милиметар живиног стуба"
           :other: "{0} милиметара живиног стуба"
@@ -476,7 +476,7 @@
           :few: "{0} паскала"
           :one: "{0} паскал"
           :other: "{0} паскала"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} фунте по квадратном инчу"
           :one: "{0} фунта по квадратном инчу"
           :other: "{0} фунти по квадратном инчу"
@@ -516,7 +516,7 @@
           :few: "{0} њутн-метра"
           :one: "{0} њутн-метар"
           :other: "{0} њутн-метара"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} фунта-фита"
           :one: "{0} фунта-фит"
           :other: "{0} фунта-фита"
@@ -669,7 +669,7 @@
           :few: "{0}%"
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} L/100km"
           :one: "{0} L/100km"
           :other: "{0} L/100km"
@@ -777,7 +777,7 @@
           :few: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} inHg"
           :one: "{0} inHg"
           :other: "{0} inHg"
@@ -822,7 +822,7 @@
           :few: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :one: "{0} m/s²"
           :other: "{0} m/s²"
@@ -900,10 +900,6 @@
           :other: "{0} mmol/L"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :few: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0}%"
           :one: "{0}%"
@@ -912,9 +908,13 @@
           :few: "{0}‰"
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :few: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} L/100 km"
           :one: "{0} L/100 km"
           :other: "{0} L/100 km"
@@ -1292,7 +1292,7 @@
           :few: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} inHg"
           :one: "{0} inHg"
           :other: "{0} inHg"
@@ -1304,7 +1304,7 @@
           :few: "{0} mbar"
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
@@ -1312,7 +1312,7 @@
           :few: "{0} Pa"
           :one: "{0} Pa"
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} psi"
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1350,7 +1350,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :few: "{0} ac ft"

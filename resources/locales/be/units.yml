@@ -12,7 +12,7 @@
           :many: "{0} g"
           :one: "{0} g"
           :other: "{0} g"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} м/с²"
           :many: "{0} м/с²"
           :one: "{0} м/с²"
@@ -112,11 +112,6 @@
           :many: "{0} моляў"
           :one: "{0} моль"
           :other: "{0} моля"
-        :concentr-part-per-million: 
-          :few: "{0} часткі на мільён"
-          :many: "{0} частак на мільён"
-          :one: "{0} частка на мільён"
-          :other: "{0} часткі на мільён"
         :concentr-percent: 
           :few: "{0} працэнты"
           :many: "{0} працэнтаў"
@@ -127,12 +122,17 @@
           :many: "{0} праміле"
           :one: "{0} праміле"
           :other: "{0} праміле"
+        :concentr-permillion: 
+          :few: "{0} часткі на мільён"
+          :many: "{0} частак на мільён"
+          :one: "{0} частка на мільён"
+          :other: "{0} часткі на мільён"
         :concentr-permyriad: 
           :few: "{0} базісныя пункты"
           :many: "{0} базісных пунктаў"
           :one: "{0} базісны пункт"
           :other: "{0} базіснага пункта"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} літры на 100 кіламетраў"
           :many: "{0} літраў на 100 кіламетраў"
           :one: "{0} літр на 100 кіламетраў"
@@ -612,7 +612,7 @@
           :many: "{0} гектапаскаляў"
           :one: "{0} гектапаскаль"
           :other: "{0} гектапаскаля"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} цалі ртутнага слупа"
           :many: "{0} цаляў ртутнага слупа"
           :one: "{0} цаля ртутнага слупа"
@@ -632,7 +632,7 @@
           :many: "{0} мілібар"
           :one: "{0} мілібар"
           :other: "{0} мілібара"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} міліметры ртутнага слупа"
           :many: "{0} міліметраў ртутнага слупа"
           :one: "{0} міліметр ртутнага слупа"
@@ -642,7 +642,7 @@
           :many: "{0} паскаляў"
           :one: "{0} паскаль"
           :other: "{0} паскаля"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} фунты на квадратную цалю"
           :many: "{0} фунтаў на квадратную цалю"
           :one: "{0} фунт на квадратную цалю"
@@ -692,7 +692,7 @@
           :many: "{0} ньютан-метраў"
           :one: "{0} ньютан-метр"
           :other: "{0} ньютан-метра"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} фунт-футы"
           :many: "{0} фунт-футаў"
           :one: "{0} фунт-фут"
@@ -833,7 +833,7 @@
           :many: "{0}%"
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} л/100 км"
           :many: "{0} л/100 км"
           :one: "{0} л/100 км"
@@ -925,7 +925,7 @@
           :many: "{0} g"
           :one: "{0} g"
           :other: "{0} g"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} м/с²"
           :many: "{0} м/с²"
           :one: "{0} м/с²"
@@ -1025,11 +1025,6 @@
           :many: "{0} моляў"
           :one: "{0} моль"
           :other: "{0} моля"
-        :concentr-part-per-million: 
-          :few: "{0} ppm"
-          :many: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0} %"
           :many: "{0} %"
@@ -1040,12 +1035,17 @@
           :many: "{0} ‰"
           :one: "{0} ‰"
           :other: "{0} ‰"
+        :concentr-permillion: 
+          :few: "{0} ppm"
+          :many: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :few: "{0} ‱"
           :many: "{0} ‱"
           :one: "{0} ‱"
           :other: "{0} ‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} л/100 км"
           :many: "{0} л/100 км"
           :one: "{0} л/100 км"
@@ -1535,7 +1535,7 @@
           :many: "{0} гПа"
           :one: "{0} гПа"
           :other: "{0} гПа"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} цалі рт. сл."
           :many: "{0} цаляў рт. сл."
           :one: "{0} цаля рт. сл."
@@ -1555,7 +1555,7 @@
           :many: "{0} мбар"
           :one: "{0} мбар"
           :other: "{0} мбар"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} мм рт. сл."
           :many: "{0} мм рт. сл."
           :one: "{0} мм рт. сл."
@@ -1565,7 +1565,7 @@
           :many: "{0} Па"
           :one: "{0} Па"
           :other: "{0} Па"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} фунты на кв. цалю"
           :many: "{0} фунтаў на кв. цалю"
           :one: "{0} фунт на кв. цалю"
@@ -1615,7 +1615,7 @@
           :many: "{0} Н⋅м"
           :one: "{0} Н⋅м"
           :other: "{0} Н⋅м"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} фунт-футы"
           :many: "{0} фунт-футаў"
           :one: "{0} фунт-фут"

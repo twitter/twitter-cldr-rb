@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :one: "{0} جی-فورس"
           :other: "{0} جی-فورس"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} میٹر فی مربع سیکنڈ"
           :other: "{0} میٹر فی مربع سیکنڈ"
         :angle-arc-minute: 
@@ -70,19 +70,19 @@
         :concentr-mole: 
           :one: "{0} مول"
           :other: "{0} مولز"
-        :concentr-part-per-million: 
-          :one: "{0} فی ملین حصے"
-          :other: "{0} فی ملین حصے"
         :concentr-percent: 
           :one: "{0} فیصد"
           :other: "{0} فیصد"
         :concentr-permille: 
           :one: "{0} فی ہزار"
           :other: "{0} فی ہزار"
+        :concentr-permillion: 
+          :one: "{0} فی ملین حصے"
+          :other: "{0} فی ملین حصے"
         :concentr-permyriad: 
           :one: "{0} پرمرئیڈ"
           :other: "{0} پرمرئیڈ"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} لیٹر فی 100 کلو میٹر"
           :other: "{0} لیٹر فی 100 کلو میٹر"
         :consumption-liter-per-kilometer: 
@@ -373,7 +373,7 @@
         :pressure-hectopascal: 
           :one: "{0} ہیکٹو پاسکل"
           :other: "{0} ہیکٹو پاسکل"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} انچ مرکری"
           :other: "{0} انچ مرکری"
         :pressure-kilopascal: 
@@ -385,13 +385,13 @@
         :pressure-millibar: 
           :one: "{0} ملی بار"
           :other: "{0} ملی بار"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} ملی میٹر مرکری"
           :other: "{0} ملی میٹر مرکری"
         :pressure-pascal: 
           :one: "{0} پاسکل"
           :other: "{0} پاسکل"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} پاؤنڈ فی مربع انچ"
           :other: "{0} پاؤنڈز فی مربع انچ"
         :speed-kilometer-per-hour: 
@@ -421,7 +421,7 @@
         :torque-newton-meter: 
           :one: "{0} نیوٹن میٹر"
           :other: "{0} نیوٹن میٹر"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} پاؤنڈ فٹ"
           :other: "{0} پاؤنڈ فٹ"
         :volume-acre-foot: 
@@ -536,7 +536,7 @@
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0}L/100km"
           :other: "{0}L/100km"
         :duration-day: 
@@ -623,16 +623,16 @@
         :pressure-hectopascal: 
           :one: "{0}hPa"
           :other: "{0}hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} انچ مرکری"
           :other: "{0} انچ مرکری"
         :pressure-millibar: 
           :one: "{0}mb"
           :other: "{0}mb"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
@@ -669,7 +669,7 @@
         :acceleration-g-force: 
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} m/s²"
           :other: "{0} m/s²"
         :angle-arc-minute: 
@@ -729,18 +729,18 @@
         :concentr-mole: 
           :one: "{0} مول"
           :other: "{0} مول"
-        :concentr-part-per-million: 
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} L/100km"
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
@@ -1026,7 +1026,7 @@
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
@@ -1038,12 +1038,12 @@
         :pressure-millibar: 
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
@@ -1072,7 +1072,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} ac ft"

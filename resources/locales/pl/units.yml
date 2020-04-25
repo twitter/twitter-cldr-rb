@@ -8,7 +8,7 @@
     :unitLength: 
       :long: 
         :acceleration-g-force: {}
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} metry na sekundę do kwadratu"
           :many: "{0} metrów na sekundę do kwadratu"
           :one: "{0} metr na sekundę do kwadratu"
@@ -108,11 +108,6 @@
           :many: "{0} moli"
           :one: "{0} mol"
           :other: "{0} mola"
-        :concentr-part-per-million: 
-          :few: "{0} części na milion"
-          :many: "{0} części na milion"
-          :one: "{0} część na milion"
-          :other: "{0} części na milion"
         :concentr-percent: 
           :few: "{0} procent"
           :many: "{0} procent"
@@ -123,12 +118,17 @@
           :many: "{0} promili"
           :one: "{0} promil"
           :other: "{0} promila"
+        :concentr-permillion: 
+          :few: "{0} części na milion"
+          :many: "{0} części na milion"
+          :one: "{0} część na milion"
+          :other: "{0} części na milion"
         :concentr-permyriad: 
           :few: "{0} punkty bazowe"
           :many: "{0} punktów bazowych"
           :one: "{0} punkt bazowy"
           :other: "{0} punktu bazowego"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} litry na 100 kilometrów"
           :many: "{0} litrów na 100 kilometrów"
           :one: "{0} litr na 100 kilometrów"
@@ -588,7 +588,7 @@
           :many: "{0} hektopaskali"
           :one: "{0} hektopaskal"
           :other: "{0} hektopaskala"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} cale słupa rtęci"
           :many: "{0} cali słupa rtęci"
           :one: "{0} cal słupa rtęci"
@@ -608,7 +608,7 @@
           :many: "{0} millibarów"
           :one: "{0} millibar"
           :other: "{0} millibara"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} milimetry słupa rtęci"
           :many: "{0} milimetrów słupa rtęci"
           :one: "{0} milimetr słupa rtęci"
@@ -618,7 +618,7 @@
           :many: "{0} paskali"
           :one: "{0} paskal"
           :other: "{0} paskala"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} funty na cal kwadratowy"
           :many: "{0} funtów na cal kwadratowy"
           :one: "{0} funt na cal kwadratowy"
@@ -668,7 +668,7 @@
           :many: "{0} niutonometrów"
           :one: "{0} niutonometr"
           :other: "{0} niutonometra"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} stopofunty"
           :many: "{0} stopofuntów"
           :one: "{0} stopofunt"
@@ -820,16 +820,16 @@
           :one: "{0}″"
           :other: "{0}″"
         :concentr-percent: {}
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :many: "{0} l/100 km"
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
         :duration-day: 
-          :few: "{0} dn."
-          :many: "{0} dn."
+          :few: "{0} d."
+          :many: "{0} d."
           :one: "{0} d."
-          :other: "{0} dn."
+          :other: "{0} d."
         :duration-hour: 
           :few: "{0} g."
           :many: "{0} g."
@@ -881,7 +881,7 @@
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0} m/s²"
         :angle-arc-minute: 
           :other: "{0}′"
@@ -951,18 +951,18 @@
           :many: "{0} moli"
           :one: "{0} mol"
           :other: "{0} mola"
-        :concentr-part-per-million: 
-          :other: "{0} ppm"
         :concentr-percent: 
           :other: "{0}%"
         :concentr-permille: 
           :other: "{0}‰"
+        :concentr-permillion: 
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :few: "{0}‱"
           :many: "{0}‱"
           :one: "{0}‱"
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :many: "{0} l/100 km"
           :one: "{0} l/100 km"
@@ -1032,7 +1032,7 @@
           :one: "{0} godz."
           :other: "{0} godz."
         :duration-microsecond: 
-          :other: "{0} μs"
+          :other: "{0} µs"
         :duration-millisecond: 
           :other: "{0} ms"
         :duration-minute: 
@@ -1083,10 +1083,10 @@
           :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
-          :few: "{0} cal"
-          :many: "{0} cal"
-          :one: "{0} cal"
-          :other: "{0} cal"
+          :few: "{0} kcal"
+          :many: "{0} kcal"
+          :one: "{0} kcal"
+          :other: "{0} kcal"
         :energy-joule: 
           :other: "{0} J"
         :energy-kilocalorie: 
@@ -1275,7 +1275,7 @@
           :other: "{0} bar"
         :pressure-hectopascal: 
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} inHg"
         :pressure-kilopascal: 
           :few: "{0} kPa"
@@ -1289,11 +1289,11 @@
           :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :other: "{0} km/h"
@@ -1325,7 +1325,7 @@
           :many: "{0} N⋅m"
           :one: "{0} N⋅m"
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} lbf⋅ft"
           :many: "{0} lbf⋅ft"
           :one: "{0} lbf⋅ft"

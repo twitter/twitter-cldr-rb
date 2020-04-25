@@ -12,7 +12,7 @@
           :one: "כוח ג׳י אחד"
           :other: "{0} כוחות ג׳י"
           :two: "שני כוחות ג׳י"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :many: "{0} מטר לשנייה בריבוע"
           :one: "{0} מטר לשנייה בריבוע"
           :other: "{0} מטר לשנייה בריבוע"
@@ -112,11 +112,6 @@
           :one: "{0} מול"
           :other: "{0} מול"
           :two: "{0} מול"
-        :concentr-part-per-million: 
-          :many: "{0} חלקים למיליון"
-          :one: "{0} חלקים למיליון"
-          :other: "{0} חלקים למיליון"
-          :two: "{0} חלקים למיליון"
         :concentr-percent: 
           :many: "{0} אחוז"
           :one: "{0} אחוז"
@@ -127,12 +122,17 @@
           :one: "{0} פרומיל"
           :other: "{0} פרומיל"
           :two: "{0} פרומיל"
+        :concentr-permillion: 
+          :many: "{0} חלקים למיליון"
+          :one: "{0} חלקים למיליון"
+          :other: "{0} חלקים למיליון"
+          :two: "{0} חלקים למיליון"
         :concentr-permyriad: 
           :many: "{0} רבביות"
           :one: "רבבית {0}"
           :other: "{0} רבביות"
           :two: "{0} רבביות"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :many: "{0} ליטר/100 ק״מ"
           :one: "ליטר/100 ק״מ"
           :other: "{0} ליטר/100 ק״מ"
@@ -609,7 +609,7 @@
           :one: "הקטופסקל {0}"
           :other: "{0} הקטופסקל"
           :two: "{0} הקטופסקל"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :many: "{0} אינץ׳ כספית"
           :one: "אינץ׳ כספית {0}"
           :other: "{0} אינץ׳ כספית"
@@ -629,7 +629,7 @@
           :one: "{0} מיליבר"
           :other: "{0} מיליבר"
           :two: "{0} מיליבר"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :many: "{0} מילימטר כספית"
           :one: "מילימטר כספית אחד"
           :other: "{0} מילימטר כספית"
@@ -639,7 +639,7 @@
           :one: "{0} פסקל"
           :other: "{0} פסקל"
           :two: "{0} פסקל"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :many: "{0} פאונד לאינץ׳ רבוע"
           :one: "פאונד אחד לאינץ׳ רבוע"
           :other: "{0} פאונד לאינץ׳ רבוע"
@@ -689,7 +689,7 @@
           :one: "{0} ניוטון-מטר"
           :other: "{0} ניוטון-מטר"
           :two: "{0} ניוטון-מטר"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :many: "{0} כוח פאונד"
           :one: "{0} כוח פאונד"
           :other: "{0} כוח פאונד"
@@ -830,7 +830,7 @@
           :one: "{0} G"
           :other: "{0} G"
           :two: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :many: "{0} m/s²"
           :one: "{0} m/s²"
           :other: "{0} m/s²"
@@ -885,7 +885,7 @@
           :one: "{0}%"
           :other: "{0}%"
           :two: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :many: "{0}ל׳/100ק״מ"
           :one: "{0}ל׳/100ק״מ"
           :other: "{0}ל׳/100ק״מ"
@@ -1127,7 +1127,7 @@
           :one: "{0} hPa"
           :other: "{0} hPa"
           :two: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :many: "{0} inHg"
           :one: "{0} inHg"
           :other: "{0} inHg"
@@ -1137,12 +1137,12 @@
           :one: "מיליבר {0}"
           :other: "{0} מיליבר"
           :two: "{0} מיליבר"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :many: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
           :two: "{0} mm Hg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :many: "{0} psi"
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1208,7 +1208,7 @@
           :one: "{0} G"
           :other: "{0} G"
           :two: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :many: "{0} m/s²"
           :one: "{0} m/s²"
           :other: "{0} m/s²"
@@ -1305,11 +1305,6 @@
           :two: "{0} mmol/L"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :many: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
-          :two: "{0} ppm"
         :concentr-percent: 
           :many: "{0}%"
           :one: "{0}%"
@@ -1320,9 +1315,14 @@
           :one: "{0}‰"
           :other: "{0}‰"
           :two: "{0}‰"
+        :concentr-permillion: 
+          :many: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
+          :two: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :many: "{0} ל׳/100 ק״מ"
           :one: "ל׳ {0}/100 ק״מ"
           :other: "{0} ל׳/100 ק״מ"
@@ -1788,7 +1788,7 @@
           :one: "{0} hPa"
           :other: "{0} hPa"
           :two: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :many: "{0} inHg"
           :one: "{0} inHg"
           :other: "{0} inHg"
@@ -1802,14 +1802,14 @@
           :one: "{0} mbar"
           :other: "{0} mbar"
           :two: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :many: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
           :two: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :many: "{0} psi"
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1856,7 +1856,7 @@
           :two: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :many: "‎{0} ac ft"

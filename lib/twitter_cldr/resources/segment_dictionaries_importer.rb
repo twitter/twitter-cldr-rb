@@ -21,6 +21,7 @@ module TwitterCldr
       ]
 
       output_path File.join(*%w(shared segments dictionaries))
+      requirement :dependency, TwitterCldr::Resources::property_importer_classes
       ruby_engine :mri
 
       def execute
@@ -35,7 +36,7 @@ module TwitterCldr
 
       def import_dictionary_file(dictionary_file)
         source_url = url_for(dictionary_file)
-        source = open(source_url).read
+        source = URI.open(source_url).read
         lines = source.split("\n")
         trie = TwitterCldr::Utils::Trie.new
         space_regexp = TwitterCldr::Shared::UnicodeRegex.compile('\A[[:Z:][:C:]]+').to_regexp

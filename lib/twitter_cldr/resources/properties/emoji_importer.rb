@@ -8,16 +8,16 @@ module TwitterCldr
     module Properties
 
       class EmojiImporter < PropertyImporter
-        DATA_FILE = 'emoji-data.txt'
+        DATA_FILE = 'ucd/emoji/emoji-data.txt'
 
-        requirement :emoji, Versions.emoji_version, [DATA_FILE]
+        requirement :unicode, Versions.unicode_version, [DATA_FILE]
         output_path 'unicode_data/properties'
         ruby_engine :mri
 
         private
 
         def source_path
-          requirements[:emoji].source_path_for(DATA_FILE)
+          requirements[:unicode].source_path_for(DATA_FILE)
         end
 
         def load

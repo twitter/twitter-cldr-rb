@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :one: "{0} fois l’accélération de pesanteur terrestre"
           :other: "{0} fois l’accélération de pesanteur terrestre"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} mètre par seconde carrée"
           :other: "{0} mètres par seconde carrée"
         :angle-arc-minute: 
@@ -70,19 +70,19 @@
         :concentr-mole: 
           :one: "{0} mole"
           :other: "{0} moles"
-        :concentr-part-per-million: 
-          :one: "{0} partie par million"
-          :other: "{0} parties par million"
         :concentr-percent: 
           :one: "{0} pour cent"
           :other: "{0} pour cent"
         :concentr-permille: 
           :one: "{0} pour mille"
           :other: "{0} pour mille"
+        :concentr-permillion: 
+          :one: "{0} partie par million"
+          :other: "{0} parties par million"
         :concentr-permyriad: 
           :one: "{0} pour dix mille"
           :other: "{0} pour dix mille"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} litre aux 100 kilomètres"
           :other: "{0} litres aux 100 kilomètres"
         :consumption-liter-per-kilometer: 
@@ -379,7 +379,7 @@
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascals"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} pouce de mercure"
           :other: "{0} pouces de mercure"
         :pressure-kilopascal: 
@@ -391,13 +391,13 @@
         :pressure-millibar: 
           :one: "{0} millibar"
           :other: "{0} millibars"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} millimètre de mercure"
           :other: "{0} millimètres de mercure"
         :pressure-pascal: 
           :one: "{0} pascal"
           :other: "{0} pascals"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} livre par pouce carré"
           :other: "{0} livres par pouce carré"
         :speed-kilometer-per-hour: 
@@ -427,7 +427,7 @@
         :torque-newton-meter: 
           :one: "{0} newton-mètre"
           :other: "{0} newtons-mètres"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} livre-pied"
           :other: "{0} livres-pieds"
         :volume-acre-foot: 
@@ -513,7 +513,7 @@
         :acceleration-g-force: 
           :one: "{0}G"
           :other: "{0}G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0}m/s²"
           :other: "{0}m/s²"
         :angle-arc-minute: 
@@ -555,13 +555,13 @@
         :concentr-milligram-per-deciliter: {}
         :concentr-millimole-per-liter: {}
         :concentr-mole: {}
-        :concentr-part-per-million: {}
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
         :concentr-permille: {}
+        :concentr-permillion: {}
         :concentr-permyriad: {}
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} L/100 km"
           :other: "{0} L/100 km"
         :consumption-liter-per-kilometer: {}
@@ -740,7 +740,7 @@
         :pressure-hectopascal: 
           :one: "{0}hPa"
           :other: "{0}hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0}″ Hg"
           :other: "{0}″ Hg"
         :pressure-kilopascal: {}
@@ -748,10 +748,10 @@
         :pressure-millibar: 
           :one: "{0}mbar"
           :other: "{0}mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0}mmHg"
           :other: "{0}mmHg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0}psi"
           :other: "{0}psi"
         :speed-kilometer-per-hour: 
@@ -777,7 +777,7 @@
           :one: "{0}K"
           :other: "{0}K"
         :torque-newton-meter: {}
-        :torque-pound-foot: {}
+        :torque-pound-force-foot: {}
         :volume-acre-foot: {}
         :volume-barrel: {}
         :volume-bushel: {}
@@ -839,7 +839,7 @@
         :acceleration-g-force: 
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} m/s²"
           :other: "{0} m/s²"
         :angle-arc-minute: 
@@ -899,19 +899,19 @@
         :concentr-mole: 
           :one: "{0} mol"
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
         :concentr-permille: 
           :one: "{0} ‰"
           :other: "{0} ‰"
+        :concentr-permillion: 
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :one: "{0} ‱"
           :other: "{0} ‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} L/100 km"
           :other: "{0} L/100 km"
         :consumption-liter-per-kilometer: 
@@ -1212,7 +1212,7 @@
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} po Hg"
           :other: "{0} po Hg"
         :pressure-kilopascal: 
@@ -1224,13 +1224,13 @@
         :pressure-millibar: 
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :one: "{0} Pa"
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
@@ -1260,7 +1260,7 @@
         :torque-newton-meter: 
           :one: "{0} N⋅m"
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} lb-pi"
           :other: "{0} lb-pi"
         :volume-acre-foot: 

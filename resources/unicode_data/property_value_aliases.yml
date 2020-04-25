@@ -47,6 +47,10 @@ age:
   :long_name: V11_0
 - :abbreviated_name: '12.0'
   :long_name: V12_0
+- :abbreviated_name: '12.1'
+  :long_name: V12_1
+- :abbreviated_name: '13.0'
+  :long_name: V13_0
 - :abbreviated_name: NA
   :long_name: Unassigned
 Alpha:
@@ -203,6 +207,8 @@ blk:
   :long_name: Cherokee_Supplement
 - :abbreviated_name: Chess_Symbols
   :long_name: Chess_Symbols
+- :abbreviated_name: Chorasmian
+  :long_name: Chorasmian
 - :abbreviated_name: CJK
   :long_name: CJK_Unified_Ideographs
 - :abbreviated_name: CJK_Compat
@@ -225,6 +231,8 @@ blk:
   :long_name: CJK_Unified_Ideographs_Extension_E
 - :abbreviated_name: CJK_Ext_F
   :long_name: CJK_Unified_Ideographs_Extension_F
+- :abbreviated_name: CJK_Ext_G
+  :long_name: CJK_Unified_Ideographs_Extension_G
 - :abbreviated_name: CJK_Radicals_Sup
   :long_name: CJK_Radicals_Supplement
 - :abbreviated_name: CJK_Strokes
@@ -275,6 +283,8 @@ blk:
   :long_name: Combining_Diacritical_Marks_Supplement
 - :abbreviated_name: Dingbats
   :long_name: Dingbats
+- :abbreviated_name: Dives_Akuru
+  :long_name: Dives_Akuru
 - :abbreviated_name: Dogra
   :long_name: Dogra
 - :abbreviated_name: Domino
@@ -401,6 +411,8 @@ blk:
   :long_name: Kayah_Li
 - :abbreviated_name: Kharoshthi
   :long_name: Kharoshthi
+- :abbreviated_name: Khitan_Small_Script
+  :long_name: Khitan_Small_Script
 - :abbreviated_name: Khmer
   :long_name: Khmer
 - :abbreviated_name: Khmer_Symbols
@@ -439,6 +451,8 @@ blk:
   :long_name: Linear_B_Syllabary
 - :abbreviated_name: Lisu
   :long_name: Lisu
+- :abbreviated_name: Lisu_Sup
+  :long_name: Lisu_Supplement
 - :abbreviated_name: Low_Surrogates
   :long_name: Low_Surrogates
 - :abbreviated_name: Lycian
@@ -651,6 +665,8 @@ blk:
   :long_name: Syloti_Nagri
 - :abbreviated_name: Symbols_And_Pictographs_Ext_A
   :long_name: Symbols_And_Pictographs_Extended_A
+- :abbreviated_name: Symbols_For_Legacy_Computing
+  :long_name: Symbols_For_Legacy_Computing
 - :abbreviated_name: Syriac
   :long_name: Syriac
 - :abbreviated_name: Syriac_Sup
@@ -679,6 +695,8 @@ blk:
   :long_name: Tangut
 - :abbreviated_name: Tangut_Components
   :long_name: Tangut_Components
+- :abbreviated_name: Tangut_Sup
+  :long_name: Tangut_Supplement
 - :abbreviated_name: Telugu
   :long_name: Telugu
 - :abbreviated_name: Thaana
@@ -713,6 +731,8 @@ blk:
   :long_name: Wancho
 - :abbreviated_name: Warang_Citi
   :long_name: Warang_Citi
+- :abbreviated_name: Yezidi
+  :long_name: Yezidi
 - :abbreviated_name: Yi_Radicals
   :long_name: Yi_Radicals
 - :abbreviated_name: Yi_Syllables
@@ -728,6 +748,9 @@ ccc:
 - :numeric: '1'
   :abbreviated_name: OV
   :long_name: Overlay
+- :numeric: '6'
+  :abbreviated_name: HANR
+  :long_name: Han_Reading
 - :numeric: '7'
   :abbreviated_name: NK
   :long_name: Nukta
@@ -1008,6 +1031,31 @@ ea:
   :long_name: Narrow
 - :abbreviated_name: W
   :long_name: Wide
+Emoji:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+EComp:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+EMod:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+EBase:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+EPres:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
 XO_NFC:
 - :abbreviated_name: N
   :long_name: 'No'
@@ -1024,6 +1072,11 @@ XO_NFKC:
 - :abbreviated_name: Y
   :long_name: 'Yes'
 XO_NFKD:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+ExtPict:
 - :abbreviated_name: N
   :long_name: 'No'
 - :abbreviated_name: Y
@@ -1236,6 +1289,8 @@ InPC:
   :long_name: Top
 - :abbreviated_name: Top_And_Bottom
   :long_name: Top_And_Bottom
+- :abbreviated_name: Top_And_Bottom_And_Left
+  :long_name: Top_And_Bottom_And_Left
 - :abbreviated_name: Top_And_Bottom_And_Right
   :long_name: Top_And_Bottom_And_Right
 - :abbreviated_name: Top_And_Left
@@ -1904,6 +1959,8 @@ sc:
   :long_name: Cham
 - :abbreviated_name: Cher
   :long_name: Cherokee
+- :abbreviated_name: Chrs
+  :long_name: Chorasmian
 - :abbreviated_name: Copt
   :long_name: Coptic
 - :abbreviated_name: Cprt
@@ -1912,6 +1969,8 @@ sc:
   :long_name: Cyrillic
 - :abbreviated_name: Deva
   :long_name: Devanagari
+- :abbreviated_name: Diak
+  :long_name: Dives_Akuru
 - :abbreviated_name: Dogr
   :long_name: Dogra
 - :abbreviated_name: Dsrt
@@ -1980,6 +2039,8 @@ sc:
   :long_name: Khmer
 - :abbreviated_name: Khoj
   :long_name: Khojki
+- :abbreviated_name: Kits
+  :long_name: Khitan_Small_Script
 - :abbreviated_name: Knda
   :long_name: Kannada
 - :abbreviated_name: Kthi
@@ -2156,6 +2217,8 @@ sc:
   :long_name: Old_Persian
 - :abbreviated_name: Xsux
   :long_name: Cuneiform
+- :abbreviated_name: Yezi
+  :long_name: Yezidi
 - :abbreviated_name: Yiii
   :long_name: Yi
 - :abbreviated_name: Zanb

@@ -32,7 +32,7 @@ module TwitterCldr
       end
 
       def symbol_data
-        doc = Nokogiri::HTML(open(URL).read)
+        doc = Nokogiri::HTML(URI.open(URL).read)
         rows = doc.css('.currencySymblTable tr')
 
         rows[1..-1].each_with_object({}) do |row, ret|

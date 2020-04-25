@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :one: "{0} ინერციის ძალა"
           :other: "{0} ინერციის ძალა"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} მ/წმ²"
           :other: "{0} მ/წმ²"
         :angle-arc-minute: 
@@ -67,16 +67,16 @@
         :concentr-millimole-per-liter: 
           :one: "{0} მილიმოლი ლიტრზე"
           :other: "{0} მილიმოლი ლიტრზე"
-        :concentr-part-per-million: 
-          :one: "{0} ნაწილი მილიონზე"
-          :other: "{0} ნაწილი მილიონზე"
         :concentr-percent: 
           :one: "{0} პროცენტი"
           :other: "{0} პროცენტი"
         :concentr-permille: 
           :one: "{0} პრომილე"
           :other: "{0} პრომილე"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :one: "{0} ნაწილი მილიონზე"
+          :other: "{0} ნაწილი მილიონზე"
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} ლიტრი 100 კილომეტრში"
           :other: "{0} ლიტრი 100 კილომეტრში"
         :consumption-liter-per-kilometer: 
@@ -352,7 +352,7 @@
         :pressure-hectopascal: 
           :one: "{0} ჰექტოპასკალი"
           :other: "{0} ჰექტოპასკალი"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} ვერცხლისწყლის დუიმი"
           :other: "{0} ვერცხლისწყლის დუიმი"
         :pressure-kilopascal: 
@@ -364,13 +364,13 @@
         :pressure-millibar: 
           :one: "{0} მილიბარი"
           :other: "{0} მილიბარი"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} მილიმეტრი ვერცხლისწყლის სვეტისა"
           :other: "{0} მილიმეტრი ვერცხლისწყლის სვეტისა"
         :pressure-pascal: 
           :one: "{0} პასკალი"
           :other: "{0} პასკალი"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} ფუნტი კვადრატულ დუიმზე"
           :other: "{0} ფუნტი კვადრატულ დუიმზე"
         :speed-kilometer-per-hour: 
@@ -509,7 +509,7 @@
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0}ლ/100კმ"
           :other: "{0}ლ/100კმ"
         :duration-day: 
@@ -590,7 +590,7 @@
         :pressure-hectopascal: 
           :one: "{0} ჰპა"
           :other: "{0} ჰპა"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} ვრც. დმ."
           :other: "{0} ვრც. დმ."
         :pressure-millibar: 
@@ -624,7 +624,7 @@
         :acceleration-g-force: 
           :one: "{0} ინ. ძ."
           :other: "{0} ინ. ძ."
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} მ/წმ²"
           :other: "{0} მ/წმ²"
         :angle-arc-minute: 
@@ -683,18 +683,18 @@
           :other: "{0} მმოლ/ლ"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} ლ/100კმ"
           :other: "{0} ლ/100კმ"
         :consumption-liter-per-kilometer: 
@@ -986,7 +986,7 @@
         :pressure-hectopascal: 
           :one: "{0} ჰპა"
           :other: "{0} ჰპა"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} ვრც. დმ."
           :other: "{0} ვრც. დმ."
         :pressure-kilopascal: 
@@ -998,13 +998,13 @@
         :pressure-millibar: 
           :one: "{0} მბარი"
           :other: "{0} მბარი"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} მმ ვწყ. სვ."
           :other: "{0} მმ ვწყ. სვ."
         :pressure-pascal: 
           :one: "{0} პა"
           :other: "{0} პა"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} ფნტ. კვ. დმ."
           :other: "{0} ფნტ. კვ. დმ."
         :speed-kilometer-per-hour: 
@@ -1033,7 +1033,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} აკრ.ფტ."

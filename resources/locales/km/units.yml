@@ -9,7 +9,7 @@
       :long: 
         :acceleration-g-force: 
           :other: "{0} កម្លាំង​ទំនាញ"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0} ម៉ែត្រ​ក្នុង​មួយ​វិនាទី​ការ៉េ"
         :angle-arc-minute: 
           :other: "{0} អាកនាទី"
@@ -47,13 +47,13 @@
           :other: "{0} មិល្លីក្រាមក្នុងមួយដេស៊ីលីត្រ"
         :concentr-millimole-per-liter: 
           :other: "{0} មិល្លីម៉ូលក្នុងមួយលីត្រ"
-        :concentr-part-per-million: 
-          :other: "{0} ផ្នែកក្នុងមួយលាន"
         :concentr-percent: 
           :other: "{0} ភាគរយ"
         :concentr-permille: 
           :other: "{0}‰"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :other: "{0} ផ្នែកក្នុងមួយលាន"
+        :consumption-liter-per-100-kilometer: 
           :other: "{0} លីត្រក្នុង 100 គីឡូម៉ែត្រ"
         :consumption-liter-per-kilometer: 
           :other: "{0} លីត្រ​ក្នុង​មួយ​គីឡូម៉ែត្រ"
@@ -209,13 +209,13 @@
           :other: "បរិយាកាស {0}"
         :pressure-hectopascal: 
           :other: "{0} ហិចតូប៉ាស្កាល់"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} អ៊ីញនៃបារត"
         :pressure-millibar: 
           :other: "{0} មិល្លីបារ"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0} មិល្លីម៉ែត្រនៃ​បារត"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0} ផោន​ក្នុង​មួយ​អ៊ីញ​ការ៉េ"
         :speed-kilometer-per-hour: 
           :other: "{0} គីឡូម៉ែត្រ​ក្នុង​មួយ​ម៉ោង"
@@ -304,7 +304,7 @@
           :other: "{0} ម៉²."
         :concentr-percent: 
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :other: "{0}L/100km"
         :duration-day: 
           :other: "{0} ថ្ងៃ"
@@ -358,7 +358,7 @@
           :other: "{0} វ."
         :pressure-hectopascal: 
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0}\" Hg"
         :pressure-millibar: 
           :other: "{0} ម.ប."
@@ -381,7 +381,7 @@
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0} m/s²"
         :angle-arc-minute: 
           :other: "{0} អាកនាទី"
@@ -421,15 +421,15 @@
           :other: "{0} mmol/L"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :other: "{0} ppm"
         :concentr-percent: 
           :other: "{0}%"
         :concentr-permille: 
           :other: "{0}‰"
+        :concentr-permillion: 
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
           :other: "{0} L/km"
@@ -631,7 +631,7 @@
           :other: "{0} bar"
         :pressure-hectopascal: 
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} inHg"
         :pressure-kilopascal: 
           :other: "{0} kPa"
@@ -639,11 +639,11 @@
           :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
           :other: "{0} kph"
@@ -663,7 +663,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :other: "{0} ac ft"

@@ -46,7 +46,7 @@ module TwitterCldr
           source_path = source_path_for(file)
           FileUtils.mkdir_p(File.dirname(source_path))
           remote_url = File.join(url % { version: version }, file)
-          open(source_path, 'wb') { |file| file << open(remote_url).read }
+          File.open(source_path, 'wb') { |file| file << URI.open(remote_url).read }
         end
       end
 

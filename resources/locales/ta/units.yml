@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :one: "{0} ஜி-ஃபோர்ஸ்"
           :other: "{0} ஜி-ஃபோர்ஸ்"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} மீட்டர்/சதுரவிநாடி"
           :other: "{0} மீட்டர்கள்/சதுரவிநாடி"
         :angle-arc-minute: 
@@ -70,19 +70,19 @@
         :concentr-mole: 
           :one: "{0} மோல்"
           :other: "{0} மோல்ஸ்"
-        :concentr-part-per-million: 
-          :one: "{0} பகுதி/மில்லியன்"
-          :other: "{0} பகுதிகள்/மில்லியன்"
         :concentr-percent: 
           :one: "{0} சதவீதம்"
           :other: "{0} சதவீதம்"
         :concentr-permille: 
           :one: "மில்லி ஒன்றுக்கு {0}"
           :other: "மில்லி ஒன்றுக்கு {0}"
+        :concentr-permillion: 
+          :one: "{0} பகுதி/மில்லியன்"
+          :other: "{0} பகுதிகள்/மில்லியன்"
         :concentr-permyriad: 
           :one: "{0} பெர்மிரியட்"
           :other: "{0} பெர்மிரியட்"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} லிட்டர்/100கி.மீ"
           :other: "{0} லிட்டர்/100கி.மீ"
         :consumption-liter-per-kilometer: 
@@ -373,7 +373,7 @@
         :pressure-hectopascal: 
           :one: "{0} ஹெக்டோபாஸ்கல்"
           :other: "{0} ஹெக்டோபாஸ்கல்"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} பாதரச அங்குலம்"
           :other: "{0} பாதரச அங்குலங்கள்"
         :pressure-kilopascal: 
@@ -385,13 +385,13 @@
         :pressure-millibar: 
           :one: "{0} மில்லிபார்"
           :other: "{0} மில்லிபார்கள்"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} பாதரச மில்லிமீட்டர்"
           :other: "{0} பாதரச மில்லிமீட்டர்கள்"
         :pressure-pascal: 
           :one: "{0} பாஸ்கல்"
           :other: "{0} பாஸ்கல்கள்"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} பவுண்டு/சதுர அங்குலம்"
           :other: "{0} பவுண்டுகள்/சதுர அங்குலம்"
         :speed-kilometer-per-hour: 
@@ -421,7 +421,7 @@
         :torque-newton-meter: 
           :one: "{0} நியூட்டன் மீட்டர்"
           :other: "{0} நியூட்டன் மீட்டர்கள்"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} பவுண்ட்-அடி"
           :other: "{0} பவுண்ட்-அடி"
         :volume-acre-foot: 
@@ -536,7 +536,7 @@
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0}லி./100கி.மீ"
           :other: "{0}லி./100கி.மீ"
         :duration-day: 
@@ -626,16 +626,16 @@
         :pressure-hectopascal: 
           :one: "{0} ஹெ.பா."
           :other: "{0} ஹெ.பா."
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} பா.அங்."
           :other: "{0} பா.அங்."
         :pressure-millibar: 
           :one: "{0} மி.பா."
           :other: "{0} மி.பா."
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} பாத. மி.மீ."
           :other: "{0} பாத. மி.மீ."
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
@@ -672,7 +672,7 @@
         :acceleration-g-force: 
           :one: "{0} ஜி.ஃபோ."
           :other: "{0} ஜி.ஃபோ."
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :one: "{0} மீ/வி²"
           :other: "{0} மீ/வி²"
         :angle-arc-minute: 
@@ -732,18 +732,18 @@
         :concentr-mole: 
           :one: "{0} மோல்"
           :other: "{0} மோல்"
-        :concentr-part-per-million: 
-          :one: "{0} ப./மி."
-          :other: "{0} ப./மி."
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :one: "{0} ப./மி."
+          :other: "{0} ப./மி."
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :one: "{0} லி./100கி.மீ"
           :other: "{0} லி./100கி.மீ"
         :consumption-liter-per-kilometer: 
@@ -1036,7 +1036,7 @@
         :pressure-hectopascal: 
           :one: "{0} ஹெ.பாஸ்."
           :other: "{0} ஹெ.பாஸ்."
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :one: "{0} பாத. அங்."
           :other: "{0} பாத. அங்."
         :pressure-kilopascal: 
@@ -1048,13 +1048,13 @@
         :pressure-millibar: 
           :one: "{0} மி.பா."
           :other: "{0} மி.பா."
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :one: "{0} பாத. மி.மீ."
           :other: "{0} பாத. மி.மீ."
         :pressure-pascal: 
           :one: "{0} பா."
           :other: "{0} பா."
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
@@ -1084,7 +1084,7 @@
         :torque-newton-meter: 
           :one: "{0} நியூ.மீ"
           :other: "{0} நியூ.மீ"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :one: "{0} ப.அடி"
           :other: "{0} ப.அடி"
         :volume-acre-foot: 

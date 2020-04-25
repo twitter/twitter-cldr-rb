@@ -9,7 +9,7 @@
       :long: 
         :acceleration-g-force: 
           :other: "{0} G 力"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "每平方秒 {0} 公尺"
         :angle-arc-minute: 
           :other: "{0} 角分"
@@ -49,13 +49,13 @@
           :other: "每公升 {0} 毫莫耳"
         :concentr-mole: 
           :other: "{0} 莫耳"
-        :concentr-part-per-million: 
-          :other: "{0} 百萬分率"
         :concentr-percent: 
           :other: "{0}%"
         :concentr-permille: 
           :other: "{0}‰"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :other: "{0} 百萬分率"
+        :consumption-liter-per-100-kilometer: 
           :other: "每 100 公里 {0} 公升"
         :consumption-liter-per-kilometer: 
           :other: "每公里 {0} 公升"
@@ -243,7 +243,7 @@
           :other: "{0} 巴"
         :pressure-hectopascal: 
           :other: "{0} 百帕"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} 英寸汞柱"
         :pressure-kilopascal: 
           :other: "{0} 千帕"
@@ -251,11 +251,11 @@
           :other: "{0} 兆帕"
         :pressure-millibar: 
           :other: "{0} 毫巴"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0} 毫米汞柱"
         :pressure-pascal: 
           :other: "{0} 帕斯卡"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "每平方英寸 {0} 磅力"
         :speed-kilometer-per-hour: 
           :other: "每小時 {0} 公里"
@@ -275,7 +275,7 @@
           :other: "{0} 克耳文"
         :torque-newton-meter: 
           :other: "{0} 牛頓米"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} 磅英尺"
         :volume-acre-foot: 
           :other: "{0} 英畝英尺"
@@ -334,7 +334,7 @@
       :narrow: 
         :acceleration-g-force: 
           :other: "{0}G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0}m/s²"
         :angle-arc-minute: 
           :other: "{0}角分"
@@ -370,11 +370,11 @@
           :other: "{0}mg/dL"
         :concentr-millimole-per-liter: 
           :other: "{0}mmol/L"
-        :concentr-part-per-million: 
-          :other: "{0}ppm"
         :concentr-percent: 
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :other: "{0}ppm"
+        :consumption-liter-per-100-kilometer: 
           :other: "{0}升/100公里"
         :consumption-liter-per-kilometer: 
           :other: "{0}L/km"
@@ -529,13 +529,13 @@
           :other: "{0}瓦特"
         :pressure-hectopascal: 
           :other: "{0}百帕"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0}英吋汞柱"
         :pressure-millibar: 
           :other: "{0}毫巴"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0}mmHg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0}psi"
         :speed-kilometer-per-hour: 
           :other: "{0}公里/小時"
@@ -606,7 +606,7 @@
       :short: 
         :acceleration-g-force: 
           :other: "{0} G 力"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :other: "{0} 公尺/平方秒"
         :angle-arc-minute: 
           :other: "{0} 角分"
@@ -646,15 +646,15 @@
           :other: "{0} 毫莫耳/公升"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :other: "{0} 百萬分率"
         :concentr-percent: 
           :other: "{0}%"
         :concentr-permille: 
           :other: "{0}‰"
+        :concentr-permillion: 
+          :other: "{0} 百萬分率"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :other: "{0} 升/100 公里"
         :consumption-liter-per-kilometer: 
           :other: "{0} 升/公里"
@@ -856,7 +856,7 @@
           :other: "{0} 巴"
         :pressure-hectopascal: 
           :other: "{0} 百帕"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :other: "{0} 英寸汞柱"
         :pressure-kilopascal: 
           :other: "{0} kPa"
@@ -864,11 +864,11 @@
           :other: "{0} MPa"
         :pressure-millibar: 
           :other: "{0} 毫巴"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :other: "{0} 毫米汞柱"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :other: "{0} 磅力/平方英寸"
         :speed-kilometer-per-hour: 
           :other: "{0} 公里/小時"
@@ -888,7 +888,7 @@
           :other: "{0} K"
         :torque-newton-meter: 
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :other: "{0} 英畝英尺"

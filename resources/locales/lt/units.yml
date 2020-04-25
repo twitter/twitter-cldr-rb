@@ -12,7 +12,7 @@
           :many: "{0} laisvojo kritimo pagreičio"
           :one: "{0} laisvojo kritimo pagreitis"
           :other: "{0} laisvojo kritimo pagreičių"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :many: "{0} m/s²"
           :one: "{0} metras per kvadratinę sekundę"
@@ -112,11 +112,6 @@
           :many: "{0} molio"
           :one: "{0} molis"
           :other: "{0} molių"
-        :concentr-part-per-million: 
-          :few: "{0} milijoninės dalys"
-          :many: "{0} milijoninės dalies"
-          :one: "{0} milijoninė dalis"
-          :other: "{0} milijoninių dalių"
         :concentr-percent: 
           :few: "{0} %"
           :many: "{0} %"
@@ -127,7 +122,12 @@
           :many: "{0} ‰"
           :one: "{0} promilė"
           :other: "{0} promilė"
-        :consumption-liter-per-100kilometers: 
+        :concentr-permillion: 
+          :few: "{0} milijoninės dalys"
+          :many: "{0} milijoninės dalies"
+          :one: "{0} milijoninė dalis"
+          :other: "{0} milijoninių dalių"
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} litrai 100 kilometrų"
           :many: "{0} litro 100 kilometrų"
           :one: "{0} litras 100 kilometrų"
@@ -598,7 +598,7 @@
           :many: "{0} hektopaskalio"
           :one: "{0} hektopaskalis"
           :other: "{0} hektopaskalių"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} gyvsidabrio stulpelio coliai"
           :many: "{0} gyvsidabrio stulpelio colio"
           :one: "{0} gyvsidabrio stulpelio colis"
@@ -618,7 +618,7 @@
           :many: "{0} milibaro"
           :one: "{0} milibaras"
           :other: "{0} milibarų"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} gysidabrio stulpelio milimetrai"
           :many: "{0} gysidabrio stulpelio milimetro"
           :one: "{0} gysidabrio stulpelio milimetras"
@@ -628,7 +628,7 @@
           :many: "{0} paskalio"
           :one: "{0} paskalis"
           :other: "{0} paskalių"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} svarai kv. colyje"
           :many: "{0} svaro kv. colyje"
           :one: "{0} svaras kv. colyje"
@@ -678,7 +678,7 @@
           :many: "{0} niutonmetro"
           :one: "{0} niutonmetras"
           :other: "{0} niutonmetrų"
-        :torque-pound-foot: {}
+        :torque-pound-force-foot: {}
         :volume-acre-foot: 
           :few: "{0} pėdos akre"
           :many: "{0} pėdos akre"
@@ -820,7 +820,7 @@
           :many: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :many: "{0} m/s²"
           :one: "{0} m/s²"
@@ -875,7 +875,7 @@
           :many: "{0} %"
           :one: "{0} %"
           :other: "{0} %"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :many: "{0} l/100 km"
           :one: "{0} l/100 km"
@@ -1055,7 +1055,7 @@
           :many: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} inHg"
           :many: "{0} inHg"
           :one: "{0} inHg"
@@ -1065,12 +1065,12 @@
           :many: "{0} mbar"
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :many: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} lb in²"
           :many: "{0} lb in²"
           :one: "{0} lb in²"
@@ -1156,7 +1156,7 @@
           :many: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :many: "{0} m/s²"
           :one: "{0} m/s²"
@@ -1253,11 +1253,6 @@
           :other: "{0} mmol/l"
         :concentr-mole: 
           :other: "{0} mol"
-        :concentr-part-per-million: 
-          :few: "{0} ppm"
-          :many: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0} %"
           :many: "{0} %"
@@ -1268,9 +1263,14 @@
           :many: "{0} ‰"
           :one: "{0} ‰"
           :other: "{0} ‰"
+        :concentr-permillion: 
+          :few: "{0} ppm"
+          :many: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :many: "{0} l/100 km"
           :one: "{0} l/100 km"
@@ -1733,7 +1733,7 @@
           :many: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} inHg"
           :many: "{0} inHg"
           :one: "{0} inHg"
@@ -1747,14 +1747,14 @@
           :many: "{0} mbar"
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :many: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} lb in²"
           :many: "{0} lb in²"
           :one: "{0} lb in²"
@@ -1804,7 +1804,7 @@
           :many: "{0} N-m"
           :one: "{0} N-m"
           :other: "{0} N-m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :few: "{0} ft akre"

@@ -11,7 +11,7 @@
           :few: "{0} forță g"
           :one: "{0} forță g"
           :other: "{0} forță g"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} metri pe secundă la pătrat"
           :one: "{0} metru pe secundă la pătrat"
           :other: "{0} de metri pe secundă la pătrat"
@@ -91,10 +91,6 @@
           :few: "{0} moli"
           :one: "{0} mol"
           :other: "{0} de moli"
-        :concentr-part-per-million: 
-          :few: "{0} părți pe milion"
-          :one: "{0} parte pe milion"
-          :other: "{0} de părți pe milion"
         :concentr-percent: 
           :few: "{0} procente"
           :one: "{0} procent"
@@ -103,11 +99,15 @@
           :few: "{0} la mie"
           :one: "la mie"
           :other: "{0} la mie"
+        :concentr-permillion: 
+          :few: "{0} părți pe milion"
+          :one: "{0} parte pe milion"
+          :other: "{0} de părți pe milion"
         :concentr-permyriad: 
           :few: "{0} la zece mii"
           :one: "{0} la zece mii"
           :other: "{0} la zece mii"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} litri la suta de kilometri"
           :one: "{0} litru la suta de kilometri"
           :other: "{0} de litri la suta de kilometri"
@@ -488,7 +488,7 @@
           :few: "{0} hectopascali"
           :one: "{0} hectopascal"
           :other: "{0} de hectopascali"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} inchi coloană de mercur"
           :one: "{0} inch coloană de mercur"
           :other: "{0} de inchi coloană de mercur"
@@ -504,7 +504,7 @@
           :few: "{0} milibari"
           :one: "{0} milibar"
           :other: "{0} de milibari"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} milimetri coloană de mercur"
           :one: "{0} milimetru coloană de mercur"
           :other: "{0} de milimetri coloană de mercur"
@@ -512,7 +512,7 @@
           :few: "{0} pascali"
           :one: "{0} pascal"
           :other: "{0} de pascali"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} livre pe inch pătrat"
           :one: "{0} livră pe inch pătrat"
           :other: "{0} de livre pe inch pătrat"
@@ -552,7 +552,7 @@
           :few: "{0} newton metri"
           :one: "{0} newton metru"
           :other: "{0} de newton metri"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :few: "{0} livră-forță picioare"
           :one: "{0} livră-forță picior"
           :other: "{0} de livră-forță picioare"
@@ -665,7 +665,7 @@
           :few: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :one: "{0} m/s²"
           :other: "{0} m/s²"
@@ -709,7 +709,7 @@
           :few: "{0}%"
           :one: "{0}%"
           :other: "{0}%"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -889,16 +889,16 @@
           :few: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: {}
+        :pressure-inch-ofhg: {}
         :pressure-millibar: 
           :few: "{0} mb"
           :one: "{0} mb"
           :other: "{0} mb"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} psi"
           :one: "{0} psi"
           :other: "{0} psi"
@@ -948,7 +948,7 @@
           :few: "{0} G"
           :one: "{0} G"
           :other: "{0} G"
-        :acceleration-meter-per-second-squared: 
+        :acceleration-meter-per-square-second: 
           :few: "{0} m/s²"
           :one: "{0} m/s²"
           :other: "{0} m/s²"
@@ -1028,10 +1028,6 @@
           :few: "{0} moli"
           :one: "{0} mol"
           :other: "{0} moli"
-        :concentr-part-per-million: 
-          :few: "{0} ppm"
-          :one: "{0} ppm"
-          :other: "{0} ppm"
         :concentr-percent: 
           :few: "{0}%"
           :one: "{0}%"
@@ -1040,9 +1036,13 @@
           :few: "{0}‰"
           :one: "{0}‰"
           :other: "{0}‰"
+        :concentr-permillion: 
+          :few: "{0} ppm"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
-        :consumption-liter-per-100kilometers: 
+        :consumption-liter-per-100-kilometer: 
           :few: "{0} l/100 km"
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -1420,7 +1420,7 @@
           :few: "{0} hPa"
           :one: "{0} hPa"
           :other: "{0} hPa"
-        :pressure-inch-hg: 
+        :pressure-inch-ofhg: 
           :few: "{0} in Hg"
           :one: "{0} in Hg"
           :other: "{0} in Hg"
@@ -1436,13 +1436,13 @@
           :few: "{0} mbar"
           :one: "{0} mbar"
           :other: "{0} mbar"
-        :pressure-millimeter-of-mercury: 
+        :pressure-millimeter-ofhg: 
           :few: "{0} mm Hg"
           :one: "{0} mm Hg"
           :other: "{0} mm Hg"
         :pressure-pascal: 
           :other: "{0} Pa"
-        :pressure-pound-per-square-inch: 
+        :pressure-pound-force-per-square-inch: 
           :few: "{0} psi"
           :one: "{0} psi"
           :other: "{0} psi"
@@ -1482,7 +1482,7 @@
           :few: "{0} N⋅m"
           :one: "{0} N⋅m"
           :other: "{0} N⋅m"
-        :torque-pound-foot: 
+        :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :few: "{0} ac ft"

@@ -53,7 +53,7 @@ end
 
 task :update do
   klasses = TwitterCldr::Resources.importer_classes_for_ruby_engine
-  TwitterCldr::Resources::ImportResolver.new(klasses).import
+  TwitterCldr::Resources::ImportResolver.new(klasses, allow_missing_dependencies: true).import
 end
 
 task :add_locale, :locale do |_, args|

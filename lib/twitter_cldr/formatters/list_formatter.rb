@@ -54,7 +54,7 @@ module TwitterCldr
             result = result.localize.to_reordered_s(direction: :RTL)
           end
 
-          result.gsub!(/(\d+)/) { elements[$1.to_i] }
+          result.gsub!(/(\d)/) { elements[$1.to_i] }
           result
         else
           elements[0] || ""

@@ -10,10 +10,10 @@ module TwitterCldr
     class Hyphenator
       class UnsupportedLocaleError < StandardError; end
 
-      BASE_RESOURCE_PATH = %w(shared hyphenation)
+      BASE_RESOURCE_PATH = %w(shared hyphenation).freeze
       DEFAULT_LEFT_HYPHEN_MIN = 2
       DEFAULT_RIGHT_HYPHEN_MIN = 2
-      DEFAULT_NO_HYPHEN = %w(- ' ’)
+      DEFAULT_NO_HYPHEN = "-'’".freeze
 
       class << self
         def get(locale)
@@ -164,12 +164,12 @@ module TwitterCldr
 
       def left_hyphen_min
         @left_hyphen_min ||=
-          options.fetch(:lefthyphenmin, DEFAULT_LEFT_HYPHEN_MIN)
+          options.fetch(:lefthyphenmin, DEFAULT_LEFT_HYPHEN_MIN).to_i
       end
 
       def right_hyphen_min
         @right_hyphen_min ||=
-          options.fetch(:righthyphenmin, DEFAULT_RIGHT_HYPHEN_MIN)
+          options.fetch(:righthyphenmin, DEFAULT_RIGHT_HYPHEN_MIN).to_i
       end
 
       def no_hyphen

@@ -46,11 +46,13 @@ module TwitterCldr
           end
 
           next if line.empty?
-          next if line.start_with?('%')  # ignore comments
+
+          # ignore comments
+          next if line.start_with?('%') || line.start_with?('#')
 
           if line =~ /\A[A-Z]+/  # capitals
             option, value = line.split(' ')
-            options[option.downcase.to_sym] = value.to_i
+            options[option.downcase.to_sym] = value
             next
           end
 

@@ -39,6 +39,16 @@ describe TwitterCldr::Formatters::ListFormatter do
           expect(formatter.format(list, :"unit-narrow")).to eq("larry curly")
         end
       end
+
+      context 'with a Chinese list formatter' do
+        let(:formatter) { described_class.new(:zh) }
+
+        it 'formats correctly' do
+          expect(formatter.format(list)).to eq('larry和curly')
+          expect(formatter.format(list, :unit)).to eq('larrycurly')
+          expect(formatter.format(list, :"unit-narrow")).to eq('larrycurly')
+        end
+      end
     end
 
     context 'with three elements' do
@@ -61,6 +71,16 @@ describe TwitterCldr::Formatters::ListFormatter do
           expect(formatter.format(list)).to eq("larry, curly y moe")
           expect(formatter.format(list, :unit)).to eq("larry, curly y moe")
           expect(formatter.format(list, :"unit-narrow")).to eq("larry curly moe")
+        end
+      end
+
+      context 'with a Chinese list formatter' do
+        let(:formatter) { described_class.new(:zh) }
+
+        it 'formats correctly' do
+          expect(formatter.format(list)).to eq('larry、curly和moe')
+          expect(formatter.format(list, :unit)).to eq('larrycurlymoe')
+          expect(formatter.format(list, :"unit-narrow")).to eq('larrycurlymoe')
         end
       end
     end

@@ -81,9 +81,17 @@ describe TwitterCldr::Shared::Hyphenator do
       expect(hyphenator.hyphenate('  ')).to eq('  ')
     end
 
+    described_class.supported_locales.each do |locale|
+      word = 'antidisastablishmentarianism'
+
+      it "does not error for #{locale}" do
+        expect { described_class.get(locale).hyphenate(word) }.to_not raise_error
+      end
+    end
+
     context 'hunspell tests' do
       let(:options) do
-        { left_hyphen_min: 2, right_hyphen_min: 3, no_hyphen: %w(- ' ’) }
+        { left_hyphen_min: 2, right_hyphen_min: 3, no_hyphen: "-'’" }
       end
 
       it 'passes all hunspell tests' do

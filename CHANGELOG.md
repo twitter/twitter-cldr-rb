@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.0.1 (May 16th, 2020)
+* Fix Chinese list formatter (#233).
+* Fix `NoMethodError` thrown when attempting to hyphenate German (and other locales) text (#234).
+
 ### 6.0.0 (April 25th, 2020)
 * Upgrade to CLDR v37, ICU 67.1, and Unicode 13.0.
 

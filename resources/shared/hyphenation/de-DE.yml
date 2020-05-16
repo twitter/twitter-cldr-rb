@@ -1,42 +1,10 @@
 ---
 :options:
-  :compoundlefthyphenmin: 2
-  :compoundrighthyphenmin: 2
-  :nohyphen: 0
-  :nextlevel: 0
+  :compoundlefthyphenmin: '2'
+  :compoundrighthyphenmin: '2'
+  :nohyphen: "-,'"
+  :nextlevel: 
 :rules:
-- "####################################################################################"
-- '# This is the hyphenation file "hyph_de_DE.dic" of the German dictionary           #'
-- "# according to the reform of 2006-08-01\t(i.e. reformed or new spelling)            #"
-- "#                                                                                  #"
-- "# Language: German (de DE)                                                         #"
-- "#                                                                                  #"
-- "# Version:  2017-01-12                                                             #"
-- "#           New: using the COMPOUND feature for improved hyphenation               #"
-- "#           New: list with over 69,000 words and compounds by Karl Zeiler          #"
-- "#                                                                                  #"
-- "# Origin:   Based on the TeX hyphenation tables\t\"dehyphn.tex\", revision level
-  31.  #"
-- "#           http://www.ctan.org/tex-archive/language/hyphenation/dehyphn.tex       #"
-- "#           The TeX hyphenation tables are released under the LaTeX Project        #"
-- "#           Public License (LPPL)                                                  #"
-- "#                                                                                  #"
-- "# License:  OpenOffice.org Adaptions of this package are licensed under the        #"
-- "#           GNU Lesser General Public License (LGPL 2 or later) and are under      #"
-- "#           Copyright by                                                           #"
-- "#                                                                                  #"
-- "# Authors:  conversion author: Marco Huggenberger <marco@by-night.ch>              #"
-- "#           revised conversion: Daniel Naber <naber@danielnaber.de>                #"
-- "#           improvements: Karl Zeiler <karl.zeiler@t-online.de>                    #"
-- "#                                                                                  #"
-- "# Please note, this dictionary is based on syllable matching patterns              #"
-- "# and thus should be suitable under other variations of German                     #"
-- "#                                                                                  #"
-- "# HYPH de DE hyph_de_DE                                                            #"
-- "# HYPH de AT hyph_de_AT                                                            #"
-- "# HYPH de CH hyph_de_CH                                                            #"
-- "####################################################################################"
-- "# Zusammengesetzte adverbiale Präfixe"
 - da1her
 - da1her1ab1
 - da1her1an1
@@ -87,7 +55,6 @@
 - vor1an1
 - vor1weg1
 - weg
-- "# Zusammensetzungen"
 - aar1gau
 - aar1gaus
 - ab1ächze
@@ -73157,7 +73124,6 @@
 - mä1k
 - mä6kl8
 - 1män
-- "#mä1s"
 - mäs1t
 - mä5tr6
 - mäu4s3c
@@ -76640,7 +76606,6 @@
 - ol2l1ernt
 - ol1ler
 - olle2rn
-- "# NEUE PATTERNS"
 - ägä1
 - äl1t
 - ö2s1ti
@@ -76817,7 +76782,6 @@
 - wäl1s
 - wal1s
 - yk1ti
-- "# Ausnahmen - Trennung von -ie-"
 - ".3flo1ri"
 - ".3flo1ri2er."
 - ".3ge1ne1ri"
@@ -76853,7 +76817,6 @@
 - u1ri
 - vr2ie
 - vri6er
-- "# Einsilbler mit au/äu/ck/sst/ß/ä/ö/ü"
 - a1cke
 - a1cku
 - a4ck1t
@@ -76921,7 +76884,6 @@
 - usste1r
 - üs4s1t
 - üsste1r
-- "# Sonderfälle auf -aue, -äue, -eie, -eue,"
 - au1e
 - au5e1ne
 - au5e1nem
@@ -76962,7 +76924,6 @@
 - sau5e1re
 - sau7e1ren
 - sauere1r
-- "# Wörter auf -able, -al, -ar, -är, -ät, -av, -iv, -ös"
 - a1r
 - are1r
 - arere1r
@@ -76997,7 +76958,6 @@
 - r1nö
 - ri1nä
 - ä1nö
-- "# Vokalsilben"
 - bi1a1l
 - bi5a1ne
 - bi1a1ni
@@ -77340,7 +77300,6 @@
 - zo1i1ku
 - zo1i1sc
 - zu3e1la
-- "# Ausnahmen und Fremdwörter: Englisch - Französisch - Italienisch"
 - ".ab1st2er1be."
 - ".ab2lep1sie."
 - ".aber1de2en."

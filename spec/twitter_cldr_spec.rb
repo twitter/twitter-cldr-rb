@@ -63,6 +63,7 @@ describe TwitterCldr do
 
     it "should leave known locales alone" do
       expect(TwitterCldr.convert_locale(:fr)).to eq(:fr)
+      expect(TwitterCldr.convert_locale(:'fr-ca')).to eq(:'fr-CA')
       expect(TwitterCldr.convert_locale(:'fr-CA')).to eq(:'fr-CA')
       expect(TwitterCldr.convert_locale(:'es-419')).to eq(:'es-419')
     end
@@ -75,7 +76,7 @@ describe TwitterCldr do
     it "shouldn't blowup on bad input" do
       expect(TwitterCldr.convert_locale(5)).to eq(5)
       expect(TwitterCldr.convert_locale([])).to eq([])
-      expect(TwitterCldr.convert_locale("")).to eq(:"")
+      expect(TwitterCldr.convert_locale('')).to eq(:'')
       expect(TwitterCldr.convert_locale(nil)).to eq(nil)
     end
   end

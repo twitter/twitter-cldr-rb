@@ -49,6 +49,14 @@ describe TwitterCldr::Shared::LikelySubtags do
       verify_subtags(locale, 'en', 'Latn', 'US')
     end
 
+    it 'disambiguates between a language and region with the same code' do
+      locale = described_class.locale_for('und-CH')
+      verify_subtags(locale, 'de', 'Latn', 'CH')
+
+      locale = described_class.locale_for('und_Arab_AF')
+      verify_subtags(locale, 'ar', 'Arab', 'AF')
+    end
+
     it "raises an error if the subtags can't be identified" do
       locale = TwitterCldr::Shared::Locale.new('xz')
 

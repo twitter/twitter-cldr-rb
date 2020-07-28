@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.0.2 (July 28th, 2020)
+* Fix issue causing incorrect maximization of locales via likely subtags data.
+  - Region codes were being incorrectly identified as language codes, eg CH (Switzerland) was being identified as ch (Chamorro), and AF (Afghanistan) was being identified as af (Afrikaans). This led to und_CH ⇒ ch_Latn_GA instead of ⇒ de_Latn_CH.
+
 ### 6.0.1 (May 16th, 2020)
 * Fix Chinese list formatter (#233).
 * Fix `NoMethodError` thrown when attempting to hyphenate German (and other locales) text (#234).

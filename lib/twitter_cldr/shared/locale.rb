@@ -104,22 +104,24 @@ module TwitterCldr
             types << :script   if script?(subtag)
             types << :region   if region?(subtag)
             types << :variant  if variant?(subtag)
+
+            types << :language if language?(normalize_subtag(subtag, :language))
+            types << :script   if script?(normalize_subtag(subtag, :script))
+            types << :region   if region?(normalize_subtag(subtag, :region))
+            types << :variant  if variant?(normalize_subtag(subtag, :variant))
           end
         end
 
         def language?(subtag)
-          subtag = normalize_subtag(subtag, :language)
           languages.include?(subtag) || language_aliases.include?(subtag.to_sym)
         end
 
         def script?(subtag)
-          subtag = normalize_subtag(subtag, :script)
           scripts.include?(subtag) ||
             !!PropertyValueAliases.long_alias_for('sc', subtag)
         end
 
         def region?(subtag)
-          subtag = normalize_subtag(subtag, :region)
           territories.include?(subtag) || region_aliases.include?(subtag.to_sym)
         end
 

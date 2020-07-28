@@ -114,7 +114,16 @@ module TwitterCldr
     def convert_locale(locale)
       locale = locale.to_sym if locale.respond_to?(:to_sym)
       locale = lowercase_locales_map.fetch(locale, locale)
-      TWITTER_LOCALE_MAP.fetch(locale, locale)
+      locale = TWITTER_LOCALE_MAP.fetch(locale, locale)
+
+      unless TwitterCldr.supported_locale?(locale)
+        language = locale.split('-')[0]
+        if TwitterCldr.supported_locale?(language)
+          locale = language
+        end
+      end
+
+      locale
     end
 
     def twitter_locale(locale)

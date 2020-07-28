@@ -55,6 +55,17 @@ describe TwitterCldr do
       expect(TwitterCldr.convert_locale(:'zh-tw')).to eq(:'zh-Hant')
     end
 
+    it "should fallback to language if locale is unsupported but language is" do
+      expect(TwitterCldr.convert_locale(:'pt-BR')).to eq(:pt)
+      expect(TwitterCldr.convert_locale(:'zh-Hans-CN')).to eq(:zh)
+      expect(TwitterCldr.convert_locale(:'zz-ZZ')).to eq(:'zz-ZZ')
+    end
+
+    it "should leave known locales alone" do
+      expect(TwitterCldr.convert_locale(:fr)).to eq(:fr)
+      expect(TwitterCldr.convert_locale(:'fr-CA')).to eq(:'fr-CA')
+    end
+
     it "should leave unknown locales alone" do
       expect(TwitterCldr.convert_locale(:blarg)).to eq(:blarg)
     end

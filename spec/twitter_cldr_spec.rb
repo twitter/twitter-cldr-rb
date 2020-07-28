@@ -53,21 +53,30 @@ describe TwitterCldr do
       expect(TwitterCldr.convert_locale(:msa)).to eq(:ms)
       expect(TwitterCldr.convert_locale(:'zh-cn')).to eq(:zh)
       expect(TwitterCldr.convert_locale(:'zh-tw')).to eq(:'zh-Hant')
+      expect(TwitterCldr.convert_locale(:'zh-TW')).to eq(:'zh-Hant')
     end
 
     it "should fallback to language if locale is unsupported but language is" do
       expect(TwitterCldr.convert_locale(:'pt-BR')).to eq(:pt)
       expect(TwitterCldr.convert_locale(:'zh-Hans-CN')).to eq(:zh)
-      expect(TwitterCldr.convert_locale(:'zz-ZZ')).to eq(:'zz-ZZ')
     end
 
     it "should leave known locales alone" do
       expect(TwitterCldr.convert_locale(:fr)).to eq(:fr)
       expect(TwitterCldr.convert_locale(:'fr-CA')).to eq(:'fr-CA')
+      expect(TwitterCldr.convert_locale(:'es-419')).to eq(:'es-419')
     end
 
     it "should leave unknown locales alone" do
       expect(TwitterCldr.convert_locale(:blarg)).to eq(:blarg)
+      expect(TwitterCldr.convert_locale(:'zz-ZZ')).to eq(:'zz-ZZ')
+    end
+
+    it "shouldn't blowup on bad input" do
+      expect(TwitterCldr.convert_locale(5)).to eq(5)
+      expect(TwitterCldr.convert_locale([])).to eq([])
+      expect(TwitterCldr.convert_locale("")).to eq(:"")
+      expect(TwitterCldr.convert_locale(nil)).to eq(nil)
     end
   end
 

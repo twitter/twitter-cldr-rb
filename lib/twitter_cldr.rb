@@ -112,18 +112,25 @@ module TwitterCldr
     end
 
     def convert_locale(locale)
-      locale = locale.to_sym if locale.respond_to?(:to_sym)
-      locale = locale.downcase
-      locale = TWITTER_LOCALE_MAP.fetch(locale, locale)
+      locale = explicit_convert_locale(locale)
 
       unless TwitterCldr.supported_locale?(locale)
-        language = locale.split('-')[0]
+        language = locale.to_s.split('-')[0]
+        language = language.to_sym if language.respond_to?(:to_sym)
         if TwitterCldr.supported_locale?(language)
           locale = language
         end
       end
 
       locale
+    end
+
+    def explicit_convert_locale(locale)
+      return locale unless (locale.is_a?(String) || locale.is_a?(Symbol))
+
+      locale = locale.to_sym
+      locale = lowercase_locales_map.fetch(locale, locale)
+      TWITTER_LOCALE_MAP.fetch(locale.downcase, locale)
     end
 
     def twitter_locale(locale)
@@ -136,7 +143,7 @@ module TwitterCldr
     end
 
     def supported_locale?(locale)
-      !!locale && supported_locales.include?(convert_locale(locale))
+      !!locale && supported_locales.include?(explicit_convert_locale(locale))
     end
 
     protected
@@ -155,6 +162,14 @@ module TwitterCldr
         return result if result
       end
       nil
+    end
+
+    def lowercase_locales_map
+      @lowercase_locales_map ||= supported_locales.inject({}) do |memo, locale|
+        lowercase = locale.to_s.downcase.to_sym
+        memo[lowercase] = locale unless lowercase == locale
+        memo
+      end
     end
 
   end

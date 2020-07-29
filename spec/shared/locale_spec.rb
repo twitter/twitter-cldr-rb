@@ -136,7 +136,25 @@ describe TwitterCldr::Shared::Locale do
     end
   end
 
-  context 'with a locale instance' do
+  context 'with a locale with interesting ancestry' do
+    let(:locale) { described_class.new('es', nil, 'CR') }
+
+    describe '#ancestor_chain' do
+      it 'identifies the correct ancestors' do
+        expect(locale.ancestor_chain.map(&:dasherized)).to eq(
+          ['es-CR', 'es-419', 'es']
+        )
+      end
+    end
+
+    describe '#max_supported' do
+      it 'identifies the correct supported parent locale' do
+        expect(locale.max_supported.dasherized).to eq('es-419')
+      end
+    end
+  end
+
+  context 'with a locale instance (Korean)' do
     let(:locale) { described_class.new('ko', nil, 'KR') }
 
     describe '#full_script' do
@@ -210,6 +228,20 @@ describe TwitterCldr::Shared::Locale do
         expect(locale.maximize.permutations).to eq(
           %w(ko_Kore_KR ko_Kore ko_KR ko)
         )
+      end
+    end
+
+    describe '#ancestor_chain' do
+      it 'identifies the correct ancestors' do
+        expect(locale.ancestor_chain.map(&:dasherized)).to eq(
+          ['ko-KR', 'ko']
+        )
+      end
+    end
+
+    describe '#max_supported' do
+      it 'identifies the correct supported locale' do
+        expect(locale.max_supported.dasherized).to eq('ko')
       end
     end
   end

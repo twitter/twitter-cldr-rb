@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'set'
+
 module TwitterCldr
   module Shared
     class Locale
@@ -209,6 +211,10 @@ module TwitterCldr
           @validity_resource ||=
             TwitterCldr.get_resource('shared', 'validity_data')[:validity_data]
         end
+
+        def parent_locales
+          @parent_locales ||= TwitterCldr.get_resource('shared', 'parent_locales')
+        end
       end
 
       attr_accessor :language, :script, :region, :variants
@@ -239,11 +245,9 @@ module TwitterCldr
 
       def supported
         @supported ||= begin
-          found = permutations('-').find do |perm|
-            TwitterCldr.supported_locale?(perm)
+          ancestor_chain.sort.find do |loc|
+            TwitterCldr.supported_locale?(loc.dasherized)
           end
-
-          self.class.new(found) if found
         end
       end
 
@@ -271,6 +275,52 @@ module TwitterCldr
         ]
 
         perms.uniq
+      end
+
+      def ==(other)
+        language == other.language &&
+          script == other.script &&
+          region == other.region &&
+          variants == other.variants
+      end
+
+      alias eql? ==
+
+      def hash
+        to_a.hash
+      end
+
+      def sort_key
+        k = 0
+        k += 3 if language
+        k += 2 if script
+        k += 1 if region
+        k
+      end
+
+      def <=>(other)
+        other.sort_key <=> sort_key
+      end
+
+      def ancestor_chain
+        ancestry = [self]
+        remaining = [self]
+
+        until remaining.empty?
+          locale = remaining.pop
+
+          if parent = self.class.send(:parent_locales)[locale.to_s]
+            parent = self.class.parse(parent)
+            ancestry << parent
+            remaining << parent
+          else
+            parents = locale.permutations.map { |p| self.class.parse(p) }
+            remaining += parents - ancestry
+            ancestry += parents - ancestry
+          end
+        end
+
+        ancestry
       end
 
     end

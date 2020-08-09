@@ -141,6 +141,11 @@ namespace :update do
     TwitterCldr::Resources::CasefolderClassGenerator.new.import
   end
 
+  desc 'Import parent locale data'
+  task :parent_locales do
+    TwitterCldr::Resources::ParentLocalesImporter.new.import
+  end
+
   desc 'Import postal codes resource'
   task :postal_codes do
     TwitterCldr::Resources::PostalCodesImporter.new.import

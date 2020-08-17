@@ -10,8 +10,8 @@ describe TwitterCldr::Shared::Numbers do
     let(:symbols) { { nan: 'NaN', minus_sign: '-' } }
 
     it 'returns numerical symbols for default locale' do
-      allow(TwitterCldr).to receive(:locale).and_return(:jp)
-      allow(TwitterCldr).to receive(:get_locale_resource).with(:jp, :numbers).and_return(jp: { numbers: { symbols: symbols } })
+      allow(TwitterCldr).to receive(:locale).and_return(:ja)
+      allow(TwitterCldr).to receive(:get_locale_resource).with(:ja, :numbers).and_return(ja: { numbers: { symbols: symbols } })
       expect(described_class.symbols).to eq(symbols)
     end
 

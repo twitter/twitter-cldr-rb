@@ -1,5 +1,10 @@
 # TwitterCldr Changelog
 
+### 6.1.0 (August 18th, 2020)
+*  Use likely subtags data to supplement locale fallback logic (#236, @mkaplan9)
+  - `zh-Hant-TW` should fall back to `zh-Hant`, not `zh`.
+  - `es-CR` should fall back to `es-419`, not `es`.
+
 ### 6.0.2 (July 28th, 2020)
 * Fix issue causing incorrect maximization of locales via likely subtags data.
   - Region codes were being incorrectly identified as language codes, eg CH (Switzerland) was being identified as ch (Chamorro), and AF (Afghanistan) was being identified as af (Afrikaans). This led to und_CH ⇒ ch_Latn_GA instead of ⇒ de_Latn_CH.

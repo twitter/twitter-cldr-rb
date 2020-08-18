@@ -28,7 +28,7 @@ describe TwitterCldr::Shared::Calendar do
     end
 
     it 'returns calendar for a specific locale' do
-      expect(described_class.new(:jp).locale).to eq(:jp)
+      expect(described_class.new(:jp).locale).to eq(:ja)
     end
 
     it 'uses TwitterCldr.convert_locale' do

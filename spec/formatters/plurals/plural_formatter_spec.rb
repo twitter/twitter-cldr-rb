@@ -195,7 +195,7 @@ describe TwitterCldr::Formatters::PluralFormatter do
 
   describe '#pluralization_rule' do
     it 'delegates pluralization rule fetching to Rules.rule_for method' do
-      expect(TwitterCldr::Formatters::Plurals::Rules).to receive(:rule_for).with(42, :jp).and_return('result')
+      expect(TwitterCldr::Formatters::Plurals::Rules).to receive(:rule_for).with(42, :ja).and_return('result')
       expect(described_class.new(:jp).send(:pluralization_rule, 42)).to eq('result')
     end
   end

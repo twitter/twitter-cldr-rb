@@ -112,9 +112,28 @@ module TwitterCldr
     end
 
     def convert_locale(locale)
-      locale = locale.to_sym if locale.respond_to?(:to_sym)
+      locale = normalize_locale(locale)
+
+      unless supported_locale?(locale)
+        loc = TwitterCldr::Shared::Locale.parse(locale)
+        max_supported = loc.max_supported
+
+        if loc.dasherized == 'und' || !max_supported
+          return locale
+        end
+
+        locale = normalize_locale(max_supported.dasherized)
+      end
+
+      locale
+    end
+
+    def normalize_locale(locale)
+      return locale unless (locale.is_a?(String) || locale.is_a?(Symbol))
+
+      locale = locale.to_sym
       locale = lowercase_locales_map.fetch(locale, locale)
-      TWITTER_LOCALE_MAP.fetch(locale, locale)
+      TWITTER_LOCALE_MAP.fetch(locale.downcase, locale)
     end
 
     def twitter_locale(locale)
@@ -127,7 +146,7 @@ module TwitterCldr
     end
 
     def supported_locale?(locale)
-      !!locale && supported_locales.include?(convert_locale(locale))
+      !!locale && supported_locales.include?(normalize_locale(locale))
     end
 
     protected

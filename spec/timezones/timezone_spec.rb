@@ -24,7 +24,13 @@ describe 'Timezones' do
 
   fast_locales = [:en, :es, :de, :ja, :ko, :fr, :ru, :ar, :he, :fi]
 
-  TwitterCldr.supported_locales.each do |locale|
+  locales = if ENV['LOCALES']
+    ENV['LOCALES'].split(',').map { |loc| loc.strip.to_sym }
+  else
+    TwitterCldr.supported_locales
+  end
+
+  locales.each do |locale|
     locale_name = locale.localize.as_language_code || locale.to_s
 
     context "timezones in #{locale_name}", slow: !fast_locales.include?(locale) do

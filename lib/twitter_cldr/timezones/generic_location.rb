@@ -8,6 +8,7 @@ module TwitterCldr
     class GenericLocation < Location
       DEFAULT_CITY_EXCLUSION_PATTERN = /Etc\/.*|SystemV\/.*|.*\/Riyadh8[7-9]/
       DST_CHECK_RANGE = 184 * 24 * 60 * 60
+      UNKNOWN_DEFAULT = 'Unknown'.freeze
       FORMATS = [
         :generic_location,
         :generic_short,
@@ -159,7 +160,11 @@ module TwitterCldr
       end
 
       def exemplar_city
-        @exemplar_city ||= timezone_data[:city] || default_exemplar_city || unknown_city
+        @exemplar_city ||=
+          timezone_data[:city] ||
+          default_exemplar_city ||
+          unknown_city ||
+          UNKNOWN_DEFAULT
       end
 
       def tz_name_for(fmt, flavor)

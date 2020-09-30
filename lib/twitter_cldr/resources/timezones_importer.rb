@@ -103,6 +103,8 @@ module TwitterCldr
         def formats
           @formats ||= doc.xpath('ldml/dates/timeZoneNames/*').inject({}) do |result, format|
             if format.name.end_with?('Format')
+              next if unconfirmed_draft?(format)
+
               underscored_name = format.name.gsub(/([a-z])([A-Z])/, '\1_\2').downcase + 's'
               result[underscored_name] ||= {}
 
@@ -128,7 +130,9 @@ module TwitterCldr
             short = nodes_to_hash(zone.xpath('short/*'))
             result[type][:short] = short unless short.empty?
             city = zone.xpath('exemplarCity').first
-            result[type][:city] = city.content if city
+            if city && !unconfirmed_draft?(city)
+              result[type][:city] = city.content
+            end
             result
           end
         end
@@ -153,6 +157,12 @@ module TwitterCldr
 
             result
           end
+        end
+
+        def unconfirmed_draft?(node)
+          node &&
+            node.attributes['draft'] &&
+            node.attributes['draft'].value == 'unconfirmed'
         end
 
         def doc

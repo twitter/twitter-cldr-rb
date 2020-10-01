@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.2.0 (October 1st, 2020)
+* Add support for Esperanto (#238, @viroulep).
+
 ### 6.1.0 (August 18th, 2020)
 *  Use likely subtags data to supplement locale fallback logic (#236, @mkaplan9)
   - `zh-Hant-TW` should fall back to `zh-Hant`, not `zh`.

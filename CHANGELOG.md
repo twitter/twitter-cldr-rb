@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.3.0 (October 28th, 2020)
+* Add support for Kazakh (#239, @viroulep).
+
 ### 6.2.0 (October 1st, 2020)
 * Add support for Esperanto (#238, @viroulep).
 

@@ -170,6 +170,10 @@ module TwitterCldr
           end
         end
 
+        def child_count
+          @children.size
+        end
+
       end
 
     end

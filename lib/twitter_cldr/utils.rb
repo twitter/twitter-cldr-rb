@@ -14,6 +14,7 @@ module TwitterCldr
     autoload :ScriptDetector,        'twitter_cldr/utils/script_detector'
     autoload :ScriptDetectionResult, 'twitter_cldr/utils/script_detector'
     autoload :Trie,                  'twitter_cldr/utils/trie'
+    autoload :TrieSerializer,        'twitter_cldr/utils/trie_serializer'
     autoload :YAML,                  'twitter_cldr/utils/yaml'
 
     class << self

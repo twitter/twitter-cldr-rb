@@ -14,6 +14,9 @@ group :development, :test do
   # let's test and develop against that
   gem 'tzinfo', '< 2'
   gem 'tzinfo-data', '= 1.2019.3'  # keep in sync with ICU
+
+  gem 'brotli'
+  gem 'ruby-xz'
 end
 
 group :development do

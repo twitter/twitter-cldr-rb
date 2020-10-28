@@ -1,0 +1,653 @@
+--- 
+:kk: 
+  :currencies: 
+    :AED: 
+      :one: "БАӘ дирхамы"
+      :other: "БАӘ дирхамы"
+      :symbol: AED
+    :AFN: 
+      :one: "Ауғанстан афганиі"
+      :other: "Ауғанстан афганиі"
+      :symbol: AFN
+    :ALL: 
+      :one: "Албания легі"
+      :other: "Албания легі"
+      :symbol: ALL
+    :AMD: 
+      :one: "Армения драмы"
+      :other: "Армения драмы"
+      :symbol: AMD
+    :ANG: 
+      :one: "Нидерланд антиль гульдені"
+      :other: "Нидерланд антиль гульдені"
+      :symbol: ANG
+    :AOA: 
+      :one: "Ангола кванзасы"
+      :other: "Ангола кванзасы"
+      :symbol: AOA
+    :ARS: 
+      :one: "Аргентина песосы"
+      :other: "Аргентина песосы"
+      :symbol: ARS
+    :AUD: 
+      :one: "Австралия доллары"
+      :other: "Австралия доллары"
+      :symbol: A$
+    :AWG: 
+      :one: "Аруба флорині"
+      :other: "Аруба флорині"
+      :symbol: AWG
+    :AZN: 
+      :one: "Әзірбайжан манаты"
+      :other: "Әзірбайжан манаты"
+      :symbol: AZN
+    :BAM: 
+      :one: "Босния және Герцеговина айырбасталмалы маркасы"
+      :other: "Босния және Герцеговина айырбасталмалы маркасы"
+      :symbol: BAM
+    :BBD: 
+      :one: "Барбадос доллары"
+      :other: "Барбадос доллары"
+      :symbol: BBD
+    :BDT: 
+      :one: "Бангладеш такасы"
+      :other: "Бангладеш такасы"
+      :symbol: BDT
+    :BGN: 
+      :one: "Болгария леві"
+      :other: "Болгария леві"
+      :symbol: BGN
+    :BHD: 
+      :one: "Бахрейн динары"
+      :other: "Бахрейн динары"
+      :symbol: BHD
+    :BIF: 
+      :one: "Бурунди франкі"
+      :other: "Бурунди франкі"
+      :symbol: BIF
+    :BMD: 
+      :one: "Бермуд доллары"
+      :other: "Бермуд доллары"
+      :symbol: BMD
+    :BND: 
+      :one: "Бруней доллары"
+      :other: "Бруней доллары"
+      :symbol: BND
+    :BOB: 
+      :one: "Боливия боливианосы"
+      :other: "Боливия боливианосы"
+      :symbol: BOB
+    :BRL: 
+      :one: "Бразилия реалы"
+      :other: "Бразилия реалы"
+      :symbol: R$
+    :BSD: 
+      :one: "Багам доллары"
+      :other: "Багам доллары"
+      :symbol: BSD
+    :BTN: 
+      :one: "Бутан нгултрумы"
+      :other: "Бутан нгултрумы"
+      :symbol: BTN
+    :BWP: 
+      :one: "Ботсвана пуласы"
+      :other: "Ботсвана пуласы"
+      :symbol: BWP
+    :BYN: 
+      :one: "Беларусь рублі"
+      :other: "Беларусь рублі"
+      :symbol: BYN
+    :BYR: 
+      :one: "Беларусь рублі (2000–2016)"
+      :other: "Беларусь рублі (2000–2016)"
+      :symbol: BYR
+    :BZD: 
+      :one: "Белиз доллары"
+      :other: "Белиз доллары"
+      :symbol: BZD
+    :CAD: 
+      :one: "Канада доллары"
+      :other: "Канада доллары"
+      :symbol: CA$
+    :CDF: 
+      :one: "Конго франкі"
+      :other: "Конго франкі"
+      :symbol: CDF
+    :CHF: 
+      :one: "Швейцария франкі"
+      :other: "Швейцария франкі"
+      :symbol: CHF
+    :CLP: 
+      :one: "Чили песосы"
+      :other: "Чили песосы"
+      :symbol: CLP
+    :CNH: 
+      :one: "Қытай юані (офшор)"
+      :other: "Қытай юані (офшор)"
+      :symbol: CNH
+    :CNY: 
+      :one: "Қытай юані"
+      :other: "Қытай юані"
+      :symbol: CN¥
+    :COP: 
+      :one: "Колумбия песосы"
+      :other: "Колумбия песосы"
+      :symbol: COP
+    :CRC: 
+      :one: "Коста-Рика колоны"
+      :other: "Коста-Рика колоны"
+      :symbol: CRC
+    :CUC: 
+      :one: "Куба айырбасталмалы песосы"
+      :other: "Куба айырбасталмалы песосы"
+      :symbol: CUC
+    :CUP: 
+      :one: "Куба песосы"
+      :other: "Куба песосы"
+      :symbol: CUP
+    :CVE: 
+      :one: "Кабо-Верде эскудосы"
+      :other: "Кабо-Верде эскудосы"
+      :symbol: CVE
+    :CZK: 
+      :one: "Чехия кронасы"
+      :other: "Чехия кронасы"
+      :symbol: CZK
+    :DJF: 
+      :one: "Джибути франкі"
+      :other: "Джибути франкі"
+      :symbol: DJF
+    :DKK: 
+      :one: "Дат кроны"
+      :other: "Дат кроны"
+      :symbol: DKK
+    :DOP: 
+      :one: "Доминикан песосы"
+      :other: "Доминикан песосы"
+      :symbol: DOP
+    :DZD: 
+      :one: "Алжир динары"
+      :other: "Алжир динары"
+      :symbol: DZD
+    :EGP: 
+      :one: "Мысыр фунты"
+      :other: "Мысыр фунты"
+      :symbol: EGP
+    :ERN: 
+      :one: "Эритрея накфасы"
+      :other: "Эритрея накфасы"
+      :symbol: ERN
+    :ESP: 
+      :symbol: ₧
+    :ETB: 
+      :one: "Эфиопия быры"
+      :other: "Эфиопия быры"
+      :symbol: ETB
+    :EUR: 
+      :one: еуро
+      :other: еуро
+      :symbol: €
+    :FJD: 
+      :one: "Фиджи доллары"
+      :other: "Фиджи доллары"
+      :symbol: FJD
+    :FKP: 
+      :one: "Фолкленд аралдарының фунты"
+      :other: "Фолкленд аралдарының фунты"
+      :symbol: FKP
+    :GBP: 
+      :one: "Британдық фунт"
+      :other: "Британдық фунт"
+      :symbol: £
+    :GEL: 
+      :one: "Грузия лариі"
+      :other: "Грузия лариі"
+      :symbol: GEL
+    :GHS: 
+      :one: "Гана седиі"
+      :other: "Гана седиі"
+      :symbol: GHS
+    :GIP: 
+      :one: "Гибралтар фунты"
+      :other: "Гибралтар фунты"
+      :symbol: GIP
+    :GMD: 
+      :one: "Гамбия даласиі"
+      :other: "Гамбия даласиі"
+      :symbol: GMD
+    :GNF: 
+      :one: "Гвинея франкі"
+      :other: "Гвинея франкі"
+      :symbol: GNF
+    :GTQ: 
+      :one: "Гватемала кетсалі"
+      :other: "Гватемала кетсалі"
+      :symbol: GTQ
+    :GYD: 
+      :one: "Гайана доллары"
+      :other: "Гайана доллары"
+      :symbol: GYD
+    :HKD: 
+      :one: "Гонконг доллары"
+      :other: "Гонконг доллары"
+      :symbol: HK$
+    :HNL: 
+      :one: "Гондурас лемпирасы"
+      :other: "Гондурас лемпирасы"
+      :symbol: HNL
+    :HRK: 
+      :one: "Хорватия кунасы"
+      :other: "Хорватия кунасы"
+      :symbol: HRK
+    :HTG: 
+      :one: "Гаити гурды"
+      :other: "Гаити гурды"
+      :symbol: HTG
+    :HUF: 
+      :one: "Венгрия форинті"
+      :other: "Венгрия форинті"
+      :symbol: HUF
+    :IDR: 
+      :one: "Индонезия рупиясы"
+      :other: "Индонезия рупиясы"
+      :symbol: IDR
+    :ILS: 
+      :one: "Израиль жаңа шекелі"
+      :other: "Израиль жаңа шекелі"
+      :symbol: ₪
+    :INR: 
+      :one: "Үндістан рупиясы"
+      :other: "Үндістан рупиясы"
+      :symbol: ₹
+    :IQD: 
+      :one: "Ирак динары"
+      :other: "Ирак динары"
+      :symbol: IQD
+    :IRR: 
+      :one: "Иран риалы"
+      :other: "Иран риалы"
+      :symbol: IRR
+    :ISK: 
+      :one: "Исландия кронасы"
+      :other: "Исландия кронасы"
+      :symbol: ISK
+    :JMD: 
+      :one: "Ямайка доллары"
+      :other: "Ямайка доллары"
+      :symbol: JMD
+    :JOD: 
+      :one: "Иордания динары"
+      :other: "Иордания динары"
+      :symbol: JOD
+    :JPY: 
+      :one: "Жапония иенасы"
+      :other: "Жапония иенасы"
+      :symbol: JP¥
+    :KES: 
+      :one: "Кения шиллингі"
+      :other: "Кения шиллингі"
+      :symbol: KES
+    :KGS: 
+      :one: "Қырғызстан сомы"
+      :other: "Қырғызстан сомы"
+      :symbol: KGS
+    :KHR: 
+      :one: "Камбоджа риелі"
+      :other: "Камбоджа риелі"
+      :symbol: KHR
+    :KMF: 
+      :one: "Комор аралдары франкы"
+      :other: "Комор аралдары франкы"
+      :symbol: KMF
+    :KPW: 
+      :one: "Солтүстік Корея воны"
+      :other: "Солтүстік Корея воны"
+      :symbol: KPW
+    :KRW: 
+      :one: "Оңтүстік Корея воны"
+      :other: "Оңтүстік Корея воны"
+      :symbol: ₩
+    :KWD: 
+      :one: "Кувейт динары"
+      :other: "Кувейт динары"
+      :symbol: KWD
+    :KYD: 
+      :one: "Кайман аралдары доллары"
+      :other: "Кайман аралдары доллары"
+      :symbol: KYD
+    :KZT: 
+      :one: "Қазақстан теңгесі"
+      :other: "Қазақстан теңгесі"
+      :symbol: ₸
+    :LAK: 
+      :one: "Лаос кипі"
+      :other: "Лаос кипі"
+      :symbol: LAK
+    :LBP: 
+      :one: "Ливан фунты"
+      :other: "Ливан фунты"
+      :symbol: LBP
+    :LKR: 
+      :one: "Шри-Ланка рупиясы"
+      :other: "Шри-Ланка рупиясы"
+      :symbol: LKR
+    :LRD: 
+      :one: "Либерия доллары"
+      :other: "Либерия доллары"
+      :symbol: LRD
+    :LTL: 
+      :one: "Литва литы"
+      :other: "Литва литы"
+      :symbol: Lt
+    :LVL: 
+      :one: "Латвия латы"
+      :other: "Латвия латы"
+      :symbol: Ls
+    :LYD: 
+      :one: "Ливия динары"
+      :other: "Ливия динары"
+      :symbol: LYD
+    :MAD: 
+      :one: "Марокко дирхамы"
+      :other: "Марокко дирхамы"
+      :symbol: MAD
+    :MDL: 
+      :one: "Молдова лейі"
+      :other: "Молдова лейі"
+      :symbol: MDL
+    :MGA: 
+      :one: "Малагаси ариариі"
+      :other: "Малагаси ариариі"
+      :symbol: MGA
+    :MKD: 
+      :one: "Македония динары"
+      :other: "Македония динары"
+      :symbol: MKD
+    :MMK: 
+      :one: "Мьянма кьяты"
+      :other: "Мьянма кьяты"
+      :symbol: MMK
+    :MNT: 
+      :one: "Моңғолия тугригі"
+      :other: "Моңғолия тугригі"
+      :symbol: MNT
+    :MOP: 
+      :one: "Макао патакасы"
+      :other: "Макао патакасы"
+      :symbol: MOP
+    :MRO: 
+      :one: "Мавритания угиясы (1973–2017)"
+      :other: "Мавритания угиясы (1973–2017)"
+      :symbol: MRO
+    :MRU: 
+      :one: "Мавритания угиясы"
+      :other: "Мавритания угиясы"
+    :MUR: 
+      :one: "Маврикий рупиясы"
+      :other: "Маврикий рупиясы"
+      :symbol: MUR
+    :MVR: 
+      :one: "Мальдив руфиясы"
+      :other: "Мальдив руфиясы"
+      :symbol: MVR
+    :MWK: 
+      :one: "Малави квачасы"
+      :other: "Малави квачасы"
+      :symbol: MWK
+    :MXN: 
+      :one: "Мексика песосы"
+      :other: "Мексика песосы"
+      :symbol: MX$
+    :MYR: 
+      :one: "Малайзия ринггиті"
+      :other: "Малайзия ринггиті"
+      :symbol: MYR
+    :MZN: 
+      :one: "Мозамбик метикалы"
+      :other: "Мозамбик метикалы"
+      :symbol: MZN
+    :NAD: 
+      :one: "Намибия доллары"
+      :other: "Намибия доллары"
+      :symbol: NAD
+    :NGN: 
+      :one: "Нигерия найрасы"
+      :other: "Нигерия найрасы"
+      :symbol: NGN
+    :NIO: 
+      :one: "Никарагуа кордобасы"
+      :other: "Никарагуа кордобасы"
+      :symbol: NIO
+    :NOK: 
+      :one: "Норвегия кроны"
+      :other: "Норвегия кроны"
+      :symbol: NOK
+    :NPR: 
+      :one: "Непал рупиясы"
+      :other: "Непал рупиясы"
+      :symbol: NPR
+    :NZD: 
+      :one: "Жаңа Зеландия доллары"
+      :other: "Жаңа Зеландия доллары"
+      :symbol: NZ$
+    :OMR: 
+      :one: "Оман риалы"
+      :other: "Оман риалы"
+      :symbol: OMR
+    :PAB: 
+      :one: "Панама бальбоасы"
+      :other: "Панама бальбоасы"
+      :symbol: PAB
+    :PEN: 
+      :one: "Перу солі"
+      :other: "Перу солі"
+      :symbol: PEN
+    :PGK: 
+      :one: "Папуа - Жаңа Гвинея кинасы"
+      :other: "Папуа - Жаңа Гвинея кинасы"
+      :symbol: PGK
+    :PHP: 
+      :one: "Филиппин песосы"
+      :other: "Филиппин песосы"
+      :symbol: PHP
+    :PKR: 
+      :one: "Пәкістан рупиясы"
+      :other: "Пәкістан рупиясы"
+      :symbol: PKR
+    :PLN: 
+      :one: "Польша злотасы"
+      :other: "Польша злотасы"
+      :symbol: PLN
+    :PYG: 
+      :one: "Парагвай гуараниі"
+      :other: "Парагвай гуараниі"
+      :symbol: PYG
+    :QAR: 
+      :one: "Катар риалы"
+      :other: "Катар риалы"
+      :symbol: QAR
+    :RON: 
+      :one: "Румыния лейі"
+      :other: "Румыния лейі"
+      :symbol: RON
+    :RSD: 
+      :one: "Сербия динары"
+      :other: "Сербия динары"
+      :symbol: RSD
+    :RUB: 
+      :one: "Ресей рублі"
+      :other: "Ресей рублі"
+      :symbol: ₽
+    :RUR: 
+      :symbol: р.
+    :RWF: 
+      :one: "Руанда франкі"
+      :other: "Руанда франкі"
+      :symbol: RWF
+    :SAR: 
+      :one: "Сауд Арабиясының риалы"
+      :other: "Сауд Арабиясының риалы"
+      :symbol: SAR
+    :SBD: 
+      :one: "Соломон аралдары доллары"
+      :other: "Соломон аралдары доллары"
+      :symbol: SBD
+    :SCR: 
+      :one: "Сейшель рупиясы"
+      :other: "Сейшель рупиясы"
+      :symbol: SCR
+    :SDG: 
+      :one: "Судан фунты"
+      :other: "Судан фунты"
+      :symbol: SDG
+    :SEK: 
+      :one: "Швеция кроны"
+      :other: "Швеция кроны"
+      :symbol: SEK
+    :SGD: 
+      :one: "Сингапур доллары"
+      :other: "Сингапур доллары"
+      :symbol: SGD
+    :SHP: 
+      :one: "Әулие Елена аралы фунты"
+      :other: "Әулие Елена аралы фунты"
+      :symbol: SHP
+    :SLL: 
+      :one: "Сьерра-Леоне леонесі"
+      :other: "Сьерра-Леоне леонесі"
+      :symbol: SLL
+    :SOS: 
+      :one: "Сомали шиллингі"
+      :other: "Сомали шиллингі"
+      :symbol: SOS
+    :SRD: 
+      :one: "Суринам доллары"
+      :other: "Суринам доллары"
+      :symbol: SRD
+    :SSP: 
+      :one: "Оңтүстік Судан фунты"
+      :other: "Оңтүстік Судан фунты"
+      :symbol: SSP
+    :STD: 
+      :one: "Сант-Томе мен Принсипи добрасы (1977–2017)"
+      :other: "Сант-Томе мен Принсипи добрасы (1977–2017)"
+      :symbol: STD
+    :STN: 
+      :one: "Сант-Томе мен Принсипи добрасы"
+      :other: "Сант-Томе мен Принсипи добрасы"
+      :symbol: Db
+    :SYP: 
+      :one: "Сирия фунты"
+      :other: "Сирия фунты"
+      :symbol: SYP
+    :SZL: 
+      :one: "Свазиленд лилангениі"
+      :other: "Свазиленд лилангениі"
+      :symbol: SZL
+    :THB: 
+      :one: "Тай баты"
+      :other: "Тай баты"
+      :symbol: ฿
+    :TJS: 
+      :one: "Тәжікстан сомониі"
+      :other: "Тәжікстан сомониі"
+      :symbol: TJS
+    :TMT: 
+      :one: "Түрікменстан манаты"
+      :other: "Түрікменстан манаты"
+      :symbol: TMT
+    :TND: 
+      :one: "Тунис динары"
+      :other: "Тунис динары"
+      :symbol: TND
+    :TOP: 
+      :one: "Тонга паангасы"
+      :other: "Тонга паангасы"
+      :symbol: TOP
+    :TRY: 
+      :one: "Түрік лирасы"
+      :other: "Түрік лирасы"
+      :symbol: TRY
+    :TTD: 
+      :one: "Тринидад және Тобаго доллары"
+      :other: "Тринидад және Тобаго доллары"
+      :symbol: TTD
+    :TWD: 
+      :one: "Жаңа Тайван доллары"
+      :other: "Жаңа Тайван доллары"
+      :symbol: NT$
+    :TZS: 
+      :one: "Танзания шиллингі"
+      :other: "Танзания шиллингі"
+      :symbol: TZS
+    :UAH: 
+      :one: "Украина гривнасы"
+      :other: "Украина гривнасы"
+      :symbol: UAH
+    :UGX: 
+      :one: "Уганда шиллингі"
+      :other: "Уганда шиллингі"
+      :symbol: UGX
+    :USD: 
+      :one: "АҚШ доллары"
+      :other: "АҚШ доллары"
+      :symbol: $
+    :UYU: 
+      :one: "Уругвай песосы"
+      :other: "Уругвай песосы"
+      :symbol: UYU
+    :UZS: 
+      :one: "Өзбекстан сомы"
+      :other: "Өзбекстан сомы"
+      :symbol: UZS
+    :VEF: 
+      :one: "Венесуэла боливары (2008–2018)"
+      :other: "Венесуэла боливары (2008–2018)"
+      :symbol: VEF
+    :VES: 
+      :one: "Венесуэла боливары"
+      :other: "Венесуэла боливары"
+    :VND: 
+      :one: "Вьетнам донгі"
+      :other: "Вьетнам донгі"
+      :symbol: ₫
+    :VUV: 
+      :one: "Вануату ватуы"
+      :other: "Вануату ватуы"
+      :symbol: VUV
+    :WST: 
+      :one: "Самоа таласы"
+      :other: "Самоа таласы"
+      :symbol: WST
+    :XAF: 
+      :one: "КФА ВЕАС франкі"
+      :other: "КФА ВЕАС франкі"
+      :symbol: FCFA
+    :XCD: 
+      :one: "Шығыс Кариб доллары"
+      :other: "Шығыс Кариб доллары"
+      :symbol: EC$
+    :XOF: 
+      :one: "КФА ВСЕАО франкі"
+      :other: "КФА ВСЕАО франкі"
+      :symbol: CFA
+    :XPF: 
+      :one: "КФП франкі"
+      :other: "КФП франкі"
+      :symbol: CFPF
+    :XXX: 
+      :one: "(белгісіз валюта бірлігі)"
+      :other: "(белгісіз валюта)"
+      :symbol: ¤
+    :YER: 
+      :one: "Йемен риалы"
+      :other: "Йемен риалы"
+      :symbol: YER
+    :ZAR: 
+      :one: "Оңтүстік Африка рэнді"
+      :other: "Оңтүстік Африка рэнді"
+      :symbol: ZAR
+    :ZMW: 
+      :one: "Замбия квачасы"
+      :other: "Замбия квачасы"
+      :symbol: ZMW

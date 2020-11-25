@@ -14,11 +14,11 @@
           :one: "{0} mètre par seconde carrée"
           :other: "{0} mètres par seconde carrée"
         :angle-arc-minute: 
-          :one: "{0} minute d’angle"
-          :other: "{0} minutes d’angle"
+          :one: "{0} minute d’arc"
+          :other: "{0} minutes d’arc"
         :angle-arc-second: 
-          :one: "{0} seconde d’angle"
-          :other: "{0} secondes d’angle"
+          :one: "{0} seconde d’arc"
+          :other: "{0} secondes d’arc"
         :angle-degree: 
           :one: "{0} degré"
           :other: "{0} degrés"
@@ -220,6 +220,9 @@
         :frequency-megahertz: 
           :one: "{0} mégahertz"
           :other: "{0} mégahertz"
+        :graphics-dot: 
+          :one: "{0} point"
+          :other: "{0} pts"
         :graphics-dot-per-centimeter: 
           :one: "{0} point par centimètre"
           :other: "{0} points par centimètre"
@@ -250,6 +253,9 @@
         :length-decimeter: 
           :one: "{0} décimètre"
           :other: "{0} décimètres"
+        :length-earth-radius: 
+          :one: "{0} rayon terrestre"
+          :other: "{0} rayons terrestres"
         :length-fathom: 
           :one: "{0} brasse"
           :other: "{0} brasses"
@@ -296,7 +302,7 @@
           :one: "{0} picomètre"
           :other: "{0} picomètres"
         :length-point: 
-          :one: "{0} point"
+          :one: "{0} point typographique"
           :other: "{0} points"
         :length-solar-radius: 
           :one: "{0} rayon solaire"
@@ -304,6 +310,10 @@
         :length-yard: 
           :one: "{0} verge"
           :other: "{0} verges"
+        :light-candela: {}
+        :light-lumen: 
+          :one: "{0} lumen"
+          :other: "{0} lumens"
         :light-lux: 
           :one: "{0} lux"
           :other: "{0} lux"
@@ -319,6 +329,9 @@
         :mass-earth-mass: 
           :one: "{0} masse terrestre"
           :other: "{0} masses terrestres"
+        :mass-grain: 
+          :one: "{0} grain"
+          :other: "{0} grains"
         :mass-gram: 
           :one: "{0} gramme"
           :other: "{0} grammes"
@@ -436,7 +449,9 @@
         :volume-barrel: 
           :one: "{0} baril"
           :other: "{0} barils"
-        :volume-bushel: {}
+        :volume-bushel: 
+          :one: "{0} boisseau"
+          :other: "{0} boisseaux"
         :volume-centiliter: 
           :one: "{0} centilitre"
           :other: "{0} centilitres"
@@ -470,6 +485,18 @@
         :volume-deciliter: 
           :one: "{0} décilitre"
           :other: "{0} décilitres"
+        :volume-dessert-spoon: 
+          :one: "{0} cuillère à dessert"
+          :other: "{0} cuillères à dessert"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} cuillère à dessert impériale"
+          :other: "{0} cuillères à dessert impériales"
+        :volume-dram: 
+          :one: "{0} drachme"
+          :other: "{0} drachmes"
+        :volume-drop: 
+          :one: "{0} goutte"
+          :other: "{0} gouttes"
         :volume-fluid-ounce: 
           :one: "{0} once liquide"
           :other: "{0} onces liquides"
@@ -485,6 +512,9 @@
         :volume-hectoliter: 
           :one: "{0} hectolitre"
           :other: "{0} hectolitres"
+        :volume-jigger: 
+          :one: "{0} gobelet doseur"
+          :other: "{0} gobelets doseurs"
         :volume-liter: 
           :one: "{0} litre"
           :other: "{0} litres"
@@ -494,6 +524,9 @@
         :volume-milliliter: 
           :one: "{0} millilitre"
           :other: "{0} millilitres"
+        :volume-pinch: 
+          :one: "{0} pincée"
+          :other: "{0} pincées"
         :volume-pint: 
           :one: "{0} chopine"
           :other: "{0} chopines"
@@ -503,6 +536,9 @@
         :volume-quart: 
           :one: "{0} pinte"
           :other: "{0} pintes"
+        :volume-quart-imperial: 
+          :one: "{0} pinte impériale"
+          :other: "{0} pintes impériales"
         :volume-tablespoon: 
           :one: "{0} cuillère à soupe"
           :other: "{0} cuillères à soupe"
@@ -921,8 +957,8 @@
           :one: "{0} mi/gal"
           :other: "{0} mi/gal"
         :consumption-mile-per-gallon-imperial: 
-          :one: "{0} mi/gal imp."
-          :other: "{0} mi/gal imp."
+          :one: "{0} mi/gal Imp"
+          :other: "{0} mi/gal Imp"
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -1053,12 +1089,15 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} p"
+          :other: "{0} p"
         :graphics-dot-per-centimeter: 
-          :one: "{0} pt/cm"
-          :other: "{0} pt/cm"
+          :one: "{0} ppcm"
+          :other: "{0} ppcm"
         :graphics-dot-per-inch: 
-          :one: "{0} pt/po"
-          :other: "{0} pt/po"
+          :one: "{0} ppp"
+          :other: "{0} ppp"
         :graphics-em: 
           :one: "{0} em"
           :other: "{0} em"
@@ -1083,9 +1122,11 @@
         :length-decimeter: 
           :one: "{0} dm"
           :other: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
-          :one: "{0} fth"
-          :other: "{0} fth"
+          :one: "{0} fm"
+          :other: "{0} fm"
         :length-foot: 
           :one: "{0} pi"
           :other: "{0} pi"
@@ -1129,14 +1170,18 @@
           :one: "{0} pm"
           :other: "{0} pm"
         :length-point: 
-          :one: "{0} pt"
-          :other: "{0} pt"
+          :one: "{0} pt typog."
+          :other: "{0} pts typog."
         :length-solar-radius: 
           :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} vg"
           :other: "{0} vg"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
@@ -1152,6 +1197,9 @@
         :mass-earth-mass: 
           :one: "{0} M⊕"
           :other: "{0} M⊕"
+        :mass-grain: 
+          :one: "{0} grain"
+          :other: "{0} grains"
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -1270,7 +1318,8 @@
           :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
-          :other: "{0} bu"
+          :one: "{0} bu"
+          :other: "{0} bu"
         :volume-centiliter: 
           :one: "{0} cL"
           :other: "{0} cL"
@@ -1304,6 +1353,18 @@
         :volume-deciliter: 
           :one: "{0} dL"
           :other: "{0} dL"
+        :volume-dessert-spoon: 
+          :one: "{0} cuill. à d."
+          :other: "{0} cuill. à d."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} cuill. à d. imp."
+          :other: "{0} cuill. à d. imp."
+        :volume-dram: 
+          :one: "{0} dram liq"
+          :other: "{0} dram liq"
+        :volume-drop: 
+          :one: "{0} goutte"
+          :other: "{0} gouttes"
         :volume-fluid-ounce: 
           :one: "{0} oz liq."
           :other: "{0} oz liq."
@@ -1319,6 +1380,9 @@
         :volume-hectoliter: 
           :one: "{0} hL"
           :other: "{0} hL"
+        :volume-jigger: 
+          :one: "{0} gobelet doseur"
+          :other: "{0} gobelets doseurs"
         :volume-liter: 
           :one: "{0} L"
           :other: "{0} L"
@@ -1328,6 +1392,9 @@
         :volume-milliliter: 
           :one: "{0} mL"
           :other: "{0} mL"
+        :volume-pinch: 
+          :one: "{0} pincée"
+          :other: "{0} pincées"
         :volume-pint: 
           :one: "{0} chop"
           :other: "{0} chop"
@@ -1337,6 +1404,9 @@
         :volume-quart: 
           :one: "{0} pte"
           :other: "{0} pte"
+        :volume-quart-imperial: 
+          :one: "{0} pte Imp"
+          :other: "{0} pte Imp"
         :volume-tablespoon: 
           :one: "{0} c. à s."
           :other: "{0} c. à s."

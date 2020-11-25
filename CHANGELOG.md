@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.4.0 (November 25th, 2020)
+* Upgrade to CLDR v38 and ICU 68.1.
+
 ### 6.3.0 (October 28th, 2020)
 * Add support for Kazakh (#239, @viroulep).
 

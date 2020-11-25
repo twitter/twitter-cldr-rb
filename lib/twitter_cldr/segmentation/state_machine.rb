@@ -13,8 +13,9 @@ module TwitterCldr
 
       START_STATE = 1
       STOP_STATE = 0
-      NEXT_STATES = 4
+      NEXT_STATES = 3
       ACCEPTING = 0
+      ACCEPTING_UNCONDITIONAL = 1
 
       class << self
         def instance(boundary_type, locale)
@@ -70,7 +71,7 @@ module TwitterCldr
       def handle_next(cursor)
         result = initial_position = cursor.position
         state = START_STATE
-        row = state * (metadata.category_count + 4)
+        row = state * (metadata.category_count + NEXT_STATES)
         category = 3
         mode = :run
 
@@ -86,20 +87,15 @@ module TwitterCldr
             category = 1
           elsif mode == :run
             category = category_table.get(cursor.codepoint)
-
-            if (category & 0x4000) != 0
-              category &= ~0x4000
-            end
-
             cursor.advance
           else
             mode = :run
           end
 
           state = ftable[row + NEXT_STATES + category]
-          row = state * (metadata.category_count + 4)
+          row = state * (metadata.category_count + NEXT_STATES)
 
-          if ftable[row + ACCEPTING] == -1
+          if ftable[row + ACCEPTING] == ACCEPTING_UNCONDITIONAL
             # match found
             result = cursor.position
           end

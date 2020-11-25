@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json', '~> 1.0' if RUBY_VERSION < '2'
   s.add_dependency 'camertron-eprun'
   s.add_dependency 'tzinfo'
-  s.add_dependency 'cldr-plurals-runtime-rb', '~> 1.0'
+  s.add_dependency 'cldr-plurals-runtime-rb', '~> 1.1'
 
   s.require_path = 'lib'
 

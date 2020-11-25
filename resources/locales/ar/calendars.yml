@@ -24,7 +24,7 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E، d/M"
+        :MEd: "E، d/‏M"
         :MMM: LLL
         :MMMEd: "E، d MMM"
         :MMMMEd: "E، d MMMM"
@@ -187,13 +187,13 @@
             :pattern: d‏/M‏/y
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} في {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} في {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -293,7 +293,7 @@
             :evening1: مساءً
             :morning1: فجرًا
             :morning2: ص
-            :night1: "منتصف الليل"
+            :night1: "في المساء"
             :night2: ليلاً
             :pm: م
           :narrow: 
@@ -311,9 +311,9 @@
             :afternoon2: "بعد الظهر"
             :am: ص
             :evening1: مساءً
-            :morning1: فجرًا
+            :morning1: "في الصباح"
             :morning2: صباحًا
-            :night1: "منتصف الليل"
+            :night1: "في المساء"
             :night2: ليلاً
             :pm: م
         :stand-alone: 

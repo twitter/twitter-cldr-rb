@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Դենմարքսհավն
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: Դոուսոն
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: Նյու Սալեմ, Հյուսիսային Դակոտա
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: GMT-03:00
+  :LOCALIZED_GMT_SHORT: GMT-3
+  :GENERIC_LOCATION: Նուուկ
+  :GENERIC_LONG: Արևմտյան Գրենլանդիայի ժամանակ
+  :GENERIC_SHORT: Նուուկ
+  :SPECIFIC_LONG: Արևմտյան Գրենլանդիայի ստանդարտ ժամանակ
+  :SPECIFIC_SHORT: GMT-3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Նուուկ
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: GMT-07:00
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: Սենթ Թոմաս
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: Ուայթհորս
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Յելոունայֆ
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: GMT+08:00
-  :LOCALIZED_GMT_SHORT: GMT+8
+  :offset: 39600000
+  :LOCALIZED_GMT: GMT+11:00
+  :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: Քեյսի
-  :GENERIC_LONG: Արևմտյան Ավստրալիայի ստանդարտ ժամանակ
+  :GENERIC_LONG: Քեյսի
   :GENERIC_SHORT: Քեյսի
-  :SPECIFIC_LONG: Արևմտյան Ավստրալիայի ստանդարտ ժամանակ
-  :SPECIFIC_SHORT: GMT+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: GMT+11:00
+  :SPECIFIC_SHORT: GMT+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Քեյսի
 Antarctica/Davis:
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Դյումոն դ’Յուրվիլ
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: GMT+11:00
   :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: Մակկուորի կղզի
-  :GENERIC_LONG: Մակկուորի կղզու ժամանակ
+  :GENERIC_LONG: Արևելյան Ավստրալիայի ժամանակ
   :GENERIC_SHORT: Մակկուորի կղզի
-  :SPECIFIC_LONG: Մակկուորի կղզու ժամանակ
+  :SPECIFIC_LONG: Արևելյան Ավստրալիայի ամառային ժամանակ
   :SPECIFIC_SHORT: GMT+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Ռեջայնա
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: Ուայթհորս
@@ -12306,27 +12327,6 @@ US/Mountain:
   :ZONE_ID_SHORT: usden
   :EXEMPLAR_LOCATION: Դենվեր
 US/Pacific:
-  :offset: -28800000
-  :LOCALIZED_GMT: GMT-08:00
-  :LOCALIZED_GMT_SHORT: GMT-8
-  :GENERIC_LOCATION: Լոս Անջելես
-  :GENERIC_LONG: Խաղաղօվկիանոսյան ժամանակ
-  :GENERIC_SHORT: Լոս Անջելես
-  :SPECIFIC_LONG: Խաղաղօվկիանոսյան ստանդարտ ժամանակ
-  :SPECIFIC_SHORT: GMT-8
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Լոս Անջելես
-US/Pacific-New:
   :offset: -28800000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8

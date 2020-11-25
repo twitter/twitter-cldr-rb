@@ -12,9 +12,9 @@
           :other: "{0} smagumspēks"
           :zero: "{0} smagumspēku"
         :acceleration-meter-per-square-second: 
-          :one: "{0} metrs kvadrātsekundē"
-          :other: "{0} metri kvadrātsekundē"
-          :zero: "{0} metru kvadrātsekundē"
+          :one: "{0} metrs sekundē kvadrātā"
+          :other: "{0} metri sekundē kvadrātā"
+          :zero: "{0} metru sekundē kvadrātā"
         :angle-arc-minute: 
           :one: "{0} leņķa minūte"
           :other: "{0} leņķa minūtes"
@@ -291,6 +291,7 @@
           :one: "{0} megahercs"
           :other: "{0} megaherci"
           :zero: "{0} megahercu"
+        :graphics-dot: {}
         :graphics-dot-per-centimeter: 
           :one: "{0} punkts centimetrā"
           :other: "{0} punkti centimetrā"
@@ -327,6 +328,10 @@
           :one: "{0} decimetrs"
           :other: "{0} decimetri"
           :zero: "{0} decimetru"
+        :length-earth-radius: 
+          :one: "{0} Zemes rādiuss"
+          :other: "{0} Zemes rādiuss"
+          :zero: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fatoms"
           :other: "{0} fatomi"
@@ -399,6 +404,14 @@
           :one: "{0} jards"
           :other: "{0} jardi"
           :zero: "{0} jardu"
+        :light-candela: 
+          :one: "{0} kandela"
+          :other: "{0} kandelas"
+          :zero: "{0} kandelu"
+        :light-lumen: 
+          :one: "{0} lūmens"
+          :other: "{0} lūmeni"
+          :zero: "{0} lūmenu"
         :light-lux: 
           :one: "{0} lukss"
           :other: "{0} luksi"
@@ -419,6 +432,10 @@
           :one: "{0} Zemes masa"
           :other: "{0} Zemes masas"
           :zero: "{0} M⊕"
+        :mass-grain: 
+          :one: "{0} grans"
+          :other: "{0} grana"
+          :zero: "{0} granu"
         :mass-gram: 
           :one: "{0} grams"
           :other: "{0} grami"
@@ -575,6 +592,10 @@
           :one: "{0} barels"
           :other: "{0} bareli"
           :zero: "{0} bbl"
+        :volume-bushel: 
+          :one: "{0} bušelis"
+          :other: "{0} bušeļi"
+          :zero: "{0} bušeļu"
         :volume-centiliter: 
           :one: "{0} centilitrs"
           :other: "{0} centilitri"
@@ -619,6 +640,22 @@
           :one: "{0} decilitrs"
           :other: "{0} decilitri"
           :zero: "{0} decilitru"
+        :volume-dessert-spoon: 
+          :one: "{0} deserta karote"
+          :other: "{0} deserta karotes"
+          :zero: "{0} deserta karošu"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} britu deserta karote"
+          :other: "{0} britu deserta karotes"
+          :zero: "{0} britu deserta karošu"
+        :volume-dram: 
+          :one: "{0} šķidruma drahma"
+          :other: "{0} šķidruma drahmas"
+          :zero: "{0} šķidruma drahmu"
+        :volume-drop: 
+          :one: "{0} piliens"
+          :other: "{0} pilieni"
+          :zero: "{0} pilienu"
         :volume-fluid-ounce: 
           :one: "{0} šķidruma unce"
           :other: "{0} šķidruma unces"
@@ -639,6 +676,10 @@
           :one: "{0} hektolitrs"
           :other: "{0} hektolitri"
           :zero: "{0} hektolitru"
+        :volume-jigger: 
+          :one: "{0} mērglāzīte"
+          :other: "{0} mērglāzītes"
+          :zero: "{0} mērglāzīšu"
         :volume-liter: 
           :one: "{0} litrs"
           :other: "{0} litri"
@@ -651,6 +692,10 @@
           :one: "{0} mililitrs"
           :other: "{0} mililitri"
           :zero: "{0} mililitru"
+        :volume-pinch: 
+          :one: "{0} šķipsniņa"
+          :other: "{0} šķipsniņas"
+          :zero: "{0} šķipsniņu"
         :volume-pint: 
           :one: "{0} pinte"
           :other: "{0} pintes"
@@ -663,6 +708,10 @@
           :one: "{0} kvarta"
           :other: "{0} kvartas"
           :zero: "{0} kvartu"
+        :volume-quart-imperial: 
+          :one: "{0} britu kvarta"
+          :other: "{0} britu kvartas"
+          :zero: "{0} britu kvartu"
         :volume-tablespoon: 
           :one: "{0} ēdamkarote"
           :other: "{0} ēdamkarotes"
@@ -865,7 +914,7 @@
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
-          :zero: "{0}km/h"
+          :zero: "{0} km/h"
         :speed-knot: 
           :one: "{0} mezgls"
           :other: "{0} mezgli"
@@ -894,10 +943,7 @@
           :one: "{0}mi³"
           :other: "{0}mi³"
           :zero: "{0}mi³"
-        :volume-liter: 
-          :one: "{0} l"
-          :other: "{0} l"
-          :zero: "{0}l"
+        :volume-liter: {}
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -976,9 +1022,9 @@
           :other: "{0} mg/dl"
           :zero: "{0} mg/dl"
         :concentr-millimole-per-liter: 
-          :one: "{0} mmol/L"
-          :other: "{0} mmol/L"
-          :zero: "{0} mmol/L"
+          :one: "{0} mmol/l"
+          :other: "{0} mmol/l"
+          :zero: "{0} mmol/l"
         :concentr-mole: 
           :one: "{0} mol"
           :other: "{0} mol"
@@ -1185,6 +1231,10 @@
           :one: "{0} MHz"
           :other: "{0} MHz"
           :zero: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} p."
+          :other: "{0} p."
+          :zero: "{0} p."
         :graphics-dot-per-centimeter: 
           :one: "{0} dpc"
           :other: "{0} dpc"
@@ -1213,6 +1263,8 @@
           :one: "{0} dm"
           :other: "{0} dm"
           :zero: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fatoms"
           :other: "{0} fatomi"
@@ -1283,6 +1335,10 @@
           :one: "{0} jards"
           :other: "{0} jardi"
           :zero: "{0} jardi"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
@@ -1303,6 +1359,10 @@
           :one: "{0} M⊕"
           :other: "{0} M⊕"
           :zero: "{0} M⊕"
+        :mass-grain: 
+          :one: "{0} gr."
+          :other: "{0} gr."
+          :zero: "{0} gr."
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -1444,7 +1504,7 @@
         :torque-pound-force-foot: 
           :one: "{0} mārc. pēda"
           :other: "{0} mārc. pēdas"
-          :zero: "{0} mārc. pēdas"
+          :zero: "{0} mārc. pēdu"
         :volume-acre-foot: 
           :one: "{0} ac ft"
           :other: "{0} ac ft"
@@ -1492,13 +1552,29 @@
           :other: "{0} gl."
           :zero: "{0} gl."
         :volume-cup-metric: 
-          :one: "{0} metr.gl."
-          :other: "{0} metr.gl."
-          :zero: "{0} metr.gl."
+          :one: "{0} metr. gl."
+          :other: "{0} metr. gl."
+          :zero: "{0} metr. gl."
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
           :zero: "{0} dl"
+        :volume-dessert-spoon: 
+          :one: "{0} des. kar."
+          :other: "{0} des. kar."
+          :zero: "{0} des. kar."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} britu des. kar."
+          :other: "{0} britu des. kar."
+          :zero: "{0} britu des. kar."
+        :volume-dram: 
+          :one: "{0} šķ. drahma"
+          :other: "{0} šķ. drahmas"
+          :zero: "{0} šķi. drahmu"
+        :volume-drop: 
+          :one: "{0} pil."
+          :other: "{0} pil."
+          :zero: "{0} pil."
         :volume-fluid-ounce: 
           :one: "{0} fl oz"
           :other: "{0} fl oz"
@@ -1519,6 +1595,10 @@
           :one: "{0} hl"
           :other: "{0} hl"
           :zero: "{0} hl"
+        :volume-jigger: 
+          :one: "{0} mērgl."
+          :other: "{0} mērgl."
+          :zero: "{0} mērgl."
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
@@ -1531,6 +1611,10 @@
           :one: "{0} ml"
           :other: "{0} ml"
           :zero: "{0} ml"
+        :volume-pinch: 
+          :one: "{0} šķips."
+          :other: "{0} šķips."
+          :zero: "{0} šķips."
         :volume-pint: 
           :one: "{0} pt"
           :other: "{0} pt"
@@ -1543,6 +1627,10 @@
           :one: "{0} qt"
           :other: "{0} qt"
           :zero: "{0} qt"
+        :volume-quart-imperial: 
+          :one: "{0} IQT"
+          :other: "{0} IQT"
+          :zero: "{0} IQT"
         :volume-tablespoon: 
           :one: "{0} ĒK"
           :other: "{0} ĒK"

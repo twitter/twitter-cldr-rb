@@ -8,11 +8,11 @@
     :unitLength: 
       :long: 
         :acceleration-g-force: 
-          :one: "{0} गुरुत्व–बल"
-          :other: "{0} गुरुत्व–बल"
+          :one: "{0} गुरुत्वाकर्षण बल"
+          :other: "{0} गुरुत्वाकर्षण बल"
         :acceleration-meter-per-square-second: 
-          :one: "{0} मीटर प्रति सेकंड वर्ग"
-          :other: "{0} मीटर प्रति सेकंड वर्ग"
+          :one: "{0} मीटर प्रति वर्ग सेकंड"
+          :other: "{0} मीटर प्रति वर्ग सेकंड"
         :angle-arc-minute: 
           :one: "{0} आर्क मिनट"
           :other: "{0} आर्क मिनट"
@@ -41,8 +41,8 @@
           :one: "{0} वर्ग सेंटीमीटर"
           :other: "{0} वर्ग सेंटीमीटर"
         :area-square-foot: 
-          :one: "{0} वर्गफ़ुट"
-          :other: "{0} वर्गफ़ीट"
+          :one: "{0} वर्ग फुट"
+          :other: "{0} वर्ग फ़ीट"
         :area-square-inch: 
           :one: "{0} वर्ग इंच"
           :other: "{0} वर्ग इंच"
@@ -77,7 +77,7 @@
           :one: "{0} प्रति हज़ार"
           :other: "{0} प्रति हज़ार"
         :concentr-permillion: 
-          :one: "{0} ppm"
+          :one: "{0} हिस्सा प्रति दस लाख"
           :other: "{0} हिस्सा प्रति दस लाख"
         :concentr-permyriad: 
           :one: "{0} प्रति दस हज़ार"
@@ -137,8 +137,8 @@
           :one: "{0} दशक"
           :other: "{0} दशकों"
         :duration-hour: 
-          :one: "{0} घंटा"
-          :other: "{0} घंटे"
+          :one: "{0} घंटे"
+          :other: "{0} घंटों"
         :duration-microsecond: 
           :one: "{0} माइक्रोसेकंड"
           :other: "{0} माइक्रोसेकंड"
@@ -149,14 +149,14 @@
           :one: "{0} मिनट"
           :other: "{0} मिनट"
         :duration-month: 
-          :one: "{0} माह"
+          :one: "{0} महीने"
           :other: "{0} माह"
         :duration-nanosecond: 
           :one: "{0} नैनो सेकंड"
           :other: "{0} नैनो सेकंड"
         :duration-second: 
-          :one: "{0} सेकंड"
-          :other: "{0} सेकंड"
+          :one: "{0} सेकेंड"
+          :other: "{0} सेकेंड"
         :duration-week: 
           :one: "{0} सप्ताह"
           :other: "{0} सप्ताह"
@@ -191,8 +191,8 @@
           :one: "{0} जूल"
           :other: "{0} जूल"
         :energy-kilocalorie: 
-          :one: "{0} किलो कैलोरी"
-          :other: "{0} किलो कैलोरी"
+          :one: "{0} किलोकैलोरी"
+          :other: "{0} किलोकैलोरी"
         :energy-kilojoule: 
           :one: "{0} किलो जूल"
           :other: "{0} किलो जूल"
@@ -220,6 +220,7 @@
         :frequency-megahertz: 
           :one: "{0} मेगाहर्ट्ज़"
           :other: "{0} मेगाहर्ट्ज़"
+        :graphics-dot: {}
         :graphics-dot-per-centimeter: 
           :one: "{0} बिंदु प्रति सेंटीमीटर"
           :other: "{0} बिंदु प्रति सेंटीमीटर"
@@ -248,9 +249,18 @@
         :length-decimeter: 
           :one: "{0} डेसीमीटर"
           :other: "{0} डेसीमीटर"
+        :length-earth-radius: 
+          :one: "{0} पृथ्वी की त्रिज्या"
+          :other: "{0} पृथ्वी की त्रिज्या"
+        :length-fathom: 
+          :one: "{0} फ़ैदम"
+          :other: "{0} फ़ैदम"
         :length-foot: 
-          :one: "{0} फ़ुट"
-          :other: "{0} फ़ीट"
+          :one: "{0} फुट"
+          :other: "{0} फुट"
+        :length-furlong: 
+          :one: "{0} फ़र्लांग"
+          :other: "{0} फ़र्लांग"
         :length-inch: 
           :one: "{0} इंच"
           :other: "{0} इंच"
@@ -296,6 +306,12 @@
         :length-yard: 
           :one: "{0} यार्ड"
           :other: "{0} यार्ड"
+        :light-candela: 
+          :one: "{0} कैन्डेला"
+          :other: "{0} कैन्डेला"
+        :light-lumen: 
+          :one: "{0} लुमेन"
+          :other: "{0} लुमेन"
         :light-lux: 
           :one: "{0} लक्स"
           :other: "{0} लक्स"
@@ -311,6 +327,9 @@
         :mass-earth-mass: 
           :one: "{0} पृथ्वी द्रव्यमान"
           :other: "{0} पृथ्वी द्रव्यमान"
+        :mass-grain: 
+          :one: "{0} डेढ़ रत्ती"
+          :other: "{0} डेढ़ रत्ती"
         :mass-gram: 
           :one: "{0} ग्राम"
           :other: "{0} ग्राम"
@@ -338,6 +357,9 @@
         :mass-solar-mass: 
           :one: "{0} सौर द्रव्यमान"
           :other: "{0} सौर द्रव्यमान"
+        :mass-stone: 
+          :one: "{0} 14 पौंड का बट्टा"
+          :other: "{0} 14 पौंड का बट्टा"
         :mass-ton: 
           :one: "{0} टन"
           :other: "{0} टन"
@@ -405,11 +427,11 @@
           :one: "{0} डिग्री सेल्सियस"
           :other: "{0} डिग्री सेल्सियस"
         :temperature-fahrenheit: 
-          :one: "{0} डिग्री फ़ेरनहाइट"
-          :other: "{0} डिग्री फ़ेरनहाइट"
+          :one: "{0} डिग्री फॉरेन्हाइट"
+          :other: "{0} डिग्री फॉरेन्हाइट"
         :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0} डिग्री"
+          :other: "{0} डिग्री"
         :temperature-kelvin: 
           :one: "{0} केल्विन"
           :other: "{0} केल्विन"
@@ -425,15 +447,18 @@
         :volume-barrel: 
           :one: "{0} बैरल"
           :other: "{0} बैरल"
+        :volume-bushel: 
+          :one: "{0} बुशल"
+          :other: "{0} बुशल"
         :volume-centiliter: 
           :one: "{0} सेंटीलीटर"
           :other: "{0} सेंटीलीटर"
         :volume-cubic-centimeter: 
           :one: "{0} घन सेंटीमीटर"
-          :other: "{0} घन सेंटीमीटर"
+          :other: "{0} घन. सेंटी."
         :volume-cubic-foot: 
-          :one: "{0} घन फ़ीट"
-          :other: "{0} घन फ़ीट"
+          :one: "{0} घन फुट"
+          :other: "{0} घन फुट"
         :volume-cubic-inch: 
           :one: "{0} घन इंच"
           :other: "{0} घन इंच"
@@ -458,21 +483,36 @@
         :volume-deciliter: 
           :one: "{0} डेसीलीटर"
           :other: "{0} डेसीलीटर"
+        :volume-dessert-spoon: 
+          :one: "{0} डेज़र्ट स्पून"
+          :other: "{0} डेज़र्ट स्पून"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} इम्पीरियल डेज़र्टस्पून"
+          :other: "{0} इम्पीरियल डेज़र्टस्पून"
+        :volume-dram: 
+          :one: "{0} ड्रम"
+          :other: "{0} ड्रम"
+        :volume-drop: 
+          :one: "{0} बूंद"
+          :other: "{0} बूंद"
         :volume-fluid-ounce: 
           :one: "{0} फ़्लूइड आउंस"
           :other: "{0} फ़्लूइड आउंस"
         :volume-fluid-ounce-imperial: 
-          :one: "{0} इम्पी॰ फ़्लुइड आउंस"
-          :other: "{0} इम्पी॰ फ़्लुइड आउंस"
+          :one: "{0} इम्पी॰ फ़्लूइड आउंस"
+          :other: "{0} इम्पी॰ फ़्लूइड आउंस"
         :volume-gallon: 
           :one: "{0} गैलन"
           :other: "{0} गैलन"
         :volume-gallon-imperial: 
-          :one: "{0} इम्पीरियल गैलन"
-          :other: "{0} इम्पीरियल गैलन"
+          :one: "{0} इंपीरियल गैलन"
+          :other: "{0} इंपीरियल गैलन"
         :volume-hectoliter: 
           :one: "{0} हैक्टोलीटर"
           :other: "{0} हैक्टोलीटर"
+        :volume-jigger: 
+          :one: "{0} जिगर"
+          :other: "{0} जिगर"
         :volume-liter: 
           :one: "{0} लीटर"
           :other: "{0} लीटर"
@@ -482,15 +522,21 @@
         :volume-milliliter: 
           :one: "{0} मिलीलीटर"
           :other: "{0} मिलीलीटर"
+        :volume-pinch: 
+          :one: "{0} चुटकी"
+          :other: "{0} चुटकी"
         :volume-pint: 
-          :one: "{0} पिंट"
-          :other: "{0} पिंट"
+          :one: "{0} पाइंट"
+          :other: "{0} पाइंट"
         :volume-pint-metric: 
           :one: "{0} मीट्रिक पिंट"
           :other: "{0} मीट्रिक पिंट"
         :volume-quart: 
           :one: "{0} क्वार्ट"
           :other: "{0} क्वार्ट"
+        :volume-quart-imperial: 
+          :one: "{0} क्वार्ट इम्पीरियल"
+          :other: "{0} क्वार्ट इम्पीरियल"
         :volume-tablespoon: 
           :one: "{0} टेबलस्पून"
           :other: "{0} टेबलस्पून"
@@ -558,6 +604,9 @@
         :duration-year: 
           :one: "{0}वर्ष"
           :other: "{0}वर्ष"
+        :graphics-dot: 
+          :one: "{0}बिंदु"
+          :other: "{0}बिंदु"
         :length-centimeter: 
           :one: "{0} सें॰मी॰"
           :other: "{0} सें॰मी॰"
@@ -600,6 +649,9 @@
         :mass-pound: 
           :one: "{0}#"
           :other: "{0}#"
+        :mass-stone: 
+          :one: "{0} ला"
+          :other: "{0}st"
         :power-horsepower: 
           :one: "{0}एचपी"
           :other: "{0}एचपी"
@@ -856,6 +908,9 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} बिंदु"
+          :other: "{0} बिंदु"
         :graphics-dot-per-centimeter: 
           :other: "{0} dpcm"
         :graphics-dot-per-inch: 
@@ -879,13 +934,17 @@
         :length-decimeter: 
           :one: "{0} डे॰मी॰"
           :other: "{0} डे॰मी॰"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
-          :other: "{0} fth"
+          :one: "{0} फ़ैदम"
+          :other: "{0} फ़ैदम"
         :length-foot: 
           :one: "{0} फ़ीट"
           :other: "{0} फ़ीट"
         :length-furlong: 
-          :other: "{0} fur"
+          :one: "{0} फ़र्लांग"
+          :other: "{0} फ़र्लांग"
         :length-inch: 
           :one: "{0} इंच"
           :other: "{0} इंच"
@@ -930,6 +989,10 @@
         :length-yard: 
           :one: "{0} यार्ड"
           :other: "{0} यार्ड"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
@@ -943,6 +1006,9 @@
           :other: "{0} डाल्टन"
         :mass-earth-mass: 
           :other: "{0} M⊕"
+        :mass-grain: 
+          :one: "{0} डे. रत्ती"
+          :other: "{0} डेढ़ रत्ती"
         :mass-gram: 
           :one: "{0} ग्रा॰"
           :other: "{0} ग्रा॰"
@@ -970,6 +1036,7 @@
         :mass-solar-mass: 
           :other: "{0} M☉"
         :mass-stone: 
+          :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} टन"
@@ -1058,7 +1125,8 @@
           :one: "{0} बैरल"
           :other: "{0} बैरल"
         :volume-bushel: 
-          :other: "{0} bu"
+          :one: "{0} बुश."
+          :other: "{0} बुश."
         :volume-centiliter: 
           :one: "{0} सें॰ली॰"
           :other: "{0} सें॰ली॰"
@@ -1092,6 +1160,18 @@
         :volume-deciliter: 
           :one: "{0} डे॰ली॰"
           :other: "{0} डे॰ली॰"
+        :volume-dessert-spoon: 
+          :one: "{0} डे. स्पून"
+          :other: "{0} डे. स्पून"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} इम्पी. डेज़र्टस्पून"
+          :other: "{0} इम्पी. डेज़र्टस्पून"
+        :volume-dram: 
+          :one: "{0} ड्रम फ्लू."
+          :other: "{0} ड्रम फ्लू."
+        :volume-drop: 
+          :one: "{0} बूंद"
+          :other: "{0} बूंद"
         :volume-fluid-ounce: 
           :one: "{0} फ़्लूइड आउंस"
           :other: "{0} फ़्लूइड आउंस"
@@ -1106,6 +1186,9 @@
         :volume-hectoliter: 
           :one: "{0} है॰ली॰"
           :other: "{0} है॰ली॰"
+        :volume-jigger: 
+          :one: "{0} जिगर"
+          :other: "{0} जिगर"
         :volume-liter: 
           :one: "{0} ली॰"
           :other: "{0} ली॰"
@@ -1115,15 +1198,21 @@
         :volume-milliliter: 
           :one: "{0} मि॰ ली॰"
           :other: "{0} मि॰ ली॰"
+        :volume-pinch: 
+          :one: "{0} चुटकी"
+          :other: "{0} चुटकी"
         :volume-pint: 
-          :one: "{0} पिंट"
-          :other: "{0} पिंट"
+          :one: "{0} पाइंट"
+          :other: "{0} पाइंट"
         :volume-pint-metric: 
           :one: "{0} मीट्रिक पिंट"
           :other: "{0} मीट्रिक पिंट"
         :volume-quart: 
           :one: "{0} क्वार्ट"
           :other: "{0} क्वार्ट"
+        :volume-quart-imperial: 
+          :one: "{0} क. इम्पी."
+          :other: "{0} क. इम्पी."
         :volume-tablespoon: 
           :one: "{0} टे॰ स्पून"
           :other: "{0} टे॰ स्पून"

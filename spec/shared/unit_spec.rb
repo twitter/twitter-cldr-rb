@@ -179,9 +179,9 @@ describe TwitterCldr::Shared::Unit do
 
       describe '#length_mile' do
         it 'produces the correct results' do
-          expect(described_class.create(1, locale).length_mile(options)).to eq('1 миля')
-          expect(described_class.create(2, locale).length_mile(options)).to eq('2 мили')
-          expect(described_class.create(7, locale).length_mile(options)).to eq('7 миль')
+          expect(described_class.create(1, locale).length_mile(options)).to eq('1 ми')
+          expect(described_class.create(2, locale).length_mile(options)).to eq('2 ми')
+          expect(described_class.create(7, locale).length_mile(options)).to eq('7 ми')
         end
       end
 

@@ -331,11 +331,11 @@
               :other: "0 millioner"
             ? !ruby/symbol "10000000"
             : 
-              :one: "00 million"
+              :one: "00 millioner"
               :other: "00 millioner"
             ? !ruby/symbol "100000000"
             : 
-              :one: "000 million"
+              :one: "000 millioner"
               :other: "000 millioner"
             ? !ruby/symbol "1000000000"
             : 
@@ -343,11 +343,11 @@
               :other: "0 milliarder"
             ? !ruby/symbol "10000000000"
             : 
-              :one: "00 milliard"
+              :one: "00 milliarder"
               :other: "00 milliarder"
             ? !ruby/symbol "100000000000"
             : 
-              :one: "000 milliard"
+              :one: "000 milliarder"
               :other: "000 milliarder"
             ? !ruby/symbol "1000000000000"
             : 
@@ -638,6 +638,7 @@
     :symbols: 
       :adlm: :numbers.symbols.latn
       :arab: 
+        :approximately_sign: "~"
         :decimal: ٫
         :exponential: اس
         :group:  
@@ -651,6 +652,7 @@
         :superscripting_exponent: ×
         :time_separator: "."
       :arabext: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: ×۱۰^
         :group:  
@@ -871,6 +873,7 @@
         :plus_sign: +
         :superscripting_exponent: ×
       :latn: 
+        :approximately_sign: ca.
         :decimal: ","
         :exponential: E
         :group:  

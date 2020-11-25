@@ -2,9 +2,9 @@
 :km: 
   :units: 
     :durationUnit: 
-      :hm: "h:mm"
-      :hms: "h:mm:ss"
-      :ms: "m:ss"
+      :hm: "ម៉:នន"
+      :hms: "ម៉:នន:វិវិ"
+      :ms: "ម៉:វិវិ"
     :unitLength: 
       :long: 
         :acceleration-g-force: 
@@ -24,7 +24,7 @@
         :area-acre: 
           :other: "{0} អា"
         :area-dunam: 
-          :other: "{0} dunams"
+          :other: "{0} ឌូណាម"
         :area-hectare: 
           :other: "{0} ហិកតា"
         :area-square-centimeter: 
@@ -74,11 +74,11 @@
         :digital-kilobyte: 
           :other: "{0} គីឡូបៃ"
         :digital-megabit: 
-          :other: "{0} មេហ្គាប៊ីត"
+          :other: "{0} មេកាប៊ីត"
         :digital-megabyte: 
-          :other: "{0} មេហ្គាបៃ"
+          :other: "{0} មេកាបៃ"
         :digital-petabyte: 
-          :other: "{0} PB"
+          :other: "{0} ប៉េតាបៃ"
         :digital-terabit: 
           :other: "{0} តេរ៉ាប៊ីត"
         :digital-terabyte: 
@@ -94,7 +94,7 @@
         :duration-microsecond: 
           :other: "{0} មីក្រូ​វិនាទី"
         :duration-millisecond: 
-          :other: "{0} មិល្លី​វិនាទី"
+          :other: "{0} មីលី​វិនាទី"
         :duration-minute: 
           :other: "{0} នាទី"
         :duration-month: 
@@ -115,8 +115,12 @@
           :other: "{0} អូម"
         :electric-volt: 
           :other: "{0} វ៉ុល"
+        :energy-british-thermal-unit: 
+          :other: "{0} ឯកតាកម្ដៅអង់គ្លេស"
         :energy-calorie: 
           :other: "{0} កាឡូរី"
+        :energy-electronvolt: 
+          :other: "{0} អេឡិចត្រូវ៉ុល"
         :energy-foodcalorie: 
           :other: "{0} កាឡូរី"
         :energy-joule: 
@@ -127,6 +131,8 @@
           :other: "{0} គីឡូស៊ូល"
         :energy-kilowatt-hour: 
           :other: "{0} គីឡូវ៉ាត់​ម៉ោង"
+        :energy-therm-us: 
+          :other: "{0} ឯកតាកម្ដៅអាមេរិក"
         :frequency-gigahertz: 
           :other: "{0} ជីកាហឺត"
         :frequency-hertz: 
@@ -135,14 +141,34 @@
           :other: "{0} គីឡូហឺត"
         :frequency-megahertz: 
           :other: "{0} មេហ្គា​ហឺត"
+        :graphics-dot: 
+          :other: "{0}ចំណុច"
+        :graphics-dot-per-centimeter: 
+          :other: "{0} ចំណុចក្នុង១សង់ទីម៉ែត្រ"
+        :graphics-dot-per-inch: 
+          :other: "{0} ចំណុចក្នុង១អ៊ីញ"
+        :graphics-megapixel: 
+          :other: "{0} មេហ្កាភិចស៊ែល"
+        :graphics-pixel: 
+          :other: "{0} ភិចស៊ែល"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0} ភិចស៊ែលក្នុង១សង់ទីម៉ែត្រ"
+        :graphics-pixel-per-inch: 
+          :other: "{0} ភិចស៊ែលក្នុង១អ៊ីញ"
         :length-astronomical-unit: 
           :other: "{0} ឯកតាតារាសាស្ត្រ"
         :length-centimeter: 
           :other: "{0} សង់ទីម៉ែត្រ"
         :length-decimeter: 
-          :other: "{0} ដេសីុម៉ែត្រ"
+          :other: "{0} ដេស៊ីម៉ែត្រ"
+        :length-earth-radius: 
+          :other: "{0} កាំផែនដី"
+        :length-fathom: 
+          :other: "{0} ហ្វាតឹម"
         :length-foot: 
           :other: "{0} ហ្វីត"
+        :length-furlong: 
+          :other: "{0} ហ្វឺឡង"
         :length-inch: 
           :other: "{0} អ៊ីញ"
         :length-kilometer: 
@@ -171,10 +197,16 @@
           :other: "{0} pt"
         :length-yard: 
           :other: "{0} យ៉ាត"
+        :light-candela: 
+          :other: "{0} កានដេឡា"
+        :light-lumen: 
+          :other: "{0} លូមែន"
         :light-lux: 
           :other: "{0} lux"
         :mass-carat: 
           :other: "{0} ការ៉ាត់"
+        :mass-grain: 
+          :other: "{0} គ្រាប់"
         :mass-gram: 
           :other: "{0} ក្រាម"
         :mass-kilogram: 
@@ -191,8 +223,10 @@
           :other: "{0} ត្រយ​អោន"
         :mass-pound: 
           :other: "{0} ផោន"
+        :mass-stone: 
+          :other: "{0} ស្តូន"
         :mass-ton: 
-          :other: "{0} តោន"
+          :other: "{0} តោនអាមេរិក"
         :power-gigawatt: 
           :other: "{0} ជីកាវ៉ាត់"
         :power-horsepower: 
@@ -211,10 +245,16 @@
           :other: "{0} ហិចតូប៉ាស្កាល់"
         :pressure-inch-ofhg: 
           :other: "{0} អ៊ីញនៃបារត"
+        :pressure-kilopascal: 
+          :other: "{0} គីឡូប៉ាស្កាល់"
+        :pressure-megapascal: 
+          :other: "{0} មេហ្កាប៉ាស្កាល់"
         :pressure-millibar: 
           :other: "{0} មិល្លីបារ"
         :pressure-millimeter-ofhg: 
           :other: "{0} មិល្លីម៉ែត្រនៃ​បារត"
+        :pressure-pascal: 
+          :other: "{0} ប៉ាស្កាល់"
         :pressure-pound-force-per-square-inch: 
           :other: "{0} ផោន​ក្នុង​មួយ​អ៊ីញ​ការ៉េ"
         :speed-kilometer-per-hour: 
@@ -235,6 +275,8 @@
           :other: "{0} អង្សា​ខែលវិន"
         :volume-acre-foot: 
           :other: "{0} អាហ្វីត"
+        :volume-bushel: 
+          :other: "{0} ប៊ូសែល"
         :volume-centiliter: 
           :other: "{0} សង់ទីលីត្រ"
         :volume-cubic-centimeter: 
@@ -256,7 +298,13 @@
         :volume-cup-metric: 
           :other: "{0} រង្វាស់ពែង"
         :volume-deciliter: 
-          :other: "{0} ដេសីុលីត្រ"
+          :other: "{0} ដេស៊ីលីត្រ"
+        :volume-dessert-spoon: 
+          :other: "{0} ស្លាបព្រាបង្អែម"
+        :volume-dram: 
+          :other: "{0} ត្រាម"
+        :volume-drop: 
+          :other: "{0} តំណក់"
         :volume-fluid-ounce: 
           :other: "{0} អោន​វត្ថុ​រាវ"
         :volume-gallon: 
@@ -265,12 +313,16 @@
           :other: "{0} អ៊ីមភៀរៀលហ្គាឡុង"
         :volume-hectoliter: 
           :other: "{0} ហិកតូលីត្រ"
+        :volume-jigger: 
+          :other: "{0} ជីកហ្គឺរ"
         :volume-liter: 
           :other: "{0} លីត្រ"
         :volume-megaliter: 
           :other: "{0} មេកាលីត្រ"
         :volume-milliliter: 
           :other: "{0} មិល្លីលីត្រ"
+        :volume-pinch: 
+          :other: "{0} ច្បិច"
         :volume-pint: 
           :other: "{0} ភីន"
         :volume-pint-metric: 
@@ -311,7 +363,7 @@
         :duration-hour: 
           :other: "{0} ម៉ោង"
         :duration-millisecond: 
-          :other: "{0}ms"
+          :other: "{0} ម.វិ"
         :duration-minute: 
           :other: "{0} នាទី"
         :duration-month: 
@@ -323,21 +375,20 @@
         :duration-year: 
           :other: "{0} ឆ្នាំ"
         :length-centimeter: 
-          :other: "{0} cm"
+          :other: "{0} សម"
         :length-foot: 
           :other: "{0}′"
         :length-inch: 
           :other: "{0}″"
-        :length-kilometer: 
-          :other: "{0} km"
+        :length-kilometer: {}
         :length-light-year: 
           :other: "{0} ឆ្នាំ​ពន្លឺ"
         :length-meter: 
-          :other: "{0}m"
+          :other: "{0} ម"
         :length-mile: 
           :other: "{0} ម៉."
         :length-millimeter: 
-          :other: "{0} mm"
+          :other: "{0} មម"
         :length-picometer: 
           :other: "{0} ព.ម."
         :length-yard: 
@@ -396,7 +447,7 @@
         :area-acre: 
           :other: "{0} ac"
         :area-dunam: 
-          :other: "{0} dunam"
+          :other: "{0} ឌូណាម"
         :area-hectare: 
           :other: "{0} ha"
         :area-square-centimeter: 
@@ -471,7 +522,7 @@
         :duration-microsecond: 
           :other: "{0} μs"
         :duration-millisecond: 
-          :other: "{0} ms"
+          :other: "{0} ម.វិ"
         :duration-minute: 
           :other: "{0} នាទី"
         :duration-month: 
@@ -525,6 +576,8 @@
           :other: "{0} kHz"
         :frequency-megahertz: 
           :other: "{0} MHz"
+        :graphics-dot: 
+          :other: "{0} ចំណុច"
         :graphics-dot-per-centimeter: 
           :other: "{0} dpcm"
         :graphics-dot-per-inch: 
@@ -542,23 +595,25 @@
         :length-astronomical-unit: 
           :other: "{0} au"
         :length-centimeter: 
-          :other: "{0} cm"
+          :other: "{0} សម"
         :length-decimeter: 
-          :other: "{0} dm"
+          :other: "{0} ដម"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
           :other: "{0} fth"
         :length-foot: 
           :other: "{0} ft"
         :length-furlong: 
-          :other: "{0} fur"
+          :other: "{0} ហ្វឺ"
         :length-inch: 
           :other: "{0} in"
         :length-kilometer: 
-          :other: "{0} km"
+          :other: "{0} គម"
         :length-light-year: 
           :other: "{0} ly"
         :length-meter: 
-          :other: "{0} m"
+          :other: "{0} ម"
         :length-micrometer: 
           :other: "{0} µm"
         :length-mile: 
@@ -581,6 +636,10 @@
           :other: "{0} R☉"
         :length-yard: 
           :other: "{0} yd"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :other: "{0} lx"
         :light-solar-luminosity: 
@@ -591,6 +650,8 @@
           :other: "{0} Da"
         :mass-earth-mass: 
           :other: "{0} M⊕"
+        :mass-grain: 
+          :other: "{0} គ្រាប់"
         :mass-gram: 
           :other: "{0} g"
         :mass-kilogram: 
@@ -693,6 +754,14 @@
           :other: "{0} mc"
         :volume-deciliter: 
           :other: "{0} dL"
+        :volume-dessert-spoon: 
+          :other: "{0} dstspn"
+        :volume-dessert-spoon-imperial: 
+          :other: "{0} dstspn Imp"
+        :volume-dram: 
+          :other: "{0} ត្រាមរាវ"
+        :volume-drop: 
+          :other: "{0} តំណក់"
         :volume-fluid-ounce: 
           :other: "{0} fl oz"
         :volume-fluid-ounce-imperial: 
@@ -703,18 +772,24 @@
           :other: "{0} gal Imp."
         :volume-hectoliter: 
           :other: "{0} hL"
+        :volume-jigger: 
+          :other: "{0} ជីកហ្គឺរ"
         :volume-liter: 
           :other: "{0} L"
         :volume-megaliter: 
           :other: "{0} ML"
         :volume-milliliter: 
           :other: "{0} mL"
+        :volume-pinch: 
+          :other: "{0} ច្បិច"
         :volume-pint: 
           :other: "{0} pt"
         :volume-pint-metric: 
           :other: "{0} mpt"
         :volume-quart: 
           :other: "{0} qt"
+        :volume-quart-imperial: 
+          :other: "{0} qt Imp."
         :volume-tablespoon: 
           :other: "{0} tbsp"
         :volume-teaspoon: 

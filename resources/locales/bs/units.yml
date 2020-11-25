@@ -153,7 +153,7 @@
           :other: "{0} megabita"
         :digital-megabyte: 
           :few: "{0} megabajta"
-          :one: "{0} megabajta"
+          :one: "{0} megabajt"
           :other: "{0} megabajta"
         :digital-petabyte: 
           :few: "{0} petabajta"
@@ -287,6 +287,10 @@
           :few: "{0} megaherca"
           :one: "{0} megaherc"
           :other: "{0} megaherca"
+        :graphics-dot: 
+          :few: "{0} tačke"
+          :one: "{0} tačka"
+          :other: "{0} tačaka"
         :graphics-megapixel: {}
         :graphics-pixel: {}
         :length-astronomical-unit: 
@@ -301,10 +305,22 @@
           :few: "{0} decimetra"
           :one: "{0} decimetar"
           :other: "{0} decimetara"
+        :length-earth-radius: 
+          :few: "{0} radijusa zemlje"
+          :one: "{0} radijus zemlje"
+          :other: "{0} radijus zemlje"
+        :length-fathom: 
+          :few: "{0} hvata"
+          :one: "{0} hvat"
+          :other: "{0} hvata"
         :length-foot: 
           :few: "{0} stope"
           :one: "{0} stopa"
           :other: "{0} stopa"
+        :length-furlong: 
+          :few: "{0} osmine milje"
+          :one: "{0} osmina milje"
+          :other: "{0} osmina milje"
         :length-inch: 
           :few: "{0} inča"
           :one: "{0} inč"
@@ -354,9 +370,9 @@
           :one: "{0} pikometar"
           :other: "{0} pikometara"
         :length-point: 
-          :few: "{0} tč"
-          :one: "{0} tačka"
-          :other: "{0} tačaka"
+          :few: "{0} DTP tačke"
+          :one: "{0} DTP tačka"
+          :other: "{0} DTP tačaka"
         :length-solar-radius: 
           :few: "{0} Sunčeva radijusa"
           :one: "{0} Sunčev radijus"
@@ -365,6 +381,14 @@
           :few: "{0} jarda"
           :one: "{0} jard"
           :other: "{0} jardi"
+        :light-candela: 
+          :few: "{0} kandele"
+          :one: "{0} kandela"
+          :other: "{0} kandela"
+        :light-lumen: 
+          :few: "{0} lumena"
+          :one: "{0} lumen"
+          :other: "{0} lumena"
         :light-lux: 
           :few: "{0} luksa"
           :one: "{0} luks"
@@ -421,6 +445,10 @@
           :few: "{0} Sunčeve mase"
           :one: "{0} Sunčeva masa"
           :other: "{0} Sunčevih masa"
+        :mass-stone: 
+          :few: "{0} stone"
+          :one: "{0} stone"
+          :other: "{0} stone"
         :mass-ton: 
           :few: "{0} tone"
           :one: "{0} tona"
@@ -464,7 +492,7 @@
         :pressure-inch-ofhg: 
           :few: "{0} inča živinog stuba"
           :one: "{0} inč živinog stuba"
-          :other: "{0} inča žive"
+          :other: "{0} inča živinog stuba"
         :pressure-kilopascal: 
           :few: "{0} kilopaskala"
           :one: "{0} kilopaskal"
@@ -537,6 +565,10 @@
           :few: "{0} barela"
           :one: "{0} barel"
           :other: "{0} barela"
+        :volume-bushel: 
+          :few: "{0} bušela"
+          :one: "{0} bušel"
+          :other: "{0} bušela"
         :volume-centiliter: 
           :few: "{0} centilitra"
           :one: "{0} centilitar"
@@ -581,6 +613,22 @@
           :few: "{0} decilitra"
           :one: "{0} decilitar"
           :other: "{0} decilitara"
+        :volume-dessert-spoon: 
+          :few: "{0} kašike za desert"
+          :one: "{0} kašika za desert"
+          :other: "{0} kašika za desert"
+        :volume-dessert-spoon-imperial: 
+          :few: "{0} imperijalne kašike za desert"
+          :one: "{0} imperijalna kašika za desert"
+          :other: "{0} imperijalnih kašika za desert"
+        :volume-dram: 
+          :few: "{0} tečna drama"
+          :one: "{0} tečni dram"
+          :other: "{0} tečnih drama"
+        :volume-drop: 
+          :few: "{0} kapi"
+          :one: "{0} kap"
+          :other: "{0} kapi"
         :volume-fluid-ounce: 
           :few: "{0} tečne unce"
           :one: "{0} tečna unca"
@@ -601,6 +649,10 @@
           :few: "{0} hektolitra"
           :one: "{0} hektolitar"
           :other: "{0} hektolitara"
+        :volume-jigger: 
+          :few: "{0} male čašice"
+          :one: "{0} mala čašica"
+          :other: "{0} malih čašica"
         :volume-liter: 
           :few: "{0} litra"
           :one: "{0} litar"
@@ -613,6 +665,10 @@
           :few: "{0} mililitra"
           :one: "{0} mililitar"
           :other: "{0} mililitara"
+        :volume-pinch: 
+          :few: "{0} prstohvata"
+          :one: "{0} prstohvat"
+          :other: "{0} prstohvata"
         :volume-pint: 
           :few: "{0} pinte"
           :one: "{0} pinta"
@@ -625,6 +681,10 @@
           :few: "{0} četvrtine"
           :one: "{0} četvrtina"
           :other: "{0} četvrtina"
+        :volume-quart-imperial: 
+          :few: "{0} imperijalna kvarca"
+          :one: "{0} imperijalni kvarc"
+          :other: "{0} imperijalnih kvarca"
         :volume-tablespoon: 
           :few: "{0} kašike"
           :one: "{0} kašika"
@@ -718,22 +778,10 @@
           :few: "{0} cm"
           :one: "{0} cm"
           :other: "{0} cm"
-        :length-foot: 
-          :few: "{0}′"
-          :one: "{0}′"
-          :other: "{0}′"
-        :length-inch: 
-          :few: "{0}″"
-          :one: "{0}″"
-          :other: "{0}″"
         :length-kilometer: 
           :few: "{0} km"
           :one: "{0} km"
           :other: "{0} km"
-        :length-light-year: 
-          :few: "{0} ly"
-          :one: "{0} ly"
-          :other: "{0} ly"
         :length-meter: 
           :few: "{0} m"
           :one: "{0} m"
@@ -770,10 +818,6 @@
           :few: "{0} lb"
           :one: "{0} lb"
           :other: "{0} lb"
-        :power-horsepower: 
-          :few: "{0} KS"
-          :one: "{0} KS"
-          :other: "{0} KS"
         :power-kilowatt: 
           :few: "{0} kW"
           :one: "{0} kW"
@@ -791,7 +835,7 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-millibar: 
-          :few: "{0} mb"
+          :few: "{0} mbar"
           :one: "{0} mb"
           :other: "{0} mb"
         :speed-kilometer-per-hour: 
@@ -1115,6 +1159,8 @@
           :few: "{0} MHz"
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :other: "{0} dot"
         :graphics-dot-per-centimeter: 
           :few: "{0} dpcm"
           :one: "{0} dpcm"
@@ -1155,14 +1201,20 @@
           :few: "{0} dm"
           :one: "{0} dm"
           :other: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
-          :other: "{0} fth"
+          :few: "{0} hvata"
+          :one: "{0} hvat"
+          :other: "{0} hvata"
         :length-foot: 
           :few: "{0} ft"
           :one: "{0} ft"
           :other: "{0} ft"
         :length-furlong: 
-          :other: "{0} fur"
+          :few: "{0} osmine milje"
+          :one: "{0} osmina milje"
+          :other: "{0} osmina milje"
         :length-inch: 
           :few: "{0} in"
           :one: "{0} in"
@@ -1212,9 +1264,9 @@
           :one: "{0} pm"
           :other: "{0} pm"
         :length-point: 
-          :few: "{0} tč"
-          :one: "{0} tč"
-          :other: "{0} tč"
+          :few: "{0} DTP tč"
+          :one: "{0} DTP tč"
+          :other: "{0} DTP tč"
         :length-solar-radius: 
           :few: "{0} R☉"
           :one: "{0} R☉"
@@ -1223,6 +1275,10 @@
           :few: "{0} yd"
           :one: "{0} yd"
           :other: "{0} yd"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :few: "{0} lx"
           :one: "{0} lx"
@@ -1243,6 +1299,8 @@
           :few: "{0} M⊕"
           :one: "{0} M⊕"
           :other: "{0} M⊕"
+        :mass-grain: 
+          :other: "{0} grain"
         :mass-gram: 
           :few: "{0} g"
           :one: "{0} g"
@@ -1338,9 +1396,9 @@
           :one: "{0} mbar"
           :other: "{0} mbar"
         :pressure-millimeter-ofhg: 
-          :few: "{0} mm Hg"
-          :one: "{0} mm Hg"
-          :other: "{0} mm Hg"
+          :few: "{0} mmHg"
+          :one: "{0} mmHg"
+          :other: "{0} mmHg"
         :pressure-pascal: 
           :few: "{0} Pa"
           :one: "{0} Pa"
@@ -1398,6 +1456,8 @@
           :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
+          :few: "{0} bu"
+          :one: "{0} bu"
           :other: "{0} bu"
         :volume-centiliter: 
           :few: "{0} cL"
@@ -1443,6 +1503,22 @@
           :few: "{0} dL"
           :one: "{0} dL"
           :other: "{0} dL"
+        :volume-dessert-spoon: 
+          :few: "{0} kš. des."
+          :one: "{0} kš. des."
+          :other: "{0} kš. des."
+        :volume-dessert-spoon-imperial: 
+          :few: "{0} imp. kš. des."
+          :one: "{0} imp. kš. des."
+          :other: "{0} imp. kš. des."
+        :volume-dram: 
+          :few: "{0} teč. drama"
+          :one: "{0} teč. dram"
+          :other: "{0} teč. drama"
+        :volume-drop: 
+          :few: "{0} kapi"
+          :one: "{0} kap"
+          :other: "{0} kapi"
         :volume-fluid-ounce: 
           :few: "{0} fl oz"
           :one: "{0} fl oz"
@@ -1463,6 +1539,10 @@
           :few: "{0} hL"
           :one: "{0} hL"
           :other: "{0} hL"
+        :volume-jigger: 
+          :few: "{0} male čašice"
+          :one: "{0} mala čašica"
+          :other: "{0} malih čašica"
         :volume-liter: 
           :few: "{0} l"
           :one: "{0} l"
@@ -1475,6 +1555,10 @@
           :few: "{0} mL"
           :one: "{0} mL"
           :other: "{0} mL"
+        :volume-pinch: 
+          :few: "{0} prstohvata"
+          :one: "{0} prstohvat"
+          :other: "{0} prstohvata"
         :volume-pint: 
           :few: "{0} pt"
           :one: "{0} pt"
@@ -1487,6 +1571,10 @@
           :few: "{0} qt"
           :one: "{0} qt"
           :other: "{0} qt"
+        :volume-quart-imperial: 
+          :few: "{0} imp. kvarca"
+          :one: "{0} imp. kvarc"
+          :other: "{0} imp. kvarca"
         :volume-tablespoon: 
           :few: "{0} tbsp"
           :one: "{0} tbsp"

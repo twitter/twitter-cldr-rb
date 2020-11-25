@@ -10,7 +10,7 @@
         :acceleration-g-force: 
           :other: "{0} 중력가속도"
         :acceleration-meter-per-square-second: 
-          :other: "{0}제곱 초당 미터"
+          :other: "제곱 초당 {0}미터"
         :angle-arc-minute: 
           :other: "{0}분각"
         :angle-arc-second: 
@@ -131,6 +131,8 @@
           :other: "{0}킬로줄"
         :energy-kilowatt-hour: 
           :other: "{0}킬로와트시"
+        :energy-therm-us: 
+          :other: "{0}섬"
         :force-newton: 
           :other: "{0}뉴턴"
         :force-pound-force: 
@@ -143,12 +145,28 @@
           :other: "{0}킬로헤르츠"
         :frequency-megahertz: 
           :other: "{0}메가헤르츠"
+        :graphics-dot: 
+          :other: "{0}dot"
+        :graphics-dot-per-inch: 
+          :other: "{0}dpi"
+        :graphics-em: 
+          :other: "{0}em"
+        :graphics-megapixel: 
+          :other: "{0}MP"
+        :graphics-pixel: 
+          :other: "{0}px"
+        :graphics-pixel-per-centimeter: 
+          :other: "{0}ppcm"
+        :graphics-pixel-per-inch: 
+          :other: "{0}ppi"
         :length-astronomical-unit: 
           :other: "{0}천문 단위"
         :length-centimeter: 
           :other: "{0}센티미터"
         :length-decimeter: 
           :other: "{0}데시미터"
+        :length-earth-radius: 
+          :other: "{0}지구 반경"
         :length-fathom: 
           :other: "{0}패덤"
         :length-foot: 
@@ -182,9 +200,13 @@
         :length-point: 
           :other: "{0}포인트"
         :length-solar-radius: 
-          :other: "{0} 태양 반경"
+          :other: "{0}태양 반경"
         :length-yard: 
           :other: "{0}야드"
+        :light-candela: 
+          :other: "{0}칸델라"
+        :light-lumen: 
+          :other: "{0}루멘"
         :light-lux: 
           :other: "{0}룩스"
         :light-solar-luminosity: 
@@ -195,6 +217,8 @@
           :other: "{0}돌턴"
         :mass-earth-mass: 
           :other: "{0}지구 질량"
+        :mass-grain: 
+          :other: "{0}그레인"
         :mass-gram: 
           :other: "{0}그램"
         :mass-kilogram: 
@@ -231,6 +255,8 @@
           :other: "{0}와트"
         :pressure-atmosphere: 
           :other: "{0}atm"
+        :pressure-bar: 
+          :other: "{0}바"
         :pressure-hectopascal: 
           :other: "{0}헥토파스칼"
         :pressure-inch-ofhg: 
@@ -243,6 +269,8 @@
           :other: "{0}밀리바"
         :pressure-millimeter-ofhg: 
           :other: "{0}수은주밀리미터"
+        :pressure-pascal: 
+          :other: "{0}파스칼"
         :pressure-pound-force-per-square-inch: 
           :other: "{0}제곱인치당 파운드"
         :speed-kilometer-per-hour: 
@@ -269,6 +297,8 @@
           :other: "{0}에이커 피트"
         :volume-barrel: 
           :other: "{0}배럴"
+        :volume-bushel: 
+          :other: "{0}부셸"
         :volume-centiliter: 
           :other: "{0}센티리터"
         :volume-cubic-centimeter: 
@@ -291,6 +321,14 @@
           :other: "{0}미터식 컵"
         :volume-deciliter: 
           :other: "{0}데시리터"
+        :volume-dessert-spoon: 
+          :other: "{0}디저트스푼"
+        :volume-dessert-spoon-imperial: 
+          :other: "{0}영국 디저트스푼"
+        :volume-dram: 
+          :other: "{0}영국 액량 드램"
+        :volume-drop: 
+          :other: "{0}방울"
         :volume-fluid-ounce: 
           :other: "{0}액량 온스"
         :volume-fluid-ounce-imperial: 
@@ -301,18 +339,24 @@
           :other: "{0}영국식 갤런"
         :volume-hectoliter: 
           :other: "{0}헥토리터"
+        :volume-jigger: 
+          :other: "{0}지거"
         :volume-liter: 
           :other: "{0}리터"
         :volume-megaliter: 
           :other: "{0}메가리터"
         :volume-milliliter: 
           :other: "{0}밀리리터"
+        :volume-pinch: 
+          :other: "{0}꼬집"
         :volume-pint: 
           :other: "{0}파인트"
         :volume-pint-metric: 
           :other: "{0}미터식 파인트"
         :volume-quart: 
           :other: "{0}쿼트"
+        :volume-quart-imperial: 
+          :other: "{0}영국 쿼트"
         :volume-tablespoon: 
           :other: "{0}테이블스푼"
         :volume-teaspoon: 
@@ -553,7 +597,7 @@
           :other: "{0}일"
         :duration-day-person: {}
         :duration-decade: 
-          :other: "{0} dec"
+          :other: "{0}dec"
         :duration-hour: 
           :other: "{0}시간"
         :duration-microsecond: 
@@ -600,7 +644,7 @@
         :energy-kilowatt-hour: 
           :other: "{0}kWh"
         :energy-therm-us: 
-          :other: "{0} US therm"
+          :other: "{0}섬"
         :force-newton: 
           :other: "{0}N"
         :force-pound-force: 
@@ -613,26 +657,30 @@
           :other: "{0}kHz"
         :frequency-megahertz: 
           :other: "{0}MHz"
+        :graphics-dot: 
+          :other: "{0}dot"
         :graphics-dot-per-centimeter: 
-          :other: "{0} dpcm"
+          :other: "{0}dpcm"
         :graphics-dot-per-inch: 
-          :other: "{0} dpi"
+          :other: "{0}dpi"
         :graphics-em: 
-          :other: "{0} em"
+          :other: "{0}em"
         :graphics-megapixel: 
-          :other: "{0} MP"
+          :other: "{0}MP"
         :graphics-pixel: 
-          :other: "{0} px"
+          :other: "{0}px"
         :graphics-pixel-per-centimeter: 
-          :other: "{0} ppcm"
+          :other: "{0}ppcm"
         :graphics-pixel-per-inch: 
-          :other: "{0} ppi"
+          :other: "{0}ppi"
         :length-astronomical-unit: 
           :other: "{0}au"
         :length-centimeter: 
           :other: "{0}cm"
         :length-decimeter: 
           :other: "{0}dm"
+        :length-earth-radius: 
+          :other: "{0}R⊕"
         :length-fathom: 
           :other: "{0}fth"
         :length-foot: 
@@ -668,7 +716,11 @@
         :length-solar-radius: 
           :other: "{0}R☉"
         :length-yard: 
-          :other: "{0}야드"
+          :other: "{0}yd"
+        :light-candela: 
+          :other: "{0}cd"
+        :light-lumen: 
+          :other: "{0}lm"
         :light-lux: 
           :other: "{0}lx"
         :light-solar-luminosity: 
@@ -679,6 +731,8 @@
           :other: "{0}Da"
         :mass-earth-mass: 
           :other: "{0}M⊕"
+        :mass-grain: 
+          :other: "{0}grain"
         :mass-gram: 
           :other: "{0}g"
         :mass-kilogram: 
@@ -716,7 +770,7 @@
         :pressure-atmosphere: 
           :other: "{0}atm"
         :pressure-bar: 
-          :other: "{0} bar"
+          :other: "{0}bar"
         :pressure-hectopascal: 
           :other: "{0}hPa"
         :pressure-inch-ofhg: 
@@ -730,7 +784,7 @@
         :pressure-millimeter-ofhg: 
           :other: "{0}mmHg"
         :pressure-pascal: 
-          :other: "{0} Pa"
+          :other: "{0}Pa"
         :pressure-pound-force-per-square-inch: 
           :other: "{0}psi"
         :speed-kilometer-per-hour: 
@@ -758,7 +812,7 @@
         :volume-barrel: 
           :other: "{0}bbl"
         :volume-bushel: 
-          :other: "{0} bu"
+          :other: "{0}bu"
         :volume-centiliter: 
           :other: "{0}cL"
         :volume-cubic-centimeter: 
@@ -781,6 +835,14 @@
           :other: "{0}mc"
         :volume-deciliter: 
           :other: "{0}dL"
+        :volume-dessert-spoon: 
+          :other: "{0}dstspn"
+        :volume-dessert-spoon-imperial: 
+          :other: "{0}dstspn Imp"
+        :volume-dram: 
+          :other: "{0}dram fl"
+        :volume-drop: 
+          :other: "{0}drop"
         :volume-fluid-ounce: 
           :other: "{0}fl oz"
         :volume-fluid-ounce-imperial: 
@@ -791,18 +853,24 @@
           :other: "{0}gal Imp."
         :volume-hectoliter: 
           :other: "{0}hL"
+        :volume-jigger: 
+          :other: "{0}jigger"
         :volume-liter: 
           :other: "{0}L"
         :volume-megaliter: 
           :other: "{0}ML"
         :volume-milliliter: 
           :other: "{0}mL"
+        :volume-pinch: 
+          :other: "{0}pinch"
         :volume-pint: 
           :other: "{0}pt"
         :volume-pint-metric: 
           :other: "{0}mpt"
         :volume-quart: 
           :other: "{0}qt"
+        :volume-quart-imperial: 
+          :other: "{0}qt Imp."
         :volume-tablespoon: 
           :other: "{0}tbsp"
         :volume-teaspoon: 

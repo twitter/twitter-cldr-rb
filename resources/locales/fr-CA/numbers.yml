@@ -136,6 +136,8 @@
           :long: 
             ? !ruby/symbol "1000"
             : 
+              ? !ruby/symbol "1"
+              : "0 mille"
               :one: "0 mille"
               :other: "0 mille"
             ? !ruby/symbol "10000"
@@ -356,6 +358,7 @@
     :symbols: 
       :adlm: :numbers.symbols.latn
       :arab: 
+        :approximately_sign: "~"
         :decimal: ٫
         :exponential: اس
         :group: ٬
@@ -369,6 +372,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :arabext: 
+        :approximately_sign: "~"
         :decimal: ٫
         :exponential: ×۱۰^
         :group: ٬
@@ -402,6 +406,7 @@
       :lanatham: {}
       :laoo: {}
       :latn: 
+        :approximately_sign: ≈
         :decimal: ","
         :exponential: E
         :group:  

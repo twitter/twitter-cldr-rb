@@ -3,17 +3,17 @@
   :calendars: 
     :gregorian: 
       :additional_formats: 
-        :Bh: "h B"
-        :Bhm: "h:mm B"
-        :Bhms: "h:mm:ss B"
+        :Bh: "h 'ч'. B"
+        :Bhm: "h:mm 'ч'. B"
+        :Bhms: "h:mm:ss 'ч'. B"
         :E: ccc
-        :EBhm: "E, h:mm B"
-        :EBhms: "E, h:mm:ss B"
-        :EHm: "E, HH:mm"
-        :EHms: "E, H:mm:ss"
+        :EBhm: "E, h:mm 'ч'. B"
+        :EBhms: "E, h:mm:ss 'ч'. B"
+        :EHm: "E, HH:mm 'ч'."
+        :EHms: "E, HH:mm:ss 'ч'."
         :Ed: "E, d"
-        :Ehm: "E, h:mm a"
-        :Ehms: "E, h:mm:ss a"
+        :Ehm: "E, h:mm 'ч'. a"
+        :Ehms: "E, h:mm:ss 'ч'. a"
         :Gy: "y 'г'. G"
         :GyMMM: "MM.y 'г'. G"
         :GyMMMEd: "E, d.MM.y 'г'. G"
@@ -21,11 +21,11 @@
         :GyMMMMEd: "E, d MMMM y 'г'. G"
         :GyMMMMd: "d MMMM y 'г'. G"
         :GyMMMd: "d.MM.y 'г'. G"
-        :H: H
-        :Hm: "H:mm"
-        :Hms: "H:mm:ss"
-        :Hmsv: "HH:mm:ss v"
-        :Hmv: "HH:mm v"
+        :H: "HH 'ч'."
+        :Hm: "HH:mm 'ч'."
+        :Hms: "HH:mm:ss 'ч'."
+        :Hmsv: "HH:mm:ss 'ч'. v"
+        :Hmv: "HH:mm 'ч'. v"
         :M: L
         :MEd: "E, d.MM"
         :MMM: MM
@@ -38,11 +38,11 @@
         :MMMd: d.MM
         :Md: d.MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: "h 'ч'. a"
+        :hm: "h:mm 'ч'. a"
+        :hms: "h:mm:ss 'ч'. a"
+        :hmsv: "h:mm:ss 'ч'. a v"
+        :hmv: "h:mm 'ч'. a v"
         :ms: "m:ss"
         ? !ruby/symbol "y"
         : "y 'г'."
@@ -201,13 +201,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "H:mm:ss zzzz"
+            :pattern: "H:mm:ss 'ч'. zzzz"
           :long: 
-            :pattern: "H:mm:ss z"
+            :pattern: "H:mm:ss 'ч'. z"
           :medium: 
-            :pattern: "H:mm:ss"
+            :pattern: "H:mm:ss 'ч'."
           :short: 
-            :pattern: "H:mm"
+            :pattern: "H:mm 'ч'."
       :months: 
         :format: 
           :abbreviated: 

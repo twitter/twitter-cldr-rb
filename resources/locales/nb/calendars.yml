@@ -9,8 +9,8 @@
         :E: ccc
         :EBhm: "E h:mm B"
         :EBhms: "E h:mm:ss B"
-        :EHm: "E HH:mm"
-        :EHms: "E HH:mm:ss"
+        :EHm: "E 'kl'. HH:mm"
+        :EHms: "E 'kl'. HH:mm:ss"
         :Ed: "E d."
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
@@ -42,7 +42,7 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M.y
-        :yMEd: "E d.MM.y"
+        :yMEd: "E d.M.y"
         :yMM: MM.y
         :yMMM: "MMM y"
         :yMMMEd: "E d. MMM y"
@@ -187,7 +187,7 @@
             :pattern: dd.MM.y
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'kl'. {{time}}"
           :long: 
             :pattern: "{{date}} 'kl'. {{time}}"
           :medium: 
@@ -305,13 +305,13 @@
             :night1: nt.
             :pm: p
           :wide: 
-            :afternoon1: ettermiddagen
+            :afternoon1: "på ettermiddagen"
             :am: a.m.
-            :evening1: kvelden
+            :evening1: "på kvelden"
             :midnight: midnatt
-            :morning1: morgenen
-            :morning2: formiddagen
-            :night1: natten
+            :morning1: "på morgenen"
+            :morning2: "på formiddagen"
+            :night1: "på natten"
             :pm: p.m.
         :stand-alone: 
           :abbreviated: 

@@ -51,7 +51,7 @@
         :yMd: d.M.y
         :yQQQ: "QQQ y 'г'."
         :yQQQQ: "QQQQ y 'г'."
-        :yw: "w 'седмица' 'од' Y"
+        :yw: "w. 'седмица' 'од' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -127,7 +127,7 @@
           0: "пр. н.е."
           1: "нашата ера"
         :narrow: 
-          0: пр.н.е.
+          0: ""
           1: н.е.
       :fields: 
         :day: ден
@@ -187,13 +187,13 @@
             :pattern: d.M.yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, 'во' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, 'во' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, 'во' {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, 'во' {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -287,12 +287,12 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: попл.
+            :afternoon1: попладне
             :am: претпл.
             :evening1: навечер
             :midnight: полноќ
             :morning1: наутро
-            :morning2: претпл.
+            :morning2: претпладне
             :night1: ноќе
             :noon: напладне
             :pm: попл.

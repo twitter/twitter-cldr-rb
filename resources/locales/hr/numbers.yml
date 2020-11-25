@@ -35,9 +35,9 @@
           :short: 
             ? !ruby/symbol "1000"
             : 
-              :few: 0000¤
-              :one: 0000¤
-              :other: 0000¤
+              :few: "0"
+              :one: "0"
+              :other: "0"
             ? !ruby/symbol "10000"
             : 
               :few: 00 tis'.' ¤
@@ -393,6 +393,7 @@
     :symbols: 
       :adlm: :numbers.symbols.latn
       :arab: 
+        :approximately_sign: "~"
         :decimal: ٫
         :exponential: اس
         :group: ٬
@@ -406,6 +407,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :arabext: 
+        :approximately_sign: "~"
         :decimal: ٫
         :exponential: ×۱۰^
         :group: ٬
@@ -439,12 +441,13 @@
       :lanatham: :numbers.symbols.latn
       :laoo: :numbers.symbols.latn
       :latn: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
         :infinity: ∞
         :list: ;
-        :minus_sign: "-"
+        :minus_sign: −
         :nan: NaN
         :per_mille: ‰
         :percent_sign: "%"

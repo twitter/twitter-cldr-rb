@@ -22,8 +22,8 @@
         :GyMMMMd: "d 'de' MMMM 'de' y G"
         :GyMMMd: "d MMM y G"
         :H: HH
-        :Hm: "H:mm"
-        :Hms: "H:mm:ss"
+        :Hm: "HH:mm"
+        :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmsvvvv: "HH:mm:ss (vvvv)"
         :Hmv: "HH:mm v"
@@ -52,12 +52,12 @@
         :yM: M/y
         :yMEd: "E, d/M/y"
         :yMM: MM/y
-        :yMMM: "MMMM 'de' y"
-        :yMMMEd: "EEE, d 'de' MMMM 'de' y"
+        :yMMM: "MMM 'de' y"
+        :yMMMEd: "EEE, d 'de' MMM 'de' y"
         :yMMMM: "MMMM 'de' y"
         :yMMMMEd: "EEE, d 'de' MMMM 'de' y"
         :yMMMMd: "d 'de' MMMM 'de' y"
-        :yMMMd: "d 'de' MMMM 'de' y"
+        :yMMMd: "d 'de' MMM 'de' y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ 'de' y"
@@ -65,13 +65,13 @@
       :days: 
         :format: 
           :abbreviated: 
-            :fri: vie.
-            :mon: lun.
-            :sat: sáb.
-            :sun: dom.
-            :thu: jue.
-            :tue: mar.
-            :wed: mié.
+            :fri: vie
+            :mon: lun
+            :sat: sáb
+            :sun: dom
+            :thu: jue
+            :tue: mar
+            :wed: mié
           :narrow: 
             :fri: V
             :mon: L
@@ -205,13 +205,13 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "H:mm:ss zzzz"
+            :pattern: "HH:mm:ss zzzz"
           :long: 
-            :pattern: "H:mm:ss z"
+            :pattern: "HH:mm:ss z"
           :medium: 
-            :pattern: "H:mm:ss"
+            :pattern: "HH:mm:ss"
           :short: 
-            :pattern: "H:mm"
+            :pattern: "HH:mm"
       :months: 
         :format: 
           :abbreviated: 

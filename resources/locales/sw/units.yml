@@ -38,8 +38,8 @@
           :one: "hekta {0}"
           :other: "hekta {0}"
         :area-square-centimeter: 
-          :one: "sentimita mraba {0}"
-          :other: "sentimita mraba {0}"
+          :one: "sentimita {0} ya mraba"
+          :other: "sentimita {0} za mraba"
         :area-square-foot: 
           :one: "futi {0} ya mraba"
           :other: "futi {0} za mraba"
@@ -77,8 +77,8 @@
           :one: "{0} kwa kila elfu"
           :other: "{0} kwa kila elfu"
         :concentr-permillion: 
-          :one: "ppm {0}"
-          :other: "ppm {0}"
+          :one: "sehemu {0} kwa kila milioni"
+          :other: "sehemu {0} kwa kila milioni"
         :concentr-permyriad: 
           :one: "permyriadi {0}"
           :other: "permyriadi {0}"
@@ -175,6 +175,9 @@
         :electric-volt: 
           :one: "volti {0}"
           :other: "volti {0}"
+        :energy-british-thermal-unit: 
+          :one: "kipimo {0} cha joto cha Uingereza"
+          :other: "vipimo {0} vya joto vya Uingereza"
         :energy-calorie: 
           :one: "kalori {0}"
           :other: "kalori {0}"
@@ -217,6 +220,9 @@
         :frequency-megahertz: 
           :one: "megahezi {0}"
           :other: "megahezi {0}"
+        :graphics-dot: 
+          :one: "kitone {0}"
+          :other: "vitone {0}"
         :graphics-dot-per-centimeter: 
           :one: "kitone {0} kwa kila sentimita"
           :other: "vitone {0} kwa kila sentimita"
@@ -247,9 +253,18 @@
         :length-decimeter: 
           :one: "desimita {0}"
           :other: "desimita {0}"
+        :length-earth-radius: 
+          :one: "nusu kipenyo cha dunia {0}"
+          :other: "nusu kipenyo cha dunia {0}"
+        :length-fathom: 
+          :one: "fathom {0}"
+          :other: "fathom {0}"
         :length-foot: 
           :one: "futi {0}"
           :other: "futi {0}"
+        :length-furlong: 
+          :one: "furlong {0}"
+          :other: "furlong {0}"
         :length-inch: 
           :one: "inchi {0}"
           :other: "inchi {0}"
@@ -269,8 +284,8 @@
           :one: "maili {0}"
           :other: "maili {0}"
         :length-mile-scandinavian: 
-          :one: "maili ya skandinavia"
-          :other: "{0} smi"
+          :one: "maili {0} ya skandinavia"
+          :other: "maili {0} za skandinavia"
         :length-millimeter: 
           :one: "milimita {0}"
           :other: "milimita {0}"
@@ -289,15 +304,36 @@
         :length-point: 
           :one: "pointi {0}"
           :other: "pointi {0}"
+        :length-solar-radius: 
+          :one: "nusu kipenyo cha jua {0}"
+          :other: "nusu vipenyo vya jua {0}"
         :length-yard: 
           :one: "yadi {0}"
           :other: "yadi {0}"
+        :light-candela: 
+          :one: "kandela {0}"
+          :other: "kandela {0}"
+        :light-lumen: 
+          :one: "lumeni {0}"
+          :other: "lumeni {0}"
         :light-lux: 
           :one: "lux {0}"
           :other: "lux {0}"
+        :light-solar-luminosity: 
+          :one: "ung'avu wa jua {0}"
+          :other: "ung'avu wa jua {0}"
         :mass-carat: 
           :one: "karati {0}"
           :other: "karati {0}"
+        :mass-dalton: 
+          :one: "daltoni {0}"
+          :other: "daltoni {0}"
+        :mass-earth-mass: 
+          :one: "uzito wa dunia {0}"
+          :other: "uzito wa dunia {0}"
+        :mass-grain: 
+          :one: "nafaka {0}"
+          :other: "nafaka {0}"
         :mass-gram: 
           :one: "gramu {0}"
           :other: "gramu {0}"
@@ -322,9 +358,15 @@
         :mass-pound: 
           :one: "ratili {0}"
           :other: "ratili {0}"
+        :mass-solar-mass: 
+          :one: "uzito wa jua {0}"
+          :other: "uzito wa jua {0}"
+        :mass-stone: 
+          :one: "jiwe {0}"
+          :other: "mawe {0}"
         :mass-ton: 
-          :one: "tani {0}"
-          :other: "tani {0}"
+          :one: "tani fupi {0}"
+          :other: "tani fupi {0}"
         :power-gigawatt: 
           :one: "gigawati {0}"
           :other: "gigawati {0}"
@@ -409,6 +451,9 @@
         :volume-barrel: 
           :one: "pipa {0}"
           :other: "mapipa {0}"
+        :volume-bushel: 
+          :one: "busheli {0}"
+          :other: "busheli {0}"
         :volume-centiliter: 
           :one: "sentilita {0}"
           :other: "sentilita {0}"
@@ -442,18 +487,36 @@
         :volume-deciliter: 
           :one: "desilita {0}"
           :other: "desilita {0}"
+        :volume-dessert-spoon: 
+          :one: "kijiko {0} cha kitindamlo"
+          :other: "vijiko {0} vya kitindamlo"
+        :volume-dessert-spoon-imperial: 
+          :one: "kijiko {0} cha kitindamlo cha Uingereza"
+          :other: "vijiko {0} vya kitindamlo vya Uingereza"
+        :volume-dram: 
+          :one: "dramu {0}"
+          :other: "dramu {0}"
+        :volume-drop: 
+          :one: "tone {0}"
+          :other: "matone {0}"
         :volume-fluid-ounce: 
           :one: "aunsi {0} ya ujazo"
           :other: "aunsi {0} za ujazo"
+        :volume-fluid-ounce-imperial: 
+          :one: "aunsi {0} ya ujazo ya Uingereza"
+          :other: "aunsi {0} za ujazo za Uingereza"
         :volume-gallon: 
           :one: "galoni {0}"
           :other: "galoni {0}"
         :volume-gallon-imperial: 
-          :one: "{0} gal Imp."
-          :other: "{0} gal Imp."
+          :one: "gal Imp. {0}"
+          :other: "gal Imp. {0}"
         :volume-hectoliter: 
           :one: "hektolita {0}"
           :other: "hektolita {0}"
+        :volume-jigger: 
+          :one: "toti {0}"
+          :other: "toti {0}"
         :volume-liter: 
           :one: "lita {0}"
           :other: "lita {0}"
@@ -463,6 +526,9 @@
         :volume-milliliter: 
           :one: "mililita {0}"
           :other: "mililita {0}"
+        :volume-pinch: 
+          :one: "mfinyo {0} kwa vidole"
+          :other: "mifinyo {0} kwa vidole"
         :volume-pint: 
           :one: "painti {0}"
           :other: "painti {0}"
@@ -472,6 +538,9 @@
         :volume-quart: 
           :one: "kwati {0}"
           :other: "kwati {0}"
+        :volume-quart-imperial: 
+          :one: "kwati {0} ya Uingereza"
+          :other: "kwati {0} za Uingereza"
         :volume-tablespoon: 
           :one: "kijiko {0} kikubwa"
           :other: "vijiko {0} vikubwa"
@@ -513,8 +582,8 @@
           :one: "asilimia {0}"
           :other: "asilimia {0}"
         :consumption-liter-per-100-kilometer: 
-          :one: "{0}L/100km"
-          :other: "{0}L/100km"
+          :one: "L/100km {0}"
+          :other: "L/100km {0}"
         :duration-day: 
           :one: "siku {0}"
           :other: "siku {0}"
@@ -525,14 +594,14 @@
           :one: "ms {0}"
           :other: "ms {0}"
         :duration-minute: 
-          :one: "dakika {0}"
-          :other: "dakika {0}"
+          :one: "dak {0}"
+          :other: "dak {0}"
         :duration-month: 
           :one: "mwezi {0}"
           :other: "miezi {0}"
         :duration-second: 
-          :one: "sekunde {0}"
-          :other: "sekunde {0}"
+          :one: "sek {0}"
+          :other: "sek {0}"
         :duration-week: 
           :one: "wiki {0}"
           :other: "wiki {0}"
@@ -541,8 +610,8 @@
           :other: "miaka {0}"
         :electric-volt: {}
         :length-centimeter: 
-          :one: "{0} cm"
-          :other: "{0} cm"
+          :one: "cm {0}"
+          :other: "cm {0}"
         :length-foot: 
           :one: "Futi {0}"
           :other: "Futi {0}"
@@ -562,8 +631,8 @@
           :one: "Maili {0}"
           :other: "Maili {0}"
         :length-millimeter: 
-          :one: "{0} mm"
-          :other: "{0} mm"
+          :one: "mm {0}"
+          :other: "mm {0}"
         :length-picometer: 
           :one: "pm {0}"
           :other: "pm {0}"
@@ -668,14 +737,14 @@
           :one: "km² {0}"
           :other: "km² {0}"
         :area-square-meter: 
-          :one: "mita {0} ya mraba"
+          :one: "m² {0}"
           :other: "m² {0}"
         :area-square-mile: 
-          :one: "maili {0} ya mraba"
-          :other: "maili {0} za mraba"
+          :one: "sq mi {0}"
+          :other: "sq mi {0}"
         :area-square-yard: 
-          :one: "yadi {0} ya mraba"
-          :other: "yadi {0} za mraba"
+          :one: "yd² {0}"
+          :other: "yd² {0}"
         :concentr-karat: 
           :one: "karati {0}"
           :other: "karati {0}"
@@ -700,17 +769,17 @@
         :concentr-permyriad: 
           :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
-          :one: "lita {0} kwa kilomita 100"
-          :other: "lita {0}/km100"
+          :one: "lita {0}/km 100"
+          :other: "lita {0}/km 100"
         :consumption-liter-per-kilometer: 
           :one: "lita {0} kwa kilomita"
           :other: "lita {0} kwa kilomita"
         :consumption-mile-per-gallon: 
-          :one: "{0} mpg"
-          :other: "{0} mpg"
+          :one: "mpg {0}"
+          :other: "mpg {0}"
         :consumption-mile-per-gallon-imperial: 
-          :one: "{0} mpg Imp."
-          :other: "{0} mpg Imp."
+          :one: "mpg Imp. {0}"
+          :other: "mpg Imp. {0}"
         :digital-bit: 
           :one: "biti {0}"
           :other: "biti {0}"
@@ -761,8 +830,8 @@
           :one: "mikrosekunde {0}"
           :other: "mikrosekunde {0}"
         :duration-millisecond: 
-          :one: "millisekunde {0}"
-          :other: "millisekunde {0}"
+          :one: "ms {0}"
+          :other: "ms {0}"
         :duration-minute: 
           :one: "dakika {0}"
           :other: "dakika {0}"
@@ -788,8 +857,8 @@
           :one: "ampea {0}"
           :other: "ampea {0}"
         :electric-milliampere: 
-          :one: "{0} mA"
-          :other: "{0} mA"
+          :one: "mA {0}"
+          :other: "mA {0}"
         :electric-ohm: 
           :one: "{0} Ω"
           :other: "{0} Ω"
@@ -797,12 +866,14 @@
           :one: "volti {0}"
           :other: "volti {0}"
         :energy-british-thermal-unit: 
-          :other: "{0} Btu"
+          :one: "Btu {0}"
+          :other: "Btu {0}"
         :energy-calorie: 
           :one: "kalori {0}"
           :other: "kalori {0}"
         :energy-electronvolt: 
-          :other: "{0} eV"
+          :one: "eV {0}"
+          :other: "eV {0}"
         :energy-foodcalorie: 
           :one: "kalori {0}"
           :other: "kalori {0}"
@@ -816,15 +887,17 @@
           :one: "kilojuli {0}"
           :other: "kilojuli {0}"
         :energy-kilowatt-hour: 
-          :one: "{0} kWh"
-          :other: "{0} kWh"
+          :one: "kWh {0}"
+          :other: "kWh {0}"
         :energy-therm-us: 
           :one: "kipimo {0} cha gesi, US"
           :other: "vipimo {0} vya gesi, US"
         :force-newton: 
-          :other: "{0} N"
+          :one: "N {0}"
+          :other: "N {0}"
         :force-pound-force: 
-          :other: "{0} lbf"
+          :one: "lbf {0}"
+          :other: "lbf {0}"
         :frequency-gigahertz: 
           :one: "gigahezi {0}"
           :other: "gigahezi {0}"
@@ -837,6 +910,9 @@
         :frequency-megahertz: 
           :one: "megahezi {0}"
           :other: "megahezi {0}"
+        :graphics-dot: 
+          :one: "kitone {0}"
+          :other: "vitone {0}"
         :graphics-dot-per-centimeter: 
           :one: "dpcm {0}"
           :other: "dpcm {0}"
@@ -867,13 +943,18 @@
         :length-decimeter: 
           :one: "desimita {0}"
           :other: "desimita {0}"
+        :length-earth-radius: 
+          :one: "R⊕ {0}"
+          :other: "R⊕ {0}"
         :length-fathom: 
-          :other: "{0} fth"
+          :one: "fth {0}"
+          :other: "fth {0}"
         :length-foot: 
           :one: "futi {0}"
           :other: "futi {0}"
         :length-furlong: 
-          :other: "{0} fur"
+          :one: "fur {0}"
+          :other: "fur {0}"
         :length-inch: 
           :one: "inchi {0}"
           :other: "inchi {0}"
@@ -893,8 +974,8 @@
           :one: "maili {0}"
           :other: "maili {0}"
         :length-mile-scandinavian: 
-          :one: "{0} smi"
-          :other: "{0} smi"
+          :one: "smi {0}"
+          :other: "smi {0}"
         :length-millimeter: 
           :one: "milimita {0}"
           :other: "milimita {0}"
@@ -905,8 +986,8 @@
           :one: "maili {0} ya kibaharia"
           :other: "maili {0} za kibaharia"
         :length-parsec: 
-          :one: "{0} pc"
-          :other: "{0} pc"
+          :one: "pc {0}"
+          :other: "pc {0}"
         :length-picometer: 
           :one: "pikomita {0}"
           :other: "pikomita {0}"
@@ -914,22 +995,35 @@
           :one: "pointi {0}"
           :other: "pointi {0}"
         :length-solar-radius: 
-          :other: "{0} R☉"
+          :one: "R☉ {0}"
+          :other: "R☉ {0}"
         :length-yard: 
           :one: "yadi {0}"
           :other: "yadi {0}"
+        :light-candela: 
+          :one: "cd {0}"
+          :other: "cd {0}"
+        :light-lumen: 
+          :one: "lm {0}"
+          :other: "lm {0}"
         :light-lux: 
           :one: "lx {0}"
           :other: "lx {0}"
         :light-solar-luminosity: 
-          :other: "{0} L☉"
+          :one: "L☉ {0}"
+          :other: "L☉ {0}"
         :mass-carat: 
           :one: "karati {0}"
           :other: "karati {0}"
         :mass-dalton: 
-          :other: "{0} Da"
+          :one: "Da {0}"
+          :other: "Da {0}"
         :mass-earth-mass: 
-          :other: "{0} M⊕"
+          :one: "M⊕ {0}"
+          :other: "M⊕ {0}"
+        :mass-grain: 
+          :one: "nafaka {0}"
+          :other: "nafaka {0}"
         :mass-gram: 
           :one: "gramu {0}"
           :other: "gramu {0}"
@@ -955,18 +1049,20 @@
           :one: "ratili {0}"
           :other: "ratili {0}"
         :mass-solar-mass: 
-          :other: "{0} M☉"
+          :one: "M☉ {0}"
+          :other: "M☉ {0}"
         :mass-stone: 
-          :other: "{0} st"
+          :one: "st {0}"
+          :other: "st {0}"
         :mass-ton: 
-          :one: "tani {0}"
-          :other: "tani {0}"
+          :one: "tani fupi {0}"
+          :other: "tani fupi {0}"
         :power-gigawatt: 
           :one: "gigawati {0}"
           :other: "gigawati {0}"
         :power-horsepower: 
-          :one: "{0} hp"
-          :other: "{0} hp"
+          :one: "hp {0}"
+          :other: "hp {0}"
         :power-kilowatt: 
           :one: "kilowati {0}"
           :other: "kilowati {0}"
@@ -989,8 +1085,8 @@
           :one: "hPa {0}"
           :other: "hPa {0}"
         :pressure-inch-ofhg: 
-          :one: "{0} inHg"
-          :other: "{0} inHg"
+          :one: "inHg {0}"
+          :other: "inHg {0}"
         :pressure-kilopascal: 
           :one: "kPa {0}"
           :other: "kPa {0}"
@@ -1001,8 +1097,8 @@
           :one: "mbar {0}"
           :other: "mbar {0}"
         :pressure-millimeter-ofhg: 
-          :one: "milimita {0} ya zebaki"
-          :other: "mm Hg {0}"
+          :one: "mmHg {0}"
+          :other: "mmHg {0}"
         :pressure-pascal: 
           :one: "Pa {0}"
           :other: "Pa {0}"
@@ -1016,11 +1112,11 @@
           :one: "noti {0}"
           :other: "noti {0}"
         :speed-meter-per-second: 
-          :one: "{0} m/s"
-          :other: "{0} m/s"
+          :one: "m/s {0}"
+          :other: "m/s {0}"
         :speed-mile-per-hour: 
-          :one: "{0} mph"
-          :other: "{0} mph"
+          :one: "mph {0}"
+          :other: "mph {0}"
         :temperature-celsius: 
           :one: "{0}°C"
           :other: "{0}°C"
@@ -1034,9 +1130,11 @@
           :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
-          :other: "{0} N⋅m"
+          :one: "N⋅m {0}"
+          :other: "N⋅m {0}"
         :torque-pound-force-foot: 
-          :other: "{0} lbf⋅ft"
+          :one: "lbf⋅ft {0}"
+          :other: "lbf⋅ft {0}"
         :volume-acre-foot: 
           :one: "ekari futi {0}"
           :other: "ekari futi {0}"
@@ -1044,7 +1142,8 @@
           :one: "pipa {0}"
           :other: "mapipa {0}"
         :volume-bushel: 
-          :other: "{0} bu"
+          :one: "bu {0}"
+          :other: "bu {0}"
         :volume-centiliter: 
           :one: "sentilita {0}"
           :other: "sentilita {0}"
@@ -1078,20 +1177,36 @@
         :volume-deciliter: 
           :one: "desilita {0}"
           :other: "desilita {0}"
+        :volume-dessert-spoon: 
+          :one: "dstspn {0}"
+          :other: "dstspn {0}"
+        :volume-dessert-spoon-imperial: 
+          :one: "dstspn Imp {0}"
+          :other: "dstspn Imp {0}"
+        :volume-dram: 
+          :one: "ujazo wa dramu {0}"
+          :other: "ujazo wa dramu {0}"
+        :volume-drop: 
+          :one: "tone {0}"
+          :other: "matone {0}"
         :volume-fluid-ounce: 
           :one: "fl oz {0}"
           :other: "fl oz {0}"
         :volume-fluid-ounce-imperial: 
-          :other: "{0} fl oz Imp."
+          :one: "fl oz Imp. {0}"
+          :other: "fl oz Imp. {0}"
         :volume-gallon: 
           :one: "galoni {0}"
           :other: "galoni {0}"
         :volume-gallon-imperial: 
-          :one: "{0} gal Imp."
-          :other: "{0} gal Imp."
+          :one: "gal Imp. {0}"
+          :other: "gal Imp. {0}"
         :volume-hectoliter: 
           :one: "hektolita {0}"
           :other: "hektolita {0}"
+        :volume-jigger: 
+          :one: "toti {0}"
+          :other: "toti {0}"
         :volume-liter: 
           :one: "lita {0}"
           :other: "lita {0}"
@@ -1101,6 +1216,9 @@
         :volume-milliliter: 
           :one: "mililita {0}"
           :other: "mililita {0}"
+        :volume-pinch: 
+          :one: "mfinyo {0} kwa vidole"
+          :other: "mifinyo {0} kwa vidole"
         :volume-pint: 
           :one: "painti {0}"
           :other: "painti {0}"
@@ -1110,9 +1228,12 @@
         :volume-quart: 
           :one: "kwati {0}"
           :other: "kwati {0}"
+        :volume-quart-imperial: 
+          :one: "qt Imp. {0}"
+          :other: "qt Imp. {0}"
         :volume-tablespoon: 
-          :one: "kijiko {0} kikubwa"
-          :other: "vijiko {0} vikubwa"
+          :one: "tbsp {0}"
+          :other: "tbsp {0}"
         :volume-teaspoon: 
-          :one: "kijiko {0} kidogo"
-          :other: "vijiko {0} vidogo"
+          :one: "tsp {0}"
+          :other: "tsp {0}"

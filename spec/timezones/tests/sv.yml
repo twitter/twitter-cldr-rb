@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Danmarkshavn
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT−08:00
   :LOCALIZED_GMT_SHORT: GMT−8
   :GENERIC_LOCATION: Dawsontid
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: New Salem, North Dakota
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: GMT−03:00
+  :LOCALIZED_GMT_SHORT: GMT−3
+  :GENERIC_LOCATION: Nuuktid
+  :GENERIC_LONG: västgrönländsk tid
+  :GENERIC_SHORT: Nuuktid
+  :SPECIFIC_LONG: västgrönländsk normaltid
+  :SPECIFIC_SHORT: GMT−3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Nuuk
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: GMT−07:00
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: S:t Thomas
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT−08:00
   :LOCALIZED_GMT_SHORT: GMT−8
   :GENERIC_LOCATION: Whitehorsetid
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Yellowknife
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: GMT+08:00
-  :LOCALIZED_GMT_SHORT: GMT+8
+  :offset: 39600000
+  :LOCALIZED_GMT: GMT+11:00
+  :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: Caseytid
-  :GENERIC_LONG: västaustralisk normaltid
+  :GENERIC_LONG: Caseytid
   :GENERIC_SHORT: Caseytid
-  :SPECIFIC_LONG: västaustralisk normaltid
-  :SPECIFIC_SHORT: GMT+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: Caseytid
+  :SPECIFIC_SHORT: GMT+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Casey
 Antarctica/Davis:
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Dumont d’Urville
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: GMT+11:00
   :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: Macquarietid
-  :GENERIC_LONG: Macquarietid
+  :GENERIC_LONG: östaustralisk tid
   :GENERIC_SHORT: Macquarietid
-  :SPECIFIC_LONG: Macquarietid
+  :SPECIFIC_LONG: östaustralisk sommartid
   :SPECIFIC_SHORT: GMT+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -5610,9 +5631,9 @@ Asia/Hong_Kong:
   :offset: 28800000
   :LOCALIZED_GMT: GMT+08:00
   :LOCALIZED_GMT_SHORT: GMT+8
-  :GENERIC_LOCATION: Hongkongtid
+  :GENERIC_LOCATION: Hongkong SARtid
   :GENERIC_LONG: Hongkong, normaltid
-  :GENERIC_SHORT: Hongkongtid
+  :GENERIC_SHORT: Hongkong SARtid
   :SPECIFIC_LONG: Hongkong, normaltid
   :SPECIFIC_SHORT: GMT+8
   :ISO_BASIC_SHORT: "+08"
@@ -6009,9 +6030,9 @@ Asia/Macao:
   :offset: 28800000
   :LOCALIZED_GMT: GMT+08:00
   :LOCALIZED_GMT_SHORT: GMT+8
-  :GENERIC_LOCATION: Macaotid
+  :GENERIC_LOCATION: Macao SARtid
   :GENERIC_LONG: kinesisk normaltid
-  :GENERIC_SHORT: Macaotid
+  :GENERIC_SHORT: Macao SARtid
   :SPECIFIC_LONG: kinesisk normaltid
   :SPECIFIC_SHORT: GMT+8
   :ISO_BASIC_SHORT: "+08"
@@ -6030,9 +6051,9 @@ Asia/Macau:
   :offset: 28800000
   :LOCALIZED_GMT: GMT+08:00
   :LOCALIZED_GMT_SHORT: GMT+8
-  :GENERIC_LOCATION: Macaotid
+  :GENERIC_LOCATION: Macao SARtid
   :GENERIC_LONG: kinesisk normaltid
-  :GENERIC_SHORT: Macaotid
+  :GENERIC_SHORT: Macao SARtid
   :SPECIFIC_LONG: kinesisk normaltid
   :SPECIFIC_SHORT: GMT+8
   :ISO_BASIC_SHORT: "+08"
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Regina
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT−08:00
   :LOCALIZED_GMT_SHORT: GMT−8
   :GENERIC_LOCATION: Whitehorsetid
@@ -8826,7 +8847,7 @@ Etc/UCT:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -8847,7 +8868,7 @@ Etc/UTC:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -8868,7 +8889,7 @@ Etc/Universal:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -8889,7 +8910,7 @@ Etc/Zulu:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -10419,9 +10440,9 @@ Hongkong:
   :offset: 28800000
   :LOCALIZED_GMT: GMT+08:00
   :LOCALIZED_GMT_SHORT: GMT+8
-  :GENERIC_LOCATION: Hongkongtid
+  :GENERIC_LOCATION: Hongkong SARtid
   :GENERIC_LONG: Hongkong, normaltid
-  :GENERIC_SHORT: Hongkongtid
+  :GENERIC_SHORT: Hongkong SARtid
   :SPECIFIC_LONG: Hongkong, normaltid
   :SPECIFIC_SHORT: GMT+8
   :ISO_BASIC_SHORT: "+08"
@@ -11217,9 +11238,9 @@ Pacific/Fakaofo:
   :offset: 46800000
   :LOCALIZED_GMT: GMT+13:00
   :LOCALIZED_GMT_SHORT: GMT+13
-  :GENERIC_LOCATION: Tokelautid
+  :GENERIC_LOCATION: Tokelauöarnatid
   :GENERIC_LONG: Tokelautid
-  :GENERIC_SHORT: Tokelautid
+  :GENERIC_SHORT: Tokelauöarnatid
   :SPECIFIC_LONG: Tokelautid
   :SPECIFIC_SHORT: GMT+13
   :ISO_BASIC_SHORT: "+13"
@@ -12081,7 +12102,7 @@ UCT:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -12326,27 +12347,6 @@ US/Pacific:
   :ISO_EXTENDED_LOCAL_FULL: "-08:00"
   :ZONE_ID_SHORT: uslax
   :EXEMPLAR_LOCATION: Los Angeles
-US/Pacific-New:
-  :offset: -28800000
-  :LOCALIZED_GMT: GMT−08:00
-  :LOCALIZED_GMT_SHORT: GMT−8
-  :GENERIC_LOCATION: Los Angelestid
-  :GENERIC_LONG: västnordamerikansk tid
-  :GENERIC_SHORT: Los Angelestid
-  :SPECIFIC_LONG: västnordamerikansk normaltid
-  :SPECIFIC_SHORT: GMT−8
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Los Angeles
 US/Samoa:
   :offset: -39600000
   :LOCALIZED_GMT: GMT−11:00
@@ -12375,7 +12375,7 @@ UTC:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -12396,7 +12396,7 @@ Universal:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -12459,7 +12459,7 @@ Zulu:
   :GENERIC_LOCATION: GMT
   :GENERIC_LONG: GMT
   :GENERIC_SHORT: GMT
-  :SPECIFIC_LONG: Koordinerad universell tid
+  :SPECIFIC_LONG: koordinerad universell tid
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"

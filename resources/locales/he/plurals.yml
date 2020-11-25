@@ -1,18 +1,19 @@
 ---
 :he:
   :cardinal:
-    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); (((((v == 0) &&
-      (!(((n).floor == (n)) && ((n) >= 0) && ((n) <= 10))))) && (n % 10 == 0)) ? :many
-      : (((i == 1) && (v == 0)) ? :one : (((i == 2) && (v == 0)) ? :two : :other)))
-      }'
+    :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); f = runtime.f(num);
+      t = runtime.t(num); v = runtime.v(num); w = runtime.w(num); e = runtime.e(num);
+      (((i == 1) && (v == 0)) ? :one : (((i == 2) && (v == 0)) ? :two : (((((v ==
+      0) && (!(((n).floor == (n)) && ((n) >= 0) && ((n) <= 10))))) && (n % 10 == 0))
+      ? :many : :other))) }'
     :names:
-    - :many
     - :one
     - :two
+    - :many
     - :other
   :ordinal:
-    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); v = runtime.v(num);
-      w = runtime.w(num); f = runtime.f(num); t = runtime.t(num); :other }
+    :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); f = runtime.f(num);
+      t = runtime.t(num); v = runtime.v(num); w = runtime.w(num); e = runtime.e(num);
+      :other }
     :names:
     - :other

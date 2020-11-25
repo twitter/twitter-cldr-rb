@@ -67,9 +67,9 @@ Africa/Algiers:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Algérie'
-  :GENERIC_LONG: heure normale d’Europe centrale
+  :GENERIC_LONG: heure normale de l’Europe centrale
   :GENERIC_SHORT: 'heure : Algérie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -277,9 +277,9 @@ Africa/Cairo:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Égypte'
-  :GENERIC_LONG: heure normale d’Europe de l’Est
+  :GENERIC_LONG: heure normale de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Égypte'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -319,9 +319,9 @@ Africa/Ceuta:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Ceuta'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Ceuta'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -1075,9 +1075,9 @@ Africa/Tripoli:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Libye'
-  :GENERIC_LONG: heure normale d’Europe de l’Est
+  :GENERIC_LONG: heure normale de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Libye'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -1096,9 +1096,9 @@ Africa/Tunis:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Tunisie'
-  :GENERIC_LONG: heure normale d’Europe centrale
+  :GENERIC_LONG: heure normale de l’Europe centrale
   :GENERIC_SHORT: 'heure : Tunisie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Danmarkshavn
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Dawson'
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: New Salem, Dakota du Nord
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: UTC−03:00
+  :LOCALIZED_GMT_SHORT: UTC−3
+  :GENERIC_LOCATION: 'heure : Nuuk'
+  :GENERIC_LONG: heure de l’Ouest du Groenland
+  :GENERIC_SHORT: 'heure : Nuuk'
+  :SPECIFIC_LONG: heure normale de l’Ouest du Groenland
+  :SPECIFIC_SHORT: UTC−3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Nuuk
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: UTC−07:00
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: Saint Thomas
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Whitehorse'
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Yellowknife
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: UTC+08:00
-  :LOCALIZED_GMT_SHORT: UTC+8
+  :offset: 39600000
+  :LOCALIZED_GMT: UTC+11:00
+  :LOCALIZED_GMT_SHORT: UTC+11
   :GENERIC_LOCATION: 'heure : Casey'
-  :GENERIC_LONG: heure normale de l’Ouest de l’Australie
+  :GENERIC_LONG: 'heure : Casey'
   :GENERIC_SHORT: 'heure : Casey'
-  :SPECIFIC_LONG: heure normale de l’Ouest de l’Australie
-  :SPECIFIC_SHORT: UTC+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: UTC+11:00
+  :SPECIFIC_SHORT: UTC+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Casey
 Antarctica/Davis:
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Dumont d’Urville
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: UTC+11:00
   :LOCALIZED_GMT_SHORT: UTC+11
   :GENERIC_LOCATION: 'heure : Macquarie'
-  :GENERIC_LONG: heure de l’île Macquarie
+  :GENERIC_LONG: heure de l’Est de l’Australie
   :GENERIC_SHORT: 'heure : Macquarie'
-  :SPECIFIC_LONG: heure de l’île Macquarie
+  :SPECIFIC_LONG: heure avancée de l’Est de l’Australie
   :SPECIFIC_SHORT: UTC+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -4876,9 +4897,9 @@ Arctic/Longyearbyen:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Svalbard et Jan Mayen'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Svalbard et Jan Mayen'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -4939,9 +4960,9 @@ Asia/Amman:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Jordanie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Jordanie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -5191,9 +5212,9 @@ Asia/Beirut:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Liban'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Liban'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -5401,9 +5422,9 @@ Asia/Damascus:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Syrie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Syrie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -5527,9 +5548,9 @@ Asia/Gaza:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Gaza'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Gaza'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -5569,9 +5590,9 @@ Asia/Hebron:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Hébron'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Hébron'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -6136,9 +6157,9 @@ Asia/Nicosia:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Nicosie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Nicosie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -7018,9 +7039,9 @@ Atlantic/Canary:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : Îles Canaries'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : Îles Canaries'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -7060,9 +7081,9 @@ Atlantic/Faeroe:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : îles Féroé'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : îles Féroé'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -7081,9 +7102,9 @@ Atlantic/Faroe:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : îles Féroé'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : îles Féroé'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -7102,9 +7123,9 @@ Atlantic/Jan_Mayen:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Svalbard et Jan Mayen'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Svalbard et Jan Mayen'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -7123,9 +7144,9 @@ Atlantic/Madeira:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : Madère'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : Madère'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -7164,9 +7185,9 @@ Atlantic/South_Georgia:
   :offset: -7200000
   :LOCALIZED_GMT: UTC−02:00
   :LOCALIZED_GMT_SHORT: UTC−2
-  :GENERIC_LOCATION: 'heure : Géorgie du Sud et îles Sandwich du Sud'
+  :GENERIC_LOCATION: 'heure : Géorgie du Sud-et-les Îles Sandwich du Sud'
   :GENERIC_LONG: heure de Géorgie du Sud
-  :GENERIC_SHORT: 'heure : Géorgie du Sud et îles Sandwich du Sud'
+  :GENERIC_SHORT: 'heure : Géorgie du Sud-et-les Îles Sandwich du Sud'
   :SPECIFIC_LONG: heure de Géorgie du Sud
   :SPECIFIC_SHORT: UTC−2
   :ISO_BASIC_SHORT: "-02"
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Regina
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Whitehorse'
@@ -8131,9 +8152,9 @@ Egypt:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Égypte'
-  :GENERIC_LONG: heure normale d’Europe de l’Est
+  :GENERIC_LONG: heure normale de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Égypte'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -8908,9 +8929,9 @@ Europe/Amsterdam:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Pays-Bas'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Pays-Bas'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -8929,9 +8950,9 @@ Europe/Andorra:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Andorre'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Andorre'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -8971,9 +8992,9 @@ Europe/Athens:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Grèce'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Grèce'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9013,9 +9034,9 @@ Europe/Belgrade:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Serbie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Serbie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9034,9 +9055,9 @@ Europe/Berlin:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Allemagne'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Allemagne'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9055,9 +9076,9 @@ Europe/Bratislava:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Slovaquie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Slovaquie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9076,9 +9097,9 @@ Europe/Brussels:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Belgique'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Belgique'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9097,9 +9118,9 @@ Europe/Bucharest:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Roumanie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Roumanie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9118,9 +9139,9 @@ Europe/Budapest:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Hongrie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Hongrie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9139,9 +9160,9 @@ Europe/Busingen:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Büsingen'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Büsingen'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9160,9 +9181,9 @@ Europe/Chisinau:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Moldavie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Moldavie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9181,9 +9202,9 @@ Europe/Copenhagen:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Danemark'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Danemark'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9223,9 +9244,9 @@ Europe/Gibraltar:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Gibraltar'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Gibraltar'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9265,9 +9286,9 @@ Europe/Helsinki:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Finlande'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Finlande'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9349,9 +9370,9 @@ Europe/Kaliningrad:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Kaliningrad'
-  :GENERIC_LONG: heure normale d’Europe de l’Est
+  :GENERIC_LONG: heure normale de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Kaliningrad'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9370,9 +9391,9 @@ Europe/Kiev:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Ukraine'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Ukraine'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9412,9 +9433,9 @@ Europe/Lisbon:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : Portugal'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : Portugal'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -9433,9 +9454,9 @@ Europe/Ljubljana:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Slovénie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Slovénie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9475,9 +9496,9 @@ Europe/Luxembourg:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Luxembourg'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Luxembourg'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9496,9 +9517,9 @@ Europe/Madrid:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Espagne'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Espagne'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9517,9 +9538,9 @@ Europe/Malta:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Malte'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Malte'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9538,9 +9559,9 @@ Europe/Mariehamn:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : îles d’Åland'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : îles d’Åland'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9580,9 +9601,9 @@ Europe/Monaco:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Monaco'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Monaco'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9622,9 +9643,9 @@ Europe/Nicosia:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Nicosie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Nicosie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9643,9 +9664,9 @@ Europe/Oslo:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Norvège'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Norvège'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9664,9 +9685,9 @@ Europe/Paris:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : France'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : France'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9685,9 +9706,9 @@ Europe/Podgorica:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Monténégro'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Monténégro'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9706,9 +9727,9 @@ Europe/Prague:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Tchéquie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Tchéquie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9727,9 +9748,9 @@ Europe/Riga:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Lettonie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Lettonie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9748,9 +9769,9 @@ Europe/Rome:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Italie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Italie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9790,9 +9811,9 @@ Europe/San_Marino:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Saint-Marin'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Saint-Marin'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9811,9 +9832,9 @@ Europe/Sarajevo:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Bosnie-Herzégovine'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Bosnie-Herzégovine'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9874,9 +9895,9 @@ Europe/Skopje:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Macédoine du Nord'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Macédoine du Nord'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9895,9 +9916,9 @@ Europe/Sofia:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Bulgarie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Bulgarie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9916,9 +9937,9 @@ Europe/Stockholm:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Suède'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Suède'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9937,9 +9958,9 @@ Europe/Tallinn:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Estonie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Estonie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -9958,9 +9979,9 @@ Europe/Tirane:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Albanie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Albanie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -9979,9 +10000,9 @@ Europe/Tiraspol:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Moldavie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Moldavie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -10021,9 +10042,9 @@ Europe/Uzhgorod:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Oujgorod'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Oujgorod'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -10042,9 +10063,9 @@ Europe/Vaduz:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Liechtenstein'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Liechtenstein'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10063,9 +10084,9 @@ Europe/Vatican:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Cité du Vatican'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Cité du Vatican'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10084,9 +10105,9 @@ Europe/Vienna:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Autriche'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Autriche'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10105,9 +10126,9 @@ Europe/Vilnius:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Lituanie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Lituanie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -10147,9 +10168,9 @@ Europe/Warsaw:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Pologne'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Pologne'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10168,9 +10189,9 @@ Europe/Zagreb:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Croatie'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Croatie'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10189,9 +10210,9 @@ Europe/Zaporozhye:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Zaporojie'
-  :GENERIC_LONG: heure d’Europe de l’Est
+  :GENERIC_LONG: heure de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Zaporojie'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -10210,9 +10231,9 @@ Europe/Zurich:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Suisse'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Suisse'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -10798,9 +10819,9 @@ Libya:
   :LOCALIZED_GMT: UTC+02:00
   :LOCALIZED_GMT_SHORT: UTC+2
   :GENERIC_LOCATION: 'heure : Libye'
-  :GENERIC_LONG: heure normale d’Europe de l’Est
+  :GENERIC_LONG: heure normale de l’Europe de l’Est
   :GENERIC_SHORT: 'heure : Libye'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Est
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Est
   :SPECIFIC_SHORT: UTC+2
   :ISO_BASIC_SHORT: "+02"
   :ISO_BASIC_LOCAL_SHORT: "+02"
@@ -10968,7 +10989,7 @@ NZ-CHAT:
   :GENERIC_LOCATION: 'heure : Chatham'
   :GENERIC_LONG: heure des îles Chatham
   :GENERIC_SHORT: 'heure : Chatham'
-  :SPECIFIC_LONG: heure avancée des Îles Chatham
+  :SPECIFIC_LONG: heure d’été des îles Chatham
   :SPECIFIC_SHORT: UTC+13:45
   :ISO_BASIC_SHORT: "+1345"
   :ISO_BASIC_LOCAL_SHORT: "+1345"
@@ -11115,7 +11136,7 @@ Pacific/Chatham:
   :GENERIC_LOCATION: 'heure : Chatham'
   :GENERIC_LONG: heure des îles Chatham
   :GENERIC_SHORT: 'heure : Chatham'
-  :SPECIFIC_LONG: heure avancée des Îles Chatham
+  :SPECIFIC_LONG: heure d’été des îles Chatham
   :SPECIFIC_SHORT: UTC+13:45
   :ISO_BASIC_SHORT: "+1345"
   :ISO_BASIC_LOCAL_SHORT: "+1345"
@@ -11953,9 +11974,9 @@ Poland:
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
   :GENERIC_LOCATION: 'heure : Pologne'
-  :GENERIC_LONG: heure d’Europe centrale
+  :GENERIC_LONG: heure de l’Europe centrale
   :GENERIC_SHORT: 'heure : Pologne'
-  :SPECIFIC_LONG: heure normale d’Europe centrale
+  :SPECIFIC_LONG: heure normale de l’Europe centrale
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
   :ISO_BASIC_LOCAL_SHORT: "+01"
@@ -11974,9 +11995,9 @@ Portugal:
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
   :GENERIC_LOCATION: 'heure : Portugal'
-  :GENERIC_LONG: heure d’Europe de l’Ouest
+  :GENERIC_LONG: heure de l’Europe de l’Ouest
   :GENERIC_SHORT: 'heure : Portugal'
-  :SPECIFIC_LONG: heure normale d’Europe de l’Ouest
+  :SPECIFIC_LONG: heure normale de l’Europe de l’Ouest
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
   :ISO_BASIC_LOCAL_SHORT: "+00"
@@ -12306,27 +12327,6 @@ US/Mountain:
   :ZONE_ID_SHORT: usden
   :EXEMPLAR_LOCATION: Denver
 US/Pacific:
-  :offset: -28800000
-  :LOCALIZED_GMT: UTC−08:00
-  :LOCALIZED_GMT_SHORT: UTC−8
-  :GENERIC_LOCATION: 'heure : Los Angeles'
-  :GENERIC_LONG: heure du Pacifique
-  :GENERIC_SHORT: HP
-  :SPECIFIC_LONG: heure normale du Pacifique
-  :SPECIFIC_SHORT: HNP
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Los Angeles
-US/Pacific-New:
   :offset: -28800000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8

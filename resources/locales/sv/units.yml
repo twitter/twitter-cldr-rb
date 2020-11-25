@@ -8,8 +8,8 @@
     :unitLength: 
       :long: 
         :acceleration-g-force: 
-          :one: "{0} gånger jordens gravitation"
-          :other: "{0} gånger jordens gravitation"
+          :one: "{0} g-kraft"
+          :other: "{0} g-kraft"
         :acceleration-meter-per-square-second: 
           :one: "{0} meter per kvadratsekund"
           :other: "{0} meter per kvadratsekund"
@@ -196,6 +196,9 @@
         :energy-kilowatt-hour: 
           :one: "{0} kilowattimme"
           :other: "{0} kilowattimmar"
+        :energy-therm-us: 
+          :one: "{0} am. therm"
+          :other: "{0} am. therms"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newton"
@@ -214,6 +217,7 @@
         :frequency-megahertz: 
           :one: "{0} megahertz"
           :other: "{0} megahertz"
+        :graphics-dot: {}
         :graphics-dot-per-centimeter: 
           :one: "{0} bildpunkt per centimeter"
           :other: "{0} bildpunkter per centimeter"
@@ -223,13 +227,13 @@
         :graphics-em: {}
         :graphics-megapixel: 
           :one: "{0} megapixel"
-          :other: "{0} megapixel"
+          :other: "{0} megapixlar"
         :graphics-pixel: 
           :one: "{0} pixel"
-          :other: "{0} pixel"
+          :other: "{0} pixlar"
         :graphics-pixel-per-centimeter: 
           :one: "{0} pixel per centimeter"
-          :other: "{0} pixel per centimeter"
+          :other: "{0} pixlar per centimeter"
         :graphics-pixel-per-inch: 
           :one: "{0} pixel per tum"
           :other: "{0} pixel per tum"
@@ -242,6 +246,9 @@
         :length-decimeter: 
           :one: "{0} decimeter"
           :other: "{0} decimeter"
+        :length-earth-radius: 
+          :one: "{0} jordradie"
+          :other: "{0} jordradie"
         :length-fathom: 
           :one: "{0} famn"
           :other: "{0} famnar"
@@ -291,17 +298,23 @@
           :one: "{0} pt"
           :other: "{0} pt"
         :length-solar-radius: 
-          :one: "{0} gånger Solens radie"
-          :other: "{0} gånger Solens radie"
+          :one: "{0} solradie"
+          :other: "{0} solradier"
         :length-yard: 
           :one: "{0} engelsk yard"
           :other: "{0} engelska yard"
+        :light-candela: 
+          :one: "{0} candela"
+          :other: "{0} candela"
+        :light-lumen: 
+          :one: "{0} lumen"
+          :other: "{0} lumen"
         :light-lux: 
           :one: "{0} lux"
           :other: "{0} lux"
         :light-solar-luminosity: 
-          :one: "{0} gånger Solens luminositet"
-          :other: "{0} gånger Solens luminositet"
+          :one: "{0} solluminositet"
+          :other: "{0} solluminositeter"
         :mass-carat: 
           :one: "{0} karat"
           :other: "{0} karat"
@@ -309,8 +322,11 @@
           :one: "{0} dalton"
           :other: "{0} dalton"
         :mass-earth-mass: 
-          :one: "{0} gånger Jordens massa"
-          :other: "{0} gånger Jordens massa"
+          :one: "{0} jordmassa"
+          :other: "{0} jordmassor"
+        :mass-grain: 
+          :one: "{0} grain"
+          :other: "{0} grains"
         :mass-gram: 
           :one: "{0} gram"
           :other: "{0} gram"
@@ -336,8 +352,8 @@
           :one: "{0} pund"
           :other: "{0} pund"
         :mass-solar-mass: 
-          :one: "{0} gånger Solens massa"
-          :other: "{0} gånger Solens massa"
+          :one: "{0} solmassa"
+          :other: "{0} solmassor"
         :mass-stone: 
           :one: "{0} engelsk sten"
           :other: "{0} engelska stenar"
@@ -422,9 +438,7 @@
         :volume-acre-foot: 
           :one: "{0} engelskt tunnland gånger fot"
           :other: "{0} engelska tunnland gånger fot"
-        :volume-barrel: 
-          :one: "{0} tunna"
-          :other: "{0} tunnor"
+        :volume-barrel: {}
         :volume-bushel: 
           :one: "{0} skäppa"
           :other: "{0} skäppor"
@@ -461,9 +475,22 @@
         :volume-deciliter: 
           :one: "{0} deciliter"
           :other: "{0} deciliter"
+        :volume-dessert-spoon: 
+          :one: "{0} dessertsked"
+          :other: "{0} dessertsked"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} brittiska dessertskedar"
+          :other: "{0} brittiska dessertskedar"
+        :volume-dram: 
+          :one: "{0} brittisk dram"
+          :other: "{0} brittiska dramer"
+        :volume-drop: 
+          :one: "{0} droppe"
+          :other: "{0} droppe"
         :volume-fluid-ounce: 
           :one: "{0} fluid ounce"
           :other: "{0} fluid ounces"
+        :volume-fluid-ounce-imperial: {}
         :volume-gallon: 
           :one: "{0} gallon"
           :other: "{0} gallon"
@@ -473,6 +500,9 @@
         :volume-hectoliter: 
           :one: "{0} hektoliter"
           :other: "{0} hektoliter"
+        :volume-jigger: 
+          :one: "{0} mätglas"
+          :other: "{0} mätglas"
         :volume-liter: 
           :one: "{0} liter"
           :other: "{0} liter"
@@ -482,6 +512,7 @@
         :volume-milliliter: 
           :one: "{0} milliliter"
           :other: "{0} milliliter"
+        :volume-pinch: {}
         :volume-pint: 
           :one: "{0} pint"
           :other: "{0} pint"
@@ -491,6 +522,9 @@
         :volume-quart: 
           :one: "{0} quart"
           :other: "{0} quart"
+        :volume-quart-imperial: 
+          :one: "{0} brittisk quart"
+          :other: "{0} brittiska quarts"
         :volume-tablespoon: 
           :one: "{0} matsked"
           :other: "{0} matskedar"
@@ -667,6 +701,9 @@
         :energy-kilowatt-hour: 
           :one: "{0}kWh"
           :other: "{0}kWh"
+        :energy-therm-us: 
+          :one: "{0} am. therm"
+          :other: "{0} am. therm"
         :force-newton: 
           :one: "{0}N"
           :other: "{0}N"
@@ -682,6 +719,9 @@
         :frequency-megahertz: 
           :one: "{0}MHz"
           :other: "{0}MHz"
+        :graphics-dot: 
+          :one: "{0} pkt"
+          :other: "{0} pkt"
         :length-astronomical-unit: 
           :one: "{0}AE"
           :other: "{0}AE"
@@ -900,6 +940,18 @@
         :volume-deciliter: 
           :one: "{0}dL"
           :other: "{0}dL"
+        :volume-dessert-spoon: 
+          :one: "{0} dskd"
+          :other: "{0} dskd"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} br. dsk"
+          :other: "{0} br. dsk"
+        :volume-dram: 
+          :one: "{0} fl. dram"
+          :other: "{0} fl. dram"
+        :volume-drop: 
+          :one: "{0} drp"
+          :other: "{0} drp"
         :volume-fluid-ounce: 
           :one: "{0} v:euns"
           :other: "{0} v:euns"
@@ -907,11 +959,14 @@
           :one: "{0} v:egal:n"
           :other: "{0} v:egal:n"
         :volume-gallon-imperial: 
-          :one: "{0} äb·4,6L"
-          :other: "{0} äb·4,6L"
+          :one: "{0} äb·4,6 l"
+          :other: "{0} äb·4,6 l"
         :volume-hectoliter: 
           :one: "{0}hL"
           :other: "{0}hL"
+        :volume-jigger: 
+          :one: "{0} mätglas"
+          :other: "{0} mätglas"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
@@ -1130,7 +1185,8 @@
           :one: "{0} kWh"
           :other: "{0} kWh"
         :energy-therm-us: 
-          :other: "{0} US therm"
+          :one: "{0} am. therm"
+          :other: "{0} am. therms"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -1147,6 +1203,9 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} punkt"
+          :other: "{0} punkt"
         :graphics-dot-per-centimeter: 
           :one: "{0} d/cm"
           :other: "{0} d/cm"
@@ -1156,8 +1215,8 @@
         :graphics-em: 
           :other: "{0} em"
         :graphics-megapixel: 
-          :one: "{0} Mpx"
-          :other: "{0} Mpx"
+          :one: "{0} mpx"
+          :other: "{0} mpx"
         :graphics-pixel: 
           :other: "{0} px"
         :graphics-pixel-per-centimeter: 
@@ -1175,6 +1234,8 @@
         :length-decimeter: 
           :one: "{0} dm"
           :other: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} famn"
           :other: "{0} famnar"
@@ -1182,8 +1243,8 @@
           :one: "{0} fot"
           :other: "{0} fot"
         :length-furlong: 
-          :one: "{0} eng. plogfårelgd"
-          :other: "{0} eng. plogfårelgd"
+          :one: "{0} fur"
+          :other: "{0} fur"
         :length-inch: 
           :one: "{0} tum"
           :other: "{0} tum"
@@ -1228,6 +1289,11 @@
         :length-yard: 
           :one: "{0} eng. yard"
           :other: "{0} eng. yard"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :one: "{0} lm"
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lux"
           :other: "{0} lux"
@@ -1240,6 +1306,8 @@
           :other: "{0} Da"
         :mass-earth-mass: 
           :other: "{0} M⊕"
+        :mass-grain: 
+          :other: "{0} grain"
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -1341,7 +1409,8 @@
           :one: "{0} K"
           :other: "{0} K"
         :torque-newton-meter: 
-          :other: "{0} N⋅m"
+          :one: "{0} Nm"
+          :other: "{0} Nm"
         :torque-pound-force-foot: 
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
@@ -1386,6 +1455,18 @@
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
+        :volume-dessert-spoon: 
+          :one: "{0} dsk"
+          :other: "{0} dsk"
+        :volume-dessert-spoon-imperial: 
+          :one: "br. dsk"
+          :other: "{0} br. dsk"
+        :volume-dram: 
+          :one: "{0} fl. dram"
+          :other: "{0} fl. dram"
+        :volume-drop: 
+          :one: "{0} droppe"
+          :other: "{0} droppe"
         :volume-fluid-ounce: 
           :one: "{0} fl oz"
           :other: "{0} fl oz"
@@ -1400,6 +1481,9 @@
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"
+        :volume-jigger: 
+          :one: "{0} mätglas"
+          :other: "{0} mätglas"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
@@ -1409,6 +1493,9 @@
         :volume-milliliter: 
           :one: "{0} ml"
           :other: "{0} ml"
+        :volume-pinch: 
+          :one: "{0} nypa"
+          :other: "{0} nypa"
         :volume-pint: 
           :one: "{0} pint"
           :other: "{0} pint"
@@ -1418,6 +1505,9 @@
         :volume-quart: 
           :one: "{0} quart"
           :other: "{0} quart"
+        :volume-quart-imperial: 
+          :one: "{0} br. qt"
+          :other: "{0} br. qt"
         :volume-tablespoon: 
           :one: "{0} msk"
           :other: "{0} msk"

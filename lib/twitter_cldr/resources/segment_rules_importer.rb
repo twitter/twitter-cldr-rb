@@ -138,7 +138,7 @@ module TwitterCldr
 
             # this should be the last entry, but for some reason ICU returns
             # one more out-of-order range past the Unicode max
-            break if range.endCodePoint == 0x10FFFF
+            break if range.getEnd == 0x10FFFF
           end
         end
 
@@ -147,7 +147,7 @@ module TwitterCldr
       end
 
       def range_to_a(range)
-        [range.startCodePoint, range.endCodePoint, range.value]
+        [range.getStart, range.getEnd, range.getValue]
       end
 
       def rbbi_data_for(kind, locale)

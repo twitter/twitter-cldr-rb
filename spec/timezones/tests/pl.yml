@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Danmarkshavn
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: 'czas: Dawson'
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: New Salem, Dakota Północna
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: GMT-03:00
+  :LOCALIZED_GMT_SHORT: GMT-3
+  :GENERIC_LOCATION: 'czas: Nuuk'
+  :GENERIC_LONG: czas Grenlandia Zachodnia
+  :GENERIC_SHORT: 'czas: Nuuk'
+  :SPECIFIC_LONG: Grenlandia Zachodnia (czas standardowy)
+  :SPECIFIC_SHORT: GMT-3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Nuuk
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: GMT-07:00
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: Saint Thomas
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: 'czas: Whitehorse'
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Yellowknife
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: GMT+08:00
-  :LOCALIZED_GMT_SHORT: GMT+8
+  :offset: 39600000
+  :LOCALIZED_GMT: GMT+11:00
+  :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: 'czas: Casey'
-  :GENERIC_LONG: czas zachodnioaustralijski standardowy
+  :GENERIC_LONG: 'czas: Casey'
   :GENERIC_SHORT: 'czas: Casey'
-  :SPECIFIC_LONG: czas zachodnioaustralijski standardowy
-  :SPECIFIC_SHORT: GMT+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: GMT+11:00
+  :SPECIFIC_SHORT: GMT+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Casey
 Antarctica/Davis:
@@ -4645,9 +4666,9 @@ Antarctica/Davis:
   :LOCALIZED_GMT: GMT+07:00
   :LOCALIZED_GMT_SHORT: GMT+7
   :GENERIC_LOCATION: 'czas: Davis'
-  :GENERIC_LONG: 'czas: Davis'
+  :GENERIC_LONG: czas Davis
   :GENERIC_SHORT: 'czas: Davis'
-  :SPECIFIC_LONG: GMT+07:00
+  :SPECIFIC_LONG: czas Davis
   :SPECIFIC_SHORT: GMT+7
   :ISO_BASIC_SHORT: "+07"
   :ISO_BASIC_LOCAL_SHORT: "+07"
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Dumont d’Urville
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: GMT+11:00
   :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: 'czas: Macquarie'
-  :GENERIC_LONG: 'czas: Macquarie'
+  :GENERIC_LONG: czas wschodnioaustralijski
   :GENERIC_SHORT: 'czas: Macquarie'
-  :SPECIFIC_LONG: GMT+11:00
+  :SPECIFIC_LONG: czas wschodnioaustralijski letni
   :SPECIFIC_SHORT: GMT+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -4708,9 +4729,9 @@ Antarctica/Mawson:
   :LOCALIZED_GMT: GMT+05:00
   :LOCALIZED_GMT_SHORT: GMT+5
   :GENERIC_LOCATION: 'czas: Mawson'
-  :GENERIC_LONG: 'czas: Mawson'
+  :GENERIC_LONG: czas Mawson
   :GENERIC_SHORT: 'czas: Mawson'
-  :SPECIFIC_LONG: GMT+05:00
+  :SPECIFIC_LONG: czas Mawson
   :SPECIFIC_SHORT: GMT+5
   :ISO_BASIC_SHORT: "+05"
   :ISO_BASIC_LOCAL_SHORT: "+05"
@@ -4771,9 +4792,9 @@ Antarctica/Rothera:
   :LOCALIZED_GMT: GMT-03:00
   :LOCALIZED_GMT_SHORT: GMT-3
   :GENERIC_LOCATION: 'czas: Rothera'
-  :GENERIC_LONG: 'czas: Rothera'
+  :GENERIC_LONG: czas Rothera
   :GENERIC_SHORT: 'czas: Rothera'
-  :SPECIFIC_LONG: GMT-03:00
+  :SPECIFIC_LONG: czas Rothera
   :SPECIFIC_SHORT: GMT-3
   :ISO_BASIC_SHORT: "-03"
   :ISO_BASIC_LOCAL_SHORT: "-03"
@@ -4813,9 +4834,9 @@ Antarctica/Syowa:
   :LOCALIZED_GMT: GMT+03:00
   :LOCALIZED_GMT_SHORT: GMT+3
   :GENERIC_LOCATION: 'czas: Syowa'
-  :GENERIC_LONG: 'czas: Syowa'
+  :GENERIC_LONG: czas Syowa
   :GENERIC_SHORT: 'czas: Syowa'
-  :SPECIFIC_LONG: GMT+03:00
+  :SPECIFIC_LONG: czas Syowa
   :SPECIFIC_SHORT: GMT+3
   :ISO_BASIC_SHORT: "+03"
   :ISO_BASIC_LOCAL_SHORT: "+03"
@@ -5233,9 +5254,9 @@ Asia/Brunei:
   :LOCALIZED_GMT: GMT+08:00
   :LOCALIZED_GMT_SHORT: GMT+8
   :GENERIC_LOCATION: 'czas: Brunei'
-  :GENERIC_LONG: 'czas: Brunei'
+  :GENERIC_LONG: czas Brunei
   :GENERIC_SHORT: 'czas: Brunei'
-  :SPECIFIC_LONG: GMT+08:00
+  :SPECIFIC_LONG: czas Brunei
   :SPECIFIC_SHORT: GMT+8
   :ISO_BASIC_SHORT: "+08"
   :ISO_BASIC_LOCAL_SHORT: "+08"
@@ -5842,9 +5863,9 @@ Asia/Kathmandu:
   :LOCALIZED_GMT: GMT+05:45
   :LOCALIZED_GMT_SHORT: GMT+5:45
   :GENERIC_LOCATION: 'czas: Nepal'
-  :GENERIC_LONG: 'czas: Nepal'
+  :GENERIC_LONG: czas Nepal
   :GENERIC_SHORT: 'czas: Nepal'
-  :SPECIFIC_LONG: GMT+05:45
+  :SPECIFIC_LONG: czas Nepal
   :SPECIFIC_SHORT: GMT+5:45
   :ISO_BASIC_SHORT: "+0545"
   :ISO_BASIC_LOCAL_SHORT: "+0545"
@@ -5863,9 +5884,9 @@ Asia/Katmandu:
   :LOCALIZED_GMT: GMT+05:45
   :LOCALIZED_GMT_SHORT: GMT+5:45
   :GENERIC_LOCATION: 'czas: Nepal'
-  :GENERIC_LONG: 'czas: Nepal'
+  :GENERIC_LONG: czas Nepal
   :GENERIC_SHORT: 'czas: Nepal'
-  :SPECIFIC_LONG: GMT+05:45
+  :SPECIFIC_LONG: czas Nepal
   :SPECIFIC_SHORT: GMT+5:45
   :ISO_BASIC_SHORT: "+0545"
   :ISO_BASIC_LOCAL_SHORT: "+0545"
@@ -6661,9 +6682,9 @@ Asia/Thimbu:
   :LOCALIZED_GMT: GMT+06:00
   :LOCALIZED_GMT_SHORT: GMT+6
   :GENERIC_LOCATION: 'czas: Bhutan'
-  :GENERIC_LONG: 'czas: Bhutan'
+  :GENERIC_LONG: czas Bhutan
   :GENERIC_SHORT: 'czas: Bhutan'
-  :SPECIFIC_LONG: GMT+06:00
+  :SPECIFIC_LONG: czas Bhutan
   :SPECIFIC_SHORT: GMT+6
   :ISO_BASIC_SHORT: "+06"
   :ISO_BASIC_LOCAL_SHORT: "+06"
@@ -6682,9 +6703,9 @@ Asia/Thimphu:
   :LOCALIZED_GMT: GMT+06:00
   :LOCALIZED_GMT_SHORT: GMT+6
   :GENERIC_LOCATION: 'czas: Bhutan'
-  :GENERIC_LONG: 'czas: Bhutan'
+  :GENERIC_LONG: czas Bhutan
   :GENERIC_SHORT: 'czas: Bhutan'
-  :SPECIFIC_LONG: GMT+06:00
+  :SPECIFIC_LONG: czas Bhutan
   :SPECIFIC_SHORT: GMT+6
   :ISO_BASIC_SHORT: "+06"
   :ISO_BASIC_LOCAL_SHORT: "+06"
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Regina
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: 'czas: Whitehorse'
@@ -10672,9 +10693,9 @@ Indian/Reunion:
   :LOCALIZED_GMT: GMT+04:00
   :LOCALIZED_GMT_SHORT: GMT+4
   :GENERIC_LOCATION: 'czas: Reunion'
-  :GENERIC_LONG: 'czas: Reunion'
+  :GENERIC_LONG: czas Reunion
   :GENERIC_SHORT: 'czas: Reunion'
-  :SPECIFIC_LONG: GMT+04:00
+  :SPECIFIC_LONG: czas Reunion
   :SPECIFIC_SHORT: GMT+4
   :ISO_BASIC_SHORT: "+04"
   :ISO_BASIC_LOCAL_SHORT: "+04"
@@ -11218,9 +11239,9 @@ Pacific/Fakaofo:
   :LOCALIZED_GMT: GMT+13:00
   :LOCALIZED_GMT_SHORT: GMT+13
   :GENERIC_LOCATION: 'czas: Tokelau'
-  :GENERIC_LONG: 'czas: Tokelau'
+  :GENERIC_LONG: czas Tokelau
   :GENERIC_SHORT: 'czas: Tokelau'
-  :SPECIFIC_LONG: GMT+13:00
+  :SPECIFIC_LONG: czas Tokelau
   :SPECIFIC_SHORT: GMT+13
   :ISO_BASIC_SHORT: "+13"
   :ISO_BASIC_LOCAL_SHORT: "+13"
@@ -11260,9 +11281,9 @@ Pacific/Funafuti:
   :LOCALIZED_GMT: GMT+12:00
   :LOCALIZED_GMT_SHORT: GMT+12
   :GENERIC_LOCATION: 'czas: Tuvalu'
-  :GENERIC_LONG: 'czas: Tuvalu'
+  :GENERIC_LONG: czas Tuvalu
   :GENERIC_SHORT: 'czas: Tuvalu'
-  :SPECIFIC_LONG: GMT+12:00
+  :SPECIFIC_LONG: czas Tuvalu
   :SPECIFIC_SHORT: GMT+12
   :ISO_BASIC_SHORT: "+12"
   :ISO_BASIC_LOCAL_SHORT: "+12"
@@ -11281,9 +11302,9 @@ Pacific/Galapagos:
   :LOCALIZED_GMT: GMT-06:00
   :LOCALIZED_GMT_SHORT: GMT-6
   :GENERIC_LOCATION: 'czas: Galapagos'
-  :GENERIC_LONG: 'czas: Galapagos'
+  :GENERIC_LONG: czas Galapagos
   :GENERIC_SHORT: 'czas: Galapagos'
-  :SPECIFIC_LONG: GMT-06:00
+  :SPECIFIC_LONG: czas Galapagos
   :SPECIFIC_SHORT: GMT-6
   :ISO_BASIC_SHORT: "-06"
   :ISO_BASIC_LOCAL_SHORT: "-06"
@@ -11428,9 +11449,9 @@ Pacific/Kosrae:
   :LOCALIZED_GMT: GMT+11:00
   :LOCALIZED_GMT_SHORT: GMT+11
   :GENERIC_LOCATION: 'czas: Kosrae'
-  :GENERIC_LONG: 'czas: Kosrae'
+  :GENERIC_LONG: czas Kosrae
   :GENERIC_SHORT: 'czas: Kosrae'
-  :SPECIFIC_LONG: GMT+11:00
+  :SPECIFIC_LONG: czas Kosrae
   :SPECIFIC_SHORT: GMT+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -11533,9 +11554,9 @@ Pacific/Nauru:
   :LOCALIZED_GMT: GMT+12:00
   :LOCALIZED_GMT_SHORT: GMT+12
   :GENERIC_LOCATION: 'czas: Nauru'
-  :GENERIC_LONG: 'czas: Nauru'
+  :GENERIC_LONG: czas Nauru
   :GENERIC_SHORT: 'czas: Nauru'
-  :SPECIFIC_LONG: GMT+12:00
+  :SPECIFIC_LONG: czas Nauru
   :SPECIFIC_SHORT: GMT+12
   :ISO_BASIC_SHORT: "+12"
   :ISO_BASIC_LOCAL_SHORT: "+12"
@@ -11554,9 +11575,9 @@ Pacific/Niue:
   :LOCALIZED_GMT: GMT-11:00
   :LOCALIZED_GMT_SHORT: GMT-11
   :GENERIC_LOCATION: 'czas: Niue'
-  :GENERIC_LONG: 'czas: Niue'
+  :GENERIC_LONG: czas Niue
   :GENERIC_SHORT: 'czas: Niue'
-  :SPECIFIC_LONG: GMT-11:00
+  :SPECIFIC_LONG: czas Niue
   :SPECIFIC_SHORT: GMT-11
   :ISO_BASIC_SHORT: "-11"
   :ISO_BASIC_LOCAL_SHORT: "-11"
@@ -11575,9 +11596,9 @@ Pacific/Norfolk:
   :LOCALIZED_GMT: GMT+12:00
   :LOCALIZED_GMT_SHORT: GMT+12
   :GENERIC_LOCATION: 'czas: Norfolk'
-  :GENERIC_LONG: 'czas: Norfolk'
+  :GENERIC_LONG: czas Norfolk
   :GENERIC_SHORT: 'czas: Norfolk'
-  :SPECIFIC_LONG: GMT+12:00
+  :SPECIFIC_LONG: Norfolk (czas letni)
   :SPECIFIC_SHORT: GMT+12
   :ISO_BASIC_SHORT: "+12"
   :ISO_BASIC_LOCAL_SHORT: "+12"
@@ -11638,9 +11659,9 @@ Pacific/Palau:
   :LOCALIZED_GMT: GMT+09:00
   :LOCALIZED_GMT_SHORT: GMT+9
   :GENERIC_LOCATION: 'czas: Palau'
-  :GENERIC_LONG: 'czas: Palau'
+  :GENERIC_LONG: czas Palau
   :GENERIC_SHORT: 'czas: Palau'
-  :SPECIFIC_LONG: GMT+09:00
+  :SPECIFIC_LONG: czas Palau
   :SPECIFIC_SHORT: GMT+9
   :ISO_BASIC_SHORT: "+09"
   :ISO_BASIC_LOCAL_SHORT: "+09"
@@ -11659,9 +11680,9 @@ Pacific/Pitcairn:
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8
   :GENERIC_LOCATION: 'czas: Pitcairn'
-  :GENERIC_LONG: 'czas: Pitcairn'
+  :GENERIC_LONG: czas Pitcairn
   :GENERIC_SHORT: 'czas: Pitcairn'
-  :SPECIFIC_LONG: GMT-08:00
+  :SPECIFIC_LONG: czas Pitcairn
   :SPECIFIC_SHORT: GMT-8
   :ISO_BASIC_SHORT: "-08"
   :ISO_BASIC_LOCAL_SHORT: "-08"
@@ -11806,9 +11827,9 @@ Pacific/Tahiti:
   :LOCALIZED_GMT: GMT-10:00
   :LOCALIZED_GMT_SHORT: GMT-10
   :GENERIC_LOCATION: 'czas: Tahiti'
-  :GENERIC_LONG: 'czas: Tahiti'
+  :GENERIC_LONG: czas Tahiti
   :GENERIC_SHORT: 'czas: Tahiti'
-  :SPECIFIC_LONG: GMT-10:00
+  :SPECIFIC_LONG: czas Tahiti
   :SPECIFIC_SHORT: GMT-10
   :ISO_BASIC_SHORT: "-10"
   :ISO_BASIC_LOCAL_SHORT: "-10"
@@ -11890,9 +11911,9 @@ Pacific/Wake:
   :LOCALIZED_GMT: GMT+12:00
   :LOCALIZED_GMT_SHORT: GMT+12
   :GENERIC_LOCATION: 'czas: Wake'
-  :GENERIC_LONG: 'czas: Wake'
+  :GENERIC_LONG: czas Wake
   :GENERIC_SHORT: 'czas: Wake'
-  :SPECIFIC_LONG: GMT+12:00
+  :SPECIFIC_LONG: czas Wake
   :SPECIFIC_SHORT: GMT+12
   :ISO_BASIC_SHORT: "+12"
   :ISO_BASIC_LOCAL_SHORT: "+12"
@@ -12306,27 +12327,6 @@ US/Mountain:
   :ZONE_ID_SHORT: usden
   :EXEMPLAR_LOCATION: Denver
 US/Pacific:
-  :offset: -28800000
-  :LOCALIZED_GMT: GMT-08:00
-  :LOCALIZED_GMT_SHORT: GMT-8
-  :GENERIC_LOCATION: 'czas: Los Angeles'
-  :GENERIC_LONG: czas pacyficzny
-  :GENERIC_SHORT: 'czas: Los Angeles'
-  :SPECIFIC_LONG: czas pacyficzny standardowy
-  :SPECIFIC_SHORT: GMT-8
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Los Angeles
-US/Pacific-New:
   :offset: -28800000
   :LOCALIZED_GMT: GMT-08:00
   :LOCALIZED_GMT_SHORT: GMT-8

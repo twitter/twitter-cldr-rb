@@ -173,7 +173,7 @@
           :many: "{0} rhan pob miliwn"
           :one: "{0} rhan pob miliwn"
           :other: "{0} rhan pob miliwn"
-          :two: "{0} rhan pob miliwn"
+          :two: "{0} ran pob miliwn"
           :zero: "{0} rhan pob miliwn"
         :concentr-permyriad: 
           :few: "{0}‱"
@@ -497,6 +497,13 @@
           :other: "{0} megaherts"
           :two: "{0} MHz"
           :zero: "{0} megaherts"
+        :graphics-dot: 
+          :few: "{0} dot"
+          :many: "{0} dot"
+          :one: "{0} dot"
+          :other: "{0} dot"
+          :two: "{0} ddot"
+          :zero: "{0} dot"
         :graphics-dot-per-centimeter: 
           :few: "{0} dpcm"
           :many: "{0} dpcm"
@@ -507,10 +514,11 @@
         :graphics-dot-per-inch: 
           :few: "{0} dpi"
           :many: "{0} dpi"
-          :one: "{0} mewn modfedd"
+          :one: "{0} dot mewn modfedd"
           :other: "{0} dot mewn modfedd"
           :two: "{0} dpi"
           :zero: "{0} dpi"
+        :graphics-em: {}
         :graphics-megapixel: 
           :few: "{0} MP"
           :many: "{0} MP"
@@ -560,6 +568,13 @@
           :other: "{0} decimetr"
           :two: "{0} dm"
           :zero: "{0} dm"
+        :length-earth-radius: 
+          :few: "{0} R⊕"
+          :many: "{0} R⊕"
+          :one: "{0} radiws y Ddaear"
+          :other: "{0} radiws y Ddaear"
+          :two: "{0} R⊕"
+          :zero: "{0} R⊕"
         :length-fathom: 
           :few: "{0} gwryd"
           :many: "{0} gwryd"
@@ -686,6 +701,8 @@
           :other: "{0} llath"
           :two: "{0} lath"
           :zero: "{0} llath"
+        :light-candela: {}
+        :light-lumen: {}
         :light-lux: 
           :few: "{0} lx"
           :many: "{0} lx"
@@ -721,6 +738,13 @@
           :other: "{0} más ddaear"
           :two: "{0} M⊕"
           :zero: "{0} M⊕"
+        :mass-grain: 
+          :few: "{0} graen"
+          :many: "{0} graen"
+          :one: "{0} graen"
+          :other: "{0} graen"
+          :two: "{0} raen"
+          :zero: "{0} graen"
         :mass-gram: 
           :few: "{0} g"
           :many: "{0} g"
@@ -855,12 +879,12 @@
           :two: "{0} hPa"
           :zero: "{0} hPa"
         :pressure-inch-ofhg: 
-          :few: "{0} ″ Hg"
-          :many: "{0} ″ Hg"
+          :few: "{0} inHg"
+          :many: "{0} inHg"
           :one: "{0} fodfedd o fercwri"
           :other: "{0} modfedd o fercwri"
-          :two: "{0} ″ Hg"
-          :zero: "{0} ″ Hg"
+          :two: "{0} inHg"
+          :zero: "{0} inHg"
         :pressure-kilopascal: 
           :few: "{0} kPa"
           :many: "{0} kPa"
@@ -883,13 +907,19 @@
           :two: "{0} filibar"
           :zero: "{0} mbar"
         :pressure-millimeter-ofhg: 
-          :few: "{0} mm Hg"
-          :many: "{0} mm Hg"
+          :few: "{0} mmHg"
+          :many: "{0} mmHg"
           :one: "{0} milimetr o fercwri"
           :other: "{0} milimetr o fercwri"
-          :two: "{0} mm Hg"
-          :zero: "{0} mm Hg"
-        :pressure-pascal: {}
+          :two: "{0} mmHg"
+          :zero: "{0} mmHg"
+        :pressure-pascal: 
+          :few: "{0} Pa"
+          :many: "{0} Pa"
+          :one: "{0} pascal"
+          :other: "{0} pascal"
+          :two: "{0} Pa"
+          :zero: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
           :few: "{0} psi"
           :many: "{0} psi"
@@ -963,7 +993,7 @@
         :torque-pound-force-foot: 
           :few: "{0} lbf⋅ft"
           :many: "{0} lbf⋅ft"
-          :one: "{0} pwys-troedfedd"
+          :one: "{0} pwys o rym⋅droedfedd"
           :other: "{0} pwys-troedfeddi"
           :two: "{0} lbf⋅ft"
           :zero: "{0} lbf⋅ft"
@@ -982,12 +1012,12 @@
           :two: "{0} bbl"
           :zero: "{0} bbl"
         :volume-bushel: 
-          :few: "{0} bwsiel"
-          :many: "{0} bwsiel"
+          :few: "{0} bw"
+          :many: "{0} bw"
           :one: "{0} bwsiel"
           :other: "{0} bwsiel"
-          :two: "{0} bwsiel"
-          :zero: "{0} bwsiel"
+          :two: "{0} bw"
+          :zero: "{0} bw"
         :volume-centiliter: 
           :few: "{0} cL"
           :many: "{0} cL"
@@ -1065,6 +1095,34 @@
           :other: "{0} decilitr"
           :two: "{0} dL"
           :zero: "{0} dL"
+        :volume-dessert-spoon: 
+          :few: "{0} dstspn"
+          :many: "{0} dstspn"
+          :one: "{0} llond llwy bwdin"
+          :other: "{0} llond llwy bwdin"
+          :two: "{0} dstspn"
+          :zero: "{0} dstspn"
+        :volume-dessert-spoon-imperial: 
+          :few: "{0} dstspn Imp"
+          :many: "{0} dstspn Imp"
+          :one: "{0} llond llwy bwdin imp."
+          :other: "{0} llond llwy bwdin imp."
+          :two: "{0} dstspn Imp"
+          :zero: "{0} dstspn Imp"
+        :volume-dram: 
+          :few: "{0} dracmon hy"
+          :many: "{0} dracmon hy"
+          :one: "{0} dracmon hy"
+          :other: "{0} dracmon hy"
+          :two: "{0} ddracmon hy"
+          :zero: "{0} dracmon hy"
+        :volume-drop: 
+          :few: "{0} diferyn"
+          :many: "{0} diferyn"
+          :one: "{0} diferyn"
+          :other: "{0} diferyn"
+          :two: "{0} ddiferyn"
+          :zero: "{0} diferyn"
         :volume-fluid-ounce: 
           :few: "{0} owns hylifol"
           :many: "{0} owns hylifol"
@@ -1100,6 +1158,13 @@
           :other: "{0} hectolitr"
           :two: "{0} hL"
           :zero: "{0} hL"
+        :volume-jigger: 
+          :few: "{0} joch"
+          :many: "{0} joch"
+          :one: "{0} joch"
+          :other: "{0} joch"
+          :two: "{0} joch"
+          :zero: "{0} joch"
         :volume-liter: 
           :few: "{0} L"
           :many: "{0} L"
@@ -1121,6 +1186,13 @@
           :other: "{0} mililitr"
           :two: "{0} mL"
           :zero: "{0} mL"
+        :volume-pinch: 
+          :few: "{0} phinsiad"
+          :many: "{0} pinsiad"
+          :one: "{0} pinsiad"
+          :other: "{0} pinsiad"
+          :two: "{0} binsiad"
+          :zero: "{0} pinsiad"
         :volume-pint: 
           :few: "{0} pheint"
           :many: "{0} pheint"
@@ -1142,6 +1214,13 @@
           :other: "{0} chwart"
           :two: "{0} gwart"
           :zero: "{0} chwart"
+        :volume-quart-imperial: 
+          :few: "{0} cht Imp."
+          :many: "{0} cht Imp."
+          :one: "{0} cht Imp."
+          :other: "{0} cht Imp."
+          :two: "{0} cht Imp."
+          :zero: "{0} cht Imp."
         :volume-tablespoon: 
           :few: "{0} llond llwy fwrdd"
           :many: "{0} llond llwy fwrdd"
@@ -1361,12 +1440,12 @@
           :two: "{0} eil"
           :zero: "{0} eil"
         :duration-week: 
-          :few: "{0}w"
-          :many: "{0}w"
+          :few: "{0} ws"
+          :many: "{0} ws"
           :one: "{0}w"
           :other: "{0}w"
-          :two: "{0}w"
-          :zero: "{0}w"
+          :two: "{0} ws"
+          :zero: "{0} ws"
         :duration-year: 
           :few: "{0}bl"
           :many: "{0}bl"
@@ -2137,12 +2216,12 @@
           :zero: "{0} diwrnod"
         :duration-day-person: {}
         :duration-decade: 
-          :few: "{0} degawd"
-          :many: "{0} degawd"
-          :one: "{0} degawd"
-          :other: "{0} degawd"
+          :few: "{0} deg"
+          :many: "{0} deg"
+          :one: "{0} deg"
+          :other: "{0} deg"
           :two: "{0} degawd"
-          :zero: "{0} degawd"
+          :zero: "{0} deg"
         :duration-hour: 
           :few: "{0} awr"
           :many: "{0} awr"
@@ -2194,12 +2273,12 @@
           :two: "{0} eil"
           :zero: "{0} eil"
         :duration-week: 
-          :few: "{0} wythnos"
-          :many: "{0} wythnos"
-          :one: "{0} wythnos"
-          :other: "{0} wythnos"
-          :two: "{0} wythnos"
-          :zero: "{0} wythnos"
+          :few: "{0} ws"
+          :many: "{0} ws"
+          :one: "{0} ws"
+          :other: "{0} ws"
+          :two: "{0} ws"
+          :zero: "{0} ws"
         :duration-week-person: {}
         :duration-year: 
           :few: "{0} bl"
@@ -2302,6 +2381,13 @@
           :other: "{0} MHz"
           :two: "{0} MHz"
           :zero: "{0} MHz"
+        :graphics-dot: 
+          :few: "{0} dot"
+          :many: "{0} dot"
+          :one: "{0} dot"
+          :other: "{0} dot"
+          :two: "{0} ddot"
+          :zero: "{0} dot"
         :graphics-dot-per-centimeter: 
           :other: "{0} dpcm"
         :graphics-dot-per-inch: 
@@ -2337,6 +2423,8 @@
           :other: "{0} dm"
           :two: "{0} dm"
           :zero: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
           :few: "{0} gwryd"
           :many: "{0} gwryd"
@@ -2352,7 +2440,12 @@
           :two: "{0}′"
           :zero: "{0}′"
         :length-furlong: 
-          :other: "{0} fur"
+          :few: "{0} yst"
+          :many: "{0} yst"
+          :one: "{0} yst"
+          :other: "{0} yst"
+          :two: "{0} yst"
+          :zero: "{0} yst"
         :length-inch: 
           :few: "{0} modfedd"
           :many: "{0} modfedd"
@@ -2453,6 +2546,10 @@
           :other: "{0} llath"
           :two: "{0} lath"
           :zero: "{0} llath"
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :few: "{0} lx"
           :many: "{0} lx"
@@ -2473,6 +2570,13 @@
           :other: "{0} Da"
         :mass-earth-mass: 
           :other: "{0} M⊕"
+        :mass-grain: 
+          :few: "{0} graen"
+          :many: "{0} graen"
+          :one: "{0} graen"
+          :other: "{0} graen"
+          :two: "{0} raen"
+          :zero: "{0} graen"
         :mass-gram: 
           :few: "{0} g"
           :many: "{0} g"
@@ -2599,12 +2703,12 @@
           :two: "{0} hPa"
           :zero: "{0} hPa"
         :pressure-inch-ofhg: 
-          :few: "{0} ″ Hg"
-          :many: "{0} ″ Hg"
-          :one: "{0} ″ Hg"
-          :other: "{0} ″ Hg"
-          :two: "{0} ″ Hg"
-          :zero: "{0} ″ Hg"
+          :few: "{0} inHg"
+          :many: "{0} inHg"
+          :one: "{0} inHg"
+          :other: "{0} inHg"
+          :two: "{0} inHg"
+          :zero: "{0} inHg"
         :pressure-kilopascal: 
           :other: "{0} kPa"
         :pressure-megapascal: 
@@ -2617,7 +2721,12 @@
           :two: "{0} mbar"
           :zero: "{0} mbar"
         :pressure-millimeter-ofhg: 
-          :other: "{0} mm Hg"
+          :few: "{0} mmHg"
+          :many: "{0} mmHg"
+          :one: "{0} mmHg"
+          :other: "{0} mmHg"
+          :two: "{0} mmHg"
+          :zero: "{0} mmHg"
         :pressure-pascal: 
           :other: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
@@ -2682,12 +2791,12 @@
         :volume-barrel: 
           :other: "{0} bbl"
         :volume-bushel: 
-          :few: "{0} bwsiel"
-          :many: "{0} bwsiel"
-          :one: "{0} bwsiel"
-          :other: "{0} bwsiel"
-          :two: "{0} bwsiel"
-          :zero: "{0} bwsiel"
+          :few: "{0} bw"
+          :many: "{0} bw"
+          :one: "{0} bw"
+          :other: "{0} bw"
+          :two: "{0} bw"
+          :zero: "{0} bw"
         :volume-centiliter: 
           :few: "{0} cL"
           :many: "{0} cL"
@@ -2765,6 +2874,24 @@
           :other: "{0} dL"
           :two: "{0} dL"
           :zero: "{0} dL"
+        :volume-dessert-spoon: 
+          :other: "{0} dstspn"
+        :volume-dessert-spoon-imperial: 
+          :other: "{0} dstspn Imp"
+        :volume-dram: 
+          :few: "{0} dracmon hy"
+          :many: "{0} dracmon hy"
+          :one: "{0} dracmon hy"
+          :other: "{0} dracmon hy"
+          :two: "{0} ddracmon hy"
+          :zero: "{0} dracmon hy"
+        :volume-drop: 
+          :few: "{0} diferyn"
+          :many: "{0} diferyn"
+          :one: "{0} diferyn"
+          :other: "{0} diferyn"
+          :two: "{0} ddiferyn"
+          :zero: "{0} diferyn"
         :volume-fluid-ounce: 
           :few: "{0} fl oz"
           :many: "{0} fl oz"
@@ -2795,6 +2922,13 @@
           :other: "{0} hL"
           :two: "{0} hL"
           :zero: "{0} hL"
+        :volume-jigger: 
+          :few: "{0} joch"
+          :many: "{0} joch"
+          :one: "{0} joch"
+          :other: "{0} joch"
+          :two: "{0} joch"
+          :zero: "{0} joch"
         :volume-liter: 
           :few: "{0} L"
           :many: "{0} L"
@@ -2816,6 +2950,13 @@
           :other: "{0} mL"
           :two: "{0} mL"
           :zero: "{0} mL"
+        :volume-pinch: 
+          :few: "{0} phinsiad"
+          :many: "{0} pinsiad"
+          :one: "{0} pinsiad"
+          :other: "{0} pinsiad"
+          :two: "{0} binsiad"
+          :zero: "{0} pinsiad"
         :volume-pint: 
           :few: "{0} pt"
           :many: "{0} pt"
@@ -2837,6 +2978,13 @@
           :other: "{0} qt"
           :two: "{0} qt"
           :zero: "{0} qt"
+        :volume-quart-imperial: 
+          :few: "{0} cht Imp."
+          :many: "{0} cht Imp."
+          :one: "{0} cht Imp."
+          :other: "{0} cht Imp."
+          :two: "{0} cht Imp."
+          :zero: "{0} cht Imp."
         :volume-tablespoon: 
           :few: "{0} tbsp"
           :many: "{0} tbsp"

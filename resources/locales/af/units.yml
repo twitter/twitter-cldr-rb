@@ -2,8 +2,8 @@
 :af: 
   :units: 
     :durationUnit: 
-      :hm: "h:mm"
-      :hms: "h:mm:ss"
+      :hm: "hh:mm"
+      :hms: "hh:mm:ss"
       :ms: "mm:ss"
     :unitLength: 
       :long: 
@@ -217,6 +217,9 @@
         :frequency-megahertz: 
           :one: "{0} megahertz"
           :other: "{0} megahertz"
+        :graphics-dot: 
+          :one: "{0}stippel"
+          :other: "{0}stippel"
         :graphics-dot-per-centimeter: 
           :one: "{0} stippel per sentimeter"
           :other: "{0} stippels per sentimeter"
@@ -245,9 +248,18 @@
         :length-decimeter: 
           :one: "{0} desimeter"
           :other: "{0} desimeter"
+        :length-earth-radius: 
+          :one: "{0} aardstraal"
+          :other: "{0} aardstraal"
+        :length-fathom: 
+          :one: "{0} vaam"
+          :other: "{0} vaam"
         :length-foot: 
           :one: "{0} voet"
           :other: "{0} voet"
+        :length-furlong: 
+          :one: "{0} furlong"
+          :other: "{0} furlongs"
         :length-inch: 
           :one: "{0} duim"
           :other: "{0} duim"
@@ -293,6 +305,12 @@
         :length-yard: 
           :one: "{0} jaart"
           :other: "{0} jaart"
+        :light-candela: 
+          :one: "{0} kandela"
+          :other: "{0} kandela"
+        :light-lumen: 
+          :one: "{0} lumen"
+          :other: "{0} lumen"
         :light-lux: 
           :one: "{0} lux"
           :other: "{0} lux"
@@ -308,6 +326,9 @@
         :mass-earth-mass: 
           :one: "{0} aardemassa"
           :other: "{0} aardemassas"
+        :mass-grain: 
+          :one: "{0} korrelgewig"
+          :other: "{0} korrelgewig"
         :mass-gram: 
           :one: "{0} gram"
           :other: "{0} gram"
@@ -335,6 +356,9 @@
         :mass-solar-mass: 
           :one: "{0} sonmassa"
           :other: "{0} sonmassas"
+        :mass-stone: 
+          :one: "{0} stone"
+          :other: "{0} stone"
         :mass-ton: 
           :one: "{0} VSA-ton"
           :other: "{0} VSA-ton"
@@ -399,8 +423,8 @@
           :one: "{0} graad Fahrenheit"
           :other: "{0} grade Fahrenheit"
         :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0} graad"
+          :other: "{0} graad"
         :temperature-kelvin: 
           :one: "{0} kelvin"
           :other: "{0} kelvin"
@@ -408,7 +432,7 @@
           :one: "{0} newtonmeter"
           :other: "{0} newtonmeter"
         :torque-pound-force-foot: 
-          :one: "{0} pondvoet"
+          :one: "{0} pondvoetkrag"
           :other: "{0} pondvoet"
         :volume-acre-foot: 
           :one: "{0} acre-voet"
@@ -416,6 +440,9 @@
         :volume-barrel: 
           :one: "{0} vat"
           :other: "{0} vate"
+        :volume-bushel: 
+          :one: "{0} skepel"
+          :other: "{0} skepel"
         :volume-centiliter: 
           :one: "{0} sentiliter"
           :other: "{0} sentiliter"
@@ -449,6 +476,18 @@
         :volume-deciliter: 
           :one: "{0} desiliter"
           :other: "{0} desiliter"
+        :volume-dessert-spoon: 
+          :one: "{0} dstlpl."
+          :other: "{0} dessertlepel"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} Engelse dessertlepel"
+          :other: "{0} Engelse dessertlepel"
+        :volume-dram: 
+          :one: "{0} dragme"
+          :other: "{0} dragme"
+        :volume-drop: 
+          :one: "{0} druppel"
+          :other: "{0} druppels"
         :volume-fluid-ounce: 
           :one: "{0} vloeistofons"
           :other: "{0} vloeistofons"
@@ -464,6 +503,9 @@
         :volume-hectoliter: 
           :one: "{0} hektoliter"
           :other: "{0} hektoliter"
+        :volume-jigger: 
+          :one: "{0} sopie"
+          :other: "{0} sopies"
         :volume-liter: 
           :one: "{0} liter"
           :other: "{0} liter"
@@ -473,6 +515,9 @@
         :volume-milliliter: 
           :one: "{0} milliliter"
           :other: "{0} milliliter"
+        :volume-pinch: 
+          :one: "{0} knypie"
+          :other: "{0} knypie"
         :volume-pint: 
           :one: "{0} pint"
           :other: "{0} pinte"
@@ -482,6 +527,9 @@
         :volume-quart: 
           :one: "{0} VSA-kwartgelling"
           :other: "{0} VSA-kwartgellings"
+        :volume-quart-imperial: 
+          :one: "{0} Engelse kwartgelling"
+          :other: "{0} Engelse kwartgelling"
         :volume-tablespoon: 
           :one: "{0} eetlepel"
           :other: "{0} eetlepels"
@@ -851,6 +899,9 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} stip."
+          :other: "{0} stip."
         :graphics-dot-per-centimeter: 
           :one: "{0} stip./cm"
           :other: "{0} stip./cm"
@@ -881,13 +932,17 @@
         :length-decimeter: 
           :one: "{0} dm"
           :other: "{0} dm"
+        :length-earth-radius: 
+          :other: "{0} R⊕"
         :length-fathom: 
-          :other: "{0} fth"
+          :one: "{0} vaam"
+          :other: "{0} vaam"
         :length-foot: 
           :one: "{0} vt."
           :other: "{0} vt."
         :length-furlong: 
-          :other: "{0} fur"
+          :one: "{0} fur."
+          :other: "{0} fur."
         :length-inch: 
           :one: "{0} duim"
           :other: "{0} duim"
@@ -933,6 +988,10 @@
         :length-yard: 
           :one: "{0} jt."
           :other: "{0} jt."
+        :light-candela: 
+          :other: "{0} cd"
+        :light-lumen: 
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
@@ -948,6 +1007,9 @@
         :mass-earth-mass: 
           :one: "{0} M⊕"
           :other: "{0} M⊕"
+        :mass-grain: 
+          :one: "{0} korrelgewig"
+          :other: "{0} korrelgewig"
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -976,6 +1038,7 @@
           :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
+          :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} VSA-t."
@@ -1065,7 +1128,8 @@
           :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
-          :other: "{0} bu"
+          :one: "{0} skepel"
+          :other: "{0} skepel"
         :volume-centiliter: 
           :one: "{0} cℓ"
           :other: "{0} cℓ"
@@ -1099,6 +1163,18 @@
         :volume-deciliter: 
           :one: "{0} dℓ"
           :other: "{0} dℓ"
+        :volume-dessert-spoon: 
+          :one: "{0} dstlpl."
+          :other: "{0} dstlpl."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} dstlpl. Eng."
+          :other: "{0} dstlpl. Eng."
+        :volume-dram: 
+          :one: "{0} dr. vl."
+          :other: "{0} dr. vl."
+        :volume-drop: 
+          :one: "{0} druppel"
+          :other: "{0} druppels"
         :volume-fluid-ounce: 
           :one: "{0} vl.oz."
           :other: "{0} vl.oz."
@@ -1114,6 +1190,9 @@
         :volume-hectoliter: 
           :one: "{0} hℓ"
           :other: "{0} hℓ"
+        :volume-jigger: 
+          :one: "{0} sopie"
+          :other: "{0} sopies"
         :volume-liter: 
           :one: "{0} ℓ"
           :other: "{0} ℓ"
@@ -1123,6 +1202,9 @@
         :volume-milliliter: 
           :one: "{0} mℓ"
           :other: "{0} mℓ"
+        :volume-pinch: 
+          :one: "{0} knypie"
+          :other: "{0} knypie"
         :volume-pint: 
           :one: "{0} pt."
           :other: "{0} pt."
@@ -1132,6 +1214,9 @@
         :volume-quart: 
           :one: "{0} VSA-kw.gell."
           :other: "{0} VSA-kw.gell."
+        :volume-quart-imperial: 
+          :one: "{0} kwart Eng."
+          :other: "{0} kwart Eng."
         :volume-tablespoon: 
           :one: "{0} e."
           :other: "{0} e."

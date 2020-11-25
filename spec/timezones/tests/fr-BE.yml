@@ -654,9 +654,9 @@ Africa/Lagos:
   :offset: 3600000
   :LOCALIZED_GMT: UTC+01:00
   :LOCALIZED_GMT_SHORT: UTC+1
-  :GENERIC_LOCATION: 'heure : Nigéria'
+  :GENERIC_LOCATION: 'heure : Nigeria'
   :GENERIC_LONG: heure normale d’Afrique de l’Ouest
-  :GENERIC_SHORT: 'heure : Nigéria'
+  :GENERIC_SHORT: 'heure : Nigeria'
   :SPECIFIC_LONG: heure normale d’Afrique de l’Ouest
   :SPECIFIC_SHORT: UTC+1
   :ISO_BASIC_SHORT: "+01"
@@ -885,9 +885,9 @@ Africa/Monrovia:
   :offset: 0
   :LOCALIZED_GMT: UTC
   :LOCALIZED_GMT_SHORT: UTC
-  :GENERIC_LOCATION: 'heure : Libéria'
+  :GENERIC_LOCATION: 'heure : Liberia'
   :GENERIC_LONG: heure moyenne de Greenwich
-  :GENERIC_SHORT: 'heure : Libéria'
+  :GENERIC_SHORT: 'heure : Liberia'
   :SPECIFIC_LONG: heure moyenne de Greenwich
   :SPECIFIC_SHORT: UTC
   :ISO_BASIC_SHORT: Z
@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Danmarkshavn
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Dawson'
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: New Salem (Dakota du Nord)
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: UTC−03:00
+  :LOCALIZED_GMT_SHORT: UTC−3
+  :GENERIC_LOCATION: 'heure : Nuuk'
+  :GENERIC_LONG: heure de l’Ouest du Groenland
+  :GENERIC_SHORT: 'heure : Nuuk'
+  :SPECIFIC_LONG: heure normale de l’Ouest du Groenland
+  :SPECIFIC_SHORT: UTC−3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Nuuk
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: UTC−07:00
@@ -4329,9 +4350,9 @@ America/St_Vincent:
   :offset: -14400000
   :LOCALIZED_GMT: UTC−04:00
   :LOCALIZED_GMT_SHORT: UTC−4
-  :GENERIC_LOCATION: 'heure : Saint-Vincent-et-les-Grenadines'
+  :GENERIC_LOCATION: 'heure : Saint-Vincent-et-les Grenadines'
   :GENERIC_LONG: heure normale de l’Atlantique
-  :GENERIC_SHORT: 'heure : Saint-Vincent-et-les-Grenadines'
+  :GENERIC_SHORT: 'heure : Saint-Vincent-et-les Grenadines'
   :SPECIFIC_LONG: heure normale de l’Atlantique
   :SPECIFIC_SHORT: UTC−4
   :ISO_BASIC_SHORT: "-04"
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: Saint-Thomas
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Whitehorse'
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Yellowknife
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: UTC+08:00
-  :LOCALIZED_GMT_SHORT: UTC+8
+  :offset: 39600000
+  :LOCALIZED_GMT: UTC+11:00
+  :LOCALIZED_GMT_SHORT: UTC+11
   :GENERIC_LOCATION: 'heure : Casey'
-  :GENERIC_LONG: heure normale de l’Ouest de l’Australie
+  :GENERIC_LONG: 'heure : Casey'
   :GENERIC_SHORT: 'heure : Casey'
-  :SPECIFIC_LONG: heure normale de l’Ouest de l’Australie
-  :SPECIFIC_SHORT: UTC+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: UTC+11:00
+  :SPECIFIC_SHORT: UTC+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Casey
 Antarctica/Davis:
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Dumont d’Urville
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: UTC+11:00
   :LOCALIZED_GMT_SHORT: UTC+11
   :GENERIC_LOCATION: 'heure : Macquarie'
-  :GENERIC_LONG: heure de l’île Macquarie
+  :GENERIC_LONG: heure de l’Est de l’Australie
   :GENERIC_SHORT: 'heure : Macquarie'
-  :SPECIFIC_LONG: heure de l’île Macquarie
+  :SPECIFIC_LONG: heure d’été de l’Est de l’Australie
   :SPECIFIC_SHORT: UTC+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -5211,9 +5232,9 @@ Asia/Bishkek:
   :offset: 21600000
   :LOCALIZED_GMT: UTC+06:00
   :LOCALIZED_GMT_SHORT: UTC+6
-  :GENERIC_LOCATION: 'heure : Kirghizistan'
+  :GENERIC_LOCATION: 'heure : Kirghizstan'
   :GENERIC_LONG: heure du Kirghizistan
-  :GENERIC_SHORT: 'heure : Kirghizistan'
+  :GENERIC_SHORT: 'heure : Kirghizstan'
   :SPECIFIC_LONG: heure du Kirghizistan
   :SPECIFIC_SHORT: UTC+6
   :ISO_BASIC_SHORT: "+06"
@@ -5589,9 +5610,9 @@ Asia/Ho_Chi_Minh:
   :offset: 25200000
   :LOCALIZED_GMT: UTC+07:00
   :LOCALIZED_GMT_SHORT: UTC+7
-  :GENERIC_LOCATION: 'heure : Vietnam'
+  :GENERIC_LOCATION: 'heure : Viêt Nam'
   :GENERIC_LONG: heure d’Indochine
-  :GENERIC_SHORT: 'heure : Vietnam'
+  :GENERIC_SHORT: 'heure : Viêt Nam'
   :SPECIFIC_LONG: heure d’Indochine
   :SPECIFIC_SHORT: UTC+7
   :ISO_BASIC_SHORT: "+07"
@@ -6408,9 +6429,9 @@ Asia/Saigon:
   :offset: 25200000
   :LOCALIZED_GMT: UTC+07:00
   :LOCALIZED_GMT_SHORT: UTC+7
-  :GENERIC_LOCATION: 'heure : Vietnam'
+  :GENERIC_LOCATION: 'heure : Viêt Nam'
   :GENERIC_LONG: heure d’Indochine
-  :GENERIC_SHORT: 'heure : Vietnam'
+  :GENERIC_SHORT: 'heure : Viêt Nam'
   :SPECIFIC_LONG: heure d’Indochine
   :SPECIFIC_SHORT: UTC+7
   :ISO_BASIC_SHORT: "+07"
@@ -7075,7 +7096,7 @@ Atlantic/Faeroe:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: fotho
-  :EXEMPLAR_LOCATION: Féroé
+  :EXEMPLAR_LOCATION: Îles Féroé
 Atlantic/Faroe:
   :offset: 0
   :LOCALIZED_GMT: UTC
@@ -7096,7 +7117,7 @@ Atlantic/Faroe:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: fotho
-  :EXEMPLAR_LOCATION: Féroé
+  :EXEMPLAR_LOCATION: Îles Féroé
 Atlantic/Jan_Mayen:
   :offset: 3600000
   :LOCALIZED_GMT: UTC+01:00
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Regina
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8
   :GENERIC_LOCATION: 'heure : Whitehorse'
@@ -12306,27 +12327,6 @@ US/Mountain:
   :ZONE_ID_SHORT: usden
   :EXEMPLAR_LOCATION: Denver
 US/Pacific:
-  :offset: -28800000
-  :LOCALIZED_GMT: UTC−08:00
-  :LOCALIZED_GMT_SHORT: UTC−8
-  :GENERIC_LOCATION: 'heure : Los Angeles'
-  :GENERIC_LONG: heure du Pacifique nord-américain
-  :GENERIC_SHORT: 'heure : Los Angeles'
-  :SPECIFIC_LONG: heure normale du Pacifique nord-américain
-  :SPECIFIC_SHORT: UTC−8
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Los Angeles
-US/Pacific-New:
   :offset: -28800000
   :LOCALIZED_GMT: UTC−08:00
   :LOCALIZED_GMT_SHORT: UTC−8

@@ -2142,7 +2142,7 @@ America/Danmarkshavn:
   :ZONE_ID_SHORT: gldkshvn
   :EXEMPLAR_LOCATION: Данмарксхавн
 America/Dawson:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: Гринуич-08:00
   :LOCALIZED_GMT_SHORT: Гринуич-8
   :GENERIC_LOCATION: Доусън
@@ -3674,6 +3674,27 @@ America/North_Dakota/New_Salem:
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: usndnsl
   :EXEMPLAR_LOCATION: Ню Сейлъм
+America/Nuuk:
+  :offset: -10800000
+  :LOCALIZED_GMT: Гринуич-03:00
+  :LOCALIZED_GMT_SHORT: Гринуич-3
+  :GENERIC_LOCATION: Нуук
+  :GENERIC_LONG: Западногренландско време
+  :GENERIC_SHORT: Нуук
+  :SPECIFIC_LONG: Западногренландско стандартно време
+  :SPECIFIC_SHORT: Гринуич-3
+  :ISO_BASIC_SHORT: "-03"
+  :ISO_BASIC_LOCAL_SHORT: "-03"
+  :ISO_BASIC_FIXED: "-0300"
+  :ISO_BASIC_LOCAL_FIXED: "-0300"
+  :ISO_BASIC_FULL: "-0300"
+  :ISO_BASIC_LOCAL_FULL: "-0300"
+  :ISO_EXTENDED_FIXED: "-03:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-03:00"
+  :ISO_EXTENDED_FULL: "-03:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-03:00"
+  :ZONE_ID_SHORT: glgoh
+  :EXEMPLAR_LOCATION: Нуук
 America/Ojinaga:
   :offset: -25200000
   :LOCALIZED_GMT: Гринуич-07:00
@@ -4536,7 +4557,7 @@ America/Virgin:
   :ZONE_ID_SHORT: vistt
   :EXEMPLAR_LOCATION: Сейнт Томас
 America/Whitehorse:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: Гринуич-08:00
   :LOCALIZED_GMT_SHORT: Гринуич-8
   :GENERIC_LOCATION: Уайтхорс
@@ -4620,24 +4641,24 @@ America/Yellowknife:
   :ZONE_ID_SHORT: cayzf
   :EXEMPLAR_LOCATION: Йелоунайф
 Antarctica/Casey:
-  :offset: 28800000
-  :LOCALIZED_GMT: Гринуич+08:00
-  :LOCALIZED_GMT_SHORT: Гринуич+8
+  :offset: 39600000
+  :LOCALIZED_GMT: Гринуич+11:00
+  :LOCALIZED_GMT_SHORT: Гринуич+11
   :GENERIC_LOCATION: Кейси
-  :GENERIC_LONG: Западноавстралийско стандартно време
+  :GENERIC_LONG: Кейси
   :GENERIC_SHORT: Кейси
-  :SPECIFIC_LONG: Западноавстралийско стандартно време
-  :SPECIFIC_SHORT: Гринуич+8
-  :ISO_BASIC_SHORT: "+08"
-  :ISO_BASIC_LOCAL_SHORT: "+08"
-  :ISO_BASIC_FIXED: "+0800"
-  :ISO_BASIC_LOCAL_FIXED: "+0800"
-  :ISO_BASIC_FULL: "+0800"
-  :ISO_BASIC_LOCAL_FULL: "+0800"
-  :ISO_EXTENDED_FIXED: "+08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "+08:00"
-  :ISO_EXTENDED_FULL: "+08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "+08:00"
+  :SPECIFIC_LONG: Гринуич+11:00
+  :SPECIFIC_SHORT: Гринуич+11
+  :ISO_BASIC_SHORT: "+11"
+  :ISO_BASIC_LOCAL_SHORT: "+11"
+  :ISO_BASIC_FIXED: "+1100"
+  :ISO_BASIC_LOCAL_FIXED: "+1100"
+  :ISO_BASIC_FULL: "+1100"
+  :ISO_BASIC_LOCAL_FULL: "+1100"
+  :ISO_EXTENDED_FIXED: "+11:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+11:00"
+  :ISO_EXTENDED_FULL: "+11:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: aqcas
   :EXEMPLAR_LOCATION: Кейси
 Antarctica/Davis:
@@ -4683,13 +4704,13 @@ Antarctica/DumontDUrville:
   :ZONE_ID_SHORT: aqddu
   :EXEMPLAR_LOCATION: Дюмон Дюрвил
 Antarctica/Macquarie:
-  :offset: 39600000
+  :offset: 36000000
   :LOCALIZED_GMT: Гринуич+11:00
   :LOCALIZED_GMT_SHORT: Гринуич+11
   :GENERIC_LOCATION: Маккуори
-  :GENERIC_LONG: Маккуори
+  :GENERIC_LONG: Източноавстралийско време
   :GENERIC_SHORT: Маккуори
-  :SPECIFIC_LONG: Маккуори
+  :SPECIFIC_LONG: Източноавстралийско лятно часово време
   :SPECIFIC_SHORT: Гринуич+11
   :ISO_BASIC_SHORT: "+11"
   :ISO_BASIC_LOCAL_SHORT: "+11"
@@ -5442,9 +5463,9 @@ Asia/Dili:
   :offset: 32400000
   :LOCALIZED_GMT: Гринуич+09:00
   :LOCALIZED_GMT_SHORT: Гринуич+9
-  :GENERIC_LOCATION: Източен Тимор
+  :GENERIC_LOCATION: Тимор Лесте
   :GENERIC_LONG: Източнотиморско време
-  :GENERIC_SHORT: Източен Тимор
+  :GENERIC_SHORT: Тимор Лесте
   :SPECIFIC_LONG: Източнотиморско време
   :SPECIFIC_SHORT: Гринуич+9
   :ISO_BASIC_SHORT: "+09"
@@ -7810,7 +7831,7 @@ CET:
   :ISO_EXTENDED_FULL: "+01:00"
   :ISO_EXTENDED_LOCAL_FULL: "+01:00"
   :ZONE_ID_SHORT: unk
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 CST6CDT:
   :offset: -21600000
   :LOCALIZED_GMT: Гринуич-06:00
@@ -7831,7 +7852,7 @@ CST6CDT:
   :ISO_EXTENDED_FULL: "-06:00"
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: cst6cdt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Canada/Atlantic:
   :offset: -14400000
   :LOCALIZED_GMT: Гринуич-04:00
@@ -7980,7 +8001,7 @@ Canada/Saskatchewan:
   :ZONE_ID_SHORT: careg
   :EXEMPLAR_LOCATION: Риджайна
 Canada/Yukon:
-  :offset: -28800000
+  :offset: -25200000
   :LOCALIZED_GMT: Гринуич-08:00
   :LOCALIZED_GMT_SHORT: Гринуич-8
   :GENERIC_LOCATION: Уайтхорс
@@ -8083,7 +8104,7 @@ EET:
   :ISO_EXTENDED_FULL: "+02:00"
   :ISO_EXTENDED_LOCAL_FULL: "+02:00"
   :ZONE_ID_SHORT: unk
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 EST:
   :offset: -18000000
   :LOCALIZED_GMT: Гринуич-05:00
@@ -8104,7 +8125,7 @@ EST:
   :ISO_EXTENDED_FULL: "-05:00"
   :ISO_EXTENDED_LOCAL_FULL: "-05:00"
   :ZONE_ID_SHORT: utcw05
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 EST5EDT:
   :offset: -18000000
   :LOCALIZED_GMT: Гринуич-05:00
@@ -8125,7 +8146,7 @@ EST5EDT:
   :ISO_EXTENDED_FULL: "-05:00"
   :ISO_EXTENDED_LOCAL_FULL: "-05:00"
   :ZONE_ID_SHORT: est5edt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Egypt:
   :offset: 7200000
   :LOCALIZED_GMT: Гринуич+02:00
@@ -8188,7 +8209,7 @@ Etc/GMT:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8209,7 +8230,7 @@ Etc/GMT+0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+1:
   :offset: -3600000
   :LOCALIZED_GMT: Гринуич-01:00
@@ -8230,7 +8251,7 @@ Etc/GMT+1:
   :ISO_EXTENDED_FULL: "-01:00"
   :ISO_EXTENDED_LOCAL_FULL: "-01:00"
   :ZONE_ID_SHORT: utcw01
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+10:
   :offset: -36000000
   :LOCALIZED_GMT: Гринуич-10:00
@@ -8251,7 +8272,7 @@ Etc/GMT+10:
   :ISO_EXTENDED_FULL: "-10:00"
   :ISO_EXTENDED_LOCAL_FULL: "-10:00"
   :ZONE_ID_SHORT: utcw10
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+11:
   :offset: -39600000
   :LOCALIZED_GMT: Гринуич-11:00
@@ -8272,7 +8293,7 @@ Etc/GMT+11:
   :ISO_EXTENDED_FULL: "-11:00"
   :ISO_EXTENDED_LOCAL_FULL: "-11:00"
   :ZONE_ID_SHORT: utcw11
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+12:
   :offset: -43200000
   :LOCALIZED_GMT: Гринуич-12:00
@@ -8293,7 +8314,7 @@ Etc/GMT+12:
   :ISO_EXTENDED_FULL: "-12:00"
   :ISO_EXTENDED_LOCAL_FULL: "-12:00"
   :ZONE_ID_SHORT: utcw12
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+2:
   :offset: -7200000
   :LOCALIZED_GMT: Гринуич-02:00
@@ -8314,7 +8335,7 @@ Etc/GMT+2:
   :ISO_EXTENDED_FULL: "-02:00"
   :ISO_EXTENDED_LOCAL_FULL: "-02:00"
   :ZONE_ID_SHORT: utcw02
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+3:
   :offset: -10800000
   :LOCALIZED_GMT: Гринуич-03:00
@@ -8335,7 +8356,7 @@ Etc/GMT+3:
   :ISO_EXTENDED_FULL: "-03:00"
   :ISO_EXTENDED_LOCAL_FULL: "-03:00"
   :ZONE_ID_SHORT: utcw03
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+4:
   :offset: -14400000
   :LOCALIZED_GMT: Гринуич-04:00
@@ -8356,7 +8377,7 @@ Etc/GMT+4:
   :ISO_EXTENDED_FULL: "-04:00"
   :ISO_EXTENDED_LOCAL_FULL: "-04:00"
   :ZONE_ID_SHORT: utcw04
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+5:
   :offset: -18000000
   :LOCALIZED_GMT: Гринуич-05:00
@@ -8377,7 +8398,7 @@ Etc/GMT+5:
   :ISO_EXTENDED_FULL: "-05:00"
   :ISO_EXTENDED_LOCAL_FULL: "-05:00"
   :ZONE_ID_SHORT: utcw05
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+6:
   :offset: -21600000
   :LOCALIZED_GMT: Гринуич-06:00
@@ -8398,7 +8419,7 @@ Etc/GMT+6:
   :ISO_EXTENDED_FULL: "-06:00"
   :ISO_EXTENDED_LOCAL_FULL: "-06:00"
   :ZONE_ID_SHORT: utcw06
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+7:
   :offset: -25200000
   :LOCALIZED_GMT: Гринуич-07:00
@@ -8419,7 +8440,7 @@ Etc/GMT+7:
   :ISO_EXTENDED_FULL: "-07:00"
   :ISO_EXTENDED_LOCAL_FULL: "-07:00"
   :ZONE_ID_SHORT: utcw07
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+8:
   :offset: -28800000
   :LOCALIZED_GMT: Гринуич-08:00
@@ -8440,7 +8461,7 @@ Etc/GMT+8:
   :ISO_EXTENDED_FULL: "-08:00"
   :ISO_EXTENDED_LOCAL_FULL: "-08:00"
   :ZONE_ID_SHORT: utcw08
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT+9:
   :offset: -32400000
   :LOCALIZED_GMT: Гринуич-09:00
@@ -8461,7 +8482,7 @@ Etc/GMT+9:
   :ISO_EXTENDED_FULL: "-09:00"
   :ISO_EXTENDED_LOCAL_FULL: "-09:00"
   :ZONE_ID_SHORT: utcw09
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8482,7 +8503,7 @@ Etc/GMT-0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-1:
   :offset: 3600000
   :LOCALIZED_GMT: Гринуич+01:00
@@ -8503,7 +8524,7 @@ Etc/GMT-1:
   :ISO_EXTENDED_FULL: "+01:00"
   :ISO_EXTENDED_LOCAL_FULL: "+01:00"
   :ZONE_ID_SHORT: utce01
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-10:
   :offset: 36000000
   :LOCALIZED_GMT: Гринуич+10:00
@@ -8524,7 +8545,7 @@ Etc/GMT-10:
   :ISO_EXTENDED_FULL: "+10:00"
   :ISO_EXTENDED_LOCAL_FULL: "+10:00"
   :ZONE_ID_SHORT: utce10
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-11:
   :offset: 39600000
   :LOCALIZED_GMT: Гринуич+11:00
@@ -8545,7 +8566,7 @@ Etc/GMT-11:
   :ISO_EXTENDED_FULL: "+11:00"
   :ISO_EXTENDED_LOCAL_FULL: "+11:00"
   :ZONE_ID_SHORT: utce11
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-12:
   :offset: 43200000
   :LOCALIZED_GMT: Гринуич+12:00
@@ -8566,7 +8587,7 @@ Etc/GMT-12:
   :ISO_EXTENDED_FULL: "+12:00"
   :ISO_EXTENDED_LOCAL_FULL: "+12:00"
   :ZONE_ID_SHORT: utce12
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-13:
   :offset: 46800000
   :LOCALIZED_GMT: Гринуич+13:00
@@ -8587,7 +8608,7 @@ Etc/GMT-13:
   :ISO_EXTENDED_FULL: "+13:00"
   :ISO_EXTENDED_LOCAL_FULL: "+13:00"
   :ZONE_ID_SHORT: utce13
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-14:
   :offset: 50400000
   :LOCALIZED_GMT: Гринуич+14:00
@@ -8608,7 +8629,7 @@ Etc/GMT-14:
   :ISO_EXTENDED_FULL: "+14:00"
   :ISO_EXTENDED_LOCAL_FULL: "+14:00"
   :ZONE_ID_SHORT: utce14
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-2:
   :offset: 7200000
   :LOCALIZED_GMT: Гринуич+02:00
@@ -8629,7 +8650,7 @@ Etc/GMT-2:
   :ISO_EXTENDED_FULL: "+02:00"
   :ISO_EXTENDED_LOCAL_FULL: "+02:00"
   :ZONE_ID_SHORT: utce02
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-3:
   :offset: 10800000
   :LOCALIZED_GMT: Гринуич+03:00
@@ -8650,7 +8671,7 @@ Etc/GMT-3:
   :ISO_EXTENDED_FULL: "+03:00"
   :ISO_EXTENDED_LOCAL_FULL: "+03:00"
   :ZONE_ID_SHORT: utce03
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-4:
   :offset: 14400000
   :LOCALIZED_GMT: Гринуич+04:00
@@ -8671,7 +8692,7 @@ Etc/GMT-4:
   :ISO_EXTENDED_FULL: "+04:00"
   :ISO_EXTENDED_LOCAL_FULL: "+04:00"
   :ZONE_ID_SHORT: utce04
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-5:
   :offset: 18000000
   :LOCALIZED_GMT: Гринуич+05:00
@@ -8692,7 +8713,7 @@ Etc/GMT-5:
   :ISO_EXTENDED_FULL: "+05:00"
   :ISO_EXTENDED_LOCAL_FULL: "+05:00"
   :ZONE_ID_SHORT: utce05
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-6:
   :offset: 21600000
   :LOCALIZED_GMT: Гринуич+06:00
@@ -8713,7 +8734,7 @@ Etc/GMT-6:
   :ISO_EXTENDED_FULL: "+06:00"
   :ISO_EXTENDED_LOCAL_FULL: "+06:00"
   :ZONE_ID_SHORT: utce06
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-7:
   :offset: 25200000
   :LOCALIZED_GMT: Гринуич+07:00
@@ -8734,7 +8755,7 @@ Etc/GMT-7:
   :ISO_EXTENDED_FULL: "+07:00"
   :ISO_EXTENDED_LOCAL_FULL: "+07:00"
   :ZONE_ID_SHORT: utce07
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-8:
   :offset: 28800000
   :LOCALIZED_GMT: Гринуич+08:00
@@ -8755,7 +8776,7 @@ Etc/GMT-8:
   :ISO_EXTENDED_FULL: "+08:00"
   :ISO_EXTENDED_LOCAL_FULL: "+08:00"
   :ZONE_ID_SHORT: utce08
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT-9:
   :offset: 32400000
   :LOCALIZED_GMT: Гринуич+09:00
@@ -8776,7 +8797,7 @@ Etc/GMT-9:
   :ISO_EXTENDED_FULL: "+09:00"
   :ISO_EXTENDED_LOCAL_FULL: "+09:00"
   :ZONE_ID_SHORT: utce09
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/GMT0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8797,7 +8818,7 @@ Etc/GMT0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/Greenwich:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8818,7 +8839,7 @@ Etc/Greenwich:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/UCT:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8839,7 +8860,7 @@ Etc/UCT:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/UTC:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8860,7 +8881,7 @@ Etc/UTC:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/Universal:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8881,7 +8902,7 @@ Etc/Universal:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Etc/Zulu:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -8902,7 +8923,7 @@ Etc/Zulu:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Europe/Amsterdam:
   :offset: 3600000
   :LOCALIZED_GMT: Гринуич+01:00
@@ -10246,7 +10267,7 @@ Factory:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: unk
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 GB:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -10309,7 +10330,7 @@ GMT:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 GMT+0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -10330,7 +10351,7 @@ GMT+0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 GMT-0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -10351,7 +10372,7 @@ GMT-0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 GMT0:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -10372,7 +10393,7 @@ GMT0:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Greenwich:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -10393,7 +10414,7 @@ Greenwich:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: gmt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 HST:
   :offset: -36000000
   :LOCALIZED_GMT: Гринуич-10:00
@@ -10414,7 +10435,7 @@ HST:
   :ISO_EXTENDED_FULL: "-10:00"
   :ISO_EXTENDED_LOCAL_FULL: "-10:00"
   :ZONE_ID_SHORT: utcw10
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Hongkong:
   :offset: 28800000
   :LOCALIZED_GMT: Гринуич+08:00
@@ -10834,7 +10855,7 @@ MET:
   :ISO_EXTENDED_FULL: "+01:00"
   :ISO_EXTENDED_LOCAL_FULL: "+01:00"
   :ZONE_ID_SHORT: unk
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 MST:
   :offset: -25200000
   :LOCALIZED_GMT: Гринуич-07:00
@@ -10855,7 +10876,7 @@ MST:
   :ISO_EXTENDED_FULL: "-07:00"
   :ISO_EXTENDED_LOCAL_FULL: "-07:00"
   :ZONE_ID_SHORT: utcw07
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 MST7MDT:
   :offset: -25200000
   :LOCALIZED_GMT: Гринуич-07:00
@@ -10876,7 +10897,7 @@ MST7MDT:
   :ISO_EXTENDED_FULL: "-07:00"
   :ISO_EXTENDED_LOCAL_FULL: "-07:00"
   :ZONE_ID_SHORT: mst7mdt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Mexico/BajaNorte:
   :offset: -28800000
   :LOCALIZED_GMT: Гринуич-08:00
@@ -11044,7 +11065,7 @@ PST8PDT:
   :ISO_EXTENDED_FULL: "-08:00"
   :ISO_EXTENDED_LOCAL_FULL: "-08:00"
   :ZONE_ID_SHORT: pst8pdt
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Pacific/Apia:
   :offset: 46800000
   :LOCALIZED_GMT: Гринуич+14:00
@@ -12094,7 +12115,7 @@ UCT:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 US/Alaska:
   :offset: -32400000
   :LOCALIZED_GMT: Гринуич-09:00
@@ -12326,27 +12347,6 @@ US/Pacific:
   :ISO_EXTENDED_LOCAL_FULL: "-08:00"
   :ZONE_ID_SHORT: uslax
   :EXEMPLAR_LOCATION: Лос Анджелис
-US/Pacific-New:
-  :offset: -28800000
-  :LOCALIZED_GMT: Гринуич-08:00
-  :LOCALIZED_GMT_SHORT: Гринуич-8
-  :GENERIC_LOCATION: Лос Анджелис
-  :GENERIC_LONG: Северноамериканско тихоокеанско време
-  :GENERIC_SHORT: Лос Анджелис
-  :SPECIFIC_LONG: Северноамериканско тихоокеанско стандартно време
-  :SPECIFIC_SHORT: Гринуич-8
-  :ISO_BASIC_SHORT: "-08"
-  :ISO_BASIC_LOCAL_SHORT: "-08"
-  :ISO_BASIC_FIXED: "-0800"
-  :ISO_BASIC_LOCAL_FIXED: "-0800"
-  :ISO_BASIC_FULL: "-0800"
-  :ISO_BASIC_LOCAL_FULL: "-0800"
-  :ISO_EXTENDED_FIXED: "-08:00"
-  :ISO_EXTENDED_LOCAL_FIXED: "-08:00"
-  :ISO_EXTENDED_FULL: "-08:00"
-  :ISO_EXTENDED_LOCAL_FULL: "-08:00"
-  :ZONE_ID_SHORT: uslax
-  :EXEMPLAR_LOCATION: Лос Анджелис
 US/Samoa:
   :offset: -39600000
   :LOCALIZED_GMT: Гринуич-11:00
@@ -12388,7 +12388,7 @@ UTC:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Universal:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -12409,7 +12409,7 @@ Universal:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 W-SU:
   :offset: 10800000
   :LOCALIZED_GMT: Гринуич+03:00
@@ -12451,7 +12451,7 @@ WET:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: unk
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град
 Zulu:
   :offset: 0
   :LOCALIZED_GMT: Гринуич
@@ -12472,4 +12472,4 @@ Zulu:
   :ISO_EXTENDED_FULL: Z
   :ISO_EXTENDED_LOCAL_FULL: "+00:00"
   :ZONE_ID_SHORT: utc
-  :EXEMPLAR_LOCATION: неизвестен
+  :EXEMPLAR_LOCATION: неизвестен град

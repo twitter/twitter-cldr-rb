@@ -70,7 +70,9 @@ module TwitterCldr
         rounding = options[:rounding] || 0
 
         if number.is_a? BigDecimal
-          number = round_to(number, precision, rounding).abs.round(precision).to_s("F")
+          number = precision == 0 ?
+            round_to(number, precision, rounding).abs.fix.to_s("F") :
+            round_to(number, precision, rounding).abs.round(precision).to_s("F")
         else
           number = "%.#{precision}f" % round_to(number, precision, rounding).abs
         end
@@ -80,13 +82,13 @@ module TwitterCldr
       def round_to(number, precision, rounding = 0)
         factor = 10 ** precision
         result = number.is_a?(BigDecimal) ?
-          ((number * factor).round(0) / factor) :
+          ((number * factor).fix / factor) :
           ((number * factor).round.to_f / factor)
 
         if rounding > 0
           rounding = rounding.to_f / factor
           result = number.is_a?(BigDecimal) ?
-            ((result *  (1.0 / rounding)).round(0) / (1.0 / rounding)) :
+            ((result *  (1.0 / rounding)).fix / (1.0 / rounding)) :
             ((result *  (1.0 / rounding)).round.to_f / (1.0 / rounding))
         end
 

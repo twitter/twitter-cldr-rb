@@ -100,6 +100,27 @@ describe TwitterCldr::Localized::LocalizedNumber do
       end
     end
 
+    context 'big decimals' do
+      let(:integer) { described_class.new(BigDecimal("123456789012345678901234567890"), :en) }
+      let(:decimal) { described_class.new(BigDecimal("123456789012345678901234567890.123"), :en) }
+
+      it 'should default precision to zero' do
+        expect(integer.to_s).to eq("123,456,789,012,345,678,901,234,567,890")
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        expect(integer.to_s(precision: 2)).to eq("123,456,789,012,345,678,901,234,567,890.00")
+      end
+
+      it 'should default precision to that of the supplied number' do
+        expect(decimal.to_s).to eq("123,456,789,012,345,678,901,234,567,890.123")
+      end
+
+      it 'should not overwrite precision when explicitly passed' do
+        expect(decimal.to_s(precision: 2)).to eq("123,456,789,012,345,678,901,234,567,890.12")
+      end
+    end
+
     context 'currencies' do
       let(:number) { described_class.new(10, :en, type: :currency) }
 

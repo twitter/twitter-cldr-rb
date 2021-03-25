@@ -1,9 +1,10 @@
 # encoding: UTF-8
+require "bigdecimal"
 
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-[Integer, Float].each do |klass|
+[Integer, Float, BigDecimal].each do |klass|
   TwitterCldr::Localized::LocalizedNumber.localize(klass)
 end
 

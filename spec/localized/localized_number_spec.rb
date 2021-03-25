@@ -112,6 +112,10 @@ describe TwitterCldr::Localized::LocalizedNumber do
         expect(integer.to_s(precision: 2)).to eq("123,456,789,012,345,678,901,234,567,890.00")
       end
 
+      it 'should not truncate big decimal when precision set to zero (Ruby 3.0 issue)' do
+        expect(integer.to_s(precision: 0)).to eq("123,456,789,012,345,678,901,234,567,890")
+      end
+
       it 'should default precision to that of the supplied number' do
         expect(decimal.to_s).to eq("123,456,789,012,345,678,901,234,567,890.123")
       end

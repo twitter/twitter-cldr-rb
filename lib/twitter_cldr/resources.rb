@@ -17,6 +17,7 @@ module TwitterCldr
     autoload :Importer,                       'twitter_cldr/resources/importer'
     autoload :ImportResolver,                 'twitter_cldr/resources/import_resolver'
     autoload :LanguageCodesImporter,          'twitter_cldr/resources/language_codes_importer'
+    autoload :ListFormatsImporter,            'twitter_cldr/resources/list_formats_importer'
     autoload :Loader,                         'twitter_cldr/resources/loader'
     autoload :LocalesResourcesImporter,       'twitter_cldr/resources/locales_resources_importer'
     autoload :NumberFormatsImporter,          'twitter_cldr/resources/number_formats_importer'
@@ -58,6 +59,7 @@ module TwitterCldr
           DayPeriodRulesImporter,
           HyphenationImporter,
           LanguageCodesImporter,
+          ListFormatsImporter,
           LocalesResourcesImporter,
           NumberFormatsImporter,
           ParentLocalesImporter,

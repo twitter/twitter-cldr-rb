@@ -13,8 +13,8 @@
       :end: "{0} hoặc {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
-    :or-narrow: {}
-    :or-short: {}
+    :or-narrow: :lists.or-short
+    :or-short: :lists.or
     :standard-narrow: 
       ? !ruby/symbol "2"
       : "{0}, {1}"
@@ -25,7 +25,7 @@
       ? !ruby/symbol "2"
       : "{0} và {1}"
       :end: "{0} và {1}"
-    :unit: {}
+    :unit: :lists.unit-short
     :unit-narrow: 
       ? !ruby/symbol "2"
       : "{0} {1}"

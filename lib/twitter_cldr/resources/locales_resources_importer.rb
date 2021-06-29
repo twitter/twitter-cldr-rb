@@ -26,7 +26,6 @@ module TwitterCldr
         languages
         currencies
         plural_rules
-        lists
         rbnf
         units
         fields

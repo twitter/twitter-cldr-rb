@@ -13,13 +13,13 @@
       :end: "{0} edo {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
-    :or-narrow: {}
-    :or-short: {}
+    :or-narrow: :lists.or-short
+    :or-short: :lists.or
     :standard-narrow: 
       ? !ruby/symbol "2"
       : "{0}, {1}"
       :end: "{0}, {1}"
-    :standard-short: {}
+    :standard-short: :lists.default
     :unit: 
       ? !ruby/symbol "2"
       : "{0} eta {1}"

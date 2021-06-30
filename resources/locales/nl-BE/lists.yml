@@ -13,9 +13,9 @@
       :end: "{0} of {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
-    :or-narrow: {}
-    :or-short: {}
-    :standard-narrow: {}
+    :or-narrow: :lists.or-short
+    :or-short: :lists.or
+    :standard-narrow: :lists.standard-short
     :standard-short: 
       ? !ruby/symbol "2"
       : "{0} en {1}"

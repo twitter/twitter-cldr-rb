@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.6.1
+* Fix bug causing blank strings when formatting lists (#241)
+
 ### 6.6.0 (March 25th, 2021)
 * Support BigDecimal in number localization (#240, @opoudjis)
 

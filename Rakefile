@@ -13,7 +13,7 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
-require 'pry-nav'
+require 'pry-byebug'
 
 Bundler::GemHelper.install_tasks
 
@@ -87,6 +87,11 @@ namespace :update do
   desc 'Import number formats'
   task :number_formats do
     TwitterCldr::Resources::NumberFormatsImporter.new.import
+  end
+
+  desc 'Import list formats'
+  task :list_formats do
+    TwitterCldr::Resources::ListFormatsImporter.new.import
   end
 
   desc 'Import currency symbols'

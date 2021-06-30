@@ -13,10 +13,10 @@
       :end: "{0}, or {1}"
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
-    :or-narrow: {}
-    :or-short: {}
-    :standard-narrow: {}
-    :standard-short: {}
-    :unit: {}
-    :unit-narrow: {}
-    :unit-short: {}
+    :or-narrow: :lists.or-short
+    :or-short: :lists.or
+    :standard-narrow: :lists.standard-short
+    :standard-short: :lists.default
+    :unit: :lists.unit-short
+    :unit-narrow: :lists.unit-short
+    :unit-short: :lists.default

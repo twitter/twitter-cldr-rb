@@ -62,7 +62,13 @@ module TwitterCldr
       end
 
       def resource_for_type(type)
-        resource[type]
+        loop do
+          if resource[type].is_a?(Symbol)
+            type = resource[:type].to_s.split('.').last
+          else
+            break resource[type]
+          end
+        end
       end
 
       def resource

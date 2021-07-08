@@ -14,10 +14,23 @@
       :middle: "{0}, {1}"
       :start: "{0}, {1}"
     :or-narrow: 
+      ? !ruby/symbol "2"
+      : "{0} or {1}"
       :end: "{0} או {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
     :or-short: 
+      ? !ruby/symbol "2"
+      : "{0} or {1}"
       :end: "{0} או {1}"
-    :standard-narrow: :lists.standard-short
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
+    :standard-narrow: 
+      ? !ruby/symbol "2"
+      : "{0}, {1}"
+      :end: "{0}, {1}"
+      :middle: "{0}, {1}"
+      :start: "{0}, {1}"
     :standard-short: 
       ? !ruby/symbol "2"
       : "{0} ו{1}"

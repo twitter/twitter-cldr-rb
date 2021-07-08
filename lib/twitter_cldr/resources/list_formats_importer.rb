@@ -32,9 +32,23 @@ module TwitterCldr
           import_locale(locale)
           locales << locale
         end
+
+        puts
       end
 
       def import_locale(locale)
+        # The merging that happens here works at the listPatternPart level of granularity.
+        # In other words, a missing part will be filled in by any part with the same key
+        # in the locale's ancestor chain. The raw CLDR data contains the inheritance marker
+        # (i.e. "↑↑↑") for listPatterns that are missing parts, but the expanded data we
+        # get in the downloadable CLDR zip file doesn't include them or the inherited data,
+        # making it impossible for TwitterCLDR to know how it should handle missing keys.
+        # I believe whatever massage tool the CLDR maintainers use to generate the final
+        # data set doesn't take aliases into account, which explains the holes in the data.
+        # By allowing individual listPatternParts to be populated by data from ancestor
+        # locales, we fill in any missing parts at the minor risk of being slightly wrong
+        # when formatting lists. In my opinion, it's far better to produce a slightly wrong
+        # string than to error or produce an entirely empty string.
         data = requirements[:cldr].merge_each_ancestor(locale) do |ancestor_locale|
           ListFormats.new(ancestor_locale, requirements[:cldr]).to_h
         end
@@ -79,15 +93,33 @@ module TwitterCldr
             :default
           end
 
-          if aliased = pattern_node.xpath('alias').first
-            alias_type = aliased.attribute('path').value[/@type='([\w-]+)'/, 1]
-            pattern_result[pattern_type] = :"lists.#{alias_type || 'default'}"
-            next
-          end
+          pattern_node = pattern_for(pattern_type)
 
           pattern_result[pattern_type] = pattern_node.xpath('listPatternPart').each_with_object({}) do |type_node, type_result|
             type_result[type_node.attribute('type').value.to_sym] = type_node.content
           end
+        end
+      end
+
+      def pattern_for(type)
+        xpath = xpath_for(type)
+        pattern_node = doc.xpath(xpath)[0]
+        alias_node = pattern_node.xpath('alias')[0]
+
+        if alias_node
+          alias_type = alias_node.attribute('path').value[/@type='([\w-]+)'/, 1] || :default
+          # follow aliases so we can fully expand them
+          pattern_node = pattern_for(alias_type)
+        end
+
+        pattern_node
+      end
+
+      def xpath_for(type)
+        if type == :default
+          '//ldml/listPatterns/listPattern[not(@type)]'
+        else
+          "//ldml/listPatterns/listPattern[@type='#{type}']"
         end
       end
 

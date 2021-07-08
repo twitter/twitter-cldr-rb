@@ -1,6 +1,9 @@
 # TwitterCldr Changelog
 
-### 6.6.1
+### 6.6.2 (July 8th, 2021)
+* Fix additional bugs causing blank strings when formatting lists.
+
+### 6.6.1 (June 30th, 2021)
 * Fix bug causing blank strings when formatting lists (#241)
 
 ### 6.6.0 (March 25th, 2021)

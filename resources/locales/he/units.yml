@@ -97,7 +97,7 @@
           :one: "קראט אחד"
           :other: "{0} קראט"
           :two: "{0} קראט"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :many: "{0} מיליגרם/דציליטר"
           :one: "{0} מיליגרם/דציליטר"
           :other: "{0} מיליגרם/דציליטר"
@@ -975,7 +975,11 @@
           :one: "סיבית {0}"
           :other: "{0} סיביות"
           :two: "{0} סיביות"
-        :digital-byte: {}
+        :digital-byte: 
+          :many: "{0} בתים"
+          :one: "{0} בית"
+          :other: "{0} בתים"
+          :two: "{0} בית"
         :digital-gigabyte: 
           :many: "{0} ג״ב"
           :one: "{0} ג״ב"
@@ -986,7 +990,11 @@
           :one: "ק״ב {0}"
           :other: "{0} ק״ב"
           :two: "{0} ק״ב"
-        :digital-megabyte: {}
+        :digital-megabyte: 
+          :many: "{0} מ״ב"
+          :one: "{0} מ״ב"
+          :other: "{0} מ״ב"
+          :two: "{0} מ״ב"
         :duration-century: 
           :many: "{0} מאות"
           :one: "מאה {0}"
@@ -1083,10 +1091,10 @@
           :other: "{0} מ׳"
           :two: "{0} מ′"
         :length-micrometer: 
-          :many: "{0} µm"
-          :one: "{0} µm"
-          :other: "{0} µm"
-          :two: "{0} µm"
+          :many: "{0} μm"
+          :one: "{0} μm"
+          :other: "{0} μm"
+          :two: "{0} μm"
         :length-mile: 
           :many: "{0} מייל"
           :one: "מייל {0}"
@@ -1368,7 +1376,7 @@
           :one: "{0} kt"
           :other: "{0} kt"
           :two: "{0} kt"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :many: "{0} mg/dL"
           :one: "{0} mg/dL"
           :other: "{0} mg/dL"
@@ -1482,7 +1490,6 @@
           :one: יום
           :other: "{0} ימ׳"
           :two: יומיים
-        :duration-day-person: {}
         :duration-decade: 
           :many: "{0} עשורים"
           :one: "עשור {0}"
@@ -1513,7 +1520,6 @@
           :one: חודש
           :other: "{0} ח׳"
           :two: חודשיים
-        :duration-month-person: {}
         :duration-nanosecond: 
           :many: "{0} ns"
           :one: "{0} ns"
@@ -1529,13 +1535,11 @@
           :one: "שבוע {0}"
           :other: "{0} שבועות"
           :two: שבועיים
-        :duration-week-person: {}
         :duration-year: 
           :many: "{0} שנים"
           :one: "שנה {0}"
           :other: "{0} שנים"
           :two: "{0} שנים"
-        :duration-year-person: {}
         :electric-ampere: 
           :many: "{0} A"
           :one: "{0} A"
@@ -1703,10 +1707,10 @@
           :other: "{0} מ׳"
           :two: "{0} מ׳"
         :length-micrometer: 
-          :many: "‎{0} µm‎"
-          :one: "‎{0} µm‎"
-          :other: "‎{0} µm‎"
-          :two: "‎{0} µm‎"
+          :many: "‎{0} μm‎"
+          :one: "‎{0} μm‎"
+          :other: "‎{0} μm‎"
+          :two: "‎{0} μm‎"
         :length-mile: 
           :many: "{0} מייל"
           :one: "{0} מייל"

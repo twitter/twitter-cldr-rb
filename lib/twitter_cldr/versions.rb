@@ -5,8 +5,8 @@
 
 module TwitterCldr
   module Versions
-    CLDR_VERSION    = '38.1'
-    ICU_VERSION     = '68.2'
+    CLDR_VERSION    = '39'
+    ICU_VERSION     = '69.1'
     UNICODE_VERSION = '13.0.0'
 
     class << self

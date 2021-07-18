@@ -58,7 +58,7 @@
         :concentr-karat: 
           :one: "{0} karat"
           :other: "{0} karat"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :one: "{0} milligram per desiliter"
           :other: "{0} milligram per desiliter"
         :concentr-millimole-per-liter: 
@@ -550,14 +550,18 @@
         :angle-degree: 
           :one: "{0}°"
           :other: "{0}°"
-        :angle-radian: {}
+        :angle-radian: 
+          :one: "{0}rad"
+          :other: "{0}rad"
         :area-acre: 
           :one: "{0} ac"
           :other: "{0} ac"
         :area-hectare: 
           :one: "{0}ha"
           :other: "{0}ha"
-        :area-square-centimeter: {}
+        :area-square-centimeter: 
+          :one: "{0}cm²"
+          :other: "{0}cm²"
         :area-square-foot: 
           :one: "{0}fot²"
           :other: "{0}fot²"
@@ -570,16 +574,24 @@
         :area-square-mile: 
           :one: "{0} eng mil²"
           :other: "{0} eng mil²"
-        :concentr-milligram-per-deciliter: {}
-        :concentr-millimole-per-liter: {}
+        :concentr-milligram-ofglucose-per-deciliter: 
+          :one: "{0} mg/dL"
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :one: "{0}mmol/L"
+          :other: "{0}mmol/L"
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
-        :concentr-permillion: {}
+        :concentr-permillion: 
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100km"
           :other: "{0} l/100km"
-        :consumption-liter-per-kilometer: {}
+        :consumption-liter-per-kilometer: 
+          :one: "{0}L/km"
+          :other: "{0}L/km"
         :duration-century: 
           :one: "{0} årh."
           :other: "{0} årh."
@@ -638,8 +650,8 @@
           :one: "{0}m"
           :other: "{0}m"
         :length-micrometer: 
-          :one: "{0}µm"
-          :other: "{0}µm"
+          :one: "{0}μm"
+          :other: "{0}μm"
         :length-mile: 
           :one: "{0} eng mil"
           :other: "{0} eng mil"
@@ -667,8 +679,12 @@
         :length-yard: 
           :one: "{0} yard"
           :other: "{0} yard"
-        :light-lux: {}
-        :mass-carat: {}
+        :light-lux: 
+          :one: "{0}lx"
+          :other: "{0}lx"
+        :mass-carat: 
+          :one: "{0} karat"
+          :other: "{0} karat"
         :mass-gram: 
           :one: "{0}g"
           :other: "{0}g"
@@ -679,20 +695,26 @@
           :one: "{0}t"
           :other: "{0}t"
         :mass-microgram: 
-          :one: "{0}µg"
-          :other: "{0}µg"
+          :one: "{0}μg"
+          :other: "{0}μg"
         :mass-milligram: 
           :one: "{0}mg"
           :other: "{0}mg"
         :mass-ounce: 
           :one: "{0} unse"
           :other: "{0} unser"
-        :mass-ounce-troy: {}
+        :mass-ounce-troy: 
+          :one: "{0} tr.uns"
+          :other: "{0} tr.uns"
         :mass-pound: 
           :one: "{0} pund"
           :other: "{0} pund"
-        :mass-stone: {}
-        :mass-ton: {}
+        :mass-stone: 
+          :one: "{0}en.stein"
+          :other: "{0}en.stein"
+        :mass-ton: 
+          :one: "{0}en.k.ton"
+          :other: "{0}en.k.ton"
         :power-horsepower: 
           :one: "{0}hk"
           :other: "{0}hk"
@@ -738,26 +760,48 @@
         :temperature-kelvin: 
           :one: "{0}K"
           :other: "{0}K"
-        :volume-centiliter: {}
-        :volume-cubic-centimeter: {}
-        :volume-cubic-foot: {}
-        :volume-cubic-inch: {}
+        :volume-centiliter: 
+          :one: "{0}cL"
+          :other: "{0}cL"
+        :volume-cubic-centimeter: 
+          :one: "{0}cm³"
+          :other: "{0}cm³"
+        :volume-cubic-foot: 
+          :one: "{0} fot³"
+          :other: "{0} fot³"
+        :volume-cubic-inch: 
+          :one: "{0} tom³"
+          :other: "{0} tom³"
         :volume-cubic-kilometer: 
           :one: "{0}km³"
           :other: "{0}km³"
-        :volume-cubic-meter: {}
+        :volume-cubic-meter: 
+          :one: "{0}m³"
+          :other: "{0}m³"
         :volume-cubic-mile: 
           :one: "{0} eng mil³"
           :other: "{0} eng mil³"
-        :volume-deciliter: {}
-        :volume-hectoliter: {}
+        :volume-deciliter: 
+          :one: "{0}dL"
+          :other: "{0}dL"
+        :volume-hectoliter: 
+          :one: "{0}hL"
+          :other: "{0}hL"
         :volume-liter: 
           :one: "{0}l"
           :other: "{0}l"
-        :volume-megaliter: {}
-        :volume-milliliter: {}
-        :volume-tablespoon: {}
-        :volume-teaspoon: {}
+        :volume-megaliter: 
+          :one: "{0}ML"
+          :other: "{0}ML"
+        :volume-milliliter: 
+          :one: "{0}mL"
+          :other: "{0}mL"
+        :volume-tablespoon: 
+          :one: "{0} ss"
+          :other: "{0} ss"
+        :volume-teaspoon: 
+          :one: "{0} ts"
+          :other: "{0} ts"
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -812,7 +856,7 @@
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :one: "{0} mg/dl"
           :other: "{0} mg/dl"
         :concentr-millimole-per-liter: 
@@ -883,7 +927,6 @@
         :duration-day: 
           :one: "{0} d"
           :other: "{0} d"
-        :duration-day-person: {}
         :duration-decade: 
           :one: "{0} tiår"
           :other: "{0} tiår"
@@ -902,7 +945,6 @@
         :duration-month: 
           :one: "{0} md."
           :other: "{0} md."
-        :duration-month-person: {}
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
@@ -912,11 +954,9 @@
         :duration-week: 
           :one: "{0} u"
           :other: "{0} u"
-        :duration-week-person: {}
         :duration-year: 
           :one: "{0} år"
           :other: "{0} år"
-        :duration-year-person: {}
         :electric-ampere: 
           :one: "{0} A"
           :other: "{0} A"
@@ -975,10 +1015,7 @@
         :graphics-dot: 
           :one: "{0} pkt"
           :other: "{0} pkt"
-        :graphics-dot-per-centimeter: 
-          :other: "{0} dpcm"
-        :graphics-dot-per-inch: 
-          :other: "{0} dpi"
+        :graphics-dot-per-centimeter: {}
         :graphics-em: 
           :one: "{0} gefirt"
           :other: "{0} gefirt"
@@ -1027,8 +1064,8 @@
           :one: "{0} m"
           :other: "{0} m"
         :length-micrometer: 
-          :one: "{0} µm"
-          :other: "{0} µm"
+          :one: "{0} μm"
+          :other: "{0} μm"
         :length-mile: 
           :one: "{0} mile"
           :other: "{0} miles"
@@ -1090,8 +1127,8 @@
           :one: "{0} tonn"
           :other: "{0} tonn"
         :mass-microgram: 
-          :one: "{0} µg"
-          :other: "{0} µg"
+          :one: "{0} μg"
+          :other: "{0} μg"
         :mass-milligram: 
           :one: "{0} mg"
           :other: "{0} mg"

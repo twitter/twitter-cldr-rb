@@ -922,6 +922,78 @@
                 :rule: "<< pilkku >>;"
                 :value: x.x
               - 
+                :rule: nollat;
+                :value: 0
+              - 
+                :rule: yhdet;
+                :value: 1
+              - 
+                :rule: kahdet;
+                :value: 2
+              - 
+                :rule: kolmet;
+                :value: 3
+              - 
+                :rule: neljät;
+                :value: 4
+              - 
+                :rule: viidet;
+                :value: 5
+              - 
+                :rule: kuudet;
+                :value: 6
+              - 
+                :rule: seitsemät;
+                :value: 7
+              - 
+                :rule: kahdeksat;
+                :value: 8
+              - 
+                :rule: yhdeksät;
+                :value: 9
+              - 
+                :rule: kymmenet;
+                :value: 10
+              - 
+                :rule: ">>toista;"
+                :value: 11
+              - 
+                :rule: "<<-kymmenet[­>>];"
+                :value: 20
+              - 
+                :rule: "sadat[­>>];"
+                :value: 100
+              - 
+                :rule: "<<-sadat[­>>];"
+                :value: 200
+              - 
+                :rule: "tuhannet[­>>];"
+                :value: 1000
+              - 
+                :rule: "<<­tuhannet[­>>];"
+                :value: 2000
+              - 
+                :rule: "<< miljoonat[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<< miljardit[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<< biljoonat[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-cardinal-plural
+          - 
+            :rules: 
+              - 
+                :rule: "miinus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< pilkku >>;"
+                :value: x.x
+              - 
                 :rule: nollien;
                 :value: 0
               - 
@@ -2823,6 +2895,106 @@
                 :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-allative
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: ;
+                :value: 0
+              - 
+                :rule: kahdennet;
+                :value: 2
+              - 
+                :rule: =%spellout-ordinal-plural=;
+                :value: 3
+            :type: spellout-ordinal-plural-larger
+          - 
+            :rules: 
+              - 
+                :rule: "miinus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: nollannet;
+                :value: 0
+              - 
+                :rule: ensimmäiset;
+                :value: 1
+              - 
+                :rule: toiset;
+                :value: 2
+              - 
+                :rule: kolmannet;
+                :value: 3
+              - 
+                :rule: neljännet;
+                :value: 4
+              - 
+                :rule: viidennet;
+                :value: 5
+              - 
+                :rule: kuudennet;
+                :value: 6
+              - 
+                :rule: seitsemännet;
+                :value: 7
+              - 
+                :rule: kahdeksannet;
+                :value: 8
+              - 
+                :rule: yhdeksännet;
+                :value: 9
+              - 
+                :rule: kymmenennet;
+                :value: 10
+              - 
+                :rule: yhdennettoista;
+                :value: 11
+              - 
+                :rule: kahdennettoista;
+                :value: 12
+              - 
+                :rule: ">>toista;"
+                :value: 13
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­kymmenennet[­>>];"
+                :value: 20
+              - 
+                :rule: "sadannet[­>>];"
+                :value: 100
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­sadannet[­>>];"
+                :value: 200
+              - 
+                :rule: "tuhannennet[­>>];"
+                :value: 1000
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­tuhannennet[­>>];"
+                :value: 2000
+              - 
+                :rule: "miljoonannet[­>>];"
+                :value: 1000000
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­miljoonannet[­>>];"
+                :value: 2000000
+              - 
+                :rule: "miljardinnet[­>>];"
+                :value: 1000000000
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­miljardinnet[­>>];"
+                :value: 2000000000
+              - 
+                :rule: "biljoonannet[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%%spellout-ordinal-plural-larger<­biljoonannet[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-plural
           - 
             :access: private
             :rules: 

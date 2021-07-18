@@ -142,7 +142,7 @@ module TwitterCldr
         end
 
         def mvn(cmd)
-          Dir.chdir(path) { `mvn #{cmd}` }
+          Dir.chdir(path) { `sudo mvn #{cmd}` }
         end
       end
 

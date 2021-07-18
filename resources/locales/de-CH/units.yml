@@ -61,7 +61,7 @@
         :concentr-karat: 
           :one: "{0} Karat"
           :other: "{0} Karat"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :one: "{0} Milligramm pro Deziliter"
           :other: "{0} Milligramm pro Deziliter"
         :concentr-millimole-per-liter: 
@@ -584,12 +584,18 @@
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
-        :concentr-milligram-per-deciliter: {}
-        :concentr-millimole-per-liter: {}
+        :concentr-milligram-ofglucose-per-deciliter: 
+          :one: "{0}mg/dL"
+          :other: "{0}mg/dL"
+        :concentr-millimole-per-liter: 
+          :one: "{0}mmol/L"
+          :other: "{0}mmol/L"
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
-        :concentr-permillion: {}
+        :concentr-permillion: 
+          :one: "{0}ppm"
+          :other: "{0}ppm"
         :consumption-liter-per-100-kilometer: 
           :one: "{0}L/100km"
           :other: "{0}L/100km"
@@ -721,8 +727,8 @@
           :other: "{0} ly"
         :length-meter: {}
         :length-micrometer: 
-          :one: "{0} µm"
-          :other: "{0} µm"
+          :one: "{0} μm"
+          :other: "{0} μm"
         :length-mile: 
           :one: "{0} mi"
           :other: "{0} mi"
@@ -756,8 +762,8 @@
           :one: "{0} t"
           :other: "{0} t"
         :mass-microgram: 
-          :one: "{0} µg"
-          :other: "{0} µg"
+          :one: "{0} μg"
+          :other: "{0} μg"
         :mass-milligram: 
           :one: "{0} mg"
           :other: "{0} mg"
@@ -942,7 +948,7 @@
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :one: "{0} mg/dL"
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
@@ -1011,7 +1017,6 @@
         :duration-day: 
           :one: "{0} Tg."
           :other: "{0} Tg."
-        :duration-day-person: {}
         :duration-decade: 
           :one: "{0} Jz."
           :other: "{0} Jz."
@@ -1029,7 +1034,6 @@
         :duration-month: 
           :one: "{0} Mon."
           :other: "{0} Mon."
-        :duration-month-person: {}
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
@@ -1039,11 +1043,9 @@
         :duration-week: 
           :one: "{0} Wo."
           :other: "{0} Wo."
-        :duration-week-person: {}
         :duration-year: 
           :one: "{0} J"
           :other: "{0} J"
-        :duration-year-person: {}
         :electric-ampere: 
           :other: "{0} A"
         :electric-milliampere: 
@@ -1088,12 +1090,6 @@
           :other: "{0} kHz"
         :frequency-megahertz: 
           :other: "{0} MHz"
-        :graphics-dot: 
-          :other: "{0} dot"
-        :graphics-dot-per-centimeter: 
-          :other: "{0} dpcm"
-        :graphics-dot-per-inch: 
-          :other: "{0} dpi"
         :graphics-em: 
           :other: "{0} em"
         :graphics-megapixel: 
@@ -1132,7 +1128,7 @@
         :length-meter: 
           :other: "{0} m"
         :length-micrometer: 
-          :other: "{0} µm"
+          :other: "{0} μm"
         :length-mile: 
           :other: "{0} mi"
         :length-mile-scandinavian: 
@@ -1184,7 +1180,7 @@
         :mass-metric-ton: 
           :other: "{0} t"
         :mass-microgram: 
-          :other: "{0} µg"
+          :other: "{0} μg"
         :mass-milligram: 
           :other: "{0} mg"
         :mass-ounce: 

@@ -17,11 +17,11 @@
                 :value: 0
               - 
                 :radix: 100
-                :rule: "<%spellout-cardinal-masculine<­hundert[­>>];"
+                :rule: "<<­hundert[­>>];"
                 :value: 1100
               - 
                 :rule: =%spellout-numbering=;
-                :value: 10000
+                :value: 2000
             :type: spellout-numbering-year
           - 
             :rules: 
@@ -402,6 +402,57 @@
                 :value: 1000000000000000000
             :type: spellout-cardinal-s
           - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "<< Komma >>;"
+                :value: x.x
+              - 
+                :rule: null;
+                :value: 0
+              - 
+                :rule: einem;
+                :value: 1
+              - 
+                :rule: =%spellout-numbering=;
+                :value: 2
+              - 
+                :rule: "<%spellout-cardinal-masculine<­hundert[­>>];"
+                :value: 100
+              - 
+                :rule: "<%spellout-cardinal-masculine<­tausend[­>>];"
+                :value: 1000
+              - 
+                :rule: "eine Million[ >>];"
+                :value: 1000000
+              - 
+                :rule: "<%spellout-cardinal-feminine< Millionen[ >>];"
+                :value: 2000000
+              - 
+                :rule: "eine Milliarde[ >>];"
+                :value: 1000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine< Milliarden[ >>];"
+                :value: 2000000000
+              - 
+                :rule: "eine Billion[ >>];"
+                :value: 1000000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine< Billionen[ >>];"
+                :value: 2000000000000
+              - 
+                :rule: "eine Billiarde[ >>];"
+                :value: 1000000000000000
+              - 
+                :rule: "<%spellout-cardinal-feminine< Billiarden[ >>];"
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-cardinal-m
+          - 
             :access: private
             :rules: 
               - 
@@ -532,4 +583,16 @@
                 :rule: =%spellout-ordinal=s;
                 :value: 0
             :type: spellout-ordinal-s
+          - 
+            :rules: 
+              - 
+                :rule: "minus >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: =%spellout-ordinal=m;
+                :value: 0
+            :type: spellout-ordinal-m
         :type: SpelloutRules

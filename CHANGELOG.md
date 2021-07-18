@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.7.0 ()
+* Upgrade to CLDR v39 and ICU 69.1.
+
 ### 6.6.2 (July 8th, 2021)
 * Fix additional bugs causing blank strings when formatting lists.
 

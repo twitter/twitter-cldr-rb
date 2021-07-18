@@ -1376,7 +1376,7 @@
               :rule: ע״>%hebrew-item>;
               :value: 71
             - 
-              :rule: ״פ;
+              :rule: ״ף;
               :value: 80
             - 
               :rule: פ״>%hebrew-item>;
@@ -1389,6 +1389,7 @@
               :value: 91
           :type: hebrew-0-99
         - 
+          :access: private
           :rules: 
             - 
               :rule: −>>;
@@ -1457,8 +1458,11 @@
               :rule: "ע[>>];"
               :value: 70
             - 
-              :rule: "פ[>>];"
+              :rule: ף;
               :value: 80
+            - 
+              :rule: "פ[>>];"
+              :value: 81
             - 
               :rule: "צ[>>];"
               :value: 90
@@ -1566,6 +1570,84 @@
             - 
               :rule: "=#,##0=;"
               :value: 2100
+          :type: hebrew-item-hundreds
+        - 
+          :rules: 
+            - 
+              :rule: −>>;
+              :value: "-x"
+            - 
+              :rule: "=#,##0.00=;"
+              :value: x.x
+            - 
+              :rule: ״;
+              :value: 0
+            - 
+              :rule: א;
+              :value: 1
+            - 
+              :rule: ב;
+              :value: 2
+            - 
+              :rule: ג;
+              :value: 3
+            - 
+              :rule: ד;
+              :value: 4
+            - 
+              :rule: ה;
+              :value: 5
+            - 
+              :rule: ו;
+              :value: 6
+            - 
+              :rule: ז;
+              :value: 7
+            - 
+              :rule: ח;
+              :value: 8
+            - 
+              :rule: ט;
+              :value: 9
+            - 
+              :rule: "י[>>];"
+              :value: 10
+            - 
+              :rule: טו;
+              :value: 15
+            - 
+              :rule: טז;
+              :value: 16
+            - 
+              :rule: י>>;
+              :value: 17
+            - 
+              :rule: "כ[>>];"
+              :value: 20
+            - 
+              :rule: "ל[>>];"
+              :value: 30
+            - 
+              :rule: "מ[>>];"
+              :value: 40
+            - 
+              :rule: "נ[>>];"
+              :value: 50
+            - 
+              :rule: "ס[>>];"
+              :value: 60
+            - 
+              :rule: "ע[>>];"
+              :value: 70
+            - 
+              :rule: "פ[>>];"
+              :value: 80
+            - 
+              :rule: "צ[>>];"
+              :value: 90
+            - 
+              :rule: =%%hebrew-item-hundreds=;
+              :value: 100
           :type: hebrew-item
         - 
           :rules: 

@@ -41,6 +41,7 @@ module TwitterCldr
     autoload :UnicodeDataImporter,            'twitter_cldr/resources/unicode_data_importer'
     autoload :UnicodeFileParser,              'twitter_cldr/resources/unicode_file_parser'
     autoload :UnicodePropertyAliasesImporter, 'twitter_cldr/resources/unicode_property_aliases_importer'
+    autoload :UnitsImporter,                  'twitter_cldr/resources/units_importer'
     autoload :ValidityDataImporter,           'twitter_cldr/resources/validity_data_importer'
 
     class << self
@@ -77,6 +78,7 @@ module TwitterCldr
           TransformsImporter,
           UnicodeDataImporter,
           UnicodePropertyAliasesImporter,
+          UnitsImporter,
           ValidityDataImporter,
         ]
       end

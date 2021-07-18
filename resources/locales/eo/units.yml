@@ -7,84 +7,238 @@
       :ms: "m:ss"
     :unitLength: 
       :long: 
-        :area-acre: {}
-        :area-hectare: {}
-        :area-square-centimeter: {}
-        :area-square-foot: {}
-        :area-square-inch: {}
-        :area-square-kilometer: {}
-        :area-square-meter: {}
-        :area-square-mile: {}
-        :area-square-yard: {}
-        :digital-bit: {}
-        :digital-byte: {}
-        :digital-gigabit: {}
-        :digital-gigabyte: {}
-        :digital-kilobit: {}
-        :digital-kilobyte: {}
-        :digital-megabit: {}
-        :digital-megabyte: {}
-        :digital-terabit: {}
-        :digital-terabyte: {}
-        :duration-day: {}
-        :duration-hour: {}
-        :duration-millisecond: {}
-        :duration-minute: {}
-        :duration-month: {}
-        :duration-second: {}
-        :duration-week: {}
-        :duration-year: {}
-        :length-astronomical-unit: {}
-        :length-centimeter: {}
-        :length-decimeter: {}
-        :length-fathom: {}
-        :length-foot: {}
-        :length-furlong: {}
-        :length-inch: {}
-        :length-kilometer: {}
-        :length-light-year: {}
-        :length-meter: {}
-        :length-micrometer: {}
-        :length-mile: {}
-        :length-millimeter: {}
-        :length-nanometer: {}
-        :length-nautical-mile: {}
-        :length-parsec: {}
-        :length-picometer: {}
-        :length-yard: {}
-        :mass-gram: {}
-        :mass-kilogram: {}
-        :speed-kilometer-per-hour: {}
-        :temperature-celsius: {}
-        :volume-liter: {}
+        :area-acre: 
+          :one: "{0} akreo"
+          :other: "{0} akreoj"
+        :area-hectare: 
+          :one: "{0} hektaro"
+          :other: "{0} hektaroj"
+        :area-square-centimeter: 
+          :one: "{0} kvadrata centimetro"
+          :other: "{0} kvadrataj centimetroj"
+        :area-square-foot: 
+          :one: "{0} kvadrata futo"
+          :other: "{0} kvadrataj futoj"
+        :area-square-inch: 
+          :one: "{0} kvadrata colo"
+          :other: "{0} kvadrataj coloj"
+        :area-square-kilometer: 
+          :one: "{0} kvadrata kilometro"
+          :other: "{0} kvadrataj kilometroj"
+        :area-square-meter: 
+          :one: "{0} kvadrata metro"
+          :other: "{0} kvadrataj metroj"
+        :area-square-mile: 
+          :one: "{0} kvadrata mejlo"
+          :other: "{0} kvadrataj mejloj"
+        :area-square-yard: 
+          :one: "{0} kvadrata jardo"
+          :other: "{0} kvadrataj jardoj"
+        :digital-bit: 
+          :one: "{0} bito"
+          :other: "{0} bitoj"
+        :digital-byte: 
+          :one: "{0} bajto"
+          :other: "{0} bajtoj"
+        :digital-gigabit: 
+          :one: "{0} gigabito"
+          :other: "{0} gigabitoj"
+        :digital-gigabyte: 
+          :one: "{0} gigabajto"
+          :other: "{0} gigabajtoj"
+        :digital-kilobit: 
+          :one: "{0} kilobito"
+          :other: "{0} kilobitoj"
+        :digital-kilobyte: 
+          :one: "{0} kilobajto"
+          :other: "{0} kilobajtoj"
+        :digital-megabit: 
+          :one: "{0} megabito"
+          :other: "{0} megabitoj"
+        :digital-megabyte: 
+          :one: "{0} megabajto"
+          :other: "{0} megabajtoj"
+        :digital-terabit: 
+          :one: "{0} terabito"
+          :other: "{0} terabitoj"
+        :digital-terabyte: 
+          :one: "{0} terabajto"
+          :other: "{0} terabajtoj"
+        :duration-day: 
+          :one: "{0} tago"
+          :other: "{0} tagoj"
+        :duration-hour: 
+          :one: "{0} horo"
+          :other: "{0} horoj"
+        :duration-millisecond: 
+          :one: "{0} milisekundo"
+          :other: "{0} milisekundoj"
+        :duration-minute: 
+          :one: "{0} minuto"
+          :other: "{0} minutoj"
+        :duration-month: 
+          :one: "{0} monato"
+          :other: "{0} monatoj"
+        :duration-second: 
+          :one: "{0} sekundo"
+          :other: "{0} sekundoj"
+        :duration-week: 
+          :one: "{0} semajno"
+          :other: "{0} semajnoj"
+        :duration-year: 
+          :one: "{0} jaro"
+          :other: "{0} jaroj"
+        :length-astronomical-unit: 
+          :one: "{0} astronomia unuo"
+          :other: "{0} astronomiaj unuoj"
+        :length-centimeter: 
+          :one: "{0} centimetro"
+          :other: "{0} centimetroj"
+        :length-decimeter: 
+          :one: "{0} decimetro"
+          :other: "{0} decimetroj"
+        :length-fathom: 
+          :one: "{0} klafto"
+          :other: "{0} klaftoj"
+        :length-foot: 
+          :one: "{0} futo"
+          :other: "{0} futoj"
+        :length-furlong: 
+          :one: "{0} stadio"
+          :other: "{0} stadioj"
+        :length-inch: 
+          :one: "{0} colo"
+          :other: "{0} coloj"
+        :length-kilometer: 
+          :one: "{0} kilometro"
+          :other: "{0} kilometroj"
+        :length-light-year: 
+          :one: "{0} lumjaro"
+          :other: "{0} lumjaroj"
+        :length-meter: 
+          :one: "{0} metro"
+          :other: "{0} metroj"
+        :length-micrometer: 
+          :one: "{0} mikrometro"
+          :other: "{0} mikrometroj"
+        :length-mile: 
+          :one: "{0} mejlo"
+          :other: "{0} mejloj"
+        :length-millimeter: 
+          :one: "{0} milimetro"
+          :other: "{0} milimetroj"
+        :length-nanometer: 
+          :one: "{0} nanometro"
+          :other: "{0} nanometroj"
+        :length-nautical-mile: 
+          :one: "{0} marmejlo"
+          :other: "{0} marmejloj"
+        :length-parsec: 
+          :one: "{0} parseko"
+          :other: "{0} parsekoj"
+        :length-picometer: 
+          :one: "{0} pikometro"
+          :other: "{0} pikometroj"
+        :length-yard: 
+          :one: "{0} jardo"
+          :other: "{0} jardoj"
+        :mass-gram: 
+          :one: "{0} gramo"
+          :other: "{0} gramoj"
+        :mass-kilogram: 
+          :one: "{0} kilogramo"
+          :other: "{0} kilogramoj"
+        :speed-kilometer-per-hour: 
+          :one: "{0} kilometro en horo"
+          :other: "{0} kilometroj en horo"
+        :temperature-celsius: 
+          :one: "{0} grado celsia"
+          :other: "{0} gradoj celsiaj"
+        :volume-liter: 
+          :one: "{0} litro"
+          :other: "{0} litroj"
       :narrow: 
-        :angle-degree: {}
-        :area-hectare: {}
-        :area-square-centimeter: {}
-        :area-square-kilometer: {}
-        :area-square-meter: {}
-        :duration-day: {}
-        :duration-hour: {}
-        :duration-millisecond: {}
-        :duration-minute: {}
-        :duration-second: {}
-        :duration-year: {}
-        :length-astronomical-unit: {}
-        :length-centimeter: {}
-        :length-decimeter: {}
-        :length-kilometer: {}
-        :length-light-year: {}
-        :length-meter: {}
-        :length-micrometer: {}
-        :length-millimeter: {}
-        :length-nanometer: {}
-        :length-parsec: {}
-        :length-picometer: {}
-        :mass-gram: {}
-        :mass-kilogram: {}
-        :speed-kilometer-per-hour: {}
-        :temperature-celsius: {}
-        :volume-liter: {}
+        :angle-degree: 
+          :one: "{0}°"
+          :other: "{0}°"
+        :area-hectare: 
+          :one: "{0}ha"
+          :other: "{0}ha"
+        :area-square-centimeter: 
+          :one: "{0}cm²"
+          :other: "{0}cm²"
+        :area-square-kilometer: 
+          :one: "{0}km²"
+          :other: "{0}km²"
+        :area-square-meter: 
+          :one: "{0}m²"
+          :other: "{0}m²"
+        :duration-day: 
+          :one: "{0}t."
+          :other: "{0}t."
+        :duration-hour: 
+          :one: "{0}h."
+          :other: "{0}h."
+        :duration-millisecond: 
+          :one: "{0}ms."
+          :other: "{0}ms."
+        :duration-minute: 
+          :one: "{0}m."
+          :other: "{0}m."
+        :duration-second: 
+          :one: "{0}s."
+          :other: "{0}s."
+        :duration-year: 
+          :one: "{0}j."
+          :other: "{0}j."
+        :length-astronomical-unit: 
+          :one: "{0}au"
+          :other: "{0}au"
+        :length-centimeter: 
+          :one: "{0}cm"
+          :other: "{0}cm"
+        :length-decimeter: 
+          :one: "{0}dm"
+          :other: "{0}dm"
+        :length-kilometer: 
+          :one: "{0}km"
+          :other: "{0}km"
+        :length-light-year: 
+          :one: "{0}lj"
+          :other: "{0}lj"
+        :length-meter: 
+          :one: "{0}m"
+          :other: "{0}m"
+        :length-micrometer: 
+          :one: "{0}μm"
+          :other: "{0}μm"
+        :length-millimeter: 
+          :one: "{0}mm"
+          :other: "{0}mm"
+        :length-nanometer: 
+          :one: "{0}nm"
+          :other: "{0}nm"
+        :length-parsec: 
+          :one: "{0}pc"
+          :other: "{0}pc"
+        :length-picometer: 
+          :one: "{0}pm"
+          :other: "{0}pm"
+        :mass-gram: 
+          :one: "{0}g"
+          :other: "{0}g"
+        :mass-kilogram: 
+          :one: "{0}kg"
+          :other: "{0}kg"
+        :speed-kilometer-per-hour: 
+          :one: "{0}km/h"
+          :other: "{0}km/h"
+        :temperature-celsius: 
+          :one: "{0}°C"
+          :other: "{0}°C"
+        :volume-liter: 
+          :one: "{0}L"
+          :other: "{0}L"
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
@@ -105,16 +259,20 @@
         :area-dunam: 
           :other: "{0} dunam"
         :area-hectare: 
+          :one: "{0} ha"
           :other: "{0} ha"
         :area-square-centimeter: 
+          :one: "{0} cm²"
           :other: "{0} cm²"
         :area-square-foot: 
           :other: "{0} ft²"
         :area-square-inch: 
           :other: "{0} in²"
         :area-square-kilometer: 
+          :one: "{0} km²"
           :other: "{0} km²"
         :area-square-meter: 
+          :one: "{0} m²"
           :other: "{0} m²"
         :area-square-mile: 
           :other: "{0} mi²"
@@ -122,7 +280,7 @@
           :other: "{0} yd²"
         :concentr-karat: 
           :other: "{0} kt"
-        :concentr-milligram-per-deciliter: 
+        :concentr-milligram-ofglucose-per-deciliter: 
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
           :other: "{0} mmol/L"
@@ -169,32 +327,34 @@
         :duration-century: 
           :other: "{0} c"
         :duration-day: 
-          :other: "{0} d"
-        :duration-day-person: {}
+          :one: "{0} t."
+          :other: "{0} t."
         :duration-decade: 
           :other: "{0} dec"
         :duration-hour: 
-          :other: "{0} h"
+          :one: "{0} h."
+          :other: "{0} h."
         :duration-microsecond: 
-          :other: "{0} µs"
+          :other: "{0} μs"
         :duration-millisecond: 
-          :other: "{0} ms"
+          :one: "{0} ms."
+          :other: "{0} ms."
         :duration-minute: 
-          :other: "{0} min"
+          :one: "{0} m."
+          :other: "{0} m."
         :duration-month: 
           :one: "{0} mon."
           :other: "{0} mon."
-        :duration-month-person: {}
         :duration-nanosecond: 
           :other: "{0} ns"
         :duration-second: 
-          :other: "{0} s"
+          :one: "{0} s."
+          :other: "{0} s."
         :duration-week: 
           :other: "{0} w"
-        :duration-week-person: {}
         :duration-year: 
-          :other: "{0} y"
-        :duration-year-person: {}
+          :one: "{0} j."
+          :other: "{0} j."
         :electric-ampere: 
           :other: "{0} A"
         :electric-milliampere: 
@@ -209,8 +369,6 @@
           :other: "{0} cal"
         :energy-electronvolt: 
           :other: "{0} eV"
-        :energy-foodcalorie: 
-          :other: "{0} Cal"
         :energy-joule: 
           :other: "{0} J"
         :energy-kilocalorie: 
@@ -233,12 +391,6 @@
           :other: "{0} kHz"
         :frequency-megahertz: 
           :other: "{0} MHz"
-        :graphics-dot: 
-          :other: "{0} dot"
-        :graphics-dot-per-centimeter: 
-          :other: "{0} dpcm"
-        :graphics-dot-per-inch: 
-          :other: "{0} dpi"
         :graphics-em: 
           :other: "{0} em"
         :graphics-megapixel: 
@@ -250,10 +402,13 @@
         :graphics-pixel-per-inch: 
           :other: "{0} ppi"
         :length-astronomical-unit: 
+          :one: "{0} au"
           :other: "{0} au"
         :length-centimeter: 
+          :one: "{0} cm"
           :other: "{0} cm"
         :length-decimeter: 
+          :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
           :other: "{0} R⊕"
@@ -266,26 +421,34 @@
         :length-inch: 
           :other: "{0} in"
         :length-kilometer: 
+          :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
-          :other: "{0} ly"
+          :one: "{0} lj"
+          :other: "{0} lj"
         :length-meter: 
+          :one: "{0} m"
           :other: "{0} m"
         :length-micrometer: 
-          :other: "{0} µm"
+          :one: "{0} μm"
+          :other: "{0} μm"
         :length-mile: 
           :other: "{0} mi"
         :length-mile-scandinavian: 
           :other: "{0} smi"
         :length-millimeter: 
+          :one: "{0} mm"
           :other: "{0} mm"
         :length-nanometer: 
+          :one: "{0} nm"
           :other: "{0} nm"
         :length-nautical-mile: 
           :other: "{0} nmi"
         :length-parsec: 
+          :one: "{0} pc"
           :other: "{0} pc"
         :length-picometer: 
+          :one: "{0} pm"
           :other: "{0} pm"
         :length-point: 
           :other: "{0} pt"
@@ -310,13 +473,15 @@
         :mass-grain: 
           :other: "{0} grain"
         :mass-gram: 
+          :one: "{0} g"
           :other: "{0} g"
         :mass-kilogram: 
+          :one: "{0} kg"
           :other: "{0} kg"
         :mass-metric-ton: 
           :other: "{0} t"
         :mass-microgram: 
-          :other: "{0} µg"
+          :other: "{0} μg"
         :mass-milligram: 
           :other: "{0} mg"
         :mass-ounce: 
@@ -364,6 +529,7 @@
         :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
         :speed-kilometer-per-hour: 
+          :one: "{0} km/h"
           :other: "{0} km/h"
         :speed-knot: 
           :other: "{0} kn"
@@ -372,7 +538,8 @@
         :speed-mile-per-hour: 
           :other: "{0} mi/h"
         :temperature-celsius: 
-          :other: "{0}°C"
+          :one: "{0} °C"
+          :other: "{0} °C"
         :temperature-fahrenheit: 
           :other: "{0}°F"
         :temperature-generic: 
@@ -432,7 +599,8 @@
         :volume-jigger: 
           :other: "{0} jigger"
         :volume-liter: 
-          :other: "{0} l"
+          :one: "{0} L"
+          :other: "{0} L"
         :volume-megaliter: 
           :other: "{0} ML"
         :volume-milliliter: 

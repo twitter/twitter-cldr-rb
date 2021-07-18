@@ -13,7 +13,7 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
-require 'pry-byebug'
+require 'pry-byebug' unless RUBY_PLATFORM == 'java'
 
 Bundler::GemHelper.install_tasks
 
@@ -139,6 +139,11 @@ namespace :update do
   desc 'Import unicode property value aliases'
   task :unicode_property_aliases do
     TwitterCldr::Resources::UnicodePropertyAliasesImporter.new.import
+  end
+
+  desc 'Import unit data'
+  task :units do
+    TwitterCldr::Resources::UnitsImporter.new.import
   end
 
   desc 'Generate the casefolder class. Depends on unicode data'

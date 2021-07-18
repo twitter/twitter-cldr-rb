@@ -1,6 +1,6 @@
 # TwitterCldr Changelog
 
-### 6.7.0 ()
+### 6.7.0 (July 17th, 2021)
 * Upgrade to CLDR v39 and ICU 69.1.
 
 ### 6.6.2 (July 8th, 2021)

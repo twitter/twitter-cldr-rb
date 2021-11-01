@@ -5,9 +5,9 @@
 
 module TwitterCldr
   module Versions
-    CLDR_VERSION    = '39'
-    ICU_VERSION     = '69.1'
-    UNICODE_VERSION = '13.0.0'
+    CLDR_VERSION    = '40'
+    ICU_VERSION     = '70.0'
+    UNICODE_VERSION = '14.0.0'
 
     class << self
       def cldr_version

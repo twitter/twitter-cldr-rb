@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'open-uri'
+require 'net/ftp'
 require 'fileutils'
 
 module TwitterCldr
@@ -45,8 +45,12 @@ module TwitterCldr
         def download(file)
           source_path = source_path_for(file)
           FileUtils.mkdir_p(File.dirname(source_path))
-          remote_url = File.join(url % { version: version }, file)
-          File.open(source_path, 'wb') { |file| file << URI.open(remote_url).read }
+          uri = URI(File.join(url % { version: version }, file))
+
+          Net::FTP.open(uri.host) do |ftp|
+            ftp.login
+            ftp.getbinaryfile(uri.path, source_path)
+          end
         end
       end
 

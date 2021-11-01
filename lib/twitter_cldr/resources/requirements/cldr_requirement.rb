@@ -4,8 +4,9 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'i18n'
+require 'net/ftp'
 require 'nokogiri'
-require 'open-uri'
+require 'tempfile'
 require 'uri'
 require 'zip'
 
@@ -14,7 +15,7 @@ module TwitterCldr
     module Requirements
 
       class CldrRequirement
-        CLDR_URL = "https://unicode.org/Public/cldr/%{version}/core.zip"
+        CLDR_URL = "ftp://unicode.org/Public/cldr/%{version}/core.zip".freeze
 
         attr_reader :version
 
@@ -111,15 +112,24 @@ module TwitterCldr
         end
 
         def download
-          URI.parse(cldr_url).open do |tempfile|
-            FileUtils.mkdir_p(source_path)
-            Zip.on_exists_proc = true
+          FileUtils.mkdir_p(source_path)
 
-            Zip::File.open(tempfile.path) do |file|
-              file.each do |entry|
-                path = File.join(source_path, entry.name)
-                FileUtils.mkdir_p(File.dirname(path))
-                file.extract(entry, path)
+          uri = URI(cldr_url)
+          ext_name = File.extname(cldr_url)
+          file_name = File.basename(cldr_url).chomp(ext_name)
+
+          Net::FTP.open(uri.host) do |ftp|
+            ftp.login
+
+            Tempfile.open([file_name, ext_name]) do |tmp|
+              ftp.getbinaryfile(uri.path, tmp.path)
+
+              Zip::File.open(tmp.path) do |file|
+                file.each do |entry|
+                  path = File.join(source_path, entry.name)
+                  FileUtils.mkdir_p(File.dirname(path))
+                  file.extract(entry, path)
+                end
               end
             end
           end

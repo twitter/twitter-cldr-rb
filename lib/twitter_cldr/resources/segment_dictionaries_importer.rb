@@ -9,8 +9,7 @@ require 'open-uri'
 module TwitterCldr
   module Resources
     class SegmentDictionariesImporter < Importer
-
-      URL_TEMPLATE = 'https://raw.githubusercontent.com/unicode-org/icu/%{icu_version}/%{path}'
+      URL_TEMPLATE = 'https://raw.githubusercontent.com/unicode-org/icu/%{tag}/%{path}'
 
       DICTIONARY_FILES = [
         'icu4c/source/data/brkitr/dictionaries/burmesedict.txt',
@@ -57,9 +56,13 @@ module TwitterCldr
 
       def url_for(dictionary_file)
         URL_TEMPLATE % {
-          icu_version: "release-#{Versions.icu_version.gsub('.', '-')}",
+          tag: tag,
           path: dictionary_file
         }
+      end
+
+      def tag
+        @tag ||= "release-#{Versions.icu_version.gsub('.', '-')}"
       end
 
       def output_path_for(dictionary_file)

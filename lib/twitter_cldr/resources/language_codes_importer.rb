@@ -45,7 +45,7 @@ module TwitterCldr
           source_path = source_path_for(file)
 
           unless File.exist?(source_path)
-            open(source_path, 'wb') { |file| file << open(url).read }
+            open(source_path, 'wb') { |file| file << URI.open(url).read }
           end
         end
       end

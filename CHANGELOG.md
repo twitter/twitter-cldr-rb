@@ -1,5 +1,12 @@
 # TwitterCldr Changelog
 
+### 6.8.0 (Nov 11th, 2021)
+* Upgrade to CLDR v40, ICU 70.1, and Unicode v14.0.0.
+* Remove hacky legacy support for the Thai Buddhist calendar.
+  - While this is technically a breaking change, I don't think (or rather, hope) that anyone is actually using it.
+* Correctly import calendar data respecting ancestor chain.
+  - Remove custom Australian calendar data.
+
 ### 6.7.0 (July 17th, 2021)
 * Upgrade to CLDR v39 and ICU 69.1.
 

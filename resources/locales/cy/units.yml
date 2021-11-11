@@ -126,6 +126,13 @@
           :other: "{0} llath sgwâr"
           :two: "{0} lath sgwâr"
           :zero: "{0} llath sgwâr"
+        :concentr-item: 
+          :few: "{0} eitem"
+          :many: "{0} eitem"
+          :one: "{0} eitem"
+          :other: "{0} eitem"
+          :two: "{0} eitem"
+          :zero: "{0} eitem"
         :concentr-karat: 
           :few: "{0} kt"
           :many: "{0} kt"
@@ -455,6 +462,13 @@
           :other: "{0} cilowat awr"
           :two: "{0} kW-awr"
           :zero: "{0} kW-awr"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :few: "{0} kWh/100km"
+          :many: "{0} kWh/100km"
+          :one: "{0} cilowat-awr fesul 100 cilomedr"
+          :other: "{0} cilowat-awr fesul 100 cilomedr"
+          :two: "{0} kWh/100km"
+          :zero: "{0} kWh/100km"
         :force-newton: 
           :few: "{0} N"
           :many: "{0} N"
@@ -518,7 +532,6 @@
           :other: "{0} dot mewn modfedd"
           :two: "{0} ppi"
           :zero: "{0} ppi"
-        :graphics-em: {}
         :graphics-megapixel: 
           :few: "{0} MP"
           :many: "{0} MP"
@@ -701,8 +714,6 @@
           :other: "{0} llath"
           :two: "{0} lath"
           :zero: "{0} llath"
-        :light-candela: {}
-        :light-lumen: {}
         :light-lux: 
           :few: "{0} lx"
           :many: "{0} lx"
@@ -1040,12 +1051,12 @@
           :two: "{0} tr³"
           :zero: "{0} tr³"
         :volume-cubic-inch: 
-          :few: "{0} modfedd³"
-          :many: "{0} modfedd³"
+          :few: "{0} in³"
+          :many: "{0} in³"
           :one: "{0} fodfedd giwbig"
           :other: "{0} modfedd giwbig"
-          :two: "{0} fodfedd³"
-          :zero: "{0} modfedd³"
+          :two: "{0} in³"
+          :zero: "{0} in³"
         :volume-cubic-kilometer: 
           :few: "{0} km³"
           :many: "{0} km³"
@@ -1244,12 +1255,12 @@
           :two: "{0}G"
           :zero: "{0}G"
         :angle-arc-minute: 
-          :few: "{0}′"
-          :many: "{0}′"
+          :few: "{0} archfun"
+          :many: "{0} archfun"
           :one: "{0}′"
           :other: "{0}′"
-          :two: "{0}′"
-          :zero: "{0}′"
+          :two: "{0} archfun"
+          :zero: "{0} archfun"
         :angle-arc-second: 
           :few: "{0}″"
           :many: "{0}″"
@@ -1258,19 +1269,26 @@
           :two: "{0}″"
           :zero: "{0}″"
         :angle-degree: 
-          :few: "{0}°"
-          :many: "{0}°"
+          :few: "{0} gradd"
+          :many: "{0} gradd"
           :one: "{0}°"
           :other: "{0}°"
-          :two: "{0}°"
-          :zero: "{0}°"
+          :two: "{0} radd"
+          :zero: "{0} gradd"
         :angle-radian: 
-          :few: "{0}rad"
-          :many: "{0}rad"
+          :few: "{0} rad"
+          :many: "{0} rad"
           :one: "{0}rad"
           :other: "{0}rad"
-          :two: "{0}rad"
-          :zero: "{0}rad"
+          :two: "{0} rad"
+          :zero: "{0} rad"
+        :angle-revolution: 
+          :few: "{0} rev"
+          :many: "{0} rev"
+          :one: "{0}rev"
+          :other: "{0}rev"
+          :two: "{0} rev"
+          :zero: "{0} rev"
         :area-acre: 
           :few: "{0}erw"
           :many: "{0}erw"
@@ -1320,6 +1338,20 @@
           :other: "{0}mi²"
           :two: "{0}mi²"
           :zero: "{0}mi²"
+        :concentr-item: 
+          :few: "{0} eitem"
+          :many: "{0} eitem"
+          :one: "{0} eitem"
+          :other: "{0} eitem"
+          :two: "{0} eitem"
+          :zero: "{0} eitem"
+        :concentr-karat: 
+          :few: "{0} kt"
+          :many: "{0} kt"
+          :one: "{0}kt"
+          :other: "{0}kt"
+          :two: "{0} kt"
+          :zero: "{0} kt"
         :concentr-percent: 
           :few: "{0}%"
           :many: "{0}%"
@@ -1341,6 +1373,13 @@
           :other: "{0}L/km"
           :two: "{0}L/km"
           :zero: "{0}L/km"
+        :consumption-mile-per-gallon-imperial: 
+          :few: "{0} mpg Imp."
+          :many: "{0} mpg Imp."
+          :one: "{0}m/gUK"
+          :other: "{0}m/gUK"
+          :two: "{0} mpg Imp."
+          :zero: "{0} mpg Imp."
         :digital-bit: 
           :few: "{0}did"
           :many: "{0}did"
@@ -1349,12 +1388,12 @@
           :two: "{0}ddid"
           :zero: "{0}did"
         :digital-byte: 
-          :few: "{0}beit"
-          :many: "{0}beit"
-          :one: "{0}beit"
-          :other: "{0}beit"
-          :two: "{0}feit"
-          :zero: "{0}beit"
+          :few: "{0} beit"
+          :many: "{0} beit"
+          :one: "{0}B"
+          :other: "{0}B"
+          :two: "{0} feit"
+          :zero: "{0} beit"
         :digital-gigabit: 
           :few: "{0}Gb"
           :many: "{0}Gb"
@@ -1369,20 +1408,27 @@
           :other: "{0}GB"
           :two: "{0}GB"
           :zero: "{0}GB"
+        :digital-kilobit: 
+          :few: "{0} kb"
+          :many: "{0} kb"
+          :one: "{0}kb"
+          :other: "{0}kb"
+          :two: "{0} kb"
+          :zero: "{0} kb"
         :digital-kilobyte: 
-          :few: "{0}kB"
-          :many: "{0}kB"
+          :few: "{0} kB"
+          :many: "{0} kB"
           :one: "{0}kB"
           :other: "{0}kB"
-          :two: "{0}kB"
-          :zero: "{0}kB"
+          :two: "{0} kB"
+          :zero: "{0} kB"
         :digital-megabyte: 
-          :few: "{0}MB"
-          :many: "{0}MB"
+          :few: "{0} MB"
+          :many: "{0} MB"
           :one: "{0}MB"
           :other: "{0}MB"
-          :two: "{0}MB"
-          :zero: "{0}MB"
+          :two: "{0} MB"
+          :zero: "{0} MB"
         :digital-terabyte: 
           :few: "{0}TB"
           :many: "{0}TB"
@@ -1516,6 +1562,27 @@
           :other: "{0}kj"
           :two: "{0}kj"
           :zero: "{0}kj"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :few: "{0} kWh/100km"
+          :many: "{0} kWh/100km"
+          :one: "{0}kWh/100km"
+          :other: "{0}kWh/100km"
+          :two: "{0} kWh/100km"
+          :zero: "{0} kWh/100km"
+        :force-newton: 
+          :few: "{0} N"
+          :many: "{0} N"
+          :one: "{0} N"
+          :other: "{0} N"
+          :two: "{0} N"
+          :zero: "{0} N"
+        :force-pound-force: 
+          :few: "{0} lbf"
+          :many: "{0} lbf"
+          :one: "{0}lbf"
+          :other: "{0}lbf"
+          :two: "{0} lbf"
+          :zero: "{0} lbf"
         :frequency-gigahertz: 
           :few: "{0}GHz"
           :many: "{0}GHz"
@@ -1621,6 +1688,13 @@
           :other: "{0}mi"
           :two: "{0}mi"
           :zero: "{0}mi"
+        :length-mile-scandinavian: 
+          :few: "{0} smi"
+          :many: "{0} smi"
+          :one: "{0}smi"
+          :other: "{0}smi"
+          :two: "{0} smi"
+          :zero: "{0} smi"
         :length-millimeter: 
           :few: "{0}mm"
           :many: "{0}mm"
@@ -1635,7 +1709,13 @@
           :other: "{0}nm"
           :two: "{0}nm"
           :zero: "{0}nm"
-        :length-nautical-mile: {}
+        :length-nautical-mile: 
+          :few: "{0} nmi"
+          :many: "{0} nmi"
+          :one: "{0}nmi"
+          :other: "{0}nmi"
+          :two: "{0} nmi"
+          :zero: "{0} nmi"
         :length-parsec: 
           :few: "{0}pc"
           :many: "{0}pc"
@@ -1650,6 +1730,20 @@
           :other: "{0}pm"
           :two: "{0}pm"
           :zero: "{0}pm"
+        :length-point: 
+          :few: "{0} pt"
+          :many: "{0} pt"
+          :one: "{0}pt"
+          :other: "{0}pt"
+          :two: "{0} pt"
+          :zero: "{0} pt"
+        :length-solar-radius: 
+          :few: "{0} R☉"
+          :many: "{0} R☉"
+          :one: "{0}R☉"
+          :other: "{0}R☉"
+          :two: "{0} R☉"
+          :zero: "{0} R☉"
         :length-yard: 
           :few: "{0}llath"
           :many: "{0}llath"
@@ -1657,6 +1751,20 @@
           :other: "{0}llath"
           :two: "{0}lath"
           :zero: "{0}llath"
+        :light-candela: 
+          :few: "{0} cd"
+          :many: "{0} cd"
+          :one: "{0}cd"
+          :other: "{0}cd"
+          :two: "{0} cd"
+          :zero: "{0} cd"
+        :light-lumen: 
+          :few: "{0} lm"
+          :many: "{0} lm"
+          :one: "{0}lm"
+          :other: "{0}lm"
+          :two: "{0} lm"
+          :zero: "{0} lm"
         :light-lux: 
           :few: "{0}lx"
           :many: "{0}lx"
@@ -1664,6 +1772,13 @@
           :other: "{0}lx"
           :two: "{0}lx"
           :zero: "{0}lx"
+        :light-solar-luminosity: 
+          :few: "{0} L☉"
+          :many: "{0} L☉"
+          :one: "{0}L☉"
+          :other: "{0}L☉"
+          :two: "{0} L☉"
+          :zero: "{0} L☉"
         :mass-carat: 
           :few: "{0}CD"
           :many: "{0}CD"
@@ -1769,6 +1884,13 @@
           :other: "{0}W"
           :two: "{0}W"
           :zero: "{0}W"
+        :pressure-atmosphere: 
+          :few: "{0} atm"
+          :many: "{0} atm"
+          :one: "{0}atm"
+          :other: "{0}atm"
+          :two: "{0} atm"
+          :zero: "{0} atm"
         :pressure-hectopascal: 
           :few: "{0}hPa"
           :many: "{0}hPa"
@@ -1797,6 +1919,13 @@
           :other: "{0}mmHg"
           :two: "{0}mmHg"
           :zero: "{0}mmHg"
+        :pressure-pascal: 
+          :few: "{0} Pa"
+          :many: "{0} Pa"
+          :one: "{0}Pa"
+          :other: "{0}Pa"
+          :two: "{0} Pa"
+          :zero: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
           :few: "{0}psi"
           :many: "{0}psi"
@@ -1860,6 +1989,20 @@
           :other: "{0}K"
           :two: "{0}K"
           :zero: "{0}K"
+        :torque-newton-meter: 
+          :few: "{0} N⋅m"
+          :many: "{0} N⋅m"
+          :one: "{0}N⋅m"
+          :other: "{0}N⋅m"
+          :two: "{0} N⋅m"
+          :zero: "{0} N⋅m"
+        :torque-pound-force-foot: 
+          :few: "{0} lbf⋅ft"
+          :many: "{0} lbf⋅ft"
+          :one: "{0}lbf⋅ft"
+          :other: "{0}lbf⋅ft"
+          :two: "{0} lbf⋅ft"
+          :zero: "{0} lbf⋅ft"
         :volume-centiliter: 
           :few: "{0}cL"
           :many: "{0}cL"
@@ -1874,6 +2017,13 @@
           :other: "{0}cm³"
           :two: "{0}cm³"
           :zero: "{0}cm³"
+        :volume-cubic-inch: 
+          :few: "{0} in³"
+          :many: "{0} in³"
+          :one: "{0}in³"
+          :other: "{0}in³"
+          :two: "{0} in³"
+          :zero: "{0} in³"
         :volume-cubic-kilometer: 
           :few: "{0}km³"
           :many: "{0}km³"
@@ -1895,6 +2045,13 @@
           :other: "{0}mi³"
           :two: "{0}mi³"
           :zero: "{0}mi³"
+        :volume-cup: 
+          :few: "{0} c"
+          :many: "{0} c"
+          :one: "{0}c"
+          :other: "{0}c"
+          :two: "{0} c"
+          :zero: "{0} c"
         :volume-deciliter: 
           :few: "{0}dL"
           :many: "{0}dL"
@@ -1902,6 +2059,34 @@
           :other: "{0}dL"
           :two: "{0}dL"
           :zero: "{0}dL"
+        :volume-dessert-spoon-imperial: 
+          :few: "{0} dstspn Imp"
+          :many: "{0} dstspn Imp"
+          :one: "{0}dsp-Imp"
+          :other: "{0}dsp-Imp"
+          :two: "{0} dstspn Imp"
+          :zero: "{0} dstspn Imp"
+        :volume-dram: 
+          :few: "{0} dram fl"
+          :many: "{0} dram fl"
+          :one: "{0}fl.dr."
+          :other: "{0}fl.dr."
+          :two: "{0} dram fl"
+          :zero: "{0} dram fl"
+        :volume-drop: 
+          :few: "{0} diferyn"
+          :many: "{0} diferyn"
+          :one: "{0}dr"
+          :other: "{0}dr"
+          :two: "{0} diferyn"
+          :zero: "{0} diferyn"
+        :volume-fluid-ounce-imperial: 
+          :few: "{0} fl oz Imp."
+          :many: "{0} fl oz Imp."
+          :one: "{0}fl oz Im"
+          :other: "{0}fl oz Im"
+          :two: "{0} fl oz Imp."
+          :zero: "{0} fl oz Imp."
         :volume-gallon: 
           :few: "{0}gal"
           :many: "{0}gal"
@@ -1909,6 +2094,13 @@
           :other: "{0}gal"
           :two: "{0}gal"
           :zero: "{0}gal"
+        :volume-gallon-imperial: 
+          :few: "{0} gal Imp."
+          :many: "{0} gal Imp."
+          :one: "{0}galIm"
+          :other: "{0}galIm"
+          :two: "{0} gal Imp."
+          :zero: "{0} gal Imp."
         :volume-hectoliter: 
           :few: "{0}hL"
           :many: "{0}hL"
@@ -1916,6 +2108,13 @@
           :other: "{0}hL"
           :two: "{0}hL"
           :zero: "{0}hL"
+        :volume-jigger: 
+          :few: "{0} joch"
+          :many: "{0} joch"
+          :one: "{0}joch"
+          :other: "{0}joch"
+          :two: "{0} joch"
+          :zero: "{0} joch"
         :volume-liter: 
           :few: "{0} L"
           :many: "{0} L"
@@ -1937,13 +2136,41 @@
           :other: "{0}mL"
           :two: "{0}mL"
           :zero: "{0}mL"
+        :volume-pinch: 
+          :few: "{0} phinsiad"
+          :many: "{0} pinsiad"
+          :one: "{0}pn"
+          :other: "{0}pn"
+          :two: "{0} binsiad"
+          :zero: "{0} pinsiad"
         :volume-pint: 
-          :few: "{0}pt"
-          :many: "{0}pt"
+          :few: "{0} pt"
+          :many: "{0} pt"
           :one: "{0}pt"
           :other: "{0}pt"
-          :two: "{0}pt"
-          :zero: "{0}pt"
+          :two: "{0} pt"
+          :zero: "{0} pt"
+        :volume-quart: 
+          :few: "{0} qt"
+          :many: "{0} qt"
+          :one: "{0}qt"
+          :other: "{0}qt"
+          :two: "{0} qt"
+          :zero: "{0} qt"
+        :volume-quart-imperial: 
+          :few: "{0} qt Imp."
+          :many: "{0} qt Imp."
+          :one: "{0}qt-Imp."
+          :other: "{0}qt-Imp."
+          :two: "{0} qt Imp."
+          :zero: "{0} qt Imp."
+        :volume-tablespoon: 
+          :few: "{0} tbsp"
+          :many: "{0} tbsp"
+          :one: "{0}tbsp"
+          :other: "{0}tbsp"
+          :two: "{0} tbsp"
+          :zero: "{0} tbsp"
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
@@ -2059,6 +2286,13 @@
           :other: "{0} llath²"
           :two: "{0} llath²"
           :zero: "{0} llath²"
+        :concentr-item: 
+          :few: "{0} eitem"
+          :many: "{0} eitem"
+          :one: "{0} eitem"
+          :other: "{0} eitem"
+          :two: "{0} eitem"
+          :zero: "{0} eitem"
         :concentr-karat: 
           :few: "{0} kt"
           :many: "{0} kt"
@@ -2345,6 +2579,8 @@
           :zero: "{0} kW-awr"
         :energy-therm-us: 
           :other: "{0} US therm"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :other: "{0} kWh/100km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -2811,12 +3047,12 @@
           :two: "{0} tr³"
           :zero: "{0} tr³"
         :volume-cubic-inch: 
-          :few: "{0} modfedd³"
-          :many: "{0} modfedd³"
-          :one: "{0} modfedd³"
-          :other: "{0} modfedd³"
-          :two: "{0} fodfedd³"
-          :zero: "{0} modfedd³"
+          :few: "{0} in³"
+          :many: "{0} in³"
+          :one: "{0} in³"
+          :other: "{0} in³"
+          :two: "{0} in³"
+          :zero: "{0} in³"
         :volume-cubic-kilometer: 
           :few: "{0} km³"
           :many: "{0} km³"

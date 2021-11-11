@@ -1,0 +1,20 @@
+#! /usr/bin/env ruby
+
+require 'twitter_cldr'
+require 'irb'
+
+module ConsoleMethods
+  def icu
+    @icu ||= TwitterCldr::Resources::Requirements::IcuRequirement.new(
+      TwitterCldr::Versions::ICU_VERSION
+    ).tap(&:prepare)
+  end
+
+  def ulocale
+    @ulocale ||= icu.get_class('com.ibm.icu.util.ULocale')
+  end
+end
+
+include ConsoleMethods
+
+IRB.start

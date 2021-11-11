@@ -24,8 +24,9 @@
         :past: 
           :other: "{0} h lalu"
     :day-short: 
-      :display_name: h
+      :display_name: hr
       :relative: 
+        -2: selumbari
         2: lusa
       :relative_time: 
         :future: 
@@ -81,7 +82,7 @@
         :past: 
           :other: "{0} Jum. lalu"
     :hour: 
-      :display_name: Jam
+      :display_name: jam
       :relative: 
         0: "jam ini"
       :relative_time: 
@@ -114,6 +115,8 @@
           :other: "{0} menit yang lalu"
     :minute-narrow: 
       :display_name: m
+      :relative: 
+        0: "mnt ini"
       :relative_time: 
         :future: 
           :other: "dlm {0} mnt"
@@ -121,6 +124,8 @@
           :other: "{0} mnt lalu"
     :minute-short: 
       :display_name: mnt.
+      :relative: 
+        0: "mnt ini"
       :relative_time: 
         :future: 
           :other: "dlm {0} mnt"
@@ -161,7 +166,7 @@
       :relative: 
         -1: "bulan lalu"
         0: "bulan ini"
-        1: "bulan berikutnya"
+        1: "bulan depan"
       :relative_time: 
         :future: 
           :other: "dalam {0} bulan"
@@ -209,6 +214,10 @@
           :other: "{0} krtl. lalu"
     :quarter-short: 
       :display_name: krtl.
+      :relative: 
+        -1: "krtl lalu"
+        0: "krtl ini"
+        1: "krtl berikutnya"
       :relative_time: 
         :future: 
           :other: "dlm {0} krtl."

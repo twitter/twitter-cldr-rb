@@ -146,6 +146,11 @@ namespace :update do
     TwitterCldr::Resources::UnitsImporter.new.import
   end
 
+  desc 'Import calendar data'
+  task :calendars do
+    TwitterCldr::Resources::CalendarsImporter.new.import
+  end
+
   desc 'Generate the casefolder class. Depends on unicode data'
   task :casefolder do
     TwitterCldr::Resources::CasefolderClassGenerator.new.import

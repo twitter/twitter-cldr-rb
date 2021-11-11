@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} yarda kare"
           :other: "{0} yarda kare"
+        :concentr-item: 
+          :one: "{0} öğe"
+          :other: "{0} öğe"
         :concentr-karat: 
           :one: "{0} ayar"
           :other: "{0} ayar"
@@ -199,6 +202,9 @@
         :energy-therm-us: 
           :one: "{0} ABD ısı birimi"
           :other: "{0} ABD ısı birimi"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "100 kilometre/{0} kilowatt-saat"
+          :other: "100 kilometre/{0} kilowatt-saat"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newton"
@@ -226,7 +232,6 @@
         :graphics-dot-per-inch: 
           :one: "{0} nokta/inç"
           :other: "{0} nokta/inç"
-        :graphics-em: {}
         :graphics-megapixel: 
           :one: "{0} megapiksel"
           :other: "{0} megapiksel"
@@ -426,8 +431,8 @@
           :one: "{0} fahrenhayt derece"
           :other: "{0} fahrenhayt derece"
         :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0} derece"
+          :other: "{0} derece"
         :temperature-kelvin: 
           :one: "{0} kelvin"
           :other: "{0} kelvin"
@@ -543,8 +548,6 @@
         :acceleration-meter-per-square-second: 
           :one: "{0} m/sn²"
           :other: "{0} m/sn²"
-        :angle-arc-minute: {}
-        :angle-arc-second: {}
         :angle-degree: 
           :one: "{0}°"
           :other: "{0}°"
@@ -581,6 +584,9 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} öğe"
+          :other: "{0} öğe"
         :concentr-karat: 
           :one: "{0} ayar"
           :other: "{0} ayar"
@@ -611,7 +617,6 @@
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
-        :digital-byte: {}
         :digital-gigabit: 
           :one: "{0} Gb"
           :other: "{0} Gb"
@@ -699,6 +704,12 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100 km"
+          :other: "{0} kWh/100 km"
+        :force-newton: 
+          :one: "{0} N"
+          :other: "{0} N"
         :frequency-gigahertz: 
           :one: "{0} GHz"
           :other: "{0} GHz"
@@ -834,9 +845,6 @@
         :pressure-millibar: 
           :one: "{0} mb"
           :other: "{0} mb"
-        :pressure-millimeter-ofhg: 
-          :one: "{0} mm Hg"
-          :other: "{0} mm Hg"
         :pressure-pound-force-per-square-inch: 
           :one: "{0} lb/in²"
           :other: "{0} lb/in²"
@@ -854,16 +862,16 @@
           :other: "{0} mil/sa"
         :temperature-celsius: 
           :one: "{0}°C"
-          :other: "{0}°C"
+          :other: "{0} °C"
         :temperature-fahrenheit: 
-          :one: "{0}°F"
-          :other: "{0}°F"
+          :one: "{0} °F"
+          :other: "{0} °F"
         :temperature-generic: 
           :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
-          :one: "{0}°K"
-          :other: "{0}°K"
+          :one: "{0} K"
+          :other: "{0} K"
         :volume-acre-foot: 
           :one: "{0} akre fit"
           :other: "{0} akre fit"
@@ -900,9 +908,18 @@
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
+        :volume-dessert-spoon: 
+          :one: "{0} tat. kaş."
+          :other: "{0} tat. kaş."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} İng. tk"
+          :other: "{0} İng. tk"
         :volume-fluid-ounce: 
           :one: "{0} sıvı ons"
           :other: "{0} sıvı ons"
+        :volume-fluid-ounce-imperial: 
+          :one: "{0} İng. sıvı ons"
+          :other: "{0} İng. sıvı ons"
         :volume-gallon: 
           :one: "{0} galon"
           :other: "{0} galon"
@@ -924,6 +941,9 @@
         :volume-quart: 
           :one: "{0} quart"
           :other: "{0} quart"
+        :volume-quart-imperial: 
+          :one: "{0} İng. qt."
+          :other: "{0} İng. qt."
         :volume-tablespoon: 
           :one: "{0} yk"
           :other: "{0} yk"
@@ -982,6 +1002,9 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} öğe"
+          :other: "{0} öğe"
         :concentr-karat: 
           :one: "{0} ayar"
           :other: "{0} ayar"
@@ -1125,6 +1148,9 @@
         :energy-therm-us: 
           :one: "{0} ABD ısı birimi"
           :other: "{0} ABD ısı birimi"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100 km"
+          :other: "{0} kWh/100 km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -1334,17 +1360,17 @@
           :one: "{0} mil/sa"
           :other: "{0} mil/sa"
         :temperature-celsius: 
-          :one: "{0}°C"
+          :one: "{0} °C"
           :other: "{0}°C"
         :temperature-fahrenheit: 
-          :one: "{0}°F"
+          :one: "{0} °F"
           :other: "{0}°F"
         :temperature-generic: 
           :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0}K"
-          :other: "{0}K"
+          :other: "{0} K"
         :torque-newton-meter: 
           :one: "{0} N⋅m"
           :other: "{0} N⋅m"
@@ -1409,8 +1435,8 @@
           :one: "{0} sıvı ons"
           :other: "{0} sıvı ons"
         :volume-fluid-ounce-imperial: 
-          :one: "{0} sıvı ons İng."
-          :other: "{0} sıvı ons İng."
+          :one: "{0} İng. sıvı ons"
+          :other: "{0} İng. sıvı ons"
         :volume-gallon: 
           :one: "{0} gal"
           :other: "{0} gal"

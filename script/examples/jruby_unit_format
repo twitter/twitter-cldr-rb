@@ -1,0 +1,20 @@
+#! /usr/bin/env ruby
+
+require "twitter_cldr"
+
+icu = TwitterCldr::Resources::Requirements::IcuRequirement.new(
+  TwitterCldr::Versions::ICU_VERSION
+)
+
+icu.prepare
+
+ULocale = icu.get_class("com.ibm.icu.util.ULocale")
+Measure = icu.get_class("com.ibm.icu.util.Measure")
+MeasureUnit = icu.get_class("com.ibm.icu.util.MeasureUnit")
+MeasureFormat = icu.get_class("com.ibm.icu.text.MeasureFormat")
+
+locale = ULocale.new("ru_RU")
+measure = Measure.new(1, MeasureUnit::MILE)
+formatter = MeasureFormat.getInstance(locale, MeasureFormat::FormatWidth::WIDE)
+
+puts formatter.format(measure)

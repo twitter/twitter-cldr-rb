@@ -16,17 +16,18 @@
         :Ehms: "E B h:mm:ss"
         :Gy: "G y"
         :GyMMM: "G y MMM"
-        :GyMMMEd: "G y၊ MMM d၊ E"
-        :GyMMMd: "G y၊ MMM d"
+        :GyMMMEd: "G y- MMM d- E"
+        :GyMMMd: "G y- MMM d"
+        :GyMd: "GGGGG y-MM-dd"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "v HH:mm:ss"
         :Hmv: "v HH:mm"
         :M: L
-        :MEd: "d/M၊ E"
+        :MEd: "d-M- E"
         :MMM: LLL
-        :MMMEd: "MMM d၊ E"
+        :MMMEd: "MMM d- E"
         :MMMMEd: "MMMM d ရက် Eနေ့"
         :MMMMW: "MMMM လ W ပတ်မြောက်"
         :MMMMd: "MMMM d"
@@ -42,11 +43,11 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M/y
-        :yMEd: "d/M/y၊ E"
+        :yMEd: "d/M/y- E"
         :yMMM: "MMM y"
-        :yMMMEd: "y၊ MMM d၊ E"
+        :yMMMEd: "y- MMM d- E"
         :yMMMM: "y MMMM"
-        :yMMMd: "y၊ MMM d"
+        :yMMMd: "y- MMM d"
         :yMd: dd-MM-y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
@@ -176,11 +177,11 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "y၊ MMMM d၊ EEEE"
+            :pattern: "y- MMMM d- EEEE"
           :long: 
-            :pattern: "y၊ d MMMM"
+            :pattern: "y- MMMM d"
           :medium: 
-            :pattern: "y၊ MMM d"
+            :pattern: "y- MMM d"
           :short: 
             :pattern: dd-MM-yy
         :datetime: 
@@ -198,9 +199,9 @@
           :long: 
             :pattern: "z HH:mm:ss"
           :medium: 
-            :pattern: "B HH:mm:ss"
+            :pattern: "H:mm:ss"
           :short: 
-            :pattern: "B H:mm"
+            :pattern: "H:mm"
       :months: 
         :format: 
           :abbreviated: 

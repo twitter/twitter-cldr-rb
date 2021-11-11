@@ -58,12 +58,15 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} element"
+          :other: "{0} element"
         :concentr-karat: 
           :one: "{0} karat"
           :other: "{0} karat"
         :concentr-milligram-ofglucose-per-deciliter: 
           :one: "{0} milliqram/desilitr"
-          :other: "{0} milliqram/desilitr"
+          :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
           :one: "{0} millimol/litr"
           :other: "{0} millimol/litr"
@@ -199,6 +202,9 @@
         :energy-therm-us: 
           :one: "{0} ABŞ termal vahidi"
           :other: "{0} ABŞ termal vahidi"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kVtst/100km"
+          :other: "{0} kVtst/100km"
         :force-newton: 
           :one: "{0} nyuton"
           :other: "{0} nyuton"
@@ -217,14 +223,12 @@
         :frequency-megahertz: 
           :one: "{0} meqahers"
           :other: "{0} meqahers"
-        :graphics-dot: {}
         :graphics-dot-per-centimeter: 
           :one: "{0} nöqtə / santimetr"
           :other: "{0} nöqtə / santimetr"
         :graphics-dot-per-inch: 
           :one: "{0} nöqtə / düym"
           :other: "{0} nöqtə / düym"
-        :graphics-em: {}
         :graphics-megapixel: 
           :one: "{0} meqapiksel"
           :other: "{0} meqapiksel"
@@ -438,7 +442,6 @@
         :volume-acre-foot: 
           :one: "{0} akr-fut"
           :other: "{0} akr-fut"
-        :volume-barrel: {}
         :volume-bushel: 
           :one: "{0} buşel"
           :other: "{0} buşel"
@@ -538,13 +541,7 @@
           :other: "{0} G"
         :angle-arc-minute: 
           :one: "{0}′"
-          :other: "{0}′"
-        :angle-arc-second: 
-          :one: "{0}″"
-          :other: "{0}″"
-        :angle-degree: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :other: "{0}dəq"
         :area-acre: 
           :one: "{0} ak"
           :other: "{0} ak"
@@ -563,12 +560,15 @@
         :area-square-mile: 
           :one: "{0} mil²"
           :other: "{0} mil²"
-        :concentr-percent: 
-          :one: "{0}%"
-          :other: "{0}%"
-        :consumption-liter-per-100-kilometer: 
-          :one: "{0} l/100km"
-          :other: "{0} l/100km"
+        :concentr-item: 
+          :one: "{0} element"
+          :other: "{0} element"
+        :concentr-permillion: 
+          :one: "{0} hs/mln"
+          :other: "{0}ppm"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} mil/imq"
+          :other: "{0} mil/imq"
         :duration-day: 
           :one: "{0} gün"
           :other: "{0} gün"
@@ -593,12 +593,36 @@
         :duration-year: 
           :one: "{0} il"
           :other: "{0} il"
+        :energy-kilowatt-hour: 
+          :one: "{0} kVt/saat"
+          :other: "{0} kVt/saat"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kVts/100km"
+          :other: "{0} kVts/100km"
+        :graphics-dot: 
+          :one: "{0} dot"
+          :other: "{0} dot"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} d/sm"
+          :other: "{0} d/sm"
+        :graphics-dot-per-inch: 
+          :one: "{0} dpi"
+          :other: "{0} dpi"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} p/sm"
+          :other: "{0} p/sm"
+        :graphics-pixel-per-inch: 
+          :one: "{0} p/i"
+          :other: "{0} p/i"
         :length-centimeter: 
           :one: "{0} sm"
           :other: "{0} sm"
         :length-foot: 
           :one: "{0} ft"
           :other: "{0} ft"
+        :length-furlong: 
+          :one: "{0} far"
+          :other: "{0} far"
         :length-inch: 
           :one: "{0} in"
           :other: "{0} in"
@@ -617,6 +641,9 @@
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
+        :length-parsec: 
+          :one: "{0} ps"
+          :other: "{0} ps"
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
@@ -635,16 +662,27 @@
         :mass-pound: 
           :one: "{0} lb"
           :other: "{0} lb"
-        :mass-stone: {}
+        :mass-stone: 
+          :one: "{0} stoun"
+          :other: "{0} stoun"
+        :power-gigawatt: 
+          :one: "{0} GVt"
+          :other: "{0} GVt"
         :power-horsepower: 
-          :one: "{0} hp"
-          :other: "{0} hp"
+          :one: "{0} ag"
+          :other: "{0} ag"
         :power-kilowatt: 
-          :one: "{0} kW"
-          :other: "{0} kW"
+          :one: "{0} kVt"
+          :other: "{0} kVt"
+        :power-megawatt: 
+          :one: "{0} MVt"
+          :other: "{0} MVt"
+        :power-milliwatt: 
+          :one: "{0} mVt"
+          :other: "{0} mVt"
         :power-watt: 
-          :one: "{0} W"
-          :other: "{0} W"
+          :one: "{0} Vt"
+          :other: "{0} Vt"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -669,15 +707,54 @@
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :volume-acre-foot: 
+          :one: "{0} ak-ft"
+          :other: "{0} ak-ft"
+        :volume-centiliter: 
+          :one: "{0} sl"
+          :other: "{0} sl"
         :volume-cubic-kilometer: 
           :one: "{0} km³"
           :other: "{0} km³"
         :volume-cubic-mile: 
           :one: "{0} mil³"
           :other: "{0} mil³"
+        :volume-cup-metric: 
+          :one: "{0} mf"
+          :other: "{0} mf"
+        :volume-deciliter: 
+          :one: "{0} dl"
+          :other: "{0} dl"
+        :volume-dessert-spoon: 
+          :one: "{0} dsp"
+          :other: "{0} dsp"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0}dsp-Imp"
+          :other: "{0}dsp-Imp"
+        :volume-drop: 
+          :one: "{0} dc"
+          :other: "{0} dc"
+        :volume-fluid-ounce-imperial: 
+          :one: "{0}fl oz Im"
+          :other: "{0}fl oz Im"
+        :volume-gallon-imperial: 
+          :one: "{0} imp.qal"
+          :other: "{0} imp.qal"
+        :volume-hectoliter: 
+          :one: "{0} hl"
+          :other: "{0} hl"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
+        :volume-megaliter: 
+          :one: "{0} Ml"
+          :other: "{0} Ml"
+        :volume-milliliter: 
+          :one: "{0} ml"
+          :other: "{0} ml"
+        :volume-quart-imperial: 
+          :one: "{0}qt-Imp."
+          :other: "{0}qt-Imp."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -695,7 +772,6 @@
           :one: "{0} dər"
           :other: "{0} dər"
         :angle-radian: 
-          :one: "{0} rad"
           :other: "{0} rad"
         :angle-revolution: 
           :one: "{0} döv"
@@ -730,22 +806,22 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} element"
+          :other: "{0} element"
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
         :concentr-milligram-ofglucose-per-deciliter: 
-          :one: "{0} mq/dl"
-          :other: "{0} mq/dl"
+          :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
           :one: "{0} mmol/l"
           :other: "{0} mmol/l"
         :concentr-mole: 
           :other: "{0} mol"
         :concentr-percent: 
-          :one: "{0}%"
           :other: "{0}%"
         :concentr-permille: 
-          :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permillion: 
           :one: "{0} hs/mln"
@@ -871,6 +947,9 @@
         :energy-therm-us: 
           :one: "{0} ABŞ tv"
           :other: "{0} ABŞ tv"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100km"
+          :other: "{0} kVtst/100km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -977,7 +1056,6 @@
           :one: "{0} kd"
           :other: "{0} kd"
         :light-lumen: 
-          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"

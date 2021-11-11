@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} iarda quadrada"
           :other: "{0} iardes quadrades"
+        :concentr-item: 
+          :one: "{0} ítem"
+          :other: "{0} ítems"
         :concentr-karat: 
           :one: "{0} quirat"
           :other: "{0} quirats"
@@ -202,6 +205,9 @@
         :energy-therm-us: 
           :one: "{0} unitat tèrmica americana"
           :other: "{0} unitats tèrmiques americanes"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kilowatt per hora per 100 quilòmetres"
+          :other: "{0} kilowatts per hora per 100 quilòmetres"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -226,7 +232,6 @@
         :graphics-dot-per-inch: 
           :one: "{0} punt per polzada"
           :other: "{0} punts per polzada"
-        :graphics-em: {}
         :graphics-megapixel: 
           :one: "{0} megapíxel"
           :other: "{0} megapíxels"
@@ -429,8 +434,8 @@
           :one: "{0} grau Fahrenheit"
           :other: "{0} graus Fahrenheit"
         :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0} grau"
+          :other: "{0} graus"
         :temperature-kelvin: 
           :one: "{0} Kelvin"
           :other: "{0} Kelvin"
@@ -483,11 +488,11 @@
           :one: "{0} decilitre"
           :other: "{0} decilitres"
         :volume-dessert-spoon: 
-          :one: "{0} cullereta de postres"
-          :other: "{0} culleretes de postres"
+          :one: "{0} culleradeta de postres"
+          :other: "{0} culleradetes de postres"
         :volume-dessert-spoon-imperial: 
-          :one: "{0} cullereta de postres imperial"
-          :other: "{0} culleretes de postres imperials"
+          :one: "{0} culleradeta de postres imperial"
+          :other: "{0} culleradetes de postres imperials"
         :volume-dram: 
           :one: "{0} dracma"
           :other: "{0} dracmes"
@@ -543,9 +548,6 @@
           :one: "{0} culleradeta"
           :other: "{0} culleradetes"
       :narrow: 
-        :acceleration-g-force: 
-          :one: "{0}G"
-          :other: "{0}G"
         :angle-arc-minute: 
           :one: "{0}′"
           :other: "{0}′"
@@ -555,27 +557,21 @@
         :angle-degree: 
           :one: "{0}°"
           :other: "{0}°"
-        :area-acre: 
-          :one: "{0}ac."
-          :other: "{0}ac."
-        :area-hectare: 
-          :one: "{0}ha"
-          :other: "{0}ha"
-        :area-square-foot: 
-          :one: "{0}ft²"
-          :other: "{0}ft²"
-        :area-square-kilometer: 
-          :one: "{0}km²"
-          :other: "{0}km²"
-        :area-square-meter: 
-          :one: "{0}m²"
-          :other: "{0}m²"
-        :area-square-mile: 
-          :one: "{0}mi²"
-          :other: "{0}mi²"
+        :concentr-item: 
+          :one: "{0} ítem"
+          :other: "{0} ítems"
+        :concentr-milligram-ofglucose-per-deciliter: 
+          :one: "{0} mg/dL"
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :one: "{0} mM/l"
+          :other: "{0} mM/l"
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
+        :concentr-permyriad: 
+          :one: "{0} ‱"
+          :other: "{0} ‱"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -606,14 +602,15 @@
         :duration-year: 
           :one: "{0} any"
           :other: "{0} anys"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} px/cm"
+          :other: "{0} px/cm"
         :length-astronomical-unit: 
           :one: "{0} ua"
           :other: "{0} ua"
         :length-centimeter: 
           :one: "{0} cm"
           :other: "{0} cm"
-        :length-foot: {}
-        :length-inch: {}
         :length-kilometer: 
           :one: "{0} km"
           :other: "{0} km"
@@ -623,15 +620,9 @@
         :length-meter: 
           :one: "{0} m"
           :other: "{0} m"
-        :length-mile: {}
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
-        :length-parsec: {}
-        :length-picometer: 
-          :one: "{0}pm"
-          :other: "{0}pm"
-        :length-yard: {}
         :mass-carat: 
           :one: "{0} ct"
           :other: "{0} ct"
@@ -650,45 +641,36 @@
         :mass-ton: 
           :one: "{0} t"
           :other: "{0} t"
-        :power-horsepower: 
-          :one: "{0}CV"
-          :other: "{0}CV"
         :power-kilowatt: 
           :one: "{0}kW"
           :other: "{0}kW"
-        :power-watt: 
-          :one: "{0}W"
-          :other: "{0}W"
-        :pressure-hectopascal: 
-          :one: "{0}hPa"
-          :other: "{0}hPa"
         :pressure-millibar: 
           :one: "{0} mb"
           :other: "{0} mb"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
-        :speed-meter-per-second: 
-          :one: "{0}m/s"
-          :other: "{0}m/s"
-        :speed-mile-per-hour: 
-          :one: "{0}mi/h"
-          :other: "{0}mi/h"
         :temperature-celsius: 
           :one: "{0} °C"
           :other: "{0} °C"
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
-        :volume-cubic-kilometer: 
-          :one: "{0}km³"
-          :other: "{0}km³"
         :volume-cubic-mile: 
           :one: "{0}mi³"
           :other: "{0}mi³"
+        :volume-dessert-spoon: 
+          :one: "{0} c. postr."
+          :other: "{0} c. postr."
+        :volume-jigger: 
+          :one: "{0} mes."
+          :other: "{0} mes."
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
+        :volume-quart-imperial: 
+          :one: "{0} qt imp"
+          :other: "{0} qt imp"
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -741,12 +723,15 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} ítem"
+          :other: "{0} ítems"
         :concentr-karat: 
           :one: "{0} ct"
           :other: "{0} ct"
         :concentr-milligram-ofglucose-per-deciliter: 
-          :one: "{0} mg/dl"
-          :other: "{0} mg/dl"
+          :one: "{0} mg/dL"
+          :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
           :one: "{0} mM/l"
           :other: "{0} mM/l"
@@ -882,6 +867,9 @@
         :energy-therm-us: 
           :one: "{0} thm"
           :other: "{0} thm"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100 km"
+          :other: "{0} kWh/100 km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -1157,8 +1145,8 @@
           :one: "{0} dl"
           :other: "{0} dl"
         :volume-dessert-spoon: 
-          :one: "{0} cullereta de postres"
-          :other: "{0} culleretes de postres"
+          :one: "{0} culleradeta postres"
+          :other: "{0} culleradetes postres"
         :volume-dessert-spoon-imperial: 
           :one: "{0} cull. postres imp."
           :other: "{0} cull. postres imp."

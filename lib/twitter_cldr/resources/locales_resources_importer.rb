@@ -22,7 +22,6 @@ module TwitterCldr
 
       LOCALE_COMPONENTS = %w[
         layout
-        calendars
         languages
         currencies
         plural_rules
@@ -71,7 +70,6 @@ module TwitterCldr
           }
 
           Cldr::Export.export(export_args) do |component, locale, path|
-            add_buddhist_calendar(component, locale, path)
             process_plurals(component, locale, path)
             deep_symbolize(path)
           end
@@ -139,30 +137,6 @@ module TwitterCldr
           output.write(YAML.dump(locale => plurals))
         end
       end
-
-      # TODO: export buddhist calendar from CLDR data instead of using BUDDHIST_CALENDAR constant.
-      #
-      def add_buddhist_calendar(component, locale, path)
-        return unless component == 'Calendars' && locale == :th
-
-        data = YAML.load(File.read(path))
-        data['th']['calendars']['buddhist'] = BUDDHIST_CALENDAR
-
-        File.open(path, 'w:utf-8') { |output| output.write(YAML.dump(data))}
-      end
-
-      BUDDHIST_CALENDAR = {
-        'formats' => {
-          'date' => {
-            'default' => :'calendars.buddhist.formats.date.medium',
-            'full'    => { 'pattern' => 'EEEEที่ d MMMM G y' },
-            'long'    => { 'pattern' => 'd MMMM พ.ศ. #{y + 543}' },
-            'medium'  => { 'pattern' => 'd MMM #{y + 543}' },
-            'short'   => { 'pattern' => 'd/M/#{y + 543}' }
-          }
-        }
-      }
-
     end
 
   end

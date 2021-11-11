@@ -19,6 +19,7 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d. MMM y G"
         :GyMMMd: "d. MMM y G"
+        :GyMd: "d. M. y GGGGG"
         :H: HH'h'
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -176,9 +177,9 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, dd. MMMM y"
+            :pattern: "EEEE, d. MMMM y"
           :long: 
-            :pattern: "dd. MMMM y"
+            :pattern: "d. MMMM y"
           :medium: 
             :pattern: "d. MMM y"
           :short: 
@@ -189,9 +190,9 @@
           :long: 
             :pattern: "{{date}} {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"

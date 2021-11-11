@@ -36,23 +36,5 @@ describe TwitterCldr::Tokenizers::DateTokenizer do
       ]
       check_token_list(got, expected)
     end
-
-    it "should tokenize composites correctly" do
-      # Ensure that buddhist calendar data is present in th locale.
-      expect(TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist]).not_to(
-        be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
-      )
-
-      data_reader = TwitterCldr::DataReaders::DateDataReader.new(:th, type: :long, calendar_type: :buddhist)
-      got = data_reader.tokenizer.tokenize(data_reader.pattern)
-      expected  = [
-        { value: "d", type: :pattern },
-        { value: " ", type: :plaintext },
-        { value: "MMMM", type: :pattern },
-        { value: " พ.ศ. ", type: :plaintext },
-        { to_s: "y + 543", type: :composite }
-      ]
-      check_token_list(got, expected)
-    end
   end
 end

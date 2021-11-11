@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} verge carrée"
           :other: "{0} verges carrées"
+        :concentr-item: 
+          :one: "{0} item"
+          :other: "{0} items"
         :concentr-karat: 
           :one: "{0} carat"
           :other: "{0} carats"
@@ -202,6 +205,9 @@
         :energy-therm-us: 
           :one: "{0} therm américain"
           :other: "{0} therms américains"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kilowattheure pour 100 kilomètres"
+          :other: "{0} kilowattheures pour 100 kilomètres"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -310,7 +316,6 @@
         :length-yard: 
           :one: "{0} verge"
           :other: "{0} verges"
-        :light-candela: {}
         :light-lumen: 
           :one: "{0} lumen"
           :other: "{0} lumens"
@@ -562,8 +567,8 @@
           :one: "{0}°"
           :other: "{0}°"
         :angle-radian: 
-          :one: "{0} rad"
-          :other: "{0} rad"
+          :one: "{0}rad"
+          :other: "{0}rad"
         :angle-revolution: 
           :one: "{0}tr"
           :other: "{0}tr"
@@ -572,7 +577,7 @@
           :other: "{0}ac"
         :area-dunam: 
           :one: "{0}dounam"
-          :other: "{0}dounam"
+          :other: "{0}dounams"
         :area-hectare: 
           :one: "{0}ha"
           :other: "{0}ha"
@@ -595,8 +600,11 @@
           :one: "{0}mi²"
           :other: "{0}mi²"
         :area-square-yard: 
-          :one: "{0}yd²"
-          :other: "{0}yd²"
+          :one: "{0}vg²"
+          :other: "{0}vg²"
+        :concentr-item: 
+          :one: "{0}item"
+          :other: "{0}items"
         :concentr-karat: 
           :one: "{0}ct"
           :other: "{0}ct"
@@ -622,8 +630,8 @@
           :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
-          :one: "{0} L/100 km"
-          :other: "{0} L/100 km"
+          :one: "{0}l/100km"
+          :other: "{0}l/100km"
         :consumption-liter-per-kilometer: 
           :one: "{0}l/km"
           :other: "{0}l/km"
@@ -631,8 +639,8 @@
           :one: "{0}mi/gal"
           :other: "{0}mi/gal"
         :consumption-mile-per-gallon-imperial: 
-          :one: "{0}mi/gIm"
-          :other: "{0}mi/gIm"
+          :one: "{0}mi/gal imp."
+          :other: "{0}mi/gal imp."
         :digital-bit: 
           :one: "{0}bit"
           :other: "{0}bit"
@@ -672,6 +680,9 @@
         :duration-day: 
           :one: "{0}j"
           :other: "{0}j"
+        :duration-decade: 
+          :one: "{0}déc"
+          :other: "{0}déc"
         :duration-hour: 
           :one: "{0}h"
           :other: "{0}h"
@@ -712,8 +723,8 @@
           :one: "{0}V"
           :other: "{0}V"
         :energy-british-thermal-unit: 
-          :one: "{0}Btu"
-          :other: "{0}Btu"
+          :one: "{0}BTU"
+          :other: "{0}BTU"
         :energy-calorie: 
           :one: "{0}cal"
           :other: "{0}cal"
@@ -735,6 +746,12 @@
         :energy-kilowatt-hour: 
           :one: "{0}kWh"
           :other: "{0}kWh"
+        :energy-therm-us: 
+          :one: "{0}therm US"
+          :other: "{0}therm US"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0}kWh/100km"
+          :other: "{0}kWh/100km"
         :force-newton: 
           :one: "{0}N"
           :other: "{0}N"
@@ -753,6 +770,27 @@
         :frequency-megahertz: 
           :one: "{0}MHz"
           :other: "{0}MHz"
+        :graphics-dot-per-centimeter: 
+          :one: "{0}ppcm"
+          :other: "{0}ppcm"
+        :graphics-dot-per-inch: 
+          :one: "{0}ppp"
+          :other: "{0}ppp"
+        :graphics-em: 
+          :one: "{0}em"
+          :other: "{0}em"
+        :graphics-megapixel: 
+          :one: "{0}Mpx"
+          :other: "{0}Mpx"
+        :graphics-pixel: 
+          :one: "{0}px"
+          :other: "{0}px"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0}px/cm"
+          :other: "{0}px/cm"
+        :graphics-pixel-per-inch: 
+          :one: "{0}px/po"
+          :other: "{0}px/po"
         :length-astronomical-unit: 
           :one: "{0}ua"
           :other: "{0}ua"
@@ -762,15 +800,18 @@
         :length-decimeter: 
           :one: "{0}dm"
           :other: "{0}dm"
+        :length-earth-radius: 
+          :one: "{0}R⊕"
+          :other: "{0}R⊕"
         :length-fathom: 
-          :one: "{0} fth"
-          :other: "{0} fth"
+          :one: "{0}fm"
+          :other: "{0}fm"
         :length-foot: 
           :one: "{0}pi"
           :other: "{0}pi"
         :length-furlong: 
-          :one: "{0} fur"
-          :other: "{0} fur"
+          :one: "{0}fur"
+          :other: "{0}fur"
         :length-inch: 
           :one: "{0}po"
           :other: "{0}po"
@@ -816,6 +857,12 @@
         :length-yard: 
           :one: "{0}vg"
           :other: "{0}vg"
+        :light-candela: 
+          :one: "{0}cd"
+          :other: "{0}cd"
+        :light-lumen: 
+          :one: "{0}lm"
+          :other: "{0}lm"
         :light-lux: 
           :one: "{0}lx"
           :other: "{0}lx"
@@ -831,6 +878,9 @@
         :mass-earth-mass: 
           :one: "{0}M⊕"
           :other: "{0}M⊕"
+        :mass-grain: 
+          :one: "{0} grain"
+          :other: "{0} grains"
         :mass-gram: 
           :one: "{0}g"
           :other: "{0}g"
@@ -885,12 +935,15 @@
         :pressure-atmosphere: 
           :one: "{0}atm"
           :other: "{0}atm"
+        :pressure-bar: 
+          :one: "{0}bar"
+          :other: "{0}bar"
         :pressure-hectopascal: 
           :one: "{0}hPa"
           :other: "{0}hPa"
         :pressure-inch-ofhg: 
-          :one: "{0}″ Hg"
-          :other: "{0}″ Hg"
+          :one: "{0}poHg"
+          :other: "{0}poHg"
         :pressure-kilopascal: 
           :one: "{0}kPa"
           :other: "{0}kPa"
@@ -903,6 +956,9 @@
         :pressure-millimeter-ofhg: 
           :one: "{0}mmHg"
           :other: "{0}mmHg"
+        :pressure-pascal: 
+          :one: "{0}Pa"
+          :other: "{0}Pa"
         :pressure-pound-force-per-square-inch: 
           :one: "{0}psi"
           :other: "{0}psi"
@@ -921,7 +977,9 @@
         :temperature-celsius: 
           :one: "{0} °C"
           :other: "{0} °C"
-        :temperature-fahrenheit: {}
+        :temperature-fahrenheit: 
+          :one: "{0}°F"
+          :other: "{0}°F"
         :temperature-generic: 
           :one: "{0}°"
           :other: "{0}°"
@@ -932,11 +990,11 @@
           :one: "{0}N⋅m"
           :other: "{0}N⋅m"
         :torque-pound-force-foot: 
-          :one: "{0}lbf⋅ft"
-          :other: "{0}lbf⋅ft"
+          :one: "{0}lb-pi"
+          :other: "{0}lb-pi"
         :volume-acre-foot: 
-          :one: "{0}acpi"
-          :other: "{0}acpi"
+          :one: "{0}ac pi"
+          :other: "{0}ac pi"
         :volume-barrel: 
           :one: "{0}bbl"
           :other: "{0}bbl"
@@ -965,8 +1023,8 @@
           :one: "{0}mi³"
           :other: "{0}mi³"
         :volume-cubic-yard: 
-          :one: "{0}yd³"
-          :other: "{0}yd³"
+          :one: "{0}vg³"
+          :other: "{0}vg³"
         :volume-cup: 
           :one: "{0}ta"
           :other: "{0}ta"
@@ -976,45 +1034,66 @@
         :volume-deciliter: 
           :one: "{0}dl"
           :other: "{0}dl"
+        :volume-dessert-spoon: 
+          :one: "{0}c. à d."
+          :other: "{0}c. à d."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0}c. à. d. imp."
+          :other: "{0} c. à. d. imp."
+        :volume-dram: 
+          :one: "{0}dr. liq"
+          :other: "{0}dr. liq"
+        :volume-drop: 
+          :one: "{0}gtt."
+          :other: "{0}gtt."
         :volume-fluid-ounce: 
-          :one: "{0}fl oz"
-          :other: "{0}fl oz"
+          :one: "{0}oz liq."
+          :other: "{0}oz liq."
         :volume-fluid-ounce-imperial: 
-          :one: "{0}fl oz imp"
-          :other: "{0}fl oz imp"
+          :one: "{0}oz liq imp."
+          :other: "{0}oz liq imp."
         :volume-gallon: 
           :one: "{0}gal"
           :other: "{0}gal"
         :volume-gallon-imperial: 
-          :one: "{0}galIm"
-          :other: "{0}galIm"
+          :one: "{0}/gal imp"
+          :other: "{0}/gal imp"
         :volume-hectoliter: 
           :one: "{0}hl"
           :other: "{0}hl"
+        :volume-jigger: 
+          :one: "{0}gob. doseur"
+          :other: "{0}gob. doseurs"
         :volume-liter: 
-          :one: "{0}L"
-          :other: "{0}L"
+          :one: "{0}l"
+          :other: "{0}l"
         :volume-megaliter: 
           :one: "{0}Ml"
           :other: "{0}Ml"
         :volume-milliliter: 
           :one: "{0}ml"
           :other: "{0}ml"
+        :volume-pinch: 
+          :one: "{0}pincée"
+          :other: "{0}pincées"
         :volume-pint: 
-          :one: "{0}pte"
-          :other: "{0}pte"
+          :one: "{0}chop"
+          :other: "{0}chop"
         :volume-pint-metric: 
           :one: "{0}mpt"
           :other: "{0}mpt"
         :volume-quart: 
-          :one: "{0}qt"
-          :other: "{0}qt"
+          :one: "{0}pte"
+          :other: "{0}pte"
+        :volume-quart-imperial: 
+          :one: "{0}pte imp"
+          :other: "{0}pte imp"
         :volume-tablespoon: 
-          :one: "{0}CàS"
-          :other: "{0}CàS"
+          :one: "{0}c. à s."
+          :other: "{0}c. à s."
         :volume-teaspoon: 
-          :one: "{0}CàC"
-          :other: "{0}CàC"
+          :one: "{0}c. à t."
+          :other: "{0}c. à t."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -1067,6 +1146,9 @@
         :area-square-yard: 
           :one: "{0} vg²"
           :other: "{0} vg²"
+        :concentr-item: 
+          :one: "{0} item"
+          :other: "{0} items"
         :concentr-karat: 
           :one: "{0} ct"
           :other: "{0} ct"
@@ -1092,11 +1174,11 @@
           :one: "{0} ‱"
           :other: "{0} ‱"
         :consumption-liter-per-100-kilometer: 
-          :one: "{0} L/100 km"
-          :other: "{0} L/100 km"
+          :one: "{0} l/100 km"
+          :other: "{0} l/100 km"
         :consumption-liter-per-kilometer: 
-          :one: "{0} L/km"
-          :other: "{0} L/km"
+          :one: "{0} l/km"
+          :other: "{0} l/km"
         :consumption-mile-per-gallon: 
           :one: "{0} mi/gal"
           :other: "{0} mi/gal"
@@ -1211,6 +1293,9 @@
         :energy-therm-us: 
           :one: "{0} therm US"
           :other: "{0} therms US"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100 km"
+          :other: "{0} kWh/100 km"
         :force-newton: 
           :one: "{0} N"
           :other: "{0} N"
@@ -1461,8 +1546,8 @@
           :one: "{0} bu"
           :other: "{0} bu"
         :volume-centiliter: 
-          :one: "{0} cL"
-          :other: "{0} cL"
+          :one: "{0} cl"
+          :other: "{0} cl"
         :volume-cubic-centimeter: 
           :one: "{0} cm³"
           :other: "{0} cm³"
@@ -1491,8 +1576,8 @@
           :one: "{0} tm"
           :other: "{0} tm"
         :volume-deciliter: 
-          :one: "{0} dL"
-          :other: "{0} dL"
+          :one: "{0} dl"
+          :other: "{0} dl"
         :volume-dessert-spoon: 
           :one: "{0} cuill. à d."
           :other: "{0} cuill. à d."
@@ -1518,20 +1603,20 @@
           :one: "{0} gal Imp"
           :other: "{0} gal Imp"
         :volume-hectoliter: 
-          :one: "{0} hL"
-          :other: "{0} hL"
+          :one: "{0} hl"
+          :other: "{0} hl"
         :volume-jigger: 
           :one: "{0} gobelet doseur"
           :other: "{0} gobelets doseurs"
         :volume-liter: 
-          :one: "{0} L"
-          :other: "{0} L"
+          :one: "{0} l"
+          :other: "{0} l"
         :volume-megaliter: 
-          :one: "{0} ML"
-          :other: "{0} ML"
+          :one: "{0} Ml"
+          :other: "{0} Ml"
         :volume-milliliter: 
-          :one: "{0} mL"
-          :other: "{0} mL"
+          :one: "{0} ml"
+          :other: "{0} ml"
         :volume-pinch: 
           :one: "{0} pincée"
           :other: "{0} pincées"
@@ -1545,8 +1630,8 @@
           :one: "{0} pte"
           :other: "{0} pte"
         :volume-quart-imperial: 
-          :one: "{0} pte Imp"
-          :other: "{0} pte Imp"
+          :one: "{0} pte imp"
+          :other: "{0} pte imp"
         :volume-tablespoon: 
           :one: "{0} c. à s."
           :other: "{0} c. à s."

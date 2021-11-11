@@ -160,28 +160,28 @@
               :other: "000 millones"
             ? !ruby/symbol "1000000000"
             : 
-              :one: "0 billón"
-              :other: "0 billones"
+              :one: "0 mil millones"
+              :other: "0 mil millones"
             ? !ruby/symbol "10000000000"
+            : 
+              :one: "00 mil millones"
+              :other: "00 mil millones"
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: "000 mil millones"
+              :other: "000 mil millones"
+            ? !ruby/symbol "1000000000000"
+            : 
+              :one: "0 billón"
+              :other: "0 billón"
+            ? !ruby/symbol "10000000000000"
             : 
               :one: "00 billones"
               :other: "00 billones"
-            ? !ruby/symbol "100000000000"
+            ? !ruby/symbol "100000000000000"
             : 
               :one: "000 billones"
               :other: "000 billones"
-            ? !ruby/symbol "1000000000000"
-            : 
-              :one: "0 trillón"
-              :other: "0 trillones"
-            ? !ruby/symbol "10000000000000"
-            : 
-              :one: "00 trillones"
-              :other: "00 trillones"
-            ? !ruby/symbol "100000000000000"
-            : 
-              :one: "000 trillones"
-              :other: "000 trillones"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -209,28 +209,28 @@
               :other: 000 M
             ? !ruby/symbol "1000000000"
             : 
+              :one: 0000 M
+              :other: 0000 M
+            ? !ruby/symbol "10000000000"
+            : 
+              :one: 00 mil M
+              :other: 00 mil M
+            ? !ruby/symbol "100000000000"
+            : 
+              :one: 000 mil M
+              :other: 000 mil M
+            ? !ruby/symbol "1000000000000"
+            : 
               :one: 0 B
               :other: 0 B
-            ? !ruby/symbol "10000000000"
+            ? !ruby/symbol "10000000000000"
             : 
               :one: 00 B
               :other: 00 B
-            ? !ruby/symbol "100000000000"
+            ? !ruby/symbol "100000000000000"
             : 
               :one: 000 B
               :other: 000 B
-            ? !ruby/symbol "1000000000000"
-            : 
-              :one: 0 T
-              :other: 0 T
-            ? !ruby/symbol "10000000000000"
-            : 
-              :one: 00 T
-              :other: 00 T
-            ? !ruby/symbol "100000000000000"
-            : 
-              :one: 000 T
-              :other: 000 T
         :lepc: :numbers.formats.decimal.latn
         :limb: :numbers.formats.decimal.latn
         :mlym: :numbers.formats.decimal.latn
@@ -396,6 +396,7 @@
       :gujr: :numbers.symbols.latn
       :guru: :numbers.symbols.latn
       :hanidec: :numbers.symbols.latn
+      :hmnp: :numbers.symbols.latn
       :java: :numbers.symbols.latn
       :kali: :numbers.symbols.latn
       :khmr: :numbers.symbols.latn

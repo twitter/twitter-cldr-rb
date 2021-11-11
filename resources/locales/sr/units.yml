@@ -2,14 +2,14 @@
 :sr: 
   :units: 
     :durationUnit: 
-      :hm: "h:mm"
-      :hms: "h:mm:ss"
-      :ms: "m:ss"
+      :hm: h.mm
+      :hms: h.mm.ss
+      :ms: m.ss
     :unitLength: 
       :long: 
         :acceleration-g-force: 
           :few: "{0} ге сила"
-          :one: "{0} ге сила"
+          :one: "{0} ге силом"
           :other: "{0} ге сила"
         :acceleration-meter-per-square-second: 
           :few: "{0} метра у секунди на квадрат"
@@ -17,23 +17,23 @@
           :other: "{0} метара у секунди на квадрат"
         :angle-arc-minute: 
           :few: "{0} лучна минута"
-          :one: "{0} лучни минут"
+          :one: "{0} лучним минутом"
           :other: "{0} лучних минута"
         :angle-arc-second: 
           :few: "{0} лучне секунде"
-          :one: "{0} лучна секунда"
+          :one: "{0} лучном секундом"
           :other: "{0} лучних секунди"
         :angle-degree: 
           :few: "{0} степена"
-          :one: "{0} степен"
+          :one: "{0} степеном"
           :other: "{0} степени"
         :angle-radian: 
           :few: "{0} радијана"
-          :one: "{0} радијан"
+          :one: "{0} радијаном"
           :other: "{0} радијана"
         :angle-revolution: 
           :few: "{0} обртаја"
-          :one: "{0} обртај"
+          :one: "{0} обртајем"
           :other: "{0} обртаја"
         :area-acre: 
           :few: "{0} акера"
@@ -45,7 +45,7 @@
           :other: "{0} дунама"
         :area-hectare: 
           :few: "{0} хектара"
-          :one: "{0} хектар"
+          :one: "{0} хектаром"
           :other: "{0} хектара"
         :area-square-centimeter: 
           :few: "{0} квадратна центиметра"
@@ -75,9 +75,13 @@
           :few: "{0} квадратна јарда"
           :one: "{0} квадратни јард"
           :other: "{0} квадратних јарди"
+        :concentr-item: 
+          :few: "{0} ставке"
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-karat: 
           :few: "{0} карата"
-          :one: "{0} карат"
+          :one: "{0} каратом"
           :other: "{0} карата"
         :concentr-milligram-ofglucose-per-deciliter: 
           :few: "{0} милиграма по децилитру"
@@ -89,20 +93,24 @@
           :other: "{0} милимола по литри"
         :concentr-mole: 
           :few: "{0} мола"
-          :one: "{0} мол"
+          :one: "{0} молом"
           :other: "{0} мола"
         :concentr-percent: 
           :few: "{0} процената"
-          :one: "{0} проценат"
+          :one: "{0} процентом"
           :other: "{0} процената"
         :concentr-permille: 
           :few: "{0} промила"
-          :one: "{0} промил"
+          :one: "{0} промилом"
           :other: "{0} промила"
         :concentr-permillion: 
           :few: "{0} честице на милион"
-          :one: "{0} честица на милион"
+          :one: "{0} честицом на милион"
           :other: "{0} честица на милион"
+        :concentr-permyriad: 
+          :few: "{0}‱"
+          :one: "{0}‱"
+          :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
           :few: "{0} литра на 100 километара"
           :one: "{0} литар на 100 километара"
@@ -121,11 +129,11 @@
           :other: "{0} миља по империјалном галону"
         :digital-bit: 
           :few: "{0} бита"
-          :one: "{0} бит"
+          :one: "{0} битом"
           :other: "{0} битова"
         :digital-byte: 
           :few: "{0} бајта"
-          :one: "{0} бајт"
+          :one: "{0} бајтом"
           :other: "{0} бајтова"
         :digital-gigabit: 
           :few: "{0} гигабита"
@@ -165,19 +173,19 @@
           :other: "{0} терабајта"
         :duration-century: 
           :few: "{0} века"
-          :one: "{0} век"
+          :one: "{0} веком"
           :other: "{0} векова"
         :duration-day: 
           :few: "{0} дана"
-          :one: "{0} дан"
+          :one: "{0} даном"
           :other: "{0} дана"
         :duration-decade: 
-          :few: "{0} дец."
-          :one: "{0} деценија"
+          :few: "{0} деценије"
+          :one: "{0} деценијом"
           :other: "{0} деценија"
         :duration-hour: 
           :few: "{0} сата"
-          :one: "{0} сат"
+          :one: "{0} сатом"
           :other: "{0} сати"
         :duration-microsecond: 
           :few: "{0} микросекунде"
@@ -189,11 +197,11 @@
           :other: "{0} милисекунди"
         :duration-minute: 
           :few: "{0} минута"
-          :one: "{0} минут"
+          :one: "{0} минутом"
           :other: "{0} минута"
         :duration-month: 
           :few: "{0} месеца"
-          :one: "{0} месец"
+          :one: "{0} месецом"
           :other: "{0} месеци"
         :duration-nanosecond: 
           :few: "{0} наносекунде"
@@ -201,19 +209,19 @@
           :other: "{0} наносекунди"
         :duration-second: 
           :few: "{0} секунде"
-          :one: "{0} секунда"
+          :one: "{0} секундом"
           :other: "{0} секунди"
         :duration-week: 
           :few: "{0} недеље"
-          :one: "{0} недеља"
+          :one: "{0} недељом"
           :other: "{0} недеља"
         :duration-year: 
           :few: "{0} године"
-          :one: "{0} година"
+          :one: "{0} годином"
           :other: "{0} година"
         :electric-ampere: 
           :few: "{0} ампера"
-          :one: "{0} ампер"
+          :one: "{0} ампером"
           :other: "{0} ампера"
         :electric-milliampere: 
           :few: "{0} милиампера"
@@ -221,16 +229,15 @@
           :other: "{0} милиампера"
         :electric-ohm: 
           :few: "{0} ома"
-          :one: "{0} ом"
+          :one: "{0} омом"
           :other: "{0} ома"
         :electric-volt: 
           :few: "{0} волта"
-          :one: "{0} волт"
+          :one: "{0} волтом"
           :other: "{0} волти"
-        :energy-british-thermal-unit: {}
         :energy-calorie: 
           :few: "{0} калорије"
-          :one: "{0} калорија"
+          :one: "{0} калоријом"
           :other: "{0} калорија"
         :energy-electronvolt: 
           :few: "{0} електронволта"
@@ -242,7 +249,7 @@
           :other: "{0} калорија"
         :energy-joule: 
           :few: "{0} џула"
-          :one: "{0} џул"
+          :one: "{0} џулом"
           :other: "{0} џула"
         :energy-kilocalorie: 
           :few: "{0} килокалорије"
@@ -262,7 +269,7 @@
           :other: "{0} US therms"
         :force-newton: 
           :few: "{0} њутна"
-          :one: "{0} њутн"
+          :one: "{0} њутном"
           :other: "{0} њутна"
         :force-pound-force: 
           :few: "{0} фунте силе"
@@ -274,7 +281,7 @@
           :other: "{0} гигахерца"
         :frequency-hertz: 
           :few: "{0} херца"
-          :one: "{0} херц"
+          :one: "{0} херцом"
           :other: "{0} херца"
         :frequency-kilohertz: 
           :few: "{0} килохерца"
@@ -288,6 +295,14 @@
           :few: "{0} тачке"
           :one: "{0} тачка"
           :other: "{0} тачака"
+        :graphics-em: 
+          :few: "{0} em"
+          :one: "{0} em"
+          :other: "{0} em"
+        :graphics-pixel: 
+          :few: "{0} px"
+          :one: "{0} px"
+          :other: "{0} px"
         :length-astronomical-unit: 
           :few: "{0} астрономске јединице"
           :one: "{0} астрономска јединица"
@@ -330,7 +345,7 @@
           :other: "{0} светлосних година"
         :length-meter: 
           :few: "{0} метра"
-          :one: "{0} метар"
+          :one: "{0} метром"
           :other: "{0} метара"
         :length-micrometer: 
           :few: "{0} микрометра"
@@ -342,7 +357,7 @@
           :other: "{0} миља"
         :length-mile-scandinavian: 
           :few: "{0} скандинавске миље"
-          :one: "{0} скандинавска миља"
+          :one: "{0} скандинавском миљом"
           :other: "{0} скандинавских миља"
         :length-millimeter: 
           :few: "{0} милиметра"
@@ -378,19 +393,19 @@
           :other: "{0} јарди"
         :light-candela: 
           :few: "{0} канделе"
-          :one: "{0} кандела"
+          :one: "{0} канделом"
           :other: "{0} кандела"
         :light-lumen: 
           :few: "{0} лумена"
-          :one: "{0} лумен"
+          :one: "{0} луменом"
           :other: "{0} лумена"
         :light-lux: 
           :few: "{0} лукса"
-          :one: "{0} лукс"
+          :one: "{0} луксом"
           :other: "{0} лукса"
         :mass-carat: 
           :few: "{0} карата"
-          :one: "{0} карат"
+          :one: "{0} каратом"
           :other: "{0} карата"
         :mass-dalton: 
           :few: "{0} далтона"
@@ -406,15 +421,15 @@
           :other: "{0} грејна"
         :mass-gram: 
           :few: "{0} грама"
-          :one: "{0} грам"
+          :one: "{0} грамом"
           :other: "{0} грама"
         :mass-kilogram: 
           :few: "{0} килограма"
-          :one: "{0} килограм"
+          :one: "{0} килограмом"
           :other: "{0} килограма"
         :mass-metric-ton: 
           :few: "{0} метричке тоне"
-          :one: "{0} метричка тона"
+          :one: "{0} метричком тоном"
           :other: "{0} метричких тона"
         :mass-microgram: 
           :few: "{0} микрограма"
@@ -470,15 +485,15 @@
           :other: "{0} миливати"
         :power-watt: 
           :few: "{0} вата"
-          :one: "{0} ват"
+          :one: "{0} ватом"
           :other: "{0} вати"
         :pressure-atmosphere: 
           :few: "{0} атмосфере"
-          :one: "{0} атмосфера"
+          :one: "{0} атмосфером"
           :other: "{0} атмосфера"
         :pressure-bar: 
           :few: "{0} бара"
-          :one: "{0} бар"
+          :one: "{0} баром"
           :other: "{0} бара"
         :pressure-hectopascal: 
           :few: "{0} хектопаскала"
@@ -506,7 +521,7 @@
           :other: "{0} милиметара живиног стуба"
         :pressure-pascal: 
           :few: "{0} паскала"
-          :one: "{0} паскал"
+          :one: "{0} паскалом"
           :other: "{0} паскала"
         :pressure-pound-force-per-square-inch: 
           :few: "{0} фунте по квадратном инчу"
@@ -530,7 +545,7 @@
           :other: "{0} миља на сат"
         :temperature-celsius: 
           :few: "{0} степена Целзијуса"
-          :one: "{0} степен Целзијуса"
+          :one: "{0} степеном Целзијуса"
           :other: "{0} степени Целзијуса"
         :temperature-fahrenheit: 
           :few: "{0} степена Фаренхајта"
@@ -542,7 +557,7 @@
           :other: "{0}°"
         :temperature-kelvin: 
           :few: "{0} келвина"
-          :one: "{0} келвин"
+          :one: "{0} келвином"
           :other: "{0} келвина"
         :torque-newton-meter: 
           :few: "{0} њутн-метра"
@@ -602,7 +617,7 @@
           :other: "{0} шоља"
         :volume-cup-metric: 
           :few: "{0} метричке шоље"
-          :one: "{0} метричка шоља"
+          :one: "{0} метричком шољом"
           :other: "{0} метричких шоља"
         :volume-deciliter: 
           :few: "{0} децилитра"
@@ -650,7 +665,7 @@
           :other: "{0} џигера"
         :volume-liter: 
           :few: "{0} литра"
-          :one: "{0} литар"
+          :one: "{0} литром"
           :other: "{0} литара"
         :volume-megaliter: 
           :few: "{0} мегалитра"
@@ -670,7 +685,7 @@
           :other: "{0} пинти"
         :volume-pint-metric: 
           :few: "{0} метричке пинте"
-          :one: "{0} метричка пинта"
+          :one: "{0} метричком пинтом"
           :other: "{0} метричких пинти"
         :volume-quart: 
           :few: "{0} кварта"
@@ -729,6 +744,10 @@
           :few: "{0} mi²"
           :one: "{0} mi²"
           :other: "{0} mi²"
+        :concentr-item: 
+          :few: "{0} ставке"
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-percent: 
           :few: "{0}%"
           :one: "{0}%"
@@ -737,6 +756,10 @@
           :few: "{0} L/100km"
           :one: "{0} L/100km"
           :other: "{0} L/100km"
+        :consumption-mile-per-gallon-imperial: 
+          :few: "{0} mpg Imp"
+          :one: "{0} mpg Imp"
+          :other: "{0} mpg Imp"
         :duration-day: 
           :few: "{0} д"
           :one: "{0} д"
@@ -778,17 +801,17 @@
           :one: "{0} ft"
           :other: "{0} ft"
         :length-inch: 
-          :few: "{0} инча"
-          :one: "{0} инч"
-          :other: "{0} инча"
+          :few: "{0} in"
+          :one: "{0} in"
+          :other: "{0} in"
         :length-kilometer: 
           :few: "{0} km"
           :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
-          :few: "{0} сг"
-          :one: "{0} сг"
-          :other: "{0} сг"
+          :few: "{0} ly"
+          :one: "{0} ly"
+          :other: "{0} ly"
         :length-meter: 
           :few: "{0} m"
           :one: "{0} m"
@@ -806,9 +829,9 @@
           :one: "{0} pm"
           :other: "{0} pm"
         :length-yard: 
-          :few: "{0} јрд"
-          :one: "{0} јрд"
-          :other: "{0} јрд"
+          :few: "{0} yd"
+          :one: "{0} yd"
+          :other: "{0} yd"
         :mass-gram: 
           :few: "{0} g"
           :one: "{0} g"
@@ -877,10 +900,30 @@
           :few: "{0} mi³"
           :one: "{0} mi³"
           :other: "{0} mi³"
+        :volume-dessert-spoon-imperial: 
+          :few: "{0} dstspn Imp"
+          :one: "{0} dstspn Imp"
+          :other: "{0}dsp-Imp"
+        :volume-fluid-ounce-imperial: 
+          :few: "{0} fl oz Imp"
+          :one: "{0} fl oz Imp"
+          :other: "{0} fl oz Imp"
+        :volume-gallon-imperial: 
+          :few: "{0}/gal Imp"
+          :one: "{0}/gal Imp"
+          :other: "{0}/gal Imp"
         :volume-liter: 
           :few: "{0} l"
           :one: "{0} l"
           :other: "{0} l"
+        :volume-pinch: 
+          :few: "{0} pn"
+          :one: "{0} pn"
+          :other: "{0} pn"
+        :volume-quart-imperial: 
+          :few: "{0} qt Imp"
+          :one: "{0} qt Imp"
+          :other: "{0} qt Imp"
       :short: 
         :acceleration-g-force: 
           :few: "{0} G"
@@ -950,6 +993,10 @@
           :few: "{0} yd²"
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :few: "{0} ставке"
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-karat: 
           :few: "{0} kt"
           :one: "{0} kt"
@@ -1136,6 +1183,8 @@
           :few: "{0} US therms"
           :one: "{0} US therm"
           :other: "{0} US therms"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :other: "{0} kWh/100km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 

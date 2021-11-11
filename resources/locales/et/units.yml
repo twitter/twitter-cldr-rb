@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} ruutjard"
           :other: "{0} ruutjardi"
+        :concentr-item: 
+          :one: "{0} üksus"
+          :other: "{0} üksust"
         :concentr-karat: 
           :one: "{0} karaat"
           :other: "{0} karaati"
@@ -83,7 +86,7 @@
           :one: "{0} promüriaad"
           :other: "{0} promüriaadi"
         :consumption-liter-per-100-kilometer: 
-          :one: "liiter 100 kilomeetri kohta"
+          :one: "{0} liiter 100 kilomeetri kohta"
           :other: "{0} liitrit 100 kilomeetri kohta"
         :consumption-liter-per-kilometer: 
           :one: "{0} liiter kilomeetri kohta"
@@ -202,6 +205,9 @@
         :energy-therm-us: 
           :one: "{0} USA term"
           :other: "{0} USA termi"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kilovatt-tund 100 kilomeetri kohta"
+          :other: "{0} kilovatt-tundi 100 kilomeetri kohta"
         :force-newton: 
           :one: "{0} njuuton"
           :other: "{0} njuutonit"
@@ -319,7 +325,9 @@
         :light-lux: 
           :one: "{0} luks"
           :other: "{0} luksi"
-        :light-solar-luminosity: {}
+        :light-solar-luminosity: 
+          :one: "{0} Päikese heledus"
+          :other: "{0} Päikese heledust"
         :mass-carat: 
           :one: "{0} karaat"
           :other: "{0} karaati"
@@ -432,8 +440,8 @@
           :one: "{0} Fahrenheiti kraad"
           :other: "{0} Fahrenheiti kraadi"
         :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0} kraad"
+          :other: "{0} kraadi"
         :temperature-kelvin: 
           :one: "{0} kelvin"
           :other: "{0} kelvinit"
@@ -546,9 +554,6 @@
           :one: "{0} teelusikas"
           :other: "{0} teelusikat"
       :narrow: 
-        :acceleration-g-force: 
-          :one: "{0}G"
-          :other: "{0}G"
         :angle-arc-minute: 
           :one: "{0}′"
           :other: "{0}′"
@@ -567,6 +572,9 @@
         :area-square-meter: 
           :one: "{0} m²"
           :other: "{0} m²"
+        :concentr-item: 
+          :one: "{0} üksus"
+          :other: "{0} üksust"
         :concentr-karat: 
           :one: "{0} ct"
           :other: "{0} ct"
@@ -576,6 +584,9 @@
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100km"
           :other: "{0} l/100km"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} m/gUK"
+          :other: "{0} m/gUK"
         :digital-byte: 
           :one: "{0} B"
           :other: "{0} B"
@@ -603,6 +614,9 @@
         :duration-year: 
           :one: "{0} a"
           :other: "{0} a"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0}kWh/100km"
+          :other: "{0}kWh/100km"
         :length-astronomical-unit: 
           :one: "{0} aü"
           :other: "{0} aü"
@@ -618,7 +632,6 @@
         :length-foot: 
           :one: "{0} jalg"
           :other: "{0} jalga"
-        :length-furlong: {}
         :length-inch: 
           :one: "{0} toll"
           :other: "{0} tolli"
@@ -637,7 +650,6 @@
         :length-millimeter: 
           :one: "{0} mm"
           :other: "{0} mm"
-        :length-parsec: {}
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
@@ -653,20 +665,12 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-pound: {}
-        :mass-stone: {}
         :mass-ton: 
           :one: "{0} lüh t"
           :other: "{0} lüh t"
         :power-horsepower: 
           :one: "{0} hj"
           :other: "{0} hj"
-        :power-kilowatt: 
-          :one: "{0}kW"
-          :other: "{0}kW"
-        :power-watt: 
-          :one: "{0}W"
-          :other: "{0}W"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -697,9 +701,24 @@
         :volume-cubic-kilometer: 
           :one: "{0} km³"
           :other: "{0} km³"
+        :volume-dram: 
+          :one: "{0} d. ved."
+          :other: "{0} d. ved."
+        :volume-fluid-ounce-imperial: 
+          :one: "{0} fl oz Im"
+          :other: "{0} fl oz Im"
+        :volume-gallon-imperial: 
+          :one: "{0} gal Im"
+          :other: "{0} gal Im"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
+        :volume-pinch: 
+          :one: "{0} näp."
+          :other: "{0} näp."
+        :volume-quart-imperial: 
+          :one: "{0} qt Imp."
+          :other: "{0} qt Imp."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -752,6 +771,9 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} üksus"
+          :other: "{0} üksust"
         :concentr-karat: 
           :one: "{0} ct"
           :other: "{0} ct"
@@ -896,6 +918,9 @@
         :energy-therm-us: 
           :one: "{0} USA term"
           :other: "{0} USA termi"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh / 100 km"
+          :other: "{0} kWh / 100 km"
         :force-newton: 
           :one: "{0} N"
           :other: "{0} N"

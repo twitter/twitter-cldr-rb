@@ -103,7 +103,7 @@
             :one: "{0} {1}"
             :other: "{0} {1}"
         :latn: 
-          :default: "¤ #,##0.00"
+          :default: "¤ #,##0.00;¤ -#,##0.00"
           :short: 
             ? !ruby/symbol "1000"
             : 
@@ -788,6 +788,7 @@
         :percent_sign: "%"
         :plus_sign: +
         :superscripting_exponent: ×
+      :hmnp: :numbers.symbols.latn
       :java: 
         :decimal: ","
         :exponential: E

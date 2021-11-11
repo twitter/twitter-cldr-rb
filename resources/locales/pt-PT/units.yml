@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} jarda quadrada"
           :other: "{0} jardas quadradas"
+        :concentr-item: 
+          :one: "{0} item"
+          :other: "{0} itens"
         :concentr-karat: 
           :one: "{0} quilate"
           :other: "{0} quilates"
@@ -202,6 +205,9 @@
         :energy-therm-us: 
           :one: "{0} unidade térmica norte-americana"
           :other: "{0} unidades térmicas norte-americanas"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} quilowatt-hora por 100 quilómetros"
+          :other: "{0} quilowatts-hora por 100 quilómetros"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -222,14 +228,13 @@
           :other: "{0} megahertz"
         :graphics-dot: 
           :one: "{0} ponto"
-          :other: "{0} pts"
+          :other: "{0} pontos"
         :graphics-dot-per-centimeter: 
           :one: "{0} ponto por centímetro"
           :other: "{0} pontos por centímetro"
         :graphics-dot-per-inch: 
           :one: "{0} ponto por polegada"
           :other: "{0} pontos por polegada"
-        :graphics-em: {}
         :graphics-megapixel: 
           :one: "{0} megapíxel"
           :other: "{0} megapíxeis"
@@ -301,7 +306,7 @@
           :other: "{0} picómetros"
         :length-point: 
           :one: "{0} ponto tipográfico"
-          :other: "{0} pontos"
+          :other: "{0} pontos tipográficos"
         :length-solar-radius: 
           :one: "{0} raio solar"
           :other: "{0} raios solares"
@@ -546,13 +551,12 @@
           :one: "{0} colher de chá"
           :other: "{0} colheres de chá"
       :narrow: 
-        :acceleration-g-force: {}
         :angle-arc-minute: 
-          :one: "{0}'"
-          :other: "{0}'"
+          :one: "{0}′"
+          :other: "{0}′"
         :angle-arc-second: 
-          :one: "{0}\""
-          :other: "{0}\""
+          :one: "{0}″"
+          :other: "{0}″"
         :angle-degree: 
           :one: "{0}°"
           :other: "{0}°"
@@ -574,12 +578,21 @@
         :area-square-mile: 
           :one: "{0} mi²"
           :other: "{0} mi²"
+        :concentr-item: 
+          :one: "{0} item"
+          :other: "{0} itens"
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
         :consumption-liter-per-100-kilometer: 
           :one: "{0}l/100km"
           :other: "{0}l/100km"
+        :digital-bit: 
+          :one: "{0} bit"
+          :other: "{0} bits"
+        :digital-byte: 
+          :one: "{0} B"
+          :other: "{0} B"
         :duration-century: 
           :one: "{0} séc."
           :other: "{0} sécs."
@@ -607,6 +620,9 @@
         :duration-year: 
           :one: "{0} ano"
           :other: "{0} anos"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0}kWh/100 km"
+          :other: "{0}kWh/100 km"
         :length-astronomical-unit: 
           :one: "{0} ua"
           :other: "{0} ua"
@@ -614,12 +630,11 @@
           :one: "{0} cm"
           :other: "{0} cm"
         :length-fathom: 
-          :one: "{0} bça."
-          :other: "{0} bça."
+          :one: "{0} fth"
+          :other: "{0} fth"
         :length-foot: 
           :one: "{0}′"
           :other: "{0}′"
-        :length-furlong: {}
         :length-inch: 
           :one: "{0}″"
           :other: "{0}″"
@@ -639,9 +654,8 @@
           :one: "{0} mm"
           :other: "{0} mm"
         :length-nautical-mile: 
-          :one: "{0} mn"
-          :other: "{0} mn"
-        :length-parsec: {}
+          :one: "{0} nmi"
+          :other: "{0} nmi"
         :length-picometer: 
           :one: "{0} pm"
           :other: "{0} pm"
@@ -649,8 +663,8 @@
           :one: "{0} yd"
           :other: "{0} yd"
         :mass-carat: 
-          :one: "{0} ql"
-          :other: "{0} ql"
+          :one: "{0} ct"
+          :other: "{0} ct"
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -663,8 +677,6 @@
         :mass-pound: 
           :one: "{0} lb"
           :other: "{0} lb"
-        :mass-stone: {}
-        :mass-ton: {}
         :power-horsepower: 
           :one: "{0} cv"
           :other: "{0} cv"
@@ -678,8 +690,8 @@
           :one: "{0} hPa"
           :other: "{0} hPa"
         :pressure-inch-ofhg: 
-          :one: "{0}\" Hg"
-          :other: "{0}\" Hg"
+          :one: "{0}″ Hg"
+          :other: "{0}″ Hg"
         :pressure-millibar: 
           :one: "{0} mb"
           :other: "{0} mb"
@@ -701,19 +713,21 @@
         :temperature-celsius: 
           :one: "{0}°C"
           :other: "{0}°C"
-        :temperature-fahrenheit: 
-          :one: "{0}°F"
-          :other: "{0}°F"
-        :volume-cubic-foot: {}
         :volume-cubic-kilometer: 
           :one: "{0} km³"
           :other: "{0} km³"
         :volume-cubic-mile: 
           :one: "{0} mi³"
           :other: "{0} mi³"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} csb imp."
+          :other: "{0} csb imp."
         :volume-fluid-ounce: 
-          :one: "{0} fl. oz."
-          :other: "{0} fl. oz."
+          :one: "{0} fl oz"
+          :other: "{0} fl oz"
+        :volume-jigger: 
+          :one: "{0} doseador"
+          :other: "{0} doseadores"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
@@ -768,6 +782,9 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} item"
+          :other: "{0} itens"
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
@@ -908,6 +925,9 @@
         :energy-therm-us: 
           :one: "{0} thm EUA"
           :other: "{0} thm EUA"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100 km"
+          :other: "{0} kWh/100 km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 
@@ -1167,8 +1187,8 @@
           :one: "{0} csb"
           :other: "{0} csb"
         :volume-dessert-spoon-imperial: 
-          :one: "{0} csb imp"
-          :other: "{0} csb imp"
+          :one: "{0} csb imp."
+          :other: "{0} csb imp."
         :volume-dram: 
           :one: "{0} dram fl"
           :other: "{0} dram fl"
@@ -1191,7 +1211,7 @@
           :one: "{0} hl"
           :other: "{0} hl"
         :volume-jigger: 
-          :one: "{0} doseadores"
+          :one: "{0} doseador"
           :other: "{0} doseadores"
         :volume-liter: 
           :one: "{0} l"

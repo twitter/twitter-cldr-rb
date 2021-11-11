@@ -22,6 +22,8 @@
     :Afghanistan: 
       :long: 
         :standard: "Afghanistan Time"
+      :short: 
+        :standard: AFT
     :Africa_Central: 
       :long: 
         :standard: "Central Africa Time"
@@ -38,7 +40,7 @@
         :standard: "West Africa Standard Time"
     :Alaska: 
       :long: 
-        :daylight: "Alaska Daylight Time"
+        :daylight: "Alaska Daylight Saving Time"
         :generic: "Alaska Time"
         :standard: "Alaska Standard Time"
       :short: 
@@ -57,7 +59,7 @@
         :standard: "Amazon Standard Time"
     :America_Central: 
       :long: 
-        :daylight: "Central Daylight Time"
+        :daylight: "Central Daylight Saving Time"
         :generic: "Central Time"
         :standard: "Central Standard Time"
       :short: 
@@ -66,7 +68,7 @@
         :standard: CST
     :America_Eastern: 
       :long: 
-        :daylight: "Eastern Daylight Time"
+        :daylight: "Eastern Daylight Saving Time"
         :generic: "Eastern Time"
         :standard: "Eastern Standard Time"
       :short: 
@@ -75,7 +77,7 @@
         :standard: EST
     :America_Mountain: 
       :long: 
-        :daylight: "Mountain Daylight Time"
+        :daylight: "Mountain Daylight Saving Time"
         :generic: "Mountain Time"
         :standard: "Mountain Standard Time"
       :short: 
@@ -84,7 +86,7 @@
         :standard: MST
     :America_Pacific: 
       :long: 
-        :daylight: "Pacific Daylight Time"
+        :daylight: "Pacific Daylight Saving Time"
         :generic: "Pacific Time"
         :standard: "Pacific Standard Time"
       :short: 
@@ -98,7 +100,7 @@
         :standard: "Anadyr Standard Time"
     :Apia: 
       :long: 
-        :daylight: "Apia Daylight Time"
+        :daylight: "Apia Daylight Saving Time"
         :generic: "Apia Time"
         :standard: "Apia Standard Time"
     :Aqtau: 
@@ -113,7 +115,7 @@
         :standard: "Aqtobe Standard Time"
     :Arabian: 
       :long: 
-        :daylight: "Arabian Daylight Time"
+        :daylight: "Arabian Daylight Saving Time"
         :generic: "Arabian Time"
         :standard: "Arabian Standard Time"
     :Argentina: 
@@ -121,6 +123,8 @@
         :daylight: "Argentina Summer Time"
         :generic: "Argentina Time"
         :standard: "Argentina Standard Time"
+      :short: 
+        :generic: ART
     :Argentina_Western: 
       :long: 
         :daylight: "Western Argentina Summer Time"
@@ -133,7 +137,7 @@
         :standard: "Armenia Standard Time"
     :Atlantic: 
       :long: 
-        :daylight: "Atlantic Daylight Time"
+        :daylight: "Atlantic Daylight Saving Time"
         :generic: "Atlantic Time"
         :standard: "Atlantic Standard Time"
       :short: 
@@ -142,24 +146,35 @@
         :standard: AST
     :Australia_Central: 
       :long: 
-        :daylight: "Australian Central Daylight Time"
+        :daylight: "Australian Central Daylight Saving Time"
         :generic: "Central Australia Time"
         :standard: "Australian Central Standard Time"
     :Australia_CentralWestern: 
       :long: 
-        :daylight: "Australian Central Western Daylight Time"
+        :daylight: "Australian Central Western Daylight Saving Time"
         :generic: "Australian Central Western Time"
         :standard: "Australian Central Western Standard Time"
+      :short: 
+        :daylight: ACWDT
+        :generic: ACWT
+        :standard: ACWST
     :Australia_Eastern: 
       :long: 
-        :daylight: "Australian Eastern Daylight Time"
+        :daylight: "Australian Eastern Daylight Saving Time"
         :generic: "Eastern Australia Time"
         :standard: "Australian Eastern Standard Time"
+      :short: 
+        :daylight: AEDT
+        :generic: AET
+        :standard: AEST
     :Australia_Western: 
       :long: 
-        :daylight: "Australian Western Daylight Time"
+        :daylight: "Australian Western Daylight Saving Time"
         :generic: "Western Australia Time"
         :standard: "Australian Western Standard Time"
+      :short: 
+        :daylight: AWDT
+        :standard: AWST
     :Azerbaijan: 
       :long: 
         :daylight: "Azerbaijan Summer Time"
@@ -175,9 +190,13 @@
         :daylight: "Bangladesh Summer Time"
         :generic: "Bangladesh Time"
         :standard: "Bangladesh Standard Time"
+      :short: 
+        :standard: BST
     :Bhutan: 
       :long: 
         :standard: "Bhutan Time"
+      :short: 
+        :standard: BTT
     :Bolivia: 
       :long: 
         :standard: "Bolivia Time"
@@ -186,9 +205,14 @@
         :daylight: "Brasilia Summer Time"
         :generic: "Brasilia Time"
         :standard: "Brasilia Standard Time"
+      :short: 
+        :daylight: BRST
+        :generic: BRT
     :Brunei: 
       :long: 
         :standard: "Brunei Darussalam Time"
+      :short: 
+        :standard: BNT
     :Cape_Verde: 
       :long: 
         :daylight: "Cape Verde Summer Time"
@@ -202,9 +226,12 @@
         :standard: "Chamorro Standard Time"
     :Chatham: 
       :long: 
-        :daylight: "Chatham Daylight Time"
+        :daylight: "Chatham Daylight Saving Time"
         :generic: "Chatham Time"
         :standard: "Chatham Standard Time"
+      :short: 
+        :daylight: CHADT
+        :standard: CHAST
     :Chile: 
       :long: 
         :daylight: "Chile Summer Time"
@@ -212,7 +239,7 @@
         :standard: "Chile Standard Time"
     :China: 
       :long: 
-        :daylight: "China Daylight Time"
+        :daylight: "China Daylight Saving Time"
         :generic: "China Time"
         :standard: "China Standard Time"
     :Choibalsan: 
@@ -223,14 +250,20 @@
     :Christmas: 
       :long: 
         :standard: "Christmas Island Time"
+      :short: 
+        :standard: CXT
     :Cocos: 
       :long: 
         :standard: "Cocos Islands Time"
+      :short: 
+        :standard: CCT
     :Colombia: 
       :long: 
         :daylight: "Colombia Summer Time"
         :generic: "Colombia Time"
         :standard: "Colombia Standard Time"
+      :short: 
+        :daylight: COST
     :Cook: 
       :long: 
         :daylight: "Cook Islands Half Summer Time"
@@ -238,7 +271,7 @@
         :standard: "Cook Islands Standard Time"
     :Cuba: 
       :long: 
-        :daylight: "Cuba Daylight Time"
+        :daylight: "Cuba Daylight Saving Time"
         :generic: "Cuba Time"
         :standard: "Cuba Standard Time"
     :Davis: 
@@ -250,14 +283,21 @@
     :East_Timor: 
       :long: 
         :standard: "East Timor Time"
+      :short: 
+        :standard: TLT
     :Easter: 
       :long: 
         :daylight: "Easter Island Summer Time"
         :generic: "Easter Island Time"
         :standard: "Easter Island Standard Time"
+      :short: 
+        :daylight: EASST
+        :standard: EAST
     :Ecuador: 
       :long: 
         :standard: "Ecuador Time"
+      :short: 
+        :standard: ECT
     :Europe_Central: 
       :long: 
         :daylight: "Central European Summer Time"
@@ -281,6 +321,9 @@
         :daylight: "Falkland Islands Summer Time"
         :generic: "Falkland Islands Time"
         :standard: "Falkland Islands Standard Time"
+      :short: 
+        :daylight: FKST
+        :generic: FKT
     :Fiji: 
       :long: 
         :daylight: "Fiji Summer Time"
@@ -291,7 +334,7 @@
         :standard: "French Guiana Time"
     :French_Southern: 
       :long: 
-        :standard: "French Southern & Antarctic Time"
+        :standard: "French Southern and Antarctic Time"
     :GMT: 
       :long: 
         :standard: "Greenwich Mean Time"
@@ -300,6 +343,8 @@
     :Galapagos: 
       :long: 
         :standard: "Galapagos Time"
+      :short: 
+        :standard: GALT
     :Gambier: 
       :long: 
         :standard: "Gambier Time"
@@ -316,6 +361,8 @@
         :daylight: "East Greenland Summer Time"
         :generic: "East Greenland Time"
         :standard: "East Greenland Standard Time"
+      :short: 
+        :generic: EGT
     :Greenland_Western: 
       :long: 
         :daylight: "West Greenland Summer Time"
@@ -330,9 +377,11 @@
     :Guyana: 
       :long: 
         :standard: "Guyana Time"
+      :short: 
+        :standard: GYT
     :Hawaii_Aleutian: 
       :long: 
-        :daylight: "Hawaii-Aleutian Daylight Time"
+        :daylight: "Hawaii-Aleutian Daylight Saving Time"
         :generic: "Hawaii-Aleutian Time"
         :standard: "Hawaii-Aleutian Standard Time"
       :short: 
@@ -352,26 +401,39 @@
     :India: 
       :long: 
         :standard: "India Standard Time"
+      :short: 
+        :standard: IST
     :Indian_Ocean: 
       :long: 
         :standard: "Indian Ocean Time"
     :Indochina: 
       :long: 
         :standard: "Indochina Time"
+      :short: 
+        :standard: ICT
     :Indonesia_Central: 
       :long: 
         :standard: "Central Indonesia Time"
+      :short: 
+        :standard: WITA
     :Indonesia_Eastern: 
       :long: 
         :standard: "Eastern Indonesia Time"
+      :short: 
+        :standard: WIT
     :Indonesia_Western: 
       :long: 
         :standard: "Western Indonesia Time"
+      :short: 
+        :standard: WIB
     :Iran: 
       :long: 
-        :daylight: "Iran Daylight Time"
+        :daylight: "Iran Daylight Saving Time"
         :generic: "Iran Time"
         :standard: "Iran Standard Time"
+      :short: 
+        :daylight: IRDT
+        :standard: IRST
     :Irkutsk: 
       :long: 
         :daylight: "Irkutsk Summer Time"
@@ -379,12 +441,12 @@
         :standard: "Irkutsk Standard Time"
     :Israel: 
       :long: 
-        :daylight: "Israel Daylight Time"
+        :daylight: "Israel Daylight Saving Time"
         :generic: "Israel Time"
         :standard: "Israel Standard Time"
     :Japan: 
       :long: 
-        :daylight: "Japan Daylight Time"
+        :daylight: "Japan Daylight Saving Time"
         :generic: "Japan Time"
         :standard: "Japan Standard Time"
     :Kamchatka: 
@@ -400,7 +462,7 @@
         :standard: "West Kazakhstan Time"
     :Korea: 
       :long: 
-        :daylight: "Korean Daylight Time"
+        :daylight: "Korean Daylight Saving Time"
         :generic: "Korean Time"
         :standard: "Korean Standard Time"
     :Kosrae: 
@@ -422,7 +484,7 @@
         :standard: "Line Islands Time"
     :Lord_Howe: 
       :long: 
-        :daylight: "Lord Howe Daylight Time"
+        :daylight: "Lord Howe Daylight Saving Time"
         :generic: "Lord Howe Time"
         :standard: "Lord Howe Standard Time"
     :Macau: 
@@ -441,9 +503,13 @@
     :Malaysia: 
       :long: 
         :standard: "Malaysia Time"
+      :short: 
+        :standard: MYT
     :Maldives: 
       :long: 
         :standard: "Maldives Time"
+      :short: 
+        :standard: MVT
     :Marquesas: 
       :long: 
         :standard: "Marquesas Time"
@@ -460,12 +526,12 @@
         :standard: "Mawson Time"
     :Mexico_Northwest: 
       :long: 
-        :daylight: "Northwest Mexico Daylight Time"
+        :daylight: "Northwest Mexico Daylight Saving Time"
         :generic: "Northwest Mexico Time"
         :standard: "Northwest Mexico Standard Time"
     :Mexico_Pacific: 
       :long: 
-        :daylight: "Mexican Pacific Daylight Time"
+        :daylight: "Mexican Pacific Daylight Saving Time"
         :generic: "Mexican Pacific Time"
         :standard: "Mexican Pacific Standard Time"
     :Mongolia: 
@@ -487,6 +553,8 @@
     :Nepal: 
       :long: 
         :standard: "Nepal Time"
+      :short: 
+        :standard: NPT
     :New_Caledonia: 
       :long: 
         :daylight: "New Caledonia Summer Time"
@@ -494,12 +562,12 @@
         :standard: "New Caledonia Standard Time"
     :New_Zealand: 
       :long: 
-        :daylight: "New Zealand Daylight Time"
+        :daylight: "New Zealand Daylight Saving Time"
         :generic: "New Zealand Time"
         :standard: "New Zealand Standard Time"
     :Newfoundland: 
       :long: 
-        :daylight: "Newfoundland Daylight Time"
+        :daylight: "Newfoundland Daylight Saving Time"
         :generic: "Newfoundland Time"
         :standard: "Newfoundland Standard Time"
       :short: 
@@ -511,7 +579,7 @@
         :standard: "Niue Time"
     :Norfolk: 
       :long: 
-        :daylight: "Norfolk Island Daylight Time"
+        :daylight: "Norfolk Island Daylight Saving Time"
         :generic: "Norfolk Island Time"
         :standard: "Norfolk Island Standard Time"
     :Noronha: 
@@ -519,6 +587,8 @@
         :daylight: "Fernando de Noronha Summer Time"
         :generic: "Fernando de Noronha Time"
         :standard: "Fernando de Noronha Standard Time"
+      :short: 
+        :generic: FNT
     :North_Mariana: 
       :long: 
         :standard: "North Mariana Islands Time"
@@ -537,6 +607,8 @@
         :daylight: "Pakistan Summer Time"
         :generic: "Pakistan Time"
         :standard: "Pakistan Standard Time"
+      :short: 
+        :standard: PKT
     :Palau: 
       :long: 
         :standard: "Palau Time"
@@ -548,11 +620,16 @@
         :daylight: "Paraguay Summer Time"
         :generic: "Paraguay Time"
         :standard: "Paraguay Standard Time"
+      :short: 
+        :daylight: PYST
+        :generic: PYT
     :Peru: 
       :long: 
         :daylight: "Peru Summer Time"
         :generic: "Peru Time"
         :standard: "Peru Standard Time"
+      :short: 
+        :generic: PET
     :Philippines: 
       :long: 
         :daylight: "Philippine Summer Time"
@@ -563,9 +640,13 @@
         :standard: "Phoenix Islands Time"
     :Pierre_Miquelon: 
       :long: 
-        :daylight: "St Pierre & Miquelon Daylight Time"
-        :generic: "St Pierre & Miquelon Time"
-        :standard: "St Pierre & Miquelon Standard Time"
+        :daylight: "Saint-Pierre-et-Miquelon Daylight Saving Time"
+        :generic: "Saint-Pierre-et-Miquelon Time"
+        :standard: "Saint-Pierre-et-Miquelon Standard Time"
+      :short: 
+        :daylight: PMDT
+        :generic: PMT
+        :standard: PMST
     :Pitcairn: 
       :long: 
         :standard: "Pitcairn Time"
@@ -598,7 +679,7 @@
         :standard: "Samara Standard Time"
     :Samoa: 
       :long: 
-        :daylight: "Samoa Daylight Time"
+        :daylight: "Samoa Daylight Saving Time"
         :generic: "Samoa Time"
         :standard: "Samoa Standard Time"
     :Seychelles: 
@@ -624,7 +705,7 @@
         :standard: "Tahiti Time"
     :Taipei: 
       :long: 
-        :daylight: "Taipei Daylight Time"
+        :daylight: "Taipei Daylight Saving Time"
         :generic: "Taipei Time"
         :standard: "Taipei Standard Time"
     :Tajikistan: 
@@ -654,6 +735,9 @@
         :daylight: "Uruguay Summer Time"
         :generic: "Uruguay Time"
         :standard: "Uruguay Standard Time"
+      :short: 
+        :daylight: UYST
+        :standard: UYT
     :Uzbekistan: 
       :long: 
         :daylight: "Uzbekistan Summer Time"
@@ -667,6 +751,8 @@
     :Venezuela: 
       :long: 
         :standard: "Venezuela Time"
+      :short: 
+        :standard: VET
     :Vladivostok: 
       :long: 
         :daylight: "Vladivostok Summer Time"
@@ -685,7 +771,7 @@
         :standard: "Wake Island Time"
     :Wallis: 
       :long: 
-        :standard: "Wallis & Futuna Time"
+        :standard: "Wallis and Futuna Time"
     :Yakutsk: 
       :long: 
         :daylight: "Yakutsk Summer Time"
@@ -696,6 +782,9 @@
         :daylight: "Yekaterinburg Summer Time"
         :generic: "Yekaterinburg Time"
         :standard: "Yekaterinburg Standard Time"
+    :Yukon: 
+      :long: 
+        :standard: "Yukon Time"
   :timezones: 
     :Africa/Asmera: 
       :city: Asmara
@@ -736,17 +825,17 @@
     :America/Scoresbysund: 
       :city: Ittoqqortoormiit
     :America/St_Barthelemy: 
-      :city: "St Barthélemy"
+      :city: Saint-Barthélemy
     :America/St_Johns: 
-      :city: "St John’s"
+      :city: "Saint John’s"
     :America/St_Kitts: 
-      :city: "St Kitts"
+      :city: "Saint Kitts"
     :America/St_Lucia: 
-      :city: "St Lucia"
+      :city: "Saint Lucia"
     :America/St_Thomas: 
-      :city: "St Thomas"
+      :city: "Saint Thomas"
     :America/St_Vincent: 
-      :city: "St Vincent"
+      :city: "Saint Vincent"
     :Antarctica/DumontDUrville: 
       :city: "Dumont d’Urville"
     :Asia/Aqtau: 
@@ -766,7 +855,7 @@
     :Atlantic/Faeroe: 
       :city: Faroe
     :Atlantic/St_Helena: 
-      :city: "St Helena"
+      :city: "Saint Helena"
     :Etc/UTC: 
       :long: 
         :standard: "Coordinated Universal Time"

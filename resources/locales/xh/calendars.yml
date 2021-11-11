@@ -18,6 +18,7 @@
         :GyMMM: "G y MMM"
         :GyMMMEd: "G y MMM d, E"
         :GyMMMd: "G y MMM d"
+        :GyMd: "GGGGG y-MM-dd"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -68,7 +69,14 @@
             :thu: T
             :tue: T
             :wed: W
-          :short: :calendars.gregorian.days.format.abbreviated
+          :short: 
+            :fri: Fri
+            :mon: Mon
+            :sat: Sat
+            :sun: Sun
+            :thu: Thu
+            :tue: Tue
+            :wed: Wed
           :wide: 
             :fri: Lwesihlanu
             :mon: Mvulo
@@ -94,7 +102,14 @@
             :thu: T
             :tue: T
             :wed: W
-          :short: :calendars.gregorian.days.format.short
+          :short: 
+            :fri: Fri
+            :mon: Mon
+            :sat: Sat
+            :sun: Sun
+            :thu: Thu
+            :tue: Tue
+            :wed: Wed
           :wide: 
             :fri: Lwesihlanu
             :mon: Mvulo
@@ -242,14 +257,22 @@
           :abbreviated: 
             :am: AM
             :pm: PM
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow: 
+            :am: AM
+            :pm: PM
           :wide: 
             :am: AM
             :pm: PM
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
-          :narrow: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
-          :wide: :calendars.gregorian.dayPeriods.stand-alone.abbreviated
+          :abbreviated: 
+            :am: AM
+            :pm: PM
+          :narrow: 
+            :am: AM
+            :pm: PM
+          :wide: 
+            :am: AM
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

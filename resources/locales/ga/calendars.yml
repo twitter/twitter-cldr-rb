@@ -18,6 +18,7 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d MMM y G"
         :GyMMMd: "d MMM y G"
+        :GyMd: "dd/MM/y GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -137,7 +138,7 @@
         :dayperiod: a.m./p.m.
         :dayperiod-narrow: a.m./p.m.
         :dayperiod-short: a.m./p.m.
-        :era: Ré
+        :era: ré
         :era-narrow: ré
         :era-short: ré
         :hour: Uair
@@ -146,16 +147,16 @@
         :minute: Nóiméad
         :minute-narrow: "n"
         :minute-short: nóim.
-        :month: Mí
+        :month: mí
         :month-narrow: mí
         :month-short: mí
-        :quarter: Ráithe
+        :quarter: ráithe
         :quarter-narrow: ráithe
         :quarter-short: ráithe
         :second: Soicind
         :second-narrow: s
         :second-short: soic.
-        :week: Seachtain
+        :week: seachtain
         :week-narrow: scht.
         :week-short: scht.
         :weekOfMonth: "Seachtain den mhí"
@@ -167,7 +168,7 @@
         :weekdayOfMonth: "Lá oibre den mhí"
         :weekdayOfMonth-narrow: "lá oib. den mhí"
         :weekdayOfMonth-short: "lá oib. den mhí"
-        :year: Bliain
+        :year: bliain
         :year-narrow: bl.
         :year-short: bl.
         :zone: "Crios Ama"
@@ -287,12 +288,16 @@
           :abbreviated: 
             :am: r.n.
             :pm: i.n.
-          :narrow: :calendars.gregorian.dayPeriods.format.abbreviated
+          :narrow: 
+            :am: AM
+            :pm: PM
           :wide: 
             :am: r.n.
             :pm: i.n.
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.dayPeriods.format.abbreviated
+          :abbreviated: 
+            :am: AM
+            :pm: PM
           :narrow: 
             :am: r.n.
             :pm: i.n.

@@ -2,9 +2,9 @@
 :km: 
   :units: 
     :durationUnit: 
-      :hm: "ម៉:នន"
-      :hms: "ម៉:នន:វិវិ"
-      :ms: "ម៉:វិវិ"
+      :hm: "h:mm"
+      :hms: "h:mm:ss"
+      :ms: "m:ss"
     :unitLength: 
       :long: 
         :acceleration-g-force: 
@@ -41,6 +41,8 @@
           :other: "{0} ម៉ាយការ៉េ"
         :area-square-yard: 
           :other: "{0} យ៉ាត​ការ៉េ"
+        :concentr-item: 
+          :other: "{0} របស់"
         :concentr-karat: 
           :other: "{0} ការ៉ាត់"
         :concentr-milligram-ofglucose-per-deciliter: 
@@ -133,6 +135,8 @@
           :other: "{0} គីឡូវ៉ាត់​ម៉ោង"
         :energy-therm-us: 
           :other: "{0} ឯកតាកម្ដៅអាមេរិក"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :other: "{0} គីឡូវ៉ាត់ម៉ោងក្នុង 100 គីឡូម៉ែត្រ"
         :frequency-gigahertz: 
           :other: "{0} ជីកាហឺត"
         :frequency-hertz: 
@@ -354,10 +358,18 @@
           :other: "{0} ម²."
         :area-square-mile: 
           :other: "{0} ម៉²."
+        :concentr-item: 
+          :other: "{0} របស់"
+        :concentr-millimole-per-liter: 
+          :other: "{0} ម.ម៉ូល/លី"
+        :concentr-mole: 
+          :other: "{0} ម៉ូល"
         :concentr-percent: 
           :other: "{0}%"
         :consumption-liter-per-100-kilometer: 
           :other: "{0}L/100km"
+        :consumption-liter-per-kilometer: 
+          :other: "{0} លី/គម"
         :duration-day: 
           :other: "{0} ថ្ងៃ"
         :duration-hour: 
@@ -380,7 +392,6 @@
           :other: "{0}′"
         :length-inch: 
           :other: "{0}″"
-        :length-kilometer: {}
         :length-light-year: 
           :other: "{0} ឆ្នាំ​ពន្លឺ"
         :length-meter: 
@@ -407,12 +418,16 @@
           :other: "{0} គ.វ."
         :power-watt: 
           :other: "{0} វ."
+        :pressure-bar: 
+          :other: "{0} បារ"
         :pressure-hectopascal: 
           :other: "{0} hPa"
         :pressure-inch-ofhg: 
           :other: "{0}\" Hg"
         :pressure-millibar: 
-          :other: "{0} ម.ប."
+          :other: "{0}mb"
+        :pressure-millimeter-ofhg: 
+          :other: "{0}mmHg"
         :speed-kilometer-per-hour: 
           :other: "{0} kph"
         :speed-meter-per-second: 
@@ -464,12 +479,14 @@
           :other: "{0} mi²"
         :area-square-yard: 
           :other: "{0} yd²"
+        :concentr-item: 
+          :other: "{0} របស់"
         :concentr-karat: 
           :other: "{0} kt"
         :concentr-milligram-ofglucose-per-deciliter: 
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
-          :other: "{0} mmol/L"
+          :other: "{0} ម.ម៉ូល/លី"
         :concentr-mole: 
           :other: "{0} mol"
         :concentr-percent: 
@@ -483,7 +500,7 @@
         :consumption-liter-per-100-kilometer: 
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
-          :other: "{0} L/km"
+          :other: "{0} លី/គម"
         :consumption-mile-per-gallon: 
           :other: "{0} mpg"
         :consumption-mile-per-gallon-imperial: 
@@ -560,6 +577,8 @@
           :other: "{0} kWh"
         :energy-therm-us: 
           :other: "{0} US therm"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :other: "{0} kWh/100km"
         :force-newton: 
           :other: "{0} N"
         :force-pound-force: 

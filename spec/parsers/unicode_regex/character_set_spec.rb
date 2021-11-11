@@ -25,7 +25,8 @@ describe TwitterCldr::Parsers::UnicodeRegexParser::CharacterSet do
       char_set = described_class.new('Katakana')
       expect(char_set.to_set.to_a(true)).to eq([
         12449..12538, 12541..12543, 12784..12799, 13008..13054, 13056..13143,
-        65382..65391, 65393..65437, 110592, 110948..110951
+        65382..65391, 65393..65437, 110576..110579, 110581..110587, 110589..110590,
+        110592, 110880..110882, 110948..110951
       ])
     end
 

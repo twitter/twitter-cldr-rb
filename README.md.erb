@@ -92,7 +92,7 @@ TwitterCLDR supports formatting numbers with an attached unit, for example "12 d
 
 ```ruby
 12.localize.to_unit.length_mile  # <%= assert(12.localize.to_unit.length_mile, "12 miles").inspect %>
-12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 миль").inspect %>
+12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 милях").inspect %>
 ```
 Units support a few different forms, long, short, and narrow:
 
@@ -177,8 +177,8 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # <%= assert(datetime.localize(:es).to_full_s, "viernes, 14 de febrero de 2014, 12:20:05 (tiempo universal coordinado)").inspect %>
 DateTime.now.localize(:es).to_long_s               # <%= assert(datetime.localize(:es).to_long_s, "14 de febrero de 2014, 12:20:05 UTC").inspect %>
-DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 feb 2014 12:20:05").inspect %>
-DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14 12:20").inspect %>
+DateTime.now.localize(:es).to_medium_s             # <%= assert(datetime.localize(:es).to_medium_s, "14 feb 2014, 12:20:05").inspect %>
+DateTime.now.localize(:es).to_short_s              # <%= assert(datetime.localize(:es).to_short_s, "14/2/14, 12:20").inspect %>
 
 Time.now.localize(:es).to_full_s                   # <%= assert(time.localize(:es).to_full_s, "12:20:05 (tiempo universal coordinado)").inspect %>
 Time.now.localize(:es).to_long_s                   # <%= assert(time.localize(:es).to_long_s, "12:20:05 UTC").inspect %>
@@ -195,7 +195,7 @@ The default CLDR data set only includes 4 date formats, full, long, medium, and 
 
 Behind the scenes, these convenience methods are creating instances of `LocalizedDate`, `LocalizedTime`, and `LocalizedDateTime`.  You can do the same thing if you're feeling adventurous:
 
-<% assert(TwitterCldr::Localized::LocalizedDateTime.new(datetime, :es).to_short_s, "14/2/14 12:20") %>
+<% assert(TwitterCldr::Localized::LocalizedDateTime.new(datetime, :es).to_short_s, "14/2/14, 12:20") %>
 
 ```ruby
 dt = TwitterCldr::Localized::LocalizedDateTime.new(DateTime.now, :es)
@@ -370,7 +370,7 @@ Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::P
 TwitterCldr::Formatters::Plurals::Rules.all                # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all, [:one, :other]).inspect %>
 
 # get all rules for a specific locale
-TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:es), [:one, :other]).inspect %>
+TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:es), [:one, :many, :other]).inspect %>
 TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # <%= assert(TwitterCldr::Formatters::Plurals::Rules.all_for(:ru), [:one, :few, :many, :other]).inspect %>
 
 # get the rule for a number in a specific locale

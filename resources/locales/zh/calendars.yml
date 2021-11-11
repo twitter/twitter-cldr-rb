@@ -18,6 +18,7 @@
         :GyMMM: Gy年M月
         :GyMMMEd: Gy年M月d日E
         :GyMMMd: Gy年M月d日
+        :GyMd: "GGGGG y-MM-dd"
         :H: H时
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -42,6 +43,7 @@
         ? !ruby/symbol "y"
         : y年
         :yM: y年M月
+        :yMEEEEd: y年M月d日EEEE
         :yMEd: y/M/dE
         :yMM: y年M月
         :yMMM: y年M月
@@ -196,13 +198,13 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "zzzz ah:mm:ss"
+            :pattern: "zzzz HH:mm:ss"
           :long: 
-            :pattern: "z ah:mm:ss"
+            :pattern: "z HH:mm:ss"
           :medium: 
-            :pattern: "ah:mm:ss"
+            :pattern: "HH:mm:ss"
           :short: 
-            :pattern: "ah:mm"
+            :pattern: "HH:mm"
       :months: 
         :format: 
           :abbreviated: 

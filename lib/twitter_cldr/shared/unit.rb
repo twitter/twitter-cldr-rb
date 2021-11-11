@@ -93,10 +93,8 @@ module TwitterCldr
 
       def format(unit_type, options = {})
         form = options.fetch(:form, DEFAULT_FORM)
-
-        if variant = variant_for(form, unit_type)
-          variant.sub('{0}', formatted_value)
-        end
+        variant = variant_for(form, unit_type) || variant_for(DEFAULT_FORM, unit_type)
+        variant.sub('{0}', formatted_value) if variant
       end
 
       def formatted_value

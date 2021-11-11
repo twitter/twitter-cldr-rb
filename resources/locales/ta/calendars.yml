@@ -18,6 +18,7 @@
         :GyMMM: "G y MMM"
         :GyMMMEd: "G y MMM d, E"
         :GyMMMd: "G y MMM d"
+        :GyMd: "GGGGG y-MM-dd"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -186,9 +187,9 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} ’அன்று’ {{time}}"
+            :pattern: "{{date}} அன்று {{time}}"
           :long: 
-            :pattern: "{{date}} ’அன்று’ {{time}}"
+            :pattern: "{{date}} அன்று {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 

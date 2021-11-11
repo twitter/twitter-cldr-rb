@@ -15,18 +15,6 @@ describe TwitterCldr::Localized::LocalizedTime do
       time.localize(:th).to_medium_s
       time.localize(:th).to_short_s
     end
-
-    it "should stringify with buddhist calendar" do
-      # Ensure that buddhist calendar data is present in th locale.
-      expect(TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist]).not_to(
-        be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
-      )
-
-      #time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      time.localize(:th, calendar_type: :buddhist).to_long_s
-      time.localize(:th, calendar_type: :buddhist).to_medium_s
-      time.localize(:th, calendar_type: :buddhist).to_short_s
-    end
   end
 
   describe "#ago" do

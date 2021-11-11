@@ -12,8 +12,13 @@
     :region_formats: 
       :daylight: "{0} (udako ordua)"
       :generic: "{0} aldeko ordua"
-      :standard: "{0}(e)ko ordu estandarra"
+      :standard: "{0} aldeko ordu estandarra"
   :metazones: 
+    :Acre: 
+      :long: 
+        :daylight: "Acreko udako ordua"
+        :generic: "Acreko ordua"
+        :standard: "Acreko ordu estandarra"
     :Afghanistan: 
       :long: 
         :standard: "Afganistango ordua"
@@ -36,6 +41,15 @@
         :daylight: "Alaskako udako ordua"
         :generic: "Alaskako ordua"
         :standard: "Alaskako ordu estandarra"
+      :short: 
+        :daylight: AKDT
+        :generic: AKT
+        :standard: AKST
+    :Almaty: 
+      :long: 
+        :daylight: "Almatyko udako ordua"
+        :generic: "Almatyko ordua"
+        :standard: "Almatyko ordu estandarra"
     :Amazon: 
       :long: 
         :daylight: "Amazoniako udako ordua"
@@ -46,21 +60,37 @@
         :daylight: "Ipar Amerikako erdialdeko udako ordua"
         :generic: "Ipar Amerikako erdialdeko ordua"
         :standard: "Ipar Amerikako erdialdeko ordu estandarra"
+      :short: 
+        :daylight: CDT
+        :generic: CT
+        :standard: CST
     :America_Eastern: 
       :long: 
         :daylight: "Ipar Amerikako ekialdeko udako ordua"
         :generic: "Ipar Amerikako ekialdeko ordua"
         :standard: "Ipar Amerikako ekialdeko ordu estandarra"
+      :short: 
+        :daylight: EDT
+        :generic: ET
+        :standard: EST
     :America_Mountain: 
       :long: 
         :daylight: "Ipar Amerikako mendialdeko udako ordua"
         :generic: "Ipar Amerikako mendialdeko ordua"
         :standard: "Ipar Amerikako mendialdeko ordu estandarra"
+      :short: 
+        :daylight: MDT
+        :generic: MT
+        :standard: MST
     :America_Pacific: 
       :long: 
         :daylight: "Ipar Amerikako Pazifikoko udako ordua"
         :generic: "Ipar Amerikako Pazifikoko ordua"
         :standard: "Ipar Amerikako Pazifikoko ordu estandarra"
+      :short: 
+        :daylight: PDT
+        :generic: PT
+        :standard: PST
     :Anadyr: 
       :long: 
         :daylight: "Anadyrreko udako ordua"
@@ -71,6 +101,16 @@
         :daylight: "Apiako udako ordua"
         :generic: "Apiako ordua"
         :standard: "Apiako ordu estandarra"
+    :Aqtau: 
+      :long: 
+        :daylight: "Aktauko udako ordua"
+        :generic: "Aktauko ordua"
+        :standard: "Aktauko ordu estandarra"
+    :Aqtobe: 
+      :long: 
+        :daylight: "Aktobeko udako ordua"
+        :generic: "Aktobeko ordua"
+        :standard: "Aktobeko ordu estandarra"
     :Arabian: 
       :long: 
         :daylight: "Arabiako udako ordua"
@@ -96,6 +136,10 @@
         :daylight: "Ipar Amerikako Atlantikoko udako ordua"
         :generic: "Ipar Amerikako Atlantikoko ordua"
         :standard: "Ipar Amerikako Atlantikoko ordu estandarra"
+      :short: 
+        :daylight: ADT
+        :generic: AT
+        :standard: AST
     :Australia_Central: 
       :long: 
         :daylight: "Australiako erdialdeko udako ordua"
@@ -150,6 +194,9 @@
         :daylight: "Cabo Verdeko udako ordua"
         :generic: "Cabo Verdeko ordua"
         :standard: "Cabo Verdeko ordu estandarra"
+    :Casey: 
+      :long: 
+        :standard: "Caseyko ordua"
     :Chamorro: 
       :long: 
         :standard: "Chamorroko ordu estandarra"
@@ -286,6 +333,9 @@
         :daylight: "Groenlandiako mendebaldeko udako ordua"
         :generic: "Groenlandiako mendebaldeko ordua"
         :standard: "Groenlandiako mendebaldeko ordu estandarra"
+    :Guam: 
+      :long: 
+        :standard: "Guameko ordu estandarra"
     :Gulf: 
       :long: 
         :standard: "Golkoko ordu estandarra"
@@ -297,6 +347,10 @@
         :daylight: "Hawaii-Aleutiar uharteetako udako ordua"
         :generic: "Hawaii-Aleutiar uharteetako ordua"
         :standard: "Hawaii-Aleutiar uharteetako ordu estandarra"
+      :short: 
+        :daylight: HADT
+        :generic: HAT
+        :standard: HAST
     :Hong_Kong: 
       :long: 
         :daylight: "Hong Kongo udako ordua"
@@ -465,6 +519,9 @@
         :daylight: "Fernando de Noronhako udako ordua"
         :generic: "Fernando de Noronhako ordua"
         :standard: "Fernando de Noronhako ordu estandarra"
+    :North_Mariana: 
+      :long: 
+        :standard: "Ipar Mariana uharteetako ordua"
     :Novosibirsk: 
       :long: 
         :daylight: "Novosibirskeko udako ordua"
@@ -518,6 +575,11 @@
     :Pyongyang: 
       :long: 
         :standard: "Piongiangeko ordua"
+    :Qyzylorda: 
+      :long: 
+        :daylight: "Kyzylordako udako ordua"
+        :generic: "Kyzylordako ordua"
+        :standard: "Kyzylordako ordu estandarra"
     :Reunion: 
       :long: 
         :standard: "Reunioneko ordua"
@@ -634,6 +696,9 @@
         :daylight: "Jekaterinburgeko udako ordua"
         :generic: "Jekaterinburgeko ordua"
         :standard: "Jekaterinburgeko ordu estandarra"
+    :Yukon: 
+      :long: 
+        :standard: "Yukongo ordua"
   :timezones: 
     :Africa/Abidjan: 
       :city: Abidjan
@@ -1452,6 +1517,10 @@
       :city: Guam
     :Pacific/Honolulu: 
       :city: Honolulu
+      :short: 
+        :daylight: HDT
+        :generic: HST
+        :standard: HST
     :Pacific/Johnston: 
       :city: Johnston
     :Pacific/Kiritimati: 

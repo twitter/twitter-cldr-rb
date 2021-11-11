@@ -16,18 +16,19 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
-        :GyMMMEd: "E, d MMM y G"
+        :GyMMMEd: "E d MMM y G"
         :GyMMMd: "d MMM y G"
+        :GyMd: "d/M/y GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E, d/M"
+        :MEd: "E d/M"
         :MMM: MMM
-        :MMMEd: "E, d MMM"
-        :MMMMEd: "E, d MMMM"
+        :MMMEd: "E d MMM"
+        :MMMMEd: "E d MMMM"
         :MMMMW: "εβδομάδα W του MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
@@ -42,14 +43,14 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M/y
-        :yMEd: "E, d/M/y"
+        :yMEd: "E d/M/y"
         :yMMM: "MMM y"
-        :yMMMEd: "E, d MMM y"
+        :yMMMEd: "E d MMM y"
         :yMMMM: "LLLL y"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
-        :yQQQ: "y QQQ"
-        :yQQQQ: "y QQQQ"
+        :yQQQ: "QQQ y"
+        :yQQQQ: "QQQQ y"
         :yw: "εβδομάδα w του Y"
       :days: 
         :format: 
@@ -176,7 +177,7 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d MMMM y"
+            :pattern: "EEEE d MMMM y"
           :long: 
             :pattern: "d MMMM y"
           :medium: 

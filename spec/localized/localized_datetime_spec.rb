@@ -27,18 +27,6 @@ describe TwitterCldr::Localized::LocalizedDateTime do
       date_time.localize(:th).to_short_s
     end
 
-    it "should stringify with buddhist calendar" do
-      # Ensure that buddhist calendar data is present in th locale.
-      expect(TwitterCldr.get_locale_resource(:th, :calendars)[:th][:calendars][:buddhist]).not_to(
-        be_nil, 'buddhist calendar is missing for :th locale (check resources/locales/th/calendars.yml)'
-      )
-
-      #date_time.localize(:th, :calendar_type => :buddhist).to_full_s # It doesn't support era
-      date_time.localize(:th, calendar_type: :buddhist).to_long_s
-      date_time.localize(:th, calendar_type: :buddhist).to_medium_s
-      date_time.localize(:th, calendar_type: :buddhist).to_short_s
-    end
-
     it "should remove quotes around plaintext tokens" do
       # notice there are no single quotes around the "at"
       expect(date_time.localize(:en).to_long_s).to eq("September 20, 1987 at 10:05:00 PM UTC")
@@ -90,9 +78,7 @@ describe TwitterCldr::Localized::LocalizedDateTime do
       TwitterCldr.supported_locales.each do |locale|
         data_reader = TwitterCldr::DataReaders::CalendarDataReader.new(locale)
         data_reader.additional_format_selector.patterns.each do |pattern|
-          expect do
-            date_time.localize(locale).to_additional_s(pattern.to_s)
-          end.to_not raise_error
+          expect { date_time.localize(locale).to_additional_s(pattern.to_s) }.to_not raise_error
         end
       end
     end

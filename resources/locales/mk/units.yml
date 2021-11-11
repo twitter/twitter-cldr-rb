@@ -58,6 +58,9 @@
         :area-square-yard: 
           :one: "{0} квадратен јард"
           :other: "{0} квадратни јарди"
+        :concentr-item: 
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-karat: 
           :one: "{0} карат"
           :other: "{0} карати"
@@ -202,6 +205,9 @@
         :energy-therm-us: 
           :one: "{0} US терм"
           :other: "{0} US терми"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} киловат-час на 100 километри"
+          :other: "{0} киловат-часа на 100 километри"
         :force-newton: 
           :one: "{0} њутн"
           :other: "{0} њутни"
@@ -524,62 +530,36 @@
           :one: "{0} кафена лажица"
           :other: "{0} кафени лажици"
       :narrow: 
-        :acceleration-g-force: {}
-        :acceleration-meter-per-square-second: 
-          :one: "{0} м/с²"
-          :other: "{0} м/с²"
         :angle-arc-minute: 
           :one: "{0}′"
           :other: "{0}′"
         :angle-arc-second: 
           :one: "{0}″"
           :other: "{0}″"
-        :angle-degree: {}
-        :angle-radian: 
-          :one: "{0} рад"
-          :other: "{0} рад"
-        :area-acre: 
-          :one: "{0} акр"
-          :other: "{0} акри"
-        :area-hectare: 
-          :one: "{0} ха"
-          :other: "{0} ха"
         :area-square-foot: 
-          :one: "{0} стапка²"
-          :other: "{0} стапки²"
-        :area-square-inch: 
-          :one: "{0} ин²"
-          :other: "{0} ин²"
-        :area-square-kilometer: 
-          :one: "{0} км²"
-          :other: "{0} км²"
-        :area-square-meter: 
-          :one: "{0} м²"
-          :other: "{0} м²"
+          :one: "{0} ft²"
+          :other: "{0} ft²"
         :area-square-mile: 
-          :one: "{0} ми²"
-          :other: "{0} ми²"
-        :area-square-yard: 
-          :one: "{0} јд²"
-          :other: "{0} јд²"
-        :concentr-karat: 
-          :one: "{0} кт"
-          :other: "{0} кт"
+          :one: "{0} mi²"
+          :other: "{0} mi²"
+        :concentr-item: 
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-percent: 
           :one: "{0} %"
           :other: "{0} %"
+        :concentr-permyriad: 
+          :one: "{0} ‱"
+          :other: "{0} ‱"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} L/100km"
           :other: "{0} L/100km"
-        :consumption-liter-per-kilometer: 
-          :one: "{0} л/км"
-          :other: "{0} л/км"
-        :consumption-mile-per-gallon: 
-          :one: "{0} ми/гал"
-          :other: "{0} ми/гал"
-        :digital-bit: 
-          :one: "{0} бит"
-          :other: "{0} битови"
+        :consumption-mile-per-gallon-imperial: 
+          :one: "{0} m/gUK"
+          :other: "{0} m/gUK"
+        :digital-byte: 
+          :one: "{0} B"
+          :other: "{0} B"
         :digital-gigabit: 
           :one: "{0} Gb"
           :other: "{0} Gb"
@@ -637,202 +617,57 @@
         :duration-year: 
           :one: "{0} г."
           :other: "{0} г."
-        :length-astronomical-unit: 
-          :one: "{0} ае"
-          :other: "{0} ае"
-        :length-centimeter: 
-          :one: "{0}cm"
-          :other: "{0}cm"
-        :length-decimeter: 
-          :one: "{0} дм"
-          :other: "{0} дм"
-        :length-fathom: 
-          :one: "{0} фм"
-          :other: "{0} фм"
-        :length-foot: 
-          :one: "{0}′"
-          :other: "{0}′"
-        :length-furlong: 
-          :one: "{0} фур"
-          :other: "{0} фур"
-        :length-inch: 
-          :one: "{0}″"
-          :other: "{0}″"
-        :length-kilometer: 
-          :one: "{0}km"
-          :other: "{0}km"
-        :length-light-year: 
-          :one: "{0} сг"
-          :other: "{0} сг"
-        :length-meter: 
-          :one: "{0}m"
-          :other: "{0}m"
-        :length-micrometer: 
-          :one: "{0} μм"
-          :other: "{0} μм"
-        :length-mile: 
-          :one: "{0} ми"
-          :other: "{0} ми"
-        :length-mile-scandinavian: 
-          :one: "{0} сми"
-          :other: "{0} сми"
-        :length-millimeter: 
-          :one: "{0}mm"
-          :other: "{0}mm"
-        :length-nanometer: 
-          :one: "{0} нм"
-          :other: "{0} нм"
-        :length-nautical-mile: 
-          :one: "{0} нми"
-          :other: "{0} нми"
-        :length-parsec: 
-          :one: "{0} пс"
-          :other: "{0} пс"
-        :length-picometer: 
-          :one: "{0} пм"
-          :other: "{0} пм"
-        :length-yard: 
-          :one: "{0} јд"
-          :other: "{0} јд"
-        :light-lux: 
-          :one: "{0} лк"
-          :other: "{0} лк"
-        :mass-carat: 
-          :one: "{0} кар."
-          :other: "{0} кар."
-        :mass-gram: 
-          :one: "{0}g"
-          :other: "{0}g"
-        :mass-kilogram: 
-          :one: "{0}kg"
-          :other: "{0}kg"
-        :mass-metric-ton: 
-          :one: "{0} т"
-          :other: "{0} т"
-        :mass-microgram: 
-          :one: "{0} μг"
-          :other: "{0} μг"
-        :mass-milligram: 
-          :one: "{0} мг"
-          :other: "{0} мг"
-        :mass-ounce: 
-          :one: "{0} унца"
-          :other: "{0} унци"
-        :mass-ounce-troy: {}
-        :mass-pound: 
-          :one: "{0} фунта"
-          :other: "{0} фунти"
-        :mass-stone: 
-          :one: "{0} стоун"
-          :other: "{0} стоуни"
-        :mass-ton: 
-          :one: "{0} тн"
-          :other: "{0} тн"
-        :power-horsepower: 
-          :one: "{0} кс"
-          :other: "{0} кс"
+        :energy-therm-us: 
+          :one: "{0} US therm"
+          :other: "{0} US therms"
+        :graphics-dot: 
+          :one: "{0} dot"
+          :other: "{0} dot"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} dpcm"
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :one: "{0} dpi"
+          :other: "{0} dpi"
+        :mass-grain: 
+          :one: "{0} gr"
+          :other: "{0} gr"
         :power-kilowatt: 
           :one: "{0} kW"
           :other: "{0} kW"
-        :power-watt: 
-          :one: "{0} ват"
-          :other: "{0} вати"
-        :pressure-hectopascal: 
-          :one: "{0} хПа"
-          :other: "{0} хПа"
         :pressure-inch-ofhg: 
           :one: "{0} inHg"
           :other: "{0} inHg"
-        :pressure-millibar: 
-          :one: "{0} мб"
-          :other: "{0} мб"
-        :pressure-millimeter-ofhg: 
-          :one: "{0}mm Hg"
-          :other: "{0}mm Hg"
-        :speed-kilometer-per-hour: 
-          :one: "{0}km/h"
-          :other: "{0}km/h"
-        :speed-knot: 
-          :one: "{0} ја"
-          :other: "{0} ја"
-        :speed-meter-per-second: 
-          :one: "{0} м/с"
-          :other: "{0} м/с"
-        :speed-mile-per-hour: 
-          :one: "{0} ми/ч"
-          :other: "{0} ми/ч"
-        :temperature-celsius: 
-          :one: "{0}°C"
-          :other: "{0}°C"
-        :temperature-fahrenheit: 
-          :one: "{0}°F"
-          :other: "{0}°F"
-        :temperature-kelvin: 
-          :one: "{0}°K"
-          :other: "{0}°K"
-        :volume-acre-foot: 
-          :one: "{0} ак ст"
-          :other: "{0} ак ст"
-        :volume-bushel: 
-          :one: "{0} бу"
-          :other: "{0} бу"
-        :volume-centiliter: 
-          :one: "{0} сл"
-          :other: "{0} сл"
-        :volume-cubic-centimeter: 
-          :one: "{0} см³"
-          :other: "{0} см³"
-        :volume-cubic-foot: 
-          :one: "{0} ст³"
-          :other: "{0} ст³"
-        :volume-cubic-inch: 
-          :one: "{0} ин³"
-          :other: "{0} ин³"
-        :volume-cubic-kilometer: 
-          :one: "{0} км³"
-          :other: "{0} км³"
-        :volume-cubic-meter: 
-          :one: "{0} м³"
-          :other: "{0} м³"
-        :volume-cubic-mile: 
-          :one: "{0} ми³"
-          :other: "{0} ми³"
-        :volume-cubic-yard: 
-          :one: "{0} јд³"
-          :other: "{0} јд³"
-        :volume-deciliter: 
-          :one: "{0} дл"
-          :other: "{0} дл"
+        :volume-dessert-spoon: 
+          :one: "{0} dsp"
+          :other: "{0} dsp"
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} dsp-Imp"
+          :other: "{0} dsp-Imp"
+        :volume-dram: 
+          :one: "{0} fl.dr."
+          :other: "{0} fl.dr."
+        :volume-drop: 
+          :one: "{0} dr"
+          :other: "{0} dr"
         :volume-fluid-ounce: 
           :one: "{0} fl oz"
           :other: "{0} fl oz"
-        :volume-gallon: 
-          :one: "{0} гал"
-          :other: "{0} гал"
-        :volume-hectoliter: 
-          :one: "{0} хл"
-          :other: "{0} хл"
-        :volume-liter: 
-          :one: "{0}L"
-          :other: "{0}L"
-        :volume-megaliter: 
-          :one: "{0} Мл"
-          :other: "{0} Мл"
-        :volume-milliliter: 
-          :one: "{0} мл"
-          :other: "{0} мл"
-        :volume-pint: 
-          :one: "{0} пт"
-          :other: "{0} пт"
+        :volume-fluid-ounce-imperial: 
+          :one: "{0} fl oz Im"
+          :other: "{0} fl oz Im"
+        :volume-gallon-imperial: 
+          :one: "{0} galIm"
+          :other: "{0} galIm"
+        :volume-pinch: 
+          :one: "{0} pn"
+          :other: "{0} pn"
         :volume-quart: 
           :one: "{0} qt"
           :other: "{0} qt"
-        :volume-tablespoon: 
-          :one: "{0}tbsp"
-          :other: "{0}tbsp"
-        :volume-teaspoon: 
-          :one: "{0}tsp"
-          :other: "{0}tsp"
+        :volume-quart-imperial: 
+          :one: "{0} qt-Imp."
+          :other: "{0} qt-Imp."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -885,6 +720,9 @@
         :area-square-yard: 
           :one: "{0} yd²"
           :other: "{0} yd²"
+        :concentr-item: 
+          :one: "{0} ставка"
+          :other: "{0} ставки"
         :concentr-karat: 
           :one: "{0} kt"
           :other: "{0} kt"
@@ -1029,6 +867,8 @@
         :energy-therm-us: 
           :one: "{0} US терм"
           :other: "{0} US терми"
+        :force-kilowatt-hour-per-100-kilometer: 
+          :other: "{0} kWh/100km"
         :force-newton: 
           :one: "{0} N"
           :other: "{0} N"
@@ -1047,9 +887,6 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
-        :graphics-dot: 
-          :one: "{0} px"
-          :other: "{0} тчк."
         :graphics-dot-per-centimeter: 
           :one: "{0} ppcm"
           :other: "{0} dpcm"

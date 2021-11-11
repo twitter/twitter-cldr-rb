@@ -99,7 +99,8 @@ module TwitterCldr
         node.xpath('unit').each_with_object({}) do |unit_node, result|
           unit_node = resolve_unit_node(node, unit_node)
           type = unit_node.attribute('type').value.to_sym
-          result[type] = unit(unit_node)
+          found_unit = unit(unit_node)
+          result[type] = found_unit unless found_unit.empty?
         end
       end
 

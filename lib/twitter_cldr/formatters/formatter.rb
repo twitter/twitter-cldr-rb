@@ -26,10 +26,6 @@ module TwitterCldr
         token.value.gsub(/'([^']+)'/, '\1') # remove single-quote escaping for "real" characters
       end
 
-      def format_composite(token, index, obj, options)
-        eval(format(token.tokens, obj)).to_s
-      end
-
     end
   end
 end

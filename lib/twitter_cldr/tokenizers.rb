@@ -7,7 +7,6 @@ module TwitterCldr
   module Tokenizers
     autoload :Base,                         'twitter_cldr/tokenizers/base'
     autoload :Token,                        'twitter_cldr/tokenizers/token'
-    autoload :CompositeToken,               'twitter_cldr/tokenizers/composite_token'
     autoload :Tokenizer,                    'twitter_cldr/tokenizers/tokenizer'
     autoload :TokenRecognizer,              'twitter_cldr/tokenizers/tokenizer'
     autoload :PatternTokenizer,             'twitter_cldr/tokenizers/pattern_tokenizer'

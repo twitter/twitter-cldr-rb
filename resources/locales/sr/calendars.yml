@@ -18,6 +18,7 @@
         :GyMMM: "MMM y. G"
         :GyMMMEd: "E, d. MMM y. G"
         :GyMMMd: "d. MMM y. G"
+        :GyMd: "d.MM.y. GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -139,7 +140,7 @@
         :dayOfYear: "дан у години"
         :dayOfYear-narrow: "дан у год."
         :dayOfYear-short: "дан у год."
-        :dayperiod: "пре подне/по подне"
+        :dayperiod: AM/PM
         :dayperiod-narrow: "пре подне/по подне"
         :dayperiod-short: "пре подне/по подне"
         :era: ера
@@ -152,16 +153,14 @@
         :minute-narrow: мин.
         :minute-short: мин.
         :month: месец
-        :month-narrow: м.
         :month-short: мес.
         :quarter: квартал
         :quarter-narrow: кв.
         :quarter-short: кв.
         :second: секунд
-        :second-narrow: с.
+        :second-narrow: с
         :second-short: сек.
         :week: недеља
-        :week-narrow: н.
         :week-short: нед.
         :weekOfMonth: "недеља у месецу"
         :weekOfMonth-narrow: "нед. у мес."
@@ -181,11 +180,11 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, dd. MMMM y."
+            :pattern: "EEEE, d. MMMM y."
           :long: 
-            :pattern: "dd. MMMM y."
+            :pattern: "d. MMMM y."
           :medium: 
-            :pattern: dd.MM.y.
+            :pattern: "d. M. y."
           :short: 
             :pattern: d.M.yy.
         :datetime: 
@@ -291,41 +290,41 @@
         :format: 
           :abbreviated: 
             :afternoon1: "по подне"
-            :am: "пре подне"
+            :am: AM
             :evening1: увече
             :midnight: поноћ
             :morning1: ујутро
             :night1: ноћу
             :noon: подне
-            :pm: "по подне"
+            :pm: PM
           :narrow: 
             :afternoon1: "по подне"
-            :am: a
+            :am: AM
             :evening1: увече
             :midnight: поноћ
             :morning1: ујутру
             :night1: ноћу
             :noon: подне
-            :pm: p
+            :pm: PM
           :wide: 
             :afternoon1: "по подне"
-            :am: "пре подне"
+            :am: AM
             :evening1: увече
             :midnight: поноћ
             :morning1: ујутро
             :night1: ноћу
             :noon: подне
-            :pm: "по подне"
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: поподне
-            :am: "пре подне"
+            :am: AM
             :evening1: вече
             :midnight: поноћ
             :morning1: јутро
             :night1: ноћ
             :noon: подне
-            :pm: "по подне"
+            :pm: PM
           :narrow: 
             :afternoon1: поподне
             :am: "пре подне"
@@ -337,20 +336,20 @@
             :pm: "по подне"
           :wide: 
             :afternoon1: поподне
-            :am: "пре подне"
+            :am: AM
             :evening1: вече
             :midnight: поноћ
             :morning1: јутро
             :night1: ноћ
             :noon: подне
-            :pm: "по подне"
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 
-            1: К1
-            2: К2
-            3: К3
-            4: К4
+            1: "1. кв."
+            2: "2. кв."
+            3: "3. кв."
+            4: "4. кв."
           :narrow: 
             1: "1."
             2: "2."
@@ -363,10 +362,10 @@
             4: "четврти квартал"
         :stand-alone: 
           :abbreviated: 
-            1: К1
-            2: К2
-            3: К3
-            4: К4
+            1: "1. кв."
+            2: "2. кв."
+            3: "3. кв."
+            4: "4. кв."
           :narrow: 
             1: "1."
             2: "2."

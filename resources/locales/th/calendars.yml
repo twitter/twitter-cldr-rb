@@ -1,18 +1,6 @@
 --- 
 :th: 
   :calendars: 
-    :buddhist: 
-      :formats: 
-        :date: 
-          :default: :calendars.buddhist.formats.date.medium
-          :full: 
-            :pattern: "EEEEที่ d MMMM G y"
-          :long: 
-            :pattern: "d MMMM พ.ศ. #{y + 543}"
-          :medium: 
-            :pattern: "d MMM #{y + 543}"
-          :short: 
-            :pattern: "d/M/#{y + 543}"
     :gregorian: 
       :additional_formats: 
         :Bh: "h B"
@@ -31,6 +19,7 @@
         :GyMMMEEEEd: "EEEEที่ d MMM G y"
         :GyMMMEd: "E d MMM G y"
         :GyMMMd: "d MMM G y"
+        :GyMd: "d/M/GGGGG y"
         :H: HH
         :Hm: "HH:mm น."
         :Hms: "HH:mm:ss"

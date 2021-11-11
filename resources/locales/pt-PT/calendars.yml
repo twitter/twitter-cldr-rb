@@ -18,6 +18,7 @@
         :GyMMM: "MMM 'de' y G"
         :GyMMMEd: "E, d 'de' MMM 'de' y G"
         :GyMMMd: "d 'de' MMM 'de' y G"
+        :GyMd: "d/M/y GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -107,7 +108,14 @@
             :thu: Q
             :tue: T
             :wed: Q
-          :short: :calendars.gregorian.days.format.short
+          :short: 
+            :fri: Fri
+            :mon: Mon
+            :sat: Sat
+            :sun: Sun
+            :thu: Thu
+            :tue: Tue
+            :wed: Wed
           :wide: 
             :fri: sexta-feira
             :mon: segunda-feira
@@ -241,7 +249,19 @@
             8: agosto
             9: setembro
         :stand-alone: 
-          :abbreviated: :calendars.gregorian.months.format.abbreviated
+          :abbreviated: 
+            1: M01
+            10: M10
+            11: M11
+            12: M12
+            2: M02
+            3: M03
+            4: M04
+            5: M05
+            6: M06
+            7: M07
+            8: M08
+            9: M09
           :narrow: 
             1: J
             10: O

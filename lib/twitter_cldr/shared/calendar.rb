@@ -141,24 +141,8 @@ module TwitterCldr
         cache_key = TwitterCldr::Utils.compute_cache_key([@locale] + path)
         calendar_cache.fetch(cache_key) do |key|
           data = TwitterCldr::Utils.traverse_hash(calendar_data, path)
-          redirect = parse_redirect(data)
-          calendar_cache[key] = if redirect
-            get_data(*redirect)
-          else
-            data
-          end
+          calendar_cache[key] = data
         end
-      end
-
-      def parse_redirect(data)
-        if data.is_a?(Symbol) && data.to_s =~ redirect_regexp
-          result = $1.split('.').map(&:to_sym)
-          result.map { |leg| REDIRECT_CONVERSIONS.fetch(leg, leg) }
-        end
-      end
-
-      def redirect_regexp
-        Regexp.new("^calendars\.#{calendar_type}\.(.*)$")
       end
 
       def resource

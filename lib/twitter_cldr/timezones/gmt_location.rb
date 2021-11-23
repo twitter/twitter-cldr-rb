@@ -11,7 +11,7 @@ module TwitterCldr
       DEFAULT_GMT_ZERO_FORMAT = 'GMT'.freeze
 
       def display_name_for(date, format = DEFAULT_FORMAT)
-        offset = tz.period_for_local(date).offset
+        offset = get_period_for_naming(date).offset
         offset_secs = offset.utc_offset + offset.std_offset
         return gmt_zero_format if offset_secs == 0
 

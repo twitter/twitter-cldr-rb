@@ -88,7 +88,7 @@ module TwitterCldr
       #
       def format_display_name(date, type, fmt)
         date_int = date.strftime('%s').to_i
-        period = tz.period_for_local(date)
+        period = get_period_for_naming(date)
 
         flavor = if type == :generic
           :generic

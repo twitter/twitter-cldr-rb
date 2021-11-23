@@ -268,12 +268,12 @@ describe 'Timezones' do
   end
 
   describe '#period_for_local' do
-    it 'handles an ambiguous time' do
+    it 'accepts a block to handle an ambiguous time' do
       tz = TwitterCldr::Timezones::Timezone.instance('America/New_York', :en)
       # Known ambiguous time
       date = Time.parse('2021-11-07 01:01:23 UTC')
 
-      expect { tz.period_for_local(date) }.to_not raise_error
+      expect { tz.period_for_local(date, &:first) }.to_not raise_error
     end
   end
 end

@@ -76,7 +76,7 @@ module TwitterCldr
       end
 
       def period_for_local(date)
-        tz.period_for_local(date)
+        tz.period_for_local(date, &:first)
       end
 
       def transitions_up_to(date)

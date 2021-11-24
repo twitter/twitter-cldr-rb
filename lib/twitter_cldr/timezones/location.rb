@@ -18,11 +18,7 @@ module TwitterCldr
       private
 
       def get_period_for_naming(date)
-        if date.utc?
-          tz.orig_tz.period_for_utc(date)
-        else
-          tz.period_for_local(date)
-        end
+        tz.orig_tz.period_for_utc(date.utc)
       end
     end
   end

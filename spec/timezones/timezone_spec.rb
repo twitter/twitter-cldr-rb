@@ -287,12 +287,14 @@ describe 'Timezones' do
   end
 
   describe 'handling ambiguous times with display_name_for' do
-    it 'correctly handles ambiguous UTC time', :aggregate_failures do
+    it 'correctly handles ambiguous times', :aggregate_failures do
       tz = TwitterCldr::Timezones::Timezone.instance('America/New_York', :en)
       # Known ambiguous times
+      date = Time.parse('2021-11-07 01:01:23 -0400')
       dst_date = Time.parse('2021-11-07 01:01:23 UTC')
       non_dst_date = Time.parse('2021-11-07 12:01:23 UTC')
 
+      expect(tz.display_name_for(date, :specific_long)).to eq 'Eastern Daylight Time'
       expect(tz.display_name_for(dst_date, :specific_long)).to eq 'Eastern Daylight Time'
       expect(tz.display_name_for(non_dst_date, :specific_long)).to eq 'Eastern Standard Time'
     end

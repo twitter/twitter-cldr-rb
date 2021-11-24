@@ -268,12 +268,33 @@ describe 'Timezones' do
   end
 
   describe '#period_for_local' do
-    it 'accepts a block to handle an ambiguous time' do
+    it 'accepts a block' do
       tz = TwitterCldr::Timezones::Timezone.instance('America/New_York', :en)
       # Known ambiguous time
       date = Time.parse('2021-11-07 01:01:23 UTC')
 
       expect { tz.period_for_local(date, &:first) }.to_not raise_error
+    end
+
+    it 'accepts a dst argument', :aggregate_failures do
+      tz = TwitterCldr::Timezones::Timezone.instance('America/New_York', :en)
+      # Known ambiguous time
+      date = Time.parse('2021-11-07 01:01:23 UTC')
+
+      expect(tz.period_for_local(date, false).dst?).to be false
+      expect(tz.period_for_local(date, true).dst?).to be true
+    end
+  end
+
+  describe 'handling ambiguous times with display_name_for' do
+    it 'correctly handles ambiguous UTC time', :aggregate_failures do
+      tz = TwitterCldr::Timezones::Timezone.instance('America/New_York', :en)
+      # Known ambiguous times
+      dst_date = Time.parse('2021-11-07 01:01:23 UTC')
+      non_dst_date = Time.parse('2021-11-07 12:01:23 UTC')
+
+      expect(tz.display_name_for(dst_date, :specific_long)).to eq 'Eastern Daylight Time'
+      expect(tz.display_name_for(non_dst_date, :specific_long)).to eq 'Eastern Standard Time'
     end
   end
 end

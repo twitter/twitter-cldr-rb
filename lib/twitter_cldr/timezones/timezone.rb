@@ -47,17 +47,17 @@ module TwitterCldr
         @locale = locale
       end
 
-      def display_name_for(date, format = :generic_location)
+      def display_name_for(date, format = :generic_location, dst = TZInfo::Timezone.default_dst, &block)
         case format
           when *GenericLocation::FORMATS
-            generic_location.display_name_for(date, format) ||
-              gmt_location.display_name_for(date, GENERIC_TO_GMT_MAP[format])
+            generic_location.display_name_for(date, format, dst, &block) ||
+              gmt_location.display_name_for(date, GENERIC_TO_GMT_MAP[format], dst, &block)
 
           when *GmtLocation::FORMATS
-            gmt_location.display_name_for(date, format)
+            gmt_location.display_name_for(date, format, dst, &block)
 
           when *Iso8601Location::FORMATS
-            iso_location.display_name_for(date, format)
+            iso_location.display_name_for(date, format, dst, &block)
 
           when :zone_id
             identifier
@@ -77,6 +77,10 @@ module TwitterCldr
 
       def period_for_local(*args, &block)
         tz.period_for_local(*args, &block)
+      end
+
+      def period_for_utc(time)
+        tz.period_for_utc(time)
       end
 
       def transitions_up_to(date)

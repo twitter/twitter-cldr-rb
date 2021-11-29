@@ -14,12 +14,6 @@ module TwitterCldr
       def resource
         @resource ||= TwitterCldr.get_locale_resource(tz.locale, :timezones)[tz.locale]
       end
-
-      private
-
-      def get_period_for_naming(date)
-        tz.orig_tz.period_for_utc(date.utc)
-      end
     end
   end
 end

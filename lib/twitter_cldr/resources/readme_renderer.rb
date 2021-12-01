@@ -4,7 +4,6 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'erb'
-require 'yaml'
 
 module TwitterCldr
   module Resources

@@ -21,18 +21,18 @@ module TwitterCldr
       Territories = TwitterCldr::Shared::Territories
       Utils = TwitterCldr::Utils
 
-      def display_name_for(date, fmt = :generic_location)
+      def display_name_for(date, fmt = :generic_location, dst = TZInfo::Timezone.default_dst, &block)
         case fmt
           when :generic_location
             generic_location_display_name
           when :generic_short
-            generic_short_display_name(date) || generic_location_display_name
+            generic_short_display_name(date, dst, &block) || generic_location_display_name
           when :generic_long
-            generic_long_display_name(date) || generic_location_display_name
+            generic_long_display_name(date, dst, &block) || generic_location_display_name
           when :specific_short
-            specific_short_display_name(date)
+            specific_short_display_name(date, dst, &block)
           when :specific_long
-            specific_long_display_name(date)
+            specific_long_display_name(date, dst, &block)
           when :exemplar_location
             exemplar_city
           else
@@ -58,20 +58,20 @@ module TwitterCldr
         end
       end
 
-      def generic_short_display_name(date)
-        format_display_name(date, :generic, :short)
+      def generic_short_display_name(date, dst = TZInfo::Timezone.default_dst, &block)
+        format_display_name(date, :generic, :short, dst, &block)
       end
 
-      def generic_long_display_name(date)
-        format_display_name(date, :generic, :long)
+      def generic_long_display_name(date, dst = TZInfo::Timezone.default_dst, &block)
+        format_display_name(date, :generic, :long, dst, &block)
       end
 
-      def specific_short_display_name(date)
-        format_display_name(date, :specific, :short)
+      def specific_short_display_name(date, dst = TZInfo::Timezone.default_dst, &block)
+        format_display_name(date, :specific, :short, dst, &block)
       end
 
-      def specific_long_display_name(date)
-        format_display_name(date, :specific, :long)
+      def specific_long_display_name(date, dst = TZInfo::Timezone.default_dst, &block)
+        format_display_name(date, :specific, :long, dst, &block)
       end
 
       # From ICU source, TimeZoneGenericNames.java, formatGenericNonLocationName():
@@ -86,9 +86,9 @@ module TwitterCldr
       # 4. If a generic non-location string is not available, use generic location
       #    string.
       #
-      def format_display_name(date, type, fmt)
+      def format_display_name(date, type, fmt, dst = TZInfo::Timezone.default_dst, &block)
         date_int = date.strftime('%s').to_i
-        period = tz.period_for_local(date)
+        period = tz.period_for_local(date, dst, &block)
 
         flavor = if type == :generic
           :generic

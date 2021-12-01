@@ -27,8 +27,8 @@ module TwitterCldr
         :iso_extended_local_full
       ].freeze
 
-      def display_name_for(date, fmt)
-        offset = tz.period_for_local(date).offset
+      def display_name_for(date, fmt, dst = TZInfo::Timezone.default_dst, &block)
+        offset = tz.period_for_local(date, dst, &block).offset
         offset_secs = offset.utc_offset + offset.std_offset
 
         case fmt

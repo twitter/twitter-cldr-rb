@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.9.0 (Nov 30th, 2021)
+* Forward arguments and block to TZInfo's `#period_for_local` (#243, @DRBragg)
+
 ### 6.8.0 (Nov 11th, 2021)
 * Upgrade to CLDR v40, ICU 70.1, and Unicode v14.0.0.
 * Remove hacky legacy support for the Thai Buddhist calendar.

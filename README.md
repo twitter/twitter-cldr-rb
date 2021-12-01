@@ -92,7 +92,7 @@ TwitterCLDR supports formatting numbers with an attached unit, for example "12 d
 
 ```ruby
 12.localize.to_unit.length_mile  # "12 miles"
-12.localize(:ru).to_unit.length_mile  # "12 миль"
+12.localize(:ru).to_unit.length_mile  # "12 милях"
 ```
 Units support a few different forms, long, short, and narrow:
 
@@ -177,8 +177,8 @@ For English (and other languages), you can also specify an ordinal spellout:
 ```ruby
 DateTime.now.localize(:es).to_full_s               # "viernes, 14 de febrero de 2014, 12:20:05 (tiempo universal coordinado)"
 DateTime.now.localize(:es).to_long_s               # "14 de febrero de 2014, 12:20:05 UTC"
-DateTime.now.localize(:es).to_medium_s             # "14 feb. 2014 12:20:05"
-DateTime.now.localize(:es).to_short_s              # "14/2/14 12:20"
+DateTime.now.localize(:es).to_medium_s             # "14 feb 2014, 12:20:05"
+DateTime.now.localize(:es).to_short_s              # "14/2/14, 12:20"
 
 Time.now.localize(:es).to_full_s                   # "12:20:05 (tiempo universal coordinado)"
 Time.now.localize(:es).to_long_s                   # "12:20:05 UTC"
@@ -187,7 +187,7 @@ Time.now.localize(:es).to_short_s                  # "12:20"
 
 DateTime.now.localize(:es).to_date.to_full_s       # "viernes, 14 de febrero de 2014"
 DateTime.now.localize(:es).to_date.to_long_s       # "14 de febrero de 2014"
-DateTime.now.localize(:es).to_date.to_medium_s     # "14 feb. 2014"
+DateTime.now.localize(:es).to_date.to_medium_s     # "14 feb 2014"
 DateTime.now.localize(:es).to_date.to_short_s      # "14/2/14"
 ```
 
@@ -239,6 +239,7 @@ It's important to know that, even though any given format may not be available a
 | GyMMM      | Feb 2014 CE            |
 | GyMMMEd    | Fri, Feb 14, 2014 CE   |
 | GyMMMd     | Feb 14, 2014 CE        |
+| GyMd       | 2/14/2014 Common Era   |
 | H          | 12                     |
 | Hm         | 12:20                  |
 | Hms        | 12:20:05               |
@@ -246,7 +247,7 @@ It's important to know that, even though any given format may not be available a
 | Hmv        | 12:20 GMT              |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
-| MMM        | Feb                    |
+| MMM        | M02                    |
 | MMMEd      | Fri, Feb 14            |
 | MMMMW      | week 3 of February     |
 | MMMMd      | February 14            |
@@ -366,6 +367,8 @@ tz.display_name_for(DateTime.new(2019, 11, 5), :generic_location)
 tz.display_name_for(DateTime.new(2019, 11, 5), :generic_long)
 ```
 
+`#display_name_for` also accepts arguments for resolving ambiguous times. See [TZInfo Documentation](https://www.rubydoc.info/gems/tzinfo/TZInfo/Timezone#period_for_local-instance_method) for more information.
+
 ### Calendar Data
 
 CLDR contains a trove of calendar data, much of which can be accessed. One example is names of months, days, years.
@@ -416,8 +419,8 @@ Behind the scenes, these convenience methods use the `TwitterCldr::Formatters::P
 TwitterCldr::Formatters::Plurals::Rules.all                # [:one, :other]
 
 # get all rules for a specific locale
-TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :other]
-TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:few, :many, :one, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:es)       # [:one, :many, :other]
+TwitterCldr::Formatters::Plurals::Rules.all_for(:ru)       # [:one, :few, :many, :other]
 
 # get the rule for a number in a specific locale
 TwitterCldr::Formatters::Plurals::Rules.rule_for(1, :ru)   # :one
@@ -498,21 +501,21 @@ In addition to translating language codes, TwitterCLDR provides access to the fu
 
 ```ruby
 # get all languages for the default locale
-TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Mandarin Chinese" ... }
+TwitterCldr::Shared::Languages.all                                                  # { ... :vi => "Vietnamese", :"zh-Hant" => "Traditional Chinese" ... }
 
 # get all languages for a specific locale
-TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino mandarín tradicional" ... }
+TwitterCldr::Shared::Languages.all_for(:es)                                         # { ... :vi => "vietnamita", :"zh-Hant" => "chino tradicional" ... }
 
 # get a language by its code for the default locale
-TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Mandarin Chinese"
+TwitterCldr::Shared::Languages.from_code(:'zh-Hant')                                # "Traditional Chinese"
 
 # get a language from its code for a specific locale
-TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # "chino mandarín tradicional"
+TwitterCldr::Shared::Languages.from_code_for_locale(:'zh-Hant', :es)                # "chino tradicional"
 
 # translate a language from one locale to another
 # signature: translate_language(lang, source_locale, destination_locale)
-TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Mandarin Chinese"
-TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino mandarín tradicional"
+TwitterCldr::Shared::Languages.translate_language("chino tradicional", :es, :en)    # "Traditional Chinese"
+TwitterCldr::Shared::Languages.translate_language("Traditional Chinese", :en, :es)  # "chino tradicional"
 ```
 
 ### World Territories
@@ -558,20 +561,20 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.valid?("94103")     # true
 postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
 postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
 postal_code.valid?("280 12")    # true
 
 # Canada
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
 postal_code.valid?("V3H 1Z7")   # true
 ```
 
@@ -579,7 +582,7 @@ Match all valid postal codes in a string with the `#find_all` method:
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.find_all("12345 23456")    # ["12345", "23456"]
 ```
 
@@ -592,14 +595,14 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ac, :ad, :af, :ai, :al, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 ```
 
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["29294", "22486-2369", "76632", "40800-9860", "06727-6194"]
+postal_code.sample(5)  # ["60668-3382", "36022", "22364-5670", "32142-1738", "32633-0502"]
 ```
 
 ### Phone Codes
@@ -1014,17 +1017,17 @@ The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
 ```ruby
-{ :hello => "world" }.localize.to_yaml
-["hello", "world"].localize.to_yaml
-"hello, world".localize.to_yaml
+{ :hello => "world" }.localize.to_yaml 
+["hello", "world"].localize.to_yaml 
+"hello, world".localize.to_yaml 
 ```
 
 Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-TwitterCldr::Shared::YAML.dump({ :hello => "world" })
-TwitterCldr::Shared::YAML.dump(["hello", "world"])
-TwitterCldr::Shared::YAML.dump("hello, world")
+TwitterCldr::Shared::YAML.dump({ :hello => "world" }) 
+TwitterCldr::Shared::YAML.dump(["hello", "world"]) 
+TwitterCldr::Shared::YAML.dump("hello, world") 
 ```
 
 ## Adding New Locales
@@ -1070,7 +1073,7 @@ TwitterCldr.locale    # will return :ru
 
 ## Compatibility
 
-TwitterCLDR is fully compatible with Ruby 1.9.3, 2.0.0, 2.2.0.
+TwitterCLDR is fully compatible with Ruby 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0.
 
 ## Requirements
 
@@ -1103,6 +1106,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2019 Twitter, Inc.
+Copyright 2021 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

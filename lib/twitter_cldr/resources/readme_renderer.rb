@@ -105,6 +105,7 @@ module TwitterCldr
         YAML
           .safe_load(File.read(".github/workflows/unit_tests.yml"))
           .dig("jobs", "build", "strategy", "matrix", "ruby-version")
+          .join(", ")
       end
     end
 

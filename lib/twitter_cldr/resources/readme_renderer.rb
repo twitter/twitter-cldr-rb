@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'erb'
+require 'yaml'
 
 module TwitterCldr
   module Resources
@@ -101,7 +102,9 @@ module TwitterCldr
       end
 
       def tested_ruby_versions
-        File.read(".github/workflows/unit_tests.yml").match(/ruby-version:\s\[(?<versions>(\d\.\d,?\s?)+)\]/)[:versions]
+        YAML
+          .safe_load(File.read(".github/workflows/unit_tests.yml"))
+          .dig("jobs", "build", "strategy", "matrix", "ruby-version")
       end
     end
 

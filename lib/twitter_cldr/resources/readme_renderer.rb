@@ -4,6 +4,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 require 'erb'
+require 'yaml'
 
 module TwitterCldr
   module Resources
@@ -79,8 +80,6 @@ module TwitterCldr
         end
       end
 
-      private
-
       def line_num_from_stack_trace(trace)
         trace[0].split(":")[1].to_i  # kind of a hack...
       end
@@ -100,6 +99,13 @@ module TwitterCldr
           ret[key] = val if keys.include?(key)
           ret
         end
+      end
+
+      def tested_ruby_versions
+        YAML
+          .safe_load(File.read(".github/workflows/unit_tests.yml"))
+          .dig("jobs", "build", "strategy", "matrix", "ruby-version")
+          .join(", ")
       end
     end
 

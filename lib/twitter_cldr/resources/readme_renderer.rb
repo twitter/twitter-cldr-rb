@@ -102,10 +102,8 @@ module TwitterCldr
       end
 
       def tested_ruby_versions
-        YAML
-          .safe_load(File.read(".github/workflows/unit_tests.yml"))
-          .dig("jobs", "build", "strategy", "matrix", "ruby-version")
-          .join(", ")
+        workflow = YAML.load_file(File.join(*%w(.github workflows unit_tests.yml)))
+        workflow["jobs"]["build"]["strategy"]["matrix"]["ruby-version"].join(", ")
       end
     end
 

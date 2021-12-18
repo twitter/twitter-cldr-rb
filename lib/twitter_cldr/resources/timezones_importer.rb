@@ -38,7 +38,7 @@ module TwitterCldr
       end
 
       def import_locale(locale)
-        data = requirements[:cldr].merge_each_ancestor(locale) do |ancestor_locale|
+        data = requirements[:cldr].build_data(locale) do |ancestor_locale|
           TimezoneData.new(ancestor_locale, requirements[:cldr]).to_h
         end
 

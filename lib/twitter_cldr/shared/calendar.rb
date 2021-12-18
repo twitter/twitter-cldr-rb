@@ -7,7 +7,7 @@ module TwitterCldr
   module Shared
     class Calendar
 
-      DEFAULT_FORMAT = :'stand-alone'
+      DEFAULT_FORMAT = :format
 
       NAMES_FORMS = [:wide, :narrow, :short, :abbreviated]
       ERAS_NAMES_FORMS = [:abbr, :name]

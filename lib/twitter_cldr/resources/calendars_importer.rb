@@ -36,11 +36,12 @@ module TwitterCldr
       end
 
       def import_locale(locale)
-        data = requirements[:cldr].merge_each_ancestor(locale) do |ancestor_locale|
+        data = requirements[:cldr].build_data(locale) do |ancestor_locale|
           GregorianCalendar.new(ancestor_locale, requirements[:cldr]).to_h
         end
 
         output_file = File.join(output_path, locale.to_s, 'calendars.yml')
+        FileUtils.mkdir_p(File.dirname(output_file))
 
         File.open(output_file, 'w:utf-8') do |output|
           output.write(
@@ -60,6 +61,8 @@ module TwitterCldr
 
 
     class GregorianCalendar
+      ERA_TAGS = ['eraNames', 'eraAbbr', 'eraNarrow'].freeze
+
       attr_reader :locale, :cldr_req
 
       def initialize(locale, cldr_req)
@@ -71,8 +74,8 @@ module TwitterCldr
         {
           calendars: {
             gregorian: {
-              months:   contexts('month'),
               days:     contexts('day'),
+              months:   contexts('month'),
               eras:     eras,
               quarters: contexts('quarter'),
               periods:  contexts('dayPeriod', group: "alt"),
@@ -91,42 +94,39 @@ module TwitterCldr
       private
 
       def calendar
-        @calendar ||= doc.xpath('//ldml/dates/calendars/calendar[@type="gregorian"]').first
+        @calendar ||= docset.xpath('//ldml/dates/calendars/calendar[@type="gregorian"]').first
       end
 
       def contexts(kind, options = {})
         return {} unless calendar
 
-        calendar.xpath("#{kind}s/#{kind}Context").each_with_object({}) do |node, result|
-          context = node.attribute('type').value.to_sym
+        dtd.find_attr("#{kind}Context", 'type').values.each_with_object({}) do |context, result|
+          node = calendar.xpath("#{kind}s/#{kind}Context[@type='#{context}']").first
+          next unless node
+
           result[context] = widths(node, kind, context, options)
         end
       end
 
       def widths(node, kind, context, options = {})
-        node.xpath("#{kind}Width").each_with_object({}) do |node, result|
-          width = node.attribute('type').value.to_sym
-          result[width] = elements(node, kind, context, width, options)
+        dtd.find_attr("#{kind}Width", 'type').values.each_with_object({}) do |width, result|
+          width_node = node.xpath("#{kind}Width[@type='#{width}']").first
+          next unless width_node
+
+          result[width] = elements(width_node, kind, context, width, options)
         end
       end
 
       def elements(node, kind, context, width, options = {})
-        aliased = node.xpath('alias').first
+        node.xpath(kind).each_with_object({}) do |node, result|
+          key = node.attribute('type').value
+          key = key =~ /^\d*$/ ? key.to_i : key.to_sym
 
-        if aliased
-          alias_path = "#{node.path}/#{aliased.attribute('path').value}"
-          elements(doc.xpath(alias_path).first, kind, context, width, options)
-        else
-          node.xpath(kind).each_with_object({}) do |node, result|
-            key = node.attribute('type').value
-            key = key =~ /^\d*$/ ? key.to_i : key.to_sym
-
-            if options[:group] && found_group = node.attribute(options[:group])
-              result[found_group.value] ||= {}
-              result[found_group.value][key] = node.content
-            else
-              result[key] = node.content
-            end
+          if options[:group] && found_group = node.attribute(options[:group])
+            result[found_group.value] ||= {}
+            result[found_group.value][key] = node.content
+          else
+            result[key] = node.content
           end
         end
       end
@@ -144,15 +144,14 @@ module TwitterCldr
       def eras
         return {} unless calendar
 
-        base_path = "#{calendar.path}/eras"
-        keys = doc.xpath("#{base_path}/*").map { |node| node.name }
+        ERA_TAGS.each_with_object({}) do |era_tag, result|
+          key  = era_tag.gsub('era', '').gsub(/s$/, '').downcase.to_sym
+          path = "eras/#{era_tag}"
 
-        keys.each_with_object({}) do |name, result|
-          path = "#{base_path}/#{name}/*"
-          key  = name.gsub('era', '').gsub(/s$/, '').downcase.to_sym
-          result[key] = doc.xpath(path).each_with_object({}) do |node, ret|
-            type = node.attribute('type').value.to_i rescue 0
-            ret[type] = node.content
+          result[key] = dtd.find_attr('era', 'type').values.each_with_object({}) do |type, ret|
+            node = calendar.xpath("#{path}/era[@type='#{type}' and @alt='variant']").first ||
+              calendar.xpath("#{path}/era[@type='#{type}']").first
+            ret[type] = node.content if node
             ret
           end
         end
@@ -161,22 +160,24 @@ module TwitterCldr
       def formats(type)
         return {} unless calendar
 
-        formats = calendar.xpath("#{type}Formats/#{type}FormatLength").each_with_object({}) do |node, result|
-          key = node.attribute('type').value.to_sym rescue :format
-          result[key] = pattern(node, type)
+        formats = dtd.find_attr("#{type}FormatLength", 'type').values.each_with_object({}) do |format_length, result|
+          node = calendar.xpath("#{type}Formats/#{type}FormatLength[@type='#{format_length}']").first
+          result[format_length] = pattern(node, type) if node
         end
+
         if default = default_format(type)
           formats = default.merge(formats)
         end
+
         formats
       end
 
       def additional_formats
         return {} unless calendar
 
-        calendar.xpath("dateTimeFormats/availableFormats/dateFormatItem").each_with_object({}) do |node, result|
-          key = node.attribute('id').value
-          result[key] = node.content
+        dtd.find_attr('dateFormatItem', 'id').values.each_with_object({}) do |id, result|
+          node = calendar.xpath("dateTimeFormats/availableFormats/dateFormatItem[@id='#{id}']").first
+          result[id] = node.content if node
         end
       end
 
@@ -196,22 +197,23 @@ module TwitterCldr
       end
 
       def fields
-        doc.xpath("//ldml/dates/fields/field").each_with_object({}) do |node, result|
-          key  = node.attribute('type').value.to_sym
+        dtd.find_attr('field', 'type').values.each_with_object({}) do |field, result|
+          node = docset.xpath("//ldml/dates/fields/field[@type='#{field}']").first
           name = node.xpath('displayName').first
-          result[key] = name.content if name
+          result[field] = name.content if name
         end
       end
 
-      def doc
-        @doc ||= begin
-          locale_fs = locale.to_s.gsub('-', '_')
-          Nokogiri.XML(File.read(File.join(cldr_main_path, "#{locale_fs}.xml")))
-        end
+      def docset
+        @docset ||= cldr_req.docset(cldr_main_path, locale)
       end
 
       def cldr_main_path
         @cldr_main_path ||= File.join(cldr_req.common_path, 'main')
+      end
+
+      def dtd
+        cldr_req.dtd
       end
 
     end

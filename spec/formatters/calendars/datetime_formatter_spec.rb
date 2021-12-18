@@ -444,8 +444,8 @@ describe TwitterCldr::Formatters::DateTimeFormatter do
     end
 
     it "pattern LLL" do
-      expect(@formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LLL', 3)).to eq("Jan")
-      expect(@formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LLL', 3)).to eq("Okt")
+      expect(@formatter.send(:month_stand_alone, Date.new(2010,  1,  1), 'LLL', 3)).to eq("Jan.")
+      expect(@formatter.send(:month_stand_alone, Date.new(2010,  10, 1), 'LLL', 3)).to eq("Okt.")
     end
 
     it "pattern LLLL" do

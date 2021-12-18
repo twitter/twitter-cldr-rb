@@ -49,7 +49,7 @@ module TwitterCldr
         # locales, we fill in any missing parts at the minor risk of being slightly wrong
         # when formatting lists. In my opinion, it's far better to produce a slightly wrong
         # string than to error or produce an entirely empty string.
-        data = requirements[:cldr].merge_each_ancestor(locale) do |ancestor_locale|
+        data = requirements[:cldr].build_data(locale) do |ancestor_locale|
           ListFormats.new(ancestor_locale, requirements[:cldr]).to_h
         end
 

@@ -25,14 +25,14 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E, d/M"
+        :MEd: "E, MM-dd"
         :MMM: LLL
         :MMMEd: "E, MMM d"
         :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
-        :MMdd: dd/MM
-        :Md: d/M
+        :MMdd: MM-dd
+        :Md: MM-dd
         :d: d
         :h: "h a"
         :hm: "h:mm a"
@@ -43,12 +43,12 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: MM/y
-        :yMEd: "E, d/M/y"
+        :yMEd: "E, y-MM-dd"
         :yMMM: "MMM y"
         :yMMMEd: "E, MMM d, y"
         :yMMMM: "MMMM y"
         :yMMMd: "MMM d, y"
-        :yMd: d/M/y
+        :yMd: y-MM-dd
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
         :yw: "'week' w 'of' Y"
@@ -131,6 +131,7 @@
           1: A
       :fields: 
         :day: day
+        :day-narrow: Day
         :day-short: day
         :dayOfYear: "day of year"
         :dayOfYear-narrow: "day of yr"
@@ -139,8 +140,10 @@
         :dayperiod-narrow: a.m./p.m.
         :dayperiod-short: a.m./p.m.
         :era: era
+        :era-narrow: Era
         :era-short: era
         :hour: hour
+        :hour-narrow: Hour
         :hour-short: hr
         :minute: minute
         :minute-narrow: min
@@ -152,6 +155,7 @@
         :quarter-narrow: qtr
         :quarter-short: qtr
         :second: second
+        :second-narrow: Second
         :second-short: sec
         :week: week
         :week-narrow: wk
@@ -166,8 +170,10 @@
         :weekdayOfMonth-narrow: "wkday of mo"
         :weekdayOfMonth-short: "wkday of mo"
         :year: year
+        :year-narrow: Year
         :year-short: yr
         :zone: "time zone"
+        :zone-narrow: Zone
         :zone-short: zone
       :formats: 
         :date: 

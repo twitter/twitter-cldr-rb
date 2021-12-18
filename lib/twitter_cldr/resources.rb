@@ -10,6 +10,10 @@ module TwitterCldr
     autoload :BidiTestImporter,               'twitter_cldr/resources/bidi_test_importer'
     autoload :CalendarsImporter,              'twitter_cldr/resources/calendars_importer'
     autoload :CasefolderClassGenerator,       'twitter_cldr/resources/casefolder_class_generator'
+    autoload :CldrDataBuilder,                'twitter_cldr/resources/cldr_data_builder'
+    autoload :CldrDocumentSet,                'twitter_cldr/resources/cldr_document_set'
+    autoload :CldrDTD,                        'twitter_cldr/resources/cldr_dtd'
+    autoload :CldrLocale,                     'twitter_cldr/resources/cldr_locale'
     autoload :CollationTestsImporter,         'twitter_cldr/resources/collation_tests_importer'
     autoload :CollationTriesImporter,         'twitter_cldr/resources/collation_tries_importer'
     autoload :CurrencySymbolsImporter,        'twitter_cldr/resources/currency_symbols_importer'
@@ -25,6 +29,7 @@ module TwitterCldr
     autoload :ParentLocalesImporter,          'twitter_cldr/resources/parent_locales_importer'
     autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :Properties,                     'twitter_cldr/resources/properties'
+    autoload :ResourceLoadError,              'twitter_cldr/resources/loader'
     autoload :SegmentDictionariesImporter,    'twitter_cldr/resources/segment_dictionaries_importer'
     autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
@@ -54,6 +59,8 @@ module TwitterCldr
           AliasesImporter,
           Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
+          ValidityDataImporter,
+          UnicodePropertyAliasesImporter,
           CalendarsImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
@@ -79,9 +86,7 @@ module TwitterCldr
           TransformTestsImporter,
           TransformsImporter,
           UnicodeDataImporter,
-          UnicodePropertyAliasesImporter,
-          UnitsImporter,
-          ValidityDataImporter,
+          UnitsImporter
         ]
       end
 

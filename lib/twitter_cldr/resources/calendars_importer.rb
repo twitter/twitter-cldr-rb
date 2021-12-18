@@ -41,6 +41,7 @@ module TwitterCldr
         end
 
         output_file = File.join(output_path, locale.to_s, 'calendars.yml')
+        FileUtils.mkdir_p(File.dirname(output_file))
 
         File.open(output_file, 'w:utf-8') do |output|
           output.write(

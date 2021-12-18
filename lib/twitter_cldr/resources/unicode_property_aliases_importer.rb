@@ -17,6 +17,8 @@ module TwitterCldr
       private
 
       def execute
+        FileUtils.mkdir_p(output_path)
+
         File.write(
           File.join(output_path, 'property_value_aliases.yml'),
           YAML.dump(parse_property_value_aliases)

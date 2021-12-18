@@ -29,6 +29,7 @@ module TwitterCldr
     autoload :ParentLocalesImporter,          'twitter_cldr/resources/parent_locales_importer'
     autoload :PostalCodesImporter,            'twitter_cldr/resources/postal_codes_importer'
     autoload :Properties,                     'twitter_cldr/resources/properties'
+    autoload :ResourceLoadError,              'twitter_cldr/resources/loader'
     autoload :SegmentDictionariesImporter,    'twitter_cldr/resources/segment_dictionaries_importer'
     autoload :SegmentRulesImporter,           'twitter_cldr/resources/segment_rules_importer'
     autoload :SegmentTestsImporter,           'twitter_cldr/resources/segment_tests_importer'
@@ -58,6 +59,8 @@ module TwitterCldr
           AliasesImporter,
           Bcp47TimezoneMetadataImporter,
           BidiTestImporter,
+          ValidityDataImporter,
+          UnicodePropertyAliasesImporter,
           CalendarsImporter,
           CasefolderClassGenerator,
           CollationTestsImporter,
@@ -83,9 +86,7 @@ module TwitterCldr
           TransformTestsImporter,
           TransformsImporter,
           UnicodeDataImporter,
-          UnicodePropertyAliasesImporter,
-          UnitsImporter,
-          ValidityDataImporter,
+          UnitsImporter
         ]
       end
 

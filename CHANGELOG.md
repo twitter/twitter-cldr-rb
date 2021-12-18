@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.10.0 (Dec 18th, 2021)
+* Fix calendars importer to better respect aliases that point to ancestor locale data.
+* Change calendar default format (see: https://github.com/twitter/twitter-cldr-rb/issues/245).
+
 ### 6.9.0 (Nov 30th, 2021)
 * Forward arguments and block to TZInfo's `#period_for_local` (#243, @DRBragg)
 

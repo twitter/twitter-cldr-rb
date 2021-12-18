@@ -56,7 +56,7 @@ describe TwitterCldr::Shared::Calendar do
       end
 
       it 'supports abbreviated names form' do
-        expect(calendar.months(:abbreviated)).to eq(%w[Jan Feb Mär Apr Mai Jun Jul Aug Sep Okt Nov Dez])
+        expect(calendar.months(:abbreviated)).to eq(%w[Jan. Feb. März Apr. Mai Juni Juli Aug. Sept. Okt. Nov. Dez.])
       end
 
       it 'returns nil if invalid names form is passed' do
@@ -109,13 +109,13 @@ describe TwitterCldr::Shared::Calendar do
 
       it 'supports abbreviated names form' do
         expect(calendar.weekdays(:abbreviated)).to eq({
-            sun: 'So',
-            mon: 'Mo',
-            tue: 'Di',
-            wed: 'Mi',
-            thu: 'Do',
-            fri: 'Fr',
-            sat: 'Sa'
+            sun: 'So.',
+            mon: 'Mo.',
+            tue: 'Di.',
+            wed: 'Mi.',
+            thu: 'Do.',
+            fri: 'Fr.',
+            sat: 'Sa.'
         })
       end
 

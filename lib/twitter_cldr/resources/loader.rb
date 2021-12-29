@@ -10,6 +10,16 @@ module TwitterCldr
 
     class Loader
 
+      class << self
+        def load_yaml(yaml, permitted_classes: [])
+          if RUBY_VERSION >= '2.6.0'
+            YAML.safe_load(yaml, permitted_classes: permitted_classes)
+          else
+            YAML.safe_load(yaml, permitted_classes)
+          end
+        end
+      end
+
       VALID_EXTS = %w(.yml .dump).freeze
       PERMITTED_YAML_CLASSES = [Range, Regexp, Symbol, Time].freeze
 
@@ -106,7 +116,7 @@ module TwitterCldr
       end
 
       def load_yaml_resource(path, merge_custom = true)
-        base = YAML.safe_load(read_resource_file(path), permitted_classes: PERMITTED_YAML_CLASSES)
+        base = load_yaml(read_resource_file(path), permitted_classes: PERMITTED_YAML_CLASSES)
         custom_path = File.join("custom", path)
 
         if merge_custom && custom_resource_exists?(custom_path) && !TwitterCldr.disable_custom_locale_resources
@@ -114,6 +124,10 @@ module TwitterCldr
         end
 
         base
+      end
+
+      def load_yaml(yaml, permitted_classes: [])
+        self.class.load_yaml(yaml, permitted_classes: permitted_classes)
       end
 
       def load_marshalled_resource(path, _merge_custom = :unused)

@@ -69,7 +69,9 @@ describe TwitterCldr::Localized::LocalizedArray do
   describe "#to_yaml" do
     it "should be able to successfully roundtrip the array" do
       arr = [:foo, "bar", Object.new]
-      result = YAML.safe_load(arr.localize.to_yaml, permitted_classes: [Object, Symbol])
+      result = TwitterCldr::Resources::Loader.load_yaml(
+        arr.localize.to_yaml, permitted_classes: [Object, Symbol]
+      )
 
       expect(result[0]).to eq(:foo)
       expect(result[1]).to eq("bar")

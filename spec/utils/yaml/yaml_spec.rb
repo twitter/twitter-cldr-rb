@@ -345,7 +345,6 @@ describe TwitterCldr::Utils do
         :foo,
         1..10,
         /abc\nxyz/i,
-        @struct,
         @klass,
       ]
       s.force_encoding("BINARY") if s.respond_to? :force_encoding
@@ -373,7 +372,7 @@ describe TwitterCldr::Utils do
             obj
         end
         y = TwitterCldr::Utils::YAML.dump(src, syck_compatible: true)
-        r = YAML.load(y)
+        r = YAML.load(y, permitted_classes: [Date, Moo, Range, Regexp, Symbol, Time])
         expect(src).to eq(r)
       end
     end
@@ -402,7 +401,7 @@ describe TwitterCldr::Utils do
         {1=>-2, -1=>@gif, '_foo'=>'bar', 'ぬお-ぬお'=>321},
       ].each do |src|
         y = TwitterCldr::Utils::YAML.dump(src, syck_compatible: true)
-        r = YAML.load(y)
+        r = YAML.load(y, permitted_classes: [Date, Range, Symbol, Time])
         expect(src).to eq(r)
       end
     end

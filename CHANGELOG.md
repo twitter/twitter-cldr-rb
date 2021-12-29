@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.11.0 (Dec 29th, 2021)
+* Add support for Ruby 3.1.
+  - Fixes issue with loading YAML files containing complex types like `Range`, `Time`, etc. Ruby 3.1 comes with Psych 4 which aliases `load` to `safe_load`. The `safe_load` method disallows parsing non-primitve types.
+
 ### 6.10.0 (Dec 18th, 2021)
 * Fix calendars importer to better respect aliases that point to ancestor locale data.
 * Change calendar default format (see: https://github.com/twitter/twitter-cldr-rb/issues/245).

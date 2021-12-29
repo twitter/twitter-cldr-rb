@@ -106,7 +106,7 @@ module TwitterCldr
       end
 
       def load_yaml_resource(path, merge_custom = true)
-        base = YAML.load(read_resource_file(path), permitted_classes: PERMITTED_YAML_CLASSES)
+        base = YAML.safe_load(read_resource_file(path), permitted_classes: PERMITTED_YAML_CLASSES)
         custom_path = File.join("custom", path)
 
         if merge_custom && custom_resource_exists?(custom_path) && !TwitterCldr.disable_custom_locale_resources

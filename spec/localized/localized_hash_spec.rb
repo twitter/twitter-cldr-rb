@@ -9,7 +9,7 @@ describe TwitterCldr::Localized::LocalizedHash do
   describe "#to_yaml" do
     it "should be able to successfully roundtrip the hash" do
       hash = { foo: "bar", "string_key" => Object.new }
-      result = YAML.load(hash.localize.to_yaml, permitted_classes: [Object, Symbol])
+      result = YAML.safe_load(hash.localize.to_yaml, permitted_classes: [Object, Symbol])
 
       expect(result).to include(:foo)
       expect(result).to include("string_key")

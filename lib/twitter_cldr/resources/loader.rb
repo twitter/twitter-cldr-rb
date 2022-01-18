@@ -3,6 +3,8 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
+require 'yaml'
+
 module TwitterCldr
   module Resources
 
@@ -12,7 +14,7 @@ module TwitterCldr
 
       class << self
         def load_yaml(yaml, permitted_classes: [])
-          if RUBY_VERSION >= '2.6.0'
+          if Psych::VERSION >= '4'
             YAML.safe_load(yaml, permitted_classes: permitted_classes)
           else
             YAML.safe_load(yaml, permitted_classes)

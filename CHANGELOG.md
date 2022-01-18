@@ -1,4 +1,7 @@
 # TwitterCldr Changelog
+* Fix calendars importer.
+  - Importer was not correctly looking up aliases that contained back references, i.e. '../'.
+* Check `Psych::VERSION` instead of `RUBY_VERSION` when parsing YAML.
 
 ### 6.11.0 (Dec 29th, 2021)
 * Add support for Ruby 3.1.

@@ -13,6 +13,7 @@ describe TwitterCldr::Shared::Calendar do
     # clear cache for each test
     described_class.send(:class_variable_set, :@@calendar_cache, {})
     described_class.send(:class_variable_set, :@@field_cache, {})
+    described_class.send(:class_variable_set, :@@day_periods_cache, {})
   end
 
   before(:each) { clear_cache }
@@ -61,6 +62,22 @@ describe TwitterCldr::Shared::Calendar do
 
       it 'returns nil if invalid names form is passed' do
         expect(calendar.months(:wat)).to eq(nil)
+      end
+
+      context 'with English locale' do
+        let(:calendar) { described_class.new(:en) }
+
+        it 'supports wide names form' do
+          expect(calendar.months(:wide)).to eq(%w[January February March April May June July August September October November December])
+        end
+
+        it 'supports narrow names form' do
+          expect(calendar.months(:narrow)).to eq(%w[J F M A M J J A S O N D])
+        end
+
+        it 'supports abbreviated names form' do
+          expect(calendar.months(:abbreviated)).to eq(%w[Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec])
+        end
       end
     end
 

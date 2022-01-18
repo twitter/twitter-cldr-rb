@@ -62,7 +62,15 @@ module TwitterCldr
 
 
       def self.join_xpaths(*paths)
-        paths.map { |a| a.chomp('/') }.join('/')
+        segments = paths.flat_map { |a| a.chomp('/').split('/') }
+        segments = segments.each_with_object([]) do |segment, result|
+          if segment == '..'
+            result.pop
+          else
+            result << segment
+          end
+        end
+        segments.join('/')
       end
 
       attr_reader :path, :cldr_locale, :cldr_requirement

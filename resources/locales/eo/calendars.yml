@@ -62,21 +62,21 @@
             :tue: ma
             :wed: me
           :narrow: 
-            :fri: F
-            :mon: M
+            :fri: V
+            :mon: L
             :sat: S
-            :sun: S
-            :thu: T
-            :tue: T
-            :wed: W
+            :sun: D
+            :thu: Ĵ
+            :tue: M
+            :wed: M
           :short: 
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
-            :tue: Tue
-            :wed: Wed
+            :fri: ve
+            :mon: lu
+            :sat: sa
+            :sun: di
+            :thu: ĵa
+            :tue: ma
+            :wed: me
           :wide: 
             :fri: vendredo
             :mon: lundo
@@ -87,13 +87,13 @@
             :wed: merkredo
         :stand-alone: 
           :abbreviated: 
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
-            :tue: Tue
-            :wed: Wed
+            :fri: ve
+            :mon: lu
+            :sat: sa
+            :sun: di
+            :thu: ĵa
+            :tue: ma
+            :wed: me
           :narrow: 
             :fri: V
             :mon: L
@@ -103,13 +103,13 @@
             :tue: M
             :wed: M
           :short: 
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
-            :tue: Tue
-            :wed: Wed
+            :fri: ve
+            :mon: lu
+            :sat: sa
+            :sun: di
+            :thu: ĵa
+            :tue: ma
+            :wed: me
           :wide: 
             :fri: vendredo
             :mon: lundo
@@ -130,50 +130,50 @@
           1: KE
       :fields: 
         :day: tago
-        :day-narrow: Day
-        :day-short: Day
+        :day-narrow: tago
+        :day-short: tago
         :dayOfYear: "Day Of Year"
         :dayOfYear-narrow: "Day Of Year"
         :dayOfYear-short: "Day Of Year"
         :dayperiod: atm/ptm
-        :dayperiod-narrow: Dayperiod
-        :dayperiod-short: Dayperiod
+        :dayperiod-narrow: atm/ptm
+        :dayperiod-short: atm/ptm
         :era: erao
-        :era-narrow: Era
-        :era-short: Era
+        :era-narrow: erao
+        :era-short: erao
         :hour: horo
         :hour-narrow: h
-        :hour-short: Hour
+        :hour-short: horo
         :minute: minuto
         :minute-narrow: m
-        :minute-short: Minute
+        :minute-short: minuto
         :month: monato
-        :month-narrow: Month
-        :month-short: Month
+        :month-narrow: monato
+        :month-short: monato
         :quarter: kvaronjaro
-        :quarter-narrow: Quarter
-        :quarter-short: Quarter
+        :quarter-narrow: kvaronjaro
+        :quarter-short: kvaronjaro
         :second: sekundo
         :second-narrow: s
-        :second-short: Second
+        :second-short: sekundo
         :week: semajno
-        :week-narrow: Week
-        :week-short: Week
+        :week-narrow: semajno
+        :week-short: semajno
         :weekOfMonth: "Week Of Month"
         :weekOfMonth-narrow: "Week Of Month"
         :weekOfMonth-short: "Week Of Month"
         :weekday: "tago de la semajno"
-        :weekday-narrow: "Day of the Week"
-        :weekday-short: "Day of the Week"
+        :weekday-narrow: "tago de la semajno"
+        :weekday-short: "tago de la semajno"
         :weekdayOfMonth: "Weekday Of Month"
         :weekdayOfMonth-narrow: "Weekday Of Month"
         :weekdayOfMonth-short: "Weekday Of Month"
         :year: jaro
-        :year-narrow: Year
-        :year-short: Year
+        :year-narrow: jaro
+        :year-short: jaro
         :zone: horzono
-        :zone-narrow: Zone
-        :zone-short: Zone
+        :zone-narrow: horzono
+        :zone-short: horzono
       :formats: 
         :date: 
           :full: 
@@ -218,18 +218,18 @@
             8: aŭg
             9: sep
           :narrow: 
-            1: "1"
-            10: "10"
-            11: "11"
-            12: "12"
-            2: "2"
-            3: "3"
-            4: "4"
-            5: "5"
-            6: "6"
-            7: "7"
-            8: "8"
-            9: "9"
+            1: J
+            10: O
+            11: "N"
+            12: D
+            2: F
+            3: M
+            4: A
+            5: M
+            6: J
+            7: J
+            8: A
+            9: S
           :wide: 
             1: januaro
             10: oktobro
@@ -245,18 +245,18 @@
             9: septembro
         :stand-alone: 
           :abbreviated: 
-            1: M01
-            10: M10
-            11: M11
-            12: M12
-            2: M02
-            3: M03
-            4: M04
-            5: M05
-            6: M06
-            7: M07
-            8: M08
-            9: M09
+            1: jan
+            10: okt
+            11: nov
+            12: dec
+            2: feb
+            3: mar
+            4: apr
+            5: maj
+            6: jun
+            7: jul
+            8: aŭg
+            9: sep
           :narrow: 
             1: J
             10: O
@@ -296,14 +296,14 @@
             :pm: ptm
         :stand-alone: 
           :abbreviated: 
-            :am: AM
-            :pm: PM
+            :am: atm
+            :pm: ptm
           :narrow: 
-            :am: AM
-            :pm: PM
+            :am: atm
+            :pm: ptm
           :wide: 
-            :am: AM
-            :pm: PM
+            :am: atm
+            :pm: ptm
       :quarters: 
         :format: 
           :abbreviated: 
@@ -323,10 +323,10 @@
             4: "4-a kvaronjaro"
         :stand-alone: 
           :abbreviated: 
-            1: Q1
-            2: Q2
-            3: Q3
-            4: Q4
+            1: K1
+            2: K2
+            3: K3
+            4: K4
           :narrow: 
             1: "1"
             2: "2"

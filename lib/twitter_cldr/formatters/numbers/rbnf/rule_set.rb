@@ -99,7 +99,7 @@ module TwitterCldr
             # the base value divided by the LCD.  Here we check to
             # see if that's an integer, and if not, how close it is
             # to being an integer.
-            temp_difference = numerator * BigDecimal.new(rules[i].base_value) % least_common_multiple
+            temp_difference = numerator * BigDecimal(rules[i].base_value) % least_common_multiple
 
             # normalize the result of the above calculation: we want
             # the numerator's distance from the CLOSEST multiple

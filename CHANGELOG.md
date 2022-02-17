@@ -1,4 +1,9 @@
 # TwitterCldr Changelog
+
+### 6.11.2 (Feb 17th, 2022)
+* Replace `BigDecimal.new()` with `BigDecimal()` for ruby 2.7+ compatibility (#251, @jasonpenny)
+
+### 6.11.1 (Jan 18th, 2022)
 * Fix calendars importer.
   - Importer was not correctly looking up aliases that contained back references, i.e. '../'.
 * Check `Psych::VERSION` instead of `RUBY_VERSION` when parsing YAML.

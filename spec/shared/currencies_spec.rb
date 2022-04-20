@@ -23,7 +23,7 @@ describe TwitterCldr::Shared::Currencies do
       data = described_class.for_code("PEN")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        name:        "Peruvian sol",
+        name:        "Peruvian Sol",
         currency:    :PEN,
         symbol:      "S/.",
         cldr_symbol: "PEN"
@@ -34,7 +34,7 @@ describe TwitterCldr::Shared::Currencies do
       data = described_class.for_code("CAD")
       expect(data).to be_a(Hash)
       expect(data).to include(
-        name:        "Canadian dollar",
+        name:        "Canadian Dollar",
         currency:    :CAD,
         symbol:      "$",
         cldr_symbol: "CA$"

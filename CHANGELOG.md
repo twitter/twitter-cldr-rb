@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.11.3 (Apr 21st, 2022)
+* `Currencies#for_code` returns the name of the currency instead of the entry for the "one" plural form (#254, @ur5us)
+  - Older versions of CLDR did not include a `name` field for currency data, so a stop-gap measure was taken.
+
 ### 6.11.2 (Feb 17th, 2022)
 * Replace `BigDecimal.new()` with `BigDecimal()` for ruby 2.7+ compatibility (#251, @jasonpenny)
 

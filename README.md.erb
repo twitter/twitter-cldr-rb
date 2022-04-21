@@ -71,7 +71,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # <%= ellipsize(assert(TwitterCldr::Shared::Currencies.currency_codes.sort[0..3], ["ADP", "AED", "AFA", "AFN"])) %>
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterCldr::Shared::Currencies.for_code("CAD"), {:currency=>:CAD, :name=>"Canadian dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}).inspect %>
+TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterCldr::Shared::Currencies.for_code("CAD"), {:currency=>:CAD, :name=>"Canadian Dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}).inspect %>
 ```
 
 #### Short / Long Decimals

@@ -19,7 +19,7 @@ module TwitterCldr
           if data
             result = {
               currency:    currency_code,
-              name:        data[:one],
+              name:        data[:name],
               cldr_symbol: data[:symbol] || currency_code.to_s,
               symbol:      data[:symbol] || currency_code.to_s,
               code_points: (data[:symbol] || currency_code.to_s).unpack("U*")

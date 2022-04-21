@@ -247,7 +247,7 @@ It's important to know that, even though any given format may not be available a
 | Hmv        | 12:20 GMT              |
 | M          | 2                      |
 | MEd        | Fri, 2/14              |
-| MMM        | M02                    |
+| MMM        | Feb                    |
 | MMMEd      | Fri, Feb 14            |
 | MMMMW      | week 3 of February     |
 | MMMMd      | February 14            |
@@ -561,20 +561,20 @@ The CLDR contains postal code validation regexes for a number of countries.
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.valid?("94103")     # true
 postal_code.valid?("9410")      # false
 
 # England (Great Britain)
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:gb) 
 postal_code.valid?("BS98 1TL")  # true
 
 # Sweden
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:se) 
 postal_code.valid?("280 12")    # true
 
 # Canada
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:ca) 
 postal_code.valid?("V3H 1Z7")   # true
 ```
 
@@ -582,7 +582,7 @@ Match all valid postal codes in a string with the `#find_all` method:
 
 ```ruby
 # United States
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.find_all("12345 23456")    # ["12345", "23456"]
 ```
 
@@ -595,14 +595,14 @@ TwitterCldr::Shared::PostalCodes.territories  # [:ac, :ad, :af, :ai, :al, ... ]
 Just want the regex?  No problem:
 
 ```ruby
-postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us)
+postal_code = TwitterCldr::Shared::PostalCodes.for_territory(:us) 
 postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 ```
 
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["60668-3382", "36022", "22364-5670", "32142-1738", "32633-0502"]
+postal_code.sample(5)  # ["32934", "29974", "17881-2274", "67896", "26121"]
 ```
 
 ### Phone Codes
@@ -1017,17 +1017,17 @@ The Psych gem that is the default YAML engine in Ruby 1.9 doesn't handle Unicode
 You can make use of TwitterCLDR's YAML dumper by calling `localize` and then `to_yaml` on an `Array`, `Hash`, or `String`:
 
 ```ruby
-{ :hello => "world" }.localize.to_yaml
-["hello", "world"].localize.to_yaml
-"hello, world".localize.to_yaml
+{ :hello => "world" }.localize.to_yaml 
+["hello", "world"].localize.to_yaml 
+"hello, world".localize.to_yaml 
 ```
 
 Behind the scenes, these convenience methods are using the `TwitterCldr::Shared::YAML` class.  You can do the same thing if you're feeling adventurous:
 
 ```ruby
-TwitterCldr::Shared::YAML.dump({ :hello => "world" })
-TwitterCldr::Shared::YAML.dump(["hello", "world"])
-TwitterCldr::Shared::YAML.dump("hello, world")
+TwitterCldr::Shared::YAML.dump({ :hello => "world" }) 
+TwitterCldr::Shared::YAML.dump(["hello", "world"]) 
+TwitterCldr::Shared::YAML.dump("hello, world") 
 ```
 
 ## Adding New Locales
@@ -1073,7 +1073,7 @@ TwitterCldr.locale    # will return :ru
 
 ## Compatibility
 
-TwitterCLDR is fully compatible with Ruby 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 3.0.
+TwitterCLDR is fully compatible with Ruby 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.1.
 
 ## Requirements
 
@@ -1106,6 +1106,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2021 Twitter, Inc.
+Copyright 2022 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

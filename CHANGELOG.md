@@ -1,5 +1,9 @@
 # TwitterCldr Changelog
 
+### 6.11.4 (Nov 2nd, 2022)
+* Fix a bug in the CJK break engine causing an int to be compared to nil (#261, @camertron)
+  - The code effectively read past the end of an array because it used the wrong counter variable as an index.
+
 ### 6.11.3 (Apr 21st, 2022)
 * `Currencies#for_code` returns the name of the currency instead of the entry for the "one" plural form (#254, @ur5us)
   - Older versions of CLDR did not include a `name` field for currency data, so a stop-gap measure was taken.

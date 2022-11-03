@@ -4,5 +4,5 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 
 module TwitterCldr
-  VERSION = '6.11.3'
+  VERSION = '6.11.4'
 end

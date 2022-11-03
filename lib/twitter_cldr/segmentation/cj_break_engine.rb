@@ -96,10 +96,10 @@ module TwitterCldr
           is_katakana = is_katakana?(cursor.codepoint)
 
           if !is_prev_katakana && is_katakana
-            j = cursor.position + 1
+            j = idx + 1
             cursor.advance
 
-            while j < end_pos && (j - idx) < MAX_KATAKANA_GROUP_LENGTH && is_katakana?(cursor.codepoint)
+            while cursor.position < end_pos && (j - idx) < MAX_KATAKANA_GROUP_LENGTH && is_katakana?(cursor.codepoint)
               cursor.advance
               j += 1
             end

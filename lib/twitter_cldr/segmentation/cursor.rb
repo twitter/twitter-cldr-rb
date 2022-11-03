@@ -16,7 +16,11 @@ module TwitterCldr
       end
 
       def advance(amount = 1)
-        @position += amount
+        if @position + amount > text.size
+          @position = text.size
+        else
+          @position += amount
+        end
       end
 
       def reset

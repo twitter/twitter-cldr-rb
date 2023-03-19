@@ -24,7 +24,7 @@ module TwitterCldr
         end
 
         def from_code_for_locale(code, locale = TwitterCldr.locale)
-          get_resource(locale)[:languages][TwitterCldr.convert_locale(code)]
+          get_resource(locale)[:languages][TwitterCldr.normalize_locale(code)]
         rescue
           nil
         end

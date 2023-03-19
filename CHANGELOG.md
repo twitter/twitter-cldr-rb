@@ -1,5 +1,11 @@
 # TwitterCldr Changelog
 
+### 6.11.5 (Mar 19th, 2023)
+* Fix bug causing locale codes to be converted before language lookup (#263)
+  - During `TwitterCldr::Shared::Languages.from_code_for_locale(:nn, :en)`, the `:nn` locale code was converted to `:nb` before lookup, causing "Norwegian Bokmål" to be returned instead of "Norwegian Nynorsk".
+  - The conversion process uses the likely subtags data to convert locale codes to ones TwitterCLDR supports.
+  - I don't remember why that decision was made, but it's definitely wrong. We shouldn't restrict the locale code -> language names dataset to only supported locales, since there's no danger in allowing access to the whole thing.
+
 ### 6.11.4 (Nov 2nd, 2022)
 * Fix a bug in the CJK break engine causing an int to be compared to nil (#261, @camertron)
   - The code effectively read past the end of an array because it used the wrong counter variable as an index.

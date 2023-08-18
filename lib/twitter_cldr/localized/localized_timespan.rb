@@ -31,9 +31,9 @@ module TwitterCldr
         number = calculate_time(base_obj, unit)
 
         data_reader = TwitterCldr::DataReaders::TimespanDataReader.new(locale, number, {
-          unit: unit,
-          direction: direction,
-          type: type
+          unit:,
+          direction:,
+          type:
         })
 
         tokens = data_reader.tokenizer.tokenize(data_reader.pattern)

@@ -76,7 +76,7 @@ module TwitterCldr
         end
 
         def cldr_url
-          CLDR_URL % { version: version }
+          CLDR_URL % { version: }
         end
 
         def download

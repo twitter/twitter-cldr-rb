@@ -38,7 +38,7 @@ module TwitterCldr
       def dump16
         {
           table: Base64.encode64(values.pack(PACK_FMT_16)).strip,
-          flags: flags
+          flags:
         }
       end
     end

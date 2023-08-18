@@ -29,7 +29,7 @@ module TwitterCldr
           STDOUT.write "\rImported #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
 
-        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish: finish) do |locale|
+        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish:) do |locale|
           import_locale(locale)
           locales << locale
         end
@@ -76,16 +76,16 @@ module TwitterCldr
             gregorian: {
               days:     contexts('day'),
               months:   contexts('month'),
-              eras:     eras,
+              eras:,
               quarters: contexts('quarter'),
               periods:  contexts('dayPeriod', group: "alt"),
-              fields:   fields,
+              fields:,
               formats: {
                 date:     formats('date'),
                 time:     formats('time'),
                 datetime: formats('dateTime')
               },
-              additional_formats: additional_formats
+              additional_formats:
             }
           }
         }
@@ -184,7 +184,7 @@ module TwitterCldr
       def default_format(type)
         if node = calendar.xpath("#{type}Formats/default").first
           key = node.attribute('choice').value.to_sym
-          { :default => :"calendars.gregorian.formats.#{type.downcase}.#{key}" }
+          { default: :"calendars.gregorian.formats.#{type.downcase}.#{key}" }
         end
       end
 

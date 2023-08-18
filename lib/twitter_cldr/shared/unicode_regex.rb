@@ -12,7 +12,7 @@ module TwitterCldr
         def compile(str, modifiers = "", symbol_table = nil)
           new(
             parser.parse(tokenizer.tokenize(str), {
-              symbol_table: symbol_table
+              symbol_table:
             }), modifiers
           )
         end

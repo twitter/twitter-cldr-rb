@@ -17,7 +17,7 @@ module TwitterCldr
       def initialize(locale = TwitterCldr.locale, number_system = nil)
         @locale = locale
         @data_reader = TwitterCldr::DataReaders::NumberDataReader.new(
-          locale, number_system: number_system
+          locale, number_system:
         )
       end
 

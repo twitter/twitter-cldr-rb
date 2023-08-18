@@ -31,7 +31,7 @@ module TwitterCldr
 
           if region
             ret[id.to_sym] = {
-              region: region,
+              region:,
               primary: is_primary.value
             }
           end

@@ -64,7 +64,7 @@ module TwitterCldr
 
         File.write(
           File.join(output_path, "#{locale}.yml"),
-          YAML.dump({ options: options, rules: rules })
+          YAML.dump({ options:, rules: })
         )
       end
 

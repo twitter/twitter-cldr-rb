@@ -130,9 +130,9 @@ module TwitterCldr
         end
 
         {
-          locale: locale,
+          locale:,
           text: text_sample,
-          segments: segments
+          segments:
         }
       end
 

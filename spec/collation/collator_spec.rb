@@ -152,26 +152,26 @@ describe TwitterCldr::Collation::Collator do
 
         it 'passes case-first sort option to sort key builder' do
           expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
-          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
+          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: })
 
           collator = described_class.new(locale)
 
           expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
-          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: nil).and_return(sort_key)
+          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first:, maximum_level: nil).and_return(sort_key)
 
           expect(collator.get_sort_key(code_points)).to eq(sort_key)
         end
 
         it 'passes maximum_level option to sort key builder' do
           expect(TwitterCldr::Collation::TrieLoader).to receive(:load_tailored_trie).with(locale, trie).and_return(TwitterCldr::Utils::Trie.new)
-          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: case_first })
+          expect(TwitterCldr::Collation::TrieBuilder).to receive(:tailoring_data).with(locale).and_return(collator_options: { case_first: })
 
           collator = described_class.new(locale)
 
           expect(collator).to receive(:get_collation_elements).with(code_points).and_return(collation_elements)
-          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first: case_first, maximum_level: maximum_level).and_return(sort_key)
+          expect(TwitterCldr::Collation::SortKeyBuilder).to receive(:build).with(collation_elements, case_first:, maximum_level:).and_return(sort_key)
 
-          expect(collator.get_sort_key(code_points, maximum_level: maximum_level)).to eq(sort_key)
+          expect(collator.get_sort_key(code_points, maximum_level:)).to eq(sort_key)
         end
       end
     end

@@ -24,7 +24,7 @@ module TwitterCldr
         File.open(output_file, 'w:utf-8') do |output|
           output.write(
             TwitterCldr::Utils::YAML.dump(
-              TwitterCldr::Utils.deep_symbolize_keys(aliases: aliases),
+              TwitterCldr::Utils.deep_symbolize_keys(aliases:),
               use_natural_symbols: true
             )
           )

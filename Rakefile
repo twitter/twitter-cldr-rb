@@ -67,7 +67,7 @@ task :add_locale, :locale do |_, args|
   )
 
   klasses = TwitterCldr::Resources.locale_based_importer_classes_for_ruby_engine
-  instances = klasses.map { |klass| klass.new(locales: locales) }
+  instances = klasses.map { |klass| klass.new(locales:) }
   resolver = TwitterCldr::Resources::ImportResolver.new(
     instances, allow_missing_dependencies: true
   )

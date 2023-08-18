@@ -15,7 +15,7 @@ module TwitterCldr
       class << self
         def load_yaml(yaml, permitted_classes: [])
           if Psych::VERSION >= '4'
-            YAML.safe_load(yaml, permitted_classes: permitted_classes)
+            YAML.safe_load(yaml, permitted_classes:)
           else
             YAML.safe_load(yaml, permitted_classes)
           end
@@ -129,7 +129,7 @@ module TwitterCldr
       end
 
       def load_yaml(yaml, permitted_classes: [])
-        self.class.load_yaml(yaml, permitted_classes: permitted_classes)
+        self.class.load_yaml(yaml, permitted_classes:)
       end
 
       def load_marshalled_resource(path, _merge_custom = :unused)

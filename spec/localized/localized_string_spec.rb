@@ -40,7 +40,7 @@ describe TwitterCldr::Localized::LocalizedString do
       end
 
       it 'performs regular pluralization' do
-        expect('%{horses_count:horses}'.localize % { horses_count: 2, horses: horses }).to eq('2 horses')
+        expect('%{horses_count:horses}'.localize % { horses_count: 2, horses: }).to eq('2 horses')
       end
 
       it 'performs inline pluralization' do
@@ -50,7 +50,7 @@ describe TwitterCldr::Localized::LocalizedString do
 
       it 'performs both formatting and regular pluralization simultaneously' do
         string = '%{msg}: %{horses_count:horses}'.localize
-        expect(string % { horses_count: 2, horses: horses, msg: 'result' }).to eq('result: 2 horses')
+        expect(string % { horses_count: 2, horses:, msg: 'result' }).to eq('result: 2 horses')
       end
 
       it 'performs both formatting and inline pluralization simultaneously' do
@@ -75,7 +75,7 @@ describe TwitterCldr::Localized::LocalizedString do
 
       it 'raises KeyError when value for a named placeholder is missing' do
         expect do
-          '%{msg}: %{horses_count:horses}'.localize % { horses_count: 2, horses: horses }
+          '%{msg}: %{horses_count:horses}'.localize % { horses_count: 2, horses: }
         end.to raise_error(KeyError)
       end
     end

@@ -34,7 +34,7 @@ module TwitterCldr
 
       def to_additional_s(additional_format)
         data_reader = data_reader_for(:additional, {
-          additional_format: additional_format
+          additional_format:
         })
 
         tokens = if data_reader.tokenizer.respond_to?(:full_tokenize)
@@ -97,7 +97,7 @@ module TwitterCldr
       end
 
       def with_timezone(timezone)
-        self.class.new(@base_obj, @locale, chain_params.merge(timezone: timezone))
+        self.class.new(@base_obj, @locale, chain_params.merge(timezone:))
       end
 
       protected
@@ -105,8 +105,8 @@ module TwitterCldr
       def data_reader_for(type, options = {})
         TwitterCldr::DataReaders::DateTimeDataReader.new(
           locale, options.merge({
-            calendar_type: calendar_type,
-            type: type
+            calendar_type:,
+            type:
           })
         )
       end

@@ -7,6 +7,7 @@ require 'forwardable'
 
 module TwitterCldr
   module Shared
+    # @note Properties are mostly accessed through the {TwitterCldr::Shared::CodePoint} class. {TwitterCldr::Shared::PropertySet} is used internally.
     class PropertySet
       include TwitterCldr::Shared::Properties
       extend SingleForwardable
@@ -19,10 +20,20 @@ module TwitterCldr
         @properties_hash = properties_hash
       end
 
+      # @example
+      #   properties = TwitterCldr::Shared::CodePoint.get(12367).properties
+      #   properties.age # => #<Set: {"1.1"}>
       def age
         properties_hash.fetch('Age', ['Unassigned'])
       end
 
+      # @example
+      #   # ZERO WIDTH JOINER
+      #   properties = TwitterCldr::Shared::CodePoint.get(0x200D).properties
+      #   properties.joining_type # => #<Set: {"Join_Causing"}>
+      #   # SPACE
+      #   properties = TwitterCldr::Shared::CodePoint.get(32).properties
+      #   properties.joining_type # => ["Non_Joining", "Non_Joining"]
       def joining_type
         properties_hash['Joining_Type'] ||= if general_category.empty?
           [ArabicShaping.joining_type_for_general_category('xx')]
@@ -39,6 +50,9 @@ module TwitterCldr
         ]
       end
 
+      # @example
+      #   properties = TwitterCldr::Shared::CodePoint.get(0x200D).properties
+      #   properties.block # => #<Set: {"General Punctuation"}>
       def block
         properties_hash['Block'] ||= ['No_Block']
       end

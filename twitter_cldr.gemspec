@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/unisec/version'
+require_relative 'lib/twitter_cldr/version'
 
 Gem::Specification.new do |s|
   s.name     = 'twitter_cldr'

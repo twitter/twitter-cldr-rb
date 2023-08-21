@@ -184,7 +184,7 @@ module TwitterCldr
       def default_format(type)
         if node = calendar.xpath("#{type}Formats/default").first
           key = node.attribute('choice').value.to_sym
-          { :default => :"calendars.gregorian.formats.#{type.downcase}.#{key}" }
+          { default: :"calendars.gregorian.formats.#{type.downcase}.#{key}" }
         end
       end
 

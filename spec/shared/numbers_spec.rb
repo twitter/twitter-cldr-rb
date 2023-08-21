@@ -21,7 +21,7 @@ describe TwitterCldr::Shared::Numbers do
     end
 
     it 'converts locale' do
-      allow(TwitterCldr).to receive(:get_locale_resource).with(:'zh-Hant', :numbers).and_return(:'zh-Hant' => { numbers: { symbols: symbols } })
+      allow(TwitterCldr).to receive(:get_locale_resource).with(:'zh-Hant', :numbers).and_return('zh-Hant': { numbers: { symbols: symbols } })
       expect(described_class.symbols('zh-tw')).to eq(symbols)
     end
 

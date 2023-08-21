@@ -67,7 +67,7 @@ describe TwitterCldr::DataReaders::TimespanDataReader do
         type_hash.each_pair do |unit, expected_value|
           it "finds the correct pattern with direction '#{direction}', type '#{type}', and unit '#{unit}'" do
             data_reader = described_class.new(:sv, 2, {
-              direction:, type:, unit:
+              direction: direction, type: type, unit: unit
             })
 
             expect(data_reader.pattern).to match_normalized(expected_value)

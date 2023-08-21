@@ -124,7 +124,7 @@ describe TwitterCldr::Utils do
           "--- \nb: 2\na: 1\nc: 3\n",
         ],
       ].each do |hash_order, yaml|
-        expect(TwitterCldr::Utils::YAML.dump({ 'a' => 1, 'c' => 3, 'b' => 2 }, hash_order:)).to eq(yaml)
+        expect(TwitterCldr::Utils::YAML.dump({ 'a' => 1, 'c' => 3, 'b' => 2 }, hash_order: hash_order)).to eq(yaml)
       end
     end
 

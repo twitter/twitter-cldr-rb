@@ -42,12 +42,13 @@ module TwitterCldr
   LIB_DIR = File.dirname(File.expand_path(__FILE__))
   SPEC_DIR = File.join(File.dirname(File.dirname(File.expand_path(__FILE__))), 'spec')
 
+  # TODO: convert this and all other hashes to 1.9 syntax
   # maps twitter locales to cldr locales
   TWITTER_LOCALE_MAP = {
-    msa: :ms,
-    'zh-cn': :zh,
-    'zh-tw': :'zh-Hant',
-    no: :nb
+    :msa     => :ms,
+    :'zh-cn' => :zh,
+    :'zh-tw' => :'zh-Hant',
+    :no      => :nb
   }
 
   # maps cldr locales to twitter locales

@@ -48,9 +48,9 @@ module TwitterCldr
           min_word_span: 2,
 
           word_set: self.class.word_set,
-          mark_set:,
-          end_word_set:,
-          begin_word_set:,
+          mark_set: mark_set,
+          end_word_set: end_word_set,
+          begin_word_set: begin_word_set,
           dictionary: Dictionary.burmese,
           advance_past_suffix: -> (*) do
             0  # not applicable to Burmese

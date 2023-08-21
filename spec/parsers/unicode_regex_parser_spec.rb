@@ -29,7 +29,7 @@ describe TwitterCldr::Parsers::UnicodeRegexParser do
 
     it "replaces variables" do
       symbol_table = TwitterCldr::Parsers::SymbolTable.new("$VAR" => tokenize("\\p{L}"))
-      elements = parse(tokenize("($VAR)?"), symbol_table:)
+      elements = parse(tokenize("($VAR)?"), symbol_table: symbol_table)
       expect(elements[1]).to be_a(described_class::CharacterSet)
       expect(elements[1].property_value).to eq("L")
     end

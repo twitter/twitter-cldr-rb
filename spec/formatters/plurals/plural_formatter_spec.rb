@@ -42,7 +42,7 @@ describe TwitterCldr::Formatters::PluralFormatter do
       context 'with regular pluralization' do
         it "doesn't change the string if a number is not provided" do
           string = 'there %{horses_count:horses}'
-          expect(subject.format(string, horses:)).to eq(string)
+          expect(subject.format(string, horses: horses)).to eq(string)
         end
 
         it "doesn't change the string if a patterns hash is not provided" do
@@ -71,7 +71,7 @@ describe TwitterCldr::Formatters::PluralFormatter do
       context 'with mixed pluralization' do
         it "doesn't change the string if a number is not provided" do
           string = "there #{horses_string} %{horses_count:horses}"
-          expect(subject.format(string, horses:)).to eq(string)
+          expect(subject.format(string, horses: horses)).to eq(string)
         end
 
         it "doesn't change the string if required pattern is not provided" do
@@ -86,35 +86,35 @@ describe TwitterCldr::Formatters::PluralFormatter do
         it 'pluralizes with a simple replacement' do
           expect(subject.format(
               'there %{horses_count:horses}',
-              horses_count: 1, horses:
+              horses_count: 1, horses: horses
           )).to eq('there is 1 horse')
         end
 
         it 'pluralizes when there are named interpolation patterns in the string' do
           expect(subject.format(
               '%{there} %{horses_count:horses}',
-              horses_count: 1, horses:
+              horses_count: 1, horses: horses
           )).to eq('%{there} is 1 horse')
         end
 
         it 'supports multiple patterns sets for the same number' do
           expect(subject.format(
               'there %{horses_count:to_be} %{horses_count:horses}',
-              horses_count: 1, horses: simple_horses, to_be:
+              horses_count: 1, horses: simple_horses, to_be: to_be
           )).to eq('there is 1 horse')
         end
 
         it 'pluralizes multiple entries' do
           expect(subject.format(
               'there %{yaks_count:yaks} and %{horses_count:horses}',
-              yaks_count: 1, yaks:, horses_count: 2, horses: simple_horses
+              yaks_count: 1, yaks: yaks, horses_count: 2, horses: simple_horses
           )).to eq('there is 1 yak and 2 horses')
         end
 
         it 'substitutes the number for a placeholder in the pattern' do
           expect(subject.format(
               'there %{horses_count:horses}',
-              horses_count: 3, horses:
+              horses_count: 3, horses: horses
           )).to eq('there are 3 horses')
         end
 
@@ -156,7 +156,7 @@ describe TwitterCldr::Formatters::PluralFormatter do
 
         it 'substitutes the number for a placeholder in the pattern' do
           expect(subject.format(
-              "there #{horses_string}", horses_count: 3, horses:
+              "there #{horses_string}", horses_count: 3, horses: horses
           )).to eq('there are 3 horses')
         end
 
@@ -178,14 +178,14 @@ describe TwitterCldr::Formatters::PluralFormatter do
         it 'pluralizes separate groups' do
           expect(subject.format(
               "there %{yaks_count:yaks} and #{simple_horses_string}",
-              yaks:, yaks_count: 3, horses_count: 2
+              yaks: yaks, yaks_count: 3, horses_count: 2
           )).to eq('there are 3 yaks and 2 horses')
         end
 
         it 'pluralizes similar groups' do
           expect(subject.format(
               "there %{horses_count:horses} + #{simple_horses_string}",
-              horses:, horses_count: 2
+              horses: horses, horses_count: 2
           )).to eq('there are 2 horses + 2 horses')
         end
       end

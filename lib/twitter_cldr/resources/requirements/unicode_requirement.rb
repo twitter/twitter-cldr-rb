@@ -45,7 +45,7 @@ module TwitterCldr
         def download(file)
           source_path = source_path_for(file)
           FileUtils.mkdir_p(File.dirname(source_path))
-          uri = URI(File.join(url % { version: }, file))
+          uri = URI(File.join(url % { version: version }, file))
 
           Net::FTP.open(uri.host) do |ftp|
             ftp.login

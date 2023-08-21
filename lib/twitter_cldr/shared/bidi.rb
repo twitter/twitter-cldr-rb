@@ -35,11 +35,11 @@ module TwitterCldr
       class << self
         def from_string(str, options = {})
           string_arr = str.unpack("U*")
-          Bidi.new(options.merge(types: compute_types(string_arr), string_arr:))
+          Bidi.new(options.merge(types: compute_types(string_arr), string_arr: string_arr))
         end
 
         def from_type_array(types, options = {})
-          Bidi.new(options.merge(types:))
+          Bidi.new(options.merge(types: types))
         end
 
         protected

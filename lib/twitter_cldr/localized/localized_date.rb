@@ -37,8 +37,8 @@ module TwitterCldr
       def data_reader_for(type, options = {})
         TwitterCldr::DataReaders::DateDataReader.new(
           locale, options.merge({
-            calendar_type:,
-            type:
+            calendar_type: calendar_type,
+            type: type
           })
         )
       end

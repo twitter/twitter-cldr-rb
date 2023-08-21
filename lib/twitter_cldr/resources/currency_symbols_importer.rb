@@ -38,7 +38,7 @@ module TwitterCldr
         rows[1..-1].each_with_object({}) do |row, ret|
           code = row.css('td')[1].text
           symbol = row.css('td.cSmbl_Fnt_C2000').text
-          ret[code] = { code_points: symbol.codepoints, symbol: }
+          ret[code] = { code_points: symbol.codepoints, symbol: symbol }
         end
       end
 

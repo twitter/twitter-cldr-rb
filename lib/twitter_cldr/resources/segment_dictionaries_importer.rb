@@ -56,7 +56,7 @@ module TwitterCldr
 
       def url_for(dictionary_file)
         URL_TEMPLATE % {
-          tag:,
+          tag: tag,
           path: dictionary_file
         }
       end

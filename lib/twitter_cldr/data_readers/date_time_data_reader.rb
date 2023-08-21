@@ -27,8 +27,8 @@ module TwitterCldr
 
       def gather_options
         {
-          type:,
-          calendar_type:
+          type: type,
+          calendar_type: calendar_type
         }
       end
 

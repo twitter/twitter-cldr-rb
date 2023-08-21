@@ -83,7 +83,7 @@ describe TwitterCldr::Shared::Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { months: { 'stand-alone': {} } } } })
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { months: { :'stand-alone' => {} } } } })
         expect(calendar.months(:wide)).to eq(nil)
       end
 
@@ -143,7 +143,7 @@ describe TwitterCldr::Shared::Calendar do
 
     context 'when some data is missing' do
       it 'returns nil if some names format is missing' do
-        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { days: { 'stand-alone': {} } } } })
+        allow(TwitterCldr).to receive(:get_locale_resource).and_return(de: { calendars: { gregorian: { days: { :'stand-alone' => {} } } } })
         expect(calendar.weekdays(:wide)).to eq(nil)
       end
 

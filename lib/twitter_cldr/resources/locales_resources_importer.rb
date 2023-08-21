@@ -61,7 +61,7 @@ module TwitterCldr
           STDOUT.write "\rImported #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
 
-        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish:) do |locale|
+        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish: finish) do |locale|
           export_args = {
             locales: [locale],
             components: components_for(locale),

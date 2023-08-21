@@ -29,7 +29,7 @@ describe TwitterCldr::Collation::SortKeyBuilder do
 
     it 'accepts case-first option as an option' do
       described_class::VALID_CASE_FIRST_OPTIONS.each do |case_first|
-        expect { described_class.new([], case_first:) }.not_to raise_error
+        expect { described_class.new([], case_first: case_first) }.not_to raise_error
       end
     end
 

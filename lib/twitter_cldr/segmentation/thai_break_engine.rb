@@ -56,9 +56,9 @@ module TwitterCldr
           min_word_span: 4,
 
           word_set: self.class.word_set,
-          mark_set:,
-          end_word_set:,
-          begin_word_set:,
+          mark_set: mark_set,
+          end_word_set: end_word_set,
+          begin_word_set: begin_word_set,
           dictionary: Dictionary.thai,
           advance_past_suffix: -> (*args) do
             advance_past_suffix(*args)

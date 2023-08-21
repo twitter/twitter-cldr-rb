@@ -97,7 +97,7 @@ module TwitterCldr
           offset = tz.getRawOffset
 
           ret[tz_id] = {
-            offset:,
+            offset: offset,
             **test_cases_for_zone_and_locale(tz, ulocale)
           }
         end

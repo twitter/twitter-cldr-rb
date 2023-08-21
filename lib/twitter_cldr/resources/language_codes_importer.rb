@@ -185,7 +185,7 @@ module TwitterCldr
         end
 
         language_codes_map.each do |name, codes|
-          table[:name][name] = { name: }.merge(codes)
+          table[:name][name] = { name: name }.merge(codes)
         end
 
         table[:name].each_pair do |name, standards|

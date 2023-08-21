@@ -58,8 +58,8 @@ module TwitterCldr
         return if (end_pos - cursor.position) < min_word_span
 
         state = EngineState.new(
-          cursor:,
-          end_pos:,
+          cursor: cursor,
+          end_pos: end_pos,
           words: PossibleWordList.new(lookahead)
         )
 

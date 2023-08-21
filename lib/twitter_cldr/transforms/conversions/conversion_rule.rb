@@ -14,7 +14,7 @@ module TwitterCldr
           def parse(rule_text, symbol_table, index)
             options = {
               original_rule_text: rule_text,
-              index:
+              index: index
             }
 
             tokens = tokenize(rule_text, symbol_table)

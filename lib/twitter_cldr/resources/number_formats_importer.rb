@@ -29,7 +29,7 @@ module TwitterCldr
           STDOUT.write "\rImported #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
 
-        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish:) do |locale|
+        Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish: finish) do |locale|
           import_locale(locale)
           locales << locale
         end
@@ -73,8 +73,8 @@ module TwitterCldr
       def to_h
         {
           numbers: {
-            symbols:,
-            default_number_systems:,
+            symbols: symbols,
+            default_number_systems: default_number_systems,
             formats: TYPES.each_with_object({}) do |type, ret|
               ret[type.to_sym] = formats_for_type(type)
             end

@@ -21,34 +21,34 @@ describe TwitterCldr::Localized::LocalizedDate do
 
     it "should ago-ify with appropriate unit when no unit given" do
       loc_date = date_time.localize(:en).to_date
-      expect(loc_date.ago(base_time:).to_s).to match_normalized("1 month ago")
+      expect(loc_date.ago(base_time: base_time).to_s).to match_normalized("1 month ago")
       expect(loc_date.ago(base_time: Time.gm(2010, 12, 6, 12, 12, 30)).to_s).to match_normalized("5 months ago")
       expect(loc_date.ago(base_time: Time.gm(2010, 7, 7, 12, 12, 30)).to_s).to match_normalized("1 day ago")
     end
 
     it "should ago-ify with strings regardless of variable's placement or existence" do
       loc_date = date_time.localize(:ar).to_date
-      expect(loc_date.ago(base_time:).to_s(unit: :hour)).to match_normalized("قبل 744 ساعة")
-      expect(loc_date.ago(base_time:).to_s(unit: :day)).to match_normalized("قبل 31 يومًا")
-      expect(loc_date.ago(base_time:).to_s(unit: :month)).to match_normalized("قبل شهر واحد")
-      expect(loc_date.ago(base_time:).to_s(unit: :year)).to match_normalized("قبل 0 سنة")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :hour)).to match_normalized("قبل 744 ساعة")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("قبل 31 يومًا")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :month)).to match_normalized("قبل شهر واحد")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :year)).to match_normalized("قبل 0 سنة")
 
       loc_date = date_time.localize(:fa).to_date
-      expect(loc_date.ago(base_time:).to_s(unit: :day)).to match_normalized("31 روز پیش")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("31 روز پیش")
 
       loc_date = date_time.localize(:en).to_date
-      expect(loc_date.ago(base_time:).to_s(unit: :day)).to match_normalized("31 days ago")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("31 days ago")
     end
 
     it "should ago-ify a date with a number of different units" do
       date_time = DateTime.new(2010, 6, 6, 12, 12, 30)
       loc_date = date_time.localize(:de).to_date
-      expect(loc_date.ago(base_time:).to_s(unit: :second)).to match_normalized("vor 5270400 Sekunden")
-      expect(loc_date.ago(base_time:).to_s(unit: :minute)).to match_normalized("vor 87840 Minuten")
-      expect(loc_date.ago(base_time:).to_s(unit: :hour)).to match_normalized("vor 1464 Stunden")
-      expect(loc_date.ago(base_time:).to_s(unit: :day)).to match_normalized("vor 61 Tagen")
-      expect(loc_date.ago(base_time:).to_s(unit: :month)).to match_normalized("vor 2 Monaten")
-      expect(loc_date.ago(base_time:).to_s(unit: :year)).to match_normalized("vor 0 Jahren")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :second)).to match_normalized("vor 5270400 Sekunden")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :minute)).to match_normalized("vor 87840 Minuten")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :hour)).to match_normalized("vor 1464 Stunden")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :day)).to match_normalized("vor 61 Tagen")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :month)).to match_normalized("vor 2 Monaten")
+      expect(loc_date.ago(base_time: base_time).to_s(unit: :year)).to match_normalized("vor 0 Jahren")
     end
 
     it "should return an error if called on a date in the future" do
@@ -64,12 +64,12 @@ describe TwitterCldr::Localized::LocalizedDate do
     it "should until-ify with a number of different units" do
       date_time = DateTime.new(2010, 10, 10, 12, 12, 30)
       loc_date = date_time.localize(:de).to_date
-      expect(loc_date.until(base_time:).to_s(unit: :second)).to match_normalized("in 5616000 Sekunden")
-      expect(loc_date.until(base_time:).to_s(unit: :minute)).to match_normalized("in 93600 Minuten")
-      expect(loc_date.until(base_time:).to_s(unit: :hour)).to match_normalized("in 1560 Stunden")
-      expect(loc_date.until(base_time:).to_s(unit: :day)).to match_normalized("in 65 Tagen")
-      expect(loc_date.until(base_time:).to_s(unit: :month)).to match_normalized("in 2 Monaten")
-      expect(loc_date.until(base_time:).to_s(unit: :year)).to match_normalized("in 0 Jahren")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :second)).to match_normalized("in 5616000 Sekunden")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :minute)).to match_normalized("in 93600 Minuten")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :hour)).to match_normalized("in 1560 Stunden")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :day)).to match_normalized("in 65 Tagen")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :month)).to match_normalized("in 2 Monaten")
+      expect(loc_date.until(base_time: base_time).to_s(unit: :year)).to match_normalized("in 0 Jahren")
     end
 
     it "should return an error if called on a date in the past" do

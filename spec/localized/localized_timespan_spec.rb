@@ -75,7 +75,7 @@ describe TwitterCldr::Localized::LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        expect(timespan.to_s(unit:)).to match_normalized(text)
+        expect(timespan.to_s(unit: unit)).to match_normalized(text)
       end
     end
   end
@@ -94,7 +94,7 @@ describe TwitterCldr::Localized::LocalizedTimespan do
       }
 
       expected.each_pair do |unit, text|
-        expect(timespan.to_s(unit:)).to match_normalized(text)
+        expect(timespan.to_s(unit: unit)).to match_normalized(text)
       end
     end
   end

@@ -74,11 +74,11 @@ module TwitterCldr
 
           existing_dep.remove if existing_dep
 
-          dep = DEPENDENCY_TEMPLATE %({
-            group_id:,
-            artifact_id:,
-            version:
-          })
+          dep = DEPENDENCY_TEMPLATE % {
+            group_id: group_id,
+            artifact_id: artifact_id,
+            version: version
+          }
 
           (contents / 'dependencies').first.add_child(
             Nokogiri::XML(dep) / 'dependency'

@@ -67,8 +67,8 @@ describe TwitterCldr::Formatters::Rbnf::RbnfFormatter do
 
                   if got != expected
                     opts = {
-                      locale:, group: group_name,
-                      rule_set: rule_set_name, number:
+                      locale: locale, group: group_name,
+                      rule_set: rule_set_name, number: number
                     }
 
                     unless RbnfTestHelpers.allowed_failure?(opts)

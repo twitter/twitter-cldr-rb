@@ -2398,7 +2398,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-й;
                 :value: 21001
             :type: spellout-ordinal-masculine
           - 
@@ -2555,7 +2555,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-е;
                 :value: 21001
             :type: spellout-ordinal-neuter
           - 
@@ -2712,7 +2712,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-я;
                 :value: 21001
             :type: spellout-ordinal-feminine
           - 
@@ -2869,7 +2869,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-e;
                 :value: 21001
             :type: spellout-ordinal-plural
           - 
@@ -3026,7 +3026,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-го;
                 :value: 21001
             :type: spellout-ordinal-masculine-genitive
           - 
@@ -3189,7 +3189,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-й;
                 :value: 21001
             :type: spellout-ordinal-feminine-genitive
           - 
@@ -3346,7 +3346,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-х;
                 :value: 21001
             :type: spellout-ordinal-plural-genitive
           - 
@@ -3503,7 +3503,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-му;
                 :value: 21001
             :type: spellout-ordinal-masculine-dative
           - 
@@ -3690,7 +3690,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-ю;
                 :value: 21001
             :type: spellout-ordinal-feminine-accusative
           - 
@@ -3853,7 +3853,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-м;
                 :value: 21001
             :type: spellout-ordinal-masculine-locative
           - 
@@ -4028,7 +4028,7 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-м;
                 :value: 21001
             :type: spellout-ordinal-masculine-ablative
           - 
@@ -4197,7 +4197,235 @@
                 :rule: "<%%thousandsprefixseparate<тысяч[ >>];"
                 :value: 5001
               - 
-                :rule: =0=.;
+                :rule: =0=-ми;
                 :value: 21001
             :type: spellout-ordinal-plural-ablative
         :type: SpelloutRules
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=;"
+                :value: 0
+            :type: digits-ordinal
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-masculine
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-е;"
+                :value: 0
+            :type: digits-ordinal-neuter
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-я;"
+                :value: 0
+            :type: digits-ordinal-feminine
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-e;"
+                :value: 0
+            :type: digits-ordinal-plural
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-го;"
+                :value: 0
+            :type: digits-ordinal-masculine-genitive
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-го;"
+                :value: 0
+            :type: digits-ordinal-neuter-genitive
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-feminine-genitive
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-х;"
+                :value: 0
+            :type: digits-ordinal-plural-genitive
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-му;"
+                :value: 0
+            :type: digits-ordinal-masculine-dative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-му;"
+                :value: 0
+            :type: digits-ordinal-neuter-dative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-feminine-dative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-м;"
+                :value: 0
+            :type: digits-ordinal-plural-dative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-masculine-accusative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-е;"
+                :value: 0
+            :type: digits-ordinal-neuter-accusative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-ю;"
+                :value: 0
+            :type: digits-ordinal-feminine-accusative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-e;"
+                :value: 0
+            :type: digits-ordinal-plural-accusative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-м;"
+                :value: 0
+            :type: digits-ordinal-masculine-locative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-м;"
+                :value: 0
+            :type: digits-ordinal-neuter-locative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-feminine-locative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-х;"
+                :value: 0
+            :type: digits-ordinal-plural-locative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-м;"
+                :value: 0
+            :type: digits-ordinal-masculine-ablative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-м;"
+                :value: 0
+            :type: digits-ordinal-neuter-ablative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-й;"
+                :value: 0
+            :type: digits-ordinal-feminine-ablative
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=-ми;"
+                :value: 0
+            :type: digits-ordinal-plural-ablative
+        :type: OrdinalRules

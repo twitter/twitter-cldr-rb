@@ -12,12 +12,12 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E, d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
-        :GyMMM: "LLL y 'р'. G"
-        :GyMMMEd: "E, d MMM y 'р'. G"
-        :GyMMMd: "d MMM y 'р'. G"
+        :GyMMM: "LLL y 'р'. G"
+        :GyMMMEd: "E, d MMM y 'р'. G"
+        :GyMMMd: "d MMM y 'р'. G"
         :GyMd: "dd-MM-y GGGGG"
         :H: HH
         :Hm: "HH:mm"
@@ -34,23 +34,23 @@
         :MMMd: "d MMM"
         :Md: dd.MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: MM.y
         :yMEd: "E, dd.MM.y"
-        :yMMM: "LLL y 'р'."
-        :yMMMEd: "E, d MMM y 'р'."
-        :yMMMM: "LLLL y 'р'."
-        :yMMMd: "d MMM y 'р'."
+        :yMMM: "LLL y 'р'."
+        :yMMMEd: "E, d MMM y 'р'."
+        :yMMMM: "LLLL y 'р'."
+        :yMMMd: "d MMM y 'р'."
         :yMd: dd.MM.y
         :yQQQ: "QQQ y"
-        :yQQQQ: "QQQQ y 'р'."
+        :yQQQQ: "QQQQ y 'р'."
         :yw: "w-'й' 'тиж'. Y 'р'."
       :days: 
         :format: 
@@ -134,7 +134,7 @@
         :day-narrow: д
         :day-short: д.
         :dayOfYear: "день року"
-        :dayOfYear-narrow: "день року"
+        :dayOfYear-narrow: "д. р."
         :dayOfYear-short: "д. року"
         :dayperiod: дп/пп
         :dayperiod-narrow: дп/пп
@@ -164,10 +164,10 @@
         :weekOfMonth-narrow: "тиж. міс."
         :weekOfMonth-short: "тиж. місяця"
         :weekday: "день тижня"
-        :weekday-narrow: "д тижня"
+        :weekday-narrow: "д. тиж."
         :weekday-short: "д. тижня"
         :weekdayOfMonth: "день місяця"
-        :weekdayOfMonth-narrow: "д місяця"
+        :weekdayOfMonth-narrow: "д. міс."
         :weekdayOfMonth-short: "д. місяця"
         :year: рік
         :year-narrow: р
@@ -178,11 +178,11 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d MMMM y 'р'."
+            :pattern: "EEEE, d MMMM y 'р'."
           :long: 
-            :pattern: "d MMMM y 'р'."
+            :pattern: "d MMMM y 'р'."
           :medium: 
-            :pattern: "d MMM y 'р'."
+            :pattern: "d MMM y 'р'."
           :short: 
             :pattern: dd.MM.yy
         :datetime: 
@@ -336,6 +336,7 @@
             :afternoon1: день
             :am: дп
             :evening1: вечір
+            :midnight: північ
             :morning1: ранок
             :night1: ніч
             :noon: полудень

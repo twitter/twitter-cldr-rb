@@ -10,6 +10,36 @@ require 'parallel'
 require 'etc'
 require 'set'
 
+# @TODO: remove these patches after migrating away from ruby-cldr
+class ::File
+  class << self
+    # the exists? method was inexplicably removed in Ruby 3.0
+    alias exists? exist?
+  end
+end
+
+module CldrExportPatch
+  attr_accessor :cldr_requirement
+
+  def locales(locale, component, options)
+    cldr_locales[locale] ||= TwitterCldr::Resources::CldrLocale.new(locale, cldr_requirement)
+    ancestors = cldr_locales[locale].ancestors.map(&:to_sym)
+
+    if !should_merge_root?(locale, component, options)
+      ancestors.delete(:root)
+    end
+
+    ancestors
+  end
+
+  def cldr_locales
+    @cldr_locales ||= {}
+  end
+end
+
+Cldr::Export.singleton_class.prepend(CldrExportPatch)
+
+
 module TwitterCldr
   module Resources
 
@@ -61,6 +91,8 @@ module TwitterCldr
           STDOUT.write "\rImported #{locale}, #{locales.size} of #{params[:locales].size} total"
         end
 
+        Cldr::Export.cldr_requirement = requirements[:cldr]
+
         Parallel.each(params[:locales], in_processes: Etc.nprocessors, finish: finish) do |locale|
           export_args = {
             locales: [locale],
@@ -101,7 +133,7 @@ module TwitterCldr
 
       def deep_symbolize(path)
         return unless File.extname(path) == '.yml'
-        data = YAML.load(File.read(path))
+        data = YAML.respond_to?(:unsafe_load) ? YAML.unsafe_load(File.read(path)) : YAML.load(File.read(path))
 
         File.open(path, 'w:utf-8') do |output|
           output.write(

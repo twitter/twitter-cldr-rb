@@ -113,6 +113,8 @@
           :other: "{0} сағат бұрын"
     :hour-narrow: 
       :display_name: сағ
+      :relative: 
+        0: "осы сағат"
       :relative_time: 
         :future: 
           :one: "{0} сағ. кейін"
@@ -122,6 +124,8 @@
           :other: "{0} сағ. бұрын"
     :hour-short: 
       :display_name: сағ
+      :relative: 
+        0: "осы сағат"
       :relative_time: 
         :future: 
           :one: "{0} сағ. кейін"
@@ -142,6 +146,8 @@
           :other: "{0} минут бұрын"
     :minute-narrow: 
       :display_name: мин
+      :relative: 
+        0: "осы минут"
       :relative_time: 
         :future: 
           :one: "{0} мин. кейін"
@@ -150,7 +156,9 @@
           :one: "{0} мин. бұрын"
           :other: "{0} мин. бұрын"
     :minute-short: 
-      :display_name: мин
+      :display_name: мин.
+      :relative: 
+        0: "осы минут"
       :relative_time: 
         :future: 
           :one: "{0} мин. кейін"
@@ -248,6 +256,10 @@
           :other: "{0} тоқсан бұрын"
     :quarter-narrow: 
       :display_name: ш.
+      :relative: 
+        -1: "өткен тоқсан"
+        0: "осы тоқсан"
+        1: "келесі тоқсан"
       :relative_time: 
         :future: 
           :one: "{0} тқс. кейін"
@@ -257,6 +269,10 @@
           :other: "{0} тқс. бұрын"
     :quarter-short: 
       :display_name: ш.
+      :relative: 
+        -1: "өткен тоқсан"
+        0: "осы тоқсан"
+        1: "келесі тоқсан"
       :relative_time: 
         :future: 
           :one: "{0} тқс. кейін"
@@ -313,6 +329,8 @@
           :other: "{0} секунд бұрын"
     :second-narrow: 
       :display_name: с
+      :relative: 
+        0: қазір
       :relative_time: 
         :future: 
           :one: "{0} сек. кейін"
@@ -322,6 +340,8 @@
           :other: "{0} сек. бұрын"
     :second-short: 
       :display_name: с
+      :relative: 
+        0: қазір
       :relative_time: 
         :future: 
           :one: "{0} сек. кейін"
@@ -488,6 +508,10 @@
           :other: "{0} апта бұрын"
     :week-narrow: 
       :display_name: ап.
+      :relative: 
+        -1: "өткен апта"
+        0: "осы апта"
+        1: "келесі апта"
       :relative_time: 
         :future: 
           :one: "{0} ап. кейін"
@@ -497,6 +521,10 @@
           :other: "{0} ап. бұрын"
     :week-short: 
       :display_name: ап.
+      :relative: 
+        -1: "өткен апта"
+        0: "осы апта"
+        1: "келесі апта"
       :relative_time: 
         :future: 
           :one: "{0} ап. кейін"
@@ -537,6 +565,10 @@
           :other: "{0} жыл бұрын"
     :year-narrow: 
       :display_name: ж.
+      :relative: 
+        -1: "былтырғы жыл"
+        0: "биылғы жыл"
+        1: "келесі жыл"
       :relative_time: 
         :future: 
           :one: "{0} ж. кейін"
@@ -546,6 +578,10 @@
           :other: "{0} ж. бұрын"
     :year-short: 
       :display_name: ж.
+      :relative: 
+        -1: "былтырғы жыл"
+        0: "биылғы жыл"
+        1: "келесі жыл"
       :relative_time: 
         :future: 
           :one: "{0} ж. кейін"

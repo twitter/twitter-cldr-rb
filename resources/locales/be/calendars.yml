@@ -12,12 +12,12 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d, E"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
-        :Gy: "y 'г'. G"
-        :GyMMM: "LLL y 'г'. G"
-        :GyMMMEd: "E, d MMM y 'г'. G"
-        :GyMMMd: "d MMM y 'г'. G"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
+        :Gy: "y 'г'. G"
+        :GyMMM: "LLL y 'г'. G"
+        :GyMMMEd: "E, d MMM y 'г'. G"
+        :GyMMMd: "d MMM y 'г'. G"
         :GyMd: "dd.MM.y GGGGG"
         :H: HH
         :Hm: "HH:mm"
@@ -34,11 +34,11 @@
         :MMMd: "d MMM"
         :Md: d.M
         :d: d
-        :h: "hh a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: hh a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: mm.ss
         ? !ruby/symbol "y"
         : "y"
@@ -127,8 +127,8 @@
           0: "да нашай эры"
           1: "нашай эры"
         :narrow: 
-          0: BCE
-          1: CE
+          0: "да н.э."
+          1: н.э.
       :fields: 
         :day: дзень
         :day-narrow: д.
@@ -178,11 +178,11 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d MMMM y 'г'."
+            :pattern: "EEEE, d MMMM y 'г'."
           :long: 
-            :pattern: "d MMMM y 'г'."
+            :pattern: "d MMMM y 'г'."
           :medium: 
-            :pattern: "d MMM y 'г'."
+            :pattern: "d MMM y 'г'."
           :short: 
             :pattern: d.MM.yy
         :datetime: 

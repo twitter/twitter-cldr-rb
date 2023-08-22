@@ -12,13 +12,13 @@
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E, h:mm a"
-        :Ehms: "E, h:mm:ss a"
+        :Ehm: "E, h:mm a"
+        :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
         :GyMMMd: "d MMM y G"
-        :GyMd: "d/M/y GGGGG"
+        :GyMd: "d/M/y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -34,11 +34,11 @@
         :MMdd: dd/MM
         :Md: dd/MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -143,7 +143,7 @@
         :era-narrow: era
         :era-short: era
         :hour: hour
-        :hour-narrow: hr.
+        :hour-narrow: hr
         :hour-short: hr
         :minute: minute
         :minute-narrow: min
@@ -155,7 +155,7 @@
         :quarter-narrow: qtr
         :quarter-short: qtr
         :second: second
-        :second-narrow: sec.
+        :second-narrow: sec
         :second-short: sec
         :week: week
         :week-narrow: wk
@@ -170,7 +170,7 @@
         :weekdayOfMonth-narrow: "wkday of mo"
         :weekdayOfMonth-short: "wkday of mo"
         :year: year
-        :year-narrow: yr.
+        :year-narrow: yr
         :year-short: yr
         :zone: "time zone"
         :zone-narrow: zone
@@ -187,22 +187,22 @@
             :pattern: dd/MM/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :long: 
-            :pattern: "{{date}} 'at' {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "h:mm:ss a zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "h:mm:ss a z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "h:mm:ss a"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "h:mm a"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 

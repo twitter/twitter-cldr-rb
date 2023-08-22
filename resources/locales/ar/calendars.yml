@@ -25,7 +25,7 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E، d/‏M"
+        :MEd: "E، d‏/M"
         :MMM: LLL
         :MMMEd: "E، d MMM"
         :MMMMEd: "E، d MMMM"
@@ -33,7 +33,7 @@
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd‏/MM
-        :Md: d/‏M
+        :Md: d‏/M
         :d: d
         :h: "h a"
         :hm: "h:mm a"
@@ -44,7 +44,7 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M‏/y
-        :yMEd: "E، d/‏M/‏y"
+        :yMEd: "E، d‏/M‏/y"
         :yMM: MM‏/y
         :yMMM: "MMM y"
         :yMMMEd: "E، d MMM y"
@@ -193,9 +193,9 @@
           :long: 
             :pattern: "{{date}} في {{time}}"
           :medium: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}}، {{time}}"
           :short: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}}، {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"

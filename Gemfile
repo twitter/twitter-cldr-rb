@@ -13,7 +13,7 @@ group :development, :test do
   # gemspec allows any version, but most people are probably using 1.x, so
   # let's test and develop against that
   gem 'tzinfo', '< 2'
-  gem 'tzinfo-data', '= 1.2021.1'  # try to keep in sync with ICU
+  gem 'tzinfo-data', '= 1.2023.3'  # try to keep in sync with ICU
 end
 
 group :development do
@@ -23,6 +23,8 @@ group :development do
   gem 'ruby-cldr', github: 'camertron/ruby-cldr', branch: 'mapzones' # 'svenfuchs/ruby-cldr'
   gem 'i18n'
   gem 'cldr-plurals', '~> 1.1'
+  gem 'net-ftp'
+  gem 'rexml'
 end
 
 group :test do

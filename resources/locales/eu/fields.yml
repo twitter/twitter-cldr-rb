@@ -18,6 +18,12 @@
           :other: "Duela {0} egun"
     :day-narrow: 
       :display_name: eg.
+      :relative: 
+        -1: atzo
+        -2: herenegun
+        0: gaur
+        1: bihar
+        2: etzi
       :relative_time: 
         :future: 
           :one: "{0} egun barru"
@@ -27,6 +33,12 @@
           :other: "Duela {0} egun"
     :day-short: 
       :display_name: eg.
+      :relative: 
+        -1: atzo
+        -2: herenegun
+        0: gaur
+        1: bihar
+        2: etzi
       :relative_time: 
         :future: 
           :one: "{0} egun barru"
@@ -101,6 +113,8 @@
           :other: "Duela {0} ordu"
     :hour-narrow: 
       :display_name: h
+      :relative: 
+        0: "ordu honetan"
       :relative_time: 
         :future: 
           :one: "{0} ordu barru"
@@ -110,6 +124,8 @@
           :other: "Duela {0} ordu"
     :hour-short: 
       :display_name: h
+      :relative: 
+        0: "ordu honetan"
       :relative_time: 
         :future: 
           :one: "{0} ordu barru"
@@ -130,6 +146,8 @@
           :other: "Duela {0} minutu"
     :minute-narrow: 
       :display_name: min
+      :relative: 
+        0: "minutu honetan"
       :relative_time: 
         :future: 
           :one: "{0} minutu barru"
@@ -139,6 +157,8 @@
           :other: "Duela {0} minutu"
     :minute-short: 
       :display_name: min
+      :relative: 
+        0: "minutu honetan"
       :relative_time: 
         :future: 
           :one: "{0} minutu barru"
@@ -197,6 +217,10 @@
           :other: "Duela {0} hilabete"
     :month-narrow: 
       :display_name: hil.
+      :relative: 
+        -1: "aurreko hilabetean"
+        0: "hilabete honetan"
+        1: "hurrengo hilabetean"
       :relative_time: 
         :future: 
           :one: "{0} hilabete barru"
@@ -206,6 +230,10 @@
           :other: "Duela {0} hilabete"
     :month-short: 
       :display_name: hil.
+      :relative: 
+        -1: "aurreko hilabetean"
+        0: "hilabete honetan"
+        1: "hurrengo hilabetean"
       :relative_time: 
         :future: 
           :one: "{0} hilabete barru"
@@ -301,6 +329,8 @@
           :other: "Duela {0} segundo"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: orain
       :relative_time: 
         :future: 
           :one: "{0} segundo barru"
@@ -310,6 +340,8 @@
           :other: "Duela {0} segundo"
     :second-short: 
       :display_name: s
+      :relative: 
+        0: orain
       :relative_time: 
         :future: 
           :one: "{0} segundo barru"
@@ -476,6 +508,10 @@
           :other: "Duela {0} aste"
     :week-narrow: 
       :display_name: ast.
+      :relative: 
+        -1: "aurreko astean"
+        0: "aste honetan"
+        1: "hurrengo astean"
       :relative_time: 
         :future: 
           :one: "{0} aste barru"
@@ -485,6 +521,10 @@
           :other: "Duela {0} aste"
     :week-short: 
       :display_name: ast.
+      :relative: 
+        -1: "aurreko astean"
+        0: "aste honetan"
+        1: "hurrengo astean"
       :relative_time: 
         :future: 
           :one: "{0} aste barru"

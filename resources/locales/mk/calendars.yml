@@ -11,9 +11,9 @@
         :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d E"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ed: "E, d"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
@@ -35,23 +35,23 @@
         :Md: d.M
         :Mdd: d.M
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: M.y
         :yMEd: "E, d.M.y"
-        :yMMM: "MMM y 'г'."
-        :yMMMEd: "E, d MMM y 'г'."
-        :yMMMM: "MMMM y 'г'."
-        :yMMMd: "d MMM y 'г'."
+        :yMMM: "MMM y 'г'."
+        :yMMMEd: "E, d MMM y 'г'."
+        :yMMMM: "MMMM y 'г'."
+        :yMMMd: "d MMM y 'г'."
         :yMd: d.M.y
-        :yQQQ: "QQQ y 'г'."
-        :yQQQQ: "QQQQ y 'г'."
+        :yQQQ: "QQQ y 'г'."
+        :yQQQQ: "QQQQ y 'г'."
         :yw: "w. 'седмица' 'од' Y"
       :days: 
         :format: 
@@ -128,7 +128,7 @@
           0: "пр. н.е."
           1: "нашата ера"
         :narrow: 
-          0: BCE
+          0: п.н.е.
           1: н.е.
       :fields: 
         :day: ден
@@ -300,84 +300,84 @@
           :narrow: 
             :afternoon1: попл.
             :am: претпл.
-            :evening1: веч.
+            :evening1: навечер
             :midnight: полн.
-            :morning1: утро
+            :morning1: наутро
             :morning2: претпл.
             :night1: ноќе
             :noon: напл.
             :pm: попл.
           :wide: 
             :afternoon1: попладне
-            :am: претпладне
+            :am: претпл.
             :evening1: навечер
             :midnight: полноќ
             :morning1: наутро
             :morning2: претпладне
-            :night1: "по полноќ"
+            :night1: ноќе
             :noon: напладне
-            :pm: попладне
+            :pm: попл.
         :stand-alone: 
           :abbreviated: 
             :afternoon1: попл.
             :am: претпл.
-            :evening1: навечер
+            :evening1: вечер
             :midnight: полноќ
-            :morning1: наутро
+            :morning1: утро
             :morning2: претпл.
-            :night1: "по полноќ"
-            :noon: напладне
+            :night1: ноќ
+            :noon: пладне
             :pm: попл.
           :narrow: 
             :afternoon1: попл.
             :am: претпл.
-            :evening1: навечер
+            :evening1: вечер
             :midnight: полноќ
-            :morning1: наутро
+            :morning1: утро
             :morning2: претпл.
-            :night1: "по полноќ"
+            :night1: ноќ
             :noon: пладне
             :pm: попл.
           :wide: 
             :afternoon1: попладне
-            :am: претпладне
-            :evening1: навечер
-            :midnight: "на полноќ"
-            :morning1: наутро
+            :am: претпл.
+            :evening1: вечер
+            :midnight: полноќ
+            :morning1: утро
             :morning2: претпладне
-            :night1: "по полноќ"
-            :noon: напладне
-            :pm: попладне
+            :night1: ноќ
+            :noon: пладне
+            :pm: попл.
       :quarters: 
         :format: 
           :abbreviated: 
-            1: јан-мар
-            2: апр-јун
-            3: јул-сеп
-            4: окт-дек
+            1: "јан – мар"
+            2: "апр – јун"
+            3: "јул – септ"
+            4: "окт – дек"
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "прво тромесечје"
-            2: "второ тромесечје"
-            3: "трето тромесечје"
-            4: "четврто тромесечје"
+            1: "прво тримесечје"
+            2: "второ тримесечје"
+            3: "трето тримесечје"
+            4: "четврто тримесечје"
         :stand-alone: 
           :abbreviated: 
-            1: јан-мар
-            2: апр-јун
-            3: јул-сеп
-            4: окт-дек
+            1: "јан – мар"
+            2: "апр – јун"
+            3: "јул – септ"
+            4: "окт – дек"
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "прво тромесечје"
-            2: "второ тромесечје"
-            3: "трето тромесечје"
-            4: "четврто тромесечје"
+            1: "прво тримесечје"
+            2: "второ тримесечје"
+            3: "трето тримесечје"
+            4: "четврто тримесечје"

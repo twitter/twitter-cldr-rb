@@ -23,7 +23,7 @@ module TwitterCldr
         ERB.new(text).result(binding)
       end
 
-      def datetime
+      def datetimew
         @datetime ||= DateTime.new(2014, 2, 14, 12, 20, 5, 0)
       end
 

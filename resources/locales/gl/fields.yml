@@ -18,6 +18,10 @@
           :other: "hai {0} días"
     :day-narrow: 
       :display_name: día
+      :relative: 
+        -1: onte
+        0: hoxe
+        1: mañá
       :relative_time: 
         :future: 
           :one: "en {0} día"
@@ -27,6 +31,10 @@
           :other: "hai {0} días"
     :day-short: 
       :display_name: día
+      :relative: 
+        -1: onte
+        0: hoxe
+        1: mañá
       :relative_time: 
         :future: 
           :one: "en {0} día"
@@ -210,6 +218,10 @@
           :other: "hai {0} meses"
     :month-short: 
       :display_name: mes
+      :relative: 
+        -1: "o mes pasado"
+        0: "este mes"
+        1: "o próximo mes"
       :relative_time: 
         :future: 
           :one: "en {0} mes"

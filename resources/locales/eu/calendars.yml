@@ -12,12 +12,12 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d, E"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "G y"
         :GyMMM: "G y. 'urteko' MMM"
-        :GyMMMEd: "G y. 'urteko' MMM d, E"
-        :GyMMMd: "G y. 'urteko' MMM d"
+        :GyMMMEd: "G y. 'urteko' MMM d('a'), E"
+        :GyMMMd: "G y. 'urteko' MMM d('a')"
         :GyMd: "GGGGG y-MM-dd"
         :H: HH
         :Hm: "HH:mm"
@@ -27,28 +27,28 @@
         :M: L
         :MEd: "M/d, E"
         :MMM: LLL
-        :MMMEd: "MMM d, E"
+        :MMMEd: "MMM d('a'), E"
         :MMMMW: "MMMM W. 'astea'"
-        :MMMMd: "MMMM d"
-        :MMMd: "MMM d"
+        :MMMMd: "MMMM'ren' d('a')"
+        :MMMd: "MMM d('a')"
         :Md: M/d
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: y/M
         :yMEd: "y/M/d, E"
         :yMMM: "y MMM"
-        :yMMMEd: "y MMM d, E"
+        :yMMMEd: "y MMM d('a'), E"
         :yMMMM: "y('e')'ko' MMMM"
-        :yMMMMEd: "y('e')'ko' MMMM'k' d, E"
-        :yMMMMd: "y('e')'ko' MMMM'ren' d"
-        :yMMMd: "y MMM d"
+        :yMMMMEd: "y('e')'ko' MMMM'ren' d('a'), E"
+        :yMMMMd: "y('e')'ko' MMMM'ren' d('a')"
+        :yMMMd: "y MMM d('a')"
         :yMd: y/M/d
         :yQQQ: "y('e')'ko' QQQ"
         :yQQQQ: "y('e')'ko' QQQQ"
@@ -128,8 +128,8 @@
           0: "Gure aroaren aurretik"
           1: "Gure aroa"
         :narrow: 
-          0: a
-          1: o
+          0: G.a.a.
+          1: G.a.
       :fields: 
         :day: eguna
         :day-narrow: eg.
@@ -188,13 +188,13 @@
             :pattern: yy/M/d
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} ({{time}})"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} ({{time}})"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss (zzzz)"
@@ -233,18 +233,18 @@
             8: A
             9: I
           :wide: 
-            1: urtarrilak
-            10: urriak
-            11: azaroak
-            12: abenduak
-            2: otsailak
-            3: martxoak
-            4: apirilak
-            5: maiatzak
-            6: ekainak
-            7: uztailak
-            8: abuztuak
-            9: irailak
+            1: urtarrila
+            10: urria
+            11: azaroa
+            12: abendua
+            2: otsaila
+            3: martxoa
+            4: apirila
+            5: maiatza
+            6: ekaina
+            7: uztaila
+            8: abuztua
+            9: iraila
         :stand-alone: 
           :abbreviated: 
             1: urt.
@@ -302,7 +302,7 @@
             :afternoon2: arrats.
             :am: g
             :evening1: iluntz.
-            :midnight: gauerdia
+            :midnight: gauerd.
             :morning1: goizald.
             :morning2: goizeko
             :night1: gaueko

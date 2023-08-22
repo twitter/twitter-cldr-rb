@@ -573,7 +573,7 @@
                 :rule: "<%spellout-cardinal-neuter< τετράκις εκατομμυριοστός[ >>];"
                 :value: 1000000000000000
               - 
-                :rule: "=#,##0=.;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-masculine
           - 
@@ -725,7 +725,7 @@
                 :rule: "<%spellout-cardinal-neuter< τετράκις εκατομμυριοστή[ >>];"
                 :value: 1000000000000000
               - 
-                :rule: "=#,##0=.;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-feminine
           - 
@@ -874,7 +874,19 @@
                 :rule: "<%spellout-cardinal-neuter< τετράκις εκατομμυριοστό[ >>];"
                 :value: 1000000000000000
               - 
-                :rule: "=#,##0=.;"
+                :rule: "=#,##0=;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-neuter
         :type: SpelloutRules
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=;"
+                :value: 0
+            :type: digits-ordinal
+        :type: OrdinalRules

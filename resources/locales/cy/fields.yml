@@ -26,6 +26,10 @@
           :zero: "{0} diwrnod yn ôl"
     :day-narrow: 
       :display_name: diwrnod
+      :relative: 
+        -1: ddoe
+        0: heddiw
+        1: yfory
       :relative_time: 
         :future: 
           :few: "ymhen {0} diwrnod"
@@ -42,6 +46,7 @@
           :two: "{0} ddiwrnod yn ôl"
           :zero: "{0} diwrnod yn ôl"
     :day-short: 
+      :display_name: diwrnod
       :relative: 
         -1: ddoe
         -2: echdoe
@@ -330,6 +335,10 @@
           :zero: "{0} mis yn ôl"
     :month-narrow: 
       :display_name: mis
+      :relative: 
+        -1: "mis diwethaf"
+        0: "y mis hwn"
+        1: "mis nesaf"
       :relative_time: 
         :future: 
           :few: "ymhen {0} mis"
@@ -347,6 +356,10 @@
           :zero: "{0} mis yn ôl"
     :month-short: 
       :display_name: mis
+      :relative: 
+        -1: "mis diwethaf"
+        0: "y mis hwn"
+        1: "mis nesaf"
       :relative_time: 
         :future: 
           :few: "ymhen {0} mis"
@@ -438,6 +451,10 @@
           :two: "{0} dydd Sadwrn yn ôl"
           :zero: "{0} dydd Sadwrn yn ôl"
     :sat-narrow: 
+      :relative: 
+        -1: "Sad. diwethaf"
+        0: "Sad. yma"
+        1: "Sad. nesaf"
       :relative_time: 
         :future: 
           :few: "ymhen {0} dydd Sadwrn"
@@ -607,6 +624,10 @@
           :two: "{0} dydd Iau yn ôl"
           :zero: "{0} dydd Iau yn ôl"
     :thu-narrow: 
+      :relative: 
+        -1: "Iau diwethaf"
+        0: "Iau yma"
+        1: "Iau nesaf"
       :relative_time: 
         :future: 
           :few: "ymhen {0} dydd Iau"
@@ -887,6 +908,10 @@
           :zero: "{0} o flynyddoedd yn ôl"
     :year-short: 
       :display_name: bl.
+      :relative: 
+        -1: llynedd
+        0: eleni
+        1: "blwyddyn nesaf"
       :relative_time: 
         :future: 
           :few: "ymhen {0} blynedd"

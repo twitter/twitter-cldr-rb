@@ -51,10 +51,10 @@
         :yMMM: "MMM y"
         :yMMMEEEEd: "EEEEที่ d MMM y"
         :yMMMEd: "E d MMM y"
-        :yMMMM: "MMMM G y"
-        :yMMMMEEEEd: "EEEEที่ d MMMM G y"
-        :yMMMMEd: "E d MMMM G y"
-        :yMMMMd: "d MMMM G y"
+        :yMMMM: "MMMM y"
+        :yMMMMEEEEd: "EEEEที่ d MMMM y"
+        :yMMMMEd: "E d MMMM y"
+        :yMMMMd: "d MMMM y"
         :yMMMd: "d MMM y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
@@ -155,7 +155,7 @@
         :hour-short: ชม.
         :minute: นาที
         :minute-narrow: นาที
-        :minute-short: Minute
+        :minute-short: นาที
         :month: เดือน
         :month-narrow: เดือน
         :month-short: เดือน
@@ -195,9 +195,9 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} เวลา {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} เวลา {{time}}"
           :medium: 
             :pattern: "{{date}} {{time}}"
           :short: 
@@ -297,14 +297,14 @@
           :abbreviated: 
             :afternoon1: ในตอนบ่าย
             :afternoon2: บ่าย
-            :am: ก่อนเที่ยง
+            :am: AM
             :evening1: ในตอนเย็น
             :evening2: ค่ำ
             :midnight: เที่ยงคืน
             :morning1: ในตอนเช้า
             :night1: กลางคืน
             :noon: เที่ยง
-            :pm: หลังเที่ยง
+            :pm: PM
           :narrow: 
             :afternoon1: เที่ยง
             :afternoon2: บ่าย

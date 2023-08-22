@@ -18,7 +18,7 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM, y G"
         :GyMMMd: "d MMM, y G"
-        :GyMd: "GGGGG dd-MM-y"
+        :GyMd: "dd-MM-y GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -189,13 +189,13 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} এ {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} এ {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "h:mm:ss a zzzz"
@@ -209,17 +209,17 @@
         :format: 
           :abbreviated: 
             1: জানু
-            10: অক্টোবর
-            11: নভেম্বর
-            12: ডিসেম্বর
+            10: অক্টো
+            11: নভে
+            12: ডিসে
             2: ফেব
             3: মার্চ
-            4: এপ্রিল
+            4: এপ্রি
             5: মে
             6: জুন
-            7: জুলাই
-            8: আগস্ট
-            9: সেপ্টেম্বর
+            7: জুল
+            8: আগ
+            9: সেপ
           :narrow: 
             1: জা
             10: অ
@@ -248,11 +248,11 @@
             9: সেপ্টেম্বর
         :stand-alone: 
           :abbreviated: 
-            1: জানুয়ারী
+            1: জানু
             10: অক্টোবর
             11: নভেম্বর
             12: ডিসেম্বর
-            2: ফেব্রুয়ারী
+            2: ফেব
             3: মার্চ
             4: এপ্রিল
             5: মে
@@ -307,13 +307,13 @@
             :night1: রাত্রি
             :pm: PM
           :wide: 
-            :afternoon1: দুপুর
+            :afternoon1: দুপুরবেলায়
             :afternoon2: বিকাল
             :am: AM
-            :evening1: সন্ধ্যা
-            :morning1: ভোর
-            :morning2: সকাল
-            :night1: রাত্রিতে
+            :evening1: সন্ধ্যাবেলায়
+            :morning1: ভোরবেলায়
+            :morning2: সকালবেলায়
+            :night1: রাত্রিবেলায়
             :pm: PM
         :stand-alone: 
           :abbreviated: 

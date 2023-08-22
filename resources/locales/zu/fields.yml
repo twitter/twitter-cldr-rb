@@ -20,8 +20,10 @@
       :display_name: Usuku
       :relative: 
         -1: izolo
+        -2: "usuku olwandulela olwayizolo"
         0: namhlanje
         1: kusasa
+        2: "usuku olulandela olwakusasa"
       :relative_time: 
         :future: 
           :one: "osukwini olungu-{0} oluzayo"
@@ -33,8 +35,10 @@
       :display_name: Usuku
       :relative: 
         -1: izolo
+        -2: "usuku olwandulela olwayizolo"
         0: namhlanje
         1: kusasa
+        2: "usuku olulandela olwakusasa"
       :relative_time: 
         :future: 
           :one: "osukwini olungu-{0} oluzayo"
@@ -109,12 +113,19 @@
           :other: "emahoreni angu-{0} edlule"
     :hour-narrow: 
       :display_name: Ihora
+      :relative: 
+        0: "leli hora"
       :relative_time: 
+        :future: 
+          :one: "ehoreni elingu-{0} elizayo"
+          :other: "emahoreni angu-{0} ezayo"
         :past: 
           :one: "{0} ihora eledlule"
           :other: "{0} amahora edlule"
     :hour-short: 
       :display_name: Ihora
+      :relative: 
+        0: "leli hora"
       :relative_time: 
         :future: 
           :one: "ehoreni elingu-{0} elizayo"
@@ -135,6 +146,8 @@
           :other: "{0} amaminithi edlule"
     :minute-narrow: 
       :display_name: Iminithi
+      :relative: 
+        0: "leli minithi"
       :relative_time: 
         :future: 
           :one: "kuminithi elingu-{0} elizayo"
@@ -144,6 +157,8 @@
           :other: "{0} amaminithi edlule"
     :minute-short: 
       :display_name: Iminithi
+      :relative: 
+        0: "leli minithi"
       :relative_time: 
         :future: 
           :one: "kuminithi elingu-{0} elizayo"
@@ -202,6 +217,10 @@
           :other: "{0} izinyanga ezedlule"
     :month-narrow: 
       :display_name: Inyanga
+      :relative: 
+        -1: "inyanga edlule"
+        0: "le nyanga"
+        1: "inyanga ezayo"
       :relative_time: 
         :future: 
           :one: "enyangeni engu-{0} ezayo"
@@ -211,6 +230,10 @@
           :other: "{0} izinyanga ezedlule"
     :month-short: 
       :display_name: Inyanga
+      :relative: 
+        -1: "inyanga edlule"
+        0: "le nyanga"
+        1: "inyanga ezayo"
       :relative_time: 
         :future: 
           :one: "ezinyangeni ezingu-{0} ezizayo"
@@ -233,6 +256,10 @@
           :other: "{0} amakota adlule"
     :quarter-narrow: 
       :display_name: Ikota
+      :relative: 
+        -1: "ikota edlule"
+        0: "le kota"
+        1: "ikota ezayo"
       :relative_time: 
         :future: 
           :one: "kumakota angu-{0}"
@@ -242,6 +269,10 @@
           :other: "{0} amakota edlule"
     :quarter-short: 
       :display_name: Ikota
+      :relative: 
+        -1: "ikota edlule"
+        0: "le kota"
+        1: "ikota ezayo"
       :relative_time: 
         :future: 
           :one: "kwikota engu-{0} ezayo"
@@ -298,6 +329,8 @@
           :other: "{0} amasekhondi edlule"
     :second-narrow: 
       :display_name: Isekhondi
+      :relative: 
+        0: manje
       :relative_time: 
         :future: 
           :one: "kusekhondi elingu-{0} elizayo"
@@ -307,6 +340,8 @@
           :other: "{0} amasekhondi edlule"
     :second-short: 
       :display_name: Isekhondi
+      :relative: 
+        0: manje
       :relative_time: 
         :future: 
           :one: "kusekhondi elingu-{0} elizayo"
@@ -473,6 +508,10 @@
           :other: "amaviki angu-{0} edlule"
     :week-narrow: 
       :display_name: Iviki
+      :relative: 
+        -1: "iviki eledlule"
+        0: "leli viki"
+        1: "iviki elizayo"
       :relative_time: 
         :future: 
           :one: "emavikini angu-{0} ezayo"
@@ -482,6 +521,10 @@
           :other: "amaviki angu-{0} edlule"
     :week-short: 
       :display_name: Iviki
+      :relative: 
+        -1: "iviki eledlule"
+        0: "leli viki"
+        1: "iviki elizayo"
       :relative_time: 
         :future: 
           :one: "evikini elingu-{0} elizayo"
@@ -505,6 +548,8 @@
       :display_name: "usuku lwenyanga"
     :weekdayOfMonth-narrow: 
       :display_name: "usuku lwenyanga"
+    :weekdayOfMonth-short: 
+      :display_name: "usuku lwenyanga"
     :year: 
       :display_name: Unyaka
       :relative: 
@@ -520,6 +565,10 @@
           :other: "{0} iminyaka edlule"
     :year-narrow: 
       :display_name: Unyaka
+      :relative: 
+        -1: "onyakeni odlule"
+        0: "kulo nyaka"
+        1: "unyaka ozayo"
       :relative_time: 
         :future: 
           :one: "onyakeni ongu-{0} ozayo"
@@ -529,6 +578,10 @@
           :other: "{0} unyaka odlule"
     :year-short: 
       :display_name: Unyaka
+      :relative: 
+        -1: "onyakeni odlule"
+        0: "kulo nyaka"
+        1: "unyaka ozayo"
       :relative_time: 
         :future: 
           :one: "onyakeni ongu-{0} ozayo"

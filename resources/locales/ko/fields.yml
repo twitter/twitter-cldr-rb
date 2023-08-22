@@ -16,6 +16,12 @@
           :other: "{0}일 전"
     :day-narrow: 
       :display_name: 일
+      :relative: 
+        -1: 어제
+        -2: 그저께
+        0: 오늘
+        1: 내일
+        2: 모레
       :relative_time: 
         :future: 
           :other: "{0}일 후"
@@ -23,6 +29,12 @@
           :other: "{0}일 전"
     :day-short: 
       :display_name: 일
+      :relative: 
+        -1: 어제
+        -2: 그저께
+        0: 오늘
+        1: 내일
+        2: 모레
       :relative_time: 
         :future: 
           :other: "{0}일 후"
@@ -165,6 +177,10 @@
           :other: "{0}개월 전"
     :month-narrow: 
       :display_name: 월
+      :relative: 
+        -1: 지난달
+        0: "이번 달"
+        1: "다음 달"
       :relative_time: 
         :future: 
           :other: "{0}개월 후"
@@ -172,6 +188,10 @@
           :other: "{0}개월 전"
     :month-short: 
       :display_name: 월
+      :relative: 
+        -1: 지난달
+        0: "이번 달"
+        1: "다음 달"
       :relative_time: 
         :future: 
           :other: "{0}개월 후"
@@ -190,6 +210,10 @@
           :other: "{0}분기 전"
     :quarter-narrow: 
       :display_name: 분기
+      :relative: 
+        -1: "지난 분기"
+        0: "이번 분기"
+        1: "다음 분기"
       :relative_time: 
         :future: 
           :other: "{0}분기 후"
@@ -197,6 +221,10 @@
           :other: "{0}분기 전"
     :quarter-short: 
       :display_name: 분기
+      :relative: 
+        -1: "지난 분기"
+        0: "이번 분기"
+        1: "다음 분기"
       :relative_time: 
         :future: 
           :other: "{0}분기 후"
@@ -243,6 +271,8 @@
           :other: "{0}초 전"
     :second-narrow: 
       :display_name: 초
+      :relative: 
+        0: 지금
       :relative_time: 
         :future: 
           :other: "{0}초 후"
@@ -250,6 +280,8 @@
           :other: "{0}초 전"
     :second-short: 
       :display_name: 초
+      :relative: 
+        0: 지금
       :relative_time: 
         :future: 
           :other: "{0}초 후"
@@ -388,6 +420,10 @@
           :other: "{0}주 전"
     :week-narrow: 
       :display_name: 주
+      :relative: 
+        -1: 지난주
+        0: "이번 주"
+        1: "다음 주"
       :relative_time: 
         :future: 
           :other: "{0}주 후"
@@ -395,6 +431,10 @@
           :other: "{0}주 전"
     :week-short: 
       :display_name: 주
+      :relative: 
+        -1: 지난주
+        0: "이번 주"
+        1: "다음 주"
       :relative_time: 
         :future: 
           :other: "{0}주 후"
@@ -431,6 +471,10 @@
           :other: "{0}년 전"
     :year-narrow: 
       :display_name: 년
+      :relative: 
+        -1: 작년
+        0: 올해
+        1: 내년
       :relative_time: 
         :future: 
           :other: "{0}년 후"
@@ -438,6 +482,10 @@
           :other: "{0}년 전"
     :year-short: 
       :display_name: 년
+      :relative: 
+        -1: 작년
+        0: 올해
+        1: 내년
       :relative_time: 
         :future: 
           :other: "{0}년 후"

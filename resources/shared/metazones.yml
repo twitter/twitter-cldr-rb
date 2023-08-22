@@ -702,16 +702,8 @@
     :type: Europe/Athens
   - 
     :other: Europe_Eastern
-    :territory: JO
-    :type: Asia/Amman
-  - 
-    :other: Europe_Eastern
     :territory: LB
     :type: Asia/Beirut
-  - 
-    :other: Europe_Eastern
-    :territory: SY
-    :type: Asia/Damascus
   - 
     :other: Europe_Further_Eastern
     :territory: "001"
@@ -1818,6 +1810,25 @@
     - 
       :from: 1998-04-05T09:00:00+00:00
       :metazone: Mexico_Pacific
+      :to: 2022-10-30T08:00:00+00:00
+    - 
+      :from: 2022-10-30T08:00:00+00:00
+      :metazone: America_Central
+  :America/Ciudad_Juarez: 
+    - 
+      :metazone: America_Central
+      :to: 1998-04-05T09:00:00+00:00
+    - 
+      :from: 1998-04-05T09:00:00+00:00
+      :metazone: Mexico_Pacific
+      :to: 2022-10-30T08:00:00+00:00
+    - 
+      :from: 2022-10-30T08:00:00+00:00
+      :metazone: America_Central
+      :to: 2022-11-30T06:00:00+00:00
+    - 
+      :from: 2022-11-30T06:00:00+00:00
+      :metazone: America_Mountain
   :America/Coral_Harbour: 
     - 
       :metazone: America_Eastern
@@ -2260,15 +2271,15 @@
     - 
       :from: 1998-04-05T09:00:00+00:00
       :metazone: America_Mountain
+      :to: 2022-10-30T08:00:00+00:00
+    - 
+      :from: 2022-10-30T08:00:00+00:00
+      :metazone: America_Central
   :America/Panama: 
     - 
       :metazone: America_Eastern
   :America/Pangnirtung: 
     - 
-      :metazone: Atlantic
-      :to: 1995-04-02T06:00:00+00:00
-    - 
-      :from: 1995-04-02T06:00:00+00:00
       :metazone: America_Eastern
       :to: 1999-10-31T06:00:00+00:00
     - 
@@ -2560,6 +2571,7 @@
   :Asia/Amman: 
     - 
       :metazone: Europe_Eastern
+      :to: 2022-10-27T22:00:00+00:00
   :Asia/Anadyr: 
     - 
       :metazone: Anadyr
@@ -2676,6 +2688,7 @@
   :Asia/Damascus: 
     - 
       :metazone: Europe_Eastern
+      :to: 2022-10-27T21:00:00+00:00
   :Asia/Dhaka: 
     - 
       :metazone: Dacca
@@ -3358,13 +3371,9 @@
   :Europe/Uzhgorod: 
     - 
       :metazone: Moscow
-      :to: 1990-06-30T23:00:00+00:00
+      :to: 1990-06-30T22:00:00+00:00
     - 
-      :from: 1990-06-30T23:00:00+00:00
-      :metazone: Europe_Central
-      :to: 1991-03-31T02:00:00+00:00
-    - 
-      :from: 1991-03-31T02:00:00+00:00
+      :from: 1990-06-30T22:00:00+00:00
       :metazone: Europe_Eastern
   :Europe/Vaduz: 
     - 
@@ -3402,9 +3411,9 @@
   :Europe/Zaporozhye: 
     - 
       :metazone: Moscow
-      :to: 1991-03-30T23:00:00+00:00
+      :to: 1990-06-30T22:00:00+00:00
     - 
-      :from: 1991-03-30T23:00:00+00:00
+      :from: 1990-06-30T22:00:00+00:00
       :metazone: Europe_Eastern
   :Europe/Zurich: 
     - 

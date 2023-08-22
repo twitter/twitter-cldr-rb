@@ -32,7 +32,7 @@ module TwitterCldr
             transforms.any? do |transform|
               transform.accepts?(forward_form, backward_form)
             end
-          rescue => e
+          rescue Exception => e
             if $debug
               puts e.message
               puts e.backtrace.join("\n")

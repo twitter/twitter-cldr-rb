@@ -31,6 +31,9 @@ describe 'Timezones' do
   end
 
   locales.each do |locale|
+    # ICU does not format timezones correctly for this locale
+    next if locale == :'sr-Cyrl-ME'
+
     locale_name = locale.localize.as_language_code || locale.to_s
 
     context "timezones in #{locale_name}", slow: !fast_locales.include?(locale) do

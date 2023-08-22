@@ -15,6 +15,7 @@
           :one: "{0} day ago"
           :other: "{0} days ago"
     :day-narrow: 
+      :display_name: day
       :relative_time: 
         :future: 
           :one: "in {0} day"
@@ -95,7 +96,7 @@
           :one: "{0} hour ago"
           :other: "{0} hours ago"
     :hour-narrow: 
-      :display_name: h
+      :display_name: hr
       :relative_time: 
         :future: 
           :one: "in {0} hr"
@@ -104,7 +105,7 @@
           :one: "{0} hr ago"
           :other: "{0} hrs ago"
     :hour-short: 
-      :display_name: h
+      :display_name: hr
       :relative_time: 
         :future: 
           :one: "in {0} hr"
@@ -236,7 +237,7 @@
           :one: "in {0} qtr"
           :other: "in {0} qtrs"
         :past: 
-          :one: "in {0} qtr ago"
+          :one: "{0} qtr ago"
           :other: "{0} qtrs ago"
     :quarter-short: 
       :display_name: qtr
@@ -533,6 +534,7 @@
           :one: "{0} year ago"
           :other: "{0} years ago"
     :year-narrow: 
+      :display_name: yr
       :relative: 
         -1: "last yr"
         0: "this yr"

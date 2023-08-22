@@ -6,8 +6,11 @@
       - und-Latn-t-und-hebr
     :direction: both
     :rules: 
-      - ":: [[:Hebrew:] [:^ccc=0:] [ְ-ֹֻ-ּׁ-ׂℵ-ℸֿ̄] - [ֽ]] ;"
+      - ":: [[־׳״][:Hebrew:] [:^ccc=0:] [ְ-ֹֻ-ּׁ-ׂℵ-ℸֿ̄] - [ֽ]] ;"
       - ":: nfkd (nfc) ;"
+      - "׳ <> '′';"
+      - "״ <> '″';"
+      - "־ <> '-';"
       - "$letterAfter = [:M:]* [:L:] ;"
       - "ח <> ẖ ;"
       - "צ <> ẕ } $letterAfter;"
@@ -69,7 +72,7 @@
       - "כס < x ;"
       - ":: (lower);"
       - ":: nfc (nfd) ;"
-      - ":: ([[:Latin:] [:^ccc=0:] [ʻ-ʼ̀-̧̱̂̇̌̀-́    ̄ ]]);"
+      - ":: ([[-′″][:Latin:] [:^ccc=0:] [ʻ-ʼ̀-̧̱̂̇̌̀-́    ̄ ]]);"
     :source: Hebr
     :target: Latn
     :variant: ~

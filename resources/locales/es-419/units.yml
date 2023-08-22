@@ -157,6 +157,9 @@
         :duration-nanosecond: 
           :one: "{0} nanosegundo"
           :other: "{0} nanosegundos"
+        :duration-quarter: 
+          :one: "{0} trimestre"
+          :other: "{0} trimestres"
         :duration-second: 
           :one: "{0} segundo"
           :other: "{0} segundos"
@@ -346,9 +349,6 @@
         :mass-kilogram: 
           :one: "{0} kilogramo"
           :other: "{0} kilogramos"
-        :mass-metric-ton: 
-          :one: "{0} tonelada métrica"
-          :other: "{0} toneladas métricas"
         :mass-microgram: 
           :one: "{0} microgramo"
           :other: "{0} microgramos"
@@ -373,6 +373,9 @@
         :mass-ton: 
           :one: "{0} tonelada"
           :other: "{0} toneladas"
+        :mass-tonne: 
+          :one: "{0} tonelada métrica"
+          :other: "{0} toneladas métricas"
         :power-gigawatt: 
           :one: "{0} gigavatio"
           :other: "{0} gigavatios"
@@ -704,6 +707,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-quarter: 
+          :one: "{0}/trim"
+          :other: "{0}/trim"
         :duration-second: 
           :one: "{0}s"
           :other: "{0}s"
@@ -750,8 +756,8 @@
           :one: "{0}kWh"
           :other: "{0}kWh"
         :energy-therm-us: 
-          :one: "{0}thm EEUU"
-          :other: "{0}thm EEUU"
+          :one: "{0}thm EE.UU."
+          :other: "{0}thm EE.UU."
         :force-kilowatt-hour-per-100-kilometer: 
           :one: "{0} kWh/100km"
           :other: "{0} kWh/100km"
@@ -774,7 +780,7 @@
           :one: "{0}MHz"
           :other: "{0}MHz"
         :graphics-dot: 
-          :one: "{0}p"
+          :one: "{0}pt"
           :other: "{0}pt"
         :graphics-dot-per-centimeter: 
           :one: "{0}ppcm"
@@ -847,7 +853,7 @@
           :other: "{0}nm"
         :length-nautical-mile: 
           :one: "{0}nmi"
-          :other: "{0}M"
+          :other: "{0}nmi"
         :length-parsec: 
           :one: "{0}pc"
           :other: "{0}pc"
@@ -893,9 +899,6 @@
         :mass-kilogram: 
           :one: "{0}kg"
           :other: "{0}kg"
-        :mass-metric-ton: 
-          :one: "{0}t"
-          :other: "{0}t"
         :mass-microgram: 
           :one: "{0}μg"
           :other: "{0}μg"
@@ -920,12 +923,15 @@
         :mass-ton: 
           :one: "{0}ton"
           :other: "{0}ton"
+        :mass-tonne: 
+          :one: "{0}t"
+          :other: "{0}t"
         :power-gigawatt: 
           :one: "{0}GW"
           :other: "{0}GW"
         :power-horsepower: 
-          :one: "{0}CV"
-          :other: "{0}CV"
+          :one: "{0}hp"
+          :other: "{0}hp"
         :power-kilowatt: 
           :one: "{0}kW"
           :other: "{0}kW"
@@ -1076,12 +1082,15 @@
         :volume-megaliter: 
           :one: "{0}Ml"
           :other: "{0}Ml"
+        :volume-milliliter: 
+          :one: "{0}ml"
+          :other: "{0}ml"
         :volume-pinch: 
           :one: "{0}pzc"
           :other: "{0}pzc"
         :volume-pint: 
-          :one: "{0}p"
-          :other: "{0}p"
+          :one: "{0}pt"
+          :other: "{0}pt"
         :volume-pint-metric: 
           :one: "{0}mpt"
           :other: "{0}mpt"
@@ -1248,6 +1257,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-quarter: 
+          :one: "{0} trim."
+          :other: "{0} trim."
         :duration-second: 
           :one: "{0} s"
           :other: "{0} s"
@@ -1276,6 +1288,7 @@
           :one: "{0} cal"
           :other: "{0} cal"
         :energy-electronvolt: 
+          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} kcal"
@@ -1299,8 +1312,10 @@
           :one: "{0} kWh/100 km"
           :other: "{0} kWh/100 km"
         :force-newton: 
+          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
+          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} GHz"
@@ -1348,6 +1363,7 @@
           :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
+          :one: "{0} R⊕"
           :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} ftm"
@@ -1356,6 +1372,7 @@
           :one: "{0} ft"
           :other: "{0} ft"
         :length-furlong: 
+          :one: "{0} fur"
           :other: "{0} fur"
         :length-inch: 
           :one: "{0} in"
@@ -1397,25 +1414,31 @@
           :one: "{0} pto."
           :other: "{0} ptos."
         :length-solar-radius: 
+          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} yd"
           :other: "{0} yd"
         :light-candela: 
+          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
+          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
+          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} ct"
           :other: "{0} ct"
         :mass-dalton: 
+          :one: "{0} Da"
           :other: "{0} Da"
         :mass-earth-mass: 
+          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-grain: 
           :one: "{0} gr"
@@ -1426,9 +1449,6 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
           :one: "{0} μg"
           :other: "{0} μg"
@@ -1445,12 +1465,17 @@
           :one: "{0} lb"
           :other: "{0} lb"
         :mass-solar-mass: 
+          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
+          :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} ton"
           :other: "{0} ton"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"
@@ -1482,8 +1507,10 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
+          :one: "{0} kPa"
           :other: "{0} kPa"
         :pressure-megapascal: 
+          :one: "{0} MPa"
           :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
@@ -1534,6 +1561,7 @@
           :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
+          :one: "{0} bu"
           :other: "{0} bu"
         :volume-centiliter: 
           :one: "{0} cl"

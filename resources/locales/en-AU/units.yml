@@ -157,6 +157,9 @@
         :duration-nanosecond: 
           :one: "{0} nanosecond"
           :other: "{0} nanoseconds"
+        :duration-quarter: 
+          :one: "{0} quarter"
+          :other: "{0} quarters"
         :duration-second: 
           :one: "{0} second"
           :other: "{0} seconds"
@@ -346,9 +349,6 @@
         :mass-kilogram: 
           :one: "{0} kilogram"
           :other: "{0} kilograms"
-        :mass-metric-ton: 
-          :one: tonne
-          :other: "{0} tonnes"
         :mass-microgram: 
           :one: "{0} microgram"
           :other: "{0} micrograms"
@@ -373,6 +373,9 @@
         :mass-ton: 
           :one: "{0} ton"
           :other: "{0} tons"
+        :mass-tonne: 
+          :one: tonne
+          :other: "{0} tonnes"
         :power-gigawatt: 
           :one: "{0} gigawatt"
           :other: "{0} gigawatts"
@@ -421,6 +424,9 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0} pound per square inch"
           :other: "{0} pounds per square inch"
+        :speed-beaufort: 
+          :one: "Beaufort {0}"
+          :other: "Beaufort {0}"
         :speed-kilometer-per-hour: 
           :one: "{0} kilometre per hour"
           :other: "{0} kilometres per hour"
@@ -704,6 +710,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-quarter: 
+          :one: "{0}q"
+          :other: "{0}q"
         :duration-second: 
           :one: "{0}s."
           :other: "{0}s."
@@ -893,9 +902,6 @@
         :mass-kilogram: 
           :one: "{0}kg"
           :other: "{0}kg"
-        :mass-metric-ton: 
-          :one: "{0}t"
-          :other: "{0}t"
         :mass-microgram: 
           :one: "{0}μg"
           :other: "{0}μg"
@@ -920,6 +926,9 @@
         :mass-ton: 
           :one: "{0}tn"
           :other: "{0}tn"
+        :mass-tonne: 
+          :one: "{0}t"
+          :other: "{0}t"
         :power-gigawatt: 
           :one: "{0}GW"
           :other: "{0}GW"
@@ -968,6 +977,9 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0}psi"
           :other: "{0}psi"
+        :speed-beaufort: 
+          :one: "B{0}"
+          :other: "B{0}"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
@@ -1041,8 +1053,8 @@
           :one: "{0}dsp US"
           :other: "{0}dsp US"
         :volume-dessert-spoon-imperial: 
-          :one: "{0}dsp-Imp."
-          :other: "{0}dsp-Imp."
+          :one: "{0}dsp-Imp"
+          :other: "{0}dsp-Imp"
         :volume-dram: 
           :one: "{0}fl.dr."
           :other: "{0}fl.dr."
@@ -1053,11 +1065,11 @@
           :one: "{0}fl oz"
           :other: "{0}fl oz"
         :volume-fluid-ounce-imperial: 
-          :one: "{0}fl oz"
-          :other: "{0}fl oz"
+          :one: "{0}fl oz Im"
+          :other: "{0}fl oz Im"
         :volume-gallon: 
-          :one: "{0}gal. US"
-          :other: "{0}gal. US"
+          :one: "{0} gal US"
+          :other: "{0} gal US"
         :volume-gallon-imperial: 
           :one: "{0}gal."
           :other: "{0}gal."
@@ -1111,8 +1123,8 @@
           :one: "{0} arcsec."
           :other: "{0} arcsec."
         :angle-degree: 
-          :one: "{0} deg."
-          :other: "{0} deg."
+          :one: "{0} deg"
+          :other: "{0} deg"
         :angle-radian: 
           :one: "{0} rad"
           :other: "{0} rad"
@@ -1248,6 +1260,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-quarter: 
+          :one: "{0} qtr"
+          :other: "{0} qtrs"
         :duration-second: 
           :one: "{0} sec."
           :other: "{0} secs"
@@ -1368,8 +1383,8 @@
           :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
-          :one: "{0} l.y."
-          :other: "{0} l.y."
+          :one: "{0} ly"
+          :other: "{0} ly"
         :length-meter: 
           :one: "{0} m"
           :other: "{0} m"
@@ -1434,9 +1449,6 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
           :one: "{0} μg"
           :other: "{0} μg"
@@ -1461,6 +1473,9 @@
         :mass-ton: 
           :one: "{0} tn"
           :other: "{0} tn"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"
@@ -1509,6 +1524,9 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
+        :speed-beaufort: 
+          :one: "B {0}"
+          :other: "B {0}"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
@@ -1600,8 +1618,8 @@
           :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
-          :one: "{0} gal. US"
-          :other: "{0} gal. US"
+          :one: "{0} gal US"
+          :other: "{0} gal US"
         :volume-gallon-imperial: 
           :one: "{0} gal."
           :other: "{0} gal."
@@ -1609,6 +1627,7 @@
           :one: "{0} hL"
           :other: "{0} hL"
         :volume-jigger: 
+          :one: "{0} jigger"
           :other: "{0} jiggers"
         :volume-liter: 
           :one: "{0} L"

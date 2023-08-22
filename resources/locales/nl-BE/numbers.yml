@@ -6,7 +6,12 @@
       :default: latn
     :formats: 
       :currency: 
-        :adlm: :numbers.formats.currency.latn
+        :adlm: 
+          :default: "¤ #,##0.00;¤ -#,##0.00"
+          :unit: 
+            :one: "{0} {1}"
+            :other: "{0} {1}"
+        :ahom: :numbers.formats.currency.latn
         :arab: 
           :default: "#,##0.00 ¤"
         :arabext: 
@@ -24,6 +29,7 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :bhks: :numbers.formats.currency.latn
         :brah: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -45,6 +51,7 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :diak: :numbers.formats.currency.latn
         :fullwide: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -75,6 +82,8 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :hmng: :numbers.formats.currency.latn
+        :hmnp: :numbers.formats.currency.latn
         :java: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -85,6 +94,7 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :kawi: :numbers.formats.currency.latn
         :khmr: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -174,16 +184,23 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :mathbold: :numbers.formats.currency.latn
+        :mathdbl: :numbers.formats.currency.latn
+        :mathmono: :numbers.formats.currency.latn
+        :mathsanb: :numbers.formats.currency.latn
+        :mathsans: :numbers.formats.currency.latn
         :mlym: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :modi: :numbers.formats.currency.latn
         :mong: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :mroo: :numbers.formats.currency.latn
         :mtei: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -199,6 +216,9 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :mymrtlng: :numbers.formats.currency.latn
+        :nagm: :numbers.formats.currency.latn
+        :newa: :numbers.formats.currency.latn
         :nkoo: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -229,11 +249,14 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :segment: :numbers.formats.currency.latn
         :shrd: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :sind: :numbers.formats.currency.latn
+        :sinh: :numbers.formats.currency.latn
         :sora: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
@@ -274,13 +297,19 @@
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :tirh: :numbers.formats.currency.latn
+        :tnsa: :numbers.formats.currency.latn
         :vaii: 
           :default: "¤ #,##0.00;¤ -#,##0.00"
           :unit: 
             :one: "{0} {1}"
             :other: "{0} {1}"
+        :wara: :numbers.formats.currency.latn
+        :wcho: :numbers.formats.currency.latn
       :decimal: 
-        :adlm: :numbers.formats.decimal.latn
+        :adlm: 
+          :default: "#,##0.###"
+        :ahom: :numbers.formats.decimal.latn
         :arab: 
           :default: "#,##0.###"
         :arabext: 
@@ -289,6 +318,7 @@
           :default: "#,##0.###"
         :beng: 
           :default: "#,##0.###"
+        :bhks: :numbers.formats.decimal.latn
         :brah: 
           :default: "#,##0.###"
         :cakm: 
@@ -298,6 +328,7 @@
         :default: :numbers.formats.decimal.latn
         :deva: 
           :default: "#,##0.###"
+        :diak: :numbers.formats.decimal.latn
         :fullwide: 
           :default: "#,##0.###"
         :gong: 
@@ -310,10 +341,13 @@
           :default: "#,##0.###"
         :hanidec: 
           :default: "#,##0.###"
+        :hmng: :numbers.formats.decimal.latn
+        :hmnp: :numbers.formats.decimal.latn
         :java: 
           :default: "#,##0.###"
         :kali: 
           :default: "#,##0.###"
+        :kawi: :numbers.formats.decimal.latn
         :khmr: 
           :default: "#,##0.###"
         :knda: 
@@ -428,16 +462,26 @@
           :default: "#,##0.###"
         :limb: 
           :default: "#,##0.###"
+        :mathbold: :numbers.formats.decimal.latn
+        :mathdbl: :numbers.formats.decimal.latn
+        :mathmono: :numbers.formats.decimal.latn
+        :mathsanb: :numbers.formats.decimal.latn
+        :mathsans: :numbers.formats.decimal.latn
         :mlym: 
           :default: "#,##0.###"
+        :modi: :numbers.formats.decimal.latn
         :mong: 
           :default: "#,##0.###"
+        :mroo: :numbers.formats.decimal.latn
         :mtei: 
           :default: "#,##0.###"
         :mymr: 
           :default: "#,##0.###"
         :mymrshan: 
           :default: "#,##0.###"
+        :mymrtlng: :numbers.formats.decimal.latn
+        :nagm: :numbers.formats.decimal.latn
+        :newa: :numbers.formats.decimal.latn
         :nkoo: 
           :default: "#,##0.###"
         :olck: 
@@ -450,8 +494,11 @@
           :default: "#,##0.###"
         :saur: 
           :default: "#,##0.###"
+        :segment: :numbers.formats.decimal.latn
         :shrd: 
           :default: "#,##0.###"
+        :sind: :numbers.formats.decimal.latn
+        :sinh: :numbers.formats.decimal.latn
         :sora: 
           :default: "#,##0.###"
         :sund: 
@@ -468,10 +515,16 @@
           :default: "#,##0.###"
         :tibt: 
           :default: "#,##0.###"
+        :tirh: :numbers.formats.decimal.latn
+        :tnsa: :numbers.formats.decimal.latn
         :vaii: 
           :default: "#,##0.###"
+        :wara: :numbers.formats.decimal.latn
+        :wcho: :numbers.formats.decimal.latn
       :percent: 
-        :adlm: :numbers.formats.percent.latn
+        :adlm: 
+          :default: "#,##0%"
+        :ahom: :numbers.formats.percent.latn
         :arab: 
           :default: "#,##0 %"
         :arabext: 
@@ -480,6 +533,7 @@
           :default: "#,##0%"
         :beng: 
           :default: "#,##0%"
+        :bhks: :numbers.formats.percent.latn
         :brah: 
           :default: "#,##0%"
         :cakm: 
@@ -489,6 +543,7 @@
         :default: :numbers.formats.percent.latn
         :deva: 
           :default: "#,##0%"
+        :diak: :numbers.formats.percent.latn
         :fullwide: 
           :default: "#,##0%"
         :gong: 
@@ -501,10 +556,13 @@
           :default: "#,##0%"
         :hanidec: 
           :default: "#,##0%"
+        :hmng: :numbers.formats.percent.latn
+        :hmnp: :numbers.formats.percent.latn
         :java: 
           :default: "#,##0%"
         :kali: 
           :default: "#,##0%"
+        :kawi: :numbers.formats.percent.latn
         :khmr: 
           :default: "#,##0%"
         :knda: 
@@ -521,16 +579,26 @@
           :default: "#,##0%"
         :limb: 
           :default: "#,##0%"
+        :mathbold: :numbers.formats.percent.latn
+        :mathdbl: :numbers.formats.percent.latn
+        :mathmono: :numbers.formats.percent.latn
+        :mathsanb: :numbers.formats.percent.latn
+        :mathsans: :numbers.formats.percent.latn
         :mlym: 
           :default: "#,##0%"
+        :modi: :numbers.formats.percent.latn
         :mong: 
           :default: "#,##0%"
+        :mroo: :numbers.formats.percent.latn
         :mtei: 
           :default: "#,##0%"
         :mymr: 
           :default: "#,##0%"
         :mymrshan: 
           :default: "#,##0%"
+        :mymrtlng: :numbers.formats.percent.latn
+        :nagm: :numbers.formats.percent.latn
+        :newa: :numbers.formats.percent.latn
         :nkoo: 
           :default: "#,##0%"
         :olck: 
@@ -543,8 +611,11 @@
           :default: "#,##0%"
         :saur: 
           :default: "#,##0%"
+        :segment: :numbers.formats.percent.latn
         :shrd: 
           :default: "#,##0%"
+        :sind: :numbers.formats.percent.latn
+        :sinh: :numbers.formats.percent.latn
         :sora: 
           :default: "#,##0%"
         :sund: 
@@ -561,10 +632,16 @@
           :default: "#,##0%"
         :tibt: 
           :default: "#,##0%"
+        :tirh: :numbers.formats.percent.latn
+        :tnsa: :numbers.formats.percent.latn
         :vaii: 
           :default: "#,##0%"
+        :wara: :numbers.formats.percent.latn
+        :wcho: :numbers.formats.percent.latn
       :scientific: 
-        :adlm: :numbers.formats.scientific.latn
+        :adlm: 
+          :default: "#E0"
+        :ahom: :numbers.formats.scientific.latn
         :arab: 
           :default: "#E0"
         :arabext: 
@@ -573,6 +650,7 @@
           :default: "#E0"
         :beng: 
           :default: "#E0"
+        :bhks: :numbers.formats.scientific.latn
         :brah: 
           :default: "#E0"
         :cakm: 
@@ -582,6 +660,7 @@
         :default: :numbers.formats.scientific.latn
         :deva: 
           :default: "#E0"
+        :diak: :numbers.formats.scientific.latn
         :fullwide: 
           :default: "#E0"
         :gong: 
@@ -594,10 +673,13 @@
           :default: "#E0"
         :hanidec: 
           :default: "#E0"
+        :hmng: :numbers.formats.scientific.latn
+        :hmnp: :numbers.formats.scientific.latn
         :java: 
           :default: "#E0"
         :kali: 
           :default: "#E0"
+        :kawi: :numbers.formats.scientific.latn
         :khmr: 
           :default: "#E0"
         :knda: 
@@ -614,16 +696,26 @@
           :default: "#E0"
         :limb: 
           :default: "#E0"
+        :mathbold: :numbers.formats.scientific.latn
+        :mathdbl: :numbers.formats.scientific.latn
+        :mathmono: :numbers.formats.scientific.latn
+        :mathsanb: :numbers.formats.scientific.latn
+        :mathsans: :numbers.formats.scientific.latn
         :mlym: 
           :default: "#E0"
+        :modi: :numbers.formats.scientific.latn
         :mong: 
           :default: "#E0"
+        :mroo: :numbers.formats.scientific.latn
         :mtei: 
           :default: "#E0"
         :mymr: 
           :default: "#E0"
         :mymrshan: 
           :default: "#E0"
+        :mymrtlng: :numbers.formats.scientific.latn
+        :nagm: :numbers.formats.scientific.latn
+        :newa: :numbers.formats.scientific.latn
         :nkoo: 
           :default: "#E0"
         :olck: 
@@ -636,8 +728,11 @@
           :default: "#E0"
         :saur: 
           :default: "#E0"
+        :segment: :numbers.formats.scientific.latn
         :shrd: 
           :default: "#E0"
+        :sind: :numbers.formats.scientific.latn
+        :sinh: :numbers.formats.scientific.latn
         :sora: 
           :default: "#E0"
         :sund: 
@@ -654,10 +749,28 @@
           :default: "#E0"
         :tibt: 
           :default: "#E0"
+        :tirh: :numbers.formats.scientific.latn
+        :tnsa: :numbers.formats.scientific.latn
         :vaii: 
           :default: "#E0"
+        :wara: :numbers.formats.scientific.latn
+        :wcho: :numbers.formats.scientific.latn
     :symbols: 
-      :adlm: :numbers.symbols.latn
+      :adlm: 
+        :approximately_sign: "~"
+        :decimal: ","
+        :exponential: E
+        :group: "."
+        :infinity: ∞
+        :list: ;
+        :minus_sign: "-"
+        :nan: NaN
+        :per_mille: ‰
+        :percent_sign: "%"
+        :plus_sign: +
+        :superscripting_exponent: ×
+        :time_separator: ":"
+      :ahom: :numbers.symbols.latn
       :arab: 
         :approximately_sign: "~"
         :decimal: ٫
@@ -687,6 +800,7 @@
         :superscripting_exponent: ×
         :time_separator: ٫
       :bali: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -700,6 +814,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :beng: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -712,7 +827,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :bhks: :numbers.symbols.latn
       :brah: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -726,6 +843,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :cakm: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -739,6 +857,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :cham: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -753,6 +872,7 @@
         :time_separator: ":"
       :default: :numbers.symbols.latn
       :deva: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -765,7 +885,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :diak: :numbers.symbols.latn
       :fullwide: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -779,6 +901,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :gong: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -792,6 +915,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :gonm: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -805,6 +929,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :gujr: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -818,6 +943,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :guru: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -831,6 +957,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :hanidec: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -843,8 +970,23 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
-      :hmnp: :numbers.symbols.latn
+      :hmng: :numbers.symbols.latn
+      :hmnp: 
+        :approximately_sign: "~"
+        :decimal: ","
+        :exponential: E
+        :group: "."
+        :infinity: ∞
+        :list: ;
+        :minus_sign: "-"
+        :nan: NaN
+        :per_mille: ‰
+        :percent_sign: "%"
+        :plus_sign: +
+        :superscripting_exponent: ×
+        :time_separator: ":"
       :java: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -858,6 +1000,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :kali: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -870,7 +1013,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :kawi: :numbers.symbols.latn
       :khmr: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -884,6 +1029,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :knda: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -897,6 +1043,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :lana: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -910,6 +1057,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :lanatham: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -923,6 +1071,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :laoo: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -950,6 +1099,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :lepc: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -963,6 +1113,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :limb: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -975,7 +1126,13 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :mathbold: :numbers.symbols.latn
+      :mathdbl: :numbers.symbols.latn
+      :mathmono: :numbers.symbols.latn
+      :mathsanb: :numbers.symbols.latn
+      :mathsans: :numbers.symbols.latn
       :mlym: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -988,7 +1145,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :modi: :numbers.symbols.latn
       :mong: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1001,7 +1160,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :mroo: :numbers.symbols.latn
       :mtei: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1015,6 +1176,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :mymr: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1028,6 +1190,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :mymrshan: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1040,7 +1203,11 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :mymrtlng: :numbers.symbols.latn
+      :nagm: :numbers.symbols.latn
+      :newa: :numbers.symbols.latn
       :nkoo: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1054,6 +1221,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :olck: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1067,6 +1235,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :orya: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1080,6 +1249,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :osma: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1093,6 +1263,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :rohg: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1106,6 +1277,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :saur: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1118,7 +1290,9 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :segment: :numbers.symbols.latn
       :shrd: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1131,7 +1305,10 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :sind: :numbers.symbols.latn
+      :sinh: :numbers.symbols.latn
       :sora: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1145,6 +1322,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :sund: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1158,6 +1336,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :takr: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1171,6 +1350,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :talu: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1184,6 +1364,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :tamldec: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1197,6 +1378,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :telu: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1210,6 +1392,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :thai: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1223,6 +1406,7 @@
         :superscripting_exponent: ×
         :time_separator: ":"
       :tibt: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1235,7 +1419,10 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :tirh: :numbers.symbols.latn
+      :tnsa: :numbers.symbols.latn
       :vaii: 
+        :approximately_sign: "~"
         :decimal: ","
         :exponential: E
         :group: "."
@@ -1248,3 +1435,5 @@
         :plus_sign: +
         :superscripting_exponent: ×
         :time_separator: ":"
+      :wara: :numbers.symbols.latn
+      :wcho: :numbers.symbols.latn

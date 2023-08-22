@@ -24,6 +24,13 @@
         0: "í dag"
         1: "á morgun"
         2: "eftir tvo daga"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} dag"
+          :other: "eftir {0} daga"
+        :past: 
+          :one: "fyrir {0} degi"
+          :other: "fyrir {0} dögum"
     :day-short: 
       :display_name: dagur
       :relative: 
@@ -173,7 +180,7 @@
           :other: "fyrir {0} mánudögum"
     :mon-narrow: 
       :relative: 
-        -1: "síðasti mán."
+        -1: "síðasta mán."
         0: "þessi mán."
         1: "nk. mán."
       :relative_time: 
@@ -356,8 +363,8 @@
           :other: "fyrir {0} sunnudögum"
     :sun-narrow: 
       :relative: 
-        -1: "síðasti sun."
-        0: "þessi sun."
+        -1: "síðasta sun."
+        0: "á sun."
         1: "nk. sun."
       :relative_time: 
         :future: 
@@ -505,6 +512,13 @@
         -1: "í síðustu viku"
         0: "í þessari viku"
         1: "í næstu viku"
+      :relative_time: 
+        :future: 
+          :one: "eftir {0} viku"
+          :other: "eftir {0} vikur"
+        :past: 
+          :one: "fyrir {0} viku"
+          :other: "fyrir {0} vikum"
     :week-short: 
       :display_name: vika
       :relative: 

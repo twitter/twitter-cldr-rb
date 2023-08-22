@@ -11,25 +11,25 @@
         :EBhms: "E h:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "E d"
+        :Ed: "d, E"
         :Ehm: "E h:mm a"
         :Ehms: "E h:mm:ss a"
-        :Gy: "G y"
-        :GyMMM: "G y MMM"
-        :GyMMMEd: "G y MMM d, E"
-        :GyMMMd: "G y MMM d"
-        :GyMd: "GGGGG y-MM-dd"
+        :Gy: "y G"
+        :GyMMM: "MMM y G"
+        :GyMMMEd: "E, d MMM y G"
+        :GyMMMd: "d MMM y G"
+        :GyMd: "d MMM y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "MM-dd, E"
-        :MMM: LLL
-        :MMMEd: "E 'la' d-'an' 'de' MMM"
-        :MMMMW: "'week' W 'of' MMMM"
-        :MMMMd: "MMMM d"
+        :MEd: "E, MM-dd"
+        :MMM: MMM
+        :MMMEd: "E, d MMM"
+        :MMMMW: "W-'a' 'semajno' 'de' MMMM"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: MM-dd
         :d: d
@@ -42,15 +42,15 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: y-MM
-        :yMEd: "y-MM-dd, E"
+        :yMEd: "E, y-MM-dd"
         :yMMM: "MMM y"
-        :yMMMEd: "E 'la' d-'an' 'de' MMM y"
-        :yMMMM: "y MMMM"
+        :yMMMEd: "E, d MMM y"
+        :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
         :yMd: y-MM-dd
         :yQQQ: "QQQ y"
-        :yQQQQ: "QQQQ y"
-        :yw: "'week' w 'of' Y"
+        :yQQQQ: "QQQQ 'de' y"
+        :yw: "w-'a' 'semajno' 'de' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -120,24 +120,24 @@
             :wed: merkredo
       :eras: 
         :abbr: 
-          0: a.K.E.
-          1: K.E.
+          0: aK
+          1: pK
         :name: 
-          0: "antaŭ Komuna Erao"
-          1: "Komuna Erao"
+          0: "antaŭ Kristo"
+          1: "post Kristo"
         :narrow: 
-          0: aKE
+          0: aK
           1: KE
       :fields: 
         :day: tago
-        :day-narrow: tago
+        :day-narrow: t.
         :day-short: tago
-        :dayOfYear: "Day Of Year"
-        :dayOfYear-narrow: "Day Of Year"
-        :dayOfYear-short: "Day Of Year"
-        :dayperiod: atm/ptm
-        :dayperiod-narrow: atm/ptm
-        :dayperiod-short: atm/ptm
+        :dayOfYear: "tago de jaro"
+        :dayOfYear-narrow: "t. de j."
+        :dayOfYear-short: "tago de jaro"
+        :dayperiod: "mateno / posttagmezo / vespero"
+        :dayperiod-narrow: tagotempo
+        :dayperiod-short: tagotempo
         :era: erao
         :era-narrow: erao
         :era-short: erao
@@ -145,34 +145,34 @@
         :hour-narrow: h
         :hour-short: horo
         :minute: minuto
-        :minute-narrow: m
-        :minute-short: minuto
+        :minute-narrow: min
+        :minute-short: min.
         :month: monato
-        :month-narrow: monato
-        :month-short: monato
-        :quarter: kvaronjaro
-        :quarter-narrow: kvaronjaro
-        :quarter-short: kvaronjaro
+        :month-narrow: mon.
+        :month-short: mon.
+        :quarter: jarkvarono
+        :quarter-narrow: jk.
+        :quarter-short: jarkvarono
         :second: sekundo
         :second-narrow: s
-        :second-short: sekundo
+        :second-short: sek.
         :week: semajno
-        :week-narrow: semajno
-        :week-short: semajno
-        :weekOfMonth: "Week Of Month"
-        :weekOfMonth-narrow: "Week Of Month"
-        :weekOfMonth-short: "Week Of Month"
-        :weekday: "tago de la semajno"
-        :weekday-narrow: "tago de la semajno"
-        :weekday-short: "tago de la semajno"
-        :weekdayOfMonth: "Weekday Of Month"
-        :weekdayOfMonth-narrow: "Weekday Of Month"
-        :weekdayOfMonth-short: "Weekday Of Month"
+        :week-narrow: sem.
+        :week-short: sem.
+        :weekOfMonth: "semajno de monato"
+        :weekOfMonth-narrow: "sem. de mon."
+        :weekOfMonth-short: "sem. de mon."
+        :weekday: "tago de semajno"
+        :weekday-narrow: st.
+        :weekday-short: semajntago
+        :weekdayOfMonth: "semajntago de monato"
+        :weekdayOfMonth-narrow: "st. de monato"
+        :weekdayOfMonth-short: "st. de monato"
         :year: jaro
         :year-narrow: jaro
         :year-short: jaro
         :zone: horzono
-        :zone-narrow: horzono
+        :zone-narrow: zono
         :zone-short: horzono
       :formats: 
         :date: 
@@ -186,9 +186,9 @@
             :pattern: yy-MM-dd
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'je' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'je' {{time}}"
           :medium: 
             :pattern: "{{date}} {{time}}"
           :short: 
@@ -245,18 +245,18 @@
             9: septembro
         :stand-alone: 
           :abbreviated: 
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
-            5: maj
-            6: jun
-            7: jul
-            8: aŭg
-            9: sep
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: Maj
+            6: Jun
+            7: Jul
+            8: Aŭg
+            9: Sep
           :narrow: 
             1: J
             10: O
@@ -299,41 +299,41 @@
             :am: atm
             :pm: ptm
           :narrow: 
-            :am: atm
-            :pm: ptm
+            :am: a
+            :pm: p
           :wide: 
             :am: atm
             :pm: ptm
       :quarters: 
         :format: 
           :abbreviated: 
-            1: K1
-            2: K2
-            3: K3
-            4: K4
+            1: "1. jk."
+            2: "2. jk."
+            3: "3. jk."
+            4: "4. jk."
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "1-a kvaronjaro"
-            2: "2-a kvaronjaro"
-            3: "3-a kvaronjaro"
-            4: "4-a kvaronjaro"
+            1: "1-a jarkvarono"
+            2: "2-a jarkvarono"
+            3: "3-a jarkvarono"
+            4: "4-a jarkvarono"
         :stand-alone: 
           :abbreviated: 
-            1: K1
-            2: K2
-            3: K3
-            4: K4
+            1: "1. jk."
+            2: "2. jk."
+            3: "3. jk."
+            4: "4. jk."
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "1-a kvaronjaro"
-            2: "2-a kvaronjaro"
-            3: "3-a kvaronjaro"
-            4: "4-a kvaronjaro"
+            1: "1-a jarkvarono"
+            2: "2-a jarkvarono"
+            3: "3-a jarkvarono"
+            4: "4-a jarkvarono"

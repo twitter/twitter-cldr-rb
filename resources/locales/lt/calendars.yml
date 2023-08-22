@@ -12,8 +12,8 @@
         :EHm: "HH:mm, E"
         :EHms: "HH:mm:ss, E"
         :Ed: "d, E"
-        :Ehm: "hh:mm a, E"
-        :Ehms: "hh:mm:ss a, E"
+        :Ehm: "hh:mm a, E"
+        :Ehms: "hh:mm:ss a, E"
         :Gy: "y 'm'. G"
         :GyMMM: "y-MM G"
         :GyMMMEd: "y-MM-dd G, E"
@@ -21,7 +21,7 @@
         :GyMMMMEd: "y 'm'. G MMMM d 'd'., E"
         :GyMMMMd: "y 'm'. G MMMM d 'd'."
         :GyMMMd: "y-MM-dd G"
-        :GyMd: "GGGGG y-MM-dd"
+        :GyMd: "y-MM-dd G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -39,11 +39,11 @@
         :MMdd: MM-dd
         :Md: MM-d
         :d: dd
-        :h: "hh a"
-        :hm: "hh:mm a"
-        :hms: "hh:mm:ss a"
-        :hmsv: "hh:mm:ss a; v"
-        :hmv: "hh:mm a; v"
+        :h: hh a
+        :hm: "hh:mm a"
+        :hms: "hh:mm:ss a"
+        :hmsv: "hh:mm:ss a; v"
+        :hmv: "hh:mm a; v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -304,7 +304,7 @@
             :pm: popiet
           :narrow: 
             :afternoon1: popietė
-            :am: pr. p.
+            :am: pr. p.
             :evening1: vakaras
             :midnight: vidurnaktis
             :morning1: rytas
@@ -332,7 +332,7 @@
             :pm: popiet
           :narrow: 
             :afternoon1: diena
-            :am: pr. p.
+            :am: pr. p.
             :evening1: vakaras
             :midnight: vidurnaktis
             :morning1: rytas

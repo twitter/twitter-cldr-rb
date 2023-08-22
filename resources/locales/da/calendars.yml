@@ -12,8 +12,8 @@
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E 'den' d."
-        :Ehm: "E h.mm a"
-        :Ehms: "E h.mm.ss a"
+        :Ehm: "E h.mm a"
+        :Ehms: "E h.mm.ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d. MMM y G"
@@ -35,11 +35,11 @@
         :MMdd: dd.MM
         :Md: d.M
         :d: d.
-        :h: "h a"
-        :hm: "h.mm a"
-        :hms: "h.mm.ss a"
-        :hmsv: "h.mm.ss a v"
-        :hmv: "h.mm a v"
+        :h: h a
+        :hm: h.mm a
+        :hms: h.mm.ss a
+        :hmsv: "h.mm.ss a v"
+        :hmv: "h.mm a v"
         :ms: mm.ss
         ? !ruby/symbol "y"
         : "y"
@@ -61,8 +61,8 @@
             :mon: man.
             :sat: lør.
             :sun: søn.
-            :thu: tor.
-            :tue: tir.
+            :thu: tors.
+            :tue: tirs.
             :wed: ons.
           :narrow: 
             :fri: F
@@ -73,13 +73,13 @@
             :tue: T
             :wed: O
           :short: 
-            :fri: fr
-            :mon: ma
-            :sat: lø
-            :sun: sø
-            :thu: to
-            :tue: ti
-            :wed: "on"
+            :fri: fr.
+            :mon: ma.
+            :sat: lø.
+            :sun: sø.
+            :thu: to.
+            :tue: ti.
+            :wed: on.
           :wide: 
             :fri: fredag
             :mon: mandag
@@ -90,13 +90,13 @@
             :wed: onsdag
         :stand-alone: 
           :abbreviated: 
-            :fri: fre
-            :mon: man
-            :sat: lør
-            :sun: søn
-            :thu: tor
-            :tue: tir
-            :wed: ons
+            :fri: fre.
+            :mon: man.
+            :sat: lør.
+            :sun: søn.
+            :thu: tors.
+            :tue: tirs.
+            :wed: ons.
           :narrow: 
             :fri: F
             :mon: M
@@ -106,13 +106,13 @@
             :tue: T
             :wed: O
           :short: 
-            :fri: fr
-            :mon: ma
-            :sat: lø
-            :sun: sø
-            :thu: to
-            :tue: ti
-            :wed: "on"
+            :fri: fr.
+            :mon: ma.
+            :sat: lø.
+            :sun: sø.
+            :thu: to.
+            :tue: ti.
+            :wed: on.
           :wide: 
             :fri: fredag
             :mon: mandag

@@ -27,6 +27,7 @@
         -2: שלשום
         0: היום
         1: מחר
+        2: מחרתיים
       :relative_time: 
         :future: 
           :many: "בעוד {0} ימים"
@@ -140,6 +141,8 @@
           :two: "לפני שעתיים"
     :hour-narrow: 
       :display_name: שע׳
+      :relative: 
+        0: "בשעה זו"
       :relative_time: 
         :future: 
           :many: "בעוד {0} שע׳"
@@ -153,6 +156,8 @@
           :two: "לפני שעתיים"
     :hour-short: 
       :display_name: שעה
+      :relative: 
+        0: "בשעה זו"
       :relative_time: 
         :future: 
           :many: "בעוד {0} שע׳"
@@ -424,6 +429,8 @@
           :two: "לפני שתי שניות"
     :second-narrow: 
       :display_name: שנ׳
+      :relative: 
+        0: עכשיו
       :relative_time: 
         :future: 
           :many: "בעוד {0} שנ׳"
@@ -437,6 +444,8 @@
           :two: "לפני שתי שנ׳"
     :second-short: 
       :display_name: שנ׳
+      :relative: 
+        0: עכשיו
       :relative_time: 
         :future: 
           :many: "בעוד {0} שנ׳"

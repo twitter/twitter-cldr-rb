@@ -14,6 +14,15 @@
         :past: 
           :one: "{0} day ago"
           :other: "{0} days ago"
+    :day-narrow: 
+      :display_name: day
+      :relative_time: 
+        :future: 
+          :one: "in {0} day"
+          :other: "in {0} days"
+        :past: 
+          :one: "{0} day ago"
+          :other: "{0} days ago"
     :day-short: 
       :display_name: day
       :relative_time: 
@@ -87,6 +96,7 @@
           :one: "{0} hour ago"
           :other: "{0} hours ago"
     :hour-narrow: 
+      :display_name: hr
       :relative_time: 
         :future: 
           :one: "in {0} hr"
@@ -290,6 +300,7 @@
           :one: "{0} second ago"
           :other: "{0} seconds ago"
     :second-narrow: 
+      :display_name: sec
       :relative_time: 
         :future: 
           :one: "in {0} sec"
@@ -523,6 +534,7 @@
           :one: "{0} year ago"
           :other: "{0} years ago"
     :year-narrow: 
+      :display_name: yr
       :relative: 
         -1: "last yr"
         0: "this yr"

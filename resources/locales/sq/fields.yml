@@ -16,6 +16,10 @@
           :other: "{0} ditë më parë"
     :day-narrow: 
       :display_name: ditë
+      :relative: 
+        -1: dje
+        0: sot
+        1: nesër
       :relative_time: 
         :future: 
           :one: "pas {0} dite"
@@ -25,6 +29,10 @@
           :other: "{0} ditë më parë"
     :day-short: 
       :display_name: ditë
+      :relative: 
+        -1: dje
+        0: sot
+        1: nesër
       :relative_time: 
         :future: 
           :one: "pas {0} dite"
@@ -99,6 +107,8 @@
           :other: "{0} orë më parë"
     :hour-narrow: 
       :display_name: orë
+      :relative: 
+        0: "këtë orë"
       :relative_time: 
         :future: 
           :one: "pas {0} ore"
@@ -108,6 +118,8 @@
           :other: "{0} orë më parë"
     :hour-short: 
       :display_name: orë
+      :relative: 
+        0: "këtë orë"
       :relative_time: 
         :future: 
           :one: "pas {0} ore"
@@ -128,6 +140,8 @@
           :other: "{0} minuta më parë"
     :minute-narrow: 
       :display_name: min
+      :relative: 
+        0: "këtë minutë"
       :relative_time: 
         :future: 
           :one: "pas {0} min"
@@ -137,6 +151,8 @@
           :other: "{0} min më parë"
     :minute-short: 
       :display_name: min
+      :relative: 
+        0: "këtë minutë"
       :relative_time: 
         :future: 
           :one: "pas {0} min"
@@ -307,6 +323,8 @@
           :other: "{0} sekonda më parë"
     :second-narrow: 
       :display_name: sek
+      :relative: 
+        0: tani
       :relative_time: 
         :future: 
           :one: "pas {0} sek"
@@ -316,6 +334,8 @@
           :other: "{0} sek më parë"
     :second-short: 
       :display_name: sek
+      :relative: 
+        0: tani
       :relative_time: 
         :future: 
           :one: "pas {0} sek"

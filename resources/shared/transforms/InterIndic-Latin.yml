@@ -435,7 +435,7 @@
       - $kta>ṯ;
       - $danda>'.';
       - $doubleDanda>'.';
-      - "\\uE070>;       # ABBREVIATION SIGN"
+      - "\\uE070>'.';       # ABBREVIATION SIGN"
       - "\\uE071}$x>ra;"
       - \uE071$virama>r;
       - \uE071>ra;
@@ -457,6 +457,9 @@
       - "\\uE07F>;       # URA"
       - "\\uE080>;       # EK ONKAR"
       - "\\uE004>;       # DEVANAGARI VOWEL SIGN SHORT A"
+      - "$virama>; # remove remaining viramas"
+      - "$nukta>\\u0323 ;  # combining dot below"
+      - "\\uE084>æ;       # DEVANAGARI VOWEL SIGN SHORT A"
     :source: InterIndic
     :target: Latin
     :variant: ~

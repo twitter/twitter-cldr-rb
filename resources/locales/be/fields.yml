@@ -22,6 +22,12 @@
           :other: "{0} дня таму"
     :day-narrow: 
       :display_name: д.
+      :relative: 
+        -1: учора
+        -2: пазаўчора
+        0: сёння
+        1: заўтра
+        2: паслязаўтра
       :relative_time: 
         :future: 
           :few: "праз {0} дні"
@@ -35,6 +41,12 @@
           :other: "{0} дня таму"
     :day-short: 
       :display_name: дзень
+      :relative: 
+        -1: учора
+        -2: пазаўчора
+        0: сёння
+        1: заўтра
+        2: паслязаўтра
       :relative_time: 
         :future: 
           :few: "праз {0} дні"
@@ -129,6 +141,8 @@
           :other: "{0} гадзіны таму"
     :hour-narrow: 
       :display_name: гадз
+      :relative: 
+        0: "у гэту гадзіну"
       :relative_time: 
         :future: 
           :few: "праз {0} гадз"
@@ -142,6 +156,8 @@
           :other: "{0} гадз таму"
     :hour-short: 
       :display_name: гадз
+      :relative: 
+        0: "у гэту гадзіну"
       :relative_time: 
         :future: 
           :few: "праз {0} гадз"
@@ -170,6 +186,8 @@
           :other: "{0} хвіліны таму"
     :minute-narrow: 
       :display_name: хв
+      :relative: 
+        0: "у гэту хвіліну"
       :relative_time: 
         :future: 
           :few: "праз {0} хв"
@@ -183,6 +201,8 @@
           :other: "{0} хв таму"
     :minute-short: 
       :display_name: хв
+      :relative: 
+        0: "у гэту хвіліну"
       :relative_time: 
         :future: 
           :few: "праз {0} хв"
@@ -312,6 +332,10 @@
           :other: "{0} квартала таму"
     :quarter-narrow: 
       :display_name: кв.
+      :relative: 
+        -1: "у мінулым квартале"
+        0: "у гэтым квартале"
+        1: "у наступным квартале"
       :relative_time: 
         :future: 
           :few: "праз {0} кв."
@@ -325,6 +349,10 @@
           :other: "{0} кв. таму"
     :quarter-short: 
       :display_name: кв.
+      :relative: 
+        -1: "у мінулым квартале"
+        0: "у гэтым квартале"
+        1: "у наступным квартале"
       :relative_time: 
         :future: 
           :few: "праз {0} кв."
@@ -401,6 +429,8 @@
           :other: "{0} секунды таму"
     :second-narrow: 
       :display_name: с
+      :relative: 
+        0: цяпер
       :relative_time: 
         :future: 
           :few: "праз {0} с"
@@ -414,6 +444,8 @@
           :other: "{0} с таму"
     :second-short: 
       :display_name: с
+      :relative: 
+        0: цяпер
       :relative_time: 
         :future: 
           :few: "праз {0} с"

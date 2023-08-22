@@ -59,6 +59,11 @@ module TwitterCldr
           PropertySet.new(lookup_code_point(code_point))
       end
 
+      # List of property names
+      # @return [Array<String>] Array of property names string
+      # @example
+      #   TwitterCldr::Shared::CodePoint.properties.property_names
+      #   # => ["ASCII_Hex_Digit", "Age", "Alphabetic", … ]
       def property_names
         glob = File.join(root_path, '*')
         @property_names ||= Dir.glob(glob).map do |path|
@@ -66,6 +71,13 @@ module TwitterCldr
         end
       end
 
+      # Return possible values for a given property
+      # @param property_name [String] Property name
+      # @return [Array<String>|nil] List of values Values
+      # @example
+      #   TwitterCldr::Shared::CodePoint.properties.property_values_for('Script')
+      #   # => ["Adlam", "Ahom", "Anatolian_Hieroglyphs", … ]
+      # TwitterCldr::Shared::CodePoint.properties.property_values_for('Alphabetic') # => nil
       def property_values_for(property_name)
         if property_values.include?(property_name)
           return property_values[property_name]

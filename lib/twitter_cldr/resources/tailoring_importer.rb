@@ -24,12 +24,12 @@ module TwitterCldr
       LAST_BYTE_MASK = 0xFF
 
       LOCALES_MAP = {
-        :'zh-Hant' => :'zh_Hant',
-        :id => :root,
-        :it => :root,
-        :ms => :root,
-        :nl => :root,
-        :pt => :root
+        'zh-Hant': :'zh_Hant',
+        id: :root,
+        it: :root,
+        ms: :root,
+        nl: :root,
+        pt: :root
       }
 
       EMPTY_TAILORING_DATA = {

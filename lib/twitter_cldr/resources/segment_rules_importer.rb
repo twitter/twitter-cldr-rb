@@ -101,7 +101,7 @@ module TwitterCldr
 
       def encode_rbbi_data(data)
         {
-          metadata: metadata_from(data.fHeader),
+          metadata: metadata_from(data),
           forward_table: StateTable.new(data.fFTable.fTable.to_a, data.fFTable.fFlags).dump16,
           backward_table: StateTable.new(data.fRTable.fTable.to_a, data.fRTable.fFlags).dump16,
           status_table: StatusTable.new(data.fStatusTable.to_a).dump,
@@ -109,8 +109,11 @@ module TwitterCldr
         }
       end
 
-      def metadata_from(header)
-        { category_count: header.fCatCount }
+      def metadata_from(data)
+        {
+          category_count: data.fHeader.fCatCount,
+          lookahead_results_size: data.fFTable.fLookAheadResultsSize
+        }
       end
 
       def encode_suppressions(suppressions)

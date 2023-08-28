@@ -16,6 +16,7 @@ module TwitterCldr
       NEXT_STATES = 3
       ACCEPTING = 0
       ACCEPTING_UNCONDITIONAL = 1
+      LOOKAHEAD = 1
 
       class << self
         def instance(boundary_type, locale)
@@ -66,6 +67,7 @@ module TwitterCldr
         @rtable = rtable
         @status_table = status_table
         @category_table = category_table
+        @lookahead_matches = Array.new(metadata.lookahead_results_size, 0)
       end
 
       def handle_next(cursor)
@@ -94,10 +96,20 @@ module TwitterCldr
 
           state = ftable[row + NEXT_STATES + category]
           row = state * (metadata.category_count + NEXT_STATES)
+          accepting = ftable[row + ACCEPTING]
 
-          if ftable[row + ACCEPTING] == ACCEPTING_UNCONDITIONAL
+          if accepting == ACCEPTING_UNCONDITIONAL
             # match found
             result = cursor.position
+          elsif accepting > ACCEPTING_UNCONDITIONAL
+            if (lookahead_result = @lookahead_matches[accepting]) >= 0
+              cursor.position = lookahead_result
+              return lookahead_result
+            end
+          end
+
+          if (rule = ftable[row + LOOKAHEAD]) != 0
+            @lookahead_matches[rule] = cursor.position
           end
         end
 

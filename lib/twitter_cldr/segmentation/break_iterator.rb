@@ -6,6 +6,19 @@
 module TwitterCldr
   module Segmentation
     class BreakIterator
+      class << self
+        def iterator_for(boundary_type, locale = nil, options = {})
+          rule_set = RuleSet.create(locale, boundary_type, options)
+
+          case boundary_type
+            when 'word'
+              WordIterator.new(rule_set)
+            else
+              SegmentIterator.new(rule_set)
+          end
+        end
+      end
+
       attr_reader :locale, :options
 
       def initialize(locale = TwitterCldr.locale, options = {})
@@ -36,22 +49,7 @@ module TwitterCldr
       private
 
       def iterator_for(boundary_type)
-        iterator_cache[boundary_type] ||= begin
-          rule_set = RuleSet.create(locale, boundary_type, options)
-
-          case boundary_type
-            when 'line'
-              LineIterator.new(rule_set)
-            when 'word'
-              WordIterator.new(rule_set)
-            else
-              SegmentIterator.new(rule_set)
-          end
-        end
-      end
-
-      def iterator_cache
-        @iterator_cache ||= {}
+        self.class.iterator_for(boundary_type, locale, options)
       end
     end
   end

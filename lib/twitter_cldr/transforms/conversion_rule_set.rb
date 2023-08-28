@@ -87,7 +87,6 @@ module TwitterCldr
       end
 
       def find_matching_rule_at(cursor)
-        binding.irb if cursor.position == 2
         indexed_match = find_matching_indexed_rule_at(cursor)
         blank_key_match = find_matching_blank_key_rule_at(cursor)
 

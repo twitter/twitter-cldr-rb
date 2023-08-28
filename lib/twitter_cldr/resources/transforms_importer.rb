@@ -11,6 +11,24 @@ module TwitterCldr
 
     class TransformsImporter < Importer
 
+      IGNORED_TRANSFORMS = [
+        # This transform appears to be broken. Two of its rules that deal with separator
+        # characters don't make sense to me:
+        #
+        # "[:Separator:]* > ' ';"
+        # "$space = [:Separator:]*;"
+        #
+        # Why would zero characters be replaced with a space? And why would zero characters
+        # be considered a separator?
+        #
+        # More importantly, the algorithm in this library works with every other transform,
+        # provisional and otherwise, except this one. Something's amiss with these rules.
+        # ICU probably works because they, once again, fixed the rules but neglected to
+        # upstream them into CLDR.
+        #
+        { source: 'ug', target: 'Latin' }
+      ]
+
       requirement :cldr, Versions.cldr_version
       output_path 'shared/transforms'
       ruby_engine :mri
@@ -23,13 +41,27 @@ module TwitterCldr
         FileUtils.mkdir_p(output_path)
 
         each_transform_file do |transform_file|
-          transform_data = parse_transform_data(File.read(transform_file))
+          transform_data =
+            parse_transform_data(File.read(transform_file))
+              .reject do |transform_datum|
+                ignored_transform?(transform_datum)
+              end
+
+          next if transform_data.empty?
+
           output_file = File.join(output_path, "#{File.basename(transform_file).chomp('.xml')}.yml")
           transform_id_map.merge!(map_aliases(transform_data, output_file))
           write_transform_data(transform_data, output_file)
         end
 
         write_transform_id_map(transform_id_map)
+      end
+
+      def ignored_transform?(transform_data)
+        IGNORED_TRANSFORMS.any? do |ignored_transform|
+          ignored_transform[:source] == transform_data[:source] &&
+            ignored_transform[:target] == transform_data[:target]
+        end
       end
 
       def map_aliases(transform_data, path)

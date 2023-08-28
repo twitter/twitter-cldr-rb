@@ -19,7 +19,6 @@ module TwitterCldr
 
       class << self
         def exists?(transform_id_or_str)
-          $cameron = true if transform_id_or_str == "cs-ja"
           !!get(transform_id_or_str)
         rescue => e
           false

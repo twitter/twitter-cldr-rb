@@ -92,7 +92,7 @@ TwitterCLDR supports formatting numbers with an attached unit, for example "12 d
 
 ```ruby
 12.localize.to_unit.length_mile  # <%= assert(12.localize.to_unit.length_mile, "12 miles").inspect %>
-12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 милях").inspect %>
+12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 миль").inspect %>
 ```
 Units support a few different forms, long, short, and narrow:
 

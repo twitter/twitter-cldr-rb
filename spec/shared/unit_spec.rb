@@ -113,11 +113,11 @@ describe TwitterCldr::Shared::Unit do
     let(:locale) { :ru }
 
     it 'uses number formatting rules when appropriate' do
-      expect(described_class.create(1234, locale).volume_liter).to eq('1 234 литрах')
+      expect(described_class.create(1234, locale).volume_liter).to eq('1 234 литра')
     end
 
     it 'does not format numbers if given a string' do
-      expect(described_class.create('1234', locale).volume_liter).to eq('1234 литрах')
+      expect(described_class.create('1234', locale).volume_liter).to eq('1234 литра')
     end
 
     describe 'long form' do
@@ -125,23 +125,23 @@ describe TwitterCldr::Shared::Unit do
         it 'produces the correct results' do
           expect(described_class.create(1, locale).length_mile).to eq('1 миля')
           expect(described_class.create(2, locale).length_mile).to eq('2 мили')
-          expect(described_class.create(7, locale).length_mile).to eq('7 милях')
+          expect(described_class.create(7, locale).length_mile).to eq('7 миль')
         end
       end
 
       describe '#temperature_celsius' do
         it 'produces the correct results' do
           expect(described_class.create(1, locale).temperature_celsius).to eq('1 градус Цельсия')
-          expect(described_class.create(2, locale).temperature_celsius).to eq('2 градусах Цельсия')
-          expect(described_class.create(7, locale).temperature_celsius).to eq('7 градусах Цельсия')
+          expect(described_class.create(2, locale).temperature_celsius).to eq('2 градуса Цельсия')
+          expect(described_class.create(7, locale).temperature_celsius).to eq('7 градусов Цельсия')
         end
       end
 
       describe '#mass_kilogram' do
         it 'produces the correct results' do
           expect(described_class.create(1, locale).mass_kilogram).to eq('1 килограмм')
-          expect(described_class.create(2, locale).mass_kilogram).to eq('2 килограммах')
-          expect(described_class.create(7, locale).mass_kilogram).to eq('7 килограммах')
+          expect(described_class.create(2, locale).mass_kilogram).to eq('2 килограмма')
+          expect(described_class.create(7, locale).mass_kilogram).to eq('7 килограмм')
         end
       end
     end
@@ -151,9 +151,9 @@ describe TwitterCldr::Shared::Unit do
 
       describe '#length_mile' do
         it 'produces the correct results' do
-          expect(described_class.create(1, locale).length_mile(options)).to eq('1 миля')
-          expect(described_class.create(2, locale).length_mile(options)).to eq('2 мили')
-          expect(described_class.create(7, locale).length_mile(options)).to eq('7 милях')
+          expect(described_class.create(1, locale).length_mile(options)).to eq('1 ми')
+          expect(described_class.create(2, locale).length_mile(options)).to eq('2 ми')
+          expect(described_class.create(7, locale).length_mile(options)).to eq('7 ми')
         end
       end
 

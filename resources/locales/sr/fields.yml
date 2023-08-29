@@ -240,6 +240,11 @@
           :one: "пре {0} месеца"
           :other: "пре {0} месеци"
     :month-narrow: 
+      :display_name: мес.
+      :relative: 
+        -1: "прошлог мес."
+        0: "овог мес."
+        1: "следећег мес."
       :relative_time: 
         :future: 
           :few: "за {0} м."
@@ -570,6 +575,7 @@
           :one: "пре {0} недеље"
           :other: "пре {0} недеља"
     :week-narrow: 
+      :display_name: нед.
       :relative: 
         -1: "прошле н."
         0: "ове н."

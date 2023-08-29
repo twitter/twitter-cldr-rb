@@ -14,14 +14,14 @@
         :Ed: "E, d"
         :Ehm: "E, h:mm 'ч'. a"
         :Ehms: "E, h:mm:ss 'ч'. a"
-        :Gy: "y 'г'. G"
-        :GyMMM: "MM.y 'г'. G"
-        :GyMMMEd: "E, d.MM.y 'г'. G"
-        :GyMMMM: "MMMM y 'г'. G"
-        :GyMMMMEd: "E, d MMMM y 'г'. G"
-        :GyMMMMd: "d MMMM y 'г'. G"
-        :GyMMMd: "d.MM.y 'г'. G"
-        :GyMd: "dd.MM.y 'г'. GGGGG"
+        :Gy: "y 'г'. G"
+        :GyMMM: "MM.y 'г'. G"
+        :GyMMMEd: "E, d.MM.y 'г'. G"
+        :GyMMMM: "MMMM y 'г'. G"
+        :GyMMMMEd: "E, d MMMM y 'г'. G"
+        :GyMMMMd: "d MMMM y 'г'. G"
+        :GyMMMd: "d.MM.y 'г'. G"
+        :GyMd: "dd.MM.y 'г'. GGGGG"
         :H: "HH 'ч'."
         :Hm: "HH:mm 'ч'."
         :Hms: "HH:mm:ss 'ч'."
@@ -46,18 +46,18 @@
         :hmv: "h:mm 'ч'. a v"
         :ms: "m:ss"
         ? !ruby/symbol "y"
-        : "y 'г'."
-        :yM: "MM.y 'г'."
-        :yMEd: "E, d.MM.y 'г'."
-        :yMMM: "MM.y 'г'."
-        :yMMMEd: "E, d.MM.y 'г'."
-        :yMMMM: "MMMM y 'г'."
-        :yMMMMEd: "E, d MMMM y 'г'."
-        :yMMMMd: "d MMMM y 'г'."
-        :yMMMd: "d.MM.y 'г'."
-        :yMd: "d.MM.y 'г'."
-        :yQQQ: "QQQ y 'г'."
-        :yQQQQ: "QQQQ y 'г'."
+        : y 'г'.
+        :yM: MM.y 'г'.
+        :yMEd: "E, d.MM.y 'г'."
+        :yMMM: MM.y 'г'.
+        :yMMMEd: "E, d.MM.y 'г'."
+        :yMMMM: "MMMM y 'г'."
+        :yMMMMEd: "E, d MMMM y 'г'."
+        :yMMMMd: "d MMMM y 'г'."
+        :yMMMd: d.MM.y 'г'.
+        :yMd: d.MM.y 'г'.
+        :yQQQ: "QQQ y 'г'."
+        :yQQQQ: "QQQQ y 'г'."
         :yw: "'седмица' w 'от' Y 'г'."
       :days: 
         :format: 
@@ -162,14 +162,14 @@
         :quarter-narrow: трим.
         :quarter-short: трим.
         :second: секунда
-        :second-narrow: с
+        :second-narrow: сек
         :second-short: сек
         :week: седмица
         :week-narrow: седм.
         :week-short: седм.
         :weekOfMonth: "седмица от месеца"
-        :weekOfMonth-narrow: "седмица от месеца"
-        :weekOfMonth-short: "седмица от месеца"
+        :weekOfMonth-narrow: "седм. от мес."
+        :weekOfMonth-short: "седм. от мес."
         :weekday: "ден от седмицата"
         :weekday-narrow: "ден от седм."
         :weekday-short: "ден от седм."
@@ -178,25 +178,25 @@
         :weekdayOfMonth-short: "раб. ден от мес."
         :year: година
         :year-narrow: г.
-        :year-short: г.
+        :year-short: год.
         :zone: "часова зона"
         :zone-narrow: "час. зона"
         :zone-short: "час. зона"
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d MMMM y 'г'."
+            :pattern: "EEEE, d MMMM y 'г'."
           :long: 
-            :pattern: "d MMMM y 'г'."
+            :pattern: "d MMMM y 'г'."
           :medium: 
-            :pattern: "d.MM.y 'г'."
+            :pattern: d.MM.y 'г'.
           :short: 
-            :pattern: "d.MM.yy 'г'."
+            :pattern: d.MM.yy 'г'.
         :datetime: 
           :full: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} 'в' {{time}}"
           :long: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} 'в' {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 

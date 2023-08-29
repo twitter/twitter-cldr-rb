@@ -1,6 +1,6 @@
 #! /bin/bash
 
-tags=( 2.0.0-p643-slim 2.1.10-slim 2.2.10-slim 2.3.8-slim 2.4.6-slim 2.5.5-slim 2.6.3-slim )
+tags=( 2.3.8-slim 2.4.6-slim 2.5.5-slim 2.6.3-slim 2.7.8-slim 3.0.6-slim 3.1.4-slim 3.2.2-slim )
 
 mv Gemfile.lock Gemfile.lock.old
 

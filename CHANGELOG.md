@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.12.0 (Aug 28th, 2023)
+* Upgrade to CLDR v43, ICU 73.2, and Unicode v15.0.0.
+
 ### 6.11.5 (Mar 19th, 2023)
 * Fix bug causing locale codes to be converted before language lookup (#263)
   - During `TwitterCldr::Shared::Languages.from_code_for_locale(:nn, :en)`, the `:nn` locale code was converted to `:nb` before lookup, causing "Norwegian Bokmål" to be returned instead of "Norwegian Nynorsk".

@@ -935,3 +935,15 @@
                 :value: 11
             :type: spellout-ordinal-feminine
         :type: SpelloutRules
+      - 
+        :ruleset: 
+          - 
+            :rules: 
+              - 
+                :rule: −>>;
+                :value: "-x"
+              - 
+                :rule: "=#,##0=;"
+                :value: 0
+            :type: digits-ordinal
+        :type: OrdinalRules

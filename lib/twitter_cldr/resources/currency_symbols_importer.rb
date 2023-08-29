@@ -32,12 +32,16 @@ module TwitterCldr
       end
 
       def symbol_data
+        # ughh all of this is gross
         doc = Nokogiri::HTML(URI.open(URL).read)
-        rows = doc.css('.currencySymblTable tr')
+        rows = doc.css('.Container__FluidWrapper-sc-1skoo0z-0 ul li')
 
-        rows[1..-1].each_with_object({}) do |row, ret|
-          code = row.css('td')[1].text
-          symbol = row.css('td.cSmbl_Fnt_C2000').text
+        rows.each_with_object({}) do |row, ret|
+          columns = row.css('div')
+          next if columns[1].text == 'Country and Currency' # skip header
+
+          code = columns[3].text
+          symbol = columns[4].text
           ret[code] = { code_points: symbol.codepoints, symbol: symbol }
         end
       end

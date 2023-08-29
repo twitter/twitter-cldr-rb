@@ -110,6 +110,9 @@ module TwitterCldr
       class Capture < Node; end
       class Passive < Node; end
       class Root < Node; end
+      class BeginningOfLine < Node; end
+      class EndOfLine < Node; end
+      class WordBoundary < Node; end
 
     end
   end

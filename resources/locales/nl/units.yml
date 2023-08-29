@@ -31,6 +31,9 @@
         :area-acre: 
           :one: "{0} acre"
           :other: "{0} acres"
+        :area-dunam: 
+          :one: "{0} dunam"
+          :other: "{0} dunam"
         :area-hectare: 
           :one: "{0} hectare"
           :other: "{0} hectare"
@@ -67,6 +70,9 @@
         :concentr-millimole-per-liter: 
           :one: "{0} millimol per liter"
           :other: "{0} millimol per liter"
+        :concentr-mole: 
+          :one: "{0} mol"
+          :other: "{0} mol"
         :concentr-percent: 
           :one: "{0} procent"
           :other: "{0} procent"
@@ -151,6 +157,9 @@
         :duration-nanosecond: 
           :one: "{0} nanoseconde"
           :other: "{0} nanoseconden"
+        :duration-quarter: 
+          :one: "{0} kwartaal"
+          :other: "{0} kwartalen"
         :duration-second: 
           :one: "{0} seconde"
           :other: "{0} seconden"
@@ -253,6 +262,9 @@
         :length-decimeter: 
           :one: "{0} decimeter"
           :other: "{0} decimeter"
+        :length-earth-radius: 
+          :one: "{0} aardstraal"
+          :other: "{0} aardstralen"
         :length-fathom: 
           :one: "{0} vadem"
           :other: "{0} vadems"
@@ -337,9 +349,6 @@
         :mass-kilogram: 
           :one: "{0} kilogram"
           :other: "{0} kilogram"
-        :mass-metric-ton: 
-          :one: "{0} metrische ton"
-          :other: "{0} metrische ton"
         :mass-microgram: 
           :one: "{0} microgram"
           :other: "{0} microgram"
@@ -364,6 +373,9 @@
         :mass-ton: 
           :one: "{0} ton"
           :other: "{0} ton"
+        :mass-tonne: 
+          :one: "{0} metrische ton"
+          :other: "{0} metrische ton"
         :power-gigawatt: 
           :one: "{0} gigawatt"
           :other: "{0} gigawatt"
@@ -569,6 +581,9 @@
         :area-acre: 
           :one: "{0} acre"
           :other: "{0} acres"
+        :area-dunam: 
+          :one: "{0} dunam"
+          :other: "{0} dunam"
         :area-hectare: 
           :one: "{0} ha"
           :other: "{0} ha"
@@ -595,7 +610,7 @@
           :other: "{0} yd²"
         :concentr-item: 
           :one: "{0} onderdeel"
-          :other: "{0} onderdelen"
+          :other: "{0} ond."
         :concentr-karat: 
           :one: "{0} K"
           :other: "{0} K"
@@ -605,6 +620,9 @@
         :concentr-millimole-per-liter: 
           :one: "{0} mmol/l"
           :other: "{0} mmol/l"
+        :concentr-mole: 
+          :one: "{0} mol"
+          :other: "{0} mol"
         :concentr-percent: 
           :one: "{0}%"
           :other: "{0}%"
@@ -614,6 +632,9 @@
         :concentr-permillion: 
           :one: "{0} ppm"
           :other: "{0} ppm"
+        :concentr-permyriad: 
+          :one: "{0}‱"
+          :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100km"
           :other: "{0} l/100km"
@@ -686,6 +707,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-quarter: 
+          :one: "{0} kw."
+          :other: "{0} kw."
         :duration-second: 
           :one: "{0} s"
           :other: "{0} s"
@@ -707,9 +731,15 @@
         :electric-volt: 
           :one: "{0} V"
           :other: "{0} V"
+        :energy-british-thermal-unit: 
+          :one: "{0} Btu"
+          :other: "{0} Btu"
         :energy-calorie: 
           :one: "{0} cal"
           :other: "{0} cal"
+        :energy-electronvolt: 
+          :one: "{0} eV"
+          :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} kcal"
           :other: "{0} kcal"
@@ -725,9 +755,18 @@
         :energy-kilowatt-hour: 
           :one: "{0} kWh"
           :other: "{0} kWh"
+        :energy-therm-us: 
+          :one: "{0} US therm"
+          :other: "{0} US therms"
         :force-kilowatt-hour-per-100-kilometer: 
           :one: "{0}kWh/100km"
           :other: "{0}kWh/100km"
+        :force-newton: 
+          :one: "{0} N"
+          :other: "{0} N"
+        :force-pound-force: 
+          :one: "{0} lbf"
+          :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} GHz"
           :other: "{0} GHz"
@@ -743,6 +782,27 @@
         :graphics-dot: 
           :one: "{0} dot"
           :other: "{0} dot"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} dpcm"
+          :other: "{0} dpcm"
+        :graphics-dot-per-inch: 
+          :one: "{0} dpi"
+          :other: "{0} dpi"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} em"
+        :graphics-megapixel: 
+          :one: "{0} MP"
+          :other: "{0} MP"
+        :graphics-pixel: 
+          :one: "{0} px"
+          :other: "{0} px"
+        :graphics-pixel-per-centimeter: 
+          :one: "{0} ppcm"
+          :other: "{0} ppcm"
+        :graphics-pixel-per-inch: 
+          :one: "{0} ppi"
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :one: "{0} AE"
           :other: "{0} AE"
@@ -752,6 +812,9 @@
         :length-decimeter: 
           :one: "{0} dm"
           :other: "{0} dm"
+        :length-earth-radius: 
+          :one: "{0} R⊕"
+          :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fth"
           :other: "{0} fth"
@@ -762,8 +825,8 @@
           :one: "{0} fur"
           :other: "{0} fur"
         :length-inch: 
-          :one: "{0}\""
-          :other: "{0}\""
+          :one: "{0}″"
+          :other: "{0}″"
         :length-kilometer: 
           :one: "{0} km"
           :other: "{0} km"
@@ -800,15 +863,33 @@
         :length-point: 
           :one: "{0} pt"
           :other: "{0} pt"
+        :length-solar-radius: 
+          :one: "{0} R☉"
+          :other: "{0} R☉"
         :length-yard: 
           :one: "{0} yd"
           :other: "{0} yd"
+        :light-candela: 
+          :one: "{0} cd"
+          :other: "{0} cd"
+        :light-lumen: 
+          :one: "{0} lm"
+          :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
+        :light-solar-luminosity: 
+          :one: "{0} L☉"
+          :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} CD"
           :other: "{0} CD"
+        :mass-dalton: 
+          :one: "{0} Da"
+          :other: "{0} Da"
+        :mass-earth-mass: 
+          :one: "{0} M⊕"
+          :other: "{0} M⊕"
         :mass-grain: 
           :one: "{0} gr"
           :other: "{0} gr"
@@ -818,9 +899,6 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
           :one: "{0} μg"
           :other: "{0} μg"
@@ -836,12 +914,18 @@
         :mass-pound: 
           :one: "{0} lb"
           :other: "{0} lb"
+        :mass-solar-mass: 
+          :one: "{0} M☉"
+          :other: "{0} M☉"
         :mass-stone: 
           :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} ton"
           :other: "{0} ton"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"
@@ -863,18 +947,30 @@
         :pressure-atmosphere: 
           :one: "{0} atm"
           :other: "{0} atm"
+        :pressure-bar: 
+          :one: "{0} bar"
+          :other: "{0} bar"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
         :pressure-inch-ofhg: 
           :one: "{0} inHg"
           :other: "{0} inHg"
+        :pressure-kilopascal: 
+          :one: "{0} kPa"
+          :other: "{0} kPa"
+        :pressure-megapascal: 
+          :one: "{0} MPa"
+          :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
           :other: "{0} mbar"
         :pressure-millimeter-ofhg: 
           :one: "{0} mmHg"
           :other: "{0} mmHg"
+        :pressure-pascal: 
+          :one: "{0} Pa"
+          :other: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
@@ -902,6 +998,18 @@
         :temperature-kelvin: 
           :one: "{0} K"
           :other: "{0} K"
+        :torque-newton-meter: 
+          :one: "{0} Nm"
+          :other: "{0} Nm"
+        :torque-pound-force-foot: 
+          :one: "{0} lbf⋅ft"
+          :other: "{0} lbf⋅ft"
+        :volume-acre-foot: 
+          :one: "{0} ac ft"
+          :other: "{0} ac ft"
+        :volume-barrel: 
+          :one: "{0} bbl"
+          :other: "{0} bbl"
         :volume-bushel: 
           :one: "{0} bu"
           :other: "{0} bu"
@@ -938,6 +1046,9 @@
         :volume-deciliter: 
           :one: "{0} dl"
           :other: "{0} dl"
+        :volume-dessert-spoon: 
+          :one: "{0} des l"
+          :other: "{0} des l"
         :volume-dessert-spoon-imperial: 
           :one: "{0} imp. d l"
           :other: "{0} imp. d l"
@@ -962,6 +1073,9 @@
         :volume-hectoliter: 
           :one: "{0} hl"
           :other: "{0} hl"
+        :volume-jigger: 
+          :one: "{0} jigger"
+          :other: "{0} jigger"
         :volume-liter: 
           :one: "{0} l"
           :other: "{0} l"
@@ -983,6 +1097,9 @@
         :volume-quart: 
           :one: "{0} qt"
           :other: "{0} qt"
+        :volume-quart-imperial: 
+          :one: "{0} imp. qt"
+          :other: "{0} imp. qt"
         :volume-tablespoon: 
           :one: "{0} el"
           :other: "{0} el"
@@ -1015,6 +1132,7 @@
           :one: "{0} acre"
           :other: "{0} acres"
         :area-dunam: 
+          :one: "{0} dunam"
           :other: "{0} dunam"
         :area-hectare: 
           :one: "{0} ha"
@@ -1042,7 +1160,7 @@
           :other: "{0} yd²"
         :concentr-item: 
           :one: "{0} onderdeel"
-          :other: "{0} onderdelen"
+          :other: "{0} ond."
         :concentr-karat: 
           :one: "{0} K"
           :other: "{0} K"
@@ -1053,6 +1171,7 @@
           :one: "{0} mmol/l"
           :other: "{0} mmol/l"
         :concentr-mole: 
+          :one: "{0} mol"
           :other: "{0} mol"
         :concentr-percent: 
           :one: "{0}%"
@@ -1064,6 +1183,7 @@
           :one: "{0} ppm"
           :other: "{0} ppm"
         :concentr-permyriad: 
+          :one: "{0}‱"
           :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100km"
@@ -1117,8 +1237,8 @@
           :one: "{0} dag"
           :other: "{0} dagen"
         :duration-decade: 
-          :one: "{0} decennium"
-          :other: "{0} decennia"
+          :one: "{0} dec."
+          :other: "{0} dec."
         :duration-hour: 
           :one: "{0} uur"
           :other: "{0} uur"
@@ -1137,6 +1257,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-quarter: 
+          :one: "{0} kwart."
+          :other: "{0} kwart."
         :duration-second: 
           :one: "{0} sec"
           :other: "{0} sec"
@@ -1159,11 +1282,13 @@
           :one: "{0} V"
           :other: "{0} V"
         :energy-british-thermal-unit: 
+          :one: "{0} Btu"
           :other: "{0} Btu"
         :energy-calorie: 
           :one: "{0} cal"
           :other: "{0} cal"
         :energy-electronvolt: 
+          :one: "{0} eV"
           :other: "{0} eV"
         :energy-foodcalorie: 
           :one: "{0} kcal"
@@ -1184,10 +1309,13 @@
           :one: "{0} US therm"
           :other: "{0} US therms"
         :force-kilowatt-hour-per-100-kilometer: 
+          :one: "{0} kWh/100km"
           :other: "{0} kWh/100km"
         :force-newton: 
+          :one: "{0} N"
           :other: "{0} N"
         :force-pound-force: 
+          :one: "{0} lbf"
           :other: "{0} lbf"
         :frequency-gigahertz: 
           :one: "{0} GHz"
@@ -1201,6 +1329,9 @@
         :frequency-megahertz: 
           :one: "{0} MHz"
           :other: "{0} MHz"
+        :graphics-dot: 
+          :one: "{0} px"
+          :other: "{0} px"
         :graphics-dot-per-centimeter: 
           :one: "{0} dpcm"
           :other: "{0} dpcm"
@@ -1232,6 +1363,7 @@
           :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
+          :one: "{0} R⊕"
           :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fth"
@@ -1282,25 +1414,31 @@
           :one: "{0} pt"
           :other: "{0} pt"
         :length-solar-radius: 
+          :one: "{0} R☉"
           :other: "{0} R☉"
         :length-yard: 
           :one: "{0} yd"
           :other: "{0} yd"
         :light-candela: 
+          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
+          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
           :other: "{0} lx"
         :light-solar-luminosity: 
+          :one: "{0} L☉"
           :other: "{0} L☉"
         :mass-carat: 
           :one: "{0} CD"
           :other: "{0} CD"
         :mass-dalton: 
+          :one: "{0} Da"
           :other: "{0} Da"
         :mass-earth-mass: 
+          :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-grain: 
           :one: "{0} grein"
@@ -1311,9 +1449,6 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
           :one: "{0} μg"
           :other: "{0} μg"
@@ -1330,6 +1465,7 @@
           :one: "{0} lb"
           :other: "{0} lb"
         :mass-solar-mass: 
+          :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
           :one: "{0} st"
@@ -1337,6 +1473,9 @@
         :mass-ton: 
           :one: "{0} ton"
           :other: "{0} ton"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"
@@ -1368,8 +1507,10 @@
           :one: "{0} inHg"
           :other: "{0} inHg"
         :pressure-kilopascal: 
+          :one: "{0} kPa"
           :other: "{0} kPa"
         :pressure-megapascal: 
+          :one: "{0} MPa"
           :other: "{0} MPa"
         :pressure-millibar: 
           :one: "{0} mbar"
@@ -1383,6 +1524,9 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
+        :speed-beaufort: 
+          :one: "{0}"
+          :other: "{0}"
         :speed-kilometer-per-hour: 
           :one: "{0} km/u"
           :other: "{0} km/u"
@@ -1411,11 +1555,13 @@
           :one: "{0} Nm"
           :other: "{0} Nm"
         :torque-pound-force-foot: 
+          :one: "{0} lbf⋅ft"
           :other: "{0} lbf⋅ft"
         :volume-acre-foot: 
           :one: "{0} ac ft"
           :other: "{0} ac ft"
         :volume-barrel: 
+          :one: "{0} bbl"
           :other: "{0} bbl"
         :volume-bushel: 
           :one: "{0} bu"
@@ -1469,6 +1615,7 @@
           :one: "{0} fl oz"
           :other: "{0} fl oz"
         :volume-fluid-ounce-imperial: 
+          :one: "{0} fl oz Imp."
           :other: "{0} fl oz Imp."
         :volume-gallon: 
           :one: "{0} gal"
@@ -1480,6 +1627,7 @@
           :one: "{0} hl"
           :other: "{0} hl"
         :volume-jigger: 
+          :one: "{0} jigger"
           :other: "{0} jigger"
         :volume-liter: 
           :one: "{0} l"

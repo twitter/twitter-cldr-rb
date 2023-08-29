@@ -1133,6 +1133,572 @@
                 :rule: o­=%spellout-ordinal-feminine=;
                 :value: 10
             :type: ordinal-esima-with-o
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: zeresimi;
+                :value: 0
+              - 
+                :rule: primi;
+                :value: 1
+              - 
+                :rule: secondi;
+                :value: 2
+              - 
+                :rule: terzi;
+                :value: 3
+              - 
+                :rule: quarti;
+                :value: 4
+              - 
+                :rule: quinti;
+                :value: 5
+              - 
+                :rule: sesti;
+                :value: 6
+              - 
+                :rule: settimi;
+                :value: 7
+              - 
+                :rule: ottavi;
+                :value: 8
+              - 
+                :rule: noni;
+                :value: 9
+              - 
+                :rule: decimi;
+                :value: 10
+              - 
+                :rule: undicesimi;
+                :value: 11
+              - 
+                :rule: dodicesimi;
+                :value: 12
+              - 
+                :rule: tredicesimi;
+                :value: 13
+              - 
+                :rule: quattordicesimi;
+                :value: 14
+              - 
+                :rule: quindicesimi;
+                :value: 15
+              - 
+                :rule: sedicesimi;
+                :value: 16
+              - 
+                :rule: diciassettesimi;
+                :value: 17
+              - 
+                :rule: diciottesimi;
+                :value: 18
+              - 
+                :rule: diciannovesimi;
+                :value: 19
+              - 
+                :rule: vent>%%ordinal-esimi-with-i>;
+                :value: 20
+              - 
+                :rule: trent>%%ordinal-esimi-with-a>;
+                :value: 30
+              - 
+                :rule: quarant>%%ordinal-esimi-with-a>;
+                :value: 40
+              - 
+                :rule: cinquant>%%ordinal-esimi-with-a>;
+                :value: 50
+              - 
+                :rule: sessant>%%ordinal-esimi-with-a>;
+                :value: 60
+              - 
+                :rule: settant>%%ordinal-esimi-with-a>;
+                :value: 70
+              - 
+                :rule: ottant>%%ordinal-esimi-with-a>;
+                :value: 80
+              - 
+                :rule: novant>%%ordinal-esimi-with-a>;
+                :value: 90
+              - 
+                :rule: cent>%%ordinal-esimi-with-o>;
+                :value: 100
+              - 
+                :rule: <%spellout-cardinal-masculine<­cent>%%ordinal-esimi-with-o>;
+                :value: 200
+              - 
+                :rule: mille­>%%ordinal-esimi>;
+                :value: 1000
+              - 
+                :rule: <%spellout-cardinal-masculine<­mille­>%%ordinal-esimi>;
+                :value: 2000
+              - 
+                :rule: <%spellout-cardinal-masculine<­mila­>%%ordinal-esimi>;
+                :value: 2001
+              - 
+                :rule: milione­>%%ordinal-esimi>;
+                :value: 1000000
+              - 
+                :rule: <%spellout-cardinal-masculine<milione­>%%ordinal-esimi>;
+                :value: 2000000
+              - 
+                :rule: miliard­>%%ordinal-esimi-with-o>;
+                :value: 1000000000
+              - 
+                :rule: <%spellout-cardinal-masculine<miliard­>%%ordinal-esimi-with-o>;
+                :value: 2000000000
+              - 
+                :rule: bilione­>%%ordinal-esimi>;
+                :value: 1000000000000
+              - 
+                :rule: <%spellout-cardinal-masculine<bilion­>%%ordinal-esimi>;
+                :value: 2000000000000
+              - 
+                :rule: biliard­>%%ordinal-esimi-with-o>;
+                :value: 1000000000000000
+              - 
+                :rule: <%spellout-cardinal-masculine<biliard­>%%ordinal-esimi-with-o>;
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-masculine-plural
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: simi;
+                :value: 0
+              - 
+                :rule: ­unesimi;
+                :value: 1
+              - 
+                :rule: ­duesimi;
+                :value: 2
+              - 
+                :rule: ­treesimi;
+                :value: 3
+              - 
+                :rule: ­quattresimi;
+                :value: 4
+              - 
+                :rule: ­cinquesimi;
+                :value: 5
+              - 
+                :rule: ­seiesimi;
+                :value: 6
+              - 
+                :rule: ­settesimi;
+                :value: 7
+              - 
+                :rule: ­ottesimi;
+                :value: 8
+              - 
+                :rule: ­novesimi;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-masculine=;
+                :value: 10
+            :type: ordinal-esimi
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esimi;
+                :value: 0
+              - 
+                :rule: ­unesimi;
+                :value: 1
+              - 
+                :rule: i­duesimi;
+                :value: 2
+              - 
+                :rule: i­treesimi;
+                :value: 3
+              - 
+                :rule: i­quattresimi;
+                :value: 4
+              - 
+                :rule: i­cinquesimi;
+                :value: 5
+              - 
+                :rule: i­seiesimi;
+                :value: 6
+              - 
+                :rule: i­settesimi;
+                :value: 7
+              - 
+                :rule: ­ottesimi;
+                :value: 8
+              - 
+                :rule: i­novesimi;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-masculine=;
+                :value: 10
+            :type: ordinal-esimi-with-i
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esimi;
+                :value: 0
+              - 
+                :rule: ­unesimi;
+                :value: 1
+              - 
+                :rule: a­duesimi;
+                :value: 2
+              - 
+                :rule: a­treesimi;
+                :value: 3
+              - 
+                :rule: a­quattresimi;
+                :value: 4
+              - 
+                :rule: a­cinquesimi;
+                :value: 5
+              - 
+                :rule: a­seiesimi;
+                :value: 6
+              - 
+                :rule: a­settesimi;
+                :value: 7
+              - 
+                :rule: ­ottesimi;
+                :value: 8
+              - 
+                :rule: a­novesimi;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-masculine=;
+                :value: 10
+            :type: ordinal-esimi-with-a
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esimi;
+                :value: 0
+              - 
+                :rule: ­unesimi;
+                :value: 1
+              - 
+                :rule: o­duesimi;
+                :value: 2
+              - 
+                :rule: o­treesimi;
+                :value: 3
+              - 
+                :rule: o­quattresimi;
+                :value: 4
+              - 
+                :rule: o­cinquesimi;
+                :value: 5
+              - 
+                :rule: o­seiesimi;
+                :value: 6
+              - 
+                :rule: o­settesimi;
+                :value: 7
+              - 
+                :rule: ­ottesimi;
+                :value: 8
+              - 
+                :rule: o­novesimi;
+                :value: 9
+              - 
+                :rule: o­=%spellout-ordinal-masculine=;
+                :value: 10
+            :type: ordinal-esimi-with-o
+          - 
+            :rules: 
+              - 
+                :rule: "meno >>;"
+                :value: "-x"
+              - 
+                :rule: "=#,##0.#=;"
+                :value: x.x
+              - 
+                :rule: zeresime;
+                :value: 0
+              - 
+                :rule: prime;
+                :value: 1
+              - 
+                :rule: seconde;
+                :value: 2
+              - 
+                :rule: terze;
+                :value: 3
+              - 
+                :rule: quarte;
+                :value: 4
+              - 
+                :rule: quinte;
+                :value: 5
+              - 
+                :rule: seste;
+                :value: 6
+              - 
+                :rule: settime;
+                :value: 7
+              - 
+                :rule: ottave;
+                :value: 8
+              - 
+                :rule: none;
+                :value: 9
+              - 
+                :rule: decime;
+                :value: 10
+              - 
+                :rule: undicesime;
+                :value: 11
+              - 
+                :rule: dodicesime;
+                :value: 12
+              - 
+                :rule: tredicesime;
+                :value: 13
+              - 
+                :rule: quattordicesime;
+                :value: 14
+              - 
+                :rule: quindicesime;
+                :value: 15
+              - 
+                :rule: sedicesime;
+                :value: 16
+              - 
+                :rule: diciassettesime;
+                :value: 17
+              - 
+                :rule: diciottesime;
+                :value: 18
+              - 
+                :rule: diciannovesime;
+                :value: 19
+              - 
+                :rule: vent>%%ordinal-esime-with-i>;
+                :value: 20
+              - 
+                :rule: trent>%%ordinal-esime-with-a>;
+                :value: 30
+              - 
+                :rule: quarant>%%ordinal-esime-with-a>;
+                :value: 40
+              - 
+                :rule: cinquant>%%ordinal-esime-with-a>;
+                :value: 50
+              - 
+                :rule: sessant>%%ordinal-esime-with-a>;
+                :value: 60
+              - 
+                :rule: settant>%%ordinal-esime-with-a>;
+                :value: 70
+              - 
+                :rule: ottant>%%ordinal-esime-with-a>;
+                :value: 80
+              - 
+                :rule: novant>%%ordinal-esime-with-a>;
+                :value: 90
+              - 
+                :rule: cent>%%ordinal-esime-with-o>;
+                :value: 100
+              - 
+                :rule: <%spellout-cardinal-feminine<­cent>%%ordinal-esime-with-o>;
+                :value: 200
+              - 
+                :rule: mille­>%%ordinal-esime>;
+                :value: 1000
+              - 
+                :rule: <%spellout-cardinal-feminine<­mille­>%%ordinal-esime>;
+                :value: 2000
+              - 
+                :rule: <%spellout-cardinal-feminine<­mila­>%%ordinal-esime>;
+                :value: 2001
+              - 
+                :rule: milione­>%%ordinal-esime>;
+                :value: 1000000
+              - 
+                :rule: <%spellout-cardinal-feminine<milione­>%%ordinal-esime>;
+                :value: 2000000
+              - 
+                :rule: miliard­>%%ordinal-esime-with-o>;
+                :value: 1000000000
+              - 
+                :rule: <%spellout-cardinal-feminine<miliard­>%%ordinal-esime-with-o>;
+                :value: 2000000000
+              - 
+                :rule: bilione­>%%ordinal-esime>;
+                :value: 1000000000000
+              - 
+                :rule: <%spellout-cardinal-feminine<bilion­>%%ordinal-esime>;
+                :value: 2000000000000
+              - 
+                :rule: biliard­>%%ordinal-esime-with-o>;
+                :value: 1000000000000000
+              - 
+                :rule: <%spellout-cardinal-feminine<biliard­>%%ordinal-esime-with-o>;
+                :value: 2000000000000000
+              - 
+                :rule: "=#,##0=;"
+                :value: 1000000000000000000
+            :type: spellout-ordinal-feminine-plural
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: sime;
+                :value: 0
+              - 
+                :rule: ­unesime;
+                :value: 1
+              - 
+                :rule: ­duesime;
+                :value: 2
+              - 
+                :rule: ­treesime;
+                :value: 3
+              - 
+                :rule: ­quattresime;
+                :value: 4
+              - 
+                :rule: ­cinquesime;
+                :value: 5
+              - 
+                :rule: ­seiesime;
+                :value: 6
+              - 
+                :rule: ­settesime;
+                :value: 7
+              - 
+                :rule: ­ottesime;
+                :value: 8
+              - 
+                :rule: ­novesime;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-feminine=;
+                :value: 10
+            :type: ordinal-esime
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esime;
+                :value: 0
+              - 
+                :rule: ­unesime;
+                :value: 1
+              - 
+                :rule: i­duesime;
+                :value: 2
+              - 
+                :rule: i­treesime;
+                :value: 3
+              - 
+                :rule: i­quattresime;
+                :value: 4
+              - 
+                :rule: i­cinquesime;
+                :value: 5
+              - 
+                :rule: i­seiesime;
+                :value: 6
+              - 
+                :rule: i­settesime;
+                :value: 7
+              - 
+                :rule: ­ottesime;
+                :value: 8
+              - 
+                :rule: i­novesime;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-feminine=;
+                :value: 10
+            :type: ordinal-esime-with-i
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esime;
+                :value: 0
+              - 
+                :rule: ­unesime;
+                :value: 1
+              - 
+                :rule: a­duesime;
+                :value: 2
+              - 
+                :rule: a­treesime;
+                :value: 3
+              - 
+                :rule: a­quattresime;
+                :value: 4
+              - 
+                :rule: a­cinquesime;
+                :value: 5
+              - 
+                :rule: a­seiesime;
+                :value: 6
+              - 
+                :rule: a­settesime;
+                :value: 7
+              - 
+                :rule: ­ottesime;
+                :value: 8
+              - 
+                :rule: a­novesime;
+                :value: 9
+              - 
+                :rule: =%spellout-ordinal-feminine=;
+                :value: 10
+            :type: ordinal-esime-with-a
+          - 
+            :access: private
+            :rules: 
+              - 
+                :rule: esime;
+                :value: 0
+              - 
+                :rule: ­unesime;
+                :value: 1
+              - 
+                :rule: o­duesime;
+                :value: 2
+              - 
+                :rule: o­treesime;
+                :value: 3
+              - 
+                :rule: o­quattresime;
+                :value: 4
+              - 
+                :rule: o­cinquesime;
+                :value: 5
+              - 
+                :rule: o­seiesime;
+                :value: 6
+              - 
+                :rule: o­settesime;
+                :value: 7
+              - 
+                :rule: ­ottesime;
+                :value: 8
+              - 
+                :rule: o­novesime;
+                :value: 9
+              - 
+                :rule: o­=%spellout-ordinal-feminine=;
+                :value: 10
+            :type: ordinal-esime-with-o
         :type: SpelloutRules
       - 
         :ruleset: 

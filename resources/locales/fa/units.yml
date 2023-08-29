@@ -31,6 +31,9 @@
         :area-acre: 
           :one: "{0} جریب"
           :other: "{0} جریب"
+        :area-dunam: 
+          :one: "{0} دونوم"
+          :other: "{0} دونوم"
         :area-hectare: 
           :one: "{0} هکتار"
           :other: "{0} هکتار"
@@ -154,6 +157,9 @@
         :duration-nanosecond: 
           :one: "{0} نانوثانیه"
           :other: "{0} نانوثانیه"
+        :duration-quarter: 
+          :one: "{0} سه‌ماهه"
+          :other: "{0} سه‌ماهه"
         :duration-second: 
           :one: "{0} ثانیه"
           :other: "{0} ثانیه"
@@ -232,6 +238,9 @@
         :graphics-dot-per-inch: 
           :one: "{0} نقطه در اینچ"
           :other: "{0} نقطه در اینچ"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} em"
         :graphics-megapixel: 
           :one: "{0} مگاپیکسل"
           :other: "{0} مگاپیکسل"
@@ -340,9 +349,6 @@
         :mass-kilogram: 
           :one: "{0} کیلوگرم"
           :other: "{0} کیلوگرم"
-        :mass-metric-ton: 
-          :one: "{0} تن متریک"
-          :other: "{0} تن متریک"
         :mass-microgram: 
           :one: "{0} میکروگرم"
           :other: "{0} میکروگرم"
@@ -367,6 +373,9 @@
         :mass-ton: 
           :one: "{0} تن"
           :other: "{0} تن"
+        :mass-tonne: 
+          :one: "{0} تن متریک"
+          :other: "{0} تن متریک"
         :power-gigawatt: 
           :one: "{0} گیگاوات"
           :other: "{0} گیگاوات"
@@ -491,8 +500,8 @@
           :one: "{0} قاشق دسرخوری"
           :other: "{0} قاشق دسرخوری"
         :volume-dessert-spoon-imperial: 
-          :one: "{0} قاشق دسرخوری امپراتوری"
-          :other: "{0} قاشق دسرخوری امپراتوری"
+          :one: "{0} قاشق دسرخوری انگلیسی"
+          :other: "{0} قاشق دسرخوری انگلیسی"
         :volume-dram: 
           :one: "{0} درم"
           :other: "{0} درم"
@@ -527,8 +536,8 @@
           :one: "{0} میلی‌لیتر"
           :other: "{0} میلی‌لیتر"
         :volume-pinch: 
-          :one: "{0} یک سر انگشت"
-          :other: "{0} یک سر انگشت"
+          :one: "{0} سرانگشت"
+          :other: "{0} سرانگشت"
         :volume-pint: 
           :one: "{0} پاینت"
           :other: "{0} پاینت"
@@ -539,8 +548,8 @@
           :one: "{0} کوارت"
           :other: "{0} کوارت"
         :volume-quart-imperial: 
-          :one: "{0} کوارت امپراتوری"
-          :other: "{0} کوارت امپراتوری"
+          :one: "{0} کوارت انگلیسی"
+          :other: "{0} کوارت انگلیسی"
         :volume-tablespoon: 
           :one: "{0} قاشق غذاخوری"
           :other: "{0} قاشق غذاخوری"
@@ -551,6 +560,9 @@
         :acceleration-g-force: 
           :one: "{0}G"
           :other: "{0}G"
+        :acceleration-meter-per-square-second: 
+          :one: "{0}‎ m/s²"
+          :other: "{0}‎ m/s²"
         :angle-arc-minute: 
           :one: "{0}′"
           :other: "{0}′"
@@ -560,6 +572,12 @@
         :angle-degree: 
           :one: "{0}°"
           :other: "{0}°"
+        :angle-radian: 
+          :one: "{0} رادیان"
+          :other: "{0} رادیان"
+        :angle-revolution: 
+          :one: "{0} دور"
+          :other: "{0} دور"
         :area-acre: 
           :one: "{0}جریب"
           :other: "{0} جریب"
@@ -569,6 +587,9 @@
         :area-hectare: 
           :one: "{0}ha"
           :other: "{0}ha"
+        :area-square-centimeter: 
+          :one: "{0}‎ cm²"
+          :other: "{0}‎ cm²"
         :area-square-foot: 
           :one: "{0}ft²"
           :other: "{0}ft²"
@@ -590,18 +611,48 @@
         :concentr-item: 
           :one: "{0}مورد"
           :other: "{0}مورد"
+        :concentr-karat: 
+          :one: "{0} عیار"
+          :other: "{0} عیار"
+        :concentr-milligram-ofglucose-per-deciliter: 
+          :one: "{0} mg/dL"
+          :other: "{0} mg/dL"
+        :concentr-millimole-per-liter: 
+          :one: "{0} mmol/L"
+          :other: "{0} mmol/L"
+        :concentr-mole: 
+          :one: "{0} مول"
+          :other: "{0} مول"
         :concentr-percent: 
           :one: "{0}٪"
           :other: "{0}٪"
+        :concentr-permille: 
+          :one: "{0}‰"
+          :other: "{0}‰"
         :concentr-permillion: 
-          :one: "{0} بخش در میلیون"
-          :other: "{0} بخش در میلیون"
+          :one: "{0}ppm"
+          :other: "{0}ppm"
+        :concentr-permyriad: 
+          :one: "{0}‱"
+          :other: "{0}‱"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} ل./۱۰۰ ک.م."
           :other: "{0} ل./۱۰۰ ک.م."
+        :consumption-liter-per-kilometer: 
+          :one: "{0} ل./ک.م."
+          :other: "{0} ل./ک.م."
+        :consumption-mile-per-gallon: 
+          :one: "{0} مایل در گالن"
+          :other: "{0} مایل در گالن"
         :consumption-mile-per-gallon-imperial: 
           :one: "{0}m/gUK"
           :other: "{0}m/gUK"
+        :digital-bit: 
+          :one: "{0} بیت"
+          :other: "{0} بیت"
+        :digital-byte: 
+          :one: "{0} بایت"
+          :other: "{0} بایت"
         :digital-gigabit: 
           :one: "{0}Gb"
           :other: "{0}Gb"
@@ -635,6 +686,9 @@
         :duration-day: 
           :one: "{0} روز"
           :other: "{0} روز"
+        :duration-decade: 
+          :one: "{0} دهه"
+          :other: "{0} دهه"
         :duration-hour: 
           :one: "{0}h"
           :other: "{0}h"
@@ -653,6 +707,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-quarter: 
+          :one: "{0} سه‌ماهه"
+          :other: "{0} سه‌ماهه"
         :duration-second: 
           :one: "{0}s"
           :other: "{0}s"
@@ -662,24 +719,78 @@
         :duration-year: 
           :one: "{0} سال"
           :other: "{0} سال"
+        :electric-ampere: 
+          :one: "{0} آمپر"
+          :other: "{0} آمپر"
+        :electric-milliampere: 
+          :one: "{0} میلی‌آمپر"
+          :other: "{0} میلی‌آمپر"
+        :electric-ohm: 
+          :one: "{0} اهم"
+          :other: "{0} اهم"
+        :electric-volt: 
+          :one: "{0} ولت"
+          :other: "{0} ولت"
+        :energy-british-thermal-unit: 
+          :one: "{0} بی‌تی‌یو"
+          :other: "{0} بی‌تی‌یو"
+        :energy-calorie: 
+          :one: "{0} کالری"
+          :other: "{0} کالری"
         :energy-electronvolt: 
           :one: "{0}الکترون‌ولت"
           :other: "{0}الکترون‌ولت"
+        :energy-foodcalorie: 
+          :one: "{0} کالری"
+          :other: "{0} کالری"
+        :energy-joule: 
+          :one: "{0} ژول"
+          :other: "{0} ژول"
+        :energy-kilocalorie: 
+          :one: "{0} ک.کالری"
+          :other: "{0} ک.کالری"
+        :energy-kilojoule: 
+          :one: "{0} ک.ژول"
+          :other: "{0} ک.ژول"
+        :energy-kilowatt-hour: 
+          :one: "{0} ک.و.ساعت"
+          :other: "{0} ک.و.ساعت"
+        :energy-therm-us: 
+          :one: "{0} ترم آمریکایی"
+          :other: "{0} ترم آمریکایی"
         :force-kilowatt-hour-per-100-kilometer: 
           :one: "{0}ک.وا.س/۱۰۰ ک.م"
           :other: "{0} ک.وا.س/۱۰۰ ک.م"
+        :force-newton: 
+          :one: "{0} نیوتن"
+          :other: "{0} نیوتن"
+        :force-pound-force: 
+          :one: "{0} پوند-نیرو"
+          :other: "{0} پوند-نیرو"
         :frequency-gigahertz: 
           :one: "{0} گ.هرتز"
           :other: "{0} گ.هرتز"
+        :frequency-hertz: 
+          :one: "{0} هرتز"
+          :other: "{0} هرتز"
         :frequency-kilohertz: 
           :one: "{0} ک.هرتز"
           :other: "{0} ک.هرتز"
         :frequency-megahertz: 
           :one: "{0} مگاهرتز"
           :other: "{0} مگاهرتز"
+        :graphics-dot: 
+          :one: "{0} نقطه"
+          :other: "{0} نقطه"
+        :graphics-dot-per-centimeter: 
+          :one: "{0} dpcm"
+          :other: "{0} dpcm"
         :graphics-dot-per-inch: 
           :one: "{0}dpi"
           :other: "{0}dpi"
+        :graphics-em: 
+          :one: "{0} em"
+          :other: "{0} em"
         :graphics-megapixel: 
           :one: "{0}MP"
           :other: "{0}MP"
@@ -689,6 +800,9 @@
         :graphics-pixel-per-centimeter: 
           :one: "{0}ppcm"
           :other: "{0}ppcm"
+        :graphics-pixel-per-inch: 
+          :one: "{0} ppi"
+          :other: "{0} ppi"
         :length-astronomical-unit: 
           :one: "{0}واحد نجومی"
           :other: "{0}واحد نجومی"
@@ -698,6 +812,9 @@
         :length-decimeter: 
           :one: "{0}dm"
           :other: "{0}dm"
+        :length-earth-radius: 
+          :one: "{0} R⊕"
+          :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0}فاتوم"
           :other: "{0}فاتوم"
@@ -717,14 +834,17 @@
           :one: "{0}ly"
           :other: "{0}ly"
         :length-meter: 
-          :one: "{0} متر"
-          :other: "{0} متر"
+          :one: "{0} m"
+          :other: "{0} m"
         :length-micrometer: 
           :one: "{0}μm"
           :other: "{0}μm"
         :length-mile: 
           :one: "{0}mi"
           :other: "{0}mi"
+        :length-mile-scandinavian: 
+          :one: "{0}‎ smi"
+          :other: "{0}‎ smi"
         :length-millimeter: 
           :one: "{0}mm"
           :other: "{0}mm"
@@ -749,24 +869,42 @@
         :length-yard: 
           :one: "{0} یارد"
           :other: "{0} یارد"
+        :light-candela: 
+          :one: "{0} cd"
+          :other: "{0} cd"
+        :light-lumen: 
+          :one: "{0} lm"
+          :other: "{0} lm"
+        :light-lux: 
+          :one: "{0} لوکس"
+          :other: "{0} لوکس"
+        :light-solar-luminosity: 
+          :one: "{0} ☉L"
+          :other: "{0} ☉L"
         :mass-carat: 
-          :one: "{0}قیراط"
-          :other: "{0}قیراط"
+          :one: "{0}CD"
+          :other: "{0}CD"
         :mass-dalton: 
-          :one: "{0}دالتون"
-          :other: "{0}دالتون"
+          :one: "{0}Da"
+          :other: "{0}Da"
+        :mass-earth-mass: 
+          :one: "{0}M⊕"
+          :other: "{0}M⊕"
         :mass-grain: 
-          :one: "{0}دانه"
-          :other: "{0}دانه"
+          :one: "{0}gr"
+          :other: "{0}gr"
         :mass-gram: 
           :one: "{0} گرم"
           :other: "{0} گرم"
         :mass-kilogram: 
           :one: "{0}kg"
           :other: "{0}kg"
-        :mass-metric-ton: 
-          :one: "{0} تن"
-          :other: "{0} تن"
+        :mass-microgram: 
+          :one: "{0}μg"
+          :other: "{0}μg"
+        :mass-milligram: 
+          :one: "{0}mg"
+          :other: "{0}mg"
         :mass-ounce: 
           :one: "{0}oz"
           :other: "{0}oz"
@@ -776,27 +914,54 @@
         :mass-pound: 
           :one: "{0}lb"
           :other: "{0}lb"
+        :mass-solar-mass: 
+          :one: "{0}M☉"
+          :other: "{0}M☉"
         :mass-stone: 
-          :one: "{0} سنگ"
-          :other: "{0} سنگ"
+          :one: "{0}st"
+          :other: "{0}st"
+        :mass-ton: 
+          :one: "{0}tn"
+          :other: "{0}tn"
+        :mass-tonne: 
+          :one: "{0} تن"
+          :other: "{0} تن"
+        :power-gigawatt: 
+          :one: "{0} گیگاوات"
+          :other: "{0} گیگاوات"
         :power-horsepower: 
           :one: "{0}hp"
           :other: "{0}hp"
         :power-kilowatt: 
           :one: "{0}kW"
           :other: "{0}kW"
+        :power-megawatt: 
+          :one: "{0} مگاوات"
+          :other: "{0} مگاوات"
+        :power-milliwatt: 
+          :one: "{0} میلی‌وات"
+          :other: "{0} میلی‌وات"
         :power-watt: 
           :one: "{0}W"
           :other: "{0}W"
         :pressure-atmosphere: 
           :one: "{0}اتمسفر"
           :other: "{0}اتمسفر"
+        :pressure-bar: 
+          :one: "{0} بار"
+          :other: "{0} بار"
         :pressure-hectopascal: 
           :one: "{0}hPa"
           :other: "{0}hPa"
         :pressure-inch-ofhg: 
           :one: "{0}inHg"
           :other: "{0}inHg"
+        :pressure-kilopascal: 
+          :one: "{0} ک.پاسکال"
+          :other: "{0} ک.پاسکال"
+        :pressure-megapascal: 
+          :one: "{0} مگاپاسکال"
+          :other: "{0} مگاپاسکال"
         :pressure-millibar: 
           :one: "{0}mbar"
           :other: "{0}mbar"
@@ -833,15 +998,27 @@
         :temperature-kelvin: 
           :one: "{0}K"
           :other: "{0}K"
+        :torque-newton-meter: 
+          :one: "{0} نیوتن‌متر"
+          :other: "{0} نیوتن‌متر"
+        :torque-pound-force-foot: 
+          :one: "{0} پوند-فوت"
+          :other: "{0} پوند-فوت"
         :volume-acre-foot: 
           :one: "{0}ac ft"
           :other: "{0}ac ft"
+        :volume-barrel: 
+          :one: "{0} بشکه"
+          :other: "{0} بشکه"
         :volume-bushel: 
           :one: "{0}bu"
           :other: "{0}bu"
         :volume-centiliter: 
           :one: "{0}cL"
           :other: "{0}cL"
+        :volume-cubic-centimeter: 
+          :one: "{0}‎ cm³"
+          :other: "{0}‎ cm³"
         :volume-cubic-foot: 
           :one: "{0}ft³"
           :other: "{0}ft³"
@@ -869,15 +1046,36 @@
         :volume-deciliter: 
           :one: "{0}dL"
           :other: "{0}dL"
+        :volume-dessert-spoon: 
+          :one: "{0} ق.دس.خ."
+          :other: "{0} ق.دس.خ."
+        :volume-dessert-spoon-imperial: 
+          :one: "{0} ق.دس. انگلیسی"
+          :other: "{0} ق.دس. انگلیسی"
+        :volume-dram: 
+          :one: "{0} درم سیال"
+          :other: "{0} درم سیال"
+        :volume-drop: 
+          :one: "{0} قطره"
+          :other: "{0} قطره"
         :volume-fluid-ounce: 
           :one: "{0}fl oz"
           :other: "{0}fl oz"
         :volume-fluid-ounce-imperial: 
           :one: "{0}اونس سیال انگلیسی"
           :other: "{0}اونس سیال انگلیسی"
+        :volume-gallon: 
+          :one: "{0} گالن"
+          :other: "{0} گالن"
+        :volume-gallon-imperial: 
+          :one: "{0} گالن امپریال"
+          :other: "{0} گالن امپریال"
         :volume-hectoliter: 
           :one: "{0}hL"
           :other: "{0}hL"
+        :volume-jigger: 
+          :one: "{0} گیلاس"
+          :other: "{0} گیلاس"
         :volume-liter: 
           :one: "{0}L"
           :other: "{0}L"
@@ -887,6 +1085,9 @@
         :volume-milliliter: 
           :one: "{0}mL"
           :other: "{0}mL"
+        :volume-pinch: 
+          :one: "{0} سرانگشت"
+          :other: "{0} سرانگشت"
         :volume-pint: 
           :one: "{0}pt"
           :other: "{0}pt"
@@ -896,6 +1097,15 @@
         :volume-quart: 
           :one: "{0}qt"
           :other: "{0}qt"
+        :volume-quart-imperial: 
+          :one: "{0}کوارت انگلیسی"
+          :other: "{0} کورت انگلیسی"
+        :volume-tablespoon: 
+          :one: "{0} ق.غ.خ"
+          :other: "{0} قاشق غ."
+        :volume-teaspoon: 
+          :one: "{0}ق.چ."
+          :other: "{0}ق.چ."
       :short: 
         :acceleration-g-force: 
           :one: "{0} G"
@@ -970,8 +1180,8 @@
           :one: "{0}‰"
           :other: "{0}‰"
         :concentr-permillion: 
-          :one: "{0} بخش در میلیون"
-          :other: "{0} بخش در میلیون"
+          :one: "{0} ppm"
+          :other: "{0} ppm"
         :concentr-permyriad: 
           :one: "{0}‱"
           :other: "{0}‱"
@@ -1047,6 +1257,9 @@
         :duration-nanosecond: 
           :one: "{0} نانوثانیه"
           :other: "{0} نانوثانیه"
+        :duration-quarter: 
+          :one: "{0} سه‌ماهه"
+          :other: "{0} سه‌ماهه"
         :duration-second: 
           :one: "{0} ثانیه"
           :other: "{0} ثانیه"
@@ -1207,8 +1420,10 @@
           :one: "{0} یارد"
           :other: "{0} یارد"
         :light-candela: 
+          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
+          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} لوکس"
@@ -1232,17 +1447,14 @@
           :one: "{0} گرم"
           :other: "{0} گرم"
         :mass-kilogram: 
-          :one: "{0} kg"
+          :one: "{0} کیلوگرم"
           :other: "{0} کیلوگرم"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
-          :one: "{0} μg"
-          :other: "{0} μg"
+          :one: "{0} میکروگرم"
+          :other: "{0} میکروگرم"
         :mass-milligram: 
-          :one: "{0} mg"
-          :other: "{0} mg"
+          :one: "{0} میلی‌گرم"
+          :other: "{0} میلی‌گرم"
         :mass-ounce: 
           :one: "{0} اونس"
           :other: "{0} اونس"
@@ -1261,6 +1473,9 @@
         :mass-ton: 
           :one: "{0} تن"
           :other: "{0} تن"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} گیگاوات"
           :other: "{0} گیگاوات"
@@ -1385,8 +1600,8 @@
           :one: "{0} ق.دس.خ."
           :other: "{0} ق.دس.خ."
         :volume-dessert-spoon-imperial: 
-          :one: "{0} قاشق امپراتوری"
-          :other: "{0} قاشق امپراتوری"
+          :one: "{0} ق.دس. انگلیسی"
+          :other: "{0} ق.دس. انگلیسی"
         :volume-dram: 
           :one: "{0} درم سیال"
           :other: "{0} درم سیال"
@@ -1433,11 +1648,11 @@
           :one: "{0} کوارت"
           :other: "{0} کوارت"
         :volume-quart-imperial: 
-          :one: "{0} کوارت امپراتوری"
-          :other: "{0} کوارت امپراتوری"
+          :one: "{0} کوارت انگلیسی"
+          :other: "{0} کوارت انگلیسی"
         :volume-tablespoon: 
           :one: "{0} ق.غ.خ"
           :other: "{0} قاشق غ."
         :volume-teaspoon: 
-          :one: "{0} قاشق چ."
-          :other: "{0} قاشق چ."
+          :one: "{0} ق.چ."
+          :other: "{0} ق.چ."

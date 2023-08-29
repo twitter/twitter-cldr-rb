@@ -113,15 +113,19 @@
           :other: "{0} órával ezelőtt"
     :hour-narrow: 
       :display_name: ó
+      :relative: 
+        0: "ebben az órában"
       :relative_time: 
         :future: 
           :one: "{0} óra múlva"
           :other: "{0} óra múlva"
         :past: 
-          :one: "{0} órával ezelőtt"
-          :other: "{0} órával ezelőtt"
+          :one: "{0} órája"
+          :other: "{0} órája"
     :hour-short: 
       :display_name: óra
+      :relative: 
+        0: "ebben az órában"
       :relative_time: 
         :future: 
           :one: "{0} óra múlva"
@@ -142,15 +146,19 @@
           :other: "{0} perccel ezelőtt"
     :minute-narrow: 
       :display_name: p
+      :relative: 
+        0: "ebben a percben"
       :relative_time: 
         :future: 
           :one: "{0} perc múlva"
           :other: "{0} perc múlva"
         :past: 
-          :one: "{0} perccel ezelőtt"
-          :other: "{0} perccel ezelőtt"
+          :one: "{0} perce"
+          :other: "{0} perce"
     :minute-short: 
       :display_name: perc
+      :relative: 
+        0: "ebben a percben"
       :relative_time: 
         :future: 
           :one: "{0} perc múlva"
@@ -218,8 +226,8 @@
           :one: "{0} hónap múlva"
           :other: "{0} hónap múlva"
         :past: 
-          :one: "{0} hónappal ezelőtt"
-          :other: "{0} hónappal ezelőtt"
+          :one: "{0} hónapja"
+          :other: "{0} hónapja"
     :month-short: 
       :display_name: hónap
       :relative: 
@@ -321,15 +329,19 @@
           :other: "{0} másodperccel ezelőtt"
     :second-narrow: 
       :display_name: mp
+      :relative: 
+        0: most
       :relative_time: 
         :future: 
           :one: "{0} másodperc múlva"
           :other: "{0} másodperc múlva"
         :past: 
-          :one: "{0} másodperccel ezelőtt"
-          :other: "{0} másodperccel ezelőtt"
+          :one: "{0} m.perce"
+          :other: "{0} m.perce"
     :second-short: 
       :display_name: másodperc
+      :relative: 
+        0: most
       :relative_time: 
         :future: 
           :one: "{0} másodperc múlva"
@@ -505,8 +517,8 @@
           :one: "{0} hét múlva"
           :other: "{0} hét múlva"
         :past: 
-          :one: "{0} héttel ezelőtt"
-          :other: "{0} héttel ezelőtt"
+          :one: "{0} hete"
+          :other: "{0} hete"
     :week-short: 
       :display_name: hét
       :relative: 
@@ -562,8 +574,8 @@
           :one: "{0} év múlva"
           :other: "{0} év múlva"
         :past: 
-          :one: "{0} évvel ezelőtt"
-          :other: "{0} évvel ezelőtt"
+          :one: "{0} éve"
+          :other: "{0} éve"
     :year-short: 
       :display_name: év
       :relative: 

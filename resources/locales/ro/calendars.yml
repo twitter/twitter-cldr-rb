@@ -12,8 +12,8 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
@@ -35,11 +35,11 @@
         :MMdd: dd.MM
         :Md: dd.MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -189,9 +189,9 @@
             :pattern: dd.MM.y
         :datetime: 
           :full: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} 'la' {{time}}"
           :long: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} 'la' {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
@@ -304,7 +304,7 @@
             :midnight: "miezul nopții"
             :morning1: dimineața
             :night1: noaptea
-            :noon: "la amiază"
+            :noon: amiază
             :pm: p.m.
           :wide: 
             :afternoon1: după-amiaza

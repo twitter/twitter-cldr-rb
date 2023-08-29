@@ -12,47 +12,56 @@
           :many: "{0}′"
           :one: "{0}′"
           :other: "{0}′"
+          :two: "{0}′"
         :concentr-karat: 
           :few: "{0} kt"
           :many: "{0} kt"
           :one: "{0} kt"
           :other: "{0} kt"
+          :two: "{0} kt"
         :consumption-liter-per-kilometer: 
           :few: "{0} litri kull kilometru"
-          :many: "{0} litri kull kilometru"
+          :many: "{0}-il litru kull kilometru"
           :one: "{0} litru kull kilometru"
-          :other: "{0} litri kull kilometru"
+          :other: "{0} litru kull kilometru"
+          :two: "{0} litri kull kilometru"
         :digital-megabyte: 
           :few: "{0} megabytes"
-          :many: "{0} megabytes"
+          :many: "{0}-il megabyte"
           :one: "{0} megabyte"
-          :other: "{0} megabytes"
+          :other: "{0} megabyte"
+          :two: "{0} megabytes"
         :digital-terabit: 
           :few: "{0} terabits"
           :many: "{0} terabits"
           :one: "{0} terabit"
           :other: "{0} terabits"
+          :two: "{0} terabits"
         :digital-terabyte: 
           :few: "{0} terabytes"
           :many: "{0} terabytes"
           :one: "{0} terabyte"
           :other: "{0} terabytes"
+          :two: "{0} terabytes"
         :duration-millisecond: 
           :few: "{0} millisekondi"
-          :many: "{0} millisekondi"
+          :many: "{0}-il millisekonda"
           :one: "{0} millisekonda"
-          :other: "{0} millisekondi"
+          :other: "{0} millisekonda"
+          :two: "{0} millisekondi"
         :light-lux: 
           :few: "{0} lx"
           :many: "{0} lx"
           :one: "{0} lx"
           :other: "{0} lx"
+          :two: "{0} lx"
       :narrow: 
         :duration-millisecond: 
           :few: "{0}ms"
           :many: "{0}ms"
           :one: "{0}ms"
           :other: "{0}ms"
+          :two: "{0}ms"
       :short: 
         :acceleration-g-force: 
           :other: "{0} G"
@@ -95,6 +104,7 @@
           :many: "{0} kt"
           :one: "{0} kt"
           :other: "{0} kt"
+          :two: "{0} kt"
         :concentr-milligram-ofglucose-per-deciliter: 
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
@@ -116,6 +126,7 @@
           :many: "{0} L/km"
           :one: "{0} L/km"
           :other: "{0} L/km"
+          :two: "{0} L/km"
         :consumption-mile-per-gallon: 
           :other: "{0} mpg US"
         :consumption-mile-per-gallon-imperial: 
@@ -137,11 +148,13 @@
           :many: "{0} Mb"
           :one: "{0} Mb"
           :other: "{0} Mb"
+          :two: "{0} Mb"
         :digital-megabyte: 
           :few: "{0} MB"
           :many: "{0} MB"
           :one: "{0} MB"
           :other: "{0} MB"
+          :two: "{0} MB"
         :digital-petabyte: 
           :other: "{0} PB"
         :digital-terabit: 
@@ -149,11 +162,13 @@
           :many: "{0} Tb"
           :one: "{0} Tb"
           :other: "{0} Tb"
+          :two: "{0} Tb"
         :digital-terabyte: 
           :few: "{0} TB"
           :many: "{0} TB"
           :one: "{0} TB"
           :other: "{0} TB"
+          :two: "{0} TB"
         :duration-century: 
           :other: "{0} c"
         :duration-day: 
@@ -169,12 +184,15 @@
           :many: "{0} ms"
           :one: "{0} ms"
           :other: "{0} ms"
+          :two: "{0} ms"
         :duration-minute: 
           :other: "{0} min"
         :duration-month: 
           :other: "{0} m"
         :duration-nanosecond: 
           :other: "{0} ns"
+        :duration-quarter: 
+          :other: "{0} q"
         :duration-second: 
           :other: "{0} s"
         :duration-week: 
@@ -282,6 +300,7 @@
           :many: "{0} lx"
           :one: "{0} lx"
           :other: "{0} lx"
+          :two: "{0} lx"
         :light-solar-luminosity: 
           :other: "{0} L☉"
         :mass-carat: 
@@ -296,8 +315,6 @@
           :other: "{0} g"
         :mass-kilogram: 
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :other: "{0} t"
         :mass-microgram: 
           :other: "{0} μg"
         :mass-milligram: 
@@ -314,6 +331,8 @@
           :other: "{0} st"
         :mass-ton: 
           :other: "{0} tn"
+        :mass-tonne: 
+          :other: "{0} t"
         :power-gigawatt: 
           :other: "{0} GW"
         :power-horsepower: 

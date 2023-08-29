@@ -463,7 +463,7 @@
                 :rule: "<%spellout-numbering< quadrillion>%%th>;"
                 :value: 1000000000000000
               - 
-                :rule: "=#,##0=.;"
+                :rule: "=#,##0=$(ordinal,one{st}two{nd}few{rd}other{th})$;"
                 :value: 1000000000000000000
             :type: spellout-ordinal
           - 
@@ -535,7 +535,7 @@
                 :rule: "<%spellout-numbering-verbose< quadrillion>%%commas-o>;"
                 :value: 1000000000000000
               - 
-                :rule: "=#,##0=.;"
+                :rule: "=#,##0=$(ordinal,one{st}two{nd}few{rd}other{th})$;"
                 :value: 1000000000000000000
             :type: spellout-ordinal-verbose
         :type: SpelloutRules

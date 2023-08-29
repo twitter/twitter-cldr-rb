@@ -106,23 +106,31 @@ module TwitterCldr
         # is that regular negated character classes don't match the ends of
         # strings. CLDR's transform rules expect the after context to match
         # the end of a string, since, in a sense, "nothing" is always part
-        # of a negated character class. "I want to match on anything but
-        # these specific characters" should also include no characters.
-        # Accordingly, this function adds "\z" to the ends of negated
-        # character classes. Hopefully this works for all cases.
+        # of a negated character class. In other words, "I want to match on
+        # anything but these specific characters" should also include _no_
+        # characters. Accordingly, this function adds "\z" to the ends of
+        # negated character classes. Hopefully this works for all cases.
         def compile_regexp(regexp_str)
           TwitterCldr::Shared::UnicodeRegex.compile(regexp_str).tap do |re|
-            re.elements.each_with_index do |element, idx|
-              if element.type == :character_class && element.negated?
-                repl = TwitterCldr::Shared::UnicodeRegex.compile(
-                  "(?:#{element.to_regexp_str[3..-2]}|\\z)"
-                )
+            re.elements.replace(
+              re.elements.flat_map do |element|
+                new_elem = case element.type
+                when :character_class
+                  if element.negated?
+                    repl = TwitterCldr::Shared::UnicodeRegex.compile(
+                      "(?:#{element.to_regexp_str[3..-2]}|\\z)"
+                    )
 
-                re.elements[idx..idx] = repl.elements
+                    repl.elements
+                  end
+                end
+
+                new_elem || element
               end
-            end
+            )
           end
         end
+
       end
 
     end

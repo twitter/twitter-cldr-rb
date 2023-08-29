@@ -12,8 +12,8 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
         :GyMMMEd: "E d MMM y G"
@@ -34,11 +34,11 @@
         :MMMd: "d MMM"
         :Md: d/M
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -187,22 +187,22 @@
             :pattern: d/M/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} - {{time}}"
+            :pattern: "{{date}} στις {{time}}"
           :long: 
-            :pattern: "{{date}} - {{time}}"
+            :pattern: "{{date}} στις {{time}}"
           :medium: 
             :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "h:mm:ss a zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "h:mm:ss a z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "h:mm:ss a"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "h:mm a"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 

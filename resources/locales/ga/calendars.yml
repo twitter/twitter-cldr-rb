@@ -12,8 +12,8 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d MMM y G"
@@ -33,11 +33,11 @@
         :MMMd: "d MMM"
         :Md: dd/MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -129,10 +129,10 @@
           0: RCR
           1: CR
       :fields: 
-        :day: Lá
-        :day-narrow: Lá
-        :day-short: Lá
-        :dayOfYear: "Lá den bhliain"
+        :day: lá
+        :day-narrow: lá
+        :day-short: lá
+        :dayOfYear: "lá den bhliain"
         :dayOfYear-narrow: "lá den bhl."
         :dayOfYear-short: "lá den bhl."
         :dayperiod: a.m./p.m.
@@ -141,10 +141,10 @@
         :era: ré
         :era-narrow: ré
         :era-short: ré
-        :hour: Uair
+        :hour: uair
         :hour-narrow: u
         :hour-short: uair
-        :minute: Nóiméad
+        :minute: nóiméad
         :minute-narrow: "n"
         :minute-short: nóim.
         :month: mí
@@ -153,25 +153,25 @@
         :quarter: ráithe
         :quarter-narrow: ráithe
         :quarter-short: ráithe
-        :second: Soicind
+        :second: soicind
         :second-narrow: s
         :second-short: soic.
         :week: seachtain
         :week-narrow: scht.
         :week-short: scht.
-        :weekOfMonth: "Seachtain den mhí"
-        :weekOfMonth-narrow: "7n den mhí"
-        :weekOfMonth-short: "7n den mhí"
-        :weekday: "Lá na seachtaine"
-        :weekday-narrow: "lá den t7n"
-        :weekday-short: "lá den t7n"
-        :weekdayOfMonth: "Lá oibre den mhí"
+        :weekOfMonth: "seachtain den mhí"
+        :weekOfMonth-narrow: "scht. den mhí"
+        :weekOfMonth-short: "scht. den mhí"
+        :weekday: "lá den tseachtain"
+        :weekday-narrow: "lá den tscht."
+        :weekday-short: "lá den tscht."
+        :weekdayOfMonth: "lá den tseachtain sa mhí"
         :weekdayOfMonth-narrow: "lá oib. den mhí"
         :weekdayOfMonth-short: "lá oib. den mhí"
         :year: bliain
         :year-narrow: bl.
         :year-short: bl.
-        :zone: "Crios Ama"
+        :zone: "crios ama"
         :zone-narrow: crios
         :zone-short: crios
       :formats: 
@@ -186,13 +186,13 @@
             :pattern: dd/MM/y
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'ag' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'ag' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"

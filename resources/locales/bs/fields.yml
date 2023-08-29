@@ -20,6 +20,12 @@
           :other: "prije {0} dana"
     :day-narrow: 
       :display_name: dan
+      :relative: 
+        -1: jučer
+        -2: prekjučer
+        0: danas
+        1: sutra
+        2: prekosutra
       :relative_time: 
         :future: 
           :few: "za {0} d."
@@ -31,6 +37,12 @@
           :other: "prije {0} d."
     :day-short: 
       :display_name: dan
+      :relative: 
+        -1: jučer
+        -2: prekjučer
+        0: danas
+        1: sutra
+        2: prekosutra
       :relative_time: 
         :future: 
           :few: "za {0} d."
@@ -115,6 +127,8 @@
           :other: "prije {0} sati"
     :hour-narrow: 
       :display_name: h
+      :relative: 
+        0: "ovaj sat"
       :relative_time: 
         :future: 
           :few: "za {0} sata"
@@ -126,6 +140,8 @@
           :other: "prije {0} sati"
     :hour-short: 
       :display_name: h
+      :relative: 
+        0: "ovaj sat"
       :relative_time: 
         :future: 
           :few: "za {0} sata"
@@ -150,6 +166,8 @@
           :other: "prije {0} minuta"
     :minute-narrow: 
       :display_name: min.
+      :relative: 
+        0: "ova minuta"
       :relative_time: 
         :future: 
           :few: "za {0} min."
@@ -161,6 +179,8 @@
           :other: "prije {0} min."
     :minute-short: 
       :display_name: min
+      :relative: 
+        0: "ova minuta"
       :relative_time: 
         :future: 
           :few: "za {0} min."
@@ -229,6 +249,10 @@
           :other: "prije {0} mjeseci"
     :month-narrow: 
       :display_name: mj.
+      :relative: 
+        -1: "prošli mjesec"
+        0: "ovaj mjesec"
+        1: "sljedeći mjesec"
       :relative_time: 
         :future: 
           :few: "za {0} mj."
@@ -240,6 +264,10 @@
           :other: "prije {0} mj."
     :month-short: 
       :display_name: mj.
+      :relative: 
+        -1: "prošli mjesec"
+        0: "ovaj mjesec"
+        1: "sljedeći mjesec"
       :relative_time: 
         :future: 
           :few: "za {0} mj."
@@ -266,6 +294,10 @@
           :other: "prije {0} kvartala"
     :quarter-narrow: 
       :display_name: kv.
+      :relative: 
+        -1: "posljednji kvartal"
+        0: "ovaj kvartal"
+        1: "sljedeći kvartal"
       :relative_time: 
         :future: 
           :few: "za {0} kv."
@@ -277,6 +309,10 @@
           :other: "prije {0} kv."
     :quarter-short: 
       :display_name: kv.
+      :relative: 
+        -1: "posljednji kvartal"
+        0: "ovaj kvartal"
+        1: "sljedeći kvartal"
       :relative_time: 
         :future: 
           :few: "za {0} kv."
@@ -343,6 +379,8 @@
           :other: "prije {0} sekundi"
     :second-narrow: 
       :display_name: s
+      :relative: 
+        0: sada
       :relative_time: 
         :future: 
           :few: "za {0} sek."
@@ -354,6 +392,8 @@
           :other: "prije {0} sek."
     :second-short: 
       :display_name: sek.
+      :relative: 
+        0: sada
       :relative_time: 
         :future: 
           :few: "za {0} sek."
@@ -548,6 +588,10 @@
           :other: "prije {0} sedmica"
     :week-narrow: 
       :display_name: sed.
+      :relative: 
+        -1: "prošle sedmice"
+        0: "ove sedmice"
+        1: "sljedeće sedmice"
       :relative_time: 
         :future: 
           :few: "za {0} sed."
@@ -559,6 +603,10 @@
           :other: "prije {0} sed."
     :week-short: 
       :display_name: sed.
+      :relative: 
+        -1: "prošle sedmice"
+        0: "ove sedmice"
+        1: "sljedeće sedmice"
       :relative_time: 
         :future: 
           :few: "za {0} sed."
@@ -603,6 +651,10 @@
           :other: "prije {0} godina"
     :year-narrow: 
       :display_name: g.
+      :relative: 
+        -1: "prošle godine"
+        0: "ove godine"
+        1: "sljedeće godine"
       :relative_time: 
         :future: 
           :few: "za {0} g."
@@ -614,6 +666,10 @@
           :other: "prije {0} g."
     :year-short: 
       :display_name: god.
+      :relative: 
+        -1: "prošle godine"
+        0: "ove godine"
+        1: "sljedeće godine"
       :relative_time: 
         :future: 
           :few: "za {0} god."

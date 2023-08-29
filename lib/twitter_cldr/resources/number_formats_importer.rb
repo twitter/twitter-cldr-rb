@@ -166,8 +166,11 @@ module TwitterCldr
 
       def patterns_from(format_node)
         format_node.xpath('pattern').each_with_object({}) do |pattern_node, pattern_result|
-          pattern_key_node = pattern_node.attribute('type')
+          # CLDR v42 added a few new alt patterns, alphaNextToNumber and noCurrency.
+          # See: https://cldr.unicode.org/index/downloads/cldr-42#h.ocxunccgtf28
+          next if pattern_node.attribute('alt')
 
+          pattern_key_node = pattern_node.attribute('type')
           pattern_count_node = pattern_node.attribute('count')
 
           unless cldr_req.draft?(pattern_node)

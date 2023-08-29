@@ -1090,7 +1090,7 @@ Africa/Tripoli:
   :ISO_EXTENDED_FULL: "+02:00"
   :ISO_EXTENDED_LOCAL_FULL: "+02:00"
   :ZONE_ID_SHORT: lytip
-  :EXEMPLAR_LOCATION: Тріполі
+  :EXEMPLAR_LOCATION: Триполі
 Africa/Tunis:
   :offset: 3600000
   :LOCALIZED_GMT: GMT+01:00
@@ -1974,7 +1974,7 @@ America/Chicago:
   :ZONE_ID_SHORT: uschi
   :EXEMPLAR_LOCATION: Чікаґо
 America/Chihuahua:
-  :offset: -25200000
+  :offset: -21600000
   :LOCALIZED_GMT: GMT-07:00
   :LOCALIZED_GMT_SHORT: GMT-7
   :GENERIC_LOCATION: 'час: Чіуауа'
@@ -1994,6 +1994,27 @@ America/Chihuahua:
   :ISO_EXTENDED_LOCAL_FULL: "-07:00"
   :ZONE_ID_SHORT: mxchi
   :EXEMPLAR_LOCATION: Чіуауа
+America/Ciudad_Juarez:
+  :offset: -25200000
+  :LOCALIZED_GMT: GMT-07:00
+  :LOCALIZED_GMT_SHORT: GMT-7
+  :GENERIC_LOCATION: 'час: С’юдад-Хуарес'
+  :GENERIC_LONG: за тихоокеанським часом у Мексиці
+  :GENERIC_SHORT: 'час: С’юдад-Хуарес'
+  :SPECIFIC_LONG: за стандартним тихоокеанським часом у Мексиці
+  :SPECIFIC_SHORT: GMT-7
+  :ISO_BASIC_SHORT: "-07"
+  :ISO_BASIC_LOCAL_SHORT: "-07"
+  :ISO_BASIC_FIXED: "-0700"
+  :ISO_BASIC_LOCAL_FIXED: "-0700"
+  :ISO_BASIC_FULL: "-0700"
+  :ISO_BASIC_LOCAL_FULL: "-0700"
+  :ISO_EXTENDED_FIXED: "-07:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "-07:00"
+  :ISO_EXTENDED_FULL: "-07:00"
+  :ISO_EXTENDED_LOCAL_FULL: "-07:00"
+  :ZONE_ID_SHORT: mxcjs
+  :EXEMPLAR_LOCATION: С’юдад-Хуарес
 America/Coral_Harbour:
   :offset: -18000000
   :LOCALIZED_GMT: GMT-05:00
@@ -3468,10 +3489,10 @@ America/Montreal:
   :offset: -18000000
   :LOCALIZED_GMT: GMT-05:00
   :LOCALIZED_GMT_SHORT: GMT-5
-  :GENERIC_LOCATION: 'час: Montreal'
-  :GENERIC_LONG: 'час: Montreal'
-  :GENERIC_SHORT: 'час: Montreal'
-  :SPECIFIC_LONG: GMT-05:00
+  :GENERIC_LOCATION: 'час: Торонто'
+  :GENERIC_LONG: за північноамериканським східним часом
+  :GENERIC_SHORT: 'час: Торонто'
+  :SPECIFIC_LONG: за північноамериканським східним стандартним часом
   :SPECIFIC_SHORT: GMT-5
   :ISO_BASIC_SHORT: "-05"
   :ISO_BASIC_LOCAL_SHORT: "-05"
@@ -3483,8 +3504,8 @@ America/Montreal:
   :ISO_EXTENDED_LOCAL_FIXED: "-05:00"
   :ISO_EXTENDED_FULL: "-05:00"
   :ISO_EXTENDED_LOCAL_FULL: "-05:00"
-  :ZONE_ID_SHORT: camtr
-  :EXEMPLAR_LOCATION: Montreal
+  :ZONE_ID_SHORT: cator
+  :EXEMPLAR_LOCATION: Торонто
 America/Montserrat:
   :offset: -14400000
   :LOCALIZED_GMT: GMT-04:00
@@ -3696,7 +3717,7 @@ America/Nuuk:
   :ZONE_ID_SHORT: glgoh
   :EXEMPLAR_LOCATION: Нуук
 America/Ojinaga:
-  :offset: -25200000
+  :offset: -21600000
   :LOCALIZED_GMT: GMT-07:00
   :LOCALIZED_GMT_SHORT: GMT-7
   :GENERIC_LOCATION: 'час: Охінаґа'
@@ -4956,7 +4977,7 @@ Asia/Almaty:
   :ZONE_ID_SHORT: kzala
   :EXEMPLAR_LOCATION: Алмати
 Asia/Amman:
-  :offset: 7200000
+  :offset: 10800000
   :LOCALIZED_GMT: GMT+02:00
   :LOCALIZED_GMT_SHORT: GMT+2
   :GENERIC_LOCATION: 'час: Йорданія'
@@ -5418,7 +5439,7 @@ Asia/Dacca:
   :ZONE_ID_SHORT: bddac
   :EXEMPLAR_LOCATION: Дакка
 Asia/Damascus:
-  :offset: 7200000
+  :offset: 10800000
   :LOCALIZED_GMT: GMT+02:00
   :LOCALIZED_GMT_SHORT: GMT+2
   :GENERIC_LOCATION: 'час: Сирія'
@@ -5463,9 +5484,9 @@ Asia/Dili:
   :offset: 32400000
   :LOCALIZED_GMT: GMT+09:00
   :LOCALIZED_GMT_SHORT: GMT+9
-  :GENERIC_LOCATION: 'час: Тімор-Лешті'
+  :GENERIC_LOCATION: 'час: Тимор-Лешті'
   :GENERIC_LONG: за часом у Східному Тиморі
-  :GENERIC_SHORT: 'час: Тімор-Лешті'
+  :GENERIC_SHORT: 'час: Тимор-Лешті'
   :SPECIFIC_LONG: за часом у Східному Тиморі
   :SPECIFIC_SHORT: GMT+9
   :ISO_BASIC_SHORT: "+09"
@@ -9428,6 +9449,27 @@ Europe/Kirov:
   :ISO_EXTENDED_LOCAL_FULL: "+03:00"
   :ZONE_ID_SHORT: rukvx
   :EXEMPLAR_LOCATION: Кіров
+Europe/Kyiv:
+  :offset: 7200000
+  :LOCALIZED_GMT: GMT+02:00
+  :LOCALIZED_GMT_SHORT: GMT+2
+  :GENERIC_LOCATION: 'час: Україна'
+  :GENERIC_LONG: за східноєвропейським часом
+  :GENERIC_SHORT: 'час: Україна'
+  :SPECIFIC_LONG: за східноєвропейським стандартним часом
+  :SPECIFIC_SHORT: GMT+2
+  :ISO_BASIC_SHORT: "+02"
+  :ISO_BASIC_LOCAL_SHORT: "+02"
+  :ISO_BASIC_FIXED: "+0200"
+  :ISO_BASIC_LOCAL_FIXED: "+0200"
+  :ISO_BASIC_FULL: "+0200"
+  :ISO_BASIC_LOCAL_FULL: "+0200"
+  :ISO_EXTENDED_FIXED: "+02:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+02:00"
+  :ISO_EXTENDED_FULL: "+02:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+02:00"
+  :ZONE_ID_SHORT: uaiev
+  :EXEMPLAR_LOCATION: Київ
 Europe/Lisbon:
   :offset: 0
   :LOCALIZED_GMT: GMT
@@ -10651,9 +10693,9 @@ Indian/Mauritius:
   :LOCALIZED_GMT: GMT+04:00
   :LOCALIZED_GMT_SHORT: GMT+4
   :GENERIC_LOCATION: 'час: Маврикій'
-  :GENERIC_LONG: за стандартним часом на острові Маврікій
+  :GENERIC_LONG: за стандартним часом на острові Маврикій
   :GENERIC_SHORT: 'час: Маврикій'
-  :SPECIFIC_LONG: за стандартним часом на острові Маврікій
+  :SPECIFIC_LONG: за стандартним часом на острові Маврикій
   :SPECIFIC_SHORT: GMT+4
   :ISO_BASIC_SHORT: "+04"
   :ISO_BASIC_LOCAL_SHORT: "+04"
@@ -10666,7 +10708,7 @@ Indian/Mauritius:
   :ISO_EXTENDED_FULL: "+04:00"
   :ISO_EXTENDED_LOCAL_FULL: "+04:00"
   :ZONE_ID_SHORT: muplu
-  :EXEMPLAR_LOCATION: Маврікій
+  :EXEMPLAR_LOCATION: Маврикій
 Indian/Mayotte:
   :offset: 10800000
   :LOCALIZED_GMT: GMT+03:00
@@ -10834,7 +10876,7 @@ Libya:
   :ISO_EXTENDED_FULL: "+02:00"
   :ISO_EXTENDED_LOCAL_FULL: "+02:00"
   :ZONE_ID_SHORT: lytip
-  :EXEMPLAR_LOCATION: Тріполі
+  :EXEMPLAR_LOCATION: Триполі
 MET:
   :offset: 3600000
   :LOCALIZED_GMT: GMT+01:00
@@ -11423,6 +11465,27 @@ Pacific/Johnston:
   :ISO_EXTENDED_LOCAL_FULL: "-10:00"
   :ZONE_ID_SHORT: umjon
   :EXEMPLAR_LOCATION: Джонстон
+Pacific/Kanton:
+  :offset: 46800000
+  :LOCALIZED_GMT: GMT+13:00
+  :LOCALIZED_GMT_SHORT: GMT+13
+  :GENERIC_LOCATION: 'час: Ендербері'
+  :GENERIC_LONG: за часом на островах Фенікс
+  :GENERIC_SHORT: 'час: Ендербері'
+  :SPECIFIC_LONG: за часом на островах Фенікс
+  :SPECIFIC_SHORT: GMT+13
+  :ISO_BASIC_SHORT: "+13"
+  :ISO_BASIC_LOCAL_SHORT: "+13"
+  :ISO_BASIC_FIXED: "+1300"
+  :ISO_BASIC_LOCAL_FIXED: "+1300"
+  :ISO_BASIC_FULL: "+1300"
+  :ISO_BASIC_LOCAL_FULL: "+1300"
+  :ISO_EXTENDED_FIXED: "+13:00"
+  :ISO_EXTENDED_LOCAL_FIXED: "+13:00"
+  :ISO_EXTENDED_FULL: "+13:00"
+  :ISO_EXTENDED_LOCAL_FULL: "+13:00"
+  :ZONE_ID_SHORT: kipho
+  :EXEMPLAR_LOCATION: Ендербері
 Pacific/Kiritimati:
   :offset: 50400000
   :LOCALIZED_GMT: GMT+14:00

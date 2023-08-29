@@ -90,7 +90,7 @@ describe TwitterCldr::Localized::LocalizedDateTime do
     end
 
     it "should properly handle single quotes escaping" do
-      expect(date_time.localize(:ru).to_additional_s("GyMMMd")).to eq("20 сент. 1987 г. н. э.")
+      expect(date_time.localize(:ru).to_additional_s("GyMMMd")).to match_normalized("20 сент. 1987 г. н. э.")
     end
 
     it "should unescape multiple groups" do

@@ -90,18 +90,25 @@ module TwitterCldr
       private
 
       def import_conformance_files
-        CONFORMANCE_FILES.each do |test_file|
-          import_conformance_file(test_file)
+        CONFORMANCE_FILES.each do |conformance_file|
+          test_lines = parse_conformance_file(conformance_file)
+          persist_conformance_data(conformance_file, test_lines)
+
+          results = run_conformance_tests_with_icu(conformance_file, test_lines)
+          persist_icu_conformance_test_results(conformance_file, results)
         end
       end
 
-      def import_conformance_file(conformance_file)
+      def parse_conformance_file(conformance_file)
         source_file = conformance_source_path_for(conformance_file)
         FileUtils.mkdir_p(File.dirname(source_file))
-        result = UnicodeFileParser.parse_standard_file(source_file).map(&:first)
-        output_file = conformance_output_path_for(conformance_file)
-        FileUtils.mkdir_p(File.dirname(output_file))
-        File.write(output_file, YAML.dump(result))
+        UnicodeFileParser.parse_standard_file(source_file).map(&:first)
+      end
+
+      def persist_conformance_data(conformance_file, test_lines)
+        output_path = conformance_output_path_for(conformance_file)
+        FileUtils.mkdir_p(File.dirname(output_path))
+        File.write(output_path, YAML.dump(test_lines))
       end
 
       def import_dictionary_break_tests
@@ -117,17 +124,104 @@ module TwitterCldr
         dump_dictionary_break_test('combined', data)
       end
 
-      def create_dictionary_break_test(locale, text_sample)
-        done = break_iterator.const_get(:DONE)
-        iter = break_iterator.get_word_instance(ulocale_class.new(locale))
-        iter.set_text(text_sample)
-        start = iter.first
-        segments = []
-
-        until (stop = iter.next) == done
-          segments << text_sample[start...stop]
-          start = stop
+      def run_conformance_tests_with_icu(conformance_file, test_lines)
+        boundary_type = case File.basename(conformance_file)
+          when 'WordBreakTest.txt'
+            :word
+          when 'SentenceBreakTest.txt'
+            :sentence
+          when 'GraphemeBreakTest.txt'
+            :grapheme
+          when 'LineBreakTest.txt'
+            :line
         end
+
+        test_lines.map do |test_line|
+          test_codepoints = test_line
+            .split(/[÷×]/)
+            .map(&:strip)
+            .reject(&:empty?)
+            .map { |cp| cp.to_i(16) }
+
+          utf_16_pos = 0
+
+          # Java strings are encoded using UTF-16, meaning some of the more exotic characters are
+          # represented by two characters that together make a "surrogate pair." Unfortunately, such
+          # pairs are not treated as a single logical character, but as two individual ones.
+          # TwitterCLDR uses UTF-8 everywhere, so we have to come up with a way of translating ICU's
+          # UTF-16 boundary positions into UTF-8 ones. Or perhaps more correctly, we have to come up
+          # with a way of translating positions inside strings that use surrogate pairs to strings
+          # that do not.
+          logical_position_map = test_codepoints.each_with_object({}).with_index do |(cp, memo), idx|
+            memo[utf_16_pos] = idx
+
+            # Encode into UTF-8, convert to UTF-16, count bytes. Subtract 2 for BOM. Number of utf-16
+            # chars is remaining bytes / 2, since there are 2 bytes per 16-bit character.
+            utf_16_pos += ([cp].pack('U*').encode(Encoding::UTF_16).bytesize - 2) / 2
+          end
+
+          logical_position_map[utf_16_pos] = logical_position_map.size
+          test_str = test_codepoints.pack('U*')
+
+          boundaries = collect_boundaries(test_str, boundary_type).map do |boundary|
+            logical_position_map[boundary]
+          end
+        end
+      end
+
+      def persist_icu_conformance_test_results(conformance_file, results)
+        output_path = icu_test_results_output_path_for(conformance_file)
+        FileUtils.mkdir_p(File.dirname(output_path))
+        File.write(output_path, YAML.dump(results))
+      end
+
+      def collect_boundaries(text_sample, boundary_type, locale = nil)
+        done = break_iterator.const_get(:DONE)
+        brk_iter = get_break_iterator_instance_for(boundary_type, locale)
+        brk_iter.set_text(text_sample)
+        boundaries = [brk_iter.current]
+
+        until (current = brk_iter.next) == done do
+          boundaries << current
+        end
+
+        boundaries
+      end
+
+      def boundary_split(text_sample, boundaries)
+        eos = text_sample.size
+
+        boundaries = [*boundaries]
+        boundaries.unshift(0) unless boundaries.first == 0
+        boundaries.push(eos) unless boundaries.last == eos
+
+        boundaries.each_cons(2).filter_map do |start, stop|
+          text_sample[start...stop] if start != stop
+        end
+      end
+
+      def get_break_iterator_instance_for(boundary_type, locale = nil)
+        mtd = case boundary_type
+          when :word
+            :get_word_instance
+          when :sentence
+            :get_sentence_instance
+          when :grapheme
+            :get_character_instance
+          when :line
+            :get_line_instance
+        end
+
+        if locale
+          break_iterator.send(mtd, ulocale_class.new(locale))
+        else
+          break_iterator.send(mtd)
+        end
+      end
+
+      def create_dictionary_break_test(locale, text_sample)
+        boundaries = collect_boundaries(text_sample, :word, locale)
+        segments = boundary_split(text_sample, boundaries)
 
         {
           locale: locale,
@@ -149,6 +243,14 @@ module TwitterCldr
       def conformance_output_path_for(conformance_file)
         file = underscore(File.basename(conformance_file).chomp(File.extname(conformance_file)))
         File.join(params.fetch(:output_path), "#{file}.yml")
+      end
+
+      def icu_test_results_output_path_for(conformance_file)
+        output_path = conformance_output_path_for(conformance_file)
+        dir_name = File.dirname(output_path)
+        base_name = File.basename(output_path)
+
+        File.join(dir_name, "icu_#{base_name.chomp('.yml')}_results.yml")
       end
 
       def dictionary_test_output_path_for(locale)

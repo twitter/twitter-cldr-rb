@@ -6,29 +6,29 @@
         :Bh: "B h"
         :Bhm: "B h:mm"
         :Bhms: "B h:mm:ss"
-        :E: cccနေ့
+        :E: ccc
         :EBhm: "E B h:mm"
         :EBhms: "E B h:mm:ss"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
-        :Ed: "d ရက် Eနေ့"
+        :Ed: "d ရက် E"
         :Ehm: "E B h:mm"
         :Ehms: "E B h:mm:ss"
         :Gy: "G y"
         :GyMMM: "G y MMM"
-        :GyMMMEd: "G y- MMM d- E"
-        :GyMMMd: "G y- MMM d"
-        :GyMd: "GGGGG y-MM-dd"
+        :GyMMMEd: "G y၊ MMM d၊ E"
+        :GyMMMd: "G y၊ MMM d"
+        :GyMd: "G y/M/d"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "v HH:mm:ss"
         :Hmv: "v HH:mm"
         :M: L
-        :MEd: "d-M- E"
+        :MEd: "d/M၊ E"
         :MMM: LLL
-        :MMMEd: "MMM d- E"
-        :MMMMEd: "MMMM d ရက် Eနေ့"
+        :MMMEd: "MMM d၊ E"
+        :MMMMEd: "MMMM d ရက် E"
         :MMMMW: "MMMM လ W ပတ်မြောက်"
         :MMMMd: "MMMM d"
         :MMMd: "d MMM"
@@ -43,12 +43,12 @@
         ? !ruby/symbol "y"
         : "y"
         :yM: M/y
-        :yMEd: "d/M/y- E"
+        :yMEd: "d/M/y၊ E"
         :yMMM: "MMM y"
-        :yMMMEd: "y- MMM d- E"
+        :yMMMEd: "y၊ MMM d၊ E"
         :yMMMM: "y MMMM"
-        :yMMMd: "y- MMM d"
-        :yMd: dd-MM-y
+        :yMMMd: "y၊ MMM d"
+        :yMd: d/M/y
         :yQQQ: "y QQQ"
         :yQQQQ: "y QQQQ"
         :yw: "Y ခု w ပတ်မြောက်"
@@ -104,13 +104,13 @@
             :tue: အ
             :wed: ဗ
           :short: 
-            :fri: သောကြာ
-            :mon: တနင်္လာ
-            :sat: စနေ
-            :sun: တနင်္ဂနွေ
-            :thu: ကြာသပတေး
-            :tue: အင်္ဂါ
-            :wed: ဗုဒ္ဓဟူး
+            :fri: ကြာ
+            :mon: လာ
+            :sat: နေ
+            :sun: နွေ
+            :thu: တေး
+            :tue: ဂါ
+            :wed: ဟူး
           :wide: 
             :fri: သောကြာ
             :mon: တနင်္လာ
@@ -178,13 +178,13 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "y- MMMM d- EEEE"
+            :pattern: "y၊ MMMM d၊ EEEE"
           :long: 
-            :pattern: "y- MMMM d"
+            :pattern: "y၊ MMMM d"
           :medium: 
-            :pattern: "y- MMM d"
+            :pattern: "y၊ MMM d"
           :short: 
-            :pattern: dd-MM-yy
+            :pattern: d/M/yy
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"

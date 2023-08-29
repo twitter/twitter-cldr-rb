@@ -13,7 +13,7 @@ describe TwitterCldr::Shared::Currencies do
     it "should list all supported country codes" do
       codes = described_class.currency_codes
 
-      expect(codes.size).to eq(303)
+      expect(codes.size).to eq(305)
       expect(codes).to include(*TEST_CODES)
     end
   end

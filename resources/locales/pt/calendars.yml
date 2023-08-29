@@ -12,13 +12,13 @@
         :EHm: "E, HH:mm"
         :EHms: "E, HH:mm:ss"
         :Ed: "E, d"
-        :Ehm: "E, h:mm a"
-        :Ehms: "E, h:mm:ss a"
+        :Ehm: "E, h:mm a"
+        :Ehms: "E, h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM 'de' y G"
         :GyMMMEd: "E, d 'de' MMM 'de' y G"
         :GyMMMd: "d 'de' MMM 'de' y G"
-        :GyMd: "d/M/y GGGGG"
+        :GyMd: "dd/MM/y GGGGG"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -33,13 +33,13 @@
         :MMMMd: "d 'de' MMMM"
         :MMMd: "d 'de' MMM"
         :MMdd: dd/MM
-        :Md: d/M
+        :Md: dd/MM
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -191,13 +191,13 @@
             :pattern: dd/MM/y
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'às' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'às' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"

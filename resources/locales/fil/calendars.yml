@@ -12,13 +12,13 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
-        :Gy: "G y"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
+        :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, MMM d, y G"
         :GyMMMd: "MMM d, y G"
-        :GyMd: "M/d/y GGGGG"
+        :GyMd: "M/d/y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -34,11 +34,11 @@
         :MMMd: "MMM d"
         :Md: M/d
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -197,13 +197,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "h:mm:ss a zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "h:mm:ss a z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "h:mm:ss a"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "h:mm a"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -290,7 +290,7 @@
           :abbreviated: 
             :afternoon1: tanghali
             :am: AM
-            :evening1: "ng hapon"
+            :evening1: "ng gabi"
             :midnight: hatinggabi
             :morning1: "nang umaga"
             :morning2: madaling-araw
@@ -310,7 +310,7 @@
           :wide: 
             :afternoon1: tanghali
             :am: AM
-            :evening1: "ng hapon"
+            :evening1: "ng gabi"
             :midnight: hatinggabi
             :morning1: "nang umaga"
             :morning2: madaling-araw
@@ -319,9 +319,9 @@
             :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: tanghali
+            :afternoon1: hapon
             :am: AM
-            :evening1: hapon
+            :evening1: "ng gabi"
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw
@@ -329,9 +329,9 @@
             :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
-            :afternoon1: tanghali
+            :afternoon1: hapon
             :am: AM
-            :evening1: gabi
+            :evening1: "sa gabi"
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw
@@ -339,9 +339,9 @@
             :noon: tanghaling-tapat
             :pm: PM
           :wide: 
-            :afternoon1: tanghali
+            :afternoon1: hapon
             :am: AM
-            :evening1: hapon
+            :evening1: "ng gabi"
             :midnight: hatinggabi
             :morning1: umaga
             :morning2: madaling-araw

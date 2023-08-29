@@ -15,6 +15,10 @@ module TwitterCldr
       def category_count
         @category_count ||= values[:category_count]
       end
+
+      def lookahead_results_size
+        @lookahead_results_size ||= values[:lookahead_results_size]
+      end
     end
   end
 end

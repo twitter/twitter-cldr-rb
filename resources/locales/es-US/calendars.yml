@@ -12,8 +12,8 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
@@ -41,12 +41,12 @@
         :MMdd: dd/MM
         :Md: d/M
         :d: d
-        :h: "h a"
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmsvvvv: "h:mm:ss a (vvvv)"
-        :hmv: "h:mm a v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmsvvvv: "h:mm:ss a (vvvv)"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -132,8 +132,8 @@
             :wed: miércoles
       :eras: 
         :abbr: 
-          0: "a. e. c."
-          1: "e. c."
+          0: a.e.c.
+          1: e.c.
         :name: 
           0: "antes de la era común"
           1: "era común"
@@ -207,13 +207,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "h:mm:ss a zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "h:mm:ss a z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "h:mm:ss a"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "h:mm a"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -298,21 +298,21 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: a. m.
+            :am: a. m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p. m.
+            :pm: p. m.
           :narrow: 
-            :am: a. m.
+            :am: a. m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p. m.
+            :pm: p. m.
           :wide: 
             :am: a. m.
             :evening1: "de la tarde"
@@ -323,21 +323,21 @@
             :pm: p. m.
         :stand-alone: 
           :abbreviated: 
-            :am: a. m.
+            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p. m.
+            :pm: p. m.
           :narrow: 
-            :am: a. m.
+            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p. m.
+            :pm: p. m.
           :wide: 
             :am: a. m.
             :evening1: tarde
@@ -359,7 +359,7 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1.º trimestre"
+            1: "1er trimestre"
             2: "2.º trimestre"
             3: "3.º trimestre"
             4: "4.º trimestre"
@@ -375,7 +375,7 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1.º trimestre"
+            1: "1er trimestre"
             2: "2.º trimestre"
             3: "3.º trimestre"
             4: "4.º trimestre"

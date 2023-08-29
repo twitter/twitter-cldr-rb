@@ -12,8 +12,8 @@
         :EHm: "E HH.mm"
         :EHms: "E HH.mm.ss"
         :Ed: "E, d"
-        :Ehm: "E h.mm a"
-        :Ehms: "E h.mm.ss a"
+        :Ehm: "E h.mm a"
+        :Ehms: "E h.mm.ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d MMM y G"
@@ -34,11 +34,11 @@
         :MMMd: "d MMM"
         :Md: d/M
         :d: d
-        :h: "h a"
-        :hm: "h.mm a"
-        :hms: "h.mm.ss a"
+        :h: h a
+        :hm: h.mm a
+        :hms: h.mm.ss a
         :hmsv: "h.mm.ss. a v"
-        :hmv: "h.mm a v"
+        :hmv: "h.mm a v"
         :ms: mm.ss
         ? !ruby/symbol "y"
         : "y"
@@ -127,8 +127,8 @@
           0: "Sebelum Era Umum"
           1: "Era Umum"
         :narrow: 
-          0: SM
-          1: M
+          0: SEU
+          1: EU
       :fields: 
         :day: hari
         :day-narrow: h
@@ -187,13 +187,13 @@
             :pattern: dd/MM/yy
         :datetime: 
           :full: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'pukul' {{time}}"
           :long: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'pukul' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH.mm.ss zzzz"

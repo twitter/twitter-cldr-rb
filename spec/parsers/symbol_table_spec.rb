@@ -11,9 +11,7 @@ describe TwitterCldr::Parsers::SymbolTable do
   describe "#fetch" do
     it "should be able to retrieve values for symbols" do
       expect(table.fetch(:a)).to eq("b")
-      fetch = lambda { table.fetch(:z) }
-
-      expect(fetch).to raise_error(KeyError)
+      expect { table.fetch(:z) }.to raise_error(KeyError)
     end
   end
 

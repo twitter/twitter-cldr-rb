@@ -58,14 +58,6 @@ module TwitterCldr
       private
 
       def check_tzdata_versions
-        puts(
-          "Time zone data version check disabled. If you're upgrading to a new "\
-          "version of CLDR and ICU, please consider re-enabling this check in "\
-          "#{__FILE__} on line #{__LINE__ - 4}"
-        )
-
-        return
-
         resource_bundle = requirements[:icu].get_class('com.ibm.icu.util.UResourceBundle')
         icu_data = requirements[:icu].get_class('com.ibm.icu.impl.ICUData')
         zone_info_res_field = requirements[:icu]

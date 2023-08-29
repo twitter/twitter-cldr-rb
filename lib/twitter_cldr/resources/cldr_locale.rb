@@ -32,13 +32,14 @@ module TwitterCldr
               parents = TwitterCldr::Shared::Locale
                 .parse(cur)
                 .permutations
-                .select do |loc|
-                  File.exist?(File.join(cldr_requirement.common_path, 'main', "#{loc}.xml"))
-                end
 
               ancestry.concat(parents - [cur])
               break
             end
+          end
+
+          ancestry.select! do |locale|
+            File.exist?(File.join(cldr_requirement.common_path, 'main', "#{from_fs(locale)}.xml"))
           end
 
           ancestry << "root"

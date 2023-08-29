@@ -273,6 +273,10 @@
           :other: "pred {0} mesiacmi"
     :month-narrow: 
       :display_name: mes.
+      :relative: 
+        -1: "minulý mes."
+        0: "tento mes."
+        1: "budúci mes."
       :relative_time: 
         :future: 
           :few: "o {0} mes."
@@ -652,6 +656,10 @@
           :other: "pred {0} týždňami"
     :week-narrow: 
       :display_name: týž.
+      :relative: 
+        -1: "minulý týž."
+        0: "tento týž."
+        1: "budúci týž."
       :relative_time: 
         :future: 
           :few: "o {0} týž."

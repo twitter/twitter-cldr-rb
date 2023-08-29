@@ -107,11 +107,6 @@ module TwitterCldr
         samples.each_with_object({}) do |sample, ret|
           ret[sample] = trans.transliterate(sample)
         end
-      rescue Java::JavaLang::IllegalArgumentException
-        # illegal transform id
-        # this happens specifically with Serbian-Latin, although
-        # that appears to be a totally valid transform id
-        nil
       end
 
       def have_text_samples_for?(script)

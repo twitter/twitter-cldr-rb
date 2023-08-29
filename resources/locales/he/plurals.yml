@@ -3,13 +3,11 @@
   :cardinal:
     :rule: 'lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); f = runtime.f(num);
       t = runtime.t(num); v = runtime.v(num); w = runtime.w(num); e = runtime.e(num);
-      (((i == 1) && (v == 0)) ? :one : (((i == 2) && (v == 0)) ? :two : (((((v ==
-      0) && (!(((n).floor == (n)) && ((n) >= 0) && ((n) <= 10))))) && (n % 10 == 0))
-      ? :many : :other))) }'
+      (((((i == 1) && (v == 0))) || (((i == 0) && (v != 0)))) ? :one : (((i == 2)
+      && (v == 0)) ? :two : :other)) }'
     :names:
     - :one
     - :two
-    - :many
     - :other
   :ordinal:
     :rule: lambda { |num, runtime| n = runtime.n(num); i = runtime.i(num); f = runtime.f(num);

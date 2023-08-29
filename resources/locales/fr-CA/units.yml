@@ -157,6 +157,9 @@
         :duration-nanosecond: 
           :one: "{0} nanoseconde"
           :other: "{0} nanosecondes"
+        :duration-quarter: 
+          :one: "{0} trimestre"
+          :other: "{0} trimestres"
         :duration-second: 
           :one: "{0} seconde"
           :other: "{0} secondes"
@@ -206,8 +209,8 @@
           :one: "{0} therm américain"
           :other: "{0} therms américains"
         :force-kilowatt-hour-per-100-kilometer: 
-          :one: "{0} kilowattheure pour 100 kilomètres"
-          :other: "{0} kilowattheures pour 100 kilomètres"
+          :one: "{0} kilowatt-heure pour 100 kilomètres"
+          :other: "{0} kilowatt-heures pour 100 kilomètres"
         :force-newton: 
           :one: "{0} newton"
           :other: "{0} newtons"
@@ -228,7 +231,7 @@
           :other: "{0} mégahertz"
         :graphics-dot: 
           :one: "{0} point"
-          :other: "{0} pts"
+          :other: "{0} points"
         :graphics-dot-per-centimeter: 
           :one: "{0} point par centimètre"
           :other: "{0} points par centimètre"
@@ -309,13 +312,16 @@
           :other: "{0} picomètres"
         :length-point: 
           :one: "{0} point typographique"
-          :other: "{0} points"
+          :other: "{0} points typographiques"
         :length-solar-radius: 
           :one: "{0} rayon solaire"
           :other: "{0} rayons solaires"
         :length-yard: 
           :one: "{0} verge"
           :other: "{0} verges"
+        :light-candela: 
+          :one: "{0} candela"
+          :other: "{0} candelas"
         :light-lumen: 
           :one: "{0} lumen"
           :other: "{0} lumens"
@@ -343,9 +349,6 @@
         :mass-kilogram: 
           :one: "{0} kilogramme"
           :other: "{0} kilogrammes"
-        :mass-metric-ton: 
-          :one: "{0} tonne"
-          :other: "{0} tonnes"
         :mass-microgram: 
           :one: "{0} microgramme"
           :other: "{0} microgrammes"
@@ -370,6 +373,9 @@
         :mass-ton: 
           :one: "{0} tonne courte"
           :other: "{0} tonnes courtes"
+        :mass-tonne: 
+          :one: "{0} tonne"
+          :other: "{0} tonnes"
         :power-gigawatt: 
           :one: "{0} gigawatt"
           :other: "{0} gigawatts"
@@ -416,8 +422,8 @@
           :one: "{0} pascal"
           :other: "{0} pascals"
         :pressure-pound-force-per-square-inch: 
-          :one: "{0} livre par pouce carré"
-          :other: "{0} livres par pouce carré"
+          :one: "{0} livre-force par pouce carré"
+          :other: "{0} livres-force par pouce carré"
         :speed-kilometer-per-hour: 
           :one: "{0} kilomètre par heure"
           :other: "{0} kilomètres par heure"
@@ -446,8 +452,8 @@
           :one: "{0} newton-mètre"
           :other: "{0} newtons-mètres"
         :torque-pound-force-foot: 
-          :one: "{0} livre-pied"
-          :other: "{0} livres-pieds"
+          :one: "{0} livre-force-pied"
+          :other: "{0} livres-force-pieds"
         :volume-acre-foot: 
           :one: "{0} acre-pied"
           :other: "{0} acres-pieds"
@@ -552,8 +558,8 @@
           :other: "{0} cuillères à thé"
       :narrow: 
         :acceleration-g-force: 
-          :one: "{0}G"
-          :other: "{0}G"
+          :one: "{0} G"
+          :other: "{0} G"
         :acceleration-meter-per-square-second: 
           :one: "{0}m/s²"
           :other: "{0}m/s²"
@@ -675,8 +681,8 @@
           :one: "{0}To"
           :other: "{0}To"
         :duration-century: 
-          :one: "´{0}s."
-          :other: "´{0}s."
+          :one: "{0}s."
+          :other: "{0}s."
         :duration-day: 
           :one: "{0}j"
           :other: "{0}j"
@@ -701,6 +707,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-quarter: 
+          :one: "{0} T"
+          :other: "{0} T"
         :duration-second: 
           :one: "{0}s"
           :other: "{0}s"
@@ -770,6 +779,9 @@
         :frequency-megahertz: 
           :one: "{0}MHz"
           :other: "{0}MHz"
+        :graphics-dot: 
+          :one: "{0}pt"
+          :other: "{0}pt"
         :graphics-dot-per-centimeter: 
           :one: "{0}ppcm"
           :other: "{0}ppcm"
@@ -887,9 +899,6 @@
         :mass-kilogram: 
           :one: "{0}kg"
           :other: "{0}kg"
-        :mass-metric-ton: 
-          :one: "{0}t"
-          :other: "{0}t"
         :mass-microgram: 
           :one: "{0}μg"
           :other: "{0}μg"
@@ -914,6 +923,9 @@
         :mass-ton: 
           :one: "{0}tc"
           :other: "{0}tc"
+        :mass-tonne: 
+          :one: "{0}t"
+          :other: "{0}t"
         :power-gigawatt: 
           :one: "{0}GW"
           :other: "{0}GW"
@@ -1219,14 +1231,14 @@
           :one: "{0} To"
           :other: "{0} To"
         :duration-century: 
-          :one: "{0} siècle"
-          :other: "{0} siècles"
+          :one: "{0} s."
+          :other: "{0} s."
         :duration-day: 
           :one: "{0} j"
           :other: "{0} j"
         :duration-decade: 
-          :one: "{0} décennie"
-          :other: "{0} décennies"
+          :one: "{0} déc."
+          :other: "{0} déc."
         :duration-hour: 
           :one: "{0} h"
           :other: "{0} h"
@@ -1245,6 +1257,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-quarter: 
+          :one: "{0} trim."
+          :other: "{0} trim."
         :duration-second: 
           :one: "{0} s"
           :other: "{0} s"
@@ -1348,6 +1363,7 @@
           :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
+          :one: "{0} R⊕"
           :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fm"
@@ -1404,8 +1420,10 @@
           :one: "{0} vg"
           :other: "{0} vg"
         :light-candela: 
+          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
+          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
@@ -1431,9 +1449,6 @@
         :mass-kilogram: 
           :one: "{0} kg"
           :other: "{0} kg"
-        :mass-metric-ton: 
-          :one: "{0} t"
-          :other: "{0} t"
         :mass-microgram: 
           :one: "{0} μg"
           :other: "{0} μg"
@@ -1458,6 +1473,9 @@
         :mass-ton: 
           :one: "{0} tc"
           :other: "{0} tc"
+        :mass-tonne: 
+          :one: "{0} t"
+          :other: "{0} t"
         :power-gigawatt: 
           :one: "{0} GW"
           :other: "{0} GW"

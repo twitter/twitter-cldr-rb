@@ -74,7 +74,7 @@
           :one: "om {0} fredag"
           :other: "om {0} fredagar"
         :past: 
-          :one: "för {0} fredag sedan"
+          :one: "{0} fredag sedan"
           :other: "för {0} fredagar sedan"
     :fri-narrow: 
       :relative: 
@@ -179,6 +179,10 @@
           :one: "för {0} måndag sedan"
           :other: "för {0} måndagar sedan"
     :mon-narrow: 
+      :relative: 
+        -1: "mån. förra veckan"
+        0: "mån. denna vecka"
+        1: "mån. nästa vecka"
       :relative_time: 
         :future: 
           :one: "+{0} må."

@@ -750,13 +750,13 @@ iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
 end
 ```
 
-To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
+To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are disabled by default, but you can enable them via the `:use_uli_exceptions` option:
 
 ```ruby
 
-iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => true)
 iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
-  puts sentence  # "I like Ms. ", "Murphy, she's nice."
+  puts sentence  # "I like Ms. Murphy, she's nice."
 end
 ```
 

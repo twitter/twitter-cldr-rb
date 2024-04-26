@@ -52,6 +52,13 @@ describe TwitterCldr::Segmentation::BreakIterator do
           "She's nice."
         ])
       end
+
+      it "splits correctly when a string ends with an exception directly followed by a single space" do
+        str = "I like the Mrs. "
+        expect(iterator.each_sentence(str).map { |word, _, _| word }).to eq([
+          "I like the Mrs. "
+        ])
+      end
     end
 
     context "without ULI exceptions" do

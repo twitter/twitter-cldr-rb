@@ -602,7 +602,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["74020", "60564", "32997-1552", "43857", "71463-9659"]
+postal_code.sample(5)  # ["72959-4813", "81226", "05936-9185", "71858-7042", "20325-0737"]
 ```
 
 ### Phone Codes
@@ -1106,6 +1106,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2023 Twitter, Inc.
+Copyright 2024 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

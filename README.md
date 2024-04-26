@@ -602,7 +602,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["74020", "60564", "32997-1552", "43857", "71463-9659"]
+postal_code.sample(5)  # ["72959-4813", "81226", "05936-9185", "71858-7042", "20325-0737"]
 ```
 
 ### Phone Codes
@@ -750,13 +750,13 @@ iterator.each_sentence("The. Quick. Brown. Fox.") do |sentence|
 end
 ```
 
-To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are enabled by default, but you can disable them via the `:use_uli_exceptions` option:
+To improve segmentation accuracy, a list of special segmentation exceptions have been created by the ULI (Unicode Interoperability Technical Committee, yikes what a mouthful). They help with special cases like the abbreviations "Mr." and "Ms." where breaks should not occur. ULI rules are disabled by default, but you can enable them via the `:use_uli_exceptions` option:
 
 ```ruby
 
-iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => false)
+iterator = TwitterCldr::Segmentation::BreakIterator.new(:en, :use_uli_exceptions => true)
 iterator.each_sentence("I like Ms. Murphy, she's nice.") do |sentence|
-  puts sentence  # "I like Ms. ", "Murphy, she's nice."
+  puts sentence  # "I like Ms. Murphy, she's nice."
 end
 ```
 
@@ -1106,6 +1106,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2023 Twitter, Inc.
+Copyright 2024 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

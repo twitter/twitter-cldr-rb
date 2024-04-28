@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.12.1 (Apr 28th, 2024)
+* Fix issue causing sentence segmentation to return incorrect results when a string ends with a suppression directly followed by a single space. (#274, @didier-84)
+
 ### 6.12.0 (Aug 28th, 2023)
 * Upgrade to CLDR v43, ICU 73.2, and Unicode v15.0.0.
 

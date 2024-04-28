@@ -31,7 +31,7 @@ module TwitterCldr
 
         until cursor.position >= stop || cursor.eos?
           state_machine.handle_next(cursor)
-          yield cursor.position if suppressions.should_break?(cursor)
+          yield cursor.position if cursor.eos? || suppressions.should_break?(cursor)
         end
       end
 

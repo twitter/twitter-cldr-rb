@@ -13,8 +13,6 @@ require 'rubygems/package_task'
 
 require './lib/twitter_cldr'
 
-require 'pry-byebug' unless RUBY_PLATFORM == 'java'
-
 Bundler::GemHelper.install_tasks
 
 task default: :spec

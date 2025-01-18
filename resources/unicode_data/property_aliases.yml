@@ -11,6 +11,12 @@ cjkPrimaryNumeric:
 nv:
   :long_name: Numeric_Value
   :additional: []
+bmg:
+  :long_name: Bidi_Mirroring_Glyph
+  :additional: []
+bpb:
+  :long_name: Bidi_Paired_Bracket
+  :additional: []
 cf:
   :long_name: Case_Folding
   :additional: []
@@ -20,6 +26,9 @@ cjkCompatibilityVariant:
 dm:
   :long_name: Decomposition_Mapping
   :additional: []
+EqUIdeo:
+  :long_name: Equivalent_Unified_Ideograph
+  :additional: []
 FC_NFKC:
   :long_name: FC_NFKC_Closure
   :additional: []
@@ -28,6 +37,9 @@ lc:
   :additional: []
 NFKC_CF:
   :long_name: NFKC_Casefold
+  :additional: []
+NFKC_SCF:
+  :long_name: NFKC_Simple_Casefold
   :additional: []
 scf:
   :long_name: Simple_Case_Folding
@@ -47,12 +59,6 @@ tc:
   :additional: []
 uc:
   :long_name: Uppercase_Mapping
-  :additional: []
-bmg:
-  :long_name: Bidi_Mirroring_Glyph
-  :additional: []
-bpb:
-  :long_name: Bidi_Paired_Bracket
   :additional: []
 cjkIICore:
   :long_name: kIICore
@@ -95,14 +101,26 @@ cjkRSUnicode:
   :additional:
   - Unicode_Radical_Stroke
   - URS
-EqUIdeo:
-  :long_name: Equivalent_Unified_Ideograph
-  :additional: []
 isc:
   :long_name: ISO_Comment
   :additional: []
 JSN:
   :long_name: Jamo_Short_Name
+  :additional: []
+kEH_Cat:
+  :long_name: kEH_Cat
+  :additional: []
+kEH_Desc:
+  :long_name: kEH_Desc
+  :additional: []
+kEH_HG:
+  :long_name: kEH_HG
+  :additional: []
+kEH_IFAO:
+  :long_name: kEH_IFAO
+  :additional: []
+kEH_JSesh:
+  :long_name: kEH_JSesh
   :additional: []
 na:
   :long_name: Name
@@ -148,6 +166,9 @@ GCB:
   :additional: []
 hst:
   :long_name: Hangul_Syllable_Type
+  :additional: []
+InCB:
+  :long_name: Indic_Conjunct_Break
   :additional: []
 InPC:
   :long_name: Indic_Positional_Category
@@ -278,6 +299,12 @@ Hex:
 Hyphen:
   :long_name: Hyphen
   :additional: []
+ID_Compat_Math_Continue:
+  :long_name: ID_Compat_Math_Continue
+  :additional: []
+ID_Compat_Math_Start:
+  :long_name: ID_Compat_Math_Start
+  :additional: []
 IDC:
   :long_name: ID_Continue
   :additional: []
@@ -293,8 +320,17 @@ IDSB:
 IDST:
   :long_name: IDS_Trinary_Operator
   :additional: []
+IDSU:
+  :long_name: IDS_Unary_Operator
+  :additional: []
 Join_C:
   :long_name: Join_Control
+  :additional: []
+kEH_NoMirror:
+  :long_name: kEH_NoMirror
+  :additional: []
+kEH_NoRotate:
+  :long_name: kEH_NoRotate
   :additional: []
 LOE:
   :long_name: Logical_Order_Exception
@@ -304,6 +340,9 @@ Lower:
   :additional: []
 Math:
   :long_name: Math
+  :additional: []
+MCM:
+  :long_name: Modifier_Combining_Mark
   :additional: []
 NChar:
   :long_name: Noncharacter_Code_Point

@@ -19,13 +19,6 @@
           :one: "prije {0} dan"
           :other: "prije {0} dana"
     :day-narrow: 
-      :display_name: d.
-      :relative: 
-        -1: jučer
-        -2: prekjučer
-        0: danas
-        1: sutra
-        2: prekosutra
       :relative_time: 
         :future: 
           :few: "za {0} d"
@@ -37,21 +30,6 @@
           :other: "prije {0} d"
     :day-short: 
       :display_name: d.
-      :relative: 
-        -1: jučer
-        -2: prekjučer
-        0: danas
-        1: sutra
-        2: prekosutra
-      :relative_time: 
-        :future: 
-          :few: "za {0} dana"
-          :one: "za {0} dan"
-          :other: "za {0} dana"
-        :past: 
-          :few: "prije {0} dana"
-          :one: "prije {0} dan"
-          :other: "prije {0} dana"
     :dayOfYear: 
       :display_name: "dan u godini"
     :dayOfYear-narrow: 
@@ -60,15 +38,7 @@
       :display_name: "dan u god."
     :dayperiod: 
       :display_name: AM/PM
-    :dayperiod-narrow: 
-      :display_name: AM/PM
-    :dayperiod-short: 
-      :display_name: AM/PM
     :era: 
-      :display_name: era
-    :era-narrow: 
-      :display_name: era
-    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
@@ -84,34 +54,11 @@
           :few: "prije {0} petka"
           :one: "prije {0} petak"
           :other: "prije {0} petaka"
-    :fri-narrow: 
-      :relative: 
-        -1: "prošli pet."
-        0: "ovaj pet."
-        1: "sljedeći pet."
-      :relative_time: 
-        :future: 
-          :few: "za {0} petka"
-          :one: "za {0} petak"
-          :other: "za {0} petaka"
-        :past: 
-          :few: "prije {0} petka"
-          :one: "prije {0} petak"
-          :other: "prije {0} petaka"
     :fri-short: 
       :relative: 
         -1: "prošli pet."
         0: "ovaj pet."
         1: "sljedeći pet."
-      :relative_time: 
-        :future: 
-          :few: "za {0} petka"
-          :one: "za {0} petak"
-          :other: "za {0} petaka"
-        :past: 
-          :few: "prije {0} petka"
-          :one: "prije {0} petak"
-          :other: "prije {0} petaka"
     :hour: 
       :display_name: sat
       :relative: 
@@ -125,17 +72,6 @@
           :few: "prije {0} sata"
           :one: "prije {0} sat"
           :other: "prije {0} sati"
-    :hour-narrow: 
-      :display_name: h
-      :relative_time: 
-        :future: 
-          :few: "za {0} h"
-          :one: "za {0} h"
-          :other: "za {0} h"
-        :past: 
-          :few: "prije {0} h"
-          :one: "prije {0} h"
-          :other: "prije {0} h"
     :hour-short: 
       :display_name: h
       :relative_time: 
@@ -160,17 +96,6 @@
           :few: "prije {0} minute"
           :one: "prije {0} minutu"
           :other: "prije {0} minuta"
-    :minute-narrow: 
-      :display_name: min
-      :relative_time: 
-        :future: 
-          :few: "za {0} min"
-          :one: "za {0} min"
-          :other: "za {0} min"
-        :past: 
-          :few: "prije {0} min"
-          :one: "prije {0} min"
-          :other: "prije {0} min"
     :minute-short: 
       :display_name: min
       :relative_time: 
@@ -196,34 +121,11 @@
           :few: "prije {0} ponedjeljka"
           :one: "prije {0} ponedjeljak"
           :other: "prije {0} ponedjeljaka"
-    :mon-narrow: 
-      :relative: 
-        -1: "prošli pon."
-        0: "ovaj pon."
-        1: "sljedeći pon."
-      :relative_time: 
-        :future: 
-          :few: "za {0} ponedjeljka"
-          :one: "za {0} ponedjeljak"
-          :other: "za {0} ponedjeljaka"
-        :past: 
-          :few: "prije {0} ponedjeljka"
-          :one: "prije {0} ponedjeljak"
-          :other: "prije {0} ponedjeljaka"
     :mon-short: 
       :relative: 
         -1: "prošli pon."
         0: "ovaj pon."
         1: "sljedeći pon."
-      :relative_time: 
-        :future: 
-          :few: "za {0} ponedjeljka"
-          :one: "za {0} ponedjeljak"
-          :other: "za {0} ponedjeljaka"
-        :past: 
-          :few: "prije {0} ponedjeljka"
-          :one: "prije {0} ponedjeljak"
-          :other: "prije {0} ponedjeljaka"
     :month: 
       :display_name: mjesec
       :relative: 
@@ -241,19 +143,6 @@
           :other: "prije {0} mjeseci"
     :month-narrow: 
       :display_name: m.
-      :relative: 
-        -1: "prošli mj."
-        0: "ovaj mj."
-        1: "sljedeći mj."
-      :relative_time: 
-        :future: 
-          :few: "za {0} mj."
-          :one: "za {0} mj."
-          :other: "za {0} mj."
-        :past: 
-          :few: "prije {0} mj."
-          :one: "prije {0} mj."
-          :other: "prije {0} mj."
     :month-short: 
       :display_name: mj.
       :relative: 
@@ -284,21 +173,6 @@
           :few: "prije {0} kvartala"
           :one: "prije {0} kvartal"
           :other: "prije {0} kvartala"
-    :quarter-narrow: 
-      :display_name: kv.
-      :relative: 
-        -1: "prošli kv."
-        0: "ovaj kv."
-        1: "sljedeći kv."
-      :relative_time: 
-        :future: 
-          :few: "za {0} kv."
-          :one: "za {0} kv."
-          :other: "za {0} kv."
-        :past: 
-          :few: "prije {0} kv."
-          :one: "prije {0} kv."
-          :other: "prije {0} kv."
     :quarter-short: 
       :display_name: kv.
       :relative: 
@@ -328,34 +202,11 @@
           :few: "prije {0} subote"
           :one: "prije {0} subotu"
           :other: "prije {0} subota"
-    :sat-narrow: 
-      :relative: 
-        -1: "prošla sub."
-        0: "ova sub."
-        1: "sljedeća sub."
-      :relative_time: 
-        :future: 
-          :few: "za {0} subote"
-          :one: "za {0} subotu"
-          :other: "za {0} subota"
-        :past: 
-          :few: "prije {0} subote"
-          :one: "prije {0} subotu"
-          :other: "prije {0} subota"
     :sat-short: 
       :relative: 
         -1: "prošla sub."
         0: "ova sub."
         1: "sljedeća sub."
-      :relative_time: 
-        :future: 
-          :few: "za {0} subote"
-          :one: "za {0} subotu"
-          :other: "za {0} subota"
-        :past: 
-          :few: "prije {0} subote"
-          :one: "prije {0} subotu"
-          :other: "prije {0} subota"
     :second: 
       :display_name: sekunda
       :relative: 
@@ -369,17 +220,6 @@
           :few: "prije {0} sekunde"
           :one: "prije {0} sekundu"
           :other: "prije {0} sekundi"
-    :second-narrow: 
-      :display_name: s
-      :relative_time: 
-        :future: 
-          :few: "za {0} s"
-          :one: "za {0} s"
-          :other: "za {0} s"
-        :past: 
-          :few: "prije {0} s"
-          :one: "prije {0} s"
-          :other: "prije {0} s"
     :second-short: 
       :display_name: s
       :relative_time: 
@@ -405,34 +245,11 @@
           :few: "prije {0} nedjelje"
           :one: "prije {0} nedjelju"
           :other: "prije {0} nedjelja"
-    :sun-narrow: 
-      :relative: 
-        -1: "prošla ned."
-        0: "ova ned."
-        1: "sljedeća ned."
-      :relative_time: 
-        :future: 
-          :few: "za {0} nedjelje"
-          :one: "za {0} nedjelju"
-          :other: "za {0} nedjelja"
-        :past: 
-          :few: "prije {0} nedjelje"
-          :one: "prije {0} nedjelju"
-          :other: "prije {0} nedjelja"
     :sun-short: 
       :relative: 
         -1: "prošla ned."
         0: "ova ned."
         1: "sljedeća ned."
-      :relative_time: 
-        :future: 
-          :few: "za {0} nedjelje"
-          :one: "za {0} nedjelju"
-          :other: "za {0} nedjelja"
-        :past: 
-          :few: "prije {0} nedjelje"
-          :one: "prije {0} nedjelju"
-          :other: "prije {0} nedjelja"
     :thu: 
       :relative: 
         -1: "prošli četvrtak"
@@ -447,34 +264,11 @@
           :few: "prije {0} četvrtka"
           :one: "prije {0} četvrtak"
           :other: "prije {0} četvrtaka"
-    :thu-narrow: 
-      :relative: 
-        -1: "prošli čet."
-        0: "ovaj čet."
-        1: "sljedeći čet."
-      :relative_time: 
-        :future: 
-          :few: "za {0} četvrtka"
-          :one: "za {0} četvrtak"
-          :other: "za {0} četvrtaka"
-        :past: 
-          :few: "prije {0} četvrtka"
-          :one: "prije {0} četvrtak"
-          :other: "prije {0} četvrtaka"
     :thu-short: 
       :relative: 
         -1: "prošli čet."
         0: "ovaj čet."
         1: "sljedeći čet."
-      :relative_time: 
-        :future: 
-          :few: "za {0} četvrtka"
-          :one: "za {0} četvrtak"
-          :other: "za {0} četvrtaka"
-        :past: 
-          :few: "prije {0} četvrtka"
-          :one: "prije {0} četvrtak"
-          :other: "prije {0} četvrtaka"
     :tue: 
       :relative: 
         -1: "prošli utorak"
@@ -489,34 +283,11 @@
           :few: "prije {0} utorka"
           :one: "prije {0} utorak"
           :other: "prije {0} utoraka"
-    :tue-narrow: 
-      :relative: 
-        -1: "prošli uto."
-        0: "ovaj uto."
-        1: "sljedeći uto."
-      :relative_time: 
-        :future: 
-          :few: "za {0} utorka"
-          :one: "za {0} utorak"
-          :other: "za {0} utoraka"
-        :past: 
-          :few: "prije {0} utorka"
-          :one: "prije {0} utorak"
-          :other: "prije {0} utoraka"
     :tue-short: 
       :relative: 
         -1: "prošli uto."
         0: "ovaj uto."
         1: "sljedeći uto."
-      :relative_time: 
-        :future: 
-          :few: "za {0} utorka"
-          :one: "za {0} utorak"
-          :other: "za {0} utoraka"
-        :past: 
-          :few: "prije {0} utorka"
-          :one: "prije {0} utorak"
-          :other: "prije {0} utoraka"
     :wed: 
       :relative: 
         -1: "prošla srijeda"
@@ -531,34 +302,11 @@
           :few: "prije {0} srijede"
           :one: "prije {0} srijedu"
           :other: "prije {0} srijeda"
-    :wed-narrow: 
-      :relative: 
-        -1: "prošla sri."
-        0: "ova sri."
-        1: "sljedeća sri."
-      :relative_time: 
-        :future: 
-          :few: "za {0} srijede"
-          :one: "za {0} srijedu"
-          :other: "za {0} srijeda"
-        :past: 
-          :few: "prije {0} srijede"
-          :one: "prije {0} srijedu"
-          :other: "prije {0} srijeda"
     :wed-short: 
       :relative: 
         -1: "prošla sri."
         0: "ova sri."
         1: "sljedeća sri."
-      :relative_time: 
-        :future: 
-          :few: "za {0} srijede"
-          :one: "za {0} srijedu"
-          :other: "za {0} srijeda"
-        :past: 
-          :few: "prije {0} srijede"
-          :one: "prije {0} srijedu"
-          :other: "prije {0} srijeda"
     :week: 
       :display_name: tjedan
       :relative: 
@@ -574,21 +322,6 @@
           :few: "prije {0} tjedna"
           :one: "prije {0} tjedan"
           :other: "prije {0} tjedana"
-    :week-narrow: 
-      :display_name: tj.
-      :relative: 
-        -1: "prošli tj."
-        0: "ovaj tj."
-        1: "sljedeći tj."
-      :relative_time: 
-        :future: 
-          :few: "za {0} tj."
-          :one: "za {0} tj."
-          :other: "za {0} tj."
-        :past: 
-          :few: "prije {0} tj."
-          :one: "prije {0} tj."
-          :other: "prije {0} tj."
     :week-short: 
       :display_name: tj.
       :relative: 
@@ -638,20 +371,10 @@
           :one: "prije {0} godinu"
           :other: "prije {0} godina"
     :year-narrow: 
-      :display_name: g.
       :relative: 
         -1: "prošle g."
         0: "ove g."
         1: "sljedeće g."
-      :relative_time: 
-        :future: 
-          :few: "za {0} g."
-          :one: "za {0} g."
-          :other: "za {0} g."
-        :past: 
-          :few: "prije {0} g."
-          :one: "prije {0} g."
-          :other: "prije {0} g."
     :year-short: 
       :display_name: g.
       :relative: 
@@ -669,7 +392,5 @@
           :other: "prije {0} g."
     :zone: 
       :display_name: "vremenska zona"
-    :zone-narrow: 
-      :display_name: zona
     :zone-short: 
       :display_name: zona

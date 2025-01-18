@@ -12,8 +12,8 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "d E"
-        :Ehm: "E a h:mm"
-        :Ehms: "E a h:mm:ss"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "G y"
         :GyMMM: "G y MMM"
         :GyMMMEd: "G y MMM d, E"
@@ -30,15 +30,15 @@
         :MMMEd: "MMM d, E"
         :MMMMW: "MMMM W -ஆம் வாரம்"
         :MMMMd: "d MMMM"
-        :MMMd: "MMM d"
+        :MMMd: "d MMM"
         :MMdd: dd-MM
         :Md: d/M
         :d: d
-        :h: "a h"
-        :hm: "a h:mm"
-        :hms: "a h:mm:ss"
-        :hmsv: "a h:mm:ss v"
-        :hmv: "a h:mm v"
+        :h: h a
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
@@ -125,8 +125,8 @@
           0: பொ.ச.மு
           1: பொ.ச
         :name: 
-          0: பொ.ச.மு
-          1: பொ.ச
+          0: "கிறிஸ்துவுக்கு முன்"
+          1: "அன்னோ டோமினி"
         :narrow: 
           0: BCE
           1: CE
@@ -147,7 +147,7 @@
         :hour-narrow: ம.
         :hour-short: மணி.
         :minute: நிமிடம்
-        :minute-narrow: நிமி.
+        :minute-narrow: Minute
         :minute-short: நிமி.
         :month: மாதம்
         :month-narrow: மா.
@@ -160,7 +160,7 @@
         :second-short: விநா.
         :week: வாரம்
         :week-narrow: வா.
-        :week-short: வாரம்
+        :week-short: Week
         :weekOfMonth: "மாதத்தின் வாரம்"
         :weekOfMonth-narrow: "மாத. வாரம்"
         :weekOfMonth-short: "மாத. வாரம்"
@@ -197,13 +197,13 @@
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "a h:mm:ss zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "a h:mm:ss z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "a h:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "a h:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -290,7 +290,7 @@
           :abbreviated: 
             :afternoon1: மதியம்
             :afternoon2: பிற்பகல்
-            :am: முற்பகல்
+            :am: AM
             :evening1: மாலை
             :evening2: "அந்தி மாலை"
             :midnight: நள்ளிரவு
@@ -298,11 +298,11 @@
             :morning2: காலை
             :night1: இரவு
             :noon: நண்பகல்
-            :pm: பிற்பகல்
+            :pm: PM
           :narrow: 
             :afternoon1: மதி.
             :afternoon2: பிற்.
-            :am: மு.ப
+            :am: AM
             :evening1: மா.
             :evening2: "அந்தி மா."
             :midnight: நள்.
@@ -310,11 +310,11 @@
             :morning2: கா.
             :night1: இர.
             :noon: நண்.
-            :pm: பி.ப
+            :pm: PM
           :wide: 
             :afternoon1: மதியம்
             :afternoon2: பிற்பகல்
-            :am: முற்பகல்
+            :am: AM
             :evening1: மாலை
             :evening2: "அந்தி மாலை"
             :midnight: நள்ளிரவு
@@ -322,12 +322,12 @@
             :morning2: காலை
             :night1: இரவு
             :noon: நண்பகல்
-            :pm: பிற்பகல்
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: மதியம்
             :afternoon2: பிற்பகல்
-            :am: முற்பகல்
+            :am: AM
             :evening1: மாலை
             :evening2: "அந்தி மாலை"
             :midnight: நள்ளிரவு
@@ -335,11 +335,11 @@
             :morning2: காலை
             :night1: இரவு
             :noon: நண்பகல்
-            :pm: பிற்பகல்
+            :pm: PM
           :narrow: 
             :afternoon1: மதி.
             :afternoon2: பிற்.
-            :am: மு.ப
+            :am: AM
             :evening1: மா.
             :evening2: "அந்தி மா."
             :midnight: நள்.
@@ -347,11 +347,11 @@
             :morning2: கா.
             :night1: இ.
             :noon: நண்.
-            :pm: பி.ப
+            :pm: PM
           :wide: 
             :afternoon1: மதியம்
             :afternoon2: பிற்பகல்
-            :am: முற்பகல்
+            :am: AM
             :evening1: மாலை
             :evening2: "அந்தி மாலை"
             :midnight: நள்ளிரவு
@@ -359,37 +359,37 @@
             :morning2: காலை
             :night1: இரவு
             :noon: நண்பகல்
-            :pm: பிற்பகல்
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 
-            1: காலா.1
-            2: காலா.2
-            3: காலா.3
-            4: காலா.4
+            1: கா.1
+            2: கா.2
+            3: கா.3
+            4: கா.4
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "ஒன்றாம் காலாண்டு"
+            1: "முதல் காலாண்டு"
             2: "இரண்டாம் காலாண்டு"
             3: "மூன்றாம் காலாண்டு"
             4: "நான்காம் காலாண்டு"
         :stand-alone: 
           :abbreviated: 
-            1: காலா.1
-            2: காலா.2
-            3: காலா.3
-            4: காலா.4
+            1: கா.1
+            2: கா.2
+            3: கா.3
+            4: கா.4
           :narrow: 
             1: "1"
             2: "2"
             3: "3"
             4: "4"
           :wide: 
-            1: "ஒன்றாம் காலாண்டு"
+            1: "முதல் காலாண்டு"
             2: "இரண்டாம் காலாண்டு"
             3: "மூன்றாம் காலாண்டு"
             4: "நான்காம் காலாண்டு"

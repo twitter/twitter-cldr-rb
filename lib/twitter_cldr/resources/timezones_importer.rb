@@ -130,7 +130,7 @@ module TwitterCldr
             short = nodes_to_hash(zone.xpath('short/*'))
             result[type][:short] = short unless short.empty?
             city = zone.xpath('exemplarCity').first
-            if city && !unconfirmed_draft?(city)
+            if city && !unconfirmed_draft?(city) && !secondary?(city)
               result[type][:city] = city.content
             end
             result
@@ -163,6 +163,12 @@ module TwitterCldr
           node &&
             node.attributes['draft'] &&
             node.attributes['draft'].value == 'unconfirmed'
+        end
+
+        def secondary?(node)
+          node &&
+            node.attributes['alt'] &&
+            node.attributes['alt'].value == 'secondary'
         end
 
         def doc

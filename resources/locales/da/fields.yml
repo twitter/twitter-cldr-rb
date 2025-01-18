@@ -16,53 +16,16 @@
         :past: 
           :one: "for {0} dag siden"
           :other: "for {0} dage siden"
-    :day-narrow: 
-      :display_name: dag
-      :relative: 
-        -1: "i går"
-        -2: "i forgårs"
-        0: "i dag"
-        1: "i morgen"
-        2: "i overmorgen"
-      :relative_time: 
-        :future: 
-          :one: "om {0} dag"
-          :other: "om {0} dage"
-        :past: 
-          :one: "{0} dag siden"
-          :other: "{0} dage siden"
     :day-short: 
-      :display_name: dag
-      :relative: 
-        -1: "i går"
-        -2: "i forgårs"
-        0: "i dag"
-        1: "i morgen"
-        2: "i overmorgen"
       :relative_time: 
-        :future: 
-          :one: "om {0} dag"
-          :other: "om {0} dage"
         :past: 
           :one: "{0} dag siden"
           :other: "{0} dage siden"
     :dayOfYear: 
       :display_name: "dag i året"
-    :dayOfYear-narrow: 
-      :display_name: "dag i året"
-    :dayOfYear-short: 
-      :display_name: "dag i året"
     :dayperiod: 
       :display_name: AM/PM
-    :dayperiod-narrow: 
-      :display_name: AM/PM
-    :dayperiod-short: 
-      :display_name: AM/PM
     :era: 
-      :display_name: æra
-    :era-narrow: 
-      :display_name: æra
-    :era-short: 
       :display_name: æra
     :fri: 
       :relative: 
@@ -111,25 +74,9 @@
         :past: 
           :one: "for {0} time siden"
           :other: "for {0} timer siden"
-    :hour-narrow: 
-      :display_name: t.
-      :relative: 
-        0: "denne time"
-      :relative_time: 
-        :future: 
-          :one: "om {0} time"
-          :other: "om {0} timer"
-        :past: 
-          :one: "{0} time siden"
-          :other: "{0} timer siden"
     :hour-short: 
       :display_name: t.
-      :relative: 
-        0: "denne time"
       :relative_time: 
-        :future: 
-          :one: "om {0} time"
-          :other: "om {0} timer"
         :past: 
           :one: "{0} time siden"
           :other: "{0} timer siden"
@@ -144,17 +91,6 @@
         :past: 
           :one: "for {0} minut siden"
           :other: "for {0} minutter siden"
-    :minute-narrow: 
-      :display_name: min.
-      :relative: 
-        0: "dette min."
-      :relative_time: 
-        :future: 
-          :one: "om {0} min."
-          :other: "om {0} min."
-        :past: 
-          :one: "{0} min. siden"
-          :other: "{0} min. siden"
     :minute-short: 
       :display_name: min.
       :relative: 
@@ -215,19 +151,6 @@
         :past: 
           :one: "for {0} måned siden"
           :other: "for {0} måneder siden"
-    :month-narrow: 
-      :display_name: md.
-      :relative: 
-        -1: "sidste md."
-        0: "denne md."
-        1: "næste md."
-      :relative_time: 
-        :future: 
-          :one: "om {0} md."
-          :other: "om {0} mdr."
-        :past: 
-          :one: "{0} md. siden"
-          :other: "{0} mdr. siden"
     :month-short: 
       :display_name: md.
       :relative: 
@@ -254,19 +177,6 @@
         :past: 
           :one: "for {0} kvartal siden"
           :other: "for {0} kvartaler siden"
-    :quarter-narrow: 
-      :display_name: kvt.
-      :relative: 
-        -1: "sidste kvt."
-        0: "dette kvt."
-        1: "næste kvt."
-      :relative_time: 
-        :future: 
-          :one: "om {0} kvt."
-          :other: "om {0} kvt."
-        :past: 
-          :one: "{0} kvt. siden"
-          :other: "{0} kvt. siden"
     :quarter-short: 
       :display_name: kvt.
       :relative: 
@@ -329,19 +239,8 @@
           :other: "for {0} sekunder siden"
     :second-narrow: 
       :display_name: s
-      :relative: 
-        0: nu
-      :relative_time: 
-        :future: 
-          :one: "om {0} sek."
-          :other: "om {0} sek."
-        :past: 
-          :one: "{0} sek. siden"
-          :other: "{0} sek. siden"
     :second-short: 
       :display_name: sek.
-      :relative: 
-        0: nu
       :relative_time: 
         :future: 
           :one: "om {0} sek."
@@ -506,48 +405,19 @@
         :past: 
           :one: "for {0} uge siden"
           :other: "for {0} uger siden"
-    :week-narrow: 
-      :display_name: uge
-      :relative: 
-        -1: "sidste uge"
-        0: "denne uge"
-        1: "næste uge"
-      :relative_time: 
-        :future: 
-          :one: "om {0} uge"
-          :other: "om {0} uger"
-        :past: 
-          :one: "{0} uge siden"
-          :other: "{0} uger siden"
     :week-short: 
-      :display_name: uge
-      :relative: 
-        -1: "sidste uge"
-        0: "denne uge"
-        1: "næste uge"
       :relative_time: 
-        :future: 
-          :one: "om {0} uge"
-          :other: "om {0} uger"
         :past: 
           :one: "{0} uge siden"
           :other: "{0} uger siden"
     :weekOfMonth: 
       :display_name: "uge i måneden"
-    :weekOfMonth-narrow: 
-      :display_name: "uge i md."
     :weekOfMonth-short: 
       :display_name: "uge i md."
     :weekday: 
       :display_name: ugedag
-    :weekday-narrow: 
-      :display_name: ugedag
-    :weekday-short: 
-      :display_name: ugedag
     :weekdayOfMonth: 
       :display_name: "ugedag i måneden"
-    :weekdayOfMonth-narrow: 
-      :display_name: "ugedag i md."
     :weekdayOfMonth-short: 
       :display_name: "ugedag i md."
     :year: 
@@ -563,35 +433,12 @@
         :past: 
           :one: "for {0} år siden"
           :other: "for {0} år siden"
-    :year-narrow: 
-      :display_name: år
-      :relative: 
-        -1: "sidste år"
-        0: "i år"
-        1: "næste år"
-      :relative_time: 
-        :future: 
-          :one: "om {0} år"
-          :other: "om {0} år"
-        :past: 
-          :one: "{0} år siden"
-          :other: "{0} år siden"
     :year-short: 
-      :display_name: år
-      :relative: 
-        -1: "sidste år"
-        0: "i år"
-        1: "næste år"
       :relative_time: 
-        :future: 
-          :one: "om {0} år"
-          :other: "om {0} år"
         :past: 
           :one: "{0} år siden"
           :other: "{0} år siden"
     :zone: 
       :display_name: tidszone
-    :zone-narrow: 
-      :display_name: zone
     :zone-short: 
       :display_name: zone

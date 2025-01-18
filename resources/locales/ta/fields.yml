@@ -18,12 +18,6 @@
           :other: "{0} நாட்களுக்கு முன்"
     :day-narrow: 
       :display_name: நா.
-      :relative: 
-        -1: நேற்று
-        -2: "நேற்று முன் தினம்"
-        0: இன்று
-        1: நாளை
-        2: "நாளை மறுநாள்"
       :relative_time: 
         :future: 
           :one: "{0} நா."
@@ -31,38 +25,15 @@
         :past: 
           :one: "{0} நா. முன்"
           :other: "{0} நா. முன்"
-    :day-short: 
-      :display_name: நாள்
-      :relative: 
-        -1: நேற்று
-        -2: "நேற்று முன் தினம்"
-        0: இன்று
-        1: நாளை
-        2: "நாளை மறுநாள்"
-      :relative_time: 
-        :future: 
-          :one: "{0} நாளில்"
-          :other: "{0} நாட்களில்"
-        :past: 
-          :one: "{0} நாளுக்கு முன்"
-          :other: "{0} நாட்களுக்கு முன்"
     :dayOfYear: 
       :display_name: "வருடத்தின் நாள்"
-    :dayOfYear-narrow: 
-      :display_name: "வருட. நாள்"
     :dayOfYear-short: 
       :display_name: "வருட. நாள்"
     :dayperiod: 
       :display_name: முற்பகல்/பிற்பகல்
-    :dayperiod-narrow: 
-      :display_name: முற்./பிற்.
     :dayperiod-short: 
       :display_name: முற்./பிற்.
     :era: 
-      :display_name: காலம்
-    :era-narrow: 
-      :display_name: காலம்
-    :era-short: 
       :display_name: காலம்
     :fri: 
       :relative: 
@@ -76,18 +47,6 @@
         :past: 
           :one: "{0} வெள்ளிக்கு முன்"
           :other: "{0} வெள்ளிகளுக்கு முன்"
-    :fri-narrow: 
-      :relative: 
-        -1: "கடந்த வெள்."
-        0: "இந்த வெள்."
-        1: "அடுத்த வெள்."
-      :relative_time: 
-        :future: 
-          :one: "{0} வெள்."
-          :other: "{0} வெள்."
-        :past: 
-          :one: "{0} வெள். முன்"
-          :other: "{0} வெள். முன்"
     :fri-short: 
       :relative: 
         -1: "கடந்த வெள்."
@@ -141,7 +100,6 @@
           :one: "{0} நிமிடத்திற்கு முன்"
           :other: "{0} நிமிடங்களுக்கு முன்"
     :minute-narrow: 
-      :display_name: நிமி.
       :relative_time: 
         :future: 
           :one: "{0} நி."
@@ -170,18 +128,6 @@
         :past: 
           :one: "{0} திங்களுக்கு முன்"
           :other: "{0} திங்கள்களுக்கு முன்"
-    :mon-narrow: 
-      :relative: 
-        -1: "கடந்த திங்."
-        0: "இந்த திங்."
-        1: "அடுத்த திங்."
-      :relative_time: 
-        :future: 
-          :one: "{0} திங்."
-          :other: "{0} திங்."
-        :past: 
-          :one: "{0} திங். முன்"
-          :other: "{0} திங். முன்"
     :mon-short: 
       :relative: 
         -1: "கடந்த திங்."
@@ -209,10 +155,6 @@
           :other: "{0} மாதங்களுக்கு முன்"
     :month-narrow: 
       :display_name: மா.
-      :relative: 
-        -1: "கடந்த மாதம்"
-        0: "இந்த மாதம்"
-        1: "அடுத்த மாதம்"
       :relative_time: 
         :future: 
           :one: "{0} மா."
@@ -222,10 +164,6 @@
           :other: "{0} மா. முன்"
     :month-short: 
       :display_name: மாத.
-      :relative: 
-        -1: "கடந்த மாதம்"
-        0: "இந்த மாதம்"
-        1: "அடுத்த மாதம்"
       :relative_time: 
         :future: 
           :one: "{0} மாத."
@@ -248,10 +186,6 @@
           :other: "{0} காலாண்டுகளுக்கு முன்"
     :quarter-narrow: 
       :display_name: கா.
-      :relative: 
-        -1: "இறுதி காலாண்டு"
-        0: "இந்த காலாண்டு"
-        1: "அடுத்த காலாண்டு"
       :relative_time: 
         :future: 
           :one: "{0} கா."
@@ -284,23 +218,7 @@
         :past: 
           :one: "{0} சனிக்கு முன்"
           :other: "{0} சனிகளுக்கு முன்"
-    :sat-narrow: 
-      :relative: 
-        -1: "கடந்த சனி"
-        0: "இந்த சனி"
-        1: "அடுத்த சனி"
-      :relative_time: 
-        :future: 
-          :one: "{0} சனி."
-          :other: "{0} சனி."
-        :past: 
-          :one: "{0} சனி. முன்"
-          :other: "{0} சனி. முன்"
     :sat-short: 
-      :relative: 
-        -1: "கடந்த சனி"
-        0: "இந்த சனி"
-        1: "அடுத்த சனி"
       :relative_time: 
         :future: 
           :one: "{0} சனி."
@@ -385,18 +303,6 @@
         :past: 
           :one: "{0} வியாழனுக்கு முன்"
           :other: "{0} வியாழன்களுக்கு முன்"
-    :thu-narrow: 
-      :relative: 
-        -1: "கடந்த வியா."
-        0: "இந்த வியா."
-        1: "அடுத்த வியா."
-      :relative_time: 
-        :future: 
-          :one: "{0} வியா."
-          :other: "{0} வியா."
-        :past: 
-          :one: "{0} வியா. முன்"
-          :other: "{0} வியா. முன்"
     :thu-short: 
       :relative: 
         -1: "கடந்த வியா."
@@ -422,10 +328,6 @@
           :one: "{0} செவ்வாய் முன்பு"
           :other: "{0} செவ்வாய்கள் முன்பு"
     :tue-narrow: 
-      :relative: 
-        -1: "கடந்த செவ்."
-        0: "இந்த செவ்."
-        1: "அடுத்த செவ்."
       :relative_time: 
         :future: 
           :one: "{0} செவ்."
@@ -458,14 +360,7 @@
           :one: "{0} புதனுக்கு முன்"
           :other: "{0} புதன்களுக்கு முன்"
     :wed-narrow: 
-      :relative: 
-        -1: "கடந்த புத."
-        0: "இந்த புத."
-        1: "அடுத்த புத."
       :relative_time: 
-        :future: 
-          :one: "{0} புத."
-          :other: "{0} புத."
         :past: 
           :one: "{0} புத. முன்"
           :other: "{0} புத. முன்"
@@ -496,10 +391,6 @@
           :other: "{0} வாரங்களுக்கு முன்"
     :week-narrow: 
       :display_name: வா.
-      :relative: 
-        -1: "கடந்த வாரம்"
-        0: "இந்த வாரம்"
-        1: "அடுத்த வாரம்"
       :relative_time: 
         :future: 
           :one: "{0} வா."
@@ -508,11 +399,6 @@
           :one: "{0} வா. முன்"
           :other: "{0} வா. முன்"
     :week-short: 
-      :display_name: வாரம்
-      :relative: 
-        -1: "கடந்த வாரம்"
-        0: "இந்த வாரம்"
-        1: "அடுத்த வாரம்"
       :relative_time: 
         :future: 
           :one: "{0} வார."
@@ -522,20 +408,14 @@
           :other: "{0} வார. முன்"
     :weekOfMonth: 
       :display_name: "மாதத்தின் வாரம்"
-    :weekOfMonth-narrow: 
-      :display_name: "மாத. வாரம்"
     :weekOfMonth-short: 
       :display_name: "மாத. வாரம்"
     :weekday: 
       :display_name: "வாரத்தின் நாள்"
-    :weekday-narrow: 
-      :display_name: "வார. நாள்"
     :weekday-short: 
       :display_name: "வார. நாள்"
     :weekdayOfMonth: 
       :display_name: "மாதத்தின் வாரநாள்"
-    :weekdayOfMonth-narrow: 
-      :display_name: "மாத. வாரநாள்"
     :weekdayOfMonth-short: 
       :display_name: "மாத. வாரநாள்"
     :year: 
@@ -553,10 +433,6 @@
           :other: "{0} ஆண்டுகளுக்கு முன்"
     :year-narrow: 
       :display_name: ஆ.
-      :relative: 
-        -1: "கடந்த ஆண்டு"
-        0: "இந்த ஆண்டு"
-        1: "அடுத்த ஆண்டு"
       :relative_time: 
         :future: 
           :one: "{0} ஆ."
@@ -564,22 +440,7 @@
         :past: 
           :one: "{0} ஆ. முன்"
           :other: "{0} ஆ. முன்"
-    :year-short: 
-      :display_name: ஆண்டு
-      :relative: 
-        -1: "கடந்த ஆண்டு"
-        0: "இந்த ஆண்டு"
-        1: "அடுத்த ஆண்டு"
-      :relative_time: 
-        :future: 
-          :one: "{0} ஆண்டில்"
-          :other: "{0} ஆண்டுகளில்"
-        :past: 
-          :one: "{0} ஆண்டிற்கு முன்"
-          :other: "{0} ஆண்டுகளுக்கு முன்"
     :zone: 
       :display_name: "நேர மண்டலம்"
-    :zone-narrow: 
-      :display_name: மண்டலம்
     :zone-short: 
       :display_name: மண்டலம்

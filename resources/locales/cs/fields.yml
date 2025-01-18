@@ -20,44 +20,6 @@
           :many: "před {0} dne"
           :one: "před {0} dnem"
           :other: "před {0} dny"
-    :day-narrow: 
-      :display_name: den
-      :relative: 
-        -1: včera
-        -2: předevčírem
-        0: dnes
-        1: zítra
-        2: pozítří
-      :relative_time: 
-        :future: 
-          :few: "za {0} dny"
-          :many: "za {0} dne"
-          :one: "za {0} den"
-          :other: "za {0} dní"
-        :past: 
-          :few: "před {0} dny"
-          :many: "před {0} dne"
-          :one: "před {0} dnem"
-          :other: "před {0} dny"
-    :day-short: 
-      :display_name: den
-      :relative: 
-        -1: včera
-        -2: předevčírem
-        0: dnes
-        1: zítra
-        2: pozítří
-      :relative_time: 
-        :future: 
-          :few: "za {0} dny"
-          :many: "za {0} dne"
-          :one: "za {0} den"
-          :other: "za {0} dní"
-        :past: 
-          :few: "před {0} dny"
-          :many: "před {0} dne"
-          :one: "před {0} dnem"
-          :other: "před {0} dny"
     :dayOfYear: 
       :display_name: "den v roce"
     :dayOfYear-narrow: 
@@ -68,8 +30,6 @@
       :display_name: "část dne"
     :dayperiod-narrow: 
       :display_name: "část d."
-    :dayperiod-short: 
-      :display_name: "část dne"
     :era: 
       :display_name: letopočet
     :era-narrow: 
@@ -77,38 +37,6 @@
     :era-short: 
       :display_name: letop.
     :fri: 
-      :relative: 
-        -1: "minulý pátek"
-        0: "tento pátek"
-        1: "příští pátek"
-      :relative_time: 
-        :future: 
-          :few: "za {0} pátky"
-          :many: "za {0} pátku"
-          :one: "za {0} pátek"
-          :other: "za {0} pátků"
-        :past: 
-          :few: "před {0} pátky"
-          :many: "před {0} pátku"
-          :one: "před {0} pátkem"
-          :other: "před {0} pátky"
-    :fri-narrow: 
-      :relative: 
-        -1: "minulý pátek"
-        0: "tento pátek"
-        1: "příští pátek"
-      :relative_time: 
-        :future: 
-          :few: "za {0} pátky"
-          :many: "za {0} pátku"
-          :one: "za {0} pátek"
-          :other: "za {0} pátků"
-        :past: 
-          :few: "před {0} pátky"
-          :many: "před {0} pátku"
-          :one: "před {0} pátkem"
-          :other: "před {0} pátky"
-    :fri-short: 
       :relative: 
         -1: "minulý pátek"
         0: "tento pátek"
@@ -139,25 +67,8 @@
           :many: "před {0} hodiny"
           :one: "před {0} hodinou"
           :other: "před {0} hodinami"
-    :hour-narrow: 
-      :display_name: h
-      :relative: 
-        0: "tuto hodinu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} h"
-          :many: "za {0} h"
-          :one: "za {0} h"
-          :other: "za {0} h"
-        :past: 
-          :few: "před {0} h"
-          :many: "před {0} h"
-          :one: "před {0} h"
-          :other: "před {0} h"
     :hour-short: 
       :display_name: h
-      :relative: 
-        0: "tuto hodinu"
       :relative_time: 
         :future: 
           :few: "za {0} h"
@@ -184,25 +95,8 @@
           :many: "před {0} minuty"
           :one: "před {0} minutou"
           :other: "před {0} minutami"
-    :minute-narrow: 
-      :display_name: min
-      :relative: 
-        0: "tuto minutu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} min"
-          :many: "za {0} min"
-          :one: "za {0} min"
-          :other: "za {0} min"
-        :past: 
-          :few: "před {0} min"
-          :many: "před {0} min"
-          :one: "před {0} min"
-          :other: "před {0} min"
     :minute-short: 
       :display_name: min
-      :relative: 
-        0: "tuto minutu"
       :relative_time: 
         :future: 
           :few: "za {0} min"
@@ -215,38 +109,6 @@
           :one: "před {0} min"
           :other: "před {0} min"
     :mon: 
-      :relative: 
-        -1: "minulé pondělí"
-        0: "toto pondělí"
-        1: "příští pondělí"
-      :relative_time: 
-        :future: 
-          :few: "za {0} pondělí"
-          :many: "za {0} pondělí"
-          :one: "za {0} pondělí"
-          :other: "za {0} pondělí"
-        :past: 
-          :few: "před {0} pondělími"
-          :many: "před {0} pondělí"
-          :one: "před {0} pondělím"
-          :other: "před {0} pondělími"
-    :mon-narrow: 
-      :relative: 
-        -1: "minulé pondělí"
-        0: "toto pondělí"
-        1: "příští pondělí"
-      :relative_time: 
-        :future: 
-          :few: "za {0} pondělí"
-          :many: "za {0} pondělí"
-          :one: "za {0} pondělí"
-          :other: "za {0} pondělí"
-        :past: 
-          :few: "před {0} pondělími"
-          :many: "před {0} pondělí"
-          :one: "před {0} pondělím"
-          :other: "před {0} pondělími"
-    :mon-short: 
       :relative: 
         -1: "minulé pondělí"
         0: "toto pondělí"
@@ -279,23 +141,6 @@
           :many: "před {0} měsíce"
           :one: "před {0} měsícem"
           :other: "před {0} měsíci"
-    :month-narrow: 
-      :display_name: měs.
-      :relative: 
-        -1: "minulý měs."
-        0: "tento měs."
-        1: "příští měs."
-      :relative_time: 
-        :future: 
-          :few: "za {0} měs."
-          :many: "za {0} měs."
-          :one: "za {0} měs."
-          :other: "za {0} měs."
-        :past: 
-          :few: "před {0} měs."
-          :many: "před {0} měs."
-          :one: "před {0} měs."
-          :other: "před {0} měs."
     :month-short: 
       :display_name: měs.
       :relative: 
@@ -330,29 +175,8 @@
           :many: "před {0} čtvrtletí"
           :one: "před {0} čtvrtletím"
           :other: "před {0} čtvrtletími"
-    :quarter-narrow: 
-      :display_name: Q
-      :relative: 
-        -1: "minulé čtvrtletí"
-        0: "toto čtvrtletí"
-        1: "příští čtvrtletí"
-      :relative_time: 
-        :future: 
-          :few: "+{0} Q"
-          :many: "+{0} Q"
-          :one: "+{0} Q"
-          :other: "+{0} Q"
-        :past: 
-          :few: "-{0} Q"
-          :many: "-{0} Q"
-          :one: "-{0} Q"
-          :other: "-{0} Q"
     :quarter-short: 
       :display_name: Q
-      :relative: 
-        -1: "minulé čtvrtletí"
-        0: "toto čtvrtletí"
-        1: "příští čtvrtletí"
       :relative_time: 
         :future: 
           :few: "+{0} Q"
@@ -365,38 +189,6 @@
           :one: "-{0} Q"
           :other: "-{0} Q"
     :sat: 
-      :relative: 
-        -1: "minulou sobotu"
-        0: "tuto sobotu"
-        1: "příští sobotu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} soboty"
-          :many: "za {0} soboty"
-          :one: "za {0} sobotu"
-          :other: "za {0} sobot"
-        :past: 
-          :few: "před {0} sobotami"
-          :many: "před {0} soboty"
-          :one: "před {0} sobotou"
-          :other: "před {0} sobotami"
-    :sat-narrow: 
-      :relative: 
-        -1: "minulou sobotu"
-        0: "tuto sobotu"
-        1: "příští sobotu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} soboty"
-          :many: "za {0} soboty"
-          :one: "za {0} sobotu"
-          :other: "za {0} sobot"
-        :past: 
-          :few: "před {0} sobotami"
-          :many: "před {0} soboty"
-          :one: "před {0} sobotou"
-          :other: "před {0} sobotami"
-    :sat-short: 
       :relative: 
         -1: "minulou sobotu"
         0: "tuto sobotu"
@@ -427,25 +219,8 @@
           :many: "před {0} sekundy"
           :one: "před {0} sekundou"
           :other: "před {0} sekundami"
-    :second-narrow: 
-      :display_name: s
-      :relative: 
-        0: nyní
-      :relative_time: 
-        :future: 
-          :few: "za {0} s"
-          :many: "za {0} s"
-          :one: "za {0} s"
-          :other: "za {0} s"
-        :past: 
-          :few: "před {0} s"
-          :many: "před {0} s"
-          :one: "před {0} s"
-          :other: "před {0} s"
     :second-short: 
       :display_name: s
-      :relative: 
-        0: nyní
       :relative_time: 
         :future: 
           :few: "za {0} s"
@@ -458,38 +233,6 @@
           :one: "před {0} s"
           :other: "před {0} s"
     :sun: 
-      :relative: 
-        -1: "minulou neděli"
-        0: "tuto neděli"
-        1: "příští neděli"
-      :relative_time: 
-        :future: 
-          :few: "za {0} neděle"
-          :many: "za {0} neděle"
-          :one: "za {0} neděli"
-          :other: "za {0} nedělí"
-        :past: 
-          :few: "před {0} nedělemi"
-          :many: "před {0} neděle"
-          :one: "před {0} nedělí"
-          :other: "před {0} nedělemi"
-    :sun-narrow: 
-      :relative: 
-        -1: "minulou neděli"
-        0: "tuto neděli"
-        1: "příští neděli"
-      :relative_time: 
-        :future: 
-          :few: "za {0} neděle"
-          :many: "za {0} neděle"
-          :one: "za {0} neděli"
-          :other: "za {0} nedělí"
-        :past: 
-          :few: "před {0} nedělemi"
-          :many: "před {0} neděle"
-          :one: "před {0} nedělí"
-          :other: "před {0} nedělemi"
-    :sun-short: 
       :relative: 
         -1: "minulou neděli"
         0: "tuto neděli"
@@ -521,38 +264,6 @@
           :many: "před {0} čtvrtku"
           :one: "před {0} čtvrtkem"
           :other: "před {0} čtvrtky"
-    :thu-narrow: 
-      :relative: 
-        -1: "minulý čtvrtek"
-        0: "tento čtvrtek"
-        1: "příští čtvrtek"
-      :relative_time: 
-        :future: 
-          :few: "za {0} čtvrtky"
-          :many: "za {0} čtvrtku"
-          :one: "za {0} čtvrtek"
-          :other: "za {0} čtvrtků"
-        :past: 
-          :few: "před {0} čtvrtky"
-          :many: "před {0} čtvrtku"
-          :one: "před {0} čtvrtkem"
-          :other: "před {0} čtvrtky"
-    :thu-short: 
-      :relative: 
-        -1: "minulý čtvrtek"
-        0: "tento čtvrtek"
-        1: "příští čtvrtek"
-      :relative_time: 
-        :future: 
-          :few: "za {0} čtvrtky"
-          :many: "za {0} čtvrtku"
-          :one: "za {0} čtvrtek"
-          :other: "za {0} čtvrtků"
-        :past: 
-          :few: "před {0} čtvrtky"
-          :many: "před {0} čtvrtku"
-          :one: "před {0} čtvrtkem"
-          :other: "před {0} čtvrtky"
     :tue: 
       :relative: 
         -1: "minulé úterý"
@@ -569,71 +280,7 @@
           :many: "před {0} úterý"
           :one: "před {0} úterým"
           :other: "před {0} úterými"
-    :tue-narrow: 
-      :relative: 
-        -1: "minulé úterý"
-        0: "toto úterý"
-        1: "příští úterý"
-      :relative_time: 
-        :future: 
-          :few: "za {0} úterý"
-          :many: "za {0} úterý"
-          :one: "za {0} úterý"
-          :other: "za {0} úterý"
-        :past: 
-          :few: "před {0} úterými"
-          :many: "před {0} úterý"
-          :one: "před {0} úterým"
-          :other: "před {0} úterými"
-    :tue-short: 
-      :relative: 
-        -1: "minulé úterý"
-        0: "toto úterý"
-        1: "příští úterý"
-      :relative_time: 
-        :future: 
-          :few: "za {0} úterý"
-          :many: "za {0} úterý"
-          :one: "za {0} úterý"
-          :other: "za {0} úterý"
-        :past: 
-          :few: "před {0} úterými"
-          :many: "před {0} úterý"
-          :one: "před {0} úterým"
-          :other: "před {0} úterými"
     :wed: 
-      :relative: 
-        -1: "minulou středu"
-        0: "tuto středu"
-        1: "příští středu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} středy"
-          :many: "za {0} středy"
-          :one: "za {0} středu"
-          :other: "za {0} střed"
-        :past: 
-          :few: "před {0} středami"
-          :many: "před {0} středy"
-          :one: "před {0} středou"
-          :other: "před {0} středami"
-    :wed-narrow: 
-      :relative: 
-        -1: "minulou středu"
-        0: "tuto středu"
-        1: "příští středu"
-      :relative_time: 
-        :future: 
-          :few: "za {0} středy"
-          :many: "za {0} středy"
-          :one: "za {0} středu"
-          :other: "za {0} střed"
-        :past: 
-          :few: "před {0} středami"
-          :many: "před {0} středy"
-          :one: "před {0} středou"
-          :other: "před {0} středami"
-    :wed-short: 
       :relative: 
         -1: "minulou středu"
         0: "tuto středu"
@@ -666,23 +313,6 @@
           :many: "před {0} týdne"
           :one: "před {0} týdnem"
           :other: "před {0} týdny"
-    :week-narrow: 
-      :display_name: týd.
-      :relative: 
-        -1: "minulý týd."
-        0: "tento týd."
-        1: "příští týd."
-      :relative_time: 
-        :future: 
-          :few: "za {0} týd."
-          :many: "za {0} týd."
-          :one: "za {0} týd."
-          :other: "za {0} týd."
-        :past: 
-          :few: "před {0} týd."
-          :many: "před {0} týd."
-          :one: "před {0} týd."
-          :other: "před {0} týd."
     :week-short: 
       :display_name: týd.
       :relative: 
@@ -702,8 +332,6 @@
           :other: "před {0} týd."
     :weekOfMonth: 
       :display_name: "týden v měsíci"
-    :weekOfMonth-narrow: 
-      :display_name: "týd. v m."
     :weekOfMonth-short: 
       :display_name: "týd. v m."
     :weekday: 
@@ -735,29 +363,8 @@
           :many: "před {0} roku"
           :one: "před {0} rokem"
           :other: "před {0} lety"
-    :year-narrow: 
-      :display_name: r.
-      :relative: 
-        -1: "minulý rok"
-        0: "tento rok"
-        1: "příští rok"
-      :relative_time: 
-        :future: 
-          :few: "za {0} r."
-          :many: "za {0} r."
-          :one: "za {0} r."
-          :other: "za {0} l."
-        :past: 
-          :few: "před {0} r."
-          :many: "před {0} r."
-          :one: "před {0} r."
-          :other: "před {0} l."
     :year-short: 
       :display_name: r.
-      :relative: 
-        -1: "minulý rok"
-        0: "tento rok"
-        1: "příští rok"
       :relative_time: 
         :future: 
           :few: "za {0} r."

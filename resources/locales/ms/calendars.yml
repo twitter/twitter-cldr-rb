@@ -28,7 +28,7 @@
         :MEd: "E, d-M"
         :MMM: LLL
         :MMMEd: "E, d MMM"
-        :MMMMW: "'week' W 'of' MMMM"
+        :MMMMW: "'minggu' W 'daripada' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
@@ -51,7 +51,7 @@
         :yMd: d/M/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
-        :yw: "'week' w 'of' Y"
+        :yw: "'minggu' w 'daripada' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -124,18 +124,18 @@
           0: S.M.
           1: TM
         :name: 
-          0: S.M.
-          1: TM
+          0: BCE
+          1: CE
         :narrow: 
-          0: S.M.
-          1: TM
+          0: BCE
+          1: CE
       :fields: 
         :day: hari
-        :day-narrow: hari
-        :day-short: hari
-        :dayOfYear: "Day Of Year"
-        :dayOfYear-narrow: "Day Of Year"
-        :dayOfYear-short: "Day Of Year"
+        :day-narrow: Day
+        :day-short: Day
+        :dayOfYear: "Hari dalam Tahun"
+        :dayOfYear-narrow: "Hari dlm Thn"
+        :dayOfYear-short: "Hari dlm Thn"
         :dayperiod: PG/PTG
         :dayperiod-narrow: PG/PTG
         :dayperiod-short: PG/PTG
@@ -143,32 +143,32 @@
         :era-narrow: era
         :era-short: era
         :hour: jam
-        :hour-narrow: jam
-        :hour-short: jam
+        :hour-narrow: Hour
+        :hour-short: Hour
         :minute: minit
         :minute-narrow: min
         :minute-short: min
         :month: bulan
-        :month-narrow: bln
+        :month-narrow: Month
         :month-short: bln
         :quarter: "suku tahun"
         :quarter-narrow: suku
         :quarter-short: suku
         :second: saat
-        :second-narrow: saat
-        :second-short: saat
+        :second-narrow: Second
+        :second-short: Second
         :week: minggu
         :week-narrow: mgu
         :week-short: mgu
-        :weekOfMonth: "Week Of Month"
-        :weekOfMonth-narrow: "Week Of Month"
-        :weekOfMonth-short: "Week Of Month"
+        :weekOfMonth: "Minggu dalam Bulan"
+        :weekOfMonth-narrow: "Minggu dalam Bulan"
+        :weekOfMonth-short: "Minggu dlm bulan"
         :weekday: "Hari dalam Minggu"
         :weekday-narrow: "Hari dalam Minggu"
         :weekday-short: "Hari dalam Minggu"
-        :weekdayOfMonth: "Weekday Of Month"
-        :weekdayOfMonth-narrow: "Weekday Of Month"
-        :weekdayOfMonth-short: "Weekday Of Month"
+        :weekdayOfMonth: "Hari dalam Bulan"
+        :weekdayOfMonth-narrow: "Hari dlm bln"
+        :weekdayOfMonth-short: "Hari dlm bln"
         :year: tahun
         :year-narrow: thn
         :year-short: thn
@@ -296,45 +296,45 @@
             :pm: PTG
           :narrow: 
             :afternoon1: "tengah hari"
-            :am: a
+            :am: PG
             :evening1: petang
             :morning1: pagi
             :morning2: pagi
             :night1: malam
-            :pm: p
+            :pm: PTG
           :wide: 
             :afternoon1: "tengah hari"
-            :am: PG
+            :am: AM
             :evening1: petang
             :morning1: "tengah malam"
             :morning2: pagi
             :night1: malam
-            :pm: PTG
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: "tengah hari"
-            :am: PG
+            :am: AM
             :evening1: petang
             :morning1: "tengah malam"
             :morning2: pagi
             :night1: malam
-            :pm: PTG
+            :pm: PM
           :narrow: 
             :afternoon1: "tengah hari"
-            :am: a
+            :am: AM
             :evening1: petang
             :morning1: pagi
             :morning2: pagi
             :night1: malam
-            :pm: p
+            :pm: PM
           :wide: 
             :afternoon1: "tengah hari"
-            :am: PG
+            :am: AM
             :evening1: petang
             :morning1: "tengah malam"
             :morning2: pagi
             :night1: malam
-            :pm: PTG
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

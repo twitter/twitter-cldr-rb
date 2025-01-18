@@ -28,7 +28,10 @@
                 :rule: "<< titik >>;"
                 :value: x.x
               - 
-                :rule: kosong;
+                :rule: "<< koma >>;"
+                :value: "x,x"
+              - 
+                :rule: nol;
                 :value: 0
               - 
                 :rule: satu;
@@ -108,6 +111,12 @@
               - 
                 :rule: ke=%spellout-cardinal=;
                 :value: 0
+              - 
+                :rule: pertama
+                :value: 1
+              - 
+                :rule: ke=%spellout-cardinal=;
+                :value: 2
             :type: spellout-ordinal
         :type: SpelloutRules
       - 

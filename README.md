@@ -40,7 +40,7 @@ TwitterCldr patches core Ruby objects like `Integer` and `Date` to make localiza
 1337.localize(:es).to_s                                    # "1.337"
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # "1.337,00 $"
+1337.localize(:es).to_currency.to_s                        # "1.337,00 US$"
 1337.localize(:es).to_currency.to_s(:currency => "EUR")    # "1.337,00 €"
 
 # percentages
@@ -71,7 +71,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # ["ADP", "AED", "AFA", "AFN", ... ]
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :name=>"Canadian Dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}
+TwitterCldr::Shared::Currencies.for_code("CAD")            # {:currency=>:CAD, :name=>"Canadian Dollar", :cldr_symbol=>"CA$", :symbol=>"CA$", :code_points=>[67, 65, 36]}
 ```
 
 #### Short / Long Decimals
@@ -92,7 +92,7 @@ TwitterCLDR supports formatting numbers with an attached unit, for example "12 d
 
 ```ruby
 12.localize.to_unit.length_mile  # "12 miles"
-12.localize(:ru).to_unit.length_mile  # "12 миль"
+12.localize(:ru).to_unit.length_mile  # "12 милях"
 ```
 Units support a few different forms, long, short, and narrow:
 
@@ -233,8 +233,8 @@ It's important to know that, even though any given format may not be available a
 | EHm        | Fri 12:20              |
 | EHms       | Fri 12:20:05           |
 | Ed         | 14 Fri                 |
-| Ehm        | Fri 12:20 PM           |
-| Ehms       | Fri 12:20:05 PM        |
+| Ehm        | Fri 12:20 PM           |
+| Ehms       | Fri 12:20:05 PM        |
 | Gy         | 2014 CE                |
 | GyMMM      | Feb 2014 CE            |
 | GyMMMEd    | Fri, Feb 14, 2014 CE   |
@@ -254,11 +254,11 @@ It's important to know that, even though any given format may not be available a
 | MMMd       | Feb 14                 |
 | Md         | 2/14                   |
 | d          | 14                     |
-| h          | 12 PM                  |
-| hm         | 12:20 PM               |
-| hms        | 12:20:05 PM            |
-| hmsv       | 12:20:05 PM GMT        |
-| hmv        | 12:20 PM GMT           |
+| h          | 12 PM                  |
+| hm         | 12:20 PM               |
+| hms        | 12:20:05 PM            |
+| hmsv       | 12:20:05 PM GMT        |
+| hmv        | 12:20 PM GMT           |
 | ms         | 20:05                  |
 | y          | 2014                   |
 | yM         | 2/2014                 |
@@ -602,7 +602,7 @@ postal_code.regexp  # /(\d{5})(?:[ \-](\d{4}))?/
 Get a sample of valid postal codes with the `#sample` method:
 
 ```ruby
-postal_code.sample(5)  # ["72959-4813", "81226", "05936-9185", "71858-7042", "20325-0737"]
+postal_code.sample(5)  # ["33623-6826", "59924", "59999", "42268-1200", "68209-4464"]
 ```
 
 ### Phone Codes
@@ -1106,6 +1106,6 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 ## License
 
-Copyright 2024 Twitter, Inc.
+Copyright 2025 Twitter, Inc.
 
 Licensed under the Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0

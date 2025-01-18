@@ -135,28 +135,18 @@ module TwitterCldr
       end
 
       def rules(transform_node)
-        rules = fix_rule_wrapping(
-          transform_node.xpath('tRule').flat_map do |rule_node|
-            fix_rule(rule_node.content).split("\n").map(&:strip)
-          end
-        )
-
-        rules.reject do |rule|
-          rule.strip.empty? || rule.strip.start_with?('#')
-        end
-      end
-
-      def fix_rule_wrapping(rules)
-        wrap = false
-
-        rules.each_with_object([]) do |rule, ret|
-          if wrap
-            ret.last.sub!(/\\\z/, rule)
-          else
-            ret << rule
-          end
-
-          wrap = rule.end_with?('\\')
+        transform_node.xpath('tRule').flat_map do |rule_node|
+          rule_node.content
+            .split("\n")
+            .reject { |line| line.start_with?('#') }
+            .map { |line| line.sub(/#.*$/, '').strip }
+            .join("\n")
+            .split(/;$/)
+            .map(&:strip)
+            .reject(&:empty?)
+            .map do |rule_text|
+              "#{fix_rule(rule_text)} ;"
+            end
         end
       end
 
@@ -164,7 +154,8 @@ module TwitterCldr
         rule.
           gsub("←", '<').
           gsub("→", '>').
-          gsub("↔", '<>')
+          gsub("↔", '<>').
+          gsub("\n", " ")
       end
 
       def each_transform_file(&block)

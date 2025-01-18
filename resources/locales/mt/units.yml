@@ -7,18 +7,6 @@
       :ms: "m:ss"
     :unitLength: 
       :long: 
-        :angle-arc-minute: 
-          :few: "{0}′"
-          :many: "{0}′"
-          :one: "{0}′"
-          :other: "{0}′"
-          :two: "{0}′"
-        :concentr-karat: 
-          :few: "{0} kt"
-          :many: "{0} kt"
-          :one: "{0} kt"
-          :other: "{0} kt"
-          :two: "{0} kt"
         :consumption-liter-per-kilometer: 
           :few: "{0} litri kull kilometru"
           :many: "{0}-il litru kull kilometru"
@@ -49,12 +37,6 @@
           :one: "{0} millisekonda"
           :other: "{0} millisekonda"
           :two: "{0} millisekondi"
-        :light-lux: 
-          :few: "{0} lx"
-          :many: "{0} lx"
-          :one: "{0} lx"
-          :other: "{0} lx"
-          :two: "{0} lx"
       :narrow: 
         :duration-millisecond: 
           :few: "{0}ms"
@@ -100,11 +82,7 @@
         :concentr-item: 
           :other: "{0} item"
         :concentr-karat: 
-          :few: "{0} kt"
-          :many: "{0} kt"
-          :one: "{0} kt"
           :other: "{0} kt"
-          :two: "{0} kt"
         :concentr-milligram-ofglucose-per-deciliter: 
           :other: "{0} mg/dL"
         :concentr-millimole-per-liter: 
@@ -119,14 +97,12 @@
           :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
+        :concentr-portion-per-1e9: 
+          :other: "{0} ppb"
         :consumption-liter-per-100-kilometer: 
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
-          :few: "{0} L/km"
-          :many: "{0} L/km"
-          :one: "{0} L/km"
           :other: "{0} L/km"
-          :two: "{0} L/km"
         :consumption-mile-per-gallon: 
           :other: "{0} mpg US"
         :consumption-mile-per-gallon-imperial: 
@@ -144,31 +120,15 @@
         :digital-kilobyte: 
           :other: "{0} kB"
         :digital-megabit: 
-          :few: "{0} Mb"
-          :many: "{0} Mb"
-          :one: "{0} Mb"
           :other: "{0} Mb"
-          :two: "{0} Mb"
         :digital-megabyte: 
-          :few: "{0} MB"
-          :many: "{0} MB"
-          :one: "{0} MB"
           :other: "{0} MB"
-          :two: "{0} MB"
         :digital-petabyte: 
           :other: "{0} PB"
         :digital-terabit: 
-          :few: "{0} Tb"
-          :many: "{0} Tb"
-          :one: "{0} Tb"
           :other: "{0} Tb"
-          :two: "{0} Tb"
         :digital-terabyte: 
-          :few: "{0} TB"
-          :many: "{0} TB"
-          :one: "{0} TB"
           :other: "{0} TB"
-          :two: "{0} TB"
         :duration-century: 
           :other: "{0} c"
         :duration-day: 
@@ -180,17 +140,15 @@
         :duration-microsecond: 
           :other: "{0} μs"
         :duration-millisecond: 
-          :few: "{0} ms"
-          :many: "{0} ms"
-          :one: "{0} ms"
           :other: "{0} ms"
-          :two: "{0} ms"
         :duration-minute: 
           :other: "{0} min"
         :duration-month: 
           :other: "{0} m"
         :duration-nanosecond: 
           :other: "{0} ns"
+        :duration-night: 
+          :other: "{0} night"
         :duration-quarter: 
           :other: "{0} q"
         :duration-second: 
@@ -296,11 +254,7 @@
         :light-lumen: 
           :other: "{0} lm"
         :light-lux: 
-          :few: "{0} lx"
-          :many: "{0} lx"
-          :one: "{0} lx"
           :other: "{0} lx"
-          :two: "{0} lx"
         :light-solar-luminosity: 
           :other: "{0} L☉"
         :mass-carat: 
@@ -365,10 +319,14 @@
           :other: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
+        :speed-beaufort: 
+          :other: "B {0}"
         :speed-kilometer-per-hour: 
           :other: "{0} km/h"
         :speed-knot: 
           :other: "{0} kn"
+        :speed-light-speed: 
+          :other: "{0} light"
         :speed-meter-per-second: 
           :other: "{0} m/s"
         :speed-mile-per-hour: 

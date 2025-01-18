@@ -6,11 +6,11 @@
       - und-Jamo-t-und-latn
     :direction: forward
     :rules: 
-      - "::[[:script=Latin:][:M:]-];"
-      - "::NFD;"
-      - "::Lower;"
-      - "::Latin-ConjoiningJamo;"
-      - "::[[:script=Latin:][:M:]] NFC;"
+      - "::[[:Script=Latin:][:M:]-] ;"
+      - "::NFD ;"
+      - "::Lower ;"
+      - "::Latin-ConjoiningJamo ;"
+      - "::[[:Script=Latin:][:M:]] NFC ;"
     :source: Latn
     :target: Jamo
     :variant: ~

@@ -136,10 +136,12 @@ describe TwitterCldr::Localized::LocalizedNumber do
         expect(number.to_s(precision: 1)).to eq("$10.0")
       end
 
-      let(:number) { described_class.new(10, :"en-AU", type: :currency) }
+      context 'currencies in other locales' do
+        let(:number) { described_class.new(10, :"en-AU", type: :currency) }
 
-      it "it should respect number's locale when picking currency symbol" do
-        expect(number.to_s(currency: "USD", use_cldr_symbol: true)).to eq("USD10.00")
+        it "it should respect number's locale when picking currency symbol" do
+          expect(number.to_s(currency: "USD", use_cldr_symbol: true)).to eq("USD10.00")
+        end
       end
     end
 

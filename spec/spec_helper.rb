@@ -5,7 +5,6 @@
 
 require 'rspec'
 require 'twitter_cldr'
-require 'pry-byebug'
 require 'coveralls'
 require 'eprun'
 

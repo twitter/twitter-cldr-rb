@@ -33,7 +33,7 @@
         :MMMd: "d MMM"
         :Md: MM-dd
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -62,13 +62,13 @@
             :tue: ma
             :wed: me
           :narrow: 
-            :fri: V
-            :mon: L
-            :sat: S
-            :sun: D
-            :thu: Ĵ
-            :tue: M
-            :wed: M
+            :fri: v
+            :mon: l
+            :sat: s
+            :sun: d
+            :thu: ĵ
+            :tue: m
+            :wed: m
           :short: 
             :fri: ve
             :mon: lu
@@ -95,13 +95,13 @@
             :tue: ma
             :wed: me
           :narrow: 
-            :fri: V
-            :mon: L
-            :sat: S
-            :sun: D
-            :thu: Ĵ
-            :tue: M
-            :wed: M
+            :fri: v
+            :mon: l
+            :sat: s
+            :sun: d
+            :thu: ĵ
+            :tue: m
+            :wed: m
           :short: 
             :fri: ve
             :mon: lu
@@ -120,14 +120,14 @@
             :wed: merkredo
       :eras: 
         :abbr: 
-          0: aK
-          1: pK
+          0: a.K.
+          1: p.K.
         :name: 
           0: "antaŭ Kristo"
           1: "post Kristo"
         :narrow: 
-          0: aK
-          1: KE
+          0: BCE
+          1: CE
       :fields: 
         :day: tago
         :day-narrow: t.
@@ -157,7 +157,7 @@
         :second-narrow: s
         :second-short: sek.
         :week: semajno
-        :week-narrow: sem.
+        :week-narrow: Week
         :week-short: sem.
         :weekOfMonth: "semajno de monato"
         :weekOfMonth-narrow: "sem. de mon."
@@ -169,7 +169,7 @@
         :weekdayOfMonth-narrow: "st. de monato"
         :weekdayOfMonth-short: "st. de monato"
         :year: jaro
-        :year-narrow: jaro
+        :year-narrow: Year
         :year-short: jaro
         :zone: horzono
         :zone-narrow: zono
@@ -177,7 +177,7 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d-'a' 'de' MMMM y"
+            :pattern: "EEEE, 'la' d-'a' 'de' MMMM y"
           :long: 
             :pattern: y-MMMM-dd
           :medium: 
@@ -195,7 +195,7 @@
             :pattern: "{{date}} {{time}}"
         :time: 
           :full: 
-            :pattern: "H-'a' 'horo' 'kaj' m:ss zzzz"
+            :pattern: "HH:mm:ss zzzz"
           :long: 
             :pattern: "HH:mm:ss z"
           :medium: 
@@ -205,18 +205,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: jan
-            10: okt
-            11: nov
-            12: dec
-            2: feb
-            3: mar
-            4: apr
-            5: maj
-            6: jun
-            7: jul
-            8: aŭg
-            9: sep
+            1: Jan
+            10: Okt
+            11: Nov
+            12: Dec
+            2: Feb
+            3: Mar
+            4: Apr
+            5: Maj
+            6: Jun
+            7: Jul
+            8: Aŭg
+            9: Sep
           :narrow: 
             1: J
             10: O
@@ -231,18 +231,18 @@
             8: A
             9: S
           :wide: 
-            1: januaro
-            10: oktobro
-            11: novembro
-            12: decembro
-            2: februaro
-            3: marto
-            4: aprilo
-            5: majo
-            6: junio
-            7: julio
-            8: aŭgusto
-            9: septembro
+            1: Januaro
+            10: Oktobro
+            11: Novembro
+            12: Decembro
+            2: Februaro
+            3: Marto
+            4: Aprilo
+            5: Majo
+            6: Junio
+            7: Julio
+            8: Aŭgusto
+            9: Septembro
         :stand-alone: 
           :abbreviated: 
             1: Jan
@@ -271,18 +271,18 @@
             8: A
             9: S
           :wide: 
-            1: januaro
-            10: oktobro
-            11: novembro
-            12: decembro
-            2: februaro
-            3: marto
-            4: aprilo
-            5: majo
-            6: junio
-            7: julio
-            8: aŭgusto
-            9: septembro
+            1: Januaro
+            10: Oktobro
+            11: Novembro
+            12: Decembro
+            2: Februaro
+            3: Marto
+            4: Aprilo
+            5: Majo
+            6: Junio
+            7: Julio
+            8: Aŭgusto
+            9: Septembro
       :periods: 
         :format: 
           :abbreviated: 

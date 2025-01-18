@@ -59,6 +59,13 @@ describe TwitterCldr::Formatters::Rbnf::RbnfFormatter do
 
               # running basic test suite only runs spellout-numbering tests (for speed)
               it "formats correctly", slow: rule_set_name != "spellout-numbering" do
+                if locale == :id && rule_set_name == "spellout-ordinal"
+                  pending(
+                    "Skipping Indonesian spellout-ordinal test cases, see: " \
+                    "https://unicode-org.atlassian.net/browse/CLDR-17730"
+                  )
+                end
+
                 test_data[group_name][rule_set_name].each_pair do |number, expected|
                   got = formatter.format(number, {
                     rule_group: group_name,

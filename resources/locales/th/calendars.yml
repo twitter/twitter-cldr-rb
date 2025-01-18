@@ -37,7 +37,7 @@
         :MMMd: "d MMM"
         :Md: d/M
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -136,11 +136,11 @@
           1: สามัญศักราช
         :narrow: 
           0: ก.ส.ศ.
-          1: ส.ศ.
+          1: CE
       :fields: 
         :day: วัน
-        :day-narrow: วัน
-        :day-short: วัน
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: วันของปี
         :dayOfYear-narrow: วันของปี
         :dayOfYear-short: วันของปี
@@ -154,20 +154,20 @@
         :hour-narrow: ชม.
         :hour-short: ชม.
         :minute: นาที
-        :minute-narrow: นาที
-        :minute-short: นาที
+        :minute-narrow: Minute
+        :minute-short: Minute
         :month: เดือน
-        :month-narrow: เดือน
-        :month-short: เดือน
+        :month-narrow: Month
+        :month-short: Month
         :quarter: ไตรมาส
-        :quarter-narrow: ไตรมาส
-        :quarter-short: ไตรมาส
+        :quarter-narrow: Quarter
+        :quarter-short: Quarter
         :second: วินาที
         :second-narrow: วิ
         :second-short: วิ
         :week: สัปดาห์
-        :week-narrow: สัปดาห์
-        :week-short: สัปดาห์
+        :week-narrow: Week
+        :week-short: Week
         :weekOfMonth: สัปดาห์ของเดือน
         :weekOfMonth-narrow: สัปดาห์ของเดือน
         :weekOfMonth-short: สัปดาห์ของเดือน
@@ -178,8 +178,8 @@
         :weekdayOfMonth-narrow: วันของเดือน
         :weekdayOfMonth-short: วันของเดือน
         :year: ปี
-        :year-narrow: ปี
-        :year-short: ปี
+        :year-narrow: Year
+        :year-short: Year
         :zone: เขตเวลา
         :zone-narrow: เขตเวลา
         :zone-short: โซน
@@ -317,50 +317,36 @@
             :noon: เที่ยง
             :pm: p
           :wide: 
-            :afternoon1: ในตอนบ่าย
-            :afternoon2: บ่าย
             :am: ก่อนเที่ยง
-            :evening1: ในตอนเย็น
-            :evening2: ค่ำ
-            :midnight: เที่ยงคืน
-            :morning1: ในตอนเช้า
-            :night1: กลางคืน
-            :noon: เที่ยง
             :pm: หลังเที่ยง
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: ในตอนบ่าย
+            :afternoon1: ตอนบ่าย
             :afternoon2: บ่าย
             :am: ก่อนเที่ยง
-            :evening1: ในตอนเย็น
+            :evening1: ตอนเย็น
             :evening2: ค่ำ
-            :midnight: เที่ยงคืน
-            :morning1: ในตอนเช้า
+            :morning1: ตอนเช้า
             :night1: กลางคืน
-            :noon: เที่ยง
             :pm: หลังเที่ยง
           :narrow: 
             :afternoon1: ช่วงเที่ยง
             :afternoon2: บ่าย
-            :am: ก่อนเที่ยง
+            :am: AM
             :evening1: เย็น
             :evening2: ค่ำ
-            :midnight: เที่ยงคืน
             :morning1: เช้า
             :night1: กลางคืน
-            :noon: เที่ยง
-            :pm: หลังเที่ยง
+            :pm: PM
           :wide: 
             :afternoon1: ในตอนบ่าย
             :afternoon2: บ่าย
-            :am: ก่อนเที่ยง
+            :am: AM
             :evening1: ในตอนเย็น
             :evening2: ค่ำ
-            :midnight: เที่ยงคืน
             :morning1: ในตอนเช้า
             :night1: กลางคืน
-            :noon: เที่ยง
-            :pm: หลังเที่ยง
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

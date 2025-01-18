@@ -5,9 +5,9 @@
       - az-t-d0-title
     :direction: forward
     :rules: 
-      - "[:cased:] [:case-ignorable:]* { İ > i;"
-      - "[:cased:] [:case-ignorable:]* { I > ı;"
-      - "[:cased:] [:case-ignorable:]* { (.) > &Any-Lower($1) ;"
+      - "[:Cased:] [:Case_Ignorable:]* { İ > i ;"
+      - "[:Cased:] [:Case_Ignorable:]* { I > ı ;"
+      - "[:Cased:] [:Case_Ignorable:]* { (.) > &Any-Lower($1) ;"
       - "i>İ ;"
       - "([:Lowercase:]) > &Any-Upper($1) ;"
     :source: az

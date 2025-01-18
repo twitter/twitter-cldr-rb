@@ -24,7 +24,6 @@ module TwitterCldr
 
         def apply_to(cursor)
           if forward_form
-            puts forward_form.transform if $debug
             forward_form.apply_to(cursor)
           end
         end

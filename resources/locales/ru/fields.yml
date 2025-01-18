@@ -21,13 +21,6 @@
           :one: "{0} день назад"
           :other: "{0} дня назад"
     :day-narrow: 
-      :display_name: дн.
-      :relative: 
-        -1: вчера
-        -2: позавчера
-        0: сегодня
-        1: завтра
-        2: послезавтра
       :relative_time: 
         :future: 
           :few: "+{0} дн."
@@ -41,12 +34,6 @@
           :other: "-{0} дн."
     :day-short: 
       :display_name: дн.
-      :relative: 
-        -1: вчера
-        -2: позавчера
-        0: сегодня
-        1: завтра
-        2: послезавтра
       :relative_time: 
         :future: 
           :few: "через {0} дн."
@@ -60,21 +47,11 @@
           :other: "{0} дн. назад"
     :dayOfYear: 
       :display_name: "день года"
-    :dayOfYear-narrow: 
-      :display_name: "дн. года"
     :dayOfYear-short: 
       :display_name: "дн. года"
     :dayperiod: 
       :display_name: AM/PM
-    :dayperiod-narrow: 
-      :display_name: AM/PM
-    :dayperiod-short: 
-      :display_name: AM/PM
     :era: 
-      :display_name: эра
-    :era-narrow: 
-      :display_name: эра
-    :era-short: 
       :display_name: эра
     :fri: 
       :relative: 
@@ -93,10 +70,6 @@
           :one: "{0} пятницу назад"
           :other: "{0} пятницы назад"
     :fri-narrow: 
-      :relative: 
-        -1: "в прош. пт."
-        0: "в эту пт."
-        1: "в след. пт."
       :relative_time: 
         :future: 
           :few: "+{0} пт."
@@ -140,9 +113,6 @@
           :one: "{0} час назад"
           :other: "{0} часа назад"
     :hour-narrow: 
-      :display_name: ч
-      :relative: 
-        0: "в этот час"
       :relative_time: 
         :future: 
           :few: "+{0} ч"
@@ -156,8 +126,6 @@
           :other: "-{0} ч"
     :hour-short: 
       :display_name: ч
-      :relative: 
-        0: "в этот час"
       :relative_time: 
         :future: 
           :few: "через {0} ч"
@@ -227,10 +195,6 @@
           :one: "{0} понедельник назад"
           :other: "{0} понедельника назад"
     :mon-narrow: 
-      :relative: 
-        -1: "в прош. пн."
-        0: "в этот пн."
-        1: "в след. пн."
       :relative_time: 
         :future: 
           :few: "+{0} пн."
@@ -276,7 +240,6 @@
           :one: "{0} месяц назад"
           :other: "{0} месяца назад"
     :month-narrow: 
-      :display_name: мес.
       :relative: 
         -1: "в пр. мес."
         0: "в эт. мес."
@@ -327,7 +290,6 @@
           :one: "{0} квартал назад"
           :other: "{0} квартала назад"
     :quarter-narrow: 
-      :display_name: кв.
       :relative: 
         -1: "посл. кв."
         0: "тек. кв."
@@ -377,10 +339,6 @@
           :one: "{0} субботу назад"
           :other: "{0} субботы назад"
     :sat-narrow: 
-      :relative: 
-        -1: "в прош. сб."
-        0: "в эту сб."
-        1: "в след. сб."
       :relative_time: 
         :future: 
           :few: "+{0} сб."
@@ -466,10 +424,6 @@
           :one: "{0} воскресенье назад"
           :other: "{0} воскресенья назад"
     :sun-narrow: 
-      :relative: 
-        -1: "в прош. вс."
-        0: "в это вс."
-        1: "в след. вс."
       :relative_time: 
         :future: 
           :few: "+{0} вс."
@@ -514,10 +468,6 @@
           :one: "{0} четверг назад"
           :other: "{0} четверга назад"
     :thu-narrow: 
-      :relative: 
-        -1: "в прош. чт."
-        0: "в этот чт."
-        1: "в след. чт."
       :relative_time: 
         :future: 
           :few: "+{0} чт."
@@ -562,10 +512,6 @@
           :one: "{0} вторник назад"
           :other: "{0} вторника назад"
     :tue-narrow: 
-      :relative: 
-        -1: "в прош. вт."
-        0: "в этот вт."
-        1: "в след. вт."
       :relative_time: 
         :future: 
           :few: "+{0} вт."
@@ -610,10 +556,6 @@
           :one: "{0} среду назад"
           :other: "{0} среды назад"
     :wed-narrow: 
-      :relative: 
-        -1: "в прош. ср."
-        0: "в эту ср."
-        1: "в след. ср."
       :relative_time: 
         :future: 
           :few: "+{0} ср."
@@ -659,7 +601,6 @@
           :one: "{0} неделю назад"
           :other: "{0} недели назад"
     :week-narrow: 
-      :display_name: нед.
       :relative: 
         -1: "на пр. нед."
         0: "на эт. нед."
@@ -728,7 +669,6 @@
           :one: "{0} год назад"
           :other: "{0} года назад"
     :year-narrow: 
-      :display_name: г.
       :relative: 
         -1: "в пр. г."
         0: "в эт. г."
@@ -763,7 +703,5 @@
           :other: "{0} г. назад"
     :zone: 
       :display_name: "часовой пояс"
-    :zone-narrow: 
-      :display_name: "час. пояс"
     :zone-short: 
       :display_name: "час. пояс"

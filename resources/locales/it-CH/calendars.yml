@@ -18,7 +18,7 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E d MMM y G"
         :GyMMMd: "d MMM y G"
-        :GyMd: "d/M/y GGGGG"
+        :GyMd: "dd/MM/y GGGGG"
         :H: HH
         :HHmm: "HH:mm"
         :HHmmss: "HH:mm:ss"
@@ -27,14 +27,14 @@
         :Hmsv: "HH:mm:ss v"
         :Hmv: "HH:mm v"
         :M: L
-        :MEd: "E d/M"
+        :MEd: "E dd/MM"
         :MMM: LLL
         :MMMEd: "E d MMM"
         :MMMMW: "'settimana' W 'di' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd.MM
-        :Md: d/M
+        :Md: dd/MM
         :d: d
         :h: h a
         :hhmm: "hh:mm a"
@@ -46,14 +46,14 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: M/y
-        :yMEd: "E d/M/y"
+        :yM: MM/y
+        :yMEd: "E dd/MM/y"
         :yMM: MM.y
         :yMMM: "MMM y"
         :yMMMEd: "E d MMM y"
         :yMMMM: "MMMM y"
         :yMMMd: "d MMM y"
-        :yMd: d/M/y
+        :yMd: dd/MM/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
         :yw: "'settimana' w 'del' Y"
@@ -132,8 +132,8 @@
           0: "avanti Era Volgare"
           1: "Era Volgare"
         :narrow: 
-          0: aC
-          1: dC
+          0: aEV
+          1: EV
       :fields: 
         :day: giorno
         :day-narrow: g.
@@ -160,7 +160,7 @@
         :quarter-narrow: trim.
         :quarter-short: trim.
         :second: secondo
-        :second-narrow: s
+        :second-narrow: Second
         :second-short: s
         :week: settimana
         :week-narrow: sett.
@@ -301,13 +301,7 @@
             :noon: mezzogiorno
             :pm: PM
           :narrow: 
-            :afternoon1: "di pomeriggio"
             :am: m.
-            :evening1: "di sera"
-            :midnight: mezzanotte
-            :morning1: "di mattina"
-            :night1: "di notte"
-            :noon: mezzogiorno
             :pm: p.
           :wide: 
             :afternoon1: "del pomeriggio"
@@ -323,28 +317,18 @@
             :afternoon1: pomeriggio
             :am: AM
             :evening1: sera
-            :midnight: mezzanotte
             :morning1: mattina
             :night1: notte
-            :noon: mezzogiorno
             :pm: PM
           :narrow: 
-            :afternoon1: pomeriggio
             :am: m.
-            :evening1: sera
-            :midnight: mezzanotte
-            :morning1: mattina
-            :night1: notte
-            :noon: mezzogiorno
             :pm: p.
           :wide: 
             :afternoon1: pomeriggio
             :am: AM
             :evening1: sera
-            :midnight: mezzanotte
             :morning1: mattina
             :night1: notte
-            :noon: mezzogiorno
             :pm: PM
       :quarters: 
         :format: 

@@ -5,12 +5,12 @@
       - ar-t-es-419
     :direction: forward
     :rules: 
-      - "$Boundary =  [^[:L:][:M:][:N:]];"
-      - "$Vowel = [i e o u a];"
-      - "::es-es_FONIPA;"
-      - "::es_FONIPA-es_419_FONIPA;"
-      - "$Boundary [^Vowel] {e} [^$Vowel]* $Vowel > ə;"
-      - "::und_FONIPA-ar;"
+      - "$Boundary =  [^[:L:][:M:][:N:]] ;"
+      - "$Vowel = [i e o u a] ;"
+      - "::es-es_FONIPA ;"
+      - "::es_FONIPA-es_419_FONIPA ;"
+      - "$Boundary [^Vowel] {e} [^$Vowel]* $Vowel > ə ;"
+      - "::und_FONIPA-ar ;"
     :source: es_419
     :target: ar
     :variant: ~

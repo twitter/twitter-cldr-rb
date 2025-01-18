@@ -42,7 +42,7 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : y年
-        :yM: y年M月
+        :yM: y/M
         :yMEEEEd: y年M月d日EEEE
         :yMEd: y/M/dE
         :yMM: y年M月
@@ -126,11 +126,11 @@
           0: 公元前
           1: 公元
         :name: 
-          0: 公元前
-          1: 公元
+          0: BCE
+          1: CE
         :narrow: 
-          0: 公元前
-          1: 公元
+          0: BCE
+          1: CE
       :fields: 
         :day: 日
         :day-narrow: 日
@@ -157,17 +157,17 @@
         :quarter-narrow: 季
         :quarter-short: 季
         :second: 秒
-        :second-narrow: 秒
-        :second-short: 秒
+        :second-narrow: Second
+        :second-short: Second
         :week: 周
         :week-narrow: 周
         :week-short: 周
         :weekOfMonth: 月中周
         :weekOfMonth-narrow: 月中周
         :weekOfMonth-short: 月中周
-        :weekday: 工作日
-        :weekday-narrow: 工作日
-        :weekday-short: 工作日
+        :weekday: 星期
+        :weekday-narrow: 星期
+        :weekday-short: 星期
         :weekdayOfMonth: 月中日
         :weekdayOfMonth-narrow: 月中日
         :weekdayOfMonth-short: 月中日
@@ -311,13 +311,13 @@
           :wide: 
             :afternoon1: 中午
             :afternoon2: 下午
-            :am: 上午
+            :am: AM
             :evening1: 晚上
             :midnight: 午夜
             :morning1: 清晨
             :morning2: 上午
             :night1: 凌晨
-            :pm: 下午
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: 中午

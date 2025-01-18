@@ -55,6 +55,10 @@ age:
   :long_name: V14_0
 - :abbreviated_name: '15.0'
   :long_name: V15_0
+- :abbreviated_name: '15.1'
+  :long_name: V15_1
+- :abbreviated_name: '16.0'
+  :long_name: V16_0
 - :abbreviated_name: NA
   :long_name: Unassigned
 Alpha:
@@ -243,6 +247,8 @@ blk:
   :long_name: CJK_Unified_Ideographs_Extension_G
 - :abbreviated_name: CJK_Ext_H
   :long_name: CJK_Unified_Ideographs_Extension_H
+- :abbreviated_name: CJK_Ext_I
+  :long_name: CJK_Unified_Ideographs_Extension_I
 - :abbreviated_name: CJK_Radicals_Sup
   :long_name: CJK_Radicals_Supplement
 - :abbreviated_name: CJK_Strokes
@@ -313,6 +319,8 @@ blk:
   :long_name: Egyptian_Hieroglyph_Format_Controls
 - :abbreviated_name: Egyptian_Hieroglyphs
   :long_name: Egyptian_Hieroglyphs
+- :abbreviated_name: Egyptian_Hieroglyphs_Ext_A
+  :long_name: Egyptian_Hieroglyphs_Extended_A
 - :abbreviated_name: Elbasan
   :long_name: Elbasan
 - :abbreviated_name: Elymaic
@@ -337,6 +345,8 @@ blk:
   :long_name: Ethiopic_Extended_B
 - :abbreviated_name: Ethiopic_Sup
   :long_name: Ethiopic_Supplement
+- :abbreviated_name: Garay
+  :long_name: Garay
 - :abbreviated_name: Geometric_Shapes
   :long_name: Geometric_Shapes
 - :abbreviated_name: Geometric_Shapes_Ext
@@ -365,6 +375,8 @@ blk:
   :long_name: Gunjala_Gondi
 - :abbreviated_name: Gurmukhi
   :long_name: Gurmukhi
+- :abbreviated_name: Gurung_Khema
+  :long_name: Gurung_Khema
 - :abbreviated_name: Half_And_Full_Forms
   :long_name: Halfwidth_And_Fullwidth_Forms
 - :abbreviated_name: Half_Marks
@@ -445,6 +457,8 @@ blk:
   :long_name: Khojki
 - :abbreviated_name: Khudawadi
   :long_name: Khudawadi
+- :abbreviated_name: Kirat_Rai
+  :long_name: Kirat_Rai
 - :abbreviated_name: Lao
   :long_name: Lao
 - :abbreviated_name: Latin_1_Sup
@@ -557,6 +571,8 @@ blk:
   :long_name: Myanmar_Extended_A
 - :abbreviated_name: Myanmar_Ext_B
   :long_name: Myanmar_Extended_B
+- :abbreviated_name: Myanmar_Ext_C
+  :long_name: Myanmar_Extended_C
 - :abbreviated_name: Nabataean
   :long_name: Nabataean
 - :abbreviated_name: Nag_Mundari
@@ -583,6 +599,8 @@ blk:
   :long_name: Ogham
 - :abbreviated_name: Ol_Chiki
   :long_name: Ol_Chiki
+- :abbreviated_name: Ol_Onal
+  :long_name: Ol_Onal
 - :abbreviated_name: Old_Hungarian
   :long_name: Old_Hungarian
 - :abbreviated_name: Old_Italic
@@ -673,6 +691,8 @@ blk:
   :long_name: Sundanese
 - :abbreviated_name: Sundanese_Sup
   :long_name: Sundanese_Supplement
+- :abbreviated_name: Sunuwar
+  :long_name: Sunuwar
 - :abbreviated_name: Sup_Arrows_A
   :long_name: Supplemental_Arrows_A
 - :abbreviated_name: Sup_Arrows_B
@@ -699,6 +719,8 @@ blk:
   :long_name: Symbols_And_Pictographs_Extended_A
 - :abbreviated_name: Symbols_For_Legacy_Computing
   :long_name: Symbols_For_Legacy_Computing
+- :abbreviated_name: Symbols_For_Legacy_Computing_Sup
+  :long_name: Symbols_For_Legacy_Computing_Supplement
 - :abbreviated_name: Syriac
   :long_name: Syriac
 - :abbreviated_name: Syriac_Sup
@@ -743,10 +765,14 @@ blk:
   :long_name: Tifinagh
 - :abbreviated_name: Tirhuta
   :long_name: Tirhuta
+- :abbreviated_name: Todhri
+  :long_name: Todhri
 - :abbreviated_name: Toto
   :long_name: Toto
 - :abbreviated_name: Transport_And_Map
   :long_name: Transport_And_Map_Symbols
+- :abbreviated_name: Tulu_Tigalari
+  :long_name: Tulu_Tigalari
 - :abbreviated_name: UCAS
   :long_name: Unified_Canadian_Aboriginal_Syllabics
 - :abbreviated_name: UCAS_Ext
@@ -1295,6 +1321,21 @@ IDST:
   :long_name: 'No'
 - :abbreviated_name: Y
   :long_name: 'Yes'
+IDSU:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+ID_Compat_Math_Continue:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+ID_Compat_Math_Start:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
 IDC:
 - :abbreviated_name: N
   :long_name: 'No'
@@ -1310,6 +1351,15 @@ Ideo:
   :long_name: 'No'
 - :abbreviated_name: Y
   :long_name: 'Yes'
+InCB:
+- :abbreviated_name: Consonant
+  :long_name: Consonant
+- :abbreviated_name: Extend
+  :long_name: Extend
+- :abbreviated_name: Linker
+  :long_name: Linker
+- :abbreviated_name: None
+  :long_name: None
 InPC:
 - :abbreviated_name: Bottom
   :long_name: Bottom
@@ -1400,6 +1450,8 @@ InSC:
   :long_name: Pure_Killer
 - :abbreviated_name: Register_Shifter
   :long_name: Register_Shifter
+- :abbreviated_name: Reordering_Killer
+  :long_name: Reordering_Killer
 - :abbreviated_name: Syllable_Modifier
   :long_name: Syllable_Modifier
 - :abbreviated_name: Tone_Letter
@@ -1581,6 +1633,8 @@ jg:
   :long_name: Kaf
 - :abbreviated_name: Kaph
   :long_name: Kaph
+- :abbreviated_name: Kashmiri_Yeh
+  :long_name: Kashmiri_Yeh
 - :abbreviated_name: Khaph
   :long_name: Khaph
 - :abbreviated_name: Knotted_Heh
@@ -1712,7 +1766,7 @@ jg:
 - :abbreviated_name: Teh_Marbuta
   :long_name: Teh_Marbuta
 - :abbreviated_name: Teh_Marbuta_Goal
-  :long_name: Hamza_On_Heh_Goal
+  :long_name: Teh_Marbuta_Goal
 - :abbreviated_name: Teth
   :long_name: Teth
 - :abbreviated_name: Thin_Yeh
@@ -1751,8 +1805,14 @@ jt:
 lb:
 - :abbreviated_name: AI
   :long_name: Ambiguous
+- :abbreviated_name: AK
+  :long_name: Aksara
 - :abbreviated_name: AL
   :long_name: Alphabetic
+- :abbreviated_name: AP
+  :long_name: Aksara_Prebase
+- :abbreviated_name: AS
+  :long_name: Aksara_Start
 - :abbreviated_name: B2
   :long_name: Break_Both
 - :abbreviated_name: BA
@@ -1827,6 +1887,10 @@ lb:
   :long_name: Space
 - :abbreviated_name: SY
   :long_name: Break_Symbols
+- :abbreviated_name: VF
+  :long_name: Virama_Final
+- :abbreviated_name: VI
+  :long_name: Virama
 - :abbreviated_name: WJ
   :long_name: Word_Joiner
 - :abbreviated_name: XX
@@ -1846,6 +1910,11 @@ Lower:
 - :abbreviated_name: Y
   :long_name: 'Yes'
 Math:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+MCM:
 - :abbreviated_name: N
   :long_name: 'No'
 - :abbreviated_name: Y
@@ -2033,6 +2102,8 @@ sc:
   :long_name: Elymaic
 - :abbreviated_name: Ethi
   :long_name: Ethiopic
+- :abbreviated_name: Gara
+  :long_name: Garay
 - :abbreviated_name: Geor
   :long_name: Georgian
 - :abbreviated_name: Glag
@@ -2049,6 +2120,8 @@ sc:
   :long_name: Greek
 - :abbreviated_name: Gujr
   :long_name: Gujarati
+- :abbreviated_name: Gukh
+  :long_name: Gurung_Khema
 - :abbreviated_name: Guru
   :long_name: Gurmukhi
 - :abbreviated_name: Hang
@@ -2093,6 +2166,8 @@ sc:
   :long_name: Khitan_Small_Script
 - :abbreviated_name: Knda
   :long_name: Kannada
+- :abbreviated_name: Krai
+  :long_name: Kirat_Rai
 - :abbreviated_name: Kthi
   :long_name: Kaithi
 - :abbreviated_name: Lana
@@ -2165,6 +2240,8 @@ sc:
   :long_name: Ogham
 - :abbreviated_name: Olck
   :long_name: Ol_Chiki
+- :abbreviated_name: Onao
+  :long_name: Ol_Onal
 - :abbreviated_name: Orkh
   :long_name: Old_Turkic
 - :abbreviated_name: Orya
@@ -2227,6 +2304,8 @@ sc:
   :long_name: Soyombo
 - :abbreviated_name: Sund
   :long_name: Sundanese
+- :abbreviated_name: Sunu
+  :long_name: Sunuwar
 - :abbreviated_name: Sylo
   :long_name: Syloti_Nagri
 - :abbreviated_name: Syrc
@@ -2261,8 +2340,12 @@ sc:
   :long_name: Tirhuta
 - :abbreviated_name: Tnsa
   :long_name: Tangsa
+- :abbreviated_name: Todr
+  :long_name: Todhri
 - :abbreviated_name: Toto
   :long_name: Toto
+- :abbreviated_name: Tutg
+  :long_name: Tulu_Tigalari
 - :abbreviated_name: Ugar
   :long_name: Ugaritic
 - :abbreviated_name: Vaii
@@ -2417,6 +2500,16 @@ XIDC:
 - :abbreviated_name: Y
   :long_name: 'Yes'
 XIDS:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+kEH_NoMirror:
+- :abbreviated_name: N
+  :long_name: 'No'
+- :abbreviated_name: Y
+  :long_name: 'Yes'
+kEH_NoRotate:
 - :abbreviated_name: N
   :long_name: 'No'
 - :abbreviated_name: Y

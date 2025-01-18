@@ -16,25 +16,8 @@
         :past: 
           :one: "{0} päeva eest"
           :other: "{0} päeva eest"
-    :day-narrow: 
-      :display_name: p
-      :relative: 
-        -1: eile
-        0: täna
-        1: homme
-      :relative_time: 
-        :future: 
-          :one: "{0} p pärast"
-          :other: "{0} p pärast"
-        :past: 
-          :one: "{0} p eest"
-          :other: "{0} p eest"
     :day-short: 
       :display_name: p
-      :relative: 
-        -1: eile
-        0: täna
-        1: homme
       :relative_time: 
         :future: 
           :one: "{0} p pärast"
@@ -44,21 +27,11 @@
           :other: "{0} p eest"
     :dayOfYear: 
       :display_name: "aasta päev"
-    :dayOfYear-narrow: 
-      :display_name: "aasta p"
     :dayOfYear-short: 
       :display_name: "aasta p"
     :dayperiod: 
       :display_name: "enne/pärast lõunat"
-    :dayperiod-narrow: 
-      :display_name: "enne/pärast lõunat"
-    :dayperiod-short: 
-      :display_name: "enne/pärast lõunat"
     :era: 
-      :display_name: ajastu
-    :era-narrow: 
-      :display_name: ajastu
-    :era-short: 
       :display_name: ajastu
     :fri: 
       :relative: 
@@ -84,18 +57,6 @@
         :past: 
           :one: "{0} R eest"
           :other: "{0} R eest"
-    :fri-short: 
-      :relative: 
-        -1: "eelmine reede"
-        0: "käesolev reede"
-        1: "järgmine reede"
-      :relative_time: 
-        :future: 
-          :one: "{0} reede pärast"
-          :other: "{0} reede pärast"
-        :past: 
-          :one: "{0} reede eest"
-          :other: "{0} reede eest"
     :hour: 
       :display_name: tund
       :relative: 
@@ -107,15 +68,6 @@
         :past: 
           :one: "{0} tunni eest"
           :other: "{0} tunni eest"
-    :hour-narrow: 
-      :display_name: t
-      :relative_time: 
-        :future: 
-          :one: "{0} t pärast"
-          :other: "{0} t pärast"
-        :past: 
-          :one: "{0} t eest"
-          :other: "{0} t eest"
     :hour-short: 
       :display_name: t
       :relative_time: 
@@ -136,15 +88,6 @@
         :past: 
           :one: "{0} minuti eest"
           :other: "{0} minuti eest"
-    :minute-narrow: 
-      :display_name: min
-      :relative_time: 
-        :future: 
-          :one: "{0} min pärast"
-          :other: "{0} min pärast"
-        :past: 
-          :one: "{0} min eest"
-          :other: "{0} min eest"
     :minute-short: 
       :display_name: min
       :relative_time: 
@@ -204,7 +147,6 @@
           :one: "{0} kuu eest"
           :other: "{0} kuu eest"
     :month-narrow: 
-      :display_name: k
       :relative: 
         -1: "eelm. k"
         0: "see k"
@@ -222,13 +164,6 @@
         -1: "eelm. kuu"
         0: "see kuu"
         1: "järgm. kuu"
-      :relative_time: 
-        :future: 
-          :one: "{0} kuu pärast"
-          :other: "{0} kuu pärast"
-        :past: 
-          :one: "{0} kuu eest"
-          :other: "{0} kuu eest"
     :quarter: 
       :display_name: kvartal
       :relative: 
@@ -242,19 +177,6 @@
         :past: 
           :one: "{0} kvartali eest"
           :other: "{0} kvartali eest"
-    :quarter-narrow: 
-      :display_name: kv
-      :relative: 
-        -1: "eelmine kv"
-        0: "käesolev kv"
-        1: "järgmine kv"
-      :relative_time: 
-        :future: 
-          :one: "{0} kv pärast"
-          :other: "{0} kv pärast"
-        :past: 
-          :one: "{0} kv eest"
-          :other: "{0} kv eest"
     :quarter-short: 
       :display_name: kv
       :relative: 
@@ -491,18 +413,10 @@
           :one: "{0} nädala eest"
           :other: "{0} nädala eest"
     :week-narrow: 
-      :display_name: näd
       :relative: 
         -1: "eelm. n"
         0: "see n"
         1: "järgm. n"
-      :relative_time: 
-        :future: 
-          :one: "{0} näd pärast"
-          :other: "{0} näd pärast"
-        :past: 
-          :one: "{0} näd eest"
-          :other: "{0} näd eest"
     :week-short: 
       :display_name: näd
       :relative: 
@@ -518,20 +432,14 @@
           :other: "{0} näd eest"
     :weekOfMonth: 
       :display_name: "kuu nädal"
-    :weekOfMonth-narrow: 
-      :display_name: "kuu näd"
     :weekOfMonth-short: 
       :display_name: "kuu näd"
     :weekday: 
       :display_name: nädalapäev
-    :weekday-narrow: 
-      :display_name: nädalap.
     :weekday-short: 
       :display_name: nädalap.
     :weekdayOfMonth: 
       :display_name: "kuu nädalapäev"
-    :weekdayOfMonth-narrow: 
-      :display_name: "kuu nädalap."
     :weekdayOfMonth-short: 
       :display_name: "kuu nädalap."
     :year: 
@@ -548,18 +456,10 @@
           :one: "{0} aasta eest"
           :other: "{0} aasta eest"
     :year-narrow: 
-      :display_name: a
       :relative: 
         -1: "eelm. a"
         0: "see a"
         1: "järgm. a"
-      :relative_time: 
-        :future: 
-          :one: "{0} a pärast"
-          :other: "{0} a pärast"
-        :past: 
-          :one: "{0} a eest"
-          :other: "{0} a eest"
     :year-short: 
       :display_name: a
       :relative: 
@@ -575,7 +475,5 @@
           :other: "{0} a eest"
     :zone: 
       :display_name: ajavöönd
-    :zone-narrow: 
-      :display_name: vöönd
     :zone-short: 
       :display_name: vöönd

@@ -148,8 +148,8 @@
         :dayOfYear-narrow: "día del año"
         :dayOfYear-short: "día del año"
         :dayperiod: a. m./p. m.
-        :dayperiod-narrow: a.m./p.m.
-        :dayperiod-short: a.m./p.m.
+        :dayperiod-narrow: a. m./p. m.
+        :dayperiod-short: a. m./p. m.
         :era: era
         :era-narrow: era
         :era-short: era
@@ -202,18 +202,18 @@
           :long: 
             :pattern: "{{date}}, {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -307,19 +307,14 @@
             :pm: p. m.
           :narrow: 
             :am: a. m.
-            :evening1: "de la tarde"
-            :morning1: "de la madrugada"
-            :morning2: "de la mañana"
-            :night1: "de la noche"
-            :noon: "del mediodía"
-            :pm: p. m.
-          :wide: 
-            :am: a. m.
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
+            :pm: p. m.
+          :wide: 
+            :am: a. m.
             :pm: p. m.
         :stand-alone: 
           :abbreviated: 
@@ -340,11 +335,6 @@
             :pm: p. m.
           :wide: 
             :am: a. m.
-            :evening1: tarde
-            :morning1: madrugada
-            :morning2: mañana
-            :night1: noche
-            :noon: mediodía
             :pm: p. m.
       :quarters: 
         :format: 

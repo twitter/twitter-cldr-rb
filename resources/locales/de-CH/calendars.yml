@@ -44,7 +44,7 @@
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
-        :yM: MM/y
+        :yM: M/y
         :yMEd: "E, d.M.y"
         :yMM: MM.y
         :yMMM: "MMM y"
@@ -108,13 +108,13 @@
             :tue: D
             :wed: M
           :short: 
-            :fri: Fr.
-            :mon: Mo.
-            :sat: Sa.
-            :sun: So.
-            :thu: Do.
-            :tue: Di.
-            :wed: Mi.
+            :fri: Fr
+            :mon: Mo
+            :sat: Sa
+            :sun: So
+            :thu: Do
+            :tue: Di
+            :wed: Mi
           :wide: 
             :fri: Freitag
             :mon: Montag
@@ -131,8 +131,8 @@
           0: "vor unserer Zeitrechnung"
           1: "unserer Zeitrechnung"
         :narrow: 
-          0: "v. u. Z."
-          1: "u. Z."
+          0: BCE
+          1: CE
       :fields: 
         :day: Tag
         :day-narrow: Tag
@@ -145,21 +145,21 @@
         :dayperiod-short: Tageshälfte
         :era: Epoche
         :era-narrow: Epoche
-        :era-short: Epoche
+        :era-short: Ep.
         :hour: Stunde
         :hour-narrow: Std.
         :hour-short: Std.
         :minute: Minute
-        :minute-narrow: Min.
+        :minute-narrow: Minute
         :minute-short: Min.
         :month: Monat
         :month-narrow: M
-        :month-short: Monat
+        :month-short: Mon.
         :quarter: Quartal
         :quarter-narrow: Q
         :quarter-short: Quart.
         :second: Sekunde
-        :second-narrow: Sek.
+        :second-narrow: Second
         :second-short: Sek.
         :week: Woche
         :week-narrow: W
@@ -326,7 +326,6 @@
             :afternoon2: Nachm.
             :am: AM
             :evening1: Abend
-            :midnight: Mitternacht
             :morning1: Morgen
             :morning2: Vorm.
             :night1: Nacht
@@ -336,7 +335,6 @@
             :afternoon2: Nachm.
             :am: AM
             :evening1: Abend
-            :midnight: Mitternacht
             :morning1: Morgen
             :morning2: Vorm.
             :night1: Nacht
@@ -346,7 +344,6 @@
             :afternoon2: Nachmittag
             :am: AM
             :evening1: Abend
-            :midnight: Mitternacht
             :morning1: Morgen
             :morning2: Vormittag
             :night1: Nacht

@@ -28,12 +28,12 @@
         :MEd: "dd.MM, E"
         :MMM: LLL
         :MMMEd: "d MMM, E"
-        :MMMMW: "MMMM W-ին շաբաթ"
-        :MMMMd: "MMMM d"
+        :MMMMW: "MMMM W-րդ շաբաթ"
+        :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :Md: dd.MM
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -50,7 +50,7 @@
         :yMd: dd.MM.y
         :yQQQ: "y թ. QQQ"
         :yQQQQ: "y թ. QQQQ"
-        :yw: "Y թ․ w-ին շաբաթ"
+        :yw: "Y թ․ w-րդ շաբաթ"
       :days: 
         :format: 
           :abbreviated: 
@@ -130,8 +130,8 @@
           1: CE
       :fields: 
         :day: օր
-        :day-narrow: օր
-        :day-short: օր
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "տարվա օր"
         :dayOfYear-narrow: "տարվա օր"
         :dayOfYear-short: "տարվա օր"
@@ -154,10 +154,10 @@
         :quarter-narrow: եռմս
         :quarter-short: եռմս
         :second: վայրկյան
-        :second-narrow: վ
+        :second-narrow: Second
         :second-short: վ
         :week: շաբաթ
-        :week-narrow: շաբ
+        :week-narrow: Week
         :week-short: շաբ
         :weekOfMonth: "ամսվա շաբաթ"
         :weekOfMonth-narrow: "ամս շաբ"
@@ -317,28 +317,22 @@
             :afternoon1: ցերեկ
             :am: AM
             :evening1: երեկո
-            :midnight: կեսգիշեր
             :morning1: առավոտ
             :night1: գիշեր
-            :noon: կեսօր
             :pm: PM
           :narrow: 
             :afternoon1: ցերեկ
             :am: AM
             :evening1: երեկո
-            :midnight: կեսգիշեր
             :morning1: առավոտ
             :night1: գիշեր
-            :noon: կեսօր
             :pm: PM
           :wide: 
             :afternoon1: ցերեկ
             :am: AM
             :evening1: երեկո
-            :midnight: կեսգիշեր
             :morning1: առավոտ
             :night1: գիշեր
-            :noon: կեսօր
             :pm: PM
       :quarters: 
         :format: 

@@ -29,7 +29,7 @@
         :MMM: LLL
         :MMMEd: "E, MMM d"
         :MMMMEd: "E, MMMM d"
-        :MMMMW: "'ika'-W 'linggo' 'ng' MMMM"
+        :MMMMW: "'linggo' W 'ng' MMMM"
         :MMMMd: "MMMM d"
         :MMMd: "MMM d"
         :Md: M/d
@@ -52,7 +52,7 @@
         :yMd: M/d/y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
-        :yw: "'ika'-w 'linggo' 'ng' Y"
+        :yw: "'linggo' w 'ng' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -72,13 +72,13 @@
             :tue: Mar
             :wed: Miy
           :short: 
-            :fri: Bi
-            :mon: Lu
-            :sat: Sa
-            :sun: Li
-            :thu: Hu
-            :tue: Ma
-            :wed: Mi
+            :fri: Biy
+            :mon: Lun
+            :sat: Sab
+            :sun: Lin
+            :thu: Huw
+            :tue: Mar
+            :wed: Miy
           :wide: 
             :fri: Biyernes
             :mon: Lunes
@@ -105,13 +105,13 @@
             :tue: Mar
             :wed: Miy
           :short: 
-            :fri: Bi
-            :mon: Lu
-            :sat: Sa
-            :sun: Li
-            :thu: Hu
-            :tue: Ma
-            :wed: Mi
+            :fri: Biy
+            :mon: Lun
+            :sat: Sab
+            :sun: Lin
+            :thu: Huw
+            :tue: Mar
+            :wed: Miy
           :wide: 
             :fri: Biyernes
             :mon: Lunes
@@ -132,8 +132,8 @@
           1: CE
       :fields: 
         :day: araw
-        :day-narrow: araw
-        :day-short: araw
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "araw ng taon"
         :dayOfYear-narrow: "araw ng taon"
         :dayOfYear-short: "araw ng taon"
@@ -144,8 +144,8 @@
         :era-narrow: panahon
         :era-short: panahon
         :hour: oras
-        :hour-narrow: oras
-        :hour-short: oras
+        :hour-narrow: Hour
+        :hour-short: Hour
         :minute: minuto
         :minute-narrow: min.
         :minute-short: min.
@@ -159,8 +159,8 @@
         :second-narrow: seg.
         :second-short: seg.
         :week: linggo
-        :week-narrow: linggo
-        :week-short: linggo
+        :week-narrow: Week
+        :week-short: Week
         :weekOfMonth: "linggo ng buwan"
         :weekOfMonth-narrow: "linggo ng buwan"
         :weekOfMonth-short: "linggo ng buwan"
@@ -288,31 +288,31 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: tanghali
+            :afternoon1: "ng hapon"
             :am: AM
             :evening1: "ng gabi"
             :midnight: hatinggabi
-            :morning1: "nang umaga"
+            :morning1: "ng umaga"
             :morning2: madaling-araw
-            :night1: gabi
+            :night1: "ng gabi"
             :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
-            :afternoon1: "sa hapon"
+            :afternoon1: "ng hapon"
             :am: am
-            :evening1: "sa gabi"
+            :evening1: "ng gabi"
             :midnight: hatinggabi
-            :morning1: umaga
+            :morning1: "ng umaga"
             :morning2: madaling-araw
-            :night1: gabi
+            :night1: "ng gabi"
             :noon: tanghaling-tapat
             :pm: pm
           :wide: 
-            :afternoon1: tanghali
+            :afternoon1: "ng hapon"
             :am: AM
             :evening1: "ng gabi"
             :midnight: hatinggabi
-            :morning1: "nang umaga"
+            :morning1: "ng umaga"
             :morning2: madaling-araw
             :night1: "ng gabi"
             :noon: tanghaling-tapat
@@ -321,32 +321,26 @@
           :abbreviated: 
             :afternoon1: hapon
             :am: AM
-            :evening1: "ng gabi"
-            :midnight: hatinggabi
+            :evening1: gabi
             :morning1: umaga
             :morning2: madaling-araw
             :night1: gabi
-            :noon: tanghaling-tapat
             :pm: PM
           :narrow: 
             :afternoon1: hapon
             :am: AM
-            :evening1: "sa gabi"
-            :midnight: hatinggabi
+            :evening1: gabi
             :morning1: umaga
             :morning2: madaling-araw
             :night1: gabi
-            :noon: tanghaling-tapat
             :pm: PM
           :wide: 
             :afternoon1: hapon
             :am: AM
-            :evening1: "ng gabi"
-            :midnight: hatinggabi
+            :evening1: gabi
             :morning1: umaga
             :morning2: madaling-araw
             :night1: gabi
-            :noon: tanghaling-tapat
             :pm: PM
       :quarters: 
         :format: 

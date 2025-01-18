@@ -4,7 +4,6 @@ gemspec
 
 group :development, :test do
   gem 'rake'
-  gem 'pry-byebug' unless RUBY_PLATFORM == 'java'
   gem 'ruby-prof' unless RUBY_PLATFORM == 'java'
   gem 'regexp_parser', '~> 0.5'
   gem 'benchmark-ips'
@@ -13,7 +12,7 @@ group :development, :test do
   # gemspec allows any version, but most people are probably using 1.x, so
   # let's test and develop against that
   gem 'tzinfo', '< 2'
-  gem 'tzinfo-data', '= 1.2023.3'  # try to keep in sync with ICU
+  gem 'tzinfo-data', '= 1.2024.2'  # try to keep in sync with ICU
 end
 
 group :development do

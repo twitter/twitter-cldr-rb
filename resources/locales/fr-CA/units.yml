@@ -85,6 +85,9 @@
         :concentr-permyriad: 
           :one: "{0} pour dix mille"
           :other: "{0} pour dix mille"
+        :concentr-portion-per-1e9: 
+          :one: "{0} partie par milliard"
+          :other: "{0} parties par milliard"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} litre aux 100 kilomètres"
           :other: "{0} litres aux 100 kilomètres"
@@ -157,6 +160,9 @@
         :duration-nanosecond: 
           :one: "{0} nanoseconde"
           :other: "{0} nanosecondes"
+        :duration-night: 
+          :one: "{0} nuit"
+          :other: "{0} nuits"
         :duration-quarter: 
           :one: "{0} trimestre"
           :other: "{0} trimestres"
@@ -167,7 +173,7 @@
           :one: "{0} semaine"
           :other: "{0} semaines"
         :duration-year: 
-          :one: "{0} an"
+          :one: "{0} an"
           :other: "{0} ans"
         :electric-ampere: 
           :one: "{0} ampère"
@@ -374,8 +380,8 @@
           :one: "{0} tonne courte"
           :other: "{0} tonnes courtes"
         :mass-tonne: 
-          :one: "{0} tonne"
-          :other: "{0} tonnes"
+          :one: "{0} tonne"
+          :other: "{0} tonnes"
         :power-gigawatt: 
           :one: "{0} gigawatt"
           :other: "{0} gigawatts"
@@ -397,9 +403,6 @@
         :pressure-atmosphere: 
           :one: "{0} atmosphère"
           :other: "{0} atmosphères"
-        :pressure-bar: 
-          :one: "{0} bar"
-          :other: "{0} bars"
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascals"
@@ -424,12 +427,18 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0} livre-force par pouce carré"
           :other: "{0} livres-force par pouce carré"
+        :speed-beaufort: 
+          :one: "{0} degré Beaufort"
+          :other: "{0} degrés Beaufort"
         :speed-kilometer-per-hour: 
           :one: "{0} kilomètre par heure"
           :other: "{0} kilomètres par heure"
         :speed-knot: 
           :one: "{0} nœud"
           :other: "{0} nœuds"
+        :speed-light-speed: 
+          :one: "{0} lumière"
+          :other: "{0} lumière"
         :speed-meter-per-second: 
           :one: "{0} mètre par seconde"
           :other: "{0} mètres par seconde"
@@ -487,9 +496,6 @@
         :volume-cubic-yard: 
           :one: "{0} verge cube"
           :other: "{0} verges cubes"
-        :volume-cup: 
-          :one: "{0} tasse"
-          :other: "{0} tasses"
         :volume-cup-metric: 
           :one: "{0} tasse métrique"
           :other: "{0} tasses métriques"
@@ -523,9 +529,6 @@
         :volume-hectoliter: 
           :one: "{0} hectolitre"
           :other: "{0} hectolitres"
-        :volume-jigger: 
-          :one: "{0} gobelet doseur"
-          :other: "{0} gobelets doseurs"
         :volume-liter: 
           :one: "{0} litre"
           :other: "{0} litres"
@@ -535,9 +538,6 @@
         :volume-milliliter: 
           :one: "{0} millilitre"
           :other: "{0} millilitres"
-        :volume-pinch: 
-          :one: "{0} pincée"
-          :other: "{0} pincées"
         :volume-pint: 
           :one: "{0} chopine"
           :other: "{0} chopines"
@@ -557,21 +557,9 @@
           :one: "{0} cuillère à thé"
           :other: "{0} cuillères à thé"
       :narrow: 
-        :acceleration-g-force: 
-          :one: "{0} G"
-          :other: "{0} G"
         :acceleration-meter-per-square-second: 
           :one: "{0}m/s²"
           :other: "{0}m/s²"
-        :angle-arc-minute: 
-          :one: "{0}′"
-          :other: "{0}′"
-        :angle-arc-second: 
-          :one: "{0}″"
-          :other: "{0}″"
-        :angle-degree: 
-          :one: "{0}°"
-          :other: "{0}°"
         :angle-radian: 
           :one: "{0}rad"
           :other: "{0}rad"
@@ -623,9 +611,6 @@
         :concentr-mole: 
           :one: "{0}mol"
           :other: "{0}mol"
-        :concentr-percent: 
-          :one: "{0} %"
-          :other: "{0} %"
         :concentr-permille: 
           :one: "{0}‰"
           :other: "{0}‰"
@@ -635,6 +620,9 @@
         :concentr-permyriad: 
           :one: "{0}‱"
           :other: "{0}‱"
+        :concentr-portion-per-1e9: 
+          :one: "{0}pp10⁹"
+          :other: "{0}pp10⁹"
         :consumption-liter-per-100-kilometer: 
           :one: "{0}l/100km"
           :other: "{0}l/100km"
@@ -654,20 +642,20 @@
           :one: "{0}o"
           :other: "{0}o"
         :digital-gigabit: 
-          :one: "{0}Gbit"
-          :other: "{0}Gbit"
+          :one: "{0}Gb"
+          :other: "{0}Gb"
         :digital-gigabyte: 
           :one: "{0}Go"
           :other: "{0}Go"
         :digital-kilobit: 
-          :one: "{0}kbit"
-          :other: "{0}kbit"
+          :one: "{0}kb"
+          :other: "{0}kb"
         :digital-kilobyte: 
           :one: "{0}ko"
           :other: "{0}ko"
         :digital-megabit: 
-          :one: "{0}Mbit"
-          :other: "{0}Mbit"
+          :one: "{0}Mb"
+          :other: "{0}Mb"
         :digital-megabyte: 
           :one: "{0}Mo"
           :other: "{0}Mo"
@@ -675,8 +663,8 @@
           :one: "{0}Po"
           :other: "{0}Po"
         :digital-terabit: 
-          :one: "{0}Tbit"
-          :other: "{0}Tbit"
+          :one: "{0}Tb"
+          :other: "{0}Tb"
         :digital-terabyte: 
           :one: "{0}To"
           :other: "{0}To"
@@ -707,6 +695,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-night: 
+          :one: "{0}nuit"
+          :other: "{0}nuits"
         :duration-quarter: 
           :one: "{0} T"
           :other: "{0} T"
@@ -783,11 +774,11 @@
           :one: "{0}pt"
           :other: "{0}pt"
         :graphics-dot-per-centimeter: 
-          :one: "{0}ppcm"
-          :other: "{0}ppcm"
+          :one: "{0}pt/cm"
+          :other: "{0}pt/cm"
         :graphics-dot-per-inch: 
-          :one: "{0}ppp"
-          :other: "{0}ppp"
+          :one: "{0}pt/po"
+          :other: "{0}pt/po"
         :graphics-em: 
           :one: "{0}em"
           :other: "{0}em"
@@ -974,27 +965,27 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0}psi"
           :other: "{0}psi"
+        :speed-beaufort: 
+          :one: "{0} Bf"
+          :other: "{0} Bf"
         :speed-kilometer-per-hour: 
           :one: "{0}km/h"
           :other: "{0}km/h"
         :speed-knot: 
           :one: "{0}nd"
           :other: "{0}nd"
+        :speed-light-speed: 
+          :one: "{0} lumière"
+          :other: "{0} lumière"
         :speed-meter-per-second: 
-          :one: "{0}m/s"
+          :one: "{0} m/s"
           :other: "{0}m/s"
-        :speed-mile-per-hour: 
-          :one: "{0}mi/h"
-          :other: "{0}mi/h"
         :temperature-celsius: 
           :one: "{0} °C"
           :other: "{0} °C"
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
-        :temperature-generic: 
-          :one: "{0}°"
-          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0}K"
           :other: "{0}K"
@@ -1114,13 +1105,10 @@
           :one: "{0} m/s²"
           :other: "{0} m/s²"
         :angle-arc-minute: 
-          :one: "{0}′"
           :other: "{0}′"
         :angle-arc-second: 
-          :one: "{0}″"
           :other: "{0}″"
         :angle-degree: 
-          :one: "{0}°"
           :other: "{0}°"
         :angle-radian: 
           :one: "{0} rad"
@@ -1185,6 +1173,9 @@
         :concentr-permyriad: 
           :one: "{0} ‱"
           :other: "{0} ‱"
+        :concentr-portion-per-1e9: 
+          :one: "{0} p.p. 10⁹"
+          :other: "{0} p.p. 10⁹"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -1195,8 +1186,8 @@
           :one: "{0} mi/gal"
           :other: "{0} mi/gal"
         :consumption-mile-per-gallon-imperial: 
-          :one: "{0} mi/gal Imp"
-          :other: "{0} mi/gal Imp"
+          :one: "{0} mi/gal imp."
+          :other: "{0} mi/gal imp."
         :digital-bit: 
           :one: "{0} bit"
           :other: "{0} bit"
@@ -1257,6 +1248,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-night: 
+          :one: "{0} nuit"
+          :other: "{0} nuits"
         :duration-quarter: 
           :one: "{0} trim."
           :other: "{0} trim."
@@ -1330,14 +1324,14 @@
           :one: "{0} MHz"
           :other: "{0} MHz"
         :graphics-dot: 
-          :one: "{0} p"
-          :other: "{0} p"
+          :one: "{0} pt"
+          :other: "{0} pt"
         :graphics-dot-per-centimeter: 
-          :one: "{0} ppcm"
-          :other: "{0} ppcm"
+          :one: "{0} pt/cm"
+          :other: "{0} pt/cm"
         :graphics-dot-per-inch: 
-          :one: "{0} ppp"
-          :other: "{0} ppp"
+          :one: "{0} pt/po"
+          :other: "{0} pt/po"
         :graphics-em: 
           :one: "{0} em"
           :other: "{0} em"
@@ -1363,7 +1357,6 @@
           :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
-          :one: "{0} R⊕"
           :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fm"
@@ -1372,7 +1365,6 @@
           :one: "{0} pi"
           :other: "{0} pi"
         :length-furlong: 
-          :one: "{0} fur"
           :other: "{0} fur"
         :length-inch: 
           :one: "{0} po"
@@ -1420,10 +1412,8 @@
           :one: "{0} vg"
           :other: "{0} vg"
         :light-candela: 
-          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
-          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
@@ -1468,7 +1458,6 @@
           :one: "{0} M☉"
           :other: "{0} M☉"
         :mass-stone: 
-          :one: "{0} st"
           :other: "{0} st"
         :mass-ton: 
           :one: "{0} tc"
@@ -1524,12 +1513,18 @@
         :pressure-pound-force-per-square-inch: 
           :one: "{0} psi"
           :other: "{0} psi"
+        :speed-beaufort: 
+          :one: "{0} Bf"
+          :other: "{0} Bf"
         :speed-kilometer-per-hour: 
           :one: "{0} km/h"
           :other: "{0} km/h"
         :speed-knot: 
           :one: "{0} nd"
           :other: "{0} nd"
+        :speed-light-speed: 
+          :one: "{0} lumière"
+          :other: "{0} lumière"
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -1543,7 +1538,6 @@
           :one: "{0} °F"
           :other: "{0} °F"
         :temperature-generic: 
-          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} K"
@@ -1642,7 +1636,6 @@
           :one: "{0} chop"
           :other: "{0} chop"
         :volume-pint-metric: 
-          :one: "{0} mpt"
           :other: "{0} mpt"
         :volume-quart: 
           :one: "{0} pte"

@@ -5,10 +5,10 @@
       - az-t-d0-lower
     :direction: forward
     :rules: 
-      - İ>i;
+      - "İ>i ;"
       - "I([^[:ccc=Not_Reordered:][:ccc=Above:]]*)\\u0307 > i$1 ;"
       - "I>ı ;"
-      - "::Any-Lower();"
+      - "::Any-Lower() ;"
     :source: az
     :target: Lower
     :variant: ~

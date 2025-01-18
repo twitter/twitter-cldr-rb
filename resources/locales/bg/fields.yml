@@ -17,13 +17,6 @@
           :one: "преди {0} ден"
           :other: "преди {0} дни"
     :day-narrow: 
-      :display_name: д
-      :relative: 
-        -1: вчера
-        -2: "онзи ден"
-        0: днес
-        1: утре
-        2: вдругиден
       :relative_time: 
         :future: 
           :one: "сл. {0} д"
@@ -33,36 +26,13 @@
           :other: "пр. {0} д"
     :day-short: 
       :display_name: д
-      :relative: 
-        -1: вчера
-        -2: "онзи ден"
-        0: днес
-        1: утре
-        2: вдругиден
-      :relative_time: 
-        :future: 
-          :one: "след {0} ден"
-          :other: "след {0} дни"
-        :past: 
-          :one: "преди {0} ден"
-          :other: "преди {0} дни"
     :dayOfYear: 
       :display_name: "ден от годината"
-    :dayOfYear-narrow: 
-      :display_name: "ден от г."
     :dayOfYear-short: 
       :display_name: "ден от г."
     :dayperiod: 
       :display_name: пр.об./сл.об.
-    :dayperiod-narrow: 
-      :display_name: пр.об./сл.об.
-    :dayperiod-short: 
-      :display_name: пр.об./сл.об.
     :era: 
-      :display_name: ера
-    :era-narrow: 
-      :display_name: ера
-    :era-short: 
       :display_name: ера
     :fri: 
       :relative: 
@@ -112,7 +82,6 @@
           :one: "преди {0} час"
           :other: "преди {0} часа"
     :hour-narrow: 
-      :display_name: ч
       :relative_time: 
         :future: 
           :one: "сл. {0} ч"
@@ -141,7 +110,6 @@
           :one: "преди {0} минута"
           :other: "преди {0} минути"
     :minute-narrow: 
-      :display_name: мин
       :relative_time: 
         :future: 
           :one: "сл. {0} мин"
@@ -208,7 +176,6 @@
           :one: "преди {0} месец"
           :other: "преди {0} месеца"
     :month-narrow: 
-      :display_name: мес.
       :relative: 
         -1: "мин. м."
         0: "т. м."
@@ -247,11 +214,6 @@
           :one: "преди {0} тримесечие"
           :other: "преди {0} тримесечия"
     :quarter-narrow: 
-      :display_name: трим.
-      :relative: 
-        -1: "мин. трим."
-        0: "това трим."
-        1: "следв. трим."
       :relative_time: 
         :future: 
           :one: "сл. {0} трим."
@@ -320,7 +282,6 @@
           :one: "преди {0} секунда"
           :other: "преди {0} секунди"
     :second-narrow: 
-      :display_name: сек
       :relative_time: 
         :future: 
           :one: "сл. {0} сек"
@@ -495,7 +456,6 @@
           :one: "преди {0} седмица"
           :other: "преди {0} седмици"
     :week-narrow: 
-      :display_name: седм.
       :relative: 
         -1: "мин. седм."
         0: "тази седм."
@@ -522,20 +482,14 @@
           :other: "преди {0} седм."
     :weekOfMonth: 
       :display_name: "седмица от месеца"
-    :weekOfMonth-narrow: 
-      :display_name: "седм. от мес."
     :weekOfMonth-short: 
       :display_name: "седм. от мес."
     :weekday: 
       :display_name: "ден от седмицата"
-    :weekday-narrow: 
-      :display_name: "ден от седм."
     :weekday-short: 
       :display_name: "ден от седм."
     :weekdayOfMonth: 
       :display_name: "работен ден от месеца"
-    :weekdayOfMonth-narrow: 
-      :display_name: "раб. ден от мес."
     :weekdayOfMonth-short: 
       :display_name: "раб. ден от мес."
     :year: 
@@ -579,7 +533,5 @@
           :other: "преди {0} г."
     :zone: 
       :display_name: "часова зона"
-    :zone-narrow: 
-      :display_name: "час. зона"
     :zone-short: 
       :display_name: "час. зона"

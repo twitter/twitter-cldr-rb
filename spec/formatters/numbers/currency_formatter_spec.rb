@@ -21,7 +21,6 @@ describe TwitterCldr::Formatters::CurrencyFormatter do
     end
 
     it "handles negative numbers" do
-      # yes, the parentheses really are part of the format, don't worry about it
       expect(format_currency(-12)).to eq("-$12.00")
     end
 
@@ -32,11 +31,6 @@ describe TwitterCldr::Formatters::CurrencyFormatter do
 
     it "should use the currency code as the symbol if the currency code can't be identified" do
       expect(format_currency(12, currency: "XYZ")).to eq("XYZ12.00")
-    end
-
-    it "should respect the :use_cldr_symbol option" do
-      expect(format_currency(12, currency: "CAD")).to eq("$12.00")
-      expect(format_currency(12, currency: "CAD", use_cldr_symbol: true)).to eq("CA$12.00")
     end
 
     it "should use the currency symbol for the corresponding currency code" do

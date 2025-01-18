@@ -202,18 +202,18 @@
           :long: 
             :pattern: "{{date}}, {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -228,7 +228,7 @@
             6: jun
             7: jul
             8: ago
-            9: sept
+            9: sep
           :narrow: 
             1: E
             10: O
@@ -268,7 +268,7 @@
             6: jun
             7: jul
             8: ago
-            9: sept
+            9: sep
           :narrow: 
             1: E
             10: O
@@ -298,29 +298,24 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: a. m.
+            :am: a.m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p. m.
+            :pm: p.m.
           :narrow: 
             :am: a. m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
-            :morning2: mañana
+            :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
             :pm: p. m.
           :wide: 
-            :am: a. m.
-            :evening1: "de la tarde"
-            :morning1: "de la madrugada"
-            :morning2: "de la mañana"
-            :night1: "de la noche"
-            :noon: "del mediodía"
-            :pm: p. m.
+            :am: a.m.
+            :pm: p.m.
         :stand-alone: 
           :abbreviated: 
             :am: a. m.
@@ -339,13 +334,8 @@
             :noon: mediodía
             :pm: p. m.
           :wide: 
-            :am: a. m.
-            :evening1: tarde
-            :morning1: madrugada
-            :morning2: mañana
-            :night1: noche
-            :noon: mediodía
-            :pm: p. m.
+            :am: a.m.
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 
@@ -359,9 +349,9 @@
             3: "3"
             4: "4"
           :wide: 
-            1: "1.er trimestre"
+            1: "1.º trimestre"
             2: "2.º trimestre"
-            3: "3.er trimestre"
+            3: "3.º trimestre"
             4: "4.º trimestre"
         :stand-alone: 
           :abbreviated: 
@@ -370,12 +360,12 @@
             3: T3
             4: T4
           :narrow: 
-            1: 1T
-            2: 2T
-            3: 3T
-            4: 4T
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
           :wide: 
-            1: "1.er trimestre"
+            1: "1.º trimestre"
             2: "2.º trimestre"
-            3: "3.er trimestre"
+            3: "3.º trimestre"
             4: "4.º trimestre"

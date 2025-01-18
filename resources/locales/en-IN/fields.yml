@@ -16,6 +16,10 @@
           :other: "{0} days ago"
     :day-narrow: 
       :display_name: day
+      :relative: 
+        -1: yesterday
+        0: today
+        1: tomorrow
       :relative_time: 
         :future: 
           :one: "in {0} day"
@@ -25,6 +29,10 @@
           :other: "{0} days ago"
     :day-short: 
       :display_name: day
+      :relative: 
+        -1: yesterday
+        0: today
+        1: tomorrow
       :relative_time: 
         :future: 
           :one: "in {0} day"
@@ -39,12 +47,14 @@
     :dayOfYear-short: 
       :display_name: "day of yr"
     :dayperiod: 
-      :display_name: AM/PM
+      :display_name: am/pm
     :dayperiod-narrow: 
       :display_name: am/pm
     :dayperiod-short: 
       :display_name: am/pm
     :era: 
+      :display_name: era
+    :era-narrow: 
       :display_name: era
     :era-short: 
       :display_name: era
@@ -561,5 +571,7 @@
           :other: "{0} yr ago"
     :zone: 
       :display_name: "time zone"
+    :zone-narrow: 
+      :display_name: zone
     :zone-short: 
       :display_name: zone

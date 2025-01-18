@@ -85,6 +85,8 @@ module TwitterCldr
         ulocale = ulocale_class.new(locale.to_s)
 
         TZInfo::Timezone.all_identifiers.each_with_object({}) do |tz_id, ret|
+          next if tz_id == 'Factory'
+
           tz = tz_class.getTimeZone(tz_id)
           offset = tz.getRawOffset
 

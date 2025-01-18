@@ -18,14 +18,14 @@
         :GyMMM: "MMM y. G"
         :GyMMMEd: "E, d. MMM y. G"
         :GyMMMd: "d. MMM y. G"
-        :GyMd: "GGGGG y-MM-dd"
+        :GyMd: "d. M. y. G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
         :Hmsv: "HH:mm:ss (v)"
         :Hmv: "HH:mm (v)"
         :M: L
-        :MEd: "E, d.M."
+        :MEd: "E, d. M."
         :MMM: LLL
         :MMMEd: "E, d. MMM"
         :MMMMEd: "E, d. MMMM"
@@ -33,7 +33,7 @@
         :MMMMd: "d. MMMM"
         :MMMd: "d. MMM"
         :MMdd: "d. M."
-        :Md: d.M.
+        :Md: "d. M."
         :d: d.
         :h: h a
         :hm: "hh:mm a"
@@ -44,13 +44,13 @@
         ? !ruby/symbol "y"
         : y.
         :yM: MM/y
-        :yMEd: "E, d.M.y."
-        :yMM: M/y
+        :yMEd: "E, d. M. y."
+        :yMM: "M. y."
         :yMMM: "MMM y."
         :yMMMEd: "E, d. MMM y."
         :yMMMM: "LLLL y."
         :yMMMd: "d. MMM y."
-        :yMd: d.M.y.
+        :yMd: "d. M. y."
         :yQQQ: "QQQ y."
         :yQQQQ: "QQQQ y."
         :yw: "w. 'sedmica' 'u' Y."
@@ -124,17 +124,17 @@
       :eras: 
         :abbr: 
           0: "p. n. e."
-          1: n.e.
+          1: "n. e."
         :name: 
-          0: "P. n. e."
-          1: "Nove ere"
+          0: "prije nove ere"
+          1: "nove ere"
         :narrow: 
-          0: "p. n. e."
-          1: n.e.
+          0: p.n.e.
+          1: CE
       :fields: 
         :day: dan
-        :day-narrow: dan
-        :day-short: dan
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "dan u godini"
         :dayOfYear-narrow: "dan u g."
         :dayOfYear-short: "dan u god."
@@ -148,7 +148,7 @@
         :hour-narrow: h
         :hour-short: h
         :minute: minuta
-        :minute-narrow: min.
+        :minute-narrow: min
         :minute-short: min
         :month: mjesec
         :month-narrow: mj.
@@ -158,7 +158,7 @@
         :quarter-short: kv.
         :second: sekunda
         :second-narrow: s
-        :second-short: sek.
+        :second-short: s
         :week: sedmica
         :week-narrow: sed.
         :week-short: sed.
@@ -193,9 +193,9 @@
           :long: 
             :pattern: "{{date}} 'u' {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'u' {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'u' {{time}}"
         :time: 
           :full: 
             :pattern: "HH:mm:ss zzzz"
@@ -290,58 +290,28 @@
         :format: 
           :abbreviated: 
             :afternoon1: poslijepodne
-            :am: AM
+            :am: a. m.
             :evening1: navečer
             :midnight: ponoć
             :morning1: ujutro
             :night1: "po noći"
             :noon: podne
-            :pm: PM
+            :pm: p. m.
           :narrow: 
-            :afternoon1: poslijepodne
-            :am: prijepodne
-            :evening1: navečer
-            :midnight: ponoć
-            :morning1: ujutro
-            :night1: "po noći"
-            :noon: podne
-            :pm: popodne
+            :am: a. m.
+            :pm: p. m.
           :wide: 
-            :afternoon1: poslijepodne
             :am: prijepodne
-            :evening1: navečer
-            :midnight: ponoć
-            :morning1: ujutro
-            :night1: "po noći"
-            :noon: podne
             :pm: popodne
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: poslijepodne
-            :am: AM
-            :evening1: navečer
-            :midnight: ponoć
-            :morning1: ujutro
-            :night1: "po noći"
-            :noon: podne
-            :pm: PM
+            :am: a. m.
+            :pm: p. m.
           :narrow: 
-            :afternoon1: poslijepodne
             :am: prijepodne
-            :evening1: navečer
-            :midnight: ponoć
-            :morning1: ujutro
-            :night1: "po noći"
-            :noon: podne
             :pm: popodne
           :wide: 
-            :afternoon1: poslijepodne
             :am: prijepodne
-            :evening1: navečer
-            :midnight: ponoć
-            :morning1: ujutro
-            :night1: "po noći"
-            :noon: podne
             :pm: popodne
       :quarters: 
         :format: 

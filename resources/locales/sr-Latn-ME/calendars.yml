@@ -7,8 +7,8 @@
         :Bhm: "hh:mm B"
         :Bhms: "hh:mm:ss B"
         :E: E
-        :EBhm: "E hh:mm B"
-        :EBhms: "E hh:mm:ss B"
+        :EBhm: "E h:mm B"
+        :EBhms: "E, hh:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d."
@@ -153,7 +153,7 @@
         :minute-narrow: min.
         :minute-short: min.
         :month: mesec
-        :month-narrow: mes.
+        :month-narrow: Month
         :month-short: mes.
         :quarter: kvartal
         :quarter-narrow: kv.
@@ -162,7 +162,7 @@
         :second-narrow: s
         :second-short: sek.
         :week: nedelja
-        :week-narrow: ned.
+        :week-narrow: Week
         :week-short: ned.
         :weekOfMonth: "nedelja u mesecu"
         :weekOfMonth-narrow: "ned. u mes."
@@ -188,7 +188,7 @@
           :medium: 
             :pattern: "d. M. y."
           :short: 
-            :pattern: d.M.yy.
+            :pattern: "d. M. y."
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -313,37 +313,31 @@
             :am: "prije podne"
             :evening1: uveče
             :midnight: ponoć
-            :morning1: ujutro
+            :morning1: ujutru
             :night1: noću
             :noon: podne
             :pm: "po podne"
         :stand-alone: 
           :abbreviated: 
             :afternoon1: popodne
-            :am: prije podne
+            :am: AM
             :evening1: veče
-            :midnight: ponoć
             :morning1: jutro
             :night1: noć
-            :noon: podne
-            :pm: po podne
+            :pm: PM
           :narrow: 
             :afternoon1: popodne
             :am: a
             :evening1: veče
-            :midnight: ponoć
             :morning1: jutro
             :night1: noć
-            :noon: podne
             :pm: p
           :wide: 
             :afternoon1: popodne
             :am: "prije podne"
             :evening1: veče
-            :midnight: ponoć
             :morning1: jutro
             :night1: noć
-            :noon: podne
             :pm: "po podne"
       :quarters: 
         :format: 

@@ -17,13 +17,6 @@
           :one: "il y a {0} jour"
           :other: "il y a {0} jours"
     :day-narrow: 
-      :display_name: j
-      :relative: 
-        -1: hier
-        -2: avant-hier
-        0: aujourd’hui
-        1: demain
-        2: après-demain
       :relative_time: 
         :future: 
           :one: "+{0} j"
@@ -33,12 +26,6 @@
           :other: "-{0} j"
     :day-short: 
       :display_name: j
-      :relative: 
-        -1: hier
-        -2: avant-hier
-        0: aujourd’hui
-        1: demain
-        2: après-demain
       :relative_time: 
         :future: 
           :one: "dans {0} j"
@@ -48,21 +35,11 @@
           :other: "il y a {0} j"
     :dayOfYear: 
       :display_name: "jour (année)"
-    :dayOfYear-narrow: 
-      :display_name: "j (an)"
     :dayOfYear-short: 
       :display_name: "j (an)"
     :dayperiod: 
       :display_name: cadran
-    :dayperiod-narrow: 
-      :display_name: cadran
-    :dayperiod-short: 
-      :display_name: cadran
     :era: 
-      :display_name: ère
-    :era-narrow: 
-      :display_name: ère
-    :era-short: 
       :display_name: ère
     :fri: 
       :relative: 
@@ -76,18 +53,6 @@
         :past: 
           :one: "il y a {0} vendredi"
           :other: "il y a {0} vendredis"
-    :fri-narrow: 
-      :relative: 
-        -1: "ven. dernier"
-        0: "ce ven."
-        1: "ven. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} ven."
-          :other: "dans {0} ven."
-        :past: 
-          :one: "il y a {0} ven."
-          :other: "il y a {0} ven."
     :fri-short: 
       :relative: 
         -1: "ven. dernier"
@@ -112,9 +77,6 @@
           :one: "il y a {0} heure"
           :other: "il y a {0} heures"
     :hour-narrow: 
-      :display_name: h
-      :relative: 
-        0: "cette h"
       :relative_time: 
         :future: 
           :one: "+{0} h"
@@ -145,9 +107,6 @@
           :one: "il y a {0} minute"
           :other: "il y a {0} minutes"
     :minute-narrow: 
-      :display_name: min
-      :relative: 
-        0: "cette min"
       :relative_time: 
         :future: 
           :one: "+{0} min"
@@ -178,18 +137,6 @@
         :past: 
           :one: "il y a {0} lundi"
           :other: "il y a {0} lundis"
-    :mon-narrow: 
-      :relative: 
-        -1: "lun. dernier"
-        0: "ce lun."
-        1: "lun. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} lun."
-          :other: "dans {0} lun."
-        :past: 
-          :one: "il y a {0} lun."
-          :other: "il y a {0} lun."
     :mon-short: 
       :relative: 
         -1: "lun. dernier"
@@ -216,11 +163,6 @@
           :one: "il y a {0} mois"
           :other: "il y a {0} mois"
     :month-narrow: 
-      :display_name: m.
-      :relative: 
-        -1: "le mois dernier"
-        0: "ce mois-ci"
-        1: "le mois prochain"
       :relative_time: 
         :future: 
           :one: "+{0} m."
@@ -230,10 +172,6 @@
           :other: "-{0} m."
     :month-short: 
       :display_name: m.
-      :relative: 
-        -1: "le mois dernier"
-        0: "ce mois-ci"
-        1: "le mois prochain"
       :relative_time: 
         :future: 
           :one: "dans {0} m."
@@ -255,7 +193,6 @@
           :one: "il y a {0} trimestre"
           :other: "il y a {0} trimestres"
     :quarter-narrow: 
-      :display_name: trim.
       :relative: 
         -1: "trim. dern."
         0: "ce trim."
@@ -293,14 +230,7 @@
           :one: "il y a {0} samedi"
           :other: "il y a {0} samedis"
     :sat-narrow: 
-      :relative: 
-        -1: "sam. dernier"
-        0: "ce sam."
-        1: "sam. prochain"
       :relative_time: 
-        :future: 
-          :one: "dans {0} sam."
-          :other: "dans {0} sam."
         :past: 
           :one: "il y a {0} sam."
           :other: "il y a {0} sam."
@@ -328,9 +258,6 @@
           :one: "il y a {0} seconde"
           :other: "il y a {0} secondes"
     :second-narrow: 
-      :display_name: s
-      :relative: 
-        0: maintenant
       :relative_time: 
         :future: 
           :one: "+{0} s"
@@ -340,8 +267,6 @@
           :other: "-{0} s"
     :second-short: 
       :display_name: s
-      :relative: 
-        0: maintenant
       :relative_time: 
         :future: 
           :one: "dans {0} s"
@@ -361,18 +286,6 @@
         :past: 
           :one: "il y a {0} dimanche"
           :other: "il y a {0} dimanches"
-    :sun-narrow: 
-      :relative: 
-        -1: "dim. dernier"
-        0: "ce dim."
-        1: "dim. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} dim."
-          :other: "dans {0} dim."
-        :past: 
-          :one: "il y a {0} dim."
-          :other: "il y a {0} dim."
     :sun-short: 
       :relative: 
         -1: "dim. dernier"
@@ -397,18 +310,6 @@
         :past: 
           :one: "il y a {0} jeudi"
           :other: "il y a {0} jeudis"
-    :thu-narrow: 
-      :relative: 
-        -1: "jeu. dernier"
-        0: "ce jeu."
-        1: "jeu. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} jeu."
-          :other: "dans {0} jeu."
-        :past: 
-          :one: "il y a {0} jeu."
-          :other: "il y a {0} jeu."
     :thu-short: 
       :relative: 
         -1: "jeu. dernier"
@@ -433,18 +334,6 @@
         :past: 
           :one: "il y a {0} mardi"
           :other: "il y a {0} mardis"
-    :tue-narrow: 
-      :relative: 
-        -1: "mar. dernier"
-        0: "ce mar."
-        1: "mar. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} mar."
-          :other: "dans {0} mar."
-        :past: 
-          :one: "il y a {0} mar."
-          :other: "il y a {0} mar."
     :tue-short: 
       :relative: 
         -1: "mar. dernier"
@@ -469,18 +358,6 @@
         :past: 
           :one: "il y a {0} mercredi"
           :other: "il y a {0} mercredis"
-    :wed-narrow: 
-      :relative: 
-        -1: "mer. dernier"
-        0: "ce mer."
-        1: "mer. prochain"
-      :relative_time: 
-        :future: 
-          :one: "dans {0} mer."
-          :other: "dans {0} mer."
-        :past: 
-          :one: "il y a {0} mer."
-          :other: "il y a {0} mer."
     :wed-short: 
       :relative: 
         -1: "mer. dernier"
@@ -507,11 +384,6 @@
           :one: "il y a {0} semaine"
           :other: "il y a {0} semaines"
     :week-narrow: 
-      :display_name: sem.
-      :relative: 
-        -1: "la semaine dernière"
-        0: "cette semaine"
-        1: "la semaine prochaine"
       :relative_time: 
         :future: 
           :one: "+{0} sem."
@@ -521,10 +393,6 @@
           :other: "-{0} sem."
     :week-short: 
       :display_name: sem.
-      :relative: 
-        -1: "la semaine dernière"
-        0: "cette semaine"
-        1: "la semaine prochaine"
       :relative_time: 
         :future: 
           :one: "dans {0} sem."
@@ -534,21 +402,13 @@
           :other: "il y a {0} sem."
     :weekOfMonth: 
       :display_name: "semaine (mois)"
-    :weekOfMonth-narrow: 
-      :display_name: "sem. (m.)"
     :weekOfMonth-short: 
       :display_name: "sem. (m.)"
     :weekday: 
       :display_name: "jour de la semaine"
-    :weekday-narrow: 
-      :display_name: "j (sem.)"
     :weekday-short: 
       :display_name: "j (sem.)"
     :weekdayOfMonth: 
-      :display_name: "jour (mois)"
-    :weekdayOfMonth-narrow: 
-      :display_name: "jour (mois)"
-    :weekdayOfMonth-short: 
       :display_name: "jour (mois)"
     :year: 
       :display_name: année
@@ -565,10 +425,6 @@
           :other: "il y a {0} ans"
     :year-narrow: 
       :display_name: a
-      :relative: 
-        -1: "l’année dernière"
-        0: "cette année"
-        1: "l’année prochaine"
       :relative_time: 
         :future: 
           :one: "+{0} a"
@@ -578,10 +434,6 @@
           :other: "-{0} a"
     :year-short: 
       :display_name: an
-      :relative: 
-        -1: "l’année dernière"
-        0: "cette année"
-        1: "l’année prochaine"
       :relative_time: 
         :future: 
           :one: "dans {0} a"
@@ -590,8 +442,4 @@
           :one: "il y a {0} a"
           :other: "il y a {0} a"
     :zone: 
-      :display_name: "fuseau horaire"
-    :zone-narrow: 
-      :display_name: "fuseau horaire"
-    :zone-short: 
       :display_name: "fuseau horaire"

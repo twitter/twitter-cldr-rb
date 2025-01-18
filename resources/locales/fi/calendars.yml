@@ -16,10 +16,10 @@
         :Ehms: "E h.mm.ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
-        :GyMMMEd: "E d. MMM y G"
+        :GyMMMEd: "E d.M.y G"
         :GyMMMMEd: "E d. MMMM y G"
         :GyMMMMd: "d. MMMM y G"
-        :GyMMMd: "d. MMM y G"
+        :GyMMMd: "d.M.y G"
         :GyMd: "M.d.y G"
         :H: H
         :Hm: H.mm
@@ -29,11 +29,11 @@
         :M: L
         :MEd: "E d.M."
         :MMM: LLL
-        :MMMEd: "ccc d. MMM"
+        :MMMEd: "ccc d.M."
         :MMMMEd: "ccc d. MMMM"
         :MMMMW: "LLLL'n' W. 'viikko'"
         :MMMMd: "d. MMMM"
-        :MMMd: "d. MMM"
+        :MMMd: d.M.
         :Md: d.M.
         :d: d
         :h: h a
@@ -48,12 +48,12 @@
         :yMEd: "E d.M.y"
         :yMM: M.y
         :yMMM: "LLL y"
-        :yMMMEd: "E d. MMM y"
+        :yMMMEd: "E d.M.y"
         :yMMMM: "LLLL y"
         :yMMMMEd: "E d. MMMM y"
         :yMMMMccccd: "cccc d. MMMM y"
         :yMMMMd: "d. MMMM y"
-        :yMMMd: "d. MMM y"
+        :yMMMd: d.M.y
         :yMd: d.M.y
         :yQQQ: "QQQ y"
         :yQQQQ: "QQQQ y"
@@ -88,7 +88,7 @@
             :fri: perjantaina
             :mon: maanantaina
             :sat: lauantaina
-            :sun: sunnuntaina
+            :sun: sunnuntai
             :thu: torstaina
             :tue: tiistaina
             :wed: keskiviikkona
@@ -199,7 +199,7 @@
           :medium: 
             :pattern: "{{date}} 'klo' {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}} 'klo' {{time}}"
         :time: 
           :full: 
             :pattern: "H.mm.ss zzzz"
@@ -212,18 +212,18 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: tammik.
-            10: lokak.
-            11: marrask.
-            12: jouluk.
-            2: helmik.
-            3: maalisk.
-            4: huhtik.
-            5: toukok.
-            6: kesäk.
-            7: heinäk.
-            8: elok.
-            9: syysk.
+            1: tammi
+            10: loka
+            11: marras
+            12: joulu
+            2: helmi
+            3: maalis
+            4: huhti
+            5: touko
+            6: kesä
+            7: heinä
+            8: elo
+            9: syys
           :narrow: 
             1: T
             10: L
@@ -304,55 +304,53 @@
             :pm: ip.
           :narrow: 
             :afternoon1: ip.
-            :am: ap.
+            :am: AM
             :evening1: illalla
             :midnight: ky.
             :morning1: aamulla
             :morning2: ap.
             :night1: yöllä
             :noon: kp.
-            :pm: ip.
+            :pm: PM
           :wide: 
             :afternoon1: iltapäivällä
-            :am: ap.
+            :am: AM
             :evening1: illalla
             :midnight: keskiyöllä
             :morning1: aamulla
             :morning2: aamupäivällä
             :night1: yöllä
             :noon: keskipäivällä
-            :pm: ip.
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: iltap.
-            :am: ap.
+            :am: AM
             :evening1: ilta
             :midnight: keskiyö
             :morning1: aamu
             :morning2: aamup.
             :night1: yö
-            :noon: keskip.
-            :pm: ip.
+            :pm: PM
           :narrow: 
             :afternoon1: ip.
-            :am: ap.
+            :am: AM
             :evening1: ilta
             :midnight: ky.
             :morning1: aamu
             :morning2: ap.
             :night1: yö
             :noon: kp.
-            :pm: ip.
+            :pm: PM
           :wide: 
             :afternoon1: iltapäivä
-            :am: ap.
+            :am: AM
             :evening1: ilta
-            :midnight: keskiyö
             :morning1: aamu
             :morning2: aamupäivä
             :night1: yö
             :noon: keskipäivä
-            :pm: ip.
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

@@ -7,8 +7,8 @@
         :Bhm: "hh:mm B"
         :Bhms: "hh:mm:ss B"
         :E: E
-        :EBhm: "E hh:mm B"
-        :EBhms: "E hh:mm:ss B"
+        :EBhm: "E h:mm B"
+        :EBhms: "E, hh:mm:ss B"
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d."
@@ -153,7 +153,7 @@
         :minute-narrow: мин.
         :minute-short: мин.
         :month: месец
-        :month-narrow: мес.
+        :month-narrow: Month
         :month-short: мес.
         :quarter: квартал
         :quarter-narrow: кв.
@@ -162,7 +162,7 @@
         :second-narrow: с
         :second-short: сек.
         :week: недеља
-        :week-narrow: нед.
+        :week-narrow: Week
         :week-short: нед.
         :weekOfMonth: "недеља у месецу"
         :weekOfMonth-narrow: "нед. у мес."
@@ -188,7 +188,7 @@
           :medium: 
             :pattern: "d. M. y."
           :short: 
-            :pattern: d.M.yy.
+            :pattern: "d. M. y."
         :datetime: 
           :full: 
             :pattern: "{{date}} {{time}}"
@@ -313,37 +313,31 @@
             :am: "прије подне"
             :evening1: увече
             :midnight: поноћ
-            :morning1: ујутро
+            :morning1: ујутру
             :night1: ноћу
             :noon: подне
             :pm: "по подне"
         :stand-alone: 
           :abbreviated: 
             :afternoon1: поподне
-            :am: прије подне
+            :am: AM
             :evening1: вече
-            :midnight: поноћ
             :morning1: јутро
             :night1: ноћ
-            :noon: подне
-            :pm: по подне
+            :pm: PM
           :narrow: 
             :afternoon1: поподне
             :am: a
             :evening1: вече
-            :midnight: поноћ
             :morning1: јутро
             :night1: ноћ
-            :noon: подне
             :pm: p
           :wide: 
             :afternoon1: поподне
             :am: "прије подне"
             :evening1: вече
-            :midnight: поноћ
             :morning1: јутро
             :night1: ноћ
-            :noon: подне
             :pm: "по подне"
       :quarters: 
         :format: 

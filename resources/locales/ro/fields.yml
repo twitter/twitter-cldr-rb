@@ -19,13 +19,6 @@
           :one: "acum {0} zi"
           :other: "acum {0} de zile"
     :day-narrow: 
-      :display_name: zi
-      :relative: 
-        -1: ieri
-        -2: alaltăieri
-        0: azi
-        1: mâine
-        2: poimâine
       :relative_time: 
         :future: 
           :few: "+{0} zile"
@@ -35,40 +28,11 @@
           :few: "-{0} zile"
           :one: "-{0} zi"
           :other: "-{0} zile"
-    :day-short: 
-      :display_name: zi
-      :relative: 
-        -1: ieri
-        -2: alaltăieri
-        0: azi
-        1: mâine
-        2: poimâine
-      :relative_time: 
-        :future: 
-          :few: "peste {0} zile"
-          :one: "peste {0} zi"
-          :other: "peste {0} de zile"
-        :past: 
-          :few: "acum {0} zile"
-          :one: "acum {0} zi"
-          :other: "acum {0} de zile"
     :dayOfYear: 
-      :display_name: "ziua din an"
-    :dayOfYear-narrow: 
-      :display_name: "ziua din an"
-    :dayOfYear-short: 
       :display_name: "ziua din an"
     :dayperiod: 
       :display_name: a.m/p.m.
-    :dayperiod-narrow: 
-      :display_name: a.m/p.m.
-    :dayperiod-short: 
-      :display_name: a.m/p.m.
     :era: 
-      :display_name: eră
-    :era-narrow: 
-      :display_name: eră
-    :era-short: 
       :display_name: eră
     :fri: 
       :relative: 
@@ -126,9 +90,6 @@
           :one: "acum {0} oră"
           :other: "acum {0} de ore"
     :hour-narrow: 
-      :display_name: h
-      :relative: 
-        0: "ora aceasta"
       :relative_time: 
         :future: 
           :few: "+{0} h"
@@ -140,8 +101,6 @@
           :other: "-{0} h"
     :hour-short: 
       :display_name: h
-      :relative: 
-        0: "ora aceasta"
       :relative_time: 
         :future: 
           :few: "peste {0} h"
@@ -166,8 +125,6 @@
           :other: "acum {0} de minute"
     :minute-narrow: 
       :display_name: m
-      :relative: 
-        0: "minutul acesta"
       :relative_time: 
         :future: 
           :few: "+{0} m"
@@ -179,8 +136,6 @@
           :other: "-{0} m"
     :minute-short: 
       :display_name: min.
-      :relative: 
-        0: "minutul acesta"
       :relative_time: 
         :future: 
           :few: "peste {0} min."
@@ -248,11 +203,6 @@
           :one: "acum {0} lună"
           :other: "acum {0} de luni"
     :month-narrow: 
-      :display_name: lună
-      :relative: 
-        -1: "luna trecută"
-        0: "luna aceasta"
-        1: "luna viitoare"
       :relative_time: 
         :future: 
           :few: "+{0} luni"
@@ -263,11 +213,6 @@
           :one: "-{0} lună"
           :other: "-{0} luni"
     :month-short: 
-      :display_name: lună
-      :relative: 
-        -1: "luna trecută"
-        0: "luna aceasta"
-        1: "luna viitoare"
       :relative_time: 
         :future: 
           :few: "peste {0} luni"
@@ -293,11 +238,6 @@
           :one: "acum {0} trimestru"
           :other: "acum {0} de trimestre"
     :quarter-narrow: 
-      :display_name: trim.
-      :relative: 
-        -1: "trim. trecut"
-        0: "trim. acesta"
-        1: "trim. viitor"
       :relative_time: 
         :future: 
           :few: "+{0} trim."
@@ -379,8 +319,6 @@
           :other: "acum {0} de secunde"
     :second-narrow: 
       :display_name: s
-      :relative: 
-        0: acum
       :relative_time: 
         :future: 
           :few: "+{0} s"
@@ -392,8 +330,6 @@
           :other: "-{0} s"
     :second-short: 
       :display_name: sec.
-      :relative: 
-        0: acum
       :relative_time: 
         :future: 
           :few: "peste {0} sec."
@@ -474,10 +410,6 @@
           :one: "jo. -{0} săpt."
           :other: "jo. -{0} săpt."
     :thu-short: 
-      :relative: 
-        -1: "joia trecută"
-        0: "joia aceasta"
-        1: "joia viitoare"
       :relative_time: 
         :future: 
           :few: "joi, peste {0} săpt."
@@ -587,11 +519,6 @@
           :one: "acum {0} săptămână"
           :other: "acum {0} de săptămâni"
     :week-narrow: 
-      :display_name: săpt.
-      :relative: 
-        -1: "săpt. trecută"
-        0: "săpt. aceasta"
-        1: "săpt. viitoare"
       :relative_time: 
         :future: 
           :few: "+{0} săpt."
@@ -618,20 +545,14 @@
           :other: "acum {0} săpt."
     :weekOfMonth: 
       :display_name: "săptămâna din lună"
-    :weekOfMonth-narrow: 
-      :display_name: "săpt. din lună"
     :weekOfMonth-short: 
       :display_name: "săpt. din lună"
     :weekday: 
       :display_name: "ziua din săptămână"
-    :weekday-narrow: 
-      :display_name: "ziua din săpt."
     :weekday-short: 
       :display_name: "ziua din săpt."
     :weekdayOfMonth: 
       :display_name: "ziua săptămânii din lună"
-    :weekdayOfMonth-narrow: 
-      :display_name: "ziua săpt. din lună"
     :weekdayOfMonth-short: 
       :display_name: "ziua săpt. din lună"
     :year: 
@@ -650,11 +571,6 @@
           :one: "acum {0} an"
           :other: "acum {0} de ani"
     :year-narrow: 
-      :display_name: an
-      :relative: 
-        -1: "anul trecut"
-        0: "anul acesta"
-        1: "anul viitor"
       :relative_time: 
         :future: 
           :few: "+{0} ani"
@@ -664,24 +580,7 @@
           :few: "-{0} ani"
           :one: "-{0} an"
           :other: "-{0} ani"
-    :year-short: 
-      :display_name: an
-      :relative: 
-        -1: "anul trecut"
-        0: "anul acesta"
-        1: "anul viitor"
-      :relative_time: 
-        :future: 
-          :few: "peste {0} ani"
-          :one: "peste {0} an"
-          :other: "peste {0} de ani"
-        :past: 
-          :few: "acum {0} ani"
-          :one: "acum {0} an"
-          :other: "acum {0} de ani"
     :zone: 
       :display_name: "fus orar"
-    :zone-narrow: 
-      :display_name: fus
     :zone-short: 
       :display_name: fus

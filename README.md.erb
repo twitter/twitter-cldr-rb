@@ -40,7 +40,7 @@ TwitterCldr patches core Ruby objects like `Integer` and `Date` to make localiza
 1337.localize(:es).to_s                                    # <%= assert(1337.localize(:es).to_s, "1.337").inspect %>
 
 # currencies, default USD
-1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1.337,00 $").inspect %>
+1337.localize(:es).to_currency.to_s                        # <%= assert(1337.localize(:es).to_currency.to_s, "1.337,00 US$").inspect %>
 1337.localize(:es).to_currency.to_s(:currency => "EUR")    # <%= assert(1337.localize(:es).to_currency.to_s(:currency => "EUR"), "1.337,00 €").inspect %>
 
 # percentages
@@ -60,7 +60,7 @@ num = TwitterCldr::Localized::LocalizedNumber.new(1337, :es)
 num.to_currency.to_s  # ...etc
 ```
 
-<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1.337,00 $") %>
+<% assert(TwitterCldr::Localized::LocalizedNumber.new(1337, :es).to_currency.to_s, "1.337,00 US$") %>
 
 #### More on Currencies
 
@@ -71,7 +71,7 @@ If you're looking for a list of supported currencies, use the `TwitterCldr::Shar
 TwitterCldr::Shared::Currencies.currency_codes             # <%= ellipsize(assert(TwitterCldr::Shared::Currencies.currency_codes.sort[0..3], ["ADP", "AED", "AFA", "AFN"])) %>
 
 # data for a specific currency code
-TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterCldr::Shared::Currencies.for_code("CAD"), {:currency=>:CAD, :name=>"Canadian Dollar", :cldr_symbol=>"CA$", :symbol=>"$", :code_points=>[36]}).inspect %>
+TwitterCldr::Shared::Currencies.for_code("CAD")            # <%= assert(TwitterCldr::Shared::Currencies.for_code("CAD"), {:currency=>:CAD, :name=>"Canadian Dollar", :cldr_symbol=>"CA$", :symbol=>"CA$", :code_points=>[67, 65, 36]}).inspect %>
 ```
 
 #### Short / Long Decimals
@@ -92,7 +92,7 @@ TwitterCLDR supports formatting numbers with an attached unit, for example "12 d
 
 ```ruby
 12.localize.to_unit.length_mile  # <%= assert(12.localize.to_unit.length_mile, "12 miles").inspect %>
-12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 миль").inspect %>
+12.localize(:ru).to_unit.length_mile  # <%= assert(12.localize(:ru).to_unit.length_mile, "12 милях").inspect %>
 ```
 Units support a few different forms, long, short, and narrow:
 

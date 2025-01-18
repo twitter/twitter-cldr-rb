@@ -35,7 +35,7 @@
         :MMMd: "d LLL"
         :Md: M/d
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -130,11 +130,11 @@
           0: "قبل از دوران مشترک"
           1: "دوران مشترک"
         :narrow: 
-          0: ق.د.م
-          1: د.م.
+          0: ق
+          1: م
       :fields: 
         :day: روز
-        :day-narrow: روز
+        :day-narrow: Day
         :day-short: روز
         :dayOfYear: "روز سال"
         :dayOfYear-narrow: "روز سال"
@@ -299,13 +299,7 @@
             :night2: نیمه‌شب
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: ظ
-            :afternoon2: ع
             :am: ق
-            :morning1: ب
-            :morning2: ص
-            :night1: ش
-            :night2: ن
             :pm: ب
           :wide: 
             :afternoon1: بعدازظهر
@@ -327,22 +321,10 @@
             :night2: نیمه‌شب
             :pm: ب.ظ.
           :narrow: 
-            :afternoon1: ظ
-            :afternoon2: ع
-            :am: ق
-            :morning1: ب
-            :morning2: ص
-            :night1: ش
-            :night2: ن
-            :pm: ب
+            :am: ق‌ظ
+            :pm: ب‌ظ
           :wide: 
-            :afternoon1: ظهر
-            :afternoon2: عصر
             :am: قبل‌ازظهر
-            :morning1: بامداد
-            :morning2: صبح
-            :night1: شب
-            :night2: نیمه‌شب
             :pm: بعدازظهر
       :quarters: 
         :format: 

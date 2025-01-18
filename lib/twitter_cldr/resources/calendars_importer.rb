@@ -175,9 +175,8 @@ module TwitterCldr
       def additional_formats
         return {} unless calendar
 
-        dtd.find_attr('dateFormatItem', 'id').values.each_with_object({}) do |id, result|
-          node = calendar.xpath("dateTimeFormats/availableFormats/dateFormatItem[@id='#{id}']").first
-          result[id] = node.content if node
+        calendar.xpath("dateTimeFormats/availableFormats/dateFormatItem").each_with_object({}) do |date_format_item, result|
+          result[date_format_item.attribute("id").value] = date_format_item.content
         end
       end
 

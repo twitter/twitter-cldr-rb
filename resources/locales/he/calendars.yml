@@ -18,7 +18,7 @@
         :GyMMM: "MMM y G"
         :GyMMMEd: "E, d בMMM y G"
         :GyMMMd: "d בMMM y G"
-        :GyMd: "d/M/y GGGGG"
+        :GyMd: "d/M/y G"
         :H: H
         :Hm: "H:mm"
         :Hms: "H:mm:ss"
@@ -127,12 +127,12 @@
           0: לפנה״ס
           1: CE
         :narrow: 
-          0: BCE
-          1: CE
+          0: לפני
+          1: אחריי
       :fields: 
         :day: יום
-        :day-narrow: יום
-        :day-short: יום
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "יום בשנה"
         :dayOfYear-narrow: "יום בשנה"
         :dayOfYear-short: "יום בשנה"
@@ -144,12 +144,12 @@
         :era-short: תקופה
         :hour: שעה
         :hour-narrow: שע׳
-        :hour-short: שעה
+        :hour-short: Hour
         :minute: דקה
-        :minute-narrow: דק׳
+        :minute-narrow: Minute
         :minute-short: דק׳
         :month: חודש
-        :month-narrow: חו׳
+        :month-narrow: Month
         :month-short: חו׳
         :quarter: רבעון
         :quarter-narrow: רבע׳
@@ -158,7 +158,7 @@
         :second-narrow: שנ׳
         :second-short: שנ׳
         :week: שבוע
-        :week-narrow: שב׳
+        :week-narrow: Week
         :week-short: שב׳
         :weekOfMonth: "השבוע בחודש"
         :weekOfMonth-narrow: "השבוע בחודש"
@@ -289,37 +289,6 @@
           :abbreviated: 
             :afternoon1: צהריים
             :afternoon2: "אחר הצהריים"
-            :am: לפנה״צ
-            :evening1: ערב
-            :midnight: חצות
-            :morning1: בוקר
-            :night1: לילה
-            :night2: "לפנות בוקר"
-            :pm: אחה״צ
-          :narrow: 
-            :afternoon1: בצהריים
-            :afternoon2: אחה״צ
-            :am: לפנה״צ
-            :evening1: בערב
-            :midnight: חצות
-            :morning1: בבוקר
-            :night1: בלילה
-            :night2: "לפנות בוקר"
-            :pm: אחה״צ
-          :wide: 
-            :afternoon1: בצהריים
-            :afternoon2: "אחר הצהריים"
-            :am: לפנה״צ
-            :evening1: בערב
-            :midnight: חצות
-            :morning1: בבוקר
-            :night1: בלילה
-            :night2: "לפנות בוקר"
-            :pm: אחה״צ
-        :stand-alone: 
-          :abbreviated: 
-            :afternoon1: צהריים
-            :afternoon2: אחה״צ
             :am: AM
             :evening1: ערב
             :midnight: חצות
@@ -328,21 +297,43 @@
             :night2: "לפנות בוקר"
             :pm: PM
           :narrow: 
+            :afternoon1: בצהריים
+            :afternoon2: אחה״צ
+            :am: AM
+            :evening1: בערב
+            :midnight: חצות
+            :morning1: בבוקר
+            :night1: בלילה
+            :night2: "לפנות בוקר"
+            :pm: PM
+          :wide: 
+            :afternoon1: בצהריים
+            :afternoon2: "אחר הצהריים"
+            :am: AM
+            :evening1: בערב
+            :midnight: חצות
+            :morning1: בבוקר
+            :night1: בלילה
+            :night2: "לפנות בוקר"
+            :pm: PM
+        :stand-alone: 
+          :abbreviated: 
             :afternoon1: צהריים
             :afternoon2: אחה״צ
-            :am: לפנה״צ
+            :am: AM
             :evening1: ערב
-            :midnight: חצות
             :morning1: בוקר
             :night1: לילה
             :night2: "לפנות בוקר"
+            :pm: PM
+          :narrow: 
+            :am: לפנה״צ
             :pm: אחה״צ
           :wide: 
             :afternoon1: צהריים
             :afternoon2: "אחר הצהריים"
             :am: AM
             :evening1: ערב
-            :midnight: חצות
             :morning1: בוקר
             :night1: לילה
             :night2: "לפנות בוקר"

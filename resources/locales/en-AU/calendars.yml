@@ -12,13 +12,14 @@
         :EHm: "E HH:mm"
         :EHms: "E HH:mm:ss"
         :Ed: "E d"
-        :Ehm: "E h:mm a"
-        :Ehms: "E h:mm:ss a"
+        :Ehm: "E h:mm a"
+        :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "MMM y G"
+        :GyMMMEEEEd: "EEEE d MMM y G"
         :GyMMMEd: "E, d MMM y G"
         :GyMMMd: "d MMM y G"
-        :GyMd: "d/M/y GGGGG"
+        :GyMd: "d/M/y G"
         :H: HH
         :Hm: "HH:mm"
         :Hms: "HH:mm:ss"
@@ -27,26 +28,30 @@
         :M: L
         :MEd: "E, d/M"
         :MMM: LLL
+        :MMMEEEEd: "EEEE d MMM"
         :MMMEd: "E, d MMM"
+        :MMMMEEEEd: "EEEE d MMMM"
         :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
         :MMdd: dd/MM
         :Md: d/M
         :d: d
-        :h: h a
-        :hm: "h:mm a"
-        :hms: "h:mm:ss a"
-        :hmsv: "h:mm:ss a v"
-        :hmv: "h:mm a v"
+        :h: "h a"
+        :hm: "h:mm a"
+        :hms: "h:mm:ss a"
+        :hmsv: "h:mm:ss a v"
+        :hmv: "h:mm a v"
         :ms: "mm:ss"
         ? !ruby/symbol "y"
         : "y"
         :yM: MM/y
         :yMEd: "E, dd/MM/y"
         :yMMM: "MMM y"
+        :yMMMEEEEd: "EEEE d MMM y"
         :yMMMEd: "E, d MMM y"
         :yMMMM: "MMMM y"
+        :yMMMMEEEEd: "EEEE d MMMM y"
         :yMMMd: "d MMM y"
         :yMd: dd/MM/y
         :yQQQ: "QQQ y"
@@ -96,21 +101,21 @@
             :tue: Tue
             :wed: Wed
           :narrow: 
-            :fri: F.
-            :mon: M.
-            :sat: Sa.
-            :sun: Su.
-            :thu: Th.
-            :tue: Tu.
-            :wed: W.
+            :fri: F
+            :mon: M
+            :sat: S
+            :sun: S
+            :thu: T
+            :tue: T
+            :wed: W
           :short: 
-            :fri: Fri
-            :mon: Mon
-            :sat: Sat
-            :sun: Sun
-            :thu: Thu
+            :fri: Fr
+            :mon: Mo
+            :sat: Sa
+            :sun: Su
+            :thu: Th
             :tue: Tu
-            :wed: Wed
+            :wed: We
           :wide: 
             :fri: Friday
             :mon: Monday
@@ -146,29 +151,29 @@
         :hour-narrow: hr
         :hour-short: hr
         :minute: minute
-        :minute-narrow: min.
-        :minute-short: min.
+        :minute-narrow: min
+        :minute-short: min
         :month: month
-        :month-narrow: mo.
-        :month-short: mo.
+        :month-narrow: mo
+        :month-short: mo
         :quarter: quarter
         :quarter-narrow: qtr
         :quarter-short: qtr
         :second: second
-        :second-narrow: sec.
-        :second-short: sec.
+        :second-narrow: sec
+        :second-short: sec
         :week: week
         :week-narrow: wk
         :week-short: wk
         :weekOfMonth: "week of month"
         :weekOfMonth-narrow: "wk of mo"
-        :weekOfMonth-short: "wk of mo."
+        :weekOfMonth-short: "wk of mo"
         :weekday: "day of the week"
         :weekday-narrow: "day of wk"
         :weekday-short: "day of wk"
         :weekdayOfMonth: "weekday of the month"
         :weekdayOfMonth-narrow: "wkday of mo"
-        :weekdayOfMonth-short: "wkday of mo."
+        :weekdayOfMonth-short: "wkday of mo"
         :year: year
         :year-narrow: yr
         :year-short: yr
@@ -254,8 +259,8 @@
             3: Mar
             4: Apr
             5: May
-            6: Jun
-            7: Jul
+            6: June
+            7: July
             8: Aug
             9: Sept
           :narrow: 
@@ -287,24 +292,24 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :afternoon1: afternoon
+            :afternoon1: "in the afternoon"
             :am: am
-            :evening1: evening
+            :evening1: "in the evening"
             :midnight: midnight
-            :morning1: morning
-            :night1: night
+            :morning1: "in the morning"
+            :night1: "at night"
             :noon: midday
             :pm: pm
             :variant: 
               :am: am
               :pm: pm
           :narrow: 
-            :afternoon1: afternoon
+            :afternoon1: "in the afternoon"
             :am: am
-            :evening1: evening
+            :evening1: "in the evening"
             :midnight: midnight
-            :morning1: morning
-            :night1: night
+            :morning1: "in the morning"
+            :night1: "at night"
             :noon: midday
             :pm: pm
           :wide: 

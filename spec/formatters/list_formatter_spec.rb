@@ -35,7 +35,7 @@ describe TwitterCldr::Formatters::ListFormatter do
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq("larry y curly")
-          expect(formatter.format(list, :unit)).to eq("larry y curly")
+          expect(formatter.format(list, :unit)).to eq("larry, curly")
           expect(formatter.format(list, :"unit-narrow")).to eq("larry curly")
         end
       end
@@ -45,8 +45,8 @@ describe TwitterCldr::Formatters::ListFormatter do
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq('larry和curly')
-          expect(formatter.format(list, :unit)).to eq('larrycurly')
-          expect(formatter.format(list, :"unit-narrow")).to eq('larrycurly')
+          expect(formatter.format(list, :unit)).to eq('larry, curly')
+          expect(formatter.format(list, :"unit-narrow")).to eq('larry, curly')
         end
       end
 
@@ -55,7 +55,7 @@ describe TwitterCldr::Formatters::ListFormatter do
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq('larry e curly')
-          expect(formatter.format(list, :unit)).to eq('larry e curly')
+          expect(formatter.format(list, :unit)).to eq('larry, curly')
           expect(formatter.format(list, :"unit-narrow")).to eq('larry curly')
         end
       end
@@ -89,8 +89,8 @@ describe TwitterCldr::Formatters::ListFormatter do
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq('larry、curly和moe')
-          expect(formatter.format(list, :unit)).to eq('larrycurlymoe')
-          expect(formatter.format(list, :"unit-narrow")).to eq('larrycurlymoe')
+          expect(formatter.format(list, :unit)).to eq('larry, curly, moe')
+          expect(formatter.format(list, :"unit-narrow")).to eq('larry, curly, moe')
         end
       end
 
@@ -99,7 +99,7 @@ describe TwitterCldr::Formatters::ListFormatter do
 
         it 'formats correctly' do
           expect(formatter.format(list)).to eq('larry, curly e moe')
-          expect(formatter.format(list, :unit)).to eq('larry, curly e moe')
+          expect(formatter.format(list, :unit)).to eq('larry, curly, moe')
           expect(formatter.format(list, :"unit-narrow")).to eq('larry curly moe')
         end
       end

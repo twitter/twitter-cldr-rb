@@ -30,11 +30,11 @@
         :MMMEd: "E, d MMM"
         :MMMMW: "'week' W 'of' MMMM"
         :MMMMd: "d MMMM"
-        :MMMd: "MMM d"
+        :MMMd: "d MMM"
         :MMdd: dd-MM
         :Md: d/M
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -125,8 +125,8 @@
           0: ಕ್ರಿ.ಪೂ.ಕಾಲ
           1: "ಪ್ರಸಕ್ತ ಶಕ"
         :name: 
-          0: ಕ್ರಿ.ಪೂ.ಕಾಲ
-          1: "ಪ್ರಸಕ್ತ ಶಕ"
+          0: "ಕ್ರಿಸ್ತ ಪೂರ್ವ"
+          1: "ಕ್ರಿಸ್ತ ಶಕ"
         :narrow: 
           0: BCE
           1: CE
@@ -139,7 +139,7 @@
         :dayOfYear-short: "ವರ್ಷದ ದಿನ"
         :dayperiod: AM/PM
         :dayperiod-narrow: AM/PM
-        :dayperiod-short: ಪೂರ್ವಾಹ್ನ/ಅಪರಾಹ್ನ
+        :dayperiod-short: AM/PM
         :era: ಯುಗ
         :era-narrow: ಯುಗ
         :era-short: ಯುಗ
@@ -150,11 +150,11 @@
         :minute-narrow: ನಿಮಿಷ
         :minute-short: ನಿಮಿಷ
         :month: ತಿಂಗಳು
-        :month-narrow: ತಿಂಗಳು
-        :month-short: ತಿಂಗಳು
+        :month-narrow: ತಿಂ
+        :month-short: ತಿಂ.
         :quarter: ತ್ರೈಮಾಸಿಕ
-        :quarter-narrow: ತ್ರೈಮಾಸಿಕ
-        :quarter-short: ತ್ರೈಮಾಸಿಕ
+        :quarter-narrow: Quarter
+        :quarter-short: Quarter
         :second: ಸೆಕೆಂಡ್
         :second-narrow: ಸೆಕೆಂಡ್
         :second-short: ಸೆಕೆಂಡ್
@@ -171,8 +171,8 @@
         :weekdayOfMonth-narrow: "ತಿಂಗಳ ವಾರದ ದಿನ"
         :weekdayOfMonth-short: "ತಿಂಗಳ ವಾರದ ದಿನ"
         :year: ವರ್ಷ
-        :year-narrow: ವರ್ಷ
-        :year-short: ವರ್ಷ
+        :year-narrow: Year
+        :year-short: Year
         :zone: "ಸಮಯ ವಲಯ"
         :zone-narrow: ವಲಯ
         :zone-short: ವಲಯ
@@ -207,17 +207,17 @@
       :months: 
         :format: 
           :abbreviated: 
-            1: ಜನವರಿ
+            1: ಜನ
             10: ಅಕ್ಟೋ
             11: ನವೆಂ
             12: ಡಿಸೆಂ
-            2: ಫೆಬ್ರವರಿ
+            2: ಫೆಬ್ರ
             3: ಮಾರ್ಚ್
             4: ಏಪ್ರಿ
             5: ಮೇ
             6: ಜೂನ್
             7: ಜುಲೈ
-            8: ಆಗಸ್ಟ್
+            8: ಆಗ
             9: ಸೆಪ್ಟೆಂ
           :narrow: 
             1: ಜ
@@ -289,53 +289,34 @@
         :format: 
           :abbreviated: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂರ್ವಾಹ್ನ
+            :am: AM
             :evening1: ಸಂಜೆ
             :midnight: "ಮಧ್ಯ ರಾತ್ರಿ"
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: ಅಪರಾಹ್ನ
+            :pm: PM
           :narrow: 
             :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂ
+            :am: a
             :evening1: ಸಂಜೆ
             :midnight: ಮಧ್ಯರಾತ್ರಿ
             :morning1: ಬೆಳಗ್ಗೆ
             :night1: ರಾತ್ರಿ
-            :pm: ಅ
+            :pm: p
           :wide: 
-            :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂರ್ವಾಹ್ನ
-            :evening1: ಸಂಜೆ
-            :midnight: "ಮಧ್ಯ ರಾತ್ರಿ"
-            :morning1: ಬೆಳಗ್ಗೆ
-            :night1: ರಾತ್ರಿ
-            :pm: ಅಪರಾಹ್ನ
+            :am: AM
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
-            :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂರ್ವಾಹ್ನ
-            :evening1: ಸಂಜೆ
+            :am: AM
             :midnight: ಮಧ್ಯರಾತ್ರಿ
-            :morning1: ಬೆಳಗ್ಗೆ
-            :night1: ರಾತ್ರಿ
-            :pm: ಅಪರಾಹ್ನ
+            :pm: PM
           :narrow: 
-            :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂರ್ವಾಹ್ನ
-            :evening1: ಸಂಜೆ
-            :midnight: ಮಧ್ಯರಾತ್ರಿ
-            :morning1: ಬೆಳಗ್ಗೆ
-            :night1: ರಾತ್ರಿ
-            :pm: ಅಪರಾಹ್ನ
+            :am: AM
+            :pm: PM
           :wide: 
-            :afternoon1: ಮಧ್ಯಾಹ್ನ
-            :am: ಪೂರ್ವಾಹ್ನ
-            :evening1: ಸಂಜೆ
-            :midnight: ಮಧ್ಯರಾತ್ರಿ
-            :morning1: ಬೆಳಗ್ಗೆ
-            :night1: ರಾತ್ರಿ
-            :pm: ಅಪರಾಹ್ನ
+            :am: AM
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

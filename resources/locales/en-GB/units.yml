@@ -85,6 +85,9 @@
         :concentr-permyriad: 
           :one: "{0} permyriad"
           :other: "{0} permyriad"
+        :concentr-portion-per-1e9: 
+          :one: "{0} part per billion"
+          :other: "{0} parts per billion"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} litre per 100 kilometres"
           :other: "{0} litres per 100 kilometres"
@@ -157,6 +160,9 @@
         :duration-nanosecond: 
           :one: "{0} nanosecond"
           :other: "{0} nanoseconds"
+        :duration-night: 
+          :one: "{0} night"
+          :other: "{0} nights"
         :duration-quarter: 
           :one: "{0} quarter"
           :other: "{0} quarters"
@@ -400,6 +406,9 @@
         :pressure-bar: 
           :one: "{0} bar"
           :other: "{0} bars"
+        :pressure-gasoline-energy-density: 
+          :one: "{0} of gasoline equivalent"
+          :other: "{0} of gasoline equivalent"
         :pressure-hectopascal: 
           :one: "{0} hectopascal"
           :other: "{0} hectopascals"
@@ -433,6 +442,9 @@
         :speed-knot: 
           :one: "{0} knot"
           :other: "{0} knots"
+        :speed-light-speed: 
+          :one: "{0} light"
+          :other: "{0} light"
         :speed-meter-per-second: 
           :one: "{0} metre per second"
           :other: "{0} metres per second"
@@ -562,7 +574,7 @@
       :narrow: 
         :acceleration-g-force: 
           :one: "{0}G"
-          :other: "{0}Gs"
+          :other: "{0}G"
         :acceleration-meter-per-square-second: 
           :one: "{0}m/s²"
           :other: "{0}m/s²"
@@ -638,6 +650,9 @@
         :concentr-permyriad: 
           :one: "{0}‱"
           :other: "{0}‱"
+        :concentr-portion-per-1e9: 
+          :one: "{0}ppb"
+          :other: "{0}ppb"
         :consumption-liter-per-100-kilometer: 
           :one: "{0}l/100km"
           :other: "{0}l/100km"
@@ -710,6 +725,9 @@
         :duration-nanosecond: 
           :one: "{0}ns"
           :other: "{0}ns"
+        :duration-night: 
+          :one: "{0}night"
+          :other: "{0}nights"
         :duration-quarter: 
           :one: "{0}q"
           :other: "{0}q"
@@ -885,8 +903,8 @@
           :one: "{0}L☉"
           :other: "{0}L☉"
         :mass-carat: 
-          :one: "{0}CD"
-          :other: "{0}CD"
+          :one: "{0}ct"
+          :other: "{0}ct"
         :mass-dalton: 
           :one: "{0}Da"
           :other: "{0}Da"
@@ -953,6 +971,9 @@
         :pressure-bar: 
           :one: "{0}bar"
           :other: "{0}bar"
+        :pressure-gasoline-energy-density: 
+          :one: "{0}gas-equiv"
+          :other: "{0}gas-equiv"
         :pressure-hectopascal: 
           :one: "{0}hPa"
           :other: "{0}hPa"
@@ -986,6 +1007,9 @@
         :speed-knot: 
           :one: "{0}kn"
           :other: "{0}kn"
+        :speed-light-speed: 
+          :one: "{0}light"
+          :other: "{0}light"
         :speed-meter-per-second: 
           :one: "{0}m/s"
           :other: "{0}m/s"
@@ -993,11 +1017,14 @@
           :one: "{0}mph"
           :other: "{0}mph"
         :temperature-celsius: 
-          :one: "{0}°"
-          :other: "{0}°"
+          :one: "{0}°C"
+          :other: "{0}°C"
         :temperature-fahrenheit: 
           :one: "{0}°F"
           :other: "{0}°F"
+        :temperature-generic: 
+          :one: "{0}°"
+          :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0}K"
           :other: "{0}K"
@@ -1068,8 +1095,8 @@
           :one: "{0}fl oz"
           :other: "{0}fl oz"
         :volume-gallon: 
-          :one: "{0}galUS"
-          :other: "{0}galUS"
+          :one: "{0}USgal"
+          :other: "{0}USgal"
         :volume-gallon-imperial: 
           :one: "{0}gal"
           :other: "{0}gal"
@@ -1098,8 +1125,8 @@
           :one: "{0}mpt"
           :other: "{0}mpt"
         :volume-quart: 
-          :one: "{0}qt"
-          :other: "{0}qt"
+          :one: "{0}USqt"
+          :other: "{0}USqt"
         :volume-quart-imperial: 
           :one: "{0}qt"
           :other: "{0}qt"
@@ -1188,6 +1215,9 @@
         :concentr-permyriad: 
           :one: "{0}‱"
           :other: "{0}‱"
+        :concentr-portion-per-1e9: 
+          :one: "{0} ppb"
+          :other: "{0} ppb"
         :consumption-liter-per-100-kilometer: 
           :one: "{0} l/100 km"
           :other: "{0} l/100 km"
@@ -1260,6 +1290,9 @@
         :duration-nanosecond: 
           :one: "{0} ns"
           :other: "{0} ns"
+        :duration-night: 
+          :one: "{0} night"
+          :other: "{0} nights"
         :duration-quarter: 
           :one: "{0} qtr"
           :other: "{0} qtrs"
@@ -1366,6 +1399,7 @@
           :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
+          :one: "{0} R⊕"
           :other: "{0} R⊕"
         :length-fathom: 
           :one: "{0} fth"
@@ -1422,8 +1456,10 @@
           :one: "{0} yd"
           :other: "{0} yd"
         :light-candela: 
+          :one: "{0} cd"
           :other: "{0} cd"
         :light-lumen: 
+          :one: "{0} lm"
           :other: "{0} lm"
         :light-lux: 
           :one: "{0} lx"
@@ -1441,8 +1477,8 @@
           :one: "{0} M⊕"
           :other: "{0} M⊕"
         :mass-grain: 
-          :one: "{0} grains"
-          :other: "{0} grains"
+          :one: "{0} gr"
+          :other: "{0} gr"
         :mass-gram: 
           :one: "{0} g"
           :other: "{0} g"
@@ -1500,6 +1536,9 @@
         :pressure-bar: 
           :one: "{0} bar"
           :other: "{0} bar"
+        :pressure-gasoline-energy-density: 
+          :one: "{0} gas-equiv"
+          :other: "{0} gas-equiv"
         :pressure-hectopascal: 
           :one: "{0} hPa"
           :other: "{0} hPa"
@@ -1533,6 +1572,9 @@
         :speed-knot: 
           :one: "{0} kn"
           :other: "{0} kn"
+        :speed-light-speed: 
+          :one: "{0} light"
+          :other: "{0} light"
         :speed-meter-per-second: 
           :one: "{0} m/s"
           :other: "{0} m/s"
@@ -1546,6 +1588,7 @@
           :one: "{0}°F"
           :other: "{0}°F"
         :temperature-generic: 
+          :one: "{0}°"
           :other: "{0}°"
         :temperature-kelvin: 
           :one: "{0} K"
@@ -1608,7 +1651,7 @@
           :one: "{0} dram"
           :other: "{0} drams"
         :volume-drop: 
-          :one: "{0} drops"
+          :one: "{0} drop"
           :other: "{0} drops"
         :volume-fluid-ounce: 
           :one: "{0} US fl oz"
@@ -1638,7 +1681,7 @@
           :one: "{0} ml"
           :other: "{0} ml"
         :volume-pinch: 
-          :one: "{0} pinches"
+          :one: "{0} pinch"
           :other: "{0} pinches"
         :volume-pint: 
           :one: "{0} pt"

@@ -28,7 +28,7 @@
         :MEd: "M/d, E"
         :MMM: LLL
         :MMMEd: "MMM d('a'), E"
-        :MMMMW: "MMMM W. 'astea'"
+        :MMMMW: "MMMM'ren' W. 'astea'"
         :MMMMd: "MMMM'ren' d('a')"
         :MMMd: "MMM d('a')"
         :Md: M/d
@@ -122,11 +122,11 @@
             :wed: asteazkena
       :eras: 
         :abbr: 
-          0: G.a.a.
-          1: G.a.
+          0: o.a.a.
+          1: o.a.
         :name: 
-          0: "Gure aroaren aurretik"
-          1: "Gure aroa"
+          0: "oraingo aroaren aurretik"
+          1: "oraingo aroa"
         :narrow: 
           0: G.a.a.
           1: G.a.
@@ -171,8 +171,8 @@
         :weekdayOfMonth-narrow: "hileko #. asteguna"
         :weekdayOfMonth-short: "hileko #. asteguna"
         :year: urtea
-        :year-narrow: urtea
-        :year-short: urtea
+        :year-narrow: Year
+        :year-short: Year
         :zone: ordu-zona
         :zone-narrow: ordu-zona
         :zone-short: ordu-zona
@@ -192,9 +192,9 @@
           :long: 
             :pattern: "{{date}} ({{time}})"
           :medium: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} ({{time}})"
           :short: 
-            :pattern: "{{date}}, {{time}}"
+            :pattern: "{{date}} ({{time}})"
         :time: 
           :full: 
             :pattern: "HH:mm:ss (zzzz)"
@@ -323,7 +323,6 @@
             :afternoon2: arrats.
             :am: AM
             :evening1: iluntz.
-            :midnight: gauerdia
             :morning1: goiz.
             :morning2: goiza
             :night1: gaua
@@ -333,7 +332,6 @@
             :afternoon2: arrats.
             :am: AM
             :evening1: iluntz.
-            :midnight: gauerdia
             :morning1: goizald.
             :morning2: goiza
             :night1: gaua
@@ -343,7 +341,6 @@
             :afternoon2: arratsaldea
             :am: AM
             :evening1: iluntzea
-            :midnight: gauerdia
             :morning1: goizaldea
             :morning2: goiza
             :night1: gaua

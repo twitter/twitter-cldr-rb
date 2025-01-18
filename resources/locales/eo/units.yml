@@ -64,9 +64,15 @@
         :digital-terabyte: 
           :one: "{0} terabajto"
           :other: "{0} terabajtoj"
+        :duration-century: 
+          :one: "{0} jarcento"
+          :other: "{0} jarcentoj"
         :duration-day: 
           :one: "{0} tago"
           :other: "{0} tagoj"
+        :duration-decade: 
+          :one: "{0} jardeko"
+          :other: "{0} jardekoj"
         :duration-hour: 
           :one: "{0} horo"
           :other: "{0} horoj"
@@ -79,6 +85,9 @@
         :duration-month: 
           :one: "{0} monato"
           :other: "{0} monatoj"
+        :duration-night: 
+          :one: "{0} nokto"
+          :other: "{0} noktoj"
         :duration-second: 
           :one: "{0} sekundo"
           :other: "{0} sekundoj"
@@ -158,9 +167,6 @@
           :one: "{0} litro"
           :other: "{0} litroj"
       :narrow: 
-        :angle-degree: 
-          :one: "{0}°"
-          :other: "{0}°"
         :area-hectare: 
           :one: "{0}ha"
           :other: "{0}ha"
@@ -173,9 +179,15 @@
         :area-square-meter: 
           :one: "{0}m²"
           :other: "{0}m²"
+        :duration-century: 
+          :one: "{0} jc."
+          :other: "{0} jc."
         :duration-day: 
           :one: "{0}t."
           :other: "{0}t."
+        :duration-decade: 
+          :one: "{0} jd."
+          :other: "{0} jd."
         :duration-hour: 
           :one: "{0}h."
           :other: "{0}h."
@@ -185,12 +197,15 @@
         :duration-minute: 
           :one: "{0}m."
           :other: "{0}m."
+        :duration-night: 
+          :one: "{0} n."
+          :other: "{0} n."
         :duration-second: 
           :one: "{0}s."
           :other: "{0}s."
         :duration-year: 
-          :one: "{0}j."
-          :other: "{0}j."
+          :one: "{0} a"
+          :other: "{0} a"
         :length-astronomical-unit: 
           :one: "{0}au"
           :other: "{0}au"
@@ -259,20 +274,16 @@
         :area-dunam: 
           :other: "{0} dunam"
         :area-hectare: 
-          :one: "{0} ha"
           :other: "{0} ha"
         :area-square-centimeter: 
-          :one: "{0} cm²"
           :other: "{0} cm²"
         :area-square-foot: 
           :other: "{0} ft²"
         :area-square-inch: 
           :other: "{0} in²"
         :area-square-kilometer: 
-          :one: "{0} km²"
           :other: "{0} km²"
         :area-square-meter: 
-          :one: "{0} m²"
           :other: "{0} m²"
         :area-square-mile: 
           :other: "{0} mi²"
@@ -296,6 +307,8 @@
           :other: "{0} ppm"
         :concentr-permyriad: 
           :other: "{0}‱"
+        :concentr-portion-per-1e9: 
+          :other: "{0} ppb"
         :consumption-liter-per-100-kilometer: 
           :other: "{0} L/100km"
         :consumption-liter-per-kilometer: 
@@ -327,12 +340,14 @@
         :digital-terabyte: 
           :other: "{0} TB"
         :duration-century: 
-          :other: "{0} c"
+          :one: "{0} jarcent."
+          :other: "{0} jarcent."
         :duration-day: 
           :one: "{0} t."
           :other: "{0} t."
         :duration-decade: 
-          :other: "{0} dec"
+          :one: "{0} jardek."
+          :other: "{0} jardek."
         :duration-hour: 
           :one: "{0} h."
           :other: "{0} h."
@@ -349,6 +364,9 @@
           :other: "{0} mon."
         :duration-nanosecond: 
           :other: "{0} ns"
+        :duration-night: 
+          :one: "{0} nokt."
+          :other: "{0} nokt."
         :duration-quarter: 
           :other: "{0} q"
         :duration-second: 
@@ -408,13 +426,10 @@
         :graphics-pixel-per-inch: 
           :other: "{0} ppi"
         :length-astronomical-unit: 
-          :one: "{0} au"
           :other: "{0} au"
         :length-centimeter: 
-          :one: "{0} cm"
           :other: "{0} cm"
         :length-decimeter: 
-          :one: "{0} dm"
           :other: "{0} dm"
         :length-earth-radius: 
           :other: "{0} R⊕"
@@ -427,34 +442,27 @@
         :length-inch: 
           :other: "{0} in"
         :length-kilometer: 
-          :one: "{0} km"
           :other: "{0} km"
         :length-light-year: 
           :one: "{0} lj"
           :other: "{0} lj"
         :length-meter: 
-          :one: "{0} m"
           :other: "{0} m"
         :length-micrometer: 
-          :one: "{0} μm"
           :other: "{0} μm"
         :length-mile: 
           :other: "{0} mi"
         :length-mile-scandinavian: 
           :other: "{0} smi"
         :length-millimeter: 
-          :one: "{0} mm"
           :other: "{0} mm"
         :length-nanometer: 
-          :one: "{0} nm"
           :other: "{0} nm"
         :length-nautical-mile: 
           :other: "{0} nmi"
         :length-parsec: 
-          :one: "{0} pc"
           :other: "{0} pc"
         :length-picometer: 
-          :one: "{0} pm"
           :other: "{0} pm"
         :length-point: 
           :other: "{0} pt"
@@ -479,10 +487,8 @@
         :mass-grain: 
           :other: "{0} grain"
         :mass-gram: 
-          :one: "{0} g"
           :other: "{0} g"
         :mass-kilogram: 
-          :one: "{0} kg"
           :other: "{0} kg"
         :mass-microgram: 
           :other: "{0} μg"
@@ -534,11 +540,14 @@
           :other: "{0} Pa"
         :pressure-pound-force-per-square-inch: 
           :other: "{0} psi"
+        :speed-beaufort: 
+          :other: "B {0}"
         :speed-kilometer-per-hour: 
-          :one: "{0} km/h"
           :other: "{0} km/h"
         :speed-knot: 
           :other: "{0} kn"
+        :speed-light-speed: 
+          :other: "{0} light"
         :speed-meter-per-second: 
           :other: "{0} m/s"
         :speed-mile-per-hour: 

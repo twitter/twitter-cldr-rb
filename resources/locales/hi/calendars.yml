@@ -35,7 +35,7 @@
         :MMdd: dd/MM
         :Md: d/M
         :d: d
-        :h: "h a"
+        :h: h a
         :hm: "h:mm a"
         :hms: "h:mm:ss a"
         :hmsv: "h:mm:ss a v"
@@ -127,15 +127,15 @@
           0: "ईसवी पूर्व"
           1: ईसवी
         :name: 
-          0: "ईसवी पूर्व"
-          1: ईसवी
+          0: BCE
+          1: "ईसवी सन"
         :narrow: 
           0: BCE
           1: CE
       :fields: 
         :day: दिन
-        :day-narrow: दिन
-        :day-short: दिन
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "वर्ष का दिन"
         :dayOfYear-narrow: "वर्ष का दिन"
         :dayOfYear-short: "वर्ष का दिन"
@@ -155,8 +155,8 @@
         :month-narrow: माह
         :month-short: माह
         :quarter: तिमाही
-        :quarter-narrow: तिमाही
-        :quarter-short: तिमाही
+        :quarter-narrow: Quarter
+        :quarter-short: Quarter
         :second: सेकंड
         :second-narrow: से॰
         :second-short: से॰
@@ -173,7 +173,7 @@
         :weekdayOfMonth-narrow: "माह के कार्यदिवस"
         :weekdayOfMonth-short: "माह के कार्यदिवस"
         :year: वर्ष
-        :year-narrow: वर्ष
+        :year-narrow: Year
         :year-short: वर्ष
         :zone: "समय क्षेत्र"
         :zone-narrow: क्षेत्र
@@ -323,13 +323,9 @@
             :night1: रात
             :pm: pm
           :narrow: 
-            :afternoon1: दोपहर
-            :am: am
-            :evening1: शाम
+            :am: AM
             :midnight: "आधी रात"
-            :morning1: सुबह
-            :night1: रात
-            :pm: pm
+            :pm: PM
           :wide: 
             :afternoon1: दोपहर
             :am: am

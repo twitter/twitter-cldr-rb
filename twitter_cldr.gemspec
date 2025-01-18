@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cldr-plurals-runtime-rb', '~> 1.1'
   s.add_dependency 'json', '~> 1.0' if RUBY_VERSION < '2'
   s.add_dependency 'tzinfo'
+  s.add_dependency 'base64'
 
   s.require_path = 'lib'
 

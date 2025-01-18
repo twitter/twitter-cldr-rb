@@ -133,8 +133,8 @@
           1: vt
       :fields: 
         :day: dag
-        :day-narrow: dag
-        :day-short: dag
+        :day-narrow: Day
+        :day-short: Day
         :dayOfYear: "dag i året"
         :dayOfYear-narrow: "dag i året"
         :dayOfYear-short: "dag i året"
@@ -160,8 +160,8 @@
         :second-narrow: s
         :second-short: sek.
         :week: uge
-        :week-narrow: uge
-        :week-short: uge
+        :week-narrow: Week
+        :week-short: Week
         :weekOfMonth: "uge i måneden"
         :weekOfMonth-narrow: "uge i md."
         :weekOfMonth-short: "uge i md."
@@ -172,8 +172,8 @@
         :weekdayOfMonth-narrow: "ugedag i md."
         :weekdayOfMonth-short: "ugedag i md."
         :year: år
-        :year-narrow: år
-        :year-short: år
+        :year-narrow: Year
+        :year-short: Year
         :zone: tidszone
         :zone-narrow: zone
         :zone-short: zone
@@ -193,9 +193,9 @@
           :long: 
             :pattern: "{{date}} 'kl'. {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
             :pattern: "HH.mm.ss zzzz"
@@ -298,13 +298,7 @@
             :night1: "om natten"
             :pm: PM
           :narrow: 
-            :afternoon1: "om eftermiddagen"
             :am: a
-            :evening1: "om aftenen"
-            :midnight: midnat
-            :morning1: "om morgenen"
-            :morning2: "om formiddagen"
-            :night1: "om natten"
             :pm: p
           :wide: 
             :afternoon1: "om eftermiddagen"
@@ -320,7 +314,6 @@
             :afternoon1: eftermiddag
             :am: AM
             :evening1: aften
-            :midnight: midnat
             :morning1: morgen
             :morning2: formiddag
             :night1: nat
@@ -329,7 +322,6 @@
             :afternoon1: eftermiddag
             :am: AM
             :evening1: aften
-            :midnight: midnat
             :morning1: morgen
             :morning2: formiddag
             :night1: nat
@@ -338,7 +330,6 @@
             :afternoon1: eftermiddag
             :am: AM
             :evening1: aften
-            :midnight: midnat
             :morning1: morgen
             :morning2: formiddag
             :night1: nat

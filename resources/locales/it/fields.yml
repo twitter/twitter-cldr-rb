@@ -16,29 +16,8 @@
         :past: 
           :one: "{0} giorno fa"
           :other: "{0} giorni fa"
-    :day-narrow: 
-      :display_name: g.
-      :relative: 
-        -1: ieri
-        -2: "l’altro ieri"
-        0: oggi
-        1: domani
-        2: dopodomani
-      :relative_time: 
-        :future: 
-          :one: "tra {0} g"
-          :other: "tra {0} gg"
-        :past: 
-          :one: "{0} g fa"
-          :other: "{0} gg fa"
     :day-short: 
       :display_name: g.
-      :relative: 
-        -1: ieri
-        -2: "l’altro ieri"
-        0: oggi
-        1: domani
-        2: dopodomani
       :relative_time: 
         :future: 
           :one: "tra {0} g"
@@ -48,21 +27,11 @@
           :other: "{0} gg fa"
     :dayOfYear: 
       :display_name: "giorno dell’anno"
-    :dayOfYear-narrow: 
-      :display_name: "giorno anno"
     :dayOfYear-short: 
       :display_name: "giorno anno"
     :dayperiod: 
       :display_name: AM/PM
-    :dayperiod-narrow: 
-      :display_name: AM/PM
-    :dayperiod-short: 
-      :display_name: AM/PM
     :era: 
-      :display_name: era
-    :era-narrow: 
-      :display_name: era
-    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
@@ -76,18 +45,6 @@
         :past: 
           :one: "{0} venerdì fa"
           :other: "{0} venerdì fa"
-    :fri-narrow: 
-      :relative: 
-        -1: "ven. scorso"
-        0: "questo ven."
-        1: "ven. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} ven."
-          :other: "tra {0} ven."
-        :past: 
-          :one: "{0} ven. fa"
-          :other: "{0} ven. fa"
     :fri-short: 
       :relative: 
         -1: "ven. scorso"
@@ -111,15 +68,6 @@
         :past: 
           :one: "{0} ora fa"
           :other: "{0} ore fa"
-    :hour-narrow: 
-      :display_name: h
-      :relative_time: 
-        :future: 
-          :one: "tra {0} h"
-          :other: "tra {0} h"
-        :past: 
-          :one: "{0} h fa"
-          :other: "{0} h fa"
     :hour-short: 
       :display_name: h
       :relative_time: 
@@ -140,15 +88,6 @@
         :past: 
           :one: "{0} minuto fa"
           :other: "{0} minuti fa"
-    :minute-narrow: 
-      :display_name: min
-      :relative_time: 
-        :future: 
-          :one: "tra {0} min"
-          :other: "tra {0} min"
-        :past: 
-          :one: "{0} min fa"
-          :other: "{0} min fa"
     :minute-short: 
       :display_name: min
       :relative_time: 
@@ -170,18 +109,6 @@
         :past: 
           :one: "{0} lunedì fa"
           :other: "{0} lunedì fa"
-    :mon-narrow: 
-      :relative: 
-        -1: "lun. scorso"
-        0: "questo lun."
-        1: "lun. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} lun."
-          :other: "tra {0} lun."
-        :past: 
-          :one: "{0} lun. fa"
-          :other: "{0} lun. fa"
     :mon-short: 
       :relative: 
         -1: "lun. scorso"
@@ -207,32 +134,6 @@
         :past: 
           :one: "{0} mese fa"
           :other: "{0} mesi fa"
-    :month-narrow: 
-      :display_name: mese
-      :relative: 
-        -1: "mese scorso"
-        0: "questo mese"
-        1: "mese prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} mese"
-          :other: "tra {0} mesi"
-        :past: 
-          :one: "{0} mese fa"
-          :other: "{0} mesi fa"
-    :month-short: 
-      :display_name: mese
-      :relative: 
-        -1: "mese scorso"
-        0: "questo mese"
-        1: "mese prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} mese"
-          :other: "tra {0} mesi"
-        :past: 
-          :one: "{0} mese fa"
-          :other: "{0} mesi fa"
     :quarter: 
       :display_name: trimestre
       :relative: 
@@ -246,19 +147,6 @@
         :past: 
           :one: "{0} trimestre fa"
           :other: "{0} trimestri fa"
-    :quarter-narrow: 
-      :display_name: trim.
-      :relative: 
-        -1: "trim. scorso"
-        0: "questo trim."
-        1: "trim. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} trim."
-          :other: "tra {0} trim."
-        :past: 
-          :one: "{0} trim. fa"
-          :other: "{0} trim. fa"
     :quarter-short: 
       :display_name: trim.
       :relative: 
@@ -284,18 +172,6 @@
         :past: 
           :one: "{0} sabato fa"
           :other: "{0} sabati fa"
-    :sat-narrow: 
-      :relative: 
-        -1: "sab. scorso"
-        0: "questo sab."
-        1: "sab. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} sab."
-          :other: "tra {0} sab."
-        :past: 
-          :one: "{0} sab. fa"
-          :other: "{0} sab. fa"
     :sat-short: 
       :relative: 
         -1: "sab. scorso"
@@ -320,7 +196,6 @@
           :one: "{0} secondo fa"
           :other: "{0} secondi fa"
     :second-narrow: 
-      :display_name: s
       :relative_time: 
         :future: 
           :one: "tra {0} s"
@@ -349,18 +224,6 @@
         :past: 
           :one: "{0} domenica fa"
           :other: "{0} domeniche fa"
-    :sun-narrow: 
-      :relative: 
-        -1: "dom. scorsa"
-        0: "questa dom."
-        1: "dom. prossima"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} dom."
-          :other: "tra {0} dom."
-        :past: 
-          :one: "{0} dom. fa"
-          :other: "{0} dom. fa"
     :sun-short: 
       :relative: 
         -1: "dom. scorsa"
@@ -385,18 +248,6 @@
         :past: 
           :one: "{0} giovedì fa"
           :other: "{0} giovedì fa"
-    :thu-narrow: 
-      :relative: 
-        -1: "gio. scorso"
-        0: "questo gio."
-        1: "gio. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} gio."
-          :other: "tra {0} gio."
-        :past: 
-          :one: "{0} gio. fa"
-          :other: "{0} gio. fa"
     :thu-short: 
       :relative: 
         -1: "gio. scorso"
@@ -421,18 +272,6 @@
         :past: 
           :one: "{0} martedì fa"
           :other: "{0} martedì fa"
-    :tue-narrow: 
-      :relative: 
-        -1: "mar. scorso"
-        0: "questo mar."
-        1: "mar. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} mar."
-          :other: "tra {0} mar."
-        :past: 
-          :one: "{0} mar. fa"
-          :other: "{0} mar. fa"
     :tue-short: 
       :relative: 
         -1: "mar. scorso"
@@ -457,18 +296,6 @@
         :past: 
           :one: "{0} mercoledì fa"
           :other: "{0} mercoledì fa"
-    :wed-narrow: 
-      :relative: 
-        -1: "mer. scorso"
-        0: "questo mer."
-        1: "mer. prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} mer."
-          :other: "tra {0} mer."
-        :past: 
-          :one: "{0} mer. fa"
-          :other: "{0} mer. fa"
     :wed-short: 
       :relative: 
         -1: "mer. scorso"
@@ -494,19 +321,6 @@
         :past: 
           :one: "{0} settimana fa"
           :other: "{0} settimane fa"
-    :week-narrow: 
-      :display_name: sett.
-      :relative: 
-        -1: "sett. scorsa"
-        0: "questa sett."
-        1: "sett. prossima"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} sett."
-          :other: "tra {0} sett."
-        :past: 
-          :one: "{0} sett. fa"
-          :other: "{0} sett. fa"
     :week-short: 
       :display_name: sett.
       :relative: 
@@ -522,8 +336,6 @@
           :other: "{0} sett. fa"
     :weekOfMonth: 
       :display_name: "settimana del mese"
-    :weekOfMonth-narrow: 
-      :display_name: "sett. mese"
     :weekOfMonth-short: 
       :display_name: "sett. mese"
     :weekday: 
@@ -534,8 +346,6 @@
       :display_name: "giorno settimana"
     :weekdayOfMonth: 
       :display_name: "giorno del mese"
-    :weekdayOfMonth-narrow: 
-      :display_name: "giorno mese"
     :weekdayOfMonth-short: 
       :display_name: "giorno mese"
     :year: 
@@ -551,35 +361,7 @@
         :past: 
           :one: "{0} anno fa"
           :other: "{0} anni fa"
-    :year-narrow: 
-      :display_name: anno
-      :relative: 
-        -1: "anno scorso"
-        0: quest’anno
-        1: "anno prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} anno"
-          :other: "tra {0} anni"
-        :past: 
-          :one: "{0} anno fa"
-          :other: "{0} anni fa"
-    :year-short: 
-      :display_name: anno
-      :relative: 
-        -1: "anno scorso"
-        0: quest’anno
-        1: "anno prossimo"
-      :relative_time: 
-        :future: 
-          :one: "tra {0} anno"
-          :other: "tra {0} anni"
-        :past: 
-          :one: "{0} anno fa"
-          :other: "{0} anni fa"
     :zone: 
       :display_name: "fuso orario"
-    :zone-narrow: 
-      :display_name: fuso
     :zone-short: 
       :display_name: fuso

@@ -130,15 +130,15 @@
           0: "före västerländsk tideräkning"
           1: "västerländsk tideräkning"
         :narrow: 
-          0: f.v.t.
-          1: v.t.
+          0: BCE
+          1: CE
       :fields: 
         :day: dag
-        :day-narrow: dag
-        :day-short: dag
+        :day-narrow: d
+        :day-short: d.
         :dayOfYear: "dag under året"
-        :dayOfYear-narrow: "dag under året"
-        :dayOfYear-short: "dag under året"
+        :dayOfYear-narrow: "d u å"
+        :dayOfYear-short: "d. under å."
         :dayperiod: fm/em
         :dayperiod-narrow: fm/em
         :dayperiod-short: fm/em
@@ -152,29 +152,29 @@
         :minute-narrow: m
         :minute-short: min
         :month: månad
-        :month-narrow: mån
-        :month-short: m
+        :month-narrow: Month
+        :month-short: mån
         :quarter: kvartal
-        :quarter-narrow: kv.
+        :quarter-narrow: Quarter
         :quarter-short: kv.
         :second: sekund
         :second-narrow: s
         :second-short: sek
         :week: vecka
-        :week-narrow: v
-        :week-short: v
+        :week-narrow: Week
+        :week-short: v.
         :weekOfMonth: "vecka i månaden"
-        :weekOfMonth-narrow: "vk.i mån."
-        :weekOfMonth-short: "vk. i mån."
+        :weekOfMonth-narrow: "v i mån"
+        :weekOfMonth-short: "v. i mån."
         :weekday: veckodag
-        :weekday-narrow: veckodag
-        :weekday-short: veckodag
+        :weekday-narrow: vd
+        :weekday-short: veckod.
         :weekdayOfMonth: "veckodag i månad"
-        :weekdayOfMonth-narrow: "veckodag i mån."
+        :weekdayOfMonth-narrow: "vd i m"
         :weekdayOfMonth-short: "veckodag i mån."
         :year: år
-        :year-narrow: år
-        :year-short: år
+        :year-narrow: Year
+        :year-short: Year
         :zone: tidszon
         :zone-narrow: tidszon
         :zone-short: tidszon
@@ -300,46 +300,44 @@
             :pm: em
           :narrow: 
             :afternoon1: "på efterm."
-            :am: fm
+            :am: AM
             :evening1: "på kvällen"
             :midnight: midn.
             :morning1: "på morg."
             :morning2: "på förm."
             :night1: "på natten"
-            :pm: em
+            :pm: PM
           :wide: 
             :afternoon1: "på eftermiddagen"
-            :am: fm
+            :am: AM
             :evening1: "på kvällen"
             :midnight: midnatt
             :morning1: "på morgonen"
             :morning2: "på förmiddagen"
             :night1: "på natten"
-            :pm: em
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: efterm.
-            :am: fm
+            :am: AM
             :evening1: kväll
-            :midnight: midnatt
             :morning1: morgon
             :morning2: förm.
             :night1: natt
-            :pm: em
+            :pm: PM
           :narrow: 
             :afternoon1: efterm.
-            :am: fm
+            :am: AM
             :evening1: kväll
             :midnight: midn.
             :morning1: morg.
             :morning2: förm.
             :night1: natt
-            :pm: em
+            :pm: PM
           :wide: 
             :afternoon1: eftermiddag
             :am: förmiddag
             :evening1: kväll
-            :midnight: midnatt
             :morning1: morgon
             :morning2: förmiddag
             :night1: natt

@@ -16,29 +16,8 @@
         :past: 
           :one: "hace {0} día"
           :other: "hace {0} días"
-    :day-narrow: 
-      :display_name: d
-      :relative: 
-        -1: ayer
-        -2: anteayer
-        0: hoy
-        1: mañana
-        2: "pasado mañana"
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} día"
-          :other: "dentro de {0} días"
-        :past: 
-          :one: "hace {0} día"
-          :other: "hace {0} días"
     :day-short: 
       :display_name: d
-      :relative: 
-        -1: ayer
-        -2: anteayer
-        0: hoy
-        1: mañana
-        2: "pasado mañana"
       :relative_time: 
         :future: 
           :one: "dentro de {0} día"
@@ -48,21 +27,11 @@
           :other: "hace {0} días"
     :dayOfYear: 
       :display_name: "día del año"
-    :dayOfYear-narrow: 
-      :display_name: "día del a"
     :dayOfYear-short: 
       :display_name: "día del a"
     :dayperiod: 
       :display_name: a. m./p. m.
-    :dayperiod-narrow: 
-      :display_name: a. m./p. m.
-    :dayperiod-short: 
-      :display_name: a. m./p. m.
     :era: 
-      :display_name: era
-    :era-narrow: 
-      :display_name: era
-    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
@@ -98,8 +67,8 @@
           :one: "dentro de {0} vie."
           :other: "dentro de {0} vie."
         :past: 
-          :one: "hace {0} viernes"
-          :other: "hace {0} viernes"
+          :one: "hace {0} vie."
+          :other: "hace {0} vie."
     :hour: 
       :display_name: hora
       :relative: 
@@ -111,15 +80,6 @@
         :past: 
           :one: "hace {0} hora"
           :other: "hace {0} horas"
-    :hour-narrow: 
-      :display_name: h
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} h"
-          :other: "dentro de {0} h"
-        :past: 
-          :one: "hace {0} h"
-          :other: "hace {0} h"
     :hour-short: 
       :display_name: h
       :relative_time: 
@@ -140,15 +100,6 @@
         :past: 
           :one: "hace {0} minuto"
           :other: "hace {0} minutos"
-    :minute-narrow: 
-      :display_name: min
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} min"
-          :other: "dentro de {0} min"
-        :past: 
-          :one: "hace {0} min"
-          :other: "hace {0} min"
     :minute-short: 
       :display_name: min
       :relative_time: 
@@ -207,25 +158,8 @@
         :past: 
           :one: "hace {0} mes"
           :other: "hace {0} meses"
-    :month-narrow: 
-      :display_name: m
-      :relative: 
-        -1: "el mes pasado"
-        0: "este mes"
-        1: "el próximo mes"
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} m"
-          :other: "dentro de {0} m"
-        :past: 
-          :one: "hace {0} m"
-          :other: "hace {0} m"
     :month-short: 
       :display_name: m
-      :relative: 
-        -1: "el mes pasado"
-        0: "este mes"
-        1: "el próximo mes"
       :relative_time: 
         :future: 
           :one: "dentro de {0} m"
@@ -246,15 +180,6 @@
         :past: 
           :one: "hace {0} trimestre"
           :other: "hace {0} trimestres"
-    :quarter-narrow: 
-      :display_name: trim.
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} trim."
-          :other: "dentro de {0} trim."
-        :past: 
-          :one: "hace {0} trim."
-          :other: "hace {0} trim."
     :quarter-short: 
       :display_name: trim.
       :relative_time: 
@@ -311,15 +236,6 @@
         :past: 
           :one: "hace {0} segundo"
           :other: "hace {0} segundos"
-    :second-narrow: 
-      :display_name: s
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} s"
-          :other: "dentro de {0} s"
-        :past: 
-          :one: "hace {0} s"
-          :other: "hace {0} s"
     :second-short: 
       :display_name: s
       :relative_time: 
@@ -486,19 +402,6 @@
         :past: 
           :one: "hace {0} semana"
           :other: "hace {0} semanas"
-    :week-narrow: 
-      :display_name: sem.
-      :relative: 
-        -1: "sem. pasada"
-        0: "esta sem."
-        1: "próxima sem."
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} sem."
-          :other: "dentro de {0} sem."
-        :past: 
-          :one: "hace {0} sem."
-          :other: "hace {0} sem."
     :week-short: 
       :display_name: sem.
       :relative: 
@@ -514,20 +417,14 @@
           :other: "hace {0} sem."
     :weekOfMonth: 
       :display_name: "semana del mes"
-    :weekOfMonth-narrow: 
-      :display_name: "sem. de m"
     :weekOfMonth-short: 
       :display_name: "sem. de m"
     :weekday: 
       :display_name: "día de la semana"
-    :weekday-narrow: 
-      :display_name: "día de sem."
     :weekday-short: 
       :display_name: "día de sem."
     :weekdayOfMonth: 
       :display_name: "día de la semana del mes"
-    :weekdayOfMonth-narrow: 
-      :display_name: "día sem. de m"
     :weekdayOfMonth-short: 
       :display_name: "día sem. de m"
     :year: 
@@ -543,25 +440,8 @@
         :past: 
           :one: "hace {0} año"
           :other: "hace {0} años"
-    :year-narrow: 
-      :display_name: a
-      :relative: 
-        -1: "el año pasado"
-        0: "este año"
-        1: "el próximo año"
-      :relative_time: 
-        :future: 
-          :one: "dentro de {0} a"
-          :other: "dentro de {0} a"
-        :past: 
-          :one: "hace {0} a"
-          :other: "hace {0} a"
     :year-short: 
       :display_name: a
-      :relative: 
-        -1: "el año pasado"
-        0: "este año"
-        1: "el próximo año"
       :relative_time: 
         :future: 
           :one: "dentro de {0} a"
@@ -571,7 +451,5 @@
           :other: "hace {0} a"
     :zone: 
       :display_name: "zona horaria"
-    :zone-narrow: 
-      :display_name: zona
     :zone-short: 
       :display_name: zona

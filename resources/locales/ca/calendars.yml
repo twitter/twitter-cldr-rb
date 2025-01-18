@@ -16,11 +16,11 @@
         :Ehms: "E h:mm:ss a"
         :Gy: "y G"
         :GyMMM: "LLL y G"
-        :GyMMMEd: "E, d MMM 'de' y G"
-        :GyMMMM: "LLLL 'de' y G"
-        :GyMMMMEd: "E, d MMMM 'de' y G"
-        :GyMMMMd: "d MMMM 'de' y G"
-        :GyMMMd: "d MMM 'de' y G"
+        :GyMMMEd: "E, d MMM 'del' y G"
+        :GyMMMM: "LLLL 'del' y G"
+        :GyMMMMEd: "E, d MMMM 'del' y G"
+        :GyMMMMd: "d MMMM 'del' y G"
+        :GyMMMd: "d MMM 'del' y G"
         :GyMd: "dd-MM-y GGGGG"
         :H: H
         :Hm: "H:mm"
@@ -51,16 +51,16 @@
         : "y"
         :yM: M/y
         :yMEd: "E, d/M/y"
-        :yMMM: "LLL 'de' y"
+        :yMMM: "LLL 'del' y"
         :yMMMEd: "E, d MMM y"
-        :yMMMM: "LLLL 'de' y"
-        :yMMMMEd: "E, d MMMM 'de' y"
-        :yMMMMd: "d MMMM 'de' y"
-        :yMMMd: "d MMM 'de' y"
+        :yMMMM: "LLLL 'del' y"
+        :yMMMMEd: "E, d MMMM 'del' y"
+        :yMMMMd: "d MMMM 'del' y"
+        :yMMMd: "d MMM 'del' y"
         :yMd: d/M/y
         :yQQQ: "QQQ y"
-        :yQQQQ: "QQQQ y"
-        :yw: "'setmana' w 'de' Y"
+        :yQQQQ: "QQQQ 'del' y"
+        :yw: "'setmana' w 'del' Y"
       :days: 
         :format: 
           :abbreviated: 
@@ -72,13 +72,13 @@
             :tue: dt.
             :wed: dc.
           :narrow: 
-            :fri: dv
-            :mon: dl
-            :sat: ds
-            :sun: dg
-            :thu: dj
-            :tue: dt
-            :wed: dc
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :short: 
             :fri: dv.
             :mon: dl.
@@ -105,13 +105,13 @@
             :tue: dt.
             :wed: dc.
           :narrow: 
-            :fri: dv
-            :mon: dl
-            :sat: ds
-            :sun: dg
-            :thu: dj
-            :tue: dt
-            :wed: dc
+            :fri: dv.
+            :mon: dl.
+            :sat: ds.
+            :sun: dg.
+            :thu: dj.
+            :tue: dt.
+            :wed: dc.
           :short: 
             :fri: dv.
             :mon: dl.
@@ -136,8 +136,8 @@
           0: "abans de l’era cristiana"
           1: "era cristiana"
         :narrow: 
-          0: AEC
-          1: EC
+          0: BCE
+          1: CE
       :fields: 
         :day: dia
         :day-narrow: dia
@@ -152,7 +152,7 @@
         :era-narrow: era
         :era-short: era
         :hour: hora
-        :hour-narrow: h
+        :hour-narrow: Hour
         :hour-short: h
         :minute: minut
         :minute-narrow: min
@@ -161,7 +161,7 @@
         :month-narrow: mes
         :month-short: mes
         :quarter: trimestre
-        :quarter-narrow: trim.
+        :quarter-narrow: Quarter
         :quarter-short: trim.
         :second: segon
         :second-narrow: s
@@ -187,9 +187,9 @@
       :formats: 
         :date: 
           :full: 
-            :pattern: "EEEE, d MMMM 'de' y"
+            :pattern: "EEEE, d MMMM 'del' y"
           :long: 
-            :pattern: "d MMMM 'de' y"
+            :pattern: "d MMMM 'del' y"
           :medium: 
             :pattern: "d MMM y"
           :short: 
@@ -306,24 +306,17 @@
             :night1: nit
             :pm: p. m.
           :narrow: 
-            :afternoon1: md
-            :afternoon2: tarda
-            :am: a. m.
-            :evening1: vespre
-            :midnight: mitjanit
-            :morning1: mat.
-            :morning2: matí
-            :night1: nit
-            :pm: p. m.
-          :wide: 
             :afternoon1: migdia
             :afternoon2: tarda
-            :am: a. m.
+            :am: a. m.
             :evening1: vespre
             :midnight: mitjanit
             :morning1: matinada
             :morning2: matí
             :night1: nit
+            :pm: p. m.
+          :wide: 
+            :am: a. m.
             :pm: p. m.
         :stand-alone: 
           :abbreviated: 
@@ -347,14 +340,7 @@
             :night1: nit
             :pm: p. m.
           :wide: 
-            :afternoon1: migdia
-            :afternoon2: tarda
             :am: a. m.
-            :evening1: vespre
-            :midnight: mitjanit
-            :morning1: matinada
-            :morning2: matí
-            :night1: nit
             :pm: p. m.
       :quarters: 
         :format: 

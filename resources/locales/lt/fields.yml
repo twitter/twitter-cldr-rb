@@ -20,33 +20,8 @@
           :many: "prieš {0} dienos"
           :one: "prieš {0} dieną"
           :other: "prieš {0} dienų"
-    :day-narrow: 
-      :display_name: d.
-      :relative: 
-        -1: vakar
-        -2: užvakar
-        0: šiandien
-        1: rytoj
-        2: poryt
-      :relative_time: 
-        :future: 
-          :few: "po {0} d."
-          :many: "po {0} d."
-          :one: "po {0} d."
-          :other: "po {0} d."
-        :past: 
-          :few: "prieš {0} d."
-          :many: "prieš {0} d."
-          :one: "prieš {0} d."
-          :other: "prieš {0} d."
     :day-short: 
       :display_name: d.
-      :relative: 
-        -1: vakar
-        -2: užvakar
-        0: šiandien
-        1: rytoj
-        2: poryt
       :relative_time: 
         :future: 
           :few: "po {0} d."
@@ -60,21 +35,9 @@
           :other: "prieš {0} d."
     :dayOfYear: 
       :display_name: "metų diena"
-    :dayOfYear-narrow: 
-      :display_name: "metų diena"
-    :dayOfYear-short: 
-      :display_name: "metų diena"
     :dayperiod: 
       :display_name: "iki pietų / po pietų"
-    :dayperiod-narrow: 
-      :display_name: "iki pietų / po pietų"
-    :dayperiod-short: 
-      :display_name: "iki pietų / po pietų"
     :era: 
-      :display_name: era
-    :era-narrow: 
-      :display_name: era
-    :era-short: 
       :display_name: era
     :fri: 
       :relative: 
@@ -92,22 +55,6 @@
           :many: "prieš {0} penktadienio"
           :one: "prieš {0} penktadienį"
           :other: "prieš {0} penktadienių"
-    :fri-narrow: 
-      :relative: 
-        -1: "praėjusį penkt."
-        0: "šį penkt."
-        1: "kitą penkt."
-      :relative_time: 
-        :future: 
-          :few: "po {0} penkt."
-          :many: "po {0} penkt."
-          :one: "po {0} penkt."
-          :other: "po {0} penkt."
-        :past: 
-          :few: "prieš {0} penkt."
-          :many: "prieš {0} penkt."
-          :one: "prieš {0} penkt."
-          :other: "prieš {0} penkt."
     :fri-short: 
       :relative: 
         -1: "praėjusį penkt."
@@ -141,17 +88,6 @@
           :other: "prieš {0} valandų"
     :hour-narrow: 
       :display_name: h
-      :relative_time: 
-        :future: 
-          :few: "po {0} val."
-          :many: "po {0} val."
-          :one: "po {0} val."
-          :other: "po {0} val."
-        :past: 
-          :few: "prieš {0} val."
-          :many: "prieš {0} val."
-          :one: "prieš {0} val."
-          :other: "prieš {0} val."
     :hour-short: 
       :display_name: val.
       :relative_time: 
@@ -180,19 +116,6 @@
           :many: "prieš {0} minutės"
           :one: "prieš {0} minutę"
           :other: "prieš {0} minučių"
-    :minute-narrow: 
-      :display_name: min.
-      :relative_time: 
-        :future: 
-          :few: "po {0} min."
-          :many: "po {0} min."
-          :one: "po {0} min."
-          :other: "po {0} min."
-        :past: 
-          :few: "prieš {0} min."
-          :many: "prieš {0} min."
-          :one: "prieš {0} min."
-          :other: "prieš {0} min."
     :minute-short: 
       :display_name: min.
       :relative_time: 
@@ -222,22 +145,6 @@
           :many: "prieš {0} pirmadienio"
           :one: "prieš {0} pirmadienį"
           :other: "prieš {0} pirmadienių"
-    :mon-narrow: 
-      :relative: 
-        -1: "praėjusį pirm."
-        0: "šį pirm."
-        1: "kitą pirm."
-      :relative_time: 
-        :future: 
-          :few: "po {0} pirm."
-          :many: "po {0} pirm."
-          :one: "po {0} pirm."
-          :other: "po {0} pirm."
-        :past: 
-          :few: "prieš {0} pirm."
-          :many: "prieš {0} pirm."
-          :one: "prieš {0} pirm."
-          :other: "prieš {0} pirm."
     :mon-short: 
       :relative: 
         -1: "praėjusį pirm."
@@ -271,29 +178,8 @@
           :many: "prieš {0} mėnesio"
           :one: "prieš {0} mėnesį"
           :other: "prieš {0} mėnesių"
-    :month-narrow: 
-      :display_name: mėn.
-      :relative: 
-        -1: "praėjusį mėnesį"
-        0: "šį mėnesį"
-        1: "kitą mėnesį"
-      :relative_time: 
-        :future: 
-          :few: "po {0} mėn."
-          :many: "po {0} mėn."
-          :one: "po {0} mėn."
-          :other: "po {0} mėn."
-        :past: 
-          :few: "prieš {0} mėn."
-          :many: "prieš {0} mėn."
-          :one: "prieš {0} mėn."
-          :other: "prieš {0} mėn."
     :month-short: 
       :display_name: mėn.
-      :relative: 
-        -1: "praėjusį mėnesį"
-        0: "šį mėnesį"
-        1: "kitą mėnesį"
       :relative_time: 
         :future: 
           :few: "po {0} mėn."
@@ -322,19 +208,6 @@
           :many: "prieš {0} ketvirčio"
           :one: "prieš {0} ketvirtį"
           :other: "prieš {0} ketvirčių"
-    :quarter-narrow: 
-      :display_name: ketv.
-      :relative_time: 
-        :future: 
-          :few: "po {0} ketv."
-          :many: "po {0} ketv."
-          :one: "po {0} ketv."
-          :other: "po {0} ketv."
-        :past: 
-          :few: "prieš {0} ketv."
-          :many: "prieš {0} ketv."
-          :one: "prieš {0} ketv."
-          :other: "prieš {0} ketv."
     :quarter-short: 
       :display_name: ketv.
       :relative_time: 
@@ -365,21 +238,12 @@
           :one: "prieš {0} šeštadienį"
           :other: "prieš {0} šeštadienių"
     :sat-narrow: 
-      :relative: 
-        -1: "praėjusį šešt."
-        0: "šį šešt."
-        1: "kitą šešt."
       :relative_time: 
         :future: 
           :few: "po {0} šešt."
           :many: "po {0} šešt."
           :one: "po {0} šeštadienio"
           :other: "po {0} šešt."
-        :past: 
-          :few: "prieš {0} šešt."
-          :many: "prieš {0} šešt."
-          :one: "prieš {0} šešt."
-          :other: "prieš {0} šešt."
     :sat-short: 
       :relative: 
         -1: "praėjusį šešt."
@@ -453,22 +317,6 @@
           :many: "prieš {0} sekmadienio"
           :one: "prieš {0} sekmadienį"
           :other: "prieš {0} sekmadienių"
-    :sun-narrow: 
-      :relative: 
-        -1: "praėjusį sekm."
-        0: "šį sekm."
-        1: "kitą sekm."
-      :relative_time: 
-        :future: 
-          :few: "po {0} sekm."
-          :many: "po {0} sekm."
-          :one: "po {0} sekm."
-          :other: "po {0} sekm."
-        :past: 
-          :few: "prieš {0} sekm."
-          :many: "prieš {0} sekm."
-          :one: "prieš {0} sekm."
-          :other: "prieš {0} sekm."
     :sun-short: 
       :relative: 
         -1: "praėjusį sekm."
@@ -501,22 +349,6 @@
           :many: "prieš {0} ketvirtadienio"
           :one: "prieš {0} ketvirtadienį"
           :other: "prieš {0} ketvirtadienių"
-    :thu-narrow: 
-      :relative: 
-        -1: "praėjusį ketv."
-        0: "šį ketv."
-        1: "kitą ketv."
-      :relative_time: 
-        :future: 
-          :few: "po {0} ketv."
-          :many: "po {0} ketv."
-          :one: "po {0} ketv."
-          :other: "po {0} ketv."
-        :past: 
-          :few: "prieš {0} ketv."
-          :many: "prieš {0} ketv."
-          :one: "prieš {0} ketv."
-          :other: "prieš {0} ketv."
     :thu-short: 
       :relative: 
         -1: "praėjusį ketv."
@@ -549,22 +381,6 @@
           :many: "prieš {0} antradienio"
           :one: "prieš {0} antradienį"
           :other: "prieš {0} antradienių"
-    :tue-narrow: 
-      :relative: 
-        -1: "praėjusį antr."
-        0: "šį antr."
-        1: "kitą antr."
-      :relative_time: 
-        :future: 
-          :few: "po {0} antr."
-          :many: "po {0} antr."
-          :one: "po {0} antr."
-          :other: "po {0} antr."
-        :past: 
-          :few: "prieš {0} antr."
-          :many: "prieš {0} antr."
-          :one: "prieš {0} antr."
-          :other: "prieš {0} antr."
     :tue-short: 
       :relative: 
         -1: "praėjusį antr."
@@ -597,22 +413,6 @@
           :many: "prieš {0} trečiadienio"
           :one: "prieš {0} trečiadienį"
           :other: "prieš {0} trečiadienių"
-    :wed-narrow: 
-      :relative: 
-        -1: "praėjusį treč."
-        0: "šį treč."
-        1: "kitą treč."
-      :relative_time: 
-        :future: 
-          :few: "po {0} treč."
-          :many: "po {0} treč."
-          :one: "po {0} treč."
-          :other: "po {0} treč."
-        :past: 
-          :few: "prieš {0} treč."
-          :many: "prieš {0} treč."
-          :one: "prieš {0} treč."
-          :other: "prieš {0} treč."
     :wed-short: 
       :relative: 
         -1: "praėjusį treč."
@@ -646,29 +446,8 @@
           :many: "prieš {0} savaitės"
           :one: "prieš {0} savaitę"
           :other: "prieš {0} savaičių"
-    :week-narrow: 
-      :display_name: sav.
-      :relative: 
-        -1: "praėjusią savaitę"
-        0: "šią savaitę"
-        1: "kitą savaitę"
-      :relative_time: 
-        :future: 
-          :few: "po {0} sav."
-          :many: "po {0} sav."
-          :one: "po {0} sav."
-          :other: "po {0} sav."
-        :past: 
-          :few: "prieš {0} sav."
-          :many: "prieš {0} sav."
-          :one: "prieš {0} sav."
-          :other: "prieš {0} sav."
     :week-short: 
       :display_name: sav.
-      :relative: 
-        -1: "praėjusią savaitę"
-        0: "šią savaitę"
-        1: "kitą savaitę"
       :relative_time: 
         :future: 
           :few: "po {0} sav."
@@ -682,21 +461,9 @@
           :other: "prieš {0} sav."
     :weekOfMonth: 
       :display_name: "mėnesio savaitė"
-    :weekOfMonth-narrow: 
-      :display_name: "mėnesio savaitė"
-    :weekOfMonth-short: 
-      :display_name: "mėnesio savaitė"
     :weekday: 
       :display_name: "savaitės diena"
-    :weekday-narrow: 
-      :display_name: "savaitės diena"
-    :weekday-short: 
-      :display_name: "savaitės diena"
     :weekdayOfMonth: 
-      :display_name: "mėnesio šiokiadienis"
-    :weekdayOfMonth-narrow: 
-      :display_name: "mėnesio šiokiadienis"
-    :weekdayOfMonth-short: 
       :display_name: "mėnesio šiokiadienis"
     :year: 
       :display_name: metai
@@ -715,29 +482,8 @@
           :many: "prieš {0} metų"
           :one: "prieš {0} metus"
           :other: "prieš {0} metų"
-    :year-narrow: 
-      :display_name: m.
-      :relative: 
-        -1: "praėjusiais metais"
-        0: "šiais metais"
-        1: "kitais metais"
-      :relative_time: 
-        :future: 
-          :few: "po {0} m."
-          :many: "po {0} m."
-          :one: "po {0} m."
-          :other: "po {0} m."
-        :past: 
-          :few: "prieš {0} m."
-          :many: "prieš {0} m."
-          :one: "prieš {0} m."
-          :other: "prieš {0} m."
     :year-short: 
       :display_name: m.
-      :relative: 
-        -1: "praėjusiais metais"
-        0: "šiais metais"
-        1: "kitais metais"
       :relative_time: 
         :future: 
           :few: "po {0} m."
@@ -750,8 +496,4 @@
           :one: "prieš {0} m."
           :other: "prieš {0} m."
     :zone: 
-      :display_name: "laiko juosta"
-    :zone-narrow: 
-      :display_name: "laiko juosta"
-    :zone-short: 
       :display_name: "laiko juosta"

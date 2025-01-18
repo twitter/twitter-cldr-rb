@@ -16,36 +16,6 @@
         :past: 
           :one: "vor {0} Tag"
           :other: "vor {0} Tagen"
-    :day-narrow: 
-      :display_name: Tag
-      :relative: 
-        -1: gestern
-        -2: vorgestern
-        0: heute
-        1: morgen
-        2: übermorgen
-      :relative_time: 
-        :future: 
-          :one: "in {0} Tag"
-          :other: "in {0} Tagen"
-        :past: 
-          :one: "vor {0} Tag"
-          :other: "vor {0} Tagen"
-    :day-short: 
-      :display_name: Tag
-      :relative: 
-        -1: gestern
-        -2: vorgestern
-        0: heute
-        1: morgen
-        2: übermorgen
-      :relative_time: 
-        :future: 
-          :one: "in {0} Tag"
-          :other: "in {0} Tagen"
-        :past: 
-          :one: "vor {0} Tag"
-          :other: "vor {0} Tagen"
     :dayOfYear: 
       :display_name: "Tag des Jahres"
     :dayOfYear-narrow: 
@@ -56,14 +26,12 @@
       :display_name: Tageshälfte
     :dayperiod-narrow: 
       :display_name: Tagesh.
-    :dayperiod-short: 
-      :display_name: Tageshälfte
     :era: 
       :display_name: Epoche
     :era-narrow: 
       :display_name: Epoche
     :era-short: 
-      :display_name: Epoche
+      :display_name: Ep.
     :fri: 
       :relative: 
         -1: "letzten Freitag"
@@ -77,10 +45,6 @@
           :one: "Freitag vor {0} Woche"
           :other: "Freitag vor {0} Wochen"
     :fri-narrow: 
-      :relative: 
-        -1: "letzten Fr."
-        0: "diesen Fr."
-        1: "nächsten Fr."
       :relative_time: 
         :future: 
           :one: "Fr. in {0} W."
@@ -111,21 +75,8 @@
         :past: 
           :one: "vor {0} Stunde"
           :other: "vor {0} Stunden"
-    :hour-narrow: 
-      :display_name: Std.
-      :relative: 
-        0: "in dieser Stunde"
-      :relative_time: 
-        :future: 
-          :one: "in {0} Std."
-          :other: "in {0} Std."
-        :past: 
-          :one: "vor {0} Std."
-          :other: "vor {0} Std."
     :hour-short: 
       :display_name: Std.
-      :relative: 
-        0: "in dieser Stunde"
       :relative_time: 
         :future: 
           :one: "in {0} Std."
@@ -134,7 +85,6 @@
           :one: "vor {0} Std."
           :other: "vor {0} Std."
     :minute: 
-      :display_name: Minute
       :relative: 
         0: "in dieser Minute"
       :relative_time: 
@@ -145,9 +95,6 @@
           :one: "vor {0} Minute"
           :other: "vor {0} Minuten"
     :minute-narrow: 
-      :display_name: Min.
-      :relative: 
-        0: "in dieser Minute"
       :relative_time: 
         :future: 
           :one: "in {0} m"
@@ -157,8 +104,6 @@
           :other: "vor {0} m"
     :minute-short: 
       :display_name: Min.
-      :relative: 
-        0: "in dieser Minute"
       :relative_time: 
         :future: 
           :one: "in {0} Min."
@@ -179,10 +124,6 @@
           :one: "Montag vor {0} Woche"
           :other: "Montag vor {0} Wochen"
     :mon-narrow: 
-      :relative: 
-        -1: "letzten Mo."
-        0: "diesen Mo."
-        1: "nächsten Mo."
       :relative_time: 
         :future: 
           :one: "Mo. in {0} W."
@@ -217,27 +158,13 @@
           :other: "vor {0} Monaten"
     :month-narrow: 
       :display_name: M
-      :relative: 
-        -1: "letzten Monat"
-        0: "diesen Monat"
-        1: "nächsten Monat"
       :relative_time: 
-        :future: 
-          :one: "in {0} Monat"
-          :other: "in {0} Monaten"
         :past: 
           :one: "vor {0} Monat"
           :other: "vor {0} Monaten"
     :month-short: 
-      :display_name: Monat
-      :relative: 
-        -1: "letzten Monat"
-        0: "diesen Monat"
-        1: "nächsten Monat"
+      :display_name: Mon.
       :relative_time: 
-        :future: 
-          :one: "in {0} Monat"
-          :other: "in {0} Monaten"
         :past: 
           :one: "vor {0} Monat"
           :other: "vor {0} Monaten"
@@ -256,10 +183,6 @@
           :other: "vor {0} Quartalen"
     :quarter-narrow: 
       :display_name: Q
-      :relative: 
-        -1: "letztes Quartal"
-        0: "dieses Quartal"
-        1: "nächstes Quartal"
       :relative_time: 
         :future: 
           :one: "in {0} Q"
@@ -289,10 +212,6 @@
           :one: "Samstag vor {0} Woche"
           :other: "Samstag vor {0} Wochen"
     :sat-narrow: 
-      :relative: 
-        -1: "letzten Sa."
-        0: "diesen Sa."
-        1: "nächsten Sa."
       :relative_time: 
         :future: 
           :one: "Sa. in {0} W."
@@ -324,7 +243,6 @@
           :one: "vor {0} Sekunde"
           :other: "vor {0} Sekunden"
     :second-narrow: 
-      :display_name: Sek.
       :relative_time: 
         :future: 
           :one: "in {0} s"
@@ -354,10 +272,6 @@
           :one: "Sonntag vor {0} Woche"
           :other: "Sonntag vor {0} Wochen"
     :sun-narrow: 
-      :relative: 
-        -1: "letzten So."
-        0: "diesen So."
-        1: "nächsten So."
       :relative_time: 
         :future: 
           :one: "So. in {0} W."
@@ -390,10 +304,6 @@
           :one: "Donnerstag vor {0} Woche"
           :other: "Donnerstag vor {0} Wochen"
     :thu-narrow: 
-      :relative: 
-        -1: "letzten Do."
-        0: "diesen Do."
-        1: "nächsten Do."
       :relative_time: 
         :future: 
           :one: "Do. in {0} W."
@@ -426,10 +336,6 @@
           :one: "Dienstag vor {0} Woche"
           :other: "Dienstag vor {0} Wochen"
     :tue-narrow: 
-      :relative: 
-        -1: "letzten Di."
-        0: "diesen Di."
-        1: "nächsten Di."
       :relative_time: 
         :future: 
           :one: "Di. in {0} W."
@@ -462,10 +368,6 @@
           :one: "Mittwoch vor {0} Woche"
           :other: "Mittwoch vor {0} Wochen"
     :wed-narrow: 
-      :relative: 
-        -1: "letzten Mi."
-        0: "diesen Mi."
-        1: "nächsten Mi."
       :relative_time: 
         :future: 
           :one: "Mi. in {0} W."
@@ -500,10 +402,6 @@
           :other: "vor {0} Wochen"
     :week-narrow: 
       :display_name: W
-      :relative: 
-        -1: "letzte Woche"
-        0: "diese Woche"
-        1: "nächste Woche"
       :relative_time: 
         :future: 
           :one: "in {0} Wo."
@@ -511,19 +409,6 @@
         :past: 
           :one: "vor {0} Wo."
           :other: "vor {0} Wo."
-    :week-short: 
-      :display_name: Woche
-      :relative: 
-        -1: "letzte Woche"
-        0: "diese Woche"
-        1: "nächste Woche"
-      :relative_time: 
-        :future: 
-          :one: "in {0} Woche"
-          :other: "in {0} Wochen"
-        :past: 
-          :one: "vor {0} Woche"
-          :other: "vor {0} Wochen"
     :weekOfMonth: 
       :display_name: "Woche im Monat"
     :weekOfMonth-narrow: 
@@ -533,8 +418,6 @@
     :weekday: 
       :display_name: Wochentag
     :weekday-narrow: 
-      :display_name: Wochentag
-    :weekday-short: 
       :display_name: Wochentag
     :weekdayOfMonth: 
       :display_name: "Wochentag im Monat"
@@ -557,33 +440,7 @@
           :other: "vor {0} Jahren"
     :year-narrow: 
       :display_name: J
-      :relative: 
-        -1: "letztes Jahr"
-        0: "dieses Jahr"
-        1: "nächstes Jahr"
-      :relative_time: 
-        :future: 
-          :one: "in {0} Jahr"
-          :other: "in {0} Jahren"
-        :past: 
-          :one: "vor {0} Jahr"
-          :other: "vor {0} Jahren"
-    :year-short: 
-      :display_name: Jahr
-      :relative: 
-        -1: "letztes Jahr"
-        0: "dieses Jahr"
-        1: "nächstes Jahr"
-      :relative_time: 
-        :future: 
-          :one: "in {0} Jahr"
-          :other: "in {0} Jahren"
-        :past: 
-          :one: "vor {0} Jahr"
-          :other: "vor {0} Jahren"
     :zone: 
       :display_name: Zeitzone
     :zone-narrow: 
       :display_name: Zeitz.
-    :zone-short: 
-      :display_name: Zeitzone

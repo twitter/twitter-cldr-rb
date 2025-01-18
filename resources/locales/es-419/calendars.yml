@@ -202,18 +202,18 @@
           :long: 
             :pattern: "{{date}}, {{time}}"
           :medium: 
-            :pattern: "{{date}} {{time}}"
+            :pattern: "{{date}}, {{time}}"
           :short: 
             :pattern: "{{date}}, {{time}}"
         :time: 
           :full: 
-            :pattern: "HH:mm:ss zzzz"
+            :pattern: "h:mm:ss a zzzz"
           :long: 
-            :pattern: "HH:mm:ss z"
+            :pattern: "h:mm:ss a z"
           :medium: 
-            :pattern: "HH:mm:ss"
+            :pattern: "h:mm:ss a"
           :short: 
-            :pattern: "HH:mm"
+            :pattern: "h:mm a"
       :months: 
         :format: 
           :abbreviated: 
@@ -298,54 +298,44 @@
       :periods: 
         :format: 
           :abbreviated: 
-            :am: a. m.
+            :am: a.m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p. m.
+            :pm: p.m.
           :narrow: 
-            :am: a. m.
+            :am: a.m.
             :evening1: "de la tarde"
             :morning1: "de la madrugada"
             :morning2: "de la mañana"
             :night1: "de la noche"
             :noon: "del mediodía"
-            :pm: p. m.
+            :pm: p.m.
           :wide: 
-            :am: a. m.
-            :evening1: "de la tarde"
-            :morning1: "de la madrugada"
-            :morning2: "de la mañana"
-            :night1: "de la noche"
-            :noon: "del mediodía"
-            :pm: p. m.
+            :am: a.m.
+            :pm: p.m.
         :stand-alone: 
           :abbreviated: 
-            :am: a. m.
+            :am: AM
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p. m.
+            :pm: PM
           :narrow: 
-            :am: a. m.
+            :am: AM
             :evening1: tarde
             :morning1: madrugada
             :morning2: mañana
             :night1: noche
             :noon: mediodía
-            :pm: p. m.
+            :pm: PM
           :wide: 
-            :am: a. m.
-            :evening1: tarde
-            :morning1: madrugada
-            :morning2: mañana
-            :night1: noche
-            :noon: mediodía
-            :pm: p. m.
+            :am: a.m.
+            :pm: p.m.
       :quarters: 
         :format: 
           :abbreviated: 

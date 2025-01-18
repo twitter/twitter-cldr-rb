@@ -25,15 +25,15 @@
         :Hmsv: "HH 'h' mm 'min' ss 's' v"
         :Hmv: "HH 'h' mm v"
         :M: L
-        :MEd: "E M-d"
+        :MEd: "E MM-dd"
         :MMM: LLL
         :MMMEd: "E d MMM"
         :MMMMW: "'semaine' W (MMMM)"
         :MMMMd: "d MMMM"
         :MMMd: "d MMM"
-        :MMd: MM-d
+        :MMd: MM-dd
         :MMdd: MM-dd
-        :Md: M-d
+        :Md: MM-dd
         :d: d
         :h: "h 'h' a"
         :hm: "h 'h' mm a"
@@ -126,17 +126,17 @@
           0: AEC
           1: EC
         :name: 
-          0: "avant l’ère chrétienne"
-          1: "de l’ère chrétienne"
+          0: "avant l’ère commune"
+          1: "de l’ère commune"
         :narrow: 
-          0: AEC
-          1: EC
+          0: BCE
+          1: CE
       :fields: 
         :day: jour
-        :day-narrow: j
+        :day-narrow: Day
         :day-short: j
         :dayOfYear: "jour de l’année"
-        :dayOfYear-narrow: "j (an)"
+        :dayOfYear-narrow: "j de l’année"
         :dayOfYear-short: "j de l’année"
         :dayperiod: cadran
         :dayperiod-narrow: cadran
@@ -145,28 +145,28 @@
         :era-narrow: ère
         :era-short: ère
         :hour: heure
-        :hour-narrow: h
+        :hour-narrow: Hour
         :hour-short: h
         :minute: minute
-        :minute-narrow: min
+        :minute-narrow: Minute
         :minute-short: min
         :month: mois
-        :month-narrow: m.
+        :month-narrow: Month
         :month-short: m.
         :quarter: trimestre
-        :quarter-narrow: trim.
+        :quarter-narrow: Quarter
         :quarter-short: trim.
         :second: seconde
-        :second-narrow: s
+        :second-narrow: Second
         :second-short: s
         :week: semaine
-        :week-narrow: sem.
+        :week-narrow: Week
         :week-short: sem.
         :weekOfMonth: "semaine du mois"
         :weekOfMonth-narrow: "sem. (mois)"
         :weekOfMonth-short: "sem. (mois)"
         :weekday: "jour de la semaine"
-        :weekday-narrow: "j (sem.)"
+        :weekday-narrow: "j de la semaine"
         :weekday-short: "j de la semaine"
         :weekdayOfMonth: "jour du mois"
         :weekdayOfMonth-narrow: "j (mois)"
@@ -300,7 +300,7 @@
           :narrow: 
             :afternoon1: après-midi
             :am: a
-            :evening1: soir
+            :evening1: "du soir"
             :midnight: minuit
             :morning1: mat.
             :night1: mat.
@@ -308,41 +308,35 @@
             :pm: p
           :wide: 
             :afternoon1: "de l’après-midi"
-            :am: a.m.
+            :am: AM
             :evening1: "du soir"
             :midnight: minuit
             :morning1: "du matin"
             :night1: "du matin"
             :noon: midi
-            :pm: p.m.
+            :pm: PM
         :stand-alone: 
           :abbreviated: 
             :afternoon1: après-midi
-            :am: a.m.
-            :evening1: soir
-            :midnight: minuit
+            :am: AM
+            :evening1: "du soir"
             :morning1: mat.
-            :night1: nuit
-            :noon: midi
-            :pm: p.m.
+            :night1: "du mat."
+            :pm: PM
           :narrow: 
             :afternoon1: après-midi
-            :am: a.m.
-            :evening1: soir
-            :midnight: minuit
+            :am: AM
+            :evening1: "du soir"
             :morning1: mat.
             :night1: mat.
-            :noon: midi
-            :pm: p.m.
+            :pm: PM
           :wide: 
             :afternoon1: après-midi
-            :am: a.m.
+            :am: AM
             :evening1: soir
-            :midnight: minuit
             :morning1: matin
-            :night1: nuit
-            :noon: midi
-            :pm: p.m.
+            :night1: matin
+            :pm: PM
       :quarters: 
         :format: 
           :abbreviated: 

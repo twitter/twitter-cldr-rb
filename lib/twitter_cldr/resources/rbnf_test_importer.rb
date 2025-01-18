@@ -82,17 +82,8 @@ module TwitterCldr
       end
 
       def import_ruleset(locale, formatter, ruleset_name)
-        test_numbers_for(locale).each_with_object({}) do |num, ret|
+        TEST_NUMBERS.each_with_object({}) do |num, ret|
           ret[num] = formatter.format(num, ruleset_name)
-        end
-      end
-
-      def test_numbers_for(locale)
-        # for some reason, russian doesn't support large numbers
-        if locale.to_s == 'ru'
-          TEST_NUMBERS - [138_400]
-        else
-          TEST_NUMBERS
         end
       end
 

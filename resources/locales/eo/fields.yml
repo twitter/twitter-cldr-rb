@@ -16,10 +16,6 @@
           :other: "antaŭ {0} tagoj"
     :day-narrow: 
       :display_name: t.
-      :relative: 
-        -1: hieraŭ
-        0: hodiaŭ
-        1: morgaŭ
       :relative_time: 
         :future: 
           :one: "post {0} t."
@@ -27,36 +23,15 @@
         :past: 
           :one: "antaŭ {0} t."
           :other: "antaŭ {0} t."
-    :day-short: 
-      :display_name: tago
-      :relative: 
-        -1: hieraŭ
-        0: hodiaŭ
-        1: morgaŭ
-      :relative_time: 
-        :future: 
-          :one: "post {0} tago"
-          :other: "post {0} tagoj"
-        :past: 
-          :one: "antaŭ {0} tago"
-          :other: "antaŭ {0} tagoj"
     :dayOfYear: 
       :display_name: "tago de jaro"
     :dayOfYear-narrow: 
       :display_name: "t. de j."
-    :dayOfYear-short: 
-      :display_name: "tago de jaro"
     :dayperiod: 
       :display_name: "mateno / posttagmezo / vespero"
-    :dayperiod-narrow: 
-      :display_name: tagotempo
     :dayperiod-short: 
       :display_name: tagotempo
     :era: 
-      :display_name: erao
-    :era-narrow: 
-      :display_name: erao
-    :era-short: 
       :display_name: erao
     :fri: 
       :relative: 
@@ -114,15 +89,6 @@
         :past: 
           :one: "antaŭ {0} h"
           :other: "antaŭ {0} h"
-    :hour-short: 
-      :display_name: horo
-      :relative_time: 
-        :future: 
-          :one: "post {0} horo"
-          :other: "post {0} horoj"
-        :past: 
-          :one: "antaŭ {0} horo"
-          :other: "antaŭ {0} horoj"
     :minute: 
       :display_name: minuto
       :relative: 
@@ -201,19 +167,6 @@
         :past: 
           :one: "antaŭ {0} monato"
           :other: "antaŭ {0} monatoj"
-    :month-narrow: 
-      :display_name: mon.
-      :relative: 
-        -1: "pasinta mon."
-        0: "nuna mon."
-        1: "venonta mon."
-      :relative_time: 
-        :future: 
-          :one: "post {0} mon."
-          :other: "post {0} mon."
-        :past: 
-          :one: "antaŭ {0} mon."
-          :other: "antaŭ {0} mon."
     :month-short: 
       :display_name: mon.
       :relative: 
@@ -249,15 +202,6 @@
         :past: 
           :one: "antaŭ {0} jk."
           :other: "antaŭ {0} jk."
-    :quarter-short: 
-      :display_name: jarkvarono
-      :relative_time: 
-        :future: 
-          :one: "post {0} jarkvarono"
-          :other: "post {0} jarkvaronoj"
-        :past: 
-          :one: "antaŭ {0} jarkvarono"
-          :other: "antaŭ {0} jarkvaronoj"
     :sat: 
       :relative: 
         -1: "pasinta sabato"
@@ -412,13 +356,6 @@
         -1: "pasinta ma."
         0: "nuna ma."
         1: "venonta ma."
-      :relative_time: 
-        :future: 
-          :one: "post {0} ma."
-          :other: "post {0} ma."
-        :past: 
-          :one: "antaŭ {0} ma."
-          :other: "antaŭ {0} ma."
     :tue-short: 
       :relative: 
         -1: "pasinta ma."
@@ -448,13 +385,6 @@
         -1: "pasinta me."
         0: "nuna me."
         1: "venonta me."
-      :relative_time: 
-        :future: 
-          :one: "post {0} me."
-          :other: "post {0} me."
-        :past: 
-          :one: "antaŭ {0} me."
-          :other: "antaŭ {0} me."
     :wed-short: 
       :relative: 
         -1: "pasinta me."
@@ -480,19 +410,7 @@
         :past: 
           :one: "antaŭ {0} semajno"
           :other: "antaŭ {0} semajnoj"
-    :week-narrow: 
-      :display_name: sem.
-      :relative: 
-        -1: "pasinta sem."
-        0: "nuna sem."
-        1: "venonta sem."
-      :relative_time: 
-        :future: 
-          :one: "post {0} sem."
-          :other: "post {0} sem."
-        :past: 
-          :one: "antaŭ {0} sem."
-          :other: "antaŭ {0} sem."
+    :week-narrow: {}
     :week-short: 
       :display_name: sem.
       :relative: 
@@ -508,8 +426,6 @@
           :other: "antaŭ {0} sem."
     :weekOfMonth: 
       :display_name: "semajno de monato"
-    :weekOfMonth-narrow: 
-      :display_name: "sem. de mon."
     :weekOfMonth-short: 
       :display_name: "sem. de mon."
     :weekday: 
@@ -520,8 +436,6 @@
       :display_name: semajntago
     :weekdayOfMonth: 
       :display_name: "semajntago de monato"
-    :weekdayOfMonth-narrow: 
-      :display_name: "st. de monato"
     :weekdayOfMonth-short: 
       :display_name: "st. de monato"
     :year: 
@@ -538,7 +452,6 @@
           :one: "antaŭ {0} jaro"
           :other: "antaŭ {0} jaroj"
     :year-narrow: 
-      :display_name: jaro
       :relative: 
         -1: "pasinta j."
         0: "nuna j."
@@ -550,22 +463,7 @@
         :past: 
           :one: "antaŭ {0} j."
           :other: "antaŭ {0} j."
-    :year-short: 
-      :display_name: jaro
-      :relative: 
-        -1: "pasinta jaro"
-        0: "nuna jaro"
-        1: "venonta jaro"
-      :relative_time: 
-        :future: 
-          :one: "post {0} jaro"
-          :other: "post {0} jaroj"
-        :past: 
-          :one: "antaŭ {0} jaro"
-          :other: "antaŭ {0} jaroj"
     :zone: 
       :display_name: horzono
     :zone-narrow: 
       :display_name: zono
-    :zone-short: 
-      :display_name: horzono

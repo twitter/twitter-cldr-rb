@@ -4,7 +4,7 @@
     :aliases: ~
     :direction: both
     :rules: 
-      - "$thai = [[:thai:] ก-ฺเ-๛] ;"
+      - "$thai = [[:Thai:] ก-ฺเ-๛] ;"
       - "$thai { ' ' } $thai > '; ' ;"
     :source: Thai
     :target: ThaiSemi

@@ -2,6 +2,7 @@
 
 ### 6.13.0 (Jan 18th, 2025)
 * Upgrade to CLDR v46.1, ICU 76.1, and Unicode v16.0.0.
+* Remove support for Ruby 2.3 and 2.4.
 
 ### 6.12.1 (Apr 28th, 2024)
 * Fix issue causing sentence segmentation to return incorrect results when a string ends with a suppression directly followed by a single space. (#274, @didier-84)

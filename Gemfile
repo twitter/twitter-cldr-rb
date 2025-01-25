@@ -37,3 +37,7 @@ group :test do
   gem 'launchy'
   gem 'addressable', '~> 2.4'
 end
+
+group :runtime do
+  gem 'bigdecimal', '~> 3.1', '>= 3.1.9'
+end

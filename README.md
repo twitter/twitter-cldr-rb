@@ -1073,7 +1073,7 @@ TwitterCldr.locale    # will return :ru
 
 ## Compatibility
 
-TwitterCLDR is fully compatible with Ruby 2.3, 2.4, 2.5, 2.6, 2.7, 3.0, 3.1, 3.2.
+TwitterCLDR is fully compatible with Ruby 2.5, 2.6, 2.7, 3.0, 3.1, 3.2.
 
 ## Requirements
 
@@ -1097,10 +1097,10 @@ TwitterCLDR currently supports localization of certain textual objects in JavaSc
 
 * Cameron C. Dutro: http://github.com/camertron
 * Kirill Lashuk: http://github.com/kl-7
-* Portions adapted from the ruby-cldr gem by Sven Fuchs: http://github.com/svenfuchs/ruby-cldr
+* Portions adapted from the ruby-cldr gem by Sven Fuchs: https://github.com/ruby-i18n/ruby-cldr
 
 ## Links
-* ruby-cldr gem: [http://github.com/svenfuchs/ruby-cldr](http://github.com/svenfuchs/ruby-cldr)
+* ruby-cldr gem: [https://github.com/ruby-i18n/ruby-cldr](https://github.com/ruby-i18n/ruby-cldr)
 * fast_gettext gem: [https://github.com/grosser/fast_gettext](https://github.com/grosser/fast_gettext)
 * CLDR homepage: [http://cldr.unicode.org/](http://cldr.unicode.org/)
 

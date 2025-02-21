@@ -1,5 +1,8 @@
 # TwitterCldr Changelog
 
+### 6.14.0 (Feb 21st, 2025)
+* Allow passing the `dst:` option to `LocalizedDateTime#to_*_s`. (@movermeyer, #280)
+
 ### 6.13.0 (Jan 18th, 2025)
 * Upgrade to CLDR v46.1, ICU 76.1, and Unicode v16.0.0.
 * Remove support for Ruby 2.3 and 2.4.

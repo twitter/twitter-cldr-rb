@@ -7,6 +7,7 @@ require 'spec_helper'
 
 describe TwitterCldr::Localized::LocalizedTime do
   let(:time) { Time.now }
+  let(:dst_ambiguous_time) { Time.parse("2024-10-27T00:00Z").localize(:en).with_timezone("Europe/Warsaw") }
 
   describe "stringify" do
     it "should stringify with a default calendar" do
@@ -14,6 +15,18 @@ describe TwitterCldr::Localized::LocalizedTime do
       time.localize(:th).to_long_s
       time.localize(:th).to_medium_s
       time.localize(:th).to_short_s
+    end
+
+    it 'should allow for setting the dst flag' do
+      expect { dst_ambiguous_time.to_full_s(dst: nil) }.to(
+        raise_error(TZInfo::AmbiguousTime, '2024-10-27 02:00:00 UTC is an ambiguous local time.')
+      )
+      expect(dst_ambiguous_time.to_full_s(dst: true)).to(
+        eq('2:00:00 AM Central European Summer Time')
+      )
+      expect(dst_ambiguous_time.to_full_s(dst: false)).to(
+        eq('2:00:00 AM Central European Standard Time')
+      )
     end
   end
 

@@ -289,8 +289,10 @@ module TwitterCldr
         tz = TwitterCldr::Timezones::Timezone.instance(
           options[:timezone] || 'UTC', data_reader.locale
         )
+        fmt = TZ_PATTERNS[pattern]
 
-        tz.display_name_for(time, TZ_PATTERNS[pattern])
+        args = [time, fmt, options[:dst]].compact
+        tz.display_name_for(*args)
       end
 
       # ported from icu4j 64.2

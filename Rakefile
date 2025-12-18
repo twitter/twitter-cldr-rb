@@ -239,6 +239,11 @@ namespace :update do
     TwitterCldr::Resources::HyphenationImporter.new.import
   end
 
+  desc 'Import locale display patterns'
+  task :locale_display_patterns do
+    TwitterCldr::Resources::LocaleDisplayPatternImporter.new.import
+  end
+
   desc 'Update README'
   task :readme do |_, args|
     renderer = TwitterCldr::Resources::ReadmeRenderer.new(

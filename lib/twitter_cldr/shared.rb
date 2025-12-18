@@ -17,6 +17,7 @@ module TwitterCldr
     autoload :Languages,              'twitter_cldr/shared/languages'
     autoload :LikelySubtags,          'twitter_cldr/shared/likely_subtags'
     autoload :Locale,                 'twitter_cldr/shared/locale'
+    autoload :LocaleDisplayName,      'twitter_cldr/shared/locale_display_name'
     autoload :NumberingSystem,        'twitter_cldr/shared/numbering_system'
     autoload :Numbers,                'twitter_cldr/shared/numbers'
     autoload :PhoneCodes,             'twitter_cldr/shared/phone_codes'

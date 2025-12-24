@@ -3,7 +3,7 @@
 # Copyright 2012 Twitter, Inc
 # http://www.apache.org/licenses/LICENSE-2.0
 
-require 'cldr-plurals/ruby_runtime'
+require_relative 'ruby_runtime'
 
 module TwitterCldr
   module Formatters
@@ -23,7 +23,7 @@ module TwitterCldr
           end
 
           def rule_for(number, locale = TwitterCldr.locale, type = DEFAULT_TYPE)
-            rule(locale, type).call(number.to_s, CldrPlurals::RubyRuntime)
+            rule(locale, type).call(number.to_s, Plurals::RubyRuntime)
           rescue
             :other
           end

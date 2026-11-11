@@ -296,6 +296,7 @@ module TwitterCldr
 
           start.upto(finish - 1) do |i|
             next_type = (i == finish - 1) ? eor : @types[i + 1]
+            prev_char_type = prev_type
 
             # Rule W1: change NSM to the prevailing direction.
             if @types[i] == :NSM
@@ -319,11 +320,11 @@ module TwitterCldr
             end
 
             # Rule W4: handle separators between two numbers.
-            if prev_type == :EN && next_type == :EN
+            if prev_char_type == :EN && next_type == :EN
               if @types[i] == :ES || @types[i] == :CS
-                @types[i] = nextType
+                @types[i] = next_type
               end
-            elsif prev_type == :AN && next_type == :AN && @types[i] == :CS
+            elsif prev_char_type == :AN && next_type == :AN && @types[i] == :CS
               @types[i] = next_type
             end
 
